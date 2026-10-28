@@ -4,7 +4,7 @@ import com.lowdragmc.lowdraglib.utils.BlockInfo;
 import com.lowdragmc.lowdraglib.utils.BlockPosFace;
 import com.lowdragmc.lowdraglib.utils.EntityInfo;
 import com.lowdragmc.lowdraglib.utils.XmlUtils;
-import lombok.val;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -45,9 +45,9 @@ public class SceneAction extends Action {
         for (int i = 0; i < nodes.getLength(); i++) {
             final var node = nodes.item(i);
             if (node instanceof Element data) {
-                val nodeName = data.getNodeName();
-                val blockPos = XmlUtils.getAsBlockPos(data, "pos", BlockPos.ZERO);
-                val pos = XmlUtils.getAsVector3f(data, "pos", new Vector3f());
+                var nodeName = data.getNodeName();
+                var blockPos = XmlUtils.getAsBlockPos(data, "pos", BlockPos.ZERO);
+                var pos = XmlUtils.getAsVector3f(data, "pos", new Vector3f());
                 switch (nodeName) {
                     case "add" -> addedBlocks.add(new Tuple<>(new BlockAnima(blockPos, XmlUtils.getAsVector3f(data, "offset", new Vector3f(0, 0.7f, 0)), XmlUtils.getAsInt(data, "duration", 15)), XmlUtils.getBlockInfo(data)));
                     case "remove" -> removedBlocks.add(new BlockAnima(blockPos, XmlUtils.getAsVector3f(data, "offset", new Vector3f(0, 0.7f, 0)), XmlUtils.getAsInt(data, "duration", 15)));

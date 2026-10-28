@@ -22,7 +22,7 @@ import com.mojang.blaze3d.vertex.ByteBufferBuilder;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.Tesselator;
 import lombok.Getter;
-import lombok.val;
+
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.minecraft.client.Minecraft;
@@ -130,8 +130,8 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
         if (!frames.isEmpty()) {
             int progressWidth = (width - 2) / frames.size();
             for (int i = 0; i < frames.size(); i++) {
-                val frame = frames.get(i);
-                val frameIndex = i;
+                var frame = frames.get(i);
+                var frameIndex = i;
                 addWidget(new ProgressWidget(() -> {
                     if (currentFrame < 0) return 0;
                     if (frameIndex < currentFrame) return 1;

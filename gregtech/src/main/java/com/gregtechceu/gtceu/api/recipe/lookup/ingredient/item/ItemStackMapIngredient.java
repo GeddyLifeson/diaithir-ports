@@ -26,7 +26,15 @@ public class ItemStackMapIngredient extends AbstractMapIngredient {
     }
 
     @NotNull
-    public static List<AbstractMapIngredient> from(Ingredient ingredient) { return null; /* ported stub */ }
+    public static List<AbstractMapIngredient> from(Ingredient ingredient) {
+        List<AbstractMapIngredient> ingredients = new ObjectArrayList<>();
+        for (Ingredient.Value value : ingredient.getValues()) {
+            if (value instanceof Ingredient.ItemValue(ItemStack item)) {
+                ingredients.add(new ItemStackMapIngredient(item, ingredient));
+            }
+        }
+        return ingredients;
+    }
 
     @NotNull
     public static List<AbstractMapIngredient> from(ItemStack stack) {

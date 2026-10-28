@@ -73,8 +73,45 @@ public class ToolHeadReplaceRecipe extends CustomRecipe {
         return false;
     }
 
-    @Override
-    public @NotNull ItemStack assemble(CraftingInput inv, @NotNull HolderLookup.Provider registries) { return null; /* ported stub */ }
+    
+    public @NotNull ItemStack assemble(CraftingInput inv, @NotNull HolderLookup.Provider registries) {
+        List<ItemStack> list = new ArrayList<>();
+
+        for (int i = 0; i < inv.size(); i++) {
+            ItemStack itemstack = inv.getItem(i);
+
+            if (!itemstack.isEmpty()) {
+                list.add(itemstack);
+            }
+        }
+
+        if (list.size() == 2) {
+            ItemStack first = list.get(0), second = list.get(1);
+
+            IGTTool tool;
+            MaterialEntry toolHead;
+            ItemStack realTool;
+            if (first.getItem() instanceof IGTTool) {
+                tool = (IGTTool) first.getItem();
+                toolHead = ChemicalHelper.getMaterialEntry(second.getItem());
+                realTool = first;
+            } else if (second.getItem() instanceof IGTTool) {
+                tool = (IGTTool) second.getItem();
+                toolHead = ChemicalHelper.getMaterialEntry(first.getItem());
+                realTool = second;
+            } else return ItemStack.EMPTY;
+            if (!tool.isElectric()) return ItemStack.EMPTY;
+            IElectricItem powerUnit = GTCapabilityHelper.getElectricItem(realTool);
+            if (toolHead.isEmpty() || powerUnit == null) return ItemStack.EMPTY;
+            GTToolType[] toolArray = TOOL_HEAD_TO_TOOL_MAP.get(toolHead.tagPrefix());
+            ItemStack newTool = GTMaterialItems.TOOL_ITEMS.get(toolHead.material(), toolArray[tool.getElectricTier()])
+                    .get().get(powerUnit.getCharge(), powerUnit.getMaxCharge());
+            if (newTool.isEmpty()) return ItemStack.EMPTY;
+
+            return newTool;
+        }
+        return ItemStack.EMPTY;
+    }
 
     @Override
     public @NotNull NonNullList<ItemStack> getRemainingItems(@NotNull CraftingInput input) {
@@ -87,9 +124,13 @@ public class ToolHeadReplaceRecipe extends CustomRecipe {
         return result;
     }
 
-    @Override
-    public boolean canCraftInDimensions(int width, int height) { return false; /* ported stub */ }
+    
+    public boolean canCraftInDimensions(int width, int height) {
+        return width * height >= 2;
+    }
 
-    @Override
-    public @NotNull RecipeSerializer<?> getSerializer() { return null; /* ported stub */ }
+    
+    public @NotNull RecipeSerializer<? getSerializer() {
+        return GTRecipeSerializers.CRAFTING_TOOL_HEAD_REPLACE.get();
+    }
 }

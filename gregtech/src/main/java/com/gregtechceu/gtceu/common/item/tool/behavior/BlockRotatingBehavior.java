@@ -42,7 +42,7 @@ import java.util.List;
 public class BlockRotatingBehavior implements IToolBehavior<BlockRotatingBehavior> {
 
     public static final BlockRotatingBehavior INSTANCE = new BlockRotatingBehavior();
-    public static final Codec<BlockRotatingBehavior> CODEC = Codec.unit(INSTANCE);
+    public static final Codec<BlockRotatingBehavior> CODEC = com.mojang.serialization.MapCodec.unit(INSTANCE).codec();
     public static final StreamCodec<ByteBuf, BlockRotatingBehavior> STREAM_CODEC = StreamCodec.unit(INSTANCE);
 
     protected BlockRotatingBehavior() {}

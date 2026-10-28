@@ -154,5 +154,12 @@ public interface IPipeNode<PipeType extends Enum<PipeType> & IPipeType<NodeDataT
 
     @ApiStatus.Internal
     @Override
-    default @NotNull ModelData getModelData() { return null; /* ported stub */ }
+    default @NotNull ModelData getModelData() {
+        return ModelData.builder()
+                .with(GTModelProperties.LEVEL, self().getLevel())
+                .with(GTModelProperties.POS, self().getBlockPos())
+                .with(GTModelProperties.PIPE_CONNECTION_MASK, this.getVisualConnections())
+                .with(GTModelProperties.PIPE_BLOCKED_MASK, this.getBlockedConnections())
+                .build();
+    }
 }

@@ -54,7 +54,10 @@ public interface IMaterialPartItem extends IItemComponent, IDurabilityBar, IAddI
 
     @Override
     @Nullable
-    default Component getItemName(ItemStack stack) { return null; /* ported stub */ }
+    default Component getItemName(ItemStack stack) {
+        var material = getPartMaterial(stack);
+        return Component.translatable(stack.getDescriptionId(), material.getLocalizedName());
+    }
 
     @Override
     default void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,

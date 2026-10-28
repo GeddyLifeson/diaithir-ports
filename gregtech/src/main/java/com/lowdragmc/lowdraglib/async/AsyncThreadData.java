@@ -24,7 +24,9 @@ import java.util.concurrent.*;
 public class AsyncThreadData extends SavedData {
     private final ServerLevel serverLevel;
 
-    public static AsyncThreadData getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
+    public static AsyncThreadData getOrCreate(ServerLevel serverLevel) {
+        return serverLevel.getDataStorage().computeIfAbsent(new SavedData.Factory<>(() -> new AsyncThreadData(serverLevel), (tag, provider) -> new AsyncThreadData(serverLevel, tag)), LDLib.MOD_ID);
+    }
 
     private AsyncThreadData(ServerLevel serverLevel) {
         this.serverLevel = serverLevel;
@@ -34,8 +36,10 @@ public class AsyncThreadData extends SavedData {
         this(serverLevel);
     }
 
-    @Override
-    public CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    
+    public CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) {
+        return compoundTag;
+    }
 
 
     // ********************************* async thread ********************************* //

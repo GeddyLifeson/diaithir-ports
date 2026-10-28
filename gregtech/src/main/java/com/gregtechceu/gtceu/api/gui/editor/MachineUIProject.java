@@ -80,7 +80,12 @@ public class MachineUIProject extends UIProject {
     }
 
     @Override
-    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag) {  /* ported stub */ }
+    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag) {
+        super.deserializeNBT(provider, tag);
+        if (tag.contains("machine")) {
+            machineDefinition = GTRegistries.MACHINES.get(Identifier.parse(tag.getString("machine")));
+        }
+    }
 
     @Override
     public void onLoad(Editor editor) {

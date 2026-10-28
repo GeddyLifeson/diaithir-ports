@@ -36,9 +36,18 @@ public class ShapelessRecipeBuilder {
         this.id = id;
     }
 
-    public ShapelessRecipeBuilder requires(TagKey<Item> itemStack) { return null; /* ported stub */ }
+    public ShapelessRecipeBuilder requires(TagKey<Item> itemStack) {
+        return requires(Ingredient.of(itemStack));
+    }
 
-    public ShapelessRecipeBuilder requires(ItemStack itemStack) { return null; /* ported stub */ }
+    public ShapelessRecipeBuilder requires(ItemStack itemStack) {
+        if (!itemStack.getComponentsPatch().isEmpty()) {
+            requires(DataComponentIngredient.of(true, itemStack));
+        } else {
+            requires(Ingredient.of(itemStack));
+        }
+        return this;
+    }
 
     public ShapelessRecipeBuilder requires(ItemLike itemLike) {
         return requires(Ingredient.of(itemLike));
@@ -64,7 +73,14 @@ public class ShapelessRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public ShapelessRecipe build() { return null; /* ported stub */ }
+    public ShapelessRecipe build() {
+        return new ShapelessRecipe(Objects.requireNonNullElse(this.group, ""), this.category,
+                this.output, this.ingredients);
+    }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+
+        consumer.accept(recipeId.withPrefix("shapeless/"), build(), null);
+    }
 }

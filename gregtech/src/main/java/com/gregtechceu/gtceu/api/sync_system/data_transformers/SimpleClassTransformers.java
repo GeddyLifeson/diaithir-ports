@@ -13,7 +13,10 @@ public class SimpleClassTransformers {
     public static class ItemStackTransformer implements ValueTransformer<ItemStack> {
 
         @Override
-        public Tag serializeNBT(ItemStack value, TransformerContext<ItemStack> context) { return null; /* ported stub */ }
+        public Tag serializeNBT(ItemStack value, TransformerContext<ItemStack> context) {
+            if (value.isEmpty()) return new CompoundTag();
+            return value.save(context.lookup());
+        }
 
         @Override
         public @Nullable ItemStack deserializeNBT(Tag tag, TransformerContext<ItemStack> context) {
@@ -26,7 +29,10 @@ public class SimpleClassTransformers {
     public static class FluidStackTransformer implements ValueTransformer<FluidStack> {
 
         @Override
-        public Tag serializeNBT(FluidStack value, TransformerContext<FluidStack> context) { return null; /* ported stub */ }
+        public Tag serializeNBT(FluidStack value, TransformerContext<FluidStack> context) {
+            if (value.isEmpty()) return new CompoundTag();
+            return value.save(context.lookup());
+        }
 
         @Override
         public @Nullable FluidStack deserializeNBT(Tag tag, TransformerContext<FluidStack> context) {
@@ -39,7 +45,9 @@ public class SimpleClassTransformers {
     public static class BlockPosTransformer implements ValueTransformer<BlockPos> {
 
         @Override
-        public Tag serializeNBT(BlockPos value, TransformerContext<BlockPos> context) { return null; /* ported stub */ }
+        public Tag serializeNBT(BlockPos value, TransformerContext<BlockPos> context) {
+            return NbtUtils.writeBlockPos(value);
+        }
 
         @Override
         public @Nullable BlockPos deserializeNBT(Tag tag, TransformerContext<BlockPos> context) {
@@ -54,9 +62,15 @@ public class SimpleClassTransformers {
     public static class ComponentTransformer implements ValueTransformer<Component> {
 
         @Override
-        public Tag serializeNBT(Component value, TransformerContext<Component> context) { return null; /* ported stub */ }
+        public Tag serializeNBT(Component value, TransformerContext<Component> context) {
+            return StringTag.valueOf(Component.Serializer.toJson(value, context.lookup()));
+        }
 
         @Override
-        public @Nullable Component deserializeNBT(Tag tag, TransformerContext<Component> context) { return null; /* ported stub */ }
+        public @Nullable Component deserializeNBT(Tag tag, TransformerContext<Component> context) {
+            if (!(tag instanceof CompoundTag compoundTag) || compoundTag.isEmpty()) return ItemStack.EMPTY;
+            return ItemStack.CODEC.parse(context.lookup().createSerializationContext(NbtOps.INSTANCE), compoundTag)
+                    .getOrThrow();
+        }
     }
 }

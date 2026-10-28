@@ -40,7 +40,18 @@ public abstract sealed class MachineOwner permits PlayerOwner, FTBOwner {
 
     public abstract Component getTypeDisplayName();
 
-    public static void init() {  /* ported stub */ }
+    public static void init() {
+        var event = new RegisterOwnerTypeEvent();
+        if (GTCEu.Mods.isFTBTeamsLoaded()) {
+            event.register(0, FTBOwner::new);
+        } else if (GTCEu.Mods.isArgonautsLoaded()) {
+            event.register(0, ArgonautsOwner::new);
+        } else {
+            event.register(0, PlayerOwner::new);
+        }
+        ModLoader.postEventWrapContainerInModOrder(event);
+        machineOwnerGenerator = event.ownershipProvider;
+    }
 
     public void displayInfo(List<Component> compList) {
         compList.add(Component.translatable("behavior.portable_scanner.machine_ownership", getTypeDisplayName()));
@@ -75,9 +86,21 @@ public abstract sealed class MachineOwner permits PlayerOwner, FTBOwner {
         return PLAYER_OWNERS.computeIfAbsent(playerUUID, PlayerOwner::new);
     }
 
-    public static boolean canOpenOwnerMachine(Player player, MetaMachine machine) { return false; /* ported stub */ }
+    public static boolean canOpenOwnerMachine(Player player, MetaMachine machine) {
+        if (!ConfigHolder.INSTANCE.machines.onlyOwnerGUI) return true;
+        if (player.hasPermissions(ConfigHolder.INSTANCE.machines.ownerOPBypass)) return true;
+        var owner = machine.getOwner();
+        if (owner == null) return true;
+        return owner.isPlayerInTeam(player) || owner.isPlayerFriendly(player);
+    }
 
-    public static boolean canBreakOwnerMachine(Player player, MetaMachine machine) { return false; /* ported stub */ }
+    public static boolean canBreakOwnerMachine(Player player, MetaMachine machine) {
+        if (!ConfigHolder.INSTANCE.machines.onlyOwnerBreak) return true;
+        if (player.hasPermissions(ConfigHolder.INSTANCE.machines.ownerOPBypass)) return true;
+        var owner = machine.getOwner();
+        if (owner == null) return true;
+        return owner.isPlayerInTeam(player);
+    }
 
     public static void displayPlayerInfo(List<Component> compList, UUID playerUUID) {
         final var playerName = UsernameCache.getLastKnownUsername(playerUUID);

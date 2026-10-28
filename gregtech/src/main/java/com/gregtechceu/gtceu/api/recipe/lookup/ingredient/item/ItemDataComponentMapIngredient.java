@@ -25,7 +25,14 @@ public class ItemDataComponentMapIngredient extends ItemStackMapIngredient {
     }
 
     @NotNull
-    public static List<AbstractMapIngredient> from(@NotNull DataComponentIngredient ingredient) { return null; /* ported stub */ }
+    public static List<AbstractMapIngredient> from(@NotNull DataComponentIngredient ingredient) {
+        Ingredient vanilla = ingredient.toVanilla();
+        ObjectArrayList<AbstractMapIngredient> list = new ObjectArrayList<>();
+        for (ItemStack s : vanilla.getItems()) {
+            list.add(new ItemDataComponentMapIngredient(s, ingredient, vanilla));
+        }
+        return list;
+    }
 
     @NotNull
     public static List<AbstractMapIngredient> from(@NotNull ItemStack stack) {
@@ -43,7 +50,49 @@ public class ItemDataComponentMapIngredient extends ItemStackMapIngredient {
     }
 
     @Override
-    public boolean equals(Object obj) { return false; /* ported stub */ }
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof ItemDataComponentMapIngredient other) {
+            if (!ItemStack.isSameItem(this.stack, other.stack)) {
+                return false;
+            }
+            if (this.componentIngredient == other.componentIngredient) {
+                return true;
+            }
+
+            if (this.componentIngredient != null) {
+                if (other.componentIngredient != null) {
+                    if (this.componentIngredient.isStrict() != other.componentIngredient.isStrict()) {
+                        return false;
+                    }
+                    if (!this.componentIngredient.components().equals(other.componentIngredient.components())) {
+                        return false;
+                    }
+
+                    if (this.componentIngredient.isStrict()) {
+                        for (ItemStack tStack : this.ingredient.getItems()) {
+                            for (ItemStack oStack : other.ingredient.getItems()) {
+                                if (ItemStack.isSameItemSameComponents(tStack, oStack)) return true;
+                            }
+                        }
+                    } else {
+                        boolean thisContains = this.componentIngredient.items()
+                                .stream().allMatch(holder -> other.componentIngredient.items().contains(holder));
+                        boolean otherContains = other.componentIngredient.items()
+                                .stream().allMatch(holder -> this.componentIngredient.items().contains(holder));
+                        return thisContains && otherContains;
+                    }
+                } else {
+                    return this.componentIngredient.test(other.stack);
+                }
+            } else {
+                return other.componentIngredient.test(this.stack);
+            }
+        }
+        return false;
+    }
 
     @Override
     public String toString() {

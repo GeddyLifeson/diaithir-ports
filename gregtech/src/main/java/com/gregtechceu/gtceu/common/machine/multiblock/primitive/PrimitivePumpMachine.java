@@ -80,14 +80,28 @@ public class PrimitivePumpMachine extends MultiblockControllerMachine {
         fluidTank = null;
     }
 
-    private void produceWater() {  /* ported stub */ }
+    private void produceWater() {
+        if (getOffsetTimer() % 20 == 0 && isFormed() && !getMultiblockState().hasError()) {
+            if (biomeModifier == 0) {
+                biomeModifier = GTUtil.getPumpBiomeModifier(getLevel().getBiome(getBlockPos()));
+            } else if (biomeModifier > 0) {
+                if (fluidTank == null) initializeTank();
+                if (fluidTank != null) {
+                    fluidTank.handleRecipe(IO.OUT, null,
+                            List.of(SizedFluidIngredient.of(GTMaterials.Water.getFluid(getFluidProduction()))), false);
+                }
+            }
+        }
+    }
 
     private boolean isRainingInBiome() {
         if (!getLevel().isRaining()) return false;
         return getBiomePrecipitation() != Precipitation.NONE;
     }
 
-    private Precipitation getBiomePrecipitation() { return null; /* ported stub */ }
+    private Precipitation getBiomePrecipitation() {
+        return getLevel().getBiome(getBlockPos()).value().getPrecipitationAt(getBlockPos());
+    }
 
     public int getFluidProduction() {
         int value = biomeModifier * hatchModifier;

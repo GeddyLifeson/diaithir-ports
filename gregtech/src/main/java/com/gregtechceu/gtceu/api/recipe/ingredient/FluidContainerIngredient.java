@@ -43,8 +43,14 @@ public class FluidContainerIngredient implements ICustomIngredient {
     private Stream<ItemStack> cachedStacks;
 
     @NotNull
-    @Override
-    public Stream<ItemStack> getItems() { return null; /* ported stub */ }
+    
+    public Stream<ItemStack> getItems() {
+        if (cachedStacks == null)
+            cachedStacks = Arrays.stream(this.fluid.getFluids())
+                    .map(stack -> stack.getFluid().getBucket().getDefaultInstance())
+                    .filter(s -> !s.isEmpty());
+        return this.cachedStacks;
+    }
 
     @Override
     public boolean test(@Nullable ItemStack stack) {

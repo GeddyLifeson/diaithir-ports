@@ -36,8 +36,10 @@ public class MaterialBlockItem extends BlockItem implements IItemRendererProvide
         this.material = material;
     }
 
-    @Override
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) { return (int)0; /* ported stub */ }
+    
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+        return getItemBurnTime();
+    }
 
     @Override
     @NotNull
@@ -61,10 +63,12 @@ public class MaterialBlockItem extends BlockItem implements IItemRendererProvide
     }
 
     @Override
-    public String getDescriptionId() { return null; /* ported stub */ }
 
-    @Override
-    public Component getDescription() { return null; /* ported stub */ }
+
+    
+    public Component getDescription() {
+        return getBlock().getName();
+    }
 
     @Override
     public Component getName(ItemStack stack) {

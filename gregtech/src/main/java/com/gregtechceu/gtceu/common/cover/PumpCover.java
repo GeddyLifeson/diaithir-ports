@@ -389,8 +389,23 @@ public class PumpCover extends CoverBehavior implements IIOCover, IUICover, ICon
     }
 
     @Override
-    public CompoundTag copyConfig(CompoundTag tag) { return null; /* ported stub */ }
+    public CompoundTag copyConfig(CompoundTag tag) {
+        tag.putInt("transferRate", getTransferRate());
+        tag.putInt("io", getIo().ordinal());
+        tag.putInt("manualIO", getManualIOMode().ordinal());
+        tag.put("filter", filterHandler.getFilterItem().save(coverHolder.getLevel().registryAccess()));
+        tag.putInt("bucketMode", getBucketMode().ordinal());
+        return super.copyConfig(tag);
+    }
 
     @Override
-    public void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
+    public void pasteConfig(ServerPlayer player, CompoundTag tag) {
+        setTransferRate(tag.getInt("transferRate"));
+        setIo(IO.values()[tag.getInt("io")]);
+        setManualIOMode(ManualIOMode.values()[tag.getInt("manualIO")]);
+        filterHandler.setFilterItem(ItemStack.parse(coverHolder.getLevel().registryAccess(), tag.getCompound("filter"))
+                .orElse(ItemStack.EMPTY));
+        setBucketMode(BucketMode.values()[tag.getInt("bucketMode")]);
+        super.pasteConfig(player, tag);
+    }
 }

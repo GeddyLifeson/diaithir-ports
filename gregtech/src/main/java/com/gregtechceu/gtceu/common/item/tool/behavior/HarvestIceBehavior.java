@@ -22,7 +22,7 @@ import java.util.List;
 public class HarvestIceBehavior implements IToolBehavior<HarvestIceBehavior> {
 
     public static final HarvestIceBehavior INSTANCE = new HarvestIceBehavior();
-    public static final Codec<HarvestIceBehavior> CODEC = Codec.unit(INSTANCE);
+    public static final Codec<HarvestIceBehavior> CODEC = com.mojang.serialization.MapCodec.unit(INSTANCE).codec();
     public static final StreamCodec<ByteBuf, HarvestIceBehavior> STREAM_CODEC = StreamCodec.unit(INSTANCE);
 
     protected HarvestIceBehavior() {/**/}

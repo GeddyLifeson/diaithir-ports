@@ -183,7 +183,21 @@ public class GTOreDefinition {
         return this;
     }
 
-        public GTOreDefinition biomes(TagKey<Biome> biomes) { return null; /* ported stub */ }
+        public GTOreDefinition biomes(TagKey<Biome> biomes) {
+        if (biomeLookup == null) {
+            GTRegistries.builtinRegistry().registry(GTRegistries.ORE_VEIN_REGISTRY)
+                    .map(reg -> reg.getKey(this))
+                    .ifPresentOrElse(id -> {
+                        GTCEu.LOGGER.error("Tried to modify ore vein `{}`'s biomes after registry has been frozen!",
+                                id);
+                    }, () -> {
+                        GTCEu.LOGGER.error("Tried to modify an ore vein's biomes after registry has been frozen!");
+                    });
+            return this;
+        }
+        this.biomes = biomeLookup.getOrThrow(biomes);
+        return this;
+    }
 
     public GTOreDefinition biomes(HolderSet<Biome> biomes) {
         this.biomes = Objects.requireNonNullElseGet(biomes, HolderSet::empty);

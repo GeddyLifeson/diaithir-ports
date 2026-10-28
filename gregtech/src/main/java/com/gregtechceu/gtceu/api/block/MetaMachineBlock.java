@@ -184,9 +184,27 @@ public class MetaMachineBlock extends Block implements EntityBlock {
         return state;
     }
 
-    @Override
+    
     public void appendHoverText(ItemStack stack, @Nullable Item.TooltipContext level, List<Component> tooltip,
-                                TooltipFlag flag) {  /* ported stub */ }
+                                TooltipFlag flag) {
+        definition.getTooltipBuilder().accept(stack, tooltip);
+        String mainKey = String.format("%s.machine.%s.tooltip", definition.getId().getNamespace(),
+                definition.getId().getPath());
+        if (GTUtil.isShiftDown()) {
+            if (definition instanceof MultiblockMachineDefinition multiblockDefinition) {
+                var pattern = multiblockDefinition.getPatternFactory().get();
+                if (pattern != null) {
+                    var aisleDims = pattern.getDimensions();
+                    assert aisleDims.length == 3;
+                    tooltip.add(Component.translatable("gtceu.multiblock.dimension", aisleDims[0], aisleDims[1],
+                            aisleDims[2]));
+                }
+            }
+        }
+        if (Language.getInstance().has(mainKey)) {
+            tooltip.add(1, Component.translatable(mainKey));
+        }
+    }
 
     @Override
     public boolean triggerEvent(BlockState pState, Level pLevel, BlockPos pPos, int pId, int pParam) {
@@ -207,18 +225,94 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) { return null; /* ported stub */ }
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
+        var drops = super.getDrops(state, builder);
 
-    @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {  /* ported stub */ }
+        BlockEntity be = builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
+        if (be instanceof MetaMachine machine) {
+            machine.modifyDrops(drops);
+            for (ItemStack drop : drops) {
+                if (drop.getItem() instanceof MetaMachineItem item && item.getBlock() == this) {
+                    machine.saveToItem(drop, be.getLevel().registryAccess());
+                    // break here to not dupe contents if a machine drops multiple of itself for whatever reason.
+                    break;
+                }
+            }
+        }
+        return drops;
+    }
+
+    
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        if (pState.hasBlockEntity()) {
+            if (!pState.is(pNewState.getBlock())) { // new block
+                MetaMachine machine = MetaMachine.getMachine(pLevel, pPos);
+                if (machine != null) {
+                    machine.onMachineDestroyed();
+                }
+
+                pLevel.updateNeighbourForOutputSignal(pPos, this);
+                pLevel.removeBlockEntity(pPos);
+            } else if (getRotationState() != RotationState.NONE) { // old block different facing
+                var oldFacing = pState.getValue(getRotationState().property);
+                var newFacing = pNewState.getValue(getRotationState().property);
+                if (newFacing != oldFacing) {
+                    var machine = MetaMachine.getMachine(pLevel, pPos);
+                    if (machine != null) {
+                        machine.onRotated(oldFacing, newFacing);
+                    }
+                }
+            }
+        }
+    }
 
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
-                                              Player player, InteractionHand hand, BlockHitResult hit) { return null; /* ported stub */ }
+                                              Player player, InteractionHand hand, BlockHitResult hit) {
+        var machine = MetaMachine.getMachine(level, pos);
+        if (machine == null) return InteractionResult.FAIL;
+        ItemStack itemStack = player.getItemInHand(hand);
+        boolean shouldOpenUi = true;
+
+        if (machine.getOwnerUUID() == null && player instanceof ServerPlayer sPlayer) {
+            machine.setOwnerUUID(sPlayer.getUUID());
+        }
+
+        InteractionResult machineInteractResult;
+        if (itemStack.isEmpty()) {
+            machineInteractResult = machine.onUse(new ExtendedUseOnContext(player, hand, hit));
+        } else {
+            machineInteractResult = machine.onUseWithItem(new ExtendedUseOnContext(player, hand, hit));
+        }
+
+        if (machineInteractResult != InteractionResult.PASS) return getFromInteractionResult(machineInteractResult);
+
+        if (stack.is(GTItems.PORTABLE_SCANNER.get())) {
+            return getFromInteractionResult(stack.getItem().use(level, player, hand).getResult());
+        }
+
+        if (stack.getItem() instanceof IGTTool gtToolItem) {
+            shouldOpenUi = gtToolItem.definition$shouldOpenUIAfterUse(new UseOnContext(player, hand, hit));
+        }
+
+        if (shouldOpenUi && machine instanceof IUIMachine uiMachine &&
+                MachineOwner.canOpenOwnerMachine(player, machine)) {
+            return uiMachine.tryToOpenUI(player, hand, hit);
+        }
+        return shouldOpenUi ? InteractionResult.TRY_WITH_EMPTY_HAND : InteractionResult.CONSUME;
+    }
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
-                                               Player player, BlockHitResult hit) { return null; /* ported stub */ }
+                                               Player player, BlockHitResult hit) {
+        var machine = MetaMachine.getMachine(level, pos);
+        if (machine == null) return InteractionResult.PASS;
+        if (machine instanceof IUIMachine uiMachine &&
+                MachineOwner.canOpenOwnerMachine(player, machine)) {
+            uiMachine.tryToOpenUI(player, InteractionHand.MAIN_HAND, hit).result();
+        }
+        return machine.onUse(new ExtendedUseOnContext(player, InteractionHand.MAIN_HAND, hit));
+    }
 
     //////////////////////////////////////
     // ***** Redstone Signals ****//
@@ -244,14 +338,24 @@ public class MetaMachineBlock extends Block implements EntityBlock {
         return machine.getOutputDirectSignal(direction);
     }
 
-    @Override
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) { return (int)0; /* ported stub */ }
+    
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+        var machine = MetaMachine.getMachine(level, pos);
+        if (machine == null) return 0;
+        return machine.getAnalogOutputSignal();
+    }
 
     /////////
 
-    @Override
+    
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos,
-                                boolean isMoving) {  /* ported stub */ }
+                                boolean isMoving) {
+        var machine = MetaMachine.getMachine(level, pos);
+        if (machine != null) {
+            machine.onNeighborChanged(block, fromPos, isMoving);
+        }
+        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
+    }
 
     public static int colorTinted(BlockState blockState, @Nullable BlockAndTintGetter level, @Nullable BlockPos pos,
                                   int index) {
@@ -264,17 +368,199 @@ public class MetaMachineBlock extends Block implements EntityBlock {
         return -1;
     }
 
-    @Override
+    
     public BlockState getAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
-                                    @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) { return null; /* ported stub */ }
+                                    @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
+        var machine = MetaMachine.getMachine(level, pos);
+        if (machine != null) {
+            return machine.getBlockAppearance(state, level, pos, side, sourceState, sourcePos);
+        }
+        return super.getAppearance(state, level, pos, side, sourceState, sourcePos);
+    }
 
-    public static InteractionResult getFromInteractionResult(InteractionResult result) { return null; /* ported stub */ }
+    public static InteractionResult getFromInteractionResult(InteractionResult result) {
+        return switch (result) {
+            case SUCCESS, SUCCESS_NO_ITEM_USED -> InteractionResult.SUCCESS;
+            case CONSUME -> InteractionResult.CONSUME;
+            case CONSUME_PARTIAL -> InteractionResult.CONSUME;
+            case PASS -> InteractionResult.TRY_WITH_EMPTY_HAND;
+            case FAIL -> InteractionResult.FAIL;
+        };
+    }
 
     public RotationState getRotationState() {
         return getDefinition().getRotationState();
     }
 
-    public void attachCapabilities(RegisterCapabilitiesEvent event) {  /* ported stub */ }
+    public void attachCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlock(GTCapability.CAPABILITY_COVERABLE, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                return machine.getCoverContainer();
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_WORKABLE, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof IWorkable workable) {
+                    return workable;
+                }
+                for (MachineTrait trait : machine.getTraitHolder().getAllTraits()) {
+                    if (trait instanceof IWorkable workable) {
+                        return workable;
+                    }
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_CONTROLLABLE, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof IControllable controllable) {
+                    return controllable;
+                }
+                for (MachineTrait trait : machine.getTraitHolder().getAllTraits()) {
+                    if (trait instanceof IControllable controllable) {
+                        return controllable;
+                    }
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_RECIPE_LOGIC, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                for (MachineTrait trait : machine.getTraitHolder().getAllTraits()) {
+                    if (trait instanceof RecipeLogic recipeLogic) {
+                        return recipeLogic;
+                    }
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_ENERGY_CONTAINER, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof IEnergyContainer energyContainer) {
+                    return energyContainer;
+                }
+                var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), side,
+                        IEnergyContainer.class);
+                if (!list.isEmpty()) {
+                    return list.size() == 1 ? list.getFirst() : new EnergyContainerList(list);
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_ENERGY_INFO_PROVIDER, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof IEnergyInfoProvider energyInfoProvider) {
+                    return energyInfoProvider;
+                }
+                var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), side,
+                        IEnergyInfoProvider.class);
+                if (!list.isEmpty()) {
+                    return list.size() == 1 ? list.getFirst() : new EnergyInfoProviderList(list);
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_MAINTENANCE_MACHINE, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof IMaintenanceMachine maintenance) {
+                return maintenance;
+            }
+            return null;
+        }, this);
+        event.registerBlock(Capabilities.ItemHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                return machine.getItemHandlerCap(side, true);
+            }
+            return null;
+        }, this);
+        event.registerBlock(Capabilities.FluidHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                return machine.getFluidHandlerCap(side, true);
+            }
+            return null;
+        }, this);
+        event.registerBlock(Capabilities.EnergyStorage.BLOCK, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof IEnergyStorage energyStorage) {
+                    return energyStorage;
+                }
+                var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), side,
+                        IEnergyStorage.class);
+                if (!list.isEmpty()) {
+                    return list.size() == 1 ? list.getFirst() : new EnergyStorageList(list);
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_LASER, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof ILaserContainer laserContainer) {
+                    return laserContainer;
+                }
+                var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), side,
+                        ILaserContainer.class);
+                if (!list.isEmpty()) {
+                    return list.size() == 1 ? list.getFirst() : new LaserContainerList(list);
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_COMPUTATION_PROVIDER, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof IOpticalComputationProvider computationProvider) {
+                    return computationProvider;
+                }
+                var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), side,
+                        IOpticalComputationProvider.class);
+                if (!list.isEmpty()) {
+                    return list.getFirst();
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_DATA_ACCESS, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof IDataAccessHatch dataAccess) {
+                    return dataAccess;
+                }
+                var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), side,
+                        IDataAccessHatch.class);
+                if (!list.isEmpty()) {
+                    return list.getFirst();
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_MONITOR_COMPONENT, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof MetaMachine machine) {
+                if (machine instanceof IMonitorComponent monitorComponent) {
+                    return monitorComponent;
+                }
+                var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), side,
+                        IMonitorComponent.class);
+                if (!list.isEmpty()) {
+                    return list.getFirst();
+                }
+            }
+            return null;
+        }, this);
+        if (GTCEu.Mods.isAE2Loaded()) {
+            event.registerBlock(AECapabilities.IN_WORLD_GRID_NODE_HOST, (level, pos, state, blockEntity, side) -> {
+                if (blockEntity instanceof MetaMachine machine) {
+                    if (machine instanceof IInWorldGridNodeHost nodeHost) {
+                        return nodeHost;
+                    }
+                    var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), null,
+                            IInWorldGridNodeHost.class);
+                    if (!list.isEmpty()) {
+                        // TODO wrap list in the future (or not.)
+                        return list.getFirst();
+                    }
+                }
+                return null;
+            }, this);
+        }
+    }
 
     static <T> List<T> getCapabilitiesFromTraits(List<MachineTrait> traits, @Nullable Direction accessSide,
                                                  Class<T> capability) {

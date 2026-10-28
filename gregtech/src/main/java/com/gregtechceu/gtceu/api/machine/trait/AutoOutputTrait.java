@@ -123,7 +123,22 @@ public class AutoOutputTrait extends MachineTrait implements IRenderingTrait, II
     }
 
     @Override
-    public void onMachineLoad() {  /* ported stub */ }
+    public void onMachineLoad() {
+        super.onMachineLoad();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateFluidOutputSubscription));
+            serverLevel.getServer().tell(new TickTask(0, this::updateItemOutputSubscription));
+        }
+        for (var handler : itemHandlers) {
+            if (handler instanceof NotifiableItemStackHandler notifiable)
+                itemSubs.add(notifiable.addChangedListener(this::updateItemOutputSubscription));
+        }
+
+        for (var handler : fluidHandlers) {
+            if (handler instanceof NotifiableFluidTank notifiable)
+                fluidSubs.add(notifiable.addChangedListener(this::updateFluidOutputSubscription));
+        }
+    }
 
     @Override
     public void onMachineUnload() {

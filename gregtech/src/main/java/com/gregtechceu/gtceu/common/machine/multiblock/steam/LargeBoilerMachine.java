@@ -75,10 +75,20 @@ public class LargeBoilerMachine extends WorkableMultiblockMachine implements IDi
     }
 
     @Override
-    public void onStructureFormed() {  /* ported stub */ }
+    public void onStructureFormed() {
+        super.onStructureFormed();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateSteamSubscription));
+        }
+    }
 
     @Override
-    public void onStructureInvalid() {  /* ported stub */ }
+    public void onStructureInvalid() {
+        super.onStructureInvalid();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateSteamSubscription));
+        }
+    }
 
     @Override
     public void onUnload() {
@@ -98,7 +108,70 @@ public class LargeBoilerMachine extends WorkableMultiblockMachine implements IDi
         }
     }
 
-    protected void updateCurrentTemperature() {  /* ported stub */ }
+    protected void updateCurrentTemperature() {
+        if (recipeLogic.isWorking()) {
+            if (getOffsetTimer() % 10 == 0) {
+                if (currentTemperature < getMaxTemperature()) {
+                    currentTemperature = Mth.clamp(currentTemperature + heatSpeed * 10, 0, getMaxTemperature());
+                }
+            }
+        } else if (currentTemperature > 0) {
+            currentTemperature -= getCoolDownRate();
+        }
+
+        if (isFormed() && getOffsetTimer() % TICKS_PER_STEAM_GENERATION == 0) {
+            var maxDrain = currentTemperature * throttle * TICKS_PER_STEAM_GENERATION /
+                    (ConfigHolder.INSTANCE.machines.largeBoilers.steamPerWater * 100);
+            if (currentTemperature < 100) {
+                steamGenerated = 0;
+            } else if (maxDrain > 0) { // if maxDrain is 0 because throttle is too low, skip trying to make steam
+                // drain water
+                var drainWater = List.of(SizedFluidIngredient.of(Fluids.WATER, maxDrain));
+                List<IRecipeHandler<?>> inputTanks = new ArrayList<>();
+                inputTanks.addAll(getCapabilitiesFlat(IO.IN, FluidRecipeCapability.CAP));
+                inputTanks.addAll(getCapabilitiesFlat(IO.BOTH, FluidRecipeCapability.CAP));
+                for (IRecipeHandler<?> tank : inputTanks) {
+                    drainWater = (List<SizedFluidIngredient>) tank.handleRecipe(IO.IN, null, drainWater, false);
+                    if (drainWater == null || drainWater.isEmpty()) {
+                        break;
+                    }
+                }
+                var drained = (drainWater == null || drainWater.isEmpty()) ? maxDrain :
+                        maxDrain - drainWater.getFirst().amount();
+
+                steamGenerated = drained * ConfigHolder.INSTANCE.machines.largeBoilers.steamPerWater;
+
+                if (drained > 0) {
+                    // fill steam
+                    var fillSteam = List.of(SizedFluidIngredient.of(GTMaterials.Steam.getFluid(steamGenerated)));
+                    List<IRecipeHandler<?>> outputTanks = new ArrayList<>();
+                    outputTanks.addAll(getCapabilitiesFlat(IO.OUT, FluidRecipeCapability.CAP));
+                    outputTanks.addAll(getCapabilitiesFlat(IO.BOTH, FluidRecipeCapability.CAP));
+                    for (IRecipeHandler<?> tank : outputTanks) {
+                        fillSteam = (List<SizedFluidIngredient>) tank.handleRecipe(IO.OUT, null, fillSteam, false);
+                        if (fillSteam == null) break;
+                    }
+                }
+
+                // check explosion
+                if (drained < maxDrain) {
+                    GTUtil.doExplosion(getLevel(), getBlockPos(), 2f);
+                    var center = getBlockPos().below().relative(getFrontFacing().getOpposite());
+                    if (GTValues.RNG.nextInt(100) > 80) {
+                        GTUtil.doExplosion(getLevel(), center, 2f);
+                    }
+                    for (Direction x : Direction.Plane.HORIZONTAL) {
+                        for (Direction y : Direction.Plane.HORIZONTAL) {
+                            if (GTValues.RNG.nextInt(100) > 80) {
+                                GTUtil.doExplosion(getLevel(), center.relative(x).relative(y), 2f);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        updateSteamSubscription();
+    }
 
     protected int getCoolDownRate() {
         return 1;

@@ -18,5 +18,20 @@ public class EnumTransformer<E extends Enum<E>> implements ValueTransformer<E> {
     }
 
     @Override
-    public E deserializeNBT(Tag tag, ValueTransformer.TransformerContext<E> context) { return null; /* ported stub */ }
+    public E deserializeNBT(Tag tag, ValueTransformer.TransformerContext<E> context) {
+        var enumString = ValueTransformer.assertTagType(StringTag.class, tag, context).getAsString();
+        E value = null;
+        try {
+            value = Enum.valueOf(enumClass, enumString);
+        } catch (IllegalArgumentException e) {
+            for (E val : enumClass.getEnumConstants()) {
+                if (val.name().toLowerCase().equals(enumString)) value = val;
+            }
+        }
+        if (value == null) {
+            throw new IllegalArgumentException(
+                    "Unknown enum constant: %s[%s]".formatted(enumClass.getName(), enumString));
+        }
+        return value;
+    }
 }

@@ -15,7 +15,7 @@ public final class GTComponentItemDecorator implements IItemDecorator {
 
     private GTComponentItemDecorator() {}
 
-    @Override
+    
     public boolean render(@NotNull GuiGraphics guiGraphics, @NotNull Font font,
                           ItemStack stack, int xOffset, int yOffset) { return false; /* ported stub */ }
 }

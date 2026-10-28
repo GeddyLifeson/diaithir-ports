@@ -43,31 +43,59 @@ public class TagPrefixItem extends Item {
         }
     }
 
-    @Override
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) { return (int)0; /* ported stub */ }
+    
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+        return getItemBurnTime();
+    }
 
     @OnlyIn(Dist.CLIENT)
     public static ItemColor tintColor(Material material) {
         return (itemStack, index) -> material.getLayerARGB(index);
     }
 
-    @Override
+    
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents,
-                                TooltipFlag isAdvanced) {  /* ported stub */ }
+                                TooltipFlag isAdvanced) {
+        super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
+        if (this.tagPrefix.tooltip() != null) {
+            this.tagPrefix.tooltip().accept(material, tooltipComponents);
+        }
+    }
 
     @Override
-    public String getDescriptionId() { return null; /* ported stub */ }
 
-    @Override
-    public Component getDescription() { return null; /* ported stub */ }
+
+    
+    public Component getDescription() {
+        return tagPrefix.getLocalizedName(material);
+    }
 
     @Override
     public Component getName(ItemStack stack) {
         return getDescription();
     }
 
-    @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {  /* ported stub */ }
+    
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+        super.inventoryTick(stack, level, entity, slotId, isSelected);
+        if (entity instanceof LivingEntity livingEntity) {
+            if (livingEntity.tickCount % 20 == 0) {
+                if (tagPrefix != TagPrefix.ingotHot || !material.hasProperty(PropertyKey.BLAST))
+                    return;
+
+                float heatDamage = ((material.getBlastTemperature() - 1750) / 1000.0F) + 2;
+                ItemStack armor = livingEntity.getItemBySlot(EquipmentSlot.CHEST);
+                if (!armor.isEmpty() && armor.getItem() instanceof ArmorComponentItem armorItem) {
+                    heatDamage *= armorItem.getArmorLogic().getHeatResistance();
+                }
+                if (heatDamage > 0.0) {
+                    livingEntity.hurt(level.damageSources().source(GTDamageTypes.HEAT), heatDamage);
+                } else if (heatDamage < 0.0) {
+                    livingEntity.hurt(livingEntity.damageSources().freeze(), -heatDamage);
+                }
+            }
+        }
+    }
 
     public int getItemBurnTime() {
         DustProperty property = material.isNull() ? null : material.getProperty(PropertyKey.DUST);

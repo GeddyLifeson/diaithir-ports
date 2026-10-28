@@ -51,7 +51,7 @@ public class OreBlockRenderer {
     }
 
     @ApiStatus.Internal
-    public static void reinitModels() { return null; /* ported stub */ }
+    public static void reinitModels() { /* ported stub */ }
 
     /// This is called for every combination of tag prefix + icon type + icon set
     protected static void copyOreModelWithBaseStone(TagPrefix tagPrefix, TagPrefix.OreType oreType,

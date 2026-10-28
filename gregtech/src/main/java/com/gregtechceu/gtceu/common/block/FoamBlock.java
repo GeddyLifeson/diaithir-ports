@@ -40,7 +40,13 @@ public class FoamBlock extends Block {
     }
 
     @Override
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {  /* ported stub */ }
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        super.randomTick(state, level, pos, random);
+        int lightLevel = (level.canSeeSky(pos) && level.isDay()) ? 16 : level.getRawBrightness(pos, 0);
+        if (random.nextInt(20 - lightLevel) == 0) {
+            level.setBlockAndUpdate(pos, getPetrifiedBlock(state));
+        }
+    }
 
     private BlockState getPetrifiedBlock(BlockState state) {
         var block = isReinforced ? GTBlocks.REINFORCED_STONE : GTBlocks.PETRIFIED_FOAM;

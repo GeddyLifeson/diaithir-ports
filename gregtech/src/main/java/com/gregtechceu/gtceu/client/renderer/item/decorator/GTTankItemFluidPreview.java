@@ -76,6 +76,6 @@ public class GTTankItemFluidPreview implements IItemDecorator {
         this.maxRenderCount = maxRenderCount;
     }
 
-    @Override
+    
     public boolean render(GuiGraphics guiGraphics, Font font, ItemStack itemStack, int x, int y) { return false; /* ported stub */ }
 }

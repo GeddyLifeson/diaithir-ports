@@ -110,7 +110,98 @@ public class VeinedVeinGenerator extends VeinGenerator {
 
     @Override
     public Map<BlockPos, OreBlockPlacer> generate(WorldGenLevel level, RandomSource random, GTOreDefinition entry,
-                                                  BlockPos origin) { return null; /* ported stub */ }
+                                                  BlockPos origin) {
+        Map<BlockPos, OreBlockPlacer> generatedBlocks = new Object2ObjectOpenHashMap<>();
+
+        Registry<DensityFunction> densityFunctions = level.registryAccess()
+                .registryOrThrow(Registries.DENSITY_FUNCTION);
+
+        RandomState randomState = level.getLevel().getChunkSource().randomState();
+        Blender blender;
+        if (level instanceof WorldGenRegion region) {
+            blender = Blender.of(region);
+        } else {
+            blender = Blender.empty();
+        }
+
+        final Blender finalizedBlender = blender;
+        DensityFunction veinToggle = mapToNoise(densityFunctions.get(GTWorldgen.NEW_ORE_VEIN_TOGGLE),
+                randomState);
+        DensityFunction veinRidged = mapToNoise(densityFunctions.get(GTWorldgen.NEW_ORE_VEIN_RIDGED),
+                randomState);
+
+        int size = entry.clusterSize().sample(random);
+
+        int radius = Mth.ceil(size / 2f);
+
+        int placedCount = 0;
+
+        int randOffsetX = random.nextInt(16);
+        int randOffsetY = random.nextInt(16);
+        int randOffsetZ = random.nextInt(16);
+
+        var posMin = origin.offset(-radius, -radius, -radius);
+        var posMax = origin.offset(+radius, +radius, +radius);
+
+        for (BlockPos chunkedPos : BlockPos.betweenClosed(posMin, posMax)) {
+            final int x = chunkedPos.getX();
+            final int y = chunkedPos.getY();
+            final int z = chunkedPos.getZ();
+
+            DensityFunction.FunctionContext functionContext = new DensityFunction.FunctionContext() {
+
+                @Override
+                public int blockX() {
+                    return x + randOffsetX;
+                }
+
+                @Override
+                public int blockY() {
+                    return y + randOffsetY;
+                }
+
+                @Override
+                public int blockZ() {
+                    return z + randOffsetZ;
+                }
+
+                @Override
+                public Blender getBlender() {
+                    return finalizedBlender;
+                }
+            };
+
+            double toggleNoise = veinToggle.compute(functionContext);
+            int blockY = origin.getY();
+            double absToggleNoise = Math.abs(toggleNoise);
+            int minY = blockY - this.minYLevel;
+            int maxY = this.maxYLevel - blockY;
+            if (minY < 0 || maxY < 0) {
+                continue;
+            }
+            int lowY = Math.min(maxY, minY);
+            double edgeRoundoff = Mth.clampedMap(lowY, 0.0, edgeRoundoffBegin, -maxEdgeRoundoff, 0.0);
+            if (absToggleNoise + edgeRoundoff < veininessThreshold) {
+                continue;
+            }
+            if (random.nextFloat() > entry.density()) {
+                continue;
+            }
+            if (veinRidged.compute(functionContext) >= 0.0) {
+                continue;
+            }
+            double chance = Mth.clampedMap(absToggleNoise, veininessThreshold, maxRichnessThreshold, minRichness,
+                    maxRichness);
+
+            BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(x, y, z);
+
+            final var randomSeed = random.nextLong(); // Fully deterministic regardless of chunk order
+            generatedBlocks.put(pos, (access, section) -> placeBlock(access, section, randomSeed, entry, chance,
+                    rareBlocks, pos, oreBlocks));
+        }
+
+        return generatedBlocks;
+    }
 
     private void placeBlock(BulkSectionAccess access, LevelChunkSection section, long randomSeed,
                             GTOreDefinition entry,

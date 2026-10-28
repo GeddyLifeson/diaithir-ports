@@ -69,7 +69,17 @@ public class CommonProxy {
         BLOCK_ENTITY_TYPES.register(eventBus);
     }
 
-    public static void init() {  /* ported stub */ }
+    public static void init() {
+        UIFactory.register(BlockEntityUIFactory.INSTANCE);
+        UIFactory.register(HeldItemUIFactory.INSTANCE);
+        UIFactory.register(UIEditorFactory.INSTANCE);
+        if (LDLib.isKubejsLoaded()) {
+            UIFactory.register(BlockUIJSFactory.INSTANCE);
+            UIFactory.register(ItemUIJSFactory.INSTANCE);
+        }
+        AnnotationDetector.init();
+        TypedPayloadRegistries.init();
+    }
 
     public static void loadComplete(FMLLoadCompleteEvent e) {
         e.enqueueWork(TypedPayloadRegistries::postInit);

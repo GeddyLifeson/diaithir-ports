@@ -117,7 +117,12 @@ public class GradientColor implements INBTSerializable<CompoundTag> {
         return list;
     }
 
-    private void loadFromTag(List<Vec2> data, ListTag list) {  /* ported stub */ }
+    private void loadFromTag(List<Vec2> data, ListTag list) {
+        data.clear();
+        for (int i = 0; i < list.size(); i += 2) {
+            data.add(new Vec2(list.getFloat(i), list.getFloat(i + 1)));
+        }
+    }
 
     @Override
     public CompoundTag serializeNBT(HolderLookup.Provider provider) {

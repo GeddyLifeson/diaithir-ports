@@ -25,13 +25,19 @@ public class GTCapabilityHelper {
     }
 
     @Nullable
-    public static IEnergyStorage getForgeEnergyItem(ItemStack itemStack) { return null; /* ported stub */ }
+    public static IEnergyStorage getForgeEnergyItem(ItemStack itemStack) {
+        return itemStack.getCapability(Capabilities.EnergyStorage.ITEM);
+    }
 
     @Nullable
-    public static IItemHandler getItemHandler(Level level, BlockPos pos, @Nullable Direction side) { return null; /* ported stub */ }
+    public static IItemHandler getItemHandler(Level level, BlockPos pos, @Nullable Direction side) {
+        return level.getCapability(Capabilities.ItemHandler.BLOCK, pos, side);
+    }
 
     @Nullable
-    public static IFluidHandler getFluidHandler(Level level, BlockPos pos, @Nullable Direction side) { return null; /* ported stub */ }
+    public static IFluidHandler getFluidHandler(Level level, BlockPos pos, @Nullable Direction side) {
+        return level.getCapability(Capabilities.FluidHandler.BLOCK, pos, side);
+    }
 
     @Nullable
     public static IEnergyContainer getEnergyContainer(Level level, BlockPos pos, @Nullable Direction side) {
@@ -64,7 +70,9 @@ public class GTCapabilityHelper {
     }
 
     @Nullable
-    public static IEnergyStorage getForgeEnergy(Level level, BlockPos pos, @Nullable Direction side) { return null; /* ported stub */ }
+    public static IEnergyStorage getForgeEnergy(Level level, BlockPos pos, @Nullable Direction side) {
+        return level.getCapability(Capabilities.EnergyStorage.BLOCK, pos, side);
+    }
 
     @Nullable
     public static IMaintenanceMachine getMaintenanceMachine(Level level, BlockPos pos, @Nullable Direction side) {

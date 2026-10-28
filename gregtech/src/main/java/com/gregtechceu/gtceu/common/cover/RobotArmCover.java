@@ -219,5 +219,9 @@ public class RobotArmCover extends ConveyorCover {
     }
 
     @Override
-    public void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
+    public void pasteConfig(ServerPlayer player, CompoundTag tag) {
+        setTransferMode(TransferMode.values()[tag.getInt("transferMode")]);
+        setGlobalTransferLimit(tag.getInt("transferLimit"));
+        super.pasteConfig(player, tag);
+    }
 }

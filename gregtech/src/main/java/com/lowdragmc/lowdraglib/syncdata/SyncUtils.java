@@ -9,7 +9,22 @@ import java.lang.reflect.Array;
 import java.util.Collection;
 
 public class SyncUtils {
-    public static boolean isChanged(@NotNull Object oldValue, @NotNull Object newValue) { return false; /* ported stub */ }
+    public static boolean isChanged(@NotNull Object oldValue, @NotNull Object newValue) {
+        if (oldValue instanceof ItemStack itemStack) {
+            if (!(newValue instanceof ItemStack)) {
+                return true;
+            }
+            return !ItemStack.matches(itemStack, (ItemStack) newValue);
+        }
+        if (oldValue instanceof FluidStack fluidStack) {
+            if (!(newValue instanceof FluidStack newFluid)) {
+                return true;
+            }
+            return !fluidStack.isFluidStackIdentical(newFluid);
+        }
+
+        return !oldValue.equals(newValue);
+    }
 
     @Deprecated
     public static Object copyWhenNecessary(Object value) {

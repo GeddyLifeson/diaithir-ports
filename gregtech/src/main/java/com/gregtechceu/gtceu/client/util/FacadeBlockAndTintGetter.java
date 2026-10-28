@@ -30,7 +30,7 @@ public class FacadeBlockAndTintGetter implements BlockAndTintGetter {
         this.blockEntity = blockEntity;
     }
 
-    @Override
+    
     public float getShade(Direction direction, boolean shade) { return (float)0; /* ported stub */ }
 
     @Override

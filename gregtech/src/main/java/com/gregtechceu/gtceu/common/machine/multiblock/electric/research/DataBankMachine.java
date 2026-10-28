@@ -51,7 +51,38 @@ public class DataBankMachine extends WorkableElectricMultiblockMachine
     }
 
     @Override
-    public void onStructureFormed() {  /* ported stub */ }
+    public void onStructureFormed() {
+        super.onStructureFormed();
+        List<IEnergyContainer> energyContainers = new ArrayList<>();
+        Long2ObjectMap<IO> ioMap = getMultiblockState().getMatchContext().getOrCreate("ioMap",
+                Long2ObjectMaps::emptyMap);
+        for (IMultiPart part : getParts()) {
+            IO io = ioMap.getOrDefault(part.self().getBlockPos().asLong(), IO.BOTH);
+            if (part instanceof IMaintenanceMachine maintenanceMachine) {
+                this.maintenance = maintenanceMachine;
+            }
+            if (io == IO.NONE || io == IO.OUT) continue;
+            var handlerLists = part.getRecipeHandlers();
+            for (var handlerList : handlerLists) {
+                if (!handlerList.isValid(io)) continue;
+                handlerList.getCapability(EURecipeCapability.CAP).stream()
+                        .filter(IEnergyContainer.class::isInstance)
+                        .map(IEnergyContainer.class::cast)
+                        .forEach(energyContainers::add);
+            }
+        }
+        this.energyContainer = new EnergyContainerList(energyContainers);
+        this.energyUsage = calculateEnergyUsage();
+
+        if (this.maintenance == null) {
+            onStructureInvalid();
+            return;
+        }
+
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateTickSubscription));
+        }
+    }
 
     protected int calculateEnergyUsage() {
         int receivers = 0;
@@ -83,7 +114,12 @@ public class DataBankMachine extends WorkableElectricMultiblockMachine
     }
 
     @Override
-    public void onLoad() {  /* ported stub */ }
+    public void onLoad() {
+        super.onLoad();
+        if (this.isFormed() && getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateTickSubscription));
+        }
+    }
 
     @Override
     public void onUnload() {

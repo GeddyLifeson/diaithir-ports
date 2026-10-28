@@ -24,5 +24,12 @@ public record ItemFilterBehaviour(Function<ItemStack, ItemFilter> filterCreator)
     }
 
     @Override
-    public ModularUI createUI(HeldItemUIFactory.HeldItemHolder holder, Player entityPlayer) { return null; /* ported stub */ }
+    public ModularUI createUI(HeldItemUIFactory.HeldItemHolder holder, Player entityPlayer) {
+        var held = holder.getHeld();
+        return new ModularUI(176, 157, holder, entityPlayer)
+                .background(GuiTextures.BACKGROUND)
+                .widget(new LabelWidget(5, 5, held.getDescriptionId()))
+                .widget(ItemFilter.loadFilter(held).openConfigurator((176 - 80) / 2, (60 - 55) / 2 + 15))
+                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7, 75, true));
+    }
 }

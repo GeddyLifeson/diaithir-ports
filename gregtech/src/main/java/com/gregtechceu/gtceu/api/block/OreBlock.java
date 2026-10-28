@@ -31,7 +31,17 @@ public class OreBlock extends MaterialBlock {
 
     @Override
     protected @NotNull InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
-                                                        Player player, BlockHitResult hitResult) { return null; /* ported stub */ }
+                                                        Player player, BlockHitResult hitResult) {
+        if (!level.isClientSide) {
+            ServerCache.instance.prospectByOreMaterial(
+                    level.dimension(),
+                    this.material,
+                    pos,
+                    (ServerPlayer) player,
+                    ConfigHolder.INSTANCE.compat.minimap.oreBlockProspectRange);
+        }
+        return InteractionResult.PASS;
+    }
 
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,

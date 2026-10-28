@@ -29,10 +29,24 @@ public class FluidStackTypeAdapter implements TypeAdapterFactory {
         }
 
         @Override
-        public void write(final JsonWriter out, final FluidStack value) {  /* ported stub */ }
+        public void write(final JsonWriter out, final FluidStack value) {
+            if (value == null) {
+                gson.toJson(JsonNull.INSTANCE, out);
+                return;
+            }
+            gson.toJson(new JsonPrimitive(value.save(Platform.getFrozenRegistry()).toString()), out);
+        }
 
         @Override
-        public FluidStack read(final JsonReader in) { return null; /* ported stub */ }
+        public FluidStack read(final JsonReader in) {
+            final JsonElement jsonElement = gson.fromJson(in, JsonElement.class);
+            if (!jsonElement.isJsonObject()) return null;
+            try {
+                return FluidStack.parse(Platform.getFrozenRegistry(), TagParser.parseTag(jsonElement.getAsString())).orElse(FluidStack.EMPTY);
+            } catch (CommandSyntaxException e) {
+                return FluidStack.EMPTY;
+            }
+        }
 
     }
 

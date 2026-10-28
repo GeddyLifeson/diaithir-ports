@@ -18,5 +18,13 @@ public class ShapedFluidContainerRecipeBuilder extends ShapedRecipeBuilder {
         super(id);
     }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+        ShapedRecipe recipe = new ShapedFluidContainerRecipe(
+                Objects.requireNonNullElse(this.group, ""),
+                RecipeBuilder.determineBookCategory(this.category),
+                ShapedRecipePattern.of(key, rows),
+                this.output, false);
+        consumer.accept(recipeId.withPrefix("shaped/"), recipe, null);
+    }
 }

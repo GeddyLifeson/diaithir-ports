@@ -98,9 +98,39 @@ public final class CustomToolRecipes {
         ToolHeadReplaceRecipe.setToolHeadForTool(toolHeadWireCutter, GTToolType.WIRE_CUTTER_IV);
     }
 
-    private static void registerPowerUnitRecipes(@NotNull RecipeOutput provider) {  /* ported stub */ }
+    private static void registerPowerUnitRecipes(@NotNull RecipeOutput provider) {
+        for (int tier : powerUnitItems.keySet()) {
+            List<ItemEntry<? extends Item>> tieredBatteryItems = batteryItems.get(tier);
+            for (ItemEntry<? extends Item> batteryItem : tieredBatteryItems) {
+                if (powerUnitItems.get(tier) != null) {
+                    ItemStack batteryStack = batteryItem.asStack();
+                    long maxCharge = GTCapabilityHelper.getElectricItem(batteryStack).getMaxCharge();
+                    ItemStack powerUnitStack = ToolItemHelper.getMaxChargeOverrideStack(powerUnitItems.get(tier).get(),
+                            maxCharge);
+                    String recipeName = String.format("%s_%s",
+                            BuiltInRegistries.ITEM.getKey(powerUnitItems.get(tier).get()).getPath(),
+                            BuiltInRegistries.ITEM.getKey(batteryItem.get()).getPath());
 
-    private static void registerCustomToolRecipes(@NotNull RecipeOutput provider) {  /* ported stub */ }
+                    VanillaRecipeHelper.addShapedEnergyTransferRecipe(provider, true, false, true, recipeName,
+                            Ingredient.of(batteryStack), powerUnitStack,
+                            "S d", "GMG", "PBP",
+                            'M', motorItems.get(tier).asStack(),
+                            'S', new MaterialEntry(screw, baseMaterials.get(tier)),
+                            'P', new MaterialEntry(plate, baseMaterials.get(tier)),
+                            'G', new MaterialEntry(gearSmall, baseMaterials.get(tier)),
+                            'B', batteryStack);
+                }
+            }
+        }
+    }
+
+    private static void registerCustomToolRecipes(@NotNull RecipeOutput provider) {
+        registerFlintToolRecipes(provider);
+        registerSoftToolRecipes(provider);
+        registerElectricRecipes(provider);
+
+        SpecialRecipeBuilder.special(ToolHeadReplaceRecipe::new).save(provider, "gtceu:crafting/replace_tool_head");
+    }
 
     private static void registerFlintToolRecipes(@NotNull RecipeOutput provider) {
         final MaterialEntry flint = new MaterialEntry(TagPrefix.gem, GTMaterials.Flint);

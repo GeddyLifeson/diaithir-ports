@@ -55,5 +55,10 @@ public class GTSoundEntries {
         registerSounds();
     }
 
-    private static void registerSounds() {  /* ported stub */ }
+    private static void registerSounds() {
+        for (SoundEntry entry : GTRegistries.SOUNDS) {
+            entry.register(soundEvent -> GTRegistries.register(BuiltInRegistries.SOUND_EVENT, soundEvent.getLocation(),
+                    soundEvent));
+        }
+    }
 }

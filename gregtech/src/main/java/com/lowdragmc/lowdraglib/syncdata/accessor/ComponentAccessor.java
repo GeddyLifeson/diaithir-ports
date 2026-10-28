@@ -18,8 +18,16 @@ public class ComponentAccessor extends CustomObjectAccessor<Component> {
     }
 
     @Override
-    public ITypedPayload<?> serialize(AccessorOp op, Component value, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public ITypedPayload<?> serialize(AccessorOp op, Component value, HolderLookup.Provider provider) {
+        return StringPayload.of(Component.Serializer.toJson(value, provider));
+    }
 
     @Override
-    public Component deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public Component deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        if (payload instanceof StringPayload stringPayload) {
+            var json = stringPayload.getPayload();
+            return Component.Serializer.fromJson(json, provider);
+        }
+        return null;
+    }
 }

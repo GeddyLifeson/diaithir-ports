@@ -143,8 +143,21 @@ public class AdvancedItemDetectorCover extends ItemDetectorCover implements IUIC
     }
 
     @Override
-    public CompoundTag copyConfig(CompoundTag tag) { return null; /* ported stub */ }
+    public CompoundTag copyConfig(CompoundTag tag) {
+        tag.putInt("min", minValue);
+        tag.putInt("max", maxValue);
+        tag.putBoolean("latched", isLatched);
+        tag.put("filter", filterHandler.getFilterItem().save(coverHolder.getLevel().registryAccess()));
+        return super.copyConfig(tag);
+    }
 
     @Override
-    public void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
+    public void pasteConfig(ServerPlayer player, CompoundTag tag) {
+        setMinValue(tag.getInt("min"));
+        setMaxValue(tag.getInt("max"));
+        setLatched(tag.getBoolean("latched"));
+        filterHandler.setFilterItem(ItemStack.parse(coverHolder.getLevel().registryAccess(), tag.getCompound("filter"))
+                .orElse(ItemStack.EMPTY));
+        super.pasteConfig(player, tag);
+    }
 }

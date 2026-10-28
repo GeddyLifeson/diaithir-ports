@@ -50,7 +50,9 @@ public class ActiveBlock extends Block {
         return state.getValue(ACTIVE);
     }
 
-    @Override
+    
     public BlockState getAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
-                                    @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) { return null; /* ported stub */ }
+                                    @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
+        return defaultBlockState();
+    }
 }

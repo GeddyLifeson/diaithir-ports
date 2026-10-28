@@ -74,7 +74,7 @@ public class ArmorProperty implements IMaterialProperty {
     private boolean dyeable;/* ported: removed */
 
     @Getter
-    private Holder<ArmorMaterial> armorMaterial;
+    private ArmorMaterial armorMaterial;
     private Material material;
 
     public ArmorProperty(int durabilityMultiplier, int[] protectionValues) {
@@ -90,7 +90,29 @@ public class ArmorProperty implements IMaterialProperty {
     }
 
     @Override
-    public void verifyProperty(MaterialProperties properties) {  /* ported stub */ }
+    public void verifyProperty(MaterialProperties properties) {
+        if (this.material == null) {
+            this.material = properties.getMaterial();
+        }
+
+        if (this.repairIngredient == null && noRepair) {
+            this.repairIngredient = () -> null;
+        } else if (this.repairIngredient == null) {
+            this.repairIngredient = GTMemoizer
+                    .memoize(() -> Ingredient.of(ChemicalHelper.getTag(TagPrefix.plate, material)));
+        }
+
+        if (this.layers == null) {
+            this.layers = List.of(new ArmorMaterial.Layer(this.textureName, "", this.dyeable));
+        }
+        if (this.armorMaterial == null) {
+            GTRegistrate registrate = GTRegistrate.createIgnoringListenerErrors(this.material.getModid());
+            this.armorMaterial = registrate.generic(this.material.getName(), Registries.ARMOR_MATERIAL,
+                    () -> new ArmorMaterial(protectionValues, enchantability, sound, repairIngredient,
+                            layers, toughness, knockbackResistance))
+                    .register();
+        }
+    }
 
     @SuppressWarnings("unused") // API, need to treat all of these as used
     public static class Builder {

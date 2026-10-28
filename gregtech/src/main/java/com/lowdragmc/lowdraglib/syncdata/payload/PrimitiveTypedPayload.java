@@ -325,7 +325,8 @@ public abstract class PrimitiveTypedPayload<T> implements ITypedPayload<T> {
         }
 
         @Override
-        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        }
 
         @Override
         public Integer getPayload() {
@@ -352,7 +353,8 @@ public abstract class PrimitiveTypedPayload<T> implements ITypedPayload<T> {
         }
 
         @Override
-        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        }
 
         @Override
         public Long getPayload() {
@@ -379,7 +381,8 @@ public abstract class PrimitiveTypedPayload<T> implements ITypedPayload<T> {
         }
 
         @Override
-        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        }
 
         @Override
         public Boolean getPayload() {
@@ -406,7 +409,8 @@ public abstract class PrimitiveTypedPayload<T> implements ITypedPayload<T> {
         }
 
         @Override
-        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        }
 
         @Override
         public Float getPayload() {
@@ -433,7 +437,8 @@ public abstract class PrimitiveTypedPayload<T> implements ITypedPayload<T> {
         }
 
         @Override
-        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        }
 
         @Override
         public Double getPayload() {
@@ -460,7 +465,8 @@ public abstract class PrimitiveTypedPayload<T> implements ITypedPayload<T> {
         }
 
         @Override
-        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        }
 
         @Override
         public Byte getPayload() {
@@ -487,7 +493,8 @@ public abstract class PrimitiveTypedPayload<T> implements ITypedPayload<T> {
         }
 
         @Override
-        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        }
 
         @Override
         public Short getPayload() {
@@ -514,7 +521,8 @@ public abstract class PrimitiveTypedPayload<T> implements ITypedPayload<T> {
         }
 
         @Override
-        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+        public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        }
 
         @Override
         public Character getPayload() {

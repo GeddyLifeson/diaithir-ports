@@ -23,7 +23,9 @@ public class StringPayload extends ObjectTypedPayload<String> {
     }
 
     @Override
-    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        payload = tag.getAsString();
+    }
 
     public static StringPayload of(String value) {
         var payload = new StringPayload();

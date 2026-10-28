@@ -551,7 +551,16 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
         return null;
     }
 
-    public void addDebugOverlayText(Consumer<String> lines) {  /* ported stub */ }
+    public void addDebugOverlayText(Consumer<String> lines) {
+        lines.accept(ChatFormatting.UNDERLINE + "Targeted Machine: ");
+        lines.accept(this.getDefinition().getId().toString());
+
+        // add render state info
+        MachineRenderState renderState = this.getRenderState();
+        for (var property : renderState.getValues().entrySet()) {
+            lines.accept(ModelUtils.getPropertyValueString(property));
+        }
+    }
 
     public MachineDefinition getDefinition() {
         if (getBlockState().getBlock() instanceof MetaMachineBlock machineBlock) {

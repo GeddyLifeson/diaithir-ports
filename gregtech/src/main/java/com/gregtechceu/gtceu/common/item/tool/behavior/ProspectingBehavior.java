@@ -28,7 +28,7 @@ import java.util.function.Function;
 public class ProspectingBehavior implements IToolBehavior<ProspectingBehavior> {
 
     public static final ProspectingBehavior INSTANCE = new ProspectingBehavior();
-    public static final Codec<ProspectingBehavior> CODEC = Codec.unit(INSTANCE);
+    public static final Codec<ProspectingBehavior> CODEC = com.mojang.serialization.MapCodec.unit(INSTANCE).codec();
     public static final StreamCodec<ByteBuf, ProspectingBehavior> STREAM_CODEC = StreamCodec.unit(INSTANCE);
 
     @Override

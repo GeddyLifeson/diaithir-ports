@@ -67,9 +67,11 @@ public abstract class GTExplosiveBlock extends Block {
         return false;
     }
 
-    @Override
-    public void onCaughtFire(BlockState state, Level level, BlockPos pos, @Nullable Direction face,
-                             @Nullable LivingEntity igniter) {  /* ported stub */ }
+    
+    public boolean onCaughtFire(BlockState state, Level level, BlockPos pos, @Nullable Direction face,
+                             @Nullable LivingEntity igniter) {
+        explode(level, pos, igniter);
+    }
 
     public void explode(Level level, BlockPos pos, @Nullable LivingEntity exploder) {
         if (!level.isClientSide()) {
@@ -81,12 +83,30 @@ public abstract class GTExplosiveBlock extends Block {
         }
     }
 
-    @Override
-    public void wasExploded(Level level, BlockPos pos, Explosion explosion) {  /* ported stub */ }
+    
+    public void wasExploded(Level level, BlockPos pos, Explosion explosion) {
+        if (!level.isClientSide) {
+            GTExplosiveEntity entity = createEntity(level, pos, explosion.getIndirectSourceEntity());
+            entity.setFuse(level.random.nextInt(fuseLength / 4) + fuseLength / 8);
+            level.addFreshEntity(entity);
+        }
+    }
 
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
-                                              Player player, InteractionHand hand, BlockHitResult hit) { return null; /* ported stub */ }
+                                              Player player, InteractionHand hand, BlockHitResult hit) {
+        if (stack.canPerformAction(ItemAbilities.FIRESTARTER_LIGHT)) {
+            this.explode(level, pos, player);
+            level.removeBlock(pos, false);
+            if (stack.isDamageableItem()) {
+                stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+            } else if (!player.isCreative()) {
+                stack.shrink(1);
+            }
+            return InteractionResult.SUCCESS;
+        }
+        return super.useItemOn(stack, state, level, pos, player, hand, hit);
+    }
 
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
@@ -96,8 +116,16 @@ public abstract class GTExplosiveBlock extends Block {
         return super.playerWillDestroy(level, pos, state, player);
     }
 
-    @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {  /* ported stub */ }
+    
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        super.entityInside(state, level, pos, entity);
+        if (!level.isClientSide && entity instanceof Arrow arrow) {
+            if (arrow.isOnFire()) {
+                this.explode(level, pos, arrow.getOwner() instanceof LivingEntity living ? living : null);
+                level.removeBlock(pos, false);
+            }
+        }
+    }
 
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
@@ -122,11 +150,26 @@ public abstract class GTExplosiveBlock extends Block {
         return super.getDrops(state, params);
     }
 
-    @Override
+    
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos,
-                                boolean movedByPiston) {  /* ported stub */ }
+                                boolean movedByPiston) {
+        if (canRedstoneActivate) {
+            if (level.hasNeighborSignal(pos)) {
+                this.explode(level, pos, null);
+                level.removeBlock(pos, false);
+            }
+        }
+    }
 
-    @Override
+    
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag flag) {  /* ported stub */ }
+                                TooltipFlag flag) {
+        super.appendHoverText(stack, context, tooltip, flag);
+        if (explodeOnMine) {
+            tooltip.add(Component.translatable("block.gtceu.explosive.breaking_tooltip"));
+        }
+        if (!canRedstoneActivate) {
+            tooltip.add(Component.translatable("block.gtceu.explosive.lighting_tooltip"));
+        }
+    }
 }

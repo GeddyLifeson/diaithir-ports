@@ -11,7 +11,7 @@ public class ArmorItem extends Item {
     protected final ArmorMaterial material;
 
     public ArmorItem(ArmorMaterial material, ArmorType type, Properties properties) {
-        super(properties.humanoidArmor(material, type));
+        super(com.gregtechceu.gtceu.common.item.armor.GTArmorMaterials.apply(properties, material, type));
         this.type = type;
         this.material = material;
     }

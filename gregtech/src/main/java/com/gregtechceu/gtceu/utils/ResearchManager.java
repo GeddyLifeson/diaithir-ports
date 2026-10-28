@@ -130,9 +130,29 @@ public final class ResearchManager {
                 GTRecipeSerializer.GT_RECIPE_TYPE_STREAM_CODEC, ResearchItem::recipeType,
                 ResearchItem::new);
 
-        @Override
+        
         public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder,
-                                 TooltipFlag tooltipFlag) {  /* ported stub */ }
+                                 TooltipFlag tooltipFlag) {
+            Collection<GTRecipe> recipes = recipeType().getDataStickEntry(researchId());
+            if (recipes == null || recipes.isEmpty()) {
+                return;
+            }
+            tooltipAdder.accept(Component.translatable("behavior.data_item.title", recipeType().getName()));
+
+            Collection<ItemStack> added = new ObjectOpenHashSet<>();
+            outer:
+            for (GTRecipe recipe : recipes) {
+                ItemStack output = ItemRecipeCapability.CAP
+                        .of(recipe.getOutputContents(ItemRecipeCapability.CAP).getFirst().content)
+                        .getItems()[0];
+                for (var item : added) {
+                    if (output.is(item.getItem())) continue outer;
+                }
+                if (added.add(output)) {
+                    tooltipAdder.accept(Component.translatable("behavior.data_item.data", output.getHoverName()));
+                }
+            }
+        }
     }
 
     public static class DataStickCopyScannerLogic implements GTRecipeType.ICustomRecipeLogic {

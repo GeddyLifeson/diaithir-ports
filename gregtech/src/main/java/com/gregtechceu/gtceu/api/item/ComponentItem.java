@@ -78,9 +78,15 @@ public class ComponentItem extends Item
         items.add(new ItemStack(this));
     }
 
-    @Override
+    
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents,
-                                TooltipFlag isAdvanced) {  /* ported stub */ }
+                                TooltipFlag isAdvanced) {
+        for (IItemComponent component : components) {
+            if (component instanceof IAddInformation addInformation) {
+                addInformation.appendHoverText(stack, context, tooltipComponents, isAdvanced);
+            }
+        }
+    }
 
     @Override
     public boolean isBarVisible(ItemStack stack) {
@@ -125,11 +131,25 @@ public class ComponentItem extends Item
         return super.getDefaultAttributeModifiers(stack);
     }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) { return false; /* ported stub */ }
+    
+    public boolean isEnchantable(ItemStack stack) {
+        for (IItemComponent component : components) {
+            if (component instanceof IEnchantableItem enchantableItem && enchantableItem.isEnchantable(stack)) {
+                return true;
+            }
+        }
+        return super.isEnchantable(stack);
+    }
 
-    @Override
-    public int getEnchantmentValue(ItemStack stack) { return (int)0; /* ported stub */ }
+    
+    public int getEnchantmentValue(ItemStack stack) {
+        for (IItemComponent component : components) {
+            if (component instanceof IEnchantableItem enchantableItem) {
+                return enchantableItem.getEnchantmentValue(stack);
+            }
+        }
+        return super.getEnchantmentValue(stack);
+    }
 
     @Override
     public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
@@ -142,8 +162,15 @@ public class ComponentItem extends Item
         return super.supportsEnchantment(stack, enchantment);
     }
 
-    @Override
-    public boolean canPerformAction(ItemStack stack, ItemAbility action) { return false; /* ported stub */ }
+    
+    public boolean canPerformAction(ItemStack stack, ItemAbility action) {
+        for (IItemComponent component : components) {
+            if (component instanceof IAbilityItem abilityItem && abilityItem.canPerformAction(stack, action)) {
+                return true;
+            }
+        }
+        return super.canPerformAction(stack, action);
+    }
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
@@ -159,7 +186,17 @@ public class ComponentItem extends Item
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand usedHand) { return null; /* ported stub */ }
+    public InteractionResult use(Level level, Player player, InteractionHand usedHand) {
+        for (IItemComponent component : components) {
+            if (component instanceof IInteractionItem interactionItem) {
+                var result = interactionItem.use(player.getItemInHand(usedHand), level, player, usedHand);
+                if (result.getResult() != InteractionResult.PASS) {
+                    return result;
+                }
+            }
+        }
+        return super.use(level, player, usedHand);
+    }
 
     @Override
     public InteractionResult onItemUseFirst(ItemStack itemStack, UseOnContext context) {
@@ -220,8 +257,16 @@ public class ComponentItem extends Item
         return InteractionResult.PASS;
     }
 
-    @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) { return false; /* ported stub */ }
+    
+    public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        boolean result = false;
+        for (IItemComponent component : components) {
+            if (component instanceof IInteractionItem interactionItem) {
+                result |= interactionItem.hurtEnemy(stack, target, attacker);
+            }
+        }
+        return result;
+    }
 
     @Override
     public Component getName(ItemStack stack) {
@@ -236,8 +281,18 @@ public class ComponentItem extends Item
         return super.getName(stack);
     }
 
-    @Override
-    public String getDescriptionId(ItemStack stack) { return null; /* ported stub */ }
+    
+    public String getDescriptionId(ItemStack stack) {
+        for (IItemComponent component : components) {
+            if (component instanceof ICustomDescriptionId customDescriptionId) {
+                String langId = customDescriptionId.getItemDescriptionId(stack);
+                if (langId != null) {
+                    return langId;
+                }
+            }
+        }
+        return super.getDescriptionId(stack);
+    }
 
     @Override
     @Nullable
@@ -261,14 +316,34 @@ public class ComponentItem extends Item
         return null;
     }
 
-    @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {  /* ported stub */ }
+    
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+        for (IItemComponent component : components) {
+            if (component instanceof IItemLifeCycle lifeCycle) {
+                lifeCycle.inventoryTick(stack, level, entity, slotId, isSelected);
+            }
+        }
+    }
 
-    @Override
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) { return null; /* ported stub */ }
+    
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+        for (IItemComponent component : components) {
+            if (component instanceof IRecipeRemainder recipeRemainder) {
+                return recipeRemainder.getRecipeRemained(itemStack);
+            }
+        }
+        return super.getCraftingRemainingItem(itemStack);
+    }
 
-    @Override
-    public boolean hasCraftingRemainingItem(ItemStack stack) { return false; /* ported stub */ }
+    
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        for (IItemComponent component : components) {
+            if (component instanceof IRecipeRemainder recipeRemainder) {
+                return recipeRemainder.getRecipeRemained(stack) != ItemStack.EMPTY;
+            }
+        }
+        return super.hasCraftingRemainingItem(stack);
+    }
 
     @Override
     public boolean doesSneakBypassUse(ItemStack stack, LevelReader level, BlockPos pos, Player player) {
@@ -281,14 +356,35 @@ public class ComponentItem extends Item
         return result;
     }
 
-    @Override
-    public @Nullable FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) { return null; /* ported stub */ }
+    
+    public @Nullable FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
+        for (IItemComponent component : components) {
+            if (component instanceof IEdibleItem foodBehavior) {
+                return foodBehavior.getFoodProperties(stack, entity);
+            }
+        }
+        return super.getFoodProperties(stack, entity);
+    }
 
-    @Override
-    public SoundEvent getEatingSound() { return null; /* ported stub */ }
+    
+    public SoundEvent getEatingSound() {
+        for (IItemComponent component : components) {
+            if (component instanceof IEdibleItem foodBehavior) {
+                return foodBehavior.getEatingSound();
+            }
+        }
+        return super.getEatingSound();
+    }
 
-    @Override
-    public SoundEvent getDrinkingSound() { return null; /* ported stub */ }
+    
+    public SoundEvent getDrinkingSound() {
+        for (IItemComponent component : components) {
+            if (component instanceof IEdibleItem foodBehavior) {
+                return foodBehavior.getDrinkingSound();
+            }
+        }
+        return super.getDrinkingSound();
+    }
 
     /**
      * Attempts to get a fully charged variant of this electric item

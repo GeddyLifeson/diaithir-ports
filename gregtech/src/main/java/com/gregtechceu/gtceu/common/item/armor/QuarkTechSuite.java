@@ -237,7 +237,35 @@ public class QuarkTechSuite extends ArmorLogicSuite implements IStepAssist {
         return false;
     }
 
-    public boolean supplyFood(@NotNull IElectricItem item, Player player) { return false; /* ported stub */ }
+    public boolean supplyFood(@NotNull IElectricItem item, Player player) {
+        if (item.canUse(energyPerUse / 10) && player.getFoodData().needsFood()) {
+            int slotId = -1;
+            IItemHandler playerInv = player.getCapability(Capabilities.ItemHandler.ENTITY);
+            if (playerInv instanceof IItemHandlerModifiable items) {
+                for (int i = 0; i < items.getSlots(); i++) {
+                    ItemStack current = items.getStackInSlot(i);
+                    if (current.getFoodProperties(player) != null) {
+                        slotId = i;
+                        break;
+                    }
+                }
+
+                if (slotId > -1) {
+                    ItemStack stack = items.getStackInSlot(slotId);
+                    InteractionResult result = ArmorUtils.eat(player, stack);
+                    stack = result.getObject();
+                    if (stack.isEmpty())
+                        items.setStackInSlot(slotId, ItemStack.EMPTY);
+
+                    if (result.getResult() == InteractionResult.SUCCESS)
+                        item.discharge(energyPerUse / 10, item.getTier(), true, false, false);
+
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     public static void removeNegativeEffects(@NotNull IElectricItem item, Player player) {
         for (MobEffectInstance effect : new LinkedList<>(player.getActiveEffects())) {

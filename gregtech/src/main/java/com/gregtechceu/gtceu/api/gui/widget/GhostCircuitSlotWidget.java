@@ -47,7 +47,33 @@ public class GhostCircuitSlotWidget extends SlotWidget {
     }
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        if (isMouseOverElement(mouseX, mouseY) && gui != null) {
+            if (button == 0 && Screen.hasShiftDown()) {
+                // open popup on shift-left-click
+                if (!isConfiguratorOpen()) {
+                    this.gui.widget(configurator = createConfigurator());
+                } else {
+                    this.gui.mainGroup.removeWidget(configurator);
+                    configurator = null;
+                }
+            } else if (button == 0) {
+                // increment on left-click
+                int newValue = getNextValue(true);
+                setCircuitValue(newValue);
+            } else if (button == 1 && Screen.hasShiftDown()) {
+                // clear on shift-right-click
+                this.circuitInventory.setStackInSlot(0, ItemStack.EMPTY);
+                writeClientAction(SET_TO_EMPTY, buf -> {});
+            } else if (button == 1) {
+                // decrement on right-click
+                int newValue = getNextValue(false);
+                setCircuitValue(newValue);
+            }
+            return true;
+        }
+        return false;
+    }
 
     private int getNextValue(boolean increment) {
         int currentValue = IntCircuitBehaviour.getCircuitConfiguration(this.circuitInventory.getStackInSlot(0));

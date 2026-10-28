@@ -153,7 +153,89 @@ public class FluidPipeBlockEntity extends PipeBlockEntity<FluidPipeType, FluidPi
         }
     }
 
-    private void distributeFluid(int channel, CustomFluidTank tank, FluidStack fluid) {  /* ported stub */ }
+    private void distributeFluid(int channel, CustomFluidTank tank, FluidStack fluid) {
+        // Tank, From, Amount to receive
+        List<FluidTransaction> tanks = new ArrayList<>();
+        int amount = fluid.getAmount();
+
+        FluidStack maxFluid = fluid.copy();
+        double availableCapacity = 0;
+
+        for (byte i = 0, j = (byte) GTValues.RNG.nextInt(6); i < 6; i++) {
+            // Get a list of tanks accepting fluids, and what side they're on
+            byte side = (byte) ((i + j) % 6);
+            Direction facing = GTUtil.DIRECTIONS[side];
+
+            if (!isConnected(facing) || (lastReceivedFrom & (1 << side)) != 0) {
+                continue;
+            }
+
+            IFluidHandler fluidHandler = getLevel().getCapability(Capabilities.FluidHandler.BLOCK,
+                    getBlockPos().relative(facing), facing.getOpposite());
+            if (fluidHandler == null) continue;
+
+            IFluidHandlerModifiable pipeTank = tank;
+            CoverBehavior cover = getCoverContainer().getCoverAtSide(facing);
+
+            // pipeTank should only be determined by the cover attached to the actual pipe
+            if (cover != null) {
+                pipeTank = cover.getFluidHandlerCap(pipeTank);
+                // Shutter covers return null capability when active, so check here to prevent NPE
+                if (pipeTank == null || checkForPumpCover(cover)) continue;
+            } else {
+                ICoverable coverable = getLevel().getCapability(GTCapability.CAPABILITY_COVERABLE,
+                        getBlockPos().relative(facing), facing.getOpposite());
+                if (coverable != null) {
+                    cover = coverable.getCoverAtSide(facing.getOpposite());
+                    if (checkForPumpCover(cover)) continue;
+                }
+            }
+
+            FluidStack drainable = pipeTank.drain(maxFluid, IFluidHandler.FluidAction.SIMULATE);
+            if (drainable.isEmpty() || drainable.getAmount() <= 0) {
+                continue;
+            }
+
+            int filled = Math.min(fluidHandler.fill(maxFluid, IFluidHandler.FluidAction.SIMULATE),
+                    drainable.getAmount());
+
+            if (filled > 0) {
+                tanks.add(new FluidTransaction(fluidHandler, pipeTank, filled));
+                availableCapacity += filled;
+            }
+            maxFluid.setAmount(amount); // Because some mods do actually modify input fluid stack
+        }
+
+        if (availableCapacity <= 0)
+            return;
+
+        // How much of this fluid is available for distribution?
+        final double maxAmount = Math.min(getCapacityPerTank() / 2, fluid.getAmount());
+
+        // Now distribute
+        for (FluidTransaction transaction : tanks) {
+            if (availableCapacity > maxAmount) {
+                // Distribute fluids based on percentage available space at destination
+                transaction.amount = Mth.floor(transaction.amount * maxAmount / availableCapacity);
+            }
+            if (transaction.amount == 0) {
+                if (tank.getFluidAmount() <= 0) break; // If there is no more stored fluid, stop transferring to prevent
+                // dupes
+                transaction.amount = 1; // If the percent is not enough to give at least 1L, try to give 1L
+            } else if (transaction.amount < 0) {
+                continue;
+            }
+
+            FluidStack toInsert = fluid.copy();
+            if (toInsert.isEmpty() || toInsert.getFluid() == Fluids.EMPTY) continue;
+            toInsert.setAmount(transaction.amount);
+
+            int inserted = transaction.target.fill(toInsert, IFluidHandler.FluidAction.EXECUTE);
+            if (inserted > 0) {
+                transaction.pipeTank.drain(inserted, IFluidHandler.FluidAction.EXECUTE);
+            }
+        }
+    }
 
     private boolean checkForPumpCover(@Nullable CoverBehavior cover) {
         if (cover instanceof PumpCover coverPump) {

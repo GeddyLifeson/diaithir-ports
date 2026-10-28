@@ -93,7 +93,60 @@ public class LighterBehavior implements IDurabilityBar, IInteractionItem, IAddIn
     }
 
     @Override
-    public InteractionResult onItemUseFirst(ItemStack itemStack, UseOnContext context) { return null; /* ported stub */ }
+    public InteractionResult onItemUseFirst(ItemStack itemStack, UseOnContext context) {
+        Level level = context.getLevel();
+        Player player = context.getPlayer();
+        BlockPos pos = context.getClickedPos();
+        Direction clickedFace = context.getClickedFace();
+        BlockState state = level.getBlockState(pos);
+        Block block = state.getBlock();
+
+        boolean isOpen = !canOpen || itemStack.getOrDefault(GTDataComponents.LIGHTER_OPEN, false);
+        if (isOpen && (player == null || !player.isSecondaryUseActive())) {
+            // check if it's "tnt-like" in that it implements the same method for igniting it
+            if (classImplementsOnCaughtFire(block.getClass())) {
+                if (!consumeFuel(player, itemStack)) return InteractionResult.PASS;
+
+                state.onCaughtFire(level, pos, clickedFace, player);
+                FluidState fluidState = level.getFluidState(pos);
+                level.setBlock(pos, fluidState.createLegacyBlock(), Block.UPDATE_ALL_IMMEDIATE);
+                return InteractionResult.SUCCESS;
+            }
+            if ((CampfireBlock.canLight(state) || CandleBlock.canLight(state) || CandleCakeBlock.canLight(state))) {
+                if (!consumeFuel(player, itemStack)) return InteractionResult.PASS;
+
+                level.setBlock(pos, state.setValue(LIT, true), Block.UPDATE_ALL_IMMEDIATE);
+                level.playSound(player, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS,
+                        1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+                level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+                return InteractionResult.SUCCESS;
+            }
+
+            BlockPos offset = pos.relative(clickedFace);
+            if (BaseFireBlock.canBePlacedAt(level, offset, context.getHorizontalDirection())) {
+                if (!consumeFuel(player, itemStack)) return InteractionResult.PASS;
+
+                level.playSound(player, offset, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS,
+                        1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+                BlockState fireState = BaseFireBlock.getState(level, offset);
+                level.setBlock(offset, fireState, Block.UPDATE_ALL_IMMEDIATE);
+                level.gameEvent(player, GameEvent.BLOCK_PLACE, pos);
+
+                if (player instanceof ServerPlayer serverPlayer) {
+                    CriteriaTriggers.PLACED_BLOCK.trigger(serverPlayer, offset, itemStack);
+                }
+                if (level instanceof ServerLevel serverLevel) {
+                    itemStack.hurtAndBreak(1, serverLevel, player, item -> {
+                        if (player != null) {
+                            player.onEquippedItemBroken(item, LivingEntity.getSlotForHand(context.getHand()));
+                        }
+                    });
+                }
+                return InteractionResult.SUCCESS;
+            }
+        }
+        return InteractionResult.PASS;
+    }
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player,
@@ -128,12 +181,58 @@ public class LighterBehavior implements IDurabilityBar, IInteractionItem, IAddIn
         return false;
     }
 
-    private int getUsesLeft(ItemStack stack) { return (int)0; /* ported stub */ }
+    private int getUsesLeft(ItemStack stack) {
+        if (usesFluid) {
+            IFluidHandlerItem handler = stack.getCapability(Capabilities.FluidHandler.ITEM, null);
+            if (handler == null) return 0;
 
-    private void setUsesLeft(Player player, @NotNull ItemStack stack, final int usesLeft) {  /* ported stub */ }
+            FluidStack fluid = handler.drain(Integer.MAX_VALUE, IFluidHandler.FluidAction.SIMULATE);
+            return fluid.getAmount();
+        } else if (hasMultipleUses) {
+            return maxUses - stack.getOrDefault(DataComponents.DAMAGE, 0);
+        } else {
+            return stack.getCount();
+        }
+    }
+
+    private void setUsesLeft(Player player, @NotNull ItemStack stack, final int usesLeft) {
+        if (usesFluid) {
+            IFluidHandlerItem handler = stack.getCapability(Capabilities.FluidHandler.ITEM, null);
+            if (handler != null) {
+                FluidStack fluid = handler.drain(Integer.MAX_VALUE, IFluidHandler.FluidAction.SIMULATE);
+                if (!fluid.isEmpty()) {
+                    handler.drain(fluid.getAmount() - usesLeft, IFluidHandler.FluidAction.EXECUTE);
+                }
+            } ;
+        } else if (hasMultipleUses) {
+            if (usesLeft <= 0) {
+                stack.shrink(1);
+                ItemStack brokenStack = this.destroyItem.get();
+                if (!player.addItem(brokenStack)) {
+                    player.drop(brokenStack, true);
+                }
+            } else {
+                stack.set(DataComponents.DAMAGE, maxUses - usesLeft);
+            }
+        } else {
+            stack.setCount(usesLeft);
+        }
+    }
 
     @Override
-    public float getDurabilityForDisplay(ItemStack stack) { return (float)0; /* ported stub */ }
+    public float getDurabilityForDisplay(ItemStack stack) {
+        if (usesFluid) {
+            IFluidHandlerItem handler = stack.getCapability(Capabilities.FluidHandler.ITEM, null);
+            if (handler == null) return 0.0f;
+
+            FluidStack fluid = handler.getFluidInTank(0);
+            return (float) fluid.getAmount() / (float) handler.getTankCapacity(0);
+        } else if (hasMultipleUses) {
+            return (float) getUsesLeft(stack) / (float) maxUses;
+        } else {
+            return 0.0f;
+        }
+    }
 
     @Override
     public boolean isBarVisible(ItemStack stack) {

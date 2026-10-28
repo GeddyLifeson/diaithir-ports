@@ -87,7 +87,7 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
     @Override
     public void init() {  /* ported stub */ }
 
-    @Override
+    
     protected void renderBg(GuiGraphics graphics, float delta, int mouseX, int mouseY) {  /* ported stub */ }
 
     @Override
@@ -112,7 +112,7 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
         }
     }
 
-    @Override
+    
     public void render(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     public void setHoveredSlot(Slot hoveredSlot) {  /* ported stub */ }
@@ -181,16 +181,16 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
         return this.isQuickCrafting;
     }
 
-    @Override
+    
     public boolean mouseClicked(double mouseX, double mouseY, int pButton) { return false; /* ported stub */ }
 
-    @Override
+    
     public boolean mouseDragged(double mouseX, double mouseY, int pButton, double pDragX, double pDragY) { return false; /* ported stub */ }
 
-    @Override
+    
     public boolean mouseReleased(double mouseX, double mouseY, int pButton) { return false; /* ported stub */ }
 
-    @Override
+    
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
 
     @Override
@@ -200,10 +200,10 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
         return this.getChildAt(mouseX, mouseY).filter(element -> element.mouseScrolled(mouseX, mouseY, pScrollX, pScrollY)).isPresent();
     }
 
-    @Override
+    
     public boolean keyReleased(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
 
-    @Override
+    
     public boolean charTyped(char codePoint, int modifiers) { return false; /* ported stub */ }
 
     @Override

@@ -50,7 +50,12 @@ public class EnvironmentalHazardSavedData extends SavedData {
     @Getter
     private final Map<ChunkPos, HazardZone> hazardZones = new HashMap<>();
 
-    public static EnvironmentalHazardSavedData getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
+    public static EnvironmentalHazardSavedData getOrCreate(ServerLevel serverLevel) {
+        return serverLevel.getDataStorage()
+                .computeIfAbsent(new SavedData.Factory<>(() -> new EnvironmentalHazardSavedData(serverLevel),
+                        (tag, provider) -> new EnvironmentalHazardSavedData(serverLevel, tag)),
+                        "gtceu_environmental_hazard_tracker");
+    }
 
     public EnvironmentalHazardSavedData(ServerLevel serverLevel) {
         this.serverLevel = serverLevel;
@@ -229,8 +234,20 @@ public class EnvironmentalHazardSavedData extends SavedData {
     }
 
     @NotNull
-    @Override
-    public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    
+    public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) {
+        ListTag hazardZonesTag = new ListTag();
+        for (var entry : hazardZones.entrySet()) {
+            CompoundTag zoneTag = new CompoundTag();
+
+            zoneTag.putLong("pos", entry.getKey().toLong());
+            entry.getValue().serializeNBT(zoneTag);
+
+            hazardZonesTag.add(zoneTag);
+        }
+        compoundTag.put("zones", hazardZonesTag);
+        return compoundTag;
+    }
 
     @Accessors(fluent = true)
     @AllArgsConstructor
@@ -261,9 +278,27 @@ public class EnvironmentalHazardSavedData extends SavedData {
             return this;
         }
 
-        public CompoundTag serializeNBT(CompoundTag zoneTag) { return null; /* ported stub */ }
+        public CompoundTag serializeNBT(CompoundTag zoneTag) {
+            zoneTag.put("source", NbtUtils.writeBlockPos(source));
+            zoneTag.putFloat("strength", strength);
+            zoneTag.putBoolean("can_spread", canSpread);
+            zoneTag.putString("trigger", trigger.name());
+            zoneTag.putString("condition", condition.name);
 
-        public static HazardZone deserializeNBT(CompoundTag zoneTag) { return null; /* ported stub */ }
+            return zoneTag;
+        }
+
+        public static HazardZone deserializeNBT(CompoundTag zoneTag) {
+            BlockPos source = NbtUtils.readBlockPos(zoneTag, "source").orElse(null);
+            float strength = zoneTag.getFloat("strength");
+            boolean canSpread = zoneTag.getBoolean("can_spread");
+            HazardProperty.HazardTrigger trigger = HazardProperty.HazardTrigger.ALL_TRIGGERS
+                    .get(zoneTag.getString("trigger"));
+            MedicalCondition condition = MedicalCondition.CONDITIONS
+                    .get(zoneTag.getString("condition"));
+
+            return new HazardZone(source, strength, canSpread, trigger, condition);
+        }
 
         public void toNetwork(FriendlyByteBuf buf) {
             buf.writeBlockPos(source);

@@ -524,7 +524,190 @@ public class VanillaStandardRecipes {
     /**
      * + Adds dying and cleaning recipes for vanilla blocks
      */
-    private static void dyingCleaningRecipes(RecipeOutput provider) {  /* ported stub */ }
+    private static void dyingCleaningRecipes(RecipeOutput provider) {
+        for (DyeColor color : DyeColor.values()) {
+            String dyeName = color.getName();
+            MIXER_RECIPES.recipeBuilder(dyeName + "_concrete_powder").duration(200).EUt(VA[ULV])
+                    .inputItems(Tags.Items.SANDS, 4)
+                    .inputItems(Tags.Items.GRAVELS, 4)
+                    .inputFluids(CHEMICAL_DYES[color.ordinal()].getFluid(L))
+                    .outputItems(new ItemStack(
+                            BuiltInRegistries.ITEM
+                                    .get(Identifier.withDefaultNamespace(dyeName + "_concrete_powder")),
+                            8))
+                    .save(provider);
+
+            CHEMICAL_BATH_RECIPES.recipeBuilder(dyeName + "_concrete").duration(20).EUt(VA[ULV])
+                    .inputItems(new ItemStack(
+                            BuiltInRegistries.ITEM
+                                    .get(Identifier.withDefaultNamespace(dyeName + "_concrete_powder"))))
+                    .inputFluids(Water.getFluid(1000))
+                    .outputItems(new ItemStack(
+                            BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(dyeName + "_concrete"))))
+                    .category(GTRecipeCategories.CHEM_DYES)
+                    .save(provider);
+
+            if (color != DyeColor.WHITE) {
+                CHEMICAL_BATH_RECIPES.recipeBuilder("dye_concrete_to_" + dyeName).duration(20).EUt(VA[ULV])
+                        .inputItems(Tags.Items.CONCRETES)
+                        .inputFluids(CHEMICAL_DYES[color.ordinal()].getFluid(L / 8))
+                        .outputItems(
+                                new ItemStack(BuiltInRegistries.ITEM
+                                        .get(Identifier.withDefaultNamespace(dyeName + "_concrete"))))
+                        .category(GTRecipeCategories.CHEM_DYES)
+                        .save(provider);
+            }
+
+            CHEMICAL_BATH_RECIPES.recipeBuilder("dye_terracotta_to_" + dyeName).duration(20).EUt(VA[ULV])
+                    .inputItems(new ItemStack(Blocks.TERRACOTTA))
+                    .inputFluids(CHEMICAL_DYES[color.ordinal()].getFluid(L / 8))
+                    .outputItems(
+                            new ItemStack(BuiltInRegistries.ITEM
+                                    .get(Identifier.withDefaultNamespace(dyeName + "_terracotta"))))
+                    .category(GTRecipeCategories.CHEM_DYES)
+                    .save(provider);
+
+            CHEMICAL_BATH_RECIPES.recipeBuilder("dye_glass_to_" + dyeName).duration(20).EUt(VA[ULV])
+                    .inputItems(new ItemStack(Blocks.GLASS))
+                    .inputFluids(CHEMICAL_DYES[color.ordinal()].getFluid(L / 8))
+                    .outputItems(
+                            new ItemStack(BuiltInRegistries.ITEM
+                                    .get(Identifier.withDefaultNamespace(dyeName + "_stained_glass"))))
+                    .category(GTRecipeCategories.CHEM_DYES)
+                    .save(provider);
+
+            CHEMICAL_BATH_RECIPES.recipeBuilder("dye_glass_pane_to_" + dyeName).duration(20).EUt(VA[ULV])
+                    .inputItems(new ItemStack(Blocks.GLASS_PANE))
+                    .inputFluids(CHEMICAL_DYES[color.ordinal()].getFluid(L / 8))
+                    .outputItems(new ItemStack(
+                            BuiltInRegistries.ITEM
+                                    .get(Identifier.withDefaultNamespace(dyeName + "_stained_glass_pane"))))
+                    .category(GTRecipeCategories.CHEM_DYES)
+                    .save(provider);
+
+            CUTTER_RECIPES.recipeBuilder("cut_" + dyeName + "_glass_to_pane").duration(20).EUt(VA[ULV])
+                    .inputItems(BuiltInRegistries.ITEM
+                            .get(Identifier.withDefaultNamespace(dyeName + "_stained_glass")), 3)
+                    .outputItems(BuiltInRegistries.ITEM
+                            .get(Identifier.withDefaultNamespace(dyeName + "_stained_glass_pane")), 8)
+                    .save(provider);
+
+            CHEMICAL_BATH_RECIPES.recipeBuilder("dye_candle_to_" + dyeName).duration(20).EUt(VA[ULV])
+                    .inputItems(new ItemStack(Items.CANDLE))
+                    .inputFluids(CHEMICAL_DYES[color.ordinal()].getFluid(L / 8))
+                    .outputItems(new ItemStack(
+                            BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(dyeName + "_candle"))))
+                    .category(GTRecipeCategories.CHEM_DYES)
+                    .save(provider);
+
+            if (color != DyeColor.WHITE) {
+                CHEMICAL_BATH_RECIPES.recipeBuilder("dye_wool_to_" + dyeName).duration(20).EUt(VA[ULV])
+                        .inputItems(new ItemStack(Blocks.WHITE_WOOL))
+                        .inputFluids(CHEMICAL_DYES[color.ordinal()].getFluid(L))
+                        .outputItems(new ItemStack(
+                                BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(dyeName + "_wool"))))
+                        .category(GTRecipeCategories.CHEM_DYES)
+                        .save(provider);
+
+                CHEMICAL_BATH_RECIPES.recipeBuilder("dye_bed_to_" + dyeName).duration(20).EUt(VA[ULV])
+                        .inputItems(new ItemStack(Blocks.WHITE_BED))
+                        .inputFluids(CHEMICAL_DYES[color.ordinal()].getFluid(L))
+                        .outputItems(new ItemStack(
+                                BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(dyeName + "_bed"))))
+                        .category(GTRecipeCategories.CHEM_DYES)
+                        .save(provider);
+            }
+
+            CUTTER_RECIPES.recipeBuilder("cut_" + dyeName + "_wool_to_carpet").duration(20).EUt(VA[ULV])
+                    .inputItems(new ItemStack(
+                            BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(dyeName + "_wool")), 1))
+                    .outputItems(
+                            new ItemStack(BuiltInRegistries.ITEM
+                                    .get(Identifier.withDefaultNamespace(dyeName + "_carpet")), 2))
+                    .save(provider);
+
+            ASSEMBLER_RECIPES.recipeBuilder(dyeName + "_banner").duration(20).EUt(VA[ULV])
+                    .circuitMeta(6)
+                    .inputItems(new ItemStack(Items.STICK))
+                    .inputItems(new ItemStack(
+                            BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(dyeName + "_wool")), 6))
+                    .outputItems(new ItemStack(
+                            BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(dyeName + "_banner"))))
+                    .save(provider);
+        }
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_wool")
+                .inputItems(IntersectionIngredient.of(
+                        Ingredient.of(ItemTags.WOOL),
+                        Ingredient.of(Tags.Items.DYED)))
+                .inputFluids(Chlorine.getFluid(50))
+                .outputItems(new ItemStack(Blocks.WHITE_WOOL))
+                .category(GTRecipeCategories.CHEM_DYES)
+                .duration(400).EUt(2).save(provider);
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_carpet")
+                .inputItems(IntersectionIngredient.of(
+                        Ingredient.of(ItemTags.WOOL_CARPETS),
+                        Ingredient.of(Tags.Items.DYED)))
+                .inputFluids(Chlorine.getFluid(25))
+                .outputItems(new ItemStack(Blocks.WHITE_CARPET))
+                .category(GTRecipeCategories.CHEM_DYES)
+                .duration(400).EUt(2).save(provider);
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_terracotta")
+                .inputItems(IntersectionIngredient.of(
+                        Ingredient.of(ItemTags.TERRACOTTA),
+                        Ingredient.of(Tags.Items.DYED)))
+                .inputFluids(Chlorine.getFluid(50))
+                .outputItems(Items.TERRACOTTA)
+                .category(GTRecipeCategories.CHEM_DYES)
+                .duration(400).EUt(2).save(provider);
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_stained_glass")
+                .inputItems(IntersectionIngredient.of(
+                        Ingredient.of(Tags.Items.GLASS_BLOCKS),
+                        Ingredient.of(Tags.Items.DYED)))
+                .inputFluids(Chlorine.getFluid(50))
+                .outputItems(Items.GLASS)
+                .category(GTRecipeCategories.CHEM_DYES)
+                .duration(400).EUt(2).save(provider);
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_stained_glass_pane")
+                .inputItems(IntersectionIngredient.of(
+                        Ingredient.of(Tags.Items.GLASS_PANES),
+                        Ingredient.of(Tags.Items.DYED)))
+                .inputFluids(Chlorine.getFluid(20))
+                .outputItems(Items.GLASS_PANE)
+                .category(GTRecipeCategories.CHEM_DYES)
+                .duration(400).EUt(2).save(provider);
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_concrete")
+                .inputItems(Tags.Items.CONCRETE_POWDERS)
+                .inputFluids(Chlorine.getFluid(20))
+                .outputItems(Items.WHITE_CONCRETE)
+                .category(GTRecipeCategories.CHEM_DYES)
+                .duration(400).EUt(2).save(provider);
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("sticky_piston_to_piston")
+                .inputItems(new ItemStack(Blocks.STICKY_PISTON))
+                .inputFluids(Chlorine.getFluid(10))
+                .outputItems(new ItemStack(Blocks.PISTON))
+                .duration(30).EUt(VA[LV]).save(provider);
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_candle")
+                .inputItems(ItemTags.CANDLES)
+                .inputFluids(Chlorine.getFluid(20))
+                .outputItems(Items.CANDLE)
+                .category(GTRecipeCategories.CHEM_DYES)
+                .duration(400).EUt(2).save(provider);
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_bed")
+                .inputItems(ItemTags.BEDS)
+                .inputFluids(Chlorine.getFluid(20))
+                .outputItems(Items.WHITE_BED)
+                .category(GTRecipeCategories.CHEM_DYES)
+                .duration(400).EUt(2).save(provider);
+    }
 
     /**
      * + Adds more redstone related recipes
@@ -611,7 +794,101 @@ public class VanillaStandardRecipes {
      * + Adds metal related recipes
      * + Adds horse armor and chainmail recipes
      */
-    private static void metalRecipes(RecipeOutput provider) {  /* ported stub */ }
+    private static void metalRecipes(RecipeOutput provider) {
+        BENDER_RECIPES.recipeBuilder("bucket")
+                .circuitMeta(12)
+                .inputItems(plate, Iron, 3)
+                .outputItems(new ItemStack(Items.BUCKET))
+                .duration(100).EUt(4)
+                .addMaterialInfo(true)
+                .save(provider);
+
+        VanillaRecipeHelper.addShapedRecipe(provider, "leather_horse_armor", new ItemStack(Items.LEATHER_HORSE_ARMOR),
+                "hdH",
+                "PCP", "LSL",
+                'H', new ItemStack(Items.LEATHER_HELMET),
+                'P', new ItemStack(Items.LEATHER),
+                'C', new ItemStack(Items.LEATHER_CHESTPLATE),
+                'L', new ItemStack(Items.LEATHER_LEGGINGS),
+                'S', new MaterialEntry(screw, Iron));
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "iron_horse_armor", new ItemStack(Items.IRON_HORSE_ARMOR),
+                "hdH",
+                "PCP", "LSL",
+                'H', new ItemStack(Items.IRON_HELMET),
+                'P', new MaterialEntry(plate, Iron),
+                'C', new ItemStack(Items.IRON_CHESTPLATE),
+                'L', new ItemStack(Items.IRON_LEGGINGS),
+                'S', new MaterialEntry(screw, Iron));
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "golden_horse_armor",
+                new ItemStack(Items.GOLDEN_HORSE_ARMOR),
+                "hdH", "PCP", "LSL",
+                'H', new ItemStack(Items.GOLDEN_HELMET),
+                'P', new MaterialEntry(plate, Gold),
+                'C', new ItemStack(Items.GOLDEN_CHESTPLATE),
+                'L', new ItemStack(Items.GOLDEN_LEGGINGS),
+                'S', new MaterialEntry(screw, Gold));
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "diamond_horse_armor",
+                new ItemStack(Items.DIAMOND_HORSE_ARMOR),
+                "hdH", "PCP", "LSL",
+                'H', new ItemStack(Items.DIAMOND_HELMET),
+                'P', new MaterialEntry(plate, Diamond),
+                'C', new ItemStack(Items.DIAMOND_CHESTPLATE),
+                'L', new ItemStack(Items.DIAMOND_LEGGINGS),
+                'S', new MaterialEntry(bolt, Diamond));
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_helmet", new ItemStack(Items.CHAINMAIL_HELMET),
+                "PPP",
+                "PhP",
+                'P', Items.CHAIN);
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_chestplate",
+                new ItemStack(Items.CHAINMAIL_CHESTPLATE),
+                "PhP", "PPP", "PPP",
+                'P', Items.CHAIN);
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_leggings",
+                new ItemStack(Items.CHAINMAIL_LEGGINGS),
+                "PPP", "PhP", "P P",
+                'P', Items.CHAIN);
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_boots", new ItemStack(Items.CHAINMAIL_BOOTS),
+                "P P",
+                "PhP",
+                'P', Items.CHAIN);
+
+        ASSEMBLER_RECIPES.recipeBuilder("cauldron")
+                .inputItems(plate, Iron, 7)
+                .outputItems(new ItemStack(Items.CAULDRON, 1))
+                .circuitMeta(7)
+                .duration(700).EUt(4)
+                .addMaterialInfo(true).save(provider);
+
+        ASSEMBLER_RECIPES.recipeBuilder("iron_bars")
+                .inputItems(rod, Iron, 3)
+                .outputItems(new ItemStack(Blocks.IRON_BARS, 4))
+                .circuitMeta(3)
+                .duration(300).EUt(4)
+                .addMaterialInfo(true).save(provider);
+
+        ASSEMBLER_RECIPES.recipeBuilder("iron_trapdoor")
+                .inputItems(plate, Iron, 4)
+                .circuitMeta(4)
+                .outputItems(new ItemStack(Blocks.IRON_TRAPDOOR))
+                .duration(100).EUt(16)
+                .addMaterialInfo(true).save(provider);
+
+        if (!ConfigHolder.INSTANCE.recipes.hardAdvancedIronRecipes) {
+            ASSEMBLER_RECIPES.recipeBuilder("iron_door")
+                    .inputItems(TagPrefix.plate, GTMaterials.Iron, 6)
+                    .circuitMeta(6)
+                    .outputItems(new ItemStack(Items.IRON_DOOR, 3))
+                    .duration(100).EUt(16)
+                    .addMaterialInfo(true).save(provider);
+        }
+    }
 
     /**
      * Adds miscellaneous vanilla recipes

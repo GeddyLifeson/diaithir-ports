@@ -33,14 +33,14 @@ public class BlockEntityWithBERModelRenderer<T extends BlockEntity>  {/* ported:
         this.blockRenderDispatcher = context.getBlockRenderDispatcher();
     }
 
-    @Override
+    
     public void render(T blockEntity, float partialTick,
                        PoseStack poseStack, MultiBufferSource buffer,
                        int packedLight, int packedOverlay) {  /* ported stub */ }
 
-    @Override
+    
     public boolean shouldRenderOffScreen(T blockEntity) { return false; /* ported stub */ }
 
-    @Override
+    
     public boolean shouldRender(T blockEntity, Vec3 cameraPos) { return false; /* ported stub */ }
 }

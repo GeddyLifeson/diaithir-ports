@@ -95,9 +95,109 @@ public class NotifiableItemStackHandler extends NotifiableRecipeHandlerTrait<Siz
     // Notable caller is ItemRecipeHandler, used for MinerLogic
     public static List<SizedIngredient> handleRecipe(IO io, GTRecipe recipe, List<SizedIngredient> left,
                                                      boolean simulate,
-                                                     IO handlerIO, CustomItemStackHandler storage) { return null; /* ported stub */ }
+                                                     IO handlerIO, CustomItemStackHandler storage) {
+        if (io != handlerIO) return left;
+        if (io != IO.IN && io != IO.OUT) return left.isEmpty() ? null : left;
 
-    private static @Nullable ItemStack getActioned(CustomItemStackHandler storage, int index, List<?> actions) { return null; /* ported stub */ }
+        // Temporarily remove listener so that we can broadcast the entire set of transactions once
+        Runnable listener = storage.getOnContentsChanged();
+        storage.setOnContentsChanged(() -> {});
+        boolean changed = false;
+
+        // Store the ItemStack in each slot after an operation
+        // Necessary for simulation since we don't actually modify the slot's contents
+        // Doesn't hurt for execution, and definitely cheaper than copying the entire storage
+        ItemStack[] visited = new ItemStack[storage.getSlots()];
+        for (var it = left.listIterator(); it.hasNext();) {
+            var ingredient = it.next();
+            if (ingredient.ingredient().hasNoItems()) {
+                it.remove();
+                continue;
+            }
+
+            ItemStack[] items;
+            int amount;
+            if (ingredient.getContainedCustom() instanceof IntProviderIngredient provider) {
+                provider.setItemStacks(null);
+                provider.setSampledCount(-1);
+
+                ItemStack output;
+                if (simulate) {
+                    output = provider.getMaxSizeStack();
+                    items = new ItemStack[] { output };
+                } else {
+                    items = provider.getItemStacks();
+                    if (items.length == 0 || items[0].isEmpty()) {
+                        it.remove();
+                        continue;
+                    }
+                    output = items[0];
+                }
+                amount = output.getCount();
+            } else {
+                items = ingredient.getItems();
+                if (items.length == 0 || items[0].isEmpty()) {
+                    it.remove();
+                    continue;
+                }
+                amount = ingredient.count();
+            }
+
+            for (int slot = 0; slot < storage.getSlots(); ++slot) {
+                ItemStack current = visited[slot] == null ? storage.getStackInSlot(slot) : visited[slot];
+                int count = current.getCount();
+
+                if (io == IO.IN) {
+                    if (current.isEmpty()) continue;
+                    if (ingredient.ingredient().test(current)) {
+                        var extracted = getActioned(storage, slot, recipe.ingredientActions);
+                        if (extracted == null) extracted = storage.extractItem(slot, Math.min(count, amount), simulate);
+                        if (!extracted.isEmpty()) {
+                            changed = true;
+                            visited[slot] = extracted.copyWithCount(count - extracted.getCount());
+                        }
+                        amount -= extracted.getCount();
+                    }
+                } else { // IO.OUT
+                    ItemStack output = items[0].copyWithCount(amount);
+                    // Only try this slot if not visited or if visited with the same type of item
+                    if (visited[slot] == null || ItemStack.isSameItemSameComponents(visited[slot], output)) {
+                        if (count < output.getMaxStackSize() && count < storage.getSlotLimit(slot)) {
+                            var remainder = getActioned(storage, slot, recipe.ingredientActions);
+                            if (remainder == null) remainder = storage.insertItem(slot, output, simulate);
+                            if (remainder.getCount() < amount) {
+                                changed = true;
+                                visited[slot] = output.copyWithCount(count + amount - remainder.getCount());
+                            }
+                            amount = remainder.getCount();
+                        }
+                    }
+                }
+
+                if (amount <= 0) {
+                    it.remove();
+                    break;
+                }
+            }
+            // Modify ingredient if we didn't finish it off
+            if (amount > 0) {
+                it.set(ingredient.copyWithCount(amount));
+            }
+        }
+
+        storage.setOnContentsChanged(listener);
+        if (changed && !simulate) listener.run();
+
+        return left.isEmpty() ? null : left;
+    }
+
+    private static @Nullable ItemStack getActioned(CustomItemStackHandler storage, int index, List<?> actions) {
+        if (!GTCEu.Mods.isKubeJSLoaded()) return null;
+        // noinspection unchecked
+        var actioned = KJSCallWrapper.applyIngredientAction(storage, index, (List<IngredientActionHolder>) actions);
+        if (!actioned.isEmpty()) return actioned;
+        return null;
+    }
 
     @Override
     public RecipeCapability<SizedIngredient> getCapability() {

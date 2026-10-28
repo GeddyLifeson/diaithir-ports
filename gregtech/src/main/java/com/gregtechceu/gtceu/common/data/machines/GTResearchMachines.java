@@ -61,7 +61,7 @@ public class GTResearchMachines {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTRecipeTypes.RESEARCH_STATION_RECIPES)
             .appearanceBlock(ADVANCED_COMPUTER_CASING)
-            .tooltips(LangHandler.getMultiLang("gtceu.machine.research_station.tooltip"))
+            
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("XXX", "VVV", "PPP", "PPP", "PPP", "VVV", "XXX")
                     .aisle("XXX", "VAV", "AAA", "AAA", "AAA", "VAV", "XXX")
@@ -115,10 +115,7 @@ public class GTResearchMachines {
             .abilities(PartAbility.OBJECT_HOLDER)
             .modelProperty(IS_FORMED, false)
             .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
-            .model(createWorkableTieredHullMachineModel(GTCEu.id("block/machines/object_holder"))
-                    .andThen((ctx, prov, model) -> {
-                        model.addReplaceableTextures("bottom", "top", "side");
-                    }))
+            
             .register();
 
     public static final MachineDefinition DATA_BANK = REGISTRATE.multiblock("data_bank", DataBankMachine::new)
@@ -199,7 +196,7 @@ public class GTResearchMachines {
             // good API addition for packdevs
             .appearanceBlock(COMPUTER_CASING)
             .recipeType(GTRecipeTypes.DUMMY_RECIPES)
-            .tooltips(LangHandler.getMultiLang("gtceu.machine.high_performance_computation_array.tooltip"))
+            
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("AA", "CC", "CC", "CC", "AA")
                     .aisle("VA", "XV", "XV", "XV", "VA")
@@ -449,7 +446,18 @@ public class GTResearchMachines {
 
     private static MachineBuilder<MachineDefinition, ?> registerHPCAPart(String name, String displayName,
                                                                          Function<BlockEntityCreationInfo, MetaMachine> constructor,
-                                                                         String texture, boolean isAdvanced) { return null; /* ported stub */ }
+                                                                         String texture, boolean isAdvanced) {
+        return REGISTRATE.machine(name, constructor)
+                .langValue(displayName)
+                .rotationState(RotationState.ALL)
+                .abilities(PartAbility.HPCA_COMPONENT)
+                .modelProperty(GTMachineModelProperties.IS_FORMED, false)
+                .modelProperty(GTMachineModelProperties.IS_HPCA_PART_DAMAGED, false)
+                .modelProperty(GTMachineModelProperties.IS_ACTIVE, false)
+                .model(createHPCAPartModel(isAdvanced,
+                        GTCEu.id("block/overlay/machine/hpca/" + texture),
+                        GTCEu.id("block/overlay/machine/hpca/damaged" + (isAdvanced ? "_advanced" : ""))));
+    }
 
     public static void init() {}
 }

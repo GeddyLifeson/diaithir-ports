@@ -35,7 +35,7 @@ import java.util.List;
 public class PlungerBehavior implements IToolBehavior<PlungerBehavior>, IComponentCapability, IInteractionItem {
 
     public static final PlungerBehavior INSTANCE = PlungerBehavior.create();
-    public static final Codec<PlungerBehavior> CODEC = Codec.unit(INSTANCE);
+    public static final Codec<PlungerBehavior> CODEC = com.mojang.serialization.MapCodec.unit(INSTANCE).codec();
     public static final StreamCodec<ByteBuf, PlungerBehavior> STREAM_CODEC = StreamCodec.unit(INSTANCE);
 
     protected PlungerBehavior() {/**/}
@@ -89,5 +89,18 @@ public class PlungerBehavior implements IToolBehavior<PlungerBehavior>, ICompone
     }
 
     @Override
-    public void attachCapabilities(RegisterCapabilitiesEvent event, Item item) {  /* ported stub */ }
+    public void attachCapabilities(RegisterCapabilitiesEvent event, Item item) {
+        event.registerItem(Capabilities.FluidHandler.ITEM,
+                (stack, unused) -> new FluidHandlerItemStack(GTDataComponents.FLUID_CONTENT, stack, Integer.MAX_VALUE) {
+
+                    @Override
+                    public int fill(@NotNull FluidStack resource, @NotNull FluidAction action) {
+                        int result = resource.getAmount();
+                        if (result > 0) {
+                            ToolHelper.damageItem(this.getContainer(), null);
+                        }
+                        return result;
+                    }
+                }, item);
+    }
 }

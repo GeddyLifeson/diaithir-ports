@@ -50,5 +50,41 @@ public class CoverBehaviorTransformer implements ValueTransformer<CoverBehavior>
     }
 
     public @Nullable CoverBehavior deserialize(CompoundTag tag, ICoverable holder, @Nullable CoverBehavior cover,
-                                               boolean isSync, HolderLookup.Provider lookup) { return null; /* ported stub */ }
+                                               boolean isSync, HolderLookup.Provider lookup) {
+        /// Ldlib backwards compat
+        if (tag.contains("payload") && tag.contains("uid")) {
+            tag.putInt("side", tag.getCompound("uid").getInt("side"));
+            tag.putString("coverType", tag.getCompound("uid").getString("id"));
+            tag.put("data", tag.getCompound("payload").getCompound("d"));
+        }
+
+        Direction side = Direction.values()[tag.getInt("side")];
+
+        if (tag.isEmpty() || tag.getString("coverType").isEmpty()) {
+            holder.setCoverAtSide(null, side);
+            return null;
+        }
+        Identifier coverType = Identifier.tryParse(tag.getString("coverType"));
+        if (cover == null || cover.coverDefinition.getId() != coverType) {
+            var coverReg = GTRegistries.COVERS.get(coverType);
+            if (coverReg == null) {
+                GTCEu.LOGGER.error("Error during NBT load: unknown cover type {} ({})", coverType,
+                        tag.getString("coverType"));
+                return null;
+            }
+            holder.setCoverAtSide(coverReg.createCoverBehavior(holder, side), side);
+        }
+
+        CoverBehavior newCover = holder.getCoverAtSide(side);
+        if (newCover == null) return null;
+        newCover.getSyncDataHolder().deserializeNBT(lookup, tag.getCompound("data"),
+                isSync);
+
+        if (!isSync && newCover.getAttachItem() == ItemStack.EMPTY) {
+            GTCEu.LOGGER.error("Invalid cover save state, this should never happen unless loading corrupted data.");
+            holder.setCoverAtSide(null, side);
+        }
+
+        return newCover;
+    }
 }

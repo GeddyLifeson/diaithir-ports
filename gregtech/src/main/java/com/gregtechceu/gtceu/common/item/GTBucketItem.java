@@ -23,19 +23,34 @@ public class GTBucketItem extends BucketItem {
         this.langKey = langKey;
     }
 
-    public static int color(ItemStack itemStack, int index) { return (int)0; /* ported stub */ }
+    public static int color(ItemStack itemStack, int index) {
+        if (itemStack.getItem() instanceof GTBucketItem item) {
+            if (index == 1) {
+                return IClientFluidTypeExtensions.of(item.content).getTintColor();
+            }
+        }
+        return -1;
+    }
 
     @Override
-    public String getDescriptionId() { return null; /* ported stub */ }
 
-    @Override
-    public Component getDescription() { return null; /* ported stub */ }
+
+    
+    public Component getDescription() {
+        Component materialName = material.getLocalizedName();
+        return Component.translatable("item.gtceu.bucket", Component.translatable(this.langKey, materialName));
+    }
 
     @Override
     public Component getName(ItemStack stack) {
         return this.getDescription();
     }
 
-    @Override
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) { return (int)0; /* ported stub */ }
+    
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+        if (this.content instanceof GTFluid gtFluid) {
+            return gtFluid.getBurnTime();
+        }
+        return 0;
+    }
 }

@@ -20,7 +20,7 @@ import java.util.List;
 public class DisableShieldBehavior implements IToolBehavior<DisableShieldBehavior> {
 
     public static final DisableShieldBehavior INSTANCE = new DisableShieldBehavior();
-    public static final Codec<DisableShieldBehavior> CODEC = Codec.unit(INSTANCE);
+    public static final Codec<DisableShieldBehavior> CODEC = com.mojang.serialization.MapCodec.unit(INSTANCE).codec();
     public static final StreamCodec<ByteBuf, DisableShieldBehavior> STREAM_CODEC = StreamCodec.unit(INSTANCE);
 
     protected DisableShieldBehavior() {/**/}

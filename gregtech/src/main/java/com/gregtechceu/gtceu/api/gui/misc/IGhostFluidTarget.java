@@ -63,5 +63,18 @@ public interface IGhostFluidTarget extends IGhostIngredientTarget {
         }
     }
 
-    default Object convertIngredient(Object ingredient) { return null; /* ported stub */ }
+    default Object convertIngredient(Object ingredient) {
+        if (GTCEu.Mods.isEMILoaded() && ingredient instanceof EmiStack fluidEmiStack) {
+            Fluid fluid = fluidEmiStack.getKeyOfType(Fluid.class);
+            ingredient = fluid == null ? FluidStack.EMPTY :
+                    new FluidStack(fluid.builtInRegistryHolder(),
+                            (int) fluidEmiStack.getAmount(), fluidEmiStack.getComponentChanges());
+        } else if (GTCEu.Mods.isREILoaded() && ingredient instanceof dev.architectury.fluid.FluidStack fluidStack) {
+            ingredient = new FluidStack(fluidStack.getFluid().builtInRegistryHolder(),
+                    (int) fluidStack.getAmount(), fluidStack.getPatch());
+        } else if (GTCEu.Mods.isJEILoaded() && ingredient instanceof ITypedIngredient<?> fluidJeiStack) {
+            return fluidJeiStack.getIngredient(NeoForgeTypes.FLUID_STACK).orElse(FluidStack.EMPTY);
+        }
+        return ingredient;
+    }
 }

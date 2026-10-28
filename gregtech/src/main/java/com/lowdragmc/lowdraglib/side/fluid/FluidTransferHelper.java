@@ -46,19 +46,101 @@ import java.util.function.Predicate;
  * @implNote FluidTransferHelper
  */
 public class FluidTransferHelper {
-    public static IFluidHandler getFluidTransfer(Level level, BlockPos pos, @Nullable Direction direction) { return null; /* ported stub */ }
+    public static IFluidHandler getFluidTransfer(Level level, BlockPos pos, @Nullable Direction direction) {
+        return level.getCapability(Capabilities.FluidHandler.BLOCK, pos, direction);
+    }
 
-    public static IFluidHandler getFluidTransfer(IItemHandler itemTransfer, int slot) { return null; /* ported stub */ }
+    public static IFluidHandler getFluidTransfer(IItemHandler itemTransfer, int slot) {
+        var itemStack = itemTransfer.getStackInSlot(slot);
+        if (!itemStack.isEmpty()) {
+            return itemStack.getCapability(Capabilities.FluidHandler.ITEM);
+        }
+        return null;
+    }
 
-    public static IFluidHandler getFluidTransfer(Player player, AbstractContainerMenu screenHandler) { return null; /* ported stub */ }
+    public static IFluidHandler getFluidTransfer(Player player, AbstractContainerMenu screenHandler) {
+        var itemStack = screenHandler.getCarried();
+        if (!itemStack.isEmpty()) {
+            return itemStack.getCapability(Capabilities.FluidHandler.ITEM);
+        }
+        return null;
+    }
 
-    public static IFluidHandler getFluidTransfer(Player player, InteractionHand hand) { return null; /* ported stub */ }
+    public static IFluidHandler getFluidTransfer(Player player, InteractionHand hand) {
+        var itemStack = player.getItemInHand(hand);
+        if (!itemStack.isEmpty()) {
+            return itemStack.getCapability(Capabilities.FluidHandler.ITEM);
+        }
+        return null;
+    }
 
-    public static IFluidHandler getFluidTransfer(Player player, int slot) { return null; /* ported stub */ }
+    public static IFluidHandler getFluidTransfer(Player player, int slot) {
+        var itemStack = player.getInventory().getItem(slot);
+        if (!itemStack.isEmpty()) {
+            return itemStack.getCapability(Capabilities.FluidHandler.ITEM);
+        }
+        return null;
+    }
 
-    public static void exportToTarget(IFluidHandler source, int maxAmount, Predicate<FluidStack> filter, Level level, BlockPos pos, @Nullable Direction direction) {  /* ported stub */ }
+    public static void exportToTarget(IFluidHandler source, int maxAmount, Predicate<FluidStack> filter, Level level, BlockPos pos, @Nullable Direction direction) {
+        BlockState state = level.getBlockState(pos);
+        if (state.hasBlockEntity()) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity != null) {
+                var cap = Capabilities.FluidHandler.BLOCK.getCapability(level, pos, blockEntity.getBlockState(), blockEntity, direction);
+                if (cap != null) {
+                    for (int srcIndex = 0; srcIndex < source.getTanks(); srcIndex++) {
+                        var currentFluid = source.getFluidInTank(srcIndex);
+                        if (currentFluid.isEmpty() || !filter.test(currentFluid)) {
+                            continue;
+                        }
 
-    public static void importToTarget(IFluidHandler target, int maxAmount, Predicate<FluidStack> filter, Level level, BlockPos pos, @Nullable Direction direction) {  /* ported stub */ }
+                        var toDrain = currentFluid.copy();
+                        toDrain.setAmount(maxAmount);
+
+                        var filled = cap.fill(source.drain(toDrain, IFluidHandler.FluidAction.SIMULATE), IFluidHandler.FluidAction.SIMULATE);
+                        if (filled > 0) {
+                            maxAmount -= filled;
+                            toDrain = currentFluid.copy();
+                            toDrain.setAmount(filled);
+                            cap.fill(source.drain(toDrain, IFluidHandler.FluidAction.EXECUTE), IFluidHandler.FluidAction.EXECUTE);
+                        }
+                        if (maxAmount <= 0) return;
+                    }
+                }
+            }
+        }
+    }
+
+    public static void importToTarget(IFluidHandler target, int maxAmount, Predicate<FluidStack> filter, Level level, BlockPos pos, @Nullable Direction direction) {
+        BlockState state = level.getBlockState(pos);
+        if (state.hasBlockEntity()) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity != null) {
+                var handler = Capabilities.FluidHandler.BLOCK.getCapability(level, pos, blockEntity.getBlockState(), blockEntity, direction);
+                if (handler != null) {
+                    for (int srcIndex = 0; srcIndex < handler.getTanks(); srcIndex++) {
+                        var currentFluid = handler.getFluidInTank(srcIndex);
+                        if (currentFluid.isEmpty() || !filter.test(currentFluid)) {
+                            continue;
+                        }
+
+                        var toDrain = currentFluid.copy();
+                        toDrain.setAmount(maxAmount);
+
+                        var filled = target.fill(handler.drain(toDrain, IFluidHandler.FluidAction.SIMULATE), IFluidHandler.FluidAction.SIMULATE);
+                        if (filled > 0) {
+                            maxAmount -= filled;
+                            toDrain = currentFluid.copy();
+                            toDrain.setAmount((int) filled);
+                            target.fill(handler.drain(toDrain, IFluidHandler.FluidAction.EXECUTE), IFluidHandler.FluidAction.EXECUTE);
+                        }
+                        if (maxAmount <= 0) return;
+                    }
+                }
+            }
+        }
+    }
 
     /**
      * if you are using it, make sure you are using simulate == true
@@ -471,7 +553,55 @@ public class FluidTransferHelper {
      * @param resource    The fluidStack to place.
      * @return true if the placement was successful, false otherwise
      */
-    public static boolean tryPlaceFluid(@Nullable Player player, Level level, InteractionHand hand, BlockPos pos, IFluidHandler fluidSource, FluidStack resource) { return false; /* ported stub */ }
+    public static boolean tryPlaceFluid(@Nullable Player player, Level level, InteractionHand hand, BlockPos pos, IFluidHandler fluidSource, FluidStack resource) {
+        if (level == null || pos == null) {
+            return false;
+        }
+
+        Fluid fluid = resource.getFluid();
+        if (fluid == Fluids.EMPTY || !FluidHelper.canBePlacedInWorld(resource, level, pos)) {
+            return false;
+        }
+
+        if (fluidSource.drain(resource, IFluidHandler.FluidAction.SIMULATE).isEmpty()) {
+            return false;
+        }
+
+        BlockPlaceContext context = new BlockPlaceContext(new UseOnContext(player, hand, new BlockHitResult(Vec3.ZERO, Direction.UP, pos, false)));
+
+        // check that we can place the fluid at the destination
+        BlockState destBlockState = level.getBlockState(pos);
+        boolean isDestReplaceable = destBlockState.canBeReplaced(context);
+        boolean canDestContainFluid = destBlockState.getBlock() instanceof LiquidBlockContainer liquidBlockContainer && liquidBlockContainer.canPlaceLiquid(player, level, pos, destBlockState, fluid);
+        if (!level.isEmptyBlock(pos) && !isDestReplaceable && !canDestContainFluid) {
+            return false; // Non-air, solid, unreplacable block. We can't put fluid here.
+        }
+
+        if (level.dimensionType().ultraWarm() && FluidHelper.doesVaporize(resource, level, pos)) {
+            FluidStack result = fluidSource.drain(resource, IFluidHandler.FluidAction.EXECUTE);
+            if (!result.isEmpty()) {
+//                result.getFluid().getAttributes().vaporize(player, level, pos, result);
+                return true;
+            }
+        } else {
+            // This fluid handler places the fluid block when filled
+            IFluidHandler handler;
+            if (canDestContainFluid) {
+                handler = new LiquidBlockContainerTransfer((LiquidBlockContainer) destBlockState.getBlock(), level, pos);
+            } else {
+                handler = getFluidBlockHandler(fluid, level, pos);
+            }
+            FluidStack result = tryFluidTransfer(handler, fluidSource, resource, true);
+            if (!result.isEmpty()) {
+                SoundEvent soundevent = FluidHelper.getEmptySound(resource);
+                if (soundevent != null) {
+                    level.playSound(player, pos, soundevent, SoundSource.BLOCKS, 1.0F, 1.0F);
+                }
+                return true;
+            }
+        }
+        return false;
+    }
 
     /**
      * Internal method for getting a fluid block handler for placing a fluid.

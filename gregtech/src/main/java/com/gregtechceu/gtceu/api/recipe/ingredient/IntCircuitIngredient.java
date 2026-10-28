@@ -63,8 +63,10 @@ public class IntCircuitIngredient implements ICustomIngredient {
                 IntCircuitBehaviour.getCircuitConfiguration(stack) == this.configuration;
     }
 
-    @Override
-    public Stream<ItemStack> getItems() { return null; /* ported stub */ }
+    
+    public Stream<ItemStack> getItems() {
+        return Stream.of(stack);
+    }
 
     @Override
     public boolean isSimple() {

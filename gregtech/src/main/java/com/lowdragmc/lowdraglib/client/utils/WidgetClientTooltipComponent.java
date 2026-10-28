@@ -19,12 +19,12 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 @OnlyIn(Dist.CLIENT)
 public record WidgetClientTooltipComponent(WidgetTooltipComponent tooltipComponent) implements ClientTooltipComponent {
-    @Override
+    
     public int getHeight() { return (int)0; /* ported stub */ }
 
     @Override
     public int getWidth(Font font) { return (int)0; /* ported stub */ }
 
-    @Override
+    
     public void renderImage(Font textRenderer, int x, int y, GuiGraphics graphics) {  /* ported stub */ }
 }

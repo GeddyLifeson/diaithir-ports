@@ -308,9 +308,27 @@ public interface ICoverable extends ITickSubscription, ISyncManaged, ICopyable {
         return null;
     }
 
-    private CompoundTag createCoverConfigTag(@Nullable CoverBehavior cover) { return null; /* ported stub */ }
+    private CompoundTag createCoverConfigTag(@Nullable CoverBehavior cover) {
+        if (cover == null) return new CompoundTag();
+        var tag = new CompoundTag();
+        tag.putString("id", GTRegistries.COVERS.getKey(cover.coverDefinition).toString());
+        tag.put("item", cover.getAttachItem().save(getLevel().registryAccess()));
+        tag.put("data", cover.copyConfig(new CompoundTag()));
+        return tag;
+    }
 
-    private void applyCoverConfigTag(ServerPlayer player, Direction dir, CompoundTag tag) {  /* ported stub */ }
+    private void applyCoverConfigTag(ServerPlayer player, Direction dir, CompoundTag tag) {
+        if (tag.isEmpty()) return;
+        var def = GTRegistries.COVERS.get(Identifier.parse(tag.getString("id")));
+        ItemStack stack = ItemStack.parseOptional(getLevel().registryAccess(), tag.getCompound("item"));
+        if (def == null) return;
+
+        placeCoverOnSide(dir, stack, def, player);
+
+        CoverBehavior placedCover = getCoverAtSide(dir);
+        if (placedCover != null && tag.contains("data") && !tag.getCompound("data").isEmpty())
+            placedCover.pasteConfig(player, tag.getCompound("data"));
+    }
 
     @Override
     default CompoundTag copyConfig(CompoundTag tag) {
@@ -322,7 +340,15 @@ public interface ICoverable extends ITickSubscription, ISyncManaged, ICopyable {
     }
 
     @Override
-    default void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
+    default void pasteConfig(ServerPlayer player, CompoundTag tag) {
+        for (Direction side : GTUtil.DIRECTIONS) {
+            removeCover(side, player);
+        }
+
+        for (Direction dir : GTUtil.DIRECTIONS) {
+            applyCoverConfigTag(player, dir, tag.getCompound(dir.getName()));
+        }
+    }
 
     @Override
     default List<ItemStack> getItemsRequiredToPaste() {

@@ -15,4 +15,38 @@ import lombok.With;
 
 import java.util.Optional;
 
-public record LargeItemContent(@With ItemStack stored, @With long amount) { return null; /* ported stub */ }
+public record LargeItemContent(@With ItemStack stored, @With long amount) {
+
+    // spotless:off
+    public static final Codec<ItemStack> OPTIONAL_SINGLE_ITEM_CODEC = ExtraCodecs
+            .optionalEmptyMap(ItemStack.SINGLE_ITEM_CODEC)
+            .xmap(stack -> stack.orElse(ItemStack.EMPTY),
+                    stack -> stack.isEmpty() ? Optional.empty() : Optional.of(stack));
+    public static final Codec<LargeItemContent> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+            OPTIONAL_SINGLE_ITEM_CODEC.fieldOf("stored").forGetter(LargeItemContent::stored),
+            CodecUtils.NON_NEGATIVE_LONG.fieldOf("amount").forGetter(LargeItemContent::amount)
+    ).apply(instance, LargeItemContent::new));
+    public static final StreamCodec<RegistryFriendlyByteBuf, LargeItemContent> STREAM_CODEC = StreamCodec.composite(
+            ItemStack.OPTIONAL_STREAM_CODEC, LargeItemContent::stored,
+            ByteBufCodecs.VAR_LONG, LargeItemContent::amount,
+            LargeItemContent::new);
+    // spotless:on
+
+    public static final LargeItemContent EMPTY = new LargeItemContent(ItemStack.EMPTY, 0);
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof LargeItemContent(ItemStack otherStored, long otherAmount)))
+            return false;
+
+        return amount() == otherAmount &&
+                ItemStack.isSameItemSameComponents(stored, otherStored);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = ItemStack.hashItemAndComponents(stored());
+        result = 31 * result + Long.hashCode(amount());
+        return result;
+    }
+}

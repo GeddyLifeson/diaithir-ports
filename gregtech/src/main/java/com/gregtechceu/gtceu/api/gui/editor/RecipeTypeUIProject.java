@@ -82,7 +82,13 @@ public class RecipeTypeUIProject extends UIProject {
     }
 
     @Override
-    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag) {  /* ported stub */ }
+    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag) {
+        super.deserializeNBT(provider, tag);
+        if (tag.contains("recipe_type")) {
+            var type = BuiltInRegistries.RECIPE_TYPE.get(Identifier.parse(tag.getString("recipe_type")));
+            recipeType = (GTRecipeType) type;
+        }
+    }
 
     @Override
     public void onLoad(Editor editor) {
@@ -103,5 +109,55 @@ public class RecipeTypeUIProject extends UIProject {
     }
 
     @Override
-    public void attachMenu(Editor editor, String name, TreeBuilder.Menu menu) {  /* ported stub */ }
+    public void attachMenu(Editor editor, String name, TreeBuilder.Menu menu) {
+        if (name.equals("file")) {
+            if (recipeType == null) {
+                menu.remove("ldlib.gui.editor.menu.save");
+            } else {
+                menu.remove("ldlib.gui.editor.menu.save");
+                menu.leaf(Icons.SAVE, "ldlib.gui.editor.menu.save", () -> {
+                    var path = new File(LDLib.getLDLibDir(),
+                            "assets/%s/ui/recipe_type".formatted(recipeType.registryName.getNamespace()));
+                    path.mkdirs();
+                    saveProject(Path.of(recipeType.registryName.getPath(), ".", this.getRegisterUI().name()));
+                    recipeType.getRecipeUI().reloadCustomUI();
+                });
+            }
+        } else if (name.equals("template_tab")) {
+            Map<String, List<GTRecipeType>> categories = new LinkedHashMap<>();
+            for (RecipeType<?> recipeType : BuiltInRegistries.RECIPE_TYPE) {
+                if (!(recipeType instanceof GTRecipeType gtType)) {
+                    continue;
+                }
+                categories.computeIfAbsent(gtType.group, group -> new ArrayList<>()).add(gtType);
+            }
+            categories.forEach((groupName, recipeTypes) -> menu.branch(groupName, m -> {
+                for (GTRecipeType recipeType : recipeTypes) {
+                    IGuiTexture icon;
+                    if (recipeType.getIconSupplier() != null) {
+                        icon = new ItemStackTexture(recipeType.getIconSupplier().get());
+                    } else {
+                        icon = new ItemStackTexture(Items.BARRIER);
+                    }
+                    m.leaf(icon, recipeType.getTranslationKey(), () -> {
+                        root.clearAllWidgets();
+                        if (recipeType.getRecipeUI().hasCustomUI()) {
+                            var nbt = recipeType.getRecipeUI().getCustomUI();
+                            IConfigurableWidget.deserializeNBT(root, nbt.getCompound("root"),
+                                    Resources.fromNBT(nbt.getCompound("resources")), false,
+                                    GTRegistries.builtinRegistry());
+                        } else {
+                            var widget = recipeType.getRecipeUI().createEditableUITemplate(false, false)
+                                    .createDefault();
+                            root.setSize(widget.getSize());
+                            for (Widget children : widget.widgets) {
+                                root.addWidget(children);
+                            }
+                        }
+                        setRecipeType(recipeType);
+                    });
+                }
+            }));
+        }
+    }
 }

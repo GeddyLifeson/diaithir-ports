@@ -25,7 +25,17 @@ public class DataItemBehavior implements IInteractionItem {
 
     @Override
     public InteractionResult use(ItemStack item, Level level, Player player,
-                                                  InteractionHand usedHand) { return null; /* ported stub */ }
+                                                  InteractionHand usedHand) {
+        if (player.isShiftKeyDown()) {
+            ItemStack stack = player.getItemInHand(usedHand);
+            int permissionLevel = 0;
+            while (player.hasPermissions(permissionLevel)) permissionLevel++;
+
+            stack.set(GTDataComponents.BINDING_DATA, new BindingData(permissionLevel, player.getUUID()));
+            return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
+        }
+        return IInteractionItem.super.use(item, level, player, usedHand);
+    }
 
     @Override
     public InteractionResult onItemUseFirst(ItemStack itemStack, UseOnContext context) {

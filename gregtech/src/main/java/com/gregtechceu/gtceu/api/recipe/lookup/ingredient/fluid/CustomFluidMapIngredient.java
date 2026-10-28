@@ -25,7 +25,14 @@ public class CustomFluidMapIngredient extends AbstractMapIngredient {
         this.ingredient = ingredient;
     }
 
-    public static List<AbstractMapIngredient> from(FluidIngredient ingredient) { return null; /* ported stub */ }
+    public static List<AbstractMapIngredient> from(FluidIngredient ingredient) {
+        List<AbstractMapIngredient> ingredients = new ArrayList<>();
+        FluidStack[] stacks = ingredient.getStacks();
+        for (FluidStack stack : stacks) {
+            ingredients.add(new CustomFluidMapIngredient(stack, ingredient));
+        }
+        return ingredients;
+    }
 
     @NotNull
     public static List<AbstractMapIngredient> from(FluidStack stack) {

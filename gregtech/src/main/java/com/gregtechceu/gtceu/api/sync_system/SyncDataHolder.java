@@ -135,7 +135,47 @@ public class SyncDataHolder {
     @SuppressWarnings("unchecked")
     private static void deserializeField(HolderLookup.Provider registries, ISyncManaged holder, FieldSyncData field,
                                          @Nullable Tag savedValue,
-                                         boolean readingClientFields) {  /* ported stub */ }
+                                         boolean readingClientFields) {
+        Object currentVal = field.handle.get(holder);
+
+        if (savedValue == null || savedValue instanceof CompoundTag compound && compound.isEmpty()) return;
+
+        if (savedValue instanceof CompoundTag compound && compound.getBoolean("null")) {
+            field.handle.set(holder, null);
+            return;
+        }
+
+        try {
+            if (field.transformer != null) {
+                ValueTransformer<Object> transformer = (ValueTransformer<Object>) field.transformer;
+                try {
+                    var current = field.handle.get(holder);
+                    Object result = transformer.deserializeNBT(savedValue, new ValueTransformer.TransformerContext<>(
+                            holder, field.type, current, field.fieldName, readingClientFields, false, registries));
+                    if (result != current) {
+                        field.handle.set(holder, result);
+                    }
+                } catch (UnsupportedOperationException e) {
+                    GTCEu.LOGGER.error("Sync: failed to perform VarHandle set: unsupported op {} {}",
+                            field.fieldName, field.handle.toString());
+                }
+            } else if (field.isSyncManaged && savedValue instanceof CompoundTag compound) {
+                if (currentVal == null) {
+                    GTCEu.LOGGER.error("Sync: ISyncManaged field was null, cannot instantiate {}",
+                            field.fieldName);
+                    return;
+                }
+                if (currentVal instanceof ISyncManaged syncObj)
+                    syncObj.getSyncDataHolder().deserializeNBT(registries, compound, readingClientFields);
+            } else {
+                GTCEu.LOGGER.error("Sync: Failed to deserialize field {} in class {}: Missing value transformer for {}",
+                        field.fieldName, holder.getClass().getName(), field.type);
+            }
+        } catch (Exception e) {
+            GTCEu.LOGGER.error("Sync: Failed to deserialize field {}", field.fieldName);
+            GTCEu.LOGGER.error(e);
+        }
+    }
 
     public static class SyncManagedTransformer implements ValueTransformer<ISyncManaged> {
 

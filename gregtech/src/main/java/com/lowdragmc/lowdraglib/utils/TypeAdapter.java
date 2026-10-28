@@ -59,7 +59,29 @@ public class TypeAdapter {
         castTypes.add(clazz);
     }
 
-    public static void loadAllAdapters() {  /* ported stub */ }
+    public static void loadAllAdapters() {
+        adaptersLoaded = true;
+        AnnotationDetector.REGISTER_TYPE_ADAPTERS.forEach(instance -> {
+            instance.onRegister();
+            var clazz = instance.getClass();
+            for (var method : clazz.getDeclaredMethods()) {
+                // not a static method
+                if (!Modifier.isStatic(method.getModifiers())){
+                    if (method.getReturnType() != void.class && method.getParameterCount() == 1) {
+                        var from = method.getParameterTypes()[0];
+                        var to = method.getReturnType();
+                        adapters.put(new convertion(from, to), obj -> {
+                            try {
+                                return method.invoke(instance, obj);
+                            } catch (Exception e) {
+                                return null;
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    }
 
     public static boolean areIncompatible(Class from, Class to) {
         if (!adaptersLoaded)

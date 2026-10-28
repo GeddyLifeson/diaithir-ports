@@ -30,13 +30,13 @@ public class ATESRRendererProvider<T extends BlockEntity>  {
     public ATESRRendererProvider(BlockEntityRendererProvider.Context ctx) {
     }
 
-    @Override
+    
     public int getViewDistance() { return (int)0; /* ported stub */ }
 
-    @Override
+    
     public boolean shouldRender(T pBlockEntity, Vec3 pCameraPos) { return false; /* ported stub */ }
 
-    @Override
+    
     public void render(T pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {  /* ported stub */ }
 
     @Nullable
@@ -56,7 +56,7 @@ public class ATESRRendererProvider<T extends BlockEntity>  {
         return renderer != null && renderer.hasTESR(tileEntity);
     }
 
-    @Override
+    
     public boolean shouldRenderOffScreen(@Nonnull T tileEntity) { return false; /* ported stub */ }
     
 }

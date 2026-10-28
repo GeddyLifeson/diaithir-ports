@@ -416,7 +416,11 @@ public abstract class PipeNet<NodeDataType> implements INBTSerializable<Compound
     }
 
     @Override
-    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {  /* ported stub */ }
+    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
+        this.nodeByBlockPos.clear();
+        this.ownedChunks.clear();
+        deserializeAllNodeList(nbt.getCompound("Nodes"));
+    }
 
     protected void deserializeAllNodeList(CompoundTag compound) {
         ListTag allNodesList = compound.getListOrEmpty("NodeIndexes");

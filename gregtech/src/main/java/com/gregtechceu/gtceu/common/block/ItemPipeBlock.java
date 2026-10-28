@@ -39,7 +39,25 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
         return itemPipeType.modifyProperties(material.getProperty(PropertyKey.ITEM_PIPE));
     }
 
-    public void attachCapabilities(RegisterCapabilitiesEvent event) {  /* ported stub */ }
+    public void attachCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlock(Capabilities.ItemHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
+            if (level.isClientSide) return null;
+            if (blockEntity instanceof ItemPipeBlockEntity itemPipeBlockEntity) {
+                if (side != null && itemPipeBlockEntity.isConnected(side)) {
+                    itemPipeBlockEntity.ensureHandlersInitialized();
+                    itemPipeBlockEntity.checkNetwork();
+                    return itemPipeBlockEntity.getHandler(side, true);
+                }
+            }
+            return null;
+        }, this);
+        event.registerBlock(GTCapability.CAPABILITY_COVERABLE, (level, pos, state, blockEntity, side) -> {
+            if (blockEntity instanceof PipeBlockEntity<?, ?> fluidPipeBlockEntity) {
+                return fluidPipeBlockEntity.getCoverContainer();
+            }
+            return null;
+        }, this);
+    }
 
     @Override
     protected ItemPipeProperties createMaterialData() {
@@ -61,9 +79,22 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
         return GTBlockEntities.ITEM_PIPE.get();
     }
 
-    @Override
+    
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag flag) {  /* ported stub */ }
+                                TooltipFlag flag) {
+        super.appendHoverText(stack, context, tooltip, flag);
+        ItemPipeProperties properties = createProperties(defaultBlockState(), stack);
+
+        if (properties.getTransferRate() % 1 != 0) {
+            tooltip.add(Component.translatable("gtceu.universal.tooltip.item_transfer_rate",
+                    (int) ((properties.getTransferRate() * 64) + 0.5)));
+        } else {
+            tooltip.add(Component.translatable("gtceu.universal.tooltip.item_transfer_rate_stacks",
+                    (int) properties.getTransferRate()));
+        }
+
+        tooltip.add(Component.translatable("gtceu.item_pipe.priority", properties.getPriority()));
+    }
 
     @Override
     public boolean canPipesConnect(IPipeNode<ItemPipeType, ItemPipeProperties> selfTile, Direction side,
@@ -73,5 +104,7 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
 
     @Override
     public boolean canPipeConnectToBlock(IPipeNode<ItemPipeType, ItemPipeProperties> selfTile, Direction side,
-                                         Level level, BlockPos pos) { return false; /* ported stub */ }
+                                         Level level, BlockPos pos) {
+        return level.getCapability(Capabilities.ItemHandler.BLOCK, pos, side.getOpposite()) != null;
+    }
 }

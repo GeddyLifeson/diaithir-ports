@@ -28,9 +28,27 @@ public class CoilBlock extends ActiveBlock {
         this.coilType = coilType;
     }
 
-    @Override
+    
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag flag) {  /* ported stub */ }
+                                TooltipFlag flag) {
+        super.appendHoverText(stack, context, tooltip, flag);
+        if (GTUtil.isShiftDown()) {
+            int coilTier = coilType.getTier();
+            tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_heat", coilType.getCoilTemperature()));
+            tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_smelter"));
+            tooltip.add(
+                    Component.translatable("block.gtceu.wire_coil.tooltip_parallel_smelter", coilType.getLevel() * 32));
+            tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_energy_smelter",
+                    Math.max(1, 16 / coilType.getEnergyDiscount())));
+            tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_pyro"));
+            tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_speed_pyro",
+                    coilTier == 0 ? 75 : 50 * (coilTier + 1)));
+            tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_cracking"));
+            tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_energy_cracking", 100 - 10 * coilTier));
+        } else {
+            tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_extended_info"));
+        }
+    }
 
     public enum CoilType implements StringRepresentable, ICoilType {
 

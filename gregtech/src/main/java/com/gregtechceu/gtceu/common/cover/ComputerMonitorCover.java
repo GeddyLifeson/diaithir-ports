@@ -120,7 +120,85 @@ public class ComputerMonitorCover extends CoverBehavior
     }
 
     @Override
-    public Widget createUIWidget() { return null; /* ported stub */ }
+    public Widget createUIWidget() {
+        int textFieldWidth = 160, horizontalPadding = 10, verticalPadding = 2;
+        final WidgetGroup group = new WidgetGroup(0, 0, 2 * textFieldWidth + 3 * horizontalPadding, 150);
+        final WidgetGroup mainPage = new WidgetGroup(0, 0, 2 * textFieldWidth + 3 * horizontalPadding, 150);
+        final WidgetGroup formatStringArgsPage = new WidgetGroup(0, 0, 2 * textFieldWidth + 3 * horizontalPadding, 150);
+        for (int i = 0; i < 8; i++) {
+            TextFieldWidget formatStringInput = new TextFieldWidget();
+            formatStringInput.setSize(textFieldWidth, 15);
+            formatStringInput.setSelfPosition(horizontalPadding + textFieldWidth / 2,
+                    10 + verticalPadding + i * (15 + verticalPadding));
+            formatStringInput.setHoverTooltips(GTStringUtils.toImmutable(
+                    LangHandler.getMultiLang("gtceu.gui.computer_monitor_cover.main_textbox_tooltip", i + 1)));
+            int finalI = i;
+            if (i >= formatStringLines.size()) formatStringLines.add("");
+            formatStringInput.setCurrentString(formatStringLines.get(i));
+            formatStringInput.setTextResponder((s) -> formatStringLines.set(finalI, s));
+            mainPage.addWidget(formatStringInput);
+            SlotWidget slot = new com.gregtechceu.gtceu.api.gui.widget.SlotWidget(
+                    itemStackHandler,
+                    i,
+                    horizontalPadding + 50,
+                    20 * i);
+            slot.setBackgroundTexture(SlotWidget.ITEM_SLOT_TEXTURE);
+            slot.setHoverTooltips(GTStringUtils
+                    .toImmutable(LangHandler.getMultiLang("gtceu.gui.computer_monitor_cover.slot_tooltip", i + 1)));
+            mainPage.addWidget(slot);
+        }
+        for (int i = 0; i < 8; i++) {
+            TextFieldWidget formatStringArgsInput = new TextFieldWidget();
+            formatStringArgsInput.setSize(textFieldWidth, 15);
+            formatStringArgsInput.setSelfPosition(textFieldWidth / 2 + horizontalPadding,
+                    10 + verticalPadding + i * (15 + verticalPadding));
+            formatStringArgsInput.setHoverTooltips(GTStringUtils.toImmutable(
+                    LangHandler.getMultiLang("gtceu.gui.computer_monitor_cover.second_page_textbox_tooltip",
+                            GTStringUtils.getIntOrderingSuffix(i + 1))));
+
+            int finalI = i;
+            if (i >= formatStringArgs.size()) formatStringArgs.add("");
+            formatStringArgsInput.setCurrentString(formatStringArgs.get(i));
+            formatStringArgsInput.setTextResponder((s) -> formatStringArgs.set(finalI, s));
+            formatStringArgsPage.addWidget(formatStringArgsInput);
+        }
+        ButtonWidget switchToFormatStringArgsPageButton = new ButtonWidget(
+                horizontalPadding + 50,
+                10 * (15 + verticalPadding) + verticalPadding,
+                20, 20,
+                new ResourceBorderTexture(),
+                clickData -> {
+                    group.clearAllWidgets();
+                    group.addWidget(formatStringArgsPage);
+                });
+        ButtonWidget switchBack = new ButtonWidget(
+                horizontalPadding + 50,
+                10 * (15 + verticalPadding) + verticalPadding,
+                20, 20,
+                new ResourceBorderTexture(),
+                clickData -> {
+                    group.clearAllWidgets();
+                    group.addWidget(mainPage);
+                });
+        mainPage.addWidget(PlaceholderHandler.getPlaceholderHandlerUI(""));
+        // TextFieldWidget searchBox = new TextFieldWidget(280, 0, 80, 15, null, onSearch);
+        // searchBox.setHoverTooltips("Search");
+        // mainPage.addWidget(searchBox);
+        IntInputWidget updateIntervalInput = new IntInputWidget(0, 0, 60, 20, this::getUpdateInterval,
+                this::setUpdateInterval);
+        updateIntervalInput.setMin(1);
+        updateIntervalInput.setMax(60 * 20);
+        updateIntervalInput
+                .setHoverTooltips(Component.translatable("gtceu.gui.computer_monitor_cover.update_interval"));
+        mainPage.addWidget(updateIntervalInput);
+        switchToFormatStringArgsPageButton
+                .setHoverTooltips(Component.translatable("gtceu.gui.computer_monitor_cover.edit_blank_placeholders"));
+        switchBack.setHoverTooltips(Component.translatable("gtceu.gui.computer_monitor_cover.edit_displayed_text"));
+        mainPage.addWidget(switchToFormatStringArgsPageButton);
+        formatStringArgsPage.addWidget(switchBack);
+        group.addWidget(mainPage);
+        return group;
+    }
 
     @Override
     public void onLoad() {
@@ -128,7 +206,20 @@ public class ComputerMonitorCover extends CoverBehavior
         subscription = coverHolder.subscribeServerTick(subscription, this::update);
     }
 
-    private void update() {  /* ported stub */ }
+    private void update() {
+        ticksSincePlaced++;
+        if (coverHolder.getOffsetTimer() % updateInterval == 0) {
+            try {
+                if (GTCEu.Mods.isCreateLoaded())
+                    GTCreateIntegration.TemporaryRedstoneLinkTransmitter.destroyAll();
+                setRedstoneSignalOutput(0);
+                text = getRenderedText();
+            } catch (RuntimeException e) {
+                text = GTUtil.list(
+                        Component.translatable("gtceu.computer_monitor_cover.error.exception", e.getMessage()));
+            }
+        }
+    }
 
     @Override
     public void onRemoved() {

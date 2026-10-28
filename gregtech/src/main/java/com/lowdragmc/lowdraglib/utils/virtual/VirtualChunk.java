@@ -67,8 +67,10 @@ public class VirtualChunk extends LevelChunk {
 	}
 
 	@Nullable
-	@Override
-	public BlockState setBlockState(BlockPos p_177436_1_, BlockState p_177436_2_, boolean p_177436_3_) { return null; /* ported stub */ }
+	
+	public BlockState setBlockState(BlockPos p_177436_1_, BlockState p_177436_2_, boolean p_177436_3_) {
+		return null;
+	}
 
 	@Override
 	public void setBlockEntity(BlockEntity p_177426_2_) {}
@@ -95,8 +97,8 @@ public class VirtualChunk extends LevelChunk {
 		return new Heightmap(this, type);
 	}
 
-	@Override
-	public void setUnsaved(boolean p_177427_1_) {  /* ported stub */ }
+	
+	public void setUnsaved(boolean p_177427_1_) {}
 
 	@Override
 	public boolean isUnsaved() {

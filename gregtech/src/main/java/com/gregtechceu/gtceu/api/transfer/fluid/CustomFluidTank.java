@@ -50,8 +50,12 @@ public class CustomFluidTank extends FluidTank implements IFluidHandlerModifiabl
     }
 
     @Override
-    public CompoundTag serializeNBT(HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public CompoundTag serializeNBT(HolderLookup.Provider provider) {
+        return writeToNBT(provider, new CompoundTag());
+    }
 
     @Override
-    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {  /* ported stub */ }
+    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
+        readFromNBT(provider, nbt);
+    }
 }

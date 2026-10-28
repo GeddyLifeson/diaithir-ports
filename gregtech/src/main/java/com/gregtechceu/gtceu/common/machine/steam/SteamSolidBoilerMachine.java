@@ -80,7 +80,22 @@ public class SteamSolidBoilerMachine extends SteamBoilerMachine {
     }
 
     @Override
-    public void afterWorking() {  /* ported stub */ }
+    public void afterWorking() {
+        super.afterWorking();
+        if (recipeLogic.getLastRecipe() != null) {
+            var inputs = recipeLogic.getLastRecipe().inputs.getOrDefault(ItemRecipeCapability.CAP,
+                    Collections.emptyList());
+            if (!inputs.isEmpty()) {
+                var input = ItemRecipeCapability.CAP.of(inputs.get(0).content).getItems();
+                if (input.length > 0) {
+                    var remaining = getBurningFuelRemainder(input[0]);
+                    if (!remaining.isEmpty()) {
+                        ashHandler.insertItem(0, remaining, false);
+                    }
+                }
+            }
+        }
+    }
 
     public static ItemStack getBurningFuelRemainder(ItemStack fuelStack) {
         float remainderChance;

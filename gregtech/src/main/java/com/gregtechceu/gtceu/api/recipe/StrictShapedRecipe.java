@@ -37,10 +37,26 @@ public class StrictShapedRecipe extends ShapedRecipe {
     /**
      * Checks if the region of a crafting inventory is match for the recipe.
      */
-    private boolean matches(CraftingInput craftingInventory, int width, int height) { return false; /* ported stub */ }
+    private boolean matches(CraftingInput craftingInventory, int width, int height) {
+        for (int i = 0; i < craftingInventory.width(); ++i) {
+            for (int j = 0; j < craftingInventory.height(); ++j) {
+                int k = i - width;
+                int l = j - height;
+                Ingredient ingredient = Ingredient.EMPTY;
+                if (k >= 0 && l >= 0 && k < this.getWidth() && l < this.getHeight()) {
+                    ingredient = this.getIngredients().get(k + l * this.getWidth());
+                }
+                if (ingredient.test(craftingInventory.getItem(i + j * craftingInventory.width()))) continue;
+                return false;
+            }
+        }
+        return true;
+    }
 
-    @Override
-    public @NotNull RecipeSerializer<?> getSerializer() { return null; /* ported stub */ }
+    
+    public @NotNull RecipeSerializer<? getSerializer() {
+        return GTRecipeSerializers.CRAFTING_SHAPED_STRICT.get();
+    }
 
     public static class Serializer {
 
@@ -62,10 +78,14 @@ public class StrictShapedRecipe extends ShapedRecipe {
                         ByteBufCodecs.BOOL, ShapedRecipe::showNotification,
                         StrictShapedRecipe::new);
 
-        @Override
-        public MapCodec<StrictShapedRecipe> codec() { return null; /* ported stub */ }
+        
+        public MapCodec<StrictShapedRecipe> codec() {
+            return CODEC;
+        }
 
-        @Override
-        public StreamCodec<RegistryFriendlyByteBuf, StrictShapedRecipe> streamCodec() { return null; /* ported stub */ }
+        
+        public StreamCodec<RegistryFriendlyByteBuf, StrictShapedRecipe> streamCodec() {
+            return STREAM_CODEC;
+        }
     }
 }

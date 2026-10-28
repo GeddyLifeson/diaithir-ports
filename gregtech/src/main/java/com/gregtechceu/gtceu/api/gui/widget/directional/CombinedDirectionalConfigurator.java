@@ -71,7 +71,35 @@ public class CombinedDirectionalConfigurator extends WidgetGroup {
         addConfigWidgets(sceneWidget);
     }
 
-    private SceneWidget createSceneWidget() { return null; /* ported stub */ }
+    private SceneWidget createSceneWidget() {
+        var pos = this.machine.getBlockPos();
+
+        SceneWidget sceneWidget = new SceneWidget(4, 4, width - 8, height - 8, this.machine.getLevel())
+                .setRenderedCore(List.of(pos), null)
+                .setRenderSelect(false)
+                .setOnSelected(this::onSideSelected);
+
+        if (isRemote()) {
+            sceneWidget.getRenderer().addRenderedBlocks(
+                    List.of(pos.above(), pos.below(), pos.north(), pos.south(), pos.east(), pos.west()),
+                    new ISceneBlockRenderHook() {
+
+                        @Override
+                        @OnlyIn(Dist.CLIENT)
+                        public void apply(boolean isTESR, RenderType layer) {
+                            RenderSystem.enableBlend();
+                            RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+                        }
+                    });
+
+            sceneWidget.getRenderer().setAfterWorldRender(this::renderOverlays);
+
+            var playerRotation = gui.entityPlayer.getRotationVector();
+            sceneWidget.setCameraYawAndPitch(playerRotation.x, playerRotation.y - 90);
+        }
+        sceneWidget.setBackground(ColorPattern.BLACK.rectTexture());
+        return sceneWidget;
+    }
 
     private void renderOverlays(WorldSceneRenderer renderer) {
         sceneWidget.renderBlockOverLay(renderer);

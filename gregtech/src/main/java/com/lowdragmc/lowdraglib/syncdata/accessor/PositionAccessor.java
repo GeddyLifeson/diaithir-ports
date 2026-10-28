@@ -27,5 +27,11 @@ public class PositionAccessor extends CustomObjectAccessor<Position>{
     }
 
     @Override
-    public Position deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public Position deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        if (payload instanceof NbtTagPayload nbtTagPayload) {
+            var tag = (CompoundTag)nbtTagPayload.getPayload();
+            return new Position(tag.getInt("x"), tag.getInt("y"));
+        }
+        return null;
+    }
 }

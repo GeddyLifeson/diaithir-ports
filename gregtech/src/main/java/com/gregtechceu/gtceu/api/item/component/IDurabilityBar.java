@@ -62,7 +62,9 @@ public interface IDurabilityBar extends IItemDecoratorComponent {
         return true;
     }
 
-    @Override
+    
     default boolean render(@NotNull GuiGraphics guiGraphics, @NotNull Font font,
-                           @NotNull ItemStack stack, int xOffset, int yOffset) { return false; /* ported stub */ }
+                           @NotNull ItemStack stack, int xOffset, int yOffset) {
+        return ToolChargeBarRenderer.renderDurabilityBar(guiGraphics, stack, this, xOffset, yOffset);
+    }
 }

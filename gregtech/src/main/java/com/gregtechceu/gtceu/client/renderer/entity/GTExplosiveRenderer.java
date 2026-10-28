@@ -26,11 +26,11 @@ public class GTExplosiveRenderer<T extends GTExplosiveEntity>  {/* ported: remov
         this.blockRenderer = context.getBlockRenderDispatcher();
     }
 
-    @Override
+    
     public void render(@NotNull T entity, float entityYaw, float partialTicks, PoseStack poseStack,
                        @NotNull MultiBufferSource buffer, int packedLight) {  /* ported stub */ }
 
     @NotNull
-    @Override
+    
     public Identifier getTextureLocation(@NotNull T entity) { return null; /* ported stub */ }
 }

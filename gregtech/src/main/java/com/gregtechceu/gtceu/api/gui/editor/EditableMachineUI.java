@@ -56,7 +56,17 @@ public class EditableMachineUI implements IEditableUI<WidgetGroup, MetaMachine> 
     //////////////////////////////////////
 
     @Nullable
-    public WidgetGroup createCustomUI() { return null; /* ported stub */ }
+    public WidgetGroup createCustomUI() {
+        if (hasCustomUI()) {
+            var nbt = getCustomUI();
+            var group = new WidgetGroup();
+            IConfigurableWidget.deserializeNBT(group, nbt.getCompound("root"),
+                    Resources.fromNBT(nbt.getCompound("resources")), false, GTRegistries.builtinRegistry());
+            group.setSelfPosition(new Position(0, 0));
+            return group;
+        }
+        return null;
+    }
 
     public CompoundTag getCustomUI() {
         if (this.customUICache == null) {

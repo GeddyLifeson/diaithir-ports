@@ -45,10 +45,12 @@ public class GTArmorItem extends ArmorItem {
     }
 
     @Override
-    public String getDescriptionId() { return null; /* ported stub */ }
 
-    @Override
-    public Component getDescription() { return null; /* ported stub */ }
+
+    
+    public Component getDescription() {
+        return Component.translatable(getDescriptionId(), material.getLocalizedName());
+    }
 
     @Override
     public Component getName(ItemStack stack) {

@@ -86,7 +86,39 @@ public class IManagedAccessor extends ReadonlyAccessor {
     }
 
     @Override
-    public void writeToReadonlyField(AccessorOp op, Object obj, ITypedPayload<?> payload, HolderLookup.Provider provider) {  /* ported stub */ }
+    public void writeToReadonlyField(AccessorOp op, Object obj, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        if(!(obj instanceof IManaged managed)) {
+            throw new IllegalArgumentException("Field %s is not INBTSerializable".formatted(obj));
+        }
+
+        if(!(payload instanceof NbtTagPayload nbtPayload && nbtPayload.getPayload() instanceof CompoundTag tag)) {
+            throw new IllegalArgumentException("Payload %s is not NbtTagPayload".formatted(payload));
+        }
+
+        if(op == AccessorOp.SYNCED || op == AccessorOp.FORCE_SYNCED) {
+            var storage = managed.getSyncStorage();
+            var syncedFields = storage.getSyncFields();
+
+            var changed = BitSet.valueOf(tag.getByteArray("c"));
+            var list = tag.getList("l", 10);
+            var payloads = new ITypedPayload<?>[list.size()];
+
+            for (int i = 0; i < payloads.length; i++) {
+                CompoundTag payloadTag = list.getCompound(i);
+                byte id = payloadTag.getByte("t");
+                var p = TypedPayloadRegistries.create(id);
+                p.deserializeNBT(payloadTag.get("d"), provider);
+                payloads[i] = p;
+            }
+
+            writeSyncedFields(storage, syncedFields, changed, payloads, provider);
+        } else if (op == AccessorOp.PERSISTED) {
+            var refs = managed.getSyncStorage().getPersistedFields();
+            writePersistedFields(tag, refs, provider);
+        } else {
+            throw new IllegalArgumentException("Payload %s does not match op %s".formatted(payload, op));
+        }
+    }
 
     public static void writePersistedFields(CompoundTag tag, IRef[] refs, HolderLookup.Provider provider) {
         for (var ref : refs) {

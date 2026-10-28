@@ -28,7 +28,18 @@ public class SerializerIngredient implements IContentSerializer<SizedIngredient>
 
     @Override
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    public SizedIngredient of(Object o) { return null; /* ported stub */ }
+    public SizedIngredient of(Object o) {
+        if (o instanceof SizedIngredient ingredient) {
+            return ingredient;
+        } else if (o instanceof ItemStack itemStack) {
+            return new SizedIngredient(Ingredient.of(itemStack), itemStack.getCount());
+        } else if (o instanceof ItemLike itemLike) {
+            return SizedIngredient.of(itemLike, 1);
+        } else if (o instanceof TagKey tag) {
+            return SizedIngredient.of(tag, 1);
+        }
+        return EMPTY;
+    }
 
     @Override
     public SizedIngredient defaultValue() {

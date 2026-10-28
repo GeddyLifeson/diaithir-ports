@@ -54,5 +54,17 @@ public class OreVeinWorldEntry {
     }
 
     @NotNull
-    public static OreVeinWorldEntry readFromNBT(@NotNull CompoundTag tag, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public static OreVeinWorldEntry readFromNBT(@NotNull CompoundTag tag, HolderLookup.Provider provider) {
+        OreVeinWorldEntry info = new OreVeinWorldEntry();
+        info.oreYield = tag.getInt("oreYield");
+        info.operationsRemaining = tag.getInt("operationsRemaining");
+
+        if (tag.contains("vein")) {
+            Identifier id = Identifier.parse(tag.getString("vein"));
+            var maybeDef = provider.lookup(GTRegistries.BEDROCK_ORE_REGISTRY).get()
+                    .get(ResourceKey.create(GTRegistries.BEDROCK_ORE_REGISTRY, id));
+            maybeDef.ifPresent(info::setDefinition);
+        }
+        return info;
+    }
 }

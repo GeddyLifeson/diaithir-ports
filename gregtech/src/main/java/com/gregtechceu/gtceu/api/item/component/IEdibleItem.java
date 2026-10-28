@@ -12,7 +12,11 @@ public interface IEdibleItem {
 
     FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity);
 
-    default SoundEvent getEatingSound() { return null; /* ported stub */ }
+    default SoundEvent getEatingSound() {
+        return SoundEvents.GENERIC_EAT;
+    }
 
-    default SoundEvent getDrinkingSound() { return null; /* ported stub */ }
+    default SoundEvent getDrinkingSound() {
+        return SoundEvents.GENERIC_DRINK;
+    }
 }

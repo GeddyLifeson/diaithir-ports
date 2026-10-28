@@ -46,21 +46,38 @@ public class SimpleCookingRecipeBuilder<T extends AbstractCookingRecipe> {
         this.constructor = constructor;
     }
 
-    public static SimpleCookingRecipeBuilder<CampfireCookingRecipe> campfireCooking(@Nullable Identifier id) { return null; /* ported stub */ }
+    public static SimpleCookingRecipeBuilder<CampfireCookingRecipe> campfireCooking(@Nullable Identifier id) {
+        return new SimpleCookingRecipeBuilder<>(id, "campfire_cooking", CampfireCookingRecipe::new);
+    }
 
-    public static SimpleCookingRecipeBuilder<SmeltingRecipe> smelting(@Nullable Identifier id) { return null; /* ported stub */ }
+    public static SimpleCookingRecipeBuilder<SmeltingRecipe> smelting(@Nullable Identifier id) {
+        return new SimpleCookingRecipeBuilder<>(id, "smelting", SmeltingRecipe::new);
+    }
 
-    public static SimpleCookingRecipeBuilder<BlastingRecipe> blasting(@Nullable Identifier id) { return null; /* ported stub */ }
+    public static SimpleCookingRecipeBuilder<BlastingRecipe> blasting(@Nullable Identifier id) {
+        return new SimpleCookingRecipeBuilder<>(id, "blasting", BlastingRecipe::new);
+    }
 
-    public static SimpleCookingRecipeBuilder<SmokingRecipe> smoking(@Nullable Identifier id) { return null; /* ported stub */ }
+    public static SimpleCookingRecipeBuilder<SmokingRecipe> smoking(@Nullable Identifier id) {
+        return new SimpleCookingRecipeBuilder<>(id, "smoking", SmokingRecipe::new);
+    }
 
-    public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag) { return null; /* ported stub */ }
+    public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag) {
+        return input(Ingredient.of(tag));
+    }
 
     public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag, DataComponentPredicate components, boolean strict) {
         return input(ExDataComponentIngredient.of(strict, components, tag));
     }
 
-    public SimpleCookingRecipeBuilder<T> input(ItemStack itemStack) { return null; /* ported stub */ }
+    public SimpleCookingRecipeBuilder<T> input(ItemStack itemStack) {
+        if (!itemStack.getComponentsPatch().isEmpty()) {
+            input = DataComponentIngredient.of(true, itemStack);
+        } else {
+            input = Ingredient.of(itemStack);
+        }
+        return this;
+    }
 
     public SimpleCookingRecipeBuilder<T> input(ItemLike itemLike) {
         return input(Ingredient.of(itemLike));
@@ -90,7 +107,10 @@ public class SimpleCookingRecipeBuilder<T extends AbstractCookingRecipe> {
                 this.experience, this.cookingTime);
     }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+        consumer.accept(recipeId.withPrefix(folder + "/"), create(), null);
+    }
 
     @FunctionalInterface
     public interface RecipeConstructor<T extends AbstractCookingRecipe> {

@@ -60,7 +60,53 @@ public class ArmorUtils {
      * @param tier of charger
      * @return Map of the inventory and a list of the index of a chargable item
      */
-    public static List<Pair<NonNullList<ItemStack>, IntList>> getChargeableItem(Player player, int tier) { return null; /* ported stub */ }
+    public static List<Pair<NonNullList<ItemStack>, IntList>> getChargeableItem(Player player, int tier) {
+        List<Pair<NonNullList<ItemStack>, IntList>> inventorySlotMap = new ArrayList<>();
+
+        IntList openMainSlots = new IntArrayList();
+        for (int i = 0; i < player.getInventory().items.size(); i++) {
+            ItemStack current = player.getInventory().items.get(i);
+            IElectricItem item = GTCapabilityHelper.getElectricItem(current);
+            if (item == null) continue;
+
+            if (isPossibleToCharge(current) && item.getTier() <= tier) {
+                openMainSlots.add(i);
+            }
+        }
+
+        if (!openMainSlots.isEmpty()) {
+            inventorySlotMap.add(Pair.of(player.getInventory().items, openMainSlots));
+        }
+
+        IntList openArmorSlots = new IntArrayList();
+        for (int i = 0; i < player.getInventory().armor.size(); i++) {
+            ItemStack current = player.getInventory().armor.get(i);
+            IElectricItem item = GTCapabilityHelper.getElectricItem(current);
+            if (item == null) {
+                continue;
+            }
+
+            if (isPossibleToCharge(current) && item.getTier() <= tier) {
+                openArmorSlots.add(i);
+            }
+        }
+
+        if (!openArmorSlots.isEmpty()) {
+            inventorySlotMap.add(Pair.of(player.getInventory().armor, openArmorSlots));
+        }
+
+        ItemStack offHand = player.getInventory().offhand.get(0);
+        IElectricItem offHandItem = GTCapabilityHelper.getElectricItem(offHand);
+        if (offHandItem == null) {
+            return inventorySlotMap;
+        }
+
+        if (isPossibleToCharge(offHand) && offHandItem.getTier() <= tier) {
+            inventorySlotMap.add(Pair.of(player.getInventory().offhand, new IntArrayList(new int[] { 0 })));
+        }
+
+        return inventorySlotMap;
+    }
 
     /**
      * Spawn particle behind player with speedY speed
@@ -93,7 +139,11 @@ public class ArmorUtils {
     /**
      * Resets private field, amount of ticks player in the sky
      */
-    public static void resetPlayerFloatingTime(Player player) {  /* ported stub */ }
+    public static void resetPlayerFloatingTime(Player player) {
+        if (player instanceof ServerPlayer serverPlayer) {
+            ((ServerGamePacketListenerImplAccessor) serverPlayer.connection).setAboveGroundTickCount(0);
+        }
+    }
 
     /**
      * This method feeds player with food, if food heal amount more than
@@ -101,7 +151,20 @@ public class ArmorUtils {
      *
      * @return result of eating food
      */
-    public static InteractionResult eat(Player player, ItemStack food) { return null; /* ported stub */ }
+    public static InteractionResult eat(Player player, ItemStack food) {
+        if (food.getFoodProperties(player) == null) {
+            return InteractionResult.FAIL;
+        }
+
+        FoodProperties foodItem = food.getFoodProperties(player);
+        if (foodItem != null && player.getFoodData().needsFood()) {
+            ItemStack result = EventHooks.onItemUseFinish(player, food.copy(), player.getUseItemRemainingTicks(),
+                    food.finishUsingItem(player.level(), player));
+            return InteractionResult.SUCCESS.heldItemTransformedTo(result);
+        } else {
+            return InteractionResult.FAIL;
+        }
+    }
 
     /**
      * Modular HUD class for armor

@@ -304,7 +304,19 @@ public class GTRecipeType implements RecipeType<GTRecipe> {
         return false;
     }
 
-    public RecipeHolder<GTRecipe> toGTRecipe(RecipeHolder<?> holder) { return null; /* ported stub */ }
+    public RecipeHolder<GTRecipe> toGTRecipe(RecipeHolder<?> holder) {
+        var builder = recipeBuilder(holder.id());
+        Recipe<?> recipe = holder.value();
+        for (var ingredient : recipe.getIngredients()) {
+            builder.inputItems(new SizedIngredient(ingredient, 1));
+        }
+        builder.outputItems(recipe.getResultItem(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY)));
+        if (recipe instanceof SmeltingRecipe smeltingRecipe) {
+            builder.duration(smeltingRecipe.getCookingTime());
+        }
+        GTRecipe built = builder.build();
+        return new RecipeHolder<>(built.id, built);
+    }
 
     public void buildRepresentativeRecipes() {
         for (ICustomRecipeLogic logic : customRecipeLogicRunners) {

@@ -56,9 +56,19 @@ public class ShapedRecipeBuilder {
         return this;
     }
 
-    public ShapedRecipeBuilder define(char cha, TagKey<Item> itemStack) { return null; /* ported stub */ }
+    public ShapedRecipeBuilder define(char cha, TagKey<Item> itemStack) {
+        key.put(cha, Ingredient.of(itemStack));
+        return this;
+    }
 
-    public ShapedRecipeBuilder define(char cha, ItemStack itemStack) { return null; /* ported stub */ }
+    public ShapedRecipeBuilder define(char cha, ItemStack itemStack) {
+        if (!itemStack.getComponentsPatch().isEmpty()) {
+            key.put(cha, DataComponentIngredient.of(true, itemStack));
+        } else {
+            key.put(cha, Ingredient.of(itemStack));
+        }
+        return this;
+    }
 
     public ShapedRecipeBuilder define(char cha, ItemLike itemLike) {
         key.put(cha, Ingredient.of(itemLike));
@@ -80,5 +90,24 @@ public class ShapedRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+        ShapedRecipe recipe;
+        if (isStrict) {
+            recipe = new StrictShapedRecipe(
+                    Objects.requireNonNullElse(this.group, ""),
+                    RecipeBuilder.determineBookCategory(this.category),
+                    ShapedRecipePattern.of(key, rows),
+                    this.output,
+                    false);
+        } else {
+            recipe = new ShapedRecipe(
+                    Objects.requireNonNullElse(this.group, ""),
+                    RecipeBuilder.determineBookCategory(this.category),
+                    ShapedRecipePattern.of(key, rows),
+                    this.output,
+                    false);
+        }
+        consumer.accept(recipeId.withPrefix("shaped/"), recipe, null);
+    }
 }

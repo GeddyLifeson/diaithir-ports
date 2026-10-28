@@ -235,7 +235,37 @@ public class PatternPreviewWidget extends WidgetGroup {
         return new PatternPreviewWidget(controllerDefinition);
     }
 
-    public void setPage(int index) {  /* ported stub */ }
+    public void setPage(int index) {
+        if (index >= patterns.length || index < 0) return;
+        this.index = index;
+        this.layer = -1;
+        MBPattern pattern = patterns[index];
+        setupScene(pattern);
+        if (slotWidgets != null) {
+            for (SlotWidget slotWidget : slotWidgets) {
+                scrollableWidgetGroup.removeWidget(slotWidget);
+            }
+        }
+        slotWidgets = new SlotWidget[Math.min(pattern.parts.size(), 18)];
+        var itemHandler = CycleItemEntryHandler.createFromStacks(pattern.parts);
+        int xOffset = 0;
+        for (int i = 0; i < slotWidgets.length; i++) {
+            int padding = 1;
+            if (itemHandler.getStackInSlot(i).getCount() / 100_000 >= 1) {
+                padding = 10;
+            } else if (itemHandler.getStackInSlot(i).getCount() / 10_000 >= 1) {
+                padding = 7;
+            } else if (itemHandler.getStackInSlot(i).getCount() / 1_000 >= 1) {
+                padding = 4;
+            }
+
+            slotWidgets[i] = new PatternPreviewSlotWidget(itemHandler, i, (4 + xOffset + padding), 0, false, false)
+                    .setBackgroundTexture(ColorPattern.T_GRAY.rectTexture())
+                    .setIngredientIO(IngredientIO.INPUT);
+            xOffset += 18 + (2 * padding);
+            scrollableWidgetGroup.addWidget(slotWidgets[i]);
+        }
+    }
 
     private void onFormedSwitch(boolean isFormed) {
         MBPattern pattern = patterns[index];
@@ -249,7 +279,42 @@ public class PatternPreviewWidget extends WidgetGroup {
         }
     }
 
-    private void onPosSelected(BlockPos pos, Direction facing) {  /* ported stub */ }
+    private void onPosSelected(BlockPos pos, Direction facing) {
+        if (index >= patterns.length || index < 0) return;
+        TraceabilityPredicate predicate = patterns[index].predicateMap.get(pos);
+        if (predicate != null) {
+            predicates.clear();
+            predicates.addAll(predicate.common);
+            predicates.addAll(predicate.limited);
+            predicates.removeIf(p -> p == null || p.candidates == null); // why it happens?
+            if (candidates != null) {
+                for (SlotWidget candidate : candidates) {
+                    removeWidget(candidate);
+                }
+            }
+            List<List<ItemStack>> candidateStacks = new ArrayList<>();
+            List<List<Component>> predicateTips = new ArrayList<>();
+            for (SimplePredicate simplePredicate : predicates) {
+                List<ItemStack> itemStacks = simplePredicate.getCandidates();
+                if (!itemStacks.isEmpty()) {
+                    candidateStacks.add(itemStacks);
+                    predicateTips.add(simplePredicate.getToolTips(predicate));
+                }
+            }
+            candidates = new SlotWidget[candidateStacks.size()];
+            CycleItemEntryHandler itemHandler = CycleItemEntryHandler.createFromStacks(candidateStacks);
+            int maxCol = (160 - (((slotWidgets.length - 1) / 9 + 1) * 18) - 35) % 18;
+            for (int i = 0; i < candidateStacks.size(); i++) {
+                int finalI = i;
+                candidates[i] = new SlotWidget(itemHandler, i, 3 + (i / maxCol) * 18, 3 + (i % maxCol) * 18, false,
+                        false)
+                        .setIngredientIO(IngredientIO.INPUT)
+                        .setBackgroundTexture(new ColorRectTexture(0x4fffffff))
+                        .setOnAddedTooltips((slot, list) -> list.addAll(predicateTips.get(finalI)));
+                addWidget(candidates[i]);
+            }
+        }
+    }
 
     /**
      * Finds the next section of the dummy preview level to place a multiblock at in a spiral pattern.
@@ -291,10 +356,24 @@ public class PatternPreviewWidget extends WidgetGroup {
     }
 
     @Override
-    public void updateScreen() {  /* ported stub */ }
+    public void updateScreen() {
+        super.updateScreen();
+        // I can only think of this way
+        if (!isLoaded && GTCEu.Mods.isEMILoaded() && Minecraft.getInstance().screen instanceof RecipeScreen) {
+            setPage(0);
+            isLoaded = true;
+        } else if (!isLoaded && GTCEu.Mods.isREILoaded() &&
+                Minecraft.getInstance().screen instanceof AbstractDisplayViewingScreen) {
+                    setPage(0);
+                    isLoaded = true;
+                }
+    }
 
     @Override
-    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        RenderSystem.enableBlend();
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+    }
 
     private MBPattern initializePattern(MultiblockShapeInfo shapeInfo, HashSet<ItemStackKey> blockDrops) {
         Map<BlockPos, BlockInfo> blockMap = new HashMap<>();
@@ -363,7 +442,23 @@ public class PatternPreviewWidget extends WidgetGroup {
         }
     }
 
-    private Map<ItemStackKey, PartInfo> gatherBlockDrops(Map<BlockPos, BlockInfo> blocks) { return null; /* ported stub */ }
+    private Map<ItemStackKey, PartInfo> gatherBlockDrops(Map<BlockPos, BlockInfo> blocks) {
+        Map<ItemStackKey, PartInfo> partsMap = new Object2ObjectOpenHashMap<>();
+        for (Map.Entry<BlockPos, BlockInfo> entry : blocks.entrySet()) {
+            BlockPos pos = entry.getKey();
+            BlockState blockState = PatternPreviewWidget.LEVEL.getBlockState(pos);
+            ItemStack itemStack = blockState.getBlock().getCloneItemStack(PatternPreviewWidget.LEVEL, pos, blockState);
+
+            if (itemStack.isEmpty() && !blockState.getFluidState().isEmpty()) {
+                Fluid fluid = blockState.getFluidState().getType();
+                itemStack = fluid.getBucket().getDefaultInstance();
+            }
+
+            ItemStackKey itemStackKey = new ItemStackKey(itemStack);
+            partsMap.computeIfAbsent(itemStackKey, key -> new PartInfo(key, entry.getValue())).amount++;
+        }
+        return partsMap;
+    }
 
     private static class PartInfo {
 

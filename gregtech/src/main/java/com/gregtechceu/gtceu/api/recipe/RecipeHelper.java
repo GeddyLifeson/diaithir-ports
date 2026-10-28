@@ -112,7 +112,12 @@ public class RecipeHelper {
      * @param recipe GTRecipe
      * @return all input items
      */
-    public static List<ItemStack> getInputItems(GTRecipe recipe) { return null; /* ported stub */ }
+    public static List<ItemStack> getInputItems(GTRecipe recipe) {
+        return recipe.getInputContents(ItemRecipeCapability.CAP).stream()
+                .map(content -> ItemRecipeCapability.CAP.of(content.getContent()))
+                .map(ingredient -> ingredient.getItems()[0])
+                .collect(Collectors.toList());
+    }
 
     /**
      * get all input fluids from GTRecipes
@@ -120,7 +125,12 @@ public class RecipeHelper {
      * @param recipe GTRecipe
      * @return all input fluids
      */
-    public static List<FluidStack> getInputFluids(GTRecipe recipe) { return null; /* ported stub */ }
+    public static List<FluidStack> getInputFluids(GTRecipe recipe) {
+        return recipe.getInputContents(FluidRecipeCapability.CAP).stream()
+                .map(content -> FluidRecipeCapability.CAP.of(content.getContent()))
+                .map(ingredient -> ingredient.getFluids()[0])
+                .collect(Collectors.toList());
+    }
 
     /**
      * get all output items from GTRecipes
@@ -128,7 +138,12 @@ public class RecipeHelper {
      * @param recipe GTRecipe
      * @return all output items
      */
-    public static List<ItemStack> getOutputItems(GTRecipe recipe) { return null; /* ported stub */ }
+    public static List<ItemStack> getOutputItems(GTRecipe recipe) {
+        return recipe.getOutputContents(ItemRecipeCapability.CAP).stream()
+                .map(content -> ItemRecipeCapability.CAP.of(content.getContent()))
+                .map(ingredient -> ingredient.getItems()[0])
+                .collect(Collectors.toList());
+    }
 
     /**
      * get all output items from GTRecipeBuilder
@@ -136,7 +151,12 @@ public class RecipeHelper {
      * @param builder GTRecipeBuilder
      * @return all output items
      */
-    public static List<ItemStack> getOutputItems(GTRecipeBuilder builder) { return null; /* ported stub */ }
+    public static List<ItemStack> getOutputItems(GTRecipeBuilder builder) {
+        return builder.output.getOrDefault(ItemRecipeCapability.CAP, Collections.emptyList()).stream()
+                .map(content -> ItemRecipeCapability.CAP.of(content.getContent()))
+                .map(ingredient -> ingredient.getItems()[0])
+                .collect(Collectors.toList());
+    }
 
     /**
      * get all output fluids from GTRecipes
@@ -144,7 +164,12 @@ public class RecipeHelper {
      * @param recipe GTRecipe
      * @return all output fluids
      */
-    public static List<FluidStack> getOutputFluids(GTRecipe recipe) { return null; /* ported stub */ }
+    public static List<FluidStack> getOutputFluids(GTRecipe recipe) {
+        return recipe.getOutputContents(FluidRecipeCapability.CAP).stream()
+                .map(content -> FluidRecipeCapability.CAP.of(content.getContent()))
+                .map(ingredient -> ingredient.getFluids()[0])
+                .collect(Collectors.toList());
+    }
 
     /**
      * get all output fluids from GTRecipeBuilder
@@ -152,7 +177,12 @@ public class RecipeHelper {
      * @param builder GTRecipeBuilder
      * @return all output fluids
      */
-    public static List<FluidStack> getOutputFluids(GTRecipeBuilder builder) { return null; /* ported stub */ }
+    public static List<FluidStack> getOutputFluids(GTRecipeBuilder builder) {
+        return builder.output.getOrDefault(FluidRecipeCapability.CAP, Collections.emptyList()).stream()
+                .map(content -> FluidRecipeCapability.CAP.of(content.getContent()))
+                .map(ingredient -> ingredient.getFluids()[0])
+                .collect(Collectors.toList());
+    }
 
     public static ActionResult matchRecipe(IRecipeCapabilityHolder holder, GTRecipe recipe) {
         return matchRecipe(holder, recipe, false);
@@ -383,11 +413,24 @@ public class RecipeHelper {
         return new SizedFluidIngredient(makeFluidIngredient(stack), stack.getAmount());
     }
 
-    public static FluidIngredient makeFluidIngredient(FluidStack stack) { return null; /* ported stub */ }
+    public static FluidIngredient makeFluidIngredient(FluidStack stack) {
+        var tagKey = TagUtil.createFluidTag(BuiltInRegistries.FLUID.getKey(stack.getFluid()).getPath());
+        if (stack.isComponentsPatchEmpty()) {
+            return FluidIngredient.tag(tagKey);
+        } else {
+            return ExDataComponentFluidIngredient.of(true, stack.getComponents(), tagKey);
+        }
+    }
 
     public static SizedIngredient makeSizedIngredient(ItemStack stack) {
         return new SizedIngredient(makeItemIngredient(stack), stack.getCount());
     }
 
-    public static Ingredient makeItemIngredient(ItemStack stack) { return null; /* ported stub */ }
+    public static Ingredient makeItemIngredient(ItemStack stack) {
+        if (stack.isComponentsPatchEmpty()) {
+            return Ingredient.of(stack);
+        } else {
+            return DataComponentIngredient.of(true, stack);
+        }
+    }
 }

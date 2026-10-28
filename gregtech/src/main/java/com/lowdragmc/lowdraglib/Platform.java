@@ -40,7 +40,9 @@ public class Platform {
         return true;
     }
 
-    public static boolean isDevEnv() { return false; /* ported stub */ }
+    public static boolean isDevEnv() {
+        return !FMLLoader.isProduction();
+    }
 
     public static boolean isDatagen() {
         return DatagenModLoader.isRunningDataGen();
@@ -50,13 +52,17 @@ public class Platform {
         return ModList.get().isLoaded(modId);
     }
 
-    public static boolean isClient() { return false; /* ported stub */ }
+    public static boolean isClient() {
+        return FMLEnvironment.dist == Dist.CLIENT;
+    }
 
     public static MinecraftServer getMinecraftServer() {
         return ServerLifecycleHooks.getCurrentServer();
     }
 
-    public static Path getGamePath() { return null; /* ported stub */ }
+    public static Path getGamePath() {
+        return FMLLoader.getGamePath();
+    }
 
     public static RegistryAccess getFrozenRegistry() {
         if (FROZEN_REGISTRY_ACCESS != null) {

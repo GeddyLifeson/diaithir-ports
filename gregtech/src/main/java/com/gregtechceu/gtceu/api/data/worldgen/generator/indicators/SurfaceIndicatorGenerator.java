@@ -176,7 +176,9 @@ public class SurfaceIndicatorGenerator extends IndicatorGenerator {
     }
 
     @Override
-    public int getSearchRadiusModifier(int veinRadius) { return (int)0; /* ported stub */ }
+    public int getSearchRadiusModifier(int veinRadius) {
+        return Math.max(0, radius.getMaxValue() - veinRadius);
+    }
 
     @Override
     public MapCodec<? extends IndicatorGenerator> codec() {

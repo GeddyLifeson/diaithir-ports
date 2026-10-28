@@ -252,7 +252,13 @@ public abstract class AbstractEnderLinkCover<T extends VirtualEntry> extends Cov
     }
 
     @Override
-    public void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
+    public void pasteConfig(ServerPlayer player, CompoundTag tag) {
+        setChannelName(tag.getString("colorStr"));
+        setPermission(Permissions.values()[tag.getInt("permission")]);
+        setIo(IO.values()[tag.getInt("io")]);
+        setManualIOMode(ManualIOMode.values()[tag.getInt("manualIO")]);
+        super.pasteConfig(player, tag);
+    }
 
     protected enum Permissions implements EnumSelectorWidget.SelectableEnum {
 

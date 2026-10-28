@@ -100,7 +100,12 @@ public abstract class LongDistanceEndpointMachine extends MetaMachine implements
     }
 
     @Override
-    public void onLoad() {  /* ported stub */ }
+    public void onLoad() {
+        super.onLoad();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateRefreshNetSubscription));
+        }
+    }
 
     @Override
     public void onUnload() {
@@ -192,7 +197,14 @@ public abstract class LongDistanceEndpointMachine extends MetaMachine implements
     }
 
     @Override
-    public void invalidateLink() {  /* ported stub */ }
+    public void invalidateLink() {
+        if (link != null) {
+            this.link = null;
+            if (getLevel() instanceof ServerLevel serverLevel) {
+                serverLevel.getServer().tell(new TickTask(0, this::updateRefreshNetSubscription));
+            }
+        }
+    }
 
     @Override
     public Direction getOutputFacing() {

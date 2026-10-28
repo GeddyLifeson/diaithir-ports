@@ -43,7 +43,20 @@ public class BlockableSlotWidget extends SlotWidget {
     }
 
     @Override
-    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        if (isBlocked.getAsBoolean()) {
+            Position pos = getPosition();
+            Size size = getSize();
+            RenderSystem.disableDepthTest();
+            RenderSystem.colorMask(true, true, true, false);
+            graphics.fill(pos.getX() + 1, pos.getY() + 1, pos.getX() + 1 + size.getWidth() - 2,
+                    pos.getY() + 1 + size.getHeight() - 2, OVERLAY_COLOR);
+            RenderSystem.colorMask(true, true, true, true);
+            RenderSystem.enableDepthTest();
+            RenderSystem.enableBlend();
+        }
+    }
 
     @Override
     public boolean isMouseOverElement(double mouseX, double mouseY) {

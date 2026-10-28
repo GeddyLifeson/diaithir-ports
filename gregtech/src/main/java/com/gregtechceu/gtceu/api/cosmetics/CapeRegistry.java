@@ -54,7 +54,11 @@ public class CapeRegistry extends SavedData {
         save();
     }
 
-    public static void registerToServer(ServerLevel level) {  /* ported stub */ }
+    public static void registerToServer(ServerLevel level) {
+        level.getDataStorage()
+                .computeIfAbsent(new SavedData.Factory<>(CapeRegistry.INSTANCE::init, CapeRegistry.INSTANCE::load),
+                        "gtceu_capes");
+    }
 
     private CapeRegistry init() {
         clearMaps();
@@ -66,10 +70,73 @@ public class CapeRegistry extends SavedData {
         INSTANCE.setDirty();
     }
 
-    @Override
-    public @NotNull CompoundTag save(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) { return null; /* ported stub */ }
+    
+    public @NotNull CompoundTag save(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
+        ListTag unlockedCapesTag = new ListTag();
+        for (Map.Entry<UUID, Set<Identifier>> entry : UNLOCKED_CAPES.entrySet()) {
+            CompoundTag entryTag = new CompoundTag();
+            entryTag.putUUID("owner", entry.getKey());
 
-    private CapeRegistry load(CompoundTag tag, HolderLookup.Provider registries) { return null; /* ported stub */ }
+            ListTag capesTag = new ListTag();
+            for (Identifier cape : entry.getValue()) {
+                capesTag.add(StringTag.valueOf(cape.toString()));
+            }
+            entryTag.put("capes", capesTag);
+
+            unlockedCapesTag.add(entryTag);
+        }
+        tag.put("unlocked_capes", unlockedCapesTag);
+
+        ListTag currentCapesTag = new ListTag();
+        for (Map.Entry<UUID, Identifier> entry : CURRENT_CAPES.entrySet()) {
+            if (entry.getValue() == null)
+                continue;
+            String capeLocation = entry.getValue().toString();
+
+            CompoundTag entryTag = new CompoundTag();
+
+            entryTag.putString("cape", capeLocation);
+            entryTag.putUUID("owner", entry.getKey());
+
+            currentCapesTag.add(entryTag);
+        }
+        tag.put("current_capes", currentCapesTag);
+
+        return tag;
+    }
+
+    private CapeRegistry load(CompoundTag tag, HolderLookup.Provider registries) {
+        init();
+
+        ListTag unlockedCapesTag = tag.getList("unlocked_capes", Tag.TAG_COMPOUND);
+        for (int i = 0; i < unlockedCapesTag.size(); i++) {
+            CompoundTag entryTag = unlockedCapesTag.getCompound(i);
+            UUID uuid = entryTag.getUUID("owner");
+
+            Set<Identifier> capes = UNLOCKED_CAPES.computeIfAbsent(uuid, CapeRegistry::makeSet);
+
+            ListTag capesTag = entryTag.getList("capes", Tag.TAG_STRING);
+            for (int j = 0; j < capesTag.size(); j++) {
+                String capeId = capesTag.getString(j);
+                if (capeId.isEmpty())
+                    continue;
+                capes.add(Identifier.parse(capeId));
+            }
+            UNLOCKED_CAPES.put(uuid, capes);
+        }
+
+        ListTag currentCapesTag = tag.getList("current_capes", Tag.TAG_COMPOUND);
+        for (int i = 0; i < currentCapesTag.size(); i++) {
+            CompoundTag entryTag = currentCapesTag.getCompound(i);
+            String capeId = entryTag.getString("cape");
+            if (capeId.isEmpty())
+                continue;
+            UUID uuid = entryTag.getUUID("owner");
+            CURRENT_CAPES.put(uuid, Identifier.parse(capeId));
+        }
+
+        return this;
+    }
 
     @Nullable
     public static Identifier getPlayerCapeId(UUID uuid) {
@@ -251,6 +318,8 @@ public class CapeRegistry extends SavedData {
 
     private static class KJSCallWrapper {
 
-        public static void fireKJSEvent(RegisterGTCapesEvent event) {  /* ported stub */ }
+        public static void fireKJSEvent(RegisterGTCapesEvent event) {
+            GTCEuServerEvents.REGISTER_CAPES.post(ScriptType.SERVER, new RegisterCapesEventJS(event));
+        }
     }
 }

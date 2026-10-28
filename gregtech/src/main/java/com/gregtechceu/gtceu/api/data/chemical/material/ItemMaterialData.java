@@ -147,7 +147,23 @@ public class ItemMaterialData {
         return null;
     }
 
-    public static void reinitializeMaterialData() {  /* ported stub */ }
+    public static void reinitializeMaterialData() {
+        // Clear old data
+        MATERIAL_ENTRY_ITEM_MAP.clear();
+        MATERIAL_ENTRY_BLOCK_MAP.clear();
+        ITEM_MATERIAL_ENTRY.clear();
+        FLUID_MATERIAL.clear();
+
+        // Load new data
+        TagsHandler.initExtraUnificationEntries();
+        for (TagPrefix prefix : GTRegistries.TAG_PREFIXES) {
+            prefix.getIgnored().forEach((mat, items) -> registerMaterialEntries(items, prefix, mat));
+        }
+        GTMaterialItems.toUnify
+                .forEach((materialEntry, supplier) -> registerMaterialEntry(supplier, materialEntry));
+        WoodMachineRecipes.registerMaterialInfo();
+        StoneMachineRecipes.registerMaterialInfo();
+    }
 
     @ApiStatus.Internal
     public static void resolveItemMaterialInfos(RecipeOutput provider) {

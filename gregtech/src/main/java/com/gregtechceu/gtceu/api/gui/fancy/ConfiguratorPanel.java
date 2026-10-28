@@ -96,12 +96,61 @@ public class ConfiguratorPanel extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    protected void drawWidgetsBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    protected void drawWidgetsBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        for (Widget widget : widgets) {
+            if (widget.isVisible() && widget != expanded) {
+                RenderSystem.setShaderColor(1, 1, 1, 1);
+                RenderSystem.enableBlend();
+                if (widget.inAnimate()) {
+                    widget.getAnimation().drawInBackground(graphics, mouseX, mouseY, partialTicks);
+                } else {
+                    widget.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+                }
+            }
+        }
+        if (expanded != null && expanded.isVisible()) {
+            graphics.pose().pushPose();
+            graphics.pose().translate(0, 0, 300);
+            RenderSystem.setShaderColor(1, 1, 1, 1);
+            RenderSystem.enableBlend();
+            if (expanded.inAnimate()) {
+                expanded.getAnimation().drawInBackground(graphics, mouseX, mouseY, partialTicks);
+            } else {
+                expanded.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+            }
+            graphics.pose().popPose();
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
 
-    protected void drawWidgetsForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    protected void drawWidgetsForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        // remove previous tooltip
+        if (isMouseOverElement(mouseX, mouseY)) {
+            gui.getModularUIGui().setHoverTooltip(Collections.emptyList(), ItemStack.EMPTY, null, null);
+        }
+        for (Widget widget : widgets) {
+            if (widget.isVisible() && widget != expanded) {
+                RenderSystem.setShaderColor(1, 1, 1, 1);
+                RenderSystem.enableBlend();
+                if (widget.inAnimate()) {
+                    widget.getAnimation().drawInForeground(graphics, mouseX, mouseY, partialTicks);
+                } else {
+                    widget.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+                }
+            }
+        }
+        if (expanded != null && expanded.isVisible()) {
+            RenderSystem.setShaderColor(1, 1, 1, 1);
+            RenderSystem.enableBlend();
+            if (expanded.inAnimate()) {
+                expanded.getAnimation().drawInForeground(graphics, mouseX, mouseY, partialTicks);
+            } else {
+                expanded.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+            }
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)

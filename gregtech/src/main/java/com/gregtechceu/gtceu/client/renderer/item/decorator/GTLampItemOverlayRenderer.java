@@ -21,7 +21,7 @@ public class GTLampItemOverlayRenderer implements IItemDecorator {
 
     private GTLampItemOverlayRenderer() {}
 
-    @Override
+    
     public boolean render(@NotNull GuiGraphics graphics, @NotNull Font font,
                           ItemStack stack, int xPosition, int yPosition) { return false; /* ported stub */ }
 }

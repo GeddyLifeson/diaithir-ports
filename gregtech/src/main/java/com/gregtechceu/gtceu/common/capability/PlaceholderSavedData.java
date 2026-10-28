@@ -16,7 +16,13 @@ public class PlaceholderSavedData extends SavedData {
     private final ServerLevel level;
     private final CompoundTag tag;
 
-    public static PlaceholderSavedData getOrCreate(ServerLevel level) { return null; /* ported stub */ }
+    public static PlaceholderSavedData getOrCreate(ServerLevel level) {
+        return level.getDataStorage()
+                .computeIfAbsent(
+                        new SavedData.Factory<PlaceholderSavedData>(() -> new PlaceholderSavedData(level),
+                                (tag, provider) -> new PlaceholderSavedData(level, tag, provider)),
+                        "gtceu_placeholder_data");
+    }
 
     public PlaceholderSavedData(ServerLevel level) {
         this(level, new CompoundTag(), (HolderLookup.Provider) null);
@@ -33,6 +39,9 @@ public class PlaceholderSavedData extends SavedData {
         return tag.getCompoundOrEmpty(placeholder.getName());
     }
 
-    @Override
-    public CompoundTag save(CompoundTag tag, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    
+    public CompoundTag save(CompoundTag tag, HolderLookup.Provider provider) {
+        tag.put("data", this.tag);
+        return tag;
+    }
 }

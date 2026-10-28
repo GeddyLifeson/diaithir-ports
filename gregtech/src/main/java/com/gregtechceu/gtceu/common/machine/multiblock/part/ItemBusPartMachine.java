@@ -122,7 +122,15 @@ public class ItemBusPartMachine extends TieredIOPartMachine
     }
 
     @Override
-    public void onLoad() {  /* ported stub */ }
+    public void onLoad() {
+        super.onLoad();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateInventorySubscription));
+        }
+        getHandlerList().setDistinct(isDistinct);
+        getHandlerList().setColor(getPaintingColor());
+        inventorySubs = getInventory().addChangedListener(this::updateInventorySubscription);
+    }
 
     @Override
     public void onUnload() {

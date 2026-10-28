@@ -512,7 +512,16 @@ public interface IGTTool extends HeldItemUIFactory.IHeldItemUIHolder, ItemLike {
         return InteractionResult.PASS;
     }
 
-    default InteractionResult definition$use(Level world, Player player, InteractionHand hand) { return null; /* ported stub */ }
+    default InteractionResult definition$use(Level world, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
+        // TODO: relocate to keybind action when keybind PR happens
+        for (IToolBehavior<?> behavior : getBehaviorsComponent(stack).behaviors().values()) {
+            if (behavior.onItemRightClick(world, player, hand).getResult() == InteractionResult.SUCCESS) {
+                return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
+            }
+        }
+        return InteractionResult.PASS;
+    }
 
     default boolean definition$shouldOpenUIAfterUse(UseOnContext context) {
         ItemStack stack = context.getItemInHand();
@@ -534,7 +543,133 @@ public interface IGTTool extends HeldItemUIFactory.IHeldItemUIHolder, ItemLike {
     }
 
     default void definition$appendHoverText(ItemStack stack, Item.TooltipContext context,
-                                            List<Component> tooltip, TooltipFlag flag) {  /* ported stub */ }
+                                            List<Component> tooltip, TooltipFlag flag) {
+        if (!(stack.getItem() instanceof IGTTool tool)) return;
+
+        IGTToolDefinition toolStats = tool.getToolStats();
+
+        // electric info
+        if (this.isElectric()) {
+            ElectricStats.addCurrentChargeTooltip(tooltip, getCharge(stack), getMaxCharge(stack), getElectricTier(),
+                    false);
+        }
+
+        // durability info
+        if (!stack.has(DataComponents.UNBREAKABLE)) {
+            // Plus 1 to match vanilla behavior where tools can still be used once at zero durability. We want to not
+            // show this
+            int damageRemaining = tool.getTotalMaxDurability(stack) - stack.getDamageValue() + 1;
+            if (toolStats.isSuitableForCrafting(stack)) {
+                tooltip.add(Component.translatable("item.gtceu.tool.tooltip.crafting_uses", FormattingUtil
+                        .formatNumbers(damageRemaining / Math.max(1, toolStats.getToolDamagePerCraft(stack)))));
+            }
+            tooltip.add(Component.translatable("item.gtceu.tool.tooltip.max_uses",
+                    FormattingUtil.formatNumbers(tool.getTotalMaxDurability(stack))));
+            tooltip.add(Component.translatable("item.gtceu.tool.tooltip.general_uses",
+                    FormattingUtil.formatNumbers(damageRemaining)));
+        }
+
+        // attack info
+        if (toolStats.isSuitableForAttacking(stack)) {
+            tooltip.add(Component.translatable("item.gtceu.tool.tooltip.attack_damage",
+                    FormattingUtil.formatNumbers(2 + tool.getTotalAttackDamage())));
+            tooltip.add(Component.translatable("item.gtceu.tool.tooltip.attack_speed",
+                    FormattingUtil.formatNumbers(4 + tool.getTotalAttackSpeed())));
+        }
+
+        // mining info
+        if (toolStats.isSuitableForBlockBreak(stack)) {
+            tooltip.add(Component.translatable("item.gtceu.tool.tooltip.mining_speed",
+                    FormattingUtil.formatNumbers(tool.getTotalToolSpeed())));
+
+            int harvestLevel = tool.getTotalHarvestLevel();
+            String harvestName = "item.gtceu.tool.harvest_level." + harvestLevel;
+            if (Language.getInstance().has(harvestName)) { // if there's a defined name for the harvest level, use it
+                tooltip.add(Component.translatable("item.gtceu.tool.tooltip.harvest_level_extra", harvestLevel,
+                        Component.translatable(harvestName)));
+            } else {
+                tooltip.add(Component.translatable("item.gtceu.tool.tooltip.harvest_level", harvestLevel));
+            }
+        }
+
+        // behaviors
+        boolean addedBehaviorNewLine = false;
+        AoESymmetrical aoeDefinition = getAoEDefinition(stack);
+
+        if (!aoeDefinition.isZero()) {
+            addedBehaviorNewLine = tooltip.add(CommonComponents.EMPTY);
+            tooltip.add(Component.translatable("item.gtceu.tool.behavior.aoe_mining",
+                    aoeDefinition.column() * 2 + 1, aoeDefinition.row() * 2 + 1, aoeDefinition.layer() + 1));
+        }
+
+        if (stack.has(GTDataComponents.RELOCATE_MINED_BLOCKS)) {
+            if (!addedBehaviorNewLine) {
+                addedBehaviorNewLine = tooltip.add(CommonComponents.EMPTY);
+            }
+            tooltip.add(Component.translatable("item.gtceu.tool.behavior.relocate_mining"));
+        }
+
+        if (!toolStats.getBehaviors().isEmpty()) {
+            if (!addedBehaviorNewLine) {
+                tooltip.add(CommonComponents.EMPTY);
+            }
+            toolStats.getBehaviors().forEach(behavior -> behavior.addInformation(stack, context, tooltip, flag));
+        }
+
+        // unique tooltip
+        String uniqueTooltip = this.getToolType().getUnlocalizedName() + ".tooltip";
+        if (Language.getInstance().has(uniqueTooltip)) {
+            tooltip.add(CommonComponents.EMPTY);
+            tooltip.add(Component.translatable(uniqueTooltip));
+        }
+
+        // innate enchantments
+        if (stack.has(GTDataComponents.INNATE_ENCHANTMENTS)) {
+            tooltip.add(CommonComponents.EMPTY);
+
+            tooltip.add(Component.translatable("item.gtceu.tool.tooltip.innate_enchantments"));
+            stack.addToTooltip(GTDataComponents.INNATE_ENCHANTMENTS, context, tooltip::add, flag);
+        }
+
+        tooltip.add(CommonComponents.EMPTY);
+
+        // valid tools
+        tooltip.add(Component.translatable("item.gtceu.tool.usable_as",
+                getToolClassNames(stack).stream()
+                        .filter(s -> Language.getInstance().has("gtceu.tool.class." + s))
+                        .map(s -> Component.translatable("gtceu.tool.class." + s))
+                        .collect(Component::empty, FormattingUtil::combineComponents,
+                                FormattingUtil::combineComponents)));
+
+        // repair info
+        if (!stack.has(DataComponents.UNBREAKABLE)) {
+            if (GTUtil.isShiftDown()) {
+                Material material = getToolMaterial(stack);
+
+                Collection<Component> repairItems = new ArrayList<>();
+                if (!VanillaRecipeHelper.isMaterialWood(material)) {
+                    if (material.hasProperty(PropertyKey.INGOT)) {
+                        repairItems.add(TagPrefix.ingot.getLocalizedName(material));
+                    } else if (material.hasProperty(PropertyKey.GEM)) {
+                        repairItems.add(TagPrefix.gem.getLocalizedName(material));
+                    }
+                }
+                if (!ChemicalHelper.get(TagPrefix.plate, material).isEmpty()) {
+                    repairItems.add(TagPrefix.plate.getLocalizedName(material));
+                }
+                if (!repairItems.isEmpty()) {
+                    tooltip.add(Component.translatable("item.gtceu.tool.tooltip.repair_material", repairItems.stream()
+                            .collect(Component::empty, FormattingUtil::combineComponents,
+                                    FormattingUtil::combineComponents)));
+                }
+            } else {
+                tooltip.add(Component.translatable("item.gtceu.tool.tooltip.repair_info"));
+            }
+        }
+        if (this.isElectric()) {
+            tooltip.add(Component.translatable("item.gtceu.tool.replace_tool_head"));
+        }
+    }
 
     // Sound Playing
     default void playCraftingSound(@Nullable Player player, ItemStack stack) {

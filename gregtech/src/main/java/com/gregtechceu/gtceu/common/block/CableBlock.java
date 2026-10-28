@@ -110,12 +110,56 @@ public class CableBlock extends MaterialPipeBlock<Insulation, WireProperties, Le
         return pipeType.createPipeModel(this, material, provider);
     }
 
-    @Override
+    
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag flag) {  /* ported stub */ }
+                                TooltipFlag flag) {
+        super.appendHoverText(stack, context, tooltip, flag);
+        WireProperties wireProperties = createProperties(defaultBlockState(), stack);
+        int tier = GTUtil.getTierByVoltage(wireProperties.getVoltage());
+        if (wireProperties.isSuperconductor())
+            tooltip.add(Component.translatable("gtceu.cable.superconductor", GTValues.VN[tier]));
+        tooltip.add(Component.translatable("gtceu.cable.voltage",
+                FormattingUtil.formatNumbers(wireProperties.getVoltage()), GTValues.VNF[tier]));
+        tooltip.add(Component.translatable("gtceu.cable.amperage",
+                FormattingUtil.formatNumbers(wireProperties.getAmperage())));
+        tooltip.add(Component.translatable("gtceu.cable.loss_per_block",
+                FormattingUtil.formatNumbers(wireProperties.getLossPerBlock())));
+    }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {  /* ported stub */ }
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        // dont apply damage if there is a frame box
+        var pipeNode = getPipeTile(level, pos);
+        if (pipeNode == null) {
+            GTCEu.LOGGER.error("Pipe was null");
+            return;
+        }
+        if (!pipeNode.getFrameMaterial().isNull()) {
+            BlockState frameState = GTMaterialBlocks.MATERIAL_BLOCKS.get(TagPrefix.frameGt, pipeNode.getFrameMaterial())
+                    .getDefaultState();
+            frameState.entityInside(level, pos, entity);
+            return;
+        }
+        if (level.isClientSide) return;
+
+        Insulation insulation = getPipeTile(level, pos).getPipeType();
+        if (insulation.insulationLevel == -1 && entity instanceof LivingEntity entityLiving) {
+            CableBlockEntity cable = (CableBlockEntity) getPipeTile(level, pos);
+            if (cable != null && cable.getFrameMaterial().isNull() &&
+                    cable.getNodeData().getLossPerBlock() > 0) {
+                long voltage = cable.getCurrentMaxVoltage();
+                double amperage = cable.getAverageAmperage();
+                if (voltage > 0L && amperage > 0L) {
+                    float damageAmount = (float) ((GTUtil.getTierByVoltage(voltage) + 1) * amperage * 4);
+                    entityLiving.hurt(level.damageSources().source(GTDamageTypes.ELECTRIC), damageAmount);
+                    if (entityLiving instanceof ServerPlayer) {
+                        // TODO advancments
+                        // AdvancementTriggers.ELECTROCUTION_DEATH.trigger((ServerPlayer) entityLiving);
+                    }
+                }
+            }
+        }
+    }
 
     @Override
     public GTToolType getPipeTuneTool() {

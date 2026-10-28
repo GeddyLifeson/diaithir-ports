@@ -19,7 +19,9 @@ public class FluidStackPayload extends ObjectTypedPayload<FluidStack> {
     }
 
     @Override
-    public Tag serializeNBT(HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public Tag serializeNBT(HolderLookup.Provider provider) {
+        return payload.saveOptional(provider);
+    }
 
     @Override
     public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {

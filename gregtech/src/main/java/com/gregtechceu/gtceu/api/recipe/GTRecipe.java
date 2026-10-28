@@ -161,8 +161,10 @@ public class GTRecipe implements Recipe<RecipeInput> {
         return copied;
     }
 
-    @Override
-    public @NotNull RecipeSerializer<?> getSerializer() { return null; /* ported stub */ }
+    
+    public @NotNull RecipeSerializer<? getSerializer() {
+        return recipeType.getSerializer();
+    }
 
     @Override
     public @NotNull GTRecipeType getType() {
@@ -174,14 +176,20 @@ public class GTRecipe implements Recipe<RecipeInput> {
         return false;
     }
 
-    @Override
-    public @NotNull ItemStack assemble(@NotNull RecipeInput input, HolderLookup.@NotNull Provider registries) { return null; /* ported stub */ }
+    
+    public @NotNull ItemStack assemble(@NotNull RecipeInput input, HolderLookup.@NotNull Provider registries) {
+        return ItemStack.EMPTY;
+    }
 
-    @Override
-    public boolean canCraftInDimensions(int pWidth, int pHeight) { return false; /* ported stub */ }
+    
+    public boolean canCraftInDimensions(int pWidth, int pHeight) {
+        return false;
+    }
 
-    @Override
-    public @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider registries) { return null; /* ported stub */ }
+    
+    public @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider registries) {
+        return ItemStack.EMPTY;
+    }
 
     public List<Content> getInputContents(RecipeCapability<?> capability) {
         return inputs.getOrDefault(capability, Collections.emptyList());

@@ -26,11 +26,27 @@ public interface IInteractionItem extends IItemComponent {
     }
 
     default InteractionResult use(ItemStack item, Level level,
-                                                   Player player, InteractionHand usedHand) { return null; /* ported stub */ }
+                                                   Player player, InteractionHand usedHand) {
+        FoodProperties food = item.getFoodProperties(player);
+        if (food != null) {
+            if (player.canEat(food.canAlwaysEat())) {
+                player.startUsingItem(usedHand);
+                return InteractionResult.CONSUME.heldItemTransformedTo(item);
+            } else {
+                return InteractionResult.FAIL;
+            }
+        } else {
+            return InteractionResult.PASS;
+        }
+    }
 
-    default ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) { return null; /* ported stub */ }
+    default ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
+        return stack.getFoodProperties(livingEntity) != null ? livingEntity.eat(level, stack) : stack;
+    }
 
-    default ItemUseAnimation getUseAnimation(ItemStack stack) { return null; /* ported stub */ }
+    default ItemUseAnimation getUseAnimation(ItemStack stack) {
+        return stack.getFoodProperties(null) != null ? UseAnim.EAT : UseAnim.NONE;
+    }
 
     default boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         return false;

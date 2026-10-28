@@ -168,7 +168,12 @@ public abstract class ProspectorMode<T> {
         @Setter
         private int left;
 
-        public static FluidInfo fromNbt(CompoundTag tag) { return null; /* ported stub */ }
+        public static FluidInfo fromNbt(CompoundTag tag) {
+            Fluid fluid = BuiltInRegistries.FLUID.get(Identifier.parse(tag.getString("fluid")));
+            int left = tag.getInt("left");
+            int yield = tag.getInt("yield");
+            return new FluidInfo(fluid, yield, left);
+        }
 
         public CompoundTag toNbt() {
             CompoundTag tag = new CompoundTag();

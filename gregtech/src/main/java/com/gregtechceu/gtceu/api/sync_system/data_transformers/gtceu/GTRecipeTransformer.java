@@ -26,5 +26,20 @@ public class GTRecipeTransformer implements ValueTransformer<GTRecipe> {
     }
 
     @Override
-    public @Nullable GTRecipe deserializeNBT(Tag tag, ValueTransformer.TransformerContext<GTRecipe> context) { return null; /* ported stub */ }
+    public @Nullable GTRecipe deserializeNBT(Tag tag, ValueTransformer.TransformerContext<GTRecipe> context) {
+        if (tag instanceof CompoundTag comp && comp.isEmpty()) return null;
+        GTRecipe result = null;
+        if (tag instanceof CompoundTag compoundTag) {
+            var recipeTag = compoundTag.get("recipe");
+            result = GTRecipeSerializer.CODEC
+                    .decode(NbtOps.INSTANCE, NbtOps.INSTANCE.getMap(Objects.requireNonNull(recipeTag)).getOrThrow())
+                    .result().orElse(null);
+            if (result != null) {
+                result.id = Identifier.parse(compoundTag.getString("id"));
+                result.parallels = compoundTag.contains("parallels") ? compoundTag.getInt("parallels") : 1;
+                result.ocLevel = compoundTag.getInt("ocLevel");
+            }
+        }
+        return result;
+    }
 }

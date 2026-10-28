@@ -61,8 +61,10 @@ public class GTToolItem extends TieredItem implements IGTTool {
         return get();
     }
 
-    @Override
-    public boolean canPerformAction(ItemStack stack, ItemAbility action) { return false; /* ported stub */ }
+    
+    public boolean canPerformAction(ItemStack stack, ItemAbility action) {
+        return definition$canPerformAction(stack, action);
+    }
 
     @Override
     public InteractionResult onItemUseFirst(ItemStack itemStack, UseOnContext context) {
@@ -75,10 +77,12 @@ public class GTToolItem extends TieredItem implements IGTTool {
     }
 
     @Override
-    public String getDescriptionId() { return null; /* ported stub */ }
 
-    @Override
-    public Component getDescription() { return null; /* ported stub */ }
+
+    
+    public Component getDescription() {
+        return Component.translatable(toolType.getUnlocalizedName(), material.getLocalizedName());
+    }
 
     @Override
     public Component getName(ItemStack stack) {
@@ -107,29 +111,41 @@ public class GTToolItem extends TieredItem implements IGTTool {
         return toolType.playSoundOnBlockDestroy;
     }
 
-    @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) { return false; /* ported stub */ }
+    
+    public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        return definition$hurtEnemy(stack, target, attacker);
+    }
 
-    @Override
+    
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents,
-                                TooltipFlag isAdvanced) {  /* ported stub */ }
+                                TooltipFlag isAdvanced) {
+        definition$appendHoverText(stack, context, tooltipComponents, isAdvanced);
+    }
 
-    @Override
-    public int getEnchantmentValue(ItemStack stack) { return (int)0; /* ported stub */ }
+    
+    public int getEnchantmentValue(ItemStack stack) {
+        return getTotalEnchantability(stack);
+    }
 
-    @Override
-    public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) { return false; /* ported stub */ }
+    
+    public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
+        return definition$isValidRepairItem(stack, repairCandidate);
+    }
 
     @Override
     public ItemEnchantments getAllEnchantments(ItemStack stack, HolderLookup.RegistryLookup<Enchantment> lookup) {
         return definition$getAllEnchantments(stack, lookup);
     }
 
-    @Override
-    public int getEnchantmentLevel(ItemStack stack, Holder<Enchantment> enchantment) { return (int)0; /* ported stub */ }
+    
+    public int getEnchantmentLevel(ItemStack stack, Holder<Enchantment> enchantment) {
+        return definition$getEnchantmentLevel(stack, enchantment);
+    }
 
-    @Override
-    public boolean canDisableShield(ItemStack stack, ItemStack shield, LivingEntity entity, LivingEntity attacker) { return false; /* ported stub */ }
+    
+    public boolean canDisableShield(ItemStack stack, ItemStack shield, LivingEntity entity, LivingEntity attacker) {
+        return definition$canDisableShield(shield, shield, entity, attacker);
+    }
 
     @Override
     public boolean doesSneakBypassUse(ItemStack stack, LevelReader level, BlockPos pos, Player player) {
@@ -141,11 +157,15 @@ public class GTToolItem extends TieredItem implements IGTTool {
         return definition$shouldCauseBlockBreakReset(oldStack, newStack);
     }
 
-    @Override
-    public boolean hasCraftingRemainingItem(ItemStack stack) { return false; /* ported stub */ }
+    
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        return definition$hasCraftingRemainingItem(stack);
+    }
 
-    @Override
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) { return null; /* ported stub */ }
+    
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+        return definition$getCraftingRemainingItem(itemStack);
+    }
 
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {

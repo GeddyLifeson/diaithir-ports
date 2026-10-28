@@ -98,10 +98,52 @@ public class HPCAMachine extends WorkableElectricMultiblockMachine
     }
 
     @Override
-    public void onStructureFormed() {  /* ported stub */ }
+    public void onStructureFormed() {
+        super.onStructureFormed();
+        List<IEnergyContainer> energyContainers = new ArrayList<>();
+        List<IFluidHandler> coolantContainers = new ArrayList<>();
+        List<HPCAComponentTrait> componentTraits = new ArrayList<>();
+        Long2ObjectMap<IO> ioMap = getMultiblockState().getMatchContext().getOrCreate("ioMap",
+                Long2ObjectMaps::emptyMap);
+        for (IMultiPart part : getParts()) {
+            IO io = ioMap.getOrDefault(part.self().getBlockPos().asLong(), IO.BOTH);
+
+            componentTraits.addAll(part.self().getTraitHolder().getTraits(HPCAComponentTrait.TYPE));
+
+            if (part instanceof IMaintenanceMachine maintenanceMachine) {
+                this.maintenance = maintenanceMachine;
+            }
+            if (io == IO.NONE || io == IO.OUT) continue;
+            var handlerLists = part.getRecipeHandlers();
+            for (var handlerList : handlerLists) {
+                if (!handlerList.isValid(io)) continue;
+
+                handlerList.getCapability(EURecipeCapability.CAP).stream()
+                        .filter(IEnergyContainer.class::isInstance)
+                        .map(IEnergyContainer.class::cast)
+                        .forEach(energyContainers::add);
+                handlerList.getCapability(FluidRecipeCapability.CAP).stream()
+                        .filter(IFluidHandler.class::isInstance)
+                        .map(IFluidHandler.class::cast)
+                        .forEach(coolantContainers::add);
+            }
+        }
+        this.energyContainer = new EnergyContainerList(energyContainers);
+        this.coolantHandler = new FluidHandlerList(coolantContainers);
+        this.hpcaHandler.onStructureForm(componentTraits);
+
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateTickSubscription));
+        }
+    }
 
     @Override
-    public void onLoad() {  /* ported stub */ }
+    public void onLoad() {
+        super.onLoad();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().tell(new TickTask(0, this::updateTickSubscription));
+        }
+    }
 
     @Override
     public void onUnload() {

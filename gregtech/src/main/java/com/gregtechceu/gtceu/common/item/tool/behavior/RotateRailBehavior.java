@@ -30,7 +30,7 @@ import java.util.List;
 public class RotateRailBehavior implements IToolBehavior<RotateRailBehavior> {
 
     public static final RotateRailBehavior INSTANCE = new RotateRailBehavior();
-    public static final Codec<RotateRailBehavior> CODEC = Codec.unit(INSTANCE);
+    public static final Codec<RotateRailBehavior> CODEC = com.mojang.serialization.MapCodec.unit(INSTANCE).codec();
     public static final StreamCodec<ByteBuf, RotateRailBehavior> STREAM_CODEC = StreamCodec.unit(INSTANCE);
 
     protected RotateRailBehavior() {}

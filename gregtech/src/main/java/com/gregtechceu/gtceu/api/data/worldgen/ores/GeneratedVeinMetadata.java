@@ -54,7 +54,12 @@ public final class GeneratedVeinMetadata {
         this.depleted = depleted;
     }
 
-    public static GeneratedVeinMetadata readFromPacket(RegistryFriendlyByteBuf buf) { return null; /* ported stub */ }
+    public static GeneratedVeinMetadata readFromPacket(RegistryFriendlyByteBuf buf) {
+        ChunkPos origin = new ChunkPos(buf.readVarLong());
+        BlockPos center = BlockPos.of(buf.readVarLong());
+        Holder<GTOreDefinition> def = GTOreDefinition.STREAM_CODEC.decode(buf);
+        return new GeneratedVeinMetadata(origin, center, def, false);
+    }
 
     public void writeToPacket(RegistryFriendlyByteBuf buf) {
         buf.writeVarLong(this.originChunk.pack());

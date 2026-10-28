@@ -58,18 +58,50 @@ public class FacadeCoverRecipe extends CustomRecipe {
         return foundBlockItem && foundPlate;
     }
 
-    @Override
-    public @NotNull ItemStack assemble(CraftingInput container, HolderLookup.@NotNull Provider provider) { return null; /* ported stub */ }
+    
+    public @NotNull ItemStack assemble(CraftingInput container, HolderLookup.@NotNull Provider provider) {
+        ItemStack itemStack = GTItems.COVER_FACADE.asStack();
+        BlockState facadeState = null;
 
-    @Override
-    public @NotNull NonNullList<Ingredient> getIngredients() { return null; /* ported stub */ }
+        for (int i = 0; i < container.size(); i++) {
+            var item = container.getItem(i);
+            if (item.isEmpty()) continue;
+            if (FacadeItemBehaviour.isValidFacade(item)) {
+                facadeState = FacadeItemBehaviour.getFacadeState(item);
+                break;
+            }
+        }
+        if (facadeState != null) {
+            FacadeItemBehaviour.setFacadeState(itemStack, facadeState);
+            itemStack.setCount(6);
+            return itemStack;
+        }
+        return ItemStack.EMPTY;
+    }
 
-    @Override
-    public boolean canCraftInDimensions(int width, int height) { return false; /* ported stub */ }
+    
+    public @NotNull NonNullList<Ingredient> getIngredients() {
+        return NonNullList.of(Ingredient.EMPTY,
+                Ingredient.of(IRON_PLATE_TAG),
+                Ingredient.of(IRON_PLATE_TAG),
+                Ingredient.of(IRON_PLATE_TAG),
+                Ingredient.of(Items.STONE));
+    }
 
-    @Override
-    public @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider provider) { return null; /* ported stub */ }
+    
+    public boolean canCraftInDimensions(int width, int height) {
+        return width * height >= 4;
+    }
 
-    @Override
-    public @NotNull RecipeSerializer<?> getSerializer() { return null; /* ported stub */ }
+    
+    public @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider provider) {
+        var result = GTItems.COVER_FACADE.asStack();
+        FacadeItemBehaviour.setFacadeState(GTItems.COVER_FACADE.asStack(), Blocks.STONE.defaultBlockState());
+        return result;
+    }
+
+    
+    public @NotNull RecipeSerializer<? getSerializer() {
+        return GTRecipeSerializers.CRAFTING_FACADE_COVER.get();
+    }
 }

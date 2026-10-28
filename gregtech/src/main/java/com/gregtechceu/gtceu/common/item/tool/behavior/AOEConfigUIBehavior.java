@@ -27,7 +27,7 @@ import static com.gregtechceu.gtceu.api.item.tool.ToolHelper.*;
 public class AOEConfigUIBehavior implements IToolUIBehavior<AOEConfigUIBehavior> {
 
     public static final AOEConfigUIBehavior INSTANCE = new AOEConfigUIBehavior();
-    public static final Codec<AOEConfigUIBehavior> CODEC = Codec.unit(INSTANCE);
+    public static final Codec<AOEConfigUIBehavior> CODEC = com.mojang.serialization.MapCodec.unit(INSTANCE).codec();
     public static final StreamCodec<ByteBuf, AOEConfigUIBehavior> STREAM_CODEC = StreamCodec.unit(INSTANCE);
 
     @Override
