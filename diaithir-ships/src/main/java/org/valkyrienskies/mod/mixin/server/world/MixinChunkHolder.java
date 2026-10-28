@@ -38,9 +38,9 @@ public abstract class MixinChunkHolder {
     @Inject(method = "getTickingChunk", at = @At("HEAD"), cancellable = true)
     private void vs$getTickingChunkForShipyard(CallbackInfoReturnable<LevelChunk> cir) {
         final ChunkPos pos = ((ChunkHolder) (Object) this).getPos();
-        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(pos.x, pos.z)) {
+        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(pos.x(), pos.z())) {
             if (levelHeightAccessor instanceof ServerLevel serverLevel) {
-                LevelChunk chunk = serverLevel.getChunkSource().getChunkNow(pos.x, pos.z);
+                LevelChunk chunk = serverLevel.getChunkSource().getChunkNow(pos.x(), pos.z());
                 if (chunk != null) {
                     cir.setReturnValue(chunk);
                 }
@@ -73,7 +73,7 @@ public abstract class MixinChunkHolder {
     private FullChunkStatus vs$promoteShipyardStatus(final int ticketLevel, final Operation<FullChunkStatus> op) {
         final ChunkPos pos = ((ChunkHolder) (Object) this).getPos();
         if (ticketLevel == 33
-                && VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(pos.x, pos.z)) {
+                && VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(pos.x(), pos.z())) {
             return FullChunkStatus.BLOCK_TICKING;
         }
         return op.call(ticketLevel);

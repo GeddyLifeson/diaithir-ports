@@ -7,12 +7,12 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(SlabBlock.class)
 public interface SlabBlockAccessor {
-    @Accessor("BOTTOM_AABB")
+    @Accessor("SHAPE_BOTTOM")
     static VoxelShape getBottomAABB() {
         throw new AssertionError();
     }
 
-    @Accessor("TOP_AABB")
+    @Accessor("SHAPE_TOP")
     static VoxelShape getTopAABB() {
         throw new AssertionError();
     }

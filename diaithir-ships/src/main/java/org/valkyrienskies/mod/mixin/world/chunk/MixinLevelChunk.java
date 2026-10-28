@@ -19,7 +19,7 @@ import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.chunk.LevelChunkSection;
 import net.minecraft.world.level.chunk.ProtoChunk;
-import net.minecraft.world.level.chunk.storage.ChunkSerializer;
+import net.minecraft.world.level.chunk.storage.SerializableChunkData;
 import net.minecraft.world.level.chunk.storage.RegionStorageInfo;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.Heightmap.Types;
@@ -86,7 +86,7 @@ public abstract class MixinLevelChunk extends ChunkAccess implements VSLevelChun
     @Inject(method = "getFullStatus", at = @At("HEAD"), cancellable = true)
     private void vs$upgradeShipyardChunkStatus(CallbackInfoReturnable<FullChunkStatus> cir) {
         if (VSGameUtilsKt.isChunkInShipyard(level,
-                this.chunkPos.x, this.chunkPos.z)) {
+                this.chunkPos.x(), this.chunkPos.z())) {
             cir.setReturnValue(FullChunkStatus.BLOCK_TICKING);
         }
     }
@@ -98,7 +98,7 @@ public abstract class MixinLevelChunk extends ChunkAccess implements VSLevelChun
     }
 
     @Inject(method = "setBlockState", at = @At("TAIL"))
-    public void postSetBlockState(final BlockPos pos, final BlockState state, final boolean moved,
+    public void postSetBlockState(final BlockPos pos, final BlockState state, final int flags,
         final CallbackInfoReturnable<BlockState> cir) {
         final BlockState prevState = cir.getReturnValue();
         // This function is getting invoked by non-game threads for some reason. So use executeOrSchedule() to schedule
@@ -124,16 +124,15 @@ public abstract class MixinLevelChunk extends ChunkAccess implements VSLevelChun
         // Set terrain to empty
         heightmaps.clear();
         Arrays.fill(sections, null);
-        final Registry<Biome> registry = level.registryAccess().registryOrThrow(Registries.BIOME);
         for (int i = 0; i < sections.length; ++i) {
             if (sections[i] != null) continue;
-            //new LevelChunkSection(registry);
-            sections[i] = new LevelChunkSection(registry);
+            //new LevelChunkSection(level.palettedContainerFactory());
+            sections[i] = new LevelChunkSection(level.palettedContainerFactory());
         }
         this.setLightCorrect(false);
 
         registerTickContainerInLevel((ServerLevel) level);
-        this.unsaved = true;
+        this.markUnsaved();
     }
 
     @Override
@@ -147,11 +146,13 @@ public abstract class MixinLevelChunk extends ChunkAccess implements VSLevelChun
 
         // Copy heightmap and sections and block entities from srcChunk
         final LevelChunk srcChunk = (LevelChunk) srcChunkVS;
-        final CompoundTag compoundTag = ChunkSerializer.write((ServerLevel) srcChunk.getLevel(), srcChunk);
+        final CompoundTag compoundTag = SerializableChunkData.copyOf((ServerLevel) srcChunk.getLevel(), srcChunk).write();
         // Set status to be ProtoChunk to fix block entities not saving
         compoundTag.putString("Status", BuiltInRegistries.CHUNK_STATUS.getKey(this.getPersistedStatus()).toString());
         final RegionStorageInfo dummyInfo = new RegionStorageInfo("dummy", level.dimension(), "dummy");
-        final ProtoChunk protoChunk = ChunkSerializer.read((ServerLevel) level, ((ServerLevel) level).getPoiManager(), dummyInfo, chunkPos, compoundTag);
+        final SerializableChunkData parsedData =
+            SerializableChunkData.parse(level, level.palettedContainerFactory(), compoundTag);
+        final ProtoChunk protoChunk = parsedData.read((ServerLevel) level, ((ServerLevel) level).getPoiManager(), dummyInfo, chunkPos);
 
         this.blockTicks = protoChunk.unpackBlockTicks();
         this.fluidTicks = protoChunk.unpackFluidTicks();
@@ -163,15 +164,13 @@ public abstract class MixinLevelChunk extends ChunkAccess implements VSLevelChun
         for (int i = 0; i < sections.length; i++) {
             sections[i] = protoChunk.getSection(i);
         }
-        final Registry<Biome> registry = level.registryAccess().registryOrThrow(Registries.BIOME);
         for (int i = 0; i < sections.length; ++i) {
             if (sections[i] != null) continue;
-            sections[i] = new LevelChunkSection(registry);
+            sections[i] = new LevelChunkSection(level.palettedContainerFactory());
         }
 
         // this.inhabitedTime = l;
         // this.postProcessing = new ShortList[levelHeightAccessor.getSectionsCount()];
-        this.blendingData = protoChunk.getBlendingData();
 
         for (final BlockEntity blockEntity : protoChunk.getBlockEntities().values()) {
             this.setBlockEntity(blockEntity);
@@ -189,6 +188,6 @@ public abstract class MixinLevelChunk extends ChunkAccess implements VSLevelChun
 
         registerTickContainerInLevel((ServerLevel) level);
 
-        this.unsaved = true;
+        this.markUnsaved();
     }
 }

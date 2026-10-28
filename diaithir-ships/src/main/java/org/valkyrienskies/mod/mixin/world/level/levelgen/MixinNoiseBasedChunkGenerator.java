@@ -10,7 +10,6 @@ import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkAccess;
-import net.minecraft.world.level.levelgen.GenerationStep.Carving;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.NoiseSettings;
@@ -36,7 +35,7 @@ public class MixinNoiseBasedChunkGenerator {
     private void preGetBaseColumn(int i, int j, LevelHeightAccessor levelHeightAccessor, RandomState randomState, CallbackInfoReturnable<NoiseColumn> cir) {
         if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(i, j)) {
             final NoiseSettings noiseSettings = this.settings.value().noiseSettings();
-            final int k = Math.max(noiseSettings.minY(), levelHeightAccessor.getMinBuildHeight());
+            final int k = Math.max(noiseSettings.minY(), levelHeightAccessor.getMinY());
             cir.setReturnValue(new NoiseColumn(k, new BlockState[0]));
         }
     }
@@ -44,15 +43,15 @@ public class MixinNoiseBasedChunkGenerator {
     @Inject(method = "buildSurface(Lnet/minecraft/server/level/WorldGenRegion;Lnet/minecraft/world/level/StructureManager;Lnet/minecraft/world/level/levelgen/RandomState;Lnet/minecraft/world/level/chunk/ChunkAccess;)V", at = @At("HEAD"), cancellable = true)
     private void preBuildSurface(WorldGenRegion worldGenRegion, StructureManager structureManager, RandomState randomState, ChunkAccess chunkAccess, CallbackInfo ci) {
         final ChunkPos chunkPos = chunkAccess.getPos();
-        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x, chunkPos.z)) {
+        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x(), chunkPos.z())) {
             ci.cancel();
         }
     }
 
     @Inject(method = "applyCarvers", at = @At("HEAD"), cancellable = true)
-    private void preApplyCarvers(WorldGenRegion worldGenRegion, long l, RandomState randomState, BiomeManager biomeManager, StructureManager structureManager, ChunkAccess chunkAccess, Carving carving, CallbackInfo ci) {
+    private void preApplyCarvers(WorldGenRegion worldGenRegion, long l, RandomState randomState, BiomeManager biomeManager, StructureManager structureManager, ChunkAccess chunkAccess, CallbackInfo ci) {
         final ChunkPos chunkPos = chunkAccess.getPos();
-        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x, chunkPos.z)) {
+        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x(), chunkPos.z())) {
             ci.cancel();
         }
     }
@@ -61,7 +60,7 @@ public class MixinNoiseBasedChunkGenerator {
     private void preFillFromNoise(Blender blender, RandomState randomState, StructureManager structureManager,
         ChunkAccess chunkAccess, CallbackInfoReturnable<CompletableFuture<ChunkAccess>> cir) {
         final ChunkPos chunkPos = chunkAccess.getPos();
-        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x, chunkPos.z)) {
+        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x(), chunkPos.z())) {
             cir.setReturnValue(CompletableFuture.completedFuture(chunkAccess));
         }
     }
@@ -69,7 +68,7 @@ public class MixinNoiseBasedChunkGenerator {
     @Inject(method = "spawnOriginalMobs", at = @At("HEAD"), cancellable = true)
     private void preSpawnOriginalMobs(WorldGenRegion worldGenRegion, CallbackInfo ci) {
         final ChunkPos chunkPos = worldGenRegion.getCenter();
-        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x, chunkPos.z)) {
+        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x(), chunkPos.z())) {
             ci.cancel();
         }
     }

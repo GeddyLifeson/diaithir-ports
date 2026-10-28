@@ -19,7 +19,7 @@ public abstract class MixinGenerationChunkHolder {
     @Inject(method = "getFullStatus", at = @At("HEAD"), cancellable = true)
     private void vs$upgradeShipyardHolderStatus(CallbackInfoReturnable<FullChunkStatus> cir) {
         final ChunkPos pos = ((GenerationChunkHolder) (Object) this).getPos();
-        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(pos.x, pos.z)) {
+        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(pos.x(), pos.z())) {
             cir.setReturnValue(FullChunkStatus.BLOCK_TICKING);
         }
     }

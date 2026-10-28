@@ -117,7 +117,7 @@ public abstract class FireMixin {
     }
 
     @Shadow
-    protected abstract BlockState getStateWithAge(LevelAccessor levelAccessor, BlockPos blockPos, int i);
+    protected abstract BlockState getStateWithAge(LevelReader levelReader, BlockPos blockPos, int i);
 
     @Shadow
     protected abstract boolean isNearRain(Level level, BlockPos blockPos);

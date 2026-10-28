@@ -16,7 +16,7 @@ import org.valkyrienskies.core.api.ships.Ship;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 import org.valkyrienskies.mod.common.util.VectorConversionsMCKt;
 
-@Mixin(ChunkMap.TrackedEntity.class)
+@Mixin(targets = "net.minecraft.server.level.ChunkMap$TrackedEntity")
 public class MixinChunkMap$TrackedEntity {
 
     @Shadow

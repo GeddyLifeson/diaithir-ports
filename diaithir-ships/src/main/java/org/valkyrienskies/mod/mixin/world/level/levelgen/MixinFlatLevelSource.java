@@ -19,7 +19,7 @@ public class MixinFlatLevelSource {
     private void preFillFromNoise(Blender blender, RandomState randomState, StructureManager structureManager,
         ChunkAccess chunkAccess, CallbackInfoReturnable<CompletableFuture<ChunkAccess>> cir) {
         final ChunkPos chunkPos = chunkAccess.getPos();
-        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x, chunkPos.z)) {
+        if (VS2ChunkAllocator.INSTANCE.isChunkInShipyardCompanion(chunkPos.x(), chunkPos.z())) {
             cir.setReturnValue(CompletableFuture.completedFuture(chunkAccess));
         }
     }

@@ -1,5 +1,7 @@
 package org.valkyrienskies.mod.mixin.entity;
 
+import java.util.List;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
 import static org.valkyrienskies.mod.common.util.VectorConversionsMCKt.toJOML;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
@@ -111,66 +113,40 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
                     }
                 }
 
-                vs$setInSealedArea(isInSealedArea && ValkyrienSkies.isConnectivityEnabled(level.isClientSide));
+                vs$setInSealedArea(isInSealedArea && ValkyrienSkies.isConnectivityEnabled(level.isClientSide()));
             }
         }
     }
 
-    @WrapMethod(
-        method = "updateFluidOnEyes"
-    )
-    private void onFluidOnEyes(Operation<Void> original) {
-        if (vs$isInSealedArea() && ValkyrienSkies.isConnectivityEnabled(level.isClientSide)) {
-            this.wasEyeInWater = false;
-            this.fluidOnEyes.clear();
-            return;
-        }
-        original.call();
+    // In 26.1 fluid interaction is tracked by EntityFluidInteraction; sealed-area handling for it lives in
+    // org.valkyrienskies.mod.forge.mixin.feature.water_in_ships_entity.MixinEntityFluidInteraction
+
+    @Inject(method = "onInsideBubbleColumn", at = @At("HEAD"), cancellable = true)
+    private void vs$noInsideBubbleColumnInSealedArea(final boolean dragDown, final CallbackInfo ci) {
+        if (vs$isInSealedArea && ValkyrienSkies.isConnectivityEnabled(level.isClientSide())) ci.cancel();
     }
 
-    @WrapMethod(method = "updateSwimming")
-    private void onUpdateSwimming(Operation<Void> original) {
-        if (vs$isInSealedArea && ValkyrienSkies.isConnectivityEnabled(level.isClientSide)) {
-            this.wasTouchingWater = false;
-            this.setSwimming(false);
-            return;
-        }
-        original.call();
-    }
-
-    @Inject(
-        method = "updateInWaterStateAndDoWaterCurrentPushing",
-        at = @At("HEAD"),
-        cancellable = true
-    )
-    private void onUpdateInWaterStateAndDoWaterCurrentPushing(CallbackInfo ci) {
-        if (vs$isInSealedArea && ValkyrienSkies.isConnectivityEnabled(level.isClientSide)) {
-            this.wasTouchingWater = false;
-            ci.cancel();
-        }
-    }
-
-    @WrapMethod(method = "isInBubbleColumn")
-    private boolean onIsInBubbleColumn(Operation<Boolean> original) {
-        if (vs$isInSealedArea && ValkyrienSkies.isConnectivityEnabled(level.isClientSide)) return false;
-        return original.call();
+    @Inject(method = "onAboveBubbleColumn", at = @At("HEAD"), cancellable = true)
+    private void vs$noAboveBubbleColumnInSealedArea(final boolean dragDown, final BlockPos pos, final CallbackInfo ci) {
+        if (vs$isInSealedArea && ValkyrienSkies.isConnectivityEnabled(level.isClientSide())) ci.cancel();
     }
 
     @Inject(
         at = @At("TAIL"),
-        method = "checkInsideBlocks"
+        method = "checkInsideBlocks(Ljava/util/List;Lnet/minecraft/world/entity/InsideBlockEffectApplier$StepBasedCollector;)V"
     )
-    private void afterCheckInside(final CallbackInfo ci) {
+    private void afterCheckInside(final List<?> movements, final InsideBlockEffectApplier.StepBasedCollector effectCollector, final CallbackInfo ci) {
+        if (!isAffectedByBlocks()) return;
         final AABBd boundingBox = toJOML(getBoundingBox());
         final AABBd temp = new AABBd();
         for (final Ship ship : VSGameUtilsKt.getShipsIntersecting(level, boundingBox)) {
             final AABBd inShipBB = boundingBox.transform(ship.getShipTransform().getWorldToShipMatrix(), temp);
-            originalCheckInside(inShipBB);
+            originalCheckInside(inShipBB, effectCollector);
         }
     }
 
     @Unique
-    private void originalCheckInside(final AABBd aABB) {
+    private void originalCheckInside(final AABBd aABB, final InsideBlockEffectApplier.StepBasedCollector effectCollector) {
         final Entity self = Entity.class.cast(this);
         final BlockPos blockPos = BlockPos.containing(aABB.minX + 0.001, aABB.minY + 0.001, aABB.minZ + 0.001);
         final BlockPos blockPos2 = BlockPos.containing(aABB.maxX - 0.001, aABB.maxY - 0.001, aABB.maxZ - 0.001);
@@ -183,7 +159,8 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
                         final BlockState blockState = this.level.getBlockState(mutableBlockPos);
 
                         try {
-                            blockState.entityInside(this.level, mutableBlockPos, self);
+                            effectCollector.advanceStep(0);
+                            blockState.entityInside(this.level, mutableBlockPos, self, effectCollector, true);
                             this.onInsideBlock(blockState);
                         } catch (final Throwable var12) {
                             final CrashReport crashReport =
@@ -369,6 +346,9 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
     protected abstract void onInsideBlock(BlockState state);
 
     @Shadow
+    protected abstract boolean isAffectedByBlocks();
+
+    @Shadow
     public abstract double getZ();
 
     @Shadow
@@ -389,26 +369,10 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
     public abstract boolean shouldRenderAtSqrDistance(double d);
 
     @Shadow
-    public boolean hasImpulse;
-
-    @Shadow
     public abstract void push(double d, double e, double f);
 
     @Shadow
     public abstract boolean isRemoved();
-
-    @Shadow
-    protected boolean wasTouchingWater;
-
-    @Shadow
-    protected boolean wasEyeInWater;
-
-    @Shadow
-    @Final
-    private Set<TagKey<Fluid>> fluidOnEyes;
-
-    @Shadow
-    public abstract void setSwimming(boolean bl);
 
     @Override
     @NotNull

@@ -3,7 +3,7 @@ package org.valkyrienskies.mod.mixin.server.world;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import net.minecraft.server.level.ChunkHolder;
 import net.minecraft.server.level.ChunkMap;
-import net.minecraft.server.level.ChunkTaskPriorityQueueSorter;
+import net.minecraft.server.level.ChunkTaskDispatcher;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ThreadedLevelLightEngine;
 import net.minecraft.world.entity.ai.village.poi.PoiManager;
@@ -41,8 +41,8 @@ public class MixinChunkMapClose {
     @Shadow @Final private PoiManager poiManager;
     @Shadow @Final private it.unimi.dsi.fastutil.longs.LongSet toDrop;
     @Shadow @Final private java.util.Queue<Runnable> unloadQueue;
-    @Shadow @Final private ChunkTaskPriorityQueueSorter queueSorter;
-    @Shadow @Final ChunkMap.DistanceManager distanceManager;
+    @Shadow @Final private ChunkTaskDispatcher worldgenTaskDispatcher;
+    @Shadow @Final private ChunkTaskDispatcher lightTaskDispatcher;
     @Shadow @Final private ServerLevel level;
 
     @Inject(method = "hasWork", at = @At("HEAD"), cancellable = true)
@@ -69,7 +69,8 @@ public class MixinChunkMapClose {
                 || poiManager.hasWork()
                 || !toDrop.isEmpty()
                 || !unloadQueue.isEmpty()
-                || queueSorter.hasWork();
+                || worldgenTaskDispatcher.hasWork()
+                || lightTaskDispatcher.hasWork();
             // Note: we intentionally skip distanceManager.hasTickets() here because
             // shipyard ticket entries may linger in the tickets map even after removal.
             cir.setReturnValue(result);

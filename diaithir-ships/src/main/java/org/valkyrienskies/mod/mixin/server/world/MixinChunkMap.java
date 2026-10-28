@@ -11,13 +11,14 @@ import java.util.Set;
 import java.util.function.Supplier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ChunkMap;
-import net.minecraft.server.level.ChunkMap.DistanceManager;
+import net.minecraft.server.level.DistanceManager;
+import net.minecraft.util.TriState;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.chunk.ChunkAccess;
-import net.minecraft.world.level.storage.DimensionDataStorage;
+import net.minecraft.world.level.storage.SavedDataStorage;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -39,7 +40,7 @@ public abstract class MixinChunkMap {
 
     @Shadow
     @Final
-    private Supplier<DimensionDataStorage> overworldDataStorage;
+    private Supplier<SavedDataStorage> overworldDataStorage;
 
     /**
      * Force the game to generate empty chunks in the shipyard.
@@ -87,7 +88,7 @@ public abstract class MixinChunkMap {
 
         final Iterator<VsiPlayer> playersWatchingShipChunk =
             VSGameUtilsKt.getShipObjectWorld(level)
-                .getIPlayersWatchingShipChunk(chunkPos.x, chunkPos.z, VSGameUtilsKt.getDimensionId(level));
+                .getIPlayersWatchingShipChunk(chunkPos.x(), chunkPos.z(), VSGameUtilsKt.getDimensionId(level));
 
         if (!playersWatchingShipChunk.hasNext()) {
             // No players watching this ship chunk, so we don't need to modify anything
@@ -111,15 +112,15 @@ public abstract class MixinChunkMap {
         cir.setReturnValue(new ArrayList<>(watchingPlayers));
     }
 
-    @WrapOperation(method = "anyPlayerCloseEnoughForSpawning", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ChunkMap$DistanceManager;hasPlayersNearby(J)Z"))
-    private boolean onHasPlayersNearby(
-        DistanceManager instance, long l, Operation<Boolean> original, @Local(argsOnly = true) ChunkPos arg) {
-        return original.call(instance, new ChunkPos(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, arg.getMiddleBlockPosition(63)))).toLong());
+    @WrapOperation(method = "anyPlayerCloseEnoughForSpawning", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ChunkMap$DistanceManager;hasPlayersNearby(J)Lnet/minecraft/util/TriState;"))
+    private TriState onHasPlayersNearby(
+        DistanceManager instance, long l, Operation<TriState> original, @Local(argsOnly = true) ChunkPos arg) {
+        return original.call(instance, ChunkPos.containing(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, arg.getMiddleBlockPosition(63)))).pack());
     }
 
-    @WrapOperation(method = "playerIsCloseEnoughForSpawning", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ChunkMap;euclideanDistanceSquared(Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/entity/Entity;)D"))
-    private double onEuclideanDistanceSquared(ChunkPos d0, Entity d1, Operation<Double> original) {
-        return original.call(new ChunkPos(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, d0.getMiddleBlockPosition(63)))), d1);
+    @WrapOperation(method = "playerIsCloseEnoughForSpawning", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ChunkMap;euclideanDistanceSquared(Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/phys/Vec3;)D"))
+    private double onEuclideanDistanceSquared(ChunkPos d0, Vec3 d1, Operation<Double> original) {
+        return original.call(ChunkPos.containing(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, d0.getMiddleBlockPosition(63)))), d1);
     }
 
     /**
@@ -130,7 +131,7 @@ public abstract class MixinChunkMap {
         final ChunkPos pos = chunkAccess.getPos();
         final Ship ship = VSGameUtilsKt.getShipManagingPos(level, pos);
         if (ship != null) {
-            if (!ship.getActiveChunksSet().contains(pos.x, pos.z)) {
+            if (!ship.getActiveChunksSet().contains(pos.x(), pos.z())) {
                 cir.setReturnValue(false);
             }
         }

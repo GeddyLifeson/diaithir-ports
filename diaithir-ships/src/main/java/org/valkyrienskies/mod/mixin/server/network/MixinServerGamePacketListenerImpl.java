@@ -17,7 +17,8 @@ import net.minecraft.server.level.ServerPlayerGameMode;
 import net.minecraft.server.network.CommonListenerCookie;
 import net.minecraft.server.network.ServerCommonPacketListenerImpl;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
-import net.minecraft.world.entity.RelativeMovement;
+import net.minecraft.world.entity.Relative;
+import net.minecraft.world.entity.PositionMoveRotation;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3d;
 import org.spongepowered.asm.mixin.Mixin;
@@ -57,7 +58,7 @@ public abstract class MixinServerGamePacketListenerImpl extends ServerCommonPack
     @ModifyExpressionValue(
         at = @At(value = "FIELD",
             target = "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;aboveGroundTickCount:I", ordinal = 0),
-        method = "tick"
+        method = "tickPlayer"
     )
     private int noFlyKick(final int original) {
         if (VSGameConfig.SERVER.getEnableMovementChecks()) {
@@ -93,12 +94,11 @@ public abstract class MixinServerGamePacketListenerImpl extends ServerCommonPack
      */
 
     @WrapOperation(
-        method = "handleMovePlayer",
+        method = "shouldCheckPlayerMovement",
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;isSingleplayerOwner()Z"
-        ),
-        require = 0
+        )
     )
     private boolean shouldSkipMoveCheck1(final ServerGamePacketListenerImpl instance,
         final Operation<Boolean> isSinglePlayerOwner) {
@@ -122,11 +122,11 @@ public abstract class MixinServerGamePacketListenerImpl extends ServerCommonPack
         method = "handleMovePlayer",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/server/level/ServerPlayerGameMode;isCreative()Z"
+            target = "Lnet/minecraft/server/level/ServerPlayer;isCreative()Z"
         ),
         require = 0
     )
-    private boolean shouldSkipMoveCheck(final ServerPlayerGameMode instance,
+    private boolean shouldSkipMoveCheck(final ServerPlayer instance,
         final Operation<Boolean> isSinglePlayerOwner) {
         return !VSGameConfig.SERVER.getEnableMovementChecks();
     }
@@ -134,37 +134,39 @@ public abstract class MixinServerGamePacketListenerImpl extends ServerCommonPack
     // Fixes:
     // https://github.com/ValkyrienSkies/Valkyrien-Skies-2/issues/87
     // Bed Bug
+    @Shadow
+    public abstract void teleport(PositionMoveRotation destination, Set<Relative> relatives);
+
     @Inject(
-        method = "teleport(DDDFFLjava/util/Set;)V",
+        method = "teleport(Lnet/minecraft/world/entity/PositionMoveRotation;Ljava/util/Set;)V",
         at = @At(value = "HEAD"),
         cancellable = true
     )
-    private void transformTeleport(final double x, final double y, final double z, final float yaw, final float pitch,
-        final Set<RelativeMovement> relativeSet, final CallbackInfo ci) {
+    private void transformTeleport(final PositionMoveRotation destination, final Set<Relative> relatives,
+        final CallbackInfo ci) {
 
         if (!VSGameConfig.SERVER.getTransformTeleports()) {
             return;
         }
+        if (relatives.contains(Relative.X) || relatives.contains(Relative.Y) || relatives.contains(Relative.Z)) {
+            return;
+        }
 
-        final BlockPos blockPos = BlockPos.containing(x, y, z);
+        final Vec3 position = destination.position();
+        final BlockPos blockPos = BlockPos.containing(position.x, position.y, position.z);
         final ServerShip ship = VSGameUtilsKt.getShipManagingPos((ServerLevel) player.level(), blockPos);
 
         // TODO add flag to disable this https://github.com/ValkyrienSkies/Valkyrien-Skies-2/issues/30
         if (ship != null) {
-            final Vector3d pos = new Vector3d(x, y, z);
+            final Vector3d pos = new Vector3d(position.x, position.y, position.z);
             ship.getShipToWorld().transformPosition(pos);
 
-            this.awaitingPositionFromClient = VectorConversionsMCKt.toMinecraft(pos);
-            if (++this.awaitingTeleport == Integer.MAX_VALUE) {
-                this.awaitingTeleport = 0;
-            }
-            this.awaitingTeleportTime = this.tickCount;
-            this.player.absMoveTo(pos.x, pos.y, pos.z, yaw, pitch);
-
-            this.send(
-                new ClientboundPlayerPositionPacket(pos.x, pos.y, pos.z, yaw, pitch, Collections.emptySet(),
-                    awaitingTeleport));
             ci.cancel();
+            this.teleport(
+                new PositionMoveRotation(VectorConversionsMCKt.toMinecraft(pos), destination.deltaMovement(),
+                    destination.yRot(), destination.xRot()),
+                relatives
+            );
         }
     }
 

@@ -63,7 +63,7 @@ public abstract class MixinPlayer extends LivingEntity implements PlayerDuck {
     public abstract double blockInteractionRange();
 
     @Inject(
-        method = "canInteractWithBlock",
+        method = "isWithinBlockInteractionRange",
         at = @At("RETURN"),
         cancellable = true
     )

@@ -25,7 +25,7 @@ public class MixinChunkStatus {
         final CallbackInfoReturnable<CompletableFuture<ChunkAccess>> cir
     ) {
         final ChunkPos chunkPos = chunkAccess.getPos();
-        if (VSGameUtilsKt.isChunkInShipyard(worldGenContext.level(), chunkPos.x, chunkPos.z)) {
+        if (VSGameUtilsKt.isChunkInShipyard(worldGenContext.level(), chunkPos.x(), chunkPos.z())) {
             cir.setReturnValue(CompletableFuture.completedFuture(chunkAccess));
         }
     }
@@ -37,7 +37,7 @@ public class MixinChunkStatus {
         final CallbackInfoReturnable<CompletableFuture<ChunkAccess>> cir
     ) {
         final ChunkPos chunkPos = chunkAccess.getPos();
-        if (VSGameUtilsKt.isChunkInShipyard(worldGenContext.level(), chunkPos.x, chunkPos.z)) {
+        if (VSGameUtilsKt.isChunkInShipyard(worldGenContext.level(), chunkPos.x(), chunkPos.z())) {
             worldGenContext.level().onStructureStartsAvailable(chunkAccess);
             cir.setReturnValue(CompletableFuture.completedFuture(chunkAccess));
         }
@@ -60,7 +60,7 @@ public class MixinChunkStatus {
         final CallbackInfoReturnable<CompletableFuture<ChunkAccess>> cir
     ) {
         final ChunkPos chunkPos = chunkAccess.getPos();
-        if (VSGameUtilsKt.isChunkInShipyard(worldGenContext.level(), chunkPos.x, chunkPos.z)) {
+        if (VSGameUtilsKt.isChunkInShipyard(worldGenContext.level(), chunkPos.x(), chunkPos.z())) {
             cir.setReturnValue(CompletableFuture.completedFuture(chunkAccess));
         }
     }

@@ -50,7 +50,7 @@ public class MixinChunkMapShipyard {
         if (range <= 0) return; // No neighbors needed anyway
 
         ChunkPos center = centerHolder.getPos();
-        if (!VSGameUtilsKt.isChunkInShipyard(level, center.x, center.z)) return;
+        if (!VSGameUtilsKt.isChunkInShipyard(level, center.x(), center.z())) return;
 
         // For shipyard chunks, skip neighbor gathering entirely.
         // Request only the center chunk at the status required for distance 0.

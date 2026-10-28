@@ -230,7 +230,7 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
     @Unique
     private void vs$loadChunk(@NotNull final ChunkAccess worldChunk, final List<VsiTerrainUpdate> voxelShapeUpdates) {
         // Remove the chunk pos from vs$chunksToUnload if its present
-        vs$chunksToUnload.remove(worldChunk.getPos().toLong());
+        vs$chunksToUnload.remove(worldChunk.getPos().pack());
         if (!vs$knownChunks.containsKey(worldChunk.getPos())) {
             // Ship chunks at level 33 (FULL) never reach BLOCK_TICKING status in vanilla,
             // so two critical callbacks are missed:
@@ -239,8 +239,8 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
             //    to the active tickQueue so they actually fire
             // Without both, scheduled ticks (repeaters, torches, observers) freeze on reload.
             if (worldChunk instanceof LevelChunk levelChunk) {
-                final int cx = worldChunk.getPos().x;
-                final int cz = worldChunk.getPos().z;
+                final int cx = worldChunk.getPos().x();
+                final int cz = worldChunk.getPos().z();
                 if (VSGameUtilsKt.isChunkInShipyard(Level.class.cast(this), cx, cz)) {
                     final ServerLevel self = ServerLevel.class.cast(this);
                     levelChunk.registerTickContainerInLevel(self);
@@ -255,8 +255,8 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
 
             final List<Vector3ic> voxelChunkPositions = new ArrayList<>();
 
-            final int chunkX = worldChunk.getPos().x;
-            final int chunkZ = worldChunk.getPos().z;
+            final int chunkX = worldChunk.getPos().x();
+            final int chunkZ = worldChunk.getPos().z();
 
             final LevelChunkSection[] chunkSections = worldChunk.getSections();
 
@@ -285,7 +285,7 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
                                 for (int z = 0; z < 16; z++) {
                                     final BlockState blockState = chunkSection.getBlockState(x, y, z);
                                     final int posX = (chunkX << 4) + x;
-                                    final int posY = worldChunk.getMinBuildHeight() + (sectionY << 4) + y;
+                                    final int posY = worldChunk.getMinY() + (sectionY << 4) + y;
                                     final int posZ = (chunkZ << 4) + z;
                                     if (blockState.getBlock() instanceof WingBlock) {
                                         mutableBlockPos.set(posX, posY, posZ);
@@ -329,9 +329,9 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
     private void vs$keepActiveShipChunksLoaded(final net.minecraft.world.level.chunk.LevelChunk chunk,
                                                 final CallbackInfo ci) {
         final ChunkPos pos = chunk.getPos();
-        if (!VSGameUtilsKt.isChunkInShipyard(Level.class.cast(this), pos.x, pos.z)) return;
+        if (!VSGameUtilsKt.isChunkInShipyard(Level.class.cast(this), pos.x(), pos.z())) return;
         final ServerLevel self = ServerLevel.class.cast(this);
-        if (org.valkyrienskies.mod.common.VSGameUtilsKt.getShipManagingPos(self, pos.x, pos.z) != null) {
+        if (org.valkyrienskies.mod.common.VSGameUtilsKt.getShipManagingPos(self, pos.x(), pos.z()) != null) {
             ci.cancel();
         }
     }
@@ -348,11 +348,11 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
         final List<VsiTerrainUpdate> voxelShapeUpdates = new ArrayList<>();
         final DistanceManagerAccessor distanceManagerAccessor = (DistanceManagerAccessor) chunkSource.chunkMap.getDistanceManager();
 
-        for (final ChunkHolder chunkHolder : chunkMapAccessor.callGetChunks()) {
+        for (final ChunkHolder chunkHolder : chunkMapAccessor.getVisibleChunkMap().values()) {
             final ChunkResult<LevelChunk> worldChunkResult =
                 chunkHolder.getTickingChunkFuture().getNow(ChunkHolder.UNLOADED_LEVEL_CHUNK);
             if (vs$knownChunks.containsKey(chunkHolder.getPos())
-                || !distanceManagerAccessor.getTickets().containsKey(chunkHolder.getPos().toLong())) {
+                || distanceManagerAccessor.getTicketStorage().getTickets(chunkHolder.getPos().pack()).isEmpty()) {
                 continue;
             }
 
@@ -365,8 +365,8 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
 
             // Shipyard chunks use FULL tickets and may never produce a ticking future.
             final ChunkPos cp = chunkHolder.getPos();
-            if (VSGameUtilsKt.isChunkInShipyard(Level.class.cast(this), cp.x, cp.z)) {
-                final LevelChunk cachedChunk = chunkSource.getChunkNow(cp.x, cp.z);
+            if (VSGameUtilsKt.isChunkInShipyard(Level.class.cast(this), cp.x(), cp.z())) {
+                final LevelChunk cachedChunk = chunkSource.getChunkNow(cp.x(), cp.z());
                 if (cachedChunk != null) {
                     vs$loadChunk(cachedChunk, voxelShapeUpdates);
                 }
@@ -376,9 +376,9 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
         final Iterator<Entry<ChunkPos, List<Vector3ic>>> knownChunkPosIterator = vs$knownChunks.entrySet().iterator();
         while (knownChunkPosIterator.hasNext()) {
             final Entry<ChunkPos, List<Vector3ic>> knownChunkPosEntry = knownChunkPosIterator.next();
-            final long chunkPos = knownChunkPosEntry.getKey().toLong();
+            final long chunkPos = knownChunkPosEntry.getKey().pack();
             // Unload chunks if they don't have tickets or if they're not in the visible chunks
-            if ((!distanceManagerAccessor.getTickets().containsKey(chunkPos) || chunkMapAccessor.callGetVisibleChunkIfPresent(chunkPos) == null)) {
+            if ((distanceManagerAccessor.getTicketStorage().getTickets(chunkPos).isEmpty() || chunkMapAccessor.callGetVisibleChunkIfPresent(chunkPos) == null)) {
                 final long ticksWaitingToUnload = vs$chunksToUnload.getOrDefault(chunkPos, 0L);
                 if (ticksWaitingToUnload > VS$CHUNK_UNLOAD_THRESHOLD) {
                     // Unload this chunk
@@ -420,7 +420,7 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
 
     @Override
     public void addPendingForcedChunk(final int chunkX, final int chunkZ) {
-        vs$pendingForcedChunks.add(ChunkPos.asLong(chunkX, chunkZ));
+        vs$pendingForcedChunks.add(ChunkPos.pack(chunkX, chunkZ));
     }
 
     @NotNull

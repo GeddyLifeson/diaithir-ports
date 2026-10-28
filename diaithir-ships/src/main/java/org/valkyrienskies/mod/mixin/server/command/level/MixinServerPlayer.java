@@ -5,7 +5,7 @@ import java.util.Set;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.RelativeMovement;
+import net.minecraft.world.entity.Relative;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.joml.Vector3d;
@@ -22,16 +22,15 @@ import org.valkyrienskies.mod.common.util.VectorConversionsMCKt;
 @Mixin(ServerPlayer.class)
 public abstract class MixinServerPlayer extends Player {
 
-    public MixinServerPlayer(Level level, BlockPos blockPos, float f,
-        GameProfile gameProfile) {
-        super(level, blockPos, f, gameProfile);
+    public MixinServerPlayer(Level level, GameProfile gameProfile) {
+        super(level, gameProfile);
     }
 
     @Shadow
     public abstract void teleportTo(double d, double e, double f);
 
     @Shadow
-    public abstract boolean teleportTo(ServerLevel serverLevel, double d, double e, double f, Set<RelativeMovement> set, float g, float h);
+    public abstract boolean teleportTo(ServerLevel serverLevel, double d, double e, double f, Set<Relative> set, float g, float h, boolean resetCamera);
 
     @Inject(
         at = @At("HEAD"),
@@ -39,7 +38,7 @@ public abstract class MixinServerPlayer extends Player {
         cancellable = true
     )
     private void beforeTeleportTo(final double x, final double y, final double z, final CallbackInfo ci) {
-        ServerLevel level = ((ServerPlayer) (Object) this).serverLevel();
+        ServerLevel level = ((ServerPlayer) (Object) this).level();
         final Ship ship = VSGameUtilsKt.getShipManagingPos(level, x, y, z);
         if (ship != null) {
             ci.cancel();
@@ -48,17 +47,14 @@ public abstract class MixinServerPlayer extends Player {
         }
     }
 
-    @Inject(
-        at = @At("HEAD"),
-        method = "dismountTo",
-        cancellable = true
-    )
-    private void beforeDismountTo(final double x, final double y, final double z, final CallbackInfo ci) {
-        ServerLevel level = ((ServerPlayer) (Object) this).serverLevel();
+    // dismountTo is no longer overridden by ServerPlayer (it lives in Entity), so override it here
+    @Override
+    public void dismountTo(final double x, final double y, final double z) {
+        ServerLevel level = ((ServerPlayer) (Object) this).level();
         final Ship ship = VSGameUtilsKt.getShipManagingPos(level, x, y, z);
-        if (ship != null) {
-            ci.cancel();
-
+        if (ship == null) {
+            super.dismountTo(x, y, z);
+        } else {
             Vector3d lookVector = VectorConversionsMCKt.toJOML(this.getLookAngle());
             final Vector3d transformedLook = ship.getTransform().getShipToWorld().transformDirection(lookVector);
             final double yaw = Math.atan2(-transformedLook.x, transformedLook.z) * 180.0 / Math.PI;
@@ -70,7 +66,7 @@ public abstract class MixinServerPlayer extends Player {
             final Vector3d inWorld = ship.getTransform().getShipToWorld().transformPosition(x, y, z, new Vector3d());
             final Vector3d inWorldPrev = ship.getPrevTickTransform().getShipToWorld().transformPosition(x, y, z, new Vector3d());
             final Vector3d inWorldNext = inWorld.mul(3, new Vector3d()).sub(inWorldPrev.mul(2, new Vector3d()));
-            this.teleportTo(level, inWorldNext.x, inWorldNext.y, inWorldNext.z, Set.of(), this.getYRot(), this.getXRot());
+            this.teleportTo(level, inWorldNext.x, inWorldNext.y, inWorldNext.z, Set.of(), this.getYRot(), this.getXRot(), false);
             ((IEntityDraggingInformationProvider)this).vs$dragImmediately(ship);
         }
     }

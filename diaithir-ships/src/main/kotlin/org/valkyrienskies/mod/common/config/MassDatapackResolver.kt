@@ -311,7 +311,10 @@ object MassDatapackResolver : BlockStateInfoProvider {
 
         // Create a map of common VoxelShape to Lod1SolidCollisionShape
         val voxelShapeToCollisionShapeMap = generateStairCollisionShapes(
-            StairBlockAccessor.getTopShapes() + StairBlockAccessor.getBottomShapes() + SlabBlockAccessor.getBottomAABB() + SlabBlockAccessor.getTopAABB()
+            (listOf(
+                StairBlockAccessor.getShapeTopOuter(), StairBlockAccessor.getShapeTopStraight(), StairBlockAccessor.getShapeTopInner(),
+                StairBlockAccessor.getShapeBottomOuter(), StairBlockAccessor.getShapeBottomStraight(), StairBlockAccessor.getShapeBottomInner()
+            ).flatMap { it.values } + SlabBlockAccessor.getBottomAABB() + SlabBlockAccessor.getTopAABB()).toTypedArray()
         )
 
         val generatedCollisionShapesMap = HashMap<VoxelShape, SolidBlockShape?>()
