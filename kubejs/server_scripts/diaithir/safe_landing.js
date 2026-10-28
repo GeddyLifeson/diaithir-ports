@@ -43,8 +43,13 @@
     try {
       let y0 = player.y
       tag(player, 'arrived at y=' + Math.floor(y0) + ' health=' + player.health)
-      if (player.health <= 0) {
-        try { player.setHealth(player.maxHealth); player.deathTime = 0; tag(player, 'was at 0 health, restored') } catch (e) { console.warn('[safe_landing] revive: ' + e) }
+      if (player.health <= 0) { // old saved playerdata with Health 0: restore to full, clear the death state, say so
+        try {
+          let max = player.maxHealth
+          player.setHealth(max)
+          player.deathTime = 0
+          tag(player, 'was at health 0, restored to ' + max)
+        } catch (e) { console.warn('[safe_landing] revive: ' + e) }
       }
       protect(player)
       player.server.scheduleInTicks(20, () => settle(player, 40, y0))

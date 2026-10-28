@@ -33666,7 +33666,7 @@ hash = "e6f906a21cd00e9c6375dbfebde466cec26079979931854dd3514e53846cfb99"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/safe_landing.js"
-hash = "174a6193925d0750655731f308601a0116644eb0319dedc3fd7bdd6ed2ef5cbb"
+hash = "6703b0414641b6c2a720f625aaaa6b82a5c052af1edcc7a343ea354be2052a4f"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/tech_ages_data.js"
@@ -34922,8 +34922,8 @@ file = "mods/diaithir-activity-neoforge-26.1.2-1.0.0.jar"
 hash = "e9ac289e36afa6b1860da5ac0d867dbc92d54c68b6a972128920629c69262445"
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.4.jar"
-hash = "91bc07f43f0d7055a1574891ecd44dffa20b089332b167287263c2531b5647bc"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.5.jar"
+hash = "82d1580dc3642aba7179f262628d00ba6c4951ead8383e42e9482c7d92ee6d07"
 
 [[files]]
 file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.2.jar"
