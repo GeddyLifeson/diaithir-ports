@@ -202,8 +202,13 @@ put(KJS / "data/diaithirfauna/spoilage_coverage.json", jdump(dict(
          "fossils are not food, so Spoiled never gives them a timer (spoilEverything=false).", items=covered)))
 
 # ---------------------------------------------------------------- (5) codex records (shelfmark, name, kind, age, text, ids; optional so the completion quest is unaffected)
-def rec(shelf, name, kind, age, text, ids, stats=None):
+NATIVE = json.loads((ROOT / "names/diaithiris_names.json").read_text())  # game name stays the title; the grey italic line is the Diaithir culture's name
+
+
+def rec(shelf, name, kind, age, text, ids, stats=None, native=None):
     r = dict(shelfmark=shelf, name=name, kind=kind, age=age, band="", moth="", text=text, ids=ids, optional=True)
+    if native:
+        r["nativeName"] = native
     if stats:
         r["stats"] = stats
     return r
@@ -223,13 +228,13 @@ for s in SP:
         fos[age].append(rec(f"Σ › P › {s['id']}", s["common"], "being", age,
                             f"A {diet} of the {s['period']}, found in the {s['formation']} ({s['range']}), {kg_txt(s['kg'])} grown. Its bones lie in {s['rock'].replace('_', ' ')}.",
                             [f"fossil:diaithirfauna:{s['id']}"],
-                            [f"Age: {s['ma'][0]:g} to {s['ma'][1]:g} million years", f"DNA tier: {s.get('dna', 1)}", f"Mass: {kg_txt(s['kg'])}", f"Value: {fossils[s['id']]['fragment']} tw a fragment"]))
+                            [f"Age: {s['ma'][0]:g} to {s['ma'][1]:g} million years", f"DNA tier: {s.get('dna', 1)}", f"Mass: {kg_txt(s['kg'])}", f"Value: {fossils[s['id']]['fragment']} tw a fragment"], NATIVE.get(s["id"])))
     else:
         gone = s["ext"] not in ("-", "")
         living.append(rec(f"Σ › F › {s['id']}", s["common"], "being", "I",
                           f"A {diet} ({s['latin']}), {kg_txt(s['kg'])} grown, of {s['range'].replace(';', ', ')}." + (f" Gone from the world by the year {s['ext']}." if gone else ""),
                           [f"species:diaithirfauna:{s['id']}"],
-                          [f"Diet: {diet}", f"Mass: {kg_txt(s['kg'])}", f"Meat: {DROPS[s['id']]['cat']}"]))
+                          [f"Diet: {diet}", f"Mass: {kg_txt(s['kg'])}", f"Meat: {DROPS[s['id']]['cat']}"], NATIVE.get(s["id"])))
 plan_recs = [rec(f"Σ › F › body_{p}", p.replace("_", " ").capitalize() + " (field note)", "being", "I",
                  "A body of this shape; scan an individual for its kind.", [f"entity:diaithirfauna:{p}"]) for p in PLANS]
 item_recs = [rec("Σ › P › fossil_fragment", "Fossil fragment", "thing", "III", "A shard of old bone from the strata. A brush and a preparation bench show what it was.", ["item:diaithirfauna:fossil_fragment"]),

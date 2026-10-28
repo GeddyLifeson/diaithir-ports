@@ -1,0 +1,30 @@
+diff --git a/engine/src/main/java/net/diaithir/ages/mc/CodexService.java b/engine/src/main/java/net/diaithir/ages/mc/CodexService.java
+index e2e54fe..c076cbd 100644
+--- a/engine/src/main/java/net/diaithir/ages/mc/CodexService.java
++++ b/engine/src/main/java/net/diaithir/ages/mc/CodexService.java
+@@ -350,7 +350,24 @@ public final class CodexService {
+         if (c != null) record(p, "char:" + chr, "person", c.name, t.blockPosition());
+         else if (nemesis != null) record(p, "nemesis:" + nemesis, "person", t.getName().getString(), t.blockPosition());
+         else if (t instanceof Player other) record(p, "player:" + other.getUUID(), "person", other.getName().getString(), t.blockPosition());
+-        else record(p, "entity:" + EntityType.getKey(t.getType()), "being", t.getType().getDescription().getString(), t.blockPosition());
++        else {
++            String sp = speciesOf(t), type = EntityType.getKey(t.getType()).toString();
++            String id = sp == null ? null : speciesId(type.substring(0, type.indexOf(':')), sp);
++            if (id != null) record(p, id, "being", t.getName().getString(), t.blockPosition());
++            else record(p, "entity:" + type, "being", t.getType().getDescription().getString(), t.blockPosition());
++        }
++    }
++
++    /** A mob that carries a saved {@code Species} string (diaithir-fauna) files per species, not per entity type. */
++    private static String speciesOf(Entity t) {
++        String s = t.saveWithoutId(new net.minecraft.nbt.CompoundTag()).getStringOr("Species", "");
++        return s.isEmpty() ? null : s;
++    }
++
++    /** The catalogued id for a species: living ones are species:ns:id, revived fossil taxa fossil:ns:id; null when the Library has neither. */
++    private static String speciesId(String ns, String sp) {
++        for (String kind : new String[]{"species:", "fossil:"}) if (CodexReload.records.shelfFor(kind + ns + ":" + sp) != null) return kind + ns + ":" + sp;
++        return null;
+     }
+ 
+     /** A scanned id files under its catalogued shelfmark and coined name when the Library has one, else it is a field note. */
