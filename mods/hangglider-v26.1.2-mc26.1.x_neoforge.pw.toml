@@ -1,0 +1,12 @@
+name = "hangglider"
+filename = "hangglider-v26.1.2-mc26.1.x+neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/uHWrqYcS/versions/WLgiXncl/hangglider-v26.1.2-mc26.1.x%2Bneoforge.jar"
+hash-format = "sha256"
+hash = "7a5b9747a9dd69c8a4e995d4b068910d02ff8a25418d467f3c3c96ff01ea6efe"
+
+[update.modrinth]
+mod-id = "uHWrqYcS"
+version = "WLgiXncl"

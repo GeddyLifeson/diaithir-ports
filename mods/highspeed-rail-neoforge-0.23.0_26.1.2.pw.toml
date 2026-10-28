@@ -1,0 +1,12 @@
+name = "highspeed-rail-neoforge"
+filename = "highspeed-rail-neoforge-0.23.0+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/d7PCSOkD/versions/Z971Ozk5/highspeed-rail-neoforge-0.23.0%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "ae77a7d32c4df595d51b96813836495e0a148e80ae1c3912095b6182be58b77b"
+
+[update.modrinth]
+mod-id = "d7PCSOkD"
+version = "Z971Ozk5"

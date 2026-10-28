@@ -1,0 +1,12 @@
+name = "tinypipes"
+filename = "tinypipes-26.1-6.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/mUFODDIy/versions/sJFclSZ9/tinypipes-26.1-6.1.1.jar"
+hash-format = "sha256"
+hash = "94aba05d37e14e90d1bec22e96634bc3944c4ff49c071e308e95dd9df83cf6f7"
+
+[update.modrinth]
+mod-id = "mUFODDIy"
+version = "sJFclSZ9"

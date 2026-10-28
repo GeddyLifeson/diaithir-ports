@@ -1,0 +1,12 @@
+name = "railoptimization"
+filename = "railoptimization-2.5-snapshot.1+mc26.1.2-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/QSvN5pBU/versions/qValE4WF/railoptimization-2.5-snapshot.1%2Bmc26.1.2-neoforge.jar"
+hash-format = "sha256"
+hash = "308fe0454df801d1970ea72e56481f8067390b521765e5412f64a89d6925f7b6"
+
+[update.modrinth]
+mod-id = "QSvN5pBU"
+version = "qValE4WF"

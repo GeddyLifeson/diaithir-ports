@@ -1,0 +1,12 @@
+name = "toms_storage"
+filename = "toms_storage-26.1-2.10.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/XZNI4Cpy/versions/6dinsQOX/toms_storage-26.1-2.10.3.jar"
+hash-format = "sha256"
+hash = "881aefc784fd4ec0c8d2e22f8236212082a2c3d185ca51fc5c3a9242789e5859"
+
+[update.modrinth]
+mod-id = "XZNI4Cpy"
+version = "6dinsQOX"

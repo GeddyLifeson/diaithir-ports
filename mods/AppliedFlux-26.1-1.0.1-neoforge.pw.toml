@@ -1,0 +1,12 @@
+name = "AppliedFlux"
+filename = "AppliedFlux-26.1-1.0.1-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/oMgZ004U/versions/yrw1WDVE/AppliedFlux-26.1-1.0.1-neoforge.jar"
+hash-format = "sha256"
+hash = "e0bccc01c61ad7177a94202d8c402fe5ff1d502b6f935b7d88a41e6155a674ba"
+
+[update.modrinth]
+mod-id = "oMgZ004U"
+version = "yrw1WDVE"

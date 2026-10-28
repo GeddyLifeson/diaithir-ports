@@ -1,0 +1,12 @@
+name = "hoppergadgetry"
+filename = "hoppergadgetry-v26.1.1-mc26.1.x+neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/RCK4uOMN/versions/m3HOFG4c/hoppergadgetry-v26.1.1-mc26.1.x%2Bneoforge.jar"
+hash-format = "sha256"
+hash = "aa32db71e7250911d46a4f91fc70ecde817f846642e6917fc8f2d86c7776efcb"
+
+[update.modrinth]
+mod-id = "RCK4uOMN"
+version = "m3HOFG4c"

@@ -1,0 +1,12 @@
+name = "colossalchests"
+filename = "colossalchests-26.1.2-neoforge-1.9.1-20.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/V8HM9qmm/versions/UTUVN5zg/colossalchests-26.1.2-neoforge-1.9.1-20.jar"
+hash-format = "sha256"
+hash = "93b8668f9baeba427cc63daf250822545078438bab1c75a9e967ecb5855e3ade"
+
+[update.modrinth]
+mod-id = "V8HM9qmm"
+version = "UTUVN5zg"

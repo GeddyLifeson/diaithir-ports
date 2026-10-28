@@ -1,0 +1,12 @@
+name = "quarry"
+filename = "quarry-2.3.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/f6UuicRv/versions/aOeGvc7X/quarry-2.3.0.jar"
+hash-format = "sha256"
+hash = "c6cf6ef2ae6bfd2bde2cb164b89dbe7515c76862db6b1ab107d04a11c6ff82a6"
+
+[update.modrinth]
+mod-id = "f6UuicRv"
+version = "aOeGvc7X"

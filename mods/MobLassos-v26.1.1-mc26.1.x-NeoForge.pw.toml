@@ -1,0 +1,12 @@
+name = "MobLassos"
+filename = "MobLassos-v26.1.1-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ftOBbnu8/versions/QfWRTT8M/MobLassos-v26.1.1-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "b65ad818034e95168ea2fd08de5dee202cc3dab682b2cddc119eabc621738302"
+
+[update.modrinth]
+mod-id = "ftOBbnu8"
+version = "QfWRTT8M"

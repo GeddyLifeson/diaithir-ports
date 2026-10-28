@@ -1,0 +1,12 @@
+name = "merequester-neoforge"
+filename = "merequester-neoforge-26.1.2-1.5.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/E6BFl96N/versions/asqYZIpt/merequester-neoforge-26.1.2-1.5.1.jar"
+hash-format = "sha256"
+hash = "7bbf8ebb22b12ce59732a729ccc87dd02b3e88b2295075d29e0d6f6faa2aa15e"
+
+[update.modrinth]
+mod-id = "E6BFl96N"
+version = "asqYZIpt"

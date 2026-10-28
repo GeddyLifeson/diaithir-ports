@@ -1,0 +1,12 @@
+name = "yo_hooks"
+filename = "yo_hooks-5.2.0-neoforge_beta.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/t1p8V2nl/versions/SCAvaSFt/yo_hooks-5.2.0-neoforge_beta.jar"
+hash-format = "sha256"
+hash = "cfb27d7cd2f597d9a4b1e9824901851f8cbfa3a9954a41b860b352bb48b9f462"
+
+[update.modrinth]
+mod-id = "t1p8V2nl"
+version = "SCAvaSFt"

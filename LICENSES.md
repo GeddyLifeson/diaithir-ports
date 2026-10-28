@@ -23,7 +23,12 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | diaithir-brewing-neoforge-26.1.2-0.1.0.jar | MIT (ours) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/diaithir-brewing/diaithir-brewing) |
 | diaithir-potions-neoforge-26.1.2-0.1.0.jar | MIT (ours) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/diaithir-brewing/diaithir-potions) |
 | ribbits-neoforge-26.1.2-4.1.4-26.1.2.1.jar | LGPL-3.0 (Ribbits by YUNG, as declared in the jar; our port of v4.1.4 to NeoForge 26.1.2, built from the source branch, LICENSE.txt kept; worldgen random_patch features rewritten as placed-feature count and offset for 26.1 (on the branch, f65f52636); modified source stays LGPL-3) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-ribbits/ribbits) |
-| diaithir-bridges-neoforge-26.1.2-1.2.0.jar | MIT (our own; effect merge, fluid and entity bridges; source on DiaithirRPG branch claude/diaithir-bridges) | [source](https://github.com/GeddyLifeson/DiaithirRPG/tree/claude/diaithir-bridges) |
+| diaithir-bridges-neoforge-26.1.2-1.3.0.jar | MIT (our own; effect merge from branch claude/diaithir-bridges 1.2.0 plus the converters, reservoir tank and empty-cell recipe of diaithir-ports PR #68; the merged source is not yet on a branch) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/bridges-converters/diaithir-bridges) |
+| diaithir-elevators-neoforge-26.1.2-1.0.0.jar | MIT (clean-room mod written from public descriptions only, no code, textures or names of the original; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-elevators/diaithir-elevators) |
+| diaithir-chunkloaders-neoforge-26.1.2-1.0.0.jar | MIT (clean-room mod written from public descriptions only, no code, textures or names of the original; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-chunkloaders/diaithir-chunkloaders) |
+| diaithir-forcefield-neoforge-26.1.2-1.0.0.jar | MIT (clean-room mod written from public descriptions only, no code, textures or names of the original; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-forcefield/diaithir-forcefield) |
+| diaithir-storagenet-neoforge-26.1.2-1.0.0.jar | MIT (clean-room mod written from public descriptions only, no code, textures or names of the original; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-storagenet/diaithir-storagenet) |
+| diaithir-forgeworks-neoforge-26.1.2-1.0.0.jar | MIT (clean-room mod written from public descriptions only, no code, textures or names of the original; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-forgeworks/diaithir-forgeworks) |
 | graveyard-neoforge-26.1.2-4.0.0.jar | GPL-3.0-only (The Graveyard by YUNG, as declared in the jar; our port to NeoForge 26.1.2, Villager Trading Plus dependency removed; the jar is the unmodified branch build renamed from graveyard-NEOFORGE-4.0.0+mc26.1.2.jar; modified source stays GPL-3) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-graveyard/the-graveyard) |
 | villager-trading-plus-neoforge-26.1.2-1.3.0.jar | MIT (Villager Trading Plus, as declared in the jar; our port to NeoForge 26.1.2, client-only; renamed from villager-trading-plus-1.3.0+26.1.2-neoforge.jar) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-vtp/villager-trading-plus) |
 | diaithir-perf-neoforge-26.1.2-0.3.3.jar | LGPL-3.0-only | [source](diaithir-perf/) in this branch (0.3.3 adds a client mixin that skips Occultism's JEI recipe sync when JEI is absent; 0.3.2 starts C2ME storage threads on first use) |
@@ -98,3 +103,48 @@ Valkyrien Skies (2.5.0-diaithir.5 to .9) and Eureka (1.6.3-diaithir.1) were remo
 
 ## The Backrooms datapack overrides (MIT)
 The Backrooms 2.10.11 by Aria976 and bellfish (MIT). The pack carries 24 function overrides under `kubejs/data/backrooms/function/` and the predicate `backrooms:in_backrooms`. They only prepend one guard line to the mod's looping and every-tick functions that scan every overworld entity (`entity/entitycommands1-4`, `enter/*`, `periodic30t`, `periodic5s`, `periodic10s`, `periodicentitycommands`, `extratick`, `pitcreator`, `entityvariantfix`, `pheno`, `entityspawn/spawncall`): when no player is in a backrooms dimension and none is below Y-130 in the overworld (the mod's void entrance), the function does nothing and (for loops) reschedules itself in 20 ticks. The mod's own function bodies are unchanged. MIT notice: copyright Aria976, bellfish; permission to modify and redistribute with this notice.
+
+## Third-party mods added in pack food-6, tech/transport/storage batch A (linked, never hosted here)
+
+Each downloads from the author's Modrinth CDN with the sha256 in its `.pw.toml`. Licence read from the jar's `neoforge.mods.toml` and the Modrinth listing on 2026-10-28; none is All Rights Reserved or NC-ND. Steve's Carts 2 (All Rights Reserved) was left out for that reason.
+
+| Mod | Jar | Licence | Source |
+|---|---|---|---|
+| appflux | AppliedFlux-26.1-1.0.1-neoforge.jar | LGPL-3.0-only (jar says LGPL-3.0) | https://modrinth.com/mod/appflux |
+| applied-energistics-2-wireless-terminals | ae2wtlib-26.1.2-beta.jar | MIT | https://modrinth.com/mod/applied-energistics-2-wireless-terminals |
+| better-boat-movement | better-boat-movement-3.1.0-26.1+neoforge.jar | GPL-3.0-only (jar says GNU General Public License v3.0) | https://modrinth.com/mod/better-boat-movement |
+| buildcraft-community-edition | BuildCraft-Community-Edition-8.0.25+26.1.2+neoforge.jar | MPL-2.0 | https://modrinth.com/mod/buildcraft-community-edition |
+| call-your-horse | call-your-horse-v2.1.3.jar | MIT | https://modrinth.com/mod/call-your-horse |
+| cargo-boats | cargoboats-26.1.2-1.1.0.jar | Apache-2.0 (jar says Apache 2.0) | https://modrinth.com/mod/cargo-boats |
+| carry-on | carryon-neoforge-26.1.2-2.10.0.jar | LGPL-3.0-only (jar says GNU LGPLv3) | https://modrinth.com/mod/carry-on |
+| chunkcarts | chunkcarts-0.1.0+26.1.2-neoforge.jar | LGPL-3.0-only (jar says LGPL-3.0-or-later) | https://modrinth.com/mod/chunkcarts |
+| colossal-chests | colossalchests-26.1.2-neoforge-1.9.1-20.jar | MIT | https://modrinth.com/mod/colossal-chests |
+| copper-hopper | copperhopper-neoforge-0.23.0+26.1.2.jar | MIT | https://modrinth.com/mod/copper-hopper |
+| echo-chest | EchoChest-v26.1.0-mc26.1.x-NeoForge.jar | MPL-2.0 | https://modrinth.com/mod/echo-chest |
+| effortless-building | effortlessbuilding-neoforge-26.1.2-4.3.jar | LGPL-3.0-only (jar says LGPLv3) | https://modrinth.com/mod/effortless-building |
+| extended-crafting | ExtendedCrafting-26.1.2-8.0.3.jar | MIT | https://modrinth.com/mod/extended-crafting |
+| hang-glider | hangglider-v26.1.2-mc26.1.x+neoforge.jar | MIT | https://modrinth.com/mod/hang-glider |
+| highspeed-rail | highspeed-rail-neoforge-0.23.0+26.1.2.jar | MIT | https://modrinth.com/mod/highspeed-rail |
+| hopper-gadgetry | hoppergadgetry-v26.1.1-mc26.1.x+neoforge.jar | MPL-2.0 | https://modrinth.com/mod/hopper-gadgetry |
+| horse-powered | horsepowered-26.1.2-3.11.7.jar | MIT | https://modrinth.com/mod/horse-powered |
+| horseman | horseman-neoforge-26.1.1-1.7.4.jar | MIT | https://modrinth.com/mod/horseman |
+| immersive-machinery | immersive_machinery-0.2.3+26.1.2-neoforge.jar | GPL-3.0-or-later (jar says GPL-3.0-only) | https://modrinth.com/mod/immersive-machinery |
+| ingeniumapi | ingeniumapi-1.0.2-NEOFORGE-MC-26.X.jar | MIT license | https://modrinth.com/mod/ingeniumapi |
+| just-hammers | just-hammers-neoforge-26.1.2.1.jar | GPL-3.0-only (jar says GPL3) | https://modrinth.com/mod/just-hammers |
+| lib-5555ff | lib-5555ff-v1.1.5.jar | MIT | https://modrinth.com/mod/lib-5555ff |
+| mcjtylib | mcjtylib-26.1.2-10.0.0.jar | MIT | https://modrinth.com/mod/mcjtylib |
+| merequester | merequester-neoforge-26.1.2-1.5.1.jar | LGPL-3.0-only (jar says GNU Lesser General Public License v3.0) | https://modrinth.com/mod/merequester |
+| minecart-trains-fork | minecart_trains_fork-2.4.2+26.1.neoforge.r1.jar | GPL-3.0-only (jar says GPL-3.0) | https://modrinth.com/mod/minecart-trains-fork |
+| mob-lassos | MobLassos-v26.1.1-mc26.1.x-NeoForge.jar | MPL-2.0 | https://modrinth.com/mod/mob-lassos |
+| nether-chested | NetherChested-v26.1.1-mc26.1.x-NeoForge.jar | MPL-2.0 | https://modrinth.com/mod/nether-chested |
+| new-linked-chests | LinkedChests-v26.1.1-mc26.1.x-NeoForge.jar | MPL-2.0 | https://modrinth.com/mod/new-linked-chests |
+| quarry | quarry-2.3.0.jar | MIT | https://modrinth.com/mod/quarry |
+| railoptimization | railoptimization-2.5-snapshot.1+mc26.1.2-neoforge.jar | GPL-3.0-only (jar says GPL-3.0) | https://modrinth.com/mod/railoptimization |
+| rftools-base | rftoolsbase-26.1.2-7.0.0.jar | MIT (jar says MIT License https://github.com/McJtyMods/RFToolsBase/blob/1.16/LICENCE) | https://modrinth.com/mod/rftools-base |
+| rftools-power | rftoolspower-26.1.2-8.0.0.jar | MIT (jar says MIT License https://github.com/McJtyMods/RFToolsPower/blob/1.21_neo/LICENCE) | https://modrinth.com/mod/rftools-power |
+| simple-teleporters-reforged | SimpleTeleportersReforged-26.1.2-5.1.0.jar | MIT | https://modrinth.com/mod/simple-teleporters-reforged |
+| storagedrawers | StorageDrawers-neoforge-26.1.0.2.jar | MIT | https://modrinth.com/mod/storagedrawers |
+| tiny-pipes | tinypipes-26.1-6.1.1.jar | GPL-3.0-or-later (jar says GNU GENERAL PUBLIC LICENSE) | https://modrinth.com/mod/tiny-pipes |
+| toms-storage | toms_storage-26.1-2.10.3.jar | MIT (jar says MIT License https://github.com/tom5454/Toms-Storage/blob/master/LICENSE) | https://modrinth.com/mod/toms-storage |
+| xnet | xnet-26.1.2-8.0.0.jar | MIT (jar says MIT License https://github.com/McJtyMods/XNet/blob/1.21_neo/LICENCE) | https://modrinth.com/mod/xnet |
+| yori3os-grappling-hooks | yo_hooks-5.2.0-neoforge_beta.jar | MIT | https://modrinth.com/mod/yori3os-grappling-hooks |

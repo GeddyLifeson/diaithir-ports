@@ -1,0 +1,12 @@
+name = "lib"
+filename = "lib-5555ff-v1.1.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Lr1LVAwO/versions/iZN9XNXQ/lib-5555ff-v1.1.5.jar"
+hash-format = "sha256"
+hash = "a3db4102a9f23616bfd9bd1630a4924f9c477353794eb93d3786c324b1795120"
+
+[update.modrinth]
+mod-id = "Lr1LVAwO"
+version = "iZN9XNXQ"

@@ -1,0 +1,12 @@
+name = "copperhopper-neoforge"
+filename = "copperhopper-neoforge-0.23.0+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/mTI5Xg5F/versions/vGJw2bY3/copperhopper-neoforge-0.23.0%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "7a3ad6b70f8a8f4c7c06d076afa7d6b8a0a3fd808fe294b9d2519e8a8412e3ea"
+
+[update.modrinth]
+mod-id = "mTI5Xg5F"
+version = "vGJw2bY3"

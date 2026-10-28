@@ -1,0 +1,12 @@
+name = "just-hammers-neoforge"
+filename = "just-hammers-neoforge-26.1.2.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/edU0NbZZ/versions/IwX1iKNF/just-hammers-neoforge-26.1.2.1.jar"
+hash-format = "sha256"
+hash = "335b3fc6c1caaf06c36d8daa4d04d2460202ee46afb17655a12c4624fc4008c6"
+
+[update.modrinth]
+mod-id = "edU0NbZZ"
+version = "IwX1iKNF"

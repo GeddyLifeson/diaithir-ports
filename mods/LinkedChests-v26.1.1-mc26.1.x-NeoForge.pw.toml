@@ -1,0 +1,12 @@
+name = "LinkedChests"
+filename = "LinkedChests-v26.1.1-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Mr2x2AUf/versions/31Vhr8s5/LinkedChests-v26.1.1-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "3404e15e6d9c5b5fb4beda20bf2f8f9e54e8889688456b460d09160a391c6b56"
+
+[update.modrinth]
+mod-id = "Mr2x2AUf"
+version = "31Vhr8s5"

@@ -1,0 +1,12 @@
+name = "NetherChested"
+filename = "NetherChested-v26.1.1-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/bHJp2GRg/versions/e0ZYUkvT/NetherChested-v26.1.1-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "09e24a0d70bd7765652ca767429adb640924b429c80de74f4a16ab36e3ae9132"
+
+[update.modrinth]
+mod-id = "bHJp2GRg"
+version = "e0ZYUkvT"

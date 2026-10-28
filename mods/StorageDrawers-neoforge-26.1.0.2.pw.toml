@@ -1,0 +1,12 @@
+name = "StorageDrawers-neoforge"
+filename = "StorageDrawers-neoforge-26.1.0.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/guitPqEi/versions/K13GP4Gy/StorageDrawers-neoforge-26.1.0.2.jar"
+hash-format = "sha256"
+hash = "b2a3230906455b30c8e61a6015230d7ca55208e545f732fc426f178b1271f929"
+
+[update.modrinth]
+mod-id = "guitPqEi"
+version = "K13GP4Gy"

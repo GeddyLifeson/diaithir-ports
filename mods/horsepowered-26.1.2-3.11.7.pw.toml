@@ -1,0 +1,12 @@
+name = "horsepowered"
+filename = "horsepowered-26.1.2-3.11.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/cZml36tg/versions/cQQZhBaM/horsepowered-26.1.2-3.11.7.jar"
+hash-format = "sha256"
+hash = "abaca363d6b857747705179dce9ad38b5d1f70a2eb797203e606004a2c5e3d67"
+
+[update.modrinth]
+mod-id = "cZml36tg"
+version = "cQQZhBaM"

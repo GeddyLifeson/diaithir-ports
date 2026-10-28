@@ -1,0 +1,12 @@
+name = "ingeniumapi"
+filename = "ingeniumapi-1.0.2-NEOFORGE-MC-26.X.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/bhnA6sV8/versions/K2TKa3U4/ingeniumapi-1.0.2-NEOFORGE-MC-26.X.jar"
+hash-format = "sha256"
+hash = "47fabe33a914bd5e1a7414d3bc673e0f52ada57139d2ff0a4f767e4e9426dc2c"
+
+[update.modrinth]
+mod-id = "bhnA6sV8"
+version = "K2TKa3U4"

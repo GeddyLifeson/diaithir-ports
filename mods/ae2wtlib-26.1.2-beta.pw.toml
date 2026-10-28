@@ -1,0 +1,12 @@
+name = "ae"
+filename = "ae2wtlib-26.1.2-beta.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/pNabrMMw/versions/oB0wuNDF/ae2wtlib-26.1.2-beta.jar"
+hash-format = "sha256"
+hash = "7671b8ed49f7aabcb17c62184e4369c606ad325777a0123aa77c4a3e92a5ad48"
+
+[update.modrinth]
+mod-id = "pNabrMMw"
+version = "oB0wuNDF"

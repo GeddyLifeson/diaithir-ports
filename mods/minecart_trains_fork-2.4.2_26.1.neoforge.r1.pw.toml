@@ -1,0 +1,12 @@
+name = "minecart_trains_fork"
+filename = "minecart_trains_fork-2.4.2+26.1.neoforge.r1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/PtALnG3G/versions/3VE9R1PJ/minecart_trains_fork-2.4.2%2B26.1.neoforge.r1.jar"
+hash-format = "sha256"
+hash = "1fd29d643b4699953710f68db71f3b88d81af1effd2404ea1d234733c0e0ab7a"
+
+[update.modrinth]
+mod-id = "PtALnG3G"
+version = "3VE9R1PJ"
