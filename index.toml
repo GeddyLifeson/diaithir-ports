@@ -35671,10 +35671,6 @@ hash = "0719deb29d1098f59bf24902c4fb8f6605c4cd41ad945bdb11fb544d989185b2"
 metafile = true
 
 [[files]]
-file = "mods/paradise_lost-neoforge-26.1.2-2.5.0.jar"
-hash = "6aade4d915158d1bc10bf592aabd369e02ba8ab7dbf7cf49b1efc547dec7ed35"
-
-[[files]]
 file = "mods/pipe_connector-neoforge-0.6.8.pw.toml"
 hash = "17a40b48cb83181b1b3861d4ded9162ef0d41f1a8bb1e1cd31071154176982a1"
 metafile = true
