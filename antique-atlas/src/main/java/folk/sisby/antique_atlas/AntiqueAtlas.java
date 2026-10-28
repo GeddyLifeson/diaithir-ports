@@ -88,6 +88,7 @@ public class AntiqueAtlas {
 
 	public AntiqueAtlas(IEventBus modBus) {
 		AtlasItem.OPENER = AntiqueAtlas::openAtlasScreen;
+		folk.sisby.antique_atlas.gui.AtlasRenderer.registerOverlay(folk.sisby.antique_atlas.gui.ClaimsOverlay.ID, new folk.sisby.antique_atlas.gui.ClaimsOverlay());
 		modBus.addListener(AntiqueAtlasKeybindings::register);
 		modBus.addListener((AddClientReloadListenersEvent e) -> {
 			e.addListener(TileTextures.ID, TileTextures.getInstance());

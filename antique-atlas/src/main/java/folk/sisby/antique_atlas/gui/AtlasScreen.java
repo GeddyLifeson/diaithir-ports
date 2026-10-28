@@ -76,6 +76,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 	public final BookmarkButton addMarkerBookmark; // Button for placing a marker at current position, local to this Atlas instance.
 	public final BookmarkButton deleteMarkerBookmark; // Button for deleting local markers.
 	public final BookmarkButton markerVisibilityBookmark; // Button for showing/hiding all markers.
+	public BookmarkButton claimsBookmark; // Button for showing/hiding the Open Parties and Claims overlay (only when that mod is present).
 	public final TextBookmarkButton resetScaleBookmark; // Button for displaying the scale, and setting the scale to 1 chunk / 1 tile / 16px.
 	public final BookmarkButton playerBookmark; // Button for restoring player's position at the center of the Atlas.
 	public final ScrollBoxComponent markerScrollBox = new ScrollBoxComponent(true, BookmarkButton.HEIGHT + BOOKMARK_SPACING);
@@ -183,6 +184,16 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 				state.switchTo(HIDING_MARKERS, this);
 			}
 		});
+		if (folk.sisby.antique_atlas.compat.OpacCompat.available()) {
+			claimsBookmark = new BookmarkButton(Component.translatable("gui.antique_atlas.claims"), AntiqueAtlas.id("textures/gui/icons/claims.png"), DyeColor.CYAN.getTextureDiffuseColor(), null, 16, 16, false, false);
+			addChild(claimsBookmark);
+			offsetSideButton(claimsBookmark);
+			claimsBookmark.setSelected(ClaimsOverlay.visible);
+			claimsBookmark.addListener(button -> {
+				ClaimsOverlay.visible = !ClaimsOverlay.visible;
+				claimsBookmark.setSelected(ClaimsOverlay.visible);
+			});
+		}
 		resetScaleBookmark = new TextBookmarkButton(Component.translatable("gui.antique_atlas.resetScale"), Component.literal("1c"));
 		addChild(resetScaleBookmark);
 		offsetSideButton(resetScaleBookmark);

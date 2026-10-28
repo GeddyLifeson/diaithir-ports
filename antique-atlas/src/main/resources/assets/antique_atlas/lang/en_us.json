@@ -55,5 +55,8 @@
 	"command.antique_atlas.waypoint.notfound": "No waypoint named '%s'.",
 	"command.antique_atlas.waypoint.import.none": "No JourneyMap waypoint folder found in journeymap/data.",
 	"command.antique_atlas.waypoint.import.choose": "Several JourneyMap worlds found. Run /waypoint import <folder> with one of:",
-	"command.antique_atlas.waypoint.import.done": "Imported %s waypoints from JourneyMap."
+	"command.antique_atlas.waypoint.import.done": "Imported %s waypoints from JourneyMap.",
+	"gui.antique_atlas.claims": "Show or hide claims",
+	"gui.antique_atlas.claim": "Claimed land",
+	"gui.antique_atlas.waystone": "Waystone"
 }

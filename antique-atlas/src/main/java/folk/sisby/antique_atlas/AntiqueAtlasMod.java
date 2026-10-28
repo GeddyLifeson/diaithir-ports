@@ -1,6 +1,9 @@
 package folk.sisby.antique_atlas;
 
+import folk.sisby.antique_atlas.compat.WaystonesCompat;
 import folk.sisby.antique_atlas.item.AtlasItem;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -22,6 +25,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(AntiqueAtlasMod.ID)
 public final class AntiqueAtlasMod {
 	public static final String ID = "antique_atlas";
+	public static final Logger LOGGER = LogManager.getLogger("Antique Atlas");
 
 	private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
 
@@ -35,6 +39,7 @@ public final class AntiqueAtlasMod {
 
 	public AntiqueAtlasMod(IEventBus modBus) {
 		ITEMS.register(modBus);
+		WaystonesCompat.init();
 		modBus.addListener((BuildCreativeModeTabContentsEvent e) -> {
 			if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 				e.accept(ATLAS.get());
