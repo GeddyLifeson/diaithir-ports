@@ -10,3 +10,6 @@ Dedicated server (gradle runServer, empty default world, Curios 15.0.0 in run/mo
 - Static check: every item definition, model, parent and texture exists; every lang key exists.
 
 Not tested: a real client (icons, spear in-hand model, shield off-hand model), a real player's blocking (the shield half of the powers is called with the shield up because a fake player cannot hold a block), the Sunwarmth/Moonsight/Tide-in-rain paths depend on sky and time, crafting with real bronze/steel ingots, loot actually dropping from structure chests (tables load; odds 10 to 20 percent per chest).
+
+## Full pack (batch 1) note
+mist_bell "no veil" was NeoOrigins cancelling all damage to a player without an origin (every wearer-side check passed or failed with no damage landing). The test now marks the fake player picker-abandoned (reflection), resets item cooldowns (fake player does not tick), and strips Mob Champions / level buffs from the target mobs. Full pack: ok=26 bad=0 in 6 runs on one boot.

@@ -61,6 +61,7 @@ public final class SelfTest {
         bad = 0;
         FakePlayer fake = FakePlayerFactory.get(level, new GameProfile(UUID.fromString("5e1f7e57-0000-4000-8000-00000000d1a1"), "[RelicTest]"));
         fake.connection.handleAcceptPlayerLoad(new net.minecraft.network.protocol.game.ServerboundPlayerLoadedPacket());  // else the fake player counts as still loading and takes no damage
+        unprotect(fake);
         fake.setInvulnerable(false);  // NeoForge's fake player is invulnerable by default, which would hide every wearer-side power
         Vec3 base = source.getPosition();
         int cx = ((int) Math.floor(base.x)) >> 4, cz = ((int) Math.floor(base.z)) >> 4;
@@ -109,16 +110,54 @@ public final class SelfTest {
         }
     }
 
+    /**
+     * NeoOrigins (in the full pack) cancels all damage to a player who has not yet picked an origin, which a fake player never does,
+     * so every wearer-side check (blows taken, fire, a fatal blow) would pass or fail without any damage landing. Marks the picker as
+     * abandoned, the state of a player who skipped it. Reflection, because the mod is optional.
+     */
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    private static void unprotect(FakePlayer p) {
+        try {
+            Object type = Class.forName("com.cyberday1.neoorigins.attachment.OriginAttachments").getMethod("originData").invoke(null);
+            Object data = p.getData((net.neoforged.neoforge.attachment.AttachmentType) type);
+            data.getClass().getMethod("setPickerAbandoned", boolean.class).invoke(data, true);
+        } catch (ReflectiveOperationException | LinkageError | RuntimeException ignored) {
+            // mod absent: nothing protects the fake player
+        }
+    }
+
     private static Zombie zombie(ServerLevel level, Vec3 at) {
         Zombie z = EntityType.ZOMBIE.create(level, EntitySpawnReason.COMMAND);
         z.setPos(at.x, at.y, at.z);
         z.setNoAi(true);
         z.setPersistenceRequired();
+        // Dwarfs and Giants (full pack) rolls a random size on join that changes health and damage taken; the checks need a plain zombie
+        z.addTag("dwarfsandgiants:spawn_size_rolled");
         level.addFreshEntity(z);
+        plain(z);
         return z;
     }
 
+    /**
+     * Other pack mods (Mob Champions, level mods) lift a joining mob's health and armour at random, which makes damage numbers vary
+     * between runs. Puts the attributes the checks depend on back to the entity type's own values.
+     */
+    @SuppressWarnings("unchecked")
+    static void plain(LivingEntity e) {
+        var defaults = net.minecraft.world.entity.ai.attributes.DefaultAttributes.getSupplier((EntityType<? extends LivingEntity>) e.getType());
+        for (var a : java.util.List.of(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, net.minecraft.world.entity.ai.attributes.Attributes.ARMOR,
+                net.minecraft.world.entity.ai.attributes.Attributes.ARMOR_TOUGHNESS, net.minecraft.world.entity.ai.attributes.Attributes.KNOCKBACK_RESISTANCE)) {
+            var inst = e.getAttribute(a);
+            if (inst == null || defaults == null || !defaults.hasAttribute(a)) continue;
+            inst.removeModifiers();
+            inst.setBaseValue(defaults.getBaseValue(a));
+        }
+        e.setHealth(e.getMaxHealth());
+    }
+
     private static void reset(ServerLevel level, FakePlayer p, Vec3 base) {
+        // the fake player does not tick, so item cooldowns of an earlier relic (or an earlier run) would never end
+        for (int i = 0; i < 2400; i++) p.getCooldowns().tick();
         p.removeAllEffects();
         p.setHealth(p.getMaxHealth());
         p.clearFire();
@@ -190,7 +229,7 @@ public final class SelfTest {
             case "poison" -> {
                 // zombies are undead and shrug off poison, so the blow lands on a creeper
                 net.minecraft.world.entity.monster.Creeper c = EntityType.CREEPER.create(level, EntitySpawnReason.COMMAND);
-                c.setPos(base.x, base.y, base.z + 3); c.setNoAi(true); level.addFreshEntity(c);
+                c.setPos(base.x, base.y, base.z + 3); c.setNoAi(true); level.addFreshEntity(c); plain(c);
                 try { c.hurtServer(level, melee, 1); return c.hasEffect(MobEffects.POISON) ? "ok poisoned" : "BAD not poisoned"; } finally { c.discard(); }
             }
             case "chain" -> {
@@ -218,7 +257,12 @@ public final class SelfTest {
                 z.setOnGround(false); z.setDeltaMovement(0, 0.3, 0);
                 float h0 = z.getHealth(); z.hurtServer(level, melee, 4); return "ok dealt " + (h0 - z.getHealth());
             }
-            case "starcrit" -> { float h0 = z.getHealth(); z.hurtServer(level, melee, 4); float full = h0 - z.getHealth(); return full > 4.1F ? "ok " + full : "BAD " + full; }
+            case "starcrit" -> {
+                float h0 = z.getHealth(), mx = z.getMaxHealth();
+                boolean landed = z.hurtServer(level, melee, 4);
+                float full = h0 - z.getHealth();
+                return full > 4.1F ? "ok " + full : "BAD " + full + " (landed " + landed + ", hp " + h0 + "/" + mx + " -> " + z.getHealth() + "/" + z.getMaxHealth() + ", armor " + z.getArmorValue() + ", effects " + z.getActiveEffects().size() + ", tags " + z.entityTags() + ")";
+            }
             case "plunge" -> {
                 p.fallDistance = 5.0F;
                 float h0 = z.getHealth(); z.hurtServer(level, melee, 4); float dealt = h0 - z.getHealth();
@@ -246,8 +290,8 @@ public final class SelfTest {
                 return taken < 8.0F ? "ok took " + taken + " of 8" : "BAD took " + taken;
             }
             case "mistveil" -> {
-                p.setHealth(8.0F); p.hurtServer(level, mob, 3);
-                return p.hasEffect(MobEffects.INVISIBILITY) ? "ok vanished" : "BAD no veil";
+                p.setHealth(8.0F); boolean landed = p.hurtServer(level, mob, 3);
+                return p.hasEffect(MobEffects.INVISIBILITY) ? "ok vanished" : "BAD no veil (landed " + landed + " invuln " + p.isInvulnerable() + "/" + p.invulnerableTime + " absorb " + p.getAbsorptionAmount() + " hp " + p.getHealth() + "/" + p.getMaxHealth() + ", cooldown " + p.getCooldowns().isOnCooldown(p.getOffhandItem()) + ", effects " + p.getActiveEffects().size() + ")";
             }
             case "dragonward" -> {
                 float h0 = p.getHealth(); p.hurtServer(level, level.damageSources().onFire(), 6);
