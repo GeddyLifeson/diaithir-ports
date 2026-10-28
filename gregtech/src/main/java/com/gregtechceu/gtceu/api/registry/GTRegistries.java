@@ -134,7 +134,10 @@ public final class GTRegistries {
         isFrozen = false;
     }/* ported: removed */
 
-    public static void init(IEventBus eventBus) {  /* ported stub */ }
+    public static void init(IEventBus eventBus) {
+        eventBus.addListener(EventPriority.HIGHEST, GTRegistries::onUnfreeze);
+        eventBus.addListener(EventPriority.LOW, GTRegistries::actuallyRegister);
+    }
 
     @UnmodifiableView
     public static List<Identifier> getRegistrationOrder() {

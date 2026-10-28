@@ -2584,7 +2584,9 @@ public class GTItems {
         };
     }
 
-    public static <T extends Item> void cauldronInteraction(T item) {  /* ported stub */ }
+    public static <T extends Item> void cauldronInteraction(T item) {
+        // ported stub: cauldron interactions moved to CauldronInteraction.Dispatcher in 26.1 (see PORT_NOTES.md)
+    }
 
     public static <T extends IComponentItem> NonNullConsumer<T> attach(IItemComponent components) {
         return item -> item.attachComponents(components);
@@ -2595,7 +2597,10 @@ public class GTItems {
     }
 
     public static <T extends Item> NonNullConsumer<T> modelPredicate(Identifier predicate,
-                                                                     StackProperty property) { return null; /* ported stub */ }/* ported: removed */
+                                                                     StackProperty property) {
+        // ported stub: item model predicates are data driven in 26.1
+        return item -> {};
+    }
 
     @SuppressWarnings("removal")
     public static <P,

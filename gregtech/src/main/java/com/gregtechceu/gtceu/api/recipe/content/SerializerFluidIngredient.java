@@ -12,7 +12,7 @@ import lombok.experimental.ExtensionMethod;
 
 public class SerializerFluidIngredient implements IContentSerializer<SizedFluidIngredient> {
 
-    public static final SizedFluidIngredient EMPTY = new SizedFluidIngredient(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.fluidIngredientOf(net.minecraft.core.HolderSet.<net.minecraft.world.level.material.Fluid>empty()), 1);
+    public static final SizedFluidIngredient EMPTY = new SizedFluidIngredient(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.fluidIngredientOf(net.minecraft.core.HolderSet.direct(net.minecraft.core.registries.BuiltInRegistries.FLUID.wrapAsHolder(net.minecraft.world.level.material.Fluids.WATER))), 1);
 
     public static SerializerFluidIngredient INSTANCE = new SerializerFluidIngredient();
 

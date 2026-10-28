@@ -77,13 +77,9 @@ public class GTMaterialItems {
     // Reference Tables
     public static Table<TagPrefix, Material, ItemEntry<? extends Item>> MATERIAL_ITEMS;
 
-    public final static Table<Material, GTToolType, ItemProviderEntry<Item, ? extends IGTTool>> TOOL_ITEMS = ArrayTable.create(
-            GTCEuAPI.materialManager.stream().filter(mat -> mat.hasProperty(PropertyKey.TOOL)).toList(),
-            GTToolType.getTypes().values().stream().toList());
+    public final static Table<Material, GTToolType, ItemProviderEntry<Item, ? extends IGTTool>> TOOL_ITEMS = com.google.common.collect.HashBasedTable.create();
 
-    public static final Table<Material, ArmorType, ItemEntry<? extends ArmorItem>> ARMOR_ITEMS = ArrayTable.create(
-            GTCEuAPI.materialManager.stream().filter(mat -> mat.hasProperty(PropertyKey.ARMOR)).toList(),
-            Arrays.asList(ArmorType.values()));
+    public static final Table<Material, ArmorType, ItemEntry<? extends ArmorItem>> ARMOR_ITEMS = com.google.common.collect.HashBasedTable.create();
 
     // spotless:on
 
@@ -135,7 +131,87 @@ public class GTMaterialItems {
     }
 
     @SuppressWarnings("unchecked")
-    private static void generateTool(final Material material, final GTToolType toolType, GTRegistrate registrate) {  /* ported stub */ }
+    private static void generateTool(final Material material, final GTToolType toolType, GTRegistrate registrate) {
+        final MaterialToolTier tier = material.getToolTier();
+        // spotless:off
+        TOOL_ITEMS.put(material, toolType, (ItemProviderEntry<Item, ? extends IGTTool>) (ItemProviderEntry<Item, ?>) registrate
+                .item(toolType.idFormat.formatted(tier.material.getName()), p -> toolType.constructor.create(toolType, tier, material, toolType.toolDefinition, p).asItem())
+                .properties(p -> {
+                    if (!toolType.toolDefinition.getAoEDefinition().isZero()) {
+                        p.component(GTDataComponents.AOE, toolType.toolDefinition.getAoEDefinition());
+                    }
+                    return p;
+                })
+                .properties(p -> {
+                    IGTToolDefinition toolStats = toolType.toolDefinition;
+                    // Set other tool stats (durability)
+                    ToolProperty toolProperty = material.getProperty(PropertyKey.TOOL);
+
+                    Tool tool = toolStats.getTool();
+                    List<Tool.Rule> rules = new ArrayList<>(tool.rules());
+                    rules.add(Tool.Rule.deniesDrops(com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.BLOCK, tier.getIncorrectBlocksForDrops())));
+
+                    float harvestSpeed = toolStats.getEfficiencyMultiplier() * tier.getSpeed() + toolStats.getBaseEfficiency();
+                    for (TagKey<Block> tag : toolType.harvestTags) {
+                        rules.add(Tool.Rule.minesAndDrops(com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.BLOCK, tag), harvestSpeed));
+                    }
+                    p.component(DataComponents.TOOL, new Tool(rules, tool.defaultMiningSpeed(), tool.damagePerBlock(), tool.canDestroyBlocksInCreative()));
+                    p.component(GTDataComponents.TOOL_BEHAVIORS, new ToolBehaviors(toolType.toolDefinition.getBehaviors()));
+
+
+                    float baseDamage = toolStats.getBaseDamage();
+                    float attackDamage = 0;
+                    // represents a tool that should always have an attack damage value of 0
+                    // formatted like this to have attackDamage be final for the lambda.
+                    if (baseDamage != Float.MIN_VALUE) {
+                        attackDamage = toolProperty.getAttackDamage() + baseDamage;
+                    }
+                    ItemAttributeModifiers modifiers = ItemAttributeModifiers.builder()
+                            .add(Attributes.ATTACK_DAMAGE,
+                                    new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, attackDamage, AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND)
+                            .add(Attributes.ATTACK_SPEED,
+                                    new AttributeModifier(Item.BASE_ATTACK_SPEED_ID,
+                                            toolStats.getEfficiencyMultiplier() * toolProperty.getAttackSpeed() + toolStats.getAttackSpeed(),
+                                            AttributeModifier.Operation.ADD_VALUE),
+                                    EquipmentSlotGroup.MAINHAND)
+                            .build();
+                    p.attributes(modifiers);
+
+                    // Durability formula we are working with:
+                    // Final Durability = (material durability * material durability
+                    // multiplier) + (tool definition durability *
+                    // definition durability multiplier) - 1
+                    // Subtracts 1 internally since Minecraft treats "0" as a valid
+                    // durability, but we don't want to display this.
+
+                    int durability = toolProperty.getDurability() * toolProperty.getDurabilityMultiplier();
+
+                    // Most Tool Definitions do not set a base durability, which will lead
+                    // to ignoring the multiplier if present. So
+                    // apply the multiplier to the material durability if that would happen
+                    if (toolStats.getBaseDurability() == 0) {
+                        durability *= (int) toolStats.getDurabilityMultiplier();
+                    } else {
+                        durability += (int) (toolStats.getBaseDurability() * toolStats.getDurabilityMultiplier());
+                    }
+
+                    p.durability(durability - 1);
+                    if (toolProperty.isUnbreakable()) {
+                        p.component(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+                    }
+
+                    // Set behaviours
+                    if (toolProperty.isMagnetic()) {
+                        p.component(GTDataComponents.RELOCATE_MINED_BLOCKS, Unit.INSTANCE);
+                        p.component(GTDataComponents.RELOCATE_MOB_DROPS, Unit.INSTANCE);
+                    }
+                    return p;
+                })
+                .setData(ProviderType.LANG, NonNullBiConsumer.noop())
+                .register());
+        // spotless:on
+    }
 
     // Material Armors
     public static void generateArmors() {
@@ -152,5 +228,13 @@ public class GTMaterialItems {
         }
     }
 
-    private static void generateArmor(final Material material, final ArmorType type, GTRegistrate registrate) {  /* ported stub */ }
+    private static void generateArmor(final Material material, final ArmorType type, GTRegistrate registrate) {
+        final ArmorProperty property = material.getProperty(PropertyKey.ARMOR);
+        String id = "%s_%s".formatted(material.getName(), type.getName());
+        ARMOR_ITEMS.put(material, type, registrate
+                .item(id, p -> new GTArmorItem(type, p, material, property))
+                .properties(p -> p.durability(type.getDurability(property.getDurabilityMultiplier())))
+                .setData(ProviderType.LANG, NonNullBiConsumer.noop())
+                .register());
+    }
 }

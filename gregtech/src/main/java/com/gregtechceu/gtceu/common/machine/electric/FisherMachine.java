@@ -97,7 +97,6 @@ public class FisherMachine extends TieredEnergyMachine
     @SaveField
     private boolean active = false;
     public static final int WATER_CHECK_SIZE = 5;
-    private static final ItemStack fishingRod = new ItemStack(Items.FISHING_ROD);
     private boolean hasWater = false;
 
     @Getter

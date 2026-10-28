@@ -52,10 +52,6 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
         return (GTBlockBuilder<T, P>) super.initialProperties(block);
     }
 
-    @SuppressWarnings("removal")
-    
-    
-    public GTBlockBuilder<T, P> addLayer(Supplier<Supplier<RenderType>> layer) { return null; /* ported stub */ }
 
     @Override
     public GTBlockBuilder<T, P> simpleItem() {
@@ -111,7 +107,9 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
 
     
     
-    public  <D extends RegistrateProvider> GTBlockBuilder<T, P> setData(ProviderType<? extends D> type, NonNullBiConsumer<DataGenContext<Block, T>, D> cons) { return null; /* ported stub */ }
+    public  <D extends RegistrateProvider> GTBlockBuilder<T, P> setData(ProviderType<? extends D> type, NonNullBiConsumer<DataGenContext<Block, T>, D> cons) {
+        return (GTBlockBuilder<T, P>) super.setData(type, cons);
+    }
 
     // spotless:on
     // endregion

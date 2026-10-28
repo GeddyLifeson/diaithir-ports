@@ -164,7 +164,7 @@ public class GTRecipe implements Recipe<RecipeInput> {
     
     @Override
     public @NotNull RecipeSerializer<GTRecipe> getSerializer() {
-        return GTRecipeSerializer.SERIALIZER;
+        return recipeType.serializer != null ? recipeType.serializer : GTRecipeSerializer.SERIALIZER;
     }
 
     @Override

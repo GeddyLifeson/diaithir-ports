@@ -11,7 +11,7 @@ import com.mojang.serialization.Codec;
 
 public class SerializerIngredient implements IContentSerializer<SizedIngredient> {
 
-    public static final SizedIngredient EMPTY = new SizedIngredient(Ingredient.of(net.minecraft.core.HolderSet.<net.minecraft.world.item.Item>empty()), 1);
+    public static final SizedIngredient EMPTY = new SizedIngredient(Ingredient.of(net.minecraft.world.item.Items.BARRIER), 1);
     public static SerializerIngredient INSTANCE = new SerializerIngredient();
 
     private SerializerIngredient() {}

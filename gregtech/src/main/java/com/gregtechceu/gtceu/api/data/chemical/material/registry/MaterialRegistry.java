@@ -56,7 +56,10 @@ public final class MaterialRegistry extends MappedRegistry<Material> implements 
     }
 
     @Override
-    public Material getMaterial(Identifier name) { return null; /* ported stub */ }
+    public Material getMaterial(Identifier name) {
+        Material value = getValue(name);
+        return value != null ? value : GTMaterials.NULL;
+    }
 
     @Override
     public Identifier getKey(Material material) {
@@ -106,7 +109,9 @@ public final class MaterialRegistry extends MappedRegistry<Material> implements 
     }
 
     @Override
-    public boolean isFrozen() { return false; /* ported stub */ }
+    public boolean isFrozen() {
+        return isRegistryClosed;
+    }
 
     public void close() {
         isRegistryClosed = true;

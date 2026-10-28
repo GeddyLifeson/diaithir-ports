@@ -114,7 +114,19 @@ public class GTBlocks {
         GTCEu.LOGGER.debug("Generating GTCEu Laser Pipe Blocks... Complete!");
     }
 
-    private static void registerLaserPipeBlock(int index) {  /* ported stub */ }
+    private static void registerLaserPipeBlock(int index) {
+        var type = LaserPipeType.values()[index];
+        var entry = REGISTRATE
+                .block("%s_laser_pipe".formatted(type.getSerializedName()), (p) -> new LaserPipeBlock(p, type))
+                .initialProperties(() -> Blocks.IRON_BLOCK)
+                .properties(p -> p.dynamicShape().noOcclusion().forceSolidOn())
+                .defaultLoot()
+                .tag(CustomTags.MINEABLE_WITH_CONFIG_VALID_PICKAXE_WIRE_CUTTER)
+                .item(LaserPipeBlockItem::new)
+                .build()
+                .register();
+        LASER_PIPES[index] = entry;
+    }
 
     // Optical Pipe Blocks
     private static void generateOpticalPipeBlocks() {
@@ -125,7 +137,20 @@ public class GTBlocks {
         GTCEu.LOGGER.debug("Generating GTCEu Optical Pipe Blocks... Complete!");
     }
 
-    private static void registerOpticalPipeBlock(int index) {  /* ported stub */ }
+    private static void registerOpticalPipeBlock(int index) {
+        var type = OpticalPipeType.values()[index];
+        var entry = REGISTRATE
+                .block("%s_optical_pipe".formatted(type.getSerializedName()), (p) -> new OpticalPipeBlock(p, type))
+                .lang("Optical Fiber Cable")
+                .initialProperties(() -> Blocks.IRON_BLOCK)
+                .properties(p -> p.dynamicShape().noOcclusion().forceSolidOn())
+                .defaultLoot()
+                .tag(CustomTags.MINEABLE_WITH_CONFIG_VALID_PICKAXE_WIRE_CUTTER)
+                .item(PipeBlockItem::new)
+                .build()
+                .register();
+        OPTICAL_PIPES[index] = entry;
+    }
 
     // Duct Pipe Blocks
     private static void generateDuctPipeBlocks() {
@@ -136,7 +161,19 @@ public class GTBlocks {
         GTCEu.LOGGER.debug("Generating GTCEu Duct Pipe Blocks... Complete!");
     }
 
-    private static void registerDuctPipeBlock(int index) {  /* ported stub */ }
+    private static void registerDuctPipeBlock(int index) {
+        var type = DuctPipeType.VALUES[index];
+        var entry = REGISTRATE
+                .block("%s_duct_pipe".formatted(type.getSerializedName()), (p) -> new DuctPipeBlock(p, type))
+                .initialProperties(() -> Blocks.IRON_BLOCK)
+                .properties(p -> p.dynamicShape().noOcclusion().forceSolidOn())
+                .defaultLoot()
+                .tag(CustomTags.MINEABLE_WITH_CONFIG_VALID_PICKAXE_WRENCH)
+                .item(PipeBlockItem::new)
+                .build()
+                .register();
+        DUCT_PIPES[index] = entry;
+    }
 
     // Long Distance Item Pipe Blocks
     public static final BlockEntry<LongDistancePipeBlock> LD_ITEM_PIPE = REGISTRATE

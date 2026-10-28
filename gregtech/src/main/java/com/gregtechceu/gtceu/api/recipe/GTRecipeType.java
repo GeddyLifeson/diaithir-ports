@@ -47,7 +47,7 @@ public class GTRecipeType implements RecipeType<GTRecipe> {
 
     @Getter
     @Setter(onMethod_ = { @ApiStatus.Internal })
-    public GTRecipeSerializer serializer;
+    public net.minecraft.world.item.crafting.RecipeSerializer<GTRecipe> serializer;
 
     @Getter
     public final Identifier registryName;
