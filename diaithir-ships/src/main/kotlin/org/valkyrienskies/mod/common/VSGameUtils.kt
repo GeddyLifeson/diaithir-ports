@@ -52,7 +52,6 @@ import org.valkyrienskies.mod.common.util.toJOML
 import org.valkyrienskies.mod.common.util.toJOMLD
 import org.valkyrienskies.mod.common.util.toMinecraft
 import org.valkyrienskies.mod.compat.LoadedMods
-import org.valkyrienskies.mod.compat.SableCompat
 import org.valkyrienskies.mod.mixin.accessors.resource.ResourceKeyAccessor
 import org.valkyrienskies.mod.mixinducks.world.entity.PlayerDuck
 import java.util.function.Consumer
@@ -296,12 +295,10 @@ inline fun Level.transformToNearbyShipsAndWorld(
 
 // Level
 fun Level.isChunkInShipyard(chunkX: Int, chunkZ: Int) =
-    !(LoadedMods.sable && SableCompat.isChunkInSublevel(this, chunkX, chunkZ))
-        && shipObjectWorld.isChunkInShipyard(chunkX, chunkZ, dimensionId)
+    shipObjectWorld.isChunkInShipyard(chunkX, chunkZ, dimensionId)
 
 fun Level.isBlockInShipyard(blockX: Int, blockY: Int, blockZ: Int) =
-    !(LoadedMods.sable && SableCompat.isBlockInSublevel(this, blockX, blockY, blockZ)) &&
-        shipObjectWorld.isBlockInShipyard(blockX, blockY, blockZ, dimensionId)
+    shipObjectWorld.isBlockInShipyard(blockX, blockY, blockZ, dimensionId)
 
 fun Level.isBlockInShipyard(pos: BlockPos) = isBlockInShipyard(pos.x, pos.y, pos.z)
 
