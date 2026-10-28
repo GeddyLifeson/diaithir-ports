@@ -26871,6 +26871,10 @@ hash = "3a817dba7383f7eb545a8f437eab75727a765c52d7eb2f040776622a64b81971"
 metafile = true
 
 [[files]]
+file = "mods/eternalstarlight-0.9.1+mc26.1.2.jar"
+hash = "d28804de6ae46792c3419c399f80e0d57da64d80c457092318850ccb22e48c4f"
+
+[[files]]
 file = "mods/evilcraft-26.1.2-neoforge-1.2.107.pw.toml"
 hash = "27af705089a31b0f234b41260751799170b8e1e9acb974a1da7d3905cfe546d0"
 metafile = true
@@ -27417,6 +27421,10 @@ metafile = true
 file = "mods/paladins-neoforge-3.1.3.002_26.1.2.pw.toml"
 hash = "0719deb29d1098f59bf24902c4fb8f6605c4cd41ad945bdb11fb544d989185b2"
 metafile = true
+
+[[files]]
+file = "mods/paradise_lost-neoforge-26.1.2-2.5.0.jar"
+hash = "b9b765642afe6c4493ba483a9daae0e089dfc1439864ba0594a814b273cb4ac8"
 
 [[files]]
 file = "mods/pipe_connector-neoforge-0.6.8.pw.toml"
