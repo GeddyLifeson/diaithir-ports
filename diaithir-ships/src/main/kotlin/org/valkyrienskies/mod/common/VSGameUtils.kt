@@ -118,11 +118,11 @@ fun MinecraftServer.executeIf(condition: () -> Boolean, toExecute: Runnable) {
     }
 }
 
-val Level.yRange get() = LevelYRange(minBuildHeight, maxBuildHeight - 1)
+val Level.yRange get() = LevelYRange(minY, maxY)
 
 fun Level.isTickingChunk(pos: ChunkPos) = isTickingChunk(pos.x, pos.z)
 fun Level.isTickingChunk(chunkX: Int, chunkZ: Int) =
-    (chunkSource as ServerChunkCache).isPositionTicking(ChunkPos.asLong(chunkX, chunkZ))
+    (chunkSource as ServerChunkCache).isPositionTicking(ChunkPos.pack(chunkX, chunkZ))
 
 /**
  * Check if a chunk is loaded enough for VS2 to use it.

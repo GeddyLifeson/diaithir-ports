@@ -46,6 +46,8 @@ import org.valkyrienskies.mod.common.util.toJOMLD
 import org.valkyrienskies.mod.common.vsCore
 import org.valkyrienskies.mod.common.yRange
 import org.valkyrienskies.mod.util.AIR
+import org.valkyrienskies.mod.util.clearContentsForRelocation
+import org.valkyrienskies.mod.util.loadWithComponents
 import org.valkyrienskies.mod.util.StructureTemplateFillFromVoxelSet
 import org.valkyrienskies.mod.util.logger
 
@@ -91,7 +93,7 @@ object ShipAssembler {
     private fun getDistinctChunksFromBlockPosSet(blocks: Set<BlockPos>): Set<ChunkPos> {
         val chunkSet = hashSetOf<ChunkPos>()
         for (blockPos in blocks) {
-            val chunkPos = ChunkPos(blockPos)
+            val chunkPos = ChunkPos.containing(blockPos)
             chunkSet.add(chunkPos)
         }
         return chunkSet
@@ -244,11 +246,7 @@ object ShipAssembler {
             val flags = Block.UPDATE_CLIENTS or Block.UPDATE_KNOWN_SHAPE or Block.UPDATE_SUPPRESS_DROPS or Block.UPDATE_MOVE_BY_PISTON
             for (pos in blocks) {
                 level.getBlockEntity(pos)?.let {
-                    if (it is Clearable) {
-                        Clearable.tryClear(it)
-                    } else {
-                        it.loadWithComponents(CompoundTag(), level.registryAccess())
-                    }
+                    it.clearContentsForRelocation(level.registryAccess())
                     level.removeBlockEntity(pos)
                 }
                 level.setBlock(pos, Blocks.AIR.defaultBlockState(), flags)
@@ -461,8 +459,8 @@ object ShipAssembler {
 
         // Add tickets for all dest chunks first (non-blocking, just queues them)
         for (cp in allDestChunkPoses) {
-            chunkSource.addRegionTicket(
-                org.valkyrienskies.mod.common.world.VSTicketType.SHIP_CHUNK, cp, 0, cp
+            chunkSource.addTicketWithRadius(
+                org.valkyrienskies.mod.common.world.VSTicketType.SHIP_CHUNK, cp, 0
             )
         }
 
@@ -545,18 +543,18 @@ object ShipAssembler {
                     // neighbor update machinery. Skip sendBlockUpdated since source chunks
                     // are stalled by PacketStopChunkUpdates.
                     level.getBlockEntity(srcPos)?.let {
-                        if (it is Clearable) Clearable.tryClear(it) else it.loadWithComponents(CompoundTag(), level.registryAccess())
+                        it.clearContentsForRelocation(level.registryAccess())
                         level.removeBlockEntity(srcPos)
                     }
                     val srcChunk = level.getChunkAt(srcPos)
-                    srcChunk.setBlockState(srcPos, Blocks.AIR.defaultBlockState(), false)
+                    srcChunk.setBlockState(srcPos, Blocks.AIR.defaultBlockState(), 0)
 
                     // Place at destination using chunk-level setBlockState directly.
                     // This bypasses Level.setBlock's sendBlockUpdated + onBlockStateChange
                     // which are unnecessary while dest chunks are stalled.
                     // LevelChunk.setBlockState handles block entity creation internally.
                     val destChunk = level.getChunkAt(destPos)
-                    destChunk.setBlockState(destPos, state, false)
+                    destChunk.setBlockState(destPos, state, 0)
                     beTag?.let { tag ->
                         tag.putInt("x", destPos.x)
                         tag.putInt("y", destPos.y)
@@ -579,7 +577,7 @@ object ShipAssembler {
 
                 for (pos in filteredBlocks) {
                     level.getBlockEntity(pos)?.let {
-                        if (it is Clearable) Clearable.tryClear(it) else it.loadWithComponents(CompoundTag(), level.registryAccess())
+                        it.clearContentsForRelocation(level.registryAccess())
                         level.removeBlockEntity(pos)
                     }
                     level.setBlock(pos, Blocks.AIR.defaultBlockState(), removeFlags)
@@ -723,7 +721,7 @@ object ShipAssembler {
         }
 
         // getType is used for referencing this processor from a datapack, which we don't need
-        override fun getType(): StructureProcessorType<*>? = null
+        override fun getType(): StructureProcessorType<*> = StructureProcessorType.NOP
     }
 
     // Pre-computed "all sky light 15" DataLayer template (2048 bytes, every nibble = 0xF).

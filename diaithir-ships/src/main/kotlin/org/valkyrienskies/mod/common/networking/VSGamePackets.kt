@@ -75,7 +75,7 @@ object VSGamePackets {
             val level = mc.level ?: return@registerClientHandler
             val entity = level.getEntity(setMotion.entityID) ?: return@registerClientHandler
 
-            if (entity.isControlledByLocalInstance || mc.player?.id == entity.id) return@registerClientHandler
+            if (entity.isLocalInstanceAuthoritative || mc.player?.id == entity.id) return@registerClientHandler
 
             if (entity is IEntityDraggingInformationProvider) {
                 entity.draggingInformation.lastShipStoodOnServerWriteOnly = if (setMotion.shipID != -1L) {
@@ -129,7 +129,7 @@ object VSGamePackets {
 
                 if(entity !is LivingEntity) { // EntityLerper is called only if the entity is ai-controlled. In other cases lerp is manual.
                     entity.setPos(previousWorldPosition.x, previousWorldPosition.y, previousWorldPosition.z)
-                    entity.lerpTo(worldPosition.x, worldPosition.y, worldPosition.z, Math.toDegrees(setMotion.yRot).toFloat(), Math.toDegrees(setMotion.xRot).toFloat(), 3)
+                    entity.moveOrInterpolateTo(net.minecraft.world.phys.Vec3(worldPosition.x, worldPosition.y, worldPosition.z), Math.toDegrees(setMotion.yRot).toFloat(), Math.toDegrees(setMotion.xRot).toFloat())
                 }
             }
         }
@@ -139,7 +139,7 @@ object VSGamePackets {
             val level = mc.level ?: return@registerClientHandler
             val entity = level.getEntity(setRotation.entityID) ?: return@registerClientHandler
 
-            if (entity.isControlledByLocalInstance || entity is LocalPlayer) return@registerClientHandler
+            if (entity.isLocalInstanceAuthoritative || entity is LocalPlayer) return@registerClientHandler
 
             if (entity is IEntityDraggingInformationProvider) {
                 entity.draggingInformation.lastShipStoodOnServerWriteOnly = if (setRotation.shipID != -1L) {

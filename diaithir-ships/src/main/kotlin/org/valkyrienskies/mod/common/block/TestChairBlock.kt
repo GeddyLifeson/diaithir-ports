@@ -8,6 +8,7 @@ import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.entity.EntitySpawnReason
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.HorizontalDirectionalBlock
@@ -25,8 +26,8 @@ import org.valkyrienskies.core.util.z
 import org.valkyrienskies.mod.common.ValkyrienSkiesMod
 import org.valkyrienskies.mod.common.util.toDoubles
 
-class TestChairBlock() : HorizontalDirectionalBlock(
-    Properties.of().strength(1.0f, 120.0f).sound(SoundType.WOOL)
+class TestChairBlock(properties: Properties) : HorizontalDirectionalBlock(
+    properties.strength(1.0f, 120.0f).sound(SoundType.WOOL)
 ) {
     private val SEAT_AABB: VoxelShape = box(0.0, 0.0, 0.0, 16.0, 8.0, 16.0)
 
@@ -51,11 +52,11 @@ class TestChairBlock() : HorizontalDirectionalBlock(
         state: BlockState, level: Level, pos: BlockPos, player: Player, blockHitResult: BlockHitResult
     ): InteractionResult {
         if (level.isClientSide) return InteractionResult.SUCCESS
-        val seatEntity = ValkyrienSkiesMod.SHIP_MOUNTING_ENTITY_TYPE.create(level)!!.apply {
+        val seatEntity = ValkyrienSkiesMod.SHIP_MOUNTING_ENTITY_TYPE.create(level, EntitySpawnReason.TRIGGERED)!!.apply {
             // Put seat at y-offset of .15
             val seatEntityPos: Vector3dc = Vector3d(pos.x + .5, pos.y.toDouble() + .15, pos.z + .5)
-            moveTo(seatEntityPos.x, seatEntityPos.y, seatEntityPos.z)
-            lookAt(EntityAnchorArgument.Anchor.EYES, state.getValue(FACING).normal.toDoubles().add(position()))
+            snapTo(seatEntityPos.x, seatEntityPos.y, seatEntityPos.z)
+            lookAt(EntityAnchorArgument.Anchor.EYES, state.getValue(FACING).unitVec3i.toDoubles().add(position()))
             isController = true
         }
 
@@ -67,6 +68,6 @@ class TestChairBlock() : HorizontalDirectionalBlock(
     override fun codec() = CODEC
 
     companion object {
-        val CODEC: MapCodec<TestChairBlock> = simpleCodec { TestChairBlock() }
+        val CODEC: MapCodec<TestChairBlock> = simpleCodec { TestChairBlock(it) }
     }
 }

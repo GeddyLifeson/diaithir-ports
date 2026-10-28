@@ -38,7 +38,7 @@ class ShipAssemblerItem(properties: Properties) : Item(properties) {
 
                 val shipData = ShipAssembler.assembleToShip(level, set.map { it.toBlockPos() }.toSet(), 1.0)
                 ctx.player?.sendSystemMessage(
-                    Component.translatable("command.valkyrienskies.shipify.success_one", shipData.slug)
+                    Component.translatable("command.valkyrienskies.shipify.success_one", shipData.slug ?: "")
                 )
             }
         }

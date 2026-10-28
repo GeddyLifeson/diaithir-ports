@@ -7,6 +7,8 @@ import net.minecraft.core.HolderSet
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.Identifier
+import net.minecraft.resources.FileToIdConverter
+import net.minecraft.util.ExtraCodecs
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener
 import net.minecraft.tags.TagKey
@@ -72,17 +74,17 @@ object MassDatapackResolver : BlockStateInfoProvider {
     var registeredBlocks = false
         private set
 
-    class VSMassDataLoader : SimpleJsonResourceReloadListener(Gson(), "vs_mass") {
+    class VSMassDataLoader : SimpleJsonResourceReloadListener<JsonElement>(ExtraCodecs.JSON, FileToIdConverter.json("vs_mass")) {
         private val tags = mutableListOf<VSBlockStateInfo>()
 
         override fun apply(
-            objects: MutableMap<Identifier, JsonElement>?,
-            resourceManager: ResourceManager?,
-            profiler: ProfilerFiller?
+            objects: MutableMap<Identifier, JsonElement>,
+            resourceManager: ResourceManager,
+            profiler: ProfilerFiller
         ) {
             map.clear()
             tags.clear()
-            objects?.forEach { (location, element) ->
+            objects.forEach { (location, element) ->
                 try {
                     if (element.isJsonArray) {
                         element.asJsonArray.forEach { element1: JsonElement ->
@@ -100,9 +102,9 @@ object MassDatapackResolver : BlockStateInfoProvider {
         init {
             VSGameEvents.tagsAreLoaded.on { _, _ ->
                 tags.forEach { tagInfo ->
-                    val tag: Optional<HolderSet.Named<Block>>? =
-                        BuiltInRegistries.BLOCK.getTag(TagKey.create(Registries.BLOCK, tagInfo.id))
-                    if (tag != null) {
+                    val tag: Optional<HolderSet.Named<Block>> =
+                        BuiltInRegistries.BLOCK.get(TagKey.create(Registries.BLOCK, tagInfo.id))
+                    run {
 
                         if (!tag.isPresent) {
                             logger.warn("No specified tag '${tagInfo.id}' doesn't exist!")
@@ -298,7 +300,7 @@ object MassDatapackResolver : BlockStateInfoProvider {
         val dummyBlockGetter = object: BlockGetter {
             override fun getHeight(): Int = 255
 
-            override fun getMinBuildHeight(): Int = 0
+            override fun getMinY(): Int = 0
 
             override fun getBlockEntity(blockPos: BlockPos): BlockEntity? = null
 

@@ -39,7 +39,7 @@ object ChunkManagement {
                 // Shipyard chunks use radius-0 tickets (level 33 = FULL status) to avoid
                 // loading ~25 neighbor chunks per ship chunk. The chunk pipeline's neighbor
                 // requirements are bypassed by MixinChunkMapShipyard.
-                level.chunkSource.addRegionTicket(VSTicketType.SHIP_CHUNK, chunkPos, 0, chunkPos)
+                level.chunkSource.addTicketWithRadius(VSTicketType.SHIP_CHUNK, chunkPos, 0)
             } else {
                 level.chunkSource.updateChunkForced(chunkPos, true)
             }
@@ -105,8 +105,8 @@ object ChunkManagement {
                         // which short-circuits the whole async unload chain for
                         // shipyard chunks — this is the belt, that's the suspenders.
                         val chunk = level.chunkSource.getChunkNow(chunkPos.x, chunkPos.z)
-                        chunk?.isUnsaved = false
-                        level.chunkSource.removeRegionTicket(VSTicketType.SHIP_CHUNK, chunkPos, 0, chunkPos)
+                        chunk?.tryMarkSaved()
+                        level.chunkSource.removeTicketWithRadius(VSTicketType.SHIP_CHUNK, chunkPos, 0)
                     }
                 } else {
                     level.chunkSource.updateChunkForced(chunkPos, false)

@@ -4,6 +4,8 @@ import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import net.minecraft.resources.Identifier
+import net.minecraft.resources.FileToIdConverter
+import net.minecraft.util.ExtraCodecs
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener
 import net.minecraft.util.profiling.ProfilerFiller
@@ -12,13 +14,13 @@ import org.joml.Vector3dc
 import org.valkyrienskies.mod.util.DEFAULT_WORLD_GRAVITY
 import org.valkyrienskies.mod.util.logger
 
-object DimensionParametersResolver: SimpleJsonResourceReloadListener(Gson(), "vs_dimension_parameters") {
+object DimensionParametersResolver: SimpleJsonResourceReloadListener<JsonElement>(ExtraCodecs.JSON, FileToIdConverter.json("vs_dimension_parameters")) {
 
     val logger = logger("(Valkyrien Skies) Bloon Factory").logger
     var dimensionMap: Map<String, Parameters> = hashMapOf()
 
     override fun apply(
-        objects: Map<Identifier?, JsonElement?>,
+        objects: Map<Identifier, JsonElement>,
         resourceManager: ResourceManager,
         profiler: ProfilerFiller
     ) {

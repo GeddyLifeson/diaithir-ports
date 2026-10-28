@@ -60,7 +60,7 @@ fun Level.clipIncludeShipsImpl(
 
     val vanillaHit = if(ctx.rayCastExtraParameter.skipWorld) {
         val line = ctx.to.subtract(ctx.from)
-        BlockHitResult.miss(ctx.to, Direction.getNearest(line.x, line.y, line.z), BlockPos.containing(ctx.to))
+        BlockHitResult.miss(ctx.to, Direction.getApproximateNearest(line.x, line.y, line.z), BlockPos.containing(ctx.to))
     } else vanillaClip.call(ctx)
 
     if (shipObjectWorld == null) {
@@ -135,7 +135,14 @@ fun Level.clipIncludeShipsImpl(
     }
 
     if (ctx.rayCastExtraParameter.shouldTransformHitPos) {
-        closestHit.location = closestHitPos
+        closestHit = if (closestHit.type == HitResult.Type.MISS) {
+            BlockHitResult.miss(closestHitPos, closestHit.direction, closestHit.blockPos)
+        } else {
+            BlockHitResult(
+                closestHitPos, closestHit.direction, closestHit.blockPos, closestHit.isInside,
+                closestHit.isWorldBorderHit
+            )
+        }
     }
 
     return closestHit
@@ -206,7 +213,7 @@ fun Level.raytraceEntities(
 
     return if (resultEntity == null) {
         null
-    } else EntityHitResult(resultEntity, location)
+    } else EntityHitResult(resultEntity!!, location!!)
 }
 
 val VanillaClipContext = RayCastExtraParameter(useVanillaClip = true)

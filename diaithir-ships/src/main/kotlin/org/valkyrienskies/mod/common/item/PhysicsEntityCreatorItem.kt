@@ -2,6 +2,7 @@ package org.valkyrienskies.mod.common.item
 
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.InteractionResult
+import net.minecraft.world.entity.EntitySpawnReason
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.context.UseOnContext
@@ -27,10 +28,10 @@ class PhysicsEntityCreatorItem(
         val level = ctx.level as? ServerLevel ?: return super.useOn(ctx)
 
         if (!level.isClientSide) {
-            val entity = ValkyrienSkiesMod.PHYSICS_ENTITY_TYPE.create(level)!!
+            val entity = ValkyrienSkiesMod.PHYSICS_ENTITY_TYPE.create(level, EntitySpawnReason.TRIGGERED)!! as VSPhysicsEntity
             val shipId = level.shipObjectWorld.allocateShipId(level.dimensionId)
             val sphereRadius = 0.5
-            val offsetInLocal: Vector3dc = ctx.clickedFace.normal.toJOMLD().mul(sphereRadius)
+            val offsetInLocal: Vector3dc = ctx.clickedFace.unitVec3i.toJOMLD().mul(sphereRadius)
 
             val shipOn = ctx.level.getShipManagingPos(ctx.clickedPos)
             val offsetInGlobal = if (shipOn != null) {

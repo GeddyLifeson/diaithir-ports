@@ -11,6 +11,7 @@ import org.valkyrienskies.mod.common.getShipMountedToData
 import org.valkyrienskies.mod.common.vsCore
 import java.lang.ref.WeakReference
 import java.util.UUID
+import net.minecraft.server.permissions.Permissions
 
 /**
  * We use this wrapper around [PlayerEntity] to create [VsiPlayer] objects used by vs-core.
@@ -25,10 +26,10 @@ class MinecraftPlayer(playerObject: Player) : VsiPlayer {
     val player: Player get() = playerEntityReference.get()!!
 
     override val isAdmin: Boolean
-        get() = player.hasPermissions(4)
+        get() = player.permissions().hasPermission(Permissions.COMMANDS_OWNER)
 
     override val canModifyServerConfig: Boolean
-        get() = vsCore.hooks.isPhysicalClient || player.hasPermissions(4)
+        get() = vsCore.hooks.isPhysicalClient || player.permissions().hasPermission(Permissions.COMMANDS_OWNER)
 
     override val dimension: DimensionId
         get() = player.level().dimensionId

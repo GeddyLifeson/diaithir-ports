@@ -21,9 +21,9 @@ import net.minecraft.world.phys.shapes.VoxelShape
 import org.valkyrienskies.core.api.ships.Wing
 import org.valkyrienskies.mod.common.util.toJOMLD
 
-class TestWingBlock() :
+class TestWingBlock(properties: Properties) :
     DirectionalBlock(
-        Properties.of().strength(10.0f, 1200.0f).sound(SoundType.METAL)
+        properties.strength(10.0f, 1200.0f).sound(SoundType.METAL)
     ), WingBlock {
 
     private val EAST_AABB = box(4.0, 0.0, 0.0, 12.0, 16.0, 16.0)
@@ -81,7 +81,7 @@ class TestWingBlock() :
         val wingBreakingForce = null
         val wingCamberAttackAngleBias = Math.toRadians(10.0)
         return Wing(
-            blockState.getValue(FACING).normal.toJOMLD(), wingPower, wingDrag, wingBreakingForce,
+            blockState.getValue(FACING).unitVec3i.toJOMLD(), wingPower, wingDrag, wingBreakingForce,
             wingCamberAttackAngleBias
         )
     }
@@ -89,6 +89,6 @@ class TestWingBlock() :
     override fun codec() = CODEC
 
     companion object {
-        val CODEC: MapCodec<TestWingBlock> = simpleCodec { TestWingBlock() }
+        val CODEC: MapCodec<TestWingBlock> = simpleCodec { TestWingBlock(it) }
     }
 }

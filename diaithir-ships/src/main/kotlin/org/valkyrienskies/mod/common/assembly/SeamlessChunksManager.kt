@@ -48,7 +48,7 @@ class SeamlessChunksManager(private val listener: ClientPacketListener) {
     init {
         with(vsCore.simplePacketNetworking) {
             PacketStopChunkUpdates::class.registerClientHandler { (chunks) ->
-                chunks.forEach { stalledChunks.add(it.toMinecraft().toLong()) }
+                chunks.forEach { stalledChunks.add(it.toMinecraft().pack()) }
             }
             PacketRestartChunkUpdates::class.registerClientHandler { packet ->
                 Minecraft.getInstance().execute {
@@ -79,7 +79,7 @@ class SeamlessChunksManager(private val listener: ClientPacketListener) {
 
         chunks.forEach { p ->
             val pos = p.toMinecraft()
-            stalledChunks.remove(pos.toLong())
+            stalledChunks.remove(pos.pack())
             val packets = queuedUpdates.remove(pos)
             if (!packets.isNullOrEmpty()) {
                 logger.debug("Executing ${packets.size} deferred updates at <${pos.x}, ${pos.z}>")
@@ -160,7 +160,7 @@ class SeamlessChunksManager(private val listener: ClientPacketListener) {
         }
 
         // The chunk prevented from updating by a [PacketStopChunkUpdates]
-        if (stalledChunks.contains(ChunkPos.asLong(chunkX, chunkZ))) {
+        if (stalledChunks.contains(ChunkPos.pack(chunkX, chunkZ))) {
             logger.debug("Deferring update at <$chunkX, $chunkZ> for ${packet::class}")
             queuedUpdates
                 .computeIfAbsent(ChunkPos(chunkX, chunkZ)) { ConcurrentLinkedQueue() }

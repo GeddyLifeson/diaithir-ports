@@ -10,7 +10,7 @@ import org.valkyrienskies.mod.forge.common.VSForgeNetworking
 
 class VSCoreProviderImpl: VSCoreProvider {
     override fun newVSCore(): VsiCore {
-        val core = if (FMLEnvironment.dist.isClient) {
+        val core = if (FMLEnvironment.getDist().isClient) {
             VsiCoreFactory.instance.newVsCoreClient(ForgeHooksImpl)
         } else {
             VsiCoreFactory.instance.newVsCoreServer(ForgeHooksImpl)

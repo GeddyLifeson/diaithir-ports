@@ -50,9 +50,9 @@ import org.valkyrienskies.mod.util.getVector3d
 import org.valkyrienskies.mod.util.putVector3d
 import kotlin.math.roundToInt
 
-object TestHingeBlock :
+class TestHingeBlock(properties: Properties) :
     DirectionalBlock(
-        Properties.of().strength(10.0f, 1200.0f).sound(SoundType.METAL)
+        properties.strength(10.0f, 1200.0f).sound(SoundType.METAL)
     ), EntityBlock, ICopyableBlock {
 
     private val EAST_AABB = box(0.0, 0.0, 0.0, 8.0, 16.0, 16.0)
@@ -61,7 +61,7 @@ object TestHingeBlock :
     private val NORTH_AABB = box(0.0, 0.0, 8.0, 16.0, 16.0, 16.0)
     private val UP_AABB =  box(0.0, 0.0, 0.0, 16.0, 8.0, 16.0)
     private val DOWN_AABB = box(0.0, 8.0, 0.0, 16.0, 16.0, 16.0)
-    private val CODEC: MapCodec<TestHingeBlock> = simpleCodec { TestHingeBlock }
+    private val CODEC: MapCodec<TestHingeBlock> = simpleCodec { TestHingeBlock(it) }
 
     init {
         registerDefaultState(this.stateDefinition.any().setValue(FACING, UP))
@@ -77,7 +77,7 @@ object TestHingeBlock :
 
     @Deprecated("Deprecated in Java")
     override fun getShape(
-        state: BlockState, level: BlockGetter?, pos: BlockPos?, context: CollisionContext?
+        state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext
     ): VoxelShape = when (state.getValue(FACING)) {
             DOWN -> DOWN_AABB
             NORTH -> NORTH_AABB
@@ -197,16 +197,8 @@ object TestHingeBlock :
         return InteractionResult.CONSUME
     }
 
-    override fun onRemove(
-        blockState: BlockState, level: Level, blockPos: BlockPos, blockState2: BlockState, bl: Boolean
-    ) {
-        if (level is ServerLevel) run {
-            val be = level.getBlockEntity(blockPos) as? TestHingeBlockEntity ?: return@run
-            ValkyrienSkiesMod.getOrCreateGTPA(level.dimensionId).removeJoint(be.constraintId ?: return@run)
-        }
-
-        super.onRemove(blockState, level, blockPos, blockState2, bl)
-    }
+    // The hinge joint is removed in TestHingeBlockEntity.preRemoveSideEffects, since in 26.1 the block entity
+    // is already gone by the time Block.affectNeighborsAfterRemoval runs.
 
     override fun newBlockEntity(blockPos: BlockPos, blockState: BlockState): TestHingeBlockEntity = TestHingeBlockEntity(blockPos, blockState)
 
@@ -229,19 +221,19 @@ object TestHingeBlock :
     ): CompoundTag? {
         val tag = tag ?: return null
 
-        tag.putVector3d("pos0", centerPositions[tag.getLong("shipId0")]!!.let { (old, new) -> tag.getVector3d("pos0")!!.sub(old).add(new) })
-        tag.putVector3d("pos1", centerPositions[tag.getLong("shipId1")]!!.let { (old, new) -> tag.getVector3d("pos1")!!.sub(old).add(new) })
-        tag.putLong("shipId0", oldShipIdToNewId[tag.getLong("shipId0")]!!)
-        tag.putLong("shipId1", oldShipIdToNewId[tag.getLong("shipId1")]!!)
+        tag.putVector3d("pos0", centerPositions[tag.getLongOr("shipId0", 0L)]!!.let { (old, new) -> tag.getVector3d("pos0")!!.sub(old).add(new) })
+        tag.putVector3d("pos1", centerPositions[tag.getLongOr("shipId1", 0L)]!!.let { (old, new) -> tag.getVector3d("pos1")!!.sub(old).add(new) })
+        tag.putLong("shipId0", oldShipIdToNewId[tag.getLongOr("shipId0", 0L)]!!)
+        tag.putLong("shipId1", oldShipIdToNewId[tag.getLongOr("shipId1", 0L)]!!)
 
         return tag
     }
 
-    override fun <T : BlockEntity?> getTicker(
+    override fun <T : BlockEntity> getTicker(
         level: Level,
         blockState: BlockState,
         type: BlockEntityType<T>
-    ): BlockEntityTicker<T> = BlockEntityTicker { _, _, _, blockEntity ->
+    ): BlockEntityTicker<T>? = BlockEntityTicker { _, _, _, blockEntity ->
         if (level.isClientSide) return@BlockEntityTicker
         if (blockEntity is TestHingeBlockEntity) {
             blockEntity.tick()

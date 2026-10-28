@@ -26,7 +26,7 @@ class ShipRemoverItem(properties: Properties) : Item(properties) {
                 ctx.player?.sendSystemMessage(Component.translatable("command.valkyrienskies.get_ship.fail"))
             } else {
                 ShipAssembler.deleteShip(level, ship, deleteBlocks = true, dropBlocks = ctx.player?.isShiftKeyDown == true)
-                ctx.player?.sendSystemMessage(Component.translatable("command.valkyrienskies.delete.success_one", ship.slug))
+                ctx.player?.sendSystemMessage(Component.translatable("command.valkyrienskies.delete.success_one", ship.slug ?: ""))
             }
         }
 

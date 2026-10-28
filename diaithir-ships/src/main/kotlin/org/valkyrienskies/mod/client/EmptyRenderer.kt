@@ -2,11 +2,11 @@ package org.valkyrienskies.mod.client
 
 import net.minecraft.client.renderer.entity.EntityRenderer
 import net.minecraft.client.renderer.entity.EntityRendererProvider
-import net.minecraft.resources.Identifier
+import net.minecraft.client.renderer.entity.state.EntityRenderState
 import net.minecraft.world.entity.Entity
 
 class EmptyRenderer(context: EntityRendererProvider.Context) :
-    EntityRenderer<Entity>(context) {
+    EntityRenderer<Entity, EntityRenderState>(context) {
 
-    override fun getTextureLocation(entity: Entity): Identifier? = null
+    override fun createRenderState(): EntityRenderState = EntityRenderState()
 }

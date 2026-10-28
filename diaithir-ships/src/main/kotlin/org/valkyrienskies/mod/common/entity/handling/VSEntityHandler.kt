@@ -2,7 +2,7 @@ package org.valkyrienskies.mod.common.entity.handling
 
 import com.mojang.blaze3d.vertex.PoseStack
 import net.minecraft.client.renderer.MultiBufferSource
-import net.minecraft.client.renderer.entity.EntityRenderer
+import net.minecraft.world.phys.Vec3
 import net.minecraft.world.entity.Entity
 import org.joml.Vector3d
 import org.valkyrienskies.core.api.ships.ClientShip
@@ -26,7 +26,7 @@ interface VSEntityHandler {
      * You need to apply a transform the matrixStack is identity when this is called
      */
     fun <T : Entity> applyRenderTransform(
-        ship: ClientShip, entity: T, entityRenderer: EntityRenderer<T>,
+        ship: ClientShip, entity: T, renderOffset: Vec3,
         x: Double, y: Double, z: Double,
         rotationYaw: Float, partialTicks: Float,
         matrixStack: PoseStack, buffer: MultiBufferSource, packedLight: Int

@@ -11,7 +11,7 @@ import java.nio.file.Path
 object ForgeHooksImpl : CommonHooksImpl() {
 
     override val isPhysicalClient: Boolean
-        get() = FMLEnvironment.dist.isClient
+        get() = FMLEnvironment.getDist().isClient
 
     override val configDir: Path
         get() = FMLPaths.CONFIGDIR.get().resolve(ValkyrienSkiesMod.MOD_ID)

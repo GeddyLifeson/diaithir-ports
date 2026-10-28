@@ -113,18 +113,18 @@ object CompatUtil {
     }
 
     fun getWorldHeightIncludingShips(level: Level, types: Types, x: Int, z: Int): Int =
-        getWorldHeightmapPosIncludingShips(level, types, BlockPos(x, level.minBuildHeight, z)).y
+        getWorldHeightmapPosIncludingShips(level, types, BlockPos(x, level.minY, z)).y
 
     fun getShipHeightmapPosAboveWorldHeight(level: Level, types: Types, worldHeight: BlockPos): BlockPos? {
         return getShipHeightmapHitAboveWorldHeight(level, types, worldHeight)?.blockPos?.immutable()
     }
 
     fun getShipHeightmapHitAboveWorldHeight(level: Level, types: Types, worldHeight: BlockPos): BlockHitResult? {
-        if (worldHeight.y >= level.maxBuildHeight) {
+        if (worldHeight.y >= (level.maxY + 1)) {
             return null
         }
 
-        val start = Vec3(worldHeight.x + 0.5, level.maxBuildHeight.toDouble(), worldHeight.z + 0.5)
+        val start = Vec3(worldHeight.x + 0.5, (level.maxY + 1).toDouble(), worldHeight.z + 0.5)
         val end = worldHeight.center
         if (types == Types.MOTION_BLOCKING_NO_LEAVES) {
             return clipAboveWorldHeightIgnoringLeafHits(level, start, end)
@@ -140,7 +140,7 @@ object CompatUtil {
             else -> ClipContext.Fluid.NONE
         }
         val hit = level.clipIncludeShips(
-            ClipContext(start, end, blockClip, fluidClip, null as net.minecraft.world.entity.Entity?),
+            ClipContext(start, end, blockClip, fluidClip, net.minecraft.world.phys.shapes.CollisionContext.empty()),
             skipWorld = true
         )
         return if (hit.type == HitResult.Type.MISS) null else hit
@@ -156,7 +156,7 @@ object CompatUtil {
 
         while (true) {
             val hit = level.clipIncludeShips(
-                ClipContext(currentStart, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.ANY, null as net.minecraft.world.entity.Entity?),
+                ClipContext(currentStart, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.ANY, net.minecraft.world.phys.shapes.CollisionContext.empty()),
                 skipWorld = true
             )
 

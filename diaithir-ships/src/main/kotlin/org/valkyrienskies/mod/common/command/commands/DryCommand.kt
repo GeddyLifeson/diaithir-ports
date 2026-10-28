@@ -1,5 +1,6 @@
 package org.valkyrienskies.mod.common.command.commands
 
+import org.valkyrienskies.mod.common.command.hasPermission
 import com.mojang.brigadier.builder.LiteralArgumentBuilder
 import com.mojang.brigadier.context.CommandContext
 import net.minecraft.commands.CommandSourceStack

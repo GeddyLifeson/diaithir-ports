@@ -5,9 +5,9 @@ import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
 import net.minecraft.server.level.ServerPlayer
 import net.neoforged.bus.api.SubscribeEvent
+import net.neoforged.neoforge.client.network.ClientPacketDistributor
 import net.neoforged.neoforge.network.PacketDistributor
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent
-import net.neoforged.neoforge.network.handling.DirectionalPayloadHandler
 import net.neoforged.neoforge.network.handling.IPayloadContext
 import net.neoforged.neoforge.network.registration.HandlerThread
 import net.neoforged.neoforge.network.registration.PayloadRegistrar
@@ -16,7 +16,6 @@ import org.valkyrienskies.core.internal.world.VsiPlayer
 import org.valkyrienskies.mod.common.mcPlayer
 import org.valkyrienskies.mod.common.networking.VSPacketFragmenter
 import org.valkyrienskies.mod.mixinducks.world.entity.PlayerDuck
-import java.util.concurrent.CompletableFuture
 import java.util.concurrent.atomic.AtomicInteger
 
 object VSForgeNetworking {
@@ -41,35 +40,32 @@ object VSForgeNetworking {
         registrar.playBidirectional(
             VSPacket.VS_PACKET_TYPE,
             VSPacket.VS_PACKET_CODEC,
-            DirectionalPayloadHandler<VSPacket>(
-                ::handleClient,
-                ::handleServer,
-            )
+            ::handleServer,
+            ::handleClient,
         )
         registrar.playBidirectional(
             VSFragmentPacket.VS_FRAGMENT_TYPE,
             VSFragmentPacket.VS_FRAGMENT_CODEC,
-            DirectionalPayloadHandler<VSFragmentPacket>(
-                ::handleClientFragment,
-                ::handleServerFragment,
-            )
+            ::handleServerFragment,
+            ::handleClientFragment,
         )
     }
 
     fun handleClient(
         message: VSPacket,
         context: IPayloadContext,
-    ): CompletableFuture<Void?> = context.enqueueWork {
+    ): Unit { context.enqueueWork {
         if (clientReceiveLogsRemaining.getAndDecrement() > 0) {
             logger.info("VS NeoForge handleClient packetBytes={}", message.data.size)
         }
         hooks.onReceiveClient(Unpooled.wrappedBuffer(message.data))
+        }
     }
 
     fun handleServer(
         message: VSPacket,
         context: IPayloadContext,
-    ): CompletableFuture<Void?> = context.enqueueWork {
+    ): Unit { context.enqueueWork {
         val player = context.player()
         if (player != null) {
             if (serverReceiveLogsRemaining.getAndDecrement() > 0) {
@@ -83,12 +79,13 @@ object VSForgeNetworking {
         } else {
             println("context.sender was null?")
         }
+        }
     }
 
     fun handleClientFragment(
         message: VSFragmentPacket,
         context: IPayloadContext,
-    ): CompletableFuture<Void?> = context.enqueueWork {
+    ): Unit { context.enqueueWork {
         if (clientReceiveLogsRemaining.getAndDecrement() > 0) {
             logger.info("VS NeoForge handleClientFragment packetBytes={}", message.data.size)
         }
@@ -96,12 +93,13 @@ object VSForgeNetworking {
         if (assembled != null) {
             hooks.onReceiveClient(assembled)
         }
+        }
     }
 
     fun handleServerFragment(
         message: VSFragmentPacket,
         context: IPayloadContext,
-    ): CompletableFuture<Void?> = context.enqueueWork {
+    ): Unit { context.enqueueWork {
         if (serverReceiveLogsRemaining.getAndDecrement() > 0) {
             val player = context.player()
             logger.info(
@@ -118,6 +116,7 @@ object VSForgeNetworking {
             } else {
                 println("context.sender was null?")
             }
+        }
         }
     }
 
@@ -150,10 +149,10 @@ object VSForgeNetworking {
         }
         if (VSPacketFragmenter.needsSplitting(data)) {
             for (fragment in VSPacketFragmenter.split(data.copy())) {
-                PacketDistributor.sendToServer(VSFragmentPacket(fragment.copyToByteArray()))
+                ClientPacketDistributor.sendToServer(VSFragmentPacket(fragment.copyToByteArray()))
             }
         } else {
-            PacketDistributor.sendToServer(VSPacket(data.copyToByteArray()))
+            ClientPacketDistributor.sendToServer(VSPacket(data.copyToByteArray()))
         }
     }
 }

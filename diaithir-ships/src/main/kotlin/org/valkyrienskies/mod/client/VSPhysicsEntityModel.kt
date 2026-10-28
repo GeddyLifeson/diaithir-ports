@@ -2,8 +2,6 @@
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 package org.valkyrienskies.mod.client
 
-import com.mojang.blaze3d.vertex.PoseStack
-import com.mojang.blaze3d.vertex.VertexConsumer
 import net.minecraft.client.model.EntityModel
 import net.minecraft.client.model.geom.ModelLayerLocation
 import net.minecraft.client.model.geom.ModelPart
@@ -13,22 +11,13 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder
 import net.minecraft.client.model.geom.builders.LayerDefinition
 import net.minecraft.client.model.geom.builders.MeshDefinition
 import net.minecraft.resources.Identifier
-import net.minecraft.world.entity.Mob
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState
 import org.valkyrienskies.mod.common.ValkyrienSkiesMod
 
-class VSPhysicsEntityModel<T : Mob>(root: ModelPart) :
-    EntityModel<T>() {
+class VSPhysicsEntityModel(root: ModelPart) :
+    EntityModel<LivingEntityRenderState>(root) {
+    // The root part (which contains "bb_main") is rendered by Model itself.
     private val bb_main: ModelPart = root.getChild("bb_main")
-
-    override fun renderToBuffer(
-        poseStack: PoseStack, vertexConsumer: VertexConsumer, packedLight: Int, packedOverlay: Int, red: Float,
-        green: Float, blue: Float, alpha: Float
-    ) {
-        bb_main.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha)
-    }
-
-    override fun setupAnim(entity: T, f: Float, g: Float, h: Float, i: Float, j: Float) {
-    }
 
     companion object {
         // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor

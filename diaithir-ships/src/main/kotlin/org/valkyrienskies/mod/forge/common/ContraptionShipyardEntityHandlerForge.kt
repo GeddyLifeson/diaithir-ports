@@ -1,6 +1,5 @@
 package org.valkyrienskies.mod.forge.common
 
-import com.simibubi.create.content.contraptions.AbstractContraptionEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate

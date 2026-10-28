@@ -8,6 +8,7 @@ import net.minecraft.util.RandomSource
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.redstone.Orientation
 import net.minecraft.world.level.block.DirectionalBlock
 import net.minecraft.world.level.block.EntityBlock
 import net.minecraft.world.level.block.SoundType
@@ -38,7 +39,7 @@ object TestThrusterBlock : DirectionalBlock(Properties.of().strength(10.0f, 1200
     }
 
     override fun neighborChanged(
-        blockState: BlockState, level: Level, blockPos: BlockPos, block: Block, blockPos2: BlockPos, bl: Boolean
+        blockState: BlockState, level: Level, blockPos: BlockPos, block: Block, orientation: Orientation?, bl: Boolean
     ) {
         if (!level.isClientSide) {
             val previouslyPowered = blockState.getValue<Boolean>(BlockStateProperties.POWERED)

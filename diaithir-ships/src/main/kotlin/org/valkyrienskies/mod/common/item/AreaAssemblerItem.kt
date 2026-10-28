@@ -40,10 +40,11 @@ class AreaAssemblerItem(
                 // Make a ship
                 val dimensionId = level.dimensionId
 
-                if (item.tag != null && item.tag!!.contains("firstPosX")) {
-                    val firstPosX = item.tag!!.getInt("firstPosX")
-                    val firstPosY = item.tag!!.getInt("firstPosY")
-                    val firstPosZ = item.tag!!.getInt("firstPosZ")
+                val firstPos = FirstPosData.get(item)
+                if (firstPos != null) {
+                    val firstPosX = firstPos.x
+                    val firstPosY = firstPos.y
+                    val firstPosZ = firstPos.z
                     if (level.shipObjectWorld.isBlockInShipyard(blockPos.x, blockPos.y, blockPos.z, dimensionId) != level.shipObjectWorld.isBlockInShipyard(firstPosX, firstPosY, firstPosZ, dimensionId)) {
                         ctx.player?.sendSystemMessage(Component.literal("Cannot assemble between ship and world!"))
                     } else if (level.getLoadedShipManagingPos(blockPos) != level.getLoadedShipManagingPos(Vec3i(firstPosX, firstPosY, firstPosZ))) {
@@ -55,18 +56,12 @@ class AreaAssemblerItem(
                         val upperCorner = BlockPos(blockAABB.maxX, blockAABB.maxY, blockAABB.maxZ)
 
                         val ship = ShipAssembler.assembleToShip(level, BlockPos.betweenClosed(lowerCorner, upperCorner).map{ it.mutable() }.toSet(), 1.0)
-                        ctx.player?.sendSystemMessage(Component.translatable("command.valkyrienskies.shipify.success_one", ship.slug))
+                        ctx.player?.sendSystemMessage(Component.translatable("command.valkyrienskies.shipify.success_one", ship.slug ?: ""))
 
                     }
-                    item.tag!!.remove("firstPosX")
-                    item.tag!!.remove("firstPosY")
-                    item.tag!!.remove("firstPosZ")
+                    FirstPosData.clear(item)
                 } else {
-                    item.tag = item.orCreateTag.apply {
-                        putInt("firstPosX", blockPos.x)
-                        putInt("firstPosY", blockPos.y)
-                        putInt("firstPosZ", blockPos.z)
-                    }
+                    FirstPosData.set(item, blockPos)
                     ctx.player?.sendSystemMessage(
                         Component.literal("First block selected: (${blockPos.x}, ${blockPos.y}, ${blockPos.z})"))
                 }

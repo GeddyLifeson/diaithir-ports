@@ -67,7 +67,7 @@ class ShipCreatorItem(
 
                 org.slf4j.LoggerFactory.getLogger("VS2").info(" ShipCreatorItem: block relocated. Ship transform pos=(${serverShip.transform.position})")
 
-                ctx.player?.sendSystemMessage(Component.translatable("command.valkyrienskies.shipify.success_one", serverShip.slug))
+                ctx.player?.sendSystemMessage(Component.translatable("command.valkyrienskies.shipify.success_one", serverShip.slug ?: ""))
                 if (parentShip != null) {
                     // Compute the ship transform
                     val newShipPosInWorld =

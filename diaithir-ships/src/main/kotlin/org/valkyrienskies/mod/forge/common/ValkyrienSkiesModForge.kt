@@ -8,14 +8,15 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.Identifier
+import net.minecraft.resources.ResourceKey
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.MobCategory
-import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
-import net.minecraft.world.item.Item.Properties
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.entity.BlockEntityType
-import net.neoforged.fml.ModLoadingContext
+import net.neoforged.bus.api.IEventBus
+import net.neoforged.fml.ModContainer
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.config.ModConfig
 import net.neoforged.fml.event.config.ModConfigEvent
@@ -23,7 +24,8 @@ import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent
 import net.neoforged.fml.loading.FMLEnvironment
 import net.neoforged.neoforge.client.event.EntityRenderersEvent
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent
-import net.neoforged.neoforge.event.AddReloadListenerEvent
+import net.neoforged.neoforge.common.NeoForge
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent
 import net.neoforged.neoforge.event.RegisterCommandsEvent
 import net.neoforged.neoforge.event.TagsUpdatedEvent
 import net.neoforged.neoforge.registries.DeferredBlock
@@ -51,11 +53,9 @@ import org.valkyrienskies.mod.common.entity.handling.VSEntityManager
 import org.valkyrienskies.mod.common.hooks.VSGameEvents
 import org.valkyrienskies.mod.common.item.ShipAssemblerItem
 import org.valkyrienskies.mod.common.item.ShipCreatorItem
-import thedarkcolour.kotlinforforge.neoforge.forge.FORGE_BUS
-import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 
 @Mod(MOD_ID)
-object ValkyrienSkiesModForge {
+class ValkyrienSkiesModForge(modBus: IEventBus, container: ModContainer) {
     private val BLOCKS = DeferredRegister.Blocks.createBlocks(MOD_ID)
     private val ITEMS = DeferredRegister.Items.createItems(MOD_ID)
     private val ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, MOD_ID)
@@ -77,7 +77,7 @@ object ValkyrienSkiesModForge {
     private val BLOCK_POS_COMPONENT: DeferredHolder<DataComponentType<*>, DataComponentType<BlockPos>>
 
     init {
-        val isClient = FMLEnvironment.dist.isClient
+        val isClient = FMLEnvironment.getDist().isClient
 
         // VS2 1.21.1: set synchronizePhysics=true at mod init, BEFORE any VsiPipeline is
         // created. The pipeline samples this config when it's constructed, so setting it
@@ -113,7 +113,7 @@ object ValkyrienSkiesModForge {
         // unbacked ConfigValue and NPEs with "Cannot set config value without assigned
         // Config object present". Each spec lives in its own TOML file named after the
         // spec type to avoid collisions.
-        ModLoadingContext.get().activeContainer.apply {
+        container.apply {
             // Core and mod server configs are both semantically server-side, but NeoForge's
             // ConfigurationScreen labels each tab by Type — two SERVER-typed configs both
             // show up as "Server Settings" buttons with no way to distinguish. Typing the
@@ -146,11 +146,10 @@ object ValkyrienSkiesModForge {
         // the running code keeps reading the default. Handles both first-load and
         // subsequent reloads; Loading fires on mod construction so the bus listener has
         // to be registered here, before we finish constructing.
-        MOD_BUS.addListener<ModConfigEvent.Loading> { applyModConfigToVSConfigUpdater(it.config) }
-        MOD_BUS.addListener<ModConfigEvent.Reloading> { applyModConfigToVSConfigUpdater(it.config) }
+        modBus.addListener<ModConfigEvent.Loading> { applyModConfigToVSConfigUpdater(it.config) }
+        modBus.addListener<ModConfigEvent.Reloading> { applyModConfigToVSConfigUpdater(it.config) }
 
-        val modBus = MOD_BUS
-        val forgeBus = FORGE_BUS
+        val forgeBus = NeoForge.EVENT_BUS
 
         BLOCKS.register(modBus)
         ITEMS.register(modBus)
@@ -169,49 +168,41 @@ object ValkyrienSkiesModForge {
         DATA_COMPONENTS.register(modBus)
         COMMAND_ARGUMENT_TYPES.register(modBus)
 
-        TEST_CHAIR_REGISTRY = registerBlockAndItem("test_chair") { TestChairBlock() }
-        TEST_HINGE_REGISTRY = registerBlockAndItem("test_hinge") { TestHingeBlock }
-        TEST_FLAP_REGISTRY = registerBlockAndItem("test_flap") { TestFlapBlock() }
-        TEST_WING_REGISTRY = registerBlockAndItem("test_wing") { TestWingBlock() }
+        TEST_CHAIR_REGISTRY = registerBlockAndItem("test_chair") { TestChairBlock(it) }
+        TEST_HINGE_REGISTRY = registerBlockAndItem("test_hinge") { TestHingeBlock(it) }
+        TEST_FLAP_REGISTRY = registerBlockAndItem("test_flap") { TestFlapBlock(it) }
+        TEST_WING_REGISTRY = registerBlockAndItem("test_wing") { TestWingBlock(it) }
         SHIP_CREATOR_ITEM_REGISTRY =
-            ITEMS.register("ship_creator") { ->
-                ShipCreatorItem(Properties(),
+            ITEMS.registerItem("ship_creator") { props ->
+                ShipCreatorItem(props,
                     { 1.0 },
                     { VSGameConfig.SERVER.minScaling })
             }
-        CONNECTION_CHECKER_ITEM_REGISTRY =
-            ITEMS.register("connection_checker") { ->
-                Item(Properties())
-            }
+        CONNECTION_CHECKER_ITEM_REGISTRY = ITEMS.registerSimpleItem("connection_checker")
         SHIP_CREATOR_SMALLER_ITEM_REGISTRY =
-            ITEMS.register("ship_creator_smaller") { ->
+            ITEMS.registerItem("ship_creator_smaller") { props ->
                 ShipCreatorItem(
-                    Properties(),
+                    props,
                     { VSGameConfig.SERVER.miniShipSize },
                     { VSGameConfig.SERVER.minScaling }
                 )
             }
-        AREA_ASSEMBLER_ITEM_REGISTRY = ITEMS.register("area_assembler") { ->
-            Item(Properties())
-        }
-        PHYSICS_ENTITY_CREATOR_ITEM_REGISTRY =
-            ITEMS.register("physics_entity_creator") { ->
-                Item(Properties())
-            }
+        AREA_ASSEMBLER_ITEM_REGISTRY = ITEMS.registerSimpleItem("area_assembler")
+        PHYSICS_ENTITY_CREATOR_ITEM_REGISTRY = ITEMS.registerSimpleItem("physics_entity_creator")
 
-        SHIP_MOUNTING_ENTITY_REGISTRY = ENTITIES.register("ship_mounting_entity") { ->
+        SHIP_MOUNTING_ENTITY_REGISTRY = ENTITIES.register("ship_mounting_entity", java.util.function.Function { id ->
             EntityType.Builder.of(
                 ::ShipMountingEntity,
                 MobCategory.MISC
             ).sized(.3f, .3f)
-                .build(Identifier.fromNamespaceAndPath(MOD_ID, "ship_mounting_entity").toString())
-        }
+                .build(ResourceKey.create(Registries.ENTITY_TYPE, id))
+        })
 
         SHIP_ASSEMBLER_ITEM_REGISTRY =
-            ITEMS.register("ship_assembler") { -> ShipAssemblerItem(Properties()) }
+            ITEMS.registerItem("ship_assembler") { props -> ShipAssemblerItem(props) }
 
         TEST_HINGE_BLOCK_ENTITY_TYPE_REGISTRY = BLOCK_ENTITIES.register<BlockEntityType<TestHingeBlockEntity>>("test_hinge_block_entity") { ->
-            BlockEntityType.Builder.of(::TestHingeBlockEntity, TEST_HINGE_REGISTRY.get()).build(null)
+            BlockEntityType(::TestHingeBlockEntity, TEST_HINGE_REGISTRY.get())
         }
 
         BLOCK_POS_COMPONENT = DATA_COMPONENTS.register("coordinate") { ->
@@ -239,9 +230,9 @@ object ValkyrienSkiesModForge {
         deferredRegister.register(modBus)
     }
 
-    private fun registerResourceManagers(event: AddReloadListenerEvent) {
-        event.addListener(MassDatapackResolver.loader)
-        event.addListener(VSEntityHandlerDataLoader)
+    private fun registerResourceManagers(event: AddServerReloadListenersEvent) {
+        event.addListener(Identifier.fromNamespaceAndPath(MOD_ID, "mass_data"), MassDatapackResolver.loader)
+        event.addListener(Identifier.fromNamespaceAndPath(MOD_ID, "vs_entities"), VSEntityHandlerDataLoader)
     }
 
     /**
@@ -262,12 +253,12 @@ object ValkyrienSkiesModForge {
     }
 
     private fun entityRenderers(event: EntityRenderersEvent.RegisterRenderers) {
-        event.registerEntityRenderer(SHIP_MOUNTING_ENTITY_REGISTRY.get(), ::EmptyRenderer)
+        event.registerEntityRenderer(SHIP_MOUNTING_ENTITY_REGISTRY.get()) { ctx -> EmptyRenderer(ctx) }
     }
 
-    private fun registerBlockAndItem(registryName: String, blockSupplier: () -> Block): DeferredBlock<Block> {
-        val blockRegistry = BLOCKS.register(registryName, blockSupplier)
-        ITEMS.register(registryName) { -> BlockItem(blockRegistry.get(), Properties()) }
+    private fun registerBlockAndItem(registryName: String, blockFactory: (BlockBehaviour.Properties) -> Block): DeferredBlock<Block> {
+        val blockRegistry = BLOCKS.registerBlock(registryName) { props -> blockFactory(props) }
+        ITEMS.registerSimpleBlockItem(blockRegistry)
         return blockRegistry
     }
 

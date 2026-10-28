@@ -6,10 +6,10 @@ import net.minecraft.network.syncher.SynchedEntityData
 import net.minecraft.world.entity.Entity
 import kotlin.reflect.KProperty
 
-inline fun <reified T : Entity, R> defineSynced(serializer: EntityDataSerializer<R>) =
+inline fun <reified T : Entity, R : Any> defineSynced(serializer: EntityDataSerializer<R>) =
     EntityDataDelegate(SynchedEntityData.defineId(T::class.java, serializer))
 
-class EntityDataDelegate<T>(val data: EntityDataAccessor<T>) {
+class EntityDataDelegate<T : Any>(val data: EntityDataAccessor<T>) {
 
     fun get(thisRef: Entity?): T? {
         return thisRef?.entityData?.get(data)

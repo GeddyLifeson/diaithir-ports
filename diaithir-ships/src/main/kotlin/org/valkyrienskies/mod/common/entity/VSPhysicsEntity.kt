@@ -7,6 +7,16 @@ import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.protocol.Packet
 import net.minecraft.network.protocol.game.ClientGamePacketListener
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
+import net.minecraft.server.level.ServerEntity
+import net.minecraft.server.level.ServerLevel
+import net.minecraft.util.ProblemReporter
+import net.minecraft.world.entity.InterpolationHandler
+import net.minecraft.world.level.storage.TagValueInput
+import net.minecraft.world.level.storage.TagValueOutput
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
+import com.mojang.serialization.Codec
+import java.nio.ByteBuffer
 import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
@@ -76,16 +86,32 @@ open class VSPhysicsEntity(type: EntityType<VSPhysicsEntity>, level: Level) : Mo
                 val eulerAngles = transform.shipToWorldRotation.getEulerAnglesXYZ(Vector3d())
                 this.physicsEntityData!!.transform = transform
             }
-            this.tryCheckInsideBlocks()
+            this.applyEffectsFromBlocks()
         } else {
             tickLerp()
         }
         super.tick()
     }
 
-    override fun lerpTo(d: Double, e: Double, f: Double, g: Float, h: Float, i: Int, bl: Boolean) {
-        this.lerpPos = Vector3d(d, e, f)
-        this.lerpSteps = CLIENT_INTERP_STEPS
+    // Custom interpolation: only the position is interpolated (the rotation comes from the physics transform).
+    private var customInterpolation: InterpolationHandler? = null
+
+    override fun getInterpolation(): InterpolationHandler {
+        var handler = customInterpolation
+        if (handler == null) {
+            handler = object : InterpolationHandler(this) {
+                override fun interpolateTo(position: Vec3, yRot: Float, xRot: Float) {
+                    lerpPos = Vector3d(position.x, position.y, position.z)
+                    lerpSteps = CLIENT_INTERP_STEPS
+                }
+
+                override fun interpolate() {
+                    // Handled by tickLerp
+                }
+            }
+            customInterpolation = handler
+        }
+        return handler
     }
 
     private fun tickLerp() {
@@ -114,54 +140,63 @@ open class VSPhysicsEntity(type: EntityType<VSPhysicsEntity>, level: Level) : Mo
         return shipObjectClientWorld.getPhysEntityClientRenderTransform(shipIdLong)
     }
 
-    override fun defineSynchedData() {
-        entityData.define(SHIP_ID_DATA, "")
-        super.defineSynchedData()
+    override fun defineSynchedData(builder: SynchedEntityData.Builder) {
+        super.defineSynchedData(builder)
+        builder.define(SHIP_ID_DATA, "")
     }
 
     override fun travel(movementInput: Vec3) {
         // disable AI movement
     }
 
-    override fun readAdditionalSaveData(compoundTag: CompoundTag) {
+    override fun readAdditionalSaveData(input: ValueInput) {
+        super.readAdditionalSaveData(input)
     }
 
-    override fun addAdditionalSaveData(compoundTag: CompoundTag) {
+    override fun addAdditionalSaveData(output: ValueOutput) {
+        super.addAdditionalSaveData(output)
     }
 
-    override fun getAddEntityPacket(): Packet<ClientGamePacketListener> {
-        return ClientboundAddEntityPacket(this)
+    override fun getAddEntityPacket(serverEntity: ServerEntity): Packet<ClientGamePacketListener> {
+        return ClientboundAddEntityPacket(this, serverEntity)
     }
 
-    override fun saveWithoutId(compoundTag: CompoundTag): CompoundTag {
+    override fun saveWithoutId(output: ValueOutput) {
         val physicsEntityDataAsBytes = getMapper().writeValueAsBytes(physicsEntityData)
-        compoundTag.putByteArray(PHYS_DATA_NBT_KEY, physicsEntityDataAsBytes)
-        return super.saveWithoutId(compoundTag)
+        output.store(PHYS_DATA_NBT_KEY, Codec.BYTE_BUFFER, ByteBuffer.wrap(physicsEntityDataAsBytes))
+        super.saveWithoutId(output)
+    }
+
+    private fun readPhysicsEntityDataBytes(input: ValueInput): ByteArray {
+        val buffer = input.read(PHYS_DATA_NBT_KEY, Codec.BYTE_BUFFER).orElse(ByteBuffer.allocate(0))
+        val bytes = ByteArray(buffer.remaining())
+        buffer.duplicate().get(bytes)
+        return bytes
     }
 
     // Used when teleporting through nether portals to create a new entity that's almost the same as this one
     // Note how a new shipId is generated, since this is meant to be a new copy not the exact same one
-    private fun loadForTeleport(compoundTag: CompoundTag) {
+    private fun loadForTeleport(input: ValueInput) {
         if (!this.level().isClientSide && physicsEntityData != null) {
             throw IllegalStateException("This entity is already loaded!")
         }
-        val physicsEntityDataAsBytes: ByteArray = compoundTag.getByteArray(PHYS_DATA_NBT_KEY)
+        val physicsEntityDataAsBytes: ByteArray = readPhysicsEntityDataBytes(input)
         val oldPhysicsEntityData = getMapper().readValue<PhysicsEntityData>(physicsEntityDataAsBytes)
         val newShipId = (level().shipObjectWorld as VsiServerShipWorld).allocateShipId(level().dimensionId)
         val newPhysicsEntityData = oldPhysicsEntityData.copyPhysicsEntityDataWithNewId(newShipId)
         // Change the shipId to be something new
         setPhysicsEntityData(newPhysicsEntityData)
-        super.load(compoundTag)
+        super.load(input)
     }
 
-    override fun load(compoundTag: CompoundTag) {
+    override fun load(input: ValueInput) {
         if (!this.level().isClientSide && physicsEntityData != null) {
             throw IllegalStateException("This entity is already loaded!")
         }
-        val physicsEntityDataAsBytes: ByteArray = compoundTag.getByteArray(PHYS_DATA_NBT_KEY)
+        val physicsEntityDataAsBytes: ByteArray = readPhysicsEntityDataBytes(input)
         val physicsEntityData = getMapper().readValue<PhysicsEntityData>(physicsEntityDataAsBytes)
         setPhysicsEntityData(physicsEntityData)
-        super.load(compoundTag)
+        super.load(input)
     }
 
     override fun setLevelCallback(callback: EntityInLevelCallback) {
@@ -197,8 +232,8 @@ open class VSPhysicsEntity(type: EntityType<VSPhysicsEntity>, level: Level) : Mo
         return d < e * e
     }
 
-    override fun moveTo(d: Double, e: Double, f: Double, g: Float, h: Float) {
-        super.moveTo(d, e, f, g, h)
+    override fun snapTo(d: Double, e: Double, f: Double, g: Float, h: Float) {
+        super.snapTo(d, e, f, g, h)
         if (!this.level().isClientSide) {
             val physicsEntityServerCopy = physicsEntityServer
             if (physicsEntityServerCopy != null) {
@@ -218,14 +253,19 @@ open class VSPhysicsEntity(type: EntityType<VSPhysicsEntity>, level: Level) : Mo
 
     // Used when teleporting through nether portals to create a new entity that's almost the same as this one
     override fun restoreFrom(entity: Entity) {
-        val compoundTag = entity.saveWithoutId(CompoundTag())
-        compoundTag.remove("Dimension")
-        loadForTeleport(compoundTag)
+        ProblemReporter.ScopedCollector(this.problemPath(), LOGGER).use { reporter ->
+            val output = TagValueOutput.createWithContext(reporter, entity.registryAccess())
+            entity.saveWithoutId(output)
+            val compoundTag = output.buildResult()
+            compoundTag.remove("Dimension")
+            loadForTeleport(TagValueInput.create(reporter, this.registryAccess(), compoundTag))
+        }
         ((this as EntityAccessor).portalCooldown) = (entity as EntityAccessor).portalCooldown
-        portalEntrancePos = entity.portalEntrancePos
+        portalProcess = entity.portalProcess
     }
 
     companion object {
+        private val LOGGER = com.mojang.logging.LogUtils.getLogger()
         private const val PHYS_DATA_NBT_KEY = "phys_entity_data"
         private const val CLIENT_INTERP_STEPS = 3
 

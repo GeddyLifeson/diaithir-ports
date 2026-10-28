@@ -109,7 +109,7 @@ object VSConfigApi {
         builder: ModConfigSpec.Builder,
         entry: VsiConfigModelEntry<*>
     ): ModConfigSpec.ConfigValue<*> {
-        fun <T> define(v: T) = builder.define<T>(entry.name, v)
+        fun <T : Any> define(v: T) = builder.define<T>(entry.name, v)
 
         @Suppress("UNCHECKED_CAST")
         fun <T : Enum<T>> defineEnum(builder: ModConfigSpec.Builder, value: Enum<*>): ModConfigSpec.EnumValue<*> {

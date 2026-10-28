@@ -8,7 +8,11 @@ import net.minecraft.world.entity.Entity
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.context.UseOnContext
-import net.minecraft.world.level.Level
+import net.minecraft.core.particles.ParticleTypes
+import net.minecraft.server.level.ServerLevel
+import net.minecraft.server.level.ServerPlayer
+import net.minecraft.util.ARGB
+import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.level.block.state.BlockState
 import org.joml.Vector3f
 import org.valkyrienskies.core.api.world.connectivity.ConnectionStatus
@@ -25,30 +29,29 @@ class ConnectionCheckerItem(
         return true
     }
 
-    override fun inventoryTick(item: ItemStack, level: Level, entity: Entity, i: Int, bl: Boolean) {
-        super.inventoryTick(item, level, entity, i, bl)
-        if (item.tag != null && item.tag!!.contains("firstPosX")) {
-            val firstPosX = item.tag!!.getInt("firstPosX")
-            val firstPosY = item.tag!!.getInt("firstPosY")
-            val firstPosZ = item.tag!!.getInt("firstPosZ")
+    // In 26.1 Item.inventoryTick only runs on the server, so the selection particles are sent
+    // to the holding player with a particle packet instead of being spawned client side.
+    override fun inventoryTick(item: ItemStack, level: ServerLevel, entity: Entity, slot: EquipmentSlot?) {
+        super.inventoryTick(item, level, entity, slot)
+        val firstPos = FirstPosData.get(item) ?: return
+        val player = entity as? ServerPlayer ?: return
 
-            if (level.isClientSide) {
-                //spawn grey particles surrounding originally selected position
-                for (x in -1..1) for (y in -1..1) for (z in -1..1) {
-                    repeat (1) {
-                        level.addParticle(
-                            net.minecraft.core.particles.ParticleTypes.SMOKE,
-                            true,
-                            firstPosX + 0.5 + x * 0.5,
-                            firstPosY + 0.5 + y * 0.5,
-                            firstPosZ + 0.5 + z * 0.5,
-                            0.0,
-                            0.0,
-                            0.0
-                        )
-                    }
-                }
-            }
+        //spawn grey particles surrounding originally selected position
+        for (x in -1..1) for (y in -1..1) for (z in -1..1) {
+            level.sendParticles(
+                player,
+                ParticleTypes.SMOKE,
+                true,
+                true,
+                firstPos.x + 0.5 + x * 0.5,
+                firstPos.y + 0.5 + y * 0.5,
+                firstPos.z + 0.5 + z * 0.5,
+                1,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            )
         }
     }
 
@@ -68,10 +71,11 @@ class ConnectionCheckerItem(
             val dimensionId = level.dimensionId
 
             if (parentShip != null) {
-                if (item.tag != null && item.tag!!.contains("firstPosX")) {
-                    val firstPosX = item.tag!!.getInt("firstPosX")
-                    val firstPosY = item.tag!!.getInt("firstPosY")
-                    val firstPosZ = item.tag!!.getInt("firstPosZ")
+                val firstPos = FirstPosData.get(item)
+                if (firstPos != null) {
+                    val firstPosX = firstPos.x
+                    val firstPosY = firstPos.y
+                    val firstPosZ = firstPos.z
                     val connected = level.shipObjectWorld.isConnectedBySolid(blockPos.x, blockPos.y, blockPos.z, firstPosX, firstPosY, firstPosZ, dimensionId)
                     val chatColor = when (connected) {
                         ConnectionStatus.CONNECTED -> ChatFormatting.GREEN
@@ -92,7 +96,8 @@ class ConnectionCheckerItem(
                         for (x in -1..1) for (y in -1..1) for (z in -1..1) {
                             repeat (1) {
                                 level.addParticle(
-                                    DustParticleOptions(color, 1f),
+                                    DustParticleOptions(ARGB.colorFromFloat(1f, color.x, color.y, color.z), 1f),
+                                    true,
                                     true,
                                     blockPos.x.toDouble() + 0.5 + x * 0.5,
                                     blockPos.y.toDouble() + 0.5 + y * 0.5,
@@ -104,15 +109,9 @@ class ConnectionCheckerItem(
                             }
                         }
                     }
-                    item.tag!!.remove("firstPosX")
-                    item.tag!!.remove("firstPosY")
-                    item.tag!!.remove("firstPosZ")
+                    FirstPosData.clear(item)
                 } else {
-                    item.tag = item.orCreateTag.apply {
-                        putInt("firstPosX", blockPos.x)
-                        putInt("firstPosY", blockPos.y)
-                        putInt("firstPosZ", blockPos.z)
-                    }
+                    FirstPosData.set(item, blockPos)
                     if (!level.isClientSide) {
                         ctx.player?.sendSystemMessage(
                             Component.literal("First block selected: (${blockPos.x}, ${blockPos.y}, ${blockPos.z})").withStyle(

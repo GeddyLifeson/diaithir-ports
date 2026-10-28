@@ -1,8 +1,6 @@
 package org.valkyrienskies.mod.common.world
 
 import net.minecraft.server.level.TicketType
-import net.minecraft.world.level.ChunkPos
-import java.util.Comparator
 
 /**
  * Custom ticket type for ship chunks. Used with radius 0, giving ticket level 33 (FULL status).
@@ -18,7 +16,7 @@ import java.util.Comparator
  */
 object VSTicketType {
     @JvmField
-    val SHIP_CHUNK: TicketType<ChunkPos> = TicketType.create(
-        "vs_ship_chunk", Comparator.comparingLong(ChunkPos::toLong)
-    )
+    // 26.1: TicketType is a registered record. This ticket loads the chunk (FLAG_LOADING), never expires and is
+    // never persisted, so it does not need a registry entry (the registry is only used to (de)serialize persisted tickets).
+    val SHIP_CHUNK: TicketType = TicketType(TicketType.NO_TIMEOUT, TicketType.FLAG_LOADING)
 }

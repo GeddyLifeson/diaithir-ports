@@ -1,5 +1,6 @@
 package org.valkyrienskies.mod.common.command.commands
 
+import org.valkyrienskies.mod.common.command.hasPermission
 import com.mojang.brigadier.builder.LiteralArgumentBuilder
 import net.minecraft.commands.CommandSourceStack
 import net.minecraft.commands.Commands.literal
@@ -27,7 +28,7 @@ object GetShipCommand {
                     if (ship != null) {
                         it.source.sendSuccess(
                             {
-                                translatable(GET_SHIP_SUCCESS_MESSAGE, ship.slug, ship.id)
+                                translatable(GET_SHIP_SUCCESS_MESSAGE, ship.slug.toString(), ship.id)
                             }, true
                         )
                         success = true

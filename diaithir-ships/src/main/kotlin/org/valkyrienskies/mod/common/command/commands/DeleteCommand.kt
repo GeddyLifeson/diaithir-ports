@@ -1,5 +1,6 @@
 package org.valkyrienskies.mod.common.command.commands
 
+import org.valkyrienskies.mod.common.command.hasPermission
 import com.mojang.brigadier.arguments.BoolArgumentType
 import com.mojang.brigadier.builder.LiteralArgumentBuilder
 import com.mojang.brigadier.context.CommandContext
@@ -44,7 +45,7 @@ object DeleteCommand {
         if (deletedShips.sum() == 1) {
             context.source.sendSuccess(
                 {
-                    Component.translatable(DELETED_ONE_SHIP_MESSAGE, r[0].slug)
+                    Component.translatable(DELETED_ONE_SHIP_MESSAGE, r[0].slug.toString())
                 }, true
             )
         } else {

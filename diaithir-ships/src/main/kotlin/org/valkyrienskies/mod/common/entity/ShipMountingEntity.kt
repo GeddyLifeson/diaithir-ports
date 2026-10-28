@@ -1,7 +1,10 @@
 package org.valkyrienskies.mod.common.entity
 
 import net.minecraft.client.Minecraft
-import net.minecraft.nbt.CompoundTag
+import net.minecraft.server.level.ServerLevel
+import net.minecraft.world.damagesource.DamageSource
+import net.minecraft.world.level.storage.ValueInput
+import net.minecraft.world.level.storage.ValueOutput
 import net.minecraft.network.protocol.Packet
 import net.minecraft.network.protocol.game.ClientGamePacketListener
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
@@ -39,7 +42,7 @@ open class ShipMountingEntity(type: EntityType<ShipMountingEntity>, level: Level
         super.tick()
         if (!level().isClientSide && passengers.isEmpty()) {
             // Kill this entity if nothing is riding it
-            kill()
+            (level() as? ServerLevel)?.let { kill(it) }
             return
         }
 
@@ -71,9 +74,11 @@ open class ShipMountingEntity(type: EntityType<ShipMountingEntity>, level: Level
         return super.getDismountLocationForPassenger(livingEntity)
     }
 
-    override fun readAdditionalSaveData(compound: CompoundTag) {}
+    override fun readAdditionalSaveData(input: ValueInput) {}
 
-    override fun addAdditionalSaveData(compound: CompoundTag) {}
+    override fun addAdditionalSaveData(output: ValueOutput) {}
+
+    override fun hurtServer(level: ServerLevel, source: DamageSource, damage: Float): Boolean = false
 
     override fun defineSynchedData(builder: SynchedEntityData.Builder) {}
 

@@ -51,7 +51,7 @@ fun relocateBlock(
 
         // so loot containers dont drop its content
         if (it is RandomizableContainerBlockEntity) {
-            it.setLootTable(null, 0)
+            it.setLootTable(null)
         }
 		level.removeBlockEntity(from)
         tag
@@ -59,8 +59,8 @@ fun relocateBlock(
 
     state = state.rotate(rotation)
 
-    fromChunk.setBlockState(from, AIR, false)
-    toChunk.setBlockState(to, state, false)
+    fromChunk.setBlockState(from, AIR, 0)
+    toChunk.setBlockState(to, state, 0)
 
     if (doUpdate) {
         updateBlock(level, from, to, state)
@@ -91,7 +91,7 @@ fun updateBlock(level: Level, fromPos: BlockPos, toPos: BlockPos, toState: Block
 
     level.setBlocksDirty(fromPos, toState, AIR)
     level.sendBlockUpdated(fromPos, toState, AIR, flags)
-    level.blockUpdated(fromPos, AIR.block)
+    level.updateNeighborsAt(fromPos, AIR.block)
     // This handles the update for neighboring blocks in worldspace
     AIR.updateIndirectNeighbourShapes(level, fromPos, flags, recursionLeft - 1)
     AIR.updateNeighbourShapes(level, fromPos, flags, recursionLeft)
@@ -101,7 +101,7 @@ fun updateBlock(level: Level, fromPos: BlockPos, toPos: BlockPos, toState: Block
 
     level.setBlocksDirty(toPos, AIR, toState)
     level.sendBlockUpdated(toPos, AIR, toState, flags)
-    level.blockUpdated(toPos, toState.block)
+    level.updateNeighborsAt(toPos, toState.block)
     if (!level.isClientSide && toState.hasAnalogOutputSignal()) {
         level.updateNeighbourForOutputSignal(toPos, toState.block)
     }

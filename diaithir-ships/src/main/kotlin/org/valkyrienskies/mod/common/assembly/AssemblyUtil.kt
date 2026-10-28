@@ -12,6 +12,7 @@ import net.minecraft.world.level.chunk.LevelChunk
 import net.minecraft.world.ticks.ScheduledTick
 import org.joml.Vector3d
 import org.joml.Vector3i
+import org.valkyrienskies.mod.util.loadWithComponents
 
 private val AIR = Blocks.AIR.defaultBlockState()
 object AssemblyUtil {
@@ -26,22 +27,22 @@ object AssemblyUtil {
 
     fun removeBlock(level: Level, pos: BlockPos) {
         level.removeBlockEntity(pos)
-        level.getChunk(pos).setBlockState(pos, Blocks.AIR.defaultBlockState(), false)
+        level.getChunk(pos).setBlockState(pos, Blocks.AIR.defaultBlockState(), 0)
     }
 
     fun copyBlock(level: Level, from: BlockPos, to: BlockPos) {
         val state = level.getBlockState(from)
         val blockentity = level.getBlockEntity(from)
-        level.getChunk(to).setBlockState(to, state, false)
+        level.getChunk(to).setBlockState(to, state, 0)
 
         // Transfer pending schedule-ticks
         if (level.blockTicks.hasScheduledTick(from, state.block)) {
-            level.blockTicks.schedule(ScheduledTick<Block?>(state.block, to, 0, 0))
+            level.blockTicks.schedule(ScheduledTick<Block>(state.block, to, 0L, 0L))
         }
 
         // Transfer block-entity data
         if (state.hasBlockEntity() && blockentity != null) {
-            val data: CompoundTag = blockentity.saveWithId(level.registryAccess())
+            val data: CompoundTag = blockentity.saveWithFullMetadata(level.registryAccess())
             level.setBlockEntity(blockentity)
             val newBlockentity = level.getBlockEntity(to)
             // TODO: Do we invoke LevelChunk.promotePendingBlockEntity()?
@@ -59,7 +60,7 @@ object AssemblyUtil {
 
         level.setBlocksDirty(fromPos, toState, AIR)
         level.sendBlockUpdated(fromPos, toState, AIR, flags)
-        level.blockUpdated(fromPos, AIR.block)
+        level.updateNeighborsAt(fromPos, AIR.block)
         // This handles the update for neighboring blocks in worldspace
         AIR.updateIndirectNeighbourShapes(level, fromPos, flags, recursionLeft - 1)
         AIR.updateNeighbourShapes(level, fromPos, flags, recursionLeft)
@@ -69,7 +70,7 @@ object AssemblyUtil {
 
         level.setBlocksDirty(toPos, AIR, toState)
         level.sendBlockUpdated(toPos, AIR, toState, flags)
-        level.blockUpdated(toPos, toState.block)
+        level.updateNeighborsAt(toPos, toState.block)
         if (!level.isClientSide && toState.hasAnalogOutputSignal()) {
             level.updateNeighbourForOutputSignal(toPos, toState.block)
         }
