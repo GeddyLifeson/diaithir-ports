@@ -129,23 +129,25 @@ try {
     }
     if ($code -ne 0) { throw "The pack installer stopped with code $code. See the lines above." }
 
-    # 7. Map keybinds: M opens the Atlas, so unbind the FTB Chunks map keys.
+    # 7. Map keybinds: the pack's conflict-free key map (M opens the Atlas) is merged into options.txt.
     $opt = Join-Path $mc 'options.txt'
-    $want = [ordered]@{
-        'key_key.ftbchunks.keys.map'              = 'key.keyboard.unknown'
-        'key_key.ftbchunks.keys.claim_manager'    = 'key.keyboard.unknown'
-        'key_key.ftbchunks.keys.add_waypoint'     = 'key.keyboard.unknown'
-        'key_key.ftbchunks.keys.waypoint_manager' = 'key.keyboard.unknown'
+    $keysUrl = $packUrl -replace 'pack\.toml$', 'keybinds.txt'
+    $want = [ordered]@{}
+    foreach ($l in ([string](Invoke-RestMethod -Uri "$keysUrl?t=$stamp" -UseBasicParsing)) -split "`r?`n") {
+        if ($l -match '^(key_[^:]+):(.+)$') { $want[$Matches[1]] = $Matches[2] }
     }
+    if ($want.Count -lt 100) { throw "keybinds.txt looks wrong ($($want.Count) entries) at $keysUrl" }
     $optLines = @()
     if (Test-Path $opt) { $optLines = @(Get-Content $opt) }
     $kept = @($optLines | Where-Object {
         $line = $_
-        -not ($want.Keys | Where-Object { $line.StartsWith($_ + ':') })
+        -not ($line -match '^(key_[^:]+):' -and $want.Contains($Matches[1]))
     })
+    # The game ignores an options.txt that has no version line.
+    if (-not ($kept | Where-Object { $_ -like 'version:*' })) { $kept = @('version:4790') + $kept }
     foreach ($k in $want.Keys) { $kept += ($k + ':' + $want[$k]) }
     [IO.File]::WriteAllLines($opt, $kept, (New-Object Text.UTF8Encoding($false)))
-    Write-Host 'Keybinds set (FTB Chunks map keys unbound).'
+    Write-Host "Keybinds set ($($want.Count) entries, no overlaps)."
 
     # 8. Bring the server mods folder in line with the pack (removes JourneyMap and MapFrontiers).
     $srv = 'C:\DiaithirServer'
