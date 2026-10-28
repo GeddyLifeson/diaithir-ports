@@ -13,6 +13,12 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 @EventBusSubscriber(modid = Names.MOD_ID, value = Dist.CLIENT)
 public class PncRendererSetup {
     @SubscribeEvent
+    public static void registerBlockStateModels(net.neoforged.neoforge.client.event.RegisterBlockStateModels event) {
+        event.registerModel(me.desht.pneumaticcraft.api.PneumaticRegistry.RL("pressure_tube"),
+                me.desht.pneumaticcraft.client.model.custom.PressureTubeBlockModel.Unbaked.MAP_CODEC);
+    }
+
+    @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(PNCModelLayers.AIR_CANNON, me.desht.pneumaticcraft.client.render.blockentity.AirCannonRenderer::createBodyLayer);
         event.registerLayerDefinition(PNCModelLayers.PNEUMATIC_DOOR, me.desht.pneumaticcraft.client.render.blockentity.PneumaticDoorRenderer::createBodyLayer);
