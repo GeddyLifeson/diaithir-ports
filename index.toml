@@ -125,6 +125,10 @@ file = "config/lightmanscurrency_coin_data/uma.json"
 hash = "8992f92a7966cf85d4e80fff915bb2746c1103549a02364249f086f8ce558862"
 
 [[files]]
+file = "config/lithium.properties"
+hash = "89a598a8b5dd2dc6d7604763cf9a07b435e5f6cf65bba5436f7e1cfefea42e72"
+
+[[files]]
 file = "config/mca.json"
 hash = "11188b6e6d0dc994381cbecd969e1fd85aa06389aa1ef0b2c4275069b42c5b0f"
 
