@@ -26428,7 +26428,7 @@ hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "a85f8fd59405dc06512b305c7c3d55d075038f6bf2ac3b26438199ea1f04dbf1"
+hash = "9d0cc5346a10bfec93f61c6780532d4362c167530f6e6a82026afe6fada3c22a"
 metafile = true
 
 [[files]]
@@ -26449,7 +26449,7 @@ hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "1f7534bc4b2ca3861f55a4a04f4d07fe760ce9546086f3a516956a7aabee6ee3"
+hash = "347a8451576022f290c52744589f55fb6f8e3455c8797cada69129d3eb5221ea"
 metafile = true
 
 [[files]]
@@ -27456,7 +27456,7 @@ metafile = true
 
 [[files]]
 file = "mods/villager-trading-plus-neoforge-26.1.2-1.3.0.pw.toml"
-hash = "c0807e79ea818c8e53e9d6caa6d2be2943536e3612fec953b7cc9e1410a730b2"
+hash = "9b5f1c6670cc584ddfd8567b70b0c8d63f29dcd58e71533f64880860f0d36ada"
 metafile = true
 
 [[files]]
@@ -27510,10 +27510,10 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "22bf21eca333d85bf9a85b3a8e011edb4411dbf3006d01e48e605d7faaa014f4"
+hash = "db72b45fa6920f903d5b9abc07065516a87a5d2f390916facb023a6d2584a723"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "f910fa57ce977d9c1f71e0b5dd51ce58c8070cab7813a1513b7f4b0528a57a03"
+hash = "7d8b305ab74901c8d98800d8420bc388f5756d8f4458080b9f706dce7d84ee3d"
 metafile = true
