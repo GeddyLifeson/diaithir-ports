@@ -82,14 +82,14 @@ public class PneumaticCraftRecipeType<T extends PneumaticCraftRecipe> implements
         }
 
         if (cachedRecipes.isEmpty()) {
-            RecipeManager recipeManager = level.getRecipeManager();
+            RecipeManager recipeManager = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level);
             List<RecipeHolder<T>> recipes = recipeManager.getRecipesFor(this, CraftingInput.EMPTY, level);
             recipes.forEach(recipe -> cachedRecipes.put(recipe.id(), recipe));
 
             if (this == ModRecipeTypes.ASSEMBLY_DRILL_LASER.get()) {
 
-                var drillRecipes = level.getRecipeManager().getAllRecipesFor(ModRecipeTypes.ASSEMBLY_DRILL.get());
-                var laserRecipes = level.getRecipeManager().getAllRecipesFor(ModRecipeTypes.ASSEMBLY_LASER.get());
+                var drillRecipes = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level).getAllRecipesFor(ModRecipeTypes.ASSEMBLY_DRILL.get());
+                var laserRecipes = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level).getAllRecipesFor(ModRecipeTypes.ASSEMBLY_LASER.get());
                 //noinspection unchecked
                 AssemblyRecipeImpl.calculateAssemblyChain(drillRecipes, laserRecipes)
                         .forEach((id, recipe) -> cachedRecipes.put(id, (RecipeHolder<T>) recipe));

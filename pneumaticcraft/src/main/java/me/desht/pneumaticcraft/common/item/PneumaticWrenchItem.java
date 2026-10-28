@@ -119,7 +119,9 @@ public class PneumaticWrenchItem extends PressurizableItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel worldIn, Entity entityIn, net.minecraft.world.entity.EquipmentSlot equipmentSlot__) {
+        int itemSlot = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.slotOf(entityIn, stack);
+        boolean isSelected = equipmentSlot__ == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         if (entityIn instanceof ServerPlayer sp
                 && stack.getItem() instanceof PneumaticWrenchItem pw
                 && (worldIn.getGameTime() & 0xf) == 0

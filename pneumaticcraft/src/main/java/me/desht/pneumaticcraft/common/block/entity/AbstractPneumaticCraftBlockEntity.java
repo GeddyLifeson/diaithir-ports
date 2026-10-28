@@ -147,20 +147,22 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
 
     // client side, chunk sending
     @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider provider) {
+    public void handleUpdateTag(net.minecraft.world.level.storage.ValueInput input) {
+        CompoundTag tag = me.desht.pneumaticcraft.compat.NbtCompat.toTag(input);
         PacketDescription.fromNBT(tag, getLevel().registryAccess())
                 .processPacket(this, getLevel().registryAccess());
     }
 
     @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider lookupProvider) {
-        super.onDataPacket(net, pkt, lookupProvider);
+    public void onDataPacket(Connection net, net.minecraft.world.level.storage.ValueInput input) {
+        super.onDataPacket(net, input);
 
         // handle any extra data serialized by PacketDescription
-        if (pkt.getTag().contains(Names.MOD_ID)) {
-            CompoundTag tag = pkt.getTag().getCompound(Names.MOD_ID).getCompound(PacketDescription.NBT_EXTRA);
+        CompoundTag fullTag = me.desht.pneumaticcraft.compat.NbtCompat.toTag(input);
+        if (fullTag.contains(Names.MOD_ID)) {
+            CompoundTag tag = fullTag.getCompoundOrEmpty(Names.MOD_ID).getCompoundOrEmpty(PacketDescription.NBT_EXTRA);
             if (!tag.isEmpty()) {
-                readFromPacket(tag, lookupProvider);
+                readFromPacket(tag, input.lookup());
             }
         }
     }
@@ -247,7 +249,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
         // overridden to only update neighbours if this BE actually has a useful comparator output
         if (level != null) {
             if (level.isLoaded(worldPosition)) {
-                level.getChunkAt(worldPosition).setUnsaved(true);
+                level.getChunkAt(worldPosition).markUnsaved();
             }
             if (this instanceof IComparatorSupport && !this.getBlockState().isAir()) {
                 this.level.updateNeighbourForOutputSignal(this.worldPosition, this.getBlockState().getBlock());
@@ -361,7 +363,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
     protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
 
         if (customName != null) {
-            tag.putString("CustomName", Component.Serializer.toJson(customName, provider));
+            tag.store("CustomName", net.minecraft.network.chat.ComponentSerialization.CODEC, provider.createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), customName);
         }
         if (getUpgradeHandler().getSlots() > 0) {
             tag.put(NBTKeys.NBT_UPGRADE_INVENTORY, getUpgradeHandler().serializeNBT(provider));
@@ -382,7 +384,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
 
         if (tag.contains("CustomName")) {
-            customName = Component.Serializer.fromJson(tag.getString("CustomName"), provider);
+            customName = tag.read("CustomName", net.minecraft.network.chat.ComponentSerialization.CODEC, provider.createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE)).orElse(null);
         }
         if (tag.contains(NBTKeys.NBT_UPGRADE_INVENTORY) && getUpgradeHandler() != null) {
             getUpgradeHandler().deserializeNBT(provider, tag.getCompoundOrEmpty(NBTKeys.NBT_UPGRADE_INVENTORY));

@@ -366,7 +366,7 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
         super.loadLegacy(tag, provider);
 
         playerUUID = UUID.fromString(tag.getStringOr("playerUUID", ""));
-        feedMode = FeedMode.valueOf(tag.getString("feedMode"));
+        feedMode = FeedMode.valueOf(tag.getStringOr("feedMode", ""));
         curXpFluid = tag.contains("curXpFluid") ? BuiltInRegistries.FLUID.get(Identifier.parse(tag.getStringOr("curXpFluid", ""))) : Fluids.EMPTY;
         curXpRatio = XPFluidManager.getInstance().getXPRatio(curXpFluid);
         energyStorage.readFromNBT(tag);

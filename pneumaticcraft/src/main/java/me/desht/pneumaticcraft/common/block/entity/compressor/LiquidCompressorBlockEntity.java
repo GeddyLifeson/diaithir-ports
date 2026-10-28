@@ -194,7 +194,7 @@ public class LiquidCompressorBlockEntity extends AbstractAirHandlingBlockEntity 
     protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.saveLegacy(tag, provider);
 
-        tag.put("Items", itemHandler.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(itemHandler, provider));
         tag.putDouble("internalFuelBuffer", internalFuelBuffer);
         tag.putFloat("burnMultiplier", burnMultiplier);
     }
@@ -203,7 +203,7 @@ public class LiquidCompressorBlockEntity extends AbstractAirHandlingBlockEntity 
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        itemHandler.deserializeNBT(provider, tag.getCompound("Items"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(itemHandler, provider, tag.getCompoundOrEmpty("Items"));
         internalFuelBuffer = tag.getDoubleOr("internalFuelBuffer", 0d);
         burnMultiplier = tag.getFloatOr("burnMultiplier", 0f);
     }

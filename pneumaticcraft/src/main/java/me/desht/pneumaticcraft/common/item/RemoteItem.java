@@ -161,7 +161,9 @@ public class RemoteItem extends Item {
     }
 
     @Override
-    public void inventoryTick(ItemStack remote, Level world, Entity entity, int slot, boolean holdingItem) {
+    public void inventoryTick(ItemStack remote, net.minecraft.server.level.ServerLevel world, Entity entity, net.minecraft.world.entity.EquipmentSlot equipmentSlot__) {
+        int slot = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.slotOf(entity, remote);
+        boolean holdingItem = equipmentSlot__ == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         if (!world.isClientSide()) {
             GlobalPos gPos = getSecurityStationPos(remote);
             if (gPos != null && !(GlobalPosHelper.getTileEntity(gPos) instanceof SecurityStationBlockEntity)) {

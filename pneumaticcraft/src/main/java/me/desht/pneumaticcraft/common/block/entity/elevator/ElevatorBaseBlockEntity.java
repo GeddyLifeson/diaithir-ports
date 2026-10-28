@@ -358,13 +358,13 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
         super.readFromPacket(tag, provider);
 
         camoState = CamouflageableBlockEntity.readCamo(tag);
-        floorHeights = tag.getIntArray("floorHeights");
+        floorHeights = tag.getIntArray("floorHeights").orElse(new int[0]);
 
         floorNames.clear();
         ListTag floorNameList = tag.getListOrEmpty("floorNames");
         for (int i = 0; i < floorNameList.size(); i++) {
             CompoundTag floorName = floorNameList.getCompoundOrEmpty(i);
-            floorNames.put(floorName.getInt("floorHeight"), floorName.getString("floorName"));
+            floorNames.put(floorName.getIntOr("floorHeight", 0), floorName.getStringOr("floorName", ""));
         }
     }
 

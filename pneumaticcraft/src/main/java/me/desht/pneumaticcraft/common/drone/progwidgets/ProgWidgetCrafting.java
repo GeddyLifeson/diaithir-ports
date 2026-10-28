@@ -174,7 +174,7 @@ public class ProgWidgetCrafting extends ProgWidget implements ICraftingWidget, I
     public Optional<CraftingRecipe> getRecipe(Level level, CraftingInput grid) {
         // no caching if using variables, because the item can change at any item
         return usingVariables ?
-                level.getRecipeManager().getRecipeFor(RecipeType.CRAFTING, grid, level).flatMap(holder -> Optional.of(holder.value())) :
+                me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level).getRecipeFor(RecipeType.CRAFTING, grid, level).flatMap(holder -> Optional.of(holder.value())) :
                 VanillaRecipeCache.CRAFTING.getCachedRecipe(level, grid);
     }
 

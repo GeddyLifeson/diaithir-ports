@@ -182,7 +182,7 @@ public class AmadroneEntity extends DroneEntity {
             usedTablet = me.desht.pneumaticcraft.compat.NbtCompat.parseItem(registryAccess(), subTag.getCompoundOrEmpty("usedTablet"));
             offerTimes = subTag.getIntOr("offerTimes", 0);
             buyingPlayer = subTag.getStringOr("buyingPlayer", "");
-            amadronAction = AmadronAction.valueOf(subTag.getString("amadronAction"));
+            amadronAction = AmadronAction.valueOf(subTag.getStringOr("amadronAction", ""));
         }
     }
 

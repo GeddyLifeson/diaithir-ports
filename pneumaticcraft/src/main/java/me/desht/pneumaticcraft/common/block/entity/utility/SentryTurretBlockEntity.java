@@ -232,11 +232,11 @@ public class SentryTurretBlockEntity extends AbstractTickingBlockEntity implemen
     @Override
     protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.saveLegacy(tag, provider);
-        tag.put("Items", inventory.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(inventory, provider));
         tag.putString(NBT_ENTITY_FILTER, entityFilter);
         tag.putFloat("idleYaw", idleYaw);
         if (ownerId != null) {
-            tag.putUUID("ownerId", ownerId);
+            tag.store("ownerId", net.minecraft.core.UUIDUtil.CODEC, ownerId);
         }
     }
 
@@ -244,11 +244,11 @@ public class SentryTurretBlockEntity extends AbstractTickingBlockEntity implemen
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        inventory.deserializeNBT(provider, tag.getCompound("Items"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(inventory, provider, tag.getCompoundOrEmpty("Items"));
         idleYaw = tag.getFloatOr("idleYaw", 0f);
         setText(0, tag.getStringOr(NBT_ENTITY_FILTER, ""));
         if (tag.contains("ownerId")) {
-            ownerId = tag.getUUID("ownerId");
+            ownerId = tag.read("ownerId", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
         }
     }
 

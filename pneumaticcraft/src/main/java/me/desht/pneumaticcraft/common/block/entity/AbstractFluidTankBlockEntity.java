@@ -140,14 +140,14 @@ public abstract class AbstractFluidTankBlockEntity extends AbstractTickingBlockE
     protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.saveLegacy(tag, provider);
 
-        tag.put("Items", inventory.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(inventory, provider));
     }
 
     @Override
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        inventory.deserializeNBT(provider, tag.getCompound("Items"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(inventory, provider, tag.getCompoundOrEmpty("Items"));
     }
 
     public SmartSyncTank getTank() {

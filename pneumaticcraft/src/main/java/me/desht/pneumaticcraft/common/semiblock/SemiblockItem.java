@@ -64,9 +64,9 @@ public class SemiblockItem extends Item {
     public AbstractSemiblockEntity createEntity(Level world, ItemStack stack, Player player, BlockPos pos) {
         Identifier regName = PneumaticCraftUtils.getRegistryName(this).orElseThrow();
         return BuiltInRegistries.ENTITY_TYPE.getOptional(regName).map(type -> {
-            Entity e = type.create(world);
+            Entity e = type.create(world, net.minecraft.world.entity.EntitySpawnReason.TRIGGERED);
             if (e instanceof AbstractSemiblockEntity semi) {
-                e.moveTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0f, 0f);
+                e.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0f, 0f);
                 EntityType.updateCustomEntityTag(world, player, e, stack.getOrDefault(ModDataComponents.SEMIBLOCK_DATA, CustomData.EMPTY));
                 return semi;
             }

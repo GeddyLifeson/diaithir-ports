@@ -26,11 +26,6 @@ import net.minecraft.world.item.ItemStack;
 
 public class ArmorPiercingGunAmmoItem extends AbstractGunAmmoItem {
     @Override
-    public int getMaxDamage(ItemStack stack) {
-        return ConfigHelper.common().minigun.armorPiercingAmmoCartridgeSize.get();
-    }
-
-    @Override
     public int getAmmoColor(ItemStack ammo) {
         return 0x0000FFFF;
     }

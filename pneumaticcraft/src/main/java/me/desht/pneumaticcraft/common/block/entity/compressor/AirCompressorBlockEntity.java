@@ -99,7 +99,7 @@ public class AirCompressorBlockEntity extends AbstractAirHandlingBlockEntity imp
 
         if (rsController.shouldRun() && burnTime < curFuelUsage) {
             ItemStack fuelStack = itemHandler.getStackInSlot(FUEL_SLOT);
-            int itemBurnTime = fuelStack.getBurnTime(RecipeType.SMELTING);
+            int itemBurnTime = fuelStack.getBurnTime(RecipeType.SMELTING, nonNullLevel().fuelValues());
 //            int itemBurnTime = CommonHooks.getBurnTime(fuelStack, RecipeType.SMELTING);
             if (itemBurnTime > 0) {
                 burnTime += itemBurnTime;
@@ -223,7 +223,7 @@ public class AirCompressorBlockEntity extends AbstractAirHandlingBlockEntity imp
         @Override
         public boolean isItemValid(int slot, ItemStack itemStack) {
             return slot == FUEL_SLOT &&
-                    (itemStack.isEmpty() || itemStack.getBurnTime(RecipeType.SMELTING) > 0 && FluidUtil.getFluidContained(itemStack).isEmpty());
+                    (itemStack.isEmpty() || itemStack.getBurnTime(RecipeType.SMELTING, nonNullLevel().fuelValues()) > 0 && FluidUtil.getFluidContained(itemStack).isEmpty());
         }
     }
 

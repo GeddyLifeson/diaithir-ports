@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.entity.drone;
 
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import com.mojang.authlib.GameProfile;
 import com.mojang.serialization.Codec;
@@ -1173,14 +1174,14 @@ public class DroneEntity extends AbstractDroneEntity implements
         aiManager.readFromNBT(tag.getCompoundOrEmpty("variables"));
         standby = tag.getBooleanOr("standby", false);
         allowStandbyPickup = tag.getBooleanOr("allowStandbyPickup", false);
-        upgradeInventory.deserializeNBT(registryAccess(), tag.getCompound("upgrades"));
+        upgradeInventory.deserializeNBT(registryAccess(), tag.getCompoundOrEmpty("upgrades"));
         upgradeCache.invalidateCache();
         getAirHandler().deserializeNBT(tag.getCompoundOrEmpty("airHandler"));
         carriedEntityAIdisabled = tag.getBooleanOr("carriedEntityAIdisabled", false);
         deployPos = tag.read("deployPos", BlockPos.CODEC).orElse(null);
 
         ItemStackHandler tmpInv = new ItemStackHandler();
-        tmpInv.deserializeNBT(registryAccess(), tag.getCompound("Inventory"));
+        tmpInv.deserializeNBT(registryAccess(), tag.getCompoundOrEmpty("Inventory"));
         droneItemHandler.setUseableSlots(1 + getUpgrades(ModUpgrades.INVENTORY.get()));
         PneumaticCraftUtils.copyItemHandler(tmpInv, droneItemHandler);
 
@@ -1192,11 +1193,11 @@ public class DroneEntity extends AbstractDroneEntity implements
         if (tag.contains("owner")) ownerName = Component.literal(tag.getStringOr("owner", ""));
         if (tag.contains("ownerUUID_M")) ownerUUID = new UUID(tag.getLongOr("ownerUUID_M", 0L), tag.getLongOr("ownerUUID_L", 0L));
 
-        stackEnchants = ItemEnchantments.CODEC.parse(NbtOps.INSTANCE, tag.getCompound("stackEnchants"))
+        stackEnchants = ItemEnchantments.CODEC.parse(NbtOps.INSTANCE, tag.getCompoundOrEmpty("stackEnchants"))
                 .result().orElse(ItemEnchantments.EMPTY);
 
         displacedLiquids.clear();
-        DISPLACED_LIQUIDS_CODEC.parse(NbtOps.INSTANCE, tag.getCompound("displacedLiquids"))
+        DISPLACED_LIQUIDS_CODEC.parse(NbtOps.INSTANCE, tag.getCompoundOrEmpty("displacedLiquids"))
                 .ifSuccess(displacedLiquids::putAll);
     }
 

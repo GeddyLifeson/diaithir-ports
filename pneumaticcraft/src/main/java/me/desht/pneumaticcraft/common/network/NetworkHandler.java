@@ -231,7 +231,7 @@ public class NetworkHandler {
 
 	public static void sendToAllTracking(CustomPacketPayload message, Level level, BlockPos pos) {
 		if (level instanceof ServerLevel serverLevel) {
-			PacketDistributor.sendToPlayersTrackingChunk(serverLevel, new ChunkPos(pos), message);
+			PacketDistributor.sendToPlayersTrackingChunk(serverLevel, net.minecraft.world.level.ChunkPos.containing(pos), message);
 		}
 	}
 

@@ -96,7 +96,7 @@ public class HackableMobDisarm implements IHackableEntity<Mob> {
                 int l = stack.getMaxDamage() - rand.nextInt(rand.nextInt(k) + 1);
                 stack.setDamageValue(Mth.clamp(l, 1, k));
             }
-            entity.spawnAtLocation(stack, 0f);
+            me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.spawnAtLocation(entity, stack, 0f);
         }
         entity.setItemSlot(slot, ItemStack.EMPTY);
         return true;

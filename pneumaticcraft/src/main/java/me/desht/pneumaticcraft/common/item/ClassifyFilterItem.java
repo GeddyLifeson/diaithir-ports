@@ -82,7 +82,7 @@ public class ClassifyFilterItem extends Item implements IFilteringItem {
         if (level == null) return false;
         SingleRecipeInput input = new SingleRecipeInput(stack);
         // TODO cache this
-        return level.getRecipeManager().getRecipeFor(type, input, level).isPresent();
+        return me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level).getRecipeFor(type, input, level).isPresent();
     }
 
     public static MutableComponent xlateMatch(boolean matchAll) {
@@ -120,14 +120,14 @@ public class ClassifyFilterItem extends Item implements IFilteringItem {
     }
 
     public enum FilterCondition implements ITranslatableEnum, Predicate<ItemStack>, StringRepresentable {
-        FUEL_ITEM(Items.COAL, s -> s.getBurnTime(RecipeType.SMELTING) > 0),
+        FUEL_ITEM(Items.COAL, s -> s.getBurnTime(RecipeType.SMELTING, ServerLifecycleHooks.getCurrentServer().fuelValues()) > 0),
         EDIBLE(Items.BREAD, s -> getOptionalComponent(s, DataComponents.FOOD).map(f -> f.nutrition() > 0).orElse(false)),
         PLACEABLE(Items.STONE, s -> s.getItem() instanceof BlockItem),
         FLUID_CONTAINER(Items.BUCKET, s -> IOHelper.getFluidHandlerForItem(s).isPresent()),
         UNSTACKABLE(Items.WRITABLE_BOOK, s -> s.getMaxStackSize() == 1),
         WEARABLE(Items.LEATHER_HELMET, s -> s.get(net.minecraft.core.component.DataComponents.EQUIPPABLE) != null),
-        TOOL(Items.IRON_PICKAXE, s -> s.getItem() instanceof TieredItem),
-        WEAPON(Items.IRON_SWORD, s -> s.getItem() instanceof SwordItem || s.getItem() instanceof AxeItem || s.getItem() instanceof ProjectileWeaponItem),
+        TOOL(Items.IRON_PICKAXE, s -> s.has(net.minecraft.core.component.DataComponents.TOOL)),
+        WEAPON(Items.IRON_SWORD, s -> s.has(net.minecraft.core.component.DataComponents.WEAPON) || s.getItem() instanceof ProjectileWeaponItem),
         ENCHANTABLE(Items.BOOK, s -> s.isEnchantable() && !s.isEnchanted()),
         ENCHANTED(Items.ENCHANTED_BOOK, ItemStack::isEnchanted),
         SMELTABLE(Blocks.FURNACE, s -> isCookable(RecipeType.SMELTING, s)),

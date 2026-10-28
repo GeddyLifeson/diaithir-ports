@@ -40,7 +40,6 @@ import me.desht.pneumaticcraft.common.registry.ModArmorMaterials;
 import me.desht.pneumaticcraft.common.registry.ModDataComponents;
 import me.desht.pneumaticcraft.common.registry.ModItems;
 import me.desht.pneumaticcraft.common.registry.ModMenuTypes;
-import me.desht.pneumaticcraft.common.thirdparty.theoneprobe.TheOneProbe;
 import me.desht.pneumaticcraft.common.upgrades.ModUpgrades;
 import me.desht.pneumaticcraft.common.upgrades.UpgradableItemUtils;
 import me.desht.pneumaticcraft.common.util.GlobalPosHelper;
@@ -102,9 +101,9 @@ public class PneumaticArmorItem extends Item implements
     };
 //    private static final int[] VIS_DISCOUNTS = new int[] { 1, 2, 2, 5 };
 
-    public static final DyedItemColor DEFAULT_PRIMARY_COLOR = new DyedItemColor(0xFF969696, false);
-    public static final DyedItemColor DEFAULT_SECONDARY_COLOR = new DyedItemColor(0xFFC0C0C0, false);
-    public static final DyedItemColor DEFAULT_EYEPIECE_COLOR = new DyedItemColor(0xFF00AA00, false);
+    public static final DyedItemColor DEFAULT_PRIMARY_COLOR = new DyedItemColor(0xFF969696);
+    public static final DyedItemColor DEFAULT_SECONDARY_COLOR = new DyedItemColor(0xFFC0C0C0);
+    public static final DyedItemColor DEFAULT_EYEPIECE_COLOR = new DyedItemColor(0xFF00AA00);
 
     protected final ArmorType type;
 
@@ -153,16 +152,12 @@ public class PneumaticArmorItem extends Item implements
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flagIn) {
         List<Component> tooltip = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
-        if (type == Type.HELMET && context.registries() != null) {
+        if (type == ArmorType.HELMET && context.registries() != null) {
             ClientUtils.getOptionalClientLevel().ifPresent(level -> addHelmetInformation(stack, level, tooltip));
         }
     }
 
     private void addHelmetInformation(ItemStack stack, Level level, List<Component> tooltip) {
-        if (TheOneProbe.isProbeEnabled(stack)) {
-            tooltip.add(xlate("gui.tooltip.item.pneumaticcraft.pneumatic_helmet.one_probe").withStyle(ChatFormatting.BLUE));
-        }
-
         Item searchedItem = getSearchedItem(stack);
         if (searchedItem != null) {
             ItemStack searchStack = new ItemStack(searchedItem);
@@ -342,7 +337,8 @@ public class PneumaticArmorItem extends Item implements
     }
 
     @Override
-    public boolean isEnderMask(ItemStack stack, Player player, EnderMan endermanEntity) {
+    public boolean isGazeDisguise(ItemStack stack, Player player, @org.jspecify.annotations.Nullable LivingEntity entity) {
+        if (!(entity instanceof EnderMan)) return false;
         CommonArmorHandler handler = CommonArmorHandler.getHandlerForPlayer(player);
         return handler.upgradeUsable(CommonUpgradeHandlers.enderVisorHandler, true);
     }
@@ -361,26 +357,12 @@ public class PneumaticArmorItem extends Item implements
         return UpgradableItemUtils.getUpgradeCount(stack, ModUpgrades.CREATIVE.get()) == 0;
     }
 
-    @Override
-    public boolean canElytraFly(ItemStack stack, LivingEntity entity) {
-        if (entity instanceof Player player
-                && CommonArmorHandler.getHandlerForPlayer(player).upgradeUsable(CommonUpgradeHandlers.elytraHandler, true)) {
-            return true;
-        }
-        return super.canElytraFly(stack, entity);
-    }
-
-    @Override
-    public boolean elytraFlightTick(ItemStack stack, LivingEntity entity, int flightTicks) {
-        return ElytraHandler.handleFlightTick(entity, flightTicks) || super.elytraFlightTick(stack, entity, flightTicks);
-    }
-
     public int getPrimaryColor(ItemStack stack) {
         return stack.getOrDefault(DataComponents.DYED_COLOR, DEFAULT_PRIMARY_COLOR).rgb();
     }
 
     public void setPrimaryColor(ItemStack stack, int color) {
-        stack.set(DataComponents.DYED_COLOR, new DyedItemColor(color, false));
+        stack.set(DataComponents.DYED_COLOR, new DyedItemColor(color));
     }
 
     public int getSecondaryColor(ItemStack stack) {
@@ -388,7 +370,7 @@ public class PneumaticArmorItem extends Item implements
     }
 
     public void setSecondaryColor(ItemStack stack, int color) {
-        stack.set(ModDataComponents.ARMOR_SECONDARY_COLOR, new DyedItemColor(color, false));
+        stack.set(ModDataComponents.ARMOR_SECONDARY_COLOR, new DyedItemColor(color));
     }
 
     public int getEyepieceColor(ItemStack stack) {
@@ -396,7 +378,7 @@ public class PneumaticArmorItem extends Item implements
     }
 
     public void setEyepieceColor(ItemStack stack, int color) {
-        stack.set(ModDataComponents.ARMOR_EYEPIECE_COLOR, new DyedItemColor(color, false));
+        stack.set(ModDataComponents.ARMOR_EYEPIECE_COLOR, new DyedItemColor(color));
     }
 
     @Override

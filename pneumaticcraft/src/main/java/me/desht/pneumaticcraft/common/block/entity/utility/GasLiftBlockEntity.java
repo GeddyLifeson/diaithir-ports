@@ -308,7 +308,7 @@ public class GasLiftBlockEntity extends AbstractAirHandlingBlockEntity implement
     protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.saveLegacy(tag, provider);
 
-        tag.put("Items", inventory.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(inventory, provider));
         tag.putString("mode", pumpMode.toString());
         tag.putInt("currentDepth", currentDepth);
     }
@@ -317,8 +317,8 @@ public class GasLiftBlockEntity extends AbstractAirHandlingBlockEntity implement
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        inventory.deserializeNBT(provider, tag.getCompound("Items"));
-        if (tag.contains("mode")) pumpMode = PumpMode.valueOf(tag.getString("mode"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(inventory, provider, tag.getCompoundOrEmpty("Items"));
+        if (tag.contains("mode")) pumpMode = PumpMode.valueOf(tag.getStringOr("mode", ""));
         currentDepth = tag.getIntOr("currentDepth", 0);
     }
 

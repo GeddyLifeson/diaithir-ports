@@ -27,8 +27,6 @@ import me.desht.pneumaticcraft.common.network.PacketLeftClickEmpty;
 import me.desht.pneumaticcraft.common.registry.ModDataComponents;
 import me.desht.pneumaticcraft.common.registry.ModFluids;
 import me.desht.pneumaticcraft.common.registry.ModItems;
-import me.desht.pneumaticcraft.common.thirdparty.curios.Curios;
-import me.desht.pneumaticcraft.common.thirdparty.curios.CuriosUtils;
 import me.desht.pneumaticcraft.common.util.EnchantmentUtils;
 import me.desht.pneumaticcraft.common.util.IOHelper;
 import me.desht.pneumaticcraft.common.util.PneumaticCraftUtils;
@@ -187,7 +185,9 @@ public class MemoryStickItem extends Item implements ColorHandlers.ITintableItem
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel worldIn, Entity entityIn, net.minecraft.world.entity.EquipmentSlot equipmentSlot__) {
+        int itemSlot = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.slotOf(entityIn, stack);
+        boolean isSelected = equipmentSlot__ == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         if (shouldAbsorbXPOrbs(stack) && entityIn instanceof Player && itemSlot >= 0) {
             cacheMemoryStickLocation((Player) entityIn, MemoryStickLocator.playerInv(itemSlot));
         }
@@ -286,8 +286,6 @@ public class MemoryStickItem extends Item implements ColorHandlers.ITintableItem
         public ItemStack getMemoryStick(Player player) {
             if (invName.isEmpty()) {
                 return player.getInventory().getItem(slot);
-            } else if (Curios.available) {
-                return CuriosUtils.getStack(player, invName, slot);
             }
             return ItemStack.EMPTY;
         }

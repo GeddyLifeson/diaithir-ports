@@ -134,8 +134,10 @@ public class MinigunItem extends PressurizableItem implements
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean currentItem) {
-        super.inventoryTick(stack, world, entity, slot, currentItem);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel world, Entity entity, net.minecraft.world.entity.EquipmentSlot equipmentSlot__) {
+        int slot = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.slotOf(entity, stack);
+        boolean currentItem = equipmentSlot__ == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
+        super.inventoryTick(stack, world, entity, equipmentSlot__);
 
         Player player = (Player) entity;
 

@@ -59,7 +59,7 @@ public class VanillaRecipeCache<T extends RecipeType<R>, R extends Recipe<C>, C 
         if (recipeCache.containsKey(key)) {
             return recipeCache.getAndMoveToFirst(key);
         } else {
-            Optional<R> newRecipe = world.getRecipeManager().getRecipeFor(type, inv, world).map(RecipeHolder::value);
+            Optional<R> newRecipe = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(world).getRecipeFor(type, inv, world).map(RecipeHolder::value);
             if (recipeCache.size() == MAX_CACHE_SIZE) {
                 recipeCache.removeLast();
             }

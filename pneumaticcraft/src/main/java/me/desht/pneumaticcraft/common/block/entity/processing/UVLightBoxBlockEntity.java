@@ -187,7 +187,7 @@ public class UVLightBoxBlockEntity extends AbstractAirHandlingBlockEntity implem
 
         threshold = tag.getIntOr("threshold", 0);
         inputHandler.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
-        outputHandler.deserializeNBT(provider, tag.getCompound("Output"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(outputHandler, provider, tag.getCompoundOrEmpty("Output"));
     }
 
     @Override
@@ -196,7 +196,7 @@ public class UVLightBoxBlockEntity extends AbstractAirHandlingBlockEntity implem
 
         tag.putInt("threshold", threshold);
         tag.put("Items", inputHandler.serializeNBT(provider));
-        tag.put("Output", outputHandler.serializeNBT(provider));
+        tag.put("Output", me.desht.pneumaticcraft.compat.NbtCompat.save(outputHandler, provider));
     }
 
     public static int getExposureProgress(ItemStack stack) {

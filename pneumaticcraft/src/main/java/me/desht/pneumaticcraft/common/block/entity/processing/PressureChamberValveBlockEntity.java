@@ -428,12 +428,12 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
 
         setupMultiBlock(tag.getIntOr("multiBlockSize", 0), tag.getIntOr("multiBlockX", 0), tag.getIntOr("multiBlockY", 0), tag.getIntOr("multiBlockZ", 0));
         ItemStackHandler handler = new ItemStackHandler();
-        handler.deserializeNBT(provider, tag.getCompound("itemsInChamber"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(handler, provider, tag.getCompoundOrEmpty("itemsInChamber"));
         for (int i = 0; i < handler.getSlots() && i < CHAMBER_INV_SIZE; i++) {
             itemsInChamber.setStackInSlot(i, handler.getStackInSlot(i));
         }
         ItemStackHandler outHandler = new ItemStackHandler();
-        outHandler.deserializeNBT(provider, tag.getCompound("craftedItems"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(outHandler, provider, tag.getCompoundOrEmpty("craftedItems"));
         for (int i = 0; i < outHandler.getSlots() && i < OUTPUT_INV_SIZE; i++) {
             craftedItems.setStackInSlot(i, outHandler.getStackInSlot(i));
         }
@@ -442,7 +442,7 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
         ListTag accList = tag.getListOrEmpty("Valves");
         nbtValveList.clear();
         for (int i = 0; i < accList.size(); ++i) {
-            int[] p = accList.getIntArray(i);
+            int[] p = accList.getIntArray(i).orElse(new int[0]);
             if (p.length == 3) {
                 nbtValveList.add(new BlockPos(p[0], p[1], p[2]));
             }
@@ -457,12 +457,12 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
         tag.putInt("multiBlockY", multiBlockY);
         tag.putInt("multiBlockZ", multiBlockZ);
         tag.putInt("multiBlockSize", multiBlockSize);
-        tag.put("itemsInChamber", itemsInChamber.serializeNBT(provider));
-        tag.put("craftedItems", craftedItems.serializeNBT(provider));
+        tag.put("itemsInChamber", me.desht.pneumaticcraft.compat.NbtCompat.save(itemsInChamber, provider));
+        tag.put("craftedItems", me.desht.pneumaticcraft.compat.NbtCompat.save(craftedItems, provider));
 
         // Write the accessory valve list to NBT
         ListTag accList = accessoryValves.stream()
-                .map(valve -> NbtUtils.writeBlockPos(valve.getBlockPos()))
+                .<net.minecraft.nbt.Tag>map(valve -> new net.minecraft.nbt.IntArrayTag(new int[] { valve.getBlockPos().getX(), valve.getBlockPos().getY(), valve.getBlockPos().getZ() }))
                 .collect(Collectors.toCollection(ListTag::new));
         tag.put("Valves", accList);
     }

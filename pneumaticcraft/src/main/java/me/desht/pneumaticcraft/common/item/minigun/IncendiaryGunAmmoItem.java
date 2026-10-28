@@ -30,11 +30,6 @@ import net.minecraft.world.phys.BlockHitResult;
 public class IncendiaryGunAmmoItem extends AbstractGunAmmoItem {
 
     @Override
-    public int getMaxDamage(ItemStack stack) {
-        return ConfigHelper.common().minigun.incendiaryAmmoCartridgeSize.get();
-    }
-
-    @Override
     public int getAmmoColor(ItemStack ammo) {
         return 0x00FF8000;
     }

@@ -106,7 +106,7 @@ public abstract class AbstractLogisticsFrameItem extends SemiblockItem {
                         .append(":").withStyle(ChatFormatting.YELLOW));
 
                 ItemStackHandler handler = new ItemStackHandler();
-                handler.deserializeNBT(provider, tag.getCompound(AbstractLogisticsFrameEntity.NBT_ITEM_FILTERS));
+                me.desht.pneumaticcraft.compat.NbtCompat.load(handler, provider, tag.getCompoundOrEmpty(AbstractLogisticsFrameEntity.NBT_ITEM_FILTERS));
                 List<ItemStack> stacks = new ArrayList<>();
                 for (int i = 0; i < handler.getSlots(); i++) {
                     if (!handler.getStackInSlot(i).isEmpty()) stacks.add(handler.getStackInSlot(i));
@@ -123,7 +123,7 @@ public abstract class AbstractLogisticsFrameItem extends SemiblockItem {
                 curInfo.add(xlate("pneumaticcraft.gui.logistics_frame." + (whitelist ? "fluidWhitelist" : "fluidBlacklist"))
                         .append(":").withStyle(ChatFormatting.YELLOW));
 
-                FluidFilter.CODEC.parse(provider.createSerializationContext(NbtOps.INSTANCE), tag.getCompound(AbstractLogisticsFrameEntity.NBT_FLUID_FILTERS))
+                FluidFilter.CODEC.parse(provider.createSerializationContext(NbtOps.INSTANCE), tag.getCompoundOrEmpty(AbstractLogisticsFrameEntity.NBT_FLUID_FILTERS))
                         .ifSuccess(fluidFilter -> {
                             for (int i = 0; i < fluidFilter.size(); i++) {
                                 FluidStack fluid = fluidFilter.getFluid(i);

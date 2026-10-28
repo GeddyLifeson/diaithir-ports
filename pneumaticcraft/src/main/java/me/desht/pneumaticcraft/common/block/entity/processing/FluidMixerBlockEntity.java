@@ -178,14 +178,14 @@ public class FluidMixerBlockEntity extends AbstractAirHandlingBlockEntity implem
     protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.saveLegacy(tag, provider);
 
-        tag.put("Items", outputInv.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(outputInv, provider));
     }
 
     @Override
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        outputInv.deserializeNBT(provider, tag.getCompound("Items"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(outputInv, provider, tag.getCompoundOrEmpty("Items"));
     }
 
     @Override

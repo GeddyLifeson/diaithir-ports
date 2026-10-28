@@ -68,7 +68,7 @@ public class GPSToolItem extends Item implements IPositionProvider, IGPSToolSync
     }
 
     private static void displayPosition(Player player, ItemStack itemInHand, BlockPos pos, boolean actionBar) {
-        player.displayClientMessage(itemInHand.getDisplayName().copy().withStyle(ChatFormatting.AQUA)
+        me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.displayMessage(player, itemInHand.getDisplayName().copy().withStyle(ChatFormatting.AQUA)
                         .append(" ")
                         .append(Component.translatable("pneumaticcraft.message.gps_tool.targetSet",
                                 pos.getX(), pos.getY(), pos.getZ()).withStyle(ChatFormatting.GREEN)), actionBar);
@@ -109,7 +109,9 @@ public class GPSToolItem extends Item implements IPositionProvider, IGPSToolSync
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean heldItem) {
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel world, Entity entity, net.minecraft.world.entity.EquipmentSlot equipmentSlot__) {
+        int slot = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.slotOf(entity, stack);
+        boolean heldItem = equipmentSlot__ == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         String var = getVariable(stack);
         if (!var.isEmpty() && !world.isClientSide() && entity instanceof Player) {
             getGPSLocation(entity.getUUID(), stack).ifPresent(curPos -> {

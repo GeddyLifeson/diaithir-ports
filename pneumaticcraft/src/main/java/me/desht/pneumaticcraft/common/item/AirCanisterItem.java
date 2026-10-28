@@ -78,7 +78,9 @@ public class AirCanisterItem extends PressurizableItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+    public void inventoryTick(ItemStack pStack, net.minecraft.server.level.ServerLevel pLevel, Entity pEntity, net.minecraft.world.entity.EquipmentSlot equipmentSlot__) {
+        int pSlotId = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.slotOf(pEntity, pStack);
+        boolean pIsSelected = equipmentSlot__ == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         if (pEntity.level().isClientSide()) return;
 
         ChargeMode mode = getChargeMode(pStack);

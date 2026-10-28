@@ -117,7 +117,7 @@ public class GPSAreaToolItem extends Item implements IPositionProvider, IGPSTool
     }
 
     private static void notifyPlayer(Player player, ItemStack stack, BlockPos pos, int index, boolean actionBar) {
-        player.displayClientMessage(Component.literal(ChatFormatting.AQUA + String.format("[%s] ", stack.getHoverName().getString()))
+        me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.displayMessage(player, Component.literal(ChatFormatting.AQUA + String.format("[%s] ", stack.getHoverName().getString()))
                 .append(getMessageText(player.level(), pos, index)), actionBar);
     }
 
@@ -153,7 +153,9 @@ public class GPSAreaToolItem extends Item implements IPositionProvider, IGPSTool
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean heldItem) {
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel world, Entity entity, net.minecraft.world.entity.EquipmentSlot equipmentSlot__) {
+        int slot = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.slotOf(entity, stack);
+        boolean heldItem = equipmentSlot__ == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         if (!world.isClientSide() && entity instanceof Player p) {
             ProgWidgetArea area = getArea(p, stack);
             for (int index = 0; index < 2; index++) {

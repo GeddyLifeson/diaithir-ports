@@ -268,7 +268,7 @@ public class UniversalSensorBlockEntity extends AbstractAirHandlingBlockEntity i
     protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.saveLegacy(tag, provider);
 
-        tag.put("Items", itemHandler.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(itemHandler, provider));
         tag.putString("sensorSetting", sensorSetting);
         tag.putFloat("dishSpeed", dishSpeed);
         tag.putString("sensorText", sensorGuiText);
@@ -279,8 +279,8 @@ public class UniversalSensorBlockEntity extends AbstractAirHandlingBlockEntity i
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        itemHandler.deserializeNBT(provider, tag.getCompound("Items"));
-        setSensorSetting(tag.getString("sensorSetting"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(itemHandler, provider, tag.getCompoundOrEmpty("Items"));
+        setSensorSetting(tag.getStringOr("sensorSetting", ""));
         dishSpeed = tag.getFloatOr("dishSpeed", 0f);
         sensorGuiText = tag.getStringOr("sensorText", "");
         if (tag.contains("playerId")) {

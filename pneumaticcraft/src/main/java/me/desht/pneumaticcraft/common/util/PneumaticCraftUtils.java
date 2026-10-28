@@ -725,4 +725,32 @@ public class PneumaticCraftUtils {
     public static boolean hurt(net.minecraft.world.entity.Entity entity, net.minecraft.world.damagesource.DamageSource source, float amount) {
         return entity.level() instanceof net.minecraft.server.level.ServerLevel sl && entity.hurtServer(sl, source, amount);
     }
+
+    public static net.minecraft.world.item.crafting.RecipeManager recipeManager(net.minecraft.world.level.Level level) {
+        if (level instanceof net.minecraft.server.level.ServerLevel sl) return sl.recipeAccess();
+        throw new IllegalStateException("recipe manager is only available on the server in 26.1");
+    }
+
+    public static void kill(net.minecraft.world.entity.Entity entity) {
+        if (entity.level() instanceof net.minecraft.server.level.ServerLevel sl) entity.kill(sl);
+    }
+
+    public static net.minecraft.world.entity.item.ItemEntity spawnAtLocation(net.minecraft.world.entity.Entity entity, net.minecraft.world.item.ItemStack stack, float offset) {
+        return entity.level() instanceof net.minecraft.server.level.ServerLevel sl ? entity.spawnAtLocation(sl, stack, offset) : null;
+    }
+
+    /** Find the inventory slot of the given exact stack instance in a player's main inventory, or -1 */
+    public static int slotOf(net.minecraft.world.entity.Entity entity, net.minecraft.world.item.ItemStack stack) {
+        if (entity instanceof net.minecraft.world.entity.player.Player player) {
+            var items = player.getInventory().getNonEquipmentItems();
+            for (int i = 0; i < items.size(); i++) {
+                if (items.get(i) == stack) return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void displayMessage(net.minecraft.world.entity.player.Player player, net.minecraft.network.chat.Component message, boolean actionBar) {
+        if (actionBar) player.sendOverlayMessage(message); else player.sendSystemMessage(message);
+    }
 }

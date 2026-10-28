@@ -211,7 +211,7 @@ public class AssemblyControllerBlockEntity extends AbstractAirHandlingBlockEntit
 
         goingToHomePosition = tag.getBooleanOr("goingToHomePosition", false);
         displayedText = tag.getStringOr("displayedText", "");
-        itemHandler.deserializeNBT(provider, tag.getCompound("Items"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(itemHandler, provider, tag.getCompoundOrEmpty("Items"));
         if (!itemHandler.getStackInSlot(PROGRAM_SLOT).isEmpty()) {
             curProgram = AssemblyProgramItem.getProgram(itemHandler.getStackInSlot(PROGRAM_SLOT));
             if (curProgram != null) curProgram.readFromNBT(tag);
@@ -224,7 +224,7 @@ public class AssemblyControllerBlockEntity extends AbstractAirHandlingBlockEntit
         tag.putBoolean("goingToHomePosition", goingToHomePosition);
         tag.putString("displayedText", displayedText);
         if (curProgram != null) curProgram.writeToNBT(tag);
-        tag.put("Items", itemHandler.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(itemHandler, provider));
     }
 
     @Override

@@ -244,7 +244,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
         super.tickClient();
 
         if ((drone == null || !drone.isAlive()) && nonNullLevel().isLoaded(BlockPos.containing(curX, curY, curZ))) {
-            drone = ModEntityTypes.PROGRAMMABLE_CONTROLLER.get().create(nonNullLevel());
+            drone = ModEntityTypes.PROGRAMMABLE_CONTROLLER.get().create(nonNullLevel(), net.minecraft.world.entity.EntitySpawnReason.TRIGGERED);
             if (drone != null) {
                 drone.setController(this);
                 drone.setPos(curX, curY, curZ);
@@ -404,7 +404,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
             shouldUpdateNeighbours = true;
         }
         if (doChunkloadCheck && chunkLoader != null) {
-            chunkLoader.updateLoadedChunks((ServerLevel) level, new ChunkPos(worldPosition));
+            chunkLoader.updateLoadedChunks((ServerLevel) level, net.minecraft.world.level.ChunkPos.containing(worldPosition));
         }
         setChanged();
     }
@@ -472,14 +472,14 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
         super.loadLegacy(tag, provider);
 
         inventory.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
-        tank.readFromNBT(provider, tag.getCompound("tank"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(tank, provider, tag.getCompoundOrEmpty("tank"));
 
         ownerID = tag.contains("ownerID") ? UUID.fromString(tag.getStringOr("ownerID", "")) : FALLBACK_UUID;
         ownerName = Component.literal(tag.contains("ownerName") ? tag.getString("ownerName") : FALLBACK_NAME);
         ownerNameClient = ownerName.getString();
 
         ItemStackHandler tmpInv = new ItemStackHandler();
-        tmpInv.deserializeNBT(provider, tag.getCompound("droneItems"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(tmpInv, provider, tag.getCompoundOrEmpty("droneItems"));
         droneItemHandler.setUseableSlots(tmpInv.getSlots());
         PneumaticCraftUtils.copyItemHandler(tmpInv, droneItemHandler);
 
@@ -503,14 +503,14 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
         tag.put("Items", inventory.serializeNBT(provider));
 
         CompoundTag tankTag = new CompoundTag();
-        tank.writeToNBT(provider, tankTag);
+        tankTag.merge(me.desht.pneumaticcraft.compat.NbtCompat.save(tank, provider));
         tag.put("tank", tankTag);
 
         ItemStackHandler handler = new ItemStackHandler(droneItemHandler.getSlots());
         for (int i = 0; i < droneItemHandler.getSlots(); i++) {
             handler.setStackInSlot(i, droneItemHandler.getStackInSlot(i));
         }
-        tag.put("droneItems", handler.serializeNBT(provider));
+        tag.put("droneItems", me.desht.pneumaticcraft.compat.NbtCompat.save(handler, provider));
 
         if (ownerID != null) tag.putString("ownerID", ownerID.toString());
         if (ownerName != null) tag.putString("ownerName", ownerName.getString());
@@ -544,7 +544,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
         chunkLoader = DynamicChunkLoader.forProgrammableController(this);
 
         if (chunkloadSelf) {
-            chunkLoader.updateLoadedChunks((ServerLevel) nonNullLevel(), new ChunkPos(worldPosition));
+            chunkLoader.updateLoadedChunks((ServerLevel) nonNullLevel(), net.minecraft.world.level.ChunkPos.containing(worldPosition));
         }
     }
 

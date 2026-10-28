@@ -205,7 +205,7 @@ public class SpawnerExtractorBlockEntity extends AbstractAirHandlingBlockEntity
                 return false;
             }
 
-            entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), level.getRandom().nextFloat() * 360.0F, 0.0F);
+            entity.snapTo(entity.getX(), entity.getY(), entity.getZ(), level.getRandom().nextFloat() * 360.0F, 0.0F);
             if (entity instanceof Mob mobentity) {
                 if (nbt.size() == 1 && nbt.contains("id")) {
                     EventHooks.finalizeMobSpawnSpawner(mobentity, serverworld, serverworld.getCurrentDifficultyAt(getPosition()), EntitySpawnReason.SPAWNER, null, this, true);

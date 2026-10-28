@@ -79,8 +79,6 @@ import net.minecraft.world.phys.HitResult;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.CommonHooks;
-import net.neoforged.neoforge.common.ItemAbilities;
-import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
@@ -104,13 +102,6 @@ public class JackHammerItem extends PressurizableItem
             4f,
             4.16227766016838f
     };
-
-    private static final Set<ItemAbility> JACKHAMMER_ABILITIES = Set.of(
-            ItemAbilities.AXE_DIG,
-            ItemAbilities.PICKAXE_DIG,
-            ItemAbilities.SHOVEL_DIG,
-            ItemAbilities.SWORD_DIG
-    );
 
     private static long lastModeSwitchTime; // client-side: when player last scrolled to change mode
 
@@ -147,13 +138,7 @@ public class JackHammerItem extends PressurizableItem
 
     @Override
     public boolean isCorrectToolForDrops(ItemStack stack, BlockState state) {
-        return !state.is(getDrillBit(stack).getTier().getIncorrectBlocksForDrops());
-    }
-
-    @Override
-    public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
-        return JACKHAMMER_ABILITIES.contains(itemAbility)
-                && PNCCapabilities.getAirHandler(stack).map(h -> h.getPressure() > 0.1f).orElse(false);
+        return !state.is(getDrillBit(stack).getTier().incorrectBlocksForDrops());
     }
 
     @Override
@@ -191,7 +176,7 @@ public class JackHammerItem extends PressurizableItem
                             BlockState state1 = level.getBlockState(pos1);
                             if (state1.getDestroySpeed(level, pos1) < 0) continue;
 
-                            BlockEvent.BreakEvent breakEvent = CommonHooks.fireBlockBreak(serverPlayer.level(), serverPlayer.gameMode.getGameModeForPlayer(), serverPlayer, pos1, state1);
+                            net.neoforged.neoforge.event.level.block.BreakBlockEvent breakEvent = CommonHooks.fireBlockBreak(serverPlayer.level(), serverPlayer.gameMode.getGameModeForPlayer(), serverPlayer, pos1, state1);
                             if (breakEvent.isCanceled()) {
                                 continue;
                             }
@@ -200,7 +185,7 @@ public class JackHammerItem extends PressurizableItem
                             }
                             Block block = state1.getBlock();
                             state1 = block.playerWillDestroy(level, pos1, state1, serverPlayer);
-                            boolean removed = state1.onDestroyedByPlayer(level, pos1, serverPlayer, true, level.getFluidState(pos1));
+                            boolean removed = state1.onDestroyedByPlayer(level, pos1, serverPlayer, stack, true, level.getFluidState(pos1));
                             if (removed) {
                                 block.destroy(level, pos1, state1);
                                 if (magnet) {

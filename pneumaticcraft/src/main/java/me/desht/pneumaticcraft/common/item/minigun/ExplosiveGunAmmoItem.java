@@ -33,11 +33,6 @@ import static me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.xlate;
 
 public class ExplosiveGunAmmoItem extends AbstractGunAmmoItem {
     @Override
-    public int getMaxDamage(ItemStack stack) {
-        return ConfigHelper.common().minigun.explosiveAmmoCartridgeSize.get();
-    }
-
-    @Override
     public int getAmmoColor(ItemStack ammo) {
         return 0x00FF0000;
     }

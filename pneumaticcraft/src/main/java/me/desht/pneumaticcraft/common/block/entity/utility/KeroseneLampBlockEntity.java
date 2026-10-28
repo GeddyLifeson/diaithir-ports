@@ -323,7 +323,7 @@ public class KeroseneLampBlockEntity extends AbstractTickingBlockEntity implemen
                 .ifPresent(t -> tag.put("lights", t));
         tag.putByte("targetRange", (byte) targetRange);
         tag.putByte("range", (byte) range);
-        tag.put("Items", inventory.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(inventory, provider));
     }
 
     @Override
@@ -337,7 +337,7 @@ public class KeroseneLampBlockEntity extends AbstractTickingBlockEntity implemen
         targetRange = tag.getByteOr("targetRange", (byte)0);
         range = tag.getByteOr("range", (byte)0);
         rangeSq = range * range;
-        inventory.deserializeNBT(provider, tag.getCompound("Items"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(inventory, provider, tag.getCompoundOrEmpty("Items"));
     }
 
     @Override

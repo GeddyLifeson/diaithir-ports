@@ -52,7 +52,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.entity.player.AnvilRepairEvent;
 import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
 
 import java.util.List;
@@ -64,18 +63,9 @@ public class MicromissilesItem extends Item {
         super(ModItems.defaultProps()
                 .stacksTo(1)
                 .durability(100)
+                .repairable(Blocks.TNT.asItem())
                 .component(ModDataComponents.MICROMISSILE_SETTINGS, Settings.DEFAULT)
         );
-    }
-
-    @Override
-    public int getMaxDamage(ItemStack stack) {
-        return ConfigHelper.common().micromissiles.missilePodSize.get();
-    }
-
-    @Override
-    public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return toRepair.getItem() == this && repair.getItem() == Blocks.TNT.asItem();
     }
 
     @Override
@@ -98,7 +88,7 @@ public class MicromissilesItem extends Item {
         missile.setPos(newPos.x, newPos.y, newPos.z);
         missile.shootFromRotation(playerIn, playerIn.getXRot(), playerIn.getYRot(), 0.0F, getInitialVelocity(stack), 0.0F);
 
-        playerIn.getCooldowns().addCooldown(this, ConfigHelper.common().micromissiles.launchCooldown.get());
+        playerIn.getCooldowns().addCooldown(stack, ConfigHelper.common().micromissiles.launchCooldown.get());
 
         if (playerIn.level() instanceof ServerLevel serverLevel) {
             HitResult res = RayTraceUtils.getMouseOverServer(playerIn, 100);
@@ -160,17 +150,6 @@ public class MicromissilesItem extends Item {
 
     public static FireMode getFireMode(ItemStack stack) {
         return stack.getOrDefault(ModDataComponents.MICROMISSILE_SETTINGS, Settings.DEFAULT).fireMode();
-    }
-
-    @EventBusSubscriber(modid = Names.MOD_ID)
-    public static class Listener {
-        @SubscribeEvent
-        public static void onMissilesRepair(AnvilRepairEvent event) {
-            // allow repeated repairing without XP costs spiralling
-            if (event.getOutput().getItem() instanceof MicromissilesItem) {
-                event.getOutput().set(DataComponents.REPAIR_COST, 0);
-            }
-        }
     }
 
     public record Tooltip(ItemStack stack) implements TooltipComponent {

@@ -200,7 +200,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
                 removeTrustedUser(name);
             } else if (tag.startsWith("add:") && isOwner(player)) {
                 String name = tag.split(":", 2)[1];
-                PneumaticCraftUtils.getProfileForName(player.getServer(), name).ifPresent(this::addTrustedUser);
+                PneumaticCraftUtils.getProfileForName(player.level().getServer(), name).ifPresent(this::addTrustedUser);
             }
         } else if (player.containerMenu instanceof SecurityStationHackingMenu && isPlayerHacking(player)) {
             if (tag.equals("end_test") && simulationController.isJustTesting()) {
@@ -259,7 +259,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
                 simulationController.getSimulation(HackingSide.AI).applyStopWorm(r);
             } else {
                 // client is lying about how many stop worms they have!
-                player.kill();
+                me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.kill(player);
             }
         }
     }
@@ -271,7 +271,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
                 simulationController.getSimulation(HackingSide.PLAYER).initiateNukeVirus(nodePos);
             } else {
                 // client is lying about how many nuke viruses they have!
-                player.kill();
+                me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.kill(player);
             }
         } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             Log.warning("security station @ {}: ignoring bad message {}} from {}}",
@@ -292,7 +292,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     }
 
     private void removeTrustedUser(String name) {
-        sharedUsers.removeIf(prof -> name.equals(prof.getName()));
+        sharedUsers.removeIf(prof -> name.equals(prof.name()));
         sendDescriptionPacket();
     }
 
@@ -310,7 +310,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     private boolean gameProfileEquals(GameProfile profile1, GameProfile profile2) {
         return profile1.getId() != null && profile2.getId() != null ?
                 profile1.getId().equals(profile2.getId()) :
-                profile1.getName().equals(profile2.getName());
+                profile1.name().equals(profile2.name());
     }
 
     public boolean isHacked() {
@@ -360,7 +360,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
         ListTag res = new ListTag();
         for (GameProfile profile : profiles) {
             res.add(Util.make(new CompoundTag(), t -> {
-                t.putString("name", profile.getName());
+                t.putString("name", profile.name());
                 t.putString("uuid", profile.getId().toString());
             }));
         }
@@ -766,7 +766,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
             if (event.getEntity() instanceof ServerPlayer player && event.getContainer() instanceof SecurityStationHackingMenu menu) {
                 SecurityStationBlockEntity teSS = menu.blockEntity;
                 if (teSS.getSimulationController() != null && teSS.getSimulationController().isJustTesting()) {
-                    MinecraftServer server = player.getServer();
+                    MinecraftServer server = player.level().getServer();
                     if (server != null) {
                         // deferring is important to avoid infinite close/open loop
                         server.tell(new TickTask(server.getTickCount(), () -> player.openMenu(teSS, teSS.getBlockPos())));

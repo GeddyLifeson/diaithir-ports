@@ -55,8 +55,9 @@ public class ModVillagers {
     private static VillagerProfession register(Identifier name, DeferredHolder<PoiType, PoiType> poi, SoundEvent sound) {
         ResourceKey<PoiType> poiName = Objects.requireNonNull(poi.getKey());
         return new VillagerProfession(
-                name.toString(), holder -> holder.is(poiName), holder -> holder.is(poiName),
-                ImmutableSet.of(), ImmutableSet.of(), sound
+                net.minecraft.network.chat.Component.translatable("entity." + name.getNamespace() + ".villager." + name.getPath()),
+                holder -> holder.is(poiName), holder -> holder.is(poiName),
+                ImmutableSet.of(), ImmutableSet.of(), sound, new it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap<>()
         );
     }
 

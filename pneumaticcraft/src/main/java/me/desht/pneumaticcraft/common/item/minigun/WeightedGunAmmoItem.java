@@ -24,11 +24,6 @@ import net.minecraft.world.item.ItemStack;
 
 public class WeightedGunAmmoItem extends AbstractGunAmmoItem {
     @Override
-    public int getMaxDamage(ItemStack stack) {
-        return ConfigHelper.common().minigun.weightedAmmoCartridgeSize.get();
-    }
-
-    @Override
     public int getAmmoColor(ItemStack ammo) {
         return 0x00404040;
     }

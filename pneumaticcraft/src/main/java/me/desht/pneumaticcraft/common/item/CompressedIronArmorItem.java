@@ -21,7 +21,6 @@ import me.desht.pneumaticcraft.common.registry.ModArmorMaterials;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.ArmorType;
 import me.desht.pneumaticcraft.common.registry.ModItems;
-import net.minecraft.world.item.ArmorItem;
 
 public class CompressedIronArmorItem extends Item {
     public CompressedIronArmorItem(ArmorType type) {

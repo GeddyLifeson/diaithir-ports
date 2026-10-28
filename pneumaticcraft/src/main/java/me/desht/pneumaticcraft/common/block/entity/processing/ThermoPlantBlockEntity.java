@@ -278,8 +278,8 @@ public class ThermoPlantBlockEntity extends AbstractAirHandlingBlockEntity imple
     protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.saveLegacy(tag, provider);
 
-        tag.put("Items", inputItemHandler.serializeNBT(provider));
-        tag.put("Output", outputItemHandler.serializeNBT(provider));
+        tag.put("Items", me.desht.pneumaticcraft.compat.NbtCompat.save(inputItemHandler, provider));
+        tag.put("Output", me.desht.pneumaticcraft.compat.NbtCompat.save(outputItemHandler, provider));
         tag.putFloat("craftingProgress", craftingProgress);
     }
 
@@ -287,8 +287,8 @@ public class ThermoPlantBlockEntity extends AbstractAirHandlingBlockEntity imple
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        inputItemHandler.deserializeNBT(provider, tag.getCompound("Items"));
-        outputItemHandler.deserializeNBT(provider, tag.getCompound("Output"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(inputItemHandler, provider, tag.getCompoundOrEmpty("Items"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(outputItemHandler, provider, tag.getCompoundOrEmpty("Output"));
         craftingProgress = tag.getFloatOr("craftingProgress", 0f);
     }
 
