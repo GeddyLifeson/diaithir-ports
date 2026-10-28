@@ -18,7 +18,7 @@ by tools/convert_*.py. Client item definitions and equipment assets by tools/gen
 
 ## Cut from the first release
 - Mixins (frostmint freeze on any mob now uses vanilla powder-snow freeze ticks), tick-rate tracker.
-- Cave-map items and recipe, advanced pathfinding, villager trades, Saddleable and PowerableMob behaviours, frog variant data, custom collide overrides.
+- Advanced pathfinding, villager trades, Saddleable and PowerableMob behaviours, frog variant data, custom collide overrides.
 - Particle providers, block-entity renderers, GUIs, shaders, minigame and warning screens.
 
 ## World generation (Tellus Earth)
@@ -31,7 +31,26 @@ Data is produced by tools/gen_chambers.py. Six biomes: primordial_caves, forlorn
 ## Client
 All 83 entity renderers use the real upstream models through the Citadel legacy bridge (client/model, client/render/entity, tools/client_port*.py).
 Ported and checked in the dev client: particles, GUIs (spelunkery, Nuclear Furnace, Cave Book), block entity renderers, armour, potion layer, core shaders (ACRenderPipelines), post effects (ACPostEffects), Sack of Sating tooltip.
-Still quarantined: cave map renderers, Raygun beam helper, ACItemRenderProperties/ACItemstackRenderer/ACArmorRenderProperties, advancement tabs, ColorBlitHelper, BakedModelShadeLayerFullbright, ACInternalShaders, ClientLayerRegistry (blurred glow composite targets).
+Round 2 (ported, in-game checked unless noted):
+- Raygun beam: `client/render/misc/RaygunBeam` (two spinning crossed double-sided ribbons, `RenderTypes.eyes`). Third person is submitted from `ACPotionEffectLayer`, first person from `RenderLevelStageEvent.AfterTranslucentFeatures` (the local player model is not drawn in first person). Fix needed: 26.1 `Item.inventoryTick` is server-only and `getUseItem()` is a copy, so the client UseTime never advanced; `ClientTickingItem` (Raygun, Dreadbow, Galena Gauntlet, Resistor Shield) is now ticked from `ClientEvents.clientLivingTick`, and the use checks compare the hand stack by identity (also Sea Staff).
+- Darkness trail ribbon (`ACPotionEffectLayer.submitTrail`).
+- HUD: `client/gui/ACHud` through `RegisterGuiLayersEvent` (riding meters, darkness armour meter, irradiated hearts).
+- Cave map: server `CaveBiomeMapWorldWorker` (time-budgeted by `CaveMapWorkers` on `ServerTickEvent.Post`), `RecipeCaveMap` (8 paper around a Cave Codex, `alexscaves:cave_map` custom recipe), item model chain on `custom_model_data` flags (empty, loading, filled), `CaveMapRenderer` plus `CaveMapSpecialRenderer` (128x128 dynamic texture from the per-biome background pngs, borders, labels, player marker). Verified end to end with a vanilla-biome target (search, fill, rendered texture and labels, no magenta); the magnetic caves target failed to find a biome within the search radius of the test spawn, which is the intended "could not find" path.
+- Biome fog: `ClientEvents.fogRender` scales atmospheric near and water far distance by the biome's nearness/farness (config gated). Not visually checked.
+- Emissive blocks: `BakedModelShadeLayerFullbright` replaced by `"light_emission": 15` on the unshaded elements of 18 block models (ambersol, uranium, abyssal altar, glow models, peering coprolith, forsaken idol, magnetic light, tremorzilla egg). The `emissiveBlockModels` config is ignored. Not visually checked (placement attempt ended up under terrain).
+
+Fallbacks for what is not ported, per item:
+- ACItemRenderProperties, ACItemstackRenderer: superseded by `LegacyItemSpecialRenderer` / `ACLegacyItemRenderer` (item definitions with `minecraft:special`). Nothing lost.
+- ACArmorRenderProperties: superseded by `CustomArmorLayer` and equipment assets.
+- ClientLayerRegistry: replaced by the AddLayers registration in `ClientModEvents`. ACInternalShaders: replaced by `ACRenderPipelines`.
+- ColorBlitHelper: the Cave Book draws itself, no shader needed.
+- Advancement tabs: upstream draws custom tab backgrounds with mixins into `AdvancementTab`; there is no mixin setup in this module, so vanilla tabs with the data `background` are the shipped fallback.
+- Blurred glow composite targets (ClientLayerRegistry glow passes, Raygun irradiated second-pass glow): these need extra render targets and a blur chain through `FrameGraphSetupEvent`; not ported. Fallback is direct emissive and translucent render types, so glows are sharp instead of bloomed.
+- Raygun and cave-map hand poses (`EventPosePlayerHand`, one and two-handed map poses): not ported, vanilla hold pose is used; the held map is a flat quad.
+- Biome sky overrides (hiding sun, stars, clouds in cave biomes) and lightmap ambient overrides: not ported; the biome JSON `attributes` could carry them. The boss-bar overlay and the crosshair/xp suppression while possessed are not ported either.
+- Item model of an unfilled cave map shows as an empty hand in first person (hotbar icon is fine).
+- Hologram, corrodent, licowitch and ambersol batch rendering at level stages: unchanged from before.
+- Quarantine now holds only what is listed above.
 
 ## Structures
 Upstream sizes its structures by sampling a 3D cave biome source. There is none here, so `structure/CaveMaskBiomeSource` stands in for it: a
