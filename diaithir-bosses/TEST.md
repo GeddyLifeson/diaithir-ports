@@ -12,3 +12,5 @@ Random effective-health failures came from Dwarfs and Giants (random size stage,
 
 ## Health stacking guard (Elites.normaliseHealth)
 Champion Age health bonus adds to other mods' health changes (Dwarfs and Giants size, Remnants level/rank) instead of multiplying; total capped by max_combined_health_multiplier (elites.json). Full pack (srv-fix2, ports 27871/27872, Remnants levels.json from mod-ports/pack-config): bossesselftest ok=1488 bad=0, including synthetic cases (7) and 60 live zombies joined with the real mods (foreign factor x0.70 to x16.00, 35 not at x1 so the variety is kept; the plain product would have exceeded the cap of 4.0 in 2 cases and reached x21.76).
+
+Update: cap_other_mods (default true) also caps other mods' rolls at max_combined_health_multiplier; Remnants ranks.json health lowered (pack-config). bossesselftest ok=1476 bad=0; live 60 zombies foreign x0.60..x2.85 (the cap was not reached live with the new configs; the x9 synthetic case reaches it and passes), every champion total asserted <= 4.0.

@@ -22,6 +22,7 @@
  ],
  "extra_hp_per_age": 0.06,
  "additive_stacking": true,
+ "cap_other_mods": true,
  "max_combined_health_multiplier": 4.0,
  "xp_multiplier": 3.0,
  "token": {

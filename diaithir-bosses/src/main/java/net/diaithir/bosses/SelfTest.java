@@ -310,10 +310,10 @@ public final class SelfTest {
             double factor = (1 + c[1]) * (1 + c[0]);
             Elites.make(m, 7, r, List.of());
             double ratio = Elites.normaliseHealth(m);
-            double expect = Math.min(factor + want, Math.max(factor, cap));
+            double expect = Math.min(factor + want, cap);
             String tag = "stacking (size " + c[0] + ", level " + c[1] + "): foreign x" + factor + " + Age " + want + " -> x" + String.format("%.3f", ratio) + " (expect " + String.format("%.3f", expect) + ", product would be " + String.format("%.3f", factor * (1 + want)) + ")";
             check(Math.abs(ratio - expect) < 0.01, tag);
-            check(ratio <= Math.max(factor, cap) + 0.01, "stacking cap holds, case " + c[0] + "/" + c[1]);
+            check(ratio <= cap + 0.01, "stacking cap holds, case " + c[0] + "/" + c[1]);
             double again = Elites.normaliseHealth(m);
             check(Math.abs(again - ratio) < 0.001, "normalising twice changes nothing, case " + c[0] + "/" + c[1]);
             check(m.getHealth() <= m.getMaxHealth(), "health within max, case " + c[0] + "/" + c[1]);
@@ -325,7 +325,7 @@ public final class SelfTest {
     private static void stackingLive(ServerLevel level, BlockPos c0, RandomSource r) {
         Ages.forced = 7;
         double want = Data.elites().extra_hp_per_age * 6, cap = Data.elites().max_combined_health_multiplier;
-        double lo = 1e9, hi = 0, sum = 0, worstProduct = 0;
+        double lo = 1e9, hi = 0, sum = 0, worstProduct = 0, maxMult = 0;
         int n = 60, varied = 0, multiplicativeWouldBreakCap = 0;
         for (int i = 0; i < n; i++) {
             Mob m = (Mob) EntityType.ZOMBIE.spawn(level, c0.offset(20, 1, i % 7), EntitySpawnReason.NATURAL);
@@ -336,13 +336,13 @@ public final class SelfTest {
             Elites.make(m, 7, r, List.of());
             double mult = Elites.normaliseHealth(m);
             double product = factor * (1 + want);
-            lo = Math.min(lo, factor); hi = Math.max(hi, factor); sum += mult;
+            lo = Math.min(lo, factor); hi = Math.max(hi, factor); sum += mult; maxMult = Math.max(maxMult, mult);
             if (Math.abs(factor - 1) > 0.01) varied++;
             if (product > cap + 0.01) multiplicativeWouldBreakCap++;
             worstProduct = Math.max(worstProduct, product);
-            check(mult <= Math.max(factor, cap) + 0.01, "live stacking: x" + mult + " within cap (foreign x" + factor + ")");
+            check(mult <= cap + 0.01, "live stacking: x" + mult + " within cap (foreign x" + factor + ")");
             check(factor < 1 || mult <= product + 0.01, "live stacking: x" + mult + " is not above the product x" + product + " (shrunk mobs get the full Age bonus on their own size)");
-            check(mult >= factor - 0.01, "live stacking: the other mods' variety is kept (x" + factor + " -> x" + mult + ")");
+            check(mult >= Math.min(factor, cap) - 0.01, "live stacking: the other mods' variety is kept (x" + factor + " -> x" + mult + ")");
             m.discard();
         }
         System.out.println("[bossesselftest] live stacking over " + n + " zombies: foreign factor x" + String.format("%.2f", lo) + " to x" + String.format("%.2f", hi)

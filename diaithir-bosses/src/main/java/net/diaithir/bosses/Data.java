@@ -94,6 +94,8 @@ public final class Data {
         public double extra_hp_per_age = 0.05, xp_multiplier = 3;
         /** Health bonuses of other mods (Dwarfs and Giants size, Remnants level) and our Age bonus add up instead of multiplying; 0 turns the guard off. */
         public boolean additive_stacking = true;
+        /** The ceiling also applies when other mods' rolls alone are above it (our modifier goes negative to bring the total down). */
+        public boolean cap_other_mods = true;
         /** Ceiling for the champion's total max health over its base value, all mods together. 0 = no ceiling. */
         public double max_combined_health_multiplier = 4.0;
         public Token token;

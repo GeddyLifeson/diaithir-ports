@@ -50,8 +50,11 @@ public final class Elites {
         double others = mh.getValue();
         double factor = base > 0 ? others / base : 1;
         double total = t.additive_stacking ? factor + want : factor * (1 + want);
-        if (t.max_combined_health_multiplier > 0) total = Math.min(total, Math.max(factor, t.max_combined_health_multiplier));
-        double amount = others > 0 ? Math.max(0, base * total / others - 1) : 0;
+        if (t.max_combined_health_multiplier > 0) total = Math.min(total, t.cap_other_mods ? t.max_combined_health_multiplier : Math.max(factor, t.max_combined_health_multiplier));
+        // a negative amount shrinks a mob whose other-mod factor alone is above the cap; shrunk mobs (factor < 1) are never lifted past their own sum
+        double amount = others > 0 ? base * total / others - 1 : 0;
+        if (!t.cap_other_mods) amount = Math.max(0, amount);
+        amount = Math.max(amount, -0.95);
         boolean full = mob.getHealth() >= mob.getMaxHealth() - 0.01F;
         mh.addPermanentModifier(new AttributeModifier(AGE_HP, amount, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         if (full) mob.setHealth(mob.getMaxHealth()); else mob.setHealth(Math.min(mob.getHealth(), mob.getMaxHealth()));
