@@ -19,7 +19,7 @@ neoForge {
 }
 
 def genResources = tasks.register('genResources', Exec) {
-    inputs.files('tools/gen.py', 'src/main/resources/data/diaithirwoodvariants/woods.json')
+    inputs.files('tools/gen.py', 'tools/names_native.json', 'src/main/resources/data/diaithirwoodvariants/woods.json')
     outputs.dir(layout.buildDirectory.dir('generated/resources'))
     commandLine 'python3', '-I', 'tools/gen.py', layout.buildDirectory.dir('generated/resources').get().asFile.absolutePath
 }
