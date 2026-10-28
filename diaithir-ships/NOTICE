@@ -1,0 +1,7 @@
+Diaithir Ships (Valkyrien Skies 2 + Eureka port for Minecraft 26.1.2 / NeoForge)
+
+Components and licences
+- Valkyrien Skies 2 mod layer (org.valkyrienskies.mod): GNU LGPL v3, see LICENSE. Source: https://github.com/ValkyrienSkies/Valkyrien-Skies-2 (branch 1.21.1/main) with the changes in this repository.
+- Eureka (org.valkyrienskies.eureka): Apache-2.0, see NOTICE-Eureka and LICENSE-Eureka-Apache-2.0.
+- Valkyrien Skies core (org.valkyrienskies.core api/impl/internal/util 1.1.0+9ca3f9139c, from https://maven.valkyrienskies.org, incl. the Krunch native libraries): the published jars carry the Apache License 2.0 (META-INF/LICENSE.txt, reproduced in LICENSE-vs-core-Apache-2.0). Their source is not published by us; the binaries are redistributed unmodified.
+- Bundled jar-in-jar libraries, each under its own licence: Kotlin stdlib/reflect and kotlinx-coroutines (Apache-2.0), Jackson (Apache-2.0), SnakeYAML (Apache-2.0), jackson-kotlin-dsl (Apache-2.0), networknt json-schema-validator (Apache-2.0), ethlo itu (MIT), JOML primitives (MIT), javax.inject (Apache-2.0).

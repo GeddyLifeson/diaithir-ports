@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
 issueTrackerURL = "https://github.com/ValkyrienSkies/Valkyrien-Skies-2/issues"
-license = "Apache-2.0"
+license = "LGPL-3.0-only AND Apache-2.0"
 
 [[mods]]
 modId = "valkyrienskies"
