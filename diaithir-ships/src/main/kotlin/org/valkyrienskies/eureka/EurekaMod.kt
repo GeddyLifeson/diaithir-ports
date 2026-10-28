@@ -21,6 +21,9 @@ object EurekaMod {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, spec, "vs_eureka-server.toml")
         bus.addListener<net.neoforged.fml.event.config.ModConfigEvent.Loading> { if (it.config.spec === spec) EurekaConfig.apply() }
         bus.addListener<net.neoforged.fml.event.config.ModConfigEvent.Reloading> { if (it.config.spec === spec) EurekaConfig.apply() }
+        ValkyrienSkiesMod.vsCore.shipLoadEvent.on { event ->
+            org.valkyrienskies.eureka.ship.EurekaShipControl.pending.remove(event.ship.id)?.let { event.ship.setAttachment(it) }
+        }
         ValkyrienSkiesMod.vsCore.registerAttachment(org.valkyrienskies.eureka.ship.EurekaShipControl::class.java)
     }
 

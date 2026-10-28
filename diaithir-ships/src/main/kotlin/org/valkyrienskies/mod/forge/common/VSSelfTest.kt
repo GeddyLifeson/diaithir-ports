@@ -6,6 +6,9 @@ import net.minecraft.world.level.block.Blocks
 import net.neoforged.neoforge.event.tick.ServerTickEvent
 import org.slf4j.LoggerFactory
 import org.valkyrienskies.mod.common.shipObjectWorld
+import org.valkyrienskies.eureka.ship.eurekaControl
+import org.valkyrienskies.mod.common.getShipManagingPos
+import org.valkyrienskies.mod.common.getShipObjectManagingPos
 import org.valkyrienskies.mod.common.yRange
 import org.valkyrienskies.core.api.ships.ServerShip
 import org.valkyrienskies.mod.common.assembly.ShipAssembler
@@ -20,6 +23,31 @@ object VSSelfTest {
     private val log = LoggerFactory.getLogger("VS2-selftest")
     private var ship: ServerShip? = null
     private var startY = 0.0
+    private var mockPlayer: net.minecraft.server.level.ServerPlayer? = null
+    private var eurekaShip: ServerShip? = null
+
+    /** Registry/recipe checks for the merged Eureka content plus a helm-built ship. */
+    private fun eurekaTest(server: net.minecraft.server.MinecraftServer, level: net.minecraft.server.level.ServerLevel) {
+        val blocks = net.minecraft.core.registries.BuiltInRegistries.BLOCK.keySet().filter { it.namespace == "vs_eureka" }
+        val items = net.minecraft.core.registries.BuiltInRegistries.ITEM.keySet().filter { it.namespace == "vs_eureka" }
+        val recipes = server.recipeManager.recipes.filter { it.id().identifier().namespace == "vs_eureka" }
+        log.info("selftest-eureka: blocks={} items={} recipes={} beTypes={} menus={}", blocks.size, items.size, recipes.size,
+            net.minecraft.core.registries.BuiltInRegistries.BLOCK_ENTITY_TYPE.keySet().filter { it.namespace == "vs_eureka" }.size,
+            net.minecraft.core.registries.BuiltInRegistries.MENU.keySet().filter { it.namespace == "vs_eureka" }.size)
+        val E = { n: String -> net.minecraft.core.registries.BuiltInRegistries.BLOCK.getValue(net.minecraft.resources.Identifier.fromNamespaceAndPath("vs_eureka", n)).defaultBlockState() }
+        for (x in 10..12) for (z in 10..12) level.setBlock(BlockPos(x, 121, z), Blocks.OAK_PLANKS.defaultBlockState(), 3)
+        val helm = BlockPos(11, 122, 11)
+        level.setBlock(helm, E("oak_ship_helm"), 3)
+        level.setBlock(BlockPos(11, 123, 11), E("balloon"), 3)
+        level.setBlock(BlockPos(12, 122, 11), E("floater"), 3)
+        level.setBlock(BlockPos(10, 122, 11), E("engine"), 3)
+        val be = level.getBlockEntity(helm) as? org.valkyrienskies.eureka.blockentity.ShipHelmBlockEntity
+        log.info("selftest-eureka: helm blockentity={}", be)
+        be?.assemble(mockPlayer!!)
+        val s = shipWorldOf(level).allShips.filter { it.id != ship?.id }.maxByOrNull { it.id }
+        eurekaShip = s
+        log.info("selftest-eureka: helm ship={} control={}", s?.id, s?.eurekaControl()?.let { c -> "helms=" + c.helms + " balloons=" + c.balloons + " floaters=" + c.floaters })
+    }
 
     /** Forces every mixin target class named by the common/forge mixin configs to load so mixin application errors surface. */
     private fun preloadMixinTargets() {
@@ -78,9 +106,11 @@ object VSSelfTest {
                 io.netty.channel.embedded.EmbeddedChannel(connection)
                 net.neoforged.neoforge.network.registration.ChannelAttributes.getOrCreateAdHocChannels(connection).add(VSPacket.VS_PACKET_RL)
                 server.playerList.placeNewPlayer(connection, player, cookie)
+                mockPlayer = player
                 player.teleportTo(1.5, 130.0, 1.5)
                 log.info("selftest: mock player placed")
             }
+            110 -> eurekaTest(server, level)
             100 -> {
                 val blocks = HashSet<BlockPos>()
                 for (x in 0..2) for (z in 0..2) {
@@ -93,6 +123,7 @@ object VSSelfTest {
                 startY = s.transform.position.y()
                 log.info("selftest: assembled ship id={} slug={} pos={}", s.id, s.slug, s.transform.position)
             }
+            in 150..400 -> if (tick % 50 == 0) eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) }
             in 140..400 -> if (tick % 40 == 0) ship?.let {
                 log.info("selftest: tick={} ship y={} (start {}) vel={} all={} loaded={} static={} mass={} chunkLoaded={} block={}", tick, it.transform.position.y(), startY, it.velocity, shipWorldOf(level).allShips.size, shipWorldOf(level).loadedShips.size, it.isStatic, it.inertiaData.mass, level.chunkSource.getChunkNow(it.chunkClaim.getCenterBlockCoordinates(level.yRange).x shr 4, it.chunkClaim.getCenterBlockCoordinates(level.yRange).z shr 4) != null, level.getBlockState(it.chunkClaim.getCenterBlockCoordinates(level.yRange).let { c -> net.minecraft.core.BlockPos(c.x, c.y, c.z) }))
             }

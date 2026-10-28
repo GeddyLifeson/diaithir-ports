@@ -377,7 +377,7 @@ class EurekaShipControl : ShipPhysicsListener, ServerTickListener {
 
     private fun deleteIfEmpty() {
         if (helms <= 0 && floaters <= 0 && anchors <= 0 && balloons <= 0) {
-            (ship as? LoadedServerShip)?.removeAttachment(EurekaShipControl::class.java)
+            ship?.let { s -> pending.remove(s.id); (s as? LoadedServerShip)?.removeAttachment(EurekaShipControl::class.java) }
         }
     }
 
@@ -396,10 +396,15 @@ class EurekaShipControl : ShipPhysicsListener, ServerTickListener {
 
     companion object {
         fun getOrCreate(ship: ServerShip): EurekaShipControl {
-            val loaded = ship as LoadedServerShip
+            val loaded = ship as? LoadedServerShip
+                ?: return pending.computeIfAbsent(ship.id) { EurekaShipControl() }
             return loaded.getAttachment(EurekaShipControl::class.java)
+                ?: pending.remove(ship.id)?.also { loaded.setAttachment(it) }
                 ?: EurekaShipControl().also { loaded.setAttachment(it) }
         }
+
+        /** Controls created for ships that are not loaded yet (just assembled); attached once the ship loads. */
+        internal val pending = java.util.concurrent.ConcurrentHashMap<Long, EurekaShipControl>()
 
         private const val ALIGN_THRESHOLD = 0.01
         private const val DISASSEMBLE_THRESHOLD = 0.02
@@ -422,3 +427,4 @@ class EurekaShipControl : ShipPhysicsListener, ServerTickListener {
 
 fun ServerShip.eurekaControl(): EurekaShipControl? =
     (this as? LoadedServerShip)?.getAttachment(EurekaShipControl::class.java)
+        ?: EurekaShipControl.pending[this.id]
