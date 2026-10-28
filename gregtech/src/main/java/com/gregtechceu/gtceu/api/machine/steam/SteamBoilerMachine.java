@@ -87,7 +87,14 @@ public abstract class SteamBoilerMachine extends SteamWorkableMachine
     }
 
     @Override
-    public void onLoad() {  /* ported stub */ }
+    public void onLoad() {
+        super.onLoad();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().execute(new TickTask(0, this::updateAutoOutputSubscription));
+        }
+        updateSteamSubscription();
+        steamTankSubs = steamTank.addChangedListener(this::updateAutoOutputSubscription);
+    }
 
     @Override
     public void onUnload() {

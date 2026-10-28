@@ -63,7 +63,24 @@ public class PotionFluidHelper {
         return FluidIngredient.of(stack);
     }
 
-    public static SizedFluidIngredient getPotionFluidIngredientFrom(Ingredient potion, int amount) { return null; /* ported stub */ }
+    public static SizedFluidIngredient getPotionFluidIngredientFrom(Ingredient potion, int amount) {
+        if (potion.getCustomIngredient() instanceof DataComponentIngredient component && component.isStrict()) {
+            return new SizedFluidIngredient(DataComponentFluidIngredient.of(false,
+                    DataComponents.POTION_CONTENTS,
+                    com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(component).findFirst().orElse(ItemStack.EMPTY)
+                            .getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY),
+                    GTFluids.POTION.get()), amount);
+        }
+
+        List<FluidStack> fluids = new ArrayList<>();
+        for (ItemStack stack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(potion)) {
+            FluidStack fluidStack = getFluidFromPotionItem(stack, amount);
+            if (!fluidStack.isEmpty()) {
+                fluids.add(fluidStack);
+            }
+        }
+        return new SizedFluidIngredient(FluidIngredient.of(fluids.toArray(FluidStack[]::new)), amount);
+    }
 
     public static FluidStack getFluidFromPotionItem(ItemStack stack, int amount) {
         PotionContents potion = stack.get(DataComponents.POTION_CONTENTS);

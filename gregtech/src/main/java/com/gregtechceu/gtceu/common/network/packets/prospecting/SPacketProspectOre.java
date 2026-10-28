@@ -41,7 +41,11 @@ public class SPacketProspectOre extends SPacketProspect<GeneratedVeinMetadata> {
     }
 
     @Override
-    public void execute(IPayloadContext context) {  /* ported stub */ }
+    public void execute(IPayloadContext context) {
+        data.rowMap().forEach((level, ores) -> ores
+                .forEach((blockPos, vein) -> GTClientCache.instance.addVein(level,
+                        blockPos.getX() >> 4, blockPos.getZ() >> 4, vein)));
+    }
 
     @Override
     public @NotNull Type<SPacketProspectOre> type() {

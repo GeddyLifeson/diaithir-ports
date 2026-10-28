@@ -78,7 +78,9 @@ public class TagPrefix {
 
     public static void init() {}
 
-    public static TagPrefix get(String name) { return null; /* ported stub */ }
+    public static TagPrefix get(String name) {
+        return GTRegistries.TAG_PREFIXES.get(GTCEu.id(name));
+    }
 
     public boolean isEmpty() {
         return this == NULL_PREFIX;
@@ -1084,7 +1086,14 @@ public class TagPrefix {
 
     public TagPrefix registerOre(Supplier<BlockState> stoneType, Supplier<Material> material,
                                  Supplier<BlockBehaviour.Properties> properties, Identifier baseModelLocation,
-                                 boolean doubleDrops, boolean isSand, boolean shouldDropAsItem) { return null; /* ported stub */ }
+                                 boolean doubleDrops, boolean isSand, boolean shouldDropAsItem) {
+        ORES.put(this,
+                new OreType(stoneType, material, properties, baseModelLocation, doubleDrops, isSand, shouldDropAsItem));
+        if (shouldDropAsItem) {
+            GTOreByProduct.addOreByProductPrefix(this);
+        }
+        return this;
+    }
 
     public TagPrefix defaultTagPath(String path) {
         return this.defaultTagPath(path, false);

@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.common.machine.electric;
 
+import com.gregtechceu.gtceu.data.lang.LangHandler;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
@@ -204,7 +205,50 @@ public class FisherMachine extends TieredEnergyMachine
         hasWater = true;
     }
 
-    public void fishingUpdate() {  /* ported stub */ }
+    public void fishingUpdate() {
+        if (this.getOffsetTimer() % maxProgress == 0L)
+            updateHasWater();
+
+        if (!hasWater) return;
+
+        drainEnergy(false);
+        if (progress >= maxProgress) {
+            var lootTableRegistry = getLevel().registryAccess().lookupOrThrow(Registries.LOOT_TABLE);
+            LootTable lootTable = lootTableRegistry.get(BuiltInLootTables.FISHING);
+            if (!this.junkEnabled) {
+                lootTable = lootTableRegistry.get(BuiltInLootTables.FISHING_FISH);
+            }
+
+            FishingHook simulatedHook = new FishingHook(EntityType.FISHING_BOBBER, getLevel()) {
+
+                public boolean isOpenWaterFishing() {
+                    return true;
+                }
+            };
+
+            LootParams lootContext = new LootParams.Builder((ServerLevel) getLevel())
+                    .withOptionalParameter(LootContextParams.THIS_ENTITY, simulatedHook)
+                    .withParameter(LootContextParams.TOOL, fishingRod)
+                    .withParameter(LootContextParams.ORIGIN,
+                            new Vec3(getBlockPos().getX(), getBlockPos().getY(), getBlockPos().getZ()))
+                    .create(LootContextParamSets.FISHING);
+
+            NonNullList<ItemStack> generatedLoot = NonNullList.create();
+            generatedLoot.addAll(lootTable.getRandomItems(lootContext));
+
+            boolean useBait = false;
+            for (ItemStack itemStack : generatedLoot)
+                useBait |= tryFillCache(itemStack);
+
+            if (useBait && junkEnabled)
+                this.baitHandler.storage.extractItem(0, 1, false);
+            else if (useBait)
+                this.baitHandler.storage.extractItem(0, 2, false);
+            updateFishingUpdateSubscription();
+            progress = -1;
+        }
+        progress++;
+    }
 
     private boolean tryFillCache(ItemStack stack) {
         for (int i = 0; i < cache.getSlots(); i++) {
@@ -276,9 +320,33 @@ public class FisherMachine extends TieredEnergyMachine
                 }
             }));
 
-    protected static EditableUI<SlotWidget, FisherMachine> createBatterySlot() { return null; /* ported stub */ }
+    protected static EditableUI<SlotWidget, FisherMachine> createBatterySlot() {
+        return new EditableUI<>("battery_slot", SlotWidget.class, () -> {
+            var slotWidget = new SlotWidget();
+            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY);
+            return slotWidget;
+        }, (slotWidget, machine) -> {
+            slotWidget.setHandlerSlot(machine.chargerInventory, 0);
+            slotWidget.setCanPutItems(true);
+            slotWidget.setCanTakeItems(true);
+            slotWidget.setHoverTooltips(LangHandler.getMultiLang("gtceu.gui.charger_slot.tooltip",
+                    GTValues.VNF[machine.getTier()], GTValues.VNF[machine.getTier()]).toArray(new MutableComponent[0]));
+        });
+    }
 
-    protected static EditableUI<ToggleButtonWidget, FisherMachine> createJunkButton() { return null; /* ported stub */ }
+    protected static EditableUI<ToggleButtonWidget, FisherMachine> createJunkButton() {
+        return new EditableUI<>("junk_button", ToggleButtonWidget.class, () -> {
+            var toggleButtonWidget = new ToggleButtonWidget(10, 20, 18, 18,
+                    new ItemStackTexture(Items.NAME_TAG).scale(0.9F), () -> false, b -> {});
+            toggleButtonWidget.setShouldUseBaseBackground();
+            return toggleButtonWidget;
+        }, (toggleButtonWidget, machine) -> {
+            toggleButtonWidget.setSupplier(machine::isJunkEnabled);
+            toggleButtonWidget.setOnPressCallback((data, bool) -> machine.setJunkEnabled(bool));
+            toggleButtonWidget.setHoverTooltips(LangHandler.getMultiLang("gtceu.gui.fisher_mode.tooltip",
+                    GTValues.VNF[machine.getTier()], GTValues.VNF[machine.getTier()]).toArray(new MutableComponent[0]));
+        });
+    }
 
     protected static EditableUI<WidgetGroup, FisherMachine> createTemplate(int inventorySize) {
         return new EditableUI<>("functional_container", WidgetGroup.class, () -> {

@@ -1095,5 +1095,7 @@ public class GTMachines {
         }
     }
 
-    public static MachineDefinition get(String name) { return null; /* ported stub */ }
+    public static MachineDefinition get(String name) {
+        return GTRegistries.MACHINES.get(GTCEu.id(name));
+    }
 }

@@ -66,7 +66,9 @@ public class CustomItemMapIngredient extends AbstractMapIngredient {
     }
 
     @Override
-    protected int hash() { return (int)0; /* ported stub */ }
+    protected int hash() {
+        return stack.getItemHolder().hashCode() * 31;
+    }
 
     @Override
     public String toString() {

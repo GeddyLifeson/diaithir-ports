@@ -72,7 +72,11 @@ public class AdjacentBlockCondition extends RecipeCondition<AdjacentBlockConditi
         return fromBlocks(Arrays.asList(blocks));
     }
 
-    public static AdjacentBlockCondition fromTags(Collection<TagKey<Block>> tags) { return null; /* ported stub */ }
+    public static AdjacentBlockCondition fromTags(Collection<TagKey<Block>> tags) {
+        return new AdjacentBlockCondition(tags.stream()
+                .<HolderSet<Block>>map(BuiltInRegistries.BLOCK::getOrCreateTag)
+                .toList());
+    }
 
     @SafeVarargs
     public static AdjacentBlockCondition fromTags(TagKey<Block>... tags) {
@@ -114,7 +118,32 @@ public class AdjacentBlockCondition extends RecipeCondition<AdjacentBlockConditi
         return false;
     }
 
-    public @NotNull List<HolderSet<Block>> getOrInitBlocks(@Nullable GTRecipe recipe) { return null; /* ported stub */ }
+    public @NotNull List<HolderSet<Block>> getOrInitBlocks(@Nullable GTRecipe recipe) {
+        if (resolvedBlocks.isEmpty() && !blocks.isEmpty()) {
+            for (var holderSetSupplier : this.blocks) {
+                this.resolvedBlocks.add(holderSetSupplier.get());
+            }
+        }
+        if (!resolvedBlocks.isEmpty()) {
+            return resolvedBlocks;
+        }
+
+        if (recipe != null && recipe.data.contains("blockA") && recipe.data.contains("blockB")) {
+            this.resolvedBlocks.clear();
+
+            Block blockA = BuiltInRegistries.BLOCK.getValue(Identifier.parse(recipe.data.getStringOr("blockA", "")));
+            if (!blockA.defaultBlockState().isAir()) {
+                this.resolvedBlocks.add(HolderSet.direct(blockA.builtInRegistryHolder()));
+            }
+            Block blockB = BuiltInRegistries.BLOCK.getValue(Identifier.parse(recipe.data.getStringOr("blockB", "")));
+            if (!blockB.defaultBlockState().isAir()) {
+                this.resolvedBlocks.add(HolderSet.direct(blockB.builtInRegistryHolder()));
+            }
+            // init the block supplier list, just to be safe
+            getBlockSuppliers();
+        }
+        return this.resolvedBlocks;
+    }
 
     private @NotNull List<Supplier<HolderSet<Block>>> getBlockSuppliers() {
         if (!this.blocks.isEmpty() || this.resolvedBlocks.isEmpty()) {

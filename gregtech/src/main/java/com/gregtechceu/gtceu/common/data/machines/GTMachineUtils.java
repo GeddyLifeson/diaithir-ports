@@ -246,7 +246,41 @@ public class GTMachineUtils {
     public static MachineDefinition[] registerFluidHatches(GTRegistrate registrate, String name, String displayName,
                                                            String tooltip,
                                                            IO io, int initialCapacity, int slots,
-                                                           int[] tiers, PartAbility... abilities) { return null; /* ported stub */ }
+                                                           int[] tiers, PartAbility... abilities) {
+        final String pipeOverlay;
+        if (slots >= 9) {
+            pipeOverlay = "overlay_pipe_9x";
+        } else if (slots >= 4) {
+            pipeOverlay = "overlay_pipe_4x";
+        } else {
+            pipeOverlay = null;
+        }
+        final String ioOverlay = io == OUT ? OVERLAY_FLUID_HATCH_OUTPUT : OVERLAY_FLUID_HATCH_INPUT;
+        final String emissiveOverlay = io == OUT ? "overlay_pipe_out_emissive" : "overlay_pipe_in_emissive";
+        return registerTieredMachines(registrate, name,
+                (holder, tier) -> new FluidHatchPartMachine(holder, tier, io, initialCapacity, slots),
+                (tier, builder) -> {
+                    builder.langValue(VNF[tier] + ' ' + displayName)
+                            .rotationState(RotationState.ALL)
+                            .colorOverlayTieredHullModel(ioOverlay, pipeOverlay, emissiveOverlay)
+                            .abilities(abilities)
+                            .modelProperty(IS_FORMED, false)
+                            .tooltips(Component.translatable("gtceu.machine." + tooltip + ".tooltip"))
+                            .allowCoverOnFront(true);
+
+                    if (slots == 1) {
+                        builder.tooltips(Component.translatable("gtceu.universal.tooltip.fluid_storage_capacity",
+                                FormattingUtil
+                                        .formatNumbers(FluidHatchPartMachine.getTankCapacity(initialCapacity, tier))));
+                    } else {
+                        builder.tooltips(Component.translatable("gtceu.universal.tooltip.fluid_storage_capacity_mult",
+                                slots, FormattingUtil
+                                        .formatNumbers(FluidHatchPartMachine.getTankCapacity(initialCapacity, tier))));
+                    }
+                    return builder.register();
+                },
+                tiers);
+    }
 
     public static MachineDefinition[] registerTransformerMachines(String langName, int baseAmp) {
         return registerTransformerMachines(REGISTRATE, langName, baseAmp);

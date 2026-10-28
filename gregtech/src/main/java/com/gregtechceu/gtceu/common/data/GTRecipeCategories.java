@@ -42,5 +42,7 @@ public class GTRecipeCategories {
 
     public static void init() {}
 
-    public static GTRecipeCategory get(String name) { return null; /* ported stub */ }
+    public static GTRecipeCategory get(String name) {
+        return GTRegistries.RECIPE_CATEGORIES.get(GTCEu.id(name));
+    }
 }

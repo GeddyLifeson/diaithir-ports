@@ -343,9 +343,22 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
     }
 
     @Override
-    public @NotNull List<Object> createXEIContainerContents(List<Content> contents, GTRecipe recipe, IO io) { return null; /* ported stub */ }
+    public @NotNull List<Object> createXEIContainerContents(List<Content> contents, GTRecipe recipe, IO io) {
+        List<Object> entryLists = contents.stream()
+                .map(Content::getContent)
+                .map(this::of)
+                .map(FluidRecipeCapability::mapFluid)
+                .collect(Collectors.toList());
 
-    public Object createXEIContainer(List<?> contents) { return null; /* ported stub */ }
+        while (entryLists.size() < recipe.recipeType.getMaxOutputs(this)) entryLists.add(null);
+        return entryLists;
+    }
+
+    public Object createXEIContainer(List<?> contents) {
+        // cast is safe if you don't pass the wrong thing.
+        // noinspection unchecked
+        return new CycleFluidEntryHandler((List<FluidEntryList>) contents);
+    }
 
     @NotNull
     @Override
@@ -371,7 +384,45 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
                                 @NotNull GTRecipeType recipeType,
                                 @UnknownNullability("null when content == null") GTRecipe recipe,
                                 @Nullable Content content,
-                                @Nullable Object storage, int recipeTier, int chanceTier) {  /* ported stub */ }/* ported: removed *//* ported: removed */
+                                @Nullable Object storage, int recipeTier, int chanceTier) {
+        if (widget instanceof TankWidget tank) {
+            if (storage instanceof IFluidHandler fluidHandler) {
+                tank.setFluidTank(fluidHandler, index);
+            }
+            tank.setIngredientIO(io == IO.IN ? IngredientIO.INPUT : IngredientIO.OUTPUT);
+            tank.setAllowClickFilled(!isXEI);
+            tank.setAllowClickDrained(!isXEI && io.support(IO.IN));
+            if (isXEI) tank.setShowAmount(false);
+            if (content != null) {
+                float chance = (float) recipeType.getChanceFunction()
+                        .getBoostedChance(content, recipeTier, chanceTier) / content.maxChance;
+                tank.setXEIChance(chance);
+                tank.setOnAddedTooltips((w, tooltips) -> {
+                    SizedFluidIngredient ingredient = FluidRecipeCapability.CAP.of(content.content);
+                    if (!isXEI && com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ingredient).length > 0) {
+                        FluidStack stack = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ingredient)[0];
+                        TooltipsHandler.appendFluidTooltips(stack, tooltips::add,
+                                TooltipFlag.NORMAL, Item.TooltipContext.of(GTRegistries.builtinRegistry()));
+                    }
+                    if (ingredient.ingredient() instanceof IntProviderFluidIngredient provider) {
+                        IntProvider countProvider = provider.getCountProvider();
+                        tooltips.add(Component.translatable("gtceu.gui.content.fluid_range",
+                                countProvider.getMinValue(), countProvider.getMaxValue())
+                                .withStyle(ChatFormatting.GOLD));
+                    }
+                    GTRecipeWidget.setConsumedChance(content,
+                            recipe.getChanceLogicForCapability(this, io, isTickSlot(index, io, recipe)),
+                            tooltips, recipeTier, chanceTier, recipeType.getChanceFunction());
+                    if (isTickSlot(index, io, recipe)) {
+                        tooltips.add(Component.translatable("gtceu.gui.content.per_tick"));
+                    }
+                });
+                if (io == IO.IN && (content.chance == 0)) {
+                    tank.setIngredientIO(IngredientIO.CATALYST);
+                }
+            }
+        }
+    }/* ported: removed *//* ported: removed */
 
     public interface ICustomParallel {
 

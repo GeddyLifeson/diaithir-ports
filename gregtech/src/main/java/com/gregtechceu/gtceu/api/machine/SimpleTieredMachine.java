@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.api.machine;
 
+import com.gregtechceu.gtceu.data.lang.LangHandler;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 
 import com.gregtechceu.gtceu.api.GTValues;
@@ -250,12 +251,36 @@ public class SimpleTieredMachine extends WorkableTieredMachine
     /**
      * Create a battery slot widget.
      */
-    protected static EditableUI<SlotWidget, SimpleTieredMachine> createBatterySlot() { return null; /* ported stub */ }
+    protected static EditableUI<SlotWidget, SimpleTieredMachine> createBatterySlot() {
+        return new EditableUI<>("battery_slot", SlotWidget.class, () -> {
+            var slotWidget = new SlotWidget();
+            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY);
+            return slotWidget;
+        }, (slotWidget, machine) -> {
+            slotWidget.setHandlerSlot(machine.chargerInventory, 0);
+            slotWidget.setCanPutItems(true);
+            slotWidget.setCanTakeItems(true);
+            slotWidget.setHoverTooltips(LangHandler.getMultiLang("gtceu.gui.charger_slot.tooltip",
+                    GTValues.VNF[machine.getTier()], GTValues.VNF[machine.getTier()]).toArray(Component[]::new));
+        });
+    }
 
     /**
      * Create a ghost circuit slot widget.
      */
-    protected static EditableUI<GhostCircuitSlotWidget, SimpleTieredMachine> createCircuitConfigurator() { return null; /* ported stub */ }
+    protected static EditableUI<GhostCircuitSlotWidget, SimpleTieredMachine> createCircuitConfigurator() {
+        return new EditableUI<>("circuit_configurator", GhostCircuitSlotWidget.class, () -> {
+            var slotWidget = new GhostCircuitSlotWidget();
+            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.INT_CIRCUIT_OVERLAY);
+            return slotWidget;
+        }, (slotWidget, machine) -> {
+            slotWidget.setCircuitInventory(machine.circuitInventory);
+            slotWidget.setCanPutItems(false);
+            slotWidget.setCanTakeItems(false);
+            slotWidget.setHoverTooltips(
+                    LangHandler.getMultiLang("gtceu.gui.configurator_slot.tooltip").toArray(Component[]::new));
+        });
+    }
 
     // Method provided to override
     protected IGuiTexture getCircuitSlotOverlay() {

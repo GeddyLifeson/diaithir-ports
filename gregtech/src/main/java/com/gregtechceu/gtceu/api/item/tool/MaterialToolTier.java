@@ -55,5 +55,7 @@ public class MaterialToolTier implements Tier {
 
     @Override
     @NotNull
-    public Ingredient getRepairIngredient() { return null; /* ported stub */ }
+    public Ingredient getRepairIngredient() {
+        return Ingredient.EMPTY;
+    }
 }

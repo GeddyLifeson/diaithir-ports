@@ -109,7 +109,20 @@ public class GeodeVeinGenerator extends VeinGenerator {
     public int invalidBlocksThreshold = 0;
 
     @Override
-    public List<VeinEntry> getAllEntries() { return null; /* ported stub */ }
+    public List<VeinEntry> getAllEntries() {
+        RandomSource source = new LegacyRandomSource(0);
+        return List.of(
+                new VeinEntry(geodeBlockSettings.fillingProvider
+                        .mapLeft(provider -> provider.getState(source, BlockPos.ZERO)), 1),
+                new VeinEntry(geodeBlockSettings.innerLayerProvider
+                        .mapLeft(provider -> provider.getState(source, BlockPos.ZERO)), 1),
+                new VeinEntry(geodeBlockSettings.alternateInnerLayerProvider
+                        .mapLeft(provider -> provider.getState(source, BlockPos.ZERO)), 1),
+                new VeinEntry(geodeBlockSettings.middleLayerProvider
+                        .mapLeft(provider -> provider.getState(source, BlockPos.ZERO)), 1),
+                new VeinEntry(geodeBlockSettings.outerLayerProvider
+                        .mapLeft(provider -> provider.getState(source, BlockPos.ZERO)), 1));
+    }
 
     @Override
     public Map<BlockPos, OreBlockPlacer> generate(WorldGenLevel level, RandomSource random, GTOreDefinition entry,
@@ -274,7 +287,10 @@ public class GeodeVeinGenerator extends VeinGenerator {
     }
 
     protected BlockState getStateFromEither(Either<BlockStateProvider, Material> either, GeodeBlockSettings settings,
-                                            RandomSource random, BlockPos pos) { return null; /* ported stub */ }
+                                            RandomSource random, BlockPos pos) {
+        return either.map(provider -> provider.getState(random, pos),
+                material -> ChemicalHelper.getBlock(settings.providerMaterialPrefix, material).defaultBlockState());
+    }
 
     @Override
     public VeinGenerator build() {

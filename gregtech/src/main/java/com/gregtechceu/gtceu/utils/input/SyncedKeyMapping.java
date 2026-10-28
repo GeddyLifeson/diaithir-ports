@@ -127,7 +127,9 @@ public final class SyncedKeyMapping {
 
     @OnlyIn(Dist.CLIENT)
     private @NotNull Object createKeyMapping(@NotNull String nameKey, @NotNull IKeyConflictContext ctx, int keyCode,
-                                             String category) { return null; /* ported stub */ }
+                                             String category) {
+        return new KeyMapping(nameKey, ctx, InputConstants.Type.KEYSYM, keyCode, category);
+    }
 
     /**
      * Check if the current client-side player is holding down this key.
@@ -161,7 +163,13 @@ public final class SyncedKeyMapping {
      *
      * @return if the key is down
      */
-    private boolean isKeyDownClient() { return false; /* ported stub */ }
+    private boolean isKeyDownClient() {
+        if (keyMapping != null) {
+            return keyMapping.isDown();
+        }
+        long id = Minecraft.getInstance().getWindow().getWindow();
+        return InputConstants.isKeyDown(id, keyCode);
+    }
 
     /**
      * Registers an {@link IKeyPressedListener} to this key, which will have its {@link IKeyPressedListener#onKeyPressed
@@ -227,7 +235,27 @@ public final class SyncedKeyMapping {
     @ApiStatus.Internal
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
-    public static void onClientTick(ClientTickEvent.Pre event) {  /* ported stub */ }
+    public static void onClientTick(ClientTickEvent.Pre event) {
+        updatingKeyDown.clear();
+        for (var entry : KEYMAPPINGS.int2ObjectEntrySet()) {
+            SyncedKeyMapping keyMapping = entry.getValue();
+            boolean previousKeyDown = keyMapping.isKeyDown;
+
+            if (keyMapping.keyMapping != null) {
+                keyMapping.isKeyDown = keyMapping.keyMapping.isDown();
+            } else {
+                long id = Minecraft.getInstance().getWindow().getWindow();
+                keyMapping.isKeyDown = InputConstants.isKeyDown(id, keyMapping.keyCode);
+            }
+
+            if (previousKeyDown != keyMapping.isKeyDown) {
+                updatingKeyDown.put(entry.getIntKey(), keyMapping.isKeyDown);
+            }
+        }
+        if (!updatingKeyDown.isEmpty()) {
+            net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(new CPacketKeyDown(updatingKeyDown));
+        }
+    }
 
     @ApiStatus.Internal
     public void serverActivate(boolean keyDown, ServerPlayer player) {

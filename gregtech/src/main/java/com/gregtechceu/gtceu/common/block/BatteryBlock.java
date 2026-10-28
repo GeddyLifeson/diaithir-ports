@@ -31,7 +31,15 @@ public class BatteryBlock extends Block {
 
     
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag flag) {  /* ported stub */ }
+                                TooltipFlag flag) {
+        super.appendHoverText(stack, context, tooltip, flag);
+        if (this.data.getTier() == -1) {
+            tooltip.add(Component.translatable("block.gtceu.substation_capacitor.tooltip_empty"));
+        } else {
+            tooltip.add(Component.translatable("block.gtceu.substation_capacitor.tooltip_filled",
+                    FormattingUtil.formatNumbers(this.data.getCapacity())));
+        }
+    }
 
     public enum BatteryPartType implements StringRepresentable, IBatteryData {
 

@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.common.machine.electric;
 
+import com.gregtechceu.gtceu.data.lang.LangHandler;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
@@ -142,7 +143,21 @@ public class ItemCollectorMachine extends TieredEnergyMachine
     }
 
     @Override
-    public void onLoad() {  /* ported stub */ }
+    public void onLoad() {
+        super.onLoad();
+        if (isRemote()) return;
+
+        if (getLevel() instanceof ServerLevel serverLevel) {
+
+            serverLevel.getServer().execute(new TickTask(0, this::updateCollectionSubscription));
+        }
+
+        energySubs = energyContainer.addChangedListener(() -> {
+            this.updateBatterySubscription();
+            this.updateCollectionSubscription();
+        });
+        chargerInventory.setOnContentsChanged(this::updateBatterySubscription);
+    }
 
     @Override
     public void onUnload() {
@@ -336,7 +351,19 @@ public class ItemCollectorMachine extends TieredEnergyMachine
                 }
             }));
 
-    protected static EditableUI<SlotWidget, ItemCollectorMachine> createBatterySlot() { return null; /* ported stub */ }
+    protected static EditableUI<SlotWidget, ItemCollectorMachine> createBatterySlot() {
+        return new EditableUI<>("battery_slot", SlotWidget.class, () -> {
+            var slotWidget = new SlotWidget();
+            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY);
+            return slotWidget;
+        }, (slotWidget, machine) -> {
+            slotWidget.setHandlerSlot(machine.chargerInventory, 0);
+            slotWidget.setCanPutItems(true);
+            slotWidget.setCanTakeItems(true);
+            slotWidget.setHoverTooltips(LangHandler.getMultiLang("gtceu.gui.charger_slot.tooltip",
+                    GTValues.VNF[machine.getTier()], GTValues.VNF[machine.getTier()]).toArray(new MutableComponent[0]));
+        });
+    }
 
     protected static EditableUI<WidgetGroup, ItemCollectorMachine> createTemplate(int inventorySize) {
         return new EditableUI<>("functional_container", WidgetGroup.class, () -> {

@@ -104,7 +104,14 @@ public class FluidHatchPartMachine extends TieredIOPartMachine implements IHasCi
     }
 
     @Override
-    public void onLoad() {  /* ported stub */ }
+    public void onLoad() {
+        super.onLoad();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().execute(new TickTask(0, this::updateTankSubscription));
+        }
+        getHandlerList().setColor(getPaintingColor());
+        tankSubs = tank.addChangedListener(this::updateTankSubscription);
+    }
 
     @Override
     public void onUnload() {

@@ -50,5 +50,41 @@ public class CoverBehaviorTransformer implements ValueTransformer<CoverBehavior>
     }
 
     public @Nullable CoverBehavior deserialize(CompoundTag tag, ICoverable holder, @Nullable CoverBehavior cover,
-                                               boolean isSync, HolderLookup.Provider lookup) { return null; /* ported stub */ }
+                                               boolean isSync, HolderLookup.Provider lookup) {
+        /// Ldlib backwards compat
+        if (tag.contains("payload") && tag.contains("uid")) {
+            tag.putInt("side", tag.getCompoundOrEmpty("uid").getIntOr("side", 0));
+            tag.putString("coverType", tag.getCompoundOrEmpty("uid").getStringOr("id", ""));
+            tag.put("data", tag.getCompoundOrEmpty("payload").getCompoundOrEmpty("d"));
+        }
+
+        Direction side = Direction.values()[tag.getIntOr("side", 0)];
+
+        if (tag.isEmpty() || tag.getString("coverType").isEmpty()) {
+            holder.setCoverAtSide(null, side);
+            return null;
+        }
+        Identifier coverType = Identifier.tryParse(tag.getStringOr("coverType", ""));
+        if (cover == null || cover.coverDefinition.getId() != coverType) {
+            var coverReg = GTRegistries.COVERS.get(coverType);
+            if (coverReg == null) {
+                GTCEu.LOGGER.error("Error during NBT load: unknown cover type {} ({})", coverType,
+                        tag.getString("coverType"));
+                return null;
+            }
+            holder.setCoverAtSide(coverReg.createCoverBehavior(holder, side), side);
+        }
+
+        CoverBehavior newCover = holder.getCoverAtSide(side);
+        if (newCover == null) return null;
+        newCover.getSyncDataHolder().deserializeNBT(lookup, tag.getCompoundOrEmpty("data"),
+                isSync);
+
+        if (!isSync && newCover.getAttachItem() == ItemStack.EMPTY) {
+            GTCEu.LOGGER.error("Invalid cover save state, this should never happen unless loading corrupted data.");
+            holder.setCoverAtSide(null, side);
+        }
+
+        return newCover;
+    }
 }

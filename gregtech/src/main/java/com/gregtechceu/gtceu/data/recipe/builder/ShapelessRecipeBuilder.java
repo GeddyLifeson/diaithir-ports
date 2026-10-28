@@ -73,7 +73,14 @@ public class ShapelessRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public ShapelessRecipe build() { return null; /* ported stub */ }
+    public ShapelessRecipe build() {
+        return new ShapelessRecipe(Objects.requireNonNullElse(this.group, ""), this.category,
+                this.output, this.ingredients);
+    }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+
+        consumer.accept(recipeId.withPrefix("shapeless/"), build(), null);
+    }
 }

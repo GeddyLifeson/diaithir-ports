@@ -30,7 +30,17 @@ public final class GTRecipeConditions {
 //     public static RecipeConditionType<GameStageCondition> GAMESTAGE;
     public static RecipeConditionType<HeraclesQuestCondition> HERACLES_QUEST;
 
-    public static void init() {  /* ported stub */ }
+    public static void init() {
+        if (GTCEu.Mods.isFTBQuestsLoaded()) {
+            FTB_QUEST = register("ftb_quest", FTBQuestCondition::new, FTBQuestCondition.CODEC);
+        }
+        // if (GTCEu.Mods.isGameStagesLoaded()) {
+        //     GAMESTAGE = register("game_stage", GameStageCondition::new, GameStageCondition.CODEC);
+        // }
+        if (GTCEu.Mods.isHeraclesLoaded()) {
+            HERACLES_QUEST = register("heracles_quest", HeraclesQuestCondition::new, HeraclesQuestCondition.CODEC);
+        }
+    }
     // spotless:on
 
     private static <T extends RecipeCondition<T>> RecipeConditionType<T> register(String name,

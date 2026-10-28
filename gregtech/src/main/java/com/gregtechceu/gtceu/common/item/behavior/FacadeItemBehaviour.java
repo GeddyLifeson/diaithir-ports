@@ -26,7 +26,10 @@ import java.util.function.Supplier;
 public class FacadeItemBehaviour implements ISubItemHandler, ICustomDescriptionId {
 
     @Override
-    public @Nullable Component getItemName(ItemStack stack) { return null; /* ported stub */ }
+    public @Nullable Component getItemName(ItemStack stack) {
+        BlockState facadeState = getFacadeState(stack);
+        return Component.translatable(com.gregtechceu.gtceu.compat.ItemCompat.getDescriptionId(stack), facadeState.getBlock().getName());
+    }
 
     public static final Supplier<List<BlockState>> DEFAULT_FACADES = GTMemoizer.memoize(() -> {
         List<BlockState> states = new ArrayList<>();

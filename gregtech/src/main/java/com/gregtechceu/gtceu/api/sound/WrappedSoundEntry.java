@@ -52,7 +52,26 @@ public class WrappedSoundEntry extends SoundEntry {
     }
 
     @Override
-    public void write(JsonObject json) {  /* ported stub */ }
+    public void write(JsonObject json) {
+        for (int i = 0; i < wrappedEvents.size(); i++) {
+            ConfiguredSoundEvent event = wrappedEvents.get(i);
+            JsonObject entry = new JsonObject();
+            JsonArray list = new JsonArray();
+            JsonObject s = new JsonObject();
+            s.addProperty("name", event.event()
+                    .get()
+                    .getLocation()
+                    .toString());
+            s.addProperty("type", "event");
+            if (attenuationDistance != 0)
+                s.addProperty("attenuation_distance", attenuationDistance);
+            list.add(s);
+            entry.add("sounds", list);
+            if (i == 0 && hasSubtitle())
+                entry.addProperty("subtitle", getSubtitleKey());
+            json.add(getIdOf(i).getPath(), entry);
+        }
+    }
 
     @Override
     public void play(Level world, Player entity, double x, double y, double z, float volume, float pitch) {

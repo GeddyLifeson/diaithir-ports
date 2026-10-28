@@ -377,5 +377,23 @@ public final class ToolRecipeHandler {
      * {@code D} is inferred as the dye key
      */
     public static void addDyeableToolRecipe(@NotNull RecipeOutput provider, @NotNull Material material,
-                                            @NotNull GTToolType tool, boolean mirrored, Object... recipe) {  /* ported stub */ }
+                                            @NotNull GTToolType tool, boolean mirrored, Object... recipe) {
+        ItemStack toolStack = ToolHelper.get(tool, material);
+        if (toolStack.isEmpty()) return;
+        for (var color : MarkerMaterials.Color.COLORS.entrySet()) {
+            toolStack.set(DataComponents.DYED_COLOR, new DyedItemColor(color.getKey().getTextColor(), false));
+            Object[] recipeWithDye = ArrayUtils.addAll(recipe, 'D',
+                    new MaterialEntry(TagPrefix.dye, color.getValue()));
+
+            if (mirrored) { // todo mirrored
+                VanillaRecipeHelper.addShapedRecipe(provider,
+                        String.format("%s_%s_%s", tool.name, material.getName(), color.getKey().getSerializedName()),
+                        toolStack, recipeWithDye);
+            } else {
+                VanillaRecipeHelper.addShapedRecipe(provider,
+                        String.format("%s_%s_%s", tool.name, material.getName(), color.getKey().getSerializedName()),
+                        toolStack, recipeWithDye);
+            }
+        }
+    }
 }

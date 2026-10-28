@@ -75,10 +75,20 @@ public class LargeBoilerMachine extends WorkableMultiblockMachine implements IDi
     }
 
     @Override
-    public void onStructureFormed() {  /* ported stub */ }
+    public void onStructureFormed() {
+        super.onStructureFormed();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().execute(new TickTask(0, this::updateSteamSubscription));
+        }
+    }
 
     @Override
-    public void onStructureInvalid() {  /* ported stub */ }
+    public void onStructureInvalid() {
+        super.onStructureInvalid();
+        if (getLevel() instanceof ServerLevel serverLevel) {
+            serverLevel.getServer().execute(new TickTask(0, this::updateSteamSubscription));
+        }
+    }
 
     @Override
     public void onUnload() {

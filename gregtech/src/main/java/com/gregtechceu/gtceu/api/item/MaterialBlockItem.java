@@ -66,7 +66,9 @@ public class MaterialBlockItem extends BlockItem implements IItemRendererProvide
 
 
     
-    public Component getDescription() { return null; /* ported stub */ }
+    public Component getDescription() {
+        return getBlock().getName();
+    }
 
     @Override
     public Component getName(ItemStack stack) {

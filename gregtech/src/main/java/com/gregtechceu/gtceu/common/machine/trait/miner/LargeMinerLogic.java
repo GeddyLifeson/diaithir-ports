@@ -127,5 +127,27 @@ public class LargeMinerLogic extends MinerLogic {
 
     @Override
     protected void dropPostProcessing(NonNullList<ItemStack> blockDrops, List<ItemStack> outputs, BlockState blockState,
-                                      LootParams.Builder builder) {  /* ported stub */ }
+                                      LootParams.Builder builder) {
+        if (getDropCountMultiplier() <= 0) {
+            super.dropPostProcessing(blockDrops, outputs, blockState, builder);
+            return;
+        }
+        ItemStack fortunePick = this.pickaxeTool.copy();
+        var registry = builder.getLevel().registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+        var fortuneHolder = registry.getHolderOrThrow(Enchantments.FORTUNE);
+        if (dropMultiplier == null) {
+            dropMultiplier = ApplyBonusCount.addOreBonusCount(fortuneHolder).build();
+        }
+        fortunePick.enchant(fortuneHolder, getDropCountMultiplier());
+        LootParams params = builder.withParameter(LootContextParams.TOOL, fortunePick)
+                .create(LootContextParamSets.BLOCK);
+        LootContext context = new LootContext.Builder(params).create(Optional.empty());
+
+        for (ItemStack outputStack : outputs) {
+            if (ChemicalHelper.getPrefix(outputStack.getItem()) == TagPrefix.crushed) {
+                outputStack = dropMultiplier.apply(outputStack, context);
+            }
+            blockDrops.add(outputStack);
+        }
+    }
 }

@@ -107,9 +107,70 @@ public class HazardProperty implements IMaterialProperty {
             this.equipmentTypes = Set.of(equipmentTypes);
         }
 
-        public boolean isProtected(LivingEntity livingEntity) { return false; /* ported stub */ }
+        public boolean isProtected(LivingEntity livingEntity) {
+            if (this == NONE) {
+                return true;
+            }
+            Set<ArmorItem.Type> correctArmorItems = new HashSet<>();
+            for (ArmorItem.Type equipmentType : equipmentTypes) {
+                ItemStack armor = livingEntity.getItemBySlot(equipmentType.getSlot());
+                if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
+                        armorItem.getArmorLogic().isPPE()) ||
+                        armor.getTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                    correctArmorItems.add(equipmentType);
+                }
+            }
+            if (!GTCEu.Mods.isCuriosLoaded() || this.curioSlots.isEmpty()) {
+                return correctArmorItems.containsAll(equipmentTypes);
+            }
+            Set<String> correctCurios = new HashSet<>();
+            ICuriosItemHandler curiosInventory = CuriosApi.getCuriosInventory(livingEntity).orElse(null);
+            if (curiosInventory == null) {
+                return correctArmorItems.containsAll(equipmentTypes);
+            }
+            List<SlotResult> results = curiosInventory.findCurios(this.curioSlots.toArray(String[]::new));
+            for (SlotResult result : results) {
+                ItemStack armor = result.stack();
+                if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
+                        armorItem.getArmorLogic().isPPE()) ||
+                        armor.getTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                    correctCurios.add(result.slotContext().identifier());
+                }
+            }
+            return correctArmorItems.containsAll(equipmentTypes) || correctCurios.containsAll(curioSlots);
+        }
 
-        public void damageEquipment(Player player, int amount) {  /* ported stub */ }
+        public void damageEquipment(Player player, int amount) {
+            // entity has proper safety equipment, so damage it per material every 5 seconds.
+            if (player.level().getGameTime() % 100 == 0) {
+                for (ArmorItem.Type type : this.getEquipmentTypes()) {
+                    ItemStack armor = player.getItemBySlot(type.getSlot());
+                    if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
+                            armorItem.getArmorLogic().isPPE()) ||
+                            armor.getTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                        armor.hurtAndBreak(amount, player, type.getSlot());
+                    }
+                }
+                if (GTCEu.Mods.isCuriosLoaded() && player.level() instanceof ServerLevel serverLevel) {
+                    ICuriosItemHandler curiosInventory = CuriosApi.getCuriosInventory(player).orElse(null);
+                    if (curiosInventory != null) {
+                        for (String curioItem : this.getCurioSlots()) {
+                            curiosInventory.getStacksHandler(curioItem).ifPresent(handler -> {
+                                IDynamicStackHandler stackHandler = handler.getStacks();
+                                for (int i = 0; i < handler.getSlots(); ++i) {
+                                    ItemStack armor = stackHandler.getStackInSlot(i);
+                                    if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
+                                            armorItem.getArmorLogic().isPPE()) ||
+                                            armor.getTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                                        armor.hurtAndBreak(amount, serverLevel, player, item -> {});
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public static Material getValidHazardMaterial(ItemStack item) {

@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.common.commands;
 
+import net.minecraft.commands.arguments.IdentifierArgument;
 import com.gregtechceu.gtceu.api.cosmetics.CapeRegistry;
 import com.gregtechceu.gtceu.api.data.worldgen.GTOreDefinition;
 import com.gregtechceu.gtceu.api.data.worldgen.ores.GeneratedVeinMetadata;
@@ -64,7 +65,83 @@ public class GTCommands {
             id -> Component.translatableEscape("command.gtceu.place_vein.invalid", id));
 
     // spotless:off
-    public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext buildContext) {  /* ported stub */ }
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext buildContext) {
+        dispatcher.register(literal("gtceu")
+                .then(literal("ui_editor")
+                        .requires(ctx -> com.gregtechceu.gtceu.compat.PermCompat.hasPermission(ctx, LEVEL_ADMINS))
+                        .executes(context -> {
+                            GTUIEditorFactory.INSTANCE.openUI(GTUIEditorFactory.INSTANCE, context.getSource().getPlayerOrException());
+                            return 1;
+                        }))
+                .then(literal("place_vein")
+                        .requires(ctx -> com.gregtechceu.gtceu.compat.PermCompat.hasPermission(ctx, LEVEL_ADMINS))
+                        .then(argument("vein", ResourceKeyArgument.key(GTRegistries.ORE_VEIN_REGISTRY))
+                                .executes(context -> {
+                                    return GTCommands.placeVein(context, BlockPos.containing(context.getSource().getPosition()));
+                                })
+                                .then(argument("position", BlockPosArgument.blockPos())
+                                        .executes(context -> {
+                                            return GTCommands.placeVein(context, BlockPosArgument.getBlockPos(context, "position"));
+                                        }))))
+                .then(literal("cape")
+                        .then(literal("give")
+                                .requires(ctx -> com.gregtechceu.gtceu.compat.PermCompat.hasPermission(ctx, LEVEL_GAMEMASTERS))
+                                .then(argument("targets", EntityArgument.players())
+                                        .then(argument("cape", IdentifierArgument.id())
+                                                .suggests(NOT_OWNED_CAPES)
+                                                .executes(ctx -> {
+                                                    Collection<ServerPlayer> players = EntityArgument.getPlayers(ctx, "targets");
+                                                    Collection<Identifier> cape = Collections.singleton(IdentifierArgument.getId(ctx, "cape"));
+                                                    return giveCapes(ctx.getSource(), players, cape);
+                                                }))
+                                        .then(literal("*")
+                                                .executes(ctx -> {
+                                                    Collection<ServerPlayer> players = EntityArgument.getPlayers(ctx, "targets");
+                                                    return giveCapes(ctx.getSource(), players, CapeRegistry.ALL_CAPES.keySet());
+                                                }))))
+                        .then(literal("take")
+                                .requires(ctx -> com.gregtechceu.gtceu.compat.PermCompat.hasPermission(ctx, LEVEL_GAMEMASTERS))
+                                .then(argument("targets", EntityArgument.players())
+                                        .then(argument("cape", IdentifierArgument.id())
+                                                .suggests(OWNED_CAPES)
+                                                .executes(ctx -> {
+                                                    Collection<ServerPlayer> players = EntityArgument.getPlayers(ctx, "targets");
+                                                    Collection<Identifier> cape = Collections.singleton(IdentifierArgument.getId(ctx, "cape"));
+                                                    return takeCapes(ctx.getSource(), players, cape);
+                                                }))
+                                        .then(literal("*")
+                                                .executes(ctx -> {
+                                                    Collection<ServerPlayer> players = EntityArgument.getPlayers(ctx, "targets");
+                                                    return takeCapes(ctx.getSource(), players, CapeRegistry.ALL_CAPES.keySet());
+                                                }))))
+                        .then(literal("use")
+                                .then(argument("target", EntityArgument.player())
+                                        .requires(ctx -> com.gregtechceu.gtceu.compat.PermCompat.hasPermission(ctx, LEVEL_ADMINS))
+                                        .then(argument("cape", IdentifierArgument.id())
+                                                .suggests(OWNED_CAPES)
+                                                .executes(ctx -> {
+                                                    ServerPlayer player = EntityArgument.getPlayer(ctx, "target");
+                                                    Identifier cape = IdentifierArgument.getId(ctx, "cape");
+                                                    return setActiveCape(ctx.getSource(), player, cape);
+                                                }))
+                                        .then(literal("none")
+                                                .executes(ctx -> {
+                                                    ServerPlayer player = ctx.getSource().getPlayerOrException();
+                                                    return setActiveCape(ctx.getSource(), player, null);
+                                                })))
+                                .then(argument("cape", IdentifierArgument.id())
+                                        .suggests(OWNED_CAPES)
+                                        .executes(ctx -> {
+                                            ServerPlayer player = ctx.getSource().getPlayerOrException();
+                                            Identifier cape = IdentifierArgument.getId(ctx, "cape");
+                                            return setActiveCape(ctx.getSource(), player, cape);
+                                        }))
+                                .then(literal("none")
+                                        .executes(ctx -> {
+                                            ServerPlayer player = ctx.getSource().getPlayerOrException();
+                                            return setActiveCape(ctx.getSource(), player, null);
+                                        })))));
+    }
     // spotless:on
 
     public static Collection<ServerPlayer> findPlayersFrom(CommandContext<CommandSourceStack> ctx) throws CommandSyntaxException {
@@ -193,5 +270,34 @@ public class GTCommands {
     }
 
     private static int placeVein(CommandContext<CommandSourceStack> context,
-                                 BlockPos sourcePos) throws CommandSyntaxException { return (int)0; /* ported stub */ }
+                                 BlockPos sourcePos) throws CommandSyntaxException {
+        Holder.Reference<GTOreDefinition> vein = ResourceKeyArgumentAccessor.callResolveKey(context, "vein",
+                GTRegistries.ORE_VEIN_REGISTRY, ERROR_INVALID_VEIN);
+        Identifier id = vein.key().location();
+
+        ChunkPos chunkPos = new ChunkPos(sourcePos);
+        ServerLevel level = context.getSource().getLevel();
+
+        GeneratedVeinMetadata metadata = new GeneratedVeinMetadata(chunkPos, sourcePos, vein);
+        RandomSource random = level.getRandom();
+
+        OrePlacer placer = new OrePlacer();
+        OreGenerator generator = placer.getOreGenCache().getOreGenerator();
+
+        try (BulkSectionAccess access = new BulkSectionAccess(level)) {
+            var generated = generator.generateOres(new OreGenerator.VeinConfiguration(metadata, random), level,
+                    chunkPos);
+            if (generated.isEmpty()) {
+                throw VEIN_PLACE_FAILURE.create(id.toString(), sourcePos.toString());
+            }
+            for (ChunkPos pos : generated.get().getGeneratedChunks()) {
+                placer.placeVein(pos, random, access, generated.get(), AlwaysTrueTest.INSTANCE);
+                level.getChunk(pos.x, pos.z).setUnsaved(true);
+            }
+            context.getSource().sendSuccess(() -> Component.translatable("command.gtceu.place_vein.success",
+                    id.toString(), sourcePos.toString()), true);
+        }
+
+        return 1;
+    }
 }

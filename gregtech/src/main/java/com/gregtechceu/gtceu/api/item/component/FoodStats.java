@@ -67,8 +67,26 @@ public class FoodStats implements IEdibleItem, IInteractionItem, IAddInformation
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
-                                TooltipFlag isAdvanced) {  /* ported stub */ }
+                                TooltipFlag isAdvanced) {
+        GTUtil.addPotionTooltip(properties.effects(), tooltipComponents);
+    }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack food, Level level, LivingEntity livingEntity) { return null; /* ported stub */ }
+    public ItemStack finishUsingItem(ItemStack food, Level level, LivingEntity livingEntity) {
+        Player player = livingEntity instanceof Player ? (Player) livingEntity : null;
+        var stack = livingEntity.eat(level, food);
+        if (containerItem != null && (player == null || !player.getAbilities().instabuild)) {
+            var container = containerItem.get();
+            if (stack.isEmpty()) {
+                return container;
+            }
+
+            if (player != null) {
+                if (!player.getInventory().add(container)) {
+                    player.drop(container, true);
+                }
+            }
+        }
+        return stack;
+    }
 }

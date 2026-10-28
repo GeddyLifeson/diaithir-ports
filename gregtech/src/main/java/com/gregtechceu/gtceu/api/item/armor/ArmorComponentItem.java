@@ -62,7 +62,13 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     @Override
-    public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) { return null; /* ported stub */ }
+    public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
+        List<ItemAttributeModifiers.Entry> list = new ArrayList<>();
+        IArmorLogic armorLogic = getArmorLogic();
+        list.addAll(super.getDefaultAttributeModifiers(stack).modifiers());
+        list.addAll(armorLogic.getDefaultAttributeModifiers(Equipable.get(stack).getEquipmentSlot(), stack));
+        return new ItemAttributeModifiers(list, true);
+    }
 
     @Override
     public ArmorType getType() {
@@ -204,7 +210,17 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand usedHand) { return null; /* ported stub */ }
+    public InteractionResult use(Level level, Player player, InteractionHand usedHand) {
+        for (IItemComponent component : components) {
+            if (component instanceof IInteractionItem interactionItem) {
+                var result = interactionItem.use(player.getItemInHand(usedHand), level, player, usedHand);
+                if (result.getResult() != InteractionResult.PASS) {
+                    return result;
+                }
+            }
+        }
+        return super.use(level, player, usedHand);
+    }
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
@@ -257,13 +273,37 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     
-    public String getDescriptionId(ItemStack stack) { return null; /* ported stub */ }
+    public String getDescriptionId(ItemStack stack) {
+        for (IItemComponent component : components) {
+            if (component instanceof ICustomDescriptionId customDescriptionId) {
+                String langId = customDescriptionId.getItemDescriptionId(stack);
+                if (langId != null) {
+                    return langId;
+                }
+            }
+        }
+        return super.getDescriptionId(stack);
+    }
 
     
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) { return null; /* ported stub */ }
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+        for (IItemComponent component : components) {
+            if (component instanceof IRecipeRemainder recipeRemainder) {
+                return recipeRemainder.getRecipeRemained(itemStack);
+            }
+        }
+        return super.getCraftingRemainingItem(itemStack);
+    }
 
     
-    public boolean hasCraftingRemainingItem(ItemStack stack) { return false; /* ported stub */ }
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        for (IItemComponent component : components) {
+            if (component instanceof IRecipeRemainder recipeRemainder) {
+                return recipeRemainder.getRecipeRemained(stack) != ItemStack.EMPTY;
+            }
+        }
+        return super.hasCraftingRemainingItem(stack);
+    }
 
     @Override
     public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {

@@ -15,5 +15,18 @@ import net.minecraft.util.valueproviders.UniformInt;
  */
 public class ModifiedIntProvider {
 
-    public static IntProvider of(IntProvider source, ContentModifier modifier) { return null; /* ported stub */ }
+    public static IntProvider of(IntProvider source, ContentModifier modifier) {
+        if (source instanceof UniformInt uniform) {
+            return UniformInt.of(modifier.apply(uniform.getMinValue()), modifier.apply(uniform.getMaxValue()));
+        }
+        if (source instanceof BiasedToBottomInt biased) {
+            return BiasedToBottomInt.of(modifier.apply(biased.getMinValue()), modifier.apply(biased.getMaxValue()));
+        }
+        return new FlooredInt(
+                new AddedFloat(
+                        new MultipliedFloat(
+                                new CastedFloat(source),
+                                ConstantFloat.of((float) modifier.multiplier())),
+                        ConstantFloat.of((float) modifier.addition())));
+    }
 }

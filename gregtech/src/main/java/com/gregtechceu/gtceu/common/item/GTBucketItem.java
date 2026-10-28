@@ -23,13 +23,23 @@ public class GTBucketItem extends BucketItem {
         this.langKey = langKey;
     }
 
-    public static int color(ItemStack itemStack, int index) { return (int)0; /* ported stub */ }
+    public static int color(ItemStack itemStack, int index) {
+        if (itemStack.getItem() instanceof GTBucketItem item) {
+            if (index == 1) {
+                return IClientFluidTypeExtensions.of(item.content).getTintColor();
+            }
+        }
+        return -1;
+    }
 
     
 
 
     
-    public Component getDescription() { return null; /* ported stub */ }
+    public Component getDescription() {
+        Component materialName = material.getLocalizedName();
+        return Component.translatable("item.gtceu.bucket", Component.translatable(this.langKey, materialName));
+    }
 
     @Override
     public Component getName(ItemStack stack) {

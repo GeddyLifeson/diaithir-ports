@@ -99,7 +99,9 @@ public class PrimitivePumpMachine extends MultiblockControllerMachine {
         return getBiomePrecipitation() != Precipitation.NONE;
     }
 
-    private Precipitation getBiomePrecipitation() { return null; /* ported stub */ }
+    private Precipitation getBiomePrecipitation() {
+        return getLevel().getBiome(getBlockPos()).value().getPrecipitationAt(getBlockPos());
+    }
 
     public int getFluidProduction() {
         int value = biomeModifier * hatchModifier;

@@ -100,5 +100,8 @@ public class ShapedEnergyTransferRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+        consumer.accept(recipeId.withPrefix("shaped/"), build(), null);
+    }
 }

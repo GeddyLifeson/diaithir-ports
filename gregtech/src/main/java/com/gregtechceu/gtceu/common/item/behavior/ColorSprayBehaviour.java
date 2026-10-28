@@ -202,7 +202,51 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
     }
 
     @SuppressWarnings({ "rawtypes", "DataFlowIssue" })
-    private boolean handleSpecialBlockEntities(BlockEntity first, int limit, UseOnContext context) { return false; /* ported stub */ }
+    private boolean handleSpecialBlockEntities(BlockEntity first, int limit, UseOnContext context) {
+        Player player = context.getPlayer();
+        if (player == null) {
+            return false;
+        }
+        if (GTCEu.Mods.isAE2Loaded() && AE2CallWrapper.isColorable(first)) {
+            Set<? extends IColorableBlockEntity> collected;
+            if (first instanceof CableBusBlockEntity) {
+                collected = AE2CallWrapper.collect(first, limit);
+            } else {
+                collected = Set.of((IColorableBlockEntity) first);
+            }
+            var ae2Color = color == null ? AEColor.TRANSPARENT : AEColor.values()[color.ordinal()];
+            for (var c : collected) {
+                if (c.getColor() == ae2Color) {
+                    continue;
+                }
+                c.recolourBlock(context.getClickedFace(), ae2Color, player);
+                if (!useItemDurability(player, context.getHand(), context.getItemInHand(), ItemStack.EMPTY)) {
+                    break;
+                }
+            }
+        } else if (first instanceof IPipeNode pipe) {
+            var collected = BreadthFirstBlockSearch.conditionalSearch(IPipeNode.class, pipe,
+                    first.getLevel(), IPipeNode::getBlockPos,
+                    gtPipePredicate, limit, limit * 6);
+            paintPaintables(collected, context);
+        } else if (first instanceof IPaintable paintable) {
+            var collected = BreadthFirstBlockSearch.conditionalSearch(IPaintable.class, paintable,
+                    first.getLevel(), p -> ((BlockEntity) p).getBlockPos(),
+                    paintablePredicate, limit, limit * 6);
+            paintPaintables(collected, context);
+        } else if (first instanceof ShulkerBoxBlockEntity shulkerBox) {
+            Level level = first.getLevel();
+            CompoundTag tag = shulkerBox.saveWithoutMetadata(level.registryAccess());
+            BlockPos pos = first.getBlockPos();
+            recolorBlockNoState(SHULKER_BOX_MAP, color, level, pos, Blocks.SHULKER_BOX);
+            if (level.getBlockEntity(pos) instanceof ShulkerBoxBlockEntity newShulker) {
+                newShulker.loadFromTag(tag, level.registryAccess());
+            }
+        } else {
+            return false;
+        }
+        return true;
+    }
 
     private void handleBlocks(BlockPos start, int limit, UseOnContext context) {
         Level level = context.getLevel();
@@ -259,7 +303,52 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
         return false;
     }
 
-    private boolean tryPaintSpecialBlock(Level world, BlockPos pos, Block block) { return false; /* ported stub */ }
+    private boolean tryPaintSpecialBlock(Level world, BlockPos pos, Block block) {
+        if (block.defaultBlockState().is(Tags.Blocks.GLASS_BLOCKS)) {
+            if (recolorBlockNoState(GLASS_MAP, this.color, world, pos, Blocks.GLASS)) {
+                return true;
+            }
+        }
+        if (block.defaultBlockState().is(Tags.Blocks.GLASS_PANES)) {
+            if (recolorBlockNoState(GLASS_PANE_MAP, this.color, world, pos, Blocks.GLASS_PANE)) {
+                return true;
+            }
+        }
+        if (block.defaultBlockState().is(BlockTags.TERRACOTTA)) {
+            if (recolorBlockNoState(TERRACOTTA_MAP, this.color, world, pos, Blocks.TERRACOTTA)) {
+                return true;
+            }
+        }
+        if (block.defaultBlockState().is(BlockTags.WOOL)) {
+            if (recolorBlockNoState(WOOL_MAP, this.color, world, pos)) {
+                return true;
+            }
+        }
+        if (block.defaultBlockState().is(BlockTags.WOOL_CARPETS)) {
+            if (recolorBlockNoState(CARPET_MAP, this.color, world, pos)) {
+                return true;
+            }
+        }
+        if (block.defaultBlockState().is(Tags.Blocks.CONCRETES)) {
+            if (recolorBlockNoState(CONCRETE_MAP, this.color, world, pos)) {
+                return true;
+            }
+        }
+        if (block.defaultBlockState().is(BlockTags.CONCRETE_POWDER)) {
+            if (recolorBlockNoState(CONCRETE_POWDER_MAP, this.color, world, pos)) {
+                return true;
+            }
+        }
+        if (block.defaultBlockState().is(BlockTags.CANDLES)) {
+            if (recolorBlockNoState(CANDLE_MAP, this.color, world, pos)) {
+                return true;
+            }
+        }
+        if (GTCEu.Mods.isCreateLoaded() && block.defaultBlockState().is(AllTags.AllBlockTags.WINDMILL_SAILS.tag)) {
+            return recolorCreateSail(world, pos, color);
+        }
+        return false;
+    }
 
     private static boolean recolorBlockNoState(Map<DyeColor, Block> map, DyeColor color, Level world, BlockPos pos) {
         return recolorBlockNoState(map, color, world, pos, null);
@@ -285,7 +374,66 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
-    private static boolean tryStripBlockColor(Level world, BlockPos pos, Block block) { return false; /* ported stub */ }
+    private static boolean tryStripBlockColor(Level world, BlockPos pos, Block block) {
+        // MC special cases
+        if (block instanceof StainedGlassBlock) {
+            world.setBlockAndUpdate(pos, Blocks.GLASS.defaultBlockState());
+            return true;
+        }
+        if (block instanceof StainedGlassPaneBlock) {
+            world.setBlockAndUpdate(pos, Blocks.GLASS_PANE.defaultBlockState());
+            return true;
+        }
+        if (block.defaultBlockState().is(BlockTags.TERRACOTTA) && block != Blocks.TERRACOTTA) {
+            world.setBlockAndUpdate(pos, Blocks.TERRACOTTA.defaultBlockState());
+            return true;
+        }
+        if (block.defaultBlockState().is(BlockTags.WOOL) && block != Blocks.WHITE_WOOL) {
+            world.setBlockAndUpdate(pos, Blocks.WHITE_WOOL.defaultBlockState());
+            return true;
+        }
+        if (block.defaultBlockState().is(BlockTags.WOOL_CARPETS) && block != Blocks.WHITE_CARPET) {
+            world.setBlockAndUpdate(pos, Blocks.WHITE_CARPET.defaultBlockState());
+            return true;
+        }
+        if (block.defaultBlockState().is(Tags.Blocks.CONCRETES) && block != Blocks.WHITE_CONCRETE) {
+            world.setBlockAndUpdate(pos, Blocks.WHITE_CONCRETE.defaultBlockState());
+            return true;
+        }
+        if (block.defaultBlockState().is(BlockTags.CONCRETE_POWDER) && block != Blocks.WHITE_CONCRETE_POWDER) {
+            world.setBlockAndUpdate(pos, Blocks.WHITE_CONCRETE_POWDER.defaultBlockState());
+            return true;
+        }
+        if (block.defaultBlockState().is(BlockTags.CANDLES) && block != Blocks.WHITE_CANDLE) {
+            recolorBlockNoState(CANDLE_MAP, DyeColor.WHITE, world, pos);
+            return true;
+        }
+        if (GTCEu.Mods.isCreateLoaded() && block.defaultBlockState().is(AllTags.AllBlockTags.WINDMILL_SAILS.tag)) {
+            return recolorCreateSail(world, pos, DyeColor.WHITE);
+        }
+
+        // General case
+        BlockState state = world.getBlockState(pos);
+        for (Property prop : state.getProperties()) {
+            if (prop.getValueClass() == DyeColor.class) {
+                BlockState defaultState = block.defaultBlockState();
+                DyeColor defaultColor = DyeColor.WHITE;
+                try {
+                    // try to read the default color value from the default state instead of just
+                    // blindly setting it to default state, and potentially resetting other values
+                    defaultColor = (DyeColor) defaultState.getValue(prop);
+                } catch (IllegalArgumentException ignored) {
+                    // no default color, we may have to fallback to WHITE here
+                    // other mods that have custom behavior can be done as
+                    // special cases above on a case-by-case basis
+                }
+                recolorBlockState(world, pos, defaultColor);
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     public boolean useItemDurability(Player player, InteractionHand hand, ItemStack stack, ItemStack replacementStack) {
         int usesLeft = getUsesLeft(stack);
@@ -332,8 +480,21 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
 
     private static class AE2CallWrapper {/* ported: removed */
 
-        static boolean isColorable(BlockEntity be) { return false; /* ported stub */ }/* ported: removed */
+        static boolean isColorable(BlockEntity be) {
+            return be instanceof IColorableBlockEntity;
+        }/* ported: removed */
     }
 
-    private static boolean recolorCreateSail(Level world, BlockPos pos, @Nullable DyeColor color) { return false; /* ported stub */ }
+    private static boolean recolorCreateSail(Level world, BlockPos pos, @Nullable DyeColor color) {
+        // logic copied from Create (SailBlock#applyDye).
+        // skip null color, because we're not shears.
+        if (color == null) return false;
+        BlockState oldState = world.getBlockState(pos);
+        BlockState newState = BlockHelper.copyProperties(oldState, AllBlocks.DYED_SAILS.get(color).getDefaultState());
+        if (oldState != newState) {
+            world.setBlockAndUpdate(pos, newState);
+            return true;
+        }
+        return false;
+    }
 }

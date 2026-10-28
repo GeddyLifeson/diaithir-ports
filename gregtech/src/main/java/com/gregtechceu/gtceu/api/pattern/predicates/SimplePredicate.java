@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.api.pattern.predicates;
 
+import com.gregtechceu.gtceu.data.lang.LangHandler;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.pattern.MultiblockState;
@@ -78,7 +79,32 @@ public class SimplePredicate {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public List<Component> getToolTips(TraceabilityPredicate predicates) { return null; /* ported stub */ }
+    public List<Component> getToolTips(TraceabilityPredicate predicates) {
+        List<Component> result = new ArrayList<>();
+        if (toolTips != null) {
+            result.addAll(toolTips);
+        }
+        if (minCount == maxCount && maxCount != -1) {
+            result.add(Component.translatable("gtceu.multiblock.pattern.error.limited_exact", minCount));
+        } else if (minCount != maxCount && minCount != -1 && maxCount != -1) {
+            result.add(Component.translatable("gtceu.multiblock.pattern.error.limited_within", minCount, maxCount));
+        } else {
+            if (minCount != -1) {
+                result.add(LangHandler.getFromMultiLang("gtceu.multiblock.pattern.error.limited", 1, minCount));
+            }
+            if (maxCount != -1) {
+                result.add(LangHandler.getFromMultiLang("gtceu.multiblock.pattern.error.limited", 0, maxCount));
+            }
+        }
+        if (predicates == null) return result;
+        if (predicates.isSingle()) {
+            result.add(Component.translatable("gtceu.multiblock.pattern.single"));
+        }
+        if (predicates.hasAir()) {
+            result.add(Component.translatable("gtceu.multiblock.pattern.replaceable_air"));
+        }
+        return result;
+    }
 
     public boolean test(MultiblockState blockWorldState) {
         if (predicate.test(blockWorldState)) {

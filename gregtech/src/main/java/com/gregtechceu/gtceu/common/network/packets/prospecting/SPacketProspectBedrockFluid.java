@@ -40,7 +40,11 @@ public class SPacketProspectBedrockFluid extends SPacketProspect<ProspectorMode.
     }
 
     @Override
-    public void execute(IPayloadContext context) {  /* ported stub */ }
+    public void execute(IPayloadContext context) {
+        data.rowMap().forEach((level, fluids) -> fluids
+                .forEach((blockPos, fluid) -> GTClientCache.instance.addFluid(level,
+                        blockPos.getX() >> 4, blockPos.getZ() >> 4, fluid)));
+    }
 
     @Override
     public @NotNull Type<SPacketProspectBedrockFluid> type() {

@@ -24,7 +24,17 @@ public non-sealed class FTBOwner extends MachineOwner {
         super(playerUUID);
     }
 
-    public @Nullable Team getPlayerTeam(UUID playerUUID) { return null; /* ported stub */ }
+    public @Nullable Team getPlayerTeam(UUID playerUUID) {
+        if (FTBTeamsAPI.api().isManagerLoaded()) {
+            return FTBTeamsAPI.api().getManager().getPlayerTeamForPlayerID(playerUUID).orElse(null);
+        } else if (FTBTeamsAPI.api().isClientManagerLoaded()) {
+            return FTBTeamsAPI.api().getClientManager().getTeams().stream()
+                    .filter(t -> t.getMembers().contains(playerUUID))
+                    .findFirst().orElse(null);
+        } else {
+            return null;
+        }
+    }
 
     public @Nullable Team getTeam() {
         return getPlayerTeam(playerUUID);
@@ -32,19 +42,55 @@ public non-sealed class FTBOwner extends MachineOwner {
 
     @UnmodifiableView
     @Override
-    public @NotNull Set<UUID> getMembers() { return null; /* ported stub */ }
+    public @NotNull Set<UUID> getMembers() {
+        var team = getTeam();
+        if (team == null) return Collections.emptySet();
+        if (team.isPlayerTeam()) {
+            return Collections.unmodifiableSet(((PlayerTeam) team).getEffectiveTeam().getMembers());
+        } else if (team.isPartyTeam() || team.isServerTeam()) {
+            return Collections.unmodifiableSet(team.getMembers());
+        }
+        return Collections.emptySet();
+    }
 
     @Override
-    public boolean isPlayerInTeam(UUID playerUUID) { return false; /* ported stub */ }
+    public boolean isPlayerInTeam(UUID playerUUID) {
+        if (this.playerUUID.equals(playerUUID)) return true;
+        if (FTBTeamsAPI.api().isManagerLoaded()) {
+            return FTBTeamsAPI.api().getManager().arePlayersInSameTeam(playerUUID, this.playerUUID);
+        } else if (FTBTeamsAPI.api().isClientManagerLoaded()) {
+            var ownTeam = getPlayerTeam(this.playerUUID);
+            if (ownTeam == null) {
+                return false;
+            }
+            var otherTeam = getPlayerTeam(playerUUID);
+            return otherTeam != null && ownTeam.getTeamId().equals(otherTeam.getTeamId());
+        } else {
+            return true;
+        }
+    }
 
     @Override
-    public boolean isPlayerFriendly(UUID playerUUID) { return false; /* ported stub */ }
+    public boolean isPlayerFriendly(UUID playerUUID) {
+        var team = getTeam();
+        if (team == null) {
+            return this.playerUUID.equals(playerUUID);
+        }
+        return team.getRankForPlayer(playerUUID).isAllyOrBetter();
+    }
 
     @Override
-    public UUID getUUID() { return null; /* ported stub */ }
+    public UUID getUUID() {
+        var team = getTeam();
+        return team != null ? team.getId() : EMPTY;
+    }
 
     @Override
-    public String getName() { return null; /* ported stub */ }
+    public String getName() {
+        var team = getTeam();
+        return team != null ? team.getName().getString() :
+                Component.translatable("gtceu.tooltip.status.trinary.unknown").getString();
+    }
 
     @Override
     public Component getTypeDisplayName() {

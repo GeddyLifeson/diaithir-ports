@@ -8,7 +8,9 @@ import org.jetbrains.annotations.Nullable;
 public interface IGTBakedQuad {
 
     @ApiStatus.Internal
-    default BakedQuad gtceu$setTextureKey(@Nullable String key) { return null; /* ported stub */ }
+    default BakedQuad gtceu$setTextureKey(@Nullable String key) {
+        return (BakedQuad) this;
+    }
 
     default @Nullable String gtceu$getTextureKey() {
         return null;

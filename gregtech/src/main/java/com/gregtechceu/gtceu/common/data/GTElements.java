@@ -150,5 +150,7 @@ public class GTElements {
 
     public static void init() {}
 
-    public static Element get(String name) { return null; /* ported stub */ }
+    public static Element get(String name) {
+        return GTRegistries.ELEMENTS.get(GTCEu.id(name));
+    }
 }

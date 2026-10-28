@@ -363,9 +363,58 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
     }
 
     @Override
-    public @NotNull List<Object> createXEIContainerContents(List<Content> contents, GTRecipe recipe, IO io) { return null; /* ported stub */ }
+    public @NotNull List<Object> createXEIContainerContents(List<Content> contents, GTRecipe recipe, IO io) {
+        List<Object> entryLists = contents.stream()
+                .map(Content::getContent)
+                .map(this::of)
+                .map(ItemRecipeCapability::mapItem)
+                .collect(Collectors.toList());
 
-    public Object createXEIContainer(List<?> contents) { return null; /* ported stub */ }
+        if (io == IO.OUT && recipe.recipeType.isScanner()) {
+            List<Object> scannerPossibilities = new ArrayList<>();
+            // Scanner Output replacing, used for cycling research outputs
+            ResearchManager.ResearchItem researchData = null;
+            for (Content stack : recipe.getOutputContents(this)) {
+                ItemStack[] stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(this.of(stack.content));
+                if (stacks.length == 0 || stacks[0].isEmpty()) continue;
+
+                researchData = stacks[0].get(GTDataComponents.RESEARCH_ITEM);
+                if (researchData != null) break;
+            }
+            if (researchData != null) {
+                Collection<GTRecipe> possibleRecipes = researchData.recipeType()
+                        .getDataStickEntry(researchData.researchId());
+                Set<ItemStack> cache = new ObjectOpenCustomHashSet<>(ItemStackHashStrategy.comparingItem());
+                if (possibleRecipes != null) {
+                    for (GTRecipe r : possibleRecipes) {
+                        var outputs = r.getOutputContents(this);
+                        if (outputs.isEmpty()) continue;
+
+                        Content outputContent = outputs.get(0);
+                        ItemStack[] stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(this.of(outputContent.content));
+                        if (stacks.length == 0) continue;
+
+                        ItemStack researchStack = stacks[0];
+                        if (!researchStack.isEmpty() && !cache.contains(researchStack)) {
+                            cache.add(researchStack);
+                            scannerPossibilities.add(ItemStackList.of(researchStack.copyWithCount(1)));
+                        }
+                    }
+                }
+                scannerPossibilities.add(entryLists.getFirst());
+                entryLists = scannerPossibilities;
+            }
+        }
+
+        while (entryLists.size() < recipe.recipeType.getMaxOutputs(this)) entryLists.add(null);
+        return entryLists;
+    }
+
+    public Object createXEIContainer(List<?> contents) {
+        // cast is safe if you don't pass the wrong thing.
+        // noinspection unchecked
+        return new CycleItemEntryHandler((List<ItemEntryList>) contents);
+    }
 
     @NotNull
     @Override
@@ -390,7 +439,72 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                                 @NotNull GTRecipeType recipeType,
                                 @UnknownNullability("null when content == null") GTRecipe recipe,
                                 @Nullable Content content,
-                                @Nullable Object storage, int recipeTier, int chanceTier) {  /* ported stub */ }/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
+                                @Nullable Object storage, int recipeTier, int chanceTier) {
+        if (widget instanceof SlotWidget slot) {
+            if (storage instanceof IItemHandlerModifiable items) {
+                if (index >= 0 && index < items.getSlots()) {
+                    slot.setHandlerSlot(items, index);
+                    slot.setIngredientIO(io == IO.IN ? IngredientIO.INPUT : IngredientIO.OUTPUT);
+                    slot.setCanTakeItems(!isXEI);
+                    slot.setCanPutItems(!isXEI && io.support(IO.IN));
+                }
+                // 1 over container size.
+                // If in a recipe viewer and a research slot can be added, add it.
+                if (isXEI && recipeType.isHasResearchSlot() && index == items.getSlots()) {
+                    if (ConfigHolder.INSTANCE.machines.enableResearch) {
+                        ResearchCondition condition = recipeHolder.conditions().stream()
+                                .filter(ResearchCondition.class::isInstance).findAny()
+                                .map(ResearchCondition.class::cast).orElse(null);
+                        if (condition != null) {
+                            List<ItemStack> dataItems = new ArrayList<>();
+                            for (ResearchData.ResearchEntry entry : condition.data) {
+                                ItemStack dataStick = entry.dataItem().copy();
+                                dataStick.set(GTDataComponents.RESEARCH_ITEM,
+                                        new ResearchManager.ResearchItem(entry.researchId(), recipeType));
+                                dataItems.add(dataStick);
+                            }
+                            CycleItemEntryHandler handler = CycleItemEntryHandler.createFromStacks(List.of(dataItems));
+                            slot.setHandlerSlot(handler, 0);
+                            slot.setIngredientIO(IngredientIO.CATALYST);
+                            slot.setCanTakeItems(false);
+                            slot.setCanPutItems(false);
+                        }
+                    }
+                }
+            }
+            if (content != null) {
+                float chance = (float) recipeType.getChanceFunction()
+                        .getBoostedChance(content, recipeTier, chanceTier) / content.maxChance;
+                slot.setXEIChance(chance);
+                slot.setOnAddedTooltips((w, tooltips) -> {
+                    GTRecipeWidget.setConsumedChance(content,
+                            recipe.getChanceLogicForCapability(this, io, isTickSlot(index, io, recipe)),
+                            tooltips, recipeTier, chanceTier, recipeType.getChanceFunction());
+                    // spotless:off
+                    if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(this.of(content.content)) instanceof IntProviderIngredient ingredient) {
+                        IntProvider countProvider = ingredient.getCountProvider();
+                        tooltips.add(Component.translatable("gtceu.gui.content.count_range",
+                                        countProvider.getMinValue(), countProvider.getMaxValue())
+                                .withStyle(ChatFormatting.GOLD));
+                    } else if (this.of(content.content) instanceof SizedIngredient sizedIngredient &&
+                            com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(sizedIngredient) instanceof IntProviderIngredient ingredient) {
+                        IntProvider countProvider = ingredient.getCountProvider();
+                        tooltips.add(Component.translatable("gtceu.gui.content.count_range",
+                                        countProvider.getMinValue(), countProvider.getMaxValue())
+                                .withStyle(ChatFormatting.GOLD));
+                    }
+                    // spotless:on
+                    if (isTickSlot(index, io, recipe)) {
+                        tooltips.add(Component.translatable("gtceu.gui.content.per_tick"));
+                    }
+                });
+                if (io == IO.IN && (content.chance == 0 ||
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(this.of(content.content)) instanceof IntCircuitIngredient)) {
+                    slot.setIngredientIO(IngredientIO.CATALYST);
+                }
+            }
+        }
+    }/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 
     public interface ICustomParallel {
 

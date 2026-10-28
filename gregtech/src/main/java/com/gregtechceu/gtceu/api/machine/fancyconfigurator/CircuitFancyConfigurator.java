@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.api.machine.fancyconfigurator;
 
+import com.gregtechceu.gtceu.data.lang.LangHandler;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyConfigurator;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyCustomMiddleClickAction;
@@ -164,7 +165,13 @@ public class CircuitFancyConfigurator implements IFancyConfigurator, IFancyCusto
     }
 
     @Override
-    public List<Component> getTooltips() { return null; /* ported stub */ }
+    public List<Component> getTooltips() {
+        var list = new ArrayList<>(IFancyConfigurator.super.getTooltips());
+        list.addAll(Arrays.stream(
+                LangHandler.getMultiLang("gtceu.gui.configurator_slot.tooltip").toArray(new MutableComponent[0]))
+                .toList());
+        return list;
+    }
 
     private int getNextValue(boolean increment) {
         int currentValue = IntCircuitBehaviour.getCircuitConfiguration(circuitSlot.getStackInSlot(0));

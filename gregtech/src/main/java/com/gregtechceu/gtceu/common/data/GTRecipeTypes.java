@@ -654,7 +654,13 @@ public class GTRecipeTypes {
     public static final GTRecipeType DUMMY_RECIPES = register("dummy", DUMMY)
             .setXEIVisible(false);
 
-    public static GTRecipeType register(String name, String group, RecipeType<?>... proxyRecipes) { return null; /* ported stub */ }
+    public static GTRecipeType register(String name, String group, RecipeType<?>... proxyRecipes) {
+        var recipeType = new GTRecipeType(GTCEu.id(name), group, proxyRecipes);
+        GTRegistries.register(BuiltInRegistries.RECIPE_TYPE, recipeType.registryName, recipeType);
+        recipeType.setSerializer(GTRegistries.register(BuiltInRegistries.RECIPE_SERIALIZER, recipeType.registryName,
+                new GTRecipeSerializer()));
+        return recipeType;
+    }
 
     public static void init() {
         GCYMRecipeTypes.init();

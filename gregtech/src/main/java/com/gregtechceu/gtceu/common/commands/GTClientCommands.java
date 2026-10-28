@@ -41,6 +41,19 @@ public class GTClientCommands {
         }
 
         @Override
-        public void run() {  /* ported stub */ }
+        public void run() {
+            boolean first = true;
+            for (ClientCacheManager.ProspectionInfo info : prospectionData) {
+                net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(new SCPacketShareProspection(sender, receiver, info.cacheName, info.key,
+                        info.isDimCache, info.dim, info.data, first));
+                first = false;
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 }

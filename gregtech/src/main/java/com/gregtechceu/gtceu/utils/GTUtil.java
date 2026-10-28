@@ -339,11 +339,32 @@ public class GTUtil {
         return (Class<T>) ((ParameterizedType) type).getActualTypeArguments()[index];
     }
 
-    public static boolean isShiftDown() { return false; /* ported stub */ }
+    public static boolean isShiftDown() {
+        if (GTCEu.isClientSide()) {
+            var id = Minecraft.getInstance().getWindow().getWindow();
+            return InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_SHIFT) ||
+                    InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_SHIFT);
+        }
+        return false;
+    }
 
-    public static boolean isCtrlDown() { return false; /* ported stub */ }
+    public static boolean isCtrlDown() {
+        if (GTCEu.isClientSide()) {
+            var id = Minecraft.getInstance().getWindow().getWindow();
+            return InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_CONTROL) ||
+                    InputConstants.isKeyDown(id, GLFW.GLFW_KEY_RIGHT_CONTROL);
+        }
+        return false;
+    }
 
-    public static boolean isAltDown() { return false; /* ported stub */ }
+    public static boolean isAltDown() {
+        if (GTCEu.isClientSide()) {
+            var id = Minecraft.getInstance().getWindow().getWindow();
+            return InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_ALT) ||
+                    InputConstants.isKeyDown(id, GLFW.GLFW_KEY_RIGHT_ALT);
+        }
+        return false;
+    }
 
     public static String formatLongNumber(long number, long threshold) {
         return (number > threshold) ? DECIMAL_FORMAT_SIC_2F.format(number) : String.valueOf(number);
@@ -389,7 +410,9 @@ public class GTUtil {
                 itemStack.getCount() / divisor != 0;
     }
 
-    public static int getItemBurnTime(Item item) { return (int)0; /* ported stub */ }
+    public static int getItemBurnTime(Item item) {
+        return item.getDefaultInstance().getBurnTime(RecipeType.SMELTING);
+    }
 
     public static int getPumpBiomeModifier(Holder<Biome> biome) {
         if (biome.is(BiomeTags.IS_NETHER)) {
@@ -425,7 +448,10 @@ public class GTUtil {
     /**
      * Determines map color nearest to specified RGB color
      */
-    public static MapColor determineMapColor(int rgbColor) { return null; /* ported stub */ }
+    public static MapColor determineMapColor(int rgbColor) {
+        return closestColor(rgbColor, MapColorAccessor.gtceu$getMaterialColors(),
+                c -> c.calculateRGBColor(MapColor.Brightness.NORMAL));
+    }
 
     private static <T> T closestColor(int rgbColor, T[] colors, Function<T, Integer> extractRgbColor) {
         float[] c = GradientUtil.getRGB(rgbColor);
@@ -469,9 +495,31 @@ public class GTUtil {
         return null;
     }
 
-    public static int getFluidColor(FluidStack fluid) { return (int)0; /* ported stub */ }
+    public static int getFluidColor(FluidStack fluid) {
+        return IClientFluidTypeExtensions.of(fluid.getFluid()).getTintColor(fluid);
+    }
 
-    public static boolean canSeeSunClearly(Level world, BlockPos blockPos) { return false; /* ported stub */ }
+    public static boolean canSeeSunClearly(Level world, BlockPos blockPos) {
+        if (!world.canSeeSky(blockPos.above())) {
+            return false;
+        }
+
+        Holder<Biome> biome = world.getBiome(blockPos.above());
+        if (world.isRaining()) {
+            if (biome.value().warmEnoughToRain(blockPos.above()) || biome.value().coldEnoughToSnow(blockPos.above())) {
+                return false;
+            }
+        }
+
+        if (world.getBiome(blockPos.above()).is(BiomeTags.IS_END)) {
+            return false;
+        }
+
+        Identifier javdVoidBiome = Identifier.fromNamespaceAndPath(GTValues.MODID_JAVD, "void");
+        if (GTCEu.isModLoaded(GTValues.MODID_JAVD) && biome.is(javdVoidBiome)) {
+            return !world.isDay();
+        } else return world.isDay();
+    }
 
     /**
      * @param state the blockstate to check

@@ -80,7 +80,9 @@ public class GTToolItem extends TieredItem implements IGTTool {
 
 
     
-    public Component getDescription() { return null; /* ported stub */ }
+    public Component getDescription() {
+        return Component.translatable(toolType.getUnlocalizedName(), material.getLocalizedName());
+    }
 
     @Override
     public Component getName(ItemStack stack) {
@@ -110,7 +112,9 @@ public class GTToolItem extends TieredItem implements IGTTool {
     }
 
     
-    public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {  /* ported stub */ }
+    public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        return definition$hurtEnemy(stack, target, attacker);
+    }
 
     
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents,

@@ -213,7 +213,10 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void registerReloadListeners(AddServerReloadListenersEvent event) {  /* ported stub */ }
+    public static void registerReloadListeners(AddServerReloadListenersEvent event) {
+        GTRegistries.updateFrozenRegistry(event.getRegistryAccess());
+        event.addListener(PostRegistryListener.INSTANCE);
+    }
 
     @SubscribeEvent
     public static void levelTick(LevelTickEvent.Post event) {
@@ -227,10 +230,24 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void worldLoad(LevelEvent.Load event) {  /* ported stub */ }
+    public static void worldLoad(LevelEvent.Load event) {
+        if (event.getLevel().isClientSide()) {
+            WaypointManager.updateDimension(event.getLevel());
+        } else if (event.getLevel() instanceof ServerLevel serverLevel) {
+            ServerCache.instance.maybeInitWorld(serverLevel);
+        }
+    }
 
     @SubscribeEvent
-    public static void worldUnload(LevelEvent.Unload event) {  /* ported stub */ }
+    public static void worldUnload(LevelEvent.Unload event) {
+        if (event.getLevel() instanceof ServerLevel serverLevel) {
+            TaskHandler.onWorldUnLoad(serverLevel);
+            MultiblockWorldSavedData.getOrCreate(serverLevel).releaseExecutorService();
+            ServerCache.instance.invalidateWorld(serverLevel);
+        } else if (event.getLevel().isClientSide()) {
+            ClientCacheManager.saveCaches(event.getLevel().registryAccess());
+        }
+    }
 
     @SubscribeEvent
     public static void serverStarting(ServerStartingEvent event) {
@@ -240,7 +257,10 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void serverStopped(ServerStoppedEvent event) {  /* ported stub */ }
+    public static void serverStopped(ServerStoppedEvent event) {
+        ServerCache.instance.clear();
+        VirtualEnderRegistry.release();
+    }
 
     @SubscribeEvent
     public static void serverStopping(ServerStoppingEvent event) {
@@ -253,7 +273,20 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void onPlayerJoinServer(PlayerEvent.PlayerLoggedInEvent event) {  /* ported stub */ }
+    public static void onPlayerJoinServer(PlayerEvent.PlayerLoggedInEvent event) {
+        if (!(event.getEntity() instanceof ServerPlayer serverPlayer)) {
+            return;
+        }
+        PacketDistributor.sendToPlayer(serverPlayer, new SPacketSendWorldID());
+
+        if (ConfigHolder.INSTANCE.gameplay.environmentalHazards) {
+            ServerLevel level = serverPlayer.serverLevel();
+            var data = EnvironmentalHazardSavedData.getOrCreate(level);
+            PacketDistributor.sendToPlayer(serverPlayer, new SPacketSyncLevelHazards(data.getHazardZones()));
+        }
+        CapeRegistry.detectNewCapes(serverPlayer);
+        CapeRegistry.loadCurrentCapesOnLogin(serverPlayer);
+    }
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void onEntityLivingFallEvent(LivingFallEvent event) {
@@ -378,10 +411,56 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void onAttributeTooltipEvent(AddAttributeTooltipsEvent event) {  /* ported stub */ }
+    public static void onAttributeTooltipEvent(AddAttributeTooltipsEvent event) {
+        ItemStack stack = event.getStack();
+
+        stack.addToTooltip(GTDataComponents.BINDING_DATA, event.getContext(),
+                event::addTooltipLines, event.getContext().flag());
+        stack.addToTooltip(GTDataComponents.COMPUTER_MONITOR_CONFIG, event.getContext(),
+                event::addTooltipLines, event.getContext().flag());
+
+        if (stack.has(GTDataComponents.MONITOR_TARGET)) {
+            GlobalPosWithRot target = stack.get(GTDataComponents.MONITOR_TARGET);
+            BlockPos pos = target.pos();
+            event.addTooltipLines(Component.translatable(
+                    "gtceu.tooltip.wireless_transmitter_bind",
+                    Component.literal("" + pos.getX()).withStyle(ChatFormatting.GOLD),
+                    Component.literal("" + pos.getY()).withStyle(ChatFormatting.GOLD),
+                    Component.literal("" + pos.getZ()).withStyle(ChatFormatting.GOLD),
+                    Component.translatable("gtceu.direction.tooltip." + target.side().getName())
+                            .withStyle(ChatFormatting.DARK_PURPLE),
+                    Component.translatable(target.dimension().location().toLanguageKey(Level.TRANSLATION_PREFIX))
+                            .withStyle(ChatFormatting.DARK_PURPLE)));
+        }
+        if (!stack.has(GTDataComponents.RESEARCH_ITEM) && stack.has(GTDataComponents.DATA_COPY_POS)) {
+            BlockPos pos = stack.get(GTDataComponents.DATA_COPY_POS);
+            event.addTooltipLines(Component.translatable("gtceu.tooltip.proxy_bind",
+                    Component.literal("" + pos.getX()).withStyle(ChatFormatting.LIGHT_PURPLE),
+                    Component.literal("" + pos.getY()).withStyle(ChatFormatting.LIGHT_PURPLE),
+                    Component.literal("" + pos.getZ()).withStyle(ChatFormatting.LIGHT_PURPLE)));
+        }
+        if (stack.has(GTDataComponents.COMPUTER_MONITOR_DATA)) {
+            FormatStringList list = stack.getOrDefault(GTDataComponents.COMPUTER_MONITOR_DATA, FormatStringList.EMPTY);
+            event.addTooltipLines(Component.translatable("gtceu.tooltip.computer_monitor_data",
+                    GTStringUtils.toCompactedComponent(list.lines())));
+        }
+        if (!stack.has(GTDataComponents.DATA_COPY_POS)) {
+            stack.addToTooltip(GTDataComponents.RESEARCH_ITEM, event.getContext(),
+                    event::addTooltipLines, event.getContext().flag());
+        }
+    }
 
     @SubscribeEvent
-    public static void breakSpeed(PlayerEvent.BreakSpeed event) {  /* ported stub */ }
+    public static void breakSpeed(PlayerEvent.BreakSpeed event) {
+        Player player = event.getEntity();
+        for (ItemStack stack : player.getArmorSlots()) {
+            if (stack.getItem() instanceof ArmorComponentItem componentItem) {
+                if (componentItem.getArmorLogic() instanceof IJetpack jetpack && jetpack.removeMiningSpeedPenalty()) {
+                    if (!player.onGround() || player.isUnderWater()) event.setNewSpeed(event.getOriginalSpeed() * 5);
+                }
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void playerTickEvent(PlayerTickEvent.Pre event) {
