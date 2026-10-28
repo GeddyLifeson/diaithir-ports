@@ -88,7 +88,7 @@ public final class VoiceClient {
     public static void keys(RegisterKeyMappingsEvent event) {
         var category = new KeyMapping.Category(Identifier.fromNamespaceAndPath(DiaithirVoice.ID, "voice"));
         event.registerCategory(category);
-        talkKey = new KeyMapping("key.diaithirvoice.talk", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_V, category);
+        talkKey = new KeyMapping("key.diaithirvoice.talk", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_SEMICOLON, category);
         event.register(talkKey);
     }
 
