@@ -37,7 +37,7 @@ public class MixinLandRandomPos {
         ),
         cancellable = true
     )
-    private static void postGenerateRandomPosTowardDirection(PathfinderMob pathfinderMob, int i, boolean bl,
+    private static void postGenerateRandomPosTowardDirection(PathfinderMob pathfinderMob, double i, boolean bl,
         BlockPos blockPos, CallbackInfoReturnable<BlockPos> cir) {
         if (cir.getReturnValue() != null) {
             return;

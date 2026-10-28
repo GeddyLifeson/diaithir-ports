@@ -16,7 +16,6 @@
     "accessors.world.level.block.StairBlockAccessor",
     "commands.argument.selector.MixinEntitySelectorParser",
     "entity.MixinEntity",
-    "feature.ai.goal.JitteredLinearRetryAccessor",
     "feature.ai.goal.MixinGoalUtil",
     "feature.ai.goal.MixinMoveToBlockGoal",
     "feature.ai.goal.MixinMoveToTargetSink",

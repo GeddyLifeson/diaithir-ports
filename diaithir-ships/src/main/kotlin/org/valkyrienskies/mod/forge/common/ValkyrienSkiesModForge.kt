@@ -162,6 +162,7 @@ class ValkyrienSkiesModForge(modBus: IEventBus, container: ModContainer) {
         modBus.addListener(::loadComplete)
 
         forgeBus.addListener(::registerCommands)
+        if (System.getProperty("vs.selftest") == "true") forgeBus.addListener(VSSelfTest::onTick)
         forgeBus.addListener(::tagsUpdated)
         forgeBus.addListener(::registerResourceManagers)
         modBus.addListener(VSForgeNetworking::register)

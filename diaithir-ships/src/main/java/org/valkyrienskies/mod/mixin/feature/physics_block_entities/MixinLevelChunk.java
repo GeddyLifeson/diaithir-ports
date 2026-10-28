@@ -36,7 +36,7 @@ public abstract class MixinLevelChunk {
     }
 
     // Inject into HEAD will not work
-    @WrapOperation(method = "clearAllBlockEntities", at = @At(value = "INVOKE", target = "Ljava/util/Map;clear()V"))
+    @WrapOperation(method = "clearAllBlockEntities", at = @At(value = "INVOKE", target = "Ljava/util/Map;clear()V", ordinal = 0))
     private void beforeClearAllBlockEntities(Map<BlockPos, BlockEntity> blockEntities, Operation<Void> original) {
         blockEntities.forEach((blockPos, blockEntity) -> {
             if (blockEntity instanceof BlockEntityPhysicsListener listener) {

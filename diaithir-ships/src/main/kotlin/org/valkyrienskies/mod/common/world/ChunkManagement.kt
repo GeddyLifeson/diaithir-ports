@@ -24,6 +24,7 @@ object ChunkManagement {
     fun tickChunkLoading(shipWorld: VsiServerShipWorld, server: MinecraftServer) {
         val (chunkWatchTasks, chunkUnwatchTasks) = shipWorld.getChunkWatchTasks()
 
+        if (System.getProperty("vs.selftest") == "true" && (chunkWatchTasks.iterator().hasNext())) org.slf4j.LoggerFactory.getLogger("VS2-selftest").info("watch tasks present")
         // for now, just do all the watch tasks
 
         chunkWatchTasks.forEach { chunkWatchTask: VsiChunkWatchTask ->

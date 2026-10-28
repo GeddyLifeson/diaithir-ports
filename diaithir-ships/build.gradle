@@ -10,7 +10,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
     version = project.neo_version
-    runs { server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
+    runs { server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dvs.selftest=true','-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
     mods { valkyrienskies { sourceSet(sourceSets.main) } }
 }
 
