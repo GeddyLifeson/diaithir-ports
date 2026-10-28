@@ -32,21 +32,12 @@ public class CommonProxy {
     private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, LDLib.MOD_ID);/* ported: removed */
 
     static {
-        if (Platform.isDevEnv()) {
-            TEST_BE_TYPE = BLOCK_ENTITY_TYPES.register("test", () -> BlockEntityType.Builder.of(TestBlockEntity::new, TestBlock.BLOCK).build(null));
-        } else {
-            TEST_BE_TYPE = null;
+        if (Platform.isDevEnv()) {/* ported: removed */
+        } else {/* ported: removed */
         }
     }
 
     public CommonProxy(IEventBus eventBus) {
-        if (Platform.isDevEnv()) {
-            BLOCKS.register("test", () -> TestBlock.BLOCK);
-            ITEMS.register("test", () -> TestItem.ITEM);
-            BLOCKS.register("test_2", () -> NoRendererTestBlock.BLOCK);
-            ITEMS.register("test_2", () -> new BlockItem(NoRendererTestBlock.BLOCK, new Item.Properties()));
-        }
-
         // used for forge events (ClientProxy + CommonProxy)
         // eventBus.register(this); //TODO: uncomment if @SubscribeEvent is used in this class
         eventBus.addListener(FMLLoadCompleteEvent.class, CommonProxy::loadComplete);
@@ -55,14 +46,6 @@ public class CommonProxy {
         NeoForge.EVENT_BUS.addListener(this::registerCommand);
         // init common features
         CommonProxy.init();
-        // load ldlib plugin
-        ReflectionUtils.findAnnotationClasses(LDLibPlugin.class, clazz -> {
-            try {
-                if (clazz.getConstructor().newInstance() instanceof ILDLibPlugin plugin) {
-                    plugin.onLoad();
-                }
-            } catch (Throwable ignored) {}
-        }, () -> {});
         TypedPayloadRegistries.postInit();
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);

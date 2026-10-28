@@ -30,7 +30,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class BlockEntityWithBERModelRenderer<T extends BlockEntity>  {/* ported: removed */
 
     public BlockEntityWithBERModelRenderer(BlockEntityRendererProvider.Context context) {
-        this.blockRenderDispatcher = context.getBlockRenderDispatcher();
     }
 
     

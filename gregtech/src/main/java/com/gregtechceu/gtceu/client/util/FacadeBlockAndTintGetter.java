@@ -31,7 +31,10 @@ public class FacadeBlockAndTintGetter implements BlockAndTintGetter {
     }
 
     
-    public float getShade(Direction direction, boolean shade) { return (float)0; /* ported stub */ }
+    @Override
+    public net.minecraft.world.level.CardinalLighting cardinalLighting() {
+        return parent.cardinalLighting();
+    }
 
     @Override
     public LevelLightEngine getLightEngine() {

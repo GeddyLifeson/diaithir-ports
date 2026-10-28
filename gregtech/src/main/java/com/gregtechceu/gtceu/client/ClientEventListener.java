@@ -146,8 +146,7 @@ public class ClientEventListener {
         RecipeMap manager = event.getRecipeMap();
         for (var category : GTRegistries.RECIPE_CATEGORIES) {
             GTRecipeType type = category.getRecipeType();
-            for (GTRecipe recipe : type.getRecipesInCategory(category)) {
-                manager.byKey(recipe.id).ifPresent(holder -> recipe.setId(holder.id()));
+            for (GTRecipe recipe : type.getRecipesInCategory(category)) {/* ported: removed */
             }
         }
     }

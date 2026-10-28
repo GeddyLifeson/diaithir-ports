@@ -33,7 +33,7 @@ public class CompassSection {
         this.config = config;
         this.sectionName = sectionName;
         this.nodes = new HashMap<>();
-        this.priority = JsonUtils.getIntOr("priority", config, 0);
+        this.priority = 0;
         this.setButtonTexture(SimpleIGuiTextureJsonUtils.fromJson(config.get("button_texture").getAsJsonObject()));
         this.setBackgroundTexture(config.has("background_texture") ? SimpleIGuiTextureJsonUtils.fromJson(config.get("background_texture").getAsJsonObject()): null);
     }

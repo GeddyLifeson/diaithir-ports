@@ -20,7 +20,5 @@ public class ArmorItemRenderer {
 
     private static final Set<ArmorItemRenderer> MODELS = new HashSet<>();
 
-    public static void reinitModels() {  /* ported stub */ }
-
-    private final Item item;/* ported: removed *//* ported: removed *//* ported: removed */
+    public static void reinitModels() {  /* ported stub */ }/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 }

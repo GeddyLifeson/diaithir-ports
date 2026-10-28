@@ -65,15 +65,7 @@ public interface IGuiTexture extends IConfigurable {
         @Override
         public void draw(GuiGraphics graphics, int mouseX, int mouseY, float x, float y, int width, int height) {
             Tesselator tessellator = Tesselator.getInstance();
-            BufferBuilder bufferbuilder = tessellator.begin(VertexFormat.Mode.QUADS, POSITION_TEX);
-            RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
-            RenderSystem.setShaderTexture(0, TextureManager.INTENTIONAL_MISSING_TEXTURE);
-            var matrix4f = graphics.pose().last().pose();
-            bufferbuilder.addVertex(matrix4f, x, y + height, 0).setUv(0, 1);
-            bufferbuilder.addVertex(matrix4f, x + width, y + height, 0).setUv(1, 1);
-            bufferbuilder.addVertex(matrix4f, x + width, y, 0).setUv(1, 0);
-            bufferbuilder.addVertex(matrix4f, x, y, 0).setUv(0, 0);
-            BufferUploader.drawWithShader(bufferbuilder.buildOrThrow());
+            BufferBuilder bufferbuilder = tessellator.begin(VertexFormat.Mode.QUADS, POSITION_TEX);/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
         }
     };
 

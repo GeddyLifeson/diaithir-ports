@@ -27,10 +27,8 @@ import java.util.*;
  * @implNote ParticleManager, for LParticle
  */
 @OnlyIn(Dist.CLIENT)
-public class ParticleManager {
-    private static final List<ParticleRenderType> RENDER_ORDER = ImmutableList.of(ParticleRenderType.TERRAIN_SHEET, ParticleRenderType.PARTICLE_SHEET_OPAQUE, ParticleRenderType.PARTICLE_SHEET_LIT, ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT, ParticleRenderType.CUSTOM);
-    private final Queue<Particle> waitToAdded = Queues.newArrayDeque();
-    private final Map<ParticleRenderType, Queue<Particle>> particles = Maps.newTreeMap(makeParticleRenderTypeComparator(RENDER_ORDER));
+public class ParticleManager {/* ported: removed */
+    private final Queue<Particle> waitToAdded = Queues.newArrayDeque();/* ported: removed */
     private final TextureManager textureManager = Minecraft.getInstance().getTextureManager();
 
     public Level level;
@@ -39,12 +37,7 @@ public class ParticleManager {
         this.level = level;
     }
 
-    public void clearAllParticles() {
-        synchronized (waitToAdded) {
-            waitToAdded.clear();
-            particles.clear();
-        }
-    }
+    public void clearAllParticles() {  /* ported stub */ }
 
     public void addParticle(Particle particle) {
         synchronized (waitToAdded) {
@@ -52,11 +45,7 @@ public class ParticleManager {
         }
     }
 
-    public int getParticleAmount() {
-        int amount = waitToAdded.size();
-        amount += particles.values().stream().mapToInt(Collection::size).sum();
-        return amount;
-    }
+    public int getParticleAmount() { return (int)0; /* ported stub */ }
 
     public void tick() {  /* ported stub */ }
 

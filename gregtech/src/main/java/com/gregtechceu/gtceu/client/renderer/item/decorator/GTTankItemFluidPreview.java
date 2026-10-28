@@ -30,7 +30,7 @@ public class GTTankItemFluidPreview implements IItemDecorator {
     public static final GTTankItemFluidPreview DRUM = new GTTankItemFluidPreview() {
 
         @Override
-        public boolean render(GuiGraphics guiGraphics, Font font, ItemStack itemStack, int x, int y) {
+        public boolean render(net.minecraft.client.gui.GuiGraphicsExtractor guiGraphics, Font font, ItemStack itemStack, int x, int y) {
             if (!ConfigHolder.INSTANCE.client.tankItemFluidPreview.drum) return false;
             return super.render(guiGraphics, font, itemStack, x, y);
         }
@@ -39,7 +39,7 @@ public class GTTankItemFluidPreview implements IItemDecorator {
     public static final GTTankItemFluidPreview QUANTUM_TANK = new GTTankItemFluidPreview() {
 
         @Override
-        public boolean render(GuiGraphics guiGraphics, Font font, ItemStack itemStack, int x, int y) {
+        public boolean render(net.minecraft.client.gui.GuiGraphicsExtractor guiGraphics, Font font, ItemStack itemStack, int x, int y) {
             if (!ConfigHolder.INSTANCE.client.tankItemFluidPreview.quantumTank) return false;
             return super.render(guiGraphics, font, itemStack, x, y);
         }
@@ -77,5 +77,5 @@ public class GTTankItemFluidPreview implements IItemDecorator {
     }
 
     
-    public boolean render(GuiGraphics guiGraphics, Font font, ItemStack itemStack, int x, int y) { return false; /* ported stub */ }
+    public boolean render(net.minecraft.client.gui.GuiGraphicsExtractor guiGraphics, Font font, ItemStack itemStack, int x, int y) { return false; /* ported stub */ }
 }

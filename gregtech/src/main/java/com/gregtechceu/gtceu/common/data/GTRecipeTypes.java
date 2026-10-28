@@ -537,7 +537,7 @@ public class GTRecipeTypes {
                                     .of(recipeBuilder.output.get(ItemRecipeCapability.CAP).getFirst().getContent())) :
                             null;
                     ItemStack outputItem = outputs == null || outputs.length == 0 ? ItemStack.EMPTY : outputs[0];
-                    if (input.ingredient().isEmpty()) return;
+                    if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.isEmpty(input.ingredient())) return;
                     List<Content> contents = recipeBuilder.output.get(FluidRecipeCapability.CAP);
                     for (int i = 0; i < contents.size(); ++i) {
                         Content outputContent = contents.get(i);

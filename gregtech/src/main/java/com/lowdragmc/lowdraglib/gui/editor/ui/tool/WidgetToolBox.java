@@ -59,25 +59,8 @@ public class WidgetToolBox extends DraggableScrollableWidgetGroup {
         super(0, 0, size.width, size.height);
         int yOffset = 3;
         setYScrollBarWidth(4).setYBarStyle(null, ColorPattern.T_WHITE.rectTexture().setRadius(2).transform(-0.5f, 0));
-        for (AnnotationDetector.Wrapper<LDLRegister, IConfigurableWidget> wrapper : AnnotationDetector.REGISTER_WIDGETS) {
-            String group = wrapper.annotation().group().isEmpty() ? "widget.basic" : wrapper.annotation().group();
-            if (group.equals(groupName)) {
-                var widget = wrapper.creator().get();
-                widget.initTemplate();
-                widget.widget().setSelfPosition(new Position(0, 0));
-                SelectableWidgetGroup selectableWidgetGroup = new SelectableWidgetGroup(0, yOffset, size.width - 2, 50 + 14);
-                selectableWidgetGroup.addWidget(new ImageWidget((size.width - 2 - 45) / 2, 17, 45, 30, new WidgetTexture(widget.widget())));
-                selectableWidgetGroup.addWidget(new LabelWidget(3, 3, widget.getTranslateKey()));
-                selectableWidgetGroup.setSelectedTexture(ColorPattern.T_GRAY.rectTexture());
-                selectableWidgetGroup.setDraggingProvider(() -> {
-                    final IConfigurableWidget configurableWidget = wrapper.creator().get();
-                    configurableWidget.initTemplate();
-                    return (IWidgetPanelDragging) () -> configurableWidget;
-                }, (w, p) -> new WidgetTexture(w.get().widget()).setDragging(true));
-                addWidget(selectableWidgetGroup);
-                yOffset += 50 + 14 + 3;
-            }
-        }
+        // PORT: widget registry scan (AnnotationDetector) not ported
+
     }
 
     public interface IWidgetPanelDragging extends Supplier<IConfigurableWidget> {

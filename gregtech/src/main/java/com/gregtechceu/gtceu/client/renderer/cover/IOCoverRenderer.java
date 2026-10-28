@@ -49,22 +49,7 @@ public class IOCoverRenderer implements ICoverRenderer {
                            @Nullable Identifier invertedOverlay,
                            @Nullable Identifier emissiveOverlay,
                            @Nullable Identifier invertedEmissiveOverlay) {
-        ModelUtils.registerAtlasStitchedEventListener(false, InventoryMenu.BLOCK_ATLAS, event -> {
-            var atlas = event.getAtlas();
-
-            if (overlay != null) {
-                overlaySprite = atlas.getSprite(overlay);
-            }
-            if (invertedOverlay != null) {
-                invertedOverlaySprite = atlas.getSprite(invertedOverlay);
-            }
-            if (emissiveOverlay != null) {
-                emissiveOverlaySprite = atlas.getSprite(emissiveOverlay);
-            }
-            if (invertedEmissiveOverlay != null) {
-                invertedEmissiveOverlaySprite = atlas.getSprite(invertedEmissiveOverlay);
-            }
-        });
+        // PORT: atlas sprite lookup not yet ported
     }
 
     @Override

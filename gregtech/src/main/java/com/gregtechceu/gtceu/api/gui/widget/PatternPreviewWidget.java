@@ -123,7 +123,7 @@ public class PatternPreviewWidget extends WidgetGroup {
                 }
                 if (hoverPosFace != null) {
                     var state = getDummyWorld().getBlockState(hoverPosFace.pos());
-                    hoverItem = state.getBlock().getCloneItemStack(getDummyWorld(), hoverPosFace.pos(), state);
+                    hoverItem = new ItemStack(state.getBlock());
                 }
                 BlockPosFace tmp = dragging ? clickPosFace : hoverPosFace;
                 if (selectedPosFace != null || tmp != null) {
@@ -158,7 +158,7 @@ public class PatternPreviewWidget extends WidgetGroup {
 
         if (ConfigHolder.INSTANCE.client.useVBO) {
             if (!RenderSystem.isOnRenderThread()) {
-                RenderSystem.recordRenderCall(sceneWidget::useCacheBuffer);
+                sceneWidget.useCacheBuffer();
             } else {
                 sceneWidget.useCacheBuffer();
             }

@@ -54,11 +54,11 @@ public class ShaderTexture extends TransformTexture {
         this(false);
         this.location = Identifier.fromNamespaceAndPath(LDLib.MOD_ID, "fbm");
         if (LDLib.isRemote() && ShaderManager.allowedShader()) {
-            Shader shader = Shaders.load(Shader.ShaderType.FRAGMENT, location);
+            Shader shader = null;
             if (shader == null) return;
             this.program = new ShaderProgram();
             this.shader = shader;
-            program.attach(Shaders.GUI_IMAGE_V);
+            program.attach(null);
             program.attach(shader);
         }
     }
@@ -89,12 +89,10 @@ public class ShaderTexture extends TransformTexture {
     public void updateShader(Identifier location) {
         if (LDLib.isRemote() && ShaderManager.allowedShader()) {
             this.location = location;
-            dispose();
-            Shader shader = Shaders.load(Shader.ShaderType.FRAGMENT, location);
+            dispose();/* ported: removed */
             if (shader == null) return;
             this.program = new ShaderProgram();
-            this.shader = shader;
-            program.attach(Shaders.GUI_IMAGE_V);
+            this.shader = shader;/* ported: removed */
             program.attach(shader);
         }
     }
@@ -114,7 +112,7 @@ public class ShaderTexture extends TransformTexture {
         if (shader == null) return;
         this.program = new ShaderProgram();
         this.shader = shader;
-        program.attach(Shaders.GUI_IMAGE_V);
+        program.attach(null);
         program.attach(shader);
     }
 

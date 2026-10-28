@@ -418,5 +418,15 @@ public abstract class WorldSceneRenderer {
         public VertexConsumer setNormal(float x, float y, float z) {
             return builder.setNormal(x, y, z);
         }
+
+        @Override
+        public VertexConsumer setColor(int color) {
+            return builder.setColor(color);
+        }
+
+        @Override
+        public VertexConsumer setLineWidth(float width) {
+            return builder.setLineWidth(width);
+        }
     }
 }

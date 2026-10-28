@@ -16,7 +16,7 @@ public class VirtualChunkSection extends LevelChunkSection {
 	public final int zStart;
 
 	public VirtualChunkSection(VirtualChunk owner, int yBase) {
-		super(owner.world.registryAccess().lookupOrThrow(Registries.BIOME));
+		super(net.minecraft.world.level.chunk.PalettedContainerFactory.create(owner.world.registryAccess()));
 		this.owner = owner;
 		this.xStart = owner.getPos()
 			.getMinBlockX();

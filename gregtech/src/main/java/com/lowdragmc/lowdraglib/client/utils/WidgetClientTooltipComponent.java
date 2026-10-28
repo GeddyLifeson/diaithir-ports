@@ -20,7 +20,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @OnlyIn(Dist.CLIENT)
 public record WidgetClientTooltipComponent(WidgetTooltipComponent tooltipComponent) implements ClientTooltipComponent {
     
-    public int getHeight() { return (int)0; /* ported stub */ }
+    @Override
+    public int getHeight(Font font) { return 0; }
 
     @Override
     public int getWidth(Font font) { return (int)0; /* ported stub */ }

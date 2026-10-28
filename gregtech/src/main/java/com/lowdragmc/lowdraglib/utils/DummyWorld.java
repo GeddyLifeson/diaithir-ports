@@ -73,17 +73,67 @@ public class DummyWorld extends Level {
     private final BiomeManager biomeManager;
     public WeakReference<Level> level;
     protected final LevelLightEngine lighter;
-    private final BlockPos.MutableBlockPos scratch = new BlockPos.MutableBlockPos();
-    @Getter
-    private Supplier<ClientLevel> asClientWorld = Suppliers.memoize(() -> WrappedClientWorld.of(this));
+    private final BlockPos.MutableBlockPos scratch = new BlockPos.MutableBlockPos();/* ported: removed */
 
 
     public DummyWorld(Level level) {
-        super((WritableLevelData) level.getLevelData(), level.dimension(), level.registryAccess(), level.dimensionTypeRegistration(), level::getProfiler,
+        super((WritableLevelData) level.getLevelData(), level.dimension(), level.registryAccess(), level.dimensionTypeRegistration(),
                 true, false, 0, 0);
         this.level = new WeakReference<>(level);
         this.lighter = new LevelLightEngine(chunkProvider, true, false);
         this.biomeManager = new BiomeManager(this, 0);
+    }
+
+    @Override
+    public void explode(net.minecraft.world.entity.Entity source, net.minecraft.world.damagesource.DamageSource damageSource,
+                        net.minecraft.world.level.ExplosionDamageCalculator damageCalculator, double x, double y, double z,
+                        float radius, boolean fire, Level.ExplosionInteraction interaction,
+                        net.minecraft.core.particles.ParticleOptions smallExplosionParticles,
+                        net.minecraft.core.particles.ParticleOptions largeExplosionParticles,
+                        net.minecraft.util.random.WeightedList<net.minecraft.core.particles.ExplosionParticleInfo> secondaryParticles,
+                        net.minecraft.core.Holder<net.minecraft.sounds.SoundEvent> explosionSound) {}
+
+    @Override
+    public void setRespawnData(net.minecraft.world.level.storage.LevelData.RespawnData data) {}
+
+    @Override
+    public net.minecraft.world.level.storage.LevelData.RespawnData getRespawnData() {
+        return getLevel().getRespawnData();
+    }
+
+    @Override
+    public java.util.Collection<? extends net.neoforged.neoforge.entity.PartEntity<?>> dragonParts() {
+        return java.util.List.of();
+    }
+
+    @Override
+    public net.minecraft.world.item.crafting.RecipeAccess recipeAccess() {
+        return getLevel().recipeAccess();
+    }
+
+    @Override
+    public net.minecraft.world.clock.ClockManager clockManager() {
+        return getLevel().clockManager();
+    }
+
+    @Override
+    public net.minecraft.world.attribute.EnvironmentAttributeSystem environmentAttributes() {
+        return getLevel().environmentAttributes();
+    }
+
+    @Override
+    public net.minecraft.world.level.block.entity.FuelValues fuelValues() {
+        return getLevel().fuelValues();
+    }
+
+    @Override
+    public int getSeaLevel() {
+        return getLevel().getSeaLevel();
+    }
+
+    @Override
+    public net.minecraft.world.level.border.WorldBorder getWorldBorder() {
+        return getLevel().getWorldBorder();
     }
 
     @NotNull
@@ -321,7 +371,7 @@ public class DummyWorld extends Level {
     }
 
     
-    public void levelEvent(@Nullable Player pPlayer, int pType, BlockPos pPos, int pData) {
+    public void levelEvent(@Nullable Entity pPlayer, int pType, BlockPos pPos, int pData) {
 
     }
 
@@ -341,7 +391,7 @@ public class DummyWorld extends Level {
     }
 
     
-    public void playSeededSound(@Nullable Player player, double x, double y, double z, Holder<SoundEvent> sound, SoundSource source, float volume, float pitch, long seed) {
+    public void playSeededSound(@Nullable Entity player, double x, double y, double z, Holder<SoundEvent> sound, SoundSource source, float volume, float pitch, long seed) {
 
     }
 
@@ -351,7 +401,7 @@ public class DummyWorld extends Level {
     }
 
     
-    public void playSeededSound(@Nullable Player player, Entity entity, Holder<SoundEvent> sound, SoundSource category, float volume, float pitch, long seed) {
+    public void playSeededSound(@Nullable Entity player, Entity entity, Holder<SoundEvent> sound, SoundSource category, float volume, float pitch, long seed) {
 
     }
 

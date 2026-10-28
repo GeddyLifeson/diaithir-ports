@@ -137,7 +137,7 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
                     if (frameIndex < currentFrame) return 1;
                     if (frameTick > 0 && frameIndex == currentFrame) {
                         var duration = frame.getDuration();
-                        return (frameTick + (isPause ? 0 : Minecraft.getInstance().getTimer().getGameTimeDeltaTicks())) / Math.max(duration, 1);
+                        return (frameTick + (isPause ? 0 : 0)) / Math.max(duration, 1);
                     }
                     return 0;
                 }, progressWidth * i + 1 + 1, height - 6 + 1, progressWidth - 4, 4, new ProgressTexture(IGuiTexture.EMPTY, ColorPattern.WHITE.rectTexture())));

@@ -22,6 +22,6 @@ public class GTLampItemOverlayRenderer implements IItemDecorator {
     private GTLampItemOverlayRenderer() {}
 
     
-    public boolean render(@NotNull GuiGraphics graphics, @NotNull Font font,
+    public boolean render(@NotNull net.minecraft.client.gui.GuiGraphicsExtractor graphics, @NotNull Font font,
                           ItemStack stack, int xPosition, int yPosition) { return false; /* ported stub */ }
 }

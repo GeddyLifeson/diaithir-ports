@@ -295,7 +295,7 @@ public class ToolHelper {
                     if (prefix.isEmpty()) {
                         for (Content output : hammerRecipe.getOutputContents(ItemRecipeCapability.CAP)) {
                             if (dropChance >= 1.0F || random.nextFloat() <= dropChance) {
-                                drops.add(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copy(ItemRecipeCapability.CAP.of(output.content)).getItems()[0]);
+                                drops.add(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ItemRecipeCapability.CAP.of(output.content))[0].copy());
                             }
                         }
                     } else if (TagPrefix.ORES.containsKey(prefix)) {

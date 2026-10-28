@@ -38,13 +38,12 @@ public class LDLib {
             .registerTypeAdapterFactory(IGuiTextureTypeAdapter.INSTANCE)
             .registerTypeAdapterFactory(FluidStackTypeAdapter.INSTANCE)
             .registerTypeAdapter(ItemStack.class, ItemStackTypeAdapter.INSTANCE)
-            .registerTypeAdapter(Identifier.class, new Identifier.Serializer())
             .create();
     private static File location;
 
     public LDLib(IEventBus eventBus, ModContainer modContainer) {
         LDLib.init();
-        if (FMLEnvironment.dist == Dist.CLIENT) {
+        if (FMLEnvironment.getDist() == Dist.CLIENT) {
             new ClientProxy(eventBus);
         } else {
             new CommonProxy(eventBus);

@@ -29,10 +29,17 @@ public class CameraEntity extends Entity {
     }
 
     
-    protected void readAdditionalSaveData(@Nonnull CompoundTag pCompound) {  /* ported stub */ }
+    @Override
+    protected void readAdditionalSaveData(@Nonnull net.minecraft.world.level.storage.ValueInput input) {}
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel level, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
+    }
 
     
-    protected void addAdditionalSaveData(@Nonnull CompoundTag pCompound) {  /* ported stub */ }
+    @Override
+    protected void addAdditionalSaveData(@Nonnull net.minecraft.world.level.storage.ValueOutput output) {}
 
     @Override
     @Nonnull

@@ -57,12 +57,22 @@ public class GrowingPlantRender extends DynamicRender<IRecipeLogicMachine, Growi
     // spotless:off
     @SuppressWarnings("deprecation")
     public static final MapCodec<GrowingPlantRender> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-            ExtraCodecs.VECTOR3F.listOf().fieldOf("offsets").forGetter(GrowingPlantRender::getOffsets),
+            ExtraCodecs.VECTOR3F.xmap(v -> new Vector3f(v), v -> (org.joml.Vector3fc) v).listOf().fieldOf("offsets").forGetter(GrowingPlantRender::getOffsets),
             BuiltInRegistries.BLOCK.byNameCodec().optionalFieldOf("growing_block").forGetter(GrowingPlantRender::getGrowingBlock),
             GrowthMode.CODEC.optionalFieldOf("growth_mode").forGetter(GrowingPlantRender::getGrowthMode)
     ).apply(instance, GrowingPlantRender::new));
     public static final DynamicRenderType<IRecipeLogicMachine, GrowingPlantRender> TYPE = new DynamicRenderType<>(GrowingPlantRender.CODEC);
     // spotless:on
+
+    private static net.minecraft.world.level.block.Block invokeBlock(Object target, String method) {
+        try {
+            var m = net.minecraft.world.level.block.GrowingPlantBlock.class.getDeclaredMethod(method);
+            m.setAccessible(true);
+            return (net.minecraft.world.level.block.Block) m.invoke(target);
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException(e);
+        }
+    }
 
     private static final float EPSILON = 1e-25f;
 
@@ -128,7 +138,7 @@ public class GrowingPlantRender extends DynamicRender<IRecipeLogicMachine, Growi
                 allItemContents.addAll(recipe.getTickOutputContents(ItemRecipeCapability.CAP));
                 return allItemContents.stream()
                         .map(Content::getContent).map(ItemRecipeCapability.CAP::of)
-                        .map(SizedIngredient::getItems).flatMap(Arrays::stream)
+                        .map(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions::getItems).flatMap(Arrays::stream)
                         .map(ItemStack::getItem)
                         .filter(BlockItem.class::isInstance)
                         .findFirst()
@@ -298,8 +308,8 @@ public class GrowingPlantRender extends DynamicRender<IRecipeLogicMachine, Growi
             @Override
             public void renderGrowingBlock(BlockAndTintGetter level, BlockPos pos, Vector3f offset, BlockState state,
                                            double progress, MultiBufferSource bufferSource, PoseStack poseStack) {
-                GrowingPlantBlockAccessor accessor = (GrowingPlantBlockAccessor) state.getBlock();
-                poseStack.rotateAround(accessor.gtceu$getGrowthDirection().getRotation(), 0.5f, 0.5f, 0.5f);
+                net.minecraft.world.level.block.GrowingPlantBlock accessor = (net.minecraft.world.level.block.GrowingPlantBlock) state.getBlock();
+                poseStack.rotateAround(accessor.growthDirection.getRotation(), 0.5f, 0.5f, 0.5f);
 
                 RenderUtil.drawBlock(level, pos, state, bufferSource, poseStack);
             }
@@ -307,17 +317,17 @@ public class GrowingPlantRender extends DynamicRender<IRecipeLogicMachine, Growi
             @Override
             public Collection<StateWithOffset> configureState(BlockAndTintGetter level, BlockState state,
                                                               double progress) {
-                GrowingPlantBlockAccessor accessor = (GrowingPlantBlockAccessor) state.getBlock();
+                net.minecraft.world.level.block.GrowingPlantBlock accessor = (net.minecraft.world.level.block.GrowingPlantBlock) state.getBlock();
 
                 Vector3fc translation = new Vector3f(0, (float) (progress * 2 - 1), 0);
 
                 if (progress < 0.5) {
-                    BlockState headState = accessor.gtceu$getHeadBlock().defaultBlockState();
+                    BlockState headState = invokeBlock(accessor, "getHeadBlock").defaultBlockState();
                     IntegerProperty ageProp = findAgeProperty(headState.getProperties());
                     if (ageProp != null) {
-                        IntegerPropertyAccessor prop = (IntegerPropertyAccessor) ageProp;
-                        int minValue = prop.gtceu$getMin();
-                        int maxValue = prop.gtceu$getMax();
+                        IntegerProperty prop = ageProp;
+                        int minValue = prop.min;
+                        int maxValue = prop.max;
 
                         int stage = GTMath.lerpInt(progress, minValue, maxValue + 1);
                         headState = headState.trySetValue(ageProp, Math.min(stage, maxValue));
@@ -329,16 +339,16 @@ public class GrowingPlantRender extends DynamicRender<IRecipeLogicMachine, Growi
 
                     return Collections.singleton(new StateWithOffset(headState, translation));
                 } else {
-                    BlockState headState = accessor.gtceu$getHeadBlock().defaultBlockState();
+                    BlockState headState = invokeBlock(accessor, "getHeadBlock").defaultBlockState();
                     IntegerProperty ageProp = findAgeProperty(headState.getProperties());
                     if (ageProp != null) {
-                        headState = headState.trySetValue(ageProp, ((IntegerPropertyAccessor) ageProp).gtceu$getMax());
+                        headState = headState.trySetValue(ageProp, ageProp.max);
                     }
                     if (headState.hasProperty(BlockStateProperties.BERRIES)) {
                         headState = headState.trySetValue(CaveVines.BERRIES, true);
                     }
 
-                    BlockState bodyState = accessor.gtceu$getBodyBlock().defaultBlockState();
+                    BlockState bodyState = invokeBlock(accessor, "getBodyBlock").defaultBlockState();
                     if (progress >= 0.75 && bodyState.hasProperty(BlockStateProperties.BERRIES)) {
                         bodyState = bodyState.trySetValue(CaveVines.BERRIES, true);
                     }
@@ -354,16 +364,16 @@ public class GrowingPlantRender extends DynamicRender<IRecipeLogicMachine, Growi
             final StemBlock block = (StemBlock) state.getBlock();
             final int growthStage = GTMath.lerpInt(progress, 0, StemBlock.MAX_AGE + 2);
             if (growthStage > StemBlock.MAX_AGE)
-                return List.of(new StateWithOffset(((StemBlockAccessor) block).gtceu$getFruit().defaultBlockState()));
+                return List.of(new StateWithOffset(net.minecraft.core.registries.BuiltInRegistries.BLOCK.getValue(block.fruit).defaultBlockState()));
             state = state.trySetValue(StemBlock.AGE, growthStage);
             return List.of(new StateWithOffset(state));
         };
 
         TriFunction<IntegerProperty, OptionalInt, OptionalInt, ConfigureOnly> PROPERTY_FUNCTION_CACHE = GTMemoizer
                 .memoize((property, setMin, setMax) -> {
-                    IntegerPropertyAccessor accessor = (IntegerPropertyAccessor) property;
-                    final int presumedMinValue = accessor.gtceu$getMin();
-                    final int presumedMaxValue = accessor.gtceu$getMax();
+                    IntegerProperty accessor = property;
+                    final int presumedMinValue = accessor.min;
+                    final int presumedMaxValue = accessor.max;
                     return (level, state, progress) -> {
                         final int min = setMin.orElse(presumedMinValue);
                         final int betterMaxValue = state.getBlock() instanceof CropBlock crop ?

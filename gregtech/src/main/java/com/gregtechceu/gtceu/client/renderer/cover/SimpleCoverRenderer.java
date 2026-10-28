@@ -35,19 +35,7 @@ public class SimpleCoverRenderer implements ICoverRenderer {
     }
 
     public SimpleCoverRenderer(Identifier texture, Identifier emissiveTexture) {
-        ModelUtils.registerAtlasStitchedEventListener(false, InventoryMenu.BLOCK_ATLAS, event -> {
-            var atlas = event.getAtlas();
-
-            sprite = atlas.getSprite(texture);
-            if (emissiveTexture != null) {
-                emissiveSprite = atlas.getSprite(emissiveTexture);
-            } else {
-                Identifier emissiveTex = texture.withSuffix("_emissive");
-                if (atlas.getTextures().containsKey(emissiveTex)) {
-                    emissiveSprite = atlas.getSprite(emissiveTex);
-                }
-            }
-        });
+        // PORT: atlas sprite lookup not yet ported
     }
 
     @OnlyIn(Dist.CLIENT)

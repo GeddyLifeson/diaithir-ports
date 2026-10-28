@@ -15,5 +15,5 @@ public class GTToolBarRenderer implements IItemDecorator {
     public static final GTToolBarRenderer INSTANCE = new GTToolBarRenderer();
 
     
-    public boolean render(@NotNull GuiGraphics guiGraphics, @NotNull Font font, ItemStack stack, int x, int y) { return false; /* ported stub */ }
+    public boolean render(@NotNull net.minecraft.client.gui.GuiGraphicsExtractor guiGraphics, @NotNull Font font, ItemStack stack, int x, int y) { return false; /* ported stub */ }
 }

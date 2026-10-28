@@ -20,10 +20,6 @@ public class Resources {
 
     protected Resources() {
         this.resources = new LinkedHashMap<>();
-        for (var wrapper : AnnotationDetector.REGISTER_RESOURCES) {
-            var resource =  wrapper.creator().get();
-            resources.put(resource.name(), resource);
-        }
     }
 
     public Resources(Map<String, Resource<?>> resources) {

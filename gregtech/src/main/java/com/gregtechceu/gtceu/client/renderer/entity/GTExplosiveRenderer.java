@@ -21,9 +21,6 @@ import org.jetbrains.annotations.NotNull;
 public class GTExplosiveRenderer<T extends GTExplosiveEntity>  {/* ported: removed */
 
     public GTExplosiveRenderer(EntityRendererProvider.Context context) {
-        super(context);
-        this.shadowRadius = 0.5F;
-        this.blockRenderer = context.getBlockRenderDispatcher();
     }
 
     

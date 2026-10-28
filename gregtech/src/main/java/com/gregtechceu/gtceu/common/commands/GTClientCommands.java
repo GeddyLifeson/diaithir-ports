@@ -36,7 +36,6 @@ public class GTClientCommands {
         private final UUID receiver;
 
         public ProspectingShareTask(UUID sender, UUID receiver) {
-            prospectionData = ClientCacheManager.getProspectionShareData();
             this.sender = sender;
             this.receiver = receiver;
         }

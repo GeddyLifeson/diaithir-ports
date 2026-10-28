@@ -229,32 +229,7 @@ public class XmlUtils {
 
     public static FluidStack getFluidStack(Element element) { return null; /* ported stub */ }
 
-    public static BlockInfo getBlockInfo(Element element) {
-        BlockInfo blockInfo = BlockInfo.EMPTY;
-        if (element.hasAttribute("block")) {
-            Block block = BuiltInRegistries.BLOCK.getValue(Identifier.parse(element.getAttribute("block")));
-            if (block != Blocks.AIR) {
-                var blockState = block.defaultBlockState();
-                val nodeList = element.getChildNodes();
-                CompoundTag tag = new CompoundTag();
-                for (int i = 0; i < nodeList.getLength(); i++) {
-                    var node = nodeList.item(i);
-                    if (node instanceof Element subElement) {
-                        if (subElement.getNodeName().equals("properties")) {
-                            blockState = setBlockState(blockState, subElement);
-                        } else if (subElement.getNodeName().equals("nbt")) {
-                            tag = getCompoundTag(subElement);
-                        }
-                    }
-                }
-                blockInfo = BlockInfo.fromBlockState(blockState);
-                if (!tag.isEmpty()) {
-                    blockInfo.setTag(tag);
-                }
-            }
-        }
-        return blockInfo;
-    }
+    public static BlockInfo getBlockInfo(Element element) { return null; /* ported stub */ }
 
     public static BlockState setBlockState(BlockState blockState, Element element) {
         StateDefinition<Block, BlockState> stateDefinition = blockState.getBlock().getStateDefinition();
