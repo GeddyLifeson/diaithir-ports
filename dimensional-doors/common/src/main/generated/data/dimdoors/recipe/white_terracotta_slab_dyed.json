@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "stained_terracotta",
   "ingredients": [
-    {
-      "item": "dimdoors:terracotta_slab"
-    },
-    {
-      "item": "minecraft:white_dye"
-    }
+    "dimdoors:terracotta_slab",
+    "minecraft:white_dye"
   ],
   "result": {
     "count": 1,

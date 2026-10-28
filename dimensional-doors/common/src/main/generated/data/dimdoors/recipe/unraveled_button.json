@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "redstone",
   "ingredients": [
-    {
-      "item": "dimdoors:unravelled_fabric"
-    }
+    "dimdoors:unravelled_fabric"
   ],
   "result": {
     "count": 1,

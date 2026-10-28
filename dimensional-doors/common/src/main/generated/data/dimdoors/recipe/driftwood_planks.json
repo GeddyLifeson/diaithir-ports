@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "tag": "dimdoors:driftwood_logs"
-    }
+    "#dimdoors:driftwood_logs"
   ],
   "result": {
     "count": 4,

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:lime_terracotta"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:lime_terracotta"
   },
   "pattern": [
     "W#W",

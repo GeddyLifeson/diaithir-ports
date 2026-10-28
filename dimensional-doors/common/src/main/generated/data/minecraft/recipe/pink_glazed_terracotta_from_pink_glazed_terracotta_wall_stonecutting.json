@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:pink_glazed_terracotta_wall"
-  },
+  "ingredient": "dimdoors:pink_glazed_terracotta_wall",
   "result": {
     "count": 1,
     "id": "minecraft:pink_glazed_terracotta"

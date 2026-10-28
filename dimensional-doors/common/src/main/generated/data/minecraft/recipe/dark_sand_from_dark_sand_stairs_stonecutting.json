@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:dark_sand_stairs"
-  },
+  "ingredient": "dimdoors:dark_sand_stairs",
   "result": {
     "count": 1,
     "id": "dimdoors:dark_sand"

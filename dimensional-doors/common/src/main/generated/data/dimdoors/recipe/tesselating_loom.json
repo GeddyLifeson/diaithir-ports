@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "dimdoors:world_thread"
-    },
-    "L": {
-      "item": "minecraft:loom"
-    },
-    "O": {
-      "item": "dimdoors:black_fabric"
-    },
-    "X": {
-      "item": "minecraft:scaffolding"
-    }
+    "A": "dimdoors:world_thread",
+    "L": "minecraft:loom",
+    "O": "dimdoors:black_fabric",
+    "X": "minecraft:scaffolding"
   },
   "pattern": [
     "XOX",

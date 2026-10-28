@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:mud"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:mud"
   },
   "pattern": [
     "W#W",

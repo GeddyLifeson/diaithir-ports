@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:end_stone_gate"
-  },
+  "ingredient": "dimdoors:end_stone_gate",
   "result": {
     "count": 1,
     "id": "minecraft:end_stone"

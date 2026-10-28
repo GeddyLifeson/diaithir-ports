@@ -1,15 +1,9 @@
 {
   "type": "dimdoors:shapeless_tesselating",
   "ingredients": [
-    {
-      "item": "minecraft:iron_sword"
-    },
-    {
-      "item": "minecraft:ender_pearl"
-    },
-    {
-      "item": "minecraft:ender_pearl"
-    }
+    "minecraft:iron_sword",
+    "minecraft:ender_pearl",
+    "minecraft:ender_pearl"
   ],
   "result": {
     "count": 1,

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:mud_fence"
-  },
+  "ingredient": "dimdoors:mud_fence",
   "result": {
     "count": 1,
     "id": "minecraft:mud"

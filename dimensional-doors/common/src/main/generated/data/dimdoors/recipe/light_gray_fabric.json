@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "colored_fabric",
   "key": {
-    "D": {
-      "item": "minecraft:light_gray_dye"
-    },
-    "X": {
-      "item": "dimdoors:world_thread"
-    }
+    "D": "minecraft:light_gray_dye",
+    "X": "dimdoors:world_thread"
   },
   "pattern": [
     " X ",

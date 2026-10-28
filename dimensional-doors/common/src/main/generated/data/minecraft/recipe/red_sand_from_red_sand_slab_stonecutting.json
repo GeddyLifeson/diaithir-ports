@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:red_sand_slab"
-  },
+  "ingredient": "dimdoors:red_sand_slab",
   "result": {
     "count": 1,
     "id": "minecraft:red_sand"

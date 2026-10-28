@@ -1,9 +1,7 @@
 {
   "type": "dimdoors:shaped_tesselating",
   "key": {
-    "X": {
-      "item": "dimdoors:world_thread"
-    }
+    "X": "dimdoors:world_thread"
   },
   "pattern": [
     "XXX",

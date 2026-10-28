@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:cyan_glazed_terracotta_stairs"
-  },
+  "ingredient": "dimdoors:cyan_glazed_terracotta_stairs",
   "result": {
     "count": 1,
     "id": "minecraft:cyan_glazed_terracotta"

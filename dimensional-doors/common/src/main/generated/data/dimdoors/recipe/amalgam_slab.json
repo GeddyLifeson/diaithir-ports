@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "dimdoors:amalgam_lump"
-    }
+    "#": "dimdoors:amalgam_lump"
   },
   "pattern": [
     "###"

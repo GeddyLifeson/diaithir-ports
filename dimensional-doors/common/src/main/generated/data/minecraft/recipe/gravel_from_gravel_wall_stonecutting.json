@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:gravel_wall"
-  },
+  "ingredient": "dimdoors:gravel_wall",
   "result": {
     "count": 1,
     "id": "minecraft:gravel"

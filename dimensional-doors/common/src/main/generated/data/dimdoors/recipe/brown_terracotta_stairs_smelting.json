@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.0,
-  "ingredient": {
-    "item": "dimdoors:brown_terracotta_stairs"
-  },
+  "ingredient": "dimdoors:brown_terracotta_stairs",
   "result": {
     "id": "dimdoors:brown_glazed_terracotta_stairs"
   }

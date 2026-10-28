@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:deepslate_stairs"
-  },
+  "ingredient": "dimdoors:deepslate_stairs",
   "result": {
     "count": 1,
     "id": "minecraft:deepslate"

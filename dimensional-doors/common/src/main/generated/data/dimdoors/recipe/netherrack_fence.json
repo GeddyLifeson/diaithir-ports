@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:netherrack"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:netherrack"
   },
   "pattern": [
     "W#W",

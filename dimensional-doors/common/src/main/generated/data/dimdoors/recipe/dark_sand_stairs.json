@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "dimdoors:dark_sand"
-    }
+    "#": "dimdoors:dark_sand"
   },
   "pattern": [
     "#  ",

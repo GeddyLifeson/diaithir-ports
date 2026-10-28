@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "dimensional_doors",
   "key": {
-    "O": {
-      "tag": "c:ender_pearls"
-    },
-    "X": {
-      "item": "dimdoors:quartz_door"
-    }
+    "O": "#c:ender_pearls",
+    "X": "dimdoors:quartz_door"
   },
   "pattern": [
     "XOX"

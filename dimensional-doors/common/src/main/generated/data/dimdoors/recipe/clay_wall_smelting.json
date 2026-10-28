@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.0,
-  "ingredient": {
-    "item": "dimdoors:clay_wall"
-  },
+  "ingredient": "dimdoors:clay_wall",
   "result": {
     "id": "dimdoors:terracotta_wall"
   }

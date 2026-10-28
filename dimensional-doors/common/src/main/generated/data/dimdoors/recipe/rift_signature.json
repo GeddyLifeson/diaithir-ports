@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:ingots/iron"
-    },
-    "X": {
-      "tag": "c:ender_pearls"
-    }
+    "#": "#c:ingots/iron",
+    "X": "#c:ender_pearls"
   },
   "pattern": [
     " # ",

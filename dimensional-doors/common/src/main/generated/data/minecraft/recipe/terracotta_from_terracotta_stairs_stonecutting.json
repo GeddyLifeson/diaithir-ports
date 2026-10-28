@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:terracotta_stairs"
-  },
+  "ingredient": "dimdoors:terracotta_stairs",
   "result": {
     "count": 1,
     "id": "minecraft:terracotta"

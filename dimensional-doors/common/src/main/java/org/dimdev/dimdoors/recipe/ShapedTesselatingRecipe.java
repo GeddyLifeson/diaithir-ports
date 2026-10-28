@@ -7,6 +7,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
@@ -15,13 +16,13 @@ import java.util.List;
 
 public class ShapedTesselatingRecipe implements TesselatingRecipe {
     final ShapedRecipePattern pattern;
-    final ItemStack result;
+    final ItemStackTemplate result;
     final String group;
     final boolean showNotification;
     private final int weavingTime;
     private PlacementInfo placementInfo;
 
-    public ShapedTesselatingRecipe(String group, ShapedRecipePattern pattern, ItemStack result, int weavingTime, boolean showNotification) {
+    public ShapedTesselatingRecipe(String group, ShapedRecipePattern pattern, ItemStackTemplate result, int weavingTime, boolean showNotification) {
         this.group = group;
         this.pattern = pattern;
         this.result = result;
@@ -40,7 +41,7 @@ public class ShapedTesselatingRecipe implements TesselatingRecipe {
     }
 
     public ItemStack getResult() {
-        return this.result;
+        return this.result.create();
     }
 
     public List<java.util.Optional<Ingredient>> getIngredients() {
@@ -67,7 +68,7 @@ public class ShapedTesselatingRecipe implements TesselatingRecipe {
 
     @Override
     public ItemStack assemble(CraftingInput container) {
-        return this.result.copy();
+        return this.result.create();
     }
 
     public int getWidth() {
@@ -87,7 +88,7 @@ public class ShapedTesselatingRecipe implements TesselatingRecipe {
             return instance.group(
                     Codec.STRING.optionalFieldOf("group", "").forGetter(a -> a.group),
                     ShapedRecipePattern.MAP_CODEC.forGetter(a -> a.pattern),
-                    ItemStack.CODEC.fieldOf("result").forGetter(a -> a.result),
+                    ItemStackTemplate.CODEC.fieldOf("result").forGetter(a -> a.result),
                     Codec.INT.optionalFieldOf("weaving_time", 200).forGetter(a -> a.weavingTime),
                     Codec.BOOL.optionalFieldOf("show_notification", true).forGetter(a -> a.showNotification)
             ).apply(instance, ShapedTesselatingRecipe::new);
@@ -96,7 +97,7 @@ public class ShapedTesselatingRecipe implements TesselatingRecipe {
         public static final StreamCodec<RegistryFriendlyByteBuf, ShapedTesselatingRecipe> STREAM_CODEC = StreamCodec.composite(
                 ByteBufCodecs.STRING_UTF8, r -> r.group,
                 ShapedRecipePattern.STREAM_CODEC, r -> r.pattern,
-                ItemStack.STREAM_CODEC, r -> r.result,
+                ItemStackTemplate.STREAM_CODEC, r -> r.result,
                 ByteBufCodecs.INT, r -> r.weavingTime,
                 ByteBufCodecs.BOOL, r -> r.showNotification,
                 ShapedTesselatingRecipe::new);

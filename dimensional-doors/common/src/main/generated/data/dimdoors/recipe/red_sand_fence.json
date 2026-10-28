@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:red_sand"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:red_sand"
   },
   "pattern": [
     "W#W",

@@ -1,12 +1,8 @@
 {
   "type": "dimdoors:shaped_tesselating",
   "key": {
-    "O": {
-      "item": "dimdoors:infrangible_fiber"
-    },
-    "X": {
-      "item": "dimdoors:stable_fabric"
-    }
+    "O": "dimdoors:infrangible_fiber",
+    "X": "dimdoors:stable_fabric"
   },
   "pattern": [
     "X X",

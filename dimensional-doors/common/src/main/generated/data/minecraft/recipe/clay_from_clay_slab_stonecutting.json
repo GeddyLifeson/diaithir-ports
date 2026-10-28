@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:clay_slab"
-  },
+  "ingredient": "dimdoors:clay_slab",
   "result": {
     "count": 1,
     "id": "minecraft:clay"

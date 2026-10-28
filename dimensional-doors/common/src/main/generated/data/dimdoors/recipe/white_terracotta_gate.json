@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:white_terracotta"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:white_terracotta"
   },
   "pattern": [
     "#W#",

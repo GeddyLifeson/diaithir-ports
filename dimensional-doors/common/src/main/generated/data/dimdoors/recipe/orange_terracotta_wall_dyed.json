@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "stained_terracotta",
   "ingredients": [
-    {
-      "item": "dimdoors:terracotta_wall"
-    },
-    {
-      "item": "minecraft:orange_dye"
-    }
+    "dimdoors:terracotta_wall",
+    "minecraft:orange_dye"
   ],
   "result": {
     "count": 1,

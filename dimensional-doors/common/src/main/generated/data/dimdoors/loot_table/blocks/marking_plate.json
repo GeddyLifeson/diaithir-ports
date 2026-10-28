@@ -21,10 +21,7 @@
         }
       ],
       "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:air"
-        }
+        {"type": "minecraft:empty"}
       ],
       "rolls": 1.0
     }

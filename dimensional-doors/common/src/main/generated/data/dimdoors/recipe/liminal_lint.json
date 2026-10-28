@@ -1,9 +1,7 @@
 {
   "type": "dimdoors:shaped_tesselating",
   "key": {
-    "X": {
-      "item": "dimdoors:frayed_filament"
-    }
+    "X": "dimdoors:frayed_filament"
   },
   "pattern": [
     "XX",

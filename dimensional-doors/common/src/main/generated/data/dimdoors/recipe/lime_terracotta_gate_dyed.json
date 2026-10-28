@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "stained_terracotta",
   "ingredients": [
-    {
-      "item": "dimdoors:terracotta_gate"
-    },
-    {
-      "item": "minecraft:lime_dye"
-    }
+    "dimdoors:terracotta_gate",
+    "minecraft:lime_dye"
   ],
   "result": {
     "count": 1,

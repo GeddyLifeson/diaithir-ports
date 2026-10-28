@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.0,
-  "ingredient": {
-    "item": "dimdoors:purple_terracotta_wall"
-  },
+  "ingredient": "dimdoors:purple_terracotta_wall",
   "result": {
     "id": "dimdoors:purple_glazed_terracotta_wall"
   }

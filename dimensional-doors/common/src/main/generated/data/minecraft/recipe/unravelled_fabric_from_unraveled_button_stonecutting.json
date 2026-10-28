@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:unraveled_button"
-  },
+  "ingredient": "dimdoors:unraveled_button",
   "result": {
     "count": 1,
     "id": "dimdoors:unravelled_fabric"

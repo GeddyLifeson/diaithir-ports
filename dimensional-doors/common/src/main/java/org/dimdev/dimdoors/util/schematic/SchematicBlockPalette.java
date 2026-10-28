@@ -30,6 +30,10 @@ public class SchematicBlockPalette {
 //            string = string.replace("dimdoors:quartz_dimensional_door", "dimdoors:block_ag_dim_dimdoors_quartz_door");
 //            string = string.replace("dimdoors:oak_dimensional_door", "dimdoors:block_ag_dim_minecraft_oak_door");
 //            string = string.replace("dimdoors:gold_dimensional_door", "dimdoors:block_ag_dim_dimdoors_gold_door");
+            // 26.1 renamed the iron chain block; old schematics still say minecraft:chain
+            if (string.equals("minecraft:chain") || string.startsWith("minecraft:chain[")) {
+                string = "minecraft:iron_chain" + string.substring("minecraft:chain".length());
+            }
             StringReader reader = new StringReader(string);
             BlockStateParser.BlockResult parser;
 

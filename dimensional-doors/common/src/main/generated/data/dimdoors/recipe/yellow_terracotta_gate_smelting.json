@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.0,
-  "ingredient": {
-    "item": "dimdoors:yellow_terracotta_gate"
-  },
+  "ingredient": "dimdoors:yellow_terracotta_gate",
   "result": {
     "id": "dimdoors:yellow_glazed_terracotta_gate"
   }

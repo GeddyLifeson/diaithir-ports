@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:gray_terracotta_button"
-  },
+  "ingredient": "dimdoors:gray_terracotta_button",
   "result": {
     "count": 1,
     "id": "minecraft:gray_terracotta"

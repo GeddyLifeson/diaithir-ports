@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:blue_glazed_terracotta"
-    }
+    "#": "minecraft:stick",
+    "W": "minecraft:blue_glazed_terracotta"
   },
   "pattern": [
     "W#W",

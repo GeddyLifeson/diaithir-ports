@@ -8,6 +8,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.PlacementInfo;
@@ -18,12 +19,12 @@ import java.util.List;
 
 public class TesselatingShapelessRecipe implements TesselatingRecipe {
     final String group;
-    final ItemStack result;
+    final ItemStackTemplate result;
     final List<Ingredient> ingredients;
     private final int weavingTime;
     private PlacementInfo placementInfo;
 
-    public TesselatingShapelessRecipe(String group, ItemStack result, List<Ingredient> ingredients, int weavingTime) {
+    public TesselatingShapelessRecipe(String group, ItemStackTemplate result, List<Ingredient> ingredients, int weavingTime) {
         this.group = group;
         this.result = result;
         this.ingredients = ingredients;
@@ -50,7 +51,7 @@ public class TesselatingShapelessRecipe implements TesselatingRecipe {
     }
 
     public ItemStack getResult() {
-        return this.result;
+        return this.result.create();
     }
 
     @Override
@@ -77,20 +78,20 @@ public class TesselatingShapelessRecipe implements TesselatingRecipe {
 
     @Override
     public ItemStack assemble(CraftingInput container) {
-        return this.result.copy();
+        return this.result.create();
     }
 
     public static class Serializer {
         private static final MapCodec<TesselatingShapelessRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
                 Codec.STRING.optionalFieldOf("group", "").forGetter((shapelessRecipe) -> shapelessRecipe.group),
-                ItemStack.CODEC.fieldOf("result").forGetter((shapelessRecipe) -> shapelessRecipe.result),
+                ItemStackTemplate.CODEC.fieldOf("result").forGetter((shapelessRecipe) -> shapelessRecipe.result),
                 Ingredient.CODEC.listOf(1, 9).fieldOf("ingredients").forGetter(shapelessRecipe -> shapelessRecipe.ingredients),
                 ExtraCodecs.NON_NEGATIVE_INT.fieldOf("weaving_time").forGetter(TesselatingShapelessRecipe::weavingTime))
                 .apply(instance, TesselatingShapelessRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, TesselatingShapelessRecipe> STREAM_CODEC = StreamCodec.composite(
                 ByteBufCodecs.STRING_UTF8, r -> r.group,
-                ItemStack.STREAM_CODEC, r -> r.result,
+                ItemStackTemplate.STREAM_CODEC, r -> r.result,
                 Ingredient.CONTENTS_STREAM_CODEC.apply(ByteBufCodecs.list()), r -> r.ingredients,
                 ByteBufCodecs.INT, r -> r.weavingTime,
                 TesselatingShapelessRecipe::new);

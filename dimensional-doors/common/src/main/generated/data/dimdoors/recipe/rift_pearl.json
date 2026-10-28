@@ -1,12 +1,8 @@
 {
   "type": "dimdoors:shaped_tesselating",
   "key": {
-    "O": {
-      "item": "minecraft:ender_pearl"
-    },
-    "X": {
-      "item": "dimdoors:stable_fabric"
-    }
+    "O": "minecraft:ender_pearl",
+    "X": "dimdoors:stable_fabric"
   },
   "pattern": [
     "XO"

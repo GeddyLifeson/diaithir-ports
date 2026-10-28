@@ -1,12 +1,8 @@
 {
   "type": "dimdoors:shaped_tesselating",
   "key": {
-    "O": {
-      "item": "minecraft:dragon_breath"
-    },
-    "X": {
-      "item": "dimdoors:enduring_fibers"
-    }
+    "O": "minecraft:dragon_breath",
+    "X": "dimdoors:enduring_fibers"
   },
   "pattern": [
     "XOX"

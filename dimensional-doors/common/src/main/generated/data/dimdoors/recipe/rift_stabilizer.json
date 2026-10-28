@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:gems/diamond"
-    },
-    "X": {
-      "tag": "c:ender_pearls"
-    }
+    "#": "#c:gems/diamond",
+    "X": "#c:ender_pearls"
   },
   "pattern": [
     " # ",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "dimdoors:driftwood_log"
-    }
+    "#": "dimdoors:driftwood_log"
   },
   "pattern": [
     "##",

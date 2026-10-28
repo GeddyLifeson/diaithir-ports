@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.0,
-  "ingredient": {
-    "item": "dimdoors:clay_slab"
-  },
+  "ingredient": "dimdoors:clay_slab",
   "result": {
     "id": "dimdoors:terracotta_slab"
   }

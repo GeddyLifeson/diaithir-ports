@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.0,
-  "ingredient": {
-    "item": "dimdoors:clay_button"
-  },
+  "ingredient": "dimdoors:clay_button",
   "result": {
     "id": "dimdoors:terracotta_button"
   }

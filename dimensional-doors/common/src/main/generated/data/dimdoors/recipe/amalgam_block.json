@@ -2,33 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "dimdoors:amalgam_lump"
-    },
-    {
-      "item": "dimdoors:amalgam_lump"
-    },
-    {
-      "item": "dimdoors:amalgam_lump"
-    },
-    {
-      "item": "dimdoors:amalgam_lump"
-    },
-    {
-      "item": "dimdoors:amalgam_lump"
-    },
-    {
-      "item": "dimdoors:amalgam_lump"
-    },
-    {
-      "item": "dimdoors:amalgam_lump"
-    },
-    {
-      "item": "dimdoors:amalgam_lump"
-    },
-    {
-      "item": "dimdoors:amalgam_lump"
-    }
+    "dimdoors:amalgam_lump",
+    "dimdoors:amalgam_lump",
+    "dimdoors:amalgam_lump",
+    "dimdoors:amalgam_lump",
+    "dimdoors:amalgam_lump",
+    "dimdoors:amalgam_lump",
+    "dimdoors:amalgam_lump",
+    "dimdoors:amalgam_lump",
+    "dimdoors:amalgam_lump"
   ],
   "result": {
     "count": 1,

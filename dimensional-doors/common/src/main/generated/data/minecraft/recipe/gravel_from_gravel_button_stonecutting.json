@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:gravel_button"
-  },
+  "ingredient": "dimdoors:gravel_button",
   "result": {
     "count": 1,
     "id": "minecraft:gravel"

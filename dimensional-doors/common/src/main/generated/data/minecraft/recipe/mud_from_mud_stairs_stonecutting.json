@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:mud_stairs"
-  },
+  "ingredient": "dimdoors:mud_stairs",
   "result": {
     "count": 1,
     "id": "minecraft:mud"

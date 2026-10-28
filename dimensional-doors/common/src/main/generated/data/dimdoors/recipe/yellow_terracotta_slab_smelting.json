@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.0,
-  "ingredient": {
-    "item": "dimdoors:yellow_terracotta_slab"
-  },
+  "ingredient": "dimdoors:yellow_terracotta_slab",
   "result": {
     "id": "dimdoors:yellow_glazed_terracotta_slab"
   }

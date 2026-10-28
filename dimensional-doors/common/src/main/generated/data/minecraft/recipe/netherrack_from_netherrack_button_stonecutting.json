@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "dimdoors:netherrack_button"
-  },
+  "ingredient": "dimdoors:netherrack_button",
   "result": {
     "count": 1,
     "id": "minecraft:netherrack"

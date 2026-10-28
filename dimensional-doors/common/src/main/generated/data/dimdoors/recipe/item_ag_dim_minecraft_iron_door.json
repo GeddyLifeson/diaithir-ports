@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "dimensional_doors",
   "key": {
-    "O": {
-      "tag": "c:ender_pearls"
-    },
-    "X": {
-      "item": "minecraft:iron_door"
-    }
+    "O": "#c:ender_pearls",
+    "X": "minecraft:iron_door"
   },
   "pattern": [
     "XOX"
