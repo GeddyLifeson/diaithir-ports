@@ -33669,6 +33669,10 @@ file = "kubejs/server_scripts/diaithir/safe_landing.js"
 hash = "6703b0414641b6c2a720f625aaaa6b82a5c052af1edcc7a343ea354be2052a4f"
 
 [[files]]
+file = "kubejs/server_scripts/diaithir/spawn_guard.js"
+hash = "0a4d50813595f17a6507f9f96906332e572c9f874f37aa0c222063db37b734b6"
+
+[[files]]
 file = "kubejs/server_scripts/diaithir/tech_ages_data.js"
 hash = "ae5b8adad9dc9c1d6362b35560551db782e450f5ff0d269bce8ef2cf9a480589"
 
