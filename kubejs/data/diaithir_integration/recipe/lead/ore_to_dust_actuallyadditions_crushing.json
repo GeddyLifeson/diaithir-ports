@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"actuallyadditions"},{"type":"neoforge:mod_loaded","modid":"modern_industrialization"},{"type":"neoforge:not","value":{"type":"neoforge:tag_empty","tag":"c:ores/lead"}}],"type":"actuallyadditions:crushing","ingredient":{"tag":"c:ores/lead"},"result":[{"result":{"count":2,"id":"modern_industrialization:lead_dust"}}]}

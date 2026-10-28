@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"mekanism"}],"type":"mekanism:crushing","input":{"count":1,"ingredient":"#c:ingots/osmium"},"output":{"id":"mekanism:dust_osmium"}}

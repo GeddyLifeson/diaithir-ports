@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"enderio"},{"type":"neoforge:mod_loaded","modid":"occultism"},{"type":"neoforge:not","value":{"type":"neoforge:tag_empty","tag":"c:ores/copper"}}],"type":"enderio:sag_milling","energy":2400,"input":"#c:ores/copper","outputs":[{"item":{"count":2,"tag":"c:dusts/copper"}}]}

@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"theurgy"}],"type":"theurgy:calcination","category":"misc","ingredient":{"count":1,"ingredient":"minecraft:lily_of_the_valley"},"result":{"id":"theurgy:alchemical_salt_plant"},"time":100}

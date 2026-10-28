@@ -1,0 +1,8 @@
+name = "diaithir-ui"
+filename = "diaithir-ui.zip"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/project-thread-ysjkxr/client/resourcepacks/diaithir-ui.zip"
+hash-format = "sha256"
+hash = "a91d3c0a9c507aa5aae87bc1909a01df7e2388e548e12080dc2ad298007b3956"

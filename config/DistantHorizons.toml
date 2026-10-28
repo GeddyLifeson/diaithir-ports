@@ -1,0 +1,16 @@
+# Diaithir: only the keys the pack sets; Distant Horizons fills in every other key with its default on first start.
+[common.multiThreading]
+	# the dedicated server runs one DH pool set per dimension and there are 72 backrooms dimensions
+	numberOfThreads = 1
+
+[common.logging]
+	logWorldGenEventToFile = "DISABLED"
+	logWorldGenChunkLoadEventToFile = "DISABLED"
+
+[common.worldGenerator]
+	showGenerationProgress = "DISABLED"
+	# Tellus terrain is not what the rough-surface estimator expects (seam walls, hollow shells, floating terrain): build LODs from real chunk generation
+	generatorPlan = "CHUNKS_ONLY"
+
+[client.advanced.graphics.experimental]
+	ignoredDimensionCsv = "backrooms:attic,backrooms:basement,backrooms:bluechannel,backrooms:grave,backrooms:home,backrooms:level0,backrooms:level1,backrooms:level10,backrooms:level11,backrooms:level12,backrooms:level121,backrooms:level13,backrooms:level135,backrooms:level139,backrooms:level14,backrooms:level141,backrooms:level15,backrooms:level159,backrooms:level19,backrooms:level2,backrooms:level217,backrooms:level22,backrooms:level221,backrooms:level231,backrooms:level237,backrooms:level24,backrooms:level25,backrooms:level26,backrooms:level265,backrooms:level283,backrooms:level29,backrooms:level3,backrooms:level305,backrooms:level32,backrooms:level34,backrooms:level37,backrooms:level399,backrooms:level4,backrooms:level41,backrooms:level410,backrooms:level420,backrooms:level43,backrooms:level458,backrooms:level46,backrooms:level47,backrooms:level494,backrooms:level495,backrooms:level5,backrooms:level500,backrooms:level51,backrooms:level56,backrooms:level57,backrooms:level58,backrooms:level6,backrooms:level601,backrooms:level630,backrooms:level7,backrooms:level70,backrooms:level71,backrooms:level78,backrooms:level790,backrooms:level8,backrooms:level813,backrooms:level827,backrooms:level888,backrooms:level9,backrooms:level93,backrooms:level94,backrooms:level993,backrooms:level997,backrooms:levelrun,backrooms:shady"

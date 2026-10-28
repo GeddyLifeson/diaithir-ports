@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"croptopia"},{"type":"neoforge:mod_loaded","modid":"theurgy"}],"type":"theurgy:liquefaction","category":"misc","ingredient":"croptopia:dragonfruit","result":{"type":"theurgy:item","id":"theurgy:alchemical_sulfur_azalea"},"solvent":{"amount":10,"ingredient":"theurgy:sal_ammoniac"},"time":100}

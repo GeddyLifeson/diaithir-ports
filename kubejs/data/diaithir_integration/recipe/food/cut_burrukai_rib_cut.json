@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"aether_ii"},{"type":"neoforge:mod_loaded","modid":"farmersdelight"}],"type":"farmersdelight:cutting","ingredients":[{"item":"aether_ii:burrukai_rib_cut"}],"result":[{"item":{"count":2,"id":"farmersdelight:minced_beef"}}],"tool":[{"type":"farmersdelight:item_ability","action":"knife_dig"},{"tag":"c:tools/knife"}]}

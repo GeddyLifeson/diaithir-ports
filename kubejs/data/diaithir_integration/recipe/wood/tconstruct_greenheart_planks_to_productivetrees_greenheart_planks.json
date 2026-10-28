@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"productivetrees"},{"type":"neoforge:mod_loaded","modid":"tconstruct"}],"type":"minecraft:stonecutting","ingredient":"tconstruct:greenheart_planks","result":{"id":"productivetrees:greenheart_planks","count":1}}

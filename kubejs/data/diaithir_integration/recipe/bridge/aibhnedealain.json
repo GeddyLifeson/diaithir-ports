@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"diaithirbridges"}],"type":"minecraft:crafting_shaped","category":"misc","pattern":["SSS","CRC","SSS"],"key":{"S":"#c:plates/steel","C":"#c:ingots/copper","R":"#c:storage_blocks/redstone"},"result":{"id":"diaithirbridges:aibhnedealain"}}

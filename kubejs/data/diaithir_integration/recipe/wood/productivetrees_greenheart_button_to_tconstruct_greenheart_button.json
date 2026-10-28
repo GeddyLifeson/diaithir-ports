@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"productivetrees"},{"type":"neoforge:mod_loaded","modid":"tconstruct"}],"type":"minecraft:stonecutting","ingredient":"productivetrees:greenheart_button","result":{"id":"tconstruct:greenheart_button","count":1}}

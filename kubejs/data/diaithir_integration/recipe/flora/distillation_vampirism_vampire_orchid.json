@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"theurgy"},{"type":"neoforge:mod_loaded","modid":"vampirism"}],"type":"theurgy:distillation","category":"misc","ingredient":{"count":2,"ingredient":"vampirism:vampire_orchid"},"result":{"id":"theurgy:mercury_shard"},"time":100}

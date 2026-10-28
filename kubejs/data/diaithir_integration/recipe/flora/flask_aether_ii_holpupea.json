@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"aether_ii"},{"type":"neoforge:mod_loaded","modid":"neovitae"}],"type":"neovitae:flask_effect","baseDuration":3600,"effect":"minecraft:absorption","input":["neovitae:simple_catalyst","aether_ii:holpupea"],"syphon":1000,"ticks":200,"upgradeLevel":2}

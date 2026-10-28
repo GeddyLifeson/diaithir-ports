@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"farmersdelight"}],"type":"farmersdelight:cooking","experience":1.0,"ingredients":[{"tag":"diaithir_integration:fruit/pome"},{"tag":"diaithir_integration:fruit/pome"},{"item":"minecraft:sugar"}],"recipe_book_tab":"drinks","result":{"count":1,"id":"farmersdelight:apple_cider"}}

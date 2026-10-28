@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"aether_ii"},{"type":"neoforge:mod_loaded","modid":"tconstruct"}],"type":"minecraft:stonecutting","ingredient":"tconstruct:skyroot_door","result":{"id":"aether_ii:skyroot_door","count":1}}

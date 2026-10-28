@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"neovitae"},{"type":"neoforge:mod_loaded","modid":"productivefarming"}],"type":"neovitae:flask_effect","baseDuration":3600,"effect":"minecraft:dolphins_grace","input":["neovitae:simple_catalyst","productivefarming:sea_holly"],"syphon":1000,"ticks":200,"upgradeLevel":2}
