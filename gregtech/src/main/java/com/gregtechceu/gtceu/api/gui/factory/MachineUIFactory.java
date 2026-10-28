@@ -33,7 +33,7 @@ public class MachineUIFactory extends UIFactory<MetaMachine> {
     @OnlyIn(Dist.CLIENT)
     @Override
     protected MetaMachine readHolderFromSyncData(RegistryFriendlyByteBuf syncData) {
-        Level world = Minecraft.getInstance().level;
+        Level world = com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level();
         if (world == null) return null;
         if (world.getBlockEntity(syncData.readBlockPos()) instanceof MetaMachine holder) {
             return holder;

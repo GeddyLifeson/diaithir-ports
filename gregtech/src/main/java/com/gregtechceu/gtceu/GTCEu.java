@@ -156,7 +156,7 @@ public class GTCEu {
      */
     public static boolean canGetServerLevel() {
         if (isClientSide()) {
-            return Minecraft.getInstance().level != null;
+            return com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level() != null;
         }
         var server = getMinecraftServer();
         return server != null &&

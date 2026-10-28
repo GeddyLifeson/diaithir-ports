@@ -147,7 +147,7 @@ public class SPacketManagedPayload extends PacketIntLocation {
     }
 
     public static void execute(SPacketManagedPayload packet, IPayloadContext context) {
-        var level = Minecraft.getInstance().level;
+        var level = com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level();
         if (level != null) {
             if (level.getBlockEntity(packet.pos) instanceof IAutoSyncBlockEntity autoSyncBlockEntity) {
                 processPacket(autoSyncBlockEntity, packet);

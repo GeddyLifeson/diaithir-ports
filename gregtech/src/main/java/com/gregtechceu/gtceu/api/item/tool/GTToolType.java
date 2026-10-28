@@ -47,7 +47,7 @@ public class GTToolType {
     public static final GTToolType SWORD = GTToolType.builder("sword")
             .toolTag(ToolItemTagType.MATCH, ItemTags.SWORDS)
             .definition(b -> b.tool(new Tool(List.of(
-                    Tool.Rule.overrideSpeed(net.minecraft.core.registries.BuiltInRegistries.BLOCK.getOrThrow(BlockTags.SWORD_EFFICIENT), 1.5F),
+                    Tool.Rule.overrideSpeed(com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.BLOCK, BlockTags.SWORD_EFFICIENT), 1.5F),
                     Tool.Rule.minesAndDrops(net.minecraft.core.HolderSet.direct(Blocks.COBWEB.builtInRegistryHolder()), 15.0F)),
                     1.0F, 1, true))
                     .attacking().attackDamage(3.0F).attackSpeed(-2.4F))

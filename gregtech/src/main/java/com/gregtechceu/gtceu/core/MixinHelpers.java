@@ -356,7 +356,7 @@ public class MixinHelpers {
     public static final class ClientCallWrapper {
 
         public static Level getClientLevel() {
-            return Minecraft.getInstance().level;
+            return com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level();
         }
     }
 }

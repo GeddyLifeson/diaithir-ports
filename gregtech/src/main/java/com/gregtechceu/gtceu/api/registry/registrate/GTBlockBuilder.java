@@ -36,9 +36,9 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
         super(owner, parent, name, callback, factory, initialProperties);
     }
 
-    public GTBlockBuilder<T, P> exBlockstate(NonNullBiConsumer<DataGenContext<Block, ? extends Block>, GTBlockstateProvider> cons) { return null; /* ported stub */ }
+    public GTBlockBuilder<T, P> exBlockstate(NonNullBiConsumer<DataGenContext<Block, ? extends Block>, GTBlockstateProvider> cons) { return this; }
 
-    public GTBlockBuilder<T, P> gtBlockstate(NonNullBiConsumer<DataGenContext<Block, ? extends T>, GTBlockstateProvider> cons) { return null; /* ported stub */ }
+    public GTBlockBuilder<T, P> gtBlockstate(NonNullBiConsumer<DataGenContext<Block, ? extends T>, GTBlockstateProvider> cons) { return this; }
 
     // region default overrides
 
@@ -54,7 +54,7 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
 
     @SuppressWarnings("removal")
     
-    public GTBlockBuilder<T, P> addLayer(Supplier<Supplier<RenderType>> layer) { return null; /* ported stub */ }
+    public GTBlockBuilder<T, P> addLayer(Supplier<Supplier<RenderType>> layer) { return this; }
 
     @Override
     public GTBlockBuilder<T, P> simpleItem() {

@@ -226,7 +226,7 @@ public class PatternPreviewWidget extends WidgetGroup {
 
     public static PatternPreviewWidget getPatternWidget(MultiblockMachineDefinition controllerDefinition) {
         if (LEVEL == null) {
-            if (Minecraft.getInstance().level == null) {
+            if (com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level() == null) {
                 GTCEu.LOGGER.error("Try to init pattern previews before level load");
                 throw new IllegalStateException();
             }

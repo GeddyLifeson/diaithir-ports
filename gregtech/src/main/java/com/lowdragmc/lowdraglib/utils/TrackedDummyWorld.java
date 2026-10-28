@@ -60,7 +60,7 @@ public class TrackedDummyWorld extends DummyWorld {
     public final Vector3f maxPos = new Vector3f(Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE);
 
     public TrackedDummyWorld() {
-        super(Minecraft.getInstance().level);
+        super(com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level());
         proxyWorld = new WeakReference<>(null);
     }
 

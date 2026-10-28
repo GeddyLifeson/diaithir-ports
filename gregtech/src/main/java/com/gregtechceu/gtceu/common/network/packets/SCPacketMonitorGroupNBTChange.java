@@ -57,7 +57,7 @@ public class SCPacketMonitorGroupNBTChange implements CustomPacketPayload {
     private static class ClientCallWrapper {
 
         private static Level getClientLevel() {
-            return Minecraft.getInstance().level;
+            return com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level();
         }
     }
 

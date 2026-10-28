@@ -115,8 +115,8 @@ public class AnimationTexture extends TransformTexture {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void updateTick() {
-        if (Minecraft.getInstance().level != null) {
-            long tick = Minecraft.getInstance().level.getGameTime();
+        if (com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level() != null) {
+            long tick = com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level().getGameTime();
             if (tick == lastTick) return;
             lastTick = tick;
         }

@@ -39,7 +39,7 @@ public class HeldItemUIFactory extends UIFactory<HeldItemUIFactory.HeldItemHolde
     @Override
     @OnlyIn(Dist.CLIENT)
     protected HeldItemHolder readHolderFromSyncData(RegistryFriendlyByteBuf syncData) {
-        Player player = Minecraft.getInstance().player;
+        Player player = com.lowdragmc.lowdraglib.utils.ClientLevelAccess.player();
         return player == null ? null :new HeldItemHolder(player, syncData.readEnum(InteractionHand.class));
     }
 

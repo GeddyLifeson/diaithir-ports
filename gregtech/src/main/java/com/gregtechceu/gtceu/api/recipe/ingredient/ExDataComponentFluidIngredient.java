@@ -41,6 +41,6 @@ public class ExDataComponentFluidIngredient extends DataComponentFluidIngredient
     }
 
     public static @NotNull FluidIngredient of(boolean strict, DataComponentMap map, TagKey<Fluid> tag) {
-        return of(strict, map, BuiltInRegistries.FLUID.getOrThrow(tag));
+        return of(strict, map, com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.FLUID, tag));
     }
 }

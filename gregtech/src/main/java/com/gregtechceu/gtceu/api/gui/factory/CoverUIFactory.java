@@ -35,7 +35,7 @@ public class CoverUIFactory extends UIFactory<CoverBehavior> {
     @OnlyIn(Dist.CLIENT)
     @Override
     protected CoverBehavior readHolderFromSyncData(RegistryFriendlyByteBuf syncData) {
-        Level world = Minecraft.getInstance().level;
+        Level world = com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level();
         if (world == null) return null;
         var pos = syncData.readBlockPos();
         var side = syncData.readEnum(Direction.class);

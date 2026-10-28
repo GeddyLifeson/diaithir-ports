@@ -140,7 +140,7 @@ public class DummyWorld extends Level {
     public Level getLevel() {
         Level level = this.level.get();
         if (level == null) {
-            level = Minecraft.getInstance().level;
+            level = ClientLevelAccess.level();
             this.level = new WeakReference<>(level);
         }
         assert level != null;
@@ -198,7 +198,7 @@ public class DummyWorld extends Level {
     @Override
     public LevelLightEngine getLightEngine() {
         if (LDLib.isClient()) {
-            return Minecraft.getInstance().level.getLightEngine();
+            return ClientLevelAccess.level().getLightEngine();
         }
         return null;
     }

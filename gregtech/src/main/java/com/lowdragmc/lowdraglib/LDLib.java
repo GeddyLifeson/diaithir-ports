@@ -23,7 +23,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
-@Mod(LDLib.MOD_ID)
 public class LDLib {
     public static final String MOD_ID = "ldlib";
     public static final String NAME = "LowDragLib";

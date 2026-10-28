@@ -7,7 +7,6 @@ import com.lowdragmc.lowdraglib.gui.modular.ModularUIGuiContainer;
 import com.lowdragmc.lowdraglib.networking.s2c.SPacketUIOpen;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
@@ -37,17 +36,7 @@ public abstract class UIFactory<T> {
 
     @OnlyIn(Dist.CLIENT)
     public final void initClientUI(RegistryFriendlyByteBuf serializedHolder, int windowId) {
-        T holder = readHolderFromSyncData(serializedHolder);
-        Minecraft minecraft = Minecraft.getInstance();
-        LocalPlayer entityPlayer = minecraft.player;
-
-        ModularUI uiTemplate = createUITemplate(holder, entityPlayer);
-        if (uiTemplate == null) return;
-        uiTemplate.initWidgets();
-        ModularUIGuiContainer container = new ModularUIGuiContainer(uiTemplate, windowId);
-        uiTemplate.mainGroup.readInitialData(serializedHolder);
-        minecraft.setScreen(container);
-        minecraft.player.containerMenu = container.getMenu();
+        // PORT: LDLib ModularUI client screens are not ported to 26.1 yet.
     }
 
     protected abstract ModularUI createUITemplate(T holder, Player entityPlayer);

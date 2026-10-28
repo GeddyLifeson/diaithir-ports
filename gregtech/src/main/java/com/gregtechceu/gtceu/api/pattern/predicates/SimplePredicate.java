@@ -148,7 +148,7 @@ public class SimplePredicate {
         if (GTCEu.isClientSide()) {
             return candidates == null ? Collections.emptyList() :
                     Arrays.stream(this.candidates.get()).filter(info -> info.getBlockState().getBlock() != Blocks.AIR)
-                            .map(blockInfo -> blockInfo.getItemStackForm(Minecraft.getInstance().level, BlockPos.ZERO))
+                            .map(blockInfo -> blockInfo.getItemStackForm(com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level(), BlockPos.ZERO))
                             .collect(Collectors.toList());
         }
         return candidates == null ? Collections.emptyList() :

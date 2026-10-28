@@ -47,6 +47,6 @@ public class ExDataComponentIngredient extends DataComponentIngredient {
     }
 
     public static @NotNull Ingredient of(boolean strict, DataComponentMap map, TagKey<Item> tag) {
-        return of(strict, map, BuiltInRegistries.ITEM.getOrThrow(tag));
+        return of(strict, map, com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.ITEM, tag));
     }
 }

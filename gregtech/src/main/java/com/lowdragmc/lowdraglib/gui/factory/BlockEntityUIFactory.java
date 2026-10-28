@@ -29,7 +29,7 @@ public class BlockEntityUIFactory extends UIFactory<BlockEntity> {
     @OnlyIn(Dist.CLIENT)
     @Override
     protected BlockEntity readHolderFromSyncData(RegistryFriendlyByteBuf syncData) {
-        Level world = Minecraft.getInstance().level;
+        Level world = com.lowdragmc.lowdraglib.utils.ClientLevelAccess.level();
         return world == null ? null : world.getBlockEntity(syncData.readBlockPos());
     }
 

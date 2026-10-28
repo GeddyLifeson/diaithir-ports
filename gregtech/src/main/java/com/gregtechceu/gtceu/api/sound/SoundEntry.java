@@ -98,10 +98,8 @@ public abstract class SoundEntry {
     public abstract void playAt(Level world, double x, double y, double z, float volume, float pitch, boolean fade);
 
     @OnlyIn(Dist.CLIENT)
-    public AutoReleasedSound playAutoReleasedSound(BooleanSupplier predicate, BlockPos pos, boolean loop, int delay,
-                                                   float volume, float pitch) {
-        var sound = new AutoReleasedSound(this, predicate, pos, loop, delay, volume, pitch);
-        Minecraft.getInstance().getSoundManager().play(sound);
-        return sound;
+    public Object playAutoReleasedSound(BooleanSupplier predicate, BlockPos pos, boolean loop, int delay,
+                                        float volume, float pitch) {
+        return SoundClientHelper.play(this, predicate, pos, loop, delay, volume, pitch);
     }
 }

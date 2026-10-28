@@ -116,7 +116,7 @@ public class SizedIngredientExtensions {
     // ---- factory replacements ----
 
     public static Ingredient ingredientOf(TagKey<Item> tag) {
-        return Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(tag));
+        return Ingredient.of(com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.ITEM, tag));
     }
 
     public static Ingredient ingredientOf(ItemStack stack) {
@@ -184,7 +184,7 @@ public class SizedIngredientExtensions {
     }
 
     public static FluidIngredient fluidTag(TagKey<Fluid> tag) {
-        return FluidIngredient.of(BuiltInRegistries.FLUID.getOrThrow(tag));
+        return FluidIngredient.of(com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.FLUID, tag));
     }
 
     public static SizedFluidIngredient sizedFluidOf(FluidStack stack) {
