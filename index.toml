@@ -15250,39 +15250,39 @@ hash = "31dc0177a96e0bbb274e4070963b4a1ab698b01c8893fe28ce705f848a6e9fb2"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/barley_crop.json"
-hash = "db46bad81fcb39ea564e687a15506301158724587a9d336211300715a9fc6f43"
+hash = "2968ee1a31a49a8a4207b65d54671d21d95831a16af86c3eeb0079f64594d7d1"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/blackberry_crop.json"
-hash = "20704195ed99aeb56fcb8df89fd84f42459ac688f76d9978746eb515f40959e2"
+hash = "d50f3179f6da92489f2d32a554b67417799f50ad9e5cdb21f3e8e97f6fcedab9"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/blueberry_crop.json"
-hash = "86c6cd5a86043cf204561c755c56acb5d2c00addfc129682f856d0f8046ad566"
+hash = "e7aae695a820633590675e245630d6b5a57ff819c517a23576b3844525106be7"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/cabbage_crop.json"
-hash = "2ce1adcf7deb8c102be057d5d85ba7781ec4a6bd8a3b3c91a738291c14404a30"
+hash = "9fd41e1dc12661ad84f3eeb87a0da3a167bbca8b1d62600fc936a2432d0a7640"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/garlic_crop.json"
-hash = "f17e4d51aa5e0d172544b427c447d490c3c8ff658684359b8ec9c5360417adfa"
+hash = "6a2141277dd739a3cf9a95401887c0be6b25425a9b29d44a8f63e3597e615902"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/onion_crop.json"
-hash = "63b8b76e6e0bd3a4327033d99e7258bb0c8bda56aa5d4b6f820425eda740c6ba"
+hash = "663fec4d9747a0844b2ec49a93e7305f25cf6efc0cf77f57001e9b7326642159"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/orange_crop.json"
-hash = "0871f26eaeedfbe2e058863ae9b72f466195d52034c4fcaf901f1f3819ba1a30"
+hash = "bb27ad1ea110a19c7688848a483d1116c94efe9eb7faabf5f63b4dc253cdd06e"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/raspberry_crop.json"
-hash = "d46c23e1d04f20110d0cff33a25cf7dee437e348cc032e7c20b26dd6a823fe92"
+hash = "bfc682ef9e7a493b1c467c2cac7a381befb0da322f4b318dba45902aa0bff097"
 
 [[files]]
 file = "kubejs/data/croptopia/loot_table/blocks/tomato_crop.json"
-hash = "33cf3aa380729a1116142e65a2aefb1a55f0c2fc9ff4dccbfab1bcdaae871d82"
+hash = "f52f6652f00a2c4c320b7778360e64cc9609227fd81b251299e20fc2d3e1318a"
 
 [[files]]
 file = "kubejs/data/diaithir/loot_modifiers/fish_species.json"
@@ -24682,7 +24682,7 @@ hash = "5d37614b6416f0f1a292388d30a2cca6f089eacfc9ab5e14957226d99c4cd8df"
 
 [[files]]
 file = "kubejs/data/industrialforegoing/loot_table/blocks/biofuel_generator.json"
-hash = "ff31ebc9b445f786ecb912eb031f48144d47920b54a1a6c87c0a028951fed8bf"
+hash = "f5d005c18640d54f3a762bb6e927ee4dce8e260b7fe2916de40c5e64d6ae5018"
 
 [[files]]
 file = "kubejs/data/integrateddynamics/loot_table/blocks/coal_generator.json"
@@ -24718,7 +24718,7 @@ hash = "c7e7e8ba7fdcb112493195141448f82406c0301c63de77c2750257d30d6d5daf"
 
 [[files]]
 file = "kubejs/data/irons_jewelry/loot_table/generate_jewelry_test_materials.json"
-hash = "053b23c7366c8d9794e4e52eb4636a29831d96aa1ff4b8ff12bd86cad347e119"
+hash = "484a57e42a829534e266983dd5fc5e0542bfe7a48944c5881845c850171f19d7"
 
 [[files]]
 file = "kubejs/data/jewelry/loot_table/blocks/deepslate_gem_vein.json"
@@ -24822,47 +24822,47 @@ hash = "8fb73f898b952d7aaed8cc3b54f0afc02137f6171f9c6e541bf07f69586c5493"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/deepslate_lead_ore.json"
-hash = "f0f06b5b755825d6d95100a06122edc08313da3301d09315424d5e1d9cb53406"
+hash = "4cad602a56d1b0682bce0be0767bc212ef048471d306828d40935657db8b914d"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/deepslate_tin_ore.json"
-hash = "2013eb039f96ebb608007ff70d8017e78e4b8b2ad93aa182ccf1edcb812dcb45"
+hash = "efc81ad7a36facb11b7f056e0493d7223c586f3de5bd804fa4117fc6d76aa18e"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/deepslate_uranium_ore.json"
-hash = "e63e5b0cf87de1833fe0d71ef26d45ba0554c9bced36a22182b3042179577250"
+hash = "35d9735a94c5cbea55669452e388f0ceeb4bea991371e15f1ef553616a3a67e3"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/electric_furnace.json"
-hash = "10de4393ea18c678f789f262116acd89c21b235e9d0a67934ec20ce9d5af358a"
+hash = "ea78f4e7bd75e7178046a449b79c1762d32a82cf66dfc09b7951a9d2ad3f6546"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/lead_ore.json"
-hash = "6f3a3791fa70793dac9ae39c72bc2930d89ae7210182df3e9913050226a25d02"
+hash = "bc6472075a48d9de2d74eadccf1f5431d13c032406a6d017f4a41b61f505890d"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/raw_silver_block.json"
-hash = "48d1a64d3165b535d695a7ac2abdd491f041e098377c90b0aa5d24574b453099"
+hash = "c0a377b1678645c6088c3f9fdae5586acaa63ef4df2db96b50a5d4d008698061"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/salt_ore.json"
-hash = "6014a14b62590fcc881668e62b276d02d23d3a14e8fc146b43ee73e7d2592c01"
+hash = "432ccb59eace47ab6c1ca7ed9a3394c0290d6fb27f74739def58a97c7fcb8783"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/silver_block.json"
-hash = "5a06fe81ae700c29b932a43f7eace1a1d5485f7c83086762d10b9bfb69056126"
+hash = "d732c0dcac1e3d642e18b0307ab8e515859f070a361f36cf8fde002bf99816a2"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/steel_block.json"
-hash = "ade1053e49261195e147b199b5289b1b5c5f4e76e543da693613fb4fafe996f1"
+hash = "c009aa97cc90db87515a1ff3e68131f59bc71a118830e85af86579f5c82dbf4e"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/tin_ore.json"
-hash = "11bf6340a694dc2d7b3dd0e567f38ed27841803808c86a42a333aa796105f538"
+hash = "7f4125dd47aac8c045cde226356cb1388963a2a159f881a703552166b02cd93c"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/loot_table/blocks/uranium_ore.json"
-hash = "e309de43ac0807c7e9fecbf168d83176d036bdd33683fd078e1f3d06dc9aa9bd"
+hash = "f2fb4240dc50e04b556ace6fdd3e9a45bd320a0bd8f5d859e4ab7eab216ec074"
 
 [[files]]
 file = "kubejs/data/modern_industrialization/tags/item/p2p_attunements/energy_p2p_tunnel.json"
@@ -24990,11 +24990,11 @@ hash = "dcc8da06b66714fb04042c09e8941f042e664564ac3a30a00eb07a1494ff44c5"
 
 [[files]]
 file = "kubejs/data/pipez/loot_table/blocks/energy_pipe.json"
-hash = "1577a4070f941e1b4da50b856cc10a7c0ddf95f337e4924ce4f0fbab9ae05cec"
+hash = "59215213fd8c89824c92e0ce7d3f2e2f3d17b87cf7eea6e37702caa423485b63"
 
 [[files]]
 file = "kubejs/data/pipez/loot_table/blocks/fluid_pipe.json"
-hash = "fe6192ae29aaac0beec0ca19b42c96babf2d7a04c01ebfc620b16b738fe3d3c4"
+hash = "6b0548ca50991c6ce81b6028ff58e2cc8fb4a0110f73d60cff1a7543a95b355b"
 
 [[files]]
 file = "kubejs/data/pneumaticcraft/loot_table/blocks/huge_tank.json"
@@ -26730,71 +26730,71 @@ hash = "7dea23364114ab02a7202a958a9c0ca9561e54518d70a4225a742d225fcdf660"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/coal_generator.json"
-hash = "ff6bb16737175c955b5054a912db08ac3a381ebd001ea9e54a999c9848d007c3"
+hash = "5080f5b0b6882fa5d99677d64fbcdf2785ec5f169dbe5bb19b5a7526b2606145"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/deepslate_titanium_ore.json"
-hash = "50b69a71901745684437afe7a054faf8a940d8d942d3a8e66f3f99009846972f"
+hash = "b61e3f99832f894a869735855472bd66e92d1c27e4390bce74f9289085092f4f"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/diesel_generator.json"
-hash = "06ac035407bf4fcc8ffbf8a6b894f16565adc6165d488e5758a02d078ff94469"
+hash = "30293554d8d11b9ae0b82b3117b38d2d87f1cde4914a365faaa59f247c67efcf"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/moon_titanium_ore.json"
-hash = "30774ef2f2e531d1fd13551e374586af19acd527976cc4143d5973125451e325"
+hash = "0506e551d54c8b1de7c1c78dac4c191fc39c42cb6ac476e04da8241d12f78ded"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/raw_titanium_block.json"
-hash = "71d4c466cce5172475aa93b9866d19488a46c02c99a8f64652971468ef150413"
+hash = "2933c42cfcbb7b2eb0a5624ec0b9a964588c66872a0a473c613a174a018da408"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/titanium_block.json"
-hash = "c5654116bc7725d00e8b56e4add865c9869f108c27273e7f3b62ea597c3a1414"
+hash = "e245b35bc955454b6fa2cf85571a180496de21fb8e732640fa3edb15fd70e59a"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/titanium_ore.json"
-hash = "5ac65b24542b7b0698e54debf99c90b554838820b62bb7a2c7378a082360f491"
+hash = "be1c086bf8935239d25a8db622a3c7d0b957081059020084ba894dfb5b5c7c4f"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/earth_operation_base.json"
-hash = "f8758743627167d8a7b43a0d417572a4b129bda45fded19d1cd69bfc06aa6a8f"
+hash = "62c0fa21dbe481b6c5d9b62d4b949ba25263faf8b39f81e37938f6136071895d"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/earth_satellite.json"
-hash = "3091ec588d9f5f7ebb555764db8244fbfb55ddbc604718a526293da172930949"
+hash = "241f24de3c126c7d9060dd1803b05db8d57597d5737d4f9032256e7d5e2ad8a4"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/lunar_outpost.json"
-hash = "896bca8a7fee04bf89d532a8da0f22b7ac93bfee75589136922d992a64a7d4d2"
+hash = "c89e375474262bf2abdbf2291cd573826bdc3586a375f51343381fed30c8d69a"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/meteor.json"
-hash = "53a4d63f482f519bafb1f23719d7da08625924fac5c91293390a455e81c3e22c"
+hash = "bc70e17610680396613646d98079fd9e63f0041175ae24bba40d88dea115dbfd"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/moon_destroyed_space_station.json"
-hash = "5c26429ddd15dde3a87744967a3d257532f508024b97670b7d75d15c5917f3e5"
+hash = "0831c3ee6fcd2c02db595cfe287ac5dbc46aceeb95b4772598642091732fea7a"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/moon_dungeon.json"
-hash = "6ffe2c3010e8c35b000a7e46e83ff949789189fc904e5b5b48a789775af08294"
+hash = "d10cd14be8e9509fd143d09eea33f216bd62a0dd53cc06da991f5f419704f51e"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/moon_dungeon_boss.json"
-hash = "cd28a4438c762bb5a6fbc0e553fd9a2a6bc3772083a6e5dda06b18dafb40bd0a"
+hash = "c4342503c42239b50c038ef9870488a1e5abf31f4c160fae139877ac9982dadb"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/moon_space_station.json"
-hash = "28e39028dfee261e91e4054bcfb0743c1458e7c823b758f23875f7ba9f2b2c88"
+hash = "b955c5e12faf5402723ad530ea857e21df66e8fca8be4b23d97a163f7050d8ac"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/moon_sphere.json"
-hash = "5c5a1bbd4d321e94ab160067a11f2a5b4ee7f5a127addef6fa71c7af4cbb530a"
+hash = "bd6c92cf466ca2a9c3d06c1cb10f33e2e678c590b42a324ea4a0f12f77f654fc"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/chests/moon_village.json"
-hash = "210f9c1e27376d20958e413d7c346ff4e9ebe22a7bd7c0d2e24c7f5d97bb45d2"
+hash = "73d122b2d6d2c234b65f3fa8739bd7d5055708fa92c6f54a24d7dbf0f6ff138a"
 
 [[files]]
 file = "kubejs/data/tconstruct/loot_table/blocks/knightmetal_block.json"
