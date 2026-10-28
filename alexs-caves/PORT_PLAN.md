@@ -18,7 +18,7 @@ by tools/convert_*.py. Client item definitions and equipment assets by tools/gen
 
 ## Cut from the first release
 - Mixins (frostmint freeze on any mob now uses vanilla powder-snow freeze ticks), tick-rate tracker.
-- Nuclear Furnace (kept as a plain block; code is in quarantine/), cave-map items and recipe, advanced pathfinding, villager trades, Saddleable and PowerableMob behaviours, frog variant data, custom collide overrides.
+- Cave-map items and recipe, advanced pathfinding, villager trades, Saddleable and PowerableMob behaviours, frog variant data, custom collide overrides.
 - Particle providers, block-entity renderers, GUIs, shaders, minigame and warning screens.
 
 ## World generation (Tellus Earth)
@@ -30,7 +30,8 @@ Data is produced by tools/gen_chambers.py. Six biomes: primordial_caves, forlorn
 
 ## Client
 All 83 entity renderers use the real upstream models through the Citadel legacy bridge (client/model, client/render/entity, tools/client_port*.py).
-Quarantined, still to port: particle providers, GUIs and screens, block entity renderers, shaders, armour models, the potion layer.
+Ported and checked in the dev client: particles, GUIs (spelunkery, Nuclear Furnace, Cave Book), block entity renderers, armour, potion layer, core shaders (ACRenderPipelines), post effects (ACPostEffects), Sack of Sating tooltip.
+Still quarantined: cave map renderers, Raygun beam helper, ACItemRenderProperties/ACItemstackRenderer/ACArmorRenderProperties, advancement tabs, ColorBlitHelper, BakedModelShadeLayerFullbright, ACInternalShaders, ClientLayerRegistry (blurred glow composite targets).
 
 ## Structures
 Upstream sizes its structures by sampling a 3D cave biome source. There is none here, so `structure/CaveMaskBiomeSource` stands in for it: a
