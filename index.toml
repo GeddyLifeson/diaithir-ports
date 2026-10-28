@@ -106,7 +106,7 @@ hash = "b9651ee66db7d0dcec573ecbd2041d1a9200baa97c80337ae38eaf4c55ae2753"
 
 [[files]]
 file = "kubejs/assets/diaithir/sounds.json"
-hash = "6152b8801c70134f8a85dafbdf27c82270126975d31ff5d6ef075d94af7d1b73"
+hash = "b451a69c2b96fb7ef40943811469716507312bd537c6100d566c593fcd37a02b"
 
 [[files]]
 file = "kubejs/assets/diaithir/sounds/music/age1/amb_deep.ogg"
@@ -2898,11 +2898,11 @@ hash = "379747db880a39b94aea68512219cd0e857c3e826dca8f0cf5c7eca08a6225ce"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_bamboo_tube.png"
-hash = "50f982d34bd7b1b0052a74fc5628ab7c03f451fd00bf5ee55ee879f69fa96417"
+hash = "58fc9a4429b1285e44e36c3eba54e7c84e285852baa68af40ba80bd327cdf3f2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_bastible.png"
-hash = "38babf3f2ad998d7f88feae5af4826e2c8777b0b683436fd11dab942a39a5f36"
+hash = "8eb538d8f714fd03823f2104974b1f3eae033809de2f9590618de5958e804d71"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_bioreactor.png"
@@ -2910,7 +2910,7 @@ hash = "64b4182e0e863e395c269fc8b59ae15ab270ad534259e71d8b7c35ff10b8c5cb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_birch_bark_pot.png"
-hash = "6fa94121b1a5f67a832ff753ee94f4a03c38a336268495581aaf7eed92106ddc"
+hash = "bd74787e1499210e424e04576f93befa9fcde776c8870fe43bad4500edce3e7d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_blender.png"
@@ -2946,7 +2946,7 @@ hash = "660318b874f93bf55a07ed5bf1fe75ad145bd7114280529a176bc7fc15b7b206"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_cezve.png"
-hash = "9863abed5816f74795b3d842f9c581bb0eea78764ba8bb2a2eed3f3db9a3b326"
+hash = "86641f3d25876939fde3634e52174b3570281c3961d3c1482a805aec2bcf2e34"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_cheese_press.png"
@@ -2954,7 +2954,7 @@ hash = "8302b1e05487069f8d2f149c29e81d39fea151c258e92ed5a5cfed2b1f49d9c3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_chestnut_roaster.png"
-hash = "05dbd5434a11a718c6df623a8608914bdb92fde745b55e17e7f7ac2635eb8902"
+hash = "5a1ff3028123416f73e953a24023d4d048f4b3fd44b2d5331d24eee1b5c6c2d6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_churn.png"
@@ -2974,7 +2974,7 @@ hash = "f92340c558f029d3a7b47d64ef2d90abed96d7232fd424f6c8caab901398ba55"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_comal.png"
-hash = "d9f4c7019b3d7ddd34b8c907d265a40f3e3c57d1c458ea96d61537aee5786b98"
+hash = "0aae46ddec3acd57d7cacd4824e12bde8a7e9254831c5d3c66b2f4d20c835dec"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_convection_oven.png"
@@ -2998,7 +2998,7 @@ hash = "226f4ba4124d2878b85fb33526cd71c9d115d4ea971fd7ffa0177e3e4e74cf17"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_dallah.png"
-hash = "94906d8a3d1b84dccf31d11accf7f8b4c2eed19f3280e61ee733dec0cdcd7f92"
+hash = "8afdf4279d888257937e8717187c3e9088928629e14027f0649c2444cd43a12e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_deep_fryer.png"
@@ -3006,7 +3006,7 @@ hash = "5956784b5e7b8ed4d7f8a9c6cfe0a895d32b72be0451c0622708961796001679"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_ding.png"
-hash = "50072fe4f97a5904975bd169ac208c0384802f8549e6f3586621c3d3297512a1"
+hash = "f5452a2b71785b01daac7211647abd43831115b021bbb0e1d7922fab43fc6e52"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_donabe.png"
@@ -3046,15 +3046,15 @@ hash = "1ff836d7e739d8816038304a16447f71e412de904ddfae522cd46fa15988ab99"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_fulacht_fiadh.png"
-hash = "987ead8953de55609e662386ec83c0c0e34651c7f358372668f74a0e4b5bbad4"
+hash = "0d1f7398f6c3f2c3d6c2f63ab14b245cf0bde3f0a930639126c07f9690a49262"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_garum_vat.png"
-hash = "aa2473b02f60d95363a181673e9c4a551cbe1c8e63a6646d56cc7c1b9decd627"
+hash = "13b6fdd76a3dea16a2c2dcdb96811f9223ef2e39a2af863f97d76b45d79d8fc7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_girdle.png"
-hash = "e1be2573fe59cd333a4542ceec569e23d637226261ca0ed9ff2ef76a3a769bde"
+hash = "e1ee9bae757a97befd73c1da535e69b357f78cb5ea4045bf65a331a54a966dcb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_gourd_pot.png"
@@ -3070,11 +3070,11 @@ hash = "15553990a76c782aebecbef48fda90f9f91e088cc1d431513d52ed54e5c69dad"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_handi.png"
-hash = "d611e72a3f1dd43c5521a665a7514834f65d5a2e6a0c14f26766cf347cb530bc"
+hash = "81d1c51e161ecf7ce53c5329c2ddcf34b1d99dfc7621b9b328b12a91e929b8a4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_hangi_pit.png"
-hash = "96e3a0debb5fc5858a327f81f0b31709c20b495512040053ba228303e440a7b1"
+hash = "a8421622fecb8c7f951953a2176e2a8797883581fdad57da3272e01a96756ff2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_hot_stone.png"
@@ -3098,15 +3098,15 @@ hash = "c329ea3ad5ad418507c3e2a262e6707918d9f90f88a1a074baa6f795c73bdc0e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_kamado.png"
-hash = "ea1452cd655308f7aa53f630f1f3eff43d8b2f04b0053d477c2f0e43bcdd8f4b"
+hash = "f752de018efd4b4cbbff4ecdbd524cd75c0549b659e74b833a420112a6da7228"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_karahi.png"
-hash = "9e4281df1d9c89457108257b4dd207ac0d4b7093f67c5d69d49040481ec7316b"
+hash = "b933622a44c1a3beab242bd6fc3d653718301fef1ee7dc391d04662241a54485"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_kazan.png"
-hash = "5a70f86de19b3e4829669349db3580e75530673b0695754b92e1031f822c6c57"
+hash = "4925a89fbf3ba9e39ad3792d50596e55edcb334a40eb4f2dbb93b7982a8562f2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_kettle.png"
@@ -3118,7 +3118,7 @@ hash = "464fdccbf6f113333bab45bec8828a88288959204a00475ecebd520d9bf9d6b3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_li_tripod.png"
-hash = "aa3daaa53d2ef6ecb3876140e5068487de8ec4d0fdf55031b17ec4eb9cd99f43"
+hash = "4b1c1680f2932404b860dee00e52a9894f3c1ff7a2e2edbca919d7dd17e5b966"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_loaf_pan.png"
@@ -3126,7 +3126,7 @@ hash = "ff0f3b0659a9cd1b0c010e65bb3297589d5215868f32ead51713bbdc1dbae5d5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_metate.png"
-hash = "d8eb869f5e944396c9e6b3ef5204c92fff42787268867f22e76c8fa1e5a885e3"
+hash = "07b1cde29cb34578a5303c3f19f60a3a1995c51f916cb27ef7aac9761e6a01ed"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_mill.png"
@@ -3134,7 +3134,7 @@ hash = "7a4c3f7fd1e588842176b2fc40652a168e5680c1e5b688adfd800db43ba28f3a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_mitad.png"
-hash = "d1d9705c5686d4c759cc5c7c4d15e1772eeac9eddd371726a56157c49b9a2229"
+hash = "2885688a39a12e2c5039587afee211ac54286a53974caf9a18c95deded8402ea"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_mixer.png"
@@ -3142,7 +3142,7 @@ hash = "a2792b59285ead8c516892d9bffca295271dd5c81c7e570ace4948bdfac1a2b4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_molcajete.png"
-hash = "08d3369af4cf3e6a5f41292c8c244facc863971fc2064d847f18715fc371e397"
+hash = "3c5c2615cb98229385040b6f0fb49bdfc3bdeddd86710280b8a4f5aec91178e4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_moon_cauldron.png"
@@ -3158,7 +3158,7 @@ hash = "a55260044b24400c2d9712beb03d565d1ccd6a951f773fc457413176b5701cfe"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_onggi.png"
-hash = "3f3af65d0064ec2f8180598f57aca92ce33fdac9c55840267e2bb2af5b3c0034"
+hash = "88d2a90cf7bb4de3c7430982e0cfebb20dca3f303c616d2dbceaacba6c7c2c18"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_paella_pan.png"
@@ -3174,7 +3174,7 @@ hash = "348675dc7600a8f56ad781a14b285f2dc723799440386dbd8ad6b3c787f3fa9f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_potato_ricer.png"
-hash = "e775b17756c1e2b97c5f1cc3b556368f2dac5c0e7c68b853f77db519c213bc4f"
+hash = "a4b7ffdd1592c60866140c8ce5a5f2229f6e51dbb77997d98e41c0f1efc11295"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_pressure_cooker.png"
@@ -3186,7 +3186,7 @@ hash = "41ddfe7e060d64c937deb6494290f91893d4f184a6d3a80a9fb11bbf230c3274"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_qulliq.png"
-hash = "6fd4c2274b361ca597fffaa7f9214a4dddce4c30e09ad7dfe45a2924b05ca021"
+hash = "c867766c553ae011a5b81d6e2ebff48c7b1f8fbc6f1f0c7dc3233e6e8e93ce36"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_rice_cooker.png"
@@ -3202,7 +3202,7 @@ hash = "08ddd84c5453148374b5c3348289e5419bab77214a45c925514dfaf8f9ef95eb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_samovar.png"
-hash = "614238fa2a9a39e40fdb89a815bdf5464e305a063ac0b4c3ecdd3bea8316b240"
+hash = "ba21752a2adda561fe13eb389bfd1ba83d1811bbbf8b8b408485464a9fcd1013"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_saucepan.png"
@@ -3234,7 +3234,7 @@ hash = "8a95d444761c947ee51117fa9c5f7afb19502f0792a9ca44e88d1a132c2b23a7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_soapstone_pot.png"
-hash = "7b8b2440190416849b26961e7467ff14ad492aae1a05a1c7d220161db52afa76"
+hash = "a10afef2ba8614f46f81ef62df0c71bb3e421b1b043adc2949869c53ee5db800"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_sous_vide.png"
@@ -3266,11 +3266,11 @@ hash = "9207467ecd669897431aeda9f693acc828750e29658249ced53ca14c2bc51e0b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_suribachi.png"
-hash = "02ae8ab1dffb36f36e0d59419088afb58fcbcfea99cdcf1150cdfa9a9f3a6733"
+hash = "0b638cfd011fcaecf93489f004cf01be32ff4bf8b3f6aa7fa07b3d44fb74150e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_tabun.png"
-hash = "10b4ed248bb00dedc7312137391ca2235e2f779d38f065953ed8c41721a7c977"
+hash = "21392f46b5b2413cd80f3b1a4672df87a7c7bef8aebc4d899dd8326c9177ad3c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_tagine.png"
@@ -3278,7 +3278,7 @@ hash = "d832d322a66489955d39ddb8e749178416f3997d57b1f63b4625ff29aeb14054"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_tamagoyaki_pan.png"
-hash = "14a3b50363da55725b1319ca317bfa9368f3043322edd097d61b96bf736d38f0"
+hash = "f0f8a8112c3877400b65a2ef1fcab5dc80e3fee2fa5e941d136c7bc53c756401"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_tandoor.png"
@@ -3286,7 +3286,7 @@ hash = "1045e9a246347e5aa203f39e34266bd681ec086f104fc5de4eacc691e7bd29b2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_tawa.png"
-hash = "4575c75d9312fc8d6c5dafee81511744947580a33bfaf6de8e1a829373b0db4a"
+hash = "e9c307b529585bbbb6368d86e89a6248507e478a014b4b2528f6c219ca9ded02"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_teapot.png"
@@ -3294,7 +3294,7 @@ hash = "c1cfdbe5a1ef365c65210fa85ac923d15415aba5acac6d95a997dec653627c5c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_testo.png"
-hash = "8bddd9c5e8cf05b59c1aa20a97e44a4739071c7897ca7371c6cd5ce150bff131"
+hash = "75a6337456b0d1b0f6ac83060601e79fa3d8da276cece635265ea8a83026d22e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_tortilla_press.png"
@@ -3314,7 +3314,7 @@ hash = "2aa6358719e1164d72c6b75d74489e61c73599061e5fc5609b033d98a2afe5b4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/st_zeng.png"
-hash = "a28638d5bd1fd561d185d3461a0c2e8660bc4e44cdec61cb85ddc648de2fe728"
+hash = "7e6a303eae33290bfdde2e1effb1ffc8b094aeaae5698aa3cc255598091bb5c1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/block/white_coal_ore.png"
@@ -3374,7 +3374,7 @@ hash = "a74427cfba892591779aaec10a646c442f323d1d79dcfeef8e26f8f709faf562"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ahrensburgian_hide_bag_stew.png"
-hash = "8ebb64d9cb27b85ee911b9b317b971db7fe786cef013a654882f5670c8dcff73"
+hash = "f41671818da22529226ab8a489c237ba57a9ab44ba253df6fbcea5a5b69e9b87"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ahrensburgian_pit_roast.png"
@@ -3390,7 +3390,7 @@ hash = "3c2895859cd2a4b221db08e0d5a6347aee654bafcd5c226032e34c3a056f9aa4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/aji_de_gallina.png"
-hash = "24d70552cf964cc6b31a3e9688f8d6e5d6615ad3d581f275e146f6c0776d8e7c"
+hash = "be745376054b8576251a64c0418015801f53a321f9bb52356930916ae762fece"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ajiaco.png"
@@ -3406,7 +3406,7 @@ hash = "7e34e7355c23920b485fc137951573986287bc5a9903baf6d6c27da810790254"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/algae_pesto_pasta.png"
-hash = "1763296875a013437d32a8359f6b523a5179de18a3dac1a66f9bfdabf94db026"
+hash = "7bda0da4ec0d244ef4353b3e3c903b959a7c66967dda12e3b7a206f401ace80f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/alien_soil_root_roast.png"
@@ -3418,11 +3418,11 @@ hash = "2976e2a617b33f4cf0ef059c7cbdfa9e701a75ab5f8b47bda7b6f11a72ba8ea0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/aloo_gobi.png"
-hash = "a2857d64ec70065dfea055e2a93c5c48c79d3d78021596ffe133401dbe474991"
+hash = "8457d9bbb16e436739046c3be1862df9bd11b309e717b52156e98636d444583a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ambrosia_honey_cake.png"
-hash = "143b60a3e253ba914a34dfc3540ef287f43d699b6f0bceb7fbf0aac35423655e"
+hash = "70694f4370ce6620b8dd9028ae999c958e32dbd4f44c2c12ba155d69f4aad7b6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ambrosia_porridge.png"
@@ -3446,7 +3446,7 @@ hash = "e090d434ab2b3a96f947a8e7128858b99a180595901b1c68c2d571d2900bfa74"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/andean_puna_hunters_lauricocha_junin_gathered_mix.png"
-hash = "657d03e3291d7fc51c7bbd0f566a7d8e5695d949df933054b756610d3412101e"
+hash = "daac098b7fb45e2382ec7def020af1dd25e1c3eef8e859b9f03c426791bd3e93"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/andean_puna_hunters_lauricocha_junin_hide_bag_stew.png"
@@ -3482,7 +3482,7 @@ hash = "2864183f97dc530be8f42b1545152f71b4ea1ec01631085cd5203811b82960fc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/arancini.png"
-hash = "c7de3a6d582ee03bbbde9711c78b2aaa2855c543270d87b4a854d78a4a7fc3c4"
+hash = "c1338698bf5d047d56ef4dc5ca27d233fb8a8e8c52fffdc65e6fb0714614a0b5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/archive_reading_tea.png"
@@ -3490,7 +3490,7 @@ hash = "ce22dcf22d403c31b81f3463137b116fdba0f99546033d27d9afee8162d01fdc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/arepas.png"
-hash = "56ec8720c9b51e532dcc1dfabee2497c8dc19e41d15133ffbf3cb852463e1e9d"
+hash = "c7006ffacd6a3fcd92a4aeae7c76137e96c3570bc6748abd597078a3db9ae744"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/armenian_lavash.png"
@@ -3502,7 +3502,7 @@ hash = "6f7f3efa6c14660cbe331a79d9602d789a1f41fef85ac3af2fe8f6107fad8a75"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/asado_argentino.png"
-hash = "83d9b94ff6519fde67591fd9f28fc0da543922a55af7f0b5b90f0757a6f6c2a3"
+hash = "240f240fbfc7ff7614f4ee5bbabbcc0bfa195bf09a9852e0a9ed23fccf973115"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ash_reshteh.png"
@@ -3526,11 +3526,11 @@ hash = "5c38f9511fc1d8dee22cb4ea81b708cf5e8803456436f09f258561ba70abe595"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/aushak.png"
-hash = "2f609f5b3a9f5403fffd20077124a08c7ea5403f43162df0c48ba952ea9f5d7a"
+hash = "2a895986351d377a77da16c7a6135fbeb85c6aaad853d0efe8bf4b677e466197"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/avgolemono.png"
-hash = "b53ef4fbc30bfa68fc622ff678ce6131f59203feac1633a7d2ea17414ca8e8a4"
+hash = "7bc1319d7cf2287c7b9fdd873e6605c8a86ad0388df1c7a792fc378fa4064fe4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/azilian_gathered_mix.png"
@@ -3574,11 +3574,11 @@ hash = "8ce576dce8e38a67be2eafb46a764cd3c8ee79bbcaeb011e5849fd068061ff5d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/balangoda_culture_gathered_mix.png"
-hash = "b7d27abe9fb24edf7a3dc04906ffb6f006b82ef57873544124cf9d2a1573d7e0"
+hash = "e47a6df9dd1b84e4d73847853903dbb920b1f2471ce64610cef18935e39d61f0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/balangoda_culture_hide_bag_stew.png"
-hash = "90e19d9b1bebe51ec5a99711da42f106cdf0b13e4595e35eaacc9d421e9ae83a"
+hash = "81280daedab9bd8fa52d025393cbda6e0d0f6d83b4e4c8b3be47f54b034074b3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/balangoda_culture_pit_roast.png"
@@ -3590,15 +3590,15 @@ hash = "ab5c5b4e9cb00a3fe4c07c231ce8ed740e4e3ab737f8efe6df094b62010d322d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/balsamic_pearls.png"
-hash = "6a27a5a5e47f0f94973274584dc7f1a117b670d586520c5a6bfc16be77a06797"
+hash = "4095d00cc601cf79c892f70593b22e7760e233b2c45c4eac832f2e38c745aae2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/banchan_pickled_radish.png"
-hash = "63b42f9e68aec715f6273efb0b161afcbda2e794485925011f368d70830ebbb0"
+hash = "4dc1bff4e73be88a68082e59313cae852aacbb0345b31c957b25c1f9fa7c74a7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bandeja_paisa.png"
-hash = "dd235aa16342a5ad0396b2134718b3b24409b720f2d0a00b809fc6c29379e5c5"
+hash = "9d11e4e6dca23367ee6168a73d40e24567d240e6631076dfe24713a5c46a1ad3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bangers_and_mash.png"
@@ -3606,11 +3606,11 @@ hash = "d00b6ba2930d6b386989014922c58555358cc1b29d736b061ec795479cbf0b98"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/banh_mi.png"
-hash = "93c6e0a841ed55faef23c7ef81bcc73c67be52426e7732dd35b5826ff6b2f847"
+hash = "3225eca826a674865cf431b3e9ee95a206fb4ef4f341041552a176dd507de7b7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/banh_xeo.png"
-hash = "c04232d30007f90b2aa87a3d340c4c061174ee7eb128ea5ca45cca14954f1655"
+hash = "a16c7d652152d7df634f94019a5376c2807b63e2b4466a5676f23706c313d60c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/banku.png"
@@ -3622,7 +3622,7 @@ hash = "35f4654808af9473afa601b1a17222d1e8d8b5eb32f9f45ac1052fe2455b8d21"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/banosh.png"
-hash = "9c18b05556de986c81b77abbf5cb6644e4646fc9ffe1529ec75fb0ab5c9c2e6b"
+hash = "0ffdddadf5fc5101b71fc0df4c35c48483c00d4339ce3685295ceaba22d9ce9d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/baozi_steamed_buns.png"
@@ -3634,7 +3634,7 @@ hash = "24a3781d8c2d3a98c8324a287a2c97b0ae8677550f4c613fe8be413e95d697cc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/barbacoa.png"
-hash = "987d9fa426936b479c3a2a7b0d69296e5d4ae0c98090e2b1675d29440c7244c2"
+hash = "b42fdd930b6cc1182554927b5f7ae19894b3ec09590b9932d551cde4f263c3fc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/barley_beer.png"
@@ -3658,11 +3658,11 @@ hash = "5545f5fa062db212ed4969858fb3ec4a4223ef84b57402b8c8194426ba7ef144"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beef_and_guinness_stew.png"
-hash = "20abf1000025819c0d117df00e81746c78e7e00896db5ccd372c3839407ecdf7"
+hash = "db9dd8377b6f83be8dead148e53119d011acc8d8829b0f3952248b12be36453d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beef_chow_fun.png"
-hash = "0f0bb15667a9ee3bdeef32119c7c7ad814770bc5d3ea4f3fc3a5476cbba58e02"
+hash = "191e89b970949a073e5c830d1a1d3f93bf5b65bd9d37f4c51ea33a4fdeb4b064"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beef_stock.png"
@@ -3670,15 +3670,15 @@ hash = "fac2546ba9d777a7f7ecd918b802585ff8f63290c098a897c912cca8a6eb3eee"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beef_stroganoff.png"
-hash = "0841edf6d0b5950f0af539071c72b189492f84ecf1057178206cc8d2f2e9a85d"
+hash = "40fa0e4399f159ab9f26f91cf979947fa646e38e99023f4ed67f1f2406d3c4d2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beetroot_carpaccio_foam.png"
-hash = "47f4f3b82b8eb6cf682519b921d9d69dda63d01a160e0a618d99950b78f4f66c"
+hash = "6707ffdfe5024446c85f8f2875cbcb961d7736a6d49e3829c3f0744958ae97df"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beggars_chicken.png"
-hash = "43ab6f56dc2a482e18de528397ab4c119aaaadb78bbb9d9d55758645128b3446"
+hash = "6b3f9963b41829eecbf256dcb8ec2d73a2136237ac54fccfa351b3e60fd94cc5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beignets.png"
@@ -3694,7 +3694,7 @@ hash = "188b44f8f3aa2771930cd97159054c8b4f16939b8f196e04da3b78a1a53fe137"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beshbarmak.png"
-hash = "ffc91409f7b55eaf6ee6a4cd138fcf74f23f2bdb3e13fd80952c6975c0488ee8"
+hash = "62fcd8663fed5804c0af68f446aceb65fae5be28e9f84f2d252e05d74f2f4dd8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/beurre_blanc.png"
@@ -3702,7 +3702,7 @@ hash = "65be2f08a21387a66250ca0b8daea8827fafcca97bf48c437c6fa68926198756"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bigos_hunters_stew.png"
-hash = "620fe3bde721a00a4c2f0f46d73c1eb83897f474d0650b8abdf18f231bc5eb7a"
+hash = "ed297cf6621a1ed73416e072e077fa518c96291dc90b25b448a46b0473aae64a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bilberry_cake.png"
@@ -3714,7 +3714,7 @@ hash = "1296781a2fda229edbb5d0e8a19a0a1bc2fe14ba457f181550dbf07867d0c2fc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/biltong_game.png"
-hash = "816e76bb59877e4a1a881940a9ea3bbba5829676448f14f06d0e7c3308398414"
+hash = "516170b10cb668cf530cee39e11209e6f494bb157cd8040d8090774c3a646af4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bint_al_sahn.png"
@@ -3722,11 +3722,11 @@ hash = "d364c77257a9a1a2334e9dd05187143cd4e1c138a2932fbe29c38da5450902e0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/birria_de_res.png"
-hash = "686592476f98a603958a8e5cfa34b1dcecd21318b2fab26cd058e07608c92aa2"
+hash = "fdf6e79da6bb2b9188c821324869db8a4de7fddd453712ecb0732185ac8027b7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/biryani.png"
-hash = "caf988bba3c4137b698804cf53ac16713e8038f476541e1a47eba1fd170e3e81"
+hash = "a676f9c6065c81262096b50b10c5f96f7d91c515b500d0b978611800c5f18d34"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/biscuits_and_gravy.png"
@@ -3738,11 +3738,11 @@ hash = "8f615b4c895d5409e79595aa35769e1216519a23f88a86b36fe615c21ecdec3d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bitterballen.png"
-hash = "8dcfc6aa872c52dc8631e993f70624e17c6fa719bee2d177ae90f6bde8d8cfdf"
+hash = "d3417706745a75a5c52f1667b57fce7f8fb563fccb3f62e146efd77de168a958"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/black_cake_caribbean.png"
-hash = "422789142f7f4092603ace60f5b635570d1ea6c15fe098fc884e019aa77dfcfa"
+hash = "a9205f822e0cabd8c3ce6b7af567187f492fc63eaab4efe22bf9c1afe4a4f83f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/black_forest_cake.png"
@@ -3750,7 +3750,7 @@ hash = "66f58fb776d79bf77f0f58b6dfd4a7b8debd2a04889d3e7046a4bb0f81ab02b8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/black_pudding.png"
-hash = "d4c884c819ea10d363d3e737bdf0d697ef8da27a3c572edbc1407077c45097b3"
+hash = "a185202c6989b7efa21653d61bf7120b96849f57f717b6c288fba4a0f8c8fdef"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/blini.png"
@@ -3762,11 +3762,11 @@ hash = "c1f303bf39cea267cb730a011cedff0066131593e97d4041c354b187582401fd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bobotie.png"
-hash = "84503989d4c0557508fa7dce68c3f9585880726093dda324b038ade43e0b5a75"
+hash = "1901bfa9f696339b47e5d78b412559d32901143a1cbb351a2e77c216fd7c7683"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/boeuf_bourguignon.png"
-hash = "95a33e12b0c41782f956e1772a9868be804b15474a3adcedff24e57bc01429b0"
+hash = "c159c90100754d055e3aeda26cd786d104206e210ef3c88189d94060e1471ac6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/boiled_egg.png"
@@ -3778,7 +3778,7 @@ hash = "2c85b6f00d6bf67876a27a86ab49b924b2ddd6478b62e9adf2472de12bfeb79a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/boodog_marmot.png"
-hash = "899abea910ee59ad7c768aea4adb8503d7e6586cbc02ffe439ac18199b030c23"
+hash = "2d022f4bfa575425d51d94d21ee36569273351097278e30d367da947dd37a66e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/boston_baked_beans.png"
@@ -3790,7 +3790,7 @@ hash = "53d2b4474c050e8e742e1f1edf6d03edad47e668cc2fdb138ebfe372a28cb65d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bouillabaisse.png"
-hash = "aa109656a7c084c85c3a89897d2c540d624ab80f537da48cbc7616506157fa10"
+hash = "70d9dc7d9d6c29f6ec86656fd9cc6a764e2a6c9a8a2dca3fda7a831707e7af4b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bourekas.png"
@@ -3802,7 +3802,7 @@ hash = "66d2f481b848646a46a3e4297dc1f7bac43913e93cb814ebdcda39cf7d1efff5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/braai_boerewors.png"
-hash = "91a4df9956f547d4cf10b7606ed9ffc355b3defae07c4fe4b20781cc03693b09"
+hash = "44a6547a7267ae2e3e9c9ed4c5141d1f54b599f705a537ba371f3e8be8dafbe2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/brandy_spirit.png"
@@ -3810,23 +3810,23 @@ hash = "f7635f6b304efb4051ae35a5fbb5cd139751b81e8074fe217a5060151fb64755"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bratwurst.png"
-hash = "3981c4554da92ea4f3b8f0b4a5b527fb31a9b60c9e4f0760f801546b2ca0f17d"
+hash = "31eae1a059c38821af99804f13158e4e763a0ac19a93b910b73cc2c03a2a8086"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bredie_stew.png"
-hash = "0d07db42d5d5ea1b06b429b7ccf4ce51c1ed0280a734b695e6a758af20756317"
+hash = "bb94dd37067e8885f61db5cc66271440de3bfcfc1432c95f7d3ce60af4849187"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/brigadeiro.png"
-hash = "6ccac5e8b20362c8012fb5e3d199fbdf1aa412fc4bf21ac8b0d92d5be8f4f363"
+hash = "8438bed0f6dce20b8bf65602d84caea1d3ca10c776659133e14c87a194aba985"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/brik.png"
-hash = "c62f5edf65561e5afe871c7ab70e9024e1d21c3cd7900c7de9787483fbf07c3f"
+hash = "27afa833660c4a98d69dbc2841cd6e91e1908efa435eaa1692eac6518d8ecec4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/brisket_braised.png"
-hash = "64cb8acec5c00e47b7e1ffe1028357709a8a940fe00961923eab2c16e6e415f3"
+hash = "b81aad8e46ac806f78f43d3042c980fb785565bccee546bb790fc68a22715e5f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/brittle.png"
@@ -3838,7 +3838,7 @@ hash = "483195e8ee22014cff9e94df785f490547258d6df9504a241a1f7e527a486640"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bromme_lyngby_culture_hide_bag_stew.png"
-hash = "f7b48a9cd5d2399610b4ce94bde65ea721eb851bc394fade889017beef951d1f"
+hash = "feb1ec3edca4dfbdb953f331e7a361a07ba9f0cad0872cd9053a3031693ef257"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bromme_lyngby_culture_pit_roast.png"
@@ -3866,39 +3866,39 @@ hash = "796647860f3734391b02a742d127f9d2aec6eba27f29e605b9bc7632393672fc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bun_bo_hue.png"
-hash = "d86556668f90b4de21f45b5daf4c575000672d2c4a95e86890c1b13ca9115cc8"
+hash = "8a128678593c27b1d2b332822ed0b59884f1d7975696003e87b302baae89a737"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bun_cha.png"
-hash = "c7da48d67550ab5e07cf7aa5972a11c08b03ec76af8adc170080845237b7f417"
+hash = "05c48aeedc577dc68ea217603118f9eee7b39ba252c2f87a32fea96484cf26db"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bunny_chow.png"
-hash = "37e4ffb08498e828a2941350277daadebb1767a2aeebc48e10d930e12512d5a6"
+hash = "e23fd114659423ba8b9f90252e6e30a55b459eb715f208b385507eab992c897c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/burek.png"
-hash = "662927764262048b86f269bbf678d954fa9a500e087b407f50dd5b4268e629d2"
+hash = "ada4adfaf99a1fed35be619bdef779434051427ea1a6ee7b38a12e2e6cea1d41"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bush_cookout_sausages.png"
-hash = "e71e6ad6011b85d9856103287a279160c7ae3588f352920ac35b6d429adfb637"
+hash = "776b96729cee0cee1142cc9590c6f74d55bd0e4e63960b7ccba06ae3ab4fef94"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bush_tomato_chutney.png"
-hash = "a3cf4a9d758dae94c2ecdb21d383a9ff17622a7fbae4702010c21915c0e54520"
+hash = "d4a9551283d0540919adca436bf812d84d4ab5aebb725a94f046a3704b6a5dcf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/bushmeat_pepper_stew.png"
-hash = "09cb6dfcf6890fa44a4a2812bc107e1412ac98d7b73885261bc89b1a0d9b87ca"
+hash = "a17d4ca92eb88fefb0df0647936d36c3dd2c210f8c45d0e1bbb22d95ddc1a32e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/butter_chicken.png"
-hash = "60d6684b882d2ccea38dc9959f959ada431771bd4415261a29974b7f5af68f5a"
+hash = "d945a50ad7ae96146ff125b3f778bb15e8849119679d88fb17a97a80e1a93d90"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/butter_tarts.png"
-hash = "e9332fb68f5dc921e01adc8608eb4d7c8078446c65be0aa2fa0c22ea3d3ac8fd"
+hash = "cd11f5d7383cc15385d61b3ca24232f4cd773d186874bc50033176c5824595a1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/buttermilk.png"
@@ -3906,11 +3906,11 @@ hash = "f581a609b8b6f60229807906683833426ec6b8a4bac88643981f86d8505d0a7d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/buuz_steamed_dumplings.png"
-hash = "d9a4758e17e6c7b20fce6a51bcbc68354824cf39ede476edc6d15e9fceba116f"
+hash = "fcf8036725c88070e7a0eaf99b8731800bb14a365f681501e87c30f3e3d78c68"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ca_kho_to.png"
-hash = "cde74f383c123491ceaf72794db64e9ef6d5da18e1cdba69680ac990057b12e1"
+hash = "fbfff51d64ab3df19f48922fd530b7612c6a5cb1938aeb274530929d9c6bc49b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cacio_e_pepe.png"
@@ -3922,7 +3922,7 @@ hash = "b2ad1753456bc0beec1fef008e5bb6dc57161b189493a5240da9df4aa865e3ba"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/caldo_verde.png"
-hash = "c896121455c5231ca439565c9d4d3ff6a92b2f8cab0e7c05f154f3a96ed658e0"
+hash = "542f42c124b5edab8075fdfaa2d055bf0bd909d848b457650d866e7043325643"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/callaloo.png"
@@ -3942,15 +3942,15 @@ hash = "f9e0306439be8d18175e69a9c7e8b8fc27f28bf6665caed6348d52b2165d83d4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/canned_pea_soup.png"
-hash = "2de5387e4f6b241bddeff5d996e21559eaad84101091b53f5fb708c875ab742a"
+hash = "ef37d1f8ce0205acb8c126cb0a6011c9ca3274ab40951f26312f104a357d166a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cannoli.png"
-hash = "64f018d8bc03c9ced420504613d2ea89807f8d31e04617c476994c1cbdd9c86c"
+hash = "9eff9d911236e427b2b51f561f35bfeba7ae0884b434f3691c735b066cf738c2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cantonese_roast_goose.png"
-hash = "cdd3287541b3fce2ee162c449d7a6a9271caf2dd0d3423664c8b8102bbc85112"
+hash = "0f9296cd54bb4c13c0c0f9d68d9df184356785e3578ed58ca8cfb079b81bd6e1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cantonese_steamed_fish.png"
@@ -3958,19 +3958,19 @@ hash = "7defb5623ce87a44aab45afc4c20821a10e383952e27c3f0c7669a2860e82e62"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/caprese_salad.png"
-hash = "61377dc1281deb839a9c06f96075c78ee48cae0dfa6cd974582693afd08eea20"
+hash = "f9d2d22661c16687c3edd29c5f3bf902c75635b74871bb803bd2fd54f388e8c2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/capsian_gathered_mix.png"
-hash = "118a32e884da0a705c850b8da1e297f1936c234772dfd65fa426ce9a116b8368"
+hash = "5800788768934983b71c7819bb4e4fe630ca0a67b6a1e695e5b96b78b1d8cd7c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/capsian_hide_bag_stew.png"
-hash = "88d5ac67b6a06c5746efc231a56a77b9647af426e8f366091f708a07abe72edf"
+hash = "261e9de6899a5e6a7060045b560552d5dddf01ed1e296758d65ab5bcfb12b0ab"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/capsian_pit_roast.png"
-hash = "11655de6e35942ee71020ccd941885c0ee96e3219709f1a1a4ff9738d1def572"
+hash = "2092e143436974ca9e654f0d28bc2088eb650f0024c424db50032c24a11424d3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/capsian_smoked_fish.png"
@@ -3978,15 +3978,15 @@ hash = "8f0499f59dfa6a162aaca645df3cec6c466ca082c4e97d9ee096a0a09248f2e2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/caravan_dried_meat.png"
-hash = "668cf83ff9299fb235efc661ecef21c81c6b83080e894b48d96ecfe198d93740"
+hash = "8aa606c24d24feb21a1575e632b6f2ffabc5ceab883f032b49490959fd0eccf4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/carbonnade_flamande.png"
-hash = "e977cc4ba7d07abf36f7b6c0ea031ab7d8adab6602125c1ee5d2fc3cd165a87e"
+hash = "7f0cbfd898caa924ebdf33f6c3c8641a06830aa8aeebb2788246afb07d853353"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/carriage_cabbage_soup.png"
-hash = "150313cdf900853ad44226a9570faf8f0876f119fbbbc5613328fb4f46389072"
+hash = "08a1d7781788af874f45af6db0982bfe591995e2d96dc739bcf579b0cc1992a9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cassoulet.png"
@@ -3998,15 +3998,15 @@ hash = "261cc5de590536363ff25077a9939e42f340380c0c77006168d881c413e04869"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cattle_drive_chili.png"
-hash = "9a689ccd76fb16ebd9bdc7e0398d165d47218875ce0c234659646694e438595a"
+hash = "61702fbc09bc047cb6b484439dfdf57026dfd32bed8823915d4218ffb8bc14cb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cawl.png"
-hash = "56038bf7c2eedb126958e6ef9b856f7a7e2df26faaf50b0c181217ab6cdf9e18"
+hash = "eabea7cdb0c80530f98c5801dc6de790d4264d4d6aceb016f16985d9e67376b5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cazuela_de_mariscos.png"
-hash = "5de9cb3094596db5ad131293d1d7fe6d8d5386bde17b3cc82e967211bc298ea8"
+hash = "9430320c686005aa11ca1161702ea33018b683ddc58bca7f8a214e2451bff1ea"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cell_cultured_burger.png"
@@ -4034,7 +4034,7 @@ hash = "6dae37b509c970495805b74f4fc298480e0af92639b7825ab9833a1da1df6ab7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/central_brazilian_highland_hunter_gatherers_lagoa_santa_itaparica_gathered_mix.png"
-hash = "8eeae89d4461a532965d7d37781fb8e41809b22912eec4775e6d9386c77711cb"
+hash = "e1ac2527743ec9a966c9b15f8c400e16a83d61dc9a453e8fdeb47d77935ed126"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/central_brazilian_highland_hunter_gatherers_lagoa_santa_itaparica_hide_bag_stew.png"
@@ -4058,7 +4058,7 @@ hash = "c1f97b8b8066705c2da821756139480c60e6c10c87903224f4611ef5300ab0c3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ceviche_mexicano.png"
-hash = "2ba667b40a79abf739c5fc4c046266f3eca17038da0c75ec7908fd98a3a8a6dd"
+hash = "f209711a66dc64a20168e33f52638b690866c8bf176a94588db985ced284eb79"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ceviche_peruano.png"
@@ -4070,7 +4070,7 @@ hash = "cb7de2cd0a26d2af48ca7634887e84e0e496834593b4fad632ba461ccaa6974d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chakchouka.png"
-hash = "53616e8e92d4f0cb85c2a6388bd56fde3f988eb5df63a220d0adf66c905c2f06"
+hash = "d0e82213c50fb52e444203b13d0cbd92e1e8dcc168f872ad51a042079a9a6f95"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/challah.png"
@@ -4086,7 +4086,7 @@ hash = "c2c501bae9c35b94e42f0f97a1873d03d5c6316f8de7414d96c91a11ce937631"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chana_masala.png"
-hash = "8f102bb01e17507b10a5a25257d765079a8d501f4838c32b82d646df2c39a19d"
+hash = "3abeab05b46fd06cc03367c692544e19f804468f0941bdc7b7f9e9dfccfbee3b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chapati.png"
@@ -4094,7 +4094,7 @@ hash = "879f2297426493d31b327708e8a7520b8be17432d021f76e50c0a3785a58bc48"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chapli_kebab.png"
-hash = "f2146ef3417073f63d2be0f93be3033a8a4a0828b7bc19f2decc0edd5633bbd0"
+hash = "8ee4c091d9571c2f2b4b60ee9ca188fe4c10b8eeac8ce473d031aba4469d9bd2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/char_kway_teow.png"
@@ -4102,7 +4102,7 @@ hash = "2c2a8050ef336c8c0291c8eb64bcfc6155eb14ccc85c12613732df37b50bab55"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/char_siu.png"
-hash = "d9265ee743e90856ce88ccc42306a06dbfbeee9491e39762ae14cb4946277b47"
+hash = "90006e899b71db7a4132ece88349d228343660ebaac3ebc07deef4afd365a982"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/charoset.png"
@@ -4122,7 +4122,7 @@ hash = "966825e56096bc96bc030e17abcb9b1ae3d8d6a645684629edc2a0ed8a27d968"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chettinad_chicken.png"
-hash = "74be7e19954d43fc0b650b5dc04edb8dd50060240c557980765ab336f0958c3b"
+hash = "33d25ce83c68f906f4c5254e8b6991f4beb3bf768ae366194d29896cab0b701b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chicha_maize_beer.png"
@@ -4150,11 +4150,11 @@ hash = "8fa238675ffdcc5247ad56ae5ace3a350adf76411db320d8eef616f9e5ea4dc7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chicken_tagine_with_preserved_lemons.png"
-hash = "047077b87993530a7f77d53d498481a2fe487e53f4f594e5f600c4d13c6a7faa"
+hash = "476c6c44cd38b5ffaacddf7c4834698b0a9d960ab986b487c314a6f96f99a0cf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chicken_tikka.png"
-hash = "9a65ef8016fecbeb782f5da8d7702fd7e6f1e3fde4b109a8b0ceeaf234e68144"
+hash = "9c5e150c8cf0748061e69f8727f578ca6eb3e172cf471c3d9792d414837ac553"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chikwangue.png"
@@ -4162,7 +4162,7 @@ hash = "4f867149e40ddb68ccac6180e8fcfd608e609c80b87fad91f8fd6deadcc9463d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chilaquiles.png"
-hash = "9ba095276e121c8efbd04baaba2a197a0d6c354130a8f9fc7ea1cbc4a79fa3ec"
+hash = "4bda56e07a9661ea548599757479050a319b2258414265d770e08a8509793942"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chiles_en_nogada.png"
@@ -4170,7 +4170,7 @@ hash = "ebc3d26648f986aa90ba0ed89b7b97521d11e0ddb9b7606a9edaa1de021337cc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chili_con_carne.png"
-hash = "57000e7d6e8e391dede5e8d6bf742e24bb200ff2debb014a8649741bec076895"
+hash = "225fa2e352a7b4a8d4912a08cca90e225a6a68999962bd665dfd430b737014e2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chimichurri.png"
@@ -4190,23 +4190,23 @@ hash = "b06fded5d25855bcb5b96c027818257daa4fc52b371e72dede7a51121f385d6c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chirashi_bowl.png"
-hash = "02ebbdec8c692bb00ce3af73d4dea60de7e30de248b94465e7dc5c3317710924"
+hash = "8eebe9b9300d59f37ee16b986d4b62cb42429bf5ce884d3dd17402309e0d436c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chivito_uruguayan.png"
-hash = "37b1d5a722159585d3f143950dd7e979617a467bf25d4088e0a0ab7f4b82bfbd"
+hash = "2fcb5ef34f7f38aa23249524bf389f838fc3281a0564f4c287ff8858183b5a5f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chocolate_chip_cookies.png"
-hash = "b804983d49ecfb4efd824d60a41ae9cdf07909edb158296da5c77aae59be5499"
+hash = "1d9fa5c6a76ebe81acb78f75ecb1fe61f636914b474b15c4467077a028f3253f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chocolate_truffles.png"
-hash = "e48c4d3ca55b2ec9b606326c0ffdd1b1bd31d981b6b5fa9654236289048f0fcd"
+hash = "45fe0f722539f1f6d593ba59001547a762c64d2e07293cec00fd14a98945609f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chole_bhature.png"
-hash = "aad52dbe0c4e2aeb11de8ab65bc2a24e2f7fee5322e70b13a8d6c2e05f2949dd"
+hash = "fc09d759f8146fdeb4f20f02833a62331e8efe6df9878559126fd45824b10199"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cholent.png"
@@ -4214,7 +4214,7 @@ hash = "719f18d88484ff07ca302b70146173e481aea8d8220d6a0529214be5f25632bb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/chorizo_a_la_sidra.png"
-hash = "796a0a715190fd315438da913e0c453a4fdb96ec8827d1338bd01f488977e992"
+hash = "4bd6b0fbd36371ba848a782eee0bedc68675addc81b7b4d6be9b2f071dc8608d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/churrasco.png"
@@ -4238,7 +4238,7 @@ hash = "ad45a7a7138d1e53d1daef81951873b7f815646641f71b0dbf29ca6c2e777c57"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ciorba_de_burta.png"
-hash = "ae6b722441c72d98ad77754551e27f965e8092fd1cde25dca0fe8a3841b7de6f"
+hash = "8987e60845005c229be1cf126b91cc61dbcfcfb214ecce547d3db90bde421789"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/circle_dance_honey_cakes.png"
@@ -4246,7 +4246,7 @@ hash = "a0b559efbf1ffaac736378990fbc3b4a35f34c2179c71ed9e3202bb988a2e33d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/citrus_foam.png"
-hash = "5a4b71f4418e40fd01057b0642439fc5efb24b58899bdd2b25c40c7e204be0c1"
+hash = "2aeb97e5d358a601300864b0a02200a9a185aeacf370d7c3849db097f2365db4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/clam_chowder.png"
@@ -4254,7 +4254,7 @@ hash = "5bca550f79098654ce2986ff184ae927619f9e34c47e6ee77640fa639f77b699"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/clambake.png"
-hash = "b8950fc0c22633d06b9d994a0057db8228743aa8f131468ce6b9c995f8c8a70f"
+hash = "257eb7dba80044588e4bda2f7ba300bf19b2e3872ffffb7118dc1259fdbf3606"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/clay_baked_hedgehog.png"
@@ -4266,7 +4266,7 @@ hash = "3ce17f1b5c3d2a7ceac7ab3dde14cb5c940d08864f5d062b39b17d5de0b7cdb2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/clear_egg_omelette.png"
-hash = "8c693d2d29a3478a5085fa9c90b9c28a69cd62636f6e3e090da388a1fe637107"
+hash = "dc02f67dbaf0483adaabe7fe7e76cb2f9cfd061a1ea82da69750d70929506148"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/clove_and_cinnamon_rice.png"
@@ -4294,11 +4294,11 @@ hash = "2d5eaef03166e693920dd18a1ea1bb213fabc4e6e2a7d9854a0b55eae487ff9c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cobb_salad.png"
-hash = "ed231e57f929aadd35d149f2c35170a778991689af9b798214d328e3d9848989"
+hash = "2d0d0067d43a9efd649ac9e32acd4e369331e95c0943dc311ddb356af3dba9c5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cochinita_pibil.png"
-hash = "9a1838bb71a2cde4943a5a3f1740260b9b44a1a40aaad9fa21bc7a973753dd57"
+hash = "4275931b2f867fa0a498f38311659100c8d777ede4d290ac4c8f2376f738dc9c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/coconut_water.png"
@@ -4314,7 +4314,7 @@ hash = "48c26740c254dfcf286a2548c839f3ebd0ab2b39f84f143ea13c36251edc2664"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cold_sesame_noodles.png"
-hash = "34bcba51ee5428ab33a60299dd483bd00e720253787ebca93054408a2078496e"
+hash = "c4d7f362ed0c86719408215b5c101bce3a1e3e5a8f33ca29fd66d38b3470655c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cold_sleep_broth.png"
@@ -4334,11 +4334,11 @@ hash = "27b2efdc9b05442f8165608b63422f23b67a02430b3a22ecbde1b49ebe71b7fa"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/congee_with_century_egg.png"
-hash = "f00007e987b5a5edbccd707cb263da972f12f18e3dc26a1db68fee0e3d0efbfa"
+hash = "eb8fc8520e83f3b50d6fcf2aa94eb57413ad30f04cfb71b8b30428fc90919fe4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/coq_au_vin.png"
-hash = "efa0f796ed7fc7f4c1782980d2d25afecb57e2cb9484aac9d64545b8397a8808"
+hash = "7cbb96144a9740e09e637eb995714373100c6beae991bb024b8b598d7500ff41"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/corned_beef.png"
@@ -4346,19 +4346,19 @@ hash = "dbfe2430947e5b55f794c2e5a382adaf8963d9afd66d687ce0aa21d92ec7debf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cottage_pie.png"
-hash = "3e7332c16fed59db0bfc6c6f6c1541d35b9db1ca02034f8eb6c1ce56386310a8"
+hash = "0a2dd2ec0c1eea661b3052fab5bca3b9f815bd44cee3ff9b8ba98ab7714ccbd4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/couscous_with_seven_vegetables.png"
-hash = "9701b4ceed35afb3700bbb9bf3ef199d76ff0268a1720a9758762d72670fa1cf"
+hash = "61955ba32599a6da607a2478a9054c109dbcf1e204d9240cd72e330116126316"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/coxinha.png"
-hash = "efe51dd24ffdafb6afc7e5fcb739675d1a47c0207376425c4d63f131bca43e59"
+hash = "1389504b8341e8468ec252f5af2129a80983218f45c67e198135f23c5f377834"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cozido_a_portuguesa.png"
-hash = "1fe029183ab4bbf147b78574a6f141386542720473ca069ef0e4dd9d3fc99a1c"
+hash = "4fcb6f2ce122160852b6c099b6b028e43fd85cdaef5b2820430e04ac8308bc55"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cranachan.png"
@@ -4366,11 +4366,11 @@ hash = "ca0bb1c4ffc68b5a4a63dc539845d6fabbb35afda2728583fd3571f144aa5cd5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/crawfish_etouffee.png"
-hash = "bb5527efa54afa4647c9a1b340bc34c5db04474f71b820046931b5056311e007"
+hash = "b75bf829466295f51aa1c0a7a07c731101dbecc4b491094a7d416dbcbeeff222"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/crema_catalana.png"
-hash = "a824b665c79c7654a5dbd8ffa9fa794dd5d39c0973cbf62f7c4a22800cbd2d85"
+hash = "86d2d930dc9debaa1a1fa0879b69330a5572553e57c857f56da5d4a1b76b19ed"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/creme_brulee.png"
@@ -4414,7 +4414,7 @@ hash = "752a3030725090463dc9d9fdc9bed4c6d6be9dffc92d3d69735c0d49deed8ccb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cricket_protein_bar.png"
-hash = "50bbc625929a56cb8a9fc28f38a04220f86bcc8712c4ccedcf34499969cdc12c"
+hash = "6829038e8ef4470e9499a8c914d4922da247ca429c4fae0f053e4bfa271cd625"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/croissant.png"
@@ -4434,7 +4434,7 @@ hash = "396122a7b200001b876f14c41714c47c84d0941d08ad8e7ed80dbffe9fbeb342"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cultured_beef_stew.png"
-hash = "30aafadf01e5a13f1bb2f16058020a5da1918565d757929a51aab2f093ca884c"
+hash = "a82e68d1832cb80cf03977cf49ab20977555da2b9d7386c8056528326433e42b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cultured_salmon_fillet.png"
@@ -4442,11 +4442,11 @@ hash = "76fcb9c931f40eb6aef8b3ba4bf244198c61890d4420e5c3f130efb6944d4002"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cultured_salmon_sashimi.png"
-hash = "9d1286dba31912593ac3d74f929b6e740da5cb43b35d3a21ab149618ba281a09"
+hash = "17152421b162d2c5d6327adbf0e1109c31020030a300db4650a1ac23c221136f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/curry_goat.png"
-hash = "f07c808bbff10632182e91ee1349b9855cb8ca26bde3e288dbd0ac5281772d8f"
+hash = "2b6a3b9c51d6d6016d1986551a3535e8f852af090d30e43061d08951ebef67c3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/currywurst.png"
@@ -4454,19 +4454,19 @@ hash = "cef096b2fcdc5ca79d0dd01372a46e948ad7eedba4a56743d2a74a3f45bbfdf8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/curtido.png"
-hash = "b13af41a8a2282aa32d728840ef2ea18ced23bf101a685341ddeb55b351deaa0"
+hash = "571b00e49c970bf560ad6887f442ca3176426c885a1ef28df7b789b2039d0cd1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/cuy_al_horno.png"
-hash = "9207690c5ccdbc53eff0d341e0076a7d9f50a46ba2f5b846390932a6df180bf6"
+hash = "92a1c76f0dfc0d055db8dab06ced7f36301c9fe67e7da234542945aca93e7207"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dal_bhat.png"
-hash = "97c4cfd42acd3446189a791d69901d900cafdeca7e6ef1b1cbd958eece3479af"
+hash = "b89adcfe676f98309f15d743bd6f20725c54eb3c964e8c4d4edfd2b35e61e120"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dal_makhani.png"
-hash = "9c27f071e4d0b7703553af19fba762bd2c5e22f18c3b0215ba828e37bcca86d5"
+hash = "7e889d4cf95545aee223f6f94e6eb32af25925d7509b63617c18270c4e977d95"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dalton_tradition_gathered_mix.png"
@@ -4474,11 +4474,11 @@ hash = "351b6bc7d88e6b0f01c2fcad840d6be050cde5ac1b87c23462be23e9182f20e5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dalton_tradition_hide_bag_stew.png"
-hash = "81fea379d820d746649eff425782442193a7deb72d8122f534a5e81ed334d570"
+hash = "dbc9f5941e623e0ea3308f0de6da4f65b3d84166003c8cf8c0ee6c80f3cd2016"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dalton_tradition_pit_roast.png"
-hash = "8f69a6960138bb546f550f3bf94bbfb9ac22b0cf508c027cec34570baab22e98"
+hash = "4ea6c7f87e00bc82643b819bf47098a14c59b1e108cd142146577d814ad65d16"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dalton_tradition_smoked_fish.png"
@@ -4502,7 +4502,7 @@ hash = "a8b565c6cb40b51244dbafbbd38e5042ab8d0a3586a20d2bec6a9256159058f8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/danish_frikadeller.png"
-hash = "35e9a878e30ed8096e30fc6bcff8d422cc48b311c15a94d50935305790616224"
+hash = "fe6bce3bc4eb2e752fd30499ab1a4dee78487647c7f47a0ff924f810d67b60a9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/date_coffee_cake.png"
@@ -4510,7 +4510,7 @@ hash = "45df8c21661341455cf79d9e9a3800d789f1250a9a0f15761db2d9bbdadf0990"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/date_maamoul.png"
-hash = "2a51bda06cd7a0ef31e87de268f2ffa3b59545f1911b4780c152cfe13fb09c2b"
+hash = "2b0642aaf686213f5dc3407d11d2df7441225577f49da9023912678b34f0cd32"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/deepfin_fillet.png"
@@ -4522,7 +4522,7 @@ hash = "3e351ac76d523291b2202cfb168058d374f8560d63ac7ecaabb60940a7473651"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/desert_flatbread_wrap.png"
-hash = "6cee9a766fd28179020a4b84aaf446d2d3539b3077557fe616936330adee82e9"
+hash = "864101446209dd11eea3320c603d7bf79c0f00038290a9cee54d4a2028ca23da"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dill_pickles.png"
@@ -4530,7 +4530,7 @@ hash = "02f4225cd807a58d17117e0182ec12a8c89f05029c60fddede435a5557c6485f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dizi_abgoosht.png"
-hash = "9011f709a6b141ff3bcbebace731999e47ea014e2ed5ce666ed4c139c9dc23a6"
+hash = "42cdd929a87ece9ad5afb59bf2a0d3b775e272ecaae7886f3a0c531e63e7e8cd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dobos_torte.png"
@@ -4546,15 +4546,15 @@ hash = "dbe7571139dfb1ca6dee17ff8aeb70bb9100c34257b20f2021591b0f7373c48b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dolma.png"
-hash = "7cd51d9a06c7a783fab326a71daf98e341f5693b18ae99ede6ff8dd789b4eab4"
+hash = "a28b8b7f00e67b89d2a5e7907e47e71f5cec32a1b419162bbdb2e87ed9f919e8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dolma_iraqi.png"
-hash = "96a4110738959150179d15c9a17f644734c953d25c7ff5aec1dfdc7b6967c188"
+hash = "303017e73db6920344a2d01efbcf2e6863a6840e9af54287188ca54e80f332a8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dolmades.png"
-hash = "edd5e360391f97f3caba886528a3cc2d4f8a7fdd7f7824ee235052f0aff8e53c"
+hash = "b4c10253d48f10a426151c14862bd4c876940b376e6efe5b586ee0a54ec3aad9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dome_garden_curry.png"
@@ -4570,11 +4570,11 @@ hash = "c9c2ab4b624fba1c3f7f7797ad82e1cf562ef5fa424693bb12a9262aad9199eb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/doro_wat.png"
-hash = "b9b1f6513182282ba0d198753e4e11adb9e76d8e42e50aa334a2f912fb28b74b"
+hash = "2330e46c6ef7ceb850b05111befe43732c46db21b85bf51c1f84ebb3dcbbb4b8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/doubles.png"
-hash = "33c653503f9360c739e347c847a84a9d5d3394594f771b9451a5235cf4f29e10"
+hash = "7b7cb6166ae2b29aadd5e2d985e385649a4d2e691751d41537fbda246aa74a2b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dried_apples.png"
@@ -4590,7 +4590,7 @@ hash = "7b0cb7f30b57a5261cfdc1e96215dfb98c33111f12da34dd37f17fea48293a96"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dried_fish_skyr.png"
-hash = "2d439bd297b914c711d856bb6bd02c19a659316af2929297e05bd21d11dde976"
+hash = "51737aac666a1ea8fd7350147cb113d95668ab4ae764bf1ef1f9c4a029e1f39b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dried_herb_bundle.png"
@@ -4610,7 +4610,7 @@ hash = "c11a6b6b40d44488d352394c11b7097a5420bcc443a9c5b174c50e2da5311bed"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dublin_bay_prawns.png"
-hash = "91cf07cae96d1c8d81c2fb9d7b36be7d9070fa2ae6329255cc4a934e3f0b2d18"
+hash = "a9c4b6c0cbf9c8bc1f1f24e79ac300a5bdf1d34185511ef59484a656427be750"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/duck_confit.png"
@@ -4622,15 +4622,15 @@ hash = "7e4909caf1b83e80f2540f2c866bc1f9b8e394c1e4e93ee990f26e024659ca44"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dulse_and_champ.png"
-hash = "18e6f28d5b3ee74d9d9b7f5bebfb65905db82779cc2e85ab5a8d3e67da60683c"
+hash = "52ed4e710521a61f2066d455b76ac2f604ff36b563216f377d76241f64e03839"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dutch_pea_pancake.png"
-hash = "7dc3bac4a8e0fe5095745bc5be7dfd855a8f9e5f24d71f1ac765a9ced17fdc61"
+hash = "b98178ada1c27e4d696e70af53ba6aa94b10b8267d959b3c047414116b5e3657"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dynasty_braised_duck.png"
-hash = "7ec9b3ad3f890b9985f70ddfb4420fc881e57265577c4351c152cf0143944900"
+hash = "20c65fc9aa899cba4b24c5391d162f7f99c2b5b9e2d435e202336420b995ac41"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/dyuktai_culture_gathered_mix.png"
@@ -4666,7 +4666,7 @@ hash = "22a7ed32dec4144b9969cd23bf530e0bfc9553ffae16d48af6bdde9a4b6dbbb1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_holocene_sahara_foragers_early_acacus_hide_bag_stew.png"
-hash = "5c9221ad97a20f74ed0589491cf33dd23549ab2f343c3ea0b286f9d0b7d40ab9"
+hash = "cd67045a7af9a4c7bdb2255828dc2f6d3dd4e3ec95486126ab71e1f921151ed3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_holocene_sahara_foragers_early_acacus_pit_roast.png"
@@ -4678,27 +4678,27 @@ hash = "c009f7c897d0c4e18d00ba0a7bfaed99318a61f27145b234d00bb02644e554f5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_mesolithic_britain_star_carr_gathered_mix.png"
-hash = "b84a087b247ce273aec30c82e6418736951afccbbaee2c17b4b41f3167a362b3"
+hash = "58629ed16f71e2ee161941cba946432dac254367952008c79b2fccd348e293bd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_mesolithic_britain_star_carr_hide_bag_stew.png"
-hash = "c0f19b2854e9d285ea5aab5857d69f3d076f43f0bcbae4fd542cbc09fce5f5a3"
+hash = "dbe20e1204c1bd5662fdcf446d198e3c545b4dec1e281a183b02c00dcae24431"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_mesolithic_britain_star_carr_pit_roast.png"
-hash = "d208e38dd0c09dc46881b98579798050d971cf96b450921058bac7fe9d61448b"
+hash = "37167f46d641e6e7ae12b65db54c5b4060d251f294276a35252202e881b08289"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong_gathered_mix.png"
-hash = "cacdca56f5af21249ba5fa4a813fdc679ed2f13e1552ebcb736724c80224063d"
+hash = "ec1de79ffe00625ea534d3a9404a9a9561e6b8614418c99b27bcd327d51da8ec"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong_hide_bag_stew.png"
-hash = "f3f111648ceb382b530e94191a79c2350ffdcafdd030263a1912c77fb45c85fa"
+hash = "b5c59a7e8d63b1ee970b7919f774753722de727ce277030d8931e9215feb3d3d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong_pit_roast.png"
-hash = "8857c114bb3738f239ce45278ffda15d0db89339cc970422e4f5ca1f71bc7c87"
+hash = "02448becc5589757599bedb26c7ee32fe6633e6ddbc28f0e60fc1ac52b0a5bcb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong_smoked_fish.png"
@@ -4706,11 +4706,11 @@ hash = "43955d3acb9b157f373062d825880ebb66d2dff411d3a1e8318ea4a34c42736d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/eastern_paleoindian_fluted_point_groups_gainey_barnes_cumberland_debert_gathered_mix.png"
-hash = "bf5b44a917f30a5de8c227f2017de0470458ab539ea7ceb0f52b5adf5c936f06"
+hash = "f4da957db9f31009fc05eeaee5b8ab8b61f81dfe7f68f5b0a310837571b78ce6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/eastern_paleoindian_fluted_point_groups_gainey_barnes_cumberland_debert_hide_bag_stew.png"
-hash = "46b4dcf03c4e7364d9608eef74d128a1fd54db5a9cf23c82661c24079864393f"
+hash = "bedcd28396c9b1e8858e60e235c16dbff72f332ef8f0a9c99d0da61ae530eaf6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/eastern_paleoindian_fluted_point_groups_gainey_barnes_cumberland_debert_pit_roast.png"
@@ -4738,7 +4738,7 @@ hash = "679880c6f6d08bc90068f85b5b8bcf8db9002fc7e2f9c10489965e4e7dc3066a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/egg_drop_soup.png"
-hash = "7a18a4f3f7895036a0aebd515ae95e1b0a7d973762a5f12d0be489fdd65a3f3c"
+hash = "21372f094291e90e9c99b04d50b84a87f1cab18ad9f7da788b22772d0df18fd4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/egg_white_meringue.png"
@@ -4746,15 +4746,15 @@ hash = "d614bd22f01cc927f54526b4557551533e5f564bae08efb50bd6da5fd6aacaa2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/egusi_soup.png"
-hash = "ffa0720c209cfea3614c5121806fb1530fdbcc5f61441dd6c76e280ac8713393"
+hash = "d79efee098ec2378e9739ec67c398d82d6889730904db2b36ffa00134fa1436c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/egyptian_taameya.png"
-hash = "1624f11a784b33f7f1d1fd321d9568c7b133e49e00cfd78e5eb6739b1727ccc5"
+hash = "8d8ba7868ec4309a129a89753adc335484780cc0c218649f4afc5362f1a2ebe9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/eisbein.png"
-hash = "1525027a33743f363450ba722cea6d513d8341e69c7a4afdff8383c726696035"
+hash = "cb44fbe02caf13896a91dd92e4e85e0a6d4304d254856ff07338031f78a03baa"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/elote_street_corn.png"
@@ -4770,11 +4770,11 @@ hash = "34d4b3ad1cbb3078433e8eb51efc2bc4847f53e4a00ce8fe3b178deae3dfe86f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/empanadas_criollas.png"
-hash = "65bc3db69c2d0c46a0b326fd6bc157daaf123e3f194a8b57af4272d21dfc2da8"
+hash = "49cf029297e102431b3fbdf232779ed992182361b7a5dd9d3caca321eb910cd2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/enchiladas_rojas.png"
-hash = "e0a9bfd39a054863f4ca9dbe119ec6ff3e1cc79a6e582cda16ea6db086232ff8"
+hash = "bc4ddc765f1c8ff5e7685bbdde5525cbc5f58a49ccc0be47ba6cab9121138612"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/enclave_rooftop_greens_salad.png"
@@ -4786,11 +4786,11 @@ hash = "dc4ba0f7152c54751db97ec1d4aad9ed87110eaf73da38b8707bc781e37a65fa"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/epipalaeolithic_egypt_isnan_afian_qarunian_gathered_mix.png"
-hash = "70c335051ee0ecce98fa640030b2d517b6df9b2bc12d72429a250b56c4ff43ed"
+hash = "31baeceedca83bfbebda674a832ad21c1667a7df89552e030a3b6d5a3db19636"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/epipalaeolithic_egypt_isnan_afian_qarunian_hide_bag_stew.png"
-hash = "4767dcf5a98b1d24f2a9c098ed9d377dded85b62b2576e6385da618a716039dc"
+hash = "474705218769d1570d425839831d13c4e5c5c785540f08295acc35f34e4acae4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/epipalaeolithic_egypt_isnan_afian_qarunian_pit_roast.png"
@@ -4802,11 +4802,11 @@ hash = "696e05ceb3bf54258a042dd7d133013892634b401e0ce511fbc80f45d14d2f33"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/erwtensoep.png"
-hash = "d72fcc1773fd156a16333ad63fddf5aa45eb37906152074a208360fc4629af14"
+hash = "c3711e84110f6c98fec52a1a30dd9577f6474408ca30960f24bfd170bb18ebc2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/escargots_de_bourgogne.png"
-hash = "49d8476b0d8d8fd3eadfe0f82cf50495df0fea09a568c17867bc06b3c355c1d9"
+hash = "2d1226df79b473d6f16aa216124d3e963e409dee3a21a5235c1ad7ff011c992a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/escovitch_fish.png"
@@ -4814,7 +4814,7 @@ hash = "22987815e25776a018e83e29c69a0d090e4bd72cf55e902c0b0c7d3d68e2dc84"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/espagnole_sauce.png"
-hash = "5d92499e1b0a1244d5680291c3826ed69247ce4d1bec0fa3d55f3d87c9bc1b1a"
+hash = "9e73ba37a36581bad3cb1589bd72b3c97bf6e9b991f9741faaf7a87ee92e7da5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/estonian_kama.png"
@@ -4826,11 +4826,11 @@ hash = "835d5d9f4ae28c48383cb499b7d93a22c19afc72e46e07033b53f03137d0089e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ethiopian_dabo_bread.png"
-hash = "c89d58e3abde9cf318850f74de4c38898b15b6a4fe40393bc22ee8358940399f"
+hash = "f7e702fdabf7e44fe427756732eb86ee51f73b22c1d57921876052f16088486f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fabada_asturiana.png"
-hash = "ac8ba4390647e717b23cdcf4aa45e1e8f194d74f1f3e69e8a0932a5e2bc1cc97"
+hash = "9f091ffe8f816f6f7928b835d42444a9f8f0fd08fe0747c3d1664b5e78532d4d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/factory_bread_and_dripping.png"
@@ -4846,7 +4846,7 @@ hash = "d4001a7a86ffa21eaa35655ab80012b5892af7e89d8291d8b7719944e3cdf30b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/far_light_sea_grape_salad.png"
-hash = "6c86a8d0b46ed31c6db690230bdf7ea5980c96e47f2470c1a9092cf3d910f990"
+hash = "b8b052e8a2271fc360dad24019038d08340bb4174d24b1224defd98125977a87"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/farikal.png"
@@ -4854,7 +4854,7 @@ hash = "a622ef8094a9443c2d2035249a5e07eb5242c9d157d4f168bdf6763c9915dc38"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/farm_cheese.png"
-hash = "09b26d1bc6d7db5c82cff5476e3af685c6349fe8fbb6c89891cfdbe58e98d98a"
+hash = "048767d61efbdfc2c36cc47fd46cf4da2e57223e3ed818c9a7f79051b930e60c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/farofa.png"
@@ -4862,11 +4862,11 @@ hash = "d30bca275db065379b96b54f0a5f41d38d42936fe3866ea5fcd925566e1850de"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fatteh.png"
-hash = "2d2a6bc9cfd5506abd971bf7f028ecccb43efcf08a7020e138e465eae95c936b"
+hash = "8286f9692e3ff0aa7b7a17ae09bd00160677cc398a42192d77bf2972115d662c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fattoush.png"
-hash = "5a6fa74b562d92a933ccffe2c1b01870b1ec3ac8eeccee32fbfe548284ae9ea4"
+hash = "c6927ca7a0b18a230d6097b467f4e0bbdc9887e83e4c5da3100025775bf58d70"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/federmesser_group_tjongerian_havelte_gathered_mix.png"
@@ -4886,7 +4886,7 @@ hash = "dd98c1ea7f10f88f605683741ddf6c22439b16bb4f42cfb6fff28b01b17dca1a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/feijoada.png"
-hash = "2a9b762c9886a36455619c16bb410c0e1fa34b3b6bdc37f30427b3431c4fbb56"
+hash = "ba6ca3e4ac4b1997d28235f96cb9fd6783d9b3c57583d7570110ff1766966ef6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fermented_hot_sauce.png"
@@ -4894,7 +4894,7 @@ hash = "fc3e4c056a2b18fd2acea89d13cfd6f32521a99295a737a4fe7e0011f1e91807"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fermented_vanilla_custard.png"
-hash = "8b54443111b7d9e288c488d4037bfbeb8183678002329caa6c46c4db3e4aec4f"
+hash = "9e314f54d6611e4b0726026f04143122c1f2a1a89f7517b557c612e0a9e71287"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fesenjan.png"
@@ -4902,7 +4902,7 @@ hash = "143e7494d4e334351ea8883e0305417775d2d5e86f301a7d3a9776d7ad9fe893"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fijian_kokoda.png"
-hash = "c415b03b838d50c067e396ba5b9d6a679878ac19b38daa11dcf32a305618cf37"
+hash = "587502c1de7a2615a9e4d778ea3927e12a8758ebfcbaf0d3e735496077c24b6d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/final_epigravettian_gathered_mix.png"
@@ -4910,7 +4910,7 @@ hash = "794feaa9fedeb6fff5b230436fc9d00ce7d07e70c8758545e6e7eb4a4bc1c064"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/final_epigravettian_hide_bag_stew.png"
-hash = "dd71565fefb36af02d3d12d08ff2d3268d0a0dcd4453ecfdde7a7c620880c51c"
+hash = "a774b92c42342264002f7acd10563777a3dc488bc00fd23006121bf585db48b9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/final_epigravettian_pit_roast.png"
@@ -4918,7 +4918,7 @@ hash = "b17296a3ba7d5ecd1f03617f2189c55ccb3ed744a45a22a0464cdc4c8eef3900"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/final_epigravettian_smoked_fish.png"
-hash = "6b5f256992482f3fd94bec8857bbc934a32e9486e3aa6bd2b3903d6d9c5aa87b"
+hash = "4dde6dc7686d67388740c9a086e54715f9681f26eff41b55262489ff29226ae5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/finnish_salmon_soup.png"
@@ -4942,7 +4942,7 @@ hash = "68f0111dc3b3f1dd93bcbf27cf824dbf247f078ab11fc9c5ae1e7275d4dd8de9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fish_amok.png"
-hash = "39c780d0bf73e7dc5d33b4e4813a2cb54d7edc30b3fa3583eb9e0d74eafcb918"
+hash = "78104dc1615779880b489207ba391945fd740fd005623b641c487fbae120f701"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fish_sauce_brewed.png"
@@ -4978,7 +4978,7 @@ hash = "5533f1de8c8a74d3bb6b56cd5dca23e34c43def31d744e95b65867a381ad3a74"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/flash_frozen_berry_pearls.png"
-hash = "aefa2373303675a90e0700781e3b73d733a7f9dd1eb55de5700ebd4e76a754e3"
+hash = "9670abb7f5fc8e88d217424cb07250d38feb174b06b6c694223d927cd72cefd5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/focaccia.png"
@@ -4990,7 +4990,7 @@ hash = "7fa0bbce090d4d5b1e4ef9271977a0ceeb88a19c7df4e67208e58dfc1d0c448d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/folsom_hide_bag_stew.png"
-hash = "d6adb66dff9c05fd3454afee78aa51149ddc2b7b3aa5a95ab15eba6711ed4533"
+hash = "9de65cefcdf4fb3e686fc43675dc3e16d9730b142fafd90f820bcdc8be4d7308"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/folsom_smoked_fish.png"
@@ -4998,7 +4998,7 @@ hash = "ae95f6abcd464f9a0fc10b8df8dbef640e9dbfe133bb98c5859c148451656aa1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fondue_savoyarde.png"
-hash = "5fce91e8cb0cb51b9954afec04197ca8ecdcf34535c677a79d08245ca13a9e8f"
+hash = "3123fc7db4ee9eee3df3e451bea8ecf08a47f293b7be073e727ae035b32d4810"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/forge_kin_printed_loaf.png"
@@ -5010,7 +5010,7 @@ hash = "14feb6c9192bbfe41149a7a990290181fd90bbf825a89d2c7268e42161dee916"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fosna_hensbacka_culture_hide_bag_stew.png"
-hash = "7b52284c42584d19ba3dd7daf3be137bde4865e5de4cb293007e765ab0debf85"
+hash = "8ab312f2798cb0f4ae6fb6b4960fee324e46a9c6ae3257d4c421645c5102f8b3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fosna_hensbacka_culture_pit_roast.png"
@@ -5030,7 +5030,7 @@ hash = "c0e4853295c96ea29339dab08b2d965c15f2b5c23aecc165c56946e04fd503d8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/french_onion_soup.png"
-hash = "02d135b7dc4bedef407942404f80a412e45ee57a4814d142f59fd79e9e99fb90"
+hash = "b6d29788b7600874736cf440d1a10fd700ab180d2d82834e6b1739bc96ad5c92"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fresh_butter.png"
@@ -5038,7 +5038,7 @@ hash = "f94064f123032333bb2b89cb5b25f4363ba4911096c6999514340190e0b57810"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fresh_spring_rolls.png"
-hash = "20a7c5e67200c63bcced7d64f1f3ebef966f1b8e085c50b678c68c7cde211d27"
+hash = "d191fbac744addd5775cb06eb52f3f8e0ea4d162c29a5a21dc73baef1d06c7fe"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/fried_chicken_southern.png"
@@ -5086,23 +5086,23 @@ hash = "7c6a94e667ee377f7d75667506a8226d2fe33551b9f16b4c5fb14e05a2d7743d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ful_medames.png"
-hash = "8e0bd8bbdea3de618ceb32d25c102ace634546f28001df7a6d8ff288cc1c4316"
+hash = "ea56abeb19c5f7ac4809440c0f6e8e5e237aac1718e4f33adc83c3e48e7d1d59"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ful_sudanese.png"
-hash = "c83339a9e0a71d9631ab7547fecf32975ccca9b49fdb7475cfbaf66428bd827b"
+hash = "79c91babf9e3cc16391c726f6297658bc97ca9648151e9530938bef01f4c36f7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/full_breakfast.png"
-hash = "c72cf919cb6175ad1c3ad54869b9632cdbe7960961cee917d363f635f134e7bc"
+hash = "8b6f7b8608d3535bc4f96ddf4c7d294425416647c5d5253ccb930f280396ab79"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gado_gado.png"
-hash = "41f0121bf23c2eaf62aa20e45cea36b54e20c653cd351797fc6d3288752d09d9"
+hash = "71aa61e015ec98379493cd04c94d16c473116a26574eb3ea706e2d930652f459"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/galbi.png"
-hash = "3ca1c908f6cfcc916b34ddb3c3a017d06e380f7dd8f24c7e64926f0bfb57874b"
+hash = "6596bddfd12523c878c2ff93991ceb8f59bc72e4e58006f9d3540e110eacb679"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/galbitang.png"
@@ -5110,7 +5110,7 @@ hash = "12ecbf5b5f1a92345bedd86446347788c283701c0e59b1dcdd237ce4fca80cb9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gallo_pinto.png"
-hash = "2c34ba44ff31a4f020a6acada0fcf4342803bcbe52e9537c74c668ac07be664f"
+hash = "2167773c11ad9a5747f83bca98a639951ea88eb5e494e1ed503de2aa64ddfd3c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gambas_al_ajillo.png"
@@ -5118,7 +5118,7 @@ hash = "118b126158227f876be9f197a0b0715cd0def8d18f851ec47aeed0956d91a507"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gamjatang.png"
-hash = "3fef1d00c7fcd7506a4c0e6f63530716b5856539cb9bbbb5a6a763d54398f463"
+hash = "785bad80035062303abcd649544be0dee1e7a28982748de50901c6948d9713e7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/garrison_noodle_soup.png"
@@ -5162,7 +5162,7 @@ hash = "3dca9878997e4e13a6939059b2bf8bed7f16a923b432df2026e384c823bfffba"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ghormeh_sabzi.png"
-hash = "385957f37b0be39beb3e4e99401bd9f726f96fdd6582f9237187129952a1a1db"
+hash = "282e05c67dd4d52245ce51f9b279edf34fe1f0d66d0ab2078e7e02cd168cb31d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gin_juniper.png"
@@ -5170,7 +5170,7 @@ hash = "423817fccd8e89968677da7c6ebec4129fadddfd854ce999a1ed856f849fd567"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gizzard_pepper_stew.png"
-hash = "4fed336e6c5cfd09ddc017c0ec0a1d42ff7d561740928bc01552a609eda007b3"
+hash = "89f0ac7f7bcaf5f814acf93be9281cc206c7fde4764106b8aa3e76b54fbe58b1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gnocchi.png"
@@ -5182,7 +5182,7 @@ hash = "7bee9efcf94e1e7c2a2b61df8160002cec186c49dda39d2dcc76614442f30048"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/goi_cuon_dipping_sauce.png"
-hash = "117475151fd1a06793a81d0eece554fc5646a348522e91af3b38d0e327f3e91c"
+hash = "0ecfa58eb8e60c909355fd4813bda9526808cd009682033ede6d10515d5a7ec3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/golabki.png"
@@ -5214,7 +5214,7 @@ hash = "326831678a506d3428b959d67c763e3709b2b094d0cbd4436680d5b3a9becc9f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/green_curry.png"
-hash = "b6a2c0c303206103fe1eb919722d0101f36dbcf6b35fba5efb07aa31f939a051"
+hash = "3533a362806e6cd48fd33409f359ffbcf859baf7efc93a8058ef70863322cb85"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/greenhouse_barley_loaf.png"
@@ -5238,35 +5238,35 @@ hash = "75a1730fc729ed7716584802b2225707973881f532f45f273b1a74c08bd7a61d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gumbo.png"
-hash = "01362a94414d2b5558cd2d62603e25cd53630879ef97d6c83911627ac8e10646"
+hash = "49b0279db9bf995f9ae3b7b09612dcccd2bb48fc7e29d05656e7934aa169c8e6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gundruk_soup.png"
-hash = "0440b79ab5d400f13a0c9f68c9df8f262143552be7e7eebd92e2a93bc554080f"
+hash = "bea7100c4ec802e02c2d0649b74406df1f0210ad6ca3b66f14c28452d65fa299"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gyoza.png"
-hash = "b52dbf9292a19d082c6d2255fbe334eb7fff9386fcc7feca54eb66b993e6acdf"
+hash = "054c9def9c85707123974bf484c80445c966dd3ecd37990bc41ac3d801b3f7d2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gyros.png"
-hash = "eb2bf84b0a7d4de68def9d5cd607cc89b147f47830f3ce4c03c2057f162cb1a5"
+hash = "ee796a47c619ba0f67d1f8c7e8c7d323de0899ab07a7c6dc64215eba264827e1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/gyudon.png"
-hash = "66bc97a034869ad7fdf8baf093651aa337e16856c6b8c23b36fb2798a2867b90"
+hash = "f4bb80d9a7f46a248b7d9950d18f3de51bcebdf6968d0cd9e3f8e994262a0159"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/haemul_pajeon.png"
-hash = "428229896e2bc4e84baa960176cbfffe2de7e075e25a49984a87e58459f00884"
+hash = "1917596daae62694e3cc6aea03c94a409b210c6965f2c5bc9436124a49418a29"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/haggis.png"
-hash = "2dacc93925a797c785a06473a563c2943c7e8c4ae41cd4e8a99d7ad8ad014101"
+hash = "b27f438254d827adfcd0a4e72e3f8888f0a4981b21bc2a6483bc2d34cfee4d4d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/haitian_griot.png"
-hash = "9ab3aa89c4e94d68139e1db274bb719b52a84cb980bc21cbd0877d8329939adf"
+hash = "3d977f2cf150a7cf106791a1cab27cfd9fcbb74d9744b242d56d09d1e25fb7dc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/halaszle_fisherman_soup.png"
@@ -5282,11 +5282,11 @@ hash = "837a799e67a3c4b50d97e67039ce571edd41dbee05d932b71be6aa17f61a2ba2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/halva.png"
-hash = "21fcb3446ade9d0de52bc1674b77c63c880c21b05aa5c09c5a636ee6bb47bf66"
+hash = "97be0fd1fa18ddbed083eaaf488ff19d7b173e2f742d55f53d367a1bece06ce3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/halva_sesame.png"
-hash = "6387b6499b1e4b3ddc2c096a9b0656d14fb9ba525c19320f7cba40f0730b19ae"
+hash = "764b43aa237cd977607c09bc9f97938ea9ba4314e0c9d3f8bfcebacdd7973b28"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hamantaschen.png"
@@ -5310,19 +5310,19 @@ hash = "1d1c09dbcba4543f108e7aaaa21a183152135782a3e3b1ca2729393bd3e3b7fb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hangi_earth_oven_feast.png"
-hash = "7b9d7df2cbb60a139e22faea58c6b218012802f5626df40f41fa2ff51d67a014"
+hash = "af9ac6c8b21369a295a313468cfc945ff1587fb10ed135479cacbcb04aa49cf5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/har_gow.png"
-hash = "73093c328c414d759eff5e338a1e5319d88470cc09d6ac45b202ebd149144182"
+hash = "0a007ef09ebed954892e0498c8d0dbde397bc484e6b36f9a6215935ce0cfc7d6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/harbour_fish_pie.png"
-hash = "1f5d9f54497555924fa4bc3cc4f068d6e906f0b06472c61356e0d96b636caf9c"
+hash = "4dc0edadbaecd99129db752b0544d55e2835a9b7e7d91cffdb0e0bf1e77c28c7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/harbour_tempura.png"
-hash = "e7e6363a61ad9350c9ad4743c1c168ac1e156c36147b0351bf1b49ac0a985a88"
+hash = "d63af5d7f6b7e0e59c3ffd7db1f6615dc29b7cae9ca35b3debd4772e6ab51899"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/harees_wheat_porridge.png"
@@ -5350,11 +5350,11 @@ hash = "2d3bf172ff8d909b2ab3f0ef516dab686287a51bfa949bafe8355ef4ab0bca52"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/harira.png"
-hash = "20ce1f795f5639255ac546e67a05de3f3c03c8f0adf4f9e0590fec03e5c30746"
+hash = "43f15782b047f38a720e67533223f84c83e7401b5b3f0ad535998f22f0fbc4ae"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/harissa_armenian_porridge.png"
-hash = "30190b848330ebdfd00322276f09bcc37e51039569400c64ef4823fd642d106f"
+hash = "938a430b5c1a1487bd311123c2533279d321e6074b25d6351fa81115e2a0789a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/haupia.png"
@@ -5374,11 +5374,11 @@ hash = "56555fd5570a0cca49aba31c7e106fcbd226f12467e71526691217aa5d2fb205"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hilib_ari_goat.png"
-hash = "9bc672160741bf6f7ae24edcb83a4085a28eaf2853ef0d783a27a49f81c2fcde"
+hash = "24fe608f2bfaba8e2a7499d74aa001dd40ce79f09c2de292256d6c1531cc8851"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hilsa_mustard_curry.png"
-hash = "140573a27382181c135cf69c1cba174d5fa57f60e92a492c5a0ba6cf936850c7"
+hash = "73760606c57799f18f04f100ab3ffecf7438bec07631344ec5cf3eacbfae0965"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hoabinhian_gathered_mix.png"
@@ -5386,7 +5386,7 @@ hash = "bb0a661c49847dc298078c5f041f91801572639a020a68285a17b09bf814620f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hoabinhian_hide_bag_stew.png"
-hash = "35d11a544c58172080f0ad0140a7426d512492f85f9c1bf276ee6936a4f9b13b"
+hash = "f776ab11fb7d3ff5190e816cf6a37714f61336c54d488f1a0569f0b6fff1a7aa"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hoabinhian_pit_roast.png"
@@ -5398,7 +5398,7 @@ hash = "d559e257732556d5d8f1610101462e37b3cb10f6d1875334c851dd68fbb3266c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hokey_pokey_ice_cream.png"
-hash = "99ab1236ff0715c9c5b9f2521c99895ab0e513d85120163e4f2e194ca8e9a947"
+hash = "f51cc1c9025a0b494b08e0bffc7ee89aec93f32589868de69ada86e4d90687de"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hold_garden_salad.png"
@@ -5410,7 +5410,7 @@ hash = "78e3979ed1301435b65f0b64f0fcc8187b3db12bf6c18ed5d02811ee3caa1f64"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/holodets_meat_aspic.png"
-hash = "caafdcde68771aefb06e5e9feece7ee2c9cbec7b4df50bd70d3233c2ed6d0f62"
+hash = "baae31fbd3667b36ffc4f9a52253ae95b25cf1629b496ab4e8e8ed8f8060d8a0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/homestead_chicken_and_biscuits.png"
@@ -5442,7 +5442,7 @@ hash = "637631b47cc80dfbe9633be52d0ee34e92237e1d0b985f9ce11b28e8203b390a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hot_and_sour_soup.png"
-hash = "ffd7312c95a3ca0aab3fde13898a4cf2c20e30d0c70f831105ee1a4b7d3fda30"
+hash = "7d28593821901658c92455d38c15f18320f69b0d64a9116abe6c2b27f848ca2c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hot_chocolate.png"
@@ -5470,11 +5470,11 @@ hash = "4b03d660a1dcd96fc87a0a1f7bf9111dd8663a3564a431b2ff5cd8c5a7b9f894"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/huevos_rancheros.png"
-hash = "50d43b7f50417a315d8f46c1308ad21c5a27568e02a24880c080460cfd54bea2"
+hash = "161788dffbee3c42dc71bf01c5c337d07470c7dfffb64e73717d4b61adf343fd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/hull_garden_omelette.png"
-hash = "66f8a7ecd827b7fc6bc6c8f681fa073de5186473ba0344b473c1306bd8eb27be"
+hash = "b73d50be7922b3241b472957cff2170265e7cdfc0f24229501b686b098817555"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/humitas.png"
@@ -5522,7 +5522,7 @@ hash = "a18e3cf8a0eb0468eebf6725511ec99a46ef8dafbe90a782c8502ccd48b6b4a9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/imperial_pilaf.png"
-hash = "ee3ab794123725680b9fc160c2f94eaf1b92bc7ae2f21401bb6e20640ac2880f"
+hash = "47bbd17fd685bdcd6d7ecf3c9655bd59905a62ae3b35d5c742dd61101d9e2169"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/imperial_tea_eggs.png"
@@ -5534,7 +5534,7 @@ hash = "afe494e00f7d41501bbaf0aa6d4b391f48cd732ff48209d5319f149981d4f6a0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/incipient_jomon_hide_bag_stew.png"
-hash = "94450705718af06c5b539bbf25d00995acec8c3819767ca05fd0ee7f59d3aad3"
+hash = "2d23a68071002d2da08647e4b896213f219c3a6a76b3a66313d4bc7d8d9e5a61"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/incipient_jomon_pit_roast.png"
@@ -5546,7 +5546,7 @@ hash = "50af4f58c44d9f1d95bc8d4116d95dda2b20d9812e61bb868bef439dcdde84bf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/indian_mesolithic_microlithic_foragers_bhimbetka_sarai_nahar_rai_gathered_mix.png"
-hash = "38b89722d997fb1dbfca5b6aceb2f04ab0d36c36cdfee3dcc0a977a956edda52"
+hash = "259bcb8e2ad10b9f7127039c8ac9514de700300aafbec4fb195b92b7f833310f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/indian_mesolithic_microlithic_foragers_bhimbetka_sarai_nahar_rai_hide_bag_stew.png"
@@ -5558,11 +5558,11 @@ hash = "0793450fad34ca10fc8dceb6dc5be43674e8a9e85874466ec403a9a1b6286481"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/indian_mesolithic_microlithic_foragers_bhimbetka_sarai_nahar_rai_smoked_fish.png"
-hash = "5b3d43fd51b661b77177b7346b66898cbbea13c4843361182f4bc7b4b3853a99"
+hash = "c7b17b1e5aef343310b11aecbcab5fee0a5d0aed33f778c01ef8e7309bf01820"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/induction_seared_scallops.png"
-hash = "a3b0b76550d714dcfa49b776342cd19fa1b267b21d9fb53691f993b35f3cac88"
+hash = "42ba9128a123963e9c972748d4243112f4b857fb86b07c062c998ae278fd97a1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/injera.png"
@@ -5574,7 +5574,7 @@ hash = "6b75df757f1b988a867771ebd2adf6dbc6793a63f5231f64cd67138b8911b6f6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/irish_stew.png"
-hash = "45acb1e4db45bec6dd3ee71afae978fa917aeabbe8f35efd2269f2cab81b2649"
+hash = "ec98cf4a61c3401c7c12c1db0417cfbabf5acb0ad0ba682433daa89d0947a1bf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/iron_road_dumplings.png"
@@ -5590,7 +5590,7 @@ hash = "858ca8cc742f3891614c32344dd52a142cd670fade936bc762dd7dfe903a5306"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/italian_sausage_with_peppers.png"
-hash = "98cf462c4b8258cb4944bb78357269e727610adde13bf528ddd9d6ebcf145fbc"
+hash = "10b4b9f363390f7c3e5e1d35649d8a5d11c5ebb677b026e19d0cb1d7cdf83fa2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/jachnun.png"
@@ -5602,7 +5602,7 @@ hash = "352ee881badfc12823897f07b8714d0f2249d8f3429bde9373e85db460bd3423"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/jambalaya.png"
-hash = "1e85a72059e5cb93e84d280917f9dbcddb84a07ca468b0fcc78e6d9ee2d2caea"
+hash = "1cc81f389ff697b26753ce94f8e3d65a1f0ab621c038c3fe4b03d627e6a0f916"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/jamon_iberico_cured.png"
@@ -5614,7 +5614,7 @@ hash = "b0b847aa6d1b10f32c18f664e71f10b4e413629775609ead0aa413ca4b8a38fb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/japchae.png"
-hash = "3a0d2c059f34c010067a328b1d72d2124fb94a6ec0e7da5df9d215e9c889a386"
+hash = "35217b184b942b3ddccdc76af5e08ea2a8b596169dcc945e34812f438611c892"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/jerk_chicken.png"
@@ -5630,15 +5630,15 @@ hash = "a655554f742ce703442c05de22daa25b25ed52acd5fb4c1a9b397334a7a25c5b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/jollof_rice.png"
-hash = "b100eec165aeb8a81512a87533196f38491b23c01014a5eeadd60c906161f9e6"
+hash = "8957ef87b40061b6371f5e1567b178a02dbf023a50275194998c8cbaaffa6b3d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kabsa.png"
-hash = "69471a7e2f08f4e0c49e165bd067a8f4fd7427e3d19249bab1ea9505e091a1a8"
+hash = "a1ed7f15795346e2f60e6507f4c0e1b47eec885570065e14f46bed0a51a93105"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kabuli_pulao.png"
-hash = "bc01a67d2cfba47526e93b8d7e672e4a7eb5889cd7ce0fb95b40b109058aa05d"
+hash = "4ced7edfabb0a6823697042787aa2989e397158c2a81a5ff8795c8a4d0fa1689"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kaiserschmarrn.png"
@@ -5658,11 +5658,11 @@ hash = "2a477299d88e7091ade786370cd8abe399f45a1f8d790885f96c3f59d3d4bc15"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/karaage.png"
-hash = "062549f06ef8fe1477b2d565933b073830dca12bdcbb810727bb51d10c739ef3"
+hash = "94884b855b0a65e81eda1558e36112c1207e5f8a9aebd611e08cbbfdc3808fc1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kare_kare.png"
-hash = "05a82a1ca9e6741ba72d141acf9cfdf5f55dd70f0e77a8597b1b0cdbd421a758"
+hash = "26f118770bf6c17a885148ee9723589b8386179b40181cb1d0f55ccb1d5f72a0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/karjalanpiirakka.png"
@@ -5670,7 +5670,7 @@ hash = "dc62dd5b65d44238b6d50611134064b7cba77d9adfacb837b6ae0077cc4c1b9a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kartoffelsalat.png"
-hash = "c84663ec63043f37e7dd00921f93ef5198432290e7bb389186c6c27c551ab115"
+hash = "f6b4212a43c53f55ff1fedfbd2cb5a74f200a2a52c3a7ca89808378cd82de68a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kasespatzle.png"
@@ -5690,15 +5690,15 @@ hash = "201083c23738c074563ae907784b62e20402d33b493a31db63c7d389ec952928"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kawap_skewers.png"
-hash = "315113d27168205da0f7710ae3d8a38c16af2fce502499359ca15d53a96bcf29"
+hash = "029b6280598d4e3eea77f8ef5996d0f4492719443b9895b35fced759b47a66a8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kazy_horse_sausage.png"
-hash = "8daada6439f4724a44cac175f2c1a7ebd6f688569d22fab0d71cc44d2d835af6"
+hash = "46fcf9739d64d85f3583a7edd02ef20353576cbbbb524553abb06ff6c534a0a6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kedgeree.png"
-hash = "20a7184e3d21a5c8b7b0e330e1416786bde80cd0b4663c8e755024a0b0d27827"
+hash = "18e5602a867f50d29297f0b4a825a0d944fdc8d23cb8e9e12c706e16c4baa9b0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/keema_matar.png"
@@ -5714,7 +5714,7 @@ hash = "7acbd1e1424542b62405d67042ed4934119e14bb463d07f9cacc75f6732cb83b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kelp_chips.png"
-hash = "6b1aad605a6f1aac942ca5446a20755844c9cc1ad1f74e18ebd93ba400589680"
+hash = "fd71ed656b03f0aa2f6745a1cfcdaae34c11eb1f9365f27abef1aecf8ea76689"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kelp_dashi_broth.png"
@@ -5734,7 +5734,7 @@ hash = "fcbb5293f3fffc55288e3906ee9bed87919f8f17ce55c28246f582a0c207ac02"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/khao_soi.png"
-hash = "d3d47e498a89d9dccca7db426923fe37171ec21a257152b10860489846d65aef"
+hash = "f094ef69ff2bb7a789e62e559923f4003053803f4319f6228bb050d94a45c14a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kheer.png"
@@ -5762,7 +5762,7 @@ hash = "50b415191058c9bf04b67df188144e3ede0c771a6405f2a8c84d3728372f6cfc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/khmer_kuy_teav.png"
-hash = "1bada5bc5498117a83002c0ad05cfe8d884ec03257654b22590d2241b50f7bb0"
+hash = "0c3e0e3f29fe1d581a7eac2de362f53facc9d15e5a07e94f7d546ca0babff7da"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/khorkhog_stone_mutton.png"
@@ -5774,19 +5774,19 @@ hash = "d80597aa40cd1f2f9e294a210a65c459de7f61e0995223cd979f86b3b360ea20"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kielbasa.png"
-hash = "1fff5901407cc99732977b7f5604f401b09b4939653639a48c307256c7918a4c"
+hash = "5e487a80f9fc8540fb56c26d498bc710f38cbe05596d13aa38e78b7aa4dcdc80"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kimbap.png"
-hash = "9baeba4053c386ec777c113ef3b46ea0f0c0e4ff4a7ea80f0a9a8f525718e3c6"
+hash = "223498201543a3c0372760333c05c66774cef483e55c9b1c5d78895a128c4323"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kimchi_fried_rice.png"
-hash = "ff46e718bcae37a48797a5ffc30b9fe08cfffb8b2a42d601569d4c185adb3299"
+hash = "807489d6eced8133db3058da198131b54de1ac68c35bbba3f472b55737e72156"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kimchi_jjigae.png"
-hash = "8fbdecd9ff3dfaaf40778918acfe8884b9a629a13a3f7dcce88f7436cddcb7a1"
+hash = "863495611934b7314e546d377f4f210f6ddbb2fd0b5f63039f5cd0f34a300b97"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kimchi_napa.png"
@@ -5798,7 +5798,7 @@ hash = "e48ffac5b5c9981a135f963a85d0fda5494b63eacaa68a50cc99f0bbf4faf6aa"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kjottkaker.png"
-hash = "aa71a4bdff11e2496f08a72b52b0d095a9eb525bf576b426af0e008f87e9b338"
+hash = "d7c409c0945e60cff283663e1f74ae0232e442310d7d338ae44a27bdd7475158"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kleftiko.png"
@@ -5810,7 +5810,7 @@ hash = "650ecf6b29b60fa6acc76535d90cf227f74ce53a14093ce36e3c3cf1b614d3a8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/knafeh.png"
-hash = "81a71087f536a4089ea469fcfcfc4ff9008503a0e0f2719374938593e74fc647"
+hash = "d41f18260b3a8f9cf86abfc87059c09fce5bc1b9040171f9330896ee4670add5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/knish.png"
@@ -5826,7 +5826,7 @@ hash = "0864814ea3f9fd4d86defd71adaffdaeae01cff2243ea233ca437c50e28369a9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/komsa_culture_hide_bag_stew.png"
-hash = "22ce581a71c5c31d3062308a01e2c0ce1901a8ae78f346db40951e98ba4398b5"
+hash = "7c65b97b13aafc3b6b302a386af210e37530236c35132b6a0957273b2f31bfba"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/komsa_culture_pit_roast.png"
@@ -5838,7 +5838,7 @@ hash = "d9a49e533b663467db20b7d3352d0dfd0a21d6e51bf88e1fb94016260a694a4d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/koshari.png"
-hash = "af49836f4c56797469c0dc1fd440200000d43a101924cf7fdf6b87ea2ca20d4b"
+hash = "0540a32a90b5cca8601316fe176652d424d77a3d32fa3ced24e8b5e17b9939bd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kugel_noodle_pudding.png"
@@ -5846,7 +5846,7 @@ hash = "996efe92b6ad5485103c45358a674c9328fbb1c4493ffba1a49e13a1db9bfb3c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kuku_sabzi.png"
-hash = "bc5716b04b760c6975dbeb64a7ae8549a33d0bc9f107a92e5c7958fa493090ba"
+hash = "b4b571037979cf42b58f814d9598d4d9de1f35be88b843445ad3dd81663fb405"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kumara_roast.png"
@@ -5862,11 +5862,11 @@ hash = "8cff633ee190cac6f529e11b308f6e8bfab0186d957acf60e6bd52294fc6aa94"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kunda_culture_hide_bag_stew.png"
-hash = "66c6d9e3c4747fcedab668c0bde9d6ab06d1c04361766e2caf1123bf7b20fb50"
+hash = "b70b9081ed5e17ca70b288ebe913c3397da81550c4d8c3aa67d371056e4bf66d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kunda_culture_pit_roast.png"
-hash = "a6f734fb51e5375387afa39db5d5ef489a66720286c15ee9fa9acfabfde16d10"
+hash = "cbd6df5e08fa06bcf47d63de17f66426949ad44f4ddd8939bc7a3aed56dec905"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kunda_culture_smoked_fish.png"
@@ -5874,11 +5874,11 @@ hash = "17e5314f206ec47c97a3b1da813f7af0de1d34425f400029440256865e957b0f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kung_pao_chicken.png"
-hash = "e64d642d96c1706cd06aa9b32954288312fd32684f2db2b84d50cf909833a85a"
+hash = "a6934d852ceb06227a2383c6e1d69036fd5c99c7c3ae9bb3790cf049e4eb84b7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kurdish_dampokht.png"
-hash = "39fe758e5c7b7cd38d2521ed642b9a1336dd94e6ecfb22d7079bfd2e0a6f092c"
+hash = "89dc1e32cccbd262add0ae7a280c1509e705e9945c5fc981e7504b125dd243eb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/kurtoskalacs.png"
@@ -5898,11 +5898,11 @@ hash = "744eacea79787de81a94d1b282eeed1745862db0a2218c3b7096f2906cbcd3ba"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/laghman_uyghur.png"
-hash = "4f7ea1540cfec0bf2de09aa2b21338f2fdb9d8799deae9f4fa085a8d1af5d1a3"
+hash = "2f6e692ed37fedb244b45857dd82cf214259f740e7e59cf9c118ce836db5b750"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lagman.png"
-hash = "4e1e7b88fb04f89f66c4524dd0bf5a295239b59d783cc4fa958d890ccced0d8e"
+hash = "33e04dfda2aad46fa390183db08170ff0570abf13c35ddffbd3c8fa48ab6e6b5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lahmacun.png"
@@ -5910,7 +5910,7 @@ hash = "af317e244831e9f2205392e64fbe5690d9b811cf4d1b6958b4a6c5f5a64f28fb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lahpet_thoke_tea_leaf_salad.png"
-hash = "2248407c2292891caee900ec0955fae30a8a5ec3206418131d4c22b996986ac4"
+hash = "7cd04b0f262e239044504cca9a47b55fcb0c01e9702a579d51201f7fd63a9782"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/laksa.png"
@@ -5918,7 +5918,7 @@ hash = "63a2de1ac3f235d2e6a1c0f936dddff6bfe2e88ec02ab8b91af9c6de99940d87"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lamb_tagine_with_prunes.png"
-hash = "3b0fc72cffdbc570143577a6241c822a48ba0644e1378bb1385f8aabe59b36c1"
+hash = "f3d47717368638d6c5af50e7b3e05a671d30c4aae0db39504e0fe046f3f15bee"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lamington.png"
@@ -5926,7 +5926,7 @@ hash = "20ffec09441facb8813d44561f1ab4bbf3a7f133e4e9876a660fc51a51ae0beb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lamprais.png"
-hash = "5ad7eb92dae658b5796703af2f8bf68f6694b6b8491179d3f55009e2224fe70a"
+hash = "e15318a96596b81f9b559934950c17cd8fbdbd3a5b6401bf8fcc940d8aef475f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/langos.png"
@@ -5934,19 +5934,19 @@ hash = "69d10bd0e244304432911d0215f32803b6382c9ad56461d0e809f7c56f76e4c3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lanzhou_beef_noodle_soup.png"
-hash = "065c15e40b16d46bf7c2545ee30f9c55002c07845200ad0e4bddfc861db7e04c"
+hash = "b60e81d0a931702704de8cf47849b7fd5a106c6e38b44ac232aa6674dc2834c8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lao_sticky_rice_with_jeow.png"
-hash = "0ba3f30e14cf9b381c1a16cefa841ac8781db3381dd272116e27bc59fc43b571"
+hash = "e9441f1f12733f58c844c03e40e22017eb4d4c21e634a10fc1de21e201da1d4d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/larb.png"
-hash = "1966439a46dc3195661e837057ec8127028ee3dd5e1f496ac8186e387adf2b79"
+hash = "a87fc1826bb5f3d745b1ab1838883d5a447b84a38a2db1968ed26a51893a185e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/las_vegas_culture_gathered_mix.png"
-hash = "42b251a03052cfd0c7f37290da81030ced0e7d69fe11194e115e6aa2a3b1b844"
+hash = "fcbb87932ca277dce84c1e3773e0af185688413716753a30fcafb6dae61e56d4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/las_vegas_culture_hide_bag_stew.png"
@@ -5962,7 +5962,7 @@ hash = "4e23dc8588fc0f82298f7ddb134cd3fef4d79ab1af70fa0a5eb2a131a3b574d0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lasagne.png"
-hash = "fe711ee76ff21c07ea6a90b59f582fc02113255441d07289bde67415c2b01077"
+hash = "499746548cb64fd62cfb97bdfa2c03b8b6a0b06bc974a9a77320a698d569bbd5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lassi.png"
@@ -5978,7 +5978,7 @@ hash = "da81d1a6b155b337bbbf036bf0920263e4b2ed1e22a795419cd6b22275ec7eb8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/late_paleoindian_and_early_archaic_of_mesoamerica_lerma_santa_marta_gathered_mix.png"
-hash = "8a4cc6dc7577a80f5ad284a100fc66c8c4123e842b3ea0e3acb272dc6ab01ab8"
+hash = "2a2ccacb369324f33bbe818292f40d7e7c6e6ea10db3aa5a9d365b0839c935e6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/late_paleoindian_and_early_archaic_of_mesoamerica_lerma_santa_marta_hide_bag_stew.png"
@@ -6010,7 +6010,7 @@ hash = "330b42b70aec2c6cbe3fd1e66534f4494c9ad6dea016fbcde3f963dbc511dab8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lechon.png"
-hash = "58c9f6084ad75b67f329a42bb4ea62d522f86af85efd437fcfc4e964a123ec11"
+hash = "eb83e192b573ab422e6f4ea69a7a872dc48ebc27eea0606845ed02b0a1ae525f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lefse.png"
@@ -6034,7 +6034,7 @@ hash = "9878e5247996d3aaad7701f2e2c57a3e31e17524751a47eaa6b679bd2bc62b1f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lions_head_meatballs.png"
-hash = "95f859e38d02f056e54c44a6b8367b64b1cc5f4543ffa7483c47299bf267800d"
+hash = "d9668243ce83fdf1dd26944d903bb99d29a0dd63304956784948a986e123fb4d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/llapingachos.png"
@@ -6042,15 +6042,15 @@ hash = "be35887800c75d3cf11988ea7316f1c7cfc0f62103ec7dd2aa33639cb30dfd3f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lo_mein.png"
-hash = "9834fdf3002cd69e79624f286cbab4dd9ad0eefcfbd8e639e74cdacf92e0716b"
+hash = "44deca00df3f3f1805b500f3c098fe0dea8488f2596b2c9132f8e3afbab7b214"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lobio.png"
-hash = "1db8adc4aef65ea2c64f187e077fbb96a415396fd1aafcdee28a7712f6f63f87"
+hash = "71c3c580234855d35b2cbb42e0d92c33a446c61413da2a6a1cf0796de4d713f9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lobster_roll.png"
-hash = "ade5424adb3fd00fe9089d0e40289def3bf6b3ad88335c69e780c4fbda6d8865"
+hash = "125d7a0692d3d517db29872b72d087cf1c141094d853bb1ff65d7dc123c27bbc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/loco_moco.png"
@@ -6058,11 +6058,11 @@ hash = "4a9709878f163f6e4dc29d34c48359b04d12727dd0a5390807d902b72f8081ba"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/locro.png"
-hash = "55fb556acc02d3b0f0e936076bb0461812ccc1e58cbd00eff4d3500b4057980b"
+hash = "7acfd8fca843609342f77326da05a1c010070e1f099c02ddc20357c5b0098010"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lomi_lomi_salmon.png"
-hash = "3c61748ea15b39969cf48e841fca87519c2828389075de00442d9aaad37b7203"
+hash = "15018ad6334583587ca872d8019cc22301e69f607f93ba6ef873d9d09ce460ae"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lomo_saltado.png"
@@ -6082,7 +6082,7 @@ hash = "1cbe0b486c844a3b81856ca4169a3bcc4e64c14a172a4072ec487e79e0059f40"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/lumpia.png"
-hash = "89bf31052fc671f9d4b2f11123dab8f265da85b72425ffebf066b333a5dbc558"
+hash = "eeeb6f19adcf235500e3f22670a5b8c609001ac870b6024e221940ad9e17c4a1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/luqaimat.png"
@@ -6094,11 +6094,11 @@ hash = "7071a627b3b9fd568cbccb34b0b92b259cec559660c93e30ac45151205adf444"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/luxembourg_judd_mat_gaardebounen.png"
-hash = "4d4d96c557a0261608cca3a0734005f9b7c27d31d8ea6f7669d40525d4b7fa94"
+hash = "c59c63d80393a7cbe7e6ba6808c8461e62817fcee337c406cdb661e3d0df6081"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/maafe_peanut_stew.png"
-hash = "e4ae2ed9d7097750b1ad85518fad335d1b6db0c39f65fcfe4a4b94075ef8b746"
+hash = "dcfd06bda4ab01a779896c519317cf92e88d7fecd01ea3177a872f5c2d7add83"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mac_and_cheese.png"
@@ -6110,15 +6110,15 @@ hash = "d73c17532c4b1c600ec995f652152057037a0380c3e81c220968b6a9793285fe"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/machboos.png"
-hash = "8bd9370d0d1f9487e47978a666630f16362f072e84706c7f389f2783a2e0527f"
+hash = "aecaafe9fe51d7f2864c23c3f4513282fc3808b8a7f8a38693efacc6c354761a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/machher_jhol.png"
-hash = "ad803b82f2b00df56562a0cd18e6b9bdea65fb7c39a9252ac15475d72bda7096"
+hash = "4a470ff70dffb2ee6718dfd9b3bb692eb8a7f1a3c2d284daceefeb4e44fb7b9a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/madeleines.png"
-hash = "113db91db8bb7f516fff3ed22a6fead1506419afc9c7984ab246d45cd199c41e"
+hash = "39340981c3095763721768c66a74db75e34e87120cea46bbd27e28e879d83e0a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/magdalenian_gathered_mix.png"
@@ -6142,11 +6142,11 @@ hash = "bcac11c98dcfe0dab22fe0b5310b7c00dd2ba9f4f50b67a5066c63c79cfae443"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/maglemosian_hide_bag_stew.png"
-hash = "280809c1e1677766ded756da7ac0a190e3a6d8e553e9b67b46dfada1382eea23"
+hash = "2173ca20216cc34226ccb1e6df60ce8b19cfdd9eb11ed10d05c2074d5556791e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/maglemosian_pit_roast.png"
-hash = "bf8850596d7e43694b7fce6cf181b6e7c8d8c27232ea6ad2d5063079a493200e"
+hash = "dec725fe902a7d045163f4a953fdbe9a8e41d658a911462d54bbede6196c5b80"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/maglemosian_smoked_fish.png"
@@ -6162,7 +6162,7 @@ hash = "3763c67a6d9ea802144cb09bcadde4c27829aaa1eea4691b083955a885016a95"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/magosian_obsolete_term_pit_roast.png"
-hash = "4d22a7c214b6a456c1573b191cafff83d2672008e76b6476b36987601daec594"
+hash = "a338f841b304d893c473ed0d210e1679dbb963e6f1636978b4cd4d28d343d115"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/magosian_obsolete_term_smoked_fish.png"
@@ -6174,7 +6174,7 @@ hash = "e8650eb7d4f1ad697ad736e708dabc7b691c0bd1fa86be2496de61ad37eeab86"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/malva_pudding.png"
-hash = "cd2e4bb6cd59ed242b17b7d1b31c8dfe070655b06dc4ece5e65a7a5a83f34d6a"
+hash = "8467353dfae106b390847eb38c767b2040809442c6b14ae1c409ae8b6167d5f2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mamaliga.png"
@@ -6190,11 +6190,11 @@ hash = "7b6337ad864966d858b365980a5bc9ea661f54685a42df77a9b24ce7f0b2ac91"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mandi_rice.png"
-hash = "a6ddb9b83a87ef9fb7a17c73b410720168d3518daa076679c525aad4eb6d1bc9"
+hash = "fa5f4a7a66e560a9b803c1e52d1ca4e1c5015f49185c1b555a7613c9eb50ba13"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mango_caviar.png"
-hash = "d0db3072a73c8e3b5e2ddf22b174280dbb13ab979d7224257f768698bf4adcf6"
+hash = "30b109eb7d79d8aa63bbaddc9ebef32764cfea921046756d0f4e6179ff5fab0d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mango_sticky_rice.png"
@@ -6214,7 +6214,7 @@ hash = "6611d94d37605fdb3c7f9221fed235d75b65b7d3efacf7336340153875c1c8cc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/maori_boil_up.png"
-hash = "6fd92182ee02c549810d7ca9ddc4890a61c308e3eb8b17d2a98933c72a51e436"
+hash = "f6c8f8bffec13ca4f6bd092260152dbd413e772e449c230219e621811e5dce64"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/maple_candy.png"
@@ -6222,11 +6222,11 @@ hash = "7b5821816f15facdf162c457bce8a589af79e789563c20dbcede69c137d757ca"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mapo_tofu.png"
-hash = "91b45802282cde1402698d0a6b23078d32228578ce56b45cf50db8c2151f5347"
+hash = "382e985db6840540aea67d90965d000ddf43876ea83774999cbe13ccb61e93c4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/maqluba.png"
-hash = "cd18705c744169a6d911a0970480ad1092f46cf47b3b0b886879320c010809f5"
+hash = "8a78b40b2ed18ef9bc6ed4d2559562451e2e1f13ed37985e031fed56de6489c4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/marrowbone_roast.png"
@@ -6238,15 +6238,15 @@ hash = "dc6dc7883a1639a09e8ebb429c2404448e6d6f3f849d6b943891615f2ad6ef4d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/masala_dosa.png"
-hash = "cff176ffeb08ab30d8fe61878eb6c869f16f63576ff81f984160fe41357c9035"
+hash = "3f3823965ca7d1278f34788e7724a6e5944e37c1d834e78541c03ec2eceda222"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/masgouf.png"
-hash = "cd576b5c47c1ac931c73ef8e1ea51630a7f0b4c8acf93415f079a556622e4bc9"
+hash = "605cf0bf9430ec16f0996ec3b843fcc33ec17b642f1845811f558c723c0a584a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/massaman_curry.png"
-hash = "c19e5e2e8bf1a4dc84522d596129e4ed039b0de1a63f0a0c7aeca4f333bce26e"
+hash = "c03da964a442b9fee479d33666370b73302b583e57541524443828bd554573c1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/matcha_tea.png"
@@ -6262,15 +6262,15 @@ hash = "5cf9b56c9fbad8e70da586fbaff0e8de93a0c55ebc663005f40ee6d1f5b6e09f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/matzo_ball_soup.png"
-hash = "b46630d3d5f866eb7237c7787d3ade36e6abd46eaa0494d1293ce603371b30b4"
+hash = "ac1921b6d486c2f178caa56f15793d6652f0fc3cb44258ce00c2b46be32ebba8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/maultaschen.png"
-hash = "954fc8d4f5f20826ef2e306bcc494571e4b23354d873671d426bf62356973ad4"
+hash = "cc8e14cffa8bab0759b47a3997adbeacd3b42e02baa6d03eee94e8d3a56d1e50"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mayonnaise_fresh.png"
-hash = "3bac2d3ac9d4199147e4849bef72aee0c06641efeca07497e675dc38745e997e"
+hash = "5efab0d5664fc6a1bb0cb0710660853e891d5a61fa8650a1e526714b65cc2b6b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mead_honey_wine.png"
@@ -6282,7 +6282,7 @@ hash = "4b640e3ae05116de0edc0c1fdb3f505bbf137dc6e9287639656ab237723c6a22"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/meat_pie_australian.png"
-hash = "2cd4cb0e98f1b81cdd1418cb98b1fe34a61ca4c1ce668b965da0fe65b65ada49"
+hash = "c80e00dbb068c8b6032b17214c058c08e89be4aead5e7b07dd578b874a58e84e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/meatloaf.png"
@@ -6294,7 +6294,7 @@ hash = "d11fddd94b8aabcf9f36d62de6e9e7b273415b584a9dc8226f2a6acf2c3f9d18"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mee_goreng.png"
-hash = "a57a4090c9542178bf8e82f3283cef70472ff50f78ceeebe5283f18b13f93aa0"
+hash = "647c5ac8b5133833c79944fffb84f1bc8c41cccab536b190be7730bd14a33a06"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/megacity_night_market_skewers.png"
@@ -6302,19 +6302,19 @@ hash = "eef4f7f0466de86bf1fd717c6670b9a56a2dd8108d43f15dadfdce379eede1a9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/memphis_ribs.png"
-hash = "8b1af43a06a674bc14737dde8e3efb0c2ad1f25b165c548bc78d04616ab5f2b5"
+hash = "c28c74569061b45b3990e0f6f3c0ec7ad6f079086ea16a6966ab0a1706a82648"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/menemen.png"
-hash = "65d66b83c2a66a552f19935486c516749d0589a97909683bb7b360320c9c4c70"
+hash = "46f72fc617a7ff7e91743e7e2d10a6f7c048763a5f00d4e184b8eb4fbb9b52a0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/merchants_chutney.png"
-hash = "e48388a6e06a89eef6119b6dbfdbca4eb23c0c01958c4d03612a815d57e6521d"
+hash = "3eaf6e9709e2120e0d405bd85eebb836458d6aa5d46831ef0566503260f45811"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/merguez.png"
-hash = "4e768627ee98a8a531609e96f4dd67763ba64461ebc30dd1526b94c129946ed1"
+hash = "183e4fd09013e8ca39cacc3873530fe2539cec3afa55ec28c2f780e9146a5b58"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mexican_hot_chocolate.png"
@@ -6322,7 +6322,7 @@ hash = "3580a1d0e7e4759c06861bad30fc44b05d444f1946f33d2ce84eb1091902f184"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mici_sausages.png"
-hash = "1a41d542db26034d5a13f596fbebb970146c45f12573389cec3fdd5b66174a2f"
+hash = "c1c52ad56ef09e2191bdc47380fb9af2bd65afd1d37c63468b514f23b4b70b19"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/midsummer_wyrmflesh_roast.png"
@@ -6334,7 +6334,7 @@ hash = "4e094e35b41ad521d779a811ac03897816db402bd773d9d8cba63c19d2cca5c7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/minestrone.png"
-hash = "00f4b8c2aa6f046ce7efd9900d30acca29a7b3f0e9a446af4aa9c8a3ec9e516c"
+hash = "145f0044dea51da9d35ad343cc2f36cc38c8f781ef672409fa7977e134c6a9a5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mirza_ghasemi.png"
@@ -6346,7 +6346,7 @@ hash = "b08819dbc88a3d3b67084f036df5e2a42eae6852b577dcf96fc6c3a7059abf01"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/misir_wat.png"
-hash = "c9a99275f07defccd1de8cbc8070a0ce5dac3fd8d9c080d90c5e89616623a144"
+hash = "d23cfe4564abf1dd9e372d255f78f2a33d8de91c8090d55cc83ad1e6147e8551"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/miso_paste.png"
@@ -6362,7 +6362,7 @@ hash = "21238ac21b8210896bcc461fefd851a5b850557bb3f919b23be7f08682a25224"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moambe_chicken.png"
-hash = "fc464aefbcf5828d5b77a16767cf08e7369aa0d86f4bdbf0ef69b84478a1a0e3"
+hash = "b80cb15c215683d10526a2942d5e06fcb03fd246b4f4d6992faccad50607dd31"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mochi.png"
@@ -6374,19 +6374,19 @@ hash = "d40381cd737c71336dce2dbe1ae53d0e81dd0378c6b82da94bea099c345fc6ed"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mohinga.png"
-hash = "94f65ff573b902da213e08288f59d48bfaba1c001af37e4e7077e2d8a9ffae36"
+hash = "fa9df4a73cb8f9294101f422a5eb6caab021cd730cbbb0701e9c88856bb0af4f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moi_moi.png"
-hash = "9fe04ca5eca6692b21fd75ce1334cf48f3eba263f0ebf03e6d983d4bcf2592df"
+hash = "97d8c35ea74a5133a5ce397ae30038e4ba82f9c6a149180bd49d65717f80ec95"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mole_poblano.png"
-hash = "241bace8fa32b814dd6f9475bf559ee0cbc2958f72235fafb5b9868ec5baae27"
+hash = "2c82290ebf083b6aaab802c5c3dc58c7263a5adaaaf0f3fc0ac6d0f25ac5cfd3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/molokhia.png"
-hash = "e0aa2400f6af5011499ec844fbc67d334fc6bdaa73c479d76cd1fa8a39aff7ea"
+hash = "a7efe5f31b1a01cd14ca071ce4bfcc39f280d34bf2d0f9820df4deb3b76f0912"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/momo.png"
@@ -6394,7 +6394,7 @@ hash = "fb8a5f3b2072921523a9c1d020aed3098af4033bd8a39953fc2d957701376fc8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mongolian_beef.png"
-hash = "6f50d86f2c0477c050c5b833e0d69177577c7ed2ae8d0fa6b0b1c60946de06d2"
+hash = "24d1419c8d76be4405bad00773d9a1dbb526dce7fdf63ccf3ac2618a3494b59f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/monte_verde_ii_gathered_mix.png"
@@ -6414,7 +6414,7 @@ hash = "09e63b2c1effd7a34892a0afc8c9c530ed6619e2270b728a98ae19ed20856671"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mooncake.png"
-hash = "02168d0842467382f756996b44924e4f2b011f288ae66a55a66e085d3a88f853"
+hash = "36f1edfd6d37a6e99264078a400893ba66f55b7bcc84a7c6e27a6120634c80dc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moonmilk_cheese.png"
@@ -6422,11 +6422,11 @@ hash = "ae7abf70c02cc5c9efa37cc204766334c023af99d99f43cf74b3be2bab15c64b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mopane_worms.png"
-hash = "ce543fc9526487616de2660a09470c11324f2aa23c5fece33e5c2a289b35631f"
+hash = "1d6e12e2fe016491f4e98639e3fa1677b530624143d659125911e3f4b29d01e8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moqueca.png"
-hash = "b81c35b1a04ae4a8bbb4a6c9547cf67de1ec20b76e5bfe275566a13ba2e9fff9"
+hash = "c423528b410ad69ec08434bc36d42f6ca506fc20530f6fef767b1b79eb786bb3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moroccan_mint_tea.png"
@@ -6434,11 +6434,11 @@ hash = "dd28edc8124bc1ab1f1112fc09e36b360b17d5daa8199d81ee6bcf230f46321c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moros_y_cristianos.png"
-hash = "44b6c476fe6a7a8fe2bad95d13c968381beae2cdb105f3d4c64b86ab09327f52"
+hash = "8b05b04f7a272b3ed59f55eda885e90ad768fda49d3caa32043e92b9e300db5c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moules_frites_belgian.png"
-hash = "cc91610165515dc8922e052d4a689ceb7eb96accddb2c4d130a46d33e45f3552"
+hash = "c91645d132dde7a103fd209628167f5b603f8590f773943ec6e99683e35cb5a3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moules_marinieres.png"
@@ -6446,7 +6446,7 @@ hash = "e90e2d9aaf30752cd3b4dc7bd19f7cdf74d289f97d9af73e41eb2eacb466f3e2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/moussaka.png"
-hash = "c8b314fd3a8f31966b5e8805d1e3063a5d1e4155cbe079d9b9f48828b3de5c4b"
+hash = "b2e9e62eae142ecf8ff63d4d6a9072380cbeb1c5317afeeb52cab46b104406ae"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/msemen.png"
@@ -6482,7 +6482,7 @@ hash = "64f5f9bfa9883e11c511ccbcaba1d3cbfebbc2dd91ae349ddbe1ae8c9a5f7ae4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mushroom_espuma.png"
-hash = "61eb305a8d0bca57bf8457c9099dbe68dce35e3555963a5302375fe5f39518ac"
+hash = "c0efa44bb878991c2ea3dc050e333ff825f9db73efd299c93c62f9b506072978"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mushroom_stock.png"
@@ -6498,7 +6498,7 @@ hash = "aa372d14854d40f5ea2f9c06b090ba54bfba5b99add598e083700543fc01c740"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/mycoprotein_stir_fry.png"
-hash = "367a444bca522d447b32fbdd08cd87ea93829170cfc88ba124502a273ae660a0"
+hash = "ec0c2154a109e4dd2a9d7e2ecbff6bc3559aa38d931cd84554076c0fce6ad49c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/naan_bread.png"
@@ -6510,19 +6510,19 @@ hash = "5f0730ec8507c66c563c01cf95125fc281fec147960a8efc46f4a5aa0a17f52d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/naengmyeon.png"
-hash = "955cabccc965b72824f930b9ae2fd7fd04381dc9e0fb61872ed9beaa39444a0c"
+hash = "c5823b28764acdaabee117b57e56a7dc1fb98ce2539bf44e152d77d5264bf8da"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nanaimo_bars.png"
-hash = "1db91a169f879e7a521d19ff64fcf8653802adf23dbacc2b61decfe236c11da3"
+hash = "bba2a59ba9f9c5d71134dc01cd4a441bdc9f839a5ea811a4db28e29d00eec798"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nanzhuangtou_gathered_mix.png"
-hash = "4ab073234e3040083fcf0c265a4b451b74d1791a3b9952762c11920f217ead9a"
+hash = "0a09902bedb5f17941c047b3e4024b6fecc739385f7c0a90680c63ceb73126b6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nanzhuangtou_hide_bag_stew.png"
-hash = "af151a6b2aca185a9b0db9b0296f12279e69acd5c04c96c05268c8e40e5d9e08"
+hash = "9ada38dbd62e7aae926230065e62ba3e334612ff9d1541a0140a7ae93af34916"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nanzhuangtou_pit_roast.png"
@@ -6534,7 +6534,7 @@ hash = "bee29ccde04ee336959bd1846a13a0b2bca9ef5eb1e5a9564332922adb85c396"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nasi_goreng.png"
-hash = "ea8bb83c17c408a1f64848d8f9e9f6f9403db085271a08a733838a907a3c4b18"
+hash = "027faa1ba9f5d4407849dc9f62c02b0f13b7d14012843b4407f5f691bbe53cc0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nasi_lemak.png"
@@ -6546,11 +6546,11 @@ hash = "304e2bfa9a7dd8bd870bf79395a2c26ecaa1aea0b5c4ab7865bc1ad3b5573a1b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/natufian_gathered_mix.png"
-hash = "a581966d45d69f511ae64f8b962de6c130ab4b5b03aa1b67d8a05720618cc100"
+hash = "5cdd13a01e3bd7a16eb5f3197b9ce4efb243b05650697a2a899d81c24a977fd9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/natufian_hide_bag_stew.png"
-hash = "59b6c7cec754c46a383721f004e6b52465a18065ccf4d18754163731dd27759a"
+hash = "0dc4782a903ff6db80e3f8929070aba188b7b198420388998672aa591061da83"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/natufian_pit_roast.png"
@@ -6574,7 +6574,7 @@ hash = "6d311f3a5508b169da4887ab67c9c714b335907a3e86e0d44c3a58993126ab12"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nenana_complex_hide_bag_stew.png"
-hash = "ded5e6b90fd05848eb27f5ff70c81c87aa5197c9f75897a6184c9105100811b4"
+hash = "b37bb1a0ba3a0dcdb435060e9a2fd96a98e2399759d5e5b0fc5f36b080834160"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nenana_complex_pit_roast.png"
@@ -6586,11 +6586,11 @@ hash = "f405f99f23c2ab26256cb109dd70a6aca4b0af9577ed573635ccb5d6ff08d976"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nettle_soup.png"
-hash = "ec73d450c419f4971ba59e89a0d5a420a0fee877ce3d535b1cdd57b7c1ea992e"
+hash = "6045683f9360261df579c1771096a2fd1b1d47114e05c0aaeff270febebaea54"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/new_guinea_highlands_foragers_and_early_kuk_agriculture_gathered_mix.png"
-hash = "8401c0b852ca6eda99a6af940b3a1a1cb36b2e8a895182f60ff14d05ad3c5037"
+hash = "2ffdd54f93190c825dc2f9e5909ab90e0452d626f4a1010de93ad6ea719c228d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/new_guinea_highlands_foragers_and_early_kuk_agriculture_hide_bag_stew.png"
@@ -6598,7 +6598,7 @@ hash = "5cbe29ef9d2e6f090c81ec00660740897462975be75388b905ee2041ec575dd4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/new_guinea_highlands_foragers_and_early_kuk_agriculture_pit_roast.png"
-hash = "91ba959c2438af9df3609073e6a35337395beb909c2c93c66a60a554b6312277"
+hash = "2bd962ba3d2c07ee5c99dd8cce780a608a4f8665e82227b7f753a62fd95a4736"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/new_guinea_highlands_foragers_and_early_kuk_agriculture_smoked_fish.png"
@@ -6606,7 +6606,7 @@ hash = "e9b265ac738b794a59caeff4773ce0ad303e0f7a028ef2663017aadf8c3fa5c4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/new_land_bean_pot.png"
-hash = "a3f38447d705b6ae6a196fe1495f5dd5baca195f6b2af473cf068d559800135a"
+hash = "993162ac0be6a26ea1bc88da7091645a07f64f29e4561765a0edea05d1b1e6fe"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/new_york_pizza_slice.png"
@@ -6614,11 +6614,11 @@ hash = "e29be2f2a537778177e13f20035427be35c8518558d99dcebb61fd118a176131"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nigiri.png"
-hash = "1f16326bbed2de5136176a514b8a7731db6341c8d51e7180d2c5f47f2383fa35"
+hash = "96e83037fcc5455106b13a33a4c1c64bd33479d83c8394c3a258f0563deae623"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nihari.png"
-hash = "92436d3e466e9e63bbd98d08047722c8b034eee0945b278f17c056cc05a94555"
+hash = "9e4a12e0b2e2bdb233026ca72f1984728fae47353e8983f7494d4b7f719c24c9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nitro_chocolate_shards.png"
@@ -6646,7 +6646,7 @@ hash = "7c29c262d2383ea6147bc2a27a2adff8ec3f90e6bd018cacffd839a495fb33a2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/north_china_late_palaeolithic_microblade_groups_shuidonggou_xiachuan_hide_bag_stew.png"
-hash = "6058bc97e9e988d88daedebd1b710414c5b1694cb3f55e04423f411c6c8afec8"
+hash = "29ce95e0a86f8222ebc005e295ed311edc76b5ba023f545e53ed0374da2f4864"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/north_china_late_palaeolithic_microblade_groups_shuidonggou_xiachuan_pit_roast.png"
@@ -6658,7 +6658,7 @@ hash = "7954497fec4ce7d47e55bbd43ba6d2d271988dbdc9f6e75b4e780df93191a2dd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/nyama_choma.png"
-hash = "836c228e6d59d5c4cd16e1363a1f6b0ab2be3160e18431a8800fb2049f7ba0a9"
+hash = "ec46886bfa073e88597f8720f248c4f4271c467e6e1e80ab53229ff063273acf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/oakhurst_industry_gathered_mix.png"
@@ -6682,11 +6682,11 @@ hash = "04e1dcb4a1ec4d143cfb92919e15b300d79bc4aa87e307645676bc054ae14db3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ofada_rice_with_ayamase.png"
-hash = "6633de0b27d88b50c9270c98201c17069d3a9276c9d1a0270fadc34fadc20bac"
+hash = "bf5257df4c338b68db029eaf03eb872556ebda1d17e1bcd3f21d54c32f3a1b78"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/oil_lamp_noodle_broth.png"
-hash = "9384b1b9d024c8c774cb51bc15d66f76df24e1504dc1160daab6d4299a0751f5"
+hash = "15bb3485a03b6fe1c2a19122ed7fc6b047b3790e47058bde3b7d3399b2cd5bcb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/oil_sand_lamb_rice.png"
@@ -6694,7 +6694,7 @@ hash = "ceaea216cd769f7b4a5e050cc068986a3d933d52978d06b71b9ed0c62e4deb98"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/oka_tahitian_fish.png"
-hash = "e7d6b5a16a75339c89b6e42fc215504c78222541cf70a301421d96edc77a6a7f"
+hash = "8ad5c7ff5bd2ee4946a15f7fc67d852b51e1e114f9f5836bf6a84965fedb6905"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/okonomiyaki.png"
@@ -6702,11 +6702,11 @@ hash = "660249ec7b9983c4b9ade2edf864dbc7faa809710b323094ec38c1040e3a0ad4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/okra_soup.png"
-hash = "42a71cce001cf6cadabf5e594c47c7e0d79dfdd54349ed918af2897e442d0e94"
+hash = "4188220d17831c3bb1dfaf01a4583383606944c7dad09d8f9a54cdcca107b57c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/okroshka.png"
-hash = "474ce34adda210648107d38711545f743e163d9e21ac488e647ee8e50993213d"
+hash = "cd23c9eba07f7217ac2b2890b4cba810ccb45ae370f92185dff97e27bfdc8c25"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/olive_brine_cure.png"
@@ -6714,11 +6714,11 @@ hash = "b8eac5470f6984e3301001843c45d2f0871c78d3f35df3f5fc366b0fd7e2cdf5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/olive_spheres.png"
-hash = "3e7d8f3a4195bcd307c2d8cd41315f2de7853764166924bee1c35d0f1e168339"
+hash = "b682bdc2f4104684f13b29b0154c79efd5fd3ccff0d624383395859542489318"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/olivier_salad.png"
-hash = "5e8c6235836baff742d105ae9a3c5b52e4f2695d86872b474f9295328ba2ad96"
+hash = "687e9973bc57cff8a4e7b5882a32fdaec9958e47e4f7ae38329ecd9f5b0aa9e9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/onigiri.png"
@@ -6726,7 +6726,7 @@ hash = "0fdc2a70fdea997ad53dd7fb4566e6f51c519c247bc9112ef5c6287f4548f4ff"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/open_recipe_pancakes.png"
-hash = "371c4cfaebee4deb6217d881b41d3d22cb004e86a10268259cd5b36433d952bb"
+hash = "51bc231700c1d27523c1dcebda9a984cf513edfa558d1642c92200676b186ee9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/orange_marmalade.png"
@@ -6734,7 +6734,7 @@ hash = "8ad9eac5f3cbfa178f5a4a2c7f5947e0e15c84b84f4919251d6df4af29ea0556"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/orbital_garden_ratatouille.png"
-hash = "41f43c2d905418668e63bf7611b30f8636708a18292c374a4f3110d926b8ce02"
+hash = "58ba3147e8c52ea67b15b3e75101223746d3d617ca0e53e09a762a04ac20273f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/osso_buco.png"
@@ -6750,31 +6750,31 @@ hash = "faeeb4e3fa4d5cebb5b2a7145c3fd45a0f9ebafb16eed8aa2664f0a0158f02d1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pabellon_criollo.png"
-hash = "0f7bca7700f70061979c9f60eec950f492daa027a124bf1ccf7d0467979fd704"
+hash = "d658ba9d5b7d87eaa5e58d28eaa6d5bd525832479ff474125c0427b87e62bddd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pachamanca.png"
-hash = "1da07f36480e1642ae9fae38f184091e1d02dba03d4d1aec6c3cd34720d51b5b"
+hash = "8b54025ca2d443640efd6cc94dcee177798c6ed36b64006c5e84e06fda686dbf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pacific_rim_poke_bowl.png"
-hash = "4e7db68075decb4d68eac2357e972726f20406674c60159b8905b4797622155a"
+hash = "8e17a486477875de222d9ef678db54551ee2403541069c1b2fa67a4bb6cf725e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pad_kra_pao.png"
-hash = "9569e0f79d762ee9e57fff7053f06fc88e10c0060d677b381d2f4bcfd8a145db"
+hash = "913292a888a5f1aee9dc3a3df3b0cbc713c2447196cb554cc413db212240363d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pad_thai.png"
-hash = "d0cc62e0899acc1fcc2719da144e9b68be019380ee7a36a121bc12e7e5f3e55b"
+hash = "bb4eab8d1ea02347f5f87c69ca7bfe3149b696176eee5cdcb1927f69e910872e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paella_valenciana.png"
-hash = "4a4a1c02d7afae8ac5f4533139b03907ddfff370ab42ed9ebc1e052d7816e5ac"
+hash = "032df46815844caf0e6b7103cfe7abfa97e0fba590e37aeb337d9e74653c017e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paijan_culture_hide_bag_stew.png"
-hash = "e181c90764bcf47d0e49ebf65606e7c8614ff8b7edafd837367383c449061f73"
+hash = "710b2639f68ab2ba248b67d278857c8e053f8fb26541ed703392c5e3688b0f62"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paijan_culture_pit_roast.png"
@@ -6786,7 +6786,7 @@ hash = "6342ec2573a041e345466f411c0e9e1facb901eaa3acd23b7b4d7d40804a383f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/palak_paneer.png"
-hash = "ca960076f525dd343b13cdd33fb4d534db2a3aa07bf1a110e766b4aff46c3c49"
+hash = "192b49735b62b7dc9896dea0e2e8b6559db72370e4e0f8e2d6c3ad47e94a5ab5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paleo_arctic_tradition_gathered_mix.png"
@@ -6810,11 +6810,11 @@ hash = "0b5b713c798fb48f011cefee5ca1e944a2ea8b716de1d1a02c0f7c21df67096e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paleocoastal_pacific_channel_islands_pacific_northwest_hide_bag_stew.png"
-hash = "408f345baef027a8dfaccd7ac024c3ae5ef87ae7d0695a4ad0c267d23827ed6a"
+hash = "7dfbfa55336e6be32d362c2915a503fd7477b77f5f02f07377d27bd30f806b8f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paleocoastal_pacific_channel_islands_pacific_northwest_pit_roast.png"
-hash = "446d94f780f33cf09c12cca73c0f49021cec2e9c3cf51dfda17da0395b85d021"
+hash = "a84fd099b6e34338d767e43fba3d16d78abda65ef0575dbfb19a38582af390c4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paleocoastal_pacific_channel_islands_pacific_northwest_smoked_fish.png"
@@ -6826,7 +6826,7 @@ hash = "f28dbe153f4218623096a0b3d8f7a903abcf1435ebb582aaccda83fd170f4f57"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pambazo.png"
-hash = "e1b768e5d58ae8eac631b63bc8802cfde62af1d9c9d86803f116c5842e77535b"
+hash = "df5563e654400614a99043648ad106a96f4a719dc7a10a571627dd1d1266b64f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pan_de_muerto.png"
@@ -6838,7 +6838,7 @@ hash = "b761599fae31e36faa2f04197fb096e0d7d38c05db98ae81f2a77ffa4b6b0808"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pancit_canton.png"
-hash = "5f311f9a885396bc3d32b1b7f8c9a4aed6996c6f18e220155e0e6a9623d1c23f"
+hash = "13048c76c612dc98bb0846be3b33fc4e0fd9d3cf1457f04629e8d2561bdaca61"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/panettone.png"
@@ -6858,7 +6858,7 @@ hash = "59d4321baa34d62ca10000cd5d3e0fa4645de8e6e53d768433f826a03d9458c3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pap_and_chakalaka.png"
-hash = "6c1324023da5fc7b592f574dd07ac5d09ce124ba19515e91d1f8290a41138009"
+hash = "3141f4b80dd1b26d1c1d0ca3fbff3a383f6009f1226aa56f97421356d5546a36"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/papa_a_la_huancaina.png"
@@ -6866,11 +6866,11 @@ hash = "b8845c7c2df9ce2d4f74cfc2ccea1bb5a5c0608ab5dd2af7bbc14a31972876be"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/papua_mumu.png"
-hash = "e24daf415779460b01052dd17ebb810ec7c25609c0490992cb17ff2f1b6489dd"
+hash = "2f82892e448f93618e878032d006cde1d7f5d7ca9e2f93ef05e1d437467a3d34"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paraguayan_sopa.png"
-hash = "713b822bd9ee6114ce4915f8f745d052a6710195a3d74a87c5e72153051bf343"
+hash = "9076c4ee202d011cdb7794378cf6321e805120dad8b9c0273bc105d233397d1d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paratha.png"
@@ -6890,19 +6890,19 @@ hash = "667bf0e1ef6e7eea6bf6eb39e43e75c342c6b3a669f378294d00fa08a786220c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pastelon.png"
-hash = "ce332ab23fb5adf2296efe0e05cb434c03375b5ed2271315c3a430181fc0b654"
+hash = "0a91411db99617bf76c6bcaf67b60c1ecad8683f5afcdff7aaeddce0f641a259"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pastilla.png"
-hash = "1ba3073de17c84e2788a0d36cfec653ca3e8f723ebf56d2a6b7f4c5a8b217198"
+hash = "fb0775759a1c58844895bce21acd5ae9f330b394cdabe900e7c4052075446284"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pastitsio.png"
-hash = "cb61c1eacc12426c1812c2b8605fec44a1baf72a417aeadf06c1d41dc406e8cd"
+hash = "947e8ca354161a9d881cd57ea66ca50cda72c82d0993d2d52ae8d5b92307c808"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pastrami.png"
-hash = "ccf02799cb1d738c9c2d0dd722b2c5e19f6eb705bd0e3997c34be53fb35cacdb"
+hash = "447e85881bc866cdeb948e34d10d668ed0504016a2ce8f1800b681a096178bce"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/patatas_bravas.png"
@@ -6910,7 +6910,7 @@ hash = "1dd2c63a61a5a72cd059e343a58c2c576cf4298a3e7537059eda02a6b951a5d8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pate_de_campagne.png"
-hash = "51073270026e0aade89cd12284ce38633c7ab12fc0be1b8cd67b7973f5114a41"
+hash = "5545986391b4cb132c8a5377b44673200758435782325c447fc77c418c050783"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/paua_fritters.png"
@@ -6918,7 +6918,7 @@ hash = "585fe0596885dafcd4fd20965d0cc49405c567e59b70405594de525db956bf3e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pavlova.png"
-hash = "e211f1d34a666293170389922189de1210bea04440febf69277491980df833b5"
+hash = "d18e2ee33ad0daa36ae82c1a6c5d5e99820133802466cd0f2ce455e57ea50ccf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/payasam.png"
@@ -6934,7 +6934,7 @@ hash = "748dadbb6f9def28c9815c731c819c24a1e69544b863cc31d151266239ddf8fe"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pedra_pintada_lower_amazon_gathered_mix.png"
-hash = "63d2a010997714ab6c45526fc2152cfe7cd31c38cf65f9d0245f19624f443c85"
+hash = "2a65037ec9df20ed54b6d7abe69fc8fe911047e99388c3a859612847146c7b5a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pedra_pintada_lower_amazon_hide_bag_stew.png"
@@ -6950,7 +6950,7 @@ hash = "519b683731b3a0c9a0416c12ec885cb433308c7e6a0730b537c43034a4d88a41"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/peking_duck.png"
-hash = "efee9feccd675263c4862eac0dec7a1beaf7544128e42fba926e1485d33916e5"
+hash = "28eb1eecc8c205ad9c479a36d5bd1ff42ee181d8f8e0ae478f6e87e388285ee9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pelmeni.png"
@@ -6962,15 +6962,15 @@ hash = "1e00ec4d399b6e6599057427887b588b3f21613ce8057e6e472a7c9c20f90ce9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pepper_prawns.png"
-hash = "6ceef0cd3222717da6d49f90669d3966808796048136b2be7617784ca5e3a171"
+hash = "c55d5a3040400e486c1b95c2ed3a5ddbb01062e3fb61eb2909c6e935c54dd175"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pepper_soup.png"
-hash = "b87828b1ddf3d22eb62e001f97f88177371e976da525cd88b08ada216aba4957"
+hash = "1cdac3a17935949b302efe3b29a409ad64759ae9384e3508087113c9e4b439c2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pernil.png"
-hash = "c7436128dd1ac8f7c4cda1e33c398a6056f2fc209223032f20a718bc52c61895"
+hash = "b69bef6a963a09c939c76a825c3c2d2ef78d5a43971cf939d58d864e941f79f9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/perry_pear_cider.png"
@@ -6978,7 +6978,7 @@ hash = "338db1da32115a06f5b4924a0a53901b2f0e0c5e0b1e07fb2b38284ec305031e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pesto_genovese_pasta.png"
-hash = "4b6f611f80a7f427c3e60e34f533e030aa52aedb14d1e28080d5222b14a843ce"
+hash = "b1ffe62a6c67c4b39c70a4839bcaca34e80a1d2c24f8afbe1621b44ec5da19c5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/philly_cheesesteak.png"
@@ -7006,7 +7006,7 @@ hash = "c96d058c825647e5b903ade9ad7f6afe30e877fbd1d3ced07948b5437928422a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pilau_swahili.png"
-hash = "92752f5c5abc16bea152177daf5371cfa0acac6059b3343f18162e7a3d623c7c"
+hash = "308d6940fb112a3c071b0c6a5cea6373764e95d4bc485585703c1db318b6b82e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/piri_piri_chicken.png"
@@ -7018,7 +7018,7 @@ hash = "ea3630e7b88a4196c098503c970b260da90a6590a9246295b13462a332364208"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pisto_manchego.png"
-hash = "4741fef0eb81e43aa4eb0b2b96af8c19ce7cfeb68054d7125c004d93c7d4e58f"
+hash = "9b138c2a3d06ca2602f2511f23e292b2577e30a020fcf6cbfb8f95e7b33dd6b9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pizza_margherita.png"
@@ -7026,7 +7026,7 @@ hash = "da8710658c4fc94d4694fbb7cf155d5e93eccfd93b831f5388d2afc6dfac8852"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pla_pao_salt_crusted_fish.png"
-hash = "bc6ebb670607601ffa7ec5a087fc8b8f23abbc963b3e8c6cb4842868042e14e2"
+hash = "5dffde9e89c7fa0b87dad785b1b56e2f820921d3b6cc647dbe4b92c11f53e07d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/placki_ziemniaczane.png"
@@ -7058,7 +7058,7 @@ hash = "2d8ba325d8d14ef4529dfc19126fe0f11e02c47bac64c4cf0647d890b4a5f1ba"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pljeskavica.png"
-hash = "7a3f1ffe4241f45829acb32de9565938792a51fc6cc11a0396ded14d452c6bea"
+hash = "77aed589de1ebbacb0f15a30b43e33f7ea9c6911f0f88bbbbd588c9b5a6cce9d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/plov.png"
@@ -7066,11 +7066,11 @@ hash = "04c23fc91784bd805dd4307693525dc6106c91f173a3993c00f2d86a17c2abd1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/plum_pudding.png"
-hash = "dab9becd9db908675ea4696307f9335ffa307a27c387bd6e42f13431ba81aed7"
+hash = "22dc49421175c0b85b181220a0aaef08929bda7ec491516eec654586f0777f19"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/po_boy.png"
-hash = "83eeabddcc1b273b123bf5d44fda71a7ce8d391262484eb34f479b86dbbfdbfa"
+hash = "2479da6dc07d6ed8831a943ba12736553e7fd7b5994eae2ebc908b067a519f77"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/poached_egg.png"
@@ -7086,11 +7086,11 @@ hash = "c5911c25fbb88e53b572f8185024dfc9f4cc76451ba3f8b99b0010c7d69d7ca7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/poke_bowl.png"
-hash = "764275042f2f66619d2f4cb471564eae1d244a00f1a9a6d6bd78767989e23b49"
+hash = "58b4cff6fa0b847c71511eb3e311ddbb2491f7931260daa3c794f3798786cb76"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pol_sambol.png"
-hash = "0c6720d859d5bcc80c751233cac970b463f3f06353e5e695f4756c0a87122793"
+hash = "06f8d5672dada488853666c7736a52bed0c93e79ab4b427113215c0da8cfaa59"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/polenta.png"
@@ -7098,7 +7098,7 @@ hash = "b0b5b49e95fb865c32a0cd1d07ddec27060f5f0e0b670adc181c00bd4016f4fc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/polu_uyghur.png"
-hash = "47b8ec8df75fa64cfcc73aec0c71f2a4df0e96d8b6d5e03c71b7ae238de01d35"
+hash = "22bdd64db8360f7a1f3b8eb1bdadda48d01a39650b79ebfb7d63666758f7e126"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/porridge_with_honey.png"
@@ -7110,7 +7110,7 @@ hash = "0cf8fe82c5e39588fa4182982ab5e17eda143036c98fd8e621a6b1989fd8d849"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pot_au_feu.png"
-hash = "03ce35a5030d85f16f2c79471511cce0b0c59ddd1c0d521e9ad94601b2fa7de7"
+hash = "91969ea5084e76b6d860496f98c3484e71118377371e858d53bd6a49c99e22d8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pot_roast.png"
@@ -7118,11 +7118,11 @@ hash = "cb48331fdced0d737f0ac68e33fb26ee4a55f26db98f9a302d4978f80395d87c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/potjiekos_stew.png"
-hash = "81be35fc56cd73a0a4e91e5adaf4e4e9b4f26d6351e545249513d6cc74f06ca3"
+hash = "5aaa8c754631b030a182ff8f8d40c7a44372ff8053bb6029235354df6d9f3b5e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/poulet_dg.png"
-hash = "ad24f4da3f85748b0019f1f312479c847a6e05ec654c60a9e32f117b432950ef"
+hash = "822cfb44f65fa1b3863e6e0a2aece5cb6e70be25db3572b991129ded4e6a2c8f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/poutine.png"
@@ -7130,7 +7130,7 @@ hash = "4e034cb3814e6dd4f158d87688320585d416467ffe45df59333f4a024b25c95e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pozole_rojo.png"
-hash = "0e482f4da0e8f5436ff8ea0c0e1834a73cab78b1cfb8ca5652ba0c2966388b46"
+hash = "cd4330c24a23b163cb2a4845cea2144457ca11e44eb56d9c40c0527d52f0f348"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/prairie_cornbread.png"
@@ -7138,7 +7138,7 @@ hash = "8e9bd58564dd00151c112c3c44e15a60bfb11ece4ce4233c7459af2e134b49ee"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pre_pottery_neolithic_a_gathered_mix.png"
-hash = "cd055e9c779efb406241f23c420f3fe65153e85ec88f0a847549fdb4e0578925"
+hash = "7f3c60b3d6c86a22d31078c2674759607a6af57058e585a7d8e2b8cf685f8c41"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pre_pottery_neolithic_a_hide_bag_stew.png"
@@ -7158,11 +7158,11 @@ hash = "0d2342bdf1bafd375a62427a4c6109686372dbd69dab10137d0bc4007bb8605e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pre_pottery_neolithic_b_hide_bag_stew.png"
-hash = "7b0c63f85183b8e42361b9a3fbf1468a8530a8b2f39d61da4c3976176d429228"
+hash = "33cf7e97d6753830890353b13a041d65d9e8cb0d6d28445d04e988e1471849b9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pre_pottery_neolithic_b_pit_roast.png"
-hash = "87e1c5fc011c67d2c4ff21cdb25e153390a52efd0aa8eeebfaff8f39de234d4c"
+hash = "ff07a73d1da41b61a8f4ed98b9c32c26c2c0ec7c0e3b70d4ee17b7f4cd3c4aba"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pre_pottery_neolithic_b_smoked_fish.png"
@@ -7174,7 +7174,7 @@ hash = "09cb6d782613847ec04db88e6f4131a33c9b88f725ae6cccdceebe878bca0351"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pressure_cooked_beef_cheeks.png"
-hash = "c376617f7165d52103728e2e9c75dfee5dd8c36296d1d6dbf5863d511b7eef97"
+hash = "63bc56e864139d8ee19915e5133880b2f67ca286a5c33549df913fe0de17b2cb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pressure_cooked_chickpea_stew.png"
@@ -7182,7 +7182,7 @@ hash = "e3d02e09f7adacaa5ce45eb7ccf2592e87167b66fb8669abfeaa73a514a0b13e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pressure_cooked_risotto.png"
-hash = "221bdb0013881b6e8624f4f5bd86211fe44123e011f231e0f777cefee5cbd547"
+hash = "b7de67019ae8feefc7037dcd3c8acf70060ba6e01da5117d7e0266fc52956818"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pretzel.png"
@@ -7202,7 +7202,7 @@ hash = "900d7f97963faf2903d34ac74856f6acf2ecb0ca389b5b4f02bcbbae98c67490"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/printed_sushi_rolls.png"
-hash = "8557ddb5ce6712d5dba52068a4f69e07b265354cadf46b59e65e0117a9d7f3a3"
+hash = "b2d53201777cbe4ee5ec58e45c935bc0aa37c619678cb3d04edc6f90b813d20b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/protein_gel_cubes.png"
@@ -7218,7 +7218,7 @@ hash = "05911bce9c48a4559bd246dab98eae0005e611007015cf3be7150e68fd94585b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pulled_pork.png"
-hash = "1c398ec2dbfd3aaf56f40d612a06ef42838918a6740f6bf1054449783a490d19"
+hash = "747865fb608c47fc8a3cb5f300fb0857bfcfc56cda73049c75303f57eb4e2413"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/pulpo_a_la_gallega.png"
@@ -7238,15 +7238,15 @@ hash = "e69fc86fd7a30c29449573ecefda22aeb5db72ae2ccacdf4b27f5ae77ea12f45"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/qadan_gathered_mix.png"
-hash = "7859151c1ad17cdd9474c50089c09b3d2637efab767914b41897a581f28ad12f"
+hash = "f81219533bff531bc982613dc14681feea73c3076399155f0297f4bf94d930df"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/qadan_hide_bag_stew.png"
-hash = "426d60e41a3d093964c46213aa9400fe264e0d879404812881b24ab27de228a4"
+hash = "63c22f597cdd53ffec800eb59d5dc49dff4da7d9286833b8f282fe71d470affb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/qadan_pit_roast.png"
-hash = "4bc9d67fafdf9ef086d9e6d6c9c95f54d2487692b0aa8dfc548989f0ee0c4d09"
+hash = "221f642066a98a68d494d2622849f315221a0fbcab79ad67cdf68087552ebe44"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/qadan_smoked_fish.png"
@@ -7258,15 +7258,15 @@ hash = "28e85373e56ce9958ad240ffdc10b710d193556ca60d118cfcc2c888a8389a80"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/qorma_e_sabzi.png"
-hash = "1a79cb081168fe8adf23141b19411209c825ca39b14f0a96049f90b408682ae9"
+hash = "9c3adf76d88d7024f76e7409d95c0e517bf3ec71e7522348e81eec8f0fbe1553"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/quiche_lorraine.png"
-hash = "16d599048afb48f810b5425d320747df56b9ccb79853c1dd8ed3d67904ee8814"
+hash = "15969efadcf6d325fd1b8a97ff01111f0d84bf445f2d5dcddb448bce874a1e2a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/quince_paste.png"
-hash = "2281c66b90ab529b2d436a26b4c2119e6b2e2d036854f0ca2b054c882565fec4"
+hash = "3e4f4fb32ad8e99299c3d35334a6639ed0f39c57bb9c552112962c43895d04a0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/quinoa_soup.png"
@@ -7298,51 +7298,51 @@ hash = "8dc7e96a5ceb8d05f111a1eec37697da68fa09cf66beab93918e00b9ca575575"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rasam.png"
-hash = "52274668281f7ac45f1b8e3563d1f48b6cd17b237474ea68124333b7b22428e3"
+hash = "c82a7239e2a04ba5d4052185b6157e79e74b733a72855bccf13a1c032b45ece5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rasgulla.png"
-hash = "37bed038c47a36e5b697788a79e18cec4c8b00695e2b2526b59efec8155dd291"
+hash = "3bfac6837a63917924cd6754f9c6c9d72f02810dbe171411ab28cec61536b717"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ratatouille_provencale.png"
-hash = "402361428a1f12d03a5ffbf374eed714b0bca537dc9f3ef15b8aad0d0a91c9d6"
+hash = "b52cabc6fb460a43c53d2ab6cb120e1efffbcbdd444d07781e9bb35cd68a227a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ravitoto.png"
-hash = "7f63ca37b003955b924b4f007c0618c77567c34c4ad680875b7f609aefb8eec8"
+hash = "147c6508782c6356b219ad87b4e4643a5c95640e6ec409711c989cc4fd26deaa"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/red_braised_pork_belly.png"
-hash = "d4f69f25bd07ffc373ec95757fc774a3a0fd5a756adedd6cda9766bd3d470cba"
+hash = "b3688443b8512a74049edaafe23b493bacef9add08a560e674f8a39d66f8d8b5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/red_curry.png"
-hash = "aded6e490360a6f4c3800ee8aaf2070ddcf89707d7751e12566730a272872f07"
+hash = "d35032efc419c777ecd14c73aef71551e141a8f74d5655a68af43324c2e9c992"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/reindeer_stew.png"
-hash = "fe55e689843cfb1924ddb2e0af1d9b7355a2e17d9dd36da396093df1b5a75652"
+hash = "c316f2e9428b249823dad0a37d56e19f5c97654fcd105de1b860b11cff3df535"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/remnant_salvage_stew.png"
-hash = "75ab88173a4e54e4bc14c4cc06221e55a7c4edd32b6f7cea621f45dca74a0ee5"
+hash = "99f5ff07c50a27eec6a803f381e028402f74814600f36d794ce5931585886155"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rendang.png"
-hash = "0de0d0e99ec67fdead41b23a7d743b3889317a36f926ce137013b0ca3962d470"
+hash = "84af60ac372aca34e48e3b1a35bce130a7f9a5bd1fd2041acadc339c3c6776b7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ribollita.png"
-hash = "95fd973f62bc4ea9a7a27a5d6bf6b37015899b673f728d5a63a52b4577275dc1"
+hash = "ab8c24e0fb292d7ae9973a5e0cfad67e49d5cef6e512007dbe2721e96db1788d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rice_and_peas.png"
-hash = "0e37e0ec81fa4650b02a0e5d138b95b81e7143d3ea9e42a98832b1474bbee1fd"
+hash = "5bf2946b6552534d48d2446e945a160b62c58db85d5244d1a8c2c1063173cc61"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rice_cooker_congee.png"
-hash = "0da1eb713f8d2037d0180c1feef39ad3fe91c13b8fb4cc94c3c51fd754cba195"
+hash = "ee8af12f03f48d48b1d9a51206e591c456d174bf974161094695c8332027a921"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rice_wine.png"
@@ -7354,7 +7354,7 @@ hash = "0d54af4b9254f4c0d2231dfe9f87459ab3a11d85f7cfc1129de912a6963859dd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rimesalt_cured_deepfin.png"
-hash = "0994541df9379f6ad56c874568d5b68fee3cd1e66492451af5577486c4adab4c"
+hash = "aaf07829b664898dcd41b2b5d28d96fabc1b70468f418b5be2331c0dec0fe949"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rimesalt_pretzels.png"
@@ -7366,7 +7366,7 @@ hash = "a445c9cfe318ca44dbc46bb23b66068829bac1c30cd208de67dfe711685a13e1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/risotto_alla_milanese.png"
-hash = "3d1e55c2f1aa4e0b0000a0783cb0d420c7870f1fce40566ce0ea11a8640efc12"
+hash = "a138ac11c9b54aeb47789e30339f9a65dd74a22f13fe5967b3b5a7385d9f2ab8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/roast_acorn_cakes.png"
@@ -7426,11 +7426,11 @@ hash = "551bfa618f95b7ea8a31fab252bacd980e9d2bf50a020c3649d564e021b97da9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rogan_josh.png"
-hash = "c4b7d5653185de86608257cfd8e69d3e82aad84708eef16608dece71e8b0495d"
+hash = "9914f7f19765b493fcdd0b9a324258f626baf5084c4bd4bc9a657e2be06f4fd6"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/romazava.png"
-hash = "91e6725133211a95a03aa1b9553b85f77065b5dd6d60fc18c210fda0e6c077da"
+hash = "46d29b4544410a50177e1335a49f3e41d8b2a30d4aaaa6dab5bc0338fcaea9a4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rommegrot.png"
@@ -7442,7 +7442,7 @@ hash = "78fd61310c0a165ceacdd435a96f1638545be0c657c7f7c599993dabf0e8d408"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ropa_vieja.png"
-hash = "4b6778f676d3cbe690b72e56f5806b1ca63d5491e944ed0c8060eab5c09d4e2b"
+hash = "a77e41e9ef12505f3553bf96301d3ec4ff6303e3beeb4bc07b9936b35c9cbb68"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rosewater_sherbet.png"
@@ -7458,7 +7458,7 @@ hash = "19973814ec98eb21f74dcdc5b8749b2c292b04fb7e8f7ec2febf8c43646fb765"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rugelach.png"
-hash = "4a6269332f9461e658e6b8f175d8ab03ca62dea9289c8e64104f6dac3534ad7c"
+hash = "4997eec02c5e8ab736e6b28a6d1bcfc79e6e1d27069040e97f6f54fecea6c7c1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/rum_punch.png"
@@ -7474,7 +7474,7 @@ hash = "d9cf6885025762cc24a8ce9999306967146bde8d3cbf7f9d9077671a505e8b3d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/russian_plain_volga_and_urals_final_palaeolithic_and_early_mesolithic_foragers_hide_bag_stew.png"
-hash = "61776c940b59336563ba6c094326b34551828e0197ff6f9c925c74766916b6d8"
+hash = "db3a94c19123acc9f90f81a0c29fa148bd13dfda2b61b2de241f4ffd1ae92bc2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/russian_plain_volga_and_urals_final_palaeolithic_and_early_mesolithic_foragers_pit_roast.png"
@@ -7494,7 +7494,7 @@ hash = "86f02a9b3995331e2a8425ea3215bc976aaccaf0c1cc0e8228592788c890f493"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sabich.png"
-hash = "0ecdd05e75e29226c18d62eea6f6a8eaf3935725972a0b250d795fa173b41f23"
+hash = "f7b17acb344a703b7ebe882f78a3b8f0adfd6b053729856809747a02d47236cf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sachertorte.png"
@@ -7506,11 +7506,11 @@ hash = "d6881f9c6972a2afd782a12c2de17dd65abf6277a7ae1fc87a1d5a7923928cc3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sahul_pleistocene_core_tool_and_scraper_tradition_gathered_mix.png"
-hash = "7b5923cfb92b7f4d3d9b2d533696d8aecff5e86d6247cc36a02f7bda75fa19f4"
+hash = "ae92b5d8292c3b90ae9fe7be1060ffed0523b106e4fc28abce31bc12baacb62f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sahul_pleistocene_core_tool_and_scraper_tradition_hide_bag_stew.png"
-hash = "2e9b6750ba48dfa7a0f03c4f65599f9f72038d12526eadbbea820fb0f76664f6"
+hash = "afd765343dba2ce08ac1ddd1397b0155411258a2cd888b4b79b6c1a6cdfeb976"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sahul_pleistocene_core_tool_and_scraper_tradition_pit_roast.png"
@@ -7522,11 +7522,11 @@ hash = "d901efff8391831ff36fe654269fa183e0a889b00229d809bdacf2ec5938ca09"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sai_oua_lao_sausage.png"
-hash = "832c25264754b35bcb49923d71074b4d8bff66e802f9825bc47076ab70982384"
+hash = "7c49747c88102a8612ccd6488d3c85e78418e93ac01850ef7a77bfefea57b770"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/saka_saka.png"
-hash = "b50375b0a4416431bd31f8a59aead07cbc7a8ed204b65262064605f350b749c9"
+hash = "19107dcf6baf1d9ce7f3552f050706116e08f5c429605a59e4b8dbbc0e93bba3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sake_brewed.png"
@@ -7534,7 +7534,7 @@ hash = "3109c8cff98b58143820a6bc769590b533b458223f1621bdd7b229549ad0c9ea"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/salade_nicoise.png"
-hash = "e72ffb6ca5bbf67a5af885ab2ff64902f0a945cb3b028f12a0333167f39605d2"
+hash = "438ffa1c9978d932852ce5d0089588dd067caa780c7a6a53adcfdfb818ad3b71"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/salami.png"
@@ -7546,7 +7546,7 @@ hash = "cc832d0b93ad90c36ab49e08c06256d3e40cde41f46b08514fd3726353530466"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/salmorejo.png"
-hash = "03a40a794add1a5785dae01b6e7164681d35e2f85ae375f09a0e418933e4894a"
+hash = "5b26fb6168ef67023a231f2d9716ef213c912512597acfd0b6d14143722df6bc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/salo_cured_lard.png"
@@ -7574,11 +7574,11 @@ hash = "23d0edbee628b07f826e5095455371969ff5e0021b3b4cdde0b7c82b7ee0647a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/saltah.png"
-hash = "8b32576084f6b97aa50f8086b7c04bfb1f2ba60dc8238c762b4c34d933dd583e"
+hash = "95c519d15fa6ef98992bfbd16fd9406c3daf8657f6c4b86786717c034c6001b9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/saltibarsciai.png"
-hash = "a5ddc211b20a7eb91b0edb92bc36db3dd024e88f6196019af8486aff3203a23d"
+hash = "067c3842aac889dd5257034eef58d554a420494438cb387768824ac3be67bff1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/saltimbocca.png"
@@ -7586,19 +7586,19 @@ hash = "82f24c18ee01e6a253e25873ad46e024212e16b9b8b516edee23f7f26238759d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/samaki_wa_nazi.png"
-hash = "2cb9be51cf5faf3670c98c2f176de182f8ae29095111aea8d331e0aeb11e75a8"
+hash = "b014d044729b66cca8607454cd10ded5559bf0692030b11e932d43bfd66c71dc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sambar.png"
-hash = "4a572295c837877340bd34f9b6365341b03bc70af0782c3fb4d040d572c07586"
+hash = "2bd237e431416ba03a26675bd553012aacdc65d2274162a6a0802b7233e91a6b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/samgyeopsal.png"
-hash = "594a1fd5a5cb998ec689f7efe86066f131f80084eabb88beee008fb6aaf119e4"
+hash = "1e9fc06d1465771f72791371392506e9477b0f953e2f1155b4c868fd663bf246"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/samgyetang.png"
-hash = "7505c36121279ed07ec3d4b1d07b7fd6d61025f7d416edec157b9ef06707b4c2"
+hash = "5a66301ee94e8d559b9392b743cd8a483fa7b60139184ca4d00fc3d8051d0f37"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/samoan_palusami.png"
@@ -7606,7 +7606,7 @@ hash = "0b3037a6d8caf586218cc12b7602e5f618a44e3faa0a276e73f27f3bcb483e23"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/samosa.png"
-hash = "2cc13197754889449a428efa2e64c0403767be3c6ac7380633d92e8ee80ff8f8"
+hash = "50b86dd56963331d18b6fbf1350159ee4b5817473b8c2f0c88c7739f783732d0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/samsa.png"
@@ -7618,7 +7618,7 @@ hash = "db04ef98d5d136f908c332982a6b75e79e5753234800919e3c25df722db70b77"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sancocho.png"
-hash = "bb029629cf32b310635c83f646f3353fe79a67ed4d5d643b23609176248117d3"
+hash = "44548bcaf526f5707d57d5f1d4ca21f123b3770282bdec0ff685939db7440a55"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sand_king_millet_porridge.png"
@@ -7630,7 +7630,7 @@ hash = "a44d09964fcae05f3d31ba876acb98bbbb03ed048bab605584f14713ad756837"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sardinhas_assadas.png"
-hash = "6052a8331d54851f2903b9cf3827920d7f9edcb2d5122334da5ba9093a18e1fc"
+hash = "9d63cb2ea461c3f24a49b423f3d7fec50b3fc73334446c79caa4274b883eb2dd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sarma_cabbage_rolls.png"
@@ -7638,7 +7638,7 @@ hash = "edb06dec4bab03660f7caa495240277717d46d5ebc4e58de617d236f59f91484"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sarson_da_saag.png"
-hash = "b95823623bc323617f8c0599e45725af78ded451e7990db39a13b2c78aa8669a"
+hash = "0cf0b66d23b87e2a6a230e04265c7aae463752509f31471087b21beb057a2ae0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sashimi.png"
@@ -7650,7 +7650,7 @@ hash = "087d67f2833d1caa29f62655a1f22aee0ec712d322b047972160951fb43cfc4f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sate_padang.png"
-hash = "7bc73e2a3db92f905ede0a978524fd1749bbd99527662b39aaf9961727d9e576"
+hash = "1f081ec9d8d48bada3503ec056c82871bd07054e537b59425ef4ea80bda601ee"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/satsivi.png"
@@ -7658,7 +7658,7 @@ hash = "b2e62661ee0626b08fa06be5f3498eebd90f04ad7d7b254aced19f0c92681325"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sauerbraten.png"
-hash = "993fbf16bdc980fcdae442e43d695eefd13ec0a956b5ce4fe1adeb973c715400"
+hash = "c022967fb67bb3eb9443143d11fe668c9c905bf9bfef928ba4347ccba5344cde"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sauerkraut_crock.png"
@@ -7666,7 +7666,7 @@ hash = "6b618dbff459a35a39e0f0762b4ac392cdbaf3c62d1b3e8c5915e2ee739a8269"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sauerkraut_with_sausage.png"
-hash = "de004fb169d8cfabcfc4f0856052477392aecae6b030d079701a47c24af4936d"
+hash = "8d9e2a6e3d2a94570ce9f9035ce39a2dc4d7d11b8c65041a0e644fc6abfbe352"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/scallion_pancake.png"
@@ -7686,7 +7686,7 @@ hash = "ac08c5ca893b9f8bf38f5e2d03243003638b753a3566c9494669d263ab428276"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/scotch_broth.png"
-hash = "2f130f39ff9abfaee9983f899ba78d60d51262afa8f71aa839277e6658078421"
+hash = "5e42d0979c45f98e3c8541108c6d31b5c7f84ea14eb538a5c0bbe5056838510c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/scotch_eggs.png"
@@ -7718,7 +7718,7 @@ hash = "55514c0bb71a9cb5b4c4032510d19367911d963fbf1c243a4cc6e5f658e45923"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sebilian_pit_roast.png"
-hash = "5d6f5b9deaf0fc9336786abe3ac9384ea86fbdf16f22753e403ff6996d57262a"
+hash = "28bd32582b0f39d69ed085e56735a9705e1969994767d201ebfb3b3a2956e01a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sebilian_smoked_fish.png"
@@ -7730,11 +7730,11 @@ hash = "639faaf9144c94a78677b0bb9a71f830057c4008df035c18fb22f2fad6d0e4c4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/seekh_kebab.png"
-hash = "5fef8f0a98df9f2960061f70b1cbe8edc6db5c8d9305031d675cb1c55bd053dc"
+hash = "c3374e271bad24750c5540fa4f742737b8de24d0f2c7df7e7e56e74d4707988d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sel_roti.png"
-hash = "34d7367f15bb74622fd63fcf9ddbc860b3f3fb2a5d72d11bcfc2736f1b4e72b2"
+hash = "3ce785749776466ae246fc93d41ea242c5016bc7c5eb64ae42b4f9c8c125c110"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/seswaa.png"
@@ -7754,15 +7754,15 @@ hash = "c07918fcdfa35cfb986287f5d5fb7da31b3e71422593c6106acb033790c80950"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shakriyah_yoghurt_lamb.png"
-hash = "cdeaf58b86cb76a7b1b60316b0c1833594bf606cd65cdac4d9c963f0ac3c3af2"
+hash = "4a32865d283d676a901b59d71cfa347f837ab60e9e2b23fef90f123f3dac3986"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shakshouka_sephardi.png"
-hash = "6b2310502a20ace5ff94e00bd7e81b644ba49a95bf4882648708309e38df6c28"
+hash = "567f4e484be7d5bedda981a08f576e7d920363f0158dd47ca31a2aaec2bfd748"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shakshuka.png"
-hash = "8c9e374e9a73530f943706bf6bff463a53ef474505f190f6984f01645166b4a4"
+hash = "ea91ca3b8ba6578ad871ac4dac06b499e943592b97b32139e9279e437b2a5bb5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shardfall_tinned_fish_toast.png"
@@ -7774,11 +7774,11 @@ hash = "f396aa506d8fc48158781aa0bb731cac8e855ed4a8c7d454832ee913b3a44db2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shawarma.png"
-hash = "6dfecb86961996bb6e2357f1934c9d703cc0a5d7e879c1756bcaeeca83db6297"
+hash = "aa213e584135215e05524b99b4b420690140a26f59ce9aef029c50a30e3c68cd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shchi_cabbage_soup.png"
-hash = "719f053fe926810e0c93e586dbf734dbc98dc0d8533f5db581925ac77ce99798"
+hash = "a8a88072b71489bcc85d9846a4c5cf7b54adc7136b7efdd1d6baa0b973fb3768"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shellfish_heap_boil.png"
@@ -7786,7 +7786,7 @@ hash = "a946951f1def6df7524db4ce52f65f23b1299a184165f3a6fa57b937de9cbc0b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shepherds_pie.png"
-hash = "7c9e53d213a387ef294c29654d8d8267395c753a768e7bcf4cb64670a69eb578"
+hash = "9f8a39fa36e7991b45abee61b64b7b674706067f97a8d7cee7b1c8b1c1e29e45"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shiro_wat.png"
@@ -7794,7 +7794,7 @@ hash = "d55dc564a5da2da7c5f72478be469223012184f3fea8f239c20f5618e40ac83e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shish_taouk.png"
-hash = "de796f104e8627a6de6a53eff3c56afaf3d5be6f399c8ed102d8003216676b68"
+hash = "50700b2082e605ee895ec12440068d32223d70f8b89bd6ee32446bf14a8e1c48"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sholeh_zard.png"
@@ -7814,7 +7814,7 @@ hash = "428b055ed755c903e2ee09412c218496ce0799fa7231b2ac719e2b33e14f86ce"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sichuan_hot_pot.png"
-hash = "c9657260b8f903206b99eafddb8d49d24b39d8b78da391ed449521550783b922"
+hash = "2b7d3317ddc7ea9ea4fa8b4cd6f12ebb7877b215686010186ee249e454b40fcf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sikhye_rice_drink.png"
@@ -7822,15 +7822,15 @@ hash = "266b3201a5a7f923a6881c16605839b409c4bb4e2d6c05a03d5768821745ec16"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sinigang.png"
-hash = "f291038b28a460de121d50bc052b94b953cd89aa338badf519448dc741caaad0"
+hash = "e184cedee95cad80babe4ac43509d558a063c7ca95b6e950096fe33efba40ec2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sisig.png"
-hash = "5bd07914d1b084ae3ba15fa15c84652c0153de96472533b058eee0d6e07aff7b"
+hash = "7eaaf7909db9ee60180dbe73b970ca2d2caf07b388ee07a17da6d60199aecb0a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/siu_mai.png"
-hash = "486c122ca66ba60e206cbd997e789ad5e8d37acb0de0fd17d829428ead4bff4a"
+hash = "0492e05ab7aa76e34cf21946b73cef0216110dc9741e67cfa21bc0e15efc5333"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/skyr_with_berries.png"
@@ -7866,7 +7866,7 @@ hash = "0389fc351c1b4be128d5c82ff35fed244f6f2442dd24faaa6a27b6e85f2e7636"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/smorrebrod.png"
-hash = "106291c3186fda28059734c9bab4a6cbb0738a57a3559a70f29b129c5db1fac1"
+hash = "954be00f4605f7a037ceb6c64452de09bdee886bbac311a5441a5cd42c494cac"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/soba_cold_noodles.png"
@@ -7886,7 +7886,7 @@ hash = "afe5c1e17e140ff6d3f6527da7773e662ae99628d5904805214d52574dd990e5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/solyanka.png"
-hash = "2536c3d87614f0fb6dbe6ecfe21308f55e4d1ab9abe853f2da80d7b10e027d8f"
+hash = "a8914d95bbc9353722201e9b3fed6a3ffdd229870525556fe8671f713cc0425b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/som_tam.png"
@@ -7894,7 +7894,7 @@ hash = "0e86228798f6a5533cab27d54782e5c59a9a26f2b0aa88d1b575507773bdfa8a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sopa_azteca.png"
-hash = "42f75540c32c4f31ae106ca4849612c39c44129b1c5928cc76421f110eb115ba"
+hash = "8ddaa1167054224d3278ed793e9d5cc888189a18c1d88d026f2f32d881d43563"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sorghum_beer.png"
@@ -7902,11 +7902,11 @@ hash = "f891a883371b2d773ce0dea6445257f735fd6f39e80d4af5e7db80fc97965228"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sosaties.png"
-hash = "a785b1c5276a388b2158f9806403211b4effea4d4162e2ba99d8539d6fa086ad"
+hash = "eba0045caf34fb790acdd4817c552171620c66b161e38057ee1afee52e6adc29"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/soto_ayam.png"
-hash = "99ecd9882e214b886f8b47901bb00f4c85f83971decb193a796963726dc592a1"
+hash = "b30d23e56c89d78aa8a1c0621a2d1c40342d0b5cb3c720437882b204c9e52058"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/souffle_au_fromage.png"
@@ -7922,7 +7922,7 @@ hash = "3cc1687ea56cc7f77e5e6fab6c169212576205099357007bc81f2e4f02fc4880"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sous_vide_apple_compote.png"
-hash = "c6e66b55d16d7418f7ea8d82d62dedc4a87baa10e7b29feeb33ad5bdd6997298"
+hash = "844367ad094d563bbb3ea15c369947c032fb3664d11497ce223e36bcd063b1d9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sous_vide_carrots.png"
@@ -7954,7 +7954,7 @@ hash = "942940a0db1f2ad49ac561918c11fe66cace31081e6b1de2ec0673435bfeb227"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sous_vide_octopus.png"
-hash = "72aaeb095cc0e39b17503e5e8946ff4cc2c1944e1be3528fb16abd20a41ff04e"
+hash = "43f3980bcb50b50e6768f9a99b9a80b32fd2ca0fc17aee54191b5a1303a46575"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sous_vide_pork_belly.png"
@@ -7974,11 +7974,11 @@ hash = "5a7b6d7b753a66f6a94b31bed3eae13b5a41afe4fc6e86ef5f65ca08b02ad121"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sous_vide_tuna_steak.png"
-hash = "c15a8a55e607649a187886b443694a0b17cb45eb92fc1b3b9ec6b7f3a5cbba17"
+hash = "a8fb575026c345783e24959c67497153512d0e6dd1b7699448ff4c6463bd2fb8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sous_vide_venison_loin.png"
-hash = "2e3d3b2a4ad54e0ca477cc1ac6c98b7bb19c3a276403d930ced6a6d946779e3e"
+hash = "104ba67363deb37b72c553ce4288df0ed2344ade6b14fa57e6a80a78a7b0d263"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/southern_roast_lamb.png"
@@ -7986,7 +7986,7 @@ hash = "574b7b13821716ed317fecf3cfd0a9463881a3466beefa685f428baa62a42834"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/souvlaki.png"
-hash = "b979419be2ecd044ecb324b0e0eff251906871f9f6ea26b1bd125277def47618"
+hash = "22cb9e19c8e0b5dfc44d237d13438cb100b07915559234d4f50663ecc8dce38e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/soy_sauce_brewed.png"
@@ -7998,7 +7998,7 @@ hash = "606b0d82dd9130e91375554d8561c8a8e1412f162304ad24497f7d31b0c28189"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/spaghetti_bolognese.png"
-hash = "1de4ce02f49d85bd75c6c59af37b86b0ae7717e925eb8fbaaf66ae5fc9c43f07"
+hash = "eec0c3497e96b2c9cd64fed9fa4d27a1b20ae754d534541cd779fdf048ac2665"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/spaghetti_carbonara.png"
@@ -8010,11 +8010,11 @@ hash = "02ef344803fb39d0cbab26960e70bf96ce8984c6500aa3e66adabeded30961c9"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/spanakopita.png"
-hash = "0b66d85473c49956df8828911f416f6af22d7b8a227aff6dd3909db1d08e0c85"
+hash = "db98cc3e159382c00e96983cd40caf9b9ed64bf94de03bb88eac16b593b7e6ae"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/speculoos.png"
-hash = "9dfacb1d34f0ba6b747f6902e4a663b76eb6b0e13178000314c6c9190f61c8c9"
+hash = "f6d5b3645a3f748f77cd254fd9d2b638dc7c44190d89b98416046caf923b4c50"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/spelt_loaf.png"
@@ -8022,7 +8022,7 @@ hash = "46eaec8530e3a165e2d1f58035f6fb1141a4ae2c44964015d76251c939a34aba"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/spice_harbour_fish_curry.png"
-hash = "c5156a17d1462b23d3669b33d4296f2e6bcebc8e83420dd573a5233e81544f33"
+hash = "2e48a8f7ab39b0f83ec9c48433ab8fe047c5e00a4ab54da8f42797354d7efa5c"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/spiced_cider.png"
@@ -8046,15 +8046,15 @@ hash = "1199613245bad7502416649a4699c27aa74dfbdb4ed86e6f9affb8afff239f24"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/spring_rolls.png"
-hash = "41b3833e01c7fc2ec0de20ca94bb70c3e59ebfb5f51040ab6a2d80bcf5fe6356"
+hash = "96a1327376341ef021361746b3911a66bd7e6f649690973713fea8122ad48c3a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sri_lankan_fish_ambul_thiyal.png"
-hash = "767100c040828a3cf44abe0ec1dcb019cd328b7d9205f10ac2ae6101d9bd0fbc"
+hash = "49c0409219e3b8f587d781d88e6c2da3966d3929325250387e50ad70af3b6d05"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/stamppot.png"
-hash = "af7100789e2d148383a243b63a9499f727c6533dd3fff3cbfea7b207437520c0"
+hash = "ea6b4c81f841d87123c640eb2af85c75f0089e03a9ac2a6700d098cfb035c842"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/standing_stone_goldfruit_salad.png"
@@ -8078,7 +8078,7 @@ hash = "6608e0a1a2c4fbc29206998dc018910fbf8a3c6462e7b20e8cd9842040248ec1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/station_kedgeree.png"
-hash = "c427747137e36bbd5f416bb26c8dd2745aedd6487bf4be0b523773f0ed899c92"
+hash = "dcbc414d7a297c2d7d1c5c9f5e02db6828ff8f45ebcb66a3558e204a17e0dccd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/station_meat_pie.png"
@@ -8142,11 +8142,11 @@ hash = "4e473c7dc814f3b571bc10032799d823a84d4c8f1ba2da9444bd5837ec510e87"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sukiyaki.png"
-hash = "72cf45b33b5a496099bd9ea91dc0e250d7a646dd074ed2d9c96844d82c817ed9"
+hash = "ddb80722c1a3ed80d673caf01d6f4e6dffadef177af8830b48194311c433b8c7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sukuma_wiki.png"
-hash = "e779618d1204ff57c48980aeb016d8cba7b3ee04b1dd5a128be301543ea972da"
+hash = "69fa4d5c99fb1744153f58a6af7d6c3765463b05fde1e6ed5e7fb0dae72c22d4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sumnagin_culture_gathered_mix.png"
@@ -8166,7 +8166,7 @@ hash = "dec6879255321e83c9c1e5cc9da038bf375d9b9945873b427e6c17c954907241"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sundaland_and_wallacea_pleistocene_holocene_foragers_gathered_mix.png"
-hash = "e26d5d1f9202c9a911359adf59155b002f69343a77882e518fd1a3ac99dec6a3"
+hash = "684f5a7b6839ef434a2f3ffe6889d6f7b03d6505f61acfd3237de2cd4b94989f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sundaland_and_wallacea_pleistocene_holocene_foragers_hide_bag_stew.png"
@@ -8182,7 +8182,7 @@ hash = "81f863b43724f3aea6e671349cad0a17302ee2fe7bead84d42e5c23d010dfd9b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sundubu_jjigae.png"
-hash = "61f4ffda04cd0d05e6b9a26e4d10728117ed0f9202d903560296ca3c2a285c29"
+hash = "f459369b80c5eed1df77992de86f043bd1dc495414508d648885044ea21fb612"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sunfruit_preserve.png"
@@ -8194,7 +8194,7 @@ hash = "c3a9f74dc7d4fcd344e4b89a0187137fc8d4b1d63dad7cb5be2b02b5b4915b58"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sushi_rolls.png"
-hash = "20f3a82810e356c9f9b996aff95f1332e66cfedc51f9d5acafcab7ee198767ae"
+hash = "c797cdc9a861bc0a60cb66856a82aae2a7e9058c7f19e53fc9ea7072de855c06"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/suutei_tsai_milk_tea.png"
@@ -8210,11 +8210,11 @@ hash = "261740ac7ad6d0b4e71b531946d0e72401092e6fef564adc31514714ac680d82"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/swedish_meatballs.png"
-hash = "dd05db3eb5553bcff6e1db8d3bca7f9777bde7c01ccf398e07044f8384b36954"
+hash = "d883fc66ef376e56904489573bc2bd13445a8bf0b87aa0d8b762e35a89fde480"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/sweet_and_sour_pork.png"
-hash = "e120eb3eb6b15522a20d8ef6944ec354b43e1f1e95d6dbe452ae92999b592733"
+hash = "42e3baa964097c8664a526367b0ccb724187a2eb883b320e286d4554d480ff55"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/swiderian_gathered_mix.png"
@@ -8234,7 +8234,7 @@ hash = "3fa9a0d76f76339a5d73890b26950a99497daceb540f2b09eeb9e83d3013814e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/syrniki.png"
-hash = "1c73b2fe8e34bbd5b32bd9c8280946cf4e836cb948bc8c3dec55490c882a9a52"
+hash = "0ecf3d31d8cf2397cc8a186eecd4f253052559c4b04c600299bc2f5ad84145c2"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tabbouleh.png"
@@ -8242,11 +8242,11 @@ hash = "2d5e2847170e193fe0bbc8ab5d08796a95f220a7c2c2556f2760c90576268d6f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tacos_al_pastor.png"
-hash = "69104f2d2f82cc45b7e651b37879bb631e7df647d4220de11a6f4cbbdbf0dc88"
+hash = "76c09aab5e14d2dc2767f40c22e73afec525e9b09ef4914b0444262e18629a23"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tafelspitz.png"
-hash = "0471e0f5f1f3bc5ca755956ac8788b9a89026720eb88f12bd43aeae4dce1c38e"
+hash = "4a18d01ca23bc932a42376b98978b479404440b8b5c56bcd281b011d84d1b81b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tahdig.png"
@@ -8254,7 +8254,7 @@ hash = "8306468d3a472a2d75e9145c88715501f4ef36df0b01c1ce84a1a7165e382ca0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/takoyaki.png"
-hash = "47419cf5b1eacfc9886ec30f819075855818c1cee4c73c52b7ec9a8ed241efa7"
+hash = "707e985e4cd8d3d6c6370ba0326b5d9c348d213b184c5da31f4ee84b59f7eb10"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tamagoyaki.png"
@@ -8266,7 +8266,7 @@ hash = "102b8cddd2ded2fc1ba8772a2cc0db4d9b7f7533f00927868a5d2af97e07c925"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tandoori_chicken.png"
-hash = "4255362056abfa558064bf74c761bb7f0cd1c735558f452c5a80a4efc2777429"
+hash = "cbaac6e93a87406de3edc5e9e8a80ad2f792171ae52ae31fefc367d9b2b57b6f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tandoori_roti.png"
@@ -8294,7 +8294,7 @@ hash = "1125093534ea04cbbb2d09099e97ab113d2c178aa4084e96eb7e7b5273c7c692"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tashreeb.png"
-hash = "b330cc68dc43b856c13ac4096acf156f4bb69ba7cdfe1f5d1815c197bf1903d2"
+hash = "cc4f0f5ba95694a5fca3c0db7c66b2cc646c403bc2823be907cc222e17c840f8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tasmanian_late_pleistocene_foragers_kutikina_warreen_gathered_mix.png"
@@ -8318,11 +8318,11 @@ hash = "8b3382d3b8b73ead75b4455cd791b2bda5f8ab9a22cbde4d691c80653a043d67"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tea_smoked_duck.png"
-hash = "838390a9d9a99b1c73f5f78c6c42a18770a9dc84056357a9293381f83a7fd46c"
+hash = "d249290b15de9f9aa79d58f0c759d1f8f5b7e63c309c6db7d976928ddcb677da"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tempeh_goreng.png"
-hash = "2030c93b17529249867f0a25d169a877c3d0f1771332d7fcd9f2a661b34dd271"
+hash = "ba5e80686faa14513f86ae7bf650cc8908b623f4f8bd9d3280b05a78f8ccd890"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tempura.png"
@@ -8342,23 +8342,23 @@ hash = "b30a825592128b380f9c0d35bb2ef480c3c858ca865703f58875b180f9382e16"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/texas_brisket.png"
-hash = "362cf352f537481de2488080de3f4cc54185d76cde6671b855427379472fc8b6"
+hash = "edc189a56af953c26fbdbdb92f19266dbebba25f1a9b037948296803d09b1d47"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/thai_fish_cakes.png"
-hash = "528ac87944fc345ede675f15719cfc4d1fe8b99707e63ae75b0b62861370d931"
+hash = "a03a1114547ba4166847006cbc223ed7d45ceec90be5b98953a4c64b4c8f0022"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/thieboudienne.png"
-hash = "e1c7200817241fd80010b1536ad0ba5a45f671ef7ad553984f8e6ac2307fba00"
+hash = "984dcd52d115d997fc7de8ee21380320a0cc3c141431aea44c382564a199e495"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/three_sisters_stew.png"
-hash = "aa532bae7fe7cee588d2fd38e6b872050d60a9dd21c8cb7d118955d8c5d2af12"
+hash = "c01ecba977125c641735cc0cd6518c3c6e34d0d49a96d3aa4a2a94dd33b15a05"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/thukpa_noodle_soup.png"
-hash = "5a763216bb041e9bbcd3e1701336302b77b940630bcdfd41241d39207abf8a9c"
+hash = "85fca2febcd180473c3a491bf9b6c17060d5f5dc7078a401d274e78c8911635a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/thunderhoney_glazed_ribs.png"
@@ -8370,11 +8370,11 @@ hash = "b01fc21cc82e637bc0cba2aa3cf41c6abe90fcc51d4ef90c4f725ff468725252"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tibetan_shapale.png"
-hash = "95263f8a3dc3423480eb0daa57667b6968f4b4f6e7a002051bd44793770a19a1"
+hash = "0b100ed78729d1f065735a0e62ec9fbde5d825c5ab790b4fd8f17958f67e1789"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tibs.png"
-hash = "c22b794b8956cf8a41052d2a95f9b950c7f17eb1324c977904ddd99eb8f739e7"
+hash = "7cd3dfddd9475d11cd1c90f235635b27d6dbe274c59e06e28c8e5e1e22c42f9f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tide_pool_sunfruit_sorbet.png"
@@ -8386,11 +8386,11 @@ hash = "fa55b569398259e91fba349eaf6756b2fdbd222b310d919ea76219f91fd5ac71"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tlayuda.png"
-hash = "1c535e961f34c3985150c08b2f67fe81b109d323c338906ba0e5abbf1de19a40"
+hash = "6cf20d2db3aa841299d764ff8e52a16452d37cb82e26a1b78fd9c6c02bc4f441"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tom_kha_gai.png"
-hash = "656e56ce73a505959826fcc78017dc5f39cb1017fcb74e6dc73962094513b179"
+hash = "2906954ddc34b40982a39ffc8a25b82fecc6e15a07369a9bbd71bebc816d3d91"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tom_yum_soup.png"
@@ -8410,7 +8410,7 @@ hash = "6947c1fa4532e68a9fdc368d5591f5b9812afc0834359caf3f0725b811afbb19"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tourtiere.png"
-hash = "3241ea10daae5f5af274b2b895de51d33a811c805555d794f30c11697ef84d55"
+hash = "de1f52cb66350d3f1f661feea3727b8288d2e5762df8d342ef9d9e882dd4cafb"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tower_block_ramen.png"
@@ -8422,7 +8422,7 @@ hash = "dda4e0a2656f74b7fafff87b070065e017b8adc7ffa667ea561ffc01d2eafafc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/trade_city_groundnut_stew.png"
-hash = "1ee297aa2ee7a2b5629622b3af01cd89ae402312d126403349f23d6219f4c9eb"
+hash = "87b2799655949695059d7a85d23ceaeca4fc39131d461501bc50f979cefe2271"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/transbaikal_and_mongolian_late_palaeolithic_microblade_groups_gathered_mix.png"
@@ -8434,7 +8434,7 @@ hash = "dcb8470cdf33e2d46f2a863fd0bd0729fbf8695a514239bb01be136efb495079"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/transbaikal_and_mongolian_late_palaeolithic_microblade_groups_pit_roast.png"
-hash = "70d72d4963f01f7a9cf83228c2074ef843d4aaa8273311be49f434c287a4d9af"
+hash = "bb61e190c2974063c104073cd00a94f536523176fbd9d365f39a6ffb09a8737f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/transbaikal_and_mongolian_late_palaeolithic_microblade_groups_smoked_fish.png"
@@ -8454,7 +8454,7 @@ hash = "557c40167a55812f223acc92ecd66e50491865eb54bf7ce1a24ab9abdf49b24a"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/trialetian_hide_bag_stew.png"
-hash = "dadc4f8c53d8c5df798ef1da88d144fb032e9feef5d833c4eb68801b29bac916"
+hash = "2907e5648a5516f87d2d8ca74921bbab2ae905bd1f64222f0729726333b143b4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/trialetian_pit_roast.png"
@@ -8474,7 +8474,7 @@ hash = "251ad2e61e9d08b87eab76f31b5c0c99de7f33ba1412c12b06a487c544168621"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tuna_lap_lap.png"
-hash = "ba82f09f6429e602be298aa2d7ffd4df4397fcc717a3b83af0e77918f8b0ed02"
+hash = "b5b6f863fc422741d5bc946cb76c04f0c6f49449b1b2517cdd7ffb05300ca9d1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tuo_zaafi.png"
@@ -8490,11 +8490,11 @@ hash = "3d6d7c1e7d972497a7a2fab766743f2232006da0248f3b5c5c95a353c392f88d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/twice_cooked_pork.png"
-hash = "2eeccd0a49ffce9d31eab81b6977e1e20b9a2a892610c6106a26bdff50e3dc36"
+hash = "6abeb9f845852074112516d0904213816195a554ba031f10b14d2e532b33f858"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/twin_sun_citrus_tart.png"
-hash = "3ff7eb48793552fb510635b1e4b056d6bc12bfdb93bd1da7d33d38f4e997e84b"
+hash = "2ef0c05cd82672f6b7632fed6cbcdd45dcb31f73993ae4888ff91b9f61a147e5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tzatziki.png"
@@ -8502,7 +8502,7 @@ hash = "50341f8ddd9de18b3e17fea16d90eb609ae85bef1e851b850c336fc0cbea5921"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tzimmes.png"
-hash = "219629b38b1c2cee1fe77f6f366546b9f00b2487d5a4c7813c6a433291a2382c"
+hash = "515ee12b2f0596741debf77798834ac983075881bf7c3f9fbe6d59fcc93e7119"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/udon_in_broth.png"
@@ -8522,7 +8522,7 @@ hash = "d0aa3f2477183acd2a1ff454bf97eb9fce57eebaa430a8105c0d8a975c20c5bc"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/upma.png"
-hash = "1c0b643716290db25617cd981b6d78d964056e29d652de6f39137d47bfa31d7f"
+hash = "fbcd4b0be0f2b904deabe52aef5730f164d769488464b77ad873c2ac2320a2ce"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/upper_tigris_epipalaeolithic_protoneolithic_hallan_cemi_kortik_tepe_gathered_mix.png"
@@ -8542,7 +8542,7 @@ hash = "0799176e688e12999827094194f330ec2acab62a015210f2686159f5f40a9ae5"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ushki_lake_kamchatka_gathered_mix.png"
-hash = "1ed980917ac21858d99c4f28a5392ab392a24a19ebf0257e8530b0c6b42e7ba7"
+hash = "b2b33caf81523ab95173dac721e8fc4ee12c6164f28f3b2f8b0d76a60263162f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/ushki_lake_kamchatka_hide_bag_stew.png"
@@ -8562,7 +8562,7 @@ hash = "9ee19977bdd96273172ee29685b25f7c26ff91328b1867f3d86f082b815a598e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/vada.png"
-hash = "2bf09b5f7e8b20076a124486a80b47e4c4d5e1034aef41e47c09133bcc13513d"
+hash = "b00e3618c2b7c67fc0692cc1bfff4d86832452976dabd60f02b40f8366b42c3f"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/vat_cheese_melt.png"
@@ -8574,7 +8574,7 @@ hash = "b54d9391710cd9ffb2d968e2df74916a4a3c81e2fcb8ed3fee5a4ca8adbb5407"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/vat_grown_fish_cakes.png"
-hash = "edbb98e7d6e730539cf366ae5acdc17024de8907a8a8a7a8dbf71675604aaffb"
+hash = "3a6dbcc4b3541cf3599f3ba6a94cf026762f79a2813c892fa76af3d68792f0c4"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/vat_milk_latte.png"
@@ -8610,7 +8610,7 @@ hash = "74dc2da9e68357c71301cabe4d631f5a369c6543e318778fb68893b99a2391f1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/vichyssoise.png"
-hash = "5b89e39873a01a199495f885af8ce5052d6453e9108ff427fc8d097910be516e"
+hash = "1a4734c4b01177b5438a32f6e6fbb4303c4bc0336a0c6d3947d09e0790cd943d"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/vinaigrette.png"
@@ -8642,11 +8642,11 @@ hash = "9798af0da48473695d7431d6777a62db9787706662e3ca6dc4d3fb31ee203b8b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/walled_garden_korma.png"
-hash = "8701922982dfea431b985791fde624fd783504bfd8258c318b1c570ee00878b1"
+hash = "822fb30d595b12226b63e9d618c17e0f2370711a36743bd0dec5c033d6fecb1b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/waterzooi.png"
-hash = "7028480a1014611811d8c71be9659e11a108c9aea7e776865ea56bc525838a5e"
+hash = "7b0dbfbf336bcc3ee2baff5d75c5729f25c1f84e154643fffe3228f1fc3e9042"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/welfare_hall_casserole.png"
@@ -8666,7 +8666,7 @@ hash = "e74d381a7c96461d3fe58e19b07529b7d68caa7048a3aab7448a7fc6890c3081"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/west_african_late_stone_age_and_early_pottery_foragers_iwo_eleru_ounjougou_pit_roast.png"
-hash = "e58d0f24fb7253e722f021c1a4e9ef63746aefa98e11021bda50568e22e0670d"
+hash = "7fa63de1cd318e68e27e6438e605c9ca084612d1b54305bb97f6e3e7c96f6cdf"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/west_african_late_stone_age_and_early_pottery_foragers_iwo_eleru_ounjougou_smoked_fish.png"
@@ -8710,7 +8710,7 @@ hash = "faec5f0b0750bb8f72a901a5d3e5cd30afce896d45efaa4495b8c08a3d1499b1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/wild_rice_soup.png"
-hash = "3224ac97840904cb8900f78763b0465867a7b2e49fe2d8231c589e0f89431418"
+hash = "b8b091f97dc042b2df47c3804f98bb51adb81acb8a77ebce23308d62551c13aa"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/wine_merchants_roast.png"
@@ -8750,15 +8750,15 @@ hash = "a369637680f639d709d8ec12810f4604d3362e9169e568217b7e89c62367bc55"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/yakisoba.png"
-hash = "d3408f07b57ef3d342b5056191f0d38bb9c897374aebdf4d8f26af3e87b15148"
+hash = "31c74670987742749d6b69ecbdb5a721cf0f14fc66f44ce70fd51d1502c15b91"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/yakitori.png"
-hash = "6d7c41397c8f53a83667bd46571cef7d7c1b1f454263a51d8824e4a79877e38f"
+hash = "69eeeeec7efbd4907ffd6c838cb45ba4eed3a0ce109b1a569969d61fb36457b7"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/yassa_chicken.png"
-hash = "b4075997bce660ee76c9a6d277f205d54d623ced5fce468eed82b0505c424ebc"
+hash = "6706bea89c15ec28568ab16e61216de5285c849f316537876d61e07e85f47b2b"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/yenisei_upper_palaeolithic_afontova_gora_kokorevo_gathered_mix.png"
@@ -8766,7 +8766,7 @@ hash = "1130ad4d2493a5c7837b55d30a5a68183c99d291cc34afbbb5357eb7e7869df0"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/yenisei_upper_palaeolithic_afontova_gora_kokorevo_hide_bag_stew.png"
-hash = "47425545c6d1b9d8885bb6aff2ce432f302e49d6867195dc867988107fb30d8f"
+hash = "486a1eb97dd31a1a3f6b9790592210dfa45ff4e46a5f0cb079a5a37b2ff2eb92"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/yenisei_upper_palaeolithic_afontova_gora_kokorevo_pit_roast.png"
@@ -8786,7 +8786,7 @@ hash = "fb9f78599655f28d500299a288c3f7eb2d1b93a2bfd526f670408a36994d2302"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/yolk_sphere.png"
-hash = "7acd286fe5dbd4695a8b821b60b867a34749149bea239639ebb911574a59e76b"
+hash = "0b1b07f610da667533b19ea14a291f9b2f28770e52c36adeb1001f43c8e029c8"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/yorkshire_pudding.png"
@@ -8794,7 +8794,7 @@ hash = "6192c86c74cd45bde0ed510e94d698eb9c5a8e727e15fa4e3fd3ce37e75e86d1"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zaalouk.png"
-hash = "1877983a5aad4ebc63102f06925010332eaf220a58283b21d6fbca88d55ec4b8"
+hash = "260025aeb4fe62694edb4931abf7d513e9d0e00d48e229f3b38cafdcbc26f788"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zanzibar_pizza.png"
@@ -8802,11 +8802,11 @@ hash = "000f970f1cedcc7766e59e1bcddbe1f72dc23135377d618d9f07ec5daae5a268"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zarzian_gathered_mix.png"
-hash = "13d36cceb3985c7523fb668b43dadbfa0be84f5ee44a0a63ed9ed779acaaa0bc"
+hash = "722cc8acbecd999119862f01b5965d1ee1f1ffce751a8013ae4c73d218346e93"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zarzian_hide_bag_stew.png"
-hash = "cf29f49b075e582f412fd4a08e65863ff27ea1bf7576ed3409089021717e4746"
+hash = "6002bf7249cf9b0761df6812f32c6d730984c25adcf289c6d1e1ec39414748bd"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zarzian_pit_roast.png"
@@ -8818,7 +8818,7 @@ hash = "27ecb2ff7739d7cbd24d4fc115a7a3d90836ad0dc98ed50e0a2d691653e42b66"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zengpiyan_gathered_mix.png"
-hash = "1139bb43c9d5ad106a3578f60ef1318f36a31b664c0ea8212441d276d68dc90d"
+hash = "daf00bf15408866f2abfb398ab02618d09af8207387900120fb3e5d693e8af7e"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zengpiyan_hide_bag_stew.png"
@@ -8842,11 +8842,11 @@ hash = "114b75d015a185b85b0326da23ece83204ed4751a94db908f25884f7056acb70"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zhajiangmian.png"
-hash = "f0903afd783057d911e036f3c4a22dce5571ddc42a7a7e97df6f57e7fea76556"
+hash = "8c9a05d209603bbc3a1dceccb1175b0deaa16571c2640367ef994bbfcadfe3f3"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zharkoe_pot_roast.png"
-hash = "90b2a7a866ad9dd65d5346d0ab4e5c240635507373b8aa17b4f18fe064d5e7aa"
+hash = "86276e76900408de19bee77f9b8ab288c1c529e9bca5ca90913353fbd275ad81"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zongzi.png"
@@ -8854,7 +8854,7 @@ hash = "4b5ca9b1bb2c402b3ef5661b34446c57978b596136c7be9ad5f1f108113c7b67"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/zurek_sour_rye_soup.png"
-hash = "658b1a49afed8799783817459d761532a048fc2e92547325a048a3c62f00d492"
+hash = "ca9916d9b66e08f0ced923ff9aaa2aae5a1857998701ff6e9363ca276aa6b827"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dubhan_fuel_cell.png"
@@ -11890,7 +11890,7 @@ hash = "55d46827c236f3a1eac038e9186223d7f9bdd177faab17637822a8a544edb3ca"
 
 [[files]]
 file = "kubejs/assets/minecraft/sounds.json"
-hash = "0b00d4e6403ff18d2114722b5b86915a7a4bf075f8695077d85a95d614013e20"
+hash = "52a4f694beec28302929cb11d2e95be54bff39305415a5420f1baec90fcd82bc"
 
 [[files]]
 file = "kubejs/assets/mutantmonsters/lang/en_us.json"
@@ -26902,11 +26902,11 @@ hash = "c289e80c63dc8ae31bec523017ecefc52a8087c982d52f2d05a5e31877263688"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/cuisine_data.js"
-hash = "b5faba446e30f6d09d8162afdad48aebc15b6d6ee7edce7ee99b72552dce4323"
+hash = "7e28644d20ab836b179a2ad5ac9251c627933dee8e163098389888ff0eb8d228"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/cuisine_registry.js"
-hash = "1987f7e335175ccd8df3f4b472c1572cf1d069aa59434aac2db358014fdd9a79"
+hash = "e994b70a769fc12146a68185c4f43cef009944492f184ad16a2135fff16dc858"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/lorgchraoibhe_staves.js"
@@ -26914,7 +26914,7 @@ hash = "49d729ec0f92185200ebe23447e49eec4d860254f139db942cadacd84a94f4aa"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/mekanism_processing.js"
-hash = "30d198a5ea764ddae477ddc81a4be97941412670c8da8c9d74c8d30afc1ec296"
+hash = "2f52a0f3898230127a822744292ab96fc0c400dd9eb59301546ef3a573757ba6"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/recipes_261.js"
@@ -26922,7 +26922,7 @@ hash = "555dcdbd9e06d488d18316dafa6406121db4c92463a32aa6315920ea7428d507"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/unify_families.js"
-hash = "64991bffa80630dbaa13a593000023da345ecfb3c4039b5f4b2701c3f1fb5a18"
+hash = "542239ab7576447d1ea86d64ca3536096ec910c442816b9ef711603ef4f48120"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir_jewelry_gems.js"
@@ -26934,7 +26934,7 @@ hash = "ce29fedf15fc07062ef3c26ae729f70da87601e7b0669924b7d6ecce5354eb48"
 
 [[files]]
 file = "kubejs/startup_scripts/economy/items.js"
-hash = "82fbaa00c3a79b9ef92033c67f852bd5e13ed19ddd230c5bba76e6a47bc2971c"
+hash = "25bf8d2cbf34f4eb8d1f923816dc481228424098793c2e5b2bc9f1b16008a51a"
 
 [[files]]
 file = "kubejs/startup_scripts/speuran/age_gate_state.js"
