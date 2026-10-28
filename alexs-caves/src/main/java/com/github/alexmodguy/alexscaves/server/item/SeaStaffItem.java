@@ -94,7 +94,7 @@ public class SeaStaffItem extends Item {
 
     public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
         super.inventoryTick(stack, level, entity, slotArg);
-        boolean using = entity instanceof LivingEntity living && living.getUseItem().equals(stack);
+        boolean using = entity instanceof LivingEntity living && (living.isUsingItem() && living.getItemInHand(living.getUsedItemHand()) == stack);
         if (!level.isClientSide()) {
             if (ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.SEAPAIRING, stack) > 0 && !using) {
                 if (level.getRandom().nextFloat() < 0.02F) {

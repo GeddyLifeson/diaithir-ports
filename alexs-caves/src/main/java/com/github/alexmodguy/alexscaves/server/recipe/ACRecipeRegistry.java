@@ -14,4 +14,5 @@ public class ACRecipeRegistry {
 
     public static final DeferredHolder<RecipeType<?>, RecipeType<NuclearFurnaceRecipe>> NUCLEAR_FURNACE_TYPE = TYPE_DEF_REG.register("nuclear_furnace", () -> RecipeType.simple(Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "nuclear_furnace")));
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<NuclearFurnaceRecipe>> NUCLEAR_FURNACE = DEF_REG.register("nuclear_furnace", () -> NuclearFurnaceRecipe.SERIALIZER);
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<RecipeCaveMap>> CAVE_MAP = DEF_REG.register("cave_map", () -> RecipeCaveMap.SERIALIZER);
 }

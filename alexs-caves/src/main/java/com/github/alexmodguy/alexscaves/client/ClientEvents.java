@@ -41,9 +41,25 @@ public class ClientEvents {
         return DeepsightEffect.getIntensity(mc.player, (float) pt);
     }
 
+    private static float sampleBiome(Entity player, com.github.alexmodguy.alexscaves.server.level.biome.BiomeSampler.FloatFetcher fetcher) {
+        if (Minecraft.getInstance().options.biomeBlendRadius().get() == 0) {
+            return fetcher.fetch(player.level().getBiome(player.blockPosition()));
+        }
+        return com.github.alexmodguy.alexscaves.server.level.biome.BiomeSampler.sampleBiomesFloat(player.level(), player.position(), fetcher);
+    }
+
     @SubscribeEvent
     public static void clientLivingTick(EntityTickEvent.Post event) {
         if (!(event.getEntity() instanceof LivingEntity entity) || !entity.level().isClientSide()) return;
+        if (entity instanceof net.minecraft.client.player.LocalPlayer player) {
+            var inv = player.getInventory();
+            for (int i = 0; i < inv.getContainerSize(); i++) {
+                ItemStack stack = inv.getItem(i);
+                if (stack.getItem() instanceof com.github.alexmodguy.alexscaves.server.item.ClientTickingItem ticking) {
+                    ticking.clientInventoryTick(stack, player.level(), player);
+                }
+            }
+        }
         if (entity.hasEffect(ACEffectRegistry.DARKNESS_INCARNATE) && entity.isAlive()) {
             int trailPointer = ClientProxy.darknessTrailPointerMap.getOrDefault(entity, -1);
             Vec3 latest = entity.position();
@@ -63,7 +79,23 @@ public class ClientEvents {
 
     @SubscribeEvent
     public static void onRenderHand(RenderHandEvent event) {
-        if (Minecraft.getInstance().getCameraEntity() instanceof PossessesCamera) event.setCanceled(true);
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.getCameraEntity() instanceof PossessesCamera) {
+            event.setCanceled(true);
+            return;
+        }
+        if (mc.player != null) {
+            var ray = com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.extractFirstPersonHand(mc.player, event.getHand(), event.getPartialTick());
+            if (ray != null) {
+                var cam = mc.gameRenderer.getMainCamera();
+                boolean left = (event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND) == (mc.player.getMainArm() == net.minecraft.world.entity.HumanoidArm.LEFT);
+                org.joml.Vector3f start = new org.joml.Vector3f(left ? -0.42F : 0.42F, -0.3F, -0.9F);
+                cam.rotation().transform(start);
+                Vec3 camFrom = new Vec3(start.x, start.y, start.z);
+                Vec3 camTo = ray.to().subtract(cam.position());
+                com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.submit(event.getSubmitNodeCollector().order(3), event.getPoseStack(), camFrom, camTo, cam.rotation(), ray);
+            }
+        }
     }
 
     @SubscribeEvent
@@ -112,6 +144,18 @@ public class ClientEvents {
         if (far > 0) {
             event.setNearPlaneDistance(near);
             event.setFarPlaneDistance(far);
+            return;
+        }
+        // biome fog distance overrides (fog colors and sky colors are data-driven biome attributes in 26.1)
+        if (event.getType() == net.minecraft.world.level.material.FogType.WATER && AlexsCaves.CLIENT_CONFIG.biomeWaterFogOverrides.get()) {
+            float farness = sampleBiome(player, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry::getBiomeWaterFogFarness);
+            if (deepsight(mc)) farness *= 1.0F + 1.5F * deepsightAmount(mc, pt);
+            if (farness != 1.0F) event.scaleFarPlaneDistance(farness);
+        } else if (event.getType() == net.minecraft.world.level.material.FogType.ATMOSPHERIC && AlexsCaves.CLIENT_CONFIG.biomeSkyFogOverrides.get()) {
+            float nearness = sampleBiome(player, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry::getBiomeFogNearness);
+            float boss = AlexsCaves.PROXY.getPrimordialBossActiveAmount(pt);
+            if (boss > 0.0F) nearness *= (1.0F - boss * 0.75F);
+            if (Math.abs(nearness - 1.0F) > 0.01F) event.scaleNearPlaneDistance(nearness);
         }
     }
 

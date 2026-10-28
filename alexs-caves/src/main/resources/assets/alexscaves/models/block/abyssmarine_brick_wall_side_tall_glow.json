@@ -6,16 +6,39 @@
     "particle": "alexscaves:block/abyssmarine_bricks_glow"
   },
   "elements": [
-    {   "from": [ 5, 0, 0 ],
-      "to": [ 11, 16, 8 ],
+    {
+      "from": [
+        5,
+        0,
+        0
+      ],
+      "to": [
+        11,
+        16,
+        8
+      ],
       "shade": false,
       "faces": {
-        "down":  { "texture": "#wall", "cullface": "down" },
-        "up":    { "texture": "#wall", "cullface": "up"},
-        "north": { "texture": "#wall", "cullface": "north" },
-        "west":  { "texture": "#wall" },
-        "east":  { "texture": "#wall" }
-      }
+        "down": {
+          "texture": "#wall",
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#wall",
+          "cullface": "up"
+        },
+        "north": {
+          "texture": "#wall",
+          "cullface": "north"
+        },
+        "west": {
+          "texture": "#wall"
+        },
+        "east": {
+          "texture": "#wall"
+        }
+      },
+      "light_emission": 15
     }
   ]
 }

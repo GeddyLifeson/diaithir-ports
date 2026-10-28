@@ -24,7 +24,7 @@ import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
-public class GalenaGauntletItem extends Item {
+public class GalenaGauntletItem extends Item implements ClientTickingItem {
     public GalenaGauntletItem() {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).durability(400).rarity(Rarity.UNCOMMON));
     }
@@ -110,7 +110,16 @@ public class GalenaGauntletItem extends Item {
 
     public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
         super.inventoryTick(stack, level, entity, slotArg);
-        boolean using = entity instanceof LivingEntity living && living.getUseItem().equals(stack);
+        tickBoth(stack, level, entity);
+    }
+
+    @Override
+    public void clientInventoryTick(ItemStack stack, net.minecraft.world.level.Level level, Entity entity) {
+        tickBoth(stack, level, entity);
+    }
+
+    private void tickBoth(ItemStack stack, net.minecraft.world.level.Level level, Entity entity) {
+        boolean using = entity instanceof LivingEntity living && (living.isUsingItem() && living.getItemInHand(living.getUsedItemHand()) == stack);
         if (level.isClientSide()) {
             int useTime = getUseTime(stack);
             CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();

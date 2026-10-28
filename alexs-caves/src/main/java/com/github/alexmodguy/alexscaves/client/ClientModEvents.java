@@ -36,6 +36,12 @@ public class ClientModEvents {
     }
 
     @SubscribeEvent
+    public static void registerHudLayers(RegisterGuiLayersEvent event) {
+        event.registerAbove(net.neoforged.neoforge.client.gui.VanillaGuiLayers.HOTBAR, Identifier.fromNamespaceAndPath(com.github.alexmodguy.alexscaves.AlexsCaves.MODID, "meters"), com.github.alexmodguy.alexscaves.client.gui.ACHud::renderMeters);
+        event.registerAbove(net.neoforged.neoforge.client.gui.VanillaGuiLayers.PLAYER_HEALTH, Identifier.fromNamespaceAndPath(com.github.alexmodguy.alexscaves.AlexsCaves.MODID, "irradiated_hearts"), com.github.alexmodguy.alexscaves.client.gui.ACHud::renderIrradiatedHearts);
+    }
+
+    @SubscribeEvent
     public static void registerTooltipComponents(net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent event) {
         event.register(com.github.alexmodguy.alexscaves.server.item.tooltip.SackOfSatingTooltip.class, com.github.alexmodguy.alexscaves.client.render.item.tooltip.ClientSackOfSatingTooltip::new);
     }
@@ -48,6 +54,7 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void registerSpecialModels(net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent event) {
         event.register(Identifier.fromNamespaceAndPath(com.github.alexmodguy.alexscaves.AlexsCaves.MODID, "legacy_item"), com.github.alexmodguy.alexscaves.client.render.item.LegacyItemSpecialRenderer.CODEC);
+        event.register(Identifier.fromNamespaceAndPath(com.github.alexmodguy.alexscaves.AlexsCaves.MODID, "cave_map"), com.github.alexmodguy.alexscaves.client.render.item.CaveMapSpecialRenderer.CODEC);
     }
 
     @SubscribeEvent

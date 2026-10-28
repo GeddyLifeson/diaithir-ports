@@ -25,7 +25,7 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ResistorShieldItem extends ShieldItem {
+public class ResistorShieldItem extends ShieldItem implements ClientTickingItem {
 
     public ResistorShieldItem() {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).durability(1000).rarity(Rarity.UNCOMMON));
@@ -107,7 +107,16 @@ public class ResistorShieldItem extends ShieldItem {
 
     public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
         super.inventoryTick(stack, level, entity, slotArg);
-        if (getUseTime(stack) != 0 && entity instanceof LivingEntity living && !living.getUseItem().equals(stack)) {
+        tickBoth(stack, level, entity);
+    }
+
+    @Override
+    public void clientInventoryTick(ItemStack stack, net.minecraft.world.level.Level level, Entity entity) {
+        tickBoth(stack, level, entity);
+    }
+
+    private void tickBoth(ItemStack stack, net.minecraft.world.level.Level level, Entity entity) {
+        if (getUseTime(stack) != 0 && entity instanceof LivingEntity living && !(living.isUsingItem() && living.getItemInHand(living.getUsedItemHand()) == stack)) {
             setUseTime(stack, 0);
             CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
             tag.putInt("PrevUseTime", 0);

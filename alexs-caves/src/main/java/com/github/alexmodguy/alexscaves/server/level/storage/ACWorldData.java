@@ -125,12 +125,12 @@ public class ACWorldData extends SavedData {
         this.firstPrimordialBossDefeatTimestamp = time;
     }
 
-    /** The cave map biome search worker was cut from the port (WorldWorkerManager is gone); maps stay empty. */
     public void fillOutCaveMap(UUID uuid, ItemStack map, ServerLevel serverLevel, BlockPos center, Player player){
+        com.github.alexmodguy.alexscaves.server.level.map.CaveMapWorkers.add(new com.github.alexmodguy.alexscaves.server.level.map.CaveBiomeMapWorldWorker(map, serverLevel, center, player, uuid));
     }
 
     public boolean isCaveMapTicking(){
-        return false;
+        return com.github.alexmodguy.alexscaves.server.level.map.CaveMapWorkers.isActive();
     }
 
     public static void clearLoadedChunksCallback(ServerLevel serverLevel, TicketHelper ticketHelper) {

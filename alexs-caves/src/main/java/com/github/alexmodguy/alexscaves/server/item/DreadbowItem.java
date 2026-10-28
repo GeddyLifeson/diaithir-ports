@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTags {
+public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTags , ClientTickingItem {
 
     public DreadbowItem() {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().rarity(ACItemRegistry.getRarityDemonic()).durability(500));
@@ -94,7 +94,16 @@ public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTa
 
     public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
         super.inventoryTick(stack, level, entity, slotArg);
-        boolean using = entity instanceof LivingEntity living && living.getUseItem().equals(stack);
+        tickBoth(stack, level, entity);
+    }
+
+    @Override
+    public void clientInventoryTick(ItemStack stack, net.minecraft.world.level.Level level, Entity entity) {
+        tickBoth(stack, level, entity);
+    }
+
+    private void tickBoth(ItemStack stack, net.minecraft.world.level.Level level, Entity entity) {
+        boolean using = entity instanceof LivingEntity living && (living.isUsingItem() && living.getItemInHand(living.getUsedItemHand()) == stack);
         int useTime = getUseTime(stack);
         if (level.isClientSide()) {
             CompoundTag tag = getCustomData(stack);

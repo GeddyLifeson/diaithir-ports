@@ -43,7 +43,13 @@ public class ACPotionEffectLayer<S extends LivingEntityRenderState, M extends En
         public float width, height;
         public int waterColor = 0x3F76E4;
         public float ageInTicks;
+        public com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.Ray ray;
+        public net.minecraft.world.phys.Vec3[] trail;
+        public net.minecraft.world.phys.Vec3 entityPos = net.minecraft.world.phys.Vec3.ZERO;
+        public net.minecraft.world.phys.Vec3 trailHeight = net.minecraft.world.phys.Vec3.ZERO;
     }
+
+    private static final Identifier TRAIL_TEXTURE = Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/particle/teletor_trail.png");
 
     private final RenderLayerParent<S, M> parent;
 
@@ -59,9 +65,18 @@ public class ACPotionEffectLayer<S extends LivingEntityRenderState, M extends En
         boolean bubbled = (living.hasEffect(ACEffectRegistry.BUBBLED) || AlexsCaves.PROXY.hasBubbledEffectVisual(living.getId())) && living.isAlive();
         boolean dark = living.hasEffect(ACEffectRegistry.DARKNESS_INCARNATE) && AlexsCaves.CLIENT_CONFIG.radiationGlowEffect.get() && living.isAlive();
         boolean sugar = living.hasEffect(ACEffectRegistry.SUGAR_RUSH);
-        if (irradiated || bubbled || dark || sugar) {
+        float pt0 = state.partialTick;
+        var ray = com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.extract(living, pt0, false);
+        if (irradiated || bubbled || dark || sugar || ray != null) {
             d = new Data();
             float pt = state.partialTick;
+            d.ray = ray;
+            if (dark) {
+                d.trail = new net.minecraft.world.phys.Vec3[60];
+                for (int i = 0; i < 60; i++) d.trail[i] = AlexsCaves.PROXY.getDarknessTrailPosFor(living, i + 5, pt);
+                d.entityPos = living.getPosition(pt);
+                d.trailHeight = new net.minecraft.world.phys.Vec3(0, living.getBbHeight() * 0.8F, 0);
+            }
             if (irradiated) d.irradiated = living.getEffect(ACEffectRegistry.IRRADIATED).getAmplifier() + 1;
             d.bubbled = bubbled;
             if (dark) d.darkness = DarknessIncarnateEffect.getIntensity(living, pt, 25F);
@@ -104,9 +119,42 @@ public class ACPotionEffectLayer<S extends LivingEntityRenderState, M extends En
         if (d.darkness > 0 && texture != null) {
             collector.order(2).submitModel(model, state, poseStack, RenderTypes.entityTranslucent(texture), 0, overlay, ARGB.colorFromFloat(d.darkness, 0F, 0F, 0F), null, state.outlineColor, null);
         }
+        if (d.ray != null) {
+            net.minecraft.world.phys.Vec3 cam = net.minecraft.client.Minecraft.getInstance().gameRenderer.getMainCamera().position();
+            com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.submit(collector.order(3), poseStack, d.ray.from().subtract(cam), d.ray.to().subtract(cam), null, d.ray);
+        }
+        if (d.trail != null && d.darkness > 0) {
+            submitTrail(collector, poseStack, d, state, light);
+        }
         if (d.sugarRush && model instanceof HumanoidModel<?>) {
             collector.order(1).submitModel(model, state, poseStack, RenderTypes.entityCutout(TEXTURE_SUGAR_RUSH), light, overlay, -1, null, state.outlineColor, null);
         }
+    }
+
+    private void submitTrail(SubmitNodeCollector collector, PoseStack poseStack, Data d, S state, int light) {
+        net.minecraft.world.phys.Vec3 cam = net.minecraft.client.Minecraft.getInstance().gameRenderer.getMainCamera().position();
+        Matrix4f inv = new Matrix4f(poseStack.last().pose()).invert();
+        net.minecraft.world.phys.Vec3 offset = new net.minecraft.world.phys.Vec3(0, d.height * 0.5F, 0);
+        float h = (float) d.trailHeight.y;
+        int color = ARGB.colorFromFloat(Math.min(1F, d.darkness), 0F, 0F, 0F);
+        collector.order(2).submitCustomGeometry(poseStack, RenderTypes.entityTranslucent(TRAIL_TEXTURE), (pose, vc) -> {
+            net.minecraft.world.phys.Vec3 prev = d.entityPos.add(offset).subtract(cam);
+            int n = d.trail.length;
+            for (int i = 0; i < n; i++) {
+                net.minecraft.world.phys.Vec3 cur = d.trail[i].add(offset).subtract(cam);
+                float u1 = i / (float) n, u2 = u1 + 1F / n;
+                float[][] pts = {{(float) prev.x, (float) prev.y - h, (float) prev.z, u1, 1F}, {(float) cur.x, (float) cur.y - h, (float) cur.z, u2, 1F},
+                        {(float) cur.x, (float) cur.y + h, (float) cur.z, u2, 0F}, {(float) prev.x, (float) prev.y + h, (float) prev.z, u1, 0F}};
+                for (int pass = 0; pass < 2; pass++) {
+                    for (int k = 0; k < 4; k++) {
+                        float[] q = pts[pass == 0 ? k : 3 - k];
+                        org.joml.Vector3f p = inv.transformPosition(new org.joml.Vector3f(q[0], q[1], q[2]));
+                        vc.addVertex(pose, p.x, p.y, p.z).setColor(color).setUv(q[3], q[4]).setOverlay(OverlayTexture.NO_OVERLAY).setLight(light).setNormal(pose, 0F, 1F, 0F);
+                    }
+                }
+                prev = cur;
+            }
+        });
     }
 
     private static void renderBubble(PoseStack poseStack, VertexConsumer consumer, float size, int packedLight, float textureScaleXZ, float textureScaleY, float uvOffset, boolean water, int waterColor) {

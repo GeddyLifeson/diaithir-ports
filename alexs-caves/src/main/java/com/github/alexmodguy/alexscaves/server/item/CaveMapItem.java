@@ -86,6 +86,16 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
         return customData != null ? customData.copyTag() : new CompoundTag();
     }
 
+    /** Mirrors the Loading/Filled state into custom_model_data flags so the item model definition can switch on it. */
+    public static void applyModelFlags(ItemStack stack) {
+        boolean loading = isLoading(stack);
+        boolean filled = isFilled(stack) && !loading;
+        net.minecraft.world.item.component.CustomModelData current = stack.get(DataComponents.CUSTOM_MODEL_DATA);
+        if (current == null || current.getBoolean(0) == null || current.getBoolean(0) != loading || current.getBoolean(1) == null || current.getBoolean(1) != filled) {
+            stack.set(DataComponents.CUSTOM_MODEL_DATA, new net.minecraft.world.item.component.CustomModelData(List.of(), List.of(loading, filled), List.of(), List.of()));
+        }
+    }
+
     public static boolean isLoading(ItemStack stack) {
         CompoundTag tag = getCustomTag(stack);
         return tag != null && tag.getBooleanOr("Loading", false);
@@ -107,6 +117,7 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
     public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
         boolean held = slotArg == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         super.inventoryTick(stack, level, entity, slotArg);
+        applyModelFlags(stack);
         if (!level.isClientSide() && held && !isLoading(stack) && isFilled(stack) && (entity.tickCount + entity.getId()) % CHECK_REGEN_TICKS == 0 && entity instanceof Player) {
             BlockPos biomePos = getBiomeBlockPos(stack);
             double xD = biomePos.getX() - entity.blockPosition().getX();
