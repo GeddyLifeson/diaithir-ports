@@ -33690,7 +33690,7 @@ hash = "c06f24d0c57bf7ead1c5668e9749c430168742d127d54fea09226924fc49a54b"
 
 [[files]]
 file = "kubejs/server_scripts/drinks/brewing.js"
-hash = "43bb2f2294195d4ddd822c68f3bef2643b98c94e1505ccbca7e365283298d108"
+hash = "b5c277369b3dc3884223ecd24f7dff47abc130fd59957a2c49ce8364e12ffd7d"
 
 [[files]]
 file = "kubejs/server_scripts/drinks/effects.js"
@@ -33862,7 +33862,7 @@ hash = "c06f24d0c57bf7ead1c5668e9749c430168742d127d54fea09226924fc49a54b"
 
 [[files]]
 file = "kubejs/startup_scripts/drinks/items.js"
-hash = "717a3f2fd0da29442952c47320cdac551a4b6c0784f58a6bf0858a161e678591"
+hash = "e7064c8119324c97f6e1f5450b8c2f479e6639c1bdf2f371201dd4218f18abfe"
 
 [[files]]
 file = "kubejs/startup_scripts/earth_timeline_ns.js"

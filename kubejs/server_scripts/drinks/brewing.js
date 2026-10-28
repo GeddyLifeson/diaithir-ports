@@ -382,6 +382,8 @@ ServerEvents.loaded(event => {
   if (raw) {
     try { Object.keys(raw).forEach(k => { drkState[k] = { out: drkMigrated(String(raw[k].out)), count: Number(raw[k].count), end: Number(raw[k].end), start: Number(raw[k].start || 0), cap: Number(raw[k].cap || 0), timed: !!raw[k].timed, abvOut: raw[k].abvOut === undefined ? undefined : Number(raw[k].abvOut), aged: Number(raw[k].aged || 0) } }) } catch (e) { drkState = {} }
   }
+  let noSeed = DRINK_CROPS.filter(c => !Item.exists(DRK_ITEM + c[0] + '_seeds'))
+  if (noSeed.length) console.warn('[drinks] crops without a seed item: ' + noSeed.map(c => c[0]).join(','))
   let recipes = drkAllRecipes()
   let bad = recipes.filter(r => !Item.exists(r.out))
   let missing = {}
