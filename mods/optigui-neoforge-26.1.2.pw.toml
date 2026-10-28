@@ -3,6 +3,6 @@ filename = "optigui-neoforge-26.1.2.jar"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1/client/optigui-neoforge-26.1.2.jar"
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-ships/client/optigui-neoforge-26.1.2.jar"
 hash-format = "sha256"
 hash = "992c47772530fa40e7aa69ac04eec61415aa085007cc627421b40a6e002998c2"

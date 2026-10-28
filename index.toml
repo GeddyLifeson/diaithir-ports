@@ -34931,7 +34931,7 @@ hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "c654d982312a1b0d14ea74e4e708ce851c92a887ed3cc060751ffd291103ca78"
+hash = "507b8490e7d341ac151192e48e43a8119d318e99c896703d0cde3fb7d85db1fc"
 metafile = true
 
 [[files]]
@@ -34952,7 +34952,7 @@ hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "87cdc97a018c26bec1fc306376f97605b7d5d0f78796f9f09b435a2e1b22ebbe"
+hash = "f7d0fa2904b14b867c872c854c8b87f0107417c9918b3c368baa92f756d57fc4"
 metafile = true
 
 [[files]]
@@ -34986,6 +34986,10 @@ hash = "35e6386a2edb9a69cd5dfcb144b279783233072aff82050047a53b7c72fe42e9"
 [[files]]
 file = "mods/diaithir-potions-neoforge-26.1.2-0.1.0.jar"
 hash = "a829082ade2b600abe1cb330c8774f30327da20c994b6cd5c4386ad12c16b3ff"
+
+[[files]]
+file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.1.jar"
+hash = "9680a2167c36661fb3f117ac2a212d8083a580797afe19f858863124993071f3"
 
 [[files]]
 file = "mods/diaithir-storagenet-neoforge-26.1.2-1.0.0.jar"
@@ -35668,7 +35672,7 @@ metafile = true
 
 [[files]]
 file = "mods/optigui-neoforge-26.1.2.pw.toml"
-hash = "d28fe3ede209119d3d9dd2bfffaf91736a9d9a43f07a10701a5946cf67047808"
+hash = "d9cf85be0028b54f89b92d9d6766af8c802f920cb4f429013b554b887758e1c8"
 metafile = true
 
 [[files]]
@@ -36065,7 +36069,7 @@ metafile = true
 
 [[files]]
 file = "mods/villager-trading-plus-neoforge-26.1.2-1.3.0.pw.toml"
-hash = "98a5b208e17d29b846780c362a8311bfab21d1ced7f9eb5e68c578dbdc626361"
+hash = "131e57da9f9219be440e88e8f25ce91cc64b628d80c691fe1b3988d305ae43ba"
 metafile = true
 
 [[files]]
@@ -36134,10 +36138,10 @@ preserve = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "f13498d5f531e9fcb34b105494472e28e57974ab332c9b4ffed4978976c5d5d1"
+hash = "86cc3e610e8a042378d2049043b2fc31dfe964374a54da79f0cf04108780c9c7"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "dc20ded3a7d6e42f9c98b9fe5121d78323fce30d773c031ea7eceb4c50684cf6"
+hash = "ee2efeb9648901a33a11e21590df82ccf0ab0f1b78c2becfda672d851e604398"
 metafile = true

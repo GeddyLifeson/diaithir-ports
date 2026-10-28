@@ -17,6 +17,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | actuallyadditions-1.3.26+mc26.1.2.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/actuallyadditions) |
 | blockui-1.0.0-diaithir.jar | GPL3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/blockui) |
 | diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.4.jar | Diaithir engine, ours; free to play with the pack (built from DiaithirRPG PR #182, branch claude/project-thread-golhx6, engine/) | not published |
+| diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.1.jar | Valkyrien Skies 2 port with Eureka (LGPL-3.0-only AND Apache-2.0; ours, from diaithir-ports PR #71; Eureka notice NOTICE-Eureka) | source in PR #71 (diaithir-ships/) |
 | diaithir-compat-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat) |
 | diaithir-nemesis-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis) |
 | kaleidoscope-tavern-neoforge-26.1.2-1.1.2-diaithir.1.jar | BSD-3-Clause (code) + CC BY-NC-SA 4.0 (assets), as declared in the jar and LICENSE-CODE / LICENSE-ASSETS in the source; non-commercial, share-alike, attribution kept; modified build (26.1.2 port) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/diaithir-brewing/kaleidoscope-tavern) |
