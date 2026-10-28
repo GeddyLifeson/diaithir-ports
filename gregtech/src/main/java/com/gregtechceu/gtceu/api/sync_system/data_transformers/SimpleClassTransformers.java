@@ -59,9 +59,17 @@ public class SimpleClassTransformers {
     public static class ComponentTransformer implements ValueTransformer<Component> {
 
         @Override
-        public Tag serializeNBT(Component value, TransformerContext<Component> context) { return null; /* ported stub */ }
+        public Tag serializeNBT(Component value, TransformerContext<Component> context) {
+            return net.minecraft.network.chat.ComponentSerialization.CODEC
+                    .encodeStart(context.lookup().createSerializationContext(NbtOps.INSTANCE), value)
+                    .result().orElse(StringTag.valueOf(""));
+        }
 
         @Override
-        public @Nullable Component deserializeNBT(Tag tag, TransformerContext<Component> context) { return null; /* ported stub */ }
+        public @Nullable Component deserializeNBT(Tag tag, TransformerContext<Component> context) {
+            return net.minecraft.network.chat.ComponentSerialization.CODEC
+                    .parse(context.lookup().createSerializationContext(NbtOps.INSTANCE), tag)
+                    .result().orElse(null);
+        }
     }
 }

@@ -57,6 +57,8 @@ public final class GTSelfTest {
         level = serverLevel;
         base = origin;
         ticks = 0;
+        for (int dx = -1; dx <= 1; dx++) for (int dz = -1; dz <= 1; dz++)
+            serverLevel.setChunkForced((origin.getX() >> 4) + dx, (origin.getZ() >> 4) + dz, true);
         // Part A: powered macerator, items inserted directly
         place(base, GTMachines.MACERATOR[GTValues.LV].getBlock().defaultBlockState());
         var a = machine(base);

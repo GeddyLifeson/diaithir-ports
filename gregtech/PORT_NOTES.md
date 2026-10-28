@@ -4,25 +4,26 @@ Port of upstream GregTech CEu Modern (1.21.1, 8.0.0) to NeoForge 26.1.2.116 / Mi
 
 ## Status
 
-- `./gradlew compileJava` succeeds.
-- `./gradlew runServer` reaches `Done (`. All registries fill: about 9,200 `gtceu` items, blocks, block entities, machines, recipe types, sounds and materials.
-- Not play-ready. The gaps below mean most crafting, loot, UI and rendering do not work yet. Treat this as a base for further porting.
-- Client was not booted or screenshotted in this pass.
+- `./gradlew compileJava` succeeds and `./gradlew runServer` reaches `Done (` in a few seconds of server time after data load.
+- Server side works without mixins: a dynamic in-memory data pack (`data/pack/`) generates about 28,000 GT recipes, dynamic tags and loot tables (ores with silk touch and secondary drops, material blocks, cables, pipes, machines, surface rocks). `GTRecipePostProcessor` applies recipe removals and fills the GT recipe lookup.
+- `/gtceu selftest` (admin) builds a diesel combustion generator, a tin cable and a macerator and checks that the machine receives power and produces output. It passes.
+- Client was not booted or screenshotted yet. Rendering and ModularUI screens are the main unknown.
 
 ## Not working or stubbed
 
-Methods whose bodies could not be ported quickly carry a `/* ported stub */` marker (about 300 files; `grep -rl "ported stub" src`). They compile and return null, false, 0 or do nothing.
+Methods whose bodies could not be ported quickly carry a `/* ported stub */` marker (`grep -rl "ported stub" src`). They compile and return null, false, 0 or do nothing.
 
-- Mixins: the mixin list is empty. Everything mixin-based needs events, access transformers or reload listeners.
-- Recipes: GT machine and crafting recipes are not loaded. The dynamic data pack, post-recipe processing (recipe removal, clone and proxy recipes, RecipeMap rebuild) is not ported. Only vanilla and other mods' recipes load. `GTRecipeType.toGTRecipe` (vanilla to GT proxy recipes) is stubbed.
-- Loot tables and dynamic tags: generation (MixinHelpers) is stubbed. Ore blocks do not drop, the `miner_pipe` loot table is invalid and the `gtceu:tool` global loot modifier does not decode.
-- UI: ModularUI / LDLib screens, widgets, and `ClientLevelAccess`-style client helpers are stubbed or missing.
-- Rendering: block and item tinting, render layers, block models and blockstate generation, armor models and equipment assets, fluid tint, item model predicates.
-- Datagen: stubbed.
-- Gameplay: cauldron washing of dusts, potion fluid (the `c:potion` tag logs missing references), world map and prospecting client cache (`ServerCache` is a no-op), item and block tooltips, food components, hazard and armor extras, `Tier` replacement (`compat/Tier`, `compat/SimpleTier`).
+- Mixins: the mixin list is empty. Behaviour is replaced by events, access transformers (RecipeManager.recipes, ReloadableServerResources.newComponents, MappedRegistry tag creation) and reload listeners.
+- Lost behaviour: tool relocate/magnetic mined blocks, vanilla to GT proxy recipes (`GTRecipeType.toGTRecipe`), clone recipes, dungeon loot, boats, cauldron washing, KubeJS events.
+- Item capabilities (drums, quantum tanks, buckets) are not registered. `ChemicalHelper.getMaterialInfo` is a stub, so recycling and decomposition recipes are incomplete.
+- Recipe loading logs about 25,000 "can't be placed due to empty ingredients" warnings because tag ingredients are unbound at that point. This only affects recipe book display.
+- UI: ModularUI / LDLib screens and client helpers are stubbed or missing.
+- Rendering: block and item tinting, render layers, models, armor models, fluid tint, item model predicates are untested.
+- Datagen is stubbed.
+- Gameplay: potion fluid (`c:potion` tag logs missing references), prospecting client cache, tooltips, food components, hazard and armor extras.
 - Integrations removed or stubbed: JEI, EMI, REI, AE2, Create, FTB Quests, FTB Teams, Argonauts, Curios, KubeJS, CraftTweaker, Jade, TOP.
-- Recipe ingredient placeholders: empty ingredients are not allowed in 26.1, so `SerializerIngredient.EMPTY` and `SerializerFluidIngredient.EMPTY` hold a barrier or water placeholder.
-- `TOOL_ITEMS` and `ARMOR_ITEMS` tables are hash tables filled on generation instead of fixed arrays.
+- Empty ingredients are not allowed in 26.1, so `SerializerIngredient.EMPTY` and `SerializerFluidIngredient.EMPTY` hold a barrier or water placeholder.
+- `TOOL_ITEMS` and `ARMOR_ITEMS` are hash tables filled on generation instead of fixed arrays.
 
 ## Added
 
