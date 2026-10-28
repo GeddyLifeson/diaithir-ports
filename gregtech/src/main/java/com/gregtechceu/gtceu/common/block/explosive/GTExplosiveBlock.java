@@ -87,6 +87,7 @@ public abstract class GTExplosiveBlock extends Block implements com.gregtechceu.
 
     
     
+    
     public void wasExploded(Level level, BlockPos pos, Explosion explosion) {  /* ported stub */ }
 
     @Override

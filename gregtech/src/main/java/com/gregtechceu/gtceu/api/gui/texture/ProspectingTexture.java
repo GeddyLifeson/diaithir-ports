@@ -124,6 +124,7 @@ public class ProspectingTexture extends AbstractTexture {
 
     
     
+    
     public void load(ResourceManager resourceManager) throws IOException {  /* ported stub */ }
 
     public void setDarkMode(boolean darkMode) {

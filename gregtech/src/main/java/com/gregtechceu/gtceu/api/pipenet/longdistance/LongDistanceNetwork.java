@@ -422,6 +422,7 @@ public class LongDistanceNetwork {
         @NotNull
         
         
+        
         public CompoundTag save(@NotNull CompoundTag nbtTagCompound, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
         public LevelAccessor getWorld() {

@@ -67,6 +67,14 @@ public class GTCommands {
     // spotless:off
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext buildContext) {
         dispatcher.register(literal("gtceu")
+                .then(literal("selftest")
+                        .requires(ctx -> com.gregtechceu.gtceu.compat.PermCompat.hasPermission(ctx, LEVEL_ADMINS))
+                        .executes(context -> {
+                            var src = context.getSource();
+                            GTSelfTest.start(src.getLevel(), BlockPos.containing(src.getPosition()));
+                            src.sendSuccess(() -> Component.literal("GT selftest started, result in log after 200 ticks"), false);
+                            return 1;
+                        }))
                 .then(literal("ui_editor")
                         .requires(ctx -> com.gregtechceu.gtceu.compat.PermCompat.hasPermission(ctx, LEVEL_ADMINS))
                         .executes(context -> {

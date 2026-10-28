@@ -47,6 +47,7 @@ public class GTArmorItem extends ArmorItem {
 
 
     
+    
     public Component getDescription() {
         return Component.translatable(getDescriptionId(), material.getLocalizedName());
     }

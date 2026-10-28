@@ -146,6 +146,7 @@ public class LampBlock extends Block {
 
     
     
+    
     public void appendHoverText(ItemStack stack, Item.TooltipContext pContext, List<Component> tooltip,
                                 TooltipFlag flag) {  /* ported stub */ }
 

@@ -36,6 +36,7 @@ public class GTBucketItem extends BucketItem {
 
 
     
+    
     public Component getDescription() {
         Component materialName = material.getLocalizedName();
         return Component.translatable("item.gtceu.bucket", Component.translatable(this.langKey, materialName));

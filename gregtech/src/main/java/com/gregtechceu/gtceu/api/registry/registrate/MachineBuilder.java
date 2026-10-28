@@ -754,6 +754,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
 
     
     
+    
     public DEFINITION createObject() {
         return register();
     }

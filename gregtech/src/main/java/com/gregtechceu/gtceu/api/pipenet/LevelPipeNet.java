@@ -140,5 +140,14 @@ public abstract class LevelPipeNet<NodeDataType, T extends PipeNet<NodeDataType>
 
     
     
-    public CompoundTag save(CompoundTag compound, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    
+    public CompoundTag save(CompoundTag compound, HolderLookup.Provider provider) {
+        ListTag allPipeNets = new ListTag();
+        for (T pipeNet : pipeNets) {
+            CompoundTag pNetTag = pipeNet.serializeNBT(provider);
+            allPipeNets.add(pNetTag);
+        }
+        compound.put("PipeNets", allPipeNets);
+        return compound;
+    }
 }

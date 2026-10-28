@@ -81,6 +81,7 @@ public class GTToolItem extends TieredItem implements IGTTool {
 
 
     
+    
     public Component getDescription() {
         return Component.translatable(toolType.getUnlocalizedName(), material.getLocalizedName());
     }

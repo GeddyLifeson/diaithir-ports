@@ -103,6 +103,7 @@ public class VirtualEnderRegistry extends SavedData {
     @NotNull
     
     
+    
     public final CompoundTag save(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) { return null; /* ported stub */ }
 
     @Override

@@ -36,6 +36,7 @@ public class MaterialPipeBlockItem extends PipeBlockItem {
     }
 
     
+    
     public Component getDescription() {
         return this.getBlock().getName();
     }

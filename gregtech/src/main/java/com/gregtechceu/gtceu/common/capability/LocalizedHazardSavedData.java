@@ -284,6 +284,7 @@ public class LocalizedHazardSavedData extends SavedData {
     @NotNull
     
     
+    
     public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     public record HazardZone(Set<BlockPos> blocks, boolean canSpread,

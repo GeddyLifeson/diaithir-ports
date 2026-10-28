@@ -233,6 +233,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
     @NotNull
     
     
+    
     public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     @Accessors(fluent = true)

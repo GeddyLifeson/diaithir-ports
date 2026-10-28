@@ -204,6 +204,7 @@ public class GTRecipe implements Recipe<RecipeInput> {
 
     
     
+    
     public boolean canCraftInDimensions(int pWidth, int pHeight) { return false; /* ported stub */ }
 
     

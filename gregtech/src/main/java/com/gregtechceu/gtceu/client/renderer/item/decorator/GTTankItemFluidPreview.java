@@ -77,5 +77,6 @@ public class GTTankItemFluidPreview implements IItemDecorator {
     }
 
     
+    @Override
     public boolean render(net.minecraft.client.gui.GuiGraphicsExtractor guiGraphics, Font font, ItemStack itemStack, int x, int y) { return false; /* ported stub */ }
 }

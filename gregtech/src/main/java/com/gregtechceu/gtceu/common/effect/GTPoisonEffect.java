@@ -13,6 +13,7 @@ public class GTPoisonEffect extends MobEffect {
 
     
     
+    
     public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) { return false; /* ported stub */ }
 
     @Override

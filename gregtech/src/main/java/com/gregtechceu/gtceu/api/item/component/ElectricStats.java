@@ -259,6 +259,7 @@ public class ElectricStats implements IInteractionItem, ISubItemHandler, IAddInf
     }
 
     
+    
     public boolean render(GuiGraphics guiGraphics, Font font, ItemStack stack, int xOffset, int yOffset) {
         var electricItem = GTCapabilityHelper.getElectricItem(stack);
         if (electricItem != null) {

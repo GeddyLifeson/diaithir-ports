@@ -325,7 +325,12 @@ public class MetaMachineBlock extends Block implements com.gregtechceu.gtceu.api
 
     
     
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) { return (int)0; /* ported stub */ }
+    @Override
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, net.minecraft.core.Direction direction) {
+        var machine = MetaMachine.getMachine(level, pos);
+        if (machine == null) return 0;
+        return machine.getAnalogOutputSignal();
+    }
 
     /////////
 
