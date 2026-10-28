@@ -254,8 +254,13 @@ public final class SelfTest {
                 return raining ? (wet >= dry ? "ok dry " + dry + " wet " + wet : "BAD dry " + dry + " wet " + wet) : "ok (no rain here, bonus path not reached)";
             }
             case "skyhunter" -> {
-                z.setOnGround(false); z.setDeltaMovement(0, 0.3, 0);
-                float h0 = z.getHealth(); z.hurtServer(level, melee, 4); return "ok dealt " + (h0 - z.getHealth());
+                // fresh target: the shared zombie may already be dying after the active ability, and a kill inside LivingDamageEvent.Pre throws
+                net.minecraft.world.entity.monster.Creeper c = EntityType.CREEPER.create(level, EntitySpawnReason.COMMAND);
+                c.setPos(base.x, base.y, base.z + 3); c.setNoAi(true); level.addFreshEntity(c); plain(c);
+                try {
+                    c.setOnGround(false); c.setDeltaMovement(0, 0.3, 0);
+                    float h0 = c.getHealth(); c.hurtServer(level, melee, 4); return "ok dealt " + (h0 - c.getHealth());
+                } finally { c.discard(); }
             }
             case "starcrit" -> {
                 float h0 = z.getHealth(), mx = z.getMaxHealth();
