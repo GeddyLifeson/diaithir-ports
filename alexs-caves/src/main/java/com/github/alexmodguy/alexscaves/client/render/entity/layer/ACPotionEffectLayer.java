@@ -121,7 +121,7 @@ public class ACPotionEffectLayer<S extends LivingEntityRenderState, M extends En
         }
         if (d.ray != null) {
             net.minecraft.world.phys.Vec3 cam = net.minecraft.client.Minecraft.getInstance().gameRenderer.getMainCamera().position();
-            com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.submit(collector.order(3), poseStack, d.ray.from().subtract(cam), d.ray.to().subtract(cam), null, d.ray);
+            com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.submit(collector.order(3), poseStack, d.ray.from().subtract(cam), d.ray.to().subtract(cam), d.ray);
         }
         if (d.trail != null && d.darkness > 0) {
             submitTrail(collector, poseStack, d, state, light);

@@ -71,11 +71,22 @@ public class RaygunBeam {
     }
 
     /**
-     * Submits the beam. camFrom/camTo are camera-relative world points; viewRot (nullable) is the camera rotation to undo when the
-     * pose stack lives in view space (first-person hand). The pose stack's own matrix is inverted so the geometry lands where the points say.
+     * Submits the beam as custom geometry. camFrom/camTo are camera-relative world points. The pose stack's own matrix is inverted
+     * so the geometry lands where the points say (pose stacks in entity layers map local space to camera-relative space).
      */
-    public static void submit(OrderedSubmitNodeCollector collector, PoseStack poseStack, Vec3 camFrom, Vec3 camTo, Quaternionf viewRot, Ray ray) {
+    public static void submit(OrderedSubmitNodeCollector collector, PoseStack poseStack, Vec3 camFrom, Vec3 camTo, Ray ray) {
         Matrix4f inv = new Matrix4f(poseStack.last().pose()).invert();
+        collector.submitCustomGeometry(poseStack, ACRenderTypes.getRaygunRay(ray.blue() ? BLUE_RAY : RAY, false), (pose, vc) -> emit(vc, pose, inv, camFrom, camTo, ray));
+    }
+
+    /** Draws the beam straight into a buffer source with a pose stack that already carries the camera rotation (level render stage). */
+    public static void renderImmediate(PoseStack poseStack, net.minecraft.client.renderer.MultiBufferSource.BufferSource source, Vec3 camFrom, Vec3 camTo, Ray ray) {
+        var type = ACRenderTypes.getRaygunRay(ray.blue() ? BLUE_RAY : RAY, false);
+        emit(source.getBuffer(type), poseStack.last(), new Matrix4f(), camFrom, camTo, ray);
+        source.endBatch(type);
+    }
+
+    private static void emit(VertexConsumer vc, PoseStack.Pose pose, Matrix4f inv, Vec3 camFrom, Vec3 camTo, Ray ray) {
         Vec3 axisVec = camTo.subtract(camFrom);
         float length = (float) axisVec.length();
         if (length < 0.05F) return;
@@ -92,23 +103,20 @@ public class RaygunBeam {
         float w = 1.3F;
         Vector3f start = new Vector3f((float) camFrom.x, (float) camFrom.y, (float) camFrom.z);
         Vector3f end = new Vector3f(start).fma(length, a);
-        Identifier tex = ray.blue() ? BLUE_RAY : RAY;
-        Quaternionf inverseView = viewRot == null ? null : new Quaternionf(viewRot).conjugate();
-        collector.submitCustomGeometry(poseStack, ACRenderTypes.getRaygunRay(tex, false), (pose, vc) -> {
-            Vector3f[] tri = new Vector3f[]{
-                    start, new Vector3f(end).fma(-w, u2), new Vector3f(end).fma(w, u2),
-                    start, new Vector3f(end).fma(w, v2), new Vector3f(end).fma(-w, v2)};
-            float[][] uv = {{0.5F, v0}, {0F, v1}, {1F, v1}, {0.5F, v0}, {1F, v1}, {0F, v1}};
-            for (int t = 0; t < 2; t++) {
+        Vector3f[] tri = new Vector3f[]{
+                start, new Vector3f(end).fma(-w, u2), new Vector3f(end).fma(w, u2),
+                start, new Vector3f(end).fma(w, v2), new Vector3f(end).fma(-w, v2)};
+        float[][] uv = {{0.5F, v0}, {0F, v1}, {1F, v1}, {0.5F, v0}, {1F, v1}, {0F, v1}};
+        for (int t = 0; t < 2; t++) {
+            for (int pass = 0; pass < 2; pass++) {
                 for (int k = 0; k < 4; k++) {
-                    int idx = t * 3 + Math.min(k, 2);
-                    Vector3f p = new Vector3f(tri[idx]);
-                    if (inverseView != null) inverseView.transform(p);
-                    inv.transformPosition(p);
+                    int kk = pass == 0 ? k : 3 - k;
+                    int idx = t * 3 + Math.min(kk, 2);
+                    Vector3f p = inv.transformPosition(new Vector3f(tri[idx]));
                     vertex(vc, pose, p, uv[idx][0], uv[idx][1]);
                 }
             }
-        });
+        }
     }
 
     private static void vertex(VertexConsumer vc, PoseStack.Pose pose, Vector3f p, float u, float v) {

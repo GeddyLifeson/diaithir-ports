@@ -84,17 +84,24 @@ public class ClientEvents {
             event.setCanceled(true);
             return;
         }
-        if (mc.player != null) {
-            var ray = com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.extractFirstPersonHand(mc.player, event.getHand(), event.getPartialTick());
-            if (ray != null) {
-                var cam = mc.gameRenderer.getMainCamera();
-                boolean left = (event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND) == (mc.player.getMainArm() == net.minecraft.world.entity.HumanoidArm.LEFT);
-                org.joml.Vector3f start = new org.joml.Vector3f(left ? -0.42F : 0.42F, -0.3F, -0.9F);
-                cam.rotation().transform(start);
-                Vec3 camFrom = new Vec3(start.x, start.y, start.z);
-                Vec3 camTo = ray.to().subtract(cam.position());
-                com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.submit(event.getSubmitNodeCollector().order(3), event.getPoseStack(), camFrom, camTo, cam.rotation(), ray);
-            }
+    }
+
+    /** First-person raygun beam: drawn in world space after translucent features (the local player model is not rendered in first person). */
+    @SubscribeEvent
+    public static void renderFirstPersonRays(net.neoforged.neoforge.client.event.RenderLevelStageEvent.AfterTranslucentFeatures event) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.player == null || !mc.options.getCameraType().isFirstPerson() || mc.getCameraEntity() != mc.player) return;
+        float pt = mc.getDeltaTracker().getGameTimeDeltaPartialTick(false);
+        var cam = mc.gameRenderer.getMainCamera();
+        for (net.minecraft.world.InteractionHand hand : net.minecraft.world.InteractionHand.values()) {
+            var ray = com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.extractFirstPersonHand(mc.player, hand, pt);
+            if (ray == null) continue;
+            boolean left = (hand == net.minecraft.world.InteractionHand.MAIN_HAND) == (mc.player.getMainArm() == net.minecraft.world.entity.HumanoidArm.LEFT);
+            org.joml.Vector3f start = new org.joml.Vector3f(left ? -0.42F : 0.42F, -0.3F, -0.9F);
+            cam.rotation().transform(start);
+            Vec3 camFrom = new Vec3(start.x, start.y, start.z);
+            Vec3 camTo = ray.to().subtract(cam.position());
+            com.github.alexmodguy.alexscaves.client.render.misc.RaygunBeam.renderImmediate(event.getPoseStack(), mc.renderBuffers().bufferSource(), camFrom, camTo, ray);
         }
     }
 
