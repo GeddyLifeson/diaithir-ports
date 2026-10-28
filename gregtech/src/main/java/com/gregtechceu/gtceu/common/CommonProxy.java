@@ -441,7 +441,7 @@ public class CommonProxy {
         if (event.getPackType() == PackType.CLIENT_RESOURCES) {
             // dynamic client assets are not ported
         } else if (event.getPackType() == PackType.SERVER_DATA) {
-            // dynamic data pack is not ported
+            event.addRepositorySource(new com.gregtechceu.gtceu.data.pack.GTPackSource("gtceu:dynamic_data", PackType.SERVER_DATA, net.minecraft.server.packs.repository.Pack.Position.BOTTOM, com.gregtechceu.gtceu.data.pack.GTDynamicDataPack::new));
 
             // LOADING MOVED TO ReloadableServerResourcesMixin
 

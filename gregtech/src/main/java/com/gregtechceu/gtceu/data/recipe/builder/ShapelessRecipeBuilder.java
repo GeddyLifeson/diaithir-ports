@@ -73,7 +73,13 @@ public class ShapelessRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public ShapelessRecipe build() { return null; /* ported stub */ }
+    public ShapelessRecipe build() {
+        return new ShapelessRecipe(new net.minecraft.world.item.crafting.Recipe.CommonInfo(false), new net.minecraft.world.item.crafting.CraftingRecipe.CraftingBookInfo(this.category, Objects.requireNonNullElse(this.group, "")), net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(this.output), this.ingredients);
+    }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+
+        consumer.accept(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.RECIPE, recipeId.withPrefix("shapeless/")), build(), null);
+    }
 }

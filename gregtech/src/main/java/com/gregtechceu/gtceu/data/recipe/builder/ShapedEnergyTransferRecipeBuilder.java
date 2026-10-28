@@ -28,7 +28,7 @@ import java.util.Objects;
 public class ShapedEnergyTransferRecipeBuilder {
 
     @Setter
-    protected Ingredient chargeIngredient = Ingredient.of(net.minecraft.core.HolderSet.<net.minecraft.world.item.Item>empty());
+    protected Ingredient chargeIngredient = Ingredient.of(net.minecraft.world.item.Items.BARRIER);
     @Setter
     protected ItemStack output = ItemStack.EMPTY;
     @Setter
@@ -100,5 +100,8 @@ public class ShapedEnergyTransferRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+        consumer.accept(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.RECIPE, recipeId.withPrefix("shaped/")), build(), null);
+    }
 }

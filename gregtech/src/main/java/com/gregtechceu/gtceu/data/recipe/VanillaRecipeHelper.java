@@ -649,7 +649,12 @@ public class VanillaRecipeHelper {
     public static void addSmithingTransformRecipe(RecipeOutput provider, @NotNull Identifier regName,
                                                   @NotNull Item result, @NotNull ItemLike baseInput,
                                                   @NotNull ItemLike template, @NotNull ItemLike addition,
-                                                  @NotNull RecipeCategory category) {  /* ported stub */ }
+                                                  @NotNull RecipeCategory category) {
+        SmithingTransformRecipeBuilder
+                .smithing(Ingredient.of(template), Ingredient.of(baseInput), Ingredient.of(addition), category, result)
+                .unlocks(String.format("has_%s", baseInput), InventoryChangeTrigger.TriggerInstance.hasItems(baseInput))
+                .save(provider, net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.RECIPE, regName));
+    }
 
     public static void addSmithingTransformRecipe(RecipeOutput provider, @NotNull String regName,
                                                   @NotNull Item result, @NotNull ItemLike baseInput,

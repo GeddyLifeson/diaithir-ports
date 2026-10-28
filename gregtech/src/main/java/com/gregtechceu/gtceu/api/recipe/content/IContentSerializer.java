@@ -12,10 +12,12 @@ import com.mojang.serialization.JsonOps;
 public interface IContentSerializer<T> {
 
     default void toNetwork(RegistryFriendlyByteBuf buf, T content) {
-        buf.writeJsonWithCodec(codec(), content);
+        net.minecraft.network.codec.ByteBufCodecs.fromCodecWithRegistries(codec()).encode(buf, content);
     }
 
-    default T fromNetwork(RegistryFriendlyByteBuf buf) { return null; /* ported stub */ }
+    default T fromNetwork(RegistryFriendlyByteBuf buf) {
+        return net.minecraft.network.codec.ByteBufCodecs.fromCodecWithRegistries(codec()).decode(buf);
+    }
 
     default T fromJson(JsonElement json, HolderLookup.Provider provider) {
         return codec().parse(provider.createSerializationContext(JsonOps.INSTANCE), json).getOrThrow();

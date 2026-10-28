@@ -214,7 +214,23 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void registerReloadListeners(AddServerReloadListenersEvent event) {  /* ported stub */ }
+    public static void registerReloadListeners(AddServerReloadListenersEvent event) {
+        com.gregtechceu.gtceu.data.pack.GTDynamicDataGenerator.RESOURCES = event.getServerResources();
+        com.gregtechceu.gtceu.data.pack.GTDynamicDataPack.invalidate();
+        GTRegistries.updateFrozenRegistry(event.getRegistryAccess());
+        event.addListener(GTCEu.id("post_registry"), PostRegistryListener.INSTANCE);
+        event.addListener(GTCEu.id("recipe_post"), new com.gregtechceu.gtceu.data.pack.GTRecipePostProcessor(event.getServerResources().getRecipeManager()));
+    }
+
+    @SubscribeEvent
+    public static void onTagsUpdated(net.neoforged.neoforge.event.TagsUpdatedEvent event) {
+        if (event.getUpdateCause() == net.neoforged.neoforge.event.TagsUpdatedEvent.UpdateCause.SERVER_DATA_LOAD) {
+            var server = net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer();
+            if (server != null) {
+                com.gregtechceu.gtceu.data.pack.GTRecipePostProcessor.fillDatabases(server.getRecipeManager());
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void levelTick(LevelTickEvent.Post event) {
@@ -235,6 +251,7 @@ public class CommonEventListener {
 
     @SubscribeEvent
     public static void serverStarting(ServerStartingEvent event) {
+        com.gregtechceu.gtceu.data.pack.GTRecipePostProcessor.fillDatabases(event.getServer().getRecipeManager());
         ServerLevel mainLevel = event.getServer().overworld();
         WorldIDSaveData.init(mainLevel);
         CapeRegistry.registerToServer(mainLevel);

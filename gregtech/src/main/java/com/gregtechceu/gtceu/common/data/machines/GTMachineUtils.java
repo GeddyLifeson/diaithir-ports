@@ -100,6 +100,9 @@ import static com.gregtechceu.gtceu.utils.FormattingUtil.toEnglishName;
 
 public class GTMachineUtils {
 
+    public static final String OVERLAY_FLUID_HATCH_INPUT = "overlay_fluid_hatch_input";
+    public static final String OVERLAY_FLUID_HATCH_OUTPUT = "overlay_fluid_hatch_output";
+
     public static final int[] ALL_TIERS = GTValues.tiersBetween(ULV, GTCEuAPI.isHighTier() ? MAX : UHV);
     public static final int[] ELECTRIC_TIERS = GTValues.tiersBetween(LV, GTCEuAPI.isHighTier() ? OpV : UV);
     public static final int[] LOW_TIERS = GTValues.tiersBetween(LV, EV);
@@ -246,7 +249,41 @@ public class GTMachineUtils {
     public static MachineDefinition[] registerFluidHatches(GTRegistrate registrate, String name, String displayName,
                                                            String tooltip,
                                                            IO io, int initialCapacity, int slots,
-                                                           int[] tiers, PartAbility... abilities) { return null; /* ported stub */ }
+                                                           int[] tiers, PartAbility... abilities) {
+        final String pipeOverlay;
+        if (slots >= 9) {
+            pipeOverlay = "overlay_pipe_9x";
+        } else if (slots >= 4) {
+            pipeOverlay = "overlay_pipe_4x";
+        } else {
+            pipeOverlay = null;
+        }
+        final String ioOverlay = io == OUT ? OVERLAY_FLUID_HATCH_OUTPUT : OVERLAY_FLUID_HATCH_INPUT;
+        final String emissiveOverlay = io == OUT ? "overlay_pipe_out_emissive" : "overlay_pipe_in_emissive";
+        return registerTieredMachines(registrate, name,
+                (holder, tier) -> new FluidHatchPartMachine(holder, tier, io, initialCapacity, slots),
+                (tier, builder) -> {
+                    builder.langValue(VNF[tier] + ' ' + displayName)
+                            .rotationState(RotationState.ALL)
+                            .colorOverlayTieredHullModel(ioOverlay, pipeOverlay, emissiveOverlay)
+                            .abilities(abilities)
+                            .modelProperty(IS_FORMED, false)
+                            .tooltips(Component.translatable("gtceu.machine." + tooltip + ".tooltip"))
+                            .allowCoverOnFront(true);
+
+                    if (slots == 1) {
+                        builder.tooltips(Component.translatable("gtceu.universal.tooltip.fluid_storage_capacity",
+                                FormattingUtil
+                                        .formatNumbers(FluidHatchPartMachine.getTankCapacity(initialCapacity, tier))));
+                    } else {
+                        builder.tooltips(Component.translatable("gtceu.universal.tooltip.fluid_storage_capacity_mult",
+                                slots, FormattingUtil
+                                        .formatNumbers(FluidHatchPartMachine.getTankCapacity(initialCapacity, tier))));
+                    }
+                    return builder.register();
+                },
+                tiers);
+    }
 
     public static MachineDefinition[] registerTransformerMachines(String langName, int baseAmp) {
         return registerTransformerMachines(REGISTRATE, langName, baseAmp);

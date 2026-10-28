@@ -17,6 +17,9 @@ public final class TagCompat {
         try {
             return registry.getOrThrow(tag);
         } catch (IllegalStateException e) {
+            if (registry instanceof net.minecraft.core.MappedRegistry<T> mapped) {
+                return mapped.getOrCreateTagForRegistration(tag);
+            }
             return BuiltInRegistries.acquireBootstrapRegistrationLookup(registry).getOrThrow(tag);
         }
     }

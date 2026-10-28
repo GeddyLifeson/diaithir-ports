@@ -90,5 +90,14 @@ public class ShapedRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+        ShapedRecipe recipe;
+        if (isStrict) {
+            recipe = new StrictShapedRecipe(new net.minecraft.world.item.crafting.Recipe.CommonInfo(false), new net.minecraft.world.item.crafting.CraftingRecipe.CraftingBookInfo(net.minecraft.data.recipes.RecipeBuilder.determineCraftingBookCategory(this.category), Objects.requireNonNullElse(this.group, "")), ShapedRecipePattern.of(key, rows), net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(this.output));
+        } else {
+            recipe = new ShapedRecipe(new net.minecraft.world.item.crafting.Recipe.CommonInfo(false), new net.minecraft.world.item.crafting.CraftingRecipe.CraftingBookInfo(net.minecraft.data.recipes.RecipeBuilder.determineCraftingBookCategory(this.category), Objects.requireNonNullElse(this.group, "")), ShapedRecipePattern.of(key, rows), net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(this.output));
+        }
+        consumer.accept(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.RECIPE, recipeId.withPrefix("shaped/")), recipe, null);
+    }
 }

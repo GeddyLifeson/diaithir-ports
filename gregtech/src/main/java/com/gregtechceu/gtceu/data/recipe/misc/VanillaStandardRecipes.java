@@ -794,7 +794,101 @@ public class VanillaStandardRecipes {
      * + Adds metal related recipes
      * + Adds horse armor and chainmail recipes
      */
-    private static void metalRecipes(RecipeOutput provider) {  /* ported stub */ }
+    private static void metalRecipes(RecipeOutput provider) {
+        BENDER_RECIPES.recipeBuilder("bucket")
+                .circuitMeta(12)
+                .inputItems(plate, Iron, 3)
+                .outputItems(new ItemStack(Items.BUCKET))
+                .duration(100).EUt(4)
+                .addMaterialInfo(true)
+                .save(provider);
+
+        VanillaRecipeHelper.addShapedRecipe(provider, "leather_horse_armor", new ItemStack(Items.LEATHER_HORSE_ARMOR),
+                "hdH",
+                "PCP", "LSL",
+                'H', new ItemStack(Items.LEATHER_HELMET),
+                'P', new ItemStack(Items.LEATHER),
+                'C', new ItemStack(Items.LEATHER_CHESTPLATE),
+                'L', new ItemStack(Items.LEATHER_LEGGINGS),
+                'S', new MaterialEntry(screw, Iron));
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "iron_horse_armor", new ItemStack(Items.IRON_HORSE_ARMOR),
+                "hdH",
+                "PCP", "LSL",
+                'H', new ItemStack(Items.IRON_HELMET),
+                'P', new MaterialEntry(plate, Iron),
+                'C', new ItemStack(Items.IRON_CHESTPLATE),
+                'L', new ItemStack(Items.IRON_LEGGINGS),
+                'S', new MaterialEntry(screw, Iron));
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "golden_horse_armor",
+                new ItemStack(Items.GOLDEN_HORSE_ARMOR),
+                "hdH", "PCP", "LSL",
+                'H', new ItemStack(Items.GOLDEN_HELMET),
+                'P', new MaterialEntry(plate, Gold),
+                'C', new ItemStack(Items.GOLDEN_CHESTPLATE),
+                'L', new ItemStack(Items.GOLDEN_LEGGINGS),
+                'S', new MaterialEntry(screw, Gold));
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "diamond_horse_armor",
+                new ItemStack(Items.DIAMOND_HORSE_ARMOR),
+                "hdH", "PCP", "LSL",
+                'H', new ItemStack(Items.DIAMOND_HELMET),
+                'P', new MaterialEntry(plate, Diamond),
+                'C', new ItemStack(Items.DIAMOND_CHESTPLATE),
+                'L', new ItemStack(Items.DIAMOND_LEGGINGS),
+                'S', new MaterialEntry(bolt, Diamond));
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_helmet", new ItemStack(Items.CHAINMAIL_HELMET),
+                "PPP",
+                "PhP",
+                'P', Items.IRON_CHAIN);
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_chestplate",
+                new ItemStack(Items.CHAINMAIL_CHESTPLATE),
+                "PhP", "PPP", "PPP",
+                'P', Items.IRON_CHAIN);
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_leggings",
+                new ItemStack(Items.CHAINMAIL_LEGGINGS),
+                "PPP", "PhP", "P P",
+                'P', Items.IRON_CHAIN);
+
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_boots", new ItemStack(Items.CHAINMAIL_BOOTS),
+                "P P",
+                "PhP",
+                'P', Items.IRON_CHAIN);
+
+        ASSEMBLER_RECIPES.recipeBuilder("cauldron")
+                .inputItems(plate, Iron, 7)
+                .outputItems(new ItemStack(Items.CAULDRON, 1))
+                .circuitMeta(7)
+                .duration(700).EUt(4)
+                .addMaterialInfo(true).save(provider);
+
+        ASSEMBLER_RECIPES.recipeBuilder("iron_bars")
+                .inputItems(rod, Iron, 3)
+                .outputItems(new ItemStack(Blocks.IRON_BARS, 4))
+                .circuitMeta(3)
+                .duration(300).EUt(4)
+                .addMaterialInfo(true).save(provider);
+
+        ASSEMBLER_RECIPES.recipeBuilder("iron_trapdoor")
+                .inputItems(plate, Iron, 4)
+                .circuitMeta(4)
+                .outputItems(new ItemStack(Blocks.IRON_TRAPDOOR))
+                .duration(100).EUt(16)
+                .addMaterialInfo(true).save(provider);
+
+        if (!ConfigHolder.INSTANCE.recipes.hardAdvancedIronRecipes) {
+            ASSEMBLER_RECIPES.recipeBuilder("iron_door")
+                    .inputItems(TagPrefix.plate, GTMaterials.Iron, 6)
+                    .circuitMeta(6)
+                    .outputItems(new ItemStack(Items.IRON_DOOR, 3))
+                    .duration(100).EUt(16)
+                    .addMaterialInfo(true).save(provider);
+        }
+    }
 
     /**
      * Adds miscellaneous vanilla recipes

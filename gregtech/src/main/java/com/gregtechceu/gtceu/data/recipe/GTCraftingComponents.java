@@ -756,6 +756,8 @@ public class GTCraftingComponents {
 
     private static final class KJSCallWrapper {
 
-        private static void craftingComponentModification() {  /* ported stub */ }
+        private static void craftingComponentModification() {
+            
+        }
     }
 }

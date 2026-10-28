@@ -40,7 +40,7 @@ public class FluidContainerIngredient implements ICustomIngredient {
         this(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(tag, amount));
     }
 
-    private Stream<ItemStack> cachedStacks;
+    private java.util.List<ItemStack> cachedStacks;
 
     @NotNull
     
@@ -53,8 +53,8 @@ public class FluidContainerIngredient implements ICustomIngredient {
         if (cachedStacks == null)
             cachedStacks = Arrays.stream(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(this.fluid))
                     .map(stack -> stack.getFluid().getBucket().getDefaultInstance())
-                    .filter(s -> !s.isEmpty());
-        return this.cachedStacks;
+                    .filter(s -> !s.isEmpty()).toList();
+        return this.cachedStacks.stream();
     }
 
     @Override

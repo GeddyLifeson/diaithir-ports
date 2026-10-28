@@ -1668,7 +1668,13 @@ public class GTRecipeBuilder {
 
     protected boolean missingIngredientError(int index, boolean isInput,
                                              RecipeCapability<?> cap, BooleanSupplier empty) {
-        if (empty.getAsBoolean()) {
+        boolean isEmpty;
+        try {
+            isEmpty = empty.getAsBoolean();
+        } catch (IllegalStateException unboundTag) {
+            isEmpty = false;
+        }
+        if (isEmpty) {
             String io = isInput ? "Input" : "Output";
             if (perTick) {
                 io = "Tick " + io.toLowerCase(Locale.ROOT);

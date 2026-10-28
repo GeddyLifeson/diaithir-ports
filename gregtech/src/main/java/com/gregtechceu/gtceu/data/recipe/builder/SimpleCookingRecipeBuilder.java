@@ -46,13 +46,21 @@ public class SimpleCookingRecipeBuilder<T extends AbstractCookingRecipe> {
         this.constructor = constructor;
     }
 
-    public static SimpleCookingRecipeBuilder<CampfireCookingRecipe> campfireCooking(@Nullable Identifier id) { return null; /* ported stub */ }
+    public static SimpleCookingRecipeBuilder<CampfireCookingRecipe> campfireCooking(@Nullable Identifier id) {
+        return new SimpleCookingRecipeBuilder<>(id, "campfire_cooking", CampfireCookingRecipe::new);
+    }
 
-    public static SimpleCookingRecipeBuilder<SmeltingRecipe> smelting(@Nullable Identifier id) { return null; /* ported stub */ }
+    public static SimpleCookingRecipeBuilder<SmeltingRecipe> smelting(@Nullable Identifier id) {
+        return new SimpleCookingRecipeBuilder<>(id, "smelting", SmeltingRecipe::new);
+    }
 
-    public static SimpleCookingRecipeBuilder<BlastingRecipe> blasting(@Nullable Identifier id) { return null; /* ported stub */ }
+    public static SimpleCookingRecipeBuilder<BlastingRecipe> blasting(@Nullable Identifier id) {
+        return new SimpleCookingRecipeBuilder<>(id, "blasting", BlastingRecipe::new);
+    }
 
-    public static SimpleCookingRecipeBuilder<SmokingRecipe> smoking(@Nullable Identifier id) { return null; /* ported stub */ }
+    public static SimpleCookingRecipeBuilder<SmokingRecipe> smoking(@Nullable Identifier id) {
+        return new SimpleCookingRecipeBuilder<>(id, "smoking", SmokingRecipe::new);
+    }
 
     public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag) {
         return input(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(tag));
@@ -95,16 +103,18 @@ public class SimpleCookingRecipeBuilder<T extends AbstractCookingRecipe> {
     }
 
     private T create() {
-        return constructor.create(Objects.requireNonNullElse(this.group, ""), this.category, this.input, this.output,
-                this.experience, this.cookingTime);
+        return constructor.create(new net.minecraft.world.item.crafting.Recipe.CommonInfo(false), new net.minecraft.world.item.crafting.AbstractCookingRecipe.CookingBookInfo(this.category, Objects.requireNonNullElse(this.group, "")), this.input, net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(this.output), this.experience, this.cookingTime);
     }
 
-    public void save(RecipeOutput consumer) {  /* ported stub */ }
+    public void save(RecipeOutput consumer) {
+        var recipeId = id == null ? defaultId() : id;
+        consumer.accept(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.RECIPE, recipeId.withPrefix(folder + "/")), create(), null);
+    }
 
     @FunctionalInterface
     public interface RecipeConstructor<T extends AbstractCookingRecipe> {
 
-        T create(String group, CookingBookCategory category,
-                 Ingredient ingredient, ItemStack result, float experience, int cookingTime);
+        T create(net.minecraft.world.item.crafting.Recipe.CommonInfo info, net.minecraft.world.item.crafting.AbstractCookingRecipe.CookingBookInfo book,
+                 Ingredient ingredient, net.minecraft.world.item.ItemStackTemplate result, float experience, int cookingTime);
     }
 }

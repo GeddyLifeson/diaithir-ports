@@ -28,7 +28,6 @@ import java.util.TreeMap;
 public class GTDynamicDataPack implements PackResources {
 
     private static final Map<Identifier, byte[]> FILES = new TreeMap<>();
-    private static boolean generated = false;
 
     private final PackLocationInfo info;
 
@@ -38,7 +37,8 @@ public class GTDynamicDataPack implements PackResources {
 
     /** Forget the generated files; they are rebuilt on the next resource access. */
     public static synchronized void invalidate() {
-        generated = false;
+        tagsGenerated = false;
+        recipesGenerated = false;
         FILES.clear();
     }
 
@@ -46,15 +46,31 @@ public class GTDynamicDataPack implements PackResources {
         FILES.put(file, data);
     }
 
-    private static synchronized void ensureGenerated() {
-        if (generated) return;
-        generated = true;
+    public static synchronized boolean has(Identifier file) {
+        return FILES.containsKey(file);
+    }
+
+    private static boolean tagsGenerated = false;
+    private static boolean recipesGenerated = false;
+
+    private static synchronized void ensureTags() {
+        if (tagsGenerated) return;
+        tagsGenerated = true;
         try {
-            GTDynamicDataGenerator.generate();
+            GTDynamicDataGenerator.generateTagsAndLoot();
         } catch (Throwable t) {
-            GTCEu.LOGGER.error("Failed to generate GTCEu dynamic data", t);
+            GTCEu.LOGGER.error("Failed to generate GTCEu dynamic tags", t);
         }
-        GTCEu.LOGGER.info("Generated {} dynamic data files", FILES.size());
+    }
+
+    private static synchronized void ensureRecipes() {
+        if (recipesGenerated) return;
+        recipesGenerated = true;
+        try {
+            GTDynamicDataGenerator.generateRecipes();
+        } catch (Throwable t) {
+            GTCEu.LOGGER.error("Failed to generate GTCEu dynamic recipes", t);
+        }
     }
 
     @Nullable
@@ -66,7 +82,6 @@ public class GTDynamicDataPack implements PackResources {
     @Override
     public synchronized @Nullable IoSupplier<InputStream> getResource(PackType type, Identifier location) {
         if (type != PackType.SERVER_DATA) return null;
-        ensureGenerated();
         byte[] data = FILES.get(location);
         return data == null ? null : () -> new ByteArrayInputStream(data);
     }
@@ -75,7 +90,16 @@ public class GTDynamicDataPack implements PackResources {
     public synchronized void listResources(PackType type, String namespace, String directory,
                                            ResourceOutput output) {
         if (type != PackType.SERVER_DATA) return;
-        ensureGenerated();
+        if (!(directory.equals("recipe") || directory.equals("loot_table") || directory.equals("tags") ||
+                directory.startsWith("tags/") || directory.equals("advancement"))) {
+            return;
+        }
+        if (directory.equals("recipe")) {
+            if (GTDynamicDataGenerator.RESOURCES == null) return;
+            ensureRecipes();
+        } else {
+            ensureTags();
+        }
         String prefix = directory.isEmpty() ? "" : directory + "/";
         for (var e : FILES.entrySet()) {
             Identifier id = e.getKey();
@@ -89,10 +113,7 @@ public class GTDynamicDataPack implements PackResources {
     @Override
     public synchronized Set<String> getNamespaces(PackType type) {
         if (type != PackType.SERVER_DATA) return Set.of();
-        ensureGenerated();
-        var set = new java.util.HashSet<String>();
-        FILES.keySet().forEach(id -> set.add(id.getNamespace()));
-        return set;
+        return Set.of(GTCEu.MOD_ID, "minecraft", "c", "neoforge");
     }
 
     @SuppressWarnings("unchecked")
