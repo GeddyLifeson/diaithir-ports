@@ -54,6 +54,7 @@ public final class DiaithirBridges {
 
     public DiaithirBridges(IEventBus bus, net.neoforged.fml.ModContainer container) {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, Config.SPEC);
+        EffectMerge.register();
         SERIALIZERS.register(bus);
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> BridgeCommands.register(e.getDispatcher()));
         BLOCKS.register(bus);
