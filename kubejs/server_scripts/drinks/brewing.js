@@ -493,7 +493,7 @@ ServerEvents.recipes(event => {
     try {
       event.custom({
         'neoforge:conditions': [{ type: 'neoforge:mod_loaded', modid: 'diaithir_create' }],
-        type: 'create:pressing', ingredients: [fruit], results: [{ id: DRK_ITEM + must, count: 1 }]
+        type: 'create:pressing', ingredient: fruit, results: [{ id: DRK_ITEM + must, count: 1 }]
       }).id('diaithir_drinks:pressing/' + must)
     } catch (e) { console.warn('[drinks] Create pressing for ' + must + ' skipped: ' + e) }
   })

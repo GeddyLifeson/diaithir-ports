@@ -33674,7 +33674,7 @@ hash = "c06f24d0c57bf7ead1c5668e9749c430168742d127d54fea09226924fc49a54b"
 
 [[files]]
 file = "kubejs/server_scripts/drinks/brewing.js"
-hash = "d42926e561fbd388bc467169a80aff692a5b170b90c1aa40c5f1dca971a81937"
+hash = "43bb2f2294195d4ddd822c68f3bef2643b98c94e1505ccbca7e365283298d108"
 
 [[files]]
 file = "kubejs/server_scripts/drinks/effects.js"
