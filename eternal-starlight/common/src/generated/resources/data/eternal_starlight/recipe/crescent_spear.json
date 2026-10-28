@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "P": {
-      "item": "eternal_starlight:tenacious_petal"
-    },
-    "S": {
-      "tag": "c:ingots/deepsilver"
-    },
-    "V": {
-      "item": "eternal_starlight:tenacious_vine"
-    }
+    "P": "eternal_starlight:tenacious_petal",
+    "S": "#c:ingots/deepsilver",
+    "V": "eternal_starlight:tenacious_vine"
   },
   "pattern": [
     "S S",

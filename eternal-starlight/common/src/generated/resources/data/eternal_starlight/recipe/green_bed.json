@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "bed",
   "key": {
-    "#": {
-      "item": "eternal_starlight:green_yeti_fur"
-    },
-    "X": {
-      "tag": "minecraft:planks"
-    }
+    "#": "eternal_starlight:green_yeti_fur",
+    "X": "#minecraft:planks"
   },
   "pattern": [
     "###",

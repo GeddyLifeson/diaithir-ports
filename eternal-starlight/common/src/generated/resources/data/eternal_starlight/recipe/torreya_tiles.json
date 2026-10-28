@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "I": {
-      "tag": "c:ingots/amaramber"
-    },
-    "L": {
-      "tag": "eternal_starlight:torreya_logs"
-    }
+    "I": "#c:ingots/amaramber",
+    "L": "#eternal_starlight:torreya_logs"
   },
   "pattern": [
     "IL",

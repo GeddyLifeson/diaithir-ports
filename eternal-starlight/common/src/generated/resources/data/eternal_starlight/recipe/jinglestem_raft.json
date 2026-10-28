@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "boat",
   "key": {
-    "P": {
-      "item": "eternal_starlight:jinglestem_planks"
-    }
+    "P": "eternal_starlight:jinglestem_planks"
   },
   "pattern": [
     "P P",

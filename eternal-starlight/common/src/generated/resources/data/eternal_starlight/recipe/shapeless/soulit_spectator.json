@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:soul_dew"
-    },
-    {
-      "item": "eternal_starlight:nightfall_spider_eye"
-    }
+    "eternal_starlight:soul_dew",
+    "eternal_starlight:nightfall_spider_eye"
   ],
   "result": {
     "count": 1,

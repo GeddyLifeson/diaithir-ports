@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "aethersent_ingot",
   "ingredients": [
-    {
-      "item": "eternal_starlight:aethersent_block"
-    }
+    "eternal_starlight:aethersent_block"
   ],
   "result": {
     "count": 9,

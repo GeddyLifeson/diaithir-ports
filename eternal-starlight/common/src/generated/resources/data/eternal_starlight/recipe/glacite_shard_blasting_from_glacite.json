@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 1.0,
-  "ingredient": {
-    "item": "eternal_starlight:glacite"
-  },
+  "ingredient": "eternal_starlight:glacite",
   "result": {
     "count": 1,
     "id": "eternal_starlight:glacite_shard"

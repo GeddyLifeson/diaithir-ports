@@ -2,15 +2,9 @@
   "type": "eternal_starlight:alloy",
   "burn_time": 400,
   "ingredients": [
-    {
-      "tag": "c:raw_materials/iron"
-    },
-    {
-      "tag": "c:raw_materials/iron"
-    },
-    {
-      "item": "eternal_starlight:saltpeter_powder"
-    }
+    "#c:raw_materials/iron",
+    "#c:raw_materials/iron",
+    "eternal_starlight:saltpeter_powder"
   ],
   "results": [
     {

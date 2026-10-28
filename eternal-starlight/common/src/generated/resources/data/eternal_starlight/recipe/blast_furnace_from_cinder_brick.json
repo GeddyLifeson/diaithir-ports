@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "eternal_starlight:cinder_brick"
-    },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "X": {
-      "item": "minecraft:furnace"
-    }
+    "#": "eternal_starlight:cinder_brick",
+    "I": "minecraft:iron_ingot",
+    "X": "minecraft:furnace"
   },
   "pattern": [
     "III",

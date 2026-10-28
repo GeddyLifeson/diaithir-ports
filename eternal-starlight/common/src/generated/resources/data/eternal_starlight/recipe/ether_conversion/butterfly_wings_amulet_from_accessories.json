@@ -1,8 +1,6 @@
 {
   "type": "eternal_starlight:ether_conversion",
-  "input": {
-    "tag": "eternal_starlight:accessories"
-  },
+  "input": "#eternal_starlight:accessories",
   "outputs": [
     {
       "output": {

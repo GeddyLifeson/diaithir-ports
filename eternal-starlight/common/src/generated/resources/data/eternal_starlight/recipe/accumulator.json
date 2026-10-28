@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "L": {
-      "item": "minecraft:redstone_lamp"
-    },
-    "N": {
-      "item": "eternal_starlight:golem_steel_nugget"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    }
+    "L": "minecraft:redstone_lamp",
+    "N": "eternal_starlight:golem_steel_nugget",
+    "R": "minecraft:redstone"
   },
   "pattern": [
     "RNR",

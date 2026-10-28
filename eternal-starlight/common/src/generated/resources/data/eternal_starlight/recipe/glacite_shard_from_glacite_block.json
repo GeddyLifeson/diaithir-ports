@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "glacite_shard",
   "ingredients": [
-    {
-      "item": "eternal_starlight:glacite_block"
-    }
+    "eternal_starlight:glacite_block"
   ],
   "result": {
     "count": 9,

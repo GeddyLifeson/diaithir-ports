@@ -2,21 +2,11 @@
   "type": "eternal_starlight:alloy",
   "burn_time": 400,
   "ingredients": [
-    {
-      "tag": "c:ingots/deepsilver"
-    },
-    {
-      "tag": "c:ingots/deepsilver"
-    },
-    {
-      "tag": "c:ingots/deepsilver"
-    },
-    {
-      "tag": "c:nuggets/golem_steel"
-    },
-    {
-      "tag": "c:nuggets/golem_steel"
-    }
+    "#c:ingots/deepsilver",
+    "#c:ingots/deepsilver",
+    "#c:ingots/deepsilver",
+    "#c:nuggets/golem_steel",
+    "#c:nuggets/golem_steel"
   ],
   "results": [
     {

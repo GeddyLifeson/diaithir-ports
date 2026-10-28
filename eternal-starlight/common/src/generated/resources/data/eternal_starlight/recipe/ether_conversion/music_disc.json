@@ -1,8 +1,6 @@
 {
   "type": "eternal_starlight:ether_conversion",
-  "input": {
-    "tag": "c:music_discs"
-  },
+  "input": "#c:music_discs",
   "outputs": [
     {
       "output": {

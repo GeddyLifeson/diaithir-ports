@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "eternal_starlight:voidstone"
-  },
+  "ingredient": "eternal_starlight:voidstone",
   "result": {
     "count": 1,
     "id": "eternal_starlight:voidstone_brick_wall"

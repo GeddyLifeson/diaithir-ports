@@ -13,6 +13,7 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
@@ -80,9 +81,13 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 		return ESRecipes.ETHER_CONVERSION.get();
 	}
 
-	public record WeightedOutput(ItemStack output, int weight) {
+	public record WeightedOutput(ItemStackTemplate outputTemplate, int weight) {
+		public ItemStack output() {
+			return outputTemplate.create();
+		}
+
 		public static final Codec<WeightedOutput> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-			ItemStack.OPTIONAL_CODEC.fieldOf("output").forGetter(WeightedOutput::output),
+			ItemStackTemplate.CODEC.fieldOf("output").forGetter(WeightedOutput::outputTemplate),
 			Codec.INT.fieldOf("weight").forGetter(WeightedOutput::weight)
 		).apply(instance, WeightedOutput::new));
 	}
@@ -122,7 +127,7 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 					int outputCount = friendlyByteBuf.readVarInt();
 					List<WeightedOutput> outputs = new java.util.ArrayList<>(outputCount);
 					for (int i = 0; i < outputCount; i++) {
-						ItemStack output = ItemStack.STREAM_CODEC.decode(friendlyByteBuf);
+						ItemStackTemplate output = ItemStackTemplate.STREAM_CODEC.decode(friendlyByteBuf);
 						int weight = friendlyByteBuf.readInt();
 						outputs.add(new WeightedOutput(output, weight));
 					}
@@ -136,7 +141,7 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 					DataComponentExactPredicate.STREAM_CODEC.encode(friendlyByteBuf, recipe.components());
 					friendlyByteBuf.writeVarInt(recipe.outputs().size());
 					for (WeightedOutput output : recipe.outputs()) {
-						ItemStack.STREAM_CODEC.encode(friendlyByteBuf, output.output());
+						ItemStackTemplate.STREAM_CODEC.encode(friendlyByteBuf, output.outputTemplate());
 						friendlyByteBuf.writeInt(output.weight());
 					}
 				}

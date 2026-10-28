@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "eternal_starlight:deepsilver_ingot"
-    }
+    "#": "eternal_starlight:deepsilver_ingot"
   },
   "pattern": [
     "###",

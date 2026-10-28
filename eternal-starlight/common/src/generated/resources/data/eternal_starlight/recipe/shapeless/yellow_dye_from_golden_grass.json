@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:golden_grass"
-    }
+    "eternal_starlight:golden_grass"
   ],
   "result": {
     "count": 1,

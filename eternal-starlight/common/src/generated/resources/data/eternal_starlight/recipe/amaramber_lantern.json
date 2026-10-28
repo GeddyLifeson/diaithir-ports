@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "eternal_starlight:amaramber_candle"
-    },
-    "N": {
-      "item": "minecraft:iron_nugget"
-    }
+    "A": "eternal_starlight:amaramber_candle",
+    "N": "minecraft:iron_nugget"
   },
   "pattern": [
     "NNN",

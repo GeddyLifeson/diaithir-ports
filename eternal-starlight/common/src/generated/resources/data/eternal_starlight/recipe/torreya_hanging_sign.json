@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "#": {
-      "item": "eternal_starlight:stripped_torreya_log"
-    },
-    "X": {
-      "item": "minecraft:chain"
-    }
+    "#": "eternal_starlight:stripped_torreya_log",
+    "X": "minecraft:iron_chain"
   },
   "pattern": [
     "X X",

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "D": {
-      "item": "eternal_starlight:dusted_shard"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    },
-    "T": {
-      "item": "eternal_starlight:rookfish_air_sac"
-    }
+    "D": "eternal_starlight:dusted_shard",
+    "S": "#c:rods/wooden",
+    "T": "eternal_starlight:rookfish_air_sac"
   },
   "pattern": [
     "D",

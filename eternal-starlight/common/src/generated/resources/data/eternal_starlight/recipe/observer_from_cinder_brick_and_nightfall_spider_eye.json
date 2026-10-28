@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "eternal_starlight:cinder_brick"
-    },
-    "Q": {
-      "item": "eternal_starlight:nightfall_spider_eye"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    }
+    "#": "eternal_starlight:cinder_brick",
+    "Q": "eternal_starlight:nightfall_spider_eye",
+    "R": "minecraft:redstone"
   },
   "pattern": [
     "###",

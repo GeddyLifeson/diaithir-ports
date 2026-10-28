@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "G": {
-      "item": "eternal_starlight:shivering_gel"
-    },
-    "N": {
-      "tag": "c:nuggets/deepsilver"
-    }
+    "G": "eternal_starlight:shivering_gel",
+    "N": "#c:nuggets/deepsilver"
   },
   "pattern": [
     " N ",

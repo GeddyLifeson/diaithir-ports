@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:nightfan"
-    }
+    "eternal_starlight:nightfan"
   ],
   "result": {
     "count": 1,

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "N": {
-      "item": "eternal_starlight:golem_steel_nugget"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    },
-    "S": {
-      "item": "minecraft:stone"
-    }
+    "N": "eternal_starlight:golem_steel_nugget",
+    "R": "minecraft:redstone",
+    "S": "minecraft:stone"
   },
   "pattern": [
     " N ",

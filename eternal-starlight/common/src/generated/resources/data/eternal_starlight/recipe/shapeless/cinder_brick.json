@@ -2,27 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "c:buckets/lava"
-    },
-    {
-      "tag": "c:gems/starcore"
-    },
-    {
-      "tag": "c:gems/starcore"
-    },
-    {
-      "tag": "c:gravels"
-    },
-    {
-      "tag": "c:gravels"
-    },
-    {
-      "tag": "c:gravels"
-    },
-    {
-      "tag": "c:gravels"
-    }
+    "#c:buckets/lava",
+    "#c:gems/starcore",
+    "#c:gems/starcore",
+    "#c:gravels",
+    "#c:gravels",
+    "#c:gravels",
+    "#c:gravels"
   ],
   "result": {
     "count": 8,

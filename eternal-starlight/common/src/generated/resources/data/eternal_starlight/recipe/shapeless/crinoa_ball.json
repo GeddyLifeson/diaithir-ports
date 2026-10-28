@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:crinoa"
-    },
-    {
-      "item": "eternal_starlight:crinoa"
-    },
-    {
-      "item": "eternal_starlight:lunar_berries"
-    }
+    "eternal_starlight:crinoa",
+    "eternal_starlight:crinoa",
+    "eternal_starlight:lunar_berries"
   ],
   "result": {
     "count": 1,

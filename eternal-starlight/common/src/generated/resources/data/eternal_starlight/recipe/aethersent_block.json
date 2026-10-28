@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "eternal_starlight:aethersent_ingot"
-    }
+    "#": "eternal_starlight:aethersent_ingot"
   },
   "pattern": [
     "###",

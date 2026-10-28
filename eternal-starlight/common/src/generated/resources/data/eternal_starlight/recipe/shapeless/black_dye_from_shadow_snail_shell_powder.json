@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:shadow_snail_shell_powder"
-    }
+    "eternal_starlight:shadow_snail_shell_powder"
   ],
   "result": {
     "count": 1,

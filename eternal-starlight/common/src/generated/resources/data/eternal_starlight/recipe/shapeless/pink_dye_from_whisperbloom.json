@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:whisperbloom"
-    }
+    "eternal_starlight:whisperbloom"
   ],
   "result": {
     "count": 1,

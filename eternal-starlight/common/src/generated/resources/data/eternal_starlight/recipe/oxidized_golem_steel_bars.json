@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "eternal_starlight:oxidized_golem_steel_ingot"
-    }
+    "#": "eternal_starlight:oxidized_golem_steel_ingot"
   },
   "pattern": [
     "###",

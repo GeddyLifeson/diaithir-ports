@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:mauve_fern"
-    }
+    "eternal_starlight:mauve_fern"
   ],
   "result": {
     "count": 1,

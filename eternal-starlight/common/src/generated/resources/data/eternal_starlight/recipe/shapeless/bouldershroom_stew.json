@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:bouldershroom"
-    },
-    {
-      "item": "eternal_starlight:glowing_mushroom"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
+    "eternal_starlight:bouldershroom",
+    "eternal_starlight:glowing_mushroom",
+    "minecraft:bowl"
   ],
   "result": {
     "count": 1,

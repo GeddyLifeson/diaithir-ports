@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "eternal_starlight:scarlet_planks"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "#": "eternal_starlight:scarlet_planks",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "#S#",

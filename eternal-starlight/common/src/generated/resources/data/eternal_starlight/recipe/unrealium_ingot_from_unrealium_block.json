@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "unrealium_ingot",
   "ingredients": [
-    {
-      "item": "eternal_starlight:unrealium_block"
-    }
+    "eternal_starlight:unrealium_block"
   ],
   "result": {
     "count": 9,

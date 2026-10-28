@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "eternal_starlight:doomeden_brick_slab"
-    }
+    "#": "eternal_starlight:doomeden_brick_slab"
   },
   "pattern": [
     "#",

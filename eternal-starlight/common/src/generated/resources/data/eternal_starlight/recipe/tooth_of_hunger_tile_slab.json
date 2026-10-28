@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "eternal_starlight:tooth_of_hunger_tiles"
-    }
+    "#": "eternal_starlight:tooth_of_hunger_tiles"
   },
   "pattern": [
     "###"

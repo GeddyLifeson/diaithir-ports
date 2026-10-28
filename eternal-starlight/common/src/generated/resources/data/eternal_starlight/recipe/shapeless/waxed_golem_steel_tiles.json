@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "eternal_starlight:golem_steel_tiles"
-    },
-    {
-      "item": "minecraft:honeycomb"
-    }
+    "eternal_starlight:golem_steel_tiles",
+    "minecraft:honeycomb"
   ],
   "result": {
     "count": 1,

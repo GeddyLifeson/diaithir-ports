@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "chest_boat",
   "ingredients": [
-    {
-      "item": "eternal_starlight:scarlet_boat"
-    },
-    {
-      "item": "minecraft:chest"
-    }
+    "eternal_starlight:scarlet_boat",
+    "minecraft:chest"
   ],
   "result": {
     "count": 1,

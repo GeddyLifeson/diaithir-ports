@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:ingots/amaramber"
-    },
-    "C": {
-      "item": "eternal_starlight:grimstone"
-    },
-    "S": {
-      "item": "eternal_starlight:blooming_armor_trim_smithing_template"
-    }
+    "#": "#c:ingots/amaramber",
+    "C": "eternal_starlight:grimstone",
+    "S": "eternal_starlight:blooming_armor_trim_smithing_template"
   },
   "pattern": [
     "#S#",

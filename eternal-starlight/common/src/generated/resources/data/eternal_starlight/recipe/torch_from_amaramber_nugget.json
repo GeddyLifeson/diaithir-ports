@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "tag": "c:nuggets/amaramber"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "N": "#c:nuggets/amaramber",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "N",

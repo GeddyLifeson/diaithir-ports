@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:gems/glacite"
-    },
-    "C": {
-      "item": "eternal_starlight:eternal_ice"
-    },
-    "S": {
-      "item": "eternal_starlight:flowglaze_upgrade_smithing_template"
-    }
+    "#": "#c:gems/glacite",
+    "C": "eternal_starlight:eternal_ice",
+    "S": "eternal_starlight:flowglaze_upgrade_smithing_template"
   },
   "pattern": [
     "#S#",

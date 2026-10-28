@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:tear_bomb"
-    },
-    {
-      "item": "minecraft:minecart"
-    }
+    "eternal_starlight:tear_bomb",
+    "minecraft:minecart"
   ],
   "result": {
     "count": 1,

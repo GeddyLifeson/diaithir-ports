@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "eternal_starlight:stripped_scarlet_log"
-    }
+    "#": "eternal_starlight:stripped_scarlet_log"
   },
   "pattern": [
     "##",

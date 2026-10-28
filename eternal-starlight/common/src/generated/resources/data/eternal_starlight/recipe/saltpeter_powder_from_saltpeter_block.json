@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "saltpeter_powder",
   "ingredients": [
-    {
-      "item": "eternal_starlight:saltpeter_block"
-    }
+    "eternal_starlight:saltpeter_block"
   ],
   "result": {
     "count": 9,

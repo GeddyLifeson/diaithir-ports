@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "tag": "c:nuggets/aethersent"
-    },
-    "F": {
-      "tag": "eternal_starlight:arrow_feathers"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "A": "#c:nuggets/aethersent",
+    "F": "#eternal_starlight:arrow_feathers",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "A",

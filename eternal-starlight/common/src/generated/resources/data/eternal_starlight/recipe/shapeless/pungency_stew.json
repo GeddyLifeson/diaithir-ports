@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:pungency_fruit"
-    },
-    {
-      "item": "minecraft:rotten_flesh"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
+    "eternal_starlight:pungency_fruit",
+    "minecraft:rotten_flesh",
+    "minecraft:bowl"
   ],
   "result": {
     "count": 1,

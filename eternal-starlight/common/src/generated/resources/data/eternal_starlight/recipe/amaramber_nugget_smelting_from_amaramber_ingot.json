@@ -4,33 +4,15 @@
   "cookingtime": 200,
   "experience": 1.0,
   "ingredient": [
-    {
-      "item": "eternal_starlight:amaramber_sword"
-    },
-    {
-      "item": "eternal_starlight:amaramber_pickaxe"
-    },
-    {
-      "item": "eternal_starlight:amaramber_axe"
-    },
-    {
-      "item": "eternal_starlight:amaramber_hoe"
-    },
-    {
-      "item": "eternal_starlight:amaramber_shovel"
-    },
-    {
-      "item": "eternal_starlight:amaramber_sickle"
-    },
-    {
-      "item": "eternal_starlight:candlash"
-    },
-    {
-      "item": "eternal_starlight:amaramber_mask"
-    },
-    {
-      "item": "eternal_starlight:amaramber_chestplate"
-    }
+    "eternal_starlight:amaramber_sword",
+    "eternal_starlight:amaramber_pickaxe",
+    "eternal_starlight:amaramber_axe",
+    "eternal_starlight:amaramber_hoe",
+    "eternal_starlight:amaramber_shovel",
+    "eternal_starlight:amaramber_sickle",
+    "eternal_starlight:candlash",
+    "eternal_starlight:amaramber_mask",
+    "eternal_starlight:amaramber_chestplate"
   ],
   "result": {
     "count": 1,

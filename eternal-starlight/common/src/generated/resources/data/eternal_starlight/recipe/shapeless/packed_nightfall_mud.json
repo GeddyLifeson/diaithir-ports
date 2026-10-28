@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:nightfall_mud"
-    },
-    {
-      "item": "eternal_starlight:crinoa"
-    }
+    "eternal_starlight:nightfall_mud",
+    "eternal_starlight:crinoa"
   ],
   "result": {
     "count": 1,

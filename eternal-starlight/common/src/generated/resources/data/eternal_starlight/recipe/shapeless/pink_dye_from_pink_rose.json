@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:pink_rose"
-    }
+    "eternal_starlight:pink_rose"
   ],
   "result": {
     "count": 1,

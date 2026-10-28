@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "minecraft:birch_planks"
-    },
-    "S": {
-      "item": "eternal_starlight:starfire"
-    }
+    "#": "minecraft:birch_planks",
+    "S": "eternal_starlight:starfire"
   },
   "pattern": [
     "###",

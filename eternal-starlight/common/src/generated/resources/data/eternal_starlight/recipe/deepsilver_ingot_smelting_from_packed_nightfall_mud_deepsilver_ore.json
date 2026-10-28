@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 1.0,
-  "ingredient": {
-    "item": "eternal_starlight:packed_nightfall_mud_deepsilver_ore"
-  },
+  "ingredient": "eternal_starlight:packed_nightfall_mud_deepsilver_ore",
   "result": {
     "count": 1,
     "id": "eternal_starlight:deepsilver_ingot"

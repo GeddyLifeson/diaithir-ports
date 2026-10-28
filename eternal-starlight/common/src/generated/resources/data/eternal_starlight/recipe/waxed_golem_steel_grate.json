@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "M": {
-      "item": "eternal_starlight:waxed_golem_steel_block"
-    }
+    "M": "eternal_starlight:waxed_golem_steel_block"
   },
   "pattern": [
     " M ",

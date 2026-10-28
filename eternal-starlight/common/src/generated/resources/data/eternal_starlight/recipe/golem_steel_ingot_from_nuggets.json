@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "golem_steel_ingot",
   "key": {
-    "#": {
-      "item": "eternal_starlight:golem_steel_nugget"
-    }
+    "#": "eternal_starlight:golem_steel_nugget"
   },
   "pattern": [
     "###",

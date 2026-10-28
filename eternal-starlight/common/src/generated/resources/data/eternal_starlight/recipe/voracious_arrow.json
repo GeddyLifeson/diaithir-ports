@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "F": {
-      "tag": "eternal_starlight:arrow_feathers"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    },
-    "T": {
-      "item": "eternal_starlight:tooth_of_hunger"
-    }
+    "F": "#eternal_starlight:arrow_feathers",
+    "S": "#c:rods/wooden",
+    "T": "eternal_starlight:tooth_of_hunger"
   },
   "pattern": [
     "T",

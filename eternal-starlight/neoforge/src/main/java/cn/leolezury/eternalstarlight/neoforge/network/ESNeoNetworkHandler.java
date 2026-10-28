@@ -23,7 +23,11 @@ public class ESNeoNetworkHandler {
 				switch (packetInfo.direction()) {
 					case SERVER_TO_CLIENT -> registrar.playToClient(packetInfo.type(), packetInfo.streamCodec(), (packet, context) -> context.enqueueWork(() -> packetInfo.handler().handle(packet, context.player())));
 					case CLIENT_TO_SERVER -> registrar.playToServer(packetInfo.type(), packetInfo.streamCodec(), (packet, context) -> context.enqueueWork(() -> packetInfo.handler().handle(packet, context.player())));
-					case BIDIRECTIONAL -> registrar.playBidirectional(packetInfo.type(), packetInfo.streamCodec(), (packet, context) -> context.enqueueWork(() -> packetInfo.handler().handle(packet, context.player())));
+					case BIDIRECTIONAL -> {
+						// 26.1: the single-handler overload leaves the clientbound side without a handler and the client fails to load
+						net.neoforged.neoforge.network.handling.IPayloadHandler<T> both = (packet, context) -> context.enqueueWork(() -> packetInfo.handler().handle(packet, context.player()));
+						registrar.playBidirectional(packetInfo.type(), packetInfo.streamCodec(), both, both);
+					}
 				}
 			}
 		});

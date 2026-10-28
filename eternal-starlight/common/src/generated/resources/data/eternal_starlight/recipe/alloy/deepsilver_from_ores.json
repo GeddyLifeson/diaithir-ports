@@ -2,12 +2,8 @@
   "type": "eternal_starlight:alloy",
   "burn_time": 400,
   "ingredients": [
-    {
-      "tag": "c:ores/deepsilver"
-    },
-    {
-      "item": "eternal_starlight:saltpeter_powder"
-    }
+    "#c:ores/deepsilver",
+    "eternal_starlight:saltpeter_powder"
   ],
   "results": [
     {

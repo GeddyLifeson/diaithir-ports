@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:ingots/deepsilver"
-    },
-    "C": {
-      "item": "eternal_starlight:grimstone"
-    },
-    "S": {
-      "item": "eternal_starlight:keeper_armor_trim_smithing_template"
-    }
+    "#": "#c:ingots/deepsilver",
+    "C": "eternal_starlight:grimstone",
+    "S": "eternal_starlight:keeper_armor_trim_smithing_template"
   },
   "pattern": [
     "#S#",

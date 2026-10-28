@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "golem_steel_ingot",
   "ingredients": [
-    {
-      "item": "eternal_starlight:golem_steel_block"
-    }
+    "eternal_starlight:golem_steel_block"
   ],
   "result": {
     "count": 9,

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "tag": "c:gems/malarite"
-    },
-    "F": {
-      "tag": "eternal_starlight:arrow_feathers"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "A": "#c:gems/malarite",
+    "F": "#eternal_starlight:arrow_feathers",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "A",

@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "malarite",
   "ingredients": [
-    {
-      "item": "eternal_starlight:malarite_block"
-    }
+    "eternal_starlight:malarite_block"
   ],
   "result": {
     "count": 9,

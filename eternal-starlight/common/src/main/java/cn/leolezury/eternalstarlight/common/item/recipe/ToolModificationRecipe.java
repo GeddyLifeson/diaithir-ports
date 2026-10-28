@@ -10,14 +10,15 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 public class ToolModificationRecipe extends CustomRecipe {
 	private final Item tool, input;
-	private final ItemStack output;
+	private final ItemStackTemplate output;
 
-	public ToolModificationRecipe(CraftingBookCategory category, Item tool, Item input, ItemStack output) {
+	public ToolModificationRecipe(CraftingBookCategory category, Item tool, Item input, ItemStackTemplate output) {
 		this.tool = tool;
 		this.input = input;
 		this.output = output;
@@ -36,7 +37,7 @@ public class ToolModificationRecipe extends CustomRecipe {
 
 	@Override
 	public ItemStack assemble(CraftingInput recipeInput) {
-		return output.copy();
+		return output.create();
 	}
 
 	@Override
@@ -71,7 +72,7 @@ public class ToolModificationRecipe extends CustomRecipe {
 			CraftingBookCategory.CODEC.fieldOf("category").orElse(CraftingBookCategory.MISC).forGetter(CraftingRecipe::category),
 			BuiltInRegistries.ITEM.byNameCodec().fieldOf("tool").forGetter(o -> o.tool),
 			BuiltInRegistries.ITEM.byNameCodec().fieldOf("input").forGetter(o -> o.input),
-			ItemStack.OPTIONAL_CODEC.fieldOf("output").forGetter(o -> o.output)
+			ItemStackTemplate.CODEC.fieldOf("output").forGetter(o -> o.output)
 		).apply(instance, ToolModificationRecipe::new));
 
 		public MapCodec<ToolModificationRecipe> codec() {
@@ -85,7 +86,7 @@ public class ToolModificationRecipe extends CustomRecipe {
 					CraftingBookCategory category = friendlyByteBuf.readEnum(CraftingBookCategory.class);
 					Item tool = friendlyByteBuf.readById(BuiltInRegistries.ITEM::byId);
 					Item input = friendlyByteBuf.readById(BuiltInRegistries.ITEM::byId);
-					ItemStack output = ItemStack.STREAM_CODEC.decode(friendlyByteBuf);
+					ItemStackTemplate output = ItemStackTemplate.STREAM_CODEC.decode(friendlyByteBuf);
 					return new ToolModificationRecipe(category, tool, input, output);
 				}
 
@@ -94,7 +95,7 @@ public class ToolModificationRecipe extends CustomRecipe {
 					friendlyByteBuf.writeEnum(recipe.category());
 					friendlyByteBuf.writeById(BuiltInRegistries.ITEM::getId, recipe.tool);
 					friendlyByteBuf.writeById(BuiltInRegistries.ITEM::getId, recipe.input);
-					ItemStack.STREAM_CODEC.encode(friendlyByteBuf, recipe.output);
+					ItemStackTemplate.STREAM_CODEC.encode(friendlyByteBuf, recipe.output);
 				}
 			};
 		}

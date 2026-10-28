@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "tag": "eternal_starlight:northland_logs"
-    }
+    "#eternal_starlight:northland_logs"
   ],
   "result": {
     "count": 4,

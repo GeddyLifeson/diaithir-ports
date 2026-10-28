@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:velvetumoss_ball"
-    }
+    "eternal_starlight:velvetumoss_ball"
   ],
   "result": {
     "count": 2,

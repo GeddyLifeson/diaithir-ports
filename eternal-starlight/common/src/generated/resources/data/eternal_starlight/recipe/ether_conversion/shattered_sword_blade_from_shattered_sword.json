@@ -1,8 +1,6 @@
 {
   "type": "eternal_starlight:ether_conversion",
-  "input": {
-    "item": "eternal_starlight:shattered_sword"
-  },
+  "input": "eternal_starlight:shattered_sword",
   "outputs": [
     {
       "output": {

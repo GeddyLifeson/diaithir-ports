@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:starlight_flower"
-    }
+    "eternal_starlight:starlight_flower"
   ],
   "result": {
     "count": 1,

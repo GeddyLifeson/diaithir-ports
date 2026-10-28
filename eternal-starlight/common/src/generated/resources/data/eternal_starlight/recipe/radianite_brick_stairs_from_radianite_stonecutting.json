@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "eternal_starlight:radianite"
-  },
+  "ingredient": "eternal_starlight:radianite",
   "result": {
     "count": 1,
     "id": "eternal_starlight:radianite_brick_stairs"

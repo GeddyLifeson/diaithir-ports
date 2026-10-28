@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 150,
   "experience": 1.0,
-  "ingredient": {
-    "item": "eternal_starlight:haze_ice_starcore_ore"
-  },
+  "ingredient": "eternal_starlight:haze_ice_starcore_ore",
   "result": {
     "count": 1,
     "id": "eternal_starlight:starcore"

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "eternal_starlight:doomeden_tiles"
-  },
+  "ingredient": "eternal_starlight:doomeden_tiles",
   "result": {
     "count": 2,
     "id": "eternal_starlight:doomeden_tile_slab"

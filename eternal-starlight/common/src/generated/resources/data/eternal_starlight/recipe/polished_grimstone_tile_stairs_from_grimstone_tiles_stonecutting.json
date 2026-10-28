@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "eternal_starlight:grimstone_tiles"
-  },
+  "ingredient": "eternal_starlight:grimstone_tiles",
   "result": {
     "count": 1,
     "id": "eternal_starlight:polished_grimstone_tile_stairs"

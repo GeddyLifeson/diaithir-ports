@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "tag": "c:ingots/aethersent"
-    },
-    "H": {
-      "item": "eternal_starlight:creteor_hide"
-    },
-    "S": {
-      "item": "minecraft:string"
-    }
+    "A": "#c:ingots/aethersent",
+    "H": "eternal_starlight:creteor_hide",
+    "S": "minecraft:string"
   },
   "pattern": [
     " AS",

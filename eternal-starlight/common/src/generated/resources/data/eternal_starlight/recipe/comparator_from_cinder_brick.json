@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:redstone_torch"
-    },
-    "I": {
-      "item": "eternal_starlight:cinder_brick"
-    },
-    "X": {
-      "item": "minecraft:quartz"
-    }
+    "#": "minecraft:redstone_torch",
+    "I": "eternal_starlight:cinder_brick",
+    "X": "minecraft:quartz"
   },
   "pattern": [
     " # ",

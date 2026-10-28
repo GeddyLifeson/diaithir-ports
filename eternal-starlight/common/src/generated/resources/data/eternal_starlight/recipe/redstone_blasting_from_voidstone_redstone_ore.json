@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 100,
   "experience": 1.0,
-  "ingredient": {
-    "item": "eternal_starlight:voidstone_redstone_ore"
-  },
+  "ingredient": "eternal_starlight:voidstone_redstone_ore",
   "result": {
     "count": 1,
     "id": "minecraft:redstone"

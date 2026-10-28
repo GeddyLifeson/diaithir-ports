@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "eternal_starlight:abysslate"
-  },
+  "ingredient": "eternal_starlight:abysslate",
   "result": {
     "count": 1,
     "id": "eternal_starlight:polished_abysslate"

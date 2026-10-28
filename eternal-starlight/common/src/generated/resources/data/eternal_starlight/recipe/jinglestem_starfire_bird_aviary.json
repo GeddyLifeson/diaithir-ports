@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "eternal_starlight:jinglestem_planks"
-    },
-    "S": {
-      "item": "eternal_starlight:starfire"
-    }
+    "#": "eternal_starlight:jinglestem_planks",
+    "S": "eternal_starlight:starfire"
   },
   "pattern": [
     "###",

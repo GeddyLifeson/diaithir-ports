@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:tall_gladespike"
-    }
+    "eternal_starlight:tall_gladespike"
   ],
   "result": {
     "count": 1,

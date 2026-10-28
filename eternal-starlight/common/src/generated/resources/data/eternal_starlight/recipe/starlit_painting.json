@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "F": {
-      "tag": "eternal_starlight:yeti_fur"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "F": "#eternal_starlight:yeti_fur",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "SSS",

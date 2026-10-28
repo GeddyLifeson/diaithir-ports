@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:creteor_hide"
-    },
-    {
-      "item": "eternal_starlight:starcore"
-    },
-    {
-      "item": "minecraft:paper"
-    }
+    "eternal_starlight:creteor_hide",
+    "eternal_starlight:starcore",
+    "minecraft:paper"
   ],
   "result": {
     "count": 1,

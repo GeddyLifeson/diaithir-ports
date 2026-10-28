@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:fire_orchid"
-    }
+    "eternal_starlight:fire_orchid"
   ],
   "result": {
     "count": 1,

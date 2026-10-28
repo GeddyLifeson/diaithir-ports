@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "tag": "c:raw_materials/amaramber"
-    },
-    "S": {
-      "item": "minecraft:string"
-    }
+    "A": "#c:raw_materials/amaramber",
+    "S": "minecraft:string"
   },
   "pattern": [
     "S",

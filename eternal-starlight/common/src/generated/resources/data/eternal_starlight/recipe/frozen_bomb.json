@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "tag": "c:gems/starcore"
-    },
-    "G": {
-      "tag": "c:gems/glacite"
-    },
-    "S": {
-      "item": "eternal_starlight:ashen_snowball"
-    }
+    "A": "#c:gems/starcore",
+    "G": "#c:gems/glacite",
+    "S": "eternal_starlight:ashen_snowball"
   },
   "pattern": [
     "SG ",

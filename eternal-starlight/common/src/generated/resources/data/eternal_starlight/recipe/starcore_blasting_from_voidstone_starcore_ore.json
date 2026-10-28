@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 1.0,
-  "ingredient": {
-    "item": "eternal_starlight:voidstone_starcore_ore"
-  },
+  "ingredient": "eternal_starlight:voidstone_starcore_ore",
   "result": {
     "count": 1,
     "id": "eternal_starlight:starcore"

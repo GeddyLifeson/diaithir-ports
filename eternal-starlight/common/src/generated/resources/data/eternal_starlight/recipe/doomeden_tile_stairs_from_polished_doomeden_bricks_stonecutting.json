@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "eternal_starlight:polished_doomeden_bricks"
-  },
+  "ingredient": "eternal_starlight:polished_doomeden_bricks",
   "result": {
     "count": 1,
     "id": "eternal_starlight:doomeden_tile_stairs"

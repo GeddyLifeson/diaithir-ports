@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:cobblestone"
-    },
-    "Q": {
-      "item": "eternal_starlight:nightfall_spider_eye"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    }
+    "#": "minecraft:cobblestone",
+    "Q": "eternal_starlight:nightfall_spider_eye",
+    "R": "minecraft:redstone"
   },
   "pattern": [
     "###",

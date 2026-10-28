@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "tag": "c:raw_materials/amaramber"
-    },
-    "L": {
-      "tag": "eternal_starlight:torreya_logs"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "A": "#c:raw_materials/amaramber",
+    "L": "#eternal_starlight:torreya_logs",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     " S ",

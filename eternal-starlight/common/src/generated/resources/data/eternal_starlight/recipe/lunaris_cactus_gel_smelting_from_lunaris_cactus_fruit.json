@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 1.0,
-  "ingredient": {
-    "item": "eternal_starlight:lunaris_cactus_fruit"
-  },
+  "ingredient": "eternal_starlight:lunaris_cactus_fruit",
   "result": {
     "count": 1,
     "id": "eternal_starlight:lunaris_cactus_gel"

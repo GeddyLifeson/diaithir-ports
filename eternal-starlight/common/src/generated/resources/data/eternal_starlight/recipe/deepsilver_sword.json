@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "tag": "c:ingots/deepsilver"
-    },
-    "H": {
-      "tag": "c:rods/wooden"
-    }
+    "#": "#c:ingots/deepsilver",
+    "H": "#c:rods/wooden"
   },
   "pattern": [
     "#",

@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "raw_amaramber",
   "ingredients": [
-    {
-      "item": "eternal_starlight:raw_amaramber_block"
-    }
+    "eternal_starlight:raw_amaramber_block"
   ],
   "result": {
     "count": 9,

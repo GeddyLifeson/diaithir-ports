@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "eternal_starlight:lunar_mosaic"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "#": "eternal_starlight:lunar_mosaic",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "S#S",

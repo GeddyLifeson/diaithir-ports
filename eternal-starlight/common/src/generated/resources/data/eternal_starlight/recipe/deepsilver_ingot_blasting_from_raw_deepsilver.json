@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 1.0,
-  "ingredient": {
-    "item": "eternal_starlight:raw_deepsilver"
-  },
+  "ingredient": "eternal_starlight:raw_deepsilver",
   "result": {
     "count": 1,
     "id": "eternal_starlight:deepsilver_ingot"

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": {
-      "tag": "c:ingots/aethersent"
-    },
-    "H": {
-      "item": "eternal_starlight:creteor_hide"
-    }
+    "A": "#c:ingots/aethersent",
+    "H": "eternal_starlight:creteor_hide"
   },
   "pattern": [
     "HAH",

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:redstone_torch"
-    },
-    "I": {
-      "item": "eternal_starlight:cinder_brick"
-    },
-    "X": {
-      "item": "eternal_starlight:nightfall_spider_eye"
-    }
+    "#": "minecraft:redstone_torch",
+    "I": "eternal_starlight:cinder_brick",
+    "X": "eternal_starlight:nightfall_spider_eye"
   },
   "pattern": [
     " # ",

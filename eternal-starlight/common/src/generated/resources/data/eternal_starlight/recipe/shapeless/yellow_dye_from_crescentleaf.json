@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:crescentleaf"
-    }
+    "eternal_starlight:crescentleaf"
   ],
   "result": {
     "count": 1,

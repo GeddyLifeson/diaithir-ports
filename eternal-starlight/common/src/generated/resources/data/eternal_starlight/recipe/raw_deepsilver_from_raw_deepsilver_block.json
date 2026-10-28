@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "raw_deepsilver",
   "ingredients": [
-    {
-      "item": "eternal_starlight:raw_deepsilver_block"
-    }
+    "eternal_starlight:raw_deepsilver_block"
   ],
   "result": {
     "count": 9,

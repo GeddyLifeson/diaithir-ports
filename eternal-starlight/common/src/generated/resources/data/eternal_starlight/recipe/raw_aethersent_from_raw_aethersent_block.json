@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "raw_aethersent",
   "ingredients": [
-    {
-      "item": "eternal_starlight:raw_aethersent_block"
-    }
+    "eternal_starlight:raw_aethersent_block"
   ],
   "result": {
     "count": 9,

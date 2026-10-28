@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:chest"
-    },
-    "G": {
-      "item": "eternal_starlight:oxidized_golem_steel_ingot"
-    },
-    "S": {
-      "item": "eternal_starlight:deepsilver_ingot"
-    }
+    "C": "minecraft:chest",
+    "G": "eternal_starlight:oxidized_golem_steel_ingot",
+    "S": "eternal_starlight:deepsilver_ingot"
   },
   "pattern": [
     "SGS",

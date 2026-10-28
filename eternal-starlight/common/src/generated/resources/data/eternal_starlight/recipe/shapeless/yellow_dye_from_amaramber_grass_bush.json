@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:amaramber_grass_bush"
-    }
+    "eternal_starlight:amaramber_grass_bush"
   ],
   "result": {
     "count": 1,

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "P": {
-      "tag": "c:dusts/saltpeter"
-    },
-    "S": {
-      "item": "minecraft:string"
-    }
+    "P": "#c:dusts/saltpeter",
+    "S": "minecraft:string"
   },
   "pattern": [
     "SSS",

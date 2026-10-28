@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "eternal_starlight:haze_ice_bricks"
-    }
+    "#": "eternal_starlight:haze_ice_bricks"
   },
   "pattern": [
     "###",

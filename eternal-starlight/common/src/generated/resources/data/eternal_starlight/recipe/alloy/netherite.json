@@ -2,24 +2,12 @@
   "type": "eternal_starlight:alloy",
   "burn_time": 400,
   "ingredients": [
-    {
-      "tag": "c:ingots/gold"
-    },
-    {
-      "tag": "c:ingots/gold"
-    },
-    {
-      "tag": "c:ingots/gold"
-    },
-    {
-      "tag": "c:ingots/gold"
-    },
-    {
-      "item": "minecraft:netherite_scrap"
-    },
-    {
-      "item": "minecraft:netherite_scrap"
-    }
+    "#c:ingots/gold",
+    "#c:ingots/gold",
+    "#c:ingots/gold",
+    "#c:ingots/gold",
+    "minecraft:netherite_scrap",
+    "minecraft:netherite_scrap"
   ],
   "results": [
     {

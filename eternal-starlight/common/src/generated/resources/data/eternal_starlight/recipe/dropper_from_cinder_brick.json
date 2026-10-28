@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "eternal_starlight:cinder_brick"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    }
+    "#": "eternal_starlight:cinder_brick",
+    "R": "minecraft:redstone"
   },
   "pattern": [
     "###",

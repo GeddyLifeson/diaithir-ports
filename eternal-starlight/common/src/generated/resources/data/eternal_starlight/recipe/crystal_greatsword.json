@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "B": {
-      "item": "eternal_starlight:blue_starlight_crystal_shard"
-    },
-    "G": {
-      "tag": "c:ingots/golem_steel"
-    },
-    "L": {
-      "item": "eternal_starlight:shivering_gel"
-    },
-    "R": {
-      "item": "eternal_starlight:red_starlight_crystal_shard"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "B": "eternal_starlight:blue_starlight_crystal_shard",
+    "G": "#c:ingots/golem_steel",
+    "L": "eternal_starlight:shivering_gel",
+    "R": "eternal_starlight:red_starlight_crystal_shard",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     " LR",

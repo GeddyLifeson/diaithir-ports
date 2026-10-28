@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "eternal_starlight:rookfish_air_sac"
-    }
+    "#": "eternal_starlight:rookfish_air_sac"
   },
   "pattern": [
     "# #",

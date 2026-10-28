@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "starcore",
   "ingredients": [
-    {
-      "item": "eternal_starlight:starcore_block"
-    }
+    "eternal_starlight:starcore_block"
   ],
   "result": {
     "count": 9,

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "tag": "eternal_starlight:banyin_logs"
-    }
+    "#eternal_starlight:banyin_logs"
   ],
   "result": {
     "count": 4,

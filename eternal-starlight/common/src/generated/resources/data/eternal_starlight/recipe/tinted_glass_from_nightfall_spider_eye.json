@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "E": {
-      "item": "eternal_starlight:nightfall_spider_eye"
-    },
-    "G": {
-      "item": "minecraft:glass"
-    }
+    "E": "eternal_starlight:nightfall_spider_eye",
+    "G": "minecraft:glass"
   },
   "pattern": [
     " E ",

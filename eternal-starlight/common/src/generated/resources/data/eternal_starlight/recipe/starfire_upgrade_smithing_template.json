@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:ingots/thermal_springstone"
-    },
-    "C": {
-      "item": "eternal_starlight:starcore_block"
-    },
-    "S": {
-      "item": "eternal_starlight:starfire_upgrade_smithing_template"
-    }
+    "#": "#c:ingots/thermal_springstone",
+    "C": "eternal_starlight:starcore_block",
+    "S": "eternal_starlight:starfire_upgrade_smithing_template"
   },
   "pattern": [
     "#S#",

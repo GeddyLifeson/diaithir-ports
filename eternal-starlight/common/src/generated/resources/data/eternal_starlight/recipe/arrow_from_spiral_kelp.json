@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "F": {
-      "item": "eternal_starlight:spiral_kelp"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    },
-    "T": {
-      "item": "minecraft:flint"
-    }
+    "F": "eternal_starlight:spiral_kelp",
+    "S": "#c:rods/wooden",
+    "T": "minecraft:flint"
   },
   "pattern": [
     "T",

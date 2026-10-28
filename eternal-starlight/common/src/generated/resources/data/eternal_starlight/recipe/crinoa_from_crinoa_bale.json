@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "crinoa_bale",
   "ingredients": [
-    {
-      "item": "eternal_starlight:crinoa_bale"
-    }
+    "eternal_starlight:crinoa_bale"
   ],
   "result": {
     "count": 9,

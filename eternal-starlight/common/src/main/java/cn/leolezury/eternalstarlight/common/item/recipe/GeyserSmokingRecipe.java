@@ -13,6 +13,7 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.PlacementInfo;
 import net.minecraft.world.item.crafting.RecipeBookCategories;
@@ -22,7 +23,11 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 
-public record GeyserSmokingRecipe(Item input, int inputCount, ItemStack output) implements Recipe<SingleRecipeInput> {
+public record GeyserSmokingRecipe(Item input, int inputCount, ItemStackTemplate outputTemplate) implements Recipe<SingleRecipeInput> {
+	public ItemStack output() {
+		return outputTemplate.create();
+	}
+
 	@Override
 	public boolean matches(SingleRecipeInput container, Level level) {
 		return container.getItem(0).is(input()) && container.getItem(0).getCount() >= inputCount();
@@ -82,7 +87,7 @@ public record GeyserSmokingRecipe(Item input, int inputCount, ItemStack output) 
 		private static final MapCodec<GeyserSmokingRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			BuiltInRegistries.ITEM.byNameCodec().fieldOf("input").forGetter(GeyserSmokingRecipe::input),
 			Codec.INT.fieldOf("input_count").forGetter(GeyserSmokingRecipe::inputCount),
-			ItemStack.OPTIONAL_CODEC.fieldOf("output").forGetter(GeyserSmokingRecipe::output)
+			ItemStackTemplate.CODEC.fieldOf("output").forGetter(GeyserSmokingRecipe::outputTemplate)
 		).apply(instance, GeyserSmokingRecipe::new));
 
 		public MapCodec<GeyserSmokingRecipe> codec() {
@@ -95,7 +100,7 @@ public record GeyserSmokingRecipe(Item input, int inputCount, ItemStack output) 
 				public GeyserSmokingRecipe decode(RegistryFriendlyByteBuf friendlyByteBuf) {
 					Item input = friendlyByteBuf.readById(BuiltInRegistries.ITEM::byId);
 					int inputCount = friendlyByteBuf.readInt();
-					ItemStack output = ItemStack.STREAM_CODEC.decode(friendlyByteBuf);
+					ItemStackTemplate output = ItemStackTemplate.STREAM_CODEC.decode(friendlyByteBuf);
 					return new GeyserSmokingRecipe(input, inputCount, output);
 				}
 
@@ -103,7 +108,7 @@ public record GeyserSmokingRecipe(Item input, int inputCount, ItemStack output) 
 				public void encode(RegistryFriendlyByteBuf friendlyByteBuf, GeyserSmokingRecipe recipe) {
 					friendlyByteBuf.writeById(BuiltInRegistries.ITEM::getId, recipe.input());
 					friendlyByteBuf.writeInt(recipe.inputCount());
-					ItemStack.STREAM_CODEC.encode(friendlyByteBuf, recipe.output());
+					ItemStackTemplate.STREAM_CODEC.encode(friendlyByteBuf, recipe.outputTemplate());
 				}
 			};
 		}

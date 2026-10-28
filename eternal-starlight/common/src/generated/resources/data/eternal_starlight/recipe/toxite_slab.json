@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "eternal_starlight:toxite"
-    }
+    "#": "eternal_starlight:toxite"
   },
   "pattern": [
     "###"

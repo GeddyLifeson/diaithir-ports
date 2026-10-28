@@ -6,9 +6,7 @@
       "variant": "eternal_starlight:energized"
     }
   },
-  "input": {
-    "item": "eternal_starlight:starlit_painting"
-  },
+  "input": "eternal_starlight:starlit_painting",
   "outputs": [
     {
       "output": {

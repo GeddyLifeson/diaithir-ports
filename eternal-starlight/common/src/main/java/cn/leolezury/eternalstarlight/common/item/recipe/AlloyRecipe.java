@@ -20,6 +20,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
@@ -108,14 +109,18 @@ public record AlloyRecipe(NonNullList<Result> results, NonNullList<Ingredient> i
 	}
 
 
-	public record Result(ItemStack item, IntProvider amount) {
+	public record Result(ItemStackTemplate itemTemplate, IntProvider amount) {
+		public ItemStack item() {
+			return itemTemplate.create();
+		}
+
 		public static final Codec<Result> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-			ItemStack.CODEC.fieldOf("item").forGetter(Result::item),
+			ItemStackTemplate.CODEC.fieldOf("item").forGetter(Result::itemTemplate),
 			IntProviders.NON_NEGATIVE_CODEC.fieldOf("amount").forGetter(Result::amount)
 		).apply(instance, Result::new));
 
 		public static final StreamCodec<? super RegistryFriendlyByteBuf, Result> STREAM_CODEC = StreamCodec.composite(
-			ItemStack.STREAM_CODEC, Result::item,
+			ItemStackTemplate.STREAM_CODEC, Result::itemTemplate,
 			ByteBufCodecs.fromCodec(IntProviders.NON_NEGATIVE_CODEC), Result::amount,
 			Result::new
 		);
@@ -137,15 +142,16 @@ public record AlloyRecipe(NonNullList<Result> results, NonNullList<Ingredient> i
 
 		private static final MapCodec<AlloyRecipe> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
 			Result.CODEC.listOf().fieldOf("results").flatXmap((list) -> {
-				Result[] items = list.stream().filter((stack) -> !stack.item().isEmpty()).toArray(Result[]::new);
+				Result[] items = list.toArray(new Result[0]);
 				if (items.length == 0) {
 					return DataResult.error(() -> "No result for alloy recipe");
 				} else {
-					return items.length > 3 ? DataResult.error(() -> "Too many results for alloy recipe") : DataResult.success(NonNullList.of(new Result(ItemStack.EMPTY, ConstantInt.of(0)), items));
+					return items.length > 3 ? DataResult.error(() -> "Too many results for alloy recipe") : DataResult.success(NonNullList.of(new Result(new ItemStackTemplate(net.minecraft.world.item.Items.STONE), ConstantInt.of(0)), items));
 				}
 			}, DataResult::success).forGetter(AlloyRecipe::results),
 			Ingredient.CODEC.listOf().fieldOf("ingredients").flatXmap((list) -> {
-				Ingredient[] ingredients = list.stream().filter((ingredient) -> !ingredient.isEmpty()).toArray(Ingredient[]::new);
+				// 26.1: tags are not bound yet while recipes decode, so ingredient.isEmpty() must not be called here
+				Ingredient[] ingredients = list.toArray(new Ingredient[0]);
 				if (ingredients.length == 0) {
 					return DataResult.error(() -> "No ingredient for alloy recipe");
 				} else {
@@ -166,7 +172,7 @@ public record AlloyRecipe(NonNullList<Result> results, NonNullList<Ingredient> i
 
 		private static AlloyRecipe fromNetwork(RegistryFriendlyByteBuf byteBuf) {
 			int resultSize = byteBuf.readVarInt();
-			NonNullList<Result> results = NonNullList.withSize(resultSize, new Result(ItemStack.EMPTY, ConstantInt.of(1)));
+			NonNullList<Result> results = NonNullList.withSize(resultSize, new Result(new ItemStackTemplate(net.minecraft.world.item.Items.STONE), ConstantInt.of(1)));
 			results.replaceAll(result -> Result.STREAM_CODEC.decode(byteBuf));
 			int ingredientSize = byteBuf.readVarInt();
 			NonNullList<Ingredient> ingredients = NonNullList.withSize(ingredientSize, Ingredient.of(net.minecraft.world.item.Items.STONE));

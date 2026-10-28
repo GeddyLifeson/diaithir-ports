@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "P": {
-      "item": "eternal_starlight:tenacious_petal"
-    },
-    "V": {
-      "item": "eternal_starlight:tenacious_vine"
-    }
+    "P": "eternal_starlight:tenacious_petal",
+    "V": "eternal_starlight:tenacious_vine"
   },
   "pattern": [
     "PPP",

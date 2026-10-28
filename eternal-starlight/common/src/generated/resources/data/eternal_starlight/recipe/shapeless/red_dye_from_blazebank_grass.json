@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:blazebank_grass"
-    }
+    "eternal_starlight:blazebank_grass"
   ],
   "result": {
     "count": 1,

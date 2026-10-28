@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "eternal_starlight:raw_amaramber"
-    },
-    {
-      "item": "eternal_starlight:crinoa"
-    },
-    {
-      "item": "eternal_starlight:cooked_shadow_snail_meat"
-    }
+    "eternal_starlight:raw_amaramber",
+    "eternal_starlight:crinoa",
+    "eternal_starlight:cooked_shadow_snail_meat"
   ],
   "result": {
     "count": 1,

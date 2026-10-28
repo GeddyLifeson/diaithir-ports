@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "eternal_starlight:coniceras_shell"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    },
-    "T": {
-      "item": "eternal_starlight:rookfish_air_sac"
-    }
+    "C": "eternal_starlight:coniceras_shell",
+    "S": "#c:rods/wooden",
+    "T": "eternal_starlight:rookfish_air_sac"
   },
   "pattern": [
     "C",
