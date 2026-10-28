@@ -12,6 +12,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -32,15 +33,14 @@ public class TreeTapRecipe implements Recipe<RecipeInput> {
     }
 
     protected final Ingredient ingredient;
-    protected final ItemStack result;
+    protected final ItemStackTemplate result;
     protected final Block tappedBlock;
     protected final Block resultBlock;
     protected final int chance;
 
-    public TreeTapRecipe(Ingredient ingredient, Block tappedBlock, Block resultBlock, ItemStack result, Optional<PotionContents> contents, int chance) {
+    public TreeTapRecipe(Ingredient ingredient, Block tappedBlock, Block resultBlock, ItemStackTemplate result, Optional<PotionContents> contents, int chance) {
         this.ingredient = ingredient;
-        this.result = result;
-        contents.ifPresent(potion -> result.set(DataComponents.POTION_CONTENTS, potion));
+        this.result = contents.map(potion -> new ItemStackTemplate(result.item(), result.count(), net.minecraft.core.component.DataComponentPatch.builder().set(DataComponents.POTION_CONTENTS, potion).build())).orElse(result);
         this.tappedBlock = tappedBlock;
         this.resultBlock = resultBlock;
         this.chance = chance;
@@ -66,11 +66,11 @@ public class TreeTapRecipe implements Recipe<RecipeInput> {
 
     @Override
     public ItemStack assemble(RecipeInput inventory) {
-        return result.copy();
+        return result.create();
     }
 
     public ItemStack getResultItem() {
-        return result;
+        return result.create();
     }
 
     @Override
@@ -116,7 +116,7 @@ public class TreeTapRecipe implements Recipe<RecipeInput> {
                 Ingredient.CODEC.fieldOf("ingredient").forGetter(recipe -> recipe.ingredient),
                 BuiltInRegistries.BLOCK.byNameCodec().fieldOf("tapped_block").forGetter(recipe -> recipe.tappedBlock),
                 BuiltInRegistries.BLOCK.byNameCodec().fieldOf("result_block").forGetter(recipe -> recipe.resultBlock),
-                ItemStack.CODEC.fieldOf("result").forGetter(recipe -> recipe.result),
+                ItemStackTemplate.CODEC.fieldOf("result").forGetter(recipe -> recipe.result),
                 PotionContents.CODEC.optionalFieldOf("potion_content").forGetter(Serializer::potionContents),
                 ExtraCodecs.POSITIVE_INT.fieldOf("chance").forGetter(recipe -> recipe.chance)
         ).apply(instance, TreeTapRecipe::new));
@@ -125,7 +125,7 @@ public class TreeTapRecipe implements Recipe<RecipeInput> {
                 Ingredient.CONTENTS_STREAM_CODEC, recipe -> recipe.ingredient,
                 ByteBufCodecs.registry(Registries.BLOCK), recipe -> recipe.tappedBlock,
                 ByteBufCodecs.registry(Registries.BLOCK), recipe -> recipe.resultBlock,
-                ItemStack.STREAM_CODEC, recipe -> recipe.result,
+                ItemStackTemplate.STREAM_CODEC, recipe -> recipe.result,
                 ByteBufCodecs.optional(PotionContents.STREAM_CODEC), Serializer::potionContents,
                 ByteBufCodecs.VAR_INT, recipe -> recipe.chance,
                 TreeTapRecipe::new

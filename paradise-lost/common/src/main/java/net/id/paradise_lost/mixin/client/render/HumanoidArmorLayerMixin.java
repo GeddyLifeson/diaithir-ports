@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  */
 @Mixin(HumanoidMobRenderer.class)
 public class HumanoidArmorLayerMixin {
-    public static final String ANCHORED_TAG = "paradise_lost_floaty_anchored";
+    private static final String ANCHORED_TAG = "paradise_lost_floaty_anchored";
 
     @Inject(method = "extractHumanoidRenderState", at = @At("TAIL"), require = 0)
     private static void paradiseLost$markAnchoredFloaty(LivingEntity entity, HumanoidRenderState state, float partialTicks, ItemModelResolver resolver, CallbackInfo ci) {
