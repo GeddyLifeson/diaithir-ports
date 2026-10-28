@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#vs_eureka:balloons",
+    "minecraft:gray_dye"
+  ],
+  "result": {
+    "id": "vs_eureka:gray_balloon",
+    "count": 1
+  },
+  "group": "colored_balloons"
+}

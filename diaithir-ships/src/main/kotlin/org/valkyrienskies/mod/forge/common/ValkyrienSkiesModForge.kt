@@ -106,6 +106,8 @@ class ValkyrienSkiesModForge(modBus: IEventBus, container: ModContainer) {
         }
 
         ValkyrienSkiesMod.init()
+        org.valkyrienskies.eureka.EurekaMod.init(modBus, container)
+        if (isClient) org.valkyrienskies.eureka.EurekaMod.initClient(modBus)
         VSEntityManager.registerContraptionHandler(ContraptionShipyardEntityHandlerForge)
 
         // Register the ModConfigSpecs with NeoForge so their ConfigValues have a backing

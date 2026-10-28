@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "# #",
+    " # "
+  ],
+  "key": {
+    "#": "minecraft:paper"
+  },
+  "result": {
+    "id": "vs_eureka:balloon",
+    "count": 2
+  },
+  "group": "balloons"
+}
