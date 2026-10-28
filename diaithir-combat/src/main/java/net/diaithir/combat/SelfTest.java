@@ -95,6 +95,21 @@ public final class SelfTest {
         return a;
     }
 
+    /**
+     * Other pack mods give every player a random critical chance (critical_strike: 5 % innate, x1.5; Apothic Attributes: crit_chance).
+     * Those rolls are real play behaviour and apply to combo hits, but they make damage assertions random, so the fake player gets none.
+     */
+    private static void noCrits(ServerPlayer fp) {
+        for (var h : BuiltInRegistries.ATTRIBUTE.listElements().toList()) {
+            Identifier id = h.key().identifier();
+            if (!id.getPath().equals("crit_chance") && !(id.getNamespace().equals("critical_strike") && id.getPath().equals("chance"))) continue;
+            var inst = fp.getAttributes().getInstance(h);
+            if (inst == null) continue;
+            inst.removeModifiers();
+            inst.setBaseValue(0);
+        }
+    }
+
     static void run(ServerLevel lv) {
         BlockPos sp = lv.getRespawnData().pos();
         double bx = sp.getX() + 0.5, by = lv.getMaxY() - 40, bz = sp.getZ() + 0.5;
@@ -102,6 +117,7 @@ public final class SelfTest {
         fp.setPos(bx, by, bz);
         fp.setYRot(0); fp.setXRot(0); // facing +Z
         fp.getAbilities().mayBuild = true;
+        noCrits(fp);
         List<Entity> cleanup = new ArrayList<>();
         int age = 1;
         // ---- age scaling
@@ -174,6 +190,7 @@ public final class SelfTest {
                 // real damage on a golem
                 IronGolem g = EntityType.IRON_GOLEM.create(lv, EntitySpawnReason.COMMAND);
                 g.setNoAi(true); g.setNoGravity(true);
+                g.addTag("dwarfsandgiants:spawn_size_rolled"); // keeps a size-rolling mod from changing the target's health
                 g.setPos(bx, by, bz + 1.6);
                 lv.addFreshEntity(g);
                 cleanup.add(g);

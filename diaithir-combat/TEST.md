@@ -14,3 +14,6 @@ Dedicated server (gradle runServer, rcon) run twice: alone, and with the diaithi
 - `item replace` of spartanweaponry:iron_rapier, diaithirarms:steel_sword and composite_bow into a summoned armour stand: accepted (stand-in for `/give`, no player online).
 
 Not tested: a real client (attack-key interception, V roll key, tooltip line, arm swing), real player Age from a scoreboard, bow draw feel and arrow drop in flight, real shield/sneak parry with a player, PlayerAnimationLib animations (not implemented).
+
+## Full pack (batch 1) note
+In the full pack /combatselftest gave 295/2 or varying failures: critical_strike (5% innate chance, x1.5) and Apothic Attributes crit_chance roll on combo hits. The test now zeroes the fake player crit chance and tags the target golem against Dwarfs and Giants size rolls. Result in the full pack: ok=297 bad=0, repeated.
