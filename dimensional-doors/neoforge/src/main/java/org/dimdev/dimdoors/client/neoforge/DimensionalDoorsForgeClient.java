@@ -91,11 +91,12 @@ public class DimensionalDoorsForgeClient implements IClientSided {
     }
 
     static void initalizeFluidModels(RegisterFluidModelsEvent event) {
-        event.register(createFluidModel(ModFluids.ETERNAL_FLUID_DETAILS), ModFluids.ETERNAL_FLUID);
+        event.register(createFluidModel(ModFluids.ETERNAL_FLUID_DETAILS), ModFluids.ETERNAL_FLUID, ModFluids.FLOWING_ETERNAL_FLUID);
+        event.register(createFluidModel(ModFluids.LEAK_DETAILS), ModFluids.LEAK, ModFluids.FLOWING_LEAK);
     }
 
     public static FluidModel.Unbaked createFluidModel(ModFluids.FluidDetails details) {
-        return new FluidModel.Unbaked(new Material(details.flowing()), new Material(details.still()), new Material(details.overlay()), null);
+        return new FluidModel.Unbaked(new Material(details.still()), new Material(details.flowing()), new Material(details.overlay()), null);
     }
 
     public record FluidExtension(Identifier flowing, Identifier still, Identifier overlay) implements IClientFluidTypeExtensions {

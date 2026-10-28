@@ -2,7 +2,8 @@
   "parent": "block/block",
   "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
   "textures": {
-    "0": "dimdoors:block/marking_plate"
+    "0": "dimdoors:block/marking_plate",
+    "particle": "dimdoors:block/marking_plate"
   },
   "elements": [
     {

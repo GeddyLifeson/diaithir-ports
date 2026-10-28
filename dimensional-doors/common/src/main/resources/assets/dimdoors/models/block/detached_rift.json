@@ -1,7 +1,6 @@
 {
-  "variants": {
-    "": {
-      "model": "minecraft:block/air"
-    }
-  }
+  "textures": {
+    "particle": "dimdoors:block/black_fabric"
+  },
+  "elements": []
 }
