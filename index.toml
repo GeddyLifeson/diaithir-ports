@@ -25814,7 +25814,7 @@ hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/dedupe.js"
-hash = "3fa87ef99660827826a355be82e5e36b19196d4b34b145dae015c6635b09c88c"
+hash = "49baecac7a9675466af17fddec3cd323ab8f1a32935d85d3c76a06655e794a45"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/integration_feast.js"
@@ -25843,6 +25843,10 @@ hash = "1706472bcf603c87b5b23896733d3918f6b65c9fc2f65d42f0aa11188422dfa3"
 [[files]]
 file = "kubejs/server_scripts/diaithir/zz_cuisine_engine.js"
 hash = "44863edb7cd7b9f1d5e0ab8ad22a3fcac410430b7e5541257a2989ba05e70dd9"
+
+[[files]]
+file = "kubejs/server_scripts/drinks/brewing.js"
+hash = "b5c277369b3dc3884223ecd24f7dff47abc130fd59957a2c49ce8364e12ffd7d"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/catchup.js"
@@ -25931,6 +25935,10 @@ hash = "542239ab7576447d1ea86d64ca3536096ec910c442816b9ef711603ef4f48120"
 [[files]]
 file = "kubejs/startup_scripts/diaithir_jewelry_gems.js"
 hash = "e8f3948bef19ec086f7caa0fea53bc5c6aa9c24a4330eca4dbab6facf5313c40"
+
+[[files]]
+file = "kubejs/startup_scripts/drinks/items.js"
+hash = "e7064c8119324c97f6e1f5450b8c2f479e6639c1bdf2f371201dd4218f18abfe"
 
 [[files]]
 file = "kubejs/startup_scripts/earth_timeline_ns.js"
