@@ -3,6 +3,6 @@ filename = "diaithir-ui.zip"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1/client/resourcepacks/diaithir-ui.zip"
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-1/client/resourcepacks/diaithir-ui.zip"
 hash-format = "sha256"
 hash = "a91d3c0a9c507aa5aae87bc1909a01df7e2388e548e12080dc2ad298007b3956"
