@@ -156,19 +156,19 @@ public class RedstoneController<T extends BlockEntity & IRedstoneControl<T>> {
 
     public static abstract class RedstoneMode<T extends BlockEntity & IRedstoneControl<T>> {
         private final String id;
-        private final Either<ItemStack,Identifier> texture;
+        private final java.util.function.Supplier<Either<ItemStack,Identifier>> texture;
         private final Predicate<T> runPredicate;
         private final Predicate<T> emissionPredicate;
 
-        public RedstoneMode(String id, ItemStack stackIcon, Predicate<T> runPredicate, Predicate<T> emissionPredicate) {
-            this(id, Either.left(stackIcon), runPredicate, emissionPredicate);
+        public RedstoneMode(String id, java.util.function.Supplier<ItemStack> stackIcon, Predicate<T> runPredicate, Predicate<T> emissionPredicate) {
+            this(() -> Either.left(stackIcon.get()), id, runPredicate, emissionPredicate);
         }
 
         public RedstoneMode(String id, Identifier texture, Predicate<T> runPredicate, Predicate<T> emissionPredicate) {
-            this(id, Either.right(texture), runPredicate, emissionPredicate);
+            this(() -> Either.right(texture), id, runPredicate, emissionPredicate);
         }
 
-        private RedstoneMode(String id, Either<ItemStack,Identifier> texture, Predicate<T> runPredicate, Predicate<T> emissionPredicate) {
+        private RedstoneMode(java.util.function.Supplier<Either<ItemStack,Identifier>> texture, String id, Predicate<T> runPredicate, Predicate<T> emissionPredicate) {
             this.id = id;
             this.runPredicate = runPredicate;
             this.emissionPredicate = emissionPredicate;
@@ -180,7 +180,7 @@ public class RedstoneController<T extends BlockEntity & IRedstoneControl<T>> {
         }
 
         public Either<ItemStack,Identifier> getTexture() {
-            return texture;
+            return texture.get();
         }
 
         public String getTranslationKey() {
@@ -193,7 +193,7 @@ public class RedstoneController<T extends BlockEntity & IRedstoneControl<T>> {
             super(id, texture, te -> false, emissionPredicate);
         }
 
-        public EmittingRedstoneMode(String id, ItemStack stackIcon, Predicate<T> emissionPredicate) {
+        public EmittingRedstoneMode(String id, java.util.function.Supplier<ItemStack> stackIcon, Predicate<T> emissionPredicate) {
             super(id, stackIcon, te -> false, emissionPredicate);
         }
     }
@@ -203,7 +203,7 @@ public class RedstoneController<T extends BlockEntity & IRedstoneControl<T>> {
             super(id, texture, runPredicate, t -> false);
         }
 
-        public ReceivingRedstoneMode(String id, ItemStack stackIcon, Predicate<T> runPredicate) {
+        public ReceivingRedstoneMode(String id, java.util.function.Supplier<ItemStack> stackIcon, Predicate<T> runPredicate) {
             super(id, stackIcon, runPredicate, te -> false);
         }
     }
@@ -211,11 +211,11 @@ public class RedstoneController<T extends BlockEntity & IRedstoneControl<T>> {
     private static class StandardReceivingModes<T extends BlockEntity & IRedstoneControl<T>> {
         public List<RedstoneController.RedstoneMode<T>> modes() {
             return ImmutableList.of(
-                    new ReceivingRedstoneMode<>("standard.always", new ItemStack(Items.GUNPOWDER),
+                    new ReceivingRedstoneMode<>("standard.always", () -> new ItemStack(Items.GUNPOWDER),
                             te -> true),
-                    new ReceivingRedstoneMode<>("standard.high_signal", new ItemStack(Items.REDSTONE),
+                    new ReceivingRedstoneMode<>("standard.high_signal", () -> new ItemStack(Items.REDSTONE),
                             te -> te.getCurrentRedstonePower() > 0),
-                    new ReceivingRedstoneMode<>("standard.low_signal",  new ItemStack(Items.REDSTONE_TORCH),
+                    new ReceivingRedstoneMode<>("standard.low_signal",  () -> new ItemStack(Items.REDSTONE_TORCH),
                             te -> te.getCurrentRedstonePower() == 0));
         }
     }

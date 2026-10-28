@@ -51,29 +51,20 @@ public class CapabilitySetup {
         });
 
         // block entities
-        ModBlockEntityTypes.streamBlockEntities().forEach(blockEntity -> {
-            if (blockEntity instanceof AbstractPneumaticCraftBlockEntity pncBE) {
-                if (pncBE.hasItemCapability()) {
-                    event.registerBlockEntity(Capabilities.Item.BLOCK, pncBE.getType(),
-                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.getItemHandler(dir) != null ? LegacyAdapters.item(be.getItemHandler(dir)) : null);
-                }
-                if (pncBE.hasFluidCapability()) {
-                    event.registerBlockEntity(Capabilities.Fluid.BLOCK, pncBE.getType(),
-                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.getFluidHandler(dir) != null ? LegacyAdapters.fluid(be.getFluidHandler(dir)) : null);
-                }
-                if (pncBE.hasEnergyCapability()) {
-                    event.registerBlockEntity(Capabilities.Energy.BLOCK, pncBE.getType(),
-                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.getEnergyHandler(dir) != null ? LegacyAdapters.energy(be.getEnergyHandler(dir)) : null);
-                }
-                if (pncBE instanceof IHeatExchangingTE) {
-                    event.registerBlockEntity(PNCCapabilities.HEAT_EXCHANGER_BLOCK, pncBE.getType(),
-                            (object, dir) -> object instanceof IHeatExchangingTE heat ? heat.getHeatExchanger(dir) : null);
-                }
-                if (pncBE instanceof AbstractAirHandlingBlockEntity) {
-                    event.registerBlockEntity(PNCCapabilities.AIR_HANDLER_MACHINE, pncBE.getType(),
-                            (object, dir) -> object instanceof AbstractAirHandlingBlockEntity a ? a.getAirHandler(dir) : null);
-                }
-            }
+        // Block entity instances can't be created here (item components aren't bound yet), so capabilities are
+        // registered for every PNC block entity type and filtered per-instance at lookup time.
+        ModBlockEntityTypes.BLOCK_ENTITY_TYPES.getEntries().forEach(holder -> {
+            var type = holder.get();
+            event.registerBlockEntity(Capabilities.Item.BLOCK, type,
+                    (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.hasItemCapability() && be.getItemHandler(dir) != null ? LegacyAdapters.item(be.getItemHandler(dir)) : null);
+            event.registerBlockEntity(Capabilities.Fluid.BLOCK, type,
+                    (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.hasFluidCapability() && be.getFluidHandler(dir) != null ? LegacyAdapters.fluid(be.getFluidHandler(dir)) : null);
+            event.registerBlockEntity(Capabilities.Energy.BLOCK, type,
+                    (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.hasEnergyCapability() && be.getEnergyHandler(dir) != null ? LegacyAdapters.energy(be.getEnergyHandler(dir)) : null);
+            event.registerBlockEntity(PNCCapabilities.HEAT_EXCHANGER_BLOCK, type,
+                    (object, dir) -> object instanceof IHeatExchangingTE heat ? heat.getHeatExchanger(dir) : null);
+            event.registerBlockEntity(PNCCapabilities.AIR_HANDLER_MACHINE, type,
+                    (object, dir) -> object instanceof AbstractAirHandlingBlockEntity a ? a.getAirHandler(dir) : null);
         });
 
         // items
