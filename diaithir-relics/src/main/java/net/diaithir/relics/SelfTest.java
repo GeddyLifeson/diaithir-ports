@@ -196,6 +196,10 @@ public final class SelfTest {
             }
             // active
             if (d.active() != null) {
+                // every foe in reach starts at full health: a kill inside the ability throws in other mods' death hooks (lightmanscurrency loot)
+                for (net.minecraft.world.entity.LivingEntity le : level.getEntitiesOfClass(net.minecraft.world.entity.LivingEntity.class, p.getBoundingBox().inflate(10.0))) {
+                    if (le != p) { le.setHealth(le.getMaxHealth()); le.invulnerableTime = 0; }
+                }
                 float hp0 = z.getHealth();
                 Vec3 pos0 = p.position();
                 if (!Abilities.fire(d, p, st)) return "BAD active did not fire (foes=" + Abilities.foes(p, p.position(), 6).size() + ")";
@@ -238,18 +242,28 @@ public final class SelfTest {
                 return z2.getHealth() < h ? "ok arced" : "BAD no arc in 60 blows";
             }
             case "backstab" -> {
-                z.setYRot(0); z.setYHeadRot(0);   // zombie faces +Z, the player stands at -Z: faces away? look +Z means looking from z toward +Z, away from player
-                float h0 = z.getHealth(); z.hurtServer(level, melee, 4); float d1 = h0 - z.getHealth();
-                z.invulnerableTime = 0; z.setHealth(z.getMaxHealth()); z.setYRot(180); z.setYHeadRot(180); z.setXRot(0);
-                float h1 = z.getHealth(); z.hurtServer(level, melee, 4); float d2 = h1 - z.getHealth();
-                return d1 > d2 ? "ok back " + d1 + " vs front " + d2 : "BAD back " + d1 + " front " + d2;
+                // other mods roll random crits, so each side is the sum of eight blows
+                float back = 0, front = 0;
+                for (int i = 0; i < 8; i++) {
+                    z.invulnerableTime = 0; z.hurtTime = 0; z.setHealth(z.getMaxHealth()); z.setYRot(0); z.setYHeadRot(0); z.setXRot(0);
+                    float h0 = z.getHealth(); z.hurtServer(level, melee, 4); back += Math.max(0F, h0 - z.getHealth());
+                    z.invulnerableTime = 0; z.hurtTime = 0; z.setHealth(z.getMaxHealth()); z.setYRot(180); z.setYHeadRot(180); z.setXRot(0);
+                    float h1 = z.getHealth(); z.hurtServer(level, melee, 4); front += Math.max(0F, h1 - z.getHealth());
+                }
+                return back > front ? "ok back " + back + " vs front " + front : "BAD back " + back + " front " + front;
             }
             case "tidebonus" -> {
-                float h0 = z.getHealth(); z.hurtServer(level, melee, 4); float dry = h0 - z.getHealth();
-                z.invulnerableTime = 0; z.setHealth(z.getMaxHealth());
-                level.setRainLevel(1.0F); level.setThunderLevel(0f);
-                boolean raining = level.isRainingAt(p.blockPosition());
-                float h1 = z.getHealth(); z.hurtServer(level, melee, 4); float wet = h1 - z.getHealth();
+                float dry = 0, wet = 0;
+                boolean raining = false;
+                for (int i = 0; i < 8; i++) {
+                    level.setRainLevel(0.0F);
+                    z.invulnerableTime = 0; z.hurtTime = 0; z.setHealth(z.getMaxHealth());
+                    float h0 = z.getHealth(); z.hurtServer(level, melee, 4); dry += Math.max(0F, h0 - z.getHealth());
+                    z.invulnerableTime = 0; z.hurtTime = 0; z.setHealth(z.getMaxHealth());
+                    level.setRainLevel(1.0F); level.setThunderLevel(0f);
+                    raining = level.isRainingAt(p.blockPosition());
+                    float h1 = z.getHealth(); z.hurtServer(level, melee, 4); wet += Math.max(0F, h1 - z.getHealth());
+                }
                 level.setRainLevel(0.0F);
                 return raining ? (wet >= dry ? "ok dry " + dry + " wet " + wet : "BAD dry " + dry + " wet " + wet) : "ok (no rain here, bonus path not reached)";
             }
