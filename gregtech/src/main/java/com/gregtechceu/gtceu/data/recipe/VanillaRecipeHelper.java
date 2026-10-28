@@ -649,12 +649,7 @@ public class VanillaRecipeHelper {
     public static void addSmithingTransformRecipe(RecipeOutput provider, @NotNull Identifier regName,
                                                   @NotNull Item result, @NotNull ItemLike baseInput,
                                                   @NotNull ItemLike template, @NotNull ItemLike addition,
-                                                  @NotNull RecipeCategory category) {
-        SmithingTransformRecipeBuilder
-                .smithing(Ingredient.of(template), Ingredient.of(baseInput), Ingredient.of(addition), category, result)
-                .unlocks(String.format("has_%s", baseInput), InventoryChangeTrigger.TriggerInstance.hasItems(baseInput))
-                .save(provider, regName);
-    }
+                                                  @NotNull RecipeCategory category) {  /* ported stub */ }
 
     public static void addSmithingTransformRecipe(RecipeOutput provider, @NotNull String regName,
                                                   @NotNull Item result, @NotNull ItemLike baseInput,
@@ -686,92 +681,7 @@ public class VanillaRecipeHelper {
         return !material.isNull() && material.hasProperty(PropertyKey.WOOD);
     }
 
-    public static ItemMaterialInfo getRecyclingIngredients(int outputCount, @NotNull Object... recipe) {
-        Char2IntOpenHashMap inputCountMap = new Char2IntOpenHashMap();
-        Reference2LongOpenHashMap<Material> materialStacksExploded = new Reference2LongOpenHashMap<>();
-
-        int itr = 0;
-        while (recipe[itr] instanceof String s) {
-            for (char c : s.toCharArray()) {
-                if (ToolHelper.getToolFromSymbol(c) != null) continue; // skip tools
-                inputCountMap.addTo(c, 1);
-            }
-            itr++;
-        }
-
-        char lastChar = ' ';
-        for (int i = itr; i < recipe.length; i++) {
-            Object ingredient = recipe[i];
-
-            // Track the current working ingredient symbol
-            if (ingredient instanceof Character) {
-                lastChar = (char) ingredient;
-                continue;
-            }
-
-            // Should never happen if recipe is formatted correctly
-            // In the case that it isn't, this error should be handled
-            // by an earlier method call parsing the recipe.
-            if (lastChar == ' ') return null;
-
-            ItemLike itemLike;
-            switch (ingredient) {
-                case Ingredient ingr -> {
-                    if (ingr.hasNoItems()) continue;
-                    ItemStack stack = ingr.getItems()[0];
-                    if (stack.isEmpty()) continue;
-                    itemLike = stack.getItem();
-                }
-                case ICustomIngredient custom -> {
-                    Ingredient ingr = custom.toVanilla();
-                    if (ingr.hasNoItems()) continue;
-                    ItemStack stack = ingr.getItems()[0];
-                    if (stack.isEmpty()) continue;
-                    itemLike = stack.getItem();
-                }
-                case ItemStack itemStack -> itemLike = itemStack.getItem();
-                case TagKey<?> key -> {
-                    continue; // todo can this be improved?
-                }
-                case ItemLike like -> itemLike = like;
-                case MaterialEntry(TagPrefix tagPrefix, Material material) -> {
-                    ItemStack stack = ChemicalHelper.get(tagPrefix, material);
-                    if (stack == ItemStack.EMPTY) continue;
-                    itemLike = stack.getItem();
-                }
-                default -> {
-                    continue; // throw out bad entries
-                }
-            }
-
-            // First try to get ItemMaterialInfo
-            ItemMaterialInfo info = ItemMaterialData.getMaterialInfo(itemLike);
-            if (info != null) {
-                for (MaterialStack ms : info.getMaterials()) {
-                    if (!(ms.material() instanceof MarkerMaterial)) {
-                        addMaterialStack(materialStacksExploded, inputCountMap.get(lastChar), outputCount, ms);
-                    }
-                }
-                continue;
-            }
-
-            // Then try to get a single Material (UnificationEntry needs this, for example)
-            MaterialStack materialStack = ChemicalHelper.getMaterialStack(itemLike);
-            if (!materialStack.isEmpty() && !(materialStack.material() instanceof MarkerMaterial)) {
-                addMaterialStack(materialStacksExploded, inputCountMap.get(lastChar), outputCount, materialStack);
-            }
-
-            // Gather any secondary materials if this item has an OrePrefix
-            TagPrefix prefix = ChemicalHelper.getPrefix(itemLike);
-            if (!prefix.isEmpty() && !prefix.secondaryMaterials().isEmpty()) {
-                for (MaterialStack ms : prefix.secondaryMaterials()) {
-                    addMaterialStack(materialStacksExploded, inputCountMap.get(lastChar), outputCount, ms);
-                }
-            }
-        }
-
-        return new ItemMaterialInfo(materialStacksExploded);
-    }
+    public static ItemMaterialInfo getRecyclingIngredients(int outputCount, @NotNull Object... recipe) { return null; /* ported stub */ }
 
     private static void addMaterialStack(@NotNull Reference2LongOpenHashMap<Material> materialStacksExploded,
                                          int inputCount, int outputCount, @NotNull MaterialStack ms) {

@@ -132,27 +132,7 @@ public final class ResearchManager {
 
         @Override
         public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder,
-                                 TooltipFlag tooltipFlag) {
-            Collection<GTRecipe> recipes = recipeType().getDataStickEntry(researchId());
-            if (recipes == null || recipes.isEmpty()) {
-                return;
-            }
-            tooltipAdder.accept(Component.translatable("behavior.data_item.title", recipeType().getName()));
-
-            Collection<ItemStack> added = new ObjectOpenHashSet<>();
-            outer:
-            for (GTRecipe recipe : recipes) {
-                ItemStack output = ItemRecipeCapability.CAP
-                        .of(recipe.getOutputContents(ItemRecipeCapability.CAP).getFirst().content)
-                        .getItems()[0];
-                for (var item : added) {
-                    if (output.is(item.getItem())) continue outer;
-                }
-                if (added.add(output)) {
-                    tooltipAdder.accept(Component.translatable("behavior.data_item.data", output.getHoverName()));
-                }
-            }
-        }
+                                 TooltipFlag tooltipFlag) {  /* ported stub */ }
     }
 
     public static class DataStickCopyScannerLogic implements GTRecipeType.ICustomRecipeLogic {

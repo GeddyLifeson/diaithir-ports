@@ -46,45 +46,7 @@ public class WaxOffBehavior implements IToolBehavior<WaxOffBehavior> {
 
     @NotNull
     @Override
-    public InteractionResult onItemUse(UseOnContext context) {
-        Level level = context.getLevel();
-        Player player = context.getPlayer();
-        BlockPos pos = context.getClickedPos();
-        ItemStack stack = context.getItemInHand();
-        AoESymmetrical aoeDefinition = ToolHelper.getAoEDefinition(stack);
-
-        List<BlockPos> blocks;
-        // only attempt to strip if the center block is strippable
-        if (isBlockUnwaxable(context)) {
-            if (aoeDefinition.isZero()) {
-                blocks = List.of(pos);
-            } else {
-                blocks = getUnwaxableBlocks(aoeDefinition, context);
-                blocks.addFirst(context.getClickedPos());
-            }
-        } else {
-            return InteractionResult.PASS;
-        }
-
-        boolean unwaxed = false;
-        for (BlockPos blockPos : blocks) {
-            UseOnContext posContext = new UseOnContext(level, player, context.getHand(), stack,
-                    context.getHitResult().withPosition(blockPos));
-            BlockState newState = getUnwaxed(level.getBlockState(blockPos), posContext);
-            unwaxed |= level.setBlock(blockPos, newState, Block.UPDATE_ALL_IMMEDIATE);
-            level.levelEvent(player, LevelEvent.PARTICLES_WAX_OFF, blockPos, 0);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
-
-            ToolHelper.damageItem(stack, player);
-            if (stack.isEmpty()) break;
-        }
-
-        if (unwaxed) {
-            level.playSound(player, pos, SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
-            return InteractionResult.SUCCESS;
-        }
-        return InteractionResult.PASS;
-    }
+    public InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
     public static List<BlockPos> getUnwaxableBlocks(AoESymmetrical aoeDefinition, UseOnContext context) {
         return ToolHelper.iterateAoE(aoeDefinition, WaxOffBehavior::isBlockUnwaxable, context);

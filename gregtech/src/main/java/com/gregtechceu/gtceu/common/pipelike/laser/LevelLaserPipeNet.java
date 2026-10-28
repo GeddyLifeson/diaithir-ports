@@ -11,11 +11,7 @@ public class LevelLaserPipeNet extends LevelPipeNet<LaserPipeProperties, LaserPi
 
     private static final String DATA_ID = "gtceu_laser_pipe_net";
 
-    public static LevelLaserPipeNet getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new LevelLaserPipeNet(serverLevel),
-                        (tag, provider) -> new LevelLaserPipeNet(serverLevel, tag, provider)), DATA_ID);
-    }
+    public static LevelLaserPipeNet getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
 
     public LevelLaserPipeNet(ServerLevel serverLevel) {
         super(serverLevel);

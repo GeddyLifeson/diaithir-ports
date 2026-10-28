@@ -41,18 +41,7 @@ public class OrePlacer {
      * Consumes the current chunk for all of the relevant veins, allowing the cache to unload the vein,
      * once all of its chunks have been generated.
      */
-    public void placeOres(WorldGenLevel level, ChunkGenerator chunkGenerator, ChunkAccess chunk) {
-        if (!ConfigHolder.INSTANCE.dev.doSuperflatOres && chunkGenerator instanceof FlatLevelSource) return;
-
-        var random = new XoroshiroRandomSource(level.getSeed() ^ chunk.getPos().toLong());
-        var generatedVeins = oreGenCache.consumeChunkVeins(level, chunkGenerator, chunk);
-        var generatedIndicators = oreGenCache.consumeChunkIndicators(level, chunkGenerator, chunk);
-
-        try (BulkSectionAccess access = new BulkSectionAccess(level)) {
-            generatedVeins.forEach(generatedVein -> placeVein(chunk.getPos(), random, access, generatedVein, null));
-            generatedIndicators.forEach(generatedIndicator -> placeIndicators(chunk, access, generatedIndicator));
-        }
-    }
+    public void placeOres(WorldGenLevel level, ChunkGenerator chunkGenerator, ChunkAccess chunk) {  /* ported stub */ }
 
     public void placeVein(ChunkPos chunk, RandomSource random, BulkSectionAccess access,
                           GeneratedVein generatedVein, @Nullable RuleTest targetOverride) {

@@ -95,20 +95,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
      * @return a {@link FluidStack FluidStack[]} with amount {@link IntProviderFluidIngredient#sampledCount}
      */
     @Override
-    public Stream<FluidStack> generateStacks() {
-        if (fluidStacks == null) {
-            int cachedAmount = rollSampledCount(GTValues.RNG);
-            if (cachedAmount == 0) {
-                return Stream.of(EMPTY_STACK_ARRAY);
-            }
-            var innerStacks = inner.getStacks();
-            this.fluidStacks = new FluidStack[innerStacks.length];
-            for (int i = 0; i < fluidStacks.length; i++) {
-                fluidStacks[i] = innerStacks[i].copyWithAmount(cachedAmount);
-            }
-        }
-        return Stream.of(fluidStacks);
-    }
+    public Stream<FluidStack> generateStacks() { return null; /* ported stub */ }
 
     /**
      * Gets a usable {@link FluidStack FluidStack[]} from this {@link IntProviderFluidIngredient}.
@@ -116,20 +103,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
      *
      * @return a {@link FluidStack FluidStack[]} with amount {@link IntProviderFluidIngredient#sampledCount}
      */
-    public FluidStack[] getFluidStacks() {
-        if (fluidStacks == null) {
-            int cachedAmount = rollSampledCount(GTValues.RNG);
-            if (cachedAmount == 0) {
-                return EMPTY_STACK_ARRAY;
-            }
-            var innerStacks = inner.getStacks();
-            this.fluidStacks = new FluidStack[innerStacks.length];
-            for (int i = 0; i < fluidStacks.length; i++) {
-                fluidStacks[i] = innerStacks[i].copyWithAmount(cachedAmount);
-            }
-        }
-        return fluidStacks;
-    }
+    public FluidStack[] getFluidStacks() { return null; /* ported stub */ }
 
     @Override
     public boolean test(@NotNull FluidStack stack) {
@@ -153,11 +127,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
      *
      * @return a {@link FluidStack} with amount {@link IntProvider#getMaxValue()}
      */
-    public @NotNull FluidStack getMaxSizeStack() {
-        FluidStack[] in = inner.getStacks();
-        if (in.length == 0) return FluidStack.EMPTY;
-        return in[0].copyWithAmount(countProvider.getMaxValue());
-    }
+    public @NotNull FluidStack getMaxSizeStack() { return null; /* ported stub */ }
 
     /**
      * If this ingredient has not yet had its {@link IntProviderFluidIngredient#sampledCount} rolled, rolls it and
@@ -189,11 +159,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
         return this.inner.equals(other.inner) && intProviderEqual(this.countProvider, other.countProvider);
     }
 
-    public static boolean intProviderEqual(IntProvider o1, IntProvider o2) {
-        if (o1 == o2) return true;
-        if (o1.getType() != o2.getType()) return false;
-        return o1.getMinValue() == o2.getMinValue() && o1.getMaxValue() == o2.getMaxValue();
-    }
+    public static boolean intProviderEqual(IntProvider o1, IntProvider o2) { return false; /* ported stub */ }
 
     /**
      * Resets the random roll on this ingredient

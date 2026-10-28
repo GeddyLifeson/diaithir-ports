@@ -27,17 +27,9 @@ public class WorldIDSaveData extends SavedData {
     }
 
     @Override
-    public @NotNull CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) {
-        compoundTag.putString("id", worldID);
-        return compoundTag;
-    }
+    public @NotNull CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
-    public static void init(ServerLevel level) {
-        instance = level.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new WorldIDSaveData(level),
-                        (tag, provider) -> new WorldIDSaveData(tag)),
-                        DATA_NAME);
-    }
+    public static void init(ServerLevel level) {  /* ported stub */ }
 
     public static String getWorldID() {
         return instance.worldID;

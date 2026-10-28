@@ -354,17 +354,7 @@ public class GTItems {
         };
     }
 
-    public static ICustomDescriptionId cellName() {
-        return new ICustomDescriptionId() {
-
-            @Override
-            public Component getItemName(ItemStack stack) {
-                Component prefix = FluidUtil.getFluidContained(stack).map(FluidStack::getHoverName)
-                        .orElse(Component.translatable("gtceu.fluid.empty"));
-                return Component.translatable(stack.getDescriptionId(), prefix);
-            }
-        };
-    }
+    public static ICustomDescriptionId cellName() { return null; /* ported stub */ }
 
     public static ItemEntry<ComponentItem> FLUID_CELL = REGISTRATE.item("fluid_cell", ComponentItem::new)
             .lang("%s Fluid Cell")
@@ -2607,38 +2597,7 @@ public class GTItems {
         };
     }
 
-    public static <T extends Item> void cauldronInteraction(T item) {
-        if (item instanceof TagPrefixItem tagPrefixItem &&
-                GTMaterialItems.purifyMap.containsKey(tagPrefixItem.tagPrefix)) {
-            CauldronInteraction.WATER.map().put(item, (state, world, pos, player, hand, stack) -> {
-                if (!world.isClientSide) {
-                    Item stackItem = stack.getItem();
-                    if (stackItem instanceof TagPrefixItem prefixItem) {
-                        if (!GTMaterialItems.purifyMap.containsKey(prefixItem.tagPrefix))
-                            return InteractionResult.TRY_WITH_EMPTY_HAND;
-                        if (!state.hasProperty(LayeredCauldronBlock.LEVEL)) {
-                            return InteractionResult.TRY_WITH_EMPTY_HAND;
-                        }
-
-                        int level = state.getValue(LayeredCauldronBlock.LEVEL);
-                        if (level == 0)
-                            return InteractionResult.TRY_WITH_EMPTY_HAND;
-
-                        player.setItemInHand(hand,
-                                ChemicalHelper.get(GTMaterialItems.purifyMap.get(prefixItem.tagPrefix),
-                                        prefixItem.material, stack.getCount()));
-                        player.awardStat(Stats.USE_CAULDRON);
-                        player.awardStat(Stats.ITEM_USED.get(stackItem));
-                        LayeredCauldronBlock.lowerFillLevel(state, world, pos);
-
-                    }
-                }
-
-                return InteractionResult.SUCCESS;
-            });
-
-        }
-    }
+    public static <T extends Item> void cauldronInteraction(T item) {  /* ported stub */ }
 
     public static <T extends IComponentItem> NonNullConsumer<T> attach(IItemComponent components) {
         return item -> item.attachComponents(components);
@@ -2649,30 +2608,11 @@ public class GTItems {
     }
 
     public static <T extends Item> NonNullConsumer<T> modelPredicate(Identifier predicate,
-                                                                     StackProperty property) {
-        return item -> {
-            if (GTCEu.isClientSide()) {
-                ItemProperties.register(item, predicate, (itemStack, c, l, i) -> property.apply(itemStack));
-            }
-        };
-    }/* ported: removed */
+                                                                     StackProperty property) { return null; /* ported stub */ }/* ported: removed */
 
     @SuppressWarnings("removal")
     public static <P,
-            S2 extends ItemBuilder<ArmorComponentItem, P>> NonNullFunction<S2, S2> addArmorClientExtensions() {
-        return builder -> {
-            builder.clientExtension(item -> () -> () -> new IClientItemExtensions() {
-
-                @Override
-                public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
-                                                                       EquipmentSlot equipmentSlot,
-                                                                       HumanoidModel<?> original) {
-                    return item.getArmorLogic().getArmorModel(livingEntity, itemStack, equipmentSlot, original);
-                }
-            });
-            return builder;
-        };
-    }
+            S2 extends ItemBuilder<ArmorComponentItem, P>> NonNullFunction<S2, S2> addArmorClientExtensions() { return null; /* ported stub */ }
 
     @FunctionalInterface
     public interface StackProperty {

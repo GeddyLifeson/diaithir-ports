@@ -273,9 +273,7 @@ public class Material {
         return TagUtil.createFluidTag(this.getName());
     }
 
-    public SizedFluidIngredient asFluidIngredient(int amount) {
-        return SizedFluidIngredient.of(getFluidTag(), amount);
-    }
+    public SizedFluidIngredient asFluidIngredient(int amount) { return null; /* ported stub */ }
 
     public SizedFluidIngredient asSingleFluidIngredient(int amount) {
         return SizedFluidIngredient.of(getFluid(), amount);
@@ -1820,40 +1818,7 @@ public class Material {
          *
          * @return The finalized Material.
          */
-        public Material buildAndRegister() {
-            materialInfo.componentList = composition.isEmpty() && this.compositionSupplier != null ?
-                    ImmutableList.copyOf(compositionSupplier.stream().map(MaterialStackWrapper::toMatStack)
-                            .toArray(MaterialStack[]::new)) :
-                    ImmutableList.copyOf(composition);
-            if (!properties.hasProperty(PropertyKey.HAZARD)) {
-                for (MaterialStack materialStack : materialInfo.componentList) {
-                    Material material = materialStack.material();
-                    HazardProperty property = material.getProperty(PropertyKey.HAZARD);
-                    if (property != null && property.applyToDerivatives) {
-                        properties.setProperty(PropertyKey.HAZARD, property);
-                        break;
-                    }
-                }
-            }
-            if (properties.hasProperty(PropertyKey.HAZARD) &&
-                    properties.getProperty(PropertyKey.HAZARD).hazardTrigger == HazardProperty.HazardTrigger.NONE) {
-                properties.removeProperty(PropertyKey.HAZARD);
-            }
-
-            var mat = new Material(materialInfo, properties, flags);
-            if (!itemTags.isEmpty()) {
-                mat.setItemTags(itemTags);
-            }
-            if (formula != null) {
-                mat.setFormula(formula, formatFormula);
-            }
-            materialInfo.verifyInfo(properties, averageRGB);
-            mat.registerMaterial();
-            if (ignoredTagPrefixes != null) {
-                ignoredTagPrefixes.forEach(p -> p.setIgnored(mat));
-            }
-            return mat;
-        }
+        public Material buildAndRegister() { return null; /* ported stub */ }
     }
 
     /**

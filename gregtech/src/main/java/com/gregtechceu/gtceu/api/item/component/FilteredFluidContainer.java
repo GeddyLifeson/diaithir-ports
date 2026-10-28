@@ -38,9 +38,5 @@ public class FilteredFluidContainer implements IItemComponent, IComponentCapabil
     }
 
     @Override
-    public void attachCapabilities(RegisterCapabilitiesEvent event, Item item) {
-        event.registerItem(Capabilities.FluidHandler.ITEM, (stack, ctx) -> {
-            return new FilteredFluidHandlerItemStack(stack, capacity, filter);
-        }, item);
-    }
+    public void attachCapabilities(RegisterCapabilitiesEvent event, Item item) {  /* ported stub */ }
 }

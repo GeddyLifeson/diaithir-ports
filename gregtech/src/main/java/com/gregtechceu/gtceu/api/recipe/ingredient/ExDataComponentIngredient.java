@@ -51,31 +51,13 @@ public class ExDataComponentIngredient extends DataComponentIngredient {
         items.addInvalidationListener(this.stacks::clear);
     }
 
-    private List<ItemStack> regenerateStacksIfEmpty() {
-        if (this.stacks.isEmpty()) {
-            this.items().stream()
-                    .map(i -> new ItemStack(i, 1, components().asPatch()))
-                    .forEach(this.stacks::add);
-        }
-        return this.stacks;
-    }
+    private List<ItemStack> regenerateStacksIfEmpty() { return null; /* ported stub */ }
 
     @Override
-    public boolean test(@NotNull ItemStack stack) {
-        if (this.isStrict()) {
-            for (ItemStack stack2 : this.regenerateStacksIfEmpty()) {
-                if (ItemStack.isSameItemSameComponents(stack, stack2)) return true;
-            }
-            return false;
-        } else {
-            return this.items().contains(stack.getItemHolder()) && this.components().test(stack);
-        }
-    }
+    public boolean test(@NotNull ItemStack stack) { return false; /* ported stub */ }
 
     @Override
-    public @NotNull Stream<ItemStack> getItems() {
-        return this.regenerateStacksIfEmpty().stream();
-    }
+    public @NotNull Stream<ItemStack> getItems() { return null; /* ported stub */ }
 
     @Override
     public @NotNull IngredientType<?> getType() {
@@ -91,16 +73,12 @@ public class ExDataComponentIngredient extends DataComponentIngredient {
     /**
      * Creates a new ingredient matching any item from the list, containing the given components
      */
-    public static @NotNull Ingredient of(boolean strict, DataComponentMap map, HolderSet<Item> items) {
-        return of(strict, DataComponentPredicate.allOf(map), items);
-    }
+    public static @NotNull Ingredient of(boolean strict, DataComponentMap map, HolderSet<Item> items) { return null; /* ported stub */ }
 
     /**
      * Creates a new ingredient matching any item in the tag, containing the given components
      */
-    public static @NotNull Ingredient of(boolean strict, DataComponentPredicate predicate, TagKey<Item> tag) {
-        return of(strict, predicate, BuiltInRegistries.ITEM.getOrCreateTag(tag));
-    }
+    public static @NotNull Ingredient of(boolean strict, DataComponentPredicate predicate, TagKey<Item> tag) { return null; /* ported stub */ }
 
     /**
      * Creates a new ingredient matching any item from the list, containing the given components

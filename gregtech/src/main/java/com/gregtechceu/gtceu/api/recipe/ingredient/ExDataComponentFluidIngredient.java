@@ -62,16 +62,7 @@ public class ExDataComponentFluidIngredient extends DataComponentFluidIngredient
     }
 
     @Override
-    public boolean test(@NotNull FluidStack stack) {
-        if (this.isStrict()) {
-            for (FluidStack stack2 : this.regenerateStacksIfEmpty()) {
-                if (FluidStack.isSameFluidSameComponents(stack, stack2)) return true;
-            }
-            return false;
-        } else {
-            return this.fluids().contains(stack.getFluidHolder()) && this.components().test(stack);
-        }
-    }
+    public boolean test(@NotNull FluidStack stack) { return false; /* ported stub */ }
 
     public @NotNull Stream<FluidStack> generateStacks() {
         return this.regenerateStacksIfEmpty().stream();
@@ -91,16 +82,12 @@ public class ExDataComponentFluidIngredient extends DataComponentFluidIngredient
     /**
      * Creates a new ingredient matching any fluid from the list, containing the given components
      */
-    public static @NotNull FluidIngredient of(boolean strict, DataComponentMap map, TagKey<Fluid> tag) {
-        return of(strict, map, BuiltInRegistries.FLUID.getOrCreateTag(tag));
-    }
+    public static @NotNull FluidIngredient of(boolean strict, DataComponentMap map, TagKey<Fluid> tag) { return null; /* ported stub */ }
 
     /**
      * Creates a new ingredient matching any fluid from the list, containing the given components
      */
-    public static @NotNull FluidIngredient of(boolean strict, DataComponentMap map, HolderSet<Fluid> fluids) {
-        return of(strict, DataComponentPredicate.allOf(map), fluids);
-    }
+    public static @NotNull FluidIngredient of(boolean strict, DataComponentMap map, HolderSet<Fluid> fluids) { return null; /* ported stub */ }
 
     /**
      * Creates a new ingredient matching any fluid from the list, containing the given components

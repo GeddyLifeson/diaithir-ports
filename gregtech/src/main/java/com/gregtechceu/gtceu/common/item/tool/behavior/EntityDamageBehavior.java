@@ -112,17 +112,7 @@ public class EntityDamageBehavior implements IToolBehavior<EntityDamageBehavior>
         bonusList.putAll(entities);
     }
 
-    public Object2FloatMap<HolderSet<EntityType<?>>> getBonusList() {
-        if (!tagBonusesLoaded) {
-            tagBonusesLoaded = true;
-            if (tempTagBonusList == null || tempTagBonusList.isEmpty()) return bonusList;
-            for (var entry : Reference2FloatMaps.fastIterable(tempTagBonusList)) {
-                HolderSet.Named<EntityType<?>> tag = BuiltInRegistries.ENTITY_TYPE.getOrCreateTag(entry.getKey());
-                bonusList.put(tag, entry.getFloatValue());
-            }
-        }
-        return bonusList;
-    }
+    public Object2FloatMap<HolderSet<EntityType<?>>> getBonusList() { return null; /* ported stub */ }
 
     public void reloadBonusList() {
         tagBonusesLoaded = false;
@@ -144,15 +134,7 @@ public class EntityDamageBehavior implements IToolBehavior<EntityDamageBehavior>
         }
     }
 
-    private float getDamageBonus(@NotNull LivingEntity target) {
-        for (var entry : Object2FloatMaps.fastIterable(getBonusList())) {
-            if (target.getType().is(entry.getKey())) {
-                float f = entry.getFloatValue();
-                if (f > 0) return f;
-            }
-        }
-        return 0f;
-    }
+    private float getDamageBonus(@NotNull LivingEntity target) { return (float)0; /* ported stub */ }
 
     @Override
     public void addInformation(@NotNull ItemStack stack, Item.TooltipContext context, @NotNull List<Component> tooltip,

@@ -62,13 +62,7 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     @Override
-    public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
-        List<ItemAttributeModifiers.Entry> list = new ArrayList<>();
-        IArmorLogic armorLogic = getArmorLogic();
-        list.addAll(super.getDefaultAttributeModifiers(stack).modifiers());
-        list.addAll(armorLogic.getDefaultAttributeModifiers(Equipable.get(stack).getEquipmentSlot(), stack));
-        return new ItemAttributeModifiers(list, true);
-    }
+    public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) { return null; /* ported stub */ }
 
     @Override
     public ArmorType getType() {
@@ -81,31 +75,16 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        for (IItemComponent component : components) {
-            if (component instanceof IItemLifeCycle lifeCycle) {
-                lifeCycle.inventoryTick(stack, level, entity, slotId, isSelected);
-            }
-        }
-        if (slotId >= 36 && slotId <= 39 && entity instanceof Player player) {
-            this.armorLogic.onArmorTick(level, player, stack);
-        }
-    }
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {  /* ported stub */ }
 
     @Override
-    public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-        return false;
-    }
+    public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) { return false; /* ported stub */ }
 
     @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return true;
-    }
+    public boolean isEnchantable(ItemStack stack) { return false; /* ported stub */ }
 
     @Override
-    public int getEnchantmentValue() {
-        return 50;
-    }
+    public int getEnchantmentValue() { return (int)0; /* ported stub */ }
 
     public int getArmorDisplay(Player player, @NotNull ItemStack armor, EquipmentSlot slot) {
         return armorLogic.getArmorDisplay(player, armor, slot);
@@ -148,13 +127,7 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
-                                TooltipFlag isAdvanced) {
-        for (IItemComponent component : components) {
-            if (component instanceof IAddInformation addInformation) {
-                addInformation.appendHoverText(stack, context, tooltipComponents, isAdvanced);
-            }
-        }
-    }
+                                TooltipFlag isAdvanced) {  /* ported stub */ }
 
     @Override
     public boolean isBarVisible(ItemStack stack) {
@@ -187,14 +160,7 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     @Override
-    public boolean canPerformAction(ItemStack stack, ItemAbility action) {
-        for (IItemComponent component : components) {
-            if (component instanceof IAbilityItem abilityItem && abilityItem.canPerformAction(stack, action)) {
-                return true;
-            }
-        }
-        return super.canPerformAction(stack, action);
-    }
+    public boolean canPerformAction(ItemStack stack, ItemAbility action) { return false; /* ported stub */ }
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
@@ -210,17 +176,7 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand usedHand) {
-        for (IItemComponent component : components) {
-            if (component instanceof IInteractionItem interactionItem) {
-                var result = interactionItem.use(player.getItemInHand(usedHand), level, player, usedHand);
-                if (result.getResult() != InteractionResult.PASS) {
-                    return result;
-                }
-            }
-        }
-        return super.use(level, player, usedHand);
-    }
+    public InteractionResult use(Level level, Player player, InteractionHand usedHand) { return null; /* ported stub */ }
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
@@ -273,37 +229,13 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     @Override
-    public String getDescriptionId(ItemStack stack) {
-        for (IItemComponent component : components) {
-            if (component instanceof ICustomDescriptionId customDescriptionId) {
-                String langId = customDescriptionId.getItemDescriptionId(stack);
-                if (langId != null) {
-                    return langId;
-                }
-            }
-        }
-        return super.getDescriptionId(stack);
-    }
+    public String getDescriptionId(ItemStack stack) { return null; /* ported stub */ }
 
     @Override
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        for (IItemComponent component : components) {
-            if (component instanceof IRecipeRemainder recipeRemainder) {
-                return recipeRemainder.getRecipeRemained(itemStack);
-            }
-        }
-        return super.getCraftingRemainingItem(itemStack);
-    }
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) { return null; /* ported stub */ }
 
     @Override
-    public boolean hasCraftingRemainingItem(ItemStack stack) {
-        for (IItemComponent component : components) {
-            if (component instanceof IRecipeRemainder recipeRemainder) {
-                return recipeRemainder.getRecipeRemained(stack) != ItemStack.EMPTY;
-            }
-        }
-        return super.hasCraftingRemainingItem(stack);
-    }
+    public boolean hasCraftingRemainingItem(ItemStack stack) { return false; /* ported stub */ }
 
     @Override
     public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {

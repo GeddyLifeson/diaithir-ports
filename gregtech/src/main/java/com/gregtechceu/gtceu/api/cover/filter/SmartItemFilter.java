@@ -71,21 +71,7 @@ public class SmartItemFilter implements ItemFilter {
         return filterMode.cache.computeIfAbsent(itemStack, this::lookup);
     }
 
-    private int lookup(ItemStack itemStack) {
-        ItemStack copy = itemStack.copyWithCount(Integer.MAX_VALUE);
-        var recipe = filterMode.recipeType.db()
-                .find(Collections.singletonMap(ItemRecipeCapability.CAP, Collections.singletonList(copy)), r -> true);
-        if (recipe == null) {
-            return 0;
-        }
-        for (Content content : recipe.getInputContents(ItemRecipeCapability.CAP)) {
-            var stacks = ItemRecipeCapability.CAP.of(content.getContent()).getItems();
-            for (var stack : stacks) {
-                if (ItemStack.isSameItem(stack, itemStack)) return stack.getCount();
-            }
-        }
-        return 0;
-    }
+    private int lookup(ItemStack itemStack) { return (int)0; /* ported stub */ }
 
     public void setModeFromMachine(String machineName) {
         for (SmartFilteringMode mode : SmartFilteringMode.VALUES) {

@@ -28,79 +28,16 @@ public class ShapedFluidContainerRecipe extends ShapedRecipe {
     }
 
     @Override
-    public NonNullList<ItemStack> getRemainingItems(CraftingInput inv) {
-        NonNullList<ItemStack> items = NonNullList.withSize(inv.size(), ItemStack.EMPTY);
-
-        // figure out all the fluid container ingredients' remainders.
-        int replacedSlot = -1;
-        OUTER_LOOP:
-        for (int x = 0; x <= inv.width() - this.getWidth(); ++x) {
-            for (int y = 0; y <= inv.height() - this.getHeight(); ++y) {
-                var stack = this.findFluidReplacement(inv, x, y, false);
-                if (stack != null) {
-                    replacedSlot = stack.firstInt();
-                    items.set(replacedSlot, stack.second());
-                    break OUTER_LOOP;
-                }
-
-                stack = this.findFluidReplacement(inv, x, y, true);
-                if (stack != null) {
-                    replacedSlot = stack.firstInt();
-                    items.set(replacedSlot, stack.second());
-                    break OUTER_LOOP;
-                }
-            }
-        }
-
-        for (int i = 0; i < items.size(); ++i) {
-            if (i == replacedSlot) {
-                continue;
-            }
-            ItemStack item = inv.getItem(i);
-            if (item.hasCraftingRemainder()) {
-                items.set(i, item.getCraftingRemainder());
-            }
-        }
-
-        return items;
-    }
+    public NonNullList<ItemStack> getRemainingItems(CraftingInput inv) { return null; /* ported stub */ }
 
     /**
      * Checks if the region of a crafting inventory is match for the recipe.
      */
     @Nullable
-    private IntObjectPair<ItemStack> findFluidReplacement(CraftingInput inv, int width, int height, boolean mirrored) {
-        for (int x = 0; x < inv.width(); ++x) {
-            for (int y = 0; y < inv.height(); ++y) {
-                int offsetX = x - width;
-                int offsetY = y - height;
-                Ingredient ingredient = Ingredient.EMPTY;
-                if (offsetX >= 0 && offsetY >= 0 && offsetX < this.getWidth() && offsetY < this.getHeight()) {
-                    if (mirrored) {
-                        ingredient = this.getIngredients()
-                                .get(this.getWidth() - offsetX - 1 + offsetY * this.getWidth());
-                    } else {
-                        ingredient = this.getIngredients().get(offsetX + offsetY * this.getWidth());
-                    }
-                }
-
-                if (ingredient.getCustomIngredient() instanceof FluidContainerIngredient fluidContainerIngredient) {
-                    int slot = x + y * inv.width();
-                    ItemStack stack = inv.getItem(slot);
-                    if (fluidContainerIngredient.test(stack)) {
-                        return IntObjectPair.of(slot, fluidContainerIngredient.getExtractedStack(stack));
-                    }
-                }
-            }
-        }
-
-        return null;
-    }
+    private IntObjectPair<ItemStack> findFluidReplacement(CraftingInput inv, int width, int height, boolean mirrored) { return null; /* ported stub */ }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
-        return GTRecipeSerializers.CRAFTING_SHAPED_FLUID_CONTAINER.get();
-    }
+    public RecipeSerializer<?> getSerializer() { return null; /* ported stub */ }
 
     public static class Serializer {
 
@@ -119,14 +56,10 @@ public class ShapedFluidContainerRecipe extends ShapedRecipe {
         // spotless:on
 
         @Override
-        public MapCodec<ShapedFluidContainerRecipe> codec() {
-            return CODEC;
-        }
+        public MapCodec<ShapedFluidContainerRecipe> codec() { return null; /* ported stub */ }
 
         @Override
-        public StreamCodec<RegistryFriendlyByteBuf, ShapedFluidContainerRecipe> streamCodec() {
-            return STREAM_CODEC;
-        }
+        public StreamCodec<RegistryFriendlyByteBuf, ShapedFluidContainerRecipe> streamCodec() { return null; /* ported stub */ }
 
         private static ShapedFluidContainerRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
             String group = buffer.readUtf();
@@ -137,12 +70,6 @@ public class ShapedFluidContainerRecipe extends ShapedRecipe {
             return new ShapedFluidContainerRecipe(group, category, pattern, output, showNotification);
         }
 
-        private static void toNetwork(RegistryFriendlyByteBuf buffer, ShapedFluidContainerRecipe recipe) {
-            buffer.writeUtf(recipe.getGroup());
-            buffer.writeEnum(recipe.category());
-            ShapedRecipePattern.STREAM_CODEC.encode(buffer, recipe.pattern);
-            ItemStack.STREAM_CODEC.encode(buffer, ((ShapedRecipeAccessor) recipe).getResult());
-            buffer.writeBoolean(((ShapedRecipeAccessor) recipe).getShowNotification());
-        }
+        private static void toNetwork(RegistryFriendlyByteBuf buffer, ShapedFluidContainerRecipe recipe) {  /* ported stub */ }
     }
 }

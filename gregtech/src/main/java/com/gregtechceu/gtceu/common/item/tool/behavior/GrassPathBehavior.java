@@ -46,48 +46,7 @@ public class GrassPathBehavior implements IToolBehavior<GrassPathBehavior> {
 
     @NotNull
     @Override
-    public InteractionResult onItemUse(UseOnContext context) {
-        if (context.getClickedFace() == Direction.DOWN) return InteractionResult.PASS;
-
-        Level level = context.getLevel();
-        Player player = context.getPlayer();
-        BlockPos pos = context.getClickedPos();
-        InteractionHand hand = context.getHand();
-
-        ItemStack stack = context.getItemInHand();
-        AoESymmetrical aoeDefinition = ToolHelper.getAoEDefinition(stack);
-
-        List<BlockPos> blocks;
-        // only attempt to till if the center block is tillable
-        if (level.isEmptyBlock(pos.above()) && isBlockPathConvertible(context)) {
-            if (aoeDefinition.isZero()) {
-                blocks = List.of(pos);
-            } else {
-                blocks = getPathConvertibleBlocks(aoeDefinition, context);
-                blocks.addFirst(context.getClickedPos());
-            }
-        } else {
-            return InteractionResult.PASS;
-        }
-
-        boolean pathed = false;
-        for (BlockPos blockPos : blocks) {
-            UseOnContext posContext = new UseOnContext(level, player, hand, stack,
-                    context.getHitResult().withPosition(blockPos));
-            BlockState newState = getFlattened(level.getBlockState(blockPos), posContext);
-            if (newState == null) continue;
-            pathed |= level.setBlock(blockPos, newState, Block.UPDATE_ALL_IMMEDIATE);
-
-            ToolHelper.damageItem(stack, player);
-            if (stack.isEmpty()) break;
-        }
-
-        if (pathed) {
-            level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
-            return InteractionResult.SUCCESS;
-        }
-        return InteractionResult.PASS;
-    }
+    public InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
     public static List<BlockPos> getPathConvertibleBlocks(AoESymmetrical aoeDefinition, UseOnContext context) {
         return ToolHelper.iterateAoE(aoeDefinition, GrassPathBehavior::isBlockPathConvertible, context);

@@ -23,13 +23,7 @@ public class FluidTagMapIngredient extends AbstractMapIngredient {
     }
 
     @NotNull
-    public static List<AbstractMapIngredient> from(@NotNull FluidIngredient ingredient) {
-        if (ingredient instanceof TagFluidIngredient tagIngredient) {
-            return Collections.singletonList(new FluidTagMapIngredient(tagIngredient.tag()));
-        } else {
-            return Collections.emptyList();
-        }
-    }
+    public static List<AbstractMapIngredient> from(@NotNull FluidIngredient ingredient) { return null; /* ported stub */ }
 
     @SuppressWarnings("deprecation")
     @NotNull

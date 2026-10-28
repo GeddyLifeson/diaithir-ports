@@ -40,37 +40,7 @@ import static com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData.
 
 public class ChemicalHelper {
 
-    public static @Nullable ItemMaterialInfo getMaterialInfo(@Nullable Object object) {
-        if (object instanceof ItemMaterialInfo materialInfo) {
-            return materialInfo;
-        } else if (object instanceof MaterialStack materialStack) {
-            return new ItemMaterialInfo(materialStack);
-        } else if (object instanceof ItemStack itemStack) {
-            return ItemMaterialData.getMaterialInfo(itemStack.getItem());
-        } else if (object instanceof ItemLike item) {
-            return ItemMaterialData.getMaterialInfo(item);
-        } else if (object instanceof MaterialEntry entry) {
-            var items = getItems(entry);
-            if (!items.isEmpty()) {
-                return ItemMaterialData.getMaterialInfo(items.get(0));
-            }
-        } else if (object instanceof Ingredient ing) {
-            if (!ing.isCustom()) {
-                for (Ingredient.Value value : ing.getValues()) {
-                    if (value instanceof Ingredient.TagValue) {
-                        return null;
-                    }
-                }
-            }
-            for (var stack : ing.getItems()) {
-                var ms = ItemMaterialData.getMaterialInfo(stack.getItem());
-                if (ms != null) return ms;
-            }
-        } else if (object instanceof SizedIngredient ing) {
-            return getMaterialInfo(ing.ingredient());
-        }
-        return null;
-    }
+    public static @Nullable ItemMaterialInfo getMaterialInfo(@Nullable Object object) { return null; /* ported stub */ }
 
     public static MaterialStack getMaterialStack(ItemStack itemStack) {
         if (itemStack.isEmpty()) return MaterialStack.EMPTY;
@@ -100,26 +70,7 @@ public class ChemicalHelper {
         return info.getMaterial();
     }
 
-    public static Material getMaterial(Fluid fluid) {
-        if (FLUID_MATERIAL.isEmpty()) {
-            Set<TagKey<Fluid>> allFluidTags = BuiltInRegistries.FLUID.getTagNames().collect(Collectors.toSet());
-            for (final Material material : GTCEuAPI.materialManager) {
-                if (material.hasProperty(PropertyKey.FLUID)) {
-                    FluidProperty property = material.getProperty(PropertyKey.FLUID);
-                    FluidStorageKey.allKeys().stream()
-                            .map(property::get)
-                            .filter(Objects::nonNull)
-                            .map(f -> Pair.of(f, TagUtil.createFluidTag(BuiltInRegistries.FLUID.getKey(f).getPath())))
-                            .filter(pair -> allFluidTags.contains(pair.getSecond()))
-                            .forEach(pair -> {
-                                allFluidTags.remove(pair.getSecond());
-                                FLUID_MATERIAL.put(pair.getFirst(), material);
-                            });
-                }
-            }
-        }
-        return FLUID_MATERIAL.getOrDefault(fluid, GTMaterials.NULL);
-    }
+    public static Material getMaterial(Fluid fluid) { return null; /* ported stub */ }
 
     public static TagPrefix getPrefix(ItemLike itemLike) {
         MaterialEntry entry = getMaterialEntry(itemLike);
@@ -209,25 +160,7 @@ public class ChemicalHelper {
         return materialEntry;
     }
 
-    public static MaterialEntry getMaterialEntry(TagKey<Item> tag) {
-        if (TAG_MATERIAL_ENTRY.isEmpty()) {
-            // If the map is empty, resolve all possible tags to their values in an attempt to save time on later
-            // lookups.
-            Set<TagKey<Item>> allItemTags = BuiltInRegistries.ITEM.getTagNames().collect(Collectors.toSet());
-            for (TagPrefix prefix : GTRegistries.TAG_PREFIXES) {
-                for (Material material : GTCEuAPI.materialManager) {
-                    prefix.getItemTags(material).stream()
-                            .filter(allItemTags::contains)
-                            .forEach(tagKey -> {
-                                // remove the tag so that the next iteration is faster.
-                                allItemTags.remove(tagKey);
-                                TAG_MATERIAL_ENTRY.put(tagKey, new MaterialEntry(prefix, material));
-                            });
-                }
-            }
-        }
-        return TAG_MATERIAL_ENTRY.getOrDefault(tag, MaterialEntry.NULL_ENTRY);
-    }
+    public static MaterialEntry getMaterialEntry(TagKey<Item> tag) { return null; /* ported stub */ }
 
     public static List<ItemLike> getItems(MaterialEntry materialEntry) {
         if (materialEntry.material().isNull()) return new ArrayList<>();

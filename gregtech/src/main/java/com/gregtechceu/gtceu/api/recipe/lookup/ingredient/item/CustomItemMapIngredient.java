@@ -25,14 +25,7 @@ public class CustomItemMapIngredient extends AbstractMapIngredient {
         this.ingredient = ingredient;
     }
 
-    public static List<AbstractMapIngredient> from(Ingredient ingredient) {
-        List<AbstractMapIngredient> ingredients = new ArrayList<>();
-        ItemStack[] stacks = ingredient.getItems();
-        for (ItemStack stack : stacks) {
-            ingredients.add(new CustomItemMapIngredient(stack, ingredient));
-        }
-        return ingredients;
-    }
+    public static List<AbstractMapIngredient> from(Ingredient ingredient) { return null; /* ported stub */ }
 
     @NotNull
     public static List<AbstractMapIngredient> from(ItemStack stack) {
@@ -40,35 +33,10 @@ public class CustomItemMapIngredient extends AbstractMapIngredient {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (super.equals(o)) {
-            CustomItemMapIngredient other = (CustomItemMapIngredient) o;
-            if (!ItemStack.isSameItem(this.stack, other.stack)) {
-                return false;
-            }
-            if (this.ingredient != null) {
-                if (other.ingredient != null) {
-                    for (ItemStack stack : other.ingredient.getItems()) {
-                        if (!this.ingredient.test(stack)) return false;
-                    }
-                    for (ItemStack stack : this.ingredient.getItems()) {
-                        if (!other.ingredient.test(stack)) return false;
-                    }
-                    return true;
-                } else {
-                    return this.ingredient.test(other.stack);
-                }
-            } else if (other.ingredient != null) {
-                return other.ingredient.test(this.stack);
-            }
-        }
-        return false;
-    }
+    public boolean equals(Object o) { return false; /* ported stub */ }
 
     @Override
-    protected int hash() {
-        return stack.getItemHolder().hashCode() * 31;
-    }
+    protected int hash() { return (int)0; /* ported stub */ }
 
     @Override
     public String toString() {

@@ -46,10 +46,7 @@ public abstract class ManagedSyncBlockEntity extends BlockEntity implements ISyn
      * Saves BE data to world save.
      */
     @Override
-    protected final void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
-        tag.merge(getSyncDataHolder().serializeNBT(registries, false));
-    }
+    protected final void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {  /* ported stub */ }
 
     /**
      * Loads BE data from world save or from a client update packet.
@@ -58,11 +55,7 @@ public abstract class ManagedSyncBlockEntity extends BlockEntity implements ISyn
      */
     @Override
     @MustBeInvokedByOverriders
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
-        getSyncDataHolder().deserializeNBT(registries, tag,
-                (getLevel() == null ? GTCEu.isClientThread() : getLevel().isClientSide()));
-    }
+    public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {  /* ported stub */ }
 
     /**
      * Called to gather BE data to be sent when a client loads this BE.

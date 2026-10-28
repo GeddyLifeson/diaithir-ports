@@ -106,13 +106,7 @@ public class MaterialBlock extends Block {
 
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level,
-                                  BlockPos currentPos, BlockPos neighborPos) {
-        if (TagPrefix.ORES.containsKey(this.tagPrefix) && TagPrefix.ORES.get(tagPrefix).isSand() &&
-                ConfigHolder.INSTANCE.worldgen.sandOresFall) {
-            level.scheduleTick(currentPos, this, this.getDelayAfterPlace());
-        }
-        return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
-    }
+                                  BlockPos currentPos, BlockPos neighborPos) { return null; /* ported stub */ }
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
@@ -145,9 +139,7 @@ public class MaterialBlock extends Block {
     /** End falling ore stuff */
 
     @Override
-    public String getDescriptionId() {
-        return tagPrefix.getUnlocalizedName(material);
-    }
+    public String getDescriptionId() { return null; /* ported stub */ }
 
     @Override
     public MutableComponent getName() {
@@ -274,26 +266,5 @@ public class MaterialBlock extends Block {
     }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (this.tagPrefix == TagPrefix.frameGt && entity instanceof LivingEntity livingEntity) {
-            double currentAccel = 0.15D * (livingEntity.getDeltaMovement().y < 0.3D ? 2.5D : 1.0D);
-            double currentSpeedVertical = 0.9D * (livingEntity.isInWater() ? 0.4D : 1.0D);
-            Vec3 deltaMovement = livingEntity.getDeltaMovement();
-            livingEntity.resetFallDistance();
-            float f = 0.15F;
-            double d0 = Mth.clamp(deltaMovement.x, -f, f);
-            double d1 = Mth.clamp(deltaMovement.z, -f, f);
-            double d2 = Math.max(deltaMovement.y, -f);
-            if (d2 < 0.0 && !livingEntity.getBlockStateOn().isScaffolding(livingEntity) &&
-                    livingEntity.isSuppressingSlidingDownLadder() &&
-                    livingEntity instanceof Player) {
-                d2 = Math.min(deltaMovement.y + currentAccel, 0.0D);
-            }
-            if (livingEntity.horizontalCollision) {
-                d2 = 0.3;
-            }
-            deltaMovement = new Vec3(d0, d2, d1);
-            entity.setDeltaMovement(deltaMovement);
-        }
-    }
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {  /* ported stub */ }
 }

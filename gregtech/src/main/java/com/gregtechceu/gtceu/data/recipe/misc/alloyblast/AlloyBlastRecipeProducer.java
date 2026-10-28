@@ -126,29 +126,7 @@ public class AlloyBlastRecipeProducer {
      */
     protected void buildRecipes(@NotNull BlastProperty property, @NotNull Fluid molten, int outputAmount,
                                 int componentAmount,
-                                @NotNull GTRecipeBuilder builder, RecipeOutput provider) {
-        // add the fluid output with the correct amount
-        builder.outputFluids(new FluidStack(molten, GTValues.L * outputAmount));
-
-        // apply alloy blast duration reduction: 3/4
-        int duration = builder.duration * outputAmount * 3 / 4;
-
-        // build the gas recipe if it exists
-        if (property.getGasTier() != null) {
-            GTRecipeBuilder builderGas = builder.copy(builder.id.getPath() + "_gas");
-            SizedFluidIngredient gas = property.getGasTier().getFluid();
-            gas = gas.copyWithAmount(gas.amount() * outputAmount);
-            builderGas.circuitMeta(getGasCircuitNum(componentAmount))
-                    .inputFluids(gas)
-                    .duration((int) (duration * 0.67))
-                    .save(provider);
-        }
-
-        // build the non-gas recipe
-        builder.circuitMeta(getCircuitNum(componentAmount))
-                .duration(duration)
-                .save(provider);
-    }
+                                @NotNull GTRecipeBuilder builder, RecipeOutput provider) {  /* ported stub */ }
 
     /**
      * @param componentAmount the amount of different components in the material

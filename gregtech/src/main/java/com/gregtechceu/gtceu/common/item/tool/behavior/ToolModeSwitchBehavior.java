@@ -61,33 +61,7 @@ public class ToolModeSwitchBehavior implements IToolBehavior<ToolModeSwitchBehav
     }
 
     @Override
-    public @NotNull InteractionResult onItemUse(UseOnContext context) {
-        Level world = context.getLevel();
-        BlockHitResult blockHitResult = context.getHitResult();
-        Player player = context.getPlayer();
-        ItemStack itemStack = context.getItemInHand();
-        BlockState state = world.getBlockState(blockHitResult.getBlockPos());
-        BlockPos pos = blockHitResult.getBlockPos();
-        Set<GTToolType> toolTypes = ToolHelper.getToolTypes(itemStack);
-        // Copied and adapted from
-        // https://github.com/Creators-of-Create/Create/blob/mc1.20.1/dev/src/main/java/com/simibubi/create/content/equipment/wrench/WrenchItem.java
-        if (toolTypes.contains(GTToolType.WRENCH) && GTCEu.Mods.isCreateLoaded() &&
-                state.is(CustomTags.CREATE_WRENCH_PICKUP)) {
-            if (!(world instanceof ServerLevel serverLevel))
-                return InteractionResult.SUCCESS;
-            if (player != null && !player.isCreative())
-                Block.getDrops(state, serverLevel, pos, world.getBlockEntity(pos), player, itemStack)
-                        .forEach(stack -> player.getInventory().placeItemBackInInventory(stack));
-            state.spawnAfterBreak(serverLevel, pos, ItemStack.EMPTY, true);
-            world.destroyBlock(pos, false);
-            GTSoundEntries.WRENCH_TOOL.playOnServer(serverLevel, pos, 1, GTValues.RNG.nextFloat() * .5f + .5f);
-            return InteractionResult.SUCCESS;
-        }
-
-        if (player != null)
-            world.getBlockState(pos).useItemOn(itemStack, world, player, context.getHand(), blockHitResult);
-        return InteractionResult.SUCCESS;
-    }
+    public @NotNull InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
     @Override
     public @NotNull InteractionResult onItemRightClick(@NotNull Level world, @NotNull Player player,

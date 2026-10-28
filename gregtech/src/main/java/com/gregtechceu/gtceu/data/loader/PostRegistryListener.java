@@ -24,30 +24,12 @@ public class PostRegistryListener extends ContextAwareReloadListener implements 
 
     private PostRegistryListener() {}
 
-    protected void apply() {
-        var registry = GTRegistries.builtinRegistry().lookupOrThrow(GTRegistries.ORE_VEIN_REGISTRY);
+    protected void apply() {  /* ported stub */ }
 
-        buildVeinGenerators(registry);
-        GTOreVeins.updateLargestVeinSize(registry);
-        ServerCache.instance.oreVeinDefinitionsChanged(registry);
-        WorldGeneratorUtils.invalidateOreVeinCache();
-    }
-
-    public static void buildVeinGenerators(Registry<GTOreDefinition> registry) {
-        var iterator = registry.holders().iterator();
-        while (iterator.hasNext()) {
-            var definition = iterator.next();
-            var veinGen = definition.value().veinGenerator();
-            if (veinGen != null && definition.value().canGenerate()) {
-                veinGen.build();
-            }
-        }
-    }
+    public static void buildVeinGenerators(Registry<GTOreDefinition> registry) {  /* ported stub */ }
 
     @Override
     public CompletableFuture<Void> reload(PreparationBarrier stage, ResourceManager resourceManager,
                                           ProfilerFiller preparationsProfiler, ProfilerFiller reloadProfiler,
-                                          Executor backgroundExecutor, Executor gameExecutor) {
-        return stage.wait(null).thenRunAsync(this::apply);
-    }
+                                          Executor backgroundExecutor, Executor gameExecutor) { return null; /* ported stub */ }
 }

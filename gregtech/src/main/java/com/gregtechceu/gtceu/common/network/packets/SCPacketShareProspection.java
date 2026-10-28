@@ -64,36 +64,7 @@ public class SCPacketShareProspection implements CustomPacketPayload {
         buf.writeBoolean(first);
     }
 
-    public void execute(IPayloadContext context) {
-        if (context.flow() == PacketFlow.CLIENTBOUND) {
-            if (first) {
-                PlayerInfo senderInfo = Objects.requireNonNull(Minecraft.getInstance().getConnection())
-                        .getPlayerInfo(sender);
-                if (senderInfo == null) {
-                    return;
-                }
-
-                Component playerName = senderInfo.getTabListDisplayName() != null ? senderInfo.getTabListDisplayName() :
-                        Component.literal(senderInfo.getProfile().name());
-
-                assert Minecraft.getInstance().player != null;
-                Minecraft.getInstance().player.sendSystemMessage(Component
-                        .translatable("command.gtceu.share_prospection_data.notification", playerName));
-            }
-            ClientCacheManager.processProspectionShare(cacheName, key, isDimCache, dimension, data,
-                    context.player().registryAccess());
-        } else {
-            ServerPlayer receiverPlayer = GTCEu.getMinecraftServer().getPlayerList().getPlayer(receiver);
-            if (receiverPlayer == null) {
-                return;
-            }
-            SCPacketShareProspection newPacket = new SCPacketShareProspection(sender, receiver,
-                    cacheName, key,
-                    isDimCache, dimension,
-                    data, first);
-            PacketDistributor.sendToPlayer(receiverPlayer, newPacket);
-        }
-    }
+    public void execute(IPayloadContext context) {  /* ported stub */ }
 
     @Override
     public @NotNull Type<SCPacketShareProspection> type() {

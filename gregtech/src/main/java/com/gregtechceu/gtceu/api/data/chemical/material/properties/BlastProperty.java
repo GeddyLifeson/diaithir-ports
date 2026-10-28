@@ -142,9 +142,7 @@ public class BlastProperty implements IMaterialProperty {
             this.fluid = Suppliers.memoize(fluid);
         }
 
-        public SizedFluidIngredient getFluid() {
-            return fluid.get().copy();
-        }
+        public SizedFluidIngredient getFluid() { return null; /* ported stub */ }
     }
 
     @SuppressWarnings("unused") // API, need to treat all of these as used

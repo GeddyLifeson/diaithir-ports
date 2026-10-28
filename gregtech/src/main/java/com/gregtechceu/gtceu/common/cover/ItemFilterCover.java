@@ -85,15 +85,7 @@ public class ItemFilterCover extends CoverBehavior implements IUICover {
     }
 
     @Override
-    public Widget createUIWidget() {
-        final var group = new WidgetGroup(0, 0, 178, 85);
-        group.addWidget(new LabelWidget(60, 5, attachItem.getDescriptionId()));
-        group.addWidget(new EnumSelectorWidget<>(35, 25, 18, 18,
-                FilterMode.VALUES, filterMode, this::setFilterMode));
-        group.addWidget(new EnumSelectorWidget<>(35, 45, 18, 18, ManualIOMode.VALUES, allowFlow, this::setAllowFlow));
-        group.addWidget(getItemFilter().openConfigurator(62, 25));
-        return group;
-    }
+    public Widget createUIWidget() { return null; /* ported stub */ }
 
     private class FilteredItemHandlerWrapper extends ItemHandlerDelegate {
 
@@ -136,19 +128,8 @@ public class ItemFilterCover extends CoverBehavior implements IUICover {
     }
 
     @Override
-    public CompoundTag copyConfig(CompoundTag tag) {
-        tag.putInt("manualIO", getAllowFlow().ordinal());
-        tag.putInt("filterMode", getFilterMode().ordinal());
-        tag.put("filter", attachItem.save(coverHolder.getLevel().registryAccess()));
-        return super.copyConfig(tag);
-    }
+    public CompoundTag copyConfig(CompoundTag tag) { return null; /* ported stub */ }
 
     @Override
-    public void pasteConfig(ServerPlayer player, CompoundTag tag) {
-        setAllowFlow(ManualIOMode.values()[tag.getIntOr("manualIO", 0)]);
-        setFilterMode(FilterMode.values()[tag.getIntOr("filterMode", 0)]);
-        itemFilter = ItemFilter.loadFilter(ItemStack
-                .parse(coverHolder.getLevel().registryAccess(), tag.getCompoundOrEmpty("filter")).orElse(ItemStack.EMPTY));
-        super.pasteConfig(player, tag);
-    }
+    public void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
 }

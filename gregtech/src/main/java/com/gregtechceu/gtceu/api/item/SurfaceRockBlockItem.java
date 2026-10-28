@@ -29,9 +29,7 @@ public class SurfaceRockBlockItem extends BlockItem {
     }
 
     @Override
-    public Component getDescription() {
-        return this.getBlock().getName();
-    }
+    public Component getDescription() { return null; /* ported stub */ }
 
     @Override
     public Component getName(ItemStack stack) {

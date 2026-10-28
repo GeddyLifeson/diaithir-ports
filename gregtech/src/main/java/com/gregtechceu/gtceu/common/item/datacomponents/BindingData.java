@@ -51,12 +51,5 @@ public record BindingData(int permissionLevel, UUID uuid) implements TooltipProv
     }
 
     @Override
-    public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {
-        Component displayName = getBoundPlayerName(context.level());
-        if (displayName == null) {
-            displayName = Component.translatable("gtceu.tooltip.player_name.unknown");
-        }
-
-        tooltipAdder.accept(Component.translatable("gtceu.tooltip.player_bind", displayName));
-    }
+    public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {  /* ported stub */ }
 }

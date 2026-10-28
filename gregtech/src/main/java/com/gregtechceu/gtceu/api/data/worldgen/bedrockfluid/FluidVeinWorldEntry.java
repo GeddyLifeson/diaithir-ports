@@ -63,21 +63,5 @@ public class FluidVeinWorldEntry {
     }
 
     @NotNull
-    public static FluidVeinWorldEntry readFromNBT(@NotNull CompoundTag tag, HolderLookup.Provider provider) {
-        FluidVeinWorldEntry info = new FluidVeinWorldEntry();
-        info.fluidYield = tag.getIntOr("fluidYield", 0);
-        info.operationsRemaining = tag.getIntOr("operationsRemaining", 0);
-
-        if (tag.contains("vein")) {
-            Identifier id = Identifier.parse(tag.getString("vein"));
-            info.setDefinition(GTMemoizer.memoize(() -> {
-                return provider.lookup(GTRegistries.BEDROCK_FLUID_REGISTRY)
-                        .flatMap(reg -> reg.get(ResourceKey.create(GTRegistries.BEDROCK_FLUID_REGISTRY, id)))
-                        .orElse(null);
-            }));
-        } else {
-            info.setDefinition(() -> null);
-        }
-        return info;
-    }
+    public static FluidVeinWorldEntry readFromNBT(@NotNull CompoundTag tag, HolderLookup.Provider provider) { return null; /* ported stub */ }
 }

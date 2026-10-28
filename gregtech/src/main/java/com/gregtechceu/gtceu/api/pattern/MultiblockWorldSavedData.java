@@ -20,11 +20,7 @@ import java.util.concurrent.*;
 
 public class MultiblockWorldSavedData extends SavedData {
 
-    public static MultiblockWorldSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage().computeIfAbsent(
-                new SavedData.Factory<>(MultiblockWorldSavedData::new, MultiblockWorldSavedData::new),
-                "gtceu_multiblock");
-    }
+    public static MultiblockWorldSavedData getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
 
     /**
      * Store all formed multiblocks' structure info
@@ -64,9 +60,7 @@ public class MultiblockWorldSavedData extends SavedData {
 
     @NotNull
     @Override
-    public CompoundTag save(@NotNull CompoundTag compound, HolderLookup.Provider provider) {
-        return compound;
-    }
+    public CompoundTag save(@NotNull CompoundTag compound, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     // ********************************* thread for searching ********************************* //
     private final CopyOnWriteArrayList<MultiblockControllerMachine> controllers = new CopyOnWriteArrayList<>();

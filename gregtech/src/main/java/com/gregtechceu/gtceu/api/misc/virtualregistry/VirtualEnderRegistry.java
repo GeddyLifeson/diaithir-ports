@@ -29,17 +29,7 @@ public class VirtualEnderRegistry extends SavedData {
         readFromNBT(registries, name);
     }
 
-    public static VirtualEnderRegistry getInstance() {
-        if (data == null) {
-            var server = GTCEu.getMinecraftServer();
-            if (server != null) {
-                data = server.overworld().getDataStorage().computeIfAbsent(
-                        new SavedData.Factory<>(VirtualEnderRegistry::new, VirtualEnderRegistry::new), DATA_ID);
-            }
-        }
-
-        return data;
-    }
+    public static VirtualEnderRegistry getInstance() { return null; /* ported stub */ }
 
     /**
      * To be called on server stopped event
@@ -99,34 +89,11 @@ public class VirtualEnderRegistry extends SavedData {
         return getInstance().VIRTUAL_REGISTRIES.computeIfAbsent(owner, key -> new VirtualRegistryMap());
     }
 
-    public final void readFromNBT(HolderLookup.@NotNull Provider registries, CompoundTag nbt) {
-        if (nbt.contains(PUBLIC_KEY)) {
-            VIRTUAL_REGISTRIES.put(null, new VirtualRegistryMap(registries, nbt.getCompoundOrEmpty(PUBLIC_KEY)));
-        }
-        if (nbt.contains(PRIVATE_KEY)) {
-            CompoundTag privateEntries = nbt.getCompoundOrEmpty(PRIVATE_KEY);
-            for (String owner : privateEntries.keySet()) {
-                var privateMap = privateEntries.getCompound(owner);
-                VIRTUAL_REGISTRIES.put(UUID.fromString(owner), new VirtualRegistryMap(registries, privateMap));
-            }
-        }
-    }
+    public final void readFromNBT(HolderLookup.@NotNull Provider registries, CompoundTag nbt) {  /* ported stub */ }
 
     @NotNull
     @Override
-    public final CompoundTag save(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
-        var privateTag = new CompoundTag();
-        for (var owner : VIRTUAL_REGISTRIES.keySet()) {
-            var mapTag = VIRTUAL_REGISTRIES.get(owner).serializeNBT(registries);
-            if (owner != null) {
-                privateTag.put(owner.toString(), mapTag);
-            } else {
-                tag.put(PUBLIC_KEY, mapTag);
-            }
-        }
-        tag.put(PRIVATE_KEY, privateTag);
-        return tag;
-    }
+    public final CompoundTag save(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) { return null; /* ported stub */ }
 
     @Override
     public boolean isDirty() {

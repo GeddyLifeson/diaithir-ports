@@ -71,13 +71,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
     }
 
     @Override
-    public SizedIngredient copyWithModifier(SizedIngredient content, ContentModifier modifier) {
-        if (content.getContainedCustom() instanceof IntProviderIngredient provider) {
-            return new SizedIngredient(IntProviderIngredient.of(provider.getInner(),
-                    ModifiedIntProvider.of(provider.getCountProvider(), modifier)).toVanilla(), content.count());
-        }
-        return content.copyWithCount(modifier.apply(content.count()));
-    }
+    public SizedIngredient copyWithModifier(SizedIngredient content, ContentModifier modifier) { return null; /* ported stub */ }
 
     public IntProviderIngredient copyWithModifier(IntProviderIngredient content, ContentModifier modifier) {
         return IntProviderIngredient.of(content.getInner(),
@@ -85,56 +79,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
     }
 
     @Override
-    public List<Object> compressIngredients(@Unmodifiable Collection<Object> ingredients) {
-        List<Object> list = new ObjectArrayList<>(ingredients.size());
-        for (Object item : ingredients) {
-            if (item instanceof SizedIngredient ingredient) {
-                boolean isEqual = false;
-                for (Object obj : list) {
-                    if (obj instanceof SizedIngredient ingredient1) {
-                        if (ingredient.ingredient().equals(ingredient1.ingredient())) {
-                            isEqual = true;
-                            break;
-                        }
-                    } else if (obj instanceof ItemStack stack) {
-                        if (ingredient.ingredient().test(stack)) {
-                            isEqual = true;
-                            break;
-                        }
-                    }
-                }
-                if (isEqual) continue;
-                // spotless:off
-                if (ingredient.getContainedCustom() instanceof IntCircuitIngredient) {
-                    list.addFirst(ingredient);
-                } else if (ingredient.getContainedCustom() instanceof IntProviderIngredient intProvider &&
-                        intProvider.getInner().getCustomIngredient() instanceof IntCircuitIngredient) {
-                    list.addFirst(ingredient);
-                } else {
-                    list.add(ingredient);
-                }
-                // spotless:on
-            } else if (item instanceof ItemStack stack) {
-                boolean isEqual = false;
-                for (Object obj : list) {
-                    if (obj instanceof Ingredient ingredient) {
-                        if (ingredient.test(stack)) {
-                            isEqual = true;
-                            break;
-                        }
-                    } else if (obj instanceof ItemStack stack1) {
-                        if (ItemStack.isSameItemSameComponents(stack, stack1)) {
-                            isEqual = true;
-                            break;
-                        }
-                    }
-                }
-                if (isEqual) continue;
-                list.add(stack);
-            }
-        }
-        return list;
-    }
+    public List<Object> compressIngredients(@Unmodifiable Collection<Object> ingredients) { return null; /* ported stub */ }
 
     @Override
     public @Nullable List<AbstractMapIngredient> getDefaultMapIngredient(Object object) {
@@ -153,162 +98,10 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
     }
 
     @Override
-    public int limitMaxParallelByOutput(IRecipeCapabilityHolder holder, GTRecipe recipe, int multiplier, boolean tick) {
-        if (holder instanceof ICustomParallel p) return p.limitItemParallel(recipe, multiplier, tick);
-        var outputContents = (tick ? recipe.tickOutputs : recipe.outputs).get(this);
-        if (outputContents == null || outputContents.isEmpty()) return multiplier;
-
-        if (!holder.hasCapabilityProxies()) return 0;
-
-        var handlers = holder.getCapabilitiesFlat(IO.OUT, this);
-        if (handlers.isEmpty()) return 0;
-
-        int minMultiplier = 0;
-        int maxMultiplier = multiplier;
-
-        int maxCount = 0;
-        List<SizedIngredient> ingredients = new ArrayList<>(outputContents.size());
-        for (var content : outputContents) {
-            var ing = of(content.content);
-
-            int count;
-            if (ing.getContainedCustom() instanceof IntProviderIngredient provider) {
-                count = provider.getCountProvider().getMaxValue();
-            } else {
-                count = ing.count();
-            }
-
-            maxCount = Math.max(maxCount, count);
-            ingredients.add(ing);
-        }
-
-        if (maxCount == 0) return multiplier;
-        if (multiplier > Integer.MAX_VALUE / maxCount) {
-            maxMultiplier = multiplier = Integer.MAX_VALUE / maxCount;
-        }
-
-        while (minMultiplier != maxMultiplier) {
-            List<SizedIngredient> copied = new ArrayList<>();
-            for (final var ing : ingredients) {
-                copied.add(copyWithModifier(ing, ContentModifier.multiplier(multiplier)));
-            }
-            for (var handler : handlers) {
-                // noinspection unchecked
-                copied = (List<SizedIngredient>) handler.handleRecipe(IO.OUT, recipe, copied, true);
-                if (copied == null) break;
-            }
-            int[] bin = ParallelLogic.adjustMultiplier(copied == null, minMultiplier, multiplier, maxMultiplier);
-            minMultiplier = bin[0];
-            multiplier = bin[1];
-            maxMultiplier = bin[2];
-        }
-
-        return multiplier;
-    }
+    public int limitMaxParallelByOutput(IRecipeCapabilityHolder holder, GTRecipe recipe, int multiplier, boolean tick) { return (int)0; /* ported stub */ }
 
     @Override
-    public int getMaxParallelByInput(IRecipeCapabilityHolder holder, GTRecipe recipe, int limit, boolean tick) {
-        if (!holder.hasCapabilityProxies()) return 0;
-
-        var inputs = (tick ? recipe.tickInputs : recipe.inputs).get(this);
-        if (inputs == null || inputs.isEmpty()) return limit;
-
-        // Find all the items in the combined Item Input inventories and create oversized ItemStacks
-        List<Object2LongMap<ItemStack>> inventoryGroups = getInputContents(holder);
-        if (inventoryGroups.isEmpty()) return 0;
-
-        // map the recipe ingredients to account for duplicated and notConsumable ingredients.
-        // notConsumable ingredients are not counted towards the max ratio
-
-        var nonConsumables = new Object2LongOpenHashMap<SizedIngredient>();
-        var consumables = new Object2LongOpenHashMap<SizedIngredient>();
-        for (Content content : inputs) {
-            SizedIngredient ing = of(content.content);
-            if (ing.getContainedCustom() instanceof IntCircuitIngredient) continue;
-
-            int count;
-            if (ing.getContainedCustom() instanceof IntProviderIngredient provider)
-                count = provider.getCountProvider().getMaxValue();
-            else count = ing.count();
-
-            if (content.chance == 0) {
-                nonConsumables.addTo(ing, count);
-            } else {
-                boolean has = false;
-                for (var recipeIng : consumables.object2LongEntrySet()) {
-                    var stack = ing.getItems()[0];
-                    if (recipeIng.getKey().test(stack)) {
-                        recipeIng.setValue(recipeIng.getLongValue() + stack.getCount());
-                        has = true;
-                        break;
-                    }
-                }
-                if (!has) {
-                    consumables.addTo(ing, count);
-                }
-            }
-        }
-
-        // is this even possible
-        if (consumables.isEmpty() && nonConsumables.isEmpty()) return limit;
-
-        int maxMultiplier = 0;
-        // Check every inventory group
-        for (var group : inventoryGroups) {
-            // Check for enough NC in inventory group
-            boolean satisfied = true;
-            for (var ncEntry : Object2LongMaps.fastIterable(nonConsumables)) {
-                SizedIngredient ingredient = ncEntry.getKey();
-                long needed = ncEntry.getLongValue();
-                for (var stackEntry : Object2LongMaps.fastIterable(group)) {
-                    if (ingredient.ingredient().test(stackEntry.getKey())) {
-                        long count = stackEntry.getLongValue();
-                        long lesser = Math.min(needed, count);
-                        count -= lesser;
-                        needed -= lesser;
-                        stackEntry.setValue(count);
-                        if (needed == 0) break;
-                    }
-                }
-                if (needed > 0) {
-                    satisfied = false;
-                    break;
-                }
-            }
-            // Not enough NC -> skip this inventory
-            if (!satisfied) continue;
-            // Satisfied NC + no consumables -> early return
-            if (consumables.isEmpty()) return limit;
-
-            int invMultiplier = Integer.MAX_VALUE;
-            // Loop over all consumables
-
-            for (var cEntry : Object2LongMaps.fastIterable(consumables)) {
-                SizedIngredient ingredient = cEntry.getKey();
-                final long needed = cEntry.getLongValue();
-                final long maxNeeded = needed * limit;
-                long available = 0;
-                // Search stacks in our inventory group, summing them up
-                for (var stackEntry : Object2LongMaps.fastIterable(group)) {
-                    if (ingredient.ingredient().test(stackEntry.getKey())) {
-                        available += stackEntry.getLongValue();
-                        // We can stop if we already have enough for max parallel
-                        if (available >= maxNeeded) break;
-                    }
-                }
-                // ratio will equal 0 if available < needed
-                int ratio = GTMath.saturatedCast(Math.min(limit, available / needed));
-                invMultiplier = Math.min(invMultiplier, ratio);
-                // Not enough of this ingredient in this group -> skip inventory
-                if (ratio == 0) break;
-            }
-            // We found an inventory group that can do max parallel -> early return
-            if (invMultiplier == limit) return limit;
-            maxMultiplier = Math.max(maxMultiplier, invMultiplier);
-        }
-
-        return maxMultiplier;
-    }
+    public int getMaxParallelByInput(IRecipeCapabilityHolder holder, GTRecipe recipe, int limit, boolean tick) { return (int)0; /* ported stub */ }
 
     private static List<Object2LongMap<ItemStack>> getInputContents(IRecipeCapabilityHolder holder) {
         var handlerLists = holder.getCapabilitiesForIO(IO.IN);
@@ -366,11 +159,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
     @Override
     public @NotNull List<Object> createXEIContainerContents(List<Content> contents, GTRecipe recipe, IO io) { return null; /* ported stub */ }
 
-    public Object createXEIContainer(List<?> contents) {
-        // cast is safe if you don't pass the wrong thing.
-        // noinspection unchecked
-        return new CycleItemEntryHandler((List<ItemEntryList>) contents);
-    }
+    public Object createXEIContainer(List<?> contents) { return null; /* ported stub */ }
 
     @NotNull
     @Override
@@ -395,72 +184,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                                 @NotNull GTRecipeType recipeType,
                                 @UnknownNullability("null when content == null") GTRecipe recipe,
                                 @Nullable Content content,
-                                @Nullable Object storage, int recipeTier, int chanceTier) {
-        if (widget instanceof SlotWidget slot) {
-            if (storage instanceof IItemHandlerModifiable items) {
-                if (index >= 0 && index < items.getSlots()) {
-                    slot.setHandlerSlot(items, index);
-                    slot.setIngredientIO(io == IO.IN ? IngredientIO.INPUT : IngredientIO.OUTPUT);
-                    slot.setCanTakeItems(!isXEI);
-                    slot.setCanPutItems(!isXEI && io.support(IO.IN));
-                }
-                // 1 over container size.
-                // If in a recipe viewer and a research slot can be added, add it.
-                if (isXEI && recipeType.isHasResearchSlot() && index == items.getSlots()) {
-                    if (ConfigHolder.INSTANCE.machines.enableResearch) {
-                        ResearchCondition condition = recipeHolder.conditions().stream()
-                                .filter(ResearchCondition.class::isInstance).findAny()
-                                .map(ResearchCondition.class::cast).orElse(null);
-                        if (condition != null) {
-                            List<ItemStack> dataItems = new ArrayList<>();
-                            for (ResearchData.ResearchEntry entry : condition.data) {
-                                ItemStack dataStick = entry.dataItem().copy();
-                                dataStick.set(GTDataComponents.RESEARCH_ITEM,
-                                        new ResearchManager.ResearchItem(entry.researchId(), recipeType));
-                                dataItems.add(dataStick);
-                            }
-                            CycleItemEntryHandler handler = CycleItemEntryHandler.createFromStacks(List.of(dataItems));
-                            slot.setHandlerSlot(handler, 0);
-                            slot.setIngredientIO(IngredientIO.CATALYST);
-                            slot.setCanTakeItems(false);
-                            slot.setCanPutItems(false);
-                        }
-                    }
-                }
-            }
-            if (content != null) {
-                float chance = (float) recipeType.getChanceFunction()
-                        .getBoostedChance(content, recipeTier, chanceTier) / content.maxChance;
-                slot.setXEIChance(chance);
-                slot.setOnAddedTooltips((w, tooltips) -> {
-                    GTRecipeWidget.setConsumedChance(content,
-                            recipe.getChanceLogicForCapability(this, io, isTickSlot(index, io, recipe)),
-                            tooltips, recipeTier, chanceTier, recipeType.getChanceFunction());
-                    // spotless:off
-                    if (this.of(content.content).getContainedCustom() instanceof IntProviderIngredient ingredient) {
-                        IntProvider countProvider = ingredient.getCountProvider();
-                        tooltips.add(Component.translatable("gtceu.gui.content.count_range",
-                                        countProvider.getMinValue(), countProvider.getMaxValue())
-                                .withStyle(ChatFormatting.GOLD));
-                    } else if (this.of(content.content) instanceof SizedIngredient sizedIngredient &&
-                            sizedIngredient.getContainedCustom() instanceof IntProviderIngredient ingredient) {
-                        IntProvider countProvider = ingredient.getCountProvider();
-                        tooltips.add(Component.translatable("gtceu.gui.content.count_range",
-                                        countProvider.getMinValue(), countProvider.getMaxValue())
-                                .withStyle(ChatFormatting.GOLD));
-                    }
-                    // spotless:on
-                    if (isTickSlot(index, io, recipe)) {
-                        tooltips.add(Component.translatable("gtceu.gui.content.per_tick"));
-                    }
-                });
-                if (io == IO.IN && (content.chance == 0 ||
-                        this.of(content.content).getContainedCustom() instanceof IntCircuitIngredient)) {
-                    slot.setIngredientIO(IngredientIO.CATALYST);
-                }
-            }
-        }
-    }/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
+                                @Nullable Object storage, int recipeTier, int chanceTier) {  /* ported stub */ }/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 
     public interface ICustomParallel {
 

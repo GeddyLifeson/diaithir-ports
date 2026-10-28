@@ -110,13 +110,7 @@ public class QuantumChestMachine extends TieredMachine implements IControllable,
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentGetter componentInput) {
-        super.applyImplicitComponents(componentInput);
-        LargeItemContent storage = componentInput.getOrDefault(GTDataComponents.LARGE_ITEM_CONTENT,
-                LargeItemContent.EMPTY);
-        stored = storage.stored();
-        storedAmount = storage.amount();
-    }
+    protected void applyImplicitComponents(DataComponentGetter componentInput) {  /* ported stub */ }
 
     @Override
     public void collectImplicitComponents(DataComponentMap.Builder components) {
@@ -164,35 +158,7 @@ public class QuantumChestMachine extends TieredMachine implements IControllable,
     //////////////////////////////////////
 
     @Override
-    public InteractionResult onUseWithItem(ExtendedUseOnContext context) {
-        if (context.getClickedFace() == getFrontFacing() && !isRemote()) {
-            var hit = context.getHitResult();
-
-            var aabb = new AABB(hit.getBlockPos()).deflate(0.12);
-            var hitVector = hit.getLocation().relative(getFrontFacing(), -0.5);
-            if (!aabb.contains(hitVector)) return InteractionResult.PASS;
-
-            var held = context.getItemInHand();
-            var player = context.getPlayer();
-
-            if (cache.canInsert(held)) { // push
-                var remaining = cache.insertItem(0, held, false);
-                player.setItemInHand(InteractionHand.MAIN_HAND, remaining);
-                return InteractionResult.SUCCESS;
-            } else if (isDoubleHit(player.getUUID())) {
-                for (var stack : player.getInventory().getNonEquipmentItems()) {
-                    if (!stack.isEmpty() && cache.canInsert(stack)) {
-                        stack.setCount(cache.insertItem(0, stack, false).getCount());
-                    }
-                }
-            }
-            INTERACTION_LOGGER.put(player.getUUID(), System.currentTimeMillis());
-            return InteractionResult.SUCCESS;
-
-        }
-
-        return super.onUseWithItem(context);
-    }
+    public InteractionResult onUseWithItem(ExtendedUseOnContext context) { return null; /* ported stub */ }
 
     private static boolean isDoubleHit(UUID uuid) {
         return (System.currentTimeMillis() - INTERACTION_LOGGER.getLong(uuid)) < 300;

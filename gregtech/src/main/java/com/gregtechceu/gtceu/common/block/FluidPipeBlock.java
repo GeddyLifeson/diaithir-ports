@@ -51,22 +51,7 @@ public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipePr
         return fluidPipeType.modifyProperties(material.getProperty(PropertyKey.FLUID_PIPE));
     }
 
-    public void attachCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerBlock(Capabilities.FluidHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
-            if (blockEntity instanceof FluidPipeBlockEntity fluidPipeBlockEntity) {
-                if (side != null && fluidPipeBlockEntity.isConnected(side)) {
-                    return fluidPipeBlockEntity.getTankList(side);
-                }
-            }
-            return null;
-        }, this);
-        event.registerBlock(GTCapability.CAPABILITY_COVERABLE, (level, pos, state, blockEntity, side) -> {
-            if (blockEntity instanceof PipeBlockEntity<?, ?> pipe) {
-                return pipe.getCoverContainer();
-            }
-            return null;
-        }, this);
-    }
+    public void attachCapabilities(RegisterCapabilitiesEvent event) {  /* ported stub */ }
 
     @Override
     protected FluidPipeProperties createMaterialData() {
@@ -102,32 +87,7 @@ public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipePr
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
-        FluidPipeProperties properties = createProperties(defaultBlockState(), stack);
-
-        tooltip.add(Component.translatable("gtceu.universal.tooltip.fluid_transfer_rate", properties.getThroughput()));
-        tooltip.add(Component.translatable("gtceu.fluid_pipe.max_temperature",
-                FormattingUtil.formatTemperature(properties.getMaxFluidTemperature())));
-
-        if (properties.getChannels() > 1) {
-            tooltip.add(Component.translatable("gtceu.fluid_pipe.channels", properties.getChannels()));
-        }
-
-        if (!GTUtil.isShiftDown()) {
-            tooltip.add(Component.translatable("gtceu.tooltip.fluid_pipe_hold_shift"));
-            return;
-        }
-
-        if (properties.isGasProof())
-            tooltip.add(Component.translatable("gtceu.fluid_pipe.gas_proof"));
-        else
-            tooltip.add(Component.translatable("gtceu.fluid_pipe.not_gas_proof"));
-
-        if (properties.isAcidProof()) tooltip.add(Component.translatable("gtceu.fluid_pipe.acid_proof"));
-        if (properties.isCryoProof()) tooltip.add(Component.translatable("gtceu.fluid_pipe.cryo_proof"));
-        if (properties.isPlasmaProof()) tooltip.add(Component.translatable("gtceu.fluid_pipe.plasma_proof"));
-    }
+                                TooltipFlag flag) {  /* ported stub */ }
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {

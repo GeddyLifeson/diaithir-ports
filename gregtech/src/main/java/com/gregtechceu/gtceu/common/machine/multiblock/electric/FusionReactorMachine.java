@@ -164,70 +164,10 @@ public class FusionReactorMachine extends WorkableElectricMultiblockMachine impl
      * @param recipe  recipe
      * @return A {@link ModifierFunction} for the given Fusion Reactor and recipe
      */
-    public static ModifierFunction recipeModifier(@NotNull MetaMachine machine, @NotNull GTRecipe recipe) {
-        if (!(machine instanceof FusionReactorMachine fusionReactorMachine)) {
-            return RecipeModifier.nullWrongType(FusionReactorMachine.class, machine);
-        }
-        if (RecipeHelper.getRecipeEUtTier(recipe) > fusionReactorMachine.getTier() ||
-                !recipe.data.contains("eu_to_start") ||
-                recipe.data.getLong("eu_to_start") > fusionReactorMachine.energyContainer.getEnergyCapacity()) {
-            return ModifierFunction
-                    .cancel(Component.translatable("gtceu.recipe_modifier.insufficient_eu_to_start_fusion"));
-        }
-
-        long heatDiff = recipe.data.getLong("eu_to_start") - fusionReactorMachine.heat;
-
-        // if the stored heat is >= required energy, recipe is okay to run
-        if (heatDiff <= 0) {
-            return FUSION_OC.getModifier(machine, recipe, fusionReactorMachine.getMaxVoltage(), false);
-        }
-        // if the remaining energy needed is more than stored, do not run
-        if (fusionReactorMachine.energyContainer.getEnergyStored() < heatDiff)
-            return ModifierFunction
-                    .cancel(Component.translatable("gtceu.recipe_modifier.insufficient_eu_to_start_fusion"));
-
-        // remove the energy needed
-        fusionReactorMachine.energyContainer.removeEnergy(heatDiff);
-        // increase the stored heat
-        fusionReactorMachine.heat += heatDiff;
-        fusionReactorMachine.updatePreHeatSubscription();
-        return FUSION_OC.getModifier(machine, recipe, fusionReactorMachine.getMaxVoltage(), false);
-    }
+    public static ModifierFunction recipeModifier(@NotNull MetaMachine machine, @NotNull GTRecipe recipe) { return null; /* ported stub */ }
 
     @Override
-    public boolean onWorking() {
-        GTRecipe recipe = recipeLogic.getLastRecipe();
-        assert recipe != null;
-        if (recipe.data.contains("eu_to_start")) {
-            long heatDiff = recipe.data.getLong("eu_to_start") - this.heat;
-            // if the remaining energy needed is more than stored, do not run
-            if (heatDiff > 0) {
-                recipeLogic.setWaiting(Component.translatable("gtceu.recipe_logic.insufficient_fuel"));
-
-                // if the remaining energy needed is more than stored, do not run
-                if (this.energyContainer.getEnergyStored() < heatDiff)
-                    return super.onWorking();
-                // remove the energy needed
-                this.energyContainer.removeEnergy(heatDiff);
-                // increase the stored heat
-                this.heat += heatDiff;
-                this.updatePreHeatSubscription();
-            }
-        }
-
-        if (color == -1) {
-            if (!recipe.getOutputContents(FluidRecipeCapability.CAP).isEmpty()) {
-                var stack = FluidRecipeCapability.CAP
-                        .of(recipe.getOutputContents(FluidRecipeCapability.CAP).getFirst().getContent()).getFluids()[0];
-                int newColor = 0xFF000000 | GTUtil.getFluidColor(stack);
-                if (!Objects.equals(color, newColor)) {
-                    color = newColor;
-                    syncDataHolder.markClientSyncFieldDirty("color");
-                }
-            }
-        }
-        return super.onWorking();
-    }
+    public boolean onWorking() { return false; /* ported stub */ }
 
     public void updateHeat() {
         // Drain heat when the reactor is not active, is paused via soft mallet, or does not have enough energy and has

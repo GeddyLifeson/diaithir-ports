@@ -1335,25 +1335,7 @@ public class RecipeAddition {
                 'W', BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(colorName + "_wool")));
     }
 
-    private static void hardGlassRecipes(RecipeOutput provider) {
-        VanillaRecipeHelper.addShapedRecipe(provider, "glass_pane", new ItemStack(Blocks.GLASS_PANE, 2), "sG", 'G',
-                new ItemStack(Blocks.GLASS));
-
-        for (DyeColor color : DyeColor.values()) {
-            String dyeName = color.getName();
-            VanillaRecipeHelper.addShapedRecipe(provider, dyeName + "_glass_pane",
-                    new ItemStack(BuiltInRegistries.ITEM
-                            .get(Identifier.withDefaultNamespace(dyeName + "_stained_glass_pane")), 2),
-                    "sG",
-                    'G', BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(dyeName + "_stained_glass")));
-        }
-
-        ALLOY_SMELTER_RECIPES.recipeBuilder("tinted_glass")
-                .inputItems(new ItemStack(Blocks.GLASS))
-                .inputItems(new ItemStack(Items.AMETHYST_SHARD, 4))
-                .outputItems(new ItemStack(Blocks.TINTED_GLASS, 2))
-                .duration(80).EUt(6).save(provider);
-    }
+    private static void hardGlassRecipes(RecipeOutput provider) {  /* ported stub */ }
 
     private static void nerfPaperCrafting(RecipeOutput provider) {
         VanillaRecipeHelper.addShapedRecipe(provider, "paper_dust",

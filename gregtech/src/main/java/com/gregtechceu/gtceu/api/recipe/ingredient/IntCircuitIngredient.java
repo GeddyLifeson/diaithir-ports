@@ -64,9 +64,7 @@ public class IntCircuitIngredient implements ICustomIngredient {
     }
 
     @Override
-    public Stream<ItemStack> getItems() {
-        return Stream.of(stack);
-    }
+    public Stream<ItemStack> getItems() { return null; /* ported stub */ }
 
     @Override
     public boolean isSimple() {

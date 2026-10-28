@@ -175,34 +175,7 @@ public class ResearchStationMachine extends WorkableElectricMultiblockMachine
 
         // Handle RecipeIO manually
         @Override
-        protected ActionResult handleRecipeIO(GTRecipe recipe, IO io) {
-            if (io == IO.IN) {
-                // lock the object holder on recipe start
-                ObjectHolderMachine holder = getMachine().getObjectHolder();
-                holder.setLocked(true);
-                return ActionResult.SUCCESS;
-            }
-
-            // "replace" the items in the slots rather than outputting elsewhere
-            // unlock the object holder
-            ObjectHolderMachine holder = getMachine().getObjectHolder();
-            if (lastRecipe == null) {
-                holder.setLocked(false);
-                return ActionResult.SUCCESS;
-            }
-
-            holder.setHeldItem(ItemStack.EMPTY);
-            ItemStack outputItem = ItemStack.EMPTY;
-            var contents = lastRecipe.getOutputContents(ItemRecipeCapability.CAP);
-            if (!contents.isEmpty()) {
-                outputItem = ItemRecipeCapability.CAP.of(contents.get(0).content).getItems()[0];
-            }
-            if (!outputItem.isEmpty()) {
-                holder.setDataItem(outputItem.copy());
-            }
-            holder.setLocked(false);
-            return ActionResult.SUCCESS;
-        }
+        protected ActionResult handleRecipeIO(GTRecipe recipe, IO io) { return null; /* ported stub */ }
 
         @Override
         protected ActionResult handleTickRecipeIO(GTRecipe recipe, IO io) {

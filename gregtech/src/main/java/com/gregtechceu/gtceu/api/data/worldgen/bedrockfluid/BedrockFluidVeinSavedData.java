@@ -35,13 +35,7 @@ public class BedrockFluidVeinSavedData extends SavedData {
 
     private final ServerLevel serverLevel;
 
-    public static BedrockFluidVeinSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(
-                        new SavedData.Factory<>(() -> new BedrockFluidVeinSavedData(serverLevel),
-                                (tag, provider) -> new BedrockFluidVeinSavedData(serverLevel, tag)),
-                        "gtceu_bedrock_fluid");
-    }
+    public static BedrockFluidVeinSavedData getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
 
     public BedrockFluidVeinSavedData(ServerLevel serverLevel) {
         this.serverLevel = serverLevel;
@@ -59,17 +53,7 @@ public class BedrockFluidVeinSavedData extends SavedData {
     }
 
     @Override
-    public CompoundTag save(CompoundTag nbt, HolderLookup.Provider provider) {
-        var oilList = new ListTag();
-        for (var entry : veinFluids.entrySet()) {
-            var tag = new CompoundTag();
-            tag.putLong("p", entry.getKey().toLong());
-            tag.put("d", entry.getValue().writeToNBT());
-            oilList.add(tag);
-        }
-        nbt.put("veinInfo", oilList);
-        return nbt;
-    }
+    public CompoundTag save(CompoundTag nbt, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     public static int getVeinCoord(int chunkCoord) {
         return Math.floorDiv(chunkCoord, VEIN_CHUNK_SIZE);

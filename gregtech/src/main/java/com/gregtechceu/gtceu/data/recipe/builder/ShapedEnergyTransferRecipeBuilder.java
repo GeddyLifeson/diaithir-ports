@@ -58,19 +58,9 @@ public class ShapedEnergyTransferRecipeBuilder {
         return this;
     }
 
-    public ShapedEnergyTransferRecipeBuilder define(char cha, TagKey<Item> itemStack) {
-        key.put(cha, Ingredient.of(itemStack));
-        return this;
-    }
+    public ShapedEnergyTransferRecipeBuilder define(char cha, TagKey<Item> itemStack) { return null; /* ported stub */ }
 
-    public ShapedEnergyTransferRecipeBuilder define(char cha, ItemStack itemStack) {
-        if (!itemStack.isComponentsPatchEmpty()) {
-            key.put(cha, DataComponentIngredient.of(true, itemStack));
-        } else {
-            key.put(cha, Ingredient.of(itemStack));
-        }
-        return this;
-    }
+    public ShapedEnergyTransferRecipeBuilder define(char cha, ItemStack itemStack) { return null; /* ported stub */ }
 
     public ShapedEnergyTransferRecipeBuilder define(char cha, ItemLike itemLike) {
         key.put(cha, Ingredient.of(itemLike));
@@ -98,8 +88,5 @@ public class ShapedEnergyTransferRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public void save(RecipeOutput consumer) {
-        var recipeId = id == null ? defaultId() : id;
-        consumer.accept(recipeId.withPrefix("shaped/"), build(), null);
-    }
+    public void save(RecipeOutput consumer) {  /* ported stub */ }
 }

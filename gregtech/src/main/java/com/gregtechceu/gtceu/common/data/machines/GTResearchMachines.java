@@ -449,18 +449,7 @@ public class GTResearchMachines {
 
     private static MachineBuilder<MachineDefinition, ?> registerHPCAPart(String name, String displayName,
                                                                          Function<BlockEntityCreationInfo, MetaMachine> constructor,
-                                                                         String texture, boolean isAdvanced) {
-        return REGISTRATE.machine(name, constructor)
-                .langValue(displayName)
-                .rotationState(RotationState.ALL)
-                .abilities(PartAbility.HPCA_COMPONENT)
-                .modelProperty(GTMachineModelProperties.IS_FORMED, false)
-                .modelProperty(GTMachineModelProperties.IS_HPCA_PART_DAMAGED, false)
-                .modelProperty(GTMachineModelProperties.IS_ACTIVE, false)
-                .model(createHPCAPartModel(isAdvanced,
-                        GTCEu.id("block/overlay/machine/hpca/" + texture),
-                        GTCEu.id("block/overlay/machine/hpca/damaged" + (isAdvanced ? "_advanced" : ""))));
-    }
+                                                                         String texture, boolean isAdvanced) { return null; /* ported stub */ }
 
     public static void init() {}
 }

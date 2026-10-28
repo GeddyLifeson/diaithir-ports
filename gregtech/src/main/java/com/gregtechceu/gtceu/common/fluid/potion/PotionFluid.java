@@ -66,9 +66,6 @@ public class PotionFluid extends BaseFlowingFluid {
         }
 
         @Override
-        public @NotNull String getDescriptionId(FluidStack stack) {
-            return Potion.getName(stack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY).potion(),
-                    this.getDescriptionId() + ".effect.");
-        }
+        public @NotNull String getDescriptionId(FluidStack stack) { return null; /* ported stub */ }
     }
 }

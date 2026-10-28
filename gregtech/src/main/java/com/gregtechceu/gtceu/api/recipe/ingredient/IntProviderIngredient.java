@@ -78,20 +78,13 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
      * @param inner         {@link Ingredient}
      * @param countProvider usually as {@link net.minecraft.util.valueproviders.UniformInt#of(int, int)}
      */
-    public static IntProviderIngredient of(Ingredient inner, IntProvider countProvider) {
-        Preconditions.checkArgument(countProvider.getMinValue() >= 0,
-                "IntProviderIngredient must have a min value of at least 0.");
-        return new IntProviderIngredient(inner, countProvider);
-    }
+    public static IntProviderIngredient of(Ingredient inner, IntProvider countProvider) { return null; /* ported stub */ }
 
     /**
      * @param stack         {@link ItemStack}
      * @param countProvider usually as {@link net.minecraft.util.valueproviders.UniformInt#of(int, int)}
      */
-    public static IntProviderIngredient of(ItemStack stack, IntProvider countProvider) {
-        Ingredient inner = Ingredient.of(stack);
-        return of(inner, countProvider);
-    }
+    public static IntProviderIngredient of(ItemStack stack, IntProvider countProvider) { return null; /* ported stub */ }
 
     @Override
     public boolean test(@Nullable ItemStack stack) {
@@ -104,25 +97,10 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
      * 
      * @return a {@link ItemStack ItemStack[]} with count {@link IntProviderIngredient#sampledCount}
      */
-    public ItemStack[] getItemStacks() {
-        if (itemStacks == null) {
-            int cachedCount = rollSampledCount();
-            if (cachedCount == 0) {
-                return EMPTY_STACK_ARRAY;
-            }
-            var innerStacks = inner.getItems();
-            this.itemStacks = new ItemStack[innerStacks.length];
-            for (int i = 0; i < itemStacks.length; i++) {
-                itemStacks[i] = innerStacks[i].copyWithCount(cachedCount);
-            }
-        }
-        return itemStacks;
-    }
+    public ItemStack[] getItemStacks() { return null; /* ported stub */ }
 
     @Override
-    public Stream<ItemStack> getItems() {
-        return Arrays.stream(getItemStacks());
-    }
+    public Stream<ItemStack> getItems() { return null; /* ported stub */ }
 
     @Override
     public boolean isSimple() {
@@ -156,10 +134,7 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
      * 
      * @return a {@link ItemStack} with count {@link IntProvider#getMaxValue()}
      */
-    public @NotNull ItemStack getMaxSizeStack() {
-        if (inner.getItems().length == 0) return ItemStack.EMPTY;
-        else return inner.getItems()[0].copyWithCount(countProvider.getMaxValue());
-    }
+    public @NotNull ItemStack getMaxSizeStack() { return null; /* ported stub */ }
 
     /**
      * If this ingredient has not yet had its {@link IntProviderIngredient#sampledCount} rolled, rolls it and returns

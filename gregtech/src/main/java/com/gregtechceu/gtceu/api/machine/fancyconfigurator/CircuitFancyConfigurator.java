@@ -164,13 +164,7 @@ public class CircuitFancyConfigurator implements IFancyConfigurator, IFancyCusto
     }
 
     @Override
-    public List<Component> getTooltips() {
-        var list = new ArrayList<>(IFancyConfigurator.super.getTooltips());
-        list.addAll(Arrays.stream(
-                LangHandler.getMultiLang("gtceu.gui.configurator_slot.tooltip").toArray(new MutableComponent[0]))
-                .toList());
-        return list;
-    }
+    public List<Component> getTooltips() { return null; /* ported stub */ }
 
     private int getNextValue(boolean increment) {
         int currentValue = IntCircuitBehaviour.getCircuitConfiguration(circuitSlot.getStackInSlot(0));

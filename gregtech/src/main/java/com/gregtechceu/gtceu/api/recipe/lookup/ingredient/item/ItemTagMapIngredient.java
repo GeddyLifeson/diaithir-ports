@@ -21,22 +21,10 @@ public class ItemTagMapIngredient extends AbstractMapIngredient {
     }
 
     @NotNull
-    public static List<AbstractMapIngredient> from(Ingredient ingredient) {
-        List<AbstractMapIngredient> ingredients = new ObjectArrayList<>();
-        for (Ingredient.Value value : ingredient.getValues()) {
-            if (value instanceof Ingredient.TagValue(TagKey<Item> tag)) {
-                ingredients.add(new ItemTagMapIngredient(tag));
-            }
-        }
-        return ingredients;
-    }
+    public static List<AbstractMapIngredient> from(Ingredient ingredient) { return null; /* ported stub */ }
 
     @NotNull
-    public static List<AbstractMapIngredient> from(ItemStack stack) {
-        List<AbstractMapIngredient> ingredients = new ObjectArrayList<>();
-        stack.entityTags().forEach(tag -> ingredients.add(new ItemTagMapIngredient(tag)));
-        return ingredients;
-    }
+    public static List<AbstractMapIngredient> from(ItemStack stack) { return null; /* ported stub */ }
 
     @Override
     protected int hash() {

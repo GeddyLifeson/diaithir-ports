@@ -100,15 +100,9 @@ public class WorldGeneratorUtils {
                 Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a, Object2ObjectOpenHashMap::new)));
     }
 
-    public static <T> Map<ChunkPos, List<BlockPos>> groupByChunks(Collection<BlockPos> positions) {
-        return positions.stream().collect(Collectors.groupingBy(ChunkPos::new));
-    }
+    public static <T> Map<ChunkPos, List<BlockPos>> groupByChunks(Collection<BlockPos> positions) { return null; /* ported stub */ }
 
-    public static Collection<ChunkPos> getChunks(Collection<BlockPos> positions) {
-        return positions.stream()
-                .collect(Collectors.groupingBy(ChunkPos::new))
-                .keySet();
-    }
+    public static Collection<ChunkPos> getChunks(Collection<BlockPos> positions) { return null; /* ported stub */ }
 
     public static void generateChunks(WorldGenLevel level, ChunkStatus requiredStatus, Collection<ChunkPos> chunks) {
         List<ChunkPos> previouslyUnloadedChunks = new ObjectArrayList<>();

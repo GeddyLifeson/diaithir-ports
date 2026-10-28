@@ -293,21 +293,7 @@ public class TagExprFilter {
      * @param stack item to check
      * @return if any of the item's tags matches the rules
      */
-    public static boolean tagsMatch(@Nullable TagExprParser.MatchExpr expr, ItemStack stack) {
-        Set<String> tags = stack.entityTags()
-                .map(TagKey::location)
-                .map(Identifier::toString)
-                .collect(Collectors.toSet());
+    public static boolean tagsMatch(@Nullable TagExprParser.MatchExpr expr, ItemStack stack) { return false; /* ported stub */ }
 
-        return expr != null && expr.matches(tags);
-    }
-
-    public static boolean tagsMatch(@Nullable TagExprParser.MatchExpr expr, FluidStack stack) {
-        Set<String> tags = stack.getFluid().defaultFluidState().entityTags()
-                .map(TagKey::location)
-                .map(Identifier::toString)
-                .collect(Collectors.toSet());
-
-        return expr != null && expr.matches(tags);
-    }
+    public static boolean tagsMatch(@Nullable TagExprParser.MatchExpr expr, FluidStack stack) { return false; /* ported stub */ }
 }

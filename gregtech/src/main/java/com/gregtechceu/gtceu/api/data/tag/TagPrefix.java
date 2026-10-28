@@ -78,9 +78,7 @@ public class TagPrefix {
 
     public static void init() {}
 
-    public static TagPrefix get(String name) {
-        return GTRegistries.TAG_PREFIXES.get(GTCEu.id(name));
-    }
+    public static TagPrefix get(String name) { return null; /* ported stub */ }
 
     public boolean isEmpty() {
         return this == NULL_PREFIX;
@@ -1049,17 +1047,7 @@ public class TagPrefix {
         GTRegistries.register(GTRegistries.TAG_PREFIXES, GTCEu.id(lowerCaseUnder), this);
     }
 
-    public static TagPrefix oreTagPrefix(String name, TagKey<Block> miningToolTag) {
-        return new TagPrefix(name)
-                .defaultTagPath("ores/%s")
-                .prefixOnlyTagPath("ores_in_ground/%s")
-                .unformattedTagPath("ores")
-                .materialIconType(MaterialIconType.ore)
-                .miningToolTag(miningToolTag)
-                .unificationEnabled(true)
-                .blockConstructor(OreBlock::new)
-                .generationCondition(hasOreProperty);
-    }
+    public static TagPrefix oreTagPrefix(String name, TagKey<Block> miningToolTag) { return null; /* ported stub */ }
 
     public void addSecondaryMaterial(MaterialStack secondaryMaterial) {
         Preconditions.checkNotNull(secondaryMaterial, "secondaryMaterial");
@@ -1086,14 +1074,7 @@ public class TagPrefix {
 
     public TagPrefix registerOre(Supplier<BlockState> stoneType, Supplier<Material> material,
                                  Supplier<BlockBehaviour.Properties> properties, Identifier baseModelLocation,
-                                 boolean doubleDrops, boolean isSand, boolean shouldDropAsItem) {
-        ORES.put(this,
-                new OreType(stoneType, material, properties, baseModelLocation, doubleDrops, isSand, shouldDropAsItem));
-        if (shouldDropAsItem) {
-            GTOreByProduct.addOreByProductPrefix(this);
-        }
-        return this;
-    }
+                                 boolean doubleDrops, boolean isSand, boolean shouldDropAsItem) { return null; /* ported stub */ }
 
     public TagPrefix defaultTagPath(String path) {
         return this.defaultTagPath(path, false);
@@ -1225,16 +1206,7 @@ public class TagPrefix {
                 hasItemTable() && this.itemTable.get() != null && getItemFromTable(material) != null;
     }
 
-    public MaterialIconType getMaterialIconType(Material material) {
-        // special case emissive ores
-        if (materialIconType == MaterialIconType.ore && material.hasProperty(PropertyKey.ORE)) {
-            OreProperty oreProp = material.getProperty(PropertyKey.ORE);
-            if (oreProp.isEmissive()) {
-                return MaterialIconType.oreEmissive;
-            }
-        }
-        return materialIconType;
-    }
+    public MaterialIconType getMaterialIconType(Material material) { return null; /* ported stub */ }
 
     public String getLowerCaseName() {
         return FormattingUtil.toLowerCaseUnderscore(this.name);

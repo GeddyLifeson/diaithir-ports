@@ -75,11 +75,7 @@ public class AdjacentFluidCondition extends RecipeCondition<AdjacentFluidConditi
         return fromFluids(Arrays.asList(fluids));
     }
 
-    public static AdjacentFluidCondition fromTags(Collection<TagKey<Fluid>> tags) {
-        return new AdjacentFluidCondition(tags.stream()
-                .<HolderSet<Fluid>>map(BuiltInRegistries.FLUID::getOrCreateTag)
-                .toList());
-    }
+    public static AdjacentFluidCondition fromTags(Collection<TagKey<Fluid>> tags) { return null; /* ported stub */ }
 
     @SafeVarargs
     public static AdjacentFluidCondition fromTags(TagKey<Fluid>... tags) {
@@ -127,32 +123,7 @@ public class AdjacentFluidCondition extends RecipeCondition<AdjacentFluidConditi
         return false;
     }
 
-    public @NotNull List<HolderSet<Fluid>> getOrInitFluids(@Nullable GTRecipe recipe) {
-        if (resolvedFluids.isEmpty() && !fluids.isEmpty()) {
-            for (var holderSetSupplier : this.fluids) {
-                this.resolvedFluids.add(holderSetSupplier.get());
-            }
-        }
-        if (!resolvedFluids.isEmpty()) {
-            return resolvedFluids;
-        }
-
-        if (recipe != null && recipe.data.contains("fluidA") && recipe.data.contains("fluidB")) {
-            this.resolvedFluids.clear();
-
-            Fluid fluidA = BuiltInRegistries.FLUID.get(Identifier.parse(recipe.data.getString("fluidA")));
-            if (!fluidA.defaultFluidState().isEmpty()) {
-                this.resolvedFluids.add(HolderSet.direct(fluidA.builtInRegistryHolder()));
-            }
-            Fluid fluidB = BuiltInRegistries.FLUID.get(Identifier.parse(recipe.data.getString("fluidB")));
-            if (!fluidB.defaultFluidState().isEmpty()) {
-                this.resolvedFluids.add(HolderSet.direct(fluidB.builtInRegistryHolder()));
-            }
-            // init the fluid supplier list, just to be safe
-            getFluidSuppliers();
-        }
-        return this.resolvedFluids;
-    }
+    public @NotNull List<HolderSet<Fluid>> getOrInitFluids(@Nullable GTRecipe recipe) { return null; /* ported stub */ }
 
     private @NotNull List<Supplier<HolderSet<Fluid>>> getFluidSuppliers() {
         if (!this.fluids.isEmpty() || this.resolvedFluids.isEmpty()) {

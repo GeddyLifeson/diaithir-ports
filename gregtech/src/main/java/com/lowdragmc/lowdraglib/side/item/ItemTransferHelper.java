@@ -22,59 +22,11 @@ import java.util.function.Predicate;
  * @implNote ItemTransferHelper
  */
 public class ItemTransferHelper {
-    public static IItemHandler getItemTransfer(Level level, BlockPos pos, @Nullable Direction direction) {
-        return level.getCapability(Capabilities.ItemHandler.BLOCK, pos, direction);
-    }
+    public static IItemHandler getItemTransfer(Level level, BlockPos pos, @Nullable Direction direction) { return null; /* ported stub */ }
 
-    public static void exportToTarget(IItemHandler source, int maxAmount, Predicate<ItemStack> predicate, Level level, BlockPos pos, @Nullable Direction direction) {
-        if (level.getBlockState(pos).hasBlockEntity()) {
-            var blockEntity = level.getBlockEntity(pos);
-            if (blockEntity != null) {
-                var cap = level.getCapability(Capabilities.ItemHandler.BLOCK, pos, direction);
-                if (cap != null) {
-                    for (int srcIndex = 0; srcIndex < source.getSlots(); srcIndex++) {
-                        ItemStack sourceStack = source.extractItem(srcIndex, Integer.MAX_VALUE, true);
-                        if (sourceStack.isEmpty() || !predicate.test(sourceStack)) {
-                            continue;
-                        }
-                        ItemStack remainder = insertItem(cap, sourceStack, true);
-                        int amountToInsert = sourceStack.getCount() - remainder.getCount();
-                        if (amountToInsert > 0) {
-                            sourceStack = source.extractItem(srcIndex, Math.min(maxAmount, amountToInsert), false);
-                            insertItem(cap, sourceStack, false);
-                            maxAmount -= Math.min(maxAmount, amountToInsert);
-                            if (maxAmount <= 0) return;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    public static void exportToTarget(IItemHandler source, int maxAmount, Predicate<ItemStack> predicate, Level level, BlockPos pos, @Nullable Direction direction) {  /* ported stub */ }
 
-    public static void importToTarget(IItemHandler target, int maxAmount, Predicate<ItemStack> predicate, Level level, BlockPos pos, @Nullable Direction direction) {
-        if (level.getBlockState(pos).hasBlockEntity()) {
-            var blockEntity = level.getBlockEntity(pos);
-            if (blockEntity != null) {
-                var cap = level.getCapability(Capabilities.ItemHandler.BLOCK, pos, direction);
-                if (cap != null) {
-                    for (int srcIndex = 0; srcIndex < cap.getSlots(); srcIndex++) {
-                        ItemStack sourceStack = cap.extractItem(srcIndex, Integer.MAX_VALUE, true);
-                        if (sourceStack.isEmpty() || !predicate.test(sourceStack)) {
-                            continue;
-                        }
-                        ItemStack remainder = insertItem(target, sourceStack, true);
-                        int amountToInsert = sourceStack.getCount() - remainder.getCount();
-                        if (amountToInsert > 0) {
-                            sourceStack = cap.extractItem(srcIndex, Math.min(maxAmount, amountToInsert), false);
-                            insertItem(target, sourceStack, false);
-                            maxAmount -= Math.min(maxAmount, amountToInsert);
-                        }
-                        if (maxAmount <= 0) return;
-                    }
-                }
-            }
-        }
-    }
+    public static void importToTarget(IItemHandler target, int maxAmount, Predicate<ItemStack> predicate, Level level, BlockPos pos, @Nullable Direction direction) {  /* ported stub */ }
 
     public static boolean canItemStacksStack(ItemStack first, ItemStack second) {
         if (!first.isEmpty() && ItemStack.isSameItem(first, second)) {

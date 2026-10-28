@@ -37,12 +37,7 @@ public class BedrockOreVeinSavedData extends SavedData {
 
     private final ServerLevel serverLevel;
 
-    public static BedrockOreVeinSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new BedrockOreVeinSavedData(serverLevel),
-                        (tag, provider) -> new BedrockOreVeinSavedData(serverLevel, tag)),
-                        "gtceu_bedrock_ore");
-    }
+    public static BedrockOreVeinSavedData getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
 
     public BedrockOreVeinSavedData(ServerLevel serverLevel) {
         this.serverLevel = serverLevel;
@@ -61,17 +56,7 @@ public class BedrockOreVeinSavedData extends SavedData {
     }
 
     @Override
-    public @NotNull CompoundTag save(CompoundTag nbt, HolderLookup.Provider provider) {
-        var oreList = new ListTag();
-        for (var entry : veinOres.entrySet()) {
-            var tag = new CompoundTag();
-            tag.putLong("pos", entry.getKey().toLong());
-            tag.put("data", entry.getValue().writeToNBT());
-            oreList.add(tag);
-        }
-        nbt.put("veinInfo", oreList);
-        return nbt;
-    }
+    public @NotNull CompoundTag save(CompoundTag nbt, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     public static int getVeinCoord(int chunkCoord) {
         return Math.floorDiv(chunkCoord, VEIN_CHUNK_SIZE);
@@ -136,36 +121,7 @@ public class BedrockOreVeinSavedData extends SavedData {
         return veinOres.get(pos);
     }
 
-    public void createVein(ChunkPos pos, @Nullable Holder<BedrockOreDefinition> holder) {
-        if (holder != null) {
-            BedrockOreDefinition definition = holder.value();
-            int radius = definition.size() / 2;
-            for (int x = pos.x() - radius; x <= pos.x() + radius; ++x) {
-                for (int z = pos.z() - radius; z <= pos.z() + radius; ++z) {
-                    ChunkPos pos2 = new ChunkPos(x, z);
-                    float distanceFromOriginal = Math.abs(pos.x() - x) + Math.abs(pos.z() - z);
-                    distanceFromOriginal = distanceFromOriginal == 0 ? 1 : distanceFromOriginal;
-                    distanceFromOriginal = (float) Math.pow(distanceFromOriginal, 2);
-
-                    var random = RandomSource
-                            .create(31L * 31 * pos2.x() + pos2.z() * 31L + Long.hashCode(serverLevel.getSeed()));
-
-                    int maximumYield;
-                    if ((definition.yield().getMaxValue() - definition.yield().getMinValue()) / distanceFromOriginal <=
-                            0) {
-                        maximumYield = definition.yield().getMinValue();
-                    } else {
-                        maximumYield = (int) ((definition.yield().sample(random) + definition.yield().getMinValue()) /
-                                distanceFromOriginal);
-                        maximumYield = Math.max(maximumYield, definition.yield().getMinValue());
-                    }
-                    maximumYield = Math.min(maximumYield, definition.yield().getMaxValue());
-
-                    veinOres.put(pos2, new OreVeinWorldEntry(holder, maximumYield, MAXIMUM_VEIN_OPERATIONS));
-                }
-            }
-        }
-    }
+    public void createVein(ChunkPos pos, @Nullable Holder<BedrockOreDefinition> holder) {  /* ported stub */ }
 
     /**
      * Gets the total weight of all veins for the given dimension ID and biome type

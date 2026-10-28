@@ -57,9 +57,7 @@ public class GTTransferUtils {
      * @param side  Side of block
      * @return LazyOpt of ItemHandler of given block
      */
-    public static Optional<IItemHandler> getItemHandler(Level level, BlockPos pos, @Nullable Direction side) {
-        return Optional.ofNullable(level.getCapability(Capabilities.ItemHandler.BLOCK, pos, side));
-    }
+    public static Optional<IItemHandler> getItemHandler(Level level, BlockPos pos, @Nullable Direction side) { return null; /* ported stub */ }
 
     // Same as getAdjacentFluidHandler, but for ItemHandler
     public static Optional<IItemHandler> getAdjacentItemHandler(Level level, BlockPos pos, Direction facing) {

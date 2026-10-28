@@ -56,20 +56,7 @@ public class MedicalConditionParser {
         return materialParser.suggestions.apply(builder.createOffset(stringReader.getCursor()));
     }
 
-    private void readMedicalCondition() throws CommandSyntaxException {
-        int i = this.reader.getCursor();
-
-        while (reader.canRead() && Identifier.isAllowedInResourceLocation(reader.peek())) {
-            reader.skip();
-        }
-        String name = reader.getString().substring(i, reader.getCursor());
-        MedicalCondition condition = MedicalCondition.CONDITIONS.get(name);
-        if (condition == null) {
-            this.reader.setCursor(i);
-            throw ERROR_UNKNOWN_CONDITION.createWithContext(this.reader, name);
-        }
-        this.result = condition;
-    }
+    private void readMedicalCondition() throws CommandSyntaxException {  /* ported stub */ }
 
     private void parse() throws CommandSyntaxException {
         this.suggestions = this::suggestMedicalCondition;

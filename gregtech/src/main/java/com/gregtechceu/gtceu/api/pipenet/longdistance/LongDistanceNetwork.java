@@ -329,14 +329,7 @@ public class LongDistanceNetwork {
             return data;
         }
 
-        public static WorldData get(LevelAccessor level) {
-            if (level instanceof ServerLevel serverLevel) {
-                return serverLevel.getDataStorage()
-                        .computeIfAbsent(new SavedData.Factory<>(() -> WorldData.create(serverLevel),
-                                (tag, provider) -> WorldData.load(tag, serverLevel)), "gtceu_long_dist_pipe");
-            }
-            return null;
-        }
+        public static WorldData get(LevelAccessor level) { return null; /* ported stub */ }
 
         private static long getChunkPos(BlockPos pos) {
             return ChunkPos.pack(pos.getX() >> 4, pos.getZ() >> 4);
@@ -391,64 +384,11 @@ public class LongDistanceNetwork {
             this.setDirty();
         }
 
-        public static WorldData load(@NotNull CompoundTag nbtTagCompound, ServerLevel level) {
-            WorldData data = new WorldData();
-            data.networks.clear();
-            data.networkList.clear();
-            ListTag list = nbtTagCompound.getListOrEmpty("nets");
-            for (Tag nbt : list) {
-                CompoundTag tag = (CompoundTag) nbt;
-                LongDistancePipeType pipeType = LongDistancePipeType.getPipeType(tag.getString("class"));
-                LongDistanceNetwork ld = pipeType.createNetwork(data);
-                ld.activeInputIndex = tag.getIntOr("in", 0);
-                ld.activeOutputIndex = tag.getIntOr("out", 0);
-                data.networkList.add(ld);
-                ListTag posList = tag.getListOrEmpty("pipes");
-                for (Tag nbtPos : posList) {
-                    BlockPos pos = BlockPos.of(((LongTag) nbtPos).getAsLong());
-                    data.putNetwork(pos, ld);
-                    ld.longDistancePipeBlocks.add(pos);
-                }
-                ListTag endpoints = tag.getListOrEmpty("endpoints");
-                for (Tag nbtPos : endpoints) {
-                    BlockPos pos = BlockPos.of(((LongTag) nbtPos).getAsLong());
-                    if (!ld.endpointPoss.contains(pos)) {
-                        ld.endpointPoss.add(pos);
-                    }
-                }
-            }
-            data.setWorldAndInit(level);
-            return data;
-        }
+        public static WorldData load(@NotNull CompoundTag nbtTagCompound, ServerLevel level) { return null; /* ported stub */ }
 
         @NotNull
         @Override
-        public CompoundTag save(@NotNull CompoundTag nbtTagCompound, HolderLookup.Provider provider) {
-            ListTag list = new ListTag();
-            for (LongDistanceNetwork network : this.networkList) {
-                CompoundTag tag = new CompoundTag();
-                list.add(tag);
-
-                String name = network.getPipeType().getName();
-                tag.putString("class", name);
-                tag.putInt("in", network.activeInputIndex);
-                tag.putInt("out", network.activeOutputIndex);
-
-                ListTag posList = new ListTag();
-                tag.put("pipes", posList);
-                for (BlockPos pos : network.longDistancePipeBlocks) {
-                    posList.add(LongTag.valueOf(pos.asLong()));
-                }
-
-                ListTag endpoints = new ListTag();
-                tag.put("endpoints", endpoints);
-                for (ILDEndpoint endpoint : network.endpoints) {
-                    endpoints.add(LongTag.valueOf(endpoint.getBlockPos().asLong()));
-                }
-            }
-            nbtTagCompound.put("nets", list);
-            return nbtTagCompound;
-        }
+        public CompoundTag save(@NotNull CompoundTag nbtTagCompound, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
         public LevelAccessor getWorld() {
             return this.worldRef.get();

@@ -187,10 +187,5 @@ public class AdvancedEnergyDetectorCover extends EnergyDetectorCover implements 
     }
 
     @Override
-    public void pasteConfig(ServerPlayer player, CompoundTag tag) {
-        setMinValue(tag.getLong("min"));
-        setMaxValue(tag.getLong("max"));
-        setUsePercent(tag.getBoolean("percent"));
-        super.pasteConfig(player, tag);
-    }
+    public void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
 }

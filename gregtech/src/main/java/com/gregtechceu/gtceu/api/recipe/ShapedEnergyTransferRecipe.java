@@ -41,48 +41,13 @@ public class ShapedEnergyTransferRecipe extends ShapedRecipe {
     }
 
     @Override
-    public ItemStack assemble(CraftingInput craftingContainer, HolderLookup.Provider provider) {
-        long maxCharge = 0L;
-        long charge = 0L;
-        ItemStack resultStack = super.assemble(craftingContainer, provider);
-        for (ItemStack chargeStack : chargeIngredient.getItems()) {
-            for (int i = 0; i < craftingContainer.size(); i++) {
-                if (ItemStack.isSameItem(craftingContainer.getItem(i), chargeStack)) {
-                    ItemStack stack = craftingContainer.getItem(i);
-                    IElectricItem electricItem = GTCapabilityHelper.getElectricItem(stack);
-                    if (electricItem != null) {
-                        maxCharge += electricItem.getMaxCharge();
-                        charge += electricItem.getCharge();
-                        resultStack.set(GTDataComponents.ENERGY_CONTENT, new SimpleEnergyContent(maxCharge, charge));
-                        return resultStack;
-                    }
-                }
-            }
-        }
-        return resultStack;
-    }
+    public ItemStack assemble(CraftingInput craftingContainer, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     @Override
-    public ItemStack getResultItem(HolderLookup.Provider provider) {
-        long maxCharge = 0L;
-        long charge = 0L;
-        ItemStack resultStack = super.getResultItem(provider);
-        for (ItemStack chargeStack : chargeIngredient.getItems()) {
-            IElectricItem electricItem = GTCapabilityHelper.getElectricItem(chargeStack);
-            if (electricItem != null) {
-                maxCharge += electricItem.getMaxCharge();
-                charge += electricItem.getCharge();
-                resultStack.set(GTDataComponents.ENERGY_CONTENT, new SimpleEnergyContent(maxCharge, charge));
-                return resultStack;
-            }
-        }
-        return resultStack;
-    }
+    public ItemStack getResultItem(HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
-        return GTRecipeSerializers.CRAFTING_SHAPED_ENERGY_TRANSFER.get();
-    }
+    public RecipeSerializer<?> getSerializer() { return null; /* ported stub */ }
 
     public static class Serializer {
 
@@ -114,13 +79,9 @@ public class ShapedEnergyTransferRecipe extends ShapedRecipe {
                         ShapedEnergyTransferRecipe::new);
 
         @Override
-        public MapCodec<ShapedEnergyTransferRecipe> codec() {
-            return CODEC;
-        }
+        public MapCodec<ShapedEnergyTransferRecipe> codec() { return null; /* ported stub */ }
 
         @Override
-        public StreamCodec<RegistryFriendlyByteBuf, ShapedEnergyTransferRecipe> streamCodec() {
-            return STREAM_CODEC;
-        }
+        public StreamCodec<RegistryFriendlyByteBuf, ShapedEnergyTransferRecipe> streamCodec() { return null; /* ported stub */ }
     }
 }

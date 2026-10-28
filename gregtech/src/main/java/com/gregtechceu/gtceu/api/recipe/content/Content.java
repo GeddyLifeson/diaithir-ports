@@ -121,26 +121,7 @@ public class Content {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void drawRangeAmount(GuiGraphics graphics, float x, float y, int width, int height) {
-        if (content instanceof IntProviderIngredient ingredient) {
-            graphics.pose().pushPose();
-            graphics.pose().translate(0, 0, 400);
-            graphics.pose().scale(0.5f, 0.5f, 1);
-            int min = ingredient.getCountProvider().getMinValue();
-            int max = ingredient.getCountProvider().getMaxValue();
-            String s = String.format("%s-%s", min, max);
-            int color = 0xFFFFFF;
-            Font fontRenderer = Minecraft.getInstance().font;
-            // 5 == max num of characters that fit in a slot at 0.5x render size
-            if (s.length() > 5) {
-                s = "X-Y";
-                color = ChatFormatting.GOLD.getColor(); // Orange?
-            }
-            graphics.drawString(fontRenderer, s, (int) ((x + (width / 3f)) * 2 - fontRenderer.width(s) + 21),
-                    (int) ((y + (height / 3f) + 6) * 2), color, true);
-            graphics.pose().popPose();
-        }
-    }
+    public void drawRangeAmount(GuiGraphics graphics, float x, float y, int width, int height) {  /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     public void drawFluidAmount(GuiGraphics graphics, float x, float y, int width, int height) {
@@ -193,19 +174,7 @@ public class Content {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void drawTick(GuiGraphics graphics, float x, float y, int width, int height) {
-        graphics.pose().pushPose();
-        RenderSystem.disableDepthTest();
-        graphics.pose().translate(0, 0, 400);
-        graphics.pose().scale(0.5f, 0.5f, 1);
-        String s = LocalizationUtils.format("gtceu.gui.content.tips.per_tick_short");
-        int color = 0xFFFF00;
-        Font fontRenderer = Minecraft.getInstance().font;
-        graphics.drawString(fontRenderer, s, (int) ((x + (width / 3f)) * 2 - fontRenderer.width(s) + 23),
-                (int) ((y + (height / 3f) + 6) * 2 - height + (chance == ChanceLogic.getMaxChancedValue() ? 0 : 10)),
-                color);
-        graphics.pose().popPose();
-    }
+    public void drawTick(GuiGraphics graphics, float x, float y, int width, int height) {  /* ported stub */ }
 
     @Override
     public String toString() {

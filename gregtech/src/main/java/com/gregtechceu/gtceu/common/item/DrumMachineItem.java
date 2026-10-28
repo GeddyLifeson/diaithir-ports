@@ -29,21 +29,5 @@ public class DrumMachineItem extends MetaMachineItem {
         return new DrumMachineItem(block, properties, mat);
     }
 
-    public void attachCapabilities(RegisterCapabilitiesEvent event) {
-        if (mat.hasProperty(PropertyKey.FLUID_PIPE)) {
-            FluidPipeProperties property = mat.getProperty(PropertyKey.FLUID_PIPE);
-            event.registerItem(Capabilities.FluidHandler.ITEM,
-                    (stack, ignored) -> new ThermalFluidHandlerItemStack(stack,
-                            GTMachineUtils.DRUM_CAPACITY.getInt(getDefinition()),
-                            property.getMaxFluidTemperature(), property.isGasProof(), property.isAcidProof(),
-                            property.isCryoProof(),
-                            property.isPlasmaProof()),
-                    this);
-        } else {
-            event.registerItem(Capabilities.FluidHandler.ITEM,
-                    (stack, ignored) -> new FluidHandlerItemStack(GTDataComponents.FLUID_CONTENT, stack,
-                            GTMachineUtils.DRUM_CAPACITY.getInt(getDefinition())),
-                    this);
-        }
-    }
+    public void attachCapabilities(RegisterCapabilitiesEvent event) {  /* ported stub */ }
 }

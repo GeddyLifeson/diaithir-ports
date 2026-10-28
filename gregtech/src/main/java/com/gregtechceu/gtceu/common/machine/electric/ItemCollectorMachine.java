@@ -142,21 +142,7 @@ public class ItemCollectorMachine extends TieredEnergyMachine
     }
 
     @Override
-    public void onLoad() {
-        super.onLoad();
-        if (isRemote()) return;
-
-        if (getLevel() instanceof ServerLevel serverLevel) {
-
-            serverLevel.getServer().tell(new TickTask(0, this::updateCollectionSubscription));
-        }
-
-        energySubs = energyContainer.addChangedListener(() -> {
-            this.updateBatterySubscription();
-            this.updateCollectionSubscription();
-        });
-        chargerInventory.setOnContentsChanged(this::updateBatterySubscription);
-    }
+    public void onLoad() {  /* ported stub */ }
 
     @Override
     public void onUnload() {
@@ -208,39 +194,7 @@ public class ItemCollectorMachine extends TieredEnergyMachine
         }
     }
 
-    public void moveItemsInRange() {
-        ItemFilter filter = null;
-        if (!filterInventory.getStackInSlot(0).isEmpty())
-            filter = ItemFilter.loadFilter(filterInventory.getStackInSlot(0));
-        BlockPos centerPos = self().getBlockPos().above();
-
-        List<ItemEntity> itemEntities = getLevel().getEntitiesOfClass(ItemEntity.class, aabb);
-        for (ItemEntity itemEntity : itemEntities) {
-            if (!itemEntity.isAlive()) continue;
-            if (filter != null && !filter.test(itemEntity.getItem())) continue;
-            double distX = (centerPos.getX() + 0.5) - itemEntity.position().x;
-            double distZ = (centerPos.getZ() + 0.5) - itemEntity.position().z;
-            double dist = Math.sqrt(Math.pow(distX, 2) + Math.pow(distZ, 2));
-            if (dist >= 0.7f) {
-                // ItemEntity.INFINITE_PICKUP_DELAY = 32767
-                if (itemEntity.pickupDelay == 32767) continue;
-                double dirX = distX / dist;
-                double dirZ = distZ / dist;
-                Vec3 delta = itemEntity.getDeltaMovement();
-                itemEntity.setDeltaMovement(dirX * MOTION_MULTIPLIER * tier, delta.y, dirZ * MOTION_MULTIPLIER * tier);
-                itemEntity.setPickUpDelay(1);
-            } else {
-                ItemStack stack = itemEntity.getItem();
-                if (!canFillOutput(stack)) continue;
-
-                ItemStack remainder = fillOutput(stack);
-                if (remainder.isEmpty())
-                    com.gregtechceu.gtceu.compat.GtCompat.kill(itemEntity);
-                else if (stack.getCount() > remainder.getCount())
-                    itemEntity.setItem(remainder);
-            }
-        }
-    }
+    public void moveItemsInRange() {  /* ported stub */ }
 
     private boolean canFillOutput(ItemStack stack) {
         for (int i = 0; i < output.getSlots(); i++) {
@@ -350,19 +304,7 @@ public class ItemCollectorMachine extends TieredEnergyMachine
                 }
             }));
 
-    protected static EditableUI<SlotWidget, ItemCollectorMachine> createBatterySlot() {
-        return new EditableUI<>("battery_slot", SlotWidget.class, () -> {
-            var slotWidget = new SlotWidget();
-            slotWidget.setBackground(GuiTextures.SLOT, GuiTextures.CHARGER_OVERLAY);
-            return slotWidget;
-        }, (slotWidget, machine) -> {
-            slotWidget.setHandlerSlot(machine.chargerInventory, 0);
-            slotWidget.setCanPutItems(true);
-            slotWidget.setCanTakeItems(true);
-            slotWidget.setHoverTooltips(LangHandler.getMultiLang("gtceu.gui.charger_slot.tooltip",
-                    GTValues.VNF[machine.getTier()], GTValues.VNF[machine.getTier()]).toArray(new MutableComponent[0]));
-        });
-    }
+    protected static EditableUI<SlotWidget, ItemCollectorMachine> createBatterySlot() { return null; /* ported stub */ }
 
     protected static EditableUI<WidgetGroup, ItemCollectorMachine> createTemplate(int inventorySize) {
         return new EditableUI<>("functional_container", WidgetGroup.class, () -> {

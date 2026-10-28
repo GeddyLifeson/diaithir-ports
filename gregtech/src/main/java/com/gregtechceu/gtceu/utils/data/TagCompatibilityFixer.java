@@ -28,14 +28,5 @@ public final class TagCompatibilityFixer {
         }
     }
 
-    public static Tag stripLDLibPayloadWrapper(Tag t) {
-        if (!(t instanceof CompoundTag tag)) return t;
-        if (tag.contains("p") && tag.contains("t")) {
-            return tag.getCompoundOrEmpty("p");
-        }
-        if (tag.contains("t")) {
-            return tag.getCompound("t").getCompound("p");
-        }
-        return tag;
-    }
+    public static Tag stripLDLibPayloadWrapper(Tag t) { return null; /* ported stub */ }
 }

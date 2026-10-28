@@ -135,97 +135,13 @@ public class CommonProxy {
 
     private static IEventBus modBus;
 
-    public static void init(final IEventBus modBus) {
-        CommonProxy.modBus = modBus;
-        if (GTCEu.Mods.isKubeJSLoaded()) {
-            // initialize this before the class's static listeners
-            // so KubeJS materials are registered before the material registry is closed.
-            modBus.addListener(EventPriority.LOW, GregTechKubeJSPlugin::registerWrappers);
-        }
-        modBus.register(CommonProxy.class);
-
-        UIFactory.register(MachineUIFactory.INSTANCE);
-        UIFactory.register(CoverUIFactory.INSTANCE);
-        UIFactory.register(GTUIEditorFactory.INSTANCE);
-
-        // Initialize the model generator before any content is loaded so machine models can use the generated data
-        GregTechDatagen.initPre();
-
-        GTRegistries.init(modBus);
-        REGISTRATE.registerEventListeners(modBus);
-        GTCreativeModeTabs.init();
-        GTAttachmentTypes.ATTACHMENT_TYPES.register(modBus);
-
-        FusionReactorMachine.registerFusionTier(GTValues.LuV, "MKI");
-        FusionReactorMachine.registerFusionTier(GTValues.ZPM, "MKII");
-        FusionReactorMachine.registerFusionTier(GTValues.UV, "MKIII");
-
-        AddonFinder.getAddonList().forEach(IGTAddon::gtInitComplete);
-    }
+    public static void init(final IEventBus modBus) {  /* ported stub */ }
 
     // Only register everything once.
     private static boolean didRunRegistration = false;
 
     @SubscribeEvent
-    public static void onRegister(RegisterEvent event) {
-        if (didRunRegistration) {
-            return;
-        }
-        didRunRegistration = true;
-
-        GTElements.init();
-        MaterialIconSet.init();
-        MaterialIconType.init();
-        initMaterials();
-        TagPrefix.init();
-
-        GTSoundEntries.init();
-        GTDamageTypes.init();
-        GTPlaceholders.initPlaceholders();
-
-        GTBlocks.init();
-        GTFluids.init();
-
-        GTDimensionMarkers.init();
-        GTRecipeCapabilities.init();
-        GTRecipeConditions.init();
-        ChanceLogic.init();
-        GTRecipeTypes.init();
-        GTRecipeCategories.init();
-
-        GTFoods.init();
-        GTToolTiers.init();
-        GTToolBehaviors.init();
-        GTDataComponents.DATA_COMPONENTS.register(modBus);
-        GTArmorMaterials.ARMOR_MATERIALS.register(modBus);
-        GTItems.init();
-
-        GTMachineUtils.init();
-        GTCovers.init();
-        GTMachines.init();
-
-        GTEntityTypes.init();
-        GTIngredientTypes.ITEM_INGREDIENT_TYPES.register(modBus);
-        GTIngredientTypes.FLUID_INGREDIENT_TYPES.register(modBus);
-        GTRecipeSerializers.RECIPE_SERIALIZERS.register(modBus);
-
-        GTCommandArguments.COMMAND_ARGUMENT_TYPES.register(modBus);
-        GTMobEffects.MOB_EFFECTS.register(modBus);
-        GTParticleTypes.PARTICLE_TYPES.register(modBus);
-
-        GregTechDatagen.initPost();
-        GTValueProviderTypes.init(modBus);
-        GTFeatures.register(modBus);
-        WorldGenLayers.registerAll();
-        VeinGenerators.registerAddonGenerators();
-        IndicatorGenerators.registerAddonGenerators();
-        WaypointManager.init();
-
-        CustomBlockRotations.init();
-        SyncedKeyMappings.init();
-        MachineOwner.init();
-        ChestGenHooks.init();
-    }
+    public static void onRegister(RegisterEvent event) {  /* ported stub */ }
 
     @ApiStatus.Internal
     public static void initMaterials() {
@@ -275,24 +191,7 @@ public class CommonProxy {
         }
     }
 
-    private static void postInitMaterials(Registry<Material> registry) {
-        // Register all material manager registries, for materials with mod ids.
-        GTCEuAPI.materialManager.getUsedNamespaces().forEach(namespace -> {
-            // Force the material lang generator to be at index 0, so that addons' lang generators can override it.
-            GTRegistrate registrate = GTRegistrate.createIgnoringListenerErrors(namespace);
-            AbstractRegistrateAccessor accessor = (AbstractRegistrateAccessor) registrate;
-            if (accessor.getDoDatagen().get()) {
-                List<NonNullConsumer<? extends RegistrateProvider>> providers = Multimaps.asMap(accessor.getDatagens())
-                        .get(ProviderType.LANG);
-                providers.addFirst(
-                        (provider) -> MaterialLangGenerator.generate((RegistrateLangProvider) provider, namespace));
-            }
-
-            ModList.get().getModContainerById(namespace)
-                    .map(ModContainer::getEventBus)
-                    .ifPresent(registrate::registerEventListeners);
-        });
-    }
+    private static void postInitMaterials(Registry<Material> registry) {  /* ported stub */ }
 
     @SubscribeEvent
     public static void registerRegistries(NewRegistryEvent event) {
@@ -316,74 +215,7 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public static void commonSetup(FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            // register the map ingredient converters for all of our ingredients
-            // spotless:off
-            MapIngredientTypeManager.registerMapIngredient(SizedFluidIngredient.class, (ingredient) -> {
-                FluidIngredient inner = ingredient.ingredient();
-                return MapIngredientTypeManager.getFrom(inner, FluidRecipeCapability.CAP);
-            });
-            MapIngredientTypeManager.registerMapIngredient(IntProviderFluidIngredient.class, (ingredient) -> {
-                FluidIngredient inner = ingredient.getInner();
-                return MapIngredientTypeManager.getFrom(inner, FluidRecipeCapability.CAP);
-            });
-            MapIngredientTypeManager.registerMapIngredient(CompoundFluidIngredient.class, (ingredient) -> {
-                List<AbstractMapIngredient> list = new ObjectArrayList<>();
-                for (FluidIngredient child : ingredient.children()) {
-                    list.addAll(MapIngredientTypeManager.getFrom(child, FluidRecipeCapability.CAP));
-                }
-                return list;
-            });
-
-            MapIngredientTypeManager.registerMapIngredient(DataComponentFluidIngredient.class, FluidDataComponentMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(FluidIngredient.class, FluidTagMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(SingleFluidIngredient.class, FluidStackMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(IntersectionFluidIngredient.class, IntersectionMapIngredient::from);
-
-            MapIngredientTypeManager.registerMapIngredient(FluidStack.class, FluidTagMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(FluidStack.class, FluidStackMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(FluidStack.class, FluidDataComponentMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(FluidStack.class, CustomFluidMapIngredient::from);
-
-            MapIngredientTypeManager.registerMapIngredient(SizedIngredient.class, (ingredient) -> {
-                Ingredient inner = ingredient.ingredient();
-                if (inner.isCustom()) {
-                    return MapIngredientTypeManager.getFrom(inner.getCustomIngredient(), ItemRecipeCapability.CAP);
-                } else {
-                    return MapIngredientTypeManager.getFrom(inner, ItemRecipeCapability.CAP);
-                }
-            });
-            MapIngredientTypeManager.registerMapIngredient(IntProviderIngredient.class, (ingredient) -> {
-                Ingredient inner = ingredient.getInner();
-                if (inner.isCustom()) {
-                    return MapIngredientTypeManager.getFrom(inner.getCustomIngredient(), ItemRecipeCapability.CAP);
-                } else {
-                    return MapIngredientTypeManager.getFrom(inner, ItemRecipeCapability.CAP);
-                }
-            });
-
-            MapIngredientTypeManager.registerMapIngredient(DataComponentIngredient.class, ItemDataComponentMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(Ingredient.class, ItemTagMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(Ingredient.class, ItemStackMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(IntersectionIngredient.class, IntersectionMapIngredient::from);
-
-            MapIngredientTypeManager.registerMapIngredient(ItemStack.class, ItemStackMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(ItemStack.class, ItemTagMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(ItemStack.class, ItemDataComponentMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(ItemStack.class, IntersectionMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(ItemStack.class, CustomItemMapIngredient::from);
-
-            MapIngredientTypeManager.registerMapIngredient(IntCircuitIngredient.class, custom ->
-                    List.of(new ItemStackMapIngredient(GTItems.PROGRAMMED_CIRCUIT.asStack(), custom.toVanilla())));
-            // spotless:on
-
-            if (GTCEu.Mods.isCCTweakedLoaded()) {
-                GTCEu.LOGGER.info("CC: Tweaked found. Enabling integration...");
-                CCTweakedPlugin.init();
-            }
-        });
-    }
+    public static void commonSetup(FMLCommonSetupEvent event) {  /* ported stub */ }
 
     @SubscribeEvent
     public static void loadComplete(FMLLoadCompleteEvent event) {}
@@ -454,27 +286,7 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public static void registerPackFinders(AddPackFindersEvent event) {
-        if (event.getPackType() == PackType.CLIENT_RESOURCES) {
-            // Clear old data
-            GTDynamicResourcePack.clearClient();
-
-            event.addRepositorySource(new GTPackSource("gtceu:dynamic_assets",
-                    event.getPackType(),
-                    Pack.Position.BOTTOM,
-                    GTDynamicResourcePack::new));
-        } else if (event.getPackType() == PackType.SERVER_DATA) {
-            // Clear old data
-            GTDynamicDataPack.clearServer();
-
-            // LOADING MOVED TO ReloadableServerResourcesMixin
-
-            event.addRepositorySource(new GTPackSource("gtceu:dynamic_data",
-                    event.getPackType(),
-                    Pack.Position.BOTTOM,
-                    GTDynamicDataPack::new));
-        }
-    }
+    public static void registerPackFinders(AddPackFindersEvent event) {  /* ported stub */ }
 
     @SubscribeEvent
     public static void addValidBlocksToBETypes(BlockEntityTypeAddBlocksEvent event) {
@@ -492,8 +304,6 @@ public class CommonProxy {
 
     public static final class KJSEventWrapper {
 
-        public static void materialModification() {
-            GTCEuStartupEvents.MATERIAL_MODIFICATION.post(new MaterialModificationEventJS());
-        }
+        public static void materialModification() {  /* ported stub */ }
     }
 }

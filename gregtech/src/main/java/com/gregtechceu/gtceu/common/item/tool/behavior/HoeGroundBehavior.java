@@ -48,42 +48,7 @@ public class HoeGroundBehavior implements IToolBehavior<HoeGroundBehavior> {
 
     @NotNull
     @Override
-    public InteractionResult onItemUse(UseOnContext context) {
-        Level level = context.getLevel();
-        Player player = context.getPlayer();
-        BlockPos pos = context.getClickedPos();
-        ItemStack stack = context.getItemInHand();
-        AoESymmetrical aoeDefinition = ToolHelper.getAoEDefinition(stack);
-
-        List<BlockPos> blocks;
-        // only attempt to till if the center block is tillable
-        if (isBlockTillable(context)) {
-            if (aoeDefinition.isZero()) {
-                blocks = List.of(pos);
-            } else {
-                blocks = getTillableBlocks(aoeDefinition, context);
-                blocks.addFirst(context.getClickedPos());
-            }
-        } else {
-            return InteractionResult.PASS;
-        }
-
-        boolean tilled = false;
-        for (BlockPos blockPos : blocks) {
-            UseOnContext posContext = new UseOnContext(level, player, context.getHand(), stack,
-                    context.getHitResult().withPosition(blockPos));
-            tilled |= tillGround(posContext);
-
-            ToolHelper.damageItem(stack, player);
-            if (stack.isEmpty()) break;
-        }
-
-        if (tilled) {
-            level.playSound(player, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
-            return InteractionResult.SUCCESS;
-        }
-        return InteractionResult.PASS;
-    }
+    public InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
     public static List<BlockPos> getTillableBlocks(AoESymmetrical aoeDefinition, UseOnContext context) {
         return ToolHelper.iterateAoE(aoeDefinition, HoeGroundBehavior::isBlockTillable, context);

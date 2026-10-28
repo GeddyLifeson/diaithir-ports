@@ -99,9 +99,7 @@ public class LampBlock extends Block {
 
     @Override
     public BlockState getAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
-                                    @Nullable BlockState queryState, @Nullable BlockPos queryPos) {
-        return state.getBlock().defaultBlockState();
-    }
+                                    @Nullable BlockState queryState, @Nullable BlockPos queryPos) { return null; /* ported stub */ }
 
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
@@ -116,14 +114,7 @@ public class LampBlock extends Block {
 
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos,
-                                boolean movedByPiston) {
-        if (!level.isClientSide()) {
-            boolean powered = state.getValue(POWERED);
-            if (powered != level.hasNeighborSignal(pos)) {
-                level.setBlock(pos, state.setValue(POWERED, !powered), state.getValue(LIGHT) ? 2 | 8 : 2);
-            }
-        }
-    }
+                                boolean movedByPiston) {  /* ported stub */ }
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
@@ -134,23 +125,11 @@ public class LampBlock extends Block {
 
     @Override
     public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos,
-                                       Player player) {
-        ItemStack stack = super.getCloneItemStack(state, target, level, pos, player);
-        stack.set(GTDataComponents.LAMP_DATA, getDataFromState(state));
-        return stack;
-    }
+                                       Player player) { return null; /* ported stub */ }
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext pContext, List<Component> tooltip,
-                                TooltipFlag flag) {
-        LampBlockItem.LampData data = stack.getOrDefault(GTDataComponents.LAMP_DATA, LampBlockItem.LampData.EMPTY);
-        if (data.inverted())
-            tooltip.add(Component.translatable("block.gtceu.lamp.tooltip.inverted"));
-        if (!data.bloom())
-            tooltip.add(Component.translatable("block.gtceu.lamp.tooltip.no_bloom"));
-        if (!data.lit())
-            tooltip.add(Component.translatable("block.gtceu.lamp.tooltip.no_light"));
-    }
+                                TooltipFlag flag) {  /* ported stub */ }
 
     @Override
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {

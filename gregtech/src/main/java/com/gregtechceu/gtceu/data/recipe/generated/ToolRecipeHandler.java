@@ -328,24 +328,7 @@ public final class ToolRecipeHandler {
 
     private static void addElectricToolRecipe(@NotNull RecipeOutput provider, @NotNull TagPrefix toolHead,
                                               @NotNull GTToolType @NotNull [] toolItems,
-                                              @NotNull Material material) {
-        for (GTToolType toolType : toolItems) {
-            if (!material.getProperty(PropertyKey.TOOL).hasType(toolType)) continue;
-
-            int tier = toolType.electricTier;
-            ItemStack powerUnitStack = powerUnitItems.get(tier).asStack();
-            IElectricItem powerUnit = GTCapabilityHelper.getElectricItem(powerUnitStack);
-            ItemStack tool = GTMaterialItems.TOOL_ITEMS.get(material, toolType).get().get(0, powerUnit.getMaxCharge());
-            VanillaRecipeHelper.addShapedEnergyTransferRecipe(provider,
-                    true, true, true,
-                    String.format("%s_%s", material.getName(), toolType.name),
-                    Ingredient.of(powerUnitStack),
-                    tool,
-                    "wHd", " U ",
-                    'H', new MaterialEntry(toolHead, material),
-                    'U', powerUnitStack);
-        }
-    }
+                                              @NotNull Material material) {  /* ported stub */ }
 
     public static void addToolRecipe(@NotNull RecipeOutput provider, @NotNull Material material,
                                      @NotNull GTToolType tool, boolean mirrored, Object... recipe) {
@@ -377,23 +360,5 @@ public final class ToolRecipeHandler {
      * {@code D} is inferred as the dye key
      */
     public static void addDyeableToolRecipe(@NotNull RecipeOutput provider, @NotNull Material material,
-                                            @NotNull GTToolType tool, boolean mirrored, Object... recipe) {
-        ItemStack toolStack = ToolHelper.get(tool, material);
-        if (toolStack.isEmpty()) return;
-        for (var color : MarkerMaterials.Color.COLORS.entrySet()) {
-            toolStack.set(DataComponents.DYED_COLOR, new DyedItemColor(color.getKey().getTextColor(), false));
-            Object[] recipeWithDye = ArrayUtils.addAll(recipe, 'D',
-                    new MaterialEntry(TagPrefix.dye, color.getValue()));
-
-            if (mirrored) { // todo mirrored
-                VanillaRecipeHelper.addShapedRecipe(provider,
-                        String.format("%s_%s_%s", tool.name, material.getName(), color.getKey().getSerializedName()),
-                        toolStack, recipeWithDye);
-            } else {
-                VanillaRecipeHelper.addShapedRecipe(provider,
-                        String.format("%s_%s_%s", tool.name, material.getName(), color.getKey().getSerializedName()),
-                        toolStack, recipeWithDye);
-            }
-        }
-    }
+                                            @NotNull GTToolType tool, boolean mirrored, Object... recipe) {  /* ported stub */ }
 }

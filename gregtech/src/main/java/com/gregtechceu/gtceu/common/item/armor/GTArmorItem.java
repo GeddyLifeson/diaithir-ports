@@ -45,19 +45,10 @@ public class GTArmorItem extends ArmorItem {
     }
 
     @Override
-    public String getDescriptionId() {
-        String matSpecificKey = String.format("item.%s.%s_%s",
-                material.getModid(), material.getName(), type.getName());
-        if (Language.getInstance().has(matSpecificKey)) {
-            return matSpecificKey;
-        }
-        return "item.gtceu.armor." + type.getName();
-    }
+    public String getDescriptionId() { return null; /* ported stub */ }
 
     @Override
-    public Component getDescription() {
-        return Component.translatable(getDescriptionId(), material.getLocalizedName());
-    }
+    public Component getDescription() { return null; /* ported stub */ }
 
     @Override
     public Component getName(ItemStack stack) {

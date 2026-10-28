@@ -30,15 +30,7 @@ public class SerializerFluidIngredient implements IContentSerializer<SizedFluidI
     }
 
     @Override
-    public SizedFluidIngredient of(Object o) {
-        if (o instanceof SizedFluidIngredient ingredient) {
-            return ingredient.copy();
-        }
-        if (o instanceof FluidStack stack) {
-            return SizedFluidIngredient.of(stack.copy());
-        }
-        return EMPTY;
-    }
+    public SizedFluidIngredient of(Object o) { return null; /* ported stub */ }
 
     @Override
     public SizedFluidIngredient defaultValue() {
@@ -51,7 +43,5 @@ public class SerializerFluidIngredient implements IContentSerializer<SizedFluidI
     }
 
     @Override
-    public Codec<SizedFluidIngredient> codec() {
-        return SizedFluidIngredient.NESTED_CODEC;
-    }
+    public Codec<SizedFluidIngredient> codec() { return null; /* ported stub */ }
 }

@@ -289,18 +289,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
         return getThis();
     }
 
-    public TYPE recipeType(GTRecipeType type) {
-        // noinspection ConstantValue
-        if (type == null) {
-            GTCEu.LOGGER.error(
-                    "Tried to set null recipe type on machine {}. Did you create the recipe type before this machine?",
-                    this.id);
-            return getThis();
-        }
-        this.recipeTypes = ArrayUtils.add(this.recipeTypes, type);
-        initRecipeMachineModelProperties(type);
-        return getThis();
-    }
+    public TYPE recipeType(GTRecipeType type) { return null; /* ported stub */ }
 
     @Tolerate
     public TYPE recipeTypes(GTRecipeType... types) {
@@ -336,17 +325,13 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
         return getThis();
     }
 
-    public TYPE simpleModel(Identifier modelName) {
-        return model(createBasicMachineModel(modelName));
-    }
+    public TYPE simpleModel(Identifier modelName) { return null; /* ported stub */ }
 
     public TYPE defaultModel() {
         return simpleModel(registrate.makeResourceLocation("block/machine/template/" + name));
     }
 
-    public TYPE tieredHullModel(Identifier model) {
-        return model(createTieredHullMachineModel(model));
-    }
+    public TYPE tieredHullModel(Identifier model) { return null; /* ported stub */ }
 
     public TYPE overlayTieredHullModel(String name) {
         modelProperty(GTMachineModelProperties.IS_FORMED, false);
@@ -354,9 +339,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                 Identifier.fromNamespaceAndPath(registrate.getModid(), "block/machine/part/" + name));
     }
 
-    public TYPE overlayTieredHullModel(Identifier overlayModel) {
-        return model(createOverlayTieredHullMachineModel(overlayModel));
-    }
+    public TYPE overlayTieredHullModel(Identifier overlayModel) { return null; /* ported stub */ }
 
     public TYPE colorOverlayTieredHullModel(String overlay) {
         return colorOverlayTieredHullModel(overlay, null, null);
@@ -382,10 +365,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
 
     public TYPE colorOverlayTieredHullModel(Identifier overlay,
                                             @Nullable Identifier pipeOverlay,
-                                            @Nullable Identifier emissiveOverlay) {
-        modelProperty(GTMachineModelProperties.IS_PAINTED, false);
-        return model(createColorOverlayTieredHullMachineModel(overlay, pipeOverlay, emissiveOverlay));
-    }
+                                            @Nullable Identifier emissiveOverlay) { return null; /* ported stub */ }
 
     public TYPE overlaySteamHullModel(String name) {
         modelProperty(GTMachineModelProperties.IS_FORMED, false);
@@ -393,10 +373,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                 Identifier.fromNamespaceAndPath(registrate.getModid(), "block/machine/part/" + name));
     }
 
-    public TYPE overlaySteamHullModel(Identifier overlayModel) {
-        modelProperty(GTMachineModelProperties.IS_STEEL_MACHINE, ConfigHolder.INSTANCE.machines.steelSteamMultiblocks);
-        return model(createOverlaySteamHullMachineModel(overlayModel));
-    }
+    public TYPE overlaySteamHullModel(Identifier overlayModel) { return null; /* ported stub */ }
 
     public TYPE colorOverlaySteamHullModel(String overlay) {
         return colorOverlaySteamHullModel(overlay, (String) null, null);
@@ -435,41 +412,21 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
 
     public TYPE colorOverlaySteamHullModel(Identifier overlay,
                                            @Nullable Identifier pipeOverlay,
-                                           @Nullable Identifier emissiveOverlay) {
-        modelProperty(GTMachineModelProperties.IS_PAINTED, false);
-        return model(createColorOverlaySteamHullMachineModel(overlay, pipeOverlay, emissiveOverlay));
-    }
+                                           @Nullable Identifier emissiveOverlay) { return null; /* ported stub */ }
 
-    public TYPE workableTieredHullModel(Identifier workableModel) {
-        modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createWorkableTieredHullMachineModel(workableModel));
-    }
+    public TYPE workableTieredHullModel(Identifier workableModel) { return null; /* ported stub */ }
 
-    public TYPE simpleGeneratorModel(Identifier workableModel) {
-        modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createSimpleGeneratorModel(workableModel));
-    }
+    public TYPE simpleGeneratorModel(Identifier workableModel) { return null; /* ported stub */ }
 
-    public TYPE workableSteamHullModel(boolean isHighPressure, Identifier workableModel) {
-        modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createWorkableSteamHullMachineModel(isHighPressure, workableModel));
-    }
+    public TYPE workableSteamHullModel(boolean isHighPressure, Identifier workableModel) { return null; /* ported stub */ }
 
-    public TYPE workableCasingModel(Identifier baseCasing, Identifier workableModel) {
-        modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createWorkableCasingMachineModel(baseCasing, workableModel));
-    }
+    public TYPE workableCasingModel(Identifier baseCasing, Identifier workableModel) { return null; /* ported stub */ }
 
     public TYPE sidedOverlayCasingModel(Identifier baseCasing,
-                                        Identifier workableModel) {
-        return model(createSidedOverlayCasingMachineModel(baseCasing, workableModel));
-    }
+                                        Identifier workableModel) { return null; /* ported stub */ }
 
     public TYPE sidedWorkableCasingModel(Identifier baseCasing,
-                                         Identifier workableModel) {
-        modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createSidedWorkableCasingMachineModel(baseCasing, workableModel));
-    }
+                                         Identifier workableModel) { return null; /* ported stub */ }
 
     public TYPE appearanceBlock(Supplier<? extends Block> block) {
         appearance = () -> block.get().defaultBlockState();
@@ -599,20 +556,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    protected void setupStateDefinition(MachineDefinition definition) {
-        StateDefinition.Builder<MachineDefinition, MachineRenderState> builder = new StateDefinition.Builder<>(
-                definition);
-        this.modelProperties.keySet().forEach(builder::add);
-        definition.setStateDefinition(builder.create(MachineDefinition::defaultRenderState, MachineRenderState::new));
-
-        MachineRenderState defaultState = definition.getStateDefinition().any();
-        for (var entry : this.modelProperties.entrySet()) {
-            if (entry.getValue() == null) continue;
-            defaultState = defaultState.setValue((Property) entry.getKey(), (Comparable) entry.getValue());
-        }
-
-        definition.registerDefaultState(defaultState);
-    }
+    protected void setupStateDefinition(MachineDefinition definition) { return null; /* ported stub */ }
 
         public DEFINITION register() {
         this.registrate.object(name);
@@ -715,16 +659,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     protected static class BlockBuilderWrapper {
 
         public static <DEFINITION extends MachineDefinition> BlockBuilder<Block, ? extends AbstractRegistrate<?>> makeBlockBuilder(MachineBuilder<DEFINITION, ?> builder,
-                                                                                                                                   DEFINITION definition) {
-            return builder.registrate.block(properties -> makeBlock(builder, definition, properties))
-                    .color(() -> () -> MetaMachineBlock::colorTinted)
-                    .initialProperties(() -> Blocks.DISPENSER)
-                    .properties(BlockBehaviour.Properties::noLootTable)
-                    .addLayer(() -> RenderType::cutout)
-                    .exBlockstate(builder.blockModel != null ? builder.blockModel : createMachineModel(builder.model))
-                    .properties(builder.blockProp)
-                    .onRegister(b -> Arrays.stream(builder.abilities).forEach(a -> a.register(builder.tier, b)));
-        }
+                                                                                                                                   DEFINITION definition) { return null; /* ported stub */ }
 
         private static <DEFINITION extends MachineDefinition> Block makeBlock(MachineBuilder<DEFINITION, ?> builder, DEFINITION definition,
                                                                               BlockBehaviour.Properties properties) {
@@ -738,27 +673,10 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     protected static class ItemBuilderWrapper {
 
         public static <DEFINITION extends MachineDefinition> ItemBuilder<MetaMachineItem, ? extends AbstractRegistrate<?>> makeItemBuilder(MachineBuilder<DEFINITION, ?> builder,
-                                                                                                                                           BlockEntry<Block> block) {
-            return builder.registrate
-                    .item(properties -> builder.itemFactory.apply((MetaMachineBlock) block.get(), properties))
-                    .setData(ProviderType.LANG, NonNullBiConsumer.noop()) // do not gen any lang keys
-                    // copied from BlockBuilder#item
-                    
-                    .clientExtension(() -> () -> new IClientItemExtensions() {
-
-                        @Override
-                        public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                            return ItemWithBERModelRenderer.INSTANCE;
-                        }
-                    })
-                    .color(() -> () -> builder.itemColor::apply)
-                    .properties(builder.itemProp);
-        }
+                                                                                                                                           BlockEntry<Block> block) { return null; /* ported stub */ }
     }
     // spotless:on
 
     @Override
-    public DEFINITION createObject() {
-        return register();
-    }
+    public DEFINITION createObject() { return null; /* ported stub */ }
 }

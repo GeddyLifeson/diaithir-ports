@@ -45,33 +45,7 @@ public class HarvestCropsBehavior implements IToolBehavior<HarvestCropsBehavior>
 
     @NotNull
     @Override
-    public InteractionResult onItemUse(UseOnContext context) {
-        Level level = context.getLevel();
-        Player player = context.getPlayer();
-        BlockPos pos = context.getClickedPos();
-        ItemStack stack = context.getItemInHand();
-        AoESymmetrical aoeDefinition = ToolHelper.getAoEDefinition(stack);
-
-        List<BlockPos> blocks;
-        if (aoeDefinition.isZero()) {
-            blocks = List.of(pos);
-        } else {
-            blocks = ToolHelper.iterateAoE(aoeDefinition, HarvestCropsBehavior::isBlockCrops, context);
-            if (isBlockCrops(context)) {
-                blocks.addFirst(context.getClickedPos());
-            }
-        }
-
-        boolean harvested = false;
-        for (BlockPos blockPos : blocks) {
-            UseOnContext posContext = new UseOnContext(level, player, context.getHand(), stack,
-                    context.getHitResult().withPosition(blockPos));
-            harvested |= harvestBlockRoutine(blockPos, posContext);
-            if (stack.isEmpty()) break;
-        }
-
-        return harvested ? InteractionResult.SUCCESS : InteractionResult.PASS;
-    }
+    public InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
     private static boolean isBlockCrops(UseOnContext context) {
         Level level = context.getLevel();
@@ -83,36 +57,7 @@ public class HarvestCropsBehavior implements IToolBehavior<HarvestCropsBehavior>
         return false;
     }
 
-    private static boolean harvestBlockRoutine(BlockPos pos, UseOnContext context) {
-        Level level = context.getLevel();
-        ItemStack stack = context.getItemInHand();
-        Player player = context.getPlayer();
-
-        BlockState blockState = level.getBlockState(pos);
-        if (!(blockState.getBlock() instanceof CropBlock cropBlock)) return false;
-
-        ItemStack seed = blockState.getCloneItemStack(context.getHitResult().withPosition(pos), level, pos, player);
-        if (cropBlock.isMaxAge(blockState)) {
-            if (!level.isClientSide()) {
-                var drops = Block.getDrops(blockState, (ServerLevel) level, pos, null);
-                boolean removedSeed = false;
-                for (ItemStack drop : drops) {
-                    if (!removedSeed && ItemStack.isSameItemSameComponents(drop, seed)) {
-                        drop.shrink(1);
-                        removedSeed = true;
-                        if (drop.isEmpty()) continue;
-                    }
-                    Block.popResource(level, pos, drop);
-                }
-            }
-            level.levelEvent(LevelEvent.PARTICLES_DESTROY_BLOCK, pos, Block.getId(blockState));
-            level.setBlock(pos, cropBlock.getStateForAge(0), Block.UPDATE_ALL_IMMEDIATE);
-            ToolHelper.damageItem(stack, player);
-            return true;
-        }
-
-        return false;
-    }
+    private static boolean harvestBlockRoutine(BlockPos pos, UseOnContext context) { return false; /* ported stub */ }
 
     @Override
     public void addInformation(@NotNull ItemStack stack, Item.TooltipContext context, @NotNull List<Component> tooltip,

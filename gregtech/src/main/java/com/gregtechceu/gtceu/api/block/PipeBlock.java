@@ -107,12 +107,7 @@ public abstract class PipeBlock<PipeType extends Enum<PipeType> & IPipeType<Node
 
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level,
-                                  BlockPos pos, BlockPos neighborPos) {
-        if (state.getValue(BlockStateProperties.WATERLOGGED)) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-        }
-        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
-    }
+                                  BlockPos pos, BlockPos neighborPos) { return null; /* ported stub */ }
 
     @Override
     public final PipeBlockEntity<PipeType, NodeDataType> newBlockEntity(BlockPos pos, BlockState state) {
@@ -253,35 +248,10 @@ public abstract class PipeBlock<PipeType extends Enum<PipeType> & IPipeType<Node
 
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos,
-                                boolean isMoving) {
-        if (level.isClientSide()) return;
-        IPipeNode<PipeType, NodeDataType> pipeTile = getPipeTile(level, pos);
-        if (pipeTile != null) {
-            Direction facing = GTUtil.getFacingToNeighbor(pos, fromPos);
-            if (facing == null) return;
-            if (!ConfigHolder.INSTANCE.machines.gt6StylePipesCables) {
-                boolean open = pipeTile.isConnected(facing);
-                boolean canConnect = pipeTile.getCoverContainer().getCoverAtSide(facing) != null ||
-                        this.canConnect(pipeTile, facing);
-                if (!open && canConnect && state.getBlock() != block)
-                    pipeTile.setConnection(facing, true, false);
-                if (open && !canConnect)
-                    pipeTile.setConnection(facing, false, false);
-                updateActiveNodeStatus(level, pos, pipeTile);
-            }
-            pipeTile.getCoverContainer().onNeighborChanged(block, fromPos, isMoving);
-        }
-    }
+                                boolean isMoving) {  /* ported stub */ }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (pState.hasBlockEntity() && !pState.is(pNewState.getBlock())) {
-            pLevel.removeBlockEntity(pPos);
-            if (pLevel instanceof ServerLevel serverLevel) {
-                getWorldPipeNet(serverLevel).removeNode(pPos);
-            }
-        }
-    }
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {  /* ported stub */ }
 
     @Override
     public void destroy(LevelAccessor level, BlockPos pos, BlockState state) {
@@ -363,20 +333,7 @@ public abstract class PipeBlock<PipeType extends Enum<PipeType> & IPipeType<Node
     }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        var pipeNode = getPipeTile(level, pos);
-        if (pipeNode == null) {
-            GTCEu.LOGGER.error("Pipe was null");
-            return;
-        }
-        if (!pipeNode.getFrameMaterial().isNull()) {
-            BlockState frameState = GTMaterialBlocks.MATERIAL_BLOCKS
-                    .get(TagPrefix.frameGt, pipeNode.getFrameMaterial())
-                    .getDefaultState();
-            ((MaterialBlock) frameState.getBlock()).entityInside(frameState, level, pos, entity);
-        }
-        super.entityInside(state, level, pos, entity);
-    }
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {  /* ported stub */ }
 
     @Override
     public boolean isCollisionShapeFullBlock(BlockState state, BlockGetter level, BlockPos pos) {
@@ -471,32 +428,10 @@ public abstract class PipeBlock<PipeType extends Enum<PipeType> & IPipeType<Node
 
     @Override
     public BlockState getAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
-                                    @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
-        var pipe = getPipeTile(level, pos);
-        if (pipe != null) {
-            var appearance = pipe.getCoverContainer().getBlockAppearance(state, level, pos, side, sourceState,
-                    sourcePos);
-            if (appearance != null) return appearance;
-        }
-        return super.getAppearance(state, level, pos, side, sourceState, sourcePos);
-    }
+                                    @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) { return null; /* ported stub */ }
 
     @Override
-    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
-        var context = builder.withParameter(LootContextParams.BLOCK_STATE, state).create(LootContextParamSets.BLOCK);
-        BlockEntity tileEntity = context.getParamOrNull(LootContextParams.BLOCK_ENTITY);
-        List<ItemStack> drops = new ArrayList<>(super.getDrops(state, builder));
-        if (tileEntity instanceof IPipeNode<?, ?> pipeTile) {
-            if (!pipeTile.getFrameMaterial().isNull()) {
-                drops.addAll(GTMaterialBlocks.MATERIAL_BLOCKS.get(TagPrefix.frameGt, pipeTile.getFrameMaterial())
-                        .getDefaultState().getDrops(builder));
-            }
-            for (Direction direction : GTUtil.DIRECTIONS) {
-                pipeTile.getCoverContainer().removeCover(direction, null);
-            }
-        }
-        return drops;
-    }
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) { return null; /* ported stub */ }
 
     public GTToolType getPipeTuneTool() {
         return GTToolType.WRENCH;

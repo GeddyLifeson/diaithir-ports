@@ -24,19 +24,5 @@ public class PredicateBlockTag extends SimplePredicate {
     }
 
     @Override
-    public SimplePredicate buildPredicate() {
-        if (tag == null) {
-            predicate = state -> false;
-            candidates = () -> new BlockInfo[] { BlockInfo.fromBlock(Blocks.BARRIER) };
-            return this;
-        }
-        predicate = state -> state.getBlockState().is(tag);
-        candidates = () -> BuiltInRegistries.BLOCK.getTag(tag)
-                .stream()
-                .flatMap(HolderSet.Named::stream)
-                .map(Holder::value)
-                .map(BlockInfo::fromBlock)
-                .toArray(BlockInfo[]::new);
-        return this;
-    }
+    public SimplePredicate buildPredicate() { return null; /* ported stub */ }
 }

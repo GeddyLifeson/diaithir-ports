@@ -141,28 +141,7 @@ public class DataAccessHatchMachine extends TieredPartMachine
 
     @NotNull
     @Override
-    public List<Component> getDataInfo(PortableScannerBehavior.DisplayMode mode) {
-        if (mode == PortableScannerBehavior.DisplayMode.SHOW_ALL ||
-                mode == PortableScannerBehavior.DisplayMode.SHOW_RECIPE_INFO) {
-            if (recipes.isEmpty())
-                return Collections.emptyList();
-            List<Component> list = new ArrayList<>();
-
-            list.add(Component.translatable("behavior.data_item.title"));
-            list.add(Component.empty());
-            Collection<ItemStack> itemsAdded = new ObjectOpenCustomHashSet<>(ItemStackHashStrategy.comparingAll());
-            for (GTRecipe recipe : recipes) {
-                ItemStack stack = ItemRecipeCapability.CAP
-                        .of(recipe.getOutputContents(ItemRecipeCapability.CAP).getFirst().content).getItems()[0];
-                if (!itemsAdded.contains(stack)) {
-                    itemsAdded.add(stack);
-                    list.add(Component.translatable("behavior.data_item.data", stack.getDisplayName()));
-                }
-            }
-            return list;
-        }
-        return new ArrayList<>();
-    }
+    public List<Component> getDataInfo(PortableScannerBehavior.DisplayMode mode) { return null; /* ported stub */ }
 
     @Override
     public boolean canShared() {

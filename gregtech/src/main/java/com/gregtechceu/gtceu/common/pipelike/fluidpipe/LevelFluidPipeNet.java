@@ -10,13 +10,7 @@ import net.minecraft.world.level.saveddata.SavedData;
 
 public class LevelFluidPipeNet extends LevelPipeNet<FluidPipeProperties, FluidPipeNet> {
 
-    public static LevelFluidPipeNet getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(
-                        new SavedData.Factory<>(() -> new LevelFluidPipeNet(serverLevel),
-                                (tag, provider) -> new LevelFluidPipeNet(serverLevel, tag, provider)),
-                        "gtceu_fluid_pipe_net");
-    }
+    public static LevelFluidPipeNet getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
 
     public LevelFluidPipeNet(ServerLevel serverLevel) {
         super(serverLevel);

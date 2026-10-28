@@ -45,44 +45,7 @@ public class LogStripBehavior implements IToolBehavior<LogStripBehavior> {
 
     @NotNull
     @Override
-    public InteractionResult onItemUse(UseOnContext context) {
-        Level level = context.getLevel();
-        Player player = context.getPlayer();
-        BlockPos pos = context.getClickedPos();
-
-        ItemStack stack = context.getItemInHand();
-        AoESymmetrical aoeDefinition = ToolHelper.getAoEDefinition(stack);
-
-        List<BlockPos> blocks;
-        // only attempt to strip if the center block is strippable
-        if (isBlockStrippable(context)) {
-            if (aoeDefinition.isZero()) {
-                blocks = List.of(pos);
-            } else {
-                blocks = getStrippableBlocks(aoeDefinition, context);
-                blocks.add(context.getClickedPos());
-            }
-        } else {
-            return InteractionResult.PASS;
-        }
-
-        boolean stripped = false;
-        for (BlockPos blockPos : blocks) {
-            UseOnContext posContext = new UseOnContext(level, player, context.getHand(), stack,
-                    context.getHitResult().withPosition(blockPos));
-            BlockState newState = getStripped(level.getBlockState(blockPos), posContext);
-            stripped |= level.setBlock(blockPos, newState, Block.UPDATE_ALL_IMMEDIATE);
-
-            ToolHelper.damageItem(stack, player);
-            if (stack.isEmpty()) break;
-        }
-
-        if (stripped) {
-            level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
-            return InteractionResult.SUCCESS;
-        }
-        return InteractionResult.PASS;
-    }
+    public InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
     public static List<BlockPos> getStrippableBlocks(AoESymmetrical aoeDefinition, UseOnContext context) {
         return ToolHelper.iterateAoE(aoeDefinition, LogStripBehavior::isBlockStrippable, context);

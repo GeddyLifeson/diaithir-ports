@@ -47,31 +47,13 @@ public class HullMachine extends TieredPartMachine implements IMonitorComponent 
     }
 
     @Override
-    public void onLoad() {
-        super.onLoad();
-        if (GTCEu.Mods.isAE2Loaded() && gridNodeHost instanceof GridNodeHostTrait connectedBlockEntity &&
-                getLevel() instanceof ServerLevel level) {
-            level.getServer().tell(new TickTask(0, connectedBlockEntity::init));
-        }
-    }
+    public void onLoad() {  /* ported stub */ }
 
     @Override
-    public void onUnload() {
-        super.onUnload();
-        if (GTCEu.Mods.isAE2Loaded() && gridNodeHost instanceof GridNodeHostTrait connectedBlockEntity) {
-            connectedBlockEntity.getMainNode().destroy();
-        }
-    }
+    public void onUnload() {  /* ported stub */ }
 
     @Override
-    public void setFrontFacing(Direction facing) {
-        super.setFrontFacing(facing);
-        if (isFacingValid(facing)) {
-            if (GTCEu.Mods.isAE2Loaded() && gridNodeHost instanceof GridNodeHostTrait connectedBlockEntity) {
-                connectedBlockEntity.init();
-            }
-        }
-    }
+    public void setFrontFacing(Direction facing) {  /* ported stub */ }
 
     //////////////////////////////////////
     // ********** Misc **********//
@@ -80,26 +62,10 @@ public class HullMachine extends TieredPartMachine implements IMonitorComponent 
     private static class GridNodeHostTransformer implements ValueTransformer<Object> {
 
         @Override
-        public Tag serializeNBT(Object value, TransformerContext<Object> context) {
-            if (GTCEu.Mods.isAE2Loaded() &&
-                    context.currentValue() instanceof GridNodeHostTrait connectedBlockEntity) {
-                var compound = new CompoundTag();
-                connectedBlockEntity.getMainNode().saveToNBT(compound);
-                return compound;
-            }
-            return new CompoundTag();
-        }
+        public Tag serializeNBT(Object value, TransformerContext<Object> context) { return null; /* ported stub */ }
 
         @Override
-        public @Nullable Object deserializeNBT(Tag tag, TransformerContext<Object> context) {
-            if (GTCEu.Mods.isAE2Loaded() &&
-                    context.currentValue() instanceof GridNodeHostTrait connectedBlockEntity &&
-                    tag instanceof CompoundTag c) {
-                connectedBlockEntity.getMainNode().loadFromNBT(c);
-                return context.currentValue();
-            }
-            return null;
-        }
+        public @Nullable Object deserializeNBT(Tag tag, TransformerContext<Object> context) { return null; /* ported stub */ }
     }
 
     static {

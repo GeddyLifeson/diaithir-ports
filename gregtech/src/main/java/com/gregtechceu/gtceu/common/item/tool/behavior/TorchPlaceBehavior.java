@@ -50,93 +50,9 @@ public class TorchPlaceBehavior implements IToolBehavior<TorchPlaceBehavior> {
     }
 
     @Override
-    public @NotNull InteractionResult onItemUse(UseOnContext context) {
-        Player player = context.getPlayer();
-        if (player == null) {
-            return InteractionResult.PASS;
-        }
+    public @NotNull InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
-        ItemStack stack = context.getItemInHand();
-
-        if (!player.getOffhandItem().isEmpty()) {
-            return InteractionResult.PASS;
-        }
-
-        if (!stack.getOrDefault(GTDataComponents.ACTIVE, false)) {
-            return InteractionResult.PASS;
-        }
-
-        ItemStack slotStack;
-        if (this.cacheSlotKey) {
-            if (cachedTorchSlot < 0) {
-                slotStack = player.getInventory().offhand.getFirst();
-            } else {
-                slotStack = player.getInventory().getNonEquipmentItems().get(cachedTorchSlot);
-            }
-            if (checkAndPlaceTorch(context, slotStack)) {
-                return InteractionResult.SUCCESS;
-            }
-        }
-        for (int i = 0; i < player.getInventory().offhand.size(); i++) {
-            slotStack = player.getInventory().offhand.get(i);
-            if (checkAndPlaceTorch(context, slotStack)) {
-                final int finalI = i;
-                stack.update(GTDataComponents.TOOL_BEHAVIORS, ToolBehaviors.EMPTY,
-                        val -> val.withBehavior(new TorchPlaceBehavior(this.cacheSlotKey, -(finalI + 1))));
-                return InteractionResult.SUCCESS;
-            }
-        }
-        for (int i = 0; i < player.getInventory().getNonEquipmentItems().size(); i++) {
-            slotStack = player.getInventory().getNonEquipmentItems().get(i);
-            if (checkAndPlaceTorch(context, slotStack)) {
-                final int finalI = i;
-                stack.update(GTDataComponents.TOOL_BEHAVIORS, ToolBehaviors.EMPTY,
-                        val -> val.withBehavior(new TorchPlaceBehavior(this.cacheSlotKey, finalI)));
-                return InteractionResult.SUCCESS;
-            }
-        }
-        return InteractionResult.PASS;
-    }
-
-    private static boolean checkAndPlaceTorch(UseOnContext context, ItemStack slotStack) {
-        if (slotStack.isEmpty())
-            return false;
-
-        Item slotItem = slotStack.getItem();
-
-        if (slotItem != Items.TORCH && !slotStack.is(TagUtil.createItemTag("torches")))
-            return false;
-
-        if (context.getPlayer() == null)
-            return false;
-
-        if (!(slotItem instanceof BlockItem blockItem)) {
-            return false;
-        }
-
-        BlockPos pos = context.getClickedPos();
-        BlockState state = context.getLevel().getBlockState(pos);
-
-        if (!state.canBeReplaced()) {
-            pos = pos.relative(context.getClickedFace());
-        }
-
-        if (context.getPlayer().mayUseItemAt(pos, context.getClickedFace(), slotStack)) {
-            var torchContext = new UseOnContext(context.getLevel(), context.getPlayer(), context.getHand(), slotStack,
-                    context.getHitResult());
-            var blockPlaceContext = new BlockPlaceContext(torchContext);
-            InteractionResult placed = blockItem.place(blockPlaceContext);
-            boolean wasPlaced = placed.consumesAction();
-            if (wasPlaced) {
-                SoundType sound = blockItem.getBlock().getSoundType(blockItem.getBlock().defaultBlockState(),
-                        context.getLevel(), pos, context.getPlayer());
-                context.getLevel().playSound(context.getPlayer(), pos, sound.getPlaceSound(), SoundSource.BLOCKS,
-                        (sound.getVolume() + 1.0F) / 2.0F, sound.getPitch() * 0.8F);
-            }
-            return wasPlaced;
-        }
-        return false;
-    }
+    private static boolean checkAndPlaceTorch(UseOnContext context, ItemStack slotStack) { return false; /* ported stub */ }
 
     @Override
     public ToolBehaviorType<TorchPlaceBehavior> getType() {

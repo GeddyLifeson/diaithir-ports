@@ -10,13 +10,7 @@ import net.minecraft.world.level.saveddata.SavedData;
 
 public class LevelItemPipeNet extends LevelPipeNet<ItemPipeProperties, ItemPipeNet> {
 
-    public static LevelItemPipeNet getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(
-                        new SavedData.Factory<>(() -> new LevelItemPipeNet(serverLevel),
-                                (tag, provider) -> new LevelItemPipeNet(serverLevel, tag, provider)),
-                        "gtceu_item_pipe_net");
-    }
+    public static LevelItemPipeNet getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
 
     public LevelItemPipeNet(ServerLevel serverLevel) {
         super(serverLevel);

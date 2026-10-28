@@ -45,44 +45,7 @@ public class ScrapeBehavior implements IToolBehavior<ScrapeBehavior> {
 
     @NotNull
     @Override
-    public InteractionResult onItemUse(UseOnContext context) {
-        Level level = context.getLevel();
-        Player player = context.getPlayer();
-        BlockPos pos = context.getClickedPos();
-        ItemStack stack = context.getItemInHand();
-        AoESymmetrical aoeDefinition = ToolHelper.getAoEDefinition(stack);
-
-        List<BlockPos> blocks;
-        // only attempt to strip if the center block is strippable
-        if (isBlockScrapable(context)) {
-            if (aoeDefinition.isZero()) {
-                blocks = List.of(pos);
-            } else {
-                blocks = getScrapableBlocks(aoeDefinition, context);
-                blocks.addFirst(context.getClickedPos());
-            }
-        } else {
-            return InteractionResult.PASS;
-        }
-
-        boolean scraped = false;
-        for (BlockPos blockPos : blocks) {
-            UseOnContext posContext = new UseOnContext(level, player, context.getHand(), stack,
-                    context.getHitResult().withPosition(blockPos));
-            BlockState newState = getScraped(level.getBlockState(blockPos), posContext);
-            scraped |= level.setBlock(blockPos, newState, Block.UPDATE_ALL_IMMEDIATE);
-            level.levelEvent(player, LevelEvent.PARTICLES_SCRAPE, blockPos, 0);
-
-            ToolHelper.damageItem(stack, player);
-            if (stack.isEmpty()) break;
-        }
-
-        if (scraped) {
-            level.playSound(player, pos, SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
-            return InteractionResult.SUCCESS;
-        }
-        return InteractionResult.PASS;
-    }
+    public InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
     public static List<BlockPos> getScrapableBlocks(AoESymmetrical aoeDefinition, UseOnContext context) {
         return ToolHelper.iterateAoE(aoeDefinition, ScrapeBehavior::isBlockScrapable, context);

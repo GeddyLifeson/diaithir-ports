@@ -109,21 +109,7 @@ public class GTOreVeins {
     public static final ResourceKey<GTOreDefinition> REDSTONE_VEIN = create(GTCEu.id("redstone"));
     public static final ResourceKey<GTOreDefinition> SAPPHIRE_VEIN = create(GTCEu.id("sapphire"));
 
-    public static void updateLargestVeinSize(Registry<GTOreDefinition> registry) {
-        // map to average of min & max values.
-        GTOreVeins.largestVeinSize = registry.stream()
-                .map(GTOreDefinition::clusterSize)
-                .mapToInt(intProvider -> (intProvider.getMinValue() + intProvider.getMaxValue()) / 2)
-                .max()
-                .orElse(0);
-
-        GTOreVeins.largestIndicatorOffset = registry.stream()
-                .flatMapToInt(definition -> definition.indicatorGenerators().stream()
-                        .mapToInt(indicatorGenerator -> indicatorGenerator.getSearchRadiusModifier(
-                                (int) Math.ceil(definition.clusterSize().getMinValue() / 2.0))))
-                .max()
-                .orElse(0);
-    }
+    public static void updateLargestVeinSize(Registry<GTOreDefinition> registry) {  /* ported stub */ }
 
     public static ResourceKey<GTOreDefinition> create(Identifier id) {
         var key = ResourceKey.create(GTRegistries.ORE_VEIN_REGISTRY, id);

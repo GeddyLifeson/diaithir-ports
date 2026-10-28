@@ -23,25 +23,13 @@ public class GTBucketItem extends BucketItem {
         this.langKey = langKey;
     }
 
-    public static int color(ItemStack itemStack, int index) {
-        if (itemStack.getItem() instanceof GTBucketItem item) {
-            if (index == 1) {
-                return IClientFluidTypeExtensions.of(item.content).getTintColor();
-            }
-        }
-        return -1;
-    }
+    public static int color(ItemStack itemStack, int index) { return (int)0; /* ported stub */ }
 
     @Override
-    public String getDescriptionId() {
-        return "item.gtceu.bucket";
-    }
+    public String getDescriptionId() { return null; /* ported stub */ }
 
     @Override
-    public Component getDescription() {
-        Component materialName = material.getLocalizedName();
-        return Component.translatable("item.gtceu.bucket", Component.translatable(this.langKey, materialName));
-    }
+    public Component getDescription() { return null; /* ported stub */ }
 
     @Override
     public Component getName(ItemStack stack) {
@@ -49,10 +37,5 @@ public class GTBucketItem extends BucketItem {
     }
 
     @Override
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-        if (this.content instanceof GTFluid gtFluid) {
-            return gtFluid.getBurnTime();
-        }
-        return 0;
-    }
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) { return (int)0; /* ported stub */ }
 }

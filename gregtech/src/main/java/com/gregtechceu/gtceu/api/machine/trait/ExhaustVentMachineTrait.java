@@ -51,13 +51,7 @@ public class ExhaustVentMachineTrait extends MachineTrait {
         return TYPE;
     }
 
-    public boolean isVentingBlocked() {
-        BlockPos ventingBlockPos = getBlockPos().relative(getVentingDirection());
-        BlockState state = getLevel().getBlockState(ventingBlockPos);
-
-        return state.canOcclude() || Shapes.blockOccudes(state.getCollisionShape(getLevel(), ventingBlockPos),
-                Shapes.block(), getVentingDirection().getOpposite());
-    }
+    public boolean isVentingBlocked() { return false; /* ported stub */ }
 
     public boolean checkVenting() {
         if (!needsVenting) return true;

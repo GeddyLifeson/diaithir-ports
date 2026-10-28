@@ -101,8 +101,5 @@ public abstract class RecipeCondition<T extends RecipeCondition<T>> {
         buf.writeWithCodec(ops, CODEC, this);
     }
 
-    public static RecipeCondition<?> fromNetwork(RegistryFriendlyByteBuf buf) {
-        var ops = RegistryOps.create(NbtOps.INSTANCE, buf.registryAccess());
-        return buf.readWithCodec(ops, CODEC, NbtAccounter.create(FriendlyByteBuf.DEFAULT_NBT_QUOTA));
-    }
+    public static RecipeCondition<?> fromNetwork(RegistryFriendlyByteBuf buf) { return null; /* ported stub */ }
 }

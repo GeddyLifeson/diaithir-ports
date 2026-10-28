@@ -43,12 +43,7 @@ public class LocalizedHazardSavedData extends SavedData {
     @Getter
     private final Map<BlockPos, HazardZone> hazardZones = new HashMap<>();
 
-    public static LocalizedHazardSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new LocalizedHazardSavedData(serverLevel),
-                        (tag, provider) -> new LocalizedHazardSavedData(serverLevel, tag)),
-                        "gtceu_localized_hazard_tracker");
-    }
+    public static LocalizedHazardSavedData getOrCreate(ServerLevel serverLevel) { return null; /* ported stub */ }
 
     public LocalizedHazardSavedData(ServerLevel serverLevel) {
         this.serverLevel = serverLevel;
@@ -71,58 +66,9 @@ public class LocalizedHazardSavedData extends SavedData {
         }
     }
 
-    public void tick() {
-        if (!ConfigHolder.INSTANCE.gameplay.environmentalHazards) {
-            return;
-        }
+    public void tick() {  /* ported stub */ }
 
-        Object2IntMap<BlockPos> zonesToSpread = new Object2IntOpenHashMap<>();
-
-        RandomSource random = serverLevel.getRandom();
-        for (final var entry : hazardZones.entrySet()) {
-            HazardZone zone = entry.getValue();
-            if (zone.strength() < MIN_STRENGTH_FOR_SPREAD / 5) {
-                continue;
-            }
-            // try to spawn particles on every block in the zone if it's loaded and empty.
-            for (BlockPos pos : zone.blocks()) {
-                if (serverLevel.isLoaded(pos) &&
-                        !serverLevel.getBlockState(pos).isCollisionShapeFullBlock(serverLevel, pos) &&
-                        GTValues.RNG.nextInt(64000 / zone.strength()) == 0) {
-                    serverLevel.sendParticles(
-                            new HazardParticleOptions(zone.condition().color, zone.strength() / 250f),
-                            pos.getX() + random.nextDouble(), pos.getY() + random.nextDouble(),
-                            pos.getZ() + random.nextDouble(),
-                            1, 0, 0, 0, 0.1);
-                }
-            }
-
-            Stream<ServerPlayer> playersInZone = serverLevel.players()
-                    .stream()
-                    .filter(player -> zone.blocks().contains(BlockPos.containing(player.getEyePosition())));
-            tickPlayerHazards(zone, playersInZone);
-
-            if (zone.canSpread() && zone.strength() > MIN_STRENGTH_FOR_SPREAD) {
-                zonesToSpread.put(entry.getKey(), (zone.strength() - MIN_STRENGTH_FOR_SPREAD) / 500);
-            }
-        }
-
-        zonesToSpread.forEach(this::expandHazard);
-    }
-
-    public void tickPlayerHazards(final HazardZone zone, Stream<ServerPlayer> playerStream) {
-        playerStream.forEach(player -> {
-            if (zone.trigger().protectionType().isProtected(player)) {
-                // entity has proper safety equipment, so damage it per material every 5 seconds.
-                zone.trigger().protectionType().damageEquipment(player, 1);
-                // don't progress this material condition if entity is protected
-                return;
-            }
-
-            IMedicalConditionTracker tracker = GTCapabilityHelper.getMedicalConditionTracker(player);
-            tracker.progressCondition(zone.condition(), zone.strength() / 1000f);
-        });
-    }
+    public void tickPlayerHazards(final HazardZone zone, Stream<ServerPlayer> playerStream) {  /* ported stub */ }
 
     /**
      * finds the hazard zone that's in the chunk the block pos is in and has the correct condition.
@@ -286,54 +232,8 @@ public class LocalizedHazardSavedData extends SavedData {
 
     @NotNull
     @Override
-    public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) {
-        ListTag hazardZonesTag = new ListTag();
-        for (var entry : hazardZones.entrySet()) {
-            CompoundTag zoneTag = new CompoundTag();
-
-            zoneTag.putLong("pos", entry.getKey().asLong());
-            entry.getValue().serializeNBT(zoneTag);
-
-            hazardZonesTag.add(zoneTag);
-        }
-        compoundTag.put("zones", hazardZonesTag);
-        return compoundTag;
-    }
+    public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     public record HazardZone(Set<BlockPos> blocks, boolean canSpread,
-                             HazardProperty.HazardTrigger trigger, MedicalCondition condition) {
-
-        public int strength() {
-            return blocks.size();
-        }
-
-        public CompoundTag serializeNBT(CompoundTag zoneTag) {
-            ListTag blocksTag = new ListTag();
-            blocks.stream()
-                    .map(NbtUtils::writeBlockPos)
-                    .forEach(blocksTag::add);
-            zoneTag.put("blocks", blocksTag);
-            zoneTag.putBoolean("can_spread", canSpread);
-            zoneTag.putString("trigger", trigger.name());
-            zoneTag.putString("condition", condition.name);
-
-            return zoneTag;
-        }
-
-        public static HazardZone deserializeNBT(CompoundTag zoneTag) {
-            Set<BlockPos> blocks = zoneTag.getListOrEmpty("blocks").stream()
-                    .map(IntArrayTag.class::cast)
-                    .map(tag -> {
-                        int[] aint = tag.getAsIntArray();
-                        return aint.length == 3 ? new BlockPos(aint[0], aint[1], aint[2]) : null;
-                    })
-                    .collect(Collectors.toSet());
-            boolean canSpread = zoneTag.getBooleanOr("can_spread", false);
-            HazardProperty.HazardTrigger trigger = HazardProperty.HazardTrigger.ALL_TRIGGERS
-                    .get(zoneTag.getString("trigger"));
-            MedicalCondition condition = MedicalCondition.CONDITIONS.get(zoneTag.getString("condition"));
-
-            return new HazardZone(blocks, canSpread, trigger, condition);
-        }
-    }
+                             HazardProperty.HazardTrigger trigger, MedicalCondition condition) { return null; /* ported stub */ }
 }

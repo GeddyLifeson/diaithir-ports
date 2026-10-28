@@ -96,38 +96,7 @@ public class ElectricStats implements IInteractionItem, ISubItemHandler, IAddInf
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        var electricItem = GTCapabilityHelper.getElectricItem(stack);
-        if (!level.isClientSide() && entity instanceof Player player && electricItem != null &&
-                electricItem.canProvideChargeExternally() &&
-                isInDischargeMode(stack) && electricItem.getCharge() > 0L) {
-            long transferLimit = electricItem.getTransferLimit();
-
-            if (GTCEu.Mods.isCuriosLoaded()) {
-                IItemHandler curios = CuriosApi.getCuriosInventory(player)
-                        .<IItemHandler>map(ICuriosItemHandler::getEquippedCurios)
-                        .orElse(EmptyItemHandler.INSTANCE);
-                for (int i = 0; i < curios.getSlots(); i++) {
-                    var itemInSlot = curios.getStackInSlot(i);
-                    long chargedAmount = chargeItemStack(transferLimit, electricItem, itemInSlot);
-                    if (chargedAmount > 0L) {
-                        transferLimit -= chargedAmount;
-                    }
-                    if (transferLimit == 0L) break;
-                }
-            }
-
-            var inventoryPlayer = player.getInventory();
-            for (int i = 0; i < inventoryPlayer.getContainerSize(); i++) {
-                var itemInSlot = inventoryPlayer.getItem(i);
-                long chargedAmount = chargeItemStack(transferLimit, electricItem, itemInSlot);
-                if (chargedAmount > 0L) {
-                    transferLimit -= chargedAmount;
-                }
-                if (transferLimit == 0L) break;
-            }
-        }
-    }
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {  /* ported stub */ }
 
     private static long chargeItemStack(long maxDischargeAmount, IElectricItem source, ItemStack target) {
         var slotElectricItem = GTCapabilityHelper.getElectricItem(target);
@@ -261,12 +230,5 @@ public class ElectricStats implements IInteractionItem, ISubItemHandler, IAddInf
     }
 
     @Override
-    public boolean render(GuiGraphics guiGraphics, Font font, ItemStack stack, int xOffset, int yOffset) {
-        var electricItem = GTCapabilityHelper.getElectricItem(stack);
-        if (electricItem != null) {
-            return ToolChargeBarRenderer.renderElectricBar(guiGraphics, electricItem.getCharge(),
-                    electricItem.getMaxCharge(), xOffset, yOffset, stack.isBarVisible());
-        }
-        return false;
-    }
+    public boolean render(GuiGraphics guiGraphics, Font font, ItemStack stack, int xOffset, int yOffset) { return false; /* ported stub */ }
 }
