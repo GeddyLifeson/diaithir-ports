@@ -649,12 +649,7 @@ public class VanillaRecipeHelper {
     public static void addSmithingTransformRecipe(RecipeOutput provider, @NotNull Identifier regName,
                                                   @NotNull Item result, @NotNull ItemLike baseInput,
                                                   @NotNull ItemLike template, @NotNull ItemLike addition,
-                                                  @NotNull RecipeCategory category) {
-        SmithingTransformRecipeBuilder
-                .smithing(Ingredient.of(template), Ingredient.of(baseInput), Ingredient.of(addition), category, result)
-                .unlocks(String.format("has_%s", baseInput), InventoryChangeTrigger.TriggerInstance.hasItems(baseInput))
-                .save(provider, regName);
-    }
+                                                  @NotNull RecipeCategory category) {  /* ported stub */ }
 
     public static void addSmithingTransformRecipe(RecipeOutput provider, @NotNull String regName,
                                                   @NotNull Item result, @NotNull ItemLike baseInput,

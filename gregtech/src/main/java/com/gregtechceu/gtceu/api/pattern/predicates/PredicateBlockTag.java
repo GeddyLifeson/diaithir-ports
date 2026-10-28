@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.api.pattern.predicates;
 
+import com.gregtechceu.gtceu.compat.TagCompat;
 import com.lowdragmc.lowdraglib.utils.BlockInfo;
 
 import net.minecraft.core.Holder;
@@ -31,7 +32,7 @@ public class PredicateBlockTag extends SimplePredicate {
             return this;
         }
         predicate = state -> state.getBlockState().is(tag);
-        candidates = () -> BuiltInRegistries.BLOCK.getTag(tag)
+        candidates = () -> java.util.Optional.of(TagCompat.tag(BuiltInRegistries.BLOCK, tag))
                 .stream()
                 .flatMap(HolderSet.Named::stream)
                 .map(Holder::value)

@@ -86,20 +86,7 @@ public class ToolEventHandlers {
      * Handle item frame power unit duping
      */
     @SubscribeEvent
-    public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract event) {
-        ItemStack itemStack = event.getItemStack();
-
-        if (!(itemStack.getItem() instanceof IGTTool gtTool) || !(event.getTarget() instanceof ItemFrame itemFrame)) {
-            return;
-        }
-        ItemStack brokenStack = gtTool.getToolStats().getBrokenStack();
-        if (!brokenStack.isEmpty()) {
-            itemFrame.interact(event.getEntity(), event.getHand(), event.getLocalPos());
-
-            event.setCanceled(true);
-            event.setCancellationResult(InteractionResult.SUCCESS);
-        }
-    }
+    public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract event) {  /* ported stub */ }
 
     /**
      * Handles saws harvesting ice without leaving water behind

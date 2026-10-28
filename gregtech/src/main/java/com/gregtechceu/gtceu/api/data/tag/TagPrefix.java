@@ -79,7 +79,7 @@ public class TagPrefix {
     public static void init() {}
 
     public static TagPrefix get(String name) {
-        return GTRegistries.TAG_PREFIXES.get(GTCEu.id(name));
+        return GTRegistries.TAG_PREFIXES.getValue(GTCEu.id(name));
     }
 
     public boolean isEmpty() {
@@ -1089,9 +1089,6 @@ public class TagPrefix {
                                  boolean doubleDrops, boolean isSand, boolean shouldDropAsItem) {
         ORES.put(this,
                 new OreType(stoneType, material, properties, baseModelLocation, doubleDrops, isSand, shouldDropAsItem));
-        if (shouldDropAsItem) {
-            GTOreByProduct.addOreByProductPrefix(this);
-        }
         return this;
     }
 

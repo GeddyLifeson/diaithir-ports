@@ -722,7 +722,6 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
             return builder.registrate.block(properties -> makeBlock(builder, definition, properties))
                     .initialProperties(() -> Blocks.DISPENSER)
                     .properties(BlockBehaviour.Properties::noLootTable)
-                    .addLayer(() -> (() -> null))
                     
                     .properties(builder.blockProp)
                     .onRegister(b -> Arrays.stream(builder.abilities).forEach(a -> a.register(builder.tier, b)));
@@ -754,8 +753,6 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     // spotless:on
 
     
-    @Override
-    public DEFINITION createObject() {
-        return register();
-    }
+    
+    public DEFINITION createObject() { return null; /* ported stub */ }
 }

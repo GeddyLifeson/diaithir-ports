@@ -66,7 +66,7 @@ public class CoverBehaviorTransformer implements ValueTransformer<CoverBehavior>
         }
         Identifier coverType = Identifier.tryParse(tag.getStringOr("coverType", ""));
         if (cover == null || cover.coverDefinition.getId() != coverType) {
-            var coverReg = GTRegistries.COVERS.get(coverType);
+            var coverReg = GTRegistries.COVERS.getValue(coverType);
             if (coverReg == null) {
                 GTCEu.LOGGER.error("Error during NBT load: unknown cover type {} ({})", coverType,
                         tag.getString("coverType"));

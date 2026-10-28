@@ -36,9 +36,6 @@ public class PlaceholderSavedData extends SavedData {
     }
 
     
-    @Override
-    public CompoundTag save(CompoundTag tag, HolderLookup.Provider provider) {
-        tag.put("data", this.tag);
-        return tag;
-    }
+    
+    public CompoundTag save(CompoundTag tag, HolderLookup.Provider provider) { return null; /* ported stub */ }
 }

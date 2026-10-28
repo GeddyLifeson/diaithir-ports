@@ -207,20 +207,7 @@ public class ComputerMonitorCover extends CoverBehavior
         subscription = coverHolder.subscribeServerTick(subscription, this::update);
     }
 
-    private void update() {
-        ticksSincePlaced++;
-        if (coverHolder.getOffsetTimer() % updateInterval == 0) {
-            try {
-                if (GTCEu.Mods.isCreateLoaded())
-                    GTCreateIntegration.TemporaryRedstoneLinkTransmitter.destroyAll();
-                setRedstoneSignalOutput(0);
-                text = getRenderedText();
-            } catch (RuntimeException e) {
-                text = GTUtil.list(
-                        Component.translatable("gtceu.computer_monitor_cover.error.exception", e.getMessage()));
-            }
-        }
-    }
+    private void update() {  /* ported stub */ }
 
     @Override
     public void onRemoved() {

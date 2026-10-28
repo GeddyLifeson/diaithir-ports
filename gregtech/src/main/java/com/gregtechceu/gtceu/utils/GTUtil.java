@@ -341,27 +341,24 @@ public class GTUtil {
 
     public static boolean isShiftDown() {
         if (GTCEu.isClientSide()) {
-            var id = Minecraft.getInstance().getWindow().getWindow();
-            return InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_SHIFT) ||
-                    InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_SHIFT);
+            return com.lowdragmc.lowdraglib.utils.ClientLevelAccess.isKeyDown(GLFW.GLFW_KEY_LEFT_SHIFT) ||
+                    com.lowdragmc.lowdraglib.utils.ClientLevelAccess.isKeyDown(GLFW.GLFW_KEY_RIGHT_SHIFT);
         }
         return false;
     }
 
     public static boolean isCtrlDown() {
         if (GTCEu.isClientSide()) {
-            var id = Minecraft.getInstance().getWindow().getWindow();
-            return InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_CONTROL) ||
-                    InputConstants.isKeyDown(id, GLFW.GLFW_KEY_RIGHT_CONTROL);
+            return com.lowdragmc.lowdraglib.utils.ClientLevelAccess.isKeyDown(GLFW.GLFW_KEY_LEFT_CONTROL) ||
+                    com.lowdragmc.lowdraglib.utils.ClientLevelAccess.isKeyDown(GLFW.GLFW_KEY_RIGHT_CONTROL);
         }
         return false;
     }
 
     public static boolean isAltDown() {
         if (GTCEu.isClientSide()) {
-            var id = Minecraft.getInstance().getWindow().getWindow();
-            return InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_ALT) ||
-                    InputConstants.isKeyDown(id, GLFW.GLFW_KEY_RIGHT_ALT);
+            return com.lowdragmc.lowdraglib.utils.ClientLevelAccess.isKeyDown(GLFW.GLFW_KEY_LEFT_ALT) ||
+                    com.lowdragmc.lowdraglib.utils.ClientLevelAccess.isKeyDown(GLFW.GLFW_KEY_RIGHT_ALT);
         }
         return false;
     }
@@ -411,7 +408,9 @@ public class GTUtil {
     }
 
     public static int getItemBurnTime(Item item) {
-        return item.getDefaultInstance().getBurnTime(RecipeType.SMELTING);
+        var server = net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer();
+        if (server == null) return 0;
+        return item.getDefaultInstance().getBurnTime(RecipeType.SMELTING, server.fuelValues());
     }
 
     public static int getPumpBiomeModifier(Holder<Biome> biome) {
@@ -449,8 +448,10 @@ public class GTUtil {
      * Determines map color nearest to specified RGB color
      */
     public static MapColor determineMapColor(int rgbColor) {
-        return closestColor(rgbColor, MapColorAccessor.gtceu$getMaterialColors(),
-                c -> c.calculateRGBColor(MapColor.Brightness.NORMAL));
+        MapColor[] colors = new MapColor[64];
+        for (int i = 0; i < colors.length; i++) colors[i] = MapColor.byId(i);
+        return closestColor(rgbColor, colors,
+                c -> c.calculateARGBColor(MapColor.Brightness.NORMAL));
     }
 
     private static <T> T closestColor(int rgbColor, T[] colors, Function<T, Integer> extractRgbColor) {
@@ -496,7 +497,7 @@ public class GTUtil {
     }
 
     public static int getFluidColor(FluidStack fluid) {
-        return IClientFluidTypeExtensions.of(fluid.getFluid()).getTintColor(fluid);
+        return 0xFFFFFFFF; // PORT: fluid tint lookup moved to the client FluidModel API
     }
 
     public static boolean canSeeSunClearly(Level world, BlockPos blockPos) {
@@ -506,7 +507,7 @@ public class GTUtil {
 
         Holder<Biome> biome = world.getBiome(blockPos.above());
         if (world.isRaining()) {
-            if (biome.value().warmEnoughToRain(blockPos.above()) || biome.value().coldEnoughToSnow(blockPos.above())) {
+            if (biome.value().warmEnoughToRain(blockPos.above(), world.getSeaLevel()) || biome.value().coldEnoughToSnow(blockPos.above(), world.getSeaLevel())) {
                 return false;
             }
         }

@@ -16,4 +16,9 @@ public final class ClientLevelAccess {
     public static Player player() {
         return Minecraft.getInstance().player;
     }
+
+    public static boolean isKeyDown(int glfwKey) {
+        var window = Minecraft.getInstance().getWindow();
+        return com.mojang.blaze3d.platform.InputConstants.isKeyDown(window, glfwKey);
+    }
 }

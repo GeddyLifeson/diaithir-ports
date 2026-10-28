@@ -109,7 +109,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
             List<ItemStack> items = new ArrayList<>();
             configTag.getListOrEmpty(ITEMS_TO_PASTE).forEach(t -> {
                 if (t instanceof CompoundTag c)
-                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.getLevel().registryAccess(), c)));
+                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.getLevel().registryAccess(), c));
             });
 
             if (!player.isCreative() && !GTTransferUtils.extractItemsFromPlayerInv(player, items, true)) {
@@ -309,7 +309,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
             List<ItemStack> items = new ArrayList<>();
             tag.getListOrEmpty(ITEMS_TO_PASTE).forEach(t -> {
                 if (t instanceof CompoundTag c)
-                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.level().registryAccess(), c)));
+                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.level().registryAccess(), c));
             });
 
             if (items.isEmpty()) return;

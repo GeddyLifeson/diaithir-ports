@@ -1064,22 +1064,10 @@ public class GTRecipeBuilder {
     }
 
     public GTRecipeBuilder inputFluids(IntProviderFluidIngredient... inputs) {
-        List<SizedFluidIngredient> ingredients = new ArrayList<>();
-        for (int i = 0; i < inputs.length; i++) {
-            FluidStack fluid = inputs[i];
-            if (missingIngredientError(i, true, FluidRecipeCapability.CAP, fluid::isEmpty)) {
-                return this;
-            } else {
-                var matStack = ChemicalHelper.getMaterial(fluid.getFluid());
-                if (!matStack.isNull()) {
-                    if (chance == maxChance && chance != 0) {
-                        tempFluidStacks.add(new MaterialStack(matStack, fluid.getAmount() * GTValues.M / GTValues.L));
-                    }
-                }
-                ingredients.add(RecipeHelper.makeSizedFluidIngredient(fluid));
-            }
-        }
-        return input(FluidRecipeCapability.CAP, ingredients.toArray(SizedFluidIngredient[]::new));
+        return input(FluidRecipeCapability.CAP,
+                Arrays.stream(inputs).<SizedFluidIngredient>map(
+                        ingredient -> new SizedFluidIngredient(ingredient, ingredient.getCountProvider().maxInclusive()))
+                        .toList().toArray(new SizedFluidIngredient[0]));
     }
 
     public GTRecipeBuilder outputFluids(FluidStack output) {
@@ -1097,7 +1085,9 @@ public class GTRecipeBuilder {
 
     public GTRecipeBuilder outputFluids(IntProviderFluidIngredient... outputs) {
         return output(FluidRecipeCapability.CAP,
-                Arrays.stream(outputs).map(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions::sizedFluidOf).toArray(SizedFluidIngredient[]::new));
+                Arrays.stream(outputs).<SizedFluidIngredient>map(
+                        ingredient -> new SizedFluidIngredient(ingredient, ingredient.getCountProvider().maxInclusive()))
+                        .toList().toArray(new SizedFluidIngredient[0]));
     }
 
     public GTRecipeBuilder outputFluidsRanged(IntProviderFluidIngredient provider) {
@@ -1374,12 +1364,8 @@ public class GTRecipeBuilder {
             GTCEu.LOGGER.error("Quest ID cannot be empty for recipe {}", this.id);
             return this;
         }
-        long qID = QuestObjectBase.parseCodeString(questId);
-        if (qID == 0L) {
-            GTCEu.LOGGER.error("Quest {} not found for recipe {}", questId, this.id);
-            return this;
-        }
-        return addCondition(new FTBQuestCondition(isReverse, qID));
+        // PORT: FTB Quests is not ported.
+        return this;
     }
 
     public GTRecipeBuilder ftbQuest(String questId) {
@@ -1548,7 +1534,7 @@ public class GTRecipeBuilder {
         tempFluidStacks = null;
 
         assert recipeType != null;
-        output.accept(id.withPrefix(recipeType.registryName.getPath() + "/"), build(), null);
+        output.accept(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.RECIPE, id.withPrefix(recipeType.registryName.getPath() + "/")), build(), null);
     }
 
     private void gatherMaterialInfoFromStack(ItemStack input) {

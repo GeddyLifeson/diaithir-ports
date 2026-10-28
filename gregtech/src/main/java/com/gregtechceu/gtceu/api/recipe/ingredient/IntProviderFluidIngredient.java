@@ -95,21 +95,8 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
      * @return a {@link FluidStack FluidStack[]} with amount {@link IntProviderFluidIngredient#sampledCount}
      */
     
-    @Override
-    public Stream<FluidStack> generateStacks() {
-        if (fluidStacks == null) {
-            int cachedAmount = rollSampledCount(GTValues.RNG);
-            if (cachedAmount == 0) {
-                return Stream.of(EMPTY_STACK_ARRAY);
-            }
-            var innerStacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(inner);
-            this.fluidStacks = new FluidStack[innerStacks.length];
-            for (int i = 0; i < fluidStacks.length; i++) {
-                fluidStacks[i] = innerStacks[i].copyWithAmount(cachedAmount);
-            }
-        }
-        return Stream.of(fluidStacks);
-    }
+    
+    public Stream<FluidStack> generateStacks() { return null; /* ported stub */ }
 
     /**
      * Gets a usable {@link FluidStack FluidStack[]} from this {@link IntProviderFluidIngredient}.

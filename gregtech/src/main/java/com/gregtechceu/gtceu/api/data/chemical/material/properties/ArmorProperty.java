@@ -81,7 +81,7 @@ public class ArmorProperty implements IMaterialProperty {
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionValues = Util.make(new EnumMap<>(ArmorType.class), map -> {
             for (int i = 0; i < 4; i++) {
-                map.put(ArmorType.values()[i], protectionValues[i]);
+                map.put(new ArmorType[] { ArmorType.BOOTS, ArmorType.LEGGINGS, ArmorType.CHESTPLATE, ArmorType.HELMET }[i], protectionValues[i]);
             }
         });
         this.sound = SoundEvents.ARMOR_EQUIP_IRON;
@@ -102,15 +102,13 @@ public class ArmorProperty implements IMaterialProperty {
                     .memoize(() -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(ChemicalHelper.getTag(TagPrefix.plate, material)));
         }
 
-        if (this.layers == null) {
-            this.layers = List.of(new ArmorMaterial.Layer(this.textureName, "", this.dyeable));
-        }
         if (this.armorMaterial == null) {
-            GTRegistrate registrate = GTRegistrate.createIgnoringListenerErrors(this.material.getModid());
-            this.armorMaterial = registrate.generic(this.material.getName(), Registries.ARMOR_MATERIAL,
-                    () -> new ArmorMaterial(protectionValues, enchantability, sound, repairIngredient,
-                            layers, toughness, knockbackResistance))
-                    .register();
+            net.minecraft.resources.ResourceKey<net.minecraft.world.item.equipment.EquipmentAsset> assetKey =
+                    net.minecraft.resources.ResourceKey.create(
+                            net.minecraft.world.item.equipment.EquipmentAssets.ROOT_ID,
+                            GTCEu.id(this.material.getName()));
+            this.armorMaterial = new ArmorMaterial(durabilityMultiplier, protectionValues, enchantability, sound,
+                    toughness, knockbackResistance, null, assetKey);
         }
     }
 

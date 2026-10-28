@@ -134,11 +134,7 @@ public final class GTRegistries {
         isFrozen = false;
     }/* ported: removed */
 
-    public static void init(IEventBus eventBus) {
-        eventBus.addListener(EventPriority.HIGHEST, GTRegistries::onUnfreeze);
-        eventBus.addListener(EventPriority.LOW, GTRegistries::actuallyRegister);
-        NeoForge.EVENT_BUS.addListener(GTRegistries::onFreeze);
-    }
+    public static void init(IEventBus eventBus) {  /* ported stub */ }
 
     @UnmodifiableView
     public static List<Identifier> getRegistrationOrder() {

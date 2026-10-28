@@ -38,6 +38,7 @@ public class GTArmorMaterials {
                         .setAsset(material.assetId())
                         .build());
         if (material.enchantmentValue() > 0) properties.enchantable(material.enchantmentValue());
+        if (material.durability() > 0) properties.durability(type.getDurability(material.durability()));
         return properties;
     }
 

@@ -43,6 +43,6 @@ public class GTRecipeCategories {
     public static void init() {}
 
     public static GTRecipeCategory get(String name) {
-        return GTRegistries.RECIPE_CATEGORIES.get(GTCEu.id(name));
+        return GTRegistries.RECIPE_CATEGORIES.getValue(GTCEu.id(name));
     }
 }

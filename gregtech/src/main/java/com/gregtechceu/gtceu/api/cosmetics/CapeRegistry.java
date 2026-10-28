@@ -73,7 +73,7 @@ public class CapeRegistry extends SavedData {
         ListTag unlockedCapesTag = new ListTag();
         for (Map.Entry<UUID, Set<Identifier>> entry : UNLOCKED_CAPES.entrySet()) {
             CompoundTag entryTag = new CompoundTag();
-            entryTag.putUUID("owner", entry.getKey());
+            com.gregtechceu.gtceu.compat.NbtCompat.putUUID(entryTag, "owner", entry.getKey());
 
             ListTag capesTag = new ListTag();
             for (Identifier cape : entry.getValue()) {
@@ -94,7 +94,7 @@ public class CapeRegistry extends SavedData {
             CompoundTag entryTag = new CompoundTag();
 
             entryTag.putString("cape", capeLocation);
-            entryTag.putUUID("owner", entry.getKey());
+            com.gregtechceu.gtceu.compat.NbtCompat.putUUID(entryTag, "owner", entry.getKey());
 
             currentCapesTag.add(entryTag);
         }
@@ -109,7 +109,7 @@ public class CapeRegistry extends SavedData {
         ListTag unlockedCapesTag = tag.getListOrEmpty("unlocked_capes");
         for (int i = 0; i < unlockedCapesTag.size(); i++) {
             CompoundTag entryTag = unlockedCapesTag.getCompoundOrEmpty(i);
-            UUID uuid = entryTag.getUUID("owner");
+            UUID uuid = com.gregtechceu.gtceu.compat.NbtCompat.getUUID(entryTag, "owner");
 
             Set<Identifier> capes = UNLOCKED_CAPES.computeIfAbsent(uuid, CapeRegistry::makeSet);
 
@@ -129,7 +129,7 @@ public class CapeRegistry extends SavedData {
             String capeId = entryTag.getStringOr("cape", "");
             if (capeId.isEmpty())
                 continue;
-            UUID uuid = entryTag.getUUID("owner");
+            UUID uuid = com.gregtechceu.gtceu.compat.NbtCompat.getUUID(entryTag, "owner");
             CURRENT_CAPES.put(uuid, Identifier.parse(capeId));
         }
 
@@ -316,8 +316,6 @@ public class CapeRegistry extends SavedData {
 
     private static class KJSCallWrapper {
 
-        public static void fireKJSEvent(RegisterGTCapesEvent event) {
-            GTCEuServerEvents.REGISTER_CAPES.post(ScriptType.SERVER, new RegisterCapesEventJS(event));
-        }
+        public static void fireKJSEvent(RegisterGTCapesEvent event) {  /* ported stub */ }
     }
 }

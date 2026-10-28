@@ -45,30 +45,10 @@ public class HeraclesQuestCondition extends RecipeCondition<HeraclesQuestConditi
     }
 
     @Override
-    public Component getTooltips() {
-        String questTitle = QuestHandler.get(questId).display().title().toString();
-
-        if (isReverse) {
-            return Component.translatable("recipe.condition.quest.not_completed.tooltip", questTitle);
-        } else {
-            return Component.translatable("recipe.condition.quest.completed.tooltip", questTitle);
-        }
-    }
+    public Component getTooltips() { return null; /* ported stub */ }
 
     @Override
-    public boolean testCondition(@NotNull GTRecipe recipe, @NotNull RecipeLogic recipeLogic) {
-        MachineOwner owner = recipeLogic.machine.self().getOwner();
-        if (owner == null) return false;
-        for (var player : owner.getMembers()) {
-            QuestsProgress questsProgress = QuestProgressHandler
-                    .getProgress(GTCEu.getMinecraftServer(), player);
-            var progress = questsProgress.getProgress(questId);
-            if (progress != null && (progress.isComplete() || QuestHandler.get(questId).tasks().isEmpty())) {
-                return true;
-            }
-        }
-        return false;
-    }
+    public boolean testCondition(@NotNull GTRecipe recipe, @NotNull RecipeLogic recipeLogic) { return false; /* ported stub */ }
 
     @Override
     public HeraclesQuestCondition createTemplate() {

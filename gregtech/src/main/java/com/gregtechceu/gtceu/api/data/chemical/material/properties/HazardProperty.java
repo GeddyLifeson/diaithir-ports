@@ -116,7 +116,7 @@ public class HazardProperty implements IMaterialProperty {
                 ItemStack armor = livingEntity.getItemBySlot(equipmentType.getSlot());
                 if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
                         armorItem.getArmorLogic().isPPE()) ||
-                        armor.builtInRegistryHolder().tags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                        armor.is(CustomTags.PPE_ARMOR))) {
                     correctArmorItems.add(equipmentType);
                 }
             }
@@ -131,7 +131,7 @@ public class HazardProperty implements IMaterialProperty {
                     ItemStack armor = player.getItemBySlot(type.getSlot());
                     if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
                             armorItem.getArmorLogic().isPPE()) ||
-                            armor.builtInRegistryHolder().tags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                            armor.is(CustomTags.PPE_ARMOR))) {
                         armor.hurtAndBreak(amount, player, type.getSlot());
                     }
                 }

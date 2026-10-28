@@ -552,13 +552,5 @@ public class ConveyorCover extends CoverBehavior implements IIOCover, IUICover, 
     }
 
     @Override
-    public void pasteConfig(ServerPlayer player, CompoundTag tag) {
-        setTransferRate(tag.getIntOr("transferRate", 0));
-        setIo(IO.values()[tag.getIntOr("io", 0)]);
-        setDistributionMode(DistributionMode.values()[tag.getIntOr("distributionMode", 0)]);
-        setManualIOMode(ManualIOMode.values()[tag.getIntOr("manualIO", 0)]);
-        filterHandler.setFilterItem(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(coverHolder.getLevel().registryAccess(), tag.getCompoundOrEmpty("filter"))
-                .orElse(ItemStack.EMPTY));
-        super.pasteConfig(player, tag);
-    }
+    public void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
 }

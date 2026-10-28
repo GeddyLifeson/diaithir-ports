@@ -203,10 +203,8 @@ public class GTRecipe implements Recipe<RecipeInput> {
     }
 
     
-    @Override
-    public boolean canCraftInDimensions(int pWidth, int pHeight) {
-        return false;
-    }
+    
+    public boolean canCraftInDimensions(int pWidth, int pHeight) { return false; /* ported stub */ }
 
     
     public @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider registries) {

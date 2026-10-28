@@ -1096,6 +1096,6 @@ public class GTMachines {
     }
 
     public static MachineDefinition get(String name) {
-        return GTRegistries.MACHINES.get(GTCEu.id(name));
+        return GTRegistries.MACHINES.getValue(GTCEu.id(name));
     }
 }

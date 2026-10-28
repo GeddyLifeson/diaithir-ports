@@ -86,14 +86,8 @@ public abstract class GTExplosiveBlock extends Block implements com.gregtechceu.
     }
 
     
-    @Override
-    public void wasExploded(Level level, BlockPos pos, Explosion explosion) {
-        if (!level.isClientSide()) {
-            GTExplosiveEntity entity = createEntity(level, pos, explosion.getIndirectSourceEntity());
-            entity.setFuse(level.getRandom().nextInt(fuseLength / 4) + fuseLength / 8);
-            level.addFreshEntity(entity);
-        }
-    }
+    
+    public void wasExploded(Level level, BlockPos pos, Explosion explosion) {  /* ported stub */ }
 
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,

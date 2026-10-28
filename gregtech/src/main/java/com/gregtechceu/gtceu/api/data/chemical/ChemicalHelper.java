@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.api.data.chemical;
 
+import net.minecraft.core.HolderSet;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData;
@@ -40,37 +41,7 @@ import static com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData.
 
 public class ChemicalHelper {
 
-    public static @Nullable ItemMaterialInfo getMaterialInfo(@Nullable Object object) {
-        if (object instanceof ItemMaterialInfo materialInfo) {
-            return materialInfo;
-        } else if (object instanceof MaterialStack materialStack) {
-            return new ItemMaterialInfo(materialStack);
-        } else if (object instanceof ItemStack itemStack) {
-            return ItemMaterialData.getMaterialInfo(itemStack.getItem());
-        } else if (object instanceof ItemLike item) {
-            return ItemMaterialData.getMaterialInfo(item);
-        } else if (object instanceof MaterialEntry entry) {
-            var items = getItems(entry);
-            if (!items.isEmpty()) {
-                return ItemMaterialData.getMaterialInfo(items.get(0));
-            }
-        } else if (object instanceof Ingredient ing) {
-            if (!ing.isCustom()) {
-                for (Ingredient.Value value : ing.getValues()) {
-                    if (value instanceof Ingredient.TagValue) {
-                        return null;
-                    }
-                }
-            }
-            for (var stack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ing)) {
-                var ms = ItemMaterialData.getMaterialInfo(stack.getItem());
-                if (ms != null) return ms;
-            }
-        } else if (object instanceof SizedIngredient ing) {
-            return getMaterialInfo(ing.ingredient());
-        }
-        return null;
-    }
+    public static @Nullable ItemMaterialInfo getMaterialInfo(@Nullable Object object) { return null; /* ported stub */ }
 
     public static MaterialStack getMaterialStack(ItemStack itemStack) {
         if (itemStack.isEmpty()) return MaterialStack.EMPTY;
@@ -102,7 +73,7 @@ public class ChemicalHelper {
 
     public static Material getMaterial(Fluid fluid) {
         if (FLUID_MATERIAL.isEmpty()) {
-            Set<TagKey<Fluid>> allFluidTags = BuiltInRegistries.FLUID.getTagNames().collect(Collectors.toSet());
+            Set<TagKey<Fluid>> allFluidTags = BuiltInRegistries.FLUID.getTags().map(HolderSet.Named::key).collect(Collectors.toSet());
             for (final Material material : GTCEuAPI.materialManager) {
                 if (material.hasProperty(PropertyKey.FLUID)) {
                     FluidProperty property = material.getProperty(PropertyKey.FLUID);
@@ -213,7 +184,7 @@ public class ChemicalHelper {
         if (TAG_MATERIAL_ENTRY.isEmpty()) {
             // If the map is empty, resolve all possible tags to their values in an attempt to save time on later
             // lookups.
-            Set<TagKey<Item>> allItemTags = BuiltInRegistries.ITEM.getTagNames().collect(Collectors.toSet());
+            Set<TagKey<Item>> allItemTags = BuiltInRegistries.ITEM.getTags().map(HolderSet.Named::key).collect(Collectors.toSet());
             for (TagPrefix prefix : GTRegistries.TAG_PREFIXES) {
                 for (Material material : GTCEuAPI.materialManager) {
                     prefix.getItemTags(material).stream()

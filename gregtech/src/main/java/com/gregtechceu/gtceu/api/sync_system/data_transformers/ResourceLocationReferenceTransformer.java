@@ -27,7 +27,7 @@ public class ResourceLocationReferenceTransformer<T> implements ValueTransformer
     @Override
     public @Nullable T deserializeNBT(Tag tag, ValueTransformer.TransformerContext<T> context) {
         Identifier location = Identifier
-                .tryParse(ValueTransformer.assertTagType(StringTag.class, tag, context).getAsString());
+                .tryParse(ValueTransformer.assertTagType(StringTag.class, tag, context).value());
         if (location == null) return null;
         return loadFromLocation.apply(location);
     }

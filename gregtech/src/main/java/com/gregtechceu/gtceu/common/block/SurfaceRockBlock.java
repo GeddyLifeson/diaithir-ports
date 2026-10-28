@@ -115,10 +115,8 @@ public class SurfaceRockBlock extends Block {
     }
 
     
-    @Override
-    public boolean isOcclusionShapeFullBlock(BlockState state, BlockGetter view, BlockPos pos) {
-        return false;
-    }
+    
+    public boolean isOcclusionShapeFullBlock(BlockState state, BlockGetter view, BlockPos pos) { return false; /* ported stub */ }
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {

@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.api.pattern.predicates;
 
+import com.gregtechceu.gtceu.compat.TagCompat;
 import com.lowdragmc.lowdraglib.utils.BlockInfo;
 
 import net.minecraft.core.Holder;
@@ -31,7 +32,7 @@ public class PredicateFluidTag extends SimplePredicate {
             return this;
         }
         predicate = state -> state.getBlockState().getFluidState().is(tag);
-        candidates = () -> BuiltInRegistries.FLUID.getTag(tag)
+        candidates = () -> java.util.Optional.of(TagCompat.tag(BuiltInRegistries.FLUID, tag))
                 .stream()
                 .flatMap(HolderSet.Named::stream)
                 .map(Holder::value)

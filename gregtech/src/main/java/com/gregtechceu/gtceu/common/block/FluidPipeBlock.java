@@ -131,55 +131,5 @@ public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipePr
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity,
-                             net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean flag) {
-        // dont apply damage if there is a frame box
-        var pipeNode = getPipeTile(level, pos);
-        if (pipeNode == null) {
-            GTCEu.LOGGER.error("Pipe was null");
-            return;
-        }
-        if (!pipeNode.getFrameMaterial().isNull()) {
-            BlockState frameState = GTMaterialBlocks.MATERIAL_BLOCKS.get(TagPrefix.frameGt, pipeNode.getFrameMaterial())
-                    .getDefaultState();
-            ((MaterialBlock) frameState.getBlock()).entityInside(frameState, level, pos, entity, effectApplier, flag);
-            return;
-        }
-        if (level.isClientSide()) return;
-        if (level.getBlockEntity(pos) == null) return;
-        FluidPipeBlockEntity pipe = (FluidPipeBlockEntity) level.getBlockEntity(pos);
-
-        if (pipe.getOffsetTimer() % 10 == 0) {
-            if (entity instanceof LivingEntity livingEntity) {
-                if (pipe.getFluidTanks().length > 1) {
-                    // apply temperature damage for the hottest and coldest pipe (multi fluid pipes)
-                    int maxTemperature = Integer.MIN_VALUE;
-                    int minTemperature = Integer.MAX_VALUE;
-                    for (var tank : pipe.getFluidTanks()) {
-                        FluidStack stack = tank.getFluid();
-                        if (!tank.getFluid().isEmpty()) {
-                            maxTemperature = Math.max(maxTemperature,
-                                    stack.getFluid().getFluidType().getTemperature(stack));
-                            minTemperature = Math.min(minTemperature,
-                                    stack.getFluid().getFluidType().getTemperature(stack));
-                        }
-                    }
-                    if (maxTemperature != Integer.MIN_VALUE) {
-                        EntityDamageUtil.applyTemperatureDamage(livingEntity, maxTemperature, 1.0F, 20);
-                    }
-                    if (minTemperature != Integer.MAX_VALUE) {
-                        EntityDamageUtil.applyTemperatureDamage(livingEntity, minTemperature, 1.0F, 20);
-                    }
-                } else {
-                    var tank = pipe.getFluidTanks()[0];
-                    if (!tank.getFluid().isEmpty()) {
-                        // Apply temperature damage for the pipe (single fluid pipes)
-                        FluidStack stack = tank.getFluid();
-                        EntityDamageUtil.applyTemperatureDamage(livingEntity,
-                                stack.getFluid().getFluidType().getTemperature(stack), 1.0F, 20);
-                    }
-                }
-            }
-        }
-        super.entityInside(state, level, pos, entity);
-    }
+                             net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean flag) {  /* ported stub */ }
 }

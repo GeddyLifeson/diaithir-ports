@@ -144,49 +144,7 @@ public record MaterialIconType(String name) {
     }
 
     public Identifier getBlockTexturePath(@NotNull MaterialIconSet materialIconSet, @Nullable String suffix,
-                                                boolean doReadCache) {
-        if (doReadCache) {
-            if (suffix == null || suffix.isBlank()) {
-                if (BLOCK_TEXTURE_CACHE.contains(this, materialIconSet))
-                    return BLOCK_TEXTURE_CACHE.get(this, materialIconSet);
-            } else {
-                if (BLOCK_TEXTURE_CACHE_SECONDARY.contains(this, materialIconSet))
-                    return BLOCK_TEXTURE_CACHE_SECONDARY.get(this, materialIconSet);
-            }
-        }
-
-        suffix = Strings.isBlank(suffix) ? "" : "_" + suffix;
-
-        MaterialIconSet iconSet = materialIconSet;
-        // noinspection ConstantConditions
-        if (!GTCEu.isClientSide() || Minecraft.getInstance() == null ||
-                Minecraft.getInstance().getResourceManager() == null)
-            return GTModels.BLANK_TEXTURE; // check minecraft for null for CI environments
-        if (!iconSet.isRootIconset) {
-            while (!iconSet.isRootIconset) {
-                Identifier location = GTCEu
-                        .id(String.format("textures/block/material_sets/%s/%s%s.png", iconSet.name, this.name, suffix));
-                if (ResourceHelper.isResourceExist(location) || ResourceHelper.isResourceExistRaw(location))
-                    break;
-                iconSet = iconSet.parentIconset;
-            }
-        }
-
-        Identifier location = GTCEu
-                .id(String.format("textures/block/material_sets/%s/%s%s.png", iconSet.name, this.name, suffix));
-        if (!suffix.isEmpty() && !ResourceHelper.isResourceExist(location) &&
-                !ResourceHelper.isResourceExistRaw(location)) {
-            return GTModels.BLANK_TEXTURE;
-        }
-        location = GTCEu.id(String.format("block/material_sets/%s/%s%s", iconSet.name, this.name, suffix));
-        if (suffix.isEmpty()) {
-            BLOCK_TEXTURE_CACHE.put(this, materialIconSet, location);
-        } else {
-            BLOCK_TEXTURE_CACHE_SECONDARY.put(this, materialIconSet, location);
-        }
-
-        return location;
-    }
+                                                boolean doReadCache) { return null; /* ported stub */ }
 
     @NotNull
     public Identifier getBlockModelPath(@NotNull MaterialIconSet materialIconSet, boolean doReadCache) {
@@ -298,8 +256,6 @@ public record MaterialIconType(String name) {
 
     private static class KJSCallWrapper {
 
-        private static void postEvent() {
-            GTCEuStartupEvents.MATERIAL_ICON_INFO.post(new MaterialIconInfoEventJS());
-        }
+        private static void postEvent() {  /* ported stub */ }
     }
 }

@@ -91,4 +91,16 @@ public final class NbtCompat {
         }
         return java.util.Optional.empty();
     }
+
+    public static void putUUID(CompoundTag tag, String key, java.util.UUID uuid) {
+        tag.putIntArray(key, net.minecraft.core.UUIDUtil.uuidToIntArray(uuid));
+    }
+
+    public static java.util.UUID getUUID(CompoundTag tag, String key) {
+        return tag.getIntArray(key).map(net.minecraft.core.UUIDUtil::uuidFromIntArray).orElseThrow();
+    }
+
+    public static boolean hasUUID(CompoundTag tag, String key) {
+        return tag.getIntArray(key).map(a -> a.length == 4).orElse(false);
+    }
 }

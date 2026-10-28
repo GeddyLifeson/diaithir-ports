@@ -62,10 +62,8 @@ public class MultiblockWorldSavedData extends SavedData {
 
     @NotNull
     
-    @Override
-    public CompoundTag save(@NotNull CompoundTag compound, HolderLookup.Provider provider) {
-        return compound;
-    }
+    
+    public CompoundTag save(@NotNull CompoundTag compound, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     // ********************************* thread for searching ********************************* //
     private final CopyOnWriteArrayList<MultiblockControllerMachine> controllers = new CopyOnWriteArrayList<>();

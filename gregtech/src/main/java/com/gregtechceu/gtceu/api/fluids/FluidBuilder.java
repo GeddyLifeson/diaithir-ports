@@ -289,16 +289,12 @@ public class FluidBuilder {
         final String langKey = this.translation != null ? this.translation : key.getTranslationKeyFor(material);
         // noinspection DataFlowIssue
         var builder = registrate.fluid(this.name, this.still, this.flowing,
-                (p, $1, $2) -> makeFluidType(registrate, p, material, key, langKey),
+                p -> makeFluidType(registrate, p, material, key, langKey),
                 (p) -> new GTFluid.Flowing(this.state, this.burnTime, p))
                 .source((p) -> new GTFluid.Source(this.state, this.burnTime, p))
                 .setData(ProviderType.LANG, NonNullBiConsumer.noop());
         if (this.hasFluidBlock) {
             builder.block()
-                    .color(() -> () -> (state, level, pos, index) -> {
-                        return IClientFluidTypeExtensions.of(state.getFluidState())
-                                .getTintColor(state.getFluidState(), level, pos);
-                    })
                     .register();
         } else {
             // noinspection DataFlowIssue
@@ -309,7 +305,6 @@ public class FluidBuilder {
                     .properties(p -> p.craftRemainder(Items.BUCKET).stacksTo(1))
                     .setData(ProviderType.LANG, NonNullBiConsumer.noop())
                     .setData(ProviderType.ITEM_MODEL, NonNullBiConsumer.noop())
-                    .color(() -> () -> GTBucketItem::color)
                     .register();
         } else {
             // noinspection DataFlowIssue

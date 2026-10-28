@@ -14,6 +14,10 @@ public final class PermCompat {
         return source.permissions().hasPermission(new Permission.HasCommandLevel(PermissionLevel.byId(level)));
     }
 
+    public static boolean hasPermission(CommandSourceStack source, net.minecraft.server.permissions.PermissionCheck check) {
+        return check.check(source.permissions());
+    }
+
     public static boolean hasPermissions(Player player, int level) {
         return player.permissions().hasPermission(new Permission.HasCommandLevel(PermissionLevel.byId(level)));
     }

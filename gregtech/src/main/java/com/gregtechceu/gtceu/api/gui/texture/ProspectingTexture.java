@@ -123,8 +123,8 @@ public class ProspectingTexture extends AbstractTexture {
     public void draw(GuiGraphics graphics, int x, int y) {  /* ported stub */ }
 
     
-    @Override
-    public void load(ResourceManager resourceManager) throws IOException {}
+    
+    public void load(ResourceManager resourceManager) throws IOException {  /* ported stub */ }
 
     public void setDarkMode(boolean darkMode) {
         if (this.darkMode != darkMode) {

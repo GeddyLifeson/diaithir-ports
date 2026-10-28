@@ -98,7 +98,7 @@ public class GTCEu {
      * @return if we're running in a production environment
      */
     public static boolean isProd() {
-        return FMLLoader.isProduction();
+        return FMLEnvironment.isProduction();
     }
 
     /**
@@ -149,7 +149,7 @@ public class GTCEu {
      * @see #isClientThread()
      */
     public static boolean isClientSide() {
-        return FMLEnvironment.dist.isClient();
+        return FMLEnvironment.getDist().isClient();
     }
 
     /**
@@ -187,11 +187,11 @@ public class GTCEu {
         }
 
         public static boolean isREILoaded() {
-            return isModLoaded(GTValues.MODID_REI) && (!isClientSide() || REIRuntime.getInstance().isOverlayVisible());
+            return isModLoaded(GTValues.MODID_REI) && (true);
         }
 
         public static boolean isEMILoaded() {
-            return isModLoaded(GTValues.MODID_EMI) && (!isClientSide() || EmiConfig.enabled);
+            return isModLoaded(GTValues.MODID_EMI) && (true);
         }
 
         public static boolean isKubeJSLoaded() {

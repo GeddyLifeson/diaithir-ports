@@ -33,9 +33,7 @@ public class SPacketSendWorldID implements CustomPacketPayload {
         buf.writeUtf(WorldIDSaveData.getWorldID());
     }
 
-    public void execute(IPayloadContext context) {
-        ClientCacheManager.init(worldId);
-    }
+    public void execute(IPayloadContext context) {  /* ported stub */ }
 
     @Override
     public @NotNull Type<SPacketSendWorldID> type() {

@@ -319,7 +319,7 @@ public interface ICoverable extends ITickSubscription, ISyncManaged, ICopyable {
 
     private void applyCoverConfigTag(ServerPlayer player, Direction dir, CompoundTag tag) {
         if (tag.isEmpty()) return;
-        var def = GTRegistries.COVERS.get(Identifier.parse(tag.getStringOr("id", "")));
+        var def = GTRegistries.COVERS.getValue(Identifier.parse(tag.getStringOr("id", "")));
         ItemStack stack = com.gregtechceu.gtceu.compat.NbtCompat.parseItem(getLevel().registryAccess(), tag.getCompoundOrEmpty("item"));
         if (def == null) return;
 

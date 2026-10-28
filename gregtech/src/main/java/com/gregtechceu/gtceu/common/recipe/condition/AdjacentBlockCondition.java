@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.common.recipe.condition;
 
+import com.gregtechceu.gtceu.compat.TagCompat;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.RecipeCondition;
@@ -74,7 +75,7 @@ public class AdjacentBlockCondition extends RecipeCondition<AdjacentBlockConditi
 
     public static AdjacentBlockCondition fromTags(Collection<TagKey<Block>> tags) {
         return new AdjacentBlockCondition(tags.stream()
-                .<HolderSet<Block>>map(BuiltInRegistries.BLOCK::getOrCreateTag)
+                .<HolderSet<Block>>map(k -> TagCompat.tag(BuiltInRegistries.BLOCK, k))
                 .toList());
     }
 

@@ -145,17 +145,9 @@ public class LampBlock extends Block {
     }
 
     
-    @Override
+    
     public void appendHoverText(ItemStack stack, Item.TooltipContext pContext, List<Component> tooltip,
-                                TooltipFlag flag) {
-        LampBlockItem.LampData data = stack.getOrDefault(GTDataComponents.LAMP_DATA, LampBlockItem.LampData.EMPTY);
-        if (data.inverted())
-            tooltip.add(Component.translatable("block.gtceu.lamp.tooltip.inverted"));
-        if (!data.bloom())
-            tooltip.add(Component.translatable("block.gtceu.lamp.tooltip.no_bloom"));
-        if (!data.lit())
-            tooltip.add(Component.translatable("block.gtceu.lamp.tooltip.no_light"));
-    }
+                                TooltipFlag flag) {  /* ported stub */ }
 
     @Override
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {

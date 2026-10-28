@@ -59,7 +59,7 @@ public class MedicalConditionParser {
     private void readMedicalCondition() throws CommandSyntaxException {
         int i = this.reader.getCursor();
 
-        while (reader.canRead() && Identifier.isAllowedInResourceLocation(reader.peek())) {
+        while (reader.canRead() && Identifier.validPathChar(reader.peek())) {
             reader.skip();
         }
         String name = reader.getString().substring(i, reader.getCursor());

@@ -84,14 +84,14 @@ public class GTRecipeSerializer {
     }
 
     public static Tuple<RecipeCapability<?>, List<Content>> entryReader(RegistryFriendlyByteBuf buf) {
-        RecipeCapability<?> capability = GTRegistries.RECIPE_CAPABILITIES.get(buf.readIdentifier());
+        RecipeCapability<?> capability = GTRegistries.RECIPE_CAPABILITIES.getValue(buf.readIdentifier());
         List<Content> contents = readCollection(buf, capability.serializer::fromNetworkContent);
         return new Tuple<>(capability, contents);
     }
 
     public static Tuple<RecipeCapability<?>, ChanceLogic> changeLogicEntryReader(RegistryFriendlyByteBuf buf) {
-        RecipeCapability<?> capability = GTRegistries.RECIPE_CAPABILITIES.get(buf.readIdentifier());
-        ChanceLogic logic = GTRegistries.CHANCE_LOGICS.get(buf.readIdentifier());
+        RecipeCapability<?> capability = GTRegistries.RECIPE_CAPABILITIES.getValue(buf.readIdentifier());
+        ChanceLogic logic = GTRegistries.CHANCE_LOGICS.getValue(buf.readIdentifier());
         return new Tuple<>(capability, logic);
     }
 
@@ -149,9 +149,6 @@ public class GTRecipeSerializer {
                 readCollection(buf, GTRecipeSerializer::changeLogicEntryReader));
 
         List<?> ingredientActions = new ArrayList<>();
-        if (GTCEu.Mods.isKubeJSLoaded()) {
-            ingredientActions = KJSCallWrapper.getIngredientActions(buf);
-        }
         CompoundTag data = buf.readNbt();
         if (data == null) {
             data = new CompoundTag();
@@ -160,7 +157,7 @@ public class GTRecipeSerializer {
         Identifier categoryLoc = buf.readIdentifier();
 
         GTRecipeType type = (GTRecipeType) BuiltInRegistries.RECIPE_TYPE.getValue(recipeType);
-        GTRecipeCategory category = GTRegistries.RECIPE_CATEGORIES.get(categoryLoc);
+        GTRecipeCategory category = GTRegistries.RECIPE_CATEGORIES.getValue(categoryLoc);
 
         GTRecipe recipe = new GTRecipe(type, id,
                 inputs, outputs, tickInputs, tickOutputs,
@@ -200,9 +197,6 @@ public class GTRecipeSerializer {
         writeCollection(recipe.tickOutputChanceLogics.entrySet(), buf,
                 GTRecipeSerializer::changeLogicEntryWriter);
 
-        if (GTCEu.Mods.isKubeJSLoaded()) {
-            KJSCallWrapper.writeIngredientActions(recipe.ingredientActions, buf);
-        }
         buf.writeNbt(recipe.data);
         buf.writeInt(recipe.groupColor);
         buf.writeIdentifier(recipe.recipeCategory.registryKey);
@@ -239,7 +233,7 @@ public class GTRecipeSerializer {
 
     private static MapCodec<GTRecipe> makeCodec(boolean isKubeLoaded) {
         // spotless:off
-        if (!isKubeLoaded) {
+        {
             // I'll admit, it's not great.
             return RecordCodecBuilder.mapCodec(instance -> instance.group(
                             GT_RECIPE_TYPE_CODEC.fieldOf("type").forGetter(val -> val.recipeType),
@@ -257,37 +251,8 @@ public class GTRecipeSerializer {
                             GTRegistries.RECIPE_CATEGORIES.byNameCodec().optionalFieldOf("category", GTRecipeCategory.DEFAULT).forGetter(val -> val.recipeCategory),
                             Codec.INT.optionalFieldOf("groupColor", -1).forGetter(val -> val.groupColor))
                     .apply(instance, GTRecipe::new));
-        } else {
-            return RecordCodecBuilder.mapCodec(instance -> instance.group(
-                    GT_RECIPE_TYPE_CODEC.fieldOf("type").forGetter(val -> val.recipeType),
-                    RecipeCapability.CODEC.optionalFieldOf("inputs", Map.of()).forGetter(val -> val.inputs),
-                    RecipeCapability.CODEC.optionalFieldOf("outputs", Map.of()).forGetter(val -> val.outputs),
-                    RecipeCapability.CODEC.optionalFieldOf("tickInputs", Map.of()).forGetter(val -> val.tickInputs),
-                    RecipeCapability.CODEC.optionalFieldOf("tickOutputs", Map.of()).forGetter(val -> val.tickOutputs),
-                    CHANCE_LOGIC_MAP_CODEC.optionalFieldOf("inputChanceLogics", Map.of()).forGetter(val -> val.inputChanceLogics),
-                    CHANCE_LOGIC_MAP_CODEC.optionalFieldOf("outputChanceLogics", Map.of()).forGetter(val -> val.outputChanceLogics),
-                    CHANCE_LOGIC_MAP_CODEC.optionalFieldOf("tickInputChanceLogics", Map.of()).forGetter(val -> val.tickInputChanceLogics),
-                    CHANCE_LOGIC_MAP_CODEC.optionalFieldOf("tickOutputChanceLogics", Map.of()).forGetter(val -> val.tickOutputChanceLogics),
-                    RecipeCondition.CODEC.listOf().optionalFieldOf("recipeConditions", List.of()).forGetter(val -> val.conditions),
-                    IngredientActionHolder.CODEC.listOf().optionalFieldOf("kubejs:actions", List.of()).forGetter(val -> (List<IngredientActionHolder>) val.ingredientActions),
-                    CompoundTag.CODEC.optionalFieldOf("data", new CompoundTag()).forGetter(val -> val.data),
-                    quietExceptionCodec(ExtraCodecs.NON_NEGATIVE_INT, "duration", isKubeLoaded).forGetter(val -> val.duration),
-                    GTRegistries.RECIPE_CATEGORIES.byNameCodec().optionalFieldOf("category", GTRecipeCategory.DEFAULT).forGetter(val -> val.recipeCategory),
-                    Codec.INT.optionalFieldOf("groupColor", -1).forGetter(val -> val.groupColor))
-            .apply(instance, GTRecipe::new));
         }
+        // PORT: KubeJS ingredient actions are not supported.
         // spotless:on
-    }
-
-    public static class KJSCallWrapper {/* ported: removed */
-
-        public static List<?> getIngredientActions(RegistryFriendlyByteBuf buf) {
-            return STREAM_CODEC.decode(buf);
-        }
-
-        public static void writeIngredientActions(List<?> ingredientActions, RegistryFriendlyByteBuf buf) {
-            // noinspection unchecked must be List<?> to be able to load without KJS.
-            STREAM_CODEC.encode(buf, (List<IngredientActionHolder>) ingredientActions);
-        }
     }
 }

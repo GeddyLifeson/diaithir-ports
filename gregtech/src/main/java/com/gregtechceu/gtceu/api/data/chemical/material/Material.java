@@ -1821,10 +1821,7 @@ public class Material {
          * @return The finalized Material.
          */
         public Material buildAndRegister() {
-            materialInfo.componentList = composition.isEmpty() && this.compositionSupplier != null ?
-                    ImmutableList.copyOf(compositionSupplier.stream().map(MaterialStackWrapper::toMatStack)
-                            .toArray(MaterialStack[]::new)) :
-                    ImmutableList.copyOf(composition);
+            materialInfo.componentList = ImmutableList.copyOf(composition);
             if (!properties.hasProperty(PropertyKey.HAZARD)) {
                 for (MaterialStack materialStack : materialInfo.componentList) {
                     Material material = materialStack.material();

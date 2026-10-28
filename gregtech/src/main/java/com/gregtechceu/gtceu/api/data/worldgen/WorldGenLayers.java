@@ -69,8 +69,6 @@ public enum WorldGenLayers implements IWorldGenLayer, StringRepresentable {
 
     private static final class KJSCallWrapper {
 
-        private static void postEvent() {
-            GTCEuStartupEvents.WORLD_GEN_LAYERS.post(new WorldGenLayerEventJS());
-        }
+        private static void postEvent() {  /* ported stub */ }
     }
 }

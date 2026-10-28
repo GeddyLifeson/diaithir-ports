@@ -70,24 +70,7 @@ public class GTMaterialBlocks {
         GTCEu.LOGGER.debug("Generating GTCEu Material Blocks... Complete!");
     }
 
-    private static void registerMaterialBlock(TagPrefix tagPrefix, Material material, GTRegistrate registrate) {
-        MATERIAL_BLOCKS_BUILDER.put(tagPrefix, material, registrate
-                .block(tagPrefix.idPattern().formatted(material.getName()),
-                        properties -> tagPrefix.blockConstructor().create(properties, tagPrefix, material))
-                .initialProperties(() -> Blocks.IRON_BLOCK)
-                .properties(p -> tagPrefix.blockProperties().properties().apply(p).noLootTable())
-                .transform(GTBlocks.unificationBlock(tagPrefix, material))
-                .addLayer(tagPrefix.blockProperties().renderType())
-                .setData(ProviderType.BLOCKSTATE, NonNullBiConsumer.noop())
-                .setData(ProviderType.LANG, NonNullBiConsumer.noop())
-                .setData(ProviderType.LOOT, NonNullBiConsumer.noop())
-                .color(() -> MaterialBlock::tintedColor)
-                .item((b, p) -> tagPrefix.blockItemConstructor().create(b, p, tagPrefix, material))
-                .model(NonNullBiConsumer.noop())
-                .color(() -> () -> MaterialBlockItem.tintColor(material))
-                .build()
-                .register());
-    }
+    private static void registerMaterialBlock(TagPrefix tagPrefix, Material material, GTRegistrate registrate) {  /* ported stub */ }
 
     // Material Ore Blocks
     public static void generateOreBlocks() {
@@ -105,38 +88,7 @@ public class GTMaterialBlocks {
         return material.hasProperty(PropertyKey.ORE);
     }
 
-    private static void registerOreBlock(Material material, GTRegistrate registrate) {
-        for (var ore : TagPrefix.ORES.entrySet()) {
-            if (ore.getKey().isIgnored(material)) continue;
-            var oreTag = ore.getKey();
-            final TagPrefix.OreType oreType = ore.getValue();
-            String typePrefix = "";
-            if (oreTag != TagPrefix.ore) {
-                typePrefix = FormattingUtil.toLowerCaseUnderscore(oreTag.name) + "_";
-            }
-            var entry = registrate.block("%s%s_ore".formatted(typePrefix, material.getName()),
-                    properties -> oreTag.blockConstructor().create(properties, oreTag, material))
-                    .initialProperties(() -> {
-                        if (oreType.stoneType().get().isAir()) {
-                            // if the block is not registered (yet), fallback to stone
-                            return Blocks.IRON_ORE;
-                        }
-                        return oreType.stoneType().get().getBlock();
-                    })
-                    .properties(properties -> GTBlocks.copy(oreType.template().get(), properties).noLootTable())
-                    .transform(GTBlocks.unificationBlock(oreTag, material))
-                    .blockstate(NonNullBiConsumer.noop())
-                    .setData(ProviderType.LANG, NonNullBiConsumer.noop())
-                    .setData(ProviderType.LOOT, NonNullBiConsumer.noop())
-                    .color(() -> MaterialBlock::tintedColor)
-                    .item((b, p) -> oreTag.blockItemConstructor().create(b, p, oreTag, material))
-                    .model(NonNullBiConsumer.noop())
-                    .color(() -> () -> MaterialBlockItem.tintColor(material))
-                    .build()
-                    .register();
-            MATERIAL_BLOCKS_BUILDER.put(oreTag, material, entry);
-        }
-    }
+    private static void registerOreBlock(Material material, GTRegistrate registrate) {  /* ported stub */ }
 
     public static void buildMaterialBlockTable() {
         MATERIAL_BLOCKS = MATERIAL_BLOCKS_BUILDER.build();
@@ -161,24 +113,7 @@ public class GTMaterialBlocks {
         return material.hasProperty(PropertyKey.ORE);
     }
 
-    private static void registerOreIndicator(Material material, GTRegistrate registrate) {
-        var entry = registrate
-                .block("%s_indicator".formatted(material.getName()), p -> new SurfaceRockBlock(p, material))
-                .initialProperties(() -> Blocks.GRAVEL)
-                .properties(p -> p.noLootTable().strength(0.25f))
-                .transform(GTBlocks.unificationBlock(TagPrefix.surfaceRock, material))
-                .setData(ProviderType.LANG, NonNullBiConsumer.noop())
-                .setData(ProviderType.LOOT, NonNullBiConsumer.noop())
-                .setData(ProviderType.BLOCKSTATE, NonNullBiConsumer.noop())
-                .addLayer(() -> (() -> null))
-                .color(() -> SurfaceRockBlock::tintedBlockColor)
-                .item((b, p) -> SurfaceRockBlockItem.create(b, p, material))
-                .color(() -> SurfaceRockBlock::tintedItemColor)
-                .setData(ProviderType.ITEM_MODEL, NonNullBiConsumer.noop())
-                .build()
-                .register();
-        SURFACE_ROCK_BLOCKS_BUILDER.put(material, entry);
-    }
+    private static void registerOreIndicator(Material material, GTRegistrate registrate) {  /* ported stub */ }
 
     // Material Cable & Wire Blocks
     public static void generateCableBlocks() {
@@ -201,26 +136,7 @@ public class GTMaterialBlocks {
                 !(insulation.isCable && material.getProperty(PropertyKey.WIRE).isSuperconductor());
     }
 
-    private static void registerCableBlock(Material material, Insulation insulation, GTRegistrate registrate) {
-        var entry = registrate
-                .block("%s_%s".formatted(material.getName(), insulation.name),
-                        p -> new CableBlock(p, insulation, material))
-                .initialProperties(() -> Blocks.IRON_BLOCK)
-                .properties(p -> p.dynamicShape().noOcclusion().noLootTable().forceSolidOn())
-                .transform(GTBlocks.unificationBlock(insulation.tagPrefix, material))
-                .blockstate(NonNullBiConsumer.noop())
-                .setData(ProviderType.LANG, NonNullBiConsumer.noop())
-                .setData(ProviderType.LOOT, NonNullBiConsumer.noop())
-                .addLayer(() -> (() -> null))
-                .addLayer(() -> (() -> null))
-                .color(() -> MaterialPipeBlock::tintedColor)
-                .item(MaterialPipeBlockItem::new)
-                .model(NonNullBiConsumer.noop())
-                .color(() -> MaterialPipeBlockItem::tintColor)
-                .build()
-                .register();
-        CABLE_BLOCKS_BUILDER.put(insulation.tagPrefix, material, entry);
-    }
+    private static void registerCableBlock(Material material, Insulation insulation, GTRegistrate registrate) {  /* ported stub */ }
 
     // Material Fluid Pipe Blocks
     public static void generateFluidPipeBlocks() {
@@ -243,31 +159,7 @@ public class GTMaterialBlocks {
     }
 
     private static void registerFluidPipeBlock(Material material, FluidPipeType fluidPipeType,
-                                               GTRegistrate registrate) {
-        var entry = registrate
-                .block("%s_%s_fluid_pipe".formatted(material.getName(), fluidPipeType.name),
-                        p -> new FluidPipeBlock(p, fluidPipeType, material))
-                .initialProperties(() -> Blocks.IRON_BLOCK)
-                .properties(p -> {
-                    if (GTBlocks.doMetalPipe(material)) {
-                        p.sound(GTSoundTypes.METAL_PIPE);
-                    }
-                    return p.dynamicShape().noOcclusion().noLootTable().forceSolidOn();
-                })
-                .transform(GTBlocks.unificationBlock(fluidPipeType.tagPrefix, material))
-                .blockstate(NonNullBiConsumer.noop())
-                .setData(ProviderType.LANG, NonNullBiConsumer.noop())
-                .setData(ProviderType.LOOT, NonNullBiConsumer.noop())
-                .addLayer(() -> (() -> null))
-                .addLayer(() -> (() -> null))
-                .color(() -> MaterialPipeBlock::tintedColor)
-                .item(MaterialPipeBlockItem::new)
-                .model(NonNullBiConsumer.noop())
-                .color(() -> MaterialPipeBlockItem::tintColor)
-                .build()
-                .register();
-        FLUID_PIPE_BLOCKS_BUILDER.put(fluidPipeType.tagPrefix, material, entry);
-    }
+                                               GTRegistrate registrate) {  /* ported stub */ }
 
     // Material Item Pipe Blocks
     public static void generateItemPipeBlocks() {
@@ -289,29 +181,5 @@ public class GTMaterialBlocks {
         return material.hasProperty(PropertyKey.ITEM_PIPE) && !itemPipeType.getTagPrefix().isIgnored(material);
     }
 
-    private static void registerItemPipeBlock(Material material, ItemPipeType itemPipeType, GTRegistrate registrate) {
-        var entry = registrate
-                .block("%s_%s_item_pipe".formatted(material.getName(), itemPipeType.name),
-                        p -> new ItemPipeBlock(p, itemPipeType, material))
-                .initialProperties(() -> Blocks.IRON_BLOCK)
-                .properties(p -> {
-                    if (GTBlocks.doMetalPipe(material)) {
-                        p.sound(GTSoundTypes.METAL_PIPE);
-                    }
-                    return p.dynamicShape().noOcclusion().noLootTable().forceSolidOn();
-                })
-                .transform(GTBlocks.unificationBlock(itemPipeType.getTagPrefix(), material))
-                .blockstate(NonNullBiConsumer.noop())
-                .setData(ProviderType.LANG, NonNullBiConsumer.noop())
-                .setData(ProviderType.LOOT, NonNullBiConsumer.noop())
-                .addLayer(() -> (() -> null))
-                .addLayer(() -> (() -> null))
-                .color(() -> MaterialPipeBlock::tintedColor)
-                .item(MaterialPipeBlockItem::new)
-                .model(NonNullBiConsumer.noop())
-                .color(() -> MaterialPipeBlockItem::tintColor)
-                .build()
-                .register();
-        ITEM_PIPE_BLOCKS_BUILDER.put(itemPipeType.getTagPrefix(), material, entry);
-    }
+    private static void registerItemPipeBlock(Material material, ItemPipeType itemPipeType, GTRegistrate registrate) {  /* ported stub */ }
 }

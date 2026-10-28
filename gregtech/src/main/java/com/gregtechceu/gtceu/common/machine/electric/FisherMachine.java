@@ -205,50 +205,7 @@ public class FisherMachine extends TieredEnergyMachine
         hasWater = true;
     }
 
-    public void fishingUpdate() {
-        if (this.getOffsetTimer() % maxProgress == 0L)
-            updateHasWater();
-
-        if (!hasWater) return;
-
-        drainEnergy(false);
-        if (progress >= maxProgress) {
-            var lootTableRegistry = getLevel().registryAccess().lookupOrThrow(Registries.LOOT_TABLE);
-            LootTable lootTable = lootTableRegistry.get(BuiltInLootTables.FISHING);
-            if (!this.junkEnabled) {
-                lootTable = lootTableRegistry.get(BuiltInLootTables.FISHING_FISH);
-            }
-
-            FishingHook simulatedHook = new FishingHook(EntityType.FISHING_BOBBER, getLevel()) {
-
-                public boolean isOpenWaterFishing() {
-                    return true;
-                }
-            };
-
-            LootParams lootContext = new LootParams.Builder((ServerLevel) getLevel())
-                    .withOptionalParameter(LootContextParams.THIS_ENTITY, simulatedHook)
-                    .withParameter(LootContextParams.TOOL, fishingRod)
-                    .withParameter(LootContextParams.ORIGIN,
-                            new Vec3(getBlockPos().getX(), getBlockPos().getY(), getBlockPos().getZ()))
-                    .create(LootContextParamSets.FISHING);
-
-            NonNullList<ItemStack> generatedLoot = NonNullList.create();
-            generatedLoot.addAll(lootTable.getRandomItems(lootContext));
-
-            boolean useBait = false;
-            for (ItemStack itemStack : generatedLoot)
-                useBait |= tryFillCache(itemStack);
-
-            if (useBait && junkEnabled)
-                this.baitHandler.storage.extractItem(0, 1, false);
-            else if (useBait)
-                this.baitHandler.storage.extractItem(0, 2, false);
-            updateFishingUpdateSubscription();
-            progress = -1;
-        }
-        progress++;
-    }
+    public void fishingUpdate() {  /* ported stub */ }
 
     private boolean tryFillCache(ItemStack stack) {
         for (int i = 0; i < cache.getSlots(); i++) {

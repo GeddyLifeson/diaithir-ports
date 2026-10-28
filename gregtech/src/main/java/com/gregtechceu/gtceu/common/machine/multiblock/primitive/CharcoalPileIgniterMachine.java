@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.primitive;
 
+import com.gregtechceu.gtceu.compat.TagCompat;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.IWorkable;
@@ -200,7 +201,7 @@ public class CharcoalPileIgniterMachine extends WorkableMultiblockMachine implem
             }
             return false;
             // copied from PredicateBlockTag to display the preview logs properly
-        }, () -> BuiltInRegistries.BLOCK.getTag(BlockTags.LOGS_THAT_BURN)
+        }, () -> java.util.Optional.of(TagCompat.tag(BuiltInRegistries.BLOCK, BlockTags.LOGS_THAT_BURN))
                 .stream()
                 .flatMap(HolderSet.Named::stream)
                 .map(Holder::value)
@@ -310,48 +311,7 @@ public class CharcoalPileIgniterMachine extends WorkableMultiblockMachine implem
     }
 
     @Override
-    public InteractionResult onUse(ExtendedUseOnContext context) {
-        var stack = context.getItemInHand();
-        var player = context.getPlayer();
-        var hand = context.getHand();
-
-        if (!isFormed() || hasAir) {
-            return super.onUseWithItem(context);
-        }
-        if (!stack.canPerformAction(ItemAbilities.FIRESTARTER_LIGHT)) {
-            return InteractionResult.PASS;
-        }
-
-        if (getLevel().isClientSide() && !isActive()) {
-            return InteractionResult.SUCCESS;
-        } else if (!isActive()) {
-            boolean shouldActivate = false;
-            if (stack.getItem() instanceof ComponentItem compItem) {
-                for (var component : compItem.getComponents()) {
-                    if (component instanceof LighterBehavior lighter && lighter.consumeFuel(player, stack)) {
-                        shouldActivate = true;
-                        break;
-                    }
-                }
-            } else if (stack.isDamageableItem()) {
-                stack.hurtAndBreak(1, player, hand).asEquipmentSlot();
-                shouldActivate = true;
-            } else {
-                stack.shrink(1);
-                shouldActivate = true;
-            }
-
-            if (shouldActivate) {
-                getRecipeLogic().setStatus(RecipeLogic.Status.WORKING);
-
-                getLevel().playSound(null, getBlockPos(),
-                        stack.is(Items.FIRE_CHARGE) ? SoundEvents.FIRECHARGE_USE : SoundEvents.FLINTANDSTEEL_USE,
-                        SoundSource.BLOCKS, 1.0f, 1.0f);
-                return InteractionResult.CONSUME;
-            }
-        }
-        return super.onUse(context);
-    }
+    public InteractionResult onUse(ExtendedUseOnContext context) { return null; /* ported stub */ }
 
     public static class CharcoalRecipeLogic extends RecipeLogic {
 

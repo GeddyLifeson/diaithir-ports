@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.common.recipe.condition;
 
+import com.gregtechceu.gtceu.compat.TagCompat;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.RecipeCondition;
@@ -77,7 +78,7 @@ public class AdjacentFluidCondition extends RecipeCondition<AdjacentFluidConditi
 
     public static AdjacentFluidCondition fromTags(Collection<TagKey<Fluid>> tags) {
         return new AdjacentFluidCondition(tags.stream()
-                .<HolderSet<Fluid>>map(BuiltInRegistries.FLUID::getOrCreateTag)
+                .<HolderSet<Fluid>>map(k -> TagCompat.tag(BuiltInRegistries.FLUID, k))
                 .toList());
     }
 

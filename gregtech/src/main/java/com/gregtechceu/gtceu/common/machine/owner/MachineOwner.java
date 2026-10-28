@@ -40,18 +40,7 @@ public abstract sealed class MachineOwner permits PlayerOwner, FTBOwner {
 
     public abstract Component getTypeDisplayName();
 
-    public static void init() {
-        var event = new RegisterOwnerTypeEvent();
-        if (GTCEu.Mods.isFTBTeamsLoaded()) {
-            event.register(0, FTBOwner::new);
-        } else if (GTCEu.Mods.isArgonautsLoaded()) {
-            event.register(0, ArgonautsOwner::new);
-        } else {
-            event.register(0, PlayerOwner::new);
-        }
-        ModLoader.postEventWrapContainerInModOrder(event);
-        machineOwnerGenerator = event.ownershipProvider;
-    }
+    public static void init() {  /* ported stub */ }
 
     public void displayInfo(List<Component> compList) {
         compList.add(Component.translatable("behavior.portable_scanner.machine_ownership", getTypeDisplayName()));

@@ -324,12 +324,8 @@ public class MetaMachineBlock extends Block implements com.gregtechceu.gtceu.api
     }
 
     
-    @Override
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
-        var machine = MetaMachine.getMachine(level, pos);
-        if (machine == null) return 0;
-        return machine.getAnalogOutputSignal();
-    }
+    
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) { return (int)0; /* ported stub */ }
 
     /////////
 

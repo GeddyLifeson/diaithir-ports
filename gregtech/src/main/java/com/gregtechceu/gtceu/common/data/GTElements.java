@@ -151,6 +151,6 @@ public class GTElements {
     public static void init() {}
 
     public static Element get(String name) {
-        return GTRegistries.ELEMENTS.get(GTCEu.id(name));
+        return GTRegistries.ELEMENTS.getValue(GTCEu.id(name));
     }
 }

@@ -216,41 +216,7 @@ public abstract class PipeBlockEntity<PipeType extends Enum<PipeType> & IPipeTyp
     }
 
     @Override
-    public void setConnection(Direction side, boolean connected, boolean fromNeighbor) {
-        // fix desync between two connections.
-        // Can happen if a pipe side is blocked, and a new pipe is placed next to it.
-        if (getLevel() == null) {
-            return;
-        }
-        if (!getLevel().isClientSide()) {
-            if (isConnected(side) == connected) {
-                return;
-            }
-            BlockEntity tile = getNeighbor(side);
-            // block connections if Pipe Types do not match
-            if (connected &&
-                    tile instanceof IPipeNode<?, ?> pipeTile &&
-                    pipeTile.getPipeType().getClass() != this.getPipeType().getClass()) {
-                return;
-            }
-
-            if (!connected) {
-                var cover = getCoverContainer().getCoverAtSide(side);
-                if (cover != null && cover.canPipePassThrough()) return;
-            }
-
-            connections = withSideConnection(connections, side, connected);
-            syncDataHolder.markClientSyncFieldDirty("connections");
-            updateNetworkConnection(side, connected);
-            // notify neighbor of change so Auto Output updates its ticking status
-            getLevel().neighborChanged(getBlockPos().relative(side), getPipeBlock(), getBlockPos());
-            setChanged();
-
-            if (!fromNeighbor && tile instanceof IPipeNode<?, ?> pipeTile) {
-                syncPipeConnections(side, pipeTile);
-            }
-        }
-    }
+    public void setConnection(Direction side, boolean connected, boolean fromNeighbor) {  /* ported stub */ }
 
     private void syncPipeConnections(Direction side, IPipeNode<?, ?> pipe) {
         Direction oppositeSide = side.getOpposite();
