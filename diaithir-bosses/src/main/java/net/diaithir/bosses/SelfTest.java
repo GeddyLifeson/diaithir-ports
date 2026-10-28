@@ -285,12 +285,69 @@ public final class SelfTest {
         check(z.getMaxHealth() > base * 1.5F, "hulking raises health (" + base + " -> " + z.getMaxHealth() + ")");
         check(z.getAbsorptionAmount() > 0, "shielded gives absorption");
         z.discard();
+        stacking(level, c0, r);
+        stackingLive(level, c0, r);
         int n = 0;
         for (int i = 0; i < 2000; i++) if (Elites.roll(make(level, EntityType.ZOMBIE, c0), 7, r)) n++;
         check(n > 100 && n < 700, "elite roll rate at Age VII is about the table's (" + n + "/2000)");
         n = 0;
         for (int i = 0; i < 2000; i++) if (Elites.roll(make(level, EntityType.ZOMBIE, c0), 1, r)) n++;
         check(n < 200, "elite rolls are rarer at Age I (" + n + "/2000)");
+    }
+
+    /** Foreign health changes (Dwarfs and Giants size, Remnants level) must add to the Age bonus, not multiply with it, and stay under the cap. */
+    private static void stacking(ServerLevel level, BlockPos c0, RandomSource r) {
+        Ages.forced = 7;
+        double want = Data.elites().extra_hp_per_age * 6, cap = Data.elites().max_combined_health_multiplier;
+        // {dwarfs-style TOTAL amount, remnants-style BASE amount}
+        double[][] cases = {{0.5, 0}, {-0.4, 0}, {1.0, 0}, {0, 1.0}, {0.5, 1.0}, {0.3, 0.2}, {2.0, 2.0}};
+        for (double[] c : cases) {
+            Mob m = make(level, EntityType.ZOMBIE, c0);
+            var mh = m.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH);
+            double base = mh.getBaseValue();
+            mh.addPermanentModifier(new net.minecraft.world.entity.ai.attributes.AttributeModifier(Identifier.parse("dwarfsandgiants:scale"), c[0], net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            mh.addPermanentModifier(new net.minecraft.world.entity.ai.attributes.AttributeModifier(Identifier.parse("remnant_mobs:level"), c[1], net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            double factor = (1 + c[1]) * (1 + c[0]);
+            Elites.make(m, 7, r, List.of());
+            double ratio = Elites.normaliseHealth(m);
+            double expect = Math.min(factor + want, Math.max(factor, cap));
+            String tag = "stacking (size " + c[0] + ", level " + c[1] + "): foreign x" + factor + " + Age " + want + " -> x" + String.format("%.3f", ratio) + " (expect " + String.format("%.3f", expect) + ", product would be " + String.format("%.3f", factor * (1 + want)) + ")";
+            check(Math.abs(ratio - expect) < 0.01, tag);
+            check(ratio <= Math.max(factor, cap) + 0.01, "stacking cap holds, case " + c[0] + "/" + c[1]);
+            double again = Elites.normaliseHealth(m);
+            check(Math.abs(again - ratio) < 0.001, "normalising twice changes nothing, case " + c[0] + "/" + c[1]);
+            check(m.getHealth() <= m.getMaxHealth(), "health within max, case " + c[0] + "/" + c[1]);
+            m.discard();
+        }
+    }
+
+    /** Real mods in the pack (Dwarfs and Giants, Remnants) roll their own health changes when the zombie joins; the champion's Age bonus must add to them. */
+    private static void stackingLive(ServerLevel level, BlockPos c0, RandomSource r) {
+        Ages.forced = 7;
+        double want = Data.elites().extra_hp_per_age * 6, cap = Data.elites().max_combined_health_multiplier;
+        double lo = 1e9, hi = 0, sum = 0, worstProduct = 0;
+        int n = 60, varied = 0, multiplicativeWouldBreakCap = 0;
+        for (int i = 0; i < n; i++) {
+            Mob m = (Mob) EntityType.ZOMBIE.spawn(level, c0.offset(20, 1, i % 7), EntitySpawnReason.NATURAL);
+            if (m == null) continue;
+            var mh = m.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH);
+            if (Elites.isElite(m)) { m.discard(); continue; }
+            double base = mh.getBaseValue(), factor = mh.getValue() / base;
+            Elites.make(m, 7, r, List.of());
+            double mult = Elites.normaliseHealth(m);
+            double product = factor * (1 + want);
+            lo = Math.min(lo, factor); hi = Math.max(hi, factor); sum += mult;
+            if (Math.abs(factor - 1) > 0.01) varied++;
+            if (product > cap + 0.01) multiplicativeWouldBreakCap++;
+            worstProduct = Math.max(worstProduct, product);
+            check(mult <= Math.max(factor, cap) + 0.01, "live stacking: x" + mult + " within cap (foreign x" + factor + ")");
+            check(factor < 1 || mult <= product + 0.01, "live stacking: x" + mult + " is not above the product x" + product + " (shrunk mobs get the full Age bonus on their own size)");
+            check(mult >= factor - 0.01, "live stacking: the other mods' variety is kept (x" + factor + " -> x" + mult + ")");
+            m.discard();
+        }
+        System.out.println("[bossesselftest] live stacking over " + n + " zombies: foreign factor x" + String.format("%.2f", lo) + " to x" + String.format("%.2f", hi)
+            + ", " + varied + " not at x1, champion totals avg x" + String.format("%.2f", sum / n) + ", worst product would have been x" + String.format("%.2f", worstProduct)
+            + " (" + multiplicativeWouldBreakCap + " over the cap of " + cap + " when multiplied)");
     }
 
     private SelfTest() {}

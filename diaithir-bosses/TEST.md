@@ -9,3 +9,6 @@ Build: `./gradlew build` (JDK 25, NeoForge 26.1.2.116). Boot: `gradle runServer`
 
 ## Full pack (batch 1) note
 Random effective-health failures came from Dwarfs and Giants (random size stage, mob_max_health modifier) and Remnants: RPG Mobs (level modifier) acting on boss entities. Bosses now pre-tag spawn_size_rolled at HIGHEST join priority and are listed in remnant_mobs never_leveled/never_ranked and c:bosses. The command now force-loads the arena and runs 3 s later (a fresh no-player server failed the drop checks). Full pack: ok=1295 bad=0 in 8 runs.
+
+## Health stacking guard (Elites.normaliseHealth)
+Champion Age health bonus adds to other mods' health changes (Dwarfs and Giants size, Remnants level/rank) instead of multiplying; total capped by max_combined_health_multiplier (elites.json). Full pack (srv-fix2, ports 27871/27872, Remnants levels.json from mod-ports/pack-config): bossesselftest ok=1488 bad=0, including synthetic cases (7) and 60 live zombies joined with the real mods (foreign factor x0.70 to x16.00, 35 not at x1 so the variety is kept; the plain product would have exceeded the cap of 4.0 in 2 cases and reached x21.76).

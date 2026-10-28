@@ -92,6 +92,10 @@ public final class Data {
         public double[] chance_by_age = {0.03};
         public int[] affixes_by_age = {1};
         public double extra_hp_per_age = 0.05, xp_multiplier = 3;
+        /** Health bonuses of other mods (Dwarfs and Giants size, Remnants level) and our Age bonus add up instead of multiplying; 0 turns the guard off. */
+        public boolean additive_stacking = true;
+        /** Ceiling for the champion's total max health over its base value, all mods together. 0 = no ceiling. */
+        public double max_combined_health_multiplier = 4.0;
         public Token token;
         public Map<String, EliteBase> bases = new LinkedHashMap<>();
         public Map<String, Affix> affixes = new LinkedHashMap<>();

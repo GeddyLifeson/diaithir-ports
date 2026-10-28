@@ -53,9 +53,16 @@ public final class BossEvents {
         if (c != null) c.close();
     }
 
+    private static boolean guardDue(Mob m) {
+        if (!m.entityTags().contains(Elites.T_GUARD_DUE)) return false;
+        m.removeTag(Elites.T_GUARD_DUE);
+        return true;
+    }
+
     @SubscribeEvent
     public static void tick(EntityTickEvent.Post e) {
         if (!(e.getEntity() instanceof Mob m) || m.level().isClientSide()) return;
+        if (Elites.isElite(m) && ((m.tickCount == 2 && guardDue(m)) || m.tickCount % 400 == 7)) Elites.normaliseHealth(m);
         BossController c = BossController.ALL.get(m.getUUID());
         if (c != null) c.tick();
     }

@@ -28,7 +28,42 @@ import net.minecraft.world.level.Level;
  * elites.json; the number of affixes and the chance rise with the Age. The numbers live in the table, the mechanics here.
  */
 public final class Elites {
-    public static final String TAG = "dbelite", T_AFFIX = "dbaffix:", T_USED = "dbbanded";
+    public static final String TAG = "dbelite", T_AFFIX = "dbaffix:", T_USED = "dbbanded", T_GUARD_DUE = "dbguard_due";
+    static final Identifier AGE_HP = Identifier.fromNamespaceAndPath(DiaithirBosses.ID, "elite_age_hp");
+
+    /**
+     * Keeps the champion's Age health bonus from multiplying with the health changes other mods make to ordinary mobs
+     * (Dwarfs and Giants' random size, -40 to +100 percent; Remnants' level and rank). Those mods act after the spawn event, so this
+     * runs on the first ticks and again now and then. Their variety is kept: the total is base x (their factor + our Age bonus)
+     * instead of base x their factor x (1 + our bonus), and never above max_combined_health_multiplier.
+     * Returns the multiplier the champion ends at (max health over base), or 0 when nothing was adjusted.
+     */
+    public static double normaliseHealth(Mob mob) {
+        Data.Elites t = Data.elites();
+        AttributeInstance mh = mob.getAttribute(Attributes.MAX_HEALTH);
+        if (mh == null || !isElite(mob)) return 0;
+        AttributeModifier ours = mh.getModifier(AGE_HP);
+        if (ours == null) return 0;
+        double want = t.extra_hp_per_age * Math.max(0, (int) ageOf(mob));
+        double base = mh.getBaseValue();
+        mh.removeModifier(AGE_HP);
+        double others = mh.getValue();
+        double factor = base > 0 ? others / base : 1;
+        double total = t.additive_stacking ? factor + want : factor * (1 + want);
+        if (t.max_combined_health_multiplier > 0) total = Math.min(total, Math.max(factor, t.max_combined_health_multiplier));
+        double amount = others > 0 ? Math.max(0, base * total / others - 1) : 0;
+        boolean full = mob.getHealth() >= mob.getMaxHealth() - 0.01F;
+        mh.addPermanentModifier(new AttributeModifier(AGE_HP, amount, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        if (full) mob.setHealth(mob.getMaxHealth()); else mob.setHealth(Math.min(mob.getHealth(), mob.getMaxHealth()));
+        return mob.getMaxHealth() / base;
+    }
+
+    /** The Age bonus the champion was made with, kept as a tag because the modifier itself gets rewritten. */
+    private static double ageOf(Mob mob) {
+        for (String tag : mob.entityTags()) if (tag.startsWith(T_AGE)) return Integer.parseInt(tag.substring(T_AGE.length()));
+        return 0;
+    }
+    static final String T_AGE = "dbage:";
 
     public static boolean isElite(LivingEntity e) { return e.entityTags().contains(TAG); }
 
@@ -55,6 +90,7 @@ public final class Elites {
         int n = t.affixes_by_age[Math.clamp(age - 1, 0, t.affixes_by_age.length - 1)];
         while (forced == null && chosen.size() < n && !pool.isEmpty()) chosen.add(pool.remove(r.nextInt(pool.size())));
         mob.addTag(TAG);
+        mob.addTag(T_AGE + Math.max(0, age - 1));
         double hp = t.extra_hp_per_age * Math.max(0, age - 1);
         for (String id : chosen) {
             Data.Affix a = t.affixes.get(id);
@@ -82,6 +118,7 @@ public final class Elites {
             mh.addPermanentModifier(new AttributeModifier(Identifier.fromNamespaceAndPath(DiaithirBosses.ID, "elite_age_hp"), hp, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         }
         mob.setHealth(mob.getMaxHealth());
+        mob.addTag(T_GUARD_DUE);
         MutableComponent names = Component.empty();
         for (int i = 0; i < chosen.size(); i++) {
             if (i > 0) names.append(" ");

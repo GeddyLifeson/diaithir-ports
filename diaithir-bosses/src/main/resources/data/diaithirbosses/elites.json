@@ -21,6 +21,8 @@
   3
  ],
  "extra_hp_per_age": 0.06,
+ "additive_stacking": true,
+ "max_combined_health_multiplier": 4.0,
  "xp_multiplier": 3.0,
  "token": {
   "item": "diaithirbosses:champion_token",
