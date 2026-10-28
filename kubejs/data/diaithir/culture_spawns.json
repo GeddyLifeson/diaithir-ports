@@ -1,0 +1,788 @@
+{
+ "diaithir": {
+  "site": "Creag Ruadh",
+  "x": -251201,
+  "z": -1541408,
+  "sites_in_culture": 0
+ },
+ "sahul_pleistocene_core_tool_and_scraper_tradition": {
+  "site": "Talyawalka Creek",
+  "x": 3170379,
+  "z": 768466,
+  "sites_in_culture": 0
+ },
+ "sundaland_and_wallacea_pleistocene_holocene_foragers": {
+  "site": "Niah Caves",
+  "x": 2532890,
+  "z": -84962,
+  "sites_in_culture": 0
+ },
+ "balangoda_culture": {
+  "site": "Batadombalena Cave",
+  "x": 1794470,
+  "z": -149509,
+  "sites_in_culture": 0
+ },
+ "tasmanian_late_pleistocene_foragers_kutikina_warreen": {
+  "site": "Kutikina Cave",
+  "x": 3248675,
+  "z": 1034693,
+  "sites_in_culture": 0
+ },
+ "dyuktai_culture": {
+  "site": "Ezhantsy",
+  "x": 3008521,
+  "z": -1703286,
+  "sites_in_culture": 9
+ },
+ "iberomaurusian": {
+  "site": "Ifri n'Etsedda",
+  "x": -21892,
+  "z": -817427,
+  "sites_in_culture": 0
+ },
+ "robberg_industry": {
+  "site": "Florisbad",
+  "x": 580353,
+  "z": 669205,
+  "sites_in_culture": 32
+ },
+ "magdalenian": {
+  "site": "Peyrazet",
+  "x": 24490,
+  "z": -1074611,
+  "sites_in_culture": 0
+ },
+ "yenisei_upper_palaeolithic_afontova_gora_kokorevo": {
+  "site": "Afontova Gora",
+  "x": 2066462,
+  "z": -1511018,
+  "sites_in_culture": 0
+ },
+ "north_china_late_palaeolithic_microblade_groups_shuidonggou_xiachuan": {
+  "site": "Shuidonggou",
+  "x": 2380011,
+  "z": -918712,
+  "sites_in_culture": 0
+ },
+ "zarzian": {
+  "site": "Zarzi Cave",
+  "x": 1034158,
+  "z": -842765,
+  "sites_in_culture": 0
+ },
+ "early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong": {
+  "site": "Zengpiyan",
+  "x": 2455708,
+  "z": -570240,
+  "sites_in_culture": 0
+ },
+ "transbaikal_and_mongolian_late_palaeolithic_microblade_groups": {
+  "site": "Mukhor-Tala VII",
+  "x": 2359973,
+  "z": -1324259,
+  "sites_in_culture": 0
+ },
+ "geometric_kebaran": {
+  "site": "Salibiya 9",
+  "x": 790368,
+  "z": -768466,
+  "sites_in_culture": 0
+ },
+ "epipalaeolithic_egypt_isnan_afian_qarunian": {
+  "site": "El Beid",
+  "x": 687954,
+  "z": -675129,
+  "sites_in_culture": 0
+ },
+ "incipient_jomon": {
+  "site": "Chernye kosti rockshelter  -  Tchernye kosti",
+  "x": 2947718,
+  "z": -1097458,
+  "sites_in_culture": 1
+ },
+ "hamburgian": {
+  "site": "Howburn",
+  "x": -84603,
+  "z": -1495839,
+  "sites_in_culture": 0
+ },
+ "eburran": {
+  "site": "Mt Kilimanjaro north slope",
+  "x": 831681,
+  "z": 68325,
+  "sites_in_culture": 0
+ },
+ "qadan": {
+  "site": "Kerma",
+  "x": 676823,
+  "z": -445141,
+  "sites_in_culture": 0
+ },
+ "sebilian": {
+  "site": "Sebilian",
+  "x": 732482,
+  "z": -553120,
+  "sites_in_culture": 0
+ },
+ "abriense_tequendamense_and_el_jobo": {
+  "site": "La Pochola",
+  "x": -1625265,
+  "z": -129352,
+  "sites_in_culture": 0
+ },
+ "monte_verde_ii": {
+  "site": "Monte Verde",
+  "x": -1631944,
+  "z": 1017275,
+  "sites_in_culture": 0
+ },
+ "natufian": {
+  "site": "Jericho",
+  "x": 789033,
+  "z": -749252,
+  "sites_in_culture": 0
+ },
+ "federmesser_group_tjongerian_havelte": {
+  "site": "Abri Loschbour",
+  "x": 139595,
+  "z": -1281308,
+  "sites_in_culture": 79
+ },
+ "final_epigravettian": {
+  "site": "Buran Kaya III",
+  "x": 756973,
+  "z": -1114883,
+  "sites_in_culture": 0
+ },
+ "russian_plain_volga_and_urals_final_palaeolithic_and_early_mesolithic_foragers": {
+  "site": "Kumyshanskaya Cave",
+  "x": 1257910,
+  "z": -1396600,
+  "sites_in_culture": 0
+ },
+ "west_african_late_stone_age_and_early_pottery_foragers_iwo_eleru_ounjougou": {
+  "site": "Iwo Eleru",
+  "x": 115031,
+  "z": -167833,
+  "sites_in_culture": 0
+ },
+ "nenana_complex": {
+  "site": "Nenana, Alaska",
+  "x": -3319394,
+  "z": -1898668,
+  "sites_in_culture": 0
+ },
+ "bromme_lyngby_culture": {
+  "site": "Bromme",
+  "x": 250097,
+  "z": -1490595,
+  "sites_in_culture": 0
+ },
+ "clovis": {
+  "site": "Lang Farm",
+  "x": -2148466,
+  "z": -1108629,
+  "sites_in_culture": 0
+ },
+ "creswellian": {
+  "site": "Creswell Crags",
+  "x": -24490,
+  "z": -1404016,
+  "sites_in_culture": 0
+ },
+ "eastern_paleoindian_fluted_point_groups_gainey_barnes_cumberland_debert": {
+  "site": "Debert",
+  "x": -1413758,
+  "z": -1137473,
+  "sites_in_culture": 0
+ },
+ "fishtail_point_tradition": {
+  "site": "Peñas de las Trampas",
+  "x": -1467191,
+  "z": 632201,
+  "sites_in_culture": 0
+ },
+ "late_paleoindian_and_early_archaic_of_mesoamerica_lerma_santa_marta": {
+  "site": "Aguadulce Shelter",
+  "x": -1795387,
+  "z": -182902,
+  "sites_in_culture": 6
+ },
+ "paijan_culture": {
+  "site": "Paijan (Chicama Valley, La Libertad, Peru)",
+  "x": -1762559,
+  "z": 171575,
+  "sites_in_culture": 0
+ },
+ "paleocoastal_pacific_channel_islands_pacific_northwest": {
+  "site": "Daisy Cave, San Miguel Island",
+  "x": -2679905,
+  "z": -806566,
+  "sites_in_culture": 0
+ },
+ "pedra_pintada_lower_amazon": {
+  "site": "Monte Alegre",
+  "x": -1203858,
+  "z": 44495,
+  "sites_in_culture": 0
+ },
+ "swiderian": {
+  "site": "Rydno",
+  "x": 427467,
+  "z": -1310168,
+  "sites_in_culture": 0
+ },
+ "trialetian": {
+  "site": "Tbilisi",
+  "x": 998026,
+  "z": -1023680,
+  "sites_in_culture": 0
+ },
+ "ushki_lake_kamchatka": {
+  "site": "Ushki-5",
+  "x": 3564450,
+  "z": -1515670,
+  "sites_in_culture": 0
+ },
+ "western_stemmed_tradition": {
+  "site": "Redfish Overhang",
+  "x": -2558122,
+  "z": -1089996,
+  "sites_in_culture": 0
+ },
+ "ahrensburgian": {
+  "site": "Ahrensburg",
+  "x": 227982,
+  "z": -1421581,
+  "sites_in_culture": 0
+ },
+ "folsom": {
+  "site": "Folsom, New Mexico",
+  "x": -2313756,
+  "z": -878434,
+  "sites_in_culture": 0
+ },
+ "las_vegas_culture": {
+  "site": "Santa Elena",
+  "x": -1800230,
+  "z": 49605,
+  "sites_in_culture": 0
+ },
+ "dalton_tradition": {
+  "site": "Sloan Site (Arkansas)",
+  "x": -2009985,
+  "z": -851062,
+  "sites_in_culture": 0
+ },
+ "nanzhuangtou": {
+  "site": "Nanzhuangtou",
+  "x": 2560348,
+  "z": -950072,
+  "sites_in_culture": 0
+ },
+ "azilian": {
+  "site": "Le Mas-d'Azil",
+  "x": 28943,
+  "z": -1062394,
+  "sites_in_culture": 0
+ },
+ "central_brazilian_highland_hunter_gatherers_lagoa_santa_itaparica": {
+  "site": "Lapa do Santo",
+  "x": -979612,
+  "z": 445928,
+  "sites_in_culture": 0
+ },
+ "harifian": {
+  "site": "Maaleh Ramon West",
+  "x": 774784,
+  "z": -716182,
+  "sites_in_culture": 0
+ },
+ "upper_tigris_epipalaeolithic_protoneolithic_hallan_cemi_kortik_tepe": {
+  "site": "Hallan Çemi Tepesi",
+  "x": 917273,
+  "z": -915885,
+  "sites_in_culture": 0
+ },
+ "mureybetian": {
+  "site": "Tell Mureybet",
+  "x": 850481,
+  "z": -862878,
+  "sites_in_culture": 0
+ },
+ "indian_mesolithic_microlithic_foragers_bhimbetka_sarai_nahar_rai": {
+  "site": "Bhimbetka rock shelters",
+  "x": 1727950,
+  "z": -524921,
+  "sites_in_culture": 0
+ },
+ "oakhurst_industry": {
+  "site": "Ravenscraig",
+  "x": 409656,
+  "z": 803076,
+  "sites_in_culture": 0
+ },
+ "plano_complex_agate_basin_hell_gap_cody": {
+  "site": "Olsen-Chubbuck Bison Kill Site",
+  "x": -2328804,
+  "z": -973188,
+  "sites_in_culture": 0
+ },
+ "hoabinhian": {
+  "site": "Hang Hung Cave, Hoa Binh Province, Vietnam",
+  "x": 2345130,
+  "z": -474007,
+  "sites_in_culture": 0
+ },
+ "komsa_culture": {
+  "site": "Sarrasins",
+  "x": 592747,
+  "z": -2274593,
+  "sites_in_culture": 6
+ },
+ "magosian_obsolete_term": {
+  "site": "Lake Chala",
+  "x": 838977,
+  "z": 74999,
+  "sites_in_culture": 0
+ },
+ "pre_pottery_neolithic_a": {
+  "site": "Jericho",
+  "x": 789255,
+  "z": -749165,
+  "sites_in_culture": 0
+ },
+ "zengpiyan": {
+  "site": "Qiujiang",
+  "x": 2424205,
+  "z": -519904,
+  "sites_in_culture": 3
+ },
+ "early_holocene_sahara_foragers_early_acacus": {
+  "site": "Achelouma E",
+  "x": 288763,
+  "z": -506630,
+  "sites_in_culture": 64
+ },
+ "andean_puna_hunters_lauricocha_junin": {
+  "site": "Lauricocha",
+  "x": -1703188,
+  "z": 223778,
+  "sites_in_culture": 0
+ },
+ "khiamian": {
+  "site": "Khiamian",
+  "x": 792595,
+  "z": -781717,
+  "sites_in_culture": 0
+ },
+ "paleo_arctic_tradition": {
+  "site": "Carlo Creek",
+  "x": -3139951,
+  "z": -1865729,
+  "sites_in_culture": 0
+ },
+ "early_mesolithic_britain_star_carr": {
+  "site": "Star Carr",
+  "x": -11132,
+  "z": -1441625,
+  "sites_in_culture": 0
+ },
+ "amotape_complex": {
+  "site": "Amotape (Talara region, northwestern Peru)",
+  "x": -1809387,
+  "z": 102077,
+  "sites_in_culture": 0
+ },
+ "capsian": {
+  "site": "Kef Zoura D",
+  "x": 178111,
+  "z": -857374,
+  "sites_in_culture": 0
+ },
+ "maglemosian": {
+  "site": "Ede-Maanderbuurt",
+  "x": 126014,
+  "z": -1360025,
+  "sites_in_culture": 0
+ },
+ "pre_pottery_neolithic_b": {
+  "site": "Göbekli Tepe",
+  "x": 866560,
+  "z": -894050,
+  "sites_in_culture": 0
+ },
+ "sumnagin_culture": {
+  "site": "Sumnagin (Sumnagin archaeological site, Lower Ob, Khanty-Mansi Autonomous Okrug)",
+  "x": 1536209,
+  "z": -1725165,
+  "sites_in_culture": 0
+ },
+ "kunda_culture": {
+  "site": "Kunda",
+  "x": 569288,
+  "z": -1657850,
+  "sites_in_culture": 0
+ },
+ "fosna_hensbacka_culture": {
+  "site": "Hedegård",
+  "x": 298336,
+  "z": -1491903,
+  "sites_in_culture": 0
+ },
+ "central_african_late_stone_age_tshitolian": {
+  "site": "Gombe Point",
+  "x": 659383,
+  "z": 104385,
+  "sites_in_culture": 0
+ },
+ "new_guinea_highlands_foragers_and_early_kuk_agriculture": {
+  "site": "Kuk Swamp",
+  "x": 3214907,
+  "z": 122640,
+  "sites_in_culture": 0
+ },
+ "early_archaic_eastern_north_america": {
+  "site": "Modoc Rock Shelter",
+  "x": -1994845,
+  "z": -910242,
+  "sites_in_culture": 0
+ },
+ "the_island_court_home_pantheon": {
+  "site": "Newgrange",
+  "x": -144170,
+  "z": -1422509,
+  "sites_in_culture": 0
+ },
+ "the_river_court": {
+  "site": "Karnak",
+  "x": 727079,
+  "z": -592859,
+  "sites_in_culture": 0
+ },
+ "the_two_river_court": {
+  "site": "Ur",
+  "x": 1026366,
+  "z": -725511,
+  "sites_in_culture": 0
+ },
+ "the_thousand_god_court": {
+  "site": "Hattusa",
+  "x": 770554,
+  "z": -973770,
+  "sites_in_culture": 0
+ },
+ "the_sea_coast_court": {
+  "site": "Byblos",
+  "x": 793730,
+  "z": -808985,
+  "sites_in_culture": 0
+ },
+ "the_palace_court": {
+  "site": "Knossos",
+  "x": 560226,
+  "z": -840890,
+  "sites_in_culture": 0
+ },
+ "the_mountain_court": {
+  "site": "Delphi",
+  "x": 500960,
+  "z": -929560,
+  "sites_in_culture": 0
+ },
+ "the_seven_hills_court": {
+  "site": "Roman Forum",
+  "x": 277971,
+  "z": -1028978,
+  "sites_in_culture": 0
+ },
+ "the_ash_tree_court": {
+  "site": "Gamla Uppsala",
+  "x": 392673,
+  "z": -1675391,
+  "sites_in_culture": 0
+ },
+ "the_birch_grove_court": {
+  "site": "Golden Gate of Kyiv",
+  "x": 679338,
+  "z": -1304859,
+  "sites_in_culture": 0
+ },
+ "the_amber_court": {
+  "site": "Nida",
+  "x": 466874,
+  "z": -1484062,
+  "sites_in_culture": 0
+ },
+ "the_marsh_and_bear_court": {
+  "site": "Valaam",
+  "x": 687954,
+  "z": -1743651,
+  "sites_in_culture": 0
+ },
+ "the_wide_sky_court": {
+  "site": "Kazanlak",
+  "x": 565381,
+  "z": -1050820,
+  "sites_in_culture": 0
+ },
+ "the_light_and_flame_court": {
+  "site": "Persepolis",
+  "x": 1177569,
+  "z": -699019,
+  "sites_in_culture": 0
+ },
+ "the_many_armed_court": {
+  "site": "Varanasi",
+  "x": 1847322,
+  "z": -582961,
+  "sites_in_culture": 0
+ },
+ "the_heaven_and_earth_court": {
+  "site": "Temple of Heaven",
+  "x": 2591665,
+  "z": -969768,
+  "sites_in_culture": 0
+ },
+ "the_kami_court": {
+  "site": "Ise Grand Shrine",
+  "x": 3044054,
+  "z": -818012,
+  "sites_in_culture": 0
+ },
+ "the_crossroads_court": {
+  "site": "Ife",
+  "x": 101673,
+  "z": -166710,
+  "sites_in_culture": 0
+ },
+ "the_corn_and_star_court": {
+  "site": "Chichen Itza",
+  "x": -1971864,
+  "z": -470855,
+  "sites_in_culture": 0
+ },
+ "the_fifth_sun_court": {
+  "site": "Templo Mayor",
+  "x": -2207089,
+  "z": -441251,
+  "sites_in_culture": 0
+ },
+ "the_mountain_and_mother_court": {
+  "site": "Sacsayhuamán",
+  "x": -1602595,
+  "z": 303580,
+  "sites_in_culture": 0
+ },
+ "the_ocean_and_voyage_court": {
+  "site": "Raiatea",
+  "x": -3370754,
+  "z": 380209,
+  "sites_in_culture": 0
+ },
+ "the_eternal_blue_sky_court": {
+  "site": "Karakorum",
+  "x": 2288729,
+  "z": -1194956,
+  "sites_in_culture": 0
+ },
+ "the_rift_and_cattle_court": {
+  "site": "Nairobi",
+  "x": 819799,
+  "z": 28770,
+  "sites_in_culture": 0
+ },
+ "the_cliff_and_mask_court": {
+  "site": "Sangha",
+  "x": 356222,
+  "z": -44537,
+  "sites_in_culture": 0
+ },
+ "the_lotus_and_peak_court": {
+  "site": "Angkor Wat",
+  "x": 2312484,
+  "z": -301380,
+  "sites_in_culture": 0
+ },
+ "the_rice_and_volcano_court": {
+  "site": "Borobudur",
+  "x": 2453566,
+  "z": 169881,
+  "sites_in_culture": 0
+ },
+ "the_fire_and_peak_court": {
+  "site": "Nemrut Dağı",
+  "x": 862526,
+  "z": -915320,
+  "sites_in_culture": 0
+ },
+ "the_river_and_forest_court": {
+  "site": "Santarém",
+  "x": -1218013,
+  "z": 54407,
+  "sites_in_culture": 0
+ },
+ "kuonrig": {
+  "site": "Belem Tower",
+  "x": -205184,
+  "z": -935530,
+  "sites_in_culture": 0
+ },
+ "lasuirrig": {
+  "site": "Isfahan",
+  "x": 1150331,
+  "z": -769909,
+  "sites_in_culture": 0
+ },
+ "kuonspiusach": {
+  "site": "Calicut",
+  "x": 1687167,
+  "z": -252294,
+  "sites_in_culture": 0
+ },
+ "talumnuod": {
+  "site": "Havana",
+  "x": -1833802,
+  "z": -529152,
+  "sites_in_culture": 0
+ },
+ "dunbuldach": {
+  "site": "Forbidden City",
+  "x": 2591455,
+  "z": -970757,
+  "sites_in_culture": 0
+ },
+ "gainemrig": {
+  "site": "Timbuktu",
+  "x": -66956,
+  "z": -378895,
+  "sites_in_culture": 0
+ },
+ "guoltintech": {
+  "site": "Paris",
+  "x": 52369,
+  "z": -1250113,
+  "sites_in_culture": 0
+ },
+ "saertulmach": {
+  "site": "Independence Hall",
+  "x": -1673132,
+  "z": -971704,
+  "sites_in_culture": 0
+ },
+ "iarnbotrach": {
+  "site": "Moscow",
+  "x": 837508,
+  "z": -1501991,
+  "sites_in_culture": 0
+ },
+ "oilen_nuod": {
+  "site": "Dejima",
+  "x": 2891477,
+  "z": -772314,
+  "sites_in_culture": 0
+ },
+ "deiskertfurraigi": {
+  "site": "Hyde Park Sydney",
+  "x": 3366546,
+  "z": 802352,
+  "sites_in_culture": 0
+ },
+ "solasstaid": {
+  "site": "Greenwich",
+  "x": -171,
+  "z": -1341422,
+  "sites_in_culture": 0
+ },
+ "katuirliunach": {
+  "site": "Singapore River",
+  "x": 2312108,
+  "z": -28716,
+  "sites_in_culture": 0
+ },
+ "olumaein": {
+  "site": "Cairo Citadel",
+  "x": 695969,
+  "z": -701479,
+  "sites_in_culture": 0
+ },
+ "eolaskumlacht": {
+  "site": "Bletchley Park",
+  "x": -16493,
+  "z": -1359794,
+  "sites_in_culture": 0
+ },
+ "skielbaili": {
+  "site": "Pripyat",
+  "x": 669124,
+  "z": -1338632,
+  "sites_in_culture": 0
+ },
+ "realtsiulach": {
+  "site": "Kennedy Space Center",
+  "x": -1795561,
+  "z": -664282,
+  "sites_in_culture": 0
+ },
+ "roudosach": {
+  "site": "Hoover Dam",
+  "x": -2554493,
+  "z": -860565,
+  "sites_in_culture": 0
+ },
+ "glasdumuin": {
+  "site": "Biosphere 2",
+  "x": -2467953,
+  "z": -767938,
+  "sites_in_culture": 0
+ },
+ "sinsermeisin": {
+  "site": "CERN",
+  "x": 134808,
+  "z": -1163586,
+  "sites_in_culture": 0
+ },
+ "longkodlata": {
+  "site": "Baikonur",
+  "x": 1409416,
+  "z": -1154948,
+  "sites_in_culture": 0
+ },
+ "soulasfada": {
+  "site": "Mauna Kea Observatory",
+  "x": -3461368,
+  "z": -450344,
+  "sites_in_culture": 0
+ },
+ "fairechrotlach": {
+  "site": "Kourou",
+  "x": -1174977,
+  "z": -116647,
+  "sites_in_culture": 0
+ },
+ "liekdeirendach": {
+  "site": "Library of Congress",
+  "x": -1714431,
+  "z": -941128,
+  "sites_in_culture": 0
+ },
+ "kloichchruind": {
+  "site": "Carhenge",
+  "x": -2290042,
+  "z": -1036455,
+  "sites_in_culture": 0
+ },
+ "kiedtra": {
+  "site": "Plymouth Rock",
+  "x": -1573212,
+  "z": -1030938,
+  "sites_in_culture": 0
+ },
+ "teinedeired": {
+  "site": "Trinity Site",
+  "x": -2370549,
+  "z": -797103,
+  "sites_in_culture": 0
+ }
+}

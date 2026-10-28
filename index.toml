@@ -20705,6 +20705,10 @@ file = "kubejs/data/diaithir/culture_names.json"
 hash = "9db53f607d9167c24b68a09c0ffbca17898decc421daf6a84d73c4103ed4820f"
 
 [[files]]
+file = "kubejs/data/diaithir/culture_spawns.json"
+hash = "89e9811a3d74a650a29566b7af2c5b09fa84d5a2643e563f6bfb887bb36406c7"
+
+[[files]]
 file = "kubejs/data/diaithir/currencies.json"
 hash = "a6b86f76eed80462e303fb8b2f74d7e1aeaa7af98559a0b04e4288dff15a238f"
 
@@ -20895,6 +20899,10 @@ hash = "aab0b3c763069e472de32c734792d076e071d4cb600d4ef6c2859460ab5ef5fd"
 [[files]]
 file = "kubejs/data/diaithir/vendors_age9.json"
 hash = "8c853bd145d99a19948f9084d1cc4ea143f3f21227ae1a5f37535932f0568342"
+
+[[files]]
+file = "kubejs/data/diaithir_ages/ages/_global/culture_starts.json"
+hash = "99d605e19c01b5ab4399b7c224cdc6214777fdfa9ca7d2a543f1c9cf19e75af2"
 
 [[files]]
 file = "kubejs/data/diaithir_dedupe/neoforge/biome_modifier/ecologics_squirrel.json"
@@ -33633,6 +33641,10 @@ file = "kubejs/data/twilightforest/loot_table/blocks/blueberry_bush_berries.json
 hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
+file = "kubejs/server_scripts/culture_start/culture_start.js"
+hash = "bc6e52d413eb19fa141e4c613f567aef6772bb403880052fa6630ecd32f43adf"
+
+[[files]]
 file = "kubejs/server_scripts/diaithir/dedupe.js"
 hash = "49baecac7a9675466af17fddec3cd323ab8f1a32935d85d3c76a06655e794a45"
 
@@ -33650,7 +33662,7 @@ hash = "e6f906a21cd00e9c6375dbfebde466cec26079979931854dd3514e53846cfb99"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/safe_landing.js"
-hash = "3569eacd1e2cf9ec3b48e346a674b00b4e4b691aa47d54bf801d9ba1c301cf78"
+hash = "174a6193925d0750655731f308601a0116644eb0319dedc3fd7bdd6ed2ef5cbb"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/tech_ages_data.js"
@@ -34906,8 +34918,8 @@ file = "mods/diaithir-activity-neoforge-26.1.2-1.0.0.jar"
 hash = "e9ac289e36afa6b1860da5ac0d867dbc92d54c68b6a972128920629c69262445"
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.3.jar"
-hash = "5f8dbb3ded79dfe559666d34ee8dc2d7b173623044a08fc6fa491bd86a7adae1"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.4.jar"
+hash = "91bc07f43f0d7055a1574891ecd44dffa20b089332b167287263c2531b5647bc"
 
 [[files]]
 file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.2.jar"
