@@ -25845,10 +25845,6 @@ file = "kubejs/server_scripts/diaithir/zz_cuisine_engine.js"
 hash = "44863edb7cd7b9f1d5e0ab8ad22a3fcac410430b7e5541257a2989ba05e70dd9"
 
 [[files]]
-file = "kubejs/server_scripts/drinks/brewing.js"
-hash = "b5c277369b3dc3884223ecd24f7dff47abc130fd59957a2c49ce8364e12ffd7d"
-
-[[files]]
 file = "kubejs/server_scripts/earth_timeline/catchup.js"
 hash = "2b40749dfcad6a7ea49287db018390b543dae2a67dc82da6808126c42c5c1846"
 
@@ -25935,10 +25931,6 @@ hash = "542239ab7576447d1ea86d64ca3536096ec910c442816b9ef711603ef4f48120"
 [[files]]
 file = "kubejs/startup_scripts/diaithir_jewelry_gems.js"
 hash = "e8f3948bef19ec086f7caa0fea53bc5c6aa9c24a4330eca4dbab6facf5313c40"
-
-[[files]]
-file = "kubejs/startup_scripts/drinks/items.js"
-hash = "e7064c8119324c97f6e1f5450b8c2f479e6639c1bdf2f371201dd4218f18abfe"
 
 [[files]]
 file = "kubejs/startup_scripts/earth_timeline_ns.js"
