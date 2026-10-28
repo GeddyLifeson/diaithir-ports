@@ -155,43 +155,6 @@ public class BookEntry {
         return strings;
     }
 
-    public void mouseOver(CaveBookScreen screen, int page, float mouseX, float mouseY){
-        boolean hoverFlag = false;
-        screen.unlockTooltip = false;
-        for(BookLink link : bookLinks){
-            int minLine = page * CaveBookScreen.PAGE_SIZE_IN_LINES;
-            link.setHovered(false);
-            if(link.getLineNumber() >= minLine && link.getLineNumber() <= minLine + CaveBookScreen.PAGE_SIZE_IN_LINES * 2){
-                String line = entryText.get(link.getLineNumber());
-                boolean rightPage = link.getLineNumber() > minLine + CaveBookScreen.PAGE_SIZE_IN_LINES;
-                float textStartsX = rightPage ? 0.03F : -0.71F;
-                float textsStartsY = -0.38F;
-                float wordStartAt = textStartsX + Minecraft.getInstance().font.width(line.substring(0, link.getCharacterStartsAt())) * 0.00475F;
-                float wordEndAt = wordStartAt + Minecraft.getInstance().font.width(link.getDisplayText()) * 0.005F;
-                float wordTopAt = textsStartsY + (link.getLineNumber() % CaveBookScreen.PAGE_SIZE_IN_LINES) * 0.0425F;
-                float wordBottomAt = wordTopAt + 0.05F;
-                if(mouseX > wordStartAt && mouseX < wordEndAt && mouseY > wordTopAt && mouseY < wordBottomAt){
-                    if(link.isEnabled()){
-                        link.setHovered(!hoverFlag);
-                        hoverFlag = true;
-                    }else{
-                        screen.unlockTooltip = true;
-                    }
-                }
-            }
-        }
-    }
-
-    public boolean consumeMouseClick(CaveBookScreen screen){
-        for(BookLink link : bookLinks) {
-            int minLine = screen.getEntryPageNumber() * CaveBookScreen.PAGE_SIZE_IN_LINES;
-            if(link.isEnabled() && link.isHovered() && link.getLineNumber() >= minLine && link.getLineNumber() <= minLine + CaveBookScreen.PAGE_SIZE_IN_LINES * 2) {
-                return screen.attemptChangePage(Identifier.parse(CaveBookScreen.getBookFileDirectory() + link.getLinksTo()), true);
-            }
-        }
-        return false;
-    }
-
     /*
         0 = always visible
         1 = ??? (no link)

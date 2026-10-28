@@ -775,7 +775,7 @@ public class ClientProxy extends CommonProxy {
     }
 
     public void openBookGUI(ItemStack itemStackIn) {
-        // The cave book screen is not ported yet.
+        Minecraft.getInstance().setScreen(new com.github.alexmodguy.alexscaves.client.gui.book.CaveBookScreen());
     }
 
     @Override

@@ -2,9 +2,14 @@ package com.github.alexmodguy.alexscaves.client.gui.book.widget;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 
+/**
+ * A decoration placed on a book page. 26.1 port: widgets are drawn flat (2D) in page space,
+ * where one unit is one unscaled page pixel. The screen has already translated and scaled the pose
+ * to the page origin; the context carries the absolute screen position of the page for widgets that
+ * need real screen coordinates (entities).
+ */
 public abstract class BookWidget {
 
     @Expose
@@ -47,7 +52,13 @@ public abstract class BookWidget {
         return scale;
     }
 
-    public abstract void render(PoseStack poseStack, MultiBufferSource.BufferSource bufferSource, float partialTicks, boolean onFlippingPage);
+    public abstract void render(GuiGraphicsExtractor graphics, PageContext ctx, float partialTicks);
+
+    /** Absolute screen origin and scale of the page the widget is being drawn on. */
+    public record PageContext(float originX, float originY, float pageScale) {
+    }
+
+    public static final int SEPIA_TINT = 0xFFD9BC8C;
 
     public enum Type {
 
