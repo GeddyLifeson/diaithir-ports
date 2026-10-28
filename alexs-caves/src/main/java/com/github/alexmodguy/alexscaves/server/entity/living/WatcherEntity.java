@@ -244,9 +244,7 @@ public class WatcherEntity extends Monster implements IAnimatedEntity, Possesses
                     this.setPossessionStrength(Math.max(0, this.getPossessionStrength(1.0F) + 0.1F));
                 }
                 if (dist < 1 || stopPossession(possessedEntity) || !this.isAlive()) {
-                    if(possessedEntity instanceof WatcherPossessionAccessor possessionAccessor){
-                        possessionAccessor.setPossessedByWatcher(false);
-                    }
+                    WatcherPossessionAccessor.setPossessedByWatcher(possessedEntity, false);
                     if(possessedEntity instanceof Player player){
                         setLastPossessedTimeFor(player);
                     }
@@ -361,7 +359,7 @@ public class WatcherEntity extends Monster implements IAnimatedEntity, Possesses
             lastPossessionTimestamp = tickCount;
             if (living instanceof Player player) {
                 setLastPossessedTimeFor(player);
-                ((WatcherPossessionAccessor)player).setPossessedByWatcher(true);
+                WatcherPossessionAccessor.setPossessedByWatcher(player, true);
             }
             return true;
         }
