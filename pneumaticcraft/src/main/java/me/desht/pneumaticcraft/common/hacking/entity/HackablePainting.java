@@ -65,9 +65,6 @@ public class HackablePainting implements IHackableEntity<Painting> {
     public void onHackFinished(Painting entity, Player player) {
         PaintingVariant art = entity.getVariant().value();
 
-        var candidates = entity.registryAccess().registryOrThrow(Registries.PAINTING_VARIANT).holders()
-                .filter(h -> h.value().height() == art.height() && h.value().width() == art.width())
-                .toList();
-        entity.setVariant(candidates.get(entity.level().getRandom().nextInt(candidates.size())));
+        // 26.1 port: Painting#setVariant is private; painting variant cycling on hack is not ported
     }
 }

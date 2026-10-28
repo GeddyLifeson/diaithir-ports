@@ -39,8 +39,8 @@ public record PacketSpawnParticleTrail(ParticleOptions particle, Vector3f start,
 
     public static final StreamCodec<RegistryFriendlyByteBuf, PacketSpawnParticleTrail> STREAM_CODEC = StreamCodec.composite(
             ParticleTypes.STREAM_CODEC, PacketSpawnParticleTrail::particle,
-            ByteBufCodecs.VECTOR3F, PacketSpawnParticleTrail::start,
-            ByteBufCodecs.VECTOR3F, PacketSpawnParticleTrail::end,
+            me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.VECTOR3F, PacketSpawnParticleTrail::start,
+            me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.VECTOR3F, PacketSpawnParticleTrail::end,
             PacketSpawnParticleTrail::new
     );
 

@@ -59,7 +59,7 @@ public class WorldDayLightSensor implements IPollSensorSetting {
     private int updatePower(Level worldIn, BlockPos pos) {
         if (worldIn.dimensionType().hasSkyLight()) {
             int i = worldIn.getBrightness(LightLayer.SKY, pos) - worldIn.getSkyDarken();
-            float f = worldIn.getSunAngle(1.0F);
+            float f = worldIn.environmentAttributes().getValue(net.minecraft.world.attribute.EnvironmentAttributes.SUN_ANGLE, net.minecraft.world.phys.Vec3.atCenterOf(pos), null) * ((float) Math.PI / 180F);
             float f1 = f < (float) Math.PI ? 0.0F : (float) Math.PI * 2F;
             f = f + (f1 - f) * 0.2F;
             i = Math.round(i * Mth.cos(f));

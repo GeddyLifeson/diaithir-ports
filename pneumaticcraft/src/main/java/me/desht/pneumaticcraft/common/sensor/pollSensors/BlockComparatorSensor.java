@@ -55,7 +55,7 @@ public class BlockComparatorSensor implements IBlockAndCoordinatePollSensor {
         for (BlockPos p : positions) {
             BlockState state = world.getBlockState(p);
             if (state.hasAnalogOutputSignal()) {
-                maxStrength = Math.max(maxStrength, state.getAnalogOutputSignal(world, p));
+                maxStrength = Math.max(maxStrength, state.getAnalogOutputSignal(world, p, net.minecraft.core.Direction.NORTH));
             }
         }
         return maxStrength;

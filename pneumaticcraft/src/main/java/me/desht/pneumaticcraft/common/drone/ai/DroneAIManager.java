@@ -76,7 +76,7 @@ public class DroneAIManager implements IVariableProvider {
     private static final int MAX_JUMP_STACK_SIZE = 100;
 
     public DroneAIManager(IDroneBase drone) {
-        theProfiler = drone.getDroneLevel().getProfiler();
+        theProfiler = net.minecraft.util.profiling.Profiler.get();
         this.drone = drone;
         if (!drone.getDroneLevel().isClientSide()) {
             // we don't do much clientside, but instances can be created (programmable controller, The One Probe...)
@@ -86,7 +86,7 @@ public class DroneAIManager implements IVariableProvider {
     }
 
     public DroneAIManager(IDrone drone, List<IProgWidget> progWidgets) {
-        theProfiler = drone.getDroneLevel().getProfiler();
+        theProfiler = net.minecraft.util.profiling.Profiler.get();
         this.drone = drone;
         stopWhenEndReached = true;
         setWidgets(progWidgets);

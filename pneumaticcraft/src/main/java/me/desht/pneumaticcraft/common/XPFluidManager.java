@@ -58,7 +58,7 @@ public enum XPFluidManager {
 
     private void resolveFluidIngredients() {
         for (Pair<FluidIngredient, Integer> pair : pendingIngredients) {
-            for (FluidStack fluidStack: pair.getLeft().getStacks()) {
+            for (FluidStack fluidStack: pair.getLeft().fluids().stream().map(h -> new FluidStack(h, 1000)).toList()) {
                 Fluid fluid = fluidStack.getFluid();
                 if (fluid.isSource(fluid.defaultFluidState()) && fluidStack.getAmount() > 0) {
                     registerXPFluid(fluid, pair.getRight());

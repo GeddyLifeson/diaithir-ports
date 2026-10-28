@@ -32,16 +32,18 @@ public class HackTickTracker extends SavedData {
     private final Map<BlockPos, IHackableBlock> hackedBlocks = new HashMap<>();
     private final Set<Entity> hackedEntities = new HashSet<>();
 
-    private HackTickTracker() {
-    }
+    private static final net.minecraft.world.level.saveddata.SavedDataType<HackTickTracker> TYPE =
+            new net.minecraft.world.level.saveddata.SavedDataType<>(
+                    me.desht.pneumaticcraft.api.PneumaticRegistry.RL(DATA_NAME.toLowerCase(java.util.Locale.ROOT)),
+                    HackTickTracker::new,
+                    CompoundTag.CODEC.xmap(t -> new HackTickTracker().readNBT(t, null), t -> t.save(new CompoundTag(), null)));
 
-    private static HackTickTracker load(CompoundTag tag, HolderLookup.Provider provider) {
-        return new HackTickTracker().readNBT(tag, provider);
+    private HackTickTracker() {
     }
 
     public static HackTickTracker getInstance(Level level) {
         return level instanceof ServerLevel s ?
-                s.getDataStorage().computeIfAbsent(new Factory<>(HackTickTracker::new, HackTickTracker::load), DATA_NAME) :
+                s.getDataStorage().computeIfAbsent(TYPE) :
                 clientInstance;
     }
 
@@ -58,7 +60,7 @@ public class HackTickTracker extends SavedData {
                             () -> Log.error("unknown hackable block ID '{}'", id)
                     );
                 } catch (IdentifierException e) {
-                    Log.error("invalid hackable block ID '{}'", sub.getString("id"));
+                    Log.error("invalid hackable block ID '{}'", sub.getStringOr("id", ""));
                 }
             });
         }
@@ -66,7 +68,6 @@ public class HackTickTracker extends SavedData {
         return this;
     }
 
-    @Override
     public CompoundTag save(CompoundTag pCompoundTag, HolderLookup.Provider provider) {
         ListTag blockTag = new ListTag();
         hackedBlocks.forEach((pos, hackable) -> {

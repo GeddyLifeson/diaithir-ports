@@ -51,12 +51,17 @@ import java.util.concurrent.ThreadLocalRandom;
 import static me.desht.pneumaticcraft.api.PneumaticRegistry.RL;
 
 public class PressureDisenchantingRecipe extends PressureChamberRecipeImpl {
+    public static com.mojang.serialization.MapCodec<PressureDisenchantingRecipe> CODEC = com.mojang.serialization.MapCodec.unit(PressureDisenchantingRecipe::new);
+    public static RecipeSerializer<PressureDisenchantingRecipe> serializer() {
+        return new RecipeSerializer<>(CODEC, net.minecraft.network.codec.StreamCodec.unit(new PressureDisenchantingRecipe()));
+    }
+
     public static final Identifier ID = RL("pressure_chamber_disenchanting");
 
     private static final Lazy<WildcardedRLMatcher> BLACKLIST
             = WildcardedRLMatcher.lazyFromConfig(ConfigHelper.common().machines.disenchantingBlacklist);
 
-    public PressureDisenchantingRecipe(CraftingBookCategory ignoredCategory) {
+    public PressureDisenchantingRecipe() {
         super(Collections.emptyList(), -0.75f, List.of());
     }
 

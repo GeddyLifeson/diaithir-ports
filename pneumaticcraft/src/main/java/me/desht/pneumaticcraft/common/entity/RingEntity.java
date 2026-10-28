@@ -57,10 +57,14 @@ public class RingEntity extends Entity {
         setXRot((float) (Math.atan2(dy, f) * 180.0D / Math.PI));
         yRotO = getYRot();
         xRotO = getXRot();
-        noCulling = true;
         if (par1World.isClientSide()) {
             setViewScale(10.0D);
         }
+    }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel level, net.minecraft.world.damagesource.DamageSource source, float damage) {
+        return false;
     }
 
     @Override
@@ -109,12 +113,22 @@ public class RingEntity extends Entity {
         // none
     }
 
+        protected void loadLegacy(CompoundTag compound) {
+    }
+
+        protected void saveLegacy(CompoundTag compound) {
+    }
+
+
     @Override
-    protected void readAdditionalSaveData(CompoundTag compound) {
+    protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput out) {
+        net.minecraft.nbt.CompoundTag legacy = new net.minecraft.nbt.CompoundTag();
+        saveLegacy(legacy);
+        out.store("PncData", net.minecraft.nbt.CompoundTag.CODEC, legacy);
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag compound) {
+    protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput in) {
+        loadLegacy(in.read("PncData", net.minecraft.nbt.CompoundTag.CODEC).orElseGet(net.minecraft.nbt.CompoundTag::new));
     }
-
 }

@@ -19,8 +19,8 @@ import static me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.xlate;
 public abstract class AbstractTameableHack<T extends LivingEntity> implements IHackableEntity<T> {
     @Override
     public boolean canHack(Entity entity, Player player) {
-        return entity instanceof TamableAnimal t && !player.getUUID().equals(t.getOwnerUUID())
-                || entity instanceof Horse h && !player.getUUID().equals(h.getOwnerUUID());
+        return entity instanceof TamableAnimal t && !player.getUUID().equals(me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.ownerUUID(t))
+                || entity instanceof Horse h && !player.getUUID().equals(me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.ownerUUID(h));
     }
 
     @Override

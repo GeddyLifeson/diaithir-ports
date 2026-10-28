@@ -46,9 +46,14 @@ import java.util.Set;
 import static me.desht.pneumaticcraft.api.PneumaticRegistry.RL;
 
 public class PressureEnchantingRecipe extends PressureChamberRecipeImpl {
+    public static com.mojang.serialization.MapCodec<PressureEnchantingRecipe> CODEC = com.mojang.serialization.MapCodec.unit(PressureEnchantingRecipe::new);
+    public static RecipeSerializer<PressureEnchantingRecipe> serializer() {
+        return new RecipeSerializer<>(CODEC, net.minecraft.network.codec.StreamCodec.unit(new PressureEnchantingRecipe()));
+    }
+
     public static final Identifier ID = RL("pressure_chamber_enchanting");
 
-    public PressureEnchantingRecipe(CraftingBookCategory ignoredCategory) {
+    public PressureEnchantingRecipe() {
         super(Collections.emptyList(), 2F, List.of());
     }
 

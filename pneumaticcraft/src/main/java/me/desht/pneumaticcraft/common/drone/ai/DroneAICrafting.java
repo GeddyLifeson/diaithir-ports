@@ -66,7 +66,7 @@ public class DroneAICrafting extends Goal {
                     stacks.set(i, stack);
                 }
                 CraftingInput input = CraftingInput.of(craftingGrid.width(), craftingGrid.height(), stacks);
-                if (recipe.matches(input, drone.getDroneLevel()) && doCrafting(recipe.assemble(input, drone.getDroneLevel().registryAccess()), input)) {
+                if (recipe.matches(input, drone.getDroneLevel()) && doCrafting(recipe.assemble(input), input)) {
                     actionCount++;
                     return true;
                 }
@@ -138,8 +138,8 @@ public class DroneAICrafting extends Goal {
             ItemStack stack = craftMatrix.getItem(i);
 
             if (!stack.isEmpty()) {
-                if (stack.getItem().hasCraftingRemainingItem(stack)) {
-                    ItemStack containerItem = stack.getItem().getCraftingRemainingItem(stack);
+                if (!me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.craftingRemainder(stack).isEmpty()) {
+                    ItemStack containerItem = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.craftingRemainder(stack);
                     if (!containerItem.isEmpty() && containerItem.isDamageableItem() && containerItem.getDamageValue() > containerItem.getMaxDamage()) {
                         NeoForge.EVENT_BUS.post(new PlayerDestroyItemEvent(drone.getFakePlayer(), containerItem, InteractionHand.MAIN_HAND));
                         continue;

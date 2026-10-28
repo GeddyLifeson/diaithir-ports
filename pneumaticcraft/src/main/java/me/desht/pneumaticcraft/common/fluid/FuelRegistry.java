@@ -59,8 +59,8 @@ public enum FuelRegistry implements IFuelRegistry {
         Set<Fluid> res = new HashSet<>(hotFluids.keySet());
 
         for (FuelQualityRecipe recipe : ModRecipeTypes.FUEL_QUALITY.get().allRecipes(level)) {
-            res.addAll(Arrays.stream(recipe.getFuel().getStacks())
-                    .map(FluidStack::getFluid)
+            res.addAll(recipe.getFuel().fluids().stream()
+                    .map(net.minecraft.core.Holder::value)
                     .filter(f -> f.isSource(f.defaultFluidState()))
                     .toList());
         }

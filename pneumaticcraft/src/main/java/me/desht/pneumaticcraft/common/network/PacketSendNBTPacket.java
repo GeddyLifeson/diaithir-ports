@@ -60,7 +60,7 @@ public record PacketSendNBTPacket(BlockPos pos, CompoundTag tag) implements Cust
         BlockEntity te = ctx.player().level().getBlockEntity(message.pos());
         if (te != null) {
             try {
-                te.loadCustomOnly(message.tag(), ctx.player().registryAccess());
+                te.loadCustomOnly(me.desht.pneumaticcraft.compat.NbtCompat.input(ctx.player().registryAccess(), message.tag()));
                 if (te instanceof RandomizableContainer r && !message.tag().contains("LootTable")) {
                     // bit of a kludge to ensure loot table data gets cleared clientside
                     r.setLootTable(null);

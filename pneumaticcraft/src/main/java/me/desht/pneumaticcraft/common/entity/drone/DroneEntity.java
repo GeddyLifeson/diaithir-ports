@@ -307,7 +307,6 @@ public class DroneEntity extends AbstractDroneEntity implements
         EntityPathNavigateDrone nav = new EntityPathNavigateDrone(this, worldIn);
         nav.setCanOpenDoors(false);
         nav.setCanFloat(true);
-        nav.setCanPassDoors(true);
         return nav;
     }
 
@@ -616,7 +615,7 @@ public class DroneEntity extends AbstractDroneEntity implements
     }
 
     private static <T extends ParticleOptions> void spawnDebugParticle(Collection<ServerPlayer> players, T type, double posX, double posY, double posZ, int particleCount, double xOffset, double yOffset, double zOffset, double speed) {
-        ClientboundLevelParticlesPacket packet = new ClientboundLevelParticlesPacket(type, false,
+        ClientboundLevelParticlesPacket packet = new ClientboundLevelParticlesPacket(type, false, false,
                 posX, posY, posZ,
                 (float)xOffset, (float)yOffset, (float)zOffset,
                 (float)speed, particleCount
@@ -871,10 +870,8 @@ public class DroneEntity extends AbstractDroneEntity implements
 
                 oldTargetLine.setProgress(targetLine.getProgress());
                 targetLine.incProgressByDistance(0.2f);
-                noCulling = true; //don't stop rendering the drone when it goes out of the camera frustrum, as we need to render the target lines as well.
             } else {
                 targetLine = oldTargetLine = null;
-                noCulling = false;
             }
         }
         if (getVehicle() == null && isAccelerating()) {
@@ -905,7 +902,7 @@ public class DroneEntity extends AbstractDroneEntity implements
 
         if (stack.getItem() == ModItems.GPS_TOOL.get()) {
             if (!level.isClientSide()) {
-                return GPSToolItem.getGPSLocation(player.getUUID(), stack).map(gpsPos -> {
+                return GPSToolItem.getGPSLocation(player.getUUID(), stack).<InteractionResult>map(gpsPos -> {
                     getNavigation().moveTo(gpsPos.getX(), gpsPos.getY(), gpsPos.getZ(), 0.1D);
                     return InteractionResult.SUCCESS;
                 }).orElse(InteractionResult.PASS);
@@ -978,8 +975,8 @@ public class DroneEntity extends AbstractDroneEntity implements
 
     @Nullable
     @Override
-    public Entity changeDimension(TeleportTransition transition) {
-        Entity entity = super.changeDimension(transition);
+    public Entity teleport(TeleportTransition transition) {
+        Entity entity = super.teleport(transition);
         if (entity != null) {
             restoreFluidBlocks(false);
         }
@@ -987,13 +984,13 @@ public class DroneEntity extends AbstractDroneEntity implements
     }
 
     @Override
-    protected void dropEquipment() {
+    protected void dropEquipment(net.minecraft.server.level.ServerLevel serverLevel) {
         boolean wrenchedByOwner = wrenchedBy != null && wrenchedBy.equals(ownerUUID);
         for (int i = 0; i < droneItemHandler.getSlots(); i++) {
             ItemStack stack = droneItemHandler.getStackInSlot(i);
             if (!stack.isEmpty()) {
                 if (wrenchedByOwner || !EnchantmentHelper.has(stack, EnchantmentEffectComponents.PREVENT_EQUIPMENT_DROP)) {
-                    spawnAtLocation(stack, 0);
+                    PneumaticCraftUtils.spawnAtLocation(this, stack, 0);
                 }
                 droneItemHandler.setStackInSlot(i, ItemStack.EMPTY);
             }
@@ -1026,7 +1023,7 @@ public class DroneEntity extends AbstractDroneEntity implements
         if (shouldDropAsItem()) {
             ItemStack stack = new ItemStack(getDroneItem());
             writeToItemStack(stack);
-            spawnAtLocation(stack, 0);
+            PneumaticCraftUtils.spawnAtLocation(this, stack, 0);
             if (!level().isClientSide()) {
                 reportDroneDeath(getOwner(), damageSource);
             }
@@ -1054,7 +1051,7 @@ public class DroneEntity extends AbstractDroneEntity implements
     private Item getDroneItem() {
         // return the item which has the same registry ID as our entity type
         return PneumaticCraftUtils.getRegistryName(BuiltInRegistries.ENTITY_TYPE, getType())
-                .map(BuiltInRegistries.ITEM::get)
+                .map(BuiltInRegistries.ITEM::getValue)
                 .orElseThrow();
     }
 
@@ -1090,8 +1087,8 @@ public class DroneEntity extends AbstractDroneEntity implements
     }
 
     @Override
-    public boolean startRiding(Entity entity, boolean force) {
-        return canDroneBePickedUp() && super.startRiding(entity, force);
+    public boolean startRiding(Entity entity, boolean force, boolean sendEventAndTriggers) {
+        return canDroneBePickedUp() && super.startRiding(entity, force, sendEventAndTriggers);
     }
 
     public BasicAirHandler getAirHandler() {
@@ -1123,9 +1120,7 @@ public class DroneEntity extends AbstractDroneEntity implements
         curInfo.add(xlate("pneumaticcraft.gui.tooltip.pressure", PneumaticCraftUtils.roundNumberTo(getAirHandler().getPressure(), 2)));
     }
 
-    @Override
-    public void addAdditionalSaveData(CompoundTag tag) {
-        super.addAdditionalSaveData(tag);
+        public void saveLegacy(CompoundTag tag) {
 
         tag.put(IProgrammable.NBT_WIDGETS, ProgWidgetUtils.putWidgetsToNBT(registryAccess(), progWidgets));
         tag.put("airHandler", getAirHandler().serializeNBT());
@@ -1140,10 +1135,10 @@ public class DroneEntity extends AbstractDroneEntity implements
         if (deployPos != null) tag.store("deployPos", BlockPos.CODEC, deployPos);
 
         ItemStackHandler tmpHandler = PneumaticCraftUtils.copyItemHandler(droneItemHandler, new ItemStackHandler(droneItemHandler.getSlots()));
-        tag.put("Inventory", tmpHandler.serializeNBT(registryAccess()));
-        tag.put("upgrades", upgradeInventory.serializeNBT(registryAccess()));
+        tag.put("Inventory", me.desht.pneumaticcraft.compat.NbtCompat.save(tmpHandler, registryAccess()));
+        tag.put("upgrades", me.desht.pneumaticcraft.compat.NbtCompat.save(upgradeInventory, registryAccess()));
 
-        fluidTank.writeToNBT(registryAccess(), tag);
+        tag.merge(me.desht.pneumaticcraft.compat.NbtCompat.save(fluidTank, registryAccess()));
 
         tag.putString("owner", ownerName.getString());
         if (ownerUUID != null) {
@@ -1161,9 +1156,7 @@ public class DroneEntity extends AbstractDroneEntity implements
         }
     }
 
-    @Override
-    public void readAdditionalSaveData(CompoundTag tag) {
-        super.readAdditionalSaveData(tag);
+        public void loadLegacy(CompoundTag tag) {
 
         progWidgets = ProgWidgetUtils.getWidgetsFromNBT(registryAccess(), tag.getListOrEmpty(IProgrammable.NBT_WIDGETS));
         ProgWidgetUtils.updatePuzzleConnections(progWidgets);
@@ -1174,19 +1167,19 @@ public class DroneEntity extends AbstractDroneEntity implements
         aiManager.readFromNBT(tag.getCompoundOrEmpty("variables"));
         standby = tag.getBooleanOr("standby", false);
         allowStandbyPickup = tag.getBooleanOr("allowStandbyPickup", false);
-        upgradeInventory.deserializeNBT(registryAccess(), tag.getCompoundOrEmpty("upgrades"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(upgradeInventory, registryAccess(), tag.getCompoundOrEmpty("upgrades"));
         upgradeCache.invalidateCache();
         getAirHandler().deserializeNBT(tag.getCompoundOrEmpty("airHandler"));
         carriedEntityAIdisabled = tag.getBooleanOr("carriedEntityAIdisabled", false);
         deployPos = tag.read("deployPos", BlockPos.CODEC).orElse(null);
 
         ItemStackHandler tmpInv = new ItemStackHandler();
-        tmpInv.deserializeNBT(registryAccess(), tag.getCompoundOrEmpty("Inventory"));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(tmpInv, registryAccess(), tag.getCompoundOrEmpty("Inventory"));
         droneItemHandler.setUseableSlots(1 + getUpgrades(ModUpgrades.INVENTORY.get()));
         PneumaticCraftUtils.copyItemHandler(tmpInv, droneItemHandler);
 
         fluidTank.setCapacity(PneumaticValues.DRONE_TANK_SIZE * (1 + getUpgrades(ModUpgrades.INVENTORY.get())));
-        fluidTank.readFromNBT(registryAccess(), tag);
+        me.desht.pneumaticcraft.compat.NbtCompat.load(fluidTank, registryAccess(), tag);
 
         energy.setCapacity(100000 + 100000 * getUpgrades(ModUpgrades.VOLUME.get()));
 
@@ -1243,7 +1236,7 @@ public class DroneEntity extends AbstractDroneEntity implements
     }
 
     @Override
-    public boolean doHurtTarget(Entity entity) {
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel serverLevel, Entity entity) {
         getFakePlayer().attack(entity);
         if (entity instanceof LivingEntity livingEntity) {
             if (livingEntity.isAlive() && livingEntity.getLastHurtByMob() == getFakePlayer()) {
@@ -1260,15 +1253,15 @@ public class DroneEntity extends AbstractDroneEntity implements
     }
 
     @Override
-    public boolean hurt(DamageSource source, float damage) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float damage) {
         if (source.is(DamageTypes.IN_WALL)) {
             if (suffocationCounter > 0) suffocationCounter--;
         }
-        return super.hurt(source, damage);
+        return super.hurtServer(serverLevel, source, damage);
     }
 
     @Override
-    public boolean isInvulnerableTo(DamageSource source) {
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source) {
         if (source.is(DamageTypes.IN_WALL)) {
             return suffocationCounter > 0 || !ConfigHelper.common().drones.enableDroneSuffocation.get();
         }
@@ -1281,7 +1274,7 @@ public class DroneEntity extends AbstractDroneEntity implements
             // e.g. if the drone is wielding an infinity hammer
             return true;
         }
-        return super.isInvulnerableTo(source);
+        return super.isInvulnerableTo(serverLevel, source);
     }
 
     @Override
@@ -1465,7 +1458,7 @@ public class DroneEntity extends AbstractDroneEntity implements
 
     @Override
     public void dropItem(ItemStack stack) {
-        spawnAtLocation(stack, 0);
+        PneumaticCraftUtils.spawnAtLocation(this, stack, 0);
     }
 
     @Override
@@ -1571,7 +1564,7 @@ public class DroneEntity extends AbstractDroneEntity implements
 
     @Override
     public void overload(String msgKey, Object... params) {
-        kill();
+        PneumaticCraftUtils.kill(this);
         Player owner = getOwner();
         if (owner != null) {
             owner.sendSystemMessage(Component.literal(" - ")
@@ -1798,5 +1791,19 @@ public class DroneEntity extends AbstractDroneEntity implements
                 entityData.set(HELD_ITEM, getStackInSlot(slot));
             }
         }
+    }
+
+    @Override
+    protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput out) {
+        super.addAdditionalSaveData(out);
+        net.minecraft.nbt.CompoundTag legacy = new net.minecraft.nbt.CompoundTag();
+        saveLegacy(legacy);
+        out.store("PncData", net.minecraft.nbt.CompoundTag.CODEC, legacy);
+    }
+
+    @Override
+    protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput in) {
+        super.readAdditionalSaveData(in);
+        loadLegacy(in.read("PncData", net.minecraft.nbt.CompoundTag.CODEC).orElseGet(net.minecraft.nbt.CompoundTag::new));
     }
 }

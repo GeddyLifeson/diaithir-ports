@@ -20,8 +20,6 @@ package me.desht.pneumaticcraft.common.entity.semiblock;
 import me.desht.pneumaticcraft.common.registry.ModMenuTypes;
 import me.desht.pneumaticcraft.common.semiblock.IProvidingInventoryListener;
 import me.desht.pneumaticcraft.common.semiblock.ISpecificRequester;
-import me.desht.pneumaticcraft.common.thirdparty.ae2.AE2Integration;
-import me.desht.pneumaticcraft.common.thirdparty.ae2.AE2RequesterIntegration;
 import me.desht.pneumaticcraft.common.util.IOHelper;
 import me.desht.pneumaticcraft.lib.Textures;
 import net.minecraft.core.HolderLookup;
@@ -45,7 +43,6 @@ public class LogisticsRequesterEntity extends AbstractLogisticsFrameEntity imple
     private int minItems = 1;
     private int minFluid = 1;
 
-    private final AE2RequesterIntegration ae2requester = null;
 
     public LogisticsRequesterEntity(EntityType<?> entityTypeIn, Level worldIn) {
         super(entityTypeIn, worldIn);
@@ -56,7 +53,7 @@ public class LogisticsRequesterEntity extends AbstractLogisticsFrameEntity imple
         super.defineSynchedData(builder);
 
         builder.define(AE2_ENABLED, false);
-        if (AE2Integration.isAvailable()) {
+        if (false) {
         }
     }
 
@@ -101,10 +98,10 @@ public class LogisticsRequesterEntity extends AbstractLogisticsFrameEntity imple
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag tag) {
-        super.readAdditionalSaveData(tag);
+    protected void loadLegacy(CompoundTag tag) {
+        super.loadLegacy(tag);
 
-        if (AE2Integration.isAvailable()) {
+        if (false) {
             setAE2enabled(tag.getBooleanOr(NBT_AE2_INTEGRATION, false));
         }
     }
@@ -113,7 +110,7 @@ public class LogisticsRequesterEntity extends AbstractLogisticsFrameEntity imple
     public CompoundTag serializeNBT(CompoundTag tag, HolderLookup.Provider provider) {
         tag = super.serializeNBT(tag, provider);
 
-        if (AE2Integration.isAvailable()) {
+        if (false) {
             tag.putBoolean(NBT_AE2_INTEGRATION, isAE2enabled());
         }
         return tag;
@@ -133,21 +130,21 @@ public class LogisticsRequesterEntity extends AbstractLogisticsFrameEntity imple
     public void tick() {
         super.tick();
 
-//        if (!level.isClientSide() && AE2Integration.isAvailable()) {
+//        if (!level.isClientSide() && false) {
 //            getAE2integration().maybeCheckForInterface();
 //        }
     }
 
     @Override
     public void notify(BlockEntityAndFace teAndFace) {
-//        if (AE2Integration.isAvailable()) {
+//        if (false) {
 //            getAE2integration().maybeAddTE(teAndFace);
 //        }
     }
 
     @Override
     protected void doExtraCleanupTasks(boolean removingSemiblock) {
-//        if (!level.isClientSide() && AE2Integration.isAvailable()) {
+//        if (!level.isClientSide() && false) {
 //            getAE2integration().shutdown();
 //        }
     }
@@ -156,7 +153,7 @@ public class LogisticsRequesterEntity extends AbstractLogisticsFrameEntity imple
     public void handleGUIButtonPress(String tag, boolean shiftHeld, ServerPlayer player) {
         super.handleGUIButtonPress(tag, shiftHeld, player);
 
-//        if (tag.equals("ae2") && AE2Integration.isAvailable()) {
+//        if (tag.equals("ae2") && false) {
 //            setAE2enabled(!isAE2enabled());
 //            getAE2integration().setEnabled(isAE2enabled());
 //        }
@@ -222,7 +219,7 @@ public class LogisticsRequesterEntity extends AbstractLogisticsFrameEntity imple
     }
 
     public boolean isAE2enabled() {
-        return AE2Integration.isAvailable() && getEntityData().get(AE2_ENABLED);
+        return false && getEntityData().get(AE2_ENABLED);
     }
 
 //    public AE2RequesterIntegration getAE2integration() {

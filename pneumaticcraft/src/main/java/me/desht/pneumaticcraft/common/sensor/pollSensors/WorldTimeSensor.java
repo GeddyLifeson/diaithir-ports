@@ -51,6 +51,6 @@ public class WorldTimeSensor implements IPollSensorSetting {
 
     @Override
     public int getRedstoneValue(Level level, BlockPos pos, int sensorRange, String textBoxText) {
-        return (int) (level.getDayTime() % 24000) / 1500;
+        return (int) (level.getOverworldClockTime() % 24000) / 1500;
     }
 }

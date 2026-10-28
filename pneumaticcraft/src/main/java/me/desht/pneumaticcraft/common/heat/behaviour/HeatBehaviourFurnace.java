@@ -61,7 +61,7 @@ public class HeatBehaviourFurnace extends HeatBehaviour {
                 int progress = Math.max(0, ((int) getHeatExchanger().getTemperature() - 343) / 30);
                 progress = Math.min(5, progress);
                 for (int i = 0; i < progress; i++) {
-                    AbstractFurnaceBlockEntity.serverTick(getWorld(), furnace.getBlockPos(), furnace.getBlockState(), furnace);
+                    AbstractFurnaceBlockEntity.serverTick((net.minecraft.server.level.ServerLevel) getWorld(), furnace.getBlockPos(), furnace.getBlockState(), furnace);
                 }
             }
         }

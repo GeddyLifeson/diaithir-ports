@@ -64,7 +64,7 @@ public record PacketChestplateLauncher(float amount) implements CustomPacketPayl
 
         // Allows launching if upgrade is active, there is an offhand item, and the item is not on cooldown
         if (handler.upgradeUsable(CommonUpgradeHandlers.chestplateLauncherHandler, false) && !stack.isEmpty()
-                && !sp.getCooldowns().isOnCooldown(stack.getItem())) {
+                && !sp.getCooldowns().isOnCooldown(stack)) {
 
             ItemStack toFire = stack;
 
@@ -80,7 +80,7 @@ public record PacketChestplateLauncher(float amount) implements CustomPacketPayl
             // Special launch case for arrows/tridents
             if (launchedEntity instanceof AbstractArrow arrow) {
                 arrow.pickup = sp.isCreative() ? AbstractArrow.Pickup.CREATIVE_ONLY : AbstractArrow.Pickup.ALLOWED;
-                arrow.setBaseDamage(arrow.getBaseDamage() + 0.25 * upgrades * message.amount());
+                arrow.setBaseDamage(2.0 + 0.25 * upgrades * message.amount());
             }
 
             // Launches item

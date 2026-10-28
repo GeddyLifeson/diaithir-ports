@@ -98,14 +98,14 @@ public class TransferGadgetEntity extends AbstractSemiblockEntity implements IDi
     }
 
     @Override
-    public InteractionResult interactAt(Player player, Vec3 hitVec, InteractionHand hand) {
+    public InteractionResult interact(Player player, InteractionHand hand, Vec3 hitVec) {
         // since this is a cheap early game item, let's allow toggling with empty hand
         // not force the player to craft & charge up a logistics configurator
         if (player.getItemInHand(hand).isEmpty()) {
             toggle(player);
             return InteractionResult.SUCCESS;
         } else {
-            return super.interactAt(player, hitVec, hand);
+            return super.interact(player, hand, hitVec);
         }
     }
 
@@ -145,8 +145,8 @@ public class TransferGadgetEntity extends AbstractSemiblockEntity implements IDi
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
+    protected void loadLegacy(CompoundTag compound) {
+        super.loadLegacy(compound);
 
         counter = compound.getIntOr("counter", 0);
         setSide(Direction.from3DDataValue(compound.getByteOr("facing", (byte)0)));
@@ -154,8 +154,8 @@ public class TransferGadgetEntity extends AbstractSemiblockEntity implements IDi
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
+    protected void saveLegacy(CompoundTag compound) {
+        super.saveLegacy(compound);
 
         compound.putInt("counter", counter);
         compound.putByte("facing", (byte) getSide().get3DDataValue());

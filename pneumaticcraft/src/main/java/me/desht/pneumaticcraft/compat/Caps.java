@@ -62,8 +62,7 @@ public final class Caps {
         return h == null ? null : IEnergyStorage.of(h);
     }
 
-    @Nullable
-    public static net.neoforged.neoforge.fluids.capability.IFluidHandlerItem fluidItem(net.minecraft.world.item.ItemStack stack) {
+    public static net.neoforged.neoforge.fluids.capability.@Nullable IFluidHandlerItem fluidItem(net.minecraft.world.item.ItemStack stack) {
         var access = net.neoforged.neoforge.transfer.access.ItemAccess.forStack(stack);
         ResourceHandler<FluidResource> h = stack.getCapability(Capabilities.Fluid.ITEM, access);
         return h == null ? null : new net.neoforged.neoforge.fluids.capability.FluidResourceHandlerItemAdapter(h, access);

@@ -5,7 +5,7 @@
 package me.desht.pneumaticcraft.client.pneumatic_armor;
 
 
-import me.desht.pneumaticcraft.api.client.pneumatic_armor.IArmorUpgradeClientHandler;
+import me.desht.pneumaticcraft.api.client.pneumatic_helmet.IArmorUpgradeClientHandler;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EquipmentSlot;
 

@@ -87,7 +87,7 @@ public class ModCommands {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext buildContext) {
         dispatcher.register(literal("pncr")
                 .then(literal("dump_components")
-                        .requires(cs -> cs.hasPermission(2))
+                        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
                         .executes(ctx -> dumpComponents(ctx.getSource(), false))
                         .then(literal("all")
                                 .executes(ctx -> dumpComponents(ctx.getSource(), true))
@@ -124,7 +124,7 @@ public class ModCommands {
                         )
                 )
                 .then(literal("amadrone_deliver")
-                        .requires(cs -> cs.hasPermission(2))
+                        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
                         .then(argument("toPos", BlockPosArgument.blockPos())
                                 .then(argument("fromPos", BlockPosArgument.blockPos())
                                         .executes(ctx -> amadroneDeliver(ctx.getSource(), getLoadedBlockPos(ctx, "toPos"), getLoadedBlockPos(ctx, "fromPos")))
@@ -140,7 +140,7 @@ public class ModCommands {
                         .then(argument("upgrade", net.minecraft.commands.arguments.IdentifierArgument.id())
                                 .suggests((ctx, builder) -> suggestUpgradeIDs(builder))
                                 .then(argument("enabled", BoolArgumentType.bool())
-                                        .executes(ctx -> setArmorUpgrade(ctx.getSource(), ResourceLocationArgument.getId(ctx, "upgrade"), BoolArgumentType.getBool(ctx, "enabled")))
+                                        .executes(ctx -> setArmorUpgrade(ctx.getSource(), net.minecraft.commands.arguments.IdentifierArgument.getId(ctx, "upgrade"), BoolArgumentType.getBool(ctx, "enabled")))
                                 )
                         )
                 )
@@ -180,7 +180,7 @@ public class ModCommands {
 
         if (!stack.getComponents().isEmpty()) {
             int amount = stack.getComponents().size();
-            source.sendSuccess(() -> Component.translatable("pneumaticcraft.message.components_header", amount, stack.getItem().getDescription())
+            source.sendSuccess(() -> Component.translatable("pneumaticcraft.message.components_header", amount, stack.getHoverName())
                     .withStyle(ChatFormatting.YELLOW), false);
             if (!all) {
                 source.sendSuccess(() -> Component.translatable("pneumaticcraft.message.non_default_components")
@@ -288,7 +288,7 @@ public class ModCommands {
                 GlobalVariableHelper.getInstance().setPos(id, v, pos);
                 source.sendSuccess(() -> xlate("pneumaticcraft.command.globalVariable.output", v, PneumaticCraftUtils.posToString(pos)), true);
             }).ifRight(item -> {
-                ItemStack stack = new ItemStack(item.getItem());
+                ItemStack stack = new ItemStack(item.item());
                 GlobalVariableHelper.getInstance().setStack(id, v, stack);
                 source.sendSuccess(() -> xlate("pneumaticcraft.command.globalVariable.output", v, PneumaticCraftUtils.getRegistryName(stack.getItem()).orElse(UNKNOWN_ITEM)), true);
             });

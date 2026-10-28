@@ -134,7 +134,7 @@ public abstract class AbstractSemiblockEntity extends Entity implements ISemiBlo
 
         if (!level().isClientSide() && isAlive() && !canStay()) {
             beingRemoved = true;
-            kill();
+            kill((net.minecraft.server.level.ServerLevel) level());
         }
 
         Block curBlock = getBlockState().getBlock();
@@ -146,7 +146,7 @@ public abstract class AbstractSemiblockEntity extends Entity implements ISemiBlo
     }
 
     @Override
-    public InteractionResult interactAt(Player player, Vec3 hitVec, InteractionHand hand) {
+    public InteractionResult interact(Player player, InteractionHand hand, Vec3 hitVec) {
         Vec3 eye = player.getEyePosition(0f);
         Vec3 end = eye.add(player.getLookAngle().normalize().scale(5f));
         ClipContext ctx = new ClipContext(eye, end, ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, player);
@@ -302,12 +302,10 @@ public abstract class AbstractSemiblockEntity extends Entity implements ISemiBlo
         return tag;
     }
 
-    @Override
-    protected void readAdditionalSaveData(CompoundTag compound) {
+        protected void loadLegacy(CompoundTag compound) {
     }
 
-    @Override
-    protected void addAdditionalSaveData(CompoundTag compound) {
+        protected void saveLegacy(CompoundTag compound) {
         serializeNBT(compound, registryAccess());
     }
 
@@ -385,12 +383,12 @@ public abstract class AbstractSemiblockEntity extends Entity implements ISemiBlo
         entity.level().playSound(null, blockPos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 1.0f, 1.0f);
         dropOffset = entity.position().subtract(this.position()).normalize();
         beingRemoved = true;
-        kill();
+        kill((net.minecraft.server.level.ServerLevel) level());
     }
 
     @Override
-    public boolean hurt(DamageSource source, float amount) {
-        if (this.isInvulnerableTo(source) || !(source.getDirectEntity() instanceof Player)) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
+        if (this.isInvulnerableToBase(source) || !(source.getDirectEntity() instanceof Player)) {
             return false;
         } else if (!this.level().isClientSide() && this.isAlive()) {
             this.setTimeSinceHit(10);
@@ -399,7 +397,7 @@ public abstract class AbstractSemiblockEntity extends Entity implements ISemiBlo
                 if (source.getEntity() != null) {
                     killedByEntity(source.getEntity());
                 } else {
-                    kill();
+                    kill((net.minecraft.server.level.ServerLevel) level());
                 }
             }
         }
@@ -450,5 +448,17 @@ public abstract class AbstractSemiblockEntity extends Entity implements ISemiBlo
     }
 
     private record LogKey(ResourceKey<Level> dimension, BlockPos pos, Direction dir) {
+    }
+
+    @Override
+    protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput out) {
+        net.minecraft.nbt.CompoundTag legacy = new net.minecraft.nbt.CompoundTag();
+        saveLegacy(legacy);
+        out.store("PncData", net.minecraft.nbt.CompoundTag.CODEC, legacy);
+    }
+
+    @Override
+    protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput in) {
+        loadLegacy(in.read("PncData", net.minecraft.nbt.CompoundTag.CODEC).orElseGet(net.minecraft.nbt.CompoundTag::new));
     }
 }

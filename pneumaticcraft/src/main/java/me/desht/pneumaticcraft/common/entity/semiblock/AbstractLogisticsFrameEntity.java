@@ -119,13 +119,15 @@ public abstract class AbstractLogisticsFrameEntity extends AbstractSemiblockEnti
                 if (world.isClientSide() && stack.has(ModDataComponents.SEMIBLOCK_DATA)) {
                     // client-side entity creation doesn't load in custom data from the itemstack; we need to do it ourselves in this case
                     // see EntityType#applyItemNBT()
-                    CompoundTag tag = logisticsFrame.saveWithoutId(new CompoundTag());
+                    var out = me.desht.pneumaticcraft.compat.NbtCompat.output(world.registryAccess());
+                    logisticsFrame.saveWithoutId(out);
+                    CompoundTag tag = out.buildResult();
                     UUID uuid = logisticsFrame.getUUID();
                     //noinspection ConstantConditions
                     CompoundTag toMerge = stack.get(ModDataComponents.SEMIBLOCK_DATA).copyTag();
                     tag.merge(toMerge);
                     logisticsFrame.setUUID(uuid);
-                    logisticsFrame.load(tag);
+                    logisticsFrame.load(me.desht.pneumaticcraft.compat.NbtCompat.input(world.registryAccess(), tag));
                 }
                 return logisticsFrame;
             }
@@ -330,10 +332,10 @@ public abstract class AbstractLogisticsFrameEntity extends AbstractSemiblockEnti
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag tag) {
-        super.readAdditionalSaveData(tag);
+    protected void loadLegacy(CompoundTag tag) {
+        super.loadLegacy(tag);
 
-        itemFilterHandler.deserializeNBT(registryAccess(), tag.getCompoundOrEmpty(NBT_ITEM_FILTERS));
+        me.desht.pneumaticcraft.compat.NbtCompat.load(itemFilterHandler, registryAccess(), tag.getCompoundOrEmpty(NBT_ITEM_FILTERS));
         fluidFilter = FluidFilter.CODEC.parse(registryAccess().createSerializationContext(NbtOps.INSTANCE), tag.getCompoundOrEmpty(NBT_FLUID_FILTERS)).result()
                 .orElse(new FluidFilter(FLUID_FILTER_SLOTS));
         setSemiblockInvisible(tag.getBooleanOr(NBT_INVISIBLE, false));

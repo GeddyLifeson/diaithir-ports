@@ -166,7 +166,7 @@ public record PacketDescription(BlockPos pos, boolean fullSync, List<IndexedFiel
             for (int i = 0; i < fieldCount; i++) {
                 CompoundTag element = list.getCompoundOrEmpty(i);
                 SyncedField.FieldType type = SyncedField.FieldType.values()[element.getByteOr("Type", (byte)0)];
-                byte[] b = element.getByteArray("Value");
+                byte[] b = element.getByteArray("Value").orElse(new byte[0]);
                 RegistryFriendlyByteBuf buf = new RegistryFriendlyByteBuf(Unpooled.wrappedBuffer(b), registryAccess, ConnectionType.NEOFORGE);
                 fields.add(new IndexedField(i, type, SyncedField.fromBytes(buf, type)));
             }

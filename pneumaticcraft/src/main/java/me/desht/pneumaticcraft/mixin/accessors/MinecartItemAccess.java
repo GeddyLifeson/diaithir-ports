@@ -8,6 +8,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(MinecartItem.class)
 public interface MinecartItemAccess {
     @Accessor
-    AbstractMinecart.Type getType();
+    net.minecraft.world.entity.EntityType<? extends AbstractMinecart> getType();
 
 }

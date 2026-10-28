@@ -6,4 +6,9 @@ package me.desht.pneumaticcraft.client.gui;
 
 
 public class ItemSearcherScreen {
+    private final net.neoforged.neoforge.items.ItemStackHandler inventory = new net.neoforged.neoforge.items.ItemStackHandler(49);
+
+    public net.neoforged.neoforge.items.IItemHandlerModifiable getInventory() {
+        return inventory;
+    }
 }

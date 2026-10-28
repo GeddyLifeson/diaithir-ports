@@ -51,7 +51,7 @@ public class FluidYeastCulture {
         }
 
         @Override
-        public void tick(Level worldIn, BlockPos pos, FluidState state) {
+        public void tick(net.minecraft.server.level.ServerLevel worldIn, BlockPos pos, net.minecraft.world.level.block.state.BlockState blockState, FluidState state) {
             if (ConfigHelper.common().recipes.inWorldYeastCrafting.get()) {
                 List<ItemEntity> entities = worldIn.getEntitiesOfClass(ItemEntity.class, new AABB(pos), e -> e.getItem().getItem() == Items.SUGAR);
                 if (!entities.isEmpty()) {
@@ -70,7 +70,7 @@ public class FluidYeastCulture {
                     }
                 }
             }
-            super.tick(worldIn, pos, state);
+            super.tick(worldIn, pos, blockState, state);
         }
     }
 

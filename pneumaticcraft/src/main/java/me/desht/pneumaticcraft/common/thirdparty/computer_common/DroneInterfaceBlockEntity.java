@@ -132,14 +132,14 @@ public class DroneInterfaceBlockEntity extends AbstractTickingBlockEntity
     }
 
     @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider provider) {
-        super.handleUpdateTag(tag, provider);
-        droneId = tag.getIntOr("drone", 0);
+    public void handleUpdateTag(net.minecraft.world.level.storage.ValueInput input) {
+        super.handleUpdateTag(input);
+        droneId = me.desht.pneumaticcraft.compat.NbtCompat.toTag(input).getIntOr("drone", 0);
     }
 
     @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider lookupProvider) {
-        droneId = pkt.getTag().getIntOr("drone", 0);
+    public void onDataPacket(Connection net, net.minecraft.world.level.storage.ValueInput input) {
+        droneId = me.desht.pneumaticcraft.compat.NbtCompat.toTag(input).getIntOr("drone", 0);
     }
 
     private DroneEntity validateAndGetDrone() {

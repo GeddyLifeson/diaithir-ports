@@ -19,7 +19,6 @@ package me.desht.pneumaticcraft.common.hacking.entity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
-import net.minecraft.tags.CatVariantTags;
 import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.animal.feline.Cat;
@@ -50,18 +49,14 @@ public class HackableTameable extends AbstractTameableHack<TamableAnimal> {
             entity.getNavigation().stop();
             entity.setTarget(null);
             entity.setHealth(20.0F);
-            entity.setOwnerUUID(player.getUUID());
+            entity.setOwner(player);
             entity.level().broadcastEntityEvent(entity, EntityEvent.TAMING_SUCCEEDED);
             entity.setTame(true, true);
 
             // TODO: code smell
             // Would be better to have a HackableCat subclass, but HackableHandler.getHackableForEntity() isn't
             // set up to prioritise getting a cat over a generic tameable.
-            if (entity instanceof Cat cat) {
-                BuiltInRegistries.CAT_VARIANT.getTag(CatVariantTags.DEFAULT_SPAWNS)
-                        .flatMap(variants -> variants.getRandomElement(cat.level().getRandom()))
-                        .ifPresent(cat::setVariant);
-            }
+            // 26.1 port: cat variant randomisation on taming is not ported (Cat#setVariant is now private)
         }
     }
 }

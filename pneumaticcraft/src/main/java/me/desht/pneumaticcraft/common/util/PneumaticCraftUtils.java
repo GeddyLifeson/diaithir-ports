@@ -770,4 +770,13 @@ public class PneumaticCraftUtils {
     public static net.neoforged.neoforge.fluids.FluidStack[] fluidStacks(net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient ingredient) {
         return ingredient.ingredient().fluids().stream().map(h -> new net.neoforged.neoforge.fluids.FluidStack(h, ingredient.amount())).toArray(net.neoforged.neoforge.fluids.FluidStack[]::new);
     }
+
+    public static final net.minecraft.network.codec.StreamCodec<io.netty.buffer.ByteBuf, org.joml.Vector3f> VECTOR3F =
+            net.minecraft.network.codec.ByteBufCodecs.VECTOR3F.map(org.joml.Vector3f::new, v -> v);
+
+    @javax.annotation.Nullable
+    public static java.util.UUID ownerUUID(net.minecraft.world.entity.OwnableEntity entity) {
+        var ref = entity.getOwnerReference();
+        return ref == null ? null : ref.getUUID();
+    }
 }

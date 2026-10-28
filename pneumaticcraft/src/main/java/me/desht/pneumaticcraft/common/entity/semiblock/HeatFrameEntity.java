@@ -193,7 +193,7 @@ public class HeatFrameEntity extends AbstractSemiblockEntity {
             ItemStack stack = handler.getStackInSlot(slot);
             if (!stack.isEmpty()) {
                 return VanillaRecipeCache.SMELTING.getCachedRecipe(level(), new SingleRecipeInput(stack)).map(recipe -> {
-                    ItemStack result = recipe.getResultItem(level().registryAccess()).copy();
+                    ItemStack result = recipe.assemble(new SingleRecipeInput(stack));
                     if (!result.isEmpty()) {
                         ItemStack remainder = ItemHandlerHelper.insertItem(handler, result, true);
                         if (remainder.isEmpty()) {
@@ -272,8 +272,8 @@ public class HeatFrameEntity extends AbstractSemiblockEntity {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag tag) {
-        super.readAdditionalSaveData(tag);
+    protected void loadLegacy(CompoundTag tag) {
+        super.loadLegacy(tag);
 
         logic.deserializeNBT(tag.getCompoundOrEmpty("heatExchanger"));
         cookingProgress = tag.getIntOr("cookingProgress", 0);

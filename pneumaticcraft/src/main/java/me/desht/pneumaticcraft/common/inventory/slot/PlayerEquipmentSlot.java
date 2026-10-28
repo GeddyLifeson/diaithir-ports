@@ -60,11 +60,10 @@ public class PlayerEquipmentSlot extends Slot {
         return (itemstack.isEmpty() || playerIn.isCreative() || !EnchantmentHelper.has(itemstack, EnchantmentEffectComponents.PREVENT_ARMOR_CHANGE)) && super.mayPickup(playerIn);
     }
 
-    @Override
-    public Pair<Identifier, Identifier> getNoItemIcon() {
+    public Identifier getNoItemSprite() {
         return slotType.getType() == EquipmentSlot.Type.HUMANOID_ARMOR ?
-                Pair.of(InventoryMenu.BLOCK_ATLAS, ARMOR_SLOT_TEXTURES[slotType.getIndex()]) :
-                Pair.of(InventoryMenu.BLOCK_ATLAS, InventoryMenu.EMPTY_ARMOR_SLOT_SHIELD);
+                ARMOR_SLOT_TEXTURES[slotType.getIndex()] :
+                InventoryMenu.EMPTY_ARMOR_SLOT_SHIELD;
     }
 
     private static int getIndexForSlot(EquipmentSlot type) {

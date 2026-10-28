@@ -78,7 +78,7 @@ public class ProgrammableControllerEntity extends AbstractDroneEntity {
     }
 
     @Override
-    public boolean hurt(DamageSource source, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
         return false;
     }
 

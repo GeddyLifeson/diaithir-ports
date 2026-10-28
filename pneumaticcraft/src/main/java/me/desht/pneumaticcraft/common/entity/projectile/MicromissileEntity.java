@@ -73,7 +73,9 @@ public class MicromissileEntity extends ThrowableProjectile {
     }
 
     public MicromissileEntity(Level worldIn, LivingEntity thrower, ItemStack stack) {
-        super(ModEntityTypes.MICROMISSILE.get(), thrower, worldIn);
+        super(ModEntityTypes.MICROMISSILE.get(), worldIn);
+        setOwner(thrower);
+        setPos(thrower.getX(), thrower.getEyeY() - 0.1, thrower.getZ());
 
         MicromissilesItem.Settings settings = stack.get(ModDataComponents.MICROMISSILE_SETTINGS);
         if (settings != null) {
@@ -195,9 +197,9 @@ public class MicromissileEntity extends ThrowableProjectile {
         if (thrower != null) {
             UUID throwerID = thrower.getUUID();
             if (thrower.equals(e)
-                    || e instanceof TamableAnimal t && throwerID.equals(t.getOwnerUUID())
+                    || e instanceof TamableAnimal t && throwerID.equals(me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.ownerUUID(t))
                     || e instanceof DroneEntity d && throwerID.equals(d.getOwnerUUID())
-                    || e instanceof Horse h && throwerID.equals(h.getOwnerUUID())) {
+                    || e instanceof Horse h && throwerID.equals(me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.ownerUUID(h))) {
                 return false;
             }
         }
@@ -268,18 +270,14 @@ public class MicromissileEntity extends ThrowableProjectile {
         return !outOfFuel;
     }
 
-    @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
+        public void saveLegacy(CompoundTag compound) {
         compound.putFloat("turnSpeed", turnSpeed);
         compound.putFloat("explosionScaling", explosionPower);
         compound.putFloat("topSpeedSq", maxVelocitySq);
         compound.putString("filter", entityFilter.toString());
     }
 
-    @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
+        public void loadLegacy(CompoundTag compound) {
         turnSpeed = compound.getFloatOr("turnSpeed", 0f);
         explosionPower = compound.getFloatOr("explosionScaling", 0f);
         maxVelocitySq = compound.getFloatOr("topSpeedSq", 0f);
@@ -301,5 +299,19 @@ public class MicromissileEntity extends ThrowableProjectile {
         public int compare(Entity e1, Entity e2) {
             return Double.compare(vec.distanceToSqr(e1.position()), vec.distanceToSqr(e2.position()));
         }
+    }
+
+    @Override
+    protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput out) {
+        super.addAdditionalSaveData(out);
+        net.minecraft.nbt.CompoundTag legacy = new net.minecraft.nbt.CompoundTag();
+        saveLegacy(legacy);
+        out.store("PncData", net.minecraft.nbt.CompoundTag.CODEC, legacy);
+    }
+
+    @Override
+    protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput in) {
+        super.readAdditionalSaveData(in);
+        loadLegacy(in.read("PncData", net.minecraft.nbt.CompoundTag.CODEC).orElseGet(net.minecraft.nbt.CompoundTag::new));
     }
 }

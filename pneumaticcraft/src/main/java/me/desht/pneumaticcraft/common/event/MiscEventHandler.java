@@ -120,7 +120,7 @@ public class MiscEventHandler {
     public void handleFuelEvent(FurnaceFuelBurnTimeEvent event) {
         // allow burning of PNC fuel fluids in any container item, iff item.hasContainer() is true
         ItemStack containerStack = event.getItemStack();
-        if (containerStack.hasCraftingRemainingItem()) {
+        if (containerStack.getCraftingRemainder() != null) {
             FluidUtil.getFluidContained(containerStack).ifPresent(fluidStack -> {
                 PneumaticCraftUtils.getRegistryName(fluidStack.getFluid()).ifPresent(regName -> {
                     if (Names.MOD_ID.equals(regName.getNamespace())) {
@@ -139,7 +139,7 @@ public class MiscEventHandler {
     }
 
     private int amountTaken(int origAmount, ItemStack stack) {
-        IFluidHandlerItem handler = me.desht.pneumaticcraft.compat.Caps.fluidItem(stack.getCraftingRemainingItem());
+        IFluidHandlerItem handler = me.desht.pneumaticcraft.compat.Caps.fluidItem(me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.craftingRemainder(stack));
         if (handler != null) {
             int newAmount = handler.drain(Integer.MAX_VALUE, IFluidHandler.FluidAction.SIMULATE).getAmount();
             return origAmount - newAmount;
@@ -230,7 +230,7 @@ public class MiscEventHandler {
         ServerPlayer player = event.getPlayer();
         if (username.equals("Quetzz") && event.getMessage().getString().equals("m00")) {
             for (int i = 0; i < 4; i++) {
-                NetworkHandler.sendToPlayer(new PacketPlaySound(SoundEvents.COW_AMBIENT, SoundSource.NEUTRAL,
+                NetworkHandler.sendToPlayer(new PacketPlaySound(SoundEvents.COW_MILK, SoundSource.NEUTRAL,
                         (float) player.getX(), (float) player.getY(), (float) player.getZ(), 1, 1, true), player);
             }
         }
@@ -262,7 +262,7 @@ public class MiscEventHandler {
                 }
             } else if (event.getSlot().getType() == EquipmentSlot.Type.HUMANOID_ARMOR) {
                 // trigger the "compressed iron man" advancement if wearing a full suit
-                for (ItemStack stack : player.getArmorSlots()) {
+                for (ItemStack stack : java.util.List.of(player.getItemBySlot(EquipmentSlot.HEAD), player.getItemBySlot(EquipmentSlot.CHEST), player.getItemBySlot(EquipmentSlot.LEGS), player.getItemBySlot(EquipmentSlot.FEET))) {
                     if (!(stack.getItem() instanceof PneumaticArmorItem)) {
                         return;
                     }
@@ -289,7 +289,7 @@ public class MiscEventHandler {
     public void onTagsUpdated(TagsUpdatedEvent event) {
         CommonArmorRegistry.getInstance().resolveBlockTags();
 
-        PneumaticRegistry.getInstance().getMiscHelpers().registerXPFluid(FluidIngredient.tag(PneumaticCraftTags.Fluids.EXPERIENCE), 20);
+        PneumaticRegistry.getInstance().getMiscHelpers().registerXPFluid(FluidIngredient.of(net.minecraft.core.registries.BuiltInRegistries.FLUID.getOrThrow(PneumaticCraftTags.Fluids.EXPERIENCE)), 20);
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)

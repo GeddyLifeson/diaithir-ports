@@ -53,9 +53,8 @@ public class WorldWeatherForecaster implements IPollSensorSetting {
 
     @Override
     public int getRedstoneValue(Level level, BlockPos pos, int sensorRange, String textBoxText) {
-        LevelData info = level.getLevelData();
-        if (info instanceof ServerLevelData) {
-            return Math.max(0, 15 - ((ServerLevelData) info).getRainTime() / 1200);
+        if (level instanceof net.minecraft.server.level.ServerLevel sl) {
+            return Math.max(0, 15 - sl.getWeatherData().getRainTime() / 1200);
         } else {
             return 0;
         }

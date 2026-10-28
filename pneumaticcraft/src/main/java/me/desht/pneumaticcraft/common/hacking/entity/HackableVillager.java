@@ -68,7 +68,7 @@ public class HackableVillager implements IHackableEntity<Villager> {
     public void onHackFinished(Villager entity, Player player) {
         Level level = player.level();
         if (!level.isClientSide()) {
-            if (entity.shouldRestock()) {
+            if (entity.level() instanceof net.minecraft.server.level.ServerLevel sl && entity.shouldRestock(sl)) {
                 entity.restock();
             }
             int n = level.getRandom().nextInt(25);

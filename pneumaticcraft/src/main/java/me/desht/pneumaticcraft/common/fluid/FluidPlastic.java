@@ -47,13 +47,13 @@ public abstract class FluidPlastic {
         }
 
         @Override
-        public void tick(Level worldIn, BlockPos pos, FluidState state) {
+        public void tick(net.minecraft.server.level.ServerLevel worldIn, BlockPos pos, net.minecraft.world.level.block.state.BlockState blockState, FluidState state) {
             if (ConfigHelper.common().recipes.inWorldPlasticSolidification.get()) {
                 ItemEntity item = new ItemEntity(worldIn, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, new ItemStack(ModItems.PLASTIC.get()));
                 worldIn.addFreshEntity(item);
                 worldIn.setBlock(pos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
             }
-            super.tick(worldIn, pos, state);
+            super.tick(worldIn, pos, blockState, state);
         }
     }
 

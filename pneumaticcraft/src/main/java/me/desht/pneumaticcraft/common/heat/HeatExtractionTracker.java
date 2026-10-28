@@ -35,9 +35,11 @@ public class HeatExtractionTracker extends SavedData {
 
     private final Map<BlockPos, Double> extracted = new HashMap<>();
 
-    public static SavedData.Factory<HeatExtractionTracker> factory() {
-        return new SavedData.Factory<>(HeatExtractionTracker::new, HeatExtractionTracker::load, null);
-    }
+    private static final net.minecraft.world.level.saveddata.SavedDataType<HeatExtractionTracker> TYPE =
+            new net.minecraft.world.level.saveddata.SavedDataType<>(
+                    me.desht.pneumaticcraft.api.PneumaticRegistry.RL("heat_extraction"),
+                    HeatExtractionTracker::new,
+                    CompoundTag.CODEC.xmap(t -> load(t, null), t -> t.save(new CompoundTag(), null)));
 
     private HeatExtractionTracker() {
     }
@@ -47,7 +49,7 @@ public class HeatExtractionTracker extends SavedData {
     }
 
     public static HeatExtractionTracker getInstance(Level world) {
-        return ((ServerLevel) world).getDataStorage().computeIfAbsent(HeatExtractionTracker.factory(), DATA_NAME);
+        return ((ServerLevel) world).getDataStorage().computeIfAbsent(TYPE);
     }
 
     public double getHeatExtracted(BlockPos pos) {
@@ -76,7 +78,6 @@ public class HeatExtractionTracker extends SavedData {
         return this;
     }
 
-    @Override
     public CompoundTag save(CompoundTag compound, HolderLookup.Provider provider) {
         ListTag list = new ListTag();
         extracted.forEach((pos, heat) -> {

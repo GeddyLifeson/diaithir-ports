@@ -46,7 +46,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.RecipesUpdatedEvent;
+import net.neoforged.neoforge.client.event.RecipesReceivedEvent;
 import net.neoforged.neoforge.items.wrapper.CombinedInvWrapper;
 import net.neoforged.neoforge.items.wrapper.PlayerMainInvWrapper;
 import net.neoforged.neoforge.items.wrapper.PlayerOffhandInvWrapper;
@@ -157,7 +157,7 @@ public enum AmadronOfferManager {
         MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
         if (server != null && !server.isDedicatedServer()) {
             for (Player player : server.getPlayerList().getPlayers()) {
-                if (server.isSingleplayerOwner(player.getGameProfile())) {
+                if (server.isSingleplayerOwner(player.nameAndId())) {
                     maybeNotifyPlayerOfUpdates(player);
                     break;
                 }
@@ -330,30 +330,9 @@ public enum AmadronOfferManager {
         if (villagerTrades.isEmpty()) {
             Set<VillagerProfession> validSet = new HashSet<>();
             RandomSource rand = RandomSource.createThreadLocalInstance();
-            VillagerTrades.TRADES.forEach((profession, tradeMap) -> tradeMap.forEach((level, trades) -> {
-                IntStream.range(0, trades.length).forEach(i -> {
-                    MerchantOffer offer = getOfferForNullVillager(trades[i], rand);
-                    if (offer != null && !offer.getBaseCostA().isEmpty() && !offer.getResult().isEmpty()) {
-                        Identifier offerId = Identifier.parse(profession + "_" + level + "_" + i);
-                        String key = profession.toString() + "_" + level;
-                        villagerTrades.computeIfAbsent(key, k ->
-                                new ArrayList<>()).add(AmadronOffer.villagerTrade(offerId, offer, level));
-                        validSet.add(profession);
-                    }
-                });
-            }));
+            // 26.1 port: villager trades are data-driven now (VillagerTrades.TRADES is gone), so vanilla villager
+            // trades are not offered via Amadron. See PORT_NOTES.md.
             validProfessions.addAll(validSet);
-        }
-    }
-
-    private MerchantOffer getOfferForNullVillager(VillagerTrades.ItemListing trade, RandomSource rand) {
-        try {
-            // shouldn't really pass null here, but creating a fake villager can cause worldgen-related server lockups
-            // https://github.com/TeamPneumatic/pnc-repressurized/issues/899
-            //noinspection ConstantConditions
-            return trade.getOffer(null, rand);
-        }catch (NullPointerException ignored) {
-            return null;
         }
     }
 
@@ -392,7 +371,7 @@ public enum AmadronOfferManager {
     @EventBusSubscriber(modid = Names.MOD_ID)
     public static class EventListener {
         @SubscribeEvent
-        public static void onRecipesAvailable(RecipesUpdatedEvent event) {
+        public static void onRecipesAvailable(RecipesReceivedEvent event) {
             NetworkHandler.sendToServer(PacketSyncAmadronOffers.createRequest());
         }
     }

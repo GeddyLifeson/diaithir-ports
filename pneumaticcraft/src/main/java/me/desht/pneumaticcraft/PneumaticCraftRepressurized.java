@@ -59,7 +59,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import net.neoforged.neoforge.event.server.ServerStoppingEvent;
@@ -115,7 +115,7 @@ public class PneumaticCraftRepressurized {
     private void thirdPartyPreInit() {
         ModList.get().getModContainerById(Names.MOD_ID).ifPresent(pncMod -> {
             ThirdPartyManager.instance().preInit(pncMod.getEventBus());
-            if (FMLEnvironment.dist.isClient()) {
+            if (FMLEnvironment.getDist().isClient()) {
                 ThirdPartyManager.instance().clientPreInit(pncMod.getEventBus());
             }
         });
@@ -176,8 +176,8 @@ public class PneumaticCraftRepressurized {
         });
     }
 
-    private void addReloadListeners(AddReloadListenerEvent event) {
-        event.addListener(PneumaticCraftRecipeType.getCacheReloadListener());
+    private void addReloadListeners(AddServerReloadListenersEvent event) {
+        event.addListener(me.desht.pneumaticcraft.api.PneumaticRegistry.RL("recipe_caches"), PneumaticCraftRecipeType.getCacheReloadListener());
     }
 
     private void registerCommands(RegisterCommandsEvent event) {

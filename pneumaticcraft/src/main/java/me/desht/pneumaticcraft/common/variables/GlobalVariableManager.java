@@ -57,11 +57,19 @@ public class GlobalVariableManager extends SavedData {
     private final Table<UUID, String, BlockPos> playerVars = HashBasedTable.create();
     private final Table<UUID, String, ItemStack> playerItemVars = HashBasedTable.create();
 
+    private static final net.minecraft.world.level.saveddata.SavedDataType<GlobalVariableManager> TYPE =
+            new net.minecraft.world.level.saveddata.SavedDataType<>(
+                    me.desht.pneumaticcraft.api.PneumaticRegistry.RL("global_variables"),
+                    level -> new GlobalVariableManager(),
+                    level -> CompoundTag.CODEC.xmap(
+                            tag -> load(tag, level.registryAccess()),
+                            gvm -> gvm.save(new CompoundTag(), level.registryAccess())));
+
     public static GlobalVariableManager getInstance() {
         if (EffectiveSide.get() == LogicalSide.CLIENT) {
             return CLIENT_INSTANCE;
         } else {
-            return getOverworld().getDataStorage().computeIfAbsent(new Factory<>(GlobalVariableManager::new, GlobalVariableManager::load), DATA_KEY);
+            return getOverworld().getDataStorage().computeIfAbsent(TYPE);
         }
     }
 
@@ -173,17 +181,16 @@ public class GlobalVariableManager extends SavedData {
         globalItemVars.putAll(readItemList(provider, tag.getListOrEmpty("globalItemVars")));
 
         CompoundTag playerPos = tag.getCompoundOrEmpty("playerVars");
-        for (String id : playerPos.getAllKeys()) {
+        for (String id : playerPos.keySet()) {
             readPosList(playerPos.getListOrEmpty(id)).forEach((k, v) -> playerVars.put(UUID.fromString(id), k, v));
         }
 
         CompoundTag playerItems = tag.getCompoundOrEmpty("playerItemVars");
-        for (String id : playerItems.getAllKeys()) {
+        for (String id : playerItems.keySet()) {
             readItemList(provider, playerItems.getListOrEmpty(id)).forEach((k, v) -> playerItemVars.put(UUID.fromString(id), k, v));
         }
     }
 
-    @Override
     public CompoundTag save(CompoundTag tag, HolderLookup.Provider provider) {
         tag.put("globalVars", writePosList(globalVars));
 

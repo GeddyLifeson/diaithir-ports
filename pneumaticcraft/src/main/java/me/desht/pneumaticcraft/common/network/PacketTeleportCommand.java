@@ -27,7 +27,7 @@ public record PacketTeleportCommand(BlockPos pos) implements CustomPacketPayload
     }
 
     public static void handle(PacketTeleportCommand message, IPayloadContext ctx) {
-        CommandSourceStack stack = ctx.player().createCommandSourceStack();
+        CommandSourceStack stack = ((net.minecraft.server.level.ServerPlayer) ctx.player()).createCommandSourceStack();
         String command = String.format("tp %d %d %d", message.pos().getX(), message.pos().getY(), message.pos().getZ());
         stack.getServer().getCommands().performPrefixedCommand(stack, command);
     }

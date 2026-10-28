@@ -181,8 +181,8 @@ public class TumblingBlockEntity extends ThrowableProjectile {
     }
 
     private void dropAsItem() {
-        if (this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-            spawnAtLocation(getStack().copy(), 0.0F);
+        if (this.level() instanceof ServerLevel sl && sl.getGameRules().get(GameRules.ENTITY_DROPS)) {
+            me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.spawnAtLocation(this, getStack().copy(), 0.0F);
         }
     }
 

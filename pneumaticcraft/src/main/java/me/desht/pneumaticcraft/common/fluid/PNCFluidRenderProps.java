@@ -18,11 +18,10 @@
 package me.desht.pneumaticcraft.common.fluid;
 
 import net.minecraft.resources.Identifier;
-import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 
 import static me.desht.pneumaticcraft.api.PneumaticRegistry.RL;
 
-public class PNCFluidRenderProps implements IClientFluidTypeExtensions {
+public class PNCFluidRenderProps {
     private final Identifier still;
     private final Identifier flowing;
     private final int colorTint;
@@ -53,17 +52,14 @@ public class PNCFluidRenderProps implements IClientFluidTypeExtensions {
         return new PNCFluidRenderProps(textureBase + "_still", textureBase + "_flow", colorTint);
     }
 
-    @Override
     public Identifier getStillTexture() {
         return still;
     }
 
-    @Override
     public Identifier getFlowingTexture() {
         return flowing;
     }
 
-    @Override
     public int getTintColor() {
         return colorTint;
     }

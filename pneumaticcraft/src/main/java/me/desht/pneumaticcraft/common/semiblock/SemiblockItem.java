@@ -67,7 +67,16 @@ public class SemiblockItem extends Item {
             Entity e = type.create(world, net.minecraft.world.entity.EntitySpawnReason.TRIGGERED);
             if (e instanceof AbstractSemiblockEntity semi) {
                 e.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0f, 0f);
-                EntityType.updateCustomEntityTag(world, player, e, stack.getOrDefault(ModDataComponents.SEMIBLOCK_DATA, CustomData.EMPTY));
+                CustomData data = stack.getOrDefault(ModDataComponents.SEMIBLOCK_DATA, CustomData.EMPTY);
+                if (!data.isEmpty()) {
+                    var out = me.desht.pneumaticcraft.compat.NbtCompat.output(world.registryAccess());
+                    e.saveWithoutId(out);
+                    net.minecraft.nbt.CompoundTag merged = out.buildResult();
+                    merged.merge(data.copyTag());
+                    java.util.UUID uuid = e.getUUID();
+                    e.load(me.desht.pneumaticcraft.compat.NbtCompat.input(world.registryAccess(), merged));
+                    e.setUUID(uuid);
+                }
                 return semi;
             }
             return null;

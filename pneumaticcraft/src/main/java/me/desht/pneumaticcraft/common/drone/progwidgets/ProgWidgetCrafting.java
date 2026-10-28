@@ -167,7 +167,7 @@ public class ProgWidgetCrafting extends ProgWidget implements ICraftingWidget, I
 
     public ItemStack getRecipeResult(Level level) {
         CraftingInput grid = getCraftingGrid();
-        return getRecipe(level, grid).map(r -> r.assemble(grid, level.registryAccess())).orElse(ItemStack.EMPTY);
+        return getRecipe(level, grid).map(r -> r.assemble(grid)).orElse(ItemStack.EMPTY);
     }
 
     @Override

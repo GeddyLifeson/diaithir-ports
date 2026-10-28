@@ -137,7 +137,7 @@ public class AmadroneEntity extends DroneEntity {
     }
 
     @Override
-    protected void dropEquipment() {
+    protected void dropEquipment(net.minecraft.server.level.ServerLevel serverLevel) {
         // The DroneSuicideEvent for amadrones *should* ensure the drone's inventory is emptied before death,
         // but see https://github.com/TeamPneumatic/pnc-repressurized/issues/507
         // So let's be extra-paranoid and drop nothing here
@@ -156,8 +156,8 @@ public class AmadroneEntity extends DroneEntity {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag tag) {
-        super.addAdditionalSaveData(tag);
+    public void saveLegacy(CompoundTag tag) {
+        super.saveLegacy(tag);
 
         if (handlingOffer != null) {
             CompoundTag subTag = new CompoundTag();
@@ -173,8 +173,8 @@ public class AmadroneEntity extends DroneEntity {
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag tag) {
-        super.readAdditionalSaveData(tag);
+    public void loadLegacy(CompoundTag tag) {
+        super.loadLegacy(tag);
 
         if (tag.contains("amadron")) {
             CompoundTag subTag = tag.getCompoundOrEmpty("amadron");
