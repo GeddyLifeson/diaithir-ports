@@ -39,6 +39,16 @@ public class PncRendererSetup {
 
     @SubscribeEvent
     public static void registerEntityLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(PNCModelLayers.AIR_GRATE_MODULE, me.desht.pneumaticcraft.client.render.tube_module.AirGrateRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.CHARGING_MODULE, me.desht.pneumaticcraft.client.render.tube_module.ChargingRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.FLOW_DETECTOR_MODULE, me.desht.pneumaticcraft.client.render.tube_module.FlowDetectorRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.LOGISTICS_MODULE, me.desht.pneumaticcraft.client.render.tube_module.LogisticsRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.PRESSURE_GAUGE_MODULE, me.desht.pneumaticcraft.client.render.tube_module.PressureGaugeRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.REDSTONE_MODULE, me.desht.pneumaticcraft.client.render.tube_module.RedstoneRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.REGULATOR_MODULE, me.desht.pneumaticcraft.client.render.tube_module.RegulatorRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.SAFETY_VALVE_MODULE, me.desht.pneumaticcraft.client.render.tube_module.SafetyValveRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.VACUUM_MODULE, me.desht.pneumaticcraft.client.render.tube_module.VacuumRenderer::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.THERMOSTAT_MODULE, me.desht.pneumaticcraft.client.render.tube_module.ThermostatRenderer::createBodyLayer);
         event.registerLayerDefinition(PNCModelLayers.HEAT_FRAME, me.desht.pneumaticcraft.client.model.entity.semiblocks.ModelHeatFrame::createBodyLayer);
         event.registerLayerDefinition(PNCModelLayers.LOGISTICS_FRAME, me.desht.pneumaticcraft.client.model.entity.semiblocks.ModelLogisticsFrame::createBodyLayer);
         event.registerLayerDefinition(PNCModelLayers.SPAWNER_AGITATOR, me.desht.pneumaticcraft.client.model.entity.semiblocks.ModelSpawnerAgitator::createBodyLayer);
@@ -51,6 +61,11 @@ public class PncRendererSetup {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntityTypes.PRESSURE_TUBE.get(), me.desht.pneumaticcraft.client.render.blockentity.PressureTubeModuleRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntityTypes.ADVANCED_PRESSURE_TUBE.get(), me.desht.pneumaticcraft.client.render.blockentity.PressureTubeModuleRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntityTypes.REINFORCED_PRESSURE_TUBE.get(), me.desht.pneumaticcraft.client.render.blockentity.PressureTubeModuleRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntityTypes.SENTRY_TURRET.get(), me.desht.pneumaticcraft.client.render.blockentity.SentryTurretRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntityTypes.AERIAL_INTERFACE.get(), me.desht.pneumaticcraft.client.render.blockentity.AerialInterfaceRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.DRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::standard);
         event.registerEntityRenderer(ModEntityTypes.AMADRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::amadrone);
         event.registerEntityRenderer(ModEntityTypes.LOGISTICS_DRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::logistics);

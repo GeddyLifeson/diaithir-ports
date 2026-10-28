@@ -49,7 +49,7 @@ import java.util.function.Consumer;
  */
 public interface IArmorUpgradeClientHandler<T extends IArmorUpgradeHandler<?>> {
     final class Holder {
-        private static final KeyMapping.Category TOGGLES = KeyMapping.Category.register(net.minecraft.resources.Identifier.fromNamespaceAndPath("pneumaticcraft", "upgrade_toggles"));
+        private static final KeyMapping.Category TOGGLES = new KeyMapping.Category(net.minecraft.resources.Identifier.fromNamespaceAndPath("pneumaticcraft", "upgrade_toggles"));
 
         private Holder() {}
     }

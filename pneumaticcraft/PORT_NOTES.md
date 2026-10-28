@@ -7,14 +7,14 @@ Port of upstream 1.21.1 code (8.2.19) to NeoForge 26.1.2.116 / Minecraft 26.1.2.
 Source kept out of the build lives in `port-stash/`.
 
 - Third-party integrations (JEI, EMI, Patchouli, The One Probe, Jade/Waila, Curios, CC:Tweaked, Mekanism, Immersive Engineering, Create, AE2, Botania, CraftTweaker, FTB Teams, FTB Filter System, Game Stages, Cold Sweat, Tough As Nails, CoFH, Forestry, EnderIO, BuildCraft, Thaumcraft, Fusion): removed. None of those mods are API-ready on 26.1 in the same form.
-- Client side (`client/`, all GUIs, renderers, models, HUD, key handling): stashed in `port-stash/` while the common side is ported; see the status list below for what is back.
+- Client side: restored, see the client restoration sections below for what remains.
 - Datagen: stashed. The generated data under `src/generated/resources` is used as is (and converted to 26.1 formats where the format changed).
 
 ## Status
 
 - `./gradlew compileJava` succeeds against NeoForge 26.1.2.116.
 - A dedicated server boots with `./gradlew runServer`, prints `Done`, loads all recipes, loot tables, advancements and tags without data errors, and shuts down cleanly. The mod has not been play-tested beyond boot: no machine, drone, armor, or GUI interaction has been exercised.
-- There is no client in a usable state (see below). Items and blocks will have no models/GUI until the client side is ported.
+- The client boots and joins a world; see the client restoration sections for remaining gaps.
 
 ## What changed to get here
 
@@ -31,8 +31,7 @@ Source kept out of the build lives in `port-stash/`.
 
 Each of these compiles and boots but does not do its job yet.
 
-- Client side: all screens (`client/gui/*`), HUD, renderers, key handling, sounds, tint handlers, area rendering, fluid client models (`PNCFluidRenderProps` is plain data), pneumatic armor client handlers. Originals are in `port-stash/`. Resource packs, item model definitions and equipment assets (armor textures) for 26.1 have not been written.
-- Item fluid capabilities (`IFluidCapProvider`: tanks, liquid hopper, PNC buckets) are not registered. Fluid-container items will not accept or give fluids, and `FluidContainerIngredient` matching will fail until this is done.
+- Client side: see "Client restoration (third pass)" for the remaining gaps.
 - Villager trades and the PNC Mechanic profession trades (`VillagerTradesRegistration`): stashed. Amadron no longer offers vanilla villager trades (`VillagerTrades.TRADES` is gone).
 - Camouflage dynamic occlusion and light, and elytra/gliding upgrade behaviour.
 - Cat variant randomisation and painting variant cycling when hacking (the setters are private in 26.1).
@@ -58,6 +57,27 @@ Restored and verified by joining a world under Xvfb (client run, `-Xmx6G`, no se
   screens are ported and registered (`PncClientSetup`). An access transformer makes the container screen size fields non-final.
 - All bidirectional payloads now register a client handler (required by 26.1).
 
-Still stubbed: block entity renderers (tanks fluid, pressure gauge, assembly arms, etc.), entity renderers,
-pneumatic armor client and HUD, programmer, Amadron, remote, logistics frame screens, tube module screens,
-particles, moving sounds, tinting through item model JSON, custom pressure tube model.
+## Client restoration (third pass)
+
+All client code compiles and the client boots and joins a world (screenshots in `pnc-shots/`).
+
+- Block entity renderers: `client/render/LegacyBER` and `LegacyEntityRenderer` adapt the old immediate-mode
+  `render(...)` code to the 26.1 extract/submit pipeline by recording vertices and replaying them with
+  `submitCustomGeometry`; items and text are queued separately. Hand-written models extend `LegacyModel`.
+  About 40 BERs registered (fluid tanks, gauges, assembly arms, door, elevator, sentry turret, aerial interface,
+  tube module renderers), plus tube module layer definitions.
+- Pressure tube connected model: `PressureTubeBlockModel` (`CustomUnbakedBlockStateModel`, blockstate type
+  `pneumaticcraft:pressure_tube`) built from the tube core and connection parts.
+- Entity renderers: drones (all variants), semiblock frames/agitator/gadget/crop support, vortex, ring,
+  micromissile, tumbling block.
+- Screens: programmer and its widget screens, Amadron, remote and editor, logistics frames, upgrade manager,
+  security station hacking, tube module screens (registered in `PneumaticCraftRepressurizedClient`).
+- Pneumatic armor client and HUD: upgrade handlers, trackers, options screens, HUD layers via
+  `RegisterGuiLayersEvent`, 3D overlay via `RenderLevelStageEvent.AfterTranslucentFeatures`.
+- Particles (air, bullet), key mappings with registered categories, micromissile tooltip, client mod entry class.
+
+Known client gaps (not ported): area rendering (`AreaRenderManager` is a no-op), camouflage block model,
+minigun special item renderer, armor colour tint and elytra layer, jackhammer drill bit item property,
+block destroy particle handler, ProgWidget in-world renderers, AE2 branch of the logistics requester screen.
+Only the Programmer/Security station screens and the BER/entity/tube visuals were screenshot-checked; the armor
+HUD and most other screens compile but have not been exercised in play.

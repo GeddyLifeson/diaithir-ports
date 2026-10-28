@@ -61,7 +61,7 @@ public enum PneumaticCraftAPIHandler implements PneumaticRegistry.IPneumaticCraf
 
     @Override
     public IClientArmorRegistry getClientArmorRegistry() {
-        return null;
+        return ClientArmorRegistry.getInstance();
     }
 
     @Override
@@ -81,7 +81,7 @@ public enum PneumaticCraftAPIHandler implements PneumaticRegistry.IPneumaticCraf
 
     @Override
     public IClientRegistry getClientRegistry() {
-        return null;
+        return me.desht.pneumaticcraft.client.ClientRegistryImpl.getInstance();
     }
 
     @Override

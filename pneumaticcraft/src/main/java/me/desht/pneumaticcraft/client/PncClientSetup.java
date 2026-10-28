@@ -12,8 +12,7 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
  */
 @EventBusSubscriber(modid = Names.MOD_ID, value = Dist.CLIENT)
 public class PncClientSetup {
-    @SubscribeEvent
-    public static void registerScreens(RegisterMenuScreensEvent event) {
+    public static void registerScreensOld(RegisterMenuScreensEvent event) {
         event.register(ModMenuTypes.ADVANCED_AIR_COMPRESSOR.get(), me.desht.pneumaticcraft.client.gui.AdvancedAirCompressorScreen::new);
         event.register(ModMenuTypes.ADVANCED_LIQUID_COMPRESSOR.get(), me.desht.pneumaticcraft.client.gui.AdvancedLiquidCompressorScreen::new);
         event.register(ModMenuTypes.AERIAL_INTERFACE.get(), me.desht.pneumaticcraft.client.gui.AerialInterfaceScreen::new);
