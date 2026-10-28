@@ -17,6 +17,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
+import com.mojang.serialization.MapCodec;
+import net.minecraft.network.codec.StreamCodec;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -33,8 +35,8 @@ public class ToolHeadReplaceRecipe extends CustomRecipe {
         TOOL_HEAD_TO_TOOL_MAP.computeIfAbsent(toolHead, p -> new GTToolType[GTValues.MAX])[tool.electricTier] = tool;
     }
 
-    public ToolHeadReplaceRecipe(CraftingBookCategory category) {
-        super(category);
+    public ToolHeadReplaceRecipe() {
+        super();
     }
 
     @Override
@@ -74,7 +76,7 @@ public class ToolHeadReplaceRecipe extends CustomRecipe {
     }
 
     
-    public @NotNull ItemStack assemble(CraftingInput inv, @NotNull HolderLookup.Provider registries) {
+    public @NotNull ItemStack assemble(CraftingInput inv) {
         List<ItemStack> list = new ArrayList<>();
 
         for (int i = 0; i < inv.size(); i++) {
@@ -124,13 +126,12 @@ public class ToolHeadReplaceRecipe extends CustomRecipe {
         return result;
     }
 
-    
-    public boolean canCraftInDimensions(int width, int height) {
-        return width * height >= 2;
-    }
 
-    
-    public @NotNull RecipeSerializer<?> getSerializer() {
-        return GTRecipeSerializers.CRAFTING_TOOL_HEAD_REPLACE.get();
+    public static final RecipeSerializer<ToolHeadReplaceRecipe> SERIALIZER = new RecipeSerializer<>(MapCodec.unit(ToolHeadReplaceRecipe::new),
+            StreamCodec.unit(new ToolHeadReplaceRecipe()));
+
+    @Override
+    public @NotNull RecipeSerializer<ToolHeadReplaceRecipe> getSerializer() {
+        return SERIALIZER;
     }
 }

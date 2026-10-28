@@ -132,7 +132,7 @@ public final class ResearchManager {
 
         
         public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder,
-                                 TooltipFlag tooltipFlag) {
+                                 TooltipFlag tooltipFlag, net.minecraft.core.component.DataComponentGetter components) {
             Collection<GTRecipe> recipes = recipeType().getDataStickEntry(researchId());
             if (recipes == null || recipes.isEmpty()) {
                 return;

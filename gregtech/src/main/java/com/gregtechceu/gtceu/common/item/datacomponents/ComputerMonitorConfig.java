@@ -43,7 +43,7 @@ public record ComputerMonitorConfig(@With List<String> lines, @With List<String>
     }
 
     
-    public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {
+    public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag, net.minecraft.core.component.DataComponentGetter components) {
         tooltipAdder.accept(Component.translatable("gtceu.tooltip.computer_monitor_config"));
     }
 }

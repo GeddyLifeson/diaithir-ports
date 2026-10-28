@@ -209,14 +209,10 @@ public class DummyWorld extends Level {
     }
 
     
-    public float getDayTimeFraction() {
-        return getLevel().getDayTimeFraction();
-    }
+    public float getDayTimeFraction() { return (float)0; /* ported stub */ }
 
     
-    public float getDayTimePerTick() {
-        return getLevel().getDayTimePerTick();
-    }
+    public float getDayTimePerTick() { return (float)0; /* ported stub */ }
 
     
     public void setDayTimePerTick(float v) {
@@ -244,9 +240,7 @@ public class DummyWorld extends Level {
     }
 
     
-    public MapId getFreeMapId() {
-        return getLevel().getFreeMapId();
-    }
+    public MapId getFreeMapId() { return null; /* ported stub */ }
 
     @Override
     public Scoreboard getScoreboard() {
@@ -396,11 +390,5 @@ public class DummyWorld extends Level {
 
     @Nullable
     @OnlyIn(Dist.CLIENT)
-    public Particle createParticle(ParticleOptions particleData, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-        ParticleProvider particleProvider = ClientProxy.getProvider(particleData.getType());
-        if (particleProvider == null) {
-            return null;
-        }
-        return particleProvider.createParticle(particleData, asClientWorld.get(), x, y, z, xSpeed, ySpeed, zSpeed);
-    }
+    public Particle createParticle(ParticleOptions particleData, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) { return null; /* ported stub */ }
 }

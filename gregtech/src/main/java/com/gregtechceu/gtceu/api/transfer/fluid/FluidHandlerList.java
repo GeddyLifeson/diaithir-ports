@@ -148,14 +148,14 @@ public class FluidHandlerList implements IFluidHandlerModifiable, INBTSerializab
             }
         }
         tag.put("tanks", list);
-        tag.putByte("type", list.getElementType());
+        tag.putByte("type", (byte) 10);
         return tag;
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-        var list = nbt.getList("tanks", nbt.getByteOr("type", (byte) 0));
+        var list = nbt.getListOrEmpty("tanks");
         for (int i = 0; i < list.size(); i++) {
             if (handlers[i] instanceof INBTSerializable serializable) {
                 serializable.deserializeNBT(provider, list.get(i));

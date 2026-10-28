@@ -162,8 +162,29 @@ public class GTRecipe implements Recipe<RecipeInput> {
     }
 
     
-    public @NotNull RecipeSerializer<?> getSerializer() {
-        return recipeType.getSerializer();
+    @Override
+    public @NotNull RecipeSerializer<GTRecipe> getSerializer() {
+        return GTRecipeSerializer.SERIALIZER;
+    }
+
+    @Override
+    public boolean showNotification() {
+        return false;
+    }
+
+    @Override
+    public @NotNull String group() {
+        return "";
+    }
+
+    @Override
+    public @NotNull net.minecraft.world.item.crafting.PlacementInfo placementInfo() {
+        return net.minecraft.world.item.crafting.PlacementInfo.NOT_PLACEABLE;
+    }
+
+    @Override
+    public @NotNull net.minecraft.world.item.crafting.RecipeBookCategory recipeBookCategory() {
+        return net.minecraft.world.item.crafting.RecipeBookCategories.CRAFTING_MISC;
     }
 
     @Override
@@ -177,7 +198,7 @@ public class GTRecipe implements Recipe<RecipeInput> {
     }
 
     
-    public @NotNull ItemStack assemble(@NotNull RecipeInput input, HolderLookup.@NotNull Provider registries) {
+    public @NotNull ItemStack assemble(@NotNull RecipeInput input) {
         return ItemStack.EMPTY;
     }
 

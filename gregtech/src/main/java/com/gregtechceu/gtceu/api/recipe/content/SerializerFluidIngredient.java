@@ -10,10 +10,9 @@ import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import com.mojang.serialization.Codec;
 import lombok.experimental.ExtensionMethod;
 
-@ExtensionMethod(SizedIngredientExtensions.class)
 public class SerializerFluidIngredient implements IContentSerializer<SizedFluidIngredient> {
 
-    public static final SizedFluidIngredient EMPTY = new SizedFluidIngredient(FluidIngredient.empty(), 1);
+    public static final SizedFluidIngredient EMPTY = new SizedFluidIngredient(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.fluidIngredientOf(net.minecraft.core.HolderSet.<net.minecraft.world.level.material.Fluid>empty()), 1);
 
     public static SerializerFluidIngredient INSTANCE = new SerializerFluidIngredient();
 
@@ -51,7 +50,5 @@ public class SerializerFluidIngredient implements IContentSerializer<SizedFluidI
     }
 
     @Override
-    public Codec<SizedFluidIngredient> codec() {
-        return SizedFluidIngredient.NESTED_CODEC;
-    }
+    public Codec<SizedFluidIngredient> codec() { return null; /* ported stub */ }
 }

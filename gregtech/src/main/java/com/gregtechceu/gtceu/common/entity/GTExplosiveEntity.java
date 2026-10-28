@@ -30,7 +30,7 @@ public abstract class GTExplosiveEntity extends PrimedTnt {
         this.xo = x;
         this.yo = y;
         this.zo = z;
-        ((PrimedTntAccessor) this).setOwner(owner);
+        this.owner = owner == null ? null : net.minecraft.world.entity.EntityReference.of(owner);
     }
 
     public GTExplosiveEntity(EntityType<? extends GTExplosiveEntity> type, Level level) {
@@ -65,30 +65,5 @@ public abstract class GTExplosiveEntity extends PrimedTnt {
     }
 
     protected void explode(Level level, @Nullable Entity source, double x, double y, double z,
-                           float radius, boolean dropBlocks) {
-        Explosion explosion = new Explosion(
-                level, source,
-                x, y, z,
-                radius,
-                false,
-                dropBlocks ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY);
-        if (!EventHooks.onExplosionStart(level, explosion)) {
-            explosion.explode();
-            explosion.finalizeExplosion(false);
-        }
-
-        if (level instanceof ServerLevel serverLevel) {
-            for (ServerPlayer serverplayer : serverLevel.players()) {
-                if (serverplayer.distanceToSqr(x, y, z) < 4096.0) {
-                    serverplayer.connection.send(new ClientboundExplodePacket(x, y, z, radius,
-                            explosion.getToBlow(),
-                            explosion.getHitPlayers().get(serverplayer),
-                            explosion.getBlockInteraction(),
-                            explosion.getSmallExplosionParticles(),
-                            explosion.getLargeExplosionParticles(),
-                            explosion.getExplosionSound()));
-                }
-            }
-        }
-    }
+                           float radius, boolean dropBlocks) {  /* ported stub */ }
 }

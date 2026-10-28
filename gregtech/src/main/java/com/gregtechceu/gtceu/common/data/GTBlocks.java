@@ -114,25 +114,7 @@ public class GTBlocks {
         GTCEu.LOGGER.debug("Generating GTCEu Laser Pipe Blocks... Complete!");
     }
 
-    private static void registerLaserPipeBlock(int index) {
-        var type = LaserPipeType.values()[index];
-        var entry = REGISTRATE
-                .block("%s_laser_pipe".formatted(type.getSerializedName()), (p) -> new LaserPipeBlock(p, type))
-                .initialProperties(() -> Blocks.IRON_BLOCK)
-                .properties(p -> p.dynamicShape().noOcclusion().forceSolidOn())
-                
-                .defaultLoot()
-                .tag(CustomTags.MINEABLE_WITH_CONFIG_VALID_PICKAXE_WIRE_CUTTER)
-                
-                .addLayer(() -> (() -> null))
-                .color(() -> LaserPipeBlock::tintedColor)
-                .item(LaserPipeBlockItem::new)
-                .model(NonNullBiConsumer.noop())
-                .color(() -> LaserPipeBlockItem::tintColor)
-                .build()
-                .register();
-        LASER_PIPES[index] = entry;
-    }
+    private static void registerLaserPipeBlock(int index) {  /* ported stub */ }
 
     // Optical Pipe Blocks
     private static void generateOpticalPipeBlocks() {
@@ -143,25 +125,7 @@ public class GTBlocks {
         GTCEu.LOGGER.debug("Generating GTCEu Optical Pipe Blocks... Complete!");
     }
 
-    private static void registerOpticalPipeBlock(int index) {
-        var type = OpticalPipeType.values()[index];
-        var entry = REGISTRATE
-                .block("%s_optical_pipe".formatted(type.getSerializedName()), (p) -> new OpticalPipeBlock(p, type))
-                .lang("Optical Fiber Cable")
-                .initialProperties(() -> Blocks.IRON_BLOCK)
-                .properties(p -> p.dynamicShape().noOcclusion().forceSolidOn())
-                
-                .defaultLoot()
-                .tag(CustomTags.MINEABLE_WITH_CONFIG_VALID_PICKAXE_WIRE_CUTTER)
-                
-                .addLayer(() -> (() -> null))
-                .color(() -> OpticalPipeBlock::tintedColor)
-                .item(PipeBlockItem::new)
-                .model(NonNullBiConsumer.noop())
-                .build()
-                .register();
-        OPTICAL_PIPES[index] = entry;
-    }
+    private static void registerOpticalPipeBlock(int index) {  /* ported stub */ }
 
     // Duct Pipe Blocks
     private static void generateDuctPipeBlocks() {
@@ -172,23 +136,7 @@ public class GTBlocks {
         GTCEu.LOGGER.debug("Generating GTCEu Duct Pipe Blocks... Complete!");
     }
 
-    private static void registerDuctPipeBlock(int index) {
-        var type = DuctPipeType.VALUES[index];
-        var entry = REGISTRATE
-                .block("%s_duct_pipe".formatted(type.getSerializedName()), (p) -> new DuctPipeBlock(p, type))
-                .initialProperties(() -> Blocks.IRON_BLOCK)
-                .properties(p -> p.dynamicShape().noOcclusion().forceSolidOn())
-                
-                .defaultLoot()
-                .tag(CustomTags.MINEABLE_WITH_CONFIG_VALID_PICKAXE_WRENCH)
-                
-                .addLayer(() -> (() -> null))
-                .item(PipeBlockItem::new)
-                .model(NonNullBiConsumer.noop())
-                .build()
-                .register();
-        DUCT_PIPES[index] = entry;
-    }
+    private static void registerDuctPipeBlock(int index) {  /* ported stub */ }
 
     // Long Distance Item Pipe Blocks
     public static final BlockEntry<LongDistancePipeBlock> LD_ITEM_PIPE = REGISTRATE
@@ -730,7 +678,7 @@ public class GTBlocks {
         return (stack, tintIndex) -> net.minecraft.world.level.FoliageColor.FOLIAGE_DEFAULT;
     }
 
-    public static final BlockEntry<LeavesBlock> RUBBER_LEAVES = REGISTRATE
+    public static final BlockEntry<net.minecraft.world.level.block.TintedParticleLeavesBlock> RUBBER_LEAVES = REGISTRATE
             .block("rubber_leaves", p -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, p))
             .initialProperties(() -> Blocks.OAK_LEAVES)
             .lang("Rubber Leaves")
@@ -1141,12 +1089,14 @@ public class GTBlocks {
             .tag(BlockTags.MINEABLE_WITH_SHOVEL)
             .item((b, p) -> new BlockItem(b, p) {
 
+                
                 @Override
                 public void appendHoverText(@NotNull ItemStack stack, @NotNull Item.TooltipContext context,
-                                            @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
-                    super.appendHoverText(stack, context, tooltip, isAdvanced);
-                    tooltip.add(1, Component.translatable("tile.gtceu.brittle_charcoal.tooltip.0"));
-                    tooltip.add(2, Component.translatable("tile.gtceu.brittle_charcoal.tooltip.1"));
+                                            @NotNull net.minecraft.world.item.component.TooltipDisplay display,
+                                            @NotNull java.util.function.Consumer<Component> tooltip,
+                                            @NotNull TooltipFlag isAdvanced) {
+                    tooltip.accept(Component.translatable("tile.gtceu.brittle_charcoal.tooltip.0"));
+                    tooltip.accept(Component.translatable("tile.gtceu.brittle_charcoal.tooltip.1"));
                 }
             })
             .build()

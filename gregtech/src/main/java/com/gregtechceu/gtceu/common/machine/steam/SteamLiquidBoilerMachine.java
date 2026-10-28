@@ -40,10 +40,10 @@ public class SteamLiquidBoilerMachine extends SteamBoilerMachine {
         super(info, isHighPressure);
         this.fuelTank = createFuelTank().setFilter(fluid -> FUEL_CACHE.computeIfAbsent(fluid.getFluid(), f -> {
             if (isRemote()) return true;
-            return recipeLogic.getRecipeManager().getAllRecipesFor(getRecipeType()).stream().anyMatch(recipe -> {
+            return recipeLogic.getRecipeManager().recipeMap().byType(getRecipeType()).stream().anyMatch(recipe -> {
                 var list = recipe.value().inputs.getOrDefault(FluidRecipeCapability.CAP, Collections.emptyList());
                 if (!list.isEmpty()) {
-                    return Arrays.stream(FluidRecipeCapability.CAP.of(list.getFirst().content).getFluids())
+                    return Arrays.stream(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(FluidRecipeCapability.CAP.of(list.getFirst().content)))
                             .anyMatch(stack -> stack.getFluid() == f);
                 }
                 return false;

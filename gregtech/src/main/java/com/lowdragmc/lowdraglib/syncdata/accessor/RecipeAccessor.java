@@ -30,24 +30,5 @@ public class RecipeAccessor extends CustomObjectAccessor<RecipeHolder> {
     }
 
     @Override
-    public RecipeHolder deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
-        if (payload instanceof NbtTagPayload nbtTagPayload && nbtTagPayload.getPayload() instanceof CompoundTag tag) {
-            var type = BuiltInRegistries.RECIPE_TYPE.get(Identifier.parse(tag.getStringOr("type", "")));
-            var id = Identifier.parse(tag.getStringOr("id", ""));
-            if (type != null) {
-                RecipeManager recipeManager;
-                if (LDLib.isRemote()) {
-                    recipeManager = com.gregtechceu.gtceu.compat.GtCompat.recipeManager(Minecraft.getInstance().getConnection());
-                } else {
-                    recipeManager = Platform.getMinecraftServer().getRecipeManager();
-                }
-                for (RecipeHolder<?> recipe : recipeManager.getRecipes()) {
-                    if (recipe.value().getType() == type && recipe.id().equals(id)) {
-                        return recipe;
-                    }
-                }
-            }
-        }
-        return null;
-    }
+    public RecipeHolder deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
 }

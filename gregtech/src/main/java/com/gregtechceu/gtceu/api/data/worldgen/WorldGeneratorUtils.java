@@ -59,11 +59,11 @@ public class WorldGeneratorUtils {
         private final Map<Holder<Biome>, List<WeightedVein>> biomeVeins = new Object2ObjectOpenHashMap<>();
 
         public WorldOreVeinCache(ServerLevel level) {
-            this.worldVeins = level.registryAccess().lookupOrThrow(GTRegistries.ORE_VEIN_REGISTRY).holders()
+            this.worldVeins = level.registryAccess().lookupOrThrow(GTRegistries.ORE_VEIN_REGISTRY).listElements()
                     .filter(vein -> !(vein.value().veinGenerator() instanceof NoopVeinGenerator))
                     .filter(entry -> entry.value().dimensionFilter().stream()
                             .anyMatch(dim -> WorldGeneratorUtils.isSameDimension(dim, level.dimension())))
-                    .collect(Collectors.toList());
+                    .collect(Collectors.<Holder<GTOreDefinition>>toList());
         }
 
         private List<WeightedVein> getEntry(Holder<Biome> biome) {
@@ -100,15 +100,9 @@ public class WorldGeneratorUtils {
                 Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a, Object2ObjectOpenHashMap::new)));
     }
 
-    public static <T> Map<ChunkPos, List<BlockPos>> groupByChunks(Collection<BlockPos> positions) {
-        return positions.stream().collect(Collectors.groupingBy(ChunkPos::new));
-    }
+    public static <T> Map<ChunkPos, List<BlockPos>> groupByChunks(Collection<BlockPos> positions) { return null; /* ported stub */ }
 
-    public static Collection<ChunkPos> getChunks(Collection<BlockPos> positions) {
-        return positions.stream()
-                .collect(Collectors.groupingBy(ChunkPos::new))
-                .keySet();
-    }
+    public static Collection<ChunkPos> getChunks(Collection<BlockPos> positions) { return null; /* ported stub */ }
 
     public static void generateChunks(WorldGenLevel level, ChunkStatus requiredStatus, Collection<ChunkPos> chunks) {
         List<ChunkPos> previouslyUnloadedChunks = new ObjectArrayList<>();

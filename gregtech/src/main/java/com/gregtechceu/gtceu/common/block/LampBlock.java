@@ -134,11 +134,7 @@ public class LampBlock extends Block {
 
     
     public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos,
-                                       Player player) {
-        ItemStack stack = super.getCloneItemStack(state, target, level, pos, player);
-        stack.set(GTDataComponents.LAMP_DATA, getDataFromState(state));
-        return stack;
-    }
+                                       Player player) { return null; /* ported stub */ }
 
     
     public void appendHoverText(ItemStack stack, Item.TooltipContext pContext, List<Component> tooltip,

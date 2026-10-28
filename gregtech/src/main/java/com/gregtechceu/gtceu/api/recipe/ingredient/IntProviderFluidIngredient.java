@@ -132,6 +132,11 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
     }
 
     @Override
+    protected Stream<net.minecraft.core.Holder<net.minecraft.world.level.material.Fluid>> generateFluids() {
+        return inner.fluids().stream();
+    }
+
+    @Override
     public boolean test(@NotNull FluidStack stack) {
         return inner.test(stack);
     }
@@ -190,8 +195,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
     }
 
     public static boolean intProviderEqual(IntProvider o1, IntProvider o2) {
-        if (o1 == o2) return true;
-        if (o1.getType() != o2.getType()) return false;
+        if (o1.getClass() != o2.getClass()) return false;
         return o1.minInclusive() == o2.minInclusive() && o1.maxInclusive() == o2.maxInclusive();
     }
 

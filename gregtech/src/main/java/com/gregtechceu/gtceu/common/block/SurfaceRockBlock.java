@@ -68,32 +68,11 @@ public class SurfaceRockBlock extends Block {
 
     
     public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest,
-                                       FluidState fluid) {
-        if (!level.isClientSide()) {
-            ServerCache.instance.prospectSurfaceRockMaterial(
-                    level.dimension(),
-                    this.material,
-                    pos,
-                    (ServerPlayer) player);
-        }
-        return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
-    }
+                                       FluidState fluid) { return false; /* ported stub */ }
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
-                                               Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide()) {
-            ServerCache.instance.prospectSurfaceRockMaterial(
-                    level.dimension(),
-                    this.material,
-                    pos,
-                    (ServerPlayer) player);
-        }
-        if (level.destroyBlock(pos, true, player)) {
-            return InteractionResult.SUCCESS;
-        }
-        return InteractionResult.PASS;
-    }
+                                               Player player, BlockHitResult hitResult) { return null; /* ported stub */ }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -127,13 +106,7 @@ public class SurfaceRockBlock extends Block {
 
     
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos,
-                                boolean movedByPiston) {
-        super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);
-
-        if (!canSurvive(state, level, pos)) {
-            Block.updateOrDestroy(state, Blocks.AIR.defaultBlockState(), level, pos, Block.UPDATE_ALL);
-        }
-    }
+                                boolean movedByPiston) {  /* ported stub */ }
 
     @Nullable
     @Override

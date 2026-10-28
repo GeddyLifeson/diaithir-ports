@@ -27,7 +27,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class MedicalConditionTracker implements IMedicalConditionTracker, INBTSerializable<CompoundTag> {
+public class MedicalConditionTracker implements IMedicalConditionTracker, INBTSerializable<CompoundTag>,
+                                      net.neoforged.neoforge.common.util.ValueIOSerializable {
 
     @Getter
     private final Object2FloatMap<MedicalCondition> medicalConditions = new Object2FloatOpenHashMap<>();
@@ -189,6 +190,16 @@ public class MedicalConditionTracker implements IMedicalConditionTracker, INBTSe
         } else if (amplifier >= activeMobEffects.getOrDefault(effect, -1)) {
             activeMobEffects.put(effect, amplifier);
         }
+    }
+
+    @Override
+    public void serialize(net.minecraft.world.level.storage.ValueOutput output) {
+        output.store("data", CompoundTag.CODEC, serializeNBT(player.registryAccess()));
+    }
+
+    @Override
+    public void deserialize(net.minecraft.world.level.storage.ValueInput input) {
+        input.read("data", CompoundTag.CODEC).ifPresent(t -> deserializeNBT(player.registryAccess(), t));
     }
 
     @Override

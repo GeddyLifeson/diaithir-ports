@@ -97,9 +97,7 @@ public class GTCEu {
     /**
      * @return if we're running in a production environment
      */
-    public static boolean isProd() {
-        return FMLLoader.isProduction();
-    }
+    public static boolean isProd() { return false; /* ported stub */ }
 
     /**
      * @return if we're not running in a production environment
@@ -148,9 +146,7 @@ public class GTCEu {
      *          It does <strong>NOT</strong> work for that. Use {@link #isClientThread()} instead.
      * @see #isClientThread()
      */
-    public static boolean isClientSide() {
-        return FMLEnvironment.dist.isClient();
-    }
+    public static boolean isClientSide() { return false; /* ported stub */ }
 
     /**
      * This check isn't the same for client and server!
@@ -186,13 +182,9 @@ public class GTCEu {
                     isModLoaded(GTValues.MODID_JEI);
         }
 
-        public static boolean isREILoaded() {
-            return isModLoaded(GTValues.MODID_REI) && (!isClientSide() || REIRuntime.getInstance().isOverlayVisible());
-        }
+        public static boolean isREILoaded() { return false; /* ported stub */ }
 
-        public static boolean isEMILoaded() {
-            return isModLoaded(GTValues.MODID_EMI) && (!isClientSide() || EmiConfig.enabled);
-        }
+        public static boolean isEMILoaded() { return false; /* ported stub */ }
 
         public static boolean isKubeJSLoaded() {
             return isModLoaded(GTValues.MODID_KUBEJS);

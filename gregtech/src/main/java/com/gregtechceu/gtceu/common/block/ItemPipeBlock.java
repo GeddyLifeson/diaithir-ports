@@ -81,20 +81,7 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
 
     
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
-        ItemPipeProperties properties = createProperties(defaultBlockState(), stack);
-
-        if (properties.getTransferRate() % 1 != 0) {
-            tooltip.add(Component.translatable("gtceu.universal.tooltip.item_transfer_rate",
-                    (int) ((properties.getTransferRate() * 64) + 0.5)));
-        } else {
-            tooltip.add(Component.translatable("gtceu.universal.tooltip.item_transfer_rate_stacks",
-                    (int) properties.getTransferRate()));
-        }
-
-        tooltip.add(Component.translatable("gtceu.item_pipe.priority", properties.getPriority()));
-    }
+                                TooltipFlag flag) {  /* ported stub */ }
 
     @Override
     public boolean canPipesConnect(IPipeNode<ItemPipeType, ItemPipeProperties> selfTile, Direction side,

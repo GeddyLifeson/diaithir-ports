@@ -42,7 +42,7 @@ public abstract class RecipeCapability<T> {
     // spotless:off
     public static final Codec<RecipeCapability<?>> DIRECT_CODEC = GTCEu.GTCEU_ID
                     .comapFlatMap(
-                            id -> GTRegistries.RECIPE_CAPABILITIES.getHolder(id)
+                            id -> GTRegistries.RECIPE_CAPABILITIES.get(id)
                                     .map(DataResult::success)
                                     .orElseGet(() -> DataResult.error(() -> "Unknown registry key in " + GTRegistries.RECIPE_CAPABILITY_REGISTRY + ": " + id)),
                             (Holder.Reference<RecipeCapability<?>> holder) -> holder.key().identifier()

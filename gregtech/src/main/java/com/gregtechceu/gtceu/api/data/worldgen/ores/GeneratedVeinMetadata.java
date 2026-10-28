@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 @Accessors(fluent = true)
 public final class GeneratedVeinMetadata {
 
-    public static final Codec<ChunkPos> CHUNK_POS_CODEC = Codec.LONG.xmap(ChunkPos::new, ChunkPos::toLong);
+    public static final Codec<ChunkPos> CHUNK_POS_CODEC = Codec.LONG.xmap(ChunkPos::unpack, ChunkPos::pack);
     // spotless:off
     public static final Codec<GeneratedVeinMetadata> CODEC = RecordCodecBuilder.create(instance -> instance.group(
                     CHUNK_POS_CODEC.fieldOf("origin_chunk").forGetter(GeneratedVeinMetadata::originChunk),

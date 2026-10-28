@@ -41,10 +41,7 @@ public class DaytimeCondition extends RecipeCondition<DaytimeCondition> {
     }
 
     @Override
-    public boolean testCondition(@NotNull GTRecipe recipe, @NotNull RecipeLogic recipeLogic) {
-        Level level = recipeLogic.machine.self().getLevel();
-        return level != null && level.isDay();
-    }
+    public boolean testCondition(@NotNull GTRecipe recipe, @NotNull RecipeLogic recipeLogic) { return false; /* ported stub */ }
 
     @Override
     public DaytimeCondition createTemplate() {

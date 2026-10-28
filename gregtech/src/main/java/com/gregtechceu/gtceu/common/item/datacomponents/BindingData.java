@@ -51,7 +51,7 @@ public record BindingData(int permissionLevel, UUID uuid) implements TooltipProv
     }
 
     
-    public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {
+    public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag, net.minecraft.core.component.DataComponentGetter components) {
         Component displayName = getBoundPlayerName(context.level());
         if (displayName == null) {
             displayName = Component.translatable("gtceu.tooltip.player_name.unknown");

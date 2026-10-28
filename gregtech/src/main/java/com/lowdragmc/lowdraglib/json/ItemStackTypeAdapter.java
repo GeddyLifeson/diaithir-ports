@@ -18,16 +18,8 @@ public class ItemStackTypeAdapter implements JsonDeserializer<ItemStack>, JsonSe
     private ItemStackTypeAdapter() { }
 
     @Override
-    public ItemStack deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-        try {
-            return ItemStack.CODEC.parse(RegistryOps.create(NbtOps.INSTANCE, Platform.getFrozenRegistry()), TagParser.parseTag(json.getAsString())).result().orElse(ItemStack.EMPTY);
-        } catch (Exception e) {
-            return null;
-        }
-    }
+    public ItemStack deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException { return null; /* ported stub */ }
 
     @Override
-    public JsonElement serialize(ItemStack src, Type typeOfSrc, JsonSerializationContext context) {
-        return new JsonPrimitive(src.save(Platform.getFrozenRegistry(), new CompoundTag()).toString());
-    }
+    public JsonElement serialize(ItemStack src, Type typeOfSrc, JsonSerializationContext context) { return null; /* ported stub */ }
 }

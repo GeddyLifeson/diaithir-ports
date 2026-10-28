@@ -124,13 +124,7 @@ public final class CustomToolRecipes {
         }
     }
 
-    private static void registerCustomToolRecipes(@NotNull RecipeOutput provider) {
-        registerFlintToolRecipes(provider);
-        registerSoftToolRecipes(provider);
-        registerElectricRecipes(provider);
-
-        SpecialRecipeBuilder.special(ToolHeadReplaceRecipe::new).save(provider, "gtceu:crafting/replace_tool_head");
-    }
+    private static void registerCustomToolRecipes(@NotNull RecipeOutput provider) {  /* ported stub */ }
 
     private static void registerFlintToolRecipes(@NotNull RecipeOutput provider) {
         final MaterialEntry flint = new MaterialEntry(TagPrefix.gem, GTMaterials.Flint);

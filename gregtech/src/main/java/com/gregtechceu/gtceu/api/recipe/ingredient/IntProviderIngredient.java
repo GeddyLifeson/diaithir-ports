@@ -120,7 +120,12 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
     }
 
     
-    public Stream<ItemStack> getItems() {
+    @Override
+    public Stream<net.minecraft.core.Holder<net.minecraft.world.item.Item>> items() {
+        return stacks().map(ItemStack::typeHolder).distinct();
+    }
+
+    public Stream<ItemStack> stacks() {
         return Arrays.stream(getItemStacks());
     }
 

@@ -88,7 +88,7 @@ public abstract class ProspectorMode<T> {
                     return mat.getMaterialRGB();
                 }
             }
-            return BuiltInRegistries.BLOCK.get(Identifier.parse(item)).defaultMapColor().col;
+            return BuiltInRegistries.BLOCK.getValue(Identifier.parse(item)).defaultBlockState().getMapColor(net.minecraft.world.level.EmptyBlockGetter.INSTANCE, net.minecraft.core.BlockPos.ZERO).col;
         }
 
         @Override
@@ -119,7 +119,7 @@ public abstract class ProspectorMode<T> {
                     return mat.getLocalizedName();
                 }
             }
-            return BuiltInRegistries.BLOCK.getValue(Identifier.parse(item)).name();
+            return BuiltInRegistries.BLOCK.getValue(Identifier.parse(item)).getName();
         }
 
         @Override
@@ -236,7 +236,7 @@ public abstract class ProspectorMode<T> {
 
         @Override
         public FluidInfo deserialize(FriendlyByteBuf buf) {
-            return new FluidInfo(BuiltInRegistries.FLUID.get(Identifier.parse(buf.readUtf())), buf.readVarInt(),
+            return new FluidInfo(BuiltInRegistries.FLUID.getValue(Identifier.parse(buf.readUtf())), buf.readVarInt(),
                     buf.readVarInt());
         }
 

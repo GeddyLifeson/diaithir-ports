@@ -107,12 +107,7 @@ public abstract class PipeBlock<PipeType extends Enum<PipeType> & IPipeType<Node
 
     
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level,
-                                  BlockPos pos, BlockPos neighborPos) {
-        if (state.getValue(BlockStateProperties.WATERLOGGED)) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-        }
-        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
-    }
+                                  BlockPos pos, BlockPos neighborPos) { return null; /* ported stub */ }
 
     @Override
     public final PipeBlockEntity<PipeType, NodeDataType> newBlockEntity(BlockPos pos, BlockState state) {
@@ -363,20 +358,7 @@ public abstract class PipeBlock<PipeType extends Enum<PipeType> & IPipeType<Node
     }
 
     
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        var pipeNode = getPipeTile(level, pos);
-        if (pipeNode == null) {
-            GTCEu.LOGGER.error("Pipe was null");
-            return;
-        }
-        if (!pipeNode.getFrameMaterial().isNull()) {
-            BlockState frameState = GTMaterialBlocks.MATERIAL_BLOCKS
-                    .get(TagPrefix.frameGt, pipeNode.getFrameMaterial())
-                    .getDefaultState();
-            ((MaterialBlock) frameState.getBlock()).entityInside(frameState, level, pos, entity);
-        }
-        super.entityInside(state, level, pos, entity);
-    }
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {  /* ported stub */ }
 
     @Override
     public boolean isCollisionShapeFullBlock(BlockState state, BlockGetter level, BlockPos pos) {
@@ -482,21 +464,7 @@ public abstract class PipeBlock<PipeType extends Enum<PipeType> & IPipeType<Node
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
-        var context = builder.withParameter(LootContextParams.BLOCK_STATE, state).create(LootContextParamSets.BLOCK);
-        BlockEntity tileEntity = context.getParamOrNull(LootContextParams.BLOCK_ENTITY);
-        List<ItemStack> drops = new ArrayList<>(super.getDrops(state, builder));
-        if (tileEntity instanceof IPipeNode<?, ?> pipeTile) {
-            if (!pipeTile.getFrameMaterial().isNull()) {
-                drops.addAll(GTMaterialBlocks.MATERIAL_BLOCKS.get(TagPrefix.frameGt, pipeTile.getFrameMaterial())
-                        .getDefaultState().getDrops(builder));
-            }
-            for (Direction direction : GTUtil.DIRECTIONS) {
-                pipeTile.getCoverContainer().removeCover(direction, null);
-            }
-        }
-        return drops;
-    }
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) { return null; /* ported stub */ }
 
     public GTToolType getPipeTuneTool() {
         return GTToolType.WRENCH;

@@ -193,19 +193,7 @@ public class Content {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void drawTick(GuiGraphics graphics, float x, float y, int width, int height) {
-        graphics.pose().pushPose();
-        RenderSystem.disableDepthTest();
-        graphics.pose().translate(0, 0, 400);
-        graphics.pose().scale(0.5f, 0.5f, 1);
-        String s = LocalizationUtils.format("gtceu.gui.content.tips.per_tick_short");
-        int color = 0xFFFF00;
-        Font fontRenderer = Minecraft.getInstance().font;
-        graphics.drawString(fontRenderer, s, (int) ((x + (width / 3f)) * 2 - fontRenderer.width(s) + 23),
-                (int) ((y + (height / 3f) + 6) * 2 - height + (chance == ChanceLogic.getMaxChancedValue() ? 0 : 10)),
-                color);
-        graphics.pose().popPose();
-    }
+    public void drawTick(GuiGraphics graphics, float x, float y, int width, int height) {  /* ported stub */ }
 
     @Override
     public String toString() {

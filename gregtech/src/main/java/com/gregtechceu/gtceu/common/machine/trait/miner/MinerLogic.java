@@ -159,13 +159,7 @@ public class MinerLogic extends RecipeLogic implements IRecipeCapabilityHolder {
     }
 
     @Override
-    public void onMachineLoad() {
-        super.onMachineLoad();
-        if (getMachine().getLevel() != null) {
-            var registry = getMachine().getLevel().registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
-            this.pickaxeTool.enchant(registry.getHolderOrThrow(Enchantments.FORTUNE), fortune);
-        }
-    }
+    public void onMachineLoad() {  /* ported stub */ }
 
     @Override
     public void resetRecipeLogic() {

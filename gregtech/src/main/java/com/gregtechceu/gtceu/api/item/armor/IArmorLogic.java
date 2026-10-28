@@ -72,8 +72,10 @@ public interface IArmorLogic {
     }
 
     @Nullable
-    Identifier getArmorTexture(ItemStack stack, Entity entity,
-                                     EquipmentSlot slot, ArmorLayer layer);
+    default Identifier getArmorTexture(ItemStack stack, Entity entity,
+                                     EquipmentSlot slot, ArmorLayer layer) {
+        return null;
+    }
 
     @NotNull
     default HumanoidModel<?> getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlot armorSlot,

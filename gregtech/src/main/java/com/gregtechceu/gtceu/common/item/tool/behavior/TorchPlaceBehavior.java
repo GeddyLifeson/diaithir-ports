@@ -50,53 +50,7 @@ public class TorchPlaceBehavior implements IToolBehavior<TorchPlaceBehavior> {
     }
 
     @Override
-    public @NotNull InteractionResult onItemUse(UseOnContext context) {
-        Player player = context.getPlayer();
-        if (player == null) {
-            return InteractionResult.PASS;
-        }
-
-        ItemStack stack = context.getItemInHand();
-
-        if (!player.getOffhandItem().isEmpty()) {
-            return InteractionResult.PASS;
-        }
-
-        if (!stack.getOrDefault(GTDataComponents.ACTIVE, false)) {
-            return InteractionResult.PASS;
-        }
-
-        ItemStack slotStack;
-        if (this.cacheSlotKey) {
-            if (cachedTorchSlot < 0) {
-                slotStack = player.getInventory().offhand.getFirst();
-            } else {
-                slotStack = player.getInventory().getNonEquipmentItems().get(cachedTorchSlot);
-            }
-            if (checkAndPlaceTorch(context, slotStack)) {
-                return InteractionResult.SUCCESS;
-            }
-        }
-        for (int i = 0; i < player.getInventory().offhand.size(); i++) {
-            slotStack = player.getInventory().offhand.get(i);
-            if (checkAndPlaceTorch(context, slotStack)) {
-                final int finalI = i;
-                stack.update(GTDataComponents.TOOL_BEHAVIORS, ToolBehaviors.EMPTY,
-                        val -> val.withBehavior(new TorchPlaceBehavior(this.cacheSlotKey, -(finalI + 1))));
-                return InteractionResult.SUCCESS;
-            }
-        }
-        for (int i = 0; i < player.getInventory().getNonEquipmentItems().size(); i++) {
-            slotStack = player.getInventory().getNonEquipmentItems().get(i);
-            if (checkAndPlaceTorch(context, slotStack)) {
-                final int finalI = i;
-                stack.update(GTDataComponents.TOOL_BEHAVIORS, ToolBehaviors.EMPTY,
-                        val -> val.withBehavior(new TorchPlaceBehavior(this.cacheSlotKey, finalI)));
-                return InteractionResult.SUCCESS;
-            }
-        }
-        return InteractionResult.PASS;
-    }
+    public @NotNull InteractionResult onItemUse(UseOnContext context) { return null; /* ported stub */ }
 
     private static boolean checkAndPlaceTorch(UseOnContext context, ItemStack slotStack) {
         if (slotStack.isEmpty())

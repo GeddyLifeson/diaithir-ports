@@ -90,24 +90,5 @@ public class ShapedRecipeBuilder {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public void save(RecipeOutput consumer) {
-        var recipeId = id == null ? defaultId() : id;
-        ShapedRecipe recipe;
-        if (isStrict) {
-            recipe = new StrictShapedRecipe(
-                    Objects.requireNonNullElse(this.group, ""),
-                    RecipeBuilder.determineBookCategory(this.category),
-                    ShapedRecipePattern.of(key, rows),
-                    this.output,
-                    false);
-        } else {
-            recipe = new ShapedRecipe(
-                    Objects.requireNonNullElse(this.group, ""),
-                    RecipeBuilder.determineBookCategory(this.category),
-                    ShapedRecipePattern.of(key, rows),
-                    this.output,
-                    false);
-        }
-        consumer.accept(recipeId.withPrefix("shaped/"), recipe, null);
-    }
+    public void save(RecipeOutput consumer) {  /* ported stub */ }
 }

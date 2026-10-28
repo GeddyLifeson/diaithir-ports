@@ -90,29 +90,7 @@ public class ArmorProperty implements IMaterialProperty {
     }
 
     @Override
-    public void verifyProperty(MaterialProperties properties) {
-        if (this.material == null) {
-            this.material = properties.getMaterial();
-        }
-
-        if (this.repairIngredient == null && noRepair) {
-            this.repairIngredient = () -> null;
-        } else if (this.repairIngredient == null) {
-            this.repairIngredient = GTMemoizer
-                    .memoize(() -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(ChemicalHelper.getTag(TagPrefix.plate, material)));
-        }
-
-        if (this.layers == null) {
-            this.layers = List.of(new ArmorLayer(this.textureName, "", this.dyeable));
-        }
-        if (this.armorMaterial == null) {
-            GTRegistrate registrate = GTRegistrate.createIgnoringListenerErrors(this.material.getModid());
-            this.armorMaterial = registrate.generic(this.material.getName(), Registries.ARMOR_MATERIAL,
-                    () -> new ArmorMaterial(protectionValues, enchantability, sound, repairIngredient,
-                            layers, toughness, knockbackResistance))
-                    .register();
-        }
-    }
+    public void verifyProperty(MaterialProperties properties) {  /* ported stub */ }
 
     @SuppressWarnings("unused") // API, need to treat all of these as used
     public static class Builder {

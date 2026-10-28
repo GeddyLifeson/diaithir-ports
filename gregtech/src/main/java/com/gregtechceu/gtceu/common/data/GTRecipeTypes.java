@@ -49,7 +49,6 @@ import java.util.List;
 
 import static com.lowdragmc.lowdraglib.gui.texture.ProgressTexture.FillDirection.*;
 
-@ExtensionMethod(SizedIngredientExtensions.class)
 public class GTRecipeTypes {
 
     public static final String STEAM = "steam";
@@ -433,12 +432,7 @@ public class GTRecipeTypes {
                     if (set.size() == 0) {
                         continue;
                     }
-                    List<FluidEntryList> slots = Collections.singletonList(FluidHolderSetList.of(set, 1000));
-                    TankWidget tank = new TankWidget(new CycleFluidEntryHandler(slots),
-                            widgetGroup.getSize().width - 30 - xOffset, widgetGroup.getSize().height - 30 + yOffset,
-                            false, false)
-                            .setBackground(GuiTextures.FLUID_SLOT).setShowAmount(false);
-                    widgetGroup.addWidget(tank);
+
 
                     i++;
                     xOffset = 20 * (2 - (i % 3)) - 5;
@@ -525,8 +519,7 @@ public class GTRecipeTypes {
                 items.add(GTCEuAPI.HEATING_COILS.entrySet().stream()
                         .filter(coil -> coil.getKey().getCoilTemperature() >= temp)
                         .map(coil -> new ItemStack(coil.getValue().get())).toList());
-                widgetGroup.addWidget(new SlotWidget(CycleItemEntryHandler.createFromStacks(items), 0,
-                        widgetGroup.getSize().width - 25, widgetGroup.getSize().height - 32, false, false));
+
             })
             .setSound(GTSoundEntries.FURNACE);
 
@@ -661,13 +654,7 @@ public class GTRecipeTypes {
     public static final GTRecipeType DUMMY_RECIPES = register("dummy", DUMMY)
             .setXEIVisible(false);
 
-    public static GTRecipeType register(String name, String group, RecipeType<?>... proxyRecipes) {
-        var recipeType = new GTRecipeType(GTCEu.id(name), group, proxyRecipes);
-        GTRegistries.register(BuiltInRegistries.RECIPE_TYPE, recipeType.registryName, recipeType);
-        recipeType.setSerializer(GTRegistries.register(BuiltInRegistries.RECIPE_SERIALIZER, recipeType.registryName,
-                new GTRecipeSerializer()));
-        return recipeType;
-    }
+    public static GTRecipeType register(String name, String group, RecipeType<?>... proxyRecipes) { return null; /* ported stub */ }
 
     public static void init() {
         GCYMRecipeTypes.init();

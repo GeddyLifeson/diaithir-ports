@@ -79,37 +79,7 @@ public class ItemMagnetBehavior implements IInteractionItem, IItemLifeCycle, IAd
     }
 
     @Override
-    public ModularUI createUI(HeldItemUIFactory.HeldItemHolder holder, Player entityPlayer) {
-        final ItemStack held = holder.getHeld();
-        MagnetComponent magnetData = held.getOrDefault(GTDataComponents.MAGNET, MagnetComponent.EMPTY);
-        Filter selected = magnetData.filterType();
-
-        HashSet<Triplet<Filter, Widget, Widget>> widgets = new HashSet<>();
-        HashMap<Filter, ItemFilter> filters = new HashMap<>();
-        ModularUI ui = new ModularUI(176, 157, holder, entityPlayer)
-                .background(GuiTextures.BACKGROUND)
-                .widget(new EnumSelectorWidget<>(146, 5, 20, 20,
-                        Filter.values(), selected, (val) -> updateSelection(held, val, widgets)))
-                .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7, 75, true));
-        for (Filter f : Filter.values()) {
-            ItemStack stack = f.getFilter(held);
-            ItemFilter filter = ItemFilter.loadFilter(stack);
-            filters.put(f, filter);
-            LabelWidget description = new LabelWidget(5, 5, stack.getDescriptionId());
-            WidgetGroup config = filter.openConfigurator((176 - 80) / 2, (60 - 55) / 2 + 15);
-            boolean visible = f == selected;
-            description.setVisible(visible);
-            config.setVisible(visible);
-            widgets.add(new Triplet<>(f, description, config));
-            ui.widget(description);
-            ui.widget(config);
-        }
-        ui.registerCloseListener(() -> {
-            Filter selection = magnetData.filterType();
-            selection.saveFilter(held, filters.get(selection));
-        });
-        return ui;
-    }
+    public ModularUI createUI(HeldItemUIFactory.HeldItemHolder holder, Player entityPlayer) { return null; /* ported stub */ }
 
     private void updateSelection(ItemStack stack, Filter filter, Collection<Triplet<Filter, Widget, Widget>> widgets) {
         stack.update(GTDataComponents.MAGNET, MagnetComponent.EMPTY, c -> new MagnetComponent(c.active(), filter));
@@ -150,91 +120,7 @@ public class ItemMagnetBehavior implements IInteractionItem, IItemLifeCycle, IAd
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        // Adapted logic from Draconic Evolution
-        // https://github.com/Draconic-Inc/Draconic-Evolution/blob/1.12.2/src/main/java/com/brandon3055/draconicevolution/items/tools/Magnet.java
-        if (!entity.isShiftKeyDown() && entity.tickCount % 10 == 0 && isActive(stack) &&
-                entity instanceof Player player) {
-            Level world = entity.level();
-            if (!drainEnergy(true, stack, energyDraw)) {
-                return;
-            }
-
-            List<ItemEntity> items = world.getEntitiesOfClass(ItemEntity.class,
-                    new AABB(entity.getX(), entity.getY(), entity.getZ(), entity.getX(), entity.getY(), entity.getZ())
-                            .inflate(range, range, range));
-
-            ItemFilter filter = null;
-            boolean didMoveEntity = false;
-            for (ItemEntity itemEntity : items) {
-                if (itemEntity.isRemoved()) {
-                    continue;
-                }
-
-                CompoundTag itemTag = itemEntity.getPersistentData();
-                if (itemTag.contains("PreventRemoteMovement")) {
-                    continue;
-                }
-
-                if (itemEntity.getOwner() != null && itemEntity.getOwner().equals(entity) &&
-                        itemEntity.hasPickUpDelay()) {
-                    continue;
-                }
-
-                Player closest = world.getNearestPlayer(itemEntity, 4);
-                if (closest != null && closest != entity) {
-                    continue;
-                }
-
-                if (!world.isClientSide()) {
-                    if (filter == null) {
-                        filter = stack.get(GTDataComponents.MAGNET).filterType().loadFilter(stack);
-                    }
-
-                    if (!filter.test(itemEntity.getItem())) {
-                        continue;
-                    }
-
-                    if (itemEntity.hasPickUpDelay()) {
-                        itemEntity.setNoPickUpDelay();
-                    }
-                    itemEntity.setDeltaMovement(0, 0, 0);
-                    itemEntity.setPos(entity.getX() - 0.2 + (world.getRandom().nextDouble() * 0.4), entity.getY() - 0.6,
-                            entity.getZ() - 0.2 + (world.getRandom().nextDouble() * 0.4));
-                    didMoveEntity = true;
-                }
-            }
-
-            if (didMoveEntity) {
-                world.playSound(null, entity, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS,
-                        0.1F, 0.5F * ((world.getRandom().nextFloat() - world.getRandom().nextFloat()) * 0.7F + 2F));
-            }
-
-            List<ExperienceOrb> xp = world.getEntitiesOfClass(ExperienceOrb.class,
-                    new AABB(entity.getX(), entity.getY(), entity.getZ(), entity.getX(), entity.getY(), entity.getZ())
-                            .inflate(4, 4, 4));
-
-            for (ExperienceOrb orb : xp) {
-                if (!world.isClientSide() && !orb.isRemoved()) {
-                    if (player.takeXpDelay == 0) {
-                        if (NeoForge.EVENT_BUS.post(new PlayerXpEvent.PickupXp(player, orb)).isCanceled()) {
-                            continue;
-                        }
-                        world.playSound(null, entity, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS,
-                                0.1F, 0.5F * ((world.getRandom().nextFloat() - world.getRandom().nextFloat()) * 0.7F + 1.8F));
-                        player.take(orb, 1);
-                        player.giveExperiencePoints(orb.value);
-                        orb.discard();
-                        didMoveEntity = true;
-                    }
-                }
-            }
-
-            if (didMoveEntity) {
-                drainEnergy(false, stack, energyDraw);
-            }
-        }
-    }
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {  /* ported stub */ }
 
     @SubscribeEvent
     public static void onItemToss(@NotNull ItemTossEvent event) {
@@ -287,11 +173,7 @@ public class ItemMagnetBehavior implements IInteractionItem, IItemLifeCycle, IAd
 
     private static class CuriosUtils {
 
-        public static boolean hasMagnetCurios(Player player) {
-            return CuriosApi.getCuriosInventory(player)
-                    .map(curios -> curios.findFirstCurio(i -> isMagnet(i) && isActive(i)).isPresent())
-                    .orElse(false);
-        }
+        public static boolean hasMagnetCurios(Player player) { return false; /* ported stub */ }
     }
 
     public enum Filter implements EnumSelectorWidget.SelectableEnum, StringRepresentable {

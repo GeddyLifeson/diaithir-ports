@@ -24,11 +24,11 @@ public class DynamiteEntity extends ThrowableItemProjectile {
     }
 
     public DynamiteEntity(double x, double y, double z, Level worldIn) {
-        super(GTEntityTypes.DYNAMITE.get(), x, y, z, worldIn);
+        super(GTEntityTypes.DYNAMITE.get(), x, y, z, worldIn, GTItems.DYNAMITE.asStack());
     }
 
     public DynamiteEntity(LivingEntity throwerIn, Level worldIn) {
-        super(GTEntityTypes.DYNAMITE.get(), throwerIn, worldIn);
+        super(GTEntityTypes.DYNAMITE.get(), throwerIn, worldIn, GTItems.DYNAMITE.asStack());
     }
 
     @Override

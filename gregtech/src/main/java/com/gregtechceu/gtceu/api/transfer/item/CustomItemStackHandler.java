@@ -46,6 +46,16 @@ public class CustomItemStackHandler extends ItemStackHandler
     }
 
     @Override
+    public CompoundTag serializeNBT(net.minecraft.core.HolderLookup.Provider provider) {
+        return com.gregtechceu.gtceu.compat.NbtCompat.save(this, provider);
+    }
+
+    @Override
+    public void deserializeNBT(net.minecraft.core.HolderLookup.Provider provider, CompoundTag nbt) {
+        com.gregtechceu.gtceu.compat.NbtCompat.load(this, provider, nbt);
+    }
+
+    @Override
     public boolean isItemValid(int slot, @NotNull ItemStack stack) {
         return filter.test(stack);
     }

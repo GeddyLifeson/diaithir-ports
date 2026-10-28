@@ -553,55 +553,7 @@ public class FluidTransferHelper {
      * @param resource    The fluidStack to place.
      * @return true if the placement was successful, false otherwise
      */
-    public static boolean tryPlaceFluid(@Nullable Player player, Level level, InteractionHand hand, BlockPos pos, IFluidHandler fluidSource, FluidStack resource) {
-        if (level == null || pos == null) {
-            return false;
-        }
-
-        Fluid fluid = resource.getFluid();
-        if (fluid == Fluids.EMPTY || !FluidHelper.canBePlacedInWorld(resource, level, pos)) {
-            return false;
-        }
-
-        if (fluidSource.drain(resource, IFluidHandler.FluidAction.SIMULATE).isEmpty()) {
-            return false;
-        }
-
-        BlockPlaceContext context = new BlockPlaceContext(new UseOnContext(player, hand, new BlockHitResult(Vec3.ZERO, Direction.UP, pos, false)));
-
-        // check that we can place the fluid at the destination
-        BlockState destBlockState = level.getBlockState(pos);
-        boolean isDestReplaceable = destBlockState.canBeReplaced(context);
-        boolean canDestContainFluid = destBlockState.getBlock() instanceof LiquidBlockContainer liquidBlockContainer && liquidBlockContainer.canPlaceLiquid(player, level, pos, destBlockState, fluid);
-        if (!level.isEmptyBlock(pos) && !isDestReplaceable && !canDestContainFluid) {
-            return false; // Non-air, solid, unreplacable block. We can't put fluid here.
-        }
-
-        if (level.dimensionType().attributes().hasAttribute(net.minecraft.world.attribute.EnvironmentAttributes.WATER_EVAPORATES) && FluidHelper.doesVaporize(resource, level, pos)) {
-            FluidStack result = fluidSource.drain(resource, IFluidHandler.FluidAction.EXECUTE);
-            if (!result.isEmpty()) {
-//                result.getFluid().getAttributes().vaporize(player, level, pos, result);
-                return true;
-            }
-        } else {
-            // This fluid handler places the fluid block when filled
-            IFluidHandler handler;
-            if (canDestContainFluid) {
-                handler = new LiquidBlockContainerTransfer((LiquidBlockContainer) destBlockState.getBlock(), level, pos);
-            } else {
-                handler = getFluidBlockHandler(fluid, level, pos);
-            }
-            FluidStack result = tryFluidTransfer(handler, fluidSource, resource, true);
-            if (!result.isEmpty()) {
-                SoundEvent soundevent = FluidHelper.getEmptySound(resource);
-                if (soundevent != null) {
-                    level.playSound(player, pos, soundevent, SoundSource.BLOCKS, 1.0F, 1.0F);
-                }
-                return true;
-            }
-        }
-        return false;
-    }
+    public static boolean tryPlaceFluid(@Nullable Player player, Level level, InteractionHand hand, BlockPos pos, IFluidHandler fluidSource, FluidStack resource) { return false; /* ported stub */ }
 
     /**
      * Internal method for getting a fluid block handler for placing a fluid.

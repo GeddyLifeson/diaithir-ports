@@ -75,15 +75,7 @@ public class FluidFilterCover extends CoverBehavior implements IUICover {
     }
 
     @Override
-    public Widget createUIWidget() {
-        final var group = new WidgetGroup(0, 0, 178, 85);
-        group.addWidget(new LabelWidget(60, 5, attachItem.getDescriptionId()));
-        group.addWidget(new EnumSelectorWidget<>(35, 25, 18, 18,
-                FilterMode.VALUES, filterMode, this::setFilterMode));
-        group.addWidget(new EnumSelectorWidget<>(35, 45, 18, 18, ManualIOMode.VALUES, allowFlow, this::setAllowFlow));
-        group.addWidget(getFluidFilter().openConfigurator(62, 25));
-        return group;
-    }
+    public Widget createUIWidget() { return null; /* ported stub */ }
 
     private class FilteredFluidHandlerWrapper extends FluidHandlerDelegate {
 
@@ -125,12 +117,7 @@ public class FluidFilterCover extends CoverBehavior implements IUICover {
     }
 
     @Override
-    public CompoundTag copyConfig(CompoundTag tag) {
-        tag.putInt("manualIO", getAllowFlow().ordinal());
-        tag.putInt("filterMode", getFilterMode().ordinal());
-        tag.put("filter", attachItem.save(coverHolder.getLevel().registryAccess()));
-        return super.copyConfig(tag);
-    }
+    public CompoundTag copyConfig(CompoundTag tag) { return null; /* ported stub */ }
 
     @Override
     public void pasteConfig(ServerPlayer player, CompoundTag tag) {

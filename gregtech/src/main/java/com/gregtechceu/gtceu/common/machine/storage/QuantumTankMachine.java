@@ -215,7 +215,7 @@ public class QuantumTankMachine extends TieredMachine implements IControllable,
             return TYPE;
         }
 
-        private final Predicate<FluidStack> filter = f -> !isLocked() || getLockedFluid().isFluidEqual(f);
+        private final Predicate<FluidStack> filter = f -> !isLocked() || FluidStack.isSameFluidSameComponents(getLockedFluid(), f);
 
         public FluidCache(MetaMachine holder) {
             super(holder);

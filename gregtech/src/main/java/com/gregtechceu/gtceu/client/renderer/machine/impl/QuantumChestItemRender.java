@@ -34,7 +34,6 @@ import org.joml.Quaternionf;
 
 import static com.gregtechceu.gtceu.utils.GTMatrixUtils.*;
 
-@ExtensionMethod(PoseStackExtensions.class)
 public class QuantumChestItemRender extends DynamicRender<QuantumChestMachine, QuantumChestItemRender> {
 
     // spotless:off

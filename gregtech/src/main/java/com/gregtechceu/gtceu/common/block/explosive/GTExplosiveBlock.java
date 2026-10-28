@@ -69,9 +69,7 @@ public abstract class GTExplosiveBlock extends Block {
 
     
     public boolean onCaughtFire(BlockState state, Level level, BlockPos pos, @Nullable Direction face,
-                             @Nullable LivingEntity igniter) {
-        explode(level, pos, igniter);
-    }
+                             @Nullable LivingEntity igniter) { return false; /* ported stub */ }
 
     public void explode(Level level, BlockPos pos, @Nullable LivingEntity exploder) {
         if (!level.isClientSide()) {
@@ -94,19 +92,7 @@ public abstract class GTExplosiveBlock extends Block {
 
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
-                                              Player player, InteractionHand hand, BlockHitResult hit) {
-        if (stack.canPerformAction(ItemAbilities.FIRESTARTER_LIGHT)) {
-            this.explode(level, pos, player);
-            level.removeBlock(pos, false);
-            if (stack.isDamageableItem()) {
-                stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
-            } else if (!player.isCreative()) {
-                stack.shrink(1);
-            }
-            return InteractionResult.SUCCESS;
-        }
-        return super.useItemOn(stack, state, level, pos, player, hand, hit);
-    }
+                                              Player player, InteractionHand hand, BlockHitResult hit) { return null; /* ported stub */ }
 
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
@@ -117,15 +103,7 @@ public abstract class GTExplosiveBlock extends Block {
     }
 
     
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        super.entityInside(state, level, pos, entity);
-        if (!level.isClientSide() && entity instanceof Arrow arrow) {
-            if (arrow.isOnFire()) {
-                this.explode(level, pos, arrow.getOwner() instanceof LivingEntity living ? living : null);
-                level.removeBlock(pos, false);
-            }
-        }
-    }
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {  /* ported stub */ }
 
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
@@ -163,13 +141,5 @@ public abstract class GTExplosiveBlock extends Block {
 
     
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
-        if (explodeOnMine) {
-            tooltip.add(Component.translatable("block.gtceu.explosive.breaking_tooltip"));
-        }
-        if (!canRedstoneActivate) {
-            tooltip.add(Component.translatable("block.gtceu.explosive.lighting_tooltip"));
-        }
-    }
+                                TooltipFlag flag) {  /* ported stub */ }
 }

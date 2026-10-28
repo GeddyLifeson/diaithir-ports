@@ -25,16 +25,17 @@ public class PostRegistryListener extends ContextAwareReloadListener implements 
     private PostRegistryListener() {}
 
     protected void apply() {
-        var registry = GTRegistries.builtinRegistry().lookupOrThrow(GTRegistries.ORE_VEIN_REGISTRY);
+        var server = com.gregtechceu.gtceu.GTCEu.getMinecraftServer();
+        if (server == null) return;
+        var registry = server.registryAccess().lookupOrThrow(GTRegistries.ORE_VEIN_REGISTRY);
 
         buildVeinGenerators(registry);
-        GTOreVeins.updateLargestVeinSize(registry);
-        ServerCache.instance.oreVeinDefinitionsChanged(registry);
-        WorldGeneratorUtils.invalidateOreVeinCache();
+        com.gregtechceu.gtceu.common.data.GTOreVeins.updateLargestVeinSize(registry);
+        com.gregtechceu.gtceu.api.data.worldgen.WorldGeneratorUtils.invalidateOreVeinCache();
     }
 
-    public static void buildVeinGenerators(Registry<GTOreDefinition> registry) {
-        var iterator = registry.holders().iterator();
+    public static void buildVeinGenerators(net.minecraft.core.HolderLookup<GTOreDefinition> registry) {
+        var iterator = registry.listElements().iterator();
         while (iterator.hasNext()) {
             var definition = iterator.next();
             var veinGen = definition.value().veinGenerator();
@@ -44,10 +45,9 @@ public class PostRegistryListener extends ContextAwareReloadListener implements 
         }
     }
 
-    
-    public CompletableFuture<Void> reload(PreparationBarrier stage, ResourceManager resourceManager,
-                                          ProfilerFiller preparationsProfiler, ProfilerFiller reloadProfiler,
-                                          Executor backgroundExecutor, Executor gameExecutor) {
-        return stage.wait(null).thenRunAsync(this::apply);
+    @Override
+    public CompletableFuture<Void> reload(SharedState sharedState, Executor backgroundExecutor,
+                                          PreparationBarrier stage, Executor gameExecutor) {
+        return stage.wait(null).thenRunAsync(this::apply, gameExecutor);
     }
 }

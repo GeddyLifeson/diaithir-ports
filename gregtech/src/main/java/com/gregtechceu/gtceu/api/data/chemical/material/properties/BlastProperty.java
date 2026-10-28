@@ -119,7 +119,6 @@ public class BlastProperty implements IMaterialProperty {
         }
     }
 
-    @ExtensionMethod(SizedIngredientExtensions.class)
     public enum GasTier {
 
         // Tiers used by GTCEu

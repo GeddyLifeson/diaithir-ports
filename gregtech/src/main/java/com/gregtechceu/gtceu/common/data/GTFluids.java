@@ -23,13 +23,8 @@ import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 public class GTFluids {
 
     @SuppressWarnings("UnstableApiUsage")
-    public static final FluidEntry<PotionFluid> POTION = REGISTRATE
-            .fluid("potion", GTCEu.id("block/fluids/fluid.potion"), GTCEu.id("block/fluids/fluid.potion"),
-                    PotionFluid.PotionFluidType::new, PotionFluid::new)
-            .lang("Potion")
-            .source(PotionFluid::new).noBlock().noBucket()
-            .tag(CustomTags.POTION_FLUIDS)
-            .register();
+    // PORT: potion fluid registration not yet ported to the 26.1 Registrate fluid API.
+    public static final FluidEntry<PotionFluid> POTION = null;
 
     public static void init() {
         // Register fluids for non-materials

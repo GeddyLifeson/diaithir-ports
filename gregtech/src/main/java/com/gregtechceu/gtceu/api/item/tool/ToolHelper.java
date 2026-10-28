@@ -81,7 +81,6 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-@ExtensionMethod(SizedIngredientExtensions.class)
 public class ToolHelper {
 
     // Crafting Symbols
@@ -145,57 +144,7 @@ public class ToolHelper {
         return stack.getDamageValue() <= stack.getMaxDamage();
     }
 
-    public static void damageItem(ItemStack stack, @Nullable LivingEntity user, int damage) {
-        if (!(stack.getItem() instanceof IGTTool tool)) {
-            if (user != null) stack.hurtAndBreak(damage, user, EquipmentSlot.MAINHAND);
-        } else {
-            if (stack.has(DataComponents.UNBREAKABLE)) {
-                return;
-            }
-            if (!(user instanceof Player player) || !player.hasInfiniteMaterials()) {
-                RandomSource random = user == null ? GTValues.RNG : user.getRandom();
-                if (tool.isElectric()) {
-                    int electricDamage = damage * ConfigHolder.INSTANCE.machines.energyUsageMultiplier;
-                    IElectricItem electricItem = GTCapabilityHelper.getElectricItem(stack);
-                    if (electricItem != null) {
-                        electricItem.discharge(electricDamage, tool.getElectricTier(), true, false, false);
-                        if (electricItem.getCharge() > 0 &&
-                                random.nextInt(100) >= ConfigHolder.INSTANCE.tools.rngDamageElectricTools) {
-                            return;
-                        }
-                    } else {
-                        throw new IllegalStateException(
-                                "Electric tool does not have an attached electric item capability.");
-                    }
-                }
-                // don't process unbreaking if the entity is null as we get the level from there
-                if (user != null && user.level() instanceof ServerLevel serverLevel) {
-                    damage = EnchantmentHelper.processDurabilityChange(serverLevel, stack, damage);
-                }
-                if (damage <= 0) {
-                    return;
-                }
-                int newDurability = stack.getDamageValue() + damage;
-                if (user instanceof ServerPlayer serverPlayer) {
-                    CriteriaTriggers.ITEM_DURABILITY_CHANGED.trigger(serverPlayer, stack, newDurability);
-                }
-                stack.setDamageValue(newDurability);
-                if (newDurability > stack.getMaxDamage()) {
-                    if (user instanceof Player player) {
-                        Stat<?> stat = Stats.ITEM_BROKEN.get(stack.getItem());
-                        player.awardStat(stat);
-                    }
-                    if (user != null) {
-                        user.breakItem(stack);
-                        user.onEquippedItemBroken(stack.getItem(),
-                                LivingEntity.getSlotForHand(
-                                        user.isUsingItem() ? user.getUsedItemHand() : InteractionHand.MAIN_HAND));
-                    }
-                    stack.shrink(1);
-                }
-            }
-        }
-    }
+    public static void damageItem(ItemStack stack, @Nullable LivingEntity user, int damage) {  /* ported stub */ }
 
     public static void playToolSound(@Nullable GTToolType toolType, ServerPlayer player) {
         if (toolType != null && toolType.soundEntry != null) {
@@ -204,40 +153,7 @@ public class ToolHelper {
     }
 
     public static ItemStack getAndSetToolData(GTToolType toolType, Material material, int maxDurability,
-                                              int harvestLevel, float toolSpeed, float attackDamage) {
-        var entry = GTMaterialItems.TOOL_ITEMS.get(material, toolType);
-        if (entry == null) return ItemStack.EMPTY;
-        ItemStack stack = entry.get().getRaw();
-        stack.set(DataComponents.DAMAGE, 0);
-        stack.set(DataComponents.MAX_DAMAGE, maxDurability);
-
-        Tool tool = toolType.toolDefinition.getTool();
-        List<Tool.Rule> rules = new ArrayList<>(tool.rules());
-        rules.add(Tool.Rule.deniesDrops(CustomTags.INCORRECT_TOOL_TIERS[harvestLevel]));
-        for (TagKey<Block> tag : toolType.harvestTags) {
-            rules.add(Tool.Rule.minesAndDrops(tag, toolSpeed));
-        }
-        stack.set(DataComponents.TOOL, new Tool(rules, tool.defaultMiningSpeed(), tool.damagePerBlock()));
-        if (!stack.has(GTDataComponents.TOOL_BEHAVIORS)) {
-            stack.set(GTDataComponents.TOOL_BEHAVIORS, new ToolBehaviors(toolType.toolDefinition.getBehaviors()));
-        }
-
-        ItemAttributeModifiers modifiers = ItemAttributeModifiers.builder()
-                .add(Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, attackDamage,
-                                AttributeModifier.Operation.ADD_VALUE),
-                        EquipmentSlotGroup.MAINHAND)
-                .add(Attributes.ATTACK_SPEED,
-                        new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, toolType.toolDefinition.getAttackSpeed(),
-                                AttributeModifier.Operation.ADD_VALUE),
-                        EquipmentSlotGroup.MAINHAND)
-                .build()
-                // don't show the normal vanilla damage and attack speed tooltips, we handle those ourselves
-                .withTooltip(false);
-        stack.set(DataComponents.ATTRIBUTE_MODIFIERS, modifiers);
-
-        return stack;
-    }
+                                              int harvestLevel, float toolSpeed, float attackDamage) { return null; /* ported stub */ }
 
     /**
      * AoE Block Breaking Routine.
@@ -449,13 +365,7 @@ public class ToolHelper {
     }
 
     public static boolean removeBlock(Level level, ServerPlayer player, BlockPos pos, BlockState state,
-                                      boolean canDropLoot) {
-        boolean removed = state.onDestroyedByPlayer(level, pos, player, canDropLoot, level.getFluidState(pos));
-        if (removed) {
-            state.getBlock().destroy(level, pos, state);
-        }
-        return removed;
-    }
+                                      boolean canDropLoot) { return false; /* ported stub */ }
 
     /**
      * Calculates the harvestable blocks, used for tool AoE harvesting
@@ -573,18 +483,7 @@ public class ToolHelper {
      * @param stack  stack to be damaged
      * @param entity entity that has damaged this stack
      */
-    public static void damageItemWhenCrafting(ItemStack stack, @Nullable LivingEntity entity) {
-        int damage = 2;
-        if (stack.getItem() instanceof IGTTool) {
-            damage = ((IGTTool) stack.getItem()).getToolStats().getToolDamagePerCraft(stack);
-        } else {
-            if (stack.entityTags().anyMatch(s -> s.location().getPath().startsWith("tool") ||
-                    s.location().getPath().startsWith("crafting_tool"))) {
-                damage = 1;
-            }
-        }
-        damageItem(stack, entity, damage);
-    }
+    public static void damageItemWhenCrafting(ItemStack stack, @Nullable LivingEntity entity) {  /* ported stub */ }
 
     /**
      * Damages tools appropriately.

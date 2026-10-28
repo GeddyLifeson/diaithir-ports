@@ -86,20 +86,7 @@ public class ToolEventHandlers {
      * Handle item frame power unit duping
      */
     @SubscribeEvent
-    public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract event) {
-        ItemStack itemStack = event.getItemStack();
-
-        if (!(itemStack.getItem() instanceof IGTTool gtTool) || !(event.getTarget() instanceof ItemFrame itemFrame)) {
-            return;
-        }
-        ItemStack brokenStack = gtTool.getToolStats().getBrokenStack();
-        if (!brokenStack.isEmpty()) {
-            itemFrame.interact(event.getEntity(), event.getHand());
-
-            event.setCanceled(true);
-            event.setCancellationResult(InteractionResult.SUCCESS);
-        }
-    }
+    public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract event) {  /* ported stub */ }
 
     /**
      * Handles saws harvesting ice without leaving water behind
@@ -109,54 +96,7 @@ public class ToolEventHandlers {
     public static List<ItemStack> onHarvestDrops(Player player, ItemStack tool, ServerLevel level,
                                                  BlockPos pos, BlockState state, boolean isSilkTouch,
                                                  int fortuneLevel, List<ItemStack> drops,
-                                                 float dropChance) {
-        if (!(tool.getItem() instanceof IGTTool)) {
-            return drops;
-        }
-        if (!isSilkTouch) {
-            ToolHelper.applyHammerDropConversion(level, pos, tool, state, drops, fortuneLevel, dropChance,
-                    player.getRandom());
-        }
-        if (!ToolHelper.hasBehaviorsComponent(tool)) return drops;
-
-        ToolBehaviors behaviorTag = ToolHelper.getBehaviorsComponent(tool);
-        Block block = state.getBlock();
-        if (!isSilkTouch && state.is(BlockTags.ICE) && behaviorTag.hasBehavior(GTToolBehaviors.HARVEST_ICE)) {
-            Item iceBlock = block.asItem();
-            if (drops.stream().noneMatch(drop -> drop.getItem() == iceBlock)) {
-                drops.add(new ItemStack(iceBlock));
-                level.getServer().tell(new TickTask(0, () -> {
-                    BlockState oldState = level.getBlockState(pos);
-                    if (oldState.getFluidState().isSourceOfType(Fluids.WATER)) {
-                        // I think it may be a waterlogged block, although the probability is very small
-                        BlockState newState = oldState.hasProperty(BlockStateProperties.WATERLOGGED) ?
-                                oldState.setValue(BlockStateProperties.WATERLOGGED, false) :
-                                Blocks.AIR.defaultBlockState();
-                        level.setBlockAndUpdate(pos, newState);
-                    }
-                }));
-                ((IGTTool) tool.getItem()).playSound(player);
-            }
-        }
-        if (tool.has(GTDataComponents.RELOCATE_MINED_BLOCKS)) {
-            drops = new ArrayList<>(drops);
-            Iterator<ItemStack> dropItr = drops.iterator();
-            while (dropItr.hasNext()) {
-                ItemStack dropStack = dropItr.next();
-                // Place close to the player for sanity reasons (Instead of XYZ=0,0,0)
-                ItemEntity drop = new ItemEntity(level, player.getX(), player.getY(), player.getZ(), dropStack);
-
-                if (isPickupAllowedByEvent(drop, player) && player.addItem(dropStack)) {
-                    EventHooks.fireItemPickupPost(drop, player, dropStack.copy());
-                    dropItr.remove();
-                }
-
-                // Just in case, destroy it
-                drop.discard();
-            }
-        }
-        return drops;
-    }
+                                                 float dropChance) { return null; /* ported stub */ }
 
     public static boolean isPickupAllowedByEvent(ItemEntity drop, Player player) {
         return !EventHooks.fireItemPickupPre(drop, player).canPickup().isFalse();

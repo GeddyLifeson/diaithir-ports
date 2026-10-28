@@ -1,25 +1,21 @@
 package com.gregtechceu.gtceu.api.recipe;
 
-import com.gregtechceu.gtceu.common.data.GTRecipeSerializers;
-
-
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.codec.ByteBufCodecs;
-import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Optional;
 
 public class StrictShapedRecipe extends ShapedRecipe {
 
-    public StrictShapedRecipe(String group, CraftingBookCategory category, ShapedRecipePattern pattern,
-                              ItemStack result, boolean showNotification) {
-        super(group, category, pattern, result, showNotification);
+    public StrictShapedRecipe(Recipe.CommonInfo commonInfo, CraftingRecipe.CraftingBookInfo bookInfo,
+                              ShapedRecipePattern pattern, ItemStackTemplate result) {
+        super(commonInfo, bookInfo, pattern, result);
     }
 
     @Override
@@ -37,55 +33,37 @@ public class StrictShapedRecipe extends ShapedRecipe {
     /**
      * Checks if the region of a crafting inventory is match for the recipe.
      */
-    private boolean matches(CraftingInput craftingInventory, int width, int height) {
-        for (int i = 0; i < craftingInventory.width(); ++i) {
-            for (int j = 0; j < craftingInventory.height(); ++j) {
+    private boolean matches(CraftingInput inv, int width, int height) {
+        for (int i = 0; i < inv.width(); ++i) {
+            for (int j = 0; j < inv.height(); ++j) {
                 int k = i - width;
                 int l = j - height;
-                Ingredient ingredient = Ingredient.EMPTY;
+                Optional<Ingredient> ingredient = Optional.empty();
                 if (k >= 0 && l >= 0 && k < this.getWidth() && l < this.getHeight()) {
                     ingredient = this.getIngredients().get(k + l * this.getWidth());
                 }
-                if (ingredient.test(craftingInventory.getItem(i + j * craftingInventory.width()))) continue;
+                ItemStack stack = inv.getItem(i + j * inv.width());
+                if (ingredient.isPresent() ? ingredient.get().test(stack) : stack.isEmpty()) continue;
                 return false;
             }
         }
         return true;
     }
 
-    
-    public @NotNull RecipeSerializer<?> getSerializer() {
-        return GTRecipeSerializers.CRAFTING_SHAPED_STRICT.get();
+    @Override
+    @SuppressWarnings("unchecked")
+    public @NotNull RecipeSerializer<ShapedRecipe> getSerializer() {
+        return (RecipeSerializer<ShapedRecipe>) (RecipeSerializer<?>) SERIALIZER_STRICT;
     }
 
-    public static class Serializer {
+    public static final MapCodec<StrictShapedRecipe> CODEC = ShapedRecipe.MAP_CODEC
+            .xmap(StrictShapedRecipe::from, r -> r);
+    public static final net.minecraft.network.codec.StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, StrictShapedRecipe> STREAM_CODEC = ShapedRecipe.STREAM_CODEC
+            .map(StrictShapedRecipe::from, r -> r);
+    public static final RecipeSerializer<StrictShapedRecipe> SERIALIZER_STRICT = new RecipeSerializer<>(CODEC,
+            STREAM_CODEC);
 
-        public static final MapCodec<StrictShapedRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-                Codec.STRING.optionalFieldOf("group", "").forGetter(ShapedRecipe::getGroup),
-                CraftingBookCategory.CODEC.fieldOf("category").orElse(CraftingBookCategory.MISC)
-                        .forGetter(ShapedRecipe::category),
-                ShapedRecipePattern.MAP_CODEC.forGetter(val -> val.pattern),
-                ItemStack.CODEC.fieldOf("result").forGetter(val -> ((ShapedRecipeAccessor) val).getResult()),
-                Codec.BOOL.optionalFieldOf("show_notification", true)
-                        .forGetter(val -> ((ShapedRecipeAccessor) val).getShowNotification()))
-                .apply(instance, StrictShapedRecipe::new));
-        public static final StreamCodec<RegistryFriendlyByteBuf, StrictShapedRecipe> STREAM_CODEC = StreamCodec
-                .composite(
-                        ByteBufCodecs.STRING_UTF8, ShapedRecipe::getGroup,
-                        CraftingBookCategory.STREAM_CODEC, ShapedRecipe::category,
-                        ShapedRecipePattern.STREAM_CODEC, val -> val.pattern,
-                        ItemStack.STREAM_CODEC, val -> ((ShapedRecipeAccessor) val).getResult(),
-                        ByteBufCodecs.BOOL, ShapedRecipe::showNotification,
-                        StrictShapedRecipe::new);
-
-        
-        public MapCodec<StrictShapedRecipe> codec() {
-            return CODEC;
-        }
-
-        
-        public StreamCodec<RegistryFriendlyByteBuf, StrictShapedRecipe> streamCodec() {
-            return STREAM_CODEC;
-        }
+    public static StrictShapedRecipe from(ShapedRecipe r) {
+        return new StrictShapedRecipe(r.commonInfo, r.bookInfo, r.pattern, r.result);
     }
 }

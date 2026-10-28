@@ -26,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.ingotHot;
 
-@ExtensionMethod(SizedIngredientExtensions.class)
 public class AlloyBlastRecipeProducer {
 
     public static final AlloyBlastRecipeProducer DEFAULT_PRODUCER = new AlloyBlastRecipeProducer();

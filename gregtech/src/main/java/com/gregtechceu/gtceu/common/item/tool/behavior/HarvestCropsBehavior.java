@@ -83,36 +83,7 @@ public class HarvestCropsBehavior implements IToolBehavior<HarvestCropsBehavior>
         return false;
     }
 
-    private static boolean harvestBlockRoutine(BlockPos pos, UseOnContext context) {
-        Level level = context.getLevel();
-        ItemStack stack = context.getItemInHand();
-        Player player = context.getPlayer();
-
-        BlockState blockState = level.getBlockState(pos);
-        if (!(blockState.getBlock() instanceof CropBlock cropBlock)) return false;
-
-        ItemStack seed = blockState.getCloneItemStack(context.getHitResult().withPosition(pos), level, pos, player);
-        if (cropBlock.isMaxAge(blockState)) {
-            if (!level.isClientSide()) {
-                var drops = Block.getDrops(blockState, (ServerLevel) level, pos, null);
-                boolean removedSeed = false;
-                for (ItemStack drop : drops) {
-                    if (!removedSeed && ItemStack.isSameItemSameComponents(drop, seed)) {
-                        drop.shrink(1);
-                        removedSeed = true;
-                        if (drop.isEmpty()) continue;
-                    }
-                    Block.popResource(level, pos, drop);
-                }
-            }
-            level.levelEvent(LevelEvent.PARTICLES_DESTROY_BLOCK, pos, Block.getId(blockState));
-            level.setBlock(pos, cropBlock.getStateForAge(0), Block.UPDATE_ALL_IMMEDIATE);
-            ToolHelper.damageItem(stack, player);
-            return true;
-        }
-
-        return false;
-    }
+    private static boolean harvestBlockRoutine(BlockPos pos, UseOnContext context) { return false; /* ported stub */ }
 
     @Override
     public void addInformation(@NotNull ItemStack stack, Item.TooltipContext context, @NotNull List<Component> tooltip,

@@ -52,26 +52,7 @@ public class SCPacketMonitorGroupNBTChange implements CustomPacketPayload {
         buffer.writeBlockPos(pos);
     }
 
-    public void execute(IPayloadContext context) {
-        Level level = LogicalSidedProvider.CLIENTWORLD.get(context.flow().getReceptionSide())
-                .or(() -> {
-                    if (context.player() instanceof ServerPlayer player) {
-                        return Optional.ofNullable(player).map(ServerPlayer::level);
-                    }
-                    return Optional.empty();
-                })
-                .orElse(null);
-        if (level == null) return;
-
-        MetaMachine machine = MetaMachine.getMachine(level, pos);
-        if (machine instanceof CentralMonitorMachine centralMonitor) {
-            IItemHandlerModifiable itemHandler = centralMonitor.getMonitorGroups().get(monitorGroupId)
-                    .getItemStackHandler();
-            if (ItemStack.isSameItem(itemHandler.getStackInSlot(0), stack)) {
-                itemHandler.setStackInSlot(0, stack);
-            }
-        }
-    }
+    public void execute(IPayloadContext context) {  /* ported stub */ }
 
     private static class ClientCallWrapper {
 

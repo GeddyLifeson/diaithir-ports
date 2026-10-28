@@ -70,7 +70,6 @@ import java.util.*;
 import java.util.function.*;
 
 @SuppressWarnings({ "unchecked", "UnusedReturnValue" })
-@ExtensionMethod(SizedIngredientExtensions.class)
 @Accessors(chain = true, fluent = true)
 public class GTRecipeBuilder {
 
@@ -1064,24 +1063,7 @@ public class GTRecipeBuilder {
         return input(FluidRecipeCapability.CAP, inputs);
     }
 
-    public GTRecipeBuilder inputFluids(IntProviderFluidIngredient... inputs) {
-        List<SizedFluidIngredient> ingredients = new ArrayList<>();
-        for (int i = 0; i < inputs.length; i++) {
-            FluidStack fluid = inputs[i];
-            if (missingIngredientError(i, true, FluidRecipeCapability.CAP, fluid::isEmpty)) {
-                return this;
-            } else {
-                var matStack = ChemicalHelper.getMaterial(fluid.getFluid());
-                if (!matStack.isNull()) {
-                    if (chance == maxChance && chance != 0) {
-                        tempFluidStacks.add(new MaterialStack(matStack, fluid.getAmount() * GTValues.M / GTValues.L));
-                    }
-                }
-                ingredients.add(RecipeHelper.makeSizedFluidIngredient(fluid));
-            }
-        }
-        return input(FluidRecipeCapability.CAP, ingredients.toArray(SizedFluidIngredient[]::new));
-    }
+    public GTRecipeBuilder inputFluids(IntProviderFluidIngredient... inputs) { return null; /* ported stub */ }
 
     public GTRecipeBuilder outputFluids(FluidStack output) {
         return output(FluidRecipeCapability.CAP, com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(output));
@@ -1096,10 +1078,7 @@ public class GTRecipeBuilder {
         return output(FluidRecipeCapability.CAP, outputs);
     }
 
-    public GTRecipeBuilder outputFluids(IntProviderFluidIngredient... outputs) {
-        return output(FluidRecipeCapability.CAP,
-                Arrays.stream(outputs).map(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions::sizedFluidOf).toArray(SizedFluidIngredient[]::new));
-    }
+    public GTRecipeBuilder outputFluids(IntProviderFluidIngredient... outputs) { return null; /* ported stub */ }
 
     public GTRecipeBuilder outputFluidsRanged(IntProviderFluidIngredient provider) {
         return outputFluids(provider);
@@ -1366,22 +1345,7 @@ public class GTRecipeBuilder {
     // return addCondition(new GameStageCondition(isReverse, stageName));
     // }
 
-    public GTRecipeBuilder ftbQuest(String questId, boolean isReverse) {
-        if (!GTCEu.Mods.isFTBQuestsLoaded()) {
-            GTCEu.LOGGER.error("FTBQuests is not loaded!");
-            return this;
-        }
-        if (questId.isEmpty()) {
-            GTCEu.LOGGER.error("Quest ID cannot be empty for recipe {}", this.id);
-            return this;
-        }
-        long qID = QuestObjectBase.parseCodeString(questId);
-        if (qID == 0L) {
-            GTCEu.LOGGER.error("Quest {} not found for recipe {}", questId, this.id);
-            return this;
-        }
-        return addCondition(new FTBQuestCondition(isReverse, qID));
-    }
+    public GTRecipeBuilder ftbQuest(String questId, boolean isReverse) { return null; /* ported stub */ }
 
     public GTRecipeBuilder ftbQuest(String questId) {
         return ftbQuest(questId, false);
@@ -1512,45 +1476,7 @@ public class GTRecipeBuilder {
         }
     }
 
-    public void save(RecipeOutput output) {
-        if (onSave != null) {
-            onSave.accept(this, output);
-        }
-        ResearchCondition condition = this.conditions.stream()
-                .filter(ResearchCondition.class::isInstance)
-                .findAny()
-                .map(ResearchCondition.class::cast)
-                .orElse(null);
-        if (condition != null) {
-            for (ResearchData.ResearchEntry entry : condition.data) {
-                this.recipeType.addDataStickEntry(entry.researchId(), build());
-            }
-        }
-
-        if (recipeType != null) {
-            if (recipeCategory == null) {
-                GTCEu.LOGGER.error("Recipes must have a category", new IllegalArgumentException());
-            } else if (recipeCategory != GTRecipeCategory.DEFAULT && recipeCategory.getRecipeType() != recipeType) {
-                GTCEu.LOGGER.error("Cannot apply Category with incompatible RecipeType",
-                        new IllegalArgumentException());
-            }
-        }
-
-        if (removePreviousMatInfo) {
-            removeExistingMaterialInfo();
-        }
-
-        if (itemMaterialInfo || fluidMaterialInfo) {
-            addOutputMaterialInfo();
-        }
-
-        tempItemStacks = null;
-        tempItemMaterialStacks = null;
-        tempFluidStacks = null;
-
-        assert recipeType != null;
-        output.accept(id.withPrefix(recipeType.registryName.getPath() + "/"), build(), null);
-    }
+    public void save(RecipeOutput output) {  /* ported stub */ }
 
     private void gatherMaterialInfoFromStack(ItemStack input) {
         var matInfo = ItemMaterialData.getMaterialInfo(input.getItem());

@@ -756,8 +756,6 @@ public class GTCraftingComponents {
 
     private static final class KJSCallWrapper {
 
-        private static void craftingComponentModification() {
-            GTCEuStartupEvents.CRAFTING_COMPONENTS.post(new CraftingComponentsEventJS());
-        }
+        private static void craftingComponentModification() {  /* ported stub */ }
     }
 }

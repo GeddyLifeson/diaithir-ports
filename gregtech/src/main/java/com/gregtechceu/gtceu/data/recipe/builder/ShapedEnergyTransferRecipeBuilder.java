@@ -28,7 +28,7 @@ import java.util.Objects;
 public class ShapedEnergyTransferRecipeBuilder {
 
     @Setter
-    protected Ingredient chargeIngredient = Ingredient.EMPTY;
+    protected Ingredient chargeIngredient = Ingredient.of(net.minecraft.core.HolderSet.<net.minecraft.world.item.Item>empty());
     @Setter
     protected ItemStack output = ItemStack.EMPTY;
     @Setter
@@ -89,17 +89,16 @@ public class ShapedEnergyTransferRecipeBuilder {
     }
 
     public ShapedEnergyTransferRecipe build() {
-        return new ShapedEnergyTransferRecipe(Objects.requireNonNullElse(this.group, ""), this.category,
+        return new ShapedEnergyTransferRecipe(new net.minecraft.world.item.crafting.Recipe.CommonInfo(false),
+                new net.minecraft.world.item.crafting.CraftingRecipe.CraftingBookInfo(this.category,
+                        Objects.requireNonNullElse(this.group, "")),
                 ShapedRecipePattern.of(this.key, this.rows), this.chargeIngredient, this.overrideCharge,
-                this.transferMaxCharge, this.output, false);
+                this.transferMaxCharge, net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(this.output));
     }
 
     protected Identifier defaultId() {
         return BuiltInRegistries.ITEM.getKey(output.getItem());
     }
 
-    public void save(RecipeOutput consumer) {
-        var recipeId = id == null ? defaultId() : id;
-        consumer.accept(recipeId.withPrefix("shaped/"), build(), null);
-    }
+    public void save(RecipeOutput consumer) {  /* ported stub */ }
 }

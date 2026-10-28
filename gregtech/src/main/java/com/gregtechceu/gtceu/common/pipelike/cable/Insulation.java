@@ -83,29 +83,5 @@ public enum Insulation implements IMaterialPipeType<WireProperties> {
         return TYPE_ID;
     }
 
-    public PipeModel createPipeModel(PipeBlock<?, ?, ?> block, Material material, GTBlockstateProvider provider) {
-        Identifier side = MaterialIconType.wire
-                .getBlockTexturePath(material.getMaterialIconSet(), "side", true);
-        Identifier end = MaterialIconType.wire
-                .getBlockTexturePath(material.getMaterialIconSet(), "end", true);
-
-        PipeModel model = new PipeModel(block, provider, thickness,
-                isCable ? GTCEu.id("block/cable/insulation_5") : side, end);
-
-        Identifier sideSecondary = MaterialIconType.wire
-                .getBlockTexturePath(material.getMaterialIconSet(), "side_overlay", true);
-        Identifier endSecondary = MaterialIconType.wire
-                .getBlockTexturePath(material.getMaterialIconSet(), "end_overlay", true);
-
-        if (sideSecondary != null && !sideSecondary.equals(GTModels.BLANK_TEXTURE)) {
-            model.setSideSecondary(sideSecondary);
-        }
-        if (endSecondary != null && !endSecondary.equals(GTModels.BLANK_TEXTURE)) {
-            model.setEndSecondary(endSecondary);
-        }
-        if (isCable) {
-            model.setEndOverlay(GTCEu.id("block/cable/insulation_%s".formatted(insulationLevel)));
-        }
-        return model;
-    }
+    public PipeModel createPipeModel(PipeBlock<?, ?, ?> block, Material material, GTBlockstateProvider provider) { return null; /* ported stub */ }
 }

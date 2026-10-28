@@ -670,7 +670,7 @@ public class RecipeLogic extends MachineTrait implements IWorkable, IFancyToolti
                 CompoundTag chanceCache = ValueTransformer.assertTagType(CompoundTag.class, tag, context);
                 if (context.currentValue() != null) {
                     for (String key : chanceCache.keySet()) {
-                        RecipeCapability<?> cap = GTRegistries.RECIPE_CAPABILITIES.get(Identifier.parse(key));
+                        RecipeCapability<?> cap = GTRegistries.RECIPE_CAPABILITIES.getValue(Identifier.parse(key));
                         // Necessary since a RecipeCapability was removed when removing Create support, and for future
                         // removals
                         if (cap == null) continue;

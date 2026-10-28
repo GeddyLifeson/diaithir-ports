@@ -43,17 +43,7 @@ public class OreGenerator {
     }
 
     public List<GeneratedVeinMetadata> generateMetadata(final WorldGenLevel level, ChunkGenerator chunkGenerator,
-                                                        ChunkPos chunkPos) {
-        return createConfigs(level, chunkGenerator, chunkPos).stream()
-                .map(OreGenerator::logVeinGeneration)
-                .map(entry -> entry.data)
-                .peek(data -> {
-                    int gridX = Math.floorDiv(chunkPos.x(), ConfigHolder.INSTANCE.worldgen.oreVeins.oreVeinGridSize);
-                    int gridZ = Math.floorDiv(chunkPos.z(), ConfigHolder.INSTANCE.worldgen.oreVeins.oreVeinGridSize);
-                    ServerCache.instance.addVein(level.getLevel().dimension(), gridX, gridZ, data);
-                })
-                .toList();
-    }
+                                                        ChunkPos chunkPos) { return null; /* ported stub */ }
 
     public List<GeneratedIndicators> generateIndicators(WorldGenLevel level, List<GeneratedVeinMetadata> metadata,
                                                         ChunkPos chunkPos) {

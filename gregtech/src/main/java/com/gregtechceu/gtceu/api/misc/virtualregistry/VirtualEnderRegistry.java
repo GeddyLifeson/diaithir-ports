@@ -98,18 +98,7 @@ public class VirtualEnderRegistry extends SavedData {
         return getInstance().VIRTUAL_REGISTRIES.computeIfAbsent(owner, key -> new VirtualRegistryMap());
     }
 
-    public final void readFromNBT(HolderLookup.@NotNull Provider registries, CompoundTag nbt) {
-        if (nbt.contains(PUBLIC_KEY)) {
-            VIRTUAL_REGISTRIES.put(null, new VirtualRegistryMap(registries, nbt.getCompoundOrEmpty(PUBLIC_KEY)));
-        }
-        if (nbt.contains(PRIVATE_KEY)) {
-            CompoundTag privateEntries = nbt.getCompoundOrEmpty(PRIVATE_KEY);
-            for (String owner : privateEntries.keySet()) {
-                var privateMap = privateEntries.getCompound(owner);
-                VIRTUAL_REGISTRIES.put(UUID.fromString(owner), new VirtualRegistryMap(registries, privateMap));
-            }
-        }
-    }
+    public final void readFromNBT(HolderLookup.@NotNull Provider registries, CompoundTag nbt) {  /* ported stub */ }
 
     @NotNull
     

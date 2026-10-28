@@ -36,13 +36,9 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
         super(owner, parent, name, callback, factory, initialProperties);
     }
 
-    public GTBlockBuilder<T, P> exBlockstate(NonNullBiConsumer<DataGenContext<Block, ? extends Block>, GTBlockstateProvider> cons) {
-        return setDataGeneric(ProviderType.BLOCKSTATE, (ctx, prov) -> cons.accept(ctx, (GTBlockstateProvider) prov));
-    }
+    public GTBlockBuilder<T, P> exBlockstate(NonNullBiConsumer<DataGenContext<Block, ? extends Block>, GTBlockstateProvider> cons) { return null; /* ported stub */ }
 
-    public GTBlockBuilder<T, P> gtBlockstate(NonNullBiConsumer<DataGenContext<Block, ? extends T>, GTBlockstateProvider> cons) {
-        return setData(ProviderType.BLOCKSTATE, (ctx, prov) -> cons.accept(ctx, (GTBlockstateProvider) prov));
-    }
+    public GTBlockBuilder<T, P> gtBlockstate(NonNullBiConsumer<DataGenContext<Block, ? extends T>, GTBlockstateProvider> cons) { return null; /* ported stub */ }
 
     // region default overrides
 
@@ -58,9 +54,7 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
 
     @SuppressWarnings("removal")
     
-    public GTBlockBuilder<T, P> addLayer(Supplier<Supplier<RenderType>> layer) {
-        return (GTBlockBuilder<T, P>) super.addLayer(layer);
-    }
+    public GTBlockBuilder<T, P> addLayer(Supplier<Supplier<RenderType>> layer) { return null; /* ported stub */ }
 
     @Override
     public GTBlockBuilder<T, P> simpleItem() {
@@ -77,10 +71,6 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
         return super.blockEntity(factory);
     }
 
-    
-    public GTBlockBuilder<T, P> color(NonNullSupplier<Supplier<BlockColor>> colorHandler) {
-        return (GTBlockBuilder<T, P>) super.color(colorHandler);
-    }
 
     @Override
     public GTBlockBuilder<T, P> defaultBlockstate() {

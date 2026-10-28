@@ -51,11 +51,11 @@ public class CustomFluidTank extends FluidTank implements IFluidHandlerModifiabl
 
     @Override
     public CompoundTag serializeNBT(HolderLookup.Provider provider) {
-        return writeToNBT(provider, new CompoundTag());
+        return com.gregtechceu.gtceu.compat.NbtCompat.save(this, provider);
     }
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-        readFromNBT(provider, nbt);
+        com.gregtechceu.gtceu.compat.NbtCompat.load(this, provider, nbt);
     }
 }

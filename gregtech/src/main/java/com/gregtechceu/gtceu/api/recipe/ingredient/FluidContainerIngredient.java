@@ -26,7 +26,7 @@ import java.util.stream.Stream;
 public class FluidContainerIngredient implements ICustomIngredient {
 
     // spotless:off
-    public static final MapCodec<FluidContainerIngredient> CODEC = SizedFluidIngredient.NESTED_CODEC.fieldOf("fluid")
+    public static final MapCodec<FluidContainerIngredient> CODEC = SizedFluidIngredient.CODEC.fieldOf("fluid")
             .xmap(FluidContainerIngredient::new, FluidContainerIngredient::getFluid);
     // spotless:on
     @Getter
@@ -44,7 +44,12 @@ public class FluidContainerIngredient implements ICustomIngredient {
 
     @NotNull
     
-    public Stream<ItemStack> getItems() {
+    @Override
+    public Stream<net.minecraft.core.Holder<net.minecraft.world.item.Item>> items() {
+        return stacks().map(ItemStack::typeHolder).distinct();
+    }
+
+    public Stream<ItemStack> stacks() {
         if (cachedStacks == null)
             cachedStacks = Arrays.stream(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(this.fluid))
                     .map(stack -> stack.getFluid().getBucket().getDefaultInstance())

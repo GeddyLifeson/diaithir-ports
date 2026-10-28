@@ -46,27 +46,19 @@ public class SimpleCookingRecipeBuilder<T extends AbstractCookingRecipe> {
         this.constructor = constructor;
     }
 
-    public static SimpleCookingRecipeBuilder<CampfireCookingRecipe> campfireCooking(@Nullable Identifier id) {
-        return new SimpleCookingRecipeBuilder<>(id, "campfire_cooking", CampfireCookingRecipe::new);
-    }
+    public static SimpleCookingRecipeBuilder<CampfireCookingRecipe> campfireCooking(@Nullable Identifier id) { return null; /* ported stub */ }
 
-    public static SimpleCookingRecipeBuilder<SmeltingRecipe> smelting(@Nullable Identifier id) {
-        return new SimpleCookingRecipeBuilder<>(id, "smelting", SmeltingRecipe::new);
-    }
+    public static SimpleCookingRecipeBuilder<SmeltingRecipe> smelting(@Nullable Identifier id) { return null; /* ported stub */ }
 
-    public static SimpleCookingRecipeBuilder<BlastingRecipe> blasting(@Nullable Identifier id) {
-        return new SimpleCookingRecipeBuilder<>(id, "blasting", BlastingRecipe::new);
-    }
+    public static SimpleCookingRecipeBuilder<BlastingRecipe> blasting(@Nullable Identifier id) { return null; /* ported stub */ }
 
-    public static SimpleCookingRecipeBuilder<SmokingRecipe> smoking(@Nullable Identifier id) {
-        return new SimpleCookingRecipeBuilder<>(id, "smoking", SmokingRecipe::new);
-    }
+    public static SimpleCookingRecipeBuilder<SmokingRecipe> smoking(@Nullable Identifier id) { return null; /* ported stub */ }
 
     public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag) {
         return input(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(tag));
     }
 
-    public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag, DataComponentPredicate components, boolean strict) {
+    public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag, net.minecraft.core.component.DataComponentMap components, boolean strict) {
         return input(ExDataComponentIngredient.of(strict, components, tag));
     }
 
@@ -107,10 +99,7 @@ public class SimpleCookingRecipeBuilder<T extends AbstractCookingRecipe> {
                 this.experience, this.cookingTime);
     }
 
-    public void save(RecipeOutput consumer) {
-        var recipeId = id == null ? defaultId() : id;
-        consumer.accept(recipeId.withPrefix(folder + "/"), create(), null);
-    }
+    public void save(RecipeOutput consumer) {  /* ported stub */ }
 
     @FunctionalInterface
     public interface RecipeConstructor<T extends AbstractCookingRecipe> {

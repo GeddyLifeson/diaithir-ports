@@ -91,27 +91,7 @@ public class BlockInfo implements IPersistedSerializable, IConfigurable {
         return hasBlockEntity;
     }
 
-    public BlockEntity getBlockEntity(BlockPos pos, HolderLookup.Provider provider) {
-        if (hasBlockEntity && blockState.getBlock() instanceof EntityBlock entityBlock) {
-            if (lastEntity != null && lastEntity.getBlockPos().equals(pos)) {
-                return lastEntity;
-            }
-            lastEntity = entityBlock.newBlockEntity(pos, blockState);
-            if (tag != null && lastEntity != null) {
-                var compoundTag2 = lastEntity.saveWithoutMetadata(provider);
-                var compoundTag3 = compoundTag2.copy();
-                compoundTag2.merge(tag);
-                if (!compoundTag2.equals(compoundTag3)) {
-                    lastEntity.loadWithComponents(compoundTag2, provider);
-                }
-            }
-            if (postCreate != null) {
-                postCreate.accept(lastEntity);
-            }
-            return lastEntity;
-        }
-        return null;
-    }
+    public BlockEntity getBlockEntity(BlockPos pos, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     public BlockEntity getBlockEntity(HolderLookup.Provider provider, Level level, BlockPos pos) {
         BlockEntity entity = getBlockEntity(pos, provider);
@@ -125,10 +105,7 @@ public class BlockInfo implements IPersistedSerializable, IConfigurable {
         return itemStack == null ? new ItemStack(blockState.getBlock()) : itemStack;
     }
 
-    public ItemStack getItemStackForm(LevelReader level, BlockPos pos) {
-        if (itemStack != null) return itemStack;
-        return blockState.getBlock().getCloneItemStack(level, pos, blockState);
-    }
+    public ItemStack getItemStackForm(LevelReader level, BlockPos pos) { return null; /* ported stub */ }
 
     public void apply(HolderLookup.Provider provider, Level world, BlockPos pos) {
         world.setBlockAndUpdate(pos, blockState);

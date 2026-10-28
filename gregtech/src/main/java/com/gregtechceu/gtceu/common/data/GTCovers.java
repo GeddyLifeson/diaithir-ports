@@ -31,8 +31,7 @@ public class GTCovers {
     public static final int[] ALL_TIERS_WITH_ULV = GTValues.tiersBetween(GTValues.ULV,
             GTCEuAPI.isHighTier() ? GTValues.OpV : GTValues.UV);
 
-    public final static CoverDefinition FACADE = register("facade", FacadeCover::new,
-            () -> () -> FacadeCoverRenderer.INSTANCE);
+    public final static CoverDefinition FACADE = register("facade", FacadeCover::new);
 
     public final static CoverDefinition ITEM_FILTER = register("item_filter", ItemFilterCover::new);
     public final static CoverDefinition FLUID_FILTER = register("fluid_filter", FluidFilterCover::new);

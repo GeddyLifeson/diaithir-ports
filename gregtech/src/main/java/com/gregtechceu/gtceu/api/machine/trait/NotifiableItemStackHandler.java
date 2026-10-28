@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.function.IntFunction;
 import java.util.function.Predicate;
 
-@ExtensionMethod(SizedIngredientExtensions.class)
 public class NotifiableItemStackHandler extends NotifiableRecipeHandlerTrait<SizedIngredient>
                                         implements ICapabilityTrait, IItemHandlerModifiable {
 
@@ -191,13 +190,7 @@ public class NotifiableItemStackHandler extends NotifiableRecipeHandlerTrait<Siz
         return left.isEmpty() ? null : left;
     }
 
-    private static @Nullable ItemStack getActioned(CustomItemStackHandler storage, int index, List<?> actions) {
-        if (!GTCEu.Mods.isKubeJSLoaded()) return null;
-        // noinspection unchecked
-        var actioned = KJSCallWrapper.applyIngredientAction(storage, index, (List<IngredientActionHolder>) actions);
-        if (!actioned.isEmpty()) return actioned;
-        return null;
-    }
+    private static @Nullable ItemStack getActioned(CustomItemStackHandler storage, int index, List<?> actions) { return null; /* ported stub */ }
 
     @Override
     public RecipeCapability<SizedIngredient> getCapability() {

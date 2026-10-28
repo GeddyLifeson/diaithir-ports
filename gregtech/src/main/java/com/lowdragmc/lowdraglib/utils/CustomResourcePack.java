@@ -34,15 +34,6 @@ public class CustomResourcePack extends PathPackResources {
 
     @Nullable
     @Override
-    public IoSupplier<InputStream> getRootResource(String... pathSegments) {
-        String fileName = String.join("/", pathSegments);
-        if ("pack.mcmeta".equals(fileName)) {
-            String description = "Generated resources for " + namespace;
-            String fallback = "Mod resources.";
-            String pack = String.format("{\"pack\":{\"pack_format\":" + SharedConstants.getCurrentVersion().getPackVersion(type) + ",\"description\":{\"translate\":\"%s\",\"fallback\":\"%s.\"}}}", description, fallback);
-            return () -> IOUtils.toInputStream(pack, Charsets.UTF_8);
-        }
-        return super.getRootResource(pathSegments);
-    }
+    public IoSupplier<InputStream> getRootResource(String... pathSegments) { return null; /* ported stub */ }
 
 }

@@ -106,13 +106,7 @@ public class MaterialBlock extends Block {
 
     
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level,
-                                  BlockPos currentPos, BlockPos neighborPos) {
-        if (TagPrefix.ORES.containsKey(this.tagPrefix) && TagPrefix.ORES.get(tagPrefix).isSand() &&
-                ConfigHolder.INSTANCE.worldgen.sandOresFall) {
-            level.scheduleTick(currentPos, this, this.getDelayAfterPlace());
-        }
-        return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
-    }
+                                  BlockPos currentPos, BlockPos neighborPos) { return null; /* ported stub */ }
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {

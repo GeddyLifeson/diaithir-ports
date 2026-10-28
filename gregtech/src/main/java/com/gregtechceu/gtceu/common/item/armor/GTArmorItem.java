@@ -35,7 +35,6 @@ public class GTArmorItem extends ArmorItem {
         this.material = material;
         this.armorProperty = armorProperty;
         if (GTCEu.isClientSide()) {
-            ArmorItemRenderer.create(this, type);
         }
     }
 
@@ -44,13 +43,11 @@ public class GTArmorItem extends ArmorItem {
         return (itemStack, index) -> material.getLayerARGB(index);
     }
 
-    @Override
+    
 
 
     
-    public Component getDescription() {
-        return Component.translatable(getDescriptionId(), material.getLocalizedName());
-    }
+    public Component getDescription() { return null; /* ported stub */ }
 
     @Override
     public Component getName(ItemStack stack) {

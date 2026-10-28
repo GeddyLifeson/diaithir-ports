@@ -19,7 +19,7 @@ public record LargeItemContent(@With ItemStack stored, @With long amount) {
 
     // spotless:off
     public static final Codec<ItemStack> OPTIONAL_SINGLE_ITEM_CODEC = ExtraCodecs
-            .optionalEmptyMap(ItemStack.SINGLE_ITEM_CODEC)
+            .optionalEmptyMap(ItemStack.CODEC)
             .xmap(stack -> stack.orElse(ItemStack.EMPTY),
                     stack -> stack.isEmpty() ? Optional.empty() : Optional.of(stack));
     public static final Codec<LargeItemContent> CODEC = RecordCodecBuilder.create(instance -> instance.group(
