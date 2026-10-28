@@ -63,6 +63,32 @@ const abvResult = b => {
   return r;
 };
 
+// A basin hands out the recipe it matches first, and a bigger set also contains every smaller recipe inside it,
+// so the bigger drink could never be made. Make the sets an antichain: wherever recipe A's items sit inside
+// recipe B's, give A one extra item B does not use (its own signature items first, then cheap vanilla adjuncts).
+const sigOf = {};
+for (const row of vm.runInContext('DRINK_ROWS', sandbox)) sigOf['diaithir_drinks:' + row[0]] = row[keys.indexOf('sig')] ?? [];
+const POOL = ['minecraft:sugar_cane', 'minecraft:potato', 'minecraft:carrot', 'minecraft:beetroot', 'minecraft:melon_slice', 'minecraft:cactus',
+  'minecraft:sweet_berries', 'minecraft:apple', 'minecraft:wheat', 'minecraft:sugar', 'minecraft:honey_bottle', 'minecraft:kelp', 'minecraft:pumpkin_seeds'];
+const size = ing => Object.values(ing).reduce((a, n) => a + n, 0);
+const inside = (a, b) => Object.entries(a).every(([k, n]) => (b[k] ?? 0) >= n);
+const sets = brews.map(([, b]) => b.ingredients);
+const stuck = new Set();
+for (let pass = 0; pass < 200; pass++) {
+  let changed = false;
+  for (let i = 0; i < sets.length; i++) {
+    for (let j = 0; j < sets.length; j++) {
+      if (i === j || !inside(sets[i], sets[j])) continue;
+      const cands = [...(sigOf[brews[i][1].drink] ?? []), ...POOL].filter(c => (!have || have.has(c)) && !(c in sets[i]) && !(c in sets[j]));
+      if (size(sets[i]) >= MAX_ITEMS || !cands.length) { stuck.add(brews[i][0]); continue; }
+      sets[i][cands[0]] = 1;
+      changed = true;
+    }
+  }
+  if (!changed) break;
+}
+for (const id of stuck) console.log(`note ${id.split('/').pop()}: still sits inside another brew's set (no room for a distinguishing item)`);
+
 const dest = path.join(out, 'create', 'recipe', 'mixing');
 fs.mkdirSync(dest, { recursive: true });
 let made = 0;
