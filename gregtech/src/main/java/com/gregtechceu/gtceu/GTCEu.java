@@ -61,6 +61,8 @@ public class GTCEu {
             ConfigHolder.INSTANCE.compat.energy.enableFEConverters = true;
         }
         CommonProxy.init(modBus);
+        // PORT: LDLib is bundled and not a separate @Mod here, so bring it up from the GTCEu entrypoint
+        new com.lowdragmc.lowdraglib.LDLib(modBus, container);
 
         modBus.addListener(GTNetwork::registerPayloads);
     }

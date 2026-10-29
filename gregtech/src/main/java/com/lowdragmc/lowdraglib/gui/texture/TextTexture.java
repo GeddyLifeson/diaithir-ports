@@ -62,7 +62,7 @@ public class TextTexture extends TransformTexture {
     public TextTexture(String text, int color) {
         this.color = color;
         this.type = TextType.NORMAL;
-        if (LDLib.isClient()) {
+        if (LDLib.isClient() && Minecraft.getInstance().isSameThread()) {
             this.text = LocalizationUtils.format(text);
             texts = Collections.singletonList(this.text);
         }
@@ -99,7 +99,7 @@ public class TextTexture extends TransformTexture {
 
     @ConfigSetter(field = "text")
     public void updateText(String text) {
-        if (LDLib.isClient()) {
+        if (LDLib.isClient() && Minecraft.getInstance().isSameThread()) {
             this.text = LocalizationUtils.format(text);
             texts = Collections.singletonList(this.text);
             setWidth(this.width);
@@ -123,7 +123,7 @@ public class TextTexture extends TransformTexture {
 
     public TextTexture setWidth(int width) {
         this.width = width;
-        if (LDLib.isClient()) {
+        if (LDLib.isClient() && Minecraft.getInstance().isSameThread()) {
             if (this.width > 0) {
                 texts = Minecraft.getInstance()
                         .font.getSplitter()

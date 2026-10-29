@@ -29,7 +29,7 @@ import net.minecraft.world.level.block.Blocks;
  * @implNote ServerCommands
  */
 public class ServerCommands {
-	public static List<LiteralArgumentBuilder<CommandSourceStack>> createServerCommands() { return null; /* ported stub */ }
+	public static List<LiteralArgumentBuilder<CommandSourceStack>> createServerCommands() { return java.util.List.of(); /* ported stub */ }
 
 	public static int runBuildScene(CommandContext<CommandSourceStack> context, boolean saveNbt, BlockPos offset) { return (int)0; /* ported stub */ }
 }

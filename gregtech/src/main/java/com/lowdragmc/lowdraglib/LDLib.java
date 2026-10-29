@@ -64,7 +64,16 @@ public class LDLib {
         return location;
     }
 
-    public static boolean isValidResourceLocation(String string) { return false; /* ported stub */ }
+    public static boolean isValidResourceLocation(String string) {
+        for (int i = 0; i < string.length(); i++) {
+            if (!Identifier.validPathChar(string.charAt(i))) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
 
     public static Identifier location(String path) {
         return Identifier.fromNamespaceAndPath(MOD_ID, path);
@@ -92,9 +101,13 @@ public class LDLib {
         return false;
     }
 
-    public static boolean isReiLoaded() { return false; /* ported stub */ }
+    public static boolean isReiLoaded() {
+        return false;
+    }
 
-    public static boolean isEmiLoaded() { return false; /* ported stub */ }
+    public static boolean isEmiLoaded() {
+        return false;
+    }
 
     public static boolean isKubejsLoaded() {
         return Platform.isModLoaded("kubejs");

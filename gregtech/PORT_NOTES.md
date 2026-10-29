@@ -28,3 +28,17 @@ Methods whose bodies could not be ported quickly carry a `/* ported stub */` mar
 ## Added
 
 - `data/gtceu/age_gate.json`: every `gtceu` item at tier1 (Age 5).
+
+## Client rendering and GUI status (update)
+
+- Client boots and renders machines, ores, material blocks, items and (static) pipes. Models for the custom loaders
+  (`gtceu:machine`, `gtceu:pipe`, fluid containers) are generated into a dynamic resource pack
+  (`data/pack/GTDynamicResourcePack`, registered as `gtceu:dynamic_assets`). Block tints use `BlockTintSource`.
+- LDLib ModularUI (bundled) is ported to the 26.1 `GuiGraphicsExtractor` API through the compat `GuiGraphics`.
+  Right-clicking a machine opens its fancy UI (see gt-shots/macerator-gui.png). The UI open path uses ATs
+  (`lastSlots`, `remoteSlots`, `synchronizer`, `ServerPlayer.containerCounter/initMenu`, `Slot.x/y`, `Entity.setLevel`)
+  instead of the old accessor mixins. LDLib network payloads are registered through the bundled `CommonProxy`.
+- Known gaps: player inventory background texture is missing (checker pattern); pipes/cables have no dynamic
+  connection models; block entity renderers, item decorations, fluid tints, recipe viewer (JEI/REI/EMI) widgets,
+  editor/compass LDLib packages, ShaderTexture and TextField input are still stubs.
+- Dev scripts live outside the repo (gt_full.sh runs boot, scene, right-click UI and screenshot).
