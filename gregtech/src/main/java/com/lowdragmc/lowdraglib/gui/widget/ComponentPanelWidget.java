@@ -55,11 +55,17 @@ public class ComponentPanelWidget extends Widget {
         this.lastText.addAll(text);
     }
 
-    public static Component withButton(Component textComponent, String componentData) { return null; /* ported stub */ }
+    public static Component withButton(Component textComponent, String componentData) {
+        return textComponent.copy().withStyle(textComponent.getStyle().withClickEvent(new net.minecraft.network.chat.ClickEvent.CopyToClipboard("@!" + componentData)).withColor(net.minecraft.ChatFormatting.YELLOW));
+    }
 
-    public static Component withButton(Component textComponent, String componentData, int color) { return null; /* ported stub */ }
+    public static Component withButton(Component textComponent, String componentData, int color) {
+        return textComponent.copy().withStyle(textComponent.getStyle().withClickEvent(new net.minecraft.network.chat.ClickEvent.CopyToClipboard("@!" + componentData)).withColor(color));
+    }
 
-    public static Component withHoverTextTranslate(Component textComponent, Component hover) { return null; /* ported stub */ }
+    public static Component withHoverTextTranslate(Component textComponent, Component hover) {
+        return textComponent.copy().withStyle(textComponent.getStyle().withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(hover)));
+    }
 
     public ComponentPanelWidget setMaxWidthLimit(int maxWidthLimit) {
         this.maxWidthLimit = maxWidthLimit;
@@ -203,17 +209,71 @@ public class ComponentPanelWidget extends Widget {
 
     @OnlyIn(Dist.CLIENT)
     @Nullable
-    protected Style getStyleUnderMouse(double mouseX, double mouseY) { return null; /* ported stub */ }
+    protected Style getStyleUnderMouse(double mouseX, double mouseY) {
+        var font = Minecraft.getInstance().font;
+        var position = getPosition();
+        var size = getSize();
+        var selectedLine = (mouseY - position.y) / (font.lineHeight + space);
+        if (selectedLine < 0 || selectedLine >= cacheLines.size()) return null;
+        var line = cacheLines.get((int) selectedLine);
+        double startX = isCenter ? position.x + (size.width - font.width(line)) / 2f : position.x;
+        if (mouseX < startX) return null;
+        final double target = mouseX - startX;
+        final float[] x = {0};
+        final Style[] found = {null};
+        line.accept((idx, style, cp) -> {
+            float w = font.getSplitter().stringWidth(new String(Character.toChars(cp)));
+            if (found[0] == null && target >= x[0] && target < x[0] + w) { found[0] = style; return false; }
+            x[0] += w;
+            return true;
+        });
+        return found[0];
+    }
     
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        var style = getStyleUnderMouse(mouseX, mouseY);
+        if (style != null && style.getClickEvent() instanceof net.minecraft.network.chat.ClickEvent.CopyToClipboard cc) {
+            String componentText = cc.value();
+            if (componentText.startsWith("@!")) {
+                String rawText = componentText.substring(2);
+                ClickData clickData = new ClickData();
+                if (clickHandler != null) clickHandler.accept(rawText, clickData);
+                writeClientAction(1, buf -> { clickData.writeToBuf(buf); buf.writeUtf(rawText); });
+                playButtonClickSound();
+                return true;
+            }
+        }
+        return super.mouseClicked(mouseX, mouseY, button);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@NotNull @Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInForeground(@NotNull @Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        var style = getStyleUnderMouse(mouseX, mouseY);
+        if (style != null && style.getHoverEvent() instanceof net.minecraft.network.chat.HoverEvent.ShowText st) {
+            gui.getModularUIGui().setHoverTooltip(List.of(st.value()), ItemStack.EMPTY, null, null);
+            return;
+        }
+        super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        var fontRenderer = Minecraft.getInstance().font;
+        var position = getPosition();
+        var size = getSize();
+        for (int i = 0; i < cacheLines.size(); i++) {
+            var cacheLine = cacheLines.get(i);
+            if (isCenter) {
+                var lineWidth = fontRenderer.width(cacheLine);
+                graphics.drawString(fontRenderer, cacheLine, position.x + (size.width - lineWidth) / 2, position.y + i * (fontRenderer.lineHeight + space), -1);
+            } else {
+                graphics.drawString(fontRenderer, cacheLines.get(i), position.x, position.y + i * (fontRenderer.lineHeight + 2), -1);
+            }
+        }
+    }
 }

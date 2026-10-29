@@ -95,6 +95,14 @@ public final class GuiGraphics {
         g.blitSprite(RenderPipelines.GUI_TEXTURED, sprite, x, y, w, h, argb);
     }
 
+    /** Blit a normalized (0..1) sub-rectangle of a texture into a (float) destination rectangle, tinted by argb. */
+    public void blitNorm(Identifier tex, float x, float y, float w, float h, float u0, float v0, float uw, float vh, int argb) {
+        final int S = 4096;
+        int iw = Math.max(1, Math.round(w)), ih = Math.max(1, Math.round(h));
+        g.blit(RenderPipelines.GUI_TEXTURED, tex, Math.round(x), Math.round(y), u0 * S, v0 * S, iw, ih,
+                Math.max(1, Math.round(uw * S)), Math.max(1, Math.round(vh * S)), S, S, argb);
+    }
+
     public void renderItem(ItemStack stack, int x, int y) { g.item(stack, x, y); }
     public void renderFakeItem(ItemStack stack, int x, int y) { g.fakeItem(stack, x, y); }
     public void renderItemDecorations(Font font, ItemStack stack, int x, int y) { g.itemDecorations(font, stack, x, y); }

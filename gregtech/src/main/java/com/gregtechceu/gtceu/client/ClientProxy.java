@@ -64,6 +64,11 @@ public class ClientProxy {
                 event.register(java.util.List.of(
                         (net.minecraft.client.color.block.BlockTintSource) state -> material.getLayerARGB(0),
                         (net.minecraft.client.color.block.BlockTintSource) state -> material.getLayerARGB(1)), mb);
+            } else if (entry.getValue() instanceof com.gregtechceu.gtceu.api.block.MaterialPipeBlock<?, ?, ?> mp) {
+                var material = mp.material;
+                event.register(java.util.List.of(
+                        (net.minecraft.client.color.block.BlockTintSource) state -> material.getMaterialARGB(),
+                        (net.minecraft.client.color.block.BlockTintSource) state -> material.getMaterialARGB()), mp);
             }
         }
     }

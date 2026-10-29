@@ -96,5 +96,7 @@ public class UIResourceTexture implements IGuiTexture {
     }
 
     @Override
-    public void setUIResource(Resource<IGuiTexture> texturesResource) {  /* ported stub */ }
+    public void setUIResource(Resource<IGuiTexture> texturesResource) {
+        setResource(texturesResource);
+    }
 }

@@ -192,7 +192,21 @@ public class LabelWidget extends Widget implements IConfigurableWidget {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        Font fontRenderer = Minecraft.getInstance().font;
+        Position position = getPosition();
+        if (component == null) {
+            String suppliedText = LocalizationUtils.format(lastTextValue);
+            String[] split = suppliedText.split("\n");
+            for (int i = 0; i < split.length; i++) {
+                int y = position.y + (i * (fontRenderer.lineHeight + 2));
+                graphics.drawString(fontRenderer, split[i], position.x, y, color, dropShadow);
+            }
+        } else {
+            graphics.drawString(fontRenderer, component, position.x, position.y, color, dropShadow);
+        }
+    }
 
     @Override
     public boolean handleDragging(Object dragging) {

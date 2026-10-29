@@ -74,7 +74,35 @@ public class SelectorWidget extends WidgetGroup {
         computeLayout();
     }
 
-    protected void computeLayout() {  /* ported stub */ }
+    protected void computeLayout() {
+        int height = Math.min(maxCount, candidates.size()) * 15;
+        popUp.clearAllWidgets();
+        selectables.clear();
+        popUp.setSize(new Size(getSize().width, height));
+        popUp.setSelfPosition(showUp ? new Position(0, -height) : new Position(0, getSize().height));
+        if (candidates.size() > maxCount) {
+            popUp.setYScrollBarWidth(4).setYBarStyle(null, new ColorRectTexture(-1));
+        }
+        int y = 0;
+        int width = candidates.size() > maxCount ? getSize().width -4 : getSize().width;
+        for (String candidate : candidates) {
+            SelectableWidgetGroup select = new SelectableWidgetGroup(0, y, width, 15);
+            select.addWidget(new ImageWidget(0, 0, width, 15, new TextTexture(candidate, fontColor).setWidth(width).setType(TextTexture.TextType.ROLL)));
+            select.setSelectedTexture(-1, -1);
+            select.setOnSelected(s -> {
+                setValue(candidate);
+                if (onChanged != null) {
+                    onChanged.accept(candidate);
+                }
+                writeClientAction(2, buffer -> buffer.writeUtf(candidate));
+                setShow(false);
+            });
+            popUp.addWidget(select);
+            selectables.add(select);
+            y += 15;
+        }
+        popUp.setScrollYOffset(0);
+    }
 
     @ConfigSetter(field = "maxCount")
     public SelectorWidget setMaxCount(int maxCount) {
@@ -136,7 +164,14 @@ public class SelectorWidget extends WidgetGroup {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void setShow(boolean isShow) {  /* ported stub */ }
+    public void setShow(boolean isShow) {
+        if (isShow) {
+            setFocus(true);
+        }
+        this.isShow = isShow;
+        popUp.setVisible(isShow);
+        popUp.setActive(isShow);
+    }
 
     public String getValue() {
         return currentValue;
@@ -239,11 +274,28 @@ public class SelectorWidget extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        boolean lastVisible = popUp.isVisible();
+        popUp.setVisible(false);
+        super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+        popUp.setVisible(lastVisible);
+
+        if(isShow) {
+            graphics.pose().translate(0, 0, 200);
+            popUp.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+            popUp.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+            graphics.pose().translate(0, 0, -200);
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        boolean lastVisible = popUp.isVisible();
+        popUp.setVisible(false);
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        popUp.setVisible(lastVisible);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)

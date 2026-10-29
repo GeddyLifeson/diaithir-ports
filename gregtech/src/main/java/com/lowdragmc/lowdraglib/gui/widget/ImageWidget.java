@@ -82,6 +82,14 @@ public class ImageWidget extends Widget implements IConfigurableWidget {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        Position position = getPosition();
+        Size size = getSize();
+        if (border > 0) {
+            DrawerHelper.drawBorder(graphics, position.x, position.y, size.width, size.height, borderColor, border);
+        }
+        drawOverlay(graphics, mouseX, mouseY, partialTicks);
+    }
 }
 

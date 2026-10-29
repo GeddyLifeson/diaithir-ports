@@ -1,7 +1,6 @@
 package com.lowdragmc.lowdraglib.gui.modular;
 
 import com.lowdragmc.lowdraglib.LDLib;
-import com.lowdragmc.lowdraglib.core.mixins.accessor.AbstractContainerScreenAccessor;
 import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
 import com.lowdragmc.lowdraglib.gui.util.DrawerHelper;
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
@@ -17,7 +16,12 @@ import net.minecraft.util.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.input.CharacterEvent;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.input.MouseButtonInfo;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.Rect2i;
@@ -60,7 +64,8 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
     protected int pressedButton = -1;
 
     public ModularUIGuiContainer(ModularUI modularUI, int windowId) {
-        super(new ModularUIContainer(modularUI, windowId), modularUI.entityPlayer.getInventory(), Component.nullToEmpty("modularUI"));
+        super(new ModularUIContainer(modularUI, windowId), modularUI.entityPlayer.getInventory(),
+                Component.nullToEmpty("modularUI"), modularUI.getWidth(), modularUI.getHeight());
         this.modularUI = modularUI;
         modularUI.setModularUIGui(this);
     }
@@ -85,10 +90,10 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
     }
 
     @Override
-    public void init() {  /* ported stub */ }
-
-    
-    protected void renderBg(GuiGraphics graphics, float delta, int mouseX, int mouseY) {  /* ported stub */ }
+    public void init() {
+        super.init();
+        this.modularUI.updateScreenSize(width, height);
+    }
 
     @Override
     public void removed() {
@@ -112,55 +117,35 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
         }
     }
 
-    
-    public void render(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    @Override
+    public void extractRenderState(@Nonnull GuiGraphicsExtractor extractor, int mouseX, int mouseY, float partialTicks) {
+        GuiGraphics graphics = GuiGraphics.of(extractor);
+        this.hoveredSlot = null;
+        tooltipTexts = null;
+        tooltipComponent = null;
 
-    public void setHoveredSlot(Slot hoveredSlot) {  /* ported stub */ }
+        modularUI.mainGroup.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        modularUI.mainGroup.drawInForeground(graphics, mouseX, mouseY, partialTicks);
 
-    private void renderItemStackOnMouse(GuiGraphics graphics, int mouseX, int mouseY) {
-        if (minecraft == null || minecraft.player == null) return;
-        ItemStack draggedStack = ((AbstractContainerScreenAccessor)this).getDraggingItem();
-        ItemStack itemstack = draggedStack.isEmpty() ? getMenu().getCarried() : draggedStack;
-        if (!itemstack.isEmpty()) {
-            int k2 = draggedStack.isEmpty() ? 8 : 16;
-            String s = null;
-            if (!draggedStack.isEmpty() && ((AbstractContainerScreenAccessor)this).isSplittingStack()) {
-                itemstack = itemstack.copy();
-                itemstack.setCount((int) Math.ceil((float)itemstack.getCount() / 2.0F));
-            } else if (this.isQuickCrafting && this.quickCraftSlots.size() > 1) {
-                itemstack = itemstack.copy();
-                itemstack.setCount(((AbstractContainerScreenAccessor)this).getQuickCraftingRemainder());
-                if (itemstack.isEmpty()) {
-                    s = ChatFormatting.YELLOW + "0";
-                }
-            }
-            this.renderFloatingItem(graphics, itemstack, mouseX - leftPos - 8, mouseY - topPos - k2, s);
+        if (draggingElement != null) {
+            draggingElement.getB().draw(graphics, mouseX, mouseY, mouseX - 20, mouseY - 20, 40, 40);
         }
 
-    }
+        extractCarriedItem(extractor, mouseX, mouseY);
+        extractSnapbackItem(extractor);
 
-    public void renderFloatingItem(GuiGraphics graphics, ItemStack stack, int x, int y, @Nullable String amountText) {
-        graphics.pose().pushPose();
-        graphics.pose().translate(0.0f, 0.0f, 232.0f);
-        graphics.renderItem(stack, x, y);
-        graphics.renderItemDecorations(this.font, stack, x, y - (((AbstractContainerScreenAccessor)this).getDraggingItem().isEmpty() ? 0 : 8), amountText);
-        graphics.pose().popPose();
-    }
-
-    private void renderReturningItemStack(GuiGraphics graphics) {
-        if (!((AbstractContainerScreenAccessor)this).getSnapbackItem().isEmpty()) {
-            float f = (float)(Util.getMillis() - ((AbstractContainerScreenAccessor)this).getSnapbackTime()) / 100.0F;
-            if (f >= 1.0F) {
-                f = 1.0F;
-                ((AbstractContainerScreenAccessor)this).setSnapbackItem(ItemStack.EMPTY);
-            }
-
-            int l2 = ((AbstractContainerScreenAccessor)this).getSnapbackEnd().x - ((AbstractContainerScreenAccessor)this).getSnapbackStartX();
-            int i3 = ((AbstractContainerScreenAccessor)this).getSnapbackEnd().y - ((AbstractContainerScreenAccessor)this).getSnapbackStartY();
-            int l1 = ((AbstractContainerScreenAccessor)this).getSnapbackStartX() + (int)((float)l2 * f);
-            int i2 = ((AbstractContainerScreenAccessor)this).getSnapbackStartY() + (int)((float)i3 * f);
-            this.renderFloatingItem(graphics, ((AbstractContainerScreenAccessor)this).getSnapbackItem(), l1, i2, null);
+        if (draggingElement == null && tooltipTexts != null && !tooltipTexts.isEmpty()) {
+            DrawerHelper.drawTooltip(graphics, mouseX, mouseY, tooltipTexts, tooltipStack, tooltipComponent,
+                    tooltipFont == null ? Minecraft.getInstance().font : tooltipFont);
         }
+    }
+
+    public void setHoveredSlot(Slot hoveredSlot) {
+        // to make sure the widget won't trigger xei slot lookup
+        if (modularUI.mainGroup.isClientSideWidget() && !modularUI.mainGroup.isAllowXEIIngredientOverMouse()) {
+            return;
+        }
+        this.hoveredSlot = hoveredSlot;
     }
 
     public boolean switchFocus(@Nonnull Widget widget) {
@@ -181,17 +166,53 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
         return this.isQuickCrafting;
     }
 
-    
-    public boolean mouseClicked(double mouseX, double mouseY, int pButton) { return false; /* ported stub */ }
+    @Override
+    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        double mouseX = event.x(), mouseY = event.y();
+        int pButton = event.button();
+        pressedButton = pButton;
+        focused = false;
+        if (modularUI.mainGroup.mouseClicked(mouseX, mouseY, pButton)) return true;
+        for (GuiEventListener guiEventListener : this.children()) {
+            if (!guiEventListener.mouseClicked(event, doubleClick)) continue;
+            this.setFocused(guiEventListener);
+            if (pButton == 0) {
+                this.setDragging(true);
+            }
+            return true;
+        }
+        return false;
+    }
 
-    
-    public boolean mouseDragged(double mouseX, double mouseY, int pButton, double pDragX, double pDragY) { return false; /* ported stub */ }
+    @Override
+    public boolean mouseDragged(MouseButtonEvent event, double pDragX, double pDragY) {
+        focused = false;
+        if (modularUI.mainGroup.mouseDragged(event.x(), event.y(), event.button(), pDragX, pDragY)) return true;
+        if (this.getFocused() != null && this.isDragging() && event.button() == 0) {
+            return this.getFocused().mouseDragged(event, pDragX, pDragY);
+        }
+        return false;
+    }
 
-    
-    public boolean mouseReleased(double mouseX, double mouseY, int pButton) { return false; /* ported stub */ }
+    @Override
+    public boolean mouseReleased(MouseButtonEvent event) {
+        pressedButton = -1;
+        focused = false;
+        var result = modularUI.mainGroup.mouseReleased(event.x(), event.y(), event.button());
+        draggingElement = null;
+        if (result) return true;
+        this.setDragging(false);
+        return this.getChildAt(event.x(), event.y()).filter(l -> l.mouseReleased(event)).isPresent();
+    }
 
-    
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
+    @Override
+    public boolean keyPressed(KeyEvent event) {
+        focused = false;
+        if (modularUI.mainGroup.keyPressed(event.key(), event.scancode(), event.modifiers())) {
+            return true;
+        }
+        return super.keyPressed(event);
+    }
 
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double pScrollX, double pScrollY) {
@@ -200,11 +221,19 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
         return this.getChildAt(mouseX, mouseY).filter(element -> element.mouseScrolled(mouseX, mouseY, pScrollX, pScrollY)).isPresent();
     }
 
-    
-    public boolean keyReleased(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
+    @Override
+    public boolean keyReleased(KeyEvent event) {
+        focused = false;
+        if (modularUI.mainGroup.keyReleased(event.key(), event.scancode(), event.modifiers())) return true;
+        return this.getFocused() != null && this.getFocused().keyReleased(event);
+    }
 
-    
-    public boolean charTyped(char codePoint, int modifiers) { return false; /* ported stub */ }
+    @Override
+    public boolean charTyped(CharacterEvent event) {
+        focused = false;
+        if (event.codepoint() < 0x10000 && modularUI.mainGroup.charTyped((char) event.codepoint(), 0)) return true;
+        return this.getFocused() != null && this.getFocused().charTyped(event);
+    }
 
     @Override
     public void mouseMoved(double mouseX, double mouseY) {
@@ -216,26 +245,43 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
         return pressedButton == button;
     }
 
-    public void superMouseClicked(double mouseX, double mouseY, int mouseButton) {  /* ported stub */ }
+    private static MouseButtonEvent mouseEvent(double x, double y, int button) {
+        return new MouseButtonEvent(x, y, new MouseButtonInfo(button, 0));
+    }
 
-    public void superMouseDragged(double pMouseX, double pMouseY, int pButton, double pDragX, double pDragY) {  /* ported stub */ }
+    public void superMouseClicked(double mouseX, double mouseY, int mouseButton) {
+        try {
+            super.mouseClicked(mouseEvent(mouseX, mouseY, mouseButton), false);
+        } catch (Exception ignored) { }
+    }
 
-    public void superMouseReleased(double mouseX, double mouseY, int state) {  /* ported stub */ }
+    public void superMouseDragged(double pMouseX, double pMouseY, int pButton, double pDragX, double pDragY) {
+        super.mouseDragged(mouseEvent(pMouseX, pMouseY, pButton), pDragX, pDragY);
+    }
 
-    public boolean superKeyPressed(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
+    public void superMouseReleased(double mouseX, double mouseY, int state) {
+        super.mouseReleased(mouseEvent(mouseX, mouseY, state));
+    }
+
+    public boolean superKeyPressed(int keyCode, int scanCode, int modifiers) {
+        return super.keyPressed(new KeyEvent(keyCode, scanCode, modifiers));
+    }
 
     public boolean superMouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY) {
         return super.mouseScrolled(mouseX, mouseY, scrollX, scrollY);
     }
 
-    public boolean superKeyReleased(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
+    public boolean superKeyReleased(int keyCode, int scanCode, int modifiers) {
+        return super.keyReleased(new KeyEvent(keyCode, scanCode, modifiers));
+    }
 
-    public boolean superCharTyped(char codePoint, int modifiers) { return false; /* ported stub */ }
+    public boolean superCharTyped(char codePoint, int modifiers) {
+        return super.charTyped(new CharacterEvent(codePoint));
+    }
 
     public void superMouseMoved(double mouseX, double mouseY) {
         super.mouseMoved(mouseX, mouseY);
     }
-
 
     public List<Rect2i> getGuiExtraAreas() {
         return modularUI.mainGroup.getGuiExtraAreas(modularUI.mainGroup.toRectangleBox(), new ArrayList<>());

@@ -95,7 +95,14 @@ public class ResourceTexture extends TransformTexture {
         return this;
     }
 
-    public static ResourceTexture fromSpirit(Identifier texture) { return null; /* ported stub */ }
+    public static ResourceTexture fromSpirit(Identifier texture) {
+        if (LDLib.isClient()) {
+            var sprite = Minecraft.getInstance().getAtlasManager().getAtlasOrThrow(net.minecraft.data.AtlasIds.BLOCKS).getSprite(texture);
+            return new ResourceTexture(TextureAtlas.LOCATION_BLOCKS, sprite.getU0(), sprite.getV0(), sprite.getU1() - sprite.getU0(), sprite.getV1() - sprite.getV0());
+        } else {
+            return new ResourceTexture("");
+        }
+    }
 
     @OnlyIn(Dist.CLIENT)
     protected void drawInternal(GuiGraphics graphics, int mouseX, int mouseY, float x, float y, int width, int height) {
@@ -103,10 +110,41 @@ public class ResourceTexture extends TransformTexture {
     }
     
     @OnlyIn(Dist.CLIENT)
-    protected void drawSubAreaInternal(GuiGraphics graphics, float x, float y, float width, float height, float drawnU, float drawnV, float drawnWidth, float drawnHeight) {  /* ported stub */ }
+    protected void drawSubAreaInternal(GuiGraphics graphics, float x, float y, float width, float height, float drawnU, float drawnV, float drawnWidth, float drawnHeight) {
+        //sub area is just different width and height
+        float imageU = this.offsetX + (this.imageWidth * drawnU);
+        float imageV = this.offsetY + (this.imageHeight * drawnV);
+        float imageWidth = this.imageWidth * drawnWidth;
+        float imageHeight = this.imageHeight * drawnHeight;
+        graphics.blitNorm(imageLocation, x, y, width, height, imageU, imageV, imageWidth, imageHeight, color);
+    }
 
     @Override
-    public void createPreview(ConfiguratorGroup father) {  /* ported stub */ }
+    public void createPreview(ConfiguratorGroup father) {
+        super.createPreview(father);
+        WrapperConfigurator base = new WrapperConfigurator("ldlib.gui.editor.group.base_image", wrapper -> {
+            WidgetGroup widgetGroup = new WidgetGroup(0, 0, 100, 100);
+            widgetGroup.addWidget(new ImageWidget(0, 0, 100, 100, () -> new GuiTextureGroup(new ResourceTexture(imageLocation.toString()), this::drawGuides)).setBorder(2, ColorPattern.T_WHITE.color));
+            widgetGroup.addWidget(new ButtonWidget(0, 0, 100, 100, IGuiTexture.EMPTY, cd -> {
+                if (Editor.INSTANCE == null) return;
+                File path = new File(Editor.INSTANCE.getWorkSpace(), "textures");
+                DialogWidget.showFileDialog(Editor.INSTANCE, "ldlib.gui.editor.tips.select_image", path, true,
+                        DialogWidget.suffixFilter(".png"), r -> {
+                            if (r != null && r.isFile()) {
+                                imageLocation = getTextureFromFile(path, r);
+                                offsetX = 0;
+                                offsetY = 0;
+                                imageWidth = 1;
+                                imageHeight = 1;
+                                wrapper.notifyChanges();
+                            }
+                        });
+            }));
+            return widgetGroup;
+        });
+        base.setTips("ldlib.gui.editor.tips.click_select_image");
+        father.addConfigurators(base);
+    }
 
     private Identifier getTextureFromFile(File path, File r){
         var id = path.getPath().replace('\\', '/').split("assets/")[1].split("/")[0];

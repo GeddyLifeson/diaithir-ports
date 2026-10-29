@@ -111,7 +111,10 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
     }
 
     @Override
-    public void initTemplate() {  /* ported stub */ }
+    public void initTemplate() {
+        setBackground(FLUID_SLOT_TEXTURE);
+        setFillDirection(ProgressTexture.FillDirection.DOWN_TO_UP);
+    }
 
     public TankWidget(IFluidHandler fluidTank, int x, int y, boolean allowClickContainerFilling, boolean allowClickContainerEmptying) {
         this(fluidTank, x, y, 18, 18, allowClickContainerFilling, allowClickContainerEmptying);
@@ -205,7 +208,13 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
     public List<Object> getXEIIngredients() { return null; /* ported stub */ }
 
     @Override
-    public Object getXEICurrentIngredient() { return null; /* ported stub */ }
+    public Object getXEICurrentIngredient() {
+        if (lastFluidInTank == null || lastFluidInTank.isEmpty()) return null;
+        if (LDLib.isJeiLoaded()) {
+            return JEICallWrapper.getPlatformFluidTypeForJEIClickable(new FluidStack(lastFluidInTank.getFluid(), lastFluidInTank.getAmount()), getPosition(), getSize());
+        }
+        return null;
+    }
 
     private List<Object> getXEIIngredientsFromCycleTransfer(CycleFluidTransfer transfer, int index) {
         var stream = transfer.getStackList(index).stream();
@@ -219,14 +228,31 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
         return Collections.emptyList();
     }
 
-    private List<Object> getXEIIngredientsFromCycleTransferClickable(CycleFluidTransfer transfer, int index) { return null; /* ported stub */ }
+    private List<Object> getXEIIngredientsFromCycleTransferClickable(CycleFluidTransfer transfer, int index) {
+        var stream = transfer.getStackList(index).stream();
+        if (LDLib.isJeiLoaded()) {
+            return stream
+                    .filter(fluid -> !fluid.isEmpty())
+                    .map(fluid -> JEICallWrapper.getPlatformFluidTypeForJEIClickable(fluid, getPosition(), getSize()))
+                    .toList();
+        } else if (LDLib.isReiLoaded()) {
+            return REICallWrapper.getReiIngredients(stream);
+        } else if (LDLib.isEmiLoaded()) {
+            return EMICallWrapper.getEmiIngredients(stream, getXEIChance());
+        }
+        return Collections.emptyList();
+    }
 
     private List<Object> getXEIIngredientsFromTagOrCycleTransfer(TagOrCycleFluidTransfer transfer, int index) { return null; /* ported stub */ }
 
     private List<Object> getXEIIngredientsFromTagOrCycleTransferClickable(TagOrCycleFluidTransfer transfer, int index) { return null; /* ported stub */ }
 
     @Override
-    public List<Component> getTooltipTexts() { return null; /* ported stub */ }
+    public List<Component> getTooltipTexts() {
+        List<Component> tooltips = getAdditionalToolTips(new ArrayList<>());
+        tooltips.addAll(tooltipTexts);
+        return tooltips;
+    }
 
     public List<Component> getAdditionalToolTips(List<Component> list) {
         if (this.onAddedTooltips != null) {
@@ -260,11 +286,63 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        if (isClientSideWidget && fluidTank != null) {
+            FluidStack fluidStack = fluidTank.getFluidInTank(tank);
+            int capacity = fluidTank.getTankCapacity(tank);
+            if (capacity != lastTankCapacity) {
+                this.lastTankCapacity = capacity;
+            }
+            if (!FluidStack.isSameFluidSameComponents(fluidStack, lastFluidInTank)) {
+                this.lastFluidInTank = fluidStack.copy();
+            } else if (fluidStack.getAmount() != lastFluidInTank.getAmount()) {
+                this.lastFluidInTank.setAmount(fluidStack.getAmount());
+            }
+        }
+        Position pos = getPosition();
+        Size size = getSize();
+        var renderedFluid = lastFluidInTank;
+        if (renderedFluid != null) {
+            if (!renderedFluid.isEmpty()) {
+                double progress = renderedFluid.getAmount() * 1.0 / Math.max(Math.max(renderedFluid.getAmount(), lastTankCapacity), 1);
+                float drawnU = (float) fillDirection.getDrawnU(progress);
+                float drawnV = (float) fillDirection.getDrawnV(progress);
+                float drawnWidth = (float) fillDirection.getDrawnWidth(progress);
+                float drawnHeight = (float) fillDirection.getDrawnHeight(progress);
+                int width = size.width - 2;
+                int height = size.height - 2;
+                int x = pos.x + 1;
+                int y = pos.y + 1;
+                DrawerHelper.drawFluidForGui(graphics, renderedFluid, x + drawnU * width, y + drawnV * height, width * drawnWidth, height * drawnHeight);
+            }
+
+            if (showAmount && !renderedFluid.isEmpty()) {
+                graphics.pose().pushPose();
+                graphics.pose().scale(0.5F, 0.5F, 1);
+                String s = TextFormattingUtil.formatLongToCompactStringBuckets(renderedFluid.getAmount(), 3) + "B";
+                Font fontRenderer = Minecraft.getInstance().font;
+                graphics.drawString(fontRenderer, s, (int) ((pos.x + (size.width / 3f)) * 2 - fontRenderer.width(s) + 21), (int) ((pos.y + (size.height / 3f) + 6) * 2), 0xFFFFFF, true);
+                graphics.pose().popPose();
+            }
+        }
+        drawOverlay(graphics, mouseX, mouseY, partialTicks);
+        if (drawHoverOverlay && isMouseOverElement(mouseX, mouseY) && getHoverElement(mouseX, mouseY) == this) {
+            DrawerHelper.drawSolidRect(graphics, getPosition().x + 1, getPosition().y + 1, getSize().width - 2, getSize().height - 2, 0x80FFFFFF);
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        if (drawHoverTips && isMouseOverElement(mouseX, mouseY) && getHoverElement(mouseX, mouseY) == this) {
+            if (gui != null) {
+                gui.getModularUIGui().setHoverTooltip(getFullTooltipTexts(), ItemStack.EMPTY, null, null);
+            }
+        } else {
+            super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+        }
+    }
 
     @Override
     public void detectAndSendChanges() {
@@ -348,7 +426,63 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
         }
     }
 
-    private int tryClickContainer(boolean isShiftKeyDown) { return (int)0; /* ported stub */ }
+    private int tryClickContainer(boolean isShiftKeyDown) {
+        if (fluidTank == null) return -1;
+        Player player = gui.entityPlayer;
+        ItemStack currentStack = gui.getModularUIContainer().getCarried();
+        var handler = FluidTransferHelper.getFluidTransfer(gui.entityPlayer, gui.getModularUIContainer());
+        if (handler == null) return -1;
+        int maxAttempts = isShiftKeyDown ? currentStack.getCount() : 1;
+        FluidStack initialFluid = fluidTank.getFluidInTank(tank);
+        if (allowClickFilled && initialFluid.getAmount() > 0) {
+            boolean performedFill = false;
+            for (int i = 0; i < maxAttempts; i++) {
+                FluidActionResult result = FluidTransferHelper.tryFillContainer(currentStack, fluidTank, Integer.MAX_VALUE, null, false);
+                if (!result.isSuccess()) break;
+                ItemStack remainingStack = FluidTransferHelper.tryFillContainer(currentStack, fluidTank, Integer.MAX_VALUE, null, true).getResult();
+                currentStack.shrink(1);
+                performedFill = true;
+                if (!remainingStack.isEmpty() && !player.addItem(remainingStack)) {
+                    Block.popResource(player.level(), player.getOnPos(), remainingStack);
+                    break;
+                }
+            }
+            if (performedFill) {
+                SoundEvent soundevent = FluidHelper.getFillSound(initialFluid);
+                if (soundevent != null) {
+                    player.level().playSound(null, player.position().x, player.position().y + 0.5, player.position().z, soundevent, SoundSource.BLOCKS, 1.0F, 1.0F);
+                }
+                gui.getModularUIContainer().setCarried(currentStack);
+                return currentStack.getCount();
+            }
+        }
+
+        if (allowClickDrained) {
+            boolean performedEmptying = false;
+            for (int i = 0; i < maxAttempts; i++) {
+                FluidActionResult result = FluidTransferHelper.tryEmptyContainer(currentStack, fluidTank, Integer.MAX_VALUE, null, false);
+                if (!result.isSuccess()) break;
+                ItemStack remainingStack = FluidTransferHelper.tryEmptyContainer(currentStack, fluidTank, Integer.MAX_VALUE, null, true).getResult();
+                currentStack.shrink(1);
+                performedEmptying = true;
+                if (!remainingStack.isEmpty() && !player.getInventory().add(remainingStack)) {
+                    Block.popResource(player.level(), player.getOnPos(), remainingStack);
+                    break;
+                }
+            }
+            var filledFluid = fluidTank.getFluidInTank(tank);
+            if (performedEmptying) {
+                SoundEvent soundevent = FluidHelper.getEmptySound(filledFluid);
+                if (soundevent != null) {
+                    player.level().playSound(null, player.position().x, player.position().y + 0.5, player.position().z, soundevent, SoundSource.BLOCKS, 1.0F, 1.0F);
+                }
+                gui.getModularUIContainer().setCarried(currentStack);
+                return currentStack.getCount();
+            }
+        }
+
+        return -1;
+    }
 
     @OnlyIn(Dist.CLIENT)
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
@@ -366,7 +500,25 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
     }
 
     @Override
-    public void buildConfigurator(ConfiguratorGroup father) {  /* ported stub */ }
+    public void buildConfigurator(ConfiguratorGroup father) {
+        var handler = new FluidTank(5000);
+        handler.fill(new FluidStack(Fluids.WATER, 3000), IFluidHandler.FluidAction.EXECUTE);
+        father.addConfigurators(new WrapperConfigurator("ldlib.gui.editor.group.preview", new TankWidget() {
+            @Override
+            public void updateScreen() {
+                super.updateScreen();
+                setHoverTooltips(TankWidget.this.tooltipTexts);
+                this.backgroundTexture = TankWidget.this.backgroundTexture;
+                this.hoverTexture = TankWidget.this.hoverTexture;
+                this.showAmount = TankWidget.this.showAmount;
+                this.drawHoverTips = TankWidget.this.drawHoverTips;
+                this.fillDirection = TankWidget.this.fillDirection;
+                this.overlay = TankWidget.this.overlay;
+            }
+        }.setAllowClickDrained(false).setAllowClickFilled(false).setFluidTank(handler)));
+
+        IConfigurableWidget.super.buildConfigurator(father);
+    }
 
     /**
      * Wrapper for methods that use JEI classes so that classloading doesn't brick itself.

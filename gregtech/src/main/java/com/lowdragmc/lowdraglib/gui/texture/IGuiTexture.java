@@ -105,7 +105,9 @@ public interface IGuiTexture extends IConfigurable {
     }
 
     @NotNull
-    static IGuiTexture deserializeWrapper(CompoundTag tag, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    static IGuiTexture deserializeWrapper(CompoundTag tag, HolderLookup.Provider provider) {
+        return IGuiTexture.EMPTY; // editor serialization is not ported
+    }
 
     default void setUIResource(Resource<IGuiTexture> texturesResource) {
 

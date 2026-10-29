@@ -111,5 +111,23 @@ public class ButtonWidget extends Widget implements IConfigurableWidget {
     }
 
     @OnlyIn(Dist.CLIENT)
-    protected void drawBackgroundTexture(@Nonnull GuiGraphics graphics, int mouseX, int mouseY) {  /* ported stub */ }
+    protected void drawBackgroundTexture(@Nonnull GuiGraphics graphics, int mouseX, int mouseY) {
+        var isHovered = isMouseOverElement(mouseX, mouseY);
+        if (!isHovered || drawBackgroundWhenHover) {
+            if (isClicked && clickedTexture != null) {
+                Position pos = getPosition();
+                Size size = getSize();
+                clickedTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
+            } else if (backgroundTexture != null) {
+                Position pos = getPosition();
+                Size size = getSize();
+                backgroundTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
+            }
+        }
+        if (hoverTexture != null && isHovered && isActive()) {
+            Position pos = getPosition();
+            Size size = getSize();
+            hoverTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
+        }
+    }
 }

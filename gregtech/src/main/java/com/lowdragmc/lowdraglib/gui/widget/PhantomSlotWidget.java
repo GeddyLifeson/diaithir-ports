@@ -87,7 +87,13 @@ public class PhantomSlotWidget extends SlotWidget implements IGhostIngredientTar
     }
 
     @Override
-    public ItemStack slotClick(int dragType, ContainerInput clickTypeIn, Player player) { return null; /* ported stub */ }
+    public ItemStack slotClick(int dragType, ContainerInput clickTypeIn, Player player) {
+        if (slotReference != null && gui != null) {
+            ItemStack stackHeld = gui.getModularUIContainer().getCarried();
+            return slotClickPhantom(slotReference, dragType, clickTypeIn, stackHeld);
+        }
+        return ItemStack.EMPTY;
+    }
 
     @Override
     public boolean canMergeSlot(ItemStack stack) {
@@ -111,7 +117,37 @@ public class PhantomSlotWidget extends SlotWidget implements IGhostIngredientTar
     @Override
     public void handleClientAction(int id, RegistryFriendlyByteBuf buffer) {  /* ported stub */ }
 
-    public ItemStack slotClickPhantom(Slot slot, int mouseButton, ContainerInput clickTypeIn, ItemStack stackHeld) { return null; /* ported stub */ }
+    public ItemStack slotClickPhantom(Slot slot, int mouseButton, ContainerInput clickTypeIn, ItemStack stackHeld) {
+        ItemStack stack = ItemStack.EMPTY;
+
+        ItemStack stackSlot = slot.getItem();
+        if (!stackSlot.isEmpty()) {
+            stack = stackSlot.copy();
+        }
+
+        if (mouseButton == 2) {
+            fillPhantomSlot(slot, ItemStack.EMPTY, mouseButton);
+        } else if (mouseButton == 0 || mouseButton == 1) {
+
+            if (stackSlot.isEmpty()) {
+                if (!stackHeld.isEmpty() ) {
+                    fillPhantomSlot(slot, stackHeld, mouseButton);
+                }
+            } else if (stackHeld.isEmpty()) {
+                adjustPhantomSlot(slot, mouseButton, clickTypeIn);
+            } else  {
+                if (!areItemsEqual(stackSlot, stackHeld)) {
+                    adjustPhantomSlot(slot, mouseButton, clickTypeIn);
+                }
+                fillPhantomSlot(slot, stackHeld, mouseButton);
+            }
+        } else if (mouseButton == 5) {
+            if (!slot.hasItem()) {
+                fillPhantomSlot(slot, stackHeld, mouseButton);
+            }
+        }
+        return stack;
+    }
 
     private void adjustPhantomSlot(Slot slot, int mouseButton, ContainerInput clickTypeIn) {  /* ported stub */ }
 

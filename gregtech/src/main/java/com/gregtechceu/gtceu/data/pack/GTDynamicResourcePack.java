@@ -199,6 +199,9 @@ public class GTDynamicResourcePack implements PackResources {
             String p = path(id);
             if (block instanceof OreBlock ore) {
                 generateOre(ore, id, madeItem);
+            } else if (block instanceof com.gregtechceu.gtceu.api.block.PipeBlock<?, ?, ?> pb &&
+                    !staticExists("blockstates/" + p + ".json")) {
+                generatePipe(pb, id, madeItem);
             } else if (block instanceof MaterialBlock mb && !staticExists("blockstates/" + p + ".json")) {
                 generateMaterialBlock(mb, id, madeItem);
             }
@@ -255,6 +258,75 @@ public class GTDynamicResourcePack implements PackResources {
         nBlocks++;
         if (BuiltInRegistries.ITEM.containsKey(id)) {
             put("items/" + p + ".json", compositeDef(models, tints(mb.material)));
+            madeItem.add(p);
+            nItems++;
+        }
+    }
+
+    private static JsonObject face(String tex, int tint) {
+        JsonObject f = obj("texture", tex);
+        if (tint >= 0) f.addProperty("tintindex", tint);
+        return f;
+    }
+
+    private static JsonObject cuboid(float[] from, float[] to, String sideTex, String endTex, int tint) {
+        JsonObject faces = new JsonObject();
+        for (String d : new String[] { "north", "south", "east", "west" }) faces.add(d, face(sideTex, tint));
+        faces.add("up", face(endTex, tint));
+        faces.add("down", face(endTex, tint));
+        JsonArray f = new JsonArray(), t = new JsonArray();
+        for (float v : from) f.add(v);
+        for (float v : to) t.add(v);
+        return obj("from", f, "to", t, "faces", faces);
+    }
+
+    /**
+     * Pipes and cables use a dynamic model keyed by block entity data that is not ported. Render a fixed plus shaped
+     * pipe (core and six arms) so that they are visible and placeable.
+     */
+    private void generatePipe(com.gregtechceu.gtceu.api.block.PipeBlock<?, ?, ?> pb, Identifier id,
+                              Set<String> madeItem) {
+        String p = path(id);
+        float th = pb.pipeType.getThickness() * 16f;
+        float lo = (16f - th) / 2f, hi = lo + th;
+        String name = pb.pipeType.toString().toLowerCase(Locale.ROOT);
+        String side = "gtceu:block/pipe/pipe_side";
+        String end = "gtceu:block/pipe/pipe_normal_in";
+        if (pb instanceof com.gregtechceu.gtceu.common.block.CableBlock cb) {
+            int lvl = cb.pipeType.insulationLevel;
+            side = end = "gtceu:block/cable/insulation_" + Math.max(0, lvl);
+        } else if (name.contains("tiny")) end = "gtceu:block/pipe/pipe_tiny_in";
+        else if (name.contains("small")) end = "gtceu:block/pipe/pipe_small_in";
+        else if (name.contains("nonuple")) end = "gtceu:block/pipe/pipe_nonuple_in";
+        else if (name.contains("quadruple")) end = "gtceu:block/pipe/pipe_quadruple_in";
+        else if (name.contains("huge")) end = "gtceu:block/pipe/pipe_huge_in";
+        else if (name.contains("large")) end = "gtceu:block/pipe/pipe_large_in";
+        else if (pb instanceof com.gregtechceu.gtceu.common.block.DuctPipeBlock) {
+            side = "gtceu:block/pipe/pipe_duct_side";
+            end = "gtceu:block/pipe/pipe_duct_in";
+        } else if (pb instanceof com.gregtechceu.gtceu.common.block.LaserPipeBlock) {
+            side = "gtceu:block/pipe/pipe_laser_side";
+            end = "gtceu:block/pipe/pipe_laser_in";
+        } else if (pb instanceof com.gregtechceu.gtceu.common.block.OpticalPipeBlock) {
+            side = "gtceu:block/pipe/pipe_optical_side";
+            end = "gtceu:block/pipe/pipe_optical_in";
+        }
+        JsonArray elements = new JsonArray();
+        elements.add(cuboid(new float[] { lo, lo, lo }, new float[] { hi, hi, hi }, side, end, 0));
+        elements.add(cuboid(new float[] { lo, lo, 0 }, new float[] { hi, hi, lo }, side, end, 0));
+        elements.add(cuboid(new float[] { lo, lo, hi }, new float[] { hi, hi, 16 }, side, end, 0));
+        elements.add(cuboid(new float[] { 0, lo, lo }, new float[] { lo, hi, hi }, side, end, 0));
+        elements.add(cuboid(new float[] { hi, lo, lo }, new float[] { 16, hi, hi }, side, end, 0));
+        elements.add(cuboid(new float[] { lo, 0, lo }, new float[] { hi, lo, hi }, side, end, 0));
+        elements.add(cuboid(new float[] { lo, hi, lo }, new float[] { hi, 16, hi }, side, end, 0));
+        JsonObject model = obj("parent", "minecraft:block/block", "textures", obj("particle", side), "elements", elements);
+        String modelId = "gtceu:block/dyn/" + p;
+        putModel("block/dyn/" + p, model);
+        put("blockstates/" + p + ".json", singleVariantState(modelId));
+        nBlocks++;
+        if (BuiltInRegistries.ITEM.containsKey(id)) {
+            Material mat = pb instanceof com.gregtechceu.gtceu.api.block.MaterialPipeBlock<?, ?, ?> mp ? mp.material : null;
+            put("items/" + p + ".json", modelDef(modelId, mat == null ? null : tints(mat)));
             madeItem.add(p);
             nItems++;
         }

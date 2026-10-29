@@ -113,13 +113,30 @@ public class TextFieldWidget extends Widget implements IConfigurableWidget {
     }
 
     @Override
-    public void onFocusChanged(@Nullable Widget lastFocus, Widget focus) {  /* ported stub */ }
+    public void onFocusChanged(@Nullable Widget lastFocus, Widget focus) {
+        this.textField.setFocused(isFocus());
+    }
 
     @Override
-    protected void onPositionUpdate() {  /* ported stub */ }
+    protected void onPositionUpdate() {
+        if (isRemote() && textField != null) {
+            Position position = getPosition();
+            Size size = getSize();
+            this.textField.setX(isBordered ? position.x : position.x + 2);
+            this.textField.setY(isBordered ? position.y : position.y + (size.height - Minecraft.getInstance().font.lineHeight) / 2 + 1);
+        }
+    }
 
     @Override
-    protected void onSizeUpdate() {  /* ported stub */ }
+    protected void onSizeUpdate() {
+        if (isRemote() && textField != null) {
+            Position position = getPosition();
+            Size size = getSize();
+            this.textField.setWidth(isBordered ? size.width : size.width - 2);
+//            this.textField.setHeight( size.height);
+            this.textField.setY(isBordered ? position.y : position.y + (getSize().height -  Minecraft.getInstance().font.lineHeight) / 2 + 1);
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -143,7 +160,11 @@ public class TextFieldWidget extends Widget implements IConfigurableWidget {
     public boolean charTyped(char codePoint, int modifiers) { return false; /* ported stub */ }
 
     @Override
-    public void updateScreen() {  /* ported stub */ }
+    public void updateScreen() {
+        if (this.isVisible() && this.isActive() && textSupplier != null && isClientSideWidget&& !textSupplier.get().equals(getCurrentString())) {
+            setCurrentString(textSupplier.get());
+        }
+    }
 
     @Override
     public void writeInitialData(RegistryFriendlyByteBuf buffer) {
@@ -331,13 +352,49 @@ public class TextFieldWidget extends Widget implements IConfigurableWidget {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) { return false; /* ported stub */ }
+    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) {
+        if (wheelDur > 0 && numberInstance != null && isMouseOverElement(mouseX, mouseY) && isFocus()) {
+            try {
+                onTextChanged(numberInstance.format(Float.parseFloat(getCurrentString()) + (scrollY > 0 ? 1 : -1) * wheelDur));
+            } catch (Exception ignored) {
+            }
+            setFocus(true);
+            return true;
+        }
+        return false;
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) { return false; /* ported stub */ }
+    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
+        if (isDragging && numberInstance != null && isFocus()) {
+            try {
+                onTextChanged(numberInstance.format(Float.parseFloat(getCurrentString()) + dragX * wheelDur));
+            } catch (Exception ignored) {
+            }
+            setFocus(true);
+            return true;
+        }
+        return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        if (isMouseOverElement(mouseX, mouseY) && gui != null &&  gui.getModularUIGui() != null) {
+            List<Component> tips = new ArrayList<>();
+            if (tooltipTexts != null) {
+                tips.addAll(tooltipTexts);
+            }
+            if (hover != null) {
+                tips.add(hover);
+            }
+            if (wheelDur > 0 && numberInstance != null && isFocus()) {
+                tips.add(Component.translatable("ldlib.gui.text_field.number.wheel", numberInstance.format(wheelDur)));
+            }
+            if (!tips.isEmpty()) {
+                gui.getModularUIGui().setHoverTooltip(tips, ItemStack.EMPTY, null, null);
+            }
+        }
+    }
 }

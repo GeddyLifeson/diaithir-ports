@@ -30,11 +30,19 @@ public class FluidHelper {
         return FluidType.BUCKET_VOLUME;
     }
 
-    public static int getColor(FluidStack fluidStack) { return (int)0; /* ported stub */ }
+    public static int getColor(FluidStack fluidStack) {
+        var model = net.minecraft.client.Minecraft.getInstance().getModelManager().getFluidStateModelSet()
+                .get(fluidStack.getFluid().defaultFluidState());
+        var tint = model.fluidTintSource();
+        return tint == null ? 0xFFFFFF : tint.colorAsStack(fluidStack);
+    }
 
     @Nullable
     @OnlyIn(Dist.CLIENT)
-    public static TextureAtlasSprite getStillTexture(FluidStack fluidStack) { return null; /* ported stub */ }
+    public static TextureAtlasSprite getStillTexture(FluidStack fluidStack) {
+        return net.minecraft.client.Minecraft.getInstance().getModelManager().getFluidStateModelSet()
+                .get(fluidStack.getFluid().defaultFluidState()).stillMaterial().sprite();
+    }
 
     public static Component getDisplayName(FluidStack fluidStack) {
         return fluidStack.getFluid().getFluidType().getDescription(fluidStack);

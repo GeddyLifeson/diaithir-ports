@@ -151,7 +151,15 @@ public class SlotWidget extends Widget implements IRecipeIngredientSlot, IConfig
         return this;
     }
 
-    protected void updateSlot(Slot slot) {  /* ported stub */ }
+    protected void updateSlot(Slot slot) {
+        if (this.slotReference != null && this.gui != null && !isClientSideWidget) {
+            getGui().removeNativeSlot(this.slotReference);
+        }
+        this.slotReference = slot;
+        if (this.gui != null && !isClientSideWidget) {
+            getGui().addNativeSlot(this.slotReference, this);
+        }
+    }
 
     public ItemStack getItem() {
         return slotReference == null ? ItemStack.EMPTY : slotReference.getItem();
@@ -225,11 +233,34 @@ public class SlotWidget extends Widget implements IRecipeIngredientSlot, IConfig
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        Position pos = getPosition();
+        if (slotReference != null) {
+            ItemStack itemStack = getRealStack(slotReference.getItem());
+            if (!itemStack.isEmpty()) {
+                DrawerHelper.drawItemStack(graphics, itemStack, pos.x + 1, pos.y + 1, -1, null);
+            }
+        }
+        drawOverlay(graphics, mouseX, mouseY, partialTicks);
+        if (drawHoverOverlay && isMouseOverElement(mouseX, mouseY) && getHoverElement(mouseX, mouseY) == this) {
+            DrawerHelper.drawSolidRect(graphics, getPosition().x + 1, getPosition().y + 1, 16, 16, 0x80FFFFFF);
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        if (slotReference != null && isMouseOverElement(mouseX, mouseY) && gui != null) {
+            var stack = slotReference.getItem();
+            if (!(canPutItems && stack.isEmpty() || canTakeItems && !stack.isEmpty())) return false;
+            HOVER_SLOT = slotReference;
+            gui.getModularUIGui().superMouseClicked(mouseX, mouseY, button);
+            HOVER_SLOT = null;
+            return true;
+        }
+        return false;
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -254,7 +285,15 @@ public class SlotWidget extends Widget implements IRecipeIngredientSlot, IConfig
     }
 
     @Override
-    protected void onPositionUpdate() {  /* ported stub */ }
+    protected void onPositionUpdate() {
+        if (gui != null) {
+            Position position = getPosition();
+            if (slotReference != null) {
+                ((SlotAccessor) slotReference).setX(position.x + 1 - gui.getGuiLeft());
+                ((SlotAccessor) slotReference).setY(position.y + 1 - gui.getGuiTop());
+            }
+        }
+    }
 
     public SlotWidget(IItemHandlerModifiable itemHandler, int slotIndex, int xPosition, int yPosition) {
         this(itemHandler, slotIndex, xPosition, yPosition, true, true);
@@ -277,7 +316,9 @@ public class SlotWidget extends Widget implements IRecipeIngredientSlot, IConfig
         return isEnabled() && canTakeItems;
     }
 
-    public boolean isEnabled() { return false; /* ported stub */ }
+    public boolean isEnabled() {
+        return this.isActive() && isVisible();
+    }
 
     public boolean canMergeSlot(ItemStack stack) {
         return isEnabled();
@@ -288,7 +329,9 @@ public class SlotWidget extends Widget implements IRecipeIngredientSlot, IConfig
         gui.holder.markAsDirty();
     }
 
-    public ItemStack slotClick(int dragType, ContainerInput clickTypeIn, Player player) { return null; /* ported stub */ }
+    public ItemStack slotClick(int dragType, ContainerInput clickTypeIn, Player player) {
+        return null;
+    }
 
     @Nullable
     public final Slot getHandler() {
@@ -302,7 +345,11 @@ public class SlotWidget extends Widget implements IRecipeIngredientSlot, IConfig
     }
 
     @Override
-    public List<Component> getTooltipTexts() { return null; /* ported stub */ }
+    public List<Component> getTooltipTexts() {
+        List<Component> tooltips = getAdditionalToolTips(new ArrayList<>());
+        tooltips.addAll(tooltipTexts);
+        return tooltips;
+    }
 
     public List<Component> getAdditionalToolTips(List<Component> list) {
         if (this.onAddedTooltips != null) {
@@ -478,7 +525,24 @@ public class SlotWidget extends Widget implements IRecipeIngredientSlot, IConfig
     }
 
     @Override
-    public void buildConfigurator(ConfiguratorGroup father) {  /* ported stub */ }
+    public void buildConfigurator(ConfiguratorGroup father) {
+        var handler = new ItemStackHandler();
+        handler.setStackInSlot(0, Blocks.STONE.asItem().getDefaultInstance());
+        father.addConfigurators(new WrapperConfigurator("ldlib.gui.editor.group.preview", new SlotWidget() {
+            @Override
+            public void updateScreen() {
+                super.updateScreen();
+                setHoverTooltips(SlotWidget.this.tooltipTexts);
+                this.backgroundTexture = SlotWidget.this.backgroundTexture;
+                this.hoverTexture = SlotWidget.this.hoverTexture;
+                this.drawHoverOverlay = SlotWidget.this.drawHoverOverlay;
+                this.drawHoverTips = SlotWidget.this.drawHoverTips;
+                this.overlay = SlotWidget.this.overlay;
+            }
+        }.setCanPutItems(false).setCanTakeItems(false).setHandlerSlot(handler, 0)));
+
+        IConfigurableWidget.super.buildConfigurator(father);
+    }
 
     public static final class REICallWrapper {
         public static List<Object> getReiIngredients(Stream<ItemStack> stream) { return null; /* ported stub */ }
