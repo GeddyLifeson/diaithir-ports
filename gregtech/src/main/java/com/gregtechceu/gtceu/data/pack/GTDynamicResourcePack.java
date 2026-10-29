@@ -79,6 +79,12 @@ public class GTDynamicResourcePack implements PackResources {
         put("models/" + modelPath + ".json", json);
     }
 
+    private static JsonArray arr(JsonElement... els) {
+        JsonArray a = new JsonArray();
+        for (var e : els) a.add(e);
+        return a;
+    }
+
     private static JsonObject obj(Object... kv) {
         JsonObject o = new JsonObject();
         for (int i = 0; i < kv.length; i += 2) {
@@ -312,17 +318,34 @@ public class GTDynamicResourcePack implements PackResources {
             end = "gtceu:block/pipe/pipe_optical_in";
         }
         JsonArray elements = new JsonArray();
-        elements.add(cuboid(new float[] { lo, lo, lo }, new float[] { hi, hi, hi }, side, end, 0));
-        elements.add(cuboid(new float[] { lo, lo, 0 }, new float[] { hi, hi, lo }, side, end, 0));
-        elements.add(cuboid(new float[] { lo, lo, hi }, new float[] { hi, hi, 16 }, side, end, 0));
-        elements.add(cuboid(new float[] { 0, lo, lo }, new float[] { lo, hi, hi }, side, end, 0));
-        elements.add(cuboid(new float[] { hi, lo, lo }, new float[] { 16, hi, hi }, side, end, 0));
-        elements.add(cuboid(new float[] { lo, 0, lo }, new float[] { hi, lo, hi }, side, end, 0));
-        elements.add(cuboid(new float[] { lo, hi, lo }, new float[] { hi, 16, hi }, side, end, 0));
-        JsonObject model = obj("parent", "minecraft:block/block", "textures", obj("particle", side), "elements", elements);
+        elements.add(cuboid(new float[] { lo, lo, lo }, new float[] { hi, hi, hi }, "#side", "#end", 0));
+        elements.add(cuboid(new float[] { lo, lo, 0 }, new float[] { hi, hi, lo }, "#side", "#end", 0));
+        elements.add(cuboid(new float[] { lo, lo, hi }, new float[] { hi, hi, 16 }, "#side", "#end", 0));
+        elements.add(cuboid(new float[] { 0, lo, lo }, new float[] { lo, hi, hi }, "#side", "#end", 0));
+        elements.add(cuboid(new float[] { hi, lo, lo }, new float[] { 16, hi, hi }, "#side", "#end", 0));
+        elements.add(cuboid(new float[] { lo, 0, lo }, new float[] { hi, lo, hi }, "#side", "#end", 0));
+        elements.add(cuboid(new float[] { lo, hi, lo }, new float[] { hi, 16, hi }, "#side", "#end", 0));
+        JsonObject model = obj("parent", "minecraft:block/block", "textures", obj("particle", side, "side", side, "end", end), "elements", elements);
         String modelId = "gtceu:block/dyn/" + p;
         putModel("block/dyn/" + p, model);
-        put("blockstates/" + p + ".json", singleVariantState(modelId));
+        // dynamic connections: core + one arm model per side, selected by the gtceu:pipe block state model
+        JsonObject coreM = obj("parent", "minecraft:block/block", "textures", obj("particle", side, "side", side, "end", end), "elements",
+                arr(cuboid(new float[] { lo, lo, lo }, new float[] { hi, hi, hi }, "#side", "#end", 0)));
+        putModel("block/dyn/" + p + "_core", coreM);
+        float[][][] armBoxes = {
+                { { lo, 0, lo }, { hi, lo, hi } }, { { lo, hi, lo }, { hi, 16, hi } },
+                { { lo, lo, 0 }, { hi, hi, lo } }, { { lo, lo, hi }, { hi, hi, 16 } },
+                { { 0, lo, lo }, { lo, hi, hi } }, { { hi, lo, lo }, { 16, hi, hi } } };
+        String[] dirs = { "down", "up", "north", "south", "west", "east" };
+        JsonObject variant = new JsonObject();
+        variant.addProperty("type", "gtceu:pipe");
+        variant.add("core", obj("model", "gtceu:block/dyn/" + p + "_core"));
+        for (int i = 0; i < 6; i++) {
+            putModel("block/dyn/" + p + "_" + dirs[i], obj("parent", "minecraft:block/block", "textures",
+                    obj("particle", side, "side", side, "end", end), "elements", arr(cuboid(armBoxes[i][0], armBoxes[i][1], "#side", "#end", 0))));
+            variant.add(dirs[i], obj("model", "gtceu:block/dyn/" + p + "_" + dirs[i]));
+        }
+        put("blockstates/" + p + ".json", obj("variants", obj("", variant)));
         nBlocks++;
         if (BuiltInRegistries.ITEM.containsKey(id)) {
             Material mat = pb instanceof com.gregtechceu.gtceu.api.block.MaterialPipeBlock<?, ?, ?> mp ? mp.material : null;

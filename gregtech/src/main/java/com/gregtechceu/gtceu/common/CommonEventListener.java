@@ -407,7 +407,19 @@ public class CommonEventListener {
     public static void onAttributeTooltipEvent(AddAttributeTooltipsEvent event) {  /* ported stub */ }
 
     @SubscribeEvent
-    public static void breakSpeed(PlayerEvent.BreakSpeed event) {  /* ported stub */ }
+    public static void breakSpeed(PlayerEvent.BreakSpeed event) {
+        net.minecraft.world.entity.player.Player player = event.getEntity();
+        for (var slot : net.minecraft.world.entity.EquipmentSlot.values()) {
+            if (!slot.isArmor()) continue;
+            var stack = player.getItemBySlot(slot);
+            if (stack.getItem() instanceof com.gregtechceu.gtceu.api.item.armor.ArmorComponentItem componentItem) {
+                if (componentItem.getArmorLogic() instanceof com.gregtechceu.gtceu.common.item.armor.IJetpack jetpack &&
+                        jetpack.removeMiningSpeedPenalty()) {
+                    if (!player.onGround() || player.isUnderWater()) event.setNewSpeed(event.getOriginalSpeed() * 5);
+                }
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void playerTickEvent(PlayerTickEvent.Pre event) {

@@ -56,6 +56,11 @@ public class ClientProxy {
     }
 
     @SubscribeEvent
+    public static void onRegisterStateModels(net.neoforged.neoforge.client.event.RegisterBlockStateModels event) {
+        event.registerModel(GTCEu.id("pipe"), com.gregtechceu.gtceu.client.model.pipe.PipeStateModel.Unbaked.MAP_CODEC);
+    }
+
+    @SubscribeEvent
     public static void onRegisterBlockTints(RegisterColorHandlersEvent.BlockTintSources event) {
         for (var entry : BuiltInRegistries.BLOCK.entrySet()) {
             if (!entry.getKey().identifier().getNamespace().equals(GTCEu.MOD_ID)) continue;

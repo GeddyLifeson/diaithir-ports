@@ -41,7 +41,25 @@ import static com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData.
 
 public class ChemicalHelper {
 
-    public static @Nullable ItemMaterialInfo getMaterialInfo(@Nullable Object object) { return null; /* ported stub */ }
+    public static @Nullable ItemMaterialInfo getMaterialInfo(@Nullable Object object) {
+        if (object instanceof ItemMaterialInfo materialInfo) {
+            return materialInfo;
+        } else if (object instanceof MaterialStack materialStack) {
+            return new ItemMaterialInfo(materialStack);
+        } else if (object instanceof net.minecraft.world.item.ItemStack itemStack) {
+            return com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData.getMaterialInfo(itemStack.getItem());
+        } else if (object instanceof net.minecraft.world.level.ItemLike item) {
+            return com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData.getMaterialInfo(item);
+        } else if (object instanceof net.minecraft.world.item.crafting.Ingredient ing) {
+            for (var holder : (Iterable<net.minecraft.core.Holder<net.minecraft.world.item.Item>>) ing.items()::iterator) {
+                var ms = com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData.getMaterialInfo(holder.value());
+                if (ms != null) return ms;
+            }
+        } else if (object instanceof net.neoforged.neoforge.common.crafting.SizedIngredient ing) {
+            return getMaterialInfo(ing.ingredient());
+        }
+        return null;
+    }
 
     public static MaterialStack getMaterialStack(ItemStack itemStack) {
         if (itemStack.isEmpty()) return MaterialStack.EMPTY;

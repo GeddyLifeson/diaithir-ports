@@ -38,7 +38,10 @@ Methods whose bodies could not be ported quickly carry a `/* ported stub */` mar
   Right-clicking a machine opens its fancy UI (see gt-shots/macerator-gui.png). The UI open path uses ATs
   (`lastSlots`, `remoteSlots`, `synchronizer`, `ServerPlayer.containerCounter/initMenu`, `Slot.x/y`, `Entity.setLevel`)
   instead of the old accessor mixins. LDLib network payloads are registered through the bundled `CommonProxy`.
-- Known gaps: player inventory background texture is missing (checker pattern); pipes/cables have no dynamic
-  connection models; block entity renderers, item decorations, fluid tints, recipe viewer (JEI/REI/EMI) widgets,
+- Pipes and cables use a custom block state model (`gtceu:pipe`, `client/model/pipe/PipeStateModel`): core plus one arm
+  per connected side, read from the block entity connection mask at chunk-mesh time. LDLib gui textures are bundled
+  (`assets/ldlib/textures`). Fluid models carry a tint from the fluid type extension color.
+- Verified in a client: generator -> cable -> macerator chain (gtceu selftest) and the macerator GUI (gt-shots/).
+- Known gaps: block entity renderers, item decorations, fluid tints, recipe viewer (JEI/REI/EMI) widgets,
   editor/compass LDLib packages, ShaderTexture and TextField input are still stubs.
 - Dev scripts live outside the repo (gt_full.sh runs boot, scene, right-click UI and screenshot).

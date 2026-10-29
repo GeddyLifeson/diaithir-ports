@@ -79,7 +79,13 @@ public class FluidBuilder<T extends BaseFlowingFluid, P> extends AbstractBuilder
     }
 
     public FluidBuilder<T, P> model(Identifier stillTexture, Identifier flowingTexture) {
-        return model(() -> () -> new FluidModel.Unbaked(new Material(stillTexture), new Material(flowingTexture), null, null));
+        return model(() -> () -> new FluidModel.Unbaked(new Material(stillTexture), new Material(flowingTexture), null, new net.neoforged.neoforge.client.fluid.FluidTintSource() {
+            @Override
+            public int color(net.minecraft.world.level.material.FluidState state) {
+                int c = IClientFluidTypeExtensions.of(state) instanceof com.gregtechceu.gtceu.api.registry.registrate.GTClientFluidTypeExtensions g ? g.getTintColor() : 0;
+                return c == 0 ? 0xFFFFFFFF : c;
+            }
+        }));
     }
 
     public FluidBuilder<T, P> model(NonNullSupplier<Supplier<FluidModel.Unbaked>> model) {
