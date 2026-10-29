@@ -1,0 +1,27 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+issueTrackerURL = "https://github.com/GeddyLifeson/diaithir-ports/issues"
+license = "LGPL-3.0-only"
+
+[[mods]]
+modId = "gtceu"
+version = "${version}"
+displayName = "GregTech (unofficial 26.1.2 port)"
+authors = "KilaBash, screret, Mikerooni, serenibyss, Tech22, YoungOnion, Ghostipedia and the GregTech CEu contributors"
+description = "GregTech CE Unofficial (GregTech Modern). Unofficial NeoForge 26.1.2 port for the Diaithir pack; not made or supported by the original authors."
+logoFile = "icon.png"
+displayURL = "https://github.com/GregTechCEu/GregTech-Modern/"
+credits = "GregoriusT, Mr_Touchyou, Zerrens for making GregTech and textures, the GT5u authors and maintainers for providing the original code, and the community. Includes Registrate by tterrag (MPL-2.0)."
+enumExtensions = "META-INF/enum_extensions.json"
+
+[[mixins]]
+    config = "gtceu.mixins.json"
+[[accessTransformers]]
+    file = "META-INF/accesstransformer.cfg"
+
+[[dependencies.gtceu]]
+    modId = "neoforge"
+    type = "required"
+    versionRange = "[26.1.2.116,)"
+    ordering = "NONE"
+    side = "BOTH"

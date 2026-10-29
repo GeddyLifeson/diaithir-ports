@@ -1,0 +1,46 @@
+package com.gregtechceu.gtceu.client.model;
+
+import net.minecraft.client.Minecraft;
+
+import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.world.inventory.InventoryMenu;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+
+
+public abstract class BaseBakedModel implements IDynamicBakedModel {
+
+    public BaseBakedModel() {}
+
+    @Override
+    public boolean useAmbientOcclusion() {
+        return true;
+    }
+
+    @Override
+    public boolean isGui3d() {
+        return true;
+    }
+
+    @Override
+    public boolean usesBlockLight() {
+        return true;
+    }
+
+    @Override
+    public boolean isCustomRenderer() {
+        return false;
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public ItemOverrides getOverrides() { return null; /* ported stub */ }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public TextureAtlasSprite getParticleIcon() {
+        return Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS)
+                .apply(MissingTextureAtlasSprite.getLocation());
+    }
+}

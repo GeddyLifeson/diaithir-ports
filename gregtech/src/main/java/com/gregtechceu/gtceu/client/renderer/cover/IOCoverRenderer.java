@@ -1,0 +1,60 @@
+package com.gregtechceu.gtceu.client.renderer.cover;
+
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+import com.gregtechceu.gtceu.GTCEu;
+import com.gregtechceu.gtceu.api.capability.recipe.IO;
+import com.gregtechceu.gtceu.api.cover.CoverBehavior;
+import com.gregtechceu.gtceu.api.cover.IIOCover;
+
+import com.gregtechceu.gtceu.client.util.StaticFaceBakery;
+
+
+
+import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.resources.model.geometry.BakedQuad;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.renderer.block.dispatch.BlockModelRotation;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.Identifier;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.inventory.InventoryMenu;
+
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.model.data.ModelData;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+
+public class IOCoverRenderer implements ICoverRenderer {
+
+    public static final IOCoverRenderer PUMP_LIKE_COVER_RENDERER = new IOCoverRenderer(
+            GTCEu.id("block/cover/pump"),
+            GTCEu.id("block/cover/pump_inverted"),
+            null, null);
+
+    @OnlyIn(Dist.CLIENT)
+    protected TextureAtlasSprite overlaySprite = null;
+    @OnlyIn(Dist.CLIENT)
+    protected TextureAtlasSprite invertedOverlaySprite = null;
+    @OnlyIn(Dist.CLIENT)
+    protected TextureAtlasSprite emissiveOverlaySprite = null;
+    @OnlyIn(Dist.CLIENT)
+    protected TextureAtlasSprite invertedEmissiveOverlaySprite = null;
+
+    public IOCoverRenderer(@Nullable Identifier overlay,
+                           @Nullable Identifier invertedOverlay,
+                           @Nullable Identifier emissiveOverlay,
+                           @Nullable Identifier invertedEmissiveOverlay) {
+        // PORT: atlas sprite lookup not yet ported
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void renderCover(List<BakedQuad> quads, @Nullable Direction side, RandomSource rand,
+                            @NotNull CoverBehavior coverBehavior, BlockPos pos, BlockAndTintGetter level,
+                            @NotNull ModelData modelData, @Nullable RenderType renderType) {  /* ported stub */ }
+}

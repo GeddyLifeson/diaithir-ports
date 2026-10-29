@@ -1,0 +1,66 @@
+package com.gregtechceu.gtceu.client.renderer.block;
+
+import com.gregtechceu.gtceu.common.block.LampBlock;
+import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
+import com.gregtechceu.gtceu.common.item.LampBlockItem;
+
+import net.minecraft.client.Minecraft;
+
+import net.minecraft.client.renderer.MultiBufferSource;
+
+
+
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.state.BlockState;
+
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import org.jetbrains.annotations.NotNull;
+
+/**
+ * All this renderer does is refer rendering to the correct block model based on the lamp item's NBT.<br>
+ * Without it, all item variants would look like the default 'lit, with bloom' one.
+ */
+public class LampItemRenderer extends BlockEntityWithoutLevelRenderer {
+
+    private static LampItemRenderer INSTANCE = null;
+
+    public static LampItemRenderer getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new LampItemRenderer();
+        }
+        return INSTANCE;
+    }/* ported: removed *//* ported: removed */
+
+    protected LampItemRenderer() {
+        super(Minecraft.getInstance().getBlockEntityRenderDispatcher(),
+                Minecraft.getInstance().getEntityModels());
+        this.itemRenderer = Minecraft.getInstance().getItemRenderer();
+        this.blockRenderer = Minecraft.getInstance().getBlockRenderer();
+    }
+
+    @Override
+    public void renderByItem(@NotNull ItemStack stack, @NotNull ItemDisplayContext displayContext,
+                             @NotNull PoseStack poseStack, @NotNull MultiBufferSource buffer,
+                             int packedLight, int packedOverlay) {
+        if (!(stack.getItem() instanceof LampBlockItem item)) {
+            return;
+        }
+
+        LampBlockItem.LampData data = stack.getOrDefault(GTDataComponents.LAMP_DATA, LampBlockItem.LampData.EMPTY);
+        BlockState state = item.getBlock().defaultBlockState()
+                .setValue(LampBlock.INVERTED, data.inverted())
+                .setValue(LampBlock.BLOOM, data.bloom())
+                .setValue(LampBlock.LIGHT, data.lit());
+
+        BakedModel p_model = blockRenderer.getBlockModel(state);
+
+        for (var model : p_model.getRenderPasses(stack, true)) {
+            for (var rendertype : model.getRenderTypes(stack, true)) {
+                VertexConsumer foilBuffer = ItemRenderer.getFoilBufferDirect(buffer, rendertype, true, stack.hasFoil());
+                itemRenderer.renderModelLists(model, stack, packedLight, packedOverlay, poseStack, foilBuffer);
+            }
+        }
+    }
+}
