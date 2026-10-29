@@ -111,13 +111,29 @@ public final class GTSelfTest {
         if (m2 instanceof WorkableTieredMachine w) {
             w.importItems.storage.insertItem(0, input.copy(), false);
         }
+        // Part C: ore -> crushed ore -> impure dust, two powered macerators
+        String[][] chain = { { "gtceu:copper_ore", "C1" }, { "gtceu:crushed_copper_ore", "C2" } };
+        for (int i = 0; i < chain.length; i++) {
+            BlockPos p = base.offset(0, 0, 3 + 2 * i);
+            place(p, GTMachines.MACERATOR[GTValues.LV].getBlock().defaultBlockState());
+            var m = machine(p);
+            var item = net.minecraft.core.registries.BuiltInRegistries.ITEM
+                    .getOptional(net.minecraft.resources.Identifier.parse(chain[i][0])).orElse(null);
+            if (m instanceof WorkableTieredMachine w && item != null) {
+                w.energyContainer.setEnergyStored(1000);
+                w.importItems.storage.insertItem(0, new ItemStack(item, 2), false);
+                LOG.add(chain[i][1] + ": inserted 2x " + chain[i][0]);
+            } else {
+                LOG.add(chain[i][1] + ": FAIL machine=" + m + " item=" + chain[i][0] + " -> " + item);
+            }
+        }
         return LOG;
     }
 
     public static synchronized void tick(ServerLevel l) {
         if (ticks < 0 || l != level) return;
         ticks++;
-        if (ticks == 200) {
+        if (ticks == 600) {
             report();
             ticks = -1;
         }
@@ -146,6 +162,12 @@ public final class GTSelfTest {
         if (m2 instanceof WorkableTieredMachine w) {
             out.add("B macerator2: status=" + w.recipeLogic.getStatus() + " energy=" + w.energyContainer.getEnergyStored()
                     + " export=" + describe(w));
+        }
+        for (int i = 0; i < 2; i++) {
+            var c = machine(base.offset(0, 0, 3 + 2 * i));
+            if (c instanceof WorkableTieredMachine w) {
+                out.add("C" + (i + 1) + " result: status=" + w.recipeLogic.getStatus() + " export=" + describe(w));
+            }
         }
         out.forEach(s -> GTCEu.LOGGER.info("SELFTEST {}", s));
     }

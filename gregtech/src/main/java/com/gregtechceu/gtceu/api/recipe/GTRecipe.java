@@ -178,6 +178,11 @@ public class GTRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
+    public boolean isSpecial() {
+        return true; // 26.1: not a crafting grid recipe, skip the "empty ingredients" warning
+    }
+
+    @Override
     public @NotNull net.minecraft.world.item.crafting.PlacementInfo placementInfo() {
         return net.minecraft.world.item.crafting.PlacementInfo.NOT_PLACEABLE;
     }

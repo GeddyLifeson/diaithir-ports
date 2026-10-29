@@ -72,7 +72,7 @@ public class GTCommands {
                         .executes(context -> {
                             var src = context.getSource();
                             GTSelfTest.start(src.getLevel(), BlockPos.containing(src.getPosition()));
-                            src.sendSuccess(() -> Component.literal("GT selftest started, result in log after 200 ticks"), false);
+                            src.sendSuccess(() -> Component.literal("GT selftest started, result in log after 600 ticks"), false);
                             return 1;
                         }))
                 .then(literal("ui_editor")

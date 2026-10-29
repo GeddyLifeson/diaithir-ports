@@ -45,3 +45,18 @@ Methods whose bodies could not be ported quickly carry a `/* ported stub */` mar
 - Known gaps: block entity renderers, item decorations, fluid tints, recipe viewer (JEI/REI/EMI) widgets,
   editor/compass LDLib packages, ShaderTexture and TextField input are still stubs.
 - Dev scripts live outside the repo (gt_full.sh runs boot, scene, right-click UI and screenshot).
+
+## Status update (tools, recipes, ore chain)
+
+- Selftest (`/gtceu selftest`, 600 ticks) now also covers ore -> crushed ore -> impure dust (C1/C2) and passes on a
+  dedicated server: 2 copper ore give 4 crushed ore, 2 crushed ore give 2 impure dust.
+- `GTRecipe.isSpecial()` is true, which silences the roughly 25 000 client "can't be placed due to empty ingredients"
+  warnings. 167 real shaped recipes for UEV and above still warn on load (their high tier materials are not
+  present); they are ignored, as they are disabled by default upstream.
+- `c:potion` fluid tag entries are optional now (potion fluids are not registered in this port).
+- Wrench, screwdriver and soft mallet items give, render in hand and in the hotbar. Using them on blocks has not been
+  verified in a client yet (see GT_PC_TEST.md steps 14 to 20).
+- Dedicated server fix: client-only code in `UIFactory` and the Registrate fluid tint lives in separate client classes
+  (`UIFactoryClient`, `FluidTints`) so `runServer` does not load client classes.
+- Still not done: block entity renderers, item decorations (ClientProxy), keybinds, overlays, particle providers,
+  cover `pasteConfig`, cauldron interactions.
