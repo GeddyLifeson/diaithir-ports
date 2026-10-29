@@ -283,8 +283,16 @@ public class GTDynamicResourcePack implements PackResources {
     private static List<String> listStaticModels() {
         List<String> out = new ArrayList<>();
         try {
-            var urls = Collections.list(GTDynamicResourcePack.class.getClassLoader().getResources("assets/gtceu/models/"));
-            for (java.net.URL url : urls) listFrom(url, out);
+            var file = net.neoforged.fml.ModList.get().getModFileById(GTCEu.MOD_ID).getFile();
+            for (java.nio.file.Path contentRoot : file.getContents().getContentRoots()) {
+                java.nio.file.Path root = contentRoot.resolve("assets/gtceu/models");
+                if (!java.nio.file.Files.isDirectory(root)) continue;
+                try (var walk = java.nio.file.Files.walk(root)) {
+                    walk.filter(f -> f.toString().endsWith(".json")).forEach(
+                            f -> out.add("models/" + root.relativize(f).toString().replace('\\', '/')));
+                }
+            }
+            GTCEu.LOGGER.info("GTCEu: found {} static models", out.size());
         } catch (Exception e) {
             GTCEu.LOGGER.error("Could not list static models", e);
         }
@@ -319,6 +327,12 @@ public class GTDynamicResourcePack implements PackResources {
     private void sanitizeLoaderModels() {
         for (String modelPath : listStaticModels()) {
             if (files.containsKey(GTCEu.id(modelPath))) continue;
+            String text = readStaticText(modelPath);
+            if (text != null && NEG_TINT.matcher(text).find() && !text.contains("\"loader\"")) {
+                files.put(GTCEu.id(modelPath), NEG_TINT.matcher(text).replaceAll("\"tintindex\": -1")
+                        .getBytes(StandardCharsets.UTF_8));
+                continue;
+            }
             JsonObject root = readStatic(modelPath);
             if (root == null || !root.has("loader")) continue;
             String loader = root.get("loader").getAsString();
@@ -380,7 +394,20 @@ public class GTDynamicResourcePack implements PackResources {
             }
             if (replacement == null) continue;
             if (!replacement.has("parent") && !replacement.has("elements")) replacement.addProperty("parent", "minecraft:block/cube");
-            files.put(GTCEu.id(modelPath), replacement.toString().getBytes(StandardCharsets.UTF_8));
+            files.put(GTCEu.id(modelPath), NEG_TINT.matcher(replacement.toString()).replaceAll("\"tintindex\":-1")
+                    .getBytes(StandardCharsets.UTF_8));
+        }
+    }
+
+    private static final java.util.regex.Pattern NEG_TINT = java.util.regex.Pattern
+            .compile("\"tintindex\"\\s*:\\s*-(?!1\\b)\\d+");
+
+    @Nullable
+    private static String readStaticText(String path) {
+        try (InputStream in = GTDynamicResourcePack.class.getResourceAsStream("/assets/gtceu/" + path)) {
+            return in == null ? null : new String(in.readAllBytes(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            return null;
         }
     }
 

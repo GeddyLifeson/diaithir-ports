@@ -234,7 +234,19 @@ public class EnvironmentalHazardSavedData extends SavedData {
     
     
     
-    public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) {
+        ListTag hazardZonesTag = new ListTag();
+        for (var entry : hazardZones.entrySet()) {
+            CompoundTag zoneTag = new CompoundTag();
+
+            zoneTag.putLong("pos", entry.getKey().pack());
+            entry.getValue().serializeNBT(zoneTag);
+
+            hazardZonesTag.add(zoneTag);
+        }
+        compoundTag.put("zones", hazardZonesTag);
+        return compoundTag;
+    }
 
     @Accessors(fluent = true)
     @AllArgsConstructor

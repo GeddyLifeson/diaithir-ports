@@ -74,7 +74,8 @@ public final class SavedDataCompat {
     private static CompoundTag save(SavedData data, HolderLookup.Provider provider) {
         try {
             Method m = findSave(data.getClass());
-            return (CompoundTag) m.invoke(data, new CompoundTag(), provider);
+            CompoundTag r = (CompoundTag) m.invoke(data, new CompoundTag(), provider);
+            return r == null ? new CompoundTag() : r;
         } catch (ReflectiveOperationException e) {
             throw new IllegalStateException("Cannot save " + data.getClass(), e);
         }

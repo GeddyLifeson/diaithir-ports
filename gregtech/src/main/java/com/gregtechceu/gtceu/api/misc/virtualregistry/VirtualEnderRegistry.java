@@ -104,7 +104,19 @@ public class VirtualEnderRegistry extends SavedData {
     
     
     
-    public final CompoundTag save(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) { return null; /* ported stub */ }
+    public final CompoundTag save(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
+        var privateTag = new CompoundTag();
+        for (var owner : VIRTUAL_REGISTRIES.keySet()) {
+            var mapTag = VIRTUAL_REGISTRIES.get(owner).serializeNBT(registries);
+            if (owner != null) {
+                privateTag.put(owner.toString(), mapTag);
+            } else {
+                tag.put(PUBLIC_KEY, mapTag);
+            }
+        }
+        tag.put(PRIVATE_KEY, privateTag);
+        return tag;
+    }
 
     @Override
     public boolean isDirty() {

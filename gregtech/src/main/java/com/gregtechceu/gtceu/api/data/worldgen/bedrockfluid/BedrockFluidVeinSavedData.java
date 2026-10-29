@@ -57,7 +57,17 @@ public class BedrockFluidVeinSavedData extends SavedData {
     
     
     
-    public CompoundTag save(CompoundTag nbt, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public CompoundTag save(CompoundTag nbt, HolderLookup.Provider provider) {
+        var oilList = new ListTag();
+        for (var entry : veinFluids.entrySet()) {
+            var tag = new CompoundTag();
+            tag.putLong("p", entry.getKey().pack());
+            tag.put("d", entry.getValue().writeToNBT());
+            oilList.add(tag);
+        }
+        nbt.put("veinInfo", oilList);
+        return nbt;
+    }
 
     public static int getVeinCoord(int chunkCoord) {
         return Math.floorDiv(chunkCoord, VEIN_CHUNK_SIZE);
