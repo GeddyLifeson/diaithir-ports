@@ -289,8 +289,8 @@ public class SlotWidget extends Widget implements IRecipeIngredientSlot, IConfig
         if (gui != null) {
             Position position = getPosition();
             if (slotReference != null) {
-                ((SlotAccessor) slotReference).setX(position.x + 1 - gui.getGuiLeft());
-                ((SlotAccessor) slotReference).setY(position.y + 1 - gui.getGuiTop());
+                slotReference.x = position.x + 1 - gui.getGuiLeft();
+                slotReference.y = position.y + 1 - gui.getGuiTop();
             }
         }
     }

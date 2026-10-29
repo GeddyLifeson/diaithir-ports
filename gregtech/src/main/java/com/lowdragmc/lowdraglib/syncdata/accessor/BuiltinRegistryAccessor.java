@@ -26,5 +26,11 @@ public class BuiltinRegistryAccessor<T> extends CustomObjectAccessor<T> {
     }
 
     @Override
-    public T deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public T deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        if (payload instanceof NbtTagPayload nbtTagPayload) {
+            var key = nbtTagPayload.getPayload().asString().orElse("");
+            return key.isEmpty() ? null : registry.getValue(Identifier.parse(key));
+        }
+        return null;
+    }
 }

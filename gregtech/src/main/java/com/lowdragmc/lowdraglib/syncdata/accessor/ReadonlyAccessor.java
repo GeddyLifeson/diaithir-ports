@@ -61,6 +61,29 @@ public abstract class ReadonlyAccessor implements IAccessor {
     }
 
     @Override
-    public void writeField(AccessorOp op, IRef field, ITypedPayload<?> payload, HolderLookup.Provider provider) {  /* ported stub */ }
+    public void writeField(AccessorOp op, IRef field, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        var obj = field.readRaw();
+        if (field instanceof ReadOnlyManagedRef managedRef) {
+            var readOnlyField = managedRef.getReadOnlyField();
+            if (payload instanceof PrimitiveTypedPayload<?> primitive && primitive.isNull()) {
+                readOnlyField.set(null);
+            } else if (payload instanceof NbtTagPayload nbtTagPayload && nbtTagPayload.getPayload() instanceof CompoundTag tag) {
+                var uid = tag.getCompoundOrEmpty("uid");
+                if (obj == null || !readOnlyField.serializeUid(obj).equals(uid)) {
+                    obj = managedRef.getReadOnlyField().deserializeUid(uid);
+                    readOnlyField.set(obj);
+                }
+                var payloadTag = tag.getCompoundOrEmpty("payload");
+                byte id = payloadTag.getByteOr("t", (byte) 0);
+                var p = TypedPayloadRegistries.create(id);
+                p.deserializeNBT(payloadTag.get("d"), provider);
+                writeToReadonlyField(op, obj, p, provider);
+            }
+            return;
+        } else if (obj == null) {
+            throw new IllegalArgumentException("readonly field %s has a null reference".formatted(field));
+        }
+        writeToReadonlyField(op, obj, payload, provider);
+    }
 
 }

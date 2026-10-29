@@ -371,7 +371,17 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
                                 @NotNull GTRecipeType recipeType,
                                 @UnknownNullability("null when content == null") GTRecipe recipe,
                                 @Nullable Content content,
-                                @Nullable Object storage, int recipeTier, int chanceTier) {  /* ported stub */ }/* ported: removed *//* ported: removed */
+                                @Nullable Object storage, int recipeTier, int chanceTier) {  
+        if (widget instanceof com.lowdragmc.lowdraglib.gui.widget.TankWidget tank) {
+            if (storage instanceof net.neoforged.neoforge.fluids.capability.IFluidHandler fluidHandler) {
+                tank.setFluidTank(fluidHandler, index);
+            }
+            tank.setIngredientIO(io == IO.IN ? com.lowdragmc.lowdraglib.jei.IngredientIO.INPUT : com.lowdragmc.lowdraglib.jei.IngredientIO.OUTPUT);
+            tank.setAllowClickFilled(!isXEI);
+            tank.setAllowClickDrained(!isXEI && io.support(IO.IN));
+            if (isXEI) tank.setShowAmount(false);
+        }
+    }/* ported: removed *//* ported: removed */
 
     public interface ICustomParallel {
 

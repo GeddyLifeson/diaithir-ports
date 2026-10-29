@@ -171,7 +171,16 @@ public class SceneWidget extends WidgetGroup {
     }
 
     @Override
-    public void setGui(ModularUI gui) {  /* ported stub */ }
+    public void setGui(ModularUI gui) {
+        super.setGui(gui);
+        if (gui == null) {
+            if (isInitialized()) {
+                releaseCacheBuffer();
+            }
+        } else {
+            gui.registerCloseListener(this::releaseCacheBuffer);
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -206,7 +215,35 @@ public class SceneWidget extends WidgetGroup {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public final void createScene(Level world, boolean useFBOSceneRenderer) {  /* ported stub */ }
+    public final void createScene(Level world, boolean useFBOSceneRenderer) {
+        if (world == null) return;
+        core = new HashSet<>();
+        dummyWorld = new TrackedDummyWorld(world);
+        dummyWorld.setRenderFilter(pos -> renderer.renderedBlocksMap.keySet().stream().anyMatch(c -> c.contains(pos)));
+        if (renderer != null) {
+            renderer.deleteCacheBuffer();
+        }
+        if (useFBOSceneRenderer) {
+            renderer = new FBOWorldSceneRenderer(dummyWorld,1080, 1080);
+        } else {
+            renderer = new ImmediateWorldSceneRenderer(dummyWorld);
+        }
+        center = new Vector3f(0, 0, 0);
+        renderer.useOrtho(useOrtho);
+        renderer.setOnLookingAt(ray -> {});
+        renderer.setBeforeBatchEnd(this::renderBeforeBatchEnd);
+        renderer.setAfterWorldRender(this::renderBlockOverLay);
+        if (this.beforeWorldRender != null) {
+            renderer.setBeforeWorldRender(s -> beforeWorldRender.accept(this));
+        }
+        renderer.setCameraLookAt(center, camZoom(), Math.toRadians(rotationPitch), Math.toRadians(rotationYaw));
+        renderer.useCacheBuffer(useCache);
+        renderer.setParticleManager(createParticleManager());
+        clickPosFace = null;
+        hoverPosFace = null;
+        hoverItem = null;
+        selectedPosFace = null;
+    }
 
     @OnlyIn(Dist.CLIENT)
     public WorldSceneRenderer getRenderer() {
@@ -466,6 +503,18 @@ public class SceneWidget extends WidgetGroup {
     protected Interpolator interpolator;
     protected long startTick;
 
-    public void setCameraYawAndPitchAnima(float rotationYaw, float rotationPitch, int dur) {  /* ported stub */ }
+    public void setCameraYawAndPitchAnima(float rotationYaw, float rotationPitch, int dur) {
+        if (interpolator != null) return ;
+        final float oRotationYaw = this.rotationYaw;
+        final float oRotationPitch = this.rotationPitch;
+        startTick = gui.getTickCount();
+        interpolator = new Interpolator(0, 1, dur, Eases.EaseQuadOut, value -> {
+            this.rotationYaw = (rotationYaw - oRotationYaw) * value.floatValue() + oRotationYaw;
+            this.rotationPitch = (rotationPitch - oRotationPitch) * value.floatValue() + oRotationPitch;
+            if (renderer != null) {
+                renderer.setCameraLookAt(this.center, camZoom(), Math.toRadians(this.rotationPitch), Math.toRadians(this.rotationYaw));
+            }
+        }, x -> interpolator = null);
+    }
 
 }

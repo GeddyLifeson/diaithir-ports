@@ -209,7 +209,41 @@ public class PhantomFluidWidget extends TankWidget implements IGhostIngredientTa
     }
 
     @Override
-    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        if (this.lastFluidInTank != null) {
+            super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+            return;
+        }
+        Position pos = getPosition();
+        Size size = getSize();
+        FluidStack stack = phantomFluidGetter.get();
+        if (stack != null && !stack.isEmpty()) {
+
+            double progress = stack.getAmount() * 1.0 / Math.max(Math.max(stack.getAmount(), lastTankCapacity), 1);
+            float drawnU = (float) fillDirection.getDrawnU(progress);
+            float drawnV = (float) fillDirection.getDrawnV(progress);
+            float drawnWidth = (float) fillDirection.getDrawnWidth(progress);
+            float drawnHeight = (float) fillDirection.getDrawnHeight(progress);
+            int width = size.width - 2;
+            int height = size.height - 2;
+            int x = pos.x + 1;
+            int y = pos.y + 1;
+            DrawerHelper.drawFluidForGui(graphics, stack,
+                    (int) (x + drawnU * width), (int) (y + drawnV * height), ((int) (width * drawnWidth)),
+                    ((int) (height * drawnHeight)));
+            if (showAmount) {
+                graphics.pose().pushPose();
+                graphics.pose().scale(0.5F, 0.5F, 1);
+                String s = TextFormattingUtil.formatLongToCompactStringBuckets(stack.getAmount(), 3) + "B";
+                Font fontRenderer = Minecraft.getInstance().font;
+                graphics.drawString(fontRenderer, s,
+                        (int) ((pos.x + (size.width / 3f)) * 2 - fontRenderer.width(s) + 21),
+                        (int) ((pos.y + (size.height / 3f) + 6) * 2), 0xFFFFFF, true);
+                graphics.pose().popPose();
+            }
+
+        }
+    }
 
     private static class EMICallWrapper {
 

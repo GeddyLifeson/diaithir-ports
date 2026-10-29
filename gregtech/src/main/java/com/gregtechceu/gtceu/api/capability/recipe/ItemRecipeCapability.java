@@ -390,7 +390,19 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                                 @NotNull GTRecipeType recipeType,
                                 @UnknownNullability("null when content == null") GTRecipe recipe,
                                 @Nullable Content content,
-                                @Nullable Object storage, int recipeTier, int chanceTier) {  /* ported stub */ }/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
+                                @Nullable Object storage, int recipeTier, int chanceTier) {  
+        // PORT: recipe viewer (research slot, chance tooltips) bits are not ported; only the inventory binding.
+        if (widget instanceof com.lowdragmc.lowdraglib.gui.widget.SlotWidget slot) {
+            if (storage instanceof net.neoforged.neoforge.items.IItemHandlerModifiable items) {
+                if (index >= 0 && index < items.getSlots()) {
+                    slot.setHandlerSlot(items, index);
+                    slot.setIngredientIO(io == IO.IN ? com.lowdragmc.lowdraglib.jei.IngredientIO.INPUT : com.lowdragmc.lowdraglib.jei.IngredientIO.OUTPUT);
+                    slot.setCanTakeItems(!isXEI);
+                    slot.setCanPutItems(!isXEI && io.support(IO.IN));
+                }
+            }
+        }
+    }/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 
     public interface ICustomParallel {
 

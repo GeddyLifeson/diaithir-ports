@@ -26,5 +26,11 @@ public class AABBAccessor extends CustomObjectAccessor<AABB> {
     }
 
     @Override
-    public AABB deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public AABB deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        if (payload instanceof NbtTagPayload nbtTagPayload && nbtTagPayload.getPayload() instanceof CompoundTag tag) {
+            return new AABB(tag.getDoubleOr("minX", 0), tag.getDoubleOr("minY", 0), tag.getDoubleOr("minZ", 0),
+                    tag.getDoubleOr("maxX", 0), tag.getDoubleOr("maxY", 0), tag.getDoubleOr("maxZ", 0));
+        }
+        return null;
+    }
 }

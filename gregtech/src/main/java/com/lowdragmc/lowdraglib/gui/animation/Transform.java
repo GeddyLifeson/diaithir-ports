@@ -38,25 +38,39 @@ public class Transform extends Animation {
     }
 
     @Override
-    public Transform duration(long duration) { return null; /* ported stub */ }
+    public Transform duration(long duration) {
+        return (Transform) super.duration(duration);
+    }
 
     @Override
-    public Transform delay(long delay) { return null; /* ported stub */ }
+    public Transform delay(long delay) {
+        return (Transform) super.delay(delay);
+    }
 
     @Override
-    public Transform ease(IEase ease) { return null; /* ported stub */ }
+    public Transform ease(IEase ease) {
+        return (Transform) super.ease(ease);
+    }
 
     @Override
-    public Transform onUpdate(FloatConsumer onUpdate) { return null; /* ported stub */ }
+    public Transform onUpdate(FloatConsumer onUpdate) {
+        return (Transform) super.onUpdate(onUpdate);
+    }
 
     @Override
-    public Animation onFinish(Runnable onFinish) { return null; /* ported stub */ }
+    public Animation onFinish(Runnable onFinish) {
+        return super.onFinish(onFinish);
+    }
 
     @Override
-    public Animation size(@Nullable Size size) { return null; /* ported stub */ }
+    public Animation size(@Nullable Size size) {
+        return super.size(size);
+    }
 
     @Override
-    public Animation position(@Nullable Position position) { return null; /* ported stub */ }
+    public Animation position(@Nullable Position position) {
+        return super.position(position);
+    }
 
     public boolean isIn() {
         return in;
@@ -77,7 +91,25 @@ public class Transform extends Animation {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void pre(@NotNull GuiGraphics graphics) {  /* ported stub */ }
+    public void pre(@NotNull GuiGraphics graphics) {
+        graphics.pose().pushPose();
+        Position position = widget.getPosition();
+        Size size = widget.getSize();
+        float oX = position.x + size.width / 2f;
+        float oY = position.y + size.height / 2f;
+        if (isIn()) {
+            graphics.pose().translate(xOffset * (1 - getTime()), yOffset * (1 - getTime()), 0);
+        } else {
+            graphics.pose().translate(xOffset * getTime(), yOffset * getTime(), 0);
+        }
+        graphics.pose().translate(oX, oY,0);
+        if (isIn()) {
+            graphics.pose().scale(scale + (1 - scale) * getTime(), scale + (1 - scale) * getTime(), 1);
+        } else {
+            graphics.pose().scale(scale + (1 - scale) * (1- getTime()), scale + (1 - scale) * (1- getTime()), 1);
+        }
+        graphics.pose().translate(-oX, -oY,0);
+    }
 
     @OnlyIn(Dist.CLIENT)
     public void post(@NotNull GuiGraphics graphics) {

@@ -25,7 +25,7 @@ public class BlockPosPayload extends ObjectTypedPayload<BlockPos> {
     }
 
     @Override
-    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) { payload = com.gregtechceu.gtceu.compat.NbtCompat.readBlockPos(tag).orElse(BlockPos.ZERO); }
 
     @Override
     public Object copyForManaged(Object value) {

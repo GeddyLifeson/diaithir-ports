@@ -132,7 +132,7 @@ public class TrackedDummyWorld extends DummyWorld {
 
     @Override
     public boolean addFreshEntity(Entity entity) {
-        ((EntityAccessor) entity).invokeSetLevel(this);
+        entity.setLevel(this);
         if (entity instanceof ItemFrame itemFrame)
             itemFrame.setItem(withUnsafeNBTDiscarded(itemFrame.getItem()));
         if (entity instanceof ArmorStand armorStand)

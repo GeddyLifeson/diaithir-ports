@@ -34,16 +34,30 @@ public class ParameterNode extends BaseNode {
     }
 
     @Override
-    public void setExpanded(boolean expanded) {  /* ported stub */ }
+    public void setExpanded(boolean expanded) {
+    }
 
     @Override
-    public String getDisplayName() { return null; /* ported stub */ }
+    public String getDisplayName() {
+        return parameter == null ? super.getDisplayName() : parameter.getDisplayName();
+    }
 
     @Override
-    public void setDisplayName(String displayName) {  /* ported stub */ }
+    public void setDisplayName(String displayName) {
+        if (parameter != null) parameter.setDisplayName(displayName);
+        else super.setDisplayName(displayName);
+    }
 
     @Override
-    protected void enable() {  /* ported stub */ }
+    protected void enable() {
+        parameter = graph.getExposedParameterFromIdentifier(parameterIdentifier);
+        if (parameter == null) {
+            LDLib.LOGGER.error("Property {} Can't be found !", parameterIdentifier);
+            graph.removeNode(this);
+            return;
+        }
+        output = parameter.getValue();
+    }
 
     @CustomPortBehavior(field = "output")
     public List<PortData> getOutputPort(List<PortEdge> edges) {
@@ -71,7 +85,13 @@ public class ParameterNode extends BaseNode {
     }
 
     @Override
-    protected void process() {  /* ported stub */ }
+    protected void process() {
+        if (parameter == null) return;
+        if (parameter.getAccessor() == ExposedParameter.ParameterAccessor.Get)
+            output = parameter.getValue();
+        else
+            graph.updateExposedParameter(parameter.identifier, input);
+    }
 
 }
 

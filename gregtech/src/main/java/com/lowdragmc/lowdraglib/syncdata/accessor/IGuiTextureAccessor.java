@@ -35,6 +35,24 @@ public class IGuiTextureAccessor extends CustomObjectAccessor<IGuiTexture>{
     }
 
     @Override
-    public IGuiTexture deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public IGuiTexture deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        if (payload instanceof NbtTagPayload nbtTagPayload && nbtTagPayload.getPayload() instanceof CompoundTag tag) {
+            var type = tag.getStringOr("type", "");
+            if (type.equals("ui_resource") && tag.contains("key")) {
+                var key = tag.getStringOr("key", "");
+                var resource = UIResourceTexture.getProjectResource();
+                if (resource == null) {
+                    return new UIResourceTexture(key);
+                }
+                if (UIResourceTexture.isProject()) {
+                    return new UIResourceTexture(resource, key);
+                } else {
+                    return resource.getResourceOrDefault(key, IGuiTexture.MISSING_TEXTURE);
+                }
+            }
+            return IGuiTexture.deserializeWrapper(tag, provider);
+        }
+        return null;
+    }
 
 }

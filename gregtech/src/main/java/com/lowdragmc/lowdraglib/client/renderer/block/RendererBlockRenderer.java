@@ -36,17 +36,29 @@ class RendererBlockRenderer implements IRenderer {
     }/* ported: removed */
 
     @Override
-    public List<BakedQuad> renderModel(@Nullable BlockAndTintGetter level, @Nullable BlockPos pos, @Nullable BlockState state, @Nullable Direction side, RandomSource rand, ModelData data, @Nullable RenderType renderType) { return null; /* ported stub */ }
+    public List<BakedQuad> renderModel(@Nullable BlockAndTintGetter level, @Nullable BlockPos pos, @Nullable BlockState state, @Nullable Direction side, RandomSource rand, ModelData data, @Nullable RenderType renderType) {
+        return getMachine(level, pos)
+                .map(machine -> machine.getRenderer().renderModel(level, pos, state, side, rand, data, renderType))
+                .orElseGet(Collections::emptyList);
+    }
 
     @Override
-    public boolean hasTESR(BlockEntity blockEntity) { return false; /* ported stub */ }
+    public boolean hasTESR(BlockEntity blockEntity) {
+        return getMachine(blockEntity).map(machine -> machine.getRenderer().hasTESR(blockEntity)).orElse(false);
+    }
 
     @Override
-    public boolean isGlobalRenderer(BlockEntity blockEntity) { return false; /* ported stub */ }
+    public boolean isGlobalRenderer(BlockEntity blockEntity) {
+        return getMachine(blockEntity).map(machine -> machine.getRenderer().isGlobalRenderer(blockEntity)).orElse(false);
+    }
 
     @Override
-    public boolean shouldRender(BlockEntity blockEntity, Vec3 cameraPos) { return false; /* ported stub */ }
+    public boolean shouldRender(BlockEntity blockEntity, Vec3 cameraPos) {
+        return getMachine(blockEntity).map(machine -> machine.getRenderer().shouldRender(blockEntity, cameraPos)).orElseGet(() -> IRenderer.super.shouldRender(blockEntity, cameraPos));
+    }
 
     @Override
-    public void render(BlockEntity blockEntity, float partialTicks, PoseStack stack, MultiBufferSource buffer, int combinedLight, int combinedOverlay) {  /* ported stub */ }
+    public void render(BlockEntity blockEntity, float partialTicks, PoseStack stack, MultiBufferSource buffer, int combinedLight, int combinedOverlay) {
+        getMachine(blockEntity).ifPresent(machine -> machine.getRenderer().render(blockEntity, partialTicks, stack, buffer, combinedLight, combinedOverlay));
+    }
 }

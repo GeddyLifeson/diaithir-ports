@@ -47,7 +47,9 @@ public class CompassSection {
         return config;
     }
 
-    public void addNode(CompassNode compassNode) {  /* ported stub */ }
+    public void addNode(CompassNode compassNode) {
+        nodes.put(compassNode.getNodeName(), compassNode);
+    }
 
     @Override
     public final String toString() {

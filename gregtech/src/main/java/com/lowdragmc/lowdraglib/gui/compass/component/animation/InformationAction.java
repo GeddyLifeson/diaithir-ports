@@ -55,5 +55,33 @@ public class InformationAction extends Action {
     }
 
     @Override
-    public void performAction(AnimationFrame frame, CompassScene scene, boolean anima) {  /* ported stub */ }
+    public void performAction(AnimationFrame frame, CompassScene scene, boolean anima) {
+        var size = Math.min(scene.getHeaderGroup().getSize().width, scene.getHeaderGroup().getSize().height);
+        if (text.isEmpty() && guiTexture == IGuiTexture.EMPTY) return;
+        if (text.isEmpty()) {
+            scene.addInformation(new ImageWidget(0, 0, size, size, guiTexture), anima);
+        } else if (guiTexture == IGuiTexture.EMPTY) {
+            var componentPanelWidget = new ComponentPanelWidget(0, 0, text).clickHandler(CompassManager::onComponentClick);
+            componentPanelWidget.setBackground(TooltipBGTexture.INSTANCE);
+            var maxWidth = 0;
+            while (maxWidth < scene.getHeaderGroup().getSize().width && (componentPanelWidget.getSize().height == 0 || componentPanelWidget.getSize().height > size)) {
+                maxWidth += 50;
+                componentPanelWidget.setMaxWidthLimit(maxWidth);
+            }
+            scene.addInformation(componentPanelWidget, anima);
+        } else {
+            var componentPanelWidget = new ComponentPanelWidget(0, 0, text).clickHandler(CompassManager::onComponentClick);
+            componentPanelWidget.setBackground(TooltipBGTexture.INSTANCE);
+            var maxWidth = 0;
+            while (maxWidth < scene.getHeaderGroup().getSize().width && (componentPanelWidget.getSize().height == 0 || componentPanelWidget.getSize().height > size)) {
+                maxWidth += 50;
+                componentPanelWidget.setMaxWidthLimit(maxWidth);
+            }
+            var container = new WidgetGroup(0, 0, size + maxWidth, size);
+            container.addWidget(new ImageWidget(2, 2, size - 4, size - 4, guiTexture));
+            componentPanelWidget.addSelfPosition(size, (size - componentPanelWidget.getSize().height) / 2);
+            container.addWidget(componentPanelWidget);
+            scene.addInformation(container, anima);
+        }
+    }
 }

@@ -79,7 +79,97 @@ public class MenuWidget<K, T> extends WidgetGroup {
     }
 
     @Override
-    public void initWidget() {  /* ported stub */ }
+    public void initWidget() {
+        int maxWidth = getSize().width;
+        int maxHeight = 1;
+
+        if (!root.isLeaf()) {
+            if (isRemote()) {
+                for (TreeNode<K, T> child : root.getChildren()) {
+                    var key = child.getKey();
+                    var name = key.toString();
+                    if (keyNameSupplier != null) {
+                        name = keyNameSupplier.apply(key);
+                    }
+                    maxWidth = Math.max(Minecraft.getInstance().font.width(LocalizationUtils.format(name)) + 4 + 2 * nodeHeight, maxWidth);
+                }
+            }
+            for (TreeNode<K, T> child : root.getChildren()) {
+                var key = child.getKey();
+                if (crossLinePredicate != null && crossLinePredicate.test(key)) { // cross line
+                    maxHeight += 1;
+                    continue;
+                }
+                var name = key.toString();
+                if (keyNameSupplier != null) {
+                    name = keyNameSupplier.apply(key);
+                }
+                var group = new WidgetGroup(0, maxHeight, maxWidth, nodeHeight);
+                children.put(child, group);
+                if (child.isLeaf()) {
+                    group.setBackground(Objects.requireNonNullElseGet(leafTexture, () -> LEAF_TEXTURE));
+                    group.addWidget(new ButtonWidget(0, 0, maxWidth, nodeHeight, null, cd -> {
+                        if (onNodeClicked != null) {
+                            onNodeClicked.accept(child);
+                        }
+                        if (autoClose) {
+                            WidgetGroup p = this;
+                            while (p != null) {
+                                if (p.parent != null && !(p.parent instanceof MenuWidget<?,?>)) {
+                                    p.parent.waitToRemoved(p);
+                                    return;
+                                }
+                                p = p.parent;
+                            }
+                        }
+                    }).setHoverTexture(Objects.requireNonNullElseGet(nodeHoverTexture, () -> NODE_HOVER_TEXTURE)));
+
+                } else {
+                    group.setBackground(Objects.requireNonNullElseGet(nodeTexture, () -> NODE_TEXTURE));
+                    group.addWidget(new ButtonWidget(0, 0, maxWidth, nodeHeight, null).setHoverTexture(Objects.requireNonNullElseGet(nodeHoverTexture, () -> NODE_HOVER_TEXTURE)));
+                }
+                if (keyIconSupplier != null) {
+                    group.addWidget(new ImageWidget(2, 1, nodeHeight - 2, nodeHeight - 2, keyIconSupplier.apply(child.getKey())));
+                }
+                group.addWidget(new ImageWidget(nodeHeight + 2, 0, maxWidth - 2 * nodeHeight - 4, nodeHeight, new TextTexture(name).setType(TextTexture.TextType.LEFT)));
+                addWidget(group);
+                maxHeight += nodeHeight;
+            }
+        }
+        Position pos = getPosition();
+        setSize(new Size(maxWidth, maxHeight));
+        // check width
+        int rightSpace = getGui().getScreenWidth() - pos.getX();
+        int bottomSpace = getGui().getScreenHeight() - pos.getY();
+        if (rightSpace < maxWidth) { // move to Left
+            if (parent instanceof MenuWidget<?,?> menuWidget) {
+                addSelfPosition(-menuWidget.getSize().width - maxWidth, 0);
+            }
+            rightSpace = getGui().getScreenWidth() - getPosition().getX();
+            if (rightSpace < maxWidth) {
+                addSelfPosition(-(maxWidth - rightSpace), 0);
+            }
+            int leftSpace = getPosition().getX();
+            if (leftSpace < 0) {
+                addSelfPosition(-leftSpace, 0);
+            }
+        }
+        // check height
+        if (bottomSpace < maxHeight) {
+            if (parent instanceof MenuWidget) {
+                addSelfPosition(0, nodeHeight - maxHeight);
+            }
+            bottomSpace = getGui().getScreenHeight() - getPosition().getY();
+            if (bottomSpace < maxHeight) {
+                addSelfPosition(0, -(maxHeight - bottomSpace));
+            }
+            int topSpace = getPosition().getY();
+            if (topSpace < 0) {
+                addSelfPosition(0, -topSpace);
+            }
+        }
+        super.initWidget();
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -95,9 +185,59 @@ public class MenuWidget<K, T> extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseMoved(double mouseX, double mouseY) { return false; /* ported stub */ }
+    public boolean mouseMoved(double mouseX, double mouseY) {
+        if (super.mouseMoved(mouseX, mouseY)) {
+            return true;
+        }
+        if (root.getChildren() != null) {
+            int maxHeight = 0;
+            for (var node : root.getChildren()) {
+                if (crossLinePredicate != null && crossLinePredicate.test(node.getKey())) { // cross line
+                    maxHeight += 1;
+                    continue;
+                }
+                var widget = children.get(node);
+                if (widget.isMouseOverElement(mouseX, mouseY)) {
+                    // if opened
+                    if (opened != null && opened.root == node) return true;
+
+                    // close previous
+                    if (opened != null) {
+                        removeWidget(opened);
+                        opened = null;
+                    }
+
+                    // open a new menu
+                    if (!node.isLeaf()) {
+                        opened = new MenuWidget<>(getSize().width, maxHeight, nodeHeight, node)
+                                .setNodeHoverTexture(nodeHoverTexture)
+                                .setNodeTexture(nodeTexture)
+                                .setLeafTexture(leafTexture)
+                                .setOnNodeClicked(onNodeClicked)
+                                .setKeyIconSupplier(keyIconSupplier)
+                                .setKeyNameSupplier(keyNameSupplier)
+                                .setCrossLinePredicate(crossLinePredicate);
+                        addWidget(opened.setBackground(backgroundTexture));
+                    }
+                    return true;
+                }
+                maxHeight += nodeHeight;
+            }
+        }
+        return false;
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) { return false; /* ported stub */ }
+    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) {
+        var pos = getPosition();
+        var size = getSize();
+        var screenHeight = getGui().getScreenHeight();
+        if (screenHeight < size.height && isMouseOverElement(mouseX, mouseY)) {
+            var offsetY = Mth.clamp(pos.getY() + (scrollY > 0 ? -nodeHeight : nodeHeight), 0, screenHeight - size.height);
+            addSelfPosition(0, offsetY - pos.getY());
+            return true;
+        }
+        return super.mouseWheelMove(mouseX, mouseY, scrollX, scrollY);
+    }
 }

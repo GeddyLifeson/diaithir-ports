@@ -187,7 +187,69 @@ public class GTRecipeTypeUI {
      * Auto layout UI template for recipes.
      */
     public IEditableUI<WidgetGroup, RecipeHolder> createEditableUITemplate(final boolean isSteam,
-                                                                           final boolean isHighPressure) { return null; /* ported stub */ }
+                                                                           final boolean isHighPressure) {
+        return new IEditableUI.Normal<>(() -> {
+            var inputs = addInventorySlotGroup(false, isSteam, isHighPressure);
+            var outputs = addInventorySlotGroup(true, isSteam, isHighPressure);
+            var maxWidth = Math.max(inputs.getSize().width, outputs.getSize().width);
+            var group = new WidgetGroup(0, 0, 2 * maxWidth + 40,
+                    Math.max(inputs.getSize().height, outputs.getSize().height));
+            var size = group.getSize();
+
+            inputs.addSelfPosition((maxWidth - inputs.getSize().width) / 2,
+                    (size.height - inputs.getSize().height) / 2);
+            outputs.addSelfPosition(maxWidth + 40 + (maxWidth - outputs.getSize().width) / 2,
+                    (size.height - outputs.getSize().height) / 2);
+            group.addWidget(inputs);
+            group.addWidget(outputs);
+
+            var progressWidget = new ProgressWidget(ProgressWidget.JEIProgress, maxWidth + 10, size.height / 2 - 10, 20,
+                    20, progressBarTexture);
+            progressWidget.setId("progress");
+            group.addWidget(progressWidget);
+
+            progressWidget.setProgressTexture((isSteam && steamProgressBarTexture != null) ? new ProgressTexture(
+                    steamProgressBarTexture.get(isHighPressure).getSubTexture(0, 0, 1, 0.5),
+                    steamProgressBarTexture.get(isHighPressure).getSubTexture(0, 0.5, 1, 0.5))
+                    .setFillDirection(steamMoveType) : progressBarTexture);
+
+            return group;
+        }, (template, recipeHolder) -> {
+            var isJEI = recipeHolder.progressSupplier == ProgressWidget.JEIProgress;
+
+            // bind progress
+            List<Widget> progress = new ArrayList<>();
+            // First set the progress suppliers separately.
+            WidgetUtils.widgetByIdForEach(template, "^progress$", ProgressWidget.class, progressWidget -> {
+                progressWidget.setProgressSupplier(recipeHolder.progressSupplier);
+                progress.add(progressWidget);
+            });
+            // Then set the dual-progress widgets, to override their builtin ones' suppliers, in case someone forgot to
+            // remove the id from the internal ones.
+            WidgetUtils.widgetByIdForEach(template, "^progress$", DualProgressWidget.class, dualProgressWidget -> {
+                dualProgressWidget.setProgressSupplier(recipeHolder.progressSupplier);
+                progress.add(dualProgressWidget);
+            });
+            // Bind I/O
+            for (var capabilityEntry : recipeHolder.storages.rowMap().entrySet()) {
+                IO io = capabilityEntry.getKey();
+                for (var storagesEntry : capabilityEntry.getValue().entrySet()) {
+                    RecipeCapability<?> cap = storagesEntry.getKey();
+                    Object storage = storagesEntry.getValue();
+                    // bind overlays
+                    var widgetClass = cap.getWidgetClass();
+                    if (widgetClass != null) {
+                        WidgetUtils.widgetByIdForEach(template, "^%s_[0-9]+$".formatted(cap.slotName(io)), widgetClass,
+                                widget -> {
+                                    var index = WidgetUtils.widgetIdIndex(widget);
+                                    cap.applyWidgetInfo(widget, index, isJEI, io, recipeHolder, recipeType, null, null,
+                                            storage, 0, 0);
+                                });
+                    }
+                }
+            }
+        });
+    }
 
     protected WidgetGroup addInventorySlotGroup(boolean isOutputs, boolean isSteam, boolean isHighPressure) {
         int maxCount = 0;

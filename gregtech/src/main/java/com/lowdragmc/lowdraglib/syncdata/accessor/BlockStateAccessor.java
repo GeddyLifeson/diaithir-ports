@@ -26,5 +26,10 @@ public class BlockStateAccessor extends CustomObjectAccessor<BlockState>{
     }
 
     @Override
-    public BlockState deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public BlockState deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        if (payload instanceof NbtTagPayload nbtTagPayload && nbtTagPayload.getPayload() instanceof net.minecraft.nbt.CompoundTag tag) {
+            return NbtUtils.readBlockState(net.minecraft.core.registries.BuiltInRegistries.BLOCK, tag);
+        }
+        return null;
+    }
 }

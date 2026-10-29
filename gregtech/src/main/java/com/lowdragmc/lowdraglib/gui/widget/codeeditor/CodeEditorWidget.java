@@ -51,7 +51,9 @@ public class CodeEditorWidget extends WidgetGroup {
         setBackground(ColorPattern.DARK_GRAY.rectTexture());
     }
 
-    public boolean canConsumeInput() { return false; /* ported stub */ }
+    public boolean canConsumeInput() {
+        return this.isVisible() && this.isFocus() && this.isActive();
+    }
 
     public List<String> getLines() {
         return codeEditor.getLines();
@@ -72,7 +74,27 @@ public class CodeEditorWidget extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        if (isHoveringXBar) {
+            isDraggingXBar = true;
+            return true;
+        } else if (isHoveringYBar) {
+            isDraggingYBar = true;
+            return true;
+        }
+        if (isMouseOverElement(mouseX, mouseY)) {
+            setFocus(true);
+            codeEditor.clearSelection();
+            codeEditor.setCursor(getCursor(mouseX, mouseY));
+            codeEditor.startSelection();
+            codeEditor.startSelection();
+            return true;
+        }
+        if (isFocus()) {
+            setFocus(false);
+        }
+        return super.mouseClicked(mouseX, mouseY, button);
+    }
 
     @Override
     public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) { return false; /* ported stub */ }

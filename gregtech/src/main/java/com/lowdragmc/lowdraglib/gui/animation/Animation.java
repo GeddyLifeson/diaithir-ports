@@ -68,7 +68,14 @@ public class Animation {
         return time;
     }
 
-    protected void onInterpolatorFinish(Number number) {  /* ported stub */ }
+    protected void onInterpolatorFinish(Number number) {
+        widget.setActive(true);
+        interpolator = null;
+        isFinish = true;
+        if (onFinish != null) {
+            onFinish.run();
+        }
+    }
 
     public boolean isFinish() {
         return isFinish;
@@ -99,7 +106,14 @@ public class Animation {
     }
 
 
-    protected void init() {  /* ported stub */ }
+    protected void init() {
+        init = true;
+        interpolator = new Interpolator(0, 1, duration, ease, this::onInterpolatorUpdate, this::onInterpolatorFinish);
+        startTick = System.currentTimeMillis();
+        widget.setActive(false);
+        initialSize = widget.getSize();
+        initialPosition = widget.getSelfPosition();
+    }
 
     protected void updateWidget(float t) {
         if (onUpdate != null) {

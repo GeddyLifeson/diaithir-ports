@@ -30,5 +30,18 @@ public class RecipeAccessor extends CustomObjectAccessor<RecipeHolder> {
     }
 
     @Override
-    public RecipeHolder deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public RecipeHolder deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
+        // PORT: recipes are keyed by ResourceKey now; lookup through the manager
+        if (payload instanceof NbtTagPayload nbtTagPayload && nbtTagPayload.getPayload() instanceof CompoundTag tag) {
+            var id = net.minecraft.resources.Identifier.parse(tag.getStringOr("id", "minecraft:air"));
+            net.minecraft.world.item.crafting.RecipeManager recipeManager;
+            if (com.lowdragmc.lowdraglib.LDLib.isRemote()) {
+                return null;
+            } else {
+                recipeManager = com.lowdragmc.lowdraglib.Platform.getMinecraftServer().getRecipeManager();
+            }
+            return recipeManager.byKey(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.RECIPE, id)).orElse(null);
+        }
+        return null;
+    }
 }

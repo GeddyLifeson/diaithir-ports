@@ -115,7 +115,23 @@ public abstract class WorldSceneRenderer {
         cacheState = new AtomicReference<>(CacheState.UNUSED);
     }
 
-    public WorldSceneRenderer setParticleManager(ParticleManager particleManager) { return null; /* ported stub */ }
+    public WorldSceneRenderer setParticleManager(ParticleManager particleManager) {
+        if (particleManager == null) {
+            this.particleManager = null;
+            this.camera = null;
+            this.cameraEntity = null;
+            return this;
+        }
+        this.particleManager = particleManager;
+        if (this.world instanceof DummyWorld dummyWorld) {
+            dummyWorld.setParticleManager(particleManager);
+        }
+        this.particleManager.setLevel(world);
+        this.camera = new Camera();
+        this.cameraEntity = new CameraEntity(world);
+        setCameraLookAt(eyePos, lookAt, worldUp);
+        return this;
+    }
 
     public ParticleManager getParticleManager() {
         return particleManager;

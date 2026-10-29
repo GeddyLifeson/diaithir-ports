@@ -51,7 +51,12 @@ public class PortEdge implements IPersistedSerializable {
         return edge;
     }
 
-    public void onBeforeSerialize() {  /* ported stub */ }
+    public void onBeforeSerialize() {
+        if (outputNode == null || inputNode == null)
+            return;
+        outputNodeGUID = outputNode.getGUID();
+        inputNodeGUID = inputNode.getGUID();
+    }
 
     @Override
     public CompoundTag serializeNBT(HolderLookup.Provider provider) {

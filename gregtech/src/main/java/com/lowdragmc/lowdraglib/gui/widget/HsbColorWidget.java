@@ -333,11 +333,27 @@ public class HsbColorWidget extends Widget implements IConfigurableWidget {
 		return builder;
 	}
 
-	public boolean isMouseOverMain(double mouseX, double mouseY) { return false; /* ported stub */ }
+	public boolean isMouseOverMain(double mouseX, double mouseY) {
+		int x = getPosition().x;
+		int y = getPosition().y;
+		int width = getSize().width - gap - barWidth;
+		int height = getSize().height - gap - barWidth;
+		return isMouseOver(x, y, width, height, mouseX, mouseY);
+	}
 
-	public boolean isMouseOverColorSlider(double mouseX, double mouseY) { return false; /* ported stub */ }
+	public boolean isMouseOverColorSlider(double mouseX, double mouseY) {
+		int x = getPosition().x + getSize().width - barWidth;
+		int y = getPosition().y;
+		int height = getSize().height - gap - barWidth;
+		return isMouseOver(x, y, barWidth, height, mouseX, mouseY);
+	}
 
-	public boolean isMouseOverAlphaSlider(double mouseX, double mouseY) { return false; /* ported stub */ }
+	public boolean isMouseOverAlphaSlider(double mouseX, double mouseY) {
+		int x = getPosition().x;
+		int y = getPosition().y + getSize().width - barWidth;
+		int width = getSize().width - gap - barWidth;
+		return isMouseOver(x, y, width, barWidth, mouseX, mouseY);
+	}
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
@@ -413,7 +429,46 @@ public class HsbColorWidget extends Widget implements IConfigurableWidget {
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) { return false; /* ported stub */ }
+	public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
+		int x = getPosition().x;
+		int y = getPosition().y;
+		int width = getSize().width;
+		int height = getSize().height;
+		if (isDraggingMain) {
+			float normalizedX = normalizeMouse(mouseX, x, width - gap - barWidth);
+			float normalizedY = normalizeMouse(mouseY, y, height - gap - barWidth);
+			switch (mode) {
+				case H -> {
+					s = normalizedX;
+					b = 1.0f - normalizedY;
+				}
+				case S -> {
+					h = normalizedX * 360f;
+					b = 1.0f - normalizedY;
+				}
+				case B -> {
+					h = normalizedX * 360f;
+					s = 1.0f - normalizedY;
+				}
+			}
+			refreshRGB();
+			return true;
+		} else if (isDraggingColorSlider) {
+			float normalizedY = normalizeMouse(mouseY, y, height - gap - barWidth);
+			switch (mode) {
+				case H -> h = (1.0f - normalizedY) * 360f;
+				case S -> s = 1.0f - normalizedY;
+				case B -> b = 1.0f - normalizedY;
+			}
+			refreshRGB();
+			return true;
+		} else if (isDraggingAlphaSlider) {
+			this.alpha = normalizeMouse(mouseX, x, width - gap - barWidth);
+
+			refreshRGB();
+		}
+		return false;
+	}
 
 	@Override
 	@OnlyIn(Dist.CLIENT)

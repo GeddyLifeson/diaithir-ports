@@ -125,9 +125,47 @@ public class CompassSectionWidget extends WidgetGroup {
 
     }
 
-    private void saveSection() {  /* ported stub */ }
+    private void saveSection() {
+        var path = new File(LDLib.getLDLibDir(), "assets/%s/compass/nodes".formatted(section.getSectionName().getNamespace()));
+        if (!path.isDirectory()) {
+            if (path.mkdirs()) {
+                LDLib.LOGGER.info("Created directory %s".formatted(path));
+            } else {
+                LDLib.LOGGER.error("Failed to create directory %s".formatted(path));
+                return;
+            }
+        }
 
-    protected void setEditMode(boolean editMode) {  /* ported stub */ }
+        for (CompassNode removedNode : removedNodes) {
+            var file = new File(path, removedNode.getNodeName().getPath() + ".json");
+            if (file.exists()) {
+                if (!file.delete()) {
+                    LDLib.LOGGER.error("Failed to delete file %s".formatted(file));
+                }
+            }
+        }
+        removedNodes.clear();
+
+        for (CompassNode node : section.nodes.values()) {
+            var file = new File(path, node.getNodeName().getPath() + ".json");
+            FileUtility.saveJson(file, node.updateJson());
+        }
+
+        DialogWidget.showCheckBox(compassView, "ldlib.gui.compass.save_success", "ldlib.gui.compass.save_success.desc", shouldOpen -> {
+            if (shouldOpen) {
+                Util.getPlatform().openFile(path);
+            }
+        });
+
+        CompassManager.INSTANCE.onResourceManagerReload(Minecraft.getInstance().getResourceManager());
+    }
+
+    protected void setEditMode(boolean editMode) {
+        this.editMode = editMode;
+        this.removedNodes.clear();
+        editModeWidget.setVisible(editMode);
+        editModeWidget.setActive(editMode);
+    }
 
     protected void switchMode(Mode mode) {
         this.mode = mode;
@@ -135,7 +173,34 @@ public class CompassSectionWidget extends WidgetGroup {
         this.selectedLink = null;
     }
 
-    protected void resetFitScale() {  /* ported stub */ }
+    protected void resetFitScale() {
+        int minX, minY, maxX, maxY;
+        if (this.section.nodes.isEmpty()) {
+            this.xOffset = 0;
+            this.yOffset = 0;
+            this.scale = 1;
+            return;
+        }
+        minX = minY = Integer.MAX_VALUE;
+        maxX = maxY = Integer.MIN_VALUE;
+        for (CompassNode node : this.section.nodes.values()) {
+            Position position = node.getPosition();
+            minX = Math.min(minX, position.x - node.size);
+            minY = Math.min(minY, position.y - node.size);
+            maxX = Math.max(maxX, position.x + node.size);
+            maxY = Math.max(maxY, position.y + node.size);
+        }
+        this.xOffset = minX;
+        this.yOffset = minY;
+        var scaleWidth = (float) getSize().width / (maxX - minX);
+        var scaleHeight = (float) getSize().height / (maxY - minY);
+        this.scale = Math.min(scaleWidth, scaleHeight);
+        if (scale < 0.5f) {
+            this.scale = 0.5f;
+        }
+        this.xOffset -= (getSize().width / scale - (maxX - minX)) / 2;
+        this.yOffset -= (getSize().height / scale - (maxY - minY)) / 2;
+    }
 
     @Nullable
     protected TreeBuilder.Menu createMenu(double mouseX, double mouseY) { return null; /* ported stub */ }
@@ -162,25 +227,164 @@ public class CompassSectionWidget extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        lastMouseX = mouseX;
+        lastMouseY = mouseY;
+        if (isMouseOverElement(mouseX, mouseY)) {
+            if (button == 0) {
+                int newMouseX = (int) ((mouseX - this.getPosition().x) / scale + xOffset);
+                int newMouseY = (int) ((mouseY - this.getPosition().y) / scale + yOffset);
+                if (editMode) {
+                    for (CompassNode node : this.section.nodes.values()) {
+                        if (isNodeOver(node, newMouseX, newMouseY)) {
+                            switch (mode) {
+                                case CURSOR -> {
+                                    selectedNode = node;
+                                    continue;
+                                }
+                                case MOVE -> {
+                                    selectedNode = node;
+                                    originPosition = node.getPosition();
+                                }
+                                case LINK -> {
+                                    selectedNode = node;
+                                }
+                            }
+                            return true;
+                        }
+                    }
+                    if (mode == Mode.LINK) {
+                        for (CompassNode node : this.section.nodes.values()) {
+                            for (CompassNode preNode : node.preNodes) {
+                                var vec = new Vector2f(node.getPosition().x - preNode.getPosition().x, node.getPosition().y - preNode.getPosition().y);
+                                var mid = new Vector2f((node.getPosition().x + preNode.getPosition().x) / 2f, (node.getPosition().y + preNode.getPosition().y) / 2f);
+                                var mouseVec = new Vector2f(newMouseX, newMouseY).sub(mid);
+                                var project = new Vector2f(0f, 0f);
+                                float l = vec.lengthSquared();
+                                if (l != 0.0D) {
+                                    project.set(vec).mul(mouseVec.dot(vec) / l);
+                                }
+                                if (project.lengthSquared() < vec.lengthSquared() / 4f) {
+                                    var dist = project.sub(mouseVec).length();
+                                    if (dist < 10) {
+                                        selectedLink = Pair.of(preNode, node);
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                isDragging = true;
+            } else if (button == 1) {
+                if (editMode) {
+                    var menu = createMenu(mouseX, mouseY);
+                    if (menu != null) {
+                        compassView.waitToAdded(new MenuWidget<>((int) mouseX, (int) mouseY, 14, menu.build())
+                                .setNodeTexture(MenuWidget.NODE_TEXTURE)
+                                .setLeafTexture(MenuWidget.LEAF_TEXTURE)
+                                .setNodeHoverTexture(MenuWidget.NODE_HOVER_TEXTURE)
+                                .setCrossLinePredicate(TreeBuilder.Menu::isCrossLine)
+                                .setKeyIconSupplier(TreeBuilder.Menu::getIcon)
+                                .setKeyNameSupplier(TreeBuilder.Menu::getName)
+                                .setOnNodeClicked(TreeBuilder.Menu::handle)
+                                .setBackground(MenuWidget.BACKGROUND));
+                    }
+                }
+            }
+        }
+        return super.mouseClicked(mouseX, mouseY, button);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseReleased(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
+    public boolean mouseReleased(double mouseX, double mouseY, int button) {
+        var lastSelectedNode = selectedNode;
+        isDragging = false;
+        if (!editMode || mode != Mode.CURSOR) {
+            selectedNode = null;
+        }
+        if (isMouseOverElement(mouseX, mouseY)) {
+            int newMouseX = (int) ((mouseX - this.getPosition().x) / scale + xOffset);
+            int newMouseY = (int) ((mouseY - this.getPosition().y) / scale + yOffset);
+            if (editMode) {
+                if (mode == Mode.LINK && lastSelectedNode != null) {
+                    for (CompassNode node : this.section.nodes.values()) {
+                        if (lastSelectedNode != node && isNodeOver(node, newMouseX, newMouseY)) {
+                            node.preNodes.add(lastSelectedNode);
+                            lastSelectedNode.childNodes.add(node);
+                            return true;
+                        }
+                    }
+                }
+            } else {
+                for (CompassNode node : this.section.nodes.values()) {
+                    if (isNodeOver(node, newMouseX, newMouseY)) {
+                        compassView.openNodeContent(node);
+                        return true;
+                    }
+                }
+            }
+        }
+        return super.mouseReleased(mouseX, mouseY, button);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) { return false; /* ported stub */ }
+    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
+        if (isDragging) {
+            xOffset += (float) (lastMouseX - mouseX) / scale;
+            yOffset += (float) (lastMouseY - mouseY) / scale;
+            lastMouseX = mouseX;
+            lastMouseY = mouseY;
+        }
+        if (selectedNode != null && editMode) {
+            if (mode == Mode.MOVE) {
+                var x = originPosition.x + (int) ((mouseX - lastMouseX) / scale);
+                var y = originPosition.y + (int) ((mouseY - lastMouseY) / scale);
+                if (magnetic && !isShiftDown()) {
+                    x -= x % 10;
+                    y -= y % 10;
+                }
+                selectedNode.setPosition(new Position(x, y));
+                return true;
+            }
+        }
+        return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) { return false; /* ported stub */ }
+    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) {
+        if (isMouseOverElement(mouseX, mouseY)) {
+            var newScale = (float) Mth.clamp(scale + scrollY * 0.1f, 0.1f, 10f);
+            if (newScale != scale) {
+                xOffset += (float) (mouseX - this.getPosition().x) / scale - (float) (mouseX - this.getPosition().x) / newScale;
+                yOffset += (float) (mouseY - this.getPosition().y) / scale - (float) (mouseY - this.getPosition().y) / newScale;
+                scale = newScale;
+            }
+        }
+        return super.mouseWheelMove(mouseX, mouseY, scrollX, scrollY);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        if (isMouseOverElement(mouseX, mouseY)) {
+            int newMouseX = (int) ((mouseX - this.getPosition().x) / scale + xOffset);
+            int newMouseY = (int) ((mouseY - this.getPosition().y) / scale + yOffset);
+            for (CompassNode node : this.section.nodes.values()) {
+                if (isNodeOver(node, newMouseX, newMouseY)) {
+                    gui.getModularUIGui().setHoverTooltip(List.of(node.getChatComponent()), ItemStack.EMPTY, null, null);
+                }
+            }
+        }
+        super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+    }
 
-    protected boolean isNodeOver(CompassNode node, int newMouseX, int newMouseY) { return false; /* ported stub */ }
+    protected boolean isNodeOver(CompassNode node, int newMouseX, int newMouseY) {
+        return isMouseOver(node.getPosition().x - node.size / 2, node.getPosition().y - node.size / 2, node.size, node.size, newMouseX, newMouseY);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)

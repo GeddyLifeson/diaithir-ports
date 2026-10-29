@@ -15,7 +15,9 @@ public class DynamicTokenType<T> extends TokenType {
         this.patternCreator = patternCreator;
     }
 
-    public TokenType createTokenType(T value) { return null; /* ported stub */ }
+    public TokenType createTokenType(T value) {
+        return new TokenType(this.name).setPattern(this.patternCreator.apply(value));
+    }
 
 }
 

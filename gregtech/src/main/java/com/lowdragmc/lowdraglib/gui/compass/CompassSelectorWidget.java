@@ -22,5 +22,43 @@ public class CompassSelectorWidget extends WidgetGroup {
     }
 
     @Override
-    public void initWidget() {  /* ported stub */ }
+    public void initWidget() {
+        super.initWidget();
+        setBackground(new GuiTextureGroup(ColorPattern.BLACK.rectTexture(), ColorPattern.T_GRAY.borderTexture(1)));
+        var listGroup = new DraggableScrollableWidgetGroup(4, 4, 202, 92)
+                .setYScrollBarWidth(2)
+                .setYBarStyle(null, ColorPattern.T_WHITE.rectTexture().setRadius(1))
+                .setBackground(ColorPattern.T_GRAY.rectTexture().setRadius(1));
+        this.addWidget(listGroup);
+        Map<Identifier, List<CompassNode>> map = nodes.stream().collect(Collectors.groupingBy(n -> n.getSection().getSectionName()));
+        int y = 3;
+        for (var entry : map.entrySet()) {
+            listGroup.addWidget(new LabelWidget(2, y, entry.getKey().toLanguageKey("compass.section")));
+            y += 12;
+            int x = 0;
+            for (var node : entry.getValue()) {
+                var background = node.getBackground();
+                var hoverBackground = node.getHoverBackground();
+                var buttonTexture = node.getButtonTexture();
+                var config = CompassManager.INSTANCE.getUIConfig(node.getSection().getSectionName().getNamespace());
+                if (background == null) {
+                    background = config.getNodeBackground();
+                }
+                if (hoverBackground == null) {
+                    hoverBackground = config.getNodeHoverBackground();
+                }
+                listGroup.addWidget(new ButtonWidget(x + 2, y + 2, 20, 20, new GuiTextureGroup(background, new GuiTextureGroup(buttonTexture).scale(0.8f)), cd -> {
+                    CompassManager.INSTANCE.openCompass(node);
+                }).setHoverTexture(new GuiTextureGroup(hoverBackground, new GuiTextureGroup(buttonTexture).scale(0.8f))).setHoverTooltips(node.getNodeName().toLanguageKey("compass.node")));
+                x += 25;
+                if (x > 175) {
+                    x = 0;
+                    y += 25;
+                }
+            }
+            if (x != 0) {
+                y += 25;
+            }
+        }
+    }
 }

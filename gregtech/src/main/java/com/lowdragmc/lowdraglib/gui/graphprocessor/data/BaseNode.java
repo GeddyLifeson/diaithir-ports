@@ -252,7 +252,31 @@ public abstract class BaseNode implements IPersistedSerializable, ILDLRegister, 
         return true;
     }
 
-    public void onEdgeDisconnected(PortEdge edge) {  /* ported stub */ }
+    public void onEdgeDisconnected(PortEdge edge) {
+        if (edge == null)
+            return ;
+
+        var input = edge.inputNode == this;
+        var portCollection = (input) ? inputPorts : outputPorts;
+
+        portCollection.remove(edge);
+
+        // Reset default values of input port:
+        var haveConnectedEdges = edge.inputNode.inputPorts.stream()
+                .filter(p -> Objects.equals(p.fieldName, edge.inputFieldName))
+                .anyMatch(p -> !p.getEdges().isEmpty());
+        if (edge.inputNode == this && !haveConnectedEdges && canResetPort(edge.inputPort)) {
+            if (edge.inputPort != null) {
+                edge.inputPort.resetToDefault();
+            }
+        }
+
+        updateAllPorts();
+
+        if (onAfterEdgeDisconnected != null) {
+            onAfterEdgeDisconnected.accept(edge);
+        }
+    }
 
     public void onProcess() {
         inputPorts.PullDatas();
@@ -287,7 +311,22 @@ public abstract class BaseNode implements IPersistedSerializable, ILDLRegister, 
      * Use this function to initialize anything related to ports generation in your node
      * This will allow the node creation menu to correctly recognize ports that can be connected between nodes
      */
-    public void InitializePorts() {  /* ported stub */ }
+    public void InitializePorts() {
+        for (var entry : nodeFields.entrySet()) {
+            var nodeField = entry.getValue();
+            if (hasCustomBehavior(nodeField)) {
+                updatePortsForField(nodeField.fieldName, false);
+            } else {
+                // If we don't have a custom behavior on the node, we just have to create a simple port
+                var port = new PortData()
+                        .displayName(nodeField.name)
+                        .portColor(nodeField.color)
+                        .acceptMultipleEdges(nodeField.isMultiple)
+                        .tooltip(Arrays.stream(nodeField.tooltips).toList());
+                addPort(nodeField.input, nodeField.fieldName, port);
+            }
+        }
+    }
 
     /**
      * Update all ports of the node
@@ -320,9 +359,127 @@ public abstract class BaseNode implements IPersistedSerializable, ILDLRegister, 
     /**
      * Update the ports related to one java property field and all connected nodes in the graph
      */
-    public boolean updatePortsForFieldLocal(String fieldName, boolean sendPortUpdatedEvent) { return false; /* ported stub */ }
+    public boolean updatePortsForFieldLocal(String fieldName, boolean sendPortUpdatedEvent) {
+        boolean changed = false;
+        if (!nodeFields.containsKey(fieldName))
+            return false;
 
-    private boolean addPortData(List<NodePort> nodePorts, NodeFieldInformation fieldInfo, List<String> finalPorts, String fieldName, PortData portData) { return false; /* ported stub */ }
+        var fieldInfo = nodeFields.get(fieldName);
+
+        if (!hasCustomBehavior(fieldInfo))
+            return false;
+
+        List<String> finalPorts = new ArrayList<>();
+
+        var portCollection = fieldInfo.input ? (NodePortContainer) inputPorts : outputPorts;
+
+        // Gather all fields for this port (before to modify them)
+        var nodePorts = portCollection.stream().filter(p -> Objects.equals(p.fieldName, fieldName)).toList();
+        // Gather all edges connected to these fields:
+        var edges = nodePorts.stream().flatMap(port -> port.getEdges().stream()).toList();
+
+        if (fieldInfo.behavior != null) {
+            for (var portData : fieldInfo.behavior.handle(edges)) {
+                changed |= addPortData(nodePorts, fieldInfo, finalPorts, fieldName, portData);
+            }
+        }
+
+        // TODO
+        // Remove only the ports that are no more in the list
+        if (!nodePorts.isEmpty()) {
+            var currentPortsCopy = new ArrayList<>(nodePorts);
+            for (var currentPort : currentPortsCopy) {
+                // If the current port does not appear in the list of final ports, we remove it
+                if (finalPorts.stream().noneMatch(id -> Objects.equals(id, currentPort.portData.identifier))) {
+                    removePort(fieldInfo.input, currentPort);
+                    changed = true;
+                }
+            }
+        }
+
+        // refresh edges ports
+        for (var edge : edges) {
+            if (fieldInfo.input) {
+                var previousPort = edge.inputPort;
+                edge.inputPort = getPort(fieldName, edge.inputPortIdentifier);
+                if (previousPort != edge.inputPort) {
+                    if (previousPort != null) {
+                        previousPort.remove(edge);
+                    }
+                    if (edge.inputPort != null) {
+                        edge.inputPort.add(edge);
+                    } else {
+                        // If the port is null, we disconnect the edge
+                        graph.disconnect(edge.GUID);
+                    }
+                }
+            } else {
+                var previousPort = edge.outputPort;
+                edge.outputPort = getPort(fieldName, edge.outputPortIdentifier);
+                if (previousPort != edge.outputPort) {
+                    if (previousPort != null) {
+                        previousPort.remove(edge);
+                    }
+                    if (edge.outputPort != null) {
+                        edge.outputPort.add(edge);
+                    } else {
+                        // If the port is null, we disconnect the edge
+                        graph.disconnect(edge.GUID);
+                    }
+                }
+            }
+        }
+
+        // Make sure the port order is correct:
+        portCollection.sort((p1, p2) -> {
+            int p1Index = -1;
+            int p2Index = -1;
+            for (int i = 0; i < finalPorts.size(); i++) {
+                if (Objects.equals(p1.portData.identifier, finalPorts.get(i))) {
+                    p1Index = i;
+                }
+                if (Objects.equals(p2.portData.identifier, finalPorts.get(i))) {
+                    p2Index = i;
+                }
+                if (p1Index != -1 && p2Index != -1)
+                    break;
+            }
+
+            if (p1Index == -1 || p2Index == -1)
+                return 0;
+            return Integer.compare(p1Index, p2Index);
+        });
+
+        if (sendPortUpdatedEvent && onPortsUpdated != null) {
+            onPortsUpdated.accept(fieldName);
+        }
+        return changed;
+    }
+
+    private boolean addPortData(List<NodePort> nodePorts, NodeFieldInformation fieldInfo, List<String> finalPorts, String fieldName, PortData portData) {
+        var changed = false;
+        var port = nodePorts.stream().filter(n -> Objects.equals(n.portData.identifier, portData.identifier)).findFirst().orElse(null);
+        // Guard using the port identifier so we don't duplicate identifiers
+        if (port == null) {
+            addPort(fieldInfo.input, fieldName, portData);
+            changed = true;
+        } else {
+            // in case the port type have changed for an incompatible type, we disconnect all the edges attached to this port
+            if (!BaseGraph.areTypesConnectable(port.portData.displayType, portData.displayType)) {
+                var copiedEdges = new ArrayList<>(port.getEdges());
+                for(var edge : copiedEdges) graph.disconnect(edge.GUID);
+            }
+
+            // patch the port data
+            if (port.portData != portData) {
+                port.portData.CopyFrom(portData);
+                changed = true;
+            }
+        }
+
+        finalPorts.add(portData.identifier);
+        return changed;
+    }
 
     protected boolean hasCustomBehavior(NodeFieldInformation info) {
         return info.behavior != null;
@@ -335,7 +492,47 @@ public abstract class BaseNode implements IPersistedSerializable, ILDLRegister, 
     /**
      * Update the ports related to one java property field and all connected nodes in the graph
      */
-    public boolean updatePortsForField(String fieldName, boolean sendPortUpdatedEvent) { return false; /* ported stub */ }
+    public boolean updatePortsForField(String fieldName, boolean sendPortUpdatedEvent) {
+        var changed = false;
+
+        fieldsToUpdate.clear();
+        updatedFields.clear();
+
+        fieldsToUpdate.push(new PortUpdate(List.of(fieldName), this));
+
+        // Iterate through all the ports that needs to be updated, following graph connection when the
+        // port is updated. This is required ton have type propagation multiple nodes that changes port types
+        // are connected to each other (i.e. the relay node)
+        while (!fieldsToUpdate.isEmpty()) {
+            var portUpdate = fieldsToUpdate.pop();
+            var fields = portUpdate.fieldNames;
+            var node = portUpdate.node;
+
+            // Avoid updating twice a port
+            if (updatedFields.contains(portUpdate)) continue;
+
+            updatedFields.add(new PortUpdate(new ArrayList<>(fields), node));
+
+            for (var field : fields) {
+                if (node.updatePortsForFieldLocal(field, sendPortUpdatedEvent)) {
+                    for (var port : node.isFieldInput(field) ? (NodePortContainer) node.inputPorts : node.outputPorts) {
+                        if (!Objects.equals(port.fieldName, field))
+                            continue;
+
+                        for (var edge : port.getEdges()) {
+                            var edgeNode = (node.isFieldInput(field)) ? edge.outputNode : edge.inputNode;
+                            var fieldsWithBehavior = edgeNode.nodeFields.values().stream()
+                                    .filter(this::hasCustomBehavior).map(f -> f.fieldName).toList();
+                            fieldsToUpdate.push(new PortUpdate(fieldsWithBehavior, edgeNode));
+                        }
+                    }
+                    changed = true;
+                }
+            }
+        }
+
+        return changed;
+    }
 
     /**
      * Add a port
@@ -384,12 +581,16 @@ public abstract class BaseNode implements IPersistedSerializable, ILDLRegister, 
     /**
      * Get all the nodes connected to the input ports of this node
      */
-    public List<BaseNode> getInputNodes() { return null; /* ported stub */ }
+    public List<BaseNode> getInputNodes() {
+        return inputPorts.stream().flatMap(p -> p.getEdges().stream()).map(e -> e.outputNode).toList();
+    }
 
     /**
      * Get all the nodes connected to the output ports of this node
      */
-    public List<BaseNode> GetOutputNodes() { return null; /* ported stub */ }
+    public List<BaseNode> GetOutputNodes() {
+        return outputPorts.stream().flatMap(p -> p.getEdges().stream()).map(e -> e.inputNode).toList();
+    }
 
     /**
      * Return a node matching the condition in the dependencies of the node
@@ -445,7 +646,13 @@ public abstract class BaseNode implements IPersistedSerializable, ILDLRegister, 
     /**
      * Return all the connected edges of the node
      */
-    public List<PortEdge> getAllEdges() { return null; /* ported stub */ }
+    public List<PortEdge> getAllEdges() {
+        var edges = new ArrayList<PortEdge>();
+        for (var port : getAllPorts()) {
+            edges.addAll(port.getEdges());
+        }
+        return edges;
+    }
 
     /**
      * Is the field an input field

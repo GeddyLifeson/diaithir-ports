@@ -102,9 +102,47 @@ public class SearchComponentWidget<T> extends WidgetGroup {
     }
 
     @Override
-    public void readUpdateInfo(int id, RegistryFriendlyByteBuf buffer) {  /* ported stub */ }
+    public void readUpdateInfo(int id, RegistryFriendlyByteBuf buffer) {
+        if (id == -1) {
+            popUp.clearAllWidgets();
+            popUp.setSize(new Size(getSize().width, 0));
+            if (showUp) {
+                popUp.setSelfPosition(new Position(0, 0));
+            } else {
+                popUp.setSelfPosition(new Position(0, getSize().height));
+            }
+        } else if (id == -2) {
+            T r = search.deserialize(buffer);
+            int size = popUp.getAllWidgetSize();
+            int width = getSize().width;
+            popUp.setSize(new Size(getSize().width, Math.min(size + 1, capacity) * 15));
+            if (showUp) {
+                popUp.setSelfPosition(new Position(0, -Math.min(size + 1, capacity) * 15));
+            } else {
+                popUp.setSelfPosition(new Position(0, getSize().height));
+            }
+            popUp.addWidget(new ButtonWidget(0, size * 15, width,
+                    15, new TextTexture(search.resultDisplay(r)).setWidth(width).setType(TextTexture.TextType.ROLL),
+                    cd -> {
+                        search.selectResult(r);
+                        setShow(false);
+                        textFieldWidget.setCurrentString(search.resultDisplay(r));
+                    }).setHoverBorderTexture(-1, -1));
+        } else {
+            super.readUpdateInfo(id, buffer);
+        }
+    }
 
-    public SearchComponentWidget<T> setCapacity(int capacity) { return null; /* ported stub */ }
+    public SearchComponentWidget<T> setCapacity(int capacity) {
+        this.capacity = capacity;
+        popUp.setSize(new Size(getSize().width, Math.min(popUp.getAllWidgetSize(), capacity) * 15));
+        if (showUp) {
+            popUp.setSelfPosition(new Position(0, -Math.min(popUp.getAllWidgetSize(), capacity) * 15));
+        } else {
+            popUp.setSelfPosition(new Position(0, getSize().height));
+        }
+        return this;
+    }
 
     public SearchComponentWidget<T> setCurrentString(String currentString) {
         textFieldWidget.setCurrentString(currentString);
@@ -115,15 +153,36 @@ public class SearchComponentWidget<T> extends WidgetGroup {
         return textFieldWidget.getCurrentString();
     }
 
-    public void setShow(boolean isShow) {  /* ported stub */ }
+    public void setShow(boolean isShow) {
+        this.isShow = isShow;
+        popUp.setVisible(isShow);
+        popUp.setActive(isShow);
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        boolean lastVisible = popUp.isVisible();
+        popUp.setVisible(false);
+        super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+        popUp.setVisible(lastVisible);
+
+        if(isShow) {
+            graphics.pose().translate(0, 0, 200);
+            popUp.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+            popUp.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+            graphics.pose().translate(0, 0, -200);
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        boolean lastVisible = popUp.isVisible();
+        popUp.setVisible(false);
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        popUp.setVisible(lastVisible);
+    }
 
     public interface IWidgetSearch<T> extends ISearch<T> {
         String resultDisplay(T value);

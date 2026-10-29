@@ -281,11 +281,70 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        if (isClientSideWidget && fluidTank != null) {
+            FluidStack fluidStack = fluidTank.getFluidInTank(tank);
+            int capacity = fluidTank.getTankCapacity(tank);
+            if (capacity != lastTankCapacity) {
+                this.lastTankCapacity = capacity;
+            }
+            if (!FluidStack.isSameFluidSameComponents(fluidStack, lastFluidInTank)) {
+                this.lastFluidInTank = fluidStack.copy();
+            } else if (fluidStack.getAmount() != lastFluidInTank.getAmount()) {
+                this.lastFluidInTank.setAmount(fluidStack.getAmount());
+            }
+        }
+        Position pos = getPosition();
+        Size size = getSize();
+        var renderedFluid = lastFluidInTank;
+        if (renderedFluid != null) {
+            if (!renderedFluid.isEmpty()) {
+                double progress = renderedFluid.getAmount() * 1.0 /
+                        Math.max(Math.max(renderedFluid.getAmount(), lastTankCapacity), 1);
+                float drawnU = (float) fillDirection.getDrawnU(progress);
+                float drawnV = (float) fillDirection.getDrawnV(progress);
+                float drawnWidth = (float) fillDirection.getDrawnWidth(progress);
+                float drawnHeight = (float) fillDirection.getDrawnHeight(progress);
+                int width = size.width - 2;
+                int height = size.height - 2;
+                int x = pos.x + 1;
+                int y = pos.y + 1;
+                DrawerHelper.drawFluidForGui(graphics, renderedFluid,
+                        (int) (x + drawnU * width), (int) (y + drawnV * height),
+                        ((int) (width * drawnWidth)), ((int) (height * drawnHeight)));
+            }
+
+            if (showAmount && showAmountOverlay && !renderedFluid.isEmpty()) {
+                graphics.pose().pushPose();
+                graphics.pose().scale(0.5F, 0.5F, 1);
+                String s = TextFormattingUtil.formatLongToCompactStringBuckets(renderedFluid.getAmount(), 3) + "B";
+                Font fontRenderer = Minecraft.getInstance().font;
+                graphics.drawString(fontRenderer, s,
+                        (int) ((pos.x + (size.width / 3f)) * 2 - fontRenderer.width(s) + 21),
+                        (int) ((pos.y + (size.height / 3f) + 6) * 2), 0xFFFFFF, true);
+                graphics.pose().popPose();
+            }
+
+        }
+        drawOverlay(graphics, mouseX, mouseY, partialTicks);
+        if (drawHoverOverlay && isMouseOverElement(mouseX, mouseY) && getHoverElement(mouseX, mouseY) == this) {
+            DrawerHelper.drawSolidRect(graphics, getPosition().x + 1, getPosition().y + 1, getSize().width - 2,
+                    getSize().height - 2, 0x80FFFFFF);
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        if (drawHoverTips && isMouseOverElement(mouseX, mouseY) && getHoverElement(mouseX, mouseY) == this) {
+            if (gui != null) {
+                gui.getModularUIGui().setHoverTooltip(getFullTooltipTexts(), ItemStack.EMPTY, null, null);
+            }
+        } else {
+            super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
+        }
+    }
 
     @Override
     public void detectAndSendChanges() {

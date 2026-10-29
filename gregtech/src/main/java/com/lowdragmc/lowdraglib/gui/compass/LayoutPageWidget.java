@@ -26,6 +26,11 @@ public class LayoutPageWidget extends DraggableScrollableWidgetGroup {
         return addStreamWidget(new Widget(0, 0, pageWidth, offset));
     }
 
-    public LayoutPageWidget addStreamWidget(Widget widget) { return null; /* ported stub */ }
+    public LayoutPageWidget addStreamWidget(Widget widget) {
+        widget.setSelfPosition(new Position((pageWidth - widget.getSize().width) / 2, offset));
+        addWidget(widget);
+        offset += widget.getSize().height;
+        return this;
+    }
 
 }

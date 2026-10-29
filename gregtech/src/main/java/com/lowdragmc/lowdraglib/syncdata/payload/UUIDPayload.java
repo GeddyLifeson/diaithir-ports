@@ -21,8 +21,14 @@ public class UUIDPayload extends ObjectTypedPayload<UUID> {
     }
 
     @Override
-    public @Nullable Tag serializeNBT(HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public @Nullable Tag serializeNBT(HolderLookup.Provider provider) { return net.minecraft.nbt.StringTag.valueOf(payload.toString()); }
 
     @Override
-    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        if (tag instanceof net.minecraft.nbt.IntArrayTag ia && ia.size() == 4) {
+            payload = net.minecraft.core.UUIDUtil.uuidFromIntArray(ia.getAsIntArray());
+        } else {
+            payload = java.util.UUID.fromString(tag.asString().orElse("00000000-0000-0000-0000-000000000000"));
+        }
+    }
 }

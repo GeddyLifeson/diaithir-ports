@@ -105,6 +105,32 @@ public class SceneComponent extends AbstractComponent {
     int maxY = Integer.MIN_VALUE;
     int maxZ = Integer.MIN_VALUE;
 
-    private void setPage(Map<BlockPos, BlockInfo> blocks, SceneWidget sceneWidget) {  /* ported stub */ }
+    private void setPage(Map<BlockPos, BlockInfo> blocks, SceneWidget sceneWidget) {
+        minX = Integer.MAX_VALUE;
+        minY = Integer.MAX_VALUE;
+        minZ = Integer.MAX_VALUE;
+        maxX = Integer.MIN_VALUE;
+        maxY = Integer.MIN_VALUE;
+        maxZ = Integer.MIN_VALUE;
+        for (BlockPos vPos : blocks.keySet()) {
+            minX = Math.min(minX, vPos.getX());
+            minY = Math.min(minY, vPos.getY());
+            minZ = Math.min(minZ, vPos.getZ());
+            maxX = Math.max(maxX, vPos.getX());
+            maxY = Math.max(maxY, vPos.getY());
+            maxY = Math.max(maxY, vPos.getY());
+            maxZ = Math.max(maxZ, vPos.getZ());
+        }
+        var center = new Vector3f((minX + maxX) / 2f + 0.5F, (minY + maxY) / 2f + 0.5F, (minZ + maxZ) / 2f + 0.5F);
+
+        if (zoom > 0) {
+            sceneWidget.setZoom(zoom);
+        } else {
+            sceneWidget.setZoom((float) (15 * Math.sqrt(Math.max(Math.max(Math.max(maxX - minX + 1, maxY - minY + 1), maxZ - minZ + 1), 1))));
+        }
+
+        sceneWidget.setCenter(center);
+        sceneWidget.setCameraYawAndPitch(yaw, sceneWidget.getRotationPitch());
+    }
 
 }

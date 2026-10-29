@@ -134,6 +134,12 @@ public class TextTextureWidget extends Widget implements IConfigurableWidget {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
+        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
+        var position = getPosition();
+        var size = getSize();
+        textTexture.draw(graphics, mouseX, mouseY, position.x, position.y, size.width, size.height);
+        drawOverlay(graphics, mouseX, mouseY, partialTicks);
+    }
 }
 

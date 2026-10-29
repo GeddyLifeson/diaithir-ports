@@ -3,7 +3,6 @@ package com.lowdragmc.lowdraglib.gui.modular;
 import net.minecraft.world.inventory.ContainerInput;
 
 import com.lowdragmc.lowdraglib.Platform;
-import com.lowdragmc.lowdraglib.core.mixins.accessor.AbstractContainerMenuAccessor;
 import com.lowdragmc.lowdraglib.gui.util.PerTickIntCounter;
 import com.lowdragmc.lowdraglib.gui.widget.SlotWidget;
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
@@ -48,6 +47,10 @@ public class ModularUIContainer extends AbstractContainerMenu implements WidgetU
 
     //WARNING! WIDGET CHANGES SHOULD BE *STRICTLY* SYNCHRONIZED BETWEEN SERVER AND CLIENT,
     //OTHERWISE ID MISMATCH CAN HAPPEN BETWEEN ASSIGNED SLOTS!
+    private net.minecraft.world.inventory.RemoteSlot newRemoteSlot() {
+        return this.synchronizer != null ? this.synchronizer.createSlot() : net.minecraft.world.inventory.RemoteSlot.PLACEHOLDER;
+    }
+
     @Nonnull
     public Slot addSlot(@Nonnull Slot slotHandle) {
         var emptySlotIndex = slots.stream()
@@ -56,13 +59,13 @@ public class ModularUIContainer extends AbstractContainerMenu implements WidgetU
         if (emptySlotIndex.isPresent()) {
             slotHandle.index = emptySlotIndex.getAsInt();
             this.slots.set(slotHandle.index, slotHandle);
-            ((AbstractContainerMenuAccessor)this).getLastSlots().set(slotHandle.index, ItemStack.EMPTY);
-            ((AbstractContainerMenuAccessor)this).getRemoteSlots().set(slotHandle.index, ItemStack.EMPTY);
+            this.lastSlots.set(slotHandle.index, ItemStack.EMPTY);
+            this.remoteSlots.set(slotHandle.index, newRemoteSlot());
         } else {
             slotHandle.index = this.slots.size();
             this.slots.add(slotHandle);
-            ((AbstractContainerMenuAccessor)this).getLastSlots().add(ItemStack.EMPTY);
-            ((AbstractContainerMenuAccessor)this).getRemoteSlots().add(ItemStack.EMPTY);
+            this.lastSlots.add(ItemStack.EMPTY);
+            this.remoteSlots.add(newRemoteSlot());
         }
         return slotHandle;
     }
@@ -74,8 +77,8 @@ public class ModularUIContainer extends AbstractContainerMenu implements WidgetU
         EmptySlotPlaceholder emptySlotPlaceholder = new EmptySlotPlaceholder();
         emptySlotPlaceholder.index = slotHandle.index;
         this.slots.set(slotHandle.index, emptySlotPlaceholder);
-        ((AbstractContainerMenuAccessor)this).getLastSlots().set(slotHandle.index, ItemStack.EMPTY);
-        ((AbstractContainerMenuAccessor)this).getRemoteSlots().set(slotHandle.index, ItemStack.EMPTY);
+        this.lastSlots.set(slotHandle.index, ItemStack.EMPTY);
+        this.remoteSlots.set(slotHandle.index, newRemoteSlot());
     }
 
     @Override

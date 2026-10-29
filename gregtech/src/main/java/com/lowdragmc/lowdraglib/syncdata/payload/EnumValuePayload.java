@@ -47,5 +47,11 @@ public class EnumValuePayload extends ObjectTypedPayload<EnumValuePayload.Payloa
     }
 
     @Override
-    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
+        if (tag instanceof net.minecraft.nbt.IntTag it) {
+            payload.ordinal = it.intValue();
+            return;
+        }
+        payload.name = tag.asString().orElse(null);
+    }
 }

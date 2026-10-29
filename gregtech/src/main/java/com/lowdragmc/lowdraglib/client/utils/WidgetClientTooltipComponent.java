@@ -24,7 +24,9 @@ public record WidgetClientTooltipComponent(WidgetTooltipComponent tooltipCompone
     public int getHeight(Font font) { return 0; }
 
     @Override
-    public int getWidth(Font font) { return (int)0; /* ported stub */ }
+    public int getWidth(Font font) {
+        return tooltipComponent.widget().getSize().width;
+    }
 
     
     public void renderImage(Font textRenderer, int x, int y, GuiGraphics graphics) {  /* ported stub */ }

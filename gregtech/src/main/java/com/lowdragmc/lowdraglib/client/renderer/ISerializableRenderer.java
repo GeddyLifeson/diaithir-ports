@@ -35,7 +35,25 @@ public interface ISerializableRenderer extends IConfigurable, IRenderer, IAutoPe
 
     }
 
-    default void createPreview(ConfiguratorGroup father) {  /* ported stub */ }
+    default void createPreview(ConfiguratorGroup father) {
+        var level = new TrackedDummyWorld();
+        level.addBlock(BlockPos.ZERO, BlockInfo.fromBlock(RendererBlock.BLOCK));
+        Optional.ofNullable(level.getBlockEntity(BlockPos.ZERO)).ifPresent(blockEntity -> {
+            if (blockEntity instanceof RendererBlockEntity holder) {
+                holder.setRenderer(this);
+            }
+        });
+
+        var sceneWidget = new SceneWidget(0, 0, 100, 100, level);
+        sceneWidget.setRenderFacing(false);
+        sceneWidget.setRenderSelect(false);
+        sceneWidget.createScene(level);
+        sceneWidget.getRenderer().setOnLookingAt(null); // better performance
+        sceneWidget.setRenderedCore(Collections.singleton(BlockPos.ZERO), null);
+        sceneWidget.setBackground(new ColorBorderTexture(2, ColorPattern.T_WHITE.color));
+
+        father.addConfigurators(new WrapperConfigurator("ldlib.gui.editor.group.preview", sceneWidget));
+    }
 
     @Override
     default void buildConfigurator(ConfiguratorGroup father) {

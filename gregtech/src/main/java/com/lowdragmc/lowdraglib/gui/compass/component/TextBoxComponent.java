@@ -41,6 +41,20 @@ public class TextBoxComponent extends AbstractComponent {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    protected LayoutPageWidget addWidgets(LayoutPageWidget currentPage) { return null; /* ported stub */ }
+    protected LayoutPageWidget addWidgets(LayoutPageWidget currentPage) {
+        var panel = new ComponentPanelWidget(0, 0, components) {
+            @Override
+            public void updateComponentTextSize() {
+                var fontRenderer = Minecraft.getInstance().font;
+                int totalHeight = cacheLines.size() * (fontRenderer.lineHeight + space);
+                if (totalHeight > 0) {
+                    totalHeight -= space;
+                    totalHeight += 2;
+                }
+                setSize(new Size(maxWidthLimit, totalHeight));
+            }
+        }.setSpace(space).setCenter(isCenter).setMaxWidthLimit(width(currentPage)).clickHandler(CompassManager::onComponentClick);
+        return currentPage.addStreamWidget(wrapper(panel));
+    }
 
 }

@@ -19,10 +19,10 @@ public class ItemStackPayload extends ObjectTypedPayload<ItemStack> {
     }
 
     @Override
-    public Tag serializeNBT(HolderLookup.Provider provider) { return null; /* ported stub */ }
+    public Tag serializeNBT(HolderLookup.Provider provider) { return com.gregtechceu.gtceu.compat.NbtCompat.saveItem(provider, payload); }
 
     @Override
-    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
+    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) { payload = com.gregtechceu.gtceu.compat.NbtCompat.parseItem(provider, tag); }
 
     @Override
     public Object copyForManaged(Object value) {

@@ -148,7 +148,11 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
         }
     }
 
-    private void zoom(int value) {  /* ported stub */ }
+    private void zoom(int value) {
+        if (!useScene) return;
+        var zoom = (float) Mth.clamp(sceneWidget.getZoom() + value, 0.1, 999);
+        sceneWidget.setZoom(zoom);
+    }
 
     private void renderBeforeWorld(SceneWidget sceneWidget) {  /* ported stub */ }
 
@@ -161,9 +165,24 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
         isPause = isPressed;
     }
 
-    private void rotation(ClickData clickData) {  /* ported stub */ }
+    private void rotation(ClickData clickData) {
+        if (!useScene) return;
+        float current = sceneWidget.getRotationPitch();
+        sceneWidget.setCameraYawAndPitchAnima(sceneWidget.getRotationYaw(), current + 90, 20);
+    }
 
-    private void resetScene() {  /* ported stub */ }
+    private void resetScene() {
+        world.clear();
+        sceneWidget.setCameraYawAndPitch(sceneWidget.getRotationYaw(), -135);
+        sceneWidget.getCore().clear();
+        sceneWidget.getCore().add(BlockPos.ZERO);
+        headerGroup.clearAllWidgets();
+        addedBlocks.clear();
+        removedBlocks.clear();
+        highlightBlocks.clear();
+        tooltipBlocks.clear();
+        currentFrame = -1;
+    }
 
     private void jumpFrame(AnimationFrame frame) {
         resetScene();
@@ -185,9 +204,57 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
     }
 
     @Override
-    public void updateScreen() {  /* ported stub */ }
+    public void updateScreen() {
+        super.updateScreen();
+        if (frames.isEmpty()) return;
+        // update frames
+        if (!isPause) {
+            addedBlocks.forEach((p, v) -> v.setB(v.getB() - 1));
+            removedBlocks.forEach((p, v) -> v.setB(v.getB() - 1));
+            highlightBlocks.replaceAll((p, v) -> v - 1);
+            tooltipBlocks.forEach((p, v) -> v.setRight(v.getRight() - 1));
 
-    protected void nextFrame() {  /* ported stub */ }
+            addedBlocks.entrySet().removeIf(e -> e.getValue().getB() <= 0);
+            highlightBlocks.entrySet().removeIf(e -> e.getValue() <= 0);
+            tooltipBlocks.entrySet().removeIf(e -> e.getValue().getRight() <= 0);
+            final var iterator = removedBlocks.entrySet().iterator();
+            while (iterator.hasNext()) {
+                final var entry = iterator.next();
+                if (entry.getValue().getB() <= 0) {
+                    world.removeBlock(entry.getKey());
+                    sceneWidget.getCore().remove(entry.getKey());
+                    iterator.remove();
+                }
+            }
+            if (currentFrame < 0) {
+                nextFrame();
+            }
+            if (currentFrame >= 0 && currentFrame < frames.size()) {
+                if (frames.get(currentFrame).onFrameTick(this, frameTick++)) {
+                    nextFrame();
+                }
+            }
+
+            if (tickScene && useScene) {
+                world.tickWorld();
+            }
+        }
+    }
+
+    protected void nextFrame() {
+        if (currentFrame < 0) {
+            currentFrame = 0;
+        } else {
+            currentFrame++;
+            if (currentFrame >= frames.size()) {
+                currentFrame = -1;
+                frameTick = 0;
+                isPause = true;
+                return;
+            }
+        }
+        frameTick = -frames.get(currentFrame).delay();
+    }
 
     @Override
     public void applyEntity(Level world, Entity entity, PoseStack poseStack, float partialTicks) {
@@ -236,9 +303,28 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
         }
     }
 
-    public void addBlock(BlockPos pos, BlockInfo blockInfo, @Nullable BlockAnima anima) {  /* ported stub */ }
+    public void addBlock(BlockPos pos, BlockInfo blockInfo, @Nullable BlockAnima anima) {
+        if (!useScene) return;
+        if (blockInfo.getBlockState().getBlock() == Blocks.AIR) {
+            removeBlock(pos, null);
+            return;
+        }
+        world.addBlock(pos, blockInfo);
+        sceneWidget.getCore().add(pos);
+        if (anima != null) {
+            addedBlocks.put(pos, new Tuple<>(anima, anima.duration()));
+        }
+    }
 
-    public void removeBlock(BlockPos pos, @Nullable BlockAnima anima) {  /* ported stub */ }
+    public void removeBlock(BlockPos pos, @Nullable BlockAnima anima) {
+        if (!useScene) return;
+        if (anima != null) {
+            removedBlocks.put(pos, new Tuple<>(anima, anima.duration()));
+        } else {
+            world.removeBlock(pos);
+            sceneWidget.getCore().remove(pos);
+        }
+    }
 
     public void highlightBlock(BlockPosFace key, int duration) {
         if (!useScene) return;
@@ -247,14 +333,45 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
 
     public void addEntity(EntityInfo entityInfo, @Nullable Vector3f pos, boolean update) {  /* ported stub */ }
 
-    public void removeEntity(EntityInfo entityInfo, boolean force) {  /* ported stub */ }
+    public void removeEntity(EntityInfo entityInfo, boolean force) {
+        if (force) {
+            world.entities.remove(entityInfo.getId());
+        } else {
+            Optional.ofNullable(world.entities.get(entityInfo.getId())).ifPresent(Entity::discard);
+        }
+    }
 
 
     public void addTooltip(Vector3f pos, Tuple<XmlUtils.SizedIngredient, List<Component>> tuple, Vec2 middle, Integer time) {
         tooltipBlocks.put(pos, MutableTriple.of(tuple, middle, time));
     }
 
-    public void rotate(float rotation, boolean anima) {  /* ported stub */ }
+    public void rotate(float rotation, boolean anima) {
+        if (!useScene) return;
+        var current = sceneWidget.getRotationPitch();
+        current += (rotation - 135 - current) % 360;
+        if (anima) {
+            sceneWidget.setCameraYawAndPitchAnima(sceneWidget.getRotationYaw(), current, 20);
+        } else {
+            sceneWidget.setCameraYawAndPitch(sceneWidget.getRotationYaw(), current);
+        }
+    }
 
-    public void addInformation(Widget widget, boolean anima) {  /* ported stub */ }
+    public void addInformation(Widget widget, boolean anima) {
+        if (anima) {
+            for (Widget child : headerGroup.widgets) {
+                headerGroup.removeWidgetAnima(child, new Transform().duration(500).offset(-child.getSelfPosition().x - child.getSize().width, 0));
+            }
+        } else {
+            headerGroup.clearAllWidgets();
+        }
+
+        var size = headerGroup.getSize();
+        widget.setSelfPosition(new Position((size.width - widget.getSize().width) / 2, (size.height - widget.getSize().height) / 2));
+        if (anima) {
+            headerGroup.addWidgetAnima(widget, new Transform().ease(Eases.EaseQuadOut).duration(500).offset(size.width - widget.getSelfPosition().x, 0));
+        } else {
+            headerGroup.addWidget(widget);
+        }
+    }
 }

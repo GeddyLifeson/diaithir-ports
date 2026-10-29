@@ -43,9 +43,52 @@ public class FreeGraphView extends WidgetGroup {
         super(x, y, width, height);
     }
 
-    public void resetFitScaleByWidgets() {  /* ported stub */ }
+    public void resetFitScaleByWidgets() {
+        int minX, minY, maxX, maxY;
+        if (this.widgets.isEmpty()) {
+            this.xOffset = 0;
+            this.yOffset = 0;
+            this.scale = 1;
+            return;
+        }
+        minX = minY = Integer.MAX_VALUE;
+        maxX = maxY = Integer.MIN_VALUE;
+        for (var widget : this.widgets) {
+            var position = widget.getPosition();
+            minX = Math.min(minX, position.x - 120);
+            minY = Math.min(minY, position.y - 20);
+            maxX = Math.max(maxX, position.x + widget.getSize().width + 20);
+            maxY = Math.max(maxY, position.y + widget.getSize().height + 20);
+        }
+        this.xOffset = minX;
+        this.yOffset = minY;
+        var scaleWidth = (float) getSize().width / (maxX - minX);
+        var scaleHeight = (float) getSize().height / (maxY - minY);
+        this.scale = Math.min(scaleWidth, scaleHeight);
+        if (scale < 0.5f) {
+            this.scale = 0.5f;
+        }
+        this.xOffset -= (getSize().width / scale - (maxX - minX)) / 2;
+        this.yOffset -= (getSize().height / scale - (maxY - minY)) / 2;
+    }
 
-    public void resetFitScaleWithArea(Rect area) {  /* ported stub */ }
+    public void resetFitScaleWithArea(Rect area) {
+        var minX = area.left;
+        var minY = area.up;
+        var maxX = area.right;
+        var maxY = area.down;
+        // set the view offset and scale by range of visible nodes
+        this.xOffset = minX;
+        this.yOffset = minY;
+        var scaleWidth = (float) getSize().width / (maxX - minX);
+        var scaleHeight = (float) getSize().height / (maxY - minY);
+        this.scale = Math.min(scaleWidth, scaleHeight);
+        if (scale < 0.5f) {
+            this.scale = 0.5f;
+        }
+        this.xOffset -= (getSize().width / scale - (maxX - minX)) / 2;
+        this.yOffset -= (getSize().height / scale - (maxY - minY)) / 2;
+    }
 
     public Vector2d getViewPosition(double x, double y) {
         var realX = ((x - this.getPositionX()) / scale + xOffset);
