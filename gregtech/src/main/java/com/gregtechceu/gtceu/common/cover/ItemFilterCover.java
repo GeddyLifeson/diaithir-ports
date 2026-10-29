@@ -144,5 +144,11 @@ public class ItemFilterCover extends CoverBehavior implements IUICover {
     }
 
     @Override
-    public void pasteConfig(ServerPlayer player, CompoundTag tag) {  /* ported stub */ }
+    public void pasteConfig(ServerPlayer player, CompoundTag tag) {
+        setAllowFlow(ManualIOMode.values()[tag.getIntOr("manualIO", getAllowFlow().ordinal())]);
+        setFilterMode(FilterMode.values()[tag.getIntOr("filterMode", getFilterMode().ordinal())]);
+        itemFilter = ItemFilter.loadFilter(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(
+                coverHolder.getLevel().registryAccess(), tag.get("filter")));
+        super.pasteConfig(player, tag);
+    }
 }

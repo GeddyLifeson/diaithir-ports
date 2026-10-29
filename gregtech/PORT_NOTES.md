@@ -60,3 +60,9 @@ Methods whose bodies could not be ported quickly carry a `/* ported stub */` mar
   (`UIFactoryClient`, `FluidTints`) so `runServer` does not load client classes.
 - Still not done: block entity renderers, item decorations (ClientProxy), keybinds, overlays, particle providers,
   cover `pasteConfig`, cauldron interactions.
+
+## Status update (tool/cover selftest, pasteConfig)
+- `gtceu selftest` Part D drives the real use handlers server-side with a FakePlayer: wrench (rotates front only when sneaking), mallet (toggles workingEnabled), screwdriver, wire cutter on a cable (connection mask 0 -> 16), conveyor cover placement on a non-front face and screwdriver on the cover. All pass on the dedicated server.
+- Cover pasteConfig ported for Pump, Conveyor and ItemFilter covers. ComputerMonitorCover.update is still a stub.
+- Client-only code referenced from common classes was split into helpers (UIFactoryClient, FluidTints, WidgetClientHelper) so the dedicated server boots.
+- Still stubs: block entity renderers (client/renderer), item decorations, keybinds, GUI overlays, particle providers, cauldron interactions.

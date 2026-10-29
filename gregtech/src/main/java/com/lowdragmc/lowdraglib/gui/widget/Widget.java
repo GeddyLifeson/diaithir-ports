@@ -25,7 +25,6 @@ import net.minecraft.client.Minecraft;
 import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.Rect2i;
-import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
@@ -578,7 +577,7 @@ public class Widget {
 
     @OnlyIn(Dist.CLIENT)
     public static void playButtonClickSound() {
-        Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
+        WidgetClientHelper.playButtonClick();
     }
 
     @OnlyIn(Dist.CLIENT)

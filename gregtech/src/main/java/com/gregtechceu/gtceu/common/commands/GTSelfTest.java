@@ -127,7 +127,73 @@ public final class GTSelfTest {
                 LOG.add(chain[i][1] + ": FAIL machine=" + m + " item=" + chain[i][0] + " -> " + item);
             }
         }
+        startToolTests();
         return LOG;
+    }
+
+    private static net.minecraft.server.level.ServerPlayer fake() {
+        return net.neoforged.neoforge.common.util.FakePlayerFactory.get(level,
+                new com.mojang.authlib.GameProfile(java.util.UUID.fromString("00000000-0000-0000-0000-0000000000a1"), "[gt selftest]"));
+    }
+
+    private static net.minecraft.world.InteractionResult use(net.minecraft.server.level.ServerPlayer p, ItemStack stack,
+                                                            BlockPos pos, Direction face) {
+        p.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, stack);
+        var center = net.minecraft.world.phys.Vec3.atCenterOf(pos);
+        var eye = center.add(face.getStepX() * 2.5, face.getStepY() * 2.5, face.getStepZ() * 2.5);
+        p.setPos(eye.x, eye.y - p.getEyeHeight(), eye.z);
+        p.lookAt(net.minecraft.commands.arguments.EntityAnchorArgument.Anchor.EYES,
+                center.add(face.getStepX() * 0.5, face.getStepY() * 0.5, face.getStepZ() * 0.5));
+        var hit = new net.minecraft.world.phys.BlockHitResult(
+                net.minecraft.world.phys.Vec3.atCenterOf(pos).add(face.getStepX() * 0.5, face.getStepY() * 0.5, face.getStepZ() * 0.5),
+                face, pos, false);
+        return p.gameMode.useItemOn(p, level, stack, net.minecraft.world.InteractionHand.MAIN_HAND, hit);
+    }
+
+    private static ItemStack item(String id) {
+        var it = net.minecraft.core.registries.BuiltInRegistries.ITEM
+                .getOptional(net.minecraft.resources.Identifier.parse(id)).orElse(null);
+        return it == null ? ItemStack.EMPTY : new ItemStack(it);
+    }
+
+    /** Part D: tools and covers through the real right-click path (ServerPlayerGameMode.useItemOn). */
+    private static void startToolTests() {
+        try {
+            var p = fake();
+            BlockPos mac = base.offset(0, 0, 12);
+            BlockPos cab = base.offset(1, 0, 12);
+            place(mac, GTMachines.MACERATOR[GTValues.LV].getBlock().defaultBlockState());
+            var cableBlock = GTMaterialBlocks.CABLE_BLOCKS.row(com.gregtechceu.gtceu.api.data.tag.TagPrefix.cableGtSingle)
+                    .get(GTMaterials.Tin);
+            place(cab, cableBlock.get().defaultBlockState());
+            var m = machine(mac);
+            LOG.add("D: macerator facing before=" + (m == null ? null : m.getFrontFacing()));
+            var r1 = use(p, item("gtceu:iron_wrench"), mac, Direction.UP);
+            LOG.add("D wrench on macerator top: result=" + r1 + " facing after=" + machine(mac).getFrontFacing());
+            p.setShiftKeyDown(true);
+            var r1b = use(p, item("gtceu:iron_wrench"), mac, Direction.WEST);
+            p.setShiftKeyDown(false);
+            LOG.add("D sneak-wrench on macerator west: result=" + r1b + " facing after=" + machine(mac).getFrontFacing());
+            boolean en = machine(mac) instanceof WorkableTieredMachine w0 && w0.isWorkingEnabled();
+            var r2 = use(p, item("gtceu:wood_mallet"), mac, Direction.UP);
+            boolean en2 = machine(mac) instanceof WorkableTieredMachine w1 && w1.isWorkingEnabled();
+            LOG.add("D mallet: result=" + r2 + " workingEnabled " + en + " -> " + en2);
+            var r3 = use(p, item("gtceu:iron_screwdriver"), mac, Direction.UP);
+            LOG.add("D screwdriver: result=" + r3);
+            int c0 = level.getBlockEntity(cab) instanceof com.gregtechceu.gtceu.api.blockentity.PipeBlockEntity<?, ?> pe ? pe.getConnections() : -1;
+            var r4 = use(p, item("gtceu:iron_wire_cutter"), cab, Direction.WEST);
+            int c1 = level.getBlockEntity(cab) instanceof com.gregtechceu.gtceu.api.blockentity.PipeBlockEntity<?, ?> pe ? pe.getConnections() : -1;
+            LOG.add("D wire cutter on cable west (toward macerator): result=" + r4 + " connections " + c0 + " -> " + c1);
+            var cover = item("gtceu:lv_conveyor_module");
+            var r5 = use(p, cover, mac, Direction.SOUTH);
+            var cov = machine(mac).getCoverContainer().getCoverAtSide(Direction.SOUTH);
+            LOG.add("D conveyor cover on macerator south: result=" + r5 + " cover=" + (cov == null ? null : cov.getClass().getSimpleName()));
+            var r6 = use(p, item("gtceu:iron_screwdriver"), mac, Direction.SOUTH);
+            LOG.add("D screwdriver on cover side: result=" + r6);
+        } catch (Throwable t) {
+            LOG.add("D FAIL " + t);
+            GTCEu.LOGGER.error("selftest D", t);
+        }
     }
 
     public static synchronized void tick(ServerLevel l) {
