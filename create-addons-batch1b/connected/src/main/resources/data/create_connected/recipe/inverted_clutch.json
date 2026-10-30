@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  "create:clutch",
+  "minecraft:redstone_torch"
+ ],
+ "result": {
+  "id": "create_connected:inverted_clutch",
+  "count": 1
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "variants": {
+  "axis=x,heat_level=none,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit",
+   "y": 90
+  },
+  "axis=x,heat_level=none,lit=false": {
+   "model": "createdieselgenerators:block/burner",
+   "y": 90
+  },
+  "axis=x,heat_level=smouldering,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit",
+   "y": 90
+  },
+  "axis=x,heat_level=smouldering,lit=false": {
+   "model": "createdieselgenerators:block/burner",
+   "y": 90
+  },
+  "axis=x,heat_level=fading,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit",
+   "y": 90
+  },
+  "axis=x,heat_level=fading,lit=false": {
+   "model": "createdieselgenerators:block/burner",
+   "y": 90
+  },
+  "axis=x,heat_level=kindled,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit",
+   "y": 90
+  },
+  "axis=x,heat_level=kindled,lit=false": {
+   "model": "createdieselgenerators:block/burner",
+   "y": 90
+  },
+  "axis=x,heat_level=seething,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit",
+   "y": 90
+  },
+  "axis=x,heat_level=seething,lit=false": {
+   "model": "createdieselgenerators:block/burner",
+   "y": 90
+  },
+  "axis=z,heat_level=none,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit"
+  },
+  "axis=z,heat_level=none,lit=false": {
+   "model": "createdieselgenerators:block/burner"
+  },
+  "axis=z,heat_level=smouldering,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit"
+  },
+  "axis=z,heat_level=smouldering,lit=false": {
+   "model": "createdieselgenerators:block/burner"
+  },
+  "axis=z,heat_level=fading,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit"
+  },
+  "axis=z,heat_level=fading,lit=false": {
+   "model": "createdieselgenerators:block/burner"
+  },
+  "axis=z,heat_level=kindled,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit"
+  },
+  "axis=z,heat_level=kindled,lit=false": {
+   "model": "createdieselgenerators:block/burner"
+  },
+  "axis=z,heat_level=seething,lit=true": {
+   "model": "createdieselgenerators:block/burner_lit"
+  },
+  "axis=z,heat_level=seething,lit=false": {
+   "model": "createdieselgenerators:block/burner"
+  }
+ }
+}

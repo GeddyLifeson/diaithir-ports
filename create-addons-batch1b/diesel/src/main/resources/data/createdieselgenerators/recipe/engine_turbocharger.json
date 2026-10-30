@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BPB",
+  "ISI",
+  "BPB"
+ ],
+ "key": {
+  "B": "create:brass_ingot",
+  "P": "create:propeller",
+  "I": "minecraft:iron_ingot",
+  "S": "create:shaft"
+ },
+ "result": {
+  "id": "createdieselgenerators:engine_turbocharger",
+  "count": 1
+ }
+}

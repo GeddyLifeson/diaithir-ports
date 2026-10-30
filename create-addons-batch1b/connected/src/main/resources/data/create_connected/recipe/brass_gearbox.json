@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create:brass_casing",
+  "create:cogwheel",
+  "create:large_cogwheel"
+ ],
+ "result": {
+  "id": "create_connected:brass_gearbox",
+  "count": 1
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "ingredients": [
+  "minecraft:sugar",
+  "minecraft:sugar"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_tag",
+   "amount": 40500,
+   "fluid_tag": "#c:water"
+  }
+ ],
+ "fluid_results": [
+  {
+   "id": "createdieselgenerators:ethanol",
+   "amount": 20250
+  }
+ ]
+}
