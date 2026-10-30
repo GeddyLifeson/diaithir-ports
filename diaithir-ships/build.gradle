@@ -1,0 +1,57 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm' version '2.3.0'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-ships-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    runs { client { client(); gameDirectory = file('run-client'); programArguments.addAll('--username','Dev','--quickPlayMultiplayer','127.0.0.1:25565') ; jvmArguments.add('-Dmixin.debug.verify=true') }; server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dvs.selftest=true','-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
+    mods { valkyrienskies { sourceSet(sourceSets.main) } }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.valkyrienskies.org/' }
+    maven { url = 'https://jitpack.io' }
+    maven { url = 'https://thedarkcolour.github.io/KotlinForForge/' }
+}
+
+dependencies {
+    ['api', 'internal', 'util'].each { implementation "org.valkyrienskies.core:${it}:${vs_core_version}" }
+    runtimeOnly "org.valkyrienskies.core:impl:${vs_core_version}"
+}
+
+// Bundled runtime libs that Minecraft/NeoForge do not provide (jar-in-jar, ranged so Kotlin for Forge etc. can coexist).
+def jj = { String n, String range, String pref -> dependencies.jarJar(n) { version { strictly range; prefer pref } } }
+jj('org.jetbrains.kotlin:kotlin-stdlib', '[2.1.0,)', '2.3.0')
+jj('org.jetbrains.kotlin:kotlin-reflect', '[2.1.0,)', '2.1.0')
+jj('org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm', '[1.7.3,)', '1.7.3')
+['jackson-core','jackson-databind','jackson-annotations'].each { jj("com.fasterxml.jackson.core:${it}", '[2.14.0,)', '2.14.0') }
+['dataformat:jackson-dataformat-cbor','dataformat:jackson-dataformat-yaml','module:jackson-module-kotlin','module:jackson-module-parameter-names'].each { jj("com.fasterxml.jackson.${it}", '[2.14.0,)', '2.14.0') }
+jj('org.yaml:snakeyaml', '[1.33,)', '1.33')
+jj('com.github.Rubydesic:jackson-kotlin-dsl', '[1.2.0,)', '1.2.0')
+jj('com.networknt:json-schema-validator', '[1.0.71,)', '1.0.71')
+jj('com.ethlo.time:itu', '[1.7.0,)', '1.7.0')
+jj('org.joml:joml-primitives', '[1.10.0,)', '1.10.0')
+
+// vs-core (api/impl/internal/util, Apache-2.0) is shaded straight into the mod jar.
+configurations { vsCore }
+dependencies { vsCore('javax.inject:javax.inject:1'); ['api','internal','util','impl'].each { vsCore("org.valkyrienskies.core:${it}:${vs_core_version}") { transitive = false } } }
+tasks.named('jar') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from({ configurations.vsCore.collect { zipTree(it) } }) { exclude 'META-INF/MANIFEST.MF', 'META-INF/*.SF', 'META-INF/*.RSA', 'META-INF/*.DSA', 'META-INF/maven/**', 'META-INF/LICENSE*' }
+    from('NOTICE') ; from('LICENSE-vs-core-Apache-2.0') ; from('LICENSE') ; from('LICENSE-Eureka-Apache-2.0'); from('NOTICE-Eureka')
+}
+
+kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25 } }
+tasks.withType(JavaCompile).configureEach { options.release = 25 }
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('META-INF/neoforge.mods.toml') { expand 'version': project.version }
+}
