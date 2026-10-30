@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "diaithir_myth:item/iuluirbeind_spawn_egg"
+  }
+}
