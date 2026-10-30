@@ -25,6 +25,12 @@ import java.util.Map;
  */
 final class Spawner {
     static final int INTERVAL = 200, CAP = 6;
+    /** A try succeeds with total points out of POINTS: a normal weight is that many percent, a rare one a twentieth of that. */
+    static final int POINTS = 2000;
+
+    static int points(CreatureDef.Spawn spawn) {
+        return spawn.rare() ? spawn.weight() : spawn.weight() * 20;
+    }
 
     private Spawner() {}
 
@@ -43,12 +49,12 @@ final class Spawner {
             if (!level.getFluidState(pos.below()).isEmpty()) continue;
             List<Map.Entry<Identifier, CreatureDef>> fits = candidates(creatures, level.getBiome(pos), level.getMaxLocalRawBrightness(pos),
                     level.getDifficulty() == Difficulty.PEACEFUL, age);
-            int total = fits.stream().mapToInt(e -> e.getValue().spawn().get().weight()).sum();
-            if (total == 0 || random.nextInt(100) >= total) continue;
+            int total = fits.stream().mapToInt(e -> points(e.getValue().spawn().get())).sum();
+            if (total == 0 || random.nextInt(POINTS) >= total) continue;
             int roll = random.nextInt(total);
             for (Map.Entry<Identifier, CreatureDef> fit : fits) {
                 CreatureDef.Spawn spawn = fit.getValue().spawn().get();
-                if ((roll -= spawn.weight()) >= 0) continue;
+                if ((roll -= points(spawn)) >= 0) continue;
                 int count = Mth.randomBetweenInclusive(random, spawn.minGroup(), Math.max(spawn.minGroup(), spawn.maxGroup()));
                 for (int i = 0; i < count; i++)
                     DiaithirBestiary.spawn(level, fit.getKey(), Vec3.atBottomCenterOf(pos).add(random.nextInt(5) - 2, 0, random.nextInt(5) - 2), EntitySpawnReason.NATURAL);

@@ -1,0 +1,25 @@
+{
+  "preset": "beast",
+  "width": 1.3,
+  "height": 1.0,
+  "stats": {
+    "health": 34,
+    "damage": 5,
+    "speed": 0.22,
+    "knockback_resistance": 0.4
+  },
+  "hostile": false,
+  "tame": {
+    "item": "minecraft:stripped_oak_log",
+    "chance": 0.25
+  },
+  "spawn": {
+    "biomes": "c:is_swamp",
+    "weight": 5,
+    "min_group": 1,
+    "max_group": 2,
+    "min_age": "I"
+  },
+  "loot_table": "diaithirbestiary:entities/dobhranfamhair",
+  "rideable": false
+}

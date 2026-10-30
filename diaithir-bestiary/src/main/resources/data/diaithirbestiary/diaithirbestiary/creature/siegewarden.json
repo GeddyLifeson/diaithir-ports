@@ -1,0 +1,22 @@
+{
+  "preset": "mech",
+  "width": 3.0,
+  "height": 3.0,
+  "stats": {
+    "health": 260,
+    "armor": 18,
+    "speed": 0.16,
+    "knockback_resistance": 1.0
+  },
+  "fuel": {
+    "item": "minecraft:coal",
+    "ticks": 900
+  },
+  "spawn": {
+    "biomes": "minecraft:is_badlands",
+    "weight": 1,
+    "min_age": "VI",
+    "rare": true
+  },
+  "loot_table": "diaithirbestiary:entities/siegewarden"
+}

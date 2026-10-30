@@ -1,0 +1,22 @@
+{
+  "preset": "mech",
+  "width": 1.4,
+  "height": 2.7,
+  "stats": {
+    "health": 70,
+    "armor": 6,
+    "speed": 0.3,
+    "knockback_resistance": 0.4
+  },
+  "fuel": {
+    "item": "minecraft:coal",
+    "ticks": 800
+  },
+  "spawn": {
+    "biomes": "c:is_desert",
+    "weight": 2,
+    "min_age": "V",
+    "rare": true
+  },
+  "loot_table": "diaithirbestiary:entities/brassjack"
+}

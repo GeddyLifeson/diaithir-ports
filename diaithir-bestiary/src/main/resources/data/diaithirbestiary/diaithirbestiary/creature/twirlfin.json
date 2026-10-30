@@ -1,0 +1,22 @@
+{
+  "preset": "flyer",
+  "width": 1.2,
+  "height": 1.1,
+  "stats": {
+    "health": 20,
+    "damage": 2,
+    "speed": 0.24,
+    "flying_speed": 0.55
+  },
+  "hostile": false,
+  "tame": {
+    "item": "minecraft:cod",
+    "chance": 0.4
+  },
+  "spawn": {
+    "biomes": "c:is_plains",
+    "weight": 5,
+    "min_age": "V"
+  },
+  "loot_table": "diaithirbestiary:entities/twirlfin"
+}

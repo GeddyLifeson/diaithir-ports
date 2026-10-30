@@ -1,4 +1,4 @@
-"""Writes the five example creatures' GeckoLib models, animations and textures (cube-based placeholders).
+"""Writes the five example creatures' GeckoLib models, animations and textures (legacy first-pass cube art, superseded by tools/art; gen_content.py now writes all 19).
 
 Run from diaithir-bestiary/: python3 tools/gen_examples.py
 Each creature is a list of bones (name, parent, pivot, cubes, colour) in Blockbench pixel units, 16 to a block, y up from the feet.

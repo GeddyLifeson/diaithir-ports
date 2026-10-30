@@ -58,10 +58,11 @@ Put one file per creature at `data/<namespace>/diaithirbestiary/creature/<name>.
 | `spawn.weight` | int | 10 | 1 to 100, see below. |
 | `spawn.min_group`, `spawn.max_group` | int | 1, 1 | Group size. |
 | `spawn.max_light` | int | 15 | Only spawns at this light level or darker (4 for a night horror). |
+| `spawn.rare` | bool | false | A rare spawn counts a twentieth of its weight: weight 2 means a 0.1% chance per 10 second try instead of 2%. For bosses and derelict mechs. |
 | `spawn.min_age` | Age | 1 | Only spawns naturally once the world's current Age is at least this: a numeral `"I"` to `"VII"`, `"Rodos"` (counts as 8), or a number 1 to 8. Summons ignore it. |
 | `loot_table` | id | none | Loot table dropped on death, for example `data/<namespace>/loot_table/entities/<name>.json`. |
 
-Natural spawning: every 10 seconds each player gets one try at a spot 24 to 48 blocks away on the surface (not on water). The creatures whose biome tag and light limit fit that spot add up their weights, and that sum is the percent chance that one of them (picked by weight) spawns there. The current Age comes from diaithir-ages (its saved story) when that mod is installed; without it the Age is I, so creatures with a `min_age` above I never spawn naturally. No try is made while 6 or more bestiary creatures are within 64 blocks of the player, while the `spawn_mobs` game rule is off, or (for hostile creatures) on Peaceful.
+Natural spawning: every 10 seconds each player gets one try at a spot 24 to 48 blocks away on the surface (not on water). The creatures whose biome tag and light limit fit that spot add up their weights, and that sum is the percent chance (a `rare` creature counts a twentieth of its weight) that one of them (picked by weight) spawns there. The current Age comes from diaithir-ages (its saved story) when that mod is installed; without it the Age is I, so creatures with a `min_age` above I never spawn naturally. No try is made while 6 or more bestiary creatures are within 64 blocks of the player, while the `spawn_mobs` game rule is off, or (for hostile creatures) on Peaceful.
 
 ## Animations
 
@@ -83,8 +84,38 @@ The model's animation file should have `idle`, `walk` and `attack`; flying creat
 | `diaithirbestiary:aurelith` | avatar | Aurelith, Avatar of the Dawn: a haloed god avatar boss. Summon only. |
 | `diaithirbestiary:hollowmourn` | stalker | A pale-faced forest horror that comes out in the dark from Age III and only moves when unseen. |
 
-Their models, animations and textures are cube-based placeholders written by `tools/gen_examples.py` (needs Pillow); edit the bone lists there and run `python3 tools/gen_examples.py` from this folder to rebuild them, or replace them with Blockbench exports.
+Their models, animations, 64x textures and glow masks are built by the procedural art toolkit in `tools/art` (needs numpy and Pillow; one module per creature in `tools/art/creatures`). Edit a creature module and run `python3 tools/art/build.py <name>` from this folder, or replace the files with Blockbench exports.
 
 ## Building
 
 `./gradlew build` with JDK 25. GeckoLib comes from the Modrinth Maven.
+
+## Creatures added in 0.3.0
+
+All fourteen are written by `tools/gen_content.py` (which also writes their creature JSON, loot tables and names). Their models and 64x textures come from `tools/art` (Celtic knotwork and enamel for the gods, riveted industrial plate for the mechs, bone, burlap and gauze for the stalkers, soft cel shading for the toons). Glowing parts use `<id>_glowmask.png` through GeckoLib's auto glow layer. Replace the art with Blockbench exports at any time and keep the ids.
+
+| Id | Preset | From Age | Where |
+| --- | --- | --- | --- |
+| `verdanai` Avatar of the Wild Green | avatar | III | forests, rare |
+| `orsolune` Avatar of the Hushed Moon | avatar | IV | taiga at night, rare |
+| `ashenvar` Avatar of the Ember Hour | avatar | IV | badlands, rare |
+| `marenoth` Avatar of the Deep Tide | avatar | III | beaches, rare |
+| `brassjack` | mech | V | derelict in deserts, rare; coal |
+| `siegewarden` | mech | VI | derelict in badlands, rare; coal |
+| `tinkerspider` | mech | V | derelict in deserts, rare; redstone |
+| `pallidgaunt` | stalker | IV | forests in the dark |
+| `marrowcrawl` | stalker | IV | swamps in the dark |
+| `veilstitch` | stalker | III | plains in the dark |
+| `puddlepip` | beast, friendly | IV | rivers, groups; tame with seeds |
+| `grumblebun` | beast, friendly | V | forests; tame with carrots |
+| `twirlfin` | flyer, friendly | V | plains; tame with cod, then fly it |
+| `mossmop` | beast, friendly | IV | swamps; tame with wheat |
+
+## Creatures added in 0.3.1
+
+Two realistic Pleistocene beasts for the Earth timeline (Age I), both written by `tools/gen_content.py` with art in `tools/art/creatures`. Names are Diaithiris compounds.
+
+| Id | Preset | From Age | Where |
+| --- | --- | --- | --- |
+| `dobhranfamhair` Dobrunfumuir (giant beaver, Castoroides ohioensis) | beast | I | swamps; tame with stripped oak logs |
+| `eachreidhlein` Iechrèidlein (Mexican horse, Equus conversidens) | beast, rideable | I | plains, herds; tame with wheat |
