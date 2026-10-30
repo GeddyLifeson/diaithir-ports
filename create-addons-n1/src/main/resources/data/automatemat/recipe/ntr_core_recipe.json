@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aba",
+  "cdc",
+  "aba"
+ ],
+ "key": {
+  "a": "minecraft:netherrack",
+  "b": "minecraft:nether_bricks",
+  "c": "minecraft:red_nether_bricks",
+  "d": "minecraft:quartz"
+ },
+ "result": {
+  "id": "automatemat:nether_core"
+ }
+}

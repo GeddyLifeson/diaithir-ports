@@ -1,0 +1,7 @@
+{
+  "parent": "create_chocopaste:custom/chimney_cake_covered_in_chocolate",
+  "textures": {
+    "2": "create_chocopaste:block/chimney_cake_covered_in_chocolate",
+    "particle": "create_chocopaste:item/chimney_cake_covered_in_chocolate"
+  }
+}

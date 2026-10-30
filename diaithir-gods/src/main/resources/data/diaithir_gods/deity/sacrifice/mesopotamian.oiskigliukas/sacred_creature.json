@@ -1,0 +1,6 @@
+{
+  "entity": "minecraft:goat",
+  "favor": -8,
+  "maxuses": 8,
+  "cooldown": 6000
+}

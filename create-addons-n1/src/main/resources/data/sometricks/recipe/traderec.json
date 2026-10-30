@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aba",
+  "cdc",
+  "aba"
+ ],
+ "key": {
+  "a": "minecraft:emerald",
+  "b": "create:brass_casing",
+  "c": "create:electron_tube",
+  "d": "create:depot"
+ },
+ "result": {
+  "id": "sometricks:trading_depot"
+ }
+}

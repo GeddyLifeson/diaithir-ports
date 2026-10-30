@@ -1,0 +1,12 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "alchemind:dense_aero",
+  "alchemind:loose_slime_ball"
+ ],
+ "results": [
+  {
+   "id": "alchemind:fluffy_aero"
+  }
+ ]
+}

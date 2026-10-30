@@ -1,0 +1,16 @@
+# Test results
+
+Build: `./gradlew build` (JDK 25, NeoForge 26.1.2.116). Boot: `gradle runServer` on a flat world, rcon, no players.
+
+- Server boots with no ERROR lines from the mod (the only ERROR is the pack-less flat generator "No key layers", unrelated). 29 profiles and 12 elite bases loaded; worldgen JSON (10 structures, template pools, structure sets, biome tags) passes registry load.
+- `/bossesselftest`: bosses tested=29 skipped=0 ok=1295 bad=0 (26 bosses). Per boss, with a fake player on a stone platform: spawns, controller attached, bar shows to the fighter, no-despawn flag, every attack of its profile telegraphs then fires, every phase change (tag persisted, shield during the change), arena pushes a fighter who leaves, Age-gated loot (Age I roll never larger than Age VII), trophy drop, kill runs the death hook and drops items, effective health grows with the Age (health above the 1024 attribute ceiling is paid by dividing damage). Also: attach path (a profile adopts another mod's creature, here a vanilla husk standing in for diaithir_myth entities), the altar (sleeps below its Age, wakes once, remembers a defeat, rests per respawn rule), and elites (zombie, skeleton, creeper get 3 affixes at Age VII, hulking and shielded numbers, roll rate about the table).
+- rcon: `summon diaithirbosses:<id>` for all 29 ids (29 summoned), `/boss spawnall` (29), `/boss list`, `/place structure diaithirbosses:tribal_chief` on a normal world generates it, `/place template` gives an altar block entity with the right boss id.
+- Not tested: a real client (the vanilla-model renderers with generated textures were not looked at), diaithir_myth entities themselves (no jar in the pack build yet; the attach path is tested with a husk), real multiplayer balance, natural elite spawning over time.
+
+## Full pack (batch 1) note
+Random effective-health failures came from Dwarfs and Giants (random size stage, mob_max_health modifier) and Remnants: RPG Mobs (level modifier) acting on boss entities. Bosses now pre-tag spawn_size_rolled at HIGHEST join priority and are listed in remnant_mobs never_leveled/never_ranked and c:bosses. The command now force-loads the arena and runs 3 s later (a fresh no-player server failed the drop checks). Full pack: ok=1295 bad=0 in 8 runs.
+
+## Health stacking guard (Elites.normaliseHealth)
+Champion Age health bonus adds to other mods' health changes (Dwarfs and Giants size, Remnants level/rank) instead of multiplying; total capped by max_combined_health_multiplier (elites.json). Full pack (srv-fix2, ports 27871/27872, Remnants levels.json from mod-ports/pack-config): bossesselftest ok=1488 bad=0, including synthetic cases (7) and 60 live zombies joined with the real mods (foreign factor x0.70 to x16.00, 35 not at x1 so the variety is kept; the plain product would have exceeded the cap of 4.0 in 2 cases and reached x21.76).
+
+Update: cap_other_mods (default true) also caps other mods' rolls at max_combined_health_multiplier; Remnants ranks.json health lowered (pack-config). bossesselftest ok=1476 bad=0; live 60 zombies foreign x0.60..x2.85 (the cap was not reached live with the new configs; the x9 synthetic case reaches it and passes), every champion total asserted <= 4.0.

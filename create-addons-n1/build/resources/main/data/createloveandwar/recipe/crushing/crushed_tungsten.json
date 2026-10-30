@@ -1,0 +1,14 @@
+{
+ "type": "create:crushing",
+ "ingredient": "createloveandwar:raw_tungsten",
+ "results": [
+  {
+   "id": "createloveandwar:crushed_tungsten"
+  },
+  {
+   "id": "create:experience_nugget",
+   "chance": 0.75
+  }
+ ],
+ "processing_time": 350
+}

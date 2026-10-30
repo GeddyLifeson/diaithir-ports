@@ -1,0 +1,42 @@
+{
+ "name": "laech kruoid",
+ "items": [
+  "diaithir_classes:fian_helmet_steel",
+  "diaithir_classes:fian_chestplate_steel",
+  "diaithir_classes:fian_leggings_steel",
+  "diaithir_classes:fian_boots_steel"
+ ],
+ "bonuses": [
+  {
+   "required_piece_count": 2,
+   "attributes": [
+    {
+     "type": "minecraft:attack_damage",
+     "id": "diaithir_classes:set_fian_steel_2_0",
+     "amount": 2.0,
+     "operation": "add_value",
+     "slot": "any"
+    }
+   ]
+  },
+  {
+   "required_piece_count": 4,
+   "attributes": [
+    {
+     "type": "minecraft:knockback_resistance",
+     "id": "diaithir_classes:set_fian_steel_4_0",
+     "amount": 0.15,
+     "operation": "add_value",
+     "slot": "any"
+    }
+   ],
+   "spells": {
+    "access": "NONE",
+    "max_spell_count": 1,
+    "spell_ids": [
+     "diaithir_classes:fian_rage_steel"
+    ]
+   }
+  }
+ ]
+}

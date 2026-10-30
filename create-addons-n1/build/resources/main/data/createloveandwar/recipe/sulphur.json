@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:sulphur_block"
+ ],
+ "result": {
+  "id": "createloveandwar:sulphur",
+  "count": 9
+ }
+}

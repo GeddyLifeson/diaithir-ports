@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/spear_in_hand",
+ "textures": {
+  "layer0": "diaithir_classes:item/fian_spear_bronze_in_hand"
+ }
+}

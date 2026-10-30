@@ -1,0 +1,44 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:necklace_blank",
+ "loops": 3,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:pointed_dripstone"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:wind_charge"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:cactus"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:necklace_blank"
+ },
+ "result": {
+  "id": "relics:reflective_necklace",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

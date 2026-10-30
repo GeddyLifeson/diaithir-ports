@@ -1,0 +1,191 @@
+[
+ [
+  "Iarmadun",
+  "concept",
+  3,
+  "relics",
+  "Twenty-six unique relics of Ages III to VII: heroes' weapons, shields and the trinkets of the otherworld. Weapons and shields are held; rings, torques, charms and belts sit in Curios slots. Each has one active or passive power; crafted ones need a catalyst, the rest turn up in structure chests."
+ ],
+ [
+  "Klaidem Kamunaig",
+  "item",
+  3,
+  "relics",
+  "Damage +0.5 over the Age's base. Sunburst: flame bursts in a ring of 5 blocks, igniting foes for 6 seconds and burning them for 6 damage. Cooldown 30 s. Foes you strike catch fire for 3 seconds. Crafted from bronze and blaze powder; Age III."
+ ],
+ [
+  "Slieg Braduin",
+  "item",
+  3,
+  "relics",
+  "Damage +0.5 over the Age's base. Lunge (sneak and use): dash 7 blocks forward, striking foes in your path for 8 damage. Cooldown 12 s. While held in water you swim fast, as if with a dolphin's grace. Crafted from bronze and salmon; Age III."
+ ],
+ [
+  "Skiad Toirk",
+  "item",
+  3,
+  "relics",
+  "Blocking a melee blow throws back 30% of its damage at the attacker. Crafted from bronze and leather; Age III."
+ ],
+ [
+  "Fàindi Tobuir",
+  "item",
+  3,
+  "relics",
+  "Curios ring slot. Below half health you slowly regenerate. Found in structure chests of Age III; Age III."
+ ],
+ [
+  "Moinki Òiri",
+  "item",
+  3,
+  "relics",
+  "Curios necklace slot. Arrows, bolts and other missiles do 25% less damage to you. Crafted from bronze and gold ingot; Age III."
+ ],
+ [
+  "Tuog Stoirmi",
+  "item",
+  4,
+  "relics",
+  "Damage +1 over the Age's base. Skybolt: call lightning down on the foe you are looking at, up to 24 blocks away. Cooldown 40 s. One blow in five arcs lightning to up to 3 foes within 4 blocks of the target. Found in structure chests of Age IV; Age IV."
+ ],
+ [
+  "Biudag Failes",
+  "item",
+  4,
+  "relics",
+  "Damage -1 over the Age's base. Shadow step: slip up to 9 blocks along your gaze and vanish for 3 seconds. Cooldown 15 s. Blows to a foe facing away deal 50% more damage. Crafted from iron and ender pearl; Age IV."
+ ],
+ [
+  "Òrdu Kàirn",
+  "item",
+  4,
+  "relics",
+  "Damage +2 over the Age's base. Cairnfall: strike the ground, hurling foes within 4 blocks into the air for 8 damage. Cooldown 20 s. Foes you strike are slowed for 1.5 seconds. Crafted from iron and chiseled stone bricks; Age IV."
+ ],
+ [
+  "Klag Kietaig",
+  "item",
+  4,
+  "relics",
+  "Curios charm slot. When a blow leaves you below 35% health you turn unseen and swift for 5 seconds (once a minute). Found in structure chests of Age IV; Age IV."
+ ],
+ [
+  "Krius Matuin",
+  "item",
+  4,
+  "relics",
+  "Curios belt slot. Melee blows do 15% less damage to you. Crafted from iron and honey bottle; Age IV."
+ ],
+ [
+  "Klaidem Moir",
+  "item",
+  5,
+  "relics",
+  "Damage +0.5 over the Age's base. Tide: a surge throws every foe in a 6-block cone far back, and you breathe water for 30 seconds. Cooldown 25 s. Blows do 30% more damage while you stand in water or rain. Found in structure chests of Age V; Age V."
+ ],
+ [
+  "Slieg Dielunach",
+  "item",
+  5,
+  "relics",
+  "Damage +0.5 over the Age's base. Bolt (sneak and use): a white arc leaps 24 blocks to the first foe, for 14 damage. Cooldown 15 s. Blows to foes that are off the ground do 40% more damage. Found in structure chests of Age V; Age V."
+ ],
+ [
+  "Skiad Reotad",
+  "item",
+  5,
+  "relics",
+  "Blocking a melee blow freezes the attacker: slowness III for 3 seconds. Crafted from steel and blue ice; Age V."
+ ],
+ [
+  "Fàindi Grianu",
+  "item",
+  5,
+  "relics",
+  "Curios ring slot. Under open sky by day you slowly regenerate. Crafted from gold and glowstone dust; Age V."
+ ],
+ [
+  "Moinki Gielach",
+  "item",
+  5,
+  "relics",
+  "Curios necklace slot. At night you see in the dark and move faster. Found in structure chests of Age V; Age V."
+ ],
+ [
+  "Klaidem Riondag",
+  "item",
+  6,
+  "relics",
+  "Damage +1 over the Age's base. Starfall: a burst of light strikes foes in front of you within 8 blocks for 12 damage and marks them glowing for 10 seconds. Cooldown 35 s. Blows to a foe at full health do 25% more damage. Found in structure chests of Age VI; Age VI."
+ ],
+ [
+  "Tuog Natrach",
+  "item",
+  6,
+  "relics",
+  "Damage +1 over the Age's base. Venom burst: foes within 5 blocks are poisoned for 8 seconds and weakened. Cooldown 20 s. Foes you strike are poisoned for 5 seconds. Crafted from steel and fermented spider eye; Age VI."
+ ],
+ [
+  "Slieg Iuluiri",
+  "item",
+  6,
+  "relics",
+  "Damage +0.5 over the Age's base. Leap (sneak and use): spring high and forward, then fall slowly for 6 seconds. Cooldown 14 s. Falling onto a foe adds 1 damage per block fallen (up to 10). Crafted from steel and feather; Age VI."
+ ],
+ [
+  "Fiedag Fitig",
+  "item",
+  6,
+  "relics",
+  "Curios charm slot. Hostile creatures within 20 blocks glow, so you see them through walls. Found in structure chests of Age VI; Age VI."
+ ],
+ [
+  "Krius Famuir",
+  "item",
+  6,
+  "relics",
+  "Curios belt slot. You carry four extra hearts of absorption, renewed while it is worn. Found in structure chests of Age VI; Age VI."
+ ],
+ [
+  "Klaidem Miondun",
+  "item",
+  7,
+  "relics",
+  "Damage +1.5 over the Age's base. Oath-cry: you and allies within 8 blocks gain strength II and resistance for 20 seconds; foes nearby are weakened. Cooldown 60 s. You heal 15% of the damage you deal. Found in structure chests of Age VII; Age VII."
+ ],
+ [
+  "Òrdu Gobund",
+  "item",
+  7,
+  "relics",
+  "Damage +2 over the Age's base. Remaking: restore a quarter of the wear on everything you wear and hold. Cooldown 120 s. Blows to armoured foes do 2 extra damage per 5 points of their armour. Crafted from netherite_ingot and diamond; Age VII."
+ ],
+ [
+  "Skiad Soulais",
+  "item",
+  7,
+  "relics",
+  "While blocking, missiles do no damage to you and melee attackers are blinded for 3 seconds. Found in structure chests of Age VII; Age VII."
+ ],
+ [
+  "Fàindi Dànu",
+  "item",
+  7,
+  "relics",
+  "Curios ring slot. A fatal blow leaves you at 3 hearts with regeneration (once every 10 minutes). Found in structure chests of Age VII; Age VII."
+ ],
+ [
+  "Geig Ubul",
+  "item",
+  7,
+  "relics",
+  "Curios charm slot. Your hunger refills slowly while it is worn. Found in structure chests of Age VII; Age VII."
+ ],
+ [
+  "Moinki Drieguin",
+  "item",
+  7,
+  "relics",
+  "Curios necklace slot. You take no damage from fire or lava. Found in structure chests of Age VII; Age VII."
+ ]
+]

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:honeycomb",
+    "color": 8685936,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:baltic.moiromur",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:dolphins_grace",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "baltic.moiromur_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

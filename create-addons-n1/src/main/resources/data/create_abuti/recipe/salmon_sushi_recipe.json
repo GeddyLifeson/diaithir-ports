@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "create:dough",
+ "ingredient": "minecraft:salmon",
+ "results": [
+  {
+   "id": "create_abuti:salmon_sushi"
+  }
+ ]
+}

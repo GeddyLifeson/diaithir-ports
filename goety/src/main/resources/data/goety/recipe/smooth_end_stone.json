@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "minecraft:end_stone",
+ "experience": 0.1,
+ "cookingtime": 200,
+ "result": {
+  "id": "goety:smooth_end_stone"
+ }
+}

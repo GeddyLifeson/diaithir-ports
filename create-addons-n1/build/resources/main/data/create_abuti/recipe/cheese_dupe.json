@@ -1,0 +1,12 @@
+{
+ "type": "create:pressing",
+ "ingredient": "create_abuti:truth_of_abuti",
+ "results": [
+  {
+   "id": "create_abuti:truth_of_abuti"
+  },
+  {
+   "id": "create_abuti:cheese_salmon_sushi"
+  }
+ ]
+}

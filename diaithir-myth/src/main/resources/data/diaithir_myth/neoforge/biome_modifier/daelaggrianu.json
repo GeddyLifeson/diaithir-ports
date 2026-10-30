@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#diaithir_myth:habitat/dunes",
+  "spawners": [
+    {
+      "type": "diaithir_myth:daelaggrianu",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}

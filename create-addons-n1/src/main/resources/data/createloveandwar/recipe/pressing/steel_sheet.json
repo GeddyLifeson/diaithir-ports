@@ -1,0 +1,9 @@
+{
+ "type": "create:pressing",
+ "ingredient": "createloveandwar:steel_ingot",
+ "results": [
+  {
+   "id": "createloveandwar:steel_sheet"
+  }
+ ]
+}

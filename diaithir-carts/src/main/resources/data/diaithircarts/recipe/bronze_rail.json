@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "minecraft:copper_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "C C",
+    "CSC",
+    "C C"
+  ],
+  "result": {
+    "id": "diaithircarts:bronze_rail",
+    "count": 16
+  },
+  "category": "misc"
+}

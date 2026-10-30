@@ -1,0 +1,38 @@
+{
+ "values": [
+  "create_dense_ores:dense_zinc_ore",
+  "create_dense_ores:deepslate_dense_zinc_ore",
+  {
+   "id": "create_dense_ores:dense_thorium_ore",
+   "required": false
+  },
+  {
+   "id": "create_dense_ores:deepslate_dense_thorium_ore",
+   "required": false
+  },
+  {
+   "id": "create_dense_ores:dense_lead_ore",
+   "required": false
+  },
+  {
+   "id": "create_dense_ores:deepslate_dense_lead_ore",
+   "required": false
+  },
+  {
+   "id": "create_dense_ores:dense_lithium_ore",
+   "required": false
+  },
+  {
+   "id": "create_dense_ores:deepslate_dense_lithium_ore",
+   "required": false
+  },
+  {
+   "id": "create_dense_ores:dense_nickel_ore",
+   "required": false
+  },
+  {
+   "id": "create_dense_ores:deepslate_dense_nickel_ore",
+   "required": false
+  }
+ ]
+}

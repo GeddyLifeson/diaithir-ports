@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:slime_resin_block"
+ ],
+ "result": {
+  "id": "createloveandwar:slime_resin",
+  "count": 9
+ }
+}

@@ -1,0 +1,5 @@
+[
+  {"id": "diaithirelevators:elevator_floor", "name": "Dìrlàrach", "text": "A steel landing block set beside an elevator shaft. Use it to call the cabin to this floor, or to send the cabin onward when it is already here."},
+  {"id": "diaithirelevators:elevator_controller", "name": "Stiùrdhìrich", "text": "The motor housing above the shaft. It finds every floor block beside the shaft below it and drives the cabin between them. It can optionally draw Forge Energy."},
+  {"id": "diaithirelevators:cabin_plate", "name": "Bothanlàr", "text": "The deck plate of the cabin. It rides the shaft and carries players, mobs and items. Use it to choose the next floor, or sneak to go the other way."}
+]

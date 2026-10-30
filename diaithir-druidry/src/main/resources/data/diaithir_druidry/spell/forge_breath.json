@@ -1,0 +1,78 @@
+{
+ "school": "spell_power:fire",
+ "range": 18.0,
+ "tier": 2,
+ "group": "smith_fire",
+ "learn": {},
+ "active": {
+  "cast": {
+   "duration": 2.5,
+   "type": "CHANNEL",
+   "channel": {
+    "ticks": 10
+   },
+   "animation": {
+    "id": "spell_engine:two_handed_channeling"
+   },
+   "sound": {
+    "id": "spell_engine:generic_fire_casting"
+   },
+   "particles": [
+    {
+     "id": "spell_engine:flame",
+     "appearance": {
+      "color": 4035062015,
+      "motion": "ASCEND"
+     },
+     "batch": {
+      "count": 2.0,
+      "shape": "PIPE",
+      "anchor": "ENTITY",
+      "min_speed": 0.03,
+      "max_speed": 0.08
+     }
+    }
+   ]
+  }
+ },
+ "release": {
+  "sound": {
+   "id": "spell_engine:generic_fire_release"
+  }
+ },
+ "target": {
+  "type": "BEAM",
+  "beam": {
+   "color_rgba": 4288033535,
+   "width": 0.1,
+   "flow": 1.6
+  }
+ },
+ "deliver": {
+  "type": "DIRECT"
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "DAMAGE",
+    "damage": {
+     "spell_power_coefficient": 0.9
+    }
+   }
+  },
+  {
+   "action": {
+    "type": "FIRE",
+    "fire": {
+     "duration": 2.0
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 12.0
+  }
+ }
+}

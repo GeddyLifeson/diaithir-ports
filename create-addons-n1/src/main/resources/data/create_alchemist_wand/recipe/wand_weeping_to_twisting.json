@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create_alchemist_wand:wand_alchemist",
+  "minecraft:weeping_vines"
+ ],
+ "result": {
+  "id": "minecraft:twisting_vines"
+ }
+}

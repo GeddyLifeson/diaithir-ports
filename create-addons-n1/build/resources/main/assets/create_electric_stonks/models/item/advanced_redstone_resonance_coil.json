@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "create_electric_stonks:items/advanced_redstone_resonance_coil"
+  }
+}

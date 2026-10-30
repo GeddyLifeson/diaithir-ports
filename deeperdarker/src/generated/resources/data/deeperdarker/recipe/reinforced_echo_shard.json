@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "deeperdarker:warden_carapace",
+    "E": "minecraft:echo_shard",
+    "P": "minecraft:phantom_membrane"
+  },
+  "pattern": [
+    "PCP",
+    "CEC",
+    "PCP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "deeperdarker:reinforced_echo_shard"
+  }
+}

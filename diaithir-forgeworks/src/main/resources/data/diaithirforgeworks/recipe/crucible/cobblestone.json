@@ -1,0 +1,15 @@
+{
+  "type": "diaithirforgeworks:crucible",
+  "inputs": [
+    {
+      "ingredient": "minecraft:cobblestone",
+      "count": 1
+    }
+  ],
+  "energy": 6000,
+  "time": 400,
+  "fluid": {
+    "id": "minecraft:lava",
+    "amount": 250
+  }
+}

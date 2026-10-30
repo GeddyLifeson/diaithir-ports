@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:ghast_tear",
+    "color": 5419897,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:splitsun.grianuiunddairna",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:regeneration",
+        "Amplifier": 1,
+        "Duration": 400,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "splitsun.grianuiunddairna_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

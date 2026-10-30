@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "alexscaves:coprolith",
+  "result": {
+    "id": "alexscaves:coprolith_stairs",
+    "count": 1
+  }
+}

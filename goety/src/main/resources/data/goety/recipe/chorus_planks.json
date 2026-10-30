@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#goety:chorus_logs"
+ ],
+ "result": {
+  "id": "goety:chorus_planks",
+  "count": 4
+ }
+}

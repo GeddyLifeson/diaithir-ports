@@ -1,0 +1,20 @@
+{
+ "type": "create:mechanical_crafting",
+ "pattern": [
+  " sa",
+  "dfg",
+  " h "
+ ],
+ "key": {
+  "s": "create:brass_sheet",
+  "d": "create:hand_crank",
+  "f": "create:brass_casing",
+  "g": "gearbound:fuel_canister",
+  "a": "gearbound:water_canister",
+  "h": "create:mechanical_drill"
+ },
+ "result": {
+  "id": "gearbound:hand_drill"
+ },
+ "acceptMirrored": false
+}

@@ -1,0 +1,14 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "goety:black_iron"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "goety:black_iron"
+   }
+  ]
+ }
+}

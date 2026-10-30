@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": "alexscaves:cinder_block",
+  "result": {
+    "id": "alexscaves:cinder_block_slab",
+    "count": 1
+  }
+}

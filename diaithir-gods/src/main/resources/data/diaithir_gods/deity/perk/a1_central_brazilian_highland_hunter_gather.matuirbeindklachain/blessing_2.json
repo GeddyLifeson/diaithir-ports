@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 5405876,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_central_brazilian_highland_hunter_gather.matuirbeindklachain",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:haste",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "a1_central_brazilian_highland_hunter_gather.matuirbeindklachain_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

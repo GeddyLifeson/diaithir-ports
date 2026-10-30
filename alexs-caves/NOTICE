@@ -1,0 +1,15 @@
+Alex's Caves (module alexs-caves), Diaithir port to Minecraft 26.1.2 / NeoForge 26.1.2.116.
+
+Original work: Alex's Caves, copyright Alexander Mod Guy ("AlexModGuy") and contributors, 1.21.1 source maintained at
+https://github.com/Jusey1/AlexsCaves (branch 1.21.1). Licensed under the GNU Lesser General Public License, version 3
+(LICENSE; it incorporates the GNU General Public License version 3, COPYING).
+
+Included from Citadel (Alex's Mobs / Alex's Caves library, copyright AlexModGuy, LGPL-3.0): the server-side classes under
+com.github.alexthe666.citadel that Alex's Caves calls, inlined so the mod needs no Citadel jar. The Citadel client, GUI,
+book and resource parts are not included.
+
+Changes by the Diaithir project (2026): API port to Minecraft 26.1.2 (unobfuscated names, data components, ValueInput/ValueOutput,
+attachments, payloads, 26.1 datapack formats), removal of mixins, Nuclear Furnace, cave-map items, advanced pathfinding and villager
+trades, a new cave-chamber world feature replacing the 3D cave biome source, Diaithiris display names, age gate data.
+Textures, models, sounds and lang keys are the original assets under the same licence.
+The listed changes are marked in git history of this repository. The jar suffix -diaithir.1 marks this modified version.

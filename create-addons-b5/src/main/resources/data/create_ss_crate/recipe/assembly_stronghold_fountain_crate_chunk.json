@@ -1,0 +1,74 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_ss_crate:awakened_stronghold_crate_shell",
+ "transitional_item": {
+  "id": "create_ss_crate:incomplete_stronghold_fountain_crate_chunk"
+ },
+ "result": {
+  "id": "create_ss_crate:stronghold_fountain_crate_chunk"
+ },
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:water",
+    "amount": 81000
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:stone_bricks",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:water",
+    "amount": 81000
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:mossy_stone_bricks",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:water",
+    "amount": 81000
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 20
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "values": [
+  "create_connected:parallel_gearbox",
+  "create_connected:six_way_gearbox",
+  "create_connected:brass_gearbox",
+  "create_connected:inverted_clutch",
+  "create_connected:inverted_gearshift",
+  "create_connected:brake",
+  "create_connected:overstress_clutch",
+  "create_connected:freewheel_clutch",
+  "create_connected:centrifugal_clutch",
+  "create_connected:cross_connector",
+  "create_connected:andesite_encased_cross_connector",
+  "create_connected:brass_encased_cross_connector",
+  "create_connected:shear_pin"
+ ]
+}

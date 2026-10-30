@@ -1,0 +1,25 @@
+{
+  "type": "alexscaves:cave_chamber",
+  "config": {
+    "biome": "alexscaves:forlorn_hollows",
+    "floor": {
+      "Name": "minecraft:coarse_dirt"
+    },
+    "wall": {
+      "Name": "minecraft:deepslate"
+    },
+    "ceiling": {
+      "Name": "minecraft:deepslate"
+    },
+    "min_y": -48,
+    "max_y": 24,
+    "decor": [
+      "alexscaves:thornwood_roots",
+      "alexscaves:forlorn_posts",
+      "alexscaves:forlorn_hollows_brown_mushroom",
+      "alexscaves:guano_pile"
+    ],
+    "radius": 13,
+    "height": 9
+  }
+}

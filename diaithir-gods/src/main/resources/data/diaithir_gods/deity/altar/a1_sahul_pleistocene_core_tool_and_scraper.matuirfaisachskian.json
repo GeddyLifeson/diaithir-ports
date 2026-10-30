@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_sahul_pleistocene_core_tool_and_scraper.matuirfaisachskian",
+  "female": false,
+  "slim": false,
+  "light": 8,
+  "items": {
+    "block": "minecraft:stone_bricks",
+    "mainhand": "minecraft:sand",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

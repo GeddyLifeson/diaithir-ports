@@ -1,0 +1,8 @@
+{
+ "access": "MAGIC",
+ "max_spell_count": 2,
+ "spell_ids": [
+  "diaithir_classes:fian_shout",
+  "diaithir_classes:fian_charge"
+ ]
+}

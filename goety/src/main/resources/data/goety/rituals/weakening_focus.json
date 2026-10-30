@@ -1,0 +1,16 @@
+{
+ "type": "craft",
+ "school": "magic",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "goety:mystic_core",
+  "goety:wind_blast_focus",
+  "goety:cursed_ingot",
+  "goety:cursed_ingot",
+  "minecraft:potion"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:weakening_focus",
+ "count": 1
+}

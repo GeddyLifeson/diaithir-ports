@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "MMM",
+  "M M",
+  "M M"
+ ],
+ "key": {
+  "M": "diaithirarms:rodos_alloy_ingot"
+ },
+ "result": {
+  "id": "diaithirarms:rodos_leggings",
+  "count": 1
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:stick_blank",
+ "loops": 3,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:golden_carrot"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:chest"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:lead"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:stick_blank"
+ },
+ "result": {
+  "id": "relics:rider_flute",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

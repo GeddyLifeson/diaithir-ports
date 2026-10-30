@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:iron_sword",
+    "color": 11367781,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_sahul_pleistocene_core_tool_and_scraper.spiuradskianfaisach",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "a1_sahul_pleistocene_core_tool_and_scraper.spiuradskianfaisach_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

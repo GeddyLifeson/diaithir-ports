@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": "create:andesite_alloy",
+  "N": "create:cogwheel",
+  "M": "create:brass_casing"
+ },
+ "pattern": [
+  " # ",
+  " M ",
+  " N "
+ ],
+ "result": {
+  "id": "who_touched_my_train:train_lock"
+ }
+}

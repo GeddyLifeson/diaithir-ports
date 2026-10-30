@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirbridges"
+version = "${version}"
+displayName = "Diaithir Bridges"
+description = "Two machines that join magic and power in Diaithir: Tobardealain turns magic reagents into Forge Energy (Age VI), Lòchrandraoidheachd turns Forge Energy into a magic reagent (Age VII). Claochladairdealain converts EU and Forge Energy with a loss, Claochladairanalach converts Forge Energy and PneumaticCraft compressed air, Amarlionna is a molten metal tank, and a crafting recipe type refuses to convert a full storage cell or disk (Age VI)."
+
+[[dependencies.diaithirbridges]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

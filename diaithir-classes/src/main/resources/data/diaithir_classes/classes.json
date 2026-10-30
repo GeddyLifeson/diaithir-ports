@@ -1,0 +1,1138 @@
+{
+ "armor": {
+  "bronze": {
+   "durability": 14,
+   "boots": 1,
+   "legs": 4,
+   "chest": 5,
+   "helmet": 2,
+   "enchant": 10,
+   "sound": "iron",
+   "toughness": 0.0,
+   "knockback": 0.0,
+   "repair": "diaithirarms:repair/bronze"
+  },
+  "steel": {
+   "durability": 24,
+   "boots": 3,
+   "legs": 6,
+   "chest": 7,
+   "helmet": 3,
+   "enchant": 10,
+   "sound": "iron",
+   "toughness": 1.0,
+   "knockback": 0.0,
+   "repair": "diaithirarms:repair/steel"
+  },
+  "composite": {
+   "durability": 36,
+   "boots": 4,
+   "legs": 7,
+   "chest": 9,
+   "helmet": 4,
+   "enchant": 14,
+   "sound": "diamond",
+   "toughness": 2.5,
+   "knockback": 0.05,
+   "repair": "diaithirarms:repair/composite"
+  }
+ },
+ "tools": {
+  "bronze": {
+   "incorrect": "iron",
+   "durability": 320,
+   "speed": 5.75,
+   "bonus": 2.0,
+   "enchant": 12,
+   "repair": "diaithirarms:repair/bronze"
+  },
+  "steel": {
+   "incorrect": "diamond",
+   "durability": 900,
+   "speed": 7.0,
+   "bonus": 3.0,
+   "enchant": 12,
+   "repair": "diaithirarms:repair/steel"
+  },
+  "composite": {
+   "incorrect": "netherite",
+   "durability": 1900,
+   "speed": 9.0,
+   "bonus": 4.0,
+   "enchant": 14,
+   "repair": "diaithirarms:repair/composite"
+  }
+ },
+ "items": [
+  {
+   "id": "fian_helmet_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_chestplate_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_leggings_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_boots_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_sword_bronze",
+   "mat": "bronze",
+   "slot": null,
+   "damage": 3.0,
+   "speed": -2.4,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 1.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  },
+  {
+   "id": "fian_spear_bronze",
+   "mat": "bronze",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": [
+    0.95,
+    0.95,
+    0.6,
+    3.0,
+    11.0,
+    6.2,
+    5.1,
+    11.0,
+    4.6
+   ],
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 1.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "spear"
+  },
+  {
+   "id": "fian_helmet_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_chestplate_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_leggings_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_boots_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_sword_steel",
+   "mat": "steel",
+   "slot": null,
+   "damage": 3.0,
+   "speed": -2.4,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 2.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  },
+  {
+   "id": "fian_spear_steel",
+   "mat": "steel",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": [
+    1.0,
+    1.0,
+    0.55,
+    2.8,
+    10.5,
+    6.0,
+    5.1,
+    10.5,
+    4.6
+   ],
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 2.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "spear"
+  },
+  {
+   "id": "fian_helmet_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_chestplate_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_leggings_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_boots_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "fian_sword_composite",
+   "mat": "composite",
+   "slot": null,
+   "damage": 3.0,
+   "speed": -2.4,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 3.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  },
+  {
+   "id": "fian_spear_composite",
+   "mat": "composite",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": [
+    1.1,
+    1.12,
+    0.45,
+    2.6,
+    9.5,
+    5.6,
+    5.1,
+    9.5,
+    4.6
+   ],
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 3.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "spear"
+  },
+  {
+   "id": "sleagh_helmet_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_chestplate_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_leggings_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_boots_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_bow_bronze",
+   "mat": "bronze",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 384,
+   "extras": [
+    {
+     "attribute": "ranged_weapon:damage",
+     "amount": 1.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "bow"
+  },
+  {
+   "id": "sleagh_sling_bronze",
+   "mat": "bronze",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 250,
+   "extras": [
+    {
+     "attribute": "ranged_weapon:damage",
+     "amount": 1.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sling"
+  },
+  {
+   "id": "sleagh_helmet_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_chestplate_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_leggings_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_boots_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_bow_steel",
+   "mat": "steel",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 560,
+   "extras": [
+    {
+     "attribute": "ranged_weapon:damage",
+     "amount": 2.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "bow"
+  },
+  {
+   "id": "sleagh_sling_steel",
+   "mat": "steel",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 400,
+   "extras": [
+    {
+     "attribute": "ranged_weapon:damage",
+     "amount": 2.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sling"
+  },
+  {
+   "id": "sleagh_helmet_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_chestplate_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_leggings_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_boots_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "sleagh_bow_composite",
+   "mat": "composite",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 900,
+   "extras": [
+    {
+     "attribute": "ranged_weapon:damage",
+     "amount": 3.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "bow"
+  },
+  {
+   "id": "sleagh_sling_composite",
+   "mat": "composite",
+   "slot": null,
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 650,
+   "extras": [
+    {
+     "attribute": "ranged_weapon:damage",
+     "amount": 3.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sling"
+  },
+  {
+   "id": "ceilg_helmet_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_chestplate_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_leggings_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_boots_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_dagger_bronze",
+   "mat": "bronze",
+   "slot": null,
+   "damage": 1.5,
+   "speed": -1.6,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 1.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    },
+    {
+     "attribute": "spell_power:critical_chance",
+     "amount": 0.03,
+     "op": "add_multiplied_base",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  },
+  {
+   "id": "ceilg_helmet_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_chestplate_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_leggings_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_boots_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_dagger_steel",
+   "mat": "steel",
+   "slot": null,
+   "damage": 1.5,
+   "speed": -1.6,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 2.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    },
+    {
+     "attribute": "spell_power:critical_chance",
+     "amount": 0.05,
+     "op": "add_multiplied_base",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  },
+  {
+   "id": "ceilg_helmet_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_chestplate_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_leggings_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_boots_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "ceilg_dagger_composite",
+   "mat": "composite",
+   "slot": null,
+   "damage": 1.5,
+   "speed": -1.6,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "minecraft:attack_damage",
+     "amount": 3.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    },
+    {
+     "attribute": "spell_power:critical_chance",
+     "amount": 0.07,
+     "op": "add_multiplied_base",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  },
+  {
+   "id": "cleirech_helmet_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_chestplate_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_leggings_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_boots_bronze",
+   "kind": "armor",
+   "mat": "bronze",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_crozier_bronze",
+   "mat": "bronze",
+   "slot": null,
+   "damage": 2.0,
+   "speed": -2.8,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "spell_power:healing",
+     "amount": 2.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  },
+  {
+   "id": "cleirech_helmet_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_chestplate_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_leggings_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_boots_steel",
+   "kind": "armor",
+   "mat": "steel",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_crozier_steel",
+   "mat": "steel",
+   "slot": null,
+   "damage": 2.0,
+   "speed": -2.8,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "spell_power:healing",
+     "amount": 4.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  },
+  {
+   "id": "cleirech_helmet_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "helmet",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_chestplate_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "chestplate",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_leggings_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "leggings",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_boots_composite",
+   "kind": "armor",
+   "mat": "composite",
+   "slot": "boots",
+   "damage": 0,
+   "speed": 0,
+   "spear": null,
+   "durability": 0,
+   "extras": null
+  },
+  {
+   "id": "cleirech_crozier_composite",
+   "mat": "composite",
+   "slot": null,
+   "damage": 2.0,
+   "speed": -2.8,
+   "spear": null,
+   "durability": 0,
+   "extras": [
+    {
+     "attribute": "spell_power:healing",
+     "amount": 6.0,
+     "op": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "kind": "sword"
+  }
+ ],
+ "parts": [
+  "fian_emblem",
+  "sleagh_emblem",
+  "ceilg_emblem",
+  "cleirech_emblem"
+ ],
+ "runes": [
+  {
+   "id": "beith",
+   "attribute": "spell_power:haste",
+   "amount": 0.05,
+   "op": "add_multiplied_base"
+  },
+  {
+   "id": "luis",
+   "attribute": "minecraft:armor",
+   "amount": 1.0,
+   "op": "add_value"
+  },
+  {
+   "id": "fearn",
+   "attribute": "minecraft:attack_damage",
+   "amount": 1.0,
+   "op": "add_value"
+  },
+  {
+   "id": "sail",
+   "attribute": "spell_power:healing",
+   "amount": 1.0,
+   "op": "add_value"
+  },
+  {
+   "id": "nion",
+   "attribute": "ranged_weapon:damage",
+   "amount": 1.0,
+   "op": "add_value"
+  },
+  {
+   "id": "uath",
+   "attribute": "minecraft:armor_toughness",
+   "amount": 1.0,
+   "op": "add_value"
+  },
+  {
+   "id": "dair",
+   "attribute": "minecraft:max_health",
+   "amount": 2.0,
+   "op": "add_value"
+  },
+  {
+   "id": "tinne",
+   "attribute": "spell_power:critical_chance",
+   "amount": 0.03,
+   "op": "add_multiplied_base"
+  },
+  {
+   "id": "coll",
+   "attribute": "spell_power:critical_damage",
+   "amount": 0.08,
+   "op": "add_multiplied_base"
+  },
+  {
+   "id": "iodhadh",
+   "attribute": "minecraft:knockback_resistance",
+   "amount": 0.1,
+   "op": "add_value"
+  },
+  {
+   "id": "ruis",
+   "attribute": "spell_power:resistance.generic",
+   "amount": 0.05,
+   "op": "add_value"
+  }
+ ],
+ "rings": [
+  {
+   "id": "ring_bronze",
+   "sockets": 1,
+   "curio": "ring"
+  },
+  {
+   "id": "charm_bronze",
+   "sockets": 1,
+   "curio": "charm"
+  },
+  {
+   "id": "ring_steel",
+   "sockets": 2,
+   "curio": "ring"
+  },
+  {
+   "id": "charm_steel",
+   "sockets": 1,
+   "curio": "charm"
+  },
+  {
+   "id": "ring_composite",
+   "sockets": 3,
+   "curio": "ring"
+  },
+  {
+   "id": "charm_composite",
+   "sockets": 2,
+   "curio": "charm"
+  }
+ ],
+ "spells": [
+  "diaithir_classes:fian_shout",
+  "diaithir_classes:fian_charge",
+  "diaithir_classes:fian_spear_cast",
+  "diaithir_classes:fian_ground_blow",
+  "diaithir_classes:sleagh_volley",
+  "diaithir_classes:sleagh_net_trap",
+  "diaithir_classes:sleagh_sling_shot",
+  "diaithir_classes:sleagh_hawk_eye",
+  "diaithir_classes:ceilg_shadow_cloak",
+  "diaithir_classes:ceilg_ambush",
+  "diaithir_classes:ceilg_knife_fan",
+  "diaithir_classes:ceilg_mark_prey",
+  "diaithir_classes:cleirech_mercy",
+  "diaithir_classes:cleirech_aegis",
+  "diaithir_classes:cleirech_smite",
+  "diaithir_classes:cleirech_sanctuary",
+  "diaithir_classes:fian_rage_bronze",
+  "diaithir_classes:fian_rage_steel",
+  "diaithir_classes:fian_rage_composite",
+  "diaithir_classes:sleagh_keen_bronze",
+  "diaithir_classes:sleagh_keen_steel",
+  "diaithir_classes:sleagh_keen_composite",
+  "diaithir_classes:ceilg_bleed_bronze",
+  "diaithir_classes:ceilg_bleed_steel",
+  "diaithir_classes:ceilg_bleed_composite",
+  "diaithir_classes:cleirech_ward_bronze",
+  "diaithir_classes:cleirech_ward_steel",
+  "diaithir_classes:cleirech_ward_composite"
+ ],
+ "sets": [
+  "diaithir_classes:fian_bronze",
+  "diaithir_classes:fian_steel",
+  "diaithir_classes:fian_composite",
+  "diaithir_classes:sleagh_bronze",
+  "diaithir_classes:sleagh_steel",
+  "diaithir_classes:sleagh_composite",
+  "diaithir_classes:ceilg_bronze",
+  "diaithir_classes:ceilg_steel",
+  "diaithir_classes:ceilg_composite",
+  "diaithir_classes:cleirech_bronze",
+  "diaithir_classes:cleirech_steel",
+  "diaithir_classes:cleirech_composite"
+ ],
+ "containers": [
+  "diaithir_classes:fian_sword_bronze",
+  "diaithir_classes:fian_spear_bronze",
+  "diaithir_classes:fian_sword_steel",
+  "diaithir_classes:fian_spear_steel",
+  "diaithir_classes:fian_sword_composite",
+  "diaithir_classes:fian_spear_composite",
+  "diaithir_classes:sleagh_bow_bronze",
+  "diaithir_classes:sleagh_sling_bronze",
+  "diaithir_classes:sleagh_bow_steel",
+  "diaithir_classes:sleagh_sling_steel",
+  "diaithir_classes:sleagh_bow_composite",
+  "diaithir_classes:sleagh_sling_composite",
+  "diaithir_classes:ceilg_dagger_bronze",
+  "diaithir_classes:ceilg_dagger_steel",
+  "diaithir_classes:ceilg_dagger_composite",
+  "diaithir_classes:cleirech_crozier_bronze",
+  "diaithir_classes:cleirech_crozier_steel",
+  "diaithir_classes:cleirech_crozier_composite"
+ ]
+}

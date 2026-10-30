@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:swarm_focus",
+  "s": "goety:venomous_fang",
+  "f": "minecraft:arrow"
+ },
+ "pattern": [
+  "sfs",
+  "fef",
+  "sfs"
+ ],
+ "result": {
+  "id": "goety:poison_dart_focus",
+  "count": 1
+ }
+}

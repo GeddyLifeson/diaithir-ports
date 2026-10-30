@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:item_frame",
+    "#c:dyes/light_blue"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:tartaric_acid_painting"
+  }
+}

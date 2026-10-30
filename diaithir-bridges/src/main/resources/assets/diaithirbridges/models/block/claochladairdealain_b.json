@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "diaithirbridges:block/claochladairdealain_side",
+    "down": "diaithirbridges:block/claochladairdealain_top",
+    "up": "diaithirbridges:block/claochladairdealain_top",
+    "north": "diaithirbridges:block/claochladairdealain_front_b",
+    "east": "diaithirbridges:block/claochladairdealain_side",
+    "south": "diaithirbridges:block/claochladairdealain_side",
+    "west": "diaithirbridges:block/claochladairdealain_side"
+  }
+}

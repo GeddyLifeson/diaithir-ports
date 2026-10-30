@@ -1,0 +1,70 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_ss_crate:brass_crate_shell",
+ "transitional_item": {
+  "id": "create_ss_crate:incomplete_deep_dark_crate"
+ },
+ "result": {
+  "id": "create_ss_crate:deep_dark_crate"
+ },
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:sculk",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:chiseled_deepslate",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:deepslate_tiles",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:sculk_vein",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:lava",
+    "amount": 81000
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 20
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+version = "${minecraft_version}-${mod_version}"
+base { archivesName = 'diaithir-create-addons-n2' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+repositories { maven { url = 'https://maven.createmod.net' } }
+neoForge {
+    version = project.neo_version
+    mods { "diaithir_create_addons_n2" { sourceSet(sourceSets.main) } }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }

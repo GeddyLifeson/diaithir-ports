@@ -57,6 +57,7 @@ public final class DiaithirNemesis {
         NeoForge.EVENT_BUS.addListener(EntityJoinLevelEvent.class, DiaithirNemesis::onJoin);
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, DiaithirNemesis::onTick);
         NeoForge.EVENT_BUS.addListener(PlayerEvent.PlayerRespawnEvent.class, DiaithirNemesis::onRespawn);
+        NeoForge.EVENT_BUS.addListener(PlayerEvent.PlayerLoggedInEvent.class, DiaithirNemesis::onLogin);
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, DiaithirNemesis::onInteract);
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> NemesisCommands.register(e.getDispatcher()));
         listenToAges();
@@ -105,7 +106,8 @@ public final class DiaithirNemesis {
             promote(server, NemesisData.get(server), killer, player, true);
         } else if (event.getEntity() instanceof Mob mob && idOf(mob) > 0) {
             NemesisData data = NemesisData.get(server);
-            if (data.byId(idOf(mob)) instanceof Nemesis n) fall(server, data, mob, n, event);
+            // only the body the record points at can end it; a stale copy (its UUID no longer in n.entity) dies without effect
+            if (data.byId(idOf(mob)) instanceof Nemesis n && n.entity.equals(mob.getStringUUID())) fall(server, data, mob, n, event);
         }
     }
 
@@ -133,6 +135,7 @@ public final class DiaithirNemesis {
                 took = " It took their " + stack.getHoverName().getString() + ".";
             }
             data.shaken.put(uuid, n.id);
+            data.unshake.remove(uuid);
         }
         Traits.apply(mob, n, RULES);
         arm(mob, data, n);
@@ -162,7 +165,7 @@ public final class DiaithirNemesis {
     }
 
     /** Forgets a fallen nemesis, frees those it shook, and if it led its warband the strongest left rises to lead. */
-    private static void fallen(MinecraftServer server, NemesisData data, Nemesis n) {
+    static void fallen(MinecraftServer server, NemesisData data, Nemesis n) {
         boolean ledBand = data.chief(n.warband) == n;
         List<String> freed = data.shaken.entrySet().stream().filter(e -> e.getValue() == n.id).map(Map.Entry::getKey).toList();
         data.remove(n);
@@ -170,6 +173,7 @@ public final class DiaithirNemesis {
         for (String p : freed) {
             ServerPlayer sp = server.getPlayerList().getPlayer(UUID.fromString(p));
             if (sp != null) sp.removeEffect(MobEffects.WEAKNESS);
+            else data.unshake.add(p);
         }
         Nemesis heir = ledBand ? data.chief(n.warband) : null;
         if (heir != null) {
@@ -289,6 +293,17 @@ public final class DiaithirNemesis {
         }
     }
 
+    // A player freed from Shaken while offline still carries the endless Weakness; lift it on login unless another nemesis shook them since.
+    private static void onLogin(PlayerEvent.PlayerLoggedInEvent event) {
+        if (event.getEntity() instanceof ServerPlayer player && player.level().getServer() instanceof MinecraftServer server) {
+            NemesisData data = NemesisData.get(server);
+            if (data.unshake.remove(player.getStringUUID())) {
+                if (!data.shaken.containsKey(player.getStringUUID())) player.removeEffect(MobEffects.WEAKNESS);
+                data.setDirty();
+            }
+        }
+    }
+
     static String seen(Entity e) { return e.getBlockX() + ", " + e.getBlockZ(); }
 
     private static boolean nearSpawn(ServerPlayer player) {
@@ -302,8 +317,9 @@ public final class DiaithirNemesis {
         EntityType<?> type = BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(n.type)).orElse(null);
         BlockPos pos = spotNear(level, player.blockPosition());
         if (type == null || pos == null) return false;
-        despawn(server, n);
-        if (!(type.spawn(level, pos, EntitySpawnReason.EVENT) instanceof Mob mob)) return false;
+        Entity old = loaded(server, n);
+        if (!(type.spawn(level, pos, EntitySpawnReason.EVENT) instanceof Mob mob)) return false; // keep the old body if the new one cannot spawn
+        if (old != null) old.discard();
         n.entity = mob.getStringUUID();
         n.seen = seen(mob);
         n.lastAmbush = server.overworld().getGameTime();

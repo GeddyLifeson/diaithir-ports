@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "magic",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "#c:ender_pearls",
+  "#c:gems/quartz",
+  "#c:gems/quartz",
+  "#goety:boats",
+  "#c:gems/diamond",
+  "#c:ingots/iron",
+  "#c:ingots/gold",
+  "minecraft:lead"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:telekinesis_focus",
+ "count": 1
+}

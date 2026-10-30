@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "P": "diaithirsteamrails:riveted_plate",
+  "T": "diaithirsteamrails:flue_tube"
+ },
+ "pattern": [
+  "PIP",
+  "PTP",
+  "PIP"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:steel_boiler_shell",
+  "count": 2
+ },
+ "category": "misc"
+}

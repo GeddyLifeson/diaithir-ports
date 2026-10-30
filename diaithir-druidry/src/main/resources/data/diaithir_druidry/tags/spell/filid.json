@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "#diaithir_druidry:spell_book/filid",
+   "required": false
+  },
+  {
+   "id": "#diaithir_druidry:weapon/filid_staff",
+   "required": false
+  }
+ ]
+}

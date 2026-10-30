@@ -1,0 +1,7 @@
+{
+  "parent": "create_cluj_napoca:custom/sarmale",
+  "textures": {
+    "0": "create_cluj_napoca:block/sarmale",
+    "particle": "create_cluj_napoca:item/sarmale"
+  }
+}

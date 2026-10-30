@@ -1,0 +1,21 @@
+{
+  "icon": {
+    "item": "minecraft:milk_bucket",
+    "color": 10337205,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:nilotic.gaeliboi",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "xp",
+      "multiplier": 0.8
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "nilotic.gaeliboi_curse_1"
+}

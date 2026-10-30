@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "alchemind:cinder_scrap",
+  "alchemind:cinder_scrap",
+  "alchemind:cinder_scrap",
+  "alchemind:cinder_scrap"
+ ],
+ "results": [
+  {
+   "id": "alchemind:cinderite"
+  }
+ ],
+ "heat_requirement": "heated"
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "   ",
+  "sis",
+  "   "
+ ],
+ "key": {
+  "i": "alchemind:crystal_glass",
+  "s": "create:copper_sheet"
+ },
+ "result": {
+  "id": "create:fluid_pipe",
+  "count": 10
+ }
+}

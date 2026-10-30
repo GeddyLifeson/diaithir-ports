@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:cauldron",
+    "minecraft:campfire",
+    "minecraft:hopper"
+  ],
+  "result": {
+    "id": "diaithir_gods:brazier",
+    "count": 1
+  }
+}

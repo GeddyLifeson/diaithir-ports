@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "automatemat:nether_core",
+  "minecraft:soul_sand",
+  "automatemat:nether_core",
+  "minecraft:soul_sand",
+  "automatemat:fortress_core",
+  "minecraft:blaze_rod",
+  "minecraft:blaze_powder",
+  "minecraft:blaze_rod",
+  "minecraft:blaze_powder"
+ ],
+ "result": {
+  "id": "minecraft:wither_skeleton_skull"
+ }
+}

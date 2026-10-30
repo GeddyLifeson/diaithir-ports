@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:empty_focus",
+  "f": "minecraft:flint",
+  "s": "#c:ingots/iron"
+ },
+ "pattern": [
+  "s f",
+  " e ",
+  "f s"
+ ],
+ "result": {
+  "id": "goety:ignite_focus",
+  "count": 1
+ }
+}

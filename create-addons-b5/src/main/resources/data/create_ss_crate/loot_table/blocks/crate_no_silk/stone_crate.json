@@ -1,0 +1,44 @@
+{
+ "pools": [
+  {
+   "rolls": 3,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:pointed_dripstone",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:calcite",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:diorite",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:granite",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:tuff",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:cobbled_deepslate",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:andesite",
+     "weight": 2
+    }
+   ]
+  }
+ ]
+}

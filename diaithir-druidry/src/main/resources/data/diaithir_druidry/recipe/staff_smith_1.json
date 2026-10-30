@@ -1,0 +1,52 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "F": "minecraft:blaze_powder",
+  "I": "#c:ingots/bronze",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "  F",
+  " I ",
+  "S  "
+ ],
+ "result": {
+  "id": "minecraft:stick",
+  "count": 1,
+  "components": {
+   "minecraft:item_model": "diaithir_druidry:staff/smith_1",
+   "minecraft:item_name": {
+    "translate": "item.diaithir_druidry.staff_smith_1"
+   },
+   "minecraft:max_stack_size": 1,
+   "minecraft:max_damage": 150,
+   "minecraft:rarity": "uncommon",
+   "minecraft:attribute_modifiers": [
+    {
+     "type": "spell_power:fire",
+     "id": "diaithir_druidry:smith_1_power",
+     "amount": 3.0,
+     "operation": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "minecraft:lore": [
+    {
+     "text": "The forge-masters.",
+     "color": "gray",
+     "italic": false
+    }
+   ],
+   "spell_engine:spell_container": {
+    "access": "MAGIC",
+    "pool": "diaithir_druidry:weapon/smith_staff",
+    "max_spell_count": 2,
+    "spell_ids": [
+     "diaithir_druidry:forge_spark",
+     "diaithir_druidry:quench"
+    ]
+   }
+  }
+ }
+}

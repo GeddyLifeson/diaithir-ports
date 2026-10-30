@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "C  ",
+    " CF",
+    " iP"
+  ],
+  "key": {
+    "C": "minecraft:copper_ingot",
+    "i": "minecraft:iron_nugget",
+    "F": "minecraft:flint_and_steel",
+    "P": "#minecraft:planks"
+  },
+  "result": {
+    "count": 1,
+    "id": "musketmod:blunderbuss"
+  }
+}

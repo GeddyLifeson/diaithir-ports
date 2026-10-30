@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " MS",
+  "M S",
+  " MS"
+ ],
+ "key": {
+  "M": "diaithirarms:ceramic_plate",
+  "S": "minecraft:string"
+ },
+ "result": {
+  "id": "diaithirarms:composite_bow",
+  "count": 1
+ }
+}

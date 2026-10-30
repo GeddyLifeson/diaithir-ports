@@ -1,0 +1,184 @@
+[
+ [
+  "Stadkrundblok",
+  "item",
+  4,
+  "create",
+  "A brake for Create shafts. Redstone power locks the shaft and burns off its speed as heat; it stops machinery, it makes nothing."
+ ],
+ [
+  "Bosgeiidemprás",
+  "item",
+  4,
+  "create",
+  "A brass gearbox that joins shafts on every side, with extra outputs. Brass casing only, so it is Age IV."
+ ],
+ [
+  "Gierbsrengchrund",
+  "item",
+  4,
+  "create",
+  "A gearbox that carries two parallel shaft lines through one block, one over the other."
+ ],
+ [
+  "Sé-chrandoidem",
+  "item",
+  4,
+  "create",
+  "A gearbox that passes rotation between all six faces, for dense rotation hubs."
+ ],
+ [
+  "Greimchlaenta",
+  "item",
+  4,
+  "create",
+  "A clutch that drives while unpowered and disengages on a redstone signal. Fail-safe lines stop when a circuit fires."
+ ],
+ [
+  "Kúlaitoidem",
+  "item",
+  4,
+  "create",
+  "A gearshift that reverses rotation only while unpowered; the opposite of the ordinary gearshift."
+ ],
+ [
+  "Krosachkrund",
+  "item",
+  4,
+  "create",
+  "A connector that forwards rotation between small cogwheels placed diagonally across it."
+ ],
+ [
+  "Niertgreim",
+  "item",
+  4,
+  "create",
+  "A clutch that slips open when the network is overstressed and closes again once the load falls."
+ ],
+ [
+  "Siechadrod",
+  "item",
+  4,
+  "create",
+  "A one-way clutch. It turns the output when driven forward and spins free when driven back."
+ ],
+ [
+  "Luotgreim",
+  "item",
+  4,
+  "create",
+  "A clutch that engages once the shaft passes a set speed. Set the threshold with the scroll."
+ ],
+ [
+  "Shear Pin",
+  "item",
+  4,
+  "create",
+  "A shaft that gives way first. When the network is overstressed the pin breaks and the load is dropped, instead of wrecking the machines."
+ ],
+ [
+  "Modular Diesel Engine",
+  "item",
+  4,
+  "create",
+  "A diesel engine built from segments set in a line. Each segment adds stress; all share one tank, and the whole line runs on the same fuel."
+ ],
+ [
+  "Huge Diesel Engine",
+  "item",
+  4,
+  "create",
+  "A very large engine for the heaviest loads. Four buckets of fuel in the tank, high speed, and a great deal of stress."
+ ],
+ [
+  "Burner",
+  "item",
+  4,
+  "create",
+  "A fuel burner that heats basins like a blaze burner. Turn its valve or give it a redstone signal; it burns the liquid fuel piped into it."
+ ],
+ [
+  "Canister",
+  "item",
+  4,
+  "create",
+  "A portable fuel can, and a tank when set down. It keeps what is in it when picked up again."
+ ],
+ [
+  "Distillation Tower",
+  "item",
+  4,
+  "create",
+  "Stack three over a burner and feed crude oil into the bottom. Diesel collects in the second segment and gasoline in the third."
+ ],
+ [
+  "Pumpjack",
+  "item",
+  4,
+  "create",
+  "Draws crude oil from the pool under its chunk when turned. About one chunk in three holds oil; each pool runs dry in the end."
+ ],
+ [
+  "Engine Silencer",
+  "item",
+  4,
+  "create",
+  "Bolts onto a diesel engine to quieten it. It changes the sound and nothing else."
+ ],
+ [
+  "Engine Turbocharger",
+  "item",
+  4,
+  "create",
+  "Bolts onto a diesel engine to raise its speed and its stress by half again."
+ ],
+ [
+  "Kondadindel",
+  "item",
+  4,
+  "create",
+  "Burns liquid fuel and turns a shaft. Fuel quality sets speed and stress; a redstone signal throttles it. It runs hot, so it warms the room around it."
+ ],
+ [
+  "Dubula",
+  "item",
+  4,
+  "create",
+  "Raw oil from oil springs, black and thick. Sold in buckets. It is distilled into fuels and not burned as it comes."
+ ],
+ [
+  "Kondadula",
+  "item",
+  4,
+  "create",
+  "A middle-weight fuel with steady, high power. The engine burns it by the millibucket."
+ ],
+ [
+  "Kondadsuildeir",
+  "item",
+  4,
+  "create",
+  "A light, fast fuel. It gives a high-speed engine at a lower stress capacity than diesel."
+ ],
+ [
+  "Bheokundadula",
+  "item",
+  4,
+  "create",
+  "Fuel pressed from plant oil. It burns weaker than diesel but needs no oil spring."
+ ],
+ [
+  "Fìunulkul",
+  "item",
+  4,
+  "create",
+  "Spirit fuel fermented from crops. Weak in the engine, but any farm can make it."
+ ],
+ [
+  "Ola-sìul",
+  "item",
+  4,
+  "create",
+  "Oil pressed from seeds. Feeds the biodiesel chain and burns poorly on its own."
+ ]
+]

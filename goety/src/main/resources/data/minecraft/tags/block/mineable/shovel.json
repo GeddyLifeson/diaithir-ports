@@ -1,0 +1,31 @@
+{
+ "replace": false,
+ "values": [
+  "goety:bottom_dirty_end_basalt",
+  "goety:dark_dirt",
+  "goety:dark_dirt_slab",
+  "goety:detritus",
+  "goety:dirty_chiseled_siltstone",
+  "goety:dirty_cobbled_end_stone",
+  "goety:dirty_cobbled_end_stone_heavy",
+  "goety:dirty_cobbled_siltstone",
+  "goety:dirty_end_basalt",
+  "goety:dirty_end_limestone",
+  "goety:dirty_end_limestone_slight",
+  "goety:dirty_end_rock",
+  "goety:dirty_ominous_stone",
+  "goety:dirty_ominous_stone_bricks",
+  "goety:dirty_ominous_stone_bricks_heavy",
+  "goety:dirty_ominous_stone_bricks_slight",
+  "goety:dirty_ominous_stone_pavement",
+  "goety:dirty_ominous_stone_pavement_heavy",
+  "goety:dirty_ominous_stone_slight",
+  "goety:dirty_ominous_stone_tiles",
+  "goety:dirty_ominous_stone_tiles_heavy",
+  "goety:dirty_ominous_stone_tiles_slight",
+  "goety:dirty_siltstone",
+  "goety:dirty_siltstone_heavy",
+  "goety:soiled_end_dirt",
+  "goety:top_dirty_end_basalt"
+ ]
+}

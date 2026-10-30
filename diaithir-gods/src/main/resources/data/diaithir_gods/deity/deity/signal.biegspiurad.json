@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:signal.biegspiurad",
+  "icon": "minecraft:rabbit_foot",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

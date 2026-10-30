@@ -1,0 +1,28 @@
+{
+  "creature": "diaithir_myth:tarbiumachuoirtach",
+  "court": "minoan",
+  "region": "Crete and the Aegean",
+  "min_age": 3,
+  "boxes": [
+    {
+      "lat": [
+        34.0,
+        36.0
+      ],
+      "lon": [
+        23.0,
+        27.0
+      ]
+    },
+    {
+      "lat": [
+        35.5,
+        40.2
+      ],
+      "lon": [
+        23.3,
+        28.0
+      ]
+    }
+  ]
+}

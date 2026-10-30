@@ -1,0 +1,20 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirsteamrails:block/steam_cylinder",
+   "y": 0
+  },
+  "facing=east": {
+   "model": "diaithirsteamrails:block/steam_cylinder",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirsteamrails:block/steam_cylinder",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirsteamrails:block/steam_cylinder",
+   "y": 270
+  }
+ }
+}

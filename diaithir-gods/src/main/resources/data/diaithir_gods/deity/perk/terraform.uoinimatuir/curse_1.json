@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:rabbit_foot",
+    "color": 10389918,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:terraform.uoinimatuir",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "terraform.uoinimatuir_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

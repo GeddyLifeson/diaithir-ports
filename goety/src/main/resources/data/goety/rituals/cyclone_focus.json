@@ -1,0 +1,17 @@
+{
+ "type": "craft",
+ "school": "sky",
+ "activation": "goety:wind_core",
+ "offerings": [
+  "minecraft:minecart",
+  "goety:ectoplasm",
+  "#c:feathers",
+  "minecraft:phantom_membrane",
+  "goety:magic_emerald",
+  "#c:ender_pearls"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:cyclone_focus",
+ "count": 1
+}

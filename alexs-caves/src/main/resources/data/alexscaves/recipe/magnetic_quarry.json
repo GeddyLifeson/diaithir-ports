@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SDS",
+    "NHN",
+    "SDS"
+  ],
+  "key": {
+    "N": "alexscaves:azure_neodymium_ingot",
+    "S": "alexscaves:scrap_metal_plate",
+    "D": "#c:gems/diamond",
+    "H": "alexscaves:heart_of_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "alexscaves:quarry"
+  }
+}

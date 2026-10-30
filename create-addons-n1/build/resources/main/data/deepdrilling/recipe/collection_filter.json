@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "deepdrilling:blank_module",
+  "create:andesite_funnel"
+ ],
+ "result": {
+  "id": "deepdrilling:collection_filter"
+ }
+}

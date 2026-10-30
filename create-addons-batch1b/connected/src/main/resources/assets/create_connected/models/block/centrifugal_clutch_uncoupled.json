@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create_connected:block/centrifugal_clutch_uncoupled",
+  "end": "create_connected:block/centrifugal_clutch_end"
+ }
+}

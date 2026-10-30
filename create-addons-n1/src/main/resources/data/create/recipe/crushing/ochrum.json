@@ -1,0 +1,16 @@
+{
+ "type": "create:crushing",
+ "ingredient": "create:ochrum",
+ "results": [
+  {
+   "id": "create:crushed_raw_gold",
+   "chance": 0.7
+  },
+  {
+   "id": "minecraft:gold_nugget",
+   "count": 3,
+   "chance": 0.5
+  }
+ ],
+ "processing_time": 250
+}

@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirvoice"
+version = "${version}"
+displayName = "Diaithir Voice"
+description = "Proximity voice chat carried inside the normal Minecraft connection, so one TCP tunnel is enough and no UDP port or native library is needed. Push to talk, 16 kHz ADPCM, relayed only to players in range with volume falloff and stereo placement. Clean-room: written from how proximity voice behaves, no code taken from any voice mod."
+
+[[dependencies.diaithirvoice]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

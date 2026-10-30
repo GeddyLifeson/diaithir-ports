@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "sometricks:block/tree_gen"
+    }
+  }
+}

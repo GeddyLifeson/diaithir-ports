@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "iceandfire:sea_serpent_scales_purple"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "iceandfire:sea_serpent_scale_block_purple"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:gold_ingot",
+    "color": 8685936,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:baltic.grianubienuosul",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:poison",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "baltic.grianubienuosul_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,50 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithir_classes"
+version = "${version}"
+displayName = "Diaithir Classes"
+authors = "Diaithir"
+description = '''Fian, Sleagh, Ceilg and Cleirech class kits with Age III, V and VII gear, Spell Engine abilities and set passives, and a data-driven Ogham rune and ring system. Clean-room, original work.'''
+
+[[dependencies.diaithir_classes]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithir_classes]]
+modId = "spell_engine"
+type = "required"
+versionRange = "[1.10,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithir_classes]]
+modId = "spell_power"
+type = "required"
+versionRange = "[1.6,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithir_classes]]
+modId = "diaithirarms"
+type = "required"
+versionRange = "[1.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithir_classes]]
+modId = "ranged_weapon_api"
+type = "optional"
+versionRange = "[4.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithir_classes]]
+modId = "curios"
+type = "optional"
+versionRange = "[15.0,)"
+ordering = "AFTER"
+side = "BOTH"

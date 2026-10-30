@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "create_ss_crate:block/stronghold_portal_room_crate"
+  }
+}

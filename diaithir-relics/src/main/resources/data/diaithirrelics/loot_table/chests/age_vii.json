@@ -1,0 +1,35 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "diaithirrelics:oath_sword",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithirrelics:light_shield",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithirrelics:fate_ring",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithirrelics:apple_branch",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithirrelics:dragon_torque",
+     "weight": 1
+    }
+   ]
+  }
+ ]
+}

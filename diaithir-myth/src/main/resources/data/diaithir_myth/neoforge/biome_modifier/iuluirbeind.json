@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#diaithir_myth:habitat/peaks",
+  "spawners": [
+    {
+      "type": "diaithir_myth:iuluirbeind",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}

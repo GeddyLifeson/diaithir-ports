@@ -1,0 +1,1192 @@
+[
+ [
+  "Aurmachd knàim",
+  "concept",
+  1,
+  "arms",
+  "Arms and armour of Age I. Hide cut and stitched over bone plates, the dress of the first hunters and the Telling singers' guards."
+ ],
+ [
+  "Lùirech knàim",
+  "item",
+  1,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund knàim. 7 armour points in all (helmet 1, chest 3, legs 2, boots 1), toughness 0, durability x8. Made from bone plates and leather; Age I."
+ ],
+ [
+  "Aurmachd uma",
+  "concept",
+  2,
+  "arms",
+  "Arms and armour of Age II. Beaten copper over hide, the first metal of the herders and the cairn builders."
+ ],
+ [
+  "Lùirech uma",
+  "item",
+  2,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund uma. 10 armour points in all (helmet 2, chest 4, legs 3, boots 1), toughness 0, durability x11. Made from copper ingots; Age II."
+ ],
+ [
+  "Aurmachd krèuma",
+  "concept",
+  3,
+  "arms",
+  "Arms and armour of Age III. Bronze with red and blue enamel studs in the curving style of the island smiths."
+ ],
+ [
+  "Lùirech krèuma",
+  "item",
+  3,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund krèuma. 12 armour points in all (helmet 2, chest 5, legs 4, boots 1), toughness 0, durability x14. Made from bronze ingots; Age III."
+ ],
+ [
+  "Aurmachd iarund",
+  "concept",
+  4,
+  "arms",
+  "Arms and armour of Age IV. Rings of iron linked by hand, the road-warden's coat in the age of kings."
+ ],
+ [
+  "Lùirech iarund",
+  "item",
+  4,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund iarund. 15 armour points in all (helmet 2, chest 6, legs 5, boots 2), toughness 0, durability x17. Made from iron ingots; Age IV."
+ ],
+ [
+  "Aurmachd kruoid",
+  "concept",
+  5,
+  "arms",
+  "Arms and armour of Age V. Plate and blade of true steel, the first gear of the mills, the rails and the early cities. Sword, axe and spear start here."
+ ],
+ [
+  "Lùirech kruoid",
+  "item",
+  5,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund kruoid. 19 armour points in all (helmet 3, chest 7, legs 6, boots 3), toughness 1, durability x24. Made from steel ingots; Age V."
+ ],
+ [
+  "Aurmachd snàitlech",
+  "concept",
+  6,
+  "arms",
+  "Arms and armour of Age VI. Layers of woven fibre under a painted steel pot, made for the wars of the power grid. Its weapon tier is tempered steel."
+ ],
+ [
+  "Lùirech snàitlech",
+  "item",
+  6,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund snàitlech. 20 armour points in all (helmet 3, chest 8, legs 6, boots 3), toughness 1.5, knockback resistance 5%, durability x28. Made from ballistic weave; Age VI."
+ ],
+ [
+  "Aurmachd kriadach",
+  "concept",
+  7,
+  "arms",
+  "Arms and armour of Age VII. Ceramic tiles in a carbon twill: light, hard and cold, the armour of the digital age."
+ ],
+ [
+  "Lùirech kriadach",
+  "item",
+  7,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund kriadach. 24 armour points in all (helmet 4, chest 9, legs 7, boots 4), toughness 2.5, knockback resistance 5%, durability x36. Made from ceramic plates; Age VII."
+ ],
+ [
+  "Aurmachd kumask",
+  "concept",
+  7,
+  "arms",
+  "Arms and armour of Age Rodos. An alloy of teal and gold, worked only since the Delivered Collection landed at Rodos."
+ ],
+ [
+  "Lùirech kumask",
+  "item",
+  7,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund kumask. 26 armour points in all (helmet 4, chest 10, legs 8, boots 4), toughness 3.5, knockback resistance 10%, durability x46. Made from Rodos alloy ingots; Age Rodos."
+ ],
+ [
+  "Aurmachd riondag",
+  "concept",
+  7,
+  "arms",
+  "Arms and armour of Age Rodos. A pale lattice of star-metal with cold light in the seams, made after Rodos and by no maker the record names."
+ ],
+ [
+  "Lùirech riondag",
+  "item",
+  7,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund riondag. 30 armour points in all (helmet 5, chest 11, legs 9, boots 5), toughness 4.5, knockback resistance 15%, durability x60. Made from star lattice; Age Rodos."
+ ],
+ [
+  "Umlaig knàim",
+  "item",
+  1,
+  "arms",
+  "Bow of Age I: arrows hit x0.9 of a plain bow's damage, 300 uses. Crafted from bone plates x3 and string x3."
+ ],
+ [
+  "Skiad knàim",
+  "item",
+  1,
+  "arms",
+  "Off-hand shield of Age I: blocks 80% of a blow from the front, 160 uses. Crafted from bone plates x3 and planks x4."
+ ],
+ [
+  "Umlaig uma",
+  "item",
+  2,
+  "arms",
+  "Bow of Age II: arrows hit x0.95 of a plain bow's damage, 330 uses. Crafted from copper ingots x3 and string x3."
+ ],
+ [
+  "Skiad uma",
+  "item",
+  2,
+  "arms",
+  "Off-hand shield of Age II: blocks 85% of a blow from the front, 260 uses. Crafted from copper ingots x3 and planks x4."
+ ],
+ [
+  "Umlaig krèuma",
+  "item",
+  3,
+  "arms",
+  "Bow of Age III: arrows hit x1 of a plain bow's damage, 384 uses. Crafted from bronze ingots x3 and string x3."
+ ],
+ [
+  "Skiad krèuma",
+  "item",
+  3,
+  "arms",
+  "Off-hand shield of Age III: blocks 90% of a blow from the front, 330 uses. Crafted from bronze ingots x3 and planks x4."
+ ],
+ [
+  "Umlaig iarund",
+  "item",
+  4,
+  "arms",
+  "Bow of Age IV: arrows hit x1.05 of a plain bow's damage, 420 uses. Crafted from iron ingots x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi iarund",
+  "item",
+  4,
+  "arms",
+  "Crossbow of Age IV: bolts hit x1.15 of a plain bow's damage, 465 uses. Crafted from rods x3, iron ingots x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad iarund",
+  "item",
+  4,
+  "arms",
+  "Off-hand shield of Age IV: blocks 95% of a blow from the front, 420 uses. Crafted from iron ingots x3 and planks x4."
+ ],
+ [
+  "Klaidem kruoid",
+  "item",
+  5,
+  "arms",
+  "Steady sword: 7 attack damage, 1.6 swings a second, sweeps nearby foes, 900 uses. Crafted from steel ingots x2 and a rod; Age V."
+ ],
+ [
+  "Tuog kruoid",
+  "item",
+  5,
+  "arms",
+  "Heavy axe: 10 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 900 uses. Crafted from steel ingots x3 and rods x2; Age V."
+ ],
+ [
+  "Slieg kruoid",
+  "item",
+  5,
+  "arms",
+  "Long spear for lunging while moving: 4 base damage, charge damage x1. 900 uses. Crafted from steel ingots x1 and rods x2; Age V."
+ ],
+ [
+  "Umlaig kruoid",
+  "item",
+  5,
+  "arms",
+  "Bow of Age V: arrows hit x1.15 of a plain bow's damage, 560 uses. Crafted from steel ingots x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi kruoid",
+  "item",
+  5,
+  "arms",
+  "Crossbow of Age V: bolts hit x1.3 of a plain bow's damage, 600 uses. Crafted from rods x3, steel ingots x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad kruoid",
+  "item",
+  5,
+  "arms",
+  "Off-hand shield of Age V: blocks 100% of a blow from the front, 600 uses. Crafted from steel ingots x3 and planks x4."
+ ],
+ [
+  "Klaidem doirbi",
+  "item",
+  6,
+  "arms",
+  "Steady sword: 7.5 attack damage, 1.6 swings a second, sweeps nearby foes, 1300 uses. Crafted from tempered ingots x2 and a rod; Age VI."
+ ],
+ [
+  "Tuog doirbi",
+  "item",
+  6,
+  "arms",
+  "Heavy axe: 10.5 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 1300 uses. Crafted from tempered ingots x3 and rods x2; Age VI."
+ ],
+ [
+  "Slieg doirbi",
+  "item",
+  6,
+  "arms",
+  "Long spear for lunging while moving: 4.5 base damage, charge damage x1.06. 1300 uses. Crafted from tempered ingots x1 and rods x2; Age VI."
+ ],
+ [
+  "Umlaig doirbi",
+  "item",
+  6,
+  "arms",
+  "Bow of Age VI: arrows hit x1.25 of a plain bow's damage, 700 uses. Crafted from tempered ingots x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi doirbi",
+  "item",
+  6,
+  "arms",
+  "Crossbow of Age VI: bolts hit x1.45 of a plain bow's damage, 750 uses. Crafted from rods x3, tempered ingots x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad doirbi",
+  "item",
+  6,
+  "arms",
+  "Off-hand shield of Age VI: blocks 100% of a blow from the front, 800 uses. Crafted from tempered ingots x3 and planks x4."
+ ],
+ [
+  "Klaidem mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Steady sword: 8 attack damage, 1.6 swings a second, sweeps nearby foes, 1900 uses. Crafted from ceramic plates x2 and a rod; Age VII."
+ ],
+ [
+  "Tuog mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Heavy axe: 11 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 1900 uses. Crafted from ceramic plates x3 and rods x2; Age VII."
+ ],
+ [
+  "Slieg mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Long spear for lunging while moving: 5 base damage, charge damage x1.12. 1900 uses. Crafted from ceramic plates x1 and rods x2; Age VII."
+ ],
+ [
+  "Umlaig mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Bow of Age VII: arrows hit x1.35 of a plain bow's damage, 900 uses. Crafted from ceramic plates x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Crossbow of Age VII: bolts hit x1.6 of a plain bow's damage, 950 uses. Crafted from rods x3, ceramic plates x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Off-hand shield of Age VII: blocks 100% of a blow from the front, 1100 uses. Crafted from ceramic plates x3 and planks x4."
+ ],
+ [
+  "Klaidem kumask",
+  "item",
+  7,
+  "arms",
+  "Steady sword: 9 attack damage, 1.6 swings a second, sweeps nearby foes, 2900 uses. Crafted from Rodos alloy ingots x2 and a rod; Age Rodos."
+ ],
+ [
+  "Tuog kumask",
+  "item",
+  7,
+  "arms",
+  "Heavy axe: 12 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 2900 uses. Crafted from Rodos alloy ingots x3 and rods x2; Age Rodos."
+ ],
+ [
+  "Slieg kumask",
+  "item",
+  7,
+  "arms",
+  "Long spear for lunging while moving: 6 base damage, charge damage x1.22. 2900 uses. Crafted from Rodos alloy ingots x1 and rods x2; Age Rodos."
+ ],
+ [
+  "Umlaig kumask",
+  "item",
+  7,
+  "arms",
+  "Bow of Age Rodos: arrows hit x1.5 of a plain bow's damage, 1400 uses. Crafted from Rodos alloy ingots x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi kumask",
+  "item",
+  7,
+  "arms",
+  "Crossbow of Age Rodos: bolts hit x1.8 of a plain bow's damage, 1500 uses. Crafted from rods x3, Rodos alloy ingots x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad kumask",
+  "item",
+  7,
+  "arms",
+  "Off-hand shield of Age Rodos: blocks 100% of a blow from the front, 1700 uses. Crafted from Rodos alloy ingots x3 and planks x4."
+ ],
+ [
+  "Klaidem riondag",
+  "item",
+  7,
+  "arms",
+  "Steady sword: 10.5 attack damage, 1.6 swings a second, sweeps nearby foes, 4200 uses. Crafted from star lattice x2 and a rod; Age Rodos."
+ ],
+ [
+  "Tuog riondag",
+  "item",
+  7,
+  "arms",
+  "Heavy axe: 13.5 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 4200 uses. Crafted from star lattice x3 and rods x2; Age Rodos."
+ ],
+ [
+  "Slieg riondag",
+  "item",
+  7,
+  "arms",
+  "Long spear for lunging while moving: 7.5 base damage, charge damage x1.35. 4200 uses. Crafted from star lattice x1 and rods x2; Age Rodos."
+ ],
+ [
+  "Umlaig riondag",
+  "item",
+  7,
+  "arms",
+  "Bow of Age Rodos: arrows hit x1.7 of a plain bow's damage, 2000 uses. Crafted from star lattice x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi riondag",
+  "item",
+  7,
+  "arms",
+  "Crossbow of Age Rodos: bolts hit x2 of a plain bow's damage, 2100 uses. Crafted from rods x3, star lattice x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad riondag",
+  "item",
+  7,
+  "arms",
+  "Off-hand shield of Age Rodos: blocks 100% of a blow from the front, 2600 uses. Crafted from star lattice x3 and planks x4."
+ ],
+ [
+  "Troindser knàim",
+  "item",
+  1,
+  "arms",
+  "Crafting part for the arms of its Age. 2 bones and 1 leather make 2 plates."
+ ],
+ [
+  "Fieg snàitlech",
+  "item",
+  6,
+  "arms",
+  "Crafting part for the arms of its Age. 4 string and 1 steel ingot make 2 lengths."
+ ],
+ [
+  "Troindser kriadach",
+  "item",
+  7,
+  "arms",
+  "Crafting part for the arms of its Age. 2 bricks, a quartz and a length of ballistic weave make 2 plates."
+ ],
+ [
+  "Kruoid doirbi",
+  "item",
+  6,
+  "arms",
+  "Crafting part for the arms of its Age. 2 steel ingots and blaze powder make 2 ingots."
+ ],
+ [
+  "Kumask Rodos",
+  "item",
+  7,
+  "arms",
+  "Crafting part for the arms of its Age. A netherite ingot, a tempered ingot, an amethyst shard and an echo shard."
+ ],
+ [
+  "Fieg riondag",
+  "item",
+  7,
+  "arms",
+  "Crafting part for the arms of its Age. A Rodos alloy ingot, a ceramic plate and a nether star."
+ ],
+ [
+  "Ashenvar, Avatar of the Ember Hour",
+  "being",
+  4,
+  "bestiary",
+  "A rare avatar-boss, immune to being pushed about. Health 440, armour 12, damage 16. Roams the badlands from Age IV, rare."
+ ],
+ [
+  "Brassjack Walker",
+  "being",
+  5,
+  "bestiary",
+  "A walker of metal that runs on burning fuel. Health 70, armour 6. Roams the desert from Age V, rare. Burns coal."
+ ],
+ [
+  "Dobrunfumuir",
+  "being",
+  1,
+  "bestiary",
+  "A wild beast. Health 34, damage 5. Roams the swamp from Age I."
+ ],
+ [
+  "Emberwyrm",
+  "being",
+  3,
+  "bestiary",
+  "A winged hunter. Health 60, armour 6, damage 8. Roams the mountain from Age III."
+ ],
+ [
+  "Hollowmourn",
+  "being",
+  3,
+  "bestiary",
+  "A lurker of the dark that hunts only in low light. Health 50, armour 4, damage 9. Roams the forest from Age III."
+ ],
+ [
+  "Marenoth, Avatar of the Deep Tide",
+  "being",
+  3,
+  "bestiary",
+  "A rare avatar-boss, immune to being pushed about. Health 360, armour 8, damage 14. Roams the beach from Age III, rare."
+ ],
+ [
+  "Marrowcrawl",
+  "being",
+  4,
+  "bestiary",
+  "A lurker of the dark that hunts only in low light. Health 36, damage 7. Roams the swamp from Age IV."
+ ],
+ [
+  "Orsolune, Avatar of the Hushed Moon",
+  "being",
+  4,
+  "bestiary",
+  "A rare avatar-boss, immune to being pushed about. Health 320, armour 6, damage 12. Roams the taiga from Age IV, rare."
+ ],
+ [
+  "Pallidgaunt",
+  "being",
+  4,
+  "bestiary",
+  "A lurker of the dark that hunts only in low light. Health 44, armour 2, damage 8. Roams the forest from Age IV."
+ ],
+ [
+  "Siegewarden Walker",
+  "being",
+  6,
+  "bestiary",
+  "A walker of metal that runs on burning fuel. Health 260, armour 18. Roams the badlands from Age VI, rare. Burns coal."
+ ],
+ [
+  "Tinkerspider Crawler",
+  "being",
+  5,
+  "bestiary",
+  "A walker of metal that runs on burning fuel. Health 30, armour 2. Roams the desert from Age V, rare. Burns redstone."
+ ],
+ [
+  "Veilstitch",
+  "being",
+  3,
+  "bestiary",
+  "A lurker of the dark that hunts only in low light. Health 40, armour 1, damage 7. Roams the plains from Age III."
+ ],
+ [
+  "Verdanai, Avatar of the Wild Green",
+  "being",
+  3,
+  "bestiary",
+  "A rare avatar-boss, immune to being pushed about. Health 380, armour 8, damage 13. Roams the forest from Age III, rare."
+ ],
+ [
+  "Kogad I",
+  "being",
+  1,
+  "bestiary",
+  "Warbands of Age I. A monster that kills a player is named, ranked (Prowler up to Bane of the Hearths) and comes back to ambush them; its heir is 'get of' it. Bands of this Age: the Frost Pack, the Hollow Ones, the Bone-Gnawers, the Ash Walkers, the Cave Brood, the Marrow Eaters, the Weeping Kin, the Flint Fangs."
+ ],
+ [
+  "the Frost Pack",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Hollow Ones",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Bone-Gnawers",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Ash Walkers",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Cave Brood",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Marrow Eaters",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Weeping Kin",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Flint Fangs",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad II",
+  "being",
+  2,
+  "bestiary",
+  "Warbands of Age II. A monster that kills a player is named, ranked (Fold-Prowler up to Bane of the Cairn-Folk) and comes back to ambush them; its heir is 'seed of' it. Bands of this Age: the Cairn Haunters, the Fold Breakers, the Barrow Kin, the Flint Pack, the Bog Walkers, the Field Burners, the Mound Dwellers, the Herd Takers."
+ ],
+ [
+  "the Cairn Haunters",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Fold Breakers",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Barrow Kin",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Flint Pack",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Bog Walkers",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Field Burners",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Mound Dwellers",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Herd Takers",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad III",
+  "being",
+  3,
+  "bestiary",
+  "Warbands of Age III. A monster that kills a player is named, ranked (Ford-Lurker up to Foe of the High Kings) and comes back to ambush them; its heir is 'blood of' it. Bands of this Age: the Grave-Wakers, the Torc-Takers, the Grove-Burners, the Barrow Host, the Cairn Pack, the Oathless, the Spear-Eaters, the Iron Fangs."
+ ],
+ [
+  "the Grave-Wakers",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Torc-Takers",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Grove-Burners",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Barrow Host",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Cairn Pack",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Oathless",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Spear-Eaters",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Iron Fangs",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad IV",
+  "being",
+  4,
+  "bestiary",
+  "Warbands of Age IV. A monster that kills a player is named, ranked (Skulker up to Bane of Kings) and comes back to ambush them; its heir is 'blood-heir of' it. Bands of this Age: the Iron Host, the Rust Company, the Gallows Kin, the Exiled, the Bell-Breakers, the Wall Reavers, the Forsworn, the Cairn Watch."
+ ],
+ [
+  "the Iron Host",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Rust Company",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Gallows Kin",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Exiled",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Bell-Breakers",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Wall Reavers",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Forsworn",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Cairn Watch",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad V",
+  "being",
+  5,
+  "bestiary",
+  "Warbands of Age V. A monster that kills a player is named, ranked (Footpad up to Bane of the Cities) and comes back to ambush them; its heir is 'apprenticed to' it. Bands of this Age: the Soot Gang, the Night Shift, the Pit Rats, the Lamp-Snuffers, the Rail Wolves, the Cinder Crew, the Furnace Brood, the Fog Walkers."
+ ],
+ [
+  "the Soot Gang",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Night Shift",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir. Also in Age VI. Also in Age VII."
+ ],
+ [
+  "the Pit Rats",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Lamp-Snuffers",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Rail Wolves",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Cinder Crew",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Furnace Brood",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Fog Walkers",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad VI",
+  "being",
+  6,
+  "bestiary",
+  "Warbands of Age VI. A monster that kills a player is named, ranked (Nuisance up to Terror of the Kingdom) and comes back to ambush them; its heir is 'blood of' it. Bands of this Age: the Wire Pack, the Rail Gang, the Blackout Crew, the Trench Rats, the Rust Brigade, the Night Shift, the Siren Choir, the Coal Column."
+ ],
+ [
+  "the Wire Pack",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Rail Gang",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Blackout Crew",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir. Also in Age VII."
+ ],
+ [
+  "the Trench Rats",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Rust Brigade",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Siren Choir",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Coal Column",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad VII",
+  "being",
+  7,
+  "bestiary",
+  "Warbands of Age VII. A monster that kills a player is named, ranked (Reported Sighting up to National Emergency) and comes back to ambush them; its heir is 'blood of' it. Bands of this Age: the Static Pack, the Blackout Crew, the Wire-Gnawers, the Night Shift, the Signal Hounds, the Ring Road Pack, the Grid Breakers, the Dead Zone."
+ ],
+ [
+  "the Static Pack",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Wire-Gnawers",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Signal Hounds",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Ring Road Pack",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Grid Breakers",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Dead Zone",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Troll",
+  "being",
+  3,
+  "bestiary",
+  "A hulking cave brute that turns to stone in sunlight."
+ ],
+ [
+  "Cyclops",
+  "being",
+  3,
+  "bestiary",
+  "A one-eyed giant that raids herds and farms."
+ ],
+ [
+  "Gorgon",
+  "being",
+  3,
+  "bestiary",
+  "Its gaze turns the unwary to stone."
+ ],
+ [
+  "Hydra",
+  "being",
+  3,
+  "bestiary",
+  "A many-headed serpent that grows its heads back and poisons its prey."
+ ],
+ [
+  "Cockatrice",
+  "being",
+  3,
+  "bestiary",
+  "A crested beast whose gaze petrifies."
+ ],
+ [
+  "Stymphalian Bird",
+  "being",
+  3,
+  "bestiary",
+  "Flocks of metal-feathered birds that rain feathers on a target."
+ ],
+ [
+  "Amphithere",
+  "being",
+  3,
+  "bestiary",
+  "A winged serpent of the forests."
+ ],
+ [
+  "Siren",
+  "being",
+  3,
+  "bestiary",
+  "Lures swimmers into deep water with her song."
+ ],
+ [
+  "Sea Serpent",
+  "being",
+  3,
+  "bestiary",
+  "A great serpent of the open sea."
+ ],
+ [
+  "Death Worm",
+  "being",
+  3,
+  "bestiary",
+  "A giant sand worm that bursts up from below."
+ ],
+ [
+  "Ghost",
+  "being",
+  3,
+  "bestiary",
+  "A restless spirit bound to its grave."
+ ],
+ [
+  "Fire Dragon",
+  "being",
+  4,
+  "bestiary",
+  "A dragon of the high crags that breathes fire; its bones and scales are Age IV materials."
+ ],
+ [
+  "Ice Dragon",
+  "being",
+  4,
+  "bestiary",
+  "A dragon of the frozen lands that breathes frost; its bones and scales are Age IV materials."
+ ],
+ [
+  "Lightning Dragon",
+  "being",
+  5,
+  "bestiary",
+  "A dragon that breathes lightning; its scales are an Age V material."
+ ],
+ [
+  "Dread Thrall",
+  "being",
+  4,
+  "bestiary",
+  "A shambling soldier of an undead host."
+ ],
+ [
+  "Dread Ghoul",
+  "being",
+  4,
+  "bestiary",
+  "A fast undead brute of the dread host."
+ ],
+ [
+  "Dread Scuttler",
+  "being",
+  4,
+  "bestiary",
+  "A skittering undead crawler."
+ ],
+ [
+  "Dread Beast",
+  "being",
+  4,
+  "bestiary",
+  "A beast raised by the dread host."
+ ],
+ [
+  "Dread Knight",
+  "being",
+  4,
+  "bestiary",
+  "A mounted undead knight of the dread host."
+ ],
+ [
+  "Dread Lich",
+  "being",
+  4,
+  "bestiary",
+  "An undead caster that commands the dread host."
+ ],
+ [
+  "Dread Queen",
+  "being",
+  4,
+  "bestiary",
+  "The rare ruler of a dread host."
+ ],
+ [
+  "Mutant Zombie",
+  "being",
+  1,
+  "bestiary",
+  "A zombie grown huge and strong."
+ ],
+ [
+  "Mutant Skeleton",
+  "being",
+  1,
+  "bestiary",
+  "A towering skeleton that throws bone volleys."
+ ],
+ [
+  "Mutant Snow Golem",
+  "being",
+  1,
+  "bestiary",
+  "A snow golem that fires ice."
+ ],
+ [
+  "Spider Pig",
+  "being",
+  2,
+  "bestiary",
+  "A pig with spider legs that climbs and bites."
+ ],
+ [
+  "Mutant Enderman",
+  "being",
+  3,
+  "bestiary",
+  "An enderman grown huge, with extra arms and a teleporting temper."
+ ],
+ [
+  "Mutant Creeper",
+  "being",
+  4,
+  "bestiary",
+  "A creeper grown huge; its blast is strong and its gunpowder Age IV."
+ ],
+ [
+  "Creeper Minion",
+  "being",
+  4,
+  "bestiary",
+  "A small creeper that follows and fights for its owner."
+ ],
+ [
+  "Bear (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 10 kinds, for example Black Bear, Blind Cave Bear, Brown Bear, Cave Bear. Hunts alone; present from Age I."
+ ],
+ [
+  "Big Cat (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 12 kinds, for example American Lion, Cave Lion, Fatal Sabertooth, Jaguar. Hunts alone; present from Age I."
+ ],
+ [
+  "Hyena (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 5 kinds, for example Aardwolf, Brown Hyena, Giant Short-Faced Hyena, Spotted Hyena. Hunts in groups of 3 to 8; present from Age I."
+ ],
+ [
+  "Large Snake (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 3 kinds, for example Green Anaconda, Reticulated Python, Titanoboa. Hunts alone; present from Age I."
+ ],
+ [
+  "Monitor Lizard (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 6 kinds, for example Asian Water Monitor, Bengal Monitor, Desert Monitor, Komodo Dragon. Hunts in groups of 1 to 2; present from Age I."
+ ],
+ [
+  "Canid (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 2 kinds, for example Dire Wolf, Grey Wolf. Hunts in groups of 3 to 8; present from Age I."
+ ]
+]

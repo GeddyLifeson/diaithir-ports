@@ -1,0 +1,10 @@
+{
+ "type": "create:cutting",
+ "processing_time": 50,
+ "ingredient": "create:iron_sheet",
+ "results": [
+  {
+   "id": "createcoins:ironcoin"
+  }
+ ]
+}

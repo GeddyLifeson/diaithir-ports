@@ -1,0 +1,14 @@
+{
+ "values": [
+  "copycats:copycat_beam",
+  "copycats:copycat_shaft",
+  "create:copycat_panel",
+  "create:copycat_step",
+  "copycats:copycat_stone_button",
+  "copycats:copycat_stone_pressure_plate",
+  "copycats:copycat_trapdoor",
+  "copycats:copycat_vertical_step",
+  "copycats:copycat_wooden_button",
+  "copycats:copycat_wooden_pressure_plate"
+ ]
+}

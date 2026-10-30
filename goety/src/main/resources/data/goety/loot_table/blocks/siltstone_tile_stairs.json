@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "bonus_rolls": 0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "goety:siltstone_tile_stairs"
+    }
+   ]
+  }
+ ],
+ "random_sequence": "goety:blocks/siltstone_tile_stairs"
+}

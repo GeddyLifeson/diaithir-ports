@@ -1,0 +1,71 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_droid_diamond:haunted_scorial_coal",
+ "transitional_item": {
+  "id": "create_droid_diamond:impure_diamond_chunk"
+ },
+ "result": {
+  "id": "create_droid_diamond:diamond_chunk",
+  "chance": 0.1
+ },
+ "loops": 10,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:experience_nugget",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 50
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:sand",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ],
+ "junks": [
+  {
+   "id": "minecraft:coal_block",
+   "chance": 0.3
+  },
+  {
+   "id": "minecraft:blackstone",
+   "count": 3,
+   "chance": 0.2
+  },
+  {
+   "id": "create:scoria",
+   "count": 2,
+   "chance": 0.3
+  },
+  {
+   "id": "minecraft:basalt",
+   "count": 3,
+   "chance": 0.08
+  },
+  {
+   "id": "create_droid_diamond:diamond_chunk",
+   "count": 4,
+   "chance": 0.02
+  }
+ ]
+}

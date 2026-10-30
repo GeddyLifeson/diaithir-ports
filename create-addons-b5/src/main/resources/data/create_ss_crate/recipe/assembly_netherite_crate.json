@@ -1,0 +1,70 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_ss_crate:brass_crate_shell",
+ "transitional_item": {
+  "id": "create_ss_crate:incomplete_netherite_crate"
+ },
+ "result": {
+  "id": "create_ss_crate:netherite_crate"
+ },
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:gold_ingot",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:diamond",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:powdered_obsidian",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:lava",
+    "amount": 81000
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:brass_ingot",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 20
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

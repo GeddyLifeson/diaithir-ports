@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_tasmanian_late_pleistocene_foragers_kuti.tigernasligenachklach",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:turtle_scute",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

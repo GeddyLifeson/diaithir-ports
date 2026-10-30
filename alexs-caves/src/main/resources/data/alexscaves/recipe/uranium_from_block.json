@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "alexscaves:block_of_uranium"
+  ],
+  "result": {
+    "count": 9,
+    "id": "alexscaves:uranium"
+  }
+}

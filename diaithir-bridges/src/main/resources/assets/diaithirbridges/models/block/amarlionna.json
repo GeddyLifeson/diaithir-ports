@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "diaithirbridges:block/amarlionna_top",
+    "side": "diaithirbridges:block/amarlionna_side"
+  }
+}

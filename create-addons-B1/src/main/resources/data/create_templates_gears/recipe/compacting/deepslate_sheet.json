@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:deepslate",
+  "minecraft:cobbled_deepslate",
+  "minecraft:cobbled_deepslate"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:deepslate_sheet",
+   "count": 2
+  }
+ ]
+}

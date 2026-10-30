@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "l": "minecraft:nether_brick_slab",
+  "s": "minecraft:nether_bricks"
+ },
+ "pattern": [
+  "l",
+  "s",
+  "l"
+ ],
+ "result": {
+  "id": "goety:pedestal_nether_brick",
+  "count": 1
+ }
+}

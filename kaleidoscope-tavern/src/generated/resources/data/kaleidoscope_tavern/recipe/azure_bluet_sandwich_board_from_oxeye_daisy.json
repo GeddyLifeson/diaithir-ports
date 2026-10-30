@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "kaleidoscope_tavern:base_sandwich_board",
+    "minecraft:oxeye_daisy"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:azure_bluet_sandwich_board"
+  }
+}

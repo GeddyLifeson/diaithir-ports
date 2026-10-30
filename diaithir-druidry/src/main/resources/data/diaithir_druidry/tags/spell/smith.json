@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "#diaithir_druidry:spell_book/smith",
+   "required": false
+  },
+  {
+   "id": "#diaithir_druidry:weapon/smith_staff",
+   "required": false
+  }
+ ]
+}

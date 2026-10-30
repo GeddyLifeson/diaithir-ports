@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#c:ingots/steel",
+  "#c:ingots/steel",
+  "minecraft:stick",
+  "diaithir_classes:ceilg_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_dagger_steel",
+  "count": 1
+ }
+}

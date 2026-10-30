@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 7171533,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:dreaming.oiskisindser",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:water_breathing",
+        "Amplifier": 0,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "dreaming.oiskisindser_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

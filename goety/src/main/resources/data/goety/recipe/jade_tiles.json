@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "F": "goety:jade"
+ },
+ "pattern": [
+  "FF",
+  "FF"
+ ],
+ "result": {
+  "id": "goety:jade_tiles",
+  "count": 4
+ }
+}

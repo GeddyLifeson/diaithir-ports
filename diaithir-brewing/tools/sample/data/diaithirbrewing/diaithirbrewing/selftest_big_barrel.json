@@ -1,0 +1,11 @@
+{
+ "station": "fermenting_barrel",
+ "base": "minecraft:milk_bucket",
+ "base_returns": "minecraft:bucket",
+ "ingredients": {
+  "minecraft:wheat": 16
+ },
+ "ticks": 40,
+ "drink": "minecraft:honey_bottle",
+ "servings": 8
+}

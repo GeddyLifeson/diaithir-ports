@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:campfire_cooking",
+ "category": "food",
+ "ingredient": "diaithirbutchery:loin",
+ "result": {
+  "id": "diaithirbutchery:cooked_loin"
+ },
+ "experience": 0.35,
+ "cookingtime": 600
+}

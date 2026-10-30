@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:stick",
+  "minecraft:short_grass"
+ ],
+ "result": {
+  "id": "spartanweaponry:simple_handle",
+  "count": 1
+ }
+}

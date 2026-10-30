@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "alexscaves:abyssmarine",
+  "result": {
+    "id": "alexscaves:abyssmarine_stairs",
+    "count": 1
+  }
+}

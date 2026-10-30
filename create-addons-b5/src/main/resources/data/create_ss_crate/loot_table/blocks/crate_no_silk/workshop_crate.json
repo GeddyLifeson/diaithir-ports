@@ -1,0 +1,117 @@
+{
+ "pools": [
+  {
+   "rolls": 24,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "create:shaft"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:cogwheel"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:large_cogwheel"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:belt_connector"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:depot"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:andesite_casing"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:andesite_alloy"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:andesite_funnel"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:chute"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:hand_crank"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:andesite_alloy_block"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:iron_ingot"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:andesite"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:encased_chain_drive"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:gearbox"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:millstone"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:water_wheel"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:large_water_wheel"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:basin"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:windmill_bearing"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:white_sail"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:chocolate_glazed_berries"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:honeyed_apple"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:bar_of_chocolate"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:sweet_roll"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:builders_tea"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:tree_fertilizer"
+    }
+   ]
+  }
+ ]
+}

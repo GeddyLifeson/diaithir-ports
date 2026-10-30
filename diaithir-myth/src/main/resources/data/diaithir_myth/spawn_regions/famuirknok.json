@@ -1,0 +1,18 @@
+{
+  "creature": "diaithir_myth:famuirknok",
+  "court": "italic",
+  "region": "Italy, Etruria, Latium",
+  "min_age": 3,
+  "boxes": [
+    {
+      "lat": [
+        36.4,
+        46.6
+      ],
+      "lon": [
+        6.6,
+        18.7
+      ]
+    }
+  ]
+}

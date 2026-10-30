@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirfauna:block/revival_chamber_top",
+  "side": "diaithirfauna:block/revival_chamber_side"
+ }
+}

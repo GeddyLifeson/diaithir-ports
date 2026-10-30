@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ATA",
+    "AAA"
+  ],
+  "key": {
+    "A": "alexscaves:porous_coprolith",
+    "T": "alexscaves:pure_darkness"
+  },
+  "result": {
+    "count": 8,
+    "id": "alexscaves:peering_coprolith"
+  }
+}

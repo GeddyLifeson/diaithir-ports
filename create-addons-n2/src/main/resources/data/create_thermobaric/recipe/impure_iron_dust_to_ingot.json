@@ -1,0 +1,17 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "create_thermobaric:impure_iron_dust"
+ ],
+ "results": [
+  {
+   "id": "minecraft:iron_ingot",
+   "chance": 0.3
+  },
+  {
+   "id": "create_thermobaric:impure_iron_ingot",
+   "chance": 0.7
+  }
+ ]
+}

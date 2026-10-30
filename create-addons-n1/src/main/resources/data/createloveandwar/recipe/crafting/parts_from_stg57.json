@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:stg57blueprint"
+ ],
+ "result": {
+  "id": "createloveandwar:forgotten_gunsmith_parts"
+ },
+ "show_notification": true
+}

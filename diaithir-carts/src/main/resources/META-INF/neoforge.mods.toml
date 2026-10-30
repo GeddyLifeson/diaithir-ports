@@ -1,0 +1,17 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithircarts"
+version = "${version}"
+displayName = "Diaithir Carts"
+description = "Three rail tiers (bronze, steel, high-speed) with their own speed caps and powered rails, a coupling chain that links minecarts into trains, chain cutters, and a station rail that holds a cart until a signal or a timer. Clean-room original."
+
+[[mixins]]
+config = "diaithircarts.mixins.json"
+
+[[dependencies.diaithircarts]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

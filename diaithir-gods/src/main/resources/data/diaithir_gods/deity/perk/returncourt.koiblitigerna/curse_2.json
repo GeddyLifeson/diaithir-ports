@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:rabbit_foot",
+    "color": 10332621,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:returncourt.koiblitigerna",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "returncourt.koiblitigerna_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

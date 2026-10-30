@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "alexscaves:smooth_bone",
+  "result": {
+    "id": "alexscaves:smooth_bone_stairs",
+    "count": 1
+  }
+}

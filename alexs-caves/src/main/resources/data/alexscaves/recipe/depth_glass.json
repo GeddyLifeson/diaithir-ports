@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ISI",
+    "SSS",
+    "ISI"
+  ],
+  "key": {
+    "I": "#c:ingots/iron",
+    "S": "alexscaves:sea_glass_shards"
+  },
+  "result": {
+    "count": 8,
+    "id": "alexscaves:depth_glass"
+  }
+}

@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirarms:steel_axe",
+  "diaithirarms:tempered_axe",
+  "diaithirarms:composite_axe",
+  "diaithirarms:rodos_axe",
+  "diaithirarms:future_axe"
+ ]
+}

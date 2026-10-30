@@ -1,0 +1,21 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "northstar"
+  }
+ ],
+ "type": "create:crushing",
+ "results": [
+  {
+   "chance": 0.3,
+   "id": "create:copper_nugget"
+  },
+  {
+   "chance": 0.5,
+   "id": "northstar:rutile_concentrate"
+  }
+ ],
+ "processing_time": 250,
+ "ingredient": "#create:stone_types/limestone"
+}

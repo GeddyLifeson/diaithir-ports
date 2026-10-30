@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "GSG",
+  "A#A",
+  "GSG"
+ ],
+ "key": {
+  "A": "minecraft:andesite",
+  "S": "minecraft:stone",
+  "G": "minecraft:gravel",
+  "#": "create:andesite_alloy"
+ },
+ "result": {
+  "id": "create_ss_crate:ore_crate"
+ }
+}

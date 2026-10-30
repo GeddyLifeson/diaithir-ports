@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:raw_tungsten_block"
+ ],
+ "result": {
+  "id": "createloveandwar:raw_tungsten",
+  "count": 9
+ }
+}

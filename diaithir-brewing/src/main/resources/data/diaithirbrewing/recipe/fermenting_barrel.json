@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "#minecraft:planks",
+  "I": "minecraft:iron_ingot",
+  "S": "#minecraft:wooden_slabs"
+ },
+ "pattern": [
+  "PIP",
+  "PSP",
+  "PIP"
+ ],
+ "result": {
+  "id": "diaithirbrewing:fermenting_barrel"
+ }
+}

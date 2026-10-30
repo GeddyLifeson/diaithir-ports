@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "food",
+ "ingredient": "diaithirbutchery:hock",
+ "result": {
+  "id": "diaithirbutchery:cooked_hock"
+ },
+ "experience": 0.35,
+ "cookingtime": 200
+}

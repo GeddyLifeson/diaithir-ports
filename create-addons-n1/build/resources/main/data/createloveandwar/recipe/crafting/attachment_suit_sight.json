@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "O": "createloveandwar:optical_scope",
+  "I": "#c:plates/iron",
+  "R": "minecraft:redstone"
+ },
+ "pattern": [
+  " R ",
+  " O ",
+  " II"
+ ],
+ "result": {
+  "id": "createloveandwar:attachment_suit_sight"
+ },
+ "show_notification": true
+}

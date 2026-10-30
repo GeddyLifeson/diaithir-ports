@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:netherrack",
+  "minecraft:porkchop",
+  "minecraft:porkchop"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:rib_sheet",
+   "count": 2
+  }
+ ]
+}

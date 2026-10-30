@@ -1,0 +1,47 @@
+[
+ {
+  "id": "diaithircarts:bronze_rail",
+  "name": "Brundarok",
+  "text": "Bronze rail. Carts ride it up to 0.6 blocks per tick, half again vanilla speed. Curves, slopes and junctions work like a normal rail. Age III."
+ },
+ {
+  "id": "diaithircarts:bronze_powered_rail",
+  "name": "Brundavoss",
+  "text": "Bronze powered rail. Boosts a cart when powered, stops it when not. Caps at 0.6 blocks per tick. Age III."
+ },
+ {
+  "id": "diaithircarts:steel_rail",
+  "name": "Sorvanquil",
+  "text": "Steel rail. Carts ride it up to 0.9 blocks per tick, more than twice vanilla speed. Age V."
+ },
+ {
+  "id": "diaithircarts:steel_powered_rail",
+  "name": "Sorvaleth",
+  "text": "Steel powered rail. A stronger boost than bronze, same stop when unpowered. Caps at 0.9 blocks per tick. Age V."
+ },
+ {
+  "id": "diaithircarts:fast_rail",
+  "name": "Zephrakund",
+  "text": "High-speed rail. Carts ride it up to 1.2 blocks per tick, three times vanilla speed. Keep curves gentle. Age VI."
+ },
+ {
+  "id": "diaithircarts:fast_powered_rail",
+  "name": "Zephravoss",
+  "text": "High-speed powered rail. The strongest boost, caps at 1.2 blocks per tick. Age VI."
+ },
+ {
+  "id": "diaithircarts:station_rail",
+  "name": "Haldurmek",
+  "text": "Station rail. Stops a cart that rolls onto it and holds it until the rail is powered, or until its timer ends. Use it bare-handed to cycle the timer: signal only, 2, 5, 15 or 60 seconds. A coupled follower follows its leader instead. Age V."
+ },
+ {
+  "id": "diaithircarts:coupling_chain",
+  "name": "Quelvarith",
+  "text": "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."
+ },
+ {
+  "id": "diaithircarts:chain_cutters",
+  "name": "Snithrekel",
+  "text": "Chain cutters. Sneak and use on a cart to cut its link and get the chain back. Age V."
+ }
+]

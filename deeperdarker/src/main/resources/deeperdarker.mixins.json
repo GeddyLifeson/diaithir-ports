@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8.3",
+  "package": "com.kyanite.deeperdarker.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ContainerMenuMixin",
+    "PaintingMixin",
+    "ServerGamePacketListenerImplMixin",
+    "ServerPlayerMixin",
+    "VibrationListenerMixin",
+    "WardenMixin"
+  ],
+  "client": [
+    "PhantomRendererMixin",
+    "PhantomRenderStateMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

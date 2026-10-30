@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:gyrojet_basic",
+ "ingredient": "createloveandwar:grenade_he",
+ "results": [
+  {
+   "id": "createloveandwar:gyrojet_he"
+  }
+ ]
+}

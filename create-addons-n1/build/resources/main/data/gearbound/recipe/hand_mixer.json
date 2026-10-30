@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " s ",
+  "dfg",
+  " h "
+ ],
+ "key": {
+  "s": "create:iron_sheet",
+  "d": "create:hand_crank",
+  "f": "create:andesite_casing",
+  "g": "gearbound:fuel_canister",
+  "h": "create:mechanical_mixer"
+ },
+ "result": {
+  "id": "gearbound:hand_mixer"
+ }
+}

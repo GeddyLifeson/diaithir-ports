@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:stone",
+  "minecraft:cobblestone",
+  "minecraft:cobblestone"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:stone_sheet",
+   "count": 2
+  }
+ ]
+}

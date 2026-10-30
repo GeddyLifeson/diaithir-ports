@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 13410500,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_monte_verde_ii.spiuradklachkoildioir",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "a1_monte_verde_ii.spiuradklachkoildioir_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

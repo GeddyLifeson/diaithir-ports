@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "m": "goety:dirty_ominous_stone_pavement",
+  "l": "goety:dark_dirt"
+ },
+ "pattern": [
+  "lm",
+  "ml"
+ ],
+ "result": {
+  "id": "goety:dirty_ominous_stone_pavement_heavy",
+  "count": 2
+ }
+}

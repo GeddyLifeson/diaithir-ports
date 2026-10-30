@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "#c:bones",
+  "#c:strings",
+  "minecraft:rotten_flesh"
+ ]
+}

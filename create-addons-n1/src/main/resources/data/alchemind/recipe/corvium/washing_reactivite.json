@@ -1,0 +1,14 @@
+{
+ "type": "create:splashing",
+ "ingredient": "alchemind:reactivite",
+ "results": [
+  {
+   "id": "minecraft:ender_pearl",
+   "chance": 0.5
+  },
+  {
+   "id": "minecraft:redstone",
+   "chance": 0.5
+  }
+ ]
+}

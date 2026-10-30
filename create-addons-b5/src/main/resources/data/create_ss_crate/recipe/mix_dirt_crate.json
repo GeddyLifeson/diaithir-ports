@@ -1,0 +1,14 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:dirt",
+  "minecraft:dirt",
+  "minecraft:dirt",
+  "minecraft:dirt"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:dirt_crate"
+  }
+ ]
+}

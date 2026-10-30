@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "expert_nether",
+ "activation": "goety:dark_wand",
+ "offerings": [
+  "#c:ingots/netherite",
+  "#c:rods/blaze",
+  "goety:spirit_fabric",
+  "#c:rods/blaze",
+  "goety:cursed_ingot",
+  "#c:rods/blaze",
+  "#c:storage_blocks/lapis",
+  "goety:occult_fabric"
+ ],
+ "soul_cost": 5,
+ "duration": 10,
+ "result": "goety:nether_staff",
+ "count": 1
+}

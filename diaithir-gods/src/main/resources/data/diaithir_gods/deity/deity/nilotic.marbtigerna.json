@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:nilotic.marbtigerna",
+  "icon": "minecraft:sugar_cane",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

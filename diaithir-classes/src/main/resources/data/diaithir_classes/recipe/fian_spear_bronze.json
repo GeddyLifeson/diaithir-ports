@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#c:ingots/bronze",
+  "minecraft:stick",
+  "minecraft:stick",
+  "diaithir_classes:fian_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:fian_spear_bronze",
+  "count": 1
+ }
+}

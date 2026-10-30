@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "diaithirfurnishings:blocks/crimson_signpost",
+ "pools": [
+  {
+   "rolls": 1,
+   "bonus_rolls": 0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "diaithirfurnishings:crimson_signpost"
+    }
+   ]
+  }
+ ]
+}

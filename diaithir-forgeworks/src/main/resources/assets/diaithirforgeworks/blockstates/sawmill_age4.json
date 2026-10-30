@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "active=false,facing=north": {
+      "model": "diaithirforgeworks:block/sawmill_age4"
+    },
+    "active=true,facing=north": {
+      "model": "diaithirforgeworks:block/sawmill_age4_lit"
+    },
+    "active=false,facing=east": {
+      "model": "diaithirforgeworks:block/sawmill_age4",
+      "y": 90
+    },
+    "active=true,facing=east": {
+      "model": "diaithirforgeworks:block/sawmill_age4_lit",
+      "y": 90
+    },
+    "active=false,facing=south": {
+      "model": "diaithirforgeworks:block/sawmill_age4",
+      "y": 180
+    },
+    "active=true,facing=south": {
+      "model": "diaithirforgeworks:block/sawmill_age4_lit",
+      "y": 180
+    },
+    "active=false,facing=west": {
+      "model": "diaithirforgeworks:block/sawmill_age4",
+      "y": 270
+    },
+    "active=true,facing=west": {
+      "model": "diaithirforgeworks:block/sawmill_age4_lit",
+      "y": 270
+    }
+  }
+}

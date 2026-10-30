@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "G": "createloveandwar:glass_lens",
+  "I": "#c:plates/iron"
+ },
+ "pattern": [
+  " I ",
+  "G G",
+  " I "
+ ],
+ "result": {
+  "id": "createloveandwar:optical_scope"
+ },
+ "show_notification": true
+}

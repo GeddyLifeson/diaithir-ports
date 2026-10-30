@@ -1,0 +1,17 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "c": "alchemind:arcane_casing",
+  "d": "create:mechanical_drill",
+  "m": "alchemind:arcane_mechanism"
+ },
+ "pattern": [
+  "ccc",
+  "cmc",
+  "ddd"
+ ],
+ "result": {
+  "id": "alchemind:mineral_extractor"
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "deeperdarker:warden"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "deeperdarker:warden"
+      }
+    ]
+  }
+}

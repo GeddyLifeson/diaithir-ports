@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L S",
+    " L ",
+    "P L"
+  ],
+  "key": {
+    "S": "alexscaves:sharpened_candy_cane",
+    "L": "alexscaves:licoroot_vine",
+    "P": "alexscaves:candy_cane_pole"
+  },
+  "result": {
+    "id": "alexscaves:candy_cane_hook",
+    "count": 1
+  }
+}

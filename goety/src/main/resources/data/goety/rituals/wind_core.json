@@ -1,0 +1,16 @@
+{
+ "type": "craft",
+ "school": "sky",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "#c:feathers",
+  "#c:dusts/glowstone",
+  "minecraft:note_block",
+  "minecraft:sugar_cane",
+  "minecraft:short_grass"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:wind_core",
+ "count": 2
+}

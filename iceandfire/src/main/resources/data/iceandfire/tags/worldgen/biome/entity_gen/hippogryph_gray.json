@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:windswept_forest",
+    "minecraft:windswept_hills",
+    {
+      "id": "#c:is_windswept",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "diaithirforgeworks:crusher_age4", "name": "Brakkulon (Age IV)", "text": "Crusher. Feed it ore and FE and it grinds it to dust, with a chance of a bonus item. Age IV casing, 1x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:alloy_furnace_age4", "name": "Meldrathex (Age IV)", "text": "Alloy furnace. Takes two inputs and fuses them to an alloy, for example 3 copper and 1 iron to 4 bronze. Age IV casing, 1x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:sawmill_age4", "name": "Skerrivane (Age IV)", "text": "Sawmill. Turns a log into 6 planks, with a chance of sawdust. Age IV casing, 1x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:crucible_age4", "name": "Ulmarkesh (Age IV)", "text": "Crucible. Melts items into fluid, for example cobblestone into 250 mB of lava. Pipes or a bucket take it out. Age IV casing, 1x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:crusher_age5", "name": "Brakkulon (Age V)", "text": "Crusher. Feed it ore and FE and it grinds it to dust, with a chance of a bonus item. Age V casing, 2x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:alloy_furnace_age5", "name": "Meldrathex (Age V)", "text": "Alloy furnace. Takes two inputs and fuses them to an alloy, for example 3 copper and 1 iron to 4 bronze. Age V casing, 2x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:sawmill_age5", "name": "Skerrivane (Age V)", "text": "Sawmill. Turns a log into 6 planks, with a chance of sawdust. Age V casing, 2x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:crucible_age5", "name": "Ulmarkesh (Age V)", "text": "Crucible. Melts items into fluid, for example cobblestone into 250 mB of lava. Pipes or a bucket take it out. Age V casing, 2x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:crusher_age6", "name": "Brakkulon (Age VI)", "text": "Crusher. Feed it ore and FE and it grinds it to dust, with a chance of a bonus item. Age VI casing, 4x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:alloy_furnace_age6", "name": "Meldrathex (Age VI)", "text": "Alloy furnace. Takes two inputs and fuses them to an alloy, for example 3 copper and 1 iron to 4 bronze. Age VI casing, 4x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:sawmill_age6", "name": "Skerrivane (Age VI)", "text": "Sawmill. Turns a log into 6 planks, with a chance of sawdust. Age VI casing, 4x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:crucible_age6", "name": "Ulmarkesh (Age VI)", "text": "Crucible. Melts items into fluid, for example cobblestone into 250 mB of lava. Pipes or a bucket take it out. Age VI casing, 4x speed. Has GUI, FE bar, redstone control and per-face side config."},
+  {"id": "diaithirforgeworks:speed_augment", "name": "Veloqith Augment", "text": "Augment. Put up to 4 in the augment slot: each adds 50% speed for a little extra FE per job."},
+  {"id": "diaithirforgeworks:efficiency_augment", "name": "Thrimvael Augment", "text": "Augment. Put up to 4 in the augment slot: each cuts the FE cost of a job by 15%."},
+  {"id": "diaithirforgeworks:chance_augment", "name": "Ostravine Augment", "text": "Augment. Put up to 4 in the augment slot: each raises the chance of bonus outputs by half again."},
+  {"id": "diaithirforgeworks:iron_dust", "name": "Iron Dust", "text": "Ground iron ore. Smelt it back to an ingot."},
+  {"id": "diaithirforgeworks:copper_dust", "name": "Copper Dust", "text": "Ground copper ore. Smelt it back to an ingot."},
+  {"id": "diaithirforgeworks:gold_dust", "name": "Gold Dust", "text": "Ground gold ore. Smelt it back to an ingot."},
+  {"id": "diaithirforgeworks:sawdust", "name": "Sawdust", "text": "Bonus output of the sawmill."},
+  {"id": "diaithirforgeworks:bronze_ingot", "name": "Bronze Ingot", "text": "Alloy of copper and iron from the alloy furnace. Used in Age V casings."}
+]

@@ -1,0 +1,15 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:cobblestone",
+  "minecraft:cobblestone",
+  "minecraft:quartz",
+  "minecraft:quartz"
+ ],
+ "results": [
+  {
+   "id": "minecraft:diorite",
+   "count": 2
+  }
+ ]
+}

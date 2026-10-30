@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:desert1.oiskitigernaain",
+  "icon": "minecraft:bucket",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

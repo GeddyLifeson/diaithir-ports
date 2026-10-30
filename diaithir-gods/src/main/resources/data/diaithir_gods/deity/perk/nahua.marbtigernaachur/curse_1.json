@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:bone",
+    "color": 8566867,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:nahua.marbtigernaachur",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:weakness",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "nahua.marbtigernaachur_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

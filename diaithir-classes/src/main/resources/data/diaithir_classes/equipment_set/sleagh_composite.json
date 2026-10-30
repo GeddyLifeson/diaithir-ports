@@ -1,0 +1,42 @@
+{
+ "name": "bogaduir kriadach",
+ "items": [
+  "diaithir_classes:sleagh_helmet_composite",
+  "diaithir_classes:sleagh_chestplate_composite",
+  "diaithir_classes:sleagh_leggings_composite",
+  "diaithir_classes:sleagh_boots_composite"
+ ],
+ "bonuses": [
+  {
+   "required_piece_count": 2,
+   "attributes": [
+    {
+     "type": "ranged_weapon:damage",
+     "id": "diaithir_classes:set_sleagh_composite_2_0",
+     "amount": 3.0,
+     "operation": "add_value",
+     "slot": "any"
+    }
+   ]
+  },
+  {
+   "required_piece_count": 4,
+   "attributes": [
+    {
+     "type": "minecraft:movement_speed",
+     "id": "diaithir_classes:set_sleagh_composite_4_0",
+     "amount": 0.07,
+     "operation": "add_multiplied_base",
+     "slot": "any"
+    }
+   ],
+   "spells": {
+    "access": "NONE",
+    "max_spell_count": 1,
+    "spell_ids": [
+     "diaithir_classes:sleagh_keen_composite"
+    ]
+   }
+  }
+ ]
+}

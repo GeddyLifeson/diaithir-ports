@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GGG",
+  "GEG",
+  "III"
+ ],
+ "key": {
+  "G": "minecraft:glass",
+  "I": "minecraft:iron_ingot",
+  "E": "minecraft:emerald"
+ },
+ "result": {
+  "id": "diaithirbutchery:vat_grower"
+ }
+}

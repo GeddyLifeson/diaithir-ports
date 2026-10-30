@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:cobbled_end_stone",
+  "$": "goety:end_limestone"
+ },
+ "pattern": [
+  "$#",
+  "#$"
+ ],
+ "result": {
+  "id": "goety:mixed_end_limestone",
+  "count": 4
+ }
+}

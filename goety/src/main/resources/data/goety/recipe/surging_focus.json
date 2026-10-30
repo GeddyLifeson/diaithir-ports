@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "b": "minecraft:comparator",
+  "e": "goety:electrocute_focus",
+  "d": "minecraft:dispenser",
+  "w": "goety:wind_core",
+  "r": "#c:rods/blaze",
+  "c": "minecraft:crossbow"
+ },
+ "pattern": [
+  "bcd",
+  "rer",
+  "dwb"
+ ],
+ "result": {
+  "id": "goety:surging_focus",
+  "count": 1
+ }
+}

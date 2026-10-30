@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:block_of_polymer"
+ ],
+ "result": {
+  "id": "createloveandwar:polymer_ingot",
+  "count": 9
+ }
+}

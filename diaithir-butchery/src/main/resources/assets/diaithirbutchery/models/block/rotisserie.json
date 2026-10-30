@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirbutchery:block/rotisserie_top",
+  "side": "diaithirbutchery:block/rotisserie_side"
+ }
+}

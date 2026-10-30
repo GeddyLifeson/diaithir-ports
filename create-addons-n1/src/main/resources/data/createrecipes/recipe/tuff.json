@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:cobblestone",
+  "minecraft:cobblestone",
+  "minecraft:diorite"
+ ],
+ "results": [
+  {
+   "id": "minecraft:tuff"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 8100
+  }
+ ]
+}

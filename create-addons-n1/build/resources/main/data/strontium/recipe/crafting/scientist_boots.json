@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "C": "strontium:cloth"
+ },
+ "pattern": [
+  "C C",
+  "C C",
+  "   "
+ ],
+ "result": {
+  "id": "strontium:scientist_boots"
+ },
+ "show_notification": true
+}

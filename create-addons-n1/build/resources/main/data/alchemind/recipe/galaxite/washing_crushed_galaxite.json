@@ -1,0 +1,23 @@
+{
+ "type": "create:splashing",
+ "ingredient": "alchemind:crushed_galaxite",
+ "results": [
+  {
+   "id": "alchemind:galaxite_bead",
+   "count": 5,
+   "chance": 0.3
+  },
+  {
+   "id": "alchemind:galaxite_bead",
+   "count": 4
+  },
+  {
+   "id": "alchemind:charged_stone",
+   "chance": 0.3
+  },
+  {
+   "id": "alchemind:galena",
+   "chance": 0.5
+  }
+ ]
+}

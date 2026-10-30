@@ -1,0 +1,25 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create_ss_crate:andesite_crate_shell",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot",
+  "#minecraft:logs",
+  "#minecraft:logs",
+  "#minecraft:logs",
+  "minecraft:obsidian"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:nether_crate"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 81000
+  }
+ ],
+ "heat_requirement": "heated"
+}

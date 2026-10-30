@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "BAB",
+  " S ",
+  " S "
+ ],
+ "key": {
+  "B": "#c:ingots/iron",
+  "A": "minecraft:chiseled_stone_bricks",
+  "S": "#c:rods/wooden"
+ },
+ "result": {
+  "id": "diaithirrelics:cairn_hammer",
+  "count": 1
+ }
+}

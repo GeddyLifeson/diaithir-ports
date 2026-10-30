@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/bow_pulling_2",
+ "textures": {
+  "layer0": "diaithirarms:item/rodos_bow_pulling_2"
+ }
+}

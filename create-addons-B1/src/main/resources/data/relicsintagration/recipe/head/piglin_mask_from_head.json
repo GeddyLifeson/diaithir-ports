@@ -1,0 +1,36 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "minecraft:piglin_head",
+ "loops": 3,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:blackstone"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:gold_ingot"
+  }
+ ],
+ "transitional_item": {
+  "id": "minecraft:piglin_head"
+ },
+ "result": {
+  "id": "relics:piglin_mask",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "diaithirforgeworks:crusher",
+  "inputs": [
+    {
+      "ingredient": "#c:raw_materials/gold",
+      "count": 1
+    }
+  ],
+  "energy": 1200,
+  "time": 100,
+  "result": {
+    "id": "diaithirforgeworks:gold_dust",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:white_wool",
+    "color": 10389918,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:terraform.oiskiochiadu",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:speed",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "terraform.oiskiochiadu_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "count=1,facing=east": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count1",
+      "y": 90
+    },
+    "count=1,facing=north": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count1"
+    },
+    "count=1,facing=south": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count1",
+      "y": 180
+    },
+    "count=1,facing=west": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count1",
+      "y": 270
+    },
+    "count=2,facing=east": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count2",
+      "y": 90
+    },
+    "count=2,facing=north": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count2"
+    },
+    "count=2,facing=south": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count2",
+      "y": 180
+    },
+    "count=2,facing=west": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count2",
+      "y": 270
+    },
+    "count=3,facing=east": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count3",
+      "y": 90
+    },
+    "count=3,facing=north": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count3"
+    },
+    "count=3,facing=south": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count3",
+      "y": 180
+    },
+    "count=3,facing=west": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count3",
+      "y": 270
+    },
+    "count=4,facing=east": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count4",
+      "y": 90
+    },
+    "count=4,facing=north": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count4"
+    },
+    "count=4,facing=south": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count4",
+      "y": 180
+    },
+    "count=4,facing=west": {
+      "model": "kaleidoscope_tavern:block/brew/drink/sauvignon_blanc_dry_white/count4",
+      "y": 270
+    }
+  }
+}

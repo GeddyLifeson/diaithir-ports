@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "G": "minecraft:glass_pane",
+    "C": "diaithirstoragenet:cable",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    "IGI",
+    "GCG",
+    "IRI"
+  ],
+  "result": {
+    "id": "diaithirstoragenet:terminal",
+    "count": 1
+  },
+  "category": "misc"
+}

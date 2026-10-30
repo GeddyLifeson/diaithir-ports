@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "goety:chorus_pressure_plate",
+  "goety:corrupt_chorus_pressure_plate",
+  "goety:dark_pressure_plate",
+  "goety:haunted_pressure_plate",
+  "goety:marsh_pressure_plate",
+  "goety:pine_pressure_plate",
+  "goety:rotten_pressure_plate",
+  "goety:steep_pressure_plate",
+  "goety:windswept_pressure_plate"
+ ]
+}

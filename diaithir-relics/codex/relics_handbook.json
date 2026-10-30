@@ -1,0 +1,202 @@
+{
+ "id": "diaithirrelics:handbook",
+ "title": "Iarmadun",
+ "chapters": [
+  {
+   "tier": "III",
+   "name": "Iarmadun Age III",
+   "age": "III",
+   "text": "",
+   "items": [
+    {
+     "id": "diaithirrelics:dawn_sword",
+     "name": "Klaidem Kamunaig",
+     "age": "III",
+     "text": "Foes you strike catch fire for 3 seconds."
+    },
+    {
+     "id": "diaithirrelics:salmon_spear",
+     "name": "Slieg Braduin",
+     "age": "III",
+     "text": "While held in water you swim fast, as if with a dolphin's grace."
+    },
+    {
+     "id": "diaithirrelics:boar_shield",
+     "name": "Skiad Toirk",
+     "age": "III",
+     "text": "Blocking a melee blow throws back 30% of its damage at the attacker."
+    },
+    {
+     "id": "diaithirrelics:well_ring",
+     "name": "Fàindi Tobuir",
+     "age": "III",
+     "text": "Below half health you slowly regenerate."
+    },
+    {
+     "id": "diaithirrelics:gold_torque",
+     "name": "Moinki Òiri",
+     "age": "III",
+     "text": "Arrows, bolts and other missiles do 25% less damage to you."
+    }
+   ]
+  },
+  {
+   "tier": "IV",
+   "name": "Iarmadun Age IV",
+   "age": "IV",
+   "text": "",
+   "items": [
+    {
+     "id": "diaithirrelics:storm_axe",
+     "name": "Tuog Stoirmi",
+     "age": "IV",
+     "text": "One blow in five arcs lightning to up to 3 foes within 4 blocks of the target."
+    },
+    {
+     "id": "diaithirrelics:shadow_dagger",
+     "name": "Biudag Failes",
+     "age": "IV",
+     "text": "Blows to a foe facing away deal 50% more damage."
+    },
+    {
+     "id": "diaithirrelics:cairn_hammer",
+     "name": "Òrdu Kàirn",
+     "age": "IV",
+     "text": "Foes you strike are slowed for 1.5 seconds."
+    },
+    {
+     "id": "diaithirrelics:mist_bell",
+     "name": "Klag Kietaig",
+     "age": "IV",
+     "text": "When a blow leaves you below 35% health you turn unseen and swift for 5 seconds (once a minute)."
+    },
+    {
+     "id": "diaithirrelics:bear_belt",
+     "name": "Krius Matuin",
+     "age": "IV",
+     "text": "Melee blows do 15% less damage to you."
+    }
+   ]
+  },
+  {
+   "tier": "V",
+   "name": "Iarmadun Age V",
+   "age": "V",
+   "text": "",
+   "items": [
+    {
+     "id": "diaithirrelics:sea_sword",
+     "name": "Klaidem Moir",
+     "age": "V",
+     "text": "Blows do 30% more damage while you stand in water or rain."
+    },
+    {
+     "id": "diaithirrelics:lightning_spear",
+     "name": "Slieg Dielunach",
+     "age": "V",
+     "text": "Blows to foes that are off the ground do 40% more damage."
+    },
+    {
+     "id": "diaithirrelics:frost_shield",
+     "name": "Skiad Reotad",
+     "age": "V",
+     "text": "Blocking a melee blow freezes the attacker: slowness III for 3 seconds."
+    },
+    {
+     "id": "diaithirrelics:sun_ring",
+     "name": "Fàindi Grianu",
+     "age": "V",
+     "text": "Under open sky by day you slowly regenerate."
+    },
+    {
+     "id": "diaithirrelics:moon_torque",
+     "name": "Moinki Gielach",
+     "age": "V",
+     "text": "At night you see in the dark and move faster."
+    }
+   ]
+  },
+  {
+   "tier": "VI",
+   "name": "Iarmadun Age VI",
+   "age": "VI",
+   "text": "",
+   "items": [
+    {
+     "id": "diaithirrelics:star_sword",
+     "name": "Klaidem Riondag",
+     "age": "VI",
+     "text": "Blows to a foe at full health do 25% more damage."
+    },
+    {
+     "id": "diaithirrelics:serpent_axe",
+     "name": "Tuog Natrach",
+     "age": "VI",
+     "text": "Foes you strike are poisoned for 5 seconds."
+    },
+    {
+     "id": "diaithirrelics:eagle_spear",
+     "name": "Slieg Iuluiri",
+     "age": "VI",
+     "text": "Falling onto a foe adds 1 damage per block fallen (up to 10)."
+    },
+    {
+     "id": "diaithirrelics:raven_whistle",
+     "name": "Fiedag Fitig",
+     "age": "VI",
+     "text": "Hostile creatures within 20 blocks glow, so you see them through walls."
+    },
+    {
+     "id": "diaithirrelics:giant_belt",
+     "name": "Krius Famuir",
+     "age": "VI",
+     "text": "You carry four extra hearts of absorption, renewed while it is worn."
+    }
+   ]
+  },
+  {
+   "tier": "VII",
+   "name": "Iarmadun Age VII",
+   "age": "VII",
+   "text": "",
+   "items": [
+    {
+     "id": "diaithirrelics:oath_sword",
+     "name": "Klaidem Miondun",
+     "age": "VII",
+     "text": "You heal 15% of the damage you deal."
+    },
+    {
+     "id": "diaithirrelics:smith_hammer",
+     "name": "Òrdu Gobund",
+     "age": "VII",
+     "text": "Blows to armoured foes do 2 extra damage per 5 points of their armour."
+    },
+    {
+     "id": "diaithirrelics:light_shield",
+     "name": "Skiad Soulais",
+     "age": "VII",
+     "text": "While blocking, missiles do no damage to you and melee attackers are blinded for 3 seconds."
+    },
+    {
+     "id": "diaithirrelics:fate_ring",
+     "name": "Fàindi Dànu",
+     "age": "VII",
+     "text": "A fatal blow leaves you at 3 hearts with regeneration (once every 10 minutes)."
+    },
+    {
+     "id": "diaithirrelics:apple_branch",
+     "name": "Geig Ubul",
+     "age": "VII",
+     "text": "Your hunger refills slowly while it is worn."
+    },
+    {
+     "id": "diaithirrelics:dragon_torque",
+     "name": "Moinki Drieguin",
+     "age": "VII",
+     "text": "You take no damage from fire or lava."
+    }
+   ]
+  }
+ ]
+}

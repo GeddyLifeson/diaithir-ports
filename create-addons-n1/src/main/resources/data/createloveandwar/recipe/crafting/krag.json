@@ -1,0 +1,21 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "O": "createloveandwar:optical_scope",
+  "B": "createloveandwar:barrel_iron",
+  "U": "createloveandwar:bolt_action_tungsten",
+  "L": "createloveandwar:lower_receiver_tungsten",
+  "S": "createloveandwar:stock_wood",
+  "H": "createloveandwar:handguard_wood"
+ },
+ "pattern": [
+  "  O ",
+  "BHU ",
+  "  LS"
+ ],
+ "result": {
+  "id": "createloveandwar:krag"
+ },
+ "show_notification": true
+}

@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "end",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "#c:ender_pearls",
+  "minecraft:chorus_fruit",
+  "#c:ender_pearls",
+  "minecraft:chorus_fruit",
+  "#c:ender_pearls",
+  "minecraft:chorus_fruit",
+  "#c:ender_pearls",
+  "minecraft:chorus_fruit"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:blink_focus",
+ "count": 1
+}

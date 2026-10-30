@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "C": "spartanweaponry:cestus",
+  "#": "minecraft:iron_ingot"
+ },
+ "pattern": [
+  "C#"
+ ],
+ "result": {
+  "id": "spartanweaponry:studded_cestus"
+ }
+}

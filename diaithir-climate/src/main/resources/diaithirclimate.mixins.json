@@ -1,0 +1,8 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "net.diaithir.climate.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["HomeostaticEnvironmentMixin"],
+  "injectors": { "defaultRequire": 0 }
+}

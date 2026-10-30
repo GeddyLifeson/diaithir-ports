@@ -1,0 +1,751 @@
+[
+ [
+  "Ashenvar, Avatar of the Ember Hour",
+  "being",
+  4,
+  "bestiary",
+  "A rare avatar-boss, immune to being pushed about. Health 440, armour 12, damage 16. Roams the badlands from Age IV, rare."
+ ],
+ [
+  "Brassjack Walker",
+  "being",
+  5,
+  "bestiary",
+  "A walker of metal that runs on burning fuel. Health 70, armour 6. Roams the desert from Age V, rare. Burns coal."
+ ],
+ [
+  "Dobrunfumuir",
+  "being",
+  1,
+  "bestiary",
+  "A wild beast. Health 34, damage 5. Roams the swamp from Age I."
+ ],
+ [
+  "Emberwyrm",
+  "being",
+  3,
+  "bestiary",
+  "A winged hunter. Health 60, armour 6, damage 8. Roams the mountain from Age III."
+ ],
+ [
+  "Hollowmourn",
+  "being",
+  3,
+  "bestiary",
+  "A lurker of the dark that hunts only in low light. Health 50, armour 4, damage 9. Roams the forest from Age III."
+ ],
+ [
+  "Marenoth, Avatar of the Deep Tide",
+  "being",
+  3,
+  "bestiary",
+  "A rare avatar-boss, immune to being pushed about. Health 360, armour 8, damage 14. Roams the beach from Age III, rare."
+ ],
+ [
+  "Marrowcrawl",
+  "being",
+  4,
+  "bestiary",
+  "A lurker of the dark that hunts only in low light. Health 36, damage 7. Roams the swamp from Age IV."
+ ],
+ [
+  "Orsolune, Avatar of the Hushed Moon",
+  "being",
+  4,
+  "bestiary",
+  "A rare avatar-boss, immune to being pushed about. Health 320, armour 6, damage 12. Roams the taiga from Age IV, rare."
+ ],
+ [
+  "Pallidgaunt",
+  "being",
+  4,
+  "bestiary",
+  "A lurker of the dark that hunts only in low light. Health 44, armour 2, damage 8. Roams the forest from Age IV."
+ ],
+ [
+  "Siegewarden Walker",
+  "being",
+  6,
+  "bestiary",
+  "A walker of metal that runs on burning fuel. Health 260, armour 18. Roams the badlands from Age VI, rare. Burns coal."
+ ],
+ [
+  "Tinkerspider Crawler",
+  "being",
+  5,
+  "bestiary",
+  "A walker of metal that runs on burning fuel. Health 30, armour 2. Roams the desert from Age V, rare. Burns redstone."
+ ],
+ [
+  "Veilstitch",
+  "being",
+  3,
+  "bestiary",
+  "A lurker of the dark that hunts only in low light. Health 40, armour 1, damage 7. Roams the plains from Age III."
+ ],
+ [
+  "Verdanai, Avatar of the Wild Green",
+  "being",
+  3,
+  "bestiary",
+  "A rare avatar-boss, immune to being pushed about. Health 380, armour 8, damage 13. Roams the forest from Age III, rare."
+ ],
+ [
+  "Kogad I",
+  "being",
+  1,
+  "bestiary",
+  "Warbands of Age I. A monster that kills a player is named, ranked (Prowler up to Bane of the Hearths) and comes back to ambush them; its heir is 'get of' it. Bands of this Age: the Frost Pack, the Hollow Ones, the Bone-Gnawers, the Ash Walkers, the Cave Brood, the Marrow Eaters, the Weeping Kin, the Flint Fangs."
+ ],
+ [
+  "the Frost Pack",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Hollow Ones",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Bone-Gnawers",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Ash Walkers",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Cave Brood",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Marrow Eaters",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Weeping Kin",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Flint Fangs",
+  "being",
+  1,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age I. Ranks run from Prowler to Bane of the Hearths, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad II",
+  "being",
+  2,
+  "bestiary",
+  "Warbands of Age II. A monster that kills a player is named, ranked (Fold-Prowler up to Bane of the Cairn-Folk) and comes back to ambush them; its heir is 'seed of' it. Bands of this Age: the Cairn Haunters, the Fold Breakers, the Barrow Kin, the Flint Pack, the Bog Walkers, the Field Burners, the Mound Dwellers, the Herd Takers."
+ ],
+ [
+  "the Cairn Haunters",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Fold Breakers",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Barrow Kin",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Flint Pack",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Bog Walkers",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Field Burners",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Mound Dwellers",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Herd Takers",
+  "being",
+  2,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age II. Ranks run from Fold-Prowler to Bane of the Cairn-Folk, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad III",
+  "being",
+  3,
+  "bestiary",
+  "Warbands of Age III. A monster that kills a player is named, ranked (Ford-Lurker up to Foe of the High Kings) and comes back to ambush them; its heir is 'blood of' it. Bands of this Age: the Grave-Wakers, the Torc-Takers, the Grove-Burners, the Barrow Host, the Cairn Pack, the Oathless, the Spear-Eaters, the Iron Fangs."
+ ],
+ [
+  "the Grave-Wakers",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Torc-Takers",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Grove-Burners",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Barrow Host",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Cairn Pack",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Oathless",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Spear-Eaters",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Iron Fangs",
+  "being",
+  3,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age III. Ranks run from Ford-Lurker to Foe of the High Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad IV",
+  "being",
+  4,
+  "bestiary",
+  "Warbands of Age IV. A monster that kills a player is named, ranked (Skulker up to Bane of Kings) and comes back to ambush them; its heir is 'blood-heir of' it. Bands of this Age: the Iron Host, the Rust Company, the Gallows Kin, the Exiled, the Bell-Breakers, the Wall Reavers, the Forsworn, the Cairn Watch."
+ ],
+ [
+  "the Iron Host",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Rust Company",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Gallows Kin",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Exiled",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Bell-Breakers",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Wall Reavers",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Forsworn",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Cairn Watch",
+  "being",
+  4,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age IV. Ranks run from Skulker to Bane of Kings, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad V",
+  "being",
+  5,
+  "bestiary",
+  "Warbands of Age V. A monster that kills a player is named, ranked (Footpad up to Bane of the Cities) and comes back to ambush them; its heir is 'apprenticed to' it. Bands of this Age: the Soot Gang, the Night Shift, the Pit Rats, the Lamp-Snuffers, the Rail Wolves, the Cinder Crew, the Furnace Brood, the Fog Walkers."
+ ],
+ [
+  "the Soot Gang",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Night Shift",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir. Also in Age VI. Also in Age VII."
+ ],
+ [
+  "the Pit Rats",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Lamp-Snuffers",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Rail Wolves",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Cinder Crew",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Furnace Brood",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Fog Walkers",
+  "being",
+  5,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age V. Ranks run from Footpad to Bane of the Cities, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad VI",
+  "being",
+  6,
+  "bestiary",
+  "Warbands of Age VI. A monster that kills a player is named, ranked (Nuisance up to Terror of the Kingdom) and comes back to ambush them; its heir is 'blood of' it. Bands of this Age: the Wire Pack, the Rail Gang, the Blackout Crew, the Trench Rats, the Rust Brigade, the Night Shift, the Siren Choir, the Coal Column."
+ ],
+ [
+  "the Wire Pack",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Rail Gang",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Blackout Crew",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir. Also in Age VII."
+ ],
+ [
+  "the Trench Rats",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Rust Brigade",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Siren Choir",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Coal Column",
+  "being",
+  6,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VI. Ranks run from Nuisance to Terror of the Kingdom, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Kogad VII",
+  "being",
+  7,
+  "bestiary",
+  "Warbands of Age VII. A monster that kills a player is named, ranked (Reported Sighting up to National Emergency) and comes back to ambush them; its heir is 'blood of' it. Bands of this Age: the Static Pack, the Blackout Crew, the Wire-Gnawers, the Night Shift, the Signal Hounds, the Ring Road Pack, the Grid Breakers, the Dead Zone."
+ ],
+ [
+  "the Static Pack",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Wire-Gnawers",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Signal Hounds",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Ring Road Pack",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Grid Breakers",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "the Dead Zone",
+  "being",
+  7,
+  "bestiary",
+  "A warband name borne by named monsters (nemesis) from Age VII. Ranks run from Reported Sighting to National Emergency, and each Age Turn passes the grudge to an heir."
+ ],
+ [
+  "Troll",
+  "being",
+  3,
+  "bestiary",
+  "A hulking cave brute that turns to stone in sunlight."
+ ],
+ [
+  "Cyclops",
+  "being",
+  3,
+  "bestiary",
+  "A one-eyed giant that raids herds and farms."
+ ],
+ [
+  "Gorgon",
+  "being",
+  3,
+  "bestiary",
+  "Its gaze turns the unwary to stone."
+ ],
+ [
+  "Hydra",
+  "being",
+  3,
+  "bestiary",
+  "A many-headed serpent that grows its heads back and poisons its prey."
+ ],
+ [
+  "Cockatrice",
+  "being",
+  3,
+  "bestiary",
+  "A crested beast whose gaze petrifies."
+ ],
+ [
+  "Stymphalian Bird",
+  "being",
+  3,
+  "bestiary",
+  "Flocks of metal-feathered birds that rain feathers on a target."
+ ],
+ [
+  "Amphithere",
+  "being",
+  3,
+  "bestiary",
+  "A winged serpent of the forests."
+ ],
+ [
+  "Siren",
+  "being",
+  3,
+  "bestiary",
+  "Lures swimmers into deep water with her song."
+ ],
+ [
+  "Sea Serpent",
+  "being",
+  3,
+  "bestiary",
+  "A great serpent of the open sea."
+ ],
+ [
+  "Death Worm",
+  "being",
+  3,
+  "bestiary",
+  "A giant sand worm that bursts up from below."
+ ],
+ [
+  "Ghost",
+  "being",
+  3,
+  "bestiary",
+  "A restless spirit bound to its grave."
+ ],
+ [
+  "Fire Dragon",
+  "being",
+  4,
+  "bestiary",
+  "A dragon of the high crags that breathes fire; its bones and scales are Age IV materials."
+ ],
+ [
+  "Ice Dragon",
+  "being",
+  4,
+  "bestiary",
+  "A dragon of the frozen lands that breathes frost; its bones and scales are Age IV materials."
+ ],
+ [
+  "Lightning Dragon",
+  "being",
+  5,
+  "bestiary",
+  "A dragon that breathes lightning; its scales are an Age V material."
+ ],
+ [
+  "Dread Thrall",
+  "being",
+  4,
+  "bestiary",
+  "A shambling soldier of an undead host."
+ ],
+ [
+  "Dread Ghoul",
+  "being",
+  4,
+  "bestiary",
+  "A fast undead brute of the dread host."
+ ],
+ [
+  "Dread Scuttler",
+  "being",
+  4,
+  "bestiary",
+  "A skittering undead crawler."
+ ],
+ [
+  "Dread Beast",
+  "being",
+  4,
+  "bestiary",
+  "A beast raised by the dread host."
+ ],
+ [
+  "Dread Knight",
+  "being",
+  4,
+  "bestiary",
+  "A mounted undead knight of the dread host."
+ ],
+ [
+  "Dread Lich",
+  "being",
+  4,
+  "bestiary",
+  "An undead caster that commands the dread host."
+ ],
+ [
+  "Dread Queen",
+  "being",
+  4,
+  "bestiary",
+  "The rare ruler of a dread host."
+ ],
+ [
+  "Mutant Zombie",
+  "being",
+  1,
+  "bestiary",
+  "A zombie grown huge and strong."
+ ],
+ [
+  "Mutant Skeleton",
+  "being",
+  1,
+  "bestiary",
+  "A towering skeleton that throws bone volleys."
+ ],
+ [
+  "Mutant Snow Golem",
+  "being",
+  1,
+  "bestiary",
+  "A snow golem that fires ice."
+ ],
+ [
+  "Spider Pig",
+  "being",
+  2,
+  "bestiary",
+  "A pig with spider legs that climbs and bites."
+ ],
+ [
+  "Mutant Enderman",
+  "being",
+  3,
+  "bestiary",
+  "An enderman grown huge, with extra arms and a teleporting temper."
+ ],
+ [
+  "Mutant Creeper",
+  "being",
+  4,
+  "bestiary",
+  "A creeper grown huge; its blast is strong and its gunpowder Age IV."
+ ],
+ [
+  "Creeper Minion",
+  "being",
+  4,
+  "bestiary",
+  "A small creeper that follows and fights for its owner."
+ ],
+ [
+  "Bear (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 10 kinds, for example Black Bear, Blind Cave Bear, Brown Bear, Cave Bear. Hunts alone; present from Age I."
+ ],
+ [
+  "Big Cat (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 12 kinds, for example American Lion, Cave Lion, Fatal Sabertooth, Jaguar. Hunts alone; present from Age I."
+ ],
+ [
+  "Hyena (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 5 kinds, for example Aardwolf, Brown Hyena, Giant Short-Faced Hyena, Spotted Hyena. Hunts in groups of 3 to 8; present from Age I."
+ ],
+ [
+  "Large Snake (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 3 kinds, for example Green Anaconda, Reticulated Python, Titanoboa. Hunts alone; present from Age I."
+ ],
+ [
+  "Monitor Lizard (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 6 kinds, for example Asian Water Monitor, Bengal Monitor, Desert Monitor, Komodo Dragon. Hunts in groups of 1 to 2; present from Age I."
+ ],
+ [
+  "Canid (wild)",
+  "being",
+  1,
+  "bestiary",
+  "Wild predator family with 2 kinds, for example Dire Wolf, Grey Wolf. Hunts in groups of 3 to 8; present from Age I."
+ ]
+]

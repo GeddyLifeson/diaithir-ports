@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "N": "minecraft:iron_nugget"
+ },
+ "pattern": [
+  "I",
+  "I",
+  "N"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:piston_rod",
+  "count": 2
+ },
+ "category": "misc"
+}

@@ -1,0 +1,10 @@
+{
+  "item.createcoins.goldcoin": "Gold Coin",
+  "item_group.createcoins.createcoins": "Create Coins",
+  "item.createcoins.coopercoin": "Cooper Coin",
+  "item.createcoins.diamondcoin": "Diamond Coin",
+  "itemGroup.tabcreatecoins": "Create Coins",
+  "item.createcoins.ironcoin": "Iron Coin",
+  "item.createcoins.zinccoin": "Zinc Coin",
+  "item.createcoins.brasscoin": "Brass Coin"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": "minecraft:gold_ingot",
+    "T": "diaithircarts:steel_rail",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    "G G",
+    "GTG",
+    " R "
+  ],
+  "result": {
+    "id": "diaithircarts:steel_powered_rail",
+    "count": 2
+  },
+  "category": "misc"
+}

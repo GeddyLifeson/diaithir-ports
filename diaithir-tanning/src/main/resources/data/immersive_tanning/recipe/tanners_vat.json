@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "P P",
+    "I I",
+    "PPP"
+  ],
+  "key": {
+    "P": "#minecraft:planks",
+    "I": "#c:ingots/iron"
+  },
+  "result": {
+    "id": "immersive_tanning:tanners_vat"
+  }
+}

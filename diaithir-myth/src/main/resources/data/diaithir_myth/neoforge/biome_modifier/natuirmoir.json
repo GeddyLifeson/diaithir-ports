@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#diaithir_myth:habitat/sea",
+  "spawners": [
+    {
+      "type": "diaithir_myth:natuirmoir",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}
