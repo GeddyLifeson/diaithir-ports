@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirforcefield"
+version = "${version}"
+displayName = "Diaithir Forcefield"
+description = "A power-fed field projector that raises a cube, sphere or wall of force around a base. Upgrade modules add range, strength, a mob-only filter, a guest list, a bigger power buffer and a sting. Owner, team and guests pass; everyone else is held out. Clean-room original."
+
+[[dependencies.diaithirforcefield]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

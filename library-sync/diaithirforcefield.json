@@ -1,0 +1,10 @@
+[
+  {"id": "diaithirforcefield:projector", "name": "Skardovel", "text": "Field projector, Age VI. Feed it FE and it raises a shell of force around itself: cube, sphere or wall. Use bare-handed to switch on or off, sneak and use to change shape. The placer is the owner. Base radius 6, upkeep about 20 FE per tick per 1000 shell blocks."},
+  {"id": "diaithirforcefield:field", "name": "Skarnith", "text": "One block of a projector's shell. It has no collision and cannot be mined. The projector holds out blocked players and hostile mobs every few ticks, and the shell drops when power runs out or the projector is broken."},
+  {"id": "diaithirforcefield:range_module", "name": "Uvrelath", "text": "Range module. Each one adds 4 to the shell radius, up to 4 per projector and a radius of 32. A larger shell costs more FE."},
+  {"id": "diaithirforcefield:strength_module", "name": "Torvakhet", "text": "Strength module. Each one adds a layer to the shell, up to 4 layers, so fast intruders are caught inside it."},
+  {"id": "diaithirforcefield:mob_filter_module", "name": "Veshurel", "text": "Mob filter module. With it fitted the field holds out only hostile mobs. Players pass freely."},
+  {"id": "diaithirforcefield:guest_list_module", "name": "Anquith", "text": "Guest list module. Lets the owner name players who may pass with /diaithirforcefield allow and deny while looking at the projector. The owner and the owner's scoreboard team always pass."},
+  {"id": "diaithirforcefield:capacitor_module", "name": "Zhoveldra", "text": "Capacitor module. Each one adds 40000 FE to the projector's buffer, up to 4. The projector takes up to 4000 FE per tick from any cable."},
+  {"id": "diaithirforcefield:sting_module", "name": "Kreshmael", "text": "Sting module. A blocked intruder is also hurt for 2 damage each time the field pushes it out. Operators can turn this off in the server config."}
+]
