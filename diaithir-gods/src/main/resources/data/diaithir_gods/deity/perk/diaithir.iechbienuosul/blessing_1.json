@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:saddle",
+    "color": 12627034,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:diaithir.iechbienuosul",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:speed",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "diaithir.iechbienuosul_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

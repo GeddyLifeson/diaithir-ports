@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:sugar_cane",
+    "color": 10337205,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:nilotic.marbtigerna",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "nilotic.marbtigerna_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

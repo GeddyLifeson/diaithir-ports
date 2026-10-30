@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:oak_sapling",
+    "color": 9944503,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_dalton_tradition.matuirkoildiklachean",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:speed",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_dalton_tradition.matuirkoildiklachean_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

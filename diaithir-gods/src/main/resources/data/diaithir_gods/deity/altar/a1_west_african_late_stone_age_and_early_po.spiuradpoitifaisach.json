@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_west_african_late_stone_age_and_early_po.spiuradpoitifaisach",
+  "female": false,
+  "slim": false,
+  "light": 0,
+  "items": {
+    "block": "minecraft:stone",
+    "mainhand": "minecraft:flower_pot",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

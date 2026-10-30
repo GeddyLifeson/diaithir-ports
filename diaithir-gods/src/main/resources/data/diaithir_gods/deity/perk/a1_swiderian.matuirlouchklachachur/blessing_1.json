@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:water_bucket",
+    "color": 10406519,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_swiderian.matuirlouchklachachur",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:water_breathing",
+        "Amplifier": 0,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_swiderian.matuirlouchklachachur_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

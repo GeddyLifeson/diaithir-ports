@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:ghast_tear",
+    "color": 11233122,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:wirelamp.dielunachmatuir",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:regeneration",
+        "Amplifier": 0,
+        "Duration": 400,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "wirelamp.dielunachmatuir_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

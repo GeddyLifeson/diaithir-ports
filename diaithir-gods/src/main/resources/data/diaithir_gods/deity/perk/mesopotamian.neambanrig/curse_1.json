@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:nether_star",
+    "color": 11756726,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:mesopotamian.neambanrig",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:weakness",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "mesopotamian.neambanrig_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

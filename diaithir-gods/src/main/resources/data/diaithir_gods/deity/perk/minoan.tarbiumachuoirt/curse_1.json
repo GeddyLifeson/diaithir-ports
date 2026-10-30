@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:leather",
+    "color": 6259300,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:minoan.tarbiumachuoirt",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "minoan.tarbiumachuoirt_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

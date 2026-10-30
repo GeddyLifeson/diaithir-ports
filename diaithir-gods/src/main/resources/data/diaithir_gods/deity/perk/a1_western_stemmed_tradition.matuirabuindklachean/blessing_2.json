@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:water_bucket",
+    "color": 10704801,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_western_stemmed_tradition.matuirabuindklachean",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:dolphins_grace",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "a1_western_stemmed_tradition.matuirabuindklachean_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

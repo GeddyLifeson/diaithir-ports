@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:turtle_scute",
+    "color": 8023405,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:woodland.sligenachmatuir",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "woodland.sligenachmatuir_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

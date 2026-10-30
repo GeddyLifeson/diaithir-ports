@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:mesopotamian.stoirmikrandtrebaid",
+  "icon": "minecraft:leather",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

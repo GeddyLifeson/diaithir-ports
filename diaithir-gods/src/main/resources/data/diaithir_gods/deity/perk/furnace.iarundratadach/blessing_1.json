@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:golden_pickaxe",
+    "color": 12080483,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:furnace.iarundratadach",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:haste",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "furnace.iarundratadach_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

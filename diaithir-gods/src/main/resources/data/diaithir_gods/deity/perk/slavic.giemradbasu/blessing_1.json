@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:iron_hoe",
+    "color": 5796004,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:slavic.giemradbasu",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "slavic.giemradbasu_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

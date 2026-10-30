@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:leather",
+    "color": 5725126,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_early_mesolithic_britain_star_carr.tigernalounklachuil",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:darkness",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "a1_early_mesolithic_britain_star_carr.tigernalounklachuil_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

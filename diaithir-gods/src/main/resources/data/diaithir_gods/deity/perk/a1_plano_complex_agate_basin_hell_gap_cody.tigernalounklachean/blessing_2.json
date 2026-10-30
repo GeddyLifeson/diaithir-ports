@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:leather",
+    "color": 6930335,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_plano_complex_agate_basin_hell_gap_cody.tigernalounklachean",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_plano_complex_agate_basin_hell_gap_cody.tigernalounklachean_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

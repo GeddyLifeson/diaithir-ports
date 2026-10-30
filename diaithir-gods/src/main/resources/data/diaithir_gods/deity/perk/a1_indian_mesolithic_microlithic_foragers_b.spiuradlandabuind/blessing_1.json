@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:iron_sword",
+    "color": 13131981,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_indian_mesolithic_microlithic_foragers_b.spiuradlandabuind",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "a1_indian_mesolithic_microlithic_foragers_b.spiuradlandabuind_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

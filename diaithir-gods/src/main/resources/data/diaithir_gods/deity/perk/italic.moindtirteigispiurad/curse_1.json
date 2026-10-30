@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:bone",
+    "color": 6343560,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:italic.moindtirteigispiurad",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "italic.moindtirteigispiurad_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

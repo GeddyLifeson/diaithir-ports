@@ -1,0 +1,21 @@
+{
+  "icon": {
+    "item": "minecraft:torch",
+    "color": 11113145,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:iranian.gliukasmad",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "xp",
+      "multiplier": 1.5
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "iranian.gliukasmad_blessing_2"
+}

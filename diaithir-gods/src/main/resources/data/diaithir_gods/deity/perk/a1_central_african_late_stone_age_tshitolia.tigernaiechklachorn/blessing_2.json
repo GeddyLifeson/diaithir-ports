@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:saddle",
+    "color": 6455729,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_central_african_late_stone_age_tshitolia.tigernaiechklachorn",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_central_african_late_stone_age_tshitolia.tigernaiechklachorn_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_central_african_late_stone_age_tshitolia.matuirlouchklachoir",
+  "female": false,
+  "slim": false,
+  "light": 8,
+  "items": {
+    "block": "minecraft:stone_bricks",
+    "mainhand": "minecraft:water_bucket",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 12550519,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_capsian.matuirbeindklachad",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:mining_fatigue",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "a1_capsian.matuirbeindklachad_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

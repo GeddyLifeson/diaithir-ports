@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_sahul_pleistocene_core_tool_and_scraper.tigernabradunskian",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:salmon",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}
