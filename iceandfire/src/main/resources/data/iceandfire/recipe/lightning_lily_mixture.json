@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:chorus_fruit",
+    "iceandfire:lightning_lily",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "iceandfire:lightning_stew",
+    "count": 1
+  }
+}

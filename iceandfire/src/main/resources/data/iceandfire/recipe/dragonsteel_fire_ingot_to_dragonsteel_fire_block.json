@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "iceandfire:dragonsteel_fire_ingot"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "iceandfire:dragonsteel_fire_block"
+  },
+  "show_notification": true
+}
