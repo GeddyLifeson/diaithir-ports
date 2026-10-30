@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "minecraft:redstone",
+    "G": "minecraft:gold_ingot",
+    "C": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "RGR",
+    "GCG",
+    "RGR"
+  ],
+  "result": {
+    "id": "diaithirforgeworks:speed_augment",
+    "count": 1
+  }
+}

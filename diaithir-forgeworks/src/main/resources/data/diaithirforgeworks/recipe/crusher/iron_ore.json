@@ -1,0 +1,20 @@
+{
+  "type": "diaithirforgeworks:crusher",
+  "inputs": [
+    {
+      "ingredient": "#c:ores/iron",
+      "count": 1
+    }
+  ],
+  "energy": 2400,
+  "time": 200,
+  "result": {
+    "id": "diaithirforgeworks:iron_dust",
+    "count": 2
+  },
+  "bonus": {
+    "id": "diaithirforgeworks:copper_dust",
+    "count": 1
+  },
+  "bonus_chance": 0.1
+}

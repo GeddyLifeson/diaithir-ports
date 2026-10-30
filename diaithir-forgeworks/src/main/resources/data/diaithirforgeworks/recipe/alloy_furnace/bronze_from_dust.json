@@ -1,0 +1,19 @@
+{
+  "type": "diaithirforgeworks:alloy_furnace",
+  "inputs": [
+    {
+      "ingredient": "diaithirforgeworks:copper_dust",
+      "count": 3
+    },
+    {
+      "ingredient": "diaithirforgeworks:iron_dust",
+      "count": 1
+    }
+  ],
+  "energy": 2400,
+  "time": 160,
+  "result": {
+    "id": "diaithirforgeworks:bronze_ingot",
+    "count": 4
+  }
+}

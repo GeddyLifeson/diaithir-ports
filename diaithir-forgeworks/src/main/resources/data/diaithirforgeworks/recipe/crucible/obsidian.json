@@ -1,0 +1,15 @@
+{
+  "type": "diaithirforgeworks:crucible",
+  "inputs": [
+    {
+      "ingredient": "minecraft:obsidian",
+      "count": 1
+    }
+  ],
+  "energy": 20000,
+  "time": 800,
+  "fluid": {
+    "id": "minecraft:lava",
+    "amount": 1000
+  }
+}
