@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "deeperdarker:sculk_bone",
+    "C": "deeperdarker:soul_crystal",
+    "H": "deeperdarker:heart_of_the_deep"
+  },
+  "pattern": [
+    " CH",
+    " BC",
+    "B  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "deeperdarker:sonorous_staff"
+  }
+}
