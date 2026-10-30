@@ -170,10 +170,15 @@ def game_font():
     os.makedirs(os.path.join(NS, "font"), exist_ok=True)
     shutil.copy(os.path.join(SRC, "pixelify_regular.ttf"), os.path.join(NS, "font", "pixelify_sans.ttf"))
     shutil.copy(os.path.join(SRC, "OFL-PixelifySans.txt"), os.path.join(ROOT, "..", "OFL-PixelifySans.txt"))
+    shutil.copy(os.path.join(SRC, "OFL-UncialAntiqua.txt"), os.path.join(ROOT, "..", "OFL-UncialAntiqua.txt"))
     # Pixelify Sans draws on a grid of about 90 units per pixel and a 700 unit cap height, so size 10 puts its caps at
     # vanilla's 7 pixels; oversample keeps the edges crisp at GUI scales 2 to 4.
     provider = {"type": "ttf", "file": "diaithirbranding:pixelify_sans.ttf", "size": 10.0, "oversample": 4.0, "shift": [0.0, 0.5]}
     save_json({"providers": [provider]}, MC, "font", "default.json")
+    # Titles (UI schema section 1): Uncial Antiqua at 10, glyphs it lacks fall back to the game font.
+    shutil.copy(UNCIAL, os.path.join(NS, "font", "uncial_antiqua.ttf"))
+    uncial = {"type": "ttf", "file": "diaithirbranding:uncial_antiqua.ttf", "size": 10.0, "oversample": 4.0, "shift": [0.0, 0.5]}
+    save_json({"providers": [uncial, {"type": "reference", "id": "minecraft:default"}]}, NS, "font", "uncial.json")
 
 
 def save_json(obj, *path):

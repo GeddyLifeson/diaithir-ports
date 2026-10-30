@@ -8,7 +8,9 @@
     "LogoTextureMixin",
     "MinecraftMixin",
     "LevelLoadingScreenMixin",
-    "PackMixin"
+    "PackMixin",
+    "ScreenTitleMixin",
+    "OptionsScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
