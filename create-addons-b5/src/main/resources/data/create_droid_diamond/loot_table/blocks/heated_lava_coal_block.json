@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "create_droid_diamond:heated_lava_coal_block"
+    }
+   ],
+   "rolls": 1.0
+  }
+ ],
+ "random_sequence": "create_droid_diamond:blocks/heated_lava_coal_block"
+}

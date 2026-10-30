@@ -1,0 +1,57 @@
+{
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "create:blaze_burner",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:nether_wart",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:blaze_rod",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:glowstone",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:magma_block",
+     "weight": 2,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "min": 1,
+        "max": 3
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:netherrack",
+     "weight": 2,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "min": 1,
+        "max": 4
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

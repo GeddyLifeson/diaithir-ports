@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:stone_bricks",
+  "minecraft:stone_bricks",
+  "minecraft:stone_bricks",
+  "minecraft:stone_bricks",
+  "minecraft:cobblestone",
+  "minecraft:cobblestone",
+  "minecraft:cobblestone",
+  "minecraft:cobblestone",
+  "minecraft:chest"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:starter_crate"
+  }
+ ]
+}
