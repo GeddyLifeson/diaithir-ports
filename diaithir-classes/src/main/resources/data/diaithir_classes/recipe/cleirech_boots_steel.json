@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:steel_boots",
+  "diaithir_classes:cleirech_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:cleirech_boots_steel",
+  "count": 1
+ }
+}

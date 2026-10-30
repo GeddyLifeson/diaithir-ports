@@ -1,0 +1,350 @@
+{
+ "fian_emblem": {
+  "diaithiris": "Suoichentas laech",
+  "english": "Warrior Emblem"
+ },
+ "sleagh_emblem": {
+  "diaithiris": "Suoichentas bogaduir",
+  "english": "Archer Emblem"
+ },
+ "ceilg_emblem": {
+  "diaithiris": "Suoichentas sielguir",
+  "english": "Hunter Emblem"
+ },
+ "cleirech_emblem": {
+  "diaithiris": "Suoichentas ligichi",
+  "english": "Healer Emblem"
+ },
+ "fian_helmet_bronze": {
+  "diaithiris": "Klogaid laech krèuma",
+  "english": "Warrior Bronze Helmet"
+ },
+ "fian_chestplate_bronze": {
+  "diaithiris": "Broildech laech krèuma",
+  "english": "Warrior Bronze Chestplate"
+ },
+ "fian_leggings_bronze": {
+  "diaithiris": "Kas laech krèuma",
+  "english": "Warrior Bronze Leggings"
+ },
+ "fian_boots_bronze": {
+  "diaithiris": "Bòtund laech krèuma",
+  "english": "Warrior Bronze Boots"
+ },
+ "fian_sword_bronze": {
+  "diaithiris": "Klaidem laech krèuma",
+  "english": "Warrior Sword (bronze)"
+ },
+ "fian_spear_bronze": {
+  "diaithiris": "Slieg laech krèuma",
+  "english": "Warrior Spear (bronze)"
+ },
+ "fian_helmet_steel": {
+  "diaithiris": "Klogaid laech kruoid",
+  "english": "Warrior Steel Helmet"
+ },
+ "fian_chestplate_steel": {
+  "diaithiris": "Broildech laech kruoid",
+  "english": "Warrior Steel Chestplate"
+ },
+ "fian_leggings_steel": {
+  "diaithiris": "Kas laech kruoid",
+  "english": "Warrior Steel Leggings"
+ },
+ "fian_boots_steel": {
+  "diaithiris": "Bòtund laech kruoid",
+  "english": "Warrior Steel Boots"
+ },
+ "fian_sword_steel": {
+  "diaithiris": "Klaidem laech kruoid",
+  "english": "Warrior Sword (steel)"
+ },
+ "fian_spear_steel": {
+  "diaithiris": "Slieg laech kruoid",
+  "english": "Warrior Spear (steel)"
+ },
+ "fian_helmet_composite": {
+  "diaithiris": "Klogaid laech kriadach",
+  "english": "Warrior Composite Helmet"
+ },
+ "fian_chestplate_composite": {
+  "diaithiris": "Broildech laech kriadach",
+  "english": "Warrior Composite Chestplate"
+ },
+ "fian_leggings_composite": {
+  "diaithiris": "Kas laech kriadach",
+  "english": "Warrior Composite Leggings"
+ },
+ "fian_boots_composite": {
+  "diaithiris": "Bòtund laech kriadach",
+  "english": "Warrior Composite Boots"
+ },
+ "fian_sword_composite": {
+  "diaithiris": "Klaidem laech kriadach",
+  "english": "Warrior Sword (composite)"
+ },
+ "fian_spear_composite": {
+  "diaithiris": "Slieg laech kriadach",
+  "english": "Warrior Spear (composite)"
+ },
+ "sleagh_helmet_bronze": {
+  "diaithiris": "Klogaid bogaduir krèuma",
+  "english": "Archer Bronze Helmet"
+ },
+ "sleagh_chestplate_bronze": {
+  "diaithiris": "Broildech bogaduir krèuma",
+  "english": "Archer Bronze Chestplate"
+ },
+ "sleagh_leggings_bronze": {
+  "diaithiris": "Kas bogaduir krèuma",
+  "english": "Archer Bronze Leggings"
+ },
+ "sleagh_boots_bronze": {
+  "diaithiris": "Bòtund bogaduir krèuma",
+  "english": "Archer Bronze Boots"
+ },
+ "sleagh_bow_bronze": {
+  "diaithiris": "Umlaig bogaduir krèuma",
+  "english": "Archer Bow (bronze)"
+ },
+ "sleagh_sling_bronze": {
+  "diaithiris": "Krandtabuild bogaduir krèuma",
+  "english": "Archer Sling (bronze)"
+ },
+ "sleagh_helmet_steel": {
+  "diaithiris": "Klogaid bogaduir kruoid",
+  "english": "Archer Steel Helmet"
+ },
+ "sleagh_chestplate_steel": {
+  "diaithiris": "Broildech bogaduir kruoid",
+  "english": "Archer Steel Chestplate"
+ },
+ "sleagh_leggings_steel": {
+  "diaithiris": "Kas bogaduir kruoid",
+  "english": "Archer Steel Leggings"
+ },
+ "sleagh_boots_steel": {
+  "diaithiris": "Bòtund bogaduir kruoid",
+  "english": "Archer Steel Boots"
+ },
+ "sleagh_bow_steel": {
+  "diaithiris": "Umlaig bogaduir kruoid",
+  "english": "Archer Bow (steel)"
+ },
+ "sleagh_sling_steel": {
+  "diaithiris": "Krandtabuild bogaduir kruoid",
+  "english": "Archer Sling (steel)"
+ },
+ "sleagh_helmet_composite": {
+  "diaithiris": "Klogaid bogaduir kriadach",
+  "english": "Archer Composite Helmet"
+ },
+ "sleagh_chestplate_composite": {
+  "diaithiris": "Broildech bogaduir kriadach",
+  "english": "Archer Composite Chestplate"
+ },
+ "sleagh_leggings_composite": {
+  "diaithiris": "Kas bogaduir kriadach",
+  "english": "Archer Composite Leggings"
+ },
+ "sleagh_boots_composite": {
+  "diaithiris": "Bòtund bogaduir kriadach",
+  "english": "Archer Composite Boots"
+ },
+ "sleagh_bow_composite": {
+  "diaithiris": "Umlaig bogaduir kriadach",
+  "english": "Archer Bow (composite)"
+ },
+ "sleagh_sling_composite": {
+  "diaithiris": "Krandtabuild bogaduir kriadach",
+  "english": "Archer Sling (composite)"
+ },
+ "ceilg_helmet_bronze": {
+  "diaithiris": "Klogaid sielguir krèuma",
+  "english": "Hunter Bronze Helmet"
+ },
+ "ceilg_chestplate_bronze": {
+  "diaithiris": "Broildech sielguir krèuma",
+  "english": "Hunter Bronze Chestplate"
+ },
+ "ceilg_leggings_bronze": {
+  "diaithiris": "Kas sielguir krèuma",
+  "english": "Hunter Bronze Leggings"
+ },
+ "ceilg_boots_bronze": {
+  "diaithiris": "Bòtund sielguir krèuma",
+  "english": "Hunter Bronze Boots"
+ },
+ "ceilg_dagger_bronze": {
+  "diaithiris": "Biudag sielguir krèuma",
+  "english": "Hunter Dagger (bronze)"
+ },
+ "ceilg_helmet_steel": {
+  "diaithiris": "Klogaid sielguir kruoid",
+  "english": "Hunter Steel Helmet"
+ },
+ "ceilg_chestplate_steel": {
+  "diaithiris": "Broildech sielguir kruoid",
+  "english": "Hunter Steel Chestplate"
+ },
+ "ceilg_leggings_steel": {
+  "diaithiris": "Kas sielguir kruoid",
+  "english": "Hunter Steel Leggings"
+ },
+ "ceilg_boots_steel": {
+  "diaithiris": "Bòtund sielguir kruoid",
+  "english": "Hunter Steel Boots"
+ },
+ "ceilg_dagger_steel": {
+  "diaithiris": "Biudag sielguir kruoid",
+  "english": "Hunter Dagger (steel)"
+ },
+ "ceilg_helmet_composite": {
+  "diaithiris": "Klogaid sielguir kriadach",
+  "english": "Hunter Composite Helmet"
+ },
+ "ceilg_chestplate_composite": {
+  "diaithiris": "Broildech sielguir kriadach",
+  "english": "Hunter Composite Chestplate"
+ },
+ "ceilg_leggings_composite": {
+  "diaithiris": "Kas sielguir kriadach",
+  "english": "Hunter Composite Leggings"
+ },
+ "ceilg_boots_composite": {
+  "diaithiris": "Bòtund sielguir kriadach",
+  "english": "Hunter Composite Boots"
+ },
+ "ceilg_dagger_composite": {
+  "diaithiris": "Biudag sielguir kriadach",
+  "english": "Hunter Dagger (composite)"
+ },
+ "cleirech_helmet_bronze": {
+  "diaithiris": "Klogaid ligichi krèuma",
+  "english": "Healer Bronze Helmet"
+ },
+ "cleirech_chestplate_bronze": {
+  "diaithiris": "Broildech ligichi krèuma",
+  "english": "Healer Bronze Chestplate"
+ },
+ "cleirech_leggings_bronze": {
+  "diaithiris": "Kas ligichi krèuma",
+  "english": "Healer Bronze Leggings"
+ },
+ "cleirech_boots_bronze": {
+  "diaithiris": "Bòtund ligichi krèuma",
+  "english": "Healer Bronze Boots"
+ },
+ "cleirech_crozier_bronze": {
+  "diaithiris": "Meirlech ligichi krèuma",
+  "english": "Healer Crozier (bronze)"
+ },
+ "cleirech_helmet_steel": {
+  "diaithiris": "Klogaid ligichi kruoid",
+  "english": "Healer Steel Helmet"
+ },
+ "cleirech_chestplate_steel": {
+  "diaithiris": "Broildech ligichi kruoid",
+  "english": "Healer Steel Chestplate"
+ },
+ "cleirech_leggings_steel": {
+  "diaithiris": "Kas ligichi kruoid",
+  "english": "Healer Steel Leggings"
+ },
+ "cleirech_boots_steel": {
+  "diaithiris": "Bòtund ligichi kruoid",
+  "english": "Healer Steel Boots"
+ },
+ "cleirech_crozier_steel": {
+  "diaithiris": "Meirlech ligichi kruoid",
+  "english": "Healer Crozier (steel)"
+ },
+ "cleirech_helmet_composite": {
+  "diaithiris": "Klogaid ligichi kriadach",
+  "english": "Healer Composite Helmet"
+ },
+ "cleirech_chestplate_composite": {
+  "diaithiris": "Broildech ligichi kriadach",
+  "english": "Healer Composite Chestplate"
+ },
+ "cleirech_leggings_composite": {
+  "diaithiris": "Kas ligichi kriadach",
+  "english": "Healer Composite Leggings"
+ },
+ "cleirech_boots_composite": {
+  "diaithiris": "Bòtund ligichi kriadach",
+  "english": "Healer Composite Boots"
+ },
+ "cleirech_crozier_composite": {
+  "diaithiris": "Meirlech ligichi kriadach",
+  "english": "Healer Crozier (composite)"
+ },
+ "rune_beith": {
+  "diaithiris": "Lietirrùin beiti",
+  "english": "Ogham Rune Beith (birch)"
+ },
+ "rune_luis": {
+  "diaithiris": "Lietirrùin kaerund",
+  "english": "Ogham Rune Luis (rowan)"
+ },
+ "rune_fearn": {
+  "diaithiris": "Lietirrùin feàrnad",
+  "english": "Ogham Rune Fearn (alder)"
+ },
+ "rune_sail": {
+  "diaithiris": "Lietirrùin seilech",
+  "english": "Ogham Rune Sail (willow)"
+ },
+ "rune_nion": {
+  "diaithiris": "Lietirrùin luoitri",
+  "english": "Ogham Rune Nion (ash)"
+ },
+ "rune_uath": {
+  "diaithiris": "Lietirrùin skitech",
+  "english": "Ogham Rune Uath (hawthorn)"
+ },
+ "rune_dair": {
+  "diaithiris": "Lietirrùin daurach",
+  "english": "Ogham Rune Dair (oak)"
+ },
+ "rune_tinne": {
+  "diaithiris": "Lietirrùin koilend",
+  "english": "Ogham Rune Tinne (holly)"
+ },
+ "rune_coll": {
+  "diaithiris": "Lietirrùin kaldtuind",
+  "english": "Ogham Rune Coll (hazel)"
+ },
+ "rune_iodhadh": {
+  "diaithiris": "Lietirrùin iubur",
+  "english": "Ogham Rune Iodhadh (yew)"
+ },
+ "rune_ruis": {
+  "diaithiris": "Lietirrùin èilder",
+  "english": "Ogham Rune Ruis (elder)"
+ },
+ "ring_bronze": {
+  "diaithiris": "Fàindi krèuma",
+  "english": "Ring (bronze)"
+ },
+ "charm_bronze": {
+  "diaithiris": "Sein krèuma",
+  "english": "Charm (bronze)"
+ },
+ "ring_steel": {
+  "diaithiris": "Fàindi kruoid",
+  "english": "Ring (steel)"
+ },
+ "charm_steel": {
+  "diaithiris": "Sein kruoid",
+  "english": "Charm (steel)"
+ },
+ "ring_composite": {
+  "diaithiris": "Fàindi kriadach",
+  "english": "Ring (composite)"
+ },
+ "charm_composite": {
+  "diaithiris": "Sein kriadach",
+  "english": "Charm (composite)"
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "school": "spell_power:physical_melee",
+ "range": 12.0,
+ "tier": 1,
+ "group": "ceilg_shadow",
+ "learn": {},
+ "active": {},
+ "release": {
+  "sound": {
+   "id": "spell_engine:weapon_swipe_launch"
+  }
+ },
+ "target": {
+  "type": "AIM",
+  "aim": {
+   "required": true
+  }
+ },
+ "deliver": {
+  "type": "DIRECT"
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "TELEPORT",
+    "teleport": {
+     "mode": "BEHIND_TARGET",
+     "behind_target": {
+      "distance": 1.5
+     }
+    }
+   },
+   "sound": {
+    "id": "spell_engine:generic_arcane_release"
+   }
+  },
+  {
+   "action": {
+    "type": "DAMAGE",
+    "damage": {
+     "spell_power_coefficient": 1.5
+    }
+   },
+   "sound": {
+    "id": "spell_engine:weapon_dagger_impact"
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 14.0
+  }
+ }
+}

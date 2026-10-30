@@ -1,0 +1,8 @@
+{
+ "access": "MAGIC",
+ "max_spell_count": 2,
+ "spell_ids": [
+  "diaithir_classes:sleagh_net_trap",
+  "diaithir_classes:sleagh_sling_shot"
+ ]
+}

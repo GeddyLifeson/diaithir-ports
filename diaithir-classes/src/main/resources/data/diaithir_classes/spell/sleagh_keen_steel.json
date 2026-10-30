@@ -1,0 +1,48 @@
+{
+ "school": "spell_power:physical_ranged",
+ "range": 0.0,
+ "tier": 0,
+ "group": "sleagh_set",
+ "learn": {},
+ "release": {
+  "sound": {
+   "id": "spell_engine:weapon_throw"
+  }
+ },
+ "target": {
+  "type": "CASTER"
+ },
+ "deliver": {
+  "type": "DIRECT"
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:slowness",
+     "duration": 3.0,
+     "amplifier": 1,
+     "apply_mode": "SET"
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 6.0
+  }
+ },
+ "type": "PASSIVE",
+ "passive": {
+  "triggers": [
+   {
+    "type": "ARROW_IMPACT",
+    "stage": "POST",
+    "chance": 0.2,
+    "target_override": "TARGET"
+   }
+  ]
+ }
+}

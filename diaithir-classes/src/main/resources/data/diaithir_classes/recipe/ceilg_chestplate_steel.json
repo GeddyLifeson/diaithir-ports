@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:steel_chestplate",
+  "diaithir_classes:ceilg_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_chestplate_steel",
+  "count": 1
+ }
+}
