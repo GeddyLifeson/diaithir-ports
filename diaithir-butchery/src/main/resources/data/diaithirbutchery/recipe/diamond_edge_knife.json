@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirbutchery:ceramic_knife",
+  "minecraft:diamond"
+ ],
+ "result": {
+  "id": "diaithirbutchery:diamond_edge_knife"
+ }
+}

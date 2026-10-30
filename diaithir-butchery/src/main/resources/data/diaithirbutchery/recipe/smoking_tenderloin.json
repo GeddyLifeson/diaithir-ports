@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smoking",
+ "category": "food",
+ "ingredient": "diaithirbutchery:tenderloin",
+ "result": {
+  "id": "diaithirbutchery:cooked_tenderloin"
+ },
+ "experience": 0.35,
+ "cookingtime": 100
+}

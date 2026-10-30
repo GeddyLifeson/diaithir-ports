@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "C",
+  "I"
+ ],
+ "key": {
+  "C": "minecraft:iron_chain",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "diaithirbutchery:meat_hook"
+ }
+}

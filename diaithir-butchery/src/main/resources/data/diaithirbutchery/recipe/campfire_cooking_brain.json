@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:campfire_cooking",
+ "category": "food",
+ "ingredient": "diaithirbutchery:brain",
+ "result": {
+  "id": "diaithirbutchery:cooked_brain"
+ },
+ "experience": 0.35,
+ "cookingtime": 600
+}

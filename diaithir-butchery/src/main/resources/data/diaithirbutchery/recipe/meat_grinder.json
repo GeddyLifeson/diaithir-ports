@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "I ",
+  "BI"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "B": "minecraft:bucket"
+ },
+ "result": {
+  "id": "diaithirbutchery:meat_grinder"
+ }
+}

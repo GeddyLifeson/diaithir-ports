@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirbutchery"
+version = "${version}"
+displayName = "Diaithir Butchery"
+description = "Animals drop whole carcasses. Hang a carcass on a meat hook and work it with a knife: skin, gut, then cut into joints, offal, fat, bone and blood. Works on every animal and creature, modded ones included, by body class. Rewrites Butcher's Delight for 26.1 from scratch."
+
+[[dependencies.diaithirbutchery]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

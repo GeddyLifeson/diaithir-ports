@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirbutchery:block/stasis_case_top",
+  "side": "diaithirbutchery:block/stasis_case_side"
+ }
+}
