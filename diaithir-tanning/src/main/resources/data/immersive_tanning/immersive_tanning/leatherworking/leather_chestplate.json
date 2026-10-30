@@ -1,0 +1,7 @@
+{
+  "leather": 8,
+  "result": {
+    "id": "minecraft:leather_chestplate"
+  },
+  "seam": "immersive_tanning:chestplate"
+}

@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "diaithirbutchery"
+    }
+  ],
+  "ingredient": "diaithirbutchery:raw_hide",
+  "size": "medium",
+  "component": "diaithirbutchery:species",
+  "sizes": {
+    "minecraft:rabbit": "small",
+    "minecraft:fox": "small",
+    "minecraft:cat": "small",
+    "minecraft:ocelot": "small",
+    "minecraft:chicken": "small",
+    "minecraft:parrot": "small",
+    "minecraft:frog": "small",
+    "minecraft:axolotl": "small",
+    "minecraft:cod": "small",
+    "minecraft:salmon": "small",
+    "minecraft:pufferfish": "small",
+    "minecraft:tropical_fish": "small",
+    "minecraft:sheep": "medium",
+    "minecraft:pig": "medium",
+    "minecraft:goat": "medium",
+    "minecraft:wolf": "medium",
+    "minecraft:strider": "medium",
+    "minecraft:hoglin": "medium",
+    "minecraft:dolphin": "medium",
+    "minecraft:turtle": "medium",
+    "minecraft:armadillo": "medium",
+    "minecraft:cow": "large",
+    "minecraft:mooshroom": "large",
+    "minecraft:horse": "large",
+    "minecraft:donkey": "large",
+    "minecraft:mule": "large",
+    "minecraft:camel": "large",
+    "minecraft:llama": "large",
+    "minecraft:trader_llama": "large",
+    "minecraft:polar_bear": "large",
+    "minecraft:panda": "large",
+    "minecraft:sniffer": "large",
+    "minecraft:ravager": "large"
+  }
+}

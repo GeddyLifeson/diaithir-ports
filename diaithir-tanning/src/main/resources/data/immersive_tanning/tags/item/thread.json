@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:string",
+    {
+      "id": "diaithirbutchery:sinew",
+      "required": false
+    }
+  ]
+}
