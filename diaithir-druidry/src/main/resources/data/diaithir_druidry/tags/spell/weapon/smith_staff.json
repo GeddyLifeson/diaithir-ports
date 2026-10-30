@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:forge_spark",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:quench",
+   "required": false
+  }
+ ]
+}

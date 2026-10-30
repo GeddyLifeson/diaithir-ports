@@ -1,0 +1,59 @@
+{
+ "school": "spell_power:physical_melee",
+ "range": 0.0,
+ "tier": 0,
+ "group": "fitech_terror",
+ "learn": {},
+ "active": {},
+ "release": {},
+ "target": {
+  "type": "NONE"
+ },
+ "deliver": {
+  "type": "MELEE",
+  "melee": {
+   "allow_airborne": false,
+   "attacks": [
+    {
+     "delay": 0.15,
+     "additional_strikes": 1,
+     "additional_strike_delay": 0.15,
+     "forward_momentum": 0.6,
+     "movement_slipperiness": 0.3,
+     "hitbox": {
+      "length": 0.5,
+      "height": 0.2,
+      "arc": 140.0
+     },
+     "animation": {
+      "id": "spell_engine:weapon_slash_uncross_swipe"
+     },
+     "swing_sound": {
+      "id": "spell_engine:weapon_swipe_launch"
+     },
+     "impact_sound": {
+      "id": "spell_engine:weapon_sickle_impact_small"
+     }
+    }
+   ]
+  }
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "DAMAGE",
+    "damage": {
+     "spell_power_coefficient": 0.55,
+     "knockback": 0.1
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 5.0
+  }
+ },
+ "range_mechanic": "MELEE"
+}

@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:sight_spark",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:far_sight",
+   "required": false
+  }
+ ]
+}

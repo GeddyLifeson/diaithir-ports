@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:sharp_note",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:lullaby",
+   "required": false
+  }
+ ]
+}

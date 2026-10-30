@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "#diaithir_druidry:spell_book/ovate",
+   "required": false
+  },
+  {
+   "id": "#diaithir_druidry:weapon/ovate_staff",
+   "required": false
+  }
+ ]
+}
