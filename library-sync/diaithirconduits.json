@@ -1,0 +1,27 @@
+[
+ {
+  "id": "diaithirconduits:conduit_1",
+  "name": "Vaurelith Conduit",
+  "text": "Conduit node, tier 1. Set its channel with the tuner. Every node on that channel trades items, fluids and FE, in any dimension. Sneak with an empty hand to step a face: off, send, receive. Send pulls from the block beside it, receive pushes into it. Age VI."
+ },
+ {
+  "id": "diaithirconduits:conduit_2",
+  "name": "Ordhevane Conduit",
+  "text": "Conduit node, tier 2. Same as the tier 1 node with eight times the bandwidth per run. Age VII."
+ },
+ {
+  "id": "diaithirconduits:fluid_cell",
+  "name": "Sulmerith Cell",
+  "text": "Fluid cell. A plain tank that every face can fill and empty, handy at the end of a conduit. Use it to read the contents. Age VI."
+ },
+ {
+  "id": "diaithirconduits:energy_cell",
+  "name": "Kaldruvane Cell",
+  "text": "Energy cell. A plain FE battery that every face can charge and drain, handy at the end of a conduit. Use it to read the contents. Age VI."
+ },
+ {
+  "id": "diaithirconduits:tuner",
+  "name": "Thorvaneth Tuner",
+  "text": "Tuner. Use it on a conduit node to put it on your channel 1, then again to step up one channel; sneak to step down. Only the node's owner can tune it. Others join your channel only if you run /diaithirconduits trust. Age VI."
+ }
+]

@@ -1,0 +1,17 @@
+{
+  "tier1": {
+    "age": 6,
+    "items": [
+      "diaithirconduits:conduit_1",
+      "diaithirconduits:fluid_cell",
+      "diaithirconduits:energy_cell",
+      "diaithirconduits:tuner"
+    ]
+  },
+  "tier2": {
+    "age": 7,
+    "items": [
+      "diaithirconduits:conduit_2"
+    ]
+  }
+}
