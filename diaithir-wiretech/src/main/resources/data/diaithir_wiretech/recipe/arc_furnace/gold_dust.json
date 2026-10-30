@@ -1,0 +1,15 @@
+{
+  "type": "diaithir_wiretech:arc_furnace",
+  "inputs": [
+    {
+      "ingredient": "diaithir_wiretech:gold_dust",
+      "count": 1
+    }
+  ],
+  "energy": 1200,
+  "time": 60,
+  "result": {
+    "id": "minecraft:gold_ingot",
+    "count": 1
+  }
+}

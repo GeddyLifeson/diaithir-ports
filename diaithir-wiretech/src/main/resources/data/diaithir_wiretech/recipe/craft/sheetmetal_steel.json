@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "diaithir_wiretech:steel_ingot"
+  },
+  "pattern": [
+    "II",
+    "II"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:sheetmetal_steel",
+    "count": 4
+  }
+}

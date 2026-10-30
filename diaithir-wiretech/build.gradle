@@ -1,0 +1,36 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-wiretech-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    runs {
+        client {
+            client()
+            gameDirectory = file('run-client')
+            jvmArguments.addAll('-Xmx6G', '-Dwiretech.demo=false')
+            programArguments.addAll('--username', 'Dev', '--quickPlayMultiplayer', 'localhost:25565')
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+    mods { diaithir_wiretech { sourceSet(sourceSets.main) } }
+}
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+

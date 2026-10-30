@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithir_wiretech"
+version = "${version}"
+displayName = "Diaithir Wiretech"
+description = "Visible power wires between connectors in three tiers (copper, electrum, steel) with range and loss limits, FE throughout. Hand crank, windmill and water wheel feed a dynamo; a crusher and an arc furnace run off the wire. Sheetmetal and scaffolding blocks for building. Original clean-room work."
+
+[[dependencies.diaithir_wiretech]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

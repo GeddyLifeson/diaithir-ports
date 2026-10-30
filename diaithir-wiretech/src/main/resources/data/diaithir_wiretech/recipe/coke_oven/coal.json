@@ -1,0 +1,20 @@
+{
+  "type": "diaithir_wiretech:coke_oven",
+  "inputs": [
+    {
+      "ingredient": "minecraft:coal",
+      "count": 1
+    }
+  ],
+  "energy": 600,
+  "time": 200,
+  "result": {
+    "id": "diaithir_wiretech:coke",
+    "count": 1
+  },
+  "bonus": {
+    "id": "diaithir_wiretech:coal_dust",
+    "count": 1
+  },
+  "bonus_chance": 0.15
+}
