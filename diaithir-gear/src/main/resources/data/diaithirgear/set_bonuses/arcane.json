@@ -1,0 +1,48 @@
+{
+ "id": "arcane",
+ "tag": "diaithirgear:sets/arcane",
+ "age": 4,
+ "curios": false,
+ "tiers": [
+  {
+   "pieces": 2,
+   "attributes": [
+    {
+     "attribute": "spell_power:arcane",
+     "operation": "add_multiplied_base",
+     "amount": 0.05
+    },
+    {
+     "attribute": "spell_power:fire",
+     "operation": "add_multiplied_base",
+     "amount": 0.05
+    },
+    {
+     "attribute": "spell_power:frost",
+     "operation": "add_multiplied_base",
+     "amount": 0.05
+    }
+   ]
+  },
+  {
+   "pieces": 4,
+   "attributes": [
+    {
+     "attribute": "spell_power:haste",
+     "operation": "add_multiplied_base",
+     "amount": 0.1
+    },
+    {
+     "attribute": "spell_power:generic",
+     "operation": "add_multiplied_base",
+     "amount": 0.1
+    },
+    {
+     "attribute": "minecraft:max_absorption",
+     "operation": "add_value",
+     "amount": 4
+    }
+   ]
+  }
+ ]
+}

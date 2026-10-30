@@ -24,6 +24,10 @@ Commands: `/nemesis roster` (who hunts you), `/nemesis chronicle`; for operators
 
 Source: https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis. Licence: MIT.
 
+## diaithir-gear (Gléaus)
+
+Cross-mod gear parity: Point Blank bullet damage scaled against the Musket Mod, shared gem tag with matching Apotheosis and Silent Gems affixes, and one Age-gated set bonus per armour or jewellery family. Data driven, MIT. See `diaithir-gear/README.md` and `diaithir-gear/TEST.md`.
+
 # Diaithir Voice (diaithir-voice)
 
 Proximity voice chat that travels inside the normal Minecraft connection, so a single TCP tunnel (playit.gg free TCP, for one) is enough: no UDP port, no native library. Hold the Push to Talk key (V by default) and players within `range` blocks (32) hear you, at full volume inside `nearDistance` (4) and falling off with the square of the remaining distance, placed left or right by where you stand. The client captures 16 kHz mono with Java Sound, packs 20 ms frames as IMA ADPCM (163 bytes, about 65 kbit/s of payload per speaker), and sends them as a custom payload. The server works the range and gain from the speaker's real position, relays only to listeners in range, rate limits each speaker, and the client plays through a jitter buffer. Both payloads are optional, so vanilla clients and servers still connect.

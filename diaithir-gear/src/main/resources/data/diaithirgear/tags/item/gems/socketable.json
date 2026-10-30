@@ -1,0 +1,101 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "#c:gems/alexandrite",
+   "required": false
+  },
+  {
+   "id": "#c:gems/ammolite",
+   "required": false
+  },
+  {
+   "id": "#c:gems/aquamarine",
+   "required": false
+  },
+  {
+   "id": "#c:gems/black_diamond",
+   "required": false
+  },
+  {
+   "id": "#c:gems/carnelian",
+   "required": false
+  },
+  {
+   "id": "#c:gems/citrine",
+   "required": false
+  },
+  {
+   "id": "#c:gems/garnet",
+   "required": false
+  },
+  {
+   "id": "#c:gems/heliodor",
+   "required": false
+  },
+  {
+   "id": "#c:gems/iolite",
+   "required": false
+  },
+  {
+   "id": "#c:gems/jade",
+   "required": false
+  },
+  {
+   "id": "#c:gems/kyanite",
+   "required": false
+  },
+  {
+   "id": "#c:gems/moldavite",
+   "required": false
+  },
+  {
+   "id": "#c:gems/moonstone",
+   "required": false
+  },
+  {
+   "id": "#c:gems/onyx",
+   "required": false
+  },
+  {
+   "id": "#c:gems/opal",
+   "required": false
+  },
+  {
+   "id": "#c:gems/pearl",
+   "required": false
+  },
+  {
+   "id": "#c:gems/peridot",
+   "required": false
+  },
+  {
+   "id": "#c:gems/rose_quartz",
+   "required": false
+  },
+  {
+   "id": "#c:gems/ruby",
+   "required": false
+  },
+  {
+   "id": "#c:gems/sapphire",
+   "required": false
+  },
+  {
+   "id": "#c:gems/tanzanite",
+   "required": false
+  },
+  {
+   "id": "#c:gems/topaz",
+   "required": false
+  },
+  {
+   "id": "#c:gems/turquoise",
+   "required": false
+  },
+  {
+   "id": "#c:gems/white_diamond",
+   "required": false
+  }
+ ]
+}

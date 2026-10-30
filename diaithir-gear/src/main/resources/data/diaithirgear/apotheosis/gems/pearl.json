@@ -1,0 +1,22 @@
+{
+ "weights": {
+  "quality": 0.1,
+  "weight": 60
+ },
+ "bonuses": [
+  {
+   "type": "apotheosis:attribute",
+   "attribute": "minecraft:oxygen_bonus",
+   "gem_class": "apotheosis:helmet",
+   "operation": "add_value",
+   "values": {
+    "cracked": 0.25,
+    "chipped": 0.5,
+    "flawed": 0.75,
+    "normal": 1.0,
+    "flawless": 1.25,
+    "perfect": 1.562
+   }
+  }
+ ]
+}

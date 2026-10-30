@@ -1,0 +1,65 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "#diaithir:ammo/cartridge",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/9x19",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/45acp",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/357mag",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/50ae",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/46x30",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/57x28",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/545x39",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/556x45",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/762x39",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/762x51",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/68x51",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/338lapua",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/50bmg",
+   "required": false
+  },
+  {
+   "id": "#diaithir:ammo/12ga",
+   "required": false
+  }
+ ]
+}
