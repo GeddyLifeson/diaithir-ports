@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","category":"redstone","key":{"I":"minecraft:iron_ingot","B":"minecraft:stone_button","S":"minecraft:stone"},"pattern":["III","IBI","SSS"],"result":{"id":"diaithirelevators:elevator_floor","count":2}}
