@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "alexscaves:gazing_pearl",
+    "alexscaves:marine_snow"
+  ],
+  "result": {
+    "count": 1,
+    "id": "alexscaves:pearl"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": "alexscaves:guanostone_brick_slab"
+  },
+  "result": {
+    "count": 1,
+    "id": "alexscaves:guanostone_chiseled"
+  }
+}

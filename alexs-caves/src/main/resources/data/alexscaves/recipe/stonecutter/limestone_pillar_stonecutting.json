@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "alexscaves:limestone",
+  "result": {
+    "id": "alexscaves:limestone_pillar",
+    "count": 1
+  }
+}

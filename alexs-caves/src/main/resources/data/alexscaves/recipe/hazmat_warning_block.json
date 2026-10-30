@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " H ",
+    "HHH"
+  ],
+  "key": {
+    "H": "alexscaves:hazmat_block"
+  },
+  "result": {
+    "count": 4,
+    "id": "alexscaves:hazmat_warning_block"
+  }
+}

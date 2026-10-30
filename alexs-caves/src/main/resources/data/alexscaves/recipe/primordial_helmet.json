@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BHB",
+    "E E"
+  ],
+  "key": {
+    "H": "alexscaves:tough_hide",
+    "B": "minecraft:bone_block",
+    "E": "alexscaves:heavy_bone"
+  },
+  "result": {
+    "id": "alexscaves:primordial_helmet",
+    "count": 1
+  }
+}

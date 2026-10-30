@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CSC",
+    " C ",
+    " C "
+  ],
+  "key": {
+    "S": "alexscaves:scrap_metal",
+    "C": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "alexscaves:copper_valve",
+    "count": 1
+  }
+}

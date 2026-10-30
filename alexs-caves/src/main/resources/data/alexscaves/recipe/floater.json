@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "BBB",
+    "PPP"
+  ],
+  "key": {
+    "B": "alexscaves:bioluminesscence",
+    "P": "alexscaves:ping_pong_sponge"
+  },
+  "result": {
+    "id": "alexscaves:floater",
+    "count": 1
+  }
+}

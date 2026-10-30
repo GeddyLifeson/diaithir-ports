@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SPS",
+    "PDP",
+    "SPS"
+  ],
+  "key": {
+    "S": "minecraft:sugar",
+    "P": "alexscaves:peppermint_powder",
+    "D": "#c:dyes/light_gray"
+  },
+  "result": {
+    "count": 4,
+    "id": "alexscaves:rock_candy_light_gray"
+  }
+}

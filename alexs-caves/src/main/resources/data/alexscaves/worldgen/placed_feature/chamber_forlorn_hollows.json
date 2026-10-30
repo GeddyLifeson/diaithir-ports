@@ -1,0 +1,12 @@
+{
+  "feature": "alexscaves:chamber_forlorn_hollows",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 36
+    },
+    {
+      "type": "minecraft:in_square"
+    }
+  ]
+}

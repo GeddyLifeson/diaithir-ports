@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": "alexscaves:galena"
+  },
+  "result": {
+    "count": 1,
+    "id": "alexscaves:packed_galena"
+  }
+}

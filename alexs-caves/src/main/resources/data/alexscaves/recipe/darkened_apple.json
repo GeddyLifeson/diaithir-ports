@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " D ",
+    "DPD",
+    " D "
+  ],
+  "key": {
+    "P": "minecraft:apple",
+    "D": "alexscaves:pure_darkness"
+  },
+  "result": {
+    "id": "alexscaves:darkened_apple",
+    "count": 1
+  }
+}

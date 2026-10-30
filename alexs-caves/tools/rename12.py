@@ -1,0 +1,30 @@
+import re,glob
+exec(open('tools/rename11.py').read().split('def main')[0])
+SL='net.minecraft.server.level.ServerLevel'
+def main():
+    for f in glob.glob(ROOT+'**/*.java',recursive=True):
+        s=open(f).read();o=s
+        s=s.replace('public boolean save(CompoundTag tag)','public boolean save(net.minecraft.world.level.storage.ValueOutput output)')
+        s=re.sub(r'InteractionResult interact\(Player (\w+), InteractionHand (\w+)\)',r'InteractionResult interact(Player \1, InteractionHand \2, net.minecraft.world.phys.Vec3 location)',s)
+        s=s.replace('parent.interact(player, hand)','parent.interact(player, hand, location)')
+        s=s.replace('this.isInvulnerableTo(source)','this.isInvulnerableTo(serverLevel, source)')
+        s=s.replace('parent.isInvulnerableTo(damageSource)','parent.isInvulnerableTo(serverLevel, damageSource)')
+        s=re.sub(r'boolean shouldDropLoot\(\)','boolean shouldDropLoot('+SL+' serverLevel)',s)
+        s=s.replace('super.shouldDropLoot()','super.shouldDropLoot(serverLevel)')
+        s=re.sub(r'(?<![\w.])shouldDropLoot\(\)','shouldDropLoot(('+SL+') level())',s)
+        s=re.sub(r'void dropEquipment\(\)','void dropEquipment('+SL+' serverLevel)',s)
+        s=s.replace('super.dropEquipment()','super.dropEquipment(serverLevel)')
+        s=re.sub(r'void dropExperience\(Entity (\w+)\)',r'void dropExperience('+SL+r' serverLevel, Entity \1)',s)
+        s=re.sub(r'super\.dropExperience\((\w+)\)',r'super.dropExperience(serverLevel, \1)',s)
+        s=re.sub(r'void customServerAiStep\(\)','void customServerAiStep('+SL+' serverLevel)',s)
+        s=s.replace('super.customServerAiStep()','super.customServerAiStep(serverLevel)')
+        s=re.sub(r'(\w+)\.doHurtTarget\((\w+)\)',r'\1.doHurtTarget(('+SL+r') \1.level(), \2)',s)
+        s=re.sub(r'this\.convertTo\(([\w.]+\(\)\.get\(\)|[\w.]+), true\)',r'this.convertTo(\1, net.minecraft.world.entity.ConversionParams.single(this, true, true), net.minecraft.world.entity.EntitySpawnReason.CONVERSION, __c -> {})',s)
+        s=s.replace('(Predicate<LivingEntity>)null','(net.minecraft.world.entity.ai.targeting.TargetingConditions.Selector)null')
+        s=s.replace('hasRestriction()','hasHome()').replace('getRestrictCenter()','getHomePosition()').replace('clearRestriction()','clearHome()')
+        s=s.replace('canPerformAction(ItemAbilities.SHIELD_BLOCK)','canPerformAction(ItemAbilities.SHIELD_BLOCK)')
+        s=re.sub(r'(\w+)\.getCraftingRemainder\(\)\.isEmpty\(\)',r'\1.getCraftingRemainder() == null',s)
+        s=re.sub(r'(\w+)\.getCraftingRemainder\(\)\.copy\(\)',r'\1.getCraftingRemainder().create()',s)
+        s=s.replace('ChunkPos.asLong(','ChunkPos.pack(')
+        if s!=o: open(f,'w').write(s)
+main()

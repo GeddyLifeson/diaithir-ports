@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "alexscaves:chamber_primordial_caves",
+    "alexscaves:chamber_forlorn_hollows",
+    "alexscaves:chamber_magnetic_caves",
+    "alexscaves:chamber_toxic_caves",
+    "alexscaves:chamber_candy_cavity",
+    "alexscaves:chamber_abyssal_chasm"
+  ],
+  "step": "underground_structures"
+}

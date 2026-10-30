@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SP",
+    "PS"
+  ],
+  "key": {
+    "P": "alexscaves:peppermint_powder",
+    "S": "minecraft:sugar"
+  },
+  "result": {
+    "id": "alexscaves:sugar_glass",
+    "count": 1
+  }
+}

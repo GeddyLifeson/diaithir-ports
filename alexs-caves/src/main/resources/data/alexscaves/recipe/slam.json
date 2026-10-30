@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "alexscaves:sulfur_dust",
+    "alexscaves:sulfur_dust",
+    "minecraft:porkchop",
+    "minecraft:bone_meal"
+  ],
+  "result": {
+    "count": 1,
+    "id": "alexscaves:slam"
+  }
+}
