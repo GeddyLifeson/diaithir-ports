@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aaa",
+  "aba",
+  "cdc"
+ ],
+ "key": {
+  "a": "#minecraft:stone_crafting_materials",
+  "b": "#minecraft:stone_bricks",
+  "c": "#minecraft:slabs",
+  "d": "minecraft:raw_iron"
+ },
+ "result": {
+  "id": "automatemat:mining_essense"
+ }
+}

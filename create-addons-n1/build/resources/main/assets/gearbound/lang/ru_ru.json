@@ -1,0 +1,79 @@
+{
+  "item.gearbound.blaze_throwner": "Блейзомёт",
+  "item.gearbound.brass_blaze_throwner": "Блейзомёт",
+  "item.gearbound.hand_mixer": "Портативный Миксер",
+  "item.gearbound.brass_hand_mixer": "Портативный Миксер",
+  "item.gearbound.hand_drill": "Портативная Дрель",
+  "item.gearbound.hand_press": "Портативный Пресс",
+  "item.gearbound.hand_fan": "Портативный Вентилятор",
+  "item.gearbound.hand_saw": "Портативный Пила",
+  "item.gearbound.rocket_boots": "Ракетные Ботинки",
+  "item.gearbound.fuel_canister": "Баллон с топливом",
+  "item.gearbound.water_canister": "Баллон с водой",
+  "item.gearbound.brass_upgrade": "Латунное Улучшение",
+
+
+
+  "item.gearbound.blazethrower.no_fuel": "§cНет топлива! Пожалуйста, заправьте Блейзомёт",
+  "item.gearbound.blazethrower.refueled": "§6Блейзомёт заправлен: §f%s / %s",
+  "item.gearbound.blazethrower.not_enough_fuel_charge": "§cНедостаточно топлива для зарядки! Требуется 10",
+  "item.gearbound.blazethrower.refilled_water": "§9Блейзомёт заполнен водой: §f%s / %s",
+  "item.gearbound.blazethrower.overheated": "§cБлейзомёт перегрелся и загорелся!",
+  "item.gearbound.blazethrower.charge_progress": "§eЗаряд: §f%s / %s",
+  "item.gearbound.blazethrower.not_enough_fuel_blast": "§cНедостаточно топлива! Для заряженного взрыва требуется 10",
+  "item.gearbound.blazethrower.charged_blast": "§eВыпущен заряженный взрыв!",
+  "item.gearbound.blazethrower.charged_soul_blast": "§eВыпущен заряженный взрыв душ!",
+  "item.gearbound.blazethrower.auto_refueled": "",
+  "item.gearbound.blazethrower.auto_rewater": "",
+  "item.gearbound.blazethrower.auto_refuel": "",
+
+  "item.gearbound.blazethrower.fuel": "§6Топливо: §f%s / %s",
+  "item.gearbound.blazethrower.water": "§9Вода: §f%s / %s",
+  "item.gearbound.blazethrower.overheat": "§cПерегрев: §f%s / %s",
+  "item.gearbound.blazethrower.charge": "§eЗаряд: §f%s / %s",
+
+  "item.gearbound.fuel_canister.refueled": "§6Баллон заправлен: §f%s / %s",
+  "item.gearbound.fuel_canister.tooltip": "§6Запас топлива: §f%s / %s",
+
+  "item.gearbound.hand_saw.refueled": "§6Портативная Пила заправлена: §f%s / %s",
+  "item.gearbound.hand_saw.auto_refueled": "",
+  "item.gearbound.hand_saw.no_fuel": "§cНет топлива! Пожалуйста, заправьте Портативную Пилу",
+  "item.gearbound.hand_saw.tooltip.fuel": "§6Топливо: §f%s / %s",
+
+  "item.gearbound.grappling_hook.retracted": "",
+  "item.gearbound.grappling_hook.attached_block": "",
+  "item.gearbound.grappling_hook.attached_entity": "",
+  "item.gearbound.grappling_hook.no_fuel": "§cНедостаточно топлива чтобы запустить миксер!",
+  "item.gearbound.grappling_hook.auto_refueled": "",
+  "item.gearbound.grappling_hook.tooltip.fuel": "§6Топливо: §f%s / %s",
+  "item.gearbound.grappling_hook.manual_refueled": "§6Портативный Миксер заправлен: §f%s / %s",
+
+  "item.gearbound.hand_drill.auto_refuel": "",
+  "item.gearbound.hand_drill.auto_refill_water": "",
+  "item.gearbound.hand_drill.no_fuel_or_water": "§cНедостаточно топлива или воды!",
+  "item.gearbound.hand_drill.refueled": "§6Портативная Дрель заправлена: §f%s / %s",
+  "item.gearbound.hand_drill.refilled_water": "§9Портативная Дрель заполнена водой: §f%s / %s",
+  "item.gearbound.hand_drill.tooltip.fuel": "§6Топливо: §f%s / %s",
+  "item.gearbound.hand_drill.tooltip.water": "§9Вода: §f%s / %s",
+
+  "item.gearbound.hand_press.recharging": "§cПортативный Пресс перезаряжается!",
+  "item.gearbound.hand_press.no_fuel": "§cНет топлива! Пожалуйста, заправьте Портативный Пресс",
+  "item.gearbound.hand_press.refueled": "§6Пресс заправлен: §f%s / %s",
+  "item.gearbound.hand_press.not_enough_fuel_charge": "§cНедостаточно топлива для зарядки! Требуется 10",
+  "item.gearbound.hand_press.not_enough_fuel": "§cНедостаточно топлива! Для зарядки требуется 10",
+  "item.gearbound.hand_press.charge_progress": "§eЗаряд: §f%s / %s",
+  "item.gearbound.hand_press.not_enough_fuel_charged_attack": "§cНедостаточно топлива! Для заряженной атаки требуется 10",
+  "item.gearbound.hand_press.no_target_recoil": "§cЦель не поражена. Сработала отдача",
+  "item.gearbound.hand_press.tooltip.fuel": "§6Топливо: §f%s / %s",
+  "item.gearbound.hand_press.tooltip.charge": "§eЗаряд: §f%s / %s",
+  "item.gearbound.hand_press.auto_refueled": "",
+
+  "item.gearbound.rocket_boots.refueled": "§6Ботинки заправлены: §f%s / %s",
+  "item.gearbound.rocket_boots.tooltip.fuel": "§6Топливо: §f%s / %s",
+
+  "item.gearbound.water_canister.refilled": "§9Баллон заполнен: §f%s / %s",
+  "item.gearbound.water_canister.tooltip.water": "§9Запас воды: §f%s / %s",
+
+  "itemgroup.gearbound": "GearBound",
+  "creativetab.gearbound": "GearBound"
+}

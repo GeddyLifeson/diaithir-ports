@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:netherrack",
+ "result": {
+  "id": "create_better_smithing_templates:netherrack_shard",
+  "count": 3
+ }
+}

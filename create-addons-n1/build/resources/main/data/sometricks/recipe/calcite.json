@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "minecraft:stone",
+ "ingredient": "minecraft:white_dye",
+ "results": [
+  {
+   "id": "minecraft:calcite"
+  }
+ ]
+}

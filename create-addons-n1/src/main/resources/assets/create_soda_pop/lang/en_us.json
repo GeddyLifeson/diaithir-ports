@@ -1,0 +1,11 @@
+{
+  "block.create_soda_pop.coca_cola": "Coca Cola",
+  "fluid.create_soda_pop.coca_cola": "Coca Cola",
+  "item.create_soda_pop.coco_cola": "Coca Cola",
+  "item.create_soda_pop.empty_can": "Empty Can",
+  "item.create_soda_pop.coca_cola_bucket": "Bucket of Coca Cola",
+  "block.create_soda_pop.coca": "Coca",
+  "item.create_soda_pop.filled_open_coca_cola_can": "Filled Open Coca Cola Can",
+  "item_group.create_soda_pop.create_soda_pop_plants": "Create: Soda Pop",
+  "item.create_soda_pop.empty_coca_cola_can": "Empty Coca Cola Can"
+}

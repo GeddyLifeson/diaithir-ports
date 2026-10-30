@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "create_trades:general_token",
+ "result": {
+  "id": "create:empty_blaze_burner",
+  "count": 4
+ }
+}

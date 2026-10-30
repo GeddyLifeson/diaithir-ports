@@ -1,0 +1,10 @@
+{
+ "type": "create:cutting",
+ "ingredient": "minecraft:stick",
+ "results": [
+  {
+   "id": "create_more_farmables:wood_string"
+  }
+ ],
+ "processing_time": 50
+}

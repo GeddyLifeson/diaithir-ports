@@ -1,0 +1,24 @@
+{
+  "parent": "minecraft/item/handheld",
+  "loader": "forge:separate_transforms",
+
+  "textures": {
+    "particle": "strontium:item/cigarette_3d"
+  },
+
+  "base": {
+    "parent": "strontium:item/cigarette_3d"
+  },
+
+  "perspectives": {
+    "gui": {
+      "parent": "strontium:item/victory_cigarettes_2d"
+    },
+    "ground": {
+      "parent": "strontium:item/victory_cigarettes_2d"
+    },
+    "fixed": {
+      "parent": "strontium:item/victory_cigarettes_2d"
+    }
+  }
+}

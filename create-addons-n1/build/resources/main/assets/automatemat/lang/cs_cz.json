@@ -1,0 +1,15 @@
+{
+  "item.automatemat.mining_essense": "Těžící jádro",
+  "item.automatemat.diamond_shard": "Střep Diamantu",
+  "item.automatemat.nether_core": "Růže Netheru",
+  "item.automatemat.end_essense": "End Essense",
+  "item.automatemat.end_city_core": "Jádro Endového Města",
+  "item.automatemat.nether_essense": "Nether Essense",
+  "item.automatemat.village_core": "Jádro Vesnice",
+  "item.automatemat.end_core": "Hvězda světu Endu",
+  "item.automatemat.overworld_core": "Jádro Země",
+  "item.automatemat.fortress_core": "Jádro Netherového fortressu",
+  "item_group.automatemat.material_deco": "Material Deco",
+  "item.automatemat.mob_essense": "Overworld Mob Essense",
+  "item_group.automatemat.mob_essense_tab": "Automatizujte Materály"
+}

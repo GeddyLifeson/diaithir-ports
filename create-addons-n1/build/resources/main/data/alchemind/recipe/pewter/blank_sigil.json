@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "iii",
+  "iCi",
+  "iii"
+ ],
+ "key": {
+  "i": "alchemind:pewter_nugget",
+  "C": "alchemind:charged_stone"
+ },
+ "result": {
+  "id": "alchemind:blank_sigil",
+  "count": 3
+ }
+}

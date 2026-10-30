@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:gyrojet_heatseeker"
+ ],
+ "result": {
+  "id": "createloveandwar:gyrojet_heatseeker_top"
+ },
+ "show_notification": true
+}

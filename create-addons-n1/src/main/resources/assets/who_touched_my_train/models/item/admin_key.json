@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "who_touched_my_train:item/key/admin_key"
+  }
+}

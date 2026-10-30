@@ -1,0 +1,21 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "B": "createloveandwar:barrel_netherite",
+  "U": "createloveandwar:upper_receiver_sturdy",
+  "L": "createloveandwar:lower_receiver_sturdy",
+  "S": "createloveandwar:stock_iron",
+  "H": "createloveandwar:handguard_wood",
+  "G": "createloveandwar:grip_wood"
+ },
+ "pattern": [
+  "BHU ",
+  "  LS",
+  "  G "
+ ],
+ "result": {
+  "id": "createloveandwar:wf54"
+ },
+ "show_notification": true
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "N": "#c:nuggets/iron",
+  "G": "createloveandwar:stock_polymer"
+ },
+ "pattern": [
+  "   ",
+  "NG ",
+  "   "
+ ],
+ "result": {
+  "id": "createloveandwar:attachment_impact_stock"
+ },
+ "show_notification": true
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "a a",
+  "aba",
+  "a a"
+ ],
+ "key": {
+  "a": "minecraft:iron_nugget",
+  "b": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "create_soda_pop:empty_can"
+ }
+}

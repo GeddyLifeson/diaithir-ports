@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:coarse_dirt",
+  "alchemind:infused_endstone"
+ ],
+ "results": [
+  {
+   "id": "minecraft:end_stone",
+   "count": 2
+  }
+ ]
+}

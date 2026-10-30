@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:golden_apple",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "fluid": "create:potion",
+  "amount": 20250
+ },
+ "result": {
+  "id": "sometricks:cured_apple"
+ }
+}

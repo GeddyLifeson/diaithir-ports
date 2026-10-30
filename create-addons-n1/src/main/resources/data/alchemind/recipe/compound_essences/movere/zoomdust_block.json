@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "alchemind:zoomdust",
+  "alchemind:zoomdust",
+  "alchemind:zoomdust",
+  "alchemind:zoomdust"
+ ],
+ "results": [
+  {
+   "id": "alchemind:zoomdust_block"
+  }
+ ]
+}

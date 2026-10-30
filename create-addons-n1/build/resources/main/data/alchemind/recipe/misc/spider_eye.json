@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:apple",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "fluid": "create:potion",
+  "amount": 2025
+ },
+ "result": {
+  "id": "minecraft:spider_eye"
+ }
+}

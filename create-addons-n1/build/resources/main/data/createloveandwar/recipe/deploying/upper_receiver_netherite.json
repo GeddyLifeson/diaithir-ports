@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:incomplete_netherite_receiver",
+ "ingredient": "create:precision_mechanism",
+ "results": [
+  {
+   "id": "createloveandwar:upper_receiver_netherite"
+  }
+ ]
+}

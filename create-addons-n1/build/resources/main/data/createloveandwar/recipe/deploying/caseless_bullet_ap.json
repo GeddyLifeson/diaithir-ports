@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:propellant_moulded",
+ "ingredient": "createloveandwar:tungsten_nugget",
+ "results": [
+  {
+   "id": "createloveandwar:caseless_bullet_ap"
+  }
+ ]
+}

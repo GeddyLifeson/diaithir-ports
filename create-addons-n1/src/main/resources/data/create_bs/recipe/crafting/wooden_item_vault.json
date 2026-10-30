@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#minecraft:logs",
+  "create:item_vault",
+  "create:item_vault",
+  "#minecraft:logs"
+ ],
+ "result": {
+  "id": "create_bs:wooden_item_vault",
+  "count": 2
+ }
+}

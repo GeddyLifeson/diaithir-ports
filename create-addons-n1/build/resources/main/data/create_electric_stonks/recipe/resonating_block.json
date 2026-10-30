@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "cnc",
+  "cic",
+  "cnc"
+ ],
+ "key": {
+  "i": "minecraft:iron_block",
+  "c": "create_electric_stonks:advanced_redstone_resonance_coil",
+  "n": "minecraft:netherite_scrap"
+ },
+ "result": {
+  "id": "create_electric_stonks:resonating_block",
+  "count": 2
+ }
+}

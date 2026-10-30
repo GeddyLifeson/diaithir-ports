@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "C": "strontium:rubber_cloth"
+ },
+ "pattern": [
+  "CCC",
+  "C C",
+  "C C"
+ ],
+ "result": {
+  "id": "strontium:ozk_leggings"
+ },
+ "show_notification": true
+}

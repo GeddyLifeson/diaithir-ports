@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:sulphur",
+  "minecraft:coal",
+  "minecraft:bone_meal"
+ ],
+ "result": {
+  "id": "minecraft:gunpowder",
+  "count": 3
+ }
+}

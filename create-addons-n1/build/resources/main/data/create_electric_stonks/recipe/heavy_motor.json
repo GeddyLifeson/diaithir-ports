@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "gsg",
+  "gmg",
+  "gig"
+ ],
+ "key": {
+  "m": "create_electric_stonks:motor",
+  "i": "minecraft:iron_block",
+  "g": "#c:plates/gold",
+  "s": "create:shaft"
+ },
+ "result": {
+  "id": "create_electric_stonks:heavy_motor"
+ }
+}

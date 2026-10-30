@@ -1,0 +1,15 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "createloveandwar:white_plastic",
+  "minecraft:blue_dye"
+ ],
+ "results": [
+  {
+   "id": "createloveandwar:blue_plastic"
+  },
+  {
+   "id": "minecraft:blue_dye"
+  }
+ ]
+}

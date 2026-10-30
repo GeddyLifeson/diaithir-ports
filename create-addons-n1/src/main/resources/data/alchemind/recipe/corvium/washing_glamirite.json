@@ -1,0 +1,14 @@
+{
+ "type": "create:splashing",
+ "ingredient": "alchemind:glamerite",
+ "results": [
+  {
+   "id": "create:cinder_flour",
+   "chance": 0.5
+  },
+  {
+   "id": "minecraft:glowstone_dust",
+   "chance": 0.5
+  }
+ ]
+}

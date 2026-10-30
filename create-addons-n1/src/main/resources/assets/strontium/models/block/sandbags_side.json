@@ -1,0 +1,31 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+        "0": "strontium:block/sandbags-side",
+        "1": "strontium:block/sandbags-top",
+		"particle" : "strontium:block/sandbags-side"
+    },
+	"elements": [
+		{
+			"name": "Side_North",
+			"from": [4, 0, 0],
+			"to": [12, 16, 4],
+			"faces": {
+				"north": {"uv": [4, 0, 12, 16], "texture": "#0"},
+				"east": {"uv": [12, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 4, 16], "texture": "#0"},
+				"up": {"uv": [4, 0, 12, 4], "texture": "#1"},
+				"down": {"uv": [4, 0, 12, 4], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "sandbags_side",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

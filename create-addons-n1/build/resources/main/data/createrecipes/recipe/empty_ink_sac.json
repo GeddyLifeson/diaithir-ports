@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:leather",
+ "results": [
+  {
+   "id": "createrecipes:empty_ink_sac"
+  }
+ ]
+}

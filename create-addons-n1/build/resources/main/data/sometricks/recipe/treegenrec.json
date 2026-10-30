@@ -1,0 +1,28 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": true,
+ "key": {
+  "A": "create:water_wheel",
+  "B": "minecraft:water_bucket",
+  "C": "create:electron_tube",
+  "D": "create:mechanical_saw",
+  "E": "create:mechanical_bearing",
+  "F": "create:deployer",
+  "G": "create:andesite_casing",
+  "H": "create:linear_chassis",
+  "I": "minecraft:barrel",
+  "J": "create:brass_sheet",
+  "K": "create:redstone_contact",
+  "L": "create:andesite_alloy"
+ },
+ "pattern": [
+  " HBH ",
+  "LLJFF",
+  "IJGJK",
+  "LLEDD",
+  " CAC "
+ ],
+ "result": {
+  "id": "sometricks:tree_gen"
+ }
+}

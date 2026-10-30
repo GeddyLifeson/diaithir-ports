@@ -1,0 +1,55 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "#c:rods/wooden",
+ "transitional_item": {
+  "id": "create_more_farmables:unprocessed_blaze_rod"
+ },
+ "result": {
+  "id": "minecraft:blaze_rod"
+ },
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:cinder_flour",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:lava",
+    "amount": 40500
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:lava",
+    "amount": 40500
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:blackstone",
+  "minecraft:magma_block"
+ ],
+ "results": [
+  {
+   "id": "alchemind:loose_ignus"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "type": "create:crushing",
+ "ingredient": "minecraft:prismarine",
+ "results": [
+  {
+   "id": "create:experience_nugget",
+   "chance": 0.75
+  },
+  {
+   "id": "minecraft:lapis_lazuli",
+   "chance": 0.5
+  }
+ ],
+ "processing_time": 250
+}

@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:smithing_transform",
+ "addition": "create:brass_ingot",
+ "base": "gearbound:hand_mixer",
+ "result": {
+  "id": "gearbound:brass_hand_mixer"
+ },
+ "template": "gearbound:brass_upgrade"
+}

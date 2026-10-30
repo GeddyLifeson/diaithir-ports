@@ -1,0 +1,12 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_cluj_napoca:sarmala",
+  "create_cluj_napoca:sarmala"
+ ],
+ "results": [
+  {
+   "id": "create_cluj_napoca:sarmale"
+  }
+ ]
+}

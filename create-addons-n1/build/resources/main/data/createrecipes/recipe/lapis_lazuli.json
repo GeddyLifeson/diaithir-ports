@@ -1,0 +1,12 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:quartz",
+  "minecraft:blue_dye"
+ ],
+ "results": [
+  {
+   "id": "minecraft:lapis_lazuli"
+  }
+ ]
+}

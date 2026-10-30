@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " s ",
+  " fg",
+  " h "
+ ],
+ "key": {
+  "s": "create:iron_sheet",
+  "f": "create:andesite_casing",
+  "g": "gearbound:fuel_canister",
+  "h": "create:encased_fan"
+ },
+ "result": {
+  "id": "gearbound:hand_fan"
+ }
+}
