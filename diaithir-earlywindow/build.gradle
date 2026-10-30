@@ -1,0 +1,28 @@
+plugins {
+    id 'java-library'
+}
+
+version = '1.0.1'
+base.archivesName = 'diaithir-earlywindow-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+repositories {
+    maven { url = 'https://maven.neoforged.net/releases' }
+    maven { url = 'https://libraries.minecraft.net' }
+    mavenCentral()
+}
+
+dependencies {
+    // FML 11.0.15 ships with NeoForge 26.1.2.116.
+    compileOnly 'net.neoforged.fancymodloader:earlydisplay:11.0.15'
+    compileOnly 'net.neoforged.fancymodloader:loader:11.0.15'
+    compileOnly platform('org.lwjgl:lwjgl-bom:3.4.1')
+    compileOnly 'org.lwjgl:lwjgl'
+    compileOnly 'org.lwjgl:lwjgl-glfw'
+    compileOnly 'org.lwjgl:lwjgl-opengl'
+}
+
+jar {
+    manifest { attributes 'Implementation-Version': version }
+    from('LICENSE')
+}
