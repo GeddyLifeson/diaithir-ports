@@ -1,0 +1,6 @@
+{
+ "type": "neoforge:add_features",
+ "biomes": "#minecraft:is_overworld",
+ "features": "diaithirfauna:fossil_chalk",
+ "step": "underground_ores"
+}
