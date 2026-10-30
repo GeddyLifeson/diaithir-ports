@@ -1,0 +1,17 @@
+{
+ "values": [
+  "minecraft:bow",
+  {
+   "id": "diaithirarms:bone_bow",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:copper_bow",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:bronze_bow",
+   "required": false
+  }
+ ]
+}

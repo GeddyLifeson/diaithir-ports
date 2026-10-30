@@ -1,0 +1,76 @@
+{
+ "values": [
+  {
+   "id": "#minecraft:spears",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_spear",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_spear",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_spear",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_spear",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_spear",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_spear",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_javelin",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_javelin",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_javelin",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_javelin",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_javelin",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_javelin",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:steel_spear",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:tempered_spear",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:composite_spear",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:rodos_spear",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:future_spear",
+   "required": false
+  }
+ ]
+}

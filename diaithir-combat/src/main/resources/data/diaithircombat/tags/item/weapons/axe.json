@@ -1,0 +1,49 @@
+{
+ "values": [
+  "#minecraft:axes",
+  {
+   "id": "spartanweaponry:wooden_tomahawk",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_tomahawk",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_tomahawk",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_tomahawk",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_tomahawk",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_tomahawk",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:steel_axe",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:tempered_axe",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:composite_axe",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:rodos_axe",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:future_axe",
+   "required": false
+  }
+ ]
+}
