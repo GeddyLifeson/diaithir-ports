@@ -1,0 +1,44 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:belt_blank",
+ "loops": 3,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:bone"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:turtle_scute"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:golden_apple"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:belt_blank"
+ },
+ "result": {
+  "id": "relics:hunting_belt",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

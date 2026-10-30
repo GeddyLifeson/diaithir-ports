@@ -1,0 +1,10 @@
+{
+ "type": "create:pressing",
+ "results": [
+  {
+   "id": "create_templates_gears:netherrack_sheet",
+   "count": 2
+  }
+ ],
+ "ingredient": "minecraft:netherrack"
+}

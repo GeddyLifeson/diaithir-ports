@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "results": [
+  {
+   "id": "minecraft:powder_snow_bucket"
+  }
+ ],
+ "target": "minecraft:snow_block",
+ "ingredient": "minecraft:bucket"
+}

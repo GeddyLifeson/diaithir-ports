@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "createsandpapers:soul_sand_paper"
+  }
+ ],
+ "ingredient": "create:sand_paper"
+}

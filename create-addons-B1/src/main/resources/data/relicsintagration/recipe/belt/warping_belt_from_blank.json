@@ -1,0 +1,44 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:belt_blank",
+ "loops": 4,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:belt_connector"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:ender_pearl"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:brass_nugget"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:belt_blank"
+ },
+ "result": {
+  "id": "createrelicsplus:warping_belt",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "createrelicsplus"
+  }
+ ]
+}

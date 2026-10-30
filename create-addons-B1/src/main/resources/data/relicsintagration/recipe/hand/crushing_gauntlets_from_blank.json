@@ -1,0 +1,44 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:gauntlets_blank",
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:brass_hand"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:precision_mechanism"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:crushing_wheel"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:gauntlets_blank"
+ },
+ "result": {
+  "id": "createrelicsplus:crushing_gauntlets",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "createrelicsplus"
+  }
+ ]
+}

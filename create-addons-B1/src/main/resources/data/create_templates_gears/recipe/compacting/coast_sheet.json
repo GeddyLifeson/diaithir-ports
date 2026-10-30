@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:stone",
+  "minecraft:andesite",
+  "minecraft:andesite"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:coast_sheet",
+   "count": 2
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:magic_core",
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:precision_mechanism"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:hand_crank"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:cogwheel"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:large_cogwheel"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:magic_core"
+ },
+ "result": {
+  "id": "createrelicsplus:cogwheel_heart",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "createrelicsplus"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:boot_blank",
+ "loops": 5,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:bucket"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "#c:glass_blocks"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:boot_blank"
+ },
+ "result": {
+  "id": "relics:cut_glass_boot",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

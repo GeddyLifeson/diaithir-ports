@@ -1,0 +1,18 @@
+{
+  "itemGroup.createrelics": "сreate:relics integration",
+  "item.createrelics.magic_core": "magic_core",
+  "item.createrelics.cloak_blank": "mantle_blank",
+  "item.createrelics.belt_blank": "belt_blank",
+  "item.createrelics.stick_blank": "stick_blank",
+  "item.createrelics.necklace_blank": "necklace_blank",
+  "item.createrelics.boot_blank": "boot_blank",
+  "item.createrelics.ring_blank": "ring_blank",
+  "item.createrelics.gauntlets_blank": "gauntlets_blank",
+
+
+  "createrelics.configuration.title": "Create: Relics Configs",
+  "createrelics.configuration.section.createrelics.common.toml": "Create: Relics Configs",
+  "createrelics.configuration.section.createrelics.common.toml.title": "Create: Relics Configs",
+  "createrelics.configuration.items": "Item List"
+
+}

@@ -1,0 +1,17 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "create_synthetic_pressure:graphite"
+ ],
+ "results": [
+  {
+   "chance": 0.005,
+   "id": "minecraft:diamond"
+  },
+  {
+   "chance": 0.8,
+   "id": "create_synthetic_pressure:impure_diamond"
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:copper_block",
+  "minecraft:chiseled_copper",
+  "minecraft:chiseled_copper"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:bolt_sheet",
+   "count": 2
+  }
+ ]
+}
