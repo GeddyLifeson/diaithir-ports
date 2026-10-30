@@ -58,6 +58,7 @@ public final class LegacyRenderContext {
                            PoseStack poseStack, net.minecraft.world.entity.EntityType<?> type, Runnable body) {
         Saved prev = begin(c, cam, ctx, rec);
         poseStack.pushPose();
+        PoseStack.Pose base = poseStack.last();
         try {
             body.run();
             return true;
@@ -67,6 +68,10 @@ public final class LegacyRenderContext {
             }
             return false;
         } finally {
+            // drop any poses the callback or its layers left behind, then our own
+            while (!poseStack.isEmpty() && poseStack.last() != base) {
+                poseStack.popPose();
+            }
             poseStack.popPose();
             end(prev);
         }

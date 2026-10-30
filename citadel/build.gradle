@@ -37,4 +37,6 @@ tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.
 
 jar {
     from('LICENSE') { into 'META-INF' }
+    from('COPYING') { into 'META-INF' }
+    from('NOTICE') { into 'META-INF' }
 }

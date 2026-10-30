@@ -25,7 +25,7 @@ public enum AnimationHandler {
             return;
         }
         entity.setAnimation(animation);
-        PacketDistributor.sendToAllPlayers(new AnimationMessage(entity.getId(), ArrayUtils.indexOf(entity.getAnimations(), animation)));
+        PacketDistributor.sendToPlayersTrackingEntity(entity, new AnimationMessage(entity.getId(), ArrayUtils.indexOf(entity.getAnimations(), animation)));
     }
 
     /**

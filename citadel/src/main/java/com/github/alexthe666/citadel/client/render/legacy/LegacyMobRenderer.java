@@ -134,7 +134,9 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
         }
         float pitch = Mth.lerp(partialTicks, entity.xRotO, entity.getXRot());
         float bob = this.getBob(entity, partialTicks);
-        this.setupRotations(entity, poseStack, bob, bodyRot, partialTicks, entity.getScale());
+        float entityScale = entity.getScale();
+        poseStack.scale(entityScale, entityScale, entityScale);
+        this.setupRotations(entity, poseStack, bob, bodyRot, partialTicks, entityScale);
         poseStack.scale(-1.0F, -1.0F, 1.0F);
         this.scale(entity, poseStack, partialTicks);
         poseStack.translate(0.0F, -1.501F, 0.0F);

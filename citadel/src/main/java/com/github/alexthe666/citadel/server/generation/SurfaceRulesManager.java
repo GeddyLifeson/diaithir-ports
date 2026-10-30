@@ -27,6 +27,7 @@ public class SurfaceRulesManager {
 
     public static void registerOverworldSurfaceRule(SurfaceRules.RuleSource rule) {
         OVERWORLD_REGISTRY.add(rule);
+        MERGED_RULES.clear();
     }
 
     public static void registerNetherSurfaceRule(SurfaceRules.ConditionSource condition, SurfaceRules.RuleSource rule) {
