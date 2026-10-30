@@ -1,0 +1,3 @@
+{"type":"minecraft:crafting_shaped","category":"misc","pattern":["DED","ELE","DED"],
+ "key":{"D":"minecraft:diamond","E":"minecraft:ender_eye","L":"diaithirchunkloaders:chunk_loader_2"},
+ "result":{"id":"diaithirchunkloaders:chunk_loader_3","count":1}}

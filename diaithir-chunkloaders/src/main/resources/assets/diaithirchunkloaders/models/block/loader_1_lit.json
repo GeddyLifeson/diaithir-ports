@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "diaithirchunkloaders:block/loader_1_top_lit",
+    "side": "diaithirchunkloaders:block/loader_1_side_lit",
+    "particle": "diaithirchunkloaders:block/loader_1_side"
+  }
+}
