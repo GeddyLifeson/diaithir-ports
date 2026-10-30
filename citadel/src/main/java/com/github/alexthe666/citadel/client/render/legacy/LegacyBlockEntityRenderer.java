@@ -43,14 +43,14 @@ public abstract class LegacyBlockEntityRenderer<T extends BlockEntity> implement
     @Override
     public void submit(State state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
         if (state.blockEntity == null) return;
-        LegacyRenderContext.begin(collector, camera, null);
         RecordingBufferSource rec = new RecordingBufferSource();
+        LegacyRenderContext.Saved prev = LegacyRenderContext.begin(collector, camera, null, rec);
         poseStack.pushPose();
         try {
             render((T) state.blockEntity, state.partialTick, poseStack, rec, state.lightCoords, net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY);
         } finally {
             poseStack.popPose();
-            LegacyRenderContext.end();
+            LegacyRenderContext.end(prev);
         }
         rec.flush(collector);
     }

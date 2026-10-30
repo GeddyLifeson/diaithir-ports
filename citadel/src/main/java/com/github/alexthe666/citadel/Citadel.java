@@ -8,7 +8,7 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.slf4j.Logger;
 
-/** Citadel entry point (LGPL-3.0, Alexthe668), Diaithir port to 26.1.2: animation sync, model helpers, legacy render shim. */
+/** Citadel entry point (LGPL-3.0, Alexthe666), Diaithir port to 26.1.2: animation sync, model helpers, legacy render shim. */
 @Mod(Citadel.MODID)
 public class Citadel {
     public static final String MODID = "citadel";

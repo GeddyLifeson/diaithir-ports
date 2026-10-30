@@ -131,7 +131,12 @@ public class LightningBoltData {
 
     private Pair<BoltQuads, QuadCache> createQuads(QuadCache cache, Vec3 startPos, Vec3 end, float size) {
         Vec3 diff = end.subtract(startPos);
-        Vec3 rightAdd = diff.cross(new Vec3(0.5, 0.5, 0.5)).normalize().scale(size);
+        Vec3 reference = new Vec3(0.5, 0.5, 0.5);
+        if (diff.cross(reference).lengthSqr() < 1.0E-12) {
+            // bolt runs parallel to the reference axis, pick another so the quads do not collapse
+            reference = new Vec3(0.5, -0.5, 0.0);
+        }
+        Vec3 rightAdd = diff.cross(reference).normalize().scale(size);
         Vec3 backAdd = diff.cross(rightAdd).normalize().scale(size), rightAddSplit = rightAdd.scale(0.5F);
 
         Vec3 start = cache != null ? cache.prevEnd : startPos;

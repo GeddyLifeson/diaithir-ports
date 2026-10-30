@@ -8,8 +8,11 @@ public class CitadelEntityData {
     private static final String KEY = "CitadelTag";
 
     public static CompoundTag getOrCreateCitadelTag(LivingEntity entity) {
-        CompoundTag tag = getCitadelTag(entity);
-        return tag == null ? new CompoundTag() : tag;
+        CompoundTag data = entity.getPersistentData();
+        if (!data.contains(KEY)) {
+            data.put(KEY, new CompoundTag());
+        }
+        return data.getCompoundOrEmpty(KEY);
     }
 
     public static CompoundTag getCitadelTag(LivingEntity entity) {

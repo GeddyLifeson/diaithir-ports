@@ -16,7 +16,7 @@ public class CustomCollisionsNodeProcessor extends WalkNodeEvaluator {
     public @NotNull PathType getPathType(@NotNull PathfindingContext context, int x, int y, int z) {
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos(x, y, z);
         BlockState state = context.getBlockState(blockpos$mutableblockpos);
-        if (((ICustomCollisions) this.mob).canPassThrough(blockpos$mutableblockpos, state, state.getBlockSupportShape(context.level(), blockpos$mutableblockpos))) {
+        if (this.mob instanceof ICustomCollisions custom && custom.canPassThrough(blockpos$mutableblockpos, state, state.getBlockSupportShape(context.level(), blockpos$mutableblockpos))) {
             return PathType.OPEN;
         }
         return super.getPathType(context, x, y, z);

@@ -28,16 +28,48 @@ public final class LegacyRenderContext {
     private LegacyRenderContext() {
     }
 
-    static void begin(SubmitNodeCollector c, CameraRenderState cam, EntityRendererProvider.Context ctx) {
+    private static final java.util.Set<net.minecraft.world.entity.EntityType<?>> FAILED = java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+    /** Snapshot of the ambient state, so nested legacy renders restore the outer render's context. */
+    record Saved(SubmitNodeCollector collector, CameraRenderState camera, EntityRendererProvider.Context context, RecordingBufferSource buffers) {
+    }
+
+    static Saved begin(SubmitNodeCollector c, CameraRenderState cam, EntityRendererProvider.Context ctx, RecordingBufferSource rec) {
+        Saved prev = new Saved(collector, camera, context, LegacyBuffers.peek());
         collector = c;
         camera = cam;
         context = ctx;
+        LegacyBuffers.set(rec);
+        return prev;
     }
 
-    static void end() {
-        collector = null;
-        camera = null;
-        context = null;
+    static void end(Saved prev) {
+        collector = prev.collector();
+        camera = prev.camera();
+        context = prev.context();
+        LegacyBuffers.set(prev.buffers());
+    }
+
+    /**
+     * Runs a legacy render callback with the ambient state bound. The pose stack and ambient state are always restored;
+     * a failing renderer is logged once per entity type and skipped (returns false) instead of crashing the frame.
+     */
+    static boolean guarded(SubmitNodeCollector c, CameraRenderState cam, EntityRendererProvider.Context ctx, RecordingBufferSource rec,
+                           PoseStack poseStack, net.minecraft.world.entity.EntityType<?> type, Runnable body) {
+        Saved prev = begin(c, cam, ctx, rec);
+        poseStack.pushPose();
+        try {
+            body.run();
+            return true;
+        } catch (RuntimeException | LinkageError ex) {
+            if (FAILED.add(type)) {
+                com.mojang.logging.LogUtils.getLogger().error("Legacy renderer failed for {}, skipping", type, ex);
+            }
+            return false;
+        } finally {
+            poseStack.popPose();
+            end(prev);
+        }
     }
 
     public static void beginPublic(SubmitNodeCollector c) {

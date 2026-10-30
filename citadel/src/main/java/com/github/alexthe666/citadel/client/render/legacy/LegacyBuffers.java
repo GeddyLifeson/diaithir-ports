@@ -16,6 +16,10 @@ public final class LegacyBuffers {
         current = source;
     }
 
+    static RecordingBufferSource peek() {
+        return current;
+    }
+
     public static RecordingBufferSource current() {
         if (current == null) throw new IllegalStateException("No legacy render in progress");
         return current;

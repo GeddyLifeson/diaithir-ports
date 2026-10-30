@@ -1,7 +1,7 @@
 modLoader="javafml"
 loaderVersion="[4,)"
 license="${mod_license}"
-issueTrackerURL="https://github.com/Alexthe666/Citadel/issues"
+issueTrackerURL="https://github.com/GeddyLifeson/diaithir-ports/issues"
 
 [[mods]]
     modId="${mod_id}"

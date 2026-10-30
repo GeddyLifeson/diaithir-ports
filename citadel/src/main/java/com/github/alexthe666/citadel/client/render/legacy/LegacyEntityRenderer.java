@@ -54,13 +54,11 @@ public abstract class LegacyEntityRenderer<T extends Entity> extends EntityRende
     public void submit(LegacyRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
         super.submit(state, poseStack, collector, camera);
         if (state.entity == null) return;
-        LegacyRenderContext.begin(collector, camera, context);
         RecordingBufferSource rec = new RecordingBufferSource();
         T e = (T) state.entity;
-        poseStack.pushPose();
-        render(e, e.getYRot(), state.partialTick, poseStack, rec, state.lightCoords);
-        poseStack.popPose();
-        LegacyRenderContext.end();
-        rec.flush(collector);
+        if (LegacyRenderContext.guarded(collector, camera, context, rec, poseStack, e.getType(),
+                () -> render(e, e.getYRot(), state.partialTick, poseStack, rec, state.lightCoords))) {
+            rec.flush(collector);
+        }
     }
 }

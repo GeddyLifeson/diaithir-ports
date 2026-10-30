@@ -25,7 +25,6 @@ import java.util.List;
  * for Citadel AdvancedEntityModel mobs. Subclasses override the same hooks the 1.21 class had.
  */
 public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicEntityModel<T>> extends EntityRenderer<T, LegacyRenderState> implements LegacyLayerParent<T, M> {
-    private static final java.util.Set<net.minecraft.world.entity.EntityType<?>> FAILED = java.util.concurrent.ConcurrentHashMap.newKeySet();
     protected M model;
     protected final List<LegacyLayer<T, M>> layers = new ArrayList<>();
     protected final EntityRendererProvider.Context context;
@@ -152,7 +151,7 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
         RenderType type = this.getRenderType(entity, visible, false, false);
         if (type != null) {
             VertexConsumer vc = buffer.getBuffer(type);
-            int overlay = OverlayTexture.pack(OverlayTexture.u(0.0F), OverlayTexture.v(entity.hurtTime > 0 || entity.deathTime > 0));
+            int overlay = getOverlayCoords(entity, this.getWhiteOverlayProgress(entity, partialTicks));
             model.renderToBuffer(poseStack, vc, packedLight, overlay, getModelColor(entity, partialTicks));
         }
         if (!entity.isSpectator()) {
@@ -168,20 +167,11 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
     public void submit(LegacyRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
         super.submit(state, poseStack, collector, camera);
         if (state.entity == null) return;
-        LegacyRenderContext.begin(collector, camera, context);
         RecordingBufferSource rec = new RecordingBufferSource();
         T e = (T) state.entity;
-        poseStack.pushPose();
-        try {
-            render(e, e.getYRot(), state.partialTick, poseStack, rec, state.lightCoords);
-            poseStack.popPose();
-            LegacyRenderContext.end();
+        if (LegacyRenderContext.guarded(collector, camera, context, rec, poseStack, e.getType(),
+                () -> render(e, e.getYRot(), state.partialTick, poseStack, rec, state.lightCoords))) {
             rec.flush(collector);
-        } catch (RuntimeException ex) {
-            LegacyRenderContext.end();
-            if (FAILED.add(e.getType())) {
-                com.mojang.logging.LogUtils.getLogger().error("Legacy renderer failed for {}, skipping", e.getType(), ex);
-            }
         }
     }
 }

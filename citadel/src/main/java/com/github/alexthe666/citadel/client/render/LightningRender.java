@@ -43,7 +43,8 @@ public class LightningRender {
             if (refresh) {
                 data.bolts.removeIf(bolt -> bolt.tick(timestamp));
             }
-            if (data.bolts.isEmpty() && data.lastBolt != null && data.lastBolt.getSpawnFunction().isConsecutive()) {
+            if (data.bolts.isEmpty() && data.lastBolt != null && data.lastBolt.getSpawnFunction().isConsecutive()
+                    && !timestamp.isPassed(data.lastUpdateTimestamp, MAX_OWNER_TRACK_TIME)) {
                 data.addBolt(new BoltInstance(data.lastBolt, timestamp), timestamp);
             }
             data.bolts.forEach(bolt -> bolt.render(matrix, buffer, timestamp));

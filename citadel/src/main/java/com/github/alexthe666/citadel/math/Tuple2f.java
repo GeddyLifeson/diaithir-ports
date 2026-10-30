@@ -263,6 +263,12 @@ public abstract class Tuple2f implements java.io.Serializable, Cloneable {
 
     }
 
+    @Override
+    public int hashCode() {
+        // -0.0f == 0.0f under equals, so normalise signed zero
+        return 31 * Float.hashCode(x == 0.0f ? 0.0f : x) + Float.hashCode(y == 0.0f ? 0.0f : y);
+    }
+
     /**
      * Returns true if the L-infinite distance between this tuple
      * and tuple t1 is less than or equal to the epsilon parameter,
