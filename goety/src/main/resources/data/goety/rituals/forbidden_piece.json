@@ -1,0 +1,15 @@
+{
+ "type": "craft",
+ "school": "necroturgy",
+ "activation": "minecraft:paper",
+ "offerings": [
+  "goety:ectoplasm",
+  "#minecraft:soul_fire_base_blocks",
+  "minecraft:echo_shard",
+  "minecraft:wither_skeleton_skull"
+ ],
+ "soul_cost": 5,
+ "duration": 10,
+ "result": "goety:forbidden_piece",
+ "count": 1
+}

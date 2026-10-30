@@ -1,0 +1,21 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "goety"
+version = "${version}"
+displayName = "Goety (Diaithir port)"
+authors = "Polarice3; port for the Diaithir pack"
+displayURL = "https://github.com/Polarice3/Goety-2"
+description = '''A port of Goety to NeoForge 26.1: dark rites, wands, foci and the dead who answer them.'''
+
+[[dependencies.goety]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.goety]]
+modId = "curios"
+type = "required"
+versionRange = "[15,)"

@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:bronze_chestplate",
+  "diaithir_classes:cleirech_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:cleirech_chestplate_bronze",
+  "count": 1
+ }
+}

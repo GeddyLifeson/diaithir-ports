@@ -1,0 +1,14 @@
+{
+ "type": "craft",
+ "school": "expert_nether",
+ "activation": "goety:arrow_rain_focus",
+ "offerings": [
+  "goety:lavaball_focus",
+  "minecraft:ghast_tear",
+  "minecraft:lava_bucket"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:meteor_shower_focus",
+ "count": 1
+}

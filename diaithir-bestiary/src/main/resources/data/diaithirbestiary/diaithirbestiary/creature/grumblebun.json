@@ -1,0 +1,24 @@
+{
+  "preset": "beast",
+  "width": 0.8,
+  "height": 1.0,
+  "stats": {
+    "health": 12,
+    "damage": 1.5,
+    "speed": 0.3
+  },
+  "hostile": false,
+  "tame": {
+    "item": "minecraft:carrot",
+    "chance": 0.5
+  },
+  "spawn": {
+    "biomes": "minecraft:is_forest",
+    "weight": 8,
+    "min_group": 1,
+    "max_group": 3,
+    "min_age": "V"
+  },
+  "loot_table": "diaithirbestiary:entities/grumblebun",
+  "rideable": true
+}

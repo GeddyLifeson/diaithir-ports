@@ -1,0 +1,71 @@
+{
+	"item.strontium.raw_uranium":"Raw Uranium",
+	"item.strontium.yellowcake":"Yellowcake",
+	"item.strontium.graphite":"Graphite",
+	"item.strontium.fluorite":"Fluorite",
+	"item.strontium.cloth":"Cloth",
+	"item.strontium.rubber_cloth":"Rubber Cloth",
+	
+	"item.strontium.uranium_powder":"Uranium Powder",
+	//μ
+	"item.strontium.dosimeter_cockerel": "Dosimeter \"Cockerel\"",
+	"item.strontium.dosimeter_cockerel_usv": "Accumulated Dose: %s μSv",
+	"item.strontium.dosimeter_cockerel_msv": "Accumulated Dose: %s mSv",
+	"item.strontium.dosimeter_bella": "Dosimeter \"Bella\"",
+	"item.strontium.dosimeter_bella.tooltip.summary": "Equivalent dose rate meter",
+	"item.strontium.dosimeter_bella.tooltip.condition1": "Purpose",
+	"item.strontium.dosimeter_bella.tooltip.behaviour1": "Designed for measuring the dose rate in non-emergency situations, in production and at home use. High Range: 9.999 mSv/s",
+	
+	"item.strontium.panacea_pill": "Panacea™",
+	"item.strontium.panacea_pill.tooltip.summary":"This is not a medicinal product. This product may contain potassium cyanide. The manufacturer is not responsible for any possible side effects.",
+	"item.strontium.mexamine": "Mexamine",
+	"item.strontium.mexamine.tooltip.summary": "A radioprotective drug. When administered, it causes vasoconstriction of peripheral blood vessels and temporary hypoxia in radiosensitive tissue.",
+	"item.strontium.mexamine.tooltip.condition1":"Possible side effects:",
+	"item.strontium.mexamine.tooltip.behaviour1":"Mild nausea, mild vomiting, slight dizziness and pain.",
+	"item.strontium.gas_mask_filter": "Gas Mask Filter",
+	"item.strontium.gas_mask_filter.tooltip.summary":"Fixes a worn gas mask, obviously if it's broken. To do this, wear your (broken) gas mask and click with your hand, holding a filter.",
+	"item.strontium.victory_cigarettes":"\"Victory\" Cigarettes",
+	"item.strontium.leo_cigarettes":"\"Leo\" Cigarettes",
+		
+	"item.strontium.ozk_helmet": "PMK-1 (OZK)",
+	"item.strontium.ozk_chestplate": "Coat (OZK)",
+	"item.strontium.ozk_leggings": "Pants (OZK)",
+	"item.strontium.ozk_boots": "Shoe Covers (OZK)",
+	"item.strontium.scientist_helmet": "Scientist Hat",
+	"item.strontium.scientist_chestplate": "Scientist Robe",
+	"item.strontium.scientist_leggings": "Scientist Underwear",
+	"item.strontium.scientist_boots": "Scientist Shoes",
+	"item.strontium.gauze_mask": "Gauze Bandage",
+	"item.strontium.gas_mask": "Civilian Gas Mask type \"Elephant\"",
+	
+	"item.strontium.soldier_hazmat_spawn_egg":"Hazmat Soldier egg",
+	"block.strontium.uranium_ore":"Uranium Ore",
+	"block.strontium.deepslate_uranium_ore":"Deepslate Uranium Ore",
+	"block.strontium.yellowcake_block":"Yellowcake Block",
+	"block.strontium.graphite_block":"Graphite Block",
+	"block.strontium.waste_grass_block":"Dead Grass Block",
+	"block.strontium.waste_leaves":"Dead Leaves",
+	"block.strontium.sandbags":"Sandbags",
+	
+	"creative_tab.strontium_items":"Strontium",
+	
+	"hazard.strontium.radiation": "☢ Radioactive",
+	"hazard.strontium.toxicity": "☠ Toxic [WIP]",
+	"hazard.strontium.ext_radiation.format_sv_s":"%s Sv/s", //МЭД
+	"hazard.strontium.ext_radiation.format_msv_s":"%s mSv/s",
+	"hazard.strontium.ext_radiation.format_usv_s":"%s μSv/s",
+	"hazard.strontium.radiation_protection": "☢ Protection: %s%%",
+	
+	"effect.strontium.decontamination": "☢ Decontamination",
+	
+	"fluid.strontium.fluorine_gas": "Fluorine Gas",
+	"fluid.strontium.uf6": "Uranium Hexafluoride",
+	"fluid.strontium.enriched_uf6": "Uranium Hexafluoride (enriched)",
+	"fluid.strontium.depleted_uf6": "Uranium Hexafluoride (depleted)",
+	
+	"death.attack.strontium.radiation": "%1$s died of intense actue radiation syndrome",
+	"death.attack.strontium.suicide": "%1$s took it too far",
+	
+	"entity.strontium.sick_chicken": "Decrepit Chicken",
+	"entity.strontium.soldier_hazmat": "Hazmat Soldier"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:item_frame",
+    "#c:gems/diamond"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:mona_lisa_painting"
+  }
+}

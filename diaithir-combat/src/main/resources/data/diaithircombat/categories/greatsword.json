@@ -1,0 +1,31 @@
+{
+ "id": "greatsword",
+ "pattern": "heavy",
+ "range": 3.8,
+ "arc": 150,
+ "width": 0.4,
+ "max_targets": 5,
+ "knockback": 0.7,
+ "combo_window": 18,
+ "parry_window": 0,
+ "fallback": "minecraft:iron_sword",
+ "combo": [
+  {
+   "damage": 1.2,
+   "cooldown": 16,
+   "stamina": 4
+  },
+  {
+   "damage": 1.2,
+   "cooldown": 16,
+   "stamina": 4
+  },
+  {
+   "damage": 1.9,
+   "cooldown": 24,
+   "stamina": 6,
+   "arc_mult": 1.2,
+   "pattern": "overhead"
+  }
+ ]
+}

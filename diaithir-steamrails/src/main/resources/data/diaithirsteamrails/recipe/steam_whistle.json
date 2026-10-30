@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "C": "minecraft:copper_ingot",
+  "T": "diaithirsteamrails:flue_tube"
+ },
+ "pattern": [
+  "N",
+  "C",
+  "T"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:steam_whistle",
+  "count": 1
+ },
+ "category": "misc"
+}

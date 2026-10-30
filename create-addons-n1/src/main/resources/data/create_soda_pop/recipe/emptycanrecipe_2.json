@@ -1,0 +1,10 @@
+{
+ "type": "create:cutting",
+ "ingredient": "minecraft:iron_ingot",
+ "results": [
+  {
+   "id": "create_soda_pop:empty_can"
+  }
+ ],
+ "processing_time": 100
+}

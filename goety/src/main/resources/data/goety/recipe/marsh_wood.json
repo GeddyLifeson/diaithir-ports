@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:marsh_log"
+ },
+ "pattern": [
+  "##",
+  "##"
+ ],
+ "result": {
+  "id": "goety:marsh_wood",
+  "count": 3
+ }
+}

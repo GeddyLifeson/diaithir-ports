@@ -1,0 +1,46 @@
+{
+	"item.geiger1": {
+	    "category": "players",
+	    "sounds": [ "strontium:item/geiger1" ]
+	  },
+	  "item.geiger2": {
+	    "category": "players",
+	    "sounds": [ "strontium:item/geiger2" ]
+	  },
+	  "item.geiger3": {
+	    "category": "players",
+	    "sounds": [ "strontium:item/geiger3" ]
+	  },
+	  "item.geiger4": {
+	    "category": "players",
+	    "sounds": [ "strontium:item/geiger4" ]
+	  },
+	  "item.geiger5": {
+	    "category": "players",
+	    "sounds": [ "strontium:item/geiger5" ]
+	  },
+	  "item.geiger6": {
+	    "category": "players",
+	    "sounds": [ "strontium:item/geiger6" ]
+	  },
+	  "item.geiger7": {
+	    "category": "players",
+	    "sounds": [ "strontium:item/geiger7" ]
+	  },
+	  "item.geiger8": {
+	    "category": "players",
+	    "sounds": [ "strontium:item/geiger8" ]
+	  },
+	  "eat_pills1": {
+	  	 "category": "players",
+	  	 "sounds": [ "strontium:eat_pills1" ]
+	  },
+	  "cigarette": {
+	  	 "category": "players",
+	  	 "sounds": [ "strontium:cigarette" ]
+	  },
+	  "block.gas_centrifuge": {
+	  	 "category": "players",
+	  	 "sounds": [ "strontium:block/gas_centrifuge" ]
+	  }
+}

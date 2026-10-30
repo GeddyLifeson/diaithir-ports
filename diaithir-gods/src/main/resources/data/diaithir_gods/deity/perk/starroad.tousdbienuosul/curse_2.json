@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:rabbit_foot",
+    "color": 11508148,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:starroad.tousdbienuosul",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "starroad.tousdbienuosul_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

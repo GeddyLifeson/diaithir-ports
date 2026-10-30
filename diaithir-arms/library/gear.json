@@ -1,0 +1,443 @@
+[
+ [
+  "Aurmachd knàim",
+  "concept",
+  1,
+  "arms",
+  "Arms and armour of Age I. Hide cut and stitched over bone plates, the dress of the first hunters and the Telling singers' guards."
+ ],
+ [
+  "Lùirech knàim",
+  "item",
+  1,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund knàim. 7 armour points in all (helmet 1, chest 3, legs 2, boots 1), toughness 0, durability x8. Made from bone plates and leather; Age I."
+ ],
+ [
+  "Aurmachd uma",
+  "concept",
+  2,
+  "arms",
+  "Arms and armour of Age II. Beaten copper over hide, the first metal of the herders and the cairn builders."
+ ],
+ [
+  "Lùirech uma",
+  "item",
+  2,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund uma. 10 armour points in all (helmet 2, chest 4, legs 3, boots 1), toughness 0, durability x11. Made from copper ingots; Age II."
+ ],
+ [
+  "Aurmachd krèuma",
+  "concept",
+  3,
+  "arms",
+  "Arms and armour of Age III. Bronze with red and blue enamel studs in the curving style of the island smiths."
+ ],
+ [
+  "Lùirech krèuma",
+  "item",
+  3,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund krèuma. 12 armour points in all (helmet 2, chest 5, legs 4, boots 1), toughness 0, durability x14. Made from bronze ingots; Age III."
+ ],
+ [
+  "Aurmachd iarund",
+  "concept",
+  4,
+  "arms",
+  "Arms and armour of Age IV. Rings of iron linked by hand, the road-warden's coat in the age of kings."
+ ],
+ [
+  "Lùirech iarund",
+  "item",
+  4,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund iarund. 15 armour points in all (helmet 2, chest 6, legs 5, boots 2), toughness 0, durability x17. Made from iron ingots; Age IV."
+ ],
+ [
+  "Aurmachd kruoid",
+  "concept",
+  5,
+  "arms",
+  "Arms and armour of Age V. Plate and blade of true steel, the first gear of the mills, the rails and the early cities. Sword, axe and spear start here."
+ ],
+ [
+  "Lùirech kruoid",
+  "item",
+  5,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund kruoid. 19 armour points in all (helmet 3, chest 7, legs 6, boots 3), toughness 1, durability x24. Made from steel ingots; Age V."
+ ],
+ [
+  "Aurmachd snàitlech",
+  "concept",
+  6,
+  "arms",
+  "Arms and armour of Age VI. Layers of woven fibre under a painted steel pot, made for the wars of the power grid. Its weapon tier is tempered steel."
+ ],
+ [
+  "Lùirech snàitlech",
+  "item",
+  6,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund snàitlech. 20 armour points in all (helmet 3, chest 8, legs 6, boots 3), toughness 1.5, knockback resistance 5%, durability x28. Made from ballistic weave; Age VI."
+ ],
+ [
+  "Aurmachd kriadach",
+  "concept",
+  7,
+  "arms",
+  "Arms and armour of Age VII. Ceramic tiles in a carbon twill: light, hard and cold, the armour of the digital age."
+ ],
+ [
+  "Lùirech kriadach",
+  "item",
+  7,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund kriadach. 24 armour points in all (helmet 4, chest 9, legs 7, boots 4), toughness 2.5, knockback resistance 5%, durability x36. Made from ceramic plates; Age VII."
+ ],
+ [
+  "Aurmachd kumask",
+  "concept",
+  7,
+  "arms",
+  "Arms and armour of Age Rodos. An alloy of teal and gold, worked only since the Delivered Collection landed at Rodos."
+ ],
+ [
+  "Lùirech kumask",
+  "item",
+  7,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund kumask. 26 armour points in all (helmet 4, chest 10, legs 8, boots 4), toughness 3.5, knockback resistance 10%, durability x46. Made from Rodos alloy ingots; Age Rodos."
+ ],
+ [
+  "Aurmachd riondag",
+  "concept",
+  7,
+  "arms",
+  "Arms and armour of Age Rodos. A pale lattice of star-metal with cold light in the seams, made after Rodos and by no maker the record names."
+ ],
+ [
+  "Lùirech riondag",
+  "item",
+  7,
+  "arms",
+  "Four-piece armour set: Klogaid, Broildech, Kas, Bòtund riondag. 30 armour points in all (helmet 5, chest 11, legs 9, boots 5), toughness 4.5, knockback resistance 15%, durability x60. Made from star lattice; Age Rodos."
+ ],
+ [
+  "Umlaig knàim",
+  "item",
+  1,
+  "arms",
+  "Bow of Age I: arrows hit x0.9 of a plain bow's damage, 300 uses. Crafted from bone plates x3 and string x3."
+ ],
+ [
+  "Skiad knàim",
+  "item",
+  1,
+  "arms",
+  "Off-hand shield of Age I: blocks 80% of a blow from the front, 160 uses. Crafted from bone plates x3 and planks x4."
+ ],
+ [
+  "Umlaig uma",
+  "item",
+  2,
+  "arms",
+  "Bow of Age II: arrows hit x0.95 of a plain bow's damage, 330 uses. Crafted from copper ingots x3 and string x3."
+ ],
+ [
+  "Skiad uma",
+  "item",
+  2,
+  "arms",
+  "Off-hand shield of Age II: blocks 85% of a blow from the front, 260 uses. Crafted from copper ingots x3 and planks x4."
+ ],
+ [
+  "Umlaig krèuma",
+  "item",
+  3,
+  "arms",
+  "Bow of Age III: arrows hit x1 of a plain bow's damage, 384 uses. Crafted from bronze ingots x3 and string x3."
+ ],
+ [
+  "Skiad krèuma",
+  "item",
+  3,
+  "arms",
+  "Off-hand shield of Age III: blocks 90% of a blow from the front, 330 uses. Crafted from bronze ingots x3 and planks x4."
+ ],
+ [
+  "Umlaig iarund",
+  "item",
+  4,
+  "arms",
+  "Bow of Age IV: arrows hit x1.05 of a plain bow's damage, 420 uses. Crafted from iron ingots x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi iarund",
+  "item",
+  4,
+  "arms",
+  "Crossbow of Age IV: bolts hit x1.15 of a plain bow's damage, 465 uses. Crafted from rods x3, iron ingots x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad iarund",
+  "item",
+  4,
+  "arms",
+  "Off-hand shield of Age IV: blocks 95% of a blow from the front, 420 uses. Crafted from iron ingots x3 and planks x4."
+ ],
+ [
+  "Klaidem kruoid",
+  "item",
+  5,
+  "arms",
+  "Steady sword: 7 attack damage, 1.6 swings a second, sweeps nearby foes, 900 uses. Crafted from steel ingots x2 and a rod; Age V."
+ ],
+ [
+  "Tuog kruoid",
+  "item",
+  5,
+  "arms",
+  "Heavy axe: 10 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 900 uses. Crafted from steel ingots x3 and rods x2; Age V."
+ ],
+ [
+  "Slieg kruoid",
+  "item",
+  5,
+  "arms",
+  "Long spear for lunging while moving: 4 base damage, charge damage x1. 900 uses. Crafted from steel ingots x1 and rods x2; Age V."
+ ],
+ [
+  "Umlaig kruoid",
+  "item",
+  5,
+  "arms",
+  "Bow of Age V: arrows hit x1.15 of a plain bow's damage, 560 uses. Crafted from steel ingots x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi kruoid",
+  "item",
+  5,
+  "arms",
+  "Crossbow of Age V: bolts hit x1.3 of a plain bow's damage, 600 uses. Crafted from rods x3, steel ingots x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad kruoid",
+  "item",
+  5,
+  "arms",
+  "Off-hand shield of Age V: blocks 100% of a blow from the front, 600 uses. Crafted from steel ingots x3 and planks x4."
+ ],
+ [
+  "Klaidem doirbi",
+  "item",
+  6,
+  "arms",
+  "Steady sword: 7.5 attack damage, 1.6 swings a second, sweeps nearby foes, 1300 uses. Crafted from tempered ingots x2 and a rod; Age VI."
+ ],
+ [
+  "Tuog doirbi",
+  "item",
+  6,
+  "arms",
+  "Heavy axe: 10.5 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 1300 uses. Crafted from tempered ingots x3 and rods x2; Age VI."
+ ],
+ [
+  "Slieg doirbi",
+  "item",
+  6,
+  "arms",
+  "Long spear for lunging while moving: 4.5 base damage, charge damage x1.06. 1300 uses. Crafted from tempered ingots x1 and rods x2; Age VI."
+ ],
+ [
+  "Umlaig doirbi",
+  "item",
+  6,
+  "arms",
+  "Bow of Age VI: arrows hit x1.25 of a plain bow's damage, 700 uses. Crafted from tempered ingots x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi doirbi",
+  "item",
+  6,
+  "arms",
+  "Crossbow of Age VI: bolts hit x1.45 of a plain bow's damage, 750 uses. Crafted from rods x3, tempered ingots x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad doirbi",
+  "item",
+  6,
+  "arms",
+  "Off-hand shield of Age VI: blocks 100% of a blow from the front, 800 uses. Crafted from tempered ingots x3 and planks x4."
+ ],
+ [
+  "Klaidem mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Steady sword: 8 attack damage, 1.6 swings a second, sweeps nearby foes, 1900 uses. Crafted from ceramic plates x2 and a rod; Age VII."
+ ],
+ [
+  "Tuog mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Heavy axe: 11 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 1900 uses. Crafted from ceramic plates x3 and rods x2; Age VII."
+ ],
+ [
+  "Slieg mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Long spear for lunging while moving: 5 base damage, charge damage x1.12. 1900 uses. Crafted from ceramic plates x1 and rods x2; Age VII."
+ ],
+ [
+  "Umlaig mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Bow of Age VII: arrows hit x1.35 of a plain bow's damage, 900 uses. Crafted from ceramic plates x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Crossbow of Age VII: bolts hit x1.6 of a plain bow's damage, 950 uses. Crafted from rods x3, ceramic plates x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad mieskaichti",
+  "item",
+  7,
+  "arms",
+  "Off-hand shield of Age VII: blocks 100% of a blow from the front, 1100 uses. Crafted from ceramic plates x3 and planks x4."
+ ],
+ [
+  "Klaidem kumask",
+  "item",
+  7,
+  "arms",
+  "Steady sword: 9 attack damage, 1.6 swings a second, sweeps nearby foes, 2900 uses. Crafted from Rodos alloy ingots x2 and a rod; Age Rodos."
+ ],
+ [
+  "Tuog kumask",
+  "item",
+  7,
+  "arms",
+  "Heavy axe: 12 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 2900 uses. Crafted from Rodos alloy ingots x3 and rods x2; Age Rodos."
+ ],
+ [
+  "Slieg kumask",
+  "item",
+  7,
+  "arms",
+  "Long spear for lunging while moving: 6 base damage, charge damage x1.22. 2900 uses. Crafted from Rodos alloy ingots x1 and rods x2; Age Rodos."
+ ],
+ [
+  "Umlaig kumask",
+  "item",
+  7,
+  "arms",
+  "Bow of Age Rodos: arrows hit x1.5 of a plain bow's damage, 1400 uses. Crafted from Rodos alloy ingots x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi kumask",
+  "item",
+  7,
+  "arms",
+  "Crossbow of Age Rodos: bolts hit x1.8 of a plain bow's damage, 1500 uses. Crafted from rods x3, Rodos alloy ingots x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad kumask",
+  "item",
+  7,
+  "arms",
+  "Off-hand shield of Age Rodos: blocks 100% of a blow from the front, 1700 uses. Crafted from Rodos alloy ingots x3 and planks x4."
+ ],
+ [
+  "Klaidem riondag",
+  "item",
+  7,
+  "arms",
+  "Steady sword: 10.5 attack damage, 1.6 swings a second, sweeps nearby foes, 4200 uses. Crafted from star lattice x2 and a rod; Age Rodos."
+ ],
+ [
+  "Tuog riondag",
+  "item",
+  7,
+  "arms",
+  "Heavy axe: 13.5 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 4200 uses. Crafted from star lattice x3 and rods x2; Age Rodos."
+ ],
+ [
+  "Slieg riondag",
+  "item",
+  7,
+  "arms",
+  "Long spear for lunging while moving: 7.5 base damage, charge damage x1.35. 4200 uses. Crafted from star lattice x1 and rods x2; Age Rodos."
+ ],
+ [
+  "Umlaig riondag",
+  "item",
+  7,
+  "arms",
+  "Bow of Age Rodos: arrows hit x1.7 of a plain bow's damage, 2000 uses. Crafted from star lattice x3 and string x3."
+ ],
+ [
+  "Umlaig kroisi riondag",
+  "item",
+  7,
+  "arms",
+  "Crossbow of Age Rodos: bolts hit x2 of a plain bow's damage, 2100 uses. Crafted from rods x3, star lattice x1, string x2 and a tripwire hook."
+ ],
+ [
+  "Skiad riondag",
+  "item",
+  7,
+  "arms",
+  "Off-hand shield of Age Rodos: blocks 100% of a blow from the front, 2600 uses. Crafted from star lattice x3 and planks x4."
+ ],
+ [
+  "Troindser knàim",
+  "item",
+  1,
+  "arms",
+  "Crafting part for the arms of its Age. 2 bones and 1 leather make 2 plates."
+ ],
+ [
+  "Fieg snàitlech",
+  "item",
+  6,
+  "arms",
+  "Crafting part for the arms of its Age. 4 string and 1 steel ingot make 2 lengths."
+ ],
+ [
+  "Troindser kriadach",
+  "item",
+  7,
+  "arms",
+  "Crafting part for the arms of its Age. 2 bricks, a quartz and a length of ballistic weave make 2 plates."
+ ],
+ [
+  "Kruoid doirbi",
+  "item",
+  6,
+  "arms",
+  "Crafting part for the arms of its Age. 2 steel ingots and blaze powder make 2 ingots."
+ ],
+ [
+  "Kumask Rodos",
+  "item",
+  7,
+  "arms",
+  "Crafting part for the arms of its Age. A netherite ingot, a tempered ingot, an amethyst shard and an echo shard."
+ ],
+ [
+  "Fieg riondag",
+  "item",
+  7,
+  "arms",
+  "Crafting part for the arms of its Age. A Rodos alloy ingot, a ceramic plate and a nether star."
+ ]
+]

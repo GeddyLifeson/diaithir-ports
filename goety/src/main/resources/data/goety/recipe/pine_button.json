@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "goety:pine_planks"
+ ],
+ "result": {
+  "id": "goety:pine_button",
+  "count": 1
+ }
+}

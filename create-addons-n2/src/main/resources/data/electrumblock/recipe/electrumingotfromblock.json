@@ -1,0 +1,26 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "electrumblock:electrum_block"
+ ],
+ "result": {
+  "id": "createaddition:electrum_ingot",
+  "count": 9
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:or",
+   "values": [
+    {
+     "type": "neoforge:mod_loaded",
+     "modid": "createaddition"
+    },
+    {
+     "type": "neoforge:mod_loaded",
+     "modid": "diaithir_createaddition"
+    }
+   ]
+  }
+ ]
+}

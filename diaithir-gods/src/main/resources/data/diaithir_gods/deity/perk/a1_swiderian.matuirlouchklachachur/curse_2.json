@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:water_bucket",
+    "color": 10406519,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_swiderian.matuirlouchklachachur",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:mining_fatigue",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "a1_swiderian.matuirlouchklachachur_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

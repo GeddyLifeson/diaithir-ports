@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_paleocoastal_pacific_channel_islands_pac.tigernalounklachoir",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:leather",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

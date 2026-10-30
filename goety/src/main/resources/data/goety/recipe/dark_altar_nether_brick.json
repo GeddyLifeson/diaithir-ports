@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "t": "goety:magic_emerald",
+  "s": "minecraft:nether_bricks",
+  "c": "#goety:pedestals"
+ },
+ "pattern": [
+  "t t",
+  "scs"
+ ],
+ "result": {
+  "id": "goety:dark_altar_nether_brick",
+  "count": 1
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ese",
+  "cmc",
+  "rgr"
+ ],
+ "key": {
+  "m": "create_electric_stonks:motor",
+  "s": "create:shaft",
+  "e": "minecraft:emerald",
+  "g": "minecraft:gold_block",
+  "c": "create:sturdy_sheet",
+  "r": "minecraft:redstone_block"
+ },
+ "result": {
+  "id": "create_electric_stonks:swift_motor"
+ }
+}

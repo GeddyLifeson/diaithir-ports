@@ -1,0 +1,26 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "more_armor_trims"
+  }
+ ],
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:obsidian",
+  "minecraft:obsidian"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:obsidian_sheet",
+   "count": 2
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "neoforge:single",
+   "amount": 1640250,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

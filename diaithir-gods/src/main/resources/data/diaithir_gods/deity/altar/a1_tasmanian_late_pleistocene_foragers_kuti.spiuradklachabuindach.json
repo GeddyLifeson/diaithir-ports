@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_tasmanian_late_pleistocene_foragers_kuti.spiuradklachabuindach",
+  "female": false,
+  "slim": false,
+  "light": 0,
+  "items": {
+    "block": "minecraft:stone",
+    "mainhand": "minecraft:stone",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

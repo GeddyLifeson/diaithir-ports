@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "necroturgy",
+ "activation": "goety:dark_wand",
+ "offerings": [
+  "goety:ectoplasm",
+  "goety:ectoplasm",
+  "goety:cursed_ingot",
+  "goety:cursed_ingot",
+  "goety:cursed_ingot",
+  "goety:cursed_ingot",
+  "#c:storage_blocks/lapis",
+  "goety:spirit_fabric"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:necro_staff",
+ "count": 1
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:sand",
+    "color": 12758662,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_early_pottery_foragers_of_s_china_and_th.matuiroirtirpoiti",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_early_pottery_foragers_of_s_china_and_th.matuiroirtirpoiti_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

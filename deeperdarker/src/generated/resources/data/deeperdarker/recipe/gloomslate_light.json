@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "G": "deeperdarker:gloomslate",
+    "S": "deeperdarker:sculk_gleam"
+  },
+  "pattern": [
+    " G ",
+    "GSG",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "deeperdarker:gloomslate_light"
+  }
+}

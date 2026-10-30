@@ -1,0 +1,624 @@
+{
+ "items": [
+  {
+   "ns": "create_synthetic_pressure",
+   "id": "graphite",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_synthetic_pressure",
+   "id": "graphite_powder",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_synthetic_pressure",
+   "id": "impure_diamond",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_lead_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_lithium_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_nickel_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_thorium_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_zinc_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_lead_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_lithium_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_nickel_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_thorium_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_zinc_ore",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_droid_netherrack",
+   "id": "heated_cobble_powder",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_droid_netherrack",
+   "id": "heated_cracked_cobble",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_droid_netherrack",
+   "id": "incomplete_netherrack_powder",
+   "kind": "sequenced",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "bolt_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "coast_coral_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "coast_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "deepslate_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "diamond_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "end_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "flow_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "granite_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "greed_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_beast_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_bolt_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_coast_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_dune_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_eye_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_fever_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_flow_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_greed_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_horizon_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_host_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_myth_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_netherrack_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_nihility_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_origin_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_parasite_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_raiser_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_ram_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_rib_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_sentry_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_shaper_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_silence_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_snout_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_spire_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_storm_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_tide_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_twilight_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_vex_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_ward_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_wayfinder_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_wild_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_witness_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "inactive_wraith_armor_trim",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "moss_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "mossy_stone_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "netherrack_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "obsidian_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "rib_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "sand_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "silence_echo_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "soul_sand_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "spire_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "stone_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "tide_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "unprocessed_diamond_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "create_templates_gears",
+   "id": "witness_sheet",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "createbananas",
+   "id": "banana",
+   "kind": "food",
+   "block": false
+  },
+  {
+   "ns": "create_blockzapper_memorial",
+   "id": "blockzapper_memorial",
+   "kind": "simple",
+   "block": true
+  },
+  {
+   "ns": "create_blockzapper_memorial",
+   "id": "shattered_hopes_and_dreams",
+   "kind": "simple",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "arid_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "black_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "blue_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "brown_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "coral_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "foamy_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "green_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "mars_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "mineral_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "moon_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "orange_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "pink_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "quartzite_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "red_arid_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "soul_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "soulless_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "venus_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "violet_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "white_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  },
+  {
+   "ns": "createsandpapers",
+   "id": "windswept_sand_paper",
+   "kind": "sandpaper",
+   "block": false
+  }
+ ],
+ "blocks": [
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_lead_ore",
+   "like": "deepslate_iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_lithium_ore",
+   "like": "deepslate_iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_nickel_ore",
+   "like": "deepslate_iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_thorium_ore",
+   "like": "deepslate_iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "deepslate_dense_zinc_ore",
+   "like": "deepslate_iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_lead_ore",
+   "like": "iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_lithium_ore",
+   "like": "iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_nickel_ore",
+   "like": "iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_thorium_ore",
+   "like": "iron_ore"
+  },
+  {
+   "ns": "create_dense_ores",
+   "id": "dense_zinc_ore",
+   "like": "iron_ore"
+  },
+  {
+   "ns": "create_droid_netherrack",
+   "id": "heated_cracked_cobble",
+   "like": "stone"
+  },
+  {
+   "ns": "create_blockzapper_memorial",
+   "id": "blockzapper_memorial",
+   "like": "stone"
+  }
+ ]
+}

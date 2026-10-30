@@ -1,0 +1,14 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "iceandfire:gorgon_temple/building",
+        "projection": "rigid",
+        "processors": []
+      },
+      "weight": 1
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

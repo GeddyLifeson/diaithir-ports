@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "alexscaves:forlorn_canyon",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 106,
+    "spacing": 41,
+    "separation": 8
+  }
+}

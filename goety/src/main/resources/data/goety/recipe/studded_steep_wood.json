@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "L": "goety:steep_wood",
+  "I": "#c:ingots/gold"
+ },
+ "pattern": [
+  " I ",
+  "ILI",
+  " I "
+ ],
+ "result": {
+  "id": "goety:studded_steep_wood",
+  "count": 1
+ }
+}

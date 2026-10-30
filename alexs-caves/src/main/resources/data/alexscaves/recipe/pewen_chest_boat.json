@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chest_boat",
+  "ingredients": [
+    "minecraft:chest",
+    "alexscaves:pewen_boat"
+  ],
+  "result": {
+    "id": "alexscaves:pewen_chest_boat",
+    "count": 1
+  }
+}

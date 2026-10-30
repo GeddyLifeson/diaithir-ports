@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"diaithirelevators:elevator_controller"}],"conditions":[{"condition":"minecraft:survives_explosion"}]}],"random_sequence":"diaithirelevators:blocks/elevator_controller"}

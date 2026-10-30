@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "diaithirforgeworks:bronze_ingot",
+    "D": "minecraft:diamond",
+    "M": "diaithirforgeworks:sawmill_age5"
+  },
+  "pattern": [
+    "BDB",
+    "DMD",
+    "BDB"
+  ],
+  "result": {
+    "id": "diaithirforgeworks:sawmill_age6",
+    "count": 1
+  }
+}

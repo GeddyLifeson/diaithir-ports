@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "diaithir_wiretech:block/transformer_copper"
+    },
+    "facing=east": {
+      "model": "diaithir_wiretech:block/transformer_copper",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "diaithir_wiretech:block/transformer_copper",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "diaithir_wiretech:block/transformer_copper",
+      "y": 270
+    }
+  }
+}

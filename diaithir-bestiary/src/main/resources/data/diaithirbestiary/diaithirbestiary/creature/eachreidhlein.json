@@ -1,0 +1,24 @@
+{
+  "preset": "beast",
+  "width": 1.0,
+  "height": 1.45,
+  "stats": {
+    "health": 22,
+    "damage": 3,
+    "speed": 0.3
+  },
+  "hostile": false,
+  "tame": {
+    "item": "minecraft:wheat",
+    "chance": 0.35
+  },
+  "spawn": {
+    "biomes": "c:is_plains",
+    "weight": 8,
+    "min_group": 2,
+    "max_group": 5,
+    "min_age": "I"
+  },
+  "loot_table": "diaithirbestiary:entities/eachreidhlein",
+  "rideable": true
+}

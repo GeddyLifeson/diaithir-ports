@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "diaithirconduits:block/energy_cell_top",
+    "bottom": "diaithirconduits:block/energy_cell_top",
+    "side": "diaithirconduits:block/energy_cell_side"
+  }
+}

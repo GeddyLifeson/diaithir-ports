@@ -1,0 +1,18 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "c": "create:cogwheel",
+  "b": "create:brass_casing",
+  "y": "alchemind:accelerating_crystal"
+ },
+ "pattern": [
+  "y",
+  "b",
+  "c",
+  "b"
+ ],
+ "result": {
+  "id": "alchemind:arcana_accelerator"
+ }
+}

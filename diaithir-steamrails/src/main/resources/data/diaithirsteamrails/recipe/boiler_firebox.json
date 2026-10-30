@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "P": "diaithirsteamrails:riveted_plate",
+  "F": "minecraft:furnace",
+  "T": "diaithirsteamrails:flue_tube"
+ },
+ "pattern": [
+  "PPP",
+  "PFP",
+  "PTP"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:boiler_firebox",
+  "count": 1
+ },
+ "category": "misc"
+}

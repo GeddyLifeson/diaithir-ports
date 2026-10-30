@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create:cut_granite",
+  "minecraft:granite",
+  "minecraft:granite"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:granite_sheet",
+   "count": 2
+  }
+ ]
+}

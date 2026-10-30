@@ -1,0 +1,12 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create:dough",
+  "minecraft:sugar"
+ ],
+ "results": [
+  {
+   "id": "create_chocopaste:sweetdough"
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+  "itemGroup.create_more_copycats": "Create: More Copycats",
+  "block.create_more_copycats.slab_copycat": "Copycat Slab",
+  "block.create_more_copycats.block_copycat": "Copycat Block",
+  "block.create_more_copycats.stair_copycat": "Copycat Stair",
+  "block.create_more_copycats.carpet_copycat": "Copycat Carpet",
+  "block.create_more_copycats.layer_copycat": "Copycat Layer",
+  "block.create_more_copycats.vertical_step_copycat": "Copycat Step (Vertical)",
+
+  "block.create_more_copycats.slab_copycat.tooltip.behaviour1": "Applies _held item_ as its _material_ if possible. _Click again_ to cycle _orientation_ or _powered_ state. Use a _Wrench_ to _reset_ the material.",
+  "block.create_more_copycats.slab_copycat.tooltip.condition1": "When R-Clicked",
+  "block.create_more_copycats.slab_copycat.tooltip.summary": "_Converts_ any _full block_ into a decorative slab.",
+
+  "block.create_more_copycats.block_copycat.tooltip.behaviour1": "Applies _held item_ as its _material_ if possible. _Click again_ to cycle _orientation_ or _powered_ state. Use a _Wrench_ to _reset_ the material.",
+  "block.create_more_copycats.block_copycat.tooltip.condition1": "When R-Clicked",
+  "block.create_more_copycats.block_copycat.tooltip.summary": "_Converts_ any _full block_ into a decorative block.",
+
+  "block.create_more_copycats.stair_copycat.tooltip.behaviour1": "Applies _held item_ as its _material_ if possible. _Click again_ to cycle _orientation_ or _powered_ state. Use a _Wrench_ to _reset_ the material.",
+  "block.create_more_copycats.stair_copycat.tooltip.condition1": "When R-Clicked",
+  "block.create_more_copycats.stair_copycat.tooltip.summary": "_Converts_ any _full block_ into a decorative stair.",
+
+  "block.create_more_copycats.carpet_copycat.tooltip.behaviour1": "Applies _held item_ as its _material_ if possible. _Click again_ to cycle _orientation_ or _powered_ state. Use a _Wrench_ to _reset_ the material.",
+  "block.create_more_copycats.carpet_copycat.tooltip.condition1": "When R-Clicked",
+  "block.create_more_copycats.carpet_copycat.tooltip.summary": "_Converts_ any _full block_ into a decorative carpet.",
+
+  "block.create_more_copycats.layer_copycat.tooltip.condition1": "When R-Clicked",
+  "block.create_more_copycats.layer_copycat.tooltip.behaviour1": "Applies _held item_ as its _material_ if possible. _Click again_ to cycle _orientation_ or _powered_ state. Use a _Wrench_ to _reset_ the material. Clicking a _layer_ with more _layers_ will make it stack similar to snow layers.",
+  "block.create_more_copycats.layer_copycat.tooltip.condition2": "When Shift R-Clicked with Wrench",
+  "block.create_more_copycats.layer_copycat.tooltip.behaviour2": "Removes a layer until it reaches _1_ single layer if the layer is more than _1_ layer thick.",
+  "block.create_more_copycats.layer_copycat.tooltip.summary": "_Converts_ any _full block_ into a decorative layer.",
+
+  "block.create_more_copycats.vertical_step_copycat.tooltip.summary": "_Converts_ any _full block_ into a decorative vertical step.",
+  "block.create_more_copycats.vertical_step_copycat.tooltip.condition1": "When R-Clicked",
+  "block.create_more_copycats.vertical_step_copycat.tooltip.behaviour1": "Applies _held item_ as its _material_ if possible. _Click again_ to cycle _orientation_ or _powered_ state. Use a _Wrench_ to _reset_ the material."
+}

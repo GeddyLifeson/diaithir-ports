@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:turtle_scute",
+    "color": 12943477,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_tasmanian_late_pleistocene_foragers_kuti.tigernasligenachklach",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 0,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "a1_tasmanian_late_pleistocene_foragers_kuti.tigernasligenachklach_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

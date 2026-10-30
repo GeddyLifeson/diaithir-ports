@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": "minecraft:iron_horse_armor",
+    "F": "minecraft:feather"
+  },
+  "pattern": [
+    "FDF"
+  ],
+  "result": {
+    "id": "iceandfire:iron_hippogryph_armor"
+  },
+  "show_notification": true
+}

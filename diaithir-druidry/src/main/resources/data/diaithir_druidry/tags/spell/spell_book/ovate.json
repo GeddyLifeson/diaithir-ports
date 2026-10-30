@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:sight_spark",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:far_sight",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:fate_thread",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:veil_step",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:salmon_knowing",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:watch_hour",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:foretold_blow",
+   "required": false
+  }
+ ]
+}

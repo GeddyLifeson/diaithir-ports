@@ -1,0 +1,111 @@
+package com.kyanite.deeperdarker;
+
+import com.kyanite.deeperdarker.content.*;
+import com.kyanite.deeperdarker.content.entities.*;
+import com.kyanite.deeperdarker.network.SoulElytraBoostPacket;
+import com.kyanite.deeperdarker.network.SoulElytraClientPacket;
+import com.kyanite.deeperdarker.network.UseTransmitterPacket;
+import com.kyanite.deeperdarker.util.DDCreativeTab;
+import com.kyanite.deeperdarker.world.DDFeatures;
+import com.kyanite.deeperdarker.world.otherside.OthersideDimension;
+import com.kyanite.deeperdarker.world.structures.CustomStructures;
+import com.mojang.logging.LogUtils;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+import org.slf4j.Logger;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
+@SuppressWarnings("unused")
+@Mod(DeeperDarker.MOD_ID)
+public class DeeperDarker {
+    public static final String MOD_ID = "deeperdarker";
+    public static final Logger LOGGER = LogUtils.getLogger();
+
+    public DeeperDarker(IEventBus eventBus, ModContainer container) {
+        DDSounds.SOUND_EVENTS.register(eventBus);
+        DDDataComponents.COMPONENTS.register(eventBus);
+        DDBlocks.BLOCKS.register(eventBus);
+        DDItems.ITEMS.register(eventBus);
+        DDCreativeTab.CREATIVE_MODE_TABS.register(eventBus);
+        DDBlockEntities.BLOCK_ENTITIES.register(eventBus);
+        DDDataAttachments.ATTACHMENTS.register(eventBus);
+        DDEntities.ENTITIES.register(eventBus);
+        DDEffects.EFFECTS.register(eventBus);
+        DDPotions.POTIONS.register(eventBus);
+        DDRecipes.RECIPE.register(eventBus);
+        DDEnchantments.ENCHANTMENT_EFFECTS.register(eventBus);
+        DDFeatures.FEATURES.register(eventBus);
+        CustomStructures.PIECE_TYPE.register(eventBus);
+        CustomStructures.STRUCTURE_TYPE.register(eventBus);
+        OthersideDimension.POI.register(eventBus);
+        DDLootModifiers.LOOT_MODIFIERS.register(eventBus);
+
+        eventBus.addListener(DDCreativeTab::buildCreativeTab);
+        eventBus.addListener(this::commonSetup);
+        eventBus.addListener(this::registerPayloads);
+        eventBus.addListener(this::registerAttributes);
+        eventBus.addListener(this::registerSpawnPlacements);
+
+        container.registerConfig(ModConfig.Type.COMMON, DeeperDarkerConfig.CONFIG_SPEC);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DDBlocks.ECHO_SAPLING.getId(), DDBlocks.POTTED_ECHO_SAPLING);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DDBlocks.BLOOMING_STEM.getId(), DDBlocks.POTTED_BLOOMING_STEM);
+        });
+    }
+
+
+    private void registerPayloads(final RegisterPayloadHandlersEvent event) {
+        PayloadRegistrar registrar = event.registrar("1.0");
+
+        registrar.playToServer(SoulElytraBoostPacket.TYPE, SoulElytraBoostPacket.STREAM_CODEC, SoulElytraBoostPacket::handle);
+        registrar.playToClient(SoulElytraClientPacket.TYPE, SoulElytraClientPacket.STREAM_CODEC, SoulElytraClientPacket::handle);
+        registrar.playToServer(UseTransmitterPacket.TYPE, UseTransmitterPacket.STREAM_CODEC, UseTransmitterPacket::handle);
+    }
+
+    private void registerAttributes(final EntityAttributeCreationEvent event) {
+        event.put(DDEntities.ANGLER_FISH.get(), AnglerFish.createAttributesSupplier());
+        event.put(DDEntities.ANGER_POT.get(), OvercastPot.createAttributes(40));
+        event.put(DDEntities.FEAR_POT.get(), OvercastPot.createAttributes(30));
+        event.put(DDEntities.SORROW_POT.get(), OvercastPot.createAttributes(20));
+        event.put(DDEntities.SCULK_CENTIPEDE.get(), SculkCentipede.createAttributes());
+        event.put(DDEntities.SCULK_LEECH.get(), SculkLeech.createAttributes());
+        event.put(DDEntities.SCULK_SNAPPER.get(), SculkSnapper.createAttributes());
+        event.put(DDEntities.SHATTERED.get(), Shattered.createAttributes());
+        event.put(DDEntities.SHRIEK_WORM.get(), ShriekWorm.createAttributes());
+        event.put(DDEntities.SLUDGE.get(), Sludge.createAttributes());
+        event.put(DDEntities.STALKER.get(), Stalker.createAttributes());
+    }
+
+    private void registerSpawnPlacements(final RegisterSpawnPlacementsEvent event) {
+        event.register(DDEntities.ANGLER_FISH.get(), SpawnPlacementTypes.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AnglerFish::checkSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(DDEntities.SCULK_CENTIPEDE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(DDEntities.SCULK_SNAPPER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(DDEntities.SHATTERED.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(DDEntities.SLUDGE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+    }
+
+    public static Identifier rl(String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
+    }
+}

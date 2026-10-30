@@ -1,0 +1,21 @@
+{
+ "type": "create:crushing",
+ "ingredient": "alchemind:galaxite",
+ "results": [
+  {
+   "id": "alchemind:galaxite_bead",
+   "count": 2,
+   "chance": 0.5
+  },
+  {
+   "id": "alchemind:galaxite_bead",
+   "count": 3,
+   "chance": 0.5
+  },
+  {
+   "id": "alchemind:crushed_galaxite",
+   "chance": 0.3
+  }
+ ],
+ "processing_time": 250
+}

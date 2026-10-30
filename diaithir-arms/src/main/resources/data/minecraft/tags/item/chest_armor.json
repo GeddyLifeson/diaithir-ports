@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirarms:bone_chestplate",
+  "diaithirarms:copper_chestplate",
+  "diaithirarms:bronze_chestplate",
+  "diaithirarms:mail_chestplate",
+  "diaithirarms:steel_chestplate",
+  "diaithirarms:ballistic_chestplate",
+  "diaithirarms:composite_chestplate",
+  "diaithirarms:rodos_chestplate",
+  "diaithirarms:future_chestplate"
+ ]
+}

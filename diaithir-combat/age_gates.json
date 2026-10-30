@@ -1,0 +1,7 @@
+{
+ "_doc": "Same shape as DiaithirRPG content/tech_ages.json. diaithircombat adds no items; its mechanics scale with the player's Age instead (config age.objective, default scoreboard 'age'). Weapons keep the Age gates of the mod that adds them (diaithirarms, spartanweaponry).",
+ "namespaces": {
+  "diaithircombat": "I"
+ },
+ "items": {}
+}

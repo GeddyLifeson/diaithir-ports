@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "alchemind:reactivite_powder",
+  "alchemind:pyrite_powder"
+ ],
+ "results": [
+  {
+   "id": "alchemind:reactivite_alloy"
+  }
+ ],
+ "heat_requirement": "heated"
+}

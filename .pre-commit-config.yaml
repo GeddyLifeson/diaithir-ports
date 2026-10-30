@@ -7,4 +7,5 @@ repos:
         name: no committed tokens
         entry: detect-secrets-hook --disable-plugin HexHighEntropyString --disable-plugin Base64HighEntropyString
         language: python
+        exclude: '/lang/[a-z_]+\.json$'  # translation keys such as cave_book.secrets are not secrets
         additional_dependencies: [detect-secrets==1.5.0]

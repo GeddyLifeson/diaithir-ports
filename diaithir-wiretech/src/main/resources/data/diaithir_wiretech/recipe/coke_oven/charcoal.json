@@ -1,0 +1,15 @@
+{
+  "type": "diaithir_wiretech:coke_oven",
+  "inputs": [
+    {
+      "ingredient": "minecraft:charcoal",
+      "count": 2
+    }
+  ],
+  "energy": 600,
+  "time": 200,
+  "result": {
+    "id": "diaithir_wiretech:coke",
+    "count": 1
+  }
+}

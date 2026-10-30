@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "m": "goety:jade_tiles",
+  "l": "goety:siltstone"
+ },
+ "pattern": [
+  "lml",
+  "m m",
+  "lml"
+ ],
+ "result": {
+  "id": "goety:silt_jade_tiles",
+  "count": 4
+ }
+}

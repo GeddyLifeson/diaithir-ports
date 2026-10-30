@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_abuti:truth_of_abuti"
+ ],
+ "results": [
+  {
+   "id": "create_abuti:truth_of_abuti"
+  },
+  {
+   "id": "create_abuti:aburi_cheese_salmon"
+  }
+ ]
+}

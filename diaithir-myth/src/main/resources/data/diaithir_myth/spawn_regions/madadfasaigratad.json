@@ -1,0 +1,28 @@
+{
+  "creature": "diaithir_myth:madadfasaigratad",
+  "court": "nilotic",
+  "region": "Nile valley",
+  "min_age": 2,
+  "boxes": [
+    {
+      "lat": [
+        22.0,
+        31.8
+      ],
+      "lon": [
+        25.0,
+        35.0
+      ]
+    },
+    {
+      "lat": [
+        14.0,
+        22.0
+      ],
+      "lon": [
+        30.0,
+        35.0
+      ]
+    }
+  ]
+}

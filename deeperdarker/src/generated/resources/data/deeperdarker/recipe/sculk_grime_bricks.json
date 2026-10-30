@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "G": "deeperdarker:grime_brick"
+  },
+  "pattern": [
+    "GG",
+    "GG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "deeperdarker:sculk_grime_bricks"
+  }
+}

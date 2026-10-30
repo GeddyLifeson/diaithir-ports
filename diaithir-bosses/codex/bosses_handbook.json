@@ -1,0 +1,218 @@
+{
+ "id": "diaithirbosses:handbook",
+ "title": "Kiendurd",
+ "chapters": [
+  {
+   "tier": "age1",
+   "name": "Kiendurd I",
+   "age": "I",
+   "text": "Bosses that wake at Age I.",
+   "items": [
+    {
+     "id": "diaithirbosses:tribal_chief_trophy",
+     "name": "Kiendfini",
+     "age": "I",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "age2",
+   "name": "Kiendurd II",
+   "age": "II",
+   "text": "Bosses that wake at Age II.",
+   "items": [
+    {
+     "id": "diaithirbosses:stone_colossus_trophy",
+     "name": "Famuirchlach",
+     "age": "II",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "age3",
+   "name": "Kiendurd III",
+   "age": "III",
+   "text": "Bosses that wake at Age III.",
+   "items": [
+    {
+     "id": "diaithirbosses:bronze_warking_trophy",
+     "name": "Rìgchogaid",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:rot_swarm_lord_trophy",
+     "name": "Tigernaschaed",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:toimsechunleomund_trophy",
+     "name": "Tòimsechunleòmund",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:tarbspeiri_trophy",
+     "name": "Tarbspeiri",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:driegunsalund_trophy",
+     "name": "Driegunsalund",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:natuirkriegach_trophy",
+     "name": "Natuirkriegach",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:natuirmoir_trophy",
+     "name": "Natuirmoir",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:tarbiumachuoirtach_trophy",
+     "name": "Tarbiumachuoirtach",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:driegunmorgil_trophy",
+     "name": "Driegunmòrgil",
+     "age": "III",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "age4",
+   "name": "Kiendurd IV",
+   "age": "IV",
+   "text": "Bosses that wake at Age IV.",
+   "items": [
+    {
+     "id": "diaithirbosses:iron_walker_trophy",
+     "name": "Koisechiaruind",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:ridiriknok_trophy",
+     "name": "Ridiriknok",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:oilebeistbouglach_trophy",
+     "name": "Oilebeistbouglach",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:maktirikriuch_trophy",
+     "name": "Maktìrikrìuch",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:natuirsaegul_trophy",
+     "name": "Natuirsaegul",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:botunkas_trophy",
+     "name": "Botunkas",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:natuirrig_trophy",
+     "name": "Natuirrìg",
+     "age": "IV",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "age5",
+   "name": "Kiendurd V",
+   "age": "V",
+   "text": "Bosses that wake at Age V.",
+   "items": [
+    {
+     "id": "diaithirbosses:steel_marshal_trophy",
+     "name": "Maraskul",
+     "age": "V",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "age6",
+   "name": "Kiendurd VI",
+   "age": "VI",
+   "text": "Bosses that wake at Age VI.",
+   "items": [
+    {
+     "id": "diaithirbosses:toisechmarb_trophy",
+     "name": "Toisechmarb",
+     "age": "VI",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "age7",
+   "name": "Kiendurd VII",
+   "age": "VII",
+   "text": "Bosses that wake at Age VII.",
+   "items": [
+    {
+     "id": "diaithirbosses:ceramic_warlord_trophy",
+     "name": "Tigernachogaid",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:maerkistechuimni_trophy",
+     "name": "Maerkistechuimni",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:natuirtuar_trophy",
+     "name": "Natuirtùar",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:stoirmiduislach_trophy",
+     "name": "Stoirmiduislach",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:famuirmeirgi_trophy",
+     "name": "Famuirmeirgi",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:niechgleididdouras_trophy",
+     "name": "Niechgleididdouras",
+     "age": "VII",
+     "text": ""
+    }
+   ]
+  }
+ ]
+}

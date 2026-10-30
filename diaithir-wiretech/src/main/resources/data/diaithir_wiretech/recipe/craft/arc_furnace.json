@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "C": "diaithir_wiretech:copper_wire_coil",
+    "R": "minecraft:redstone",
+    "B": "minecraft:blast_furnace",
+    "G": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    "ICI",
+    "RBR",
+    "IGI"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:arc_furnace",
+    "count": 1
+  }
+}

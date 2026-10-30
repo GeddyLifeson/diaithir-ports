@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:crimson_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "P",
+  "S",
+  "S"
+ ],
+ "result": {
+  "id": "diaithirfurnishings:crimson_signpost",
+  "count": 2
+ }
+}

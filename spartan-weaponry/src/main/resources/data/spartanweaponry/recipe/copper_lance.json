@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "minecraft:copper_ingot",
+  "|": "spartanweaponry:handle",
+  "/": "spartanweaponry:pole"
+ },
+ "pattern": [
+  "  #",
+  "#/ ",
+  "|# "
+ ],
+ "result": {
+  "id": "spartanweaponry:copper_lance"
+ }
+}

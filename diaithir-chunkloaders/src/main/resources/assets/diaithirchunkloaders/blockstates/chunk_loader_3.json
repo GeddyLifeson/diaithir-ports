@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "diaithirchunkloaders:block/loader_3"
+    },
+    "lit=true": {
+      "model": "diaithirchunkloaders:block/loader_3_lit"
+    }
+  }
+}

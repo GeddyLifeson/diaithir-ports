@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "O",
+    "O",
+    "#"
+  ],
+  "key": {
+    "#": "minecraft:stone_slab",
+    "O": "minecraft:stone"
+  },
+  "result": {
+    "id": "diaithir_gods:altar",
+    "count": 1,
+    "components": {
+      "diaithir_gods:altar": "diaithir_gods:stone_figure"
+    }
+  }
+}

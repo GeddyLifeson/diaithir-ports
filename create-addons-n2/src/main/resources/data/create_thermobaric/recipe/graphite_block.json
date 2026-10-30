@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": "create_thermobaric:graphite_ingot"
+ },
+ "result": {
+  "id": "create_thermobaric:graphite_block"
+ }
+}

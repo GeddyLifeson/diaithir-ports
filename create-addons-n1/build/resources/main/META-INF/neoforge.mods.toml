@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT AND LGPL-3.0 AND Apache-2.0 AND CC-BY-4.0 AND GPL-3.0 (per addon, see CREDITS.txt)"
+[[mods]]
+modId="diaithir_create_addons_n1"
+version="0.1.0"
+displayName="Diaithir Create Addons (slice N1)"
+authors="Original addon authors, see CREDITS.txt"
+description='''Plain items, blocks, assets and Create recipes from 29 older Fabric/Forge Create addons, rewritten for the Diaithir Create port (26.1 recipe formats). Custom block entities and behaviours are not ported.'''
+[[dependencies.diaithir_create_addons_n1]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

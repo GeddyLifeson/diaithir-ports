@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "alexscaves:toxic_paste",
+    "alexscaves:radon_bottle",
+    "alexscaves:sulfur_dust",
+    "#c:ingots/iron"
+  ],
+  "result": {
+    "count": 4,
+    "id": "alexscaves:polymer_plate"
+  }
+}

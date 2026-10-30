@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "diaithir_wiretech:steel_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "CCC",
+    "CSC",
+    "CCC"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:steel_wire_coil",
+    "count": 4
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "diaithir_wiretech:block/diesel_top",
+    "side": "diaithir_wiretech:block/diesel_side"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "diaithir_wiretech:arc_furnace",
+  "inputs": [
+    {
+      "ingredient": "#c:raw_materials/copper",
+      "count": 1
+    }
+  ],
+  "energy": 1600,
+  "time": 80,
+  "result": {
+    "id": "minecraft:copper_ingot",
+    "count": 1
+  },
+  "bonus": {
+    "id": "diaithir_wiretech:slag",
+    "count": 1
+  },
+  "bonus_chance": 0.25
+}

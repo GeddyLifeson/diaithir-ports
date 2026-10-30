@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "s": "minecraft:calcite",
+  "t": "#goety:totems"
+ },
+ "pattern": [
+  "sss",
+  "sts",
+  "sss"
+ ],
+ "result": {
+  "id": "goety:marble",
+  "count": 8
+ }
+}

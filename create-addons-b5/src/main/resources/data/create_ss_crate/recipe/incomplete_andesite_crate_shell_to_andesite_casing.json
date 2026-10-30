@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create_ss_crate:incomplete_andesite_crate_shell"
+ ],
+ "result": {
+  "id": "create:andesite_casing"
+ }
+}

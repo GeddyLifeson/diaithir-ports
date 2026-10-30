@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": "minecraft:iron_ingot",
+  "N": "minecraft:iron_nugget",
+  "M": "create:iron_sheet"
+ },
+ "pattern": [
+  "M# ",
+  "N  "
+ ],
+ "result": {
+  "id": "who_touched_my_train:iron_key",
+  "count": 4
+ }
+}

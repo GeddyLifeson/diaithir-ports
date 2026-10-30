@@ -1,0 +1,36 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create:precision_mechanism",
+ "loops": 4,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:transmitter"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:experience_nugget"
+  }
+ ],
+ "transitional_item": {
+  "id": "create:precision_mechanism"
+ },
+ "result": {
+  "id": "relics:experience_disperser",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

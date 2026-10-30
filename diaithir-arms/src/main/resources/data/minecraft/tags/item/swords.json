@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirarms:steel_sword",
+  "diaithirarms:tempered_sword",
+  "diaithirarms:composite_sword",
+  "diaithirarms:rodos_sword",
+  "diaithirarms:future_sword"
+ ]
+}

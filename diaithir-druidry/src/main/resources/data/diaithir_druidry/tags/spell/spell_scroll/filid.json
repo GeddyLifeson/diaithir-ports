@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:verse_blow",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:ward_verse",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:satire",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:truth_word",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:hundred_verses",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:ban_oath",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:curse_pall",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+license = "MIT"
+
+[[mods]]
+modId = "diaithir_druidry"
+version = "${version}"
+displayName = "Diaithir Druidry"
+authors = "Diaithir"
+description = '''
+Seven Celtic schools of magic as pure data for Spell Engine: Druid, Ovate, Bard, Filid, Raven, Otherworld and Smith.
+Forty-nine spells, scroll and tome pools, staves, chest loot. Original work; replaces the all-rights-reserved class packs.
+'''
+
+[[dependencies.diaithir_druidry]]
+modId = "spell_engine"
+type = "required"
+versionRange = "[1.10,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithir_druidry]]
+modId = "spell_power"
+type = "required"
+versionRange = "[1.6,)"
+ordering = "AFTER"
+side = "BOTH"

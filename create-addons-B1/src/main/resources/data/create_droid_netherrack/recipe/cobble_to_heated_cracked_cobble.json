@@ -1,0 +1,20 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:cobblestone"
+ ],
+ "results": [
+  {
+   "id": "create_droid_netherrack:heated_cracked_cobble",
+   "count": 1
+  }
+ ],
+ "heatRequirement": "superheated",
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 656100
+  }
+ ]
+}

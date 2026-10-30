@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "  T",
+  " # ",
+  "#H "
+ ],
+ "key": {
+  "#": "minecraft:obsidian",
+  "H": "create:andesite_alloy",
+  "T": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "create_blockzapper_memorial:shattered_hopes_and_dreams",
+  "count": 1
+ }
+}

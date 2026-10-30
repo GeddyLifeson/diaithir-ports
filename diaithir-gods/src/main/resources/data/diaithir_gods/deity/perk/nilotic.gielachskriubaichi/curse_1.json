@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:feather",
+    "color": 10337205,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:nilotic.gielachskriubaichi",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:darkness",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "nilotic.gielachskriubaichi_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

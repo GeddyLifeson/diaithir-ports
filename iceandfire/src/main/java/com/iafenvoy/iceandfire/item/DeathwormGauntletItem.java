@@ -1,0 +1,104 @@
+package com.iafenvoy.iceandfire.item;
+
+import com.iafenvoy.iceandfire.config.IafCommonConfig;
+import com.iafenvoy.iceandfire.data.component.MiscData;
+import com.iafenvoy.iceandfire.registry.IafDataComponents;
+import com.iafenvoy.iceandfire.registry.IafSounds;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
+
+import java.util.function.Consumer;
+
+public class DeathwormGauntletItem extends Item {
+    public DeathwormGauntletItem() {
+        super(new Properties().durability(500).component(IafDataComponents.USER_ID.get(), -1));
+    }
+
+    @Override
+    public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity user) {
+        return 10;
+    }
+
+    @Override
+    public @NotNull ItemUseAnimation getUseAnimation(@NotNull ItemStack stack) {
+        return ItemUseAnimation.BOW;
+    }
+
+    @Override
+    public @NotNull InteractionResult use(@NotNull Level worldIn, Player playerIn, @NotNull InteractionHand hand) {
+        ItemStack itemStackIn = playerIn.getItemInHand(hand);
+        playerIn.startUsingItem(hand);
+        return InteractionResult.PASS;
+    }
+
+    @Override
+    public void onUseTick(@NotNull Level level, LivingEntity entity, ItemStack stack, int remainingUseTicks) {
+        if (stack.getOrDefault(IafDataComponents.USER_ID.get(), -1) != entity.getId())
+            stack.set(IafDataComponents.USER_ID.get(), entity.getId());
+        MiscData.get(entity).setLungeTicks(this.getUseDuration(stack, entity) - remainingUseTicks);
+    }
+
+    @Override
+    public boolean releaseUsing(ItemStack stack, @NotNull Level worldIn, @NotNull LivingEntity user, int timeLeft) {
+        stack.set(IafDataComponents.USER_ID.get(), -1);
+        return true;
+    }
+
+    @Override
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level world, @NotNull LivingEntity user) {
+        if (user instanceof Player player) {
+            Vec3 lookVec = player.getViewVector(1.0F).normalize();
+            double range = IafCommonConfig.INSTANCE.tools.deathwormGauntletRange.getValue();
+            double knockbackMin = IafCommonConfig.INSTANCE.tools.deathwormGauntletKnockbackMin.getValue();
+            double knockbackMax = IafCommonConfig.INSTANCE.tools.deathwormGauntletKnockbackMax.getValue();
+            boolean rayTargeting = IafCommonConfig.INSTANCE.tools.deathwormGauntletRayTargeting.getValue();
+            Vec3 eyePos = rayTargeting ? player.getEyePosition(1.0F) : null;
+            Vec3 rayEnd = rayTargeting ? eyePos.add(lookVec.scale(range)) : null;
+            for (LivingEntity livingEntity : world.getEntitiesOfClass(LivingEntity.class, new AABB(player.getX() - range, player.getY() - range, player.getZ() - range, player.getX() + range, player.getY() + range, player.getZ() + range), livingEntity -> livingEntity != player)) {
+                boolean canSee;
+                if (rayTargeting) {
+                    canSee = livingEntity.getBoundingBox().clip(eyePos, rayEnd).isPresent() && player.hasLineOfSight(livingEntity);
+                } else {
+                    Vec3 delta = new Vec3(livingEntity.getX() - player.getX(), livingEntity.getY() - player.getY(), livingEntity.getZ() - player.getZ());
+                    double d0 = delta.length();
+                    delta = delta.normalize();
+                    double d1 = lookVec.dot(delta);
+                    canSee = d1 > 1.0D - 0.5D / d0 && player.hasLineOfSight(livingEntity);
+                }
+                if (canSee) {
+                    livingEntity.hurt(world.damageSources.playerAttack(player), 3F);
+                    double distance = new Vec3(livingEntity.getX() - player.getX(), livingEntity.getY() - player.getY(), livingEntity.getZ() - player.getZ()).length();
+                    float knockbackStrength = (float) (knockbackMin + (knockbackMax - knockbackMin) * Math.min(1.0D, distance / range));
+                    livingEntity.knockback(knockbackStrength, livingEntity.getX() - player.getX(), livingEntity.getZ() - player.getZ());
+                }
+            }
+            player.getCooldowns().addCooldown(stack, 20);
+        }
+        user.playSound(IafSounds.DEATHWORM_ATTACK.get(), 1F, 1F);
+        stack.set(IafDataComponents.USER_ID.get(), -1);
+
+        return super.finishUsingItem(stack, world, user);
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull TooltipDisplay display, @NonNull Consumer<Component> tooltip, @NotNull TooltipFlag type) {
+        super.appendHoverText(stack, context, display, tooltip, type);
+        tooltip.accept(Component.translatable("item.iceandfire.legendary_weapon.desc").withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable("item.iceandfire.deathworm_gauntlet.desc_0").withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable("item.iceandfire.deathworm_gauntlet.desc_1").withStyle(ChatFormatting.GRAY));
+    }
+}

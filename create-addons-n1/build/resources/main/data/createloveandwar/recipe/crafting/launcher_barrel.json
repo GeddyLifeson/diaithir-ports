@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "I": "#c:plates/steel",
+  "O": "create:powdered_obsidian"
+ },
+ "pattern": [
+  "I",
+  "O",
+  "I"
+ ],
+ "result": {
+  "id": "createloveandwar:launcher_barrel"
+ },
+ "show_notification": true
+}

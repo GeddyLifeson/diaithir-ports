@@ -1,0 +1,76 @@
+{
+ "textures": {
+  "pin": "create_connected:block/shear_pin",
+  "particle": "create_connected:block/shear_pin"
+ },
+ "elements": [
+  {
+   "from": [
+    5,
+    0,
+    5
+   ],
+   "to": [
+    11,
+    16,
+    11
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      6,
+      16
+     ],
+     "texture": "#pin"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      6,
+      16
+     ],
+     "texture": "#pin"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      6,
+      16
+     ],
+     "texture": "#pin"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      6,
+      16
+     ],
+     "texture": "#pin"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      6,
+      6
+     ],
+     "texture": "#pin"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      6,
+      6
+     ],
+     "texture": "#pin"
+    }
+   }
+  }
+ ]
+}

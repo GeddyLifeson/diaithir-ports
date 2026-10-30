@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:flint",
+  "minecraft:dark_oak_log",
+  "minecraft:gold_nugget"
+ ],
+ "result": {
+  "id": "diaithir_classes:rune_coll",
+  "count": 2
+ }
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:bone",
+    "color": 12627034,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:diaithir.sielgfiud",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "diaithir.sielgfiud_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

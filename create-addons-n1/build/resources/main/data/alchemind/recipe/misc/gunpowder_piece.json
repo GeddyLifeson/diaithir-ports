@@ -1,0 +1,23 @@
+{
+ "type": "create:crushing",
+ "ingredient": "minecraft:gunpowder",
+ "results": [
+  {
+   "id": "alchemind:gunpowder_piece"
+  },
+  {
+   "id": "alchemind:gunpowder_piece"
+  },
+  {
+   "id": "alchemind:gunpowder_piece"
+  },
+  {
+   "id": "alchemind:gunpowder_piece"
+  },
+  {
+   "id": "minecraft:gunpowder",
+   "chance": 0.05
+  }
+ ],
+ "processing_time": 150
+}

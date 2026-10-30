@@ -1,0 +1,26 @@
+{
+  "tier1": {
+    "age": 3,
+    "items": [
+      "diaithircarts:bronze_rail",
+      "diaithircarts:bronze_powered_rail"
+    ]
+  },
+  "tier2": {
+    "age": 5,
+    "items": [
+      "diaithircarts:steel_rail",
+      "diaithircarts:steel_powered_rail",
+      "diaithircarts:station_rail",
+      "diaithircarts:coupling_chain",
+      "diaithircarts:chain_cutters"
+    ]
+  },
+  "tier3": {
+    "age": 6,
+    "items": [
+      "diaithircarts:fast_rail",
+      "diaithircarts:fast_powered_rail"
+    ]
+  }
+}

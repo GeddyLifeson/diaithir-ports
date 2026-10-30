@@ -1,0 +1,12 @@
+{
+ "parent": "minecraft:block/cube",
+ "textures": {
+  "particle": "diaithirsteamrails:block/boiler_firebox_side",
+  "down": "diaithirsteamrails:block/boiler_firebox_side",
+  "up": "diaithirsteamrails:block/boiler_firebox_top",
+  "north": "diaithirsteamrails:block/boiler_firebox_front",
+  "east": "diaithirsteamrails:block/boiler_firebox_side",
+  "south": "diaithirsteamrails:block/boiler_firebox_side",
+  "west": "diaithirsteamrails:block/boiler_firebox_side"
+ }
+}

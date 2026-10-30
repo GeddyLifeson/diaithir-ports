@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:gold_ingot",
+    "color": 13092298,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:anatolian.grianutalum",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:poison",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "anatolian.grianutalum_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

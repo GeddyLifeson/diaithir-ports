@@ -1,0 +1,24 @@
+{
+  "preset": "beast",
+  "width": 0.9,
+  "height": 1.1,
+  "stats": {
+    "health": 14,
+    "damage": 1,
+    "speed": 0.26
+  },
+  "hostile": false,
+  "tame": {
+    "item": "minecraft:wheat_seeds",
+    "chance": 0.5
+  },
+  "spawn": {
+    "biomes": "minecraft:is_river",
+    "weight": 8,
+    "min_group": 2,
+    "max_group": 4,
+    "min_age": "IV"
+  },
+  "loot_table": "diaithirbestiary:entities/puddlepip",
+  "rideable": true
+}

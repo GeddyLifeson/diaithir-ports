@@ -1,0 +1,22 @@
+{
+ "type": "create:crushing",
+ "ingredient": "alchemind:corvium_chunk",
+ "results": [
+  {
+   "id": "alchemind:glamerite",
+   "count": 2,
+   "chance": 0.6
+  },
+  {
+   "id": "alchemind:pyrite",
+   "count": 2,
+   "chance": 0.6
+  },
+  {
+   "id": "alchemind:reactivite",
+   "count": 2,
+   "chance": 0.6
+  }
+ ],
+ "processing_time": 250
+}

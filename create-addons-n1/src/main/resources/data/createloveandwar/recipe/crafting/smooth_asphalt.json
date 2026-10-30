@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "S": "createloveandwar:bitumen"
+ },
+ "pattern": [
+  "   ",
+  " SS",
+  " SS"
+ ],
+ "result": {
+  "id": "createloveandwar:smooth_asphalt",
+  "count": 4
+ },
+ "show_notification": true
+}

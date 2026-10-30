@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "T": "createloveandwar:tungsten"
+ },
+ "pattern": [
+  "T T",
+  "TTT",
+  "TTT"
+ ],
+ "result": {
+  "id": "createloveandwar:tungsten_chestplate"
+ },
+ "show_notification": true
+}

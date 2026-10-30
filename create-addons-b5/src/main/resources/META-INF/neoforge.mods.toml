@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+[[mods]]
+modId="diaithir_create_addons_b5"
+version="0.1.0"
+displayName="Diaithir Create Addons (slice B5)"
+authors="droidplays08 (MIT): Create: Droid Diamond, Create: Superflat Skyblock Crates; ported content and recipes for the Diaithir Create port"
+description='''Plain items, blocks and Create recipes from Create: Droid Diamond and Create: Superflat Skyblock Crates, rewritten for the Diaithir Create port (26.1 recipe formats). Special crate behaviours (barn spawner, end portal placer/breaker) are not ported.'''
+[[dependencies.diaithir_create_addons_b5]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

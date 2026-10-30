@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "PMP",
+  "PMP",
+  " M "
+ ],
+ "key": {
+  "M": "#c:ingots/bronze",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "diaithirarms:bronze_shield",
+  "count": 1
+ }
+}

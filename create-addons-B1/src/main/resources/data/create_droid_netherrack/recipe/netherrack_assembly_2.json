@@ -1,0 +1,60 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_droid_netherrack:heated_cobble_powder",
+ "transitional_item": {
+  "id": "create_droid_netherrack:incomplete_netherrack_powder"
+ },
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:nether_brick"
+  },
+  {
+   "type": "create:cutting",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 50,
+   "ingredient": "$ingredient"
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "fluid": "minecraft:lava",
+    "type": "fluid_stack",
+    "amount": 8100
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:pressing",
+   "results": [
+    "$result"
+   ],
+   "ingredient": "$ingredient"
+  }
+ ],
+ "loops": 2,
+ "result": {
+  "id": "minecraft:netherrack",
+  "count": 2,
+  "chance": 0.5
+ },
+ "junks": [
+  {
+   "id": "minecraft:netherrack",
+   "count": 5,
+   "chance": 0.35
+  },
+  {
+   "id": "create_droid_netherrack:heated_cobble_powder",
+   "count": 1,
+   "chance": 0.15
+  }
+ ]
+}

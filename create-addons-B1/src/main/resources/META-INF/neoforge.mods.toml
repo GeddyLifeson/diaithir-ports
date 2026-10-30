@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+[[mods]]
+modId="diaithir_create_addons_b1"
+version="0.1.0"
+displayName="Diaithir Create Addons (B1)"
+authors="Ported from MIT/GPL Create addons: synthetic pressure, dense ores, droid netherrack, templates gears, bananas, blockzapper memorial, more sandpapers, perfect processing, stam1o tweaks, FD dough, relics integration"
+description='''Item/block registrations and recipes from several small Create addons, retargeted to the Diaithir Create port.'''
+[[dependencies.diaithir_create_addons_b1]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

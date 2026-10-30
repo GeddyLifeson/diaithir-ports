@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "kaleidoscope_tavern:base_sandwich_board",
+    "minecraft:short_grass"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:grass_sandwich_board"
+  }
+}

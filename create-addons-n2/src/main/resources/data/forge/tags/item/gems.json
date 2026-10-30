@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "create_thermobaric:impure_diamond",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:impure_emerald",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "alexscaves:cave_chamber",
+  "config": {
+    "biome": "alexscaves:abyssal_chasm",
+    "floor": {
+      "Name": "alexscaves:abyssmarine"
+    },
+    "wall": {
+      "Name": "alexscaves:abyssmarine"
+    },
+    "ceiling": {
+      "Name": "alexscaves:abyssmarine"
+    },
+    "min_y": -48,
+    "max_y": 24,
+    "decor": [
+      "alexscaves:tube_worm",
+      "alexscaves:mussel",
+      "alexscaves:black_vent",
+      "alexscaves:abyssal_boulder"
+    ],
+    "radius": 12,
+    "height": 14,
+    "fluid": {
+      "Name": "minecraft:water",
+      "Properties": {
+        "level": "0"
+      }
+    },
+    "fluid_depth": 40
+  }
+}

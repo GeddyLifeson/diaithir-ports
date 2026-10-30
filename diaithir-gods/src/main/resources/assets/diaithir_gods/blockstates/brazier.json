@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "diaithir_gods:block/unlit_brazier"
+    },
+    "lit=true": {
+      "model": "diaithir_gods:block/lit_brazier"
+    }
+  }
+}

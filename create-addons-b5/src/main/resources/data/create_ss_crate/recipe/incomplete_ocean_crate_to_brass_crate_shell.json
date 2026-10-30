@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create_ss_crate:incomplete_ocean_crate"
+ ],
+ "result": {
+  "id": "create_ss_crate:brass_crate_shell"
+ }
+}

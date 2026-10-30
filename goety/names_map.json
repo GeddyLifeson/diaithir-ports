@@ -1,0 +1,2770 @@
+{
+ "awakened_emerald_block": {
+  "diaithiris": "Smauragd dùisgti blok",
+  "english": "Block of Awakened Emerald"
+ },
+ "cursed_metal_block": {
+  "diaithiris": "Mietuilt maldaichti blok",
+  "english": "Block of Cursed Metal"
+ },
+ "pale_steel_block": {
+  "diaithiris": "Stàilind bànu blok",
+  "english": "Block of Pale Steel"
+ },
+ "dark_metal_block": {
+  "diaithiris": "Miesgachad dourcha blok",
+  "english": "Block of Dark Alloy"
+ },
+ "diamond_mold_block": {
+  "diaithiris": "Blok moldtuir daeimen",
+  "english": "Diamond Mold Block"
+ },
+ "dark_dirt": {
+  "diaithiris": "Salchur dourcha",
+  "english": "Dark Dirt"
+ },
+ "grave_soil": {
+  "diaithiris": "Ùiri ueig",
+  "english": "Grave Soil"
+ },
+ "detritus": {
+  "diaithiris": "Smùar",
+  "english": "Detritus"
+ },
+ "soiled_spruce_planks": {
+  "diaithiris": "Klàrun giutas-dourcha saulach",
+  "english": "Soiled Spruce Planks"
+ },
+ "soiled_spruce_planks_heavy": {
+  "diaithiris": "Klàrun giutas-dourcha saulach troum",
+  "english": "Heavy Soiled Spruce Planks"
+ },
+ "void_block": {
+  "diaithiris": "Blok falum",
+  "english": "Void Block"
+ },
+ "end_basalt": {
+  "diaithiris": "Basult krìuch",
+  "english": "End Basalt"
+ },
+ "end_basalt_stairs": {
+  "diaithiris": "Staidri basult krìuch",
+  "english": "End Basalt Stairs"
+ },
+ "end_basalt_slab": {
+  "diaithiris": "Liek basult krìuch",
+  "english": "End Basalt Slab"
+ },
+ "soiled_end_basalt_slight": {
+  "diaithiris": "Basult krìuch saulach aetrum",
+  "english": "Slight Soiled End Basalt"
+ },
+ "soiled_end_basalt": {
+  "diaithiris": "Basult krìuch saulach",
+  "english": "Soiled End Basalt"
+ },
+ "top_soiled_end_basalt": {
+  "diaithiris": "Basult krìuch saulach muldach",
+  "english": "Top Soiled End Basalt"
+ },
+ "bottom_soiled_end_basalt": {
+  "diaithiris": "Basult krìuch saulach bunu",
+  "english": "Bottom Soiled End Basalt"
+ },
+ "top_dirty_end_basalt": {
+  "diaithiris": "Basult krìuch saulach muldach",
+  "english": "Top Dirty End Basalt"
+ },
+ "bottom_dirty_end_basalt": {
+  "diaithiris": "Basult krìuch saulach bunu",
+  "english": "Bottom Dirty End Basalt"
+ },
+ "dirty_end_basalt": {
+  "diaithiris": "Basult krìuch saulach",
+  "english": "Dirty End Basalt"
+ },
+ "end_basalt_bricks": {
+  "diaithiris": "Breigen basult krìuch",
+  "english": "End Basalt Bricks"
+ },
+ "end_basalt_brick_stairs": {
+  "diaithiris": "Staidri breigen basult krìuch",
+  "english": "End Basalt Brick Stairs"
+ },
+ "end_basalt_brick_slab": {
+  "diaithiris": "Liek breigen basult krìuch",
+  "english": "End Basalt Brick Slab"
+ },
+ "soiled_end_basalt_bricks": {
+  "diaithiris": "Breigen basult krìuch saulach",
+  "english": "Soiled End Basalt Bricks"
+ },
+ "smooth_end_basalt_bricks": {
+  "diaithiris": "Breigen basult krìuch rèid",
+  "english": "Smooth End Basalt Bricks"
+ },
+ "end_rock": {
+  "diaithiris": "Krieg krìuch",
+  "english": "End Rock"
+ },
+ "end_rock_stairs": {
+  "diaithiris": "Staidri krieg krìuch",
+  "english": "End Rock Stairs"
+ },
+ "end_rock_slab": {
+  "diaithiris": "Liek krieg krìuch",
+  "english": "End Rock Slab"
+ },
+ "soiled_end_rock": {
+  "diaithiris": "Krieg krìuch saulach",
+  "english": "Soiled End Rock"
+ },
+ "grown_end_rock": {
+  "diaithiris": "Krieg krìuch fàista",
+  "english": "Grown End Rock"
+ },
+ "dirty_end_rock": {
+  "diaithiris": "Krieg krìuch saulach",
+  "english": "Dirty End Rock"
+ },
+ "end_rock_slate": {
+  "diaithiris": "Krieg krìuch leigach",
+  "english": "Slated End Rock"
+ },
+ "end_rock_bricks": {
+  "diaithiris": "Breigen krieg krìuch",
+  "english": "End Rock Bricks"
+ },
+ "end_rock_brick_stairs": {
+  "diaithiris": "Staidri breigen krieg krìuch",
+  "english": "End Rock Brick Stairs"
+ },
+ "end_rock_brick_slab": {
+  "diaithiris": "Liek breigen krieg krìuch",
+  "english": "End Rock Brick Slab"
+ },
+ "end_rock_brick_wall": {
+  "diaithiris": "Balda breigen krieg krìuch",
+  "english": "End Rock Brick Wall"
+ },
+ "end_rock_brick_fence": {
+  "diaithiris": "Kaldaid breigen krieg krìuch",
+  "english": "End Rock Brick Fence"
+ },
+ "soiled_end_rock_bricks": {
+  "diaithiris": "Breigen krieg krìuch saulach",
+  "english": "Soiled End Rock Bricks"
+ },
+ "end_rock_chiseled": {
+  "diaithiris": "Krieg krìuch snaidti",
+  "english": "Chiseled End Rock"
+ },
+ "soiled_end_rock_chiseled": {
+  "diaithiris": "Krieg krìuch snaidti saulach",
+  "english": "Soiled Chiseled End Rock"
+ },
+ "end_limestone": {
+  "diaithiris": "Klach-aeil krìuch",
+  "english": "End Limestone"
+ },
+ "end_limestone_stairs": {
+  "diaithiris": "Staidri klach-aeil krìuch",
+  "english": "End Limestone Stairs"
+ },
+ "end_limestone_slab": {
+  "diaithiris": "Liek klach-aeil krìuch",
+  "english": "End Limestone Slab"
+ },
+ "mixed_end_limestone": {
+  "diaithiris": "Klach-aeil krìuch miesgaichti",
+  "english": "Mixed End Limestone"
+ },
+ "soiled_end_limestone": {
+  "diaithiris": "Klach-aeil krìuch saulach",
+  "english": "Soiled End Limestone"
+ },
+ "dirty_end_limestone_slight": {
+  "diaithiris": "Klach-aeil krìuch saulach aetrum",
+  "english": "Slight Dirty End Limestone"
+ },
+ "dirty_end_limestone": {
+  "diaithiris": "Klach-aeil krìuch saulach",
+  "english": "Dirty End Limestone"
+ },
+ "soiled_end_dirt": {
+  "diaithiris": "Salchur krìuch saulach",
+  "english": "Soiled End Dirt"
+ },
+ "jade_tiles": {
+  "diaithiris": "Liekagun seidi",
+  "english": "Jade Tiles"
+ },
+ "jade_block": {
+  "diaithiris": "Seidi blok",
+  "english": "Block of Jade"
+ },
+ "jade_pillar": {
+  "diaithiris": "Kolb seidi",
+  "english": "Jade Pillar"
+ },
+ "jade_stairs": {
+  "diaithiris": "Staidri seidi",
+  "english": "Jade Stairs"
+ },
+ "jade_slab": {
+  "diaithiris": "Liek seidi",
+  "english": "Jade Slab"
+ },
+ "silt_jade_tiles": {
+  "diaithiris": "Liekagun seidi salachur",
+  "english": "Silt Jade Tiles"
+ },
+ "silt_jade_stairs": {
+  "diaithiris": "Staidri seidi salachur",
+  "english": "Silt Jade Stairs"
+ },
+ "silt_jade_slab": {
+  "diaithiris": "Liek seidi salachur",
+  "english": "Silt Jade Slab"
+ },
+ "snowy_jade_tiles": {
+  "diaithiris": "Liekagun seidi sniechdach",
+  "english": "Snowy Jade Tiles"
+ },
+ "snowy_jade_stairs": {
+  "diaithiris": "Staidri seidi sniechdach",
+  "english": "Snowy Jade Stairs"
+ },
+ "snowy_jade_slab": {
+  "diaithiris": "Liek seidi sniechdach",
+  "english": "Snowy Jade Slab"
+ },
+ "haunted_planks": {
+  "diaithiris": "Klàrun taibsech",
+  "english": "Haunted Planks"
+ },
+ "haunted_log": {
+  "diaithiris": "Stok taibsech",
+  "english": "Haunted Log"
+ },
+ "stripped_haunted_log": {
+  "diaithiris": "Stok taibsech rùisgti",
+  "english": "Stripped Haunted Log"
+ },
+ "haunted_wood": {
+  "diaithiris": "Fiud taibsech",
+  "english": "Haunted Wood"
+ },
+ "stripped_haunted_wood": {
+  "diaithiris": "Fiud taibsech rùisgti",
+  "english": "Stripped Haunted Wood"
+ },
+ "haunted_pressure_plate": {
+  "diaithiris": "Klàr-brutaid taibsech",
+  "english": "Haunted Pressure Plate"
+ },
+ "haunted_trapdoor": {
+  "diaithiris": "Douras-toild taibsech",
+  "english": "Haunted Trapdoor"
+ },
+ "haunted_button": {
+  "diaithiris": "Putun taibsech",
+  "english": "Haunted Button"
+ },
+ "haunted_stairs": {
+  "diaithiris": "Staidri taibsech",
+  "english": "Haunted Stairs"
+ },
+ "haunted_slab": {
+  "diaithiris": "Liek taibsech",
+  "english": "Haunted Slab"
+ },
+ "haunted_fence_gate": {
+  "diaithiris": "Gieta kaldaid taibsech",
+  "english": "Haunted Fence Gate"
+ },
+ "haunted_fence": {
+  "diaithiris": "Kaldaid taibsech",
+  "english": "Haunted Fence"
+ },
+ "haunted_door": {
+  "diaithiris": "Douras taibsech",
+  "english": "Haunted Door"
+ },
+ "haunted_bookshelf": {
+  "diaithiris": "Sgeilpi-liebrigna taibsech",
+  "english": "Haunted Bookshelf"
+ },
+ "dark_pressure_plate": {
+  "diaithiris": "Klàr-brutaid dourcha",
+  "english": "Dark Pressure Plate"
+ },
+ "apparition_door": {
+  "diaithiris": "Douras taibsi",
+  "english": "Apparition Door"
+ },
+ "rotten_planks": {
+  "diaithiris": "Klàrun lobti",
+  "english": "Rotten Planks"
+ },
+ "rotten_log": {
+  "diaithiris": "Stok lobti",
+  "english": "Rotten Log"
+ },
+ "stripped_rotten_log": {
+  "diaithiris": "Stok lobti rùisgti",
+  "english": "Stripped Rotten Log"
+ },
+ "rotten_wood": {
+  "diaithiris": "Fiud lobti",
+  "english": "Rotten Wood"
+ },
+ "stripped_rotten_wood": {
+  "diaithiris": "Fiud lobti rùisgti",
+  "english": "Stripped Rotten Wood"
+ },
+ "rotten_pressure_plate": {
+  "diaithiris": "Klàr-brutaid lobti",
+  "english": "Rotten Pressure Plate"
+ },
+ "rotten_trapdoor": {
+  "diaithiris": "Douras-toild lobti",
+  "english": "Rotten Trapdoor"
+ },
+ "rotten_button": {
+  "diaithiris": "Putun lobti",
+  "english": "Rotten Button"
+ },
+ "rotten_stairs": {
+  "diaithiris": "Staidri lobti",
+  "english": "Rotten Stairs"
+ },
+ "rotten_slab": {
+  "diaithiris": "Liek lobti",
+  "english": "Rotten Slab"
+ },
+ "rotten_fence_gate": {
+  "diaithiris": "Gieta kaldaid lobti",
+  "english": "Rotten Fence Gate"
+ },
+ "rotten_fence": {
+  "diaithiris": "Kaldaid lobti",
+  "english": "Rotten Fence"
+ },
+ "rotten_door": {
+  "diaithiris": "Douras lobti",
+  "english": "Rotten Door"
+ },
+ "marsh_planks": {
+  "diaithiris": "Klàrun bouglach",
+  "english": "Marsh Planks"
+ },
+ "marsh_log": {
+  "diaithiris": "Stok bouglach",
+  "english": "Marsh Log"
+ },
+ "stripped_marsh_log": {
+  "diaithiris": "Stok bouglach rùisgti",
+  "english": "Stripped Marsh Log"
+ },
+ "marsh_wood": {
+  "diaithiris": "Fiud bouglach",
+  "english": "Marsh Wood"
+ },
+ "stripped_marsh_wood": {
+  "diaithiris": "Fiud bouglach rùisgti",
+  "english": "Stripped Marsh Wood"
+ },
+ "marsh_pressure_plate": {
+  "diaithiris": "Klàr-brutaid bouglach",
+  "english": "Marsh Pressure Plate"
+ },
+ "marsh_trapdoor": {
+  "diaithiris": "Douras-toild bouglach",
+  "english": "Marsh Trapdoor"
+ },
+ "marsh_button": {
+  "diaithiris": "Putun bouglach",
+  "english": "Marsh Button"
+ },
+ "marsh_stairs": {
+  "diaithiris": "Staidri bouglach",
+  "english": "Marsh Stairs"
+ },
+ "marsh_slab": {
+  "diaithiris": "Liek bouglach",
+  "english": "Marsh Slab"
+ },
+ "marsh_fence_gate": {
+  "diaithiris": "Gieta kaldaid bouglach",
+  "english": "Marsh Fence Gate"
+ },
+ "marsh_fence": {
+  "diaithiris": "Kaldaid bouglach",
+  "english": "Marsh Fence"
+ },
+ "marsh_door": {
+  "diaithiris": "Douras bouglach",
+  "english": "Marsh Door"
+ },
+ "weathering_oak_planks": {
+  "diaithiris": "Klàrun daurach kaited",
+  "english": "Weathering Oak Planks"
+ },
+ "weathered_oak_planks": {
+  "diaithiris": "Klàrun daurach kaitti",
+  "english": "Weathered Oak Planks"
+ },
+ "weathered_oak_stairs": {
+  "diaithiris": "Staidri daurach kaitti",
+  "english": "Weathered Oak Stairs"
+ },
+ "weathered_oak_slab": {
+  "diaithiris": "Liek daurach kaitti",
+  "english": "Weathered Oak Slab"
+ },
+ "weathered_oak_fence": {
+  "diaithiris": "Kaldaid daurach kaitti",
+  "english": "Weathered Oak Fence"
+ },
+ "weathering_dark_oak_planks": {
+  "diaithiris": "Klàrun daurach dourcha kaited",
+  "english": "Weathering Dark Oak Planks"
+ },
+ "weathered_dark_oak_planks": {
+  "diaithiris": "Klàrun daurach dourcha kaitti",
+  "english": "Weathered Dark Oak Planks"
+ },
+ "weathered_dark_oak_stairs": {
+  "diaithiris": "Staidri daurach dourcha kaitti",
+  "english": "Weathered Dark Oak Stairs"
+ },
+ "weathered_dark_oak_slab": {
+  "diaithiris": "Liek daurach dourcha kaitti",
+  "english": "Weathered Dark Oak Slab"
+ },
+ "weathered_dark_oak_fence": {
+  "diaithiris": "Kaldaid daurach dourcha kaitti",
+  "english": "Weathered Dark Oak Fence"
+ },
+ "windswept_planks": {
+  "diaithiris": "Klàrun gaetach",
+  "english": "Windswept Planks"
+ },
+ "compacted_windswept_planks": {
+  "diaithiris": "Klàrun gaetach dùmuil",
+  "english": "Compacted Windswept Planks"
+ },
+ "compacted_windswept_slab": {
+  "diaithiris": "Liek gaetach dùmuil",
+  "english": "Compacted Windswept Slab"
+ },
+ "windswept_log": {
+  "diaithiris": "Stok gaetach",
+  "english": "Windswept Log"
+ },
+ "stripped_windswept_log": {
+  "diaithiris": "Stok gaetach rùisgti",
+  "english": "Stripped Windswept Log"
+ },
+ "windswept_wood": {
+  "diaithiris": "Fiud gaetach",
+  "english": "Windswept Wood"
+ },
+ "stripped_windswept_wood": {
+  "diaithiris": "Fiud gaetach rùisgti",
+  "english": "Stripped Windswept Wood"
+ },
+ "windswept_pressure_plate": {
+  "diaithiris": "Klàr-brutaid gaetach",
+  "english": "Windswept Pressure Plate"
+ },
+ "windswept_trapdoor": {
+  "diaithiris": "Douras-toild gaetach",
+  "english": "Windswept Trapdoor"
+ },
+ "windswept_button": {
+  "diaithiris": "Putun gaetach",
+  "english": "Windswept Button"
+ },
+ "windswept_stairs": {
+  "diaithiris": "Staidri gaetach",
+  "english": "Windswept Stairs"
+ },
+ "windswept_slab": {
+  "diaithiris": "Liek gaetach",
+  "english": "Windswept Slab"
+ },
+ "windswept_fence_gate": {
+  "diaithiris": "Gieta kaldaid gaetach",
+  "english": "Windswept Fence Gate"
+ },
+ "windswept_fence": {
+  "diaithiris": "Kaldaid gaetach",
+  "english": "Windswept Fence"
+ },
+ "windswept_door": {
+  "diaithiris": "Douras gaetach",
+  "english": "Windswept Door"
+ },
+ "windswept_plank_wall": {
+  "diaithiris": "Balda klàr gaetach",
+  "english": "Windswept Plank Wall"
+ },
+ "snowy_windswept_plank_wall": {
+  "diaithiris": "Balda klàr gaetach sniechdach",
+  "english": "Snowy Windswept Plank Wall"
+ },
+ "pine_planks": {
+  "diaithiris": "Klàrun giutas",
+  "english": "Pine Planks"
+ },
+ "compacted_pine_planks": {
+  "diaithiris": "Klàrun giutas dùmuil",
+  "english": "Compacted Pine Planks"
+ },
+ "compacted_pine_slab": {
+  "diaithiris": "Liek giutas dùmuil",
+  "english": "Compacted Pine Slab"
+ },
+ "thatched_pine_planks": {
+  "diaithiris": "Klàrun giutas tugaichti",
+  "english": "Thatched Pine Planks"
+ },
+ "pine_log": {
+  "diaithiris": "Stok giutas",
+  "english": "Pine Log"
+ },
+ "stripped_pine_log": {
+  "diaithiris": "Stok giutas rùisgti",
+  "english": "Stripped Pine Log"
+ },
+ "pine_wood": {
+  "diaithiris": "Fiud giutas",
+  "english": "Pine Wood"
+ },
+ "stripped_pine_wood": {
+  "diaithiris": "Fiud giutas rùisgti",
+  "english": "Stripped Pine Wood"
+ },
+ "pine_pressure_plate": {
+  "diaithiris": "Klàr-brutaid giutas",
+  "english": "Pine Pressure Plate"
+ },
+ "pine_trapdoor": {
+  "diaithiris": "Douras-toild giutas",
+  "english": "Pine Trapdoor"
+ },
+ "pine_button": {
+  "diaithiris": "Putun giutas",
+  "english": "Pine Button"
+ },
+ "pine_stairs": {
+  "diaithiris": "Staidri giutas",
+  "english": "Pine Stairs"
+ },
+ "pine_slab": {
+  "diaithiris": "Liek giutas",
+  "english": "Pine Slab"
+ },
+ "pine_fence_gate": {
+  "diaithiris": "Gieta kaldaid giutas",
+  "english": "Pine Fence Gate"
+ },
+ "pine_fence": {
+  "diaithiris": "Kaldaid giutas",
+  "english": "Pine Fence"
+ },
+ "pine_door": {
+  "diaithiris": "Douras giutas",
+  "english": "Pine Door"
+ },
+ "steep_planks": {
+  "diaithiris": "Klàrun kas",
+  "english": "Steep Planks"
+ },
+ "dense_steep_planks": {
+  "diaithiris": "Klàrun kas dlùd",
+  "english": "Dense Steep Planks"
+ },
+ "steep_wood": {
+  "diaithiris": "Fiud kas",
+  "english": "Steep Wood"
+ },
+ "steep_wood_slab": {
+  "diaithiris": "Liek fiud kas",
+  "english": "Steep Wood Slab"
+ },
+ "studded_steep_wood": {
+  "diaithiris": "Fiud kas takaichti",
+  "english": "Studded Steep Wood"
+ },
+ "steep_pressure_plate": {
+  "diaithiris": "Klàr-brutaid kas",
+  "english": "Steep Pressure Plate"
+ },
+ "steep_button": {
+  "diaithiris": "Putun kas",
+  "english": "Steep Button"
+ },
+ "steep_stairs": {
+  "diaithiris": "Staidri kas",
+  "english": "Steep Stairs"
+ },
+ "steep_slab": {
+  "diaithiris": "Liek kas",
+  "english": "Steep Slab"
+ },
+ "steep_fence_gate": {
+  "diaithiris": "Gieta kaldaid kas",
+  "english": "Steep Fence Gate"
+ },
+ "steep_fence": {
+  "diaithiris": "Kaldaid kas",
+  "english": "Steep Fence"
+ },
+ "steep_wall": {
+  "diaithiris": "Balda kas",
+  "english": "Steep Wall"
+ },
+ "studded_steep_wall": {
+  "diaithiris": "Balda kas takaichti",
+  "english": "Studded Steep Wall"
+ },
+ "sky_wood_planks": {
+  "diaithiris": "Klàrun fiud speiri",
+  "english": "Sky Wood Planks"
+ },
+ "sky_wood_slab": {
+  "diaithiris": "Liek fiud speiri",
+  "english": "Sky Wood Slab"
+ },
+ "sky_wood_stairs": {
+  "diaithiris": "Staidri fiud speiri",
+  "english": "Sky Wood Stairs"
+ },
+ "chorus_planks": {
+  "diaithiris": "Klàrun keòl",
+  "english": "Chorus Planks"
+ },
+ "soiled_chorus_planks": {
+  "diaithiris": "Klàrun keòl saulach",
+  "english": "Soiled Chorus Planks"
+ },
+ "soiled_chorus_planks_heavy": {
+  "diaithiris": "Klàrun keòl saulach troum",
+  "english": "Heavy Soiled Chorus Planks"
+ },
+ "thatched_chorus_planks": {
+  "diaithiris": "Klàrun keòl tugaichti",
+  "english": "Thatched Chorus Planks"
+ },
+ "chorus_log": {
+  "diaithiris": "Stok keòl",
+  "english": "Chorus Log"
+ },
+ "chorus_wood": {
+  "diaithiris": "Fiud keòl",
+  "english": "Chorus Wood"
+ },
+ "blossoming_chorus_wood": {
+  "diaithiris": "Fiud keòl fuo-fhlùar",
+  "english": "Blossoming Chorus Wood"
+ },
+ "blooming_chorus_wood": {
+  "diaithiris": "Fiud keòl fàsu",
+  "english": "Blooming Chorus Wood"
+ },
+ "studded_chorus_wood": {
+  "diaithiris": "Fiud keòl takaichti",
+  "english": "Studded Chorus Wood"
+ },
+ "chorus_wood_stairs": {
+  "diaithiris": "Staidri fiud keòl",
+  "english": "Chorus Wood Stairs"
+ },
+ "chorus_wood_slab": {
+  "diaithiris": "Liek fiud keòl",
+  "english": "Chorus Wood Slab"
+ },
+ "chorus_pressure_plate": {
+  "diaithiris": "Klàr-brutaid keòl",
+  "english": "Chorus Pressure Plate"
+ },
+ "chorus_trapdoor": {
+  "diaithiris": "Douras-toild keòl",
+  "english": "Chorus Trapdoor"
+ },
+ "chorus_button": {
+  "diaithiris": "Putun keòl",
+  "english": "Chorus Button"
+ },
+ "chorus_stairs": {
+  "diaithiris": "Staidri keòl",
+  "english": "Chorus Stairs"
+ },
+ "chorus_slab": {
+  "diaithiris": "Liek keòl",
+  "english": "Chorus Slab"
+ },
+ "chorus_fence_gate": {
+  "diaithiris": "Gieta kaldaid keòl",
+  "english": "Chorus Fence Gate"
+ },
+ "chorus_fence": {
+  "diaithiris": "Kaldaid keòl",
+  "english": "Chorus Fence"
+ },
+ "chorus_door": {
+  "diaithiris": "Douras keòl",
+  "english": "Chorus Door"
+ },
+ "corrupt_chorus_planks": {
+  "diaithiris": "Klàrun keòl truoildti",
+  "english": "Corrupted Chorus Planks"
+ },
+ "soiled_corrupt_chorus_planks": {
+  "diaithiris": "Klàrun keòl truoildti saulach",
+  "english": "Soiled Corrupted Chorus Planks"
+ },
+ "corrupt_chorus_log": {
+  "diaithiris": "Stok keòl truoildti",
+  "english": "Corrupted Chorus Log"
+ },
+ "corrupt_chorus_wood": {
+  "diaithiris": "Fiud keòl truoildti",
+  "english": "Corrupted Chorus Wood"
+ },
+ "corrupt_chorus_pressure_plate": {
+  "diaithiris": "Klàr-brutaid keòl truoildti",
+  "english": "Corrupted Chorus Pressure Plate"
+ },
+ "corrupt_chorus_trapdoor": {
+  "diaithiris": "Douras-toild keòl truoildti",
+  "english": "Corrupted Chorus Trapdoor"
+ },
+ "corrupt_chorus_button": {
+  "diaithiris": "Putun keòl truoildti",
+  "english": "Corrupted Chorus Button"
+ },
+ "corrupt_chorus_stairs": {
+  "diaithiris": "Staidri keòl truoildti",
+  "english": "Corrupted Chorus Stairs"
+ },
+ "corrupt_chorus_slab": {
+  "diaithiris": "Liek keòl truoildti",
+  "english": "Corrupted Chorus Slab"
+ },
+ "corrupt_chorus_fence_gate": {
+  "diaithiris": "Gieta kaldaid keòl truoildti",
+  "english": "Corrupted Chorus Fence Gate"
+ },
+ "corrupt_chorus_fence": {
+  "diaithiris": "Kaldaid keòl truoildti",
+  "english": "Corrupted Chorus Fence"
+ },
+ "corrupt_chorus_door": {
+  "diaithiris": "Douras keòl truoildti",
+  "english": "Corrupted Chorus Door"
+ },
+ "shade_stone": {
+  "diaithiris": "Klach sgàili",
+  "english": "Shade Stone"
+ },
+ "shade_stone_polished": {
+  "diaithiris": "Klach sgàili lìumti",
+  "english": "Polished Shade Stone"
+ },
+ "shade_stone_chiseled": {
+  "diaithiris": "Klach sgàili snaidti",
+  "english": "Chiseled Shade Stone"
+ },
+ "shade_stone_bricks": {
+  "diaithiris": "Breigen klach sgàili",
+  "english": "Shade Stone Bricks"
+ },
+ "shade_bricks": {
+  "diaithiris": "Breigen sgàili",
+  "english": "Shade Bricks"
+ },
+ "shade_tiles": {
+  "diaithiris": "Liekagun sgàili",
+  "english": "Shade Tiles"
+ },
+ "shade_pillar": {
+  "diaithiris": "Kolb sgàili",
+  "english": "Shade Pillar"
+ },
+ "crypt_stone": {
+  "diaithiris": "Klach ueig",
+  "english": "Crypt Stone"
+ },
+ "crypt_stone_polished": {
+  "diaithiris": "Klach ueig lìumti",
+  "english": "Polished Crypt Stone"
+ },
+ "crypt_stone_chiseled": {
+  "diaithiris": "Klach ueig snaidti",
+  "english": "Chiseled Crypt Stone"
+ },
+ "crypt_bricks": {
+  "diaithiris": "Breigen ueig",
+  "english": "Crypt Bricks"
+ },
+ "crypt_tiles": {
+  "diaithiris": "Liekagun ueig",
+  "english": "Crypt Tiles"
+ },
+ "crypt_plinth": {
+  "diaithiris": "Buinait ueig",
+  "english": "Crypt Plinth"
+ },
+ "crypt_pillar": {
+  "diaithiris": "Kolb ueig",
+  "english": "Crypt Pillar"
+ },
+ "marble": {
+  "diaithiris": "Màrmur",
+  "english": "Marble"
+ },
+ "cracked_marble": {
+  "diaithiris": "Màrmur sgàinti",
+  "english": "Cracked Marble"
+ },
+ "gold_arch_marble": {
+  "diaithiris": "Màrmur bougach òru",
+  "english": "Gold Arched Marble"
+ },
+ "gold_banded_marble": {
+  "diaithiris": "Màrmur baund òru",
+  "english": "Gold Banded Marble"
+ },
+ "gold_holder_marble": {
+  "diaithiris": "Màrmur gleideduir òru",
+  "english": "Gold Holder Marble"
+ },
+ "gold_covered_marble": {
+  "diaithiris": "Màrmur kòmdaichti òru",
+  "english": "Gold Covered Marble"
+ },
+ "gold_plated_marble": {
+  "diaithiris": "Màrmur plàtaichti òru",
+  "english": "Gold Plated Marble"
+ },
+ "slate_marble": {
+  "diaithiris": "Màrmur leigr",
+  "english": "Slate Marble"
+ },
+ "worn_slate_marble": {
+  "diaithiris": "Màrmur leigr kaitti",
+  "english": "Worn Slate Marble"
+ },
+ "weathered_slate_marble": {
+  "diaithiris": "Màrmur leigr kaitti",
+  "english": "Weathered Slate Marble"
+ },
+ "slate_connected_marble": {
+  "diaithiris": "Màrmur kienguilti leigr",
+  "english": "Slate Connected Marble"
+ },
+ "slate_patterned_marble": {
+  "diaithiris": "Màrmur pàtrundach leigr",
+  "english": "Slate Patterned Marble"
+ },
+ "slate_cornered_marble": {
+  "diaithiris": "Màrmur keàrnach leigr",
+  "english": "Slate Cornered Marble"
+ },
+ "silt_marble_slight": {
+  "diaithiris": "Màrmur salachur aetrum",
+  "english": "Slight Silt Marble"
+ },
+ "silt_marble": {
+  "diaithiris": "Màrmur salachur",
+  "english": "Silt Marble"
+ },
+ "silt_marble_heavy": {
+  "diaithiris": "Màrmur salachur troum",
+  "english": "Heavy Silt Marble"
+ },
+ "silt_slate_marble": {
+  "diaithiris": "Màrmur leigr salachur",
+  "english": "Silt Slate Marble"
+ },
+ "indented_gold": {
+  "diaithiris": "Blok òru iegaichti",
+  "english": "Indented Gold Block"
+ },
+ "chiseled_indented_gold": {
+  "diaithiris": "Blok òru iegaichti snaidti",
+  "english": "Chiseled Indented Gold Block"
+ },
+ "carved_indented_gold": {
+  "diaithiris": "Blok òru iegaichti gierrti",
+  "english": "Carved Indented Gold Block"
+ },
+ "cragrocks": {
+  "diaithiris": "Kriegun",
+  "english": "Cragrocks"
+ },
+ "mossy_cragrocks_slight": {
+  "diaithiris": "Kriegun kaenaig aetrum",
+  "english": "Slight Mossy Cragrocks"
+ },
+ "mossy_cragrocks": {
+  "diaithiris": "Kriegun kaenaig",
+  "english": "Mossy Cragrocks"
+ },
+ "mossy_cragrocks_heavy": {
+  "diaithiris": "Kriegun kaenaig troum",
+  "english": "Heavy Mossy Cragrocks"
+ },
+ "crag_tiles": {
+  "diaithiris": "Liekagun krieg",
+  "english": "Crag Tiles"
+ },
+ "mossy_crag_tiles_slight": {
+  "diaithiris": "Liekagun krieg kaenaig aetrum",
+  "english": "Slight Mossy Crag Tiles"
+ },
+ "mossy_crag_tiles": {
+  "diaithiris": "Liekagun krieg kaenaig",
+  "english": "Mossy Crag Tiles"
+ },
+ "crag_bricks": {
+  "diaithiris": "Breigen krieg",
+  "english": "Crag Bricks"
+ },
+ "snowy_crag_bricks": {
+  "diaithiris": "Breigen krieg sniechdach",
+  "english": "Snowy Crag Bricks"
+ },
+ "crag_pavement": {
+  "diaithiris": "Keim krieg",
+  "english": "Crag Pavement"
+ },
+ "cracked_crag_pavement": {
+  "diaithiris": "Keim krieg sgàinti",
+  "english": "Cracked Crag Pavement"
+ },
+ "snowy_crag_pavement": {
+  "diaithiris": "Keim krieg sniechdach",
+  "english": "Snowy Crag Pavement"
+ },
+ "mossy_crag_pavement": {
+  "diaithiris": "Keim krieg kaenaig",
+  "english": "Mossy Crag Pavement"
+ },
+ "mossy_crag_pavement_heavy": {
+  "diaithiris": "Keim krieg kaenaig troum",
+  "english": "Heavy Mossy Crag Pavement"
+ },
+ "silt_studded_crag_tiles": {
+  "diaithiris": "Liekagun krieg takaichti salachur",
+  "english": "Silt Studded Crag Tiles"
+ },
+ "highrock": {
+  "diaithiris": "Àrdu-chrieg",
+  "english": "Highrock"
+ },
+ "polished_highrock": {
+  "diaithiris": "Àrdu-chrieg lìumti",
+  "english": "Polished Highrock"
+ },
+ "highrock_bricks": {
+  "diaithiris": "Breigen àrdu-chrieg",
+  "english": "Highrock Bricks"
+ },
+ "highrock_indented_bricks": {
+  "diaithiris": "Breigen iegaichti àrdu-chrieg",
+  "english": "Highrock Indented Bricks"
+ },
+ "snowy_highrock_bricks_slight": {
+  "diaithiris": "Breigen àrdu-chrieg sniechdach aetrum",
+  "english": "Slight Snowy Highrock Bricks"
+ },
+ "snowy_highrock_bricks": {
+  "diaithiris": "Breigen àrdu-chrieg sniechdach",
+  "english": "Snowy Highrock Bricks"
+ },
+ "gold_indented_highrock_bricks": {
+  "diaithiris": "Breigen àrdu-chrieg iegaichti òru",
+  "english": "Gold Indented Highrock Bricks"
+ },
+ "gold_chiseled_highrock_bricks": {
+  "diaithiris": "Breigen àrdu-chrieg snaidti òru",
+  "english": "Gold Chiseled Highrock Bricks"
+ },
+ "silt_highrock": {
+  "diaithiris": "Àrdu-chrieg salachur",
+  "english": "Silt Highrock"
+ },
+ "siltstone": {
+  "diaithiris": "Klach-shalachuir",
+  "english": "Siltstone"
+ },
+ "snowy_siltstone_slight": {
+  "diaithiris": "Klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone"
+ },
+ "snowy_siltstone": {
+  "diaithiris": "Klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone"
+ },
+ "dirty_siltstone": {
+  "diaithiris": "Klach-shalachuir saulach",
+  "english": "Dirty Siltstone"
+ },
+ "dirty_siltstone_heavy": {
+  "diaithiris": "Klach-shalachuir saulach troum",
+  "english": "Heavy Dirty Siltstone"
+ },
+ "cobbled_siltstone": {
+  "diaithiris": "Klach-shalachuir kloichti",
+  "english": "Cobbled Siltstone"
+ },
+ "snowy_cobbled_siltstone": {
+  "diaithiris": "Klach-shalachuir kloichti sniechdach",
+  "english": "Snowy Cobbled Siltstone"
+ },
+ "mossy_cobbled_siltstone": {
+  "diaithiris": "Klach-shalachuir kloichti kaenaig",
+  "english": "Mossy Cobbled Siltstone"
+ },
+ "dirty_cobbled_siltstone": {
+  "diaithiris": "Klach-shalachuir kloichti saulach",
+  "english": "Dirty Cobbled Siltstone"
+ },
+ "siltstone_bricks": {
+  "diaithiris": "Breigen klach-shalachuir",
+  "english": "Siltstone Bricks"
+ },
+ "snowy_siltstone_bricks_slight": {
+  "diaithiris": "Breigen klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone Bricks"
+ },
+ "snowy_siltstone_bricks": {
+  "diaithiris": "Breigen klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Bricks"
+ },
+ "siltstone_tiles": {
+  "diaithiris": "Liekagun klach-shalachuir",
+  "english": "Siltstone Tiles"
+ },
+ "siltstone_pavement": {
+  "diaithiris": "Keim klach-shalachuir",
+  "english": "Siltstone Pavement"
+ },
+ "chiseled_siltstone": {
+  "diaithiris": "Klach-shalachuir snaidti",
+  "english": "Chiseled Siltstone"
+ },
+ "snowy_chiseled_siltstone": {
+  "diaithiris": "Klach-shalachuir snaidti sniechdach",
+  "english": "Snowy Chiseled Siltstone"
+ },
+ "dirty_chiseled_siltstone": {
+  "diaithiris": "Klach-shalachuir snaidti saulach",
+  "english": "Dirty Chiseled Siltstone"
+ },
+ "chiseled_siltstone_bricks": {
+  "diaithiris": "Breigen klach-shalachuir snaidti",
+  "english": "Chiseled Siltstone Bricks"
+ },
+ "siltstone_pillar": {
+  "diaithiris": "Kolb klach-shalachuir",
+  "english": "Siltstone Pillar"
+ },
+ "snowy_siltstone_pillar": {
+  "diaithiris": "Kolb klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Pillar"
+ },
+ "red_siltstone_pillar": {
+  "diaithiris": "Kolb klach-shalachuir dierg",
+  "english": "Red Siltstone Pillar"
+ },
+ "blue_siltstone_pillar": {
+  "diaithiris": "Kolb klach-shalachuir gourm",
+  "english": "Blue Siltstone Pillar"
+ },
+ "green_siltstone_pillar": {
+  "diaithiris": "Kolb klach-shalachuir uoini",
+  "english": "Green Siltstone Pillar"
+ },
+ "dirty_ominous_stone_slight": {
+  "diaithiris": "Klach mìa-fhortunach saulach aetrum",
+  "english": "Slight Dirty Ominous Stone"
+ },
+ "dirty_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach saulach",
+  "english": "Dirty Ominous Stone"
+ },
+ "cobbled_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach kloichti",
+  "english": "Cobbled Ominous Stone"
+ },
+ "polished_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach lìumti",
+  "english": "Polished Ominous Stone"
+ },
+ "polished_dark_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach dourcha lìumti",
+  "english": "Polished Dark Ominous Stone"
+ },
+ "cracked_polished_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach lìumti sgàinti",
+  "english": "Cracked Polished Ominous Stone"
+ },
+ "soiled_polished_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach lìumti saulach",
+  "english": "Soiled Polished Ominous Stone"
+ },
+ "soiled_polished_ominous_stone_heavy": {
+  "diaithiris": "Klach mìa-fhortunach lìumti saulach troum",
+  "english": "Heavy Soiled Polished Ominous Stone"
+ },
+ "ominous_stone_bricks": {
+  "diaithiris": "Breigen klach mìa-fhortunach",
+  "english": "Ominous Stone Bricks"
+ },
+ "cracked_ominous_stone_bricks": {
+  "diaithiris": "Breigen klach mìa-fhortunach sgàinti",
+  "english": "Cracked Ominous Stone Bricks"
+ },
+ "dirty_ominous_stone_bricks_slight": {
+  "diaithiris": "Breigen klach mìa-fhortunach saulach aetrum",
+  "english": "Slight Dirty Ominous Stone Bricks"
+ },
+ "dirty_ominous_stone_bricks": {
+  "diaithiris": "Breigen klach mìa-fhortunach saulach",
+  "english": "Dirty Ominous Stone Bricks"
+ },
+ "dirty_ominous_stone_bricks_heavy": {
+  "diaithiris": "Breigen klach mìa-fhortunach saulach troum",
+  "english": "Heavy Dirty Ominous Stone Bricks"
+ },
+ "ominous_stone_tiles": {
+  "diaithiris": "Liekagun klach mìa-fhortunach",
+  "english": "Ominous Stone Tiles"
+ },
+ "dirty_ominous_stone_tiles_slight": {
+  "diaithiris": "Liekagun klach mìa-fhortunach saulach aetrum",
+  "english": "Slight Dirty Ominous Stone Tiles"
+ },
+ "dirty_ominous_stone_tiles": {
+  "diaithiris": "Liekagun klach mìa-fhortunach saulach",
+  "english": "Dirty Ominous Stone Tiles"
+ },
+ "dirty_ominous_stone_tiles_heavy": {
+  "diaithiris": "Liekagun klach mìa-fhortunach saulach troum",
+  "english": "Heavy Dirty Ominous Stone Tiles"
+ },
+ "ominous_stone_pavement": {
+  "diaithiris": "Keim klach mìa-fhortunach",
+  "english": "Ominous Stone Pavement"
+ },
+ "dirty_ominous_stone_pavement": {
+  "diaithiris": "Keim klach mìa-fhortunach saulach",
+  "english": "Dirty Ominous Stone Pavement"
+ },
+ "dirty_ominous_stone_pavement_heavy": {
+  "diaithiris": "Keim klach mìa-fhortunach saulach troum",
+  "english": "Heavy Dirty Ominous Stone Pavement"
+ },
+ "ominous_stone_pillar": {
+  "diaithiris": "Kolb klach mìa-fhortunach",
+  "english": "Ominous Stone Pillar"
+ },
+ "chiseled_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach snaidti",
+  "english": "Chiseled Ominous Stone"
+ },
+ "chiseled_polished_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach lìumti snaidti",
+  "english": "Chiseled Polished Ominous Stone"
+ },
+ "chiseled_ominous_stone_bricks": {
+  "diaithiris": "Breigen klach mìa-fhortunach snaidti",
+  "english": "Chiseled Ominous Stone Bricks"
+ },
+ "big_end_stone_bricks": {
+  "diaithiris": "Breigen klach krìuch mòru",
+  "english": "Big End Stone Bricks"
+ },
+ "messy_end_stone_bricks": {
+  "diaithiris": "Breigen klach krìuch ròipach",
+  "english": "Messy End Stone Bricks"
+ },
+ "chiseled_end_stone": {
+  "diaithiris": "Klach krìuch snaidti",
+  "english": "Chiseled End Stone"
+ },
+ "chiseled_end_stone_bricks": {
+  "diaithiris": "Breigen klach krìuch snaidti",
+  "english": "Chiseled End Stone Bricks"
+ },
+ "soiled_end_stone_bricks_slight": {
+  "diaithiris": "Breigen klach krìuch saulach aetrum",
+  "english": "Slight Soiled End Stone Bricks"
+ },
+ "soiled_end_stone_bricks": {
+  "diaithiris": "Breigen klach krìuch saulach",
+  "english": "Soiled End Stone Bricks"
+ },
+ "soiled_end_stone_bricks_heavy": {
+  "diaithiris": "Breigen klach krìuch saulach troum",
+  "english": "Heavy Soiled End Stone Bricks"
+ },
+ "end_stone_tiles": {
+  "diaithiris": "Liekagun klach krìuch",
+  "english": "End Stone Tiles"
+ },
+ "soiled_end_stone_tiles": {
+  "diaithiris": "Liekagun klach krìuch saulach",
+  "english": "Soiled End Stone Tiles"
+ },
+ "smooth_end_stone": {
+  "diaithiris": "Klach krìuch rèid",
+  "english": "Smooth End Stone"
+ },
+ "muddy_smooth_end_stone": {
+  "diaithiris": "Klach krìuch rèid ieburach",
+  "english": "Muddy Smooth End Stone"
+ },
+ "mixed_end_stone": {
+  "diaithiris": "Klach krìuch miesgaichti",
+  "english": "Mixed End Stone"
+ },
+ "end_stone_slate_rock": {
+  "diaithiris": "Leigr klach krìuch kriegach",
+  "english": "Rocked End Stone Slate"
+ },
+ "cobbled_end_stone": {
+  "diaithiris": "Klach krìuch kloichti",
+  "english": "Cobbled End Stone"
+ },
+ "soiled_cobbled_end_stone_slight": {
+  "diaithiris": "Klach krìuch kloichti saulach aetrum",
+  "english": "Slight Soiled Cobbled End Stone"
+ },
+ "soiled_cobbled_end_stone": {
+  "diaithiris": "Klach krìuch kloichti saulach",
+  "english": "Soiled Cobbled End Stone"
+ },
+ "soiled_cobbled_end_stone_heavy": {
+  "diaithiris": "Klach krìuch kloichti saulach troum",
+  "english": "Heavy Soiled Cobbled End Stone"
+ },
+ "grown_cobbled_end_stone": {
+  "diaithiris": "Klach krìuch kloichti fàista",
+  "english": "Grown Cobbled End Stone"
+ },
+ "dirty_cobbled_end_stone": {
+  "diaithiris": "Klach krìuch kloichti saulach",
+  "english": "Dirty Cobbled End Stone"
+ },
+ "dirty_cobbled_end_stone_heavy": {
+  "diaithiris": "Klach krìuch kloichti saulach troum",
+  "english": "Heavy Dirty Cobbled End Stone"
+ },
+ "end_stone_pillar": {
+  "diaithiris": "Kolb klach krìuch",
+  "english": "End Stone Pillar"
+ },
+ "chorus_end_stone_pillar": {
+  "diaithiris": "Kolb klach krìuch keòl",
+  "english": "Chorus End Stone Pillar"
+ },
+ "infused_end_stone_pillar": {
+  "diaithiris": "Kolb klach krìuch lìunta",
+  "english": "Infused End Stone Pillar"
+ },
+ "end_rod_block": {
+  "diaithiris": "Blok slaut krìuch",
+  "english": "End Rod Block"
+ },
+ "soiled_purpur_block": {
+  "diaithiris": "Blok puirpur saulach",
+  "english": "Soiled Purpur Block"
+ },
+ "shade_stone_slab": {
+  "diaithiris": "Liek klach sgàili",
+  "english": "Shade Stone Slab"
+ },
+ "shade_stone_polished_slab": {
+  "diaithiris": "Liek klach sgàili lìumti",
+  "english": "Polished Shade Stone Slab"
+ },
+ "shade_stone_bricks_slab": {
+  "diaithiris": "Liek breigen klach sgàili",
+  "english": "Shade Stone Bricks Slab"
+ },
+ "shade_bricks_slab": {
+  "diaithiris": "Liek breigen sgàili",
+  "english": "Shade Bricks Slab"
+ },
+ "shade_tiles_slab": {
+  "diaithiris": "Liek liekagun sgàili",
+  "english": "Shade Tiles Slab"
+ },
+ "crypt_stone_slab": {
+  "diaithiris": "Liek klach ueig",
+  "english": "Crypt Stone Slab"
+ },
+ "crypt_stone_polished_slab": {
+  "diaithiris": "Liek klach ueig lìumti",
+  "english": "Polished Crypt Stone Slab"
+ },
+ "crypt_bricks_slab": {
+  "diaithiris": "Liek breigen ueig",
+  "english": "Crypt Bricks Slab"
+ },
+ "crypt_tiles_slab": {
+  "diaithiris": "Liek liekagun ueig",
+  "english": "Crypt Tiles Slab"
+ },
+ "marble_slab": {
+  "diaithiris": "Liek màrmur",
+  "english": "Marble Slab"
+ },
+ "cracked_marble_slab": {
+  "diaithiris": "Liek màrmur sgàinti",
+  "english": "Cracked Marble Slab"
+ },
+ "smooth_marble_slab": {
+  "diaithiris": "Liek màrmur rèid",
+  "english": "Smooth Marble Slab"
+ },
+ "slate_marble_slab": {
+  "diaithiris": "Liek màrmur leigr",
+  "english": "Slate Marble Slab"
+ },
+ "cragrocks_slab": {
+  "diaithiris": "Liek kriegun",
+  "english": "Cragrocks Slab"
+ },
+ "mossy_cragrocks_slight_slab": {
+  "diaithiris": "Liek kriegun kaenaig aetrum",
+  "english": "Slight Mossy Cragrocks Slab"
+ },
+ "mossy_cragrocks_slab": {
+  "diaithiris": "Liek kriegun kaenaig",
+  "english": "Mossy Cragrocks Slab"
+ },
+ "mossy_cragrocks_heavy_slab": {
+  "diaithiris": "Liek kriegun kaenaig troum",
+  "english": "Heavy Mossy Cragrocks Slab"
+ },
+ "crag_tile_slab": {
+  "diaithiris": "Liek liekag krieg",
+  "english": "Crag Tile Slab"
+ },
+ "crag_brick_slab": {
+  "diaithiris": "Liek breigen krieg",
+  "english": "Crag Brick Slab"
+ },
+ "snowy_crag_brick_slab": {
+  "diaithiris": "Liek breigen krieg sniechdach",
+  "english": "Snowy Crag Brick Slab"
+ },
+ "crag_pavement_slab": {
+  "diaithiris": "Liek keim krieg",
+  "english": "Crag Pavement Slab"
+ },
+ "cracked_crag_pavement_slab": {
+  "diaithiris": "Liek keim krieg sgàinti",
+  "english": "Cracked Crag Pavement Slab"
+ },
+ "highrock_slab": {
+  "diaithiris": "Liek àrdu-chrieg",
+  "english": "Highrock Slab"
+ },
+ "polished_highrock_slab": {
+  "diaithiris": "Liek àrdu-chrieg lìumti",
+  "english": "Polished Highrock Slab"
+ },
+ "highrock_brick_slab": {
+  "diaithiris": "Liek breigen àrdu-chrieg",
+  "english": "Highrock Brick Slab"
+ },
+ "snowy_highrock_brick_slight_slab": {
+  "diaithiris": "Liek breigen àrdu-chrieg sniechdach aetrum",
+  "english": "Slight Snowy Highrock Brick Slab"
+ },
+ "snowy_highrock_brick_slab": {
+  "diaithiris": "Liek breigen àrdu-chrieg sniechdach",
+  "english": "Snowy Highrock Brick Slab"
+ },
+ "silt_highrock_slab": {
+  "diaithiris": "Liek àrdu-chrieg salachur",
+  "english": "Silt Highrock Slab"
+ },
+ "siltstone_slab": {
+  "diaithiris": "Liek klach-shalachuir",
+  "english": "Siltstone Slab"
+ },
+ "cobbled_siltstone_slab": {
+  "diaithiris": "Liek klach-shalachuir kloichti",
+  "english": "Cobbled Siltstone Slab"
+ },
+ "snowy_cobbled_siltstone_slab": {
+  "diaithiris": "Liek klach-shalachuir kloichti sniechdach",
+  "english": "Snowy Cobbled Siltstone Slab"
+ },
+ "siltstone_brick_slab": {
+  "diaithiris": "Liek breigen klach-shalachuir",
+  "english": "Siltstone Brick Slab"
+ },
+ "snowy_siltstone_brick_slight_slab": {
+  "diaithiris": "Liek breigen klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone Brick Slab"
+ },
+ "snowy_siltstone_brick_slab": {
+  "diaithiris": "Liek breigen klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Brick Slab"
+ },
+ "siltstone_tile_slab": {
+  "diaithiris": "Liek liekag klach-shalachuir",
+  "english": "Siltstone Tile Slab"
+ },
+ "siltstone_pavement_slab": {
+  "diaithiris": "Liek keim klach-shalachuir",
+  "english": "Siltstone Pavement Slab"
+ },
+ "indented_gold_slab": {
+  "diaithiris": "Liek blok òru iegaichti",
+  "english": "Indented Gold Block Slab"
+ },
+ "cobbled_ominous_stone_slab": {
+  "diaithiris": "Liek klach mìa-fhortunach kloichti",
+  "english": "Cobbled Ominous Stone Slab"
+ },
+ "polished_ominous_stone_slab": {
+  "diaithiris": "Liek klach mìa-fhortunach lìumti",
+  "english": "Polished Ominous Stone Slab"
+ },
+ "polished_dark_ominous_stone_slab": {
+  "diaithiris": "Liek klach mìa-fhortunach dourcha lìumti",
+  "english": "Polished Dark Ominous Stone Slab"
+ },
+ "ominous_stone_brick_slab": {
+  "diaithiris": "Liek breigen klach mìa-fhortunach",
+  "english": "Ominous Stone Brick Slab"
+ },
+ "ominous_stone_tile_slab": {
+  "diaithiris": "Liek liekag klach mìa-fhortunach",
+  "english": "Ominous Stone Tile Slab"
+ },
+ "ominous_stone_pavement_slab": {
+  "diaithiris": "Liek keim klach mìa-fhortunach",
+  "english": "Ominous Stone Pavement Slab"
+ },
+ "ominous_stone_pillar_slab": {
+  "diaithiris": "Liek kolb klach mìa-fhortunach",
+  "english": "Ominous Stone Pillar Slab"
+ },
+ "dark_dirt_slab": {
+  "diaithiris": "Liek salchur dourcha",
+  "english": "Dark Dirt Slab"
+ },
+ "end_stone_tile_slab": {
+  "diaithiris": "Liek liekag klach krìuch",
+  "english": "End Stone Tile Slab"
+ },
+ "smooth_end_stone_slab": {
+  "diaithiris": "Liek klach krìuch rèid",
+  "english": "Smooth End Stone Slab"
+ },
+ "cobbled_end_stone_slab": {
+  "diaithiris": "Liek klach krìuch kloichti",
+  "english": "Cobbled End Stone Slab"
+ },
+ "shade_stone_stairs": {
+  "diaithiris": "Staidri klach sgàili",
+  "english": "Shade Stone Stairs"
+ },
+ "shade_stone_polished_stairs": {
+  "diaithiris": "Staidri klach sgàili lìumti",
+  "english": "Polished Shade Stone Stairs"
+ },
+ "shade_stone_bricks_stairs": {
+  "diaithiris": "Staidri breigen klach sgàili",
+  "english": "Shade Stone Bricks Stairs"
+ },
+ "shade_bricks_stairs": {
+  "diaithiris": "Staidri breigen sgàili",
+  "english": "Shade Bricks Stairs"
+ },
+ "shade_tiles_stairs": {
+  "diaithiris": "Staidri liekagun sgàili",
+  "english": "Shade Tiles Stairs"
+ },
+ "crypt_stone_stairs": {
+  "diaithiris": "Staidri klach ueig",
+  "english": "Crypt Stone Stairs"
+ },
+ "crypt_stone_polished_stairs": {
+  "diaithiris": "Staidri klach ueig lìumti",
+  "english": "Polished Crypt Stone Stairs"
+ },
+ "crypt_bricks_stairs": {
+  "diaithiris": "Staidri breigen ueig",
+  "english": "Crypt Bricks Stairs"
+ },
+ "crypt_tiles_stairs": {
+  "diaithiris": "Staidri liekagun ueig",
+  "english": "Crypt Tiles Stairs"
+ },
+ "marble_stairs": {
+  "diaithiris": "Staidri màrmur",
+  "english": "Marble Stairs"
+ },
+ "slate_marble_stairs": {
+  "diaithiris": "Staidri màrmur leigr",
+  "english": "Slate Marble Stairs"
+ },
+ "cragrocks_stairs": {
+  "diaithiris": "Staidri kriegun",
+  "english": "Cragrocks Stairs"
+ },
+ "crag_tile_stairs": {
+  "diaithiris": "Staidri liekag krieg",
+  "english": "Crag Tile Stairs"
+ },
+ "crag_brick_stairs": {
+  "diaithiris": "Staidri breigen krieg",
+  "english": "Crag Brick Stairs"
+ },
+ "snowy_crag_brick_stairs": {
+  "diaithiris": "Staidri breigen krieg sniechdach",
+  "english": "Snowy Crag Brick Stairs"
+ },
+ "highrock_stairs": {
+  "diaithiris": "Staidri àrdu-chrieg",
+  "english": "Highrock Stairs"
+ },
+ "polished_highrock_stairs": {
+  "diaithiris": "Staidri àrdu-chrieg lìumti",
+  "english": "Polished Highrock Stairs"
+ },
+ "highrock_brick_stairs": {
+  "diaithiris": "Staidri breigen àrdu-chrieg",
+  "english": "Highrock Brick Stairs"
+ },
+ "snowy_highrock_brick_slight_stairs": {
+  "diaithiris": "Staidri breigen àrdu-chrieg sniechdach aetrum",
+  "english": "Slight Snowy Highrock Brick Stairs"
+ },
+ "snowy_highrock_brick_stairs": {
+  "diaithiris": "Staidri breigen àrdu-chrieg sniechdach",
+  "english": "Snowy Highrock Brick Stairs"
+ },
+ "siltstone_stairs": {
+  "diaithiris": "Staidri klach-shalachuir",
+  "english": "Siltstone Stairs"
+ },
+ "cobbled_siltstone_stairs": {
+  "diaithiris": "Staidri klach-shalachuir kloichti",
+  "english": "Cobbled Siltstone Stairs"
+ },
+ "snowy_cobbled_siltstone_stairs": {
+  "diaithiris": "Staidri klach-shalachuir kloichti sniechdach",
+  "english": "Snowy Cobbled Siltstone Stairs"
+ },
+ "siltstone_tile_stairs": {
+  "diaithiris": "Staidri liekag klach-shalachuir",
+  "english": "Siltstone Tile Stairs"
+ },
+ "siltstone_brick_stairs": {
+  "diaithiris": "Staidri breigen klach-shalachuir",
+  "english": "Siltstone Brick Stairs"
+ },
+ "snowy_siltstone_brick_slight_stairs": {
+  "diaithiris": "Staidri breigen klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone Brick Stairs"
+ },
+ "snowy_siltstone_brick_stairs": {
+  "diaithiris": "Staidri breigen klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Brick Stairs"
+ },
+ "siltstone_pavement_stairs": {
+  "diaithiris": "Staidri keim klach-shalachuir",
+  "english": "Siltstone Pavement Stairs"
+ },
+ "indented_gold_stairs": {
+  "diaithiris": "Staidri blok òru iegaichti",
+  "english": "Indented Gold Block Stairs"
+ },
+ "cobbled_ominous_stone_stairs": {
+  "diaithiris": "Staidri klach mìa-fhortunach kloichti",
+  "english": "Cobbled Ominous Stone Stairs"
+ },
+ "polished_ominous_stone_stairs": {
+  "diaithiris": "Staidri klach mìa-fhortunach lìumti",
+  "english": "Polished Ominous Stone Stairs"
+ },
+ "polished_dark_ominous_stone_stairs": {
+  "diaithiris": "Staidri klach mìa-fhortunach dourcha lìumti",
+  "english": "Polished Dark Ominous Stone Stairs"
+ },
+ "ominous_stone_brick_stairs": {
+  "diaithiris": "Staidri breigen klach mìa-fhortunach",
+  "english": "Ominous Stone Brick Stairs"
+ },
+ "ominous_stone_tile_stairs": {
+  "diaithiris": "Staidri liekag klach mìa-fhortunach",
+  "english": "Ominous Stone Tile Stairs"
+ },
+ "ominous_stone_pavement_stairs": {
+  "diaithiris": "Staidri keim klach mìa-fhortunach",
+  "english": "Ominous Stone Pavement Stairs"
+ },
+ "end_stone_tile_stairs": {
+  "diaithiris": "Staidri liekag klach krìuch",
+  "english": "End Stone Tile Stairs"
+ },
+ "smooth_end_stone_stairs": {
+  "diaithiris": "Staidri klach krìuch rèid",
+  "english": "Smooth End Stone Stairs"
+ },
+ "cobbled_end_stone_stairs": {
+  "diaithiris": "Staidri klach krìuch kloichti",
+  "english": "Cobbled End Stone Stairs"
+ },
+ "shade_bricks_wall": {
+  "diaithiris": "Balda breigen sgàili",
+  "english": "Shade Bricks Wall"
+ },
+ "shade_stone_bricks_wall": {
+  "diaithiris": "Balda breigen klach sgàili",
+  "english": "Shade Stone Bricks Wall"
+ },
+ "crypt_stone_polished_wall": {
+  "diaithiris": "Balda klach ueig lìumti",
+  "english": "Polished Crypt Stone Wall"
+ },
+ "crypt_bricks_wall": {
+  "diaithiris": "Balda breigen ueig",
+  "english": "Crypt Bricks Wall"
+ },
+ "crypt_tiles_wall": {
+  "diaithiris": "Balda liekagun ueig",
+  "english": "Crypt Tiles Wall"
+ },
+ "cragrocks_wall": {
+  "diaithiris": "Balda kriegun",
+  "english": "Cragrocks Wall"
+ },
+ "crag_tile_wall": {
+  "diaithiris": "Balda liekag krieg",
+  "english": "Crag Tile Wall"
+ },
+ "crag_brick_wall": {
+  "diaithiris": "Balda breigen krieg",
+  "english": "Crag Brick Wall"
+ },
+ "snowy_crag_brick_wall": {
+  "diaithiris": "Balda breigen krieg sniechdach",
+  "english": "Snowy Crag Brick Wall"
+ },
+ "cragrocks_fence": {
+  "diaithiris": "Kaldaid kriegun",
+  "english": "Cragrocks Fence"
+ },
+ "highrock_wall": {
+  "diaithiris": "Balda àrdu-chrieg",
+  "english": "Highrock Wall"
+ },
+ "polished_highrock_wall": {
+  "diaithiris": "Balda àrdu-chrieg lìumti",
+  "english": "Polished Highrock Wall"
+ },
+ "highrock_brick_wall": {
+  "diaithiris": "Balda breigen àrdu-chrieg",
+  "english": "Highrock Brick Wall"
+ },
+ "snowy_highrock_brick_slight_wall": {
+  "diaithiris": "Balda breigen àrdu-chrieg sniechdach aetrum",
+  "english": "Slight Snowy Highrock Brick Wall"
+ },
+ "snowy_highrock_brick_wall": {
+  "diaithiris": "Balda breigen àrdu-chrieg sniechdach",
+  "english": "Snowy Highrock Brick Wall"
+ },
+ "siltstone_wall": {
+  "diaithiris": "Balda klach-shalachuir",
+  "english": "Siltstone Wall"
+ },
+ "cobbled_siltstone_wall": {
+  "diaithiris": "Balda klach-shalachuir kloichti",
+  "english": "Cobbled Siltstone Wall"
+ },
+ "snowy_cobbled_siltstone_wall": {
+  "diaithiris": "Balda klach-shalachuir kloichti sniechdach",
+  "english": "Snowy Cobbled Siltstone Wall"
+ },
+ "siltstone_brick_wall": {
+  "diaithiris": "Balda breigen klach-shalachuir",
+  "english": "Siltstone Brick Wall"
+ },
+ "snowy_siltstone_brick_slight_wall": {
+  "diaithiris": "Balda breigen klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone Brick Wall"
+ },
+ "snowy_siltstone_brick_wall": {
+  "diaithiris": "Balda breigen klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Brick Wall"
+ },
+ "siltstone_tile_wall": {
+  "diaithiris": "Balda liekag klach-shalachuir",
+  "english": "Siltstone Tile Wall"
+ },
+ "siltstone_pavement_wall": {
+  "diaithiris": "Balda keim klach-shalachuir",
+  "english": "Siltstone Pavement Wall"
+ },
+ "indented_gold_wall": {
+  "diaithiris": "Balda blok òru iegaichti",
+  "english": "Indented Gold Block Wall"
+ },
+ "gold_trapdoor": {
+  "diaithiris": "Douras-toild òru",
+  "english": "Gold Trapdoor"
+ },
+ "cobbled_ominous_stone_wall": {
+  "diaithiris": "Balda klach mìa-fhortunach kloichti",
+  "english": "Cobbled Ominous Stone Wall"
+ },
+ "polished_ominous_stone_wall": {
+  "diaithiris": "Balda klach mìa-fhortunach lìumti",
+  "english": "Polished Ominous Stone Wall"
+ },
+ "polished_dark_ominous_stone_wall": {
+  "diaithiris": "Balda klach mìa-fhortunach dourcha lìumti",
+  "english": "Polished Dark Ominous Stone Wall"
+ },
+ "ominous_stone_brick_wall": {
+  "diaithiris": "Balda breigen klach mìa-fhortunach",
+  "english": "Ominous Stone Brick Wall"
+ },
+ "ominous_stone_tile_wall": {
+  "diaithiris": "Balda liekag klach mìa-fhortunach",
+  "english": "Ominous Stone Tile Wall"
+ },
+ "smooth_end_stone_wall": {
+  "diaithiris": "Balda klach krìuch rèid",
+  "english": "Smooth End Stone Wall"
+ },
+ "cobbled_end_stone_wall": {
+  "diaithiris": "Balda klach krìuch kloichti",
+  "english": "Cobbled End Stone Wall"
+ },
+ "smooth_end_stone_fence": {
+  "diaithiris": "Kaldaid klach krìuch rèid",
+  "english": "Smooth End Stone Fence"
+ },
+ "jade_ore": {
+  "diaithiris": "Mèind seidi",
+  "english": "Jade Ore"
+ },
+ "dark_altar": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_stone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_deepslate": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_ominous_stone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_nether_brick": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_blackstone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_end_stone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_highrock": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_marble": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_prismarine": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_crypt_stone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "pedestal": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_stone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_deepslate": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_ominous_stone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_nether_brick": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_blackstone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_end_stone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_highrock": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_marble": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_prismarine": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_crypt_stone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "spent_totem": {
+  "diaithiris": "Anmun tòtum kaitti",
+  "english": "Spent Totem of Souls"
+ },
+ "cursed_ingot": {
+  "diaithiris": "Iengot mietuilt maldaichti",
+  "english": "Cursed Metal Ingot"
+ },
+ "pale_steel_ingot": {
+  "diaithiris": "Iengot stàilind bànu",
+  "english": "Pale Steel Ingot"
+ },
+ "dark_ingot": {
+  "diaithiris": "Iengot miesgachad dourcha",
+  "english": "Dark Alloy Ingot"
+ },
+ "ectoplasm": {
+  "diaithiris": "Iekto",
+  "english": "Ectoplasm"
+ },
+ "shadow_essence": {
+  "diaithiris": "Failes brìg",
+  "english": "Essence of Shadow"
+ },
+ "dark_fabric": {
+  "diaithiris": "Aedach dourcha",
+  "english": "Dark Fabric"
+ },
+ "magic_fabric": {
+  "diaithiris": "Aedach draeidechd",
+  "english": "Magic Fabric"
+ },
+ "occult_fabric": {
+  "diaithiris": "Aedach falaichti",
+  "english": "Occult Fabric"
+ },
+ "spirit_fabric": {
+  "diaithiris": "Aedach spiurad",
+  "english": "Spirit Fabric"
+ },
+ "gale_fabric": {
+  "diaithiris": "Aedach gaed-mhòru",
+  "english": "Gale Fabric"
+ },
+ "chill_fabric": {
+  "diaithiris": "Aedach fuochd",
+  "english": "Chill Fabric"
+ },
+ "unholy_fabric": {
+  "diaithiris": "Aedach mìa-naem",
+  "english": "Unholy Fabric"
+ },
+ "savage_tooth": {
+  "diaithiris": "Fiakuil bourb",
+  "english": "Savage Tooth"
+ },
+ "jade": {
+  "diaithiris": "Seidi",
+  "english": "Jade"
+ },
+ "spider_egg": {
+  "diaithiris": "Ug damun-aldaid",
+  "english": "Spider Egg"
+ },
+ "warped_wartful_egg": {
+  "diaithiris": "Ug foindech kam",
+  "english": "Warped Wartful Egg"
+ },
+ "venomous_fang": {
+  "diaithiris": "Fiakuil nimeil",
+  "english": "Venomous Fang"
+ },
+ "grave_dust": {
+  "diaithiris": "Duislach ueig",
+  "english": "Grave Dust"
+ },
+ "raging_matter": {
+  "diaithiris": "Stud gaurg",
+  "english": "Raging Matter"
+ },
+ "ice_cube": {
+  "diaithiris": "Kiùb deige",
+  "english": "Ice Cube"
+ },
+ "void_echo": {
+  "diaithiris": "Falum mak-talda",
+  "english": "Echo of the Void"
+ },
+ "soul_ruby": {
+  "diaithiris": "Anmun rubun",
+  "english": "Ruby of Souls"
+ },
+ "empty_focus": {
+  "diaithiris": "Rùan falum",
+  "english": "Empty Focus"
+ },
+ "hunger_core": {
+  "diaithiris": "Kridi akras",
+  "english": "Hunger Core"
+ },
+ "wind_core": {
+  "diaithiris": "Kridi gaed",
+  "english": "Wind Core"
+ },
+ "mystic_core": {
+  "diaithiris": "Kridi dìumuir",
+  "english": "Mystic Core"
+ },
+ "void_shard": {
+  "diaithiris": "Kriumag falum",
+  "english": "Void Shard"
+ },
+ "ominous_shard": {
+  "diaithiris": "Kriumag mìa-fhortunach",
+  "english": "Ominous Shard"
+ },
+ "heart_of_the_night": {
+  "diaithiris": "Aidchi kridi",
+  "english": "Heart of the Night"
+ },
+ "withered_manuscript": {
+  "diaithiris": "Làm-sgrìubad siergti",
+  "english": "Withered Manuscript"
+ },
+ "shrouded_blueprint": {
+  "diaithiris": "Dielb falaichti",
+  "english": "Shrouded Blueprint"
+ },
+ "forbidden_piece": {
+  "diaithiris": "Pius toirmisgti",
+  "english": "Forbidden Piece"
+ },
+ "forbidden_fragment": {
+  "diaithiris": "Kriumag toirmisgti",
+  "english": "Forbidden Fragment"
+ },
+ "magic_emerald": {
+  "diaithiris": "Smauragd dùisgti",
+  "english": "Awakened Emerald"
+ },
+ "soul_emerald": {
+  "diaithiris": "Smauragd dlùd",
+  "english": "Concentrated Emerald"
+ },
+ "henbane_flower": {
+  "diaithiris": "Flùar poindsen-eigi",
+  "english": "Henbane Flower"
+ },
+ "nightshade_blossom": {
+  "diaithiris": "Flùar lusu-nae-h-aidchi",
+  "english": "Nightshade Blossom"
+ },
+ "empty_soul_jar": {
+  "diaithiris": "Krogun anum falum",
+  "english": "Empty Soul Jar"
+ },
+ "cross_pottery_sherd": {
+  "diaithiris": "Kriumag kriaduirechd krois",
+  "english": "Cross Pottery Sherd"
+ },
+ "dead_pottery_sherd": {
+  "diaithiris": "Kriumag kriaduirechd marb",
+  "english": "Dead Pottery Sherd"
+ },
+ "haunt_pottery_sherd": {
+  "diaithiris": "Kriumag kriaduirechd taibs",
+  "english": "Haunt Pottery Sherd"
+ },
+ "night_pottery_sherd": {
+  "diaithiris": "Kriumag kriaduirechd aidchi",
+  "english": "Night Pottery Sherd"
+ },
+ "soul_pottery_sherd": {
+  "diaithiris": "Kriumag kriaduirechd anum",
+  "english": "Soul Pottery Sherd"
+ },
+ "bone_shard": {
+  "diaithiris": "Kriumag knàim",
+  "english": "Bone Shard"
+ },
+ "dark_sword": {
+  "diaithiris": "Klaidem dourcha",
+  "english": "Dark Sword"
+ },
+ "dark_shovel": {
+  "diaithiris": "Spaidi dourcha",
+  "english": "Dark Shovel"
+ },
+ "dark_pickaxe": {
+  "diaithiris": "Tairngi dourcha",
+  "english": "Dark Pickaxe"
+ },
+ "dark_axe": {
+  "diaithiris": "Tuog dourcha",
+  "english": "Dark Axe"
+ },
+ "dark_hoe": {
+  "diaithiris": "Sgrìub dourcha",
+  "english": "Dark Hoe"
+ },
+ "black_iron_helmet": {
+  "diaithiris": "Klogaid iarund duib",
+  "english": "Black Iron Helmet"
+ },
+ "black_iron_chestplate": {
+  "diaithiris": "Uichd-bhraut iarund duib",
+  "english": "Black Iron Chestplate"
+ },
+ "black_iron_leggings": {
+  "diaithiris": "Kasbrat iarund duib",
+  "english": "Black Iron Leggings"
+ },
+ "black_iron_boots": {
+  "diaithiris": "Bòtundun iarund duib",
+  "english": "Black Iron Boots"
+ },
+ "totem_of_souls": {
+  "diaithiris": "Anmun tòtum",
+  "english": "Totem of Souls"
+ },
+ "soul_bolt_focus": {
+  "diaithiris": "Rùan seiged anum",
+  "english": "Soul Bolt Focus"
+ },
+ "magic_bolt_focus": {
+  "diaithiris": "Rùan seiged draeidechd",
+  "english": "Magic Bolt Focus"
+ },
+ "ignite_focus": {
+  "diaithiris": "Rùan laus",
+  "english": "Ignite Focus"
+ },
+ "soul_heal_focus": {
+  "diaithiris": "Rùan slànachad anum",
+  "english": "Soul Heal Focus"
+ },
+ "iron_hide_focus": {
+  "diaithiris": "Rùan seichi iarund",
+  "english": "Iron Hide Focus"
+ },
+ "bulwark_focus": {
+  "diaithiris": "Rùan dìun",
+  "english": "Bulwark Focus"
+ },
+ "weakening_focus": {
+  "diaithiris": "Rùan lagachad",
+  "english": "Weakening Focus"
+ },
+ "sonic_boom_focus": {
+  "diaithiris": "Rùan sgailk fuoimnech",
+  "english": "Sonic Boom Focus"
+ },
+ "shockwave_focus": {
+  "diaithiris": "Rùan tond-klisgid",
+  "english": "Shockwave Focus"
+ },
+ "arrow_rain_focus": {
+  "diaithiris": "Rùan oisgi seiged",
+  "english": "Arrow Rain Focus"
+ },
+ "corruption_focus": {
+  "diaithiris": "Rùan truoildidechd",
+  "english": "Corruption Focus"
+ },
+ "biting_focus": {
+  "diaithiris": "Rùan greimechad",
+  "english": "Biting Focus"
+ },
+ "teeth_focus": {
+  "diaithiris": "Rùan fiaklun",
+  "english": "Teeth Focus"
+ },
+ "shredding_focus": {
+  "diaithiris": "Rùan reibad",
+  "english": "Shredding Focus"
+ },
+ "rotting_focus": {
+  "diaithiris": "Rùan lobad",
+  "english": "Rotting Focus"
+ },
+ "osseous_focus": {
+  "diaithiris": "Rùan knàimech",
+  "english": "Osseous Focus"
+ },
+ "killing_focus": {
+  "diaithiris": "Rùan marbad",
+  "english": "Killing Focus"
+ },
+ "leeching_focus": {
+  "diaithiris": "Rùan deogul",
+  "english": "Leeching Focus"
+ },
+ "temblor_clap_focus": {
+  "diaithiris": "Rùan buolad krid-thalmuind",
+  "english": "Temblor Clap Focus"
+ },
+ "earth_punch_focus": {
+  "diaithiris": "Rùan dòrnu talmuind",
+  "english": "Earth's Punch Focus"
+ },
+ "smack_stone_focus": {
+  "diaithiris": "Rùan klach sgleogu",
+  "english": "Smack Stone Focus"
+ },
+ "eruption_focus": {
+  "diaithiris": "Rùan brùchdad",
+  "english": "Eruption Focus"
+ },
+ "quaking_focus": {
+  "diaithiris": "Rùan krid",
+  "english": "Quaking Focus"
+ },
+ "frost_breath_focus": {
+  "diaithiris": "Rùan anuil reotad",
+  "english": "Frost Breath Focus"
+ },
+ "ice_spike_focus": {
+  "diaithiris": "Rùan biur deige",
+  "english": "Ice Spike Focus"
+ },
+ "hail_focus": {
+  "diaithiris": "Rùan klachun-mielduin",
+  "english": "Hail Focus"
+ },
+ "ice_storm_focus": {
+  "diaithiris": "Rùan stoirmi deige",
+  "english": "Ice Storm Focus"
+ },
+ "blizzard_focus": {
+  "diaithiris": "Rùan katad",
+  "english": "Blizzard Focus"
+ },
+ "chilling_focus": {
+  "diaithiris": "Rùan fuorachad",
+  "english": "Chilling Focus"
+ },
+ "frost_nova_focus": {
+  "diaithiris": "Rùan spriedad reotad",
+  "english": "Frost Nova Focus"
+ },
+ "launch_focus": {
+  "diaithiris": "Rùan tielgeil",
+  "english": "Launching Focus"
+ },
+ "cushion_focus": {
+  "diaithiris": "Rùan kluosag",
+  "english": "Cushion Focus"
+ },
+ "updraft_focus": {
+  "diaithiris": "Rùan gaed-suos",
+  "english": "Updraft Focus"
+ },
+ "wind_blast_focus": {
+  "diaithiris": "Rùan spriedad gaed",
+  "english": "Wind Blast Focus"
+ },
+ "whirlwind_focus": {
+  "diaithiris": "Rùan kuoirt-ghaed",
+  "english": "Whirlwind Focus"
+ },
+ "cyclone_focus": {
+  "diaithiris": "Rùan kuoirt-ghaed mhòru",
+  "english": "Cyclone Focus"
+ },
+ "razor_wind_focus": {
+  "diaithiris": "Rùan gaed ieltuind",
+  "english": "Razor Wind Focus"
+ },
+ "thunderbolt_focus": {
+  "diaithiris": "Rùan tàirnenach",
+  "english": "Thunderbolt Focus"
+ },
+ "lightning_focus": {
+  "diaithiris": "Rùan dielunach",
+  "english": "Lightning Focus"
+ },
+ "thunderstorm_focus": {
+  "diaithiris": "Rùan stoirmi-thàirnenaig",
+  "english": "Thunderstorm Focus"
+ },
+ "discharge_focus": {
+  "diaithiris": "Rùan leigeili-ass",
+  "english": "Discharge Focus"
+ },
+ "sprightly_focus": {
+  "diaithiris": "Rùan sùagach",
+  "english": "Sprightly Focus"
+ },
+ "shocking_focus": {
+  "diaithiris": "Rùan klisgech",
+  "english": "Shocking Focus"
+ },
+ "fireball_focus": {
+  "diaithiris": "Rùan bald-teini",
+  "english": "Fireball Focus"
+ },
+ "blazing_focus": {
+  "diaithiris": "Rùan lausrach",
+  "english": "Blazing Focus"
+ },
+ "ghastly_focus": {
+  "diaithiris": "Rùan oildteil",
+  "english": "Ghastly Focus"
+ },
+ "lavaball_focus": {
+  "diaithiris": "Rùan spriedad làba",
+  "english": "Lava Bomb Focus"
+ },
+ "wither_skull_focus": {
+  "diaithiris": "Rùan klaigend siergad",
+  "english": "Wither Skull Focus"
+ },
+ "fire_breath_focus": {
+  "diaithiris": "Rùan anuil teini",
+  "english": "Fire Breath Focus"
+ },
+ "flame_strike_focus": {
+  "diaithiris": "Rùan boildi lasuir",
+  "english": "Flame Strike Focus"
+ },
+ "fire_blast_focus": {
+  "diaithiris": "Rùan spriedad teini",
+  "english": "Fire Blast Focus"
+ },
+ "bombardment_focus": {
+  "diaithiris": "Rùan bomad",
+  "english": "Bombardment Focus"
+ },
+ "meteor_shower_focus": {
+  "diaithiris": "Rùan fraus drieg",
+  "english": "Meteor Shower Focus"
+ },
+ "blink_focus": {
+  "diaithiris": "Rùan priubad",
+  "english": "Blink Focus"
+ },
+ "void_flash_focus": {
+  "diaithiris": "Rùan boildsged falum",
+  "english": "Void Flash Focus"
+ },
+ "water_jet_focus": {
+  "diaithiris": "Rùan stield oisgi",
+  "english": "Water Jet Focus"
+ },
+ "steaming_focus": {
+  "diaithiris": "Rùan smùidi",
+  "english": "Steaming Focus"
+ },
+ "prisma_beam_focus": {
+  "diaithiris": "Rùan gadu priusum",
+  "english": "Prisma Beam Focus"
+ },
+ "tidal_focus": {
+  "diaithiris": "Rùan lànu-marad",
+  "english": "Tidal Focus"
+ },
+ "poison_dart_focus": {
+  "diaithiris": "Rùan dairti poindsen",
+  "english": "Poison Dart Focus"
+ },
+ "entangling_focus": {
+  "diaithiris": "Rùan rieb",
+  "english": "Entangling Focus"
+ },
+ "leaping_focus": {
+  "diaithiris": "Rùan leim",
+  "english": "Leaping Focus"
+ },
+ "vexing_focus": {
+  "diaithiris": "Rùan sàrachad",
+  "english": "Vexing Focus"
+ },
+ "feast_focus": {
+  "diaithiris": "Rùan koirm",
+  "english": "Feasting Focus"
+ },
+ "illusion_focus": {
+  "diaithiris": "Rùan sgàtun",
+  "english": "Mirror Focus"
+ },
+ "sword_focus": {
+  "diaithiris": "Rùan klaidem draeidechd",
+  "english": "Magic Sword Focus"
+ },
+ "soul_light_focus": {
+  "diaithiris": "Rùan soulas anum",
+  "english": "Soul Light Focus"
+ },
+ "glow_light_focus": {
+  "diaithiris": "Rùan soulas deàrrsad",
+  "english": "Glow Light Focus"
+ },
+ "illuminate_focus": {
+  "diaithiris": "Rùan soildsechad",
+  "english": "Illuminate Focus"
+ },
+ "telekinesis_focus": {
+  "diaithiris": "Rùan tarruing-indtind",
+  "english": "Telekinesis Focus"
+ },
+ "ghost_fire_focus": {
+  "diaithiris": "Rùan teini taibsi",
+  "english": "Ghost Fire Focus"
+ },
+ "reaping_focus": {
+  "diaithiris": "Rùan buoin",
+  "english": "Reaping Focus"
+ },
+ "spooky_focus": {
+  "diaithiris": "Rùan oildteil",
+  "english": "Spooky Focus"
+ },
+ "phantasm_focus": {
+  "diaithiris": "Rùan tuoirem",
+  "english": "Phantasm Focus"
+ },
+ "vanguard_focus": {
+  "diaithiris": "Rùan toisech",
+  "english": "Vanguard Focus"
+ },
+ "blackguard_focus": {
+  "diaithiris": "Rùan duib-ghaurda",
+  "english": "Blackguard Focus"
+ },
+ "skull_focus": {
+  "diaithiris": "Rùan klaigend",
+  "english": "Skull Focus"
+ },
+ "barricade_focus": {
+  "diaithiris": "Rùan bakad",
+  "english": "Barricade Focus"
+ },
+ "ministrous_focus": {
+  "diaithiris": "Rùan mienistreil",
+  "english": "Ministrous Focus"
+ },
+ "pulverize_focus": {
+  "diaithiris": "Rùan prondad",
+  "english": "Pulverize Focus"
+ },
+ "sensing_focus": {
+  "diaithiris": "Rùan motachad",
+  "english": "Sensing Focus"
+ },
+ "scatter_focus": {
+  "diaithiris": "Rùan sgapad",
+  "english": "Scatter Focus"
+ },
+ "rotation_focus": {
+  "diaithiris": "Rùan kuoirtechad",
+  "english": "Rotation Focus"
+ },
+ "burrowing_focus": {
+  "diaithiris": "Rùan tochlad",
+  "english": "Burrowing Focus"
+ },
+ "iceology_focus": {
+  "diaithiris": "Rùan deige-ieluin",
+  "english": "Iceology Focus"
+ },
+ "frostborn_focus": {
+  "diaithiris": "Rùan reòtti-ghinti",
+  "english": "Frostborn Focus"
+ },
+ "swarm_focus": {
+  "diaithiris": "Rùan sgaed",
+  "english": "Swarm Focus"
+ },
+ "blossoming_focus": {
+  "diaithiris": "Rùan fuo-fhlùar",
+  "english": "Blossoming Focus"
+ },
+ "grapple_focus": {
+  "diaithiris": "Rùan greimechad",
+  "english": "Grapple Focus"
+ },
+ "hunting_focus": {
+  "diaithiris": "Rùan sielg",
+  "english": "Hunting Focus"
+ },
+ "mauling_focus": {
+  "diaithiris": "Rùan reibad",
+  "english": "Mauling Focus"
+ },
+ "slimy_focus": {
+  "diaithiris": "Rùan sliemuind",
+  "english": "Slimy Focus"
+ },
+ "carrion_focus": {
+  "diaithiris": "Rùan feòili-bhrein",
+  "english": "Carrion Focus"
+ },
+ "overgrowth_focus": {
+  "diaithiris": "Rùan kindes",
+  "english": "Overgrowth Focus"
+ },
+ "whispering_focus": {
+  "diaithiris": "Rùan kagursaig",
+  "english": "Whispering Focus"
+ },
+ "flying_focus": {
+  "diaithiris": "Rùan itelaig",
+  "english": "Flight Focus"
+ },
+ "trembling_focus": {
+  "diaithiris": "Rùan krid",
+  "english": "Trembling Focus"
+ },
+ "charge_focus": {
+  "diaithiris": "Rùan iondseig",
+  "english": "Charge Focus"
+ },
+ "electrocute_focus": {
+  "diaithiris": "Rùan dielunach-bàisi",
+  "english": "Electrocute Focus"
+ },
+ "surging_focus": {
+  "diaithiris": "Rùan taemad",
+  "english": "Surging Focus"
+ },
+ "monsoon_focus": {
+  "diaithiris": "Rùan mounsùn",
+  "english": "Monsoon Focus"
+ },
+ "bolting_focus": {
+  "diaithiris": "Rùan dielunach",
+  "english": "Bolting Focus"
+ },
+ "bouncy_bubble_focus": {
+  "diaithiris": "Rùan boilgen leim",
+  "english": "Bouncy Bubble Focus"
+ },
+ "trident_storm_focus": {
+  "diaithiris": "Rùan stoirmi trie-gheàrru",
+  "english": "Trident Storm Focus"
+ },
+ "guardian_focus": {
+  "diaithiris": "Rùan geàrdu",
+  "english": "Guardian Focus"
+ },
+ "water_whip_focus": {
+  "diaithiris": "Rùan kiurbad oisgi",
+  "english": "Water Whip Focus"
+ },
+ "biomine_focus": {
+  "diaithiris": "Rùan mèind-bheòd",
+  "english": "Biomine Focus"
+ },
+ "magma_bomb_focus": {
+  "diaithiris": "Rùan spriedad maugma",
+  "english": "Magma Bomb Focus"
+ },
+ "hogging_focus": {
+  "diaithiris": "Rùan muk",
+  "english": "Hogging Focus"
+ },
+ "troop_focus": {
+  "diaithiris": "Rùan fiechd",
+  "english": "Troop Focus"
+ },
+ "end_walk_focus": {
+  "diaithiris": "Rùan koisechd krìuch",
+  "english": "End Walk Focus"
+ },
+ "banish_focus": {
+  "diaithiris": "Rùan fògrad",
+  "english": "Banish Focus"
+ },
+ "rupture_focus": {
+  "diaithiris": "Rùan sgarad",
+  "english": "Rupture Focus"
+ },
+ "stellar_focus": {
+  "diaithiris": "Rùan reiltach",
+  "english": "Stellar Focus"
+ },
+ "watching_focus": {
+  "diaithiris": "Rùan fairi",
+  "english": "Watching Focus"
+ },
+ "blasting_focus": {
+  "diaithiris": "Rùan spriedad",
+  "english": "Blasting Focus"
+ },
+ "snaring_focus": {
+  "diaithiris": "Rùan ribed",
+  "english": "Snaring Focus"
+ },
+ "dark_wand": {
+  "diaithiris": "Slaut dourcha",
+  "english": "Dark Wand"
+ },
+ "ominous_staff": {
+  "diaithiris": "Bauta mìa-fhortunach",
+  "english": "Ominous Staff"
+ },
+ "necro_staff": {
+  "diaithiris": "Bauta marb",
+  "english": "Necro Staff"
+ },
+ "geo_staff": {
+  "diaithiris": "Bauta talmaid",
+  "english": "Geo Staff"
+ },
+ "wind_staff": {
+  "diaithiris": "Bauta gaed",
+  "english": "Wind Staff"
+ },
+ "storm_staff": {
+  "diaithiris": "Bauta stoirmi",
+  "english": "Storm Staff"
+ },
+ "frost_staff": {
+  "diaithiris": "Bauta reotad",
+  "english": "Frost Staff"
+ },
+ "wild_staff": {
+  "diaithiris": "Bauta fiadaig",
+  "english": "Wild Staff"
+ },
+ "abyss_staff": {
+  "diaithiris": "Bauta domuind",
+  "english": "Abyss Staff"
+ },
+ "void_staff": {
+  "diaithiris": "Bauta falum",
+  "english": "Void Staff"
+ },
+ "nether_staff": {
+  "diaithiris": "Bauta ifrind",
+  "english": "Nether Staff"
+ },
+ "soul_bolt": {
+  "diaithiris": "Seiged anum",
+  "english": "Soul Bolt",
+  "entity": true
+ },
+ "magic_bolt": {
+  "diaithiris": "Seiged draeidechd",
+  "english": "Magic Bolt",
+  "entity": true
+ },
+ "zombie_servant": {
+  "diaithiris": "Tràild marbun",
+  "english": "Zombie Servant",
+  "entity": true
+ },
+ "husk_servant": {
+  "diaithiris": "Tràild plaesg",
+  "english": "Husk Servant",
+  "entity": true
+ },
+ "skeleton_servant": {
+  "diaithiris": "Tràild knàimnech",
+  "english": "Skeleton Servant",
+  "entity": true
+ },
+ "stray_servant": {
+  "diaithiris": "Tràild siechrunaichi",
+  "english": "Stray Servant",
+  "entity": true
+ },
+ "wither_skeleton_servant": {
+  "diaithiris": "Tràild knàimnech siergad",
+  "english": "Wither Skeleton Servant",
+  "entity": true
+ },
+ "spider_servant": {
+  "diaithiris": "Tràild damun-aldaid",
+  "english": "Spider Servant",
+  "entity": true
+ },
+ "cave_spider_servant": {
+  "diaithiris": "Tràild damun-aldaid uoim",
+  "english": "Cave Spider Servant",
+  "entity": true
+ },
+ "drowned_servant": {
+  "diaithiris": "Tràild bàtti",
+  "english": "Drowned Servant",
+  "entity": true
+ },
+ "frayed_servant": {
+  "diaithiris": "Tràild knàmti",
+  "english": "Frayed Servant",
+  "entity": true
+ },
+ "frozen_zombie_servant": {
+  "diaithiris": "Tràild marbun reòiti",
+  "english": "Frozen Zombie Servant",
+  "entity": true
+ },
+ "jungle_zombie_servant": {
+  "diaithiris": "Tràild marbun dìtreb",
+  "english": "Jungle Zombie Servant",
+  "entity": true
+ },
+ "mossy_skeleton_servant": {
+  "diaithiris": "Tràild knàimnech kaenaig",
+  "english": "Mossy Skeleton Servant",
+  "entity": true
+ },
+ "rattled_servant": {
+  "diaithiris": "Tràild krid-chnàim",
+  "english": "Rattled Servant",
+  "entity": true
+ },
+ "sunken_skeleton_servant": {
+  "diaithiris": "Tràild knàimnech fuo-thoind",
+  "english": "Sunken Skeleton Servant",
+  "entity": true
+ },
+ "bound_evoker": {
+  "diaithiris": "Gairmeduir kienguilti",
+  "english": "Bound Evoker",
+  "entity": true
+ },
+ "storm_caster_servant": {
+  "diaithiris": "Tràild giesaduir stoirmi",
+  "english": "Storm Caster Servant",
+  "entity": true
+ },
+ "crusher_servant": {
+  "diaithiris": "Tràild prondaduir",
+  "english": "Crusher Servant",
+  "entity": true
+ },
+ "grave_golem": {
+  "diaithiris": "Gòlum ueig",
+  "english": "Grave Golem",
+  "entity": true
+ },
+ "ice_golem": {
+  "diaithiris": "Gòlum deige",
+  "english": "Ice Golem",
+  "entity": true
+ },
+ "redstone_golem": {
+  "diaithiris": "Gòlum klach-dhierg",
+  "english": "Redstone Golem",
+  "entity": true
+ },
+ "wraith_servant": {
+  "diaithiris": "Tràild tandasg",
+  "english": "Wraith Servant",
+  "entity": true
+ },
+ "frayed": {
+  "diaithiris": "Knàmti",
+  "english": "Frayed",
+  "entity": true
+ },
+ "zombie_vindicator": {
+  "diaithiris": "Tràild dìulaichi marbun",
+  "english": "Zombie Vindicator Servant",
+  "entity": true
+ },
+ "rattled": {
+  "diaithiris": "Krid-chnàim",
+  "english": "Rattled",
+  "entity": true
+ },
+ "skeleton_pillager": {
+  "diaithiris": "Tràild kriechaduir knàimnech",
+  "english": "Skeleton Pillager Servant",
+  "entity": true
+ },
+ "crusher": {
+  "diaithiris": "Prondaduir",
+  "english": "Crusher",
+  "entity": true
+ },
+ "storm_caster": {
+  "diaithiris": "Giesaduir stoirmi",
+  "english": "Storm Caster",
+  "entity": true
+ },
+ "wraith": {
+  "diaithiris": "Tandasg",
+  "english": "Wraith",
+  "entity": true
+ },
+ "necromancer": {
+  "diaithiris": "Giesaichi-marb",
+  "english": "Necromancer",
+  "entity": true
+ },
+ "mossy_necromancer": {
+  "diaithiris": "Giesaichi-marb kaenaig",
+  "english": "Mossy Necromancer",
+  "entity": true
+ },
+ "frost_necromancer": {
+  "diaithiris": "Giesaichi-marb reotad",
+  "english": "Frost Necromancer",
+  "entity": true
+ },
+ "drowned_necromancer": {
+  "diaithiris": "Giesaichi-marb bàtti",
+  "english": "Drowned Necromancer",
+  "entity": true
+ },
+ "wither_necromancer": {
+  "diaithiris": "Giesaichi-marb siergad",
+  "english": "Wither Necromancer",
+  "entity": true
+ },
+ "skull_lord": {
+  "diaithiris": "Triad klaigend",
+  "english": "Skull Lord",
+  "entity": true
+ }
+}

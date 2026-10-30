@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:flower_pot",
+    "color": 12236145,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:canaanite.basutiurmachd",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "canaanite.basutiurmachd_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

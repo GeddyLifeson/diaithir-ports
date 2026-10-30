@@ -1,0 +1,13 @@
+{
+  "block.create_droid_diamond.heated_lava_coal_block": "Heated Lava Coal Block",
+  "block.create_droid_diamond.unprocessed_lava_coal_block": "Unprocessed Lava Coal Block",
+  "block.create_droid_diamond.compressed_lava_coal_block": "Compressed Lava Coal Block",
+  "block.create_droid_diamond.heated_scorial_coal_block": "Heated Scorial Coal Block",
+  "block.create_droid_diamond.scorial_coal_block": "Scorial Coal Block",
+  "item.create_droid_diamond.scorial_coal": "Scorial Coal",
+  "item.create_droid_diamond.haunted_scorial_coal": "Haunted Scorial Coal",
+  "item.create_droid_diamond.impure_diamond_chunk": "Impure Diamond Chunk",
+  "item.create_droid_diamond.diamond_chunk": "Diamond Chunk",
+
+  "creativetab.create_droid_diamond_tab": "Create: Droid Diamond"
+}

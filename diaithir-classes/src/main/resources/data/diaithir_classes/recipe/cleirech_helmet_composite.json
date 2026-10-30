@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:composite_helmet",
+  "diaithir_classes:cleirech_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:cleirech_helmet_composite",
+  "count": 1
+ }
+}

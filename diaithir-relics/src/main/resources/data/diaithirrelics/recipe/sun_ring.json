@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " B ",
+  "BAB",
+  " B "
+ ],
+ "key": {
+  "B": "#c:ingots/gold",
+  "A": "minecraft:glowstone_dust"
+ },
+ "result": {
+  "id": "diaithirrelics:sun_ring",
+  "count": 1
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "type": "create:pressing",
+ "ingredient": "alchemind:charged_stone",
+ "results": [
+  {
+   "id": "create:experience_nugget",
+   "count": 3
+  }
+ ]
+}

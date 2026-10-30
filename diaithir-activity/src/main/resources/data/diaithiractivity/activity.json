@@ -1,0 +1,288 @@
+{
+ "activities": {
+  "mining": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/iron_pickaxe",
+   "priority": 50,
+   "hold": 80
+  },
+  "chopping": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/iron_axe",
+   "priority": 50,
+   "hold": 60
+  },
+  "digging": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/iron_shovel",
+   "priority": 50,
+   "hold": 60
+  },
+  "farming": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/wheat",
+   "priority": 50,
+   "hold": 70
+  },
+  "fighting": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/iron_sword",
+   "priority": 90,
+   "hold": 100
+  },
+  "fishing": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/fishing_rod",
+   "priority": 70,
+   "hold": 20
+  },
+  "building": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/brick",
+   "priority": 40,
+   "hold": 60
+  },
+  "brewing": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/brewing_stand",
+   "priority": 80,
+   "hold": 60
+  },
+  "smelting": {
+   "atlas": "minecraft:blocks",
+   "sprite": "minecraft:block/furnace_front_on",
+   "priority": 80,
+   "hold": 60
+  },
+  "crafting": {
+   "atlas": "minecraft:blocks",
+   "sprite": "minecraft:block/crafting_table_front",
+   "priority": 80,
+   "hold": 60
+  },
+  "enchanting": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/enchanted_book",
+   "priority": 80,
+   "hold": 60
+  },
+  "smithing": {
+   "atlas": "minecraft:blocks",
+   "sprite": "minecraft:block/anvil",
+   "priority": 80,
+   "hold": 60
+  },
+  "storage": {
+   "atlas": "minecraft:blocks",
+   "sprite": "minecraft:block/barrel_side",
+   "priority": 65,
+   "hold": 60
+  },
+  "trading": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/emerald",
+   "priority": 80,
+   "hold": 60
+  },
+  "menu": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/paper",
+   "priority": 60,
+   "hold": 60
+  },
+  "reading": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/writable_book",
+   "priority": 75,
+   "hold": 160
+  },
+  "riding": {
+   "atlas": "minecraft:items",
+   "sprite": "minecraft:item/saddle",
+   "priority": 30,
+   "hold": 20
+  },
+  "sleeping": {
+   "atlas": "minecraft:items",
+   "sprite": "diaithiractivity:item/sleeping",
+   "priority": 100,
+   "hold": 20
+  },
+  "afk": {
+   "atlas": "minecraft:items",
+   "sprite": "diaithiractivity:item/afk",
+   "priority": 10,
+   "hold": 20
+  }
+ },
+ "breaks": [
+  {
+   "match": "#minecraft:crops",
+   "activity": "farming"
+  },
+  {
+   "match": "#minecraft:logs",
+   "activity": "chopping"
+  },
+  {
+   "match": "#minecraft:mineable/pickaxe",
+   "activity": "mining"
+  },
+  {
+   "match": "#minecraft:mineable/shovel",
+   "activity": "digging"
+  }
+ ],
+ "tools": [
+  {
+   "match": "#minecraft:pickaxes",
+   "activity": "mining"
+  },
+  {
+   "match": "#minecraft:axes",
+   "activity": "chopping"
+  },
+  {
+   "match": "#minecraft:shovels",
+   "activity": "digging"
+  },
+  {
+   "match": "#minecraft:hoes",
+   "activity": "farming"
+  }
+ ],
+ "stations": [
+  {
+   "match": "minecraft:cauldron",
+   "activity": "brewing"
+  },
+  {
+   "match": "minecraft:composter",
+   "activity": "farming"
+  },
+  {
+   "match": "minecraft:lectern",
+   "activity": "reading"
+  }
+ ],
+ "menus": [
+  {
+   "match": "minecraft:brewing_stand",
+   "activity": "brewing"
+  },
+  {
+   "match": "minecraft:furnace",
+   "activity": "smelting"
+  },
+  {
+   "match": "minecraft:blast_furnace",
+   "activity": "smelting"
+  },
+  {
+   "match": "minecraft:smoker",
+   "activity": "smelting"
+  },
+  {
+   "match": "minecraft:crafting",
+   "activity": "crafting"
+  },
+  {
+   "match": "minecraft:crafter_3x3",
+   "activity": "crafting"
+  },
+  {
+   "match": "minecraft:cartography_table",
+   "activity": "crafting"
+  },
+  {
+   "match": "minecraft:loom",
+   "activity": "crafting"
+  },
+  {
+   "match": "minecraft:stonecutter",
+   "activity": "crafting"
+  },
+  {
+   "match": "minecraft:enchantment",
+   "activity": "enchanting"
+  },
+  {
+   "match": "minecraft:anvil",
+   "activity": "smithing"
+  },
+  {
+   "match": "minecraft:smithing",
+   "activity": "smithing"
+  },
+  {
+   "match": "minecraft:grindstone",
+   "activity": "smithing"
+  },
+  {
+   "match": "minecraft:merchant",
+   "activity": "trading"
+  },
+  {
+   "match": "minecraft:lectern",
+   "activity": "reading"
+  },
+  {
+   "match": "minecraft:generic_9x1",
+   "activity": "storage"
+  },
+  {
+   "match": "minecraft:generic_9x2",
+   "activity": "storage"
+  },
+  {
+   "match": "minecraft:generic_9x3",
+   "activity": "storage"
+  },
+  {
+   "match": "minecraft:generic_9x4",
+   "activity": "storage"
+  },
+  {
+   "match": "minecraft:generic_9x5",
+   "activity": "storage"
+  },
+  {
+   "match": "minecraft:generic_9x6",
+   "activity": "storage"
+  },
+  {
+   "match": "minecraft:generic_3x3",
+   "activity": "storage"
+  },
+  {
+   "match": "minecraft:shulker_box",
+   "activity": "storage"
+  },
+  {
+   "match": "minecraft:hopper",
+   "activity": "storage"
+  }
+ ],
+ "uses": [
+  {
+   "match": "minecraft:written_book",
+   "activity": "reading"
+  },
+  {
+   "match": "minecraft:writable_book",
+   "activity": "reading"
+  },
+  {
+   "match": "minecraft:bow",
+   "activity": "fighting"
+  },
+  {
+   "match": "minecraft:crossbow",
+   "activity": "fighting"
+  },
+  {
+   "match": "minecraft:trident",
+   "activity": "fighting"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "iafmodifiers",
+    "data": "sections/modifiers.json",
+    "icon": {
+    "id": {
+        "id": "minecraft:redstone"
+      }
+    }
+  }
+]

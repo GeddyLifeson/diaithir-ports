@@ -1,0 +1,38 @@
+{
+ "parent": "create_ss_crate:base/andesite_crate_shell",
+ "display": {
+  "icon": {
+   "id": "create_ss_crate:nether_crate",
+   "count": 1
+  },
+  "title": {
+   "translate": "create_ss_crate.advancement.base.nether_crate.title"
+  },
+  "description": {
+   "translate": "create_ss_crate.advancement.base.nether_crate.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "have_nether_crate": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": [
+       "create_ss_crate:nether_crate"
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "rewards": {
+  "loot": [
+   "create_ss_crate:advancement_loot/workshop_crate"
+  ]
+ }
+}

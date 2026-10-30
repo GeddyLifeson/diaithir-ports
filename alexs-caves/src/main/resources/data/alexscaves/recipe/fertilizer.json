@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "alexscaves:guano",
+    "alexscaves:guano",
+    "minecraft:bone_meal"
+  ],
+  "result": {
+    "id": "alexscaves:fertilizer",
+    "count": 1
+  }
+}

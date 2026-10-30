@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:verse_blow",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:ward_verse",
+   "required": false
+  }
+ ]
+}

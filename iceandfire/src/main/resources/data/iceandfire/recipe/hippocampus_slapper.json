@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " T",
+    "S "
+  ],
+  "key": {
+    "S": "minecraft:stick",
+    "T": "iceandfire:hippocampus_fin"
+  },
+  "result": {
+    "id": "iceandfire:hippocampus_slapper"
+  }
+}

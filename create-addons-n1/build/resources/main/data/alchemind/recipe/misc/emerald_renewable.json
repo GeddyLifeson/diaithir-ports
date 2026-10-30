@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "alchemind:flicker_stone",
+  "minecraft:amethyst_shard"
+ ],
+ "results": [
+  {
+   "id": "minecraft:emerald"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 72900
+  }
+ ],
+ "heat_requirement": "heated"
+}

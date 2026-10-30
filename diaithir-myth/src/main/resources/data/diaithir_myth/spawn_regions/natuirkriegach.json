@@ -1,0 +1,18 @@
+{
+  "creature": "diaithir_myth:natuirkriegach",
+  "court": "anatolian",
+  "region": "Anatolia",
+  "min_age": 3,
+  "boxes": [
+    {
+      "lat": [
+        35.8,
+        42.2
+      ],
+      "lon": [
+        26.0,
+        44.8
+      ]
+    }
+  ]
+}

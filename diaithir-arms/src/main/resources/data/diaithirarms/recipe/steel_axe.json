@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "MM",
+  "M|",
+  " |"
+ ],
+ "key": {
+  "M": "#c:ingots/steel",
+  "|": "#c:rods/wooden"
+ },
+ "result": {
+  "id": "diaithirarms:steel_axe",
+  "count": 1
+ }
+}

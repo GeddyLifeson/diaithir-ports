@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "G": "create:flywheel",
+  "H": "create:electron_tube",
+  "I": "create:precision_mechanism"
+ },
+ "pattern": [
+  "IHI",
+  "HGH",
+  "IHI"
+ ],
+ "result": {
+  "id": "deepdrilling:drill_core"
+ },
+ "show_notification": true
+}

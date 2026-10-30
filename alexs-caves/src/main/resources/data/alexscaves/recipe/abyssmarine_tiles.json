@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA",
+    "AA"
+  ],
+  "key": {
+    "A": "alexscaves:abyssmarine_bricks"
+  },
+  "result": {
+    "count": 4,
+    "id": "alexscaves:abyssmarine_tiles"
+  }
+}

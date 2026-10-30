@@ -1,0 +1,19 @@
+{
+  "_comment": "Items",
+  "item.createstonegenerator.molten_iron_bucket": "Molten Iron Bucket",
+  "item.createstonegenerator.molten_gold_bucket": "Molten Gold Bucket",
+  "item.createstonegenerator.molten_copper_bucket": "Molten Copper Bucket",
+  "item.createstonegenerator.molten_zinc_bucket": "Molten Zinc Bucket",
+
+  "_comment": "Fluids",
+  "fluid_type.createstonegenerator.molten_iron": "Molten Iron",
+  "fluid_type.createstonegenerator.molten_gold": "Molten Gold",
+  "fluid_type.createstonegenerator.molten_copper": "Molten Copper",
+  "fluid_type.createstonegenerator.molten_zinc": "Molten Zinc",
+
+  "_comment": "JEI Plugin",
+  "jei.info.asurine_generator": "Bucket:\nYou can use it to create a asurine generator (like cobblestone generator, but with water and this liquid)\nBlock:\nYou can get it by finding it in depth or making a generator",
+  "jei.info.crimsite_generator": "Bucket:\nYou can use it to create a crimsite generator (like cobblestone generator, but with water and this liquid)\nBlock:\nYou can get it by finding it in depth or making a generator",
+  "jei.info.ochrum_generator": "Bucket:\nYou can use it to create a ochrum generator (like cobblestone generator, but with water and this liquid)\nBlock:\nYou can get it by finding it in depth or making a generator",
+  "jei.info.veridium_generator": "Bucket:\nYou can use it to create a veridium generator (like cobblestone generator, but with water and this liquid)\nBlock:\nYou can get it by finding it in depth or making a generator"
+}

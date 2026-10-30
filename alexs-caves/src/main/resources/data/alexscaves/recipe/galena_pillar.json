@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "G",
+    "G"
+  ],
+  "key": {
+    "G": "alexscaves:galena"
+  },
+  "result": {
+    "count": 2,
+    "id": "alexscaves:galena_pillar"
+  }
+}

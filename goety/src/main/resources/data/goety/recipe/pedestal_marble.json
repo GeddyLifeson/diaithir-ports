@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "l": "goety:marble_slab",
+  "s": "goety:marble"
+ },
+ "pattern": [
+  "l",
+  "s",
+  "l"
+ ],
+ "result": {
+  "id": "goety:pedestal_marble",
+  "count": 1
+ }
+}

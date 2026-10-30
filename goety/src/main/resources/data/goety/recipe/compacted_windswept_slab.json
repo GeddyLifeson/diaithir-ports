@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:compacted_windswept_planks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:compacted_windswept_slab",
+  "count": 6
+ }
+}

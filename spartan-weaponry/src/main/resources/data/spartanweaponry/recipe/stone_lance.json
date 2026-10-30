@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#minecraft:stone_tool_materials",
+  "|": "spartanweaponry:handle",
+  "/": "spartanweaponry:pole"
+ },
+ "pattern": [
+  "  #",
+  "#/ ",
+  "|# "
+ ],
+ "result": {
+  "id": "spartanweaponry:stone_lance"
+ }
+}

@@ -1,0 +1,59 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm' version '2.3.0'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'optigui-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+kotlin.jvmToolchain(25)
+
+neoForge {
+    version = project.neo_version
+    runs {
+        client {
+            client()
+            gameDirectory = file('run')
+        }
+    }
+    mods { optigui { sourceSet(sourceSets.main) } }
+    accessTransformers.from('src/main/resources/META-INF/accesstransformer.cfg')
+}
+
+repositories {
+    mavenCentral()
+    exclusiveContent {
+        forRepository { maven { url = 'https://thedarkcolour.github.io/KotlinForForge/'; name = 'Kotlin for Forge' } }
+        filter { includeGroup 'thedarkcolour' }
+    }
+}
+
+dependencies {
+    implementation "thedarkcolour:kfflang-neoforge:${kff_version}"
+    implementation "thedarkcolour:kfflib-neoforge:${kff_version}"
+    implementation "thedarkcolour:kffmod-neoforge:${kff_version}"
+
+    // Bundled into the mod jar, as upstream does with Fabric's include().
+    implementation 'org.apache.commons:commons-text:1.12.0'
+    jarJar('org.apache.commons:commons-text') { version { strictly '[1.12.0,1.13)'; prefer '1.12.0' } }
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    jarJar('org.apache.commons:commons-lang3') { version { strictly '[3.14.0,4)'; prefer '3.14.0' } }
+    implementation 'org.ini4j:ini4j:0.5.4'
+    jarJar('org.ini4j:ini4j') { version { strictly '[0.5.4,0.6)'; prefer '0.5.4' } }
+
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    compilerOptions { freeCompilerArgs = ['-Xjvm-default=all'] }
+}
+
+jar { from(files('COPYING', 'COPYING.LESSER', 'LICENSE-MIT-upstream-26.1')) }
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version, kff: kff_version) }
+}
+
+test { useJUnitPlatform() }

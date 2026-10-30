@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "create_dense_ores:block/deepslate_dense_zinc_ore"
+    }
+  }
+}

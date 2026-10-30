@@ -1,0 +1,15 @@
+Spartan Weaponry (NeoForge 26.1 port)
+
+This module is a derived work of Spartan Weaponry 3.2.1 by ObliviousSpartan
+(https://github.com/ObliviousSpartan/SpartanWeaponry, commit e45342c, branch 1.20.1),
+licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Taken from upstream: item textures, base item models, weapon statistics (damage, speed,
+reach and sweep values) and crafting patterns. Art credit from upstream: xwerffx for the
+weapon ideas and most of the art; translators alexvirgo13 (Spanish), Samlegamer (French),
+MrMikeForDev (Chinese), SplashedTomato (Russian).
+
+Changed: the code is a new, much smaller implementation for Minecraft 26.1.2 and NeoForge
+(data components and attributes instead of the original item classes and trait registry);
+the generator in tools/gen.py rebuilds the data from the upstream checkout; item names are
+in Diaithiris; the metal set is reduced to wood, stone, copper, bronze and iron.

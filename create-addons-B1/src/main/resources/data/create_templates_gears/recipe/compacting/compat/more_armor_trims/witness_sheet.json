@@ -1,0 +1,20 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "more_armor_trims"
+  }
+ ],
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:copper_block",
+  "minecraft:honeycomb",
+  "minecraft:honeycomb"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:witness_sheet",
+   "count": 2
+  }
+ ]
+}

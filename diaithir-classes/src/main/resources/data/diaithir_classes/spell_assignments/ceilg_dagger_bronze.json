@@ -1,0 +1,8 @@
+{
+ "access": "MAGIC",
+ "max_spell_count": 2,
+ "spell_ids": [
+  "diaithir_classes:ceilg_shadow_cloak",
+  "diaithir_classes:ceilg_ambush"
+ ]
+}

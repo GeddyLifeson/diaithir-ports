@@ -1,0 +1,11 @@
+Valkyrien Skies 2, Diaithir port for NeoForge 26.1.2
+
+Mod code: Copyright Valkyrien Skies team (Tri0de, Rubydesic and contributors), LGPL-3.0 (LICENSE).
+26.2 fork by tonchin04 (https://github.com/tonchin04/Valkyrien-Skies-2, branch 26.2/main), LGPL-3.0.
+26.1.2 changes by the Diaithir project, LGPL-3.0. Source: https://github.com/GeddyLifeson/diaithir-ports/tree/valkyrienskies
+
+Bundled binaries, unmodified, from https://maven.valkyrienskies.org:
+- org.valkyrienskies.core (api, internal, util, impl) and the Krunch physics engine with its native libraries.
+  These are published by the Valkyrien Skies team without source or a licence file; they are shipped here
+  exactly as the official Valkyrien Skies releases ship them.
+- Cloth Config (LGPL-3.0), Jackson, Dagger, Apache Commons, JOML primitives and other libraries under their own licences.

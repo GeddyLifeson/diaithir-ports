@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirarms:bone_helmet",
+  "diaithirarms:copper_helmet",
+  "diaithirarms:bronze_helmet",
+  "diaithirarms:mail_helmet",
+  "diaithirarms:steel_helmet",
+  "diaithirarms:ballistic_helmet",
+  "diaithirarms:composite_helmet",
+  "diaithirarms:rodos_helmet",
+  "diaithirarms:future_helmet"
+ ]
+}

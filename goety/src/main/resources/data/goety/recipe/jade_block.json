@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "F": "goety:jade"
+ },
+ "pattern": [
+  "FFF",
+  "FFF",
+  "FFF"
+ ],
+ "result": {
+  "id": "goety:jade_block",
+  "count": 1
+ }
+}

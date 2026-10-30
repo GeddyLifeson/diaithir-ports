@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "m": "goety:chiseled_siltstone",
+  "l": "minecraft:snow_block"
+ },
+ "pattern": [
+  "mmm",
+  "mlm",
+  "mmm"
+ ],
+ "result": {
+  "id": "goety:snowy_chiseled_siltstone",
+  "count": 8
+ }
+}

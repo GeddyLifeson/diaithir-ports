@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:orange_dye",
+    "color": 8674687,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:ice1.pientadspiurad",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "ice1.pientadspiurad_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

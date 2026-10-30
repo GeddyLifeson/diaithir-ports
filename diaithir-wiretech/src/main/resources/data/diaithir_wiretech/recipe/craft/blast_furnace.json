@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": "diaithir_wiretech:sheetmetal_iron",
+    "B": "minecraft:bricks",
+    "F": "minecraft:blast_furnace",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "SSS",
+    "BFB",
+    "SIS"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:blast_furnace",
+    "count": 1
+  }
+}

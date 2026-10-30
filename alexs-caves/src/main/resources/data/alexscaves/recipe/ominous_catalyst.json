@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BAB",
+    "BBB"
+  ],
+  "key": {
+    "A": "alexscaves:amber_curiosity",
+    "B": "alexscaves:heavy_bone"
+  },
+  "result": {
+    "id": "alexscaves:ominous_catalyst",
+    "count": 1
+  }
+}

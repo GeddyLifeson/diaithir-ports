@@ -1,0 +1,42 @@
+{
+ "name": "sielguir krèuma",
+ "items": [
+  "diaithir_classes:ceilg_helmet_bronze",
+  "diaithir_classes:ceilg_chestplate_bronze",
+  "diaithir_classes:ceilg_leggings_bronze",
+  "diaithir_classes:ceilg_boots_bronze"
+ ],
+ "bonuses": [
+  {
+   "required_piece_count": 2,
+   "attributes": [
+    {
+     "type": "spell_power:critical_chance",
+     "id": "diaithir_classes:set_ceilg_bronze_2_0",
+     "amount": 0.03,
+     "operation": "add_multiplied_base",
+     "slot": "any"
+    }
+   ]
+  },
+  {
+   "required_piece_count": 4,
+   "attributes": [
+    {
+     "type": "minecraft:movement_speed",
+     "id": "diaithir_classes:set_ceilg_bronze_4_0",
+     "amount": 0.04,
+     "operation": "add_multiplied_base",
+     "slot": "any"
+    }
+   ],
+   "spells": {
+    "access": "NONE",
+    "max_spell_count": 1,
+    "spell_ids": [
+     "diaithir_classes:ceilg_bleed_bronze"
+    ]
+   }
+  }
+ ]
+}

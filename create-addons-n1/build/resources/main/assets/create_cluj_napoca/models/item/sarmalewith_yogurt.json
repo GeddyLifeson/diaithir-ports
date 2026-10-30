@@ -1,0 +1,7 @@
+{
+  "parent": "create_cluj_napoca:custom/sarmale1",
+  "textures": {
+    "0": "create_cluj_napoca:block/yogurta",
+    "particle": "create_cluj_napoca:item/yogurta"
+  }
+}

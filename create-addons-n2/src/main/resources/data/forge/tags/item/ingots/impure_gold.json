@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "create_thermobaric:impure_gold_ingot",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+{
+  "item": "minecraft:milk_bucket",
+  "favor": 3,
+  "maxuses": 8,
+  "cooldown": 12000
+}

@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:northwest.seidurmatuir",
+  "icon": "minecraft:spruce_log",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": 0,
+  "maxlevel": 10
+}

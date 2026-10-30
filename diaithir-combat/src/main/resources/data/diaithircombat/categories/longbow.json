@@ -1,0 +1,7 @@
+{
+ "id": "longbow",
+ "kind": "ranged",
+ "draw_ticks": 26,
+ "drop_reduction": 0.5,
+ "fallback": "minecraft:bow"
+}

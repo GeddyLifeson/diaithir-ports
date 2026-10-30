@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "opekope2.optigui.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "BookEditScreenMixin",
+    "BookViewScreenMixin",
+    "GuiGraphicsExtractorMixin",
+    "MinecraftMixin",
+    "ScreenMixin"
+  ]
+}

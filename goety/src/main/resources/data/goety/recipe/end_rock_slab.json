@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": [
+   "goety:end_rock"
+  ]
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:end_rock_slab",
+  "count": 6
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "type": "create:crushing",
+ "processing_time": 350,
+ "results": [
+  {
+   "chance": 0.125,
+   "id": "create:zinc_nugget",
+   "count": 3
+  }
+ ],
+ "ingredient": "#create:stone_types/tuff"
+}

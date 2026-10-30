@@ -1,0 +1,68 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_ss_crate:awakened_stronghold_crate_shell",
+ "transitional_item": {
+  "id": "create_ss_crate:incomplete_stronghold_corridor_crate_chunk"
+ },
+ "result": {
+  "id": "create_ss_crate:stronghold_corridor_crate_chunk"
+ },
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:stone_bricks",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:iron_bars",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:stone_brick_slab",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:chest",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:mossy_stone_bricks",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 20
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

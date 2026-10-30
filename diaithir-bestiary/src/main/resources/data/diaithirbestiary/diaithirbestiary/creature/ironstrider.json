@@ -1,0 +1,8 @@
+{
+  "preset": "mech",
+  "width": 1.8,
+  "height": 3.2,
+  "stats": { "health": 120, "armor": 14, "speed": 0.22, "knockback_resistance": 0.8 },
+  "fuel": { "item": "minecraft:coal", "ticks": 600 },
+  "loot_table": "diaithirbestiary:entities/ironstrider"
+}

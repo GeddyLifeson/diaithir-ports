@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": "alexscaves:smooth_coprolith",
+  "result": {
+    "id": "alexscaves:smooth_coprolith_wall",
+    "count": 1
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attributes": {
+    "minecraft:audio/ambient_sounds": {
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "deeperdarker:ambient.otherside.additions",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:ash"
+        },
+        "probability": 0.04
+      }
+    ],
+    "minecraft:visual/fog_color": "#301a40",
+    "minecraft:visual/sky_color": "#7ca3ff",
+    "minecraft:visual/water_fog_color": "#39195e"
+  },
+  "carvers": [
+    "deeperdarker:cave"
+  ],
+  "downfall": 0.5,
+  "effects": {
+    "water_color": "#42136b"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower"
+    ],
+    [],
+    [],
+    [
+      "deeperdarker:sculk",
+      "deeperdarker:echo_soil",
+      "deeperdarker:infested_sculk",
+      "deeperdarker:sculk_jaw",
+      "deeperdarker:sculk_coal",
+      "deeperdarker:sculk_iron",
+      "deeperdarker:sculk_copper",
+      "deeperdarker:sculk_gold",
+      "deeperdarker:sculk_redstone",
+      "deeperdarker:sculk_emerald",
+      "deeperdarker:sculk_lapis",
+      "deeperdarker:sculk_diamond"
+    ],
+    [
+      "deeperdarker:sculk_gleam_forest"
+    ],
+    [],
+    [
+      "deeperdarker:echo_tree",
+      "deeperdarker:sculk_tendrils",
+      "deeperdarker:sculk_vines"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "maxCount": 2,
+        "minCount": 1,
+        "type": "deeperdarker:sculk_snapper",
+        "weight": 9
+      },
+      {
+        "maxCount": 5,
+        "minCount": 2,
+        "type": "deeperdarker:shattered",
+        "weight": 17
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.3
+}

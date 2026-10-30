@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "l": "minecraft:leather",
+  "o": "#minecraft:wool"
+ },
+ "pattern": [
+  "lo"
+ ],
+ "result": {
+  "id": "spartanweaponry:cestus"
+ }
+}

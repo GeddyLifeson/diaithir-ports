@@ -1,0 +1,17 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "create_thermobaric:graphite_ingot"
+ ],
+ "results": [
+  {
+   "id": "minecraft:diamond",
+   "chance": 0.1
+  },
+  {
+   "id": "create_thermobaric:impure_diamond",
+   "chance": 0.9
+  }
+ ]
+}

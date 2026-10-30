@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:brass_cup",
+ "ingredient": "minecraft:paper",
+ "results": [
+  {
+   "id": "createloveandwar:shotgun_casing"
+  }
+ ]
+}

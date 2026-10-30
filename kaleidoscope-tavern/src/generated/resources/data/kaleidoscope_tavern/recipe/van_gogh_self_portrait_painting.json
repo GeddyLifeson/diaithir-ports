@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:item_frame",
+    "minecraft:painting"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:van_gogh_self_portrait_painting"
+  }
+}

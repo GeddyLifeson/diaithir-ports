@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#minecraft:stone_tool_materials",
+  "|": "spartanweaponry:handle",
+  "/": "minecraft:stick"
+ },
+ "pattern": [
+  "###",
+  "#/#",
+  " | "
+ ],
+ "result": {
+  "id": "spartanweaponry:stone_battleaxe"
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "create:crushing",
+ "ingredient": "strontium:raw_uranium",
+ "results": [
+  {
+   "id": "strontium:uranium_powder"
+  },
+  {
+   "id": "strontium:uranium_powder",
+   "chance": 0.2
+  }
+ ],
+ "processing_time": 100
+}

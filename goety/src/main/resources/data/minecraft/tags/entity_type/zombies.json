@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "goety:frozen_zombie_servant",
+  "goety:husk_servant",
+  "goety:jungle_zombie_servant",
+  "goety:zombie_servant",
+  "goety:zombie_vindicator"
+ ]
+}

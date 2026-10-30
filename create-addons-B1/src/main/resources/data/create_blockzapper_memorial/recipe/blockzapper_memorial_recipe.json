@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " a ",
+  "bcb",
+  "ccc"
+ ],
+ "key": {
+  "a": "create_blockzapper_memorial:shattered_hopes_and_dreams",
+  "b": "minecraft:stone_slab",
+  "c": "minecraft:stone"
+ },
+ "result": {
+  "id": "create_blockzapper_memorial:blockzapper_memorial",
+  "count": 1
+ }
+}

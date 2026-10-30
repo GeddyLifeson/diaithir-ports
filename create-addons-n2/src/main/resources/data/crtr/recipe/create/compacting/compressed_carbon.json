@@ -1,0 +1,26 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette",
+  "crtr:briquette"
+ ],
+ "results": [
+  {
+   "id": "crtr:compressed_carbon"
+  }
+ ]
+}

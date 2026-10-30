@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:water_bucket",
+    "color": 13131981,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_indian_mesolithic_microlithic_foragers_b.matuirabuindland",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:dolphins_grace",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_indian_mesolithic_microlithic_foragers_b.matuirabuindland_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

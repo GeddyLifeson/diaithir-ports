@@ -1,0 +1,28 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:blue_ice",
+  "minecraft:soul_soil"
+ ],
+ "results": [
+  {
+   "id": "minecraft:basalt",
+   "count": 2
+  },
+  {
+   "id": "minecraft:blue_ice",
+   "count": 1
+  },
+  {
+   "id": "minecraft:soul_soil",
+   "count": 1
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 6561000,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+{
+  "tier1": {"age": 3, "items": ["diaithirchunkloaders:chunk_loader_1"]},
+  "tier2": {"age": 5, "items": ["diaithirchunkloaders:chunk_loader_2", "diaithirchunkloaders:cart_seal"]},
+  "tier3": {"age": 7, "items": ["diaithirchunkloaders:chunk_loader_3"]}
+}

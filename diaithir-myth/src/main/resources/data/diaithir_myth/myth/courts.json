@@ -1,0 +1,23 @@
+{
+ "comment": "court of each creature in this mod; living-tradition courts are not represented",
+ "courts": {
+  "goburdoiri": "hellenic",
+  "famuirkeid": "hellenic",
+  "maktirimatuir": "italic",
+  "famuirknok": "italic",
+  "dourasniechgleidid": "italic",
+  "tarbiumachuoirtach": "minoan",
+  "griubluchuirt": "minoan",
+  "tarbmoir": "minoan",
+  "natuirkriegach": "anatolian",
+  "liupurdsielg": "anatolian",
+  "iuluirbeind": "anatolian",
+  "natuirmoir": "canaanite",
+  "leomundkraeb": "canaanite",
+  "leomundcheistrigchatuir": "canaanite",
+  "madadfasaigratad": "nilotic",
+  "toimsechunleomund": "nilotic",
+  "natuirkrun": "nilotic",
+  "daelaggrianu": "nilotic"
+ }
+}

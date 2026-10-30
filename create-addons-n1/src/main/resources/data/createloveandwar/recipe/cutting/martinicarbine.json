@@ -1,0 +1,10 @@
+{
+ "type": "create:cutting",
+ "ingredient": "createloveandwar:martini_henry",
+ "results": [
+  {
+   "id": "createloveandwar:martinicarbine"
+  }
+ ],
+ "processing_time": 50
+}

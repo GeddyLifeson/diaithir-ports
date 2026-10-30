@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:iron_helmet",
+    "color": 11510707,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:hellenic.marbbiertas",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "hellenic.marbbiertas_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

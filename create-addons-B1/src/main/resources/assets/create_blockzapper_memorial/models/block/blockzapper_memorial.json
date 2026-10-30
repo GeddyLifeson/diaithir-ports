@@ -1,0 +1,10 @@
+{
+  "parent": "create_blockzapper_memorial:custom/blockzapper_memorial",
+  "textures": {
+    "all": "create_blockzapper_memorial:block/blockzapper_memorial",
+    "particle": "create_blockzapper_memorial:block/blockzapper_memorial",
+    "0": "create_blockzapper_memorial:block/blockzapper_memorial",
+    "1": "create_blockzapper_memorial:block/handheld_blockzapper"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,438 @@
+{
+ "iceandfire:amphithere": [
+  "iceandfire:amphithere_feather",
+  "iceandfire:amphithere_skull"
+ ],
+ "iceandfire:cockatrice": [
+  "iceandfire:cockatrice_eye",
+  "iceandfire:cockatrice_skull",
+  "iceandfire:witherbone",
+  "minecraft:chicken",
+  "minecraft:feather"
+ ],
+ "iceandfire:cyclops": [
+  "iceandfire:cyclops_eye",
+  "iceandfire:cyclops_skull",
+  "minecraft:leather",
+  "minecraft:mutton",
+  "minecraft:white_wool"
+ ],
+ "iceandfire:deathworm_red": [
+  "iceandfire:deathworm_chitin_red",
+  "iceandfire:deathworm_egg",
+  "iceandfire:deathworm_egg_giant",
+  "iceandfire:deathworm_tounge",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:deathworm_red_giant": [
+  "iceandfire:deathworm_chitin_red",
+  "iceandfire:deathworm_egg_giant",
+  "iceandfire:deathworm_tounge",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:deathworm_tan": [
+  "iceandfire:deathworm_chitin_yellow",
+  "iceandfire:deathworm_egg",
+  "iceandfire:deathworm_egg_giant",
+  "iceandfire:deathworm_tounge",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:deathworm_tan_giant": [
+  "iceandfire:deathworm_chitin_yellow",
+  "iceandfire:deathworm_egg_giant",
+  "iceandfire:deathworm_tounge",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:deathworm_white": [
+  "iceandfire:deathworm_chitin_white",
+  "iceandfire:deathworm_egg",
+  "iceandfire:deathworm_egg_giant",
+  "iceandfire:deathworm_tounge",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:deathworm_white_giant": [
+  "iceandfire:deathworm_chitin_white",
+  "iceandfire:deathworm_egg_giant",
+  "iceandfire:deathworm_tounge",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:dread_beast": [
+  "iceandfire:dread_shard",
+  "minecraft:bone",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:dread_ghoul": [
+  "iceandfire:dread_shard",
+  "minecraft:bone",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:dread_knight": [
+  "iceandfire:dread_shard",
+  "minecraft:bone",
+  "minecraft:iron_ingot"
+ ],
+ "iceandfire:dread_lich": [
+  "iceandfire:dread_key",
+  "iceandfire:dread_shard",
+  "minecraft:bone"
+ ],
+ "iceandfire:dread_scuttler": [
+  "minecraft:rotten_flesh",
+  "minecraft:spider_eye"
+ ],
+ "iceandfire:dread_thrall": [
+  "iceandfire:dread_shard",
+  "minecraft:bone"
+ ],
+ "iceandfire:ghost": [
+  "iceandfire:ectoplasm",
+  "iceandfire:ghost_ingot"
+ ],
+ "iceandfire:gorgon": [
+  "iceandfire:gorgon_head"
+ ],
+ "iceandfire:hippocampus": [
+  "iceandfire:hippocampus_fin",
+  "iceandfire:shiny_scales"
+ ],
+ "iceandfire:hippogryph": [
+  "iceandfire:hippogryph_skull",
+  "iceandfire:hippogryph_talon",
+  "minecraft:feather",
+  "minecraft:leather"
+ ],
+ "iceandfire:hydra": [
+  "iceandfire:hydra_fang",
+  "iceandfire:hydra_heart",
+  "iceandfire:hydra_skull",
+  "minecraft:rotten_flesh"
+ ],
+ "iceandfire:pixie": [
+  "iceandfire:pixie_dust",
+  "iceandfire:pixie_wings"
+ ],
+ "iceandfire:sea_serpent": [
+  "iceandfire:sea_serpent_fang",
+  "iceandfire:sea_serpent_scales_blue",
+  "iceandfire:seaserpent_skull"
+ ],
+ "iceandfire:siren": [
+  "iceandfire:shiny_scales",
+  "iceandfire:siren_tear",
+  "minecraft:prismarine_crystals",
+  "minecraft:prismarine_shard"
+ ],
+ "iceandfire:stymphalian_bird": [
+  "iceandfire:stymphalian_bird_feather",
+  "iceandfire:stymphalian_skull",
+  "minecraft:copper_ingot",
+  "minecraft:copper_nugget",
+  "minecraft:iron_ingot"
+ ],
+ "iceandfire:troll_forest": [
+  "iceandfire:troll_leather_forest",
+  "iceandfire:troll_skull",
+  "iceandfire:troll_tusk",
+  "minecraft:brown_mushroom",
+  "minecraft:red_mushroom"
+ ],
+ "iceandfire:troll_frost": [
+  "iceandfire:sapphire_gem",
+  "iceandfire:troll_leather_frost",
+  "iceandfire:troll_skull",
+  "iceandfire:troll_tusk",
+  "minecraft:snowball"
+ ],
+ "iceandfire:troll_mountain": [
+  "iceandfire:troll_leather_mountain",
+  "iceandfire:troll_skull",
+  "iceandfire:troll_tusk",
+  "minecraft:emerald"
+ ],
+ "iceandfire:dragon/fire_dragon_female": [
+  "iceandfire:dragonegg_red",
+  "iceandfire:dragonscales_red",
+  "iceandfire:fire_dragon_flesh"
+ ],
+ "iceandfire:dragon/fire_dragon_male": [
+  "iceandfire:dragonscales_red",
+  "iceandfire:fire_dragon_flesh"
+ ],
+ "iceandfire:dragon/fire_dragon_skeleton": [
+  "iceandfire:dragonbone"
+ ],
+ "iceandfire:dragon/ice_dragon_female": [
+  "iceandfire:dragonegg_blue",
+  "iceandfire:dragonscales_blue",
+  "iceandfire:ice_dragon_flesh"
+ ],
+ "iceandfire:dragon/ice_dragon_male": [
+  "iceandfire:dragonscales_blue",
+  "iceandfire:ice_dragon_flesh"
+ ],
+ "iceandfire:dragon/ice_dragon_skeleton": [
+  "iceandfire:dragonbone"
+ ],
+ "iceandfire:dragon/lightning_dragon_female": [
+  "iceandfire:dragonegg_electric",
+  "iceandfire:dragonscales_electric",
+  "iceandfire:lightning_dragon_flesh"
+ ],
+ "iceandfire:dragon/lightning_dragon_male": [
+  "iceandfire:dragonscales_electric",
+  "iceandfire:lightning_dragon_flesh"
+ ],
+ "iceandfire:dragon/lightning_dragon_skeleton": [
+  "iceandfire:dragonbone"
+ ],
+ "untamedwilds:trevally": [
+  "minecraft:cod",
+  "untamedwilds:chum"
+ ],
+ "untamedwilds:cervid": [
+  "minecraft:beef",
+  "minecraft:bone",
+  "minecraft:leather"
+ ],
+ "untamedwilds:big_cat": [
+  "minecraft:bone",
+  "untamedwilds:hide_bigcat_jaguar",
+  "untamedwilds:hide_bigcat_leopard",
+  "untamedwilds:hide_bigcat_lion",
+  "untamedwilds:hide_bigcat_puma",
+  "untamedwilds:hide_bigcat_snow_leopard",
+  "untamedwilds:hide_bigcat_tiger"
+ ],
+ "untamedwilds:tortoise": [
+  "untamedwilds:food_turtle_raw"
+ ],
+ "untamedwilds:bear": [
+  "minecraft:bone",
+  "untamedwilds:food_bear_raw",
+  "untamedwilds:hide_bear_ashen",
+  "untamedwilds:hide_bear_black",
+  "untamedwilds:hide_bear_brown",
+  "untamedwilds:hide_bear_white",
+  "untamedwilds:material_fat"
+ ],
+ "untamedwilds:bovid": [
+  "minecraft:beef",
+  "minecraft:bone",
+  "minecraft:leather"
+ ],
+ "untamedwilds:softshell_turtle": [
+  "untamedwilds:food_turtle_raw"
+ ],
+ "untamedwilds:hippo": [
+  "minecraft:bone",
+  "minecraft:leather",
+  "untamedwilds:food_pachyderm_raw",
+  "untamedwilds:material_fat"
+ ],
+ "untamedwilds:monitor": [
+  "minecraft:bone",
+  "minecraft:leather",
+  "untamedwilds:food_turtle_raw"
+ ],
+ "untamedwilds:aardvark": [
+  "minecraft:bone",
+  "minecraft:porkchop",
+  "minecraft:rabbit_hide",
+  "untamedwilds:material_fat"
+ ],
+ "untamedwilds:equid": [
+  "minecraft:beef",
+  "minecraft:bone",
+  "minecraft:leather"
+ ],
+ "untamedwilds:baleen_whale": [
+  "minecraft:bone",
+  "untamedwilds:food_pachyderm_raw",
+  "untamedwilds:material_blubber"
+ ],
+ "untamedwilds:shark": [
+  "minecraft:rotten_flesh"
+ ],
+ "untamedwilds:opossum": [
+  "minecraft:bone",
+  "minecraft:rabbit_hide"
+ ],
+ "untamedwilds:tarantula": [
+  "minecraft:string"
+ ],
+ "untamedwilds:camel": [
+  "minecraft:beef",
+  "minecraft:bone",
+  "minecraft:brown_wool",
+  "untamedwilds:material_fat"
+ ],
+ "untamedwilds:giant_clam": [
+  "untamedwilds:material_giant_pearl",
+  "untamedwilds:material_pearl"
+ ],
+ "untamedwilds:boar": [
+  "minecraft:bone",
+  "minecraft:leather",
+  "minecraft:porkchop",
+  "untamedwilds:material_fat"
+ ],
+ "untamedwilds:bison": [
+  "minecraft:beef",
+  "minecraft:bone",
+  "minecraft:leather",
+  "untamedwilds:material_fat"
+ ],
+ "untamedwilds:rhino": [
+  "minecraft:bone",
+  "minecraft:leather",
+  "untamedwilds:food_pachyderm_raw",
+  "untamedwilds:material_fat"
+ ],
+ "untamedwilds:manatee": [
+  "minecraft:bone",
+  "minecraft:leather",
+  "untamedwilds:food_pachyderm_raw",
+  "untamedwilds:material_blubber"
+ ],
+ "untamedwilds:canid": [
+  "minecraft:bone"
+ ],
+ "untamedwilds:glyptodont": [
+  "minecraft:beef",
+  "minecraft:bone",
+  "minecraft:leather"
+ ],
+ "untamedwilds:ground_sloth": [
+  "minecraft:beef",
+  "minecraft:bone",
+  "minecraft:leather"
+ ],
+ "untamedwilds:elephantid": [
+  "minecraft:beef",
+  "minecraft:bone",
+  "minecraft:leather"
+ ],
+ "untamedwilds:arowana": [
+  "minecraft:tropical_fish",
+  "untamedwilds:chum"
+ ],
+ "untamedwilds:catfish": [
+  "minecraft:cod",
+  "untamedwilds:chum"
+ ],
+ "untamedwilds:sunfish": [
+  "minecraft:tropical_fish",
+  "untamedwilds:chum"
+ ],
+ "vampirism:advanced_hunter": [
+  "vampirism:garlic",
+  "vampirism:holy_water_splash_bottle_enhanced",
+  "vampirism:holy_water_splash_bottle_ultimate",
+  "vampirism:pure_salt_water",
+  "vampirism:vampire_blood_bottle",
+  "vampirism:vampire_book"
+ ],
+ "vampirism:advanced_hunter_imob": [
+  "vampirism:garlic",
+  "vampirism:holy_water_splash_bottle_enhanced",
+  "vampirism:holy_water_splash_bottle_ultimate",
+  "vampirism:pure_salt_water",
+  "vampirism:vampire_blood_bottle",
+  "vampirism:vampire_book"
+ ],
+ "vampirism:advanced_vampire": [
+  "vampirism:amulet",
+  "vampirism:blood_bottle",
+  "vampirism:obi_belt",
+  "vampirism:ring",
+  "vampirism:vampire_blood_bottle",
+  "vampirism:vampire_book"
+ ],
+ "vampirism:advanced_vampire_imob": [
+  "vampirism:amulet",
+  "vampirism:blood_bottle",
+  "vampirism:obi_belt",
+  "vampirism:ring",
+  "vampirism:vampire_blood_bottle",
+  "vampirism:vampire_book"
+ ],
+ "vampirism:blinding_bat": [],
+ "vampirism:blood_projectile": [],
+ "vampirism:converted_camel": [],
+ "vampirism:converted_cat": [],
+ "vampirism:converted_cow": [],
+ "vampirism:converted_creature": [],
+ "vampirism:converted_creature_imob": [],
+ "vampirism:converted_donkey": [],
+ "vampirism:converted_fox": [],
+ "vampirism:converted_goat": [],
+ "vampirism:converted_horse": [],
+ "vampirism:converted_llama": [],
+ "vampirism:converted_mule": [],
+ "vampirism:converted_mushroom_cow": [],
+ "vampirism:converted_ocelot": [],
+ "vampirism:converted_panda": [],
+ "vampirism:converted_pig": [],
+ "vampirism:converted_polar_bear": [],
+ "vampirism:converted_rabbit": [],
+ "vampirism:converted_sheep": [],
+ "vampirism:converted_trader_llama": [],
+ "vampirism:converted_turtle": [],
+ "vampirism:converted_wolf": [],
+ "vampirism:dark_blood_projectile": [],
+ "vampirism:dracula": [
+  "vampirism:sovereign_blood"
+ ],
+ "vampirism:dummy_creature": [],
+ "vampirism:flying_needle": [],
+ "vampirism:flying_sword": [],
+ "vampirism:ghost": [],
+ "vampirism:hunter": [
+  "vampirism:amulet",
+  "vampirism:human_heart",
+  "vampirism:obi_belt",
+  "vampirism:ring"
+ ],
+ "vampirism:hunter_imob": [
+  "vampirism:amulet",
+  "vampirism:human_heart",
+  "vampirism:obi_belt",
+  "vampirism:ring"
+ ],
+ "vampirism:hunter_minion": [],
+ "vampirism:hunter_trainer": [],
+ "vampirism:hunter_trainer_dummy": [],
+ "vampirism:particle_cloud": [],
+ "vampirism:quarrel": [],
+ "vampirism:remains_defender": [],
+ "vampirism:sit": [],
+ "vampirism:soul_orb": [],
+ "vampirism:task_master_hunter": [],
+ "vampirism:task_master_vampire": [],
+ "vampirism:throwable_item": [],
+ "vampirism:vampire": [
+  "vampirism:amulet",
+  "vampirism:obi_belt",
+  "vampirism:ring",
+  "vampirism:vampire_blood_bottle",
+  "vampirism:vampire_fang"
+ ],
+ "vampirism:vampire_baron": [
+  "vampirism:pure_blood_0",
+  "vampirism:pure_blood_1",
+  "vampirism:pure_blood_2",
+  "vampirism:pure_blood_3",
+  "vampirism:pure_blood_4"
+ ],
+ "vampirism:vampire_imob": [
+  "vampirism:amulet",
+  "vampirism:obi_belt",
+  "vampirism:ring",
+  "vampirism:vampire_blood_bottle",
+  "vampirism:vampire_fang"
+ ],
+ "vampirism:vampire_minion": [],
+ "vampirism:villager_angry": [],
+ "vampirism:villager_converted": [],
+ "vampirism:vulnerable_remains_dummy": []
+}

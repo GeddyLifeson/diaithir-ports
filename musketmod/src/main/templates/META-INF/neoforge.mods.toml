@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT License"
+issueTrackerURL="https://github.com/ewewukek/mc-musketmod/issues"
+
+[[mods]]
+modId="musketmod"
+version="${mod_version}"
+displayName="Musket Mod"
+#updateJSONURL=""
+displayURL="https://github.com/ewewukek/mc-musketmod"
+logoFile="logo.png"
+credits="lilypuree, MikhailTapio, Xannosz, SkpC9 for their contribution"
+authors="ewewukek"
+description='''
+Small mod that adds craftable muskets and pistols. Ported to NeoForge 26.1.2 for the Diaithir pack.
+'''
+
+[[dependencies.musketmod]]
+modId="neoforge"
+type="required"
+versionRange="${neo_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.musketmod]]
+modId="cloth_config"
+type="optional"
+versionRange="[26.1,)"
+ordering="NONE"
+side="CLIENT"
+
+[[mixins]]
+config = "musketmod.mixins.json"

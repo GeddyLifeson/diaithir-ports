@@ -1,0 +1,15 @@
+{
+ "type": "create:crushing",
+ "processing_time": 250,
+ "ingredient": "minecraft:cobbled_deepslate",
+ "results": [
+  {
+   "id": "create_deepslate_processing:deep_gravel"
+  },
+  {
+   "id": "create_deepslate_processing:deepslate_shard",
+   "count": 3,
+   "chance": 0.5
+  }
+ ]
+}

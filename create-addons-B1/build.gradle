@@ -1,0 +1,7 @@
+plugins { id 'java-library'; id 'net.neoforged.moddev' version '2.0.141' }
+version = '26.1.2-0.1.0'
+base { archivesName = 'diaithir-create-addons-b1' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+repositories { maven { url = 'https://maven.fabricmc.net/' } }
+neoForge { version = '26.1.2.116'; mods { "diaithir_create_addons_b1" { sourceSet(sourceSets.main) } } }
+dependencies { compileOnly files('libs/create-port.jar') }

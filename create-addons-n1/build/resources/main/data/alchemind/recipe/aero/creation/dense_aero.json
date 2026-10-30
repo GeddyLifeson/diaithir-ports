@@ -1,0 +1,12 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:feather",
+  "minecraft:string"
+ ],
+ "results": [
+  {
+   "id": "alchemind:dense_aero"
+  }
+ ]
+}

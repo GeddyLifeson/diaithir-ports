@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GNG",
+    "GGG"
+  ],
+  "key": {
+    "G": "alexscaves:galena",
+    "N": "alexscaves:raw_scarlet_neodymium"
+  },
+  "result": {
+    "count": 8,
+    "id": "alexscaves:energized_galena_scarlet"
+  }
+}
