@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "kaleidoscope_tavern:block/deco/string_lights/orange",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "kaleidoscope_tavern:block/deco/string_lights/orange"
+    },
+    "facing=south": {
+      "model": "kaleidoscope_tavern:block/deco/string_lights/orange",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "kaleidoscope_tavern:block/deco/string_lights/orange",
+      "y": 270
+    }
+  }
+}

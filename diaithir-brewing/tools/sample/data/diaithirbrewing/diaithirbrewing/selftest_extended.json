@@ -1,0 +1,12 @@
+{
+ "station": "keg",
+ "base": "minecraft:water_bucket",
+ "base_returns": "minecraft:bucket",
+ "ingredients": {
+  "minecraft:wheat": 3,
+  "minecraft:sugar": 1
+ },
+ "ticks": 50,
+ "drink": "minecraft:honey_bottle",
+ "servings": 2
+}

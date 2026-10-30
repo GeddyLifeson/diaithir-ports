@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirbrewing"
+version = "${version}"
+displayName = "Diaithir Brewing"
+description = "Kegs and fermenting barrels for the Diaithir pack."
+
+[[dependencies.diaithirbrewing]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

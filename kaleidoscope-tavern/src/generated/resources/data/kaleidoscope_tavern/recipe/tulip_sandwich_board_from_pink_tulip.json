@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "kaleidoscope_tavern:base_sandwich_board",
+    "minecraft:pink_tulip"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:tulip_sandwich_board"
+  }
+}
