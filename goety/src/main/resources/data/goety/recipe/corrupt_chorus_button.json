@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "goety:corrupt_chorus_planks"
+ ],
+ "result": {
+  "id": "goety:corrupt_chorus_button",
+  "count": 1
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#c:strings",
+  "#c:strings",
+  "#c:gems/lapis",
+  "#c:gems/jade"
+ ],
+ "result": {
+  "id": "goety:gale_fabric",
+  "count": 1
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "type": "craft",
+ "school": "expert_nether",
+ "activation": "goety:fire_breath_focus",
+ "offerings": [
+  "minecraft:lava_bucket",
+  "minecraft:magma_block",
+  "#c:rods/blaze",
+  "goety:updraft_focus"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:flame_strike_focus",
+ "count": 1
+}

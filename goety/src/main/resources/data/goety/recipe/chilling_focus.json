@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:iron_hide_focus",
+  "f": "minecraft:powder_snow_bucket",
+  "s": "minecraft:blue_ice"
+ },
+ "pattern": [
+  "sfs",
+  "fef",
+  "sfs"
+ ],
+ "result": {
+  "id": "goety:chilling_focus",
+  "count": 1
+ }
+}

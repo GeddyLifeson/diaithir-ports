@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:shade_stone"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:shade_stone_slab",
+  "count": 6
+ }
+}

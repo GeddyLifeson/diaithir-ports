@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:pale_steel_ingot"
+ },
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "result": {
+  "id": "goety:pale_steel_block",
+  "count": 1
+ }
+}

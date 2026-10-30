@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "L": "goety:chorus_wood",
+  "I": "goety:end_rock_bricks"
+ },
+ "pattern": [
+  " I ",
+  "ILI",
+  " I "
+ ],
+ "result": {
+  "id": "goety:studded_chorus_wood",
+  "count": 1
+ }
+}

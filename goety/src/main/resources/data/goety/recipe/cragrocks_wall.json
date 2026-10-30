@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:cragrocks"
+ },
+ "pattern": [
+  "###",
+  "###"
+ ],
+ "result": {
+  "id": "goety:cragrocks_wall",
+  "count": 6
+ }
+}

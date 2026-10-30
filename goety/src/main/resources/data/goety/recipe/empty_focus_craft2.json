@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "i": "#c:raw_materials/iron",
+  "q": "#c:gems/quartz",
+  "r": "#c:dusts/redstone",
+  "t": "#goety:totems"
+ },
+ "pattern": [
+  "iqr",
+  "qtq",
+  "rqi"
+ ],
+ "result": {
+  "id": "goety:empty_focus",
+  "count": 4
+ }
+}

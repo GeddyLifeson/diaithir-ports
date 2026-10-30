@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "goety:crag_pavement",
+ "result": {
+  "id": "goety:crag_pavement_slab",
+  "count": 2
+ }
+}

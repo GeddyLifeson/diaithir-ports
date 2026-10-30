@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:ectoplasm",
+  "b": "goety:water_jet_focus",
+  "w": "minecraft:water_bucket",
+  "l": "minecraft:lava_bucket",
+  "s": "goety:soul_bolt_focus"
+ },
+ "pattern": [
+  " e ",
+  "wbl",
+  " s "
+ ],
+ "result": {
+  "id": "goety:steaming_focus",
+  "count": 1
+ }
+}

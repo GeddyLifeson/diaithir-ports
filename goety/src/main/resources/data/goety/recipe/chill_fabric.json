@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#c:strings",
+  "#c:strings",
+  "#c:gems/lapis",
+  "minecraft:blue_ice"
+ ],
+ "result": {
+  "id": "goety:chill_fabric",
+  "count": 1
+ }
+}

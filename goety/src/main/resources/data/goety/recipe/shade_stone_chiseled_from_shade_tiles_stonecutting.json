@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "goety:shade_tiles",
+ "result": {
+  "id": "goety:shade_stone_chiseled",
+  "count": 1
+ }
+}

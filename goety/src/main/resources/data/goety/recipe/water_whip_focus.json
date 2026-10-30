@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:empty_focus",
+  "i": "minecraft:ink_sac",
+  "g": "minecraft:glow_ink_sac"
+ },
+ "pattern": [
+  "gig",
+  "iei",
+  "gig"
+ ],
+ "result": {
+  "id": "goety:water_whip_focus",
+  "count": 1
+ }
+}

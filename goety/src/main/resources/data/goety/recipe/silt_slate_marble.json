@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "m": "goety:slate_marble",
+  "l": "goety:siltstone"
+ },
+ "pattern": [
+  " m ",
+  "mlm",
+  " m "
+ ],
+ "result": {
+  "id": "goety:silt_slate_marble",
+  "count": 4
+ }
+}

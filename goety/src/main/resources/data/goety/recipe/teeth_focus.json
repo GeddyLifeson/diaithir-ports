@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "b": "minecraft:bone_block",
+  "e": "goety:mystic_core",
+  "f": "goety:magic_emerald",
+  "s": "goety:savage_tooth"
+ },
+ "pattern": [
+  "sbs",
+  "beb",
+  "fff"
+ ],
+ "result": {
+  "id": "goety:teeth_focus",
+  "count": 1
+ }
+}

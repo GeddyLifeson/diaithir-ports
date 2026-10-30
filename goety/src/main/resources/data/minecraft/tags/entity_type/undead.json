@@ -1,0 +1,28 @@
+{
+ "replace": false,
+ "values": [
+  "goety:drowned_necromancer",
+  "goety:frayed",
+  "goety:frayed_servant",
+  "goety:frost_necromancer",
+  "goety:frozen_zombie_servant",
+  "goety:husk_servant",
+  "goety:jungle_zombie_servant",
+  "goety:mossy_necromancer",
+  "goety:mossy_skeleton_servant",
+  "goety:necromancer",
+  "goety:rattled",
+  "goety:rattled_servant",
+  "goety:skeleton_pillager",
+  "goety:skeleton_servant",
+  "goety:skull_lord",
+  "goety:stray_servant",
+  "goety:sunken_skeleton_servant",
+  "goety:wither_necromancer",
+  "goety:wither_skeleton_servant",
+  "goety:wraith",
+  "goety:wraith_servant",
+  "goety:zombie_servant",
+  "goety:zombie_vindicator"
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:empty_focus",
+  "f": "#minecraft:coals",
+  "s": "minecraft:gunpowder"
+ },
+ "pattern": [
+  "sfs",
+  "fef",
+  "sfs"
+ ],
+ "result": {
+  "id": "goety:fire_breath_focus",
+  "count": 1
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "end",
+ "activation": "goety:rotting_focus",
+ "offerings": [
+  "minecraft:chorus_fruit",
+  "minecraft:ender_eye",
+  "#c:ender_pearls",
+  "minecraft:ender_eye",
+  "#c:ender_pearls",
+  "minecraft:ender_eye",
+  "minecraft:chorus_fruit",
+  "minecraft:ender_eye"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:watching_focus",
+ "count": 1
+}

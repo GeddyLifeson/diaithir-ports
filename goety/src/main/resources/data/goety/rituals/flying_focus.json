@@ -1,0 +1,17 @@
+{
+ "type": "craft",
+ "school": "sky",
+ "activation": "goety:launch_focus",
+ "offerings": [
+  "minecraft:elytra",
+  "minecraft:dragon_breath",
+  "minecraft:dragon_breath",
+  "minecraft:shulker_shell",
+  "minecraft:shulker_shell",
+  "minecraft:phantom_membrane"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:flying_focus",
+ "count": 1
+}

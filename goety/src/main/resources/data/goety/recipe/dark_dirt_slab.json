@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:dark_dirt"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:dark_dirt_slab",
+  "count": 6
+ }
+}
