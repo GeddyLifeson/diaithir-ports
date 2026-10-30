@@ -1,0 +1,15 @@
+{
+ "type": "create:pressing",
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "create"
+  }
+ ],
+ "ingredient": "create_chocopaste:sweetdough",
+ "results": [
+  {
+   "id": "create_chocopaste:chimney_cake_dough"
+  }
+ ]
+}

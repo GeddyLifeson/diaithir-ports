@@ -1,0 +1,11 @@
+{
+ "type": "create:emptying",
+ "ingredient": "create_chocopaste:choco_paste_250g",
+ "fluid_result": {
+  "id": "create:chocolate",
+  "amount": 20250
+ },
+ "result": {
+  "id": "create_chocopaste:empty_choco_paste_250g"
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "create_chocopaste:custom/empty_500g_chocopaste",
+  "textures": {
+    "all": "create_chocopaste:block/choco500g-empty",
+    "particle": "create_chocopaste:block/choco500g-empty",
+    "1": "create_chocopaste:block/choco500g-empty"
+  },
+  "render_type": "translucent"
+}

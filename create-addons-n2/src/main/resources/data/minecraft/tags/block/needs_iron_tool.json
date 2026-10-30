@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "electrumblock:electrum_block",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:beryl_block",
+   "required": false
+  }
+ ]
+}
