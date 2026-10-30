@@ -10,7 +10,9 @@
    "gem_class": {
     "key": "tools",
     "types": [
-     "apotheosis:breaker"
+     "apotheosis:breaker",
+    "apotheosis:shears",
+    "apotheosis:melee_weapon"
     ]
    },
    "operation": "add_value",

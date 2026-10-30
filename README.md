@@ -26,7 +26,7 @@ Source: https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diait
 
 ## diaithir-gear (Gléaus)
 
-Cross-mod gear parity: Point Blank bullet damage scaled against the Musket Mod, shared gem tag with matching Apotheosis and Silent Gems affixes, and one Age-gated set bonus per armour or jewellery family. Data driven, MIT. See `diaithir-gear/README.md` and `TEST.md`.
+Cross-mod gear parity: Point Blank bullet damage scaled against the Musket Mod, shared gem tag with matching Apotheosis and Silent Gems affixes, and one Age-gated set bonus per armour or jewellery family. Data driven, MIT. See `diaithir-gear/README.md` and `diaithir-gear/TEST.md`.
 
 # Diaithir Voice (diaithir-voice)
 

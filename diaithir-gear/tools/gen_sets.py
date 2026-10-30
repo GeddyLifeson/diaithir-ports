@@ -47,7 +47,7 @@ tag("diaithirgear/tags/item/gems/socketable.json", sorted({f"#c:gems/{g}" for g 
 GEM = {  # silentgems trait -> (gem, attribute, apotheosis gem_class)
  "hearty": ("peridot", "minecraft:max_health", {"key": "core_armor", "types": ["apotheosis:chestplate", "apotheosis:leggings"]}),
  "power": ("garnet", "minecraft:attack_damage", {"key": "light_weapon", "types": ["apotheosis:melee_weapon", "apotheosis:trident"]}),
- "hasty": ("opal", "minecraft:mining_efficiency", {"key": "tools", "types": ["apotheosis:breaker"]}),
+ "hasty": ("opal", "minecraft:mining_efficiency", {"key": "tools", "types": ["apotheosis:breaker", "apotheosis:shears", "apotheosis:melee_weapon"]}),
  "neptunes_blessing": ("pearl", "minecraft:oxygen_bonus", "apotheosis:helmet"),
  "step_up": ("aquamarine", "minecraft:step_height", "apotheosis:boots"),
  "twinkletoes": ("tanzanite", "minecraft:sneaking_speed", "apotheosis:boots"),

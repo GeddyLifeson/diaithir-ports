@@ -92,7 +92,8 @@ public final class SelfTest {
             float got = before - g.getHealth();
             Parity.forceBullet = false;
             if (mode == 0) baseline = got;
-            float expect = baseline * (mode == 2 ? mult : 1.0f);
+            float eff = GearConfig.PARITY_ON.getAsBoolean() ? (float) (1.0 + (mult - 1.0) * GearConfig.PARITY_STRENGTH.getAsDouble()) : 1.0f;
+            float expect = baseline * (mode == 2 ? eff : 1.0f);
             check(Math.abs(got - expect) < 0.25f + 0.04f * expect, "mode " + mode + " (" + gid + ") golem damage " + got + " expected " + expect);
             System.out.println("[gearselftest] hit 5.0 mode " + mode + " -> " + got);
         }
@@ -129,9 +130,9 @@ public final class SelfTest {
                 check(Sets.update(fp).get(f.id) == -1, e.getKey() + " no bonus below Age with " + n + " pieces");
                 setAge(lv, fp, f.age);
                 int got = Sets.update(fp).get(f.id);
-                check(got == want, e.getKey() + " " + n + " pieces tier " + got + " expected " + want);
+                check(!GearConfig.SETS_ON.getAsBoolean() ? got == -1 : got == want, e.getKey() + " " + n + " pieces tier " + got + " expected " + want);
                 // attribute really moves
-                if (want >= 0) {
+                if (want >= 0 && GearConfig.SETS_ON.getAsBoolean()) {
                     Sets.Mod m = f.tiers.get(want).mods().get(0);
                     var h = BuiltInRegistries.ATTRIBUTE.get(m.attribute());
                     if (h.isPresent() && fp.getAttribute(h.get()) != null) {
