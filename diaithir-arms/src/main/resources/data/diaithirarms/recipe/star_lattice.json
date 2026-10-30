@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "diaithirarms:rodos_alloy_ingot",
+  "diaithirarms:ceramic_plate",
+  "minecraft:nether_star"
+ ],
+ "result": {
+  "id": "diaithirarms:star_lattice",
+  "count": 1
+ }
+}

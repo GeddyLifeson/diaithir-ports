@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "PMP",
+  "PMP",
+  " M "
+ ],
+ "key": {
+  "M": "diaithirarms:rodos_alloy_ingot",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "diaithirarms:rodos_shield",
+  "count": 1
+ }
+}

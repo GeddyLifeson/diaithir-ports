@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "|M|",
+  "STS",
+  " | "
+ ],
+ "key": {
+  "M": "diaithirarms:star_lattice",
+  "|": "#c:rods/wooden",
+  "S": "minecraft:string",
+  "T": "minecraft:tripwire_hook"
+ },
+ "result": {
+  "id": "diaithirarms:future_crossbow",
+  "count": 1
+ }
+}

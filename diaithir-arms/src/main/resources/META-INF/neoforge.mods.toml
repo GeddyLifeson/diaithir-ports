@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirarms"
+version = "${version}"
+displayName = "Diaithir Arms"
+authors = "Diaithir"
+description = '''Arms and armour for every Age of Diaithir: hide and bone, copper, bronze, iron mail, steel plate, tempered alloy and ballistic weave, ceramic composite, Rodos alloy and the Future ring-lattice. Clean-room, original art and code.'''
+
+[[dependencies.diaithirarms]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

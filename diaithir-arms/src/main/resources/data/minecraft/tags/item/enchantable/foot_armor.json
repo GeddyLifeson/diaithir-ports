@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirarms:bone_boots",
+  "diaithirarms:copper_boots",
+  "diaithirarms:bronze_boots",
+  "diaithirarms:mail_boots",
+  "diaithirarms:steel_boots",
+  "diaithirarms:ballistic_boots",
+  "diaithirarms:composite_boots",
+  "diaithirarms:rodos_boots",
+  "diaithirarms:future_boots"
+ ]
+}

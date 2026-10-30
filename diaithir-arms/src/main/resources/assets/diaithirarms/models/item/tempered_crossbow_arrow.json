@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/crossbow",
+ "textures": {
+  "layer0": "diaithirarms:item/tempered_crossbow_arrow"
+ }
+}

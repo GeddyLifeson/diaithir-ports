@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirarms:steel_spear",
+  "diaithirarms:tempered_spear",
+  "diaithirarms:composite_spear",
+  "diaithirarms:rodos_spear",
+  "diaithirarms:future_spear"
+ ]
+}
