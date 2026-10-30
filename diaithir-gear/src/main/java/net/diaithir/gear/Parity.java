@@ -21,6 +21,15 @@ public final class Parity {
 
     private Parity() {}
 
+    /** Test hook: treat the next hits as bullets. */
+    static volatile boolean forceBullet;
+
+    /** True when the current call stack passes through Point Blank (its hitscan calls hurt directly), so gun-in-hand melee is excluded. */
+    static boolean fromPointBlank() {
+        if (forceBullet) return true;
+        return StackWalker.getInstance().walk(s -> s.anyMatch(f -> f.getClassName().startsWith("com.vicmatskiv.pointblank.")));
+    }
+
     public static Map<Identifier, Float> table() { return MULT; }
 
     public static void load() {
@@ -48,7 +57,7 @@ public final class Parity {
         ItemStack s = a.getMainHandItem();
         if (s.isEmpty()) return amount;
         Float m = MULT.get(BuiltInRegistries.ITEM.getKey(s.getItem()));
-        if (m == null) return amount;
+        if (m == null || !fromPointBlank()) return amount;
         double k = GearConfig.PARITY_STRENGTH.getAsDouble();
         return (float) (amount * (1.0 + (m - 1.0) * k));
     }

@@ -67,12 +67,21 @@ def main(jar):
         (tdir / f"{k}.json").write_text(json.dumps({"replace": False, "values": [{"id": "pointblank:" + v[0], "required": False}]}, indent=1))
     (tdir / "cartridge.json").write_text(json.dumps({"replace": False, "values": [{"id": "musketmod:cartridge", "required": False}]}, indent=1))
     (tdir / "bullets.json").write_text(json.dumps({"replace": False, "values": [{"id": "#diaithir:ammo/cartridge", "required": False}] + [{"id": "#diaithir:ammo/" + k, "required": False} for k in CAL]}, indent=1))
-    age = {"musketmod": "IV", "pointblank": "VI", "diaithirgear": "IV"}
     items = {"musketmod:cartridge": "IV"}
     items.update({"pointblank:" + v[0]: v[2] for v in CAL.values()})
-    (ROOT / "age_gates.json").write_text(json.dumps({"_doc": "Same shape as DiaithirRPG content/tech_ages.json. Items beat namespaces. Calibres follow the decided pointblank ages (.45 and .357 Age V), the rest Age VII; the musket cartridge is the Age IV baseline. Set families gate in data/diaithirgear/set_bonuses.", "namespaces": {"diaithirgear": "IV"}, "items": items}, indent=1))
+    ag = ROOT / "age_gates.json"
+    old = json.loads(ag.read_text()) if ag.exists() else {}
+    old.setdefault("_doc", "Same shape as DiaithirRPG content/tech_ages.json. Items beat namespaces.")
+    old["namespaces"] = {"diaithirgear": "IV"}
+    old["items"] = items
+    ag.write_text(json.dumps(old, indent=1))
+    # tech_ages.json lists the pointblank namespace at VI; the calibre items above override it (items beat namespaces).
     print(len(guns), "guns")
     for k, g in sorted(guns.items()):
         print(k, g["calibre"], g["base"], g["rpm"], "->", g["parity_hit"], "x", g["mult"])
 
-main(sys.argv[1])
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("jar", help="Point Blank jar")
+    main(ap.parse_args().jar)

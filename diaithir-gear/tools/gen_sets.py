@@ -4,7 +4,12 @@ Reads the pack item list (packmap/pack_dump.json.gz) and, for gems, the Silent G
 import gzip, json, pathlib, re, sys, zipfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 D = ROOT / "src/main/resources/data"
-items = [i if isinstance(i, str) else i["id"] for i in json.load(gzip.open("/mnt/project-files/packmap/pack_dump.json.gz"))["items"]]
+import argparse
+ap = argparse.ArgumentParser(description=__doc__)
+ap.add_argument("silentgems_jar")
+ap.add_argument("pack_dump", help="packmap/pack_dump.json.gz")
+ARGS = ap.parse_args()
+items = [i if isinstance(i, str) else i["id"] for i in json.load(gzip.open(ARGS.pack_dump))["items"]]
 def w(path, obj):
     p = D / path; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(json.dumps(obj, indent=1, ensure_ascii=False))
 def tag(path, vals): w(path, {"replace": False, "values": [{"id": v, "required": False} for v in vals]})
@@ -33,7 +38,7 @@ for k, (age, curio, tiers) in bon.items():
 w("diaithirgear/set_bonuses/index.json", idx)
 
 # ---- gems: shared tags and Apotheosis gems mirroring Silent Gems trait numbers
-jar = zipfile.ZipFile(sys.argv[1])
+jar = zipfile.ZipFile(ARGS.silentgems_jar)
 SG = ["alexandrite","ammolite","aquamarine","black_diamond","carnelian","citrine","garnet","heliodor","iolite","kyanite","moldavite","opal","pearl","peridot","rose_quartz","ruby","sapphire","tanzanite","topaz","turquoise","white_diamond"]
 JEW = ["ruby","topaz","citrine","jade","sapphire","tanzanite"]
 IRON = ["garnet","moonstone","onyx","peridot","ruby","sapphire","topaz"]

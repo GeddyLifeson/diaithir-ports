@@ -36,7 +36,15 @@ public final class SelfTest {
                 .requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
                 .executes(c -> {
                     ok = 0; bad = 0;
+                    boolean ign = GearConfig.IGNORE_AGE.getAsBoolean();
+                    Identifier stick = Identifier.parse("minecraft:stick");
+                    Float oldStick = Parity.table().get(stick);
                     try { run(c.getSource().getLevel()); } catch (Throwable t) { t.printStackTrace(); check(false, "exception " + t); }
+                    finally {
+                        GearConfig.IGNORE_AGE.set(ign);
+                        Parity.forceBullet = false;
+                        if (oldStick == null) Parity.table().remove(stick); else Parity.table().put(stick, oldStick);
+                    }
                     String msg = "gear ok=" + ok + " bad=" + bad;
                     System.out.println("[gearselftest] " + msg);
                     c.getSource().sendSuccess(() -> Component.literal(msg), false);
@@ -63,7 +71,7 @@ public final class SelfTest {
             mm++;
         }
         System.out.println("[gearselftest] gun items present in registry: " + present + "/" + mm);
-        check(item("musketmod:cartridge") != null || present == 0 || true, "musket cartridge registered");
+        if (net.neoforged.fml.ModList.get().isLoaded("musketmod")) check(item("musketmod:cartridge") != null, "musket cartridge registered");
 
         // ---- real damage: held gun (or stand-in stick) against a golem, ratio to an unarmed hit
         Item gun = item("pointblank:ak47");
@@ -71,23 +79,25 @@ public final class SelfTest {
         if (gun == null) { gun = Items.STICK; t.put(gid, 2.0f); }
         float mult = t.get(gid);
         float baseline = 5.0f;  // measured on the first hit: a fresh golem in a just-loaded chunk can take extra damage once
-        for (boolean armed : new boolean[]{false, true}) {
+        // 0 = empty hand, 1 = gun in hand as melee (must stay unchanged), 2 = gun hit seen as a Point Blank bullet (scaled)
+        for (int mode = 0; mode < 3; mode++) {
             IronGolem g = EntityType.IRON_GOLEM.create(lv, EntitySpawnReason.COMMAND);
             g.setNoAi(true); g.setNoGravity(true); g.setPos(bx, by, bz + 2);
             lv.addFreshEntity(g); golems.add(g);
-            fp.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, armed ? new ItemStack(gun) : ItemStack.EMPTY);
+            fp.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, mode == 0 ? ItemStack.EMPTY : new ItemStack(gun));
+            Parity.forceBullet = mode == 2;
             g.setHealth(g.getMaxHealth());
             float before = g.getHealth();
             g.hurtServer(lv, lv.damageSources().playerAttack(fp), 5.0f);
             float got = before - g.getHealth();
-            if (!armed) baseline = got;
-            float expect = baseline * (armed ? mult : 1.0f);
-            check(Math.abs(got - expect) < 0.25f + 0.04f * expect, (armed ? gid : "empty hand") + " golem damage " + got + " expected " + expect);
-            System.out.println("[gearselftest] hit 5.0 with " + (armed ? gid : "empty hand") + " -> " + got);
+            Parity.forceBullet = false;
+            if (mode == 0) baseline = got;
+            float expect = baseline * (mode == 2 ? mult : 1.0f);
+            check(Math.abs(got - expect) < 0.25f + 0.04f * expect, "mode " + mode + " (" + gid + ") golem damage " + got + " expected " + expect);
+            System.out.println("[gearselftest] hit 5.0 mode " + mode + " -> " + got);
         }
         fp.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, ItemStack.EMPTY);
         golems.forEach(IronGolem::discard);
-        if (t.get(Identifier.parse("minecraft:stick")) != null) t.remove(Identifier.parse("minecraft:stick"));
 
         // ---- tags: shared gem tag, ammo tags
         check(inTag("c:gems/ruby", "jewelry:ruby") || item("jewelry:ruby") == null, "c:gems/ruby holds jewelry:ruby");
@@ -110,7 +120,6 @@ public final class SelfTest {
             if (f == null) continue;
             Item first = item(e.getValue()[0]);
             if (first == null) { System.out.println("[gearselftest] " + e.getKey() + " items not installed, armour part skipped"); continue; }
-            boolean ign = GearConfig.IGNORE_AGE.getAsBoolean();
             for (int n = 0; n <= 4; n++) {
                 for (int i = 0; i < 4; i++) fp.setItemSlot(slots[i], i < n ? new ItemStack(item(e.getValue()[i])) : ItemStack.EMPTY);
                 int want = f.tierFor(n);

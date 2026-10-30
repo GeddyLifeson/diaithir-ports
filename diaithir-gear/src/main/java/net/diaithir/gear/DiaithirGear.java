@@ -41,5 +41,11 @@ public final class DiaithirGear {
     }
 
     @SubscribeEvent
+    public void respawn(PlayerEvent.PlayerRespawnEvent e) { Sets.forget(e.getEntity()); }
+
+    @SubscribeEvent
+    public void dimension(PlayerEvent.PlayerChangedDimensionEvent e) { Sets.forget(e.getEntity()); }
+
+    @SubscribeEvent
     public void logout(PlayerEvent.PlayerLoggedOutEvent e) { Sets.forget(e.getEntity()); }
 }
