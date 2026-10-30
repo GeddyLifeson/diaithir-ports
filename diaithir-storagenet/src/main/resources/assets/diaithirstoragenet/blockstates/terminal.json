@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "diaithirstoragenet:block/terminal"
+    },
+    "facing=east": {
+      "model": "diaithirstoragenet:block/terminal",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "diaithirstoragenet:block/terminal",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "diaithirstoragenet:block/terminal",
+      "y": 270
+    }
+  }
+}
