@@ -1,0 +1,22 @@
+{
+  "tier1": {
+    "age": 5,
+    "items": [
+      "diaithirsteamrails:boiler_firebox",
+      "diaithirsteamrails:copper_boiler_shell",
+      "diaithirsteamrails:smokestack",
+      "diaithirsteamrails:steam_cylinder",
+      "diaithirsteamrails:steam_whistle",
+      "diaithirsteamrails:fuel_tender",
+      "diaithirsteamrails:riveted_plate",
+      "diaithirsteamrails:flue_tube",
+      "diaithirsteamrails:piston_rod"
+    ]
+  },
+  "tier2": {
+    "age": 6,
+    "items": [
+      "diaithirsteamrails:steel_boiler_shell"
+    ]
+  }
+}

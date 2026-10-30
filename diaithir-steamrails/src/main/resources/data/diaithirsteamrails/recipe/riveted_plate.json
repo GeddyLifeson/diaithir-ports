@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "N": "minecraft:iron_nugget",
+  "I": "minecraft:iron_ingot"
+ },
+ "pattern": [
+  "NI",
+  "IN"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:riveted_plate",
+  "count": 2
+ },
+ "category": "misc"
+}

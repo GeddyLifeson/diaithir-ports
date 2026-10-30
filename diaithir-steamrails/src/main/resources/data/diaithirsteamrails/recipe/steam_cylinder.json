@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "P": "diaithirsteamrails:riveted_plate",
+  "T": "diaithirsteamrails:flue_tube",
+  "R": "diaithirsteamrails:piston_rod"
+ },
+ "pattern": [
+  "PPP",
+  "TRT"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:steam_cylinder",
+  "count": 1
+ },
+ "category": "misc"
+}

@@ -1,0 +1,50 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-steamrails-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        client {
+            client()
+            jvmArgument '-Xmx6G'
+            // -Pquickplay=<world folder in run/saves> goes straight into that world
+            if (project.hasProperty('quickplay')) {
+                programArgument '--quickPlaySingleplayer'
+                programArgument project.property('quickplay')
+            }
+        }
+    }
+    mods { diaithirsteamrails { sourceSet(sourceSets.main) } }
+}
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+// Create is compile-only. Point -Pcreate_jar=... at the Diaithir port jar if it is not at the default path.
+def createJar = file(project.findProperty('create_jar'))
+
+dependencies {
+    compileOnly files(createJar)
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+test {
+    useJUnitPlatform()
+}

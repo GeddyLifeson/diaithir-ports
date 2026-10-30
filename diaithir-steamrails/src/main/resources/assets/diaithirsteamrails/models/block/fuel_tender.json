@@ -1,0 +1,12 @@
+{
+ "parent": "minecraft:block/cube",
+ "textures": {
+  "particle": "diaithirsteamrails:block/fuel_tender_side",
+  "down": "diaithirsteamrails:block/fuel_tender_side",
+  "up": "diaithirsteamrails:block/fuel_tender_top",
+  "north": "diaithirsteamrails:block/fuel_tender_side",
+  "east": "diaithirsteamrails:block/fuel_tender_side",
+  "south": "diaithirsteamrails:block/fuel_tender_side",
+  "west": "diaithirsteamrails:block/fuel_tender_side"
+ }
+}
