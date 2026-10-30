@@ -1,0 +1,22 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirrelics"
+version = "${version}"
+displayName = "Diaithir Relics"
+authors = "Diaithir"
+description = '''Iarmadun: twenty-six unique relics for Ages III to VII, heroes' weapons, shields and the trinkets of the otherworld, each with an active or passive power. Trinkets sit in Curios slots. Clean-room, original art and code.'''
+
+[[dependencies.diaithirrelics]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirrelics]]
+modId = "curios"
+type = "optional"
+versionRange = "[15,)"
+ordering = "AFTER"
+side = "BOTH"
