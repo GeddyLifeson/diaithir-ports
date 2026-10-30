@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#c:ingots/bronze",
+  "|": "spartanweaponry:handle",
+  "/": "minecraft:stick"
+ },
+ "pattern": [
+  "###",
+  "#/#",
+  " | "
+ ],
+ "result": {
+  "id": "spartanweaponry:bronze_battleaxe"
+ }
+}

@@ -1,0 +1,1479 @@
+[
+ {
+  "id": "wooden_dagger",
+  "type": "dagger",
+  "material": "wood",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "backstab"
+  ]
+ },
+ {
+  "id": "stone_dagger",
+  "type": "dagger",
+  "material": "stone",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "backstab"
+  ]
+ },
+ {
+  "id": "copper_dagger",
+  "type": "dagger",
+  "material": "copper",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "backstab"
+  ]
+ },
+ {
+  "id": "bronze_dagger",
+  "type": "dagger",
+  "material": "bronze",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "backstab"
+  ]
+ },
+ {
+  "id": "iron_dagger",
+  "type": "dagger",
+  "material": "iron",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "backstab"
+  ]
+ },
+ {
+  "id": "wooden_parrying_dagger",
+  "type": "parrying_dagger",
+  "material": "wood",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "stone_parrying_dagger",
+  "type": "parrying_dagger",
+  "material": "stone",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "copper_parrying_dagger",
+  "type": "parrying_dagger",
+  "material": "copper",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "bronze_parrying_dagger",
+  "type": "parrying_dagger",
+  "material": "bronze",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "iron_parrying_dagger",
+  "type": "parrying_dagger",
+  "material": "iron",
+  "damage": 2.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "wooden_longsword",
+  "type": "longsword",
+  "material": "wood",
+  "damage": 4.5,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "stone_longsword",
+  "type": "longsword",
+  "material": "stone",
+  "damage": 4.5,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "copper_longsword",
+  "type": "longsword",
+  "material": "copper",
+  "damage": 4.5,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "bronze_longsword",
+  "type": "longsword",
+  "material": "bronze",
+  "damage": 4.5,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "iron_longsword",
+  "type": "longsword",
+  "material": "iron",
+  "damage": 4.5,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "wooden_katana",
+  "type": "katana",
+  "material": "wood",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 2.0,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "stone_katana",
+  "type": "katana",
+  "material": "stone",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 2.0,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "copper_katana",
+  "type": "katana",
+  "material": "copper",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 2.0,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "bronze_katana",
+  "type": "katana",
+  "material": "bronze",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 2.0,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "iron_katana",
+  "type": "katana",
+  "material": "iron",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 2.0,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "wooden_saber",
+  "type": "saber",
+  "material": "wood",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 1.6,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "stone_saber",
+  "type": "saber",
+  "material": "stone",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 1.6,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "copper_saber",
+  "type": "saber",
+  "material": "copper",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 1.6,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "bronze_saber",
+  "type": "saber",
+  "material": "bronze",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 1.6,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "iron_saber",
+  "type": "saber",
+  "material": "iron",
+  "damage": 3.5,
+  "mult": 0.5,
+  "speed": 1.6,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.01,
+  "flags": []
+ },
+ {
+  "id": "wooden_rapier",
+  "type": "rapier",
+  "material": "wood",
+  "damage": 2.0,
+  "mult": 0.5,
+  "speed": 2.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "unarmoured"
+  ]
+ },
+ {
+  "id": "stone_rapier",
+  "type": "rapier",
+  "material": "stone",
+  "damage": 2.0,
+  "mult": 0.5,
+  "speed": 2.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "unarmoured"
+  ]
+ },
+ {
+  "id": "copper_rapier",
+  "type": "rapier",
+  "material": "copper",
+  "damage": 2.0,
+  "mult": 0.5,
+  "speed": 2.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "unarmoured"
+  ]
+ },
+ {
+  "id": "bronze_rapier",
+  "type": "rapier",
+  "material": "bronze",
+  "damage": 2.0,
+  "mult": 0.5,
+  "speed": 2.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "unarmoured"
+  ]
+ },
+ {
+  "id": "iron_rapier",
+  "type": "rapier",
+  "material": "iron",
+  "damage": 2.0,
+  "mult": 0.5,
+  "speed": 2.4,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "unarmoured"
+  ]
+ },
+ {
+  "id": "wooden_greatsword",
+  "type": "greatsword",
+  "material": "wood",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 1.0,
+  "flags": []
+ },
+ {
+  "id": "stone_greatsword",
+  "type": "greatsword",
+  "material": "stone",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 1.0,
+  "flags": []
+ },
+ {
+  "id": "copper_greatsword",
+  "type": "greatsword",
+  "material": "copper",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 1.0,
+  "flags": []
+ },
+ {
+  "id": "bronze_greatsword",
+  "type": "greatsword",
+  "material": "bronze",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 1.0,
+  "flags": []
+ },
+ {
+  "id": "iron_greatsword",
+  "type": "greatsword",
+  "material": "iron",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 1.0,
+  "flags": []
+ },
+ {
+  "id": "wooden_battle_hammer",
+  "type": "battle_hammer",
+  "material": "wood",
+  "damage": 5.0,
+  "mult": 2.0,
+  "speed": 0.8,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "knockback",
+   "nausea"
+  ]
+ },
+ {
+  "id": "stone_battle_hammer",
+  "type": "battle_hammer",
+  "material": "stone",
+  "damage": 5.0,
+  "mult": 2.0,
+  "speed": 0.8,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "knockback",
+   "nausea"
+  ]
+ },
+ {
+  "id": "copper_battle_hammer",
+  "type": "battle_hammer",
+  "material": "copper",
+  "damage": 5.0,
+  "mult": 2.0,
+  "speed": 0.8,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "knockback",
+   "nausea"
+  ]
+ },
+ {
+  "id": "bronze_battle_hammer",
+  "type": "battle_hammer",
+  "material": "bronze",
+  "damage": 5.0,
+  "mult": 2.0,
+  "speed": 0.8,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "knockback",
+   "nausea"
+  ]
+ },
+ {
+  "id": "iron_battle_hammer",
+  "type": "battle_hammer",
+  "material": "iron",
+  "damage": 5.0,
+  "mult": 2.0,
+  "speed": 0.8,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "knockback",
+   "nausea"
+  ]
+ },
+ {
+  "id": "wooden_warhammer",
+  "type": "warhammer",
+  "material": "wood",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.1,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "stone_warhammer",
+  "type": "warhammer",
+  "material": "stone",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.1,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "copper_warhammer",
+  "type": "warhammer",
+  "material": "copper",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.1,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "bronze_warhammer",
+  "type": "warhammer",
+  "material": "bronze",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.1,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "iron_warhammer",
+  "type": "warhammer",
+  "material": "iron",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.1,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "wooden_spear",
+  "type": "spear",
+  "material": "wood",
+  "damage": 5.5,
+  "mult": 0.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "stone_spear",
+  "type": "spear",
+  "material": "stone",
+  "damage": 5.5,
+  "mult": 0.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "copper_spear",
+  "type": "spear",
+  "material": "copper",
+  "damage": 5.5,
+  "mult": 0.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "bronze_spear",
+  "type": "spear",
+  "material": "bronze",
+  "damage": 5.5,
+  "mult": 0.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "iron_spear",
+  "type": "spear",
+  "material": "iron",
+  "damage": 5.5,
+  "mult": 0.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "wooden_halberd",
+  "type": "halberd",
+  "material": "wood",
+  "damage": 5.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": [
+   "shield_breach"
+  ]
+ },
+ {
+  "id": "stone_halberd",
+  "type": "halberd",
+  "material": "stone",
+  "damage": 5.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": [
+   "shield_breach"
+  ]
+ },
+ {
+  "id": "copper_halberd",
+  "type": "halberd",
+  "material": "copper",
+  "damage": 5.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": [
+   "shield_breach"
+  ]
+ },
+ {
+  "id": "bronze_halberd",
+  "type": "halberd",
+  "material": "bronze",
+  "damage": 5.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": [
+   "shield_breach"
+  ]
+ },
+ {
+  "id": "iron_halberd",
+  "type": "halberd",
+  "material": "iron",
+  "damage": 5.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.0,
+  "flags": [
+   "shield_breach"
+  ]
+ },
+ {
+  "id": "wooden_pike",
+  "type": "pike",
+  "material": "wood",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 2.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "stone_pike",
+  "type": "pike",
+  "material": "stone",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 2.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "copper_pike",
+  "type": "pike",
+  "material": "copper",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 2.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "bronze_pike",
+  "type": "pike",
+  "material": "bronze",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 2.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "iron_pike",
+  "type": "pike",
+  "material": "iron",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 2.5,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "wooden_lance",
+  "type": "lance",
+  "material": "wood",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.01,
+  "flags": [
+   "riding"
+  ]
+ },
+ {
+  "id": "stone_lance",
+  "type": "lance",
+  "material": "stone",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.01,
+  "flags": [
+   "riding"
+  ]
+ },
+ {
+  "id": "copper_lance",
+  "type": "lance",
+  "material": "copper",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.01,
+  "flags": [
+   "riding"
+  ]
+ },
+ {
+  "id": "bronze_lance",
+  "type": "lance",
+  "material": "bronze",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.01,
+  "flags": [
+   "riding"
+  ]
+ },
+ {
+  "id": "iron_lance",
+  "type": "lance",
+  "material": "iron",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 1.5,
+  "sweep": 0.01,
+  "flags": [
+   "riding"
+  ]
+ },
+ {
+  "id": "wooden_battleaxe",
+  "type": "battleaxe",
+  "material": "wood",
+  "damage": 4.0,
+  "mult": 2.0,
+  "speed": 1.0,
+  "kind": "axe",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "stone_battleaxe",
+  "type": "battleaxe",
+  "material": "stone",
+  "damage": 4.0,
+  "mult": 2.0,
+  "speed": 1.0,
+  "kind": "axe",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "copper_battleaxe",
+  "type": "battleaxe",
+  "material": "copper",
+  "damage": 4.0,
+  "mult": 2.0,
+  "speed": 1.0,
+  "kind": "axe",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "bronze_battleaxe",
+  "type": "battleaxe",
+  "material": "bronze",
+  "damage": 4.0,
+  "mult": 2.0,
+  "speed": 1.0,
+  "kind": "axe",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "iron_battleaxe",
+  "type": "battleaxe",
+  "material": "iron",
+  "damage": 4.0,
+  "mult": 2.0,
+  "speed": 1.0,
+  "kind": "axe",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "wooden_flanged_mace",
+  "type": "flanged_mace",
+  "material": "wood",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "undead"
+  ]
+ },
+ {
+  "id": "stone_flanged_mace",
+  "type": "flanged_mace",
+  "material": "stone",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "undead"
+  ]
+ },
+ {
+  "id": "copper_flanged_mace",
+  "type": "flanged_mace",
+  "material": "copper",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "undead"
+  ]
+ },
+ {
+  "id": "bronze_flanged_mace",
+  "type": "flanged_mace",
+  "material": "bronze",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "undead"
+  ]
+ },
+ {
+  "id": "iron_flanged_mace",
+  "type": "flanged_mace",
+  "material": "iron",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "undead"
+  ]
+ },
+ {
+  "id": "wooden_glaive",
+  "type": "glaive",
+  "material": "wood",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.0,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "stone_glaive",
+  "type": "glaive",
+  "material": "stone",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.0,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "copper_glaive",
+  "type": "glaive",
+  "material": "copper",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.0,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "bronze_glaive",
+  "type": "glaive",
+  "material": "bronze",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.0,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "iron_glaive",
+  "type": "glaive",
+  "material": "iron",
+  "damage": 4.0,
+  "mult": 1.5,
+  "speed": 1.0,
+  "kind": "sword",
+  "reach": 1.5,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "wooden_quarterstaff",
+  "type": "quarterstaff",
+  "material": "wood",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "stone_quarterstaff",
+  "type": "quarterstaff",
+  "material": "stone",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "copper_quarterstaff",
+  "type": "quarterstaff",
+  "material": "copper",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "bronze_quarterstaff",
+  "type": "quarterstaff",
+  "material": "bronze",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "iron_quarterstaff",
+  "type": "quarterstaff",
+  "material": "iron",
+  "damage": 3.0,
+  "mult": 1.5,
+  "speed": 1.4,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.5,
+  "flags": []
+ },
+ {
+  "id": "wooden_scythe",
+  "type": "scythe",
+  "material": "wood",
+  "damage": 5.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "stone_scythe",
+  "type": "scythe",
+  "material": "stone",
+  "damage": 5.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "copper_scythe",
+  "type": "scythe",
+  "material": "copper",
+  "damage": 5.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "bronze_scythe",
+  "type": "scythe",
+  "material": "bronze",
+  "damage": 5.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "iron_scythe",
+  "type": "scythe",
+  "material": "iron",
+  "damage": 5.0,
+  "mult": 1.0,
+  "speed": 1.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "wooden_throwing_knife",
+  "type": "throwing_knife",
+  "material": "wood",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "stone_throwing_knife",
+  "type": "throwing_knife",
+  "material": "stone",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "copper_throwing_knife",
+  "type": "throwing_knife",
+  "material": "copper",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "bronze_throwing_knife",
+  "type": "throwing_knife",
+  "material": "bronze",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "iron_throwing_knife",
+  "type": "throwing_knife",
+  "material": "iron",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 2.5,
+  "kind": "sword",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "wooden_tomahawk",
+  "type": "tomahawk",
+  "material": "wood",
+  "damage": 2.0,
+  "mult": 1.5,
+  "speed": 0.9,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "stone_tomahawk",
+  "type": "tomahawk",
+  "material": "stone",
+  "damage": 2.0,
+  "mult": 1.5,
+  "speed": 0.9,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "copper_tomahawk",
+  "type": "tomahawk",
+  "material": "copper",
+  "damage": 2.0,
+  "mult": 1.5,
+  "speed": 0.9,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "bronze_tomahawk",
+  "type": "tomahawk",
+  "material": "bronze",
+  "damage": 2.0,
+  "mult": 1.5,
+  "speed": 0.9,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "iron_tomahawk",
+  "type": "tomahawk",
+  "material": "iron",
+  "damage": 2.0,
+  "mult": 1.5,
+  "speed": 0.9,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "wooden_javelin",
+  "type": "javelin",
+  "material": "wood",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "stone_javelin",
+  "type": "javelin",
+  "material": "stone",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "copper_javelin",
+  "type": "javelin",
+  "material": "copper",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "bronze_javelin",
+  "type": "javelin",
+  "material": "bronze",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "iron_javelin",
+  "type": "javelin",
+  "material": "iron",
+  "damage": 1.5,
+  "mult": 1.0,
+  "speed": 1.2,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "wooden_boomerang",
+  "type": "boomerang",
+  "material": "wood",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 2.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "stone_boomerang",
+  "type": "boomerang",
+  "material": "stone",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 2.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "copper_boomerang",
+  "type": "boomerang",
+  "material": "copper",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 2.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "bronze_boomerang",
+  "type": "boomerang",
+  "material": "bronze",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 2.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "iron_boomerang",
+  "type": "boomerang",
+  "material": "iron",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 2.0,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "throwing"
+  ]
+ },
+ {
+  "id": "wooden_club",
+  "type": "club",
+  "material": "wood",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.3,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "nausea"
+  ]
+ },
+ {
+  "id": "studded_club",
+  "type": "club",
+  "material": "iron",
+  "damage": 4.0,
+  "mult": 1.0,
+  "speed": 1.3,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": [
+   "nausea"
+  ]
+ },
+ {
+  "id": "cestus",
+  "type": "cestus",
+  "material": "leather",
+  "damage": 2.0,
+  "mult": 0.5,
+  "speed": 3.5,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ },
+ {
+  "id": "studded_cestus",
+  "type": "cestus",
+  "material": "iron",
+  "damage": 2.0,
+  "mult": 0.5,
+  "speed": 3.5,
+  "kind": "plain",
+  "reach": 0.0,
+  "sweep": 0.0,
+  "flags": []
+ }
+]

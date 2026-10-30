@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "minecraft:copper_ingot",
+  "/": "spartanweaponry:pole"
+ },
+ "pattern": [
+  "/#"
+ ],
+ "result": {
+  "id": "spartanweaponry:copper_javelin"
+ }
+}

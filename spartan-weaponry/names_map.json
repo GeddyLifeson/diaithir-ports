@@ -1,0 +1,474 @@
+{
+ "wooden_dagger": {
+  "diaithiris": "Biudag fiud",
+  "english": "Wooden Dagger"
+ },
+ "stone_dagger": {
+  "diaithiris": "Biudag klach",
+  "english": "Stone Dagger"
+ },
+ "copper_dagger": {
+  "diaithiris": "Biudag uma",
+  "english": "Copper Dagger"
+ },
+ "bronze_dagger": {
+  "diaithiris": "Biudag krèuma",
+  "english": "Bronze Dagger"
+ },
+ "iron_dagger": {
+  "diaithiris": "Biudag iarund",
+  "english": "Iron Dagger"
+ },
+ "wooden_parrying_dagger": {
+  "diaithiris": "Biudagdìun fiud",
+  "english": "Wooden Parrying Dagger"
+ },
+ "stone_parrying_dagger": {
+  "diaithiris": "Biudagdìun klach",
+  "english": "Stone Parrying Dagger"
+ },
+ "copper_parrying_dagger": {
+  "diaithiris": "Biudagdìun uma",
+  "english": "Copper Parrying Dagger"
+ },
+ "bronze_parrying_dagger": {
+  "diaithiris": "Biudagdìun krèuma",
+  "english": "Bronze Parrying Dagger"
+ },
+ "iron_parrying_dagger": {
+  "diaithiris": "Biudagdìun iarund",
+  "english": "Iron Parrying Dagger"
+ },
+ "wooden_longsword": {
+  "diaithiris": "Klaidemfauda fiud",
+  "english": "Wooden Longsword"
+ },
+ "stone_longsword": {
+  "diaithiris": "Klaidemfauda klach",
+  "english": "Stone Longsword"
+ },
+ "copper_longsword": {
+  "diaithiris": "Klaidemfauda uma",
+  "english": "Copper Longsword"
+ },
+ "bronze_longsword": {
+  "diaithiris": "Klaidemfauda krèuma",
+  "english": "Bronze Longsword"
+ },
+ "iron_longsword": {
+  "diaithiris": "Klaidemfauda iarund",
+  "english": "Iron Longsword"
+ },
+ "wooden_katana": {
+  "diaithiris": "Klaidemgeiri fiud",
+  "english": "Wooden Katana"
+ },
+ "stone_katana": {
+  "diaithiris": "Klaidemgeiri klach",
+  "english": "Stone Katana"
+ },
+ "copper_katana": {
+  "diaithiris": "Klaidemgeiri uma",
+  "english": "Copper Katana"
+ },
+ "bronze_katana": {
+  "diaithiris": "Klaidemgeiri krèuma",
+  "english": "Bronze Katana"
+ },
+ "iron_katana": {
+  "diaithiris": "Klaidemgeiri iarund",
+  "english": "Iron Katana"
+ },
+ "wooden_saber": {
+  "diaithiris": "Klaidemkrum fiud",
+  "english": "Wooden Saber"
+ },
+ "stone_saber": {
+  "diaithiris": "Klaidemkrum klach",
+  "english": "Stone Saber"
+ },
+ "copper_saber": {
+  "diaithiris": "Klaidemkrum uma",
+  "english": "Copper Saber"
+ },
+ "bronze_saber": {
+  "diaithiris": "Klaidemkrum krèuma",
+  "english": "Bronze Saber"
+ },
+ "iron_saber": {
+  "diaithiris": "Klaidemkrum iarund",
+  "english": "Iron Saber"
+ },
+ "wooden_rapier": {
+  "diaithiris": "Klaidemtauna fiud",
+  "english": "Wooden Rapier"
+ },
+ "stone_rapier": {
+  "diaithiris": "Klaidemtauna klach",
+  "english": "Stone Rapier"
+ },
+ "copper_rapier": {
+  "diaithiris": "Klaidemtauna uma",
+  "english": "Copper Rapier"
+ },
+ "bronze_rapier": {
+  "diaithiris": "Klaidemtauna krèuma",
+  "english": "Bronze Rapier"
+ },
+ "iron_rapier": {
+  "diaithiris": "Klaidemtauna iarund",
+  "english": "Iron Rapier"
+ },
+ "wooden_greatsword": {
+  "diaithiris": "Klaidemmòru fiud",
+  "english": "Wooden Greatsword"
+ },
+ "stone_greatsword": {
+  "diaithiris": "Klaidemmòru klach",
+  "english": "Stone Greatsword"
+ },
+ "copper_greatsword": {
+  "diaithiris": "Klaidemmòru uma",
+  "english": "Copper Greatsword"
+ },
+ "bronze_greatsword": {
+  "diaithiris": "Klaidemmòru krèuma",
+  "english": "Bronze Greatsword"
+ },
+ "iron_greatsword": {
+  "diaithiris": "Klaidemmòru iarund",
+  "english": "Iron Greatsword"
+ },
+ "wooden_battle_hammer": {
+  "diaithiris": "Òrdukad fiud",
+  "english": "Wooden Battle Hammer"
+ },
+ "stone_battle_hammer": {
+  "diaithiris": "Òrdukad klach",
+  "english": "Stone Battle Hammer"
+ },
+ "copper_battle_hammer": {
+  "diaithiris": "Òrdukad uma",
+  "english": "Copper Battle Hammer"
+ },
+ "bronze_battle_hammer": {
+  "diaithiris": "Òrdukad krèuma",
+  "english": "Bronze Battle Hammer"
+ },
+ "iron_battle_hammer": {
+  "diaithiris": "Òrdukad iarund",
+  "english": "Iron Battle Hammer"
+ },
+ "wooden_warhammer": {
+  "diaithiris": "Òrdukogad fiud",
+  "english": "Wooden Warhammer"
+ },
+ "stone_warhammer": {
+  "diaithiris": "Òrdukogad klach",
+  "english": "Stone Warhammer"
+ },
+ "copper_warhammer": {
+  "diaithiris": "Òrdukogad uma",
+  "english": "Copper Warhammer"
+ },
+ "bronze_warhammer": {
+  "diaithiris": "Òrdukogad krèuma",
+  "english": "Bronze Warhammer"
+ },
+ "iron_warhammer": {
+  "diaithiris": "Òrdukogad iarund",
+  "english": "Iron Warhammer"
+ },
+ "wooden_spear": {
+  "diaithiris": "Slieg fiud",
+  "english": "Wooden Spear"
+ },
+ "stone_spear": {
+  "diaithiris": "Slieg klach",
+  "english": "Stone Spear"
+ },
+ "copper_spear": {
+  "diaithiris": "Slieg uma",
+  "english": "Copper Spear"
+ },
+ "bronze_spear": {
+  "diaithiris": "Slieg krèuma",
+  "english": "Bronze Spear"
+ },
+ "iron_spear": {
+  "diaithiris": "Slieg iarund",
+  "english": "Iron Spear"
+ },
+ "wooden_halberd": {
+  "diaithiris": "Sliegtuog fiud",
+  "english": "Wooden Halberd"
+ },
+ "stone_halberd": {
+  "diaithiris": "Sliegtuog klach",
+  "english": "Stone Halberd"
+ },
+ "copper_halberd": {
+  "diaithiris": "Sliegtuog uma",
+  "english": "Copper Halberd"
+ },
+ "bronze_halberd": {
+  "diaithiris": "Sliegtuog krèuma",
+  "english": "Bronze Halberd"
+ },
+ "iron_halberd": {
+  "diaithiris": "Sliegtuog iarund",
+  "english": "Iron Halberd"
+ },
+ "wooden_pike": {
+  "diaithiris": "Giedas fiud",
+  "english": "Wooden Pike"
+ },
+ "stone_pike": {
+  "diaithiris": "Giedas klach",
+  "english": "Stone Pike"
+ },
+ "copper_pike": {
+  "diaithiris": "Giedas uma",
+  "english": "Copper Pike"
+ },
+ "bronze_pike": {
+  "diaithiris": "Giedas krèuma",
+  "english": "Bronze Pike"
+ },
+ "iron_pike": {
+  "diaithiris": "Giedas iarund",
+  "english": "Iron Pike"
+ },
+ "wooden_lance": {
+  "diaithiris": "Sliegmòru fiud",
+  "english": "Wooden Lance"
+ },
+ "stone_lance": {
+  "diaithiris": "Sliegmòru klach",
+  "english": "Stone Lance"
+ },
+ "copper_lance": {
+  "diaithiris": "Sliegmòru uma",
+  "english": "Copper Lance"
+ },
+ "bronze_lance": {
+  "diaithiris": "Sliegmòru krèuma",
+  "english": "Bronze Lance"
+ },
+ "iron_lance": {
+  "diaithiris": "Sliegmòru iarund",
+  "english": "Iron Lance"
+ },
+ "wooden_battleaxe": {
+  "diaithiris": "Tuogkad fiud",
+  "english": "Wooden Battleaxe"
+ },
+ "stone_battleaxe": {
+  "diaithiris": "Tuogkad klach",
+  "english": "Stone Battleaxe"
+ },
+ "copper_battleaxe": {
+  "diaithiris": "Tuogkad uma",
+  "english": "Copper Battleaxe"
+ },
+ "bronze_battleaxe": {
+  "diaithiris": "Tuogkad krèuma",
+  "english": "Bronze Battleaxe"
+ },
+ "iron_battleaxe": {
+  "diaithiris": "Tuogkad iarund",
+  "english": "Iron Battleaxe"
+ },
+ "wooden_flanged_mace": {
+  "diaithiris": "Slakunbili fiud",
+  "english": "Wooden Flanged Mace"
+ },
+ "stone_flanged_mace": {
+  "diaithiris": "Slakunbili klach",
+  "english": "Stone Flanged Mace"
+ },
+ "copper_flanged_mace": {
+  "diaithiris": "Slakunbili uma",
+  "english": "Copper Flanged Mace"
+ },
+ "bronze_flanged_mace": {
+  "diaithiris": "Slakunbili krèuma",
+  "english": "Bronze Flanged Mace"
+ },
+ "iron_flanged_mace": {
+  "diaithiris": "Slakunbili iarund",
+  "english": "Iron Flanged Mace"
+ },
+ "wooden_glaive": {
+  "diaithiris": "Landkabur fiud",
+  "english": "Wooden Glaive"
+ },
+ "stone_glaive": {
+  "diaithiris": "Landkabur klach",
+  "english": "Stone Glaive"
+ },
+ "copper_glaive": {
+  "diaithiris": "Landkabur uma",
+  "english": "Copper Glaive"
+ },
+ "bronze_glaive": {
+  "diaithiris": "Landkabur krèuma",
+  "english": "Bronze Glaive"
+ },
+ "iron_glaive": {
+  "diaithiris": "Landkabur iarund",
+  "english": "Iron Glaive"
+ },
+ "wooden_quarterstaff": {
+  "diaithiris": "Bauta fiud",
+  "english": "Wooden Quarterstaff"
+ },
+ "stone_quarterstaff": {
+  "diaithiris": "Bauta klach",
+  "english": "Stone Quarterstaff"
+ },
+ "copper_quarterstaff": {
+  "diaithiris": "Bauta uma",
+  "english": "Copper Quarterstaff"
+ },
+ "bronze_quarterstaff": {
+  "diaithiris": "Bauta krèuma",
+  "english": "Bronze Quarterstaff"
+ },
+ "iron_quarterstaff": {
+  "diaithiris": "Bauta iarund",
+  "english": "Iron Quarterstaff"
+ },
+ "wooden_scythe": {
+  "diaithiris": "Korrunfauda fiud",
+  "english": "Wooden Scythe"
+ },
+ "stone_scythe": {
+  "diaithiris": "Korrunfauda klach",
+  "english": "Stone Scythe"
+ },
+ "copper_scythe": {
+  "diaithiris": "Korrunfauda uma",
+  "english": "Copper Scythe"
+ },
+ "bronze_scythe": {
+  "diaithiris": "Korrunfauda krèuma",
+  "english": "Bronze Scythe"
+ },
+ "iron_scythe": {
+  "diaithiris": "Korrunfauda iarund",
+  "english": "Iron Scythe"
+ },
+ "wooden_throwing_knife": {
+  "diaithiris": "Skiantilig fiud",
+  "english": "Wooden Throwing Knife"
+ },
+ "stone_throwing_knife": {
+  "diaithiris": "Skiantilig klach",
+  "english": "Stone Throwing Knife"
+ },
+ "copper_throwing_knife": {
+  "diaithiris": "Skiantilig uma",
+  "english": "Copper Throwing Knife"
+ },
+ "bronze_throwing_knife": {
+  "diaithiris": "Skiantilig krèuma",
+  "english": "Bronze Throwing Knife"
+ },
+ "iron_throwing_knife": {
+  "diaithiris": "Skiantilig iarund",
+  "english": "Iron Throwing Knife"
+ },
+ "wooden_tomahawk": {
+  "diaithiris": "Tuogchata fiud",
+  "english": "Wooden Tomahawk"
+ },
+ "stone_tomahawk": {
+  "diaithiris": "Tuogchata klach",
+  "english": "Stone Tomahawk"
+ },
+ "copper_tomahawk": {
+  "diaithiris": "Tuogchata uma",
+  "english": "Copper Tomahawk"
+ },
+ "bronze_tomahawk": {
+  "diaithiris": "Tuogchata krèuma",
+  "english": "Bronze Tomahawk"
+ },
+ "iron_tomahawk": {
+  "diaithiris": "Tuogchata iarund",
+  "english": "Iron Tomahawk"
+ },
+ "wooden_javelin": {
+  "diaithiris": "Sliegtilig fiud",
+  "english": "Wooden Javelin"
+ },
+ "stone_javelin": {
+  "diaithiris": "Sliegtilig klach",
+  "english": "Stone Javelin"
+ },
+ "copper_javelin": {
+  "diaithiris": "Sliegtilig uma",
+  "english": "Copper Javelin"
+ },
+ "bronze_javelin": {
+  "diaithiris": "Sliegtilig krèuma",
+  "english": "Bronze Javelin"
+ },
+ "iron_javelin": {
+  "diaithiris": "Sliegtilig iarund",
+  "english": "Iron Javelin"
+ },
+ "wooden_boomerang": {
+  "diaithiris": "Maidetildid fiud",
+  "english": "Wooden Boomerang"
+ },
+ "stone_boomerang": {
+  "diaithiris": "Maidetildid klach",
+  "english": "Stone Boomerang"
+ },
+ "copper_boomerang": {
+  "diaithiris": "Maidetildid uma",
+  "english": "Copper Boomerang"
+ },
+ "bronze_boomerang": {
+  "diaithiris": "Maidetildid krèuma",
+  "english": "Bronze Boomerang"
+ },
+ "iron_boomerang": {
+  "diaithiris": "Maidetildid iarund",
+  "english": "Iron Boomerang"
+ },
+ "wooden_club": {
+  "diaithiris": "Komund",
+  "english": "Wooden Club"
+ },
+ "studded_club": {
+  "diaithiris": "Komundiarund",
+  "english": "Studded Club"
+ },
+ "cestus": {
+  "diaithiris": "Dòrnulietur",
+  "english": "Cestus"
+ },
+ "studded_cestus": {
+  "diaithiris": "Dòrnuiarund",
+  "english": "Studded Cestus"
+ },
+ "simple_handle": {
+  "diaithiris": "Làimsigfeiri",
+  "english": "Simple Handle"
+ },
+ "handle": {
+  "diaithiris": "Làimsig",
+  "english": "Handle"
+ },
+ "simple_pole": {
+  "diaithiris": "Kaburfeiri",
+  "english": "Simple Pole"
+ },
+ "pole": {
+  "diaithiris": "Kabur",
+  "english": "Pole"
+ }
+}
