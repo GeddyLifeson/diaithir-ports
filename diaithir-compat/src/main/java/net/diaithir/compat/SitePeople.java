@@ -300,24 +300,31 @@ public final class SitePeople {
         JsonObject roles = kit.getAsJsonObject("roles");
         JsonArray clothes = kit.getAsJsonObject("clothing").getAsJsonArray(female ? "female" : "male");
         if (roles != null && role != null && roles.has(role)) {
-            call(mob, "setClothes", String.class, roles.getAsJsonObject(role).get(female ? "female" : "male").getAsString());
-            call(mob, "setClothingLocked", boolean.class, true);
+            wear(mob, roles.getAsJsonObject(role).get(female ? "female" : "male").getAsString());
         } else if (clothes != null && !clothes.isEmpty()) {
             String id = clothes.get(random.nextInt(clothes.size())).getAsString();
-            call(mob, "setClothes", String.class, id);
-            call(mob, "setClothingLocked", boolean.class, true);
+            wear(mob, id);
         }
     }
 
+    /** Puts a clothing layer on an MCA villager and tags the mob `dia_clothes:<id>` so a test can read it; no tag when MCA did not take it. */
+    private static void wear(Mob mob, String id) {
+        if (call(mob, "setClothes", String.class, id)) {
+            call(mob, "setClothingLocked", boolean.class, true);
+            mob.addTag("dia_clothes:" + id);
+        } else LOG.warn("{} has no MCA clothing layer, so {} was not worn", mob, id);
+    }
+
     // MCA Reborn's VillagerLike interface; no compile-time dependency, so the pack runs without MCA.
-    private static void call(Object target, String name, Class<?> arg, Object value) {
+    private static boolean call(Object target, String name, Class<?> arg, Object value) {
         try {
-            Method m = target.getClass().getMethod(name, arg);
-            m.invoke(target, value);
+            target.getClass().getMethod(name, arg).invoke(target, value);
+            return true;
         } catch (NoSuchMethodException e) {
-            // not an MCA villager
+            return false; // not an MCA villager
         } catch (ReflectiveOperationException e) {
             LOG.warn("MCA {} failed on {}", name, target, e);
+            return false;
         }
     }
 
