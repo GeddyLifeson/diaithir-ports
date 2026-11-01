@@ -23342,7 +23342,7 @@ hash = "aab3cc0c58fb58019e43deb5d1e9489b3ba07bd411d3f970c2b52b3a5ff41614"
 
 [[files]]
 file = "kubejs/data/diaithir_tech/tech_items.json"
-hash = "ba3c42d1e31d2be3c1d46bc6526d8f2ec730a15624ab4dfeeb5c96edfb343ea5"
+hash = "b6d70daceed4e8beb6502f7120e3a5a3842cc4e61ca77ddbc6e2bacc789f8a4f"
 
 [[files]]
 file = "kubejs/data/diaithir_tech/tech_rooms.json"
@@ -23350,7 +23350,7 @@ hash = "19d683e91a2c3e89611e48671e55911a08f961952fc142090d9d9bf164c0ca4e"
 
 [[files]]
 file = "kubejs/data/diaithir_tech/tech_tree.json"
-hash = "335f990941cc9a97111cf5267e0def0f23fa41c3461e9c0e1680d72acdd525b7"
+hash = "66ce8733a0399bae353175477a49252c72989414479b0db2a37a29b61ae6b947"
 
 [[files]]
 file = "kubejs/data/diaithir_worlds/dimension/an_fhainne_mhor.json"

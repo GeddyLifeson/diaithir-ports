@@ -24,17 +24,7 @@
   "meeting_ground": "workshop:1",
   "parliament": "library:1",
   "keep": "workshop:2",
-  "guildhall": "workshop:2",
-  "airfield": "workshop:3",
-  "broadcast_tower": "workshop:3",
-  "concord_hall": "library:2",
-  "fold_ring": "workshop:3",
-  "fusion_hall": "workshop:3",
-  "launch_pad": "workshop:3",
-  "orbital_dock": "workshop:3",
-  "power_line": "workshop:2",
-  "telegraph_line": "workshop:2",
-  "ship": "workshop:1"
+  "guildhall": "workshop:2"
  },
  "config": {
   "marginYears": 300,
@@ -134,7 +124,7 @@
     "pop": 1
    },
    "eureka": {
-    "kind": "have",
+    "kind": "craft",
     "key": "minecraft:flint",
     "n": 1
    },
@@ -236,7 +226,7 @@
     "pop": 1
    },
    "eureka": {
-    "kind": "cook",
+    "kind": "craft",
     "key": "minecraft:cooked_beef",
     "n": 1
    },
@@ -315,7 +305,7 @@
    },
    "eureka": {
     "kind": "trade",
-    "key": "any",
+    "key": "minecraft:sheep",
     "n": 1
    },
    "unlocks": [
@@ -341,7 +331,7 @@
     "kiln": 1
    },
    "eureka": {
-    "kind": "have",
+    "kind": "craft",
     "key": "minecraft:clay_ball",
     "n": 8
    },
@@ -396,7 +386,7 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "have",
+    "kind": "craft",
     "key": "minecraft:string",
     "n": 8
    },
@@ -405,7 +395,7 @@
     "minecraft:white_wool"
    ],
    "name": "Weaving",
-   "nameDiaithiris": "Figi"
+   "nameDiaithiris": "Fiegi"
   },
   {
    "id": "copper",
@@ -528,7 +518,7 @@
    },
    "eureka": {
     "kind": "trade",
-    "key": "any",
+    "key": "any_cart",
     "n": 1
    },
    "unlocks": [
@@ -608,7 +598,7 @@
     "smelter": 1
    },
    "eureka": {
-    "kind": "smelt",
+    "kind": "craft",
     "key": "minecraft:copper_ingot",
     "n": 16
    },
@@ -772,13 +762,14 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "smelt",
+    "kind": "craft",
     "key": "minecraft:iron_ingot",
     "n": 64
    },
    "unlocks": [
     "minecraft:diamond_*",
-    "silentgear:steel*"
+    "silentgear:steel*",
+    "diaithir_integration:truinnsearlainne"
    ],
    "name": "Steel",
    "nameDiaithiris": "Kruoid"
@@ -808,7 +799,8 @@
     "create:water_wheel",
     "create:shaft",
     "create:cogwheel",
-    "create:millstone"
+    "create:millstone",
+    "create:tide_wheel"
    ],
    "name": "Water Mill",
    "nameDiaithiris": "Oiskemuilind"
@@ -855,14 +847,16 @@
     "library": 1
    },
    "eureka": {
-    "kind": "brew",
+    "kind": "craft",
     "key": "minecraft:potion",
     "n": 4
    },
    "unlocks": [
     "theurgy:",
     "forbidden_arcanus:",
-    "evilcraft:"
+    "evilcraft:",
+    "diaithir_integration:duslachluibhe*",
+    "diaithir_integration:lorgchraoibhe_*"
    ],
    "name": "Alchemy",
    "nameDiaithiris": "Ieluin\u00f2ir"
@@ -1075,7 +1069,7 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "have",
+    "kind": "craft",
     "key": "minecraft:redstone",
     "n": 64
    },
@@ -1139,7 +1133,8 @@
     "mekanism:",
     "industrialforegoing:",
     "powah:",
-    "enderio:"
+    "enderio:",
+    "diaithirbridges:tobardealain"
    ],
    "name": "Power Grid",
    "nameDiaithiris": "Kumachdkl\u00e8iti"
@@ -1268,14 +1263,15 @@
     "workshop": 4
    },
    "eureka": {
-    "kind": "have",
+    "kind": "craft",
     "key": "ae2:certus_quartz_crystal",
     "n": 8
    },
    "unlocks": [
     "ae2:",
     "refinedstorage:",
-    "expatternprovider:"
+    "expatternprovider:",
+    "diaithirbridges:lochrandraoidheachd"
    ],
    "name": "Digital Storage",
    "nameDiaithiris": "Koimneiaruind"
@@ -1748,8 +1744,8 @@
     "pop": 400
    },
    "eureka": {
-    "kind": "build",
-    "key": "fusion_hall",
+    "kind": "craft",
+    "key": "mekanism:plasma",
     "n": 1
    },
    "unlocks": [
@@ -1774,7 +1770,7 @@
     "pop": 400
    },
    "eureka": {
-    "kind": "have",
+    "kind": "craft",
     "key": "ae2:fluix_crystal",
     "n": 64
    },
@@ -1911,7 +1907,7 @@
    },
    "eureka": {
     "kind": "trade",
-    "key": "any",
+    "key": "rodos_envoy",
     "n": 1
    },
    "unlocks": [
@@ -1937,7 +1933,7 @@
    },
    "eureka": {
     "kind": "trade",
-    "key": "any",
+    "key": "rodos_envoy",
     "n": 1
    },
    "unlocks": [
@@ -2097,7 +2093,7 @@
     "feature:courts"
    ],
    "name": "Code Of Laws",
-   "nameDiaithiris": "Lagu"
+   "nameDiaithiris": "Laugu"
   },
   {
    "id": "high_magic_rites",
@@ -2400,7 +2396,7 @@
    },
    "eureka": {
     "kind": "trade",
-    "key": "any",
+    "key": "rodos_envoy",
     "n": 3
    },
    "unlocks": [
@@ -2500,8 +2496,8 @@
     "pop": 1
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "forestry:acacia_fireproof_planks",
     "n": 1
    },
    "unlocks": [],
@@ -2525,8 +2521,8 @@
     "pop": 1
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "framedblocks:framed_waterloggable_stone_pressure_plate",
     "n": 1
    },
    "unlocks": [],
@@ -2582,7 +2578,7 @@
    "unlocks": [],
    "items": 12,
    "name": "mcwpaths.I",
-   "nameDiaithiris": "Sligi kiad"
+   "nameDiaithiris": "Sligig kiad"
   },
   {
    "id": "mcwroofs.I",
@@ -2650,8 +2646,8 @@
     "pop": 1
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "minecolonies:gate_wood",
     "n": 1
    },
    "unlocks": [],
@@ -2850,14 +2846,39 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "agritechevolved:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "agritechevolved.II",
    "nameDiaithiris": "B\u00e0rru d\u00e0irna"
+  },
+  {
+   "id": "animal_feeding_trough.II",
+   "track": "tech",
+   "core": false,
+   "tier": "animal_feeding_trough",
+   "branch": "craft",
+   "era": "II",
+   "year": -7600,
+   "cost": 24,
+   "requires": [
+    "copper"
+   ],
+   "needs": {
+    "pop": 4
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "animal_feeding_trough:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "animal_feeding_trough.II",
+   "nameDiaithiris": "Amur d\u00e0irna"
   },
   {
    "id": "apotheosis.II",
@@ -2976,7 +2997,7 @@
    },
    "eureka": {
     "kind": "have",
-    "key": "auroral:frosted_cookies",
+    "key": "auroral:copper_boots_shimmersteel_trim",
     "n": 1
    },
    "unlocks": [],
@@ -3007,7 +3028,7 @@
    "unlocks": [],
    "items": 6,
    "name": "biomesoplenty.II",
-   "nameDiaithiris": "Fiadaig d\u00e0irna"
+   "nameDiaithiris": "Fiadaigi d\u00e0irna"
   },
   {
    "id": "camol.II",
@@ -3025,8 +3046,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "camol:any",
     "n": 1
    },
    "unlocks": [],
@@ -3050,8 +3071,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "chisel:any",
     "n": 1
    },
    "unlocks": [],
@@ -3075,8 +3096,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "cookingforblockheads:any",
     "n": 1
    },
    "unlocks": [],
@@ -3125,8 +3146,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "croptopia:any",
     "n": 1
    },
    "unlocks": [],
@@ -3150,8 +3171,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "crystalix:any",
     "n": 1
    },
    "unlocks": [],
@@ -3175,8 +3196,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "domum_ornamentum:any",
     "n": 1
    },
    "unlocks": [],
@@ -3250,8 +3271,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "farmingforblockheads:any",
     "n": 1
    },
    "unlocks": [],
@@ -3276,8 +3297,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "forestry:any",
     "n": 1
    },
    "unlocks": [],
@@ -3302,8 +3323,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "framedblocks:any",
     "n": 1
    },
    "unlocks": [],
@@ -3352,8 +3373,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "ironchest:any",
     "n": 1
    },
    "unlocks": [],
@@ -3402,8 +3423,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "luminax:any",
     "n": 1
    },
    "unlocks": [],
@@ -3427,14 +3448,14 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "matc:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "matc.II",
-   "nameDiaithiris": "Br\u00ecg d\u00e0irna"
+   "nameDiaithiris": "Br\u00ecag d\u00e0irna"
   },
   {
    "id": "mcwbridges.II",
@@ -3452,8 +3473,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwbridges:any",
     "n": 1
    },
    "unlocks": [],
@@ -3477,8 +3498,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwfences:any",
     "n": 1
    },
    "unlocks": [],
@@ -3528,14 +3549,14 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwpaths:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "mcwpaths.II",
-   "nameDiaithiris": "Sligi d\u00e0irna"
+   "nameDiaithiris": "Sligig d\u00e0irna"
   },
   {
    "id": "mcwroofs.II",
@@ -3554,8 +3575,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwroofs:any",
     "n": 1
    },
    "unlocks": [],
@@ -3580,8 +3601,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwstairs:any",
     "n": 1
    },
    "unlocks": [],
@@ -3631,8 +3652,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "minecolonies:any",
     "n": 1
    },
    "unlocks": [],
@@ -3657,13 +3678,13 @@
    },
    "eureka": {
     "kind": "have",
-    "key": "minecraft:angler_pottery_sherd",
+    "key": "minecraft:angler_pottery_shard",
     "n": 1
    },
    "unlocks": [],
    "items": 289,
    "name": "minecraft.II",
-   "nameDiaithiris": "Saegul d\u00e0irna"
+   "nameDiaithiris": "Saegulu d\u00e0irna"
   },
   {
    "id": "modern_industrialization.II",
@@ -3707,8 +3728,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mysticalagriculture:any",
     "n": 1
    },
    "unlocks": [],
@@ -3782,8 +3803,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "productivebees:any",
     "n": 1
    },
    "unlocks": [],
@@ -3807,8 +3828,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "productivefarming:any",
     "n": 1
    },
    "unlocks": [],
@@ -3833,8 +3854,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "productivetrees:any",
     "n": 1
    },
    "unlocks": [],
@@ -3858,8 +3879,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_exploration:basalt_brick_wall_inventory",
     "n": 1
    },
    "unlocks": [],
@@ -3909,8 +3930,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "strainers:any",
     "n": 1
    },
    "unlocks": [],
@@ -3934,8 +3955,8 @@
     "pop": 4
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "structurize:any",
     "n": 1
    },
    "unlocks": [],
@@ -4021,6 +4042,31 @@
    "nameDiaithiris": "Speiri tries"
   },
   {
+   "id": "alltheores.III",
+   "track": "tech",
+   "core": false,
+   "tier": "alltheores",
+   "branch": "craft",
+   "era": "III",
+   "year": -3000,
+   "cost": 42,
+   "requires": [
+    "bronze"
+   ],
+   "needs": {
+    "pop": 10
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "alltheores:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "alltheores.III",
+   "nameDiaithiris": "M\u00e8ind tries"
+  },
+  {
    "id": "apotheosis.III",
    "track": "tech",
    "core": false,
@@ -4062,8 +4108,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "apothic_enchanting:any",
     "n": 1
    },
    "unlocks": [],
@@ -4087,14 +4133,14 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "apothic_spawners:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "apothic_spawners.III",
-   "nameDiaithiris": "Breid tries"
+   "nameDiaithiris": "Breidi tries"
   },
   {
    "id": "aquaculture.III",
@@ -4175,6 +4221,31 @@
    "nameDiaithiris": "Kamunaig tries"
   },
   {
+   "id": "betterarcheology.III",
+   "track": "tech",
+   "core": false,
+   "tier": "betterarcheology",
+   "branch": "craft",
+   "era": "III",
+   "year": -3000,
+   "cost": 42,
+   "requires": [
+    "bronze"
+   ],
+   "needs": {
+    "pop": 10
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "betterarcheology:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "betterarcheology.III",
+   "nameDiaithiris": "Fiusl\u00e0rigna tries"
+  },
+  {
    "id": "bhc.III",
    "track": "tech",
    "core": false,
@@ -4223,7 +4294,7 @@
    "unlocks": [],
    "items": 18,
    "name": "biomesoplenty.III",
-   "nameDiaithiris": "Fiadaig tries"
+   "nameDiaithiris": "Fiadaigi tries"
   },
   {
    "id": "cb_microblock.III",
@@ -4241,8 +4312,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "cb_microblock:iron_saw",
     "n": 1
    },
    "unlocks": [],
@@ -4267,8 +4338,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "chisel:iron_chisel",
     "n": 1
    },
    "unlocks": [],
@@ -4371,13 +4442,63 @@
    },
    "eureka": {
     "kind": "have",
-    "key": "crystalix:crystalix_glass",
+    "key": "crystalix:bordered_crystalix_glass",
     "n": 1
    },
    "unlocks": [],
    "items": 3,
    "name": "crystalix.III",
    "nameDiaithiris": "Kriustul tries"
+  },
+  {
+   "id": "deepworlds.III",
+   "track": "tech",
+   "core": false,
+   "tier": "deepworlds",
+   "branch": "craft",
+   "era": "III",
+   "year": -3000,
+   "cost": 42,
+   "requires": [
+    "bronze"
+   ],
+   "needs": {
+    "pop": 10
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "deepworlds:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "deepworlds.III",
+   "nameDiaithiris": "Saegul domuind tries"
+  },
+  {
+   "id": "diaithir_integration.III",
+   "track": "tech",
+   "core": false,
+   "tier": "diaithir_integration",
+   "branch": "craft",
+   "era": "III",
+   "year": -3000,
+   "cost": 42,
+   "requires": [
+    "bronze"
+   ],
+   "needs": {
+    "pop": 10
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "diaithir_integration:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "diaithir_integration.III",
+   "nameDiaithiris": "Amulachad tries"
   },
   {
    "id": "energizedpower.III",
@@ -4474,8 +4595,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "forestry:alveary_fan",
     "n": 1
    },
    "unlocks": [],
@@ -4525,8 +4646,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "gateways:any",
     "n": 1
    },
    "unlocks": [],
@@ -4550,8 +4671,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "geore:any",
     "n": 1
    },
    "unlocks": [],
@@ -4626,8 +4747,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "irons_jewelry:any",
     "n": 1
    },
    "unlocks": [],
@@ -4676,8 +4797,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "jewelry:any",
     "n": 1
    },
    "unlocks": [],
@@ -4701,8 +4822,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "kubejs:generated_bucket",
     "n": 1
    },
    "unlocks": [],
@@ -4982,8 +5103,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "minecolonies:banner_rally_guards",
     "n": 1
    },
    "unlocks": [],
@@ -5015,7 +5136,7 @@
    "unlocks": [],
    "items": 117,
    "name": "minecraft.III",
-   "nameDiaithiris": "Saegul tries"
+   "nameDiaithiris": "Saegulu tries"
   },
   {
    "id": "modern_industrialization.III",
@@ -5085,8 +5206,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "occultism:any",
     "n": 1
    },
    "unlocks": [],
@@ -5136,8 +5257,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "paladins:any",
     "n": 1
    },
    "unlocks": [],
@@ -5189,7 +5310,7 @@
    },
    "eureka": {
     "kind": "have",
-    "key": "productivebees:bee_cage",
+    "key": "productivebees:advanced_byg_blue_enchanted_beehive",
     "n": 1
    },
    "unlocks": [],
@@ -5213,8 +5334,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "productivemetalworks:any",
     "n": 1
    },
    "unlocks": [],
@@ -5265,8 +5386,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_exploration:any",
     "n": 1
    },
    "unlocks": [],
@@ -5290,8 +5411,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "reliquary:any",
     "n": 1
    },
    "unlocks": [],
@@ -5315,8 +5436,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "rogues:any",
     "n": 1
    },
    "unlocks": [],
@@ -5340,8 +5461,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "runes:any",
     "n": 1
    },
    "unlocks": [],
@@ -5390,8 +5511,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "sgearmetalworks:any",
     "n": 1
    },
    "unlocks": [],
@@ -5416,8 +5537,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "silentgear:any",
     "n": 1
    },
    "unlocks": [],
@@ -5441,8 +5562,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "silentgems:any",
     "n": 1
    },
    "unlocks": [],
@@ -5491,8 +5612,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "spell_engine:any",
     "n": 1
    },
    "unlocks": [],
@@ -5569,8 +5690,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "tconstruct:any",
     "n": 1
    },
    "unlocks": [],
@@ -5602,6 +5723,81 @@
    "items": 2,
    "name": "trashcans.III",
    "nameDiaithiris": "Skudul tries"
+  },
+  {
+   "id": "undeadnights.III",
+   "track": "tech",
+   "core": false,
+   "tier": "undeadnights",
+   "branch": "craft",
+   "era": "III",
+   "year": -3000,
+   "cost": 42,
+   "requires": [
+    "bronze"
+   ],
+   "needs": {
+    "pop": 10
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "undeadnights:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "undeadnights.III",
+   "nameDiaithiris": "Marbbe\u00f2 aidchi tries"
+  },
+  {
+   "id": "valkyrienskies.III",
+   "track": "tech",
+   "core": false,
+   "tier": "valkyrienskies",
+   "branch": "craft",
+   "era": "III",
+   "year": -3000,
+   "cost": 42,
+   "requires": [
+    "bronze"
+   ],
+   "needs": {
+    "pop": 10
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "valkyrienskies:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "valkyrienskies.III",
+   "nameDiaithiris": "Loung speiri tries"
+  },
+  {
+   "id": "vs_eureka.III",
+   "track": "tech",
+   "core": false,
+   "tier": "vs_eureka",
+   "branch": "craft",
+   "era": "III",
+   "year": -3000,
+   "cost": 42,
+   "requires": [
+    "bronze"
+   ],
+   "needs": {
+    "pop": 10
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "vs_eureka:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "vs_eureka.III",
+   "nameDiaithiris": "Indlechd tries"
   },
   {
    "id": "waystones.III",
@@ -5645,8 +5841,8 @@
     "pop": 10
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "wizards:any",
     "n": 1
    },
    "unlocks": [],
@@ -5775,8 +5971,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "auroral:diamond_boots_shimmersteel_trim",
     "n": 1
    },
    "unlocks": [],
@@ -5826,8 +6022,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "bibliocraft:any",
     "n": 1
    },
    "unlocks": [],
@@ -5859,7 +6055,7 @@
    "unlocks": [],
    "items": 1,
    "name": "biomesoplenty.IV",
-   "nameDiaithiris": "Fiadaig kietrum"
+   "nameDiaithiris": "Fiadaigi kietrum"
   },
   {
    "id": "cb_microblock.IV",
@@ -5878,8 +6074,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "cb_microblock:diamond_saw",
     "n": 1
    },
    "unlocks": [],
@@ -5904,8 +6100,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "chisel:diamond_chisel",
     "n": 1
    },
    "unlocks": [],
@@ -5938,6 +6134,31 @@
    "items": 1,
    "name": "cookingforblockheads.IV",
    "nameDiaithiris": "Kidsin kietrum"
+  },
+  {
+   "id": "create.IV",
+   "track": "tech",
+   "core": false,
+   "tier": "create",
+   "branch": "craft",
+   "era": "IV",
+   "year": -40,
+   "cost": 66,
+   "requires": [
+    "steel"
+   ],
+   "needs": {
+    "pop": 25
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "create:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "create.IV",
+   "nameDiaithiris": "Indel kietrum"
   },
   {
    "id": "crystalix.IV",
@@ -5981,8 +6202,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "easy_piglins:any",
     "n": 1
    },
    "unlocks": [],
@@ -6006,8 +6227,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "easy_villagers:any",
     "n": 1
    },
    "unlocks": [],
@@ -6109,8 +6330,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "evilcraft:any",
     "n": 1
    },
    "unlocks": [],
@@ -6186,8 +6407,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "forbidden_arcanus:any",
     "n": 1
    },
    "unlocks": [],
@@ -6212,8 +6433,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "forestry:bronze_gear",
     "n": 1
    },
    "unlocks": [],
@@ -6265,7 +6486,7 @@
    },
    "eureka": {
     "kind": "have",
-    "key": "ironchest:diamond_chest",
+    "key": "ironchest:copper_diamond_upgrade",
     "n": 1
    },
    "unlocks": [],
@@ -6289,8 +6510,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "ironfurnaces:any",
     "n": 1
    },
    "unlocks": [],
@@ -6314,8 +6535,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "jaopca:crystal/theurgy_alchemical_sulfurs",
     "n": 1
    },
    "unlocks": [],
@@ -6365,8 +6586,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "jousting:any",
     "n": 1
    },
    "unlocks": [],
@@ -6391,8 +6612,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwdoors:any",
     "n": 1
    },
    "unlocks": [],
@@ -6416,8 +6637,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwfurnitures:any",
     "n": 1
    },
    "unlocks": [],
@@ -6442,8 +6663,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwlights:any",
     "n": 1
    },
    "unlocks": [],
@@ -6475,7 +6696,7 @@
    "unlocks": [],
    "items": 13,
    "name": "mcwpaths.IV",
-   "nameDiaithiris": "Sligi kietrum"
+   "nameDiaithiris": "Sligig kietrum"
   },
   {
    "id": "mcwtrpdoors.IV",
@@ -6494,8 +6715,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwtrpdoors:any",
     "n": 1
    },
    "unlocks": [],
@@ -6519,8 +6740,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mcwwindows:any",
     "n": 1
    },
    "unlocks": [],
@@ -6623,8 +6844,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "minecolonies:blockhutmysticalsite",
     "n": 1
    },
    "unlocks": [],
@@ -6656,7 +6877,7 @@
    "unlocks": [],
    "items": 49,
    "name": "minecraft.IV",
-   "nameDiaithiris": "Saegul kietrum"
+   "nameDiaithiris": "Saegulu kietrum"
   },
   {
    "id": "modern_industrialization.IV",
@@ -6683,6 +6904,31 @@
    "items": 18,
    "name": "modern_industrialization.IV",
    "nameDiaithiris": "Indelderg kietrum"
+  },
+  {
+   "id": "musketmod.IV",
+   "track": "tech",
+   "core": false,
+   "tier": "musketmod",
+   "branch": "craft",
+   "era": "IV",
+   "year": -40,
+   "cost": 66,
+   "requires": [
+    "steel"
+   ],
+   "needs": {
+    "pop": 25
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "musketmod:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "musketmod.IV",
+   "nameDiaithiris": "Muskaid kietrum"
   },
   {
    "id": "mysticalagriculture.IV",
@@ -6751,8 +6997,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "neovitae:any",
     "n": 1
    },
    "unlocks": [],
@@ -6881,7 +7127,7 @@
    },
    "eureka": {
     "kind": "have",
-    "key": "productivelib:upgrade_base",
+    "key": "productivelib:upgrade_anti_teleport",
     "n": 1
    },
    "unlocks": [],
@@ -6906,8 +7152,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "productivetrees:upgrade_pollen_sieve",
     "n": 1
    },
    "unlocks": [],
@@ -6932,8 +7178,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_exploration:diamond_sickle",
     "n": 1
    },
    "unlocks": [],
@@ -7035,8 +7281,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "sophisticatedbackpacks:any",
     "n": 1
    },
    "unlocks": [],
@@ -7086,8 +7332,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "sophisticatedstorage:any",
     "n": 1
    },
    "unlocks": [],
@@ -7111,8 +7357,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "sophisticatedstorageinmotion:any",
     "n": 1
    },
    "unlocks": [],
@@ -7188,8 +7434,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "theurgy:any",
     "n": 1
    },
    "unlocks": [],
@@ -7213,8 +7459,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "titanium:diamond_gear",
     "n": 1
    },
    "unlocks": [],
@@ -7238,8 +7484,8 @@
     "pop": 25
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "utilitarian:any",
     "n": 1
    },
    "unlocks": [],
@@ -7367,8 +7613,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "classicpipes:any",
     "n": 1
    },
    "unlocks": [],
@@ -7392,8 +7638,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "cobblegengalore:any",
     "n": 1
    },
    "unlocks": [],
@@ -7443,8 +7689,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "elevatorid:any",
     "n": 1
    },
    "unlocks": [],
@@ -7469,8 +7715,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "energizedpower:any",
     "n": 1
    },
    "unlocks": [],
@@ -7495,8 +7741,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "forestry:biogas_engine",
     "n": 1
    },
    "unlocks": [],
@@ -7598,8 +7844,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "itemcollectors:any",
     "n": 1
    },
    "unlocks": [],
@@ -7683,7 +7929,7 @@
    "unlocks": [],
    "items": 17,
    "name": "minecraft.V",
-   "nameDiaithiris": "Saegul k\u00f2igem"
+   "nameDiaithiris": "Saegulu k\u00f2igem"
   },
   {
    "id": "modern_industrialization.V",
@@ -7702,8 +7948,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "modern_industrialization:any",
     "n": 1
    },
    "unlocks": [],
@@ -7728,14 +7974,39 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "morered:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "morered.V",
    "nameDiaithiris": "Klauchderg k\u00f2igem"
+  },
+  {
+   "id": "mts.V",
+   "track": "tech",
+   "core": false,
+   "tier": "mts",
+   "branch": "industry",
+   "era": "V",
+   "year": 1780,
+   "cost": 96,
+   "requires": [
+    "steam_engine"
+   ],
+   "needs": {
+    "pop": 60
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "mts:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "mts.V",
+   "nameDiaithiris": "Karbad k\u00f2igem"
   },
   {
    "id": "mysticalagriculture.V",
@@ -7831,8 +8102,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "pipe_connector:any",
     "n": 1
    },
    "unlocks": [],
@@ -7856,8 +8127,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "pipez:any",
     "n": 1
    },
    "unlocks": [],
@@ -7882,8 +8153,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "pneumaticcraft:any",
     "n": 1
    },
    "unlocks": [],
@@ -7985,8 +8256,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_core:any",
     "n": 1
    },
    "unlocks": [],
@@ -8010,8 +8281,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_expansion:any",
     "n": 1
    },
    "unlocks": [],
@@ -8036,8 +8307,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_exploration:black_backpack",
     "n": 1
    },
    "unlocks": [],
@@ -8061,8 +8332,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_illumination:any",
     "n": 1
    },
    "unlocks": [],
@@ -8086,8 +8357,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_integration:any",
     "n": 1
    },
    "unlocks": [],
@@ -8111,8 +8382,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_transmission:any",
     "n": 1
    },
    "unlocks": [],
@@ -8136,8 +8407,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "railcraft:any",
     "n": 1
    },
    "unlocks": [],
@@ -8161,8 +8432,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "refurbished_furniture:any",
     "n": 1
    },
    "unlocks": [],
@@ -8186,8 +8457,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "routers:any",
     "n": 1
    },
    "unlocks": [],
@@ -8237,8 +8508,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "simplemagnets:any",
     "n": 1
    },
    "unlocks": [],
@@ -8314,14 +8585,14 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "stepcrafter:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "stepcrafter.V",
-   "nameDiaithiris": "Keim k\u00f2igem"
+   "nameDiaithiris": "Keimi k\u00f2igem"
   },
   {
    "id": "strainers.V",
@@ -8340,8 +8611,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "strainers:aluminum_ore_piece",
     "n": 1
    },
    "unlocks": [],
@@ -8418,8 +8689,8 @@
     "pop": 60
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "titanium:creative_fe_generator",
     "n": 1
    },
    "unlocks": [],
@@ -8469,14 +8740,14 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "actuallyadditions:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "actuallyadditions.VI",
-   "nameDiaithiris": "Indel siatum"
+   "nameDiaithiris": "Iendel siatum"
   },
   {
    "id": "aether_ii.VI",
@@ -8495,8 +8766,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "aether_ii:arkenium_axe_reinforced_1",
     "n": 1
    },
    "unlocks": [],
@@ -8521,8 +8792,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "apotheosis:gems/core/solar",
     "n": 1
    },
    "unlocks": [],
@@ -8572,8 +8843,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "computercraft:any",
     "n": 1
    },
    "unlocks": [],
@@ -8597,14 +8868,40 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "deepnullreforged:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "deepnullreforged.VI",
    "nameDiaithiris": "Broildech siatum"
+  },
+  {
+   "id": "diaithir_integration.VI",
+   "track": "tech",
+   "core": false,
+   "tier": "diaithir_integration",
+   "branch": "industry",
+   "era": "VI",
+   "year": 1930,
+   "cost": 138,
+   "requires": [
+    "power_grid",
+    "diaithir_integration.III"
+   ],
+   "needs": {
+    "pop": 150
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "diaithir_integration:truinnsearlainne",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 1,
+   "name": "diaithir_integration.VI",
+   "nameDiaithiris": "Ouaiemar siatum"
   },
   {
    "id": "enderio.VI",
@@ -8623,8 +8920,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "enderio:any",
     "n": 1
    },
    "unlocks": [],
@@ -8649,8 +8946,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "enderio_endergy:any",
     "n": 1
    },
    "unlocks": [],
@@ -8700,8 +8997,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "equivox:any",
     "n": 1
    },
    "unlocks": [],
@@ -8736,6 +9033,31 @@
    "nameDiaithiris": "Foil siatum"
   },
   {
+   "id": "factionapi.VI",
+   "track": "tech",
+   "core": false,
+   "tier": "factionapi",
+   "branch": "industry",
+   "era": "VI",
+   "year": 1930,
+   "cost": 138,
+   "requires": [
+    "power_grid"
+   ],
+   "needs": {
+    "pop": 150
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "factionapi:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "factionapi.VI",
+   "nameDiaithiris": "Driem siatum"
+  },
+  {
    "id": "fluxnetworks.VI",
    "track": "tech",
    "core": false,
@@ -8751,8 +9073,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "fluxnetworks:any",
     "n": 1
    },
    "unlocks": [],
@@ -8777,8 +9099,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "forestry:basic_circuit_board",
     "n": 1
    },
    "unlocks": [],
@@ -8802,8 +9124,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "functionalstorage:any",
     "n": 1
    },
    "unlocks": [],
@@ -8838,6 +9160,31 @@
    "nameDiaithiris": "M\u00e8ind siatum"
   },
   {
+   "id": "iceandfire.VI",
+   "track": "tech",
+   "core": false,
+   "tier": "iceandfire",
+   "branch": "industry",
+   "era": "VI",
+   "year": 1930,
+   "cost": 138,
+   "requires": [
+    "power_grid"
+   ],
+   "needs": {
+    "pop": 150
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "iceandfire:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "iceandfire.VI",
+   "nameDiaithiris": "Deige teini siatum"
+  },
+  {
    "id": "immersive_aircraft.VI",
    "track": "tech",
    "core": false,
@@ -8853,8 +9200,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "immersive_aircraft:any",
     "n": 1
    },
    "unlocks": [],
@@ -8905,8 +9252,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "industrialforegoing:any",
     "n": 1
    },
    "unlocks": [],
@@ -8930,8 +9277,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "integratedcrafting:any",
     "n": 1
    },
    "unlocks": [],
@@ -8956,8 +9303,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "integrateddynamics:any",
     "n": 1
    },
    "unlocks": [],
@@ -8981,8 +9328,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "integratedterminals:any",
     "n": 1
    },
    "unlocks": [],
@@ -9006,8 +9353,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "integratedtunnels:any",
     "n": 1
    },
    "unlocks": [],
@@ -9031,8 +9378,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "laserbridges:any",
     "n": 1
    },
    "unlocks": [],
@@ -9056,8 +9403,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "man_of_many_planes:any",
     "n": 1
    },
    "unlocks": [],
@@ -9160,8 +9507,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mekanism:any",
     "n": 1
    },
    "unlocks": [],
@@ -9185,8 +9532,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mekanismadditions:any",
     "n": 1
    },
    "unlocks": [],
@@ -9210,8 +9557,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mekanismgenerators:any",
     "n": 1
    },
    "unlocks": [],
@@ -9235,8 +9582,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mekanismtools:any",
     "n": 1
    },
    "unlocks": [],
@@ -9261,8 +9608,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "millager:laser_gun",
     "n": 1
    },
    "unlocks": [],
@@ -9294,7 +9641,7 @@
    "unlocks": [],
    "items": 1,
    "name": "minecraft.VI",
-   "nameDiaithiris": "Saegul siatum"
+   "nameDiaithiris": "Saegulu siatum"
   },
   {
    "id": "modern_industrialization.VI",
@@ -9323,6 +9670,31 @@
    "nameDiaithiris": "Indelderg siatum"
   },
   {
+   "id": "modulargolems.VI",
+   "track": "tech",
+   "core": false,
+   "tier": "modulargolems",
+   "branch": "industry",
+   "era": "VI",
+   "year": 1930,
+   "cost": 138,
+   "requires": [
+    "power_grid"
+   ],
+   "needs": {
+    "pop": 150
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "modulargolems:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "modulargolems.VI",
+   "nameDiaithiris": "Fierkr\u00e8 siatum"
+  },
+  {
    "id": "modularrouters.VI",
    "track": "tech",
    "core": false,
@@ -9338,14 +9710,39 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "modularrouters:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "modularrouters.VI",
    "nameDiaithiris": "Drouchaidl\u00ecn siatum"
+  },
+  {
+   "id": "mutantmonsters.VI",
+   "track": "tech",
+   "core": false,
+   "tier": "mutantmonsters",
+   "branch": "industry",
+   "era": "VI",
+   "year": 1930,
+   "cost": 138,
+   "requires": [
+    "power_grid"
+   ],
+   "needs": {
+    "pop": 150
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "mutantmonsters:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "mutantmonsters.VI",
+   "nameDiaithiris": "Oilebeist m\u00f9tunt siatum"
   },
   {
    "id": "mysticalagriculture.VI",
@@ -9372,6 +9769,31 @@
    "items": 6,
    "name": "mysticalagriculture.VI",
    "nameDiaithiris": "S\u00ecul siatum"
+  },
+  {
+   "id": "neoorigins.VI",
+   "track": "tech",
+   "core": false,
+   "tier": "neoorigins",
+   "branch": "industry",
+   "era": "VI",
+   "year": 1930,
+   "cost": 138,
+   "requires": [
+    "power_grid"
+   ],
+   "needs": {
+    "pop": 150
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "neoorigins:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "neoorigins.VI",
+   "nameDiaithiris": "T\u00f9as siatum"
   },
   {
    "id": "neovitae.VI",
@@ -9442,8 +9864,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "oritech:any",
     "n": 1
    },
    "unlocks": [],
@@ -9519,14 +9941,40 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "powah:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "powah.VI",
    "nameDiaithiris": "Kumachdderg siatum"
+  },
+  {
+   "id": "productivelib.VI",
+   "track": "tech",
+   "core": false,
+   "tier": "productivelib",
+   "branch": "industry",
+   "era": "VI",
+   "year": 1930,
+   "cost": 138,
+   "requires": [
+    "power_grid",
+    "productivelib.V"
+   ],
+   "needs": {
+    "pop": 150
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "productivelib:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "productivelib.VI",
+   "nameDiaithiris": "Lieburlund siatum"
   },
   {
    "id": "projectred_core.VI",
@@ -9545,8 +9993,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_core:electrotine_silicon",
     "n": 1
    },
    "unlocks": [],
@@ -9571,8 +10019,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "projectred_integration:bus_converter_gate",
     "n": 1
    },
    "unlocks": [],
@@ -9596,8 +10044,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "pylons:any",
     "n": 1
    },
    "unlocks": [],
@@ -9621,8 +10069,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "quarryplus:any",
     "n": 1
    },
    "unlocks": [],
@@ -9646,8 +10094,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "rftoolsbase:any",
     "n": 1
    },
    "unlocks": [],
@@ -9671,8 +10119,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "rftoolsbuilder:any",
     "n": 1
    },
    "unlocks": [],
@@ -9696,8 +10144,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "rftoolspower:any",
     "n": 1
    },
    "unlocks": [],
@@ -9721,8 +10169,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "rftoolsutility:any",
     "n": 1
    },
    "unlocks": [],
@@ -9747,8 +10195,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "securitycraft:any",
     "n": 1
    },
    "unlocks": [],
@@ -9772,8 +10220,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "sfm:any",
     "n": 1
    },
    "unlocks": [],
@@ -9798,8 +10246,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "stellaris:any",
     "n": 1
    },
    "unlocks": [],
@@ -9824,8 +10272,8 @@
     "pop": 150
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "strainers:osmium_ore_piece",
     "n": 1
    },
    "unlocks": [],
@@ -9886,6 +10334,31 @@
    "nameDiaithiris": "Ieluin\u00f2ir siatum"
   },
   {
+   "id": "vampirism.VI",
+   "track": "tech",
+   "core": false,
+   "tier": "vampirism",
+   "branch": "industry",
+   "era": "VI",
+   "year": 1930,
+   "cost": 138,
+   "requires": [
+    "power_grid"
+   ],
+   "needs": {
+    "pop": 150
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "vampirism:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "vampirism.VI",
+   "nameDiaithiris": "S\u00f9muirefula siatum"
+  },
+  {
    "id": "advanced_ae.VII",
    "track": "tech",
    "core": false,
@@ -9901,8 +10374,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "advanced_ae:any",
     "n": 1
    },
    "unlocks": [],
@@ -9926,8 +10399,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "ae2:any",
     "n": 1
    },
    "unlocks": [],
@@ -9951,8 +10424,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "ae2importexportcard:any",
     "n": 1
    },
    "unlocks": [],
@@ -9976,8 +10449,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "ae2netanalyser:any",
     "n": 1
    },
    "unlocks": [],
@@ -10001,8 +10474,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "aeinfinitybooster:any",
     "n": 1
    },
    "unlocks": [],
@@ -10026,14 +10499,39 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "appliedsticks:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "appliedsticks.VII",
    "nameDiaithiris": "L\u00ecunboidi siechdum"
+  },
+  {
+   "id": "aviator_dream.VII",
+   "track": "tech",
+   "core": false,
+   "tier": "aviator_dream",
+   "branch": "industry",
+   "era": "VII",
+   "year": 2000,
+   "cost": 192,
+   "requires": [
+    "digital_storage"
+   ],
+   "needs": {
+    "pop": 300
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "aviator_dream:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "aviator_dream.VII",
+   "nameDiaithiris": "Turasspeira siechdum"
   },
   {
    "id": "buildinggadgets2.VII",
@@ -10051,8 +10549,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "buildinggadgets2:any",
     "n": 1
    },
    "unlocks": [],
@@ -10076,14 +10574,39 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "cabletiers:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "cabletiers.VII",
    "nameDiaithiris": "Sriengteini siechdum"
+  },
+  {
+   "id": "casinosound.VII",
+   "track": "tech",
+   "core": false,
+   "tier": "casinosound",
+   "branch": "industry",
+   "era": "VII",
+   "year": 2000,
+   "cost": 192,
+   "requires": [
+    "digital_storage"
+   ],
+   "needs": {
+    "pop": 300
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "casinosound:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "casinosound.VII",
+   "nameDiaithiris": "Teigkerrachais siechdum"
   },
   {
    "id": "charginggadgets.VII",
@@ -10101,14 +10624,39 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "charginggadgets:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "charginggadgets.VII",
    "nameDiaithiris": "Koskais siechdum"
+  },
+  {
+   "id": "codedefinedgui.VII",
+   "track": "tech",
+   "core": false,
+   "tier": "codedefinedgui",
+   "branch": "industry",
+   "era": "VII",
+   "year": 2000,
+   "cost": 192,
+   "requires": [
+    "digital_storage"
+   ],
+   "needs": {
+    "pop": 300
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "codedefinedgui:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "codedefinedgui.VII",
+   "nameDiaithiris": "Agaidk\u00f2mraid siechdum"
   },
   {
    "id": "dimstorage.VII",
@@ -10126,14 +10674,39 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "dimstorage:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "dimstorage.VII",
    "nameDiaithiris": "Taiski siechdum"
+  },
+  {
+   "id": "drones.VII",
+   "track": "tech",
+   "core": false,
+   "tier": "drones",
+   "branch": "industry",
+   "era": "VII",
+   "year": 2000,
+   "cost": 192,
+   "requires": [
+    "digital_storage"
+   ],
+   "needs": {
+    "pop": 300
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "drones:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "drones.VII",
+   "nameDiaithiris": "Speiregiaruind siechdum"
   },
   {
    "id": "energizedpower.VII",
@@ -10177,8 +10750,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "entangled:any",
     "n": 1
    },
    "unlocks": [],
@@ -10202,8 +10775,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "extendedae:any",
     "n": 1
    },
    "unlocks": [],
@@ -10227,8 +10800,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "extradisks:any",
     "n": 1
    },
    "unlocks": [],
@@ -10279,8 +10852,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "forestry:amber_drone_fossil",
     "n": 1
    },
    "unlocks": [],
@@ -10304,8 +10877,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "hostilenetworks:any",
     "n": 1
    },
    "unlocks": [],
@@ -10329,14 +10902,39 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "ironjetpacks:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "ironjetpacks.VII",
    "nameDiaithiris": "Turasspeira siechdum"
+  },
+  {
+   "id": "jdturrets.VII",
+   "track": "tech",
+   "core": false,
+   "tier": "jdturrets",
+   "branch": "industry",
+   "era": "VII",
+   "year": 2000,
+   "cost": 192,
+   "requires": [
+    "digital_storage"
+   ],
+   "needs": {
+    "pop": 300
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "jdturrets:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "jdturrets.VII",
+   "nameDiaithiris": "Tuiraid siechdum"
   },
   {
    "id": "justdirethings.VII",
@@ -10354,8 +10952,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "justdirethings:any",
     "n": 1
    },
    "unlocks": [],
@@ -10379,8 +10977,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "laserio:any",
     "n": 1
    },
    "unlocks": [],
@@ -10404,8 +11002,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "logisticsnetworks:any",
     "n": 1
    },
    "unlocks": [],
@@ -10430,8 +11028,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "megacells:any",
     "n": 1
    },
    "unlocks": [],
@@ -10481,8 +11079,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mininggadgets:any",
     "n": 1
    },
    "unlocks": [],
@@ -10532,8 +11130,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mysticalagradditions:any",
     "n": 1
    },
    "unlocks": [],
@@ -10557,8 +11155,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "mysticalautomation:any",
     "n": 1
    },
    "unlocks": [],
@@ -10619,6 +11217,31 @@
    "nameDiaithiris": "\u00c0ili siechdum"
   },
   {
+   "id": "pointblank.VII",
+   "track": "tech",
+   "core": false,
+   "tier": "pointblank",
+   "branch": "industry",
+   "era": "VII",
+   "year": 2000,
+   "cost": 192,
+   "requires": [
+    "digital_storage"
+   ],
+   "needs": {
+    "pop": 300
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "pointblank:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "pointblank.VII",
+   "nameDiaithiris": "Gunda siechdum"
+  },
+  {
    "id": "refinedsticks.VII",
    "track": "tech",
    "core": false,
@@ -10634,8 +11257,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "refinedsticks:any",
     "n": 1
    },
    "unlocks": [],
@@ -10659,8 +11282,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "refinedstorage:any",
     "n": 1
    },
    "unlocks": [],
@@ -10684,8 +11307,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "refinedstorage_curios_integration:any",
     "n": 1
    },
    "unlocks": [],
@@ -10709,8 +11332,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "refinedstorage_jei_integration:any",
     "n": 1
    },
    "unlocks": [],
@@ -10734,8 +11357,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "refinedstorage_quartz_arsenal:any",
     "n": 1
    },
    "unlocks": [],
@@ -10759,8 +11382,8 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "refinedtypes:any",
     "n": 1
    },
    "unlocks": [],
@@ -10792,7 +11415,7 @@
    "unlocks": [],
    "items": 3,
    "name": "stepcrafter.VII",
-   "nameDiaithiris": "Keim siechdum"
+   "nameDiaithiris": "Keimi siechdum"
   },
   {
    "id": "universalgrid.VII",
@@ -10810,14 +11433,39 @@
     "pop": 300
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "universalgrid:any",
     "n": 1
    },
    "unlocks": [],
    "items": 0,
    "name": "universalgrid.VII",
    "nameDiaithiris": "Kliad siechdum"
+  },
+  {
+   "id": "allthemodium.RODOS",
+   "track": "tech",
+   "core": false,
+   "tier": "allthemodium",
+   "branch": "industry",
+   "era": "RODOS",
+   "year": null,
+   "cost": 360,
+   "requires": [
+    "shard_resonance"
+   ],
+   "needs": {
+    "pop": 500
+   },
+   "eureka": {
+    "kind": "have",
+    "key": "allthemodium:any",
+    "n": 1
+   },
+   "unlocks": [],
+   "items": 0,
+   "name": "allthemodium.RODOS",
+   "nameDiaithiris": "Mietuilt Rodos"
   },
   {
    "id": "equivox.RODOS",
@@ -10914,8 +11562,8 @@
     "pop": 500
    },
    "eureka": {
-    "kind": "trade",
-    "key": "any",
+    "kind": "have",
+    "key": "productivebees:honeycomb_allthemodium",
     "n": 1
    },
    "unlocks": [],
