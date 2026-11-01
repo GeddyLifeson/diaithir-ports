@@ -1,2 +1,5 @@
+build/
+.gradle/
+run/
 **/build/
 **/.gradle/

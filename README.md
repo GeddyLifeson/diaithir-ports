@@ -24,6 +24,10 @@ Commands: `/nemesis roster` (who hunts you), `/nemesis chronicle`; for operators
 
 Source: https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis. Licence: MIT.
 
+## Other modules in this repository
+
+- `surveyor/` and `antique-atlas/`: NeoForge 26.1.2 ports of the Surveyor map backend and the Antique Atlas world map, each its own module under its original licence (LGPL-3.0-or-later code; Antique Atlas textures CC BY-NC-SA 4.0). See each module's README.
+
 ## diaithir-gear (Gléaus)
 
 Cross-mod gear parity: Point Blank bullet damage scaled against the Musket Mod, shared gem tag with matching Apotheosis and Silent Gems affixes, and one Age-gated set bonus per armour or jewellery family. Data driven, MIT. See `diaithir-gear/README.md` and `diaithir-gear/TEST.md`.
