@@ -8,3 +8,4 @@ Diaithir.zip
 /tools/
 .gitattributes
 .pre-commit-config.yaml
+CLAUDE.md
