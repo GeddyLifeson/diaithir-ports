@@ -266,10 +266,20 @@ public final class SitePeople {
     public static boolean dressAs(Mob mob, String culture, boolean female, String role) {
         JsonObject d = data();
         JsonObject cultures = d.getAsJsonObject("cultures"), kits = d.getAsJsonObject("kits");
-        if (cultures == null || kits == null || culture == null || !cultures.has(culture) || !(mob.level() instanceof ServerLevel level)) return false;
-        JsonObject people = cultures.getAsJsonObject(culture);
+        if (cultures == null || kits == null || culture == null || !(mob.level() instanceof ServerLevel level)) return false;
+        JsonObject people = byKit(cultures, culture);
+        if (people == null || !kits.has(people.get("kit").getAsString())) return false;
         dress(level, mob, people, kits.getAsJsonObject(people.get("kit").getAsString()), female, role, RandomSource.create(mob.getUUID().hashCode()));
         return true;
+    }
+
+    /** The culture whose kit is this slug: cultures are keyed by display name, kit ids are slugs cut to 40 characters. */
+    private static JsonObject byKit(JsonObject cultures, String slug) {
+        for (var e : cultures.entrySet()) {
+            String kit = e.getValue().getAsJsonObject().get("kit").getAsString();
+            if (slug.equals(kit) || (kit.length() == 40 && slug.startsWith(kit))) return e.getValue().getAsJsonObject();
+        }
+        return null;
     }
 
     private static void dress(ServerLevel level, Mob mob, JsonObject people, JsonObject kit, boolean female, String role, RandomSource random) {
