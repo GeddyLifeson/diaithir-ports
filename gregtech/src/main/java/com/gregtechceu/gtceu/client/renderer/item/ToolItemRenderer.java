@@ -1,0 +1,31 @@
+package com.gregtechceu.gtceu.client.renderer.item;
+
+import net.minecraft.client.data.models.model.DelegatedModel;
+import com.gregtechceu.gtceu.api.item.tool.GTToolType;
+
+
+import net.minecraft.core.registries.BuiltInRegistries;
+
+import net.minecraft.world.item.Item;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class ToolItemRenderer {
+
+    private static final Set<ToolItemRenderer> MODELS = new HashSet<>();
+
+    public static void reinitModels() {  /* ported stub */ }
+
+    private final Item item;
+    private final GTToolType toolType;
+
+    protected ToolItemRenderer(Item item, GTToolType toolType) {
+        this.item = item;
+        this.toolType = toolType;
+    }
+
+    public static void create(Item item, GTToolType toolType) {
+        MODELS.add(new ToolItemRenderer(item, toolType));
+    }
+}

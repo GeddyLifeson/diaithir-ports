@@ -1,0 +1,307 @@
+package com.gregtechceu.gtceu.api.gui.widget;
+
+import com.gregtechceu.gtceu.GTCEu;
+
+
+
+
+
+import com.lowdragmc.lowdraglib.gui.editor.annotation.LDLRegister;
+import com.lowdragmc.lowdraglib.gui.editor.configurator.ConfiguratorGroup;
+import com.lowdragmc.lowdraglib.gui.editor.configurator.WrapperConfigurator;
+import com.lowdragmc.lowdraglib.gui.editor.runtime.ConfiguratorParser;
+import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
+import com.lowdragmc.lowdraglib.jei.IngredientIO;
+
+import com.lowdragmc.lowdraglib.utils.Position;
+import com.lowdragmc.lowdraglib.utils.Size;
+
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.items.ItemStackHandler;
+
+
+
+import lombok.Getter;
+
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+@LDLRegister(name = "gtm_item_slot", group = "widget.gtm_container", priority = 50)
+public class SlotWidget extends com.lowdragmc.lowdraglib.gui.widget.SlotWidget {
+
+    public SlotWidget() {
+        super();
+    }
+
+    public SlotWidget(Container inventory, int slotIndex, int xPosition, int yPosition, boolean canTakeItems,
+                      boolean canPutItems) {
+        super(inventory, slotIndex, xPosition, yPosition, canTakeItems, canPutItems);
+    }
+
+    public SlotWidget(IItemHandlerModifiable itemHandler, int slotIndex, int xPosition, int yPosition,
+                      boolean canTakeItems, boolean canPutItems) {
+        this.setSelfPosition(xPosition, yPosition);
+        this.setSize(18, 18);
+        this.recomputePosition();
+        this.setVisible(true);
+        this.setActive(true);
+        this.drawHoverOverlay = true;
+        this.drawHoverTips = true;
+        this.ingredientIO = IngredientIO.RENDER_ONLY;
+        this.XEIChance = 1.0f;
+        this.setBackgroundTexture(ITEM_SLOT_TEXTURE);
+        this.canTakeItems = canTakeItems;
+        this.canPutItems = canPutItems;
+        this.setHandlerSlot(itemHandler, slotIndex);
+    }
+
+    public SlotWidget(IItemHandlerModifiable itemHandler, int slotIndex, int xPosition, int yPosition) {
+        this(itemHandler, slotIndex, xPosition, yPosition, true, true);
+    }
+
+    public SlotWidget(Container container, int slotIndex, int xPosition, int yPosition) {
+        this(container, slotIndex, xPosition, yPosition, true, true);
+    }
+
+    protected Slot createSlot(IItemHandlerModifiable itemHandler, int index) {
+        return new WidgetSlotItemHandler(itemHandler, index, 0, 0);
+    }
+
+    public SlotWidget setContainerSlot(Container inventory, int slotIndex) {
+        super.setContainerSlot(inventory, slotIndex);
+        return this;
+    }
+
+    @Override
+    public void updateSlot(Slot slot) {
+        super.updateSlot(slot);
+    }
+
+    @Override
+    public SlotWidget setHandlerSlot(IItemHandlerModifiable itemHandler, int slotIndex) {
+        super.setHandlerSlot(itemHandler, slotIndex);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setBackgroundTexture(IGuiTexture backgroundTexture) {
+        super.setBackgroundTexture(backgroundTexture);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setLocationInfo(boolean isPlayerContainer, boolean isPlayerHotBar) {
+        super.setLocationInfo(isPlayerContainer, isPlayerHotBar);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setCanTakeItems(boolean canTakeItems) {
+        super.setCanTakeItems(canTakeItems);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setCanPutItems(boolean canPutItems) {
+        super.setCanPutItems(canPutItems);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setDrawHoverOverlay(boolean drawHoverOverlay) {
+        super.setDrawHoverOverlay(drawHoverOverlay);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setDrawHoverTips(boolean drawHoverTips) {
+        super.setDrawHoverTips(drawHoverTips);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setIngredientIO(IngredientIO ingredientIO) {
+        super.setIngredientIO(ingredientIO);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setChangeListener(Runnable changeListener) {
+        super.setChangeListener(changeListener);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setXEIChance(float XEIChance) {
+        super.setXEIChance(XEIChance);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setItemHook(Function<ItemStack, ItemStack> itemHook) {
+        super.setItemHook(itemHook);
+        return this;
+    }
+
+    @Override
+    public SlotWidget setOnAddedTooltips(BiConsumer<com.lowdragmc.lowdraglib.gui.widget.SlotWidget, List<Component>> onAddedTooltips) {
+        super.setOnAddedTooltips(onAddedTooltips);
+        return this;
+    }
+
+    @Override
+    public void buildConfigurator(ConfiguratorGroup father) {
+        var handler = new ItemStackHandler();
+        handler.setStackInSlot(0, Blocks.STONE.asItem().getDefaultInstance());
+        father.addConfigurators(new WrapperConfigurator("ldlib.gui.editor.group.preview", new SlotWidget() {
+
+            @Override
+            public void updateScreen() {
+                super.updateScreen();
+                setHoverTooltips(SlotWidget.this.tooltipTexts);
+                this.backgroundTexture = SlotWidget.this.backgroundTexture;
+                this.hoverTexture = SlotWidget.this.hoverTexture;
+                this.drawHoverOverlay = SlotWidget.this.drawHoverOverlay;
+                this.drawHoverTips = SlotWidget.this.drawHoverTips;
+                this.overlay = SlotWidget.this.overlay;
+            }
+        }.setCanPutItems(false).setCanTakeItems(false).setHandlerSlot(handler, 0)));
+
+        ConfiguratorParser.createConfigurators(father, new HashMap<>(), getClass(), this);
+    }
+
+    private Object convertIngredient(ItemStack itemStack) {
+        if (GTCEu.Mods.isEMILoaded()) {
+            return EMICallWrapper.getEMIIngredient(itemStack, getXEIChance());
+        } else if (GTCEu.Mods.isREILoaded()) {
+            return REICallWrapper.getREIIngredient(itemStack);
+        } else if (GTCEu.Mods.isJEILoaded() && !itemStack.isEmpty()) {
+            return JEICallWrapper.getJEIStackClickable(itemStack, getPosition(), getSize());
+        }
+        return itemStack;
+    }
+
+    @Nullable
+    @Override
+    public Object getXEIIngredientOverMouse(double mouseX, double mouseY) { return null; /* ported stub */ }
+
+    @Override
+    public List<Object> getXEIIngredients() { return null; /* ported stub */ }/* ported: removed */
+
+    public class WidgetSlotItemHandler extends Slot {
+
+        private static final Container emptyInventory = new SimpleContainer(0);
+        @Getter
+        private final IItemHandlerModifiable itemHandler;
+        private final int index;
+
+        public WidgetSlotItemHandler(IItemHandlerModifiable itemHandler, int index, int xPosition, int yPosition) {
+            super(emptyInventory, index, xPosition, yPosition);
+            this.itemHandler = itemHandler;
+            this.index = index;
+        }
+
+        @Override
+        public boolean mayPlace(@NotNull ItemStack stack) {
+            return SlotWidget.this.canPutStack(stack) &&
+                    (!stack.isEmpty() && this.itemHandler.isItemValid(this.index, stack));
+        }
+
+        @Override
+        public boolean mayPickup(@Nullable Player playerIn) {
+            return SlotWidget.this.canTakeStack(playerIn) && !this.itemHandler.extractItem(index, 1, true).isEmpty();
+        }
+
+        @Override
+        @NotNull
+        public ItemStack getItem() {
+            return this.itemHandler.getStackInSlot(index);
+        }
+
+        @Override
+        public void setByPlayer(@NotNull ItemStack stack) {
+            this.itemHandler.setStackInSlot(index, stack);
+        }
+
+        @Override
+        public void set(@NotNull ItemStack stack) {
+            this.itemHandler.setStackInSlot(index, stack);
+            this.setChanged();
+        }
+
+        @Override
+        public void onQuickCraft(@NotNull ItemStack oldStackIn, @NotNull ItemStack newStackIn) {}
+
+        @Override
+        public int getMaxStackSize() {
+            return this.itemHandler.getSlotLimit(this.index);
+        }
+
+        @Override
+        public int getMaxStackSize(@NotNull ItemStack stack) {
+            ItemStack maxAdd = stack.copy();
+            int maxInput = stack.getMaxStackSize();
+            maxAdd.setCount(maxInput);
+            ItemStack currentStack = this.itemHandler.getStackInSlot(index);
+            this.itemHandler.setStackInSlot(index, ItemStack.EMPTY);
+            ItemStack remainder = this.itemHandler.insertItem(index, maxAdd, true);
+            this.itemHandler.setStackInSlot(index, currentStack);
+            return maxInput - remainder.getCount();
+        }
+
+        @NotNull
+        @Override
+        public ItemStack remove(int amount) {
+            var result = this.itemHandler.extractItem(index, amount, false);
+            if (changeListener != null && !getItem().isEmpty()) {
+                changeListener.run();
+            }
+            return result;
+        }
+
+        @Override
+        public void setChanged() {
+            if (changeListener != null) {
+                changeListener.run();
+            }
+            SlotWidget.this.onSlotChanged();
+        }
+
+        @Override
+        public boolean isActive() {
+            return SlotWidget.this.isEnabled() && (HOVER_SLOT == null || HOVER_SLOT == this);
+        }
+    }
+
+    public static final class JEICallWrapper {
+
+        public static Object getJEIStackClickable(ItemStack stack, Position pos, Size size) { return null; /* ported stub */ }/* ported: removed */
+    }
+
+    public static final class REICallWrapper {/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
+
+        public static Object getREIIngredient(ItemStack stack) { return null; /* ported stub */ }
+    }
+
+    public static final class EMICallWrapper {/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
+
+        public static Object getEMIIngredient(ItemStack stack, float xeiChance) { return null; /* ported stub */ }
+    }
+}
