@@ -4,7 +4,8 @@
 //     chunk-generation spawns, spawners, ambushes, and mobs loaded from disk (so whatever camped there is gone after a restart).
 //  2. Every second, mobs of that kind already inside a zone are discarded: around the world spawn always (cheap: loaded chunks
 //     only), around the start sites only when a player stands within 128 blocks of one. Logged as "[spawn_guard] removed ...".
-//  3. Staff can still summon a mob there by giving it the tag zone_ok (/summon zombie ~ ~ ~ {Tags:["zone_ok"]}).
+//  3. /spawn_guard on|off|status (operators) flips the guard for testing; the choice is kept in server.persistentData (spawn_guard_off).
+//  4. Staff can still summon a mob there by giving it the tag zone_ok (/summon zombie ~ ~ ~ {Tags:["zone_ok"]}).
 // The nemesis mod already keeps its ambushes 200 blocks from spawn; this removes one that was left standing there.
 (function () {
   const R = 64
@@ -12,6 +13,7 @@
   const NEAR = 128
   const CELL = 1024 // grid cell for the start sites, bigger than NEAR so the 3 x 3 cells around a point hold every site in range
   const OK_TAG = 'zone_ok'
+  const OFF_KEY = 'spawn_guard_off'
   let Mob = null
   let Enemy = null
   let AABB = null
@@ -37,6 +39,15 @@
       })
     } catch (e) { console.warn('[spawn_guard] culture_spawns.json: ' + e) }
     return grid
+  }
+
+  function guardOff(server) {
+    try {
+      if (!server.persistentData.contains(OFF_KEY)) return false
+      let v = server.persistentData.getBoolean(OFF_KEY)
+      if (v && typeof v.orElse === 'function') v = v.orElse(false)
+      return v === true || String(v) === 'true'
+    } catch (err) { return false }
   }
 
   function isOverworld(level) {
@@ -99,6 +110,7 @@
     try {
       let level = event.getLevel()
       if (level.isClientSide()) return
+      if (guardOff(level.getServer())) return
       let e = event.getEntity()
       if (!banned(e) || !isOverworld(level)) return
       if (inZone(level, e.getX(), e.getZ())) event.setCanceled(true)
@@ -106,6 +118,7 @@
   })
 
   function sweepAll(server, why) {
+    if (guardOff(server)) return
     let level = server.overworld()
     sweep(level, worldSpawn(level), why)
     server.getPlayerList().getPlayers().forEach(p => {
@@ -124,9 +137,28 @@
   PlayerEvents.loggedIn(event => {
     try {
       let p = event.player
-      if (!isOverworld(p.level)) return
+      if (guardOff(p.server) || !isOverworld(p.level)) return
       sweep(p.level, worldSpawn(p.level), 'login')
       centres(p.level, p.getX(), p.getZ(), NEAR + R, false).forEach(c => sweep(p.level, c, 'login'))
     } catch (err) { console.warn('[spawn_guard] login: ' + err) }
   })
+
+  try {
+    ServerEvents.commandRegistry(event => {
+      const { commands: Commands, arguments: Arguments } = event
+      const op = s => s.permissions().hasPermission(Java.loadClass('net.minecraft.server.permissions.Permissions').COMMANDS_GAMEMASTER)
+      const set = (ctx, off) => {
+        ctx.source.server.persistentData.putBoolean(OFF_KEY, off)
+        ctx.source.sendSystemMessage(Component.of('spawn_guard ' + (off ? 'OFF: hostiles and nemeses may spawn near spawn and culture starts' : 'ON')))
+        return 1
+      }
+      event.register(Commands.literal('spawn_guard').requires(op)
+        .then(Commands.literal('on').executes(ctx => set(ctx, false)))
+        .then(Commands.literal('off').executes(ctx => set(ctx, true)))
+        .then(Commands.literal('status').executes(ctx => {
+          ctx.source.sendSystemMessage(Component.of('spawn_guard ' + (guardOff(ctx.source.server) ? 'OFF' : 'ON')))
+          return 1
+        })))
+    })
+  } catch (e) { console.warn('[spawn_guard] /spawn_guard not registered: ' + e) }
 })()
