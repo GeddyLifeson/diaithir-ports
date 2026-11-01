@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "magic",
+ "activation": "goety:soul_bolt_focus",
+ "offerings": [
+  "goety:occult_fabric",
+  "minecraft:fire_charge",
+  "minecraft:fire_charge",
+  "minecraft:creeper_head",
+  "minecraft:fire_charge",
+  "goety:mystic_core",
+  "goety:occult_fabric",
+  "minecraft:enchanted_golden_apple"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:magic_bolt_focus",
+ "count": 1
+}

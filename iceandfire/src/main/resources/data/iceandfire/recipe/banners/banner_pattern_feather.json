@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:feather",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "iceandfire:banner_pattern_feather",
+    "count": 1
+  }
+}

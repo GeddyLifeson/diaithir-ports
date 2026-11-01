@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:rabbit_foot",
+    "color": 12872351,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:highway.adniechgleidid",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "highway.adniechgleidid_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

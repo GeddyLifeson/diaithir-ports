@@ -1,0 +1,7 @@
+{
+ "id": "bow",
+ "kind": "ranged",
+ "draw_ticks": 20,
+ "drop_reduction": 0.0,
+ "fallback": "minecraft:bow"
+}

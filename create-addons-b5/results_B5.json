@@ -1,0 +1,262 @@
+[
+ {
+  "slug": "create-emeralds",
+  "status": "skip",
+  "reason": "already done in batch0 (diaithir-create-addons)"
+ },
+ {
+  "slug": "create-regions-unexplored-compat-crushing",
+  "status": "blocked",
+  "reason": "needs Regions Unexplored, not in pack"
+ },
+ {
+  "slug": "create-structures-overhaul",
+  "status": "blocked",
+  "reason": "worldgen structure addon needing Terralith/Tectonic/BOP or 1.21 structure data; needs structure review"
+ },
+ {
+  "slug": "create_sable_train_overlay_compat",
+  "status": "blocked",
+  "reason": "needs Sable/Aeronautics, not ported"
+ },
+ {
+  "slug": "create-ars-noua",
+  "status": "blocked",
+  "reason": "hard dep on a mod not in pack (Ars Nouveau/Cloth Config/EMI/Custom Machinery/Numismatics/Waystones/CreateOreExcavation/Ponder)"
+ },
+ {
+  "slug": "create-new-beginnings",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-tfmg-automation",
+  "status": "blocked",
+  "reason": "needs TFMG/Stellaris/Connected, not ported"
+ },
+ {
+  "slug": "create-hotbar-schematic-addon",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-neo-blazing-blood",
+  "status": "blocked",
+  "reason": "recipe needs Tinkers Construct, not in pack"
+ },
+ {
+  "slug": "create-better-frequency",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-cursor-anchor-fix",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-ore-excavation-plus",
+  "status": "blocked",
+  "reason": "hard dep on a mod not in pack (Ars Nouveau/Cloth Config/EMI/Custom Machinery/Numismatics/Waystones/CreateOreExcavation/Ponder)"
+ },
+ {
+  "slug": "create-droid-diamond",
+  "status": "ported",
+  "reason": "plain items/blocks + 10 Create recipes via B5Content"
+ },
+ {
+  "slug": "create-always-backtank",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-rain-fix",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-ccbr",
+  "status": "blocked",
+  "reason": "needs CC:Tweaked, not in pack"
+ },
+ {
+  "slug": "schematicannon-processing-pattern",
+  "status": "blocked",
+  "reason": "needs AE2, not ported"
+ },
+ {
+  "slug": "create-superflat-skyblock-crates",
+  "status": "ported",
+  "reason": "57 plain blocks/items + 58 recipes; special crate behaviours (barn spawner, end portal placer/breaker) not ported"
+ },
+ {
+  "slug": "create-touchpad-scrolling-fix",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "cc-redstone-link-bridge",
+  "status": "blocked",
+  "reason": "needs CC:Tweaked, not in pack"
+ },
+ {
+  "slug": "smeshariki-thinking-ost-music-for-create-pondering",
+  "status": "blocked",
+  "reason": "hard dep on a mod not in pack (Ars Nouveau/Cloth Config/EMI/Custom Machinery/Numismatics/Waystones/CreateOreExcavation/Ponder)"
+ },
+ {
+  "slug": "create-easy-stock-ticker",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "createengenieering",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-picky-wheels",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-goggles-plus",
+  "status": "blocked",
+  "reason": "hard dep on a mod not in pack (Ars Nouveau/Cloth Config/EMI/Custom Machinery/Numismatics/Waystones/CreateOreExcavation/Ponder)"
+ },
+ {
+  "slug": "create-bugfix-schematic-patch",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-colored-controllers",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-more-linked-remote",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-plenty-o-recipes-biomes-o-plenty-plus-create",
+  "status": "blocked",
+  "reason": "needs Biomes O Plenty, not in pack"
+ },
+ {
+  "slug": "create-sensors",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "createoplenty",
+  "status": "blocked",
+  "reason": "needs Biomes O Plenty, not in pack"
+ },
+ {
+  "slug": "create-var-tag",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-more-conveyor",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "createaddoncompatibility",
+  "status": "blocked",
+  "reason": "needs TFMG/Stellaris/Connected, not ported"
+ },
+ {
+  "slug": "technophobias-create-numismatified-waystones-compat",
+  "status": "blocked",
+  "reason": "hard dep on a mod not in pack (Ars Nouveau/Cloth Config/EMI/Custom Machinery/Numismatics/Waystones/CreateOreExcavation/Ponder)"
+ },
+ {
+  "slug": "functional-storage-create-aero",
+  "status": "blocked",
+  "reason": "needs Sable/Aeronautics, not ported"
+ },
+ {
+  "slug": "create-more-drill-heads",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-sequenced-pager",
+  "status": "blocked",
+  "reason": "hard dep on a mod not in pack (Ars Nouveau/Cloth Config/EMI/Custom Machinery/Numismatics/Waystones/CreateOreExcavation/Ponder)"
+ },
+ {
+  "slug": "create-delicious-teas",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "horizontal-chute-create-addon",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-diamond-factory",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-structures-arise",
+  "status": "blocked",
+  "reason": "worldgen structure addon needing Terralith/Tectonic/BOP or 1.21 structure data; needs structure review"
+ },
+ {
+  "slug": "create-condensed-milk",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-chocolate-fountain",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "creat-aeronautics-structures",
+  "status": "blocked",
+  "reason": "needs Sable/Aeronautics, not ported"
+ },
+ {
+  "slug": "custom-machinery-create",
+  "status": "blocked",
+  "reason": "hard dep on a mod not in pack (Ars Nouveau/Cloth Config/EMI/Custom Machinery/Numismatics/Waystones/CreateOreExcavation/Ponder)"
+ },
+ {
+  "slug": "create-more-cogwheels",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-prismatic-shine",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-container-tooltip",
+  "status": "blocked",
+  "reason": "mixin/Create-internals code (com.simibubi API) or custom block entities; port is Fabric-derived com.zurrtum.create, needs a source port per addon; not scriptable"
+ },
+ {
+  "slug": "create-big-cannons-ballistic-computer",
+  "status": "blocked",
+  "reason": "needs Create Big Cannons, not ported"
+ },
+ {
+  "slug": "tfmg-stellaris-compat",
+  "status": "blocked",
+  "reason": "needs TFMG/Stellaris/Connected, not ported"
+ },
+ {
+  "slug": "aero-science-program",
+  "status": "blocked",
+  "reason": "needs Sable/Aeronautics, not ported"
+ }
+]

@@ -1,0 +1,58 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:magic_core",
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:clock"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:amethyst_shard"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:nether_star"
+  },
+  {
+   "type": "create:pressing",
+   "results": [
+    "$result"
+   ],
+   "ingredient": "$ingredient"
+  },
+  {
+   "type": "create:pressing",
+   "results": [
+    "$result"
+   ],
+   "ingredient": "$ingredient"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:magic_core"
+ },
+ "result": {
+  "id": "relics:clot_of_time",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

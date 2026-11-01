@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "PPP",
+    " L "
+  ],
+  "key": {
+    "G": "#alexscaves:gelatins",
+    "P": "alexscaves:gumball_pile",
+    "L": "alexscaves:sharpened_candy_cane"
+  },
+  "result": {
+    "count": 2,
+    "id": "alexscaves:gobthumper"
+  }
+}

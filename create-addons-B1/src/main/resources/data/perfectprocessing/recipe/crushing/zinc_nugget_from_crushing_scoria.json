@@ -1,0 +1,11 @@
+{
+ "type": "create:crushing",
+ "results": [
+  {
+   "chance": 0.3,
+   "id": "create:zinc_nugget"
+  }
+ ],
+ "processing_time": 250,
+ "ingredient": "#create:stone_types/scoria"
+}

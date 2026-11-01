@@ -1,0 +1,47 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:lava",
+    "minecraft:flowing_lava",
+    {
+      "id": "#c:molten_iron",
+      "required": false
+    },
+    {
+      "id": "#c:molten_copper",
+      "required": false
+    },
+    {
+      "id": "#c:molten_gold",
+      "required": false
+    },
+    {
+      "id": "#c:molten_tin",
+      "required": false
+    },
+    {
+      "id": "#c:molten_bronze",
+      "required": false
+    },
+    {
+      "id": "#c:molten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:molten_zinc",
+      "required": false
+    },
+    {
+      "id": "#c:molten_silver",
+      "required": false
+    },
+    {
+      "id": "#c:molten_lead",
+      "required": false
+    },
+    {
+      "id": "#c:molten_nickel",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:empty_focus",
+  "f": "goety:magic_emerald",
+  "s": "#c:ingots/iron"
+ },
+ "pattern": [
+  "sfs",
+  "fef",
+  "sfs"
+ ],
+ "result": {
+  "id": "goety:iron_hide_focus",
+  "count": 1
+ }
+}

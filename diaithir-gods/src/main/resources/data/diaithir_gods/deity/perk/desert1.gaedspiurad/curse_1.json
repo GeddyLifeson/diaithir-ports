@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:sand",
+    "color": 9012398,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:desert1.gaedspiurad",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "desert1.gaedspiurad_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

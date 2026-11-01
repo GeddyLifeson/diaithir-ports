@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " s ",
+  "dfg",
+  " h "
+ ],
+ "key": {
+  "s": "create:brass_sheet",
+  "d": "create:brass_sheet",
+  "f": "minecraft:bucket",
+  "g": "create:brass_sheet",
+  "h": "create:brass_sheet"
+ },
+ "result": {
+  "id": "gearbound:water_canister"
+ }
+}

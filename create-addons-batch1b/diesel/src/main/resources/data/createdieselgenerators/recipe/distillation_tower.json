@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BIB",
+  "BCB",
+  "BIB"
+ ],
+ "key": {
+  "B": "create:brass_sheet",
+  "I": "minecraft:iron_ingot",
+  "C": "create:fluid_tank"
+ },
+ "result": {
+  "id": "createdieselgenerators:distillation_tower",
+  "count": 2
+ }
+}

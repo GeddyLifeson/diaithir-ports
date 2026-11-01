@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_transbaikal_and_mongolian_late_palaeolit.spiuradlandlouch",
+  "female": false,
+  "slim": false,
+  "light": 0,
+  "items": {
+    "block": "minecraft:stone",
+    "mainhand": "minecraft:iron_sword",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

@@ -1,0 +1,38 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_better_smithing_templates:netherrack_shard",
+ "transitional_item": {
+  "id": "create_better_smithing_templates:incomplete_smithing_template"
+ },
+ "result": {
+  "id": "minecraft:netherite_upgrade_smithing_template"
+ },
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:lava",
+    "amount": 8100
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create_better_smithing_templates:polished_diamond",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

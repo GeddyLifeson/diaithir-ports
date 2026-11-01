@@ -1,0 +1,23 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:prismarine_crystals",
+  "minecraft:prismarine_crystals",
+  "minecraft:prismarine_crystals",
+  "minecraft:shulker_shell"
+ ],
+ "results": [
+  {
+   "id": "minecraft:shulker_shell",
+   "count": 2
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "create:potion",
+   "amount": 40500
+  }
+ ],
+ "heat_requirement": "heated"
+}

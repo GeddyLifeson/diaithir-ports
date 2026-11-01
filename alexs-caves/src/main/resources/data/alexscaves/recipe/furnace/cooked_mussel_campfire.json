@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": "alexscaves:mussel",
+  "result": {
+    "id": "alexscaves:cooked_mussel",
+    "count": 1
+  },
+  "experience": 0.15,
+  "cookingtime": 600
+}

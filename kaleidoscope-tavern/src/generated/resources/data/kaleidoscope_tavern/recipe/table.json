@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": "#minecraft:fences",
+    "I": "#c:ingots/iron",
+    "W": "#minecraft:planks"
+  },
+  "pattern": [
+    "WWW",
+    " F ",
+    " I "
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:table"
+  }
+}

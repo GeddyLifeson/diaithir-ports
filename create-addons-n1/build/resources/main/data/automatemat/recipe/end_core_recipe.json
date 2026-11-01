@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aba",
+  "bcb",
+  "aba"
+ ],
+ "key": {
+  "a": "minecraft:end_stone",
+  "b": "minecraft:end_stone_bricks",
+  "c": "minecraft:ender_eye"
+ },
+ "result": {
+  "id": "automatemat:end_core"
+ }
+}

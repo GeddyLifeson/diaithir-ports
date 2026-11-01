@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " MS",
+  "M S",
+  " MS"
+ ],
+ "key": {
+  "M": "#c:ingots/steel",
+  "S": "minecraft:string"
+ },
+ "result": {
+  "id": "diaithirarms:steel_bow",
+  "count": 1
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "PMP",
+  "PMP",
+  " M "
+ ],
+ "key": {
+  "M": "#c:ingots/iron",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "diaithirarms:mail_shield",
+  "count": 1
+ }
+}

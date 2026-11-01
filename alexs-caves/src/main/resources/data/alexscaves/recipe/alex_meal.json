@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "alexscaves:gingerbread_crumbs",
+    "alexscaves:gingerbread_crumbs",
+    "minecraft:baked_potato",
+    "minecraft:carrot",
+    "minecraft:honey_bottle",
+    "minecraft:cooked_beef",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "alexscaves:alex_meal",
+    "count": 1
+  }
+}

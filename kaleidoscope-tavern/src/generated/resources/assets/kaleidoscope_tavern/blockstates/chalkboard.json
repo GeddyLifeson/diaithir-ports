@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "kaleidoscope_tavern:block/deco/chalkboard",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "kaleidoscope_tavern:block/deco/chalkboard"
+    },
+    "facing=south": {
+      "model": "kaleidoscope_tavern:block/deco/chalkboard",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "kaleidoscope_tavern:block/deco/chalkboard",
+      "y": 270
+    }
+  }
+}

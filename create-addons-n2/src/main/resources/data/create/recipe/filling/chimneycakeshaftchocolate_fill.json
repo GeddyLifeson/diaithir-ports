@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "create_chocopaste:chimney_cake",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 8100,
+  "fluid": "create:chocolate"
+ },
+ "result": {
+  "id": "create_chocopaste:chimneycakechocolate"
+ }
+}

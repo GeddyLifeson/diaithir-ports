@@ -1,0 +1,52 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "F": "minecraft:moss_block",
+  "I": "#c:ingots/steel",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "FIF",
+  " S ",
+  " S "
+ ],
+ "result": {
+  "id": "minecraft:stick",
+  "count": 1,
+  "components": {
+   "minecraft:item_model": "diaithir_druidry:staff/druid_2",
+   "minecraft:item_name": {
+    "translate": "item.diaithir_druidry.staff_druid_2"
+   },
+   "minecraft:max_stack_size": 1,
+   "minecraft:max_damage": 300,
+   "minecraft:rarity": "rare",
+   "minecraft:attribute_modifiers": [
+    {
+     "type": "spell_power:healing",
+     "id": "diaithir_druidry:druid_2_power",
+     "amount": 6.0,
+     "operation": "add_value",
+     "slot": "mainhand"
+    }
+   ],
+   "minecraft:lore": [
+    {
+     "text": "The grove-keepers.",
+     "color": "gray",
+     "italic": false
+    }
+   ],
+   "spell_engine:spell_container": {
+    "access": "MAGIC",
+    "pool": "diaithir_druidry:weapon/druid_staff",
+    "max_spell_count": 2,
+    "spell_ids": [
+     "diaithir_druidry:thornlash",
+     "diaithir_druidry:dewdrop"
+    ]
+   }
+  }
+ }
+}

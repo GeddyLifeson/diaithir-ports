@@ -1,0 +1,50 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "create_enchantment_industry"
+  },
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "more_armor_trims"
+  }
+ ],
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_templates_gears:greed_sheet",
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "create_templates_gears:greed_sheet",
+   "ingredient": "create_templates_gears:diamond_sheet"
+  },
+  {
+   "type": "create:pressing",
+   "results": [
+    "$result"
+   ],
+   "ingredient": "$ingredient"
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "amount": 20250,
+    "fluid": "create_enchantment_industry:experience"
+   },
+   "result": {
+    "id": "more_armor_trims:greed_armor_trim_smithing_template"
+   }
+  }
+ ],
+ "transitional_item": {
+  "id": "create_templates_gears:inactive_greed_armor_trim"
+ },
+ "result": {
+  "id": "more_armor_trims:greed_armor_trim_smithing_template"
+ }
+}

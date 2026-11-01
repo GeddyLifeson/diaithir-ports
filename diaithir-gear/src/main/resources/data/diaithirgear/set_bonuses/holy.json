@@ -1,0 +1,43 @@
+{
+ "id": "holy",
+ "tag": "diaithirgear:sets/holy",
+ "age": 4,
+ "curios": false,
+ "tiers": [
+  {
+   "pieces": 2,
+   "attributes": [
+    {
+     "attribute": "minecraft:max_health",
+     "operation": "add_value",
+     "amount": 2
+    },
+    {
+     "attribute": "spell_power:healing",
+     "operation": "add_multiplied_base",
+     "amount": 0.05
+    }
+   ]
+  },
+  {
+   "pieces": 4,
+   "attributes": [
+    {
+     "attribute": "minecraft:max_health",
+     "operation": "add_value",
+     "amount": 4
+    },
+    {
+     "attribute": "minecraft:knockback_resistance",
+     "operation": "add_value",
+     "amount": 0.1
+    },
+    {
+     "attribute": "spell_power:healing",
+     "operation": "add_multiplied_base",
+     "amount": 0.1
+    }
+   ]
+  }
+ ]
+}

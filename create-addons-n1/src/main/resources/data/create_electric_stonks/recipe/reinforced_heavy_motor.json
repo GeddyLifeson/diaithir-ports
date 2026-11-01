@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sds",
+  "dmd",
+  "sds"
+ ],
+ "key": {
+  "m": "create_electric_stonks:heavy_motor",
+  "s": "create:sturdy_sheet",
+  "d": "minecraft:diamond"
+ },
+ "result": {
+  "id": "create_electric_stonks:reinforced_heavy_motor"
+ }
+}

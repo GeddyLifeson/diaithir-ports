@@ -1,0 +1,163 @@
+[
+ [
+  "Iund Sìttaeb",
+  "place",
+  6,
+  "otherworld",
+  "The Otherworld under the hills, a night realm below the bedrock reached by a Bealach frame of reinforced deepslate. Four lands: Tìrdumuind, Koildemaktuldach, Uomunblàtach and Kolbundeilach. Open from Age VI; the sidhe-growth there answers sound, so move quietly."
+ ],
+ [
+  "Bielachsìttaeib",
+  "item",
+  6,
+  "otherworld",
+  "A frame of reinforced deepslate lit with the Heart of the Deep opens the way. Default doorway is 6 wide and 3 high (config). Age VI."
+ ],
+ [
+  "Kridi Domuind",
+  "item",
+  6,
+  "otherworld",
+  "Taken from the Warden. Use it on a reinforced deepslate frame to light the way into the Otherworld. It beats like a heart while carried."
+ ],
+ [
+  "Batafuoimnech",
+  "item",
+  6,
+  "otherworld",
+  "A staff that throws a sonic blast when charged. Reverberation lengthens the blast and Volume strengthens it. Repaired with a Soul Crystal."
+ ],
+ [
+  "Sgaeilersìtàis",
+  "item",
+  6,
+  "otherworld",
+  "Link it to a container, furnace or workbench, then use it from anywhere to open that block remotely. Dye it with any dye (the link is kept)."
+ ],
+ [
+  "Sgiatununuma",
+  "item",
+  6,
+  "otherworld",
+  "Wings of soul. Gliding wings with a booster key; boost cooldown is 600 ticks (30 seconds) by default."
+ ],
+ [
+  "Kombaistàrsaid",
+  "item",
+  6,
+  "otherworld",
+  "Points at the nearest temple of the old ones while you are in the Otherworld."
+ ],
+ [
+  "Uchdlundfìrfuiri",
+  "item",
+  6,
+  "otherworld",
+  "Warden armour, upgraded from netherite at a smithing table with a Warden carapace and template. Protects like netherite and looks the part in the Otherworld."
+ ],
+ [
+  "Uchdlundatuoim",
+  "item",
+  6,
+  "otherworld",
+  "Resonarium armour: sound-bound metal that takes a quarter off incoming damage per piece worn, at the cost of a little durability."
+ ],
+ [
+  "Omburkriustulaichti",
+  "item",
+  6,
+  "otherworld",
+  "Amber holding a find from the dark: loot, or a sleeping Sùgair. Mine it with silk touch to carry it unbroken."
+ ],
+ [
+  "Keidchasachsìtàis",
+  "being",
+  6,
+  "otherworld",
+  "A many-legged hunter of the Otherworld."
+ ],
+ [
+  "Sùguirsìtàis",
+  "being",
+  6,
+  "otherworld",
+  "Small and quick, it lurks in amber and in false vases."
+ ],
+ [
+  "Bristi",
+  "being",
+  6,
+  "otherworld",
+  "A broken thing that walks the lands of the Otherworld in groups of two to five."
+ ],
+ [
+  "Lientuir",
+  "being",
+  6,
+  "otherworld",
+  "Spawns 31% of the time when a false vase is broken, otherwise leeches come."
+ ],
+ [
+  "Bìdeduirsìtàis",
+  "being",
+  6,
+  "otherworld",
+  "A biter that can carry up to 8 enchanted books."
+ ],
+ [
+  "Knoimsgreig",
+  "being",
+  6,
+  "otherworld",
+  "A tall worm that cries when it senses you."
+ ],
+ [
+  "Baldunàrsaid",
+  "item",
+  6,
+  "otherworld",
+  "16% of vases are false: breaking one wakes leeches or a Lientuir."
+ ],
+ [
+  "Boildesìtàis",
+  "concept",
+  6,
+  "otherworld",
+  "Extra damage against creatures of the Otherworld and the Warden."
+ ],
+ [
+  "Brosnachad",
+  "concept",
+  6,
+  "otherworld",
+  "Where a foe falls, the growth of the Otherworld spreads."
+ ],
+ [
+  "Tìrdumuind",
+  "place",
+  6,
+  "otherworld",
+  "Open caves of the Otherworld."
+ ],
+ [
+  "Koildemaktuldach",
+  "place",
+  6,
+  "otherworld",
+  "A forest of echo wood."
+ ],
+ [
+  "Uomunblàtach",
+  "place",
+  6,
+  "otherworld",
+  "Caverns of glowing bloom and still pools."
+ ],
+ [
+  "Kolbundeilach",
+  "place",
+  6,
+  "otherworld",
+  "Gloom-slate columns under a low ceiling."
+ ]
+]

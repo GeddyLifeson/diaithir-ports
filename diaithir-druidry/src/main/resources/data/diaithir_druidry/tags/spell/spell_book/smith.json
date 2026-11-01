@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:forge_spark",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:quench",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:hot_iron",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:tempering",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:slag_cloud",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:forge_breath",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:molten_rain",
+   "required": false
+  }
+ ]
+}

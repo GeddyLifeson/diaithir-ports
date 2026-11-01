@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "diaithir:block/temple_vault_top",
+    "bottom": "diaithir:block/temple_vault_top",
+    "side": "diaithir:block/temple_vault_side",
+    "particle": "diaithir:block/temple_vault_top"
+  }
+}

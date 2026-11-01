@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DRD",
+    "RGR",
+    "DRD"
+  ],
+  "key": {
+    "R": "alexscaves:radon_bottle",
+    "G": "minecraft:glowstone",
+    "D": "#c:dyes/lime"
+  },
+  "result": {
+    "count": 4,
+    "id": "alexscaves:radon_lamp_lime"
+  }
+}

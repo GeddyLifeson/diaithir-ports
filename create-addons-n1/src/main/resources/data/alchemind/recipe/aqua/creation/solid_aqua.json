@@ -1,0 +1,12 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:blue_ice",
+  "minecraft:sea_lantern"
+ ],
+ "results": [
+  {
+   "id": "alchemind:solid_aqua"
+  }
+ ]
+}

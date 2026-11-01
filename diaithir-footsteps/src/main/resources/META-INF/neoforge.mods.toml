@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirfootsteps"
+version = "${version}"
+displayName = "Diaithir Footsteps"
+description = "Layers armour, surface and weather onto footstep sounds from a data file, so a mailed warrior sounds different from a barefoot one and wet ground sounds wet. Clean-room: written from how footstep-layering mods behave, no code or sounds taken from them."
+
+[[dependencies.diaithirfootsteps]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "create_electric_stonks:block/ultimate_motor",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "create_electric_stonks:block/ultimate_motor",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "create_electric_stonks:block/ultimate_motor"
+    },
+    "facing=south": {
+      "model": "create_electric_stonks:block/ultimate_motor",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "create_electric_stonks:block/ultimate_motor_up",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "create_electric_stonks:block/ultimate_motor_up",
+      "y": 270
+    }
+  }
+}

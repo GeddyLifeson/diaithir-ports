@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "goety:end_stone_pillar",
+  "C": "goety:chorus_wood"
+ },
+ "pattern": [
+  "PCP",
+  "C C",
+  "PCP"
+ ],
+ "result": {
+  "id": "goety:chorus_end_stone_pillar",
+  "count": 4
+ }
+}

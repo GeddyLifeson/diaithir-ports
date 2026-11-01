@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "diaithir_wiretech:steel_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "III",
+    " S ",
+    "S S"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:steel_scaffolding",
+    "count": 6
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:item_frame",
+    "minecraft:ender_pearl"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:girl_with_pearl_earring_painting"
+  }
+}

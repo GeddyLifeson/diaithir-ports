@@ -1,0 +1,16 @@
+{
+ "type": "craft",
+ "school": "forge",
+ "activation": "minecraft:iron_helmet",
+ "offerings": [
+  "#c:ingots/iron",
+  "#c:ingots/iron",
+  "goety:cursed_ingot",
+  "goety:cursed_ingot",
+  "#c:gems/diamond"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:black_iron_helmet",
+ "count": 1
+}

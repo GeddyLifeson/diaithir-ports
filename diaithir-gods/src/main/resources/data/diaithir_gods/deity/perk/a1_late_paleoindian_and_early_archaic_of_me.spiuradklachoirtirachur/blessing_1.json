@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 7830386,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_late_paleoindian_and_early_archaic_of_me.spiuradklachoirtirachur",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "a1_late_paleoindian_and_early_archaic_of_me.spiuradklachoirtirachur_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

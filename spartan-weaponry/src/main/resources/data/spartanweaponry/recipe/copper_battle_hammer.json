@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "minecraft:copper_ingot",
+  "|": "spartanweaponry:handle"
+ },
+ "pattern": [
+  "###",
+  "###",
+  " | "
+ ],
+ "result": {
+  "id": "spartanweaponry:copper_battle_hammer"
+ }
+}

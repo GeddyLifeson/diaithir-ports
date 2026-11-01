@@ -1,0 +1,42 @@
+{
+ "name": "bogaduir kruoid",
+ "items": [
+  "diaithir_classes:sleagh_helmet_steel",
+  "diaithir_classes:sleagh_chestplate_steel",
+  "diaithir_classes:sleagh_leggings_steel",
+  "diaithir_classes:sleagh_boots_steel"
+ ],
+ "bonuses": [
+  {
+   "required_piece_count": 2,
+   "attributes": [
+    {
+     "type": "ranged_weapon:damage",
+     "id": "diaithir_classes:set_sleagh_steel_2_0",
+     "amount": 2.0,
+     "operation": "add_value",
+     "slot": "any"
+    }
+   ]
+  },
+  {
+   "required_piece_count": 4,
+   "attributes": [
+    {
+     "type": "minecraft:movement_speed",
+     "id": "diaithir_classes:set_sleagh_steel_4_0",
+     "amount": 0.05,
+     "operation": "add_multiplied_base",
+     "slot": "any"
+    }
+   ],
+   "spells": {
+    "access": "NONE",
+    "max_spell_count": 1,
+    "spell_ids": [
+     "diaithir_classes:sleagh_keen_steel"
+    ]
+   }
+  }
+ ]
+}

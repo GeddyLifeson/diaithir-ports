@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:torch",
+    "color": 6343560,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:italic.tieldachlasuir",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:glowing",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "italic.tieldachlasuir_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

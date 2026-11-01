@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:northwest.seidurmatuir",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:spruce_log",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

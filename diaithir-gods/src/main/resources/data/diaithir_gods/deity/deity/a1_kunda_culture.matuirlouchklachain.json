@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:a1_kunda_culture.matuirlouchklachain",
+  "icon": "minecraft:water_bucket",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

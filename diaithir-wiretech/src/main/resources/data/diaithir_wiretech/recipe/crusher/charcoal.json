@@ -1,0 +1,15 @@
+{
+  "type": "diaithir_wiretech:crusher",
+  "inputs": [
+    {
+      "ingredient": "minecraft:charcoal",
+      "count": 1
+    }
+  ],
+  "energy": 800,
+  "time": 80,
+  "result": {
+    "id": "diaithir_wiretech:coal_dust",
+    "count": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_ss_crate:stronghold_stair_crate_chunk",
+  "create_ss_crate:stronghold_stair_crate_chunk",
+  "create_ss_crate:stronghold_stair_crate_chunk",
+  "create_ss_crate:stronghold_stair_crate_chunk",
+  "create_ss_crate:stronghold_stair_crate_chunk",
+  "create_ss_crate:stronghold_stair_crate_chunk",
+  "create_ss_crate:stronghold_stair_crate_chunk",
+  "create_ss_crate:stronghold_stair_crate_chunk",
+  "create_ss_crate:stronghold_stair_crate_chunk"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:stronghold_stair_crate"
+  }
+ ]
+}

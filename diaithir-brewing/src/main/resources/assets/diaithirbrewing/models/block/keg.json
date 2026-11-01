@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/cube_bottom_top",
+ "textures": {
+  "bottom": "diaithirbrewing:block/keg_bottom",
+  "side": "diaithirbrewing:block/keg_side",
+  "top": "diaithirbrewing:block/keg_top"
+ }
+}

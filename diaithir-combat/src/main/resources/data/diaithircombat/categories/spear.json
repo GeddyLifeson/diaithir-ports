@@ -1,0 +1,30 @@
+{
+ "id": "spear",
+ "pattern": "thrust",
+ "range": 4.0,
+ "arc": 30,
+ "width": 0.45,
+ "max_targets": 2,
+ "knockback": 0.3,
+ "combo_window": 14,
+ "parry_window": 0,
+ "fallback": "minecraft:iron_sword",
+ "combo": [
+  {
+   "damage": 1.0,
+   "cooldown": 11,
+   "stamina": 2
+  },
+  {
+   "damage": 1.0,
+   "cooldown": 11,
+   "stamina": 2
+  },
+  {
+   "damage": 1.2,
+   "cooldown": 14,
+   "stamina": 2.5,
+   "range_mult": 1.1
+  }
+ ]
+}

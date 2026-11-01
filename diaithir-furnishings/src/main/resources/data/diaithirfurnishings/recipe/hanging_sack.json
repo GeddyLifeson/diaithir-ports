@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:crafting_transmute",
+ "category": "misc",
+ "input": "diaithirfurnishings:sack",
+ "material": "diaithirfurnishings:rope",
+ "result": {
+  "id": "diaithirfurnishings:hanging_sack"
+ }
+}

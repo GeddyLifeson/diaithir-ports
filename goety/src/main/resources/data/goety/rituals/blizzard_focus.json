@@ -1,0 +1,14 @@
+{
+ "type": "craft",
+ "school": "frost",
+ "activation": "goety:arrow_rain_focus",
+ "offerings": [
+  "goety:ice_spike_focus",
+  "#c:gems/diamond",
+  "minecraft:powder_snow_bucket"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:blizzard_focus",
+ "count": 1
+}

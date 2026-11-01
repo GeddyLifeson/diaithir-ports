@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:stick",
+  "W": "goety:rotten_planks"
+ },
+ "pattern": [
+  "W#W",
+  "W#W"
+ ],
+ "result": {
+  "id": "goety:rotten_fence",
+  "count": 3
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "access": "ARCHERY",
+ "max_spell_count": 2,
+ "spell_ids": [
+  "diaithir_classes:sleagh_volley",
+  "diaithir_classes:sleagh_net_trap"
+ ]
+}

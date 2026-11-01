@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create:shaft",
+  "create:andesite_casing",
+  "create:iron_sheet"
+ ],
+ "result": {
+  "id": "deepdrilling:blank_module"
+ }
+}

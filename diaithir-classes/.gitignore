@@ -1,0 +1,6 @@
+build/
+.gradle/
+run/
+server.log
+cmd.fifo
+tools/__pycache__/

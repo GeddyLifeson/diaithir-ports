@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "#minecraft:planks"
+  },
+  "pattern": [
+    "B B"
+  ],
+  "result": {
+    "id": "iceandfire:earplugs"
+  },
+  "show_notification": true
+}

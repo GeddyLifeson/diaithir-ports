@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sds",
+  "dgd",
+  "sds"
+ ],
+ "key": {
+  "g": "create_electric_stonks:generator",
+  "s": "create:sturdy_sheet",
+  "d": "minecraft:diamond"
+ },
+ "result": {
+  "id": "create_electric_stonks:reinforced_generator"
+ }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "diaithir_wiretech:crusher",
+  "inputs": [
+    {
+      "ingredient": "#c:raw_materials/iron",
+      "count": 1
+    }
+  ],
+  "energy": 1200,
+  "time": 100,
+  "result": {
+    "id": "diaithir_wiretech:iron_dust",
+    "count": 1
+  }
+}

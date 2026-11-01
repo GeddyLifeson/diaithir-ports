@@ -1,0 +1,11 @@
+{
+ "steam_whistle": {
+  "subtitle": "subtitles.diaithirsteamrails.steam_whistle",
+  "sounds": [
+   {
+    "name": "diaithirsteamrails:steam_whistle",
+    "attenuation_distance": 96
+   }
+  ]
+ }
+}

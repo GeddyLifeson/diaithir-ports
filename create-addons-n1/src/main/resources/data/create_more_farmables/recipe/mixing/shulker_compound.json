@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:popped_chorus_fruit",
+  "minecraft:popped_chorus_fruit"
+ ],
+ "results": [
+  {
+   "id": "create_more_farmables:shulker_compound"
+  }
+ ],
+ "heat_requirement": "heated"
+}

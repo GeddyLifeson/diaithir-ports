@@ -1,0 +1,16 @@
+{
+ "type": "craft",
+ "school": "sky",
+ "activation": "goety:wind_core",
+ "offerings": [
+  "#c:feathers",
+  "#c:feathers",
+  "#c:dusts/glowstone",
+  "minecraft:phantom_membrane",
+  "minecraft:shield"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:whirlwind_focus",
+ "count": 1
+}

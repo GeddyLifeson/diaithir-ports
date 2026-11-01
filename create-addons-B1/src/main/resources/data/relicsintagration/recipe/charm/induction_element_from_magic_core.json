@@ -1,0 +1,46 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:magic_core",
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:precision_mechanism"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:blaze_burner"
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "neoforge:single",
+    "amount": 81000,
+    "fluid": "minecraft:lava"
+   },
+   "result": "$result"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:magic_core"
+ },
+ "result": {
+  "id": "createrelicsplus:induction_heating_core",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "createrelicsplus"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "b": "#c:rods/blaze",
+  "e": "goety:fireball_focus",
+  "d": "minecraft:dispenser",
+  "w": "goety:wind_core"
+ },
+ "pattern": [
+  "bdb",
+  "ded",
+  "bwb"
+ ],
+ "result": {
+  "id": "goety:bombardment_focus",
+  "count": 1
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_more_farmables:shulker_shell_fragment",
+  "create_more_farmables:shulker_shell_fragment"
+ ],
+ "results": [
+  {
+   "id": "minecraft:shulker_shell"
+  }
+ ]
+}

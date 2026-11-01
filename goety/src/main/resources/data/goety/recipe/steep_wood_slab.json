@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:steep_wood"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:steep_wood_slab",
+  "count": 6
+ }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "alexscaves:vesper_wing",
+    "alexscaves:thornwood_branch",
+    "minecraft:brown_mushroom",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "alexscaves:vesper_stew",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:wheat",
+    "color": 11113145,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:iranian.buoinfreikedun",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:saturation",
+        "Amplifier": 0,
+        "Duration": 40,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "iranian.buoinfreikedun_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

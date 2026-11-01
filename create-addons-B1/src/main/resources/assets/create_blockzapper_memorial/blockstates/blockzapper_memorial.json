@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "create_blockzapper_memorial:block/blockzapper_memorial"
+    },
+    "facing=east": {
+      "model": "create_blockzapper_memorial:block/blockzapper_memorial",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "create_blockzapper_memorial:block/blockzapper_memorial",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "create_blockzapper_memorial:block/blockzapper_memorial",
+      "y": 270
+    }
+  }
+}

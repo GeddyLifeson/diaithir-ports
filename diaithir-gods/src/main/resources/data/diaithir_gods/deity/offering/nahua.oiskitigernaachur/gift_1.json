@@ -1,0 +1,14 @@
+{
+  "item": {
+    "id": "minecraft:potion",
+    "count": 1,
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "minecraft:water"
+      }
+    }
+  },
+  "favor": 3,
+  "maxuses": 8,
+  "cooldown": 12000
+}

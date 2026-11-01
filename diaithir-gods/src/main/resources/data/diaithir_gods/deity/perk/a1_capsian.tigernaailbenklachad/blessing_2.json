@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:bone",
+    "color": 12550519,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_capsian.tigernaailbenklachad",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_capsian.tigernaailbenklachad_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

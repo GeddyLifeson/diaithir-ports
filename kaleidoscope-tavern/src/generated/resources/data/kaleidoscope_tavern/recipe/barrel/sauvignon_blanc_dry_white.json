@@ -1,0 +1,12 @@
+{
+  "type": "kaleidoscope_tavern:barrel",
+  "carrier": "kaleidoscope_tavern:empty_bottle",
+  "fluid": "kaleidoscope_tavern:green_grape_juice",
+  "ingredients": [
+    "minecraft:sugar_cane",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:sauvignon_blanc_dry_white"
+  }
+}

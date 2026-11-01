@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirbutchery:block/drying_rack_top",
+  "side": "diaithirbutchery:block/drying_rack_side"
+ }
+}

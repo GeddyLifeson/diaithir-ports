@@ -1,0 +1,72 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "minecraft:obsidian",
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "minecraft:obsidian",
+   "ingredient": "minecraft:coal_block"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:iron_ingot"
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "amount": 20250,
+    "fluid": "minecraft:lava"
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:pressing",
+   "results": [
+    "$result"
+   ],
+   "ingredient": "$ingredient"
+  },
+  {
+   "type": "create:cutting",
+   "processing_time": 100,
+   "results": [
+    {
+     "count": 1,
+     "id": "minecraft:diamond"
+    }
+   ],
+   "ingredient": "$ingredient"
+  }
+ ],
+ "transitional_item": {
+  "id": "create:unprocessed_obsidian_sheet"
+ },
+ "result": {
+  "chance": 80.0,
+  "id": "minecraft:diamond"
+ },
+ "junks": [
+  {
+   "chance": 13.0,
+   "id": "create:asurine"
+  },
+  {
+   "chance": 5.0,
+   "id": "minecraft:obsidian"
+  },
+  {
+   "chance": 2.0,
+   "id": "minecraft:glass"
+  }
+ ]
+}

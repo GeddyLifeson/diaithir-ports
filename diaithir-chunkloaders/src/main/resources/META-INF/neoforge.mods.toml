@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirchunkloaders"
+version = "${version}"
+displayName = "Diaithir Chunkloaders"
+description = "Tiered Holdstone blocks keep an area of chunks loaded while they burn fuel, owned by a player or their team, with a Cartseal that keeps the chunks around a minecart loaded. Original clean-room work."
+
+[[dependencies.diaithirchunkloaders]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

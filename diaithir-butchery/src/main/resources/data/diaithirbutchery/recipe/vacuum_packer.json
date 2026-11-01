@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "GGG",
+  "IHI",
+  "III"
+ ],
+ "key": {
+  "G": "minecraft:glass",
+  "I": "minecraft:iron_ingot",
+  "H": "minecraft:hopper"
+ },
+ "result": {
+  "id": "diaithirbutchery:vacuum_packer"
+ }
+}

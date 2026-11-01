@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "alexscaves:item/shot_gum",
+    "model": {
+      "type": "alexscaves:legacy_item"
+    }
+  }
+}

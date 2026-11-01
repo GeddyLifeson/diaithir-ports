@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": "minecraft:stick",
+    "M": "#c:ingots/silver"
+  },
+  "pattern": [
+    "M",
+    "H",
+    "H"
+  ],
+  "result": {
+    "id": "iceandfire:silver_shovel"
+  },
+  "show_notification": true
+}

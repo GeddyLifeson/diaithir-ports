@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:highrock",
+  "$": "minecraft:gravel"
+ },
+ "pattern": [
+  "$#",
+  "#$"
+ ],
+ "result": {
+  "id": "goety:cragrocks",
+  "count": 4
+ }
+}

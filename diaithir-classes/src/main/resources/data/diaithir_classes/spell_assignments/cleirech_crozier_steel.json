@@ -1,0 +1,9 @@
+{
+ "access": "MAGIC",
+ "max_spell_count": 3,
+ "spell_ids": [
+  "diaithir_classes:cleirech_mercy",
+  "diaithir_classes:cleirech_aegis",
+  "diaithir_classes:cleirech_smite"
+ ]
+}

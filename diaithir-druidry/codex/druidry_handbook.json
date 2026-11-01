@@ -1,0 +1,433 @@
+{
+ "id": "diaithir_druidry:handbook",
+ "title": "Draeidechd",
+ "chapters": [
+  {
+   "school": "druid",
+   "name": "Draeid",
+   "text": "The grove-keepers. They mend the hurt and bind the loud with root and thorn. Heals and plant control.",
+   "power": "healing",
+   "staff": [
+    "Bauta Draeid",
+    "Bauta Draeid Mòru"
+   ],
+   "spells": [
+    {
+     "id": "diaithir_druidry:thornlash",
+     "name": "Boildidielg",
+     "tier": 1,
+     "age": "III",
+     "text": "Flings a barbed vine at a foe: {damage} nature damage and a short slow."
+    },
+    {
+     "id": "diaithir_druidry:dewdrop",
+     "name": "Driùchdu",
+     "tier": 1,
+     "age": "III",
+     "text": "A bead of cool dew heals the one you look at (yourself if none): {heal} health."
+    },
+    {
+     "id": "diaithir_druidry:briar_snare",
+     "name": "Ribidries",
+     "tier": 2,
+     "age": "III",
+     "text": "Briars burst from the ground at the target spot and hold anything in them: slow and light damage each pulse."
+    },
+    {
+     "id": "diaithir_druidry:oakskin",
+     "name": "Kraikenddaurach",
+     "tier": 2,
+     "age": "III",
+     "text": "Your skin takes on oak bark for 12 seconds: resistance, at the cost of slowness."
+    },
+    {
+     "id": "diaithir_druidry:grove_mending",
+     "name": "Slànachaddoiri",
+     "tier": 3,
+     "age": "IV",
+     "text": "A ring of green light heals you and every ally close by, and leaves a slow regrowth."
+    },
+    {
+     "id": "diaithir_druidry:stag_leap",
+     "name": "Leimdaum",
+     "tier": 3,
+     "age": "IV",
+     "text": "You bound forward and up like a stag and take no damage from the fall that follows."
+    },
+    {
+     "id": "diaithir_druidry:mistletoe_spear",
+     "name": "Sliegoilìuk",
+     "tier": 4,
+     "age": "V",
+     "text": "Hold to draw a white-berried spear of pith and thorn. A full draw pierces two foes and poisons them."
+    }
+   ]
+  },
+  {
+   "school": "ovate",
+   "name": "Fiusaichi",
+   "text": "The seers. They see what is hidden and strike where a blow is already foretold. Sight, marks and blinks.",
+   "power": "arcane",
+   "staff": [
+    "Bauta Fiusaichi",
+    "Bauta Fiusaichi Mòru"
+   ],
+   "spells": [
+    {
+     "id": "diaithir_druidry:sight_spark",
+     "name": "Sraudagsieldad",
+     "tier": 1,
+     "age": "III",
+     "text": "A bright flicker that stings for {damage} and leaves the target outlined for 6 seconds."
+    },
+    {
+     "id": "diaithir_druidry:far_sight",
+     "name": "Fradurk",
+     "tier": 1,
+     "age": "III",
+     "text": "Your eyes open to the dark for 40 seconds: night vision."
+    },
+    {
+     "id": "diaithir_druidry:fate_thread",
+     "name": "Snàddànu",
+     "tier": 2,
+     "age": "III",
+     "text": "You pull on the target's thread: it is weakened and slowed for 8 seconds and takes {damage}."
+    },
+    {
+     "id": "diaithir_druidry:veil_step",
+     "name": "Keimskàili",
+     "tier": 2,
+     "age": "III",
+     "text": "You step through the veil and appear 8 blocks ahead."
+    },
+    {
+     "id": "diaithir_druidry:salmon_knowing",
+     "name": "Eòlasubradun",
+     "tier": 3,
+     "age": "IV",
+     "text": "Channel for 2.5 seconds: a stream of bright knowing cuts through everything in a line."
+    },
+    {
+     "id": "diaithir_druidry:watch_hour",
+     "name": "Fairi",
+     "tier": 3,
+     "age": "IV",
+     "text": "Everything hostile within 14 blocks glows for 10 seconds, even behind stone."
+    },
+    {
+     "id": "diaithir_druidry:foretold_blow",
+     "name": "Boildibruodur",
+     "tier": 4,
+     "age": "V",
+     "text": "You name a place and the blow falls there a heartbeat later: {damage} to everything in 3 blocks."
+    }
+   ]
+  },
+  {
+   "school": "bard",
+   "name": "Bàrdu",
+   "text": "The singers. Three strains (sleep, lament, laughter) and their thunder. Crowd control and rally.",
+   "power": "lightning",
+   "staff": [
+    "Bauta Bàrdu",
+    "Bauta Bàrdu Mòru"
+   ],
+   "spells": [
+    {
+     "id": "diaithir_druidry:sharp_note",
+     "name": "Bilegtàirnenach",
+     "tier": 1,
+     "age": "III",
+     "text": "One struck note travels as a crackle and does {damage}."
+    },
+    {
+     "id": "diaithir_druidry:lullaby",
+     "name": "Tàlad",
+     "tier": 1,
+     "age": "III",
+     "text": "The target's limbs go heavy: slowness and weakness for 6 seconds, and it forgets its hurry."
+    },
+    {
+     "id": "diaithir_druidry:lament",
+     "name": "Kuma",
+     "tier": 2,
+     "age": "III",
+     "text": "A long falling strain: nearby foes stagger back and are struck by dread: nausea for 4 seconds."
+    },
+    {
+     "id": "diaithir_druidry:laughter",
+     "name": "Gàiri",
+     "tier": 2,
+     "age": "III",
+     "text": "A bright strain mends you and each ally near you for {heal} and quickens them for 4 seconds."
+    },
+    {
+     "id": "diaithir_druidry:horn_cry",
+     "name": "Adurkglaed",
+     "tier": 3,
+     "age": "IV",
+     "text": "A great horn blast hammers the area in front of you: {damage} and a heavy shove."
+    },
+    {
+     "id": "diaithir_druidry:banner_song",
+     "name": "Òrunbrautach",
+     "tier": 3,
+     "age": "IV",
+     "text": "A marching song for 15 seconds: you and nearby allies gain speed and haste."
+    },
+    {
+     "id": "diaithir_druidry:storm_chord",
+     "name": "Koseirmstoirmi",
+     "tier": 4,
+     "age": "V",
+     "text": "Hold a chord for 3 seconds. The sky answers along your aim and each moment of the chord strikes."
+    }
+   ]
+  },
+  {
+   "school": "filid",
+   "name": "Filid",
+   "text": "The poets of law and satire. Their words wound, bind and shield. Curses, wards and cleansing.",
+   "power": "soul",
+   "staff": [
+    "Bauta Filid",
+    "Bauta Filid Mòru"
+   ],
+   "spells": [
+    {
+     "id": "diaithir_druidry:verse_blow",
+     "name": "Boildirand",
+     "tier": 1,
+     "age": "III",
+     "text": "A hard line of verse flies out: {damage} and a short weakness."
+    },
+    {
+     "id": "diaithir_druidry:ward_verse",
+     "name": "Randskiad",
+     "tier": 1,
+     "age": "III",
+     "text": "A spoken ward gives you a shield of 3 extra hearts for 20 seconds."
+    },
+    {
+     "id": "diaithir_druidry:satire",
+     "name": "Aeiri",
+     "tier": 2,
+     "age": "III",
+     "text": "A cutting rhyme raises blisters on the proud: slowness, weakness and {damage} to the target."
+    },
+    {
+     "id": "diaithir_druidry:truth_word",
+     "name": "Fìrind",
+     "tier": 2,
+     "age": "III",
+     "text": "A true word spoken over you and your allies strips slowing and harmful effects and heals {heal}."
+    },
+    {
+     "id": "diaithir_druidry:hundred_verses",
+     "name": "Randkeid",
+     "tier": 3,
+     "age": "IV",
+     "text": "A rapid recital: five small bolts fan out in a spread, each doing {damage}."
+    },
+    {
+     "id": "diaithir_druidry:ban_oath",
+     "name": "Toirmesk",
+     "tier": 3,
+     "age": "IV",
+     "text": "You lay a ban on the target: withering for 5 seconds and hunger for 15."
+    },
+    {
+     "id": "diaithir_druidry:curse_pall",
+     "name": "Maldachd",
+     "tier": 4,
+     "age": "V",
+     "text": "A dark cloud of ill words settles on the target ground for 7 seconds and keeps cursing what stands in it."
+    }
+   ]
+  },
+  {
+   "school": "fitech",
+   "name": "Fitech",
+   "text": "The war-crow's way. Short sharp melee strikes, battle shouts and fear. Scales with melee power.",
+   "power": "physical_melee",
+   "staff": [
+    "Bauta Fitech",
+    "Bauta Fitech Mòru"
+   ],
+   "spells": [
+    {
+     "id": "diaithir_druidry:crow_strike",
+     "name": "Boildifiendag",
+     "tier": 1,
+     "age": "III",
+     "text": "Two quick strikes, like a crow at carrion. Each hits for {damage}."
+    },
+    {
+     "id": "diaithir_druidry:battle_cry",
+     "name": "Glaedkad",
+     "tier": 1,
+     "age": "III",
+     "text": "A raven-throated shout: you and allies near you gain strength for 10 seconds."
+    },
+    {
+     "id": "diaithir_druidry:raven_leap",
+     "name": "Leimfitech",
+     "tier": 2,
+     "age": "III",
+     "text": "You throw yourself forward in a low leap with a speed burst."
+    },
+    {
+     "id": "diaithir_druidry:battle_fury",
+     "name": "Bàinid",
+     "tier": 2,
+     "age": "III",
+     "text": "You fall into fury for 8 seconds: strong blows, but you take more harm (weaker defence)."
+    },
+    {
+     "id": "diaithir_druidry:talon_wheel",
+     "name": "Roudspoiri",
+     "tier": 3,
+     "age": "IV",
+     "text": "A full spin: three sweeping cuts that hit everything around you for {damage} each."
+    },
+    {
+     "id": "diaithir_druidry:field_terror",
+     "name": "Oildti",
+     "tier": 3,
+     "age": "IV",
+     "text": "Dread shakes nearby foes: they are shoved back and weakened for 6 seconds."
+    },
+    {
+     "id": "diaithir_druidry:ford_washer",
+     "name": "Àdbàsu",
+     "tier": 4,
+     "age": "V",
+     "text": "A single heavy stroke. Foes under a third of their health take triple damage."
+    }
+   ]
+  },
+  {
+   "school": "sidhe",
+   "name": "Sìtichi",
+   "text": "The hollow-hill folk. Mist, glamour and gifts that come with a price. Control and mobility.",
+   "power": "frost",
+   "staff": [
+    "Bauta Sìtichi",
+    "Bauta Sìtichi Mòru"
+   ],
+   "spells": [
+    {
+     "id": "diaithir_druidry:fairy_mist",
+     "name": "Kietach",
+     "tier": 1,
+     "age": "III",
+     "text": "A cold white mist rises where you point: it clings, slows and nips for 6 seconds."
+    },
+    {
+     "id": "diaithir_druidry:glamour_veil",
+     "name": "Loindskàili",
+     "tier": 1,
+     "age": "III",
+     "text": "A veil of glamour: you are unseen for 6 seconds and quick for 3."
+    },
+    {
+     "id": "diaithir_druidry:hill_step",
+     "name": "Keimknok",
+     "tier": 2,
+     "age": "III",
+     "text": "You step inside the hill and out again 12 blocks ahead."
+    },
+    {
+     "id": "diaithir_druidry:folk_gift",
+     "name": "Tiudlak",
+     "tier": 2,
+     "age": "III",
+     "text": "A gift from the hill: the target regains {heal} health over 10 seconds, and is lightly shielded."
+    },
+    {
+     "id": "diaithir_druidry:silver_branch",
+     "name": "Geigairged",
+     "tier": 3,
+     "age": "IV",
+     "text": "A bright branch flies out and passes through two foes. Each is chilled and takes {damage}."
+    },
+    {
+     "id": "diaithir_druidry:folk_hour",
+     "name": "Uoirsìtichi",
+     "tier": 3,
+     "age": "IV",
+     "text": "Time thickens around you: foes within 7 blocks crawl for 3 seconds and are nipped by frost."
+    },
+    {
+     "id": "diaithir_druidry:hail_fall",
+     "name": "Klachmelduin",
+     "tier": 4,
+     "age": "V",
+     "text": "A hail of stones falls around the target spot: {damage} to each foe struck, with a chill."
+    }
+   ]
+  },
+  {
+   "school": "smith",
+   "name": "Gouba",
+   "text": "The forge-masters. Fire from the hearth: sparks, hot iron and the long pour. Damage over time and self-tempering.",
+   "power": "fire",
+   "staff": [
+    "Bauta Gouba",
+    "Bauta Gouba Mòru"
+   ],
+   "spells": [
+    {
+     "id": "diaithir_druidry:forge_spark",
+     "name": "Sraudag",
+     "tier": 1,
+     "age": "III",
+     "text": "A spark spits from the fire: {damage} and burning for 3 seconds."
+    },
+    {
+     "id": "diaithir_druidry:quench",
+     "name": "Kaisk",
+     "tier": 1,
+     "age": "III",
+     "text": "You plunge your hands in the quench-trough: fire resistance for 40 seconds and any fire on you goes out."
+    },
+    {
+     "id": "diaithir_druidry:hot_iron",
+     "name": "Iarnaigitied",
+     "tier": 2,
+     "age": "III",
+     "text": "Hold to heat the iron. A full draw hurls a white-hot bolt that does {damage} and sets the foe alight."
+    },
+    {
+     "id": "diaithir_druidry:tempering",
+     "name": "Kaisiiarnaigi",
+     "tier": 2,
+     "age": "III",
+     "text": "You temper your body for 10 seconds: haste, strength and resistance, then a short tiredness."
+    },
+    {
+     "id": "diaithir_druidry:slag_cloud",
+     "name": "Skòdsaliaruind",
+     "tier": 3,
+     "age": "IV",
+     "text": "A cloud of hot slag settles at the target spot for 6 seconds and keeps burning what stands in it."
+    },
+    {
+     "id": "diaithir_druidry:forge_breath",
+     "name": "Anuilkum",
+     "tier": 3,
+     "age": "IV",
+     "text": "Channel the bellows for 2.5 seconds: a lance of heat along your aim, burning all it crosses."
+    },
+    {
+     "id": "diaithir_druidry:molten_rain",
+     "name": "Oiskiliegti",
+     "tier": 4,
+     "age": "V",
+     "text": "A rain of molten iron falls around the target spot: {damage} to each drop's blast and burning."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "goety:crag_pavement",
+ "experience": 0.35,
+ "cookingtime": 200,
+ "result": {
+  "id": "goety:cracked_crag_pavement"
+ }
+}

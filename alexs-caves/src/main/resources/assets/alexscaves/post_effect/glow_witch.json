@@ -1,0 +1,112 @@
+{
+  "targets": {
+    "swap": {},
+    "blur": {},
+    "temp": {}
+  },
+  "passes": [
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "minecraft:post/box_blur",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "alexscaves:witch_glow",
+          "bilinear": true
+        }
+      ],
+      "output": "swap",
+      "uniforms": {
+        "BlurConfig": [
+          {
+            "name": "BlurDir",
+            "type": "vec2",
+            "value": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "name": "Radius",
+            "type": "float",
+            "value": 12.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "minecraft:post/box_blur",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "swap",
+          "bilinear": true
+        }
+      ],
+      "output": "blur",
+      "uniforms": {
+        "BlurConfig": [
+          {
+            "name": "BlurDir",
+            "type": "vec2",
+            "value": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "name": "Radius",
+            "type": "float",
+            "value": 12.0
+          }
+        ]
+      }
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "alexscaves:post/glow_composite",
+      "inputs": [
+        {
+          "sampler_name": "Diffuse",
+          "target": "minecraft:main"
+        },
+        {
+          "sampler_name": "Glow",
+          "target": "alexscaves:witch_glow"
+        },
+        {
+          "sampler_name": "Blur",
+          "target": "blur",
+          "bilinear": true
+        }
+      ],
+      "output": "temp"
+    },
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "minecraft:post/blit",
+      "inputs": [
+        {
+          "sampler_name": "In",
+          "target": "temp"
+        }
+      ],
+      "output": "minecraft:main",
+      "uniforms": {
+        "BlitConfig": [
+          {
+            "name": "ColorModulate",
+            "type": "vec4",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

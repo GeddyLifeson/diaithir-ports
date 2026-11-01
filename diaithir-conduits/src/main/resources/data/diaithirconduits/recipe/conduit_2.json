@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": "minecraft:diamond",
+    "E": "minecraft:ender_eye",
+    "C": "diaithirconduits:conduit_1"
+  },
+  "pattern": [
+    "DED",
+    "ECE",
+    "DED"
+  ],
+  "result": {
+    "id": "diaithirconduits:conduit_2",
+    "count": 1
+  },
+  "category": "misc"
+}

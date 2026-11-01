@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+[[mods]]
+modId="diaithir_create_addons_n2"
+version="0.1.0"
+displayName="Diaithir Create Addons (slice N2)"
+authors="Original authors (MIT, CC0, AFL-3.0): Create Additions Electrum Block, Create Thermobaric, Create Coins, Create Rags to Riches, Create Choco Paste, Create Deepslate Processing, Create Extra Structures; assets and data rewritten for the Diaithir Create port"
+description='''Plain items, blocks, recipes and structure data from small older Create addons, rewritten for the Diaithir Create port (26.1 formats). Custom behaviours (food effects, falling gravel, fluids) are not ported.'''
+[[dependencies.diaithir_create_addons_n2]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "diaithirstoragenet:cable",
+    "minecraft:dropper"
+  ],
+  "result": {
+    "id": "diaithirstoragenet:export_cable",
+    "count": 1
+  },
+  "category": "misc"
+}

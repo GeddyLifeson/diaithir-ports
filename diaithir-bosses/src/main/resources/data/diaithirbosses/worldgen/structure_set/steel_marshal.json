@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithirbosses:steel_marshal",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 20,
+  "salt": 2380
+ }
+}

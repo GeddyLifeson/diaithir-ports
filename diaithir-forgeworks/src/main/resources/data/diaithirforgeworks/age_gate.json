@@ -1,0 +1,37 @@
+{
+  "age4": {
+    "age": 4,
+    "items": [
+      "diaithirforgeworks:crusher_age4",
+      "diaithirforgeworks:alloy_furnace_age4",
+      "diaithirforgeworks:sawmill_age4",
+      "diaithirforgeworks:crucible_age4",
+      "diaithirforgeworks:iron_dust",
+      "diaithirforgeworks:copper_dust",
+      "diaithirforgeworks:gold_dust",
+      "diaithirforgeworks:sawdust",
+      "diaithirforgeworks:bronze_ingot"
+    ]
+  },
+  "age5": {
+    "age": 5,
+    "items": [
+      "diaithirforgeworks:crusher_age5",
+      "diaithirforgeworks:alloy_furnace_age5",
+      "diaithirforgeworks:sawmill_age5",
+      "diaithirforgeworks:crucible_age5",
+      "diaithirforgeworks:speed_augment",
+      "diaithirforgeworks:efficiency_augment",
+      "diaithirforgeworks:chance_augment"
+    ]
+  },
+  "age6": {
+    "age": 6,
+    "items": [
+      "diaithirforgeworks:crusher_age6",
+      "diaithirforgeworks:alloy_furnace_age6",
+      "diaithirforgeworks:sawmill_age6",
+      "diaithirforgeworks:crucible_age6"
+    ]
+  }
+}

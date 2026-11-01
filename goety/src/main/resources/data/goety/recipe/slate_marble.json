@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "m": "goety:marble",
+  "l": "#c:gems/lapis"
+ },
+ "pattern": [
+  " m ",
+  "mlm",
+  " m "
+ ],
+ "result": {
+  "id": "goety:slate_marble",
+  "count": 4
+ }
+}

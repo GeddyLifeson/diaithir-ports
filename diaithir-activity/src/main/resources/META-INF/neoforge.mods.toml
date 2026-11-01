@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithiractivity"
+version = "${version}"
+displayName = "Diaithir Activity"
+description = "Shows what nearby players are doing as a small icon and word above their nameplate: mining, chopping, fighting, fishing, brewing, sleeping, away and more. The server decides from game events and sends one short id. Mappings are data files, so other mods' stations can be added. Clean-room: written from how nameplate and status mods behave, no code or assets taken from them."
+
+[[dependencies.diaithiractivity]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

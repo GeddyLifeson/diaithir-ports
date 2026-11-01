@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "IPI",
+  "BSB",
+  "ICI"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "P": "minecraft:piston",
+  "B": "create:brass_ingot",
+  "S": "create:shaft",
+  "C": "create:andesite_casing"
+ },
+ "result": {
+  "id": "createdieselgenerators:diesel_engine",
+  "count": 1
+ }
+}

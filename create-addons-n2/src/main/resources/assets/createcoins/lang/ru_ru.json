@@ -1,0 +1,10 @@
+{
+  "item.createcoins.goldcoin": "Золотая монета",
+  "item_group.createcoins.createcoins": "Create Coins",
+  "item.createcoins.coopercoin": "Медная монета",
+  "item.createcoins.diamondcoin": "Алмазная монета",
+  "itemGroup.tabcreatecoins": "Create Coins",
+  "item.createcoins.ironcoin": "Железная монета",
+  "item.createcoins.zinccoin": "Цинковая монета",
+  "item.createcoins.brasscoin": "Латунная монета"
+}

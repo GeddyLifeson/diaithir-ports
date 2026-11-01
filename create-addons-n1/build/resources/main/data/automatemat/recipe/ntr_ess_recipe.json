@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "automatemat:fortress_core",
+  "automatemat:nether_core",
+  "automatemat:fortress_core",
+  "automatemat:nether_core",
+  "automatemat:fortress_core",
+  "automatemat:nether_core",
+  "minecraft:nether_brick",
+  "minecraft:nether_bricks",
+  "minecraft:nether_brick"
+ ],
+ "result": {
+  "id": "automatemat:nether_essense"
+ }
+}

@@ -1,0 +1,459 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "rolls": {
+    "type": "minecraft:uniform",
+    "min": 1,
+    "max": 3
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "spell_engine:spell_scroll",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "spell_engine:spell_bind_randomly",
+       "pool": "#diaithir_druidry:spell_scroll/druid",
+       "tier": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+       },
+       "count": 1
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "spell_engine:spell_scroll",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "spell_engine:spell_bind_randomly",
+       "pool": "#diaithir_druidry:spell_scroll/ovate",
+       "tier": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+       },
+       "count": 1
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "spell_engine:spell_scroll",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "spell_engine:spell_bind_randomly",
+       "pool": "#diaithir_druidry:spell_scroll/bard",
+       "tier": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+       },
+       "count": 1
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "spell_engine:spell_scroll",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "spell_engine:spell_bind_randomly",
+       "pool": "#diaithir_druidry:spell_scroll/filid",
+       "tier": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+       },
+       "count": 1
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "spell_engine:spell_scroll",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "spell_engine:spell_bind_randomly",
+       "pool": "#diaithir_druidry:spell_scroll/fitech",
+       "tier": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+       },
+       "count": 1
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "spell_engine:spell_scroll",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "spell_engine:spell_bind_randomly",
+       "pool": "#diaithir_druidry:spell_scroll/sidhe",
+       "tier": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+       },
+       "count": 1
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "spell_engine:spell_scroll",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "spell_engine:spell_bind_randomly",
+       "pool": "#diaithir_druidry:spell_scroll/smith",
+       "tier": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+       },
+       "count": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "rolls": 1,
+   "conditions": [
+    {
+     "condition": "minecraft:random_chance",
+     "chance": 0.25
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:stick",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_components",
+       "components": {
+        "minecraft:item_model": "diaithir_druidry:staff/druid_2",
+        "minecraft:item_name": {
+         "translate": "item.diaithir_druidry.staff_druid_2"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:max_damage": 300,
+        "minecraft:rarity": "rare",
+        "minecraft:attribute_modifiers": [
+         {
+          "type": "spell_power:healing",
+          "id": "diaithir_druidry:druid_2_power",
+          "amount": 6.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+         }
+        ],
+        "minecraft:lore": [
+         {
+          "text": "The grove-keepers.",
+          "color": "gray",
+          "italic": false
+         }
+        ],
+        "spell_engine:spell_container": {
+         "access": "MAGIC",
+         "pool": "diaithir_druidry:weapon/druid_staff",
+         "max_spell_count": 2,
+         "spell_ids": [
+          "diaithir_druidry:thornlash",
+          "diaithir_druidry:dewdrop"
+         ]
+        }
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:stick",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_components",
+       "components": {
+        "minecraft:item_model": "diaithir_druidry:staff/ovate_2",
+        "minecraft:item_name": {
+         "translate": "item.diaithir_druidry.staff_ovate_2"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:max_damage": 300,
+        "minecraft:rarity": "rare",
+        "minecraft:attribute_modifiers": [
+         {
+          "type": "spell_power:arcane",
+          "id": "diaithir_druidry:ovate_2_power",
+          "amount": 6.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+         }
+        ],
+        "minecraft:lore": [
+         {
+          "text": "The seers.",
+          "color": "gray",
+          "italic": false
+         }
+        ],
+        "spell_engine:spell_container": {
+         "access": "MAGIC",
+         "pool": "diaithir_druidry:weapon/ovate_staff",
+         "max_spell_count": 2,
+         "spell_ids": [
+          "diaithir_druidry:sight_spark",
+          "diaithir_druidry:far_sight"
+         ]
+        }
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:stick",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_components",
+       "components": {
+        "minecraft:item_model": "diaithir_druidry:staff/bard_2",
+        "minecraft:item_name": {
+         "translate": "item.diaithir_druidry.staff_bard_2"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:max_damage": 300,
+        "minecraft:rarity": "rare",
+        "minecraft:attribute_modifiers": [
+         {
+          "type": "spell_power:lightning",
+          "id": "diaithir_druidry:bard_2_power",
+          "amount": 6.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+         }
+        ],
+        "minecraft:lore": [
+         {
+          "text": "The singers.",
+          "color": "gray",
+          "italic": false
+         }
+        ],
+        "spell_engine:spell_container": {
+         "access": "MAGIC",
+         "pool": "diaithir_druidry:weapon/bard_staff",
+         "max_spell_count": 2,
+         "spell_ids": [
+          "diaithir_druidry:sharp_note",
+          "diaithir_druidry:lullaby"
+         ]
+        }
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:stick",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_components",
+       "components": {
+        "minecraft:item_model": "diaithir_druidry:staff/filid_2",
+        "minecraft:item_name": {
+         "translate": "item.diaithir_druidry.staff_filid_2"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:max_damage": 300,
+        "minecraft:rarity": "rare",
+        "minecraft:attribute_modifiers": [
+         {
+          "type": "spell_power:soul",
+          "id": "diaithir_druidry:filid_2_power",
+          "amount": 6.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+         }
+        ],
+        "minecraft:lore": [
+         {
+          "text": "The poets of law and satire.",
+          "color": "gray",
+          "italic": false
+         }
+        ],
+        "spell_engine:spell_container": {
+         "access": "MAGIC",
+         "pool": "diaithir_druidry:weapon/filid_staff",
+         "max_spell_count": 2,
+         "spell_ids": [
+          "diaithir_druidry:verse_blow",
+          "diaithir_druidry:ward_verse"
+         ]
+        }
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:stick",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_components",
+       "components": {
+        "minecraft:item_model": "diaithir_druidry:staff/fitech_2",
+        "minecraft:item_name": {
+         "translate": "item.diaithir_druidry.staff_fitech_2"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:max_damage": 300,
+        "minecraft:rarity": "rare",
+        "minecraft:attribute_modifiers": [
+         {
+          "type": "minecraft:attack_damage",
+          "id": "diaithir_druidry:fitech_2_damage",
+          "amount": 5.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+         },
+         {
+          "type": "spell_power:soul",
+          "id": "diaithir_druidry:fitech_2_soul",
+          "amount": 4.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+         }
+        ],
+        "minecraft:lore": [
+         {
+          "text": "The war-crow's way.",
+          "color": "gray",
+          "italic": false
+         }
+        ],
+        "spell_engine:spell_container": {
+         "access": "MAGIC",
+         "pool": "diaithir_druidry:weapon/fitech_staff",
+         "max_spell_count": 2,
+         "spell_ids": [
+          "diaithir_druidry:crow_strike",
+          "diaithir_druidry:battle_cry"
+         ]
+        }
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:stick",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_components",
+       "components": {
+        "minecraft:item_model": "diaithir_druidry:staff/sidhe_2",
+        "minecraft:item_name": {
+         "translate": "item.diaithir_druidry.staff_sidhe_2"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:max_damage": 300,
+        "minecraft:rarity": "rare",
+        "minecraft:attribute_modifiers": [
+         {
+          "type": "spell_power:frost",
+          "id": "diaithir_druidry:sidhe_2_power",
+          "amount": 6.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+         }
+        ],
+        "minecraft:lore": [
+         {
+          "text": "The hollow-hill folk.",
+          "color": "gray",
+          "italic": false
+         }
+        ],
+        "spell_engine:spell_container": {
+         "access": "MAGIC",
+         "pool": "diaithir_druidry:weapon/sidhe_staff",
+         "max_spell_count": 2,
+         "spell_ids": [
+          "diaithir_druidry:fairy_mist",
+          "diaithir_druidry:glamour_veil"
+         ]
+        }
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:stick",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_components",
+       "components": {
+        "minecraft:item_model": "diaithir_druidry:staff/smith_2",
+        "minecraft:item_name": {
+         "translate": "item.diaithir_druidry.staff_smith_2"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:max_damage": 300,
+        "minecraft:rarity": "rare",
+        "minecraft:attribute_modifiers": [
+         {
+          "type": "spell_power:fire",
+          "id": "diaithir_druidry:smith_2_power",
+          "amount": 6.0,
+          "operation": "add_value",
+          "slot": "mainhand"
+         }
+        ],
+        "minecraft:lore": [
+         {
+          "text": "The forge-masters.",
+          "color": "gray",
+          "italic": false
+         }
+        ],
+        "spell_engine:spell_container": {
+         "access": "MAGIC",
+         "pool": "diaithir_druidry:weapon/smith_staff",
+         "max_spell_count": 2,
+         "spell_ids": [
+          "diaithir_druidry:forge_spark",
+          "diaithir_druidry:quench"
+         ]
+        }
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

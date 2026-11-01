@@ -1,0 +1,46 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create:experience_block",
+ "transitional_item": {
+  "id": "sometricks:incomplete_spawner"
+ },
+ "result": {
+  "id": "minecraft:spawner"
+ },
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "create:potion",
+    "amount": 20250
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:sturdy_sheet",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:netherite_ingot",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

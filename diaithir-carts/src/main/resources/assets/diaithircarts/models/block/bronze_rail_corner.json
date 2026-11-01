@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/rail_curved",
+  "textures": {
+    "rail": "diaithircarts:block/bronze_rail_corner"
+  }
+}

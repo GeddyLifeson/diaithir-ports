@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:sharp_note",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:lullaby",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:lament",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:laughter",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:horn_cry",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:banner_song",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:storm_chord",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirbutchery:crystal_thread_knife",
+  "minecraft:echo_shard",
+  "minecraft:echo_shard",
+  "minecraft:echo_shard"
+ ],
+ "result": {
+  "id": "diaithirbutchery:shard_knife"
+ }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "alexscaves:raw_scarlet_neodymium",
+    "alexscaves:raw_scarlet_neodymium",
+    "alexscaves:raw_scarlet_neodymium",
+    "#c:ingots/iron",
+    "#c:ingots/iron",
+    "#c:ingots/iron"
+  ],
+  "result": {
+    "count": 1,
+    "id": "alexscaves:scarlet_neodymium_ingot"
+  }
+}

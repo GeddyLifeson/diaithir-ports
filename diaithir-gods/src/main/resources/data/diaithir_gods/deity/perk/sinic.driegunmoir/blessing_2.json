@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:ender_pearl",
+    "color": 8233859,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:sinic.driegunmoir",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "sinic.driegunmoir_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:oak_sapling",
+    "color": 8023405,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:woodland.speirisielbaduir",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "woodland.speirisielbaduir_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

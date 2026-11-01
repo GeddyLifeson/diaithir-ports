@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:filled_grenade_casing",
+ "ingredient": "createloveandwar:grenade_he",
+ "results": [
+  {
+   "id": "createloveandwar:grenade_round_he"
+  }
+ ]
+}

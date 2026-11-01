@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "sds",
+  "sfs",
+  "sss"
+ ],
+ "key": {
+  "s": "create:brass_ingot",
+  "f": "minecraft:netherite_upgrade_smithing_template",
+  "d": "minecraft:dark_oak_planks"
+ },
+ "result": {
+  "id": "gearbound:brass_upgrade"
+ }
+}

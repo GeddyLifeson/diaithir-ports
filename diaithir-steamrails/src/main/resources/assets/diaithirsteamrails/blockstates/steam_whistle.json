@@ -1,0 +1,10 @@
+{
+ "variants": {
+  "powered=false": {
+   "model": "diaithirsteamrails:block/steam_whistle"
+  },
+  "powered=true": {
+   "model": "diaithirsteamrails:block/steam_whistle"
+  }
+ }
+}

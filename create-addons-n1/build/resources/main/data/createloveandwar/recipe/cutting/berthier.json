@@ -1,0 +1,10 @@
+{
+ "type": "create:cutting",
+ "ingredient": "createloveandwar:lebel",
+ "results": [
+  {
+   "id": "createloveandwar:berthier"
+  }
+ ],
+ "processing_time": 50
+}

@@ -1,0 +1,11 @@
+{
+  "values": [
+    "diaithircarts:bronze_rail",
+    "diaithircarts:bronze_powered_rail",
+    "diaithircarts:steel_rail",
+    "diaithircarts:steel_powered_rail",
+    "diaithircarts:fast_rail",
+    "diaithircarts:fast_powered_rail",
+    "diaithircarts:station_rail"
+  ]
+}
