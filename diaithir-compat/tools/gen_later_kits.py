@@ -24,7 +24,7 @@ for r in rows:
         path = f"skins/clothing/normal/{kit}/{gender}/{name}.png"
         dest = RES / "assets" / NS / path
         dest.parent.mkdir(parents=True, exist_ok=True)
-        clothing.indexed(img).save(dest, optimize=True, transparency=255)
+        clothing.indexed(img, 48).save(dest, optimize=True, transparency=255)
         entries.append({"id": f"{NS}:{path}", "profession": f"{NS}:{kit}", "chance": 1.0, "gender": gender})
         return f"{NS}:{path}"
     for g in ("male", "female"):
