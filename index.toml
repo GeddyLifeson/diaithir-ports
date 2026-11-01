@@ -25890,7 +25890,7 @@ hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
 file = "kubejs/server_scripts/culture_start/culture_giver.js"
-hash = "bfa3fc9b8721ecbfaff928bdf62f89364a6c4eba038bdd969fe8447d0464ad3d"
+hash = "8bbe4e9098468acb18fe1c3fd61b927bf8722ab47404aea4b8637cbeb7cbde74"
 
 [[files]]
 file = "kubejs/server_scripts/culture_start/culture_start.js"

@@ -37,7 +37,8 @@ NativeEvents.onEvent(Java.loadClass('net.diaithir.ages.mc.StoryEvent'), e => {
 ItemEvents.entityInteracted(e => {
   let t = e.target
   if (!t || !t.tags.contains('dia_giver') || String(e.hand) !== 'MAIN_HAND') return
-  let slug = String([...t.tags].find(x => String(x).startsWith('dia_culture_'))).slice(12)
+  let slug = ''
+  t.tags.forEach(x => { if (String(x).startsWith('dia_culture_')) slug = String(x).slice(12) }) // no spread: this Rhino rejects [...set]
   let g = GIVERS[slug]
   if (!g) return
   let taken = e.player.persistentData
