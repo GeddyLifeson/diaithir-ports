@@ -8,6 +8,7 @@ repos:
         entry: detect-secrets-hook --disable-plugin HexHighEntropyString --disable-plugin Base64HighEntropyString
         language: python
         types: [text]  # skip png/ogg/jar: scanning binaries made the hook exceed pre-commit.ci's 180 s limit
-        # translation keys such as cave_book.secrets, and name/species data lists, are not secrets
-        exclude: '(/lang/[a-z_]+\.json$|^diaithir-fauna/(names/diaithiris_names|tools/library_accepted|src/main/resources/data/diaithirfauna/butchery_species)\.json$)'
+        # game assets and data packs (models, recipes, tags, loot, datagen and build output), translation keys such as cave_book.secrets,
+        # and name/species data lists hold no credentials; skipping them keeps the hook inside pre-commit.ci's 180 s limit
+        exclude: '(/src/(main|generated)/resources/(assets|data)/|/build/resources/|/lang/[a-z_]+\.json$|^diaithir-fauna/(names/diaithiris_names|tools/library_accepted|src/main/resources/data/diaithirfauna/butchery_species)\.json$)'
         additional_dependencies: [detect-secrets==1.5.0]
