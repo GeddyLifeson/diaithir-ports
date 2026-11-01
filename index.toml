@@ -25890,11 +25890,11 @@ hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
 file = "kubejs/server_scripts/culture_start/culture_giver.js"
-hash = "5f1a991bc109b7fc7027250766b3af905852eb47d630741d5250fe70fc21b687"
+hash = "10ec809246eed22c8595c3694799de27aa905bb47c3865d99feecfa418f99fe7"
 
 [[files]]
 file = "kubejs/server_scripts/culture_start/culture_start.js"
-hash = "1b08934bff1e0614d51b85f77c66a1e246967d9f71eb6d590087e5065e153104"
+hash = "a1f4d85e2650877347d0fb160e827ac799b27175d227bc63cae43f81c78d72f2"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/dedupe.js"
@@ -25974,7 +25974,7 @@ hash = "fd9de06a48a449464b50e256b80d980dd05fb63b773ae6282dc6fb70844f05ba"
 
 [[files]]
 file = "kubejs/server_scripts/speuran/age_gate.js"
-hash = "f94d1ee323e168e174aa5fdcf40a8a99a219bbc164972d38e4bdd0830bbc4f93"
+hash = "20a05645c6c12a648135d7565398b7ce97871b3c603577249d19f34d0daaf44e"
 
 [[files]]
 file = "kubejs/server_scripts/spoilage/recipes.js"

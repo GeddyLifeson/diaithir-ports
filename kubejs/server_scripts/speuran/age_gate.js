@@ -30,7 +30,8 @@ function speuranAge(server) {
 NativeEvents.onEvent('highest', Java.loadClass('net.neoforged.neoforge.event.OnDatapackSyncEvent'), event => {
   let age = speuranAge(event.getPlayerList().getServer())
   let all = {}
-  speuranHeld.concat(Array.from(SpeuranPlanets.PLANETS)).forEach(p => { all[String(p.dimension()).replace(/^.*\/\s*|\]$/g, '')] = p // ResourceKey prints as ResourceKey[minecraft:dimension / ns:id]; keep only ns:id })
+  // ResourceKey prints as ResourceKey[minecraft:dimension / ns:id]; keep only ns:id
+  speuranHeld.concat(Array.from(SpeuranPlanets.PLANETS)).forEach(p => { all[String(p.dimension()).replace(/^.*\/\s*|\]$/g, '')] = p })
   let open = [], held = []
   Object.keys(all).forEach(dim => {
     let opens = SPEURAN_OPENS[dim]

@@ -7,8 +7,8 @@ const GIVERS = (() => {
 
 const roleName = r => String(r).replace(/_/g, ' ').replace(/^./, c => c.toUpperCase())
 
-// Called by culture_start.js at each landing pass: puts (or moves) the giver beside the player the moment they land.
-global.diaPlaceGiver = (server, uuid, slug) => {
+// Puts (or moves) the giver beside the player just after each landing pass of culture_start.js (global.x = is refused by KubeJS 8, so this script listens to the event itself).
+const placeGiver = (server, uuid, slug) => {
   let g = GIVERS[slug]
   if (!g) { console.warn('[culture] no giver for ' + slug); return }
   let pl = server.getPlayerList().getPlayer(Java.loadClass('java.util.UUID').fromString(uuid))
@@ -31,10 +31,20 @@ global.diaPlaceGiver = (server, uuid, slug) => {
   console.info('[culture] giver placed for ' + slug + (dressed ? '' : ' (not dressed)'))
 }
 
+NativeEvents.onEvent(Java.loadClass('net.diaithir.ages.mc.StoryEvent'), e => {
+  if (String(e.kind) !== 'culture_start') return
+  let server = Java.loadClass('net.neoforged.neoforge.server.ServerLifecycleHooks').getCurrentServer()
+  let uuid = String(e.key), slug = String(e.value)
+  let later = (ticks, f) => { if (server.scheduleInTicks) server.scheduleInTicks(ticks, f); else f() }
+  later(105, () => server.execute(() => placeGiver(server, uuid, slug))) // after the first landing pass (tick 100)
+  later(205, () => server.execute(() => placeGiver(server, uuid, slug))) // and the second (tick 200)
+})
+
 ItemEvents.entityInteracted(e => {
   let t = e.target
   if (!t || !t.tags.contains('dia_giver') || String(e.hand) !== 'MAIN_HAND') return
-  let slug = String((() => { let r = ''; t.tags.forEach(x => { if (String(x).startsWith('dia_culture_')) r = String(x) }); return r })()).slice(12)
+  let slug = ''
+  t.tags.forEach(x => { if (String(x).startsWith('dia_culture_')) slug = String(x).slice(12) })
   let g = GIVERS[slug]
   if (!g) return
   let taken = e.player.persistentData
