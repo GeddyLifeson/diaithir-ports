@@ -27137,6 +27137,10 @@ file = "mods/diaithir-potions-neoforge-26.1.2-0.1.0.jar"
 hash = "a829082ade2b600abe1cb330c8774f30327da20c994b6cd5c4386ad12c16b3ff"
 
 [[files]]
+file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.2.jar"
+hash = "cf63a9c79c3d8a2168fde855b4654737e7a547f69715e3b6d602ddef801a11a4"
+
+[[files]]
 file = "mods/diaithir-storagenet-neoforge-26.1.2-1.0.0.jar"
 hash = "077b9e4958313433688891b53e8b5f73ceec2960b1762272bd86ff1d657d409c"
 
