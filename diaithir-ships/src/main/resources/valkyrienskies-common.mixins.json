@@ -126,7 +126,6 @@
     "client.renderer.MixinGameRenderer",
     "client.renderer.MixinLevelRenderer",
     "client.world.MixinClientChunkCache",
-    "client.world.ClientChunkCacheAccessor",
     "client.world.MixinClientLevel",
     "feature.block_tint.MixinClientLevel",
     "feature.commands.ClientSuggestionProviderAccessor",

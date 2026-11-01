@@ -56,11 +56,14 @@ import org.valkyrienskies.mod.util.ClientConnectivityUpdateQueue;
 @Mixin(ClientChunkCache.class)
 public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
 
-    // ClientChunkCache.Storage is a private class, so access the field through a coerced accessor
+    @Shadow
+    private volatile ClientChunkCache.Storage storage;
+
     @Unique
     private Object vs$getStorage() {
-        return ((ClientChunkCacheAccessor) (Object) this).vs$getStorage();
+        return storage;
     }
+
     @Shadow
     @Final
     ClientLevel level;

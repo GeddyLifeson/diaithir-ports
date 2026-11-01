@@ -13,6 +13,9 @@ Moving blocks with physics :)
 '''
 logoFile = "icon.png"
 
+[[accessTransformers]]
+file = "META-INF/accesstransformer.cfg"
+
 [[mixins]]
 config = "valkyrienskies-common.mixins.json"
 
