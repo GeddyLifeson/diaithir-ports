@@ -1,0 +1,19 @@
+{
+  "type": "pneumaticcraft:thermo_plant",
+  "inputs": {
+    "fluid": {
+      "ingredient": "#c:plantoil",
+      "amount": 100
+    },
+    "item": "pneumaticcraft:raw_salmon_tempura"
+  },
+  "outputs": {
+    "item_output": {
+      "count": 1,
+      "id": "pneumaticcraft:salmon_tempura"
+    }
+  },
+  "temperature": {
+    "min": 423
+  }
+}

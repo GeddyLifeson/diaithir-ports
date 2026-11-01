@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "pneumaticcraft:spawner_agitator",
+    "I": "#c:ingots/compressed_iron",
+    "O": "#c:obsidians",
+    "P": "pneumaticcraft:drill_pipe",
+    "T": "pneumaticcraft:pressure_tube",
+    "W": "pneumaticcraft:pressure_chamber_wall"
+  },
+  "pattern": [
+    "ITI",
+    "WAW",
+    "OPO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:spawner_extractor"
+  }
+}

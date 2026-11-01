@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:ingots/copper",
+    "I": "#c:ingots/compressed_iron"
+  },
+  "pattern": [
+    " G ",
+    "GIG",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:pressure_gauge"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:stone",
+    "I": "#c:ingots/compressed_iron"
+  },
+  "pattern": [
+    "BBB",
+    "BIB",
+    "BBB"
+  ],
+  "result": {
+    "count": 8,
+    "id": "pneumaticcraft:reinforced_stone"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "pneumaticcraft:thermo_plant",
+  "inputs": {
+    "fluid": {
+      "ingredient": "minecraft:water",
+      "amount": 1000
+    },
+    "item": "minecraft:lapis_lazuli"
+  },
+  "outputs": {
+    "item_output": {
+      "count": 4,
+      "id": "pneumaticcraft:upgrade_matrix"
+    }
+  },
+  "pressure": 2.0,
+  "temperature": {
+    "min": 273
+  }
+}

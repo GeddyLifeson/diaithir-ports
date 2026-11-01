@@ -1,0 +1,12 @@
+{
+  "type": "pneumaticcraft:assembly_drill",
+  "input": {
+    "ingredient": "pneumaticcraft:solar_wafer",
+    "count": 1
+  },
+  "program": "drill",
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:solar_cell"
+  }
+}

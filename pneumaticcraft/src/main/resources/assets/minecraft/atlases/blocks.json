@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "type": "directory",
+      "source": "pnc_model",
+      "prefix": "pnc_model/"
+    },
+    {
+      "type": "single",
+      "resource": "pneumaticcraft:entity/drone/collector_drone"
+    },
+    {
+      "type": "single",
+      "resource": "pneumaticcraft:entity/drone/default_drone"
+    },
+    {
+      "type": "single",
+      "resource": "pneumaticcraft:entity/drone/guard_drone"
+    },
+    {
+      "type": "single",
+      "resource": "pneumaticcraft:entity/drone/harvesting_drone"
+    },
+    {
+      "type": "single",
+      "resource": "pneumaticcraft:entity/drone/logistics_drone"
+    }
+  ]
+}

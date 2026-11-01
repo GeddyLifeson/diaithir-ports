@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "pneumaticcraft:pressure_chamber_glass",
+    "L": "#pneumaticcraft:upgrade_components",
+    "N": "minecraft:potion"
+  },
+  "pattern": [
+    "LNL",
+    "GNG",
+    "LNL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:night_vision_upgrade"
+  }
+}

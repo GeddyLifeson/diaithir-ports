@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": "minecraft:phantom_membrane",
+    "N": "minecraft:nether_star",
+    "P": "minecraft:potion",
+    "U": "pneumaticcraft:jet_boots_upgrade_3",
+    "V": "pneumaticcraft:vortex_cannon"
+  },
+  "pattern": [
+    "MNM",
+    "VUV",
+    "P P"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:jet_boots_upgrade_4"
+  }
+}

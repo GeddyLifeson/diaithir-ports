@@ -1,0 +1,20 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "pneumaticcraft:item/vortex_tube",
+    "tints": [
+      {
+        "type": "pneumaticcraft:tint",
+        "index": 0
+      },
+      {
+        "type": "pneumaticcraft:tint",
+        "index": 1
+      },
+      {
+        "type": "pneumaticcraft:tint",
+        "index": 2
+      }
+    ]
+  }
+}
