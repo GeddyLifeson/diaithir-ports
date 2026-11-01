@@ -7,7 +7,8 @@ StartupEvents.registry('item', event => {
     let b = event.create(id).displayName(C.english[id] || name)
     if (hunger) b.food(hunger, sat)
   }
-  for (let [id, name, hunger, sat] of C.dishes) event.create(id).displayName(C.english[id] || name).food(hunger, sat)
+  // Shardfall is set after every Age: the one dish id that keeps its shardfall_ prefix draws a texture without it (ids never change).
+  for (let [id, name, hunger, sat] of C.dishes) event.create(id).displayName(C.english[id] || name).texture(id.replace(':', ':item/').replace('/shardfall_', '/')).food(hunger, sat)
 })
 
 StartupEvents.registry('block', event => {

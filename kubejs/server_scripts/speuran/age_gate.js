@@ -2,7 +2,7 @@
 // tier, so on every datapack sync (each login, and every /reload, which the Age Turn runs) a world the
 // current diaithir_ages Age has not reached is taken out of Stellaris's planet list before Stellaris sends
 // it: the rocket menu does not show it and the server refuses travel there. Without diaithir_ages all open.
-const SPEURAN_AGES = ['TELLING', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'RODOS']
+const SPEURAN_AGES = ['TELLING', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'RODOS']
 const SPEURAN_OPENS = {
   'diaithir_worlds:gealach_an_fhuamhaire': 'VI',
   'diaithir_worlds:talamh_reota': 'VI',
@@ -30,7 +30,7 @@ function speuranAge(server) {
 NativeEvents.onEvent('highest', Java.loadClass('net.neoforged.neoforge.event.OnDatapackSyncEvent'), event => {
   let age = speuranAge(event.getPlayerList().getServer())
   let all = {}
-  speuranHeld.concat(Array.from(SpeuranPlanets.PLANETS)).forEach(p => { all[String(p.dimension())] = p })
+  speuranHeld.concat(Array.from(SpeuranPlanets.PLANETS)).forEach(p => { all[String(p.dimension()).replace(/^.*\/\s*|\]$/g, '')] = p // ResourceKey prints as ResourceKey[minecraft:dimension / ns:id]; keep only ns:id })
   let open = [], held = []
   Object.keys(all).forEach(dim => {
     let opens = SPEURAN_OPENS[dim]

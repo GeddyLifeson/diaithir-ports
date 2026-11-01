@@ -7769,10 +7769,6 @@ file = "kubejs/assets/diaithir/textures/item/dish/shakshuka.png"
 hash = "ea91ca3b8ba6578ad871ac4dac06b499e943592b97b32139e9279e437b2a5bb5"
 
 [[files]]
-file = "kubejs/assets/diaithir/textures/item/dish/shardfall_tinned_fish_toast.png"
-hash = "b277619b2192ba37d4a73c0cdb88c0f2959ad641125614e4e989c05fa3d02549"
-
-[[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shashlik.png"
 hash = "f396aa506d8fc48158781aa0bb731cac8e855ed4a8c7d454832ee913b3a44db2"
 
@@ -8383,6 +8379,10 @@ hash = "7cd3dfddd9475d11cd1c90f235635b27d6dbe274c59e06e28c8e5e1e22c42f9f"
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tide_pool_sunfruit_sorbet.png"
 hash = "985dc830c01e8c1764efb977e30137ec98b8469e15de064dda837f7838d6680b"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/dish/tinned_fish_toast.png"
+hash = "b277619b2192ba37d4a73c0cdb88c0f2959ad641125614e4e989c05fa3d02549"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tiramisu.png"
@@ -15310,7 +15310,7 @@ hash = "f52f6652f00a2c4c320b7778360e64cc9609227fd81b251299e20fc2d3e1318a"
 
 [[files]]
 file = "kubejs/data/diaithir/culture_givers.json"
-hash = "c965f9a6f7f327994e2be85a160a04655669e6f6b5e4af6ff771e253e48cecc0"
+hash = "91626ff8393b28c307de9290a7ecc746e38601a0624d4d2f1a9cc4dd5f448d21"
 
 [[files]]
 file = "kubejs/data/diaithir/culture_spawns.json"
@@ -25890,11 +25890,11 @@ hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
 file = "kubejs/server_scripts/culture_start/culture_giver.js"
-hash = "8bbe4e9098468acb18fe1c3fd61b927bf8722ab47404aea4b8637cbeb7cbde74"
+hash = "5f1a991bc109b7fc7027250766b3af905852eb47d630741d5250fe70fc21b687"
 
 [[files]]
 file = "kubejs/server_scripts/culture_start/culture_start.js"
-hash = "a1f4d85e2650877347d0fb160e827ac799b27175d227bc63cae43f81c78d72f2"
+hash = "1b08934bff1e0614d51b85f77c66a1e246967d9f71eb6d590087e5065e153104"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/dedupe.js"
@@ -25934,7 +25934,7 @@ hash = "1706472bcf603c87b5b23896733d3918f6b65c9fc2f65d42f0aa11188422dfa3"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/zz_cuisine_engine.js"
-hash = "44863edb7cd7b9f1d5e0ab8ad22a3fcac410430b7e5541257a2989ba05e70dd9"
+hash = "4d2f2c929b3d0f24e6e97ae2e655046fdae3d739b41cfac688229f0227e352a4"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/catchup.js"
@@ -25974,7 +25974,7 @@ hash = "fd9de06a48a449464b50e256b80d980dd05fb63b773ae6282dc6fb70844f05ba"
 
 [[files]]
 file = "kubejs/server_scripts/speuran/age_gate.js"
-hash = "1286a28174044b239a9fd41f59fc5fc7ac73a62f82da0c6de8f9bb7b9b953317"
+hash = "f94d1ee323e168e174aa5fdcf40a8a99a219bbc164972d38e4bdd0830bbc4f93"
 
 [[files]]
 file = "kubejs/server_scripts/spoilage/recipes.js"
@@ -26002,7 +26002,7 @@ hash = "7e28644d20ab836b179a2ad5ac9251c627933dee8e163098389888ff0eb8d228"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/cuisine_registry.js"
-hash = "e994b70a769fc12146a68185c4f43cef009944492f184ad16a2135fff16dc858"
+hash = "de9a65ebb6672a434e2b6b8805e99fc0ba2df63dbc42de9912a39907b4fd6a83"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/lorgchraoibhe_staves.js"
@@ -26146,11 +26146,6 @@ metafile = true
 [[files]]
 file = "mods/ConstructionSticks-26.1.2-3.2.1.pw.toml"
 hash = "1f1adc675cea699b2efdc749c8b258a5c47c4f50bde28b7a0ac6dc24ec23a7ae"
-metafile = true
-
-[[files]]
-file = "mods/Controlling-neoforge-26.1.2-26.1.2.4.pw.toml"
-hash = "bb6c71e0ef59ffe1a965ff6842bca34fb2d6546a9a491fdd10da927f62713c5e"
 metafile = true
 
 [[files]]
@@ -27097,7 +27092,7 @@ hash = "2edd48f2e45b211fabec3b23b260d208ff1e318ab8c444f292a04f83161291c0"
 
 [[files]]
 file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
-hash = "c427aaec9dbe24e46316a74f21509a6393a91b6b349676c700e93aeb993b5de4"
+hash = "df829249aff59c3a50a04b50839b0b9d739590f5b733f2357482d5441cd3b73f"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"

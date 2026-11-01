@@ -35,6 +35,7 @@ NativeEvents.onEvent(Java.loadClass('net.diaithir.ages.mc.StoryEvent'), e => {
       let p = spot()
       run(`execute in minecraft:overworld run tp ${uuid} ${p[0] + 0.5} ${p[1]} ${p[2] + 0.5}`)
       run(`execute as ${uuid} at @s run spawnpoint @s ~ ~ ~`)
+      global.diaPlaceGiver(server, uuid, String(e.value))
     }
     let later = (ticks, f) => { if (server.scheduleInTicks) server.scheduleInTicks(ticks, f); else f() }
     later(100, () => land())
