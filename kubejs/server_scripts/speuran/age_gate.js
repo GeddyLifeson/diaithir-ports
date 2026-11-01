@@ -2,7 +2,7 @@
 // tier, so on every datapack sync (each login, and every /reload, which the Age Turn runs) a world the
 // current diaithir_ages Age has not reached is taken out of Stellaris's planet list before Stellaris sends
 // it: the rocket menu does not show it and the server refuses travel there. Without diaithir_ages all open.
-const SPEURAN_AGES = ['TELLING', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'RODOS']
+const SPEURAN_AGES = ['TELLING', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'RODOS']
 const SPEURAN_OPENS = {
   'diaithir_worlds:gealach_an_fhuamhaire': 'VI',
   'diaithir_worlds:talamh_reota': 'VI',
