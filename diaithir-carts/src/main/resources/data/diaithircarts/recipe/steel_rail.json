@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "R": "diaithircarts:bronze_rail",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "RRR",
+    "RIR",
+    "RRR"
+  ],
+  "result": {
+    "id": "diaithircarts:steel_rail",
+    "count": 8
+  },
+  "category": "misc"
+}

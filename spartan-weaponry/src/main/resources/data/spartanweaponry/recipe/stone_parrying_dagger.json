@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#minecraft:stone_tool_materials",
+  "|": "spartanweaponry:handle"
+ },
+ "pattern": [
+  " #",
+  "#|"
+ ],
+ "result": {
+  "id": "spartanweaponry:stone_parrying_dagger"
+ }
+}

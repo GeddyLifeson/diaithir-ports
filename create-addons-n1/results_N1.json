@@ -1,0 +1,282 @@
+[
+ {
+  "slug": "create-steam-n-rails",
+  "status": "blocked",
+  "reason": "1.20.1 only (forge/neoforge/fabric); 959-class train/steam code on com.simibubi, Fabric 1.20.1 build is also simibubi not com.zurrtum; needs hand port; deps BOP/BYG/TFC/Blue Skies compat; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-high-pressure",
+  "status": "ported",
+  "reason": "content+recipes ported (items 3, blocks 0, recipes 5, dropped 0); 5 code classes (block entities/behaviour) not ported; newest build mc 1.19.2,1.20.1"
+ },
+ {
+  "slug": "precise-manufacturing",
+  "status": "blocked",
+  "reason": "blocked: needs prma,tacz (not in pack); newest build mc 1.20.1,1.21.1"
+ },
+ {
+  "slug": "create-mod-trims",
+  "status": "blocked",
+  "reason": "code-only addon (0 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-love-war",
+  "status": "ported",
+  "reason": "content+recipes ported (items 306, blocks 49, recipes 210, dropped 147); 127 code classes (block entities/behaviour) not ported; newest build mc 1.20.6; missing deps flansmod"
+ },
+ {
+  "slug": "create_unbreakable",
+  "status": "ported",
+  "reason": "content+recipes ported (items 3, blocks 2, recipes 1, dropped 0); 16 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-compat-betterend-betternether",
+  "status": "blocked",
+  "reason": "blocked: needs betterend,betternether (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "biofactory",
+  "status": "blocked",
+  "reason": "blocked: needs biomancy,farmersdelight (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-the-salt",
+  "status": "blocked",
+  "reason": "blocked: needs farmersdelight,salt (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-bigger-storage",
+  "status": "ported",
+  "reason": "content+recipes ported (items 0, blocks 9, recipes 12, dropped 0); 19 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-tram-additions",
+  "status": "blocked",
+  "reason": "code-only addon (30 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "deepdrilling",
+  "status": "ported",
+  "reason": "content+recipes ported (items 4, blocks 13, recipes 8, dropped 1); 90 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "block-n-zapping",
+  "status": "blocked",
+  "reason": "licence: MIT code but ARR art; clean-room candidate; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-better-smithing-templates",
+  "status": "ported",
+  "reason": "content+recipes ported (items 3, blocks 0, recipes 2, dropped 1); 6 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-repair",
+  "status": "blocked",
+  "reason": "code-only addon (127 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-trains-on-trains",
+  "status": "blocked",
+  "reason": "code-only addon (2 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-more-farmables",
+  "status": "ported",
+  "reason": "content+recipes ported (items 26, blocks 20, recipes 23, dropped 152); 49 code classes (block entities/behaviour) not ported; newest build mc 1.20.1; missing deps ae2,create_enchantment_industry,createsifter"
+ },
+ {
+  "slug": "create-ad-astra-compat",
+  "status": "blocked",
+  "reason": "blocked: needs ad_astra (not in pack); newest build mc 1.19.2"
+ },
+ {
+  "slug": "prismarine_automation",
+  "status": "ported",
+  "reason": "content+recipes ported (items 0, blocks 0, recipes 3, dropped 0); 1 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-who-touched-my-train",
+  "status": "ported",
+  "reason": "content+recipes ported (items 4, blocks 0, recipes 3, dropped 0); 20 code classes (block entities/behaviour) not ported; newest build mc 1.20.1,1.21.1"
+ },
+ {
+  "slug": "eyecrushing",
+  "status": "ported",
+  "reason": "content+recipes ported (items 0, blocks 0, recipes 1, dropped 16); 0 code classes (block entities/behaviour) not ported; newest build mc 1.21.1; missing deps endrem"
+ },
+ {
+  "slug": "create-new-tempest",
+  "status": "blocked",
+  "reason": "blocked: needs tensura (not in pack); newest build mc 1.19.2"
+ },
+ {
+  "slug": "create-power-grid-leds",
+  "status": "blocked",
+  "reason": "blocked: needs powergrid (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "alexs-caves-and-create-recipes",
+  "status": "blocked",
+  "reason": "blocked: needs alexscaves,brewinandchewin (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-electric-stonks",
+  "status": "ported",
+  "reason": "content+recipes ported (items 2, blocks 14, recipes 15, dropped 0); 40 code classes (block entities/behaviour) not ported; newest build mc 1.18.2"
+ },
+ {
+  "slug": "create-tutorial-books",
+  "status": "ported",
+  "reason": "content+recipes ported (items 5, blocks 0, recipes 3, dropped 1); 141 code classes (block entities/behaviour) not ported; newest build mc 1.20.1; missing deps create_new_age"
+ },
+ {
+  "slug": "create-recipes-plus",
+  "status": "ported",
+  "reason": "content+recipes ported (items 1, blocks 0, recipes 9, dropped 2); 4 code classes (block entities/behaviour) not ported; newest build mc 1.20.1,1.21.1; missing deps create_dragons_plus"
+ },
+ {
+  "slug": "create-more-potatoes",
+  "status": "ported",
+  "reason": "content+recipes ported (items 10, blocks 3, recipes 35, dropped 1); 25 code classes (block entities/behaviour) not ported; newest build mc 1.18.2"
+ },
+ {
+  "slug": "create-molten-processing",
+  "status": "blocked",
+  "reason": "blocked: needs molten_metals,oreganized (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-unify-updated-to-create-6",
+  "status": "blocked",
+  "reason": "code-only addon (6 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-heat-js",
+  "status": "blocked",
+  "reason": "code-only addon (12 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.19.2"
+ },
+ {
+  "slug": "create-more-copycats",
+  "status": "ported",
+  "reason": "content+recipes ported (items 0, blocks 7, recipes 5, dropped 0); 25 code classes (block entities/behaviour) not ported; newest build mc 1.19.2"
+ },
+ {
+  "slug": "create-numismatics-crafting-recipes",
+  "status": "ported",
+  "reason": "content+recipes ported (items 6, blocks 0, recipes 0, dropped 6); 4 code classes (block entities/behaviour) not ported; newest build mc 1.20.6; missing deps numismatics"
+ },
+ {
+  "slug": "nuclear-boiler",
+  "status": "blocked",
+  "reason": "code-only addon (5 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.6"
+ },
+ {
+  "slug": "droids-create-sturcture",
+  "status": "blocked",
+  "reason": "code-only addon (2 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "better-tfcr",
+  "status": "blocked",
+  "reason": "blocked: needs artisanal,dfc,exposure,firmalife,immersiveengineering,tfc,tfc_ie_addon,tfcoreprocessing (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-alchemists-industry",
+  "status": "ported",
+  "reason": "content+recipes ported (items 73, blocks 32, recipes 80, dropped 103); 77 code classes (block entities/behaviour) not ported; newest build mc 1.19.4"
+ },
+ {
+  "slug": "create-soda-pop",
+  "status": "ported",
+  "reason": "content+recipes ported (items 5, blocks 2, recipes 3, dropped 3); 23 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create_automat",
+  "status": "ported",
+  "reason": "content+recipes ported (items 11, blocks 0, recipes 12, dropped 0); 14 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-gearbound",
+  "status": "ported",
+  "reason": "content+recipes ported (items 12, blocks 0, recipes 13, dropped 0); 31 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "anzus-additions",
+  "status": "blocked",
+  "reason": "blocked: needs alexscaves,alexsmobs,createdieselgenerators,farmersdelight,fossil,portablemobs,prehistoricfauna (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-storage-refabricated",
+  "status": "blocked",
+  "reason": "fabric 1.20.1, 114 classes on Create 0.5 Fabric API (not zurrtum 1.21); needs hand port; dep trinkets; newest build mc 1.20.1"
+ },
+ {
+  "slug": "createcrushingae",
+  "status": "blocked",
+  "reason": "blocked: needs ae2,exnihiloae,exnihilosequentia (not in pack); newest build mc 1.18.2"
+ },
+ {
+  "slug": "create-trainsounds",
+  "status": "blocked",
+  "reason": "code-only addon (22 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-bountiful-bites",
+  "status": "blocked",
+  "reason": "blocked: needs bountiful_bites (not in pack); newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-truly-modular",
+  "status": "blocked",
+  "reason": "code-only addon (5 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-cluj-napoca",
+  "status": "ported",
+  "reason": "content+recipes ported (items 9, blocks 2, recipes 2, dropped 4); 23 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-alloyed-by-zeke",
+  "status": "ported",
+  "reason": "content+recipes ported (items 1, blocks 1, recipes 1, dropped 2); 7 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-renewable-copper-zinc",
+  "status": "ported",
+  "reason": "content+recipes ported (items 0, blocks 0, recipes 2, dropped 0); 1 code classes (block entities/behaviour) not ported; newest build mc 1.20.1,1.21.1"
+ },
+ {
+  "slug": "create-sometricks",
+  "status": "ported",
+  "reason": "content+recipes ported (items 8, blocks 6, recipes 13, dropped 7); 106 code classes (block entities/behaviour) not ported; newest build mc 1.20.1; missing deps create_enchantment_industry"
+ },
+ {
+  "slug": "create-stone-generator",
+  "status": "ported",
+  "reason": "content+recipes ported (items 4, blocks 4, recipes 0, dropped 24); 11 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-abuti",
+  "status": "ported",
+  "reason": "content+recipes ported (items 4, blocks 0, recipes 7, dropped 2); 10 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-villager",
+  "status": "ported",
+  "reason": "content+recipes ported (items 7, blocks 0, recipes 43, dropped 0); 13 code classes (block entities/behaviour) not ported; newest build mc 1.20.1"
+ },
+ {
+  "slug": "create-alchemist-wand",
+  "status": "ported",
+  "reason": "content+recipes ported (items 2, blocks 0, recipes 28, dropped 1); 5 code classes (block entities/behaviour) not ported; newest build mc 1.19.2"
+ },
+ {
+  "slug": "rarepackagetags",
+  "status": "blocked",
+  "reason": "code-only addon (0 classes, no recipes) on 1.20.x/older builds; needs hand source port; newest build mc 1.20.1"
+ },
+ {
+  "slug": "strontium_mod",
+  "status": "ported",
+  "reason": "content+recipes ported (items 37, blocks 9, recipes 12, dropped 8); 118 code classes (block entities/behaviour) not ported; newest build mc 1.20.6; missing deps tfmg"
+ }
+]

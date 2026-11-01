@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  " I ",
+  "IHI",
+  "GFG"
+ ],
+ "key": {
+  "I": "create:andesite_alloy",
+  "H": "minecraft:iron_ingot",
+  "G": "create:industrial_iron_block",
+  "F": "create:shaft"
+ },
+ "result": {
+  "id": "deepdrilling:andesite_drill_head"
+ }
+}

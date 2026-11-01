@@ -1,0 +1,20 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT; Pixelify Sans (assets/diaithirbranding/font) is SIL OFL 1.1, see OFL-PixelifySans.txt"
+
+[[mods]]
+modId = "diaithirbranding"
+version = "${version}"
+displayName = "Diaithir"
+description = "Diaithir's look on the client: the title wordmark, splash lines, Pixelify Sans as the game font, the loading screen, the window title, and help buttons that lead to the pack's own help page instead of Realms and Mojang feedback. Client only; servers do not need it."
+displayTest = "IGNORE_ALL_VERSION"
+
+[[mixins]]
+config = "diaithirbranding.mixins.json"
+
+[[dependencies.diaithirbranding]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "AFTER"
+side = "CLIENT"

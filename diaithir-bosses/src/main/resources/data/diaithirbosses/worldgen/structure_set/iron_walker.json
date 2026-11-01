@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithirbosses:iron_walker",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 46,
+  "separation": 20,
+  "salt": 2181
+ }
+}

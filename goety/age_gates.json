@@ -1,0 +1,7 @@
+{
+ "_doc": "Same shape as DiaithirRPG content/tech_ages.json. The whole Goety namespace is Age V and up (dark rites, the Cailleach's Samhain craft).",
+ "namespaces": {
+  "goety": "V"
+ },
+ "items": {}
+}

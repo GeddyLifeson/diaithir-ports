@@ -1,0 +1,21 @@
+{
+ "type": "create:mechanical_crafting",
+ "pattern": [
+  " I ",
+  "GGG",
+  "GGG"
+ ],
+ "key": {
+  "G": "create:framed_glass_pane",
+  "I": "create:iron_sheet"
+ },
+ "result": {
+  "id": "create_chocopaste:empty_choco_paste_500g"
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "create"
+  }
+ ]
+}

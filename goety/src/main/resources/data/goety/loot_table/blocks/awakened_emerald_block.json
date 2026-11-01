@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "bonus_rolls": 0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "goety:awakened_emerald_block"
+    }
+   ]
+  }
+ ],
+ "random_sequence": "goety:blocks/awakened_emerald_block"
+}

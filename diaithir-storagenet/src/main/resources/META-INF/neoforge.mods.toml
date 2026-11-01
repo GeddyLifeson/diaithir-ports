@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirstoragenet"
+version = "${version}"
+displayName = "Diaithir Storage Net"
+description = "A controller block, cables that join chests and barrels into one network, a search and sort terminal, import, export and filter cables, and a crafting terminal that crafts from the whole network. Clean-room original."
+
+[[dependencies.diaithirstoragenet]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

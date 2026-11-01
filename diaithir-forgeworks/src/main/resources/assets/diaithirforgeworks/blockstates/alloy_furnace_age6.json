@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "active=false,facing=north": {
+      "model": "diaithirforgeworks:block/alloy_furnace_age6"
+    },
+    "active=true,facing=north": {
+      "model": "diaithirforgeworks:block/alloy_furnace_age6_lit"
+    },
+    "active=false,facing=east": {
+      "model": "diaithirforgeworks:block/alloy_furnace_age6",
+      "y": 90
+    },
+    "active=true,facing=east": {
+      "model": "diaithirforgeworks:block/alloy_furnace_age6_lit",
+      "y": 90
+    },
+    "active=false,facing=south": {
+      "model": "diaithirforgeworks:block/alloy_furnace_age6",
+      "y": 180
+    },
+    "active=true,facing=south": {
+      "model": "diaithirforgeworks:block/alloy_furnace_age6_lit",
+      "y": 180
+    },
+    "active=false,facing=west": {
+      "model": "diaithirforgeworks:block/alloy_furnace_age6",
+      "y": 270
+    },
+    "active=true,facing=west": {
+      "model": "diaithirforgeworks:block/alloy_furnace_age6_lit",
+      "y": 270
+    }
+  }
+}

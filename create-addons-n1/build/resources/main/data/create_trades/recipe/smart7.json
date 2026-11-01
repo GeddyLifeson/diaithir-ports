@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "create_trades:smart_token",
+ "result": {
+  "id": "create:filter",
+  "count": 8
+ }
+}

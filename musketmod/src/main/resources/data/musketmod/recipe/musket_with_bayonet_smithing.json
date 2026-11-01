@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "musketmod:musket_upgrade_smithing_template",
+  "base": "musketmod:musket",
+  "addition": "minecraft:iron_sword",
+  "result": {
+    "count": 1,
+    "id": "musketmod:musket_with_bayonet"
+  }
+}

@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:campfire_cooking",
+ "category": "food",
+ "ingredient": "diaithirbutchery:tongue",
+ "result": {
+  "id": "diaithirbutchery:cooked_tongue"
+ },
+ "experience": 0.35,
+ "cookingtime": 600
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "goety:awakened_emerald_block"
+ ],
+ "result": {
+  "id": "goety:magic_emerald",
+  "count": 9
+ }
+}

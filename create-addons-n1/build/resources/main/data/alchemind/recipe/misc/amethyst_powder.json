@@ -1,0 +1,18 @@
+{
+ "type": "create:crushing",
+ "ingredient": "minecraft:amethyst_shard",
+ "results": [
+  {
+   "id": "alchemind:amethyst_powder"
+  },
+  {
+   "id": "alchemind:amethyst_powder",
+   "chance": 0.2
+  },
+  {
+   "id": "minecraft:amethyst_shard",
+   "chance": 0.2
+  }
+ ],
+ "processing_time": 200
+}

@@ -1,0 +1,43 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:cloak_blank",
+ "loops": 5,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "#minecraft:leaves"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:golden_apple"
+  },
+  {
+   "type": "create:pressing",
+   "results": [
+    "$result"
+   ],
+   "ingredient": "$ingredient"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:cloak_blank"
+ },
+ "result": {
+  "id": "relics:leafy_mantle",
+  "chance": 1
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

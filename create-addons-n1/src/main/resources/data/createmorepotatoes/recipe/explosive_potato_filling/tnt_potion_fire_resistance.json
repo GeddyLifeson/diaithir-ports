@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "createmorepotatoes:explosive_potato",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "fluid": "create:potion",
+  "amount": 81000
+ },
+ "result": {
+  "id": "createmorepotatoes:explosive_potion_potato"
+ }
+}

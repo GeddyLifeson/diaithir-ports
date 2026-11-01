@@ -1,0 +1,15 @@
+{
+ "type": "create:crushing",
+ "results": [
+  {
+   "id": "minecraft:obsidian",
+   "count": 1
+  },
+  {
+   "chance": 0.05,
+   "id": "create:powdered_obsidian"
+  }
+ ],
+ "processing_time": 250,
+ "ingredient": "minecraft:crying_obsidian"
+}

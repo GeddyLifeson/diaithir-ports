@@ -1,0 +1,282 @@
+[
+ {
+  "slug": "create-utilities",
+  "status": "blocked",
+  "reason": "code addon (64 classes, Forge 1.20.1 only, com.simibubi); needs hand port"
+ },
+ {
+  "slug": "create-big-cannons-advanced-technologies",
+  "status": "blocked",
+  "reason": "needs Create Big Cannons (not in pack); 228 classes NeoForge 1.21.1 com.simibubi"
+ },
+ {
+  "slug": "create-track-map",
+  "status": "blocked",
+  "reason": "Fabric 1.20.1 Kotlin mod, 2692 classes, needs fabric-language-kotlin; client map, no data"
+ },
+ {
+  "slug": "create-oppenheimered",
+  "status": "blocked",
+  "reason": "recipes only for Alex's Caves (not in pack) + Oppenheimer content; dep alexscaves"
+ },
+ {
+  "slug": "create-missiles",
+  "status": "blocked",
+  "reason": "364-class code addon NeoForge 1.21.1 (com.simibubi), needs hand port"
+ },
+ {
+  "slug": "create-northstar",
+  "status": "blocked",
+  "reason": "471 classes, Forge 1.19.4 only, big code addon"
+ },
+ {
+  "slug": "create-slimes",
+  "status": "blocked",
+  "reason": "needs Splendid Slimes (not in pack); data-only"
+ },
+ {
+  "slug": "create-configurable-crushing-wheel",
+  "status": "blocked",
+  "reason": "config/code mod (29 classes) NeoForge 1.21.11 builds, com.simibubi; needs code"
+ },
+ {
+  "slug": "create-compression",
+  "status": "blocked",
+  "reason": "82 classes + 1868 recipes for ~thousands of compressed blocks, needs Mekanism/Immersive Engineering; code to register generated blocks"
+ },
+ {
+  "slug": "create-tab-fix",
+  "status": "blocked",
+  "reason": "Fabric 1.20.1, 4 classes mixin; creative tab fix, not needed on port"
+ },
+ {
+  "slug": "create-cooking",
+  "status": "blocked",
+  "reason": "Fabric 1.20.1 code (54 classes, fluids, yarn-mapped); needs code port. Fabric builds are intermediary-mapped 1.20.1, not retargetable by script"
+ },
+ {
+  "slug": "create-halitosis",
+  "status": "blocked",
+  "reason": "Forge 1.20.6 code (custom fan processing types, Quark dep)"
+ },
+ {
+  "slug": "waystones_and_create",
+  "status": "blocked",
+  "reason": "needs Waystones/Balm (not in pack)"
+ },
+ {
+  "slug": "create-arms-race-reborn",
+  "status": "blocked",
+  "reason": "needs TACZ (not in pack); 38 classes Forge 1.20.6"
+ },
+ {
+  "slug": "warium_additions",
+  "status": "blocked",
+  "reason": "needs Crusty Chunks, Immersive Engineering; 101 classes"
+ },
+ {
+  "slug": "create-deepslate-processing",
+  "status": "ported",
+  "reason": "deep gravel + shard + recipes; falling-block behaviour not ported (needs code)"
+ },
+ {
+  "slug": "create-alexs-caves-compat",
+  "status": "blocked",
+  "reason": "needs Alex's Caves (not in pack) and Create New Age"
+ },
+ {
+  "slug": "create-changed",
+  "status": "blocked",
+  "reason": "needs Changed mod + addons, Railways"
+ },
+ {
+  "slug": "create-additions-electrum-block",
+  "status": "ported",
+  "reason": "electrum block + 3 recipes (cond. on createaddition)"
+ },
+ {
+  "slug": "createfoundry",
+  "status": "blocked",
+  "reason": "Fabric 1.19.2, 55 classes, fluids/blocks code; only old build"
+ },
+ {
+  "slug": "create-energy-cannons",
+  "status": "blocked",
+  "reason": "needs Create Big Cannons; Fabric 1.20.6 82 classes"
+ },
+ {
+  "slug": "create-steam-robots",
+  "status": "blocked",
+  "reason": "332 classes Forge 1.20.1 entity/robot code"
+ },
+ {
+  "slug": "biomimicry",
+  "status": "blocked",
+  "reason": "needs Ex Nihilo Sequentia and Farmers Delight; 436 recipes"
+ },
+ {
+  "slug": "train-deco",
+  "status": "blocked",
+  "reason": "14 classes but custom shaped track/rail blocks; needs block shapes code (candidate for next pass)"
+ },
+ {
+  "slug": "create-coins",
+  "status": "ported",
+  "reason": "6 coin items + 6 recipes"
+ },
+ {
+  "slug": "create-extra-structures",
+  "status": "ported",
+  "reason": "5 structures worldgen data"
+ },
+ {
+  "slug": "create-crafts-construct-deprecated",
+  "status": "blocked",
+  "reason": "deprecated; fluid/effects/brewing code, 44 classes"
+ },
+ {
+  "slug": "crate-stuff",
+  "status": "blocked",
+  "reason": "needs createbb (Create Big Barrels?), not in pack"
+ },
+ {
+  "slug": "create-6.0.8-backported-fixes",
+  "status": "blocked",
+  "reason": "Forge 1.20.6 mixin fixes for old Create, irrelevant to port"
+ },
+ {
+  "slug": "create-water-mesh",
+  "status": "blocked",
+  "reason": "Fabric 1.20.1, procedures/mixin (water mesh block); needs code"
+ },
+ {
+  "slug": "create-new-age-renewable-magnetite",
+  "status": "skip",
+  "reason": "already ported in slice A"
+ },
+ {
+  "slug": "splashandcrush",
+  "status": "blocked",
+  "reason": "needs Ages of Aether/DivineRPG/Alex's Caves; 263 recipes"
+ },
+ {
+  "slug": "create-magics",
+  "status": "blocked",
+  "reason": "needs Mana and Artifice (mna); Forge 1.20.6"
+ },
+ {
+  "slug": "create-rags-to-riches",
+  "status": "ported",
+  "reason": "items + recipes (1.18.2 data converted)"
+ },
+ {
+  "slug": "oc2r-create",
+  "status": "blocked",
+  "reason": "needs OC2R (not in pack)"
+ },
+ {
+  "slug": "create-real-stack-size",
+  "status": "blocked",
+  "reason": "NeoForge 1.21.11 stack-size code mod (6 classes); needs code, com.simibubi mixins"
+ },
+ {
+  "slug": "ccliftlink",
+  "status": "blocked",
+  "reason": "needs CC:Tweaked + Create Elevator CC (not in pack)"
+ },
+ {
+  "slug": "design-n-decor-recrafted",
+  "status": "blocked",
+  "reason": "1230 data files, 44 classes of shaped decor blocks (stairs/slabs/walls/panels); needs block-family code or generator (candidate for next pass)"
+ },
+ {
+  "slug": "create-spill-induced",
+  "status": "blocked",
+  "reason": "17-class code mod Forge 1.20.1 (no data)"
+ },
+ {
+  "slug": "create-industrial-tools",
+  "status": "blocked",
+  "reason": "Fabric 1.20.1 code: tools, enchantment, mixins; yarn-mapped, not scriptable"
+ },
+ {
+  "slug": "create-isaacs-creative-additions",
+  "status": "blocked",
+  "reason": "222 classes Forge 1.20.1"
+ },
+ {
+  "slug": "createstuff",
+  "status": "blocked",
+  "reason": "45 classes, fluids and tool sets; plain items could be done but fluids/tools need code (candidate for next pass)"
+ },
+ {
+  "slug": "cca-electrum-recipe",
+  "status": "skip",
+  "reason": "already ported in slice A"
+ },
+ {
+  "slug": "createmelatonin",
+  "status": "blocked",
+  "reason": "133 classes NeoForge 1.21.1, catears content, 41 recipes; needs code"
+ },
+ {
+  "slug": "fizzys-silly-stuff",
+  "status": "blocked",
+  "reason": "63 classes: entities, biomes, trades, stair/slab blocks"
+ },
+ {
+  "slug": "create-pickled",
+  "status": "blocked",
+  "reason": "fluids (brine, pickle juice), sounds, items with procedures; needs code"
+ },
+ {
+  "slug": "glitcheddevs-superflat-expansion",
+  "status": "blocked",
+  "reason": "tick-procedure machines (auto crusher, digger); needs code"
+ },
+ {
+  "slug": "cxptcreatexptool",
+  "status": "blocked",
+  "reason": "custom baked model/Create integration, Forge 1.20.6"
+ },
+ {
+  "slug": "endersmp-recipes",
+  "status": "blocked",
+  "reason": "recipes need createdieselgenerators, create_sa, ae2; server-pack specific"
+ },
+ {
+  "slug": "no-milling-for-crushing-wheels",
+  "status": "blocked",
+  "reason": "4-class Forge code removing milling recipes; reproduce via recipe override (needs code)"
+ },
+ {
+  "slug": "misc-create-fixes",
+  "status": "blocked",
+  "reason": "Forge 1.20.6 mixin fixes (valkyrienskies), irrelevant to port"
+ },
+ {
+  "slug": "create-choco-paste",
+  "status": "ported",
+  "reason": "4 blocks, 15 items, recipes; food effects/procedures not ported (needs code)"
+ },
+ {
+  "slug": "create-transit-tickets",
+  "status": "blocked",
+  "reason": "NeoForge 1.21.1, 33 classes: ticket gate block entity, networking, custom recipes, ponder; needs hand port to com.zurrtum"
+ },
+ {
+  "slug": "create-instant-schematics",
+  "status": "blocked",
+  "reason": "19-class code mod Forge 1.20.1, no data"
+ },
+ {
+  "slug": "create-thermobaric",
+  "status": "ported",
+  "reason": "2 blocks, 12 items, 21 recipes; no fluids/code"
+ },
+ {
+  "slug": "tmfr-create-addon",
+  "status": "blocked",
+  "reason": "needs Tiny Mob Farm"
+ }
+]

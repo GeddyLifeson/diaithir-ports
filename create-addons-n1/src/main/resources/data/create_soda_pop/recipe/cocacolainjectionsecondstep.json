@@ -1,0 +1,9 @@
+{
+ "type": "create:pressing",
+ "ingredient": "create_soda_pop:filled_open_coca_cola_can",
+ "results": [
+  {
+   "id": "create_soda_pop:coco_cola"
+  }
+ ]
+}

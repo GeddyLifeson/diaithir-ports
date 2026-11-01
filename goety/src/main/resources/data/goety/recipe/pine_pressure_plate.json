@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:pine_planks"
+ },
+ "pattern": [
+  "##"
+ ],
+ "result": {
+  "id": "goety:pine_pressure_plate",
+  "count": 1
+ }
+}

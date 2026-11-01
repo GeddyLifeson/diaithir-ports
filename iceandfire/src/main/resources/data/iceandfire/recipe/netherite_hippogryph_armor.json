@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "minecraft:netherite_upgrade_smithing_template",
+  "base": "iceandfire:diamond_hippogryph_armor",
+  "addition": "minecraft:netherite_ingot",
+  "result": {
+    "id": "iceandfire:netherite_hippogryph_armor"
+  },
+  "show_notification": true
+}

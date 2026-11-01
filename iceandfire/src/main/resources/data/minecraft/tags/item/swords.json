@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "iceandfire:silver_sword",
+    "iceandfire:dragonbone_sword",
+    "iceandfire:dragonbone_sword_fire",
+    "iceandfire:dragonbone_sword_ice",
+    "iceandfire:dragonbone_sword_lightning",
+    "iceandfire:dragonsteel_fire_sword",
+    "iceandfire:dragonsteel_ice_sword",
+    "iceandfire:dragonsteel_lightning_sword",
+    "iceandfire:hippogryph_sword",
+    "iceandfire:stymphalian_bird_dagger",
+    "iceandfire:ghost_sword",
+    "iceandfire:dread_queen_sword",
+    "iceandfire:dread_knight_sword",
+    "iceandfire:dread_sword"
+  ]
+}

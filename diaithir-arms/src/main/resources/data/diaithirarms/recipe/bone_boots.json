@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "L L",
+  "M M"
+ ],
+ "key": {
+  "M": "diaithirarms:bone_plate",
+  "L": "minecraft:leather"
+ },
+ "result": {
+  "id": "diaithirarms:bone_boots",
+  "count": 1
+ }
+}

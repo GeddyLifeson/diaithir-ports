@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:brick",
+  "minecraft:quartz",
+  "diaithirarms:ballistic_weave"
+ ],
+ "result": {
+  "id": "diaithirarms:ceramic_plate",
+  "count": 2
+ }
+}

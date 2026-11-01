@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#minecraft:planks",
+  "P": "#minecraft:planks"
+ },
+ "pattern": [
+  "#PP",
+  "P  ",
+  "P  "
+ ],
+ "result": {
+  "id": "spartanweaponry:wooden_boomerang"
+ }
+}

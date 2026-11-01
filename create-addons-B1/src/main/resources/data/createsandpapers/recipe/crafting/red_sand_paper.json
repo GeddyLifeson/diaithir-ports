@@ -1,0 +1,21 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "createsandpapers:creates_red_sandpaper"
+   }
+  }
+ ],
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:paper",
+  "#createsandpapers:creates_red_sandpaper"
+ ],
+ "result": {
+  "count": 1,
+  "id": "create:red_sand_paper"
+ }
+}

@@ -1,0 +1,9 @@
+Goety (NeoForge 26.1 port)
+
+This module is a derived work of Goety by Polarice3 (https://github.com/Polarice3/Goety-2, branch 1.20, version 2.5.59.2),
+licensed under the MIT License (see LICENSE).
+
+Taken from upstream: textures, block and item models, blockstates, sounds, recipe patterns, item and block lists and
+tuning values. Java code is a new implementation on the 26.1 API that follows the behaviour of the original.
+Display names are rewritten in Diaithiris (names_map.json holds the English original of each name).
+Patchouli (CC-BY-NC-SA) and JEI integrations of the original are not carried over.

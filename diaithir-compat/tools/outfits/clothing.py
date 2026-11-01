@@ -289,15 +289,16 @@ def palette(row):
 
 def style(row):
     g = row["garments"].lower()
-    fibre = bool(re.search(r"fibre|flax|linen|palm|agave|reed", g))
+    fibre = bool(re.search(r"fibre|flax|linen|palm|agave|reed|wool|cotton|silk|hemp|felt|nylon|synthetic|canvas|denim|fabric", g))
     hide = bool(re.search(r"hide|skin|fur|leather", g))
     return {
-        "cut": "parka" if "parka" in g else "robe" if "robe" in g else "tunic" if re.search(r"tunic|coat", g)
+        "cut": "modern" if re.search(r"jacket|suit|uniform|coverall|lab coat|overall|trench", g) else "parka" if "parka" in g else "robe" if "robe" in g else "tunic" if re.search(r"tunic|coat", g)
         else "cloak" if re.search(r"cloak|kaross", g) else "wrap" if re.search(r"wrap|kilt|apron|skirt|loincloth", g) else "garments",
         "cloak": bool(re.search(r"cloak|kaross", g)), "kilt": "kilt" in g, "apron": "apron" in g, "loincloth": "loincloth" in g,
         "trousers": "trousers" in g, "leggings": "legging" in g, "sandals": "sandal" in g, "skirt": "skirt" in g,
         "bark": "bark" in g, "fibre": fibre, "hide": hide, "fur": "fur" in g, "hooded": "hood" in g or "parka" in g,
         "cord": "cord" in g,
+        "modern": bool(re.search(r"jacket|suit|uniform|coverall|lab coat|overall|trench", g)),
     }
 
 
@@ -332,10 +333,11 @@ def outfit(row, gender, look):
 
     worker = look == 2
     role = look if isinstance(look, str) else None
-    cold = cut in ("parka", "tunic", "robe")
+    modern = cut == "modern"
+    cold = cut in ("parka", "tunic", "robe") or modern
 
     # legs and feet
-    if st["trousers"] or (st["leggings"] and not (female and cut == "robe")):
+    if st["trousers"] or modern or (st["leggings"] and not (female and cut == "robe")):
         pieces.append(Piece("base", lambda f: covering(f, 2.0, 99, False) & np.isin(f.part, LEGS) if f.part in LEGS else np.zeros(f.shape, bool),
                             "fur" if cut == "parka" and st["fur"] else "hide", P["dark"] if cut != "parka" else shade(P["main"], 0.85), 0.2,
                             [p_panels(shade(P["main"], 0.5))] if cut == "parka" else [], "legs"))
@@ -349,17 +351,23 @@ def outfit(row, gender, look):
                             "leather", P["leather"], 0.4, [], "sandals"))
 
     # main garment
-    if cut in ("parka", "tunic", "robe", "garments"):
-        hem = {"parka": 7.0, "tunic": 9.0, "robe": 3.5, "garments": 9.5}[cut] - (2.5 if female and cut != "robe" else 0)
+    if cut in ("parka", "tunic", "robe", "garments", "modern"):
+        hem = {"parka": 7.0, "tunic": 9.0, "robe": 3.5, "garments": 9.5, "modern": 2.0 if "suit" in row["garments"].lower() or "overall" in row["garments"].lower() else 8.0}[cut] - (2.5 if female and cut != "robe" else 0)
         if role == "priest":
             hem = 2.5
-        sleeve = {"parka": 13.0, "tunic": 14.5, "robe": 15.0, "garments": 19.5}[cut]
+        sleeve = {"parka": 13.0, "tunic": 14.5, "robe": 15.0, "garments": 19.5, "modern": 19.5}[cut]
         if worker or look == 1 and cut != "parka":
             sleeve = 19.5
         kind = main_kind if cut != "garments" else "hide"
         pats = pattern(hem) + ([p_lacing(P["leather"])] if cut in ("tunic", "parka") and not role == "priest" else [])
         pieces.append(Piece("base", lambda f, h=hem, sl=sleeve: covering(f, h + jag(f, 0.25, 1), sl + jag(f, 0.2, 3)), kind,
                             P["main"], 0.5, pats, "top"))
+        if modern:                               # placket, collar band and breast pocket
+            pieces.append(Piece("base", lambda f: (f.part == "body") & (f.name == "front") & (np.abs(f.X) < 0.35) & (f.Y > 9),
+                                "cloth", shade(P["main"], 0.7), 0.8, [], "placket"))
+            pieces.append(Piece("base", lambda f: band(f, ("body",), 22.0, 22.9, ("front", "back", "left", "right")), "cloth", P["trim"], 0.9, [], "collar band"))
+            pieces.append(Piece("base", lambda f: (f.part == "body") & (f.name == "front") & (f.X > 1.0) & (f.X < 3.2) & (f.Y > 17.5) & (f.Y < 19.5),
+                                "cloth", shade(P["main"], 0.8), 0.9, [], "pocket"))
         if cut == "parka":                       # fur cuffs and hem ruff
             pieces.append(Piece("base", lambda f: band(f, ARMS, 12.8, 14.0 + jag(f, 0.3, 6)) | band(f, ("body",) + LEGS, hem, hem + 1.1 + jag(f, 0.3, 7)),
                                 "fur", P["fur"], 0.9, [], "ruff"))
@@ -415,7 +423,7 @@ def outfit(row, gender, look):
                             [lambda f: ((f.Y % 0.8) < 0.18, shade(P["leather"], 0.6), 0.2)], "bracers"))
 
     # cloaks
-    wants_cloak = (st["cloak"] and look != 2) or role == "ruler" or (look == 1 and cut in ("tunic", "robe"))
+    wants_cloak = not modern and ((st["cloak"] and look != 2) or role == "ruler" or (look == 1 and cut in ("tunic", "robe")))
     if wants_cloak and not (st["cloak"] and look == 1 and not role):
         hem = 4.0 if role == "ruler" else 7.0
         ck = "fur" if role == "ruler" or st["fur"] else "hide"
@@ -431,7 +439,9 @@ def outfit(row, gender, look):
         pieces.append(Piece("outer", hood, main_kind, P["main"], 0.6, [p_panels(shade(P["main"], 0.6))], "hood"))
         pieces.append(Piece("outer", hood_edge, "fur", P["fur"], 1.1, [], "hood ruff"))
     elif role == "ruler":
-        if cold:
+        if modern:
+            pieces.append(Piece("outer", lambda f: cap(f, 29.2 + jag(f, 0.15, 3)), "cloth", P["dark"], 0.8, [p_hem(P["trim"], 29.4, 0.5)], "peaked cap"))
+        elif cold:
             pieces.append(Piece("outer", lambda f: cap(f, 29.0 + jag(f, 0.25, 3)), "fur", P["fur"], 1.0, [], "fur hat"))
         else:
             pieces.append(Piece("outer", lambda f: band(f, ("head",), 29.0, 32.6) & ((f.Y < 30.2) | ((f.round % 1.1) < 0.55) & (f.Y < 30.2 + 2.6 * np.abs(np.sin(f.round * 2.86)))),
@@ -463,11 +473,11 @@ def outfit(row, gender, look):
         pieces.append(Beads("base", lambda f: beads_on_curve(f, lambda u: 15.0 + 0 * u, 0.55, 0.3, ("front", "back", "left", "right"), ARMS), P["beads"]))
 
     # pigment on skin (painted last, only where nothing is worn)
-    if role == "warrior" or (orn["paint"] and look == 0):
+    if not modern and (role == "warrior" or (orn["paint"] and look == 0)):
         col = PIPECLAY if orn["pipeclay"] and role != "warrior" else P["trim"]
         pieces.append(Piece("base", lambda f: band(f, ARMS, 17.0, 17.6) | band(f, ARMS, 18.4, 19.0) | band(f, ARMS, 19.8, 20.4), "paint", col, 0.0, [], "arm paint"))
         pieces.append(Piece("base", lambda f: (f.part == "body") & (f.name == "front") & ((f.Y + np.abs(f.X) * 0.7) % 2.2 < 0.5) & (f.Y > 15), "paint", col, 0.0, [], "chest paint"))
-    if role in ("warrior", "priest"):
+    if role in ("warrior", "priest") and not modern:
         col = P["trim"] if role == "warrior" else PIPECLAY
         pieces.append(Piece("base", face_paint(role), "paint", col, 0.0, [], "face paint"))
     return pieces
@@ -604,15 +614,15 @@ def render(row, gender, look, ao):
     return paint(outfit(row, gender, look), ao, zlib.crc32(f"{row['culture']}/{gender}/{look}".encode()))
 
 
-def indexed(img):
+def indexed(img, colours=255):
     """255 colours (median cut, Floyd-Steinberg dithered) plus one transparent index: half the size of the RGBA file,
     the same picture to the eye. 888 textures come to about 40 MB."""
     a = np.asarray(img)
     rgb = Image.fromarray(a[..., :3])
-    pal = rgb.quantize(255, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+    pal = rgb.quantize(colours, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
     idx = np.asarray(rgb.quantize(palette=pal, dither=Image.Dither.FLOYDSTEINBERG)).copy()
     idx[a[..., 3] == 0] = 255
     out = Image.fromarray(idx, "P")
-    out.putpalette(pal.getpalette()[:765] + [0, 0, 0])
+    out.putpalette(pal.getpalette()[:colours * 3] + [0, 0, 0] * (256 - colours))
     out.info["transparency"] = 255
     return out

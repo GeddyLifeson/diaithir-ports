@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "minecraft:iron_chain",
+    "L": "#c:ingots/iron",
+    "W": "minecraft:black_wool"
+  },
+  "pattern": [
+    "W",
+    "C",
+    "L"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:black_bar_stool"
+  }
+}

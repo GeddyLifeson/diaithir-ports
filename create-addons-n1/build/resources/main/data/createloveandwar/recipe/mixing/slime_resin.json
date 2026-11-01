@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:slime_ball",
+  "minecraft:paper"
+ ],
+ "results": [
+  {
+   "id": "createloveandwar:slime_resin",
+   "count": 2
+  }
+ ]
+}

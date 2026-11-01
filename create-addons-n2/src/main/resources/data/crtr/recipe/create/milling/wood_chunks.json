@@ -1,0 +1,11 @@
+{
+ "type": "create:milling",
+ "processing_time": 200,
+ "ingredient": "#minecraft:logs",
+ "results": [
+  {
+   "id": "crtr:wood_chunks",
+   "count": 4
+  }
+ ]
+}

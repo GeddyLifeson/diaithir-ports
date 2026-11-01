@@ -1,0 +1,18 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "B": "createloveandwar:barrel_iron",
+  "R": "createloveandwar:revolver_action_iron",
+  "G": "createloveandwar:grip_wood",
+  "S": "createloveandwar:stock_wood"
+ },
+ "pattern": [
+  "BR ",
+  " GS"
+ ],
+ "result": {
+  "id": "createloveandwar:navycarbine"
+ },
+ "show_notification": true
+}

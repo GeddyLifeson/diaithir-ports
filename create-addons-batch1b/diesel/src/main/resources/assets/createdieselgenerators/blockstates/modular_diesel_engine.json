@@ -1,0 +1,124 @@
+{
+ "variants": {
+  "facing=north,lit=true,pipe=true,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine"
+  },
+  "facing=north,lit=true,pipe=true,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine"
+  },
+  "facing=north,lit=false,pipe=true,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine"
+  },
+  "facing=north,lit=false,pipe=true,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine"
+  },
+  "facing=north,lit=true,pipe=false,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine"
+  },
+  "facing=north,lit=true,pipe=false,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine"
+  },
+  "facing=north,lit=false,pipe=false,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine"
+  },
+  "facing=north,lit=false,pipe=false,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine"
+  },
+  "facing=east,lit=true,pipe=true,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 90
+  },
+  "facing=east,lit=true,pipe=true,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 90
+  },
+  "facing=east,lit=false,pipe=true,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 90
+  },
+  "facing=east,lit=false,pipe=true,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 90
+  },
+  "facing=east,lit=true,pipe=false,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 90
+  },
+  "facing=east,lit=true,pipe=false,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 90
+  },
+  "facing=east,lit=false,pipe=false,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 90
+  },
+  "facing=east,lit=false,pipe=false,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 90
+  },
+  "facing=south,lit=true,pipe=true,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 180
+  },
+  "facing=south,lit=true,pipe=true,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 180
+  },
+  "facing=south,lit=false,pipe=true,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 180
+  },
+  "facing=south,lit=false,pipe=true,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 180
+  },
+  "facing=south,lit=true,pipe=false,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 180
+  },
+  "facing=south,lit=true,pipe=false,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 180
+  },
+  "facing=south,lit=false,pipe=false,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 180
+  },
+  "facing=south,lit=false,pipe=false,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 180
+  },
+  "facing=west,lit=true,pipe=true,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 270
+  },
+  "facing=west,lit=true,pipe=true,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 270
+  },
+  "facing=west,lit=false,pipe=true,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 270
+  },
+  "facing=west,lit=false,pipe=true,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 270
+  },
+  "facing=west,lit=true,pipe=false,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 270
+  },
+  "facing=west,lit=true,pipe=false,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 270
+  },
+  "facing=west,lit=false,pipe=false,powered=true": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 270
+  },
+  "facing=west,lit=false,pipe=false,powered=false": {
+   "model": "createdieselgenerators:block/modular_diesel_engine",
+   "y": 270
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:prismarine_shard",
+    "color": 12627034,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:diaithir.moirtigerna",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:dolphins_grace",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "diaithir.moirtigerna_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

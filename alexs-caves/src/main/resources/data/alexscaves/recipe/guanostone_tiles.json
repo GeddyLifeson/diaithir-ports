@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA",
+    "AA"
+  ],
+  "key": {
+    "A": "alexscaves:guanostone_bricks"
+  },
+  "result": {
+    "count": 4,
+    "id": "alexscaves:guanostone_tiles"
+  }
+}

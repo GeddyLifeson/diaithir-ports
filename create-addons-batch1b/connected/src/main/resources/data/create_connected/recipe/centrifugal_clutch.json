@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create:clutch",
+  "create:electron_tube"
+ ],
+ "result": {
+  "id": "create_connected:centrifugal_clutch",
+  "count": 1
+ }
+}

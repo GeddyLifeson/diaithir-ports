@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 11259493,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_upper_tigris_epipalaeolithic_protoneolit.matuirbeindteigi",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:haste",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "a1_upper_tigris_epipalaeolithic_protoneolit.matuirbeindteigi_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

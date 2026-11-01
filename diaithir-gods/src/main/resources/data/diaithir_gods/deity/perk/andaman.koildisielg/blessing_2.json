@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:oak_sapling",
+    "color": 7653736,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:andaman.koildisielg",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "andaman.koildisielg_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

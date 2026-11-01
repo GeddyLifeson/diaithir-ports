@@ -1,0 +1,620 @@
+{
+ "id": "diaithir_classes:handbook",
+ "title": "Laech",
+ "chapters": [
+  {
+   "class_id": "fian",
+   "name": "Laech",
+   "text": "",
+   "school": "physical_melee",
+   "weapons": [
+    {
+     "id": "diaithir_classes:fian_sword_bronze",
+     "name": "Klaidem laech krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:fian_spear_bronze",
+     "name": "Slieg laech krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:fian_sword_steel",
+     "name": "Klaidem laech kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:fian_spear_steel",
+     "name": "Slieg laech kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:fian_sword_composite",
+     "name": "Klaidem laech kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:fian_spear_composite",
+     "name": "Slieg laech kriadach",
+     "age": "VII"
+    }
+   ],
+   "armour": [
+    {
+     "id": "diaithir_classes:fian_helmet_bronze",
+     "name": "Klogaid laech krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:fian_chestplate_bronze",
+     "name": "Broildech laech krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:fian_leggings_bronze",
+     "name": "Kas laech krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:fian_boots_bronze",
+     "name": "Bòtund laech krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:fian_helmet_steel",
+     "name": "Klogaid laech kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:fian_chestplate_steel",
+     "name": "Broildech laech kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:fian_leggings_steel",
+     "name": "Kas laech kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:fian_boots_steel",
+     "name": "Bòtund laech kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:fian_helmet_composite",
+     "name": "Klogaid laech kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:fian_chestplate_composite",
+     "name": "Broildech laech kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:fian_leggings_composite",
+     "name": "Kas laech kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:fian_boots_composite",
+     "name": "Bòtund laech kriadach",
+     "age": "VII"
+    }
+   ],
+   "spells": [
+    {
+     "id": "diaithir_classes:fian_shout",
+     "name": "Kaein kogad",
+     "age": "III",
+     "text": "A war shout: you and allies within 8 blocks gain Strength and Resistance for 10 seconds."
+    },
+    {
+     "id": "diaithir_classes:fian_charge",
+     "name": "Koskais kogad",
+     "age": "III",
+     "text": "You rush forward with Speed II and a short Resistance."
+    },
+    {
+     "id": "diaithir_classes:fian_spear_cast",
+     "name": "Slieg tilig",
+     "age": "V",
+     "text": "Hold to draw, release to throw the spear you hold: {damage} damage with heavy knockback. A longer draw flies further."
+    },
+    {
+     "id": "diaithir_classes:fian_ground_blow",
+     "name": "Talum sèidi",
+     "age": "VII",
+     "text": "You drive your weapon into the ground: foes within 6 blocks take {damage}, are thrown up and slowed."
+    },
+    {
+     "id": "diaithir_classes:fian_rage_bronze",
+     "name": "Boili krèuma",
+     "age": "III",
+     "text": "When struck there is a 15 percent chance to rage: Strength II for 5 seconds."
+    },
+    {
+     "id": "diaithir_classes:fian_rage_steel",
+     "name": "Boili kruoid",
+     "age": "V",
+     "text": "When struck there is a 20 percent chance to rage: Strength II for 6 seconds."
+    },
+    {
+     "id": "diaithir_classes:fian_rage_composite",
+     "name": "Boili kriadach",
+     "age": "VII",
+     "text": "When struck there is a 25 percent chance to rage: Strength II for 7 seconds."
+    }
+   ]
+  },
+  {
+   "class_id": "sleagh",
+   "name": "Bogaduir",
+   "text": "",
+   "school": "physical_ranged",
+   "weapons": [
+    {
+     "id": "diaithir_classes:sleagh_bow_bronze",
+     "name": "Umlaig bogaduir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:sleagh_sling_bronze",
+     "name": "Krandtabuild bogaduir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:sleagh_bow_steel",
+     "name": "Umlaig bogaduir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:sleagh_sling_steel",
+     "name": "Krandtabuild bogaduir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:sleagh_bow_composite",
+     "name": "Umlaig bogaduir kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:sleagh_sling_composite",
+     "name": "Krandtabuild bogaduir kriadach",
+     "age": "VII"
+    }
+   ],
+   "armour": [
+    {
+     "id": "diaithir_classes:sleagh_helmet_bronze",
+     "name": "Klogaid bogaduir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:sleagh_chestplate_bronze",
+     "name": "Broildech bogaduir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:sleagh_leggings_bronze",
+     "name": "Kas bogaduir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:sleagh_boots_bronze",
+     "name": "Bòtund bogaduir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:sleagh_helmet_steel",
+     "name": "Klogaid bogaduir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:sleagh_chestplate_steel",
+     "name": "Broildech bogaduir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:sleagh_leggings_steel",
+     "name": "Kas bogaduir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:sleagh_boots_steel",
+     "name": "Bòtund bogaduir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:sleagh_helmet_composite",
+     "name": "Klogaid bogaduir kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:sleagh_chestplate_composite",
+     "name": "Broildech bogaduir kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:sleagh_leggings_composite",
+     "name": "Kas bogaduir kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:sleagh_boots_composite",
+     "name": "Bòtund bogaduir kriadach",
+     "age": "VII"
+    }
+   ],
+   "spells": [
+    {
+     "id": "diaithir_classes:sleagh_volley",
+     "name": "Fraus",
+     "age": "III",
+     "text": "You loose four arrows in quick order, each for 60 percent of an arrow's damage. Needs arrows."
+    },
+    {
+     "id": "diaithir_classes:sleagh_net_trap",
+     "name": "Glaun ribi",
+     "age": "III",
+     "text": "A hidden net of cord at the target ground for 8 seconds: foes inside are heavily slowed and take light damage."
+    },
+    {
+     "id": "diaithir_classes:sleagh_sling_shot",
+     "name": "Klach urchuir",
+     "age": "III",
+     "text": "A sling stone: {damage} damage at range, quick to reload."
+    },
+    {
+     "id": "diaithir_classes:sleagh_hawk_eye",
+     "name": "Siebag sùili",
+     "age": "V",
+     "text": "Foes within 16 blocks glow for 10 seconds, and you gain Speed for 8."
+    },
+    {
+     "id": "diaithir_classes:sleagh_keen_bronze",
+     "name": "Dèideil sùili krèuma",
+     "age": "III",
+     "text": "An arrow that hits has a 15 percent chance to slow the target for 2 seconds."
+    },
+    {
+     "id": "diaithir_classes:sleagh_keen_steel",
+     "name": "Dèideil sùili kruoid",
+     "age": "V",
+     "text": "An arrow that hits has a 20 percent chance to slow the target for 3 seconds."
+    },
+    {
+     "id": "diaithir_classes:sleagh_keen_composite",
+     "name": "Dèideil sùili kriadach",
+     "age": "VII",
+     "text": "An arrow that hits has a 25 percent chance to slow the target for 4 seconds."
+    }
+   ]
+  },
+  {
+   "class_id": "ceilg",
+   "name": "Sielguir",
+   "text": "",
+   "school": "physical_melee",
+   "weapons": [
+    {
+     "id": "diaithir_classes:ceilg_dagger_bronze",
+     "name": "Biudag sielguir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:ceilg_dagger_steel",
+     "name": "Biudag sielguir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:ceilg_dagger_composite",
+     "name": "Biudag sielguir kriadach",
+     "age": "VII"
+    }
+   ],
+   "armour": [
+    {
+     "id": "diaithir_classes:ceilg_helmet_bronze",
+     "name": "Klogaid sielguir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:ceilg_chestplate_bronze",
+     "name": "Broildech sielguir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:ceilg_leggings_bronze",
+     "name": "Kas sielguir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:ceilg_boots_bronze",
+     "name": "Bòtund sielguir krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:ceilg_helmet_steel",
+     "name": "Klogaid sielguir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:ceilg_chestplate_steel",
+     "name": "Broildech sielguir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:ceilg_leggings_steel",
+     "name": "Kas sielguir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:ceilg_boots_steel",
+     "name": "Bòtund sielguir kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:ceilg_helmet_composite",
+     "name": "Klogaid sielguir kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:ceilg_chestplate_composite",
+     "name": "Broildech sielguir kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:ceilg_leggings_composite",
+     "name": "Kas sielguir kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:ceilg_boots_composite",
+     "name": "Bòtund sielguir kriadach",
+     "age": "VII"
+    }
+   ],
+   "spells": [
+    {
+     "id": "diaithir_classes:ceilg_shadow_cloak",
+     "name": "Failes faulduind",
+     "age": "III",
+     "text": "You fade from sight for 6 seconds and move faster."
+    },
+    {
+     "id": "diaithir_classes:ceilg_ambush",
+     "name": "Fieldulach",
+     "age": "III",
+     "text": "You step behind the foe you look at and stab for {damage}."
+    },
+    {
+     "id": "diaithir_classes:ceilg_knife_fan",
+     "name": "Skian failes",
+     "age": "V",
+     "text": "You throw six knives in a fan, each for {damage}."
+    },
+    {
+     "id": "diaithir_classes:ceilg_mark_prey",
+     "name": "Komurra kriech",
+     "age": "VII",
+     "text": "Mark the foe you look at: it glows for 10 seconds, is weakened for 6 and slowed for 3."
+    },
+    {
+     "id": "diaithir_classes:ceilg_bleed_bronze",
+     "name": "Siel foil krèuma",
+     "age": "III",
+     "text": "A melee hit has a 20 percent chance to poison the target for 3 seconds."
+    },
+    {
+     "id": "diaithir_classes:ceilg_bleed_steel",
+     "name": "Siel foil kruoid",
+     "age": "V",
+     "text": "A melee hit has a 25 percent chance to poison the target for 4 seconds."
+    },
+    {
+     "id": "diaithir_classes:ceilg_bleed_composite",
+     "name": "Siel foil kriadach",
+     "age": "VII",
+     "text": "A melee hit has a 30 percent chance to poison the target for 5 seconds."
+    }
+   ]
+  },
+  {
+   "class_id": "cleirech",
+   "name": "Ligichi",
+   "text": "",
+   "school": "healing",
+   "weapons": [
+    {
+     "id": "diaithir_classes:cleirech_crozier_bronze",
+     "name": "Meirlech ligichi krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:cleirech_crozier_steel",
+     "name": "Meirlech ligichi kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:cleirech_crozier_composite",
+     "name": "Meirlech ligichi kriadach",
+     "age": "VII"
+    }
+   ],
+   "armour": [
+    {
+     "id": "diaithir_classes:cleirech_helmet_bronze",
+     "name": "Klogaid ligichi krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:cleirech_chestplate_bronze",
+     "name": "Broildech ligichi krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:cleirech_leggings_bronze",
+     "name": "Kas ligichi krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:cleirech_boots_bronze",
+     "name": "Bòtund ligichi krèuma",
+     "age": "III"
+    },
+    {
+     "id": "diaithir_classes:cleirech_helmet_steel",
+     "name": "Klogaid ligichi kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:cleirech_chestplate_steel",
+     "name": "Broildech ligichi kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:cleirech_leggings_steel",
+     "name": "Kas ligichi kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:cleirech_boots_steel",
+     "name": "Bòtund ligichi kruoid",
+     "age": "V"
+    },
+    {
+     "id": "diaithir_classes:cleirech_helmet_composite",
+     "name": "Klogaid ligichi kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:cleirech_chestplate_composite",
+     "name": "Broildech ligichi kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:cleirech_leggings_composite",
+     "name": "Kas ligichi kriadach",
+     "age": "VII"
+    },
+    {
+     "id": "diaithir_classes:cleirech_boots_composite",
+     "name": "Bòtund ligichi kriadach",
+     "age": "VII"
+    }
+   ],
+   "spells": [
+    {
+     "id": "diaithir_classes:cleirech_mercy",
+     "name": "Tròkuir",
+     "age": "III",
+     "text": "A quiet word heals the one you look at (yourself if none) for {heal}."
+    },
+    {
+     "id": "diaithir_classes:cleirech_aegis",
+     "name": "Skiad",
+     "age": "III",
+     "text": "A ward over the one you look at (yourself if none): Absorption II for 14 seconds and Resistance for 8."
+    },
+    {
+     "id": "diaithir_classes:cleirech_smite",
+     "name": "Buoil soulas",
+     "age": "V",
+     "text": "A bolt of sunfire: {damage} fire damage and the target burns for 3 seconds."
+    },
+    {
+     "id": "diaithir_classes:cleirech_sanctuary",
+     "name": "Komraig",
+     "age": "VII",
+     "text": "A ring of safe ground for 8 seconds: everyone inside is healed {heal} each second."
+    },
+    {
+     "id": "diaithir_classes:cleirech_ward_bronze",
+     "name": "Seòmureisluinti krèuma",
+     "age": "III",
+     "text": "When struck there is a 15 percent chance to gain Absorption II for 4 seconds."
+    },
+    {
+     "id": "diaithir_classes:cleirech_ward_steel",
+     "name": "Seòmureisluinti kruoid",
+     "age": "V",
+     "text": "When struck there is a 20 percent chance to gain Absorption II for 5 seconds."
+    },
+    {
+     "id": "diaithir_classes:cleirech_ward_composite",
+     "name": "Seòmureisluinti kriadach",
+     "age": "VII",
+     "text": "When struck there is a 25 percent chance to gain Absorption II for 6 seconds."
+    }
+   ]
+  }
+ ],
+ "runes": [
+  {
+   "id": "diaithir_classes:rune_beith",
+   "name": "Lietirrùin beiti",
+   "effect": "+5% spell haste",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_luis",
+   "name": "Lietirrùin kaerund",
+   "effect": "+1 armour",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_fearn",
+   "name": "Lietirrùin feàrnad",
+   "effect": "+1 attack damage",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_sail",
+   "name": "Lietirrùin seilech",
+   "effect": "+1 healing power",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_nion",
+   "name": "Lietirrùin luoitri",
+   "effect": "+1 ranged damage",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_uath",
+   "name": "Lietirrùin skitech",
+   "effect": "+1 toughness",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_dair",
+   "name": "Lietirrùin daurach",
+   "effect": "+2 health",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_tinne",
+   "name": "Lietirrùin koilend",
+   "effect": "+3% spell crit chance",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_coll",
+   "name": "Lietirrùin kaldtuind",
+   "effect": "+8% spell crit damage",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_iodhadh",
+   "name": "Lietirrùin iubur",
+   "effect": "+10% knockback resistance",
+   "age": "III"
+  },
+  {
+   "id": "diaithir_classes:rune_ruis",
+   "name": "Lietirrùin èilder",
+   "effect": "+5% spell resistance",
+   "age": "III"
+  }
+ ]
+}

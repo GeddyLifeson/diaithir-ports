@@ -1,0 +1,28 @@
+{
+ "values": [
+  {
+   "id": "diaithirarms:mail_bow",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:steel_bow",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:tempered_bow",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:composite_bow",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:rodos_bow",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:future_bow",
+   "required": false
+  }
+ ]
+}

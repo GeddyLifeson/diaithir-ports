@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "iceandfire:dragonsteel_fire_block"
+  },
+  "pattern": [
+    "   ",
+    "  #",
+    "## "
+  ],
+  "result": {
+    "id": "iceandfire:dragonarmor_dragon_steel_fire_tail"
+  },
+  "show_notification": true
+}

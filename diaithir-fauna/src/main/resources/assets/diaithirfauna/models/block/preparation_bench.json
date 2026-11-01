@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirfauna:block/preparation_bench_top",
+  "side": "diaithirfauna:block/preparation_bench_side"
+ }
+}

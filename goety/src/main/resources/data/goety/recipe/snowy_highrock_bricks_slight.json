@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:highrock_bricks",
+  "S": "minecraft:snowball"
+ },
+ "pattern": [
+  "#S",
+  "S#"
+ ],
+ "result": {
+  "id": "goety:snowy_highrock_bricks_slight",
+  "count": 2
+ }
+}

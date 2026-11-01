@@ -1,0 +1,15 @@
+{
+ "type": "craft",
+ "school": "magic",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "#c:storage_blocks/lapis",
+  "goety:cursed_ingot",
+  "goety:cursed_ingot",
+  "minecraft:potion"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:soul_heal_focus",
+ "count": 1
+}

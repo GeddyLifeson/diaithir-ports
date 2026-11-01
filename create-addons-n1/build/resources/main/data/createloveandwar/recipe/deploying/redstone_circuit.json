@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:slime_resin_sheet",
+ "ingredient": "minecraft:redstone",
+ "results": [
+  {
+   "id": "createloveandwar:redstone_circuit"
+  }
+ ]
+}

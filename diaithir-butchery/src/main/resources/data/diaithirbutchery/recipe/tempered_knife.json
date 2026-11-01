@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirbutchery:steel_knife",
+  "#diaithirbutchery:steel_ingots",
+  "minecraft:blaze_powder"
+ ],
+ "result": {
+  "id": "diaithirbutchery:tempered_knife"
+ }
+}

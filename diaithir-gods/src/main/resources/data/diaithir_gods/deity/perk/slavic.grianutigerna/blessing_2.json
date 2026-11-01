@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:minecart",
+    "color": 5796004,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:slavic.grianutigerna",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:regeneration",
+        "Amplifier": 1,
+        "Duration": 400,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "slavic.grianutigerna_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

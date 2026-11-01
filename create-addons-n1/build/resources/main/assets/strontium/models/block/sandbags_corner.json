@@ -1,0 +1,30 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+        "0": "strontium:block/sandbags-side",
+        "1": "strontium:block/sandbags-top",
+		"particle" : "strontium:block/sandbags-side"
+    },
+	"elements": [
+		{
+			"name": "Corner_NE",
+			"from": [12, 0, 0],
+			"to": [16, 16, 4],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 16], "texture": "#0"},
+				"east": {"uv": [16, 0, 12, 16], "texture": "#0"},
+				"up": {"uv": [10, 0, 14, 4], "texture": "#1"},
+				"down": {"uv": [10, 0, 14, 4], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "sandbags_corner",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

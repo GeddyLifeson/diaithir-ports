@@ -1,0 +1,42 @@
+{
+ "name": "sielguir kruoid",
+ "items": [
+  "diaithir_classes:ceilg_helmet_steel",
+  "diaithir_classes:ceilg_chestplate_steel",
+  "diaithir_classes:ceilg_leggings_steel",
+  "diaithir_classes:ceilg_boots_steel"
+ ],
+ "bonuses": [
+  {
+   "required_piece_count": 2,
+   "attributes": [
+    {
+     "type": "spell_power:critical_chance",
+     "id": "diaithir_classes:set_ceilg_steel_2_0",
+     "amount": 0.05,
+     "operation": "add_multiplied_base",
+     "slot": "any"
+    }
+   ]
+  },
+  {
+   "required_piece_count": 4,
+   "attributes": [
+    {
+     "type": "minecraft:movement_speed",
+     "id": "diaithir_classes:set_ceilg_steel_4_0",
+     "amount": 0.06,
+     "operation": "add_multiplied_base",
+     "slot": "any"
+    }
+   ],
+   "spells": {
+    "access": "NONE",
+    "max_spell_count": 1,
+    "spell_ids": [
+     "diaithir_classes:ceilg_bleed_steel"
+    ]
+   }
+  }
+ ]
+}

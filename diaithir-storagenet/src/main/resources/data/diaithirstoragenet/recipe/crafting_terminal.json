@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "diaithirstoragenet:terminal",
+    "minecraft:crafting_table"
+  ],
+  "result": {
+    "id": "diaithirstoragenet:crafting_terminal",
+    "count": 1
+  },
+  "category": "misc"
+}

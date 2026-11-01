@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "#minecraft:fishes",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "fluid": "create:potion",
+  "amount": 5265
+ },
+ "result": {
+  "id": "minecraft:pufferfish"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#c:ingots/bronze",
+  "minecraft:stick",
+  "diaithir_classes:ceilg_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_dagger_bronze",
+  "count": 1
+ }
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:trident",
+    "color": 12627034,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:diaithir.soulaslam",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:regeneration",
+        "Amplifier": 1,
+        "Duration": 400,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "diaithir.soulaslam_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

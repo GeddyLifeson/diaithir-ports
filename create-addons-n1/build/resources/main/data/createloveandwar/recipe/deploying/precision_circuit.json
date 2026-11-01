@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:redstone_circuit",
+ "ingredient": "create:precision_mechanism",
+ "results": [
+  {
+   "id": "createloveandwar:precision_circuit"
+  }
+ ]
+}

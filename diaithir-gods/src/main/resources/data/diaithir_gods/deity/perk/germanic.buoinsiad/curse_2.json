@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:porkchop",
+    "color": 13593709,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:germanic.buoinsiad",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:hunger",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "germanic.buoinsiad_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

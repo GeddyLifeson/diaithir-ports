@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:haunted_planks"
+ },
+ "pattern": [
+  "##"
+ ],
+ "result": {
+  "id": "goety:haunted_pressure_plate",
+  "count": 1
+ }
+}

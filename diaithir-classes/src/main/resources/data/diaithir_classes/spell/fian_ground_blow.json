@@ -1,0 +1,95 @@
+{
+ "school": "spell_power:physical_melee",
+ "range": 6.0,
+ "tier": 2,
+ "group": "fian_battle",
+ "learn": {},
+ "active": {
+  "cast": {
+   "duration": 0.9,
+   "animation": {
+    "id": "spell_engine:one_handed_ground_charge"
+   },
+   "sound": {
+    "id": "spell_engine:generic_soul_casting"
+   },
+   "particles": [
+    {
+     "id": "spell_engine:magic_rage",
+     "appearance": {
+      "color": 2519216895,
+      "motion": "ASCEND"
+     },
+     "batch": {
+      "count": 2.0,
+      "shape": "PIPE",
+      "anchor": "ENTITY",
+      "min_speed": 0.03,
+      "max_speed": 0.08
+     }
+    }
+   ]
+  }
+ },
+ "release": {
+  "animation": {
+   "id": "spell_engine:one_handed_area_release"
+  },
+  "sound": {
+   "id": "spell_engine:weapon_swipe_launch"
+  }
+ },
+ "target": {
+  "type": "AREA",
+  "area": {
+   "vertical_range_multiplier": 0.6
+  }
+ },
+ "deliver": {
+  "type": "DIRECT"
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "DAMAGE",
+    "damage": {
+     "spell_power_coefficient": 0.9,
+     "knockback": 1.0
+    }
+   }
+  },
+  {
+   "action": {
+    "type": "VELOCITY",
+    "velocity": {
+     "frame": "ORIGIN",
+     "push": {
+      "x": 0.0,
+      "y": 0.35,
+      "z": 0.8
+     },
+     "power_coefficient": 0.0,
+     "reset_velocity": false,
+     "intent": "HARMFUL"
+    }
+   }
+  },
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:slowness",
+     "duration": 2.0,
+     "amplifier": 1,
+     "apply_mode": "SET"
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 16.0
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+  "preset": "stalker",
+  "width": 1.4,
+  "height": 0.9,
+  "stats": {
+    "health": 36,
+    "armor": 0,
+    "damage": 7,
+    "speed": 0.5,
+    "follow_range": 40
+  },
+  "spawn": {
+    "biomes": "c:is_swamp",
+    "weight": 2,
+    "max_light": 4,
+    "min_age": "IV"
+  },
+  "loot_table": "diaithirbestiary:entities/marrowcrawl"
+}

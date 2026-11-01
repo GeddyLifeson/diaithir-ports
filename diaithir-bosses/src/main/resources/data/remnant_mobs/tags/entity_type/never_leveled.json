@@ -1,0 +1,109 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "diaithirbosses:botunkas",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:bronze_warking",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:ceramic_warlord",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:driegunmorgil",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:driegunsalund",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:famuirmeirgi",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:iron_walker",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:maerkistechuimni",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:maktirikriuch",
+   "required": false
+  },
+  {
+   "id": "diaithir_myth:natuirkriegach",
+   "required": false
+  },
+  {
+   "id": "diaithir_myth:natuirmoir",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:natuirrig",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:natuirsaegul",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:natuirtuar",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:niechgleididdouras",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:oilebeistbouglach",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:ridiriknok",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:rot_swarm_lord",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:steel_marshal",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:stoirmiduislach",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:stone_colossus",
+   "required": false
+  },
+  {
+   "id": "diaithir_myth:tarbiumachuoirtach",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:tarbspeiri",
+   "required": false
+  },
+  {
+   "id": "diaithir_myth:toimsechunleomund",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:toisechmarb",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:tribal_chief",
+   "required": false
+  }
+ ]
+}

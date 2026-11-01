@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "C": "minecraft:copper_ingot",
+    "R": "minecraft:redstone",
+    "U": "minecraft:cauldron",
+    "F": "minecraft:furnace"
+  },
+  "pattern": [
+    "ICI",
+    "RUR",
+    "IFI"
+  ],
+  "result": {
+    "id": "diaithirforgeworks:crucible_age4",
+    "count": 1
+  }
+}

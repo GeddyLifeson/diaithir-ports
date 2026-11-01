@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:bow",
+    "color": 11510707,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:hellenic.gielachsielguir",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 0,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "hellenic.gielachsielguir_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "create_electric_stonks:blocks/resonance_coil_block_up",
+    "side": "create_electric_stonks:blocks/resonance_coil_block"
+  }
+}

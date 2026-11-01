@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:leather",
+  "minecraft:string",
+  "diaithirarms:ceramic_plate",
+  "diaithirarms:ceramic_plate",
+  "diaithirarms:ceramic_plate",
+  "diaithir_classes:sleagh_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:sleagh_sling_composite",
+  "count": 1
+ }
+}

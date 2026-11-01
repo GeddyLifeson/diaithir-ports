@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:clock",
+    "color": 9994396,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:plains.diumuirechdmoru",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "plains.diumuirechdmoru_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

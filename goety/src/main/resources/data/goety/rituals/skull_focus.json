@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "necroturgy",
+ "activation": "goety:soul_bolt_focus",
+ "offerings": [
+  "minecraft:skeleton_skull",
+  "goety:ectoplasm",
+  "goety:ectoplasm",
+  "minecraft:skeleton_skull",
+  "#minecraft:soul_fire_base_blocks",
+  "minecraft:skeleton_skull",
+  "#minecraft:soul_fire_base_blocks",
+  "#minecraft:soul_fire_base_blocks"
+ ],
+ "soul_cost": 1,
+ "duration": 30,
+ "result": "goety:skull_focus",
+ "count": 1
+}

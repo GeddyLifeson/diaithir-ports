@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:iron_pickaxe",
+  "minecraft:end_portal_frame",
+  "minecraft:tnt"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:end_portal_breaker_crate"
+  }
+ ]
+}

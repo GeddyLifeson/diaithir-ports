@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:bronze_helmet",
+  "diaithir_classes:ceilg_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_helmet_bronze",
+  "count": 1
+ }
+}

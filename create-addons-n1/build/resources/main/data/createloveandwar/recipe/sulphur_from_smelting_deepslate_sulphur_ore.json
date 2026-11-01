@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "cookingtime": 200,
+ "experience": 0.25,
+ "group": "sulphur",
+ "ingredient": "createloveandwar:deepslate_sulphur_ore",
+ "result": {
+  "id": "createloveandwar:sulphur"
+ }
+}

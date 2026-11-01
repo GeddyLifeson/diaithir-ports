@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:salmon",
+    "color": 11712440,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_russian_plain_volga_and_urals_final_pala.tigernabradunklachachur",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_russian_plain_volga_and_urals_final_pala.tigernabradunklachachur_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

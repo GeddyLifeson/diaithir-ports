@@ -1,0 +1,17 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "crtr:powdered_coal"
+ ],
+ "results": [
+  {
+   "id": "crtr:briquette"
+  },
+  {
+   "id": "crtr:briquette"
+  },
+  {
+   "id": "crtr:briquette"
+  }
+ ]
+}

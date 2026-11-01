@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "alexscaves:guanostone",
+  "result": {
+    "id": "alexscaves:guanostone_chiseled",
+    "count": 1
+  }
+}

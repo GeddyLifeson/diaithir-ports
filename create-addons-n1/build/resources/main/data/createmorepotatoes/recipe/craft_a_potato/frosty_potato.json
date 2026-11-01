@@ -1,0 +1,14 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:ice",
+  "minecraft:potato",
+  "minecraft:potato"
+ ],
+ "results": [
+  {
+   "id": "createmorepotatoes:frosty_potato",
+   "count": 2
+  }
+ ]
+}

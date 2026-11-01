@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "iceandfire:raw_silver_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "iceandfire:raw_silver"
+  }
+}

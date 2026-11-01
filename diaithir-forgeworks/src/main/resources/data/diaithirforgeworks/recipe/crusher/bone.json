@@ -1,0 +1,15 @@
+{
+  "type": "diaithirforgeworks:crusher",
+  "inputs": [
+    {
+      "ingredient": "minecraft:bone",
+      "count": 1
+    }
+  ],
+  "energy": 800,
+  "time": 80,
+  "result": {
+    "id": "minecraft:bone_meal",
+    "count": 6
+  }
+}

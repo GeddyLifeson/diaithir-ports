@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 5992863,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_yenisei_upper_palaeolithic_afontova_gora.spiuradklachkoildiachur",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "a1_yenisei_upper_palaeolithic_afontova_gora.spiuradklachkoildiachur_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

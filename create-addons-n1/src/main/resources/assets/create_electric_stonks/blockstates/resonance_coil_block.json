@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "create_electric_stonks:block/resonance_coil_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "create_electric_stonks:block/resonance_coil_block_vertical"
+    },
+    "axis=z": {
+      "model": "create_electric_stonks:block/resonance_coil_block",
+      "x": 90
+    }
+  }
+}

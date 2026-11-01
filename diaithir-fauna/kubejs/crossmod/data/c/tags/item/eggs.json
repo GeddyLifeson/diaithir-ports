@@ -1,0 +1,109 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "iceandfire:dragonegg_amethyst",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_black",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_blue",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_bronze",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_copper",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_electric",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_gray",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_green",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_red",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_sapphire",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_silver",
+   "required": false
+  },
+  {
+   "id": "iceandfire:dragonegg_white",
+   "required": false
+  },
+  {
+   "id": "iceandfire:deathworm_egg",
+   "required": false
+  },
+  {
+   "id": "iceandfire:deathworm_egg_giant",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_arowana",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_catfish",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_football_fish",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_giant_salamander",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_king_crab",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_newt",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_snake",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_softshell_turtle",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_spadefish",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_tarantula",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_tortoise",
+   "required": false
+  },
+  {
+   "id": "untamedwilds:egg_trevally",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,326 @@
+{
+ "bone_helmet": {
+  "diaithiris": "Klogaid knàim",
+  "english": "Bone Helmet"
+ },
+ "bone_chestplate": {
+  "diaithiris": "Broildech knàim",
+  "english": "Bone Chestplate"
+ },
+ "bone_leggings": {
+  "diaithiris": "Kas knàim",
+  "english": "Bone Leggings"
+ },
+ "bone_boots": {
+  "diaithiris": "Bòtund knàim",
+  "english": "Bone Boots"
+ },
+ "copper_helmet": {
+  "diaithiris": "Klogaid uma",
+  "english": "Copper Helmet"
+ },
+ "copper_chestplate": {
+  "diaithiris": "Broildech uma",
+  "english": "Copper Chestplate"
+ },
+ "copper_leggings": {
+  "diaithiris": "Kas uma",
+  "english": "Copper Leggings"
+ },
+ "copper_boots": {
+  "diaithiris": "Bòtund uma",
+  "english": "Copper Boots"
+ },
+ "bronze_helmet": {
+  "diaithiris": "Klogaid krèuma",
+  "english": "Bronze Helmet"
+ },
+ "bronze_chestplate": {
+  "diaithiris": "Broildech krèuma",
+  "english": "Bronze Chestplate"
+ },
+ "bronze_leggings": {
+  "diaithiris": "Kas krèuma",
+  "english": "Bronze Leggings"
+ },
+ "bronze_boots": {
+  "diaithiris": "Bòtund krèuma",
+  "english": "Bronze Boots"
+ },
+ "mail_helmet": {
+  "diaithiris": "Klogaid iarund",
+  "english": "Iron Mail Helmet"
+ },
+ "mail_chestplate": {
+  "diaithiris": "Broildech iarund",
+  "english": "Iron Mail Chestplate"
+ },
+ "mail_leggings": {
+  "diaithiris": "Kas iarund",
+  "english": "Iron Mail Leggings"
+ },
+ "mail_boots": {
+  "diaithiris": "Bòtund iarund",
+  "english": "Iron Mail Boots"
+ },
+ "steel_helmet": {
+  "diaithiris": "Klogaid kruoid",
+  "english": "Steel Helmet"
+ },
+ "steel_chestplate": {
+  "diaithiris": "Broildech kruoid",
+  "english": "Steel Chestplate"
+ },
+ "steel_leggings": {
+  "diaithiris": "Kas kruoid",
+  "english": "Steel Leggings"
+ },
+ "steel_boots": {
+  "diaithiris": "Bòtund kruoid",
+  "english": "Steel Boots"
+ },
+ "ballistic_helmet": {
+  "diaithiris": "Klogaid snàitlech",
+  "english": "Ballistic Helmet"
+ },
+ "ballistic_chestplate": {
+  "diaithiris": "Broildech snàitlech",
+  "english": "Ballistic Chestplate"
+ },
+ "ballistic_leggings": {
+  "diaithiris": "Kas snàitlech",
+  "english": "Ballistic Leggings"
+ },
+ "ballistic_boots": {
+  "diaithiris": "Bòtund snàitlech",
+  "english": "Ballistic Boots"
+ },
+ "composite_helmet": {
+  "diaithiris": "Klogaid kriadach",
+  "english": "Composite Helmet"
+ },
+ "composite_chestplate": {
+  "diaithiris": "Broildech kriadach",
+  "english": "Composite Chestplate"
+ },
+ "composite_leggings": {
+  "diaithiris": "Kas kriadach",
+  "english": "Composite Leggings"
+ },
+ "composite_boots": {
+  "diaithiris": "Bòtund kriadach",
+  "english": "Composite Boots"
+ },
+ "rodos_helmet": {
+  "diaithiris": "Klogaid kumask",
+  "english": "Rodos Alloy Helmet"
+ },
+ "rodos_chestplate": {
+  "diaithiris": "Broildech kumask",
+  "english": "Rodos Alloy Chestplate"
+ },
+ "rodos_leggings": {
+  "diaithiris": "Kas kumask",
+  "english": "Rodos Alloy Leggings"
+ },
+ "rodos_boots": {
+  "diaithiris": "Bòtund kumask",
+  "english": "Rodos Alloy Boots"
+ },
+ "future_helmet": {
+  "diaithiris": "Klogaid riondag",
+  "english": "Future Helmet"
+ },
+ "future_chestplate": {
+  "diaithiris": "Broildech riondag",
+  "english": "Future Chestplate"
+ },
+ "future_leggings": {
+  "diaithiris": "Kas riondag",
+  "english": "Future Leggings"
+ },
+ "future_boots": {
+  "diaithiris": "Bòtund riondag",
+  "english": "Future Boots"
+ },
+ "bone_bow": {
+  "diaithiris": "Umlaig knàim",
+  "english": "Bone Bow"
+ },
+ "bone_shield": {
+  "diaithiris": "Skiad knàim",
+  "english": "Bone Shield"
+ },
+ "copper_bow": {
+  "diaithiris": "Umlaig uma",
+  "english": "Copper Bow"
+ },
+ "copper_shield": {
+  "diaithiris": "Skiad uma",
+  "english": "Copper Shield"
+ },
+ "bronze_bow": {
+  "diaithiris": "Umlaig krèuma",
+  "english": "Bronze Bow"
+ },
+ "bronze_shield": {
+  "diaithiris": "Skiad krèuma",
+  "english": "Bronze Shield"
+ },
+ "mail_bow": {
+  "diaithiris": "Umlaig iarund",
+  "english": "Iron Mail Bow"
+ },
+ "mail_crossbow": {
+  "diaithiris": "Umlaig kroisi iarund",
+  "english": "Iron Mail Crossbow"
+ },
+ "mail_shield": {
+  "diaithiris": "Skiad iarund",
+  "english": "Iron Mail Shield"
+ },
+ "steel_sword": {
+  "diaithiris": "Klaidem kruoid",
+  "english": "Steel Sword"
+ },
+ "steel_axe": {
+  "diaithiris": "Tuog kruoid",
+  "english": "Steel Axe"
+ },
+ "steel_spear": {
+  "diaithiris": "Slieg kruoid",
+  "english": "Steel Spear"
+ },
+ "steel_bow": {
+  "diaithiris": "Umlaig kruoid",
+  "english": "Steel Bow"
+ },
+ "steel_crossbow": {
+  "diaithiris": "Umlaig kroisi kruoid",
+  "english": "Steel Crossbow"
+ },
+ "steel_shield": {
+  "diaithiris": "Skiad kruoid",
+  "english": "Steel Shield"
+ },
+ "tempered_sword": {
+  "diaithiris": "Klaidem doirbi",
+  "english": "Tempered Sword"
+ },
+ "tempered_axe": {
+  "diaithiris": "Tuog doirbi",
+  "english": "Tempered Axe"
+ },
+ "tempered_spear": {
+  "diaithiris": "Slieg doirbi",
+  "english": "Tempered Spear"
+ },
+ "tempered_bow": {
+  "diaithiris": "Umlaig doirbi",
+  "english": "Tempered Bow"
+ },
+ "tempered_crossbow": {
+  "diaithiris": "Umlaig kroisi doirbi",
+  "english": "Tempered Crossbow"
+ },
+ "tempered_shield": {
+  "diaithiris": "Skiad doirbi",
+  "english": "Tempered Shield"
+ },
+ "composite_sword": {
+  "diaithiris": "Klaidem mieskaichti",
+  "english": "Composite Sword"
+ },
+ "composite_axe": {
+  "diaithiris": "Tuog mieskaichti",
+  "english": "Composite Axe"
+ },
+ "composite_spear": {
+  "diaithiris": "Slieg mieskaichti",
+  "english": "Composite Spear"
+ },
+ "composite_bow": {
+  "diaithiris": "Umlaig mieskaichti",
+  "english": "Composite Bow"
+ },
+ "composite_crossbow": {
+  "diaithiris": "Umlaig kroisi mieskaichti",
+  "english": "Composite Crossbow"
+ },
+ "composite_shield": {
+  "diaithiris": "Skiad mieskaichti",
+  "english": "Composite Shield"
+ },
+ "rodos_sword": {
+  "diaithiris": "Klaidem kumask",
+  "english": "Rodos Alloy Sword"
+ },
+ "rodos_axe": {
+  "diaithiris": "Tuog kumask",
+  "english": "Rodos Alloy Axe"
+ },
+ "rodos_spear": {
+  "diaithiris": "Slieg kumask",
+  "english": "Rodos Alloy Spear"
+ },
+ "rodos_bow": {
+  "diaithiris": "Umlaig kumask",
+  "english": "Rodos Alloy Bow"
+ },
+ "rodos_crossbow": {
+  "diaithiris": "Umlaig kroisi kumask",
+  "english": "Rodos Alloy Crossbow"
+ },
+ "rodos_shield": {
+  "diaithiris": "Skiad kumask",
+  "english": "Rodos Alloy Shield"
+ },
+ "future_sword": {
+  "diaithiris": "Klaidem riondag",
+  "english": "Future Sword"
+ },
+ "future_axe": {
+  "diaithiris": "Tuog riondag",
+  "english": "Future Axe"
+ },
+ "future_spear": {
+  "diaithiris": "Slieg riondag",
+  "english": "Future Spear"
+ },
+ "future_bow": {
+  "diaithiris": "Umlaig riondag",
+  "english": "Future Bow"
+ },
+ "future_crossbow": {
+  "diaithiris": "Umlaig kroisi riondag",
+  "english": "Future Crossbow"
+ },
+ "future_shield": {
+  "diaithiris": "Skiad riondag",
+  "english": "Future Shield"
+ },
+ "bone_plate": {
+  "diaithiris": "Troindser knàim",
+  "english": "Bone Plate"
+ },
+ "ballistic_weave": {
+  "diaithiris": "Fieg snàitlech",
+  "english": "Ballistic Weave"
+ },
+ "ceramic_plate": {
+  "diaithiris": "Troindser kriadach",
+  "english": "Ceramic Plate"
+ },
+ "tempered_ingot": {
+  "diaithiris": "Kruoid doirbi",
+  "english": "Tempered Ingot"
+ },
+ "rodos_alloy_ingot": {
+  "diaithiris": "Kumask Rodos",
+  "english": "Rodos Alloy Ingot"
+ },
+ "star_lattice": {
+  "diaithiris": "Fieg riondag",
+  "english": "Star Lattice"
+ }
+}

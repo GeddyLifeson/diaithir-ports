@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "III",
+  "IPI",
+  "III"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "P": "create:iron_sheet"
+ },
+ "result": {
+  "id": "createdieselgenerators:engine_silencer",
+  "count": 1
+ }
+}

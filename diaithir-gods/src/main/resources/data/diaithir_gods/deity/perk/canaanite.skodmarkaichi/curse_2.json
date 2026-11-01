@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:white_wool",
+    "color": 12236145,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:canaanite.skodmarkaichi",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "canaanite.skodmarkaichi_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

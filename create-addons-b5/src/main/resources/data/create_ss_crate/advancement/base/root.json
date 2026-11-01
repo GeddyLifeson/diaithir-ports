@@ -1,0 +1,24 @@
+{
+ "display": {
+  "icon": {
+   "id": "create_ss_crate:blazing_nether_crate",
+   "count": 1
+  },
+  "title": {
+   "translate": "create_ss_crate.advancement.base.root.title"
+  },
+  "description": {
+   "translate": "create_ss_crate.advancement.base.root.description"
+  },
+  "background": "minecraft:textures/block/stripped_oak_log.png",
+  "frame": "task",
+  "show_toast": false,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "enter_world": {
+   "trigger": "minecraft:tick"
+  }
+ }
+}

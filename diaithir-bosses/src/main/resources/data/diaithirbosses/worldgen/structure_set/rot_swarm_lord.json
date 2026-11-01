@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithirbosses:rot_swarm_lord",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 42,
+  "separation": 18,
+  "salt": 2518
+ }
+}

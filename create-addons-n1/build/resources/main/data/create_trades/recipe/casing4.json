@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "create_trades:casing_token",
+ "result": {
+  "id": "create:railway_casing",
+  "count": 1
+ }
+}

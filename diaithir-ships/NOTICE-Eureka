@@ -1,0 +1,4 @@
+The package org.valkyrienskies.eureka, the assets under assets/vs_eureka and the data under data/vs_eureka
+are derived from Eureka (https://github.com/ValkyrienSkies/Eureka, branch 1.21.1/main),
+Copyright the Eureka contributors, licensed under the Apache License, Version 2.0 (see LICENSE-Eureka-Apache-2.0).
+Changes: ported to Minecraft 26.1.2 / NeoForge 26.1.2.109, platform abstraction layers removed, merged into this module.

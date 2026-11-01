@@ -1,0 +1,12 @@
+{
+ "model": {
+  "type": "minecraft:range_dispatch",
+  "property": "minecraft:custom_model_data",
+  "index": 0,
+  "fallback": {"type": "minecraft:model", "model": "immersive_tanning:item/scraped_hide"},
+  "entries": [
+   {"threshold": 1, "model": {"type": "minecraft:model", "model": "immersive_tanning:item/scraped_hide_medium"}},
+   {"threshold": 2, "model": {"type": "minecraft:model", "model": "immersive_tanning:item/scraped_hide_large"}}
+  ]
+ }
+}

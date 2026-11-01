@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:desert1.granubienuosul",
+  "icon": "minecraft:iron_hoe",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "minecraft:netherite_upgrade_smithing_template",
+  "base": "iceandfire:dragonarmor_diamond_neck",
+  "addition": "minecraft:netherite_block",
+  "result": {
+    "id": "iceandfire:dragonarmor_netherite_neck"
+  },
+  "show_notification": true
+}

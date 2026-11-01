@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "goety:snowy_jade_tiles",
+ "result": {
+  "id": "goety:snowy_jade_stairs",
+  "count": 1
+ }
+}

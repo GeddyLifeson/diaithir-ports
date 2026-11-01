@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirbosses:item/natuirsaegul_spawn_egg"
+ }
+}

@@ -1,0 +1,12 @@
+{
+  "block.create_dense_ores.dense_zinc_ore": "Dense Zinc Ore",
+  "block.create_dense_ores.deepslate_dense_zinc_ore": "Deepslate Dense Zinc Ore",
+  "block.create_dense_ores.dense_thorium_ore": "Dense Thorium Ore",
+  "block.create_dense_ores.deepslate_dense_thorium_ore": "Deepslate Dense Thorium Ore",
+  "block.create_dense_ores.dense_lead_ore": "Dense Lead Ore",
+  "block.create_dense_ores.deepslate_dense_lead_ore": "Deepslate Dense Lead Ore",
+  "block.create_dense_ores.dense_nickel_ore": "Dense Nickel Ore",
+  "block.create_dense_ores.deepslate_dense_nickel_ore": "Deepslate Dense Nickel Ore",
+  "block.create_dense_ores.dense_lithium_ore": "Dense Lithium Ore",
+  "block.create_dense_ores.deepslate_dense_lithium_ore": "Deepslate Dense Lithium Ore"
+}

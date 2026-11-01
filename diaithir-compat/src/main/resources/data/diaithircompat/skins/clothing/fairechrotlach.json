@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/male/0.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/male/1.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/male/2.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/male/ruler.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/male/warrior.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/male/priest.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/female/0.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/female/1.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/female/2.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/female/ruler.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/female/warrior.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fairechrotlach/female/priest.png",
+    "profession": "diaithircompat:fairechrotlach",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

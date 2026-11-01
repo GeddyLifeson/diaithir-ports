@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "farmersdelight:wheat_dough"
+ ],
+ "result": {
+  "count": 1,
+  "id": "create:dough"
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "farmersdelight"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "type": "craft",
+ "school": "sky",
+ "activation": "goety:wind_core",
+ "offerings": [
+  "minecraft:firework_rocket",
+  "minecraft:firework_rocket",
+  "minecraft:firework_rocket",
+  "minecraft:phantom_membrane",
+  "minecraft:phantom_membrane"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:launch_focus",
+ "count": 1
+}

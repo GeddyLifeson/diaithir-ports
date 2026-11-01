@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "t": "goety:magic_emerald",
+  "s": "#goety:full_highrock_craft",
+  "c": "#goety:pedestals"
+ },
+ "pattern": [
+  "t t",
+  "scs"
+ ],
+ "result": {
+  "id": "goety:dark_altar_highrock",
+  "count": 1
+ }
+}

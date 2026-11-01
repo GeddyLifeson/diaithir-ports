@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "B": "iceandfire:dragonforge_ice_brick",
+    "H": "iceandfire:ice_dragon_heart"
+  },
+  "pattern": [
+    "BBB",
+    "BHB",
+    "BBB"
+  ],
+  "result": {
+    "id": "iceandfire:dragonforge_ice_core_disabled"
+  },
+  "show_notification": true
+}

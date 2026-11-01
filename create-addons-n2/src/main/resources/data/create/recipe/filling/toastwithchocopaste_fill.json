@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "create_chocopaste:toast",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 2025,
+  "fluid": "create:chocolate"
+ },
+ "result": {
+  "id": "create_chocopaste:toastwith_chocolate_paste"
+ }
+}

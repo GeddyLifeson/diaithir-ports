@@ -1,0 +1,27 @@
+{
+  "type": "alexscaves:cave_chamber",
+  "config": {
+    "biome": "alexscaves:primordial_caves",
+    "floor": {
+      "Name": "minecraft:moss_block"
+    },
+    "wall": {
+      "Name": "alexscaves:limestone"
+    },
+    "ceiling": {
+      "Name": "alexscaves:limestone"
+    },
+    "min_y": -48,
+    "max_y": 24,
+    "decor": [
+      "alexscaves:cycad",
+      "alexscaves:flytrap",
+      "alexscaves:primordial_caves_grass",
+      "alexscaves:peering_coprolith",
+      "alexscaves:ancient_tree",
+      "alexscaves:archaic_vine"
+    ],
+    "radius": 13,
+    "height": 9
+  }
+}

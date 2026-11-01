@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_templates_gears:deepslate_sheet",
+  "minecraft:echo_shard",
+  "minecraft:sculk"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:silence_echo_sheet"
+  }
+ ]
+}

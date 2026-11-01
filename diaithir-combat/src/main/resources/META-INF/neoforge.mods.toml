@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithircombat"
+version = "${version}"
+displayName = "Komrag"
+authors = "Diaithir"
+description = '''Melee, parry, dodge roll and bow tuning for Diaithir. Weapon categories come from item tags and JSON, the server decides every hit, and higher Ages swing faster. Clean-room, original code; replaces the all-rights-reserved combat mods.'''
+
+[[dependencies.diaithircombat]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

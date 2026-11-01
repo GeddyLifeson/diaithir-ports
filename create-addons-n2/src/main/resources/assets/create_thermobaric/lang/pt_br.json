@@ -1,0 +1,17 @@
+{
+  "block.create_thermobaric.graphite_block": "Bloco de Grafite",
+  "item.create_thermobaric.graphite_ingot": "Barra de Grafite",
+  "item.create_thermobaric.beryl_dust": "Pó de Berilo",
+  "item.create_thermobaric.impure_gold_dust": "Pó de Ouro Impuro",
+  "item_group.create_thermobaric.create_thermobaric": "Create: Termobárico",
+  "item.create_thermobaric.impure_gold_ingot": "Barra de Ouro Impuro",
+  "item.create_thermobaric.beryl_ingot": "Barra de Berilo",
+  "item.create_thermobaric.impure_iron_dust": "Pó de Ferro Impuro",
+  "item.create_thermobaric.impure_iron_ingot": "Barra de Ferro Impuro",
+  "item.create_thermobaric.impure_copper_dust": "Pó de Cobre Impuro",
+  "item.create_thermobaric.impure_emerald": "Esmeralda Impura",
+  "block.create_thermobaric.beryl_block": "Bloco de Berilo",
+  "item.create_thermobaric.impure_diamond": "Diamante Impuro",
+  "item.create_thermobaric.carbon_dust": "Pó de Carbono",
+  "item.create_thermobaric.impure_copper_ingot": "Barra de Cobre Impuro"
+}

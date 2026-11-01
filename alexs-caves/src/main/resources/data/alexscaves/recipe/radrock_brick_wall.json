@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": "alexscaves:radrock_bricks"
+  },
+  "result": {
+    "count": 6,
+    "id": "alexscaves:radrock_brick_wall"
+  }
+}

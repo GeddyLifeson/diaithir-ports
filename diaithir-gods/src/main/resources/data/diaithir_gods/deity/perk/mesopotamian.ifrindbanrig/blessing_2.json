@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:feather",
+    "color": 11756726,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:mesopotamian.ifrindbanrig",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "mesopotamian.ifrindbanrig_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

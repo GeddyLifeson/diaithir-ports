@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:germanic.kliesaichikumad",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:sweet_berries",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

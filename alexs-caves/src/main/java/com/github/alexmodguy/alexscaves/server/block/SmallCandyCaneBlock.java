@@ -1,0 +1,78 @@
+package com.github.alexmodguy.alexscaves.server.block;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+public class SmallCandyCaneBlock extends Block {
+
+    public static final IntegerProperty COUNT = IntegerProperty.create("amount", 1, 4);
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
+    private static final VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 14.0D, 13.0D);
+
+    public SmallCandyCaneBlock() {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_PINK).noOcclusion().noCollision().pushReaction(PushReaction.DESTROY).instabreak().sound(ACSoundTypes.HARD_CANDY).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(COUNT, Integer.valueOf(1)));
+    }
+
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        Direction direction = rotation.rotate(state.getValue(FACING));
+        return direction.getAxis() == Direction.Axis.Y ? state : state.setValue(FACING, direction);
+    }
+
+    public BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
+    }
+
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos blockpos = pos.below();
+        BlockState state1 = level.getBlockState(blockpos);
+        return state1.isFaceSturdy(level, blockpos, Direction.UP);
+    }
+
+    public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
+        return !state.canSurvive(levelAccessor, blockPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);
+    }
+
+    public boolean canBeReplaced(BlockState blockState, BlockPlaceContext context) {
+        return !context.isSecondaryUseActive() && context.getItemInHand().is(this.asItem()) && blockState.getValue(COUNT) < 4 ? true : super.canBeReplaced(blockState, context);
+    }
+
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+        Vec3 vec3 = state.getOffset(pos);
+        return SHAPE.move(vec3.x, vec3.y, vec3.z);
+    }
+
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos());
+        return blockstate.is(this) ? blockstate.setValue(COUNT, Integer.valueOf(Math.min(4, blockstate.getValue(COUNT) + 1))) : this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+    }
+
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
+        stateBuilder.add(FACING, COUNT);
+    }
+
+    protected boolean propagatesSkylightDown(BlockState state) {
+        return state.getFluidState().isEmpty();
+    }
+
+    public boolean isPathfindable(BlockState blockState, PathComputationType computationType) {
+        return computationType == PathComputationType.AIR && !this.hasCollision ? true : super.isPathfindable(blockState, computationType);
+    }
+}

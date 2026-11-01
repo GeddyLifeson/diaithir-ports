@@ -1,0 +1,7 @@
+{
+ "type": "create:sandpaper_polishing",
+ "ingredient": "minecraft:crying_obsidian",
+ "result": {
+  "id": "minecraft:ender_eye"
+ }
+}

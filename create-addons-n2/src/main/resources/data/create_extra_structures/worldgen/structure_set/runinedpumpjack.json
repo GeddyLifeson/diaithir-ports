@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "create_extra_structures:runinedpumpjack",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 25,
+  "separation": 15,
+  "salt": 923491920
+ }
+}

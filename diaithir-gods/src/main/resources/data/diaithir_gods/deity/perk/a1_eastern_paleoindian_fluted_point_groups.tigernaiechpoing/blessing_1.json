@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:saddle",
+    "color": 12875983,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_eastern_paleoindian_fluted_point_groups.tigernaiechpoing",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 0,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "a1_eastern_paleoindian_fluted_point_groups.tigernaiechpoing_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:cherry_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "P",
+  "S",
+  "S"
+ ],
+ "result": {
+  "id": "diaithirfurnishings:cherry_signpost",
+  "count": 2
+ }
+}

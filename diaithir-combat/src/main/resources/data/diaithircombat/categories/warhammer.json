@@ -1,0 +1,24 @@
+{
+ "id": "warhammer",
+ "pattern": "heavy",
+ "range": 3.4,
+ "arc": 90,
+ "width": 0.4,
+ "max_targets": 3,
+ "knockback": 1.1,
+ "combo_window": 16,
+ "parry_window": 0,
+ "fallback": "minecraft:mace",
+ "combo": [
+  {
+   "damage": 1.5,
+   "cooldown": 22,
+   "stamina": 6
+  },
+  {
+   "damage": 2.0,
+   "cooldown": 28,
+   "stamina": 7
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+package com.iafenvoy.iceandfire;
+
+import com.iafenvoy.iceandfire.config.IafClientConfig;
+import com.iafenvoy.iceandfire.config.IafCommonConfig;
+import com.iafenvoy.iceandfire.registry.IafRenderers;
+import com.iafenvoy.jupiter.ConfigManager;
+import com.iafenvoy.jupiter.render.screen.ConfigSelectScreen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
+
+@Mod(value = IceAndFire.MOD_ID, dist = Dist.CLIENT)
+@EventBusSubscriber(
+        modid = IceAndFire.MOD_ID,
+        value = Dist.CLIENT
+)
+public class IceAndFireClient {
+    public IceAndFireClient() {
+        ConfigManager.getInstance().registerConfigHandler(IafClientConfig.INSTANCE);
+
+    }
+
+    /**
+     * Uranus snapshots {@code IArmorRendererBase.RENDERERS} during this event,
+     * which fires while Minecraft is constructed — well before {@link FMLClientSetupEvent}.
+     */
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        IafRenderers.registerArmorRenderers();
+    }
+
+    @SubscribeEvent
+    public static void init(FMLClientSetupEvent event) {
+        IafRenderers.registerModelPredicates();
+        IafRenderers.registerArmorRenderers();
+        IafRenderers.registerItemRenderers();
+
+
+        ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class, () -> (container, parent) -> ConfigSelectScreen.builder(Component.translatable("config.iceandfire.title"), parent).server(IafCommonConfig.INSTANCE).client(IafClientConfig.INSTANCE).build());
+    }
+
+    @SubscribeEvent
+    public static void onAddPackFinders(AddPackFindersEvent event) {
+        event.addPackFinders(Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "resourcepacks/iaf_legacy"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.iceandfire.legacy.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
+    }
+}

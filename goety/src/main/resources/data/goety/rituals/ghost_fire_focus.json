@@ -1,0 +1,18 @@
+{
+ "type": "craft",
+ "school": "necroturgy",
+ "activation": "goety:soul_bolt_focus",
+ "offerings": [
+  "goety:ectoplasm",
+  "goety:chill_fabric",
+  "goety:chill_fabric",
+  "goety:ectoplasm",
+  "minecraft:powder_snow_bucket",
+  "#c:ender_pearls",
+  "goety:magic_emerald"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:ghost_fire_focus",
+ "count": 1
+}

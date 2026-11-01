@@ -1,0 +1,42 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'citadel-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    accessTransformers.from('src/main/resources/META-INF/accesstransformer.cfg')
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+    mods { citadel { sourceSet(sourceSets.main) } }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+processResources {
+    def props = [
+        minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
+        neo_version: neo_version, neo_version_range: neo_version_range, mod_id: mod_id,
+        mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+        mod_authors: mod_authors, mod_credits: mod_credits, mod_description: mod_description]
+    inputs.properties props
+    filesMatching('META-INF/neoforge.mods.toml') { expand props }
+    exclude '**/.cache/**'
+}
+
+repositories { mavenCentral() }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.compilerArgs += ['-Xmaxerrs','100000'] }
+
+jar {
+    from('LICENSE') { into 'META-INF' }
+    from('COPYING') { into 'META-INF' }
+    from('NOTICE') { into 'META-INF' }
+}

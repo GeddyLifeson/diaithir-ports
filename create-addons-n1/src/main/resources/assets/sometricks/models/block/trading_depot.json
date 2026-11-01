@@ -1,0 +1,14 @@
+{
+  "parent": "sometricks:custom/tradedepot",
+  "textures": {
+    "all": "minecraft:block/emerald_block",
+    "particle": "minecraft:block/emerald_block",
+    "1": "sometricks:block/brass_casing",
+    "2": "sometricks:block/depot_side",
+    "3": "sometricks:block/depot_top",
+    "4": "sometricks:block/mechanical_press_head",
+    "5": "minecraft:block/emerald_block",
+    "missing": "sometricks:block/"
+  },
+  "render_type": "solid"
+}

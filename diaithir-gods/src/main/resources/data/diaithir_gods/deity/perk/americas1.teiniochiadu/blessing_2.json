@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:flint_and_steel",
+    "color": 11701699,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:americas1.teiniochiadu",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:fire_resistance",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "americas1.teiniochiadu_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

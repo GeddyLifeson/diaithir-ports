@@ -1,0 +1,52 @@
+{
+ "values": [
+  {
+   "id": "spartanweaponry:wooden_warhammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_warhammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_warhammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_warhammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_warhammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_warhammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_battle_hammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_battle_hammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_battle_hammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_battle_hammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_battle_hammer",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_battle_hammer",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "C": "spartanweaponry:wooden_club",
+  "#": "minecraft:iron_ingot"
+ },
+ "pattern": [
+  "C#"
+ ],
+ "result": {
+  "id": "spartanweaponry:studded_club"
+ }
+}

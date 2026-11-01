@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "create_connected:block/brass_encased_cross_connector"
+  },
+  "axis=y": {
+   "model": "create_connected:block/brass_encased_cross_connector"
+  },
+  "axis=z": {
+   "model": "create_connected:block/brass_encased_cross_connector"
+  }
+ }
+}

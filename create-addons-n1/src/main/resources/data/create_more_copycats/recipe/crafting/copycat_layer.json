@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#c:ingots/zinc",
+ "result": {
+  "id": "create_more_copycats:layer_copycat",
+  "count": 8
+ }
+}

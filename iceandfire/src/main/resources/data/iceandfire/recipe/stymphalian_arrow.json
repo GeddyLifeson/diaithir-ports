@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "#",
+    "Y"
+  ],
+  "key": {
+    "#": "minecraft:stick",
+    "X": "minecraft:flint",
+    "Y": "iceandfire:stymphalian_bird_feather"
+  },
+  "result": {
+    "id": "iceandfire:stymphalian_arrow",
+    "count": 4
+  }
+}

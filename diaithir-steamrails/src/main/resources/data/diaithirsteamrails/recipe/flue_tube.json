@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "C": "minecraft:copper_ingot"
+ },
+ "pattern": [
+  "C",
+  "C",
+  "C"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:flue_tube",
+  "count": 2
+ },
+ "category": "misc"
+}

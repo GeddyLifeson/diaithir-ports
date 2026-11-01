@@ -1,0 +1,37 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_ss_crate:andesite_crate_shell",
+ "transitional_item": {
+  "id": "create_ss_crate:incomplete_brass_crate_shell"
+ },
+ "result": {
+  "id": "create_ss_crate:brass_crate_shell",
+  "count": 2
+ },
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 20
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:brass_ingot",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

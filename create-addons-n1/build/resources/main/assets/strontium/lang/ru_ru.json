@@ -1,0 +1,72 @@
+{
+	"item.strontium.raw_uranium":"Рудный Уран",
+	"item.strontium.yellowcake":"Жёлтый Кек",
+	"item.strontium.graphite":"Графит",
+	"item.strontium.fluorite":"Флюорит",
+	"item.strontium.cloth":"Ткань",
+	"item.strontium.rubber_cloth":"Прорезиненная Ткань",
+	
+	"item.strontium.uranium_powder":"Молотый Природный Уран",
+	//μ
+	"item.strontium.dosimeter_cockerel": "Дозиметр \"Петушок\"",
+	"item.strontium.dosimeter_cockerel_usv": "Накопленная Доза: %s мкЗв",
+	"item.strontium.dosimeter_cockerel_msv": "Накопленная Доза: %s мЗв",
+	"item.strontium.dosimeter_bella": "Дозиметр \"Белла\"",
+	"item.strontium.dosimeter_bella.tooltip.summary": "Измеритель мощности эквивалентной дозы",
+	"item.strontium.dosimeter_bella.tooltip.condition1": "Целевое Назначение:",
+	"item.strontium.dosimeter_bella.tooltip.behaviour1": "Предназначен для замеров МЭД в неаварийной обстановке, на производстве и в быту. Предельная МЭД: 9.999 мЗв/с",
+	
+	"item.strontium.panacea_pill": "Панацея™",
+	"item.strontium.panacea_pill.tooltip.summary":"Не является лекарственным препаратом. Изделие может содержать цианид калия. Производитель не несёт ответственности за возможные проявления побочных эффектов.",
+	"item.strontium.mexamine": "Мексамин",
+	"item.strontium.mexamine.tooltip.summary": "Препарат радиозащитного действия. При применении вызывает сужение переферических кровеносных сосудов и временную гипоксию в радиочувствительных тканях.",
+	"item.strontium.mexamine.tooltip.condition1":"Возможные побочные эффекты:",
+	"item.strontium.mexamine.tooltip.behaviour1":"Лёгкая тошнота, лёгкая рвота, незначительное головокружение и боли.",
+	"item.strontium.gas_mask_filter": "Фильтр от Противогаза",
+	"item.strontium.gas_mask_filter.tooltip.condition1":"Чинит надетый противогаз, если он неисправен.",
+	"item.strontium.gas_mask_filter.tooltip.behaviour1":"Для этого, надев противогаз, кликнете ПКМ с фильтром в руке.",
+	"item.strontium.victory_cigarettes":"Сигареты \"Победа\"",
+	"item.strontium.leo_cigarettes":"Сигареты \"Лёвушка\"",
+		
+	"item.strontium.ozk_helmet": "ПМК-1 (ОЗК)",
+	"item.strontium.ozk_chestplate": "Плащ (ОЗК)",
+	"item.strontium.ozk_leggings": "Штаны (ОЗК)",
+	"item.strontium.ozk_boots": "Бахилы (ОЗК)",
+	"item.strontium.scientist_helmet": "Шапочка Учёного",
+	"item.strontium.scientist_chestplate": "Халат Учёного",
+	"item.strontium.scientist_leggings": "Нижнее Бельё Учёного",
+	"item.strontium.scientist_boots": "Туфли Учёного",
+	"item.strontium.gauze_mask": "Ватно-Марлиевая Повязка",
+	"item.strontium.gas_mask": "Противогаз Гражданский \"Слон\"",
+	
+	"item.strontium.soldier_hazmat_spawn_egg":"Яйцо Солдата Хим. Войск",
+	"block.strontium.uranium_ore":"Урановая Руда",
+	"block.strontium.deepslate_uranium_ore":"Сланцевая Урановая Руда",
+	"block.strontium.yellowcake_block":"Блок Жёлтого Кека",
+	"block.strontium.graphite_block":"Графитовый Блок",
+	"block.strontium.waste_grass_block":"Погибшая Трава",
+	"block.strontium.waste_leaves":"Погибшая Листва",
+	"block.strontium.sandbags":"Мешки с Песком",
+	
+	"creative_tab.strontium_items":"Strontium",
+	
+	"hazard.strontium.radiation": "☢ Радиоактивно",
+	"hazard.strontium.toxicity": "☠ Токсично [WIP]",
+	"hazard.strontium.ext_radiation.format_sv_s":"%s Зв/с", //МЭД
+	"hazard.strontium.ext_radiation.format_msv_s":"%s мЗв/с",
+	"hazard.strontium.ext_radiation.format_usv_s":"%s мкЗв/с",
+	"hazard.strontium.radiation_protection": "☢ Уровень защиты: %s%%",
+	
+	"effect.strontium.decontamination": "☢ Вывод Радионуклидов",
+	
+	"fluid.strontium.fluorine_gas": "Флюорин - Газ",
+	"fluid.strontium.uf6": "Гексафторид Урана",
+	"fluid.strontium.enriched_uf6": "Гексафторид Урана (обогащ.)",
+	"fluid.strontium.depleted_uf6": "Гексафторид Урана (обедн.)",
+	
+	"death.attack.strontium.radiation": "%1$s умер от острой лучевой болезни",
+	"death.attack.strontium.suicide": "%1$s Cтал Героем",
+	
+	"entity.strontium.sick_chicken": "Дряхлая Курица",
+	"entity.strontium.soldier_hazmat": "Солдат Хим. Войск"
+}

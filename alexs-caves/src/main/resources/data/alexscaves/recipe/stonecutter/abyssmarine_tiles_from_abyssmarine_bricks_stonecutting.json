@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "alexscaves:abyssmarine_bricks",
+  "result": {
+    "id": "alexscaves:abyssmarine_tiles",
+    "count": 1
+  }
+}
