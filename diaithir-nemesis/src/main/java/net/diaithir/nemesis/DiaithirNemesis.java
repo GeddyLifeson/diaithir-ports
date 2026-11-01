@@ -287,7 +287,8 @@ public final class DiaithirNemesis {
     // Shaken: weakened until the nemesis that last killed you falls. Death clears effects, so it is put back on every respawn.
     private static void onRespawn(PlayerEvent.PlayerRespawnEvent event) {
         if (event.getEntity() instanceof ServerPlayer player && player.level().getServer() instanceof MinecraftServer server
-                && NemesisData.get(server).shaken.containsKey(player.getStringUUID())) {
+                && NemesisData.get(server).shaken.containsKey(player.getStringUUID())
+                && !HiddenExempt.exempt(player.getStringUUID(), player.getGameProfile().name())) {
             player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, MobEffectInstance.INFINITE_DURATION));
             player.sendSystemMessage(Component.literal("You are Shaken until the one who felled you falls."));
         }
