@@ -14,3 +14,8 @@ Clean-room, MIT. Inspired by Olaf's Relatively Placed Blocks by LukeolafP (CC0-1
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirsharedspace]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.1.2,26.1.3)"

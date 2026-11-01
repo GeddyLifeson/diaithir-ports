@@ -15,6 +15,7 @@ import net.minecraft.world.level.EmptyBlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
@@ -24,7 +25,10 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.util.BlockSnapshot;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.block.BreakBlockEvent;
 import org.jspecify.annotations.Nullable;
 
@@ -127,9 +131,16 @@ public final class Placement {
         } else {
             newCell = Cells.at(lx, lz);
         }
+        if (!player.mayBuild() && !stack.canPlaceOnBlockInAdventureMode(new BlockInWorld(level, pos, false))) {
+            return;
+        }
         event.setCancellationResult(InteractionResult.SUCCESS);
         event.setCanceled(true);
         if (level.isClientSide()) {
+            return;
+        }
+        BlockSnapshot snapshot = BlockSnapshot.create(level.dimension(), level, pos);
+        if (NeoForge.EVENT_BUS.post(new BlockEvent.EntityPlaceEvent(snapshot, clicked, player)).isCanceled()) {
             return;
         }
         if (!cluster) {
@@ -206,6 +217,7 @@ public final class Placement {
             for (int i = 0; i < Cells.COUNT; i++) {
                 if (be.get(i) != null) {
                     only = be.get(i);
+                    be.set(i, null);
                 }
             }
             level.setBlock(pos, only, Block.UPDATE_ALL);

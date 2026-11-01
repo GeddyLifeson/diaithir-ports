@@ -6,6 +6,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
@@ -17,6 +19,21 @@ public final class ClusterBlockEntity extends BlockEntity {
 
     public ClusterBlockEntity(BlockPos pos, BlockState state) {
         super(SharedSpace.CLUSTER_ENTITY.get(), pos, state);
+    }
+
+    /** The cluster is being replaced or destroyed (explosion, piston, command, another mod): hand back every member still inside. */
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        if (level instanceof ServerLevel server) {
+            for (int i = 0; i < Cells.COUNT; i++) {
+                BlockState member = cells[i];
+                if (member != null) {
+                    cells[i] = null;
+                    Block.dropResources(member, server, pos);
+                }
+            }
+        }
+        super.preRemoveSideEffects(pos, state);
     }
 
     public @Nullable BlockState get(int cell) {
