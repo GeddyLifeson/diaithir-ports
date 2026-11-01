@@ -7769,10 +7769,6 @@ file = "kubejs/assets/diaithir/textures/item/dish/shakshuka.png"
 hash = "ea91ca3b8ba6578ad871ac4dac06b499e943592b97b32139e9279e437b2a5bb5"
 
 [[files]]
-file = "kubejs/assets/diaithir/textures/item/dish/shardfall_tinned_fish_toast.png"
-hash = "b277619b2192ba37d4a73c0cdb88c0f2959ad641125614e4e989c05fa3d02549"
-
-[[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/shashlik.png"
 hash = "f396aa506d8fc48158781aa0bb731cac8e855ed4a8c7d454832ee913b3a44db2"
 
@@ -8383,6 +8379,10 @@ hash = "7cd3dfddd9475d11cd1c90f235635b27d6dbe274c59e06e28c8e5e1e22c42f9f"
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tide_pool_sunfruit_sorbet.png"
 hash = "985dc830c01e8c1764efb977e30137ec98b8469e15de064dda837f7838d6680b"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/dish/tinned_fish_toast.png"
+hash = "b277619b2192ba37d4a73c0cdb88c0f2959ad641125614e4e989c05fa3d02549"
 
 [[files]]
 file = "kubejs/assets/diaithir/textures/item/dish/tiramisu.png"
@@ -26002,7 +26002,7 @@ hash = "7e28644d20ab836b179a2ad5ac9251c627933dee8e163098389888ff0eb8d228"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/cuisine_registry.js"
-hash = "e994b70a769fc12146a68185c4f43cef009944492f184ad16a2135fff16dc858"
+hash = "de9a65ebb6672a434e2b6b8805e99fc0ba2df63dbc42de9912a39907b4fd6a83"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/lorgchraoibhe_staves.js"
