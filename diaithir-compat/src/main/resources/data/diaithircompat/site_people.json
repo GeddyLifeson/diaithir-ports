@@ -411,6 +411,62 @@
         }
       }
     },
+    "diaithir": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/diaithir/male/0.png",
+          "diaithircompat:skins/clothing/normal/diaithir/male/1.png",
+          "diaithircompat:skins/clothing/normal/diaithir/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/diaithir/female/0.png",
+          "diaithircompat:skins/clothing/normal/diaithir/female/1.png",
+          "diaithircompat:skins/clothing/normal/diaithir/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/diaithir/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/diaithir/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/diaithir/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/diaithir/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/diaithir/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/diaithir/female/priest.png"
+        }
+      }
+    },
+    "dunbuldach": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/dunbuldach/male/0.png",
+          "diaithircompat:skins/clothing/normal/dunbuldach/male/1.png",
+          "diaithircompat:skins/clothing/normal/dunbuldach/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/dunbuldach/female/0.png",
+          "diaithircompat:skins/clothing/normal/dunbuldach/female/1.png",
+          "diaithircompat:skins/clothing/normal/dunbuldach/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/dunbuldach/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/dunbuldach/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/dunbuldach/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/dunbuldach/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/dunbuldach/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/dunbuldach/female/priest.png"
+        }
+      }
+    },
     "dyuktai_culture": {
       "clothing": {
         "male": [
@@ -775,6 +831,34 @@
         }
       }
     },
+    "gainemrig": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/gainemrig/male/0.png",
+          "diaithircompat:skins/clothing/normal/gainemrig/male/1.png",
+          "diaithircompat:skins/clothing/normal/gainemrig/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/gainemrig/female/0.png",
+          "diaithircompat:skins/clothing/normal/gainemrig/female/1.png",
+          "diaithircompat:skins/clothing/normal/gainemrig/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/gainemrig/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/gainemrig/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/gainemrig/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/gainemrig/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/gainemrig/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/gainemrig/female/priest.png"
+        }
+      }
+    },
     "geometric_kebaran": {
       "clothing": {
         "male": [
@@ -1055,6 +1139,62 @@
         }
       }
     },
+    "kuonrig": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/kuonrig/male/0.png",
+          "diaithircompat:skins/clothing/normal/kuonrig/male/1.png",
+          "diaithircompat:skins/clothing/normal/kuonrig/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/kuonrig/female/0.png",
+          "diaithircompat:skins/clothing/normal/kuonrig/female/1.png",
+          "diaithircompat:skins/clothing/normal/kuonrig/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/kuonrig/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/kuonrig/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/kuonrig/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/kuonrig/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/kuonrig/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/kuonrig/female/priest.png"
+        }
+      }
+    },
+    "kuonspiusach": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/kuonspiusach/male/0.png",
+          "diaithircompat:skins/clothing/normal/kuonspiusach/male/1.png",
+          "diaithircompat:skins/clothing/normal/kuonspiusach/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/kuonspiusach/female/0.png",
+          "diaithircompat:skins/clothing/normal/kuonspiusach/female/1.png",
+          "diaithircompat:skins/clothing/normal/kuonspiusach/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/kuonspiusach/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/kuonspiusach/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/kuonspiusach/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/kuonspiusach/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/kuonspiusach/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/kuonspiusach/female/priest.png"
+        }
+      }
+    },
     "las_vegas_culture": {
       "clothing": {
         "male": [
@@ -1080,6 +1220,34 @@
         "priest": {
           "male": "diaithircompat:skins/clothing/normal/las_vegas_culture/male/priest.png",
           "female": "diaithircompat:skins/clothing/normal/las_vegas_culture/female/priest.png"
+        }
+      }
+    },
+    "lasuirrig": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/lasuirrig/male/0.png",
+          "diaithircompat:skins/clothing/normal/lasuirrig/male/1.png",
+          "diaithircompat:skins/clothing/normal/lasuirrig/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/lasuirrig/female/0.png",
+          "diaithircompat:skins/clothing/normal/lasuirrig/female/1.png",
+          "diaithircompat:skins/clothing/normal/lasuirrig/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/lasuirrig/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/lasuirrig/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/lasuirrig/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/lasuirrig/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/lasuirrig/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/lasuirrig/female/priest.png"
         }
       }
     },
@@ -1839,6 +2007,34 @@
         }
       }
     },
+    "talumnuod": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/talumnuod/male/0.png",
+          "diaithircompat:skins/clothing/normal/talumnuod/male/1.png",
+          "diaithircompat:skins/clothing/normal/talumnuod/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/talumnuod/female/0.png",
+          "diaithircompat:skins/clothing/normal/talumnuod/female/1.png",
+          "diaithircompat:skins/clothing/normal/talumnuod/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/talumnuod/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/talumnuod/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/talumnuod/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/talumnuod/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/talumnuod/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/talumnuod/female/priest.png"
+        }
+      }
+    },
     "tasmanian_late_pleistocene_foragers_kuti": {
       "clothing": {
         "male": [
@@ -1864,6 +2060,818 @@
         "priest": {
           "male": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/priest.png",
           "female": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/priest.png"
+        }
+      }
+    },
+    "the_amber_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_amber_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_amber_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_amber_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_amber_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_amber_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_amber_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_amber_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_amber_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_amber_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_amber_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_amber_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_amber_court/female/priest.png"
+        }
+      }
+    },
+    "the_ash_tree_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_ash_tree_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_ash_tree_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_ash_tree_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_ash_tree_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_ash_tree_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_ash_tree_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_ash_tree_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_ash_tree_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_ash_tree_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_ash_tree_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_ash_tree_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_ash_tree_court/female/priest.png"
+        }
+      }
+    },
+    "the_birch_grove_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_birch_grove_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_birch_grove_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_birch_grove_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_birch_grove_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_birch_grove_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_birch_grove_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_birch_grove_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_birch_grove_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_birch_grove_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_birch_grove_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_birch_grove_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_birch_grove_court/female/priest.png"
+        }
+      }
+    },
+    "the_cliff_and_mask_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_cliff_and_mask_court/female/priest.png"
+        }
+      }
+    },
+    "the_corn_and_star_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_corn_and_star_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_corn_and_star_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_corn_and_star_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_corn_and_star_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_corn_and_star_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_corn_and_star_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_corn_and_star_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_corn_and_star_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_corn_and_star_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_corn_and_star_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_corn_and_star_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_corn_and_star_court/female/priest.png"
+        }
+      }
+    },
+    "the_crossroads_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_crossroads_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_crossroads_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_crossroads_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_crossroads_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_crossroads_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_crossroads_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_crossroads_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_crossroads_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_crossroads_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_crossroads_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_crossroads_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_crossroads_court/female/priest.png"
+        }
+      }
+    },
+    "the_eternal_blue_sky_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_eternal_blue_sky_court/female/priest.png"
+        }
+      }
+    },
+    "the_fifth_sun_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_fifth_sun_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_fifth_sun_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_fifth_sun_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_fifth_sun_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_fifth_sun_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_fifth_sun_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_fifth_sun_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_fifth_sun_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_fifth_sun_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_fifth_sun_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_fifth_sun_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_fifth_sun_court/female/priest.png"
+        }
+      }
+    },
+    "the_fire_and_peak_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_fire_and_peak_court/female/priest.png"
+        }
+      }
+    },
+    "the_heaven_and_earth_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_heaven_and_earth_court/female/priest.png"
+        }
+      }
+    },
+    "the_island_court_home_pantheon": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/priest.png"
+        }
+      }
+    },
+    "the_kami_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_kami_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_kami_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_kami_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_kami_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_kami_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_kami_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_kami_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_kami_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_kami_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_kami_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_kami_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_kami_court/female/priest.png"
+        }
+      }
+    },
+    "the_light_and_flame_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_light_and_flame_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_light_and_flame_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_light_and_flame_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_light_and_flame_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_light_and_flame_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_light_and_flame_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_light_and_flame_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_light_and_flame_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_light_and_flame_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_light_and_flame_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_light_and_flame_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_light_and_flame_court/female/priest.png"
+        }
+      }
+    },
+    "the_lotus_and_peak_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_lotus_and_peak_court/female/priest.png"
+        }
+      }
+    },
+    "the_many_armed_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_many_armed_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_many_armed_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_many_armed_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_many_armed_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_many_armed_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_many_armed_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_many_armed_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_many_armed_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_many_armed_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_many_armed_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_many_armed_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_many_armed_court/female/priest.png"
+        }
+      }
+    },
+    "the_marsh_and_bear_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_marsh_and_bear_court/female/priest.png"
+        }
+      }
+    },
+    "the_mountain_and_mother_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_mountain_and_mother_court/female/priest.png"
+        }
+      }
+    },
+    "the_mountain_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_mountain_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_mountain_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_mountain_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_mountain_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_mountain_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_mountain_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_mountain_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_mountain_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_mountain_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_mountain_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_mountain_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_mountain_court/female/priest.png"
+        }
+      }
+    },
+    "the_ocean_and_voyage_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_ocean_and_voyage_court/female/priest.png"
+        }
+      }
+    },
+    "the_palace_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_palace_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_palace_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_palace_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_palace_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_palace_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_palace_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_palace_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_palace_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_palace_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_palace_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_palace_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_palace_court/female/priest.png"
+        }
+      }
+    },
+    "the_rice_and_volcano_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_rice_and_volcano_court/female/priest.png"
+        }
+      }
+    },
+    "the_rift_and_cattle_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_rift_and_cattle_court/female/priest.png"
+        }
+      }
+    },
+    "the_river_and_forest_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_river_and_forest_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_river_and_forest_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_river_and_forest_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_river_and_forest_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_river_and_forest_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_river_and_forest_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_river_and_forest_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_river_and_forest_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_river_and_forest_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_river_and_forest_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_river_and_forest_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_river_and_forest_court/female/priest.png"
+        }
+      }
+    },
+    "the_river_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_river_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_river_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_river_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_river_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_river_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_river_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_river_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_river_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_river_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_river_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_river_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_river_court/female/priest.png"
+        }
+      }
+    },
+    "the_sea_coast_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_sea_coast_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_sea_coast_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_sea_coast_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_sea_coast_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_sea_coast_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_sea_coast_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_sea_coast_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_sea_coast_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_sea_coast_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_sea_coast_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_sea_coast_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_sea_coast_court/female/priest.png"
+        }
+      }
+    },
+    "the_seven_hills_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_seven_hills_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_seven_hills_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_seven_hills_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_seven_hills_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_seven_hills_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_seven_hills_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_seven_hills_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_seven_hills_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_seven_hills_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_seven_hills_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_seven_hills_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_seven_hills_court/female/priest.png"
+        }
+      }
+    },
+    "the_thousand_god_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_thousand_god_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_thousand_god_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_thousand_god_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_thousand_god_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_thousand_god_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_thousand_god_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_thousand_god_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_thousand_god_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_thousand_god_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_thousand_god_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_thousand_god_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_thousand_god_court/female/priest.png"
+        }
+      }
+    },
+    "the_two_river_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_two_river_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_two_river_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_two_river_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_two_river_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_two_river_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_two_river_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_two_river_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_two_river_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_two_river_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_two_river_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_two_river_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_two_river_court/female/priest.png"
+        }
+      }
+    },
+    "the_wide_sky_court": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/the_wide_sky_court/male/0.png",
+          "diaithircompat:skins/clothing/normal/the_wide_sky_court/male/1.png",
+          "diaithircompat:skins/clothing/normal/the_wide_sky_court/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/the_wide_sky_court/female/0.png",
+          "diaithircompat:skins/clothing/normal/the_wide_sky_court/female/1.png",
+          "diaithircompat:skins/clothing/normal/the_wide_sky_court/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/the_wide_sky_court/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/the_wide_sky_court/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/the_wide_sky_court/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/the_wide_sky_court/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/the_wide_sky_court/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/the_wide_sky_court/female/priest.png"
         }
       }
     },
@@ -3886,6 +4894,406 @@
         }
       ],
       "villager_type": "minecraft:taiga"
+    },
+    "slug:diaithir": {
+      "kit": "diaithir",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:dunbuldach": {
+      "kit": "dunbuldach",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:gainemrig": {
+      "kit": "gainemrig",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "slug:kuonrig": {
+      "kit": "kuonrig",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:kuonspiusach": {
+      "kit": "kuonspiusach",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "slug:lasuirrig": {
+      "kit": "lasuirrig",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "slug:talumnuod": {
+      "kit": "talumnuod",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_amber_court": {
+      "kit": "the_amber_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "slug:the_ash_tree_court": {
+      "kit": "the_ash_tree_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "slug:the_birch_grove_court": {
+      "kit": "the_birch_grove_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "slug:the_cliff_and_mask_court": {
+      "kit": "the_cliff_and_mask_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "slug:the_corn_and_star_court": {
+      "kit": "the_corn_and_star_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "slug:the_crossroads_court": {
+      "kit": "the_crossroads_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "slug:the_eternal_blue_sky_court": {
+      "kit": "the_eternal_blue_sky_court",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "slug:the_fifth_sun_court": {
+      "kit": "the_fifth_sun_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_fire_and_peak_court": {
+      "kit": "the_fire_and_peak_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "slug:the_heaven_and_earth_court": {
+      "kit": "the_heaven_and_earth_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_island_court_home_pantheon": {
+      "kit": "the_island_court_home_pantheon",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_kami_court": {
+      "kit": "the_kami_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_light_and_flame_court": {
+      "kit": "the_light_and_flame_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "slug:the_lotus_and_peak_court": {
+      "kit": "the_lotus_and_peak_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "slug:the_many_armed_court": {
+      "kit": "the_many_armed_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "slug:the_marsh_and_bear_court": {
+      "kit": "the_marsh_and_bear_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "slug:the_mountain_and_mother_court": {
+      "kit": "the_mountain_and_mother_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_mountain_court": {
+      "kit": "the_mountain_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_ocean_and_voyage_court": {
+      "kit": "the_ocean_and_voyage_court",
+      "mainhand": "minecraft:fishing_rod",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "slug:the_palace_court": {
+      "kit": "the_palace_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_rice_and_volcano_court": {
+      "kit": "the_rice_and_volcano_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "slug:the_rift_and_cattle_court": {
+      "kit": "the_rift_and_cattle_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "slug:the_river_and_forest_court": {
+      "kit": "the_river_and_forest_court",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "slug:the_river_court": {
+      "kit": "the_river_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "slug:the_sea_coast_court": {
+      "kit": "the_sea_coast_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:string",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "slug:the_seven_hills_court": {
+      "kit": "the_seven_hills_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_thousand_god_court": {
+      "kit": "the_thousand_god_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "slug:the_two_river_court": {
+      "kit": "the_two_river_court",
+      "mainhand": "minecraft:stick",
+      "carried": [
+        {
+          "item": "minecraft:wheat",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "slug:the_wide_sky_court": {
+      "kit": "the_wide_sky_court",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:plains"
     }
   }
 }

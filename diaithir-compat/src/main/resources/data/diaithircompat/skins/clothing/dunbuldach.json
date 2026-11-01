@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/male/0.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/male/1.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/male/2.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/male/ruler.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/male/warrior.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/male/priest.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/female/0.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/female/1.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/female/2.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/female/ruler.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/female/warrior.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dunbuldach/female/priest.png",
+    "profession": "diaithircompat:dunbuldach",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

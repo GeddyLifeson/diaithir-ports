@@ -289,7 +289,7 @@ def palette(row):
 
 def style(row):
     g = row["garments"].lower()
-    fibre = bool(re.search(r"fibre|flax|linen|palm|agave|reed", g))
+    fibre = bool(re.search(r"fibre|flax|linen|palm|agave|reed|wool|cotton|silk|hemp|felt", g))
     hide = bool(re.search(r"hide|skin|fur|leather", g))
     return {
         "cut": "parka" if "parka" in g else "robe" if "robe" in g else "tunic" if re.search(r"tunic|coat", g)

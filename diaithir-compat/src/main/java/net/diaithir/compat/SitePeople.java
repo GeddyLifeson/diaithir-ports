@@ -277,7 +277,7 @@ public final class SitePeople {
     private static JsonObject byKit(JsonObject cultures, String slug) {
         for (var e : cultures.entrySet()) {
             String kit = e.getValue().getAsJsonObject().get("kit").getAsString();
-            if (slug.equals(kit) || (kit.length() == 40 && slug.startsWith(kit))) return e.getValue().getAsJsonObject();
+            if (slug.equals(kit) || (kit.length() >= 35 && slug.startsWith(kit))) return e.getValue().getAsJsonObject();
         }
         return null;
     }
