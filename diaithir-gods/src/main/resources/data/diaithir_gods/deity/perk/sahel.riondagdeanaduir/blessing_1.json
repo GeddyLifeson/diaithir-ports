@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:nether_star",
+    "color": 12428624,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:sahel.riondagdeanaduir",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "sahel.riondagdeanaduir_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

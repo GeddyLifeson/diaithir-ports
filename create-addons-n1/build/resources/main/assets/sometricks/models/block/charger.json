@@ -1,0 +1,13 @@
+{
+  "parent": "sometricks:custom/charger",
+  "textures": {
+    "all": "sometricks:block/brass_casing",
+    "particle": "sometricks:block/brass_casing",
+    "0": "sometricks:block/brass_casing1",
+    "1": "sometricks:block/pimp",
+    "2": "sometricks:block/vault_top_small",
+    "3": "sometricks:block/rose_quartz_lamp1",
+    "missing": "sometricks:block/"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirarms:mail_crossbow",
+  "diaithirarms:steel_crossbow",
+  "diaithirarms:tempered_crossbow",
+  "diaithirarms:composite_crossbow",
+  "diaithirarms:rodos_crossbow",
+  "diaithirarms:future_crossbow"
+ ]
+}

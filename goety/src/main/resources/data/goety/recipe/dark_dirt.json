@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:dirt",
+  "#minecraft:coals",
+  "#c:bones",
+  "#c:rods/wooden"
+ ],
+ "result": {
+  "id": "goety:dark_dirt",
+  "count": 4
+ }
+}

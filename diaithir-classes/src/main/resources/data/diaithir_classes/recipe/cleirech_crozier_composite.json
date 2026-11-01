@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:ceramic_plate",
+  "diaithirarms:ceramic_plate",
+  "diaithirarms:ceramic_plate",
+  "diaithirarms:ceramic_plate",
+  "minecraft:stick",
+  "minecraft:stick",
+  "diaithir_classes:cleirech_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:cleirech_crozier_composite",
+  "count": 1
+ }
+}

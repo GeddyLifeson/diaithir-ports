@@ -1,0 +1,15 @@
+{
+  "type": "diaithir_wiretech:crusher",
+  "inputs": [
+    {
+      "ingredient": "minecraft:cobblestone",
+      "count": 1
+    }
+  ],
+  "energy": 800,
+  "time": 80,
+  "result": {
+    "id": "minecraft:gravel",
+    "count": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  "goety:chorus_button",
+  "goety:corrupt_chorus_button",
+  "goety:haunted_button",
+  "goety:marsh_button",
+  "goety:pine_button",
+  "goety:rotten_button",
+  "goety:steep_button",
+  "goety:windswept_button"
+ ]
+}

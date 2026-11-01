@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smoking",
+ "category": "food",
+ "ingredient": "diaithirbutchery:fish_fillet",
+ "result": {
+  "id": "diaithirbutchery:cooked_fish_fillet"
+ },
+ "experience": 0.35,
+ "cookingtime": 100
+}

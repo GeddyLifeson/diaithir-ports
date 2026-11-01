@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:nether_star",
+  "base": "iceandfire:dragon_seeker",
+  "result": {
+    "id": "iceandfire:epic_dragon_seeker"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

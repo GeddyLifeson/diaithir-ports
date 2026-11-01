@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_fishtail_point_tradition.spiuradpoingabuind",
+  "female": false,
+  "slim": false,
+  "light": 0,
+  "items": {
+    "block": "minecraft:stone",
+    "mainhand": "minecraft:flint",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

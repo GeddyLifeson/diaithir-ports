@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": "#c:bones/wither",
+    "M": "iceandfire:dragonsteel_fire_ingot"
+  },
+  "pattern": [
+    "M",
+    "M",
+    "H"
+  ],
+  "result": {
+    "id": "iceandfire:dragonsteel_fire_sword"
+  },
+  "show_notification": true
+}

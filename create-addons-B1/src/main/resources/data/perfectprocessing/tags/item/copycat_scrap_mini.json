@@ -1,0 +1,11 @@
+{
+ "values": [
+  "copycats:copycat_board",
+  "copycats:copycat_byte",
+  "copycats:copycat_flat_pane",
+  "copycats:copycat_half_panel",
+  "copycats:copycat_layer",
+  "copycats:copycat_pane",
+  "copycats:copycat_slope_layer"
+ ]
+}

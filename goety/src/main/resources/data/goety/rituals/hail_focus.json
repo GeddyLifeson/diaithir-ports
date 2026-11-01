@@ -1,0 +1,13 @@
+{
+ "type": "craft",
+ "school": "frost",
+ "activation": "goety:wind_core",
+ "offerings": [
+  "minecraft:powder_snow_bucket",
+  "minecraft:powder_snow_bucket"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:hail_focus",
+ "count": 1
+}

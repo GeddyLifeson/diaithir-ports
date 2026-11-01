@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_dalton_tradition.tigernalounklachad",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:leather",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

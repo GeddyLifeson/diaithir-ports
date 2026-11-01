@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "BIB",
+  "PPP",
+  "P P"
+ ],
+ "key": {
+  "B": "minecraft:brush",
+  "I": "minecraft:iron_ingot",
+  "P": "minecraft:oak_planks"
+ },
+ "result": {
+  "id": "diaithirfauna:preparation_bench"
+ }
+}

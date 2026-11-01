@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:crow_strike",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:battle_cry",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:raven_leap",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:battle_fury",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:talon_wheel",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:field_terror",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:ford_washer",
+   "required": false
+  }
+ ]
+}

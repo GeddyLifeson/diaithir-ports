@@ -1,0 +1,200 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:thornlash",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:dewdrop",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:briar_snare",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:oakskin",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:grove_mending",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:stag_leap",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:mistletoe_spear",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:sight_spark",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:far_sight",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:fate_thread",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:veil_step",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:salmon_knowing",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:watch_hour",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:foretold_blow",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:sharp_note",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:lullaby",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:lament",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:laughter",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:horn_cry",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:banner_song",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:storm_chord",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:verse_blow",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:ward_verse",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:satire",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:truth_word",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:hundred_verses",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:ban_oath",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:curse_pall",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:crow_strike",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:battle_cry",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:raven_leap",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:battle_fury",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:talon_wheel",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:field_terror",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:ford_washer",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:fairy_mist",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:glamour_veil",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:hill_step",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:folk_gift",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:silver_branch",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:folk_hour",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:hail_fall",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:forge_spark",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:quench",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:hot_iron",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:tempering",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:slag_cloud",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:forge_breath",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:molten_rain",
+   "required": false
+  }
+ ]
+}

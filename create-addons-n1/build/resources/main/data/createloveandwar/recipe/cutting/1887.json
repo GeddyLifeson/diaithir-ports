@@ -1,0 +1,10 @@
+{
+ "type": "create:cutting",
+ "ingredient": "createloveandwar:alof",
+ "results": [
+  {
+   "id": "createloveandwar:1887"
+  }
+ ],
+ "processing_time": 50
+}

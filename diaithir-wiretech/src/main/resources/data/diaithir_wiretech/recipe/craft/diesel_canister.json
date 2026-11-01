@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "diaithir_wiretech:coke",
+    "diaithir_wiretech:coke",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:diesel_canister",
+    "count": 1
+  }
+}

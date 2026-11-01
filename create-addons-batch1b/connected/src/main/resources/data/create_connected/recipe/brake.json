@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  "create:andesite_casing",
+  "create:shaft",
+  "minecraft:iron_ingot",
+  "minecraft:redstone"
+ ],
+ "result": {
+  "id": "create_connected:brake",
+  "count": 1
+ }
+}

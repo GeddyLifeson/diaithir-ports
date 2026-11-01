@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:iron_pickaxe",
+    "color": 12236145,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:canaanite.keairdtigerna",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:haste",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "canaanite.keairdtigerna_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

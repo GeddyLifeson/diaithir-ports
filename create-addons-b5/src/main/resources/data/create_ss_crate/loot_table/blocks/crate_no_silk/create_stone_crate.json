@@ -1,0 +1,33 @@
+{
+ "pools": [
+  {
+   "rolls": 2,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "create:ochrum"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:veridium"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:scoria"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:crimsite"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:asurine"
+    },
+    {
+     "type": "minecraft:item",
+     "name": "create:limestone"
+    }
+   ]
+  }
+ ]
+}

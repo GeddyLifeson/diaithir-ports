@@ -1,0 +1,22 @@
+{
+  "preset": "mech",
+  "width": 1.3,
+  "height": 1.1,
+  "stats": {
+    "health": 30,
+    "armor": 2,
+    "speed": 0.36,
+    "knockback_resistance": 0.1
+  },
+  "fuel": {
+    "item": "minecraft:redstone",
+    "ticks": 500
+  },
+  "spawn": {
+    "biomes": "c:is_desert",
+    "weight": 2,
+    "min_age": "V",
+    "rare": true
+  },
+  "loot_table": "diaithirbestiary:entities/tinkerspider"
+}

@@ -1,0 +1,34 @@
+{
+ "display": {
+  "background": "minecraft:textures/block/stone.png",
+  "icon": "create_chocopaste:empty_choco_paste_500g",
+  "title": {
+   "translate": "advancements.bigjarobtain.title"
+  },
+  "description": {
+   "translate": "advancements.bigjarobtain.descr"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "bigjarobtain": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": [
+       "create_chocopaste:empty_choco_paste_500g"
+      ],
+      "count": {
+       "min": 1,
+       "max": 1
+      }
+     }
+    ]
+   }
+  }
+ }
+}

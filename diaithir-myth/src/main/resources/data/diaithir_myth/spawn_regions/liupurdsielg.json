@@ -1,0 +1,18 @@
+{
+  "creature": "diaithir_myth:liupurdsielg",
+  "court": "anatolian",
+  "region": "Anatolia",
+  "min_age": 2,
+  "boxes": [
+    {
+      "lat": [
+        35.8,
+        42.2
+      ],
+      "lon": [
+        26.0,
+        44.8
+      ]
+    }
+  ]
+}

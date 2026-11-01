@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:feather",
+    "color": 13593709,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:germanic.gliukasatuir",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "germanic.gliukasatuir_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

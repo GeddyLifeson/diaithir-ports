@@ -1,0 +1,27 @@
+{
+  "type": "alexscaves:cave_chamber",
+  "config": {
+    "biome": "alexscaves:candy_cavity",
+    "floor": {
+      "Name": "alexscaves:block_of_vanilla_frosting"
+    },
+    "wall": {
+      "Name": "alexscaves:block_of_chocolate"
+    },
+    "ceiling": {
+      "Name": "alexscaves:block_of_chocolate"
+    },
+    "min_y": -48,
+    "max_y": 24,
+    "decor": [
+      "alexscaves:candy_cane",
+      "alexscaves:lollipop",
+      "alexscaves:sweet_puff",
+      "alexscaves:peppermint_patch",
+      "alexscaves:vanilla_ice_cream_scoop",
+      "alexscaves:sprinkles_pile"
+    ],
+    "radius": 13,
+    "height": 9
+  }
+}

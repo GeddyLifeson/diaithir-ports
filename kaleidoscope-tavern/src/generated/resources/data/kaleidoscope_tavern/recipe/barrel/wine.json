@@ -1,0 +1,8 @@
+{
+  "type": "kaleidoscope_tavern:barrel",
+  "carrier": "kaleidoscope_tavern:empty_bottle",
+  "fluid": "kaleidoscope_tavern:grape_juice",
+  "result": {
+    "id": "kaleidoscope_tavern:wine"
+  }
+}

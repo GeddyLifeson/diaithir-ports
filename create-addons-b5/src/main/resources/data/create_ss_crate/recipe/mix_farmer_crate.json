@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create_ss_crate:andesite_crate_shell",
+  "minecraft:hay_block",
+  "minecraft:hay_block",
+  "minecraft:hay_block",
+  "minecraft:bone_block",
+  "minecraft:bone_block",
+  "minecraft:bone_block",
+  "minecraft:bone_block",
+  "minecraft:hay_block"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:farmer_crate"
+  }
+ ]
+}

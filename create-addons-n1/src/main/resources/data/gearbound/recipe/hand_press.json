@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " s ",
+  "dfg",
+  " h "
+ ],
+ "key": {
+  "s": "create:copper_sheet",
+  "d": "create:hand_crank",
+  "f": "create:copper_casing",
+  "g": "gearbound:fuel_canister",
+  "h": "create:mechanical_press"
+ },
+ "result": {
+  "id": "gearbound:hand_press"
+ }
+}

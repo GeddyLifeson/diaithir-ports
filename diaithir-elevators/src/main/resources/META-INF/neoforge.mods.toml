@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirelevators"
+version = "${version}"
+displayName = "Diaithir Elevators"
+description = "Real elevator cabins for Diaithir: floor blocks beside a shaft, a controller above it, and a cabin plate that glides between floors carrying players, mobs and items. Optional Forge Energy cost."
+
+[[dependencies.diaithirelevators]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

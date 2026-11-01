@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "goety:silt_jade_tiles",
+ "result": {
+  "id": "goety:silt_jade_slab",
+  "count": 2
+ }
+}

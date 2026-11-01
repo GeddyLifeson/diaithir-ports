@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "cic",
+  "cic",
+  "cic"
+ ],
+ "key": {
+  "i": "minecraft:iron_ingot",
+  "c": "create_electric_stonks:redstone_resonance_coil"
+ },
+ "result": {
+  "id": "create_electric_stonks:resonance_coil_block"
+ }
+}

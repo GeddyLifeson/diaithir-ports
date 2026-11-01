@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "alexscaves:item/siren_light",
+    "model": {
+      "type": "alexscaves:legacy_item"
+    }
+  }
+}

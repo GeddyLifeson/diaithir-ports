@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "SI",
+    "PP",
+    "PP"
+  ],
+  "key": {
+    "S": "minecraft:string",
+    "I": "#c:ingots/iron",
+    "P": "#minecraft:planks"
+  },
+  "result": {
+    "id": "immersive_tanning:leatherworkers_bench"
+  }
+}

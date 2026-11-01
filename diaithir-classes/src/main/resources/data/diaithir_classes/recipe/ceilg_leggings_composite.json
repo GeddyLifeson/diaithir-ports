@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:composite_leggings",
+  "diaithir_classes:ceilg_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_leggings_composite",
+  "count": 1
+ }
+}

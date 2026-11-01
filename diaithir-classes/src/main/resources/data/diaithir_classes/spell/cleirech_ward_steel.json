@@ -1,0 +1,47 @@
+{
+ "school": "spell_power:healing",
+ "range": 0.0,
+ "tier": 0,
+ "group": "cleirech_set",
+ "learn": {},
+ "release": {
+  "sound": {
+   "id": "spell_engine:generic_healing_release"
+  }
+ },
+ "target": {
+  "type": "CASTER"
+ },
+ "deliver": {
+  "type": "DIRECT"
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:absorption",
+     "duration": 5.0,
+     "amplifier": 1,
+     "apply_mode": "SET"
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 6.0
+  }
+ },
+ "type": "PASSIVE",
+ "passive": {
+  "triggers": [
+   {
+    "type": "DAMAGE_TAKEN",
+    "stage": "POST",
+    "chance": 0.2
+   }
+  ]
+ }
+}

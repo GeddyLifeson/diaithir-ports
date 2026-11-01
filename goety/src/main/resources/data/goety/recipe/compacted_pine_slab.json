@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:compacted_pine_planks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:compacted_pine_slab",
+  "count": 6
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirbutchery:block/salting_barrel_top",
+  "side": "diaithirbutchery:block/salting_barrel_side"
+ }
+}

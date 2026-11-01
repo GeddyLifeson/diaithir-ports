@@ -1,0 +1,17 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "Apache-2.0"
+
+[[mods]]
+modId = "spartanweaponry"
+version = "${version}"
+displayName = "Spartan Weaponry"
+authors = "ObliviousSpartan; port for the Diaithir pack"
+credits = "xwerffx for the weapon ideas and most of the art. Translators: alexvirgo13, Samlegamer, MrMikeForDev, SplashedTomato."
+displayURL = "https://github.com/ObliviousSpartan/SpartanWeaponry"
+description = '''Weapons Galore. A port of Spartan Weaponry 3.2.1 to NeoForge 26.1: daggers, swords, hammers, polearms and axes in wood, stone, copper, bronze and iron.'''
+
+[[dependencies.spartanweaponry]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

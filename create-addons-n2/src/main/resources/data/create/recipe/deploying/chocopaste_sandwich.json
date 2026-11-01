@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "create_chocopaste:toastwith_chocolate_paste",
+ "ingredient": "create_chocopaste:toast",
+ "results": [
+  {
+   "id": "create_chocopaste:chocolate_paste_sandwich"
+  }
+ ]
+}

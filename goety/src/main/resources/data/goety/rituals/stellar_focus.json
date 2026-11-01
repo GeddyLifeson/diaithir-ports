@@ -1,0 +1,14 @@
+{
+ "type": "craft",
+ "school": "end",
+ "activation": "goety:bombardment_focus",
+ "offerings": [
+  "#c:ender_pearls",
+  "goety:void_echo",
+  "goety:void_block"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:stellar_focus",
+ "count": 1
+}

@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "diaithir_wiretech:block/electrum_connector"
+    },
+    "facing=down": {
+      "model": "diaithir_wiretech:block/electrum_connector",
+      "x": 180
+    },
+    "facing=north": {
+      "model": "diaithir_wiretech:block/electrum_connector",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "diaithir_wiretech:block/electrum_connector",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "diaithir_wiretech:block/electrum_connector",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "diaithir_wiretech:block/electrum_connector",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

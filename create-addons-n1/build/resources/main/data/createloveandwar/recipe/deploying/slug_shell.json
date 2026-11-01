@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:filled_shotgun_casing",
+ "ingredient": "#c:ingots/iron",
+ "results": [
+  {
+   "id": "createloveandwar:slug_shell"
+  }
+ ]
+}

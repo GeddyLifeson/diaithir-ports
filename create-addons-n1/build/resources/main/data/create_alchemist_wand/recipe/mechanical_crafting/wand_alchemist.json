@@ -1,0 +1,21 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": true,
+ "key": {
+  "B": "#c:ingots/brass",
+  "E": "create_alchemist_wand:alchemy_dust",
+  "G": "#c:glass_blocks",
+  "O": "#c:obsidians",
+  "P": "create:precision_mechanism"
+ },
+ "pattern": [
+  " G ",
+  "GEG",
+  " P ",
+  " B ",
+  " O "
+ ],
+ "result": {
+  "id": "create_alchemist_wand:wand_alchemist"
+ }
+}

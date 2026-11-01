@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "BAB",
+  " S ",
+  " S "
+ ],
+ "key": {
+  "B": "minecraft:netherite_ingot",
+  "A": "minecraft:diamond",
+  "S": "#c:rods/wooden"
+ },
+ "result": {
+  "id": "diaithirrelics:smith_hammer",
+  "count": 1
+ }
+}

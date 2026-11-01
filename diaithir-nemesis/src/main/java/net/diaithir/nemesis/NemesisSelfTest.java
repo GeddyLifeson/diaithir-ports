@@ -56,6 +56,16 @@ final class NemesisSelfTest {
         NemesisData copy = NemesisData.CODEC.parse(ops, NemesisData.CODEC.encodeStart(ops, data).getOrThrow()).getOrThrow();
         check(fails, copy.byId(n.id) != null && copy.trophy(copy.byId(n.id)).is(Items.STONE_AXE), "save keeps the nemesis and its trophy");
 
+        // a trophy of a vanished item drops alone; the rest of the save survives
+        var saved = (net.minecraft.nbt.CompoundTag) NemesisData.CODEC.encodeStart(ops, data).getOrThrow();
+        var bad = new net.minecraft.nbt.CompoundTag();
+        bad.putString("id", "diaithir_removed_mod:gone");
+        bad.putInt("count", 1);
+        saved.getCompoundOrEmpty("trophies").put("999", bad);
+        NemesisData lenient = NemesisData.CODEC.parse(ops, saved).result().orElse(null);
+        check(fails, lenient != null && lenient.byId(n.id) != null && lenient.trophy(lenient.byId(n.id)).is(Items.STONE_AXE)
+                && !lenient.trophies.containsKey("999"), "an unknown trophy item drops only that trophy");
+
         NeoForge.EVENT_BUS.post(new LivingDeathEvent(victim, level.damageSources().mobAttack(zombie)));
         check(fails, n.rank == 2 && n.kills == 2, "second kill ranks up");
 
@@ -96,14 +106,15 @@ final class NemesisSelfTest {
             data.nemeses.add(rival);
             clashed = DiaithirNemesis.feud(server, data);
         }
-        check(fails, clashed && data.chronicle.size() > told && data.chronicle.getLast().contains(" beat ")
-                || data.chronicle.getLast().contains(" now leads ") || data.chronicle.getLast().contains(" is dead."), "warbands feud and the chronicle records it");
+        check(fails, clashed && data.chronicle.size() > told && (data.chronicle.getLast().contains(" beat ")
+                || data.chronicle.getLast().contains(" now leads ") || data.chronicle.getLast().contains(" is dead.")), "warbands feud and the chronicle records it");
         Nemesis any = data.nemeses.getFirst();
         check(fails, DiaithirNemesis.interrogate(data, any).contains(any.warband), "interrogation names the warband");
 
         data.nemeses.clear();
         data.trophies.clear();
         data.shaken.clear();
+        data.unshake.remove(victim.getStringUUID());
         data.chronicle.clear();
         data.age = oldAge;
         data.houses.remove(victim.getStringUUID());

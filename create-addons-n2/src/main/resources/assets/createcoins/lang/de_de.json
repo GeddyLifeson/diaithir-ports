@@ -1,0 +1,10 @@
+{
+  "item.createcoins.goldcoin": "Goldmünze",
+  "item_group.createcoins.createcoins": "Create Coins",
+  "item.createcoins.coopercoin": "Kupfermünze",
+  "item.createcoins.diamondcoin": "Diamantmünze",
+  "itemGroup.tabcreatecoins": "Create Coins",
+  "item.createcoins.ironcoin": "Eisenmünze",
+  "item.createcoins.zinccoin": "Zinkmünze",
+  "item.createcoins.brasscoin": "Messingmünze"
+}

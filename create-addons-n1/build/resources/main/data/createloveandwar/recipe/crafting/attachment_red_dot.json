@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "O": "createloveandwar:glass_lens",
+  "I": "#c:plates/iron",
+  "R": "minecraft:redstone"
+ },
+ "pattern": [
+  "   ",
+  "OR ",
+  " I "
+ ],
+ "result": {
+  "id": "createloveandwar:attachment_red_dot"
+ },
+ "show_notification": true
+}

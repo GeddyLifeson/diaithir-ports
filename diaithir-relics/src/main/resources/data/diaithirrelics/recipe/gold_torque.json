@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "BBB",
+  "B B",
+  " A "
+ ],
+ "key": {
+  "B": "#c:ingots/bronze",
+  "A": "minecraft:gold_ingot"
+ },
+ "result": {
+  "id": "diaithirrelics:gold_torque",
+  "count": 1
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:oak_planks",
+  "I": "minecraft:iron_ingot",
+  "B": "diaithirbrewing:fermenting_barrel"
+ },
+ "pattern": [
+  "PIP",
+  "PBP",
+  "PIP"
+ ],
+ "result": {
+  "id": "diaithirbrewing:oak_cask"
+ }
+}

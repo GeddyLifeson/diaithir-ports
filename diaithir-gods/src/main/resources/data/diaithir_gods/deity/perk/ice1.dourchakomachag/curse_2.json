@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:feather",
+    "color": 8674687,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:ice1.dourchakomachag",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "ice1.dourchakomachag_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

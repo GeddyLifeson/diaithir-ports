@@ -1,0 +1,77 @@
+accessWidener	v2	official
+
+# Only put classes in here. For everything else use Accessor mixins
+
+# For ChunkMap, ClientChunkCache
+accessible	class	net/minecraft/client/multiplayer/ClientChunkCache$Storage
+
+# For including entities on ships getting send to the client
+accessible  class   net/minecraft/server/level/ChunkMap$TrackedEntity
+
+# For seamless chunk copies
+# TODO Phase 2b: RebuildTask was renamed/restructured to CompileTask in 26.2's SectionMesh
+# rendering rewrite; no source in common/ currently references this class (its former user was
+# excluded as part of the rendering stub-out). Re-add correctly if seamless-chunk-copy rendering
+# is revived in Phase 2b.
+# accessible  class   net/minecraft/client/renderer/chunk/SectionRenderDispatcher$RenderSection$RebuildTask
+
+# For modifying BlockHitResult.location
+# Remove final
+mutable field    net/minecraft/world/phys/HitResult  location    Lnet/minecraft/world/phys/Vec3;
+# Make the field public
+accessible field    net/minecraft/world/phys/HitResult  location    Lnet/minecraft/world/phys/Vec3;
+
+accessible  class   net/minecraft/server/level/ChunkMap$DistanceManager
+
+accessible  class   net/minecraft/world/entity/ai/behavior/AcquirePoi$JitteredLinearRetry
+
+# 26.2: Bee moved from world/entity/animal to world/entity/animal/bee package.
+accessible  class   net/minecraft/world/entity/animal/bee/Bee$BeePollinateGoal
+accessible  class   net/minecraft/world/entity/animal/bee/Bee$BeeEnterHiveGoal
+accessible  class   net/minecraft/world/entity/animal/bee/Bee$BeeLocateHiveGoal
+accessible  class   net/minecraft/world/entity/animal/bee/Bee$BeeGrowCropGoal
+accessible  class   net/minecraft/world/entity/animal/bee/Bee$BaseBeeGoal
+
+# For flywheel lighting engine
+mutable field   net/minecraft/world/level/lighting/LevelLightEngine   blockEngine    Lnet/minecraft/world/level/lighting/LightEngine;
+
+# For unloading shipyard chunks when teleporting across dimensions
+accessible class net/minecraft/world/level/chunk/LevelChunk$RebindableTickingBlockEntityWrapper
+accessible method net/minecraft/world/level/chunk/LevelChunk$RebindableTickingBlockEntityWrapper rebind (Lnet/minecraft/world/level/block/entity/TickingBlockEntity;)V
+
+accessible class net/minecraft/server/level/ServerLevel$EntityCallbacks
+
+# 26.2: Direction.normal field went private (public getUnitVec3i()/getUnitVec3() accessors were
+# added instead). VS2 reads .normal directly in several places; widen the field to keep that.
+accessible field net/minecraft/core/Direction normal Lnet/minecraft/core/Vec3i;
+
+# 26.2: CreativeModeTab.Output (the item-registration callback interface) went protected.
+accessible class net/minecraft/world/item/CreativeModeTab$Output
+
+# 26.2: ChunkAccess.isUnsaved() became a read-only getter (setter removed); VS2 force-clears this
+# after deleting a shipyard chunk so the vanilla unload path doesn't try to re-serialize it.
+# Both directives needed: "mutable" alone only strips `final`, it doesn't grant visibility.
+accessible field net/minecraft/world/level/chunk/ChunkAccess unsaved Z
+mutable field net/minecraft/world/level/chunk/ChunkAccess unsaved Z
+
+# 26.2: RandomizableContainerBlockEntity.setLootTable(ResourceKey<LootTable>) went non-null
+# (previously accepted null to clear the pending loot table so a relocated container doesn't
+# re-roll/drop its contents). Widen the field directly so we can still null it out.
+accessible field net/minecraft/world/level/block/entity/RandomizableContainerBlockEntity lootTable Lnet/minecraft/resources/ResourceKey;
+
+# 26.2: ChunkPos became a record with private x()/z() backing fields (previously public final
+# fields). VS2 reads .x/.z directly in many mixins; widen the fields to keep that working.
+accessible field net/minecraft/world/level/ChunkPos x I
+accessible field net/minecraft/world/level/ChunkPos z I
+
+# 26.2: Level.isClientSide field went private (isClientSide() getter added). Several mixins
+# read the field directly (e.g. via mixin-into-subclass field shadowing).
+accessible field net/minecraft/world/level/Level isClientSide Z
+
+# 26.2: Avatar.STANDING_DIMENSIONS (default entity bounding box) went protected.
+accessible field net/minecraft/world/entity/Avatar STANDING_DIMENSIONS Lnet/minecraft/world/entity/EntityDimensions;
+
+# 26.2: ChunkAccess.blendingData became final. MixinLevelChunk manually reassigns it when
+# copying chunk data between dimensions (copyChunkFromOtherDimension).
+accessible field net/minecraft/world/level/chunk/ChunkAccess blendingData Lnet/minecraft/world/level/levelgen/blending/BlendingData;
+mutable field net/minecraft/world/level/chunk/ChunkAccess blendingData Lnet/minecraft/world/level/levelgen/blending/BlendingData;

@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:paper",
+  "minecraft:netherite_ingot",
+  "minecraft:nether_star"
+ ],
+ "results": [
+  {
+   "id": "minecraft:elytra"
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#diaithir_myth:habitat/cliffs",
+  "spawners": [
+    {
+      "type": "diaithir_myth:natuirkriegach",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

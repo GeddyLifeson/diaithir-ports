@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:bucket",
+    "color": 9012398,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:desert1.oiskitigernaain",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:water_breathing",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "desert1.oiskitigernaain_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,25 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "f": "create:fluid_tank",
+  "p": "create:fluid_pipe",
+  "c": "alchemind:arcane_casing",
+  "m": "alchemind:arcane_mechanism",
+  "g": "alchemind:galaxium_shard",
+  "a": "alchemind:arcana_accelerator",
+  "b": "minecraft:brewing_stand"
+ },
+ "pattern": [
+  " p ",
+  " p ",
+  "gpg",
+  "bfb",
+  "gmg",
+  "cac"
+ ],
+ "result": {
+  "id": "alchemind:potion_catalyzer",
+  "count": 2
+ }
+}

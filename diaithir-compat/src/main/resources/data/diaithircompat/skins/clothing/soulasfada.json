@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/male/0.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/male/1.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/male/2.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/male/ruler.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/male/warrior.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/male/priest.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/female/0.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/female/1.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/female/2.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/female/ruler.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/female/warrior.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/soulasfada/female/priest.png",
+    "profession": "diaithircompat:soulasfada",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

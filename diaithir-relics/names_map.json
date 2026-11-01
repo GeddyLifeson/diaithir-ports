@@ -1,0 +1,106 @@
+{
+ "dawn_sword": {
+  "diaithiris": "Klaidem Kamunaig",
+  "english": "Sword of Dawn"
+ },
+ "salmon_spear": {
+  "diaithiris": "Slieg Braduin",
+  "english": "Spear of the Salmon"
+ },
+ "boar_shield": {
+  "diaithiris": "Skiad Toirk",
+  "english": "Shield of the Boar"
+ },
+ "well_ring": {
+  "diaithiris": "Fàindi Tobuir",
+  "english": "Ring of the Well"
+ },
+ "gold_torque": {
+  "diaithiris": "Moinki Òiri",
+  "english": "Gold Torque"
+ },
+ "storm_axe": {
+  "diaithiris": "Tuog Stoirmi",
+  "english": "Axe of the Storm"
+ },
+ "shadow_dagger": {
+  "diaithiris": "Biudag Failes",
+  "english": "Dagger of Shadow"
+ },
+ "cairn_hammer": {
+  "diaithiris": "Òrdu Kàirn",
+  "english": "Hammer of the Cairn"
+ },
+ "mist_bell": {
+  "diaithiris": "Klag Kietaig",
+  "english": "Bell of Mist"
+ },
+ "bear_belt": {
+  "diaithiris": "Krius Matuin",
+  "english": "Belt of the Bear"
+ },
+ "sea_sword": {
+  "diaithiris": "Klaidem Moir",
+  "english": "Sword of the Sea"
+ },
+ "lightning_spear": {
+  "diaithiris": "Slieg Dielunach",
+  "english": "Spear of Lightning"
+ },
+ "frost_shield": {
+  "diaithiris": "Skiad Reotad",
+  "english": "Shield of Frost"
+ },
+ "sun_ring": {
+  "diaithiris": "Fàindi Grianu",
+  "english": "Ring of the Sun"
+ },
+ "moon_torque": {
+  "diaithiris": "Moinki Gielach",
+  "english": "Torque of the Moon"
+ },
+ "star_sword": {
+  "diaithiris": "Klaidem Riondag",
+  "english": "Sword of Stars"
+ },
+ "serpent_axe": {
+  "diaithiris": "Tuog Natrach",
+  "english": "Axe of the Serpent"
+ },
+ "eagle_spear": {
+  "diaithiris": "Slieg Iuluiri",
+  "english": "Spear of the Eagle"
+ },
+ "raven_whistle": {
+  "diaithiris": "Fiedag Fitig",
+  "english": "Whistle of the Raven"
+ },
+ "giant_belt": {
+  "diaithiris": "Krius Famuir",
+  "english": "Belt of the Giant"
+ },
+ "oath_sword": {
+  "diaithiris": "Klaidem Miondun",
+  "english": "Sword of the Oath"
+ },
+ "smith_hammer": {
+  "diaithiris": "Òrdu Gobund",
+  "english": "Hammer of the Smith"
+ },
+ "light_shield": {
+  "diaithiris": "Skiad Soulais",
+  "english": "Shield of Light"
+ },
+ "fate_ring": {
+  "diaithiris": "Fàindi Dànu",
+  "english": "Ring of Fate"
+ },
+ "apple_branch": {
+  "diaithiris": "Geig Ubul",
+  "english": "Apple Branch"
+ },
+ "dragon_torque": {
+  "diaithiris": "Moinki Drieguin",
+  "english": "Torque of the Dragon"
+ }
+}

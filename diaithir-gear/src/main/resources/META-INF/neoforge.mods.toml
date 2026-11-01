@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirgear"
+version = "${version}"
+displayName = "Gléaus"
+authors = "Diaithir"
+description = '''Cross-mod gear parity for Diaithir: Point Blank bullet damage scaled against the Musket Mod, shared gem tags with matching Apotheosis and Silent Gems affixes, and one Age-gated set bonus per armour or jewellery family. Data driven, clean-room, MIT.'''
+
+[[dependencies.diaithirgear]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

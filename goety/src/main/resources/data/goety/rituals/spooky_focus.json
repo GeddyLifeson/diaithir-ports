@@ -1,0 +1,15 @@
+{
+ "type": "craft",
+ "school": "necroturgy",
+ "activation": "goety:osseous_focus",
+ "offerings": [
+  "#minecraft:soul_fire_base_blocks",
+  "goety:spirit_fabric",
+  "goety:spirit_fabric",
+  "goety:ghost_fire_focus"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:spooky_focus",
+ "count": 1
+}

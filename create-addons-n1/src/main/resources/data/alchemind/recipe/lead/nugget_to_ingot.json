@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "iii",
+  "iii",
+  "iii"
+ ],
+ "key": {
+  "i": "#c:nuggets/lead"
+ },
+ "result": {
+  "id": "alchemind:lead_ingot"
+ }
+}

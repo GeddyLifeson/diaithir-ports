@@ -1,0 +1,25 @@
+{
+  "preset": "avatar",
+  "width": 1.2,
+  "height": 4.0,
+  "stats": {
+    "health": 320,
+    "armor": 6,
+    "damage": 12,
+    "speed": 0.34,
+    "follow_range": 56,
+    "knockback_resistance": 1.0
+  },
+  "boss": {
+    "phase_two_at": 0.5,
+    "bar_color": "white"
+  },
+  "spawn": {
+    "biomes": "minecraft:is_taiga",
+    "weight": 2,
+    "max_light": 7,
+    "min_age": "IV",
+    "rare": true
+  },
+  "loot_table": "diaithirbestiary:entities/orsolune"
+}

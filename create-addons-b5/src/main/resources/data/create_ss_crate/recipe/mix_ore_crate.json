@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:andesite",
+  "minecraft:andesite",
+  "minecraft:gravel",
+  "minecraft:gravel",
+  "minecraft:stone",
+  "minecraft:stone",
+  "minecraft:gravel",
+  "minecraft:gravel",
+  "create:andesite_alloy"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:ore_crate"
+  }
+ ]
+}

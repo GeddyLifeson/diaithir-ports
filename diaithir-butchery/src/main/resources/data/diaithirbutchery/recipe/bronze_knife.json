@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "I",
+  "S"
+ ],
+ "key": {
+  "I": "#diaithirbutchery:bronze_ingots",
+  "S": "minecraft:stick"
+ },
+ "result": {
+  "id": "diaithirbutchery:bronze_knife"
+ }
+}

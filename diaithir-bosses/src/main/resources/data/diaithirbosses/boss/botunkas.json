@@ -1,0 +1,204 @@
+{
+ "id": "botunkas",
+ "name": "Botunkas",
+ "name_en": "Botunkas",
+ "age": 4,
+ "own": {
+  "kind": "spider",
+  "scale": 3.2,
+  "hp": 620,
+  "damage": 12,
+  "armor": 10,
+  "speed": 0.28,
+  "knockback_resistance": 1.0,
+  "follow_range": 48,
+  "fire_immune": false
+ },
+ "bar": {
+  "color": "purple",
+  "overlay": "notched_10"
+ },
+ "scaling": {
+  "hp_per_age": 0.22,
+  "damage_per_age": 0.1,
+  "hp_per_extra_player": 0.45,
+  "max_age_steps": 4
+ },
+ "arena": {
+  "radius": 28,
+  "lock": true,
+  "leash": true,
+  "burn": 6.0
+ },
+ "max_hit_fraction": 0.08,
+ "respawn": {
+  "mode": "once",
+  "ticks": 0
+ },
+ "hostile": true,
+ "xp": 1500,
+ "attacks": {
+  "stomp": {
+   "telegraph": 28,
+   "cooldown": 120,
+   "radius": 5,
+   "damage": 13.2,
+   "power": 1.1,
+   "knockback": 1.0,
+   "type": "leap"
+  },
+  "brew": {
+   "telegraph": 24,
+   "cooldown": 130,
+   "radius": 6,
+   "duration": 200,
+   "effect": "minecraft:poison",
+   "amp": 1,
+   "ticks": 100,
+   "type": "cloud"
+  },
+  "hexbolt": {
+   "telegraph": 28,
+   "cooldown": 100,
+   "count": 3,
+   "damage": 10.8,
+   "range": 30,
+   "fire": false,
+   "type": "bolt",
+   "effect": "minecraft:weakness",
+   "amp": 0,
+   "ticks": 100
+  },
+  "thralls": {
+   "telegraph": 40,
+   "cooldown": 220,
+   "count": 5,
+   "minion": "minecraft:cave_spider",
+   "cap": 10,
+   "radius": 6,
+   "type": "summon"
+  }
+ },
+ "phases": [
+  {
+   "at": 1.0,
+   "name": "I",
+   "speed": 1.0,
+   "damage": 1.0,
+   "cooldown": 1.0,
+   "attacks": [
+    "stomp",
+    "hexbolt"
+   ]
+  },
+  {
+   "at": 0.65,
+   "name": "II",
+   "speed": 1.12,
+   "damage": 1.15,
+   "cooldown": 0.85,
+   "attacks": [
+    "stomp",
+    "hexbolt",
+    "brew"
+   ],
+   "invuln": 40
+  },
+  {
+   "at": 0.3,
+   "name": "III",
+   "speed": 1.25,
+   "damage": 1.3,
+   "cooldown": 0.7,
+   "attacks": [
+    "stomp",
+    "hexbolt",
+    "brew",
+    "thralls"
+   ],
+   "invuln": 40
+  }
+ ],
+ "loot": [
+  {
+   "item": "minecraft:bone",
+   "min": 4,
+   "max": 10,
+   "min_age": 1,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:copper_ingot",
+   "min": 4,
+   "max": 10,
+   "min_age": 2,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:iron_nugget",
+   "min": 4,
+   "max": 10,
+   "min_age": 3,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:iron_ingot",
+   "min": 4,
+   "max": 10,
+   "min_age": 4,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:gold_ingot",
+   "min": 4,
+   "max": 10,
+   "min_age": 5,
+   "chance": 0.6,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:diamond",
+   "min": 4,
+   "max": 10,
+   "min_age": 6,
+   "chance": 0.6,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:netherite_scrap",
+   "min": 4,
+   "max": 10,
+   "min_age": 7,
+   "chance": 0.6,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:redstone",
+   "min": 4,
+   "max": 10,
+   "min_age": 4,
+   "chance": 1.0,
+   "per_age": 2
+  },
+  {
+   "item": "minecraft:experience_bottle",
+   "min": 3,
+   "max": 8,
+   "min_age": 4,
+   "chance": 1.0,
+   "per_age": 2
+  }
+ ],
+ "structure": null,
+ "creature_id": "slavic.botunkas",
+ "court": "slavic",
+ "habitat": "forests",
+ "existing_model": "-",
+ "mythic": true,
+ "entity": "diaithirbosses:botunkas",
+ "equipment": {}
+}

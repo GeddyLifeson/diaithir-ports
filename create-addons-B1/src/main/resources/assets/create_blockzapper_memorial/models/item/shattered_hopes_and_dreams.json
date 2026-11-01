@@ -1,0 +1,12 @@
+{
+  "parent": "create_blockzapper_memorial:custom/handheld_blockzapper",
+  "textures": {
+    "0": "create_blockzapper_memorial:block/fading_obsidian",
+    "1": "create_blockzapper_memorial:block/fading_smooth_stone_slab_side",
+    "2": "create_blockzapper_memorial:block/fading_andesite_alloy_mesh",
+    "3": "create_blockzapper_memorial:block/fading_white_concrete_powder",
+    "4": "create_blockzapper_memorial:block/fading_stripped_spruce_log",
+    "5": "create_blockzapper_memorial:block/fading_white_stained_glass",
+    "particle": "create_blockzapper_memorial:item/shattered_hopes_and_dreams"
+  }
+}

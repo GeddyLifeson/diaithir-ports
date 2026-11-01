@@ -1,0 +1,10 @@
+{
+ "type": "create:crushing",
+ "ingredient": "create:rose_quartz",
+ "results": [
+  {
+   "id": "create_alchemist_wand:alchemy_dust"
+  }
+ ],
+ "processing_time": 400
+}

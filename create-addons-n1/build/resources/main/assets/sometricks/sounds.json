@@ -1,0 +1,10 @@
+{
+  "ariamath": {
+    "sounds": [
+      {
+        "name": "sometricks:c418-aria-math",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+ "fluid": "northstar:liquid_hydrogen",
+ "burnTime": 32,
+ "superHeat": true,
+ "amountConsumedPerTick": 1
+}

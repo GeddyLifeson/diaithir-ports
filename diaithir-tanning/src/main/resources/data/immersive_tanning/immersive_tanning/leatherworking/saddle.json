@@ -1,0 +1,17 @@
+{
+  "leather": 5,
+  "result": {
+    "id": "minecraft:saddle"
+  },
+  "seam": "immersive_tanning:saddle",
+  "auxiliary": [
+    {
+      "ingredient": "#c:ingots/iron",
+      "count": 1
+    },
+    {
+      "ingredient": "#immersive_tanning:thread",
+      "count": 2
+    }
+  ]
+}

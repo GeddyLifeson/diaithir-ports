@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ici",
+  "aaa",
+  "iri"
+ ],
+ "key": {
+  "c": "create_electric_stonks:advanced_redstone_resonance_coil",
+  "i": "minecraft:iron_ingot",
+  "a": "create:andesite_alloy",
+  "r": "minecraft:copper_block"
+ },
+ "result": {
+  "id": "create_electric_stonks:generator"
+ }
+}

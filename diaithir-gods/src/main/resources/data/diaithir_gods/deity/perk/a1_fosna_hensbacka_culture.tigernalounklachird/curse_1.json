@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:leather",
+    "color": 7971740,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_fosna_hensbacka_culture.tigernalounklachird",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:darkness",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "a1_fosna_hensbacka_culture.tigernalounklachird_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

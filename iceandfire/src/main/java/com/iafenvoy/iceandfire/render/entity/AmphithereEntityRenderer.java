@@ -1,0 +1,68 @@
+package com.iafenvoy.iceandfire.render.entity;
+
+import com.iafenvoy.iceandfire.IceAndFire;
+import com.iafenvoy.iceandfire.config.IafCommonConfig;
+import com.iafenvoy.iceandfire.entity.AmphithereEntity;
+import com.iafenvoy.iceandfire.render.entity.feature.AmphithereRiderFeatureRenderer;
+import com.iafenvoy.iceandfire.render.model.AmphithereModel;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.resources.Identifier;
+import net.minecraft.util.Mth;
+import org.jetbrains.annotations.NotNull;
+
+public class AmphithereEntityRenderer extends LegacyMobRenderer<AmphithereEntity, AmphithereModel> {
+    public static final Identifier TEXTURE_BLUE = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_blue.png");
+    public static final Identifier TEXTURE_BLUE_BLINK = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_blue_blink.png");
+    public static final Identifier TEXTURE_GREEN = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_green.png");
+    public static final Identifier TEXTURE_GREEN_BLINK = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_green_blink.png");
+    public static final Identifier TEXTURE_OLIVE = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_olive.png");
+    public static final Identifier TEXTURE_OLIVE_BLINK = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_olive_blink.png");
+    public static final Identifier TEXTURE_RED = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_red.png");
+    public static final Identifier TEXTURE_RED_BLINK = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_red_blink.png");
+    public static final Identifier TEXTURE_YELLOW = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_yellow.png");
+    public static final Identifier TEXTURE_YELLOW_BLINK = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/amphithere/amphithere_yellow_blink.png");
+
+    public AmphithereEntityRenderer(EntityRendererProvider.Context context) {
+        super(context, new AmphithereModel(), 1.6F);
+        this.addLayer(new AmphithereRiderFeatureRenderer(this));
+    }
+
+    @Override
+    protected void scale(@NotNull AmphithereEntity entity, PoseStack matrixStackIn, float partialTickTime) {
+        matrixStackIn.scale(2.0F, 2.0F, 2.0F);
+        //Flight rework: the body tilts with its pitch while airborne, so the model has to be rotated along with it
+        if (IafCommonConfig.INSTANCE.amphithere.flightRework.getValue() && entity.isFlying() && !entity.isInWater() && !entity.isInLava())
+            matrixStackIn.mulPose(Axis.XP.rotationDegrees(Mth.lerp(partialTickTime, entity.xRotO, entity.getXRot())));
+    }
+
+    @Override
+    public @NotNull Identifier getTextureLocation(AmphithereEntity amphithere) {
+        switch (amphithere.getVariant()) {
+            case 0 -> {
+                if (amphithere.isBlinking()) return TEXTURE_BLUE_BLINK;
+                else return TEXTURE_BLUE;
+            }
+            case 1 -> {
+                if (amphithere.isBlinking()) return TEXTURE_GREEN_BLINK;
+                else return TEXTURE_GREEN;
+            }
+            case 2 -> {
+                if (amphithere.isBlinking()) return TEXTURE_OLIVE_BLINK;
+                else return TEXTURE_OLIVE;
+            }
+            case 3 -> {
+                if (amphithere.isBlinking()) return TEXTURE_RED_BLINK;
+                else return TEXTURE_RED;
+
+            }
+            case 4 -> {
+                if (amphithere.isBlinking()) return TEXTURE_YELLOW_BLINK;
+                else return TEXTURE_YELLOW;
+            }
+        }
+        return TEXTURE_GREEN;
+    }
+
+}

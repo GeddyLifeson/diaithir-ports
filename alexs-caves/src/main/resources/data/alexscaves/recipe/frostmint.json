@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PIP",
+    "PPP"
+  ],
+  "key": {
+    "P": "alexscaves:peppermint_powder",
+    "I": "minecraft:blue_ice"
+  },
+  "result": {
+    "count": 6,
+    "id": "alexscaves:frostmint"
+  }
+}

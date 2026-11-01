@@ -1,0 +1,25 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:gravel",
+  "minecraft:gravel",
+  "#c:nuggets/iron",
+  "#c:nuggets/iron",
+  "#c:nuggets/iron",
+  "#c:nuggets/iron",
+  "#c:nuggets/iron"
+ ],
+ "results": [
+  {
+   "id": "create:crimsite",
+   "count": 2
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 656100,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

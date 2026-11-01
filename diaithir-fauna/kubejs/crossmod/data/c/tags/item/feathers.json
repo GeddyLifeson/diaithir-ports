@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "iceandfire:amphithere_feather",
+   "required": false
+  },
+  {
+   "id": "iceandfire:stymphalian_bird_feather",
+   "required": false
+  }
+ ]
+}

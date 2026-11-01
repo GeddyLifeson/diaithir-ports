@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "SGS",
+  "IAI",
+  "SGS"
+ ],
+ "key": {
+  "S": "minecraft:stone",
+  "G": "minecraft:gold_nugget",
+  "A": "create_ss_crate:andesite_crate_shell",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "create_ss_crate:create_stone_crate"
+ }
+}

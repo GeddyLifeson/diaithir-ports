@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "P": "diaithirsteamrails:riveted_plate",
+  "B": "minecraft:bucket",
+  "C": "minecraft:chest"
+ },
+ "pattern": [
+  "PPP",
+  "BCB",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:fuel_tender",
+  "count": 1
+ },
+ "category": "misc"
+}

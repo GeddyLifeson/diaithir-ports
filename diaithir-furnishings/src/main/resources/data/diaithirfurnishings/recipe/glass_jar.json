@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:glass_pane",
+  "W": "#minecraft:planks"
+ },
+ "pattern": [
+  " W ",
+  "P P",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurnishings:glass_jar",
+  "count": 2
+ }
+}

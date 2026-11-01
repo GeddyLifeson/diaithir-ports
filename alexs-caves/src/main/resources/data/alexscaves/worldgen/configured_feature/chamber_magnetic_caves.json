@@ -1,0 +1,25 @@
+{
+  "type": "alexscaves:cave_chamber",
+  "config": {
+    "biome": "alexscaves:magnetic_caves",
+    "floor": {
+      "Name": "alexscaves:galena"
+    },
+    "wall": {
+      "Name": "alexscaves:galena"
+    },
+    "ceiling": {
+      "Name": "alexscaves:galena"
+    },
+    "min_y": -48,
+    "max_y": 24,
+    "decor": [
+      "alexscaves:scarlet_magnetic_node",
+      "alexscaves:azure_magnetic_node",
+      "alexscaves:tesla_bulb",
+      "alexscaves:metal_swarf"
+    ],
+    "radius": 13,
+    "height": 9
+  }
+}
