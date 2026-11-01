@@ -1,0 +1,2098 @@
+{
+ "diaithir": {
+  "name": "Diaithir",
+  "native": "Diaithir",
+  "role": "hearth_elder",
+  "female": false,
+  "quests": [
+   {
+    "id": "dia_m01",
+    "text": "The oaks below Creag Ruadh drop limbs after every storm. The hearth elder wants four logs brought in before the cold."
+   },
+   {
+    "id": "diaithir_om",
+    "text": "Something at Creag Ruadh sounds a note that nobody there can name. Rìgtalum, the sovereignty and the land, is the hearth of Diaithir nearest to it."
+   }
+  ]
+ },
+ "sahul_pleistocene_core_tool_and_scraper_tradition": {
+  "name": "Sahul Pleistocene core-tool and scraper tradition",
+  "native": "Baldakuindsgrìubaid",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c03_m01",
+    "text": "The creek that fills the old channels runs low and the lakes beyond it are shrinking. The elder asks you to read the country before the dry sets in."
+   },
+   {
+    "id": "sahul_pleistocene_core_tool_and_scraper_tradition_om",
+    "text": "At Talyawalka Creek a strange tone drifts over the water, a sound no one from the tool and scraper peoples can name."
+   }
+  ]
+ },
+ "sundaland_and_wallacea_pleistocene_holocene_foragers": {
+  "name": "Sundaland and Wallacea Pleistocene-Holocene foragers",
+  "native": "Tìrbàtaid",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c21_m01",
+    "text": "The rains are heavy and the sea is creeping up the river mouths. Bearded pigs and monkeys are leaving the low forest and the stores are thin. The elder asks you to read the land."
+   },
+   {
+    "id": "sundaland_and_wallacea_pleistocene_holocene_foragers_om",
+    "text": "Something at the Island SE Asia shore sounds a note that nobody there can name. The river mother Màtuirabuindklach is the closest of the Sundaland and Wallacea foragers' own hearths to it."
+   }
+  ]
+ },
+ "balangoda_culture": {
+  "name": "Balangoda culture",
+  "native": "Klachknoik",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c63_m01",
+    "text": "The rains came late and the rusa deer have gone high up the ridge. The yam patches are poor and the stores are low. The elder asks you to read the forest before the next downpour."
+   },
+   {
+    "id": "balangoda_culture_om",
+    "text": "Something at Sri Lanka sounds a note nobody there can name. The mother of the forest, Mātuirkoildiklach, is the nearest of the Balangoda people's hearths to it."
+   }
+  ]
+ },
+ "tasmanian_late_pleistocene_foragers_kutikina_warreen": {
+  "name": "Tasmanian late Pleistocene foragers (Kutikina, Warreen)",
+  "native": "Moindtireilein",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c64_m01",
+    "text": "The glacial cold has settled on the gorge and the wallaby mobs have thinned along the river flats. The elder asks you to read the valley before the next freeze."
+   },
+   {
+    "id": "tasmanian_late_pleistocene_foragers_kutikina_warreen_om",
+    "text": "At a remote stone near Tasmania a sound is heard that no one can name."
+   }
+  ]
+ },
+ "dyuktai_culture": {
+  "name": "Dyuktai culture",
+  "native": "Landglas",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c72_m01",
+    "text": "A bitter cold has come early to the cold steppe. The herds are moving along the river and the camp's dried meat is low. The elder asks you to read the sign before the long dark."
+   },
+   {
+    "id": "dyuktai_culture_om",
+    "text": "A strange note sounds at a Chordroot near Ezhantsy, a homeland site of the Dyuktai culture."
+   }
+  ]
+ },
+ "iberomaurusian": {
+  "name": "Iberomaurusian",
+  "native": "Sielguirkladaig",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c34_m01",
+    "text": "The cold dry years have thinned the oak and pine groves above the cave and the stores are low. The elder asks you to read the hills before winter."
+   },
+   {
+    "id": "iberomaurusian_om",
+    "text": "Something at Ifri n'Etsedda is sounding a note that no one there can name. The mother of this people's forest, Màtuirkoildiklachach, is the hearth nearest to it."
+   }
+  ]
+ },
+ "robberg_industry": {
+  "name": "Robberg industry",
+  "native": "Landkael",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c53_m01",
+    "text": "The spring at Florisbad still runs warm, but the cold dry grassland has thinned the herds and stores are low. The elder asks you to read the land before the frosts."
+   },
+   {
+    "id": "robberg_industry_om",
+    "text": "Something at Florisbad sounds a note nobody there can name. The mother of the river, Màtuirabuindklachachur, is the nearest of Robberg hearth-kin to it."
+   }
+  ]
+ },
+ "magdalenian": {
+  "name": "Magdalenian",
+  "native": "Uomdelba",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c70_m01",
+    "text": "A cold dry autumn has settled on the valley. The horse and reindeer herds are on the move and the camp's stores are thin. The elder asks you to read the land before the snow."
+   },
+   {
+    "id": "magdalenian_om",
+    "text": "Something at Combe Cullier sounds a note nobody there can name, near the hunting grounds of the Magdalenian people."
+   }
+  ]
+ },
+ "yenisei_upper_palaeolithic_afontova_gora_kokorevo": {
+  "name": "Yenisei Upper Palaeolithic (Afontova Gora, Kokorevo)",
+  "native": "Sielguiruilbeinchiabaig",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c68_m01",
+    "text": "Frost has come early to the Yenisei. The reindeer are moving and the horse herds are thin on the steppe. The elder asks you to read the sign before the snow closes the valley."
+   },
+   {
+    "id": "yenisei_upper_palaeolithic_afontova_gora_kokorevo_om",
+    "text": "Something at Novoselovo 6 is sounding a note that no one there can name. The mother of the forest, Màtuirkoildiklachachur, is the nearest of the hearths of Afontova Gora and Kokorevo peoples to it."
+   }
+  ]
+ },
+ "north_china_late_palaeolithic_microblade_groups_shuidonggou_xiachuan": {
+  "name": "North China late Palaeolithic microblade groups (Shuidonggou, Xiachuan)",
+  "native": "Snàtadluindi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c36_m01",
+    "text": "The wind has turned cold early on the loess terrace and the herds are late. The elder asks you to read the plain before the stores are gone."
+   },
+   {
+    "id": "north_china_late_palaeolithic_microblade_groups_shuidonggou_xiachuan_om",
+    "text": "Something near Cishan is sounding a note that nobody there can name. The people of the Shuidonggou and Xiachuan microblade groups keep their hearth here, and the sound is coming from the old Chordroot beyond the river terrace."
+   }
+  ]
+ },
+ "zarzian": {
+  "name": "Zarzian",
+  "native": "Landglindi",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c73_m01",
+    "text": "The stream below Asiab still runs, but the wild goat herds on the slopes are thin and the stores are low. The elder asks you to read the hills before the cold season."
+   },
+   {
+    "id": "zarzian_om",
+    "text": "At Asiab, on the edge of the high desert, a sound is coming from the Chordroot that no one among the Zarzian can name. The hearth of Mātuirfāisachklach, the mother of this desert people, lies nearest to it."
+   }
+  ]
+ },
+ "early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong": {
+  "name": "Early pottery foragers of S China and the Yangtze (Yuchanyan, Xianrendong)",
+  "native": "Moindtirpoiti",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c57_m01",
+    "text": "The wet season has been long and the hunters came back with little. The elder asks you to read the valley before the stores run out."
+   },
+   {
+    "id": "early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong_om",
+    "text": "Something at Zengpiyan, the cave by the Guangxi hills where early foragers of the south China and Yangtze lands once camped, sounds a note nobody there can name. Matuiroirtirpoiti, the mother of this people's coast, is the nearest hearth to it."
+   }
+  ]
+ },
+ "transbaikal_and_mongolian_late_palaeolithic_microblade_groups": {
+  "name": "Transbaikal and Mongolian late Palaeolithic microblade groups",
+  "native": "Landfeòir",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c65_m01",
+    "text": "The cold came early to the river terrace and the reindeer herds have drawn off to the hills. The elder asks you to read the steppe before the deep freeze."
+   },
+   {
+    "id": "transbaikal_and_mongolian_late_palaeolithic_microblade_groups_om",
+    "text": "Something at Mukhor-Tala VII is sounding a note that no one in the camp can name. The lake-mother Mātuirlouchland is the nearest hearth of these microblade hunters to the sound."
+   }
+  ]
+ },
+ "geometric_kebaran": {
+  "name": "Geometric Kebaran",
+  "native": "Landkeàrnag",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c26_m01",
+    "text": "The valley camp is thin on game after a dry cold year. The gazelle have pulled toward the hills and the stores are low. The elder asks you to read the land before the lean months."
+   },
+   {
+    "id": "geometric_kebaran_om",
+    "text": "At Salibiya 9, a sound rises from the Chordroot that no one there can name. The mother of this people's spring, Màtuirierrachklach, is the closest of the hearth to it."
+   }
+  ]
+ },
+ "epipalaeolithic_egypt_isnan_afian_qarunian": {
+  "name": "Epipalaeolithic Egypt (Isnan, Afian, Qarunian)",
+  "native": "Landabund",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c46_m01",
+    "text": "The camp on the river terrace is in the dry season: the water is low, the wild stands are thin and the stores are short. The elder asks you to read the land before the flood."
+   },
+   {
+    "id": "epipalaeolithic_egypt_isnan_afian_qarunian_om",
+    "text": "Something at El Beid is sounding a note that nobody there can name. Matuirkomnurdklach, the mother of this people's plain, lies nearest to it."
+   }
+  ]
+ },
+ "incipient_jomon": {
+  "name": "Incipient Jomon",
+  "native": "Poitàrsaid",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c23_m01",
+    "text": "A hard cold has returned to the valley. Deer and wild goats are drifting off the slopes and the river runs thin of fish. The elder asks you to read the land before the snow."
+   },
+   {
+    "id": "incipient_jomon_om",
+    "text": "At Pereval, a note rises from the Chordroot that no one here can name. Matuiruomklachach, the mother of this people's cave, is the elder of this hearth nearest to it."
+   }
+  ]
+ },
+ "hamburgian": {
+  "name": "Hamburgian",
+  "native": "Poingrèinèid",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c39_m01",
+    "text": "The thaw has come to the river below the cave mouth, but the reindeer are slow to return and the winter stores are thin. The elder asks you to read the valley."
+   },
+   {
+    "id": "hamburgian_om",
+    "text": "Something at Goyet 3 sounds a note that nobody there can name. The mother of the forest of the Hamburgians, Màtuirkoildiklachain, is the nearest of their own hearth to it."
+   }
+  ]
+ },
+ "eburran": {
+  "name": "Eburran",
+  "native": "Landbeindi",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c25_m01",
+    "text": "The dry season is long on the slope. The antelope herds have drawn down toward the lake margins and the water holes are shrinking. The elder asks you to read the grass."
+   },
+   {
+    "id": "eburran_om",
+    "text": "Something at Mt Kilimanjaro north slope sounds a note that no one here can name. Matuirbeindklach, the mother of the mountain for this people, is the hearth nearest to it."
+   }
+  ]
+ },
+ "qadan": {
+  "name": "Qadan",
+  "native": "Sielguirabund",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c48_m01",
+    "text": "The camp on the river bank watches the water: the flood has been poor, the wild stands are thin and the stores are low. The elder asks you to read the land before the next rise."
+   },
+   {
+    "id": "qadan_om",
+    "text": "Something at Unnamed site, Egypt sounds a note that nobody there can name. The mother of the lake of this people, Màtuirlouchklach, is the nearest of Qadan's own hearth to it."
+   }
+  ]
+ },
+ "sebilian": {
+  "name": "Sebilian",
+  "native": "Teigabund",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c49_m01",
+    "text": "The river is low and the plain beyond the bank is dry. Game is thin and the stores are low. The elder asks you to read the land before the flood season."
+   },
+   {
+    "id": "sebilian_om",
+    "text": "Something at Nubia sounds a note that no one there can name. Màtuiroirtirklach, mother of this people's coast, is the nearest of Sebilian's own hearth to it."
+   }
+  ]
+ },
+ "abriense_tequendamense_and_el_jobo": {
+  "name": "Abriense, Tequendamense and El Jobo",
+  "native": "Faskadbeindi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c09_m01",
+    "text": "A cold, dry spell has lowered the lake and the deer are thin on the high savanna. The elder asks you to read the land before the cold nights deepen."
+   },
+   {
+    "id": "abriense_tequendamense_and_el_jobo_om",
+    "text": "Something at La Pochola sounds a note that nobody there can name. Matuirbeindklachach, the mountain mother of this people, lies nearest to it among the hearths of Abriense, Tequendamense and El Jobo."
+   }
+  ]
+ },
+ "monte_verde_ii": {
+  "name": "Monte Verde II",
+  "native": "Pàildenkraikind",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c54_m01",
+    "text": "The creek runs brown with peat and the big grazers are scarce this season. The elder asks you to read the land before the rains."
+   },
+   {
+    "id": "monte_verde_ii_om",
+    "text": "Something at S Chile sounds a note that nobody there can name. The mother of the forest of Monte Verde II's own hearth, Màtuirkoildiklachoir, is the nearest of your people to it."
+   }
+  ]
+ },
+ "natufian": {
+  "name": "Natufian",
+  "native": "Korrungràin",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "nat_m01",
+    "text": "The spring at the mound still runs, but the gazelle herds are thin and the stores are low. The elder asks you to read the land before the dry season."
+   },
+   {
+    "id": "natufian_om",
+    "text": "Something at Jericho sounds a note that nobody there can name. The mother of the hill, Màtuirknokklach, is the nearest of the Natufian hearths to it."
+   }
+  ]
+ },
+ "federmesser_group_tjongerian_havelte": {
+  "name": "Federmesser group (Tjongerian, Havelte)",
+  "native": "Skianiteig",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c43_m01",
+    "text": "The cave camp above the valley still holds, but birch and pine have crept up the slopes, the open herds have thinned and the stores are low. The elder asks you to read the land before the autumn."
+   },
+   {
+    "id": "federmesser_group_tjongerian_havelte_om",
+    "text": "Something at Trou Jadot sounds a note that nobody there can name. The people of Federmesser group, Tjongerian and Havelte, bring their hearth to the Chordroot nearest to it, and the river mother Màtuirabuindklachain waits for word of it."
+   }
+  ]
+ },
+ "final_epigravettian": {
+  "name": "Final Epigravettian",
+  "native": "Poingdeirendach",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c22_m01",
+    "text": "A hard cold has settled on the karst uplands. The horse and red deer herds are drifting off the high pastures and the stores are low. The elder asks you to read the land before the snow."
+   },
+   {
+    "id": "final_epigravettian_om",
+    "text": "A note that no one at Vasilyevka III can name sounds from a Chordroot near the river. The people nearest to it keep their hearth beside the mother of the hill."
+   }
+  ]
+ },
+ "russian_plain_volga_and_urals_final_palaeolithic_and_early_mesolithic_foragers": {
+  "name": "Russian Plain, Volga and Urals Final Palaeolithic and Early Mesolithic foragers",
+  "native": "Sielguirlum",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c12_m01",
+    "text": "Late winter. Wind scours the plain outside Kumyshanskaya Cave and the stored meat is nearly gone. The elder asks you to find where the herds have wintered."
+   },
+   {
+    "id": "russian_plain_volga_and_urals_final_palaeolithic_and_early_mesolithic_foragers_om",
+    "text": "Something at Kumyshanskaya Cave gives out a note that nobody in camp can name. The river-mother of these people, Màtuirabuindklachoir, is the closest hearth of their own to the cave."
+   }
+  ]
+ },
+ "west_african_late_stone_age_and_early_pottery_foragers_iwo_eleru_ounjougou": {
+  "name": "West African Late Stone Age and early pottery foragers (Iwo Eleru, Ounjougou)",
+  "native": "Poitkuildi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c69_m01",
+    "text": "The rains are late and the dry wind lingers. Game is moving off to the river and the grass seed is not yet ripe. The elder asks you to read the land before the stores run low."
+   },
+   {
+    "id": "west_african_late_stone_age_and_early_pottery_foragers_iwo_eleru_ounjougou_om",
+    "text": "Something at Janruwa A sounds a note nobody there can name. The mother of the desert of this people, Màtuirfàisachpoiti, is the nearest of West African Late Stone Age and early pottery foragers (Iwo Eleru, Ounjougou)'s own hearth to it."
+   }
+  ]
+ },
+ "nenana_complex": {
+  "name": "Nenana complex",
+  "native": "Sliegfèid",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c20_m01",
+    "text": "A hard cold has come early to the bluff over the river. The wapiti and bison herds are drifting off the ridges and the meat stores are low. The elder asks you to read the land before the snow."
+   },
+   {
+    "id": "nenana_complex_om",
+    "text": "Something at Interior Alaska sounds a note that nobody here can name. The mother of the plain, Màtuirkònnurdklachach, is the closest of the Nenana complex's own hearths to it."
+   }
+  ]
+ },
+ "bromme_lyngby_culture": {
+  "name": "Bromme (Lyngby) culture",
+  "native": "Tuogfèid",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c11_m01",
+    "text": "Late winter at Rotnowo and the meat caches are nearly empty. Snow still lies between the birch and pine, and the reindeer have not yet come north. The elder asks you to find food and the herds."
+   },
+   {
+    "id": "bromme_lyngby_culture_om",
+    "text": "Something at Rotnowo sounds a note that no one there can name. The bog-mother Màtuirfèidklach, the nearest hearth of Bromme (Lyngby) people to the sound, is the one to ask first."
+   }
+  ]
+ },
+ "clovis": {
+  "name": "Clovis",
+  "native": "Poingklaisi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c35_m01",
+    "text": "A cold snap has come early to the river bluffs and the big herds have not shown. The elder asks you to read the land before the stores are gone."
+   },
+   {
+    "id": "clovis_om",
+    "text": "Something at Big Eddy sounds a note that nobody there can name. Matuirkoildiklachad, the mother of this people's forest, is the nearest of Clovis's own hearth to it."
+   }
+  ]
+ },
+ "creswellian": {
+  "name": "Creswellian",
+  "native": "Sielguiruoma",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c05_m01",
+    "text": "The cave mouth has sheltered the camp through the milder years, but the horse herds have thinned in the valley and the stores are low. The elder asks you to read the land before the cold returns."
+   },
+   {
+    "id": "creswellian_om",
+    "text": "Something at Eleneva Cave Yeleneva Cave sounds a note that no one there can name. Mátuiroirtirklachach, the mother of this people's coast, is the nearest of Creswellian's own hearth to it."
+   }
+  ]
+ },
+ "eastern_paleoindian_fluted_point_groups_gainey_barnes_cumberland_debert": {
+  "name": "Eastern Paleoindian fluted-point groups (Gainey, Barnes, Cumberland, Debert)",
+  "native": "Poingklaiseer",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c14_m01",
+    "text": "A cold dawn at the rockshelter on the ridge. The caribou are on the move and the band's stores are low. The elder asks you to read the herd."
+   },
+   {
+    "id": "eastern_paleoindian_fluted_point_groups_gainey_barnes_cumberland_debert_om",
+    "text": "Something at New Paris No. 4 sounds a note nobody there can name. The mother of the mountain of this people, Màtuirbeindpoing, is the nearest of Eastern Paleoindian fluted-point groups (Gainey, Barnes, Cumberland, Debert)'s own hearth to it."
+   }
+  ]
+ },
+ "fishtail_point_tradition": {
+  "name": "Fishtail point tradition",
+  "native": "Poingerbuild",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c61_m01",
+    "text": "The shelter's guanaco herds have thinned and the rhea no longer come to the shallow lake. The elder asks you to read the plain before the cold nights."
+   },
+   {
+    "id": "fishtail_point_tradition_om",
+    "text": "At Abrigo Pozo Cavado (APC/S1-C4), a rock shelter on the Fishtail point tradition's land, a note sounds from a Chordroot that no one in camp can name. The mother of the river, Màtuirabuindpoing, is the closest of this people's own hearth to it."
+   }
+  ]
+ },
+ "late_paleoindian_and_early_archaic_of_mesoamerica_lerma_santa_marta": {
+  "name": "Late Paleoindian and Early Archaic of Mesoamerica (Lerma, Santa Marta)",
+  "native": "Sielguirglindi",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c32_m01",
+    "text": "The dry season has come early and the big game has thinned in the lowland scrub. The elder asks you to read the land before the stores run out."
+   },
+   {
+    "id": "late_paleoindian_and_early_archaic_of_mesoamerica_lerma_santa_marta_om",
+    "text": "Something at Carabali sounds a note nobody there can name, carried over the grasslands and the coastal lagoons. The mother of this people's coast, Màtuiroirtirklachachur, lies nearest to it among the hearths of this people."
+   }
+  ]
+ },
+ "paijan_culture": {
+  "name": "Paijan culture",
+  "native": "Poingfada",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c42_m01",
+    "text": "The coastal fog is thin this year and the desert behind the camp is bare. The stores are low. The elder asks you to read the sea, the shell beds and the fog hills before the cold current turns."
+   },
+   {
+    "id": "paijan_culture_om",
+    "text": "Something at Je-937 is sounding a note that no one there can name. The mother hearth of the Paijan coast, Màtuiroirtirklachain, is the nearest of your people's hearths to it."
+   }
+  ]
+ },
+ "paleocoastal_pacific_channel_islands_pacific_northwest": {
+  "name": "Paleocoastal Pacific (Channel Islands, Pacific Northwest)",
+  "native": "Moindtirmura",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c50_m01",
+    "text": "The camp sits where the lake meets the shore, but the fish runs are thin and the stores are low. The elder asks you to read the water and the land before the cold months."
+   },
+   {
+    "id": "paleocoastal_pacific_channel_islands_pacific_northwest_om",
+    "text": "Something at Unnamed site, USA sounds a note nobody there can name. Màtuirlouchklachach, the mother of this people's lake, is the nearest hearth of the Paleocoastal Pacific people to it."
+   }
+  ]
+ },
+ "pedra_pintada_lower_amazon": {
+  "name": "Pedra Pintada (Lower Amazon)",
+  "native": "Dielbkloichi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c30_m01",
+    "text": "The river is falling and the dry months are coming. The cave shelter above the plain has been the band's camp through many seasons, but the fruit trees are thin and the stores are low. The elder asks you to read the forest and the water."
+   },
+   {
+    "id": "pedra_pintada_lower_amazon_om",
+    "text": "Something at Caverna da Pedra Pintada sounds a note that nobody here can name. The mother of this plain, Màtuirkòmnurdklachachur, is the closest hearth of Pedra Pintada to it."
+   }
+  ]
+ },
+ "swiderian": {
+  "name": "Swiderian",
+  "native": "Poingkasach",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c51_m01",
+    "text": "The river terrace still holds the camp, but the reindeer come later each year and the cold bites early. The elder asks you to read the land before the freeze."
+   },
+   {
+    "id": "swiderian_om",
+    "text": "Something at Rydno sounds a note nobody there can name. The mother of the lake of this people, Màtuirlouchklachachur, is the nearest of Swiderian's own hearth to it."
+   }
+  ]
+ },
+ "trialetian": {
+  "name": "Trialetian",
+  "native": "Sielguirbeindi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c62_m01",
+    "text": "The cave above the gorge still keeps out the wind, but the deer have drawn back up the slopes and the stores are low. The elder asks you to read the forest before the snow."
+   },
+   {
+    "id": "trialetian_om",
+    "text": "Something at Kotias Klde is sounding a note that no one there can name. The river mother Màtuirabuindklachad is the nearest of this people's own hearth to it."
+   }
+  ]
+ },
+ "ushki_lake_kamchatka": {
+  "name": "Ushki Lake (Kamchatka)",
+  "native": "Sielguirlocha",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c24_m01",
+    "text": "Ash from a far mountain has dusted the lake shore and the cold has come early. Reindeer and mountain sheep are leaving the slopes and the stores are low. The elder asks you to read the land before the snow."
+   },
+   {
+    "id": "ushki_lake_kamchatka_om",
+    "text": "Something at Ushki I sounds a note that nobody there can name. The mother of the mountain of this people, Màtuirbeindklachachur, is the nearest of Ushki Lake's own hearths to it."
+   }
+  ]
+ },
+ "western_stemmed_tradition": {
+  "name": "Western Stemmed Tradition",
+  "native": "Poingbuin",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c16_m01",
+    "text": "Spring comes dry. The lake edge has pulled back again and the old pools are shrinking. The elder asks you to find where the water will hold this year."
+   },
+   {
+    "id": "western_stemmed_tradition_om",
+    "text": "At Diversion Dam Cave, a note rises from the Chordroot that no one in camp can name. The mother of the river, Màtuirabuindklachean, lies nearest to it among our hearths."
+   }
+  ]
+ },
+ "ahrensburgian": {
+  "name": "Ahrensburgian",
+  "native": "Seigderèinèid",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c38_m01",
+    "text": "The first hard frost has come early and the reindeer are late. The elder asks you to read the river and the tundra before the herds pass or do not."
+   },
+   {
+    "id": "ahrensburgian_om",
+    "text": "Something at Diring Yuriakh sounds a note nobody there can name. Mother Màtuiruomklachachur, the nearest elder of this hearth to the Chordroot, is the one to ask first."
+   }
+  ]
+ },
+ "folsom": {
+  "name": "Folsom",
+  "native": "Sielguirbìsuin",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c17_m01",
+    "text": "Spring on the open plain. The herds of the great bison are moving and the band's stores are thin. The elder asks you to read the grass and the herd before the hunters set out."
+   },
+   {
+    "id": "folsom_om",
+    "text": "At Unnamed site, USA, a note rings out from the Chordroot that no one in camp can name. Matuirfaisachklachach, the mother of this people's desert, is the hearth nearest to it."
+   }
+  ]
+ },
+ "las_vegas_culture": {
+  "name": "Las Vegas culture",
+  "native": "Sielguiruirtiri",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c60_m01",
+    "text": "The dry season has dragged on and the dry forest behind the coast is bare. The elder asks you to read the land and the shore before the stores run low."
+   },
+   {
+    "id": "las_vegas_culture_om",
+    "text": "Something at Santa Elena is sounding a note that nobody there can name, and it rings from a Chordroot in the desert scrub. The mother of this people's cave, Màtuiruomklachain, is the hearth nearest to it."
+   }
+  ]
+ },
+ "dalton_tradition": {
+  "name": "Dalton tradition",
+  "native": "Sliegfiaklach",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c58_m01",
+    "text": "The leaves are turning and the river is low. The camp has too little dried meat for the cold. The elder asks you to read the woods before the first frost."
+   },
+   {
+    "id": "dalton_tradition_om",
+    "text": "Something at Johnson sounds a note nobody there can name. The mother of the forest of this people, Màtuirkoildiklachean, is the nearest of Dalton tradition's own hearth to it."
+   }
+  ]
+ },
+ "nanzhuangtou": {
+  "name": "Nanzhuangtou",
+  "native": "Poitgràini",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c37_m01",
+    "text": "The lake shore has pulled back in the dry spring and the stores are low. The elder asks you to read the marsh before the rains."
+   },
+   {
+    "id": "nanzhuangtou_om",
+    "text": "Something at N China plain sounds a note that nobody there can name. Mātuirgliendklach, the mother of this people's valley, is the nearest of Nanzhuangtou's own hearth to it."
+   }
+  ]
+ },
+ "azilian": {
+  "name": "Azilian",
+  "native": "Klachdatach",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c15_m01",
+    "text": "Spring on the river. The forest is closing in where open ground used to be, and the old horse herds are gone. The elder asks you to read what the woods now offer."
+   },
+   {
+    "id": "azilian_om",
+    "text": "Something at Le Sire sounds a note that no one there can name. Matuirabuindklachuil, the mother of this people's river, is the nearest of the hearth to it."
+   }
+  ]
+ },
+ "central_brazilian_highland_hunter_gatherers_lagoa_santa_itaparica": {
+  "name": "Central Brazilian highland hunter-gatherers (Lagoa Santa, Itaparica)",
+  "native": "Moindtirbeindi",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c08_m01",
+    "text": "The dry season has run long. The lake below the cave is shrinking and the fruit trees on the cerrado are late. The elder asks you to find what will feed the camp."
+   },
+   {
+    "id": "central_brazilian_highland_hunter_gatherers_lagoa_santa_itaparica_om",
+    "text": "Something at Lapa do Peixe Gordo, a limestone cave in the Lagoa Santa country, sounds a note that no one in the camp can name. Mátuirbeindklachain, the mother of this people's mountain, is the hearth nearest to it."
+   }
+  ]
+ },
+ "harifian": {
+  "name": "Harifian",
+  "native": "Seigedfàsaig",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c44_m01",
+    "text": "The camp above the great crater still holds its rock pools, but the rains are thin, the gazelle are scattered and the stores are low. The elder asks you to read the land before the dry season."
+   },
+   {
+    "id": "harifian_om",
+    "text": "Something at Maaleh Ramon West sounds a note that nobody there can name. Mátuirgliendklachach, the mother of this valley, lives nearest to it of all her hearth."
+   }
+  ]
+ },
+ "upper_tigris_epipalaeolithic_protoneolithic_hallan_cemi_kortik_tepe": {
+  "name": "Upper Tigris Epipalaeolithic-Protoneolithic (Hallan Cemi, Kortik Tepe)",
+  "native": "Koilkabund",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c67_m01",
+    "text": "The lean months have come to the stream camp. Hares are few and the nut trees on the slopes are not yet ripe. The elder asks you to read the land before the frost."
+   },
+   {
+    "id": "upper_tigris_epipalaeolithic_protoneolithic_hallan_cemi_kortik_tepe_om",
+    "text": "At Demirköy, a note sounds from the Chordroot that no one here can name. Mātuirbeindteigi, the mountain mother of this people, lies nearest to it among the hearths."
+   }
+  ]
+ },
+ "mureybetian": {
+  "name": "Mureybetian",
+  "native": "Sielguirgràin",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c33_m01",
+    "text": "The Euphrates is low and the wild cereal stands on the terrace are thin. The elder asks you to read the steppe before the cold."
+   },
+   {
+    "id": "mureybetian_om",
+    "text": "At Tell Dja’de el-Mughara, a sound no one here can name is coming from a Chordroot near the settlement. The mother of this people’s desert, Màtuirfàisachklachachur, is the closest of the Mureybetian hearth to it."
+   }
+  ]
+ },
+ "indian_mesolithic_microlithic_foragers_bhimbetka_sarai_nahar_rai": {
+  "name": "Indian Mesolithic microlithic foragers (Bhimbetka, Sarai Nahar Rai)",
+  "native": "Klachluindi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c19_m01",
+    "text": "The lake by the camp is shrinking and the monsoon is late. Nilgai and chital come to the shore to drink, but the stores are low. The elder asks you to read the land."
+   },
+   {
+    "id": "indian_mesolithic_microlithic_foragers_bhimbetka_sarai_nahar_rai_om",
+    "text": "Something at India sounds a note nobody there can name. Mātuirabuindland, the mother river of this people, lies nearest their own hearth to it."
+   }
+  ]
+ },
+ "oakhurst_industry": {
+  "name": "Oakhurst industry",
+  "native": "Klachsgrìubaid",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c52_m01",
+    "text": "The shelter is warm and the thicket is thick, but the antelope are fewer on the near slopes. The elder asks you to read the land before the dry months."
+   },
+   {
+    "id": "oakhurst_industry_om",
+    "text": "At Ravenscraig, a note no one there can name has started to sound near the Chordroot. The nearest hearth of Oakhurst industry to it is the forest mother, Màtuirkoildiklachuil."
+   }
+  ]
+ },
+ "plano_complex_agate_basin_hell_gap_cody": {
+  "name": "Plano complex (Agate Basin, Hell Gap, Cody)",
+  "native": "Sielguirfeòir",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c18_m01",
+    "text": "Spring on the high plains. The bison are moving along the dry arroyo and the band's stores are thin. The elder asks you to read the herd and the channel before the hunters commit."
+   },
+   {
+    "id": "plano_complex_agate_basin_hell_gap_cody_om",
+    "text": "At Olsen-Chubbuck, a bison kill site on the high plains of the Southern Plains edge, a sound no one there can name comes from the Chordroot. The mother of this people's plain, Màtuirkòmnurdklachain, is the nearest hearth of the Plano complex to it."
+   }
+  ]
+ },
+ "hoabinhian": {
+  "name": "Hoabinhian",
+  "native": "Klachlàimi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c31_m01",
+    "text": "The rains are ending at the cave and the tuber stands are thin. The elder asks you to read the forest before the dry months."
+   },
+   {
+    "id": "hoabinhian_om",
+    "text": "A note no one at Spirit Cave, Thailand can name is sounding from a Chordroot near the cave mouth. Mother Màtuirkoildiklachein of this hearth is the closest to it."
+   }
+  ]
+ },
+ "komsa_culture": {
+  "name": "Komsa culture",
+  "native": "Sielguirtuod",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c40_m01",
+    "text": "The ice is breaking in the fjord and the winter stores are low. The elder asks you to read the shore, the skerries and the open water before the shoals come."
+   },
+   {
+    "id": "komsa_culture_om",
+    "text": "Something at Skjærvika Midtre_S49 sounds a note that no one there can name. Its hearth is the hill of Màtuirknokklachachur, the nearest of Komsa people's own hearths to the site."
+   }
+  ]
+ },
+ "magosian_obsolete_term": {
+  "name": "Magosian (obsolete term)",
+  "native": "Landbeg",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c66_m01",
+    "text": "The lake has dropped and the antelope no longer come down to the shore in the dry months. The elder asks you to read the forest and grass around the crater before the dry season."
+   },
+   {
+    "id": "magosian_obsolete_term_om",
+    "text": "Something at Lake Chala (2011) is sounding a note that no one there can name. The mother of the river, Màtuirabuindklachein, is the closest of the Magosian hearth to it."
+   }
+  ]
+ },
+ "pre_pottery_neolithic_a": {
+  "name": "Pre-Pottery Neolithic A",
+  "native": "Klachgràin",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c28_m01",
+    "text": "The village stands on the foothill edge above the river plain. The wild goat herds are shifting and the stores are low. The elder asks you to read the slopes before the lean months."
+   },
+   {
+    "id": "pre_pottery_neolithic_a_om",
+    "text": "At Qermez Dere, a sound rises from the Chordroot that no one here can name. The mother of this people's spring, Màtuirierrachpoiti, lies nearest the hearth that heard it first."
+   }
+  ]
+ },
+ "zengpiyan": {
+  "name": "Zengpiyan",
+  "native": "Uomèisg",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c55_m01",
+    "text": "The river is high after the rains and the hunters came back with little. The elder asks you to read the valley before the stores run out."
+   },
+   {
+    "id": "zengpiyan_om",
+    "text": "Something at Qiujiang sounds a note that nobody there can name. Mátuirbeindklachoir, the mother of this people's mountain, is the nearest of Zengpiyan's own hearths to it."
+   }
+  ]
+ },
+ "early_holocene_sahara_foragers_early_acacus": {
+  "name": "Early Holocene Sahara foragers (Early Acacus)",
+  "native": "Sielguirfàsaig",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c59_m01",
+    "text": "The rains were thin this year and the pools in the dry valley are shrinking. The elder asks you to read the land before the dry months close in."
+   },
+   {
+    "id": "early_holocene_sahara_foragers_early_acacus_om",
+    "text": "At Enneri Dirennao, a Chordroot hums a note that no one among the Early Acacus foragers can name. Mother Mátuirkònmurdklachoir, the eldest of this people's hearth, lives nearest to it."
+   }
+  ]
+ },
+ "andean_puna_hunters_lauricocha_junin": {
+  "name": "Andean puna hunters (Lauricocha, Junin)",
+  "native": "Sielguiràirdi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c07_m01",
+    "text": "The fishing camp at Quebrada Jaguay is hungry. The shellfish beds are thin after a hard tide and the winter fog is late. The elder asks you to read the shore."
+   },
+   {
+    "id": "andean_puna_hunters_lauricocha_junin_om",
+    "text": "At Quebrada Jaguay, high in the Junin puna, a note sounds from a Chordroot that nobody among the Lauricocha hunters can name. Mátuirkoildiklachird, the mother of the forest of this people, is the nearest hearth to it."
+   }
+  ]
+ },
+ "khiamian": {
+  "name": "Khiamian",
+  "native": "Poingsnàtaid",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c27_m01",
+    "text": "The cold dry years are loosening. Wild cereal stands are coming back on the slopes, but the gazelle are scattered and the stores are low. The elder asks you to read the land."
+   },
+   {
+    "id": "khiamian_om",
+    "text": "Something at Sekher 6 is sounding a note that no one there can name. Matùirknokklachain, the mother of this hill, is the closest of the Khiamian hearth to it."
+   }
+  ]
+ },
+ "paleo_arctic_tradition": {
+  "name": "Paleo-Arctic tradition",
+  "native": "Sielguirdeigi",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c01_m01",
+    "text": "The creek terrace above the valley has been our camp since the ice drew back, but the old herds are thin and the elder wants the land read before the cold sets in."
+   },
+   {
+    "id": "paleo_arctic_tradition_om",
+    "text": "At Carlo Creek a note sounds from the Chordroot that no one there can name. Mātuirkoildiklachang, mother of this people's forest, is the nearest of the hearths to it."
+   }
+  ]
+ },
+ "early_mesolithic_britain_star_carr": {
+  "name": "Early Mesolithic Britain (Star Carr)",
+  "native": "Moindtirboglaig",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c06_m01",
+    "text": "The camp sits where the river meadow meets the new woodland, but hazel and birch have spread, the open herds have drifted and the stores are low. The elder asks you to read the land before the autumn."
+   },
+   {
+    "id": "early_mesolithic_britain_star_carr_om",
+    "text": "At Lightmarsh Farm Kidderminster, near the reed edge, a note comes from a Chordroot that no one in the camp can name. The mother of the bog, Màtuirfèidklachach, is the nearest of Star Carr's own hearths to the sound."
+   }
+  ]
+ },
+ "amotape_complex": {
+  "name": "Amotape complex",
+  "native": "Kloicheoirtiri",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c41_m01",
+    "text": "The river runs thin in the dry season and the dry forest is brown. The elder asks you to read the land before the rains, for the stores are low."
+   },
+   {
+    "id": "amotape_complex_om",
+    "text": "Something at Cu-S2 is sounding a note that no one there can name. The mother of this people's river, Màtuirabuindklachird, is the closest of the Amotape complex's own hearths to it."
+   }
+  ]
+ },
+ "capsian": {
+  "name": "Capsian",
+  "native": "Sligeguinmeig",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c02_m01",
+    "text": "The shell mound at Kef Zoura has grown with every season of snail gathering, but the rains were poor and the stores are low. The elder asks you to read the land before the dry months."
+   },
+   {
+    "id": "capsian_om",
+    "text": "Something at Kef Zoura D sounds a note nobody there can name. The mountain mother Màtuirbeindklachad is the nearest of Capsian's own hearth to it."
+   }
+  ]
+ },
+ "maglemosian": {
+  "name": "Maglemosian",
+  "native": "Bouglachmòr",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c56_m01",
+    "text": "Autumn on the lake shore. The reed beds are brown, the red deer have gone to the woods, and the camp must lay in food before the cold. The elder asks you to read the land."
+   },
+   {
+    "id": "maglemosian_om",
+    "text": "Something at Ede-Maanderbuurt sounds a note nobody there can name. The nearest hearth of your own people to it is the one that holds the mother of this coast, Màtuiroirtirklachoir."
+   }
+  ]
+ },
+ "pre_pottery_neolithic_b": {
+  "name": "Pre-Pottery Neolithic B",
+  "native": "Teigkloichid",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c29_m01",
+    "text": "The coast village at Byblos lives on fish, flocks and the barley of the hinterland, but the winter rains have been thin and the stores are low. The elder asks you to read the land and the sea before the lean months."
+   },
+   {
+    "id": "pre_pottery_neolithic_b_om",
+    "text": "Something near Byblos is sounding a note that no one there can name. The nearest hearth of your people's own river mother, Màtuirabuindpoiti, lies closest to it."
+   }
+  ]
+ },
+ "sumnagin_culture": {
+  "name": "Sumnagin culture",
+  "native": "Landfèid",
+  "role": "elder_hearth",
+  "female": false,
+  "quests": [
+   {
+    "id": "c71_m01",
+    "text": "The ice is going out and the camp's winter stores are nearly gone. Elk and reindeer are on the move through the larch. The elder asks you to read the land before the thaw floods the tracks."
+   },
+   {
+    "id": "sumnagin_culture_om",
+    "text": "At Yakutia, a note rises from the Chordroot that no one there can name. Mátuirmoirklach, the mother of the sea of this people, is the nearest of Sumnagin hearths to it."
+   }
+  ]
+ },
+ "kunda_culture": {
+  "name": "Kunda culture",
+  "native": "Knàimfèid",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c04_m01",
+    "text": "The camp at Podoli sits where forest meets lakeshore, but the elk have moved off and the stores are low. The elder asks you to read the land before the cold returns."
+   },
+   {
+    "id": "kunda_culture_om",
+    "text": "Something at Podoli V sounds a note that nobody there can name. The mother of the lake, Màtuirlouchklachain, is the nearest of the Kunda hearths to it."
+   }
+  ]
+ },
+ "fosna_hensbacka_culture": {
+  "name": "Fosna-Hensbacka culture",
+  "native": "Sielguirmura",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c47_m01",
+    "text": "The ice has pulled back from the coast and the shore camp sits on new ground, but the elk are shy, the fish runs are uncertain and the stores are low. The elder asks you to read the shore before the autumn."
+   },
+   {
+    "id": "fosna_hensbacka_culture_om",
+    "text": "Something at Hedegård sounds a note that nobody there can name. Go to the Chordroot where the wind and the stream meet, the place the people of Hedegård take their lamb and hay to in spring."
+   }
+  ]
+ },
+ "central_african_late_stone_age_tshitolian": {
+  "name": "Central African Late Stone Age (Tshitolian)",
+  "native": "Sielguirkuildi",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c10_m01",
+    "text": "The river is low and the dry season grass stands tall on the savanna. The camp at Cabu 4 is short of food, and the elder asks you to find what the forest edge and the water can give."
+   },
+   {
+    "id": "central_african_late_stone_age_tshitolian_om",
+    "text": "Something at Cabu 4 sounds a note that nobody there can name. The mother of the lake, Màtuirlouchklachoir, is the hearth nearest to it."
+   }
+  ]
+ },
+ "new_guinea_highlands_foragers_and_early_kuk_agriculture": {
+  "name": "New Guinea Highlands foragers and early Kuk agriculture",
+  "native": "Gàrradàirdi",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c45_m01",
+    "text": "The swamp edge in the high valley is rich in tubers and cane, but the wild stands are patchy, the possum are shy and the stores are low. The elder asks you to read the ground before the wet season."
+   },
+   {
+    "id": "new_guinea_highlands_foragers_and_early_kuk_agriculture_om",
+    "text": "Something at the New Guinea Highlands sounds a note that nobody there can name. Matuiroirtirgrànu, the mother of the coast, is the nearest hearth of the foragers and early Kuk gardeners to it."
+   }
+  ]
+ },
+ "early_archaic_eastern_north_america": {
+  "name": "Early Archaic Eastern North America",
+  "native": "Sielguirgiutais",
+  "role": "elder_hearth",
+  "female": true,
+  "quests": [
+   {
+    "id": "c13_m01",
+    "text": "The spring floods have dropped and the band is back at the river camp. The elder asks you to read the bottomland before the parties scatter for the summer."
+   },
+   {
+    "id": "early_archaic_eastern_north_america_om",
+    "text": "Something at Brick House sounds a note that nobody there can name. Its nearest hearth-keeper for the people of Early Archaic Eastern North America is Màtuirbeindklachean, the mother of their mountain."
+   }
+  ]
+ },
+ "the_island_court_home_pantheon": {
+  "name": "The Island Court (home pantheon)",
+  "native": "The Island Court (home pantheon)",
+  "role": "tuath_king",
+  "female": false,
+  "quests": [
+   {
+    "id": "c74_m01",
+    "text": "The king of the tuath asks you to ride the bounds before the summer assembly, for two lords claim the same pasture. Learn where the old markers stand."
+   },
+   {
+    "id": "the_island_court_home_pantheon_om",
+    "text": "At Diaithir isles, Ireland, Britain, a note sounds from the Chordroot that no one there can name. Rìgtalum, the sovereignty and land of the Island Court, is the hearth nearest to it."
+   }
+  ]
+ },
+ "the_river_court": {
+  "name": "The River Court",
+  "native": "The River Court",
+  "role": "nomarch",
+  "female": true,
+  "quests": [
+   {
+    "id": "c75_m01",
+    "text": "The river rises at the first cataract and the provincial governor wants the flood reading before the tax is set. Climb down the steps at Elephantine and read the marks."
+   },
+   {
+    "id": "the_river_court_om",
+    "text": "Something in the Nile valley is sounding a note that no one there can name. The sun and kingship, Grianurìg, is the nearest of The River Court's own hearth to it."
+   }
+  ]
+ },
+ "the_two_river_court": {
+  "name": "The Two-River Court",
+  "native": "The Two-River Court",
+  "role": "city_ruler",
+  "female": true,
+  "quests": [
+   {
+    "id": "c76_m01",
+    "text": "The temple storehouses at Ur take in barley, wool and dates, and the ruler's steward wants the year's dues weighed and recorded. Go to the temple granary at the foot of the ziggurat."
+   },
+   {
+    "id": "the_two_river_court_om",
+    "text": "A note nobody here can name is sounding near the Tigris and Euphrates rivers, where the reed beds meet the farm fields. The sky father Speiriatuir, lord of the assembly, is the nearest of the Two-River Court's own hearth to it."
+   }
+  ]
+ },
+ "the_thousand_god_court": {
+  "name": "The Thousand-God Court",
+  "native": "The Thousand-God Court",
+  "role": "great_king",
+  "female": false,
+  "quests": [
+   {
+    "id": "c77_m01",
+    "text": "The great king rules from a walled city on the high plateau, and vassals send tribute and oath tablets each spring. A palace scribe asks you to carry a sealed treaty to a frontier lord."
+   },
+   {
+    "id": "the_thousand_god_court_om",
+    "text": "Something at Anatolia sounds a note nobody there can name. The storm of the high places, Stoirmibeind, is the nearest of The Thousand-God Court's own hearth to it."
+   }
+  ]
+ },
+ "the_sea_coast_court": {
+  "name": "The Sea-Coast Court",
+  "native": "The Sea-Coast Court",
+  "role": "city_king",
+  "female": true,
+  "quests": [
+   {
+    "id": "c78_m01",
+    "text": "Byblos has sold cedar to Egypt for centuries and its king wants the new season's felling organised. Go up to the harbour timber yard and check the contracts."
+   },
+   {
+    "id": "the_sea_coast_court_om",
+    "text": "Something at Levant and Phoenicia sounds a note that no one there can name. The old father, lord of the pantheon, Atuirasd, is the nearest of The Sea-Coast Court's own hearth to it."
+   }
+  ]
+ },
+ "the_palace_court": {
+  "name": "The Palace Court",
+  "native": "The Palace Court",
+  "role": "palace_steward",
+  "female": false,
+  "quests": [
+   {
+    "id": "c79_m01",
+    "text": "The palace storerooms hold rows of tall jars of oil, wine and grain, and a steward keeps count with clay tallies and seals. Go to the west magazines and check the autumn stores."
+   },
+   {
+    "id": "the_palace_court_om",
+    "text": "Something at Crete and the Aegean sounds a note nobody there can name. The lady of the mountain and the double axe, Beindbienuosul, is the nearest of The Palace Court's own hearth to it."
+   }
+  ]
+ },
+ "the_mountain_court": {
+  "name": "The Mountain Court",
+  "native": "The Mountain Court",
+  "role": "demarch",
+  "female": false,
+  "quests": [
+   {
+    "id": "c80_m01",
+    "text": "The harvest tithe is due and the collector from the city has come early to the threshing floor. The demarch asks you to stand beside him while the grain is measured."
+   },
+   {
+    "id": "the_mountain_court_om",
+    "text": "Something at the Chordroot on the Greece, Aegean, Anatolian coast sounds a note that nobody there can name. Tàirnenachatuir, the sky father and thunderer of the Mountain Court's own hearth, is the nearest to it."
+   }
+  ]
+ },
+ "the_seven_hills_court": {
+  "name": "The Seven-Hills Court",
+  "native": "The Seven-Hills Court",
+  "role": "patron",
+  "female": true,
+  "quests": [
+   {
+    "id": "c81_m01",
+    "text": "Your household farms on the slopes beside the Tiber and owes a share to its patron. He asks you to bring the harvest to the Forum and speak for the family."
+   },
+   {
+    "id": "the_seven_hills_court_om",
+    "text": "Something at Italy, Etruria, Latium sounds a note nobody there can name. Speirimiondun, the sky lord of oaths, is the nearest of The Seven-Hills Court's own hearth to it."
+   }
+  ]
+ },
+ "the_ash_tree_court": {
+  "name": "The Ash-Tree Court",
+  "native": "The Ash-Tree Court",
+  "role": "harbor_reeve",
+  "female": false,
+  "quests": [
+   {
+    "id": "c82_m01",
+    "text": "Ships crowd the harbor at Hedeby and the king's reeve takes a toll on every keel. He asks you to stand with him on the quay while the cargoes are counted."
+   },
+   {
+    "id": "the_ash_tree_court_om",
+    "text": "Something at Scandinavia, Germania sounds a note that no one there can name. The one-eyed father, Gliukasatuir, is the nearest of the Ash-Tree Court's own hearth to it."
+   }
+  ]
+ },
+ "the_birch_grove_court": {
+  "name": "The Birch-Grove Court",
+  "native": "The Birch-Grove Court",
+  "role": "tribute_collector",
+  "female": true,
+  "quests": [
+   {
+    "id": "c83_m01",
+    "text": "The prince's men make their winter round to gather tribute in furs, honey and silver. The collector reaches your village and asks for a count of the households."
+   },
+   {
+    "id": "the_birch_grove_court_om",
+    "text": "Something at Eastern Europe sounds a note nobody there can name. The thunder and sky, Tàirnenachspeiri, is the nearest of the Birch-Grove Court's own hearth to it."
+   }
+  ]
+ },
+ "the_amber_court": {
+  "name": "The Amber Court",
+  "native": "The Amber Court",
+  "role": "amber_merchant",
+  "female": true,
+  "quests": [
+   {
+    "id": "c84_m01",
+    "text": "Truso lies by the lagoon of the Vistula, where Baltic amber is bought for silver from far lands. The merchant asks you to weigh a lot of raw amber for a visiting ship."
+   },
+   {
+    "id": "the_amber_court_om",
+    "text": "Something at the Baltic coast sounds a note nobody there can name. Under the sky and thunder of Speiritàirnenach, the Amber Court's own hearth nearest to it, the sound keeps returning."
+   }
+  ]
+ },
+ "the_marsh_and_bear_court": {
+  "name": "The Marsh-and-Bear Court",
+  "native": "The Marsh-and-Bear Court",
+  "role": "tribute_collector",
+  "female": false,
+  "quests": [
+   {
+    "id": "c85_m01",
+    "text": "Tribute collectors from the great trading republic to the south come in winter to take furs from the lake peoples. The elder asks you to stand beside him when the pelts are counted."
+   },
+   {
+    "id": "the_marsh_and_bear_court_om",
+    "text": "Something at Finland, Karelia, Estonia sounds a note that nobody there can name. Speiritigerna, the sky lord of the Marsh-and-Bear Court, is the nearest of its own hearth to it."
+   }
+  ]
+ },
+ "the_wide_sky_court": {
+  "name": "The Wide-Sky Court",
+  "native": "The Wide-Sky Court",
+  "role": "wagon_headman",
+  "female": false,
+  "quests": [
+   {
+    "id": "c86_m01",
+    "text": "The grass is short on the near pastures and the herds are lean. The wagon headman sends you to the Greek town at Olbia to learn what grain and wine the clan can buy with hides and horses."
+   },
+   {
+    "id": "the_wide_sky_court_om",
+    "text": "Something at Scythian, Thracian, Dacian lands sounds a note nobody there can name. Tieldachspeiri, the great sky lady of the hearth, is the nearest of the Wide-Sky Court's own hearths to it."
+   }
+  ]
+ },
+ "the_light_and_flame_court": {
+  "name": "The Light-and-Flame Court",
+  "native": "The Light-and-Flame Court",
+  "role": "village_headman",
+  "female": true,
+  "quests": [
+   {
+    "id": "c87_m01",
+    "text": "The village channel runs thin and the barley is late. The headman asks you to find the master who digs the underground water channels."
+   },
+   {
+    "id": "the_light_and_flame_court_om",
+    "text": "Something at Iran, Persia is sounding a note that nobody there can name. Gliukasmad, lord of wisdom and the good, keeps the hearth nearest to it."
+   }
+  ]
+ },
+ "the_many_armed_court": {
+  "name": "The Many-Armed Court",
+  "native": "The Many-Armed Court",
+  "role": "town_elder",
+  "female": false,
+  "quests": [
+   {
+    "id": "c88_m01",
+    "text": "The river rises each monsoon and the low streets flood. The town elder asks you to find the brickmaker who can raise the platform under the lower town."
+   },
+   {
+    "id": "the_many_armed_court_om",
+    "text": "Something at South Asia sounds a note that nobody there can name. Òrdugtigerna, lord of the cosmic order, is the hearth of The Many-Armed Court nearest to it."
+   }
+  ]
+ },
+ "the_heaven_and_earth_court": {
+  "name": "The Heaven-and-Earth Court",
+  "native": "The Heaven-and-Earth Court",
+  "role": "lineage_elder",
+  "female": false,
+  "quests": [
+   {
+    "id": "c89_m01",
+    "text": "The millet fields feed the great hall and the lineage, and this year's levy is heavy. The elder sends you to the grain-store to see what the town can spare."
+   },
+   {
+    "id": "the_heaven_and_earth_court_om",
+    "text": "Something at China sounds a note that nobody there can name. The lord of heaven, Nèamtigerna, is the nearest of The Heaven-and-Earth Court's own hearth to it."
+   }
+  ]
+ },
+ "the_kami_court": {
+  "name": "The Kami Court",
+  "native": "The Kami Court",
+  "role": "village_headman",
+  "female": false,
+  "quests": [
+   {
+    "id": "c90_m01",
+    "text": "The paddies by the stream are the village's whole year. The headman asks you to check the dikes and the seedbeds before the spring rains."
+   },
+   {
+    "id": "the_kami_court_om",
+    "text": "Something at Japan sounds a note that nobody there can name. Grianubienuosulach, the lady of the sun on the high plain, is the nearest of The Kami Court's own hearths to it."
+   }
+  ]
+ },
+ "the_crossroads_court": {
+  "name": "The Crossroads Court",
+  "native": "The Crossroads Court",
+  "role": "town_chief",
+  "female": false,
+  "quests": [
+   {
+    "id": "c91_m01",
+    "text": "The town sits where four roads meet and the market is thin this season. The chief asks you to learn why caravans are passing it by."
+   },
+   {
+    "id": "the_crossroads_court_om",
+    "text": "Something at West Africa sounds a note that nobody there can name. Speiriàrdu, the supreme sky, is the nearest of the Crossroads Court's own hearths to it."
+   }
+  ]
+ },
+ "the_corn_and_star_court": {
+  "name": "The Corn-and-Star Court",
+  "native": "The Corn-and-Star Court",
+  "role": "town_head",
+  "female": true,
+  "quests": [
+   {
+    "id": "c92_m01",
+    "text": "The rains are late and the town head asks you to read the signs before the fields are fired. Visit the calendar keeper at the walled city's plaza."
+   },
+   {
+    "id": "the_corn_and_star_court_om",
+    "text": "Something at Mesoamerica, Yucatan sounds a note that nobody there can name. Saeguldèanaduir, the maker of the world, is the hearth of The Corn-and-Star Court nearest to it."
+   }
+  ]
+ },
+ "the_fifth_sun_court": {
+  "name": "The Fifth-Sun Court",
+  "native": "The Fifth-Sun Court",
+  "role": "calpulli_head",
+  "female": true,
+  "quests": [
+   {
+    "id": "c93_m01",
+    "text": "The lake has risen after a wet season and water laps at the causeway. The head of the calpulli asks every hand to help raise the dike."
+   },
+   {
+    "id": "the_fifth_sun_court_om",
+    "text": "Something at Central Mexico sounds a note that nobody there can name. The dual lord of creation, Dàildtikruteiger, is the nearest of The Fifth-Sun Court's own hearth to it."
+   }
+  ]
+ },
+ "the_mountain_and_mother_court": {
+  "name": "The Mountain-and-Mother Court",
+  "native": "The Mountain-and-Mother Court",
+  "role": "ayllu_head",
+  "female": true,
+  "quests": [
+   {
+    "id": "c94_m01",
+    "text": "The terrace walls above the valley slumped in the rains. Neighbours owe each other labour, and the ayllu head asks you to join the work."
+   },
+   {
+    "id": "the_mountain_and_mother_court_om",
+    "text": "Something at Andes is sounding a note that nobody there can name. The sun lord, Grianutigernaach, is the nearest of the Mountain-and-Mother Court's own hearth to it."
+   }
+  ]
+ },
+ "the_ocean_and_voyage_court": {
+  "name": "The Ocean-and-Voyage Court",
+  "native": "The Ocean-and-Voyage Court",
+  "role": "master_navigator",
+  "female": false,
+  "quests": [
+   {
+    "id": "c95_m01",
+    "text": "A master navigator trains the young in star paths, swell patterns and the flight of birds. The district chief asks you to sit with the school for a season."
+   },
+   {
+    "id": "the_ocean_and_voyage_court_om",
+    "text": "Something at the Pacific islands is sounding a note that no one there can name, and the father of the sky, Speiriatuirach, is the nearest of your court's own hearth to it."
+   }
+  ]
+ },
+ "the_eternal_blue_sky_court": {
+  "name": "The Eternal-Blue-Sky Court",
+  "native": "The Eternal-Blue-Sky Court",
+  "role": "camp_elder",
+  "female": false,
+  "quests": [
+   {
+    "id": "c96_m01",
+    "text": "A hard winter has come after a dry summer and the herds are dying on the frozen grass. The camp elder asks you to move the families to better pasture."
+   },
+   {
+    "id": "the_eternal_blue_sky_court_om",
+    "text": "Something at Mongolia, Central Asia sounds a note nobody there can name. The herders of the steppe say the sound came up from the ground near the old horse pastures, and the nearest of the Eternal-Blue-Sky Court's hearths is Speirisìurraid."
+   }
+  ]
+ },
+ "the_rift_and_cattle_court": {
+  "name": "The Rift-and-Cattle Court",
+  "native": "The Rift-and-Cattle Court",
+  "role": "homestead_head",
+  "female": true,
+  "quests": [
+   {
+    "id": "c97_m01",
+    "text": "The rains were thin and the grass is short. The homestead head asks you to move part of the herd to the river pastures before the cattle weaken."
+   },
+   {
+    "id": "the_rift_and_cattle_court_om",
+    "text": "Something at East and southern Africa sounds a note that nobody there can name. Speiritaburtaichi, the sky giver of rain and cattle, is the nearest of the Rift-and-Cattle Court's own hearths to it."
+   }
+  ]
+ },
+ "the_cliff_and_mask_court": {
+  "name": "The Cliff-and-Mask Court",
+  "native": "The Cliff-and-Mask Court",
+  "role": "village_headman",
+  "female": false,
+  "quests": [
+   {
+    "id": "c98_m01",
+    "text": "The rains came late and the granaries cut into the cliff ledges are half empty. The headman asks you to count what is left before the dry months."
+   },
+   {
+    "id": "the_cliff_and_mask_court_om",
+    "text": "At Sahel, Sahara, central African forests, a note sounds from a Chordroot that no one there can name. Riondagdèanaduir, the maker of the stars, is the hearth of the Cliff-and-Mask Court nearest to it."
+   }
+  ]
+ },
+ "the_lotus_and_peak_court": {
+  "name": "The Lotus-and-Peak Court",
+  "native": "The Lotus-and-Peak Court",
+  "role": "village_headman",
+  "female": false,
+  "quests": [
+   {
+    "id": "c99_m01",
+    "text": "The wet season came short and the great reservoir by the lake town is low. The headman asks you to walk the channels and find where the water is being lost."
+   },
+   {
+    "id": "the_lotus_and_peak_court_om",
+    "text": "Something at Angkor Wat sounds a note nobody there can name. The lord of the high peak, Bindentigerna, is the nearest of The Lotus-and-Peak Court's own hearth to it."
+   }
+  ]
+ },
+ "the_rice_and_volcano_court": {
+  "name": "The Rice-and-Volcano Court",
+  "native": "The Rice-and-Volcano Court",
+  "role": "village_headman",
+  "female": false,
+  "quests": [
+   {
+    "id": "c100_m01",
+    "text": "Ash from the mountain has fallen on the rice terraces of the plain. The headman asks you to walk the fields and see what can be saved."
+   },
+   {
+    "id": "the_rice_and_volcano_court_om",
+    "text": "Something at Java, Bali, Vietnam, Indonesia sounds a note that nobody there can name, and the terraced rice fields below the volcanoes have gone quiet to hear it. Rusubienuosul, lady of the rice, is the hearth of this court nearest to the sound."
+   }
+  ]
+ },
+ "the_fire_and_peak_court": {
+  "name": "The Fire-and-Peak Court",
+  "native": "The Fire-and-Peak Court",
+  "role": "village_elder",
+  "female": true,
+  "quests": [
+   {
+    "id": "c101_m01",
+    "text": "A new fortress is rising on the hill above the plain, and every village owes grain and labor to the king's builders. The elder asks you to take the share to the citadel."
+   },
+   {
+    "id": "the_fire_and_peak_court_om",
+    "text": "Something near Caucasus, Armenia, Georgia, Commagene sounds a note no one there can name. Speiritàirnenachach, lord of sky and thunder, is the nearest of the Fire-and-Peak Court's own hearths to it."
+   }
+  ]
+ },
+ "the_river_and_forest_court": {
+  "name": "The River-and-Forest Court",
+  "native": "The River-and-Forest Court",
+  "role": "village_headman",
+  "female": false,
+  "quests": [
+   {
+    "id": "c102_m01",
+    "text": "The river rose late this year and the gardens on the dark earth are thin. The headman asks you to walk the plots and see which can still carry a crop."
+   },
+   {
+    "id": "the_river_and_forest_court_om",
+    "text": "Something near Amazon, Caribbean, northern South America is sounding a note that nobody there can name. Saeguldèanaduirach, the maker of the world, is the closest of The River-and-Forest Court's own hearth to it."
+   }
+  ]
+ },
+ "kuonrig": {
+  "name": "Kuonrìg",
+  "native": "Kuonrìg",
+  "role": "harbour_master",
+  "female": true,
+  "quests": [
+   {
+    "id": "c098_m01",
+    "text": "The spring fleet is due out of the Tagus and the stores are short. The harbour master asks you to walk the quays and count what is missing."
+   },
+   {
+    "id": "kuonrig_om",
+    "text": "Something at Atlantic Europe sounds a note that nobody there can name. The people of Kuonrìg have a name for the sound, and they say it has been heard before."
+   }
+  ]
+ },
+ "lasuirrig": {
+  "name": "Lasuirrìg",
+  "native": "Lasuirrìg",
+  "role": "caravan_master",
+  "female": true,
+  "quests": [
+   {
+    "id": "c099_m01",
+    "text": "A silk caravan is forming at Bursa for the long road east. The caravan master needs hands, camels and a guide who knows the passes."
+   },
+   {
+    "id": "lasuirrig_om",
+    "text": "Something at Anatolia to North India sounds a note nobody there can name. The people of Lasuirrìg have a name for the sound."
+   }
+  ]
+ },
+ "kuonspiusach": {
+  "name": "Kuonspìusach",
+  "native": "Kuonspìusach",
+  "role": "port_master",
+  "female": false,
+  "quests": [
+   {
+    "id": "c100_m01",
+    "text": "The monsoon winds are about to turn and the harbour is full of ships waiting to leave or arrive. The port master wants a hand to settle cargo on the wharf."
+   },
+   {
+    "id": "kuonspiusach_om",
+    "text": "Something at the Indian Ocean coasts sounds a note that no one there can name. The people of Kuonspìusach have a name for the sound, though they do not agree on what it means."
+   }
+  ]
+ },
+ "talumnuod": {
+  "name": "Talumnuod",
+  "native": "Talumnuod",
+  "role": "colonial_governor",
+  "female": true,
+  "quests": [
+   {
+    "id": "c101_m01",
+    "text": "A fleet has landed at Veracruz with settlers, tools and seed, and the port is choked with crates. The governor's clerk needs someone to sort what belongs where."
+   },
+   {
+    "id": "talumnuod_om",
+    "text": "At Atlantic Americas, a note sounds from the Chordroot that no one there can name. The people of Talumnuod have their own word for it, and they will not say it lightly."
+   }
+  ]
+ },
+ "dunbuldach": {
+  "name": "Dùnbuldach",
+  "native": "Dùnbuldach",
+  "role": "county_magistrate",
+  "female": false,
+  "quests": [
+   {
+    "id": "c102_m01",
+    "text": "A walled county town has a new granary, an old wall and a great many petitions. The magistrate asks you to walk the market and wall before the harvest tax is set."
+   },
+   {
+    "id": "dunbuldach_om",
+    "text": "At China, Korea, Japan a note sounds from the Chordroot that no one there can name. The people of Dùnbuldach have a name for it, and they want to know more."
+   }
+  ]
+ },
+ "gainemrig": {
+  "name": "Gainemrìg",
+  "native": "Gainemrìg",
+  "role": "market_overseer",
+  "female": true,
+  "quests": [
+   {
+    "id": "c103_m01",
+    "text": "Djenne's market sits on an island of the inland delta and its mud-brick walls need replastering each year before the floods. The overseer asks for hands to count the stalls and plaster the market wall."
+   },
+   {
+    "id": "gainemrig_om",
+    "text": "Something at Sahel and West Africa sounds a note nobody there can name. The people of Gainemrìg have a name for the sound, and they say the note has been heard before."
+   }
+  ]
+ },
+ "guoltintech": {
+  "name": "Guoltintech",
+  "native": "Guoltintech",
+  "role": "c104_foundry_master",
+  "female": true,
+  "quests": [
+   {
+    "id": "c104_m01",
+    "text": "The furnaces at Coalbrookdale burn coke, and a hard winter has frozen the canal. The foundry master needs coal before the blast goes cold."
+   },
+   {
+    "id": "guoltintech_om",
+    "text": "Something at Europe sounds a note nobody there can name. The people of Guoltintech have a name for the sound, but they will not say it aloud near the root."
+   }
+  ]
+ },
+ "saertulmach": {
+  "name": "Saertulmach",
+  "native": "Saertulmach",
+  "role": "c105_wagon_master",
+  "female": true,
+  "quests": [
+   {
+    "id": "c105_m01",
+    "text": "A family wagon has broken an axle in the Cumberland Gap and the first snow is a week off. The wagon master asks you to get them through to the far side."
+   },
+   {
+    "id": "saertulmach_om",
+    "text": "Something at The Americas sounds a note that no one there can name. The people of Saertulmach have a name for the sound, and the Hand has been asked to look into it."
+   }
+  ]
+ },
+ "iarnbotrach": {
+  "name": "Iarnbòtrach",
+  "native": "Iarnbòtrach",
+  "role": "c106_stationmaster",
+  "female": true,
+  "quests": [
+   {
+    "id": "c106_m01",
+    "text": "A short line runs from the capital to Tsarskoye Selo, and the engines are fed birch and coal by turns. The stationmaster's fuel yard is nearly empty before a hard frost."
+   },
+   {
+    "id": "iarnbotrach_om",
+    "text": "Something at Russia, Central Asia, India sounds a note nobody there can name. The people of Iarnbòtrach have a name for the sound."
+   }
+  ]
+ },
+ "oilen_nuod": {
+  "name": "Oilen-nuod",
+  "native": "Oilen-nuod",
+  "role": "c107_customs_clerk",
+  "female": false,
+  "quests": [
+   {
+    "id": "c107_m01",
+    "text": "The harbour at Yokohama is open to foreign ships and the customs house is overrun. A clerk asks you to sort a mountain of cargo claims before the tide turns."
+   },
+   {
+    "id": "oilen_nuod_om",
+    "text": "Something at Japan, Siam, treaty ports sounds a note nobody there can name. The people of Oilen-nuod have a name for the sound, and the elders say it has been heard before."
+   }
+  ]
+ },
+ "deiskertfurraigi": {
+  "name": "Deiskertfurraigi",
+  "native": "Deiskertfurraigi",
+  "role": "c108_wool_classer",
+  "female": false,
+  "quests": [
+   {
+    "id": "c108_m01",
+    "text": "A wool clip has reached Sydney Cove and a ship waits for the tide. The classer needs it graded and baled before dusk."
+   },
+   {
+    "id": "deiskertfurraigi_om",
+    "text": "Something at Sydney Cove sounds a note nobody there can name. The people of Deiskertfurraigi have a name for the sound."
+   }
+  ]
+ },
+ "solasstaid": {
+  "name": "Solasstàid",
+  "native": "Solasstàid",
+  "role": "c109_grid_keeper",
+  "female": false,
+  "quests": [
+   {
+    "id": "c109_m01",
+    "text": "The old hydro station at Vemork feeds a valley grid and the winter flows are low. The keeper must choose how to spend the water."
+   },
+   {
+    "id": "solasstaid_om",
+    "text": "At Europe, North America, a note rises from the Chordroot that no one there can name. The people of Solasstàid have their own word for this sound."
+   }
+  ]
+ },
+ "katuirliunach": {
+  "name": "Katuirlìunach",
+  "native": "Katuirlìunach",
+  "role": "ward_warden",
+  "female": true,
+  "quests": [
+   {
+    "id": "c110_m01",
+    "text": "The lights of a night-market ward keep dying at the same hour. The ward warden asks you to trace the fault through the substation before the stalls lose their stock."
+   },
+   {
+    "id": "katuirliunach_om",
+    "text": "Something at East and Southeast Asia sounds a note that no one there can name. The people of Katuirlìunach have a name for the sound, though they have never heard it so clearly before."
+   }
+  ]
+ },
+ "olumaein": {
+  "name": "Olumaein",
+  "native": "Olumaein",
+  "role": "field_steward",
+  "female": false,
+  "quests": [
+   {
+    "id": "c111_m01",
+    "text": "A coastal pipeline has a slow leak and the field steward cannot afford to shut the line. Walk the right of way and find where it breathes."
+   },
+   {
+    "id": "olumaein_om",
+    "text": "Something at Gulf, North Africa, Central Asia sounds a note nobody there can name. The people of Olumaein have a name for the sound, and they say it is not a sound you should ignore."
+   }
+  ]
+ },
+ "eolaskumlacht": {
+  "name": "Eolaskumlacht",
+  "native": "Eolaskumlacht",
+  "role": "cable_engineer",
+  "female": true,
+  "quests": [
+   {
+    "id": "c112_m01",
+    "text": "A cable station on the Cornish cliff reports a drop in traffic on the transatlantic line. The cable engineer wants you to walk the beach manhole and the landing huts."
+   },
+   {
+    "id": "eolaskumlacht_om",
+    "text": "Something at Bletchley Park sounds a note nobody there can name. The people of Eolaskumlacht have a name for the sound."
+   }
+  ]
+ },
+ "skielbaili": {
+  "name": "Skielbàili",
+  "native": "Skielbàili",
+  "role": "enclave_keeper",
+  "female": false,
+  "quests": [
+   {
+    "id": "c113_m01",
+    "text": "The keepers of the Pripyat enclave say their well has gone sour and the wolves are coming closer to the courtyards. The keeper asks you to read the ground before the frost."
+   },
+   {
+    "id": "skielbaili_om",
+    "text": "At the Worldwide ruins, a note sounds from the Chordroot that no one there can name. The people of Skielbàili have a name for it, and they are waiting to hear what you will make of it."
+   }
+  ]
+ },
+ "realtsiulach": {
+  "name": "Riondagsiublach",
+  "native": "Riondagsiublach",
+  "role": "dock_steward",
+  "female": false,
+  "quests": [
+   {
+    "id": "c114_m01",
+    "text": "The south pole of the Moon holds the ice the settlers drink and the dock steward says the mine pumps are failing. Walk the rim and find which line froze."
+   },
+   {
+    "id": "realtsiulach_om",
+    "text": "At the Chordroot beyond Earth, a low note rises from the roots that no one here can name. The people of Riondagsiublach have a name for this sound and know it is not a sound to ignore."
+   }
+  ]
+ },
+ "roudosach": {
+  "name": "Roudòsach",
+  "native": "Roudòsach",
+  "role": "colour_keeper",
+  "female": true,
+  "quests": [
+   {
+    "id": "c115_m01",
+    "text": "The colour keepers hold a pocket of green and blue at the dam while the grey of the Storm creeps across the desert. The keeper asks you to measure how far the grey has come since the spring."
+   },
+   {
+    "id": "roudosach_om",
+    "text": "At Rodos, a note sounds from the Chordroot that no one there can name. The people of Roudòsach have a name for the sound, but they do not agree on what it means."
+   }
+  ]
+ },
+ "glasdumuin": {
+  "name": "Glasdumuin",
+  "native": "Glasdumuin",
+  "role": "seed_warden",
+  "female": false,
+  "quests": [
+   {
+    "id": "c116_m01",
+    "text": "The old lake bed of Jezero is grey dust and the warden says a seed will not live in it. Walk the bed and find where the dust holds water."
+   },
+   {
+    "id": "glasdumuin_om",
+    "text": "At Beyond Earth, a note sounds from the Chordroot that no one there can name. Uoinimàtuir, mother of the green on the red world, is the closest of our hearth to it."
+   }
+  ]
+ },
+ "sinsermeisin": {
+  "name": "Sinsermeisin",
+  "native": "Sinsermeisin",
+  "role": "first_elder",
+  "female": false,
+  "quests": [
+   {
+    "id": "c117_m01",
+    "text": "The oldest elder on the machine world has stopped answering. The first elder asks you to walk the great hall and find which line went dark."
+   },
+   {
+    "id": "sinsermeisin_om",
+    "text": "At Beyond Earth, a note sounds from the Chordroot that no one of Sinsermeisin can name, and Kuoirttigerna, lord of the oldest circuit, is the closest of our hearth to hear it."
+   }
+  ]
+ },
+ "longkodlata": {
+  "name": "Longkodlata",
+  "native": "Longkodlata",
+  "role": "watch_captain",
+  "female": true,
+  "quests": [
+   {
+    "id": "c118_m01",
+    "text": "You wake from cold sleep and the watch captain says two sleepers did not wake with you. Walk the ring and find which pods failed."
+   },
+   {
+    "id": "longkodlata_om",
+    "text": "At Between stars, a note sounds from the Chordroot that no one there can name. Loungmàtuir, the mother of the ship that carries our people, is the hearth nearest to it."
+   }
+  ]
+ },
+ "soulasfada": {
+  "name": "Soulasfada",
+  "native": "Soulasfada",
+  "role": "landing_steward",
+  "female": false,
+  "quests": [
+   {
+    "id": "c119_m01",
+    "text": "The first landing on the ocean world sits on a raft of ark hulls, and the landing steward says the tie-down cables are failing in the swell. Walk the raft and find which hulls drag."
+   },
+   {
+    "id": "soulasfada_om",
+    "text": "At Other worlds, a note rises from the Chordroot that no Reader there can name, and the lord of the other sun, Grianueili, is the nearest of our hearth to it."
+   }
+  ]
+ },
+ "fairechrotlach": {
+  "name": "Fairechrotlach",
+  "native": "Fairechrotlach",
+  "role": "watch_commander",
+  "female": false,
+  "quests": [
+   {
+    "id": "c120_m01",
+    "text": "The ring station that watches the sky has lost a sensor mast to a bolt of debris, and the watch commander says half the sky is dark. Walk the ring and find which panels died."
+   },
+   {
+    "id": "fairechrotlach_om",
+    "text": "A note sounds at Near orbit that no one in the Fairechrotlach hearths can name, and Fairitigerna, lord of the watch above the world, keeps the nearest hearth to it."
+   }
+  ]
+ },
+ "liekdeirendach": {
+  "name": "Liekdeirendach",
+  "native": "Liekdeirendach",
+  "role": "head_librarian",
+  "female": false,
+  "quests": [
+   {
+    "id": "c121_m01",
+    "text": "The last library keeps its books in the cellars of a tall stone house, and the head librarian says damp has reached the lowest shelves. Walk the vaults and mark the wet ones."
+   },
+   {
+    "id": "liekdeirendach_om",
+    "text": "At Rodos, a note sounds from the Chordroot that no one of the hearth can name, and the mother of the last tablet, Klàrkloichimàtuir, says it is closest to our own people."
+   }
+  ]
+ },
+ "kloichchruind": {
+  "name": "Kloichchruind",
+  "native": "Kloichchruind",
+  "role": "stone_warden",
+  "female": true,
+  "quests": [
+   {
+    "id": "c122_m01",
+    "text": "A ring of great stones on the downs still stands in the grey. The stone warden asks you to learn which uprights have leaned since the last frost."
+   },
+   {
+    "id": "kloichchruind_om",
+    "text": "At Rodos, a note sounds from the Chordroot that no one there can name, and Klachtigerna, lord of the stone that remembers, is the nearest of our hearth to it."
+   }
+  ]
+ },
+ "kiedtra": {
+  "name": "Kiedtra",
+  "native": "Kiedtra",
+  "role": "shore_warden",
+  "female": true,
+  "quests": [
+   {
+    "id": "c123_m01",
+    "text": "The caves above Mossel Bay hold the oldest hearths on the coast, and grey silt has crept over the cave floor with the tides. The shore warden asks you to find where the high water now reaches."
+   },
+   {
+    "id": "kiedtra_om",
+    "text": "At Rodos, a note rings out from the Chordroot that no one there can name. Kladachmàtuir, mother of the first shore, has heard it closer than any of Kiedtra's own hearth."
+   }
+  ]
+ },
+ "teinedeired": {
+  "name": "Teinedeired",
+  "native": "Teinedeired",
+  "role": "hearth_warden",
+  "female": true,
+  "quests": [
+   {
+    "id": "c124_m01",
+    "text": "The warm halls of Reykjavik run on steam from the ground, and the grey is cooling the pipes. The hearth warden asks you to find where the heat falls short."
+   },
+   {
+    "id": "teinedeired_om",
+    "text": "At Rodos, a note sounds from the Chordroot that no one there can name, and Teiniimmdheired, lord of the last fire, says it is nearest to the Teinedeired hearth."
+   }
+  ]
+ }
+}

@@ -15309,6 +15309,14 @@ file = "kubejs/data/croptopia/loot_table/blocks/tomato_crop.json"
 hash = "f52f6652f00a2c4c320b7778360e64cc9609227fd81b251299e20fc2d3e1318a"
 
 [[files]]
+file = "kubejs/data/diaithir/culture_givers.json"
+hash = "c965f9a6f7f327994e2be85a160a04655669e6f6b5e4af6ff771e253e48cecc0"
+
+[[files]]
+file = "kubejs/data/diaithir/culture_spawns.json"
+hash = "74be928688adf6b7f70b05cb70b66fcd079db49dad628c4ad04be8ed46c2fc9a"
+
+[[files]]
 file = "kubejs/data/diaithir/loot_modifiers/fish_species.json"
 hash = "68049285384dd4f1e2899c1e225339cb4ee23d4d60c7e759e8713b2700331a0f"
 
@@ -15323,6 +15331,10 @@ hash = "d5a91a765394ed4a474f8edccad0f0747bd94750c0f681a55a89a5be37201232"
 [[files]]
 file = "kubejs/data/diaithir/recipe/brown_dye_from_ru_cattail.json"
 hash = "0bce65ae934ce60f8d30494edbb46447eb237ed001004f46997b8ac1ed56d9f0"
+
+[[files]]
+file = "kubejs/data/diaithir_ages/ages/_global/culture_starts.json"
+hash = "ceb30446e1e3939de00a743e9099150fa0e0b956e3bc1c85b7f7d419879b7353"
 
 [[files]]
 file = "kubejs/data/diaithir_dedupe/neoforge/biome_modifier/ecologics_squirrel.json"
@@ -25877,6 +25889,14 @@ file = "kubejs/data/twilightforest/loot_table/blocks/blueberry_bush_berries.json
 hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
+file = "kubejs/server_scripts/culture_start/culture_giver.js"
+hash = "bfa3fc9b8721ecbfaff928bdf62f89364a6c4eba038bdd969fe8447d0464ad3d"
+
+[[files]]
+file = "kubejs/server_scripts/culture_start/culture_start.js"
+hash = "a1f4d85e2650877347d0fb160e827ac799b27175d227bc63cae43f81c78d72f2"
+
+[[files]]
 file = "kubejs/server_scripts/diaithir/dedupe.js"
 hash = "49baecac7a9675466af17fddec3cd323ab8f1a32935d85d3c76a06655e794a45"
 
@@ -25891,6 +25911,14 @@ hash = "c1376174241c9a133a354dd01bda4f013864acc00dca56e2ea08bca054a90237"
 [[files]]
 file = "kubejs/server_scripts/diaithir/prewarm_spawn.js"
 hash = "e6f906a21cd00e9c6375dbfebde466cec26079979931854dd3514e53846cfb99"
+
+[[files]]
+file = "kubejs/server_scripts/diaithir/safe_landing.js"
+hash = "6703b0414641b6c2a720f625aaaa6b82a5c052af1edcc7a343ea354be2052a4f"
+
+[[files]]
+file = "kubejs/server_scripts/diaithir/spawn_guard.js"
+hash = "0a4d50813595f17a6507f9f96906332e572c9f874f37aa0c222063db37b734b6"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/tech_ages_data.js"
@@ -27043,8 +27071,8 @@ file = "mods/diaithir-activity-neoforge-26.1.2-1.0.0.jar"
 hash = "e9ac289e36afa6b1860da5ac0d867dbc92d54c68b6a972128920629c69262445"
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.3.jar"
-hash = "5f8dbb3ded79dfe559666d34ee8dc2d7b173623044a08fc6fa491bd86a7adae1"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.6.jar"
+hash = "040e7725313ccf05766ee1bcaaa1d2cafba09331c7aba76f9bedfea6be6b9498"
 
 [[files]]
 file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.2.jar"
@@ -27069,7 +27097,7 @@ hash = "2edd48f2e45b211fabec3b23b260d208ff1e318ab8c444f292a04f83161291c0"
 
 [[files]]
 file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
-hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
+hash = "c427aaec9dbe24e46316a74f21509a6393a91b6b349676c700e93aeb993b5de4"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
