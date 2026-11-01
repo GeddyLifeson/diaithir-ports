@@ -25934,7 +25934,7 @@ hash = "1706472bcf603c87b5b23896733d3918f6b65c9fc2f65d42f0aa11188422dfa3"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/zz_cuisine_engine.js"
-hash = "44863edb7cd7b9f1d5e0ab8ad22a3fcac410430b7e5541257a2989ba05e70dd9"
+hash = "4d2f2c929b3d0f24e6e97ae2e655046fdae3d739b41cfac688229f0227e352a4"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/catchup.js"

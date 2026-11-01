@@ -40,8 +40,13 @@ function cuisineCold(block) {
   return global.CUISINE.cold.indexOf(String(block.down.id)) >= 0
 }
 
+const CuisineIdleUntil = {} // pk -> game time before which an idle station is not scanned again
+
 function cuisineTick(event) {
   let block = event.block
+  let pk = block.dimension + ':' + block.pos.asLong()
+  let gt = Number(block.level.server.tickCount)
+  if (CuisineIdleUntil[pk] > gt) return // empty or no matching recipe: look again in 10 ticks, not every tick
   let id = String(block.id)
   let st = id.substring(12)
   let inv = block.inventory
@@ -54,8 +59,7 @@ function cuisineTick(event) {
     have[s.id] = (have[s.id] || 0) + s.getCount()
     for (let a of (alias[String(s.id)] || [])) have[a] = (have[a] || 0) + s.getCount() // a butchered cut stands in for ours
   }
-  let pk = block.dimension + ':' + block.pos.asLong()
-  if (!any) { delete CuisineProgress[pk]; return }
+  if (!any) { delete CuisineProgress[pk]; CuisineIdleUntil[pk] = gt + 10; return }
   let list = CuisineIndex[st + '|' + Object.keys(have).sort().join(',')]
   let rec = null
   if (list) for (let r of list) {
@@ -63,7 +67,8 @@ function cuisineTick(event) {
     for (let k in r.i) if (have[k] < r.i[k]) ok = false
     if (ok && !(typeof techLocked == 'function' && techLocked(r.o))) { rec = r; break }
   }
-  if (!rec) { delete CuisineProgress[pk]; return }
+  if (!rec) { delete CuisineProgress[pk]; CuisineIdleUntil[pk] = gt + 10; return }
+  delete CuisineIdleUntil[pk]
   let def = global.CUISINE.stations.find(s => s.id == st)
   let need = CuisineNeed[def.heat] || 0
   let rate = 1
