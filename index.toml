@@ -26148,9 +26148,6 @@ file = "mods/ConstructionSticks-26.1.2-3.2.1.pw.toml"
 hash = "1f1adc675cea699b2efdc749c8b258a5c47c4f50bde28b7a0ac6dc24ec23a7ae"
 metafile = true
 
-[[files]]
-file = "mods/Controlling-neoforge-26.1.2-26.1.2.4.pw.toml"
-hash = "bb6c71e0ef59ffe1a965ff6842bca34fb2d6546a9a491fdd10da927f62713c5e"
 metafile = true
 
 [[files]]
