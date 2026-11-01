@@ -1,0 +1,16 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirsharedspace"
+version = "${version}"
+displayName = "Diaithir Shared Space"
+description = '''Small blocks share one block space: place a second chain, lantern, end rod, lightning rod or candle against one that stands alone and both fit, each in its own quarter. Break them one at a time. Which blocks qualify is decided by measuring their shape, so small blocks from any mod work without a compat patch.
+
+Clean-room, MIT. Inspired by Olaf's Relatively Placed Blocks by LukeolafP (CC0-1.0 / Apache-2.0); no code or art taken from it.'''
+
+[[dependencies.diaithirsharedspace]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
