@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /** data/diaithircompat/site_people.json and the MCA clothing it names (tools/gen_people.py). */
 class SitePeopleDataTest {
     private static final Path RES = Path.of("src/main/resources");
-    // metal, later weapons and made goods: nothing an Age I person could carry
+    // metal, later weapons and made goods: nothing an Age I person could carry (later kits use only wood, stone, bone and leather items)
     private static final Pattern LATER_AGE = Pattern.compile("iron|gold|copper|diamond|netherite|emerald|chain|crossbow|shield|trident|mace|lantern|book|paper|glass|brick|bread|map|compass|clock|bucket|shears|flint_and_steel|minecart|boat");
     private static final Set<String> SITE_TYPES = Set.of("hunter_camp", "shell_midden", "knapping_site", "rock_shelter", "pit_house",
             "ppnb_house", "mammoth_bone_dwelling", "natufian_house", "ppna_house", "gobekli_enclosure", "jericho_tower");
@@ -29,11 +29,11 @@ class SitePeopleDataTest {
     }
 
     @Test
-    void everyCultureHasAnAgeIKitAndClothing() throws IOException {
+    void everyStartHasAKitAndClothing() throws IOException {
         JsonObject data = read(RES.resolve("data/diaithircompat/site_people.json")).getAsJsonObject();
         JsonObject kits = data.getAsJsonObject("kits"), cultures = data.getAsJsonObject("cultures");
-        assertEquals(74, cultures.size());
-        assertEquals(74, kits.size(), "every culture dresses in its own kit");
+        assertEquals(131, cultures.size());
+        assertEquals(131, kits.size(), "every start dresses in its own kit");
         assertEquals(SITE_TYPES, data.getAsJsonObject("counts").keySet());
         for (Map.Entry<String, JsonElement> e : data.getAsJsonObject("counts").entrySet()) {
             JsonArray r = e.getValue().getAsJsonArray();
