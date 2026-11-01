@@ -2,6 +2,7 @@ package net.diaithir.bridges;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -18,9 +19,10 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.function.Supplier;
 
-/** Tobardealain (magic reagents to Forge Energy, Age VI) and Lòchrandraoidheachd (Forge Energy to a magic reagent, Age VII). */
+/** Toburdeluin (magic reagents to Forge Energy), Lòchrundraeidechd (Forge Energy to a magic reagent) and Aibnedeluin (Forge Energy between tech mods), each in tiers; see {@link Spec}. */
 @Mod(DiaithirBridges.MOD)
 public final class DiaithirBridges {
     public static final String MOD = "diaithirbridges";
@@ -28,12 +30,12 @@ public final class DiaithirBridges {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MOD);
     public static final DeferredRegister<BlockEntityType<?>> ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD);
 
-    public static final DeferredBlock<Block> TOBARDEALAIN = BLOCKS.registerBlock("tobardealain", p -> new BridgeBlock(p, BridgeEntity.Kind.SOURCE), DiaithirBridges::props);
-    public static final DeferredBlock<Block> LOCHRANDRAOIDHEACHD = BLOCKS.registerBlock("lochrandraoidheachd", p -> new BridgeBlock(p, BridgeEntity.Kind.CHARGER), DiaithirBridges::props);
-    public static final DeferredItem<net.minecraft.world.item.BlockItem> TOBARDEALAIN_ITEM = ITEMS.registerSimpleBlockItem(TOBARDEALAIN);
-    public static final DeferredItem<net.minecraft.world.item.BlockItem> LOCHRANDRAOIDHEACHD_ITEM = ITEMS.registerSimpleBlockItem(LOCHRANDRAOIDHEACHD);
+    /** One block and one item per machine tier, in Spec.ALL order. */
+    public static final List<DeferredBlock<BridgeBlock>> TIER_BLOCKS = Spec.ALL.stream()
+            .map(sp -> BLOCKS.registerBlock(sp.id(), p -> new BridgeBlock(p, sp), DiaithirBridges::props)).toList();
+    public static final List<DeferredItem<BlockItem>> TIER_ITEMS = TIER_BLOCKS.stream().map(ITEMS::registerSimpleBlockItem).toList();
     public static final Supplier<BlockEntityType<BridgeEntity>> ENTITY = ENTITIES.register("bridge",
-            () -> new BlockEntityType<>(BridgeEntity::new, TOBARDEALAIN.get(), LOCHRANDRAOIDHEACHD.get()));
+            () -> new BlockEntityType<>(BridgeEntity::new, TIER_BLOCKS.stream().map(DeferredBlock::get).toArray(Block[]::new)));
 
     public static final DeferredBlock<Block> EU_CONVERTER = BLOCKS.registerBlock("claochladairdealain", p -> new ConverterBlock(p, ConverterEntity.Kind.EU), DiaithirBridges::props);
     public static final DeferredBlock<Block> AIR_CONVERTER = BLOCKS.registerBlock("claochladairanalach", p -> new ConverterBlock(p, ConverterEntity.Kind.AIR), DiaithirBridges::props);
@@ -68,8 +70,7 @@ public final class DiaithirBridges {
         });
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-                e.accept(TOBARDEALAIN_ITEM.get());
-                e.accept(LOCHRANDRAOIDHEACHD_ITEM.get());
+                TIER_ITEMS.forEach(i -> e.accept(i.get()));
                 e.accept(EU_CONVERTER_ITEM.get());
                 e.accept(AIR_CONVERTER_ITEM.get());
                 e.accept(RESERVOIR_ITEM.get());

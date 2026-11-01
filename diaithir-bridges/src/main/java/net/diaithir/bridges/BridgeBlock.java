@@ -16,14 +16,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jspecify.annotations.Nullable;
 
-final class BridgeBlock extends Block implements EntityBlock {
-    private final BridgeEntity.Kind kind;
+public final class BridgeBlock extends Block implements EntityBlock {
+    private final Spec spec;
 
-    BridgeEntity.Kind kind() { return kind; }
+    Spec spec() { return spec; }
 
-    BridgeBlock(Properties props, BridgeEntity.Kind kind) {
+    BridgeBlock(Properties props, Spec spec) {
         super(props);
-        this.kind = kind;
+        this.spec = spec;
     }
 
     @Override
@@ -41,7 +41,7 @@ final class BridgeBlock extends Block implements EntityBlock {
     @Override
     protected InteractionResult useItemOn(ItemStack held, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!(level.getBlockEntity(pos) instanceof BridgeEntity be)) return InteractionResult.PASS;
-        if (kind != BridgeEntity.Kind.SOURCE || !BridgeEntity.fuelValue(held).isPresent()) return InteractionResult.PASS;
+        if (spec.kind() != Spec.Kind.SOURCE || !BridgeEntity.fuelValue(held).isPresent()) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         ItemStack slot = be.getItem(0);
         if (!slot.isEmpty() && !ItemStack.isSameItemSameComponents(slot, held)) return InteractionResult.PASS;
@@ -59,7 +59,7 @@ final class BridgeBlock extends Block implements EntityBlock {
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (!(level.getBlockEntity(pos) instanceof BridgeEntity be)) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (kind == BridgeEntity.Kind.CHARGER && !be.getItem(0).isEmpty()) {
+        if (spec.kind() == Spec.Kind.CHARGER && !be.getItem(0).isEmpty()) {
             ItemStack out = be.removeItemNoUpdate(0);
             if (!player.getInventory().add(out)) Containers.dropItemStack(level, pos.getX(), pos.getY() + 1, pos.getZ(), out);
             be.setChanged();
