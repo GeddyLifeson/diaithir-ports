@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#c:nuggets/iron",
+  "minecraft:string",
+  "minecraft:gunpowder",
+  "minecraft:paper"
+ ],
+ "result": {
+  "id": "createloveandwar:black_powder_cartridge"
+ }
+}

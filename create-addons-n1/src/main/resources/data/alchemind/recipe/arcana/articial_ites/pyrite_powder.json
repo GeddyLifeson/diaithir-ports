@@ -1,0 +1,27 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "alchemind:pure_basalt",
+  "alchemind:corvium",
+  "create:cinder_flour",
+  "create:scorchia",
+  "minecraft:clay"
+ ],
+ "results": [
+  {
+   "id": "alchemind:pyrite_powder",
+   "chance": 0.15
+  },
+  {
+   "id": "alchemind:corvium"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 81000
+  }
+ ],
+ "heat_requirement": "heated"
+}

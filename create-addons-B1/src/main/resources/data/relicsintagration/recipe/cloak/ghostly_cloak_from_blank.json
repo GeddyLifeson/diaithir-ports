@@ -1,0 +1,52 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:cloak_blank",
+ "loops": 6,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:phantom_membrane"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:feather"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:phantom_membrane"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:phantom_membrane"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:cloak_blank"
+ },
+ "result": {
+  "id": "relics:ghostly_mantle",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

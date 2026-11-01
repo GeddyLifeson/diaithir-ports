@@ -1,0 +1,35 @@
+{
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:dirt",
+     "weight": 3,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 4
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:cobblestone",
+     "weight": 3
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:ice",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:lava_bucket",
+     "weight": 2
+    }
+   ]
+  }
+ ]
+}

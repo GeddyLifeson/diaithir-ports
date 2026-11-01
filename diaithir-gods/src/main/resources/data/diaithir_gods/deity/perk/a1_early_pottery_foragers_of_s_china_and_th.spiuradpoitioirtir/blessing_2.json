@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:flower_pot",
+    "color": 12758662,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_early_pottery_foragers_of_s_china_and_th.spiuradpoitioirtir",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "a1_early_pottery_foragers_of_s_china_and_th.spiuradpoitioirtir_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

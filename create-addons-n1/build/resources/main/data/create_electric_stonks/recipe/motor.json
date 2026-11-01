@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "isi",
+  "ici",
+  "iri"
+ ],
+ "key": {
+  "c": "#c:plates/copper",
+  "i": "minecraft:iron_ingot",
+  "r": "minecraft:redstone_block",
+  "s": "create:shaft"
+ },
+ "result": {
+  "id": "create_electric_stonks:motor"
+ }
+}

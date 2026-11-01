@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "#diaithir_druidry:spell_book/sidhe",
+   "required": false
+  },
+  {
+   "id": "#diaithir_druidry:weapon/sidhe_staff",
+   "required": false
+  }
+ ]
+}

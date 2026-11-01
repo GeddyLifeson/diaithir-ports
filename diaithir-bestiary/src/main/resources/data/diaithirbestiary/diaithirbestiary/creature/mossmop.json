@@ -1,0 +1,25 @@
+{
+  "preset": "beast",
+  "width": 1.6,
+  "height": 1.5,
+  "stats": {
+    "health": 40,
+    "damage": 3,
+    "speed": 0.2,
+    "knockback_resistance": 0.3
+  },
+  "hostile": false,
+  "tame": {
+    "item": "minecraft:wheat",
+    "chance": 0.4
+  },
+  "spawn": {
+    "biomes": "c:is_swamp",
+    "weight": 6,
+    "min_group": 1,
+    "max_group": 2,
+    "min_age": "IV"
+  },
+  "loot_table": "diaithirbestiary:entities/mossmop",
+  "rideable": true
+}

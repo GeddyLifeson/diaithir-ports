@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:prismarine_shard",
+    "color": 11649115,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_sumnagin_culture.matuirmoirklach",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:dolphins_grace",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "a1_sumnagin_culture.matuirmoirklach_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

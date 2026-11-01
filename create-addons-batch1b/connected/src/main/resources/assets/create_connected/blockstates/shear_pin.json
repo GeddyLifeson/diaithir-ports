@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "create_connected:block/shear_pin"
+  },
+  "axis=x": {
+   "model": "create_connected:block/shear_pin",
+   "x": 90,
+   "y": 90
+  },
+  "axis=z": {
+   "model": "create_connected:block/shear_pin",
+   "x": 90
+  }
+ }
+}

@@ -1,0 +1,24 @@
+{
+  "preset": "avatar",
+  "width": 1.4,
+  "height": 4.0,
+  "stats": {
+    "health": 440,
+    "armor": 12,
+    "damage": 16,
+    "speed": 0.3,
+    "follow_range": 48,
+    "knockback_resistance": 1.0
+  },
+  "boss": {
+    "phase_two_at": 0.5,
+    "bar_color": "red"
+  },
+  "spawn": {
+    "biomes": "minecraft:is_badlands",
+    "weight": 2,
+    "min_age": "IV",
+    "rare": true
+  },
+  "loot_table": "diaithirbestiary:entities/ashenvar"
+}

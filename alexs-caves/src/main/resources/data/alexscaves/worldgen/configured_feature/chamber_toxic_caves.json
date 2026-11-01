@@ -1,0 +1,32 @@
+{
+  "type": "alexscaves:cave_chamber",
+  "config": {
+    "biome": "alexscaves:toxic_caves",
+    "floor": {
+      "Name": "alexscaves:radrock"
+    },
+    "wall": {
+      "Name": "alexscaves:radrock"
+    },
+    "ceiling": {
+      "Name": "alexscaves:radrock"
+    },
+    "min_y": -48,
+    "max_y": 24,
+    "decor": [
+      "alexscaves:acid_vent",
+      "alexscaves:nuclear_siren",
+      "alexscaves:sulfur_stack",
+      "alexscaves:radrock_uranium_ore"
+    ],
+    "radius": 13,
+    "height": 9,
+    "fluid": {
+      "Name": "alexscaves:acid",
+      "Properties": {
+        "level": "0"
+      }
+    },
+    "fluid_depth": 3
+  }
+}

@@ -1,0 +1,16 @@
+{
+ "values": [
+  "diaithirfauna:fossil_sandstone",
+  "diaithirfauna:fossil_mudstone",
+  "diaithirfauna:fossil_limestone",
+  "diaithirfauna:fossil_shale",
+  "diaithirfauna:fossil_marine_sediment",
+  "diaithirfauna:fossil_chalk",
+  "diaithirfauna:fossil_amber",
+  "diaithirfauna:fossil_tar",
+  "diaithirfauna:fossil_volcanic_ash",
+  "diaithirfauna:fossil_permafrost",
+  "diaithirfauna:fossil_conglomerate",
+  "diaithirfauna:fossil_coal"
+ ]
+}

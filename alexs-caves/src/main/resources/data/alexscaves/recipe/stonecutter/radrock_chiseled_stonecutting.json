@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "alexscaves:radrock",
+  "result": {
+    "id": "alexscaves:radrock_chiseled",
+    "count": 1
+  }
+}

@@ -1,0 +1,37 @@
+[
+ {
+  "id": "diaithirstoragenet:controller",
+  "name": "Vorkaneth",
+  "text": "Master block. Every cable run that touches it forms one network. Use bare-handed to read the network's size and item count. Only one controller per network. Age VI."
+ },
+ {
+  "id": "diaithirstoragenet:cable",
+  "name": "Ilthuvar",
+  "text": "Cable. Joins itself to other network blocks and to chests, barrels and other inventories, which become the network's storage. Age V."
+ },
+ {
+  "id": "diaithirstoragenet:import_cable",
+  "name": "Draskovel",
+  "text": "Import cable. Every few ticks it pulls items from the inventories touching it into the network. Use an item on it to set a filter, a stick to flip whitelist and blacklist, sneak with an empty hand to clear. Inventories touching it are not used as storage. Age V."
+ },
+ {
+  "id": "diaithirstoragenet:export_cable",
+  "name": "Ekthurmael",
+  "text": "Export cable. Every few ticks it pushes items from the network into the inventories touching it. With a whitelist filter it sends only those items. Inventories touching it are not used as storage. Age V."
+ },
+ {
+  "id": "diaithirstoragenet:filter_cable",
+  "name": "Pelquanor",
+  "text": "Filter cable. Stops the network storing anything but whitelisted items (or anything on a blacklist) in the inventories touching it. Whitelisted items are stored there first. Age V."
+ },
+ {
+  "id": "diaithirstoragenet:terminal",
+  "name": "Zhaldorith",
+  "text": "Access terminal, Age VI. Opens a grid of everything in the network. Left click takes a stack, right click one, shift click sends it to your inventory; click with an item on the cursor or shift click your own items to store them. Sort by name, count or mod, and search with /diaithirstoragenet search text (or @mod)."
+ },
+ {
+  "id": "diaithirstoragenet:crafting_terminal",
+  "name": "Quenvarosh",
+  "text": "Crafting terminal, Age VI. A crafting table that refills its grid from the whole network: when a grid slot runs empty after a craft it takes one more of that item from storage. Place or hold the first items yourself."
+ }
+]

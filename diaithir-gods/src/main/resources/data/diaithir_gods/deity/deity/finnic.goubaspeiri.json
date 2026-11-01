@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:finnic.goubaspeiri",
+  "icon": "minecraft:anvil",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

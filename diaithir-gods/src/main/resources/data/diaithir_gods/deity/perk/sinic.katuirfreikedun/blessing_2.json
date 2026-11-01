@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:oak_door",
+    "color": 8233859,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:sinic.katuirfreikedun",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "sinic.katuirfreikedun_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

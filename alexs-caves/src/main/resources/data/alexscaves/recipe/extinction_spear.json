@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " T ",
+    "TST",
+    "ABA"
+  ],
+  "key": {
+    "T": "alexscaves:tectonic_shard",
+    "S": "alexscaves:limestone_spear",
+    "A": "alexscaves:amber_curiosity",
+    "B": "alexscaves:heavy_bone"
+  },
+  "result": {
+    "id": "alexscaves:extinction_spear",
+    "count": 1
+  }
+}

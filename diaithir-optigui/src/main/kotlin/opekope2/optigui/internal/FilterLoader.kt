@@ -1,0 +1,154 @@
+package opekope2.optigui.internal
+
+import net.minecraft.resources.Identifier
+import net.minecraft.server.packs.resources.ResourceManager
+import net.minecraft.server.packs.resources.PreparableReloadListener
+import opekope2.optigui.filter.ConjunctionFilter
+import opekope2.optigui.filter.IFilter
+import opekope2.optigui.filter.PostProcessorFilter
+import opekope2.optigui.interaction.Interaction
+import opekope2.optigui.internal.filter.ContainerMapFilter
+import opekope2.optigui.internal.filter.ContainerMapFirstMatchFilter
+import opekope2.optigui.internal.util.eventBuilder
+import opekope2.optigui.registry.FilterLoaderRegistry
+import opekope2.optigui.registry.LoadSelectorRegistry
+import opekope2.optigui.registry.SelectorRegistry
+import opekope2.optigui.resource.IRawFilterData
+import opekope2.optigui.util.MOD_ID
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+import org.slf4j.event.Level.*
+import java.util.concurrent.CompletableFuture
+import java.util.concurrent.Executor
+
+internal object FilterLoader : PreparableReloadListener {
+    private val LOGGER = LoggerFactory.getLogger("OptiGUI/FilterLoader")
+
+    val id: Identifier = Identifier.fromNamespaceAndPath(MOD_ID, "filter_loader")
+
+    override fun reload(
+        store: PreparableReloadListener.SharedState,
+        prepareExecutor: Executor,
+        reloadSynchronizer: PreparableReloadListener.PreparationBarrier,
+        applyExecutor: Executor
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync({ loadRawFilters(store.resourceManager(), LOGGER) }, prepareExecutor)
+            .thenCompose(reloadSynchronizer::wait)
+            .thenAcceptAsync({ loadFilters(store.resourceManager(), it, LOGGER) }, applyExecutor)
+    }
+
+    private fun loadRawFilters(manager: ResourceManager, logger: Logger) =
+        FilterLoaderRegistry.flatMap { resourceLoader ->
+            resourceLoader.loadRawFilters(manager, logger)
+        }
+
+    private fun loadFilters(manager: ResourceManager, data: Collection<IRawFilterData>, logger: Logger) {
+        val filters = data.mapNotNull { rawFilterData ->
+            when {
+                loadSelectorsSkip(rawFilterData, logger) -> null
+
+                rawFilterData.replaceableTextures.isEmpty() -> {
+                    logger.eventBuilder(WARN, rawFilterData.resource, rawFilterData.container).log(
+                        "Ignoring container `{}` in `{}`, because no replaceable textures were specified",
+                        rawFilterData.container, rawFilterData.resource
+                    )
+                    null
+                }
+
+                manager.getResource(rawFilterData.replacementTexture).isEmpty -> {
+                    logger.eventBuilder(WARN, rawFilterData.resource, rawFilterData.container).log(
+                        "Ignoring container `{}` in `{}`, because replacement texture `{}` is missing",
+                        rawFilterData.container, rawFilterData.resource, rawFilterData.replacementTexture
+                    )
+                    null
+                }
+
+                else -> {
+                    val selectorFilters = createFilters(rawFilterData, logger)
+
+                    rawFilterData to PostProcessorFilter(
+                        ConjunctionFilter(selectorFilters),
+                        rawFilterData.replacementTexture
+                    )
+                }
+            }
+        }
+
+        val replaceable = filters.flatMapTo(mutableSetOf()) { (raw) -> raw.replaceableTextures }
+
+        val groupedFilters = filters
+            .groupBy { (raw) -> raw.container }
+            .mapValues { (container, rawFilters) ->
+                ContainerMapFirstMatchFilter(
+                    container,
+                    rawFilters
+                        .sortedByDescending { (raw) -> raw.priority }
+                        .map { (_, filter) -> filter }
+                )
+            }
+
+        TextureReplacer.onFiltersLoaded(
+            // Accelerate evaluation by only evaluating the matching container's filters, and not others
+            ContainerMapFilter(groupedFilters),
+            replaceable
+        )
+    }
+
+    private fun loadSelectorsSkip(rawFilterData: IRawFilterData, logger: Logger): Boolean {
+        for ((selectorKey, selectorValue) in rawFilterData.rawSelectorData) {
+            if (selectorKey !in LoadSelectorRegistry) continue
+
+            try {
+                if (!LoadSelectorRegistry[selectorKey]!!(selectorValue)) {
+                    logger.eventBuilder(INFO, rawFilterData.resource, rawFilterData.container).log(
+                        "Ignoring container `{}` in `{}`, because of load selector `{}={}`",
+                        rawFilterData.container, rawFilterData.resource, selectorKey, selectorValue
+                    )
+                    return true
+                }
+            } catch (e: Exception) {
+                logger.eventBuilder(ERROR, rawFilterData.resource, rawFilterData.container)
+                    .setCause(e)
+                    .log(
+                        "Ignoring container `{}` in `{}`, because load selector `{}={}` threw an exception",
+                        rawFilterData.container, rawFilterData.resource, selectorKey, selectorValue
+                    )
+                return true
+            }
+        }
+        return false
+    }
+
+    private fun createFilters(rawFilterData: IRawFilterData, logger: Logger): Collection<IFilter<Interaction, *>> {
+        val selectorFilters = mutableListOf<IFilter<Interaction, *>>()
+        // Filtering Interaction.container is redundant as ContainerMapFilter does this
+
+        for ((selectorKey, selectorValue) in rawFilterData.rawSelectorData) {
+            if (selectorKey !in SelectorRegistry) {
+                if (selectorKey !in LoadSelectorRegistry) {
+                    logger.eventBuilder(WARN, rawFilterData.resource, rawFilterData.container).log(
+                        "Unknown selector `{}` in container `{}` in `{}`",
+                        selectorKey, rawFilterData.container, rawFilterData.resource
+                    )
+                }
+                continue
+            }
+
+            try {
+                SelectorRegistry[selectorKey]!!.createFilter(selectorValue)?.also(selectorFilters::add)
+                    ?: logger.eventBuilder(INFO, rawFilterData.resource, rawFilterData.container).log(
+                        "No filter was created for container `{}` in `{}`",
+                        rawFilterData.container, rawFilterData.resource
+                    )
+            } catch (e: Exception) {
+                logger.eventBuilder(ERROR, rawFilterData.resource, rawFilterData.container)
+                    .setCause(e)
+                    .log(
+                        "No filter was created for container `{}` in `{}`, because selector `{}={}` threw an exception",
+                        rawFilterData.container, rawFilterData.resource, selectorKey, selectorValue
+                    )
+            }
+        }
+        return selectorFilters
+    }
+}

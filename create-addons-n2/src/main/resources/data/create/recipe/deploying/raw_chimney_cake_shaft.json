@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "create:shaft",
+ "ingredient": "create_chocopaste:chimney_cake_dough",
+ "results": [
+  {
+   "id": "create_chocopaste:rawchimneycakeshaft"
+  }
+ ]
+}

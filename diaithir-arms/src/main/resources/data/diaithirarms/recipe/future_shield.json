@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "PMP",
+  "PMP",
+  " M "
+ ],
+ "key": {
+  "M": "diaithirarms:star_lattice",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "diaithirarms:future_shield",
+  "count": 1
+ }
+}

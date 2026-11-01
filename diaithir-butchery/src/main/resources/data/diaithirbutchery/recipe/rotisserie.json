@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SSS",
+  "CIC"
+ ],
+ "key": {
+  "S": "minecraft:stick",
+  "I": "minecraft:iron_ingot",
+  "C": "minecraft:campfire"
+ },
+ "result": {
+  "id": "diaithirbutchery:rotisserie"
+ }
+}

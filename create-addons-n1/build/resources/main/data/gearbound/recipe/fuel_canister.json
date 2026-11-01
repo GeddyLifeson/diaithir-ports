@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " s ",
+  "dfg",
+  " h "
+ ],
+ "key": {
+  "s": "create:sturdy_sheet",
+  "d": "create:sturdy_sheet",
+  "f": "minecraft:bucket",
+  "g": "create:sturdy_sheet",
+  "h": "create:sturdy_sheet"
+ },
+ "result": {
+  "id": "gearbound:fuel_canister"
+ }
+}

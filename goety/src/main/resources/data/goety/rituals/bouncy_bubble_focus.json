@@ -1,0 +1,14 @@
+{
+ "type": "craft",
+ "school": "deep",
+ "activation": "goety:water_jet_focus",
+ "offerings": [
+  "minecraft:pufferfish",
+  "goety:wind_core",
+  "minecraft:water_bucket"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:bouncy_bubble_focus",
+ "count": 1
+}

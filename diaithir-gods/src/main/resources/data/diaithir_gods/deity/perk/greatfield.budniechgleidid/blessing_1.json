@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:hay_block",
+    "color": 8411290,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:greatfield.budniechgleidid",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "greatfield.budniechgleidid_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "create_chocopaste:custom/250g_chocopaste",
+  "textures": {
+    "all": "create_chocopaste:block/choco250g",
+    "particle": "create_chocopaste:block/choco250g",
+    "3": "create_chocopaste:block/choco250g"
+  },
+  "render_type": "solid"
+}

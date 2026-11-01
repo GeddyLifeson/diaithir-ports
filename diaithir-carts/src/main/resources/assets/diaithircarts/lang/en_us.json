@@ -1,0 +1,11 @@
+{
+  "block.diaithircarts.bronze_rail": "Brundarok",
+  "block.diaithircarts.bronze_powered_rail": "Brundavoss",
+  "block.diaithircarts.steel_rail": "Sorvanquil",
+  "block.diaithircarts.steel_powered_rail": "Sorvaleth",
+  "block.diaithircarts.fast_rail": "Zephrakund",
+  "block.diaithircarts.fast_powered_rail": "Zephravoss",
+  "block.diaithircarts.station_rail": "Haldurmek",
+  "item.diaithircarts.coupling_chain": "Quelvarith",
+  "item.diaithircarts.chain_cutters": "Snithrekel"
+}

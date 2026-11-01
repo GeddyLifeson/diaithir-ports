@@ -1,0 +1,77 @@
+{
+  "attributes": {
+    "minecraft:audio/ambient_sounds": {
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "deeperdarker:ambient.otherside.additions",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:smoke"
+        },
+        "probability": 0.026
+      }
+    ],
+    "minecraft:visual/fog_color": "#472918",
+    "minecraft:visual/sky_color": "#7aa5ff",
+    "minecraft:visual/water_fog_color": "#362319"
+  },
+  "carvers": [
+    "deeperdarker:cave",
+    "deeperdarker:low_cave"
+  ],
+  "downfall": 0.2,
+  "effects": {
+    "water_color": "#452312"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower"
+    ],
+    [],
+    [],
+    [
+      "deeperdarker:gloomy_sculk",
+      "deeperdarker:magma",
+      "deeperdarker:soul_sand",
+      "deeperdarker:soul_soil",
+      "deeperdarker:gloomslate_coal",
+      "deeperdarker:gloomslate_iron",
+      "deeperdarker:gloomslate_copper",
+      "deeperdarker:gloomslate_gold",
+      "deeperdarker:gloomslate_redstone",
+      "deeperdarker:gloomslate_emerald",
+      "deeperdarker:gloomslate_lapis",
+      "deeperdarker:gloomslate_diamond"
+    ],
+    [
+      "deeperdarker:gloomslate_column"
+    ],
+    [],
+    [
+      "deeperdarker:surface_gloomslate",
+      "deeperdarker:gloomy_sculk_vegetation"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.6
+}

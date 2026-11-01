@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "T",
+    "S",
+    "D"
+  ],
+  "key": {
+    "T": "alexscaves:corrodent_teeth",
+    "S": "#c:rods/wooden",
+    "D": "alexscaves:dark_tatters"
+  },
+  "result": {
+    "count": 4,
+    "id": "alexscaves:burrowing_arrow"
+  }
+}

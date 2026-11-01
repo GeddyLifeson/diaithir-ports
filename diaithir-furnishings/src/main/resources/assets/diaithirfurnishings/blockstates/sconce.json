@@ -1,0 +1,20 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirfurnishings:block/sconce",
+   "y": 0
+  },
+  "facing=east": {
+   "model": "diaithirfurnishings:block/sconce",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirfurnishings:block/sconce",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirfurnishings:block/sconce",
+   "y": 270
+  }
+ }
+}

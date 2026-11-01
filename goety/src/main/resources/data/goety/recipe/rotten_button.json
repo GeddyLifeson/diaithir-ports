@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "goety:rotten_planks"
+ ],
+ "result": {
+  "id": "goety:rotten_button",
+  "count": 1
+ }
+}

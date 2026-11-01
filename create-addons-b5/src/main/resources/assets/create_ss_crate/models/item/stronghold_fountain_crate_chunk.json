@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "create_ss_crate:item/stronghold_fountain_crate_chunk"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "iceandfire:siren",
+    "iceandfire:sea_serpent",
+    "iceandfire:dragon_skull",
+    "iceandfire:ice_dragon",
+    "iceandfire:mob_skull",
+    "iceandfire:stone_statue"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:sand",
+    "color": 12952936,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_west_african_late_stone_age_and_early_po.matuirfaisachpoiti",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_west_african_late_stone_age_and_early_po.matuirfaisachpoiti_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

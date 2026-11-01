@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:feather",
+    "color": 11510707,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:hellenic.posadbanrig",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:fire_resistance",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "hellenic.posadbanrig_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

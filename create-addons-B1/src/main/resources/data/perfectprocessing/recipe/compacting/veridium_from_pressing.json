@@ -1,0 +1,26 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:gravel",
+  "#c:nuggets/copper",
+  "#c:nuggets/copper",
+  "#c:nuggets/copper",
+  "#c:nuggets/copper",
+  "#c:nuggets/copper",
+  "#c:nuggets/copper",
+  "#c:nuggets/copper"
+ ],
+ "results": [
+  {
+   "id": "create:veridium",
+   "count": 2
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 656100,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:white_wool",
+    "color": 8631906,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:vedic.oiskitigerna",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:speed",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "vedic.oiskitigerna_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

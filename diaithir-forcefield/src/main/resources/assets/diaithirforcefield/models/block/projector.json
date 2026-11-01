@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "diaithirforcefield:block/projector_top",
+    "bottom": "diaithirforcefield:block/projector_bottom",
+    "front": "diaithirforcefield:block/projector_front",
+    "side": "diaithirforcefield:block/projector_side"
+  }
+}

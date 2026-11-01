@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "ingredient": "create_ss_crate:unawakened_stronghold_crate_shell",
+ "results": [
+  {
+   "id": "create_ss_crate:awakened_stronghold_crate_shell"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "R": "minecraft:redstone",
+    "S": "minecraft:stonecutter",
+    "C": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "III",
+    "RSR",
+    "ICI"
+  ],
+  "result": {
+    "id": "diaithirforgeworks:sawmill_age4",
+    "count": 1
+  }
+}

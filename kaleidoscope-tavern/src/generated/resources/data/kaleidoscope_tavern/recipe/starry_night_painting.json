@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:item_frame",
+    "minecraft:echo_shard"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:starry_night_painting"
+  }
+}

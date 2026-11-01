@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:purpur_block",
+  "minecraft:popped_chorus_fruit",
+  "minecraft:popped_chorus_fruit"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:spire_sheet",
+   "count": 2
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "PPP",
+  "P P",
+  "PPP"
+ ],
+ "key": {
+  "P": "minecraft:oak_planks"
+ },
+ "result": {
+  "id": "diaithirbutchery:salting_barrel"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aba",
+  "bab",
+  "ccc"
+ ],
+ "key": {
+  "a": "minecraft:purpur_block",
+  "b": "automatemat:end_core",
+  "c": "minecraft:purpur_pillar"
+ },
+ "result": {
+  "id": "automatemat:end_city_core"
+ }
+}

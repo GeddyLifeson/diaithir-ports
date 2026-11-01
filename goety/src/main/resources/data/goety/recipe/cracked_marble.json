@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "goety:marble",
+ "experience": 0.35,
+ "cookingtime": 200,
+ "result": {
+  "id": "goety:cracked_marble"
+ }
+}

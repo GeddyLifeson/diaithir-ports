@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": "alexscaves:radrock_uranium_ore",
+  "result": {
+    "id": "alexscaves:uranium",
+    "count": 1
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

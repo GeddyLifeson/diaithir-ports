@@ -1,0 +1,15 @@
+{
+  "type": "diaithirforgeworks:crusher",
+  "inputs": [
+    {
+      "ingredient": "minecraft:blaze_rod",
+      "count": 1
+    }
+  ],
+  "energy": 1200,
+  "time": 100,
+  "result": {
+    "id": "minecraft:blaze_powder",
+    "count": 4
+  }
+}

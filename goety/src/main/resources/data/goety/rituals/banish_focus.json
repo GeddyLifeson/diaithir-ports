@@ -1,0 +1,17 @@
+{
+ "type": "craft",
+ "school": "end",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "#c:ender_pearls",
+  "#c:gems/quartz",
+  "#c:gems/diamond",
+  "minecraft:chorus_fruit",
+  "minecraft:name_tag",
+  "#c:bones"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:banish_focus",
+ "count": 1
+}

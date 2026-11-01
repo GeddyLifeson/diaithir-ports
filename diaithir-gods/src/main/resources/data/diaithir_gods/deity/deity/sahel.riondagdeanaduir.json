@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:sahel.riondagdeanaduir",
+  "icon": "minecraft:nether_star",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": 0,
+  "maxlevel": 10
+}

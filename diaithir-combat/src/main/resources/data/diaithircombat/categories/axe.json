@@ -1,0 +1,24 @@
+{
+ "id": "axe",
+ "pattern": "overhead",
+ "range": 3.0,
+ "arc": 80,
+ "width": 0.4,
+ "max_targets": 2,
+ "knockback": 0.5,
+ "combo_window": 14,
+ "parry_window": 0,
+ "fallback": "minecraft:iron_axe",
+ "combo": [
+  {
+   "damage": 1.1,
+   "cooldown": 13,
+   "stamina": 3
+  },
+  {
+   "damage": 1.4,
+   "cooldown": 16,
+   "stamina": 3.5
+  }
+ ]
+}

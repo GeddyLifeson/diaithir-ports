@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "|M|",
+  "STS",
+  " | "
+ ],
+ "key": {
+  "M": "#c:ingots/iron",
+  "|": "#c:rods/wooden",
+  "S": "minecraft:string",
+  "T": "minecraft:tripwire_hook"
+ },
+ "result": {
+  "id": "diaithirarms:mail_crossbow",
+  "count": 1
+ }
+}

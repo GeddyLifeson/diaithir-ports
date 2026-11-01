@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:gold_ingot",
+    "color": 11756726,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:mesopotamian.grianukiertas",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:regeneration",
+        "Amplifier": 0,
+        "Duration": 400,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "mesopotamian.grianukiertas_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

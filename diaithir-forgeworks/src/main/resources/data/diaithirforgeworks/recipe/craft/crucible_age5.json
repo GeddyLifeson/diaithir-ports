@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "diaithirforgeworks:bronze_ingot",
+    "M": "diaithirforgeworks:crucible_age4"
+  },
+  "pattern": [
+    " B ",
+    "BMB",
+    " B "
+  ],
+  "result": {
+    "id": "diaithirforgeworks:crucible_age5",
+    "count": 1
+  }
+}

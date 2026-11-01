@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "automatemat:diamond_shard",
+  "automatemat:diamond_shard",
+  "automatemat:diamond_shard",
+  "automatemat:diamond_shard",
+  "automatemat:diamond_shard",
+  "automatemat:diamond_shard",
+  "automatemat:diamond_shard",
+  "automatemat:diamond_shard",
+  "automatemat:diamond_shard"
+ ],
+ "result": {
+  "id": "minecraft:diamond"
+ }
+}

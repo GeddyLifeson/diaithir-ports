@@ -1,0 +1,6 @@
+{
+  "entity": "minecraft:silverfish",
+  "favor": -5,
+  "maxuses": 8,
+  "cooldown": 6000
+}

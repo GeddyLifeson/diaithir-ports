@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:hay_block",
+    "color": 6343560,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:italic.buoinbienuosul",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:saturation",
+        "Amplifier": 1,
+        "Duration": 40,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "italic.buoinbienuosul_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

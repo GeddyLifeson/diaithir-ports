@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    "FFF",
+    "FFF"
+  ],
+  "key": {
+    "F": "alexscaves:disc_fragment_fusion"
+  },
+  "result": {
+    "id": "alexscaves:music_disc_fusion",
+    "count": 1
+  }
+}

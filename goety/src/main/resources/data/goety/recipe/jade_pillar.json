@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:jade_slab"
+ },
+ "pattern": [
+  "#",
+  "#"
+ ],
+ "result": {
+  "id": "goety:jade_pillar",
+  "count": 1
+ }
+}

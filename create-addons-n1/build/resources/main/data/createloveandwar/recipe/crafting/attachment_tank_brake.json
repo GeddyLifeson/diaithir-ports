@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "I": "createloveandwar:barrel_iron",
+  "P": "#c:plates/iron",
+  "N": "#c:nuggets/iron"
+ },
+ "pattern": [
+  "P  ",
+  " IN",
+  "P  "
+ ],
+ "result": {
+  "id": "createloveandwar:attachment_tank_brake"
+ },
+ "show_notification": true
+}

@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "alchemind:cinder_scrap",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "fluid": "create:potion",
+  "amount": 8100
+ },
+ "result": {
+  "id": "minecraft:netherrack"
+ }
+}

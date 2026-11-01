@@ -1,0 +1,43 @@
+{
+ "id": "shadow",
+ "tag": "diaithirgear:sets/shadow",
+ "age": 4,
+ "curios": false,
+ "tiers": [
+  {
+   "pieces": 2,
+   "attributes": [
+    {
+     "attribute": "minecraft:movement_speed",
+     "operation": "add_multiplied_base",
+     "amount": 0.05
+    },
+    {
+     "attribute": "apothic_attributes:crit_chance",
+     "operation": "add_value",
+     "amount": 0.05
+    }
+   ]
+  },
+  {
+   "pieces": 4,
+   "attributes": [
+    {
+     "attribute": "minecraft:movement_speed",
+     "operation": "add_multiplied_base",
+     "amount": 0.1
+    },
+    {
+     "attribute": "apothic_attributes:crit_chance",
+     "operation": "add_value",
+     "amount": 0.1
+    },
+    {
+     "attribute": "minecraft:sneaking_speed",
+     "operation": "add_value",
+     "amount": 0.2
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "bonus_rolls": 0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "goety:end_rock_chiseled"
+    }
+   ]
+  }
+ ],
+ "random_sequence": "goety:blocks/end_rock_chiseled"
+}

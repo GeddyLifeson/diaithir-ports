@@ -1,0 +1,17 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "creatingspace"
+  }
+ ],
+ "type": "create:crushing",
+ "results": [
+  {
+   "chance": 0.3,
+   "id": "creatingspace:nickel_nugget"
+  }
+ ],
+ "processing_time": 250,
+ "ingredient": "#create:stone_types/scorchia"
+}

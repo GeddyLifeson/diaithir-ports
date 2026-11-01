@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "alchemind:glamerite",
+  "minecraft:soul_sand"
+ ],
+ "results": [
+  {
+   "id": "alchemind:glamerite_powder"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:water",
+   "amount": 81000
+  }
+ ],
+ "heat_requirement": "heated"
+}

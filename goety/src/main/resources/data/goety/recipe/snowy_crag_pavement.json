@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:crag_pavement",
+  "S": "minecraft:snowball"
+ },
+ "pattern": [
+  "#S",
+  "S#"
+ ],
+ "result": {
+  "id": "goety:snowy_crag_pavement",
+  "count": 2
+ }
+}

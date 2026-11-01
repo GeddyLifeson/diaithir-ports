@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 11573417,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_ushki_lake_kamchatka.spiuradklachbeindachur",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "a1_ushki_lake_kamchatka.spiuradklachbeindachur_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

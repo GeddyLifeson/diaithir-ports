@@ -1,0 +1,60 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create:goggles",
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "createrelics:magic_core"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:speedometer"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:echo_shard"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create:stressometer"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:amethyst_shard"
+  }
+ ],
+ "transitional_item": {
+  "id": "create:goggles"
+ },
+ "result": {
+  "id": "createrelicsplus:chief_goggles",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "createrelicsplus"
+  }
+ ]
+}

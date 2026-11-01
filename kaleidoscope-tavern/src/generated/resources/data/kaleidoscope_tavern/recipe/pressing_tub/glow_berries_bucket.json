@@ -1,0 +1,5 @@
+{
+  "type": "kaleidoscope_tavern:pressing_tub",
+  "fluid": "kaleidoscope_tavern:glow_berries_juice",
+  "ingredient": "minecraft:glow_berries"
+}

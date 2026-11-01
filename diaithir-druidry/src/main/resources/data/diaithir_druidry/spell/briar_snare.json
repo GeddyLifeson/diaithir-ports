@@ -1,0 +1,92 @@
+{
+ "school": "spell_power:arcane",
+ "range": 24.0,
+ "tier": 1,
+ "group": "druid_wild",
+ "learn": {},
+ "active": {
+  "cast": {
+   "duration": 1.0,
+   "animation": {
+    "id": "spell_engine:one_handed_ground_charge"
+   },
+   "sound": {
+    "id": "spell_engine:generic_healing_casting"
+   },
+   "particles": [
+    {
+     "id": "spell_engine:magic_heal",
+     "appearance": {
+      "color": 1858631935,
+      "motion": "ASCEND"
+     },
+     "batch": {
+      "count": 2.0,
+      "shape": "PIPE",
+      "anchor": "ENTITY",
+      "min_speed": 0.03,
+      "max_speed": 0.08
+     }
+    }
+   ]
+  }
+ },
+ "release": {
+  "animation": {
+   "id": "spell_engine:one_handed_area_release"
+  },
+  "sound": {
+   "id": "spell_engine:generic_healing_release"
+  }
+ },
+ "target": {
+  "type": "AIM",
+  "aim": {}
+ },
+ "deliver": {
+  "type": "CLOUD",
+  "clouds": [
+   {
+    "volume": {
+     "radius": 3.0,
+     "area": {
+      "vertical_range_multiplier": 0.4
+     }
+    },
+    "time_to_live_seconds": 6.0,
+    "impact_tick_interval": 10,
+    "placement": {
+     "force_onto_ground": true
+    },
+    "spawn": {}
+   }
+  ]
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "DAMAGE",
+    "damage": {
+     "spell_power_coefficient": 0.18
+    }
+   }
+  },
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:slowness",
+     "duration": 1.5,
+     "amplifier": 2,
+     "apply_mode": "SET"
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 14.0
+  }
+ }
+}

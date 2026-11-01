@@ -1,0 +1,17 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "create_thermobaric:beryl_ingot"
+ ],
+ "results": [
+  {
+   "id": "minecraft:emerald",
+   "chance": 0.1
+  },
+  {
+   "id": "create_thermobaric:impure_emerald",
+   "chance": 0.9
+  }
+ ]
+}

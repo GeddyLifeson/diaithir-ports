@@ -1,0 +1,23 @@
+{
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "ingredients": [],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_tag",
+   "amount": 40500,
+   "fluid_tag": "#c:plantoil"
+  },
+  {
+   "type": "fluid_tag",
+   "amount": 20250,
+   "fluid_tag": "#c:ethanol"
+  }
+ ],
+ "fluid_results": [
+  {
+   "id": "createdieselgenerators:biodiesel",
+   "amount": 60750
+  }
+ ]
+}

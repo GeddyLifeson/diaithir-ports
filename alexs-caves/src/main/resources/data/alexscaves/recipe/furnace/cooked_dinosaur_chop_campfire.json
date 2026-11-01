@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": "alexscaves:dinosaur_chop",
+  "result": {
+    "id": "alexscaves:cooked_dinosaur_chop",
+    "count": 1
+  },
+  "experience": 0.15,
+  "cookingtime": 600
+}

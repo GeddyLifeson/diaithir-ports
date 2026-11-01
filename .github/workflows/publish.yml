@@ -39,10 +39,11 @@ jobs:
       matrix:
         jar: ${{ fromJson(needs.plan.outputs.jars) }}
     steps:
-      - run: gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "${{ matrix.jar.file }}"
+      - run: gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "$JAR"
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.event.release.tag_name }}
+          JAR: ${{ matrix.jar.file }}
       - uses: Kir-Antipov/mc-publish@v3.3
         with:
           files: ${{ matrix.jar.file }}

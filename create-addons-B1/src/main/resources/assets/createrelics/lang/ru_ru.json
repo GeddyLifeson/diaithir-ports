@@ -1,0 +1,18 @@
+{
+  "itemGroup.createrelics": "Интеграция сreate relics",
+  "item.createrelics.magic_core": "волшебное ядро",
+  "item.createrelics.cloak_blank": "основа мантии",
+  "item.createrelics.belt_blank": "основа ремня",
+  "item.createrelics.stick_blank": "основа посоха",
+  "item.createrelics.necklace_blank": "основа ожерелья",
+  "item.createrelics.boot_blank": "основа ботинок",
+  "item.createrelics.ring_blank": "основа кольца",
+  "item.createrelics.gauntlets_blank": "основа перчатки",
+
+
+  "createrelics.configuration.title": "Настройки Create: Relics",
+  "createrelics.configuration.section.createrelics.common.toml": "Настройки Create: Relics",
+  "createrelics.configuration.section.createrelics.common.toml.title": "Настройки Create: Relics",
+  "createrelics.configuration.items": "Список предметов"
+
+}

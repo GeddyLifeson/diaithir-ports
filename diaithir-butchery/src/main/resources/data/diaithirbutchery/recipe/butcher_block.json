@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "L",
+  "L"
+ ],
+ "key": {
+  "L": "minecraft:oak_log"
+ },
+ "result": {
+  "id": "diaithirbutchery:butcher_block"
+ }
+}

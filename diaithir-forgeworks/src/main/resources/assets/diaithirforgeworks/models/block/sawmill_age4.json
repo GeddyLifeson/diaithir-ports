@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "diaithirforgeworks:block/age4_top",
+    "bottom": "diaithirforgeworks:block/age4_bottom",
+    "side": "diaithirforgeworks:block/age4_side",
+    "front": "diaithirforgeworks:block/sawmill_age4_front"
+  }
+}

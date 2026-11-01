@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "end",
+ "activation": "goety:dark_wand",
+ "offerings": [
+  "minecraft:ender_eye",
+  "#c:ender_pearls",
+  "minecraft:dragon_breath",
+  "goety:void_block",
+  "minecraft:crying_obsidian",
+  "minecraft:crying_obsidian",
+  "#c:storage_blocks/lapis",
+  "goety:occult_fabric"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:void_staff",
+ "count": 1
+}

@@ -1,0 +1,17 @@
+{
+ "type": "craft",
+ "school": "necroturgy",
+ "activation": "goety:hunger_core",
+ "offerings": [
+  "minecraft:skeleton_skull",
+  "minecraft:beetroot_soup",
+  "goety:shadow_essence",
+  "goety:occult_fabric",
+  "minecraft:short_grass",
+  "minecraft:hanging_roots"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:leeching_focus",
+ "count": 1
+}

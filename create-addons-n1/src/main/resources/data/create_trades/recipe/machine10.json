@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "create_trades:machine_token",
+ "result": {
+  "id": "create:crushing_wheel",
+  "count": 2
+ }
+}

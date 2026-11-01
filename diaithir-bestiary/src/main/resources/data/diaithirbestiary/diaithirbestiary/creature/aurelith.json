@@ -1,0 +1,8 @@
+{
+  "preset": "avatar",
+  "width": 1.4,
+  "height": 4.0,
+  "stats": { "health": 400, "armor": 10, "damage": 14, "speed": 0.3, "follow_range": 48, "knockback_resistance": 1.0 },
+  "boss": { "phase_two_at": 0.5, "bar_color": "yellow" },
+  "loot_table": "diaithirbestiary:entities/aurelith"
+}

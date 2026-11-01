@@ -1,0 +1,21 @@
+{
+  "icon": {
+    "item": "minecraft:feather",
+    "color": 8631906,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:vedic.iondsachadkeol",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "xp",
+      "multiplier": 1.25
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "vedic.iondsachadkeol_blessing_1"
+}

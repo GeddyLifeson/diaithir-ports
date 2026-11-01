@@ -1,0 +1,7 @@
+{
+  "parent": "create_cluj_napoca:custom/varza_a_la_cluj",
+  "textures": {
+    "0": "create_cluj_napoca:block/varza_a_la_cluj",
+    "particle": "create_cluj_napoca:item/varza_a_la_cluj"
+  }
+}

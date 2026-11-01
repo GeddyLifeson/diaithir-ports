@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "alexscaves:flytrap",
+            "Properties": {
+              "open": "true"
+            }
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "alexscaves:flytrap",
+            "Properties": {
+              "open": "false"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "item": "minecraft:honey_bottle",
+  "favor": 5,
+  "maxuses": 8,
+  "cooldown": 12000
+}

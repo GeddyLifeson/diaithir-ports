@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "BCB",
+  "C#C",
+  "BCB"
+ ],
+ "key": {
+  "B": "minecraft:stone_bricks",
+  "C": "minecraft:cobblestone",
+  "#": "minecraft:chest"
+ },
+ "result": {
+  "id": "create_ss_crate:starter_crate"
+ }
+}

@@ -1,0 +1,19 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirclimate"
+version = "${version}"
+displayName = "Diaithir Climate"
+description = "Carries the room-temperature model of Diaithir into Homeostatic, so a heated hut warms the player inside it and a cellar keeps them cool."
+
+[[mixins]]
+config = "diaithirclimate.mixins.json"
+
+[[dependencies.diaithirclimate]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"

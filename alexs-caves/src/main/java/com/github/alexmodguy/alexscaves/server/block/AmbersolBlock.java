@@ -1,0 +1,71 @@
+package com.github.alexmodguy.alexscaves.server.block;
+
+import com.mojang.serialization.MapCodec;
+import com.github.alexmodguy.alexscaves.server.block.blockentity.AmbersolBlockEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
+import org.jetbrains.annotations.Nullable;
+
+public class AmbersolBlock extends BaseEntityBlock {
+
+    public AmbersolBlock() {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_YELLOW).requiresCorrectToolForDrops().strength(3F, 10.0F).randomTicks().sound(ACSoundTypes.AMBER).lightLevel((i) -> 15));
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return MapCodec.unit(this);
+    }
+
+    public static BlockPos fillWithLights(BlockPos current, net.minecraft.world.level.LevelAccessor level) {
+        current = current.below();
+        while (current.getY() > level.getMinY() && AmbersolLightBlock.testSkylight(level, level.getBlockState(current), current)) {
+            if (level.getBlockState(current).isAir()) {
+                level.setBlock(current, ACBlockRegistry.AMBERSOL_LIGHT.get().defaultBlockState(), 3);
+            }
+            current = current.below();
+        }
+        return current;
+    }
+
+
+    public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
+        ticks.scheduleTick(blockPos, this, 1);
+        return super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);
+    }
+
+    public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource randomSource) {
+        fillWithLights(pos, serverLevel);
+    }
+
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource randomSource) {
+        fillWithLights(pos, level);
+    }
+
+    public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity livingEntity, ItemStack stack) {
+        fillWithLights(pos, level);
+    }
+
+    public RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new AmbersolBlockEntity(pos, state);
+    }
+
+}

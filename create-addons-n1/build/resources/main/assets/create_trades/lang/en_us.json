@@ -1,0 +1,10 @@
+{
+  "entity.minecraft.villager.create_trades.creator": "Creator",
+  "item.create_trades.casing_token": "Casin Token",
+  "item.create_trades.smart_token": "Smart Token",
+  "item.create_trades.precision_token": "Precision Token",
+  "item.create_trades.machine_token": "Machine Token",
+  "item.create_trades.ingot_token": "Ingot Token",
+  "item.create_trades.a_token": "A Token",
+  "item.create_trades.general_token": "General Token"
+}

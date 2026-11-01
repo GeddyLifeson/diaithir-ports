@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brown_mushroom",
+  "minecraft:brown_mushroom",
+  "minecraft:brown_mushroom",
+  "minecraft:brown_mushroom"
+ ],
+ "results": [
+  {
+   "id": "minecraft:brown_mushroom_block"
+  }
+ ]
+}

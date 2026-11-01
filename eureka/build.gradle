@@ -1,0 +1,106 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+
+plugins {
+    // Minecraft 26.1+ removed obfuscation, so architectury-loom's classic remap pipeline has no
+    // mappings to work with; use the `loom-no-remap` variant (needs architectury-plugin 3.5-SNAPSHOT),
+    // matching the VS2 26.2 fork.
+    id "architectury-plugin" version "3.5.170"
+    id "dev.architectury.loom-no-remap" version "1.17.491" apply false
+    // Kotlin 2.4.0 to match kotlinforforge-neoforge 6.3.0's compiler metadata.
+    id "org.jetbrains.kotlin.jvm" version "2.4.0" apply false
+    id 'com.matthewprenger.cursegradle' version '1.4.0' apply false
+    id "com.modrinth.minotaur" version "2.4.3" apply false
+}
+
+version = eureka_version
+
+architectury {
+    minecraft = rootProject.minecraft_version
+}
+
+subprojects {
+    apply plugin: "dev.architectury.loom-no-remap"
+    apply plugin: "org.jetbrains.kotlin.jvm"
+
+    repositories {
+        // Valkyrien Skies (Diaithir 26.1.2 port) comes from mavenLocal: publishToMavenLocal on the valkyrienskies branch.
+        mavenLocal()
+        mavenCentral()
+        maven {
+            name = "ParchmentMC"
+            url = "https://maven.parchmentmc.org"
+        }
+        maven { url = "https://maven.architectury.dev/" }
+        maven {
+            name = "NeoForged"
+            url = "https://maven.neoforged.net/releases"
+        }
+        maven {
+            name = "Fabric"
+            url = "https://maven.fabricmc.net/"
+        }
+        maven {
+            name = 'Kotlin for Forge'
+            url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        }
+        maven {
+            name = "Cloth Config"
+            url = "https://maven.shedaniel.me/"
+        }
+        maven {
+            name = "Modrinth"
+            url = "https://api.modrinth.com/maven"
+        }
+        maven {
+            name = "Valkyrien Skies Internal"
+            url = project.vs_maven_url ?: 'https://maven.valkyrienskies.org'
+            if (project.vs_maven_username && project.vs_maven_password) {
+                credentials {
+                    username = project.vs_maven_username
+                    password = project.vs_maven_password
+                }
+            }
+        }
+    }
+
+    dependencies {
+        minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+        // No `mappings` declaration: MC 26.1+ ships unobfuscated, so loom-no-remap has nothing to
+        // remap to "named".
+        compileOnly("com.google.code.findbugs:jsr305:3.0.2")
+    }
+
+    kotlin {
+        compilerOptions {
+            optIn.add("org.valkyrienskies.core.api.VsBeta")
+        }
+    }
+}
+
+allprojects {
+    apply plugin: "java"
+    apply plugin: "architectury-plugin"
+    apply plugin: "maven-publish"
+
+    base.archivesName.set(rootProject.archives_base_name.toString())
+    version = rootProject.version
+    group = rootProject.maven_group
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+        // MC 26.2 requires Java release 25.
+        options.release = 25
+    }
+
+    tasks.withType(KotlinJvmCompile).configureEach {
+        kotlinOptions {
+            // Kotlin (2.4.0) has no JVM_25 target yet; 21 bytecode runs fine under JVM 25.
+            jvmTarget = "21"
+            freeCompilerArgs += "-Xjvm-default=all"
+        }
+    }
+
+    java {
+        withSourcesJar()
+    }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:steep_planks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:steep_slab",
+  "count": 6
+ }
+}

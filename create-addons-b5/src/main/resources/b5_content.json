@@ -1,0 +1,80 @@
+{
+ "create_droid_diamond": {
+  "blocks": [
+   "compressed_lava_coal_block",
+   "heated_lava_coal_block",
+   "heated_scorial_coal_block",
+   "scorial_coal_block",
+   "unprocessed_lava_coal_block"
+  ],
+  "items": [
+   "diamond_chunk",
+   "haunted_scorial_coal",
+   "impure_diamond_chunk",
+   "scorial_coal"
+  ]
+ },
+ "create_ss_crate": {
+  "blocks": [
+   "andesite_crate_shell",
+   "awakened_stronghold_crate_shell",
+   "barn_spawner_crate",
+   "barn_spawner_crate_decor",
+   "blazing_nether_crate",
+   "brass_crate_shell",
+   "create_stone_crate",
+   "deep_dark_crate",
+   "dirt_crate",
+   "end_portal_breaker_crate",
+   "end_portal_placer_crate",
+   "farmer_crate",
+   "incomplete_andesite_crate_shell",
+   "incomplete_brass_crate_shell",
+   "incomplete_deep_dark_crate",
+   "incomplete_netherite_crate",
+   "incomplete_ocean_crate",
+   "incomplete_sculk_crate",
+   "incomplete_sherd_crate",
+   "incomplete_sniffer_crate",
+   "incomplete_stronghold_crate",
+   "incomplete_unawakened_stronghold_crate_shell",
+   "nether_crate",
+   "netherite_crate",
+   "ocean_crate",
+   "ore_crate",
+   "sculk_crate",
+   "sherd_crate",
+   "sniffer_crate",
+   "starter_crate",
+   "stone_crate",
+   "stronghold_corridor_crate",
+   "stronghold_crate",
+   "stronghold_fountain_crate",
+   "stronghold_jail_cell_crate",
+   "stronghold_library_crate",
+   "stronghold_portal_room_crate",
+   "stronghold_stair_crate",
+   "stronghold_storeroom_crate",
+   "unawakened_stronghold_crate_shell",
+   "wood_crate",
+   "workshop_crate",
+   "workshop_crate_decor"
+  ],
+  "items": [
+   "incomplete_stronghold_corridor_crate_chunk",
+   "incomplete_stronghold_fountain_crate_chunk",
+   "incomplete_stronghold_jail_cell_crate_chunk",
+   "incomplete_stronghold_library_crate_chunk",
+   "incomplete_stronghold_portal_room_crate_chunk",
+   "incomplete_stronghold_stair_crate_chunk",
+   "incomplete_stronghold_storeroom_crate_chunk",
+   "stronghold_corridor_crate_chunk",
+   "stronghold_fountain_crate_chunk",
+   "stronghold_jail_cell_crate_chunk",
+   "stronghold_library_crate_chunk",
+   "stronghold_portal_room_crate_chunk",
+   "stronghold_stair_crate_chunk",
+   "stronghold_storeroom_crate_chunk"
+  ]
+ }
+}

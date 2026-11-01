@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "alchemind:lead_sheet",
+  "create:copper_sheet"
+ ],
+ "results": [
+  {
+   "id": "alchemind:pewter_ingot",
+   "count": 2
+  }
+ ],
+ "heat_requirement": "heated"
+}

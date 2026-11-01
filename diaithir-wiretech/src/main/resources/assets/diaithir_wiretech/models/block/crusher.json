@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "diaithir_wiretech:block/casing_top",
+    "bottom": "diaithir_wiretech:block/casing_bottom",
+    "side": "diaithir_wiretech:block/casing_side",
+    "front": "diaithir_wiretech:block/crusher_front"
+  }
+}

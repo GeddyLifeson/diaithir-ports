@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "alchemind:pyrite",
+  "minecraft:clay"
+ ],
+ "results": [
+  {
+   "id": "alchemind:pyrite_powder"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 81000
+  }
+ ],
+ "heat_requirement": "heated"
+}

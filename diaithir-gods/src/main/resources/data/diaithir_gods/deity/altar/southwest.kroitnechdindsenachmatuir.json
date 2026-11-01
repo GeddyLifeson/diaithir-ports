@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:southwest.kroitnechdindsenachmatuir",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:carrot",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

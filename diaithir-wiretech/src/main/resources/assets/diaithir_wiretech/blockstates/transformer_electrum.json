@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "diaithir_wiretech:block/transformer_electrum"
+    },
+    "facing=east": {
+      "model": "diaithir_wiretech:block/transformer_electrum",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "diaithir_wiretech:block/transformer_electrum",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "diaithir_wiretech:block/transformer_electrum",
+      "y": 270
+    }
+  }
+}

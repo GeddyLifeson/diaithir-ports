@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "diaithirforgeworks:bronze_ingot",
+    "D": "minecraft:diamond",
+    "M": "diaithirforgeworks:crusher_age5"
+  },
+  "pattern": [
+    "BDB",
+    "DMD",
+    "BDB"
+  ],
+  "result": {
+    "id": "diaithirforgeworks:crusher_age6",
+    "count": 1
+  }
+}

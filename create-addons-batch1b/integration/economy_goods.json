@@ -1,0 +1,135 @@
+{
+ "_doc": "Merge into ECON_GOODS in content/economy/kubejs/server_scripts/economy/market.js: id: [base price in copper, usual stock, first Age]. Fuel buckets are priced per bucket.",
+ "goods": {
+  "createdieselgenerators:diesel_engine": [
+   420,
+   8,
+   "IV"
+  ],
+  "createdieselgenerators:crude_oil_bucket": [
+   30,
+   48,
+   "IV"
+  ],
+  "createdieselgenerators:diesel_bucket": [
+   55,
+   32,
+   "IV"
+  ],
+  "createdieselgenerators:gasoline_bucket": [
+   65,
+   32,
+   "IV"
+  ],
+  "createdieselgenerators:biodiesel_bucket": [
+   45,
+   32,
+   "IV"
+  ],
+  "createdieselgenerators:ethanol_bucket": [
+   40,
+   32,
+   "IV"
+  ],
+  "createdieselgenerators:plant_oil_bucket": [
+   25,
+   48,
+   "IV"
+  ],
+  "create_connected:brake": [
+   90,
+   16,
+   "IV"
+  ],
+  "create_connected:brass_gearbox": [
+   110,
+   12,
+   "IV"
+  ],
+  "create_connected:parallel_gearbox": [
+   80,
+   16,
+   "IV"
+  ],
+  "create_connected:six_way_gearbox": [
+   130,
+   12,
+   "IV"
+  ],
+  "create_connected:inverted_clutch": [
+   70,
+   16,
+   "IV"
+  ],
+  "create_connected:inverted_gearshift": [
+   70,
+   16,
+   "IV"
+  ],
+  "create_connected:cross_connector": [
+   60,
+   16,
+   "IV"
+  ],
+  "create_connected:overstress_clutch": [
+   85,
+   12,
+   "IV"
+  ],
+  "create_connected:freewheel_clutch": [
+   75,
+   12,
+   "IV"
+  ],
+  "create_connected:centrifugal_clutch": [
+   85,
+   12,
+   "IV"
+  ],
+  "createdieselgenerators:modular_diesel_engine": [
+   380,
+   8,
+   "IV"
+  ],
+  "createdieselgenerators:huge_diesel_engine": [
+   1400,
+   3,
+   "IV"
+  ],
+  "createdieselgenerators:burner": [
+   140,
+   12,
+   "IV"
+  ],
+  "createdieselgenerators:canister": [
+   60,
+   24,
+   "IV"
+  ],
+  "createdieselgenerators:distillation_tower": [
+   220,
+   8,
+   "IV"
+  ],
+  "createdieselgenerators:pumpjack": [
+   300,
+   6,
+   "IV"
+  ],
+  "createdieselgenerators:engine_silencer": [
+   70,
+   12,
+   "IV"
+  ],
+  "createdieselgenerators:engine_turbocharger": [
+   160,
+   8,
+   "IV"
+  ],
+  "create_connected:shear_pin": [
+   18,
+   48,
+   "IV"
+  ]
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "iri",
+  "rfr",
+  "iri"
+ ],
+ "key": {
+  "r": "create:polished_rose_quartz",
+  "i": "minecraft:iron_ingot",
+  "f": "create:cinder_flour"
+ },
+ "result": {
+  "id": "create_electric_stonks:advanced_redstone_resonance_coil"
+ }
+}

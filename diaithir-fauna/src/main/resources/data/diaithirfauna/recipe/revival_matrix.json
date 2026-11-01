@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ADA",
+  "DED",
+  "ADA"
+ ],
+ "key": {
+  "A": "minecraft:amethyst_shard",
+  "D": "minecraft:diamond",
+  "E": "minecraft:ender_eye"
+ },
+ "result": {
+  "id": "diaithirfauna:revival_matrix"
+ }
+}

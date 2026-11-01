@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "diaithirstoragenet:cable",
+    "minecraft:comparator"
+  ],
+  "result": {
+    "id": "diaithirstoragenet:filter_cable",
+    "count": 1
+  },
+  "category": "misc"
+}

@@ -1,0 +1,492 @@
+[
+ [
+  "Boildidielg",
+  "concept",
+  3,
+  "magic",
+  "A Druid spell of tier 1, school line druid_wild. Flings a barbed vine at a foe: its damage nature damage and a short slow."
+ ],
+ [
+  "Driùchdu",
+  "concept",
+  3,
+  "magic",
+  "A Druid spell of tier 1, school line druid_grove. A bead of cool dew heals the one you look at (yourself if none): its healing health."
+ ],
+ [
+  "Ribidries",
+  "concept",
+  3,
+  "magic",
+  "A Druid spell of tier 2, school line druid_wild. Briars burst from the ground at the target spot and hold anything in them: slow and light damage each pulse."
+ ],
+ [
+  "Kraikenddaurach",
+  "concept",
+  3,
+  "magic",
+  "A Druid spell of tier 2, school line druid_grove. Your skin takes on oak bark for 12 seconds: resistance, at the cost of slowness."
+ ],
+ [
+  "Slànachaddoiri",
+  "concept",
+  4,
+  "magic",
+  "A Druid spell of tier 3, school line druid_grove. A ring of green light heals you and every ally close by, and leaves a slow regrowth."
+ ],
+ [
+  "Leimdaum",
+  "concept",
+  4,
+  "magic",
+  "A Druid spell of tier 3, school line druid_wild. You bound forward and up like a stag and take no damage from the fall that follows."
+ ],
+ [
+  "Sliegoilìuk",
+  "concept",
+  5,
+  "magic",
+  "A Druid spell of tier 4, school line druid_wild. Hold to draw a white-berried spear of pith and thorn. A full draw pierces two foes and poisons them."
+ ],
+ [
+  "Draeid",
+  "concept",
+  3,
+  "magic",
+  "The grove-keepers. They mend the hurt and bind the loud with root and thorn. Heals and plant control. Seven spells from Age III to Age V; learn them from a Liebur Draeid made at the spell binding table or from scrolls found in old chambers."
+ ],
+ [
+  "Bauta Draeid",
+  "item",
+  3,
+  "magic",
+  "A staff of the Draeid way. Adds spell power and carries the school's first spell. Crafted with a bronze ingot and 1 moss block. Age III."
+ ],
+ [
+  "Bauta Draeid Mòru",
+  "item",
+  5,
+  "magic",
+  "The greater staff of the Draeid way: more spell power and 300 uses. Crafted with a steel ingot and 2 moss block. Age V."
+ ],
+ [
+  "Sraudagsieldad",
+  "concept",
+  3,
+  "magic",
+  "A Ovate spell of tier 1, school line ovate_omen. A bright flicker that stings for its damage and leaves the target outlined for 6 seconds."
+ ],
+ [
+  "Fradurk",
+  "concept",
+  3,
+  "magic",
+  "A Ovate spell of tier 1, school line ovate_sight. Your eyes open to the dark for 40 seconds: night vision."
+ ],
+ [
+  "Snàddànu",
+  "concept",
+  3,
+  "magic",
+  "A Ovate spell of tier 2, school line ovate_omen. You pull on the target's thread: it is weakened and slowed for 8 seconds and takes its damage."
+ ],
+ [
+  "Keimskàili",
+  "concept",
+  3,
+  "magic",
+  "A Ovate spell of tier 2, school line ovate_sight. You step through the veil and appear 8 blocks ahead."
+ ],
+ [
+  "Eòlasubradun",
+  "concept",
+  4,
+  "magic",
+  "A Ovate spell of tier 3, school line ovate_omen. Channel for 2.5 seconds: a stream of bright knowing cuts through everything in a line."
+ ],
+ [
+  "Fairi",
+  "concept",
+  4,
+  "magic",
+  "A Ovate spell of tier 3, school line ovate_sight. Everything hostile within 14 blocks glows for 10 seconds, even behind stone."
+ ],
+ [
+  "Boildibruodur",
+  "concept",
+  5,
+  "magic",
+  "A Ovate spell of tier 4, school line ovate_omen. You name a place and the blow falls there a heartbeat later: its damage to everything in 3 blocks."
+ ],
+ [
+  "Fiusaichi",
+  "concept",
+  3,
+  "magic",
+  "The seers. They see what is hidden and strike where a blow is already foretold. Sight, marks and blinks. Seven spells from Age III to Age V; learn them from a Liebur Fiusaichi made at the spell binding table or from scrolls found in old chambers."
+ ],
+ [
+  "Bauta Fiusaichi",
+  "item",
+  3,
+  "magic",
+  "A staff of the Fiusaichi way. Adds spell power and carries the school's first spell. Crafted with a bronze ingot and 1 amethyst shard. Age III."
+ ],
+ [
+  "Bauta Fiusaichi Mòru",
+  "item",
+  5,
+  "magic",
+  "The greater staff of the Fiusaichi way: more spell power and 300 uses. Crafted with a steel ingot and 2 amethyst shard. Age V."
+ ],
+ [
+  "Bilegtàirnenach",
+  "concept",
+  3,
+  "magic",
+  "A Bard spell of tier 1, school line bard_thunder. One struck note travels as a crackle and does its damage."
+ ],
+ [
+  "Tàlad",
+  "concept",
+  3,
+  "magic",
+  "A Bard spell of tier 1, school line bard_strain. The target's limbs go heavy: slowness and weakness for 6 seconds, and it forgets its hurry."
+ ],
+ [
+  "Kuma",
+  "concept",
+  3,
+  "magic",
+  "A Bard spell of tier 2, school line bard_strain. A long falling strain: nearby foes stagger back and are struck by dread: nausea for 4 seconds."
+ ],
+ [
+  "Gàiri",
+  "concept",
+  3,
+  "magic",
+  "A Bard spell of tier 2, school line bard_strain. A bright strain mends you and each ally near you for its healing and quickens them for 4 seconds."
+ ],
+ [
+  "Adurkglaed",
+  "concept",
+  4,
+  "magic",
+  "A Bard spell of tier 3, school line bard_thunder. A great horn blast hammers the area in front of you: its damage and a heavy shove."
+ ],
+ [
+  "Òrunbrautach",
+  "concept",
+  4,
+  "magic",
+  "A Bard spell of tier 3, school line bard_strain. A marching song for 15 seconds: you and nearby allies gain speed and haste."
+ ],
+ [
+  "Koseirmstoirmi",
+  "concept",
+  5,
+  "magic",
+  "A Bard spell of tier 4, school line bard_thunder. Hold a chord for 3 seconds. The sky answers along your aim and each moment of the chord strikes."
+ ],
+ [
+  "Bàrdu",
+  "concept",
+  3,
+  "magic",
+  "The singers. Three strains (sleep, lament, laughter) and their thunder. Crowd control and rally. Seven spells from Age III to Age V; learn them from a Liebur Bàrdu made at the spell binding table or from scrolls found in old chambers."
+ ],
+ [
+  "Bauta Bàrdu",
+  "item",
+  3,
+  "magic",
+  "A staff of the Bàrdu way. Adds spell power and carries the school's first spell. Crafted with a bronze ingot and 1 bell. Age III."
+ ],
+ [
+  "Bauta Bàrdu Mòru",
+  "item",
+  5,
+  "magic",
+  "The greater staff of the Bàrdu way: more spell power and 300 uses. Crafted with a steel ingot and 2 bell. Age V."
+ ],
+ [
+  "Boildirand",
+  "concept",
+  3,
+  "magic",
+  "A Filid spell of tier 1, school line filid_satire. A hard line of verse flies out: its damage and a short weakness."
+ ],
+ [
+  "Randskiad",
+  "concept",
+  3,
+  "magic",
+  "A Filid spell of tier 1, school line filid_word. A spoken ward gives you a shield of 3 extra hearts for 20 seconds."
+ ],
+ [
+  "Aeiri",
+  "concept",
+  3,
+  "magic",
+  "A Filid spell of tier 2, school line filid_satire. A cutting rhyme raises blisters on the proud: slowness, weakness and its damage to the target."
+ ],
+ [
+  "Fìrind",
+  "concept",
+  3,
+  "magic",
+  "A Filid spell of tier 2, school line filid_word. A true word spoken over you and your allies strips slowing and harmful effects and heals its healing."
+ ],
+ [
+  "Randkeid",
+  "concept",
+  4,
+  "magic",
+  "A Filid spell of tier 3, school line filid_satire. A rapid recital: five small bolts fan out in a spread, each doing its damage."
+ ],
+ [
+  "Toirmesk",
+  "concept",
+  4,
+  "magic",
+  "A Filid spell of tier 3, school line filid_word. You lay a ban on the target: withering for 5 seconds and hunger for 15."
+ ],
+ [
+  "Maldachd",
+  "concept",
+  5,
+  "magic",
+  "A Filid spell of tier 4, school line filid_satire. A dark cloud of ill words settles on the target ground for 7 seconds and keeps cursing what stands in it."
+ ],
+ [
+  "Filid",
+  "concept",
+  3,
+  "magic",
+  "The poets of law and satire. Their words wound, bind and shield. Curses, wards and cleansing. Seven spells from Age III to Age V; learn them from a Liebur Filid made at the spell binding table or from scrolls found in old chambers."
+ ],
+ [
+  "Bauta Filid",
+  "item",
+  3,
+  "magic",
+  "A staff of the Filid way. Adds spell power and carries the school's first spell. Crafted with a bronze ingot and 1 ink sac. Age III."
+ ],
+ [
+  "Bauta Filid Mòru",
+  "item",
+  5,
+  "magic",
+  "The greater staff of the Filid way: more spell power and 300 uses. Crafted with a steel ingot and 2 ink sac. Age V."
+ ],
+ [
+  "Boildifiendag",
+  "concept",
+  3,
+  "magic",
+  "A Raven spell of tier 1, school line fitech_terror. Two quick strikes, like a crow at carrion. Each hits for its damage."
+ ],
+ [
+  "Glaedkad",
+  "concept",
+  3,
+  "magic",
+  "A Raven spell of tier 1, school line fitech_battle. A raven-throated shout: you and allies near you gain strength for 10 seconds."
+ ],
+ [
+  "Leimfitech",
+  "concept",
+  3,
+  "magic",
+  "A Raven spell of tier 2, school line fitech_battle. You throw yourself forward in a low leap with a speed burst."
+ ],
+ [
+  "Bàinid",
+  "concept",
+  3,
+  "magic",
+  "A Raven spell of tier 2, school line fitech_battle. You fall into fury for 8 seconds: strong blows, but you take more harm (weaker defence)."
+ ],
+ [
+  "Roudspoiri",
+  "concept",
+  4,
+  "magic",
+  "A Raven spell of tier 3, school line fitech_terror. A full spin: three sweeping cuts that hit everything around you for its damage each."
+ ],
+ [
+  "Oildti",
+  "concept",
+  4,
+  "magic",
+  "A Raven spell of tier 3, school line fitech_terror. Dread shakes nearby foes: they are shoved back and weakened for 6 seconds."
+ ],
+ [
+  "Àdbàsu",
+  "concept",
+  5,
+  "magic",
+  "A Raven spell of tier 4, school line fitech_terror. A single heavy stroke. Foes under a third of their health take triple damage."
+ ],
+ [
+  "Fitech",
+  "concept",
+  3,
+  "magic",
+  "The war-crow's way. Short sharp melee strikes, battle shouts and fear. Scales with melee power. Seven spells from Age III to Age V; learn them from a Liebur Fitech made at the spell binding table or from scrolls found in old chambers."
+ ],
+ [
+  "Bauta Fitech",
+  "item",
+  3,
+  "magic",
+  "A staff of the Fitech way. Adds spell power and carries the school's first spell. Crafted with a bronze ingot and 1 feather. Age III."
+ ],
+ [
+  "Bauta Fitech Mòru",
+  "item",
+  5,
+  "magic",
+  "The greater staff of the Fitech way: more spell power and 300 uses. Crafted with a steel ingot and 2 feather. Age V."
+ ],
+ [
+  "Kietach",
+  "concept",
+  3,
+  "magic",
+  "A Otherworld spell of tier 1, school line sidhe_frost. A cold white mist rises where you point: it clings, slows and nips for 6 seconds."
+ ],
+ [
+  "Loindskàili",
+  "concept",
+  3,
+  "magic",
+  "A Otherworld spell of tier 1, school line sidhe_glamour. A veil of glamour: you are unseen for 6 seconds and quick for 3."
+ ],
+ [
+  "Keimknok",
+  "concept",
+  3,
+  "magic",
+  "A Otherworld spell of tier 2, school line sidhe_glamour. You step inside the hill and out again 12 blocks ahead."
+ ],
+ [
+  "Tiudlak",
+  "concept",
+  3,
+  "magic",
+  "A Otherworld spell of tier 2, school line sidhe_glamour. A gift from the hill: the target regains its healing health over 10 seconds, and is lightly shielded."
+ ],
+ [
+  "Geigairged",
+  "concept",
+  4,
+  "magic",
+  "A Otherworld spell of tier 3, school line sidhe_frost. A bright branch flies out and passes through two foes. Each is chilled and takes its damage."
+ ],
+ [
+  "Uoirsìtichi",
+  "concept",
+  4,
+  "magic",
+  "A Otherworld spell of tier 3, school line sidhe_frost. Time thickens around you: foes within 7 blocks crawl for 3 seconds and are nipped by frost."
+ ],
+ [
+  "Klachmelduin",
+  "concept",
+  5,
+  "magic",
+  "A Otherworld spell of tier 4, school line sidhe_frost. A hail of stones falls around the target spot: its damage to each foe struck, with a chill."
+ ],
+ [
+  "Sìtichi",
+  "concept",
+  3,
+  "magic",
+  "The hollow-hill folk. Mist, glamour and gifts that come with a price. Control and mobility. Seven spells from Age III to Age V; learn them from a Liebur Sìtichi made at the spell binding table or from scrolls found in old chambers."
+ ],
+ [
+  "Bauta Sìtichi",
+  "item",
+  3,
+  "magic",
+  "A staff of the Sìtichi way. Adds spell power and carries the school's first spell. Crafted with a bronze ingot and 1 prismarine crystals. Age III."
+ ],
+ [
+  "Bauta Sìtichi Mòru",
+  "item",
+  5,
+  "magic",
+  "The greater staff of the Sìtichi way: more spell power and 300 uses. Crafted with a steel ingot and 2 prismarine crystals. Age V."
+ ],
+ [
+  "Sraudag",
+  "concept",
+  3,
+  "magic",
+  "A Smith spell of tier 1, school line smith_fire. A spark spits from the fire: its damage and burning for 3 seconds."
+ ],
+ [
+  "Kaisk",
+  "concept",
+  3,
+  "magic",
+  "A Smith spell of tier 1, school line smith_temper. You plunge your hands in the quench-trough: fire resistance for 40 seconds and any fire on you goes out."
+ ],
+ [
+  "Iarnaigitied",
+  "concept",
+  3,
+  "magic",
+  "A Smith spell of tier 2, school line smith_fire. Hold to heat the iron. A full draw hurls a white-hot bolt that does its damage and sets the foe alight."
+ ],
+ [
+  "Kaisiiarnaigi",
+  "concept",
+  3,
+  "magic",
+  "A Smith spell of tier 2, school line smith_temper. You temper your body for 10 seconds: haste, strength and resistance, then a short tiredness."
+ ],
+ [
+  "Skòdsaliaruind",
+  "concept",
+  4,
+  "magic",
+  "A Smith spell of tier 3, school line smith_fire. A cloud of hot slag settles at the target spot for 6 seconds and keeps burning what stands in it."
+ ],
+ [
+  "Anuilkum",
+  "concept",
+  4,
+  "magic",
+  "A Smith spell of tier 3, school line smith_fire. Channel the bellows for 2.5 seconds: a lance of heat along your aim, burning all it crosses."
+ ],
+ [
+  "Oiskiliegti",
+  "concept",
+  5,
+  "magic",
+  "A Smith spell of tier 4, school line smith_fire. A rain of molten iron falls around the target spot: its damage to each drop's blast and burning."
+ ],
+ [
+  "Gouba",
+  "concept",
+  3,
+  "magic",
+  "The forge-masters. Fire from the hearth: sparks, hot iron and the long pour. Damage over time and self-tempering. Seven spells from Age III to Age V; learn them from a Liebur Gouba made at the spell binding table or from scrolls found in old chambers."
+ ],
+ [
+  "Bauta Gouba",
+  "item",
+  3,
+  "magic",
+  "A staff of the Gouba way. Adds spell power and carries the school's first spell. Crafted with a bronze ingot and 1 blaze powder. Age III."
+ ],
+ [
+  "Bauta Gouba Mòru",
+  "item",
+  5,
+  "magic",
+  "The greater staff of the Gouba way: more spell power and 300 uses. Crafted with a steel ingot and 2 blaze powder. Age V."
+ ]
+]

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "l": "#goety:slab_shade_stone_craft",
+  "s": "#goety:full_shade_stone_craft"
+ },
+ "pattern": [
+  "l",
+  "s",
+  "l"
+ ],
+ "result": {
+  "id": "goety:pedestal",
+  "count": 1
+ }
+}

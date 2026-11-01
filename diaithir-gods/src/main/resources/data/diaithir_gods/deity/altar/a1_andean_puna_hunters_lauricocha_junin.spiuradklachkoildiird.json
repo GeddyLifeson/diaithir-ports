@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_andean_puna_hunters_lauricocha_junin.spiuradklachkoildiird",
+  "female": false,
+  "slim": false,
+  "light": 0,
+  "items": {
+    "block": "minecraft:stone",
+    "mainhand": "minecraft:stone",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

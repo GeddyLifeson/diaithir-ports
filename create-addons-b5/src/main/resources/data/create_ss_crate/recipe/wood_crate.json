@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "LPL",
+  "PAP",
+  "LPL"
+ ],
+ "key": {
+  "L": "#minecraft:logs",
+  "P": "#minecraft:planks",
+  "A": "minecraft:dirt"
+ },
+ "result": {
+  "id": "create_ss_crate:wood_crate"
+ }
+}
