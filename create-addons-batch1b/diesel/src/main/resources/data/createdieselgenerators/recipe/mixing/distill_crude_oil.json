@@ -1,0 +1,22 @@
+{
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "ingredients": [],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_tag",
+   "amount": 81000,
+   "fluid_tag": "#c:crude_oil"
+  }
+ ],
+ "fluid_results": [
+  {
+   "id": "createdieselgenerators:diesel",
+   "amount": 40500
+  },
+  {
+   "id": "createdieselgenerators:gasoline",
+   "amount": 20250
+  }
+ ]
+}

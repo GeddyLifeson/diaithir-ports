@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:jungle_log",
+    "color": 12428624,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:sahel.ierrachbienuosul",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "sahel.ierrachbienuosul_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

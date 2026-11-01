@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "iceandfire:dragonbone",
+    "I": "minecraft:stick"
+  },
+  "pattern": [
+    "  B",
+    " BB",
+    "IB "
+  ],
+  "result": {
+    "id": "iceandfire:dragon_horn"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:filled_artillery_casing",
+ "ingredient": "minecraft:tnt",
+ "results": [
+  {
+   "id": "createloveandwar:artillery_shell_he"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:iron_axe",
+    "color": 8685936,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:baltic.speiritairnenach",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:weakness",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "baltic.speiritairnenach_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

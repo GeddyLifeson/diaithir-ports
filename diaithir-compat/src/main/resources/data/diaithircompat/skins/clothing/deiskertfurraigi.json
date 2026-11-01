@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/male/0.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/male/1.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/male/2.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/male/ruler.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/male/warrior.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/male/priest.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/female/0.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/female/1.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/female/2.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/female/ruler.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/female/warrior.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/deiskertfurraigi/female/priest.png",
+    "profession": "diaithircompat:deiskertfurraigi",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

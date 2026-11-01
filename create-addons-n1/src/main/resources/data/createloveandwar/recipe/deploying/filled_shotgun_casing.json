@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:shotgun_casing",
+ "ingredient": "#createloveandwar:propellant",
+ "results": [
+  {
+   "id": "createloveandwar:filled_shotgun_casing"
+  }
+ ]
+}

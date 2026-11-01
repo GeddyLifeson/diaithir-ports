@@ -1,0 +1,7 @@
+{
+  "parent": "create_chocopaste:custom/toastwithchocopaste",
+  "textures": {
+    "1": "create_chocopaste:block/toastwithchocopaste3d",
+    "particle": "create_chocopaste:item/toastwithchocopaste"
+  }
+}

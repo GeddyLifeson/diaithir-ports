@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:crow_strike",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:battle_cry",
+   "required": false
+  }
+ ]
+}

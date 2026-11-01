@@ -1,0 +1,14 @@
+{
+ "values": [
+  "copycats:copycat_block",
+  "copycats:copycat_door",
+  "copycats:copycat_fence",
+  "copycats:copycat_fence_gate",
+  "copycats:copycat_folding_door",
+  "copycats:copycat_ghost_block",
+  "copycats:copycat_sliding_door",
+  "copycats:copycat_vertical_stairs",
+  "copycats:copycat_stairs",
+  "copycats:copycat_wall"
+ ]
+}

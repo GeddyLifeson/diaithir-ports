@@ -1,0 +1,27 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_droid_diamond:compressed_lava_coal_block",
+  "create:scoria",
+  "create:scoria",
+  "create:scoria",
+  "create:scoria",
+  "create:scoria",
+  "create:scoria",
+  "create:scoria",
+  "create:scoria"
+ ],
+ "results": [
+  {
+   "id": "create_droid_diamond:heated_scorial_coal_block"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 20250
+  }
+ ],
+ "heat_requirement": "superheated"
+}

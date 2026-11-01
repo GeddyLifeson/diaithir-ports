@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:feather",
+    "color": 10337205,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:nilotic.firindland",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "nilotic.firindland_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

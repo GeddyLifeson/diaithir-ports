@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:germanic.rundiumuirbanrig",
+  "icon": "minecraft:white_wool",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

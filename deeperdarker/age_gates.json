@@ -1,0 +1,13 @@
+{
+  "namespaces": {
+    "deeperdarker": "VI"
+  },
+  "dimensions": {
+    "deeperdarker:otherside": {
+      "age": "VI",
+      "player_tag": "diaithir_age_vi",
+      "config": "othersideRequiredTag"
+    }
+  },
+  "note": "Otherside is Warden-era endgame; the whole namespace is Age VI. The portal checks the diaithir_age_vi entity tag when config othersideRequiredTag is set."
+}

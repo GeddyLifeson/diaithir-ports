@@ -1,0 +1,20 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": true,
+ "key": {
+  "A": "minecraft:shield",
+  "B": "minecraft:netherite_scrap",
+  "C": "create:industrial_iron_block",
+  "D": "create:mechanical_saw"
+ },
+ "pattern": [
+  " CDC ",
+  "CCBCC",
+  "DBABD",
+  "CCBCC",
+  " CDC "
+ ],
+ "result": {
+  "id": "sometricks:shielddoom"
+ }
+}

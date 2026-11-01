@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirconduits"
+version = "${version}"
+displayName = "Diaithir Conduits"
+description = "Wireless conduit nodes that join a numbered, owner-scoped channel and move items, fluids and FE between any two nodes on it, across dimensions, with per-side modes and a bandwidth limit per tier. Plus a simple fluid cell and energy cell. Clean-room original."
+
+[[dependencies.diaithirconduits]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

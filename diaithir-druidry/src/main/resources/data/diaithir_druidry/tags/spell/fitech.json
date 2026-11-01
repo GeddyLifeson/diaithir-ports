@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "#diaithir_druidry:spell_book/fitech",
+   "required": false
+  },
+  {
+   "id": "#diaithir_druidry:weapon/fitech_staff",
+   "required": false
+  }
+ ]
+}

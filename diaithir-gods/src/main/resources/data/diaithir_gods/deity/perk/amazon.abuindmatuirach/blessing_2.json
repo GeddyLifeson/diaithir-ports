@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:cod",
+    "color": 13064363,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:amazon.abuindmatuirach",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:dolphins_grace",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "amazon.abuindmatuirach_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

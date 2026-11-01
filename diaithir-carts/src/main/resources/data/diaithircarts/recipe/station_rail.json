@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "diaithircarts:steel_powered_rail",
+    "minecraft:clock"
+  ],
+  "result": {
+    "id": "diaithircarts:station_rail",
+    "count": 1
+  },
+  "category": "misc"
+}

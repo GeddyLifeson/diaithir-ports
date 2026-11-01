@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "ACA",
+    "LDL"
+  ],
+  "key": {
+    "A": "alexscaves:amber",
+    "C": "alexscaves:amber_curiosity",
+    "L": "alexscaves:limestone",
+    "D": "#c:gems/diamond"
+  },
+  "result": {
+    "count": 1,
+    "id": "alexscaves:amber_monolith"
+  }
+}

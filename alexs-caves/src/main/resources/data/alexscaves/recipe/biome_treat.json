@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "RER",
+    " C "
+  ],
+  "key": {
+    "R": "#alexscaves:rock_candies",
+    "E": "alexscaves:radiant_essence",
+    "C": "alexscaves:candy_cane"
+  },
+  "result": {
+    "id": "alexscaves:biome_treat",
+    "count": 1
+  }
+}

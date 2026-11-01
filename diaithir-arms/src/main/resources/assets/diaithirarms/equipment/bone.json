@@ -1,0 +1,19 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "diaithirarms:bone"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "diaithirarms:bone"
+   }
+  ],
+  "humanoid_baby": [
+   {
+    "texture": "diaithirarms:bone"
+   }
+  ]
+ }
+}

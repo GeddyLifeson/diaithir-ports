@@ -1,0 +1,17 @@
+{
+ "type": "craft",
+ "school": "frost",
+ "activation": "goety:ice_spike_focus",
+ "offerings": [
+  "minecraft:snow_block",
+  "minecraft:blue_ice",
+  "minecraft:blue_ice",
+  "minecraft:powder_snow_bucket",
+  "goety:magic_emerald",
+  "minecraft:powder_snow_bucket"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:iceology_focus",
+ "count": 1
+}

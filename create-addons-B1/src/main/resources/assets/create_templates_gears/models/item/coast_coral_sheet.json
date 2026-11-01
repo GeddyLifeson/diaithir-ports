@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "create_templates_gears:item/coast_coral_sheet"
+  }
+}

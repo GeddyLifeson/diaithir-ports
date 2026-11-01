@@ -1,0 +1,49 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_more_farmables:netherite_dust",
+ "transitional_item": {
+  "id": "create_more_farmables:unprocessed_netherite_dust"
+ },
+ "result": {
+  "id": "minecraft:netherite_scrap",
+  "chance": 120.0
+ },
+ "loops": 5,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:experience_nugget",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "minecraft:lava",
+    "amount": 40500
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ],
+ "junks": [
+  {
+   "id": "create:powdered_obsidian",
+   "chance": 5.0
+  },
+  {
+   "id": "create:cinder_flour",
+   "chance": 5.0
+  }
+ ]
+}

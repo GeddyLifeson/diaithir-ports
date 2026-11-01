@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "diaithirforgeworks:block/age6_top",
+    "bottom": "diaithirforgeworks:block/age6_bottom",
+    "side": "diaithirforgeworks:block/age6_side",
+    "front": "diaithirforgeworks:block/crucible_age6_front_lit"
+  }
+}

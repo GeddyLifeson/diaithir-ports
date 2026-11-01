@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:stick",
+  "W": "goety:haunted_planks"
+ },
+ "pattern": [
+  "#W#",
+  "#W#"
+ ],
+ "result": {
+  "id": "goety:haunted_fence_gate",
+  "count": 1
+ }
+}

@@ -1,0 +1,6 @@
+{
+  "entity": "minecraft:sheep",
+  "favor": -8,
+  "maxuses": 8,
+  "cooldown": 6000
+}

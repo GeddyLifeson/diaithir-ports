@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "create_trades:casing_token",
+ "result": {
+  "id": "create:brass_casing",
+  "count": 8
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "icon": {
+    "item": "minecraft:feather",
+    "color": 10337205,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:nilotic.draeidechdmatuir",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "xp",
+      "multiplier": 1.5
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "nilotic.draeidechdmatuir_blessing_2"
+}

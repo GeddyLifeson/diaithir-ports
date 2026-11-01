@@ -1,0 +1,33 @@
+{
+ "type": "create:crushing",
+ "processing_time": 200,
+ "results": [
+  {
+   "id": "sophisticatedbackpacks:upgrade_base",
+   "chance": 0.45,
+   "count": 1
+  },
+  {
+   "id": "minecraft:gold_nugget",
+   "chance": 0.35,
+   "count": 7
+  },
+  {
+   "id": "minecraft:redstone",
+   "chance": 0.25,
+   "count": 1
+  },
+  {
+   "id": "minecraft:diamond",
+   "chance": 0.15,
+   "count": 1
+  }
+ ],
+ "ingredient": "#perfectprocessing:sophisticated_advanced_upgrades",
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "sophisticatedbackpacks"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "parent": "sometricks:custom/treegen",
+  "textures": {
+    "all": "sometricks:block/brass_casing",
+    "particle": "sometricks:block/brass_casing",
+    "0": "sometricks:block/image1s",
+    "1": "sometricks:block/depot_side",
+    "2": "sometricks:block/minecraft_log_side_textures__3_",
+    "3": "sometricks:block/experience_block",
+    "4": "sometricks:block/brass_casing",
+    "5": "sometricks:block/rose_quartz_lamp",
+    "missing": "sometricks:block/"
+  },
+  "render_type": "solid"
+}

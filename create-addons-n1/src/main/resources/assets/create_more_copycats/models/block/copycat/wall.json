@@ -1,0 +1,22 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "block/block",
+  "textures": {
+    "1": "create:block/copycat_base",
+    "particle": "create:block/copycat_base"
+  },
+  "elements": [
+    {   "from": [ 4, 0, 4 ],
+      "to": [ 12, 16, 12 ],
+      "faces": {
+        "down":  { "texture": "#1", "cullface": "down" },
+        "up":    { "texture": "#1", "cullface": "up" },
+        "north": { "texture": "#1" },
+        "south": { "texture": "#1" },
+        "west":  { "texture": "#1" },
+        "east":  { "texture": "#1" }
+      },
+      "__comment": "Center post"
+    }
+  ]
+}

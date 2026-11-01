@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create:gearbox",
+  "create:gearbox",
+  "create:brass_ingot",
+  "create:cogwheel"
+ ],
+ "result": {
+  "id": "create_connected:six_way_gearbox",
+  "count": 1
+ }
+}

@@ -1,0 +1,24 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirsteamrails"
+version = "${version}"
+displayName = "Diaithir Steamrails"
+description = "Steam locomotion for the Diaithir port of Create. A solid-fuel boiler with pressure and size, steam cylinders that give a train tractive power, a coal and water tender, two steam bogey styles, a whistle and chimney smoke. Original clean-room work."
+
+[[mixins]]
+config = "diaithirsteamrails.mixins.json"
+
+[[dependencies.diaithirsteamrails]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirsteamrails]]
+modId = "diaithir_create"
+type = "required"
+versionRange = "[6.0.9,)"
+ordering = "AFTER"
+side = "BOTH"

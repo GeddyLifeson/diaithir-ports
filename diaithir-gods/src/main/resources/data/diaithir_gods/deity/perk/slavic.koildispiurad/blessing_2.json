@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:cod",
+    "color": 5796004,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:slavic.koildispiurad",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:speed",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "slavic.koildispiurad_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

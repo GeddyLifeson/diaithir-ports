@@ -1,0 +1,78 @@
+{
+ "block.immersive_tanning.tanners_rack": {
+  "en": "Tanner's Rack",
+  "diaithiris": "Kliad sùduiri"
+ },
+ "block.immersive_tanning.tanners_vat": {
+  "en": "Tanner's Vat",
+  "diaithiris": "Dabach sùduiri"
+ },
+ "block.immersive_tanning.leatherworkers_bench": {
+  "en": "Leatherworker's Bench",
+  "diaithiris": "Beingi obraichi lietur"
+ },
+ "item.immersive_tanning.small_hide": {
+  "en": "Small Hide",
+  "diaithiris": "Bianu bieg"
+ },
+ "item.immersive_tanning.medium_hide": {
+  "en": "Medium Hide",
+  "diaithiris": "Bianu miedunach"
+ },
+ "item.immersive_tanning.large_hide": {
+  "en": "Large Hide",
+  "diaithiris": "Bianu mòru"
+ },
+ "item.immersive_tanning.scraped_hide": {
+  "en": "Scraped Hide",
+  "diaithiris": "Bianu skrìubad"
+ },
+ "item.immersive_tanning.wet_tanned_hide": {
+  "en": "Wet Tanned Hide",
+  "diaithiris": "Bianu kartad fliuchu"
+ },
+ "item.immersive_tanning.supple_leather": {
+  "en": "Supple Leather",
+  "diaithiris": "Lietur sùbuilti"
+ },
+ "item.immersive_tanning.harness_leather": {
+  "en": "Harness Leather",
+  "diaithiris": "Lietur ialdun"
+ },
+ "item.immersive_tanning.hardened_leather": {
+  "en": "Hardened Leather",
+  "diaithiris": "Lietur kruoid"
+ },
+ "item.immersive_tanning.binding_leather": {
+  "en": "Binding Leather",
+  "diaithiris": "Lietur kienguiltech"
+ },
+ "item.immersive_tanning.leather_scraps": {
+  "en": "Leather Scraps",
+  "diaithiris": "Foidlech lietur"
+ },
+ "item.immersive_tanning.bark": {
+  "en": "Bark",
+  "diaithiris": "Rùsk"
+ },
+ "item.immersive_tanning.tanners_knife": {
+  "en": "Tanner's Knife",
+  "diaithiris": "Skian sùduiri"
+ },
+ "item.immersive_tanning.awl": {
+  "en": "Awl",
+  "diaithiris": "Biur lietur"
+ },
+ "hide_size.immersive_tanning.small": {
+  "en": "Small",
+  "diaithiris": "bieg"
+ },
+ "hide_size.immersive_tanning.medium": {
+  "en": "Medium",
+  "diaithiris": "miedunach"
+ },
+ "hide_size.immersive_tanning.large": {
+  "en": "Large",
+  "diaithiris": "mòru"
+ }
+}

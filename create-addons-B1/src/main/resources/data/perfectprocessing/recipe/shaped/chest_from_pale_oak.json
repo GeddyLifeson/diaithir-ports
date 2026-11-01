@@ -1,0 +1,22 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "zeta"
+  }
+ ],
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:pale_oak_planks"
+ },
+ "pattern": [
+  "###",
+  "# #",
+  "###"
+ ],
+ "result": {
+  "count": 1,
+  "id": "minecraft:chest"
+ }
+}

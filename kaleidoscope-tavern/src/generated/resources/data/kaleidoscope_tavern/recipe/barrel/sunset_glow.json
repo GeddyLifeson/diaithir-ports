@@ -1,0 +1,11 @@
+{
+  "type": "kaleidoscope_tavern:barrel",
+  "carrier": "kaleidoscope_tavern:empty_bottle",
+  "fluid": "kaleidoscope_tavern:gold_grape_juice",
+  "ingredients": [
+    "minecraft:blaze_powder"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:sunset_glow"
+  }
+}

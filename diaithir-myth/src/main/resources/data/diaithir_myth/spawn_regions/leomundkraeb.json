@@ -1,0 +1,18 @@
+{
+  "creature": "diaithir_myth:leomundkraeb",
+  "court": "canaanite",
+  "region": "Levant and Phoenicia",
+  "min_age": 2,
+  "boxes": [
+    {
+      "lat": [
+        29.5,
+        37.1
+      ],
+      "lon": [
+        33.5,
+        38.5
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "iceandfire:dragonscales_copper"
+  },
+  "pattern": [
+    "###",
+    "# #"
+  ],
+  "result": {
+    "id": "iceandfire:armor_copper_helmet"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "l": "#goety:slab_blackstone_craft",
+  "s": "#goety:full_blackstone_craft"
+ },
+ "pattern": [
+  "l",
+  "s",
+  "l"
+ ],
+ "result": {
+  "id": "goety:pedestal_blackstone",
+  "count": 1
+ }
+}

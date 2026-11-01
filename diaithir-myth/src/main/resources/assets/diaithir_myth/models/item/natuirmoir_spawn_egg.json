@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "diaithir_myth:item/natuirmoir_spawn_egg"
+  }
+}

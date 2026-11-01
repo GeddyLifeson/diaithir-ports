@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:prismarine",
+  "minecraft:prismarine_shard",
+  "minecraft:prismarine_shard"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:tide_sheet",
+   "count": 2
+  }
+ ]
+}

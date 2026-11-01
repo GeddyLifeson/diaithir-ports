@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create:clutch",
+  "create:brass_ingot",
+  "create:precision_mechanism"
+ ],
+ "result": {
+  "id": "create_connected:overstress_clutch",
+  "count": 1
+ }
+}

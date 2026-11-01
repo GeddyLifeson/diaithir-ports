@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "abb",
+  "cde",
+  "abb"
+ ],
+ "key": {
+  "a": "create:golden_sheet",
+  "b": "minecraft:paper",
+  "c": "minecraft:string",
+  "d": "minecraft:copper_ingot",
+  "e": "create:zinc_ingot"
+ },
+ "result": {
+  "id": "create_tutorial_books:book_3"
+ }
+}

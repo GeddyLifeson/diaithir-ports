@@ -1,0 +1,11 @@
+{
+ "type": "create:crushing",
+ "processing_time": 200,
+ "ingredient": "create_thermobaric:impure_diamond",
+ "results": [
+  {
+   "id": "create_thermobaric:carbon_dust",
+   "chance": 0.6
+  }
+ ]
+}

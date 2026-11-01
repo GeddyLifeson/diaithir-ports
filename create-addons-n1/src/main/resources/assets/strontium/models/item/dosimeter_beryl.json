@@ -1,0 +1,18 @@
+{
+	"parent":"minecraft/item/handheld",
+	"loader":"forge:separate_transforms",
+	"base": {
+		"parent":"strontium:item/dosimeter_beryl_stick_3d"
+	},
+	"perspectives":{
+		"gui":{
+			"parent":"strontium:item/dosimeter_beryl_2d"
+		},
+		"ground":{
+			"parent":"strontium:item/dosimeter_beryl_2d"
+		},
+		"fixed":{
+			"parent":"strontium:item/dosimeter_beryl_2d"
+		}
+	}
+}

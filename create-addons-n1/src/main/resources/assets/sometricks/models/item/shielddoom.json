@@ -1,0 +1,15 @@
+{
+  "parent": "sometricks:custom/shield",
+  "textures": {
+    "0": "sometricks:block/texture",
+    "particle": "sometricks:item/texture"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "sometricks:item/shielddoom_0"
+    }
+  ]
+}

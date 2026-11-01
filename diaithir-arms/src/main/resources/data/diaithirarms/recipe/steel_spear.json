@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "  M",
+  " | ",
+  "|  "
+ ],
+ "key": {
+  "M": "#c:ingots/steel",
+  "|": "#c:rods/wooden"
+ },
+ "result": {
+  "id": "diaithirarms:steel_spear",
+  "count": 1
+ }
+}

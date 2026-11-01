@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:crag_pavement"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:crag_pavement_slab",
+  "count": 6
+ }
+}

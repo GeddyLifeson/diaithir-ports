@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_transbaikal_and_mongolian_late_palaeolit.matuirlouchland",
+  "female": false,
+  "slim": false,
+  "light": 8,
+  "items": {
+    "block": "minecraft:stone_bricks",
+    "mainhand": "minecraft:water_bucket",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

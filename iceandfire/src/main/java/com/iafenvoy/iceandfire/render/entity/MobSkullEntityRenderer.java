@@ -1,0 +1,169 @@
+package com.iafenvoy.iceandfire.render.entity;
+
+import com.google.common.collect.Maps;
+import com.iafenvoy.iceandfire.IceAndFire;
+import com.iafenvoy.iceandfire.data.IafSkullType;
+import com.iafenvoy.iceandfire.entity.MobSkullEntity;
+import com.iafenvoy.iceandfire.entity.SeaSerpentEntity;
+import com.iafenvoy.iceandfire.registry.IafRenderers;
+import com.iafenvoy.iceandfire.render.model.*;
+import com.iafenvoy.iceandfire.render.model.animator.SeaSerpentTabulaModelAnimator;
+import com.iafenvoy.uranus.client.model.TabulaModel;
+import com.iafenvoy.uranus.client.model.basic.BasicModelPart;
+import com.iafenvoy.uranus.client.model.util.TabulaModelHandlerHelper;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.resources.Identifier;
+import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
+
+import java.util.Locale;
+import java.util.Map;
+
+public class MobSkullEntityRenderer extends EntityRenderer<MobSkullEntity, LegacyEntityRenderState<MobSkullEntity>> {
+    private static final Map<String, Identifier> SKULL_TEXTURE_CACHE = Maps.newHashMap();
+    private final HippogryphModel hippogryphModel;
+    private final CyclopsModel cyclopsModel;
+    private final CockatriceModel cockatriceModel;
+    private final StymphalianBirdModel stymphalianBirdModel;
+    private final TrollModel trollModel;
+    private final AmphithereModel amphithereModel;
+    private final HydraHeadModel hydraModel;
+    /**
+     * Resolved lazily, because the tabula model is provided by Uranus from a client resource reload which has not
+     * run yet when the entity renderers are created. Reading it in the constructor always yields null.
+     */
+    private TabulaModel<SeaSerpentEntity> seaSerpentModel;
+
+    public MobSkullEntityRenderer(EntityRendererProvider.Context context) {
+        super(context);
+        this.hippogryphModel = new HippogryphModel();
+        this.cyclopsModel = new CyclopsModel();
+        this.cockatriceModel = new CockatriceModel();
+        this.stymphalianBirdModel = new StymphalianBirdModel();
+        this.trollModel = new TrollModel();
+        this.amphithereModel = new AmphithereModel();
+        this.hydraModel = new HydraHeadModel(0);
+    }
+
+    private TabulaModel<SeaSerpentEntity> getSeaSerpentModel() {
+        if (this.seaSerpentModel == null)
+            this.seaSerpentModel = TabulaModelHandlerHelper.getModel(IafRenderers.SEA_SERPENT, SeaSerpentTabulaModelAnimator::new);
+        return this.seaSerpentModel;
+    }
+
+    private static void setRotationAngles(BasicModelPart cube, float rotX) {
+        cube.rotateAngleX = rotX;
+        cube.rotateAngleY = (float) 0;
+        cube.rotateAngleZ = (float) 0;
+    }
+
+    @Override
+    public LegacyEntityRenderState<MobSkullEntity> createRenderState() {
+        return new LegacyEntityRenderState<>();
+    }
+
+    @Override
+    public void extractRenderState(MobSkullEntity entity, LegacyEntityRenderState<MobSkullEntity> state, float partialTicks) {
+        super.extractRenderState(entity, state, partialTicks);
+        state.entity = entity;
+    }
+
+    @Override
+    public void submit(LegacyEntityRenderState<MobSkullEntity> state, PoseStack matrixStackIn, SubmitNodeCollector collector, @NonNull CameraRenderState camera) {
+        MobSkullEntity entity = state.entity;
+        matrixStackIn.pushPose();
+        matrixStackIn.mulPose(Axis.XP.rotationDegrees(-180.0F));
+        matrixStackIn.mulPose(Axis.YN.rotationDegrees(180.0F - entity.getYRot()));
+        float f = 0.0625F;
+        float size = 1.0F;
+        matrixStackIn.scale(size, size, size);
+        matrixStackIn.translate(0, entity.isOnWall() ? -0.24F : -0.12F, 0.5F);
+        collector.submitCustomGeometry(matrixStackIn, RenderTypes.entityTranslucent(this.getSkullTexture(entity.getSkullType())), (pose, buffer) -> {
+            PoseStack modelStack = new PoseStack();
+            modelStack.last().set(pose);
+            this.renderForEnum(entity.getSkullType(), entity.isOnWall(), modelStack, buffer, state.lightCoords);
+        });
+        matrixStackIn.popPose();
+        super.submit(state, matrixStackIn, collector, camera);
+    }
+
+    private void renderForEnum(IafSkullType skull, boolean onWall, PoseStack matrixStackIn, VertexConsumer ivertexbuilder, int packedLightIn) {
+        switch (skull) {
+            case HIPPOGRYPH -> {
+                matrixStackIn.translate(0, -0.0F, -0.2F);
+                matrixStackIn.scale(1.2F, 1.2F, 1.2F);
+                this.hippogryphModel.resetToDefaultPose();
+                setRotationAngles(this.hippogryphModel.Head, onWall ? (float) Math.toRadians(50F) : (float) Math.toRadians(-5));
+                this.hippogryphModel.Head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
+            }
+            case CYCLOPS -> {
+                matrixStackIn.translate(0, 1.8F, -0.5F);
+                matrixStackIn.scale(2.25F, 2.25F, 2.25F);
+                this.cyclopsModel.resetToDefaultPose();
+                setRotationAngles(this.cyclopsModel.Head, onWall ? (float) Math.toRadians(50F) : 0F);
+                this.cyclopsModel.Head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
+            }
+            case COCKATRICE -> {
+                if (onWall) matrixStackIn.translate(0, 0F, 0.35F);
+                this.cockatriceModel.resetToDefaultPose();
+                setRotationAngles(this.cockatriceModel.head, onWall ? (float) Math.toRadians(50F) : 0F);
+                this.cockatriceModel.head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
+            }
+            case STYMPHALIAN -> {
+                if (!onWall) matrixStackIn.translate(0, 0F, -0.35F);
+                this.stymphalianBirdModel.resetToDefaultPose();
+                setRotationAngles(this.stymphalianBirdModel.HeadBase, onWall ? (float) Math.toRadians(50F) : 0F);
+                this.stymphalianBirdModel.HeadBase.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
+            }
+            case TROLL -> {
+                matrixStackIn.translate(0, 1F, -0.35F);
+                if (onWall) matrixStackIn.translate(0, 0F, 0.35F);
+                this.trollModel.resetToDefaultPose();
+                setRotationAngles(this.trollModel.head, onWall ? (float) Math.toRadians(50F) : (float) Math.toRadians(-20));
+                this.trollModel.head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
+            }
+            case AMPHITHERE -> {
+                matrixStackIn.translate(0, -0.2F, 0.7F);
+                matrixStackIn.scale(2.0F, 2.0F, 2.0F);
+                this.amphithereModel.resetToDefaultPose();
+                setRotationAngles(this.amphithereModel.Head, onWall ? (float) Math.toRadians(50F) : 0F);
+                this.amphithereModel.Head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
+            }
+            case SEASERPENT -> {
+                TabulaModel<SeaSerpentEntity> model = this.getSeaSerpentModel();
+                // The model can still be missing (e.g. it failed to load), skip rendering instead of crashing.
+                if (model == null) break;
+                matrixStackIn.translate(0, -0.35F, 0.8F);
+                matrixStackIn.scale(2.5F, 2.5F, 2.5F);
+                model.resetToDefaultPose();
+                setRotationAngles(model.getCube("Head"), onWall ? (float) Math.toRadians(50F) : 0F);
+                model.getCube("Head").render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
+            }
+            case HYDRA -> {
+                matrixStackIn.translate(0, -0.2F, -0.1F);
+                matrixStackIn.scale(2.0F, 2.0F, 2.0F);
+                this.hydraModel.resetToDefaultPose();
+                setRotationAngles(this.hydraModel.Head1, onWall ? (float) Math.toRadians(50F) : 0F);
+                this.hydraModel.Head1.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, -1);
+            }
+        }
+    }
+
+    public @NotNull Identifier getTextureLocation(MobSkullEntity entity) {
+        return this.getSkullTexture(entity.getSkullType());
+    }
+
+    public Identifier getSkullTexture(IafSkullType skull) {
+        Identifier id = Identifier.fromNamespaceAndPath(IceAndFire.MOD_ID, "textures/entity/skulls/skull_" + skull.name().toLowerCase(Locale.ROOT) + ".png");
+        return SKULL_TEXTURE_CACHE.computeIfAbsent(id.toString(), k -> id);
+    }
+
+}

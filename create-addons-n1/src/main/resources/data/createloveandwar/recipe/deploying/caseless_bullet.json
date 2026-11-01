@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:propellant_moulded",
+ "ingredient": "#c:nuggets/iron",
+ "results": [
+  {
+   "id": "createloveandwar:caseless_bullet"
+  }
+ ]
+}

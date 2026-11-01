@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "I": "minecraft:iron_nugget",
+  "T": "minecraft:torch"
+ },
+ "pattern": [
+  "T",
+  "I",
+  "I"
+ ],
+ "result": {
+  "id": "diaithirfurnishings:sconce"
+ }
+}

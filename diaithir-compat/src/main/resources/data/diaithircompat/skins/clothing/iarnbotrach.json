@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/male/0.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/male/1.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/male/2.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/male/ruler.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/male/warrior.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/male/priest.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/female/0.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/female/1.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/female/2.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/female/ruler.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/female/warrior.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/iarnbotrach/female/priest.png",
+    "profession": "diaithircompat:iarnbotrach",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

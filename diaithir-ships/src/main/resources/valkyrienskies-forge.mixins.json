@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "package": "org.valkyrienskies.mod.forge.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "plugin": "org.valkyrienskies.mod.forge.mixin.ValkyrienForgeMixinConfigPlugin",
+  "mixins": [
+    "entity.MixinContainerEntity",
+    "feature.fix_tp_ships_cross_dimension.MixinLevelChunk",
+    "feature.forge_interact.MixinIForgePlayer",
+    "feature.water_in_ships_entity.MixinEntityFluidInteraction",
+    "world.level.block.FireMixin"
+  ],
+  "client": [
+    "feature.ship_blockentity_frustum.MixinBlockEntityRenderDispatcher"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

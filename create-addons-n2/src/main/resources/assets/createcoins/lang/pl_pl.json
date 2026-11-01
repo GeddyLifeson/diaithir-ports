@@ -1,0 +1,10 @@
+{
+  "item.createcoins.goldcoin": "złota moneta",
+  "item_group.createcoins.createcoins": "Create Coins",
+  "item.createcoins.coopercoin": "Miedziana moneta",
+  "item.createcoins.diamondcoin": "Diamentowa moneta",
+  "itemGroup.tabcreatecoins": "Create Coins",
+  "item.createcoins.ironcoin": "Żelazna moneta",
+  "item.createcoins.zinccoin": "Moneta cynkowa",
+  "item.createcoins.brasscoin": "Moneta mosiężna"
+}

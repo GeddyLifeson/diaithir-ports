@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:sand",
+    "color": 9752482,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_sebilian.matuiroirtirklach",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "a1_sebilian.matuiroirtirklach_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

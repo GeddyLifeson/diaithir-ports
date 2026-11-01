@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    "musketmod:musket",
+    "musketmod:musket_with_bayonet",
+    "musketmod:musket_with_scope",
+    "musketmod:blunderbuss",
+    "musketmod:pistol"
+  ],
+  "result": {
+    "id": "minecraft:iron_nugget"
+  }
+}

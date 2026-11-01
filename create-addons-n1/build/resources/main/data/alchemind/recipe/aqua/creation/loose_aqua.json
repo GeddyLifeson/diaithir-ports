@@ -1,0 +1,9 @@
+{
+ "type": "create:splashing",
+ "ingredient": "alchemind:solid_aqua",
+ "results": [
+  {
+   "id": "alchemind:loose_aqua"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "diaithirstoragenet:block/controller_top",
+    "bottom": "diaithirstoragenet:block/controller_top",
+    "side": "diaithirstoragenet:block/controller_side"
+  }
+}

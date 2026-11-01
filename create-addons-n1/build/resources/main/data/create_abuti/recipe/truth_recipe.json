@@ -1,0 +1,25 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "A": "create_abuti:aburi_cheese_salmon",
+  "B": "minecraft:ender_eye",
+  "C": "create:precision_mechanism",
+  "D": "minecraft:diamond_block",
+  "E": "minecraft:netherite_ingot"
+ },
+ "pattern": [
+  "AAAAAAAAA",
+  "ACBBBBBCA",
+  "ABAAAAABA",
+  "ABAEDEABA",
+  "ABADADABA",
+  "ABAEDEABA",
+  "ABAAAAABA",
+  "ACBBBBBCA",
+  "AAAAAAAAA"
+ ],
+ "result": {
+  "id": "create_abuti:truth_of_abuti"
+ }
+}

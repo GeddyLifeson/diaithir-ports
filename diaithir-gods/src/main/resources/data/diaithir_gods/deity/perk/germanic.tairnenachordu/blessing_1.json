@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:iron_pickaxe",
+    "color": 13593709,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:germanic.tairnenachordu",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:strength",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "germanic.tairnenachordu_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

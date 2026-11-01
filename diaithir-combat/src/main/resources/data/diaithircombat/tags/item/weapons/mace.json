@@ -1,0 +1,37 @@
+{
+ "values": [
+  "minecraft:mace",
+  {
+   "id": "spartanweaponry:wooden_flanged_mace",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_flanged_mace",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_flanged_mace",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_flanged_mace",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_flanged_mace",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_flanged_mace",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_club",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:studded_club",
+   "required": false
+  }
+ ]
+}

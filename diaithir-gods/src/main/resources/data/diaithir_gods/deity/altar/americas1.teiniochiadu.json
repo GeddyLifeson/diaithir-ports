@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:americas1.teiniochiadu",
+  "female": false,
+  "slim": false,
+  "light": 0,
+  "items": {
+    "block": "minecraft:stone",
+    "mainhand": "minecraft:flint_and_steel",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

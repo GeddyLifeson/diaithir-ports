@@ -1,0 +1,411 @@
+{
+ "skull_lord_ambient": {
+  "sounds": [
+   {
+    "name": "goety:skull_lord/idle1"
+   },
+   {
+    "name": "goety:skull_lord/idle2"
+   },
+   {
+    "name": "goety:skull_lord/idle3"
+   }
+  ],
+  "subtitle": "subtitles.goety.skull_lord_ambient"
+ },
+ "skull_lord_fly": {
+  "sounds": [
+   {
+    "name": "goety:skull_lord/fly1"
+   },
+   {
+    "name": "goety:skull_lord/fly2"
+   },
+   {
+    "name": "goety:skull_lord/fly3"
+   },
+   {
+    "name": "goety:skull_lord/fly4"
+   }
+  ],
+  "subtitle": "subtitles.goety.skull_lord_fly"
+ },
+ "reaper_ambient": {
+  "sounds": [
+   {
+    "name": "goety:reaper/idle1"
+   },
+   {
+    "name": "goety:reaper/idle2"
+   },
+   {
+    "name": "goety:reaper/idle3"
+   }
+  ],
+  "subtitle": "subtitles.goety.reaper_ambient"
+ },
+ "reaper_hurt": {
+  "sounds": [
+   {
+    "name": "goety:reaper/hurt1"
+   },
+   {
+    "name": "goety:reaper/hurt2"
+   }
+  ],
+  "subtitle": "subtitles.goety.reaper_hurt"
+ },
+ "reaper_fly": {
+  "sounds": [
+   {
+    "name": "goety:wraith/fly1",
+    "pitch": 0.5
+   },
+   {
+    "name": "goety:wraith/fly2",
+    "pitch": 0.5
+   },
+   {
+    "name": "goety:wraith/fly3",
+    "pitch": 0.5
+   },
+   {
+    "name": "goety:wraith/fly4",
+    "pitch": 0.5
+   },
+   {
+    "name": "goety:wraith/fly5",
+    "pitch": 0.5
+   }
+  ],
+  "subtitle": "subtitles.goety.reaper_fly"
+ },
+ "reaper_swing": {
+  "sounds": [
+   {
+    "name": "goety:reaper/swing"
+   }
+  ],
+  "subtitle": "subtitles.goety.reaper_swing"
+ },
+ "reaper_death": {
+  "sounds": [
+   {
+    "name": "goety:reaper/death1"
+   },
+   {
+    "name": "goety:reaper/death2"
+   }
+  ],
+  "subtitle": "subtitles.goety.reaper_death"
+ },
+ "wraith_ambient": {
+  "sounds": [
+   {
+    "name": "goety:wraith/idle1"
+   },
+   {
+    "name": "goety:wraith/idle2"
+   },
+   {
+    "name": "goety:wraith/idle3"
+   },
+   {
+    "name": "goety:wraith/idle4"
+   },
+   {
+    "name": "goety:wraith/idle5"
+   },
+   {
+    "name": "goety:wraith/idle6"
+   }
+  ],
+  "subtitle": "subtitles.goety.wraith_ambient"
+ },
+ "wraith_hurt": {
+  "sounds": [
+   {
+    "name": "goety:wraith/hurt1"
+   },
+   {
+    "name": "goety:wraith/hurt2"
+   },
+   {
+    "name": "goety:wraith/hurt3"
+   }
+  ],
+  "subtitle": "subtitles.goety.wraith_hurt"
+ },
+ "wraith_fly": {
+  "sounds": [
+   {
+    "name": "goety:wraith/fly1"
+   },
+   {
+    "name": "goety:wraith/fly2"
+   },
+   {
+    "name": "goety:wraith/fly3"
+   },
+   {
+    "name": "goety:wraith/fly4"
+   },
+   {
+    "name": "goety:wraith/fly5"
+   }
+  ],
+  "subtitle": "subtitles.goety.wraith_fly"
+ },
+ "wraith_attack": {
+  "sounds": [
+   {
+    "name": "goety:wraith/attack"
+   }
+  ],
+  "subtitle": "subtitles.goety.wraith_attack"
+ },
+ "wraith_puke": {
+  "sounds": [
+   {
+    "name": "goety:wraith/puke"
+   }
+  ],
+  "subtitle": "subtitles.goety.wraith_puke"
+ },
+ "wraith_fire": {
+  "sounds": [
+   {
+    "name": "goety:wraith/fire"
+   }
+  ],
+  "subtitle": "subtitles.goety.wraith_fire"
+ },
+ "wraith_teleport": {
+  "sounds": [
+   {
+    "name": "goety:wraith/teleport1"
+   },
+   {
+    "name": "goety:wraith/teleport2"
+   }
+  ],
+  "subtitle": "subtitles.goety.wraith_teleport"
+ },
+ "wraith_death": {
+  "sounds": [
+   {
+    "name": "goety:wraith/death1"
+   },
+   {
+    "name": "goety:wraith/death2"
+   }
+  ],
+  "subtitle": "subtitles.goety.wraith_death"
+ },
+ "necromancer_ambient": {
+  "sounds": [
+   {
+    "name": "goety:necromancer/idle1"
+   },
+   {
+    "name": "goety:necromancer/idle2"
+   },
+   {
+    "name": "goety:necromancer/idle3"
+   }
+  ],
+  "subtitle": "subtitles.goety.necromancer_ambient"
+ },
+ "necromancer_hurt": {
+  "sounds": [
+   {
+    "name": "goety:necromancer/hurt1"
+   },
+   {
+    "name": "goety:necromancer/hurt2"
+   },
+   {
+    "name": "goety:necromancer/hurt3"
+   }
+  ],
+  "subtitle": "subtitles.goety.necromancer_hurt"
+ },
+ "necromancer_laugh": {
+  "sounds": [
+   {
+    "name": "goety:necromancer/laugh1"
+   },
+   {
+    "name": "goety:necromancer/laugh2"
+   }
+  ],
+  "subtitle": "subtitles.goety.necromancer_laugh"
+ },
+ "necromancer_summon": {
+  "sounds": [
+   {
+    "name": "goety:spell/cast_spell1"
+   },
+   {
+    "name": "goety:spell/cast_spell2"
+   }
+  ],
+  "subtitle": "subtitles.goety.necromancer_summon"
+ },
+ "necromancer_step": {
+  "sounds": [
+   {
+    "name": "goety:necromancer/step1"
+   },
+   {
+    "name": "goety:necromancer/step2"
+   },
+   {
+    "name": "goety:necromancer/step3"
+   },
+   {
+    "name": "goety:necromancer/step4"
+   }
+  ],
+  "subtitle": "subtitles.goety.necromancer_step"
+ },
+ "necromancer_death": {
+  "sounds": [
+   {
+    "name": "goety:necromancer/death1"
+   },
+   {
+    "name": "goety:necromancer/death2"
+   }
+  ],
+  "subtitle": "subtitles.goety.necromancer_death"
+ },
+ "soul_heal": {
+  "sounds": [
+   {
+    "name": "goety:spell/soul_heal"
+   }
+  ],
+  "subtitle": "subtitles.goety.soul_heal"
+ },
+ "prepare_spell": {
+  "sounds": [
+   {
+    "name": "goety:spell/prepare_spell1"
+   },
+   {
+    "name": "goety:spell/prepare_spell2"
+   }
+  ],
+  "subtitle": "subtitles.goety.prepare_spell"
+ },
+ "prepare_summon": {
+  "sounds": [
+   {
+    "name": "goety:spell/prepare_summon"
+   }
+  ],
+  "subtitle": "subtitles.goety.prepare_summon"
+ },
+ "cast_spell": {
+  "sounds": [
+   {
+    "name": "goety:spell/cast_spell1"
+   },
+   {
+    "name": "goety:spell/cast_spell2"
+   }
+  ],
+  "subtitle": "subtitles.goety.cast_spell"
+ },
+ "cast_spell_two": {
+  "sounds": [
+   {
+    "name": "goety:spell/cast_spell1"
+   },
+   {
+    "name": "goety:spell/cast_spell2"
+   }
+  ],
+  "subtitle": "subtitles.goety.cast_spell_two"
+ },
+ "soul_bolt_cast": {
+  "sounds": [
+   {
+    "name": "goety:spell/summon_spell3"
+   }
+  ],
+  "subtitle": "subtitles.goety.soul_bolt_cast"
+ },
+ "summon_spell": {
+  "sounds": [
+   {
+    "name": "goety:spell/summon_spell1"
+   },
+   {
+    "name": "goety:spell/summon_spell2"
+   },
+   {
+    "name": "goety:spell/summon_spell3"
+   }
+  ],
+  "subtitle": "subtitles.goety.summon_spell"
+ },
+ "summon_spell_fiery": {
+  "sounds": [
+   {
+    "name": "goety:spell/summon_spell_fiery1"
+   },
+   {
+    "name": "goety:spell/summon_spell_fiery2"
+   }
+  ],
+  "subtitle": "subtitles.goety.summon_spell_fiery"
+ },
+ "soul_explode": {
+  "sounds": [
+   {
+    "name": "goety:spell/soul_explode_1"
+   },
+   {
+    "name": "goety:spell/soul_explode_2"
+   },
+   {
+    "name": "goety:spell/soul_explode_3"
+   }
+  ],
+  "subtitle": "subtitles.goety.soul_explode"
+ },
+ "spell_fail": {
+  "sounds": [
+   {
+    "name": "goety:spell/spell_fail"
+   }
+  ],
+  "subtitle": "subtitles.goety.spell_fail"
+ },
+ "altar_start": {
+  "sounds": [
+   {
+    "name": "goety:block/altar_start"
+   }
+  ],
+  "subtitle": "subtitles.goety.altar_start"
+ },
+ "altar_loop": {
+  "sounds": [
+   {
+    "name": "goety:block/altar_loop"
+   }
+  ],
+  "subtitle": "subtitles.goety.altar_loop"
+ },
+ "altar_finish": {
+  "sounds": [
+   {
+    "name": "goety:block/altar_finish"
+   }
+  ],
+  "subtitle": "subtitles.goety.altar_finish"
+ }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "diaithir_wiretech:block/windmill"
+    },
+    "facing=east": {
+      "model": "diaithir_wiretech:block/windmill",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "diaithir_wiretech:block/windmill",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "diaithir_wiretech:block/windmill",
+      "y": 270
+    }
+  }
+}

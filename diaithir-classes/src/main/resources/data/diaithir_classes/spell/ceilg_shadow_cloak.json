@@ -1,0 +1,49 @@
+{
+ "school": "spell_power:physical_melee",
+ "range": 0.0,
+ "tier": 0,
+ "group": "ceilg_shadow",
+ "learn": {},
+ "active": {},
+ "release": {
+  "sound": {
+   "id": "spell_engine:weapon_swipe_launch"
+  }
+ },
+ "target": {
+  "type": "CASTER"
+ },
+ "deliver": {
+  "type": "DIRECT"
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:invisibility",
+     "duration": 6.0,
+     "amplifier": 0,
+     "apply_mode": "SET"
+    }
+   }
+  },
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:speed",
+     "duration": 6.0,
+     "amplifier": 1,
+     "apply_mode": "SET"
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 30.0
+  }
+ }
+}

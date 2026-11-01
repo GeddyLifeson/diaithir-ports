@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "iceandfire:dragonbone",
+    "D": "minecraft:diamond",
+    "S": "#iceandfire:scales/sea_serpent",
+    "T": "iceandfire:sea_serpent_fang"
+  },
+  "pattern": [
+    "TTT",
+    "SDS",
+    " B "
+  ],
+  "result": {
+    "id": "iceandfire:tide_trident"
+  },
+  "show_notification": true
+}

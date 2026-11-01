@@ -1,0 +1,9 @@
+{
+  "pack": {
+    "description": "Citadel resources",
+    "min_format": 84,
+    "max_format": 84,
+    "forge:resource_pack_format": 15,
+    "forge:data_pack_format": 15
+  }
+}

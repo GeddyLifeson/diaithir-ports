@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:empty_focus",
+  "s": "#minecraft:coals",
+  "c": "#c:rods/wooden"
+ },
+ "pattern": [
+  "csc",
+  "ses",
+  "csc"
+ ],
+ "result": {
+  "id": "goety:soul_light_focus",
+  "count": 1
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#c:storage_blocks/gold",
+ "result": {
+  "id": "goety:indented_gold",
+  "count": 4
+ }
+}

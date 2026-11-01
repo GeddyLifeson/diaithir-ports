@@ -1,0 +1,12 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:apple",
+  "create:brass_sheet"
+ ],
+ "results": [
+  {
+   "id": "createbananas:banana"
+  }
+ ]
+}

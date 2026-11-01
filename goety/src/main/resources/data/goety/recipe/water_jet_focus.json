@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:empty_focus",
+  "w": "minecraft:water_bucket",
+  "s": "minecraft:soul_sand",
+  "m": "minecraft:magma_block"
+ },
+ "pattern": [
+  "swm",
+  "wew",
+  "mws"
+ ],
+ "result": {
+  "id": "goety:water_jet_focus",
+  "count": 1
+ }
+}

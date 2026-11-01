@@ -1,0 +1,28 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create:andesite_casing",
+ "transitional_item": {
+  "id": "create_ss_crate:incomplete_andesite_crate_shell"
+ },
+ "result": {
+  "id": "create_ss_crate:andesite_crate_shell"
+ },
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 20
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

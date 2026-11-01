@@ -1,0 +1,97 @@
+{
+ "values": [
+  "#minecraft:swords",
+  {
+   "id": "spartanweaponry:wooden_longsword",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_longsword",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_longsword",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_longsword",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_longsword",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_longsword",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_katana",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_katana",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_katana",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_katana",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_katana",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_katana",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_saber",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_saber",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_saber",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_saber",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_saber",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_saber",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:steel_sword",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:tempered_sword",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:composite_sword",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:rodos_sword",
+   "required": false
+  },
+  {
+   "id": "diaithirarms:future_sword",
+   "required": false
+  }
+ ]
+}

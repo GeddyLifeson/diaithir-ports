@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirbutchery:block/vacuum_packer_top",
+  "side": "diaithirbutchery:block/vacuum_packer_side"
+ }
+}

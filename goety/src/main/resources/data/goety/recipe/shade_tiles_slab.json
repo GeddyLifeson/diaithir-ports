@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:shade_tiles"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:shade_tiles_slab",
+  "count": 6
+ }
+}

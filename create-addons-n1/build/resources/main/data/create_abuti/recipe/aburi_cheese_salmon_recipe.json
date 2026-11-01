@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smoking",
+ "category": "food",
+ "cookingtime": 20,
+ "experience": 0.0,
+ "ingredient": "create_abuti:cheese_salmon_sushi",
+ "result": {
+  "id": "create_abuti:aburi_cheese_salmon"
+ }
+}

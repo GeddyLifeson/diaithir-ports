@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "magic",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "minecraft:shield",
+  "minecraft:golden_apple",
+  "minecraft:shield",
+  "goety:ectoplasm",
+  "minecraft:shield",
+  "minecraft:golden_apple",
+  "minecraft:shield",
+  "goety:ectoplasm"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:bulwark_focus",
+ "count": 1
+}

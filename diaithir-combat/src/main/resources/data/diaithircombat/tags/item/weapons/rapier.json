@@ -1,0 +1,28 @@
+{
+ "values": [
+  {
+   "id": "spartanweaponry:wooden_rapier",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_rapier",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_rapier",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_rapier",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_rapier",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_rapier",
+   "required": false
+  }
+ ]
+}

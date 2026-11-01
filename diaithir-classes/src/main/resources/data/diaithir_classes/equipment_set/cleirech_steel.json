@@ -1,0 +1,42 @@
+{
+ "name": "ligichi kruoid",
+ "items": [
+  "diaithir_classes:cleirech_helmet_steel",
+  "diaithir_classes:cleirech_chestplate_steel",
+  "diaithir_classes:cleirech_leggings_steel",
+  "diaithir_classes:cleirech_boots_steel"
+ ],
+ "bonuses": [
+  {
+   "required_piece_count": 2,
+   "attributes": [
+    {
+     "type": "spell_power:healing",
+     "id": "diaithir_classes:set_cleirech_steel_2_0",
+     "amount": 2.0,
+     "operation": "add_value",
+     "slot": "any"
+    }
+   ]
+  },
+  {
+   "required_piece_count": 4,
+   "attributes": [
+    {
+     "type": "minecraft:max_health",
+     "id": "diaithir_classes:set_cleirech_steel_4_0",
+     "amount": 4.0,
+     "operation": "add_value",
+     "slot": "any"
+    }
+   ],
+   "spells": {
+    "access": "NONE",
+    "max_spell_count": 1,
+    "spell_ids": [
+     "diaithir_classes:cleirech_ward_steel"
+    ]
+   }
+  }
+ ]
+}

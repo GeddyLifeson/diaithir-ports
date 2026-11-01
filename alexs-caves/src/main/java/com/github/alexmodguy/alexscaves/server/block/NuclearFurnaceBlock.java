@@ -1,0 +1,110 @@
+package com.github.alexmodguy.alexscaves.server.block;
+
+import com.mojang.serialization.MapCodec;
+import com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry;
+import com.github.alexmodguy.alexscaves.server.block.blockentity.NuclearFurnaceBlockEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.Container;
+import net.minecraft.world.Containers;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
+
+public class NuclearFurnaceBlock extends BaseEntityBlock {
+
+    public static final MapCodec<NuclearFurnaceBlock> CODEC = simpleCodec((properties) -> new NuclearFurnaceBlock());
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
+    }
+
+    public NuclearFurnaceBlock() {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).strength(5, 1001).sound(ACSoundTypes.NUCLEAR_BOMB).noOcclusion());
+        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
+    }
+
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> blockStateBuilder) {
+        blockStateBuilder.add(FACING);
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new NuclearFurnaceBlockEntity(pos, state);
+    }
+
+    @javax.annotation.Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> entityType) {
+        return createTickerHelper(entityType, ACBlockEntityRegistry.NUCLEAR_FURNACE.get(), NuclearFurnaceBlockEntity::tick);
+    }
+
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        return NuclearFurnaceComponentBlock.isCornerForFurnace(level, pos, false, true);
+    }
+
+    public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
+        if(!state.canSurvive(levelAccessor, blockPos)){
+            checkCriticalityExplosion(levelAccessor, blockPos);
+            return Blocks.AIR.defaultBlockState();
+        }
+        return super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);
+    }
+
+    @Override
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos blockPos, Player player, BlockHitResult result) {
+        if(!player.isShiftKeyDown()){
+            if (level.isClientSide()) {
+                return InteractionResult.SUCCESS;
+            } else if(canSurvive(state, level, blockPos)){
+                BlockEntity blockentity = level.getBlockEntity(blockPos);
+                if (blockentity instanceof NuclearFurnaceBlockEntity nuclearFurnaceBlockEntity) {
+                    player.openMenu(nuclearFurnaceBlockEntity);
+                    nuclearFurnaceBlockEntity.onPlayerUse(player);
+                    player.awardStat(Stats.INTERACT_WITH_FURNACE);
+                }
+                return InteractionResult.CONSUME;
+            }
+        }
+        return super.useWithoutItem(state, level, blockPos, player, result);
+    }
+
+    public void playerDestroy(Level level, Player player, BlockPos blockPos, BlockState state, @javax.annotation.Nullable BlockEntity entity, ItemStack itemStack) {
+        checkCriticalityExplosion(level, blockPos);
+        super.playerDestroy(level, player, blockPos, state, entity, itemStack);
+    }
+
+    private void checkCriticalityExplosion(LevelReader level, BlockPos pos) {
+        if (level.getBlockEntity(pos) instanceof NuclearFurnaceBlockEntity nuclearFurnaceBlockEntity && nuclearFurnaceBlockEntity.getCriticality() >= 2F) {
+            nuclearFurnaceBlockEntity.destroyWhileCritical(false);
+        }
+    }
+
+    @Override
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos pos, boolean movedByPiston) {
+        Containers.updateNeighboursAfterDestroy(state, level, pos);
+    }
+
+}

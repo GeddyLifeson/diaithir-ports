@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "kaleidoscope_tavern:block/deco/bar_stool/yellow",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "kaleidoscope_tavern:block/deco/bar_stool/yellow"
+    },
+    "facing=south": {
+      "model": "kaleidoscope_tavern:block/deco/bar_stool/yellow",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "kaleidoscope_tavern:block/deco/bar_stool/yellow",
+      "y": 270
+    }
+  }
+}

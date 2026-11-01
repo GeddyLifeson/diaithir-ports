@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:smithing_transform",
+ "addition": "create:brass_ingot",
+ "base": "gearbound:blaze_throwner",
+ "result": {
+  "id": "gearbound:brass_blaze_throwner"
+ },
+ "template": "gearbound:brass_upgrade"
+}

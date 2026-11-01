@@ -1,0 +1,17 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "create_thermobaric:impure_gold_dust"
+ ],
+ "results": [
+  {
+   "id": "minecraft:gold_ingot",
+   "chance": 0.3
+  },
+  {
+   "id": "create_thermobaric:impure_gold_ingot",
+   "chance": 0.7
+  }
+ ]
+}

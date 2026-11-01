@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:torch",
+    "color": 10332621,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:returncourt.teiniaritist",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:fire_resistance",
+        "Amplifier": 0,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "returncourt.teiniaritist_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

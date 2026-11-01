@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:item_frame",
+    "minecraft:apple"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:son_of_man_painting"
+  }
+}

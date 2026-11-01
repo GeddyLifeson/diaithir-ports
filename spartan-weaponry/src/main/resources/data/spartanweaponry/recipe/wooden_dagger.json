@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#minecraft:planks",
+  "|": "#spartanweaponry:handles"
+ },
+ "pattern": [
+  "#",
+  "|"
+ ],
+ "result": {
+  "id": "spartanweaponry:wooden_dagger"
+ }
+}

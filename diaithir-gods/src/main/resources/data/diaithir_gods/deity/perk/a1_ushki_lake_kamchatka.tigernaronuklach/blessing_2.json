@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:cod",
+    "color": 11573417,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_ushki_lake_kamchatka.tigernaronuklach",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:dolphins_grace",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_ushki_lake_kamchatka.tigernaronuklach_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

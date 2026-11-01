@@ -1,0 +1,41 @@
+{
+ "textures": {
+  "side": "minecraft:block/stripped_warped_stem",
+  "end": "minecraft:block/stripped_warped_stem_top",
+  "particle": "minecraft:block/stripped_warped_stem"
+ },
+ "elements": [
+  {
+   "from": [
+    6,
+    0,
+    6
+   ],
+   "to": [
+    10,
+    16,
+    10
+   ],
+   "faces": {
+    "north": {
+     "texture": "#side"
+    },
+    "south": {
+     "texture": "#side"
+    },
+    "east": {
+     "texture": "#side"
+    },
+    "west": {
+     "texture": "#side"
+    },
+    "up": {
+     "texture": "#end"
+    },
+    "down": {
+     "texture": "#end"
+    }
+   }
+  }
+ ]
+}

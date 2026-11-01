@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aba",
+  "cdc",
+  "aba"
+ ],
+ "key": {
+  "a": "automatemat:nether_core",
+  "b": "minecraft:blaze_powder",
+  "c": "minecraft:blaze_rod",
+  "d": "minecraft:coal"
+ },
+ "result": {
+  "id": "automatemat:fortress_core"
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:filled_shotgun_casing",
+ "ingredient": "createloveandwar:flechettes",
+ "results": [
+  {
+   "id": "createloveandwar:flechette_shell"
+  }
+ ]
+}

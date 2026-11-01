@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "create_droid_diamond:block/scorial_coal_block"
+  }
+}

@@ -1,0 +1,21 @@
+{
+ "itemGroup.create_connected.main": "Create: Connected",
+ "create_connected.overstress_clutch.uncouple_delay": "Uncouple Delay (ticks)",
+ "create_connected.centrifugal_clutch.speed_threshold": "Speed Threshold (negative: below)",
+ "block.create_connected.parallel_gearbox": "Parallel Gearbox",
+ "item.create_connected.vertical_parallel_gearbox": "Vertical Parallel Gearbox",
+ "block.create_connected.six_way_gearbox": "6-way Gearbox",
+ "item.create_connected.vertical_six_way_gearbox": "Vertical 6-way Gearbox",
+ "block.create_connected.brass_gearbox": "Brass Gearbox",
+ "item.create_connected.vertical_brass_gearbox": "Vertical Brass Gearbox",
+ "block.create_connected.inverted_clutch": "Inverted Clutch",
+ "block.create_connected.inverted_gearshift": "Inverted Gearshift",
+ "block.create_connected.brake": "Brake",
+ "block.create_connected.overstress_clutch": "Overstress Clutch",
+ "block.create_connected.freewheel_clutch": "Freewheel Clutch",
+ "block.create_connected.centrifugal_clutch": "Centrifugal Clutch",
+ "block.create_connected.cross_connector": "Cross Connector",
+ "block.create_connected.andesite_encased_cross_connector": "Andesite Encased Cross Connector",
+ "block.create_connected.brass_encased_cross_connector": "Brass Encased Cross Connector",
+ "block.create_connected.shear_pin": "Shear Pin"
+}

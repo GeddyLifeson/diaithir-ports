@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:propellant_moulded",
+ "ingredient": "#c:nuggets/copper",
+ "results": [
+  {
+   "id": "createloveandwar:caseless_bullet_soft"
+  }
+ ]
+}

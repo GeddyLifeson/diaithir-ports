@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "deeperdarker:resonarium"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "deeperdarker:resonarium"
+      }
+    ]
+  }
+}

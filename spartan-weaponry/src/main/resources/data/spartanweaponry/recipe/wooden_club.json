@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#minecraft:logs"
+ },
+ "pattern": [
+  " #",
+  "# "
+ ],
+ "result": {
+  "id": "spartanweaponry:wooden_club"
+ }
+}

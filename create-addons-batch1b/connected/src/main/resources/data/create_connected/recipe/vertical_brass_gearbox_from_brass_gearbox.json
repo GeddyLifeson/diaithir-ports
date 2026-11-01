@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create_connected:brass_gearbox"
+ ],
+ "result": {
+  "id": "create_connected:vertical_brass_gearbox",
+  "count": 1
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "productivemetalworks:molten_silver",
+      "required": false
+    },
+    {
+      "id": "productivemetalworks:flowing_molten_silver",
+      "required": false
+    },
+    {
+      "id": "tconstruct:molten_silver",
+      "required": false
+    },
+    {
+      "id": "tconstruct:flowing_molten_silver",
+      "required": false
+    }
+  ]
+}

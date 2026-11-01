@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:potato"
+ ],
+ "results": [
+  {
+   "id": "createmorepotatoes:golden_potato"
+  }
+ ]
+}

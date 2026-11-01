@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create_ss_crate:andesite_crate_shell",
+  "create:cogwheel"
+ ],
+ "result": {
+  "id": "create_ss_crate:workshop_crate_decor"
+ }
+}
