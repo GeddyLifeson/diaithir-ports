@@ -120,6 +120,7 @@ public class TileFiller extends TileBC_Neptune
     /** Send task progress every tick so flying blocks are interpolated continuously instead of jumping every 0.5 s. */
     private static final int RENDER_UPDATE_INTERVAL = 1;
     private int renderUpdateCooldown = RENDER_UPDATE_INTERVAL;
+    private double upgradeTickDebt = 0.0D;
     private BuildingInfo buildingInfo;
     public TemplateBuilder builder = new FillerTemplateBuilder(this);
 
@@ -293,7 +294,14 @@ public class TileFiller extends TileBC_Neptune
         }
         SnapshotBuilder<?> currentBuilder = getBuilder();
         if (currentBuilder != null) {
-            boolean nowFinished = currentBuilder.tick();
+            // Upgrades: speed runs extra builder ticks, each drawing its own power from the battery.
+            upgradeTickDebt += buildcraft.lib.DiaithirUpgrades.speed(this);
+            int upgradeTicks = (int) upgradeTickDebt;
+            upgradeTickDebt -= upgradeTicks;
+            boolean nowFinished = false;
+            for (int i = 0; i < upgradeTicks && !nowFinished; i++) {
+                nowFinished = currentBuilder.tick();
+            }
             if (finished != nowFinished) {
                 finished = nowFinished;
                 setChanged();

@@ -308,7 +308,7 @@ public class TileAssemblyTable extends TileLaserTableBase implements MenuProvide
         AssemblyInstruction instruction = getActiveRecipe();
         return instruction == null || instruction.recipe == null
             ? 0L
-            : instruction.recipe.getRequiredMicroJoulesFor(instruction.output);
+            : Math.max(1L, Math.round(instruction.recipe.getRequiredMicroJoulesFor(instruction.output) * buildcraft.lib.DiaithirUpgrades.consumption(this)));
     }
 
     public void update() {

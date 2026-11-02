@@ -783,14 +783,16 @@ public abstract class SnapshotBuilder<T extends ITileForSnapshotBuilder> impleme
         if (remainingProgress <= 0 || maxPower <= 0) {
             return 0;
         }
-        long wantedPower = Math.min(ceilDiv(remainingProgress, POWER_EFFICIENCY_MULTIPLIER), maxPower);
+        // Upgrades: efficiency modules make each microjoule buy more progress.
+        long effMult = Math.max(1L, Math.round(POWER_EFFICIENCY_MULTIPLIER / buildcraft.lib.DiaithirUpgrades.consumptionOf(tile)));
+        long wantedPower = Math.min(ceilDiv(remainingProgress, effMult), maxPower);
         long extractedPower = tile.getBattery().extractPower(0, wantedPower);
         if (extractedPower > 0) {
             // Progress is scaled by POWER_EFFICIENCY_MULTIPLIER, while refunds must use the physical amount
             // removed from the battery so energy remains conserved.
             reservePower.accept(extractedPower);
         }
-        return Math.min(remainingProgress, extractedPower * POWER_EFFICIENCY_MULTIPLIER);
+        return Math.min(remainingProgress, extractedPower * effMult);
     }
 
     static long legacyReservedPowerForProgress(long progress) {

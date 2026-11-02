@@ -77,6 +77,7 @@ public class TileEngineStone_BC8 extends TileEngineBase_BC8 implements MenuProvi
     public final ItemHandlerSimple invFuel;
 
     int burnTime = 0;
+    private double upgradeBurnDebt = 0.0D;
     int totalBurnTime = 0;
     long esum = 0;
 
@@ -205,12 +206,16 @@ public class TileEngineStone_BC8 extends TileEngineBase_BC8 implements MenuProvi
         currentOutput = 0;
 //?}
         if (burnTime > 0) {
-            burnTime--;
+            // Upgrades: speed raises W and fuel burn together, efficiency lowers burn for the same W (more J per fuel).
+            upgradeBurnDebt += buildcraft.lib.DiaithirUpgrades.speed(this) * Math.max(0.2D, buildcraft.lib.DiaithirUpgrades.consumption(this));
+            int upgradeSteps = (int) upgradeBurnDebt;
+            upgradeBurnDebt -= upgradeSteps;
+            burnTime = Math.max(0, burnTime - upgradeSteps);
             if (getPowerStage() != EnumPowerStage.OVERHEAT) {
                 // this seems wrong...
                 long error = 3 * getMaxPower() / 8 - power;
                 esum = clamp(esum + error, -eLimit, eLimit);
-                long output = getCurrentOutput();
+                long output = Math.round(getCurrentOutput() * buildcraft.lib.DiaithirUpgrades.speed(this));
                 currentOutput = output; // Comment out for constant power
                 addPower(output);
             }

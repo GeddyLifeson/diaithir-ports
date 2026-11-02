@@ -12,6 +12,11 @@ public final class DiaithirUpgrades {
         return be.getLevel().getCapability(UpgradeHost.CAP, be.getBlockPos(), null);
     }
 
+    /** Same as {@link #consumption(BlockEntity)} for a tile known only through an interface. */
+    public static double consumptionOf(Object tile) {
+        return tile instanceof BlockEntity be ? consumption(be) : 1.0;
+    }
+
     /** Work-rate multiplier from modules and beacons. */
     public static double speed(BlockEntity be) {
         UpgradeHost h = host(be);

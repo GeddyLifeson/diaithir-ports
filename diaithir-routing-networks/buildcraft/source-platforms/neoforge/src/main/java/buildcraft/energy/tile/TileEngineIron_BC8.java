@@ -313,7 +313,10 @@ public class TileEngineIron_BC8 extends TileEngineBase_BC8 implements MenuProvid
         lastPowered = true;
         residueBlocked = false;
 
-        double tickRemaining = 1.0D;
+        // Upgrades: speed raises W and fuel burn together, efficiency lowers burn for the same W (more J per fuel).
+        double upgradeSpeed = buildcraft.lib.DiaithirUpgrades.speed(this);
+        double upgradeFuel = Math.max(0.2D, buildcraft.lib.DiaithirUpgrades.consumption(this));
+        double tickRemaining = upgradeSpeed * upgradeFuel;
         double generated = 0.0D;
         // Compatibility with saves that recorded burnTime but no fuel-rate snapshot.
         if (burnTime > 0 && activePowerPerTick <= 0) {
@@ -372,6 +375,7 @@ public class TileEngineIron_BC8 extends TileEngineBase_BC8 implements MenuProvid
                 }
             }
         }
+        generated /= upgradeFuel;
         if (generated > 0.0D) {
             // Fractional last ticks scale MJ and heat by their actual paid runtime.
             currentOutput = Math.max(0L, (long) Math.min(Long.MAX_VALUE, Math.round(generated)));

@@ -1,5 +1,5 @@
 {
- "_comment": "Schema from #117 RuleLoader. Only blocks whose tick code reads UpgradeHost (DiaithirUpgrades): quarry speed+efficiency, pump efficiency. Others get rules once hooked.",
+ "_comment": "Schema from #117 RuleLoader. Only blocks whose code reads UpgradeHost (DiaithirUpgrades). Engines: speed raises W and fuel burn together, efficiency gives more J per fuel, no productivity. Assembly table is laser-fed, so efficiency only.",
  "rules": [
   {
    "pattern": "buildcraftbuilders:quarry",
@@ -12,7 +12,56 @@
    "max_quality": 2
   },
   {
+   "pattern": "buildcraftbuilders:builder",
+   "priority": 0,
+   "slots": 2,
+   "allowed": [
+    "speed",
+    "efficiency"
+   ],
+   "max_quality": 2
+  },
+  {
+   "pattern": "buildcraftbuilders:filler",
+   "priority": 0,
+   "slots": 2,
+   "allowed": [
+    "speed",
+    "efficiency"
+   ],
+   "max_quality": 2
+  },
+  {
+   "pattern": "buildcraftenergy:engine_stone",
+   "priority": 0,
+   "slots": 2,
+   "allowed": [
+    "speed",
+    "efficiency"
+   ],
+   "max_quality": 2
+  },
+  {
+   "pattern": "buildcraftenergy:engine_iron",
+   "priority": 0,
+   "slots": 2,
+   "allowed": [
+    "speed",
+    "efficiency"
+   ],
+   "max_quality": 2
+  },
+  {
    "pattern": "buildcraftfactory:pump",
+   "priority": 0,
+   "slots": 1,
+   "allowed": [
+    "efficiency"
+   ],
+   "max_quality": 2
+  },
+  {
+   "pattern": "buildcraftsilicon:assembly_table",
    "priority": 0,
    "slots": 1,
    "allowed": [

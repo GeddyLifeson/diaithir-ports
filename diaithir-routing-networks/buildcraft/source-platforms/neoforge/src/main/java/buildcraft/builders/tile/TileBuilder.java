@@ -141,6 +141,7 @@ public class TileBuilder extends TileBC_Neptune implements IDebuggable, ITileFor
     private Rotation rotation = Rotation.NONE;
     
     private boolean isDone = false;
+    private double upgradeTickDebt = 0.0D;
 
     private final SafeTimeTracker renderSyncTracker = new SafeTimeTracker(BCCoreConfig.networkUpdateRate);
     private int lastRenderStructureFingerprint = Integer.MIN_VALUE;
@@ -504,7 +505,14 @@ public class TileBuilder extends TileBC_Neptune implements IDebuggable, ITileFor
                 builder.stopRenderingForNoPower();
                 isDone = false;
             } else {
-                isDone = builder.tick();
+                // Upgrades: speed runs extra builder ticks, each drawing its own power from the battery.
+                upgradeTickDebt += buildcraft.lib.DiaithirUpgrades.speed(this);
+                int upgradeTicks = (int) upgradeTickDebt;
+                upgradeTickDebt -= upgradeTicks;
+                isDone = false;
+                for (int i = 0; i < upgradeTicks && !isDone; i++) {
+                    isDone = builder.tick();
+                }
             }
             if (isDone) {
                 int nextBasePosIndex = findNextBasePosIndex();
