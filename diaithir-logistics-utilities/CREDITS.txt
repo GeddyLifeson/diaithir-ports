@@ -1,0 +1,5 @@
+Diaithir Logistics Utilities (Foundry courier depots and ghost placement)
+Original clean-room code and 64x64 textures by the Diaithir project, MIT.
+Concept only (construction-bot networks that fetch items and build planned blocks) was inspired by the public description of
+"Create: Buzzy Bees" / Create Construction Robots by StaticFX. That mod is all-rights-reserved in its source, so none of its code,
+models, textures, text or names are used here.

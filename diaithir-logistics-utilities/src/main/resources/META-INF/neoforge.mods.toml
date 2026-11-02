@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirlogistics"
+version = "${version}"
+displayName = "Diaithir Logistics Utilities (Foundry depots)"
+description = "Foundry courier depots and ghost placement. Depots serve ghost blocks inside their reach: couriers fetch the item from the chests beside the depot and build the block. Clean-room original."
+
+[[dependencies.diaithirlogistics]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
