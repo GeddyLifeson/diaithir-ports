@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithircropgenes:block/cotton_slab"
+  },
+  "type=top": {
+   "model": "diaithircropgenes:block/cotton_slab_top"
+  },
+  "type=double": {
+   "model": "diaithircropgenes:block/cotton_slab_full"
+  }
+ }
+}

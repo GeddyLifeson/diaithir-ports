@@ -1,0 +1,262 @@
+[
+ {
+  "id": "genetic_wheat_seed",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "genetic_carrot_seed",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "genetic_potato_seed",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "genetic_beetroot_seed",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "genetic_melon_seed",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "genetic_pumpkin_seed",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "seed_bag",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "harvested_wheat_crate",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "thatch_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "thatch_stairs",
+  "kind": "stairs",
+  "light": 0
+ },
+ {
+  "id": "thatch_wall",
+  "kind": "wall",
+  "light": 0
+ },
+ {
+  "id": "woven_fence",
+  "kind": "fence",
+  "light": 0
+ },
+ {
+  "id": "woven_pane",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "cotton_block",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "cotton_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "cotton_stairs",
+  "kind": "stairs",
+  "light": 0
+ },
+ {
+  "id": "flax_fiber_block",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "sunflower_lamp",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "glow_berry_lamp",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "redstone_crop_lamp",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "mushroom_lantern",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "oak_chair_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "oak_table_top",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "spruce_crate",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "birch_crate",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "jungle_crate",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "acacia_planter",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "dark_oak_bookshelf",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "cherry_planks_block",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "cherry_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "cherry_fence",
+  "kind": "fence",
+  "light": 0
+ },
+ {
+  "id": "mangrove_stairs",
+  "kind": "stairs",
+  "light": 0
+ },
+ {
+  "id": "bamboo_wall",
+  "kind": "wall",
+  "light": 0
+ },
+ {
+  "id": "bamboo_pane",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "stone_trim",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "stone_facade_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "stone_pillar_wall",
+  "kind": "wall",
+  "light": 0
+ },
+ {
+  "id": "terracotta_tile",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "terracotta_tile_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "copper_plate_block",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "iron_plate_pane",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "glass_window_pane",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "tinted_glass_pane",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "glass_crate_lamp",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "apple_fruit",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "sweet_berry_fruit",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "cocoa_pod_fruit",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "cooked_bread_crop",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "cod_fish_crop",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "salmon_fish_crop",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "preserved_jar",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "crop_juice",
+  "kind": "item",
+  "light": 0
+ }
+]

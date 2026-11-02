@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirfarmkitchen:block/counter_stone_slab"
+  },
+  "type=top": {
+   "model": "diaithirfarmkitchen:block/counter_stone_slab_top"
+  },
+  "type=double": {
+   "model": "diaithirfarmkitchen:block/counter_stone_slab_full"
+  }
+ }
+}

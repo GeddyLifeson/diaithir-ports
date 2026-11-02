@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:bread"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft2:bread_slice_item",
+  "count": 1
+ }
+}
