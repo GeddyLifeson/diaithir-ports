@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "SSS"
+ ],
+ "key": {
+  "S": "theaurorian:aurorian_deepslate"
+ },
+ "result": {
+  "id": "theaurorian:aurorian_deepslate_slab",
+  "count": 6
+ }
+}
