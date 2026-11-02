@@ -15,6 +15,11 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.diaithir.storagenet.quickstack.QuickStackClient;
+import net.diaithir.storagenet.quickstack.QuickStackPayload;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -71,6 +76,8 @@ public final class DiaithirStorageNet {
                         CRAFTING_TERMINAL_ITEM)) e.accept(i.get());
             }
         });
+        bus.addListener(RegisterPayloadHandlersEvent.class, QuickStackPayload::register);
+        if (FMLEnvironment.getDist() == Dist.CLIENT) QuickStackClient.init();
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> StorageCommands.register(e.getDispatcher()));
     }
 }
