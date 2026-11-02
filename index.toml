@@ -68797,10 +68797,6 @@ hash = "1820b9411421b05edef8781c0dd0f4b44fc4abb5410611478858bf22d07ab7a2"
 
 [[files]]
 file = "mods/diaithir-worldgen-structures-neoforge-26.1.2-1.0.0.jar"
-hash = "147ed9d59a42928866aa778d97a30116c7adf5df2a34390b223a1578e09223c6"
-
-[[files]]
-file = "mods/diaithir-worldgen-structures-neoforge-26.1.2-1.0.0.jar"
 hash = "6cbac9442dfac13fe9945a38b5a38e4d229575fc6f0ec100b75d39c997fe6530"
 
 [[files]]
@@ -69675,4 +69671,3 @@ metafile = true
 file = "resourcepacks/diaithir-ui.pw.toml"
 hash = "a63498f17e6c12b295ee2b0f0ea9536f1f1a37b44af861a7b24fb38a8825f9bf"
 metafile = true
-
