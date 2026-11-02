@@ -8,4 +8,4 @@ Status: source vendored unmodified. Open: compile + join test on the PC, 1025-te
 
 ## Integration data (INTEGRATION.md)
 `diaithir-data/` holds our data layer, kept apart from upstream files: `c:gears/*` tags, a draft upgrade rule for the machines, draft Age gates, a Codex entry and a first quest. Draft means schemas follow UPGRADES.md text; confirm against #117 and the tech-ages file.
-Energy: upstream has an FE bridge (`EnergyConversion.microMjPerFe`, default not yet checked). TODO owner PC thread: set it so 1 FE = 1 J and show J/W in tooltips; the `UpgradeHost` capability on quarry, pump and engines is Java glue still to write. Item, fluid and energy capabilities already exist upstream (NeoForge handlers).
+Energy: upstream default is 1 MJ = 10 FE, so with 1 FE = 1 J, 1 MJ = 10 J (Marlon OK). Tooltip J/W check on the PC. #117 has the Resolver/Effects/Target core but no UpgradeHost capability yet, so the quarry, pump and engine hooks wait for its NeoForge glue PR.
