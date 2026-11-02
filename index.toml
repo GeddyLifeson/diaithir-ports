@@ -68658,6 +68658,10 @@ hash = "652aa3fc2b18eda27f0a480797c3d3e4e71d74c4e94d47cc99285f87d2b5428e"
 metafile = true
 
 [[files]]
+file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
+hash = "afe274b8bed828ba740cd6abe0a539ad1e396a639bd808ee16b627121331677e"
+
+[[files]]
 file = "mods/diaithir-content-data-neoforge-26.1.2-1.0.0.jar"
 hash = "5d91401e17175186c6768dd424224b2ad4b9a91932d59b0c9934e15a6dac1abd"
 

@@ -1,0 +1,9 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "LGPL-3.0-only"
+
+[[mods]]
+modId = "diaithircompat"
+version = "1.0.0"
+displayName = "Diaithir Compat"
+description = "Pack-wide id migration: reads data/<modid>/id_migrations.json from every mod and adds registry aliases so merged or renamed ids keep working."
