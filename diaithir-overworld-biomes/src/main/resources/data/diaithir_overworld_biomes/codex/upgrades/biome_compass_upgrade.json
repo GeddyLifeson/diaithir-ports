@@ -1,0 +1,1 @@
+{"id":"diaithir_overworld_biomes:biome_compass_upgrade","base":"diaithir_overworld_biomes:biome_compass","requires_age":2,"effect":{"search_radius_multiplier":2.0,"search_cost_J":100}}

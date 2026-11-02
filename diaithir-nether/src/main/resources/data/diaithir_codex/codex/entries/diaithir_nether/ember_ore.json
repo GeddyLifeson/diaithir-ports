@@ -1,0 +1,1 @@
+{"id":"diaithir_nether:ember_ore","type":"block","title":"block.diaithir_nether.ember_ore","body":"codex.diaithir_nether.heat","age":3,"requires_mod":"diaithir_codex","unlock":{"trigger":"mine","target":"diaithir_nether:ember_ore"}}

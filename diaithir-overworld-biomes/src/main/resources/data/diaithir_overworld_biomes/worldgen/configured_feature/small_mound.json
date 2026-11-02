@@ -1,0 +1,1 @@
+{"type":"minecraft:disk","config":{"state_provider":{"fallback":{"type":"minecraft:simple_state_provider","state":{"Name":"minecraft:coarse_dirt"}},"rules":[]},"target":{"type":"minecraft:matching_block_tag","tag":"diaithir_overworld_biomes:replaceable_ground"},"radius":{"type":"minecraft:uniform","min_inclusive":1,"max_inclusive":2},"half_height":2}}

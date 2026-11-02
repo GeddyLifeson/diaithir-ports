@@ -1,0 +1,1 @@
+{"type":"neoforge:add_features","neoforge:conditions":[{"type":"diaithir_overworld_biomes:blooming_toggle","key":"vegetation"}],"biomes":"#minecraft:is_forest","features":["diaithir_overworld_biomes:forest_flowers","diaithir_overworld_biomes:forest_ferns","diaithir_overworld_biomes:forest_mushrooms","diaithir_overworld_biomes:forest_fallen_log"],"step":"vegetal_decoration"}

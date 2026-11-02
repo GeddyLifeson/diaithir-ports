@@ -1,0 +1,1 @@
+{"id":"diaithir_overworld_biomes:meteor_buried","hook":"com.diaithir.overworld_biomes.nomorecraters.MeteorEvents$MeteorBuriedEvent","side":"server","age":1,"age_gate":"diaithir:age/1","payload":["origin","core","cancelled"]}

@@ -1,0 +1,1 @@
+{"type":"neoforge:add_features","neoforge:conditions":[{"type":"diaithir_overworld_biomes:blooming_toggle","key":"terrain"}],"biomes":"#minecraft:is_mountain","features":["diaithir_overworld_biomes:mountain_boulder","diaithir_overworld_biomes:mountain_gravel"],"step":"local_modifications"}

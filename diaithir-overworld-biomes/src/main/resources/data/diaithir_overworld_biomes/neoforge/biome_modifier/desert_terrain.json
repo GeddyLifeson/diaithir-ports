@@ -1,0 +1,1 @@
+{"type":"neoforge:add_features","neoforge:conditions":[{"type":"diaithir_overworld_biomes:blooming_toggle","key":"terrain"}],"biomes":"minecraft:desert","features":"diaithir_overworld_biomes:desert_gravel","step":"local_modifications"}

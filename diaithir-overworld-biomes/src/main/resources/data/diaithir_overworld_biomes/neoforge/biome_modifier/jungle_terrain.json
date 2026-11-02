@@ -1,0 +1,1 @@
+{"type":"neoforge:add_features","neoforge:conditions":[{"type":"diaithir_overworld_biomes:blooming_toggle","key":"terrain"}],"biomes":"#minecraft:is_jungle","features":"diaithir_overworld_biomes:jungle_moss","step":"local_modifications"}
