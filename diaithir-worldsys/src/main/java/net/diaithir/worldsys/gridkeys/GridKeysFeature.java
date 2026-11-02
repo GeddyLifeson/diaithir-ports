@@ -18,11 +18,6 @@ import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 /** Keybinds that rotate, balance or clear the open crafting grid. */
 public final class GridKeysFeature {
-    private static final KeyMapping.Category CATEGORY = new KeyMapping.Category(Identifier.fromNamespaceAndPath("diaithirworldsys", "gridkeys"));
-    private static KeyMapping rotateKey;
-    private static KeyMapping balanceKey;
-    private static KeyMapping clearKey;
-
     private GridKeysFeature() {}
 
     public static void register(IEventBus modBus) {
@@ -36,6 +31,11 @@ public final class GridKeysFeature {
     }
 
     private static final class Client {
+    private static final KeyMapping.Category CATEGORY = new KeyMapping.Category(Identifier.fromNamespaceAndPath("diaithirworldsys", "gridkeys"));
+    private static KeyMapping rotateKey;
+    private static KeyMapping balanceKey;
+    private static KeyMapping clearKey;
+
         static void register(IEventBus modBus) {
             rotateKey = new KeyMapping("key.diaithirworldsys.grid_rotate", InputConstants.UNKNOWN.getValue(), CATEGORY);
             balanceKey = new KeyMapping("key.diaithirworldsys.grid_balance", InputConstants.UNKNOWN.getValue(), CATEGORY);
