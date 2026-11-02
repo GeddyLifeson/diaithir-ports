@@ -1,10 +1,16 @@
-{ "type": "minecraft:crafting_shaped", "pattern": ["ODO","DED","ODO"], "key": { "O": "minecraft:obsidian", "D": "minecraft:diamond", "E": "minecraft:ender_chest" }, "result": { "id": "diaithirportable:deep_null" } }
-
-Known gaps you should expect when you compile, so none of it surprises you:
-
-- **Crafting and jukebox upgrades** are items you can craft and slot in, but they have no behaviour yet. Only stack, pickup, magnet, feeding, void and smelting do anything. Smelting works in storage blocks only; backpacks don't smelt.
-- **Dyeing** records a colour on the block entity. It isn't rendered until you add a block-colour handler and tinted textures.
-- **Worn on the back** isn't implemented. Backpacks open from the hand and tick from the inventory, but there is no back-slot renderer or equipment-slot hookup.
-- **Placing a backpack as a block** goes through the vanilla `BlockItem` path, and `StorageBlock.setPlacedBy` restores its contents from the item.
-- **Stale API names:** a few 26.1 names are from memory and may need adjusting on compile: `inventoryTick` and `appendHoverText` signatures, `useOn` placement in `DeepNullItem`, `getCloneItemStack`, and `getSelectedSlot()`.
-- **Dead stubs:** two small leftover stubs (`unused()` in `StorageBlockEntity`, `unusedFlags()` in `DiaithirPortable`) should be deleted. `PortableMenu` also carries a stray `Set` interface that should be a plain `java.util.Set` import.
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ODO",
+    "DED",
+    "ODO"
+  ],
+  "key": {
+    "O": "minecraft:obsidian",
+    "D": "minecraft:diamond",
+    "E": "minecraft:ender_chest"
+  },
+  "result": {
+    "id": "diaithirportable:deep_null"
+  }
+}

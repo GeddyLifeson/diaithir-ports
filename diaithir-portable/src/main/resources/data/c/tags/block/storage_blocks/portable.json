@@ -1,24 +1,10 @@
 {
   "replace": false,
   "values": [
-    "diaithirportable:crafting_upgrade",
-    "diaithirportable:deep_null",
-    "diaithirportable:diamond_backpack",
     "diaithirportable:diamond_storage",
-    "diaithirportable:feeding_upgrade",
-    "diaithirportable:gold_backpack",
     "diaithirportable:gold_storage",
-    "diaithirportable:iron_backpack",
     "diaithirportable:iron_storage",
-    "diaithirportable:jukebox_upgrade",
-    "diaithirportable:magnet_upgrade",
-    "diaithirportable:netherite_backpack",
     "diaithirportable:netherite_storage",
-    "diaithirportable:pickup_upgrade",
-    "diaithirportable:smelting_upgrade",
-    "diaithirportable:stack_upgrade",
-    "diaithirportable:void_upgrade",
-    "diaithirportable:wood_backpack",
     "diaithirportable:wood_storage"
   ]
 }

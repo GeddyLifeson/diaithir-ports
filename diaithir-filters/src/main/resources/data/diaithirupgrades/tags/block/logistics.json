@@ -1,7 +1,4 @@
 {
   "replace": false,
-  "values": [
-    "diaithirfilters:filter",
-    "diaithirfilters:filter_card"
-  ]
+  "values": []
 }

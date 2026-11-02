@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "diaithirpipes:connector",
     "diaithirpipes:energy_pipe_advanced",
     "diaithirpipes:energy_pipe_basic",
     "diaithirpipes:energy_pipe_improved",
@@ -10,7 +9,6 @@
     "diaithirpipes:fluid_pipe_improved",
     "diaithirpipes:item_pipe_advanced",
     "diaithirpipes:item_pipe_basic",
-    "diaithirpipes:item_pipe_improved",
-    "diaithirpipes:wrench"
+    "diaithirpipes:item_pipe_improved"
   ]
 }
