@@ -89,8 +89,8 @@ public final class LinkedBlock extends BaseEntityBlock {
 
     private static String status(LinkedBlockEntity be) {
         return switch (be.key().kind()) {
-            case TANK -> be.shared().tank(be.key()).getAmount() + " mB";
-            case CELL -> be.shared().cell(be.key()) + " FE";
+            case TANK -> net.diaithir.units.Fmt.volume(be.shared().tank(be.key()).getAmount());
+            case CELL -> net.diaithir.units.Fmt.energy(be.shared().cell(be.key()));
             case CHEST -> "";
         };
     }

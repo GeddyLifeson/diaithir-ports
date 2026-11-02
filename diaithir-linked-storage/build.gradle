@@ -4,7 +4,7 @@ plugins {
 }
 
 version = project.mod_version
-base.archivesName = 'diaithir-linked-storage-neoforge-26.1.2'
+base.archivesName = 'diaithir-linked-storage-rewrite-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
@@ -24,10 +24,13 @@ processResources {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
+    implementation 'net.diaithir:diaithir-units:1.0.0'
+    jarJar(group: 'net.diaithir', name: 'diaithir-units', version: '[1.0.0,2.0)')
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'com.google.code.gson:gson:2.11.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'

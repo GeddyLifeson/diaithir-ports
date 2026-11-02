@@ -4,7 +4,7 @@ plugins {
 }
 
 version = project.mod_version
-base.archivesName = 'diaithir-portable-neoforge-26.1.2'
+base.archivesName = 'diaithir-portable-rewrite-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
