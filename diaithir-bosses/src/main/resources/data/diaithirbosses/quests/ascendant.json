@@ -349,7 +349,7 @@
   {
    "id": "ascendant/rite_foundry_sovereign_5",
    "title": "Foundry Sovereign: step 6",
-   "text": "It will not wake for one hand. 2 must stand at the altar together.",
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
    "after": [
     "ascendant/rite_foundry_sovereign_4"
    ],
@@ -426,7 +426,7 @@
   {
    "id": "ascendant/rite_mist_weaver_5",
    "title": "Mist Weaver: step 6",
-   "text": "It will not wake for one hand. 2 must stand at the altar together.",
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
    "after": [
     "ascendant/rite_mist_weaver_4"
    ],
@@ -503,7 +503,7 @@
   {
    "id": "ascendant/rite_ash_seraph_5",
    "title": "Ash Seraph: step 6",
-   "text": "It will not wake for one hand. 2 must stand at the altar together.",
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
    "after": [
     "ascendant/rite_ash_seraph_4"
    ],
@@ -580,7 +580,7 @@
   {
    "id": "ascendant/rite_dusk_wyrm_5",
    "title": "Dusk Wyrm: step 6",
-   "text": "It will not wake for one hand. 3 must stand at the altar together.",
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
    "after": [
     "ascendant/rite_dusk_wyrm_4"
    ],
@@ -657,7 +657,7 @@
   {
    "id": "ascendant/rite_rootbreaker_5",
    "title": "Rootbreaker: step 6",
-   "text": "It will not wake for one hand. 3 must stand at the altar together.",
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
    "after": [
     "ascendant/rite_rootbreaker_4"
    ],
@@ -734,7 +734,7 @@
   {
    "id": "ascendant/rite_last_wheel_5",
    "title": "The Last Wheel: step 6",
-   "text": "It will not wake for one hand. 3 must stand at the altar together.",
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
    "after": [
     "ascendant/rite_last_wheel_4"
    ],

@@ -143,7 +143,7 @@
    "boss": "foundry_sovereign",
    "step": 5,
    "quest": "ascendant/rite_foundry_sovereign_5",
-   "text": "It will not wake for one hand. 2 must stand at the altar together."
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
   },
   {
    "boss": "foundry_sovereign",
@@ -185,7 +185,7 @@
    "boss": "mist_weaver",
    "step": 5,
    "quest": "ascendant/rite_mist_weaver_5",
-   "text": "It will not wake for one hand. 2 must stand at the altar together."
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
   },
   {
    "boss": "mist_weaver",
@@ -227,7 +227,7 @@
    "boss": "ash_seraph",
    "step": 5,
    "quest": "ascendant/rite_ash_seraph_5",
-   "text": "It will not wake for one hand. 2 must stand at the altar together."
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
   },
   {
    "boss": "ash_seraph",
@@ -269,7 +269,7 @@
    "boss": "dusk_wyrm",
    "step": 5,
    "quest": "ascendant/rite_dusk_wyrm_5",
-   "text": "It will not wake for one hand. 3 must stand at the altar together."
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
   },
   {
    "boss": "dusk_wyrm",
@@ -311,7 +311,7 @@
    "boss": "rootbreaker",
    "step": 5,
    "quest": "ascendant/rite_rootbreaker_5",
-   "text": "It will not wake for one hand. 3 must stand at the altar together."
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
   },
   {
    "boss": "rootbreaker",
@@ -353,7 +353,7 @@
    "boss": "last_wheel",
    "step": 5,
    "quest": "ascendant/rite_last_wheel_5",
-   "text": "It will not wake for one hand. 3 must stand at the altar together."
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
   },
   {
    "boss": "last_wheel",

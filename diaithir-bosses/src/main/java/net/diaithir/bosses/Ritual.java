@@ -35,6 +35,7 @@ public final class Ritual {
     public static final String[] TREES = {"Birch", "Rowan", "Alder", "Willow", "Ash", "Hawthorn", "Oak", "Holly", "Hazel"};
     public static final String[] RUNES = {"ᚁ", "ᚂ", "ᚃ", "ᚄ", "ᚅ", "ᚆ", "ᚇ", "ᚈ", "ᚉ"};
     public static final String WAVE_TAG = "diaithirbosses.rite_wave";
+    public static final String SPIRIT_TAG = "diaithirbosses.rite_spirit";
     private static final Gson GSON = new Gson();
 
     public static final class Step {
@@ -125,8 +126,17 @@ public final class Ritual {
             }
             case "coop" -> {
                 long near = fighters(sl).stream().filter(p -> p.isAlive() && !p.isSpectator() && p.distanceToSqr(Vec3.atCenterOf(altar)) < 100).count();
-                if (near >= s.players) advance(sl, altar, data, st, d);
-                else player.sendSystemMessage(Component.translatable("ritual.diaithirbosses.need_company", s.players));
+                long missing = s.players - near - spirits(sl, altar).size();
+                // solo path: a champion token calls one rite spirit to stand in for each absent fighter
+                if (missing > 0 && held.is(DiaithirBosses.TOKEN.get())) {
+                    int n = (int) Math.min(missing, held.getCount());
+                    if (!player.isCreative()) held.shrink(n);
+                    for (int i = 0; i < n; i++) spirit(sl, altar, i);
+                    missing -= n;
+                    tell(sl, altar, Component.translatable("ritual.diaithirbosses.spirit_called", n));
+                }
+                if (missing <= 0) advance(sl, altar, data, st, d);
+                else player.sendSystemMessage(Component.translatable("ritual.diaithirbosses.need_company", s.players, missing));
             }
             case "defend" -> {
                 if (!DEFEND_START.containsKey(k)) {
@@ -157,7 +167,7 @@ public final class Ritual {
             boolean viaTrophy = trophy != null && held.is(trophy.get());
             if (!viaTrophy && !(token && !data.beaten(p.id))) continue;
             long last = data.lastDefeat(p.id);
-            long left = last < 0 ? 0 : p.respawn.ticks - (sl.getGameTime() - last);
+            long left = last < 0 ? 0 : (long) (p.respawn.ticks * EventHooks.respawnMul(sl)) - (sl.getGameTime() - last);
             if (left > 0) { wait = wait == 0 ? left : Math.min(wait, left); continue; }
             pick = p;
             break;
@@ -186,6 +196,7 @@ public final class Ritual {
         int next = st.step + 1;
         if (next >= d.steps.size()) {
             data.removeRitual(k);
+            dismissSpirits(sl, altar);
             Data.Profile p = Data.byId(st.boss);
             tell(sl, altar, Component.translatable("ritual.diaithirbosses.done"));
             if (p != null) DiaithirBosses.spawn(sl, p, Vec3.atBottomCenterOf(altar.above(2)), altar);
@@ -196,12 +207,33 @@ public final class Ritual {
         tell(sl, altar, clue(st.boss, next));
     }
 
+    private static List<Mob> spirits(ServerLevel sl, BlockPos altar) {
+        return sl.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(24), m -> m.isAlive() && m.entityTags().contains(SPIRIT_TAG));
+    }
+
+    /** A rite spirit: a player-made iron golem (it never turns on players) that counts as one fighter and joins the defence. */
+    private static void spirit(ServerLevel sl, BlockPos altar, int i) {
+        var e = net.minecraft.world.entity.EntityType.IRON_GOLEM.create(sl, EntitySpawnReason.MOB_SUMMONED);
+        if (e == null) return;
+        e.setPlayerCreated(true);
+        e.addTag(SPIRIT_TAG);
+        e.setPersistenceRequired();
+        e.setCustomName(Component.translatable("ritual.diaithirbosses.spirit"));
+        e.snapTo(altar.getX() + 2.5 + i, altar.getY(), altar.getZ() + 2.5, 0, 0);
+        sl.addFreshEntity(e);
+    }
+
+    private static void dismissSpirits(ServerLevel sl, BlockPos altar) {
+        spirits(sl, altar).forEach(Mob::discard);
+    }
+
     private static void fail(ServerLevel sl, BlockPos altar, AscendantData data, State st, String why) {
         String k = key(altar);
         DEFEND_START.remove(k);
         data.putRitual(k, new State(st.boss, st.step, 0).toString());
         tell(sl, altar, Component.translatable(why));
         for (Mob m : sl.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), e -> e.entityTags().contains(WAVE_TAG))) m.discard();
+        dismissSpirits(sl, altar);
     }
 
     // ------------------------------------------------------------------ the world acts on a rite

@@ -136,6 +136,7 @@ public final class Rush {
         Component msg = Component.translatable("boss.diaithirbosses.rush_done", ticks / 20, best ? " New best." : "");
         ps.forEach(p -> p.sendSystemMessage(msg));
         AscendantData.get(server).defeat(CFG.id, level.getGameTime());
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new EventHooks.RushClearedEvent(ticks / 20, AscendantData.get(server).mode()));
         running = false;
     }
 

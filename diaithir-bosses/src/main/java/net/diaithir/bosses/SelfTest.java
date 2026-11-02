@@ -190,6 +190,18 @@ public final class SelfTest {
         var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
         check(woken.size() == 1, "rite: the boss wakes (" + woken.size() + ")");
         woken.forEach(Mob::discard);
+        // solo path of the co-op step: one fighter, a rite for two, tokens call spirits
+        Ritual.Def fd = Ritual.def("foundry_sovereign");
+        int ci = -1;
+        for (int i = 0; i < fd.steps.size(); i++) if (fd.steps.get(i).type.equals("coop")) ci = i;
+        check(ci >= 0, "rite: foundry_sovereign has a co-op step");
+        data.putRitual(key, "foundry_sovereign|" + ci + "|0");
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(data.rituals().get(key).startsWith("foundry_sovereign|" + ci + "|"), "rite: one fighter cannot pass a two-fighter step");
+        Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get()));
+        check(data.rituals().get(key).startsWith("foundry_sovereign|" + (ci + 1) + "|"), "rite: a token calls a spirit that stands in");
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(24), m -> m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+        data.removeRitual(key);
         data.clearDefeats();
         level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG)).forEach(Mob::discard);
     }

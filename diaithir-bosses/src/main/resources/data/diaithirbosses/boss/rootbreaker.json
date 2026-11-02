@@ -163,7 +163,7 @@
    "per_age": 2
   },
   {
-   "item": "diaithirbosses:hollow_core",
+   "item": "diaithirbosses:boss_hollow_core",
    "min": 1,
    "max": 2,
    "min_age": 8,

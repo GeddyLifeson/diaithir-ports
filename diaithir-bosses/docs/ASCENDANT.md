@@ -34,20 +34,20 @@ No boss appears from a single click. A rite is a chain of steps with a cryptic c
 | hunt | Kill a count of a named creature within 48 blocks of the altar. |
 | stones | Place **ogham stones** nearby. Use one to turn its rune (Birch, Rowan, Alder, Willow, Ash, Hawthorn, Oak, Holly, Hazel); sneak-use seals the rune it shows. The order is hidden in the clue as nine tree riddles. A wrong rune hurts and resets the step. |
 | hour | Use the altar only inside a time window (midnight, dawn, dusk, noon). |
-| coop | Tier II and III: 2 or 3 fighters must stand at the altar together. |
+| coop | Tier II and III: 2 or 3 fighters must stand at the altar together. **Solo path:** give the altar a champion token for each absent fighter and a rite spirit (a player-made iron golem) rises to stand in; it also helps in the defend. |
 | defend | Hold the altar for 60 to 150 s against waves that scale with fighters present; leave it alone and the step resets. |
 Tier I rites have 6 steps, tier II 7, tier III 7 to 8. Each rite ends in the boss waking at the altar. Progress is saved per altar. Tiers II and III still need the lower tier beaten once.
 Not copied from anything: the steps, riddles, trees and items are ours, built from Celtic lore (ogham, the tree calendar) and the Age clock.
 
 ## Materials and the progression web (plans/PROGRESSION.md)
-Drops: `diaithirbosses:boss_catalyst` (tier I), `hollow_core` (tier II and III), `ageshard` (The Last Wheel only). Offering feast comes from the kitchen module through the tag above. Ids as proposed by the progression thread.
+Drops: `diaithirbosses:boss_catalyst` (tier I), `boss_hollow_core` (tier II and III), `ageshard` (The Last Wheel only). Offering feast comes from the kitchen module through the tag above. Ids as proposed by the progression thread.
 
 ## Java now in the PR
 `Rush` (rush.json), `Difficulty` + `AscendantData` (mode, wins, rites, best time; `/boss mode`, `/boss rush start|stop`), `AscendantAltarBlock`, `OghamStoneBlock`, `Ritual`. Built on JDK 25 / NeoForge 26.1.2.116. `/bossesselftest` on a flat server: 35 bosses, 1964 checks, 0 failed, including one full rite (feast, offering, hunt, wrong and right runes, hour window, defend, boss wakes).
 
 ## Not done
 1. Rush has no run in the self test yet (needs a real player to fight); the rush controller compiles and loads `rush.json`.
-2. Global Events and quest completion are data contracts (`diaithir_events.json`, `quests/ascendant.json`); the glue to those modules waits for their APIs.
+2. Global Events: wired by name to #111 (`EventHooks`): blood moon halves altar rest times, storms sharpen Tide Reaver and Ash Seraph, an Ascendant eclipse event is registered with `WorldEvents.register` and strengthens the Dusk Wyrm; `BossDefeatedEvent` and `RushClearedEvent` go out on the NeoForge bus. Not run against #111 in a world yet. Quest completion stays a data contract until the quest module lands.
 3. **Biomes and materials**: designed here (Thornwake, Cinderfen, The Unwound; ores `hollowsteel`, `emberglass`, `slagiron`), built by the worldgen threads. Hidden, world-spread rite sites need that worldgen.
 4. Attack types `gravity_well` and `rewind`.
 5. Art: textures are recolours of vanilla skins; 64 px art goes to the texture lanes. Ogham stone and altar use vanilla block textures.

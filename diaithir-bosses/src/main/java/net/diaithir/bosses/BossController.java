@@ -154,7 +154,7 @@ public final class BossController {
     private void scaleOnSpawn() {
         int near = Math.max(1, participants().size());
         Difficulty.Mode mode = Difficulty.current(level.getServer());
-        double hpMul = (ageScale(true) + prof.scaling.hp_per_extra_player * (near - 1)) * mode.hp;
+        double hpMul = (ageScale(true) + prof.scaling.hp_per_extra_player * (near - 1)) * mode.hp * EventHooks.hpMul(prof, level);
         AttributeInstance hp = mob.getAttribute(Attributes.MAX_HEALTH);
         double base = hp != null ? hp.getBaseValue() : 1;
         if (hp != null && !prof.ownsEntity() && prof.own.hp > base) {
@@ -171,7 +171,7 @@ public final class BossController {
         AttributeInstance dm = mob.getAttribute(Attributes.ATTACK_DAMAGE);
         if (dm != null) {
             dm.removeModifier(DMG_MOD);
-            dm.addPermanentModifier(new AttributeModifier(DMG_MOD, ageScale(false) * mode.damage - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            dm.addPermanentModifier(new AttributeModifier(DMG_MOD, ageScale(false) * mode.damage * EventHooks.damageMul(prof, level) - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         }
         mob.setHealth(mob.getMaxHealth());
         float want = (float) (base * hpMul);
@@ -612,6 +612,7 @@ public final class BossController {
         }
         int xp = (int) (prof.xp * Difficulty.current(level.getServer()).xp);
         AscendantData.get(level.getServer()).defeat(prof.id, level.getGameTime());
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new EventHooks.BossDefeatedEvent(prof.id, worldAge));
         while (xp > 0) {
             int c = Math.min(xp, 400);
             ExperienceOrb.award(level, mob.position(), c);

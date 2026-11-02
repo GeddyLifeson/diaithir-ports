@@ -42,6 +42,7 @@ import org.jspecify.annotations.Nullable;
 @Mod(DiaithirBosses.ID)
 public final class DiaithirBosses {
     public static final String ID = "diaithirbosses";
+    public static final org.slf4j.Logger LOG = com.mojang.logging.LogUtils.getLogger();
 
     private static final DeferredRegister.Entities ENTITIES = DeferredRegister.createEntities(ID);
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
@@ -65,7 +66,7 @@ public final class DiaithirBosses {
         () -> BlockBehaviour.Properties.of().strength(3.0F, 12.0F).lightLevel(s -> 4));
     public static final DeferredItem<net.minecraft.world.item.BlockItem> OGHAM_STONE_ITEM = ITEMS.registerSimpleBlockItem(OGHAM_STONE);
     public static final DeferredItem<Item> BOSS_CATALYST = ITEMS.registerSimpleItem("boss_catalyst");
-    public static final DeferredItem<Item> HOLLOW_CORE = ITEMS.registerSimpleItem("hollow_core");
+    public static final DeferredItem<Item> HOLLOW_CORE = ITEMS.registerSimpleItem("boss_hollow_core");
     public static final DeferredItem<Item> AGESHARD = ITEMS.registerSimpleItem("ageshard");
     public static final DeferredItem<Item> RUSH_LAUREL = ITEMS.registerSimpleItem("rush_laurel");
     public static final DeferredItem<Item> TOKEN = ITEMS.registerSimpleItem("champion_token");
@@ -114,6 +115,7 @@ public final class DiaithirBosses {
         TABS.register(bus);
         bus.addListener(EntityAttributeCreationEvent.class, e ->
             MOBS.forEach((id, t) -> e.put((EntityType) t.get(), ATTRS.get(id).get().build())));
+        bus.addListener(net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent.class, e -> e.enqueueWork(EventHooks::register));
         NeoForge.EVENT_BUS.register(BossEvents.class);
         if (FMLEnvironment.getDist() == Dist.CLIENT) net.diaithir.bosses.client.BossClient.init(bus);
     }
