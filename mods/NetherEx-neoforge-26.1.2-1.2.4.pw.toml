@@ -1,0 +1,12 @@
+name = "NetherEx-neoforge"
+filename = "NetherEx-neoforge-26.1.2-1.2.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/2PIVd4Ik/versions/HSjMx64m/NetherEx-neoforge-26.1.2-1.2.4.jar"
+hash-format = "sha256"
+hash = "a05cbc3ff378a5648d16e6565175a0ee10ab9c68b1ef90de0232c58d6de6a644"
+
+[update.modrinth]
+mod-id = "2PIVd4Ik"
+version = "HSjMx64m"

@@ -1,0 +1,133 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:crag",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:crystalline_chasm",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:forested_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:gravel_beach",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:old_growth_woodland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_maple_woods",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcano",
+   "required": false
+  },
+  {
+   "id": "minecraft:deep_dark",
+   "required": false
+  },
+  {
+   "id": "minecraft:frozen_peaks",
+   "required": false
+  },
+  {
+   "id": "minecraft:jagged_peaks",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_beach",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:ancient_delta",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:chalk_cliffs",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_deciduous_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_river",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:eucalyptus_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:grassy_beach",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:gravel_beach",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:highland_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:muddy_river",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:redstone_caves",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:scorching_caves",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:towering_cliffs",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tropical_river",
+   "required": false
+  }
+ ]
+}

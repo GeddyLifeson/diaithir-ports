@@ -1,0 +1,53 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:snowy_coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_maple_woods",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tundra",
+   "required": false
+  },
+  {
+   "id": "minecraft:grove",
+   "required": false
+  },
+  {
+   "id": "minecraft:ice_spikes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_deciduous_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_tundra",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:icy_heights",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tundra",
+   "required": false
+  }
+ ]
+}

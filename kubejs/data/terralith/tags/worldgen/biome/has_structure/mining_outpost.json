@@ -1,0 +1,37 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:glowing_grotto",
+   "required": false
+  },
+  {
+   "id": "minecraft:deep_dark",
+   "required": false
+  },
+  {
+   "id": "minecraft:dripstone_caves",
+   "required": false
+  },
+  {
+   "id": "minecraft:lush_caves",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:ancient_delta",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:bioshroom_caves",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:redstone_caves",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:scorching_caves",
+   "required": false
+  }
+ ]
+}

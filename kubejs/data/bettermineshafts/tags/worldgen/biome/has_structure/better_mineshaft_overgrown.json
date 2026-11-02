@@ -1,0 +1,37 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:forested_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lavender_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:maple_woods",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:subtropics",
+   "required": false
+  },
+  {
+   "id": "minecraft:cherry_grove",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:blackwood_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:eucalyptus_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:flower_fields",
+   "required": false
+  }
+ ]
+}

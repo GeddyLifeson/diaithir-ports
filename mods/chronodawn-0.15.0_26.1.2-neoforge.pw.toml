@@ -1,0 +1,12 @@
+name = "chronodawn"
+filename = "chronodawn-0.15.0+26.1.2-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/yEsoyNev/versions/gxFD2epj/chronodawn-0.15.0%2B26.1.2-neoforge.jar"
+hash-format = "sha256"
+hash = "20f197d866a96fe235acb3a612a06125962354eb56852f387085aa90224d5ed7"
+
+[update.modrinth]
+mod-id = "yEsoyNev"
+version = "gxFD2epj"

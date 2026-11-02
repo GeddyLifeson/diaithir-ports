@@ -1,0 +1,12 @@
+name = "forest_ruins"
+filename = "forest_ruins-1.0.0 Neoforge 26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/HgZn3gGU/versions/xxBd2DfR/forest_ruins-1.0.0%20Neoforge%2026.1.2.jar"
+hash-format = "sha256"
+hash = "c4b99a1b483c93e0c3a53e6c775a8300fd07d3e8dd13c1e76d09b74f37dd7e7b"
+
+[update.modrinth]
+mod-id = "HgZn3gGU"
+version = "xxBd2DfR"

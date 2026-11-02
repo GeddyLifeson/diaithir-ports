@@ -1,0 +1,12 @@
+name = "katters-structures"
+filename = "katters-structures-2.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/V6LLU8Gf/versions/awqugomg/katters-structures-2.4.jar"
+hash-format = "sha256"
+hash = "fec06072050ecb5fc4ae8e154d9792c595bd81896831c43a56801d3fe93ace8f"
+
+[update.modrinth]
+mod-id = "V6LLU8Gf"
+version = "awqugomg"

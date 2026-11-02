@@ -1,0 +1,12 @@
+name = "discoveria"
+filename = "discoveria-4.0.2d.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/x4MjQT3r/versions/ws6WGPiK/discoveria-4.0.2d.jar"
+hash-format = "sha256"
+hash = "3bf0a27bc955584ff34729e3c37150f2ea9368d600248db2d969b179769573b2"
+
+[update.modrinth]
+mod-id = "x4MjQT3r"
+version = "ws6WGPiK"

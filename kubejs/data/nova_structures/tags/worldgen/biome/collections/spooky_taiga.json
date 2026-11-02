@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:redwood_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_golden_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:redwoods",
+   "required": false
+  }
+ ]
+}

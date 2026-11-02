@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  }
+ ]
+}

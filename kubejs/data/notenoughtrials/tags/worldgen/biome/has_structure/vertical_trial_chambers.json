@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:overgrown_greens",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:rocky_meadow",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+name = "ii"
+filename = "ii.zip"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3/client/diaithir/ui_ages/ii.zip"
+hash-format = "sha256"
+hash = "6829543c930217b25beee3bcaa78cf61b92e13ba47d912968f05cbb3011b46a5"

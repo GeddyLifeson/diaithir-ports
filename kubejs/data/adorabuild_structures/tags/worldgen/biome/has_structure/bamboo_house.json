@@ -1,0 +1,29 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:jade_cliffs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:rainforest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:rocky_rainforest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tropics",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:rainforest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tropics",
+   "required": false
+  }
+ ]
+}

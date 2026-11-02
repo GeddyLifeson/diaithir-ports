@@ -1,0 +1,12 @@
+name = "petra"
+filename = "petra-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/8rE3l6uj/versions/QOPk1rwy/petra-1.0.0.jar"
+hash-format = "sha256"
+hash = "b7d5116676212a58af813c61aca1061377b37340a243267867efc130bef220f0"
+
+[update.modrinth]
+mod-id = "8rE3l6uj"
+version = "QOPk1rwy"

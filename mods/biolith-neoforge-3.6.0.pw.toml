@@ -1,0 +1,12 @@
+name = "biolith-neoforge"
+filename = "biolith-neoforge-3.6.0.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/iGEl6Crx/versions/whieXuL5/biolith-neoforge-3.6.0.jar"
+hash-format = "sha256"
+hash = "8799eb2762f4246bf936f6bc672d7c40fd93c04c29a636864f8ab60a91fd673f"
+
+[update.modrinth]
+mod-id = "iGEl6Crx"
+version = "whieXuL5"

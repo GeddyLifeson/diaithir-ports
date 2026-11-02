@@ -1,0 +1,12 @@
+name = "abusimbel"
+filename = "abusimbel-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/u3DVExeb/versions/uC8kehH7/abusimbel-1.0.0.jar"
+hash-format = "sha256"
+hash = "6027964b8290ede644766dbf4b19a4c955b40870637359a34bbe89c8d3082cbc"
+
+[update.modrinth]
+mod-id = "u3DVExeb"
+version = "uC8kehH7"

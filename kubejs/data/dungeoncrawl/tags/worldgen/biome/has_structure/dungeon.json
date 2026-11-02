@@ -1,0 +1,69 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:cold_desert",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:forested_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:old_growth_woodland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_maple_woods",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tropics",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:ancient_delta",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:chalk_cliffs",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_deciduous_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:spires",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tropics",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tundra",
+   "required": false
+  }
+ ]
+}

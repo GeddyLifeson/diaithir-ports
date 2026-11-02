@@ -1,0 +1,12 @@
+name = "formationsnether"
+filename = "formationsnether-1.0.5b-mc1.21+.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/cGvQGRls/versions/Z3DsEJun/formationsnether-1.0.5b-mc1.21%2B.jar"
+hash-format = "sha256"
+hash = "b903e98fdeacb5b70b10baafe224c512a6efa843c53f0386d50cc48ce4ad19c9"
+
+[update.modrinth]
+mod-id = "cGvQGRls"
+version = "Z3DsEJun"

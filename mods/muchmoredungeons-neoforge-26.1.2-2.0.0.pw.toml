@@ -1,0 +1,12 @@
+name = "muchmoredungeons-neoforge"
+filename = "muchmoredungeons-neoforge-26.1.2-2.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ydBxwDBa/versions/38WZ2UWJ/muchmoredungeons-neoforge-26.1.2-2.0.0.jar"
+hash-format = "sha256"
+hash = "47770eb2530945fe81f84b3f39eadcbdb7666243c3c89078531b1fd875593199"
+
+[update.modrinth]
+mod-id = "ydBxwDBa"
+version = "38WZ2UWJ"

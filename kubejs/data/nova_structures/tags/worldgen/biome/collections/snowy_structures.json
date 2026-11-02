@@ -1,0 +1,25 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:tundra",
+   "required": false
+  },
+  {
+   "id": "minecraft:grove",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tundra",
+   "required": false
+  }
+ ]
+}

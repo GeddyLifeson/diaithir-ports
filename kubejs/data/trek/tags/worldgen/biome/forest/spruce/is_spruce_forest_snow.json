@@ -1,0 +1,17 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:snowy_fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_maple_woods",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_deciduous_forest",
+   "required": false
+  }
+ ]
+}

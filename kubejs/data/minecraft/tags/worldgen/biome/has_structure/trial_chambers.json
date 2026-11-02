@@ -1,0 +1,17 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:crystalline_chasm",
+   "required": false
+  },
+  {
+   "id": "minecraft:deep_dark",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:scorching_caves",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:overgrown_greens",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:pasture",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:prairie",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:scrubland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:shrubland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "minecraft:savanna_plateau",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:baobab_savanna",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:clover_plains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:dry_bushland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:grassland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:highland_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:poppy_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:prairie",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:rocky_meadow",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:shrubland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:steppe",
+   "required": false
+  }
+ ]
+}

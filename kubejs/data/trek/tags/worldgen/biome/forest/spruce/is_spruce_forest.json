@@ -1,0 +1,41 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:muskeg",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_maple_woods",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_deciduous_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_golden_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:windswept_maple_forest",
+   "required": false
+  }
+ ]
+}

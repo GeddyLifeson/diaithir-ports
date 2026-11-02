@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:tundra",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tundra",
+   "required": false
+  }
+ ]
+}

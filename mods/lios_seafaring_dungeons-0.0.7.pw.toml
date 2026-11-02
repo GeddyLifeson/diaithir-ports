@@ -1,0 +1,12 @@
+name = "lios_seafaring_dungeons"
+filename = "lios_seafaring_dungeons-0.0.7.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/VFKE55Wa/versions/Z8RxjdbK/lios_seafaring_dungeons-0.0.7.jar"
+hash-format = "sha256"
+hash = "6830f1d216cdb46505d188162a786d4d44abb096644b6fafa792cb3d08392cef"
+
+[update.modrinth]
+mod-id = "VFKE55Wa"
+version = "Z8RxjdbK"

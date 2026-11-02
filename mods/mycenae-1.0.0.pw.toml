@@ -1,0 +1,12 @@
+name = "mycenae"
+filename = "mycenae-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/hiUW57Rd/versions/mBoL4txJ/mycenae-1.0.0.jar"
+hash-format = "sha256"
+hash = "e40c2d6c40c6717d02a693796e666d91199414014b748baa024f9e18e06e5b7a"
+
+[update.modrinth]
+mod-id = "hiUW57Rd"
+version = "mBoL4txJ"

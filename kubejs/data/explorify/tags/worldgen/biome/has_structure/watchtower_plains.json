@@ -1,0 +1,41 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:overgrown_greens",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:pasture",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "minecraft:sunflower_plains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:poppy_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:shrubland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:steppe",
+   "required": false
+  }
+ ]
+}

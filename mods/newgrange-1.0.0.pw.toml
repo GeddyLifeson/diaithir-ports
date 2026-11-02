@@ -1,0 +1,12 @@
+name = "newgrange"
+filename = "newgrange-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/JWOZZipx/versions/Bcbmqkgj/newgrange-1.0.0.jar"
+hash-format = "sha256"
+hash = "13f13fd31dfe6b2963198e8d72d87391099b0daf33167945a5a27f6f7e2da3a4"
+
+[update.modrinth]
+mod-id = "JWOZZipx"
+version = "Bcbmqkgj"

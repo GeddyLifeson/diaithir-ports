@@ -1,0 +1,12 @@
+name = "ResourcefulLib"
+filename = "ResourcefulLib-4.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/G1hIVOrD/versions/B94F6bCN/ResourcefulLib-4.0.1.jar"
+hash-format = "sha256"
+hash = "4ccedbc89c82a73132eb3a83a5dd3b1923c62d1373aa5cd707780dc5160e9e15"
+
+[update.modrinth]
+mod-id = "G1hIVOrD"
+version = "B94F6bCN"

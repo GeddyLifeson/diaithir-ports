@@ -1,0 +1,12 @@
+name = "mots-structures"
+filename = "mots-structures-1.8.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/mQRI3siL/versions/sW4CH0m4/mots-structures-1.8.jar"
+hash-format = "sha256"
+hash = "de69b509ce50fe058c42c4db7f3126df0f3d42bee7ea9c8784f9e40a9c99ad86"
+
+[update.modrinth]
+mod-id = "mQRI3siL"
+version = "sW4CH0m4"

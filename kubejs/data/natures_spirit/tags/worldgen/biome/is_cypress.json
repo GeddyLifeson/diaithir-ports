@@ -1,0 +1,221 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:bog",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:cold_desert",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:crag",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:crystalline_chasm",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:dryland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:highland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:hot_springs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lush_desert",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lush_savanna",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:marsh",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:muskeg",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:pasture",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:prairie",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:scrubland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:shrubland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tundra",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcano",
+   "required": false
+  },
+  {
+   "id": "minecraft:badlands",
+   "required": false
+  },
+  {
+   "id": "minecraft:cherry_grove",
+   "required": false
+  },
+  {
+   "id": "minecraft:desert",
+   "required": false
+  },
+  {
+   "id": "minecraft:eroded_badlands",
+   "required": false
+  },
+  {
+   "id": "minecraft:flower_forest",
+   "required": false
+  },
+  {
+   "id": "minecraft:frozen_peaks",
+   "required": false
+  },
+  {
+   "id": "minecraft:jagged_peaks",
+   "required": false
+  },
+  {
+   "id": "minecraft:meadow",
+   "required": false
+  },
+  {
+   "id": "minecraft:savanna",
+   "required": false
+  },
+  {
+   "id": "minecraft:savanna_plateau",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "minecraft:sparse_jungle",
+   "required": false
+  },
+  {
+   "id": "minecraft:sunflower_plains",
+   "required": false
+  },
+  {
+   "id": "minecraft:windswept_forest",
+   "required": false
+  },
+  {
+   "id": "minecraft:windswept_gravelly_hills",
+   "required": false
+  },
+  {
+   "id": "minecraft:windswept_hills",
+   "required": false
+  },
+  {
+   "id": "minecraft:windswept_savanna",
+   "required": false
+  },
+  {
+   "id": "minecraft:wooded_badlands",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:arid_mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:baobab_savanna",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:clover_plains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:dry_bushland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:flower_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:highland_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:icy_heights",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:joshua_desert",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mauve_hills",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:outback",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:poppy_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:saguaro_desert",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:steppe",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:towering_cliffs",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:wisteria_grove",
+   "required": false
+  }
+ ]
+}

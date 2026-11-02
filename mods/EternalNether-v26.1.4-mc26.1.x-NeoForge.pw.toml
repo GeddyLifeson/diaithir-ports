@@ -1,0 +1,12 @@
+name = "EternalNether"
+filename = "EternalNether-v26.1.4-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/s6R4jmL8/versions/HrA3jnav/EternalNether-v26.1.4-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "d865f7a2e76c09a704396bb8cc3fe2afd687394882fbdd7c0378911cf0372492"
+
+[update.modrinth]
+mod-id = "s6R4jmL8"
+version = "HrA3jnav"

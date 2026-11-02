@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:glowing_grotto",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:bioshroom_caves",
+   "required": false
+  }
+ ]
+}

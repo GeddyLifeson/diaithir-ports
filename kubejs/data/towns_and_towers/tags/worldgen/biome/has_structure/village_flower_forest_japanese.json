@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:lavender_field",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:flower_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mauve_hills",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:wisteria_grove",
+   "required": false
+  }
+ ]
+}

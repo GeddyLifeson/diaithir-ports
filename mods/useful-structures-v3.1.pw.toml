@@ -1,0 +1,12 @@
+name = "useful-structures"
+filename = "useful-structures-v3.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/f4JBIbKe/versions/7fUdvvqY/useful-structures-v3.1.jar"
+hash-format = "sha256"
+hash = "b17f7931d377121cff3840b7189e26d927e4d7209daa439fe1912ea46385c9fb"
+
+[update.modrinth]
+mod-id = "f4JBIbKe"
+version = "7fUdvvqY"

@@ -1,0 +1,93 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:forested_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lavender_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:maple_woods",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:mediterranean_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:old_growth_woodland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:seasonal_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:subtropics",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:woodland",
+   "required": false
+  },
+  {
+   "id": "minecraft:cherry_grove",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:autumnal_maple_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:blackwood_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:deciduous_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:eucalyptus_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:flower_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:magnolia_woodland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:maple_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mauve_hills",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:silver_birch_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:temperate_grove",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:windswept_maple_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:wisteria_grove",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:bayou",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:bog",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:cold_desert",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:dune_beach",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:jade_cliffs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:marsh",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tropics",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:wetland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:ancient_delta",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:arid_mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:bamboo_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:bayou",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:fen",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:marsh",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_bayou",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tropics",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:willow_forest",
+   "required": false
+  }
+ ]
+}

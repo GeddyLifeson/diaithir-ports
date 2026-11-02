@@ -1,0 +1,12 @@
+name = "tbirds-structures"
+filename = "tbirds-structures-1.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Xrg2orjy/versions/3g26ed3n/tbirds-structures-1.1.2.jar"
+hash-format = "sha256"
+hash = "51a3ce02327012f511d21b338ab444eb934db8d9a6b6baddb08958e0f0da4c74"
+
+[update.modrinth]
+mod-id = "Xrg2orjy"
+version = "3g26ed3n"

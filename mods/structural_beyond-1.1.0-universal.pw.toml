@@ -1,0 +1,12 @@
+name = "structural_beyond"
+filename = "structural_beyond-1.1.0-universal.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/6Yica65F/versions/63fsXfaS/structural_beyond-1.1.0-universal.jar"
+hash-format = "sha256"
+hash = "7598b2c1441bd6db006e86e055965ff048c5302eae61ae0c2823494c11031778"
+
+[update.modrinth]
+mod-id = "6Yica65F"
+version = "63fsXfaS"

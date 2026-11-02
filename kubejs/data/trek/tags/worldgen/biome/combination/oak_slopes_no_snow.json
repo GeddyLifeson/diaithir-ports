@@ -1,0 +1,65 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:forested_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:maple_woods",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:mediterranean_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:overgrown_greens",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:subtropics",
+   "required": false
+  },
+  {
+   "id": "minecraft:birch_forest",
+   "required": false
+  },
+  {
+   "id": "minecraft:cherry_grove",
+   "required": false
+  },
+  {
+   "id": "minecraft:dark_forest",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:eucalyptus_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:magnolia_woodland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:maple_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mauve_hills",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:wisteria_grove",
+   "required": false
+  }
+ ]
+}

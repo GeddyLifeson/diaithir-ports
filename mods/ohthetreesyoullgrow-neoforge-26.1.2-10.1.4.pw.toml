@@ -1,0 +1,12 @@
+name = "ohthetreesyoullgrow-neoforge"
+filename = "ohthetreesyoullgrow-neoforge-26.1.2-10.1.4.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/g8NOG5OR/versions/8bagmcj0/ohthetreesyoullgrow-neoforge-26.1.2-10.1.4.jar"
+hash-format = "sha256"
+hash = "5b42a82a662d60bb654c9b826f323faa195b3cb3dc81a1647001399fc64c614c"
+
+[update.modrinth]
+mod-id = "g8NOG5OR"
+version = "8bagmcj0"

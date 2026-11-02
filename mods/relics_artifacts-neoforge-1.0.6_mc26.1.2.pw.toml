@@ -1,0 +1,12 @@
+name = "relics_artifacts-neoforge"
+filename = "relics_artifacts-neoforge-1.0.6+mc26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Ny4hiPCS/versions/Ol2s6cGS/relics_artifacts-neoforge-1.0.6%2Bmc26.1.2.jar"
+hash-format = "sha256"
+hash = "5696129bd08aad64cdb6899bc4a96378db5b0909cda1da01e5012f16ab90d850"
+
+[update.modrinth]
+mod-id = "Ny4hiPCS"
+version = "Ol2s6cGS"

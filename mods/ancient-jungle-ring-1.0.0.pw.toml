@@ -1,0 +1,12 @@
+name = "ancient-jungle-ring"
+filename = "ancient-jungle-ring-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/67zZRPQR/versions/Z6HUjKLz/ancient-jungle-ring-1.0.0.jar"
+hash-format = "sha256"
+hash = "f3ac8604421b1849cb5e7f1fc3e16d549455410b0b628f0d02ef5e5a2b3d7f83"
+
+[update.modrinth]
+mod-id = "67zZRPQR"
+version = "Z6HUjKLz"

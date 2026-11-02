@@ -1,0 +1,33 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:prairie",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:shrubland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "minecraft:meadow",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:prairie",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:shrubland",
+   "required": false
+  }
+ ]
+}

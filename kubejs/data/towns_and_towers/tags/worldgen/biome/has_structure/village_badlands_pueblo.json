@@ -1,0 +1,17 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "minecraft:eroded_badlands",
+   "required": false
+  },
+  {
+   "id": "minecraft:wooded_badlands",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:arid_mountains",
+   "required": false
+  }
+ ]
+}

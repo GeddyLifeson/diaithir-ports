@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "regions_unexplored:old_growth_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_golden_boreal_taiga",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:prairie",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:shrubland",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:prairie",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:shrubland",
+   "required": false
+  }
+ ]
+}

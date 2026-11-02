@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "minecraft:wooded_badlands",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:bayou",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:floodplain",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:marsh",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:muskeg",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:prairie",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:shrubland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "minecraft:mangrove_swamp",
+   "required": false
+  },
+  {
+   "id": "minecraft:meadow",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_birch_forest",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_spruce_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:bayou",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_bayou",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:prairie",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:shrubland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:sparse_redwoods",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:willow_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:windswept_maple_forest",
+   "required": false
+  }
+ ]
+}

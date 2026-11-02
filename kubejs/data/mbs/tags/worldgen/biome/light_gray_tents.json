@@ -1,0 +1,101 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:bog",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:crag",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:hot_springs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:maple_woods",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tundra",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcano",
+   "required": false
+  },
+  {
+   "id": "minecraft:dark_forest",
+   "required": false
+  },
+  {
+   "id": "minecraft:deep_dark",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_spruce_taiga",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_taiga",
+   "required": false
+  },
+  {
+   "id": "minecraft:taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:blackwood_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:golden_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_golden_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:redwoods",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:sparse_redwoods",
+   "required": false
+  }
+ ]
+}

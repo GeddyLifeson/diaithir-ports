@@ -1,0 +1,89 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:cold_desert",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:dune_beach",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:jade_cliffs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:overgrown_greens",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:pasture",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:prairie",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:shrubland",
+   "required": false
+  },
+  {
+   "id": "minecraft:frozen_peaks",
+   "required": false
+  },
+  {
+   "id": "minecraft:jagged_peaks",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:ancient_delta",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:bamboo_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:clover_plains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:highland_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:poppy_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:prairie",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:rocky_meadow",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:shrubland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tropics",
+   "required": false
+  }
+ ]
+}

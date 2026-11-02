@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:floodplain",
+   "required": false
+  },
+  {
+   "id": "minecraft:mangrove_swamp",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_bayou",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:willow_forest",
+   "required": false
+  }
+ ]
+}

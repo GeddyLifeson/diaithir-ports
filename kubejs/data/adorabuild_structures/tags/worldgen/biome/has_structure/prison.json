@@ -1,0 +1,125 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:hot_springs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lavender_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:muskeg",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:overgrown_greens",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:rainforest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:rocky_rainforest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:subtropics",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tropics",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "minecraft:ice_spikes",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_spruce_taiga",
+   "required": false
+  },
+  {
+   "id": "minecraft:savanna_plateau",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:golden_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:magnolia_woodland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mauve_hills",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:sparse_rainforest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:sparse_redwoods",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tundra",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:wisteria_grove",
+   "required": false
+  }
+ ]
+}

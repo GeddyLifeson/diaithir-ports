@@ -1,0 +1,12 @@
+name = "golemdungeons"
+filename = "golemdungeons-26.1.2.0+6.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/5OrL8C4a/versions/bPZRINKa/golemdungeons-26.1.2.0%2B6.jar"
+hash-format = "sha256"
+hash = "4eb0ada4de58dbf7ccc4364b8e5e63f5b61a8192aab5dcd0c8705aa84c993637"
+
+[update.modrinth]
+mod-id = "5OrL8C4a"
+version = "bPZRINKa"

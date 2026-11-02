@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:volcano",
+   "required": false
+  },
+  {
+   "id": "minecraft:frozen_peaks",
+   "required": false
+  }
+ ]
+}

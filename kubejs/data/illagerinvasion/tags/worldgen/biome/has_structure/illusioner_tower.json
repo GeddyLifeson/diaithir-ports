@@ -1,0 +1,109 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:bayou",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:bog",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:floodplain",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:hot_springs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:marsh",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:muskeg",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:redwood_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:wetland",
+   "required": false
+  },
+  {
+   "id": "minecraft:mangrove_swamp",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:bayou",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:blackwood_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:fen",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:golden_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:marsh",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_bayou",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:old_growth_golden_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:redwoods",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:sparse_redwoods",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:willow_forest",
+   "required": false
+  }
+ ]
+}

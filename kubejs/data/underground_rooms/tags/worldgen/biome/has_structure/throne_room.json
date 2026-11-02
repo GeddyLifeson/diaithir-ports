@@ -1,0 +1,181 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:cold_desert",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:dryland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:dune_beach",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:forested_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:jade_cliffs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lavender_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lush_desert",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lush_savanna",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:muskeg",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:old_growth_woodland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:pasture",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:prairie",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:scrubland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:shrubland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_coniferous_forest",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:snowy_maple_woods",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:subtropics",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tropics",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "minecraft:cherry_grove",
+   "required": false
+  },
+  {
+   "id": "minecraft:ice_spikes",
+   "required": false
+  },
+  {
+   "id": "minecraft:meadow",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:baobab_savanna",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:clover_plains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_boreal_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:cold_deciduous_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:dry_bushland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:flower_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_tundra",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:grassland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:joshua_desert",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:outback",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:poppy_fields",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:prairie",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:saguaro_desert",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:shrubland",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:steppe",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tropics",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tundra",
+   "required": false
+  }
+ ]
+}

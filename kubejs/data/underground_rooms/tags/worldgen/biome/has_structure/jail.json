@@ -1,0 +1,33 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:overgrown_greens",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:tundra",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcano",
+   "required": false
+  },
+  {
+   "id": "minecraft:ice_spikes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:frozen_tundra",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:rocky_meadow",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:tundra",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:fir_clearing",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:hot_springs",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lavender_field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:muskeg",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:old_growth_woodland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:overgrown_greens",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:pasture",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:volcanic_plains",
+   "required": false
+  },
+  {
+   "id": "minecraft:cherry_grove",
+   "required": false
+  },
+  {
+   "id": "minecraft:ice_spikes",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_pine_taiga",
+   "required": false
+  },
+  {
+   "id": "minecraft:old_growth_spruce_taiga",
+   "required": false
+  },
+  {
+   "id": "minecraft:savanna_plateau",
+   "required": false
+  },
+  {
+   "id": "minecraft:snowy_slopes",
+   "required": false
+  },
+  {
+   "id": "minecraft:sunflower_plains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:eucalyptus_forest",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:mountains",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_slopes",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:pine_taiga",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:poppy_fields",
+   "required": false
+  }
+ ]
+}

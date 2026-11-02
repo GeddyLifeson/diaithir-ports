@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:field",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:moor",
+   "required": false
+  },
+  {
+   "id": "minecraft:meadow",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:steppe",
+   "required": false
+  }
+ ]
+}

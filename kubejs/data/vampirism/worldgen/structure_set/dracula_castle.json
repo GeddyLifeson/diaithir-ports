@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 10131462,
+    "spacing": 1200,
+    "separation": 600
+  },
+  "structures": [
+    {
+      "structure": "vampirism:dracula_castle",
+      "weight": 1
+    }
+  ]
+}

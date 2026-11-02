@@ -1,0 +1,29 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:dryland",
+   "required": false
+  },
+  {
+   "id": "biomesoplenty:lush_desert",
+   "required": false
+  },
+  {
+   "id": "minecraft:desert",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:joshua_desert",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:outback",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:saguaro_desert",
+   "required": false
+  }
+ ]
+}

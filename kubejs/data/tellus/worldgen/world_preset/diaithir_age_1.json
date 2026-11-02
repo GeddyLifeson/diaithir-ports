@@ -1,0 +1,136 @@
+{
+  "dimensions": {
+    "minecraft:overworld": {
+      "type": "tellus:diaithir_age_1",
+      "generator": {
+        "type": "tellus:earth",
+        "biome_source": {
+          "type": "tellus:earth",
+          "settings": {
+            "world_scale": 5.0,
+            "terrestrial_height_scale": 1.0,
+            "oceanic_height_scale": 1.0,
+            "height_offset": 200,
+            "automatic_height_scaling": false,
+            "spawn_latitude": 56.982,
+            "spawn_longitude": -10.0145,
+            "enable_roads": false,
+            "enable_buildings": false,
+            "enable_water": true,
+            "ore_distribution": true,
+            "underground_depth": 4064,
+            "realtime_time": false,
+            "realtime_weather": false,
+            "add_strongholds": true,
+            "add_villages": true,
+            "add_mineshafts": true,
+            "add_ocean_monuments": true,
+            "add_woodland_mansions": true,
+            "add_desert_temples": true,
+            "add_jungle_temples": true,
+            "add_pillager_outposts": true,
+            "add_ruined_portals": true,
+            "add_shipwrecks": true,
+            "add_ocean_ruins": true,
+            "add_buried_treasure": true,
+            "add_igloos": true,
+            "add_witch_huts": true,
+            "add_ancient_cities": true,
+            "add_trial_chambers": true,
+            "add_trail_ruins": true,
+            "era": {
+              "sea_level_offset_m": -100.0,
+              "island_overlay": true,
+              "height_compress": false,
+              "ice": true,
+              "ice_sheets": true,
+              "lakes": true,
+              "vegetation": true,
+              "structure_filter": true
+            },
+            "min_altitude": -2032,
+            "max_altitude": 2031,
+            "cave_generation": true,
+            "caves_reach_surface": true,
+            "lava_pools": true,
+            "geodes": true,
+            "geological_stone_patches": true,
+            "deep_dark": true
+          }
+        },
+        "settings": {
+          "world_scale": 5.0,
+          "terrestrial_height_scale": 1.0,
+          "oceanic_height_scale": 1.0,
+          "height_offset": 200,
+          "automatic_height_scaling": false,
+          "spawn_latitude": 56.982,
+          "spawn_longitude": -10.0145,
+          "enable_roads": false,
+          "enable_buildings": false,
+          "enable_water": true,
+          "ore_distribution": true,
+          "underground_depth": 4064,
+          "realtime_time": false,
+          "realtime_weather": false,
+          "add_strongholds": true,
+          "add_villages": true,
+          "add_mineshafts": true,
+          "add_ocean_monuments": true,
+          "add_woodland_mansions": true,
+          "add_desert_temples": true,
+          "add_jungle_temples": true,
+          "add_pillager_outposts": true,
+          "add_ruined_portals": true,
+          "add_shipwrecks": true,
+          "add_ocean_ruins": true,
+          "add_buried_treasure": true,
+          "add_igloos": true,
+          "add_witch_huts": true,
+          "add_ancient_cities": true,
+          "add_trial_chambers": true,
+          "add_trail_ruins": true,
+          "era": {
+            "sea_level_offset_m": -100.0,
+            "island_overlay": true,
+            "height_compress": false,
+            "ice": true,
+            "ice_sheets": true,
+            "lakes": true,
+            "vegetation": true,
+            "structure_filter": true
+          },
+          "min_altitude": -2032,
+          "max_altitude": 2031,
+          "cave_generation": true,
+          "caves_reach_surface": true,
+          "lava_pools": true,
+          "geodes": true,
+          "geological_stone_patches": true,
+          "deep_dark": true
+        }
+      }
+    },
+    "minecraft:the_end": {
+      "type": "minecraft:the_end",
+      "generator": {
+        "type": "minecraft:noise",
+        "biome_source": {
+          "type": "minecraft:the_end"
+        },
+        "settings": "minecraft:end"
+      }
+    },
+    "minecraft:the_nether": {
+      "type": "minecraft:the_nether",
+      "generator": {
+        "type": "minecraft:noise",
+        "biome_source": {
+          "type": "minecraft:multi_noise",
+          "preset": "minecraft:nether"
+        },
+        "settings": "minecraft:nether"
+      }
+    }
+  }
+}

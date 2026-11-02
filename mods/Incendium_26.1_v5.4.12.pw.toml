@@ -1,0 +1,12 @@
+name = "Incendium"
+filename = "Incendium_26.1_v5.4.12.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ZVzW5oNS/versions/dmD183NM/Incendium_26.1_v5.4.12.jar"
+hash-format = "sha256"
+hash = "d537aeb61d7e3aa3ca18c158571f6809d3e3aecfb70de2939f92dbc7ab4844b1"
+
+[update.modrinth]
+mod-id = "ZVzW5oNS"
+version = "dmD183NM"

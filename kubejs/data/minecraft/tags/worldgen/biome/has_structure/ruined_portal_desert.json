@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "biomesoplenty:dune_beach",
+   "required": false
+  },
+  {
+   "id": "regions_unexplored:outback",
+   "required": false
+  }
+ ]
+}

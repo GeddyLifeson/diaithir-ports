@@ -1,0 +1,8 @@
+name = "diaithir-ages-gui"
+filename = "diaithir-ages-gui.zip"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3/client/resourcepacks/diaithir-ages-gui.zip"
+hash-format = "sha256"
+hash = "7e710c0236bc7bc7e35f9dc4e40581d938ed5e1d1a5c95caf51f9ac280d84b74"
