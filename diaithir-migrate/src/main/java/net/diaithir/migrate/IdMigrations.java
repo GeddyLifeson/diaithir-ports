@@ -1,4 +1,4 @@
-package net.diaithir.compat;
+package net.diaithir.migrate;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -29,9 +29,9 @@ import java.util.Map;
  * (lowest priority). Saved worlds, recipes, loot tables and tags that still name the old id then resolve to the new one.
  * An alias is skipped (and logged) when the old id is still registered or the new id is not.
  */
-@Mod("diaithircompat")
+@Mod("diaithirmigrate")
 public final class IdMigrations {
-    private static final Logger LOG = LoggerFactory.getLogger("diaithircompat");
+    private static final Logger LOG = LoggerFactory.getLogger("diaithirmigrate");
     private static final Map<Identifier, List<Identifier[]>> BY_REGISTRY = new HashMap<>();
     private static boolean loaded;
 

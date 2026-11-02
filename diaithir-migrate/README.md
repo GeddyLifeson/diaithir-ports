@@ -1,4 +1,4 @@
-# diaithir-compat: the single id-migration loader
+# diaithir-migrate: the single id-migration loader
 
 Any module may ship `data/<modid>/id_migrations.json`:
 
