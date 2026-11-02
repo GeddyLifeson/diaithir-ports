@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirclient"
+version = "${version}"
+displayName = "Diaithir Client"
+description = "Clean-room Diaithir module combining: diaithirearlywindow."
+
+[[dependencies.diaithirclient]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+side = "BOTH"
