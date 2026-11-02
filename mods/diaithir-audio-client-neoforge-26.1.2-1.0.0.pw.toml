@@ -1,0 +1,8 @@
+name = "diaithir-audio-client-neoforge-26.1.2-1.0.0"
+filename = "diaithir-audio-client-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-fold4/client/diaithir-audio-client-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "a1d0c2d19917d10110c62f5efc7c0089c8697d28cd67f011ad9fd6ed0776b823"

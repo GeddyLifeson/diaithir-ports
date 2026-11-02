@@ -1,0 +1,8 @@
+name = "diaithir-world-visuals-client-neoforge-26.1.2-1.0.0"
+filename = "diaithir-world-visuals-client-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-fold4/client/diaithir-world-visuals-client-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "8df7940f11ace9cd7ac6f6efae9816ef26d1a304d7dfacb4ac392f4111321182"
