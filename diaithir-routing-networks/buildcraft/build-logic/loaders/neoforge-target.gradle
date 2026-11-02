@@ -342,6 +342,7 @@ tasks.matching { it.name == 'createMinecraftArtifacts' }.configureEach {
 
 repositories {
     mavenCentral()
+    mavenLocal() // net.diaithir:diaithir-upgrades:1.0.0 (publishToMavenLocal from diaithir-upgrades)
 
     exclusiveContent {
         forRepository {
@@ -362,6 +363,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'net.diaithir:diaithir-upgrades:1.0.0'
     def jeiDependency = optionalProperty('deps.jei')
     if (jeiCompatEnabled && jeiDependency) {
         compileOnly jeiDependency

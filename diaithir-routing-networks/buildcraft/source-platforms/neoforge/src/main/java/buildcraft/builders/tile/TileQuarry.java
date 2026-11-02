@@ -886,7 +886,7 @@ public class TileQuarry extends TileBC_Neptune implements IDebuggable, IChunkLoa
         blockPercentSoFar = 0;
         moveDistanceSoFar = 0;
 
-        int maxTasks = Math.max(1, (int) (max * BCBuildersConfig.quarryMaxTasksPerTick * apiWorkSpeedMultiplier / Math.max(1L, maxPowerPerTick)));
+        int maxTasks = Math.max(1, (int) (max * BCBuildersConfig.quarryMaxTasksPerTick * apiWorkSpeedMultiplier * buildcraft.lib.DiaithirUpgrades.speed(this) / Math.max(1L, maxPowerPerTick)));
         boolean sendUpdate = false;
         power_loop: for (int i = 0; i < maxTasks; i++) {
 
@@ -1485,7 +1485,7 @@ public class TileQuarry extends TileBC_Neptune implements IDebuggable, IChunkLoa
         if (baseMicroMj <= 0 || apiEnergyCostMultiplier <= 0) {
             return 0;
         }
-        double scaled = baseMicroMj * apiEnergyCostMultiplier;
+        double scaled = baseMicroMj * apiEnergyCostMultiplier * buildcraft.lib.DiaithirUpgrades.consumption(this);
         return scaled >= Long.MAX_VALUE ? Long.MAX_VALUE : Math.max(1L, Math.round(scaled));
     }
 
@@ -1618,7 +1618,7 @@ public class TileQuarry extends TileBC_Neptune implements IDebuggable, IChunkLoa
         public long getRequiredPowerThisTick() {
             long target = getTarget();
             long req = Math.max(0, target - power);
-            double rate = BCBuildersConfig.quarryMaxBlockMineRate * apiWorkSpeedMultiplier;
+            double rate = BCBuildersConfig.quarryMaxBlockMineRate * apiWorkSpeedMultiplier * buildcraft.lib.DiaithirUpgrades.speed(TileQuarry.this);
             if (rate < 0.1) {
                 return req;
             }
@@ -1837,7 +1837,7 @@ public class TileQuarry extends TileBC_Neptune implements IDebuggable, IChunkLoa
         public long getRequiredPowerThisTick() {
             long req = Math.max(0, getTarget() - power);
 
-            double max = BCBuildersConfig.quarryMaxFrameMoveSpeed * apiWorkSpeedMultiplier;
+            double max = BCBuildersConfig.quarryMaxFrameMoveSpeed * apiWorkSpeedMultiplier * buildcraft.lib.DiaithirUpgrades.speed(TileQuarry.this);
             if (max < 0.1) {
                 return req;
             }

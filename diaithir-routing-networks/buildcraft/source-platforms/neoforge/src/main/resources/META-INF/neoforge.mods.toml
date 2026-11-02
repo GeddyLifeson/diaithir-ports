@@ -27,6 +27,13 @@ Shared library code and runtime helpers used by the BuildCraft Community Edition
     side="BOTH"
 
 [[dependencies.buildcraftlib]]
+    modId="diaithirupgrades"
+    type="required"
+    versionRange="[1.0.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.buildcraftlib]]
     modId="minecraft"
     type="required"
     versionRange="${minecraft_version_range}"

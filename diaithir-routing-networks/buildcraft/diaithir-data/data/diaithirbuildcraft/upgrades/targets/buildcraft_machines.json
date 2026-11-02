@@ -1,5 +1,5 @@
 {
- "_comment": "Schema from #117 example_shim.json. Per-block rules, priority 0 (own mod). Quality is an int tier. UpgradeHost glue is not in #117 yet (its README: NeoForge glue is the next PR).",
+ "_comment": "Schema from #117 RuleLoader. Only blocks whose tick code reads UpgradeHost (DiaithirUpgrades): quarry speed+efficiency, pump efficiency. Others get rules once hooked.",
  "rules": [
   {
    "pattern": "buildcraftbuilders:quarry",
@@ -12,91 +12,10 @@
    "max_quality": 2
   },
   {
-   "pattern": "buildcraftfactory:mining_well",
-   "priority": 0,
-   "slots": 2,
-   "allowed": [
-    "speed",
-    "efficiency"
-   ],
-   "max_quality": 2
-  },
-  {
    "pattern": "buildcraftfactory:pump",
    "priority": 0,
-   "slots": 2,
+   "slots": 1,
    "allowed": [
-    "speed",
-    "efficiency"
-   ],
-   "max_quality": 2
-  },
-  {
-   "pattern": "buildcraftbuilders:builder",
-   "priority": 0,
-   "slots": 2,
-   "allowed": [
-    "speed",
-    "efficiency"
-   ],
-   "max_quality": 2
-  },
-  {
-   "pattern": "buildcraftbuilders:filler",
-   "priority": 0,
-   "slots": 2,
-   "allowed": [
-    "speed",
-    "efficiency"
-   ],
-   "max_quality": 2
-  },
-  {
-   "pattern": "buildcraftsilicon:assembly_table",
-   "priority": 0,
-   "slots": 2,
-   "allowed": [
-    "speed",
-    "efficiency"
-   ],
-   "max_quality": 2
-  },
-  {
-   "pattern": "buildcraftenergy:engine_stone",
-   "priority": 0,
-   "slots": 2,
-   "allowed": [
-    "speed",
-    "efficiency"
-   ],
-   "max_quality": 2
-  },
-  {
-   "pattern": "buildcraftenergy:engine_iron",
-   "priority": 0,
-   "slots": 2,
-   "allowed": [
-    "speed",
-    "efficiency"
-   ],
-   "max_quality": 2
-  },
-  {
-   "pattern": "buildcraftenergy:engine_redstone",
-   "priority": 0,
-   "slots": 2,
-   "allowed": [
-    "speed",
-    "efficiency"
-   ],
-   "max_quality": 2
-  },
-  {
-   "pattern": "buildcraftenergy:engine_fe",
-   "priority": 0,
-   "slots": 2,
-   "allowed": [
-    "speed",
     "efficiency"
    ],
    "max_quality": 2

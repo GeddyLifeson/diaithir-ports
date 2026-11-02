@@ -361,7 +361,7 @@ public class TilePump extends TileMiner implements MachineRuntimeView {
         }
 //        BCLog.logger.debug(""+currentPos);
 
-        long target = Math.max(0L, Math.round(BalanceConfig.machineInt("buildcraftfactory:pump", "energy_per_bucket_mj", 10) * MjAmount.MICRO_MJ_PER_MJ * MachineDefinitionLookup.energyCostMultiplier(BuildCraftContentIds.Machines.PUMP)));
+        long target = Math.max(0L, Math.round(BalanceConfig.machineInt("buildcraftfactory:pump", "energy_per_bucket_mj", 10) * MjAmount.MICRO_MJ_PER_MJ * MachineDefinitionLookup.energyCostMultiplier(BuildCraftContentIds.Machines.PUMP) * buildcraft.lib.DiaithirUpgrades.consumption(this)));
         if (currentPos != null && paths.containsKey(currentPos)) {
             if (!level.hasChunkAt(currentPos)) {
                 return;
