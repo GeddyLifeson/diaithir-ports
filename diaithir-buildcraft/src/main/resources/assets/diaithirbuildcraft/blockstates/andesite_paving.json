@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirbuildcraft:block/andesite_paving"
+  },
+  "type=top": {
+   "model": "diaithirbuildcraft:block/andesite_paving_top"
+  },
+  "type=double": {
+   "model": "minecraft:block/andesite"
+  }
+ }
+}
