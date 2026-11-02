@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Optional;
 
 public record Research(Optional<Component> titleText, Optional<Component> descriptionText, ResearchCriterion<?> trigger, List<Identifier> prerequisiteIds, List<Identifier> recipeUnlocks, List<ResearchReward> rewards, Icon display) {
-    public static final Icon DEFAULT_ICON = new TextureIcon(ModUtils.id("textures/research/default.png"));
+    public static final Icon DEFAULT_ICON = new TextureIcon(ModUtils.id("textures/research/default.png"), 64);
 
     public static final Codec<Research> CODEC = RecordCodecBuilder.create(
         instance -> instance.group(

@@ -18,6 +18,9 @@ neoForge {
         }
         client {
             client()
+            if (project.hasProperty('joinServer')) {
+                programArguments.addAll('--username', 'Researcher', '--quickPlayMultiplayer', project.property('joinServer'))
+            }
         }
     }
     mods { researcher { sourceSet(sourceSets.main) } }

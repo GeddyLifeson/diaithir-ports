@@ -48,6 +48,9 @@ public class Researcher {
             ResearchCommand.register(event.getDispatcher(), event.getBuildContext(), event.getCommandSelection());
         });
 
+        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.AddServerReloadListenersEvent event) ->
+                event.addListener(ResearchManager.ID, event.getServerResources().researcher$getServerManager()));
+
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.OnDatapackSyncEvent event) ->
                 event.sendRecipes(net.minecraft.world.item.crafting.RecipeType.CRAFTING));
 

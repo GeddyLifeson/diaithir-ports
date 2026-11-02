@@ -34,13 +34,6 @@ public class ReloadableServerResourcesMixin implements ResearchManagerGetter {
         researchManager = new ResearchManager(loadingContext, (ReloadableServerResources)(Object)this);
     }
 
-    @Inject(method = "listeners", at = @At("RETURN"), cancellable = true)
-    private void modifyListeners(CallbackInfoReturnable<List<PreparableReloadListener>> cir) {
-        List<PreparableReloadListener> contents = new ObjectArrayList<>(cir.getReturnValue());
-        contents.add(researchManager);
-        cir.setReturnValue(contents);
-    }
-
     @Override @Unique
     public ResearchManager researcher$getServerManager() {
         return researchManager;
