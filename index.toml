@@ -68013,11 +68013,6 @@ hash = "9fb85c924d63887e87807abb1b8cec8eb959ae04c781aa49888c4a3cb695724f"
 metafile = true
 
 [[files]]
-file = "mods/Explorify_v1.6.5.mod.pw.toml"
-hash = "3bec0a4a53a1b6bf60f7be5e06f7dc2a250def3003593355245b4b7d883df392"
-metafile = true
-
-[[files]]
 file = "mods/FactionApi-26.1.2-1.0.0-alpha.3.pw.toml"
 hash = "3d60cad0a1aa3595769a1e31f20bd89cd5fa00682ccb5ad963608103f6014592"
 metafile = true
@@ -68045,11 +68040,6 @@ metafile = true
 [[files]]
 file = "mods/Glodium-26.1-1.2-neoforge.pw.toml"
 hash = "1450acd68d5043e79b3fd04277580dd0d9acf110290b2dc7bf0de74a2ffac50a"
-metafile = true
-
-[[files]]
-file = "mods/HopoBetterUnderwaterRuins-_26.1_-1.2.7.pw.toml"
-hash = "5dd38c13ee63dbaf366d4ce0cda76d4473a2e3dde9fb7d6d338712017d022170"
 metafile = true
 
 [[files]]
@@ -68205,16 +68195,6 @@ hash = "42f00adfc7a61b899c3cecb8ef9824e4d1396e89ea14fb2827bd168663a93d41"
 metafile = true
 
 [[files]]
-file = "mods/Structory_26.2_v1.3.7.pw.toml"
-hash = "f06628f98d9588858f0fe60938637c804e12755f11470b2a9b4d70d4b75bae11"
-metafile = true
-
-[[files]]
-file = "mods/Structory_Towers_26.2_v1.0.17.pw.toml"
-hash = "4bd20266efed5d1aab782cc175b5acb144142dd665f6317193296383142b8302"
-metafile = true
-
-[[files]]
 file = "mods/TalkBalloons-neoforge-1.6.6_26.1.2.pw.toml"
 hash = "34b26aa9d9ac49e06711c12411adb9fd078db6f94591052df3f9231c12af72dc"
 metafile = true
@@ -68262,11 +68242,6 @@ file = "mods/Vampirism-26.1.2-2.0.0-alpha.2-diaithir.1.jar"
 hash = "f223c7a3a06d9efa7ce6de4c9a4126f2e58ef20c8724575bac0df37eaafb9bea"
 
 [[files]]
-file = "mods/Yggdrasil-7.0.0.pw.toml"
-hash = "8725a9caedb7e3c33050d49f7dbe6dd2103d46a65fc944ecc3d427a927f1d1f5"
-metafile = true
-
-[[files]]
 file = "mods/YungsApi-26.1.2-NeoForge-6.1.3.pw.toml"
 hash = "41a7ce36033903aea8fd850ee6bd2589ba299419c1e58cc7a447ddf293682714"
 metafile = true
@@ -68287,23 +68262,8 @@ hash = "4b8d56bfbd1c4a0026f75b26f701d3c77e70eb2d12eeec9c3559f086cc756b6f"
 metafile = true
 
 [[files]]
-file = "mods/_Neoforge_ctov-26-4.0.0.pw.toml"
-hash = "7da6b85e7bf7d34306736c276ed8f1fe4364a0c051b249d30581ec307baf53c8"
-metafile = true
-
-[[files]]
 file = "mods/abridged-2.0.2-neoforge-26.1.pw.toml"
 hash = "5abd7d28f5b3f7418f1a842ee5e8142b7088e46ce4330f0638701f6058c0967a"
-metafile = true
-
-[[files]]
-file = "mods/abusimbel-1.0.0.pw.toml"
-hash = "403bdc74bb5679b3c65eb4008d76231e0afcd0ffae0aec7bdeeea3487397953a"
-metafile = true
-
-[[files]]
-file = "mods/adorabuild-structures-2.11.0-neoforge-26.1.1.pw.toml"
-hash = "565cd7361bd0ec3b578e7bb0a50bedd2ffee38757176fd9e8c719b70823e3aeb"
 metafile = true
 
 [[files]]
@@ -68324,11 +68284,6 @@ metafile = true
 [[files]]
 file = "mods/alexscaves-1.1.3-neoforge_26.1.2.pw.toml"
 hash = "c0457f048fc2a4afaa58abe43d5392e8dee574d7e9caf70e9f29c18024aa2429"
-metafile = true
-
-[[files]]
-file = "mods/ancient-jungle-ring-1.0.0.pw.toml"
-hash = "f6649e1970c66e54c9530fcb1335a1d3ba50f48293b0b264f040e1302542e20c"
 metafile = true
 
 [[files]]
@@ -68372,11 +68327,6 @@ hash = "c55ebca2a737d5cee3ad3827f013abd4fe1a817fce35d0a791d21c3a725c9718"
 metafile = true
 
 [[files]]
-file = "mods/aztec-ruins-1.0.0.pw.toml"
-hash = "119f919c89aa70c37ef9bf4ae690e8307aa773c9c003f3a0d93896602d1c881d"
-metafile = true
-
-[[files]]
 file = "mods/balm-neoforge-26.1.2-26.1.2.15.pw.toml"
 hash = "229589feafee870ef3326a7e19a9011f88617e117fa83c2824a2e796a7470f63"
 metafile = true
@@ -68414,11 +68364,6 @@ metafile = true
 [[files]]
 file = "mods/bettercombat-neoforge-3.2.2_26.1.2.pw.toml"
 hash = "3acdf1ac827b4d716e1f564b5eb2cbd3912e41e83a3f99effac092841fc78cf1"
-metafile = true
-
-[[files]]
-file = "mods/big_lost_city-1.0.1_Neoforge_26.1.2.pw.toml"
-hash = "01273208bb7144f4676861d7746984583f61d8b621b06524a783826d61a0364e"
 metafile = true
 
 [[files]]
@@ -68606,16 +68551,6 @@ metafile = true
 [[files]]
 file = "mods/deimos-26.1.2-neoforge-2.7.pw.toml"
 hash = "646cff771abe8dc80a9e1d1e70a821a1e25504417ee335a511b86b61ba74f6f6"
-metafile = true
-
-[[files]]
-file = "mods/delfos-1.0.0.pw.toml"
-hash = "70e45ebe3c8a347d1ea1d6c625b85218b261b65e0bbc6c2f413b9f027cdd2306"
-metafile = true
-
-[[files]]
-file = "mods/desert_tomb-2.0.0-neoforge-26.1.2.pw.toml"
-hash = "d0aadbd983563de0792a307327d35fefdb7e8032152af50c546dc89d5ef1dec1"
 metafile = true
 
 [[files]]
@@ -68852,18 +68787,12 @@ file = "mods/diaithir-worldgen-chunk-opts-neoforge-26.1.2-1.0.0.jar"
 hash = "1820b9411421b05edef8781c0dd0f4b44fc4abb5410611478858bf22d07ab7a2"
 
 [[files]]
+file = "mods/diaithir-worldgen-structures-neoforge-26.1.2-1.0.0.jar"
+hash = "147ed9d59a42928866aa778d97a30116c7adf5df2a34390b223a1578e09223c6"
+
+[[files]]
 file = "mods/diaithir-yungs-structures-neoforge-26.1.2-1.0.0.jar"
 hash = "9ba96fd63d1dd3a8f8d037d13f4467839b9c34bf410fe40e624b3af6191b433b"
-
-[[files]]
-file = "mods/discoveria-4.0.2d.pw.toml"
-hash = "18f7049c64df3cac37631dc23e5d163a49ba6e50896045358240fa8f50ff30e9"
-metafile = true
-
-[[files]]
-file = "mods/dungeons-and-taverns-5.2.0.pw.toml"
-hash = "b2cff9ac0826d71975237fe9d742f5ab7c6ba32726fa4f8d9e198fd735a35785"
-metafile = true
 
 [[files]]
 file = "mods/durabilitytooltip-1.2.0-neoforge-mc26.1.pw.toml"
@@ -68951,11 +68880,6 @@ hash = "3185755a0666b5a13c372a673292fae57886f8b5b9a56eb4ed45b1112c15dffd"
 metafile = true
 
 [[files]]
-file = "mods/epic-structures-villages-2.0.0.pw.toml"
-hash = "b29cff46ac8f146ee4b3fddb42c94d392d312e165214b76a846a90b09f86e16d"
-metafile = true
-
-[[files]]
 file = "mods/epitaphs-2.4.0_26.1.2.pw.toml"
 hash = "3a817dba7383f7eb545a8f437eab75727a765c52d7eb2f040776622a64b81971"
 metafile = true
@@ -68963,11 +68887,6 @@ metafile = true
 [[files]]
 file = "mods/eternalstarlight-0.9.1+mc26.1.2.jar"
 hash = "d28804de6ae46792c3419c399f80e0d57da64d80c457092318850ccb22e48c4f"
-
-[[files]]
-file = "mods/explorations-neoforge-26.1.2-1.6.5.pw.toml"
-hash = "92687b71c269f5cb66f10b7650894cf773ef6f60418abd3cee26979d99ca82a7"
-metafile = true
 
 [[files]]
 file = "mods/farmingforblockheads-neoforge-26.1.2-26.1.2.5.pw.toml"
@@ -68997,21 +68916,6 @@ metafile = true
 [[files]]
 file = "mods/forest_ruins-1.0.0_Neoforge_26.1.2.pw.toml"
 hash = "fb032363a409e876ee8db3b478dedb79eaddf1d8ea984158ea448c2c16b4cb8f"
-metafile = true
-
-[[files]]
-file = "mods/formations-1.0.4-neoforge-mc26.1.pw.toml"
-hash = "9b10afcb17e99ffbb8f446ac2394eb223791bc668c917ce4b913298fea07f163"
-metafile = true
-
-[[files]]
-file = "mods/formationsnether-1.0.5b-mc1.21_.pw.toml"
-hash = "2ea9d48a31e37537b274cdf9ebc772e3b33c355cff0f2439bee6b90ffea29f8d"
-metafile = true
-
-[[files]]
-file = "mods/formationsoverworld-1.0.5c-mc1.21_.pw.toml"
-hash = "dc3ff352136fe7aa10fe82e02c87ea6bbf1483d77eb8918836499081f1073c7b"
 metafile = true
 
 [[files]]
@@ -69085,11 +68989,6 @@ hash = "5700ffac9c6db54c152a7f8999c3a80046579d37a3fd31df390b6b9a5e8eef44"
 metafile = true
 
 [[files]]
-file = "mods/giant_natural_additions-1.0.0_neoforge_26.1.2.pw.toml"
-hash = "d4d55ac75d94feef812ed893e06e5028213e1bf10965fed19581b85150fc6850"
-metafile = true
-
-[[files]]
 file = "mods/gravestone-neoforge-1.0.40_26.1.2.pw.toml"
 hash = "3f76702b2b6d2d024786f935194bfd708e4424e865c4bd7698f41d2234a8bf9e"
 metafile = true
@@ -69097,11 +68996,6 @@ metafile = true
 [[files]]
 file = "mods/grieflogger-neoforge-20.1.4.pw.toml"
 hash = "b29f82fe58dda6b9f5ea721dd8b6068f6e1f72a15b92f07dfb432d101ba55cd1"
-metafile = true
-
-[[files]]
-file = "mods/grim-kingdoms-lost-structures-ruins-2.0.3.pw.toml"
-hash = "2090f4797ec1ed4807161664ca9c30229f2b7d7e0ad7cf6abfbafd5f9764f8fb"
 metafile = true
 
 [[files]]
@@ -69127,11 +69021,6 @@ metafile = true
 [[files]]
 file = "mods/iceandfire-2.2-beta.4-diaithir.1.jar"
 hash = "0f94aa6f21c016e7b59dbc9679fd8b5a7bb9c762a2bbf65ee5785f9470482a61"
-
-[[files]]
-file = "mods/illager_arena-1.0.0_Neoforge_26.1.2.pw.toml"
-hash = "75cd305c14abe5fb7fda379df509e2331627dcc401cb019b26ef30473432d33e"
-metafile = true
 
 [[files]]
 file = "mods/immersive_melodies-neoforge-0.8.2_26.1.2.pw.toml"
@@ -69209,11 +69098,6 @@ metafile = true
 [[files]]
 file = "mods/kaleidoscope-tavern-neoforge-26.1.2-1.1.2-diaithir.1.jar"
 hash = "5e2e5886d77b934c9f9c9ef6220399530fc671bb21a1ad25fcf8ababcea2a53a"
-
-[[files]]
-file = "mods/katters-structures-2.4.pw.toml"
-hash = "579dd73acf6a2095e731984b7ef89f081663b8325c133dc685c296001df16f34"
-metafile = true
 
 [[files]]
 file = "mods/keybindbundles-2.0.0.pw.toml"
@@ -69333,11 +69217,6 @@ hash = "22f0fe5b01a19483af93892a2018b08a55e9ac97fc72d1f500da6d72cbb3ec43"
 metafile = true
 
 [[files]]
-file = "mods/medieval_buildings-neoforge-26.1.2-1.2.0.pw.toml"
-hash = "3c7ee3837a661045c3f35394a7eb8a8284108f68b032acc147a0e46fe484a0f0"
-metafile = true
-
-[[files]]
 file = "mods/merequester-neoforge-26.1.2-1.5.1.pw.toml"
 hash = "256250a350ff319ac72ba3f55c65c44d9eb1984a01502723912fc6e6b4a47200"
 metafile = true
@@ -69391,11 +69270,6 @@ hash = "1f2e18acca3a510669eb0971b2c7e714036a5748a1cc5160308c1be87771f808"
 metafile = true
 
 [[files]]
-file = "mods/mycenae-1.0.0.pw.toml"
-hash = "8a4c018c9271b3d943cd14706b56f96a581ea8e48b9cea720a29e69e062152f5"
-metafile = true
-
-[[files]]
 file = "mods/natures_spirit-neoforge-2.3.0_26.1.2.pw.toml"
 hash = "d14ba815587859669c1ce2edf0603a8623482629ef883833c44f0126854f2c80"
 metafile = true
@@ -69413,11 +69287,6 @@ metafile = true
 [[files]]
 file = "mods/netherportalfix-neoforge-26.1-26.1.0.1.pw.toml"
 hash = "c1e49ba94eaa9ec09921a8eb480a06112e91028bcda84df5fa86e9c1fd533959"
-metafile = true
-
-[[files]]
-file = "mods/newgrange-1.0.0.pw.toml"
-hash = "285f232c3658118347df83efeb87632d5edfeac57e8c5be5640c1ec214df1bc5"
 metafile = true
 
 [[files]]
@@ -69458,11 +69327,6 @@ metafile = true
 [[files]]
 file = "mods/paladins-neoforge-3.1.3.002_26.1.2.pw.toml"
 hash = "0719deb29d1098f59bf24902c4fb8f6605c4cd41ad945bdb11fb544d989185b2"
-metafile = true
-
-[[files]]
-file = "mods/petra-1.0.0.pw.toml"
-hash = "77089ef920ecb859b3a9082a6cbf96a671b7551794ee9194d8b67b213aa80534"
 metafile = true
 
 [[files]]
@@ -69565,11 +69429,6 @@ metafile = true
 [[files]]
 file = "mods/rogues-neoforge-3.1.3.002_26.1.2.pw.toml"
 hash = "1ee3d03464a4e2c826a4f1c7b8d41015114831260e63d9a02524eed9b70d0d1d"
-metafile = true
-
-[[files]]
-file = "mods/ruins-and-towers-0.3.pw.toml"
-hash = "2bd4fd1d4d1843c7431b1d60af11b8afe87c375d6e24fb9f8b2257ce82172d7c"
 metafile = true
 
 [[files]]
@@ -69686,11 +69545,6 @@ hash = "1f9c50ee75c7ab484d4ff43e4df35c56c2f99a201d22c31e35f105e00a262baf"
 metafile = true
 
 [[files]]
-file = "mods/structural_beyond-1.1.0-universal.pw.toml"
-hash = "85a3080a09182602080985d7afe0cadb643f400433b53bac4329b4cbbaf9304b"
-metafile = true
-
-[[files]]
 file = "mods/structure_pool_api-neoforge-1.3.0_26.1.2.pw.toml"
 hash = "693f3b6bf0384a27851db6664b03b80d4b7aeff767be7a00b36a49563bb79598"
 metafile = true
@@ -69708,11 +69562,6 @@ metafile = true
 [[files]]
 file = "mods/supermartijn642corelib-1.1.25-neoforge-mc26.1.pw.toml"
 hash = "a5bb7ead915f00d4f4beb39820a37791fcefe52213ee470286fc0a57c91102b2"
-metafile = true
-
-[[files]]
-file = "mods/t_and_t-fabric-neoforge-1.13.11.pw.toml"
-hash = "9d15a725c2494d6c168a3e718c8ebb87b8b74e5c6833e7aa8d56f8785271e9e6"
 metafile = true
 
 [[files]]
@@ -69761,16 +69610,6 @@ hash = "0b05b07d2c7402b5125e6e175d02acf187b8f2fa3966f512c0e5cf564fd16787"
 metafile = true
 
 [[files]]
-file = "mods/underground_rooms-2.3.2-26.1.2.pw.toml"
-hash = "01f75b0ee88c994c664f76617f26de74d1d2cda7cae05394ab11803aa0d088c4"
-metafile = true
-
-[[files]]
-file = "mods/underwater_village-1.0.0_Neoforge_26.1.2.pw.toml"
-hash = "ff656d0f7579aef2cf0d6e051afeec6af84ecc985622d6c458eb30f4dac77661"
-metafile = true
-
-[[files]]
 file = "mods/unified-api-26.1-1.0-beta-23_neoforge.pw.toml"
 hash = "530c06b82111f1631de528c47c2427825d84d377efd43ae33c75319cd0cb6e6e"
 metafile = true
@@ -69792,11 +69631,6 @@ metafile = true
 [[files]]
 file = "mods/villager-trading-plus-neoforge-26.1.2-1.3.0.pw.toml"
 hash = "4a39b58d4a42f6989e4754f8f6b6d75950f81d7bf827ecb460fa6733e6bd1ddd"
-metafile = true
-
-[[files]]
-file = "mods/villagesandpillages-neoforge-2.0.0_mc26.1.2.pw.toml"
-hash = "d58472dccf1b013219732d5840beca1aa6d99225ecfdb1aaea985c30f960b3ca"
 metafile = true
 
 [[files]]
