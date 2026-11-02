@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "diaithirfilters:filter",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "diaithirfilters:filter_card",
+    "count": 2
+  }
+}
+
+Notes: this module has no blocks, so there are no blockstates, block models or loot tables. Item textures are expected at `diaithirfilters:item/filter` and `diaithirfilters:item/filter_card` (factorio-style industrial look, supplied later). The menu screen is client-side and registered through the menu type; ghost slots are server-authoritative. Other modules take a card with `Filters.isCard(stack)` and `Filters.matches(stack, candidate)`.

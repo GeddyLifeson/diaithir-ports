@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": ["diaithirrouting:extractor_module", "minecraft:repeater"],
+  "result": { "id": "diaithirrouting:round_robin_module", "count": 1 }
+}
+
+I need to flag two things before this will compile. First, `RouterBlockEntity` calls `other.filter.isEmptyList()`, which does not exist on `FilterData`. Add `public boolean isEmptyList() { return entries.isEmpty(); }` to that record. Second, the `ModHopperBlock` FACING property uses `DirectionProperty`; if your mappings have folded it into `EnumProperty<Direction>`, swap it for that. Also note the module and router-link recipes, hopper blockstates and models are included, but the laser beam rendering itself (a client block-entity renderer) is not in this module; the node stores links and syncs them to the client, and the renderer can be added later without touching the logic.

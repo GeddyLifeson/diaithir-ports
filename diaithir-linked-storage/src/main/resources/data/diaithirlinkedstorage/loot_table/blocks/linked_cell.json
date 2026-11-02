@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [ { "type": "minecraft:item", "name": "diaithirlinkedstorage:linked_cell" } ],
+      "conditions": [ { "condition": "minecraft:survives_explosion" } ]
+    }
+  ]
+}
+
+Registration gaps to fix at integration, because I could not verify them against 26.1 from the references: `Menus.MENUS` and the `LinkedPairItem` (`linked_pair`, with its own `items/` json, model, lang entry and recipe) are written but not yet wired into the main class. Add `Menus.MENUS.register(bus);` and an `ITEMS.registerItem("linked_pair", LinkedPairItem::new)` line in `DiaithirLinkedStorage`. A client `Screen` for `LinkedMenu` is also still needed.
+
+The team list in `LinkedData` is stored and consulted by `Access`, but nothing edits it yet. A small `/linkedstorage team add|remove` command, like the reference's `StorageCommands`, is the intended editor.

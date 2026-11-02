@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "diaithirpipes:item_pipe_basic", "diaithirpipes:item_pipe_improved", "diaithirpipes:item_pipe_advanced",
+    "diaithirpipes:fluid_pipe_basic", "diaithirpipes:fluid_pipe_improved", "diaithirpipes:fluid_pipe_advanced",
+    "diaithirpipes:energy_pipe_basic", "diaithirpipes:energy_pipe_improved", "diaithirpipes:energy_pipe_advanced"
+  ]
+}
+
+Notes on the module:
+- Textures to supply later: `block/item_pipe` (yellow), `block/fluid_pipe` (blue), `block/energy_pipe` (red), `item/wrench`, `item/connector`. All three tiers of a kind share one texture; tier is distinguishable by a later overlay if wanted.
+- Id migration is a documented static map (`IdMigration`) because no remap hook is wired in; it can be called from a `RegisterEvent`/`MissingMappingsEvent` handler or used by a data-fix script.
+- The `FilterMenu` registers with a client-side factory that passes a null `PipeBlockEntity`; for the dedicated server this module needs no client screen, and a screen can be added later without changing the logic.
+- `SelfTest.main()` checks face modes, redstone modes, distribution ordering, connector range rule, id migration and tier multiplier.
