@@ -68310,38 +68310,13 @@ hash = "084dc9110257890ff7f73a6cc44b83af862e63dfc303f2d99eab35041cba6f11"
 metafile = true
 
 [[files]]
-file = "mods/MoogsBountifulStructures-1.21-1.0.10.pw.toml"
-hash = "3d7760c9c4152120cb389ece4ea218bb8a9a17610630949886e5a7d51b3b048a"
-metafile = true
-
-[[files]]
-file = "mods/MoogsEndStructures-universal-1.21-2.1.1.pw.toml"
-hash = "9fed5499911eaf1cff973e53d3bc50c5574c1db1e8c0cd483457614d20bccddf"
-metafile = true
-
-[[files]]
-file = "mods/MoogsMineshaftsReimagined-universal-1.21-1.1.0.pw.toml"
-hash = "2b9f6aa549954c7b98e2bccb578fa291b00b31aca5242ab95c8b5299be3b76ef"
-metafile = true
-
-[[files]]
 file = "mods/MoogsMissingVillages-universal-1.21-2.2.0.pw.toml"
 hash = "b0b8f86ba78fc59f2b9d9415b2c045551fa40524f88ed6262e4916864508fd9a"
 metafile = true
 
 [[files]]
-file = "mods/MoogsNetherStructures-universal-1.21-3.1.1.pw.toml"
-hash = "e1262295dcd9cb4826035c57e8744cca84181fabe82d25c529704fc094a24316"
-metafile = true
-
-[[files]]
 file = "mods/MoogsOceanStructures-universal-1.21-1.1.1.pw.toml"
 hash = "b541b0d5352630bf55c4ac62cfd1bbeb91a1b27a9358f4109e05a549ba69cde1"
-metafile = true
-
-[[files]]
-file = "mods/MoogsSoaringStructures-universal-1.21-2.2.0.pw.toml"
-hash = "80936f134dd6063b9f8984c2d1903e6bfe4be3be8e1bd9d3df5ad8edc917be9d"
 metafile = true
 
 [[files]]
@@ -68505,11 +68480,6 @@ hash = "18cbc0ba9c7ad76ea00f911e2e62f05f1f8fb12b37ba5a5d1b7bf309a1af5f8a"
 metafile = true
 
 [[files]]
-file = "mods/SmallStructures-0.6_1.21.9-26.3_UNIVERSAL.pw.toml"
-hash = "16eda99ff81f909f9b432547b0dd1ce7a1f3b03f5912dfe6cecc052032cdb873"
-metafile = true
-
-[[files]]
 file = "mods/Spice_of_Life_Onion_NEOFORGE_v1.5.6_mc26.1.2.pw.toml"
 hash = "c1b874474890449772176a4ab2d8f72d4f3cd48043f348652d9f8eefa5a03384"
 metafile = true
@@ -68556,11 +68526,6 @@ metafile = true
 [[files]]
 file = "mods/Terralith_26.1_v2.6.2_Neoforge.pw.toml"
 hash = "f7894c6cc06818d5f829103930d6052729fc21914867303ef007bcda323d0036"
-metafile = true
-
-[[files]]
-file = "mods/Terralith_ReStoned_v1.3.1.pw.toml"
-hash = "7765cc000af390c08384d6ecd244dc65f60ffb07e33cb7aa876309de2ee46e75"
 metafile = true
 
 [[files]]
@@ -69201,6 +69166,10 @@ hash = "cf63a9c79c3d8a2168fde855b4654737e7a547f69715e3b6d602ddef801a11a4"
 [[files]]
 file = "mods/diaithir-storagenet-neoforge-26.1.2-1.0.0.jar"
 hash = "077b9e4958313433688891b53e8b5f73ceec2960b1762272bd86ff1d657d409c"
+
+[[files]]
+file = "mods/diaithir-structures-data-neoforge-26.1.2-1.0.0.jar"
+hash = "8fc38c800f0e57d2277c4afc8c5c1aa9c3b960b7d010d49ca18bfa1c3dd75574"
 
 [[files]]
 file = "mods/diaithir-tooltips-neoforge-26.1.2-2.4.1.jar"
@@ -69952,11 +69921,6 @@ hash = "d14ba815587859669c1ce2edf0603a8623482629ef883833c44f0126854f2c80"
 metafile = true
 
 [[files]]
-file = "mods/need-more-structures-6.4.pw.toml"
-hash = "9ce23919c78f607edf27a6e5ca80ce9ffdac6ff33cd80d5ceace6f7ebafbad65"
-metafile = true
-
-[[files]]
 file = "mods/neoorigins-2.2.30_26.1.pw.toml"
 hash = "fe6c9d5b271819c4c1a28f4d863c21540b33f430c30050dbfe2dcb0af00d212e"
 metafile = true
@@ -70331,11 +70295,6 @@ file = "mods/structurize-1.0.0-diaithir.jar"
 hash = "1213ef991cb19002471d9a9e236371fcc2d84dd87b0b06a1044fbc61038c7250"
 
 [[files]]
-file = "mods/subsurface-1.0.5.pw.toml"
-hash = "3d2cdfacf992288ab17f8901c1ee32110928eebb651ec3a4c41403fba6a44f7b"
-metafile = true
-
-[[files]]
 file = "mods/supermartijn642configlib-1.1.8-neoforge-mc26.1.pw.toml"
 hash = "c4885c54614a01e5c0a1eebd8a015552ff5cadcccbb289526377051ddabd4723"
 metafile = true
@@ -70352,11 +70311,6 @@ hash = "2e4afef51cf0895fb2d86c6656b9599dd73a290c8817199c9176faec925a47b5"
 [[files]]
 file = "mods/t_and_t-fabric-neoforge-1.13.11.pw.toml"
 hash = "9d15a725c2494d6c168a3e718c8ebb87b8b74e5c6833e7aa8d56f8785271e9e6"
-metafile = true
-
-[[files]]
-file = "mods/tbirds-structures-1.1.2.pw.toml"
-hash = "fb9d0eb1bdcbc7611765621a03b7548404ae098ed13204518118118774d60152"
 metafile = true
 
 [[files]]
@@ -70385,11 +70339,6 @@ hash = "de90d5896e4231a1e7e32df155d8a079ad2ee2d23944822290115e67961391cb"
 metafile = true
 
 [[files]]
-file = "mods/thuns-structures-1.3.2.pw.toml"
-hash = "80b86261c5d7363e9673012dd81831adbbe5b50ff5b3fd9da318dee6a6a35c8a"
-metafile = true
-
-[[files]]
 file = "mods/tinypipes-26.1-6.1.1.pw.toml"
 hash = "6bec6ea4b18ee94881b51d01ad6634cdd3b1272e74b0b397ed9b159d4f731870"
 metafile = true
@@ -70412,11 +70361,6 @@ metafile = true
 [[files]]
 file = "mods/trashslot-neoforge-26.1.2-26.1.2.4.pw.toml"
 hash = "52d44d93c9dde9c68f7d6be37e339c955418152d5d20ada2b609f32e9c76de72"
-metafile = true
-
-[[files]]
-file = "mods/trek-B0.6.2.pw.toml"
-hash = "7e26e863f9b5b927d478eb9695db36b96f40ba701294dd8b81fa6342a5353ccc"
 metafile = true
 
 [[files]]
@@ -70451,11 +70395,6 @@ hash = "396749f6d36d5d4097908ff92ada55f164ac90ceb1692f1d468751e9b966dc44"
 [[files]]
 file = "mods/uranus-3.0-alpha.1-neoforge-26.1.2-diaithir.1.jar"
 hash = "6793e7cb78adfb98421b1b8b55bf382eb04d89c0320a031f45d00ccd5b45cadb"
-
-[[files]]
-file = "mods/useful-structures-v3.1.pw.toml"
-hash = "4a04060a07209fe0c38d624c2646a9083a44b421c20d7d8f7c256604bead00d4"
-metafile = true
 
 [[files]]
 file = "mods/utilitarian-26.1.2-0.22.0.pw.toml"
@@ -70564,3 +70503,4 @@ metafile = true
 file = "resourcepacks/diaithir-ui.pw.toml"
 hash = "a63498f17e6c12b295ee2b0f0ea9536f1f1a37b44af861a7b24fb38a8825f9bf"
 metafile = true
+
