@@ -1,0 +1,8 @@
+name = "diaithir-client-view-input-client-neoforge-26.1.2-1.0.0"
+filename = "diaithir-client-view-input-client-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-fold5-jars/client/diaithir-client-view-input-client-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "f1b42e8792bf0f41d8cf02c202e7f78266b8418b5dd0f358f5f7ae2b0fe75b18"
