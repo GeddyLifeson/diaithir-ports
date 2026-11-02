@@ -1,0 +1,24 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "researcher"
+version = "${version}"
+displayName = "Researcher (Diaithir Automation and Crafting)"
+authors = "Tr100000; NeoForge port for Diaithir"
+description = "A data-driven research tree inspired by Factorio. Ported from Tr100000's Researcher (MIT) to NeoForge 26.1.2 as the research bench of the Diaithir automation and crafting module."
+logoFile = "assets/researcher/icon.png"
+
+[[mixins]]
+config = "researcher.mixins.json"
+
+[[mixins]]
+config = "researcher.client.mixins.json"
+
+[[dependencies.researcher]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"
