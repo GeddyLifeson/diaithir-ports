@@ -68034,21 +68034,6 @@ hash = "5ed7f69784c96ef50903b48d845c3916b7e4560e3ee8e8cff4b7a202aa13aad5"
 metafile = true
 
 [[files]]
-file = "mods/DiagonalFences-v26.1.0-mc26.1.x-NeoForge.pw.toml"
-hash = "3e99e32d0da1ea050915f7c62ed090306e3b276abfbba827ff3223634a5b8bec"
-metafile = true
-
-[[files]]
-file = "mods/DiagonalWalls-v26.1.0-mc26.1.x-NeoForge.pw.toml"
-hash = "699c860efcfb2ec831df2dfc0ba63f3e17c08d57bf5db3e5932fae1ce3683613"
-metafile = true
-
-[[files]]
-file = "mods/DiagonalWindows-v26.1.0-mc26.1.x-NeoForge.pw.toml"
-hash = "a65e330e91abaa46692883762d27161fd68305f9ddc740e0ef130dcf73e39bed"
-metafile = true
-
-[[files]]
 file = "mods/DimStorage-26.1.2-10.0.1.pw.toml"
 hash = "3d1b34aadc0272686a36003a0f5934cdeedee1ad3016beed8749a1ec3b77fcd8"
 metafile = true
@@ -69102,6 +69087,10 @@ hash = "97d4d47610826aa308079e73695dc1ae48c86053dfe42153785427d172fb6c92"
 [[files]]
 file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
 hash = "df829249aff59c3a50a04b50839b0b9d739590f5b733f2357482d5441cd3b73f"
+
+[[files]]
+file = "mods/diaithir-diagonal-blocks-neoforge-26.1.0-1.0.0.jar"
+hash = "37473580323be0c1b535794fe53bdc73f24e42c191b26f4e4e917729bb31329a"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
