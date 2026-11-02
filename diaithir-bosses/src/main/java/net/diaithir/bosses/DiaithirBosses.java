@@ -58,6 +58,16 @@ public final class DiaithirBosses {
     public static final DeferredBlock<Block> ALTAR = BLOCKS.registerBlock("boss_altar", AltarBlock::new,
         () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).requiresCorrectToolForDrops().lightLevel(s -> 7));
     public static final DeferredItem<net.minecraft.world.item.BlockItem> ALTAR_ITEM = ITEMS.registerSimpleBlockItem(ALTAR);
+    public static final DeferredBlock<Block> ASCENDANT_ALTAR = BLOCKS.registerBlock("ascendant_altar", AscendantAltarBlock::new,
+        () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).requiresCorrectToolForDrops().lightLevel(s -> 10));
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> ASCENDANT_ALTAR_ITEM = ITEMS.registerSimpleBlockItem(ASCENDANT_ALTAR);
+    public static final DeferredBlock<Block> OGHAM_STONE = BLOCKS.registerBlock("ogham_stone", OghamStoneBlock::new,
+        () -> BlockBehaviour.Properties.of().strength(3.0F, 12.0F).lightLevel(s -> 4));
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> OGHAM_STONE_ITEM = ITEMS.registerSimpleBlockItem(OGHAM_STONE);
+    public static final DeferredItem<Item> BOSS_CATALYST = ITEMS.registerSimpleItem("boss_catalyst");
+    public static final DeferredItem<Item> HOLLOW_CORE = ITEMS.registerSimpleItem("hollow_core");
+    public static final DeferredItem<Item> AGESHARD = ITEMS.registerSimpleItem("ageshard");
+    public static final DeferredItem<Item> RUSH_LAUREL = ITEMS.registerSimpleItem("rush_laurel");
     public static final DeferredItem<Item> TOKEN = ITEMS.registerSimpleItem("champion_token");
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AltarBlockEntity>> ALTAR_BE =
         BLOCK_ENTITIES.register("boss_altar", () -> new BlockEntityType<>(AltarBlockEntity::new, ALTAR.get()));
@@ -66,6 +76,12 @@ public final class DiaithirBosses {
         .icon(() -> new ItemStack(ALTAR_ITEM.get()))
         .displayItems((params, out) -> {
             out.accept(ALTAR_ITEM.get());
+            out.accept(ASCENDANT_ALTAR_ITEM.get());
+            out.accept(OGHAM_STONE_ITEM.get());
+            out.accept(BOSS_CATALYST.get());
+            out.accept(HOLLOW_CORE.get());
+            out.accept(AGESHARD.get());
+            out.accept(RUSH_LAUREL.get());
             out.accept(TOKEN.get());
             EGGS.values().forEach(i -> out.accept(i.get()));
             TROPHIES.values().forEach(i -> out.accept(i.get()));

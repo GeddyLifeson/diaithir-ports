@@ -75,7 +75,13 @@
   "diaithirbosses:rootbreaker_trophy": "Rodos",
   "diaithirbosses:rootbreaker_spawn_egg": "Rodos",
   "diaithirbosses:last_wheel_trophy": "Rodos",
-  "diaithirbosses:last_wheel_spawn_egg": "Rodos"
+  "diaithirbosses:last_wheel_spawn_egg": "Rodos",
+  "diaithirbosses:ascendant_altar": "VII",
+  "diaithirbosses:rush_laurel": "VII",
+  "diaithirbosses:ogham_stone": "VII",
+  "diaithirbosses:boss_catalyst": "VII",
+  "diaithirbosses:hollow_core": "Rodos",
+  "diaithirbosses:ageshard": "Rodos"
  },
  "entities": {
   "diaithirbosses:tribal_chief": "I",

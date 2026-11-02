@@ -23,18 +23,35 @@ No Minecraft mod for 26.1 offers this genre. So: our own content, same genre onl
 - **Quests** (`quests/ascendant.json`, Codex Quests tab): Raise the altar, Ascendant I to III, The Gauntlet, and a quest per mode.
 - **Global Events** (`diaithir_events.json`, #111): blood moon halves respawn cooldown, eclipse buffs Dusk Wyrm, storm buffs Tide Reaver and Ash Seraph, calendar year change resets cooldowns. Fires `ascendant_boss_defeated`, `boss_rush_cleared`, `ascendant_mode_raised`.
 - **Codex**: two chapters appended to `codex/bosses_handbook.json`. Boss Checklist (RPG #218) reads `boss_index.json` and `age_gates.json`, both updated.
-- **Hostile encounters** (#113, #120): Ascendant bosses are valid anchors for an encounter; the encounter module spawns the boss through `/boss spawn <id>` semantics. Combat rewrite thread (cmsg_...N7D6ck) owns the attack-type additions listed below.
+- **Hostile encounters** (#113, #120): Ascendant bosses are valid anchors for an encounter; the encounter module spawns the boss through `/boss spawn <id>` semantics. Combat rewrite thread (combat rewrite thread) owns the attack-type additions listed below.
 
-## Not in this PR (listed so nothing is claimed that is not there)
-1. **Java**: a rush controller that reads `rush.json`, a mode store that reads `difficulty.json`, quest and event glue (the files are the contract), the Ascendant altar block (`summon.rite`). Today the bosses are testable with spawn eggs and `/boss spawn`. `SelfTest` Age check widened to Rodos.
-2. **Endgame biomes and materials**: designed here, built in the worldgen and biomes rewrite threads.
-   - *Thornwake* (Age VII): old-growth forest with antler-bone groves; ore `hollowsteel` (tag `c:ores/hollowsteel`, `diaithir:ore/hollowsteel`).
-   - *Cinderfen* (Rodos): ash marsh over a buried foundry; `emberglass` (gem) and `slagiron`.
-   - *The Unwound* (Rodos II): floating arcs of broken clockwork; `ageshard`, dropped only by tier III.
-   - Recipes use `c:` tags; units per UNITS.md (hardness in kg-based terms, machine draw in W, J costs). Every working block gets an upgrade rule (#117).
-3. **Attack types**: `gravity_well`, `rewind` (Last Wheel returns players to a position from 5 s ago).
-4. **Art**: textures are luminance-ramped vanilla skins in the project's recolour style at the vanilla skin size; 64 px bespoke art goes to the texture lanes.
-5. No client world-join test has been run (cloud session); needs the PC lane.
+## Rites: how an Ascendant boss is woken (own design)
+No boss appears from a single click. A rite is a chain of steps with a cryptic clue each; the clue shows when the step opens and stays in the Codex Rites page (`codex/ritual_hints.json`, one quest per clue). The altar is the Ascendant altar (overworld only). It starts with a **champion token** (the next boss you have not beaten) or a **trophy** (a rematch).
+| Step | What the players do |
+|---|---|
+| feast | Set one dish from `#diaithirbosses:offering_feast` on the altar (kitchen module adds to the tag; PROGRESSION.md: needs cold store). |
+| offer | Give a stack of a named item (bones, iron blocks, ender eyes, clocks...). |
+| hunt | Kill a count of a named creature within 48 blocks of the altar. |
+| stones | Place **ogham stones** nearby. Use one to turn its rune (Birch, Rowan, Alder, Willow, Ash, Hawthorn, Oak, Holly, Hazel); sneak-use seals the rune it shows. The order is hidden in the clue as nine tree riddles. A wrong rune hurts and resets the step. |
+| hour | Use the altar only inside a time window (midnight, dawn, dusk, noon). |
+| coop | Tier II and III: 2 or 3 fighters must stand at the altar together. |
+| defend | Hold the altar for 60 to 150 s against waves that scale with fighters present; leave it alone and the step resets. |
+Tier I rites have 6 steps, tier II 7, tier III 7 to 8. Each rite ends in the boss waking at the altar. Progress is saved per altar. Tiers II and III still need the lower tier beaten once.
+Not copied from anything: the steps, riddles, trees and items are ours, built from Celtic lore (ogham, the tree calendar) and the Age clock.
+
+## Materials and the progression web (plans/PROGRESSION.md)
+Drops: `diaithirbosses:boss_catalyst` (tier I), `hollow_core` (tier II and III), `ageshard` (The Last Wheel only). Offering feast comes from the kitchen module through the tag above. Ids as proposed by the progression thread.
+
+## Java now in the PR
+`Rush` (rush.json), `Difficulty` + `AscendantData` (mode, wins, rites, best time; `/boss mode`, `/boss rush start|stop`), `AscendantAltarBlock`, `OghamStoneBlock`, `Ritual`. Built on JDK 25 / NeoForge 26.1.2.116. `/bossesselftest` on a flat server: 35 bosses, 1964 checks, 0 failed, including one full rite (feast, offering, hunt, wrong and right runes, hour window, defend, boss wakes).
+
+## Not done
+1. Rush has no run in the self test yet (needs a real player to fight); the rush controller compiles and loads `rush.json`.
+2. Global Events and quest completion are data contracts (`diaithir_events.json`, `quests/ascendant.json`); the glue to those modules waits for their APIs.
+3. **Biomes and materials**: designed here (Thornwake, Cinderfen, The Unwound; ores `hollowsteel`, `emberglass`, `slagiron`), built by the worldgen threads. Hidden, world-spread rite sites need that worldgen.
+4. Attack types `gravity_well` and `rewind`.
+5. Art: textures are recolours of vanilla skins; 64 px art goes to the texture lanes. Ogham stone and altar use vanilla block textures.
+6. No client world-join test yet (needs the PC lane); no multiplayer balance pass.
 
 ## Regenerate
 `python3 -I tools/gen_ascendant.py <vanilla skins dir>` (S0312 in Global-Repo). Additive: does not wipe `gen.py` output.

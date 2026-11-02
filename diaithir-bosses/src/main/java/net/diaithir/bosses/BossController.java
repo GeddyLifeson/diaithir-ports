@@ -153,7 +153,8 @@ public final class BossController {
     /** Scaling by Age and by the number of fighters present at the moment the boss appears. */
     private void scaleOnSpawn() {
         int near = Math.max(1, participants().size());
-        double hpMul = ageScale(true) + prof.scaling.hp_per_extra_player * (near - 1);
+        Difficulty.Mode mode = Difficulty.current(level.getServer());
+        double hpMul = (ageScale(true) + prof.scaling.hp_per_extra_player * (near - 1)) * mode.hp;
         AttributeInstance hp = mob.getAttribute(Attributes.MAX_HEALTH);
         double base = hp != null ? hp.getBaseValue() : 1;
         if (hp != null && !prof.ownsEntity() && prof.own.hp > base) {
@@ -170,7 +171,7 @@ public final class BossController {
         AttributeInstance dm = mob.getAttribute(Attributes.ATTACK_DAMAGE);
         if (dm != null) {
             dm.removeModifier(DMG_MOD);
-            dm.addPermanentModifier(new AttributeModifier(DMG_MOD, ageScale(false) - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            dm.addPermanentModifier(new AttributeModifier(DMG_MOD, ageScale(false) * mode.damage - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         }
         mob.setHealth(mob.getMaxHealth());
         float want = (float) (base * hpMul);
@@ -354,7 +355,7 @@ public final class BossController {
     }
 
     private void finish(Data.Attack a) {
-        cooldown = (int) Math.max(10, a.cooldown * ph().cooldown);
+        cooldown = (int) Math.max(10, a.cooldown * ph().cooldown * Difficulty.current(level.getServer()).cooldown);
         last = current;
         current = null;
         airborne = 0;
@@ -584,7 +585,7 @@ public final class BossController {
             var item = BuiltInRegistries.ITEM.getOptional(Identifier.parse(l.item));
             if (item.isEmpty() || item.get() == net.minecraft.world.item.Items.AIR) continue;
             int n = l.min + rnd.nextInt(Math.max(1, l.max - l.min + 1)) + l.per_age * (worldAge - l.min_age) / 2;
-            addStacks(out, item.get(), Math.max(1, n));
+            addStacks(out, item.get(), Math.max(1, (int) Math.round(n * Difficulty.current(level.getServer()).loot)));
         }
         var trophy = DiaithirBosses.TROPHIES.get(prof.id);
         if (trophy != null) out.add(new ItemStack(trophy.get()));
@@ -609,7 +610,8 @@ public final class BossController {
             ie.setDeltaMovement((rnd.nextDouble() - 0.5) * 0.3, 0.3, (rnd.nextDouble() - 0.5) * 0.3);
             level.addFreshEntity(ie);
         }
-        int xp = prof.xp;
+        int xp = (int) (prof.xp * Difficulty.current(level.getServer()).xp);
+        AscendantData.get(level.getServer()).defeat(prof.id, level.getGameTime());
         while (xp > 0) {
             int c = Math.min(xp, 400);
             ExperienceOrb.award(level, mob.position(), c);
