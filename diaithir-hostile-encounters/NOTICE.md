@@ -6,4 +6,6 @@ What was taken: the event model (default, blood, blue, harvest and super variant
 
 What changed: rebuilt on plain NeoForge 26.1.2 events and datapack JSON. CorgiLib, Data Anchor and every mixin are gone. The upstream art, sounds, lang text and the EC2 announcement screens are not used; all text in `assets/diaithirhostile/lang` is original. Spawn pressure is a small horde spawner instead of mob-cap mixins.
 
+Global Events bridge: when diaithir-worldevents is loaded, every lunar event is registered through WorldEvents.register (weight 0, so the lunar forecast stays the only moon scheduler; `/worldevents start blood_moon` forces it tonight). Global Events has its own blood moon; at merge, drop that one in favour of the lunar blood moon.
+
 Not ported yet: the sky and moon tint (client rendering), beacon radius and enchanting table cost changes, meteors.

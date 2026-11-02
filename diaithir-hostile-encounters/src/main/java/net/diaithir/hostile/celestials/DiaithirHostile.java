@@ -14,5 +14,6 @@ public final class DiaithirHostile {
     public DiaithirHostile() {
         NeoForge.EVENT_BUS.register(LunarEvents.class);
         NeoForge.EVENT_BUS.register(SelfTest.class);
+        NeoForge.EVENT_BUS.register(WorldEventsBridge.class);
     }
 }
