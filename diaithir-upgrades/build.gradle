@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-upgrades-api'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+repositories { mavenCentral() }
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+test { useJUnitPlatform() }

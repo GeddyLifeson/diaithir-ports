@@ -1,0 +1,2 @@
+{ "_comment": "Format of a compat shim for a kept third-party mod. Real shims are added per mod by the consolidation threads.",
+  "rules": [ { "pattern": "examplemod:*", "priority": 100, "slots": 2, "allowed": ["speed", "efficiency"], "max_quality": 2 } ] }
