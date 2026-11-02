@@ -13,7 +13,7 @@ D = os.path.join(ROOT, "data", NS)
 for d in ("textures/block", "models/block", "blockstates", "items", "lang"):
     os.makedirs(os.path.join(A, d), exist_ok=True)
 os.makedirs(os.path.join(D, "recipe"), exist_ok=True)
-os.makedirs(os.path.join(HERE, "..", "..", "library-sync"), exist_ok=True)
+os.makedirs(os.path.join(HERE, "..", "..", "..", "library-sync"), exist_ok=True)
 
 S = 64
 STEEL = [(58, 60, 64), (70, 73, 78), (84, 88, 94), (47, 49, 53)]
@@ -130,7 +130,7 @@ NAMES = {
 }
 wj("lang/en_us.json", {f"block.{NS}.{k}": v[0] for k, v in NAMES.items()})
 
-with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as f:
+with open(os.path.join(HERE, "..", "..", "..", "library-sync", NS + ".json"), "w") as f:
     json.dump([{"id": f"{NS}:{k}", "name": v[0], "text": v[1]} for k, v in NAMES.items()], f, indent=1, ensure_ascii=False)
     f.write("\n")
 

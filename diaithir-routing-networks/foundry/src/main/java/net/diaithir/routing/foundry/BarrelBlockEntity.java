@@ -13,10 +13,15 @@ import net.neoforged.neoforge.transfer.item.ItemResource;
 import org.jspecify.annotations.Nullable;
 
 public final class BarrelBlockEntity extends BlockEntity {
-    public final BarrelStore store = new BarrelStore(this::setChanged);
+    public final BarrelStore store = new BarrelStore(this::changed);
 
     public BarrelBlockEntity(BlockPos pos, BlockState state) {
         super(DiaithirRouting.BARREL_BE.get(), pos, state);
+    }
+
+    private void changed() {
+        setChanged();
+        if (level != null) level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());
     }
 
     /** Insert from every face but the bottom, extract from the bottom only. A null side (a player or a tool) may do both. */

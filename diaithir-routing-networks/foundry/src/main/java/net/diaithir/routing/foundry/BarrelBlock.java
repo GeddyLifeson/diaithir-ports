@@ -33,6 +33,17 @@ public final class BarrelBlock extends BaseEntityBlock {
     @Override public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new BarrelBlockEntity(pos, state); }
 
     @Override
+    protected boolean hasAnalogOutputSignal(BlockState state) {
+        return true;
+    }
+
+    @Override
+    protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, net.minecraft.core.Direction direction) {
+        if (!(level.getBlockEntity(pos) instanceof BarrelBlockEntity be) || be.store.resource().isEmpty()) return 0;
+        return 1 + (int) (14L * be.store.count() / BarrelStore.capacity(be.store.resource()));
+    }
+
+    @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (stack.isEmpty()) return InteractionResult.TRY_WITH_EMPTY_HAND;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
