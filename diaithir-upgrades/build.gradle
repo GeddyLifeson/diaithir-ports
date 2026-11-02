@@ -1,8 +1,10 @@
 plugins {
     id 'java-library'
+    id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.148'
 }
 
+group = 'net.diaithir'
 version = project.mod_version
 base.archivesName = 'diaithir-upgrades-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -29,9 +31,19 @@ repositories {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation 'com.google.code.gson:gson:2.11.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
 }
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'diaithir-upgrades'
+            from components.java
+        }
+    }
 }

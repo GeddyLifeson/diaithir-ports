@@ -17,6 +17,8 @@ public final class TargetRegistry {
 
     private final List<Rule> rules = new ArrayList<>();
 
+    public void clear() { rules.clear(); }
+
     public void add(Rule r) {
         rules.add(r);
         rules.sort((a, b) -> Integer.compare(a.priority(), b.priority()));

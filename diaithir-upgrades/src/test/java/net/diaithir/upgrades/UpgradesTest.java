@@ -77,4 +77,13 @@ class UpgradesTest {
         assertEquals(1250.0, Resolver.powerWatts(1000, e), 1e-9);
         assertEquals(20.0, Resolver.jobSeconds(30, e), 1e-9);
     }
+
+    @Test void ruleLoaderParsesAndSkipsBadRows() {
+        var json = com.google.gson.JsonParser.parseString(
+                "{\"rules\":[{\"pattern\":\"a:*\",\"slots\":2,\"allowed\":[\"speed\"]},"
+              + "{\"pattern\":\"b:x\",\"slots\":2,\"allowed\":[\"nope\"]}]}").getAsJsonObject();
+        var rules = RuleLoader.parse(json);
+        assertEquals(1, rules.size());
+        assertEquals(4, rules.get(0).maxQuality());
+    }
 }
