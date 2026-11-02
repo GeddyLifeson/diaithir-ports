@@ -116,6 +116,7 @@ public final class DiaithirRelics {
     }
 
     public DiaithirRelics(IEventBus bus) {
+        Consolidated.load();
         for (Def d : DATA.items()) {
             DeferredItem<Item> it = ITEMS.registerItem(d.id(), p -> new RelicItem(p, d), () -> props(d));
             ALL.put(d.id(), it);
