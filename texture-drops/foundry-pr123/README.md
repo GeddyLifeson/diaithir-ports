@@ -1,0 +1,1 @@
+Textures for PR #123 diaithir-foundry (64 px, 16 files). Copy diaithirfoundry/ into diaithir-foundry/src/main/resources/assets/. Made with Global-Repo cloud/texture-pack/gaps-src pixel_icons.py plus the two scripts here. Own art, no third-party assets.
