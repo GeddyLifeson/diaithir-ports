@@ -68034,21 +68034,6 @@ hash = "5ed7f69784c96ef50903b48d845c3916b7e4560e3ee8e8cff4b7a202aa13aad5"
 metafile = true
 
 [[files]]
-file = "mods/DiagonalFences-v26.1.0-mc26.1.x-NeoForge.pw.toml"
-hash = "3e99e32d0da1ea050915f7c62ed090306e3b276abfbba827ff3223634a5b8bec"
-metafile = true
-
-[[files]]
-file = "mods/DiagonalWalls-v26.1.0-mc26.1.x-NeoForge.pw.toml"
-hash = "699c860efcfb2ec831df2dfc0ba63f3e17c08d57bf5db3e5932fae1ce3683613"
-metafile = true
-
-[[files]]
-file = "mods/DiagonalWindows-v26.1.0-mc26.1.x-NeoForge.pw.toml"
-hash = "a65e330e91abaa46692883762d27161fd68305f9ddc740e0ef130dcf73e39bed"
-metafile = true
-
-[[files]]
 file = "mods/DimStorage-26.1.2-10.0.1.pw.toml"
 hash = "3d1b34aadc0272686a36003a0f5934cdeedee1ad3016beed8749a1ec3b77fcd8"
 metafile = true
@@ -68310,23 +68295,8 @@ hash = "084dc9110257890ff7f73a6cc44b83af862e63dfc303f2d99eab35041cba6f11"
 metafile = true
 
 [[files]]
-file = "mods/MoogsMissingVillages-universal-1.21-2.2.0.pw.toml"
-hash = "b0b8f86ba78fc59f2b9d9415b2c045551fa40524f88ed6262e4916864508fd9a"
-metafile = true
-
-[[files]]
-file = "mods/MoogsOceanStructures-universal-1.21-1.1.1.pw.toml"
-hash = "b541b0d5352630bf55c4ac62cfd1bbeb91a1b27a9358f4109e05a549ba69cde1"
-metafile = true
-
-[[files]]
 file = "mods/MoogsStructureLib-neoforge-26.1.2-3.4.2.pw.toml"
 hash = "6db63c5c14a25425e71e1de6e9b96506e3f5bab81bb9ef7653166b6ca635cd70"
-metafile = true
-
-[[files]]
-file = "mods/MoogsVoyagerStructures-universal-1.21-5.1.3.pw.toml"
-hash = "32f37565656392f94edd8948f4e957e9df777a703936b4b0954d00f5cf239d5b"
 metafile = true
 
 [[files]]
@@ -69119,6 +69089,10 @@ file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
 hash = "df829249aff59c3a50a04b50839b0b9d739590f5b733f2357482d5441cd3b73f"
 
 [[files]]
+file = "mods/diaithir-diagonal-blocks-neoforge-26.1.0-1.0.0.jar"
+hash = "37473580323be0c1b535794fe53bdc73f24e42c191b26f4e4e917729bb31329a"
+
+[[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
 hash = "2be6757f11fee031263f59db61f27ced0e6ea50345be43594af8f031aa9c2087"
 metafile = true
@@ -69168,8 +69142,8 @@ file = "mods/diaithir-storagenet-neoforge-26.1.2-1.0.0.jar"
 hash = "077b9e4958313433688891b53e8b5f73ceec2960b1762272bd86ff1d657d409c"
 
 [[files]]
-file = "mods/diaithir-structures-data-neoforge-26.1.2-1.0.0.jar"
-hash = "8fc38c800f0e57d2277c4afc8c5c1aa9c3b960b7d010d49ca18bfa1c3dd75574"
+file = "mods/diaithir-structures-data-neoforge-26.1.2-1.1.1.jar"
+hash = "5959a53df38ae1e34917e96328e8723ea7e981914fed244f6521fef081e44c99"
 
 [[files]]
 file = "mods/diaithir-tooltips-neoforge-26.1.2-2.4.1.jar"
@@ -69855,11 +69829,6 @@ hash = "cb65f63ba188feb168301369133c138163f1ee9a41cc27fd877944ee701228aa"
 [[files]]
 file = "mods/mininggadgets-1.19.3.pw.toml"
 hash = "2596071498e95dacd54e9b9ba33c256628a85c0a35c604f1513b5392532ca502"
-metafile = true
-
-[[files]]
-file = "mods/moai-statues-1.0.0.pw.toml"
-hash = "b138e900429656082cc4166b7d684d8bca679035d0be5c9a2dabb88f2a69b553"
 metafile = true
 
 [[files]]
