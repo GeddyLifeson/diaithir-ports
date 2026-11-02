@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:string",
+  "#minecraft:planks"
+ ],
+ "result": {
+  "id": "archimedes:buffer",
+  "count": 1
+ }
+}

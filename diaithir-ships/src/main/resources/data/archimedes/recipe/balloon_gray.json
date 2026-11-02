@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "S"
+ ],
+ "key": {
+  "W": "minecraft:gray_wool",
+  "S": "minecraft:string"
+ },
+ "result": {
+  "id": "archimedes:balloon_gray",
+  "count": 1
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "archimedes:block/marker"
+  },
+  "facing=east": {
+   "model": "archimedes:block/marker",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "archimedes:block/marker",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "archimedes:block/marker",
+   "y": 270
+  }
+ }
+}
