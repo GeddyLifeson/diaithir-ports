@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "GPL-3.0-only"
+
+[[mods]]
+modId = "diaithircreatureutilities"
+version = "${version}"
+displayName = "Diaithir Creature Utilities"
+authors = "Diaithir; Fishing Crates by tsuniko"
+description = "Fishing crates: wooden, iron and golden crates that turn up while fishing and hold a spread of loot when broken. Ported from Fishing Crates by tsuniko (GPL-3.0); our own art."
+
+[[dependencies.diaithircreatureutilities]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
