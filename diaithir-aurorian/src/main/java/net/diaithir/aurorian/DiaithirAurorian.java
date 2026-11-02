@@ -74,7 +74,7 @@ public final class DiaithirAurorian {
     public record ItemSpec(String id, String kind, String mat, String slot, Float damage, Float speed, Integer durability,
                            Integer nutrition, Float saturation, Boolean fast, String rarity, List<Effect> effects) {}
     public record Effect(String id, int ticks, int amp, float chance) {}
-    public record BlockSpec(String id, String kind, String copy, String base, Boolean unbreakable, Integer light) {}
+    public record BlockSpec(String id, String kind, String copy, String base, Boolean unbreakable, Integer light, String key, Boolean lockpick) {}
     public record Data(Map<String, ToolMat> tools, Map<String, ArmorMat> armor, List<ItemSpec> items, List<BlockSpec> blocks) {}
 
     public static final Data DATA = load();
@@ -194,6 +194,7 @@ public final class DiaithirAurorian {
             case "stairs" -> new StairBlock(block(b.base()).defaultBlockState(), p);
             case "wall" -> new WallBlock(p);
             case "fence" -> new FenceBlock(p);
+            case "keyhole" -> new GateKeyholeBlock(p, Identifier.parse(b.key()), Boolean.TRUE.equals(b.lockpick()));
             case "bars" -> new IronBarsBlock(p);
             case "log" -> new RotatedPillarBlock(p);
             case "leaves" -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, p.noOcclusion());

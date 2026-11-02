@@ -82,20 +82,6 @@
   }
  },
  "armor": {
-  "aurorian_steel": {
-   "name": "aurorian_steel",
-   "durability": 33,
-   "boots": 4,
-   "legs": 7,
-   "chest": 8,
-   "helmet": 4,
-   "enchant": 10,
-   "sound": "netherite",
-   "toughness": 1.0,
-   "knockback": 0.1,
-   "repair": "theaurorian:aurorian_steel_ingot",
-   "age": "III"
-  },
   "knight": {
    "name": "knight",
    "durability": 20,
@@ -109,6 +95,20 @@
    "knockback": 0.0,
    "repair": null,
    "age": "II"
+  },
+  "aurorian_steel": {
+   "name": "aurorian_steel",
+   "durability": 33,
+   "boots": 4,
+   "legs": 7,
+   "chest": 8,
+   "helmet": 4,
+   "enchant": 10,
+   "sound": "netherite",
+   "toughness": 1.0,
+   "knockback": 0.1,
+   "repair": "theaurorian:aurorian_steel_ingot",
+   "age": "III"
   },
   "cerulean": {
    "name": "cerulean",
@@ -673,6 +673,20 @@
    "copy": "theaurorian:runestone"
   },
   {
+   "id": "runestone_gate_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:runestone",
+   "key": "theaurorian:runestone_key",
+   "lockpick": false
+  },
+  {
+   "id": "runestone_gate_loot_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:runestone",
+   "key": "theaurorian:runestone_loot_key",
+   "lockpick": false
+  },
+  {
    "id": "runestone_lamp",
    "kind": "full",
    "copy": "theaurorian:runestone",
@@ -703,6 +717,13 @@
    "id": "darkstone_gate",
    "kind": "full",
    "copy": "theaurorian:darkstone"
+  },
+  {
+   "id": "darkstone_gate_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:darkstone",
+   "key": "theaurorian:darkstone_key",
+   "lockpick": false
   },
   {
    "id": "darkstone_lamp",
@@ -742,9 +763,23 @@
    "copy": "theaurorian:moon_temple_bricks"
   },
   {
+   "id": "moon_temple_gate_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:moon_temple_bricks",
+   "key": "theaurorian:moon_temple_key",
+   "lockpick": false
+  },
+  {
    "id": "moon_temple_interior_gate",
    "kind": "full",
    "copy": "theaurorian:moon_temple_bricks"
+  },
+  {
+   "id": "moon_temple_interior_gate_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:moon_temple_bricks",
+   "key": "theaurorian:moon_temple_interior_key",
+   "lockpick": false
   },
   {
    "id": "moon_temple_lamp",

@@ -26,10 +26,10 @@ DEFERRED_ITEMS = {"absorption_orb", "living_divining_rod", "mirror_of_guidance",
                   "ruby_amulet", "sapphire_amulet", "cerulean_arrow", "crystal_arrow", "strange_meat", "silentwood_bow",
                   "umbra_chestplate", "umbra_greatsword", "crystalline_sword", "spectral_helmet", "spectral_chestplate",
                   "spectral_leggings", "spectral_boots"}
-DEFERRED_BLOCK_CLASS = {"DungeonGateKeyHole", "AurorianPortal", "AurorianPortalFrame",
+DEFERRED_BLOCK_CLASS = {"AurorianPortal", "AurorianPortalFrame",
                         "AurorianFurnaceBlock", "BossSpawnerBlock", "MoonlightForgeBlock", "ScrapperBlock", "SilentwoodChestBlock",
                         "SilentwoodCraftingTableBlock", "ChimneyBlock", "CrystalBlock", "FogWallBlock", "SaplingBlock"}
-BLOCK_KIND = {"Block": "full", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
+BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
               "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "TallGrassBlock": "plant"}
 
 
@@ -146,7 +146,7 @@ def build_blocks():
     blocks, deferred = [], []
     for m in re.finditer(r'regBlockItem(?:WithBurntime)?\(BLOCKS\w*, "(\w+)", \(\) -> new (\w+)\(([^\n]*)\)(?:, (\d+))?\);\n', s):
         bid, cls, args, burn = m.groups()
-        if cls in DEFERRED_BLOCK_CLASS or bid in ("runestone_gate_keyhole",):
+        if cls in DEFERRED_BLOCK_CLASS or False:
             deferred.append(bid)
             continue
         kind = BLOCK_KIND.get(cls)
@@ -164,6 +164,9 @@ def build_blocks():
             spec["light"] = int(lt.group(1))
         if burn:
             spec["burn"] = int(burn)
+        if cls == "DungeonGateKeyHole":
+            spec["key"] = NS + ":" + re.search(r"ItemRegistry\.(\w+)", args).group(1)
+            spec["lockpick"] = bool(re.search(r"\btrue\)", args))
         if cls == "StairBlock":
             base = re.search(r"(?:Blocks\.(\w+)::defaultBlockState|(\w+)\.get\(\)\.defaultBlockState\(\))", args)
             spec["base"] = ("minecraft:" + base.group(1).lower()) if base.group(1) else NS + ":" + base.group(2)
