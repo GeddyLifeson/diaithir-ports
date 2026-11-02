@@ -1,0 +1,932 @@
+{
+ "abandoned_mine_camp": {
+  "from_mod": "adorabuild",
+  "source_file": "adorabuild-structures-2.11.0-neoforge-26.1.1.jar",
+  "merge_with": "mineshaft"
+ },
+ "abyssal_obelisk_deep": {
+  "from_mod": "hopo_better_underwater_ruins",
+  "source_file": "HopoBetterUnderwaterRuins-[26.1]-1.2.7.jar",
+  "merge_with": null
+ },
+ "ash_wasteland_crypt": {
+  "from_mod": "mycenae",
+  "source_file": "mycenae-1.0.0.jar",
+  "merge_with": null
+ },
+ "ashen_bastion_keep": {
+  "from_mod": "grimkingdoms",
+  "source_file": "grim-kingdoms-lost-structures-ruins-2.0.3.jar",
+  "merge_with": null
+ },
+ "ashen_forge_camp": {
+  "from_mod": "katters_structures",
+  "source_file": "katters-structures-2.4.jar",
+  "merge_with": null
+ },
+ "ashen_forge_hollow": {
+  "from_mod": "mvs",
+  "source_file": "MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+  "merge_with": null
+ },
+ "ashen_lookout_spire": {
+  "from_mod": "structory",
+  "source_file": "Structory_26.2_v1.3.7.jar",
+  "merge_with": null
+ },
+ "ashen_nether_bastion_outpost": {
+  "from_mod": "discoveria",
+  "source_file": "discoveria-4.0.2d.jar",
+  "merge_with": null
+ },
+ "basalt_fissure_maw": {
+  "from_mod": "giantnaturaladditions",
+  "source_file": "giant_natural_additions-1.0.0 neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "buried_nether_sanctum": {
+  "from_mod": "petra",
+  "source_file": "petra-1.0.0.jar",
+  "merge_with": null
+ },
+ "buried_obelisk_shrine": {
+  "from_mod": "desert_tombs",
+  "source_file": "desert_tomb-2.0.0-neoforge-26.1.2.jar",
+  "merge_with": null
+ },
+ "buried_orchard_vault": {
+  "from_mod": "formations",
+  "source_file": "formationsoverworld-1.0.5c-mc1.21+.jar",
+  "merge_with": null
+ },
+ "buried_tomb_vault": {
+  "from_mod": "abusimbel",
+  "source_file": "abusimbel-1.0.0.jar",
+  "merge_with": null
+ },
+ "buried_vault_shrine": {
+  "from_mod": "adorabuild",
+  "source_file": "adorabuild-structures-2.11.0-neoforge-26.1.1.jar",
+  "merge_with": null
+ },
+ "cinder_wraithhold": {
+  "from_mod": "grimkingdoms",
+  "source_file": "grim-kingdoms-lost-structures-ruins-2.0.3.jar",
+  "merge_with": null
+ },
+ "cliff_dwelling_terrace": {
+  "from_mod": "petra",
+  "source_file": "petra-1.0.0.jar",
+  "merge_with": "any mod adding desert villages on badlands"
+ },
+ "collapsed_pyramid_tomb": {
+  "from_mod": "desert_tombs",
+  "source_file": "desert_tomb-2.0.0-neoforge-26.1.2.jar",
+  "merge_with": null
+ },
+ "colossal_stone_spire": {
+  "from_mod": "giantnaturaladditions",
+  "source_file": "giant_natural_additions-1.0.0 neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "coral_archive_ruin": {
+  "from_mod": "hopo_better_underwater_ruins",
+  "source_file": "HopoBetterUnderwaterRuins-[26.1]-1.2.7.jar",
+  "merge_with": null
+ },
+ "coral_reef_outpost": {
+  "from_mod": "underwatervillage",
+  "source_file": "underwater_village-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": "Better Ocean Monuments"
+ },
+ "cracked_obelisk_ruin": {
+  "from_mod": "ruinsandtowers",
+  "source_file": "ruins-and-towers-0.3.jar",
+  "merge_with": null
+ },
+ "crimson_gorge_camp": {
+  "from_mod": "formations_nether",
+  "source_file": "formationsnether-1.0.5b-mc1.21+.jar",
+  "merge_with": null
+ },
+ "crystal_grotto_shrine": {
+  "from_mod": "explorify",
+  "source_file": "Explorify v1.6.5.mod.jar",
+  "merge_with": null
+ },
+ "cursed_bastion_hold": {
+  "from_mod": "medieval_buildings",
+  "source_file": "medieval_buildings-neoforge-26.1.2-1.2.0.jar",
+  "merge_with": "nether_fortress_hold"
+ },
+ "cyclopean_citadel_ruin": {
+  "from_mod": "mycenae",
+  "source_file": "mycenae-1.0.0.jar",
+  "merge_with": null
+ },
+ "deep_raider_hideout": {
+  "from_mod": "villagespillages",
+  "source_file": "villagesandpillages-neoforge-2.0.0+mc26.1.2.jar",
+  "merge_with": null
+ },
+ "desert_oasis_settlement": {
+  "from_mod": "overhauled_village",
+  "source_file": "[Neoforge]ctov-26-4.0.0.jar",
+  "merge_with": null
+ },
+ "desert_raider_arena": {
+  "from_mod": "illager_arena",
+  "source_file": "illager_arena-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "desert_raider_outpost": {
+  "from_mod": "illager_arena",
+  "source_file": "illager_arena-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "diaithir_airship_sky": {
+  "from_mod": "towns_and_towers",
+  "source_file": "t_and_t-fabric-neoforge-1.13.11.jar",
+  "merge_with": null
+ },
+ "diaithir_city_taiga": {
+  "from_mod": "epicstructures",
+  "source_file": "epic-structures-villages-2.0.0.jar",
+  "merge_with": "minecraft:village_taiga"
+ },
+ "diaithir_coastal_watchtower": {
+  "from_mod": "mos",
+  "source_file": "MoogsOceanStructures-universal-1.21-1.1.1.jar",
+  "merge_with": null
+ },
+ "diaithir_floating_raft": {
+  "from_mod": "mos",
+  "source_file": "MoogsOceanStructures-universal-1.21-1.1.1.jar",
+  "merge_with": null
+ },
+ "diaithir_hamlet_plains": {
+  "from_mod": "epicstructures",
+  "source_file": "epic-structures-villages-2.0.0.jar",
+  "merge_with": "minecraft:village_plains"
+ },
+ "diaithir_kelp_grotto": {
+  "from_mod": "mos",
+  "source_file": "MoogsOceanStructures-universal-1.21-1.1.1.jar",
+  "merge_with": null
+ },
+ "diaithir_outpost_desert": {
+  "from_mod": "epicstructures",
+  "source_file": "epic-structures-villages-2.0.0.jar",
+  "merge_with": "minecraft:village_desert"
+ },
+ "diaithir_pillager_outpost_ruined": {
+  "from_mod": "towns_and_towers",
+  "source_file": "t_and_t-fabric-neoforge-1.13.11.jar",
+  "merge_with": null
+ },
+ "diaithir_reef_temple": {
+  "from_mod": "mos",
+  "source_file": "MoogsOceanStructures-universal-1.21-1.1.1.jar",
+  "merge_with": "ocean_monument"
+ },
+ "diaithir_settlement_snowy": {
+  "from_mod": "epicstructures",
+  "source_file": "epic-structures-villages-2.0.0.jar",
+  "merge_with": "minecraft:village_snowy"
+ },
+ "diaithir_ship_wreck_shoreline": {
+  "from_mod": "towns_and_towers",
+  "source_file": "t_and_t-fabric-neoforge-1.13.11.jar",
+  "merge_with": null
+ },
+ "diaithir_sunken_ruins": {
+  "from_mod": "mos",
+  "source_file": "MoogsOceanStructures-universal-1.21-1.1.1.jar",
+  "merge_with": null
+ },
+ "diaithir_town_savanna": {
+  "from_mod": "epicstructures",
+  "source_file": "epic-structures-villages-2.0.0.jar",
+  "merge_with": "minecraft:village_savanna"
+ },
+ "diaithir_village_savanna": {
+  "from_mod": "towns_and_towers",
+  "source_file": "t_and_t-fabric-neoforge-1.13.11.jar",
+  "merge_with": null
+ },
+ "diaithir_village_snowy": {
+  "from_mod": "towns_and_towers",
+  "source_file": "t_and_t-fabric-neoforge-1.13.11.jar",
+  "merge_with": null
+ },
+ "diaithir_wreck_galleon": {
+  "from_mod": "mos",
+  "source_file": "MoogsOceanStructures-universal-1.21-1.1.1.jar",
+  "merge_with": null
+ },
+ "drowned_market_ruin": {
+  "from_mod": "underwatervillage",
+  "source_file": "underwater_village-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "drowned_watchtower_ruin": {
+  "from_mod": "grimkingdoms",
+  "source_file": "grim-kingdoms-lost-structures-ruins-2.0.3.jar",
+  "merge_with": null
+ },
+ "dune_waystone_rest": {
+  "from_mod": "structory",
+  "source_file": "Structory_26.2_v1.3.7.jar",
+  "merge_with": null
+ },
+ "ember_cellar_crypt": {
+  "from_mod": "ember_underground_rooms",
+  "source_file": "underground_rooms-2.3.2-26.1.2.jar",
+  "merge_with": null
+ },
+ "ember_end_reliquary": {
+  "from_mod": "ember_underground_rooms",
+  "source_file": "underground_rooms-2.3.2-26.1.2.jar",
+  "merge_with": null
+ },
+ "ember_flooded_grotto": {
+  "from_mod": "ember_underground_rooms",
+  "source_file": "underground_rooms-2.3.2-26.1.2.jar",
+  "merge_with": null
+ },
+ "ember_forge_ruin": {
+  "from_mod": "structural_beyond",
+  "source_file": "structural_beyond-1.1.0-universal.jar",
+  "merge_with": null
+ },
+ "ember_grove_shrine": {
+  "from_mod": "yggdrasil",
+  "source_file": "Yggdrasil-7.0.0.jar",
+  "merge_with": null
+ },
+ "ember_hollow_shrine": {
+  "from_mod": "structory",
+  "source_file": "Structory_26.2_v1.3.7.jar",
+  "merge_with": null
+ },
+ "ember_nether_ossuary": {
+  "from_mod": "ember_underground_rooms",
+  "source_file": "underground_rooms-2.3.2-26.1.2.jar",
+  "merge_with": "minecraft:nether_fortress"
+ },
+ "ember_relay_nether": {
+  "from_mod": "formations",
+  "source_file": "formations-1.0.4-neoforge-mc26.1.jar",
+  "merge_with": null
+ },
+ "ember_shrine_nether": {
+  "from_mod": "ruinsandtowers",
+  "source_file": "ruins-and-towers-0.3.jar",
+  "merge_with": null
+ },
+ "ember_spire_outpost": {
+  "from_mod": "formations_nether",
+  "source_file": "formationsnether-1.0.5b-mc1.21+.jar",
+  "merge_with": null
+ },
+ "ember_vault_chamber": {
+  "from_mod": "ember_underground_rooms",
+  "source_file": "underground_rooms-2.3.2-26.1.2.jar",
+  "merge_with": "minecraft:mineshaft"
+ },
+ "ember_watch_fort": {
+  "from_mod": "grimkingdoms",
+  "source_file": "grim-kingdoms-lost-structures-ruins-2.0.3.jar",
+  "merge_with": null
+ },
+ "ember_watch_outpost": {
+  "from_mod": "mvs",
+  "source_file": "MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+  "merge_with": null
+ },
+ "ember_watchtower": {
+  "from_mod": "discoveria",
+  "source_file": "discoveria-4.0.2d.jar",
+  "merge_with": null
+ },
+ "end_canopy_outpost": {
+  "from_mod": "yggdrasil",
+  "source_file": "Yggdrasil-7.0.0.jar",
+  "merge_with": null
+ },
+ "end_obelisk_ruin": {
+  "from_mod": "petra",
+  "source_file": "petra-1.0.0.jar",
+  "merge_with": null
+ },
+ "end_observatory_outpost": {
+  "from_mod": "bigcity",
+  "source_file": "big_lost_city-1.0.1 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "end_observatory_ring": {
+  "from_mod": "adorabuild",
+  "source_file": "adorabuild-structures-2.11.0-neoforge-26.1.1.jar",
+  "merge_with": null
+ },
+ "end_obsidian_monolith": {
+  "from_mod": "abusimbel",
+  "source_file": "abusimbel-1.0.0.jar",
+  "merge_with": null
+ },
+ "end_obsidian_spire": {
+  "from_mod": "explorify",
+  "source_file": "Explorify v1.6.5.mod.jar",
+  "merge_with": null
+ },
+ "end_obsidian_spire_camp": {
+  "from_mod": "explorations",
+  "source_file": "explorations-neoforge-26.1.2-1.6.5.jar",
+  "merge_with": null
+ },
+ "end_raider_relic_circle": {
+  "from_mod": "illager_arena",
+  "source_file": "illager_arena-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "end_stone_reliquary": {
+  "from_mod": "desert_tombs",
+  "source_file": "desert_tomb-2.0.0-neoforge-26.1.2.jar",
+  "merge_with": null
+ },
+ "end_void_obelisk": {
+  "from_mod": "structory",
+  "source_file": "Structory_Towers_26.2_v1.0.17.jar",
+  "merge_with": null
+ },
+ "ferrous_depot_underground": {
+  "from_mod": "formations",
+  "source_file": "formations-1.0.4-neoforge-mc26.1.jar",
+  "merge_with": null
+ },
+ "ferrous_outpost_surface": {
+  "from_mod": "formations",
+  "source_file": "formations-1.0.4-neoforge-mc26.1.jar",
+  "merge_with": null
+ },
+ "floating_crystal_isle": {
+  "from_mod": "giantnaturaladditions",
+  "source_file": "giant_natural_additions-1.0.0 neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "floating_isle_cache": {
+  "from_mod": "explorify",
+  "source_file": "Explorify v1.6.5.mod.jar",
+  "merge_with": null
+ },
+ "flooded_idol_chamber": {
+  "from_mod": "ancient_jungle_ring",
+  "source_file": "ancient-jungle-ring-1.0.0.jar",
+  "merge_with": null
+ },
+ "forgotten_mine_camp": {
+  "from_mod": "explorations",
+  "source_file": "explorations-neoforge-26.1.2-1.6.5.jar",
+  "merge_with": null
+ },
+ "fortified_manor_keep": {
+  "from_mod": "medieval_buildings",
+  "source_file": "medieval_buildings-neoforge-26.1.2-1.2.0.jar",
+  "merge_with": null
+ },
+ "frost_outpost": {
+  "from_mod": "adorabuild",
+  "source_file": "adorabuild-structures-2.11.0-neoforge-26.1.1.jar",
+  "merge_with": null
+ },
+ "frost_waystation_snowy": {
+  "from_mod": "formations",
+  "source_file": "formations-1.0.4-neoforge-mc26.1.jar",
+  "merge_with": null
+ },
+ "frost_world_tree_hollow": {
+  "from_mod": "yggdrasil",
+  "source_file": "Yggdrasil-7.0.0.jar",
+  "merge_with": null
+ },
+ "frostbitten_shrine": {
+  "from_mod": "mvs",
+  "source_file": "MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+  "merge_with": null
+ },
+ "frostbound_beacon_keep": {
+  "from_mod": "structory",
+  "source_file": "Structory_Towers_26.2_v1.0.17.jar",
+  "merge_with": null
+ },
+ "frostbound_cairn": {
+  "from_mod": "structory",
+  "source_file": "Structory_26.2_v1.3.7.jar",
+  "merge_with": null
+ },
+ "frostbound_citadel_ruin": {
+  "from_mod": "grimkingdoms",
+  "source_file": "grim-kingdoms-lost-structures-ruins-2.0.3.jar",
+  "merge_with": null
+ },
+ "frostbound_ice_drillsite": {
+  "from_mod": "structural_beyond",
+  "source_file": "structural_beyond-1.1.0-universal.jar",
+  "merge_with": null
+ },
+ "frostbound_keep": {
+  "from_mod": "ruinsandtowers",
+  "source_file": "ruins-and-towers-0.3.jar",
+  "merge_with": null
+ },
+ "frostbound_ossuary": {
+  "from_mod": "discoveria",
+  "source_file": "discoveria-4.0.2d.jar",
+  "merge_with": null
+ },
+ "frostbound_outpost": {
+  "from_mod": "katters_structures",
+  "source_file": "katters-structures-2.4.jar",
+  "merge_with": null
+ },
+ "frozen_cairn_vault": {
+  "from_mod": "newgrange",
+  "source_file": "newgrange-1.0.0.jar",
+  "merge_with": null
+ },
+ "glacial_arch_bridge": {
+  "from_mod": "giantnaturaladditions",
+  "source_file": "giant_natural_additions-1.0.0 neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "hamlet_farmstead_cluster": {
+  "from_mod": "overhauled_village",
+  "source_file": "[Neoforge]ctov-26-4.0.0.jar",
+  "merge_with": null
+ },
+ "hidden_crypt_chapel": {
+  "from_mod": "medieval_buildings",
+  "source_file": "medieval_buildings-neoforge-26.1.2-1.2.0.jar",
+  "merge_with": "medieval_crypt_ruins"
+ },
+ "hollow_crystal_vault": {
+  "from_mod": "structory",
+  "source_file": "Structory_26.2_v1.3.7.jar",
+  "merge_with": null
+ },
+ "jungle_canopy_relay": {
+  "from_mod": "structory",
+  "source_file": "Structory_Towers_26.2_v1.0.17.jar",
+  "merge_with": null
+ },
+ "jungle_outpost_cliff_post": {
+  "from_mod": "mmv",
+  "source_file": "MoogsMissingVillages-universal-1.21-2.2.0.jar",
+  "merge_with": null
+ },
+ "jungle_overgrown_ruin_courtyard": {
+  "from_mod": "aztec",
+  "source_file": "aztec-ruins-1.0.0.jar",
+  "merge_with": null
+ },
+ "jungle_settlement_ruin_grove": {
+  "from_mod": "mmv",
+  "source_file": "MoogsMissingVillages-universal-1.21-2.2.0.jar",
+  "merge_with": null
+ },
+ "jungle_settlement_stilt_hub": {
+  "from_mod": "mmv",
+  "source_file": "MoogsMissingVillages-universal-1.21-2.2.0.jar",
+  "merge_with": "CTOV_jungle_village"
+ },
+ "jungle_stepped_temple": {
+  "from_mod": "aztec",
+  "source_file": "aztec-ruins-1.0.0.jar",
+  "merge_with": null
+ },
+ "kelp_cistern_complex": {
+  "from_mod": "hopo_better_underwater_ruins",
+  "source_file": "HopoBetterUnderwaterRuins-[26.1]-1.2.7.jar",
+  "merge_with": null
+ },
+ "kelp_forest_watchpost": {
+  "from_mod": "underwatervillage",
+  "source_file": "underwater_village-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "knights_market_square": {
+  "from_mod": "medieval_buildings",
+  "source_file": "medieval_buildings-neoforge-26.1.2-1.2.0.jar",
+  "merge_with": null
+ },
+ "lichen_cliff_dwelling": {
+  "from_mod": "giantnaturaladditions",
+  "source_file": "giant_natural_additions-1.0.0 neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "megalithic_passage_mound": {
+  "from_mod": "newgrange",
+  "source_file": "newgrange-1.0.0.jar",
+  "merge_with": null
+ },
+ "monumental_tomb_gate": {
+  "from_mod": "petra",
+  "source_file": "petra-1.0.0.jar",
+  "merge_with": null
+ },
+ "moss_gravewall_ruin": {
+  "from_mod": "grimkingdoms",
+  "source_file": "grim-kingdoms-lost-structures-ruins-2.0.3.jar",
+  "merge_with": null
+ },
+ "mossveil_warrens": {
+  "from_mod": "mvs",
+  "source_file": "MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+  "merge_with": "ember_watch_outpost"
+ },
+ "nether_ash_crypt": {
+  "from_mod": "desert_tombs",
+  "source_file": "desert_tomb-2.0.0-neoforge-26.1.2.jar",
+  "merge_with": null
+ },
+ "nether_basalt_shrine": {
+  "from_mod": "abusimbel",
+  "source_file": "abusimbel-1.0.0.jar",
+  "merge_with": null
+ },
+ "nether_bastion_outpost": {
+  "from_mod": "explorify",
+  "source_file": "Explorify v1.6.5.mod.jar",
+  "merge_with": "nether bastion remnants from vanilla-style packs"
+ },
+ "nether_ember_pylon": {
+  "from_mod": "structory",
+  "source_file": "Structory_Towers_26.2_v1.0.17.jar",
+  "merge_with": null
+ },
+ "nether_forge_hold": {
+  "from_mod": "adorabuild",
+  "source_file": "adorabuild-structures-2.11.0-neoforge-26.1.1.jar",
+  "merge_with": "bastion_remnant"
+ },
+ "nether_market_remnant": {
+  "from_mod": "bigcity",
+  "source_file": "big_lost_city-1.0.1 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "nether_raider_bastion_arena": {
+  "from_mod": "illager_arena",
+  "source_file": "illager_arena-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": "nether bastion remnants"
+ },
+ "nether_root_sanctum": {
+  "from_mod": "yggdrasil",
+  "source_file": "Yggdrasil-7.0.0.jar",
+  "merge_with": null
+ },
+ "oasis_watch_tower": {
+  "from_mod": "petra",
+  "source_file": "petra-1.0.0.jar",
+  "merge_with": null
+ },
+ "obelisk_colonnade_ruin": {
+  "from_mod": "abusimbel",
+  "source_file": "abusimbel-1.0.0.jar",
+  "merge_with": null
+ },
+ "oracle_ruins_desert_sanctum": {
+  "from_mod": "delfos",
+  "source_file": "delfos-1.0.0.jar",
+  "merge_with": null
+ },
+ "oracle_ruins_nether_outpost": {
+  "from_mod": "delfos",
+  "source_file": "delfos-1.0.0.jar",
+  "merge_with": null
+ },
+ "oracle_ruins_shrine": {
+  "from_mod": "delfos",
+  "source_file": "delfos-1.0.0.jar",
+  "merge_with": null
+ },
+ "oracle_ruins_temple": {
+  "from_mod": "delfos",
+  "source_file": "delfos-1.0.0.jar",
+  "merge_with": null
+ },
+ "oracle_ruins_underground_crypt": {
+  "from_mod": "delfos",
+  "source_file": "delfos-1.0.0.jar",
+  "merge_with": null
+ },
+ "overgrown_camp_ruin": {
+  "from_mod": "explorify",
+  "source_file": "Explorify v1.6.5.mod.jar",
+  "merge_with": null
+ },
+ "overgrown_causeway_ruin": {
+  "from_mod": "ruinsandtowers",
+  "source_file": "ruins-and-towers-0.3.jar",
+  "merge_with": null
+ },
+ "overgrown_hidden_passage": {
+  "from_mod": "ancient_jungle_ring",
+  "source_file": "ancient-jungle-ring-1.0.0.jar",
+  "merge_with": null
+ },
+ "overgrown_mall_ruin": {
+  "from_mod": "bigcity",
+  "source_file": "big_lost_city-1.0.1 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "overgrown_quarry_camp": {
+  "from_mod": "formations",
+  "source_file": "formationsoverworld-1.0.5c-mc1.21+.jar",
+  "merge_with": null
+ },
+ "overgrown_shrine_ruin": {
+  "from_mod": "katters_structures",
+  "source_file": "katters-structures-2.4.jar",
+  "merge_with": null
+ },
+ "overgrown_watchtower": {
+  "from_mod": "explorations",
+  "source_file": "explorations-neoforge-26.1.2-1.6.5.jar",
+  "merge_with": null
+ },
+ "raider_camp_clearing": {
+  "from_mod": "villagespillages",
+  "source_file": "villagesandpillages-neoforge-2.0.0+mc26.1.2.jar",
+  "merge_with": null
+ },
+ "raider_watch_camp": {
+  "from_mod": "overhauled_village",
+  "source_file": "[Neoforge]ctov-26-4.0.0.jar",
+  "merge_with": "minecraft:pillager_outpost"
+ },
+ "raider_watch_tower": {
+  "from_mod": "villagespillages",
+  "source_file": "villagesandpillages-neoforge-2.0.0+mc26.1.2.jar",
+  "merge_with": null
+ },
+ "ransacked_hamlet": {
+  "from_mod": "villagespillages",
+  "source_file": "villagesandpillages-neoforge-2.0.0+mc26.1.2.jar",
+  "merge_with": "any village structure set from another mod, use as an alternate variant"
+ },
+ "ruined_bridge_crossing": {
+  "from_mod": "ancient_jungle_ring",
+  "source_file": "ancient-jungle-ring-1.0.0.jar",
+  "merge_with": null
+ },
+ "ruined_watch_spire": {
+  "from_mod": "structory",
+  "source_file": "Structory_Towers_26.2_v1.0.17.jar",
+  "merge_with": null
+ },
+ "ruined_watchtower": {
+  "from_mod": "medieval_buildings",
+  "source_file": "medieval_buildings-neoforge-26.1.2-1.2.0.jar",
+  "merge_with": null
+ },
+ "ruined_waystation_village": {
+  "from_mod": "overhauled_village",
+  "source_file": "[Neoforge]ctov-26-4.0.0.jar",
+  "merge_with": null
+ },
+ "sandstone_rock_citadel": {
+  "from_mod": "petra",
+  "source_file": "petra-1.0.0.jar",
+  "merge_with": null
+ },
+ "savanna_ruined_watchtower": {
+  "from_mod": "aztec",
+  "source_file": "aztec-ruins-1.0.0.jar",
+  "merge_with": null
+ },
+ "savanna_sunstone_altar": {
+  "from_mod": "aztec",
+  "source_file": "aztec-ruins-1.0.0.jar",
+  "merge_with": null
+ },
+ "siege_stockade": {
+  "from_mod": "villagespillages",
+  "source_file": "villagesandpillages-neoforge-2.0.0+mc26.1.2.jar",
+  "merge_with": null
+ },
+ "sky_root_ruin": {
+  "from_mod": "yggdrasil",
+  "source_file": "Yggdrasil-7.0.0.jar",
+  "merge_with": null
+ },
+ "snowy_outpost_lodge": {
+  "from_mod": "overhauled_village",
+  "source_file": "[Neoforge]ctov-26-4.0.0.jar",
+  "merge_with": null
+ },
+ "soulsand_sinkhole_ruin": {
+  "from_mod": "formations_nether",
+  "source_file": "formationsnether-1.0.5b-mc1.21+.jar",
+  "merge_with": null
+ },
+ "spiral_carved_chamber": {
+  "from_mod": "newgrange",
+  "source_file": "newgrange-1.0.0.jar",
+  "merge_with": null
+ },
+ "starless_obelisk_shrine": {
+  "from_mod": "mycenae",
+  "source_file": "mycenae-1.0.0.jar",
+  "merge_with": null
+ },
+ "submerged_harbour_vault": {
+  "from_mod": "mycenae",
+  "source_file": "mycenae-1.0.0.jar",
+  "merge_with": null
+ },
+ "sunbaked_lookout_tower": {
+  "from_mod": "structory",
+  "source_file": "Structory_Towers_26.2_v1.0.17.jar",
+  "merge_with": null
+ },
+ "sunken_beehive_tomb": {
+  "from_mod": "mycenae",
+  "source_file": "mycenae-1.0.0.jar",
+  "merge_with": null
+ },
+ "sunken_burial_vault": {
+  "from_mod": "desert_tombs",
+  "source_file": "desert_tomb-2.0.0-neoforge-26.1.2.jar",
+  "merge_with": null
+ },
+ "sunken_canal_station": {
+  "from_mod": "formations",
+  "source_file": "formationsoverworld-1.0.5c-mc1.21+.jar",
+  "merge_with": null
+ },
+ "sunken_canopy_grove": {
+  "from_mod": "giantnaturaladditions",
+  "source_file": "giant_natural_additions-1.0.0 neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "sunken_cistern_ruin": {
+  "from_mod": "mvs",
+  "source_file": "MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+  "merge_with": null
+ },
+ "sunken_citadel": {
+  "from_mod": "grimkingdoms",
+  "source_file": "grim-kingdoms-lost-structures-ruins-2.0.3.jar",
+  "merge_with": null
+ },
+ "sunken_district_ruin": {
+  "from_mod": "bigcity",
+  "source_file": "big_lost_city-1.0.1 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "sunken_fishing_hamlet": {
+  "from_mod": "underwatervillage",
+  "source_file": "underwater_village-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "sunken_harbor_wreck_town": {
+  "from_mod": "underwatervillage",
+  "source_file": "underwater_village-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": "Ocean Ruins"
+ },
+ "sunken_illager_pit": {
+  "from_mod": "illager_arena",
+  "source_file": "illager_arena-1.0.0 Neoforge 26.1.2.jar",
+  "merge_with": null
+ },
+ "sunken_orchard_ruin": {
+  "from_mod": "structory",
+  "source_file": "Structory_26.2_v1.3.7.jar",
+  "merge_with": null
+ },
+ "sunken_relay_outpost": {
+  "from_mod": "structural_beyond",
+  "source_file": "structural_beyond-1.1.0-universal.jar",
+  "merge_with": null
+ },
+ "sunken_reliquary": {
+  "from_mod": "discoveria",
+  "source_file": "discoveria-4.0.2d.jar",
+  "merge_with": null
+ },
+ "sunken_sanctum_rockcut": {
+  "from_mod": "abusimbel",
+  "source_file": "abusimbel-1.0.0.jar",
+  "merge_with": null
+ },
+ "sunken_shrine_ruin": {
+  "from_mod": "explorations",
+  "source_file": "explorations-neoforge-26.1.2-1.6.5.jar",
+  "merge_with": null
+ },
+ "sunken_shrine_small": {
+  "from_mod": "hopo_better_underwater_ruins",
+  "source_file": "HopoBetterUnderwaterRuins-[26.1]-1.2.7.jar",
+  "merge_with": null
+ },
+ "sunken_siege_camp": {
+  "from_mod": "medieval_buildings",
+  "source_file": "medieval_buildings-neoforge-26.1.2-1.2.0.jar",
+  "merge_with": null
+ },
+ "sunken_stone_ring": {
+  "from_mod": "ancient_jungle_ring",
+  "source_file": "ancient-jungle-ring-1.0.0.jar",
+  "merge_with": null
+ },
+ "sunken_tomb_stones": {
+  "from_mod": "newgrange",
+  "source_file": "newgrange-1.0.0.jar",
+  "merge_with": null
+ },
+ "sunken_watch_tower": {
+  "from_mod": "katters_structures",
+  "source_file": "katters-structures-2.4.jar",
+  "merge_with": null
+ },
+ "sunken_watchtower": {
+  "from_mod": "explorify",
+  "source_file": "Explorify v1.6.5.mod.jar",
+  "merge_with": null
+ },
+ "sunken_workshop": {
+  "from_mod": "adorabuild",
+  "source_file": "adorabuild-structures-2.11.0-neoforge-26.1.1.jar",
+  "merge_with": null
+ },
+ "swamp_settlement_boardwalk_camp": {
+  "from_mod": "mmv",
+  "source_file": "MoogsMissingVillages-universal-1.21-2.2.0.jar",
+  "merge_with": "CTOV_swamp_village"
+ },
+ "swamp_settlement_hermit_mill": {
+  "from_mod": "mmv",
+  "source_file": "MoogsMissingVillages-universal-1.21-2.2.0.jar",
+  "merge_with": null
+ },
+ "tidal_watchtower": {
+  "from_mod": "hopo_better_underwater_ruins",
+  "source_file": "HopoBetterUnderwaterRuins-[26.1]-1.2.7.jar",
+  "merge_with": null
+ },
+ "timber_village_hub": {
+  "from_mod": "overhauled_village",
+  "source_file": "[Neoforge]ctov-26-4.0.0.jar",
+  "merge_with": null
+ },
+ "transit_hub_wreck": {
+  "from_mod": "bigcity",
+  "source_file": "big_lost_city-1.0.1 Neoforge 26.1.2.jar",
+  "merge_with": "sunken_district_ruin"
+ },
+ "verdant_grotto_shrine": {
+  "from_mod": "structural_beyond",
+  "source_file": "structural_beyond-1.1.0-universal.jar",
+  "merge_with": null
+ },
+ "verdant_shrine_ring": {
+  "from_mod": "discoveria",
+  "source_file": "discoveria-4.0.2d.jar",
+  "merge_with": null
+ },
+ "void_lantern_obelisk": {
+  "from_mod": "mvs",
+  "source_file": "MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+  "merge_with": null
+ },
+ "void_monolith_spire": {
+  "from_mod": "structural_beyond",
+  "source_file": "structural_beyond-1.1.0-universal.jar",
+  "merge_with": null
+ },
+ "void_obelisk_array": {
+  "from_mod": "discoveria",
+  "source_file": "discoveria-4.0.2d.jar",
+  "merge_with": null
+ },
+ "void_obelisk_site": {
+  "from_mod": "katters_structures",
+  "source_file": "katters-structures-2.4.jar",
+  "merge_with": null
+ },
+ "void_survey_end": {
+  "from_mod": "formations",
+  "source_file": "formations-1.0.4-neoforge-mc26.1.jar",
+  "merge_with": null
+ },
+ "warden_gate_end": {
+  "from_mod": "ruinsandtowers",
+  "source_file": "ruins-and-towers-0.3.jar",
+  "merge_with": null
+ },
+ "warped_grove_shrine": {
+  "from_mod": "formations_nether",
+  "source_file": "formationsnether-1.0.5b-mc1.21+.jar",
+  "merge_with": null
+ }
+}

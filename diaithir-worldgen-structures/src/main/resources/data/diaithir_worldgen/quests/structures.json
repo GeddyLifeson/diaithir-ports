@@ -1,0 +1,1862 @@
+[
+ {
+  "id": "diaithir_worldgen:find/abandoned_mine_camp",
+  "title": "Find Abandoned Mine Camp",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:abandoned_mine_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/abyssal_obelisk_deep",
+  "title": "Find Abyssal Obelisk Deep",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:abyssal_obelisk_deep"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ash_wasteland_crypt",
+  "title": "Find Ash Wasteland Crypt",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ash_wasteland_crypt"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ashen_bastion_keep",
+  "title": "Find Ashen Bastion Keep",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ashen_bastion_keep"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ashen_forge_camp",
+  "title": "Find Ashen Forge Camp",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ashen_forge_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ashen_forge_hollow",
+  "title": "Find Ashen Forge Hollow",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ashen_forge_hollow"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ashen_lookout_spire",
+  "title": "Find Ashen Lookout Spire",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ashen_lookout_spire"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ashen_nether_bastion_outpost",
+  "title": "Find Ashen Nether Bastion Outpost",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ashen_nether_bastion_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/basalt_fissure_maw",
+  "title": "Find Basalt Fissure Maw",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:basalt_fissure_maw"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/buried_nether_sanctum",
+  "title": "Find Buried Nether Sanctum",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:buried_nether_sanctum"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/buried_obelisk_shrine",
+  "title": "Find Buried Obelisk Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:buried_obelisk_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/buried_orchard_vault",
+  "title": "Find Buried Orchard Vault",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:buried_orchard_vault"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/buried_tomb_vault",
+  "title": "Find Buried Tomb Vault",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:buried_tomb_vault"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/buried_vault_shrine",
+  "title": "Find Buried Vault Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:buried_vault_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/cinder_wraithhold",
+  "title": "Find Cinder Wraithhold",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:cinder_wraithhold"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/cliff_dwelling_terrace",
+  "title": "Find Cliff Dwelling Terrace",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:cliff_dwelling_terrace"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/collapsed_pyramid_tomb",
+  "title": "Find Collapsed Pyramid Tomb",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:collapsed_pyramid_tomb"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/colossal_stone_spire",
+  "title": "Find Colossal Stone Spire",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:colossal_stone_spire"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/coral_archive_ruin",
+  "title": "Find Coral Archive Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:coral_archive_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/coral_reef_outpost",
+  "title": "Find Coral Reef Outpost",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:coral_reef_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/cracked_obelisk_ruin",
+  "title": "Find Cracked Obelisk Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:cracked_obelisk_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/crimson_gorge_camp",
+  "title": "Find Crimson Gorge Camp",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:crimson_gorge_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/crystal_grotto_shrine",
+  "title": "Find Crystal Grotto Shrine",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:crystal_grotto_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/cursed_bastion_hold",
+  "title": "Find Cursed Bastion Hold",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:cursed_bastion_hold"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/cyclopean_citadel_ruin",
+  "title": "Find Cyclopean Citadel Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:cyclopean_citadel_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/deep_raider_hideout",
+  "title": "Find Deep Raider Hideout",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:deep_raider_hideout"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/desert_oasis_settlement",
+  "title": "Find Desert Oasis Settlement",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:desert_oasis_settlement"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/desert_raider_arena",
+  "title": "Find Desert Raider Arena",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:desert_raider_arena"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/desert_raider_outpost",
+  "title": "Find Desert Raider Outpost",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:desert_raider_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_airship_sky",
+  "title": "Find Diaithir Airship Sky",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_airship_sky"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_city_taiga",
+  "title": "Find Diaithir City Taiga",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_city_taiga"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_coastal_watchtower",
+  "title": "Find Diaithir Coastal Watchtower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_coastal_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_floating_raft",
+  "title": "Find Diaithir Floating Raft",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_floating_raft"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_hamlet_plains",
+  "title": "Find Diaithir Hamlet Plains",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_hamlet_plains"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_kelp_grotto",
+  "title": "Find Diaithir Kelp Grotto",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_kelp_grotto"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_outpost_desert",
+  "title": "Find Diaithir Outpost Desert",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_outpost_desert"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_pillager_outpost_ruined",
+  "title": "Find Diaithir Pillager Outpost Ruined",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_pillager_outpost_ruined"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_reef_temple",
+  "title": "Find Diaithir Reef Temple",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_reef_temple"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_settlement_snowy",
+  "title": "Find Diaithir Settlement Snowy",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_settlement_snowy"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_ship_wreck_shoreline",
+  "title": "Find Diaithir Ship Wreck Shoreline",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_ship_wreck_shoreline"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_sunken_ruins",
+  "title": "Find Diaithir Sunken Ruins",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_sunken_ruins"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_town_savanna",
+  "title": "Find Diaithir Town Savanna",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_town_savanna"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_village_savanna",
+  "title": "Find Diaithir Village Savanna",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_village_savanna"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_village_snowy",
+  "title": "Find Diaithir Village Snowy",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_village_snowy"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_wreck_galleon",
+  "title": "Find Diaithir Wreck Galleon",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_wreck_galleon"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/drowned_market_ruin",
+  "title": "Find Drowned Market Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:drowned_market_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/drowned_watchtower_ruin",
+  "title": "Find Drowned Watchtower Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:drowned_watchtower_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/dune_waystone_rest",
+  "title": "Find Dune Waystone Rest",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:dune_waystone_rest"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_cellar_crypt",
+  "title": "Find Ember Cellar Crypt",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_cellar_crypt"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_end_reliquary",
+  "title": "Find Ember End Reliquary",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_end_reliquary"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_flooded_grotto",
+  "title": "Find Ember Flooded Grotto",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_flooded_grotto"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_forge_ruin",
+  "title": "Find Ember Forge Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_forge_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_grove_shrine",
+  "title": "Find Ember Grove Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_grove_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_hollow_shrine",
+  "title": "Find Ember Hollow Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_hollow_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_nether_ossuary",
+  "title": "Find Ember Nether Ossuary",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_nether_ossuary"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_relay_nether",
+  "title": "Find Ember Relay Nether",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_relay_nether"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_shrine_nether",
+  "title": "Find Ember Shrine Nether",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_shrine_nether"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_spire_outpost",
+  "title": "Find Ember Spire Outpost",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_spire_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_vault_chamber",
+  "title": "Find Ember Vault Chamber",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_vault_chamber"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_watch_fort",
+  "title": "Find Ember Watch Fort",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_watch_fort"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_watch_outpost",
+  "title": "Find Ember Watch Outpost",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_watch_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ember_watchtower",
+  "title": "Find Ember Watchtower",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ember_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_canopy_outpost",
+  "title": "Find End Canopy Outpost",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_canopy_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_obelisk_ruin",
+  "title": "Find End Obelisk Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_obelisk_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_observatory_outpost",
+  "title": "Find End Observatory Outpost",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_observatory_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_observatory_ring",
+  "title": "Find End Observatory Ring",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_observatory_ring"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_obsidian_monolith",
+  "title": "Find End Obsidian Monolith",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_obsidian_monolith"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_obsidian_spire",
+  "title": "Find End Obsidian Spire",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_obsidian_spire"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_obsidian_spire_camp",
+  "title": "Find End Obsidian Spire Camp",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_obsidian_spire_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_raider_relic_circle",
+  "title": "Find End Raider Relic Circle",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_raider_relic_circle"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_stone_reliquary",
+  "title": "Find End Stone Reliquary",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_stone_reliquary"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/end_void_obelisk",
+  "title": "Find End Void Obelisk",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:end_void_obelisk"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ferrous_depot_underground",
+  "title": "Find Ferrous Depot Underground",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ferrous_depot_underground"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ferrous_outpost_surface",
+  "title": "Find Ferrous Outpost Surface",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ferrous_outpost_surface"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/floating_crystal_isle",
+  "title": "Find Floating Crystal Isle",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:floating_crystal_isle"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/floating_isle_cache",
+  "title": "Find Floating Isle Cache",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:floating_isle_cache"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/flooded_idol_chamber",
+  "title": "Find Flooded Idol Chamber",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:flooded_idol_chamber"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/forgotten_mine_camp",
+  "title": "Find Forgotten Mine Camp",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:forgotten_mine_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/fortified_manor_keep",
+  "title": "Find Fortified Manor Keep",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:fortified_manor_keep"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frost_outpost",
+  "title": "Find Frost Outpost",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frost_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frost_waystation_snowy",
+  "title": "Find Frost Waystation Snowy",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frost_waystation_snowy"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frost_world_tree_hollow",
+  "title": "Find Frost World Tree Hollow",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frost_world_tree_hollow"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frostbitten_shrine",
+  "title": "Find Frostbitten Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frostbitten_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frostbound_beacon_keep",
+  "title": "Find Frostbound Beacon Keep",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frostbound_beacon_keep"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frostbound_cairn",
+  "title": "Find Frostbound Cairn",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frostbound_cairn"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frostbound_citadel_ruin",
+  "title": "Find Frostbound Citadel Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frostbound_citadel_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frostbound_ice_drillsite",
+  "title": "Find Frostbound Ice Drillsite",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frostbound_ice_drillsite"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frostbound_keep",
+  "title": "Find Frostbound Keep",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frostbound_keep"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frostbound_ossuary",
+  "title": "Find Frostbound Ossuary",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frostbound_ossuary"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frostbound_outpost",
+  "title": "Find Frostbound Outpost",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frostbound_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/frozen_cairn_vault",
+  "title": "Find Frozen Cairn Vault",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:frozen_cairn_vault"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/glacial_arch_bridge",
+  "title": "Find Glacial Arch Bridge",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:glacial_arch_bridge"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/hamlet_farmstead_cluster",
+  "title": "Find Hamlet Farmstead Cluster",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:hamlet_farmstead_cluster"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/hidden_crypt_chapel",
+  "title": "Find Hidden Crypt Chapel",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:hidden_crypt_chapel"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/hollow_crystal_vault",
+  "title": "Find Hollow Crystal Vault",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:hollow_crystal_vault"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/jungle_canopy_relay",
+  "title": "Find Jungle Canopy Relay",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:jungle_canopy_relay"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/jungle_outpost_cliff_post",
+  "title": "Find Jungle Outpost Cliff Post",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:jungle_outpost_cliff_post"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/jungle_overgrown_ruin_courtyard",
+  "title": "Find Jungle Overgrown Ruin Courtyard",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:jungle_overgrown_ruin_courtyard"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/jungle_settlement_ruin_grove",
+  "title": "Find Jungle Settlement Ruin Grove",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:jungle_settlement_ruin_grove"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/jungle_settlement_stilt_hub",
+  "title": "Find Jungle Settlement Stilt Hub",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:jungle_settlement_stilt_hub"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/jungle_stepped_temple",
+  "title": "Find Jungle Stepped Temple",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:jungle_stepped_temple"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/kelp_cistern_complex",
+  "title": "Find Kelp Cistern Complex",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:kelp_cistern_complex"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/kelp_forest_watchpost",
+  "title": "Find Kelp Forest Watchpost",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:kelp_forest_watchpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/knights_market_square",
+  "title": "Find Knights Market Square",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:knights_market_square"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/lichen_cliff_dwelling",
+  "title": "Find Lichen Cliff Dwelling",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:lichen_cliff_dwelling"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/megalithic_passage_mound",
+  "title": "Find Megalithic Passage Mound",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:megalithic_passage_mound"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/monumental_tomb_gate",
+  "title": "Find Monumental Tomb Gate",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:monumental_tomb_gate"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/moss_gravewall_ruin",
+  "title": "Find Moss Gravewall Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:moss_gravewall_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/mossveil_warrens",
+  "title": "Find Mossveil Warrens",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:mossveil_warrens"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_ash_crypt",
+  "title": "Find Nether Ash Crypt",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_ash_crypt"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_basalt_shrine",
+  "title": "Find Nether Basalt Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_basalt_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_bastion_outpost",
+  "title": "Find Nether Bastion Outpost",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_bastion_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_ember_pylon",
+  "title": "Find Nether Ember Pylon",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_ember_pylon"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_forge_hold",
+  "title": "Find Nether Forge Hold",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_forge_hold"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_market_remnant",
+  "title": "Find Nether Market Remnant",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_market_remnant"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_raider_bastion_arena",
+  "title": "Find Nether Raider Bastion Arena",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_raider_bastion_arena"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_root_sanctum",
+  "title": "Find Nether Root Sanctum",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_root_sanctum"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/oasis_watch_tower",
+  "title": "Find Oasis Watch Tower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:oasis_watch_tower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/obelisk_colonnade_ruin",
+  "title": "Find Obelisk Colonnade Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:obelisk_colonnade_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/oracle_ruins_desert_sanctum",
+  "title": "Find Oracle Ruins Desert Sanctum",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:oracle_ruins_desert_sanctum"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/oracle_ruins_nether_outpost",
+  "title": "Find Oracle Ruins Nether Outpost",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:oracle_ruins_nether_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/oracle_ruins_shrine",
+  "title": "Find Oracle Ruins Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:oracle_ruins_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/oracle_ruins_temple",
+  "title": "Find Oracle Ruins Temple",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:oracle_ruins_temple"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/oracle_ruins_underground_crypt",
+  "title": "Find Oracle Ruins Underground Crypt",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:oracle_ruins_underground_crypt"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/overgrown_camp_ruin",
+  "title": "Find Overgrown Camp Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:overgrown_camp_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/overgrown_causeway_ruin",
+  "title": "Find Overgrown Causeway Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:overgrown_causeway_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/overgrown_hidden_passage",
+  "title": "Find Overgrown Hidden Passage",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:overgrown_hidden_passage"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/overgrown_mall_ruin",
+  "title": "Find Overgrown Mall Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:overgrown_mall_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/overgrown_quarry_camp",
+  "title": "Find Overgrown Quarry Camp",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:overgrown_quarry_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/overgrown_shrine_ruin",
+  "title": "Find Overgrown Shrine Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:overgrown_shrine_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/overgrown_watchtower",
+  "title": "Find Overgrown Watchtower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:overgrown_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/raider_camp_clearing",
+  "title": "Find Raider Camp Clearing",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:raider_camp_clearing"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/raider_watch_camp",
+  "title": "Find Raider Watch Camp",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:raider_watch_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/raider_watch_tower",
+  "title": "Find Raider Watch Tower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:raider_watch_tower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ransacked_hamlet",
+  "title": "Find Ransacked Hamlet",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ransacked_hamlet"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ruined_bridge_crossing",
+  "title": "Find Ruined Bridge Crossing",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ruined_bridge_crossing"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ruined_watch_spire",
+  "title": "Find Ruined Watch Spire",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ruined_watch_spire"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ruined_watchtower",
+  "title": "Find Ruined Watchtower",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ruined_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ruined_waystation_village",
+  "title": "Find Ruined Waystation Village",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ruined_waystation_village"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sandstone_rock_citadel",
+  "title": "Find Sandstone Rock Citadel",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sandstone_rock_citadel"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/savanna_ruined_watchtower",
+  "title": "Find Savanna Ruined Watchtower",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:savanna_ruined_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/savanna_sunstone_altar",
+  "title": "Find Savanna Sunstone Altar",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:savanna_sunstone_altar"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/siege_stockade",
+  "title": "Find Siege Stockade",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:siege_stockade"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sky_root_ruin",
+  "title": "Find Sky Root Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sky_root_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/snowy_outpost_lodge",
+  "title": "Find Snowy Outpost Lodge",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:snowy_outpost_lodge"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/soulsand_sinkhole_ruin",
+  "title": "Find Soulsand Sinkhole Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:soulsand_sinkhole_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/spiral_carved_chamber",
+  "title": "Find Spiral Carved Chamber",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:spiral_carved_chamber"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/starless_obelisk_shrine",
+  "title": "Find Starless Obelisk Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:starless_obelisk_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/submerged_harbour_vault",
+  "title": "Find Submerged Harbour Vault",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:submerged_harbour_vault"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunbaked_lookout_tower",
+  "title": "Find Sunbaked Lookout Tower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunbaked_lookout_tower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_beehive_tomb",
+  "title": "Find Sunken Beehive Tomb",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_beehive_tomb"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_burial_vault",
+  "title": "Find Sunken Burial Vault",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_burial_vault"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_canal_station",
+  "title": "Find Sunken Canal Station",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_canal_station"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_canopy_grove",
+  "title": "Find Sunken Canopy Grove",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_canopy_grove"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_cistern_ruin",
+  "title": "Find Sunken Cistern Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_cistern_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_citadel",
+  "title": "Find Sunken Citadel",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_citadel"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_district_ruin",
+  "title": "Find Sunken District Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_district_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_fishing_hamlet",
+  "title": "Find Sunken Fishing Hamlet",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_fishing_hamlet"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_harbor_wreck_town",
+  "title": "Find Sunken Harbor Wreck Town",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_harbor_wreck_town"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_illager_pit",
+  "title": "Find Sunken Illager Pit",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_illager_pit"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_orchard_ruin",
+  "title": "Find Sunken Orchard Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_orchard_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_relay_outpost",
+  "title": "Find Sunken Relay Outpost",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_relay_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_reliquary",
+  "title": "Find Sunken Reliquary",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_reliquary"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_sanctum_rockcut",
+  "title": "Find Sunken Sanctum Rockcut",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_sanctum_rockcut"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_shrine_ruin",
+  "title": "Find Sunken Shrine Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_shrine_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_shrine_small",
+  "title": "Find Sunken Shrine Small",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_shrine_small"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_siege_camp",
+  "title": "Find Sunken Siege Camp",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_siege_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_stone_ring",
+  "title": "Find Sunken Stone Ring",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_stone_ring"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_tomb_stones",
+  "title": "Find Sunken Tomb Stones",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_tomb_stones"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_watch_tower",
+  "title": "Find Sunken Watch Tower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_watch_tower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_watchtower",
+  "title": "Find Sunken Watchtower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/sunken_workshop",
+  "title": "Find Sunken Workshop",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:sunken_workshop"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/swamp_settlement_boardwalk_camp",
+  "title": "Find Swamp Settlement Boardwalk Camp",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:swamp_settlement_boardwalk_camp"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/swamp_settlement_hermit_mill",
+  "title": "Find Swamp Settlement Hermit Mill",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:swamp_settlement_hermit_mill"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/tidal_watchtower",
+  "title": "Find Tidal Watchtower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:tidal_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/timber_village_hub",
+  "title": "Find Timber Village Hub",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:timber_village_hub"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/transit_hub_wreck",
+  "title": "Find Transit Hub Wreck",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:transit_hub_wreck"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/verdant_grotto_shrine",
+  "title": "Find Verdant Grotto Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:verdant_grotto_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/verdant_shrine_ring",
+  "title": "Find Verdant Shrine Ring",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:verdant_shrine_ring"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/void_lantern_obelisk",
+  "title": "Find Void Lantern Obelisk",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:void_lantern_obelisk"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/void_monolith_spire",
+  "title": "Find Void Monolith Spire",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:void_monolith_spire"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/void_obelisk_array",
+  "title": "Find Void Obelisk Array",
+  "age": "VI",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:void_obelisk_array"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/void_obelisk_site",
+  "title": "Find Void Obelisk Site",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:void_obelisk_site"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/void_survey_end",
+  "title": "Find Void Survey End",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:void_survey_end"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/warden_gate_end",
+  "title": "Find Warden Gate End",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:warden_gate_end"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/warped_grove_shrine",
+  "title": "Find Warped Grove Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:warped_grove_shrine"
+  },
+  "next": null
+ }
+]

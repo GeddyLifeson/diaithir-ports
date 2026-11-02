@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:abandoned_mine_camp",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 18,
+  "separation": 7,
+  "salt": 10472432
+ }
+}

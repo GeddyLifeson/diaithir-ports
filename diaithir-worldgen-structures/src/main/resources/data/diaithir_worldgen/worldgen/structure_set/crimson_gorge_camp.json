@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:crimson_gorge_camp",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 15711370
+ }
+}
