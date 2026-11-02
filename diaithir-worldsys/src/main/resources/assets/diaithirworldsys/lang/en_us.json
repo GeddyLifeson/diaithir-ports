@@ -1,0 +1,23 @@
+{
+ "block.diaithirworldsys.angel_block": "Angel Block",
+ "block.diaithirworldsys.sky_sand": "Sky Sand",
+ "block.diaithirworldsys.utility_lamp": "Utility Lamp",
+ "block.diaithirworldsys.redstone_clock": "Redstone Clock",
+ "block.diaithirworldsys.fluid_hopper": "Fluid Hopper",
+ "key.categories.diaithirworldsys.gridkeys": "Grid Keys",
+ "key.diaithirworldsys.grid_rotate": "Rotate crafting grid",
+ "key.diaithirworldsys.grid_balance": "Balance crafting grid",
+ "key.diaithirworldsys.grid_clear": "Clear crafting grid",
+ "item.diaithirworldsys.iron_magnet": "Iron Magnet",
+ "item.diaithirworldsys.gold_magnet": "Gold Magnet",
+ "item.diaithirworldsys.pocket_bench": "Pocket Bench",
+ "item.diaithirworldsys.ruby": "Ruby",
+ "item.diaithirworldsys.sapphire": "Sapphire",
+ "item.diaithirworldsys.topaz": "Topaz",
+ "item.diaithirworldsys.ruby_ring": "Ruby Ring",
+ "item.diaithirworldsys.sapphire_ring": "Sapphire Ring",
+ "item.diaithirworldsys.topaz_ring": "Topaz Ring",
+ "entity.diaithirworldsys.village_guard": "Village Guard",
+ "item.diaithirworldsys.village_guard_spawn_egg": "Village Guard Spawn Egg",
+ "item.diaithirworldsys.wayfinder_compass": "Wayfinder Compass"
+}
