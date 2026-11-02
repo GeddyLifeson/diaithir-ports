@@ -117,7 +117,10 @@ def main():
         mig[i]={"from_mod":d.get("old_id_prefix"),"source_file":f,"merge_with":s.get("merge_with")}
         sets.append(i)
     idmap=json.load(open(R+"/tools/id_map.json")) if os.path.exists(R+"/tools/id_map.json") else {}
-    w("migration.json",{"registry":"worldgen/structure","old_to_new":{o:n for o,n in idmap.items() if n.split(":")[1] in mig},"new_from_mod":mig})
+    w("migration.json",{"registry":"worldgen/structure","old_to_new":{o:n for o,n in idmap.items() if n.split(":")[1] in mig or n.endswith(":none")},"new_from_mod":mig})
+    w(f"data/{NS}/tags/worldgen/biome/never.json",{"values":[]})
+    w(f"data/{NS}/worldgen/template_pool/none.json",{"name":f"{NS}:none","fallback":"minecraft:empty","elements":[]})
+    w(f"data/{NS}/worldgen/structure/none.json",{"type":"minecraft:jigsaw","biomes":f"#{NS}:never","step":"surface_structures","spawn_overrides":{},"terrain_adaptation":"none","start_pool":f"{NS}:none","size":1,"start_height":{"absolute":0},"max_distance_from_center":16,"use_expansion_hack":False})
     integrate(meta,sets)
     print(len(sets),"structures")
 if __name__=="__main__": main()
