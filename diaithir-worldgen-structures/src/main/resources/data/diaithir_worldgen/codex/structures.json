@@ -493,6 +493,23 @@
   ]
  },
  {
+  "id": "diaithir_worldgen:diaithir_buried_mine_shaft_depot",
+  "kind": "structure",
+  "name": "Diaithir Buried Mine Shaft Depot",
+  "text": "Underground supply depot of cobblestone and oak planks with a single vertical ladder shaft, two side storage rooms and a locked trapdoor cellar.",
+  "dimension": "overworld",
+  "biomes": "#has_structure/mineshaft",
+  "loot": "Mining tools, lanterns, coal, iron nuggets and a single enchanted book in the cellar.",
+  "mobs": "Silverfish inside stone walls and occasional skeleton archers in the upper room.",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/diaithir_buried_mine_shaft_depot",
+  "connects": [
+   "tags:minecraft:is_overworld",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_buried_mine_shaft_depot"
+  ]
+ },
+ {
   "id": "diaithir_worldgen:diaithir_city_taiga",
   "kind": "structure",
   "name": "Diaithir City Taiga",
@@ -524,6 +541,23 @@
    "tags:minecraft:is_overworld",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/diaithir_coastal_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_drowned_harbour_watchpost",
+  "kind": "structure",
+  "name": "Diaithir Drowned Harbour Watchpost",
+  "text": "Tall timber-and-stone lookout tower on stilts over shallow water, with a ground-level storage room, a ladder to an open observation deck, and a lit beacon at the top.",
+  "dimension": "overworld",
+  "biomes": "#is_beach",
+  "loot": "Fishing gear, cooked fish-themed food, saddles, and dropped navigation maps.",
+  "mobs": "Drowned and husk patrol near the base, with an occasional squid pen beneath the platform.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/diaithir_drowned_harbour_watchpost",
+  "connects": [
+   "tags:minecraft:is_overworld",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_drowned_harbour_watchpost"
   ]
  },
  {
@@ -660,6 +694,23 @@
    "tags:minecraft:is_ocean",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/diaithir_ship_wreck_shoreline"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_sunken_reliquary",
+  "kind": "structure",
+  "name": "Diaithir Sunken Reliquary",
+  "text": "Partially flooded stone-brick vault built from a central chamber with four radiating corridor jigsaw pieces, half-buried under sand and sealed by a broken iron grate entrance.",
+  "dimension": "overworld",
+  "biomes": "#is_ocean",
+  "loot": "Salvaged maritime supplies: sea lanterns, prismarine shards, rope, gold trade goods and rare nautilus-themed trinkets.",
+  "mobs": "Drowned and guardian-style aquatic guards near the centre, with a small cave spider cluster in the corridors.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_sunken_reliquary",
+  "connects": [
+   "tags:minecraft:is_ocean",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_sunken_reliquary"
   ]
  },
  {
@@ -1289,6 +1340,57 @@
    "tags:minecraft:is_jungle",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/flooded_idol_chamber"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:forest_collapsed_watchtower",
+  "kind": "structure",
+  "name": "Forest Collapsed Watchtower",
+  "text": "Tall cracked stone tower with a partially collapsed upper floor, a spiral interior stair, and a rubble base that spills onto the forest floor.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_forest",
+  "loot": "Archer supplies, arrows, and scattered mid-tier armour pieces.",
+  "mobs": "Skeletons on upper floors and pillagers patrolling the rubble base.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/forest_collapsed_watchtower",
+  "connects": [
+   "tags:minecraft:is_forest",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/forest_collapsed_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:forest_overgrown_outpost",
+  "kind": "structure",
+  "name": "Forest Overgrown Outpost",
+  "text": "Small single-storey stone outpost with a rotting timber annex, placed on the terrain surface with a short jigsaw branch leading to a broken watchpost.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_forest",
+  "loot": "Scattered tools, rotten food, and low-tier ruined gear.",
+  "mobs": "Forest-dwelling hostile mobs such as zombies and skeletons, occasional spiders near the vegetation edge.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/forest_overgrown_outpost",
+  "connects": [
+   "tags:minecraft:is_forest",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/forest_overgrown_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:forest_sunken_shrine",
+  "kind": "structure",
+  "name": "Forest Sunken Shrine",
+  "text": "Half-buried stone shrine with a central altar room and a descending stair leading into a small vaulted chamber.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_forest",
+  "loot": "Ritual trinkets, mossy books, and minor enchanted items.",
+  "mobs": "Husks and cave-spider-style mobs guarding the lower chamber, with a rare vindicator near the altar.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/forest_sunken_shrine",
+  "connects": [
+   "tags:minecraft:is_forest",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/forest_sunken_shrine"
   ]
  },
  {

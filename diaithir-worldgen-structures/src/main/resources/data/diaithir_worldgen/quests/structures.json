@@ -290,6 +290,16 @@
   "next": null
  },
  {
+  "id": "diaithir_worldgen:find/diaithir_buried_mine_shaft_depot",
+  "title": "Find Diaithir Buried Mine Shaft Depot",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_buried_mine_shaft_depot"
+  },
+  "next": null
+ },
+ {
   "id": "diaithir_worldgen:find/diaithir_city_taiga",
   "title": "Find Diaithir City Taiga",
   "age": "IV",
@@ -306,6 +316,16 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:diaithir_coastal_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_drowned_harbour_watchpost",
+  "title": "Find Diaithir Drowned Harbour Watchpost",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_drowned_harbour_watchpost"
   },
   "next": null
  },
@@ -386,6 +406,16 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:diaithir_ship_wreck_shoreline"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/diaithir_sunken_reliquary",
+  "title": "Find Diaithir Sunken Reliquary",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:diaithir_sunken_reliquary"
   },
   "next": null
  },
@@ -756,6 +786,36 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:flooded_idol_chamber"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/forest_collapsed_watchtower",
+  "title": "Find Forest Collapsed Watchtower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:forest_collapsed_watchtower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/forest_overgrown_outpost",
+  "title": "Find Forest Overgrown Outpost",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:forest_overgrown_outpost"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/forest_sunken_shrine",
+  "title": "Find Forest Sunken Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:forest_sunken_shrine"
   },
   "next": null
  },

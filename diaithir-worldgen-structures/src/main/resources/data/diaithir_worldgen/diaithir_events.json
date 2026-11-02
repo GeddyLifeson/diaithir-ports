@@ -242,6 +242,14 @@
    ]
   },
   {
+   "structure": "diaithir_worldgen:diaithir_buried_mine_shaft_depot",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
    "structure": "diaithir_worldgen:diaithir_city_taiga",
    "ruin_states": [
     "intact",
@@ -251,6 +259,14 @@
   },
   {
    "structure": "diaithir_worldgen:diaithir_coastal_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_drowned_harbour_watchpost",
    "ruin_states": [
     "intact",
     "looted",
@@ -315,6 +331,14 @@
   },
   {
    "structure": "diaithir_worldgen:diaithir_ship_wreck_shoreline",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_sunken_reliquary",
    "ruin_states": [
     "intact",
     "looted",
@@ -611,6 +635,30 @@
   },
   {
    "structure": "diaithir_worldgen:flooded_idol_chamber",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:forest_collapsed_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:forest_overgrown_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:forest_sunken_shrine",
    "ruin_states": [
     "intact",
     "looted",

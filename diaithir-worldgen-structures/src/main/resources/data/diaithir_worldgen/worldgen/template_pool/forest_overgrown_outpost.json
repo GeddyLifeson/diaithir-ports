@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:forest_overgrown_outpost",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:forest_overgrown_outpost",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

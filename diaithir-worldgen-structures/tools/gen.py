@@ -116,7 +116,8 @@ def main():
             w(f"data/{NS}/loot_table/chests/{i}.json",{"type":"minecraft:chest","pools":[{"rolls":{"type":"minecraft:uniform","min":lt.get("rolls",[2,5])[0],"max":lt.get("rolls",[2,5])[1]},"entries":[{"type":"minecraft:item","name":e["item"],"weight":e["weight"],"functions":[{"function":"minecraft:set_count","count":{"type":"minecraft:uniform","min":e["min"],"max":e["max"]}}]} for e in lt["entries"]]}]})
         mig[i]={"from_mod":d.get("old_id_prefix"),"source_file":f,"merge_with":s.get("merge_with")}
         sets.append(i)
-    w("migration.json",mig)
+    idmap=json.load(open(R+"/tools/id_map.json")) if os.path.exists(R+"/tools/id_map.json") else {}
+    w("migration.json",{"registry":"worldgen/structure","old_to_new":{o:n for o,n in idmap.items() if n.split(":")[1] in mig},"new_from_mod":mig})
     integrate(meta,sets)
     print(len(sets),"structures")
 if __name__=="__main__": main()
