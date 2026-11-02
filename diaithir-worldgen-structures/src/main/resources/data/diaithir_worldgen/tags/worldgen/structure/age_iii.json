@@ -18,6 +18,8 @@
   "diaithir_worldgen:diaithir_town_savanna",
   "diaithir_worldgen:diaithir_village_snowy",
   "diaithir_worldgen:diaithir_wreck_galleon",
+  "diaithir_worldgen:drowned_archive",
+  "diaithir_worldgen:drowned_citadel",
   "diaithir_worldgen:dune_waystone_rest",
   "diaithir_worldgen:ember_cellar_crypt",
   "diaithir_worldgen:ember_flooded_grotto",
@@ -63,7 +65,6 @@
   "diaithir_worldgen:sunken_burial_vault",
   "diaithir_worldgen:sunken_canal_station",
   "diaithir_worldgen:sunken_canopy_grove",
-  "diaithir_worldgen:sunken_citadel",
   "diaithir_worldgen:sunken_fishing_hamlet",
   "diaithir_worldgen:sunken_harbor_wreck_town",
   "diaithir_worldgen:sunken_illager_pit",
@@ -77,6 +78,7 @@
   "diaithir_worldgen:transit_hub_wreck",
   "diaithir_worldgen:void_monolith_spire",
   "diaithir_worldgen:void_obelisk_site",
-  "diaithir_worldgen:warden_gate_end"
+  "diaithir_worldgen:warden_gate_end",
+  "diaithir_worldgen:weathered_waystation"
  ]
 }

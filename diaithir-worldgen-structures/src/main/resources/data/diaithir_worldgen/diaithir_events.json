@@ -34,7 +34,7 @@
    ]
   },
   {
-   "structure": "diaithir_worldgen:ashen_bastion_keep",
+   "structure": "diaithir_worldgen:ashen_bastion",
    "ruin_states": [
     "intact",
     "looted",
@@ -115,14 +115,6 @@
   },
   {
    "structure": "diaithir_worldgen:buried_vault_shrine",
-   "ruin_states": [
-    "intact",
-    "looted",
-    "overgrown"
-   ]
-  },
-  {
-   "structure": "diaithir_worldgen:cinder_wraithhold",
    "ruin_states": [
     "intact",
     "looted",
@@ -370,7 +362,7 @@
    ]
   },
   {
-   "structure": "diaithir_worldgen:drowned_market_ruin",
+   "structure": "diaithir_worldgen:drowned_archive",
    "ruin_states": [
     "intact",
     "looted",
@@ -378,7 +370,15 @@
    ]
   },
   {
-   "structure": "diaithir_worldgen:drowned_watchtower_ruin",
+   "structure": "diaithir_worldgen:drowned_citadel",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:drowned_market_ruin",
    "ruin_states": [
     "intact",
     "looted",
@@ -475,14 +475,6 @@
   },
   {
    "structure": "diaithir_worldgen:ember_vault_chamber",
-   "ruin_states": [
-    "intact",
-    "looted",
-    "overgrown"
-   ]
-  },
-  {
-   "structure": "diaithir_worldgen:ember_watch_fort",
    "ruin_states": [
     "intact",
     "looted",
@@ -690,14 +682,6 @@
    ]
   },
   {
-   "structure": "diaithir_worldgen:frostbound_citadel_ruin",
-   "ruin_states": [
-    "intact",
-    "looted",
-    "overgrown"
-   ]
-  },
-  {
    "structure": "diaithir_worldgen:frostbound_ice_drillsite",
    "ruin_states": [
     "intact",
@@ -755,6 +739,14 @@
   },
   {
    "structure": "diaithir_worldgen:hidden_crypt_chapel",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:hollow_chapel_ruin",
    "ruin_states": [
     "intact",
     "looted",
@@ -866,14 +858,6 @@
    ]
   },
   {
-   "structure": "diaithir_worldgen:moss_gravewall_ruin",
-   "ruin_states": [
-    "intact",
-    "looted",
-    "overgrown"
-   ]
-  },
-  {
    "structure": "diaithir_worldgen:mossveil_warrens",
    "ruin_states": [
     "intact",
@@ -946,6 +930,14 @@
    ]
   },
   {
+   "structure": "diaithir_worldgen:nether_siege_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
    "structure": "diaithir_worldgen:oasis_watch_tower",
    "ruin_states": [
     "intact",
@@ -955,6 +947,14 @@
   },
   {
    "structure": "diaithir_worldgen:obelisk_colonnade_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:obsidian_spire_hold",
    "ruin_states": [
     "intact",
     "looted",
@@ -1250,14 +1250,6 @@
    ]
   },
   {
-   "structure": "diaithir_worldgen:sunken_citadel",
-   "ruin_states": [
-    "intact",
-    "looted",
-    "overgrown"
-   ]
-  },
-  {
    "structure": "diaithir_worldgen:sunken_district_ruin",
    "ruin_states": [
     "intact",
@@ -1491,6 +1483,14 @@
   },
   {
    "structure": "diaithir_worldgen:warped_grove_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:weathered_waystation",
    "ruin_states": [
     "intact",
     "looted",

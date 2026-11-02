@@ -51,20 +51,20 @@
   ]
  },
  {
-  "id": "diaithir_worldgen:ashen_bastion_keep",
+  "id": "diaithir_worldgen:ashen_bastion",
   "kind": "structure",
-  "name": "Ashen Bastion Keep",
-  "text": "Dark stone keep with a raised bridge network, barracks wings, and a central treasure chamber sealed by a blocked gate.",
-  "dimension": "nether",
-  "biomes": "#diaithir:is_nether",
-  "loot": "Fortress gear: netherite scraps, blaze rods, gold, and rare armour trims.",
-  "mobs": "Wither skeletons and blazes, with magma cubes in the lower galleries.",
+  "name": "Ashen Bastion",
+  "text": "Walled fortification with a central keep, courtyard barracks, and two jigsaw-linked siege platforms.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:badlands_and_mesa",
+  "loot": "Armour fragments, banner cloth, and cracked shields.",
+  "mobs": "Pillagers and vindicators stationed at the gates, with a rare captain.",
   "age": "IV",
-  "quest": "diaithir_worldgen:find/ashen_bastion_keep",
+  "quest": "diaithir_worldgen:find/ashen_bastion",
   "connects": [
-   "tags:minecraft:is_nether",
+   "tags:minecraft:is_badlands",
    "events:diaithir:calendar_year",
-   "loot:diaithir_worldgen:chests/ashen_bastion_keep"
+   "loot:diaithir_worldgen:chests/ashen_bastion"
   ]
  },
  {
@@ -235,23 +235,6 @@
    "tags:minecraft:is_badlands",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/buried_vault_shrine"
-  ]
- },
- {
-  "id": "diaithir_worldgen:cinder_wraithhold",
-  "kind": "structure",
-  "name": "Cinder Wraithhold",
-  "text": "Small ruined nether outpost with a ring of broken pillars, a central altar, and a hidden cellar beneath the altar.",
-  "dimension": "nether",
-  "biomes": "#diaithir:is_nether",
-  "loot": "Ritual remains: soul sand, soul soil, nether wart, and rare potion ingredients.",
-  "mobs": "Piglin-themed patrol and wither skeletons near the altar.",
-  "age": "II",
-  "quest": "diaithir_worldgen:find/cinder_wraithhold",
-  "connects": [
-   "tags:minecraft:is_nether",
-   "events:diaithir:calendar_year",
-   "loot:diaithir_worldgen:chests/cinder_wraithhold"
   ]
  },
  {
@@ -765,6 +748,40 @@
   ]
  },
  {
+  "id": "diaithir_worldgen:drowned_archive",
+  "kind": "structure",
+  "name": "Drowned Archive",
+  "text": "half-submerged shelved hall with a sealed reading alcove and a collapsed side corridor",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_ocean",
+  "loot": "waterlogged manuscripts and enchanted-glass shards",
+  "mobs": "drowned and guardians-free ambient squid",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/drowned_archive",
+  "connects": [
+   "tags:minecraft:is_ocean",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/drowned_archive"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:drowned_citadel",
+  "kind": "structure",
+  "name": "Drowned Citadel",
+  "text": "Partially flooded coastal citadel with a submerged lower hall and an open-air upper gallery.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:ocean_and_coast",
+  "loot": "Tridents, prismarine shards, and waterlogged tomes.",
+  "mobs": "Drowned and guardians patrolling the flooded hall.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/drowned_citadel",
+  "connects": [
+   "tags:minecraft:is_ocean",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/drowned_citadel"
+  ]
+ },
+ {
   "id": "diaithir_worldgen:drowned_market_ruin",
   "kind": "structure",
   "name": "Drowned Market Ruin",
@@ -779,23 +796,6 @@
    "tags:minecraft:is_ocean",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/drowned_market_ruin"
-  ]
- },
- {
-  "id": "diaithir_worldgen:drowned_watchtower_ruin",
-  "kind": "structure",
-  "name": "Drowned Watchtower Ruin",
-  "text": "Partially submerged stone tower with a flooded lower chamber, spiral stair, and a sealed chest room at the top.",
-  "dimension": "overworld",
-  "biomes": "#diaithir:is_ocean",
-  "loot": "Sea-worn salvage: prismarine shards, kelp-preserved books, and fishing gear.",
-  "mobs": "Drowned and guardians near the flooded base, with a drowned captain.",
-  "age": "II",
-  "quest": "diaithir_worldgen:find/drowned_watchtower_ruin",
-  "connects": [
-   "tags:minecraft:is_ocean",
-   "events:diaithir:calendar_year",
-   "loot:diaithir_worldgen:chests/drowned_watchtower_ruin"
   ]
  },
  {
@@ -1000,23 +1000,6 @@
    "tags:minecraft:is_overworld",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/ember_vault_chamber"
-  ]
- },
- {
-  "id": "diaithir_worldgen:ember_watch_fort",
-  "kind": "structure",
-  "name": "Ember Watch Fort",
-  "text": "Walled timber fort with a central keep, corner watchtowers, and an underground prisoner cellar linked by a trapdoor-guarded stair.",
-  "dimension": "overworld",
-  "biomes": "#diaithir:is_plains",
-  "loot": "Military supplies: iron gear, arrows, bread, and occasional enchanted books.",
-  "mobs": "Pillagers and vindicators on patrol, with an iron golem guarding the gate.",
-  "age": "IV",
-  "quest": "diaithir_worldgen:find/ember_watch_fort",
-  "connects": [
-   "tags:minecraft:is_overworld",
-   "events:diaithir:calendar_year",
-   "loot:diaithir_worldgen:chests/ember_watch_fort"
   ]
  },
  {
@@ -1445,23 +1428,6 @@
   ]
  },
  {
-  "id": "diaithir_worldgen:frostbound_citadel_ruin",
-  "kind": "structure",
-  "name": "Frostbound Citadel Ruin",
-  "text": "Snow-covered citadel ruin with collapsed walls, an intact ice-sealed hall, and a stronghold-style hidden library.",
-  "dimension": "overworld",
-  "biomes": "#diaithir:is_taiga",
-  "loot": "Cold-weather stores: ice, packed ice, blue ice, and enchanted gear.",
-  "mobs": "Strays and polar-themed skeletons, with a snow golem sentry.",
-  "age": "II",
-  "quest": "diaithir_worldgen:find/frostbound_citadel_ruin",
-  "connects": [
-   "tags:minecraft:is_taiga",
-   "events:diaithir:calendar_year",
-   "loot:diaithir_worldgen:chests/frostbound_citadel_ruin"
-  ]
- },
- {
   "id": "diaithir_worldgen:frostbound_ice_drillsite",
   "kind": "structure",
   "name": "Frostbound Ice Drillsite",
@@ -1595,6 +1561,23 @@
    "tags:minecraft:is_taiga",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/hidden_crypt_chapel"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:hollow_chapel_ruin",
+  "kind": "structure",
+  "name": "Hollow Chapel Ruin",
+  "text": "Overgrown chapel ruin with a collapsed nave, a surviving bell tower, and a crypt entrance.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:taiga_and_forest",
+  "loot": "Candles, old ledgers, and buried reliquary boxes.",
+  "mobs": "Skeletons and zombies in the crypt, with silverfish in the masonry.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/hollow_chapel_ruin",
+  "connects": [
+   "tags:minecraft:is_taiga",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/hollow_chapel_ruin"
   ]
  },
  {
@@ -1819,23 +1802,6 @@
   ]
  },
  {
-  "id": "diaithir_worldgen:moss_gravewall_ruin",
-  "kind": "structure",
-  "name": "Moss Gravewall Ruin",
-  "text": "Overgrown ruined stone wall enclosing a crumbled chapel, broken cloisters, and a collapsed crypt entrance.",
-  "dimension": "overworld",
-  "biomes": "#diaithir:is_forest",
-  "loot": "Relics and offerings: bones, rotten flesh, lapis, and occasional hidden name-tagged items.",
-  "mobs": "Zombies and skeletons, with spiders in the crypt and a skeleton horse event.",
-  "age": "II",
-  "quest": "diaithir_worldgen:find/moss_gravewall_ruin",
-  "connects": [
-   "tags:minecraft:is_forest",
-   "events:diaithir:calendar_year",
-   "loot:diaithir_worldgen:chests/moss_gravewall_ruin"
-  ]
- },
- {
   "id": "diaithir_worldgen:mossveil_warrens",
   "kind": "structure",
   "name": "Mossveil Warrens",
@@ -1989,6 +1955,23 @@
   ]
  },
  {
+  "id": "diaithir_worldgen:nether_siege_camp",
+  "kind": "structure",
+  "name": "Nether Siege Camp",
+  "text": "Ruined outpost of stacked fortress bricks with a fenced inner yard and a broken siege engine.",
+  "dimension": "nether",
+  "biomes": "#diaithir:nether_wastes",
+  "loot": "Blaze rods, nether wart, and soot-stained supply crates.",
+  "mobs": "Wither skeletons and blazes around the fenced yard.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/nether_siege_camp",
+  "connects": [
+   "tags:minecraft:is_nether",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_siege_camp"
+  ]
+ },
+ {
   "id": "diaithir_worldgen:oasis_watch_tower",
   "kind": "structure",
   "name": "Oasis Watch Tower",
@@ -2020,6 +2003,23 @@
    "tags:minecraft:is_overworld",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/obelisk_colonnade_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:obsidian_spire_hold",
+  "kind": "structure",
+  "name": "Obsidian Spire Hold",
+  "text": "Narrow obsidian spire fortress with a spiral stair and a sealed upper chamber.",
+  "dimension": "end",
+  "biomes": "#diaithir:end_highlands",
+  "loot": "Ender pearls, chorus fruit caches, and sealed reliquary chests.",
+  "mobs": "Endermen and shulkers guarding the stair.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/obsidian_spire_hold",
+  "connects": [
+   "tags:minecraft:is_end",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/obsidian_spire_hold"
   ]
  },
  {
@@ -2635,23 +2635,6 @@
   ]
  },
  {
-  "id": "diaithir_worldgen:sunken_citadel",
-  "kind": "structure",
-  "name": "Sunken Citadel",
-  "text": "Sandstone citadel built around a sunken courtyard, with tiered battlements, a grand hall, and a hidden vault behind a sliding wall.",
-  "dimension": "overworld",
-  "biomes": "#diaithir:is_desert",
-  "loot": "Royal treasure: gold blocks, emeralds, golden armour pieces, and ornate tools.",
-  "mobs": "Husks and skeleton archers, with a single evoker in the throne hall.",
-  "age": "III",
-  "quest": "diaithir_worldgen:find/sunken_citadel",
-  "connects": [
-   "tags:minecraft:is_overworld",
-   "events:diaithir:calendar_year",
-   "loot:diaithir_worldgen:chests/sunken_citadel"
-  ]
- },
- {
   "id": "diaithir_worldgen:sunken_district_ruin",
   "kind": "structure",
   "name": "Sunken District Ruin",
@@ -3159,6 +3142,23 @@
    "tags:minecraft:is_nether",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/warped_grove_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:weathered_waystation",
+  "kind": "structure",
+  "name": "Weathered Waystation",
+  "text": "small surface shelter with a storage annex and a rope-ladder well, assembled from a jigsaw pool of three pieces",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_plains_like",
+  "loot": "travel rations and spare cartography kits",
+  "mobs": "no hostile spawns; one wandering trader villager variant",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/weathered_waystation",
+  "connects": [
+   "tags:minecraft:is_overworld",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/weathered_waystation"
   ]
  }
 ]

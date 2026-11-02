@@ -30,12 +30,12 @@
   "next": null
  },
  {
-  "id": "diaithir_worldgen:find/ashen_bastion_keep",
-  "title": "Find Ashen Bastion Keep",
+  "id": "diaithir_worldgen:find/ashen_bastion",
+  "title": "Find Ashen Bastion",
   "age": "IV",
   "goal": {
    "type": "locate_structure",
-   "structure": "diaithir_worldgen:ashen_bastion_keep"
+   "structure": "diaithir_worldgen:ashen_bastion"
   },
   "next": null
  },
@@ -136,16 +136,6 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:buried_vault_shrine"
-  },
-  "next": null
- },
- {
-  "id": "diaithir_worldgen:find/cinder_wraithhold",
-  "title": "Find Cinder Wraithhold",
-  "age": "II",
-  "goal": {
-   "type": "locate_structure",
-   "structure": "diaithir_worldgen:cinder_wraithhold"
   },
   "next": null
  },
@@ -450,22 +440,32 @@
   "next": null
  },
  {
+  "id": "diaithir_worldgen:find/drowned_archive",
+  "title": "Find Drowned Archive",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:drowned_archive"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/drowned_citadel",
+  "title": "Find Drowned Citadel",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:drowned_citadel"
+  },
+  "next": null
+ },
+ {
   "id": "diaithir_worldgen:find/drowned_market_ruin",
   "title": "Find Drowned Market Ruin",
   "age": "II",
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:drowned_market_ruin"
-  },
-  "next": null
- },
- {
-  "id": "diaithir_worldgen:find/drowned_watchtower_ruin",
-  "title": "Find Drowned Watchtower Ruin",
-  "age": "II",
-  "goal": {
-   "type": "locate_structure",
-   "structure": "diaithir_worldgen:drowned_watchtower_ruin"
   },
   "next": null
  },
@@ -586,16 +586,6 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:ember_vault_chamber"
-  },
-  "next": null
- },
- {
-  "id": "diaithir_worldgen:find/ember_watch_fort",
-  "title": "Find Ember Watch Fort",
-  "age": "IV",
-  "goal": {
-   "type": "locate_structure",
-   "structure": "diaithir_worldgen:ember_watch_fort"
   },
   "next": null
  },
@@ -850,16 +840,6 @@
   "next": null
  },
  {
-  "id": "diaithir_worldgen:find/frostbound_citadel_ruin",
-  "title": "Find Frostbound Citadel Ruin",
-  "age": "II",
-  "goal": {
-   "type": "locate_structure",
-   "structure": "diaithir_worldgen:frostbound_citadel_ruin"
-  },
-  "next": null
- },
- {
   "id": "diaithir_worldgen:find/frostbound_ice_drillsite",
   "title": "Find Frostbound Ice Drillsite",
   "age": "III",
@@ -936,6 +916,16 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:hidden_crypt_chapel"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/hollow_chapel_ruin",
+  "title": "Find Hollow Chapel Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:hollow_chapel_ruin"
   },
   "next": null
  },
@@ -1070,16 +1060,6 @@
   "next": null
  },
  {
-  "id": "diaithir_worldgen:find/moss_gravewall_ruin",
-  "title": "Find Moss Gravewall Ruin",
-  "age": "II",
-  "goal": {
-   "type": "locate_structure",
-   "structure": "diaithir_worldgen:moss_gravewall_ruin"
-  },
-  "next": null
- },
- {
   "id": "diaithir_worldgen:find/mossveil_warrens",
   "title": "Find Mossveil Warrens",
   "age": "III",
@@ -1170,6 +1150,16 @@
   "next": null
  },
  {
+  "id": "diaithir_worldgen:find/nether_siege_camp",
+  "title": "Find Nether Siege Camp",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_siege_camp"
+  },
+  "next": null
+ },
+ {
   "id": "diaithir_worldgen:find/oasis_watch_tower",
   "title": "Find Oasis Watch Tower",
   "age": "IV",
@@ -1186,6 +1176,16 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:obelisk_colonnade_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/obsidian_spire_hold",
+  "title": "Find Obsidian Spire Hold",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:obsidian_spire_hold"
   },
   "next": null
  },
@@ -1550,16 +1550,6 @@
   "next": null
  },
  {
-  "id": "diaithir_worldgen:find/sunken_citadel",
-  "title": "Find Sunken Citadel",
-  "age": "III",
-  "goal": {
-   "type": "locate_structure",
-   "structure": "diaithir_worldgen:sunken_citadel"
-  },
-  "next": null
- },
- {
   "id": "diaithir_worldgen:find/sunken_district_ruin",
   "title": "Find Sunken District Ruin",
   "age": "II",
@@ -1856,6 +1846,16 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:warped_grove_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/weathered_waystation",
+  "title": "Find Weathered Waystation",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:weathered_waystation"
   },
   "next": null
  }

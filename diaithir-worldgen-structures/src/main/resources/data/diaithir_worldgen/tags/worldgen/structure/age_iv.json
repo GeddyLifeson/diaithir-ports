@@ -1,6 +1,6 @@
 {
  "values": [
-  "diaithir_worldgen:ashen_bastion_keep",
+  "diaithir_worldgen:ashen_bastion",
   "diaithir_worldgen:ashen_lookout_spire",
   "diaithir_worldgen:coral_reef_outpost",
   "diaithir_worldgen:cursed_bastion_hold",
@@ -11,7 +11,6 @@
   "diaithir_worldgen:diaithir_coastal_watchtower",
   "diaithir_worldgen:diaithir_village_savanna",
   "diaithir_worldgen:ember_spire_outpost",
-  "diaithir_worldgen:ember_watch_fort",
   "diaithir_worldgen:ember_watch_outpost",
   "diaithir_worldgen:fortified_manor_keep",
   "diaithir_worldgen:frostbound_beacon_keep",
@@ -20,6 +19,7 @@
   "diaithir_worldgen:jungle_outpost_cliff_post",
   "diaithir_worldgen:nether_bastion_outpost",
   "diaithir_worldgen:oasis_watch_tower",
+  "diaithir_worldgen:obsidian_spire_hold",
   "diaithir_worldgen:overgrown_watchtower",
   "diaithir_worldgen:raider_watch_camp",
   "diaithir_worldgen:raider_watch_tower",
