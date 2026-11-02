@@ -35,10 +35,11 @@ public final class VillagerCareFeature {
 
     private static void restockIfDawn(Villager v, ServerLevel level) {
         if (v.getVillagerData().profession().is(VillagerProfession.NONE) || v.getVillagerData().profession().is(VillagerProfession.NITWIT)) return;
-        long time = level.getDayTime() % 24000L;
+        long dayTime = level.getGameTime();
+        long time = dayTime % 24000L;
         if (time > 100L) return;
-        if (v.getPersistentData().getLongOr("diaithir_restock_day", -1L) == level.getDayTime() / 24000L) return;
-        v.getPersistentData().putLong("diaithir_restock_day", level.getDayTime() / 24000L);
+        if (v.getPersistentData().getLongOr("diaithir_restock_day", -1L) == dayTime / 24000L) return;
+        v.getPersistentData().putLong("diaithir_restock_day", dayTime / 24000L);
         for (MerchantOffer offer : v.getOffers()) offer.resetUses();
     }
 

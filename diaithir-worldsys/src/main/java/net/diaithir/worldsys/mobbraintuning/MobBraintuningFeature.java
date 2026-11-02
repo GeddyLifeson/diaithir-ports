@@ -73,8 +73,13 @@ public final class MobBraintuningFeature {
     }
 
     private static boolean eligible(Mob mob) {
+        EntityType<?> type = mob.getType();
+        boolean boss = type == EntityType.WITHER
+                || type == EntityType.ENDER_DRAGON
+                || type == EntityType.WARDEN
+                || type == EntityType.ELDER_GUARDIAN;
         return !(mob instanceof TamableAnimal t && t.isTame())
-                && !mob.getType().is(net.minecraft.tags.EntityTypeTags.BOSSES)
+                && !boss
                 && !mob.isPersistenceRequired()
                 && !mob.hasCustomName()
                 && !mob.isPassenger()

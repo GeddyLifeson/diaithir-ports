@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.phys.Vec3;
@@ -32,8 +33,8 @@ public final class PortalLinkFixFeature {
         double x = pos.x * scale;
         double z = pos.z * scale;
         WorldBorder border = to.getWorldBorder();
-        double cx = border.clampX(x, z);
-        double cz = border.clampZ(x, z);
+        double cx = Mth.clamp(x, border.getMinX(), border.getMaxX());
+        double cz = Mth.clamp(z, border.getMinZ(), border.getMaxZ());
         if (cx != x || cz != z) {
             player.sendOverlayMessage(Component.literal("Portal destination moved inside the world border."));
         }

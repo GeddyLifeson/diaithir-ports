@@ -5,6 +5,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
@@ -31,6 +32,10 @@ public final class CalmPiglinsFeature {
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, LivingChangeTargetEvent.class, CalmPiglinsFeature::onTarget);
     }
 
+    private static boolean isBarterCurrency(ItemStack stack) {
+        return stack.is(Items.GOLD_INGOT);
+    }
+
     private static void mark(ServerLevel level, Player player) {
         TRADERS.put(player.getUUID(), level.getGameTime() + GRACE_TICKS);
     }
@@ -50,14 +55,14 @@ public final class CalmPiglinsFeature {
         if (!(e.getTarget() instanceof Piglin piglin) || !(e.getLevel() instanceof ServerLevel level)) return;
         if (e.getHand() != InteractionHand.MAIN_HAND && e.getHand() != InteractionHand.OFF_HAND) return;
         ItemStack held = e.getItemStack();
-        if (!held.isEmpty() && piglin.isAdult() && piglin.isBarterCurrency(held)) mark(level, e.getEntity());
+        if (!held.isEmpty() && piglin.isAdult() && isBarterCurrency(held)) mark(level, e.getEntity());
     }
 
     private static void onToss(ItemTossEvent e) {
         if (!(e.getPlayer().level() instanceof ServerLevel level)) return;
         ItemStack stack = e.getEntity().getItem();
         boolean near = !level.getEntitiesOfClass(Piglin.class, e.getPlayer().getBoundingBox().inflate(DROP_RADIUS),
-                p -> p.isAdult() && p.isBarterCurrency(stack)).isEmpty();
+                p -> p.isAdult() && isBarterCurrency(stack)).isEmpty();
         if (near) mark(level, e.getPlayer());
     }
 

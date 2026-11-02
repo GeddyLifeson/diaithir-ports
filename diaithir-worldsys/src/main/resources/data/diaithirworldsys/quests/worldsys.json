@@ -1,0 +1,162 @@
+[
+ {
+  "id": "diaithirworldsys_vehicle_tuning_intro",
+  "title": "Tuned for the Road",
+  "text": "Bring a third-party vehicle or aircraft into your world and check how the pack balances it. Speed, fuel burn and repair costs follow the active tuning profile, so travel stays fair next to rails and ships.",
+  "next_system": "transport",
+  "feature": "vehicletuning",
+  "age": "II"
+ },
+ {
+  "id": "portallinkfix_first_crossing",
+  "title": "Honest Doorways",
+  "text": "Step through a Nether portal near a border or a crowded network and note the overlay message. Your arrival stays inside the border and near the exact scaled spot, so build your road with confidence.",
+  "next_system": "transport",
+  "feature": "portallinkfix",
+  "age": "II"
+ },
+ {
+  "id": "aircraft_tuning_intro",
+  "title": "Tuned for Flight",
+  "text": "Learn how aircraft types differ in speed, lift and fuel burn. Read the tuning entry in the Codex, then take a rotor craft up and see the stress cost. This links flight to power and transport.",
+  "next_system": "transport",
+  "feature": "aircrafttuning",
+  "age": "V"
+ },
+ {
+  "id": "worldqol_comforts",
+  "title": "Gentle Hands",
+  "text": "Sneak with an empty hand and right-click a ripe crop to harvest and replant it in one motion. Sleep in a bed to wake refreshed. Your fields and saplings now look after themselves.",
+  "next_system": "farming",
+  "feature": "worldqol",
+  "age": "I"
+ },
+ {
+  "id": "magnetic_personality",
+  "title": "Magnetic Personality",
+  "text": "Craft an Iron Magnet and carry it while mining. Watch drops glide to your feet. Sneak to pause the pull. Gold Magnets extend the range for larger farms and logistics setups.",
+  "next_system": "storage_logistics",
+  "feature": "itemmagnets",
+  "age": "II"
+ },
+ {
+  "id": "utilityblocks_intro",
+  "title": "Small Conveniences",
+  "text": "Craft the five utility blocks. Place a Lamp Block, bridge a gap with the Angel Block item, and drain a pool with a Fluid Hopper. Then connect the Redstone Clock to a machine.",
+  "next_system": "storage_logistics",
+  "feature": "utilityblocks",
+  "age": "II"
+ },
+ {
+  "id": "diaithirworldsys_veinbreaker_intro",
+  "title": "One Swing, One Vein",
+  "text": "Crouch and mine an ore block with a pickaxe that can harvest it. The connected vein breaks with it. Watch your tool durability, then smelt the haul in the next system.",
+  "next_system": "smelting",
+  "feature": "veinbreaker",
+  "age": "I"
+ },
+ {
+  "id": "skilltrees_first_levels",
+  "title": "Learning by Doing",
+  "text": "Mine ores, harvest crops, fight monsters and wander the land. Reach level 3 in any skill to see your permanent bonus grow, then check /skills for your progress.",
+  "next_system": "farming",
+  "feature": "skilltrees",
+  "age": "I"
+ },
+ {
+  "id": "diaithirworldsys_gemrings_first_ring",
+  "title": "Glint in the Rock",
+  "text": "Mine ore until a gem drops, then craft it with four gold ingots into a ring. Carry it to gain its power. Bring gems to the jeweller next to forge stronger trinkets.",
+  "next_system": "trinkets",
+  "feature": "gemrings",
+  "age": "II"
+ },
+ {
+  "id": "mobbraintuning_intro",
+  "title": "A Quieter Countryside",
+  "text": "Learn how distant mobs sleep to spare the server. Disable a behaviour with /mobbrain, reload some animals to see it take effect, then enable it again before moving on to pack-wide spawn tuning.",
+  "next_system": "worldevents",
+  "feature": "mobbraintuning",
+  "age": "I"
+ },
+ {
+  "id": "diaithirworldsys_wayfinder_first_find",
+  "title": "Which Way?",
+  "text": "Craft a Wayfinder Compass, search for a village, and walk to it by following the actionbar arrow. Sneak right click to cycle targets and pick your next destination.",
+  "next_system": "structures",
+  "feature": "structurecompass",
+  "age": "II"
+ },
+ {
+  "id": "diaithirworldsys_pack_version_intro",
+  "title": "Same Pack, Same World",
+  "text": "Check the pack version in the server list, then join. Matching versions let you play, mismatches are turned away with both versions named. Admins read the Codex page on unversioned clients next.",
+  "next_system": "world-systems-admin",
+  "feature": "packversioncheck",
+  "age": "I"
+ },
+ {
+  "id": "pocketbench_first_craft",
+  "title": "Workbench in Your Pocket",
+  "text": "Craft a Pocket Bench from a crafting table and a stick, then use it in open air to craft something away from any table. Portable crafting frees you to roam; next, explore storage logistics.",
+  "next_system": "storage_logistics",
+  "feature": "pocketbench",
+  "age": "I"
+ },
+ {
+  "id": "gridkeys_intro",
+  "title": "Tidy Hands",
+  "text": "Bind the Grid Keys controls, then rotate, balance and clear a crafting grid at a crafting table. Quicker crafting leads straight into the kitchen and farming chain.",
+  "next_system": "kitchen",
+  "feature": "gridkeys",
+  "age": "I"
+ },
+ {
+  "id": "calm_piglin_barter",
+  "title": "Golden Handshake",
+  "text": "Barter with a piglin by offering gold and walk away unharmed. The trade grace window keeps nearby piglins calm while you work. Gold is the language of the Nether.",
+  "next_system": "nether_trade_economy",
+  "feature": "calmpiglins",
+  "age": "III"
+ },
+ {
+  "id": "villagercare_steady_hands",
+  "title": "Steady Hands",
+  "text": "Trade with a villager and level its profession. Remove its workstation and see the job stay. Wait for dawn and check that every trade has restocked. Villagers like this are the base of your economy.",
+  "next_system": "economy",
+  "feature": "villagercare",
+  "age": "I"
+ },
+ {
+  "id": "diaithirworldsys_admincommands_intro",
+  "title": "A Place to Call Home",
+  "text": "Plant your flag with /sethome, wander off, then return with /home. Ask a friend to join you with /tpa. When you fall, /back takes you to where you were.",
+  "next_system": "transport",
+  "feature": "admincommands",
+  "age": "I"
+ },
+ {
+  "id": "questbook_intro",
+  "title": "The Quest Book",
+  "text": "Open the quest list with /quests list, then finish your first task. Rewards go to whoever completes it and your team hears about it.",
+  "next_system": "economy",
+  "feature": "questbook",
+  "age": "I"
+ },
+ {
+  "id": "rankperms_first_rank",
+  "title": "Order of the Hall",
+  "text": "Name a rank, give it a colour and a prefix, then grant it a permission node and set it on a player. Their name now carries the rank in chat and the tab list.",
+  "next_system": "claims",
+  "feature": "rankperms",
+  "age": "I"
+ },
+ {
+  "id": "village_guards_intro",
+  "title": "Iron Watch",
+  "text": "Bring a villager to a new settlement and wait for a Village Guard to arrive. Test their loyalty against a night of monsters, then expand the village and see how many guards the area can hold.",
+  "next_system": "raids",
+  "feature": "villageguards",
+  "age": "I"
+ }
+]

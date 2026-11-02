@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.level.block.BreakBlockEvent;
 
 import java.util.ArrayDeque;
 import java.util.HashSet;
@@ -21,10 +21,10 @@ public final class VeinBreakerFeature {
     private static boolean active;
 
     public static void register(IEventBus modBus) {
-        NeoForge.EVENT_BUS.addListener(BlockEvent.BreakEvent.class, VeinBreakerFeature::onBreak);
+        NeoForge.EVENT_BUS.addListener(BreakBlockEvent.class, VeinBreakerFeature::onBreak);
     }
 
-    private static void onBreak(BlockEvent.BreakEvent e) {
+    private static void onBreak(BreakBlockEvent e) {
         if (active || !(e.getPlayer() instanceof ServerPlayer player) || !(e.getLevel() instanceof ServerLevel level)) return;
         if (player.isCreative() || !player.isShiftKeyDown()) return;
         BlockState origin = e.getState();

@@ -13,7 +13,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.RelativeMovement;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
@@ -46,6 +45,11 @@ public final class AdminCommandsFeature {
         NeoForge.EVENT_BUS.addListener(LivingDeathEvent.class, e -> {
             if (e.getEntity() instanceof ServerPlayer p) BACK.put(p.getUUID(), Spot.of(p));
         });
+    }
+
+    private static boolean isAdmin(CommandSourceStack s) {
+        return s.getServer() != null && s.getEntity() instanceof ServerPlayer p
+                && s.getServer().getPlayerList().isOp(p.nameAndId());
     }
 
     private static void commands(CommandDispatcher<CommandSourceStack> d) {
@@ -99,7 +103,7 @@ public final class AdminCommandsFeature {
             from.sendSystemMessage(Component.literal("Your teleport request was denied."));
             return say(c, "Request denied.");
         }));
-        d.register(Commands.literal("tphere").requires(s -> s.hasPermission(2))
+        d.register(Commands.literal("tphere").requires(s -> isAdmin(s))
                 .then(Commands.argument("player", EntityArgument.player()).executes(c -> {
                     ServerPlayer admin = c.getSource().getPlayerOrException();
                     go(EntityArgument.getPlayer(c, "player"), Spot.of(admin));
@@ -137,7 +141,7 @@ public final class AdminCommandsFeature {
     }
 
     private static com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSourceStack> admin(String name, Action a) {
-        return Commands.literal(name).requires(s -> s.hasPermission(2))
+        return Commands.literal(name).requires(s -> isAdmin(s))
                 .executes(c -> say(c, a.apply(c.getSource().getPlayerOrException())))
                 .then(Commands.argument("player", EntityArgument.player()).executes(c -> say(c, a.apply(EntityArgument.getPlayer(c, "player")))));
     }
@@ -153,7 +157,7 @@ public final class AdminCommandsFeature {
 
     private static void go(ServerPlayer p, Spot s) {
         BACK.put(p.getUUID(), Spot.of(p));
-        p.teleportTo(s.level(), s.x(), s.y(), s.z(), Set.<RelativeMovement>of(), s.yRot(), s.xRot(), true);
+        p.teleportTo(s.level(), s.x(), s.y(), s.z(), Set.of(), s.yRot(), s.xRot(), true);
     }
 
     private static int say(CommandContext<CommandSourceStack> c, String msg) {

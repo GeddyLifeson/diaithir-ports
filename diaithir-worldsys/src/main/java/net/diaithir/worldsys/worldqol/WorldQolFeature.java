@@ -18,28 +18,19 @@ import net.minecraft.tags.BlockTags;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.EntityLeaveLevelEvent;
-import net.neoforged.neoforge.event.entity.living.PlayerWakeUpEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
 import java.util.List;
 
-/** Small world quality-of-life tweaks: farmland protection, wake-up regeneration, sapling rescue, sneak harvest. */
+/** Small world quality-of-life tweaks: farmland protection, sapling rescue, sneak harvest. */
 public final class WorldQolFeature {
     private WorldQolFeature() {}
 
     public static void register(IEventBus modBus) {
         NeoForge.EVENT_BUS.addListener(BlockEvent.FarmlandTrampleEvent.class, e -> e.setCanceled(true));
-        NeoForge.EVENT_BUS.addListener(PlayerWakeUpEvent.class, WorldQolFeature::wake);
         NeoForge.EVENT_BUS.addListener(EntityLeaveLevelEvent.class, WorldQolFeature::leave);
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.RightClickBlock.class, WorldQolFeature::harvest);
-    }
-
-    private static void wake(PlayerWakeUpEvent e) {
-        if (e.updateLevel() && !e.wakeImmediately() && e.getEntity().level() instanceof ServerLevel) {
-            e.getEntity().addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0));
-            e.getEntity().sendOverlayMessage(Component.literal("You wake up refreshed."));
-        }
     }
 
     private static void leave(EntityLeaveLevelEvent e) {
@@ -59,7 +50,7 @@ public final class WorldQolFeature {
         BlockState state = level.getBlockState(pos);
         if (!(state.getBlock() instanceof CropBlock crop) || !crop.isMaxAge(state)) return;
         List<ItemStack> drops = Block.getDrops(state, level, pos, null, e.getEntity(), ItemStack.EMPTY);
-        ItemStack seed = new ItemStack(crop.getCloneItemStack(level, pos, state).getItem());
+        ItemStack seed = new ItemStack(crop.asItem());
         boolean removed = false;
         for (ItemStack drop : drops) {
             if (!removed && drop.is(seed.getItem())) {

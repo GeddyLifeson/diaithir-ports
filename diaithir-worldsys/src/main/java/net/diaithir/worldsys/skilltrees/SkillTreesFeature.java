@@ -19,7 +19,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -35,7 +35,7 @@ public final class SkillTreesFeature {
 
     public static void register(IEventBus modBus) {
         ATTACHMENTS.register(modBus);
-        NeoForge.EVENT_BUS.addListener(BlockEvent.BreakEvent.class, SkillTreesFeature::onBreak);
+        NeoForge.EVENT_BUS.addListener(BlockDropsEvent.class, SkillTreesFeature::onBreak);
         NeoForge.EVENT_BUS.addListener(LivingDeathEvent.class, SkillTreesFeature::onKill);
         NeoForge.EVENT_BUS.addListener(PlayerTickEvent.Post.class, SkillTreesFeature::onTick);
         NeoForge.EVENT_BUS.addListener(PlayerEvent.PlayerLoggedInEvent.class, e -> {
@@ -47,8 +47,8 @@ public final class SkillTreesFeature {
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> commands(e.getDispatcher()));
     }
 
-    private static void onBreak(BlockEvent.BreakEvent e) {
-        if (!(e.getPlayer() instanceof ServerPlayer p)) return;
+    private static void onBreak(BlockDropsEvent e) {
+        if (!(e.getBreaker() instanceof ServerPlayer p)) return;
         BlockState s = e.getState();
         if (s.is(BlockTags.COAL_ORES) || s.is(BlockTags.IRON_ORES) || s.is(BlockTags.COPPER_ORES) || s.is(BlockTags.GOLD_ORES)
                 || s.is(BlockTags.REDSTONE_ORES) || s.is(BlockTags.LAPIS_ORES) || s.is(BlockTags.DIAMOND_ORES) || s.is(BlockTags.EMERALD_ORES)) {
@@ -96,7 +96,7 @@ public final class SkillTreesFeature {
                     }
                     return 1;
                 })
-                .then(Commands.literal("reset").requires(src -> src.hasPermission(2))
+                .then(Commands.literal("reset").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
                         .then(Commands.argument("player", EntityArgument.player()).executes(c -> {
                             ServerPlayer p = EntityArgument.getPlayer(c, "player");
                             p.setData(DATA, SkillData.EMPTY);

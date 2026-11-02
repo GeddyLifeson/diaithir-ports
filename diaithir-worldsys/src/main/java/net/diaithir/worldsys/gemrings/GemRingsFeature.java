@@ -14,7 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.level.block.BreakBlockEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -50,11 +50,11 @@ public final class GemRingsFeature {
                 e.accept(TOPAZ_RING.get());
             }
         });
-        NeoForge.EVENT_BUS.addListener(BlockEvent.BreakEvent.class, GemRingsFeature::onBreak);
+        NeoForge.EVENT_BUS.addListener(BreakBlockEvent.class, GemRingsFeature::onBreak);
         NeoForge.EVENT_BUS.addListener(PlayerTickEvent.Post.class, GemRingsFeature::onPlayerTick);
     }
 
-    private static void onBreak(BlockEvent.BreakEvent e) {
+    private static void onBreak(BreakBlockEvent e) {
         if (!(e.getLevel() instanceof ServerLevel level) || e.getPlayer().isCreative()) return;
         var state = e.getState();
         if (!(state.is(BlockTags.COAL_ORES) || state.is(BlockTags.IRON_ORES) || state.is(BlockTags.GOLD_ORES) || state.is(BlockTags.DIAMOND_ORES)
