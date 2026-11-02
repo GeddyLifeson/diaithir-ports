@@ -1,0 +1,18 @@
+{
+  "color": "ff0000",
+  "chat_color": "red",
+  "chance": 0.05,
+  "min_nights_between": 20,
+  "valid_moon_phases": [
+    0
+  ],
+  "super_moon": true,
+  "rise": "diaithirhostile.rise.super_blood_moon",
+  "set": "diaithirhostile.set.super_blood_moon",
+  "quest": "diaithirhostile:lunar/super_blood_moon",
+  "horde": {
+    "cap": 28,
+    "interval_ticks": 30,
+    "biome_monsters": true
+  }
+}

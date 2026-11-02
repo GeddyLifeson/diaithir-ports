@@ -1,0 +1,22 @@
+{
+  "color": "00ffff",
+  "chat_color": "aqua",
+  "chance": 0.05,
+  "min_nights_between": 20,
+  "valid_moon_phases": [
+    0
+  ],
+  "super_moon": true,
+  "rise": "diaithirhostile.rise.super_blue_moon",
+  "set": "diaithirhostile.set.super_blue_moon",
+  "quest": "diaithirhostile:lunar/super_blue_moon",
+  "xp": 4.0,
+  "anvil_cost": 0.25,
+  "effects": [
+    {
+      "target": "player",
+      "effect": "minecraft:luck",
+      "amplifier": 4
+    }
+  ]
+}
