@@ -4,7 +4,7 @@ plugins {
 }
 
 version = project.mod_version
-base.archivesName = 'diaithir-client-neoforge-26.1.2'
+base.archivesName = 'diaithir-clientcore-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
