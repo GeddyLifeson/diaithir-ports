@@ -9,3 +9,5 @@ One Factorio-style upgrade system for every working block. Design and plan: `/mn
 - `Resolver` gives the final clamped effect; `Planner` swaps modules in bulk (the upgrade planner).
 
 Test: `./gradlew test` (JUnit, no game needed).
+
+Units: real SI per `/mnt/project-files/plans/UNITS.md`. Machines declare base draw in W and job time in s; `Resolver.powerWatts` and `jobSeconds` return the upgraded values. Magic costs are energy at 100 J per quantum, so one module maths covers every theme.

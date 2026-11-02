@@ -71,4 +71,10 @@ class UpgradesTest {
         assertEquals(3, reg.find("thirdmod:furnace", java.util.Set.of("#diaithirupgrades:machines")).get().slots());
         assertTrue(reg.find("other:rock", java.util.Set.of()).isEmpty());
     }
+
+    @Test void realUnitsWattsAndSeconds() {
+        Effects e = new Effects(0.5, 0, 0.25, 0);
+        assertEquals(1250.0, Resolver.powerWatts(1000, e), 1e-9);
+        assertEquals(20.0, Resolver.jobSeconds(30, e), 1e-9);
+    }
 }
