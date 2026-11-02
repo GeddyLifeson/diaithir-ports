@@ -1,16 +1,37 @@
 plugins {
     id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
 }
 
 version = project.mod_version
-base.archivesName = 'diaithir-upgrades-api'
+base.archivesName = 'diaithir-upgrades-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
-repositories { mavenCentral() }
+neoForge {
+    version = project.neo_version
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+    mods { diaithirupgrades { sourceSet(sourceSets.main) } }
+}
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
 }
 
-test { useJUnitPlatform() }
+test {
+    useJUnitPlatform()
+}
