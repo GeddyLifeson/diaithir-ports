@@ -95,7 +95,7 @@ public final class SelfTest {
                 for (Data.Phase ph : p.phases) for (String a : ph.attacks) check(p.attacks.containsKey(a), p.id + ": phase uses known attack " + a);
                 for (Data.Attack a : p.attacks.values()) check(TYPES.contains(a.type), p.id + ": attack type " + a.type);
                 check(DiaithirBosses.TROPHIES.containsKey(p.id), p.id + ": has a trophy");
-                check(p.age >= 1 && p.age <= 7, p.id + ": Age in range");
+                check(p.age >= 1 && p.age <= Ages.RODOS, p.id + ": Age in range");
             }
             for (Data.Profile p : Data.profiles().values()) {
                 var type = BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(p.entity));

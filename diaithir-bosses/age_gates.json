@@ -57,7 +57,25 @@
   "diaithirbosses:niechgleididdouras_trophy": "VII",
   "diaithirbosses:niechgleididdouras_spawn_egg": "VII",
   "diaithirbosses:champion_token": "I",
-  "diaithirbosses:boss_altar": "I"
+  "diaithirbosses:boss_altar": "I",
+  "diaithirbosses:antlered_hollow_trophy": "VII",
+  "diaithirbosses:antlered_hollow_spawn_egg": "VII",
+  "diaithirbosses:cauldron_heart_trophy": "VII",
+  "diaithirbosses:cauldron_heart_spawn_egg": "VII",
+  "diaithirbosses:tide_reaver_trophy": "VII",
+  "diaithirbosses:tide_reaver_spawn_egg": "VII",
+  "diaithirbosses:foundry_sovereign_trophy": "Rodos",
+  "diaithirbosses:foundry_sovereign_spawn_egg": "Rodos",
+  "diaithirbosses:mist_weaver_trophy": "Rodos",
+  "diaithirbosses:mist_weaver_spawn_egg": "Rodos",
+  "diaithirbosses:ash_seraph_trophy": "Rodos",
+  "diaithirbosses:ash_seraph_spawn_egg": "Rodos",
+  "diaithirbosses:dusk_wyrm_trophy": "Rodos",
+  "diaithirbosses:dusk_wyrm_spawn_egg": "Rodos",
+  "diaithirbosses:rootbreaker_trophy": "Rodos",
+  "diaithirbosses:rootbreaker_spawn_egg": "Rodos",
+  "diaithirbosses:last_wheel_trophy": "Rodos",
+  "diaithirbosses:last_wheel_spawn_egg": "Rodos"
  },
  "entities": {
   "diaithirbosses:tribal_chief": "I",
@@ -85,6 +103,15 @@
   "diaithirbosses:natuirtuar": "VII",
   "diaithirbosses:stoirmiduislach": "VII",
   "diaithirbosses:famuirmeirgi": "VII",
-  "diaithirbosses:niechgleididdouras": "VII"
+  "diaithirbosses:niechgleididdouras": "VII",
+  "diaithirbosses:antlered_hollow": "VII",
+  "diaithirbosses:cauldron_heart": "VII",
+  "diaithirbosses:tide_reaver": "VII",
+  "diaithirbosses:foundry_sovereign": "Rodos",
+  "diaithirbosses:mist_weaver": "Rodos",
+  "diaithirbosses:ash_seraph": "Rodos",
+  "diaithirbosses:dusk_wyrm": "Rodos",
+  "diaithirbosses:rootbreaker": "Rodos",
+  "diaithirbosses:last_wheel": "Rodos"
  }
 }

@@ -1,0 +1,97 @@
+{
+ "tab": "Bosses",
+ "quests": [
+  {
+   "id": "ascendant/rite",
+   "title": "Raise the Ascendant altar",
+   "text": "Build an Ascendant altar from refined metal and carved stone in a cleared arena of radius 32.",
+   "after": [
+    "boss_altar"
+   ],
+   "kind": "build",
+   "age": "VII"
+  },
+  {
+   "id": "ascendant/tier1",
+   "title": "Ascendant I",
+   "text": "Defeat Antlered Hollow, Cauldron-Heart and Tide Reaver (any order).",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "kill_all",
+   "bosses": [
+    "antlered_hollow",
+    "cauldron_heart",
+    "tide_reaver"
+   ]
+  },
+  {
+   "id": "ascendant/tier2",
+   "title": "Ascendant II",
+   "text": "Defeat Foundry Sovereign, Mist Weaver and Ash Seraph.",
+   "after": [
+    "ascendant/tier1"
+   ],
+   "kind": "kill_all",
+   "bosses": [
+    "foundry_sovereign",
+    "mist_weaver",
+    "ash_seraph"
+   ]
+  },
+  {
+   "id": "ascendant/tier3",
+   "title": "Ascendant III",
+   "text": "Defeat Dusk Wyrm, Rootbreaker and The Last Wheel.",
+   "after": [
+    "ascendant/tier2"
+   ],
+   "kind": "kill_all",
+   "bosses": [
+    "dusk_wyrm",
+    "rootbreaker",
+    "last_wheel"
+   ]
+  },
+  {
+   "id": "ascendant/rush",
+   "title": "The Gauntlet",
+   "text": "Clear the boss rush once.",
+   "after": [
+    "ascendant/tier1"
+   ],
+   "kind": "event",
+   "event": "boss_rush_cleared"
+  },
+  {
+   "id": "ascendant/mode_relentless",
+   "title": "Relentless",
+   "text": "Win any Ascendant I fight, then take the first Mode Stone.",
+   "after": [
+    "ascendant/tier1"
+   ],
+   "kind": "reward",
+   "mode": "relentless"
+  },
+  {
+   "id": "ascendant/mode_merciless",
+   "title": "Merciless",
+   "text": "Clear the Gauntlet on Relentless.",
+   "after": [
+    "ascendant/rush"
+   ],
+   "kind": "reward",
+   "mode": "merciless"
+  },
+  {
+   "id": "ascendant/mode_ordeal",
+   "title": "Ordeal",
+   "text": "Beat The Last Wheel on Merciless.",
+   "after": [
+    "ascendant/tier3"
+   ],
+   "kind": "reward",
+   "mode": "ordeal"
+  }
+ ]
+}
