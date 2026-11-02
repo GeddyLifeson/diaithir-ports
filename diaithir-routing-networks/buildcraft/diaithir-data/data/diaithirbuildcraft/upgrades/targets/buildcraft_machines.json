@@ -1,0 +1,23 @@
+{
+ "_doc": "Draft against UPGRADES.md (#117); adjust keys to the final schema. Machines that tick their own code also need the UpgradeHost capability (Java glue, TODO).",
+ "id": "diaithirbuildcraft:machines",
+ "priority": 0,
+ "targets": [
+  "buildcraftbuilders:quarry",
+  "buildcraftfactory:mining_well",
+  "buildcraftfactory:pump",
+  "buildcraftbuilders:builder",
+  "buildcraftbuilders:filler",
+  "buildcraftsilicon:assembly_table",
+  "buildcraftenergy:engine_stone",
+  "buildcraftenergy:engine_iron",
+  "buildcraftenergy:engine_redstone",
+  "buildcraftenergy:engine_fe"
+ ],
+ "slots": 2,
+ "kinds": [
+  "speed",
+  "efficiency"
+ ],
+ "max_quality": "rare"
+}
