@@ -15,7 +15,7 @@ neoForge {
             programArgument '--nogui'
         }
     }
-    mods { diaithirtooltips { sourceSet(sourceSets.main) } }
+    mods { diaithirtooltipfx { sourceSet(sourceSets.main) } }
 }
 
 processResources {

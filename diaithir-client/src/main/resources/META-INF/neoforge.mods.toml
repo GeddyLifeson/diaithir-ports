@@ -3,12 +3,12 @@ loaderVersion = "[4,)"
 license = "MIT"
 
 [[mods]]
-modId = "diaithirclient"
+modId = "diaithirclientcore"
 version = "${version}"
 displayName = "Diaithir Client"
 description = "Clean-room Diaithir module combining: diaithirearlywindow."
 
-[[dependencies.diaithirclient]]
+[[dependencies.diaithirclientcore]]
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"

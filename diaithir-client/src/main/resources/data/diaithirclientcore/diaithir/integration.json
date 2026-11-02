@@ -1,17 +1,17 @@
 {
- "module": "diaithirtooltips",
+ "module": "diaithirclientcore",
  "side": "client",
  "features": [
-  "durabilitytooltip"
+  "diaithirearlywindow"
  ],
  "codex": {
-  "entry": "diaithirtooltips.overview",
+  "entry": "diaithirclientcore.overview",
   "parent": "codex.interface",
   "how_it_connects": "client-side; reads item, block and tooltip data from every module through capabilities and c: tags only (no class checks)",
   "age": "I"
  },
  "quest": {
-  "id": "diaithirtooltips.intro",
+  "id": "diaithirclientcore.intro",
   "tab": "Codex Quests",
   "next": null,
   "optional": true
@@ -25,10 +25,7 @@
   "time": "s (20 ticks)",
   "note": "FE/RF shown as labels of J"
  },
- "tags_used": [
-  "c:tools",
-  "c:foods"
- ],
+ "tags_used": [],
  "global_events": {
   "listens": [],
   "fires": []

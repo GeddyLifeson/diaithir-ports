@@ -3,12 +3,12 @@ loaderVersion = "[4,)"
 license = "MIT"
 
 [[mods]]
-modId = "diaithirtooltips"
+modId = "diaithirtooltipfx"
 version = "${version}"
 displayName = "Diaithir Tooltips"
 description = "Clean-room Diaithir module combining: durabilitytooltip."
 
-[[dependencies.diaithirtooltips]]
+[[dependencies.diaithirtooltipfx]]
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"

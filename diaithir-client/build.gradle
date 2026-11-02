@@ -15,7 +15,7 @@ neoForge {
             programArgument '--nogui'
         }
     }
-    mods { diaithirclient { sourceSet(sourceSets.main) } }
+    mods { diaithirclientcore { sourceSet(sourceSets.main) } }
 }
 
 processResources {

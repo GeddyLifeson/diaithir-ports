@@ -6,7 +6,7 @@ import net.neoforged.fml.common.Mod;
 
 @Mod(Module.ID)
 public final class Module {
-    public static final String ID = "diaithirclient";
+    public static final String ID = "diaithirclientcore";
 
     public Module(IEventBus bus, ModContainer container) {
         net.diaithir.client.diaithirearlywindow.Feature.init(bus, container);
