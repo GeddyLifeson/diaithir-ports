@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "FilePackResourcesMixin",
+    "MappedRegistryIntrusiveHoldersMixin",
     "SharedZipFileAccessAccessor",
     "TemplateSourceMixin",
     "compat.c2me.C2MEStorageThreadMixin",
