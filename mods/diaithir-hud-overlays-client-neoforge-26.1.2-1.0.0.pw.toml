@@ -1,0 +1,8 @@
+name = "diaithir-hud-overlays-client-neoforge-26.1.2-1.0.0"
+filename = "diaithir-hud-overlays-client-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-fold4/client/diaithir-hud-overlays-client-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "a099d73dea226576bed05e1e69b03dce40746b40b923ea9e3a345b6e90288cac"
