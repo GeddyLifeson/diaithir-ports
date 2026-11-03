@@ -7,8 +7,11 @@ Play: place a Ship Helm next to your hull, right-click it. Everything connected 
 WASD steer, jump rises (needs 50% balloons), sprint brakes, dismount disassembles back into blocks (`/archimedes disassemble` as a fallback, `/archimedes info`).
 Engines: right-click with coal or wood to fuel; each burning engine adds speed while someone is at the helm. Crates keep their items.
 
-Not in v1 (the original had them): walking around inside a moving ship (the hull is one box for other entities), gauge blocks, parachutes, seat entities beyond the helm, GUIs for helm/engine, ship renaming.
+Not in v1 (the original had them): gauge blocks, parachutes, seat entities beyond the helm, GUIs for helm/engine, ship renaming.
 Headless check: `-Darchimedes.selftest=true` builds a boat in a pool, floats it, drives it, disassembles it.
 
 Integration data: `../age_gates.json` (Age II timber parts, III balloons, IV engine), `names_map.json` (Diaithiris names from compute job `archimedes_names`, archaic layer applied; 130-culture drop at /mnt/project-files/names/inbox/archimedes.json), Library rows in /mnt/project-files/library-sync/archimedes.json.
 Render check still open: needs a client join (ships spawn via helm right-click or the selftest boat).
+
+Deck walking (survey part 1, idea from aleki's Nifty Ships, MIT; written here, no upstream code): `DeckColliders` is pure geometry over a ship's blocks (floor height under a point with 2 blocks of headroom, and the merged collision boxes of the hull with buried blocks dropped: the 18-block test boat gives 7 boxes). `DeckWalk` carries every free entity standing on a deck cell with the ship: before the ship moves each is recorded as a ship-local point, afterwards it is put back at that point and turned by the yaw change (players via a server teleport, others via `move`). Config `deckWalk` (default on). The headless check (`-Darchimedes.selftest=true`) adds an armour stand on the deck and checks it stays on its local point while the boat drives 3.8 blocks.
+Not done: using the merged boxes as the ship's real collision (the hull is still one box, so you ride on top of it, not inside), spawning collider entities, yaw carry is untested in the headless check, players are untested (no client join).

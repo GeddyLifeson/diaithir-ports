@@ -16,6 +16,8 @@ public final class ArchimedesSelfTest {
     private double startX, startZ;
     private BlockPos origin;
     private int fails;
+    private net.minecraft.world.entity.decoration.ArmorStand rider;
+    private net.minecraft.world.phys.Vec3 riderLocal;
 
     @SubscribeEvent
     public void started(ServerStartedEvent e) {
@@ -41,6 +43,10 @@ public final class ArchimedesSelfTest {
         if (ship == null) { finish(); return; }
         check("blocks", ship.chunk().blocks.size() == 18);
         check("world cleared", level.getBlockState(origin.offset(1, 0, 1)).isAir());
+        var boxes = DeckColliders.colliders(ship.chunk());
+        check("deck colliders merge (" + boxes.size() + " boxes for " + ship.chunk().blocks.size() + " blocks)", !boxes.isEmpty() && boxes.size() < ship.chunk().blocks.size());
+        check("floor under a plank cell is its top", Math.abs(DeckColliders.floorAt(ship.chunk(), 0.5, 0.5, 1.0, DeckWalk.STEP_UP) - 1.0) < 1e-6);
+        check("no floor outside the hull", Double.isNaN(DeckColliders.floorAt(ship.chunk(), -1.5, 0.5, 1.0, DeckWalk.STEP_UP)));
         ship.testInput = new Input(false, false, false, false, false, false, false);
         startX = ship.getX(); startZ = ship.getZ();
         ArchimedesMod.LOG.info("[selftest] assembled {} blocks mass {} at {}", ship.chunk().blocks.size(), ship.chunk().mass, ship.position());
@@ -56,6 +62,17 @@ public final class ArchimedesSelfTest {
             ArchimedesMod.LOG.info("[selftest] y after settle {}", ship.getY());
             check("floats (y>56.5 and above floor)", ship.getY() > 58 && ship.getY() < 66);
             ship.testInput = new Input(true, false, false, false, false, false, false);
+            riderLocal = new net.minecraft.world.phys.Vec3(0.5, 1.0, 1.5);
+            rider = new net.minecraft.world.entity.decoration.ArmorStand(net.minecraft.world.entity.EntityType.ARMOR_STAND, level);
+            rider.setNoGravity(true);
+            rider.setPos(ship.toWorldPoint(riderLocal));
+            level.addFreshEntity(rider);
+        }
+        if (tick == 124 && rider != null) {
+            var now = ship.toLocalPoint(rider.position());
+            ArchimedesMod.LOG.info("[selftest] deck rider local {} (started {}), world {}", now, riderLocal, rider.position());
+            check("deck rider stayed on the deck while the ship moved", now.distanceTo(riderLocal) < 0.35 && Math.hypot(rider.getX() - startX, rider.getZ() - startZ) > 1.0);
+            rider.discard();
         }
         if (tick == 125) {
             double d = Math.hypot(ship.getX() - startX, ship.getZ() - startZ);
