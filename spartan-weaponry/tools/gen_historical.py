@@ -1,5 +1,5 @@
 """Builds the historical-weapon batch of spartan-weaponry from roster/WEAPONS_ROSTER.csv (one item per real design).
-Run: python3 -I tools/gen_historical.py   (writes data/<id>/historical_weapons.json, items, models, textures, lang, recipes, age gates)."""
+Run: python3 -I tools/gen_historical.py   (writes data/<id>/historical_weapons.json, items, models, textures, lang, age gates; no recipes, the Smithy makes them)."""
 import csv, json, os, re, shutil, unicodedata
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -89,13 +89,7 @@ for r in rows:
     src = next(f"{A}/textures/item/{m}_{t}.png" for m in (pre, "iron", "wooden", "stone", "copper", "bronze", "studded")
                if os.path.exists(f"{A}/textures/item/{m}_{t}.png"))
     shutil.copy(src, f"{A}/textures/item/{iid}.png")
-    ing = ING[mat]
-    pat = {"sword": ["#", "#", "h"], "dagger": ["#", "h"], "spear": ["#", "p", "p"], "polearm": ["##", "#p", " p"],
-           "axe": ["##", "#p", " p"], "mace": ["#", "#", "p"], "hammer": ["###", " p ", " p "], "club": ["#", "#", "p"],
-           "flail": ["#", "p", "h"], "thrown": ["#", "p"]}[r["category"]]
-    key = {"#": ing, "h": f"{ID}:handle", "p": f"{ID}:pole"}
-    key = {k: v for k, v in key.items() if any(k in row for row in pat)}
-    w(f"{RES}/data/{ID}/recipe/hist_{iid}.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "key": key, "pattern": pat, "result": {"id": f"{ID}:{iid}"}})
+    # no crafting recipe: the Smithy in diaithir-gear (gen_workshop.py) is the only way to make these
 
 json.dump(specs, open(f"{RES}/data/{ID}/historical_weapons.json", "w"), indent=1)
 # lang merges into the existing file
