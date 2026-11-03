@@ -1,16 +1,32 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ninteostor/settlement_0",
-   "weight": 3
-  },
-  {
-   "structure": "diaithir_worldgen:lib/ninteostor/settlement_1",
+   "structure": "diaithir_worldgen:lib/ninteostor/settlement_0_lausornanum",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ninteostor/settlement_2",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/ninteostor/settlement_0_lialium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/settlement_0_seornaullia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/settlement_1_rintum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/settlement_2_lausornanum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/settlement_2_mernus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/settlement_2_taulanum",
+   "weight": 1
   }
  ],
  "placement": {

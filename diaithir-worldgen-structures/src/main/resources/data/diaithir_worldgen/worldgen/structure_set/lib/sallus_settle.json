@@ -1,12 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/sallus/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/sallus/settlement_0_niantes",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/sallus/settlement_1",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/sallus/settlement_0_orastanum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sallus/settlement_1_ceornium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sallus/settlement_1_cisernes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sallus/settlement_1_niantes",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sallus/settlement_1_orastanum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sallus/settlement_1_sasia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sallus/settlement_1_sereoralia",
+   "weight": 1
   }
  ],
  "placement": {

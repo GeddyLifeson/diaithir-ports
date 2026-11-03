@@ -1,16 +1,52 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_0",
-   "weight": 11
-  },
-  {
-   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_1",
-   "weight": 8
-  },
-  {
-   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_2",
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_0_gaiktazhoth",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_0_grimarkak",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_0_kuthoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_0_vhornar",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_0_voraikturn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_1_grimarkak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_1_kuthoth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_1_toroktazhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_1_vhornar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_1_vorougozhok",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_2_toroktazhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_2_vorougozhok",
+   "weight": 1
   }
  ],
  "placement": {

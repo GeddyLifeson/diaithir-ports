@@ -1,15 +1,59 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/reoria/settlement_0",
-   "weight": 21
+   "structure": "diaithir_worldgen:lib/reoria/settlement_0_cintaurnor",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/reoria/settlement_1",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/reoria/settlement_0_coriasia",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/reoria/settlement_2",
+   "structure": "diaithir_worldgen:lib/reoria/settlement_0_krouzhun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_0_orolia",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_0_rauntus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_0_riastum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_0_vernaustus",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_1_cintaurnor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_1_coriasia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_1_melum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_1_orolia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_1_rauntus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_1_riastum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_2_coriasia",
    "weight": 1
   }
  ],

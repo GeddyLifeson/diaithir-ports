@@ -1,16 +1,56 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/coriarnes/settlement_0",
-   "weight": 8
-  },
-  {
-   "structure": "diaithir_worldgen:lib/coriarnes/settlement_1",
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_0_amilles",
    "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/coriarnes/settlement_2",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_0_cauntium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_0_mastaullus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_0_mauntanium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_0_valontes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_0_vistus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_1_mastaullus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_1_mauntanium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_2_amilles",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_2_mastaullus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_2_mauntanium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_2_ukasaramum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coriarnes/settlement_2_vistus",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,15 +1,39 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ryamiel/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_0_croduren",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ryamiel/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_0_lyala",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ryamiel/settlement_2",
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_0_oseisith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_1_karuthurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_1_lyala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_1_oriasus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_1_oseisith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_1_osunaoma",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_2_lyala",
    "weight": 1
   }
  ],

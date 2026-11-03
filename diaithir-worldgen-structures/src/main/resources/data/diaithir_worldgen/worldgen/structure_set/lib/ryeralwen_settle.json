@@ -1,20 +1,52 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0",
-   "weight": 6
-  },
-  {
-   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_1",
-   "weight": 4
-  },
-  {
-   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_2",
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0_elamwen",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_3",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0_elionwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0_keladock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0_sevseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0_thezasha",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0_vorokurnun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_1_keladock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_1_thezasha",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_1_vorokurnun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_2_sevseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_3_sevseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_3_thezasha",
+   "weight": 2
   }
  ],
  "placement": {

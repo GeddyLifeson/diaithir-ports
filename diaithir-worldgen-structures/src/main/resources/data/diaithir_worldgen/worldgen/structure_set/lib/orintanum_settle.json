@@ -1,12 +1,32 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/orintanum/settlement_1",
+   "structure": "diaithir_worldgen:lib/orintanum/settlement_1_monia",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/orintanum/settlement_2",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/orintanum/settlement_2_ameornum_reontium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orintanum/settlement_2_cillanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orintanum/settlement_2_orantus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orintanum/settlement_2_oreontarus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orintanum/settlement_2_orollum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orintanum/settlement_2_serirestia",
+   "weight": 2
   }
  ],
  "placement": {

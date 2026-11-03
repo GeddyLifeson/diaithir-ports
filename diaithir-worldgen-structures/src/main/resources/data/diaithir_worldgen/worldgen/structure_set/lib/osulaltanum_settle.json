@@ -1,15 +1,71 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0",
-   "weight": 14
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_kalulanoma",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1",
-   "weight": 14
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_kalunaroma",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_2",
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_meranaira9",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_meranalari",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_suravamira",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_tentanala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_ukasamira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_vanavauta",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_ilomaneno",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_kalulanoma",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_kalunaroma",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_meranaira9",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_meranalari",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_suravamira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_tentanala",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_vanavauta",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_2_meranalari",
    "weight": 1
   }
  ],

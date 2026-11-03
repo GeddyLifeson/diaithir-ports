@@ -1,12 +1,28 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/draggouzhok/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/draggouzhok/settlement_0_croldar",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/draggouzhok/settlement_1",
+   "structure": "diaithir_worldgen:lib/draggouzhok/settlement_0_khouggurn",
    "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draggouzhok/settlement_0_silenneth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draggouzhok/settlement_0_tennarira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draggouzhok/settlement_1_miallora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draggouzhok/settlement_1_silenneth",
+   "weight": 2
   }
  ],
  "placement": {

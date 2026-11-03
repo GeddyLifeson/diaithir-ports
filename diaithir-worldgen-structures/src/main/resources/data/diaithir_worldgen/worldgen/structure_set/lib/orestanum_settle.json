@@ -1,12 +1,32 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/orestanum/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/orestanum/settlement_0_bresturnock",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/orestanum/settlement_1",
-   "weight": 2
+   "structure": "diaithir_worldgen:lib/orestanum/settlement_0_liasernus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orestanum/settlement_0_siallium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orestanum/settlement_0_valeonarnus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orestanum/settlement_0_valialarum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orestanum/settlement_1_oreontium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orestanum/settlement_1_thathis",
+   "weight": 1
   }
  ],
  "placement": {

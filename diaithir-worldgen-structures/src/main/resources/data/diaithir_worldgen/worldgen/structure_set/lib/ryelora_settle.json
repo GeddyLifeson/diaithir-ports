@@ -1,20 +1,68 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ryelora/settlement_0",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_0_eluanneth",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/ryelora/settlement_1",
-   "weight": 7
-  },
-  {
-   "structure": "diaithir_worldgen:lib/ryelora/settlement_2",
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_0_mielys",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ryelora/settlement_3",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_0_nuarliel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_0_oriama",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_0_silemwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_0_silimiel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_0_siliremeth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_1_mielys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_1_nuarliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_1_silemwen",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_1_silimiel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_2_oriama",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_3_eluanneth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_3_nuarliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_3_oriama",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/settlement_3_silemwen",
+   "weight": 1
   }
  ],
  "placement": {

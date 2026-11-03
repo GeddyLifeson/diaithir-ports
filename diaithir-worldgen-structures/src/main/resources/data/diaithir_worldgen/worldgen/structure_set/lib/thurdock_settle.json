@@ -1,15 +1,43 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/thurdock/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_0_karugak",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/thurdock/settlement_1",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_0_vhaktoth",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/thurdock/settlement_2",
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_1_draiktun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_1_halordock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_1_karugak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_1_khurkurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_1_osyuthis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_1_surakaloma",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_1_thukok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurdock/settlement_2_draiktun",
    "weight": 1
   }
  ],

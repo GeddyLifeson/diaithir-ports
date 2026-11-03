@@ -1,19 +1,75 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0",
-   "weight": 83
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_elirlys",
+   "weight": 15
   },
   {
-   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1",
-   "weight": 69
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_lyiraenna",
+   "weight": 9
   },
   {
-   "structure": "diaithir_worldgen:lib/ryerlae/settlement_2",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_miemuallora",
+   "weight": 14
   },
   {
-   "structure": "diaithir_worldgen:lib/ryerlae/settlement_3",
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_miineth",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_silelora",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_venaemora",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_venuariel",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_elirlys",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_lyiraenna",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_miemuallora",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_miineth",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_silelora",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_venaemora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_venuariel",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_2_miemuallora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_2_miineth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_2_venaemora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_3_silelora",
    "weight": 1
   }
  ],

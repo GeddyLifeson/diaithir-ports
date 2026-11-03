@@ -1,19 +1,39 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/theisasha/settlement_0",
-   "weight": 6
-  },
-  {
-   "structure": "diaithir_worldgen:lib/theisasha/settlement_1",
-   "weight": 4
-  },
-  {
-   "structure": "diaithir_worldgen:lib/theisasha/settlement_2",
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_0_iseshith",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/theisasha/settlement_3",
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_0_sastith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_0_shyushora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_0_syesizora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_0_vesathith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_1_seishith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_1_shyushora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_2_vesathith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/settlement_3_vesathith",
    "weight": 1
   }
  ],

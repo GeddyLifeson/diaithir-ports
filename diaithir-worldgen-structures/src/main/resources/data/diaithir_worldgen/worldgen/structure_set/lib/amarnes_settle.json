@@ -1,12 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/amarnes/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/amarnes/settlement_0_grougorkok",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/amarnes/settlement_1",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/amarnes/settlement_0_silenora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amarnes/settlement_0_telilentor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amarnes/settlement_1_analarira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amarnes/settlement_1_osiasora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amarnes/settlement_1_silenora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amarnes/settlement_1_telilentor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amarnes/settlement_1_zephethis",
+   "weight": 1
   }
  ],
  "placement": {

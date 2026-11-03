@@ -1,15 +1,59 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0_halerdosten",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0_ilotamala",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_2",
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0_moreldath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0_sarnor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0_silia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0_tilenium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0_voraiggun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_0_voroggukoth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_1_halerdosten",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_1_ilotamala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_1_orastosanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_1_voraiggun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_1_voroggukoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seraurnanum/settlement_2_silia",
    "weight": 1
   }
  ],

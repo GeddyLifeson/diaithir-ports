@@ -1,16 +1,72 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/keludoren/settlement_0",
-   "weight": 18
-  },
-  {
-   "structure": "diaithir_worldgen:lib/keludoren/settlement_1",
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_0_brorden",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/keludoren/settlement_2",
-   "weight": 15
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_0_cruldock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_0_drosteldath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_0_eluanaemora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_0_iseivseth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_0_kelarath",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_0_morurostock",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_0_pelastock",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_1_cruldock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_1_morurostock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_2_brorden",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_2_cruldock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_2_eluanaemora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_2_iseivseth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_2_kelarath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_2_morurostock",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/settlement_2_pelastock",
+   "weight": 2
   }
  ],
  "placement": {

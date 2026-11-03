@@ -1,20 +1,92 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/breroldock/settlement_0",
-   "weight": 15
-  },
-  {
-   "structure": "diaithir_worldgen:lib/breroldock/settlement_1",
-   "weight": 8
-  },
-  {
-   "structure": "diaithir_worldgen:lib/breroldock/settlement_2",
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_brede",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/breroldock/settlement_3",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_crestar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_crodunar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_fenustock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_joraldar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_joruden",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_keleren",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_morudenock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_tarnaldath",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_tarnordath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_1_brede",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_1_fenustock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_1_joraldar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_1_keleren",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_1_tarnaldath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_1_tarnordath",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_2_joruden",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_2_tarnordath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_3_brede",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_3_fenustock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_3_morudenock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_3_tarnaldath",
+   "weight": 2
   }
  ],
  "placement": {

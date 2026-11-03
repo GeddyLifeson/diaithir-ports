@@ -1,12 +1,56 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_0",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_0_elena",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1",
-   "weight": 12
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_0_garkar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_0_lyamora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_0_lyerys",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_0_miamora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_0_ryelys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1_garkar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1_ilyiriel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1_lyamora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1_lyerys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1_miamora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1_nuemiel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1_ryelys",
+   "weight": 2
   }
  ],
  "placement": {

@@ -1,15 +1,71 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0",
-   "weight": 36
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_elaeriel",
+   "weight": 7
   },
   {
-   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1",
-   "weight": 24
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_lyemiel",
+   "weight": 6
   },
   {
-   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_2",
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_miemeinae",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_miemeth",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_ryema",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_ryiniel",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_silinae",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_venamellora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_elaeriel",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_lyemiel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_miemeinae",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_miemeth",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_ryema",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_ryiniel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_silinae",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_venamellora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_2_miemeinae",
    "weight": 1
   }
  ],

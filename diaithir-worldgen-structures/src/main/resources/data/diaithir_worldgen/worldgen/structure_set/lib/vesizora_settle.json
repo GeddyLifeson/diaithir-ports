@@ -1,15 +1,39 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/vesizora/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_0_alaareth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/vesizora/settlement_1",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_0_ashesith",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/vesizora/settlement_3",
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_0_droktak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_0_voroktar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_1_alaareth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_1_halenurdeld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_1_isethora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_1_orires",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizora/settlement_3_thogairkurn",
    "weight": 1
   }
  ],

@@ -1,16 +1,44 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/telones/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/telones/settlement_0_leornes",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/telones/settlement_1",
+   "structure": "diaithir_worldgen:lib/telones/settlement_0_losiarus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/telones/settlement_0_rallor",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/telones/settlement_2",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/telones/settlement_0_sereostium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/telones/settlement_0_telines",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/telones/settlement_1_leornes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/telones/settlement_1_sereostium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/telones/settlement_2_amaustanor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/telones/settlement_2_losiarus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/telones/settlement_2_telines",
+   "weight": 2
   }
  ],
  "placement": {

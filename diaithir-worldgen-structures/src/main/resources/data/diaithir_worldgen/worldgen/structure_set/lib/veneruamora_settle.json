@@ -1,16 +1,116 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0",
-   "weight": 66
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_lialintes",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1",
-   "weight": 120
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_maullanum",
+   "weight": 8
   },
   {
-   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2",
-   "weight": 21
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_meles",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_nialia",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_raullia",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_siallium",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_tallirnum",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_teliaselus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_venaurnia",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_vosintia",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_lialintes",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_maullanum",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_meles",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_nialia",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_raullia",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_siallium",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_tallirnum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_teliaselus",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_venaurnia",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_vosintia",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_lialintes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_meles",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_nialia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_raullia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_siallium",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_tallirnum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_venaurnia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_vosintia",
+   "weight": 4
   }
  ],
  "placement": {

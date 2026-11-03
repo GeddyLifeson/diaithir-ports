@@ -1,12 +1,72 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0",
-   "weight": 30
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_amontanum",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/amontirnium/settlement_1",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_cenaulor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_corantes",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_corastus",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_leones",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_niasanum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_reollastum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_reonanum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_sornum",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_0_telostus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_1_amontanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_1_corastus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_1_leones",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_1_niasanum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_1_reonanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_1_sornum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/amontirnium/settlement_1_telostus",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,16 +1,56 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/druderath/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/druderath/settlement_0_ilonarum",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/druderath/settlement_1",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/druderath/settlement_0_misor",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/druderath/settlement_2",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/druderath/settlement_0_osathivseth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_0_pelalde",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_1_lolauntor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_1_pelalde",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_1_rosternia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_1_thiathyss",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_2_ceornonus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_2_lolauntor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_2_osathivseth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_2_pelalde",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/druderath/settlement_2_thiathyss",
+   "weight": 2
   }
  ],
  "placement": {

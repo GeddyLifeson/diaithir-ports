@@ -1,16 +1,56 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/veniolora/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_0_anasanum",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/veniolora/settlement_1",
-   "weight": 11
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_0_tarnerdath",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/veniolora/settlement_2",
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_0_valolisia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_0_venarlilae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_0_vinor",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_1_anasanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_1_tarnerdath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_1_tintesum",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_1_valolisia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_1_viarneones",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_1_zephesasha",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_2_lyamae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/settlement_2_zephesasha",
+   "weight": 1
   }
  ],
  "placement": {

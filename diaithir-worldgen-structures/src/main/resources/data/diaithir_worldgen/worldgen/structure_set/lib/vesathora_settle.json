@@ -1,15 +1,35 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/vesathora/settlement_0",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/vesathora/settlement_0_isazasha",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/vesathora/settlement_1",
+   "structure": "diaithir_worldgen:lib/vesathora/settlement_0_miinae",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/vesathora/settlement_2",
+   "structure": "diaithir_worldgen:lib/vesathora/settlement_0_osurallauta",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesathora/settlement_0_serillor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesathora/settlement_0_thyuvsasha",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesathora/settlement_0_ukaramari",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesathora/settlement_1_meranalira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesathora/settlement_2_osurallauta",
    "weight": 1
   }
  ],

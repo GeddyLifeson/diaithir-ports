@@ -1,11 +1,11 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/oriinnys/settlement_0",
+   "structure": "diaithir_worldgen:lib/oriinnys/settlement_0_venarae",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/oriinnys/settlement_1",
+   "structure": "diaithir_worldgen:lib/oriinnys/settlement_1_venarae",
    "weight": 1
   }
  ],

@@ -1,12 +1,48 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_0_kelonadar",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_1",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_0_orilasanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_0_sileimae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_0_tarnunerock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_1_grorkak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_1_ilonamari",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_1_kelonadar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_1_orilasanum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_1_sileimae",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_1_tarnunerock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krouktaggun/settlement_1_theishis",
+   "weight": 2
   }
  ],
  "placement": {

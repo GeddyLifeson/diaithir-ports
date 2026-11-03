@@ -1,16 +1,28 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/crurnon/settlement_0",
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_0_brordeld",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/crurnon/settlement_1",
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_1_pelurne",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/crurnon/settlement_2",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_2_brordeld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_2_miamaennae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_2_pelurne",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_2_valaulum",
+   "weight": 1
   }
  ],
  "placement": {

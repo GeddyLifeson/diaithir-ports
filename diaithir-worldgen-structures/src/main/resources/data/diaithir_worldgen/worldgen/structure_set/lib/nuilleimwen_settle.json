@@ -1,15 +1,47 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_0_alaareirla",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_0_alaenneth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_2",
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_0_miannora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_0_syezishora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_0_voraikurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_1_alaenneth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_1_miannora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_1_ryinneimiel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_1_syezishora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_1_voraikurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_2_voraikurn",
    "weight": 1
   }
  ],

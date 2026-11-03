@@ -1,12 +1,48 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/melauntus/settlement_0",
-   "weight": 15
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_0_cauniaror",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/melauntus/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_0_nauranum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_0_noranus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_0_salaustium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_0_teoles",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_0_tillones",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_0_vostentia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_1_cauniaror",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_1_salaustium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_1_tillones",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_1_veornanum",
+   "weight": 1
   }
  ],
  "placement": {

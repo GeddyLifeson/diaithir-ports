@@ -1,16 +1,60 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ryellae/settlement_0",
-   "weight": 8
-  },
-  {
-   "structure": "diaithir_worldgen:lib/ryellae/settlement_1",
-   "weight": 7
-  },
-  {
-   "structure": "diaithir_worldgen:lib/ryellae/settlement_3",
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_0_alaeluanae",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_0_kalusamum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_0_lyemiel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_0_silerla",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_0_surasamoma",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_0_venamys",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_1_lyemiel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_1_nuemaenora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_1_silerla",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_1_surasamoma",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_1_venamys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_1_veneinelys",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_3_kalusamum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_3_surasamoma",
+   "weight": 1
   }
  ],
  "placement": {

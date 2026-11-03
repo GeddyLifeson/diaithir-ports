@@ -1,11 +1,23 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/gouthun/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/gouthun/settlement_0_corolum",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/gouthun/settlement_1",
+   "structure": "diaithir_worldgen:lib/gouthun/settlement_0_drornaikun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gouthun/settlement_0_fenoldath",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gouthun/settlement_0_ukasalareno",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gouthun/settlement_1_ukasalareno",
    "weight": 1
   }
  ],

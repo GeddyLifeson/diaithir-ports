@@ -1,16 +1,52 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/sestia/settlement_0",
-   "weight": 11
-  },
-  {
-   "structure": "diaithir_worldgen:lib/sestia/settlement_1",
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_coralia",
    "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/sestia/settlement_2",
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_dranudath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_meravaala",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_nornium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_oreolones",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_sornes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_valeontia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_1_dranudath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_1_nornium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_1_valeontia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_2_meravaala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_2_thagornak",
+   "weight": 1
   }
  ],
  "placement": {

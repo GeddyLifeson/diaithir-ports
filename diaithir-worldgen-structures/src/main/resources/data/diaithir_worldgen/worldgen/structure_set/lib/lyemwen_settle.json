@@ -1,12 +1,24 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/lyemwen/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/lyemwen/settlement_0_isizeth",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/lyemwen/settlement_1",
-   "weight": 2
+   "structure": "diaithir_worldgen:lib/lyemwen/settlement_0_kalukanira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyemwen/settlement_0_leontaror",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyemwen/settlement_1_isizeth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyemwen/settlement_1_jorade",
+   "weight": 1
   }
  ],
  "placement": {

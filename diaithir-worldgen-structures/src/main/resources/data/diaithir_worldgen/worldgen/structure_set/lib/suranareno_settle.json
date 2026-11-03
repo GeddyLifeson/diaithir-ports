@@ -1,15 +1,35 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/suranareno/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/suranareno/settlement_0_breranen",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/suranareno/settlement_1",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/suranareno/settlement_0_ilosamoma",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/suranareno/settlement_2",
+   "structure": "diaithir_worldgen:lib/suranareno/settlement_0_silemeth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/settlement_1_breranen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/settlement_1_kaluraroma",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/settlement_1_silemeth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/settlement_1_vanaraira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/settlement_2_breranen",
    "weight": 2
   }
  ],

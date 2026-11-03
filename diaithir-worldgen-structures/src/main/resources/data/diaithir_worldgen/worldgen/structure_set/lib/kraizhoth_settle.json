@@ -1,19 +1,43 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_0",
-   "weight": 4
-  },
-  {
-   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_1",
-   "weight": 4
-  },
-  {
-   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_2",
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_0_kaithougok",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_3",
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_0_toraktar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_0_vhaggoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_0_vhoukoggak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_1_karoukun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_1_vanavamira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_1_vhaggoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_1_vhoukoggak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_2_vhoukoggak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_3_toraktar",
    "weight": 1
   }
  ],

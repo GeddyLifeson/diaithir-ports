@@ -1,12 +1,24 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/kaktun/settlement_0",
-   "weight": 2
+   "structure": "diaithir_worldgen:lib/kaktun/settlement_0_vhagairkun",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/kaktun/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/kaktun/settlement_0_vorouthar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaktun/settlement_1_gaiktak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaktun/settlement_1_karuktoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaktun/settlement_1_vhagairkun",
+   "weight": 2
   }
  ],
  "placement": {

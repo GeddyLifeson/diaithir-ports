@@ -1,20 +1,64 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/thivsora/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_0_syivsezith",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/thivsora/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_0_thazeithess",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/thivsora/settlement_2",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_0_vesyusith",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/thivsora/settlement_3",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_0_xaishora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_1_seshora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_1_syazora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_1_syivsezith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_1_thazeithess",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_1_vesyusith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_2_seshora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_2_seshora1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_2_thazeithess",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_3_seshora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_3_syazora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thivsora/settlement_3_thazeithess",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,12 +1,44 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/venualys/settlement_0",
-   "weight": 16
+   "structure": "diaithir_worldgen:lib/venualys/settlement_0_alairla",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/venualys/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/venualys/settlement_0_miamuanwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_0_nuilaeneth",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_0_oriilae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_0_ryaraeleth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_0_veneinys",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_1_alaarlys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_1_miamuanwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_1_oriilae",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_1_veneinys",
+   "weight": 1
   }
  ],
  "placement": {

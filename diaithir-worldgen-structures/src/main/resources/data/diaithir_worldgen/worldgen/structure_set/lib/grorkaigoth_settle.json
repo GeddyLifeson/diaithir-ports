@@ -1,15 +1,43 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_0_ashavseth",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_0_grimournun",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_2",
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_0_khornak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_0_thukok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_0_veneineth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_1_thuggorkoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_1_thukok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_1_veneineth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_1_vorogoth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grorkaigoth/settlement_2_veneineth",
    "weight": 1
   }
  ],

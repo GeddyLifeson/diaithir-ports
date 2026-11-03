@@ -1,15 +1,27 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/morarneld/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/morarneld/settlement_0_lalia",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/morarneld/settlement_1",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/morarneld/settlement_0_osyuzashora",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/morarneld/settlement_2",
+   "structure": "diaithir_worldgen:lib/morarneld/settlement_0_torothar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/settlement_1_keledorock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/settlement_1_suramarum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/settlement_2_tantus",
    "weight": 1
   }
  ],

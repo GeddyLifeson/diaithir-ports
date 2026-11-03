@@ -1,12 +1,64 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0",
-   "weight": 12
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_analanoma",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_ashyusora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_nestia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_osevsith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_thivsis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_ukavamlaala",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_veseizith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_zephethora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1_analanoma",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1_nestia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1_osevsith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1_thivsis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1_ukavamlaala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1_veseizith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1_zephethora",
+   "weight": 1
   }
  ],
  "placement": {

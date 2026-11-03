@@ -1,12 +1,28 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/mieneth/settlement_0",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/mieneth/settlement_0_amauntes",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/mieneth/settlement_1",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/mieneth/settlement_0_joredarde",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mieneth/settlement_0_lyamionys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mieneth/settlement_0_thesora",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mieneth/settlement_1_silirwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mieneth/settlement_1_thesora",
+   "weight": 2
   }
  ],
  "placement": {

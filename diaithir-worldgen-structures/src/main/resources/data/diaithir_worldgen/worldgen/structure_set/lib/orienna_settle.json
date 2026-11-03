@@ -1,12 +1,28 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/orienna/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/orienna/settlement_0_jorunock",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/orienna/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/orienna/settlement_0_pelustoren",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orienna/settlement_0_suralakanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orienna/settlement_0_tenvaranari",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orienna/settlement_1_brernudon",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orienna/settlement_1_silirwen",
+   "weight": 3
   }
  ],
  "placement": {

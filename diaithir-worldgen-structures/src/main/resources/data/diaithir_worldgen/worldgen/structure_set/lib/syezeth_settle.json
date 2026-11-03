@@ -1,19 +1,47 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/syezeth/settlement_0",
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_0_amonillor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_0_thiavsora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_1_feneldar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_1_shiastora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_1_thyuzora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_2_amonillor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_2_feneldar",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/syezeth/settlement_1",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_2_shiastora",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/syezeth/settlement_2",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_2_siliomys",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/syezeth/settlement_3",
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_2_thyuzora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_3_thyuzora",
    "weight": 1
   }
  ],

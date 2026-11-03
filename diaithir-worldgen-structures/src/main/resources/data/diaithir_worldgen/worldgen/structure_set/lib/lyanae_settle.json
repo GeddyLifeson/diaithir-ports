@@ -1,19 +1,111 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/lyanae/settlement_0",
-   "weight": 46
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_elemiel",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/lyanae/settlement_1",
-   "weight": 37
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_elionora",
+   "weight": 12
   },
   {
-   "structure": "diaithir_worldgen:lib/lyanae/settlement_2",
-   "weight": 33
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_ilyerlys",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/lyanae/settlement_3",
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_lyilora",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_sileirlora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_silimelwen",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_venanella",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_zephithis",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_elemiel",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_elionora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_ilyerlys",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_lyilora",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_ryenna",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_sileirlora",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_silimelwen",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_venanella",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_zephithis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_elemiel",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_elionora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_ilyerlys",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_lyilora",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_ryenna",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_sileirlora",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_silimelwen",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_venanella",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_zephithis",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_3_venanella",
    "weight": 1
   }
  ],

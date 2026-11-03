@@ -1,20 +1,96 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0_bredock",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1",
-   "weight": 21
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0_nanium",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/joroneldock/settlement_2",
-   "weight": 21
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0_oralor",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/joroneldock/settlement_3",
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0_tarnudereld",
    "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0_telastia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0_teleostia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0_veornia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_amaustinium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_bredock",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_nanium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_oralor",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_tarnanock",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_tarnudereld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_telastia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_veornia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_2_amaustinium",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_2_bredock",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_2_tarnudereld",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_2_telastia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_2_teleostia",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_2_veornia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_3_amaustinium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_3_tarnanock",
+   "weight": 2
   }
  ],
  "placement": {

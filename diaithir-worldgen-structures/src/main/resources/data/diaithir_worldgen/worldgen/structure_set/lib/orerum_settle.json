@@ -1,8 +1,12 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/orerum/settlement_2",
-   "weight": 2
+   "structure": "diaithir_worldgen:lib/orerum/settlement_2_meostanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orerum/settlement_2_orestum",
+   "weight": 1
   }
  ],
  "placement": {

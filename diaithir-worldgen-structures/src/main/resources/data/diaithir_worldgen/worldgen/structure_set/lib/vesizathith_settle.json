@@ -1,20 +1,124 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0",
-   "weight": 30
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0_isiziasteth",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1",
-   "weight": 14
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0_oriamera",
+   "weight": 8
   },
   {
-   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2",
-   "weight": 23
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0_osevsora",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3",
-   "weight": 23
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0_osiathora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0_serilastum",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0_sethavsora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0_vesavseth",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1_isiziasteth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1_oriamera",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1_osevsora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1_serilastum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1_sethavsora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1_vesavseth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1_vesyuthasha",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_isiziasteth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_oriamera",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_osevsora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_osiathora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_serilastum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_sethavsora",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_vesavseth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_vesyuthasha",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_isiziasteth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_oriamera",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_osevsora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_osiathora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_serilastum",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_sethavsora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_vesavseth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_vesyuthasha",
+   "weight": 4
   }
  ],
  "placement": {

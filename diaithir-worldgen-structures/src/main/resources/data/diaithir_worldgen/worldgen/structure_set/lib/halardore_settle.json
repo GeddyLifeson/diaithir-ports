@@ -1,12 +1,20 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/halardore/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/halardore/settlement_0_teliarnium",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/halardore/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/halardore/settlement_0_xaezess",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halardore/settlement_1_osyuzeiseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halardore/settlement_1_sileilinae",
+   "weight": 3
   }
  ],
  "placement": {

@@ -1,16 +1,88 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/crodaston/settlement_0",
-   "weight": 28
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_brodon",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/crodaston/settlement_1",
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_crare",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_drorden",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_drurnath",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_joralde",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_morustanon",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_tarnadeld",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_thareld",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_1_drurnath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_1_joralde",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_1_morustanon",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_1_tarnadeld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_1_thareld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_brodon",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_crare",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_drorden",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_drurnath",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_joralde",
    "weight": 6
   },
   {
-   "structure": "diaithir_worldgen:lib/crodaston/settlement_2",
-   "weight": 53
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_morustanon",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_tarnadeld",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_thareld",
+   "weight": 9
   }
  ],
  "placement": {

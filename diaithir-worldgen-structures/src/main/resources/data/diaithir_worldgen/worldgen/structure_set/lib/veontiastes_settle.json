@@ -1,12 +1,44 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0",
-   "weight": 29
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0_ameosiallor",
+   "weight": 7
   },
   {
-   "structure": "diaithir_worldgen:lib/veontiastes/settlement_1",
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0_collirium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0_orelausium",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0_silanum",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0_soreoles",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0_teolia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0_ventiastor",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_0_voses",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_1_soreoles",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/settlement_1_voses",
+   "weight": 1
   }
  ],
  "placement": {

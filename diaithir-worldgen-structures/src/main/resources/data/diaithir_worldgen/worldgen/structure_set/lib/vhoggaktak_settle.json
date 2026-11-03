@@ -1,12 +1,60 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0",
-   "weight": 18
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0_gouthukurn",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_1",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0_grournogoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0_krournakun",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0_kruthok",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0_thournok",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0_vhukarkoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0_voraikar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_0_voroggar",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_1_grournogoth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_1_krournakun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_1_kruthok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_1_thournok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_1_vhukarkoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhoggaktak/settlement_1_voraikar",
+   "weight": 1
   }
  ],
  "placement": {

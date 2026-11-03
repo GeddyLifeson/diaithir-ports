@@ -1,12 +1,28 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/silara/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/silara/settlement_0_drunestock",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/silara/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/silara/settlement_0_kairnar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/settlement_0_venera",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/settlement_1_oriaremwen",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/settlement_1_ukaraloma",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/settlement_1_vesasith",
+   "weight": 1
   }
  ],
  "placement": {

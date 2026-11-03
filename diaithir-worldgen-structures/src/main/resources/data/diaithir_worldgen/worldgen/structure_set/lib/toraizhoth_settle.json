@@ -1,16 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_0_brade",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_0_venuarwen",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_2",
+   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_0_zephizis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_1_brade",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_1_nestum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_1_zephizis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_2_gougok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/settlement_2_zephizis",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,20 +1,96 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0",
-   "weight": 32
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_asheizeth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/shiavsora/settlement_1",
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_osazithis",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_osestora",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_sathisith",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_sesheth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_sistora",
    "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/shiavsora/settlement_2",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_sithasha",
+   "weight": 8
   },
   {
-   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3",
-   "weight": 22
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_xaivseth",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_1_asheizeth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_1_sesheth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_2_osazithis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_2_sathisith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_2_sistora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_2_sithasha",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_2_xaivseth",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_asheizeth",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_osazithis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_osestora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_sathisith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_sesheth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_sistora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_sithasha",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_xaivseth",
+   "weight": 1
   }
  ],
  "placement": {

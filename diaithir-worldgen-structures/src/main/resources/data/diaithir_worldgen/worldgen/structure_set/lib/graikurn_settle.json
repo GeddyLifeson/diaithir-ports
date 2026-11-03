@@ -1,19 +1,63 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/graikurn/settlement_0",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_0_drairnoth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/graikurn/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_0_grouzhun",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/graikurn/settlement_2",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_0_khoukogoth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/graikurn/settlement_3",
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_0_krogurn",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_0_torougun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_0_vanavamoma",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_1_drairnoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_1_grouzhun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_1_khoukogoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_1_vanavamoma",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_2_krogurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_2_tenlaruta",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_2_torougun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_2_voroktoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/graikurn/settlement_3_vanavamoma",
    "weight": 1
   }
  ],

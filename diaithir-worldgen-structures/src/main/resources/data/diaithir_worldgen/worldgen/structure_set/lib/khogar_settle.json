@@ -1,15 +1,35 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/khogar/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/khogar/settlement_0_osumatarala",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/khogar/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/khogar/settlement_0_seisiazeth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/khogar/settlement_2",
+   "structure": "diaithir_worldgen:lib/khogar/settlement_0_sirantium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khogar/settlement_0_thourkurn",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khogar/settlement_1_jorurede",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khogar/settlement_1_osumatarala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khogar/settlement_1_thourkurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khogar/settlement_2_thourkurn",
    "weight": 1
   }
  ],

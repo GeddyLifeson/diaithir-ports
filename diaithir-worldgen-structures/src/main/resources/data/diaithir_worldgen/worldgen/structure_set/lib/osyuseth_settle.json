@@ -1,20 +1,104 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/osyuseth/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_0_coriles",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1",
-   "weight": 14
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_0_meosiantus",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2",
-   "weight": 130
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_0_teleorum",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3",
-   "weight": 69
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_0_veseithis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_amestum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_cisum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_coreontus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_coriles",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_meosiantus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_teleorum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_veseithis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_amestum",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_cisum",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_coreontus",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_coriles",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_meosiantus",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_teleorum",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_veseithis",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_amestum",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_cisum",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_coreontus",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_coriles",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_meosiantus",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_teleorum",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_veseithis",
+   "weight": 9
   }
  ],
  "placement": {

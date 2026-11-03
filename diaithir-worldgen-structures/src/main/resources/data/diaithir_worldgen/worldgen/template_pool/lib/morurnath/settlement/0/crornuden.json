@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/morurnath/settlement/0/crornuden",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/morurnath/gr_morurnath_e7_places_003382",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,12 +1,32 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/silia/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/silia/settlement_0_ciallauria",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/silia/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/silia/settlement_0_garkaithar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silia/settlement_0_seraunilus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silia/settlement_0_tharnon",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silia/settlement_1_cerum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silia/settlement_1_merasaroma",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silia/settlement_1_tharnon",
+   "weight": 1
   }
  ],
  "placement": {

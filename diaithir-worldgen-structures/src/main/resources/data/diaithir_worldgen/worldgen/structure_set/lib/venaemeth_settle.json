@@ -1,15 +1,59 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/venaemeth/settlement_0",
-   "weight": 15
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_0_elinnuarla",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/venaemeth/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_0_ilyanna",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/venaemeth/settlement_2",
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_0_ilyinuameth",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_0_lyirla",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_0_nuemirae",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_0_ryamenneth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_0_sileilama",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_1_elinnuarla",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_1_ilyanna",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_1_lyirla",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_1_miinora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_1_nuemirae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_1_ryamenneth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/settlement_2_sileilama",
    "weight": 2
   }
  ],

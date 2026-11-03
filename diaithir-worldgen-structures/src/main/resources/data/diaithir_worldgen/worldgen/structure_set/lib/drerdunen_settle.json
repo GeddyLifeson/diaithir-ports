@@ -1,20 +1,120 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0",
-   "weight": 47
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_amastialles",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1",
-   "weight": 118
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_amiarium_vaustoles",
+   "weight": 4
   },
   {
-   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2",
-   "weight": 159
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_lauleosia",
+   "weight": 13
   },
   {
-   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_maustolum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_nantostum",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_rastes_nauntor",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_telasaurnia",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_valiantor",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_amastialles",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_amiarium_vaustoles",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_lauleosia",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_maustolum",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_nantostum",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_rastes_nauntor",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_telasaurnia",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_valiantor",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_amastialles",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_amiarium_vaustoles",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_lauleosia",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_maustolum",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_nantostum",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_rastes_nauntor",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_telasaurnia",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_valiantor",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3_amastialles",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3_amiarium_vaustoles",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3_lauleosia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3_telasaurnia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3_valiantor",
+   "weight": 2
   }
  ],
  "placement": {

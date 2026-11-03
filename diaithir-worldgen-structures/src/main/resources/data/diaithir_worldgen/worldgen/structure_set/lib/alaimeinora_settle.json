@@ -1,19 +1,59 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_0_mielwen",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_1",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_0_siliomys",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_2",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_0_siluamora",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_3",
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_0_venarilwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_1_alaalora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_1_mielwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_1_oriimwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_1_serinarnes",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_1_siliomys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_1_tarnanock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_1_venarilwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_2_alaalora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_2_tarnanock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaimeinora/settlement_3_valeonanum",
    "weight": 1
   }
  ],

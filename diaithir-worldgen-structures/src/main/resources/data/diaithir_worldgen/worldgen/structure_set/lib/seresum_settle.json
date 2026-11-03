@@ -1,19 +1,35 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/seresum/settlement_0",
-   "weight": 8
-  },
-  {
-   "structure": "diaithir_worldgen:lib/seresum/settlement_1",
+   "structure": "diaithir_worldgen:lib/seresum/settlement_0_cintenes",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/seresum/settlement_2",
+   "structure": "diaithir_worldgen:lib/seresum/settlement_0_lasintium",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/seresum/settlement_3",
+   "structure": "diaithir_worldgen:lib/seresum/settlement_0_nilliastum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_0_viarasia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_1_cintenes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_1_seornelor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_2_nastus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_3_cintenes",
    "weight": 1
   }
  ],

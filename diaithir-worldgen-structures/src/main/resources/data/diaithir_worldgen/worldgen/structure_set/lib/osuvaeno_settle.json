@@ -1,12 +1,32 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_0",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_0_halornock",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_0_ilosavaleno",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_0_ilotanuta",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_0_vanasanoma",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_1_halornock",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_1_ilotanuta",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osuvaeno/settlement_1_ilyana",
+   "weight": 2
   }
  ],
  "placement": {

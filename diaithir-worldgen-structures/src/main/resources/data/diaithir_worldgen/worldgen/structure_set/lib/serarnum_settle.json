@@ -1,12 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/serarnum/settlement_0",
+   "structure": "diaithir_worldgen:lib/serarnum/settlement_0_aminaria",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/serarnum/settlement_1",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/serarnum/settlement_1_aminaria",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/serarnum/settlement_1_craldestock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/serarnum/settlement_1_dreraste",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/serarnum/settlement_1_mantianium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/serarnum/settlement_1_nualiniel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/serarnum/settlement_1_thesasha",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/serarnum/settlement_1_ukanamvaum",
+   "weight": 1
   }
  ],
  "placement": {

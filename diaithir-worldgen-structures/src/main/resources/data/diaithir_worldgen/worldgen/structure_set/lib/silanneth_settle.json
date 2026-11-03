@@ -1,12 +1,20 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/silanneth/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/silanneth/settlement_0_draggurn",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/silanneth/settlement_1",
+   "structure": "diaithir_worldgen:lib/silanneth/settlement_0_ilosanala",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silanneth/settlement_1_anasakamira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silanneth/settlement_1_ilyanneth",
+   "weight": 1
   }
  ],
  "placement": {

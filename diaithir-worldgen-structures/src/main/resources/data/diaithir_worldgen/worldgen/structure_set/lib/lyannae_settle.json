@@ -1,12 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/lyannae/settlement_0",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/lyannae/settlement_0_eluaraenys",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/lyannae/settlement_1",
+   "structure": "diaithir_worldgen:lib/lyannae/settlement_0_ilyaleth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannae/settlement_0_ilyenna",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannae/settlement_0_oriena",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannae/settlement_0_ryeneth",
    "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannae/settlement_0_veneina",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannae/settlement_1_eliolaerwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannae/settlement_1_ilyenna",
+   "weight": 2
   }
  ],
  "placement": {

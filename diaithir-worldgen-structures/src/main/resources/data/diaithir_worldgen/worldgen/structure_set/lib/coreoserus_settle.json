@@ -1,15 +1,43 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/coreoserus/settlement_0",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_0_coranor",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/coreoserus/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_0_grimairnak",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/coreoserus/settlement_2",
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_0_neontus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_0_thurnath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_0_viales",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_0_vostasium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_1_coranor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_1_neontus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_1_thurnath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/settlement_2_thurnath",
    "weight": 1
   }
  ],

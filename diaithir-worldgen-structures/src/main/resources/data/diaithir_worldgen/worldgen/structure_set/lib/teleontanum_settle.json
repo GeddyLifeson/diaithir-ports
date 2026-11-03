@@ -1,11 +1,15 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/teleontanum/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/teleontanum/settlement_0_gragun",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/teleontanum/settlement_1",
+   "structure": "diaithir_worldgen:lib/teleontanum/settlement_0_thyuzasha",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/teleontanum/settlement_1_graithogoth",
    "weight": 1
   }
  ],

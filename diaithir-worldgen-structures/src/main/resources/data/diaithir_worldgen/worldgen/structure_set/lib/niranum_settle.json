@@ -1,15 +1,39 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/niranum/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/niranum/settlement_0_drugak",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/niranum/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/niranum/settlement_0_nentaullia",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/niranum/settlement_2",
+   "structure": "diaithir_worldgen:lib/niranum/settlement_0_serostium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/niranum/settlement_0_theivsith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/niranum/settlement_1_eleinwen",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/niranum/settlement_1_lauronium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/niranum/settlement_1_nentaullia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/niranum/settlement_1_serostium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/niranum/settlement_2_grimaigok",
    "weight": 1
   }
  ],

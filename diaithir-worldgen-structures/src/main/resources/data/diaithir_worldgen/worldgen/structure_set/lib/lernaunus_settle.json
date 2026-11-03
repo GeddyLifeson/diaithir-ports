@@ -1,12 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/lernaunus/settlement_0",
-   "weight": 12
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_0_amiallor",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/lernaunus/settlement_1",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_0_nasum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_0_orostellor",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_0_saror",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_0_tausentus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_0_teornanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_1_amiallor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_1_nasum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lernaunus/settlement_1_teornanum",
+   "weight": 1
   }
  ],
  "placement": {

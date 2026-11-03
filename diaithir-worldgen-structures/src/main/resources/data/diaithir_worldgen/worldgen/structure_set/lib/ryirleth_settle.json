@@ -1,12 +1,28 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ryirleth/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/ryirleth/settlement_0_droukun",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ryirleth/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/ryirleth/settlement_0_surasamira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryirleth/settlement_0_thivsis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryirleth/settlement_1_droukun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryirleth/settlement_1_isizeisheth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryirleth/settlement_1_tarnane",
+   "weight": 1
   }
  ],
  "placement": {

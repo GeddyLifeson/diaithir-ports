@@ -1,12 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/jorernaston/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_0_drouthuggun",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/jorernaston/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_0_guzhairnar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_0_rauneolus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_0_veseivsora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_0_zephashis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_1_drouthuggun",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_1_druston",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_1_guzhairnar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernaston/settlement_1_veseivsora",
+   "weight": 1
   }
  ],
  "placement": {

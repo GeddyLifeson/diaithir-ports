@@ -1,20 +1,64 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/thurkok/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_0_gouktukun",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/thurkok/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_0_khouzhak",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/thurkok/settlement_2",
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_0_kozhun",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/thurkok/settlement_3",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_0_krogok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_0_kuktun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_0_thoggar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_1_khouzhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_1_krogok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_1_kuktun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_2_khouzhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_2_kuktun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_3_gouktukun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_3_kozhun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_3_krogok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_3_kuktun",
+   "weight": 1
   }
  ],
  "placement": {

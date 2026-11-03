@@ -1,12 +1,24 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/krarnaizhok/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/krarnaizhok/settlement_0_sileniolora",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/krarnaizhok/settlement_1",
-   "weight": 2
+   "structure": "diaithir_worldgen:lib/krarnaizhok/settlement_0_valostor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krarnaizhok/settlement_0_vanatalira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krarnaizhok/settlement_1_tenanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krarnaizhok/settlement_1_valostor",
+   "weight": 1
   }
  ],
  "placement": {

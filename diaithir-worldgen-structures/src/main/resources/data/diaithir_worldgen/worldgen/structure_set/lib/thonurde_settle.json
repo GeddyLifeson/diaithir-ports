@@ -1,20 +1,112 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/thonurde/settlement_0",
-   "weight": 35
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_crerdath",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/thonurde/settlement_1",
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_jorasterock",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_kelasten",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_keloste",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_moronurne",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_peluden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_tarnadeld",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_thernudar",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_thuradon",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_1_crerdath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_1_jorasterock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_1_kelasten",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_1_keloste",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_1_tarnadeld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_1_thernudar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_crerdath",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_jorasterock",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_kelasten",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_keloste",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_moronurne",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_peluden",
    "weight": 7
   },
   {
-   "structure": "diaithir_worldgen:lib/thonurde/settlement_2",
-   "weight": 63
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_tarnadeld",
+   "weight": 8
   },
   {
-   "structure": "diaithir_worldgen:lib/thonurde/settlement_3",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_thernudar",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_thuradon",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_3_crerdath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_3_peluden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_3_tarnadeld",
+   "weight": 1
   }
  ],
  "placement": {

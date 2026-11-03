@@ -1,16 +1,48 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/eliolerae/settlement_0",
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_0_ilyeniorae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_0_veninae",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_1_coriarnes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_1_meranaari",
    "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/eliolerae/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_1_mierwen",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/eliolerae/settlement_2",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_1_miinallae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_2_ilyeniorae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_2_miinallae",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_2_miirleiriel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_2_oriemaennys",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/settlement_2_veninae",
+   "weight": 1
   }
  ],
  "placement": {

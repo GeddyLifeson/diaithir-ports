@@ -1,16 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/zephivsora/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/zephivsora/settlement_0_morunon",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/zephivsora/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/zephivsora/settlement_0_osasteth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/zephivsora/settlement_2",
-   "weight": 2
+   "structure": "diaithir_worldgen:lib/zephivsora/settlement_1_ashyuvsora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/settlement_1_crelden",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/settlement_1_osethis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/settlement_1_xaesivsith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/settlement_2_crelden",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/settlement_2_xaesasha",
+   "weight": 1
   }
  ],
  "placement": {

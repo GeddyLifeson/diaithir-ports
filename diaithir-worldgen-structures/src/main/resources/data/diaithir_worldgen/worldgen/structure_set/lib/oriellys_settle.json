@@ -1,12 +1,28 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/oriellys/settlement_0",
+   "structure": "diaithir_worldgen:lib/oriellys/settlement_0_crastode",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriellys/settlement_0_tharnun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriellys/settlement_1_karothagun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriellys/settlement_1_khaikoggurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriellys/settlement_1_morarustock",
    "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/oriellys/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/oriellys/settlement_1_tharnun",
+   "weight": 2
   }
  ],
  "placement": {

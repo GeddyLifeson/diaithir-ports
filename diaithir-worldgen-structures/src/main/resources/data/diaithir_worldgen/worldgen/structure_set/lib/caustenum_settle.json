@@ -1,20 +1,112 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/caustenum/settlement_0",
-   "weight": 35
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_listasanum",
+   "weight": 7
   },
   {
-   "structure": "diaithir_worldgen:lib/caustenum/settlement_1",
-   "weight": 57
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_montium_miastonanum",
+   "weight": 4
   },
   {
-   "structure": "diaithir_worldgen:lib/caustenum/settlement_2",
-   "weight": 351
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_oralliasum",
+   "weight": 6
   },
   {
-   "structure": "diaithir_worldgen:lib/caustenum/settlement_3",
-   "weight": 12
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_orialanus",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_raulestes",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_tasaurnium",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_tinteones",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_listasanum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_montium_miastonanum",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_oralliasum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_orialanus",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_raulestes",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_tasaurnium",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_tinteones",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_listasanum",
+   "weight": 55
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_montium_miastonanum",
+   "weight": 54
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_oralliasum",
+   "weight": 48
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_orialanus",
+   "weight": 50
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_raulestes",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_tasaurnium",
+   "weight": 56
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_tinteones",
+   "weight": 43
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_3_montium_miastonanum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_3_oralliasum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_3_orialanus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_3_raulestes",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_3_tasaurnium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_3_tinteones",
+   "weight": 2
   }
  ],
  "placement": {

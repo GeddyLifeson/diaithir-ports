@@ -1,12 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/caustiantes/settlement_0",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/caustiantes/settlement_0_corausor",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/caustiantes/settlement_1",
+   "structure": "diaithir_worldgen:lib/caustiantes/settlement_0_miastilus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustiantes/settlement_0_nisiales",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustiantes/settlement_0_raurnilles",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustiantes/settlement_0_selia",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustiantes/settlement_0_villiastum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustiantes/settlement_1_selia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustiantes/settlement_1_villiastum",
+   "weight": 1
   }
  ],
  "placement": {

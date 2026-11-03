@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ryeralwen/settlement/0/thezasha",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ryeralwen/ar_ryeralwen_e5_places_000125",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

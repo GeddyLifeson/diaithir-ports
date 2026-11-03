@@ -1,20 +1,80 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0",
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_cellor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_sauntia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_teleriasor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_tinus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_valiarium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_1_amallanum",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_1_sauntia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_1_valiarium",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_amallanum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_cellor",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_sauntia",
    "weight": 8
   },
   {
-   "structure": "diaithir_worldgen:lib/losaustanum/settlement_1",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_siarum",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2",
-   "weight": 53
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_teleriasor",
+   "weight": 7
   },
   {
-   "structure": "diaithir_worldgen:lib/losaustanum/settlement_3",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_telolia",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_tinus",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_valiarium",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_3_cellor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_3_telolia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_3_valiarium",
+   "weight": 1
   }
  ],
  "placement": {

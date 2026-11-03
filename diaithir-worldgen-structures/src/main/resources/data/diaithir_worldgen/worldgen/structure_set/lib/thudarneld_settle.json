@@ -1,20 +1,132 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0",
-   "weight": 330
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_broldar",
+   "weight": 40
   },
   {
-   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1",
-   "weight": 203
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_crordenock",
+   "weight": 34
   },
   {
-   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2",
-   "weight": 111
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_joreruldeld",
+   "weight": 40
   },
   {
-   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3",
-   "weight": 206
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_jorudanar",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_morodon",
+   "weight": 55
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_peloldar",
+   "weight": 38
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_tarnenode",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_thedar",
+   "weight": 48
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_broldar",
+   "weight": 36
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_crordenock",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_joreruldeld",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_jorudanar",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_morodon",
+   "weight": 27
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_peloldar",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_tarnenode",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_thedar",
+   "weight": 26
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_broldar",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_crordenock",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_joreruldeld",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_jorudanar",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_morodon",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_peloldar",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_tarnenode",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_thedar",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_broldar",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_crordenock",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_joreruldeld",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_jorudanar",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_morodon",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_peloldar",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_tarnenode",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_thedar",
+   "weight": 24
   }
  ],
  "placement": {

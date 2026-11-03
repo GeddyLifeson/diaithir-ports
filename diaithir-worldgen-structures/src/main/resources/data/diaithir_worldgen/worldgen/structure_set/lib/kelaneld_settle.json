@@ -1,15 +1,47 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/kelaneld/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_0_brestadath",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/kelaneld/settlement_1",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_0_elionora",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/kelaneld/settlement_2",
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_0_ilyameireth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_0_shastith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_0_venerae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_1_brestadath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_1_ilyameireth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_1_osulamoma",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_1_ukamalraeno",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_1_venerae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_2_elionora",
    "weight": 1
   }
  ],

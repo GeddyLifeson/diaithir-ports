@@ -1,16 +1,88 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/eluannys/settlement_0",
-   "weight": 28
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_0_elanniel",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/eluannys/settlement_1",
-   "weight": 114
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_0_lyenirlys",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/eluannys/settlement_2",
-   "weight": 775
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_0_nuiniolora",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_0_ryanuamys",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_0_valarum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_0_venamora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_0_venuarlora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_1_elanniel",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_1_lyenirlys",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_1_nuiniolora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_1_ryanuamys",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_1_valarum",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_1_venamora",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_1_venuarlora",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_2_elanniel",
+   "weight": 108
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_2_lyenirlys",
+   "weight": 104
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_2_nuiniolora",
+   "weight": 106
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_2_ryanuamys",
+   "weight": 103
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_2_valarum",
+   "weight": 108
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_2_venamora",
+   "weight": 124
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_2_venuarlora",
+   "weight": 122
   }
  ],
  "placement": {

@@ -1,20 +1,76 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ashestith/settlement_0",
-   "weight": 15
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0_asheivsith",
+   "weight": 4
   },
   {
-   "structure": "diaithir_worldgen:lib/ashestith/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0_isiazis",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ashestith/settlement_2",
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0_osazith",
    "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/ashestith/settlement_3",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0_syathyuzis",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0_veseivsora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0_zephasis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0_zepheivsis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_1_isiazis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_1_osazith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_1_sheisora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_1_syathyuzis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_1_zephasis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_2_asheivsith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_2_syathyuzis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_2_zepheivsis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_3_asheivsith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_3_osazith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_3_syathyuzis",
+   "weight": 1
   }
  ],
  "placement": {

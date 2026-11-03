@@ -1,12 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_0_elioma",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_0_gokar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_0_osulanari",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_0_tiranaruta",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_0_venaellys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_1_credar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_1_gokar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_1_osulanari",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryenaerlae/settlement_1_shisith",
+   "weight": 1
   }
  ],
  "placement": {

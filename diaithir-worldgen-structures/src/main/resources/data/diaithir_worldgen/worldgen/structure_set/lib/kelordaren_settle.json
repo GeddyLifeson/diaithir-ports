@@ -1,12 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/kelordaren/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_0_druthar",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/kelordaren/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_0_torazhugun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_0_xaisora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_0_zephivsis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_0_zephyustis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_1_torazhugun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_1_xaisora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_1_zephivsis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_1_zephyustis",
+   "weight": 1
   }
  ],
  "placement": {

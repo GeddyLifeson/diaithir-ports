@@ -1,19 +1,91 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0",
-   "weight": 12
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0_coraunium",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/silaeramys/settlement_1",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0_menia",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2",
-   "weight": 30
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0_miantia",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/silaeramys/settlement_3",
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0_mirnum_lialirnia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0_ryaniel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0_siluarimeth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0_valaunus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_0_vonor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_1_menia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_1_miantia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_1_siluarimeth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_1_valaunus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_1_vonor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2_coraunium",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2_mantirnor",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2_menia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2_miantia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2_mirnum_lialirnia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2_ryaniel",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2_siluarimeth",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_2_vonor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/settlement_3_menia",
    "weight": 1
   }
  ],

@@ -1,20 +1,112 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/joradernath/settlement_0",
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_amelus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_ceornia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_niastaulia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_ranus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_riasauntor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_sillaures",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_tentus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_valeonus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1_amelus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1_ceornia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1_niastaulia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1_ranus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1_riasauntor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1_sillaures",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_amelus",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_ceornia",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_niastaulia",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_ranus",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_riasauntor",
    "weight": 14
   },
   {
-   "structure": "diaithir_worldgen:lib/joradernath/settlement_1",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_sillaures",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/joradernath/settlement_2",
-   "weight": 71
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_tentus",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/joradernath/settlement_3",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_valeonus",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_3_niastaulia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_3_riasauntor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_3_sillaures",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_3_tentus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_3_valeonus",
+   "weight": 2
   }
  ],
  "placement": {

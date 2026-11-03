@@ -1,20 +1,96 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/lyarae/settlement_0",
-   "weight": 75
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_alairarleth",
+   "weight": 7
   },
   {
-   "structure": "diaithir_worldgen:lib/lyarae/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_elualora",
+   "weight": 12
   },
   {
-   "structure": "diaithir_worldgen:lib/lyarae/settlement_2",
-   "weight": 14
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_eluanys",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/lyarae/settlement_3",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_lyinneth",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_miameliel",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_miinnora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_nueralys",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_venarora",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_1_elualora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_1_miameliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_1_miinnora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_1_nueralys",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2_alairarleth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2_elualora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2_eluanys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2_lyinneth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2_miameliel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2_miinnora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2_venarora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_3_elualora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_3_eluanys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_3_lyinneth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_3_venarora",
+   "weight": 1
   }
  ],
  "placement": {

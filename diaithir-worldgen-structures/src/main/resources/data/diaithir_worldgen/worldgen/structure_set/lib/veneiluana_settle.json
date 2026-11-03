@@ -1,12 +1,32 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/veneiluana/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/veneiluana/settlement_0_karakuggoth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/veneiluana/settlement_1",
-   "weight": 2
+   "structure": "diaithir_worldgen:lib/veneiluana/settlement_0_kharnaigoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneiluana/settlement_0_mileostum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneiluana/settlement_0_nuilae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneiluana/settlement_0_toroggar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneiluana/settlement_1_kharnaigoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneiluana/settlement_1_venerlae",
+   "weight": 1
   }
  ],
  "placement": {

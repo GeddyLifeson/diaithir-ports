@@ -1,20 +1,104 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0",
-   "weight": 68
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0_isatheth",
+   "weight": 13
   },
   {
-   "structure": "diaithir_worldgen:lib/xaatheth/settlement_1",
-   "weight": 16
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0_isevsora",
+   "weight": 7
   },
   {
-   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2",
-   "weight": 44
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0_seisith",
+   "weight": 6
   },
   {
-   "structure": "diaithir_worldgen:lib/xaatheth/settlement_3",
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0_seizis",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0_siatheth",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0_syazora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0_thyuvsis",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_0_xaathiasora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_1_isatheth",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_1_isevsora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_1_seisith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_1_siatheth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_1_syazora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_1_thyuvsis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_1_xaathiasora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2_isatheth",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2_isevsora",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2_seisith",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2_seizis",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2_siatheth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2_syazora",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2_thyuvsis",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_2_xaathiasora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_3_isatheth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/settlement_3_syazora",
+   "weight": 1
   }
  ],
  "placement": {

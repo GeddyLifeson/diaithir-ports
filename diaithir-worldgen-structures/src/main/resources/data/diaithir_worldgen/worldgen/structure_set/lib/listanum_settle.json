@@ -1,8 +1,16 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/listanum/settlement_2",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/listanum/settlement_2_amauntes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/listanum/settlement_2_caunernus",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/listanum/settlement_2_coreosor",
+   "weight": 1
   }
  ],
  "placement": {

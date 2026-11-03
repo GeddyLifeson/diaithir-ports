@@ -1,19 +1,59 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/karugurn/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_0_drugak",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/karugurn/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_0_karurnoth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/karugurn/settlement_2",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_0_thothar",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/karugurn/settlement_3",
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_0_vorougok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_1_drugak",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_1_gothuktun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_1_gouktuthurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_1_karouktoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_1_karurnoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_1_vorougok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_2_gouktuthurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_2_karurnoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_2_thogak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/karugurn/settlement_3_gothuktun",
    "weight": 1
   }
  ],

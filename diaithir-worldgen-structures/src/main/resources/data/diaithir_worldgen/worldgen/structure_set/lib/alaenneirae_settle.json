@@ -1,12 +1,44 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_0_lyirlora",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_0_nuelae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_0_silelora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_0_sileniel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_0_veneirora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_0_voraggurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_1_ilyerae",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_1_silelora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_1_sileniel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaenneirae/settlement_1_tiranamoma",
+   "weight": 2
   }
  ],
  "placement": {

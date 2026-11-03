@@ -1,20 +1,120 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0",
-   "weight": 18
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0_cauntium",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_1",
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0_ceoses",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0_seivsazeth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0_serestialia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0_vellor",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0_venes",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0_virastes",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_1_cauntium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_1_ceoses",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_1_corinium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_1_seivsazeth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_1_serestialia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_1_virastes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_cauntium",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_ceoses",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_corinium",
    "weight": 7
   },
   {
-   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2",
-   "weight": 59
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_seivsazeth",
+   "weight": 12
   },
   {
-   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3",
-   "weight": 27
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_serestialia",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_vellor",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_venes",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_virastes",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_cauntium",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_ceoses",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_corinium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_seivsazeth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_serestialia",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_vellor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_venes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_virastes",
+   "weight": 8
   }
  ],
  "placement": {

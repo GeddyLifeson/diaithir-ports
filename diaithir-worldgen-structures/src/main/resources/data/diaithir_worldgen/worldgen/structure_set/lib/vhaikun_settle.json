@@ -1,20 +1,96 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/vhaikun/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_0_meollor",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1",
-   "weight": 16
-  },
-  {
-   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2",
-   "weight": 39
-  },
-  {
-   "structure": "diaithir_worldgen:lib/vhaikun/settlement_3",
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_0_mirniarium",
    "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_0_noliantium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_0_thouthurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_0_torugar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1_corintus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1_krazhok",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1_meollor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1_mirniarium",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1_noliantium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1_thouthurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1_torugar",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_corintus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_grukok",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_krazhok",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_meollor",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_mirniarium",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_noliantium",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_thouthurn",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_torugar",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_3_corintus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_3_grukok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_3_krazhok",
+   "weight": 1
   }
  ],
  "placement": {

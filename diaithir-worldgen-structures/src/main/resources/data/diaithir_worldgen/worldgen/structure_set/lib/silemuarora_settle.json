@@ -1,15 +1,23 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/silemuarora/settlement_0",
-   "weight": 3
-  },
-  {
-   "structure": "diaithir_worldgen:lib/silemuarora/settlement_1",
+   "structure": "diaithir_worldgen:lib/silemuarora/settlement_0_halestornar",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/silemuarora/settlement_2",
+   "structure": "diaithir_worldgen:lib/silemuarora/settlement_0_kruktaiggar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silemuarora/settlement_0_veorum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silemuarora/settlement_1_kruktaiggar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silemuarora/settlement_2_lyarlae",
    "weight": 1
   }
  ],

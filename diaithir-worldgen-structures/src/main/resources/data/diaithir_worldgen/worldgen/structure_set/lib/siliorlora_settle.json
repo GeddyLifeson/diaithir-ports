@@ -1,16 +1,64 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0",
-   "weight": 14
-  },
-  {
-   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1",
-   "weight": 7
-  },
-  {
-   "structure": "diaithir_worldgen:lib/siliorlora/settlement_2",
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_eleinneth",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_miallora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_mieleth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_miemiriel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_ryemeth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_silanneth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_silanniola",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1_eleinneth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1_miallora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1_mieleth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1_miemiriel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1_ryemeth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1_silanniola",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_2_mieleth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_2_silanniola",
+   "weight": 1
   }
  ],
  "placement": {

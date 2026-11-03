@@ -1,12 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/mienys/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/mienys/settlement_0_corontum",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/mienys/settlement_1",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/mienys/settlement_0_miileth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_0_tarnudonar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_0_thourkoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_0_thudenon",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_0_veneirliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_0_veniomiel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_1_silenniorys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_1_thourkoth",
+   "weight": 2
   }
  ],
  "placement": {

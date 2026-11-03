@@ -1,16 +1,52 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/isyuthith/settlement_0",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_0_ashiavsith",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/isyuthith/settlement_2",
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_0_isiasora",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/isyuthith/settlement_3",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_0_theiseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_0_theisora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_0_vesathith",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_2_isiasora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_2_xaestis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_3_isiasora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_3_theiseth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_3_theisora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_3_vesathith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/settlement_3_xaestis",
+   "weight": 1
   }
  ],
  "placement": {

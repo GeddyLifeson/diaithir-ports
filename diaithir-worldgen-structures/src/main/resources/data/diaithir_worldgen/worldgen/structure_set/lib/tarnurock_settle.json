@@ -1,19 +1,83 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0",
-   "weight": 19
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0_drorestock",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnurock/settlement_1",
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0_kelornardon",
    "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2",
-   "weight": 16
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0_morerath",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnurock/settlement_3",
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0_moroldar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0_pelonestock",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0_pelurdaldar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0_thodurde",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0_thuneld",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_1_kelornardon",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_1_moroldar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_1_pelonestock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_1_pelurdaldar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2_drorestock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2_kelornardon",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2_morerath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2_moroldar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2_pelonestock",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2_thodurde",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2_thuneld",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_3_morerath",
    "weight": 1
   }
  ],

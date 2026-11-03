@@ -1,20 +1,128 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/pelanode/settlement_0",
-   "weight": 72
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0_brenock",
+   "weight": 8
   },
   {
-   "structure": "diaithir_worldgen:lib/pelanode/settlement_1",
-   "weight": 12
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0_crunostock",
+   "weight": 9
   },
   {
-   "structure": "diaithir_worldgen:lib/pelanode/settlement_2",
-   "weight": 59
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0_halardeneld",
+   "weight": 9
   },
   {
-   "structure": "diaithir_worldgen:lib/pelanode/settlement_3",
-   "weight": 48
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0_peludar",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0_tharne",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0_therar",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0_therdure",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0_thernock",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_1_brenock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_1_crunostock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_1_peludar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_1_tharne",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_1_therar",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_1_therdure",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_1_thernock",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2_brenock",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2_crunostock",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2_halardeneld",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2_peludar",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2_tharne",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2_therar",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2_therdure",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2_thernock",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3_brenock",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3_crunostock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3_halardeneld",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3_peludar",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3_tharne",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3_therar",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3_therdure",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3_thernock",
+   "weight": 7
   }
  ],
  "placement": {

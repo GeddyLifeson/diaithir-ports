@@ -1,12 +1,24 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/lyannora/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/lyannora/settlement_0_elenaereth",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/lyannora/settlement_1",
+   "structure": "diaithir_worldgen:lib/lyannora/settlement_0_jorunath",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannora/settlement_0_ukasarnaari",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannora/settlement_1_pelurdene",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannora/settlement_1_ukasarnaari",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,12 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/venilleth/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_0_brerdon",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/venilleth/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_0_ilyemuarys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_0_miimiorliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_0_sestora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_1_alaelys",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_1_elioleth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_1_ilyemuarys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_1_sestora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/settlement_1_thedock",
+   "weight": 1
   }
  ],
  "placement": {

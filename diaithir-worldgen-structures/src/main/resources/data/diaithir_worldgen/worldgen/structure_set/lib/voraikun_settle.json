@@ -1,16 +1,84 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/voraikun/settlement_0",
-   "weight": 30
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_0_gokathoth",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/voraikun/settlement_1",
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_0_gougakturn",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_0_gouzhoth",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_0_grimairnak",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_0_guzhun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_0_karoktoth",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_0_krokurn",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_0_thozhaktok",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_1_gouzhoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_1_guzhun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_1_karoktoth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_1_thozhaktok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_2_gokathoth",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_2_gougakturn",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_2_gouzhoth",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_2_grimairnak",
    "weight": 6
   },
   {
-   "structure": "diaithir_worldgen:lib/voraikun/settlement_2",
-   "weight": 61
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_2_guzhun",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_2_karoktoth",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_2_krokurn",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/settlement_2_thozhaktok",
+   "weight": 6
   }
  ],
  "placement": {

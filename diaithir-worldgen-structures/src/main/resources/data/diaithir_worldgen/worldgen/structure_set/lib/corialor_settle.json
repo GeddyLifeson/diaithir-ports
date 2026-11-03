@@ -1,12 +1,28 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/corialor/settlement_0",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/corialor/settlement_0_coralliania",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/corialor/settlement_1",
+   "structure": "diaithir_worldgen:lib/corialor/settlement_0_elualannae",
    "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corialor/settlement_0_nentaules",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corialor/settlement_0_telaunum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corialor/settlement_1_elualannae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corialor/settlement_1_nentaules",
+   "weight": 2
   }
  ],
  "placement": {

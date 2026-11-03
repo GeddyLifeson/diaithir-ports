@@ -1,12 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/khairnar/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/khairnar/settlement_0_khougoth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/khairnar/settlement_1",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/khairnar/settlement_0_osutarira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khairnar/settlement_0_ryenala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khairnar/settlement_1_haleronath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khairnar/settlement_1_keloldarne",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khairnar/settlement_1_keloneren",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khairnar/settlement_1_teliarnium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/khairnar/settlement_1_veseithasha",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,20 +1,116 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0",
-   "weight": 44
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_cistum",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1",
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_teleoria",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_thathora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_tiraurnia",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_tollianor",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_valarises",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_vauntanes",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_cistum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_teleoria",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_thathora",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_tiraurnia",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_tollianor",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_valarises",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_vauntanes",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_cistum",
    "weight": 40
   },
   {
-   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2",
-   "weight": 260
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_teleoria",
+   "weight": 33
   },
   {
-   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3",
-   "weight": 117
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_thathora",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_tiraurnia",
+   "weight": 30
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_tollianor",
+   "weight": 37
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_valarises",
+   "weight": 30
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_vauntanes",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_cistum",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_teleoria",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_thathora",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_tiraurnia",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_tollianor",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_valarises",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_vauntanes",
+   "weight": 21
   }
  ],
  "placement": {

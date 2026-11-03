@@ -1,11 +1,27 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/halurdock/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/halurdock/settlement_0_drarnen",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/halurdock/settlement_3",
+   "structure": "diaithir_worldgen:lib/halurdock/settlement_0_eleruanys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/settlement_0_grimuthakar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/settlement_0_peledurden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/settlement_0_thaiggaktak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/settlement_3_drarnen",
    "weight": 1
   }
  ],

@@ -1,12 +1,48 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/miinnora/settlement_0",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_eluanarae",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/miinnora/settlement_1",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_miineirliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_morurneld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_sileiniel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_silirwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_ukataira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_venuanimae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_1_eluanarae",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_1_miineirliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_1_ukataira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_1_venuanimae",
+   "weight": 1
   }
  ],
  "placement": {

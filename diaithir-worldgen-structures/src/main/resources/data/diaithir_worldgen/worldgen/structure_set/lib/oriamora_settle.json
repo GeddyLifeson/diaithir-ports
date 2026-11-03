@@ -1,12 +1,32 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/oriamora/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_0_elilora",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/oriamora/settlement_1",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_0_grimothok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_0_ryannileth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_1_grimothok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_1_ryannileth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_1_valestes",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_1_vhazhak",
+   "weight": 1
   }
  ],
  "placement": {

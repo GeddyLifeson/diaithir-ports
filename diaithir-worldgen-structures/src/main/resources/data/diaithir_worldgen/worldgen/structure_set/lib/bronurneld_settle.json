@@ -1,16 +1,84 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/bronurneld/settlement_0",
-   "weight": 12
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_0_fenerneld",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1",
-   "weight": 15
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_0_moraldon",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2",
-   "weight": 12
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_0_morasture",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_0_morudare",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_0_pelornelden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_0_peluderath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_crustarnon",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_fenardeldar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_moraldon",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_morasture",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_morudare",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_pelornelden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_peluderath",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_crustarnon",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_fenerneld",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_moraldon",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_morasture",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_morudare",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_pelornelden",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_peluderath",
+   "weight": 1
   }
  ],
  "placement": {

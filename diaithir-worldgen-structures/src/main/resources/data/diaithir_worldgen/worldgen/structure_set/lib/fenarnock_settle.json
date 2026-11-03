@@ -1,12 +1,48 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/fenarnock/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_0_alaanae",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/fenarnock/settlement_1",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_0_grothurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_0_ilyirionwen",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_0_orauntus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_0_torarnoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_0_zephathyss",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_1_grornaizhok",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_1_orauntus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_1_ryimanora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_1_torarnoth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_1_zephathyss",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,12 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/kelolden/settlement_0",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_0_callia",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/kelolden/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_0_soneontium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_0_valaustium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_0_vanamalum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_0_xaastith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_1_moredarnen",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_1_soneontium",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_1_valaustium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_1_vanamalum",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,16 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/oriilora/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_0_osistyuzeth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/oriilora/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_0_torozhak",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/oriilora/settlement_2",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_1_grimaiktun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_1_kharnok",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_1_thaggurkun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_1_torozhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_2_thoukoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_2_torozhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriilora/settlement_2_venaerla",
+   "weight": 1
   }
  ],
  "placement": {

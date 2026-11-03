@@ -1,16 +1,24 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_0",
-   "weight": 3
-  },
-  {
-   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_1",
+   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_0_osusanari",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_3",
+   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_0_vanasamum",
    "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_1_vanasamum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_3_osusanari",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_3_syethith",
+   "weight": 1
   }
  ],
  "placement": {

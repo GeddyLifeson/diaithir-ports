@@ -1,12 +1,56 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/torarnak/settlement_0",
-   "weight": 17
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_0_drarnun",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/torarnak/settlement_1",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_0_drouktornun",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_0_drozhagurn",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_0_khouktozhar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_0_kruzhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_0_toruggok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_0_vhuggun",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_1_drouktornun",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_1_drozhagurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_1_grathar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_1_khouktozhar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_1_kruzhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_1_vhuggun",
+   "weight": 1
   }
  ],
  "placement": {

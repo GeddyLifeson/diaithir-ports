@@ -1,16 +1,76 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/morurnath/settlement_0",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_0_crornuden",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/morurnath/settlement_1",
-   "weight": 23
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_0_drusteld",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/morurnath/settlement_2",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_0_elioleth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_0_morarduden",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_0_sheivsora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_0_thuldock",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_1_asheizeth",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_1_crornuden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_1_drusteld",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_1_elioleth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_1_morarduden",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_1_sheivsora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_1_thuldock",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_2_asheizeth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_2_crornuden",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_2_drusteld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_2_elioleth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_2_thuldock",
+   "weight": 2
   }
  ],
  "placement": {

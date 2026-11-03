@@ -1,16 +1,72 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/drore/settlement_0",
-   "weight": 35
+   "structure": "diaithir_worldgen:lib/drore/settlement_0_crurdedock",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/drore/settlement_1",
+   "structure": "diaithir_worldgen:lib/drore/settlement_0_fenanerdar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_0_fenure",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_0_halarnock",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_0_pelunoreld",
    "weight": 6
   },
   {
-   "structure": "diaithir_worldgen:lib/drore/settlement_2",
-   "weight": 9
+   "structure": "diaithir_worldgen:lib/drore/settlement_0_thernock",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_0_tholdernon",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_1_fenanerdar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_1_fenure",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_1_halarnock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_1_tholdernon",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_2_crurdedock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_2_fenanerdar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_2_fenure",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_2_halarnock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_2_pelunoreld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/settlement_2_thernock",
+   "weight": 2
   }
  ],
  "placement": {

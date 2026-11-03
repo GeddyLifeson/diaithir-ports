@@ -1,11 +1,23 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/nuimiel/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/nuimiel/settlement_0_broreld",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/nuimiel/settlement_1",
+   "structure": "diaithir_worldgen:lib/nuimiel/settlement_0_ilyenioriel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuimiel/settlement_0_krougathok",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuimiel/settlement_0_zephishora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuimiel/settlement_1_ilyenioriel",
    "weight": 1
   }
  ],

@@ -1,20 +1,96 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_0",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_0_crenar",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_1",
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_0_dranostock",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_0_fenadestar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_0_kelasten",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_0_kelonock",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_0_peleste",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_0_thurdock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_1_crenar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_1_kelasten",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_1_kelonock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_1_peleste",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_1_thurdock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_2_crenar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_2_dranostock",
    "weight": 6
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_2",
-   "weight": 16
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_2_fenadestar",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_3",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_2_kelasten",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_2_kelonock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_2_moranolde",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_2_peleste",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_3_crenar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_3_kelonock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_3_moranolde",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/settlement_3_peleste",
+   "weight": 2
   }
  ],
  "placement": {

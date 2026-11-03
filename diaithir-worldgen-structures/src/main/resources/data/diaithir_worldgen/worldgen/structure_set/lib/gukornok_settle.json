@@ -1,16 +1,60 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/gukornok/settlement_0",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_0_drorkun",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/gukornok/settlement_1",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_0_droukoth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/gukornok/settlement_2",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_0_grornaithak",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_0_thornun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_0_torokoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_0_vorurkok",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_1_droukoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_1_grornaithak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_1_torokoth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_1_vorurkok",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_2_droukoth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_2_karornak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_2_thornun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_2_vorurkok",
+   "weight": 1
   }
  ],
  "placement": {

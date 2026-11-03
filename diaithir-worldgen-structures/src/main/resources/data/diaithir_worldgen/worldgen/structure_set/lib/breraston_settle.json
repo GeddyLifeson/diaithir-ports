@@ -1,19 +1,103 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/breraston/settlement_0",
-   "weight": 25
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_amires_lonia",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/breraston/settlement_1",
-   "weight": 62
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_leostia",
+   "weight": 4
   },
   {
-   "structure": "diaithir_worldgen:lib/breraston/settlement_2",
-   "weight": 101
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_meosollus",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/breraston/settlement_3",
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_mernaulia",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_orerus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_oroleornus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_serores_neonium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_vialus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_amires_lonia",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_leostia",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_meosollus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_mernaulia",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_orerus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_oroleornus",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_serores_neonium",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_vialus",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_amires_lonia",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_leostia",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_meosollus",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_mernaulia",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_orerus",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_oroleornus",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_serores_neonium",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_vialus",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_3_leostia",
    "weight": 1
   }
  ],

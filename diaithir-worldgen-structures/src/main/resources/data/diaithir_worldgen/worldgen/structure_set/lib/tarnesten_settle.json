@@ -1,19 +1,95 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0",
-   "weight": 27
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_brusten",
+   "weight": 6
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnesten/settlement_1",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_halenoden",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2",
-   "weight": 34
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_jorodere",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnesten/settlement_3",
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_joruraneld",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_moredorneld",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_pelenaston",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_tarneden",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_tharoldock",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_1_halenoden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_1_joruraneld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_1_moredorneld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_1_pelenaston",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_1_tarneden",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_1_tharoldock",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_brusten",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_halenoden",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_jorodere",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_joruraneld",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_moredorneld",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_pelenaston",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_tarneden",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_tharoldock",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_3_joruraneld",
    "weight": 1
   }
  ],

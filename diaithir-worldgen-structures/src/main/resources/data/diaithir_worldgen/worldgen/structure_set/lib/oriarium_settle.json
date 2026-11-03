@@ -1,15 +1,51 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/oriarium/settlement_0",
-   "weight": 18
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_0_corialerium",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/oriarium/settlement_1",
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_0_kaluraneno",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_0_miaseontia",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_0_mollirnum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_0_orallus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_0_orosillium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_0_telaustes",
    "weight": 4
   },
   {
-   "structure": "diaithir_worldgen:lib/oriarium/settlement_2",
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_1_coralanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_1_kaluraneno",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_1_miaseontia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_1_sillum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_2_coralanum",
    "weight": 1
   }
  ],

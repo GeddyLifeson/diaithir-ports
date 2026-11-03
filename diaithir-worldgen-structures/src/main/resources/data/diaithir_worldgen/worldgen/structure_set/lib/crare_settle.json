@@ -1,20 +1,72 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/crare/settlement_0",
-   "weight": 18
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_bruren",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/crare/settlement_1",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_drornon",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/crare/settlement_2",
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_fenoron",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_fenure",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_haluderdath",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_halureston",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_joralden",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_tarnadon",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_1_bruren",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_1_drornon",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_1_fenure",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_1_halureston",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_1_tarnadon",
    "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/crare/settlement_3",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/crare/settlement_2_drornon",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_2_halureston",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_3_halureston",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_3_tarnadon",
+   "weight": 3
   }
  ],
  "placement": {

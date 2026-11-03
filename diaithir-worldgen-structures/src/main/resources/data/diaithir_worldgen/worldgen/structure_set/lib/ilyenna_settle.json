@@ -1,16 +1,100 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ilyenna/settlement_0",
-   "weight": 11
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_0_amauria",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1",
-   "weight": 47
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_0_oreolia",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2",
-   "weight": 24
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_0_saullia",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_0_saurnes",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_0_telor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_amauria",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_cernor",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_lanus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_oreolia",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_saullia",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_saurnes",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_serallum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_serelor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_sireostor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_telor",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_amauria",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_cernor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_lanus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_oreolia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_saullia",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_saurnes",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_serallum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_sireostor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_telor",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,19 +1,107 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/nueriel/settlement_0",
-   "weight": 33
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_amiriastium",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/nueriel/settlement_1",
-   "weight": 81
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_corinus",
+   "weight": 5
   },
   {
-   "structure": "diaithir_worldgen:lib/nueriel/settlement_2",
-   "weight": 14
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_lyeriel",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/nueriel/settlement_3",
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_mastianor",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_nasor_leonanum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_nernirum",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_orerniastes",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_ryeneth",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_venireth",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_amiriastium",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_corinus",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_lyeriel",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_mastianor",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_nasor_leonanum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_nernirum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_orerniastes",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_ryeneth",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_venireth",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_amiriastium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_corinus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_lyeriel",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_nernirum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_orerniastes",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_ryeneth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_venireth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_3_corinus",
    "weight": 1
   }
  ],

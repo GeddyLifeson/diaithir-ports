@@ -1,15 +1,59 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/miana/settlement_0",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/miana/settlement_0_elanerlae",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/miana/settlement_1",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/miana/settlement_0_lyila",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/miana/settlement_3",
+   "structure": "diaithir_worldgen:lib/miana/settlement_0_ryalora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_0_silinemeth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_0_syusheizora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_0_venarleinae",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_1_elanerlae",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_1_lyila",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_1_ryalora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_1_ryilleira",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_1_silinemeth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_1_syusheizora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_1_venarleinae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_3_venarleinae",
    "weight": 1
   }
  ],

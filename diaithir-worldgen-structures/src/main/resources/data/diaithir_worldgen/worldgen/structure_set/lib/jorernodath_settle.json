@@ -1,15 +1,35 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/jorernodath/settlement_0",
-   "weight": 6
+   "structure": "diaithir_worldgen:lib/jorernodath/settlement_0_naures",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/jorernodath/settlement_1",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/jorernodath/settlement_0_venaleimeth",
+   "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/jorernodath/settlement_2",
+   "structure": "diaithir_worldgen:lib/jorernodath/settlement_0_venuarora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernodath/settlement_1_coliarnum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernodath/settlement_1_elina",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernodath/settlement_1_khugurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernodath/settlement_1_naures",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/jorernodath/settlement_2_khugurn",
    "weight": 1
   }
  ],

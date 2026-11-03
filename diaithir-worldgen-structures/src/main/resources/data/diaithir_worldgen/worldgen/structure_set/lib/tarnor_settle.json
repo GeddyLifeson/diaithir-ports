@@ -1,16 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/tarnor/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_0_halestune",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnor/settlement_1",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_0_joruranock",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/tarnor/settlement_2",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_0_telarostum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_0_telineranum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_1_halestune",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_1_nuamiel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_2_nuamiel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_2_telineranum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_2_zephiazasha",
+   "weight": 1
   }
  ],
  "placement": {

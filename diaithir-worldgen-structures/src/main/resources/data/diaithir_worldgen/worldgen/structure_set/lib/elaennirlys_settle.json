@@ -1,16 +1,88 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0",
-   "weight": 390
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0_corasanum_valanor",
+   "weight": 49
   },
   {
-   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1",
-   "weight": 1861
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0_marnes_serelirum",
+   "weight": 62
   },
   {
-   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2",
-   "weight": 168
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0_orentum_relor",
+   "weight": 67
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0_rinauria",
+   "weight": 57
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0_serores_lonilium",
+   "weight": 61
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0_sianelum",
+   "weight": 49
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0_valantanum",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1_corasanum_valanor",
+   "weight": 263
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1_marnes_serelirum",
+   "weight": 262
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1_orentum_relor",
+   "weight": 300
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1_rinauria",
+   "weight": 268
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1_serores_lonilium",
+   "weight": 261
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1_sianelum",
+   "weight": 245
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1_valantanum",
+   "weight": 262
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2_corasanum_valanor",
+   "weight": 27
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2_marnes_serelirum",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2_orentum_relor",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2_rinauria",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2_serores_lonilium",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2_sianelum",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2_valantanum",
+   "weight": 26
   }
  ],
  "placement": {

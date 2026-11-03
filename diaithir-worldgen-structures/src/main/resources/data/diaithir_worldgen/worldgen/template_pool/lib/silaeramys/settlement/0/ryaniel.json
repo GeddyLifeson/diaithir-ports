@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/silaeramys/settlement/0/ryaniel",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silaeramys/ar_silaeramys_e1_places_000328",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,15 +1,27 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/grimukougok/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_0_draggurn",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/grimukougok/settlement_1",
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_0_zephyusasha",
    "weight": 3
   },
   {
-   "structure": "diaithir_worldgen:lib/grimukougok/settlement_2",
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_1_thurnak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_1_tiranamala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_1_zephyusasha",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_2_zephyusasha",
    "weight": 1
   }
  ],

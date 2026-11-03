@@ -1,20 +1,92 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/syuzeth/settlement_0",
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_0_theithis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_0_vesastora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_1_osethis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_1_syazestora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_1_thaseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_1_theithis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_1_thiaseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_1_vesastora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_2_osethis",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_2_syazestora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_2_thaseth",
    "weight": 4
   },
   {
-   "structure": "diaithir_worldgen:lib/syuzeth/settlement_1",
-   "weight": 7
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_2_theithis",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/syuzeth/settlement_2",
-   "weight": 16
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_2_vesastora",
+   "weight": 4
   },
   {
-   "structure": "diaithir_worldgen:lib/syuzeth/settlement_3",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_2_veseithora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_2_xaezeth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_3_osethis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_3_syazestora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_3_thaseth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_3_thiaseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_3_vesastora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_3_veseithora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/settlement_3_xaezeth",
+   "weight": 3
   }
  ],
  "placement": {

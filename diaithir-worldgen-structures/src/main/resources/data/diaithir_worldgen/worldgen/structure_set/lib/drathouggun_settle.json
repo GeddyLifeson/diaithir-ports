@@ -1,12 +1,40 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/drathouggun/settlement_0",
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_0_kragourkoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_0_lerilor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_1_ashiasizora",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/drathouggun/settlement_1",
-   "weight": 13
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_1_crastar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_1_kragourkoth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_1_lerilor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_1_moria",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_1_thuren",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drathouggun/settlement_1_tiravanuta",
+   "weight": 1
   }
  ],
  "placement": {

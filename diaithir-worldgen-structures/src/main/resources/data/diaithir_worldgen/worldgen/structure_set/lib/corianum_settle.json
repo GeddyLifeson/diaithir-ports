@@ -1,8 +1,16 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/corianum/settlement_0",
-   "weight": 3
+   "structure": "diaithir_worldgen:lib/corianum/settlement_0_draktugoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/settlement_0_khoggar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/settlement_0_silelys",
+   "weight": 1
   }
  ],
  "placement": {

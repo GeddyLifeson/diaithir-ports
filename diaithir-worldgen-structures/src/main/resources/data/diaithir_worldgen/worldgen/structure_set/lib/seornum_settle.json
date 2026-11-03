@@ -1,12 +1,44 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/seornum/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/seornum/settlement_0_drasterneld",
+   "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/seornum/settlement_1",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/seornum/settlement_0_krukar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seornum/settlement_0_tentamanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seornum/settlement_1_krukar",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seornum/settlement_1_oriarae",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seornum/settlement_1_pelustar",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seornum/settlement_1_tentamanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seornum/settlement_1_vhaikak",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seornum/settlement_1_voraigak",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seornum/settlement_1_zephyussora",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,12 +1,32 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ryanirae/settlement_0",
-   "weight": 4
+   "structure": "diaithir_worldgen:lib/ryanirae/settlement_0_alaileth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/ryanirae/settlement_1",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/ryanirae/settlement_0_isastith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryanirae/settlement_0_serentium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryanirae/settlement_1_isastith",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryanirae/settlement_1_raurum",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryanirae/settlement_1_ryemeth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryanirae/settlement_1_sileima",
+   "weight": 2
   }
  ],
  "placement": {

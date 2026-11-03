@@ -1,19 +1,39 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/nuemiel/settlement_0",
-   "weight": 6
-  },
-  {
-   "structure": "diaithir_worldgen:lib/nuemiel/settlement_1",
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_0_elaenemiel",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/nuemiel/settlement_2",
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_0_khaikun",
    "weight": 2
   },
   {
-   "structure": "diaithir_worldgen:lib/nuemiel/settlement_3",
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_0_lyanys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_0_ukataluta",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_1_drurnak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_1_oriama",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_2_kalutamira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_2_vesiathis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/settlement_3_merataeno",
    "weight": 1
   }
  ],

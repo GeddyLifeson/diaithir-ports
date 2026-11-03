@@ -1,15 +1,63 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0",
-   "weight": 66
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_anamarum",
+   "weight": 9
   },
   {
-   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1",
-   "weight": 21
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_anatalum",
+   "weight": 8
   },
   {
-   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_2",
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_osunarsalum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_osutamoma",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_suralameno",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_tentarala",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_ukasamira",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_anamarum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_anatalum",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_osunarsalum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_osutamoma",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_suralameno",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_tentarala",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_ukasamira",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_2_anamarum",
    "weight": 1
   }
  ],

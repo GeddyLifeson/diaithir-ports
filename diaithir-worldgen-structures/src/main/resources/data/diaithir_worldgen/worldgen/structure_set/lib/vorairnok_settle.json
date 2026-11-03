@@ -1,16 +1,36 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/vorairnok/settlement_0",
-   "weight": 6
-  },
-  {
-   "structure": "diaithir_worldgen:lib/vorairnok/settlement_1",
+   "structure": "diaithir_worldgen:lib/vorairnok/settlement_0_druzhougoth",
    "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/vorairnok/settlement_2",
+   "structure": "diaithir_worldgen:lib/vorairnok/settlement_0_khairnak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/settlement_0_krugar",
    "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/settlement_0_krugournoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/settlement_1_goktoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/settlement_2_goktoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/settlement_2_guzhurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/settlement_2_khairnak",
+   "weight": 1
   }
  ],
  "placement": {

@@ -1,12 +1,48 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/draktak/settlement_0",
-   "weight": 10
+   "structure": "diaithir_worldgen:lib/draktak/settlement_0_kroggakoth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/draktak/settlement_1",
-   "weight": 8
+   "structure": "diaithir_worldgen:lib/draktak/settlement_0_mostialium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_0_oseisheth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_0_thazhurn",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_0_thezavsasha",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_0_vesasora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_1_grourkak",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_1_kroggakoth",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_1_mostialium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_1_oseisheth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/draktak/settlement_1_thezavsasha",
+   "weight": 1
   }
  ],
  "placement": {

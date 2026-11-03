@@ -1,15 +1,35 @@
 {
  "structures": [
   {
-   "structure": "diaithir_worldgen:lib/corentium/settlement_0",
-   "weight": 5
+   "structure": "diaithir_worldgen:lib/corentium/settlement_0_kaikun",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/corentium/settlement_1",
-   "weight": 2
+   "structure": "diaithir_worldgen:lib/corentium/settlement_0_theizesseth",
+   "weight": 1
   },
   {
-   "structure": "diaithir_worldgen:lib/corentium/settlement_2",
+   "structure": "diaithir_worldgen:lib/corentium/settlement_0_vesiazith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corentium/settlement_0_vhoukurkun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corentium/settlement_0_vhoukurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corentium/settlement_1_kaikun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corentium/settlement_1_vhoukurkun",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corentium/settlement_2_theizesseth",
    "weight": 1
   }
  ],
