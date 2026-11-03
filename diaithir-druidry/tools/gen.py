@@ -18,7 +18,7 @@ RES = os.path.join(ROOT, "src", "main", "resources")
 DATA = os.path.join(RES, "data", NS)
 ASSET = os.path.join(RES, "assets", NS)
 
-AGE_NUM = {"III": 3, "IV": 4, "V": 5}
+AGE_NUM = {"III": 3, "IV": 4, "V": 5, "VI": 6}
 
 
 def wj(path, obj):
@@ -77,11 +77,11 @@ def main():
         lang[f"item.{NS}.staff_{key}_2"] = f"Bauta {sc['rod']} Mòru"
         lang[f"school.{NS}.{key}"] = sc["rod"]
         library.append([sc["rod"], "concept", 3, "magic",
-                        f"{sc['blurb']} Seven spells from Age III to Age V; learn them from a {'Liebur ' + sc['rod']} made at the spell binding table or from scrolls found in old chambers."])
+                        f"{sc['blurb']} {len(sc['spells'])} spells from Age {sc['spells'][0]['age']} to Age {sc['spells'][-1]['age']}; learn them from a {'Liebur ' + sc['rod']} made at the spell binding table or from scrolls found in old chambers."])
         library.append([f"Bauta {sc['rod']}", "item", 3, "magic",
-                        f"A staff of the {sc['rod']} way. Adds spell power and carries the school's first spell. Crafted with a bronze ingot and 1 {sc['focus'].split(':')[1].replace('_', ' ')}. Age III."])
-        library.append([f"Bauta {sc['rod']} Mòru", "item", 5, "magic",
-                        f"The greater staff of the {sc['rod']} way: more spell power and 300 uses. Crafted with a steel ingot and 2 {sc['focus'].split(':')[1].replace('_', ' ')}. Age V."])
+                        f"A staff of the {sc['rod']} way. Adds spell power and carries the school's first spell. Crafted with a {sc['ingots'][0]} ingot and 1 {sc['focus'].split(':')[1].replace('_', ' ')}. Age {sc['ages'][0]}."])
+        library.append([f"Bauta {sc['rod']} Mòru", "item", AGE_NUM[sc['ages'][1]], "magic",
+                        f"The greater staff of the {sc['rod']} way: more spell power and 300 uses. Crafted with a {sc['ingots'][1]} ingot and 2 {sc['focus'].split(':')[1].replace('_', ' ')}. Age {sc['ages'][1]}."])
 
         # item models
         for kind, folder in (("spell_book", "spell_book"), ("spell_scroll", "spell_scroll")):
@@ -100,14 +100,14 @@ def main():
             comp = staff_components(sc, key, n, t0)
             if n == 1:
                 pat = ["  F", " I ", "S  "]
-                keys = {"F": sc["focus"], "I": "#c:ingots/bronze", "S": "minecraft:stick"}
+                keys = {"F": sc["focus"], "I": "#c:ingots/" + sc["ingots"][0], "S": "minecraft:stick"}
             else:
                 pat = ["FIF", " S ", " S "]
-                keys = {"F": sc["focus"], "I": "#c:ingots/steel", "S": "minecraft:stick"}
+                keys = {"F": sc["focus"], "I": "#c:ingots/" + sc["ingots"][1], "S": "minecraft:stick"}
             wj(os.path.join(DATA, "recipe", f"staff_{key}_{n}.json"),
                {"type": "minecraft:crafting_shaped", "category": "equipment", "key": keys, "pattern": pat,
                 "result": {"id": "minecraft:stick", "count": 1, "components": comp}})
-            items_age[f"{NS}:staff_{key}_{n}"] = "III" if n == 1 else "V"
+            items_age[f"{NS}:staff_{key}_{n}"] = sc["ages"][n - 1]
             sc.setdefault("staff_components", {})[n] = comp
 
     # spell icons are looked up by id
@@ -115,7 +115,7 @@ def main():
     # school scroll and staff loot -------------------------------------------------------------
     loot_tables(lang)
     # make sure the ingot tags exist even where no mod fills them (merged with the pack's tags)
-    for m in ("bronze", "steel"):
+    for m in ("bronze", "silver", "steel"):
         wj(os.path.join(RES, "data", "c", "tags", "item", "ingots", m + ".json"), {"values": []})
     # lang
     wj(os.path.join(ASSET, "lang", "en_us.json"), lang)
@@ -181,11 +181,15 @@ def loot_tables(lang):
             "minecraft:chests/ancient_city", "minecraft:chests/ancient_city_ice_box", "minecraft:chests/end_city_treasure",
             "minecraft:chests/trial_chambers/reward_rare", "minecraft:chests/trial_chambers/reward_ominous_rare",
             "minecraft:chests/trial_chambers/reward_unique", "minecraft:chests/trial_chambers/reward_ominous_unique"]),
+        "age6": dict(rolls=(1, 2), tier=(1, 3), staff=(1, 5), n=2, glyph=True, targets=[
+            "minecraft:chests/end_city_treasure", "minecraft:chests/ancient_city_ice_box",
+            "minecraft:chests/trial_chambers/reward_ominous_rare", "minecraft:chests/trial_chambers/reward_ominous_unique"]),
     }
     glm = []
     for tname, t in tiers.items():
         scroll_entries = []
-        for sc in SP.SCHOOLS:
+        pool = [sc for sc in SP.SCHOOLS if (sc["ages"][1] == "VI") == bool(t.get("glyph"))]
+        for sc in pool:
             scroll_entries.append({
                 "type": "minecraft:item", "name": "spell_engine:spell_scroll", "weight": 4,
                 "functions": [{"function": "spell_engine:spell_bind_randomly",
@@ -193,7 +197,7 @@ def loot_tables(lang):
                                "tier": {"type": "minecraft:uniform", "min": t["tier"][0], "max": t["tier"][1]},
                                "count": 1}]})
         staff_entries = []
-        for sc in SP.SCHOOLS:
+        for sc in pool:
             comp = staff_components(sc, sc["key"], t["n"], [f"{NS}:{s['id']}" for s in sc["spells"] if s["spell"]["tier"] == 0])
             staff_entries.append({"type": "minecraft:item", "name": "minecraft:stick", "weight": 1,
                                   "functions": [{"function": "minecraft:set_components", "components": comp}]})
@@ -207,7 +211,7 @@ def loot_tables(lang):
             "conditions": [{"condition": "minecraft:all_of", "terms": [
                 {"condition": "minecraft:any_of", "terms": [
                     {"condition": "neoforge:loot_table_id", "loot_table_id": tid} for tid in t["targets"]]},
-                {"condition": "minecraft:random_chance", "chance": 0.4 if tname != "age5" else 0.6}]}],
+                {"condition": "minecraft:random_chance", "chance": 0.4 if tname in ("age3", "age4") else 0.6}]}],
             "table": f"{NS}:chests/{tname}"})
         glm.append(f"{NS}:inject_{tname}")
 
