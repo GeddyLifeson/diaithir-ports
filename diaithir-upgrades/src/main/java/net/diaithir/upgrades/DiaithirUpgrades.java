@@ -28,6 +28,7 @@ public final class DiaithirUpgrades {
     public DiaithirUpgrades(IEventBus bus) {
         ATTACHMENTS.register("slots", () -> Upgrades.SLOTS);
         ATTACHMENTS.register(bus);
+        Modules.register(bus);
         bus.addListener(RegisterCapabilitiesEvent.class, DiaithirUpgrades::registerCaps);
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class,
                 e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "targets"), new Rules()));

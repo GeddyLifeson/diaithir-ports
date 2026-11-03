@@ -86,4 +86,11 @@ class UpgradesTest {
         assertEquals(1, rules.size());
         assertEquals(4, rules.get(0).maxQuality());
     }
+
+    @Test void moduleIdsAndAges() {
+        assertEquals("ogham_speed_1", ModuleIds.idOf(Theme.MAGIC, Kind.SPEED, 1));
+        assertEquals(3, ModuleIds.ageOf(Theme.FOOD, 1));
+        assertEquals(6, ModuleIds.ageOf(Theme.TECH, 1));
+        assertEquals(7, ModuleIds.ageOf(Theme.MAGIC, 2));
+    }
 }
