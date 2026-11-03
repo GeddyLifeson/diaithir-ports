@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "net.diaithir.gantries.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["ShaftBlockEntityMixin", "CarriageBlockEntityMixin", "ShaftBlockMixin", "ContraptionEntityMixin", "CarriageBlockMixin", "ContraptionMixin"],
+  "injectors": {"defaultRequire": 1}
+}

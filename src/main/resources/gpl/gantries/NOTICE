@@ -1,0 +1,19 @@
+Gantry split module (GPL-3.0-only), inside the Create port jar
+
+Behaviour folded from Create: Extended Gantries 1.0.0 by MR-Spagetty (https://github.com/MR-Spagetty/create-extended-gantries,
+commit c31ddb67e8fc38f001f1a3991981a98645dfac88), licensed GPL-3.0-only (gpl/gantries/LICENSE-GPL-3.0 is the
+upstream licence text). The upstream works on Create 6.0.x for Minecraft 1.20.1/1.21.1 with Registrate; this module is a
+fresh implementation of the same behaviour on the Create port in this repository (branch claude/create, mod id
+diaithir_create), using NeoForge's BlockEntityTypeAddBlocksEvent instead of a second block entity type and
+MixinExtras wraps in place of upstream's redirects. No upstream models or textures are used.
+
+Because the idea and the mixin points follow the GPL-3.0 original, this module is distributed under GPL-3.0-only.
+Scope of the GPL module inside this jar (and nothing else in the jar is GPL):
+  - Java package net.diaithir.gantries (including net.diaithir.gantries.mixin)
+  - diaithirgantries.mixins.json
+  - assets/diaithirgantries/, data/diaithirgantries/
+  - gpl/gantries/ (this notice, the licence text, id_migrations.json)
+The module is loaded through one call, DiaithirGantries.init(bus), from CreateNeoForge. The MIT code of the Create port
+(com.zurrtum.create) does not otherwise depend on it; the module depends on the port. Source for the module is the
+tree above in this repository (and gpl/gantries/ at the repo root for its README and asset generator). Combined
+distribution of the jar therefore falls under GPL-3.0 terms; the MIT files keep their MIT licence on their own.

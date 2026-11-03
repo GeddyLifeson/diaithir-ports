@@ -1,0 +1,7 @@
+[
+ {
+  "id": "diaithirgantries:gantry_split",
+  "name": "Gantry split",
+  "text": "A gantry shaft that cuts a gantry into separate runs. Place it in a line of gantry shafts: it works as a shaft for carriages and power, but a moving carriage does not drag the next split along. Looks like a plain shaft until it is redrawn. Age V."
+ }
+]

@@ -1,0 +1,4 @@
+{
+  "_doc": "Old id -> new id when Create: Extended Gantries (mod id extendedgantries) is replaced by this module.",
+  "extendedgantries:gantry_split": "diaithirgantries:gantry_split"
+}
