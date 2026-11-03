@@ -19,6 +19,9 @@ public final class GaugeData {
     /** Crew a vehicle needs to run (steam locomotive 2: driver and fireman). 0 means the default of 1. */
     public static final Supplier<AttachmentType<Integer>> CREW = ATTACHMENTS.register("crew", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT.fieldOf("n")).build());
 
+    /** The vehicle's engine class, as the integration matrix names it in diaithir-units ({@code Fuels.engine(id).accepts(fuelId)}): steam_piston, diesel_engine, electric_motor, or arcane_motor once fitted with a mana firebox or cell. Plain ids, so no code dependency. */
+    public static final Supplier<AttachmentType<String>> ENGINE = ATTACHMENTS.register("engine", () -> AttachmentType.builder(() -> "").serialize(Codec.STRING.fieldOf("id")).build());
+
     public static Gauge of(AbstractMinecart cart) {
         return Gauge.of(cart.getData(TYPE));
     }

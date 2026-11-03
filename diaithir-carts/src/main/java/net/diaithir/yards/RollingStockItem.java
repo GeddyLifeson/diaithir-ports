@@ -25,13 +25,15 @@ public final class RollingStockItem extends Item {
     private final String category;
     private final Gauge gauge;
     private final int crew;
+    private final String engine;
 
-    public RollingStockItem(Properties p, String vehicleName, String category, Gauge gauge, int crew) {
+    public RollingStockItem(Properties p, String vehicleName, String category, Gauge gauge, int crew, String engine) {
         super(p);
         this.vehicleName = vehicleName;
         this.category = category;
         this.gauge = gauge;
         this.crew = crew;
+        this.engine = engine;
     }
 
     public Gauge gauge() {
@@ -82,6 +84,7 @@ public final class RollingStockItem extends Item {
         cart.setCustomName(Component.literal(r.vehicleName));
         GaugeData.set(cart, r.gauge);
         cart.setData(net.diaithir.carts.GaugeData.CREW, r.crew);
+        cart.setData(net.diaithir.carts.GaugeData.ENGINE, r.engine);
         level.addFreshEntity(cart);
         return cart;
     }

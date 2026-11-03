@@ -43,6 +43,7 @@ public final class MagicFuel {
             if (!(cart.getType() == net.minecraft.world.entity.EntityType.FURNACE_MINECART)) { player.sendOverlayMessage(Component.literal("Only a locomotive can be fitted")); return InteractionResult.FAIL; }
             if (fitted(cart)) { player.sendOverlayMessage(Component.literal("Already fitted")); return InteractionResult.FAIL; }
             cart.setData(FITTED, true);
+            cart.setData(GaugeData.ENGINE, "arcane_motor");
             held.shrink(1);
             player.sendOverlayMessage(Component.literal("Fitted: burns magic fuel"));
             return InteractionResult.SUCCESS;

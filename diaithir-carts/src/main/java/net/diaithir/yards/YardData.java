@@ -18,7 +18,7 @@ public final class YardData {
     public record Controller(String id, String name, YardDef.Tier tier) {}
 
     public static final List<Named> PARTS = new ArrayList<>();
-    public record Vehicle(String id, String name, int age, String category, String gauge, int crew) {}
+    public record Vehicle(String id, String name, int age, String category, String gauge, int crew, String engine) {}
 
     public static final List<Vehicle> VEHICLES = new ArrayList<>();
     public static final List<Crane> CRANES = new ArrayList<>();
@@ -44,7 +44,7 @@ public final class YardData {
         for (JsonElement e : root.getAsJsonArray("vehicles")) {
             JsonObject o = e.getAsJsonObject();
             VEHICLES.add(new Vehicle(o.get("id").getAsString(), o.get("name").getAsString(), o.get("age").getAsInt(), o.get("category").getAsString(),
-                    o.has("gauge") ? o.get("gauge").getAsString() : "any", o.has("crew") ? o.get("crew").getAsInt() : 0));
+                    o.has("gauge") ? o.get("gauge").getAsString() : "any", o.has("crew") ? o.get("crew").getAsInt() : 0, o.has("engine") ? o.get("engine").getAsString() : ""));
         }
         for (JsonElement e : root.getAsJsonArray("yards")) {
             JsonObject o = e.getAsJsonObject();

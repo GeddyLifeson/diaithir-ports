@@ -42759,7 +42759,8 @@
    "mass_kg": 4250,
    "rated": 15000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_adler",
@@ -42769,7 +42770,8 @@
    "mass_kg": 9000,
    "rated": 30000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_americanboiler",
@@ -42779,7 +42781,8 @@
    "mass_kg": 30000,
    "rated": 400000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_consolidation",
@@ -42789,7 +42792,8 @@
    "mass_kg": 55000,
    "rated": 900000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_mogul",
@@ -42799,7 +42803,8 @@
    "mass_kg": 38000,
    "rated": 500000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_pacific",
@@ -42809,7 +42814,8 @@
    "mass_kg": 95000,
    "rated": 1800000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_mallard",
@@ -42819,7 +42825,8 @@
    "mass_kg": 165000,
    "rated": 2000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_big_boy",
@@ -42829,7 +42836,8 @@
    "mass_kg": 540000,
    "rated": 4700000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_garratt",
@@ -42839,7 +42847,8 @@
    "mass_kg": 110000,
    "rated": 1500000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_shay",
@@ -42849,7 +42858,8 @@
    "mass_kg": 40000,
    "rated": 300000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_tank",
@@ -42859,7 +42869,8 @@
    "mass_kg": 30000,
    "rated": 250000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_f_unit",
@@ -42869,7 +42880,8 @@
    "mass_kg": 106000,
    "rated": 1118000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_gp7",
@@ -42879,7 +42891,8 @@
    "mass_kg": 112000,
    "rated": 1119000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_sw1",
@@ -42889,7 +42902,8 @@
    "mass_kg": 90000,
    "rated": 447000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_gp38",
@@ -42899,7 +42913,8 @@
    "mass_kg": 117000,
    "rated": 1493000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_sd40",
@@ -42909,7 +42924,8 @@
    "mass_kg": 167000,
    "rated": 2237000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_dash9",
@@ -42919,7 +42935,8 @@
    "mass_kg": 188000,
    "rated": 3281000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_zephyr",
@@ -42929,7 +42946,8 @@
    "mass_kg": 90000,
    "rated": 448000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_hst",
@@ -42939,7 +42957,8 @@
    "mass_kg": 70000,
    "rated": 1678000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_gg1",
@@ -42949,7 +42968,8 @@
    "mass_kg": 208000,
    "rated": 3400000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ae",
@@ -42959,7 +42979,8 @@
    "mass_kg": 120000,
    "rated": 4000000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_shinkansen0",
@@ -42969,7 +42990,8 @@
    "mass_kg": 60000,
    "rated": 185000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_tgv",
@@ -42979,7 +43001,8 @@
    "mass_kg": 67000,
    "rated": 3100000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ice",
@@ -42989,7 +43012,8 @@
    "mass_kg": 78000,
    "rated": 4800000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_battery",
@@ -42999,7 +43023,8 @@
    "mass_kg": 40000,
    "rated": 200000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "wag_boxcar",
@@ -43009,7 +43034,8 @@
    "mass_kg": 18000,
    "rated": 60000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_covered_hopper",
@@ -43019,7 +43045,8 @@
    "mass_kg": 26000,
    "rated": 90000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_open_hopper",
@@ -43029,7 +43056,8 @@
    "mass_kg": 20000,
    "rated": 80000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_tank",
@@ -43039,7 +43067,8 @@
    "mass_kg": 25000,
    "rated": 100000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_flatcar",
@@ -43049,7 +43078,8 @@
    "mass_kg": 20000,
    "rated": 80000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_gondola",
@@ -43059,7 +43089,8 @@
    "mass_kg": 20000,
    "rated": 85000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_reefer",
@@ -43069,7 +43100,8 @@
    "mass_kg": 28000,
    "rated": 60000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_well",
@@ -43079,7 +43111,8 @@
    "mass_kg": 24000,
    "rated": 100000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_autorack",
@@ -43089,7 +43122,8 @@
    "mass_kg": 35000,
    "rated": 40000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_ore",
@@ -43099,7 +43133,8 @@
    "mass_kg": 23000,
    "rated": 120000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_stock",
@@ -43109,7 +43144,8 @@
    "mass_kg": 17000,
    "rated": 40000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_caboose",
@@ -43119,7 +43155,8 @@
    "mass_kg": 15000,
    "rated": 0,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_log",
@@ -43129,7 +43166,8 @@
    "mass_kg": 19000,
    "rated": 70000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_crane",
@@ -43139,7 +43177,8 @@
    "mass_kg": 80000,
    "rated": 0,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_schnabel",
@@ -43149,7 +43188,8 @@
    "mass_kg": 40000,
    "rated": 150000,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_compartment",
@@ -43159,7 +43199,8 @@
    "mass_kg": 15000,
    "rated": 40,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_open_saloon",
@@ -43169,7 +43210,8 @@
    "mass_kg": 30000,
    "rated": 60,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_pullman",
@@ -43179,7 +43221,8 @@
    "mass_kg": 50000,
    "rated": 30,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_dining",
@@ -43189,7 +43232,8 @@
    "mass_kg": 48000,
    "rated": 40,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_observation",
@@ -43199,7 +43243,8 @@
    "mass_kg": 45000,
    "rated": 30,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_baggage",
@@ -43209,7 +43254,8 @@
    "mass_kg": 28000,
    "rated": 0,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_mail",
@@ -43219,7 +43265,8 @@
    "mass_kg": 32000,
    "rated": 0,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_streamliner",
@@ -43229,7 +43276,8 @@
    "mass_kg": 42000,
    "rated": 70,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_bilevel",
@@ -43239,7 +43287,8 @@
    "mass_kg": 48000,
    "rated": 140,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_dome",
@@ -43249,7 +43298,8 @@
    "mass_kg": 50000,
    "rated": 60,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_subway",
@@ -43259,7 +43309,8 @@
    "mass_kg": 30000,
    "rated": 200,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_tram",
@@ -43269,7 +43320,8 @@
    "mass_kg": 15000,
    "rated": 70,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_wagonway",
@@ -43279,7 +43331,8 @@
    "mass_kg": 800,
    "rated": 500,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_chaldron",
@@ -43289,7 +43342,8 @@
    "mass_kg": 1500,
    "rated": 2500,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "wag_tub",
@@ -43299,7 +43353,8 @@
    "mass_kg": 400,
    "rated": 300,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_horse_omnibus",
@@ -43309,7 +43364,8 @@
    "mass_kg": 1500,
    "rated": 20,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "pas_stagecoach_rail",
@@ -43319,7 +43375,8 @@
    "mass_kg": 1200,
    "rated": 6,
    "gauge": "standard",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "loco_cugnot",
@@ -43329,7 +43386,8 @@
    "mass_kg": 2800,
    "rated": 2000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_trevithick",
@@ -43339,7 +43397,8 @@
    "mass_kg": 5000,
    "rated": 4000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_horse_gin",
@@ -43349,7 +43408,8 @@
    "mass_kg": 300,
    "rated": 700,
    "gauge": "narrow",
-   "crew": 1
+   "crew": 1,
+   "engine": "steam_piston"
   },
   {
    "id": "nwag_boxcar",
@@ -43359,7 +43419,8 @@
    "mass_kg": 9000,
    "rated": 24000,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "nwag_open_hopper",
@@ -43369,7 +43430,8 @@
    "mass_kg": 10000,
    "rated": 32000,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "nwag_tank",
@@ -43379,7 +43441,8 @@
    "mass_kg": 12500,
    "rated": 40000,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "nwag_flatcar",
@@ -43389,7 +43452,8 @@
    "mass_kg": 10000,
    "rated": 32000,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "nwag_gondola",
@@ -43399,7 +43463,8 @@
    "mass_kg": 10000,
    "rated": 34000,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "nwag_stock",
@@ -43409,7 +43474,8 @@
    "mass_kg": 8500,
    "rated": 16000,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "nwag_caboose",
@@ -43419,7 +43485,8 @@
    "mass_kg": 7500,
    "rated": 0,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "nwag_log",
@@ -43429,7 +43496,8 @@
    "mass_kg": 9500,
    "rated": 28000,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "nwag_ore",
@@ -43439,7 +43507,8 @@
    "mass_kg": 11500,
    "rated": 48000,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "npas_compartment",
@@ -43449,7 +43518,8 @@
    "mass_kg": 7500,
    "rated": 16,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "npas_open_saloon",
@@ -43459,7 +43529,8 @@
    "mass_kg": 15000,
    "rated": 24,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "npas_baggage",
@@ -43469,7 +43540,8 @@
    "mass_kg": 14000,
    "rated": 0,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "npas_mail",
@@ -43479,7 +43551,8 @@
    "mass_kg": 16000,
    "rated": 0,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "npas_observation",
@@ -43489,7 +43562,8 @@
    "mass_kg": 22500,
    "rated": 12,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "npas_dining",
@@ -43499,7 +43573,8 @@
    "mass_kg": 24000,
    "rated": 16,
    "gauge": "narrow",
-   "crew": 0
+   "crew": 0,
+   "engine": ""
   },
   {
    "id": "loco_abb_alp_44",
@@ -43509,7 +43584,8 @@
    "mass_kg": 100000,
    "rated": 5219900,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_300",
@@ -43519,7 +43595,8 @@
    "mass_kg": 100000,
    "rated": 223710,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_century_415",
@@ -43529,7 +43606,8 @@
    "mass_kg": 100000,
    "rated": 1118550,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_century_420",
@@ -43539,7 +43617,8 @@
    "mass_kg": 100000,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_century_424",
@@ -43549,7 +43628,8 @@
    "mass_kg": 100000,
    "rated": 1789680,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_century_425",
@@ -43559,7 +43639,8 @@
    "mass_kg": 127005,
    "rated": 1864250,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_century_430",
@@ -43569,7 +43650,8 @@
    "mass_kg": 100000,
    "rated": 2237100,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_century_630",
@@ -43579,7 +43661,8 @@
    "mass_kg": 90000,
    "rated": 2237100,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_alco_century_636",
@@ -43589,7 +43672,8 @@
    "mass_kg": 100000,
    "rated": 2684520,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_mrs_1",
@@ -43599,7 +43683,8 @@
    "mass_kg": 108862,
    "rated": 1193120,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_pa",
@@ -43609,7 +43694,8 @@
    "mass_kg": 138799,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rs_1",
@@ -43619,7 +43705,8 @@
    "mass_kg": 112264,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rs_11",
@@ -43629,7 +43716,8 @@
    "mass_kg": 116709,
    "rated": 1342260,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rs_2",
@@ -43639,7 +43727,8 @@
    "mass_kg": 113216,
    "rated": 1118550,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rs_27",
@@ -43649,7 +43738,8 @@
    "mass_kg": 116482,
    "rated": 1789680,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rs_3",
@@ -43659,7 +43749,8 @@
    "mass_kg": 112082,
    "rated": 1193120,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rs_32",
@@ -43669,7 +43760,8 @@
    "mass_kg": 100000,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rs_36",
@@ -43679,7 +43771,8 @@
    "mass_kg": 112127,
    "rated": 1342260,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rsc_2",
@@ -43689,7 +43782,8 @@
    "mass_kg": 109996,
    "rated": 1118550,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rsd_15",
@@ -43699,7 +43793,8 @@
    "mass_kg": 151953,
    "rated": 1789680,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_rsd_5",
@@ -43709,7 +43804,8 @@
    "mass_kg": 130180,
    "rated": 1193120,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_s_5",
@@ -43719,7 +43815,8 @@
    "mass_kg": 100000,
    "rated": 596560,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_alco_s_6",
@@ -43729,7 +43826,8 @@
    "mass_kg": 104326,
    "rated": 671130,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_alco_t_6",
@@ -43739,7 +43837,8 @@
    "mass_kg": 100000,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_atlantic_coast_line_r_1_class",
@@ -43749,7 +43848,8 @@
    "mass_kg": 208774,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_bp_gv_4_kidwelly_and_5_cwm_mawr",
@@ -43759,7 +43859,8 @@
    "mass_kg": 31852,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_2_2_6_0",
@@ -43769,7 +43870,8 @@
    "mass_kg": 50038,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_2_2_6_2t",
@@ -43779,7 +43881,8 @@
    "mass_kg": 67107,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_3_2_6_0",
@@ -43789,7 +43892,8 @@
    "mass_kg": 58420,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_3_2_6_2t",
@@ -43799,7 +43903,8 @@
    "mass_kg": 75235,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_4_2_6_0",
@@ -43809,7 +43914,8 @@
    "mass_kg": 60706,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_4_2_6_4t",
@@ -43819,7 +43925,8 @@
    "mass_kg": 88036,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_4_4_6_0",
@@ -43829,7 +43936,8 @@
    "mass_kg": 68986,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_5",
@@ -43839,7 +43947,8 @@
    "mass_kg": 77216,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_br_standard_class_9f",
@@ -43849,7 +43958,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_baldwin_4_8_8_4_750_8_de",
@@ -43859,7 +43969,8 @@
    "mass_kg": 310709,
    "rated": 4474200,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_as_16",
@@ -43869,7 +43980,8 @@
    "mass_kg": 100000,
    "rated": 1211762,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_as_416",
@@ -43879,7 +43991,8 @@
    "mass_kg": 100000,
    "rated": 1211762,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_as_616",
@@ -43889,7 +44002,8 @@
    "mass_kg": 148687,
    "rated": 1211762,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_class_10_12_d",
@@ -43899,7 +44013,8 @@
    "mass_kg": 14732,
    "rated": 150000,
    "gauge": "narrow",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_baldwin_class_12_42_f",
@@ -43909,7 +44024,8 @@
    "mass_kg": 106500,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_baldwin_dr_12_8_1500_2",
@@ -43919,7 +44035,8 @@
    "mass_kg": 269886,
    "rated": 2237100,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_ds_4_4_750",
@@ -43929,7 +44046,8 @@
    "mass_kg": 100000,
    "rated": 559275,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_dt_6_6_2000",
@@ -43939,7 +44057,8 @@
    "mass_kg": 170096,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_rf_16",
@@ -43949,7 +44068,8 @@
    "mass_kg": 120655,
    "rated": 1211762,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_rp_210",
@@ -43959,7 +44079,8 @@
    "mass_kg": 89947,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_baldwin_rs_12",
@@ -43969,7 +44090,8 @@
    "mass_kg": 105233,
    "rated": 894840,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_rt_624",
@@ -43979,7 +44101,8 @@
    "mass_kg": 170096,
    "rated": 1789680,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_s_12",
@@ -43989,7 +44112,8 @@
    "mass_kg": 108862,
    "rated": 894840,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_s_8",
@@ -43999,7 +44123,8 @@
    "mass_kg": 100000,
    "rated": 652488,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_vo_1000",
@@ -44009,7 +44134,8 @@
    "mass_kg": 109859,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baldwin_vo_660",
@@ -44019,7 +44145,8 @@
    "mass_kg": 92523,
    "rated": 492162,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_baltimore_and_ohio_no_2_lord_baltimore",
@@ -44029,7 +44156,8 @@
    "mass_kg": 128820,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_baltimore_and_ohio_p_7",
@@ -44039,7 +44167,8 @@
    "mass_kg": 147870,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_baltimore_and_ohio_class_n_1",
@@ -44049,7 +44178,8 @@
    "mass_kg": 175313,
    "rated": 2935075,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_baltimore_and_ohio_class_s",
@@ -44059,7 +44189,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_bombardier_alp_45dp",
@@ -44069,7 +44200,8 @@
    "mass_kg": 130634,
    "rated": 3996952,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_bombardier_alp_46",
@@ -44079,7 +44211,8 @@
    "mass_kg": 89992,
    "rated": 5300436,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_bombardier_alstom_hhp_8",
@@ -44089,7 +44222,8 @@
    "mass_kg": 100697,
    "rated": 6000000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_10100",
@@ -44099,7 +44233,8 @@
    "mass_kg": 121920,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_11001",
@@ -44109,7 +44244,8 @@
    "mass_kg": 50241,
    "rated": 372850,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_01",
@@ -44119,7 +44255,8 @@
    "mass_kg": 25451,
    "rated": 114092,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_02",
@@ -44129,7 +44266,8 @@
    "mass_kg": 29058,
    "rated": 126769,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_03",
@@ -44139,7 +44277,8 @@
    "mass_kg": 30683,
    "rated": 152123,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_04",
@@ -44149,7 +44288,8 @@
    "mass_kg": 30683,
    "rated": 152123,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_06",
@@ -44159,7 +44299,8 @@
    "mass_kg": 37897,
    "rated": 152123,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_07",
@@ -44169,7 +44310,8 @@
    "mass_kg": 43586,
    "rated": 205068,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_09",
@@ -44179,7 +44321,8 @@
    "mass_kg": 49784,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_11",
@@ -44189,7 +44332,8 @@
    "mass_kg": 48158,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_12",
@@ -44199,7 +44343,8 @@
    "mass_kg": 48768,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_13",
@@ -44209,7 +44354,8 @@
    "mass_kg": 121920,
    "rated": 298280,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_14",
@@ -44219,7 +44365,8 @@
    "mass_kg": 49276,
    "rated": 484705,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_15",
@@ -44229,7 +44376,8 @@
    "mass_kg": 70104,
    "rated": 596560,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_16",
@@ -44239,7 +44387,8 @@
    "mass_kg": 69088,
    "rated": 596560,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_17",
@@ -44249,7 +44398,8 @@
    "mass_kg": 69088,
    "rated": 335565,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_20",
@@ -44259,7 +44409,8 @@
    "mass_kg": 73000,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_21",
@@ -44269,7 +44420,8 @@
    "mass_kg": 73660,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_22",
@@ -44279,7 +44431,8 @@
    "mass_kg": 69088,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_23",
@@ -44289,7 +44442,8 @@
    "mass_kg": 75184,
    "rated": 820270,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_25",
@@ -44299,7 +44453,8 @@
    "mass_kg": 74168,
    "rated": 932125,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_26",
@@ -44309,7 +44464,8 @@
    "mass_kg": 78740,
    "rated": 865012,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_27",
@@ -44319,7 +44475,8 @@
    "mass_kg": 73660,
    "rated": 932125,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_28",
@@ -44329,7 +44486,8 @@
    "mass_kg": 98552,
    "rated": 894840,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_29",
@@ -44339,7 +44497,8 @@
    "mass_kg": 74168,
    "rated": 1006695,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_31",
@@ -44349,7 +44508,8 @@
    "mass_kg": 108407,
    "rated": 932125,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_33",
@@ -44359,7 +44519,8 @@
    "mass_kg": 74981,
    "rated": 1155835,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_35",
@@ -44369,7 +44530,8 @@
    "mass_kg": 76200,
    "rated": 1267690,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_37",
@@ -44379,7 +44541,8 @@
    "mass_kg": 101600,
    "rated": 1304975,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_40",
@@ -44389,7 +44552,8 @@
    "mass_kg": 135128,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_41",
@@ -44399,7 +44563,8 @@
    "mass_kg": 118872,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_43",
@@ -44409,7 +44574,8 @@
    "mass_kg": 80772,
    "rated": 820270,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_44",
@@ -44419,7 +44585,8 @@
    "mass_kg": 135128,
    "rated": 1715110,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_47",
@@ -44429,7 +44596,8 @@
    "mass_kg": 113792,
    "rated": 2050675,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_50",
@@ -44439,7 +44607,8 @@
    "mass_kg": 116840,
    "rated": 2013390,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_52",
@@ -44449,7 +44618,8 @@
    "mass_kg": 109728,
    "rated": 1006695,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_55",
@@ -44459,7 +44629,8 @@
    "mass_kg": 100584,
    "rated": 1230405,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_56",
@@ -44469,7 +44640,8 @@
    "mass_kg": 124968,
    "rated": 2423525,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_57",
@@ -44479,7 +44651,8 @@
    "mass_kg": 120600,
    "rated": 1715110,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_58",
@@ -44489,7 +44662,8 @@
    "mass_kg": 130000,
    "rated": 2460810,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_59",
@@ -44499,7 +44673,8 @@
    "mass_kg": 126000,
    "rated": 2460810,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_60",
@@ -44509,7 +44684,8 @@
    "mass_kg": 129000,
    "rated": 2311670,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_66",
@@ -44519,7 +44695,8 @@
    "mass_kg": 127000,
    "rated": 2386240,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_67",
@@ -44529,7 +44706,8 @@
    "mass_kg": 90000,
    "rated": 2386240,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_68",
@@ -44539,7 +44717,8 @@
    "mass_kg": 85000,
    "rated": 2800000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_70",
@@ -44549,7 +44728,8 @@
    "mass_kg": 129000,
    "rated": 2750000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_71",
@@ -44559,7 +44739,8 @@
    "mass_kg": 78232,
    "rated": 1903026,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_73",
@@ -44569,7 +44750,8 @@
    "mass_kg": 77521,
    "rated": 1058894,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_76",
@@ -44579,7 +44761,8 @@
    "mass_kg": 88392,
    "rated": 969410,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_81",
@@ -44589,7 +44772,8 @@
    "mass_kg": 80874,
    "rated": 2386240,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_83",
@@ -44599,7 +44783,8 @@
    "mass_kg": 77622,
    "rated": 2199815,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_84",
@@ -44609,7 +44794,8 @@
    "mass_kg": 77826,
    "rated": 2311670,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_89",
@@ -44619,7 +44805,8 @@
    "mass_kg": 105000,
    "rated": 4286000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_91",
@@ -44629,7 +44816,8 @@
    "mass_kg": 85250,
    "rated": 4700000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_97_6",
@@ -44639,7 +44827,8 @@
    "mass_kg": 28448,
    "rated": 123041,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d1_1",
@@ -44649,7 +44838,8 @@
    "mass_kg": 22809,
    "rated": 114092,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_d1_3",
@@ -44659,7 +44849,8 @@
    "mass_kg": 28448,
    "rated": 123041,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_d16_1",
@@ -44669,7 +44860,8 @@
    "mass_kg": 132740,
    "rated": 1312432,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d16_2",
@@ -44679,7 +44871,8 @@
    "mass_kg": 135128,
    "rated": 1304975,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d2_1",
@@ -44689,7 +44882,8 @@
    "mass_kg": 32512,
    "rated": 149140,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_d2_10",
@@ -44699,7 +44893,8 @@
    "mass_kg": 30480,
    "rated": 167782,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_d2_11",
@@ -44709,7 +44904,8 @@
    "mass_kg": 30378,
    "rated": 134226,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d2_12",
@@ -44719,7 +44915,8 @@
    "mass_kg": 34747,
    "rated": 152123,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_d2_7",
@@ -44729,7 +44926,8 @@
    "mass_kg": 36932,
    "rated": 152123,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_d3_1",
@@ -44739,7 +44937,8 @@
    "mass_kg": 36576,
    "rated": 246081,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_british_rail_class_d3_10",
@@ -44749,7 +44948,8 @@
    "mass_kg": 52375,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d3_11",
@@ -44759,7 +44959,8 @@
    "mass_kg": 47193,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d3_14",
@@ -44769,7 +44970,8 @@
    "mass_kg": 52019,
    "rated": 268452,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d3_3",
@@ -44779,7 +44981,8 @@
    "mass_kg": 48260,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d3_5",
@@ -44789,7 +44992,8 @@
    "mass_kg": 47752,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d3_6",
@@ -44799,7 +45003,8 @@
    "mass_kg": 52273,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d3_7",
@@ -44809,7 +45014,8 @@
    "mass_kg": 56134,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_class_d3_9",
@@ -44819,7 +45025,8 @@
    "mass_kg": 51816,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_rail_dp2",
@@ -44829,7 +45036,8 @@
    "mass_kg": 106680,
    "rated": 2013390,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_british_railways_d0226",
@@ -44839,7 +45047,8 @@
    "mass_kg": 48768,
    "rated": 372850,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_brookville_bl12cg",
@@ -44849,7 +45058,8 @@
    "mass_kg": 119748,
    "rated": 894840,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_ci_071_class",
@@ -44859,7 +45069,8 @@
    "mass_kg": 99000,
    "rated": 1826965,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_caledonian_railway_492_class",
@@ -44869,7 +45080,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_caledonian_railway_721_class",
@@ -44879,7 +45091,8 @@
    "mass_kg": 47752,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_caledonian_railway_812_and_652_classes",
@@ -44889,7 +45102,8 @@
    "mass_kg": 46380,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_canadian_national_class_z_4_a",
@@ -44899,7 +45113,8 @@
    "mass_kg": 100000,
    "rated": 1282604,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_canadian_national_class_i_8_4_6_0",
@@ -44909,7 +45124,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_central_of_georgia_k_class",
@@ -44919,7 +45135,8 @@
    "mass_kg": 202936,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chesapeake_and_ohio_greenbrier",
@@ -44929,7 +45146,8 @@
    "mass_kg": 216362,
    "rated": 2586088,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chesapeake_and_ohio_class_h_8",
@@ -44939,7 +45157,8 @@
    "mass_kg": 349854,
    "rated": 5592750,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chesapeake_and_ohio_class_k_4",
@@ -44949,7 +45168,8 @@
    "mass_kg": 208651,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chesapeake_and_ohio_class_m_1",
@@ -44959,7 +45179,8 @@
    "mass_kg": 388727,
    "rated": 4474200,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chesapeake_and_ohio_class_t_1",
@@ -44969,7 +45190,8 @@
    "mass_kg": 256732,
    "rated": 3877640,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chesapeake_and_ohio_classes_j_1_and_j_2",
@@ -44979,7 +45201,8 @@
    "mass_kg": 149685,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chesapeake_and_ohio_classes_l_2_and_l_2_",
@@ -44989,7 +45212,8 @@
    "mass_kg": 199353,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chicago_burlington_and_quincy_class_o_5",
@@ -44999,7 +45223,8 @@
    "mass_kg": 206202,
    "rated": 3057370,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chicago_and_north_western_d_class",
@@ -45009,7 +45234,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chicago_and_north_western_e_2_class",
@@ -45019,7 +45245,8 @@
    "mass_kg": 133809,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chicago_and_north_western_j_class",
@@ -45029,7 +45256,8 @@
    "mass_kg": 142427,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chicago_and_north_western_r_1_class",
@@ -45039,7 +45267,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_chicago_and_north_western_z_class",
@@ -45049,7 +45278,8 @@
    "mass_kg": 110449,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_china_railways_am1",
@@ -45059,7 +45289,8 @@
    "mass_kg": 58300,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_china_railways_am3",
@@ -45069,7 +45300,8 @@
    "mass_kg": 103900,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_china_railways_jf11",
@@ -45079,7 +45311,8 @@
    "mass_kg": 144780,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_china_railways_kd7",
@@ -45089,7 +45322,8 @@
    "mass_kg": 152000,
    "rated": 897077,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_china_railways_nj2",
@@ -45099,7 +45333,8 @@
    "mass_kg": 138000,
    "rated": 3800000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_corus_trojan_locomotive",
@@ -45109,7 +45344,8 @@
    "mass_kg": 100000,
    "rated": 708000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_cotton_belt_class_l_1",
@@ -45119,7 +45355,8 @@
    "mass_kg": 198899,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_delaware_and_hudson_k_62_class",
@@ -45129,7 +45366,8 @@
    "mass_kg": 213187,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_emc_aa",
@@ -45139,7 +45377,8 @@
    "mass_kg": 112191,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emc_ab6",
@@ -45149,7 +45388,8 @@
    "mass_kg": 100000,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emc_e1",
@@ -45159,7 +45399,8 @@
    "mass_kg": 100000,
    "rated": 1342260,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emc_e2",
@@ -45169,7 +45410,8 @@
    "mass_kg": 100000,
    "rated": 1342260,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emc_e3",
@@ -45179,7 +45421,8 @@
    "mass_kg": 139887,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emc_e5",
@@ -45189,7 +45432,8 @@
    "mass_kg": 142881,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emc_ea_eb",
@@ -45199,7 +45443,8 @@
    "mass_kg": 100000,
    "rated": 1342260,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_bl20_2",
@@ -45209,7 +45454,8 @@
    "mass_kg": 113398,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_dda40x",
@@ -45219,7 +45465,8 @@
    "mass_kg": 100000,
    "rated": 4921620,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_de30ac_and_dm30ac",
@@ -45229,7 +45476,8 @@
    "mass_kg": 134661,
    "rated": 2237000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_e9",
@@ -45239,7 +45487,8 @@
    "mass_kg": 142881,
    "rated": 1789680,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_fl9",
@@ -45249,7 +45498,8 @@
    "mass_kg": 129046,
    "rated": 1304975,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_emd_gp10",
@@ -45259,7 +45509,8 @@
    "mass_kg": 100000,
    "rated": 1379545,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_mp15ac",
@@ -45269,7 +45520,8 @@
    "mass_kg": 100000,
    "rated": 1118550,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_sd75_series",
@@ -45279,7 +45531,8 @@
    "mass_kg": 100000,
    "rated": 3206510,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_sdp40",
@@ -45289,7 +45542,8 @@
    "mass_kg": 166921,
    "rated": 2237100,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_sdp40f",
@@ -45299,7 +45553,8 @@
    "mass_kg": 100000,
    "rated": 2237100,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_emd_tr1",
@@ -45309,7 +45564,8 @@
    "mass_kg": 100000,
    "rated": 2013390,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_erie_l_1",
@@ -45319,7 +45575,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_eurotunnel_class_9",
@@ -45329,7 +45586,8 @@
    "mass_kg": 132000,
    "rated": 7000000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_fm_erie_built",
@@ -45339,7 +45597,8 @@
    "mass_kg": 90000,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_fm_h_10_44",
@@ -45349,7 +45608,8 @@
    "mass_kg": 108862,
    "rated": 745700,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_fm_h_12_44",
@@ -45359,7 +45619,8 @@
    "mass_kg": 108862,
    "rated": 894840,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_fm_h_12_44ts",
@@ -45369,7 +45630,8 @@
    "mass_kg": 100000,
    "rated": 894840,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_fs_class_735",
@@ -45379,7 +45641,8 @@
    "mass_kg": 63100,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_fs_class_e_420",
@@ -45389,7 +45652,8 @@
    "mass_kg": 34100,
    "rated": 440000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_fs_class_e_550",
@@ -45399,7 +45663,8 @@
    "mass_kg": 63000,
    "rated": 1500000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_furness_railway_k2_class",
@@ -45409,7 +45674,8 @@
    "mass_kg": 41656,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_furness_railway_m1_class",
@@ -45419,7 +45685,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_g_swr_128_class",
@@ -45429,7 +45696,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_g_swr_279_class",
@@ -45439,7 +45707,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_11b",
@@ -45449,7 +45718,8 @@
    "mass_kg": 56591,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_11e",
@@ -45459,7 +45729,8 @@
    "mass_kg": 61976,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_11f",
@@ -45469,7 +45740,8 @@
    "mass_kg": 62128,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_1b",
@@ -45479,7 +45751,8 @@
    "mass_kg": 99009,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_8a",
@@ -45489,7 +45762,8 @@
    "mass_kg": 63398,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_8b",
@@ -45499,7 +45773,8 @@
    "mass_kg": 73050,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_8c",
@@ -45509,7 +45784,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_8f",
@@ -45519,7 +45795,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_8n",
@@ -45529,7 +45806,8 @@
    "mass_kg": 74066,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gcr_class_9q",
@@ -45539,7 +45817,8 @@
    "mass_kg": 129032,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gec_stephenson_locomotive",
@@ -45549,7 +45828,8 @@
    "mass_kg": 100000,
    "rated": 1118550,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_ger_class_s69",
@@ -45559,7 +45839,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ge_25_ton_switcher",
@@ -45569,7 +45850,8 @@
    "mass_kg": 22675,
    "rated": 111855,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_44_ton_switcher",
@@ -45579,7 +45861,8 @@
    "mass_kg": 39908,
    "rated": 298280,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_57_ton_gas_electric_boxcab",
@@ -45589,7 +45872,8 @@
    "mass_kg": 51699,
    "rated": 3000000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_70_ton_switcher",
@@ -45599,7 +45883,8 @@
    "mass_kg": 58967,
    "rated": 492162,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_ac4400cw",
@@ -45609,7 +45894,8 @@
    "mass_kg": 193229,
    "rated": 3281080,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_b30_7",
@@ -45619,7 +45905,8 @@
    "mass_kg": 100000,
    "rated": 2237100,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_c39_8",
@@ -45629,7 +45916,8 @@
    "mass_kg": 100000,
    "rated": 2908230,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_dash_8_40bw",
@@ -45639,7 +45927,8 @@
    "mass_kg": 100000,
    "rated": 2982800,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_dash_8_40c",
@@ -45649,7 +45938,8 @@
    "mass_kg": 177626,
    "rated": 3000000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_dash_8_5_40cw",
@@ -45659,7 +45949,8 @@
    "mass_kg": 100000,
    "rated": 2982800,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_p30ch",
@@ -45669,7 +45960,8 @@
    "mass_kg": 175086,
    "rated": 2237100,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_u50",
@@ -45679,7 +45971,8 @@
    "mass_kg": 100000,
    "rated": 3728500,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ge_steam_turbine_locomotives",
@@ -45689,7 +45982,8 @@
    "mass_kg": 60000,
    "rated": 1864250,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gnr_class_l1",
@@ -45699,7 +45993,8 @@
    "mass_kg": 72492,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gnr_class_n1",
@@ -45709,7 +46004,8 @@
    "mass_kg": 65735,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gnr_class_n2",
@@ -45719,7 +46015,8 @@
    "mass_kg": 72593,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gnr_class_o1",
@@ -45729,7 +46026,8 @@
    "mass_kg": 79908,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gnr_class_o2",
@@ -45739,7 +46037,8 @@
    "mass_kg": 79908,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gnr_classes_d2_and_d3",
@@ -45749,7 +46048,8 @@
    "mass_kg": 85547,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gnr_ivatt_1_class_0_6_0",
@@ -45759,7 +46059,8 @@
    "mass_kg": 47447,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gnsr_classes_s_and_t",
@@ -45769,7 +46070,8 @@
    "mass_kg": 43688,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gwr_2221_class",
@@ -45779,7 +46081,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gwr_3300_class",
@@ -45789,7 +46092,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gwr_3800_class",
@@ -45799,7 +46103,8 @@
    "mass_kg": 56185,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_gwr_4073_class",
@@ -45809,7 +46114,8 @@
    "mass_kg": 80264,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_p_1",
@@ -45819,7 +46125,8 @@
    "mass_kg": 107047,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_class_f_8",
@@ -45829,7 +46136,8 @@
    "mass_kg": 88450,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_class_h_5",
@@ -45839,7 +46147,8 @@
    "mass_kg": 123286,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_class_m_1",
@@ -45849,7 +46158,8 @@
    "mass_kg": 167239,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_class_p_2",
@@ -45859,7 +46169,8 @@
    "mass_kg": 176310,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_class_q_1",
@@ -45869,7 +46180,8 @@
    "mass_kg": 194291,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_class_s_1",
@@ -45879,7 +46191,8 @@
    "mass_kg": 213242,
    "rated": 2684520,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_class_s_2",
@@ -45889,7 +46202,8 @@
    "mass_kg": 198727,
    "rated": 2460810,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_great_northern_class_z_1",
@@ -45899,7 +46213,8 @@
    "mass_kg": 168327,
    "rated": 1614440,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_highland_railway_castle_class",
@@ -45909,7 +46224,8 @@
    "mass_kg": 59792,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_highland_railway_drummond_0_6_0_class",
@@ -45919,7 +46235,8 @@
    "mass_kg": 43688,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_highland_railway_jones_goods_class",
@@ -45929,7 +46246,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_highland_railway_river_class",
@@ -45939,7 +46257,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_highland_railway_x_class",
@@ -45949,7 +46268,8 @@
    "mass_kg": 70104,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ingalls_4_s",
@@ -45959,7 +46279,8 @@
    "mass_kg": 123376,
    "rated": 1230405,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_jnr_class_c52",
@@ -45969,7 +46290,8 @@
    "mass_kg": 22000,
    "rated": 150000,
    "gauge": "narrow",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_j_class_62",
@@ -45979,7 +46301,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_knr_pureo7_200_class_locomotives",
@@ -45989,7 +46312,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_l_yr_class_26",
@@ -45999,7 +46323,8 @@
    "mass_kg": 78740,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_l_yr_class_27",
@@ -46009,7 +46334,8 @@
    "mass_kg": 43227,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lcdr_b2_class",
@@ -46019,7 +46345,8 @@
    "mass_kg": 39929,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lcdr_m1_class",
@@ -46029,7 +46356,8 @@
    "mass_kg": 75184,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lcdr_m2_class",
@@ -46039,7 +46367,8 @@
    "mass_kg": 73152,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lcdr_m3_class",
@@ -46049,7 +46378,8 @@
    "mass_kg": 77318,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lcdr_r1_class",
@@ -46059,7 +46389,8 @@
    "mass_kg": 52273,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lcdr_r_class",
@@ -46069,7 +46400,8 @@
    "mass_kg": 50546,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lcdr_t_class",
@@ -46079,7 +46411,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ld_ecr_class_a",
@@ -46089,7 +46422,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ld_ecr_class_d",
@@ -46099,7 +46433,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_2_cylindered_stanier_2_6_4t",
@@ -46109,7 +46444,8 @@
    "mass_kg": 89256,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_3_cylindered_stanier_2_6_4t",
@@ -46119,7 +46455,8 @@
    "mass_kg": 93726,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_coronation_class",
@@ -46129,7 +46466,8 @@
    "mass_kg": 109830,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_fairburn_2_6_4t",
@@ -46139,7 +46477,8 @@
    "mass_kg": 86055,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_fowler_2_6_2t",
@@ -46149,7 +46488,8 @@
    "mass_kg": 71628,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_fowler_class_3f",
@@ -46159,7 +46499,8 @@
    "mass_kg": 50292,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_garratt",
@@ -46169,7 +46510,8 @@
    "mass_kg": 151130,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_hughes_crab",
@@ -46179,7 +46521,8 @@
    "mass_kg": 67056,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_ivatt_class_2_2_6_0",
@@ -46189,7 +46532,8 @@
    "mass_kg": 47854,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_ivatt_class_2_2_6_2t",
@@ -46199,7 +46543,8 @@
    "mass_kg": 64262,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_ivatt_class_4",
@@ -46209,7 +46554,8 @@
    "mass_kg": 60046,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_jubilee_class",
@@ -46219,7 +46565,8 @@
    "mass_kg": 80823,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_stanier_class_5_4_6_0",
@@ -46229,7 +46576,8 @@
    "mass_kg": 73254,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_stanier_class_8f",
@@ -46239,7 +46587,8 @@
    "mass_kg": 73254,
    "rated": 1043980,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lms_diesel_shunter_7050",
@@ -46249,7 +46598,8 @@
    "mass_kg": 25400,
    "rated": 119312,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_lms_diesel_shunter_7051",
@@ -46259,7 +46609,8 @@
    "mass_kg": 21727,
    "rated": 1500000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_lms_diesel_shunter_7054",
@@ -46269,7 +46620,8 @@
    "mass_kg": 30988,
    "rated": 134226,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_lms_diesel_shunter_7057",
@@ -46279,7 +46631,8 @@
    "mass_kg": 27940,
    "rated": 130498,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_lms_diesel_shunters_7059_7068",
@@ -46289,7 +46642,8 @@
    "mass_kg": 52832,
    "rated": 260995,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_lner_class_a2",
@@ -46299,7 +46653,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lner_class_a4",
@@ -46309,7 +46664,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lner_class_k5",
@@ -46319,7 +46675,8 @@
    "mass_kg": 72390,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lner_class_o4",
@@ -46329,7 +46686,8 @@
    "mass_kg": 75844,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lner_class_u1",
@@ -46339,7 +46697,8 @@
    "mass_kg": 180848,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lner_class_w1",
@@ -46349,7 +46708,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lner_gresley_classes_a1_and_a3",
@@ -46359,7 +46719,8 @@
    "mass_kg": 92812,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lner_thompson_class_b1",
@@ -46369,7 +46730,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lner_thompson_class_l1",
@@ -46379,7 +46741,8 @@
    "mass_kg": 90881,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_18in_goods_class",
@@ -46389,7 +46752,8 @@
    "mass_kg": 35560,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_18in_tank_class",
@@ -46399,7 +46763,8 @@
    "mass_kg": 52832,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_380_class",
@@ -46409,7 +46774,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_5ft_6in_tank_class",
@@ -46419,7 +46785,8 @@
    "mass_kg": 51816,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_class_g1",
@@ -46429,7 +46796,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_class_g2",
@@ -46439,7 +46807,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_claughton_class",
@@ -46449,7 +46818,8 @@
    "mass_kg": 78994,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_dx_goods_class",
@@ -46459,7 +46829,8 @@
    "mass_kg": 27432,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_precedent_class",
@@ -46469,7 +46840,8 @@
    "mass_kg": 33528,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lnwr_prince_of_wales_class",
@@ -46479,7 +46851,8 @@
    "mass_kg": 67564,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_0298_class",
@@ -46489,7 +46862,8 @@
    "mass_kg": 38405,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_c8_class",
@@ -46499,7 +46873,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_d15_class",
@@ -46509,7 +46884,8 @@
    "mass_kg": 60706,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_f9_class",
@@ -46519,7 +46895,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_g14_class",
@@ -46529,7 +46906,8 @@
    "mass_kg": 72085,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_g16_class",
@@ -46539,7 +46917,8 @@
    "mass_kg": 96622,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_h16_class",
@@ -46549,7 +46928,8 @@
    "mass_kg": 97942,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_k10_class",
@@ -46559,7 +46939,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_l11_class",
@@ -46569,7 +46950,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_l12_class",
@@ -46579,7 +46961,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_m7_class",
@@ -46589,7 +46972,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_o2_class",
@@ -46599,7 +46983,8 @@
    "mass_kg": 49174,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_p14_class",
@@ -46609,7 +46994,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_s11_class",
@@ -46619,7 +47005,8 @@
    "mass_kg": 87376,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_t14_class",
@@ -46629,7 +47016,8 @@
    "mass_kg": 77724,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_t1_class",
@@ -46639,7 +47027,8 @@
    "mass_kg": 55880,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_t3_class",
@@ -46649,7 +47038,8 @@
    "mass_kg": 49327,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_t7_class",
@@ -46659,7 +47049,8 @@
    "mass_kg": 55423,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_t9_class",
@@ -46669,7 +47060,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lswr_x2_class",
@@ -46679,7 +47071,8 @@
    "mass_kg": 49454,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lt_sr_1_class",
@@ -46689,7 +47082,8 @@
    "mass_kg": 59538,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lt_sr_2100_class",
@@ -46699,7 +47093,8 @@
    "mass_kg": 96114,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lt_sr_69_class",
@@ -46709,7 +47104,8 @@
    "mass_kg": 65684,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lt_sr_79_class",
@@ -46719,7 +47115,8 @@
    "mass_kg": 72644,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_lima_lrs_1200",
@@ -46729,7 +47126,8 @@
    "mass_kg": 100000,
    "rated": 894840,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_lima_ls_1200",
@@ -46739,7 +47137,8 @@
    "mass_kg": 113624,
    "rated": 894840,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_louisville_and_nashville_class_m_1",
@@ -46749,7 +47148,8 @@
    "mass_kg": 202845,
    "rated": 3357887,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_mpi_hsp46",
@@ -46759,7 +47159,8 @@
    "mass_kg": 130407,
    "rated": 3467505,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_mpi_mp14b",
@@ -46769,7 +47170,8 @@
    "mass_kg": 100000,
    "rated": 1043980,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_mpi_mp33c",
@@ -46779,7 +47181,8 @@
    "mass_kg": 133800,
    "rated": 2460810,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_mpi_mp8ac_3",
@@ -46789,7 +47192,8 @@
    "mass_kg": 52616,
    "rated": 641302,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_mpi_mpxpress",
@@ -46799,7 +47203,8 @@
    "mass_kg": 133809,
    "rated": 2684520,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_maine_central_class_o_4_6_0",
@@ -46809,7 +47214,8 @@
    "mass_kg": 78017,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_metropolitan_railway_e_class",
@@ -46819,7 +47225,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_1102_class",
@@ -46829,7 +47236,8 @@
    "mass_kg": 39624,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_1121_class",
@@ -46839,7 +47247,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_1134a_class",
@@ -46849,7 +47258,8 @@
    "mass_kg": 30480,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_1322_class",
@@ -46859,7 +47269,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_1532_class",
@@ -46869,7 +47280,8 @@
    "mass_kg": 50800,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_1823_class",
@@ -46879,7 +47291,8 @@
    "mass_kg": 50800,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_1833_class",
@@ -46889,7 +47302,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_2501_class",
@@ -46899,7 +47313,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_2511_class",
@@ -46909,7 +47324,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_690_class",
@@ -46919,7 +47335,8 @@
    "mass_kg": 43688,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_6_class",
@@ -46929,7 +47346,8 @@
    "mass_kg": 43688,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_midland_railway_780_class",
@@ -46939,7 +47357,8 @@
    "mass_kg": 43688,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_milwaukee_road_class_a2",
@@ -46949,7 +47368,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_milwaukee_road_class_ep_2",
@@ -46959,7 +47379,8 @@
    "mass_kg": 240403,
    "rated": 3310908,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_milwaukee_road_class_es_2",
@@ -46969,7 +47390,8 @@
    "mass_kg": 74389,
    "rated": 354208,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_milwaukee_road_class_f6",
@@ -46979,7 +47401,8 @@
    "mass_kg": 170482,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_milwaukee_road_class_f7",
@@ -46989,7 +47412,8 @@
    "mass_kg": 188240,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_milwaukee_road_class_l2",
@@ -46999,7 +47423,8 @@
    "mass_kg": 132798,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_milwaukee_road_class_s3",
@@ -47009,7 +47434,8 @@
    "mass_kg": 208651,
    "rated": 3355650,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_nbr_a_class",
@@ -47019,7 +47445,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ner_66_aerolite",
@@ -47029,7 +47456,8 @@
    "mass_kg": 37592,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ner_class_3cc",
@@ -47039,7 +47467,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ner_class_x",
@@ -47049,7 +47478,8 @@
    "mass_kg": 86766,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ner_class_z",
@@ -47059,7 +47489,8 @@
    "mass_kg": 5000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_nsb_di_8",
@@ -47069,7 +47500,8 @@
    "mass_kg": 82000,
    "rated": 1570000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_ns_5000",
@@ -47079,7 +47511,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_nzr_dsb_class",
@@ -47089,7 +47522,8 @@
    "mass_kg": 37000,
    "rated": 195000,
    "gauge": "narrow",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_nzr_ds_class",
@@ -47099,7 +47533,8 @@
    "mass_kg": 20000,
    "rated": 250000,
    "gauge": "narrow",
-   "crew": 1
+   "crew": 1,
+   "engine": "diesel_engine"
   },
   {
    "id": "loco_new_haven_ep_1",
@@ -47109,7 +47544,8 @@
    "mass_kg": 92514,
    "rated": 1058894,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_new_haven_ep_2",
@@ -47119,7 +47555,8 @@
    "mass_kg": 158725,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_new_haven_ep_5",
@@ -47129,7 +47566,8 @@
    "mass_kg": 100000,
    "rated": 2982800,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_new_south_wales_46_class_locomotive",
@@ -47139,7 +47577,8 @@
    "mass_kg": 100000,
    "rated": 2535380,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_new_south_wales_ad60_class_locomotive",
@@ -47149,7 +47588,8 @@
    "mass_kg": 254918,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_new_york_central_hudson",
@@ -47159,7 +47599,8 @@
    "mass_kg": 165787,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_new_york_central_mohawk",
@@ -47169,7 +47610,8 @@
    "mass_kg": 60000,
    "rated": 2460810,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_new_york_central_niagara",
@@ -47179,7 +47621,8 @@
    "mass_kg": 213641,
    "rated": 3780699,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_new_zealand_dsc_class_locomotive",
@@ -47189,7 +47632,8 @@
    "mass_kg": 41100,
    "rated": 315000,
    "gauge": "narrow",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_new_zealand_ef_class_locomotive",
@@ -47199,7 +47643,8 @@
    "mass_kg": 90000,
    "rated": 3000000,
    "gauge": "narrow",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_nickel_plate_road_class_h_6o",
@@ -47209,7 +47654,8 @@
    "mass_kg": 127912,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_norfolk_and_western_2300",
@@ -47219,7 +47665,8 @@
    "mass_kg": 536189,
    "rated": 3355650,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_norfolk_and_western_class_a",
@@ -47229,7 +47676,8 @@
    "mass_kg": 259907,
    "rated": 4175920,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_norfolk_and_western_class_j",
@@ -47239,7 +47687,8 @@
    "mass_kg": 224073,
    "rated": 3803070,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_norfolk_and_western_j_class",
@@ -47249,7 +47698,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_norfolk_and_western_j_class_2",
@@ -47259,7 +47709,8 @@
    "mass_kg": 76698,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_norfolk_and_western_lc_1_class",
@@ -47269,7 +47720,8 @@
    "mass_kg": 244890,
    "rated": 2386240,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_norfolk_and_western_lc_2_class",
@@ -47279,7 +47731,8 @@
    "mass_kg": 375498,
    "rated": 3542075,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_norfolk_and_western_m_class",
@@ -47289,7 +47742,8 @@
    "mass_kg": 90718,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_norfolk_and_western_classes_y3_and_y3a",
@@ -47299,7 +47753,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_norfolk_and_western_classes_y6_y6a_and_y",
@@ -47309,7 +47764,8 @@
    "mass_kg": 264398,
    "rated": 4175920,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_northern_pacific_class_s_10",
@@ -47319,7 +47775,8 @@
    "mass_kg": 69399,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_pennsylvania_railroad_i1_class",
@@ -47329,7 +47786,8 @@
    "mass_kg": 175131,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_pennsylvania_railroad_class_d16",
@@ -47339,7 +47797,8 @@
    "mass_kg": 64002,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_pennsylvania_railroad_class_e44",
@@ -47349,7 +47808,8 @@
    "mass_kg": 174451,
    "rated": 3281080,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_pennsylvania_railroad_class_gg1",
@@ -47359,7 +47819,8 @@
    "mass_kg": 215455,
    "rated": 3445134,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_pennsylvania_railroad_class_j28",
@@ -47369,7 +47830,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_pennsylvania_railroad_class_k4",
@@ -47379,7 +47841,8 @@
    "mass_kg": 138118,
    "rated": 2450370,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_pennsylvania_railroad_de_glehn_locomotiv",
@@ -47389,7 +47852,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_pittsburgh_and_lake_erie_class_a_2a",
@@ -47399,7 +47863,8 @@
    "mass_kg": 193229,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_queensland_a12_small_class_locomotive",
@@ -47409,7 +47874,8 @@
    "mass_kg": 22000,
    "rated": 150000,
    "gauge": "narrow",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_railpower_gg20b",
@@ -47419,7 +47885,8 @@
    "mass_kg": 127005,
    "rated": 223710,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_railpower_rp14bd",
@@ -47429,7 +47896,8 @@
    "mass_kg": 100000,
    "rated": 1043980,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_railpower_rp20bd",
@@ -47439,7 +47907,8 @@
    "mass_kg": 100000,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_railpower_rp20cd",
@@ -47449,7 +47918,8 @@
    "mass_kg": 180529,
    "rated": 1491400,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_russian_locomotive_class_ye",
@@ -47459,7 +47929,8 @@
    "mass_kg": 94211,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_s_djr_fox_walker_0_6_0st",
@@ -47469,7 +47940,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_s_djr_sentinels",
@@ -47479,7 +47951,8 @@
    "mass_kg": 60000,
    "rated": 149140,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_secr_c_class",
@@ -47489,7 +47962,8 @@
    "mass_kg": 43688,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_secr_l_class",
@@ -47499,7 +47973,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sek_class",
@@ -47509,7 +47984,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sek_class_2",
@@ -47519,7 +47995,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sek_class_iota_alpha",
@@ -47529,7 +48006,8 @@
    "mass_kg": 84400,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sek_class_3",
@@ -47539,7 +48017,8 @@
    "mass_kg": 85000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ser_o_class",
@@ -47549,7 +48028,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_ser_q_class",
@@ -47559,7 +48039,8 @@
    "mass_kg": 49428,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sncb_type_29",
@@ -47569,7 +48050,8 @@
    "mass_kg": 84500,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sr_lord_nelson_class",
@@ -47579,7 +48061,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sr_q_class",
@@ -47589,7 +48072,8 @@
    "mass_kg": 50300,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sr_w_class",
@@ -47599,7 +48083,8 @@
    "mass_kg": 91440,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sr_west_country_and_battle_of_britain_cl",
@@ -47609,7 +48094,8 @@
    "mass_kg": 87376,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_santa_fe_class_2900",
@@ -47619,7 +48105,8 @@
    "mass_kg": 231399,
    "rated": 3422763,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_santa_fe_class_1158",
@@ -47629,7 +48116,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_santa_fe_class_5011",
@@ -47639,7 +48127,8 @@
    "mass_kg": 244031,
    "rated": 4220662,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_barui_class_locomotive",
@@ -47649,7 +48138,8 @@
    "mass_kg": 150000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_mikai_class_locomotive",
@@ -47659,7 +48149,8 @@
    "mass_kg": 89750,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_mogai_class_locomotive",
@@ -47669,7 +48160,8 @@
    "mass_kg": 34300,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_pashii_class_locomotive",
@@ -47679,7 +48171,8 @@
    "mass_kg": 94400,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_pashini_class_locomotive",
@@ -47689,7 +48182,8 @@
    "mass_kg": 90400,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_purei_class_locomotives",
@@ -47699,7 +48193,8 @@
    "mass_kg": 52000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_pureko_class_locomotives",
@@ -47709,7 +48204,8 @@
    "mass_kg": 58910,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_pureni_class_locomotives",
@@ -47719,7 +48215,8 @@
    "mass_kg": 52000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_sorii_class_locomotives",
@@ -47729,7 +48226,8 @@
    "mass_kg": 66600,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_tehoi_class_locomotive",
@@ -47739,7 +48237,8 @@
    "mass_kg": 78100,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_tehoko_class_locomotive",
@@ -47749,7 +48248,8 @@
    "mass_kg": 72520,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_tehoni_class_locomotive",
@@ -47759,7 +48259,8 @@
    "mass_kg": 67160,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_tehosa_class_locomotive",
@@ -47769,7 +48270,8 @@
    "mass_kg": 67600,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_sentetsu_tehoshi_class_locomotive",
@@ -47779,7 +48281,8 @@
    "mass_kg": 68400,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_silverton_tramway_w_class",
@@ -47789,7 +48292,8 @@
    "mass_kg": 22000,
    "rated": 150000,
    "gauge": "narrow",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_soo_line_b_4_class",
@@ -47799,7 +48303,8 @@
    "mass_kg": 68492,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_soo_line_l_1_class",
@@ -47809,7 +48314,8 @@
    "mass_kg": 134988,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_south_african_class_ng2_0_4_2st",
@@ -47819,7 +48325,8 @@
    "mass_kg": 22000,
    "rated": 79044,
    "gauge": "narrow",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_south_australian_railways_x_class",
@@ -47829,7 +48336,8 @@
    "mass_kg": 22000,
    "rated": 150000,
    "gauge": "narrow",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_p_8",
@@ -47839,7 +48347,8 @@
    "mass_kg": 135079,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_t_1",
@@ -47849,7 +48358,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_gs_1_class",
@@ -47859,7 +48369,8 @@
    "mass_kg": 200623,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_gs_2_class",
@@ -47869,7 +48380,8 @@
    "mass_kg": 203390,
    "rated": 3355650,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_gs_3_class",
@@ -47879,7 +48391,8 @@
    "mass_kg": 208651,
    "rated": 3728500,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_gs_4_class",
@@ -47889,7 +48402,8 @@
    "mass_kg": 215455,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_gs_5_class",
@@ -47899,7 +48413,8 @@
    "mass_kg": 219175,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_gs_6_class",
@@ -47909,7 +48424,8 @@
    "mass_kg": 212462,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_ac_10",
@@ -47919,7 +48435,8 @@
    "mass_kg": 298417,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_ac_11",
@@ -47929,7 +48446,8 @@
    "mass_kg": 298417,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_ac_12",
@@ -47939,7 +48457,8 @@
    "mass_kg": 298417,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_ac_4",
@@ -47949,7 +48468,8 @@
    "mass_kg": 278776,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_ac_5",
@@ -47959,7 +48479,8 @@
    "mass_kg": 282405,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_ac_6",
@@ -47969,7 +48490,8 @@
    "mass_kg": 290071,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_ac_8",
@@ -47979,7 +48501,8 @@
    "mass_kg": 298417,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_ac_9",
@@ -47989,7 +48512,8 @@
    "mass_kg": 307171,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_am_2",
@@ -47999,7 +48523,8 @@
    "mass_kg": 174541,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_mc_1",
@@ -48009,7 +48534,8 @@
    "mass_kg": 193184,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_mc_2",
@@ -48019,7 +48545,8 @@
    "mass_kg": 198219,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_mc_4",
@@ -48029,7 +48556,8 @@
    "mass_kg": 196223,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_mc_6",
@@ -48039,7 +48567,8 @@
    "mass_kg": 197675,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_pacific_class_mm_2",
@@ -48049,7 +48578,8 @@
    "mass_kg": 174541,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_railway_ps_4_class",
@@ -48059,7 +48589,8 @@
    "mass_kg": 60000,
    "rated": 1956717,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_southern_railway_ss_class",
@@ -48069,7 +48600,8 @@
    "mass_kg": 171457,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_spokane_portland_and_seattle_class_a3",
@@ -48079,7 +48611,8 @@
    "mass_kg": 69762,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_spokane_portland_and_seattle_class_e_1",
@@ -48089,7 +48622,8 @@
    "mass_kg": 220363,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_spokane_portland_and_seattle_class_l_3",
@@ -48099,7 +48633,8 @@
    "mass_kg": 29483,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_spokane_portland_and_seattle_class_l_4",
@@ -48109,7 +48644,8 @@
    "mass_kg": 33257,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_spokane_portland_and_seattle_class_o_2",
@@ -48119,7 +48655,8 @@
    "mass_kg": 120201,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_st_louis_car_company_doodlebug",
@@ -48129,7 +48666,8 @@
    "mass_kg": 79687,
    "rated": 447420,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_tcdd_56301_class",
@@ -48139,7 +48677,8 @@
    "mass_kg": 60000,
    "rated": 1752395,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_tasrail_tr_class",
@@ -48149,7 +48688,8 @@
    "mass_kg": 90000,
    "rated": 1700000,
    "gauge": "narrow",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_tasmanian_government_railways_b_class",
@@ -48159,7 +48699,8 @@
    "mass_kg": 22000,
    "rated": 150000,
    "gauge": "narrow",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_tennessee_valley_railroad_610",
@@ -48169,7 +48710,8 @@
    "mass_kg": 73935,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_usatc_s100_class",
@@ -48179,7 +48721,8 @@
    "mass_kg": 45654,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_usatc_s160_class",
@@ -48189,7 +48732,8 @@
    "mass_kg": 73028,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_usatc_s200_class",
@@ -48199,7 +48743,8 @@
    "mass_kg": 90718,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_usra_2_6_6_2",
@@ -48209,7 +48754,8 @@
    "mass_kg": 203662,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_usra_heavy_santa_fe",
@@ -48219,7 +48765,8 @@
    "mass_kg": 172364,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_usra_light_mikado",
@@ -48229,7 +48776,8 @@
    "mass_kg": 132448,
    "rated": 2230389,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_usra_light_mountain",
@@ -48239,7 +48787,8 @@
    "mass_kg": 145149,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_usra_light_pacific",
@@ -48249,7 +48798,8 @@
    "mass_kg": 122469,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_union_pacific_9000_class",
@@ -48259,7 +48809,8 @@
    "mass_kg": 225207,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_union_pacific_big_boy",
@@ -48269,7 +48820,8 @@
    "mass_kg": 345636,
    "rated": 5219900,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_union_pacific_challenger",
@@ -48279,7 +48831,8 @@
    "mass_kg": 284401,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_union_pacific_fef_series",
@@ -48289,7 +48842,8 @@
    "mass_kg": 210919,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_union_pacific_class_p_2",
@@ -48299,7 +48853,8 @@
    "mass_kg": 109397,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_virginian_el_2b",
@@ -48309,7 +48864,8 @@
    "mass_kg": 468936,
    "rated": 5070760,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_virginian_el_3a",
@@ -48319,7 +48875,8 @@
    "mass_kg": 100000,
    "rated": 3000000,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_virginian_el_c",
@@ -48329,7 +48886,8 @@
    "mass_kg": 157818,
    "rated": 2460810,
    "gauge": "standard",
-   "crew": 1
+   "crew": 1,
+   "engine": "electric_motor"
   },
   {
    "id": "loco_wd_austerity_2_10_0",
@@ -48339,7 +48897,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_wd_austerity_2_8_0",
@@ -48349,7 +48908,8 @@
    "mass_kg": 60000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_wabash_class_p1",
@@ -48359,7 +48919,8 @@
    "mass_kg": 169956,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_western_maryland_j_1_class",
@@ -48369,7 +48930,8 @@
    "mass_kg": 229743,
    "rated": 3504790,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   },
   {
    "id": "loco_w_rttemberg_i",
@@ -48379,7 +48941,8 @@
    "mass_kg": 16000,
    "rated": 1000000,
    "gauge": "standard",
-   "crew": 2
+   "crew": 2,
+   "engine": "steam_piston"
   }
  ]
 }

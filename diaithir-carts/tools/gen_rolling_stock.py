@@ -43,6 +43,7 @@ for h in (csv.DictReader(open(RAW)) if os.path.exists(RAW) else []):
     if h["gauge"] == "narrow": mass = min(mass, 90000)
     rows.append({"id": i, "category": h["category"], "name": h["name"], "year": h["year"], "mass_kg": str(mass), "power_w_or_capacity": str(pw), "source": h["source"], "gauge": h["gauge"]})
     SPEC[i] = h
+ENGINE = {"loco_steam": "steam_piston", "loco_primitive": "steam_piston", "loco_diesel": "diesel_engine", "loco_electric": "electric_motor"}   # engine classes of diaithir-units' fuel table
 CREW = {"loco_steam": 2, "loco_diesel": 1, "loco_electric": 1, "loco_primitive": 1, "mu": 1}
 
 def age(y):
@@ -179,7 +180,7 @@ for r in rows:
         sl.append({"id": sid, "slots": [{"kind": k, "count": n} for k, n in slots], "base_ticks": 100 if sid == "power" else 60, "ghost": f"{NS}:yard/{sid}"})
     yards.append({"id": f"yard_{r['id']}", "tier": tier(y), "site": "GROUND", "result": f"{NS}:{r['id']}", "gauge": r["gauge"], "stages": sl, "age": age(y), "footprint": [5, 20, 6]})
     items.append({"id": r["id"], "name": r["name"], "age": age(y), "category": cat, "mass_kg": int(r["mass_kg"]), "rated": int(r["power_w_or_capacity"]),
-                  "gauge": r["gauge"], "crew": CREW.get(cat, 0)})
+                  "gauge": r["gauge"], "crew": CREW.get(cat, 0), "engine": ENGINE.get(cat, "")})
 partdefs = [{"item": f"{NS}:{pid}", "kind": pid, "mass_kg": P["mass"], "power_w": P["power"], "hp": P["hp"], "min_age": P["age"], "block": "", "name": P["name"]}
             for pid, P in sorted(PARTS.items())]
 controllers = [("rail_workshop", "WORKSHOP", "Rail Workshop", 3), ("rail_erecting_shop", "ERECTING_SHOP", "Erecting Shop", 4),
