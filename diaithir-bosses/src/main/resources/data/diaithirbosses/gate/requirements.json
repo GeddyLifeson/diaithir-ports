@@ -1,0 +1,80 @@
+{
+ "_doc": "Inputs of node win.gate in plans/progression/graph.json (11-03). A requirement is met when a quest or module grants its id with /gate grant, or, for rush.cleared, when the Ascendant Rush is beaten. Names are the graph's node names.",
+ "needs": [
+  {
+   "id": "resonator.shard",
+   "name": "resonator.shard"
+  },
+  {
+   "id": "research.pack_7",
+   "name": "Resonant tally (pack 7)"
+  },
+  {
+   "id": "focus.shard",
+   "name": "focus.shard"
+  },
+  {
+   "id": "feast.ages",
+   "name": "feast.ages"
+  },
+  {
+   "id": "farm.living_seed",
+   "name": "Living seed"
+  },
+  {
+   "id": "creature.menagerie",
+   "name": "Menagerie"
+  },
+  {
+   "id": "rush.cleared",
+   "name": "rush.cleared"
+  },
+  {
+   "id": "depot.global",
+   "name": "depot.global"
+  },
+  {
+   "id": "trans.orbital_link",
+   "name": "trans.orbital_link"
+  },
+  {
+   "id": "ship.shard_ark",
+   "name": "ship.shard_ark"
+  },
+  {
+   "id": "treasury.shard",
+   "name": "treasury.shard"
+  },
+  {
+   "id": "settle.capital",
+   "name": "Capital"
+  },
+  {
+   "id": "accord.rodos",
+   "name": "accord.rodos"
+  },
+  {
+   "id": "module.legendary",
+   "name": "module.legendary"
+  },
+  {
+   "id": "shard_land.access",
+   "name": "shard_land.access"
+  },
+  {
+   "id": "planner",
+   "name": "planner"
+  },
+  {
+   "id": "feast.shard",
+   "name": "feast.shard"
+  },
+  {
+   "id": "store.shard_vault",
+   "name": "Shard vault"
+  }
+ ],
+ "makes": [
+  "win.modpack_complete"
+ ]
+}

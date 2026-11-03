@@ -33,3 +33,6 @@ Update 11-03 (stacked on #125): the 9 Ascendant bosses now use per-boss looks (k
 Planet dimension test (11-03): #145 planet datapack (216 dimensions) loaded with this module on a headless server. `locate structure diaithirbosses:planet_lair` finds a lair in diaithir_planets:ashestith and groktok; force-loading its chunks generated it (12 pillar blocks and 1 boss altar found at y 79-91). All 35 own bosses now on per-boss looks: ok=34457 bad=0.
 
 Lair altar (11-03): with the #145 planet datapack loaded, a fake player using an empty lair altar in diaithir_planets:ashestith wakes one boss of that planet (PlanetBoss wearing the picked look). All profiles checked for look file and texture. /bossesselftest ok=34575 bad=0. diaithir_myth kits: renderer override for the four attached creatures (our mod loads after diaithir_myth) is compiled but not run, the myth jar is not in this dev server.
+
+## Gate
+Boot the server, `forceload add 0 0 16 16`, `/gateselftest` -> `gate ok=8 bad=0`, wait about 21 s, `/gate status` -> "The Gate is open." (verified 2026-11-03). Note: standalone boot needs diaithir-planets for the planet_altar structures.

@@ -18,3 +18,10 @@ Every Panscriptum planet has 6 to 12 bosses (more for bigger planets, one per Ag
 - `tools/gen_planet_bosses.py` regenerates all of it from planets.tsv, the content and library databases and the rites list; `tools/planet_bosses_report.md` has the counts.
 
 Note: tools/gen.py still writes the old vanilla-body textures; rerun tools/gen_planet_bosses.py after it, which gives every own boss (the 7 older, the mythic kits when diaithir_myth is absent, the 9 Ascendant) its own look and re-sizes it.
+
+## Shardfall Gate (survey part 2, clean-room Boss Checklist idea)
+
+`diaithirbosses:shardfall_gate` is a block that reads `data/diaithirbosses/gate/requirements.json`
+(the 18 needs of the win.gate beat) and opens only when every need is marked done. Commands:
+`/gate status`, `/gate mark <need>` (ops), `/gateselftest` (ops). State is world SavedData.
+Written from the behaviour of Boss Checklist only; no upstream code.

@@ -249,5 +249,16 @@
  "ritual.diaithirbosses.spirit_called": "%s rite spirit(s) rise to stand with you.",
  "ritual.diaithirbosses.spirit": "Rite spirit",
  "item.diaithirbosses.boss_catalyst_t2": "Greater boss catalyst",
- "item.diaithirbosses.boss_sovereign_core": "Sovereign core"
+ "item.diaithirbosses.boss_sovereign_core": "Sovereign core",
+ "block.diaithirbosses.shardfall_gate": "Shardfall Gate",
+ "gate.diaithirbosses.closed": "The Gate is closed: %1$s of %2$s requirements are not met.",
+ "gate.diaithirbosses.already_open": "The Gate stands open.",
+ "gate.diaithirbosses.opened": "The Shardfall Gate is open. The Wheel has turned.",
+ "gate.diaithirbosses.beat1": "The shards wake.",
+ "gate.diaithirbosses.beat2": "Every Age answers.",
+ "gate.diaithirbosses.beat3": "The kitchens, the forges and the courts are heard.",
+ "gate.diaithirbosses.beat4": "The ships turn toward the lights.",
+ "gate.diaithirbosses.beat5": "The old bosses bow.",
+ "gate.diaithirbosses.beat6": "The ring closes.",
+ "gate.diaithirbosses.beat7": "The Gate opens."
 }
