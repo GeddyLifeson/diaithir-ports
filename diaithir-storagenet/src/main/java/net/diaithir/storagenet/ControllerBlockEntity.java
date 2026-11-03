@@ -65,6 +65,19 @@ public final class ControllerBlockEntity extends BlockEntity {
         return network;
     }
 
+    private long viewTick = -100;
+    private NetworkView view;
+
+    /** Read-only item view of the whole network, rebuilt at most twice a second. Null on the client. */
+    public @Nullable NetworkView view() {
+        if (!(level instanceof ServerLevel sl)) return null;
+        if (view == null || sl.getGameTime() - viewTick >= 10) {
+            view = new NetworkView(network());
+            viewTick = sl.getGameTime();
+        }
+        return view;
+    }
+
     private Network scan(ServerLevel level) {
         int maxBlocks = Config.MAX_NETWORK_BLOCKS.get();
         int maxStores = Config.MAX_STORES.get();
