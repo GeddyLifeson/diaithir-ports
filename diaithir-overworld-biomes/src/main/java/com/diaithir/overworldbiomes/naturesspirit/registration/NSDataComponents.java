@@ -20,6 +20,8 @@ public class NSDataComponents {
     return builder.persistent(PizzaToppingVariant.CODEC.listOf()).cacheEncoding();
   });
 
+  public static final Supplier<DataComponentType<List<PizzaToppingVariant>>> TOPPINGS = TOPPINGS_HOLDER;
+
   /**
    * Convenience accessor kept for code referencing the component type directly.
    * Only valid after registries have been populated.
