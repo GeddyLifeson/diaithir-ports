@@ -66667,23 +66667,23 @@ hash = "4b5bdf16444cfd9623fb6700f157045cf9d8edba02ee3c1b990e279e884743d6"
 
 [[files]]
 file = "kubejs/data/rodos/worldgen/structure/city_black.json"
-hash = "16796de263b6672c82da7f8d0516b0e367d39370bba5fa0be87a90eb9eff5da0"
+hash = "014423457efb600c8a28ca031896c8894af87b5ac1fe37c81bd4229256a7fb83"
 
 [[files]]
 file = "kubejs/data/rodos/worldgen/structure/city_power.json"
-hash = "906bee48797d6d5e7cd1af51f50bb1cc8f7feef9e5dedcf5bb77623c1d240b52"
+hash = "4c42ef51469dc7b533295ad2509496d8e4e3479077efba2d78fa5f2f0f4416f8"
 
 [[files]]
 file = "kubejs/data/rodos/worldgen/structure/city_red.json"
-hash = "7c944eb4c9e5fc3004756c5e2d96429590f8a4b16ca91d789aa4d57a044b54d4"
+hash = "e340f180577b80858b6df51c4f77d00bbeff2c132c4b09938e6017c0cfca46c2"
 
 [[files]]
 file = "kubejs/data/rodos/worldgen/structure/city_tall.json"
-hash = "a8edfcae52fba2958d52dd2a3388e5696865140ad4bc5fed540e5b4b831a5756"
+hash = "8db4f0c0395d3fe5bf91ce6e3b342d34e84d110c18fa0544e76d15c20447d4c7"
 
 [[files]]
 file = "kubejs/data/rodos/worldgen/structure/city_wheel.json"
-hash = "dbc545616c456c302fce11370ddefed88b92eda62f1bcae4b1c87e0d528790d0"
+hash = "c58058f9dc50d4acd9deb6e387c3eb145744a268bce31bfb6bb181f23a76df87"
 
 [[files]]
 file = "kubejs/data/rodos/worldgen/structure/mere_lighthouse.json"
@@ -68797,7 +68797,7 @@ hash = "1820b9411421b05edef8781c0dd0f4b44fc4abb5410611478858bf22d07ab7a2"
 
 [[files]]
 file = "mods/diaithir-worldgen-structures-neoforge-26.1.2-1.0.0.jar"
-hash = "6cbac9442dfac13fe9945a38b5a38e4d229575fc6f0ec100b75d39c997fe6530"
+hash = "d421acfd3ae142cf53c065e5c0197cdf16354f8546422eb82d1bd3b418634920"
 
 [[files]]
 file = "mods/diaithir-yungs-structures-neoforge-26.1.2-1.0.0.jar"
