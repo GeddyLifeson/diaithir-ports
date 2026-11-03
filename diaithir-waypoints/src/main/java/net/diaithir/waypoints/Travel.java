@@ -52,6 +52,13 @@ public final class Travel {
         }
     }
 
+    /** Experience points the player holds now (level and bar), not the lifetime total. */
+    static int points(ServerPlayer p) {
+        int l = p.experienceLevel;
+        int base = l <= 16 ? l * l + 6 * l : l <= 31 ? (int) (2.5 * l * l - 40.5 * l + 360) : (int) (4.5 * l * l - 162.5 * l + 2220);
+        return base + (int) (p.experienceProgress * p.getXpNeededForNextLevel());
+    }
+
     static int cost(ServerPlayer p, Known k) {
         double d = k.dimension().equals(p.level().dimension().identifier()) ? Math.sqrt(p.blockPosition().distSqr(k.pos())) : 2000;
         return (int) Math.min(200, Math.ceil(d / 100.0));
@@ -70,7 +77,7 @@ public final class Travel {
         }
         Known k = list.get(index);
         int xp = cost(p, k);
-        if (!p.isCreative() && p.totalExperience < xp) {
+        if (!p.isCreative() && points(p) < xp) {
             p.sendSystemMessage(Component.literal("Needs " + xp + " experience points."));
             return false;
         }
@@ -95,6 +102,18 @@ public final class Travel {
             .then(Commands.literal("list").executes(c -> {
                 show(c.getSource().getPlayerOrException());
                 return 1;
+            }))
+            .then(Commands.literal("light").executes(c -> {
+                ServerPlayer p = c.getSource().getPlayerOrException();
+                BlockPos o = p.blockPosition();
+                for (BlockPos q : BlockPos.betweenClosed(o.offset(-4, -2, -4), o.offset(4, 2, 4))) {
+                    if (p.level().getBlockState(q).is(DiaithirWaypoints.STONE.get())) {
+                        light(p, q.immutable());
+                        return 1;
+                    }
+                }
+                p.sendSystemMessage(Component.literal("No stone within 4 m."));
+                return 0;
             }))
             .then(Commands.literal("go").then(Commands.argument("n", IntegerArgumentType.integer(1)).executes(c ->
                 go(c.getSource().getPlayerOrException(), IntegerArgumentType.getInteger(c, "n") - 1, false) ? 1 : 0)))
