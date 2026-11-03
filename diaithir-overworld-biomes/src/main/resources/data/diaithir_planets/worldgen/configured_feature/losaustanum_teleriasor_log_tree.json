@@ -43,7 +43,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:losaustanum_teleriasor_leaves",
+"Name": "diaithir_planets:losaustanum_teleriasor_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -67,7 +67,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:losaustanum_teleriasor_log",
+"Name": "diaithir_planets:losaustanum_teleriasor_log",
 "Properties": {
 "axis": "y"
 }

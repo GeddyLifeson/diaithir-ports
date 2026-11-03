@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:orerum_meostanum_leaves",
+"Name": "diaithir_planets:orerum_meostanum_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:orerum_meostanum_log",
+"Name": "diaithir_planets:orerum_meostanum_log",
 "Properties": {
 "axis": "y"
 }

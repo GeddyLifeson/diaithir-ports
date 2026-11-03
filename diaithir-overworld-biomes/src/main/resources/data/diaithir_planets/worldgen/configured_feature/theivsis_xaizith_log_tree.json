@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:theivsis_xaizith_leaves",
+"Name": "diaithir_planets:theivsis_xaizith_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:theivsis_xaizith_log",
+"Name": "diaithir_planets:theivsis_xaizith_log",
 "Properties": {
 "axis": "y"
 }

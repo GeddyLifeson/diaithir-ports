@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:menteores_vosastor_leaves",
+"Name": "diaithir_planets:menteores_vosastor_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -55,7 +55,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:menteores_vosastor_log",
+"Name": "diaithir_planets:menteores_vosastor_log",
 "Properties": {
 "axis": "y"
 }

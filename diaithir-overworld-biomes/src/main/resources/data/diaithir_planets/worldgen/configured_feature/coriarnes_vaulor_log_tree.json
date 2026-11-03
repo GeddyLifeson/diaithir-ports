@@ -35,7 +35,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:coriarnes_vaulor_leaves",
+"Name": "diaithir_planets:coriarnes_vaulor_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -90,7 +90,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:coriarnes_vaulor_log",
+"Name": "diaithir_planets:coriarnes_vaulor_log",
 "Properties": {
 "axis": "y"
 }

@@ -43,7 +43,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:elaennirlys_teleolia_leaves",
+"Name": "diaithir_planets:elaennirlys_teleolia_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -67,7 +67,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:elaennirlys_teleolia_log",
+"Name": "diaithir_planets:elaennirlys_teleolia_log",
 "Properties": {
 "axis": "y"
 }

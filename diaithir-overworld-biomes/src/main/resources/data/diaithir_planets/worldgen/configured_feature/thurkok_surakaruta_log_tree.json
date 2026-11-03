@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:thurkok_surakaruta_leaves",
+"Name": "diaithir_planets:thurkok_surakaruta_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -54,7 +54,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:thurkok_surakaruta_log",
+"Name": "diaithir_planets:thurkok_surakaruta_log",
 "Properties": {
 "axis": "y"
 }

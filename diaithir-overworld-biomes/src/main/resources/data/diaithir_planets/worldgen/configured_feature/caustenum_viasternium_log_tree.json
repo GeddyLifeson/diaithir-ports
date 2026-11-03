@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:caustenum_viasternium_leaves",
+"Name": "diaithir_planets:caustenum_viasternium_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:caustenum_viasternium_log",
+"Name": "diaithir_planets:caustenum_viasternium_log",
 "Properties": {
 "axis": "y"
 }

@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:voraikun_veseisora_leaves",
+"Name": "diaithir_planets:voraikun_veseisora_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:voraikun_veseisora_log",
+"Name": "diaithir_planets:voraikun_veseisora_log",
 "Properties": {
 "axis": "y"
 }

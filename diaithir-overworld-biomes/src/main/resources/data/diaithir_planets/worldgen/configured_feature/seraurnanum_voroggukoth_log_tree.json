@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:seraurnanum_voroggukoth_leaves",
+"Name": "diaithir_planets:seraurnanum_voroggukoth_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:seraurnanum_voroggukoth_log",
+"Name": "diaithir_planets:seraurnanum_voroggukoth_log",
 "Properties": {
 "axis": "y"
 }

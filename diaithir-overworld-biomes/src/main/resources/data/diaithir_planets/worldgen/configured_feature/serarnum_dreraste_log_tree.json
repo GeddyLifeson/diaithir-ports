@@ -35,7 +35,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:serarnum_dreraste_leaves",
+"Name": "diaithir_planets:serarnum_dreraste_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -90,7 +90,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:serarnum_dreraste_log",
+"Name": "diaithir_planets:serarnum_dreraste_log",
 "Properties": {
 "axis": "y"
 }

@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:vesathora_surasaneno_leaves",
+"Name": "diaithir_planets:vesathora_surasaneno_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:vesathora_surasaneno_log",
+"Name": "diaithir_planets:vesathora_surasaneno_log",
 "Properties": {
 "axis": "y"
 }

@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:toraizhoth_gougok_leaves",
+"Name": "diaithir_planets:toraizhoth_gougok_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:toraizhoth_gougok_log",
+"Name": "diaithir_planets:toraizhoth_gougok_log",
 "Properties": {
 "axis": "y"
 }

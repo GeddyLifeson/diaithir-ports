@@ -43,7 +43,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:tasianium_serolia_leaves",
+"Name": "diaithir_planets:tasianium_serolia_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -67,7 +67,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:tasianium_serolia_log",
+"Name": "diaithir_planets:tasianium_serolia_log",
 "Properties": {
 "axis": "y"
 }

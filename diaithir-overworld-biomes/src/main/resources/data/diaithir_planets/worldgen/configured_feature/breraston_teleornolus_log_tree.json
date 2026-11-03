@@ -35,7 +35,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:breraston_teleornolus_leaves",
+"Name": "diaithir_planets:breraston_teleornolus_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -59,7 +59,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:breraston_teleornolus_log",
+"Name": "diaithir_planets:breraston_teleornolus_log",
 "Properties": {
 "axis": "y"
 }

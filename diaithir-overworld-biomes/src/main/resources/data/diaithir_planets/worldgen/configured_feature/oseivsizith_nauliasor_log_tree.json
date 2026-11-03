@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:oseivsizith_nauliasor_leaves",
+"Name": "diaithir_planets:oseivsizith_nauliasor_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:oseivsizith_nauliasor_log",
+"Name": "diaithir_planets:oseivsizith_nauliasor_log",
 "Properties": {
 "axis": "y"
 }

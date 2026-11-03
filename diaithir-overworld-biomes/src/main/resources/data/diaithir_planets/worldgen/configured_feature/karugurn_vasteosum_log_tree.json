@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:karugurn_vasteosum_leaves",
+"Name": "diaithir_planets:karugurn_vasteosum_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -55,7 +55,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:karugurn_vasteosum_log",
+"Name": "diaithir_planets:karugurn_vasteosum_log",
 "Properties": {
 "axis": "y"
 }

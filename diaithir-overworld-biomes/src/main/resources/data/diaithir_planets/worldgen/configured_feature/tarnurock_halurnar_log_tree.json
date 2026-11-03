@@ -35,7 +35,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:tarnurock_halurnar_leaves",
+"Name": "diaithir_planets:tarnurock_halurnar_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -59,7 +59,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:tarnurock_halurnar_log",
+"Name": "diaithir_planets:tarnurock_halurnar_log",
 "Properties": {
 "axis": "y"
 }

@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:nualireth_thiseth_leaves",
+"Name": "diaithir_planets:nualireth_thiseth_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:nualireth_thiseth_log",
+"Name": "diaithir_planets:nualireth_thiseth_log",
 "Properties": {
 "axis": "y"
 }

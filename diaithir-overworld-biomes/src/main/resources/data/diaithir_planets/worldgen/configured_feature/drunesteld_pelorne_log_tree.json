@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:drunesteld_pelorne_leaves",
+"Name": "diaithir_planets:drunesteld_pelorne_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:drunesteld_pelorne_log",
+"Name": "diaithir_planets:drunesteld_pelorne_log",
 "Properties": {
 "axis": "y"
 }

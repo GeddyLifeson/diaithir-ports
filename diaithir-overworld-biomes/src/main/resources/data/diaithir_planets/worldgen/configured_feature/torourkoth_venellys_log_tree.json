@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:torourkoth_venellys_leaves",
+"Name": "diaithir_planets:torourkoth_venellys_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -55,7 +55,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:torourkoth_venellys_log",
+"Name": "diaithir_planets:torourkoth_venellys_log",
 "Properties": {
 "axis": "y"
 }

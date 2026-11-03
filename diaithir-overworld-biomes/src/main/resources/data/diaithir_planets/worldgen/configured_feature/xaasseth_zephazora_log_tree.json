@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:xaasseth_zephazora_leaves",
+"Name": "diaithir_planets:xaasseth_zephazora_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:xaasseth_zephazora_log",
+"Name": "diaithir_planets:xaasseth_zephazora_log",
 "Properties": {
 "axis": "y"
 }

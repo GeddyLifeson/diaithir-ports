@@ -35,7 +35,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:kelarnock_kelustarde_leaves",
+"Name": "diaithir_planets:kelarnock_kelustarde_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -90,7 +90,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:kelarnock_kelustarde_log",
+"Name": "diaithir_planets:kelarnock_kelustarde_log",
 "Properties": {
 "axis": "y"
 }

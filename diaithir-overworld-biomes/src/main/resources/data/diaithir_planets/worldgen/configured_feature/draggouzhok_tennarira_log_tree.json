@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:draggouzhok_tennarira_leaves",
+"Name": "diaithir_planets:draggouzhok_tennarira_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:draggouzhok_tennarira_log",
+"Name": "diaithir_planets:draggouzhok_tennarira_log",
 "Properties": {
 "axis": "y"
 }

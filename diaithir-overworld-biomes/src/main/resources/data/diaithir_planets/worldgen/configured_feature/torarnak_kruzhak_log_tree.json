@@ -43,7 +43,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:torarnak_kruzhak_leaves",
+"Name": "diaithir_planets:torarnak_kruzhak_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -67,7 +67,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:torarnak_kruzhak_log",
+"Name": "diaithir_planets:torarnak_kruzhak_log",
 "Properties": {
 "axis": "y"
 }

@@ -43,7 +43,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:druderath_ceornonus_leaves",
+"Name": "diaithir_planets:druderath_ceornonus_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -67,7 +67,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:druderath_ceornonus_log",
+"Name": "diaithir_planets:druderath_ceornonus_log",
 "Properties": {
 "axis": "y"
 }

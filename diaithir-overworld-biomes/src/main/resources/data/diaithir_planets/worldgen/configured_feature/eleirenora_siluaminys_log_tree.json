@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:eleirenora_siluaminys_leaves",
+"Name": "diaithir_planets:eleirenora_siluaminys_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -55,7 +55,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:eleirenora_siluaminys_log",
+"Name": "diaithir_planets:eleirenora_siluaminys_log",
 "Properties": {
 "axis": "y"
 }

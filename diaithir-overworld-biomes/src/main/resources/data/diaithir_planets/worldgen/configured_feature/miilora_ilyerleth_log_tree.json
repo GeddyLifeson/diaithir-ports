@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:miilora_ilyerleth_leaves",
+"Name": "diaithir_planets:miilora_ilyerleth_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -55,7 +55,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:miilora_ilyerleth_log",
+"Name": "diaithir_planets:miilora_ilyerleth_log",
 "Properties": {
 "axis": "y"
 }

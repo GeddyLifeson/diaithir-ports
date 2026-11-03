@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:kelolden_seornus_leaves",
+"Name": "diaithir_planets:kelolden_seornus_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:kelolden_seornus_log",
+"Name": "diaithir_planets:kelolden_seornus_log",
 "Properties": {
 "axis": "y"
 }

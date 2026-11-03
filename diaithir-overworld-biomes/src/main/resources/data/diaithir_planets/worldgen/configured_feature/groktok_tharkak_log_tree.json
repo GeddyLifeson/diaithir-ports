@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:groktok_tharkak_leaves",
+"Name": "diaithir_planets:groktok_tharkak_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:groktok_tharkak_log",
+"Name": "diaithir_planets:groktok_tharkak_log",
 "Properties": {
 "axis": "y"
 }

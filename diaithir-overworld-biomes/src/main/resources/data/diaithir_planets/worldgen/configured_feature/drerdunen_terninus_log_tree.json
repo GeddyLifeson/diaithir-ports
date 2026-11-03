@@ -35,7 +35,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:drerdunen_terninus_leaves",
+"Name": "diaithir_planets:drerdunen_terninus_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -59,7 +59,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:drerdunen_terninus_log",
+"Name": "diaithir_planets:drerdunen_terninus_log",
 "Properties": {
 "axis": "y"
 }

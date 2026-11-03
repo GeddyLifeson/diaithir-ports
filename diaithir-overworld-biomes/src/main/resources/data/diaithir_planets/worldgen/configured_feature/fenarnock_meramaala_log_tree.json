@@ -30,7 +30,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:fenarnock_meramaala_leaves",
+"Name": "diaithir_planets:fenarnock_meramaala_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -56,7 +56,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:fenarnock_meramaala_log",
+"Name": "diaithir_planets:fenarnock_meramaala_log",
 "Properties": {
 "axis": "y"
 }

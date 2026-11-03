@@ -31,7 +31,7 @@
 "foliage_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:nueriel_drozhurnun_leaves",
+"Name": "diaithir_planets:nueriel_drozhurnun_leaves",
 "Properties": {
 "distance": "7",
 "persistent": "false",
@@ -55,7 +55,7 @@
 "trunk_provider": {
 "type": "minecraft:simple_state_provider",
 "state": {
-"Name": "minecraft:nueriel_drozhurnun_log",
+"Name": "diaithir_planets:nueriel_drozhurnun_log",
 "Properties": {
 "axis": "y"
 }
