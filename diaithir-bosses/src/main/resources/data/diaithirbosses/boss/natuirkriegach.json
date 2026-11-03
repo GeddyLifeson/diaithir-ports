@@ -4,8 +4,8 @@
  "name_en": "Natuirkriegach",
  "age": 3,
  "own": {
-  "kind": "silverfish",
-  "scale": 5.5,
+  "kind": "look_low",
+  "scale": 1.68,
   "hp": 520,
   "damage": 9,
   "armor": 8,
@@ -197,5 +197,6 @@
  "mythic": true,
  "entity": "diaithir_myth:natuirkriegach",
  "fallback_own": true,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

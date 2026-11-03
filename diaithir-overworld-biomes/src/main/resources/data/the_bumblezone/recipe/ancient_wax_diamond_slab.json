@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "the_bumblezone:ancient_wax_diamond"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "the_bumblezone:ancient_wax_diamond_slab",
+  "count": 6
+ }
+}

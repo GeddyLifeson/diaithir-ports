@@ -1,0 +1,180 @@
+{
+ "sky": {
+  "sky": "#7a8fb0",
+  "fog": "#a9b8c9",
+  "cloud": "#d8e4f0c8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f7e9c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.miilora.E6.places.000113",
+   "archetype": "snowy_plains",
+   "temp": -0.8,
+   "humid": -0.3,
+   "grass": "#c9dde8",
+   "foliage": "#b0c8d6",
+   "water": "#b8e4f5",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.miilora.E6.places.000116",
+   "archetype": "frozen_peaks",
+   "temp": -0.6,
+   "humid": -0.2,
+   "grass": "#a6c4d4",
+   "foliage": "#8fb0c2",
+   "water": "#9fd4ec",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.miilora.E6.places.000117",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#5e7a5a",
+   "foliage": "#4a6a4c",
+   "water": "#4c6b55",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miilora.E6.places.000090",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#4f7a52",
+   "foliage": "#3d6642",
+   "water": "#3f5e4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miilora.E6.places.000106",
+   "archetype": "dark_forest",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#4a6b4f",
+   "foliage": "#355a44",
+   "water": "#3e6670",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miilora.E6.places.000098",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.7,
+   "grass": "#9a6e4a",
+   "foliage": "#8a5e3c",
+   "water": "#7a5a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miilora.E6.places.000102",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.5,
+   "grass": "#c9a86a",
+   "foliage": "#b89a5e",
+   "water": "#d4b07a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miilora.E6.places.000101",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.3,
+   "grass": "#b8c9a0",
+   "foliage": "#e8b8d0",
+   "water": "#9fc4d8",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A realm of frost-glass peaks, ash-dark sinks, and sun-scorched sultanates, with rivers that carry the sediment of dead worlds.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#9fb8c8",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.miilora.E6.places.000113",
+  "why": "Glassy ice, low aurora, faint singing winds suggest frosty mixed calm skies",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.6,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.miilora.E6.places.000090",
+  "grounded": true
+ }
+}

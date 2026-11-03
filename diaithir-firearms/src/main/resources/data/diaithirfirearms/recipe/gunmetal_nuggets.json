@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "diaithirfirearms:gunmetal_ingot"
+ ],
+ "result": {
+  "id": "diaithirfirearms:gunmetal_nugget",
+  "count": 4
+ }
+}

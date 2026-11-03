@@ -1,0 +1,21 @@
+{
+ "values": [
+  "diaithirfirearms:sidearm_light",
+  "diaithirfirearms:sidearm_heavy",
+  "diaithirfirearms:magnum",
+  "diaithirfirearms:smg_compact",
+  "diaithirfirearms:carbine",
+  "diaithirfirearms:assault_rifle",
+  "diaithirfirearms:marksman_rifle",
+  "diaithirfirearms:sniper_rifle",
+  "diaithirfirearms:antimaterial_rifle",
+  "diaithirfirearms:pump_shotgun",
+  "diaithirfirearms:combat_shotgun",
+  "diaithirfirearms:auto_shotgun",
+  "diaithirfirearms:light_mg",
+  "diaithirfirearms:minigun",
+  "diaithirfirearms:grenade_launcher",
+  "diaithirfirearms:rocket_launcher",
+  "diaithirfirearms:energy_rifle"
+ ]
+}

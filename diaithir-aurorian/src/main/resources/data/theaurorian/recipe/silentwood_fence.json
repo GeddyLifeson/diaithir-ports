@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "SAS",
+  "SAS"
+ ],
+ "key": {
+  "S": "theaurorian:silentwood_planks",
+  "A": "#c:rods/wooden"
+ },
+ "result": {
+  "id": "theaurorian:silentwood_fence",
+  "count": 3
+ }
+}

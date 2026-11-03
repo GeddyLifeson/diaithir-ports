@@ -1,0 +1,176 @@
+{
+ "sky": {
+  "sky": "#6b7f99",
+  "fog": "#8a9bb0",
+  "cloud": "#e6ecf2",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5d7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.losaustanum.E2.assay.000526",
+   "archetype": "snowy_taiga",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#7fa08a",
+   "foliage": "#5f8070",
+   "water": "#3a6a88",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.losaustanum.E2.assay.000318",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#8fb86a",
+   "foliage": "#7aa35a",
+   "water": "#3f7fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.losaustanum.E6.assay.000486",
+   "archetype": "meadow",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#9cc47a",
+   "foliage": "#86b06a",
+   "water": "#4a8aa8",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.losaustanum.E2.assay.000801",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#b5a65e",
+   "foliage": "#9c9050",
+   "water": "#5a8f9a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.losaustanum.E5.assay.000645",
+   "archetype": "jungle",
+   "temp": 0.8,
+   "humid": 0.8,
+   "grass": "#4fa04a",
+   "foliage": "#3a8a3a",
+   "water": "#2f7a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.losaustanum.E2.assay.000870",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#6a9a5a",
+   "foliage": "#557f48",
+   "water": "#3d6b5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.losaustanum.E6.assay.000683",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c9b27a",
+   "foliage": "#b59f6a",
+   "water": "#6f9aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.losaustanum.E5.assay.000040",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": -0.1,
+   "grass": "#7f9a6a",
+   "foliage": "#6a8457",
+   "water": "#43708a",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A frost-bound world of cold northern tribes, sheltered coasts and harsh southern plains, where wind, snow and hard-fought rule shape the land.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.11
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#c8dcea",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.losaustanum.E6.assay.000075",
+  "why": "Frozen southern peninsula locked in ice and cold winds.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 3
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 4
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 0.5,
+   "diamond": 0.3
+  },
+  "why_entry": "MA.losaustanum.E4.assay.000649",
+  "grounded": true
+ }
+}

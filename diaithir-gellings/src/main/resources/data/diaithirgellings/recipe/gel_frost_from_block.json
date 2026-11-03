@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "diaithirgellings:gel_block_frost"
+ ],
+ "result": {
+  "id": "diaithirgellings:gel_frost",
+  "count": 9
+ }
+}

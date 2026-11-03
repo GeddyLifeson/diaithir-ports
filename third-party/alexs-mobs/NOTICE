@@ -1,0 +1,7 @@
+Alex's Mobs Continued 2.2.4 (mod id alexsmobs) for Minecraft 26.1.2 / NeoForge, used unmodified as a pack dependency (MOD-FIRST rule: a current 26.1.2 build exists, so no port).
+Source: https://modrinth.com/mod/alexs-mobs-continued (project kYIaHHfw), file alexsmobs-2.2.4-neoforge+26.1.2.jar, sha256 55e6aa2837253649a89a29669e511952539c874289e2f747dbd2bcced8c51943.
+Code: https://github.com/Codx-org/Alexs-Mobs-Updated-Ported . Authors: Alexthe668 (AlexModGuy), Carro1001, Paint_Ninja, Lynk, Codx.io.
+Licence: the jar's neoforge.mods.toml says LGPL-3.0; Modrinth lists GPL-3.0-only. Treat as GPL-3.0 in the strict case. The jar is not modified or merged into any Diaithir module, so no Diaithir code is under it.
+Requires CodxLib 1.6.1 (mod id codxlib, https://modrinth.com/mod/codxlib, file codxlib-1.6.1-neoforge+26.1.2.jar, sha256 d83f5f1609f2dcf1474e3fcf8e5533b9925aa40196888e1a01c29885e2a7d1c6). Its toml says MIT; Modrinth lists CC-BY-NC-ND-4.0. NoDerivatives: ship it unmodified, never patch it.
+Not related to Citadel (the older Alex's Mobs needed Citadel; this build does not).
+Patched neighbour: Walkers 8.2 asks the registry for crimson-mosquito, giant-squid and komodo-dragon, which do not exist, and the datapack load fails. diaithir-compat/tools/patch_walkers_alexsmobs.py makes the three ids use underscores (Walkers is MIT; jar name walkers-neoforge-8.2-diaithir.2.jar).

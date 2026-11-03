@@ -23,7 +23,10 @@ neoForge {
             }
         }
     }
-    mods { researcher { sourceSet(sourceSets.main) } }
+    mods {
+        researcher { sourceSet(sourceSets.main) }
+        diaithirautomationcrafting { sourceSet(sourceSets.main) }
+    }
 }
 
 processResources {
@@ -38,4 +41,11 @@ repositories {
 dependencies {
     compileOnly 'org.jetbrains:annotations:26.0.2'
     compileOnly 'org.jspecify:jspecify:1.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation 'com.google.code.gson:gson:2.11.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+test {
+    useJUnitPlatform()
 }

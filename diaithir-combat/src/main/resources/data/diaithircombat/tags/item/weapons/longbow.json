@@ -23,6 +23,7 @@
   {
    "id": "diaithirarms:future_bow",
    "required": false
-  }
+  },
+  "diaithircombat:lib_longbow"
  ]
 }

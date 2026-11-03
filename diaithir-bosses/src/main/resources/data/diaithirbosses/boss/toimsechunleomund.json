@@ -4,8 +4,8 @@
  "name_en": "Tòimsechunleòmund",
  "age": 3,
  "own": {
-  "kind": "ravager",
-  "scale": 1.5,
+  "kind": "look_wide",
+  "scale": 2.03,
   "hp": 520,
   "damage": 9,
   "armor": 8,
@@ -200,5 +200,6 @@
  "mythic": true,
  "entity": "diaithir_myth:toimsechunleomund",
  "fallback_own": true,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

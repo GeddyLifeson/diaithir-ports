@@ -1,0 +1,1190 @@
+{
+ "modid": "undergarden",
+ "blocks": [
+  {
+   "id": "amorous_bristle",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "ancient_root",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ancient_root_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "ancient_root_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "ancient_root_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "ancient_root_fence_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "ancient_root_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "ancient_root_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "ancient_root_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "ashen_deepturf",
+   "kind": "block",
+   "mat": "turf"
+  },
+  {
+   "id": "ashen_deepturf_block",
+   "kind": "block",
+   "mat": "turf"
+  },
+  {
+   "id": "blisterberry_bush",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "blood_mushroom",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "blood_mushroom_cap",
+   "kind": "block",
+   "mat": "mushroom"
+  },
+  {
+   "id": "blood_mushroom_stem",
+   "kind": "pillar",
+   "mat": "mushroom"
+  },
+  {
+   "id": "blue_mogmoss_rug",
+   "kind": "block",
+   "mat": "soil"
+  },
+  {
+   "id": "boomgourd",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "butterbunch",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "carved_gloomgourd",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_depthrock_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_sediment_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_shiverstone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_tremblecrust_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cloggrum_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "cloggrum_grate",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "cloggrum_pillar",
+   "kind": "pillar",
+   "mat": "metal"
+  },
+  {
+   "id": "cloggrum_tiles",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "coarse_deepsoil",
+   "kind": "block",
+   "mat": "soil"
+  },
+  {
+   "id": "cracked_depthrock_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_sediment_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_shiverstone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_tremblecrust_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "deepsoil",
+   "kind": "block",
+   "mat": "soil"
+  },
+  {
+   "id": "deepturf",
+   "kind": "block",
+   "mat": "turf"
+  },
+  {
+   "id": "deepturf_block",
+   "kind": "block",
+   "mat": "turf"
+  },
+  {
+   "id": "denizen_totem",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "depthrock",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "depthrock_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "depthrock_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "depthrock_cloggrum_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "depthrock_coal_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "depthrock_diamond_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "depthrock_gold_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "depthrock_iron_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "depthrock_pebbles",
+   "kind": "block",
+   "mat": "soil"
+  },
+  {
+   "id": "depthrock_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "depthrock_regalium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "depthrock_tiles",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "depthrock_utherium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "dirty_sediment_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dreadrock",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dreadrock_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dreadrock_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "dreadrock_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "dreadrock_rogdorium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "dreadrock_utherium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "droopvine",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "engorged_blood_mushroom_cap",
+   "kind": "block",
+   "mat": "mushroom"
+  },
+  {
+   "id": "forgotten_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "froststeel_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "frozen_deepturf",
+   "kind": "block",
+   "mat": "turf"
+  },
+  {
+   "id": "frozen_deepturf_block",
+   "kind": "block",
+   "mat": "turf"
+  },
+  {
+   "id": "glitterkelp",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "gloomgourd",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "goo",
+   "kind": "block",
+   "mat": "soil"
+  },
+  {
+   "id": "goo_block",
+   "kind": "block",
+   "mat": "soil"
+  },
+  {
+   "id": "grongle_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "grongle_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "grongle_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "grongle_fence_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "grongle_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "grongle_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "grongle_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "grongle_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "grongle_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "grongle_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "grongle_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "gronglet",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "hanging_grongle_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "indigo_mushroom",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "indigo_mushroom_cap",
+   "kind": "block",
+   "mat": "mushroom"
+  },
+  {
+   "id": "indigo_mushroom_stem",
+   "kind": "pillar",
+   "mat": "mushroom"
+  },
+  {
+   "id": "ink_mushroom",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "ink_mushroom_cap",
+   "kind": "block",
+   "mat": "mushroom"
+  },
+  {
+   "id": "ink_mushroom_stem",
+   "kind": "pillar",
+   "mat": "mushroom"
+  },
+  {
+   "id": "loose_tremblecrust",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "miserabell",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "mogmoss_rug",
+   "kind": "block",
+   "mat": "soil"
+  },
+  {
+   "id": "mushroom_veil",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "polished_depthrock",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "polished_sediment_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "puff_mushroom",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "puff_mushroom_cap",
+   "kind": "block",
+   "mat": "mushroom"
+  },
+  {
+   "id": "puff_mushroom_stem",
+   "kind": "pillar",
+   "mat": "mushroom"
+  },
+  {
+   "id": "raw_cloggrum_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "raw_froststeel_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "regalium_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "rogdoric_ancient_root",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "rogdoric_gronglet",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "rogdorium_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sediment",
+   "kind": "block",
+   "mat": "soil"
+  },
+  {
+   "id": "sediment_glass",
+   "kind": "block",
+   "mat": "glass"
+  },
+  {
+   "id": "sediment_glass_pane",
+   "kind": "pane",
+   "mat": "glass"
+  },
+  {
+   "id": "sediment_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sediment_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shimmerweed",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "shiverstone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shiverstone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shiverstone_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "shiverstone_cloggrum_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "shiverstone_coal_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "shiverstone_diamond_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "shiverstone_froststeel_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "shiverstone_iron_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "shiverstone_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "shiverstone_regalium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "shiverstone_utherium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "smog_vent",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "smogstem_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "smogstem_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "smogstem_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "smogstem_fence_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "smogstem_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "smogstem_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "smogstem_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "smogstem_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "smogstem_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "smogstem_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "smogstem_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "smooth_sediment_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stripped_grongle_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_grongle_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_smogstem_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_smogstem_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_wigglewood_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_wigglewood_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "tall_deepturf",
+   "kind": "block",
+   "mat": "turf"
+  },
+  {
+   "id": "tall_shimmerweed",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "thornreed",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "tremblecrust",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "tremblecrust_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "tremblecrust_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "tremblecrust_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "tremblecrust_utherium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "twistybush",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "underbean_bush",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "undergarden_portal",
+   "kind": "portal",
+   "mat": "portal",
+   "target": "undergarden:undergarden",
+   "back": "minecraft:overworld",
+   "pad": "undergarden:depthrock_bricks"
+  },
+  {
+   "id": "utheric_gronglet",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "utherium_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "utherium_growth",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "veil_mushroom",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "veil_mushroom_cap",
+   "kind": "block",
+   "mat": "mushroom"
+  },
+  {
+   "id": "veil_mushroom_stem",
+   "kind": "pillar",
+   "mat": "mushroom"
+  },
+  {
+   "id": "virulent_mix",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "wigglewood_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "wigglewood_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "wigglewood_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "wigglewood_fence_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "wigglewood_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "wigglewood_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "wigglewood_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "wigglewood_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "wigglewood_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "wigglewood_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "wigglewood_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "ancient_root_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "ancient_root"
+  },
+  {
+   "id": "ancient_root_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "ancient_root"
+  },
+  {
+   "id": "cloggrum_tile_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "cloggrum_tiles"
+  },
+  {
+   "id": "cloggrum_tile_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "cloggrum_tiles"
+  },
+  {
+   "id": "depthrock_brick_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "depthrock_bricks"
+  },
+  {
+   "id": "depthrock_brick_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "depthrock_bricks"
+  },
+  {
+   "id": "depthrock_brick_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "depthrock_bricks"
+  },
+  {
+   "id": "depthrock_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "depthrock"
+  },
+  {
+   "id": "depthrock_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "depthrock"
+  },
+  {
+   "id": "depthrock_tile_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "depthrock_tiles"
+  },
+  {
+   "id": "depthrock_tile_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "depthrock_tiles"
+  },
+  {
+   "id": "depthrock_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "depthrock"
+  },
+  {
+   "id": "dreadrock_brick_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "dreadrock_bricks"
+  },
+  {
+   "id": "dreadrock_brick_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "dreadrock_bricks"
+  },
+  {
+   "id": "dreadrock_brick_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "dreadrock_bricks"
+  },
+  {
+   "id": "dreadrock_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "dreadrock"
+  },
+  {
+   "id": "dreadrock_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "dreadrock"
+  },
+  {
+   "id": "dreadrock_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "dreadrock"
+  },
+  {
+   "id": "grongle_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "grongle_planks"
+  },
+  {
+   "id": "grongle_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "grongle_planks"
+  },
+  {
+   "id": "polished_depthrock_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "polished_depthrock"
+  },
+  {
+   "id": "polished_depthrock_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "polished_depthrock"
+  },
+  {
+   "id": "polished_depthrock_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "polished_depthrock"
+  },
+  {
+   "id": "polished_sediment_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "polished_sediment_stone"
+  },
+  {
+   "id": "polished_sediment_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "polished_sediment_stone"
+  },
+  {
+   "id": "polished_sediment_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "polished_sediment_stone"
+  },
+  {
+   "id": "sediment_stone_brick_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "sediment_stone_bricks"
+  },
+  {
+   "id": "sediment_stone_brick_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "sediment_stone_bricks"
+  },
+  {
+   "id": "sediment_stone_brick_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "sediment_stone_bricks"
+  },
+  {
+   "id": "sediment_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "sediment_stone"
+  },
+  {
+   "id": "sediment_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "sediment_stone"
+  },
+  {
+   "id": "sediment_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "sediment_stone"
+  },
+  {
+   "id": "shiverstone_brick_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "shiverstone_bricks"
+  },
+  {
+   "id": "shiverstone_brick_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "shiverstone_bricks"
+  },
+  {
+   "id": "shiverstone_brick_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "shiverstone_bricks"
+  },
+  {
+   "id": "shiverstone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "shiverstone"
+  },
+  {
+   "id": "shiverstone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "shiverstone"
+  },
+  {
+   "id": "shiverstone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "shiverstone"
+  },
+  {
+   "id": "smogstem_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "smogstem_planks"
+  },
+  {
+   "id": "smogstem_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "smogstem_planks"
+  },
+  {
+   "id": "smooth_sediment_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "smooth_sediment_stone"
+  },
+  {
+   "id": "smooth_sediment_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "smooth_sediment_stone"
+  },
+  {
+   "id": "smooth_sediment_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "smooth_sediment_stone"
+  },
+  {
+   "id": "tremblecrust_brick_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "tremblecrust_bricks"
+  },
+  {
+   "id": "tremblecrust_brick_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "tremblecrust_bricks"
+  },
+  {
+   "id": "tremblecrust_brick_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "tremblecrust_bricks"
+  },
+  {
+   "id": "tremblecrust_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "tremblecrust"
+  },
+  {
+   "id": "tremblecrust_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "tremblecrust"
+  },
+  {
+   "id": "tremblecrust_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "tremblecrust"
+  },
+  {
+   "id": "wigglewood_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "wigglewood_planks"
+  },
+  {
+   "id": "wigglewood_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "wigglewood_planks"
+  }
+ ],
+ "items": [
+  "blisterberry",
+  "blisterbomb",
+  "blood_globule",
+  "blue_mogmoss",
+  "brute_tusk",
+  "catalyst",
+  "cloggrum_ingot",
+  "cloggrum_nugget",
+  "cooked_gwibling",
+  "cooked_undergar_fillet",
+  "depthrock_pebble",
+  "ditchbulb",
+  "ditchbulb_paste",
+  "droopvine_item",
+  "dweller_steak",
+  "forgotten_ingot",
+  "forgotten_nugget",
+  "froststeel_ingot",
+  "froststeel_nugget",
+  "gloomgourd_pie",
+  "gloomgourd_seeds",
+  "gloomper_leg",
+  "goo_ball",
+  "mogmoss",
+  "raw_cloggrum",
+  "raw_dweller_meat",
+  "raw_froststeel",
+  "raw_gloomper_leg",
+  "raw_gwibling",
+  "raw_undergar_fillet",
+  "regalium_crystal",
+  "roasted_underbeans",
+  "rogdorium",
+  "rogdorium_infused_underbeans",
+  "rogdorium_nugget",
+  "rotten_blisterberry",
+  "twistytwig",
+  "underbean_on_a_stick",
+  "underbeans",
+  "utheric_cluster",
+  "utheric_shard",
+  "utherium_crystal"
+ ],
+ "portals": [
+  {
+   "block": "undergarden_portal",
+   "activator": "undergarden:catalyst",
+   "frame": "undergarden:forgotten_block"
+  }
+ ]
+}
