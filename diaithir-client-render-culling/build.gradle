@@ -10,6 +10,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 neoForge {
     accessTransformers {
         from "src/main/resources/META-INF/immediatelyfast.at.cfg"
+        from "src/main/resources/META-INF/badoptimizations.at.cfg"
     }
     version = project.neo_version
     runs {

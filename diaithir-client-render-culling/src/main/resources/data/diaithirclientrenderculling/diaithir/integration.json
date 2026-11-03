@@ -2,6 +2,7 @@
  "module": "diaithirclientrenderculling",
  "side": "client",
  "features": [
+  "badoptimizations",
   "entityculling",
   "immediatelyfast"
  ],

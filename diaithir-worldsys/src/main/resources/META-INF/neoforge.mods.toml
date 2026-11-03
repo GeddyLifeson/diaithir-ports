@@ -15,3 +15,9 @@ versionRange = "[26.1.2.109,)"
 
 [[mixins]]
 config = "alternate-current.mixins.json"
+
+[[mixins]]
+config = "scalablelux.mixins.json"
+
+[[accessTransformers]]
+file = "META-INF/scalablelux.at.cfg"
