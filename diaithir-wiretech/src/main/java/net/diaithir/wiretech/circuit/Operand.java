@@ -25,6 +25,6 @@ public record Operand(String signal, int constant, int mask) {
     public String text() {
         if (signal == null) return Integer.toString(constant);
         String p = mask == RED ? "red:" : mask == GREEN ? "green:" : "";
-        return p + (signal.startsWith("virtual:") ? signal.substring(8) : signal.startsWith("minecraft:") ? signal.substring(10) : signal);
+        return p + Logic.Parse.short_(signal);
     }
 }

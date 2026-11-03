@@ -120,6 +120,8 @@ public final class CoreCheck {
         eq("mod0", 0L, ArithOp.MOD.apply(5, 0));
         eq("pow", 1024L, ArithOp.POW.apply(2, 10));
         eq("negpow", 0L, ArithOp.POW.apply(2, -1));
+        eq("roundtrip virtual word", "const virtual:foo=1", Logic.parse("const virtual:foo=1").text());
+        eq("roundtrip minecraft letter", "const minecraft:a=1", Logic.parse("const minecraft:a=1").text());
         eq("pow1", 1L, ArithOp.POW.apply(1, Integer.MAX_VALUE));
         eq("pow-1", -1L, ArithOp.POW.apply(-1, Integer.MAX_VALUE));
         eq("pow0", 0L, ArithOp.POW.apply(0, Integer.MAX_VALUE));

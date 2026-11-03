@@ -141,7 +141,16 @@ public sealed interface Logic permits Logic.Constant, Logic.Arith, Logic.Decider
         private Parse() {}
 
         static String short_(String id) {
-            return id.startsWith("virtual:") ? id.substring(8) : id.startsWith("minecraft:") ? id.substring(10) : id;
+            // strip a namespace only when the bare form parses back to the same signal (one letter is virtual, any other bare name is minecraft)
+            if (id.startsWith("virtual:")) {
+                String rest = id.substring(8);
+                return rest.matches("[a-z]") ? rest : id;
+            }
+            if (id.startsWith("minecraft:")) {
+                String rest = id.substring(10);
+                return rest.matches("[a-z]") ? id : rest;
+            }
+            return id;
         }
 
         static String name(String t) {

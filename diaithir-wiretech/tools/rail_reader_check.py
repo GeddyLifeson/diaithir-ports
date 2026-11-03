@@ -2,6 +2,12 @@
 import sys, time, os
 sys.path.insert(0, os.environ.get('HEADLESS_BOT', '/tmp/hb/cloud/headless_bot'))
 from lane import Lane
+def ok(c, r):
+    t = ' '.join(r)
+    if c.endswith(' air'): return True
+    want = 'Summoned' if c.startswith('summon') else 'Modified' if c.startswith('data merge') else 'Changed the block' if c.startswith('setblock') else None
+    return want is None or want in t
+
 out, *jars = sys.argv[1:]
 with Lane('railread', jars, out=out, srv_xmx='2G') as L:
     L.start_client(); d = L.drive
@@ -11,7 +17,7 @@ with Lane('railread', jars, out=out, srv_xmx='2G') as L:
               'summon minecraft:minecart 3.5 -59.9 -2.5 {CustomName:"Alpha"}',
               'setblock 6 -60 -4 rail', 'setblock 6 -60 -5 rail', 'summon minecraft:minecart 6.5 -59.9 -4.5 {CustomName:"Beta",NoGravity:1b}', 'setblock 6 -60 -3 diaithircarts:block_signal[facing=north]', 'setblock 5 -60 -3 diaithir_wiretech:electronic_circuit_reader[facing=west]']:
         r = L.server_cmd(c, 1.0); print(c, '->', r)
-        if any('Could not' in x or 'Unknown' in x for x in r): bad.append(c)
+        if not ok(c, r): bad.append(c)
     time.sleep(6)
     for name, x in (('rail', 2), ('signal', 5)):
         L.look(x+0.5, -60, 0.5, 180, 20); time.sleep(1); d.key("r"); time.sleep(4); L.shot(f'{name}_reader.png'); d.key('Escape'); time.sleep(1)

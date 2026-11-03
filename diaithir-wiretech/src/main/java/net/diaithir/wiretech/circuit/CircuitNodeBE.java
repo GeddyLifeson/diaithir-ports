@@ -80,8 +80,10 @@ public final class CircuitNodeBE extends BlockEntity {
         if (text.length() > 300) throw new IllegalArgumentException("A program can be at most 300 characters.");
         Logic l = Logic.parse(text);
         if (!fits(l)) throw new IllegalArgumentException("A " + kind.display + " cannot run '" + text + "'.");
+        String norm = l.text();
+        if (norm.length() > 300) throw new IllegalArgumentException("A program can be at most 300 characters.");
         this.logic = l;
-        this.program = l.text();
+        this.program = norm;
     }
 
     private boolean fits(Logic l) {
