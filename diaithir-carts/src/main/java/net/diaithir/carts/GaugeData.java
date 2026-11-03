@@ -22,6 +22,11 @@ public final class GaugeData {
     /** The vehicle's engine class, as the integration matrix names it in diaithir-units ({@code Fuels.engine(id).accepts(fuelId)}): steam_piston, diesel_engine, electric_motor, or arcane_motor once fitted with a mana firebox or cell. Plain ids, so no code dependency. */
     public static final Supplier<AttachmentType<String>> ENGINE = ATTACHMENTS.register("engine", () -> AttachmentType.builder(() -> "").serialize(Codec.STRING.fieldOf("id")).build());
 
+    /** Joules banked on a magic-fitted vehicle (see MagicFuel). */
+    public static final Supplier<AttachmentType<Long>> JOULES = ATTACHMENTS.register("joules", () -> AttachmentType.builder(() -> 0L).serialize(Codec.LONG.fieldOf("j")).build());
+    /** Rated power of the vehicle in W (locomotives: the roster's power), used to price a fill of fire in joules. */
+    public static final Supplier<AttachmentType<Integer>> RATED = ATTACHMENTS.register("rated", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT.fieldOf("w")).build());
+
     public static Gauge of(AbstractMinecart cart) {
         return Gauge.of(cart.getData(TYPE));
     }

@@ -139,6 +139,16 @@ public final class YardSelfTest {
         var steam = spawnAt(level, p, "loco_mallard");
         if (steam == null || net.diaithir.carts.Autonomy.crewRequired(steam) != 2 || net.diaithir.carts.Autonomy.crewRequired(stdCart) != 1) f.add("crew counts not stored");
         if (steam != null) steam.discard();
+        var rocket = spawnAt(level, p, "loco_rocket");
+        if (rocket instanceof net.minecraft.world.entity.vehicle.minecart.MinecartFurnace fc) {
+            if (net.diaithir.carts.MagicFuel.tick(rocket)) f.add("unfitted locomotive lit by magic");
+            rocket.setData(net.diaithir.carts.MagicFuel.FITTED, true);
+            net.diaithir.carts.MagicFuel.charge(rocket, 10_000_000L);
+            boolean fired = net.diaithir.carts.MagicFuel.tick(rocket);
+            long left = rocket.getData(GaugeData.JOULES);
+            if (!fired || left != 10_000_000L - net.diaithir.carts.MagicFuel.fillCost(rocket) || left < 5_000_000L) f.add("magic fill failed: fired " + fired + " bank " + left);
+            rocket.discard();
+        } else f.add("loco_rocket is not a furnace cart");
         stdCart.discard(); narCart.discard();
     }
 

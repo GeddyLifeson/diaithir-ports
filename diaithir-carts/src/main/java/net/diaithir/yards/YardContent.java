@@ -52,7 +52,7 @@ public final class YardContent {
             ALL.add(ITEMS.registerSimpleBlockItem(b));
         }
         for (YardData.Named p : YardData.PARTS) ALL.add(ITEMS.registerSimpleItem(p.id()));
-        for (YardData.Vehicle v : YardData.VEHICLES) ALL.add(ITEMS.registerItem(v.id(), q -> new RollingStockItem(q, v.name(), v.category(), net.diaithir.carts.Gauge.of(v.gauge()), v.crew(), v.engine()), q -> q.stacksTo(1)));
+        for (YardData.Vehicle v : YardData.VEHICLES) ALL.add(ITEMS.registerItem(v.id(), q -> new RollingStockItem(q, v.name(), v.category(), net.diaithir.carts.Gauge.of(v.gauge()), v.crew(), v.engine(), v.rated()), q -> q.stacksTo(1)));
     }
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<YardBlockEntity>> YARD_BE = BLOCK_ENTITIES.register("yard",

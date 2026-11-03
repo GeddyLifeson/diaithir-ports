@@ -74,6 +74,7 @@ public final class CartLogic {
 
     public static void tick(AbstractMinecart cart, ServerLevel level) {
         Coupling.pull(cart, level);
+        MagicFuel.tick(cart);
         BlockPos pos = cart.getCurrentBlockPosOrRailBelow();
         BlockState state = level.getBlockState(pos);
         Gauge own = GaugeData.of(cart);
