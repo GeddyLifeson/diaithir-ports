@@ -219,7 +219,7 @@ public final class SelfTest {
                     check(data.rituals().get(key).contains("|" + d.steps.indexOf(st) + "|"), "rite: wrong hour does not advance");
                     src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.from + 10));
                     long now = level.getOverworldClockTime() % 24000;
-                    check(now >= st.from && now <= st.to, "rite: the test could set the clock (" + now + ")");
+                    check(st.from <= st.to ? now >= st.from && now <= st.to : now >= st.from || now <= st.to, "rite: the test could set the clock (" + now + ")");
                     Ritual.use(level, altar, fp, ItemStack.EMPTY);
                 }
                 case "coop" -> {
