@@ -4,5 +4,11 @@
  "megamachines.cab.module_refused": "This machine cannot take an autonomy module, or already has one",
  "megamachines.cab.status.uncrewed": "%s: no crew, will not run",
  "megamachines.cab.status.crewed": "%s: crewed",
- "megamachines.cab.status.autonomous": "%s: autonomous"
+ "megamachines.cab.status.autonomous": "%s: autonomous",
+ "block.megamachines.dig_head": "Mega Dig Head",
+ "megamachines.dig_head.status.no_cab": "No mega cab in range",
+ "megamachines.dig_head.status.halted": "Cab will not run (no crew)",
+ "megamachines.dig_head.status.no_target": "Nothing to dig ahead",
+ "megamachines.dig_head.status.blocked": "Output container missing or full (%s dug)",
+ "megamachines.dig_head.status.digging": "Digging (%s dug)"
 }

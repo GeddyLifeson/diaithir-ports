@@ -1,4 +1,4 @@
-package net.diaithir.mega;
+package org.diaithir.mega;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
