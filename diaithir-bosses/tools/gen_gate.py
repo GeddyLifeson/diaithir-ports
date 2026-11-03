@@ -1,4 +1,4 @@
-"""Adds the Shardfall Gate to diaithir-bosses: lang lines, the Codex quests (quests/gate.json) and the handbook chapter.
+"""S6873 Adds the Shardfall Gate to diaithir-bosses: lang lines, the Codex quests (quests/gate.json) and the handbook chapter.
 Re-runnable; touches only those three files. Run from the module root: python3 -I tools/gen_gate.py"""
 import json, os
 
