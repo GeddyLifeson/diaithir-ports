@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "diaithir_stations:block/foundry_boiler_off"
+    },
+    "lit=true": {
+      "model": "diaithir_stations:block/foundry_boiler_on"
+    }
+  }
+}

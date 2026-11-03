@@ -30,7 +30,8 @@ import java.util.Map;
 /**
  * Station framework: crafting grid only for simple everyday things; everything else is a part cast or forged at a station, an assembly of a few
  * major parts, or a process. Recipes are data (data/&lt;ns&gt;/diaithir_stations/station_recipe/*.json, see {@link StationRecipe}) tied to a station key from the
- * progression graph. Foundry stations here: hearth bench (Age I), wright bench (III), smeltery (IV), steam forge (V), fabricator (VIII).
+ * progression graph. Foundry stations here: hearth bench and kitchen counter (Age I), altar, wright bench and research bench (III), smeltery (IV, with
+ * Cast Basins), steam forge (V, steam from the hand-fed Boiler), assembler (VI), reclaimer (VII), fabricator (VIII).
  */
 @Mod(DiaithirStations.ID)
 public final class DiaithirStations {
@@ -45,22 +46,41 @@ public final class DiaithirStations {
     public static final Map<String, String> STATIONS = new LinkedHashMap<>();
     static {
         STATIONS.put("foundry_hearth_bench", "station.hearth_bench");
+        STATIONS.put("kitchen_counter", "station.kitchen");
+        STATIONS.put("altar_basic", "altar.basic");
         STATIONS.put("foundry_wright_bench", "station.wright_bench");
         STATIONS.put("foundry_smeltery", "station.smeltery");
         STATIONS.put("foundry_steam_forge", "station.steam_forge");
+        STATIONS.put("foundry_research_bench", "research.bench");
+        STATIONS.put("foundry_assembler", "machine.assembler");
+        STATIONS.put("foundry_reclaimer", "machine.reclaimer");
         STATIONS.put("foundry_fabricator", "station.fabricator");
     }
 
     public static final List<DeferredBlock<StationBlock>> BLOCK_LIST = new ArrayList<>();
+    public static final Map<String, DeferredBlock<StationBlock>> BLOCK_BY_NAME = new LinkedHashMap<>();
     public static final List<DeferredItem<BlockItem>> ITEM_LIST = new ArrayList<>();
     static {
         STATIONS.forEach((name, key) -> {
             DeferredBlock<StationBlock> b = BLOCKS.registerBlock(name, p -> new StationBlock(p, key),
                     () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0F, 8.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
             BLOCK_LIST.add(b);
+            BLOCK_BY_NAME.put(name, b);
             ITEM_LIST.add(ITEMS.registerSimpleBlockItem(b));
         });
     }
+
+    private static BlockBehaviour.Properties metal() {
+        return BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0F, 8.0F).sound(SoundType.METAL).requiresCorrectToolForDrops();
+    }
+
+    /** Cast basin: a smeltery recipe with {@code basins} N needs N of these touching the smeltery. */
+    public static final DeferredBlock<net.minecraft.world.level.block.Block> CAST_BASIN = BLOCKS.registerSimpleBlock("foundry_cast_basin", DiaithirStations::metal);
+    public static final DeferredItem<BlockItem> CAST_BASIN_ITEM = ITEMS.registerSimpleBlockItem(CAST_BASIN);
+    public static final DeferredBlock<BoilerBlock> BOILER = BLOCKS.registerBlock("foundry_boiler", BoilerBlock::new, DiaithirStations::metal);
+    public static final DeferredItem<BlockItem> BOILER_ITEM = ITEMS.registerSimpleBlockItem(BOILER);
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BoilerBlockEntity>> BOILER_BE = BLOCK_ENTITIES.register("foundry_boiler",
+            () -> new BlockEntityType<>(BoilerBlockEntity::new, BOILER.get()));
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<StationBlockEntity>> STATION_BE = BLOCK_ENTITIES.register("station",
             () -> new BlockEntityType<>(StationBlockEntity::new, BLOCK_LIST.stream().map(DeferredBlock::get).toArray(net.minecraft.world.level.block.Block[]::new)));
@@ -70,7 +90,11 @@ public final class DiaithirStations {
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
-            if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) for (DeferredItem<BlockItem> i : ITEM_LIST) e.accept(i.get());
+            if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+                for (DeferredItem<BlockItem> i : ITEM_LIST) e.accept(i.get());
+                e.accept(CAST_BASIN_ITEM.get());
+                e.accept(BOILER_ITEM.get());
+            }
         });
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class, e ->
                 e.addListener(StationRecipes.ID, new StationRecipes(e.getRegistryAccess())));

@@ -122,12 +122,26 @@ PACK_RECIPES = [
     ["#c:raw_materials/core_fragment", "minecraft:paper", "minecraft:nether_star"],
     ["#c:ores/shard_metal", "minecraft:paper", "minecraft:dragon_breath"],
 ]
-for i, ing in enumerate(PACK_RECIPES, 1):
-    wr(os.path.join(D, "recipe", f"foundry_research_pack_{i}.json"), {"type": "minecraft:crafting_shapeless", "ingredients": ing,
-        "result": {"id": f"{NS}:foundry_research_pack_{i}", "count": 2 if i < 3 else 1}, "category": "misc"})
-wr(os.path.join(D, "recipe", "foundry_operator_seat.json"), {"type": "minecraft:crafting_shaped", "key": {
-    "I": "minecraft:iron_ingot", "L": "minecraft:leather", "P": "minecraft:oak_planks", "R": "minecraft:redstone_lamp"},
-    "pattern": ["IRI", "LLL", "PIP"], "result": {"id": NS + ":foundry_operator_seat", "count": 1}, "category": "misc"})
+SR = os.path.join(D, "diaithir_stations", "station_recipe")
+os.makedirs(SR, exist_ok=True)
+for old in os.listdir(os.path.join(D, "recipe")):
+    if old.startswith("foundry_research_pack_") or old == "foundry_operator_seat.json":
+        os.remove(os.path.join(D, "recipe", old))
+
+
+def ing(x, n=1):
+    return {"tag": x[1:], "count": n} if x.startswith("#") else {"item": x, "count": n}
+
+
+# Pack 1 (a clay tablet) stays a simple grid recipe; packs 2 to 7 are made at the research bench, the Operator Seat at the assembler.
+wr(os.path.join(D, "recipe", "foundry_research_pack_1.json"), {"type": "minecraft:crafting_shapeless", "ingredients": PACK_RECIPES[0],
+    "result": {"id": f"{NS}:foundry_research_pack_1", "count": 2}, "category": "misc"})
+for i, ings in enumerate(PACK_RECIPES[1:], 2):
+    wr(os.path.join(SR, f"foundry_research_pack_{i}.json"), {"station": "research.bench", "stage": "process", "time_s": 10,
+        "ingredients": [ing(x) for x in ings], "result": {"id": f"{NS}:foundry_research_pack_{i}", "count": 2 if i == 2 else 1}})
+wr(os.path.join(SR, "foundry_operator_seat.json"), {"station": "machine.assembler", "stage": "assembly", "time_s": 20, "operator": False,
+    "ingredients": [ing("minecraft:iron_ingot", 4), ing("minecraft:leather", 3), ing("minecraft:oak_planks", 2), ing("minecraft:redstone_lamp")],
+    "result": {"id": NS + ":foundry_operator_seat", "count": 1}})
 
 # Shared convention tags the pack recipes use. Empty here, other modules add their items; recipes load either way.
 for t in ("gears/iron", "ingots/steel", "plates/copper", "raw_materials/core_fragment", "ores/shard_metal"):
@@ -155,8 +169,10 @@ D2 = os.path.join(ROOT, "data", NS2)
 for d in ("textures/block", "models/block", "blockstates", "items", "lang"):
     os.makedirs(os.path.join(A2, d), exist_ok=True)
 os.makedirs(os.path.join(D2, "recipe"), exist_ok=True)
-STATIONS = [("foundry_hearth_bench", "Hearth Bench", (200, 110, 40), "I"), ("foundry_wright_bench", "Wright Bench", (170, 130, 70), "III"),
-            ("foundry_smeltery", "Smeltery", (230, 90, 30), "IV"), ("foundry_steam_forge", "Steam Forge", (200, 200, 205), "V"),
+STATIONS = [("foundry_hearth_bench", "Hearth Bench", (200, 110, 40), "I"), ("kitchen_counter", "Kitchen Counter", (230, 200, 120), "I"),
+            ("altar_basic", "Altar", (80, 210, 120), "III"), ("foundry_wright_bench", "Wright Bench", (170, 130, 70), "III"),
+            ("foundry_research_bench", "Research Bench", (90, 150, 230), "III"), ("foundry_smeltery", "Smeltery", (230, 90, 30), "IV"),
+            ("foundry_steam_forge", "Steam Forge", (200, 200, 205), "V"), ("foundry_assembler", "Assembler", (255, 200, 60), "VI"), ("foundry_reclaimer", "Reclaimer", (190, 110, 220), "VII"),
             ("foundry_fabricator", "Fabricator", (60, 200, 220), "VIII")]
 lang2 = {}
 ages2 = {}
@@ -176,7 +192,46 @@ for name, title, col, age in STATIONS:
     lang2["block.%s.%s" % (NS2, name)] = title
     ages2[NS2 + ":" + name] = age
 wr(os.path.join(A2, "lang", "en_us.json"), lang2)
+# Cast Basin (IV) and Boiler (V): plain support blocks of the smelting and steam lines
+cb = plate()
+d = ImageDraw.Draw(cb)
+d.ellipse([12, 12, 51, 51], fill=STEEL[3] + (255,), outline=EDGE + (255,), width=2)
+d.ellipse([18, 18, 45, 45], fill=(120, 50, 20, 255), outline=EDGE + (255,), width=2)
+hazard(cb, 55, 60)
+cb.save(os.path.join(A2, "textures", "block", "foundry_cast_basin.png"))
+for tag, col in (("off", (60, 50, 40)), ("on", (255, 150, 40))):
+    bo = plate()
+    d = ImageDraw.Draw(bo)
+    d.rectangle([14, 10, 49, 40], fill=DARK + (255,), outline=EDGE + (255,), width=2)
+    d.ellipse([22, 16, 41, 35], fill=col + (255,), outline=EDGE + (255,))
+    for y in (44, 50):
+        d.line([8, y, 56, y], fill=STEEL[2] + (255,), width=2)
+    lamp(d, 32, 57, col)
+    bo.save(os.path.join(A2, "textures", "block", "foundry_boiler_" + tag + ".png"))
+    wr(os.path.join(A2, "models", "block", "foundry_boiler_" + tag + ".json"), {"parent": "minecraft:block/cube_all", "textures": {"all": NS2 + ":block/foundry_boiler_" + tag}})
+wr(os.path.join(A2, "blockstates", "foundry_boiler.json"), {"variants": {"lit=false": {"model": NS2 + ":block/foundry_boiler_off"}, "lit=true": {"model": NS2 + ":block/foundry_boiler_on"}}})
+wr(os.path.join(A2, "items", "foundry_boiler.json"), {"model": {"type": "minecraft:model", "model": NS2 + ":block/foundry_boiler_off"}})
+wr(os.path.join(A2, "models", "block", "foundry_cast_basin.json"), {"parent": "minecraft:block/cube_all", "textures": {"all": NS2 + ":block/foundry_cast_basin"}})
+wr(os.path.join(A2, "blockstates", "foundry_cast_basin.json"), {"variants": {"": {"model": NS2 + ":block/foundry_cast_basin"}}})
+wr(os.path.join(A2, "items", "foundry_cast_basin.json"), {"model": {"type": "minecraft:model", "model": NS2 + ":block/foundry_cast_basin"}})
+lang2["block.%s.foundry_cast_basin" % NS2] = "Cast Basin"
+lang2["block.%s.foundry_boiler" % NS2] = "Boiler"
+wr(os.path.join(A2, "lang", "en_us.json"), lang2)
+ages2[NS2 + ":foundry_cast_basin"] = "IV"
+ages2[NS2 + ":foundry_boiler"] = "V"
+SUPPORT = {
+    "foundry_cast_basin": (["BCB", "I I", "BBB"], {"B": "minecraft:bricks", "C": "minecraft:cauldron", "I": "minecraft:iron_ingot"}),
+    "foundry_boiler": (["III", "IFI", "BBB"], {"I": "minecraft:iron_ingot", "F": "minecraft:furnace", "B": "minecraft:bricks"}),
+}
+for name, (pat, key) in SUPPORT.items():
+    wr(os.path.join(D2, "recipe", name + ".json"), {"type": "minecraft:crafting_shaped", "key": key, "pattern": pat,
+        "result": {"id": NS2 + ":" + name, "count": 1}, "category": "misc"})
 BENCH_RECIPES = {
+    "kitchen_counter": (["PPP", "BCB", "SSS"], {"P": "minecraft:oak_planks", "B": "minecraft:bricks", "C": "minecraft:cauldron", "S": "minecraft:smooth_stone"}),
+    "foundry_research_bench": (["PIP", "WGW", "SSS"], {"P": "minecraft:paper", "I": "minecraft:ink_sac", "W": "minecraft:oak_planks", "G": "#c:gears/iron", "S": "minecraft:smooth_stone"}),
+    "foundry_reclaimer": (["SCS", "GAG", "SSS"], {"S": "#c:ingots/steel", "C": "minecraft:redstone", "G": "#c:gears/iron", "A": NS2 + ":foundry_assembler"}),
+    "altar_basic": (["GSG", "SLS", "SSS"], {"G": "minecraft:gold_ingot", "S": "minecraft:smooth_stone", "L": "minecraft:lapis_block"}),
+    "foundry_assembler": (["SCS", "GHG", "III"], {"S": "#c:ingots/steel", "C": "minecraft:redstone", "G": "#c:gears/iron", "H": NS2 + ":foundry_steam_forge", "I": "minecraft:iron_block"}),
     "foundry_hearth_bench": (["SSS", "SFS", "SSS"], {"S": "minecraft:stone", "F": "minecraft:furnace"}),
     "foundry_wright_bench": (["IPI", "PHP", "III"], {"I": "minecraft:iron_ingot", "P": "minecraft:oak_planks", "H": NS2 + ":foundry_hearth_bench"}),
     "foundry_smeltery": (["BBB", "BWB", "BFB"], {"B": "minecraft:bricks", "W": NS2 + ":foundry_wright_bench", "F": "minecraft:blast_furnace"}),

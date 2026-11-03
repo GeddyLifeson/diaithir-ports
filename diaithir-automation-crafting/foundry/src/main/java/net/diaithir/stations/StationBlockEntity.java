@@ -34,6 +34,16 @@ public final class StationBlockEntity extends BlockEntity {
 
     public boolean busy() { return left > 0; }
 
+    /** Cast Basins touching this station on its four sides. */
+    int basins() {
+        int n = 0;
+        if (level == null) return 0;
+        for (net.minecraft.core.Direction d : net.minecraft.core.Direction.Plane.HORIZONTAL) {
+            if (level.getBlockState(worldPosition.relative(d)).is(DiaithirStations.CAST_BASIN.get())) n++;
+        }
+        return n;
+    }
+
     /** Puts as much of the stack as fits into the slots. Returns how many items went in. */
     public int load(ItemStack s) {
         int moved = 0;
@@ -58,10 +68,12 @@ public final class StationBlockEntity extends BlockEntity {
     public @Nullable String start() {
         if (level == null || level.isClientSide() || busy()) return null;
         for (StationRecipe r : StationRecipes.forStation(stationKey())) {
-            if (!r.satisfiedBy(inv)) continue;
+            if (!r.satisfiedBy(inv) || basins() < r.basins()) continue;
+            if (r.joules() > 0 && Boilers.available(level, worldPosition) + 1.0E-6 < r.joules()) continue;
             if (r.operator() && !Operators.work(level, worldPosition, Math.max(1, r.timeS()))) continue;
+            if (r.joules() > 0 && !Boilers.draw(level, worldPosition, r.joules())) continue;
             r.consume(inv);
-            pending = r.result().copy();
+            pending = r.result().create();
             left = Math.max(1, r.timeS() * 20);
             setChanged();
             return pending.getHoverName().getString();

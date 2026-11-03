@@ -10,10 +10,17 @@
     "diaithircrafting:foundry_research_pack_6": "VIII",
     "diaithircrafting:foundry_research_pack_7": "RODOS",
     "diaithir_stations:foundry_hearth_bench": "I",
+    "diaithir_stations:kitchen_counter": "I",
+    "diaithir_stations:altar_basic": "III",
     "diaithir_stations:foundry_wright_bench": "III",
+    "diaithir_stations:foundry_research_bench": "III",
     "diaithir_stations:foundry_smeltery": "IV",
     "diaithir_stations:foundry_steam_forge": "V",
-    "diaithir_stations:foundry_fabricator": "VIII"
+    "diaithir_stations:foundry_assembler": "VI",
+    "diaithir_stations:foundry_reclaimer": "VII",
+    "diaithir_stations:foundry_fabricator": "VIII",
+    "diaithir_stations:foundry_cast_basin": "IV",
+    "diaithir_stations:foundry_boiler": "V"
   },
   "_note": "Same Ages as data/diaithircrafting/age_gate.json, taken from plans/progression/graph.json."
 }

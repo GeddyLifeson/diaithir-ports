@@ -1,7 +1,14 @@
 {
   "block.diaithir_stations.foundry_hearth_bench": "Hearth Bench",
+  "block.diaithir_stations.kitchen_counter": "Kitchen Counter",
+  "block.diaithir_stations.altar_basic": "Altar",
   "block.diaithir_stations.foundry_wright_bench": "Wright Bench",
+  "block.diaithir_stations.foundry_research_bench": "Research Bench",
   "block.diaithir_stations.foundry_smeltery": "Smeltery",
   "block.diaithir_stations.foundry_steam_forge": "Steam Forge",
-  "block.diaithir_stations.foundry_fabricator": "Fabricator"
+  "block.diaithir_stations.foundry_assembler": "Assembler",
+  "block.diaithir_stations.foundry_reclaimer": "Reclaimer",
+  "block.diaithir_stations.foundry_fabricator": "Fabricator",
+  "block.diaithir_stations.foundry_cast_basin": "Cast Basin",
+  "block.diaithir_stations.foundry_boiler": "Boiler"
 }
