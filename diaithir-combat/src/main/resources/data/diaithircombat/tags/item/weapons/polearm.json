@@ -95,6 +95,7 @@
   {
    "id": "spartanweaponry:steel_lance",
    "required": false
-  }
+  },
+  "diaithircombat:lib_polearm"
  ]
 }

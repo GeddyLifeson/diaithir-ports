@@ -47,6 +47,7 @@
   {
    "id": "spartanweaponry:steel_parrying_dagger",
    "required": false
-  }
+  },
+  "diaithircombat:lib_dagger"
  ]
 }
