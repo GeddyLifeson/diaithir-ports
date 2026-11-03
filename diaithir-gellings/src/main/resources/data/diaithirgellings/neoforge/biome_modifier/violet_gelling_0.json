@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "minecraft:swamp",
+ "spawners": {
+  "type": "diaithirgellings:violet_gelling",
+  "weight": 8,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}
