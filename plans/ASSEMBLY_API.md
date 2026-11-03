@@ -34,6 +34,11 @@ YardRegistry.rollout(id, hook);                // owner of a yard type supplies 
 - Loading API: `Crane.move(source, target, stack)` also used for containers between ships, trains and trucks.
 - Mod-first note: Create gantries/contraptions are the model for movement; no crane mod has a 26.1 build, so cranes are clean-room in diaithir-yards.
 
+## Operators and blueprints
+- A crane has an `OperatorSeat` (cab). Operator = player riding the seat (controls: slew, trolley, hoist) or an NPC worker assigned to the seat (workers from the settlements/NPC lanes; NPC runs a `CraneJob` queue at its skill speed).
+- A **Blueprint** (`BlueprintDef`: yard id + ordered part list + target footprint) is an item the player writes at a drafting table. A manned crane with a blueprint and a stocked depot (`PartDepot`, a chest/container block in reach) runs the build: pick part, move, install, next stage, until `complete()`. Missing parts pause the job and list them in the controller.
+- Blueprints also cover block structures (bridges, hulls) via the ghost templates; same job queue.
+
 ## Visual growth
 Each stage names a `ghost` structure template. The controller renders the ghost for the current stage plus every finished stage's real blocks; installing a part places its block(s) from the part's `block` field at the stage anchor. Progress ticks show as a scaffold fade.
 
