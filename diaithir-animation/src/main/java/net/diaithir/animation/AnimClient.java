@@ -108,6 +108,7 @@ public final class AnimClient {
 
     /** A server-sent clip. After it the current gun loop resumes. */
     static void oneShot(Avatar a, String name) {
+        if (name.startsWith("body.")) { BodyClient.oneShot(a, name); return; }
         S s = STATE.computeIfAbsent(a.getId(), k -> new S());
         long now = a.level().getGameTime();
         if (name.endsWith(".fire")) {

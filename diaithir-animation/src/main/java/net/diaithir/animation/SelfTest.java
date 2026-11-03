@@ -89,9 +89,43 @@ public final class SelfTest {
             check(k != null && k.gun() && k.cls().equals(s.getValue()), s.getKey() + " -> " + (k == null ? "none" : k.cls()));
             if (k != null) check(k.clip(it.get(), "reload").startsWith("gun." + s.getKey().substring(s.getKey().indexOf(':') + 1)), "own reload clip for " + s.getKey());
         }
+        body(all);
         System.out.println("[animselftest] clips sent since boot: " + Anim.calls());
         System.out.println("[animselftest] clips checked " + clips + ", loaded " + all.size());
         LOG.forEach(System.out::println);
+    }
+
+    /** Body layer: body.json loads, every clip in body_clips.json exists, every action and item phase points at a clip, sample items resolve to the right kind. */
+    private static void body(Map<String, Animation> all) {
+        Map<String, Animation> b = new HashMap<>();
+        try (var in = SelfTest.class.getResourceAsStream("/assets/" + DiaithirAnimation.ID + "/player_animations/body.json")) {
+            b.putAll(UniversalAnimLoader.loadAnimations(in));
+        } catch (Exception e) { check(false, "body.json load failed: " + e); return; }
+        check(!b.isEmpty(), "body.json loads");
+        for (var e : b.entrySet()) {
+            check(e.getValue().length() > 0, e.getKey() + " has length");
+            check(!e.getValue().boneAnimations().isEmpty(), e.getKey() + " has bones");
+        }
+        JsonObject j;
+        try (var r = new InputStreamReader(SelfTest.class.getResourceAsStream("/body_clips.json"))) { j = new Gson().fromJson(r, JsonObject.class); }
+        catch (Exception e) { check(false, "body_clips.json " + e); return; }
+        j.getAsJsonArray("clips").forEach(x -> check(b.containsKey(x.getAsString()), "body clip " + x.getAsString()));
+        j.getAsJsonObject("actions").entrySet().forEach(x -> check(b.containsKey("act." + x.getValue().getAsString()), "action " + x.getKey() + " -> " + x.getValue().getAsString()));
+        j.getAsJsonObject("item_kinds").entrySet().forEach(x -> x.getValue().getAsJsonArray().forEach(ph -> check(b.containsKey("use." + x.getKey() + "." + ph.getAsString()), "use." + x.getKey() + "." + ph.getAsString())));
+        // every clip the client can request by name exists (state machine + server one-shots)
+        for (String n : List.of("act.die", "act.hurt", "act.land_soft", "act.land_hard", "act.jump", "act.sleep", "act.swim", "act.swim_sprint", "act.crawl", "act.tread", "act.wade", "act.fall",
+                "act.ladder", "act.vine", "act.scaffold", "act.climb", "act.ride_boat", "act.ride_cart", "act.ride_horse", "act.ride_mount", "act.sit_seat", "act.lean_walk", "act.lean_run",
+                "act.lean_sprint", "act.lean_sneak", "act.lean_sneak_walk", "act.hold_map", "act.hold_torch", "act.punch", "act.brew", "act.enchant", "act.trade", "act.craft", "act.open_container",
+                "act.close_container", "act.drop_item", "act.pick_up", "act.place", "act.respawn", "use.wings.deploy", "use.wings.fold", "use.wings.glide", "use.rod.cast", "use.rod.wait", "use.rod.reel"))
+            check(b.containsKey(n), "client clip " + n);
+        for (var s : Map.ofEntries(Map.entry("minecraft:snowball", "throwable"), Map.entry("minecraft:ender_pearl", "throwable"), Map.entry("minecraft:spyglass", "spyglass"),
+                Map.entry("minecraft:goat_horn", "horn"), Map.entry("minecraft:elytra", "wings"), Map.entry("minecraft:fishing_rod", "rod"), Map.entry("minecraft:potion", "drink"),
+                Map.entry("minecraft:apple", "food"), Map.entry("minecraft:bread", "food"), Map.entry("minecraft:filled_map", "map")).entrySet()) {
+            var it = BuiltInRegistries.ITEM.getOptional(Identifier.parse(s.getKey()));
+            String k = it.map(i -> BodyKind.of(new ItemStack(i))).orElse(null);
+            check(s.getValue().equals(k), s.getKey() + " body kind -> " + k);
+        }
+        System.out.println("[animselftest] body clips checked " + b.size());
     }
 
     private SelfTest() {}

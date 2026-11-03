@@ -10,6 +10,13 @@ MIT, original poses. Player animations on Player Animation Library 1.2.8 (MIT, r
 - Server API (`Anim.gun(player, "fire"|"dry"|"reload"|"inspect")`, `Anim.play`, `Anim.cast`) sends a visual-only packet to everyone tracking the player. Own guns have a reload clip exactly as long as the server reload.
 - Inspect key: H (rebindable), guns only.
 
+## Body layer (vanilla body and first person)
+Clean-room replacement for Not Enough Animations and the firstperson poses (ARR mods), on a PAL layer `body` (priority 1000) under the weapon layers.
+- 87 clips in `player_animations/body.json`, written by `tools/gen_body.py` (Global-Repo S6875): `act.*` body states and one-shots (crawl, swim, tread, wade, climb/ladder/vine/scaffold, glide, fall, jump, land soft/hard, ride horse/boat/cart/mount, sit, sleep, stand up, hurt, die, respawn, lean walk/run/sprint/sneak, punch, hold torch/map, interact, containers, craft, brew, enchant, trade, mine, place, equip armor, drop, pick up, carry, push/pull, emotes) and `use.<kind>.<phase>` held-item actions.
+- Held-item kinds from item tags `data/diaithiranimation/tags/item/anim/body/<kind>` (throwable, food, drink, horn, spyglass, map, tool, mount, wings, scroll, rod); vanilla consumable animations are the fallback. The generator fills the tags from `ANIMATIONS_COVERAGE.csv` owner 1.
+- `BodyClient` reads every player (local and remote) each tick and starts a clip only on a state change; priorities: death, sleep, riding, gliding, using an item, climbing, swimming, crawling, treading water, falling, sneak/sprint/walk lean, held map/torch. `BodyServer` sends visual-only one-shots for events with no client signal (container open, craft, brew, enchant, trade, drop, pick up, place, respawn) as `Net.Play "body.<name>"`.
+- First person: while a clip that uses the arms plays (use.*, hold, interact, mine, place) the third-person arms and held item are shown, otherwise vanilla first person. 3D skin layers (skinlayers3d replacement) are not in this PR.
+
 ## Wiring
 - Komrag (diaithir-combat) needs no change: it already swings the vanilla arm on the server, which the client animates.
 - diaithir-firearms: `AnimHook` (soft MethodHandle, no-op without this mod) calls fire, dry and reload. Separate PR stacked on #158.

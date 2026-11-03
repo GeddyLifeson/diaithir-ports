@@ -16,6 +16,8 @@ neoForge {
         }
         client {
             client()
+            // headless test: ./gradlew runClient -PjoinArgs="--username Tester --quickPlayMultiplayer 127.0.0.1:25565"
+            if (project.hasProperty('joinArgs')) project.property('joinArgs').toString().split(' ').each { programArgument it }
         }
     }
     mods { diaithiranimation { sourceSet(sourceSets.main) } }
