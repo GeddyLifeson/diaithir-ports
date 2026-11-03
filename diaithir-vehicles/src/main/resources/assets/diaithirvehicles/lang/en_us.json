@@ -1,4 +1,6 @@
 {
   "block.diaithirvehicles.fuel_tank": "Fuel Tank",
-  "item.diaithirvehicles.jerry_can": "Jerry Can"
+  "item.diaithirvehicles.jerry_can": "Jerry Can",
+  "item.diaithirvehicles.tracked_chassis": "Tracked Chassis",
+  "entity.diaithirvehicles.tracked_chassis": "Tracked Chassis"
 }

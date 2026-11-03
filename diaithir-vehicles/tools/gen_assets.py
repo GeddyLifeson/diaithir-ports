@@ -95,3 +95,39 @@ with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as 
         {"id": f"{NS}:jerry_can", "name": "Jerry Can", "text": "Holds 20 L of one fuel. Use on a tank to pour in, sneak-use to draw out, right-click a vehicle to refuel it. Age V."},
     ], f, indent=1)
     f.write("\n")
+
+# ---- tracked chassis (survey p1: Flan's tank-track fold, clean-room) ----
+def chassis_icon():
+    im = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+    px = im.load()
+    for x in range(1, 15):
+        for y in range(4, 9):
+            px[x, y] = steel((88, 100, 80)) + (255,)  # olive hull
+        for y in (10, 11, 12, 13):
+            px[x, y] = steel((34, 36, 40)) + (255,)  # tracks
+    for x in range(5, 11):
+        for y in range(2, 4):
+            px[x, y] = steel((100, 112, 90)) + (255,)  # turret
+    px[11, 3] = px[12, 3] = px[13, 3] = (60, 64, 60, 255)  # gun
+    for x in range(2, 14, 3):
+        px[x, 11] = (110, 116, 126, 255)  # road wheels
+    return im
+
+
+chassis_icon().save(os.path.join(A, "textures/item/tracked_chassis.png"))
+wj("models/item/tracked_chassis.json", {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/tracked_chassis"}})
+wj("items/tracked_chassis.json", {"model": {"type": "minecraft:model", "model": f"{NS}:item/tracked_chassis"}})
+lang = json.load(open(os.path.join(A, "lang/en_us.json")))
+lang["item.diaithirvehicles.tracked_chassis"] = "Tracked Chassis"
+lang["entity.diaithirvehicles.tracked_chassis"] = "Tracked Chassis"
+wj("lang/en_us.json", lang)
+wj("recipe/tracked_chassis.json", {"type": "minecraft:crafting_shaped", "category": "misc", "key": {"I": "minecraft:iron_block", "T": f"{NS}:fuel_tank", "F": "minecraft:furnace", "P": "minecraft:piston"},
+                                   "pattern": ["IFI", "ITI", "PPP"], "result": {"id": f"{NS}:tracked_chassis", "count": 1}}, D)
+gate = json.load(open(os.path.join(D, "age_gate.json")))
+gate["tier2"] = {"age": 6, "items": [f"{NS}:tracked_chassis"]}
+wj("age_gate.json", gate, D)
+lib = json.load(open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json")))
+lib = [e for e in lib if e["id"] != f"{NS}:tracked_chassis"] + [{"id": f"{NS}:tracked_chassis", "name": "Tracked Chassis", "text": "A 12 tonne light tank hull on two tracks, 36 km/h top speed, 300 kW diesel from its own 600 L tank. Sit in it: W and S drive, A and D steer, and standing still it pivots on the spot. Climbs a full block. Age VI."}]
+with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as f:
+    json.dump(lib, f, indent=1)
+    f.write("\n")

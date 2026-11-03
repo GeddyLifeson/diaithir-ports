@@ -15,7 +15,11 @@ final class VehicleCommands {
     private VehicleCommands() {}
 
     static void register(CommandDispatcher<CommandSourceStack> d) {
-        d.register(Commands.literal("diaithirvehicles").then(Commands.literal("selftest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+        d.register(Commands.literal("diaithirvehicles").then(Commands.literal("trackstest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+            String r = TrackTest.run(c.getSource().getLevel());
+            c.getSource().sendSuccess(() -> Component.literal(r), false);
+            return r.startsWith("PASS") ? 1 : 0;
+        })).then(Commands.literal("selftest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
             String r = run(c.getSource().getLevel());
             c.getSource().sendSuccess(() -> Component.literal(r), false);
             return r.startsWith("PASS") ? 1 : 0;
