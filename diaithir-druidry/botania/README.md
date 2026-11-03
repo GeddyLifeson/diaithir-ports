@@ -15,3 +15,10 @@ Layout: `src/main/java` is the active (ported, compiling) set; `pending/java` ho
 `*.mixins.json`, `botania.mods.toml.pending` are wired in when the mixin and registry batches land.
 
 Batches: 1 API + helpers; 2 mana pool / spreader / flower core; then the rest.
+
+## State (11-03)
+First playable slice in `src/main/java/vazkii/botania/slice`: mana pool (block + block entity) and mana powder under the `botania` namespace, ids matching
+diaithir-units `magic_fuel.csv`. Mana is stored as joules at 100 J per mana (same constant as `MagicFuel`) and exposed through the NeoForge energy
+capability, so the trains Mana Cell reads it as FE. Age V (`magic.alchemy`) gate: `"botania": "V"` in `age_gates.json`.
+Data for unported content (worldgen, structures, jukebox songs, Patchouli books) waits in `pending-data/`.
+Boot test: `./gradlew runServer -PbootTest` (drops the Spell Engine dependency so the module loads alone).

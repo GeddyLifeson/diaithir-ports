@@ -34,3 +34,13 @@ dependencies {
 }
 
 tasks.withType(JavaCompile).configureEach { options.compilerArgs += ["-Xmaxerrs","20000"] }
+
+processResources {
+    inputs.property 'version', project.mod_version
+    inputs.property 'bootTest', project.hasProperty('bootTest')
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand(version: project.mod_version)
+        // -PbootTest drops the Spell Engine dependencies so the module boots alone in a dev server
+        if (project.hasProperty('bootTest')) { def cut = false; filter { if (it.startsWith('[[dependencies')) cut = true; cut ? null : it } }
+    }
+}

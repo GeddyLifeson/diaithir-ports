@@ -1,7 +1,8 @@
 {
  "_doc": "Namespace to Age (tech_ages.json style). Item entries beat namespace entries. Spell entries give the Age a spell is meant to be learnt at: tier 0 and 1 spells Age III, tier 2 Age IV, tier 3 Age V.",
  "namespaces": {
-  "diaithir_druidry": "III"
+  "diaithir_druidry": "III",
+  "botania": "V"
  },
  "items": {
   "diaithir_druidry:thornlash": "III",
