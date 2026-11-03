@@ -194,7 +194,8 @@ def guns():
         out[f"gun.{c}.aim"] = clip(1.0, {"right_arm": [(0, ar), (1, ar)], "left_arm": [(0, al), (1, al)], "head": [(0, A(0, -6, 0)), (1, A(0, -6, 0))]}, loop=True)
         out[f"gun.{c}.sprint"] = clip(1.0, {"right_arm": [(0, A(-20, -10, 0)), (1, A(-20, -10, 0))], "left_arm": [(0, A(-25, 30, 0)), (1, A(-25, 30, 0))], "torso": [(0, A(8, 0, 0)), (1, A(8, 0, 0))]}, loop=True)
         out[f"gun.{c}.draw"] = clip(0.45, {"right_arm": [(0, A(10, 0, 30)), (0.25, A(-70, -10, 10)), (0.45, hr)], "left_arm": [(0, REST), (0.3, A(-40, 20, 0)), (0.45, hl)]})
-        out[f"gun.{c}.fire"] = clip(0.25, {"right_arm": [(0, ar), (0.04, A(ar[0] + rec, ar[1], ar[2])), (0.25, ar)], "left_arm": [(0, al), (0.04, A(al[0] + rec * 0.6, al[1], al[2])), (0.25, al)], "torso": [(0, REST), (0.04, A(-rec * 0.4, 0, 0)), (0.25, REST)], "head": [(0, A(0, -6, 0)), (0.04, A(-rec * 0.5, -6, 0)), (0.25, A(0, -6, 0))]})
+        rk = max(16, abs(rec) * 2.5) * (1 if rec >= 0 else -1)  # visible kick: >=16 deg, peak held two ticks so 20 fps video catches it
+        out[f"gun.{c}.fire"] = clip(0.4, {"right_arm": [(0, ar), (0.05, A(ar[0] + rk, ar[1], ar[2])), (0.15, A(ar[0] + rk, ar[1], ar[2])), (0.4, ar)], "left_arm": [(0, al), (0.05, A(al[0] + rk * 0.6, al[1], al[2])), (0.15, A(al[0] + rk * 0.6, al[1], al[2])), (0.4, al)], "torso": [(0, REST), (0.05, A(-rk * 0.5, 0, 0)), (0.15, A(-rk * 0.5, 0, 0)), (0.4, REST)], "head": [(0, A(0, -6, 0)), (0.05, A(-rk * 0.6, -6, 0)), (0.4, A(0, -6, 0))]})
         out[f"gun.{c}.dry"] = clip(0.2, {"right_arm": [(0, ar), (0.05, A(ar[0] + 2, ar[1], ar[2])), (0.2, ar)]})
         # reload: lower, bring weapon across, hand to magazine, seat, rack, back to ready
         out[f"gun.{c}.reload"] = reload_clip(c, rl)

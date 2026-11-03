@@ -117,7 +117,7 @@ public final class AnimClient {
         }
         long now = a.level().getGameTime();
         boolean gun = name.startsWith("gun.");
-        if (gun) { Kind gk = Kind.of(a.getMainHandItem()); if (gk != null && gk.gun()) GunFx.clip(a, name, gk.cls()); }
+        if (gun) { Kind gk = Kind.of(a.getMainHandItem()); String[] np = name.split("\\."); GunFx.clip(a, name, gk != null && gk.gun() ? gk.cls() : np.length > 1 ? np[1] : "pistol"); } // test commands play clips with any item in hand
         if (name.endsWith(".fire")) {
             if (now - s.lastFire < 3) return; // autos: keep the aim loop, no restart jitter
             s.lastFire = now;
