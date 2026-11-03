@@ -71,7 +71,17 @@ public final class Station {
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> e.getDispatcher().register(Commands.literal("diaithirvehicle")
                 .then(Commands.literal("toggle").executes(c -> ignition(c.getSource(), null)))
                 .then(Commands.literal("start").executes(c -> ignition(c.getSource(), true)))
-                .then(Commands.literal("stop").executes(c -> ignition(c.getSource(), false)))));
+                .then(Commands.literal("stop").executes(c -> ignition(c.getSource(), false)))
+                .then(Commands.literal("status").executes(c -> {
+                    String st = IvControl.status(c.getSource().getLevel(), c.getSource().getPosition(), 8.0);
+                    c.getSource().sendSuccess(() -> Component.literal(st == null ? "No vehicle within 8 blocks" : "Vehicle: " + st), false);
+                    return st == null ? 0 : 1;
+                }))
+                .then(Commands.literal("drive").then(Commands.argument("throttle", com.mojang.brigadier.arguments.DoubleArgumentType.doubleArg(0, 1)).executes(c -> {
+                    boolean ok = IvControl.drive(c.getSource().getLevel(), c.getSource().getPosition(), 8.0, com.mojang.brigadier.arguments.DoubleArgumentType.getDouble(c, "throttle"));
+                    c.getSource().sendSuccess(() -> Component.literal(ok ? "Throttle set, brakes released" : "No vehicle within 8 blocks"), false);
+                    return ok ? 1 : 0;
+                })))));
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> e.getDispatcher().register(Commands.literal("diaithirfuel")
                 .requires(Commands.hasPermission(Commands.LEVEL_OWNERS))
                 .then(Commands.literal("fill").then(Commands.argument("pos", BlockPosArgument.blockPos())

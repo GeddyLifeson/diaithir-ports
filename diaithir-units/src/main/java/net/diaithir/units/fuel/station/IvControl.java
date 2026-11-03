@@ -44,4 +44,88 @@ final class IvControl {
             return -1;
         }
     }
+
+    private static Object nearest(Level level, Vec3 at, double reach) {
+        Object best = null;
+        double bestD = Double.MAX_VALUE;
+        for (Object v : IvTargets.vehicles(level, new AABB(at, at).inflate(reach))) {
+            try {
+                Object pos = v.getClass().getField("position").get(v);
+                double d = at.distanceToSqr((double) pos.getClass().getField("x").get(pos), (double) pos.getClass().getField("y").get(pos), (double) pos.getClass().getField("z").get(pos));
+                if (d < bestD) { best = v; bestD = d; }
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                // skip
+            }
+        }
+        return best;
+    }
+
+    private static double var(Object vehicle, String field) throws ReflectiveOperationException {
+        Object cv = vehicle.getClass().getField(field).get(vehicle);
+        return (double) cv.getClass().getMethod("getValue").invoke(cv);
+    }
+
+    private static double named(Object vehicle, String key) throws ReflectiveOperationException {
+        Object cv = vehicle.getClass().getMethod("getOrCreateVariable", String.class).invoke(vehicle, key);
+        return (double) cv.getClass().getMethod("getValue").invoke(cv);
+    }
+
+    /** One-line state of the nearest vehicle: engines, fuel, brakes, throttle, speed, mass. Null when none is near. */
+    static String status(Level level, Vec3 at, double reach) {
+        Object v = nearest(level, at, reach);
+        if (v == null) return null;
+        StringBuilder sb = new StringBuilder();
+        try {
+            List<?> engines = (List<?>) v.getClass().getField("engines").get(v);
+            sb.append("engines=").append(engines.size()).append(" running=").append(v.getClass().getField("enginesRunning").getBoolean(v));
+            try {
+                sb.append(" rpm=").append(Math.round(named(v, "engine_rpm_1")));
+                sb.append(" gear=").append(named(v, "engine_gear_1"));
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                sb.append(" rpm=?");
+            }
+        } catch (ReflectiveOperationException | RuntimeException ex) {
+            sb.append("engines=?");
+        }
+        try {
+            Object tank = v.getClass().getField("fuelTank").get(v);
+            sb.append(" fuel=").append(tank.getClass().getMethod("getFluidLevel").invoke(tank)).append("/").append(tank.getClass().getMethod("getMaxLevel").invoke(tank)).append(" mB");
+        } catch (ReflectiveOperationException | RuntimeException ex) {
+            sb.append(" fuel=?");
+        }
+        String[][] vars = {{"throttleVar", "throttle"}, {"brakeVar", "brake"}, {"parkingBrakeVar", "parkingBrake"}};
+        for (String[] f : vars) {
+            try {
+                sb.append(' ').append(f[1]).append('=').append(String.format("%.2f", var(v, f[0])));
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                sb.append(' ').append(f[1]).append("=?");
+            }
+        }
+        try {
+            sb.append(" speed=").append(String.format("%.3f", named(v, "velocity"))).append(" blocks/tick");
+            sb.append(" mass=").append(Math.round((double) v.getClass().getMethod("getMass").invoke(v))).append(" kg");
+        } catch (ReflectiveOperationException | RuntimeException ex) {
+            sb.append(" speed=?");
+        }
+        return sb.toString();
+    }
+
+    /** Sets the throttle (0..1) and releases both brakes on the nearest vehicle; for tests and for tools without a driver seat. False when none near. */
+    static boolean drive(Level level, Vec3 at, double reach, double throttle) {
+        Object v = nearest(level, at, reach);
+        if (v == null) return false;
+        try {
+            set(v, "throttleVar", throttle);
+            set(v, "brakeVar", 0.0);
+            set(v, "parkingBrakeVar", 0.0);
+            return true;
+        } catch (ReflectiveOperationException | RuntimeException ex) {
+            return false;
+        }
+    }
+
+    private static void set(Object vehicle, String field, double value) throws ReflectiveOperationException {
+        Object cv = vehicle.getClass().getField(field).get(vehicle);
+        cv.getClass().getMethod("setTo", double.class, boolean.class).invoke(cv, value, true);
+    }
 }
