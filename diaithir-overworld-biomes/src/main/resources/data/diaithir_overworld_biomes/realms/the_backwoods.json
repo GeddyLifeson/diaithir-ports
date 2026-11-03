@@ -419,5 +419,199 @@
    "activator": "the_backwoods:memory_quartz",
    "frame": "the_backwoods:petrified_oak_planks"
   }
+ ],
+ "mobs": [
+  {
+   "id": "ash_weaver",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "blindspot_splinter",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "dorceless_splinter",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "fractus",
+   "kind": "blaze",
+   "role": "monster",
+   "hp": 20,
+   "atk": 4,
+   "scale": 1.0
+  },
+  {
+   "id": "fractus_prime",
+   "kind": "blaze",
+   "role": "boss",
+   "hp": 300,
+   "atk": 8,
+   "scale": 1.6
+  },
+  {
+   "id": "hewn_splinter",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "hollow",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "kyne_splinter",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "lignum_echinus",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "lignum_gigas",
+   "kind": "ravager",
+   "role": "boss",
+   "hp": 500,
+   "atk": 14,
+   "scale": 1.6
+  },
+  {
+   "id": "lignum_palus",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "lignum_spina",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "lignum_trilobita",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "lignum_vermis",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "log_splinter",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "petrified_lignum_echinus",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "petrified_lignum_spina",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "petrified_lignum_trilobita",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "petrified_log_splinter",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "rot",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "splinter",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "stilt_walker",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "verdant_engine",
+   "kind": "ravager",
+   "role": "boss",
+   "hp": 500,
+   "atk": 14,
+   "scale": 1.6
+  },
+  {
+   "id": "woodweaver",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  }
  ]
 }

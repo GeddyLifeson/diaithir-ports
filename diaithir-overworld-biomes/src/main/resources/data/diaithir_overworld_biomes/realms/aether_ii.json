@@ -2905,5 +2905,271 @@
    "activator": "minecraft:glowstone_dust",
    "frame": "aether_ii:aether_portal_frame"
   }
+ ],
+ "mobs": [
+  {
+   "id": "aechor_plant",
+   "kind": "guardian",
+   "role": "passive",
+   "hp": 15,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "aerbunny",
+   "kind": "silverfish",
+   "role": "passive",
+   "hp": 8,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "aerwhale",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "arctic_burrukai",
+   "kind": "ravager",
+   "role": "passive",
+   "hp": 30,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "arctic_kirrid",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "arctic_taegore",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "arkenium_taluton",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "bladeshroom_hunter",
+   "kind": "blaze",
+   "role": "monster",
+   "hp": 20,
+   "atk": 4,
+   "scale": 1.0
+  },
+  {
+   "id": "blue_swet",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "carrion_sprout",
+   "kind": "illager",
+   "role": "passive",
+   "hp": 12,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "cockatrice",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "edward",
+   "kind": "illager",
+   "role": "monster",
+   "hp": 24,
+   "atk": 5,
+   "scale": 1.0
+  },
+  {
+   "id": "flying_cow",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "glitterwing",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "golden_swet",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "gravitite_taluton",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "highfields_burrukai",
+   "kind": "ravager",
+   "role": "passive",
+   "hp": 30,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "highfields_kirrid",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "highfields_taegore",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "magnetic_burrukai",
+   "kind": "ravager",
+   "role": "passive",
+   "hp": 30,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "magnetic_kirrid",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "magnetic_taegore",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "mimic",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "moa",
+   "kind": "ravager",
+   "role": "passive",
+   "hp": 30,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "phyg",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "prismallard",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "sentry_golem",
+   "kind": "golem",
+   "role": "boss",
+   "hp": 700,
+   "atk": 18,
+   "scale": 1.6
+  },
+  {
+   "id": "shroudwing",
+   "kind": "phantom",
+   "role": "monster",
+   "hp": 18,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "skephid",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "skyroot_lizard",
+   "kind": "silverfish",
+   "role": "passive",
+   "hp": 8,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "slider",
+   "kind": "golem",
+   "role": "boss",
+   "hp": 700,
+   "atk": 18,
+   "scale": 1.6
+  },
+  {
+   "id": "tempest",
+   "kind": "phantom",
+   "role": "boss",
+   "hp": 290,
+   "atk": 6,
+   "scale": 1.6
+  },
+  {
+   "id": "zephyr",
+   "kind": "phantom",
+   "role": "monster",
+   "hp": 18,
+   "atk": 3,
+   "scale": 1.0
+  }
  ]
 }

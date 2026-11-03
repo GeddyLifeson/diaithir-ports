@@ -569,5 +569,63 @@
   "super_candle_white",
   "super_candle_yellow"
  ],
- "portals": []
+ "portals": [],
+ "mobs": [
+  {
+   "id": "bee_queen",
+   "kind": "phantom",
+   "role": "boss",
+   "hp": 290,
+   "atk": 6,
+   "scale": 1.6
+  },
+  {
+   "id": "beehemoth",
+   "kind": "phantom",
+   "role": "monster",
+   "hp": 18,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "beehemoth_queen",
+   "kind": "phantom",
+   "role": "boss",
+   "hp": 290,
+   "atk": 6,
+   "scale": 1.6
+  },
+  {
+   "id": "honey_slime",
+   "kind": "silverfish",
+   "role": "passive",
+   "hp": 8,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "rootmin",
+   "kind": "silverfish",
+   "role": "passive",
+   "hp": 8,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "sentry_watcher",
+   "kind": "guardian",
+   "role": "monster",
+   "hp": 30,
+   "atk": 6,
+   "scale": 1.0
+  },
+  {
+   "id": "variant_bee",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  }
+ ]
 }

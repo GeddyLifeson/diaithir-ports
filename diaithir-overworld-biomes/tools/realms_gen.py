@@ -375,4 +375,73 @@ lp = RES / f'assets/{OWN}/lang/en_us.json'; L = json.loads(lp.read_text()) if lp
 L[f'codex.{OWN}.{NS}.title'] = cfg['title']
 L[f'codex.{OWN}.{NS}.body'] = cfg['title'] + ': replacement realm with the same ids as the original mod; ' + str(len(man)) + ' blocks, ' + str(len(biomes)) + ' biomes.'
 lp.write_text(json.dumps(L, indent=1) + '\n')
+
+# ---------- slice 4: mobs ----------
+import hashlib, colorsys, io
+from PIL import Image
+KIND_TEX = {'zombie':'zombie/zombie','illager':'illager/vindicator','golem':'iron_golem/iron_golem','spider':'spider/spider','ravager':'illager/ravager',
+            'blaze':'blaze/blaze','silverfish':'silverfish/silverfish','phantom':'phantom/phantom','guardian':'guardian/guardian','hoglin':'hoglin/hoglin'}
+BASE = {'zombie':(20,3),'illager':(24,5),'golem':(100,9),'spider':(16,3),'ravager':(60,7),'blaze':(20,4),'silverfish':(8,1.5),'phantom':(18,3),'guardian':(30,6),'hoglin':(40,5)}
+BOSS_RX = re.compile(r'(queen|_prime$|gigas|verdant_engine|forgotten_guardian|greater_dweller|^slider$|sentry_golem|^tempest$|^fractus_prime$)')
+PASSIVE_RX = re.compile(r'(bunny|whale|cow|phyg|sheepuff|^moa$|glitterwing|prismallard|lizard|^gwib|^mog$|smog_mog|rootmin|variant_bee|honey_slime|kirrid|burrukai|aechor|sprout|^gloomper$|stoneborn)')
+KIND_RX = [('spider', r'(spider|weaver|vermis|trilobita|echinus|spina|palus|scuttler|skephid)'), ('phantom', r'(bee|wing|zephyr|whale|flying|prismallard|tempest)'),
+           ('guardian', r'(gwib|watcher|aechor)'), ('golem', r'(golem|slider|taluton|stoneborn|forgotten|nargoyle|sentry)'),
+           ('ravager', r'(beast|burrukai|taegore|gigas|muncher|rotbelcher|engine|moa)'), ('hoglin', r'(dweller|brute|^mog$|smog_mog|kirrid|phyg|cow|sheepuff)'),
+           ('illager', r'(minion|denizen|edward|carrion)'), ('blaze', r'(blade|electric|^fractus)'),
+           ('silverfish', r'(swet|rootmin|lizard|scintling|rotling|slime|gloomper|bunny|chick|glitter|sploogie|puff|fractus)')]
+mobs = []
+mp = T / f'{A.realm}.mobs.txt'
+for n in ([l.strip() for l in mp.read_text().split('\n') if l.strip()] if mp.exists() else []):
+    kind = next((k for k, rx in KIND_RX if re.search(rx, n)), 'zombie')
+    boss = bool(BOSS_RX.search(n)); passive = (not boss) and bool(PASSIVE_RX.search(n))
+    hp, atk = BASE[kind]
+    if boss: hp, atk, sc = hp * 5 + 200, atk * 2, 1.6
+    elif passive: hp, atk, sc = max(8, hp // 2), 2, 1.0
+    else: sc = 1.0
+    mobs.append({'id': n, 'kind': kind, 'role': 'boss' if boss else ('passive' if passive else 'monster'), 'hp': hp, 'atk': atk, 'scale': sc})
+def tint(png, key, bright=1.0):
+    h = int(hashlib.sha256(f'{NS}:{key}'.encode()).hexdigest()[:8], 16)
+    hue, sat, val = (h % 360) / 360.0, 0.55 + ((h >> 9) % 40) / 100.0, 0.75 + ((h >> 17) % 30) / 100.0
+    im = Image.open(io.BytesIO(png)).convert('RGBA'); px = im.load()
+    for y in range(im.height):
+        for x in range(im.width):
+            r, g, b, a = px[x, y]
+            if a == 0: continue
+            l = (r + g + b) / 765.0
+            rr, gg, bb = colorsys.hsv_to_rgb(hue, min(1.0, sat), min(1.0, (0.15 + 0.85 * l) * val * bright))
+            px[x, y] = (int(rr * 255), int(gg * 255), int(bb * 255), a)
+    out = io.BytesIO(); im.save(out, 'PNG'); return out.getvalue()
+def wb(p, data):
+    p = RES / p; p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(data)
+egg = Z.read('assets/minecraft/textures/item/zombie_spawn_egg.png')
+dimtags = [D['name'] for D in (cfg.get('dimensions') or [{'name': cfg['dimension']}])]
+for i, m in enumerate(mobs):
+    n = m['id']
+    wb(f'assets/{NS}/textures/entity/{n}.png', tint(Z.read(f'assets/minecraft/textures/entity/{KIND_TEX[m["kind"]]}.png'), n, 1.15 if m['role'] == 'boss' else 1.0))
+    wb(f'assets/{NS}/textures/item/{n}_spawn_egg.png', tint(egg, n))
+    put(f'assets/{NS}/models/item/{n}_spawn_egg.json', {'parent': 'minecraft:item/generated', 'textures': {'layer0': f'{NS}:item/{n}_spawn_egg'}})
+    item(f'{n}_spawn_egg', f'{NS}:item/{n}_spawn_egg')
+    lang[f'entity.{NS}.{n}'] = title(n); lang[f'item.{NS}.{n}_spawn_egg'] = title(n) + ' Spawn Egg'
+    drop = {'zombie': 'minecraft:rotten_flesh', 'spider': 'minecraft:string'}.get(m['kind'], 'minecraft:bone')
+    if m['role'] == 'passive': drop = 'minecraft:leather'
+    cnt = (2, 4) if m['role'] == 'boss' else (0, 2)
+    if m['role'] == 'boss': drop = 'minecraft:diamond'
+    put(f'data/{NS}/loot_table/entities/{n}.json', {'type': 'minecraft:entity', 'random_sequence': f'{NS}:entities/{n}', 'pools': [{'rolls': 1.0, 'bonus_rolls': 0.0,
+        'entries': [{'type': 'minecraft:item', 'name': drop, 'functions': [{'function': 'minecraft:set_count', 'count': {'type': 'minecraft:uniform', 'min': cnt[0], 'max': cnt[1]}}]}]}]})
+    if m['role'] != 'boss':
+        put(f'data/{NS}/neoforge/biome_modifier/spawn_{n}.json', {'type': 'neoforge:add_spawns', 'biomes': f'#{NS}:is_{dimtags[i % len(dimtags)]}',
+            'spawners': {'type': f'{NS}:{n}', 'weight': 6 if m['role'] == 'passive' else 10, 'minCount': 1, 'maxCount': 3}})
+if mobs:
+    put(f'data/{NS}/tags/entity_type/bosses.json', {'replace': False, 'values': [f'{NS}:{m["id"]}' for m in mobs if m['role'] == 'boss']})
+    put(f'data/{NS}/tags/entity_type/{NS}_mobs.json', {'replace': False, 'values': [f'{NS}:{m["id"]}' for m in mobs]})
+    mf = json.loads((RES / f'data/{OWN}/realms/{NS}.json').read_text()); mf['mobs'] = mobs
+    put(f'data/{OWN}/realms/{NS}.json', mf)
+    put(f'data/{OWN}/codex/entries/{NS}_bestiary.json', {'id': f'{OWN}:{NS}_bestiary', 'category': 'bestiary', 'title': f'codex.{OWN}.{NS}_bestiary.title', 'body': f'codex.{OWN}.{NS}_bestiary.body',
+        'age': cfg['age'], 'icon': f'{NS}:{mobs[0]["id"]}_spawn_egg', 'unlock': {'type': 'kill_entity_tag', 'tag': f'{NS}:{NS}_mobs'}, 'covers': {'entities': f'#{NS}:{NS}_mobs'}})
+    put(f'data/{OWN}/quests/{NS}_hunt.json', {'id': f'{OWN}:{NS}_hunt', 'codex_link': f'{OWN}:{NS}_bestiary', 'age': cfg['age'], 'age_gate': f'diaithir:age/{cfg["age"]}',
+        'title': f'Hunt: {cfg["title"]}', 'description': f'Defeat one creature of {cfg["title"]}.', 'tasks': [{'type': 'kill', 'entity_tag': f'{NS}:{NS}_mobs', 'count': 1}], 'rewards': [{'type': 'energy', 'amount_j': 100}]})
+    L2 = json.loads(lp.read_text()); L2[f'codex.{OWN}.{NS}_bestiary.title'] = cfg['title'] + ' bestiary'
+    L2[f'codex.{OWN}.{NS}_bestiary.body'] = f'{len(mobs)} creatures: ' + ', '.join(title(m['id']) for m in mobs) + '.'
+    lp.write_text(json.dumps(L2, indent=1) + '\n')
+    put(f'assets/{NS}/lang/en_us.json', lang)
 print(NS, 'blocks', len(man), 'items', len(sitems), 'biomes', len(biomes), 'migrations', len(migr))

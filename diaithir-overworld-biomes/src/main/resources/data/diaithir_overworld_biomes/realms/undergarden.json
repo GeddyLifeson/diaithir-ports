@@ -1186,5 +1186,183 @@
    "activator": "undergarden:catalyst",
    "frame": "undergarden:forgotten_block"
   }
+ ],
+ "mobs": [
+  {
+   "id": "brute",
+   "kind": "hoglin",
+   "role": "monster",
+   "hp": 40,
+   "atk": 5,
+   "scale": 1.0
+  },
+  {
+   "id": "denizen",
+   "kind": "illager",
+   "role": "monster",
+   "hp": 24,
+   "atk": 5,
+   "scale": 1.0
+  },
+  {
+   "id": "dweller",
+   "kind": "hoglin",
+   "role": "monster",
+   "hp": 40,
+   "atk": 5,
+   "scale": 1.0
+  },
+  {
+   "id": "forgotten",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "forgotten_guardian",
+   "kind": "golem",
+   "role": "boss",
+   "hp": 700,
+   "atk": 18,
+   "scale": 1.6
+  },
+  {
+   "id": "gloomper",
+   "kind": "silverfish",
+   "role": "passive",
+   "hp": 8,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "greater_dweller",
+   "kind": "hoglin",
+   "role": "boss",
+   "hp": 400,
+   "atk": 10,
+   "scale": 1.6
+  },
+  {
+   "id": "gwib",
+   "kind": "guardian",
+   "role": "passive",
+   "hp": 15,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "gwibling",
+   "kind": "guardian",
+   "role": "passive",
+   "hp": 15,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "minion",
+   "kind": "illager",
+   "role": "monster",
+   "hp": 24,
+   "atk": 5,
+   "scale": 1.0
+  },
+  {
+   "id": "mog",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "muncher",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "nargoyle",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "rotbeast",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "rotbelcher",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "rotling",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "rotwalker",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "scintling",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "smog_mog",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "sploogie",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "stoneborn",
+   "kind": "golem",
+   "role": "passive",
+   "hp": 50,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "undergar",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  }
  ]
 }
