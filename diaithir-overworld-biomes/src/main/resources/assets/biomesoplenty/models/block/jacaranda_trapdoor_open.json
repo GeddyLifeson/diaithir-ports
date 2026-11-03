@@ -1,1 +1,1 @@
-{"parent": "minecraft:block/template_orientable_trapdoor_open", "textures": {"texture": "biomesoplenty:block/jacaranda_planks"}}
+{"parent": "minecraft:block/template_orientable_trapdoor_open", "textures": {"texture": "biomesoplenty:block/jacaranda_trapdoor"}}

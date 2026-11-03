@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["S#S", "S#S"], "key": {"#": "biomesoplenty:stripped_pine_planks", "S": "minecraft:stick"}, "result": {"id": "biomesoplenty:stripped_pine_fence_gate", "count": 1}}

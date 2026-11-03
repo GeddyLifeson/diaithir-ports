@@ -26,7 +26,7 @@
 },
 {
 "id": "cherry_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "cherry_button",
@@ -34,7 +34,7 @@
 },
 {
 "id": "cherry_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "cherry_door",
@@ -50,7 +50,7 @@
 },
 {
 "id": "cherry_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "cherry_leaves",
@@ -74,7 +74,7 @@
 },
 {
 "id": "cherry_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "cherry_slab",
@@ -126,7 +126,7 @@
 },
 {
 "id": "dead_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "dead_button",
@@ -134,7 +134,7 @@
 },
 {
 "id": "dead_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "dead_door",
@@ -150,7 +150,7 @@
 },
 {
 "id": "dead_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "dead_leaves",
@@ -174,7 +174,7 @@
 },
 {
 "id": "dead_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "dead_slab",
@@ -194,7 +194,7 @@
 },
 {
 "id": "empyreal_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "empyreal_button",
@@ -202,7 +202,7 @@
 },
 {
 "id": "empyreal_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "empyreal_door",
@@ -218,7 +218,7 @@
 },
 {
 "id": "empyreal_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "empyreal_leaves",
@@ -242,7 +242,7 @@
 },
 {
 "id": "empyreal_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "empyreal_slab",
@@ -266,7 +266,7 @@
 },
 {
 "id": "fir_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "fir_button",
@@ -274,7 +274,7 @@
 },
 {
 "id": "fir_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "fir_door",
@@ -290,7 +290,7 @@
 },
 {
 "id": "fir_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "fir_leaves",
@@ -314,7 +314,7 @@
 },
 {
 "id": "fir_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "fir_slab",
@@ -354,7 +354,7 @@
 },
 {
 "id": "hellbark_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "hellbark_button",
@@ -362,7 +362,7 @@
 },
 {
 "id": "hellbark_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "hellbark_door",
@@ -378,7 +378,7 @@
 },
 {
 "id": "hellbark_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "hellbark_leaves",
@@ -402,7 +402,7 @@
 },
 {
 "id": "hellbark_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "hellbark_slab",
@@ -426,7 +426,7 @@
 },
 {
 "id": "jacaranda_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "jacaranda_button",
@@ -434,7 +434,7 @@
 },
 {
 "id": "jacaranda_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "jacaranda_door",
@@ -450,7 +450,7 @@
 },
 {
 "id": "jacaranda_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "jacaranda_leaves",
@@ -474,7 +474,7 @@
 },
 {
 "id": "jacaranda_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "jacaranda_slab",
@@ -498,7 +498,7 @@
 },
 {
 "id": "magic_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "magic_button",
@@ -506,7 +506,7 @@
 },
 {
 "id": "magic_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "magic_door",
@@ -522,7 +522,7 @@
 },
 {
 "id": "magic_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "magic_leaves",
@@ -546,7 +546,7 @@
 },
 {
 "id": "magic_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "magic_slab",
@@ -566,7 +566,7 @@
 },
 {
 "id": "mahogany_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "mahogany_button",
@@ -574,7 +574,7 @@
 },
 {
 "id": "mahogany_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "mahogany_door",
@@ -590,7 +590,7 @@
 },
 {
 "id": "mahogany_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "mahogany_leaves",
@@ -614,7 +614,7 @@
 },
 {
 "id": "mahogany_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "mahogany_slab",
@@ -634,7 +634,7 @@
 },
 {
 "id": "maple_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "maple_button",
@@ -642,7 +642,7 @@
 },
 {
 "id": "maple_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "maple_door",
@@ -658,7 +658,7 @@
 },
 {
 "id": "maple_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "maple_leaves",
@@ -682,7 +682,7 @@
 },
 {
 "id": "maple_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "maple_slab",
@@ -738,7 +738,7 @@
 },
 {
 "id": "origin_oak_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "origin_oak_button",
@@ -746,7 +746,7 @@
 },
 {
 "id": "origin_oak_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "origin_oak_door",
@@ -762,7 +762,7 @@
 },
 {
 "id": "origin_oak_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "origin_oak_leaves",
@@ -786,7 +786,7 @@
 },
 {
 "id": "origin_oak_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "origin_oak_slab",
@@ -814,7 +814,7 @@
 },
 {
 "id": "palm_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "palm_button",
@@ -822,7 +822,7 @@
 },
 {
 "id": "palm_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "palm_door",
@@ -838,7 +838,7 @@
 },
 {
 "id": "palm_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "palm_leaves",
@@ -862,7 +862,7 @@
 },
 {
 "id": "palm_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "palm_slab",
@@ -882,7 +882,7 @@
 },
 {
 "id": "pine_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "pine_button",
@@ -890,7 +890,7 @@
 },
 {
 "id": "pine_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "pine_door",
@@ -906,7 +906,7 @@
 },
 {
 "id": "pine_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "pine_leaves",
@@ -930,7 +930,7 @@
 },
 {
 "id": "pine_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "pine_slab",
@@ -982,7 +982,7 @@
 },
 {
 "id": "redwood_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "redwood_button",
@@ -990,7 +990,7 @@
 },
 {
 "id": "redwood_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "redwood_door",
@@ -1006,7 +1006,7 @@
 },
 {
 "id": "redwood_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "redwood_leaves",
@@ -1030,7 +1030,7 @@
 },
 {
 "id": "redwood_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "redwood_slab",
@@ -1169,68 +1169,8 @@
 "kind": "log"
 },
 {
-"id": "stripped_pine_boat",
-"kind": "item"
-},
-{
-"id": "stripped_pine_button",
-"kind": "button"
-},
-{
-"id": "stripped_pine_chest_boat",
-"kind": "item"
-},
-{
-"id": "stripped_pine_door",
-"kind": "door"
-},
-{
-"id": "stripped_pine_fence",
-"kind": "fence"
-},
-{
-"id": "stripped_pine_fence_gate",
-"kind": "gate"
-},
-{
-"id": "stripped_pine_hanging_sign",
-"kind": "item"
-},
-{
-"id": "stripped_pine_leaves",
-"kind": "leaves"
-},
-{
 "id": "stripped_pine_log",
 "kind": "log"
-},
-{
-"id": "stripped_pine_planks",
-"kind": "planks"
-},
-{
-"id": "stripped_pine_pressure_plate",
-"kind": "plate"
-},
-{
-"id": "stripped_pine_sapling",
-"kind": "sapling"
-},
-{
-"id": "stripped_pine_sign",
-"kind": "item"
-},
-{
-"id": "stripped_pine_slab",
-"kind": "slab"
-},
-{
-"id": "stripped_pine_stairs",
-"kind": "stairs"
-},
-{
-"id": "stripped_pine_trapdoor",
-"kind": "trapdoor"
 },
 {
 "id": "stripped_pine_wood",
@@ -1242,14 +1182,6 @@
 },
 {
 "id": "stripped_redwood_wood",
-"kind": "log"
-},
-{
-"id": "stripped_stripped_pine_log",
-"kind": "log"
-},
-{
-"id": "stripped_stripped_pine_wood",
 "kind": "log"
 },
 {
@@ -1286,7 +1218,7 @@
 },
 {
 "id": "umbran_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "umbran_button",
@@ -1294,7 +1226,7 @@
 },
 {
 "id": "umbran_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "umbran_door",
@@ -1310,7 +1242,7 @@
 },
 {
 "id": "umbran_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "umbran_leaves",
@@ -1334,7 +1266,7 @@
 },
 {
 "id": "umbran_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "umbran_slab",
@@ -1390,7 +1322,7 @@
 },
 {
 "id": "willow_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "willow_button",
@@ -1398,7 +1330,7 @@
 },
 {
 "id": "willow_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "willow_door",
@@ -1414,7 +1346,7 @@
 },
 {
 "id": "willow_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "willow_leaves",
@@ -1438,7 +1370,7 @@
 },
 {
 "id": "willow_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "willow_slab",
@@ -1476,7 +1408,7 @@
 },
 {
 "id": "aspen_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "aspen_button",
@@ -1484,7 +1416,7 @@
 },
 {
 "id": "aspen_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "aspen_door",
@@ -1500,7 +1432,7 @@
 },
 {
 "id": "aspen_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "aspen_leaves",
@@ -1524,7 +1456,7 @@
 },
 {
 "id": "aspen_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "aspen_slab",
@@ -1712,7 +1644,7 @@
 },
 {
 "id": "maple_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "maple_button",
@@ -1720,7 +1652,7 @@
 },
 {
 "id": "maple_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "maple_door",
@@ -1736,7 +1668,7 @@
 },
 {
 "id": "maple_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "maple_leaves",
@@ -1760,7 +1692,7 @@
 },
 {
 "id": "maple_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "maple_slab",
@@ -1964,7 +1896,7 @@
 },
 {
 "id": "wisteria_boat",
-"kind": "item"
+"kind": "boat"
 },
 {
 "id": "wisteria_button",
@@ -1972,7 +1904,7 @@
 },
 {
 "id": "wisteria_chest_boat",
-"kind": "item"
+"kind": "chest_boat"
 },
 {
 "id": "wisteria_door",
@@ -1988,7 +1920,7 @@
 },
 {
 "id": "wisteria_hanging_sign",
-"kind": "item"
+"kind": "hanging_sign"
 },
 {
 "id": "wisteria_leaves",
@@ -2024,7 +1956,7 @@
 },
 {
 "id": "wisteria_sign",
-"kind": "item"
+"kind": "sign"
 },
 {
 "id": "wisteria_slab",
