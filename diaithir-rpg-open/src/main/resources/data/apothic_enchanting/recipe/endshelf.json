@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "B": "#c:bookshelves",
+        "E": "minecraft:end_stone_bricks",
+        "I": "apothic_enchanting:infused_breath",
+        "N": "#c:ender_pearls"
+    },
+    "pattern": [
+        "EEE",
+        "IBN",
+        "EEE"
+    ],
+    "result": {
+        "id": "apothic_enchanting:endshelf"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "blocks": "apothic_enchanting:soul_touched_deepshelf",
+    "stats": {
+        "eterna": 5.0,
+        "maxEterna": 75.0,
+        "quanta": 15.0
+    }
+}

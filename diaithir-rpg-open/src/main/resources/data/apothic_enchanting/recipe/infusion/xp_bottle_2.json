@@ -1,0 +1,13 @@
+{
+    "type": "apothic_enchanting:infusion",
+    "input": "minecraft:honey_bottle",
+    "requirements": {
+        "arcana": 25.0,
+        "eterna": 60.0,
+        "quanta": 25.0
+    },
+    "result": {
+        "count": 8,
+        "id": "minecraft:experience_bottle"
+    }
+}
