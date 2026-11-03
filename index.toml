@@ -68762,6 +68762,10 @@ file = "mods/diaithir-mekanism-addons-neoforge-26.1.2-1.0.0.jar"
 hash = "7a1856ccda05aabbbdf4941e3fb6d7e8fc12b729fae2ac7431ba27bf7ebd31a9"
 
 [[files]]
+file = "mods/diaithir-migrate-neoforge-26.1.2-1.0.0.jar"
+hash = "33086f061c9b7d2d58cc72759ee71ea3cf6ee93316e4672b7e66f7482dfe282a"
+
+[[files]]
 file = "mods/diaithir-miners-neoforge-26.1.2-1.0.0.jar"
 hash = "554d704d18fe8e29d63c704a9cd8164e4011a89a90bc4a4c5ac2d091c4c79c1f"
 
