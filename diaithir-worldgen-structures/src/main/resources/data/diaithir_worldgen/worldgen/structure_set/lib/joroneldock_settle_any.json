@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_0_any",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_1_any",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_2_any",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/settlement_3_any",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 133223648
+ }
+}

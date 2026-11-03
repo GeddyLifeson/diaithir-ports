@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/miarlinnys/settlement/0/garkar",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/miarlinnys/ar_miarlinnys_e6_places_000166",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/miarlinnys/ar_miarlinnys_e6_places_000171",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

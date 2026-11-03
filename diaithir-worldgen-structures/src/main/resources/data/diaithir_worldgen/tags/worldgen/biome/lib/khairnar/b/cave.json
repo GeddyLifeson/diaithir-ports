@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:khairnar_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:khairnar_grottoes",
+   "required": false
+  }
+ ]
+}

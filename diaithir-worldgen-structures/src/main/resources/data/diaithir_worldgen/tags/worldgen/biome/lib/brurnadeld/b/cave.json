@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:brurnadeld_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:brurnadeld_grottoes",
+   "required": false
+  }
+ ]
+}

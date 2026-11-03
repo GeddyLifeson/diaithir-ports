@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:nualireth_anavaum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nualireth_eluannae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nualireth_joruderden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nualireth_oriallinna",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nualireth_osusanalum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nualireth_silimenae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nualireth_surasaloma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nualireth_thiseth",
+   "required": false
+  }
+ ]
+}

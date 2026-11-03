@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_any",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_1_any",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_2_any",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 39620657
+ }
+}

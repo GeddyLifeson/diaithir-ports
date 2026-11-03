@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/thivsora/settlement/1/thazeithess",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/thivsora/st_thivsora_e7_places_000216",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

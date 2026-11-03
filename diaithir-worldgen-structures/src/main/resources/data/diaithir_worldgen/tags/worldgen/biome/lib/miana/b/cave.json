@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:miana_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miana_grottoes",
+   "required": false
+  }
+ ]
+}

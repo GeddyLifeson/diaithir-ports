@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:vesathora_isazasha",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vesathora_isiastora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vesathora_meranalira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vesathora_miinae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vesathora_osurallauta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vesathora_serillor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vesathora_thyuvsasha",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vesathora_ukaramari",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vesathora_vanakarala",
+   "required": false
+  }
+ ]
+}

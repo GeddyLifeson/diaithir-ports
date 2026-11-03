@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/listanum/landmark/3/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/listanum/gr_listanum_e7_assay_000028",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

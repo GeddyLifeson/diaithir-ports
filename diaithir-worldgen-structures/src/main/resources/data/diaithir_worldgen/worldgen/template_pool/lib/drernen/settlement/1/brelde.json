@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/drernen/settlement/1/brelde",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drernen/gr_drernen_e2_places_000545",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

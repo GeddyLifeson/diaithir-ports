@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/delve_0_cave",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/delve_1_cave",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/delve_2_cave",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/delve_3_cave",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 226599002
+ }
+}

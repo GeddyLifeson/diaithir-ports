@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/nueriel/settlement/3/corinus",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/nueriel/ar_nueriel_e7_assay_004969",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

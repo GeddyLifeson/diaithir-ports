@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/morurnath/settlement/2/asheizeth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/morurnath/gr_morurnath_e1_places_003439",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

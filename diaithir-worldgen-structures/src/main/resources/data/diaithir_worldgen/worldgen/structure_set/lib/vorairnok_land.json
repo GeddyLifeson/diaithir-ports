@@ -1,0 +1,30 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/fortress_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/landmark_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vorairnok/temple_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 73119267
+ }
+}

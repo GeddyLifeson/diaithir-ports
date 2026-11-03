@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:crestornen_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crestornen_grottoes",
+   "required": false
+  }
+ ]
+}

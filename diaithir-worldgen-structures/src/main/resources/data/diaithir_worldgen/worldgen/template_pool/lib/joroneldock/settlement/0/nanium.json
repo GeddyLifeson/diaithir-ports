@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/joroneldock/settlement/0/nanium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/joroneldock/gr_joroneldock_e4_places_000662",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

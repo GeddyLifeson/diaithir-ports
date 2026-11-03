@@ -1,0 +1,106 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/forge_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/forge_3_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/fortress_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/fortress_3_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/garden_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/garden_3_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/hall_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/hall_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/landmark_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/landmark_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/landmark_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/landmark_3_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/ruin_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/ruin_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/temple_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/temple_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/temple_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/temple_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/tower_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theivsis/tower_3_land",
+   "weight": 10
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 104784756
+ }
+}

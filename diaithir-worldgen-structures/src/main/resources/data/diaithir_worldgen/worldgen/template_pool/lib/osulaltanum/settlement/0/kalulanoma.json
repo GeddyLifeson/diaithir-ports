@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/osulaltanum/settlement/0/kalulanoma",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/osulaltanum/ki_osulaltanum_e6_places_000501",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

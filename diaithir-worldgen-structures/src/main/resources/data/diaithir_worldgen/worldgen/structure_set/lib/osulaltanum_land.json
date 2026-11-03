@@ -1,0 +1,66 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/fortress_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/hall_0_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/hall_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/landmark_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/temple_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/tomb_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/tower_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/tower_1_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 260604719
+ }
+}

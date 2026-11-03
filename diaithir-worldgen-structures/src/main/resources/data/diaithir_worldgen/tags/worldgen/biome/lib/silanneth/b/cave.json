@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:silanneth_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_grottoes",
+   "required": false
+  }
+ ]
+}

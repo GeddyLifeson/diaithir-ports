@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_eleinneth",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1_eleinneth",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 71267078
+ }
+}

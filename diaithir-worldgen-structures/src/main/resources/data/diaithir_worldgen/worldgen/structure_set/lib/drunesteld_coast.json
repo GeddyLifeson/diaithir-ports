@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/harbor_0_coast",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/harbor_1_coast",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/harbor_2_coast",
+   "weight": 9
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 87765398
+ }
+}

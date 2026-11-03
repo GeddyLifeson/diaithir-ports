@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/settlement_0_xaethith",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/settlement_1_xaethith",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/settlement_2_xaethith",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/settlement_3_xaethith",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 218951463
+ }
+}

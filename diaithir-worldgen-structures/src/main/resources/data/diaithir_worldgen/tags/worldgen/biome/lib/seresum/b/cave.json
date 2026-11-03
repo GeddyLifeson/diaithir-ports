@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:seresum_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seresum_grottoes",
+   "required": false
+  }
+ ]
+}

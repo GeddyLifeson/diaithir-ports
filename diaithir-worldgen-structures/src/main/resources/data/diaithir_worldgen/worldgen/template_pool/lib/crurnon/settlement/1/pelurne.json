@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/crurnon/settlement/1/pelurne",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/crurnon/ma_crurnon_e7_places_000090",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

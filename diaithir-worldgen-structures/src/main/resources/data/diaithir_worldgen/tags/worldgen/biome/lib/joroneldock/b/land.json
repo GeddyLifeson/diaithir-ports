@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:joroneldock_amaustinium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joroneldock_bredock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joroneldock_nanium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joroneldock_oralor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joroneldock_tarnanock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joroneldock_tarnudereld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joroneldock_telastia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joroneldock_teleostia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joroneldock_veornia",
+   "required": false
+  }
+ ]
+}
