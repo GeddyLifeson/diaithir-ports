@@ -63,17 +63,29 @@ w(f'{A}/packdefinition.json', {'packID': PK, 'packName': 'Diaithir Road Vehicles
 simple(f'{A}/objmodels/parts/vehicle_seat.obj', 'seat', box(-.25, 0, -.25, .25, .45, .25) + box(-.25, .45, -.28, .25, 1.0, -.2))
 simple(f'{A}/objmodels/parts/vehicle_engine.obj', 'engine', box(-.4, 0, -.4, .4, .5, .4))
 atlas((90, 90, 90), f'{A}/textures/parts/vehicle_seat.png'); atlas((90, 90, 90), f'{A}/textures/parts/vehicle_engine.png')
-w(f'{A}/jsondefs/parts/vehicle_seat.json', {'general': {'type': 'seat', 'name': 'Vehicle Seat', 'materialLists': [['minecraft:white_wool:0:2']]},
+# IV 25 reads collisionGroups only (the legacy 'collision' key is ignored): a seat without a click box can never be sat in.
+CLICK = lambda w_, h_: [{'collisionTypes': ['click', 'attack', 'bullet'], 'isInterior': False, 'collisions': [{'pos': [0, 0, 0], 'width': w_, 'height': h_}]}]
+w(f'{A}/jsondefs/parts/vehicle_seat.json', {'seat': {'standing': False, 'widthScale': 1.0, 'heightScale': 1.0},
+   'general': {'type': 'seat', 'name': 'Vehicle Seat', 'width': 0.9, 'height': 0.9, 'mass': 60, 'materialLists': [['minecraft:white_wool:0:2']]}, 'collisionGroups': CLICK(0.9, 0.9),
    'definitions': [{'subName': '', 'name': 'Vehicle Seat', 'extraMaterialLists': [[]]}]})
-w(f'{A}/jsondefs/parts/track_apc.json', {'general': {'type': 'ground_tread', 'name': 'APC Track', 'materialLists': [['minecraft:iron_ingot:0:16']]},
-   'ground': {'isTread': True, 'width': 0.6, 'height': 0.7, 'flatHeight': 0.7, 'climbHeight': 0.7, 'motiveFriction': 1.0, 'lateralFriction': 1.3, 'extraCollisionBoxOffset': 0.0, 'spacing': 4.6, 'canGoFlat': False},
+w(f'{A}/jsondefs/parts/track_apc.json', {'general': {'type': 'ground_wheel', 'name': 'APC Track', 'materialLists': [['minecraft:iron_ingot:0:16']]},
+   'ground': {'isWheel': True, 'width': 0.6, 'height': 0.7, 'flatHeight': 0.7, 'climbHeight': 0.7, 'motiveFriction': 1.0, 'lateralFriction': 1.3, 'extraCollisionBoxOffset': 0.0},
    'definitions': [{'subName': '', 'name': 'APC Track', 'extraMaterialLists': [[]]}]})
 simple(f'{A}/objmodels/parts/track_apc.obj', 'track', box(-.3, .05, -2.4, .3, .7, 2.4))
 atlas((46, 44, 42), f'{A}/textures/parts/track_apc.png')
+ICON = {'sedan': (150, 40, 40), 'jeep': (84, 94, 58), 'pickup': (60, 90, 140), 'van': (230, 230, 225), 'bus': (190, 30, 30), 'armcar': (96, 100, 84), 'wrecker': (200, 170, 40), 'firetruck': (190, 25, 25), 'apc': (84, 94, 62)}
+def icon(name, kind_, rgb):       # 16x16 flat item icon + the item model IV resolves as mts:item/<pack>.<id>
+    os.makedirs(f'{A}/textures/item', exist_ok=True); os.makedirs(f'{A}/models/item/{kind_}', exist_ok=True)
+    im = Image.new('RGBA', (16, 16), (0, 0, 0, 0)); d_ = ImageDraw.Draw(im)
+    if kind_ == 'vehicles': d_.rectangle([1, 6, 14, 11], fill=rgb + (255,)); d_.rectangle([4, 3, 11, 6], fill=rgb + (255,)); d_.ellipse([2, 10, 5, 13], fill=(25, 25, 25, 255)); d_.ellipse([10, 10, 13, 13], fill=(25, 25, 25, 255))
+    else: d_.ellipse([3, 3, 12, 12], fill=rgb + (255,))
+    im.save(f'{A}/textures/item/{name}.png'); w(f'{A}/models/item/{kind_}/{name}.json', {'parent': 'mts:item/basic', 'textures': {'layer0': f'{PK}:item/{name}'}})
+icon('vehicle_seat', 'parts', (200, 200, 200)); icon('track_apc', 'parts', (46, 44, 42))
 manifest = []
 for v in rows:
     kind = v['body']; L, W, H, r, paint, (dm, dkw, dl) = BODY[kind]; vid = v['id']; fuel = v['fuel']; name = v['iconic_design']
     mass = float(v['empty_mass_kg'] or dm); kw = float(v['power_kw'] or dkw); tank = float(v['tank_l_or_kg'] or dl); eff = EFF[v['engine']]
+    icon(vid, 'vehicles', ICON[kind]); icon(f'wheel_{vid}', 'parts', (30, 30, 30)); icon(f'engine_{vid}', 'parts', (90, 90, 90))
     body_model(kind).write(f'{A}/objmodels/vehicles/{vid}.obj'); atlas(paint, f'{A}/textures/vehicles/{vid}.png')
     if kind != 'apc':
         simple(f'{A}/objmodels/parts/wheel_{vid}.obj', 'tyre', cyl_x(0, 0, -.15, .15, r, 12)); atlas((30, 30, 30), f'{A}/textures/parts/wheel_{vid}.png')
@@ -87,22 +99,23 @@ for v in rows:
                   'downShiftRPM': [int(rpm * .3)] * 4, 'shiftSpeed': 10, 'clutchTime': 12, 'revResistance': 8, 'heatingCoefficient': 0.4, 'coolingCoefficient': 0.6, 'engineWearFactor': 0.3},
        'definitions': [{'subName': '', 'name': f'{name} Engine', 'modelName': 'vehicle_engine', 'textureName': 'vehicle_engine', 'extraMaterialLists': [[]]}]})
     hl, hw = L / 2, W / 2
-    parts = [{'pos': [0, 0.7, hl - 1.0], 'types': ['engine_car'], 'defaultPart': f'{PK}:engine_{vid}'}]
+    parts = [{'pos': [0, 0.7, hl - 1.0], 'types': ['engine_car'], 'defaultPart': f'{PK}:engine_{vid}', 'minValue': 0.0, 'maxValue': 100.0}]
     if kind == 'apc':
-        parts += [{'pos': [sx * (hw - .3), 0, 0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:track_apc'} for sx in (-1, 1)]
+        parts += [{'pos': [sx * (hw - .3), 0, 0], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:track_apc', 'minValue': 0.0, 'maxValue': 5.0} for sx in (-1, 1)]
     else:
         for z in ((hl - .9, -hl + .9) if L < 7 else (hl - 1.0, -hl + 1.2, -hl + 2.6)):
-            parts += [{'pos': [sx * (hw - .12), r, z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:wheel_{vid}'} for sx in (-1, 1)]
+            parts += [{'pos': [sx * (hw - .12), r, z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:wheel_{vid}', 'minValue': 0.0, 'maxValue': 5.0} for sx in (-1, 1)]
     parts.append({'pos': [-.4, 0.9, 0.2], 'types': ['seat'], 'isController': True, 'defaultPart': f'{PK}:vehicle_seat', 'dismountPos': [-hw - .8, 0.5, 0.2]})
     parts += [{'pos': [.4 if i % 2 == 0 else -.4, 0.9, -.8 - (i // 2) * .8], 'types': ['seat'], 'defaultPart': f'{PK}:vehicle_seat'} for i in range(min(int(v['seats']) - 1, 8))]
     w(f'{A}/jsondefs/vehicles/{vid}.json', {
      'general': {'type': 'vehicle', 'name': name, 'description': f'{v["type"].capitalize()} ({v["year"]}). Fuel: {fuels[fuel]["name"]}.',
                  'materialLists': [[f'minecraft:iron_ingot:0:{max(8, int(mass / 60))}'], ['minecraft:redstone:0:4']], 'health': int(100 + mass / 10)},
-     'motorized': {'emptyMass': mass, 'fuelCapacity': int(tank * 1000), 'defaultFuelQty': 0, 'hasRunningLights': True, 'hasHeadlights': True, 'axleRatio': 3.6, 'brakingFactor': 1.0,
+     'motorized': {'emptyMass': mass, 'fuelCapacity': int(tank * 1000), 'defaultFuelQty': int(tank * 1000 * 0.25), 'hasRunningLights': True, 'hasHeadlights': True, 'axleRatio': 3.6, 'brakingFactor': 1.0,
                    'dragCoefficient': 0.5, 'crossSectionalArea': round(W * H * .8, 2), 'steeringForceFactor': 1.0, 'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0,
                    **({'hasSkidSteer': True, 'hasPermanentSkidSteer': True} if kind == 'apc' else {}), 'isBigTruck': kind in ('bus', 'firetruck')},
      'car': {'isFrontWheelDrive': False, 'isRearWheelDrive': kind != 'apc', 'axleRatio': 3.6, 'dragCoefficient': 0.5},
-     'parts': parts, 'collision': [{'pos': [0, H / 2, 0], 'width': W, 'height': H}],
+     'parts': parts, 'collisionGroups': [{'collisionTypes': ['block', 'vehicle', 'entity', 'attack', 'bullet'], 'isInterior': False, 'health': int(100 + mass / 10), 'armorThickness': 3.0,
+                                         'collisions': [{'pos': [0, H / 2, z_], 'width': W, 'height': H} for z_ in (hl - 1.0, 0, -hl + 1.0)]}],
      'definitions': [{'subName': '', 'name': name, 'modelName': vid, 'textureName': vid, 'extraMaterialLists': [[]]}], 'rendering': {}})
     manifest.append({'id': vid, 'name': name, 'age': v['age'], 'role': v['role'], 'type': v['type'], 'fuel': fuel, 'mass_kg': mass, 'power_kw': kw, 'tank_l': tank})
 w(f'{M}/vehicles/age_gates_vehicles.json', {'_doc': 'Same shape as DiaithirRPG content/tech_ages.json; ids are Immersive Vehicles item ids.', 'items': {f'mts:{PK}.{m["id"]}': m['age'] for m in manifest}})

@@ -16,7 +16,7 @@
  "motorized": {
   "emptyMass": 11000.0,
   "fuelCapacity": 360000,
-  "defaultFuelQty": 0,
+  "defaultFuelQty": 90000,
   "hasRunningLights": true,
   "hasHeadlights": true,
   "axleRatio": 3.6,
@@ -47,7 +47,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_m113"
+   "defaultPart": "diaithirvehicles:engine_m113",
+   "minValue": 0.0,
+   "maxValue": 100.0
   },
   {
    "pos": [
@@ -56,9 +58,11 @@
     0
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:track_apc"
+   "defaultPart": "diaithirvehicles:track_apc",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -67,9 +71,11 @@
     0
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:track_apc"
+   "defaultPart": "diaithirvehicles:track_apc",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -177,15 +183,47 @@
    "defaultPart": "diaithirvehicles:vehicle_seat"
   }
  ],
- "collision": [
+ "collisionGroups": [
   {
-   "pos": [
-    0,
-    1.15,
-    0
+   "collisionTypes": [
+    "block",
+    "vehicle",
+    "entity",
+    "attack",
+    "bullet"
    ],
-   "width": 2.7,
-   "height": 2.3
+   "isInterior": false,
+   "health": 1200,
+   "armorThickness": 3.0,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.15,
+      1.4500000000000002
+     ],
+     "width": 2.7,
+     "height": 2.3
+    },
+    {
+     "pos": [
+      0,
+      1.15,
+      0
+     ],
+     "width": 2.7,
+     "height": 2.3
+    },
+    {
+     "pos": [
+      0,
+      1.15,
+      -1.4500000000000002
+     ],
+     "width": 2.7,
+     "height": 2.3
+    }
+   ]
   }
  ],
  "definitions": [

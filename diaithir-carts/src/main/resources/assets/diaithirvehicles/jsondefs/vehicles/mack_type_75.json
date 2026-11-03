@@ -16,7 +16,7 @@
  "motorized": {
   "emptyMass": 6000.0,
   "fuelCapacity": 150000,
-  "defaultFuelQty": 0,
+  "defaultFuelQty": 37500,
   "hasRunningLights": true,
   "hasHeadlights": true,
   "axleRatio": 3.6,
@@ -45,7 +45,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_mack_type_75"
+   "defaultPart": "diaithirvehicles:engine_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 100.0
   },
   {
    "pos": [
@@ -56,7 +58,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75"
+   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -67,7 +71,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75"
+   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -78,7 +84,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75"
+   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -89,7 +97,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75"
+   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -142,15 +152,47 @@
    "defaultPart": "diaithirvehicles:vehicle_seat"
   }
  ],
- "collision": [
+ "collisionGroups": [
   {
-   "pos": [
-    0,
-    1.45,
-    0
+   "collisionTypes": [
+    "block",
+    "vehicle",
+    "entity",
+    "attack",
+    "bullet"
    ],
-   "width": 2.4,
-   "height": 2.9
+   "isInterior": false,
+   "health": 700,
+   "armorThickness": 3.0,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.45,
+      2.25
+     ],
+     "width": 2.4,
+     "height": 2.9
+    },
+    {
+     "pos": [
+      0,
+      1.45,
+      0
+     ],
+     "width": 2.4,
+     "height": 2.9
+    },
+    {
+     "pos": [
+      0,
+      1.45,
+      -2.25
+     ],
+     "width": 2.4,
+     "height": 2.9
+    }
+   ]
   }
  ],
  "definitions": [

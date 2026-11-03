@@ -16,7 +16,7 @@
  "motorized": {
   "emptyMass": 7500.0,
   "fuelCapacity": 140000,
-  "defaultFuelQty": 0,
+  "defaultFuelQty": 35000,
   "hasRunningLights": true,
   "hasHeadlights": true,
   "axleRatio": 3.6,
@@ -45,7 +45,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_routemaster"
+   "defaultPart": "diaithirvehicles:engine_routemaster",
+   "minValue": 0.0,
+   "maxValue": 100.0
   },
   {
    "pos": [
@@ -56,7 +58,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -67,7 +71,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -78,7 +84,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -89,7 +97,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -100,7 +110,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -111,7 +123,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -219,15 +233,47 @@
    "defaultPart": "diaithirvehicles:vehicle_seat"
   }
  ],
- "collision": [
+ "collisionGroups": [
   {
-   "pos": [
-    0,
-    1.5,
-    0
+   "collisionTypes": [
+    "block",
+    "vehicle",
+    "entity",
+    "attack",
+    "bullet"
    ],
-   "width": 2.5,
-   "height": 3.0
+   "isInterior": false,
+   "health": 850,
+   "armorThickness": 3.0,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.5,
+      3.2
+     ],
+     "width": 2.5,
+     "height": 3.0
+    },
+    {
+     "pos": [
+      0,
+      1.5,
+      0
+     ],
+     "width": 2.5,
+     "height": 3.0
+    },
+    {
+     "pos": [
+      0,
+      1.5,
+      -3.2
+     ],
+     "width": 2.5,
+     "height": 3.0
+    }
+   ]
   }
  ],
  "definitions": [

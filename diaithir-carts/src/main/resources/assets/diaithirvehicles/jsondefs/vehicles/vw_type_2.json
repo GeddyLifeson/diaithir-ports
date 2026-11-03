@@ -16,7 +16,7 @@
  "motorized": {
   "emptyMass": 1000.0,
   "fuelCapacity": 40000,
-  "defaultFuelQty": 0,
+  "defaultFuelQty": 10000,
   "hasRunningLights": true,
   "hasHeadlights": true,
   "axleRatio": 3.6,
@@ -45,7 +45,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_vw_type_2"
+   "defaultPart": "diaithirvehicles:engine_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 100.0
   },
   {
    "pos": [
@@ -56,7 +58,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_vw_type_2"
+   "defaultPart": "diaithirvehicles:wheel_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -67,7 +71,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_vw_type_2"
+   "defaultPart": "diaithirvehicles:wheel_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -78,7 +84,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_vw_type_2"
+   "defaultPart": "diaithirvehicles:wheel_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -89,7 +97,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_vw_type_2"
+   "defaultPart": "diaithirvehicles:wheel_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -120,15 +130,47 @@
    "defaultPart": "diaithirvehicles:vehicle_seat"
   }
  ],
- "collision": [
+ "collisionGroups": [
   {
-   "pos": [
-    0,
-    1.05,
-    0
+   "collisionTypes": [
+    "block",
+    "vehicle",
+    "entity",
+    "attack",
+    "bullet"
    ],
-   "width": 1.8,
-   "height": 2.1
+   "isInterior": false,
+   "health": 200,
+   "armorThickness": 3.0,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.05,
+      1.2999999999999998
+     ],
+     "width": 1.8,
+     "height": 2.1
+    },
+    {
+     "pos": [
+      0,
+      1.05,
+      0
+     ],
+     "width": 1.8,
+     "height": 2.1
+    },
+    {
+     "pos": [
+      0,
+      1.05,
+      -1.2999999999999998
+     ],
+     "width": 1.8,
+     "height": 2.1
+    }
+   ]
   }
  ],
  "definitions": [

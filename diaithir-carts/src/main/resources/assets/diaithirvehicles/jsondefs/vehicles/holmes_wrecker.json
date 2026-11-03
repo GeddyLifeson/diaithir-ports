@@ -16,7 +16,7 @@
  "motorized": {
   "emptyMass": 2500.0,
   "fuelCapacity": 80000,
-  "defaultFuelQty": 0,
+  "defaultFuelQty": 20000,
   "hasRunningLights": true,
   "hasHeadlights": true,
   "axleRatio": 3.6,
@@ -45,7 +45,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:engine_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 100.0
   },
   {
    "pos": [
@@ -56,7 +58,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -67,7 +71,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -78,7 +84,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -89,7 +97,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 5.0
   },
   {
    "pos": [
@@ -120,15 +130,47 @@
    "defaultPart": "diaithirvehicles:vehicle_seat"
   }
  ],
- "collision": [
+ "collisionGroups": [
   {
-   "pos": [
-    0,
-    1.2,
-    0
+   "collisionTypes": [
+    "block",
+    "vehicle",
+    "entity",
+    "attack",
+    "bullet"
    ],
-   "width": 2.0,
-   "height": 2.4
+   "isInterior": false,
+   "health": 350,
+   "armorThickness": 3.0,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.2,
+      1.6
+     ],
+     "width": 2.0,
+     "height": 2.4
+    },
+    {
+     "pos": [
+      0,
+      1.2,
+      0
+     ],
+     "width": 2.0,
+     "height": 2.4
+    },
+    {
+     "pos": [
+      0,
+      1.2,
+      -1.6
+     ],
+     "width": 2.0,
+     "height": 2.4
+    }
+   ]
   }
  ],
  "definitions": [
