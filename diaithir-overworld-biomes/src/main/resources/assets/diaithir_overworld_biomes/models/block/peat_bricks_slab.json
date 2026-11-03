@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/slab", "textures": {"bottom": "diaithir_overworld_biomes:block/peat_bricks", "top": "diaithir_overworld_biomes:block/peat_bricks", "side": "diaithir_overworld_biomes:block/peat_bricks", "particle": "diaithir_overworld_biomes:block/peat_bricks"}}
