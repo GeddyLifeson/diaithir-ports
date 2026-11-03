@@ -1,0 +1,180 @@
+{
+ "sky": {
+  "sky": "#3a2f4a",
+  "fog": "#5b4a6e",
+  "cloud": "#88e8d8e0",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a4a5e"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.tasianium.E6.places.000364",
+   "archetype": "windswept_hills",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#7a8f7e",
+   "foliage": "#6b8a78",
+   "water": "#4d8fa6",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.tasianium.E6.places.000384",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.6,
+   "grass": "#3b4a3f",
+   "foliage": "#2e3d34",
+   "water": "#1f3a4d",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.tasianium.E7.assay.011179",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.9,
+   "grass": "#4a5a3a",
+   "foliage": "#3d4d33",
+   "water": "#1a1f24",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.tasianium.E3.assay.011408",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#4f5e44",
+   "foliage": "#3f5238",
+   "water": "#2b3a3f",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.tasianium.E3.assay.001337",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#8a7a5c",
+   "foliage": "#7a6a4c",
+   "water": "#5a6a70",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.tasianium.E3.assay.012260",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#a39470",
+   "foliage": "#948660",
+   "water": "#4d6b78",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.tasianium.E3.assay.009677",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#8fa3a8",
+   "foliage": "#7f9399",
+   "water": "#6fa0b5",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.tasianium.E3.assay.013318",
+   "archetype": "taiga",
+   "temp": -0.4,
+   "humid": 0.4,
+   "grass": "#5e7560",
+   "foliage": "#4f6a52",
+   "water": "#3a5a6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.tasianium.E3.assay.003948",
+   "archetype": "stony_peaks",
+   "temp": 0.0,
+   "humid": -0.3,
+   "grass": "#6e6a68",
+   "foliage": "#5e5a58",
+   "water": "#4a5a66",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-soaked, ash-tinged world of drowned cities, sunless seas and restless dead, where dim mystical light tints every biome.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b6470",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.3,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.tasianium.E3.assay.014255",
+  "why": "Storm spirits grant weather command; sky-bound outcast gifts imply storm-touched air.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "blue_orchid",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 1.0,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 0.5,
+   "diamond": 0.4
+  },
+  "why_entry": "MY.tasianium.E3.assay.006153",
+  "grounded": true
+ }
+}

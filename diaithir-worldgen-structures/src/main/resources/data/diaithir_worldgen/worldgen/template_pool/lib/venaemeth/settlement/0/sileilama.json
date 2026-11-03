@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/venaemeth/settlement/0/sileilama",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/venaemeth/ar_venaemeth_e2_places_000201",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

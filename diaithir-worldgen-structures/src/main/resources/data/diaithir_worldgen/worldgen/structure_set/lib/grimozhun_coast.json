@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/harbor_0_coast",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/harbor_1_coast",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/harbor_2_coast",
+   "weight": 29
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 10827470
+ }
+}

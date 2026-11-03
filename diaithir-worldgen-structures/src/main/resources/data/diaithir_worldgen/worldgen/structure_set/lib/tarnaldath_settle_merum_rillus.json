@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_0_merum_rillus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_1_merum_rillus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_2_merum_rillus",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_3_merum_rillus",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 139700024
+ }
+}

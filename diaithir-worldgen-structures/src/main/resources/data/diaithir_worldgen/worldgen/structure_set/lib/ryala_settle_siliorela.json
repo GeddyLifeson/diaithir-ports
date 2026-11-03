@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryala/settlement_0_siliorela",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryala/settlement_1_siliorela",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryala/settlement_2_siliorela",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 15742871
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/drorkaigok/settlement/2/vorougozhok",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drorkaigok/ma_drorkaigok_e1_places_001074",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

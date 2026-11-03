@@ -10,3 +10,7 @@ Dedicated server boot (gradle runServer, rcon on a flat-free default world):
 - Static check of 81 item definitions: every referenced model, parent model, texture and equipment layer file exists.
 
 Not tested: a real client (rendering of icons, worn armour layers, bow and crossbow pull animations, the flat shield model in the off hand), combat feel of the spear and shield numbers, real crafting with bronze and steel ingots present.
+
+## Haulage and construction pack (diaithirtrucks)
+- `tools/IvPackCheck.java` against Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar and gson 2.10.1: tank pack ok=13 bad=0 (control), trucks pack ok=114 bad=0 (75 vehicle defs, 39 part defs), every model and texture file present, every `defaultPart` resolves.
+- Not tested: server boot with the pack, summon of the items, driving, hitching, cargo GUI, mounted cars, client rendering.

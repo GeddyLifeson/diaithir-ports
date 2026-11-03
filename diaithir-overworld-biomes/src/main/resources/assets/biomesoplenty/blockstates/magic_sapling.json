@@ -1,1 +1,1 @@
-{"variants": {"": {"model": "biomesoplenty:block/magic_sapling"}}}
+{"variants": {"stage=0": {"model": "biomesoplenty:block/magic_sapling"}, "stage=1": {"model": "biomesoplenty:block/magic_sapling"}}}

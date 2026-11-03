@@ -144,6 +144,9 @@ public final class DiaithirClasses {
     }
 
     public DiaithirClasses(IEventBus bus) {
+        Consolidated.load();
+        ConsolidatedItems.register(bus);
+        ConsolidatedBehaviour.register();
         for (Spec s : DATA.items()) {
             if (s.kind().equals("bow")) {
                 ALL.put(s.id(), ITEMS.registerItem(s.id(), BowItem::new, () -> props(s)));

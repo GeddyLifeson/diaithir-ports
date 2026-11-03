@@ -1,1 +1,18 @@
-{"replace": false, "values": ["biomesoplenty:cherry_door", "biomesoplenty:dead_door", "biomesoplenty:empyreal_door", "biomesoplenty:fir_door", "biomesoplenty:hellbark_door", "biomesoplenty:jacaranda_door", "biomesoplenty:magic_door", "biomesoplenty:mahogany_door", "biomesoplenty:maple_door", "biomesoplenty:origin_oak_door", "biomesoplenty:palm_door", "biomesoplenty:pine_door", "biomesoplenty:redwood_door", "biomesoplenty:stripped_pine_door", "biomesoplenty:umbran_door", "biomesoplenty:willow_door", "natures_spirit:aspen_door", "natures_spirit:maple_door", "natures_spirit:wisteria_door"]}
+{
+ "replace": false,
+ "values": [
+  "aether_ii:amberoot_door",
+  "aether_ii:arkenium_door",
+  "aether_ii:greatroot_door",
+  "aether_ii:secret_amberoot_door",
+  "aether_ii:secret_greatroot_door",
+  "aether_ii:secret_skyroot_door",
+  "aether_ii:secret_wisproot_door",
+  "aether_ii:skyroot_door",
+  "aether_ii:wisproot_door",
+  "undergarden:ancient_root_door",
+  "undergarden:grongle_door",
+  "undergarden:smogstem_door",
+  "undergarden:wigglewood_door"
+ ]
+}

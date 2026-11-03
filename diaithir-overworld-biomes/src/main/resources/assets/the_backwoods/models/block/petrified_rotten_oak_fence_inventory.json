@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/fence_inventory",
+ "textures": {
+  "texture": "the_backwoods:block/petrified_rotten_oak_fence"
+ }
+}

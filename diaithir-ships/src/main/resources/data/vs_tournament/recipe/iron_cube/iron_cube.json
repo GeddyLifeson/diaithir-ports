@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ii",
+    "ii"
+  ],
+  "key": {
+    "i": "minecraft:iron_ingot"
+  },
+  "result": {
+    "id": "vs_tournament:iron_cube",
+    "count": 1
+  }
+}

@@ -1,0 +1,1418 @@
+{
+ "age": "VI",
+ "vendors": [
+  {
+   "id": "power_engineer",
+   "name": "Indleduirkumachd",
+   "role": "Power Engineer",
+   "spawn": [
+    "every settlement",
+    "power station"
+   ],
+   "items": {
+    "mekanism:dirty_dust_copper": {
+     "price": 64,
+     "stock": 4
+    },
+    "powah:uraninite_ore_dense": {
+     "price": 80,
+     "stock": 4
+    },
+    "mekanism:electrolytic_core": {
+     "price": 100,
+     "stock": 4
+    },
+    "oritech:industrial_chiller": {
+     "price": 100,
+     "stock": 4
+    },
+    "stellaris:raw_titanium": {
+     "price": 100,
+     "stock": 4
+    },
+    "stellaris:lunar_wall_hanging_sign": {
+     "price": 113,
+     "stock": 4
+    },
+    "mekanism:dust_uranium": {
+     "price": 126,
+     "stock": 4
+    },
+    "oritech:small_uranium_dust": {
+     "price": 126,
+     "stock": 4
+    },
+    "stellaris:titanium_plating_stairs": {
+     "price": 142,
+     "stock": 4
+    },
+    "energizedpower:basic_solar_cell": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:ehv_transformer_n_to_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:energy_capacity_upgrade_module_5": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:extraction_depth_upgrade_module_4": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:hv_transformer_n_to_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:lv_transformer_3_to_3": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:silicon": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:teleporter": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:xp_extraction_upgrade_module_3": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:advanced_sawing_factory": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:basic_mechanical_pipe": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:chemical_infuser": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:dust_lapis_lazuli": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:elite_mechanical_pipe": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:fuelwood_heater": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:hydrofluoric_acid_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:meka_tool_left": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:module_hydrostatic_repulsor_unit": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:oxygen": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:robit_allay": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:sulfur_dioxide": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:ultimate_enriching_factory": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:upgrade_speed": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:adamant": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:coal_resource_node": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:exo_jetpack": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:framed_superconductor": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:oil_resonator": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:schrodingers_safe": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:still_molten_duratium_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:tachyon_absorber": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:dielectric_casing": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:energy_cable_spirited": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:energy_hopper_basic": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:magmator_niotic": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:solar_panel_niotic": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:big_blue_can": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:black_can": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:cyan_can": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:green_can": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:lunar_rock": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:moon_sand": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:pathogen_storage_cell": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:skin_frost": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:space_suit_oil_finder_module_tier_3": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:nickel_plating_pressure_plate": {
+     "price": 178,
+     "stock": 4
+    },
+    "mekanism:clump_tin": {
+     "price": 200,
+     "stock": 4
+    },
+    "mekanism:ingot_refined_glowstone": {
+     "price": 200,
+     "stock": 4
+    },
+    "oritech:adamant_ingot": {
+     "price": 200,
+     "stock": 4
+    },
+    "oritech:nickel_plating": {
+     "price": 200,
+     "stock": 4
+    },
+    "oritech:titanium_resource_node": {
+     "price": 200,
+     "stock": 4
+    },
+    "powah:crystal_spirited": {
+     "price": 200,
+     "stock": 4
+    },
+    "mekanism:crystal_lead": {
+     "price": 252,
+     "stock": 4
+    },
+    "oritech:exo_helmet": {
+     "price": 252,
+     "stock": 4
+    },
+    "energizedpower:advanced_battery_box_minecart": {
+     "price": 317,
+     "stock": 4
+    },
+    "energizedpower:blast_furnace_upgrade_module": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanism:advanced_bounding_block": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanism:elite_fluid_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanismgenerators:solar_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:electrum_ingot": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:machine_core_5": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:portable_tank_body": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:still_diesel_block": {
+     "price": 317,
+     "stock": 4
+    },
+    "powah:ender_cell_basic": {
+     "price": 317,
+     "stock": 4
+    },
+    "powah:reactor_hardened": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:diesel_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:space_suit_hydrogen_tank_module_tier_2": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:platinum_gem": {
+     "price": 399,
+     "stock": 4
+    },
+    "oritech:jetpack_elytra": {
+     "price": 631,
+     "stock": 4
+    },
+    "powah:uraninite_block": {
+     "price": 1431,
+     "stock": 4
+    },
+    "oritech:creative_tank_body": {
+     "price": 3163,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "machinist",
+   "name": "Dèanaduirindeil",
+   "role": "Machinist",
+   "spawn": [
+    "every settlement",
+    "factory"
+   ],
+   "items": {
+    "integrateddynamics:variablestore": {
+     "price": 80,
+     "stock": 4
+    },
+    "modern_industrialization:silicon_nugget": {
+     "price": 100,
+     "stock": 4
+    },
+    "integrateddynamics:menril_fence": {
+     "price": 113,
+     "stock": 4
+    },
+    "actuallyadditions:void_crystal_shard": {
+     "price": 126,
+     "stock": 4
+    },
+    "modern_industrialization:uranium_235_tiny_dust": {
+     "price": 126,
+     "stock": 4
+    },
+    "integrateddynamics:crystalized_menril_brick_stairs": {
+     "price": 142,
+     "stock": 4
+    },
+    "actuallyadditions:canola_press": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:empowered_oil": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:greenhouse_glass": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:lamp_light_gray": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:laser_relay_item": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:long_range_breaker": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:ranged_collector": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:teleport_staff": {
+     "price": 159,
+     "stock": 4
+    },
+    "functionalstorage:birch_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "functionalstorage:dark_oak_4": {
+     "price": 159,
+     "stock": 4
+    },
+    "functionalstorage:jungle_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "functionalstorage:puller_upgrade": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:animal_baby_separator": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:common_black_hole_unit": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:efficiency": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:fluid_crafter": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:fluid_transfer_addon_push_north": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:infinity_charger": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:itemstack_transfer_addon_pull_south": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:laser_lens_inverted11": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:latex_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:mycelial_crimed": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:ore_laser_base": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:processing": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:range_addon_tier_6": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:speed_addon_tier_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:yellow_laser_lens": {
+     "price": 159,
+     "stock": 4
+    },
+    "integrateddynamics:mechanical_drying_basin": {
+     "price": 159,
+     "stock": 4
+    },
+    "integrateddynamics:part_connector_mono_directional": {
+     "price": 159,
+     "stock": 4
+    },
+    "integrateddynamics:part_world_reader": {
+     "price": 159,
+     "stock": 4
+    },
+    "modern_industrialization:advanced_large_steam_boiler": {
+     "price": 159,
+     "stock": 4
+    },
+    "modern_industrialization:electric_packer": {
+     "price": 159,
+     "stock": 4
+    },
+    "modern_industrialization:lv_storage_unit": {
+     "price": 159,
+     "stock": 4
+    },
+    "modern_industrialization:processing_unit": {
+     "price": 159,
+     "stock": 4
+    },
+    "modularrouters:augment/stack_augment": {
+     "price": 159,
+     "stock": 4
+    },
+    "modularrouters:energy_upgrade": {
+     "price": 159,
+     "stock": 4
+    },
+    "modularrouters:module/breaker_module": {
+     "price": 159,
+     "stock": 4
+    },
+    "modularrouters:module/fluid_module_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "modularrouters:pushing_augment": {
+     "price": 159,
+     "stock": 4
+    },
+    "modularrouters:upgrade/blast_upgrade": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:aerial_interface": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:charging_upgrade": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:jumping_upgrade_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:minigun": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:plastic_brick_green": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:pneumatic_door_base": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:reinforced_chest_kit": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:smooth_plastic_brick_gray": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:solar_compressor": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:crystallized_oil_bucket": {
+     "price": 200,
+     "stock": 4
+    },
+    "actuallyadditions:enori_crystal": {
+     "price": 200,
+     "stock": 4
+    },
+    "actuallyadditions:restonia_crystal": {
+     "price": 200,
+     "stock": 4
+    },
+    "industrialforegoing:conveyor_splitting_upgrade": {
+     "price": 200,
+     "stock": 4
+    },
+    "modern_industrialization:he_uranium_fuel_rod_quad": {
+     "price": 200,
+     "stock": 4
+    },
+    "modern_industrialization:silicon_plate": {
+     "price": 200,
+     "stock": 4
+    },
+    "actuallyadditions:chiseled_black_quartz_wall": {
+     "price": 224,
+     "stock": 4
+    },
+    "industrialforegoing:infinity_trident": {
+     "price": 252,
+     "stock": 4
+    },
+    "modern_industrialization:uranium_235_ingot": {
+     "price": 252,
+     "stock": 4
+    },
+    "pneumaticcraft:pneumatic_boots": {
+     "price": 252,
+     "stock": 4
+    },
+    "actuallyadditions:diamond_aiot": {
+     "price": 317,
+     "stock": 4
+    },
+    "actuallyadditions:drill_pattern": {
+     "price": 317,
+     "stock": 4
+    },
+    "actuallyadditions:drill_yellow": {
+     "price": 317,
+     "stock": 4
+    },
+    "actuallyadditions:single_battery": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:common_black_hole_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:machinehull": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:supreme_black_hole_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "modern_industrialization:configurable_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "modern_industrialization:large_steam_turbine": {
+     "price": 317,
+     "stock": 4
+    },
+    "modularrouters:module/sender_module_2": {
+     "price": 317,
+     "stock": 4
+    },
+    "pneumaticcraft:turbine_rotor": {
+     "price": 317,
+     "stock": 4
+    },
+    "modern_industrialization:stainless_steel_drill": {
+     "price": 399,
+     "stock": 4
+    },
+    "industrialforegoing:machine_settings_copier": {
+     "price": 1000,
+     "stock": 4
+    },
+    "actuallyadditions:enori_crystal_block": {
+     "price": 1800,
+     "stock": 4
+    },
+    "actuallyadditions:black_quartz_block": {
+     "price": 2853,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "fitter",
+   "name": "Gobakenguil",
+   "role": "Fitter",
+   "spawn": [
+    "every settlement",
+    "workshop"
+   ],
+   "items": {
+    "enderio:cloud_seed": {
+     "price": 100,
+     "stock": 4
+    },
+    "enderio:painted_wall": {
+     "price": 113,
+     "stock": 4
+    },
+    "mekanismadditions:blue_plastic_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "mekanismadditions:dark_red_plastic_glow_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "mekanismadditions:light_blue_plastic_fence_gate": {
+     "price": 113,
+     "stock": 4
+    },
+    "mekanismadditions:lime_plastic_transparent_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "mekanismadditions:pink_plastic_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "mekanismadditions:white_plastic_glow_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "enderio:silent_birch_pressure_plate": {
+     "price": 142,
+     "stock": 4
+    },
+    "enderio:broken_spawner": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_cyan": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_da_cyan": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_dm_lime": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_dna_red": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_dnp_black": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_dp_green": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_e_orange": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_ea_yellow": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_ena_cyan": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_enm_lime": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_enp_red": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_light_blue": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_na_black": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_nm_green": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_np_orange": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:clear_glass_p_white": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:drain": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:liquid_darkness_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:rocket_fuel_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:void_chassis": {
+     "price": 159,
+     "stock": 4
+    },
+    "immersive_aircraft:gyrodyne": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismadditions:balloon_fixed": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismadditions:brown_plastic": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismadditions:glow_panel": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismadditions:light_blue_plastic_transparent": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismadditions:magenta_plastic_glow": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismadditions:purple_glow_panel": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismadditions:walkie_talkie_ch7": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsbuilder:builder": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsutility:advanced_charged_porter": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsutility:charged_porter8": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsutility:inventory_module": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsutility:slowness_module": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:dark_bimetal_gear": {
+     "price": 200,
+     "stock": 4
+    },
+    "enderio:resetting_lever_five_inv": {
+     "price": 200,
+     "stock": 4
+    },
+    "rftoolsbuilder:superharvestingtool": {
+     "price": 200,
+     "stock": 4
+    },
+    "mekanismtools:gold_paxel": {
+     "price": 252,
+     "stock": 4
+    },
+    "rftoolsutility:tablet_redstone": {
+     "price": 252,
+     "stock": 4
+    },
+    "enderio:fused_quartz_a_pink": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_d_purple": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_dm_black": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_dna_green": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_dnm_orange": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_dnp_yellow": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_e_cyan": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_ea_lime": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_em_red": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_enm_blue": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_enp_light_blue": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_ep_pink": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_m_pink": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_na_yellow": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_np_cyan": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:fused_quartz_p_light_gray": {
+     "price": 317,
+     "stock": 4
+    },
+    "immersive_aircraft:nether_engine": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_paxel": {
+     "price": 317,
+     "stock": 4
+    },
+    "enderio:ender_crystal": {
+     "price": 399,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_shield_blocking": {
+     "price": 502,
+     "stock": 4
+    },
+    "mekanismtools:steel_helmet_iron_trim": {
+     "price": 631,
+     "stock": 4
+    },
+    "mekanismtools:refined_glowstone_helmet_gold_trim": {
+     "price": 795,
+     "stock": 4
+    },
+    "mekanismtools:osmium_boots_redstone_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_helmet_quartz_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:osmium_boots_emerald_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanismtools:steel_boots_amethyst_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanismtools:lapis_lazuli_helmet_amethyst_trim": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanismtools:steel_chestplate_emerald_trim": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_chestplate_gold_trim": {
+     "price": 1996,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_leggings_diamond_trim": {
+     "price": 2512,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_leggings_iron_trim": {
+     "price": 3163,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_leggings_netherite_trim": {
+     "price": 10000,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "locksmith",
+   "name": "Glasaduir",
+   "role": "Locksmith",
+   "spawn": [
+    "every settlement",
+    "guard post"
+   ],
+   "items": {
+    "securitycraft:reinforced_cobbled_deepslate_slab": {
+     "price": 57,
+     "stock": 4
+    },
+    "securitycraft:reinforced_deepslate_tile_wall": {
+     "price": 57,
+     "stock": 4
+    },
+    "securitycraft:deepslate_mine": {
+     "price": 80,
+     "stock": 4
+    },
+    "securitycraft:reinforced_deepslate_tiles": {
+     "price": 80,
+     "stock": 4
+    },
+    "securitycraft:keypad_door": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_bamboo_button": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_birch_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_brown_carpet": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_crimson_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_dark_prismarine_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_granite_wall": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_light_blue_stained_glass_pane": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_mangrove_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_nether_brick_wall": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_pale_oak_fence": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_polished_blackstone_button": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_prismarine_brick_slab": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_red_nether_brick_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_sandstone_wall": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_stone_brick_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_warped_fence": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:secret_acacia_sign": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:secret_crimson_hanging_sign": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:secret_mangrove_sign_item": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:secret_warped_sign": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_cut_copper_slab": {
+     "price": 142,
+     "stock": 4
+    },
+    "securitycraft:reinforced_pale_oak_pressure_plate": {
+     "price": 142,
+     "stock": 4
+    },
+    "aether_ii:arkenium_trowel_reinforced_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "aether_ii:holystone_pike_reinforced_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "aether_ii:zanite_axe_reinforced_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:disk": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:pocket_computer_normal_blinking": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:wired_modem_full": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:bogus_water": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:coal_mine": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:fake_water": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:keycard_holder": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:keypad_barrel": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:mine": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_acacia_wood": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_black_glazed_terracotta": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_bookshelf": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_cherry_planks": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_chiseled_tuff_bricks": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_crimson_stem": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_dark_oak_wood": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_grass_path": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_hardened_clay": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_lever": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_lime_concrete": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_mangrove_planks": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_oak_shelf": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_pale_oak_log": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_piston_head": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_purple_concrete": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_red_stained_glass": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_smooth_red_sandstone": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_stone_bricks": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_stripped_jungle_log": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_stripped_warped_stem": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_white_stained_glass": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:remote_access_mine_not_linked": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:smart_module": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:taser": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:username_logger": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_copper_lantern": {
+     "price": 200,
+     "stock": 4
+    },
+    "securitycraft:reinforced_exposed_lightning_rod": {
+     "price": 200,
+     "stock": 4
+    },
+    "securitycraft:reinforced_oxidized_lightning_rod": {
+     "price": 200,
+     "stock": 4
+    },
+    "securitycraft:reinforced_weathered_cut_copper": {
+     "price": 200,
+     "stock": 4
+    },
+    "aether_ii:arkenium_pickaxe_reinforced_2": {
+     "price": 252,
+     "stock": 4
+    },
+    "aether_ii:gravitite_shovel_reinforced_1": {
+     "price": 252,
+     "stock": 4
+    },
+    "aether_ii:skyroot_hammer_reinforced_2": {
+     "price": 252,
+     "stock": 4
+    },
+    "aether_ii:zanite_shortsword_reinforced_1": {
+     "price": 252,
+     "stock": 4
+    },
+    "securitycraft:reinforced_redstone_lamp": {
+     "price": 252,
+     "stock": 4
+    },
+    "securitycraft:block_change_detector": {
+     "price": 317,
+     "stock": 4
+    },
+    "securitycraft:reinforced_coal_block": {
+     "price": 317,
+     "stock": 4
+    },
+    "securitycraft:reinforced_quartz_pillar": {
+     "price": 317,
+     "stock": 4
+    },
+    "securitycraft:crystal_quartz": {
+     "price": 399,
+     "stock": 4
+    },
+    "securitycraft:reinforced_lapis_block": {
+     "price": 502,
+     "stock": 4
+    },
+    "computercraft:computer_command": {
+     "price": 1585,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "brewer",
+   "name": "Dèanaduirgrùid",
+   "role": "Brewer",
+   "spawn": [
+    "every settlement",
+    "brewhouse"
+   ],
+   "items": {
+    "diaithir_drinks:american_wheat_beer": {
+     "price": 10,
+     "stock": 4
+    },
+    "diaithir_drinks:session_ipa": {
+     "price": 10,
+     "stock": 4
+    },
+    "diaithir_drinks:english_ipa": {
+     "price": 14,
+     "stock": 4
+    },
+    "diaithir_drinks:oud_bruin": {
+     "price": 17,
+     "stock": 4
+    },
+    "diaithir_drinks:pumpkin_and_spiced_beer": {
+     "price": 17,
+     "stock": 4
+    },
+    "diaithir_drinks:smoked_beer": {
+     "price": 17,
+     "stock": 4
+    },
+    "diaithir_drinks:black_ipa": {
+     "price": 18,
+     "stock": 4
+    },
+    "diaithir_drinks:new_england_ipa": {
+     "price": 18,
+     "stock": 4
+    },
+    "diaithir_drinks:rye_ipa": {
+     "price": 18,
+     "stock": 4
+    },
+    "diaithir_drinks:belgian_ipa": {
+     "price": 21,
+     "stock": 4
+    },
+    "diaithir_drinks:double_imperial_ipa": {
+     "price": 32,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "vintner",
+   "name": "Dèanaduirfìuna",
+   "role": "Vintner",
+   "spawn": [
+    "every settlement",
+    "vineyard"
+   ],
+   "items": {
+    "diaithir_drinks:hard_seltzer": {
+     "price": 10,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "distiller",
+   "name": "Dèanaduiroisgebeta",
+   "role": "Distiller",
+   "spawn": [
+    "every settlement",
+    "still house"
+   ],
+   "items": {
+    "diaithir_drinks:american_blended_whiskey": {
+     "price": 49,
+     "stock": 4
+    },
+    "diaithir_drinks:american_brandy": {
+     "price": 52,
+     "stock": 4
+    }
+   }
+  }
+ ]
+}

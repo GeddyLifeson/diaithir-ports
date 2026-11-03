@@ -1,0 +1,323 @@
+{
+ "goods": {
+  "minecraft:iron_ingot": [
+   4,
+   200
+  ],
+  "minecraft:copper_ingot": [
+   2,
+   300
+  ],
+  "minecraft:gold_ingot": [
+   12,
+   80
+  ],
+  "minecraft:iron_sword": [
+   14,
+   40
+  ],
+  "minecraft:wheat": [
+   1,
+   500
+  ],
+  "minecraft:diamond": [
+   60,
+   20
+  ],
+  "minecraft:iron_block": [
+   40,
+   20
+  ],
+  "minecraft:flint": [
+   0.5,
+   400
+  ],
+  "minecraft:beef": [
+   3,
+   150
+  ],
+  "minecraft:porkchop": [
+   3,
+   150
+  ]
+ },
+ "regions": {
+  "a": [
+   0,
+   0
+  ],
+  "b": [
+   3000,
+   0
+  ],
+  "c": [
+   0,
+   9000
+  ]
+ },
+ "runs": [
+  {
+   "name": "flood flint",
+   "steps": [
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:flint"
+     ],
+     "result": 0.5000041005072989
+    },
+    {
+     "step": [
+      "trade",
+      "a",
+      "minecraft:flint",
+      100,
+      false,
+      1
+     ],
+     "result": 0
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:flint"
+     ],
+     "result": 0.286419794846212
+    },
+    {
+     "step": [
+      "trade",
+      "a",
+      "minecraft:flint",
+      100,
+      false,
+      1
+     ],
+     "result": 0
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:flint"
+     ],
+     "result": 0.18597533443980607
+    }
+   ]
+  },
+  {
+   "name": "substitutes",
+   "steps": [
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:copper_ingot"
+     ],
+     "result": 2.0000164020291957
+    },
+    {
+     "step": [
+      "trade",
+      "a",
+      "minecraft:copper_ingot",
+      1,
+      false,
+      1
+     ],
+     "result": 1
+    },
+    {
+     "step": [
+      "trade",
+      "a",
+      "minecraft:iron_ingot",
+      500,
+      false,
+      1
+     ],
+     "result": 667
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:copper_ingot"
+     ],
+     "result": 1.4575133251029748
+    }
+   ]
+  },
+  {
+   "name": "made goods",
+   "steps": [
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:iron_sword"
+     ],
+     "result": 14.005414071660983
+    },
+    {
+     "step": [
+      "trade",
+      "a",
+      "minecraft:iron_ingot",
+      400,
+      false,
+      1
+     ],
+     "result": 568
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:iron_sword"
+     ],
+     "result": 14.00011481420437
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:iron_block"
+     ],
+     "result": 40.000328040583916
+    }
+   ]
+  },
+  {
+   "name": "arbitrage",
+   "steps": [
+    {
+     "step": [
+      "trade",
+      "a",
+      "minecraft:wheat",
+      2,
+      true,
+      1
+     ],
+     "result": 4
+    },
+    {
+     "step": [
+      "trade",
+      "b",
+      "minecraft:wheat",
+      300,
+      true,
+      1
+     ],
+     "result": 905
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:wheat"
+     ],
+     "result": 5.416097877934035
+    },
+    {
+     "step": [
+      "mid",
+      "b",
+      "minecraft:wheat"
+     ],
+     "result": 5.476097877934037
+    },
+    {
+     "step": [
+      "mid",
+      "c",
+      "minecraft:wheat"
+     ],
+     "result": 5.3461946147157855
+    }
+   ]
+  },
+  {
+   "name": "buy and quote",
+   "steps": [
+    {
+     "step": [
+      "quote",
+      "a",
+      "minecraft:diamond",
+      10,
+      true,
+      3
+     ],
+     "result": 2426
+    },
+    {
+     "step": [
+      "trade",
+      "a",
+      "minecraft:diamond",
+      10,
+      true,
+      3
+     ],
+     "result": 2426
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:diamond"
+     ],
+     "result": 88.1841027533919
+    },
+    {
+     "step": [
+      "quote",
+      "a",
+      "minecraft:diamond",
+      5,
+      false,
+      3
+     ],
+     "result": 1020
+    }
+   ]
+  },
+  {
+   "name": "meats",
+   "steps": [
+    {
+     "step": [
+      "trade",
+      "a",
+      "minecraft:beef",
+      100,
+      true,
+      2
+     ],
+     "result": 2846
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:porkchop"
+     ],
+     "result": 3.9482256366633353
+    },
+    {
+     "step": [
+      "mid",
+      "a",
+      "minecraft:beef"
+     ],
+     "result": 36.00000000000069
+    }
+   ]
+  }
+ ]
+}

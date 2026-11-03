@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:seraurnanum_halerdosten",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seraurnanum_ilotamala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seraurnanum_moreldath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seraurnanum_orastosanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seraurnanum_sarnor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seraurnanum_silia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seraurnanum_tilenium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seraurnanum_voraiggun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seraurnanum_voroggukoth",
+   "required": false
+  }
+ ]
+}

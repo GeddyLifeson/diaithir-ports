@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/serarnum/settlement/1/mantianium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/serarnum/my_serarnum_e5_places_000109",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

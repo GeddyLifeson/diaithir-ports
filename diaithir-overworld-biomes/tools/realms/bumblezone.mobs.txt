@@ -1,0 +1,7 @@
+bee_queen
+beehemoth
+beehemoth_queen
+honey_slime
+rootmin
+sentry_watcher
+variant_bee

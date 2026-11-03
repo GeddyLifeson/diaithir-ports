@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silena/harbor_0_coast",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/harbor_1_coast",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/harbor_2_coast",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 110524685
+ }
+}

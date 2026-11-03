@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:frostbound_beacon_keep",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:frostbound_beacon_keep",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

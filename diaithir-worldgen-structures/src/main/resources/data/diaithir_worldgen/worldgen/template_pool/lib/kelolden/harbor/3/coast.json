@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kelolden/harbor/3/coast",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kelolden/gr_kelolden_e7_assay_000109",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

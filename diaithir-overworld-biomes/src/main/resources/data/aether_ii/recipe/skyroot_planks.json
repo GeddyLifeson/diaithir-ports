@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#aether_ii:skyroot_logs"
+ ],
+ "result": {
+  "id": "aether_ii:skyroot_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/delve_0_cave",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/delve_1_cave",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/delve_2_cave",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/delve_3_cave",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 25199469
+ }
+}

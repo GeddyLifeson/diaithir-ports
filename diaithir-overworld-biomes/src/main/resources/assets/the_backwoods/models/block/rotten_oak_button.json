@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/button",
+ "textures": {
+  "texture": "the_backwoods:block/rotten_oak_button"
+ }
+}

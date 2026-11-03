@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0_miameliel",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_1_miameliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2_miameliel",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 235702298
+ }
+}

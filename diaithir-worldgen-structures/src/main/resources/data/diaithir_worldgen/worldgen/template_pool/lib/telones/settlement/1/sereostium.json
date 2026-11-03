@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/telones/settlement/1/sereostium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/telones/my_telones_e7_places_000390",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

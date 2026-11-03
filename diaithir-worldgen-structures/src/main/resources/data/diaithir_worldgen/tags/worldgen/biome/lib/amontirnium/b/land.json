@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:amontirnium_amontanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_cenaulor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_corantes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_corastus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_leones",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_niasanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_reollastum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_reonanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_sornum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amontirnium_telostus",
+   "required": false
+  }
+ ]
+}

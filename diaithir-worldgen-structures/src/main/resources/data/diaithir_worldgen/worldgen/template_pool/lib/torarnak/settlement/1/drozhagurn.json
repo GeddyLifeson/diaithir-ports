@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/torarnak/settlement/1/drozhagurn",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/torarnak/ma_torarnak_e6_places_000307",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -19,6 +19,9 @@ config = "valkyrienskies-common.mixins.json"
 [[mixins]]
 config = "valkyrienskies-forge.mixins.json"
 
+[[mixins]]
+config = "vs_tournament.mixins.json"
+
 [[dependencies.valkyrienskies]]
 modId = "neoforge"
 type = "required"

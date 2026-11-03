@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/grimukougok/settlement/1/zephyusasha",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/grimukougok/ma_grimukougok_e5_places_000093",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

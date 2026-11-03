@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:seornum_drasterneld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seornum_krukar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seornum_oriarae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seornum_pelustar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seornum_tentamanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seornum_thorduren",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seornum_vhaikak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seornum_voraigak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:seornum_zephyussora",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:breroldock_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:breroldock_grottoes",
+   "required": false
+  }
+ ]
+}

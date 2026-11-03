@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:siluanora_alaeleina",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanora_elaerae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanora_miallireth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanora_mianora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanora_miiluannys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanora_nuirliel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanora_ryinora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanora_silemys",
+   "required": false
+  }
+ ]
+}

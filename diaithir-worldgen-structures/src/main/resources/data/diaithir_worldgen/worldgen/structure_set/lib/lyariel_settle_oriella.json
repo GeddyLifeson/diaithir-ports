@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyariel/settlement_0_oriella",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyariel/settlement_1_oriella",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 109801927
+ }
+}

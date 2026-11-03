@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/groktok/settlement_0_karuzhak",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/settlement_1_karuzhak",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/settlement_2_karuzhak",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/settlement_3_karuzhak",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 151126822
+ }
+}

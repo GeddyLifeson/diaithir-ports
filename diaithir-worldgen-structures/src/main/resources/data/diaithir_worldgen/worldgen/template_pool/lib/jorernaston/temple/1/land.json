@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/jorernaston/temple/1/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/jorernaston/gr_jorernaston_e7_places_000075",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

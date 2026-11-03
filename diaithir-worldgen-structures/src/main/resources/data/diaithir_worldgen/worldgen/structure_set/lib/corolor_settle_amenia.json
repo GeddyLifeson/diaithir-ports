@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_0_amenia",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_1_amenia",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_2_amenia",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 97708009
+ }
+}

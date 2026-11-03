@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/venuala/settlement/0/moradath",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/venuala/ki_venuala_e4_places_000201",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/xaasseth/settlement_0_any",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaasseth/settlement_1_any",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaasseth/settlement_2_any",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaasseth/settlement_3_any",
+   "weight": 21
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 147976896
+ }
+}

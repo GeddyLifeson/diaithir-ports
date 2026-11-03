@@ -1,0 +1,527 @@
+[
+ [
+  "karbad tarruing Skambeld Skarab",
+  "item",
+  6,
+  "transport",
+  "Scammell Scarab (1933): 22 kW, 1500 kg, gross 4500 kg."
+ ],
+ [
+  "karbad tarruing Diamund T 980",
+  "item",
+  6,
+  "transport",
+  "Diamond T 980 (1939): 100 kW, 3400 kg, gross 18000 kg."
+ ],
+ [
+  "karbad tarruing Fouden S21 Mikkey Mousi",
+  "item",
+  7,
+  "transport",
+  "Foden S21 Mickey Mouse (1958): 120 kW, 3680 kg, gross 24000 kg."
+ ],
+ [
+  "karbad tarruing Makk B-Sieries",
+  "item",
+  7,
+  "transport",
+  "Mack B-Series (1953): 150 kW, 4100 kg, gross 30000 kg."
+ ],
+ [
+  "karbad tarruing Kienwurd W900",
+  "item",
+  7,
+  "transport",
+  "Kenworth W900 (1961): 370 kW, 7180 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Voulvo F88",
+  "item",
+  7,
+  "transport",
+  "Volvo F88 (1965): 260 kW, 5640 kg, gross 38000 kg."
+ ],
+ [
+  "karbad tarruing MAUZ-504",
+  "item",
+  7,
+  "transport",
+  "MAZ-504 (1965): 175 kW, 4450 kg, gross 30000 kg."
+ ],
+ [
+  "karbad tarruing Makk R-Sieries",
+  "item",
+  7,
+  "transport",
+  "Mack R-Series (1966): 250 kW, 5500 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Pieterbilt 359",
+  "item",
+  7,
+  "transport",
+  "Peterbilt 359 (1967): 300 kW, 6200 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Internationul Transtur",
+  "item",
+  7,
+  "transport",
+  "International Transtar (1969): 250 kW, 5500 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Mierkedes-Bienz NGU",
+  "item",
+  7,
+  "transport",
+  "Mercedes-Benz NG (1973): 240 kW, 5360 kg, gross 38000 kg."
+ ],
+ [
+  "karbad tarruing Kienwurd K100",
+  "item",
+  7,
+  "transport",
+  "Kenworth K100 (1975): 300 kW, 6200 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing KAUMAZ",
+  "item",
+  7,
+  "transport",
+  "KAMAZ (1976): 154 kW, 4156 kg, gross 22000 kg."
+ ],
+ [
+  "karbad tarruing Makk Suiper-Liener",
+  "item",
+  7,
+  "transport",
+  "Mack Super-Liner (1977): 320 kW, 6480 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Tautra 815",
+  "item",
+  7,
+  "transport",
+  "Tatra 815 (1982): 210 kW, 4940 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Sienotruk Houwo",
+  "item",
+  7,
+  "transport",
+  "Sinotruk Howo (1983): 290 kW, 6060 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Skania 143",
+  "item",
+  7,
+  "transport",
+  "Scania 143 (1988): 330 kW, 6620 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Pieterbilt 379",
+  "item",
+  7,
+  "transport",
+  "Peterbilt 379 (1987): 335 kW, 6690 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Freigtliner FLDU120",
+  "item",
+  7,
+  "transport",
+  "Freightliner FLD120 (1989): 335 kW, 6690 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Rienault Maugnum",
+  "item",
+  7,
+  "transport",
+  "Renault Magnum (1990): 340 kW, 6760 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Voulvo FHU",
+  "item",
+  7,
+  "transport",
+  "Volvo FH (1993): 340 kW, 6760 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Iesuzu Giega",
+  "item",
+  7,
+  "transport",
+  "Isuzu Giga (1994): 260 kW, 5640 kg, gross 25000 kg."
+ ],
+ [
+  "karbad tarruing Mierkedes-Bienz Aktros",
+  "item",
+  7,
+  "transport",
+  "Mercedes-Benz Actros (1996): 290 kW, 6060 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Mitsubisi Fuiso Suiper Griet",
+  "item",
+  7,
+  "transport",
+  "Mitsubishi Fuso Super Great (1996): 280 kW, 5920 kg, gross 25000 kg."
+ ],
+ [
+  "karbad tarruing Voulvo VNU",
+  "item",
+  7,
+  "transport",
+  "Volvo VN (1996): 335 kW, 6690 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing DAUF XFU",
+  "item",
+  7,
+  "transport",
+  "DAF XF (1997): 340 kW, 6760 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Iveko Straulis",
+  "item",
+  7,
+  "transport",
+  "Iveco Stralis (2002): 310 kW, 6340 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Freigtliner Kaskadia",
+  "item",
+  7,
+  "transport",
+  "Freightliner Cascadia (2007): 335 kW, 6690 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing MAUN TGXU",
+  "item",
+  7,
+  "transport",
+  "MAN TGX (2007): 350 kW, 6900 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Tauta Priema",
+  "item",
+  7,
+  "transport",
+  "Tata Prima (2008): 230 kW, 5220 kg, gross 40000 kg."
+ ],
+ [
+  "karbad tarruing Wiestern Staur 4900",
+  "item",
+  7,
+  "transport",
+  "Western Star 4900 (2008): 370 kW, 7180 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Kienwurd T680",
+  "item",
+  7,
+  "transport",
+  "Kenworth T680 (2012): 335 kW, 6690 kg, gross 36000 kg."
+ ],
+ [
+  "karbad tarruing Oux Tiem aund Liember",
+  "item",
+  3,
+  "transport",
+  "Ox Team and Limber (-3000): 1 kW, 2021 kg, gross 3000 kg."
+ ],
+ [
+  "karbad tarruing Horsi Tiem aund Liember",
+  "item",
+  4,
+  "transport",
+  "Horse Team and Limber (-800): 3 kW, 2042 kg, gross 5000 kg."
+ ],
+ [
+  "karbad tarruing Stiem Traktion Iengini",
+  "item",
+  6,
+  "transport",
+  "Steam Traction Engine (1862): 30 kW, 2420 kg, gross 25000 kg."
+ ],
+ [
+  "karbad tarruing Sientinel Stiem Waggun",
+  "item",
+  6,
+  "transport",
+  "Sentinel Steam Waggon (1905): 40 kW, 2560 kg, gross 12000 kg."
+ ],
+ [
+  "karbad luichda Dryu Vaun Traileri",
+  "item",
+  6,
+  "transport",
+  "Dry Van Trailer (1914): payload 20000 kg, 16.2 m."
+ ],
+ [
+  "karbad luichda Flautbed Traileri",
+  "item",
+  6,
+  "transport",
+  "Flatbed Trailer (1925): payload 24000 kg, 14.6 m."
+ ],
+ [
+  "karbad luichda Kontuiner Chaussis",
+  "item",
+  7,
+  "transport",
+  "Container Chassis (1956): payload 26000 kg, 12.2 m."
+ ],
+ [
+  "karbad luichda Taunk Traileri",
+  "item",
+  6,
+  "transport",
+  "Tank Trailer (1930): payload 30000 kg, 13.7 m."
+ ],
+ [
+  "karbad luichda Riefrigerated Traileri",
+  "item",
+  6,
+  "transport",
+  "Refrigerated Trailer (1939): payload 19000 kg, 16.2 m."
+ ],
+ [
+  "karbad luichda Louwboy Traileri",
+  "item",
+  6,
+  "transport",
+  "Lowboy Trailer (1940): payload 40000 kg, 15.0 m."
+ ],
+ [
+  "karbad luichda Kar Karrier Traileri",
+  "item",
+  7,
+  "transport",
+  "Car Carrier Trailer (1950): payload 17000 kg, 21.0 m."
+ ],
+ [
+  "karbad luichda Loug Traileri",
+  "item",
+  6,
+  "transport",
+  "Log Trailer (1930): payload 24000 kg, 12.0 m."
+ ],
+ [
+  "karbad luichda Kurtuinsider Traileri",
+  "item",
+  7,
+  "transport",
+  "Curtainsider Trailer (1960): payload 24000 kg, 13.6 m."
+ ],
+ [
+  "karbad luichda Duimp Traileri",
+  "item",
+  6,
+  "transport",
+  "Dump Trailer (1930): payload 24000 kg, 9.0 m."
+ ],
+ [
+  "karbad luichda Livestokk Traileri",
+  "item",
+  6,
+  "transport",
+  "Livestock Trailer (1930): payload 18000 kg, 16.2 m."
+ ],
+ [
+  "karbad luichda Stiep-Diekk Traileri",
+  "item",
+  6,
+  "transport",
+  "Step-Deck Trailer (1940): payload 22000 kg, 15.2 m."
+ ],
+ [
+  "karbad luichda Modulur Hievy-Haulu Traileri",
+  "item",
+  7,
+  "transport",
+  "Modular Heavy-Haul Trailer (1953): payload 100000 kg, 18.0 m."
+ ],
+ [
+  "karbad luichda Hievy Ieqoipment Transpurter Siemitruiler",
+  "item",
+  7,
+  "transport",
+  "Heavy Equipment Transporter Semitrailer (1977): payload 55000 kg, 15.5 m."
+ ],
+ [
+  "karbad luichda Handkurt",
+  "item",
+  2,
+  "transport",
+  "Handcart (-3000): payload 300 kg, 2.0 m."
+ ],
+ [
+  "karbad luichda Twou-Wheeledi Kart",
+  "item",
+  2,
+  "transport",
+  "Two-Wheeled Cart (-3000): payload 600 kg, 2.5 m."
+ ],
+ [
+  "karbad luichda Oux Kart",
+  "item",
+  3,
+  "transport",
+  "Ox Cart (-2000): payload 1000 kg, 3.0 m."
+ ],
+ [
+  "karbad luichda Fouru-Wheeledi Wagun",
+  "item",
+  4,
+  "transport",
+  "Four-Wheeled Wagon (-500): payload 2000 kg, 4.5 m."
+ ],
+ [
+  "karbad luichda Konestoga Freigt Wagun",
+  "item",
+  5,
+  "transport",
+  "Conestoga Freight Wagon (1750): payload 5000 kg, 6.0 m."
+ ],
+ [
+  "karbad luichda Drauy",
+  "item",
+  4,
+  "transport",
+  "Dray (1200): payload 3000 kg, 4.5 m."
+ ],
+ [
+  "karbad oibri Auveling aund Pourter Roadu Rolder",
+  "item",
+  6,
+  "transport",
+  "Aveling and Porter Road Roller (1867): 30 kW, 12000 kg, road role compact."
+ ],
+ [
+  "karbad oibri Konkreti Traunsit Miexer",
+  "item",
+  6,
+  "transport",
+  "Concrete Transit Mixer (1916): 220 kW, 14000 kg, road role mix."
+ ],
+ [
+  "karbad oibri Katerpildur D9 Bulddozer",
+  "item",
+  7,
+  "transport",
+  "Caterpillar D9 Bulldozer (1954): 350 kW, 49000 kg, road role grade."
+ ],
+ [
+  "karbad oibri JKB 3KX Bakkhoe Loaderi",
+  "item",
+  7,
+  "transport",
+  "JCB 3CX Backhoe Loader (1953): 55 kW, 7000 kg, road role dig."
+ ],
+ [
+  "karbad oibri Katerpildur 140 Motur Grauder",
+  "item",
+  7,
+  "transport",
+  "Caterpillar 140 Motor Grader (1961): 180 kW, 17000 kg, road role grade."
+ ],
+ [
+  "karbad oibri Katerpildur 966 Wheeli Loaderi",
+  "item",
+  7,
+  "transport",
+  "Caterpillar 966 Wheel Loader (1963): 150 kW, 17000 kg, road role haul."
+ ],
+ [
+  "karbad oibri Asphult Pauver",
+  "item",
+  6,
+  "transport",
+  "Asphalt Paver (1931): 110 kW, 15000 kg, road role pave."
+ ],
+ [
+  "karbad oibri Vibratury Roadu Rolder",
+  "item",
+  7,
+  "transport",
+  "Vibratory Road Roller (1957): 100 kW, 11000 kg, road role compact."
+ ],
+ [
+  "karbad oibri Bobkat M-440 Skied-Steeri Loaderi",
+  "item",
+  7,
+  "transport",
+  "Bobcat M-440 Skid-Steer Loader (1960): 14 kW, 1200 kg, road role dig."
+ ],
+ [
+  "karbad oibri Katerpildur 320 Iexkavatur",
+  "item",
+  7,
+  "transport",
+  "Caterpillar 320 Excavator (1987): 110 kW, 20000 kg, road role dig."
+ ],
+ [
+  "karbad oibri Roadu Milding Machini",
+  "item",
+  7,
+  "transport",
+  "Road Milling Machine (1969): 400 kW, 28000 kg, road role mill."
+ ],
+ [
+  "karbad oibri Konkreti Puimp Trukk",
+  "item",
+  7,
+  "transport",
+  "Concrete Pump Truck (1958): 300 kW, 28000 kg, road role mix."
+ ],
+ [
+  "karbad oibri Katerpildur 797 Haulu Trukk",
+  "item",
+  7,
+  "transport",
+  "Caterpillar 797 Haul Truck (1999): 2983 kW, 360000 kg, road role haul."
+ ],
+ [
+  "karbad oibri Haund-Hauledi Stoni Rolder",
+  "item",
+  2,
+  "transport",
+  "Hand-Hauled Stone Roller (-2500): 0 kW, 600 kg, road role compact."
+ ],
+ [
+  "karbad oibri Horsi-Drauwn Rolder",
+  "item",
+  4,
+  "transport",
+  "Horse-Drawn Roller (1800): 0 kW, 3000 kg, road role compact."
+ ],
+ [
+  "karbad oibri Tiep Kart",
+  "item",
+  4,
+  "transport",
+  "Tip Cart (1700): 0 kW, 800 kg, road role haul."
+ ],
+ [
+  "karbad oibri Friesno Skraper",
+  "item",
+  6,
+  "transport",
+  "Fresno Scraper (1883): 0 kW, 400 kg, road role grade."
+ ],
+ [
+  "karbad oibri Horsi-Drauwn Roadu Grauder",
+  "item",
+  6,
+  "transport",
+  "Horse-Drawn Road Grader (1885): 0 kW, 1500 kg, road role grade."
+ ],
+ [
+  "karbad oibri Stiem Shouvel",
+  "item",
+  5,
+  "transport",
+  "Steam Shovel (1839): 30 kW, 18000 kg, road role dig."
+ ]
+]

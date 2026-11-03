@@ -1,0 +1,187 @@
+{
+ "sky": {
+  "sky": "#3b2a5c",
+  "fog": "#6e5a9a",
+  "cloud": "#90c8b0e8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f5c9a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.veneruamora.E2.assay.005379",
+   "archetype": "snowy_plains",
+   "temp": -1,
+   "humid": -0.2,
+   "grass": "#a8c4c8",
+   "foliage": "#8fb0b8",
+   "water": "#7fa8c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.veneruamora.E3.assay.003281",
+   "archetype": "frozen_peaks",
+   "temp": -0.6,
+   "humid": 0.2,
+   "grass": "#9bb7c4",
+   "foliage": "#86a6b4",
+   "water": "#6f9ac0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.veneruamora.E3.assay.001715",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.8,
+   "grass": "#6a8a5e",
+   "foliage": "#587a4c",
+   "water": "#4a6e5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneruamora.E2.assay.001446",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5e8456",
+   "foliage": "#4e7448",
+   "water": "#46685a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneruamora.E2.assay.001238",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.3,
+   "humid": 0.4,
+   "grass": "#7a9a72",
+   "foliage": "#5c7c5a",
+   "water": "#4f6f8f",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneruamora.E3.assay.001247",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#6b8a62",
+   "foliage": "#4f6e4c",
+   "water": "#50708c",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneruamora.E2.assay.001667",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.6,
+   "grass": "#9ec88f",
+   "foliage": "#e0a8c0",
+   "water": "#7fb0c8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneruamora.E2.assay.001880",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#b8b070",
+   "foliage": "#a8a060",
+   "water": "#6f9fb0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veneruamora.E3.assay.003471",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c8a070",
+   "foliage": "#b89060",
+   "water": "#8a9ab0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veneruamora.E2.assay.001568",
+   "archetype": "desert",
+   "temp": 1,
+   "humid": -0.9,
+   "grass": "#d8c090",
+   "foliage": "#c8b080",
+   "water": "#7aa0b8",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-twilight world of silver rivers and ash-drifting wastelands, where frozen peaks and drowned swamps frame the scorched desert and badlands of the east.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "spore_blossom_air",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9d8b8",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.veneruamora.E2.assay.006207",
+  "why": "Open green meadow gathering place suggests mild, pleasant, blossoming air.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "poppy",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.8,
+   "redstone": 0.8,
+   "lapis": 0.8,
+   "diamond": 0.6
+  },
+  "why_entry": "AR.veneruamora.E1.assay.005195",
+  "grounded": true
+ }
+}

@@ -1,1 +1,20 @@
-{"replace": false, "values": ["biomesoplenty:cherry_pressure_plate", "biomesoplenty:dead_pressure_plate", "biomesoplenty:empyreal_pressure_plate", "biomesoplenty:fir_pressure_plate", "biomesoplenty:hellbark_pressure_plate", "biomesoplenty:jacaranda_pressure_plate", "biomesoplenty:magic_pressure_plate", "biomesoplenty:mahogany_pressure_plate", "biomesoplenty:maple_pressure_plate", "biomesoplenty:origin_oak_pressure_plate", "biomesoplenty:palm_pressure_plate", "biomesoplenty:pine_pressure_plate", "biomesoplenty:redwood_pressure_plate", "biomesoplenty:stripped_pine_pressure_plate", "biomesoplenty:umbran_pressure_plate", "biomesoplenty:willow_pressure_plate", "natures_spirit:aspen_pressure_plate", "natures_spirit:maple_pressure_plate", "natures_spirit:wisteria_pressure_plate"]}
+{
+ "replace": false,
+ "values": [
+  "aether_ii:amberoot_pressure_plate",
+  "aether_ii:greatroot_pressure_plate",
+  "aether_ii:holystone_pressure_plate",
+  "aether_ii:skyroot_pressure_plate",
+  "aether_ii:undershale_brick_pressure_plate",
+  "aether_ii:wisproot_pressure_plate",
+  "the_backwoods:rotten_oak_pressure_plate",
+  "undergarden:ancient_root_pressure_plate",
+  "undergarden:depthrock_pressure_plate",
+  "undergarden:dreadrock_pressure_plate",
+  "undergarden:grongle_pressure_plate",
+  "undergarden:shiverstone_pressure_plate",
+  "undergarden:smogstem_pressure_plate",
+  "undergarden:tremblecrust_pressure_plate",
+  "undergarden:wigglewood_pressure_plate"
+ ]
+}

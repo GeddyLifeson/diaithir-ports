@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "diaithirgellings:gel_block_tide"
+ ],
+ "result": {
+  "id": "diaithirgellings:gel_tide",
+  "count": 9
+ }
+}

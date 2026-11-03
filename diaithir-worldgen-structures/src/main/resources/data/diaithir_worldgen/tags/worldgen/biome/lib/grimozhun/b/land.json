@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:grimozhun_groktoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimozhun_grozhar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimozhun_khornukturn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimozhun_kraktaiggar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimozhun_krogurkun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimozhun_thornurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimozhun_vorothak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimozhun_vorougurnun",
+   "required": false
+  }
+ ]
+}

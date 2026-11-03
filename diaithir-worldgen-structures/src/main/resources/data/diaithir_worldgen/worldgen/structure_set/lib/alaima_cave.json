@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/alaima/delve_0_cave",
+   "weight": 71
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/delve_1_cave",
+   "weight": 164
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/delve_2_cave",
+   "weight": 124
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/delve_3_cave",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 30401365
+ }
+}

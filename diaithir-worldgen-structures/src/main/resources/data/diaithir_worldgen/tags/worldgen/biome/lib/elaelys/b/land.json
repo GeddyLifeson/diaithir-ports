@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:elaelys_elaema",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elaelys_ilyerla",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elaelys_miinneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elaelys_oriellae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elaelys_orierliolys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elaelys_oriilora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elaelys_silirleth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elaelys_surakarala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elaelys_venuamae",
+   "required": false
+  }
+ ]
+}

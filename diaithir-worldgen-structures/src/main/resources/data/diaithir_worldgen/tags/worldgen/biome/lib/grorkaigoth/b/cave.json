@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:grorkaigoth_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grorkaigoth_grottoes",
+   "required": false
+  }
+ ]
+}

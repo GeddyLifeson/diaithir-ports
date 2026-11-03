@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ameosastia_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ameosastia_grottoes",
+   "required": false
+  }
+ ]
+}

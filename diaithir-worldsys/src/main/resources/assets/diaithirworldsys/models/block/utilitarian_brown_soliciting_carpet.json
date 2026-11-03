@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirworldsys:block/utilitarian_brown_soliciting_carpet"
+ }
+}

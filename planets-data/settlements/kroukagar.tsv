@@ -1,0 +1,556 @@
+entry_id	name	tier	era	biome_entry
+GR.kroukagar.E1.assay.000654	Melles	1	E1	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E1.assay.001101	Sianes	1	E1	GR.kroukagar.E6.places.000055
+GR.kroukagar.E1.assay.001764	Vantor	1	E1	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E1.assay.001889	Mesanum	1	E1	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E1.assay.002102	Riania	1	E1	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E1.assay.002315	Oraustes Ceontorum	1	E1	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E1.assay.002858	Ciallia Nirus	1	E1	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E1.assay.003095	Corianosia	1	E1	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E1.assay.003843	Valirneosor	1	E1	GR.kroukagar.E6.places.000055
+GR.kroukagar.E1.assay.004172	Orantus	1	E1	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E1.assay.004763	Carnor Corirum	1	E1	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E1.assay.005402	Amiaseria	1	E1	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E1.assay.006139	Conanum	1	E1	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E1.assay.006245	Liastanum	1	E1	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E1.assay.006781	Nallia	1	E1	GR.kroukagar.E6.places.000055
+GR.kroukagar.E1.assay.007085	Oraniastum	1	E1	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E1.assay.010513	Sereollus Leonostor	1	E1	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E1.assay.010902	Amaneorus	1	E1	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E1.assay.012210	Rellanum Nastium	1	E1	GR.kroukagar.E6.places.000055
+GR.kroukagar.E1.assay.012834	Liarnor	1	E1	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E1.assay.013244	Miasistia	1	E1	GR.kroukagar.E6.places.000055
+GR.kroukagar.E1.assay.013584	Amauntaria	1	E1	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E1.assay.013596	Veolum Nallus	1	E1	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E1.assay.013665	Mestalum	1	E1	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E1.assay.013713	Seontor	1	E1	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E1.assay.014242	Teloleorum	1	E1	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E1.assay.014265	Vostia Narium	1	E1	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E1.assay.015062	Amellia	1	E1	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E1.assay.015554	Sarnium Rernia	1	E1	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E1.assay.015583	Sines Corolinia	1	E1	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E1.assay.017525	Corallus Orestaurnia	1	E1	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E1.assay.018089	Ronia Tesollia	1	E1	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E1.places.000257	Grimoukoth	2	E1	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E1.places.000316	Osutakanoma	5	E1	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E2.assay.000997	Corineosium	2	E2	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E2.assay.001230	Vestium	2	E2	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E2.assay.001607	Reoles	2	E2	GR.kroukagar.E6.places.000055
+GR.kroukagar.E2.assay.001747	Vorarnium	2	E2	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E2.assay.002012	Tinia	2	E2	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E2.assay.002260	Cases	2	E2	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E2.assay.002379	Vostanum	2	E2	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E2.assay.002899	Roniasum	2	E2	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E2.assay.002966	Serellirus	2	E2	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E2.assay.003041	Tinia Lantelum	2	E2	GR.kroukagar.E6.places.000055
+GR.kroukagar.E2.assay.003079	Coraunellor	2	E2	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E2.assay.003162	Nirus Mostum	2	E2	GR.kroukagar.E6.places.000055
+GR.kroukagar.E2.assay.003299	Rastia	2	E2	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E2.assay.004067	Lintum	2	E2	GR.kroukagar.E6.places.000055
+GR.kroukagar.E2.assay.004122	Meorarnus	2	E2	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E2.assay.006432	Seosontum	2	E2	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E2.assay.006650	Sialia Tonialor	2	E2	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E2.assay.007005	Orolia	2	E2	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E2.assay.007301	Corausintum	2	E2	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E2.assay.007521	Ceolorum	2	E2	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E2.assay.007761	Ciastia Amases	2	E2	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E2.assay.008826	Corellum	2	E2	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E2.assay.009389	Riantaulia	2	E2	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E2.assay.010024	Centostium	2	E2	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E2.assay.010077	Vaulor	2	E2	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E2.assay.010669	Teliarus	2	E2	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E2.assay.011619	Sistium Coreoranum	2	E2	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E2.assay.011631	Amelus Mesum	2	E2	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E2.assay.013232	Laurum Orausallor	2	E2	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E2.assay.013485	Tarnes Valileostor	2	E2	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E2.assay.013534	Nalauses	2	E2	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E2.assay.013604	Sereostor	2	E2	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E2.assay.013902	Sastium Serillus	2	E2	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E2.assay.013970	Rolastanum	2	E2	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E2.assay.014184	Nisum Nolum	2	E2	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E2.assay.014193	Coresia Melium	2	E2	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E2.assay.014399	Ciallium	2	E2	GR.kroukagar.E6.places.000055
+GR.kroukagar.E2.assay.014707	Tarus Riarnium	2	E2	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E2.assay.015177	Tirnentus	2	E2	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E2.assay.015193	Carnium Sentialus	2	E2	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E2.assay.015278	Viantisor	2	E2	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E2.assay.015570	Riarinus	2	E2	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E2.assay.016123	Oreollor Sereornanum	2	E2	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E2.assay.016565	Ninor Vaurnor	2	E2	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E2.assay.017029	Raustiles	2	E2	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E2.assay.017141	Amellium Naunillum	2	E2	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E2.assay.017218	Corenoses Corolor	2	E2	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E2.assay.017358	Valesanum Lernor	2	E2	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E2.assay.017894	Cellor Tallontor	2	E2	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E2.assay.018058	Corirum Amarianum	2	E2	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E2.assay.018358	Telasolor	2	E2	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E2.assay.018852	Rillum	2	E2	GR.kroukagar.E6.places.000055
+GR.kroukagar.E2.places.000283	Oriareneth	3	E2	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.000561	Viarnes	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.000593	Vaustia	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.000802	Reolauranum	3	E3	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E3.assay.000916	Casum	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.001105	Amastium	3	E3	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E3.assay.001122	Naullum	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.001374	Valernaria	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.001595	Lostium	3	E3	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E3.assay.001730	Cellanum	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.002188	Serinor	3	E3	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E3.assay.002439	Testum	3	E3	GR.kroukagar.E6.places.000055
+GR.kroukagar.E3.assay.002565	Orentaustum	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.002940	Valaurnorum	3	E3	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E3.assay.003044	Ameontus	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.003135	Tianelor	3	E3	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E3.assay.003303	Amirnenor	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.003712	Maunus	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.003857	Amornirum	3	E3	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E3.assay.004732	Malles Miaror	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.005374	Cenor Valontum	3	E3	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E3.assay.005382	Corarum	3	E3	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E3.assay.005985	Telestor	3	E3	GR.kroukagar.E6.places.000055
+GR.kroukagar.E3.assay.006636	Mantestanum	3	E3	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E3.assay.006670	Mosianus	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.006694	Orisor Serasaurnum	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.006925	Seresia	3	E3	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E3.assay.007128	Costor Riallum	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.007250	Viarasanum	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.007443	Valiriasus	3	E3	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E3.assay.007518	Seralanum	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.008202	Tentarus	3	E3	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E3.assay.008488	Amaurnintus	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.008527	Miantium Vastium	3	E3	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E3.assay.009082	Valistor	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.009097	Oronus	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.009146	Cases Sereolanum	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.009304	Orauntornes	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.009619	Serianes Neontialor	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.009775	Tistia Oreonistor	3	E3	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E3.assay.010406	Coreneolium	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.010739	Valeoses Mianeria	3	E3	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E3.assay.011324	Tauriasia	3	E3	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E3.assay.011503	Oriastellor	3	E3	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E3.assay.011752	Oralliaria	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.012034	Orausor Valonus	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.012235	Teliarnium Lestianes	3	E3	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E3.assay.012244	Sarnausum	3	E3	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E3.assay.013298	Amaurialor	3	E3	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E3.assay.013383	Sonus	3	E3	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E3.assay.014305	Seolor Solus	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.014506	Testasanum	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.014695	Seraustum	3	E3	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E3.assay.014774	Aminanum Nauses	3	E3	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E3.assay.015679	Serelor Tares	3	E3	GR.kroukagar.E6.places.000055
+GR.kroukagar.E3.assay.015872	Tineorus	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.016054	Nernus Reles	3	E3	GR.kroukagar.E6.places.000055
+GR.kroukagar.E3.assay.016359	Tasium Vaulanum	3	E3	GR.kroukagar.E6.places.000055
+GR.kroukagar.E3.assay.016376	Mollinus	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E3.assay.016721	Cilor	3	E3	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E3.assay.018114	Saullenia	3	E3	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E3.assay.018467	Vastaules	3	E3	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E3.assay.018502	Restum Serasor	3	E3	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E4.assay.000582	Tostiasor	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.000724	Teleonor	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.001032	Teliror	4	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.assay.001159	Meornum	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.001690	Leontus	4	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.assay.001729	Coriasanum	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.001752	Corisanum	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.001814	Serillarnus	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.001998	Seriarnes	4	E4	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E4.assay.002153	Oriarelia	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.002549	Celium	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.002638	Amornes	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.002745	Orestanum Lirnes	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.002801	Sastillum	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.002980	Mallanum	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.003082	Valestus	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.003387	Caurneolium	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.004748	Vistarus	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.005054	Resus Vanintium	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.005332	Valles	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.005769	Amastum Orintum	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.006262	Orellor Seraurnus	4	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.assay.006268	Costum Teleontia	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.006445	Serianintor	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.006721	Liastum	4	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.assay.007065	Serorillum	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.007193	Tirnaurum	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.007667	Laranum Ciarnorum	4	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.assay.008215	Valostes Seraureonus	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.008273	Listia	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.008295	Serintanum Leostaurnia	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.008471	Valeontium	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.008595	Teliantor	4	E4	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E4.assay.008743	Corollanum Telarnum	4	E4	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E4.assay.008988	Vileonia	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.009175	Serolaures	4	E4	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E4.assay.009345	Lonia	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.009556	Sorniantus	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.009633	Sauntanum Montus	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.009776	Riasor	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.010171	Nontor Liarium	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.010512	Telonus	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.010850	Tellasum	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.010863	Corollus	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.010968	Cellirus	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.011178	Tisia Telornium	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.011193	Liarniranum	4	E4	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E4.assay.011301	Ameosanium	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.011378	Nesium Serares	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.011440	Vaunor Larnus	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.011500	Neonus	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.011549	Tiarus Ceonauntus	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.011664	Telilostes	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.011958	Telauntes Veornia	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.012198	Caureolum	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.012213	Amanor Amellus	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.012224	Mornes Laurneosor	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.013179	Telauseoria	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.013365	Oreollesor	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.013733	Miallarum	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.013758	Teleror Orarnium	4	E4	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E4.assay.013775	Nonus Meornum	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.013847	Tonesanum	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.014342	Rorus Canum	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.014658	Oreostonus	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.014857	Oriasor Melles	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.014993	Centauses	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.015115	Tellirnus	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.015225	Lestium Lostaunium	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.015310	Tauntasor	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.015603	Reontelanum	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.015981	Terostia	4	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.assay.016055	Amaurnor Tanum	4	E4	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E4.assay.016074	Aminor Serilum	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.016231	Cania Reles	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.016338	Leriantia	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.016442	Rornanum Coralium	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.016594	Nentum Valeolus	4	E4	GR.kroukagar.E6.places.000055
+GR.kroukagar.E4.assay.016628	Siraullor	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.016867	Ronastes	4	E4	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E4.assay.016965	Telases Reseostor	4	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.assay.017531	Tillestes	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.assay.017770	Lesia Amollium	4	E4	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E4.assay.017987	Vasor Oreosorus	4	E4	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E4.assay.018411	Amisteles	4	E4	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E4.places.000251	Xaashiazeth	1	E4	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E4.places.000269	Miinnuarora	2	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.places.000271	Osunamkaala	2	E4	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E4.places.000287	Alaereth	3	E4	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.000495	Telintum	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.000678	Rallausium	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.000773	Oronanum	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.000885	Rasanum	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.001054	Corintium Nesium	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.001108	Lastanum	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.001322	Valeontia	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.001411	Amernia	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.001785	Valeontasus	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.002082	Sontiarnus	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.002302	Naurus Amolines	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.002342	Meonia	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.002384	Nilia	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.002395	Valeoranum	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.002772	Laustes	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.002919	Rianum	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.003009	Valornor	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.003034	Nintiallum	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.003328	Corenillor	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.003397	Viastenum	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.003438	Riastolum	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.003472	Mantus Tiarninum	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.003478	Moristor	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.003616	Amosallus	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.003619	Seoranum Nosinor	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.003705	Cesiaria	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.003793	Miastia	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.003832	Miarnauntes	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.004057	Reolanum	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.004125	Coreonolum	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.004484	Sallus Velinium	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.004509	Amantor	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.004557	Viles	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.004664	Nirnium	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.004827	Valerum Rianisus	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.005035	Sarnes	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.005227	Norneolum	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.005231	Cillor Amestus	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.005330	Rallestia	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.005389	Orisor Reollia	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.005461	Oriaranum Valanernium	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.005727	Miastolanum	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.005757	Serilesanum	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.005882	Tiastor Tanauranum	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.005945	Amilles	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.006016	Molum	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.006238	Veoses	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.006349	Raunalanum	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.006543	Niareontus	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.006551	Leornanus	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.006651	Coronistia	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.006658	Amoraulus	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.006675	Veoriasus	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.006712	Amornia	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.007287	Oreollus Nises	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.007487	Lerus	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.007499	Ciarallia	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.007551	Nistausium	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.007585	Malianium	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.007686	Teleolus	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.007780	Naria Vistor	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.007942	Valiantes	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.008035	Seriasarium	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.008123	Risaunor	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.008470	Orilia Telostia	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.008518	Sintanum Telonum	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.008596	Lerus Veolauranum	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.008701	Nones	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.009076	Vinum	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.009321	Valeonia Serisaulum	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.009326	Rires Taserium	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.009327	Leoses	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.009404	Reorauntium	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.009490	Valasirum Valeosernor	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.009506	Moreosium	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.009530	Rianor Oriastium	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.009617	Lolanum Nausenus	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.009639	Toses Amantiasum	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.009655	Oristalia	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.009670	Coriarum Valiarnum	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.009697	Serisontia	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.009944	Rernum Vialaria	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.010185	Reolirnium	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.010377	Valantia Telilus	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.010434	Oranes	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.010948	Vanteollia	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.011225	Volliarnium	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.011467	Tentium Lesor	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.011558	Cernus Sontasia	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.011720	Riarnenia	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.011872	Coreonia Ameosistor	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.011882	Amornum	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.012070	Lenium	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.012206	Amoriarnia	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.012277	Orenalium	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.012515	Silonia	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.013318	Vanornes	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.013333	Tintiasum	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.013397	Amarnintor	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.013466	Meostium Corenia	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.013482	Teontaules	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.013516	Mellastum	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.013562	Amantium Orintonum	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.013609	Mintium Cores	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.013648	Nosaullor	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.013851	Coraullum Vestanum	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.013906	Valestanum Amiasus	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.013973	Vausia Valaristia	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.014160	Ceonirnes	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.014348	Lirnontes	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.014496	Orelor Oreostilia	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.014502	Ceolor Seriasor	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.014511	Valaror Rintaulles	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.014622	Amesauranum	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.014703	Listes Conaulus	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.014723	Corirnium Mallus	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.014771	Veniastus	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.014841	Vorentium	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.014989	Oriasorus	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.015155	Liantes Risanum	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.015252	Rianus Sernia	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.015456	Cestiarium	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.015458	Tialium Vauneorus	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.015609	Veorium	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.015766	Rostium Coriallium	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.015819	Cestum	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.015846	Sernilor	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.015854	Reonornium	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.015922	Nauntia Tistosum	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.015984	Cistus Nausum	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.016388	Amirnollor	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.016411	Riastaurium Toseollus	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.016579	Teleolostus Amarnus	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.016596	Valintonum	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.016724	Serosium Telauses	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.016878	Nolenor	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.017051	Siastium	5	E5	GR.kroukagar.E6.places.000055
+GR.kroukagar.E5.assay.017241	Cirnelus	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.017426	Oraulus Centiranum	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.017507	Vauselanum	5	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.assay.017539	Veoses Reles	5	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.assay.017664	Tiarnentum	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.017903	Valontia	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.assay.018019	Valoralium Amillorium	5	E5	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E5.assay.018276	Mauriasum Corileones	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.018344	Tiarnaranum	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.018489	Amauntus Seorantes	5	E5	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E5.assay.018634	Viallentor Viantor	5	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.assay.018747	Sinium Sereosinium	5	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.assay.018833	Vornum Valarniarum	5	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E5.places.000255	Nuemioleth	1	E5	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E5.places.000291	Gouzhurn	3	E5	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E5.places.000308	Saullisium	4	E5	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E5.places.000309	Moreron	4	E5	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E5.places.000310	Veniora	4	E5	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.000596	Neorium	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.000759	Lesanum	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.000778	Callia	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.000794	Vernollium	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.000815	Teorania	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.000866	Teontinor	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.000996	Mollus	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.001076	Niasum	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.001241	Tarillia	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.001296	Amiarum	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.001373	Seriarillia	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.001392	Ameoria	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.001547	Ralor	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.001609	Teleosus	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.001945	Lilum	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.002485	Taniarnes	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.002643	Coranaules	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.002677	Valorium	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.002835	Corilum	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.002871	Telerantium	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.002994	Oreornanum	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.003137	Oreostia	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.003269	Valerum	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.003466	Vontus	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.003699	Venum	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.003966	Ameosium Ameolanum	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.004007	Sillanum	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.004022	Miastum	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.004093	Veleontum	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.004331	Nentisia	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.004544	Contium Viallium	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.004599	Teolor	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.004655	Telalium	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.004726	Mistausium	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.004841	Cileornanum	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.004922	Amestornium	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.005041	Teostus	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.005128	Riarum	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.005170	Orallus	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.005505	Laurnelor	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.005520	Telistor	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.005667	Tollium Valaulises	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.005699	Amelor Corireolia	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.005740	Volanum	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.005925	Corisia	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.005941	Telialantum	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.006056	Oraurnes	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.006060	Sanorum	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.006117	Corostus	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.006171	Solus	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.006229	Neostum	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.006336	Sauria	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.006609	Serontarnes	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.006971	Laranum Lilasia	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.007063	Veolausia	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.007110	Lontialor	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.007233	Coniales	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.007260	Sellus Viastor	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.007350	Salum Vausonor	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.007564	Vales Teollanum	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.007752	Orenor	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.007824	Sereostalia	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.007832	Viastolium	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.007979	Nianarum	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.008258	Seorostia	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.008468	Resum Saurneosium	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.008611	Corernum	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.008688	Vasauntium	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.008785	Teolus Orinornus	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.008910	Roserum	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.009049	Telaulia Rasum	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.009346	Seranes Cialleones	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.009440	Tenor Restia	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.009458	Valolia Sosteontor	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.009616	Nerales	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.009883	Oreria	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.010019	Niarollus	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.010039	Carnialia	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.010055	Nantor Orostia	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.010403	Ceontilium	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.010580	Cinus Villeoses	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.010966	Viallor Teleolium	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.011072	Lestontus	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.011356	Seraullum Sostium	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.011603	Mausium Sirnes	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.011723	Amosillia	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.011732	Launaror	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.011806	Niseonium	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.011808	Vaullor Telestolor	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.011957	Niastes Amaullianes	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.012079	Vornasanum	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.012095	Cerum Laror	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.012141	Riares Teliaronor	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.012199	Mantes	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.012258	Amaustia Orauntia	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.012342	Corauristia	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.012399	Naurnia Teleosoria	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.012534	Rostirus	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.012585	Tines Vostaurum	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.013022	Nestisum	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.013142	Saullum Sirneolor	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.013171	Nentes Ciallus	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.013350	Telolaurnum	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.013362	Teollonia	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.013463	Calleontus	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.013519	Relles Ciantus	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.013693	Telausium Renanum	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.013702	Reraustanum	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.013764	Sialum Nausia	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.013800	Telausilor	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.014233	Mastenanum	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.014297	Coristium Colarnum	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.014380	Coralanum Naniastor	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.014419	Sereornus Meorauses	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.014665	Tintor	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.014772	Silania	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.014926	Valilus Sollauntum	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.014945	Ranaurnium	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.015019	Serausum Nornia	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.015092	Manontum	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.015286	Tolanor	6	E6	GR.kroukagar.E6.places.000055
+GR.kroukagar.E6.assay.015366	Oriarnia Coreollor	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.015445	Mastus Rallor	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.015592	Manteones	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.015719	Naullianes	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.015838	Lilus	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.015844	Laniantor	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.015973	Senes Mastia	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.016024	Ventostes	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.016099	Minum Liastanum	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.016142	Nenaurium	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.016687	Tillanum Vestia	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.017061	Rollia Serones	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.017200	Testianus	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.017259	Teleseornus	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.017263	Serausum Sallorus	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.017292	Veolenor	6	E6	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E6.assay.017490	Vaurolia	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.017534	Venor Caleror	6	E6	GR.kroukagar.E2.assay.012052
+GR.kroukagar.E6.assay.017674	Oriastornus	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.017756	Riallantes	6	E6	GR.kroukagar.E6.assay.011321
+GR.kroukagar.E6.assay.017943	Niallistor	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.017982	Siasentium	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.018080	Sereolanum Naullium	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.018235	Corentor Telilus	6	E6	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E6.assay.018269	Viastum Nareostes	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.018299	Telolia Amastor	6	E6	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E6.assay.018462	Oriarnia Orialaunium	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.018508	Laleostia	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.018519	Miastines	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E6.assay.018688	Maulor Nellum	6	E6	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E6.assay.018746	Valirauntor	6	E6	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E7.assay.001024	Tastillum	7	E7	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E7.assay.001793	Cisanum	7	E7	GR.kroukagar.E3.assay.006640
+GR.kroukagar.E7.assay.002601	Mines	7	E7	GR.kroukagar.E6.assay.011723
+GR.kroukagar.E7.assay.007635	Tinanum Amianes	7	E7	GR.kroukagar.E6.places.000055
+GR.kroukagar.E7.assay.011185	Tonalanum	7	E7	GR.kroukagar.E5.assay.016916
+GR.kroukagar.E7.assay.016919	Neorus Neollus	7	E7	GR.kroukagar.E3.assay.002299
+GR.kroukagar.E7.assay.018377	Meornistia	7	E7	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E7.places.000256	Halanar	1	E7	GR.kroukagar.E6.places.000055
+GR.kroukagar.E7.places.000312	Alaareth	4	E7	GR.kroukagar.E2.assay.017670
+GR.kroukagar.E7.places.000313	Ukaramnaum	4	E7	GR.kroukagar.E2.assay.012052

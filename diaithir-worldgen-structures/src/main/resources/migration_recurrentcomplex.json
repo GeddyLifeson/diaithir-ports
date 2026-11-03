@@ -1,0 +1,11 @@
+{
+ "note": "Recurrent Complex Volts keeps its structures as template files in its config folder, not as registry ids, so no old ids exist in the pack. Any recurrentcomplex: reference falls back to these:",
+ "old_prefix": "recurrentcomplex",
+ "new_structures": [
+  "diaithir_worldgen:rc/maze_stone",
+  "diaithir_worldgen:rc/maze_sand",
+  "diaithir_worldgen:rc/maze_nether",
+  "diaithir_worldgen:rc/maze_ice",
+  "diaithir_worldgen:rc/maze_deep"
+ ]
+}

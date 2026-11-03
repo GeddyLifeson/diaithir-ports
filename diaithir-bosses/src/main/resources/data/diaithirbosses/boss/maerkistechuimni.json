@@ -4,8 +4,8 @@
  "name_en": "Maerkistechuimni",
  "age": 7,
  "own": {
-  "kind": "golem",
-  "scale": 2.2,
+  "kind": "look_float",
+  "scale": 1.98,
   "hp": 950,
   "damage": 24,
   "armor": 16,
@@ -196,5 +196,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:maerkistechuimni",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

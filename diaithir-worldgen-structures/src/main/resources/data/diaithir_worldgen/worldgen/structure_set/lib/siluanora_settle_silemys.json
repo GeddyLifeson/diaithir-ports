@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_0_silemys",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_2_silemys",
+   "weight": 11
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 48062363
+ }
+}

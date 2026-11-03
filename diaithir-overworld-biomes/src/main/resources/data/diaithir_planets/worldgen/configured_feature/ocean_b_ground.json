@@ -1,0 +1,1 @@
+{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"data":{"Name":"minecraft:tall_seagrass","Properties":{"half":"lower"}},"weight":4},{"data":{"Name":"minecraft:seagrass"},"weight":4},{"data":{"Name":"minecraft:sea_pickle","Properties":{"pickles":"2","waterlogged":"true"}},"weight":1}]}}}

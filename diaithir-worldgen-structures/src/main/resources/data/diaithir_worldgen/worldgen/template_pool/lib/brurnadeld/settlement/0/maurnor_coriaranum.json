@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/brurnadeld/settlement/0/maurnor_coriaranum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/brurnadeld/ki_brurnadeld_e3_places_000166",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/brurnadeld/ki_brurnadeld_e5_places_000146",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

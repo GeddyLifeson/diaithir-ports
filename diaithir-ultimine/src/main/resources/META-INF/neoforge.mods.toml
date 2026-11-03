@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirultimine"
+version = "${version}"
+displayName = "Diaithir Ultimine"
+description = "Break a whole vein or tree at once: switch it on with /ultimine, then break one block of the vein with the right tool. Each block wears the tool as a normal break does and tires you a little. Clean-room; no code taken."
+
+[[dependencies.diaithirultimine]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

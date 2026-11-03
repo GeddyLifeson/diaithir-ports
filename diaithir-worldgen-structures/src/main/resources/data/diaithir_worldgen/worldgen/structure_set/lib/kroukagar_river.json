@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/bridge_0_river",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/bridge_1_river",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/bridge_2_river",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/bridge_3_river",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 39684357
+ }
+}

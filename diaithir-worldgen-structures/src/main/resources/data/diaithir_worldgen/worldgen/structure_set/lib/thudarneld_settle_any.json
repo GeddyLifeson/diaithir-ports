@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_any",
+   "weight": 330
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_any",
+   "weight": 203
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_any",
+   "weight": 111
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_any",
+   "weight": 206
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 173631649
+ }
+}

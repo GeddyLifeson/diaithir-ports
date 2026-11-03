@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/telones/settlement/0/losiarus",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/telones/my_telones_e1_places_000330",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

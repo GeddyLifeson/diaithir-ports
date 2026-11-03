@@ -1,0 +1,7 @@
+{
+ "input": "minecraft:iron_helmet",
+ "output": {
+  "id": "minecraft:iron_nugget",
+  "count": 30
+ }
+}

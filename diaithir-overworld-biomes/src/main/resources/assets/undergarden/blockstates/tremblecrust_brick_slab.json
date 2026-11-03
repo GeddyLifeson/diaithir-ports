@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "undergarden:block/tremblecrust_brick_slab"
+    },
+    "type=double": {
+      "model": "undergarden:block/tremblecrust_bricks"
+    },
+    "type=top": {
+      "model": "undergarden:block/tremblecrust_brick_slab_top"
+    }
+  }
+}

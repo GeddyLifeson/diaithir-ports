@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/toraizhoth/settlement/1/zephizis",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/toraizhoth/gr_toraizhoth_e7_places_000222",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}
