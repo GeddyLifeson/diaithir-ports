@@ -18,3 +18,9 @@ Step 1: Sedna (156 classes), Ceres (22) and the Minux `Buildroot` loader are ven
 6. Age gate, Codex entry, quest, 130-language names via the names pipeline, Bible check.
 
 Compile builds that cannot run in the cloud go to a PC Remote Control thread, hidden windows only.
+
+## Step 2 state (OC2R code on 26.1.2)
+`src/main/java/li/cil/oc2` holds the OC2R 1.21.1 sources (726 files, about 66k lines), compiled only with `-Poc2` so the default module build stays green. `-Poc2 -Poc2Stage=server` leaves out client, datagen, jcodec, integrations and mixins (server side first).
+Scripted so far: `ResourceLocation` to `Identifier`, `MethodsReturnNonnullByDefault` removed, NBT getters moved to the `getXOr` / `getCompoundOrEmpty` / `getListOrEmpty` forms.
+Error count (javac first phase, so it will grow when symbols resolve): 3626 raw, 2070 after the server cut, 1256 after the scripted fixes.
+Left, in rough order: `BlockEntity.saveAdditional/loadAdditional` to `ValueOutput/ValueInput` (13 block entities), `ChunkPos` record, `IBlockEntityExtension.handleUpdateTag`, `spawnAtLocation`, recipe builders (`shaped`), data component and `DyedItemColor`, rendering/GUI (GlStateManager, VertexBuffer, Markdown Manual replaced by our Codex), JEI/ProjectRed integrations dropped, jcodec only needed by the camera.
