@@ -20,6 +20,9 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 - Driving: controls are `ComputedVariable`s on the vehicle (`throttleVar`, `brakeVar`, `parkingBrakeVar`, `autopilotValueVar`, steering angle through the physics class). An NPC driver should set these, not add physics.
 - Vehicles are Minecraft entities of `mcinterface261.BuilderEntityExisting` with a protected `entity` field, so a bridge from our mods needs reflection or a compile-only IV jar.
 
+## Pumps and storage (built, in diaithir-units, `net.diaithir.units.fuel.station`)
+Fuel barrel (Age II, 200 L), hand pump (Age III, 5 L per use), fuel tank (Age VI, 20,000 L), pump station (Age VI, 1 L/s, automatic, 5-block reach) and loading rack (Age VII, 20 L/s). A pump or rack pulls from an adjacent tank into every fuelable target in reach. Targets are anything registered in `Targets.SOURCES`; Immersive Vehicles is bridged by reflection (its vehicle fluid tank), so tank cars and ships add their own source. `/diaithirfuel fill <pos> <fuel> <litres>` fills a tank (owners) until Foundry refining supplies it. `/diaithirfuel selftest` passes on a headless server: pump and rack rates, fuel conserved, no mixing, full targets respected, save and load. Not tested: the IV reflection against a real vehicle entity, pipes into tanks, client look (cube blocks with drawn textures), recipes are vanilla placeholders.
+
 ## Port sources from the mod survey (plans/MOD_SURVEY.md)
 MrCrayfish's Vehicle Unofficial (GPL-3) for car features, MineColonies (GPL-3) and the Guard Villagers fork (MIT) for NPC driver behaviour. Porting GPL-3 code makes the receiving module GPL-3, so anything ported from them goes in its own module or jar section with its licence recorded, not into this MIT module. Check IV first (it already has pumps, tanks, roads and control variables), then these.
 
