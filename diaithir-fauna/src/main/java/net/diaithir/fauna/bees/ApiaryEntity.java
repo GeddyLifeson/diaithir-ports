@@ -16,13 +16,15 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/** Up to three bees. Each makes one comb of its species per CYCLE ticks while there are at least MIN_FLOWERS flowers within RADIUS blocks and it is not raining or dark. */
+/** Up to three bees. Each makes one comb of its species per CYCLE ticks while there are at least MIN_FLOWERS flowers within RADIUS blocks and it is not raining or dark (endurance lets a bee work in rain and at night). */
 public final class ApiaryEntity extends BlockEntity {
     public static final int MAX_BEES = 3, CYCLE = 3600, RADIUS = 5, MIN_FLOWERS = 3, CAP = 256;
     private final List<String> bees = new ArrayList<>();
     private final List<Integer> timers = new ArrayList<>();
     private final Map<String, Integer> combs = new LinkedHashMap<>();
     private int flowers = -1;
+    /** Test hook. */
+    boolean forceRain;
 
     public ApiaryEntity(BlockPos pos, BlockState state) { super(Bees.APIARY_ENTITY.get(), pos, state); }
 
@@ -61,7 +63,7 @@ public final class ApiaryEntity extends BlockEntity {
     public int combCount(String species) { return combs.getOrDefault(species, 0); }
 
     public String status() {
-        return bees.isEmpty() ? "Empty apiary. Put a jar of bees in." : bees.size() + " bees (" + String.join(", ", bees) + "), "
+        return bees.isEmpty() ? "Empty apiary. Put a jar of bees in." : bees.size() + " bees (" + String.join(", ", bees.stream().map(g -> Genes.species(g) + " " + Genes.prod(g) + "/" + Genes.end(g)).toList()) + "), "
                 + combs.values().stream().mapToInt(Integer::intValue).sum() + " combs, " + (flowers < 0 ? "?" : flowers) + " flowers near.";
     }
 
@@ -81,12 +83,15 @@ public final class ApiaryEntity extends BlockEntity {
     void serverTick(ServerLevel level, int step) {
         if (bees.isEmpty()) return;
         if (flowers < 0 || level.getGameTime() % 200 < step) flowers = countFlowers(level, worldPosition);
-        if (flowers < MIN_FLOWERS || level.isRaining() || level.getBrightness(net.minecraft.world.level.LightLayer.SKY, worldPosition.above()) < 8) return;
+        if (flowers < MIN_FLOWERS) return;
+        boolean rain = level.isRaining() || forceRain, dark = level.getBrightness(net.minecraft.world.level.LightLayer.SKY, worldPosition.above()) < 8;
         for (int i = 0; i < bees.size(); i++) {
-            int t = timers.get(i) + step;
+            String g = bees.get(i);
+            if ((rain && Genes.end(g) < 1) || (dark && Genes.end(g) < 2)) continue;
+            int t = timers.get(i) + step + step * Genes.prod(g) / 4;
             if (t >= CYCLE) {
                 t = 0;
-                combs.merge(bees.get(i), 1, (a, b) -> Math.min(CAP, a + b));
+                combs.merge(Genes.species(g), 1, (a, b) -> Math.min(CAP, a + b));
                 setChanged();
             }
             timers.set(i, t);
@@ -97,6 +102,8 @@ public final class ApiaryEntity extends BlockEntity {
     void countFlowersForTest(Level level) { flowers = countFlowers(level, worldPosition); }
 
     /** Test hook: fills every timer so the next serverTick makes a comb per bee. */
+    void ripenTo(int t) { timers.replaceAll(x -> t); }
+
     void ripen() { timers.replaceAll(t -> CYCLE - 20); }
 
     @Override
@@ -114,7 +121,7 @@ public final class ApiaryEntity extends BlockEntity {
         timers.clear();
         combs.clear();
         String joined = in.getStringOr("bees", "");
-        if (!joined.isEmpty()) for (String s : joined.split(",")) if (BeeSpecies.byId(s) != null) bees.add(s);
+        if (!joined.isEmpty()) for (String s : joined.split(",")) if (Genes.valid(s)) bees.add(s);
         int[] t = in.getIntArray("timers").orElse(new int[0]);
         for (int i = 0; i < bees.size(); i++) timers.add(i < t.length ? t[i] : 0);
         for (BeeSpecies s : BeeSpecies.ALL) {

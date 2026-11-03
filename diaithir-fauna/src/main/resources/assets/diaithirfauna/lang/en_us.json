@@ -2583,5 +2583,8 @@
   "bee.diaithirfauna.glowstone": "Glowstone Bee",
   "item.diaithirfauna.comb_glowstone": "Glowstone Comb",
   "bee.diaithirfauna.diamond": "Diamond Bee",
-  "item.diaithirfauna.comb_diamond": "Diamond Comb"
+  "item.diaithirfauna.comb_diamond": "Diamond Comb",
+  "block.diaithirfauna.nest_meadow": "Meadow Nest",
+  "block.diaithirfauna.nest_sandy": "Sandy Nest",
+  "block.diaithirfauna.nest_muddy": "Muddy Nest"
 }

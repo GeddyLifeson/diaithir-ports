@@ -63,5 +63,20 @@
   "id": "diaithirfauna:comb_diamond",
   "name": "Diamond Comb",
   "text": "Made by Diamond bees, bred from a gold and a lapis bee. Smelt it for the resource. Age 7."
+ },
+ {
+  "id": "diaithirfauna:nest_meadow",
+  "name": "Meadow Nest",
+  "text": "A wild nest in plains, sunflower plains, meadow and similar places. By day it lets out Meadow bees, up to three nearby. Age 1."
+ },
+ {
+  "id": "diaithirfauna:nest_sandy",
+  "name": "Sandy Nest",
+  "text": "A wild nest in desert, beach, badlands and similar places. By day it lets out Sandy bees, up to three nearby. Age 1."
+ },
+ {
+  "id": "diaithirfauna:nest_muddy",
+  "name": "Muddy Nest",
+  "text": "A wild nest in swamp, mangrove swamp, river and similar places. By day it lets out Muddy bees, up to three nearby. Age 1."
  }
 ]

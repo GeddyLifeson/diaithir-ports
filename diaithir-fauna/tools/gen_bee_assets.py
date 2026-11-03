@@ -88,3 +88,39 @@ for s in S:
     use = ' Smelt it for the resource.' if s['out']['method'] == 'smelt' else ' Craft it to crush it.'
     codex.append({'id': f'{ID}:comb_{s["id"]}', 'name': s['name'] + ' Comb', 'text': f'Made by {s["name"]} bees{how}{use} Age {s["age"]}.'})
 w('library-sync/diaithirfauna-bees.json', codex, base=os.path.join(ROOT, '..'))
+
+# ---- wild nests: block, worldgen (a surface block in the species' biomes), loot, lang
+NEST_BIOMES = {'meadow': ['minecraft:plains', 'minecraft:sunflower_plains', 'minecraft:meadow', 'minecraft:flower_forest', 'minecraft:forest', 'minecraft:birch_forest'],
+               'sandy': ['minecraft:desert', 'minecraft:beach', 'minecraft:badlands', 'minecraft:savanna'],
+               'muddy': ['minecraft:swamp', 'minecraft:mangrove_swamp', 'minecraft:river', 'minecraft:lush_caves']}
+def nest_tex(col):
+    random.seed('nest' + str(col)); im = Image.new('RGB', (64, 64))
+    for x in range(64):
+        for y in range(64):
+            g = random.randint(-10, 10); band = (y // 8) % 2
+            im.putpixel((x, y), (120 + g - 20 * band, 96 + g - 16 * band, 62 + g // 2))
+    for _ in range(26):
+        cx, cy = random.randint(4, 59), random.randint(4, 59)
+        for dx in range(-2, 3):
+            for dy in range(-2, 3):
+                if abs(dx) + abs(dy) <= 3: im.putpixel((cx + dx, cy + dy), col)
+    return im
+for s in S:
+    if s['wild'] <= 0: continue
+    n = f'nest_{s["id"]}'; col = hexrgb(int(s['color'], 16))
+    png(f'block/{n}', nest_tex(col))
+    w(f'assets/{ID}/models/block/{n}.json', {'parent': 'minecraft:block/cube_all', 'textures': {'all': f'{ID}:block/{n}'}})
+    w(f'assets/{ID}/blockstates/{n}.json', {'variants': {'': {'model': f'{ID}:block/{n}'}}})
+    w(f'assets/{ID}/items/{n}.json', {'model': {'type': 'minecraft:model', 'model': f'{ID}:block/{n}'}})
+    w(f'data/{ID}/loot_table/blocks/{n}.json', {'type': 'minecraft:block', 'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': f'{ID}:{n}'}], 'conditions': [{'condition': 'minecraft:survives_explosion'}]}]})
+    w(f'data/{ID}/worldgen/configured_feature/{n}.json', {'type': 'minecraft:simple_block', 'config': {'to_place': {'type': 'minecraft:simple_state_provider', 'state': {'Name': f'{ID}:{n}'}}}})
+    w(f'data/{ID}/worldgen/placed_feature/{n}.json', {'feature': f'{ID}:{n}', 'placement': [
+        {'type': 'minecraft:rarity_filter', 'chance': 12}, {'type': 'minecraft:in_square'},
+        {'type': 'minecraft:heightmap', 'heightmap': 'WORLD_SURFACE_WG'}, {'type': 'minecraft:biome'}]})
+    w(f'data/{ID}/neoforge/biome_modifier/{n}.json', {'type': 'neoforge:add_features', 'biomes': NEST_BIOMES[s['id']], 'features': f'{ID}:{n}', 'step': 'vegetal_decoration'})
+    cur = json.load(open(lp)); cur[f'block.{ID}.{n}'] = s['name'] + ' Nest'; json.dump(cur, open(lp, 'w'), indent=2)
+    codex2 = json.load(open(os.path.join(ROOT, '..', 'library-sync/diaithirfauna-bees.json')))
+    if not any(c['id'] == f'{ID}:{n}' for c in codex2):
+        codex2.append({'id': f'{ID}:{n}', 'name': s['name'] + ' Nest', 'text': f'A wild nest in {", ".join(b.split(":")[1].replace("_", " ") for b in NEST_BIOMES[s["id"]][:3])} and similar places. By day it lets out {s["name"]} bees, up to three nearby. Age 1.'})
+        json.dump(codex2, open(os.path.join(ROOT, '..', 'library-sync/diaithirfauna-bees.json'), 'w'), indent=1)
+w('data/minecraft/tags/block/mineable/axe.json', {'values': [f'{ID}:apiary'] + [f'{ID}:nest_{s["id"]}' for s in S if s['wild'] > 0]})

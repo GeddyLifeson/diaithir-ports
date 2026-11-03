@@ -36,7 +36,7 @@ public final class Bees {
     public static final DeferredRegister<AttachmentType<?>> ATTACHMENTS = DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, ID);
 
     public static final DeferredHolder<AttachmentType<?>, AttachmentType<String>> SPECIES = ATTACHMENTS.register("bee_species",
-            () -> AttachmentType.builder(() -> "").serialize(Codec.STRING.fieldOf("id")).build());
+            () -> AttachmentType.builder(() -> "").serialize(Codec.STRING.fieldOf("id")).sync(net.minecraft.network.codec.ByteBufCodecs.STRING_UTF8).build());
     public static final DeferredBlock<ApiaryBlock> APIARY = BLOCKS.registerBlock("apiary", ApiaryBlock::new,
             p -> p.mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD));
     public static final DeferredItem<net.minecraft.world.item.BlockItem> APIARY_ITEM = ITEMS.registerSimpleBlockItem(APIARY);
@@ -46,8 +46,15 @@ public final class Bees {
     /** One comb per species except the meadow one, which is the vanilla honeycomb. */
     public static final Map<String, DeferredItem<Item>> COMBS = new LinkedHashMap<>();
 
+    /** A wild nest per wild species. */
+    public static final Map<String, DeferredBlock<NestBlock>> NESTS = new LinkedHashMap<>();
+
     static {
         for (BeeSpecies s : BeeSpecies.ALL) {
+            if (s.wild() > 0) {
+                NESTS.put(s.id(), BLOCKS.registerBlock("nest_" + s.id(), p -> new NestBlock(p, s.id()), p -> p.mapColor(MapColor.WOOD).strength(0.8F).sound(SoundType.WOOD)));
+                ITEMS.registerSimpleBlockItem(NESTS.get(s.id()));
+            }
             if (!s.id().equals(BeeSpecies.DEFAULT)) COMBS.put(s.id(), ITEMS.registerSimpleItem("comb_" + s.id()));
         }
     }
@@ -70,10 +77,14 @@ public final class Bees {
         NeoForge.EVENT_BUS.addListener(BabyEntitySpawnEvent.class, Bees::onBaby);
     }
 
-    public static String speciesOf(Bee bee) {
-        String s = bee.getData(SPECIES.get());
-        return BeeSpecies.byId(s) == null ? "" : s;
+    /** The bee's genes ("species/productivity/endurance"), or "" before it has any. */
+    public static String genesOf(Bee bee) {
+        String g = bee.getData(SPECIES.get());
+        return Genes.valid(g) ? g : "";
     }
+
+    public static String speciesOf(Bee bee) { return Genes.species(genesOf(bee)); }
+
 
     /** The item a species' combs are: the vanilla honeycomb for the meadow bee. */
     public static Item combOf(String species) {
@@ -82,7 +93,7 @@ public final class Bees {
 
     static void onJoin(EntityJoinLevelEvent e) {
         if (e.getLevel().isClientSide() || !(e.getEntity() instanceof Bee bee) || !speciesOf(bee).isEmpty()) return;
-        bee.setData(SPECIES.get(), pickWild(bee.getRandom()));
+        bee.setData(SPECIES.get(), Genes.of(pickWild(bee.getRandom()), 0, 0));
     }
 
     /** A weighted surface species. */
@@ -100,11 +111,12 @@ public final class Bees {
         if (e.getParentA() instanceof Bee a && e.getParentB() instanceof Bee b && e.getChild() instanceof Bee child) inherit(a, b, child);
     }
 
-    /** A crossing pair gives the crossed species, otherwise the child takes a parent's. */
+    /** A crossing pair gives the crossed species, otherwise the child takes a parent's; traits are mixed from both parents. */
     public static void inherit(Bee a, Bee b, Bee child) {
-        String sa = speciesOf(a), sb = speciesOf(b);
+        String ga = genesOf(a), gb = genesOf(b), sa = Genes.species(ga), sb = Genes.species(gb);
         BeeSpecies cross = BeeSpecies.crossOf(sa, sb);
         String pick = cross != null ? cross.id() : (child.getRandom().nextBoolean() ? sa : sb);
-        child.setData(SPECIES.get(), pick.isEmpty() ? BeeSpecies.DEFAULT : pick);
+        if (pick.isEmpty()) pick = BeeSpecies.DEFAULT;
+        child.setData(SPECIES.get(), Genes.of(pick, Genes.mix(Genes.prod(ga), Genes.prod(gb), child.getRandom()), Genes.mix(Genes.end(ga), Genes.end(gb), child.getRandom())));
     }
 }

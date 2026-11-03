@@ -24,36 +24,42 @@ import java.util.function.Consumer;
 public class BeeJarItem extends Item {
     public BeeJarItem(Properties props) { super(props); }
 
+    /** The bee's genes string, or "" for an empty jar. */
     public static String species(ItemStack jar) {
         CustomData d = jar.get(DataComponents.CUSTOM_DATA);
-        return d == null ? "" : d.copyTag().getStringOr("Species", "");
+        if (d == null) return "";
+        String g = d.copyTag().getStringOr("Genes", d.copyTag().getStringOr("Species", ""));
+        return Genes.valid(g) ? g : "";
     }
 
     public static ItemStack filled(String species) {
         ItemStack st = new ItemStack(Bees.JAR.get());
         CompoundTag t = new CompoundTag();
-        t.putString("Species", species);
+        t.putString("Genes", species);
         st.set(DataComponents.CUSTOM_DATA, CustomData.of(t));
         return st;
     }
 
     @Override
     public Component getName(ItemStack stack) {
-        BeeSpecies s = BeeSpecies.byId(species(stack));
+        BeeSpecies s = BeeSpecies.byId(Genes.species(species(stack)));
         return s == null ? super.getName(stack) : Component.translatable("item.diaithirfauna.bee_jar.full", Component.translatable("bee.diaithirfauna." + s.id()));
     }
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, TooltipDisplay display, Consumer<Component> out, net.minecraft.world.item.TooltipFlag flag) {
-        BeeSpecies s = BeeSpecies.byId(species(stack));
-        if (s != null && s.isCross()) out.accept(Component.literal("Bred from " + s.parentA() + " and " + s.parentB()).withStyle(net.minecraft.ChatFormatting.GRAY));
+        String g = species(stack);
+        BeeSpecies s = BeeSpecies.byId(Genes.species(g));
+        if (s == null) return;
+        out.accept(Component.literal("Productivity " + Genes.prod(g) + ", endurance " + Genes.end(g)).withStyle(net.minecraft.ChatFormatting.GRAY));
+        if (s.isCross()) out.accept(Component.literal("Bred from " + s.parentA() + " and " + s.parentB()).withStyle(net.minecraft.ChatFormatting.GRAY));
     }
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
         if (!species(stack).isEmpty() || !(target instanceof Bee bee) || bee.isBaby()) return InteractionResult.PASS;
         if (player.level().isClientSide()) return InteractionResult.SUCCESS;
-        ItemStack jar = filled(Bees.speciesOf(bee).isEmpty() ? BeeSpecies.DEFAULT : Bees.speciesOf(bee));
+        ItemStack jar = filled(Bees.genesOf(bee).isEmpty() ? Genes.of(BeeSpecies.DEFAULT, 0, 0) : Bees.genesOf(bee));
         bee.discard();
         stack.shrink(1);
         if (!player.getInventory().add(jar)) player.drop(jar, false);
@@ -75,11 +81,12 @@ public class BeeJarItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    static void release(net.minecraft.server.level.ServerLevel level, String species, net.minecraft.core.BlockPos at) {
+    static Bee release(net.minecraft.server.level.ServerLevel level, String species, net.minecraft.core.BlockPos at) {
         Bee bee = EntityType.BEE.create(level, EntitySpawnReason.TRIGGERED);
-        if (bee == null) return;
+        if (bee == null) return null;
         bee.setData(Bees.SPECIES.get(), species);
         bee.setPos(at.getX() + 0.5, at.getY() + 0.2, at.getZ() + 0.5);
         level.addFreshEntity(bee);
+        return bee;
     }
 }

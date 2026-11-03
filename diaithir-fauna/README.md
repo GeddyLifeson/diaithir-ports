@@ -30,4 +30,12 @@ Productive Bees is all rights reserved, so this is our own design, from the publ
 
 Test: `/fauna beetest` (owners) checks that every species can be bred from wild bees, outputs exist, crossing (both orders), the jar, the apiary capacity, combs with flowers and none without, and saving. Headless only.
 
-Not built: bee entity textures per species (bees look vanilla; the species shows on the jar and in the apiary status), wild nests and hives in the world, hopper/pipe output from the apiary, genetic traits (productivity, endurance), bee-in-world species names on hover.
+Traits: every bee has genes "species/productivity/endurance" (0 to 3 each). Productivity makes combs 25 percent faster a level. Endurance 1 lets a bee work in rain, 2 also after dark. A child's traits are its parents' average, nudged now and then. Genes sync to the client, ride in the jar and the apiary, and are shown in the jar tooltip and apiary status.
+
+Wild nests: `nest_meadow` (plains, forests), `nest_sandy` (desert, beach, badlands, savanna), `nest_muddy` (swamps, rivers) come up on the surface (worldgen files `nest_*`). By day a nest lets out bees of its species, up to three of that species within 24 blocks. Breaking a nest drops the nest.
+
+Species colours: `client/SpeciesBeeRenderer` replaces the vanilla bee renderer and tints the body of the vanilla bee texture to the species colour, built in memory from the player's own vanilla textures when first needed (nothing derived from Mojang textures is shipped). Compiled and the server side is tested; the renderer has not been run in a client.
+
+`tools/gen_bee_migrations.py` writes `id_migrations_bees.json` from Productive Bees' public language file (131 blocks: nests and hives, 2 items: cages to jars and combs where we have the same resource, 8 bee entities to a plain bee).
+
+Not built: hopper or pipe output from the apiary, a trait-inspecting item, nests in the Nether or End.
