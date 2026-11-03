@@ -33,6 +33,8 @@ public final class EconData {
     /** The hand-priced staples (ECON_GOODS): id to [base price, usual stock]; their opening Age is in goodAges. */
     public final Map<String, double[]> goods = new HashMap<>();
     public final Map<String, String> goodAges = new HashMap<>();
+    /** Item id to the Age the progression graph first has a node making it (gates.json, from plans/progression/graph.json). */
+    public final Map<String, String> gates = new HashMap<>();
     public final Map<String, String> techItems = new HashMap<>(), techNamespaces = new HashMap<>();
     public final Map<String, String> cultureMoney = new HashMap<>();
     public final Map<String, String> cultureNames = new HashMap<>();
@@ -68,6 +70,7 @@ public final class EconData {
             d.goods.put(e.getKey(), new double[] {a.get(0).getAsDouble(), a.get(1).getAsDouble()});
             d.goodAges.put(e.getKey(), a.get(2).getAsString());
         }
+        for (var e : read("gates.json").getAsJsonObject().entrySet()) d.gates.put(e.getKey(), e.getValue().getAsJsonArray().get(0).getAsString());
         JsonObject ta = read("tech_ages.json").getAsJsonObject();
         for (var e : ta.getAsJsonObject("items").entrySet()) d.techItems.put(e.getKey(), e.getValue().getAsString());
         for (var e : ta.getAsJsonObject("namespaces").entrySet()) d.techNamespaces.put(e.getKey(), e.getValue().getAsString());
@@ -113,6 +116,8 @@ public final class EconData {
     public String ageOfGood(String id) {
         String own = goodAges.get(id);
         if (own != null) return own;
+        String gate = gates.get(id); // the graph's Age: the item's first node, gated as opens_age + tier - 1 with tier 1
+        if (gate != null) return TechBridge.gateAge(gate, 1);
         String h = EconHooks.goodAge.apply(id);
         if (h != null && !"I".equals(h)) return h;
         String a = techItems.get(id);

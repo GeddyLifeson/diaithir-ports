@@ -1,0 +1,182 @@
+{
+"diaithir:ammo_basic": [
+"V",
+1
+],
+"diaithir:armour_hollow": [
+"VII",
+1
+],
+"diaithir:arms_bronze": [
+"II",
+1
+],
+"diaithir:arms_iron": [
+"III",
+1
+],
+"diaithir:arms_steel": [
+"V",
+1
+],
+"diaithir:brew_base": [
+"II",
+1
+],
+"diaithir:dish_set": [
+"VII",
+1
+],
+"diaithir:drink_ale": [
+"III",
+1
+],
+"diaithir:enchant_basic": [
+"III",
+1
+],
+"diaithir:fertiliser": [
+"IV",
+1
+],
+"diaithir:food_dish": [
+"IV",
+1
+],
+"diaithir:food_spice_blend": [
+"IV",
+1
+],
+"diaithir:foundry_arm_inserter": [
+"VI",
+1
+],
+"diaithir:foundry_assembler": [
+"VI",
+1
+],
+"diaithir:foundry_beacon": [
+"VI",
+1
+],
+"diaithir:foundry_circuit_advanced": [
+"VII",
+1
+],
+"diaithir:foundry_circuit_basic": [
+"VI",
+1
+],
+"diaithir:foundry_compass": [
+"IV",
+1
+],
+"diaithir:foundry_core_drill": [
+"VII",
+1
+],
+"diaithir:foundry_depot": [
+"VII",
+1
+],
+"diaithir:foundry_drill": [
+"VI",
+1
+],
+"diaithir:foundry_lane_belt": [
+"VI",
+1
+],
+"diaithir:foundry_machine_engine": [
+"VI",
+1
+],
+"diaithir:foundry_module_food_t1": [
+"III",
+1
+],
+"diaithir:foundry_module_legendary": [
+"RODOS",
+1
+],
+"diaithir:foundry_module_magic_t1": [
+"III",
+1
+],
+"diaithir:foundry_module_speed_1": [
+"VI",
+1
+],
+"diaithir:foundry_module_t2": [
+"VII",
+1
+],
+"diaithir:foundry_module_t3": [
+"VII",
+1
+],
+"diaithir:foundry_operator_seat": [
+"VII",
+1
+],
+"diaithir:foundry_quality_grade": [
+"VII",
+1
+],
+"diaithir:foundry_reclaimer": [
+"VII",
+1
+],
+"diaithir:foundry_research_pack_2": [
+"III",
+1
+],
+"diaithir:foundry_research_pack_3": [
+"V",
+1
+],
+"diaithir:foundry_research_pack_4": [
+"VI",
+1
+],
+"diaithir:foundry_research_pack_5": [
+"VII",
+1
+],
+"diaithir:foundry_research_pack_6": [
+"VIII",
+1
+],
+"diaithir:foundry_research_pack_7": [
+"RODOS",
+1
+],
+"diaithir:foundry_turret": [
+"VI",
+1
+],
+"diaithir:money_coin": [
+"III",
+1
+],
+"diaithirarms:rodos_alloy_ingot": [
+"RODOS",
+1
+],
+"diaithirarms:tempered_ingot": [
+"VII",
+1
+],
+"diaithircombat:lib_sword": [
+"I",
+9
+],
+"diaithirfarmkitchen:offering_feast": [
+"VII",
+1
+],
+"diaithirfarmkitchen:ration": [
+"VI",
+1
+]
+}

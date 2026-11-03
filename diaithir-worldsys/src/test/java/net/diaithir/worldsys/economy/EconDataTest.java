@@ -50,4 +50,14 @@ class EconDataTest {
         assertTrue(line.units > 0, "the line hauled goods: " + line.units);
         for (var region : st.market.stock.values()) for (double v : region.values()) assertTrue(Double.isFinite(v) && v >= 0);
     }
+
+    @Test
+    void gatesComeFromTheGraph() throws Exception {
+        EconData d = EconData.load();
+        assertEquals(45, d.gates.size());
+        assertEquals("VI", d.ageOfGood("diaithir:foundry_drill"));
+        assertEquals("RODOS", d.ageOfGood("diaithir:foundry_research_pack_7"));
+        assertEquals("I", d.ageOfGood("diaithircombat:lib_sword")); // gear a1..a9 share one item; it opens with the first
+        assertEquals("III", d.ageOfGood("minecraft:iron_ingot")); // hand-priced staples keep their own Age
+    }
 }
