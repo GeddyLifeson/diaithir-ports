@@ -1,5 +1,7 @@
 """Rewrite old block and item ids in a world to the Diaithir replacements. Offline; stop the server first.
-Usage: python3 -I tools/migrate_world.py WORLD_DIR ID_MIGRATIONS.json [--dry-run]
+Usage: python3 -I tools/migrate_world.py WORLD_DIR MIGRATIONS... [--dry-run]
+MIGRATIONS are any number of id_migrations*.json files or folders (searched recursively), so one pass covers every module.
+Each file holds old->new id pairs under "map" or "items".
 Needs: pip install nbtlib. NeoForge 26.1 has no registry-alias hook, so old ids would load as air; this renames them in region
 chunks (block palettes, block entities, containers), entity chunks and player data. Unmapped ids are left alone."""
 import io, json, struct, sys, zlib, gzip
@@ -7,8 +9,17 @@ from pathlib import Path
 import nbtlib
 from nbtlib import tag
 
-def load_map(path):
-    return json.load(open(path))["map"]
+def load_map(paths):
+    files = []
+    for p in map(Path, paths):
+        files += sorted(p.rglob("id_migrations*.json")) if p.is_dir() else [p]
+    merged = {}
+    for f in files:
+        d = json.load(open(f))
+        pairs = d.get("map") or d.get("items") or {}
+        merged.update({k: v for k, v in pairs.items() if v and k != v})
+        print(f"loaded {f} ({len(pairs)} ids)")
+    return merged
 
 def walk(t, m, counter):
     if isinstance(t, tag.String):
@@ -69,7 +80,8 @@ def dump_nbt(f):
     return b.getvalue()
 
 def main():
-    world, mp = Path(sys.argv[1]), load_map(sys.argv[2])
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    world, mp = Path(args[0]), load_map(args[1:])
     dry = "--dry-run" in sys.argv
     total = 0
     dirs = [p for d in ("region", "entities") for p in list(world.glob(f"dimensions/*/*/{d}")) + list(world.glob(f"DIM*/{d}")) + [world / d]]
