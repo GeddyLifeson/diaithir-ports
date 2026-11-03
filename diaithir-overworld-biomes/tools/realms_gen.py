@@ -444,4 +444,79 @@ if mobs:
     L2[f'codex.{OWN}.{NS}_bestiary.body'] = f'{len(mobs)} creatures: ' + ', '.join(title(m['id']) for m in mobs) + '.'
     lp.write_text(json.dumps(L2, indent=1) + '\n')
     put(f'assets/{NS}/lang/en_us.json', lang)
+
+# ---------- slice 5: structures (procedural single templates, own design) ----------
+import struct, gzip
+def _s(x): b = x.encode(); return struct.pack('>H', len(b)) + b
+def nb(tag, name, v):
+    return bytes([tag]) + (_s(name) if name is not None else b'') + payload(tag, v)
+def payload(tag, v):
+    if tag == 3: return struct.pack('>i', v)
+    if tag == 8: return _s(v)
+    if tag == 9: t, items = v; return bytes([t]) + struct.pack('>i', len(items)) + b''.join(payload(t, i) for i in items)
+    if tag == 10: return b''.join(nb(t, k, x) for k, (t, x) in v.items()) + b'\x00'
+    raise ValueError(tag)
+def write_template(path, size, palette, blocks):
+    pal = [{'Name': (8, n)} for n in palette]
+    root = {'DataVersion': (3, 4790), 'size': (9, (3, list(size))), 'palette': (9, (10, pal)),
+            'blocks': (9, (10, [{'pos': (9, (3, list(p))), 'state': (3, i)} for p, i in blocks])), 'entities': (9, (10, []))}
+    data = bytes([10]) + _s('') + payload(10, root)
+    p = RES / path; p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(gzip.compress(data))
+sp = T / f'{A.realm}.structures.txt'
+structs = [l.strip() for l in sp.read_text().split('\n') if l.strip()] if sp.exists() else []
+solid = [b for b in made if (b.endswith(('_bricks', '_planks', '_tiles', '_flagstones', 'stone', 'rock')) and not b.endswith(('_ore',))) and next((e['kind'] for e in man if e['id'] == b), '') == 'block']
+if not solid: solid = [D0 for D0 in [cfg.get('default_block') or dims[0]['default_block']] if ':' not in D0] or ['stone']
+def pick(n, salt, lst): return lst[int(hashlib.sha256(f'{NS}:{n}:{salt}'.encode()).hexdigest()[:6], 16) % len(lst)]
+def full(b): return b if ':' in b else f'{NS}:{b}'
+sset = []
+for si, n in enumerate(structs):
+    base = n.replace('/', '_'); wall = full(pick(base, 'w', solid)); floor = full(pick(base, 'f', solid)); acc = full(pick(base, 'a', solid))
+    arche = 'tower' if re.search(r'(tower|pillar|monolith|spire|throne|aviary|fortress|sanctum)', base) else ('shrine' if re.search(r'(shrine|temple|fountain|garden|ranch|house|gazebo|beepartments|honitel|floor|ship|cave|stream)', base) else 'ruin')
+    blocks = {}; pal = ['minecraft:air', wall, floor, acc]
+    def put_(x, y, z, i): blocks[(x, y, z)] = i
+    W = 11 if arche != 'tower' else 7; H = 14 if arche == 'tower' else 6
+    for x in range(W):
+        for z in range(W):
+            for y in range(-5, H): put_(x, y + 5, z, 0)          # clear volume
+            for y in range(-5, 0): put_(x, y + 5, z, 2)          # foundation so it never floats
+            put_(x, 5, z, 2)
+    c = W // 2
+    for x in range(W):
+        for z in range(W):
+            edge = x in (0, W - 1) or z in (0, W - 1)
+            if arche == 'tower':
+                if edge:
+                    for y in range(1, H): 
+                        if not (z == 0 and x == c and y <= 2) and not (y % 5 == 3 and (x == c or z == c)): put_(x, 5 + y, z, 1)
+            elif arche == 'ruin':
+                if edge:
+                    h = 1 + int(hashlib.sha256(f'{base}{x}{z}'.encode()).hexdigest()[:2], 16) % 4
+                    if not (z == 0 and abs(x - c) <= 1):
+                        for y in range(1, h + 1): put_(x, 5 + y, z, 1)
+            else:  # shrine
+                if edge or (x % 4 == 2 and z % 4 == 2):
+                    if (x % 4 == 2 and z % 4 == 2) or (x, z) in ((0, 0), (0, W - 1), (W - 1, 0), (W - 1, W - 1)):
+                        for y in range(1, 5): put_(x, 5 + y, z, 1)
+                    else: put_(x, 6, z, 3)
+                if x in range(2, W - 2) and z in range(2, W - 2): put_(x, 5 + 5, z, 3)
+    write_template(f'data/{NS}/structure/{base}.json'.replace('.json', '.nbt'), (W, H + 5, W), pal, [((x, y, z), i) for (x, y, z), i in sorted(blocks.items())])
+    put(f'data/{NS}/worldgen/template_pool/{base}.json', {'fallback': 'minecraft:empty', 'elements': [{'weight': 1, 'element': {'element_type': 'minecraft:single_pool_element',
+        'location': f'{NS}:{base}', 'processors': 'minecraft:empty', 'projection': 'rigid'}}]})
+    dn = dimtags[si % len(dimtags)]; Dd = next(d for d in dims if d['name'] == dn); cave = Dd.get('base', 'nether') == 'nether'
+    sj = {'type': 'minecraft:jigsaw', 'biomes': f'#{NS}:is_{dn}', 'step': 'surface_structures', 'spawn_overrides': {}, 'terrain_adaptation': 'beard_thin',
+          'start_pool': f'{NS}:{base}', 'size': 1, 'max_distance_from_center': 30, 'use_expansion_hack': False}
+    if cave: sj['start_height'] = {'absolute': Dd.get('sea_level', 40) + 2}
+    else: sj['start_height'] = {'absolute': -4}; sj['project_start_to_heightmap'] = 'WORLD_SURFACE_WG'
+    put(f'data/{NS}/worldgen/structure/{base}.json', sj)
+    put(f'data/{NS}/worldgen/structure_set/{base}.json', {'structures': [{'structure': f'{NS}:{base}', 'weight': 1}],
+        'placement': {'type': 'minecraft:random_spread', 'spacing': 22 + si % 9, 'separation': 8, 'salt': 1000 + int(hashlib.sha256(f'{NS}{base}'.encode()).hexdigest()[:4], 16)}})
+    sset.append(f'{NS}:{base}')
+if sset:
+    put(f'data/{NS}/tags/worldgen/structure/{NS}_structures.json', {'replace': False, 'values': sset})
+    L3 = json.loads(lp.read_text()); L3[f'codex.{OWN}.{NS}_structures.title'] = cfg['title'] + ' structures'
+    L3[f'codex.{OWN}.{NS}_structures.body'] = f'{len(sset)} ruins, towers and shrines: ' + ', '.join(title(x.split(':')[1]) for x in sset) + '.'
+    lp.write_text(json.dumps(L3, indent=1) + '\n')
+    put(f'data/{OWN}/codex/entries/{NS}_structures.json', {'id': f'{OWN}:{NS}_structures', 'category': 'structure', 'title': f'codex.{OWN}.{NS}_structures.title',
+        'body': f'codex.{OWN}.{NS}_structures.body', 'age': cfg['age'], 'icon': cfg['icon'], 'unlock': {'type': 'locate_structure_tag', 'tag': f'{NS}:{NS}_structures'},
+        'covers': {'structures': f'#{NS}:{NS}_structures'}})
 print(NS, 'blocks', len(man), 'items', len(sitems), 'biomes', len(biomes), 'migrations', len(migr))
