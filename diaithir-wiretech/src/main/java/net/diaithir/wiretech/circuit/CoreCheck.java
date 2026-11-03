@@ -1,3 +1,4 @@
+// S6895 CoreCheck: plain-Java check of the circuit core.
 package net.diaithir.wiretech.circuit;
 
 /** Plain-Java checks of the circuit core. Run: javac -d /tmp/cc *.java && java -ea -cp /tmp/cc net.diaithir.wiretech.circuit.CoreCheck */

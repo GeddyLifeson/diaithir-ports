@@ -48,7 +48,12 @@ public final class CircuitNodeBE extends BlockEntity {
         CircuitBlock b = (CircuitBlock) state.getBlock();
         this.kind = b.kind;
         this.tier = b.tier;
-        setProgramQuiet(kind.defaultProgram == null ? "const" : kind.defaultProgram);
+        if (kind.defaultProgram == null) {
+            this.logic = new Logic.Constant(new Signals());
+            this.program = "const";
+        } else {
+            setProgramQuiet(kind.defaultProgram);
+        }
     }
 
     public long id() {
@@ -135,9 +140,10 @@ public final class CircuitNodeBE extends BlockEntity {
         if (level != null && !level.isClientSide()) level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
     }
 
+    /** Called whenever the block entity is placed or its chunk loads, so this is where the node joins the grid. */
     @Override
-    public void onLoad() {
-        super.onLoad();
+    public void clearRemoved() {
+        super.clearRemoved();
         if (level instanceof ServerLevel sl) CircuitGrid.add(sl, this);
     }
 
@@ -244,10 +250,12 @@ public final class CircuitNodeBE extends BlockEntity {
     @Override
     protected void loadAdditional(ValueInput in) {
         super.loadAdditional(in);
-        try {
-            setProgramQuiet(in.getStringOr("program", program));
-        } catch (IllegalArgumentException e) {
-            // keep the default program when a saved one no longer parses
+        if (takesPrograms()) {
+            try {
+                setProgramQuiet(in.getStringOr("program", program));
+            } catch (IllegalArgumentException e) {
+                // keep the default program when a saved one no longer parses
+            }
         }
         links.clear();
         for (ValueInput c : in.childrenListOrEmpty("links")) {
