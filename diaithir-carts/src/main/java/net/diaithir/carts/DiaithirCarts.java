@@ -69,11 +69,14 @@ public final class DiaithirCarts {
     public static final DeferredItem<Item> COUPLING_CHAIN = ITEMS.registerSimpleItem("coupling_chain");
     public static final DeferredItem<Item> CHAIN_CUTTERS = ITEMS.registerItem("chain_cutters", Item::new, p -> p.durability(96));
 
+    public static final DeferredItem<Item> MANA_FIREBOX = ITEMS.registerItem("mana_firebox", Item::new, p -> p.stacksTo(16));
+    public static final DeferredItem<Item> MANA_CELL = ITEMS.registerItem("mana_cell", Item::new, p -> p.stacksTo(16));
     public static final DeferredItem<Item> TIMETABLE = ITEMS.registerItem("timetable", TimetableItem::new, p -> p.stacksTo(1));
 
     public DiaithirCarts(IEventBus bus) {
         Schedule.ATTACHMENTS.register(bus);
         GaugeData.ATTACHMENTS.register(bus);
+        MagicFuel.ATTACHMENTS.register(bus);
         Schedule.COMPONENTS.register(bus);
         BLOCKS.register(bus);
         ITEMS.register(bus);
@@ -102,6 +105,11 @@ public final class DiaithirCarts {
     private static void interact(PlayerInteractEvent.EntityInteract e) {
         if (!(e.getTarget() instanceof AbstractMinecart cart)) return;
         ItemStack held = e.getItemStack();
+        if (e.getLevel() instanceof ServerLevel && (held.is(MagicFuel.FUEL) || held.is(MANA_FIREBOX.get()) || held.is(MANA_CELL.get()))) {
+            var r = MagicFuel.use(cart, e.getEntity(), e.getHand(), held);
+            if (r != null) { e.setCancellationResult(r); e.setCanceled(true); }
+            return;
+        }
         if (held.is(TIMETABLE.get())) {
             e.setCancellationResult(InteractionResult.SUCCESS);
             e.setCanceled(true);
