@@ -2,14 +2,13 @@
 
 package li.cil.oc2.client.gui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import li.cil.oc2.client.gui.widget.ImageButton;
 import li.cil.oc2.common.container.NetworkTunnelContainer;
 import li.cil.oc2.common.network.Network;
 import li.cil.oc2.common.network.message.NetworkTunnelLinkMessage;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -26,23 +25,21 @@ public final class NetworkTunnelScreen extends AbstractModContainerScreen<Networ
     ///////////////////////////////////////////////////////////////////
 
     public NetworkTunnelScreen(final NetworkTunnelContainer container, final Inventory inventory, final Component title) {
+        // TODO(oc2-restore): AbstractModContainerScreen only accepts (container, inventory, title) here,
+        //  so the image size can't be passed through; the size is whatever the base class provides.
         super(container, inventory, title);
 
-        imageWidth = Sprites.NETWORK_TUNNEL_SCREEN.width;
-        imageHeight = Sprites.NETWORK_TUNNEL_SCREEN.height;
         inventoryLabelY = imageHeight - 94;
     }
 
     ///////////////////////////////////////////////////////////////////
 
     @Override
-    public void render(final GuiGraphics graphics, final int mouseX, final int mouseY, final float partialTicks) {
-        renderBackground(graphics, mouseX, mouseY, partialTicks);
-
+    public void extractRenderState(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
         linkButton.active = getMenu().hasLinkSlotItem();
 
-        super.render(graphics, mouseX, mouseY, partialTicks);
-        renderTooltip(graphics, mouseX, mouseY);
+        // Background and tooltip are handled by the super implementation in 26.1.
+        super.extractRenderState(graphics, mouseX, mouseY, partialTicks);
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -61,18 +58,25 @@ public final class NetworkTunnelScreen extends AbstractModContainerScreen<Networ
             }
 
             @Override
-            public void onPress() {
-                super.onPress();
+            protected void extractContents(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+                if (isHoveredOrFocused()) {
+                    Sprites.NETWORK_TUNNEL_LINK_BUTTON_ACTIVE.draw(graphics, getX(), getY());
+                } else {
+                    Sprites.NETWORK_TUNNEL_LINK_BUTTON_INACTIVE.draw(graphics, getX(), getY());
+                }
+            }
+
+            @Override
+            public void onPress(final InputWithModifiers input) {
+                super.onPress(input);
                 createTunnel();
             }
         }).withMessage(LINK_BUTTON_CAPTION);
     }
 
     @Override
-    protected void renderBg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1, 1, 1, 1);
-
+    public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
         Sprites.NETWORK_TUNNEL_SCREEN.draw(graphics, leftPos, topPos);
     }
 

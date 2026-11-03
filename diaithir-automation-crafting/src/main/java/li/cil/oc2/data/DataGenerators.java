@@ -3,13 +3,14 @@
 package li.cil.oc2.data;
 
 import li.cil.oc2.api.API;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.Collections;
@@ -18,13 +19,11 @@ import java.util.Set;
 @EventBusSubscriber(modid = API.MOD_ID)
 public final class DataGenerators {
     @SubscribeEvent
-    public static void gatherData(final GatherDataEvent event) {
-        final DataGenerator generator = event.getGenerator();
-        final ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+    public static void gatherServerData(final GatherDataEvent.Server event) {
+        final PackOutput output = event.getGenerator().getPackOutput();
 
-        generator.addProvider(
-            event.includeServer(),
-            (DataProvider.Factory<LootTableProvider>) output -> new LootTableProvider(
+        event.addProvider(
+            new LootTableProvider(
                 output,
                 Set.of(),
                 Collections.singletonList(
@@ -36,10 +35,27 @@ public final class DataGenerators {
                 event.getLookupProvider()
             )
         );
-        var blockTagsProvider = generator.addProvider(event.includeServer(), (DataProvider.Factory<ModBlockTagsProvider>) output -> new ModBlockTagsProvider(output, event.getLookupProvider(), existingFileHelper));
-        generator.addProvider(event.includeServer(), (DataProvider.Factory<ModItemTagsProvider>) output -> new ModItemTagsProvider(output, event.getLookupProvider(), blockTagsProvider.contentsGetter(), API.MOD_ID, existingFileHelper));
-        generator.addProvider(event.includeServer(), (DataProvider.Factory<ModRecipesProvider>) output -> new ModRecipesProvider(output, event.getLookupProvider()));
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(generator.getPackOutput(), existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(generator.getPackOutput(), existingFileHelper));
+        final ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(output, event.getLookupProvider());
+        event.addProvider(blockTagsProvider);
+        event.addProvider(new ModItemTagsProvider(output, event.getLookupProvider(), blockTagsProvider.contentsGetter()));
+        event.addProvider(new RecipeProvider.Runner(output, event.getLookupProvider()) {
+            @Override
+            protected RecipeProvider createRecipeProvider(final HolderLookup.Provider registries, final RecipeOutput recipeOutput) {
+                return new ModRecipesProvider(registries, recipeOutput);
+            }
+
+            @Override
+            public String getName() {
+                return "Recipes";
+            }
+        });
+    }
+
+    @SubscribeEvent
+    public static void gatherClientData(final GatherDataEvent.Client event) {
+        final PackOutput output = event.getGenerator().getPackOutput();
+
+        event.addProvider(new ModBlockStateProvider(output));
+        event.addProvider(new ModItemModelProvider(output));
     }
 }

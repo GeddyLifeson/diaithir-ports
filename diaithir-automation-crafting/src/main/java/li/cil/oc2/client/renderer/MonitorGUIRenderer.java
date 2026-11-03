@@ -3,16 +3,12 @@ package li.cil.oc2.client.renderer;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.RemovalNotification;
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.platform.NativeImage;
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
+import com.mojang.blaze3d.vertex.PoseStack;
 import li.cil.oc2.common.blockentity.MonitorBlockEntity;
 import li.cil.oc2.common.bus.device.vm.block.MonitorDevice;
 import li.cil.oc2.jcodec.common.model.Picture;
 import li.cil.oc2.jcodec.scale.Yuv420jToRgb;
-import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -71,7 +67,8 @@ public class MonitorGUIRenderer {
                 }
 
                 @Override
-                public synchronized void processFrame(final Picture picture) {
+                public synchronized void processFrame(final Object frame) {
+                    final Picture picture = (Picture) frame;
                     final NativeImage image = texture.getPixels();
                     if (image == null) {
                         return;
@@ -107,7 +104,7 @@ public class MonitorGUIRenderer {
                     final int r = bytes[0] + 128;
                     final int g = bytes[1] + 128;
                     final int b = bytes[2] + 128;
-                    image.setPixelRGBA(col, row, r | (g << 8) | (b << 16) | (0xFF << 24));
+                    image.setPixelABGR(col, row, r | (g << 8) | (b << 16) | (0xFF << 24));
                 }
             }
 
@@ -119,7 +116,7 @@ public class MonitorGUIRenderer {
             private static DynamicTexture getColorBuffer(final MonitorBlockEntity monitor) {
                 try {
                     return RENDER_INFO.get(monitor, () -> {
-                        final DynamicTexture texture = new DynamicTexture(MonitorDevice.WIDTH, MonitorDevice.HEIGHT, false);
+                        final DynamicTexture texture = new DynamicTexture("oc2_monitor", MonitorDevice.WIDTH, MonitorDevice.HEIGHT, false);
                         texture.upload();
                         final RenderInfo renderInfo = new RenderInfo(texture);
                         monitor.setFrameConsumer(renderInfo);
@@ -138,53 +135,13 @@ public class MonitorGUIRenderer {
             @Override
             public void render(final PoseStack stack, final Matrix4f projectionMatrix, float width, float height, boolean renderingToBlock) {
                 if (monitorBlock.isValid()) {
-                    DynamicTexture texture = getColorBuffer(monitorBlock);
+                    // Keeps the frame consumer and texture alive and updated.
+                    getColorBuffer(monitorBlock);
                     monitorBlock.onRendering();
 
-                    RenderSystem.backupProjectionMatrix();
-                    RenderSystem.getModelViewStack().pushMatrix();
-
-                    RenderSystem.enableBlend();
-                    RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
-
-                    RenderSystem.colorMask(true, true, true, true);
-                    RenderSystem.depthMask(false);
-
-                    final ShaderInstance shader = GameRenderer.getPositionTexShader();
-
-                    if (shader == null) return;
-
-                    final BufferBuilder builder = Tesselator.getInstance()
-                        .begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
-
-                    RenderSystem.setProjectionMatrix(projectionMatrix, VertexSorting.ORTHOGRAPHIC_Z);
-
-                    RenderSystem.setShaderTexture(0, texture.getId());
-
-                    VertexBuffer buffer = new VertexBuffer(VertexBuffer.Usage.DYNAMIC);
-
-                    builder.addVertex(0, 0, 0).setUv(0, 0);
-                    builder.addVertex(0, height, 0).setUv(0, 1);
-                    builder.addVertex(width, height, 0).setUv(1, 1);
-                    builder.addVertex(width, 0, 0).setUv(1, 0);
-
-                    buffer.bind();
-                    buffer.upload(builder.buildOrThrow());
-
-                    var modelViewMatrix = stack.last().pose();
-                    if (renderingToBlock) {
-                        modelViewMatrix = RenderSystem.getModelViewMatrix().mul( modelViewMatrix );
-                    }
-                    buffer.drawWithShader(modelViewMatrix, projectionMatrix, shader);
-
-                    VertexBuffer.unbind();
-                    buffer.close();
-
-                    RenderSystem.restoreProjectionMatrix();
-                    RenderSystem.getModelViewStack().popMatrix();
-                    RenderSystem.applyModelViewMatrix();
-
-                    RenderSystem.depthMask(true);
+                    // TODO(oc2-restore): Draw the monitor texture as a textured quad. The old immediate-mode
+                    //  VertexBuffer/ShaderInstance/GlStateManager based drawing no longer exists in 26.1 and
+                    //  needs to be reimplemented with a RenderPipeline.
                 }
             }
         }

@@ -2,16 +2,14 @@
 
 package li.cil.oc2.client.gui;
 
-import com.mojang.blaze3d.vertex.Tesselator;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.ObjectSelectionList;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import org.apache.logging.log4j.LogManager;
@@ -118,13 +116,8 @@ public final class FileChooserScreen extends Screen {
         }
 
         if (previousScreen != null) {
-            getMinecraft().tell(() -> getMinecraft().setScreen(previousScreen));
+            getMinecraft().execute(() -> getMinecraft().setScreen(previousScreen));
         }
-    }
-
-    @Override
-    public void render(final GuiGraphics graphics, final int mouseX, final int mouseY, final float partialTicks) {
-        super.render(graphics, mouseX, mouseY, partialTicks);
     }
 
     @Override
@@ -383,20 +376,14 @@ public final class FileChooserScreen extends Screen {
             }
 
             @Override
-            public void render(final GuiGraphics graphics, final int index, final int top, final int left, final int width, final int height,
-                               final int mouseX, final int mouseY, final boolean isHovered, final float deltaTime) {
-                drawShadow(font, graphics, displayName, left, top, 0xFFFFFFFF);
-            }
-
-            private void drawShadow(Font font, GuiGraphics graphics, Component text, float x, float y, int color) {
-                var batch = graphics.bufferSource();
-                font.drawInBatch(text, x, y, color, true, graphics.pose().last().pose(), batch, Font.DisplayMode.NORMAL, 0, 15728880);
-                batch.endBatch();
+            public void extractContent(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY,
+                                       final boolean isHovered, final float deltaTime) {
+                graphics.text(font, displayName, getContentX(), getContentY(), 0xFFFFFFFF, true);
             }
 
             @Override
-            public boolean mouseClicked(final double mouseX, final double mouseY, final int button) {
-                final boolean isLeftClick = button == 0;
+            public boolean mouseClicked(final MouseButtonEvent event, final boolean doubleClick) {
+                final boolean isLeftClick = event.button() == 0;
                 if (isLeftClick) {
                     select();
 

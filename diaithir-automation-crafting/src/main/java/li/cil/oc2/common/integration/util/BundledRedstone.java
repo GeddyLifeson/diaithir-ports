@@ -33,10 +33,9 @@ public class BundledRedstone {
 
     @Nullable
     public byte[] getBundledInput(Level level, BlockPos blockPos, Direction side) {
-        if (handler != null) {
-            return handler.getBundledInput(level, blockPos, side);
-        } else {
-            return null;
-        }
+        // TODO(oc2-restore): ProjectRed (mrtjp) is not available, so the bundled cable handler
+        //  no longer provides bundled input. Restore delegation to handler.getBundledInput(level, blockPos, side)
+        //  once ProjectRed integration is available again.
+        return null;
     }
 }

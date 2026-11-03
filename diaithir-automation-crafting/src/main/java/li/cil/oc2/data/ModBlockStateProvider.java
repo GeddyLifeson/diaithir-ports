@@ -3,22 +3,20 @@
 package li.cil.oc2.data;
 
 import li.cil.oc2.api.API;
-import li.cil.oc2.common.block.Blocks;
-import li.cil.oc2.common.block.BusCableBlock;
-import li.cil.oc2.common.item.Items;
-import net.minecraft.core.Direction;
+import net.minecraft.data.CachedOutput;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemDisplayContext;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.client.model.generators.*;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
 
-@SuppressWarnings({"UnusedReturnValue", "SameParameterValue"})
-public final class ModBlockStateProvider extends BlockStateProvider {
+import java.util.concurrent.CompletableFuture;
+
+// TODO(oc2-restore): The NeoForge BlockStateProvider / ModelFile / ItemModelBuilder / ExistingFileHelper
+//  model generator API (net.neoforged.neoforge.client.model.generators) no longer exists in 26.1.2.
+//  The block state and item model generation (horizontal blocks, bus cable multipart, item display
+//  transforms) needs to be re-implemented on top of the new vanilla model generators. Until then this
+//  provider is a no-op and the corresponding JSON files must be supplied as static resources.
+@SuppressWarnings({"UnusedReturnValue", "SameParameterValue", "unused"})
+public final class ModBlockStateProvider implements DataProvider {
     private static final Identifier CABLE_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/cable_base");
     private static final Identifier CABLE_LINK_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/cable_link");
     private static final Identifier CABLE_PLUG_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/cable_plug");
@@ -34,162 +32,20 @@ public final class ModBlockStateProvider extends BlockStateProvider {
     private static final Identifier REDSTONE_INTERFACE_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/redstone_interface");
     //private static final Identifier PCI_CARD_CAGE_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/pci_card_cage");
 
+    private final PackOutput output;
 
-    public ModBlockStateProvider(final PackOutput output, final ExistingFileHelper existingFileHelper) {
-        super(output, API.MOD_ID, existingFileHelper);
+    public ModBlockStateProvider(final PackOutput output) {
+        this.output = output;
     }
 
     @Override
-    protected void registerStatesAndModels() {
-        horizontalBlock(Blocks.CHARGER, Items.CHARGER, CHARGER_MODEL);
-        horizontalBlock(Blocks.COMPUTER, Items.COMPUTER, COMPUTER_MODEL);
-        horizontalBlock(Blocks.MONITOR, Items.MONITOR, MONITOR_MODEL);
-        simpleBlock(Blocks.CREATIVE_ENERGY, Items.CREATIVE_ENERGY);
-        horizontalBlock(Blocks.DISK_DRIVE, Items.DISK_DRIVE, DISK_DRIVE_MODEL);
-        horizontalBlock(Blocks.KEYBOARD, Items.KEYBOARD, KEYBOARD_MODEL);
-        horizontalFaceBlock(Blocks.NETWORK_CONNECTOR, Items.NETWORK_CONNECTOR, NETWORK_CONNECTOR_MODEL)
-            .transforms()
-            .transform(ItemDisplayContext.GUI)
-            .rotation(30, 315, 0)
-            .translation(0, 2, 0)
-            .scale(0.75f, 0.75f, 0.75f)
-            .end()
-            .transform(ItemDisplayContext.FIXED)
-            .rotation(270, 0, 0)
-            .translation(0, 0, -5)
-            .scale(1, 1, 1)
-            .end()
-            .end();
-        horizontalBlock(Blocks.NETWORK_HUB, Items.NETWORK_HUB, NETWORK_HUB_MODEL);
-        //horizontalBlock(Blocks.NETWORK_SWITCH, Items.NETWORK_SWITCH, NETWORK_HUB_MODEL);
-        horizontalBlock(Blocks.PROJECTOR, Items.PROJECTOR, PROJECTOR_MODEL);
-        horizontalBlock(Blocks.REDSTONE_INTERFACE, Items.REDSTONE_INTERFACE, REDSTONE_INTERFACE_MODEL);
-        //horizontalBlock(Blocks.PCI_CARD_CAGE, Items.PCI_CARD_CAGE, PCI_CARD_CAGE_MODEL);
-
-        registerCableStates();
+    public CompletableFuture<?> run(final CachedOutput cache) {
+        // TODO(oc2-restore): generate block states and item models.
+        return CompletableFuture.completedFuture(null);
     }
 
-    private void registerCableStates() {
-        final ModelFile baseModel = models().getExistingFile(CABLE_MODEL);
-        final ModelFile linkModel = models().getExistingFile(CABLE_LINK_MODEL);
-        final ModelFile plugModel = models().getExistingFile(CABLE_PLUG_MODEL);
-        final ModelFile straightModel = models().getExistingFile(CABLE_STRAIGHT_MODEL);
-
-        final MultiPartBlockStateBuilder builder = getMultipartBuilder(Blocks.BUS_CABLE.get());
-
-        // NB: We use a custom model loader + baked model to replace the base part with straight parts and
-        //     insert supports where appropriate, as well as for replacing it with a facade block model.
-
-        builder.part()
-            .modelFile(baseModel)
-            .addModel()
-            .end();
-
-        BusCableBlock.FACING_TO_CONNECTION_MAP.forEach((direction, connectionType) -> {
-            final int rotationY = (int) direction.toYRot();
-            final int rotationX;
-            if (direction == Direction.UP) {
-                rotationX = 90;
-            } else if (direction == Direction.DOWN) {
-                rotationX = -90;
-            } else {
-                rotationX = 0;
-            }
-
-            builder.part()
-                .modelFile(linkModel)
-                .rotationY(rotationY)
-                .rotationX(rotationX)
-                .addModel()
-                .condition(connectionType, BusCableBlock.ConnectionType.CABLE)
-                .condition(BusCableBlock.HAS_FACADE, false)
-                .end();
-
-            builder.part()
-                .modelFile(plugModel)
-                .rotationY(rotationY)
-                .rotationX(rotationX)
-                .addModel()
-                .condition(connectionType, BusCableBlock.ConnectionType.INTERFACE)
-                .condition(BusCableBlock.HAS_FACADE, false)
-                .end();
-        });
-
-        itemModels().getBuilder(Items.BUS_CABLE.getId().getPath())
-            .parent(straightModel)
-            .transforms()
-            .transform(ItemDisplayContext.GUI)
-            .rotation(30, 225, 0)
-            .scale(0.75f)
-            .end()
-            .transform(ItemDisplayContext.GROUND)
-            .translation(0, 3, 0)
-            .scale(0.75f)
-            .end()
-            .transform(ItemDisplayContext.FIXED)
-            .rotation(0, 180, 0)
-            .scale(1.0f)
-            .end()
-            .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND)
-            .rotation(75, 45, 0)
-            .translation(0, 2.5f, 0)
-            .scale(0.75f)
-            .end()
-            .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND)
-            .rotation(0, 45, 0)
-            .scale(0.75f)
-            .end()
-            .transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND)
-            .rotation(0, 225, 0)
-            .scale(0.75f)
-            .end();
-
-        itemModels().getBuilder(Items.BUS_INTERFACE.getId().getPath())
-            .parent(plugModel)
-            .transforms()
-            .transform(ItemDisplayContext.GUI)
-            .rotation(30, 315, 0)
-            .translation(2, 1, 0)
-            .scale(0.75f)
-            .end()
-            .transform(ItemDisplayContext.GROUND)
-            .translation(0, 3, -5)
-            .scale(0.75f)
-            .end()
-            .transform(ItemDisplayContext.FIXED)
-            .rotation(0, 180, 0)
-            .translation(0, 0, 4)
-            .scale(1.0f)
-            .end()
-            .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND)
-            .rotation(75, 180, 0)
-            .translation(0, -1, 0)
-            .scale(0.75f)
-            .end()
-            .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND)
-            .rotation(0, 180, 0)
-            .translation(0, 0, 2)
-            .scale(0.75f)
-            .end()
-            .transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND)
-            .rotation(0, 180, 0)
-            .translation(0, 0, 2)
-            .scale(0.75f)
-            .end();
-    }
-
-    private <T extends Block> ItemModelBuilder horizontalBlock(final DeferredBlock<T> block, final DeferredItem<Item> item, final Identifier modelFileLocation) {
-        horizontalBlock(block.get(), models().getExistingFile(modelFileLocation));
-        return itemModels().getBuilder(item.getId().getPath()).parent(models().getExistingFile(block.getId()));
-    }
-
-    private <T extends Block> ItemModelBuilder horizontalFaceBlock(final DeferredBlock<T> block, final DeferredItem<Item> item, final Identifier modelFileLocation) {
-        horizontalFaceBlock(block.get(), models().getExistingFile(modelFileLocation));
-        return itemModels().getBuilder(item.getId().getPath()).parent(models().getExistingFile(block.getId()));
-    }
-
-    private <T extends Block> void simpleBlock(final DeferredBlock<T> block, final DeferredItem<Item> item) {
-        simpleBlock(block.get());
-        itemModels().getBuilder(item.getId().getPath()).parent(models().getExistingFile(block.getId()));
+    @Override
+    public String getName() {
+        return "Block States: " + API.MOD_ID;
     }
 }

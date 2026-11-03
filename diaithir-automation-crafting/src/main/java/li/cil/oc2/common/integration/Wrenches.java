@@ -16,10 +16,11 @@ public final class Wrenches {
 
     public static boolean isHoldingWrench(final Entity entity) {
         if (entity instanceof final LivingEntity livingEntity) {
-            for (final ItemStack stack : livingEntity.getHandSlots()) {
-                if (isWrench(stack)) {
-                    return true;
-                }
+            if (isWrench(livingEntity.getMainHandItem())) {
+                return true;
+            }
+            if (isWrench(livingEntity.getOffhandItem())) {
+                return true;
             }
         }
 

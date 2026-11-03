@@ -5,25 +5,45 @@ package li.cil.oc2.data;
 import li.cil.oc2.common.item.Items;
 import li.cil.oc2.common.tags.BlockTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
+import net.minecraft.tags.TagBuilder;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-
-import javax.annotation.Nullable;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
 
 import static li.cil.oc2.common.tags.ItemTags.*;
 
-public final class ModItemTagsProvider extends ItemTagsProvider {
+public final class ModItemTagsProvider extends IntrinsicHolderTagsProvider<Item> {
+    private final CompletableFuture<TagLookup<Block>> blockTags;
+    private Function<TagKey<Block>, java.util.Optional<TagBuilder>> tagsToCopy = key -> java.util.Optional.empty();
+
     public ModItemTagsProvider(
         final PackOutput output,
         final CompletableFuture<HolderLookup.Provider> lookupProvider,
-        final CompletableFuture<TagLookup<Block>> tagLookup,
-        final String modId,
-        @Nullable final ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, tagLookup, modId, existingFileHelper);
+        final CompletableFuture<TagLookup<Block>> tagLookup) {
+        super(output, Registries.ITEM, lookupProvider, item -> BuiltInRegistries.ITEM.getResourceKey(item).orElseThrow());
+        this.blockTags = tagLookup;
+    }
+
+    @Override
+    protected CompletableFuture<HolderLookup.Provider> createContentsProvider() {
+        return super.createContentsProvider().thenCombineAsync(blockTags, (provider, lookup) -> {
+            tagsToCopy = lookup;
+            return provider;
+        });
+    }
+
+    private void copy(final TagKey<Block> blockTag, final TagKey<Item> itemTag) {
+        final TagBuilder itemBuilder = getOrCreateRawBuilder(itemTag);
+        final TagBuilder blockBuilder = tagsToCopy.apply(blockTag)
+            .orElseThrow(() -> new IllegalStateException("Missing block tag " + itemTag.location()));
+        blockBuilder.build().forEach(itemBuilder::add);
     }
 
     @SuppressWarnings("unchecked")

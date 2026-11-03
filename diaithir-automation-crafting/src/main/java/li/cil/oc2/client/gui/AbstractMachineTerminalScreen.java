@@ -9,9 +9,13 @@ import li.cil.oc2.common.Constants;
 import li.cil.oc2.common.container.AbstractMachineTerminalContainer;
 import li.cil.oc2.common.util.TooltipUtils;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
+import net.minecraft.client.input.CharacterEvent;
+import net.minecraft.client.input.InputWithModifiers;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.renderer.Rect2i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
@@ -38,9 +42,9 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
 
     protected AbstractMachineTerminalScreen(final T container, final Inventory playerInventory, final Component title) {
         super(container, playerInventory, title);
+        // imageWidth/imageHeight are final in 26.1, so the terminal size is applied by
+        // positioning leftPos/topPos in init() instead.
         this.terminalWidget = new MachineTerminalWidget(this);
-        imageWidth = Sprites.TERMINAL_SCREEN.width;
-        imageHeight = Sprites.TERMINAL_SCREEN.height;
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -70,16 +74,16 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
     }
 
     @Override
-    public boolean charTyped(final char ch, final int modifiers) {
-        return terminalWidget.charTyped(ch, modifiers) ||
-            super.charTyped(ch, modifiers);
+    public boolean charTyped(final CharacterEvent event) {
+        return terminalWidget.charTyped((char) event.codepoint(), 0) ||
+            super.charTyped(event);
     }
 
     @Override
-    public boolean mouseClicked(final double x, final double y, final int button) {
+    public boolean mouseClicked(final MouseButtonEvent event, final boolean doubleClick) {
         mouseClicked = true;
-        if (!terminalWidget.mouseClicked(x,y,button)) {
-            return super.mouseClicked(x, y, button);
+        if (!terminalWidget.mouseClicked(event.x(), event.y(), event.button())) {
+            return super.mouseClicked(event, doubleClick);
         }
         return true;
     }
@@ -96,33 +100,38 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
     }
 
     @Override
-    public boolean mouseReleased(final double x, final double y, final int button) {
-        if (!mouseClicked) return super.mouseReleased(x, y, button);
-        if (!terminalWidget.mouseReleased(x,y,button)) {
-            return super.mouseReleased(x, y, button);
+    public boolean mouseReleased(final MouseButtonEvent event) {
+        if (!mouseClicked) return super.mouseReleased(event);
+        if (!terminalWidget.mouseReleased(event.x(), event.y(), event.button())) {
+            return super.mouseReleased(event);
         }
         return true;
     }
 
     @Override
-    public boolean keyPressed(final int keyCode, final int scanCode, final int modifiers) {
-        if (terminalWidget.keyPressed(keyCode, scanCode, modifiers)) {
+    public boolean keyPressed(final KeyEvent event) {
+        if (terminalWidget.keyPressed(event.key(), event.scancode(), event.modifiers())) {
             return true;
         }
 
         // Don't close with inventory binding since we usually want to use that as terminal input
         // even without input capture enabled.
-        final InputConstants.Key input = InputConstants.getKey(keyCode, scanCode);
+        final InputConstants.Key input = InputConstants.getKey(event);
         if (getMinecraft().options.keyInventory.isActiveAndMatches(input)) {
             return true;
         }
 
-        return super.keyPressed(keyCode, scanCode, modifiers);
+        return super.keyPressed(event);
     }
 
     @Override
     public void init() {
         super.init();
+
+        // Center the screen using the terminal sprite size, since imageWidth/imageHeight are final.
+        leftPos = (width - Sprites.TERMINAL_SCREEN.width) / 2;
+        topPos = (height - Sprites.TERMINAL_SCREEN.height) / 2;
+
         terminalWidget.init();
 
         final EditBox focusIndicatorEditBox = new EditBox(font, 0, 0, 0, 0, Component.empty());
@@ -141,8 +150,8 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
             }
 
             @Override
-            public void onPress() {
-                super.onPress();
+            public void onPress(final InputWithModifiers input) {
+                super.onPress(input);
                 menu.sendPowerStateToServer(!menu.getVirtualMachine().isRunning());
             }
 
@@ -167,8 +176,8 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
             }
 
             @Override
-            public void onPress() {
-                super.onPress();
+            public void onPress(final InputWithModifiers input) {
+                super.onPress(input);
 
                 getMenu().toggleCaptureInputState();
             }
@@ -193,7 +202,7 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
             }
 
             @Override
-            public void onPress() {
+            public void onPress(final InputWithModifiers input) {
                 menu.switchToInventory();
             }
         }).withTooltip(Component.translatable(Constants.MACHINE_OPEN_INVENTORY_CAPTION));
@@ -213,7 +222,7 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
     protected abstract void setFocusIndicatorEditBox(final EditBox editBox);
 
     @Override
-    protected void renderFg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
+    protected void renderFg(final GuiGraphicsExtractor graphics, final float partialTicks, final int mouseX, final int mouseY) {
         super.renderFg(graphics, partialTicks, mouseX, mouseY);
 
         if (shouldRenderEnergyBar()) {
@@ -226,7 +235,9 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
     }
 
     @Override
-    protected void renderBg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
+    public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
+
         Sprites.SIDEBAR_3.draw(graphics, leftPos - Sprites.SIDEBAR_3.width, topPos + CONTROLS_TOP);
 
         if (shouldRenderEnergyBar()) {
@@ -240,8 +251,8 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
     }
 
     @Override
-    protected void renderTooltip(final GuiGraphics graphics, final int mouseX, final int mouseY) {
-        super.renderTooltip(graphics, mouseX, mouseY);
+    protected void extractTooltip(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
 
         if (shouldRenderEnergyBar()) {
 
@@ -258,7 +269,7 @@ public abstract class AbstractMachineTerminalScreen<T extends AbstractMachineTer
     }
 
     @Override
-    protected void renderLabels(final GuiGraphics graphics, final int mouseX, final int mouseY) {
+    protected void extractLabels(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY) {
         // This is required to prevent the labels from being rendered
     }
 

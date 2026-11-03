@@ -2,82 +2,32 @@
 
 package li.cil.oc2.data;
 
-import li.cil.oc2.api.API;
-import li.cil.oc2.common.entity.Entities;
-import li.cil.oc2.common.item.Items;
+import net.minecraft.data.CachedOutput;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.Item;
-import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
-import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredItem;
 
-public final class ModItemModelProvider extends ItemModelProvider {
-    public ModItemModelProvider(final PackOutput output, final ExistingFileHelper existingFileHelper) {
-        super(output, API.MOD_ID, existingFileHelper);
+import java.util.concurrent.CompletableFuture;
+
+// TODO(oc2-restore): ItemModelProvider, ItemModelBuilder and ExistingFileHelper no longer exist in 26.1.2.
+//  The original provider generated the following item models, which need to be restored with the new
+//  model/item-definition data generation API (or as static JSON assets):
+//  - "item/generated" with layer0 = "item/<name>" for all simple items (wrench, manual, network cable, memory,
+//    CPUs, silicon items, flash memory, cards, modules, transistor, circuit board)
+//  - hard drives (small/medium/large/extra large): layer0 = "item/hard_drive_base", layer1 = "item/hard_drive_tint"
+//  - flash_memory_custom: layer0 = "item/flash_memory"
+//  - floppy and floppy_modern: layer0 = "item/floppy_base", layer1 = "item/floppy_tint"
+//  - robot: parent "template_shulker_box"
+public final class ModItemModelProvider implements DataProvider {
+    public ModItemModelProvider(final PackOutput output) {
     }
 
     @Override
-    protected void registerModels() {
-        simple(Items.WRENCH);
-        simple(Items.MANUAL);
-
-        simple(Items.NETWORK_CABLE);
-
-        simple(Items.MEMORY_SMALL);
-        simple(Items.MEMORY_MEDIUM);
-        simple(Items.MEMORY_LARGE);
-        simple(Items.MEMORY_EXTRA_LARGE);
-        simple(Items.CPU_TIER_1);
-        simple(Items.CPU_TIER_2);
-        simple(Items.CPU_TIER_3);
-        simple(Items.CPU_TIER_4);
-        simple(Items.CPU_TIER_INF);
-        simple(Items.SILICON);
-        simple(Items.SILICON_BLEND);
-        simple(Items.SILICON_WAFER);
-        simple(Items.RAW_SILICON_WAFER);
-        simple(Items.HARD_DRIVE_SMALL, "item/hard_drive_base")
-            .texture("layer1", "item/hard_drive_tint");
-        simple(Items.HARD_DRIVE_MEDIUM, "item/hard_drive_base")
-            .texture("layer1", "item/hard_drive_tint");
-        simple(Items.HARD_DRIVE_LARGE, "item/hard_drive_base")
-            .texture("layer1", "item/hard_drive_tint");
-        simple(Items.HARD_DRIVE_EXTRA_LARGE, "item/hard_drive_base")
-            .texture("layer1", "item/hard_drive_tint");
-        simple(Items.FLASH_MEMORY);
-        simple(Items.FLASH_MEMORY_CUSTOM, "item/flash_memory");
-        simple(Items.FLOPPY, "item/floppy_base")
-            .texture("layer1", "item/floppy_tint");
-        simple(Items.FLOPPY_MODERN, "item/floppy_base")
-            .texture("layer1", "item/floppy_tint");
-
-        simple(Items.REDSTONE_INTERFACE_CARD);
-        simple(Items.NETWORK_INTERFACE_CARD);
-        simple(Items.INTERNET_CARD);
-        simple(Items.FILE_IMPORT_EXPORT_CARD);
-        simple(Items.SOUND_CARD);
-        simple(Items.NETWORK_TUNNEL_CARD);
-
-        simple(Items.INVENTORY_OPERATIONS_MODULE);
-        simple(Items.BLOCK_OPERATIONS_MODULE);
-        simple(Items.NETWORK_TUNNEL_MODULE);
-
-        simple(Items.TRANSISTOR);
-        simple(Items.CIRCUIT_BOARD);
-
-        withExistingParent(Entities.ROBOT.getId().getPath(), "template_shulker_box");
+    public CompletableFuture<?> run(final CachedOutput output) {
+        return CompletableFuture.completedFuture(null);
     }
 
-    private <T extends Item> void simple(final DeferredItem<T> item) {
-        simple(item, "item/" + item.getId().getPath());
-    }
-
-    private <T extends Item> ItemModelBuilder simple(final DeferredItem<T> item, final String texturePath) {
-        return singleTexture(item.getId().getPath(),
-            Identifier.parse("item/generated"),
-            "layer0",
-            Identifier.fromNamespaceAndPath(API.MOD_ID, texturePath));
+    @Override
+    public String getName() {
+        return "OpenComputers II Item Models";
     }
 }

@@ -2,7 +2,8 @@
 
 package li.cil.oc2.client.gui.widget;
 
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.util.Mth;
 
 public final class Sprite {
@@ -30,16 +31,16 @@ public final class Sprite {
 
     ///////////////////////////////////////////////////////////////////
 
-    public void draw(final GuiGraphics graphics, final int x, final int y) {
+    public void draw(final GuiGraphicsExtractor graphics, final int x, final int y) {
         draw(graphics, x, y, 0, 0);
     }
 
-    public void draw(final GuiGraphics graphics, final int x, final int y, final int uOffset, final int vOffset) {
-        graphics.blit(texture.location, x, y, u0 + uOffset, v0 + vOffset, width, height, texture.width, texture.height);
+    public void draw(final GuiGraphicsExtractor graphics, final int x, final int y, final int uOffset, final int vOffset) {
+        graphics.blit(RenderPipelines.GUI_TEXTURED, texture.location, x, y, (float) (u0 + uOffset), (float) (v0 + vOffset), width, height, texture.width, texture.height);
     }
 
-    public void drawFillY(final GuiGraphics graphics, final int x, final int y, final float value) {
+    public void drawFillY(final GuiGraphicsExtractor graphics, final int x, final int y, final float value) {
         final int h = (int) (this.height * Mth.clamp(value, 0, 1));
-        graphics.blit(texture.location, x, y + (height - h), u0, v0 + (height - h), width, h, texture.width, texture.height);
+        graphics.blit(RenderPipelines.GUI_TEXTURED, texture.location, x, y + (height - h), (float) u0, (float) (v0 + (height - h)), width, h, texture.width, texture.height);
     }
 }

@@ -13,9 +13,7 @@ import li.cil.oc2.common.integration.Wrenches;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.player.Player;
@@ -29,16 +27,17 @@ public enum BusInterfaceNameRenderer {
 
     ///////////////////////////////////////////////////////////////////
 
+    // Equivalent of the former LightTexture.pack(15, 15).
+    private static final int FULL_BRIGHT = (15 << 4) | (15 << 20);
+
+    ///////////////////////////////////////////////////////////////////
+
     public static void initialize() {
         NeoForge.EVENT_BUS.register(INSTANCE);
     }
 
     @SubscribeEvent
-    public void handleRenderLastEvent(final RenderLevelStageEvent event) {
-        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS) {
-            return;
-        }
-
+    public void handleRenderLastEvent(final RenderLevelStageEvent.AfterTranslucentBlocks event) {
         final Minecraft mc = Minecraft.getInstance();
         final Player player = mc.player;
         if (player == null) {
@@ -79,12 +78,11 @@ public enum BusInterfaceNameRenderer {
 
         final Camera info = mc.gameRenderer.getMainCamera();
         stack.translate(
-            blockPos.getX() - info.getPosition().x,
-            blockPos.getY() - info.getPosition().y,
-            blockPos.getZ() - info.getPosition().z);
+            blockPos.getX() - info.position().x,
+            blockPos.getY() - info.position().y,
+            blockPos.getZ() - info.position().z);
 
-        final EntityRenderDispatcher renderManager = mc.getEntityRenderDispatcher();
-        stack.mulPose(renderManager.cameraOrientation());
+        stack.mulPose(info.rotation());
 
         stack.scale(0.025f, -0.025f, 0.025f);
 
@@ -96,7 +94,7 @@ public enum BusInterfaceNameRenderer {
         final float horizontalTextOffset = -font.width(name) * 0.5f;
         final float backgroundOpacity = Minecraft.getInstance().options.getBackgroundOpacity(0.25F);
         final int backgroundColor = (int) (backgroundOpacity * 255.0F) << 24;
-        final int packedLight = LightTexture.pack(15, 15);
+        final int packedLight = FULL_BRIGHT;
 
         font.drawInBatch(name, horizontalTextOffset, 0, 0,
             false, matrix, buffer, Font.DisplayMode.SEE_THROUGH, backgroundColor, packedLight);

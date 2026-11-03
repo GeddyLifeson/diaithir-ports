@@ -2,16 +2,15 @@
 
 package li.cil.oc2.client.gui.widget;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 
-import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -52,24 +51,23 @@ public abstract class ImageButton extends AbstractButton {
             final Component component = tooltip.get(i);
             tooltip.set(i, withFormat(component, ChatFormatting.GRAY));
         }
+        updateTooltip();
         return this;
     }
 
     @Override
-    public void onPress() {
+    public void onPress(final InputWithModifiers input) {
         lastPressedAt = System.currentTimeMillis();
     }
 
     @Override
-    public void renderWidget(final GuiGraphics graphics, final int mouseX, final int mouseY, final float partialTicks) {
+    protected void extractContents(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
         renderBackground(graphics, mouseX, mouseY, partialTicks);
     }
 
     ///////////////////////////////////////////////////////////////////
 
-    protected void renderBackground(final GuiGraphics graphics, final int mouseX, final int mouseY, final float partialTicks) {
-        RenderSystem.enableDepthTest();
-
+    protected void renderBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
         Sprite background = baseImage;
         if ((System.currentTimeMillis() - lastPressedAt) < PRESS_DURATION) {
             background = pressedImage;
@@ -78,22 +76,23 @@ public abstract class ImageButton extends AbstractButton {
         background.draw(graphics, getX(), getY());
 
         if (!Objects.equals(getMessage(), Component.empty())) {
-            graphics.drawCenteredString(Minecraft.getInstance().font, getMessage(),
+            graphics.centeredText(Minecraft.getInstance().font, getMessage(),
                 getX() + width / 2, getY() + (height - 8) / 2,
                 getFGColor() | Mth.ceil(alpha * 255) << 24);
         }
     }
 
-    @Override
-    @Nullable
-    public Tooltip getTooltip()
-    {
-        if (tooltip.stream().findFirst().isEmpty()) return null;
-        StringBuilder builder = new StringBuilder();
-        for(int i = 0; i < tooltip.size(); i++) {
-            builder.append(tooltip.get(i).getStringOr(), "").append(i == tooltip.size() - 1 ? "" : "\n");
+    private void updateTooltip() {
+        if (tooltip.stream().findFirst().isEmpty()) {
+            setTooltip(null);
+            return;
         }
-        Component component = Component.literal(builder.toString());
-        return Tooltip.create(component);
+
+        final StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < tooltip.size(); i++) {
+            builder.append(tooltip.get(i).getString()).append(i == tooltip.size() - 1 ? "" : "\n");
+        }
+        final Component component = Component.literal(builder.toString());
+        setTooltip(Tooltip.create(component));
     }
 }

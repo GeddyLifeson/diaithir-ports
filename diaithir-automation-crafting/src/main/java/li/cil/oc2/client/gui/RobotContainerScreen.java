@@ -2,10 +2,8 @@
 
 package li.cil.oc2.client.gui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import li.cil.oc2.common.container.RobotInventoryContainer;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.neoforged.api.distmarker.Dist;
@@ -17,9 +15,8 @@ public final class RobotContainerScreen extends AbstractMachineInventoryScreen<R
 
     ///////////////////////////////////////////////////////////////////
 
-    public static void renderSelection(final GuiGraphics graphics, final int selectedSlot, final int x, final int y, final int columns) {
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1, 1, 1, 1);
+    public static void renderSelection(final GuiGraphicsExtractor graphics, final int selectedSlot, final int x, final int y, final int columns) {
+        // TODO(oc2-restore): shader and shader color setup is no longer needed (and no longer possible) in 26.1.
 
         final int slotX = (selectedSlot % columns) * SLOT_SIZE;
         final int slotY = (selectedSlot / columns) * SLOT_SIZE;
@@ -31,16 +28,24 @@ public final class RobotContainerScreen extends AbstractMachineInventoryScreen<R
 
     public RobotContainerScreen(final RobotInventoryContainer container, final Inventory playerInventory, final Component title) {
         super(container, playerInventory, title);
-        imageWidth = Sprites.ROBOT_CONTAINER.width;
-        imageHeight = Sprites.ROBOT_CONTAINER.height;
-        inventoryLabelY = imageHeight - 94;
+        // imageWidth and imageHeight are final in 26.1, so the layout is adjusted in init() instead.
+        inventoryLabelY = Sprites.ROBOT_CONTAINER.height - 94;
     }
 
     ///////////////////////////////////////////////////////////////////
 
     @Override
-    protected void renderBg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
-        super.renderBg(graphics, partialTicks, mouseX, mouseY);
+    protected void init() {
+        super.init();
+
+        // TODO(oc2-restore): imageWidth/imageHeight are final in 26.1; pass the size via the super constructor if the base screen supports it.
+        leftPos = (width - Sprites.ROBOT_CONTAINER.width) / 2;
+        topPos = (height - Sprites.ROBOT_CONTAINER.height) / 2;
+    }
+
+    @Override
+    public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
 
         Sprites.ROBOT_CONTAINER.draw(graphics, leftPos, topPos);
         renderSelection(graphics, menu.getRobot().getSelectedSlot(), leftPos + 115, topPos + 23, 3);

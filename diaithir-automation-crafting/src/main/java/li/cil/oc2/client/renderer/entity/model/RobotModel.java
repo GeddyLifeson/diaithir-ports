@@ -2,10 +2,7 @@
 
 package li.cil.oc2.client.renderer.entity.model;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import li.cil.oc2.api.API;
-import li.cil.oc2.common.entity.Robot;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -14,25 +11,31 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.resources.Identifier;
-import net.neoforged.neoforge.common.util.TransformationHelper;
 
-public final class RobotModel extends EntityModel<Robot> {
+public final class RobotModel extends EntityModel<RobotModel.RobotRenderState> {
     public static final ModelLayerLocation ROBOT_MODEL_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(API.MOD_ID, "robot"), "main");
     public static final Identifier ROBOT_ENTITY_TEXTURE = Identifier.fromNamespaceAndPath(API.MOD_ID, "textures/entity/robot/robot.png");
+
+    ///////////////////////////////////////////////////////////////////
+
+    public static final class RobotRenderState extends EntityRenderState {
+        public float baseRenderOffsetY;
+        public float topRenderOffsetY;
+        public float topRenderRotationY;
+    }
 
     ///////////////////////////////////////////////////////////////////
 
     private final ModelPart topRenderer;
     private final ModelPart baseRenderer;
     private final ModelPart coreRenderer;
-    private float baseY, topY;
-    private final float[] topRotation = new float[3];
 
     ///////////////////////////////////////////////////////////////////
 
     public RobotModel(final ModelPart modelPart) {
+        super(modelPart);
         topRenderer = modelPart.getChild("top");
         baseRenderer = modelPart.getChild("base");
         coreRenderer = modelPart.getChild("core");
@@ -59,25 +62,14 @@ public final class RobotModel extends EntityModel<Robot> {
     ///////////////////////////////////////////////////////////////////
 
     @Override
-    public void setupAnim(final Robot entity, final float limbSwing, final float limbSwingAmount, final float ageInTicks, final float netHeadYaw, final float headPitch) {
-        final Robot.AnimationState state = entity.getAnimationState();
-        baseY = state.baseRenderOffsetY;
-        topY = state.topRenderOffsetY;
-        topRotation[1] = state.topRenderRotationY;
-    }
+    public void setupAnim(final RobotRenderState state) {
+        super.setupAnim(state);
 
-    @Override
-    public void renderToBuffer(final PoseStack stack, final VertexConsumer consumer, final int packedLight, final int packedOverlay, final int unused) {
-        stack.pushPose();
-        stack.translate(0, topY, 0);
-        stack.mulPose(TransformationHelper.quatFromXYZ(topRotation, true));
-        topRenderer.render(stack, consumer, packedLight, packedOverlay);
-        stack.popPose();
+        topRenderer.y = state.topRenderOffsetY * 16;
+        topRenderer.yRot = (float) Math.toRadians(state.topRenderRotationY);
 
-        stack.pushPose();
-        stack.translate(0, baseY, 0);
-        baseRenderer.render(stack, consumer, packedLight, packedOverlay);
-        coreRenderer.render(stack, consumer, LightTexture.pack(15, 15), packedOverlay);
-        stack.popPose();
+        baseRenderer.y = state.baseRenderOffsetY * 16;
+        // TODO(oc2-restore): core was rendered fullbright (LightTexture.pack(15, 15)); Model#renderToBuffer is final in 26.1.
+        coreRenderer.y = state.baseRenderOffsetY * 16;
     }
 }

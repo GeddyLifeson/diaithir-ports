@@ -9,9 +9,11 @@ import li.cil.oc2.common.Constants;
 import li.cil.oc2.common.container.AbstractMonitorContainer;
 import li.cil.oc2.common.util.TooltipUtils;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
+import net.minecraft.client.input.InputWithModifiers;
+import net.minecraft.client.input.KeyEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.world.entity.player.Inventory;
@@ -33,10 +35,8 @@ public abstract class AbstractMonitorDisplayScreen<T extends AbstractMonitorCont
     ///////////////////////////////////////////////////////////////////
 
     protected AbstractMonitorDisplayScreen(final T container, final Inventory playerInventory, final Component title) {
-        super(container, playerInventory, title);
+        super(container, playerInventory, title, Sprites.MONITOR_SCREEN.width, Sprites.MONITOR_SCREEN.height);
         this.monitorDisplayWidget = new MonitorDisplayWidget(this);
-        imageWidth = Sprites.MONITOR_SCREEN.width;
-        imageHeight = Sprites.MONITOR_SCREEN.height;
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -49,35 +49,35 @@ public abstract class AbstractMonitorDisplayScreen<T extends AbstractMonitorCont
     }
 
     @Override
-    public boolean keyPressed(final int keyCode, final int scanCode, final int modifiers) {
-        if (monitorDisplayWidget.keyPressed(keyCode, scanCode, modifiers)) {
+    public boolean keyPressed(final KeyEvent event) {
+        if (monitorDisplayWidget.keyPressed(event.key(), event.scancode(), event.modifiers())) {
             return true;
         }
 
         // Don't close with inventory binding since we usually want to use that as terminal input
         // even without input capture enabled.
-        final InputConstants.Key input = InputConstants.getKey(keyCode, scanCode);
+        final InputConstants.Key input = InputConstants.getKey(event);
         if (getMinecraft().options.keyInventory.isActiveAndMatches(input)) {
             return true;
         }
 
-        return super.keyPressed(keyCode, scanCode, modifiers);
+        return super.keyPressed(event);
     }
 
     @Override
-    public boolean keyReleased(final int keyCode, final int scanCode, final int modifiers) {
-        if (monitorDisplayWidget.keyReleased(keyCode, scanCode, modifiers)) {
+    public boolean keyReleased(final KeyEvent event) {
+        if (monitorDisplayWidget.keyReleased(event.key(), event.scancode(), event.modifiers())) {
             return true;
         }
 
         // Don't close with inventory binding since we usually want to use that as terminal input
         // even without input capture enabled.
-        final InputConstants.Key input = InputConstants.getKey(keyCode, scanCode);
+        final InputConstants.Key input = InputConstants.getKey(event);
         if (getMinecraft().options.keyInventory.isActiveAndMatches(input)) {
             return true;
         }
 
-        return super.keyPressed(keyCode, scanCode, modifiers);
+        return super.keyPressed(event);
     }
 
     @Override
@@ -101,8 +101,8 @@ public abstract class AbstractMonitorDisplayScreen<T extends AbstractMonitorCont
             }
 
             @Override
-            public void onPress() {
-                super.onPress();
+            public void onPress(final InputWithModifiers input) {
+                super.onPress(input);
                 menu.sendPowerStateToServer(!menu.getPowerState());
             }
 
@@ -127,8 +127,8 @@ public abstract class AbstractMonitorDisplayScreen<T extends AbstractMonitorCont
             }
 
             @Override
-            public void onPress() {
-                super.onPress();
+            public void onPress(final InputWithModifiers input) {
+                super.onPress(input);
 
                 getMenu().toggleCaptureInputState();
             }
@@ -157,7 +157,7 @@ public abstract class AbstractMonitorDisplayScreen<T extends AbstractMonitorCont
     protected abstract void setFocusIndicatorEditBox(final EditBox editBox);
 
     @Override
-    protected void renderFg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
+    protected void renderFg(final GuiGraphicsExtractor graphics, final float partialTicks, final int mouseX, final int mouseY) {
         super.renderFg(graphics, partialTicks, mouseX, mouseY);
 
         if (shouldRenderEnergyBar()) {
@@ -170,7 +170,9 @@ public abstract class AbstractMonitorDisplayScreen<T extends AbstractMonitorCont
     }
 
     @Override
-    protected void renderBg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
+    public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
+
         Sprites.MONITOR_SIDEBAR_1.draw(graphics, leftPos - Sprites.MONITOR_SIDEBAR_1.width, topPos + CONTROLS_TOP);
 
         if (shouldRenderEnergyBar()) {
@@ -184,8 +186,8 @@ public abstract class AbstractMonitorDisplayScreen<T extends AbstractMonitorCont
     }
 
     @Override
-    protected void renderTooltip(final GuiGraphics graphics, final int mouseX, final int mouseY) {
-        super.renderTooltip(graphics, mouseX, mouseY);
+    protected void extractTooltip(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
 
         if (shouldRenderEnergyBar()) {
 
@@ -202,7 +204,7 @@ public abstract class AbstractMonitorDisplayScreen<T extends AbstractMonitorCont
     }
 
     @Override
-    protected void renderLabels(final GuiGraphics graphics, final int mouseX, final int mouseY) {
+    protected void extractLabels(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY) {
         // This is required to prevent the labels from being rendered
     }
 

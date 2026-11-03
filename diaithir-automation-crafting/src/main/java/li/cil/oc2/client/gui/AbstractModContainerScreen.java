@@ -2,13 +2,8 @@
 
 package li.cil.oc2.client.gui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -19,6 +14,10 @@ import net.neoforged.api.distmarker.OnlyIn;
 public abstract class AbstractModContainerScreen<T extends AbstractContainerMenu> extends AbstractContainerScreen<T> {
     public AbstractModContainerScreen(final T container, final Inventory playerInventory, final Component title) {
         super(container, playerInventory, title);
+    }
+
+    public AbstractModContainerScreen(final T container, final Inventory playerInventory, final Component title, final int width, final int height) {
+        super(container, playerInventory, title, width, height);
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -33,34 +32,15 @@ public abstract class AbstractModContainerScreen<T extends AbstractContainerMenu
     }
 
     @Override
-    public void render(final GuiGraphics graphics, final int mouseX, final int mouseY, final float partialTicks) {
-        renderBackground(graphics, mouseX, mouseY, partialTicks);
-
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1, 1, 1, 1);
-
-        super.render(graphics, mouseX, mouseY, partialTicks);
+    public void extractRenderState(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        // Background, widgets (including their own tooltips) and the slot tooltip are handled by the super implementation.
+        super.extractRenderState(graphics, mouseX, mouseY, partialTicks);
 
         renderFg(graphics, partialTicks, mouseX, mouseY);
-
-        renderTooltip(graphics, mouseX, mouseY);
     }
 
     ///////////////////////////////////////////////////////////////////
 
-    @Override
-    protected void renderTooltip(final GuiGraphics graphics, final int mouseX, final int mouseY) {
-        super.renderTooltip(graphics, mouseX, mouseY);
-
-        for (final Renderable widget : renderables) {
-            if (widget instanceof AbstractWidget abstractWidget) {
-                if(!abstractWidget.isHovered()) continue;
-                if(abstractWidget.getTooltip() == null) continue;
-                graphics.renderTooltip(Minecraft.getInstance().font, abstractWidget.getTooltip().toCharSequence(Minecraft.getInstance()), mouseX, mouseY);
-            }
-        }
-    }
-
-    protected void renderFg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
+    protected void renderFg(final GuiGraphicsExtractor graphics, final float partialTicks, final int mouseX, final int mouseY) {
     }
 }

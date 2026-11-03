@@ -3,18 +3,25 @@
 package li.cil.oc2.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import li.cil.oc2.client.renderer.entity.model.RobotModel;
 import li.cil.oc2.common.entity.Robot;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public final class RobotRenderer extends EntityRenderer<Robot> {
+public final class RobotRenderer extends EntityRenderer<Robot, RobotRenderer.RobotRenderState> {
+    public static final class RobotRenderState extends EntityRenderState {
+        public float rotation;
+        public final RobotModel.RobotRenderState modelState = new RobotModel.RobotRenderState();
+    }
+
+    ///////////////////////////////////////////////////////////////////
+
     private final RobotModel model;
 
     ///////////////////////////////////////////////////////////////////
@@ -27,28 +34,36 @@ public final class RobotRenderer extends EntityRenderer<Robot> {
     ///////////////////////////////////////////////////////////////////
 
     @Override
-    public Identifier getTextureLocation(final Robot entity) {
-        return RobotModel.ROBOT_ENTITY_TEXTURE;
+    public RobotRenderState createRenderState() {
+        return new RobotRenderState();
     }
 
     @Override
-    public void render(final Robot entity, final float entityYaw, final float partialTicks, final PoseStack stack, final MultiBufferSource bufferSource, final int packedLight) {
-        final Robot.AnimationState state = entity.getAnimationState();
-        state.update(partialTicks, entity.level().random);
+    public void extractRenderState(final Robot entity, final RobotRenderState state, final float partialTicks) {
+        super.extractRenderState(entity, state, partialTicks);
 
-        stack.pushPose();
-        // NB: we don't entityYaw given to use because that uses a plain lerp which can lead to ugly
+        final Robot.AnimationState animationState = entity.getAnimationState();
+        animationState.update(partialTicks, entity.level().getRandom());
+
+        // NB: we don't use entityYaw given to us because that uses a plain lerp which can lead to ugly
         //     jumps in case we get a wrapped rotationYaw synced from the server (leading to ~360
         //     degree delta to the last known previous rotation). Haven't figured out where to
         //     alternatively prevent this wrapping or patch the prev value instead.
         final float partialRotation = Mth.degreesDifferenceAbs(entity.yRotO, entity.getYRot()) * partialTicks;
-        final float rotation = Mth.approachDegrees(entity.yRotO, entity.getYRot(), partialRotation);
-        stack.mulPose(Axis.YN.rotationDegrees(rotation));
+        state.rotation = Mth.approachDegrees(entity.yRotO, entity.getYRot(), partialRotation);
 
-        model.setupAnim(entity, 0, 0, 0, 0, 0);
+        state.modelState.ageInTicks = state.ageInTicks;
+        state.modelState.lightCoords = state.lightCoords;
+        state.modelState.outlineColor = state.outlineColor;
+    }
 
-        final VertexConsumer consumer = bufferSource.getBuffer(model.renderType(getTextureLocation(entity)));
-        model.renderToBuffer(stack, consumer, packedLight, OverlayTexture.NO_OVERLAY, -1);
+    @Override
+    public void submit(final RobotRenderState state, final PoseStack stack, final SubmitNodeCollector collector, final CameraRenderState cameraState) {
+        stack.pushPose();
+        stack.mulPose(Axis.YN.rotationDegrees(state.rotation));
+
+        collector.submitModel(model, state.modelState, stack, model.renderType(RobotModel.ROBOT_ENTITY_TEXTURE),
+            state.lightCoords, OverlayTexture.NO_OVERLAY, -1, null, state.outlineColor, null);
 
         stack.popPose();
     }

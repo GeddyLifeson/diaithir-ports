@@ -5,7 +5,7 @@ package li.cil.oc2.client.gui;
 import com.mojang.blaze3d.vertex.PoseStack;
 import li.cil.oc2.common.vm.terminal.modes.MouseMode;
 import li.cil.oc2.common.vm.terminal.modes.PrivateMode;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import org.joml.Matrix4f;
 import li.cil.oc2.client.gui.terminal.TerminalInput;
 import li.cil.oc2.common.container.AbstractMachineTerminalContainer;
@@ -52,7 +52,7 @@ public final class MachineTerminalWidget {
         this.terminal = this.container.getTerminal();
     }
 
-    public void renderBackground(final GuiGraphics graphics, final int mouseX, final int mouseY) {
+    public void renderBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY) {
         isMouseOverTerminal = isMouseOverTerminal(mouseX, mouseY);
 
         Sprites.TERMINAL_SCREEN.draw(graphics, leftPos, topPos);
@@ -62,7 +62,7 @@ public final class MachineTerminalWidget {
         }
     }
 
-    public void render(final GuiGraphics graphics, @Nullable final Component error) {
+    public void render(final GuiGraphicsExtractor graphics, @Nullable final Component error) {
         if (container.getVirtualMachine().isRunning()) {
             final PoseStack terminalStack = new PoseStack();
             terminalStack.translate(leftPos + TERMINAL_X, topPos + TERMINAL_Y, 0);
@@ -92,10 +92,8 @@ public final class MachineTerminalWidget {
         }
     }
 
-    private void drawShadow(Font font, GuiGraphics graphics, Component text, float x, float y) {
-        var batch = graphics.bufferSource();
-        font.drawInBatch(text, x, y, 15610658, true, graphics.pose().last().pose(), batch, Font.DisplayMode.NORMAL, 0, 15728880);
-        batch.endBatch();
+    private void drawShadow(Font font, GuiGraphicsExtractor graphics, Component text, float x, float y) {
+        graphics.text(font, text, (int) x, (int) y, 0xFF000000 | 15610658, true);
     }
 
     public void tick() {

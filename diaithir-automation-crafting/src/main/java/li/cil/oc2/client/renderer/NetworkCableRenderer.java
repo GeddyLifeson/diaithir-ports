@@ -2,34 +2,23 @@
 
 package li.cil.oc2.client.renderer;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import li.cil.oc2.common.util.Vec3Utils;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import li.cil.oc2.api.API;
 import li.cil.oc2.common.blockentity.NetworkConnectorBlockEntity;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LightTexture;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
-import net.minecraft.world.level.*;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 import net.neoforged.neoforge.event.level.ChunkEvent;
 import net.neoforged.neoforge.event.level.LevelEvent;
 
 import javax.annotation.Nullable;
 import java.util.*;
-import java.util.function.Predicate;
 
 // Note on cable rendering and Fabulous rendering mode: sadly at the time of writing,
 // there is no hook to render before the Fabulous shaders. And those sadly appear to
@@ -38,6 +27,10 @@ import java.util.function.Predicate;
 // fall back to letting the TESRs trigger the cable rendering. We still use the data
 // structures with precomputed data and such, it's just that they need much larger
 // render bounds and require an addition hash map look-up.
+// TODO(oc2-restore): The actual cable rendering (RenderLevelStageEvent based, using
+// ModRenderType.getNetworkCable() and a PoseStack/VertexConsumer pipeline) relied on
+// the old GlStateManager/RenderType/LightTexture APIs and has been removed for 26.1.2.
+// The connection tracking and geometry helpers are kept so it can be restored.
 @EventBusSubscriber(value = Dist.CLIENT, modid = API.MOD_ID)
 public final class NetworkCableRenderer {
     private static final int MAX_RENDER_DISTANCE = 100;
@@ -57,7 +50,6 @@ public final class NetworkCableRenderer {
 
     private static final ArrayList<Connection> connections = new ArrayList<>();
     private static final WeakHashMap<NetworkConnectorBlockEntity, ArrayList<Connection>> connectionsByConnector = new WeakHashMap<>();
-    private static final ArrayList<CablePoint> cablePoints = new ArrayList<>();
 
     ///////////////////////////////////////////////////////////////////
 
@@ -79,7 +71,7 @@ public final class NetworkCableRenderer {
 
             final ArrayList<NetworkConnectorBlockEntity> list = new ArrayList<>(NetworkCableRenderer.connectors);
             for (final NetworkConnectorBlockEntity connector : list) {
-                final ChunkPos connectorChunkPos = new ChunkPos(connector.getBlockPos());
+                final ChunkPos connectorChunkPos = ChunkPos.containing(connector.getBlockPos());
                 if (Objects.equals(connectorChunkPos, chunkPos)) {
                     connectors.remove(connector);
                 }
@@ -105,118 +97,7 @@ public final class NetworkCableRenderer {
         }
     }
 
-    @SubscribeEvent
-    public static void handleRenderWorld(final RenderLevelStageEvent event) {
-        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_CUTOUT_BLOCKS) {
-            return;
-        }
-
-        validateConnectors();
-        validatePairs();
-
-        if (connections.isEmpty()) {
-            return;
-        }
-
-        final Minecraft client = Minecraft.getInstance();
-        final Level level = client.level;
-        if (level == null) {
-            return;
-        }
-
-        final PoseStack stack = event.getPoseStack();
-
-        final Vec3 eye = event.getCamera().getPosition();
-
-        final var frustumMatrix = new Matrix4f(event.getModelViewMatrix());
-        frustumMatrix.mul(stack.last().pose());
-        final Frustum frustum = new Frustum(frustumMatrix, event.getProjectionMatrix());
-        frustum.prepare(eye.x, eye.y, eye.z);
-
-        stack.pushPose();
-        stack.translate(-eye.x, -eye.y, -eye.z);
-
-        RenderSystem.getModelViewStack().pushMatrix();
-        RenderSystem.getModelViewStack().set(event.getModelViewMatrix());
-        RenderSystem.applyModelViewMatrix();
-
-        renderCables(level, stack, eye, connections, frustum::isVisible);
-
-        RenderSystem.getModelViewStack().popMatrix();
-
-        stack.popPose();
-    }
-
-    private static void renderCables(final BlockAndTintGetter level, final PoseStack stack, final Vec3 eye, final ArrayList<Connection> connections, final Predicate<AABB> filter) {
-        final Matrix4f viewMatrix = stack.last().pose();
-
-        final RenderType renderType = ModRenderType.getNetworkCable();
-        final MultiBufferSource.BufferSource bufferSource = Minecraft.getInstance().renderBuffers().bufferSource();
-
-        final float r = CABLE_COLOR.x();
-        final float g = CABLE_COLOR.y();
-        final float b = CABLE_COLOR.z();
-
-        for (final Connection connection : connections) {
-            final Vec3 p0 = connection.from;
-            final Vec3 p1 = connection.to;
-
-            if (!p0.closerThan(eye, MAX_RENDER_DISTANCE) && !p1.closerThan(eye, MAX_RENDER_DISTANCE)) {
-                continue;
-            }
-
-            // We may easily get false positives here for diagonal cables, but it's good enough for now.
-            if (!filter.test(connection.bounds)) {
-                continue;
-            }
-
-            final Vec3 p2 = animateCableSwing(
-                lerp(p0, p1, 0.5f).subtract(0, computeCableHang(p0, p1), 0),
-                connection.right,
-                computeCableSwingAmount(p0, p1),
-                connection.hashCode());
-
-            final VertexConsumer consumer = bufferSource.getBuffer(renderType);
-
-            cablePoints.clear();
-            cablePoints.ensureCapacity(CABLE_VERTEX_COUNT);
-            for (int i = 0; i < CABLE_VERTEX_COUNT; i++) {
-                final float t = i / (CABLE_VERTEX_COUNT - 1f);
-                final Vec3 p = quadraticBezier(p0, p1, p2, t);
-                final Vec3 n = getExtrusionVector(eye, p, connection.forward);
-
-                final BlockPos blockPos = new BlockPos(Vec3Utils.round(p));
-                final int blockLight = level.getBrightness(LightLayer.BLOCK, blockPos);
-                final int skyLight = level.getBrightness(LightLayer.SKY, blockPos);
-                final int packedLight = LightTexture.pack(blockLight, skyLight);
-
-                final Vector3f v0 = p.subtract(n).toVector3f();
-                final Vector3f v1 = p.add(n).toVector3f();
-
-                cablePoints.add(new CablePoint(v0, v1, packedLight));
-            }
-
-            for (int i = 0; i < cablePoints.size() - 1; i++) {
-                final CablePoint pa = cablePoints.get(i);
-                final CablePoint pb = cablePoints.get(i + 1);
-
-                consumer.addVertex(viewMatrix, pa.v0.x(), pa.v0.y(), pa.v0.z())
-                    .setColor(r, g, b, 1f)
-                    .setUv2(pa.packedLight, 0);
-                consumer.addVertex(viewMatrix, pa.v1.x(), pa.v1.y(), pa.v1.z())
-                    .setColor(r, g, b, 1f)
-                    .setUv2(pa.packedLight, 0);
-                consumer.addVertex(viewMatrix, pb.v1.x(), pb.v1.y(), pb.v1.z())
-                    .setColor(r, g, b, 1f)
-                    .setUv2(pa.packedLight, 0);
-                consumer.addVertex(viewMatrix, pb.v0.x(), pb.v0.y(), pb.v0.z())
-                    .setColor(r, g, b, 1f)
-                    .setUv2(pa.packedLight, 0);
-            }
-
-            bufferSource.endBatch(renderType);
-        }
-    }
+    // TODO(oc2-restore): render cables, see class comment.
 
     private static Vec3 lerp(final Vec3 a, final Vec3 b, final float t) {
         return a.add(b.subtract(a).scale(t)); // a + (b - a)*t = a*(1-t) + b*t
@@ -336,6 +217,4 @@ public final class NetworkCableRenderer {
             return Objects.hash(fromPos, toPos);
         }
     }
-
-    private record CablePoint(Vector3f v0, Vector3f v1, int packedLight) { }
 }

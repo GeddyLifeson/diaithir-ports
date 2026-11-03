@@ -2,7 +2,6 @@
 
 package li.cil.oc2.client.gui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import li.cil.oc2.api.bus.device.DeviceTypes;
 import li.cil.oc2.client.gui.util.GuiUtils;
 import li.cil.oc2.client.gui.widget.ImageButton;
@@ -11,9 +10,9 @@ import li.cil.oc2.common.Constants;
 import li.cil.oc2.common.container.AbstractMachineTerminalContainer;
 import li.cil.oc2.common.util.TooltipUtils;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.client.renderer.Rect2i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
@@ -36,6 +35,10 @@ public abstract class AbstractMachineInventoryScreen<T extends AbstractMachineTe
 
     public AbstractMachineInventoryScreen(final T container, final Inventory playerInventory, final Component title) {
         super(container, playerInventory, title);
+    }
+
+    public AbstractMachineInventoryScreen(final T container, final Inventory playerInventory, final Component title, final int width, final int height) {
+        super(container, playerInventory, title, width, height);
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -75,8 +78,8 @@ public abstract class AbstractMachineInventoryScreen<T extends AbstractMachineTe
             }
 
             @Override
-            public void onPress() {
-                super.onPress();
+            public void onPress(final InputWithModifiers input) {
+                super.onPress(input);
                 menu.sendPowerStateToServer(!menu.getVirtualMachine().isRunning());
             }
 
@@ -100,16 +103,15 @@ public abstract class AbstractMachineInventoryScreen<T extends AbstractMachineTe
             }
 
             @Override
-            public void onPress() {
+            public void onPress(final InputWithModifiers input) {
                 menu.switchToTerminal();
             }
         }.withTooltip(Component.translatable(Constants.MACHINE_OPEN_TERMINAL_CAPTION)));
     }
 
     @Override
-    protected void renderBg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1, 1, 1, 1);
+    public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
 
         Sprites.SIDEBAR_2.draw(graphics, leftPos - Sprites.SIDEBAR_2.width, topPos + CONTROLS_TOP);
 
@@ -122,7 +124,7 @@ public abstract class AbstractMachineInventoryScreen<T extends AbstractMachineTe
     }
 
     @Override
-    protected void renderFg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
+    protected void renderFg(final GuiGraphicsExtractor graphics, final float partialTicks, final int mouseX, final int mouseY) {
         super.renderFg(graphics, partialTicks, mouseX, mouseY);
 
         GuiUtils.renderMissingDeviceInfoIcon(graphics, this, DeviceTypes.FLASH_MEMORY, Sprites.WARN_ICON);
@@ -138,8 +140,8 @@ public abstract class AbstractMachineInventoryScreen<T extends AbstractMachineTe
     }
 
     @Override
-    protected void renderTooltip(final GuiGraphics graphics, final int mouseX, final int mouseY) {
-        super.renderTooltip(graphics, mouseX, mouseY);
+    protected void extractTooltip(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
 
         GuiUtils.renderMissingDeviceInfoTooltip(graphics, this, mouseX, mouseY, DeviceTypes.FLASH_MEMORY);
         GuiUtils.renderMissingDeviceInfoTooltip(graphics, this, mouseX, mouseY, DeviceTypes.MEMORY);

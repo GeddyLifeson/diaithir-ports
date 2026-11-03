@@ -6,13 +6,10 @@ import li.cil.oc2.api.API;
 import li.cil.oc2.client.gui.*;
 import li.cil.oc2.client.item.CustomItemColors;
 import li.cil.oc2.client.item.CustomItemModelProperties;
-import li.cil.oc2.client.model.BusCableModelLoader;
 import li.cil.oc2.client.renderer.BusInterfaceNameRenderer;
 import li.cil.oc2.client.renderer.blockentity.*;
-import li.cil.oc2.client.renderer.color.BusCableBlockColor;
 import li.cil.oc2.client.renderer.entity.RobotRenderer;
 import li.cil.oc2.client.renderer.entity.model.RobotModel;
-import li.cil.oc2.common.block.Blocks;
 import li.cil.oc2.common.blockentity.BlockEntities;
 import li.cil.oc2.common.config.Config;
 import li.cil.oc2.common.entity.Entities;
@@ -21,8 +18,6 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.ModelEvent.RegisterGeometryLoaders;
-import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -50,11 +45,8 @@ public final class ClientSetup {
         });
     }
 
-    @SubscribeEvent
-    public static void handleModelRegistryEvent(final RegisterGeometryLoaders event) {
-        if (Blocks.BUS_CABLE.getId() == null) throw new RuntimeException("Null bus cable ID");
-        event.register(Blocks.BUS_CABLE.getId(), new BusCableModelLoader());
-    }
+    // TODO(oc2-restore): ModelEvent.RegisterGeometryLoaders no longer exists in 26.1.2; the bus cable
+    //  model loader (BusCableModelLoader) registration needs to be re-implemented with the new model system.
 
     @SubscribeEvent
     public static void renderHotbar(RenderGuiLayerEvent.Pre event) {
@@ -63,10 +55,8 @@ public final class ClientSetup {
         }
     }
 
-    @SubscribeEvent
-    public static void handleColorHandler(final RegisterColorHandlersEvent.Block event) {
-        event.register(new BusCableBlockColor(), Blocks.BUS_CABLE.get());
-    }
+    // TODO(oc2-restore): RegisterColorHandlersEvent.Block no longer exists in 26.1.2; the bus cable
+    //  block color (BusCableBlockColor) registration needs to be re-implemented with block tint sources.
 
     @SubscribeEvent
     public static void handleEntityRendererRegisterEvent(final EntityRenderersEvent.RegisterRenderers event) {

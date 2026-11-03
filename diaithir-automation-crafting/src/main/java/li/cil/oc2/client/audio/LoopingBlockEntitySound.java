@@ -47,8 +47,8 @@ public final class LoopingBlockEntitySound extends AbstractTickableSoundInstance
     @Override
     public void tick() {
         volume = Mth.clamp(volume + FADE_IN_PER_TICK, 0, 1);
-        final ChunkPos chunkPos = new ChunkPos(blockEntity.getBlockPos());
-        if (blockEntity.isRemoved() || blockEntity.getLevel() == null || !blockEntity.getLevel().hasChunk(chunkPos.x, chunkPos.z)) {
+        final ChunkPos chunkPos = ChunkPos.containing(blockEntity.getBlockPos());
+        if (blockEntity.isRemoved() || blockEntity.getLevel() == null || !blockEntity.getLevel().hasChunk(chunkPos.x(), chunkPos.z())) {
             stop();
         }
     }

@@ -2,19 +2,16 @@
 
 package li.cil.oc2.client.gui;
 
-import com.mojang.blaze3d.platform.InputConstants;
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
 import li.cil.oc2.common.blockentity.KeyboardBlockEntity;
 import li.cil.oc2.common.item.Items;
 import li.cil.oc2.common.network.Network;
 import li.cil.oc2.common.network.message.KeyboardInputMessage;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.MouseHandler;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.RandomSource;
@@ -38,7 +35,7 @@ public final class KeyboardScreen extends Screen {
     public static boolean hideHotbar = false;
 
     public KeyboardScreen(final KeyboardBlockEntity keyboard) {
-        super(Items.KEYBOARD.get().getDescription());
+        super(Component.translatable(Items.KEYBOARD.get().getDescriptionId()));
         this.keyboard = keyboard;
     }
 
@@ -65,39 +62,39 @@ public final class KeyboardScreen extends Screen {
     }
 
     @Override
-    public boolean keyPressed(final int keycode, final int scancode, final int modifiers) {
-        sendInputMessage(keycode, true);
+    public boolean keyPressed(final KeyEvent event) {
+        sendInputMessage(event.key(), true);
         return true;
     }
 
     @Override
-    public boolean keyReleased(final int keycode, final int scancode, final int modifiers) {
-        sendInputMessage(keycode, false);
+    public boolean keyReleased(final KeyEvent event) {
+        sendInputMessage(event.key(), false);
         return true;
     }
 
     @Override
-    public boolean mouseClicked(final double mouseX, final double mouseY, final int button) {
-        if (button == GLFW.GLFW_MOUSE_BUTTON_2) {
+    public boolean mouseClicked(final MouseButtonEvent event, final boolean doubleClick) {
+        if (event.button() == GLFW.GLFW_MOUSE_BUTTON_2) {
             onClose();
             return true;
         } else {
-            return super.mouseClicked(mouseX, mouseY, button);
+            return super.mouseClicked(event, doubleClick);
         }
     }
 
     @Override
-    public void renderBackground(final GuiGraphics guiGraphics, final int mouseX, final int mouseY, final float partialTick) {
+    public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTick) {
         // Don't
     }
 
     @Override
-    public void render(final GuiGraphics graphics, final int mouseX, final int mouseY, final float partialTicks) {
-        super.render(graphics, mouseX, mouseY, partialTicks);
+    public void extractRenderState(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        super.extractRenderState(graphics, mouseX, mouseY, partialTicks);
 
         renderBorderOverlay(graphics);
 
-        graphics.drawWordWrap(
+        graphics.textWithWordWrap(
             font,
             CLOSE_INFO,
             BORDER_SIZE * 3,
@@ -121,7 +118,7 @@ public final class KeyboardScreen extends Screen {
 
     ///////////////////////////////////////////////////////////////////
 
-    private void renderBorderOverlay(final GuiGraphics graphics) {
+    private void renderBorderOverlay(final GuiGraphicsExtractor graphics) {
         graphics.fill(BORDER_SIZE, BORDER_SIZE, width - BORDER_SIZE, BORDER_SIZE * 2, BORDER_COLOR);
         graphics.fill(BORDER_SIZE, BORDER_SIZE, BORDER_SIZE * 2, height - BORDER_SIZE, BORDER_COLOR);
         graphics.fill(BORDER_SIZE, height - BORDER_SIZE * 2, width - BORDER_SIZE, height - BORDER_SIZE, BORDER_COLOR);

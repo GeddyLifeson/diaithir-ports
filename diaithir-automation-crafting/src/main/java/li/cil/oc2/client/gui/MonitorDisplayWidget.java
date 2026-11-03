@@ -3,7 +3,6 @@
 package li.cil.oc2.client.gui;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.Tesselator;
 import li.cil.oc2.client.renderer.MonitorGUIRenderer;
 import li.cil.oc2.common.bus.device.vm.block.MonitorDevice;
 import li.cil.oc2.common.container.AbstractMonitorContainer;
@@ -12,8 +11,7 @@ import li.cil.oc2.common.network.message.MonitorInputMessage;
 import li.cil.oc2.common.vm.terminal.Terminal;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -49,7 +47,7 @@ public final class MonitorDisplayWidget {
         this.container = this.parent.getMenu();
     }
 
-    public void renderBackground(final GuiGraphics graphics, final int mouseX, final int mouseY) {
+    public void renderBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY) {
         isMouseOverTerminal = isMouseOverTerminal(mouseX, mouseY);
 
         Sprites.MONITOR_SCREEN.draw(graphics, leftPos, topPos);
@@ -59,18 +57,17 @@ public final class MonitorDisplayWidget {
         }
     }
 
-    public void render(final GuiGraphics graphics, @Nullable final Component error) {
+    public void render(final GuiGraphicsExtractor graphics, @Nullable final Component error) {
         if (container.getPowerState() && container.isMounted() && container.hasPower()) {
             final PoseStack terminalStack = new PoseStack();
             terminalStack.translate(leftPos + TERMINAL_X, topPos + TERMINAL_Y, 0);
             terminalStack.scale((Sprites.MONITOR_SCREEN.width - 16f) / MonitorDevice.WIDTH, (Sprites.MONITOR_SCREEN.height - 16f) / MonitorDevice.HEIGHT, 1f);
 
-            if (rendererView == null) {
-                rendererView = container.getMonitor().getMonitor().getRenderer(container.getMonitor());
+            // TODO(oc2-restore): MonitorBlockEntity#getMonitor() no longer exists, renderer view lookup needs to be restored.
+            if (rendererView != null) {
+                final Matrix4f projectionMatrix = (new Matrix4f()).setOrtho(0, parent.width, parent.height, 0, -10f, 10f);
+                rendererView.render(terminalStack, projectionMatrix, MonitorDevice.WIDTH, MonitorDevice.HEIGHT, false);
             }
-
-            final Matrix4f projectionMatrix = (new Matrix4f()).setOrtho(0, parent.width, parent.height, 0, -10f, 10f);
-            rendererView.render(terminalStack, projectionMatrix, MonitorDevice.WIDTH, MonitorDevice.HEIGHT, false);
         } else if (container.getPowerState()) {
             final Font font = getClient().font;
             if (error != null) {
@@ -83,16 +80,14 @@ public final class MonitorDisplayWidget {
                     error,
                     leftPos + textOffsetX,
                     topPos + textOffsetY,
-                    0xEE3322
+                    0xFFEE3322
                 );
             }
         }
     }
 
-    private void drawShadow(Font font, GuiGraphics graphics, Component text, float x, float y, int color) {
-        var batch = graphics.bufferSource();
-        font.drawInBatch(text, x, y, color, true, graphics.pose().last().pose(), batch, Font.DisplayMode.NORMAL, 0, 15728880);
-        batch.endBatch();
+    private void drawShadow(Font font, GuiGraphicsExtractor graphics, Component text, float x, float y, int color) {
+        graphics.text(font, text, (int) x, (int) y, color, true);
     }
 
     public void tick() {

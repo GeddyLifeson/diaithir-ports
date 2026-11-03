@@ -2,7 +2,7 @@
 
 package li.cil.oc2.client.gui.widget;
 
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 
 public abstract class ToggleImageButton extends ImageButton {
     private final Sprite activeImage;
@@ -31,7 +31,7 @@ public abstract class ToggleImageButton extends ImageButton {
     }
 
     @Override
-    protected void renderBackground(final GuiGraphics graphics, final int mouseX, final int mouseY, final float partialTicks) {
+    protected void renderBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
         super.renderBackground(graphics, mouseX, mouseY, partialTicks);
         if (isToggled()) {
             activeImage.draw(graphics, getX(), getY());

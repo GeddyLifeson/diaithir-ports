@@ -3,45 +3,23 @@
 package li.cil.oc2.client.model;
 
 import li.cil.oc2.api.API;
-import net.minecraft.client.renderer.block.model.ItemOverrides;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.model.*;
 import net.minecraft.resources.Identifier;
-import net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext;
-import net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry;
 
-import java.util.function.Function;
+// TODO(oc2-restore): NeoForge's IUnbakedGeometry/IGeometryBakingContext, ItemOverrides and BakedModel no longer
+//  exist in 26.1.2. The baking of straight/support cable models needs to be re-implemented on top of the new
+//  block model system. Until then this is a placeholder holding the model locations and the proxied base geometry.
+public final class BusCableModel {
+    static final Identifier BUS_CABLE_STRAIGHT_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/cable_straight");
+    static final Identifier BUS_CABLE_SUPPORT_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/cable_support");
+    private final Object proxy;
 
-import static java.util.Objects.requireNonNull;
-
-public final class BusCableModel implements IUnbakedGeometry<BusCableModel> {
-    private static final Identifier BUS_CABLE_STRAIGHT_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/cable_straight");
-    private static final Identifier BUS_CABLE_SUPPORT_MODEL = Identifier.fromNamespaceAndPath(API.MOD_ID, "block/cable_support");
-    private final IUnbakedGeometry<?> proxy;
-
-    BusCableModel(final IUnbakedGeometry<?> proxy) {
+    BusCableModel(final Object proxy) {
         this.proxy = proxy;
     }
 
     ///////////////////////////////////////////////////////////////////
 
-    @Override
-    public BakedModel bake(final IGeometryBakingContext owner, final ModelBaker baker, final Function<Material, TextureAtlasSprite> spriteGetter, final ModelState modelTransform, final ItemOverrides overrides) {
-        final BakedModel bakedBaseModel = proxy.bake(owner, baker, spriteGetter, modelTransform, overrides);
-        final BakedModel[] straightModelByAxis = {
-            requireNonNull(baker.bake(BUS_CABLE_STRAIGHT_MODEL, BlockModelRotation.X0_Y90, spriteGetter)),
-            requireNonNull(baker.bake(BUS_CABLE_STRAIGHT_MODEL, BlockModelRotation.X90_Y0, spriteGetter)),
-            requireNonNull(baker.bake(BUS_CABLE_STRAIGHT_MODEL, modelTransform, spriteGetter))
-        };
-        final BakedModel[] supportModelByFace = {
-            requireNonNull(baker.bake(BUS_CABLE_SUPPORT_MODEL, BlockModelRotation.X270_Y0, spriteGetter)), // -y
-            requireNonNull(baker.bake(BUS_CABLE_SUPPORT_MODEL, BlockModelRotation.X90_Y0, spriteGetter)), // +y
-            requireNonNull(baker.bake(BUS_CABLE_SUPPORT_MODEL, BlockModelRotation.X0_Y180, spriteGetter)), // -z
-            requireNonNull(baker.bake(BUS_CABLE_SUPPORT_MODEL, modelTransform, spriteGetter)), // +z
-            requireNonNull(baker.bake(BUS_CABLE_SUPPORT_MODEL, BlockModelRotation.X0_Y90, spriteGetter)), // -x
-            requireNonNull(baker.bake(BUS_CABLE_SUPPORT_MODEL, BlockModelRotation.X0_Y270, spriteGetter)) // +x
-        };
-
-        return new BusCableBakedModel(bakedBaseModel, straightModelByAxis, supportModelByFace);
+    Object getProxy() {
+        return proxy;
     }
 }

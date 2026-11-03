@@ -3,7 +3,7 @@
 package li.cil.oc2.client.gui;
 
 import li.cil.oc2.common.container.RobotTerminalContainer;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
@@ -28,11 +28,11 @@ public final class RobotTerminalScreen extends AbstractMachineTerminalScreen<Rob
     ///////////////////////////////////////////////////////////////////
 
     @Override
-    protected void renderBg(final GuiGraphics graphics, final float partialTicks, final int mouseX, final int mouseY) {
+    public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
+
         Sprites.HOTBAR.draw(graphics, leftPos + SLOTS_X, topPos + SLOTS_Y);
         RobotContainerScreen.renderSelection(graphics, menu.getRobot().getSelectedSlot(), leftPos + SLOTS_X + 4, topPos + SLOTS_Y + 4, 12);
-
-        super.renderBg(graphics, partialTicks, mouseX, mouseY);
     }
 
     @Override

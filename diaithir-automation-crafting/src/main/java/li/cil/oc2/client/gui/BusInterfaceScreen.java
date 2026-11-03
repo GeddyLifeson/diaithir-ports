@@ -2,19 +2,21 @@
 
 package li.cil.oc2.client.gui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import li.cil.oc2.client.gui.widget.ImageButton;
 import li.cil.oc2.common.Constants;
 import li.cil.oc2.common.blockentity.BusCableBlockEntity;
 import li.cil.oc2.common.item.Items;
 import li.cil.oc2.common.network.Network;
 import li.cil.oc2.common.network.message.BusInterfaceNameMessage;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.InputWithModifiers;
+import net.minecraft.client.input.KeyEvent;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import org.lwjgl.glfw.GLFW;
 
@@ -38,7 +40,7 @@ public final class BusInterfaceScreen extends Screen {
     ///////////////////////////////////////////////////////////////////
 
     public BusInterfaceScreen(final BusCableBlockEntity busCable, final Direction side) {
-        super(Items.BUS_INTERFACE.get().getDescription());
+        super(new ItemStack(Items.BUS_INTERFACE.get()).getHoverName());
         this.busCable = busCable;
         this.side = side;
     }
@@ -74,8 +76,17 @@ public final class BusInterfaceScreen extends Screen {
             }
 
             @Override
-            public void onPress() {
-                super.onPress();
+            public void extractContents(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+                if (isHoveredOrFocused()) {
+                    Sprites.CONFIRM_PRESSED.draw(graphics, getX(), getY());
+                } else {
+                    Sprites.CONFIRM_BASE.draw(graphics, getX(), getY());
+                }
+            }
+
+            @Override
+            public void onPress(final InputWithModifiers input) {
+                super.onPress(input);
                 setInterfaceName(nameField.getValue());
                 onClose();
             }
@@ -92,8 +103,17 @@ public final class BusInterfaceScreen extends Screen {
             }
 
             @Override
-            public void onPress() {
-                super.onPress();
+            public void extractContents(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+                if (isHoveredOrFocused()) {
+                    Sprites.CANCEL_PRESSED.draw(graphics, getX(), getY());
+                } else {
+                    Sprites.CANCEL_BASE.draw(graphics, getX(), getY());
+                }
+            }
+
+            @Override
+            public void onPress(final InputWithModifiers input) {
+                super.onPress(input);
                 onClose();
             }
         }).withTooltip(Component.translatable(Constants.TOOLTIP_CANCEL));
@@ -119,7 +139,8 @@ public final class BusInterfaceScreen extends Screen {
     }
 
     @Override
-    public boolean keyPressed(final int keyCode, final int scanCode, final int modifiers) {
+    public boolean keyPressed(final KeyEvent event) {
+        final int keyCode = event.key();
         if (keyCode == GLFW.GLFW_KEY_ENTER ||
             keyCode == GLFW.GLFW_KEY_KP_ENTER) {
             setInterfaceName(nameField.getValue());
@@ -127,18 +148,17 @@ public final class BusInterfaceScreen extends Screen {
             return true;
         }
 
-        return nameField.keyPressed(keyCode, scanCode, modifiers) || super.keyPressed(keyCode, scanCode, modifiers);
+        return nameField.keyPressed(event) || super.keyPressed(event);
     }
 
     @Override
-    public void render(final GuiGraphics graphics, final int mouseX, final int mouseY, final float partialTicks) {
-        renderBackground(graphics, mouseX, mouseY, partialTicks);
+    public void extractRenderState(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float partialTicks) {
+        // Background is extracted by the screen itself before this method is called.
         Sprites.BUS_INTERFACE_SCREEN.draw(graphics, left, top);
 
-        super.render(graphics, mouseX, mouseY, partialTicks);
+        super.extractRenderState(graphics, mouseX, mouseY, partialTicks);
 
-        RenderSystem.disableBlend();
-        nameField.render(graphics, mouseX, mouseY, partialTicks);
+        nameField.extractRenderState(graphics, mouseX, mouseY, partialTicks);
     }
 
     @Override

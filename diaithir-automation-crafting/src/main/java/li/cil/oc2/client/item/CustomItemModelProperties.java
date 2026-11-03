@@ -3,8 +3,6 @@
 package li.cil.oc2.client.item;
 
 import li.cil.oc2.api.API;
-import li.cil.oc2.common.item.Items;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.Identifier;
 
 public final class CustomItemModelProperties {
@@ -13,17 +11,10 @@ public final class CustomItemModelProperties {
     ///////////////////////////////////////////////////////////////////
 
     public static void initialize() {
-        ItemProperties.register(Items.HARD_DRIVE_SMALL.get(), CustomItemModelProperties.COLOR_PROPERTY,
-            (stack, level, entity, seed) -> CustomItemColors.getColor(stack));
-        ItemProperties.register(Items.HARD_DRIVE_MEDIUM.get(), CustomItemModelProperties.COLOR_PROPERTY,
-            (stack, level, entity, seed) -> CustomItemColors.getColor(stack));
-        ItemProperties.register(Items.HARD_DRIVE_LARGE.get(), CustomItemModelProperties.COLOR_PROPERTY,
-            (stack, leve, entity, seed) -> CustomItemColors.getColor(stack));
-        ItemProperties.register(Items.HARD_DRIVE_EXTRA_LARGE.get(), CustomItemModelProperties.COLOR_PROPERTY,
-            (stack, leve, entity, seed) -> CustomItemColors.getColor(stack));
-        ItemProperties.register(Items.FLOPPY.get(), CustomItemModelProperties.COLOR_PROPERTY,
-            (stack, level, entity, seed) -> CustomItemColors.getColor(stack));
-        ItemProperties.register(Items.FLOPPY_MODERN.get(), CustomItemModelProperties.COLOR_PROPERTY,
-            (stack, level, entity, seed) -> CustomItemColors.getColor(stack));
+        // TODO(oc2-restore): ItemProperties no longer exists in 26.1.2. Item model properties are now
+        //  driven by data (item model definitions) and registered through dedicated events. The color
+        //  property for the hard drives and floppies (CustomItemColors.getColor(stack)) used to be
+        //  registered here for HARD_DRIVE_SMALL, HARD_DRIVE_MEDIUM, HARD_DRIVE_LARGE,
+        //  HARD_DRIVE_EXTRA_LARGE, FLOPPY and FLOPPY_MODERN.
     }
 }

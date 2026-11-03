@@ -2,9 +2,6 @@
 
 package li.cil.oc2.client.item;
 
-import li.cil.oc2.common.item.Items;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
@@ -38,16 +35,10 @@ public final class CustomItemColors {
 
     ///////////////////////////////////////////////////////////////////
 
-    @SuppressWarnings("deprecation")
     public static void initialize() {
-        final ItemColors itemColors = Minecraft.getInstance().getItemColors();
-        itemColors.register((stack, layer) -> layer == 1 ? getColor(stack) : NO_TINT,
-            Items.HARD_DRIVE_SMALL.get(),
-            Items.HARD_DRIVE_MEDIUM.get(),
-            Items.HARD_DRIVE_LARGE.get(),
-            Items.HARD_DRIVE_EXTRA_LARGE.get(),
-            Items.FLOPPY.get(),
-            Items.FLOPPY_MODERN.get());
+        // TODO(oc2-restore): ItemColors no longer exists in 26.1. Item tinting is now defined by the
+        // item model definitions (tint sources, "minecraft:dye" on tint index 1) for the hard drives
+        // and floppies, so there is nothing to register here.
     }
 
     public static int getColorByDye(final DyeColor dye) {
@@ -82,7 +73,7 @@ public final class CustomItemColors {
     public static ItemStack withColor(final ItemStack stack, final int color) {
         stack.applyComponents(
             DataComponentPatch.builder()
-            .set(DYED_COLOR, new DyedItemColor(color, true))
+            .set(DYED_COLOR, new DyedItemColor(color))
             .build()
         );
         return stack;
