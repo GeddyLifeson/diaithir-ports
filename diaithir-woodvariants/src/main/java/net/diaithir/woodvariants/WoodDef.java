@@ -13,7 +13,7 @@ import java.util.Set;
 
 /** One row of woods.json: a wood from some mod and the textures its variants wear. */
 public record WoodDef(String id, String mod, String name, String gen, String planks, String log,
-                      String planksTexture, String logTexture, String logTopTexture) {
+                      String planksTexture, String logTexture, String logTopTexture, boolean macaws) {
 
     public static List<WoodDef> parse(Reader reader) {
         JsonObject root = JsonParser.parseReader(reader).getAsJsonObject();
@@ -23,7 +23,8 @@ public record WoodDef(String id, String mod, String name, String gen, String pla
         for (JsonElement e : rows) {
             JsonObject o = e.getAsJsonObject();
             WoodDef w = new WoodDef(str(o, "id"), str(o, "mod"), str(o, "name"), o.has("gen") ? o.get("gen").getAsString() : "", str(o, "planks"), str(o, "log"),
-                str(o, "planks_texture"), str(o, "log_texture"), str(o, "log_top_texture"));
+                str(o, "planks_texture"), str(o, "log_texture"), str(o, "log_top_texture"),
+                o.has("macaws") && o.get("macaws").getAsBoolean());
             if (!w.id.matches("[a-z0-9_]+")) {
                 throw new IllegalArgumentException("bad wood id " + w.id);
             }
@@ -33,6 +34,11 @@ public record WoodDef(String id, String mod, String name, String gen, String pla
             out.add(w);
         }
         return out;
+    }
+
+    /** True when this wood's blocks exist: its mod is loaded, or (Biomes O' Plenty) our overworld-biomes module registers the ids. */
+    public boolean present(java.util.function.Predicate<String> loaded) {
+        return loaded.test(mod) || (mod.equals("biomesoplenty") && loaded.test("diaithir_overworld_biomes"));
     }
 
     private static String str(JsonObject o, String key) {
