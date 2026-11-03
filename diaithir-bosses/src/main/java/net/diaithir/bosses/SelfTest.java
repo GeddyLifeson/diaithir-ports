@@ -118,6 +118,7 @@ public final class SelfTest {
             elites(level, c0);
             rites(src, level, c0, fp);
             library(src, level, c0, fp);
+            wardenAltar(src, level, c0, fp);
         } finally {
             Ritual.TEST_PLAYERS.clear();
             Ages.forced = oldForce;
@@ -288,6 +289,40 @@ public final class SelfTest {
         check(data.beaten(Ritual.RITE + sample.id), "library: the spell is learned");
         check(Ritual.beginRite(level, altar, sample.id) != null, "library: a learned rite is not run twice");
         data.clearDefeats();
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+    }
+
+    /** The Age-evolving warden altar starts the rite of the first unbeaten warden whose Age has come, bare-handed, and plays it to the boss. */
+    private static void wardenAltar(CommandSourceStack src, ServerLevel level, BlockPos c0, FakePlayer fp) {
+        AscendantData data = AscendantData.get(level.getServer());
+        BlockPos altar = c0.above();
+        String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
+        data.removeRitual(key);
+        data.clearDefeats();
+        boolean mine = !Data.profiles().containsKey("age_warden_1");
+        if (mine) {
+            Data.Profile p = new Data.Profile();
+            p.id = "age_warden_1"; p.entity = "minecraft:husk"; p.age = 1; p.summon = new Data.Summon(); p.summon.rite = "warden_altar";
+            Data.profiles().put(p.id, p);
+        }
+        var old = level.getBlockState(altar);
+        level.setBlock(altar, DiaithirBosses.WARDEN_ALTAR.get().defaultBlockState(), 3);
+        Ritual.TEST_PLAYERS.add(fp);
+        fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
+        Ages.forced = 1;
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(data.rituals().containsKey(key) && data.rituals().get(key).startsWith("age_warden_1|0|"), "warden altar: bare hands begin the Age I warden's rite");
+        if (data.rituals().containsKey(key)) {
+            play(src, level, altar, fp, key, Ritual.def("age_warden_1"));
+            check(!data.rituals().containsKey(key), "warden altar: the rite finished and cleared");
+            var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+            check(woken.size() == 1, "warden altar: the warden wakes (" + woken.size() + ")");
+            woken.forEach(Mob::discard);
+        }
+        data.removeRitual(key);
+        data.clearDefeats();
+        level.setBlock(altar, old, 3);
+        if (mine) Data.profiles().remove("age_warden_1");
         level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
     }
 
