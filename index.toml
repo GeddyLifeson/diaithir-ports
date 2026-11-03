@@ -68314,6 +68314,10 @@ file = "mods/diaithir-chests-drawers-neoforge-26.1.2-1.0.0.jar"
 hash = "abef1b7e43057ac60d89b4a112a1dcf379909662207dbf044f17997e79d19880"
 
 [[files]]
+file = "mods/diaithir-claims-neoforge-26.1.2-1.0.0.jar"
+hash = "29e7cb2e97993a1d6a980e86ca47821bcf425de05e7889e5595307e80e2e2889"
+
+[[files]]
 file = "mods/diaithir-classes-rewrite-neoforge-26.1.2-1.0.0.jar"
 hash = "4106adc00fac3ce62523fb7f75c720f9e456768795f92b0e236db39edada6816"
 
@@ -68393,7 +68397,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-end-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "ea7854817eafca76cf533d812e16b1ae724da79fbea278f2976b62aab8f336d2"
+hash = "754f9803f2081c0bf3359436f85a6fd2cd2bfddd7e97d42b51189c1adc93545c"
 
 [[files]]
 file = "mods/diaithir-entity-animation-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68599,6 +68603,10 @@ metafile = true
 [[files]]
 file = "mods/diaithir-tooltips-neoforge-26.1.2-2.4.1.jar"
 hash = "65fc6a3a5a3e06243f313abbc32ab7e1bf1edc23b6dacde87c26f5e63c877132"
+
+[[files]]
+file = "mods/diaithir-ultimine-neoforge-26.1.2-1.0.0.jar"
+hash = "a18f6f76e3040143a2ff655c21f49820d92cd4f068f9d2214f36d44e3708df30"
 
 [[files]]
 file = "mods/diaithir-villager-trade-neoforge-26.1.2-1.0.0.jar"
