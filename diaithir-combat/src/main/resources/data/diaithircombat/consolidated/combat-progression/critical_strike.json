@@ -54,12 +54,12 @@
     "socket_kind": "weapon",
     "classes_json_section": "runes"
    },
-   "recipe": [
-    "c:dusts/gold_stoir",
-    "c:gems/quartz",
-    "c:ingots/bronze"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "rune_ainnis",
@@ -72,12 +72,12 @@
     "socket_kind": "weapon",
     "classes_json_section": "runes"
    },
-   "recipe": [
-    "c:dusts/redstone",
-    "c:gems/amethyst",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "ring_gearr_beime",
@@ -96,12 +96,12 @@
     "mass_kg": 0.012,
     "fits_class": "any"
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:gems/diamond",
-    "c:nuggets/gold"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "charm_gearr_croi",
@@ -125,12 +125,12 @@
     "mass_kg": 0.045,
     "fits_class": "any"
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:gems/emerald",
-    "c:leathers"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ring_sielguir_scath",
@@ -154,12 +154,12 @@
     "requires_class": "sielguir",
     "mass_kg": 0.014
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:gems/diamond",
-    "c:dusts/obsidian"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "dagger_sielguir_bronze",
@@ -178,11 +178,12 @@
     "mass_kg": 0.35,
     "reach_m": 2.4
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:rods/wooden"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "dagger_sielguir_steel",
@@ -206,11 +207,12 @@
     "mass_kg": 0.4,
     "reach_m": 2.4
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:rods/wooden"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "dagger_sielguir_composite",
@@ -234,11 +236,12 @@
     "mass_kg": 0.38,
     "reach_m": 2.4
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:rods/wooden"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "spell_ambush_strike",

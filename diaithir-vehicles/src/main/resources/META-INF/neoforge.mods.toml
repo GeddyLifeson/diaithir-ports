@@ -6,9 +6,23 @@ license = "MIT"
 modId = "diaithirvehicles"
 version = "${version}"
 displayName = "Diaithir Vehicles"
-description = "Shared vehicle layer: one fuel capability (a fuel store in SI units) that road vehicles, ships and aircraft expose, plus the fuel tank block and jerry can. Clean-room original."
+description = "Shared vehicle layer on the pack fuel carriers (diaithir-units Fuels, the Carrier Tank port of diaithir-bridges): jerry can, and the FuelHolder hook for vehicle entities. Clean-room original."
 
 [[dependencies.diaithirvehicles]]
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirvehicles]]
+modId = "diaithirunits"
+type = "required"
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithirvehicles]]
+modId = "diaithirbridges"
+type = "required"
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"

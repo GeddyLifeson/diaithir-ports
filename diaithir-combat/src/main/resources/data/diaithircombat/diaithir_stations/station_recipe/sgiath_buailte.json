@@ -1,0 +1,16 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/bronze",
+   "count": 2
+  },
+  {
+   "tag": "c:leathers",
+   "count": 2
+  }
+ ],
+ "result": "diaithircombat:sgiath_buailte",
+ "time_s": 20
+}

@@ -1,8 +1,8 @@
 package net.diaithir.vehicles;
 
-import net.diaithir.vehicles.fuel.Fuel;
-import net.diaithir.vehicles.fuel.FuelCaps;
-import net.diaithir.vehicles.fuel.FuelStore;
+import net.diaithir.units.fuel.Fuel;
+import net.diaithir.units.fuel.FuelStore;
+import net.diaithir.units.fuel.Fuels;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
@@ -11,13 +11,13 @@ import net.minecraft.world.item.context.UseOnContext;
 
 /** A 20 L fuel can. Use on a tank or pump to pour in; sneak-use to draw out. Right-click a vehicle to refuel it. */
 public class JerryCan extends Item {
-    public static final long CAPACITY_L = 20;
+    public static final double CAPACITY_L = 20;
 
     public JerryCan(Properties p) {
         super(p);
     }
 
-    /** The can as a fuel store: contents live in the {@code diaithirvehicles:fuel} data component. */
+    /** The can as a {@link FuelStore}: contents live in the {@code diaithirvehicles:fuel} data component. Liquid fuels only. */
     public static final class CanStore implements FuelStore {
         private final ItemStack stack;
 
@@ -30,37 +30,36 @@ public class JerryCan extends Item {
         }
 
         @Override
-        public long capacityL() {
+        public Fuel fuel() {
+            return c().litres() > 0 ? Fuels.get(c().fuel()) : null;
+        }
+
+        @Override
+        public double quantity() {
+            return c().litres();
+        }
+
+        @Override
+        public double capacity() {
             return CAPACITY_L;
         }
 
         @Override
-        public long amountL() {
-            return c().amount();
-        }
-
-        @Override
-        public String fuelId() {
-            return c().amount() > 0 ? c().fuel() : null;
-        }
-
-        @Override
-        public long fill(String fuelId, long l, boolean simulate) {
-            if (fuelId == null || l <= 0 || Fuel.get(fuelId) == null) return 0;
+        public double insert(Fuel f, double amount) {
             CanContent cur = c();
-            if (cur.amount() > 0 && !cur.fuel().equals(fuelId)) return 0;
-            long put = Math.min(l, CAPACITY_L - cur.amount());
-            if (put > 0 && !simulate) stack.set(DiaithirVehicles.CAN_CONTENT.get(), new CanContent(fuelId, cur.amount() + put));
+            if (f == null || f.kind() != Fuel.Kind.LIQUID || amount <= 0 || (cur.litres() > 0 && !cur.fuel().equals(f.id()))) return 0;
+            double put = Math.min(amount, CAPACITY_L - cur.litres());
+            if (put > 0) stack.set(DiaithirVehicles.CAN_CONTENT.get(), new CanContent(f.id(), cur.litres() + put));
             return Math.max(put, 0);
         }
 
         @Override
-        public long drain(long l, boolean simulate) {
+        public double extract(double amount) {
             CanContent cur = c();
-            long took = Math.min(Math.max(l, 0), cur.amount());
-            if (took > 0 && !simulate) {
-                if (cur.amount() - took == 0) stack.remove(DiaithirVehicles.CAN_CONTENT.get());
-                else stack.set(DiaithirVehicles.CAN_CONTENT.get(), new CanContent(cur.fuel(), cur.amount() - took));
+            double took = Math.max(0, Math.min(amount, cur.litres()));
+            if (took > 0) {
+                if (cur.litres() - took <= 1e-9) stack.remove(DiaithirVehicles.CAN_CONTENT.get());
+                else stack.set(DiaithirVehicles.CAN_CONTENT.get(), new CanContent(cur.fuel(), cur.litres() - took));
             }
             return took;
         }
@@ -73,9 +72,9 @@ public class JerryCan extends Item {
         if (target == null) return InteractionResult.PASS;
         FuelStore can = new CanStore(ctx.getItemInHand());
         boolean draw = ctx.getPlayer() != null && ctx.getPlayer().isShiftKeyDown();
-        long moved = draw ? target.transferTo(can, CAPACITY_L) : can.transferTo(target, CAPACITY_L);
+        double moved = draw ? FuelStore.transfer(target, can, CAPACITY_L) : FuelStore.transfer(can, target, CAPACITY_L);
         if (ctx.getPlayer() != null)
-            ctx.getPlayer().sendOverlayMessage(Component.literal(moved > 0 ? (draw ? "Drew " : "Poured ") + moved + " L" : draw ? "Nothing to draw." : "Nothing poured."));
+            ctx.getPlayer().sendOverlayMessage(Component.literal(moved > 0 ? (draw ? "Drew " : "Poured ") + Math.round(moved * 10) / 10.0 + " L" : draw ? "Nothing to draw." : "Nothing poured."));
         return moved > 0 ? InteractionResult.SUCCESS : InteractionResult.FAIL;
     }
 }

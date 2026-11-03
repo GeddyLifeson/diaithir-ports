@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": "minecraft:gravel",
+    "K": "minecraft:coal"
+  },
+  "pattern": [
+    "GK",
+    "KG"
+  ],
+  "result": {
+    "id": "diaithircarts:asphalt_road",
+    "count": 4
+  },
+  "category": "building"
+}

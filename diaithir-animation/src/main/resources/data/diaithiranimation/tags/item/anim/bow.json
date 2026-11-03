@@ -1,0 +1,157 @@
+{
+"replace": false,
+"values": [
+{
+"id": "#diaithircombat:weapons/bow",
+"required": false
+},
+{
+"id": "#diaithircombat:weapons/longbow",
+"required": false
+},
+{
+"id": "aquaculture:neptunium_bow",
+"required": false
+},
+{
+"id": "archers:composite_longbow",
+"required": false
+},
+{
+"id": "archers:netherite_longbow",
+"required": false
+},
+{
+"id": "archers:royal_longbow",
+"required": false
+},
+{
+"id": "auroral:shimmersteel_bow",
+"required": false
+},
+{
+"id": "bhc:vigor_bow",
+"required": false
+},
+{
+"id": "diaithirarms:bone_bow",
+"required": false
+},
+{
+"id": "diaithirarms:bronze_bow",
+"required": false
+},
+{
+"id": "diaithirarms:composite_bow",
+"required": false
+},
+{
+"id": "diaithirarms:copper_bow",
+"required": false
+},
+{
+"id": "diaithirarms:future_bow",
+"required": false
+},
+{
+"id": "diaithirarms:mail_bow",
+"required": false
+},
+{
+"id": "diaithirarms:rodos_bow",
+"required": false
+},
+{
+"id": "diaithirarms:steel_bow",
+"required": false
+},
+{
+"id": "diaithirarms:tempered_bow",
+"required": false
+},
+{
+"id": "iceandfire:dragonbone_bow",
+"required": false
+},
+{
+"id": "justdirethings:bow_blazegold",
+"required": false
+},
+{
+"id": "justdirethings:bow_celestigem",
+"required": false
+},
+{
+"id": "justdirethings:bow_eclipsealloy",
+"required": false
+},
+{
+"id": "justdirethings:bow_ferricore",
+"required": false
+},
+{
+"id": "mekanism:electric_bow",
+"required": false
+},
+{
+"id": "minecraft:bow",
+"required": false
+},
+{
+"id": "modulargolems:iron_mecha_bow",
+"required": false
+},
+{
+"id": "modulargolems:netherite_mecha_bow",
+"required": false
+},
+{
+"id": "mysticalagriculture:awakened_supremium_bow",
+"required": false
+},
+{
+"id": "mysticalagriculture:imperium_bow",
+"required": false
+},
+{
+"id": "mysticalagriculture:inferium_bow",
+"required": false
+},
+{
+"id": "mysticalagriculture:prudentium_bow",
+"required": false
+},
+{
+"id": "mysticalagriculture:supremium_bow",
+"required": false
+},
+{
+"id": "mysticalagriculture:tertium_bow",
+"required": false
+},
+{
+"id": "silentgear:bow",
+"required": false
+},
+{
+"id": "tconstruct:longbow",
+"required": false
+},
+{
+"id": "twilightforest:ender_bow",
+"required": false
+},
+{
+"id": "twilightforest:ice_bow",
+"required": false
+},
+{
+"id": "twilightforest:seeker_bow",
+"required": false
+},
+{
+"id": "twilightforest:triple_bow",
+"required": false
+}
+]
+}
