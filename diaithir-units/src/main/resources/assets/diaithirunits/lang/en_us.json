@@ -3,5 +3,7 @@
   "block.diaithirunits.hand_pump": "Hand Pump",
   "block.diaithirunits.fuel_tank": "Fuel Tank",
   "block.diaithirunits.fuel_pump_station": "Fuel Pump Station",
-  "block.diaithirunits.loading_rack": "Loading Rack"
+  "block.diaithirunits.loading_rack": "Loading Rack",
+  "key.diaithirunits.ignition": "Start or stop engine",
+  "key.category.diaithirunits.main": "Diaithir Vehicles"
 }

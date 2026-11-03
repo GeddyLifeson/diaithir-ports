@@ -1,0 +1,35 @@
+{
+ "general": {
+  "name": "Speedometer",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:1"
+   ]
+  ]
+ },
+ "components": [
+  {
+   "xCenter": 0,
+   "yCenter": 0,
+   "scale": 1.0,
+   "textureXCenter": 64,
+   "textureYCenter": 64,
+   "textureWidth": 128,
+   "textureHeight": 128
+  },
+  {
+   "xCenter": 0,
+   "yCenter": 0,
+   "scale": 1.0,
+   "textureXCenter": 64,
+   "textureYCenter": 192,
+   "textureWidth": 128,
+   "textureHeight": 128,
+   "rotationVariable": "velocity",
+   "rotationOffset": -135.0,
+   "rotationFactor": 162.0,
+   "rotationClampMin": -135.0,
+   "rotationClampMax": 135.0
+  }
+ ]
+}

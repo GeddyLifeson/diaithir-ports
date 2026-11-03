@@ -64,9 +64,14 @@ public final class Station {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) IgnitionKey.init(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) ITEM_LIST.forEach(i -> e.accept(i.get()));
         });
+        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> e.getDispatcher().register(Commands.literal("diaithirvehicle")
+                .then(Commands.literal("toggle").executes(c -> ignition(c.getSource(), null)))
+                .then(Commands.literal("start").executes(c -> ignition(c.getSource(), true)))
+                .then(Commands.literal("stop").executes(c -> ignition(c.getSource(), false)))));
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> e.getDispatcher().register(Commands.literal("diaithirfuel")
                 .requires(Commands.hasPermission(Commands.LEVEL_OWNERS))
                 .then(Commands.literal("fill").then(Commands.argument("pos", BlockPosArgument.blockPos())
@@ -85,5 +90,12 @@ public final class Station {
                     c.getSource().sendSuccess(() -> Component.literal(err == null ? "Fuel station test PASS" : "Fuel station test FAIL: " + err), false);
                     return err == null ? 1 : 0;
                 }))));
+    }
+
+    /** Start or stop the engines of the nearest Immersive Vehicles vehicle within 6 blocks of whoever ran the command. */
+    private static int ignition(net.minecraft.commands.CommandSourceStack src, Boolean start) {
+        int r = IvControl.toggle(src.getLevel(), src.getPosition(), 6.0, start);
+        src.sendSuccess(() -> Component.literal(r < 0 ? "No vehicle with an engine within 6 blocks" : r == 1 ? "Engines starting" : "Engines stopped"), false);
+        return r < 0 ? 0 : 1;
     }
 }

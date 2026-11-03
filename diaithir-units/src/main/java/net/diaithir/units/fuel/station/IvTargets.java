@@ -23,6 +23,20 @@ final class IvTargets {
 
     static List<FuelTarget> near(Level level, AABB box) {
         List<FuelTarget> out = new ArrayList<>();
+        for (Object vehicle : vehicles(level, box)) {
+            try {
+                Object tank = vehicle.getClass().getField("fuelTank").get(vehicle);
+                if (tank != null) out.add(new Tank(tank));
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                // not a powered vehicle, or IV changed: skip it
+            }
+        }
+        return out;
+    }
+
+    /** The IV vehicle objects (not the Minecraft entities) inside the box. */
+    static List<Object> vehicles(Level level, AABB box) {
+        List<Object> out = new ArrayList<>();
         if (!present()) return out;
         for (Entity e : level.getEntities((Entity) null, box, x -> x.getClass().getName().equals(BUILDER))) {
             try {
@@ -31,10 +45,9 @@ final class IvTargets {
                     entityField.setAccessible(true);
                 }
                 Object vehicle = entityField.get(e);
-                Object tank = vehicle == null ? null : vehicle.getClass().getField("fuelTank").get(vehicle);
-                if (tank != null) out.add(new Tank(tank));
+                if (vehicle != null) out.add(vehicle);
             } catch (ReflectiveOperationException | RuntimeException ex) {
-                // not a powered vehicle, or IV changed: skip it
+                // not a vehicle
             }
         }
         return out;

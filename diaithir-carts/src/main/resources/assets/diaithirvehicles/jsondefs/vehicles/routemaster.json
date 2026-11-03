@@ -241,5 +241,58 @@
    ]
   }
  ],
- "rendering": {}
+ "rendering": {},
+ "instruments": [
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 78,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:speedo"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:fuel"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 302,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:tacho"
+  }
+ ]
 }
