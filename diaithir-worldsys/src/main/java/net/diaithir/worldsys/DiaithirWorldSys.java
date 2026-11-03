@@ -8,7 +8,8 @@ import net.neoforged.fml.common.Mod;
 public final class DiaithirWorldSys {
     public static final String ID = "diaithirworldsys";
 
-    public DiaithirWorldSys(IEventBus bus) {
+    public DiaithirWorldSys(IEventBus bus, net.neoforged.fml.ModContainer container) {
+        net.diaithir.structurenavigation.structurecompass.Feature.init(bus, container);
         net.diaithir.worldsys.admincommands.AdminCommandsFeature.register(bus);
         net.diaithir.worldsys.economy.EconomyFeature.register(bus);
         net.diaithir.worldsys.aircrafttuning.AircraftTuningFeature.register(bus);
