@@ -79,6 +79,8 @@ public final class Machines {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DynamoBlockEntity>> DYNAMO_BE;
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GeneratorBlockEntity>> GENERATOR_BE;
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TransformerBlockEntity>> TRANSFORMER_BE;
+    public static final DeferredHolder<MenuType<?>, MenuType<CircuitMenu>> CIRCUIT_MENU =
+            MENUS.register("circuit", () -> IMenuTypeExtension.create(CircuitMenu::new));
     public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> MENU =
             MENUS.register("machine", () -> IMenuTypeExtension.create(MachineMenu::new));
 

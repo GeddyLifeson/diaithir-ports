@@ -81,7 +81,10 @@ public final class CircuitBlock extends BaseEntityBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (level.getBlockEntity(pos) instanceof CircuitNodeBE be) player.sendSystemMessage(Component.literal(be.describe()));
+        if (level.getBlockEntity(pos) instanceof CircuitNodeBE be && player instanceof net.minecraft.server.level.ServerPlayer sp) {
+            sp.openMenu(new net.minecraft.world.SimpleMenuProvider((id, inv, p) -> new CircuitMenu(id, inv, pos),
+                    Component.literal(be.kind.display)), buf -> CircuitMenu.write(buf, be));
+        }
         return InteractionResult.SUCCESS_SERVER;
     }
 

@@ -55,6 +55,20 @@ public final class Signals {
         return r;
     }
 
+    /** Short text for screens: a=10 iron_ingot=5. */
+    public String pretty() {
+        if (m.isEmpty()) return "nothing";
+        StringBuilder b = new StringBuilder();
+        for (Map.Entry<String, Integer> e : m.entrySet()) {
+            String k = e.getKey();
+            if (k.startsWith("virtual:")) k = k.substring(8);
+            else if (k.startsWith("minecraft:")) k = k.substring(10);
+            if (b.length() > 0) b.append(' ');
+            b.append(k).append('=').append(e.getValue());
+        }
+        return b.toString();
+    }
+
     @Override
     public boolean equals(Object o) {
         return o instanceof Signals s && s.m.equals(m);

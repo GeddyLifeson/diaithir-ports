@@ -106,6 +106,22 @@ public final class CircuitNodeBE extends BlockEntity {
                 + "\nSees red " + seen.red() + " green " + seen.green() + "\nSays " + out;
     }
 
+    /** What a screen shows. msg is an error or a short note, resetProgram tells the screen to replace the text in its box. */
+    public CircuitPayloads.View view(String msg, boolean resetProgram) {
+        return new CircuitPayloads.View(worldPosition, program, seen.red().pretty(), seen.green().pretty(), out.pretty(), msg, resetProgram);
+    }
+
+    /** Programs this node for a player. Returns the reply for their screen. */
+    public CircuitPayloads.View applyFrom(String text) {
+        if (!takesPrograms()) return view("This block has no program.", false);
+        try {
+            setProgram(text.trim());
+            return view("Applied.", true);
+        } catch (IllegalArgumentException e) {
+            return view(e.getMessage(), false);
+        }
+    }
+
     // ---- wiring ------------------------------------------------------------------------------------------------------------------
 
     /** Joins a port of one node to a port of another. Returns null on success or the reason it failed. */
