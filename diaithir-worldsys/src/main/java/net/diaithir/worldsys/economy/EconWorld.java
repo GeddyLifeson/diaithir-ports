@@ -91,4 +91,19 @@ public final class EconWorld {
         return EconMarket.ctx(st, d, culture, age, List.of(Map.of(), d.cultureMoney),
             id -> d.good(id) == null ? 1.0 : EconModel.mid(st.market, REGIONS, d::good, town, id, null, 0), EconWorld::cultureName);
     }
+
+    /** The vendor kinds open to a culture: each Age's kinds up to its own, those whose tech it knows; a kind that recurs gains the later Age's goods. */
+    public static List<EconOffers.Vendor> vendors(String culture) {
+        int at = Math.max(1, EconPolity.AGES.indexOf(ageOf(culture)));
+        java.util.LinkedHashMap<String, List<String>> out = new java.util.LinkedHashMap<>();
+        for (EconData.VendorKind v : data().vendors) {
+            if (EconPolity.AGES.indexOf(v.age()) > at) continue;
+            if (v.needs() != null && !EconHooks.techKnown.test(culture, v.needs())) continue;
+            List<String> items = out.computeIfAbsent(v.id(), k -> new ArrayList<>());
+            for (String id : v.items().keySet()) if (!items.contains(id)) items.add(id);
+        }
+        List<EconOffers.Vendor> list = new ArrayList<>();
+        out.forEach((k, v) -> list.add(new EconOffers.Vendor(k, v)));
+        return list;
+    }
 }

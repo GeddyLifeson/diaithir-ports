@@ -29,6 +29,7 @@ public final class EconomyFeature {
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, EconomyFeature::commands);
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, EconomyFeature::interact);
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, EconomyFeature::tick);
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.entity.player.TradeWithVillagerEvent.class, TradeScreens::settle);
     }
 
     private static EconQuests.World world() {
@@ -36,11 +37,12 @@ public final class EconomyFeature {
     }
 
     private static void interact(PlayerInteractEvent.EntityInteract e) {
-        if (!(e.getEntity() instanceof ServerPlayer p) || !(e.getTarget() instanceof Villager v) || EconWorld.server() == null) return;
+        if (!(e.getEntity() instanceof ServerPlayer p) || !(e.getTarget() instanceof Villager v) || EconWorld.server() == null || e.getHand() != net.minecraft.world.InteractionHand.MAIN_HAND) return;
         EconClaims.Claim c = EconWorld.claimAt(v.getX(), v.getZ());
         if (c == null) return;
         String prof = v.getVillagerData().profession().unwrapKey().map(k -> k.identifier().getPath()).orElse("none");
         EconQuests.talk(world(), new ServerPlayerHolder(p), new EconQuests.Place(c.town(), c.name(), c.culture(), EconWorld.ageOf(c.culture())), prof);
+        try { TradeScreens.apply(v, prof); } catch (RuntimeException ex) { System.out.println("[economy] trade screen not built: " + ex); }
         EconWorld.dirty();
     }
 
