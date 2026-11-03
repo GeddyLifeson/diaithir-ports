@@ -494,11 +494,36 @@ def main():
     allids = [i["id"] for i in data["items"]] + [b["id"] for b in blocks]
     for n in allids:
         mdl = "item" if (A / f"models/item/{n}.json").exists() else "block" if (A / f"models/block/{n}.json").exists() else "item"
-        (idir / f"{n}.json").write_text(json.dumps(dict(model=dict(type="minecraft:model", model=f"{NS}:{mdl}/{n}")), indent=1) + "\n")
+        defn = dict(model=dict(type="minecraft:model", model=f"{NS}:{mdl}/{n}"))
+        mp = A / f"models/item/{n}.json"
+        if mp.exists() and "separate-perspective" in mp.read_text():
+            # Forge separate-perspective: handheld base, gui/fixed use the flat model. 26.1: select on display_context.
+            m = json.loads(mp.read_text())
+            def ref(x):
+                return x["parent"] if x["parent"].count(":") else NS + ":" + x["parent"]
+            gui = m["perspectives"]["gui"]
+            defn = dict(model=dict(type="minecraft:select", property="minecraft:display_context",
+                                   cases=[dict(when=["gui", "fixed", "ground"], model=dict(type="minecraft:model", model=ref(gui)))],
+                                   fallback=dict(type="minecraft:model", model=ref(m["base"]))))
+            mp.unlink()
+        (idir / f"{n}.json").write_text(json.dumps(defn, indent=1) + "\n")
+    for mp in (A / "models/item").glob("*.json"):  # Forge-only loader models of unregistered items would fail to load
+        if mp.stem not in allids and "forge:" in mp.read_text():
+            mp.unlink()
     EGGS = ["hollow", "undead_knight", "dungeon_slime", "dungeon_keeper"]
     for n in EGGS:
-        (idir / f"{n}_spawn_egg.json").write_text(json.dumps(dict(model=dict(type="minecraft:model", model="minecraft:item/template_spawn_egg",
-            tints=[dict(type="minecraft:constant", value=8117755), dict(type="minecraft:constant", value=3363951)])), indent=1) + "\n")
+        # 26.1 vanilla eggs are plain textures, so draw our own two-colour egg
+        from PIL import Image, ImageDraw
+        img = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+        dr = ImageDraw.Draw(img)
+        dr.ellipse((3, 1, 12, 14), fill=(0x7B, 0xCF, 0xFB, 255), outline=(30, 30, 40, 255))
+        for sx, sy in ((6, 4), (9, 7), (5, 9), (8, 11)):
+            dr.rectangle((sx, sy, sx + 1, sy + 1), fill=(0x33, 0x44, 0x6F, 255))
+        (A / "textures/item").mkdir(parents=True, exist_ok=True)
+        img.save(A / "textures/item" / f"{n}_spawn_egg.png")
+        (A / "models/item").mkdir(parents=True, exist_ok=True)
+        (A / "models/item" / f"{n}_spawn_egg.json").write_text(json.dumps(dict(parent="minecraft:item/generated", textures=dict(layer0=f"{NS}:item/{n}_spawn_egg"))) + "\n")
+        (idir / f"{n}_spawn_egg.json").write_text(json.dumps(dict(model=dict(type="minecraft:model", model=f"{NS}:item/{n}_spawn_egg")), indent=1) + "\n")
     # lang (keep keys for registered things and shared strings)
     lang = json.loads((MAIN / "assets" / NS / "lang/en_us.json").read_text())
     (A / "lang").mkdir(exist_ok=True)

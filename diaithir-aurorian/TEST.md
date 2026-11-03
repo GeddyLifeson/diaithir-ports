@@ -10,3 +10,4 @@
 - Scrapper: crystal plus aurorian_steel_axe produced 6 aurorian_steel_nugget. Moonlight forge (midnight, open sky): moonstone_axe plus aurorian_steel_ingot produced aurorian_steel_axe.
 - `/aurorianselftest steel`: 100 item damage events took a sharpness I aurorian steel sword to sharpness II (xp reset, multiplier 1.25).
 - Items summon with no errors: amulets, strange meat, divining rod. Not tested: orb repair, spectral cleanse, umbra thorns, moonstone damage with a real player; client rendering.
+- Client join (cloud, Xvfb, single mod, `./gradlew runClient` joins a local server with `--quickPlayMultiplayer`): joined, rendered the world and hotbar. Found and fixed two real bugs: Forge `separate-perspective` models (umbra greatsword, now a `display_context` item definition) and spawn eggs (26.1 has no template egg, so own textures). Items, armour bar and icons shown in the hotbar. Sky, mobs and armour layers on the model not inspected.

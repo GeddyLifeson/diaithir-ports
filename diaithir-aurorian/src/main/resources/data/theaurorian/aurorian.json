@@ -124,20 +124,6 @@
    "repair": null,
    "age": "II"
   },
-  "aurorian_steel": {
-   "name": "aurorian_steel",
-   "durability": 33,
-   "boots": 4,
-   "legs": 7,
-   "chest": 8,
-   "helmet": 4,
-   "enchant": 10,
-   "sound": "netherite",
-   "toughness": 1.0,
-   "knockback": 0.1,
-   "repair": "theaurorian:aurorian_steel_ingot",
-   "age": "III"
-  },
   "spectral": {
    "name": "spectral",
    "durability": 20,
@@ -150,6 +136,20 @@
    "toughness": 0.0,
    "knockback": 0.0,
    "repair": "theaurorian:spectral_silk",
+   "age": "III"
+  },
+  "aurorian_steel": {
+   "name": "aurorian_steel",
+   "durability": 33,
+   "boots": 4,
+   "legs": 7,
+   "chest": 8,
+   "helmet": 4,
+   "enchant": 10,
+   "sound": "netherite",
+   "toughness": 1.0,
+   "knockback": 0.1,
+   "repair": "theaurorian:aurorian_steel_ingot",
    "age": "III"
   }
  },
