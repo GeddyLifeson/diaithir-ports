@@ -68291,6 +68291,10 @@ hash = "6c2cb913e00714bf9970e91f795cd5a0e1c575bc3da8564a96ace45444be1bdb"
 metafile = true
 
 [[files]]
+file = "mods/diaithir-ae2-extensions-neoforge-26.1.2-1.0.0.jar"
+hash = "0d84e97640d2d5b4797491cef6ce651c0dcb833a60f6b3bf7bbfda1f0519cbd0"
+
+[[files]]
 file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.6.jar"
 hash = "040e7725313ccf05766ee1bcaaa1d2cafba09331c7aba76f9bedfea6be6b9498"
 
@@ -68468,7 +68472,7 @@ hash = "c116d410ac95658aa2b419ee722880fbc6b3f69ce5b9648c1b5539b9f53b6c4d"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "660ac296e74898ac6689db8d978cef47a9d0752a38224d9432cc87a54d4adff0"
+hash = "a3784a1e2441771b7a3228b76c4e9f3ca450f99241bcbf651255995822b8d04c"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
@@ -68492,7 +68496,7 @@ hash = "5959a53df38ae1e34917e96328e8723ea7e981914fed244f6521fef081e44c99"
 
 [[files]]
 file = "mods/diaithir-tech-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "4668ee5acd070a2357f7a14f53b0210c7e945ef926af8bce4109d319e61d7537"
+hash = "ff219771af41e7729303575a111ad3d56bd0233a29abdf1fefa55c5002ca211b"
 
 [[files]]
 file = "mods/diaithir-tooltipfx-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
