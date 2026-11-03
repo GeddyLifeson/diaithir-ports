@@ -126,7 +126,40 @@ public final class PlanetColony {
 
     private static int age(ServerPlayer p) {
         ToIntFunction<ServerPlayer> f = AGE;
-        return f == null ? 99 : f.applyAsInt(p);
+        return f != null ? f.applyAsInt(p) : worldAge(p.level().getServer());
+    }
+
+    private static java.lang.reflect.Method agesGet;
+    private static java.lang.reflect.Field agesWorld, agesAge;
+    private static boolean agesBroken;
+
+    /** The server's Age from diaithir_ages (AgesSavedData.get(server).world.age, soft dependency); 99 (no gate) when that mod is absent. */
+    static synchronized int worldAge(MinecraftServer server) {
+        if (agesBroken) return 99;
+        try {
+            if (agesGet == null) {
+                if (!net.neoforged.fml.ModList.get().isLoaded("diaithir_ages")) { agesBroken = true; return 99; }
+                Class<?> saved = Class.forName("net.diaithir.ages.mc.AgesSavedData", true, Thread.currentThread().getContextClassLoader());
+                agesGet = saved.getMethod("get", MinecraftServer.class);
+                agesWorld = saved.getField("world");
+                agesAge = agesWorld.getType().getField("age");
+            }
+            Object data = agesGet.invoke(null, server);
+            return ageNumber((String) agesAge.get(agesWorld.get(data)));
+        } catch (ReflectiveOperationException | RuntimeException | LinkageError e) {
+            LOG.warn("cannot read the Age from diaithir_ages, colonies are not age-gated: {}", e.toString());
+            agesBroken = true;
+            return 99;
+        }
+    }
+
+    static int ageNumber(String id) {
+        if (id == null) return 0;
+        return switch (id.trim().toUpperCase(java.util.Locale.ROOT)) {
+            case "I" -> 1; case "II" -> 2; case "III" -> 3; case "IV" -> 4; case "V" -> 5;
+            case "VI" -> 6; case "VII" -> 7; case "VIII" -> 8; case "IX" -> 9;
+            default -> 0;
+        };
     }
 
     private static String str(JsonObject o, String k) { return o.has(k) && !o.get(k).isJsonNull() ? o.get(k).getAsString() : ""; }
