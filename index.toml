@@ -66379,7 +66379,7 @@ hash = "5b5de0528d0ebeb9ef0caa1a5565e831c096fc688e19b3f8df30a7dd727f4550"
 
 [[files]]
 file = "kubejs/data/regions_unexplored/loot_table/blocks/barley.json"
-hash = "7c14f919a772031e00fd42b19197382695235572e06513e817f03ac5f18b49a1"
+hash = "46786cdf144a519dff9c2fc9122350db382ca904aa3ec3be91123f1638c16634"
 
 [[files]]
 file = "kubejs/data/rnt/tags/worldgen/biome/has_chilling_challenge_tower.json"
