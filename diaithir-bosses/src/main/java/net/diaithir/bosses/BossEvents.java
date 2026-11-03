@@ -73,6 +73,7 @@ public final class BossEvents {
         BossController c = BossController.ALL.get(e.getEntity().getUUID());
         if (c != null) c.onDeath(e.getSource());
         Elites.onDeath(e.getEntity());
+        Ritual.onKill(e.getEntity());
     }
 
     /** No single hit may take more than a profile's share of the boss's health. */
@@ -101,9 +102,16 @@ public final class BossEvents {
     }
 
     @SubscribeEvent
+    public static void serverTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) {
+        Rush.tick(e.getServer());
+        Ritual.tick(e.getServer());
+    }
+
+    @SubscribeEvent
     public static void stopping(ServerStoppingEvent e) {
         BossController.ALL.values().forEach(c -> c.bar.removeAllPlayers());
         BossController.ALL.clear();
+        Rush.stop("The rush ends: the server is stopping.");
     }
 
     @SubscribeEvent

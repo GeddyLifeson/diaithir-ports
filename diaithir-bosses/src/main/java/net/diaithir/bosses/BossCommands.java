@@ -51,6 +51,29 @@ public final class BossCommands {
                 c.getSource().sendSuccess(() -> Component.literal(n == 0 ? "Age follows diaithir-ages" : "Age forced to " + Ages.name(n)), true);
                 return 1;
             })))
+            .then(Commands.literal("mode").executes(c -> {
+                var m = Difficulty.current(c.getSource().getServer());
+                c.getSource().sendSuccess(() -> Component.literal("Boss mode: " + m.id), false);
+                return Difficulty.rank(m.id);
+            }).then(Commands.argument("id", StringArgumentType.word())
+                .suggests((c, b) -> net.minecraft.commands.SharedSuggestionProvider.suggest(Difficulty.all().stream().map(m -> m.id), b))
+                .executes(c -> {
+                    String id = StringArgumentType.getString(c, "id");
+                    if (!AscendantData.get(c.getSource().getServer()).raise(id)) { c.getSource().sendFailure(Component.literal("unknown mode, or not above the current one")); return 0; }
+                    c.getSource().sendSuccess(() -> Component.literal("Boss mode raised to " + id), true);
+                    return 1;
+                })))
+            .then(Commands.literal("rush")
+                .then(Commands.literal("start").executes(c -> {
+                    var src = c.getSource();
+                    Component why = Rush.refusal(src.getServer());
+                    if (why != null) { src.sendFailure(why); return 0; }
+                    var ps = src.getLevel().players().stream().filter(p -> p.isAlive() && !p.isSpectator() && p.distanceToSqr(src.getPosition()) < 64 * 64).toList();
+                    if (ps.isEmpty()) { src.sendFailure(Component.literal("no fighters near")); return 0; }
+                    Rush.start(src.getLevel(), src.getPosition(), ps);
+                    return ps.size();
+                }))
+                .then(Commands.literal("stop").executes(c -> { Rush.stop("The rush was stopped."); return 1; })))
             .then(Commands.literal("champion").executes(c -> {
                 ServerLevel l = c.getSource().getLevel();
                 var self = c.getSource().getEntityOrException();

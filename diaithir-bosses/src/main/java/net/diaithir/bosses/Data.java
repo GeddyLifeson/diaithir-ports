@@ -55,6 +55,8 @@ public final class Data {
 
     public static final class Structure { public int style, spacing, separation; public String biomes; }
 
+    public static final class Summon { public String rite; public List<String> requires_kills = new ArrayList<>(); }
+
     public static final class Profile {
         public String id, name, name_en, entity, creature_id, court, habitat, existing_model, planet, dimension, rite, arch;
         public int age = 1, xp = 100;
@@ -70,7 +72,10 @@ public final class Data {
         public List<Loot> loot = new ArrayList<>();
         public Map<String, String> equipment = new LinkedHashMap<>();
         public Structure structure;
+        public String tier;
+        public Summon summon;
 
+        public boolean ascendant() { return tier != null && tier.startsWith("ascendant"); }
         public String key() { return creature_id != null ? creature_id : id; }
         /** True when this profile spawns its own entity type (as opposed to attaching to another mod's). */
         public boolean ownsEntity() { return planet == null && entity.startsWith(DiaithirBosses.ID + ":"); }

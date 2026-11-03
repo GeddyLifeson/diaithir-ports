@@ -1,0 +1,757 @@
+{
+ "tab": "Bosses",
+ "quests": [
+  {
+   "id": "ascendant/rite",
+   "title": "Raise the Ascendant altar",
+   "text": "Build an Ascendant altar from refined metal and carved stone in a cleared arena of radius 32.",
+   "after": [
+    "boss_altar"
+   ],
+   "kind": "build",
+   "age": "VII"
+  },
+  {
+   "id": "ascendant/tier1",
+   "title": "Ascendant I",
+   "text": "Defeat Antlered Hollow, Cauldron-Heart and Tide Reaver (any order).",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "kill_all",
+   "bosses": [
+    "antlered_hollow",
+    "cauldron_heart",
+    "tide_reaver"
+   ]
+  },
+  {
+   "id": "ascendant/tier2",
+   "title": "Ascendant II",
+   "text": "Defeat Foundry Sovereign, Mist Weaver and Ash Seraph.",
+   "after": [
+    "ascendant/tier1"
+   ],
+   "kind": "kill_all",
+   "bosses": [
+    "foundry_sovereign",
+    "mist_weaver",
+    "ash_seraph"
+   ]
+  },
+  {
+   "id": "ascendant/tier3",
+   "title": "Ascendant III",
+   "text": "Defeat Dusk Wyrm, Rootbreaker and The Last Wheel.",
+   "after": [
+    "ascendant/tier2"
+   ],
+   "kind": "kill_all",
+   "bosses": [
+    "dusk_wyrm",
+    "rootbreaker",
+    "last_wheel"
+   ]
+  },
+  {
+   "id": "ascendant/rush",
+   "title": "The Gauntlet",
+   "text": "Clear the boss rush once.",
+   "after": [
+    "ascendant/tier1"
+   ],
+   "kind": "event",
+   "event": "boss_rush_cleared"
+  },
+  {
+   "id": "ascendant/mode_relentless",
+   "title": "Relentless",
+   "text": "Win any Ascendant I fight, then take the first Mode Stone.",
+   "after": [
+    "ascendant/tier1"
+   ],
+   "kind": "reward",
+   "mode": "relentless"
+  },
+  {
+   "id": "ascendant/mode_merciless",
+   "title": "Merciless",
+   "text": "Clear the Gauntlet on Relentless.",
+   "after": [
+    "ascendant/rush"
+   ],
+   "kind": "reward",
+   "mode": "merciless"
+  },
+  {
+   "id": "ascendant/mode_ordeal",
+   "title": "Ordeal",
+   "text": "Beat The Last Wheel on Merciless.",
+   "after": [
+    "ascendant/tier3"
+   ],
+   "kind": "reward",
+   "mode": "ordeal"
+  },
+  {
+   "id": "ascendant/rite_antlered_hollow_0",
+   "title": "Antlered Hollow: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "antlered_hollow",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_antlered_hollow_1",
+   "title": "Antlered Hollow: step 2",
+   "text": "The hollow king shed his crown among the bones of the old herd. Lay sixteen at the foot of the stone.",
+   "after": [
+    "ascendant/rite_antlered_hollow_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "antlered_hollow",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_antlered_hollow_2",
+   "title": "Antlered Hollow: step 3",
+   "text": "The dead of the wood walk his old trail. Let twenty fall in sight of the altar.",
+   "after": [
+    "ascendant/rite_antlered_hollow_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "antlered_hollow",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_antlered_hollow_3",
+   "title": "Antlered Hollow: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: the door-wood, the strong one; then the one that bleeds when it is cut; then red berries set against the witch.",
+   "after": [
+    "ascendant/rite_antlered_hollow_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "antlered_hollow",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_antlered_hollow_4",
+   "title": "Antlered Hollow: step 5",
+   "text": "The stone will answer only when the moon stands highest over the stone. Use the altar then.",
+   "after": [
+    "ascendant/rite_antlered_hollow_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "antlered_hollow",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_antlered_hollow_5",
+   "title": "Antlered Hollow: step 6",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 60 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_antlered_hollow_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "antlered_hollow",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_cauldron_heart_0",
+   "title": "Cauldron-Heart: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "cauldron_heart",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_cauldron_heart_1",
+   "title": "Cauldron-Heart: step 2",
+   "text": "What boils in the heart must first be fed. Sixteen red-bark warts for the pot.",
+   "after": [
+    "ascendant/rite_cauldron_heart_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "cauldron_heart",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_cauldron_heart_2",
+   "title": "Cauldron-Heart: step 3",
+   "text": "Eight-legged cooks stir the lower dark. Twenty of them must be unmade.",
+   "after": [
+    "ascendant/rite_cauldron_heart_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "cauldron_heart",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_cauldron_heart_3",
+   "title": "Cauldron-Heart: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: the door-wood, the strong one; then the pale one that wears the first white; then the winter king, green when all is grey; then the one that bleeds when it is cut.",
+   "after": [
+    "ascendant/rite_cauldron_heart_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "cauldron_heart",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_cauldron_heart_4",
+   "title": "Cauldron-Heart: step 5",
+   "text": "The stone will answer only in the breath between night and the first light. Use the altar then.",
+   "after": [
+    "ascendant/rite_cauldron_heart_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "cauldron_heart",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_cauldron_heart_5",
+   "title": "Cauldron-Heart: step 6",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 60 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_cauldron_heart_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "cauldron_heart",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_tide_reaver_0",
+   "title": "Tide Reaver: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "tide_reaver",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_tide_reaver_1",
+   "title": "Tide Reaver: step 2",
+   "text": "The drowned reaver's coat is made of sea-glass. Twenty-four shards, and no fewer.",
+   "after": [
+    "ascendant/rite_tide_reaver_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "tide_reaver",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_tide_reaver_2",
+   "title": "Tide Reaver: step 3",
+   "text": "The sea gives back its dead on the shore. Fifteen must go back to it.",
+   "after": [
+    "ascendant/rite_tide_reaver_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "tide_reaver",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_tide_reaver_3",
+   "title": "Tide Reaver: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: kin of the tree that holds up the world; then the nut of the one who knows; then the one that bleeds when it is cut; then the nut of the one who knows.",
+   "after": [
+    "ascendant/rite_tide_reaver_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "tide_reaver",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_tide_reaver_4",
+   "title": "Tide Reaver: step 5",
+   "text": "The stone will answer only as the sun drowns and the first stars wake. Use the altar then.",
+   "after": [
+    "ascendant/rite_tide_reaver_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "tide_reaver",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_tide_reaver_5",
+   "title": "Tide Reaver: step 6",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 75 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_tide_reaver_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "tide_reaver",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_foundry_sovereign_0",
+   "title": "Foundry Sovereign: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "foundry_sovereign",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_foundry_sovereign_1",
+   "title": "Foundry Sovereign: step 2",
+   "text": "The Sovereign's hearth wants iron by the block: eight, cold and square.",
+   "after": [
+    "ascendant/rite_foundry_sovereign_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "foundry_sovereign",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_foundry_sovereign_2",
+   "title": "Foundry Sovereign: step 3",
+   "text": "Bones that never rusted still march in his smoke. Thirty is the count.",
+   "after": [
+    "ascendant/rite_foundry_sovereign_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "foundry_sovereign",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_foundry_sovereign_3",
+   "title": "Foundry Sovereign: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: the weeper by the water; then the nut of the one who knows; then kin of the tree that holds up the world; then the winter king, green when all is grey; then red berries set against the witch.",
+   "after": [
+    "ascendant/rite_foundry_sovereign_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "foundry_sovereign",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_foundry_sovereign_4",
+   "title": "Foundry Sovereign: step 5",
+   "text": "The stone will answer only when no shadow falls beside the stone. Use the altar then.",
+   "after": [
+    "ascendant/rite_foundry_sovereign_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "foundry_sovereign",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_foundry_sovereign_5",
+   "title": "Foundry Sovereign: step 6",
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
+   "after": [
+    "ascendant/rite_foundry_sovereign_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "foundry_sovereign",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_foundry_sovereign_6",
+   "title": "Foundry Sovereign: step 7",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 90 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_foundry_sovereign_5"
+   ],
+   "kind": "ritual_step",
+   "boss": "foundry_sovereign",
+   "step": 6
+  },
+  {
+   "id": "ascendant/rite_mist_weaver_0",
+   "title": "Mist Weaver: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "mist_weaver",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_mist_weaver_1",
+   "title": "Mist Weaver: step 2",
+   "text": "The weaver spins in the dark of what you carry. Sixty-four threads for her loom.",
+   "after": [
+    "ascendant/rite_mist_weaver_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "mist_weaver",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_mist_weaver_2",
+   "title": "Mist Weaver: step 3",
+   "text": "Her children cover the old roads. Thirty of them fewer.",
+   "after": [
+    "ascendant/rite_mist_weaver_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "mist_weaver",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_mist_weaver_3",
+   "title": "Mist Weaver: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: the weeper by the water; then the door-wood, the strong one; then the one that bleeds when it is cut; then kin of the tree that holds up the world; then red berries set against the witch.",
+   "after": [
+    "ascendant/rite_mist_weaver_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "mist_weaver",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_mist_weaver_4",
+   "title": "Mist Weaver: step 5",
+   "text": "The stone will answer only when the moon stands highest over the stone. Use the altar then.",
+   "after": [
+    "ascendant/rite_mist_weaver_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "mist_weaver",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_mist_weaver_5",
+   "title": "Mist Weaver: step 6",
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
+   "after": [
+    "ascendant/rite_mist_weaver_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "mist_weaver",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_mist_weaver_6",
+   "title": "Mist Weaver: step 7",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 90 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_mist_weaver_5"
+   ],
+   "kind": "ritual_step",
+   "boss": "mist_weaver",
+   "step": 6
+  },
+  {
+   "id": "ascendant/rite_ash_seraph_0",
+   "title": "Ash Seraph: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "ash_seraph",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_ash_seraph_1",
+   "title": "Ash Seraph: step 2",
+   "text": "A bright thing fell and burned to powder. Thirty-two pinches to call it back.",
+   "after": [
+    "ascendant/rite_ash_seraph_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "ash_seraph",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_ash_seraph_2",
+   "title": "Ash Seraph: step 3",
+   "text": "The sun-dried dead keep its old watch. Twenty-five must be put to rest.",
+   "after": [
+    "ascendant/rite_ash_seraph_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "ash_seraph",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_ash_seraph_3",
+   "title": "Ash Seraph: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: the one that bleeds when it is cut; then the gate the Fair Folk keep; then the weeper by the water; then the winter king, green when all is grey; then kin of the tree that holds up the world.",
+   "after": [
+    "ascendant/rite_ash_seraph_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "ash_seraph",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_ash_seraph_4",
+   "title": "Ash Seraph: step 5",
+   "text": "The stone will answer only when no shadow falls beside the stone. Use the altar then.",
+   "after": [
+    "ascendant/rite_ash_seraph_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "ash_seraph",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_ash_seraph_5",
+   "title": "Ash Seraph: step 6",
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
+   "after": [
+    "ascendant/rite_ash_seraph_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "ash_seraph",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_ash_seraph_6",
+   "title": "Ash Seraph: step 7",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 90 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_ash_seraph_5"
+   ],
+   "kind": "ritual_step",
+   "boss": "ash_seraph",
+   "step": 6
+  },
+  {
+   "id": "ascendant/rite_dusk_wyrm_0",
+   "title": "Dusk Wyrm: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "dusk_wyrm",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_dusk_wyrm_1",
+   "title": "Dusk Wyrm: step 2",
+   "text": "The wyrm sleeps behind the eyes of the end-walkers. Twelve eyes, open, on the stone.",
+   "after": [
+    "ascendant/rite_dusk_wyrm_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "dusk_wyrm",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_dusk_wyrm_2",
+   "title": "Dusk Wyrm: step 3",
+   "text": "The sleepless sky-things are its scouts. Ten must fall.",
+   "after": [
+    "ascendant/rite_dusk_wyrm_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "dusk_wyrm",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_dusk_wyrm_3",
+   "title": "Dusk Wyrm: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: the nut of the one who knows; then the door-wood, the strong one; then the nut of the one who knows; then the weeper by the water; then the winter king, green when all is grey; then kin of the tree that holds up the world.",
+   "after": [
+    "ascendant/rite_dusk_wyrm_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "dusk_wyrm",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_dusk_wyrm_4",
+   "title": "Dusk Wyrm: step 5",
+   "text": "The stone will answer only when the moon stands highest over the stone. Use the altar then.",
+   "after": [
+    "ascendant/rite_dusk_wyrm_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "dusk_wyrm",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_dusk_wyrm_5",
+   "title": "Dusk Wyrm: step 6",
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
+   "after": [
+    "ascendant/rite_dusk_wyrm_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "dusk_wyrm",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_dusk_wyrm_6",
+   "title": "Dusk Wyrm: step 7",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 120 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_dusk_wyrm_5"
+   ],
+   "kind": "ritual_step",
+   "boss": "dusk_wyrm",
+   "step": 6
+  },
+  {
+   "id": "ascendant/rite_rootbreaker_0",
+   "title": "Rootbreaker: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "rootbreaker",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_rootbreaker_1",
+   "title": "Rootbreaker: step 2",
+   "text": "The roots remember being amber. Sixteen bricks of what they wept.",
+   "after": [
+    "ascendant/rite_rootbreaker_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "rootbreaker",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_rootbreaker_2",
+   "title": "Rootbreaker: step 3",
+   "text": "Axe-bearers cleared the grove that bore it. Fifteen must answer.",
+   "after": [
+    "ascendant/rite_rootbreaker_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "rootbreaker",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_rootbreaker_3",
+   "title": "Rootbreaker: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: the pale one that wears the first white; then the door-wood, the strong one; then the pale one that wears the first white; then the door-wood, the strong one; then the gate the Fair Folk keep; then the pale one that wears the first white.",
+   "after": [
+    "ascendant/rite_rootbreaker_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "rootbreaker",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_rootbreaker_4",
+   "title": "Rootbreaker: step 5",
+   "text": "The stone will answer only in the breath between night and the first light. Use the altar then.",
+   "after": [
+    "ascendant/rite_rootbreaker_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "rootbreaker",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_rootbreaker_5",
+   "title": "Rootbreaker: step 6",
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
+   "after": [
+    "ascendant/rite_rootbreaker_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "rootbreaker",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_rootbreaker_6",
+   "title": "Rootbreaker: step 7",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 120 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_rootbreaker_5"
+   ],
+   "kind": "ritual_step",
+   "boss": "rootbreaker",
+   "step": 6
+  },
+  {
+   "id": "ascendant/rite_last_wheel_0",
+   "title": "The Last Wheel: step 1",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift.",
+   "after": [
+    "ascendant/rite"
+   ],
+   "kind": "ritual_step",
+   "boss": "last_wheel",
+   "step": 0
+  },
+  {
+   "id": "ascendant/rite_last_wheel_1",
+   "title": "The Last Wheel: step 2",
+   "text": "The Wheel is wound by small wheels. Twelve clocks, wound and ticking.",
+   "after": [
+    "ascendant/rite_last_wheel_0"
+   ],
+   "kind": "ritual_step",
+   "boss": "last_wheel",
+   "step": 1
+  },
+  {
+   "id": "ascendant/rite_last_wheel_2",
+   "title": "The Last Wheel: step 3",
+   "text": "Those who step between moments are its spokes. Twenty spokes must break.",
+   "after": [
+    "ascendant/rite_last_wheel_1"
+   ],
+   "kind": "ritual_step",
+   "boss": "last_wheel",
+   "step": 2
+  },
+  {
+   "id": "ascendant/rite_last_wheel_3",
+   "title": "The Last Wheel: step 4",
+   "text": "Nine trees stand in the stone's mind. Seal them in this order, no other: the pale one that wears the first white; then the nut of the one who knows; then the weeper by the water; then the nut of the one who knows; then the pale one that wears the first white; then the one that bleeds when it is cut; then the door-wood, the strong one.",
+   "after": [
+    "ascendant/rite_last_wheel_2"
+   ],
+   "kind": "ritual_step",
+   "boss": "last_wheel",
+   "step": 3
+  },
+  {
+   "id": "ascendant/rite_last_wheel_4",
+   "title": "The Last Wheel: step 5",
+   "text": "The stone will answer only when the moon stands highest over the stone. Use the altar then.",
+   "after": [
+    "ascendant/rite_last_wheel_3"
+   ],
+   "kind": "ritual_step",
+   "boss": "last_wheel",
+   "step": 4
+  },
+  {
+   "id": "ascendant/rite_last_wheel_5",
+   "title": "The Last Wheel: step 6",
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend.",
+   "after": [
+    "ascendant/rite_last_wheel_4"
+   ],
+   "kind": "ritual_step",
+   "boss": "last_wheel",
+   "step": 5
+  },
+  {
+   "id": "ascendant/rite_last_wheel_6",
+   "title": "The Last Wheel: step 7",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 150 breaths of the sun-count and do not leave it.",
+   "after": [
+    "ascendant/rite_last_wheel_5"
+   ],
+   "kind": "ritual_step",
+   "boss": "last_wheel",
+   "step": 6
+  }
+ ]
+}
