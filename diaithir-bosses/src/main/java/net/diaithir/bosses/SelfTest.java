@@ -194,7 +194,7 @@ public final class SelfTest {
         Mob a = spawnAt(level, p, c0);
         Ages.forced = Math.min(8, p.age + 3);
         Mob b = spawnAt(level, p, c0);
-        if (a != null && b != null) {
+        if (a != null && b != null && p.age < 8) { // an Age 8 boss has no later Age to scale into
             float ea = a.getMaxHealth() * BossController.ALL.get(a.getUUID()).damageDivisor, eb = b.getMaxHealth() * BossController.ALL.get(b.getUUID()).damageDivisor;
             check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + BossController.ALL.get(a.getUUID()).damageDivisor + "/" + BossController.ALL.get(b.getUUID()).damageDivisor + " near " + BossController.ALL.get(a.getUUID()).participants().size() + ")");
         }
