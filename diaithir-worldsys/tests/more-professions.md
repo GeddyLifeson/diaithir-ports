@@ -1,0 +1,2 @@
+# Test: more professions fold (headless, NeoForge 26.1.2.109)
+compileJava clean. Server boots to Done. Via rcon: forceloaded chunk, fletching table with a wooden-axe item frame above, summoned a fletcher (Xp 0, job_site memory on the table). Within one 80-tick pass its Offers became the Lumber Jack level 1 pair (8 emerald for 8 ladders; 1 emerald for 16 sticks). One log line "Block-attached entity at invalid position: null" from the summoned frame (test setup, not the feature). Not exercised: leveling up, token removal, a real villager claiming the table, client.
