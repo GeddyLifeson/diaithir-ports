@@ -19,4 +19,4 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 - Road use: NPC drivers prefer higher tiers. Settlement and worldgen threads decide generated road networks.
 
 ## Not tested
-IV loading of the new pack (no headless boot with the full pack was run; the part files parse with IV's own classes, vehicle files need IV's custom point reader), consumption units (`fuelConsumption` assumed mB per tick), driving, any client rendering.
+IV loading of the new pack (a headless dev-server boot with IV loaded no errors but did not register the pack's items, because IV scans mod jars and the dev run puts the carts mod on the classpath as a folder; needs a boot with the built carts jar in a real server mods folder, PC or a thread allowed to run the NeoForge installer; the part files parse with IV's own classes, vehicle files need IV's custom point reader), consumption units (`fuelConsumption` assumed mB per tick), driving, any client rendering.
