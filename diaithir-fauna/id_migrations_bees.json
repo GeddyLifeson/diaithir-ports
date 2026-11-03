@@ -1,0 +1,6 @@
+{
+ "note": "Nearest equivalents for Productive Bees worlds. Bees, hives and honey blocks are not migrated, only the combs that map to a resource.",
+ "items": {
+  "productivebees:configurable_honeycomb": "minecraft:honeycomb"
+ }
+}

@@ -46,6 +46,7 @@ public final class FaunaMod {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, Revival.SPEC);
         ENTITIES.register(bus);
         Fossils.register(bus);
+        net.diaithir.fauna.bees.Bees.register(bus);
     }
 
     @SubscribeEvent
@@ -93,6 +94,12 @@ public final class FaunaMod {
                             c.getSource().sendSuccess(() -> Component.literal(s.id + " (" + s.per + ", " + s.form + ")"), false);
                             return 1;
                         })))
+                .then(Commands.literal("beetest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+                    var fails = net.diaithir.fauna.bees.BeeTest.run(c.getSource().getServer());
+                    String line = fails.isEmpty() ? "Bees self test PASS" : "Bees self test FAIL: " + String.join("; ", fails);
+                    c.getSource().sendSuccess(() -> Component.literal(line), false);
+                    return fails.isEmpty() ? 1 : 0;
+                }))
                 .then(Commands.literal("census").executes(c -> {
                     String r = Census.run(c.getSource().getLevel());
                     c.getSource().sendSuccess(() -> Component.literal(r), false);
