@@ -6,7 +6,7 @@ import net.neoforged.neoforge.common.NeoForge;
 
 /** Cross-mod hook points: global event firing and optional-dependency guards. */
 public final class NetherIntegration {
-    public static final int AGE = 3;
+    public static final int AGE = 5;
     public static final int ENERGY_QUANTUM_J = 100;
 
     private NetherIntegration() {}

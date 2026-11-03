@@ -1,1 +1,1 @@
-{"id":"diaithir_nether:brimstone_hollows","type":"biome","title":"biome.diaithir_nether.brimstone_hollows","body":"codex.diaithir_nether.heat","age":3,"unlock":{"trigger":"enter_biome","target":"diaithir_nether:brimstone_hollows"}}
+{"id":"diaithir_nether:brimstone_hollows","type":"biome","title":"biome.diaithir_nether.brimstone_hollows","body":"codex.diaithir_nether.heat","age":5,"unlock":{"trigger":"enter_biome","target":"diaithir_nether:brimstone_hollows"}}
