@@ -55,6 +55,8 @@
    "types": [
     "engine_tank"
    ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
    "defaultPart": "diaithirtanks:tank_engine"
   },
   {
