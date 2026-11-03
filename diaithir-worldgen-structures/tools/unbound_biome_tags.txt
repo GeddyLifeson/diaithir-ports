@@ -45,3 +45,4 @@ minecraft:is_warped_forest
 diaithir:nether_wastes
 diaithir:ocean_and_coast
 diaithir:taiga_and_forest
+diaithir:badlands_and_mesa
