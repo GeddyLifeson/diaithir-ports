@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#minecraft:planks",
- "result": {
-  "id": "diaithirfurnishings:bed_warmer",
-  "count": 1
- }
-}

@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:leather",
- "result": {
-  "id": "diaithirfurnishings:cobblers_last",
-  "count": 1
- }
-}

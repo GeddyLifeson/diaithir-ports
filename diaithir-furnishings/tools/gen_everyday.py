@@ -109,6 +109,7 @@ def main():
     gates = {}; entries = []; tags = {}
     for p in ("items", "models/item", "textures/item"): (A / p).mkdir(parents=True, exist_ok=True)
     (D / "recipe/everyday").mkdir(parents=True, exist_ok=True)
+    for f in (D / "recipe/everyday").glob("*.json"): f.unlink()
     for r in rows:
         iid, cat = r["id"], r["category"]; ag = age(r["earliest"])
         tool = cat in TOOLS and cat != "measuring"
@@ -117,11 +118,10 @@ def main():
         json.dump({"model": {"type": "minecraft:model", "model": f"{NS}:item/{iid}"}}, open(A / f"items/{iid}.json", "w"), indent=1)
         json.dump({"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{iid}"}}, open(A / f"models/item/{iid}.json", "w"), indent=1)
         paint(iid, cat).save(A / f"textures/item/{iid}.png")
-        base = SOURCE_MATERIAL.get(cat, "#minecraft:planks")
-        if base == "M": base = METAL.get(ag, "#c:ingots/iron")
-        elif base == "C": base = "minecraft:clay_ball" if ag in ("I", "II") else METAL.get(ag, "#c:ingots/iron")
-        json.dump({"type": "minecraft:stonecutting", "ingredient": base, "result": {"id": f"{NS}:{iid}", "count": 1}},
-                  open(D / f"recipe/everyday/{iid}.json", "w"), indent=1)
+        if cat == "furniture":  # everything else is made at the Smithy and Workshop Bench (diaithir-gear tools/gen_workshop.py)
+            base = SOURCE_MATERIAL[cat]
+            json.dump({"type": "minecraft:stonecutting", "ingredient": base, "result": {"id": f"{NS}:{iid}", "count": 1}},
+                      open(D / f"recipe/everyday/{iid}.json", "w"), indent=1)
         gates[f"{NS}:{iid}"] = "RODOS" if ag == "RODOS" else ag
         tags.setdefault(cat, []).append(f"{NS}:{iid}")
     json.dump(lang, open(lang_p, "w"), indent=1, ensure_ascii=False)

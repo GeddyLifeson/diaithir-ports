@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#c:ingots/iron",
- "result": {
-  "id": "diaithirfurnishings:fillet_knife",
-  "count": 1
- }
-}

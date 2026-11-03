@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#c:ingots/iron",
- "result": {
-  "id": "diaithirfurnishings:dutch_oven",
-  "count": 1
- }
-}

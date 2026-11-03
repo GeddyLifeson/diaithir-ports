@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#minecraft:planks",
- "result": {
-  "id": "diaithirfurnishings:hot_water_bottle",
-  "count": 1
- }
-}

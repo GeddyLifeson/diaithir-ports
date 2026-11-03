@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#minecraft:planks",
- "result": {
-  "id": "diaithirfurnishings:clothespin",
-  "count": 1
- }
-}

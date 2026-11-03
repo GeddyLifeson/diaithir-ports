@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#minecraft:planks",
- "result": {
-  "id": "diaithirfurnishings:root_cellar_bin",
-  "count": 1
- }
-}

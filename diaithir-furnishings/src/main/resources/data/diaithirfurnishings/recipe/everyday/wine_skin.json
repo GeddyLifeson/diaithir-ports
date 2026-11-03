@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:clay_ball",
- "result": {
-  "id": "diaithirfurnishings:wine_skin",
-  "count": 1
- }
-}

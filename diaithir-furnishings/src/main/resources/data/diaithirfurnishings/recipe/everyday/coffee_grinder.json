@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#c:ingots/iron",
- "result": {
-  "id": "diaithirfurnishings:coffee_grinder",
-  "count": 1
- }
-}

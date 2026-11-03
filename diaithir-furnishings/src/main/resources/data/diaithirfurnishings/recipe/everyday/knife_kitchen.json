@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:flint",
- "result": {
-  "id": "diaithirfurnishings:knife_kitchen",
-  "count": 1
- }
-}

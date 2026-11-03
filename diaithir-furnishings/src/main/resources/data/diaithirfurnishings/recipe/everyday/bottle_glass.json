@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#minecraft:planks",
- "result": {
-  "id": "diaithirfurnishings:bottle_glass",
-  "count": 1
- }
-}

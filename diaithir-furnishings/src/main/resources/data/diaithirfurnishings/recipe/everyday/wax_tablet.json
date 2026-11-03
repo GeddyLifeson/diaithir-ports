@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:paper",
- "result": {
-  "id": "diaithirfurnishings:wax_tablet",
-  "count": 1
- }
-}

@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:clay_ball",
- "result": {
-  "id": "diaithirfurnishings:gravy_boat",
-  "count": 1
- }
-}

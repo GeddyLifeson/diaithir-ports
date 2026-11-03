@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:string",
- "result": {
-  "id": "diaithirfurnishings:sewing_machine",
-  "count": 1
- }
-}
