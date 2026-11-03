@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SXXXX Panscriptum STRUCTURE entries -> jigsaw sites (plaque with the entry's own text + class building), data only.
+# S6835 Panscriptum STRUCTURE entries -> jigsaw sites (plaque with the entry's own text + class building), data only.
 """Usage: lib_sites.py [--limit N]. Reads codex-store/library.sqlite (summary = real entry text), library-content/content.sqlite
 (STRUCTURE ids) and planets/planets.tsv. Writes under src/main/resources/data/diaithir_worldgen/: per-entry plaque
 templates, per (planet,class,band) start pools, shared class buildings, structures, one structure_set per planet,
