@@ -34,6 +34,10 @@ public final class DiaithirWiretech {
                 Machines.CONNECTOR_ITEMS.values().forEach(i -> e.accept(i.get()));
                 Machines.ALL_BLOCK_ITEMS.forEach(i -> e.accept(i.get()));
             }
+            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
+                Machines.CIRCUIT_ITEMS.forEach(i -> e.accept(i.get()));
+                Machines.CIRCUIT_COILS.values().forEach(i -> e.accept(i.get()));
+            }
             if (e.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) Machines.BUILDING_ITEMS.forEach(i -> e.accept(i.get()));
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) Machines.COILS.values().forEach(i -> e.accept(i.get()));
             if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) {
@@ -50,6 +54,12 @@ public final class DiaithirWiretech {
                 if (e.getEntity() instanceof net.minecraft.server.level.ServerPlayer sp) Demo.show(sp);
             });
         }
-        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> Commands.register(e.getDispatcher()));
+        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> {
+            Commands.register(e.getDispatcher());
+            net.diaithir.wiretech.circuit.CircuitCommands.register(e.getDispatcher());
+        });
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.LevelTickEvent.Post.class, e -> {
+            if (e.getLevel() instanceof net.minecraft.server.level.ServerLevel sl) net.diaithir.wiretech.circuit.CircuitGrid.tick(sl);
+        });
     }
 }

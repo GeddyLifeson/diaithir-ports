@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.diaithir.wiretech.circuit.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -23,6 +24,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -53,6 +55,14 @@ public final class Machines {
     public static final Map<WireType, DeferredBlock<ConnectorBlock>> CONNECTORS = new EnumMap<>(WireType.class);
     public static final Map<WireType, DeferredItem<BlockItem>> CONNECTOR_ITEMS = new EnumMap<>(WireType.class);
     public static final Map<WireType, DeferredItem<WireCoilItem>> COILS = new EnumMap<>(WireType.class);
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<GlobalPos>> CIRCUIT_FROM =
+            COMPONENTS.registerComponentType("circuit_from", b -> b.persistent(GlobalPos.CODEC));
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> CIRCUIT_FROM_OUT =
+            COMPONENTS.registerComponentType("circuit_from_out", b -> b.persistent(com.mojang.serialization.Codec.BOOL));
+    public static final Map<String, DeferredBlock<CircuitBlock>> CIRCUIT_BLOCKS = new LinkedHashMap<>();
+    public static final List<DeferredItem<BlockItem>> CIRCUIT_ITEMS = new ArrayList<>();
+    public static final Map<String, DeferredItem<CircuitCoilItem>> CIRCUIT_COILS = new LinkedHashMap<>();
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CircuitNodeBE>> CIRCUIT_BE;
     public static final Map<RotorKind, DeferredBlock<RotorBlock>> ROTORS = new EnumMap<>(RotorKind.class);
     public static final List<DeferredItem<BlockItem>> GENERATOR_ITEMS = new ArrayList<>();
     public static final List<DeferredItem<BlockItem>> BUILDING_ITEMS = new ArrayList<>();
@@ -139,8 +149,27 @@ public final class Machines {
         TRANSFORMER_BE = BLOCK_ENTITIES.register("transformer", () -> new BlockEntityType<>(TransformerBlockEntity::new,
                 TRANSFORMERS.values().stream().map(DeferredBlock::get).toArray(Block[]::new)));
         DYNAMO_BE = BLOCK_ENTITIES.register("dynamo", () -> new BlockEntityType<>(DynamoBlockEntity::new, DYNAMO.get()));
+        for (Tier t : Tier.values()) {
+            for (CircuitKind k : CircuitKind.values()) {
+                DeferredBlock<CircuitBlock> b = BLOCKS.registerBlock(t.id + "_" + k.id, p -> new CircuitBlock(p, k, t), () -> BlockBehaviour.Properties.of()
+                        .mapColor(MapColor.METAL).strength(2.0F, 6.0F).sound(t == Tier.MECHANICAL ? SoundType.WOOD : SoundType.METAL)
+                        .lightLevel(s -> k == CircuitKind.LAMP && s.getValue(CircuitBlock.LIT) ? 15 : 0));
+                CIRCUIT_BLOCKS.put(t.id + "_" + k.id, b);
+                CIRCUIT_ITEMS.add(ITEMS.registerSimpleBlockItem(b));
+            }
+            for (Color c : Color.values()) {
+                CIRCUIT_COILS.put(coilKey(c, t), ITEMS.registerItem(coilKey(c, t), p -> new CircuitCoilItem(c, t, p), () -> new Item.Properties().stacksTo(16)));
+            }
+        }
+        CIRCUIT_BE = BLOCK_ENTITIES.register("circuit_node", () -> new BlockEntityType<>(CircuitNodeBE::new,
+                CIRCUIT_BLOCKS.values().stream().map(DeferredBlock::get).toArray(Block[]::new)));
         MACHINE_BE = BLOCK_ENTITIES.register("machine", () -> new BlockEntityType<>(MachineBlockEntity::new,
                 ALL_BLOCKS.stream().map(DeferredBlock::get).toArray(Block[]::new)));
+    }
+
+    /** Id of a circuit wire coil, for example relay_red_circuit_wire. */
+    public static String coilKey(Color c, Tier t) {
+        return t.id + "_" + c.name().toLowerCase() + "_circuit_wire";
     }
 
     static void register(IEventBus bus) {
