@@ -1,0 +1,15 @@
+{
+ "id": "safe_passage",
+ "title": "Safe passage",
+ "kind": "misc",
+ "chain_next": "found_company",
+ "giver": "any working person (any profession) after a few conversations in a culture's town",
+ "offered": "they complain about moving goods and hand over a load; the goods and the complaint depend on the profession",
+ "objective": "carry 12 of the goods to the named town within 4 weeks and talk to a worker there",
+ "reward": "a carrying fee from the destination town's wage pool, halved if late",
+ "reports": [
+  "ages quest report caravan accepted",
+  "ages quest report caravan delivered"
+ ],
+ "note": "Optional misc quest. Opens Found a company."
+}
