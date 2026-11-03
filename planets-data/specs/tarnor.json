@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-soaked mythic world of drowned cities, singing stone, and ash-hued woods, rendered in muted greys, deep teal waters and silver-green light."
+ "notes": "A storm-soaked mythic world of drowned cities, singing stone, and ash-hued woods, rendered in muted greys, deep teal waters and silver-green light.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6a7a8c",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.tarnor.E4.events.000093",
+  "why": "Sky split open during the Fall; storms and shard-light fit",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Crurnon's frozen northern tundra gives way to amber badlands, desert basins and smoky gearworks valleys, with a fair meadow and sunlit plains threading the middle of the world."
+ "notes": "Crurnon's frozen northern tundra gives way to amber badlands, desert basins and smoky gearworks valleys, with a fair meadow and sunlit plains threading the middle of the world.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9dbe8",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.crurnon.E6.places.000020",
+  "why": "Frozen tundra with humming ice and long winter nights",
+  "grounded": true
+ }
 }

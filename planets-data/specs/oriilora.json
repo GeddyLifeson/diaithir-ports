@@ -109,5 +109,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A violet-lit arcane world of drowned cities, glass isles and humming stone, where mist, ash and shifting skies give way to frozen peaks and rose-hued terraces."
+ "notes": "A violet-lit arcane world of drowned cities, glass isles and humming stone, where mist, ash and shifting skies give way to frozen peaks and rose-hued terraces.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#a9b8d6",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.oriilora.E6.places.000049",
+  "why": "Luminous shell-lanterns in deep glacier caverns suggest cool, dim, mixed light",
+  "grounded": false
+ }
 }

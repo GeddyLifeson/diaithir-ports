@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Corianum's storm-soil realm of Mythic sorrow and echoing stone is rendered in ash-violet skies, sombre glass-and-basalt terrain, and cold blue waters beneath drifting sundered shards."
+ "notes": "Corianum's storm-soil realm of Mythic sorrow and echoing stone is rendered in ash-violet skies, sombre glass-and-basalt terrain, and cold blue waters beneath drifting sundered shards.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "firefly",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#8fa3b8",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "MY.corianum.E1.places.000473",
+  "why": "Humming grove canopy at dusk suggests soft, luminous, gentle air.",
+  "grounded": true
+ }
 }

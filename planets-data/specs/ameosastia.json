@@ -89,5 +89,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-torn realm of ash-choked marshes, scorched badlands, and frozen coasts, shaped by the mythic ruins of Roserium and the taint-soaked halls of the blight."
+ "notes": "A storm-torn realm of ash-choked marshes, scorched badlands, and frozen coasts, shaped by the mythic ruins of Roserium and the taint-soaked halls of the blight.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#8a7a6a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.ameosastia.E3.assay.000888",
+  "why": "Storm-fire rites and lightning-stunned foes suggest a stormy, ash-laced sky",
+  "grounded": true
+ }
 }

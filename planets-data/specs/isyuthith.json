@@ -79,5 +79,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A terraformed, ash-touched world of mirrored glass, drifting ruins and sun-scorched mesas, with cold icy plains and violet-tinged coastlines."
+ "notes": "A terraformed, ash-touched world of mirrored glass, drifting ruins and sun-scorched mesas, with cold icy plains and violet-tinged coastlines.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "end_rod",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9a57a",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "ST.isyuthith.E6.places.000251",
+  "why": "Amber atmosphere, glassy halls, humming lattices, dying stars; dry, bright, lit air",
+  "grounded": true
+ }
 }

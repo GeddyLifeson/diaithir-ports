@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey, rain-soaked world of drowned marsh-cities, basalt terraces and tide-bells, with dry rust-coloured ruins fading toward the desert edge."
+ "notes": "A grey, rain-soaked world of drowned marsh-cities, basalt terraces and tide-bells, with dry rust-coloured ruins fading toward the desert edge.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a9a9e",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.drunesteld.E6.places.000665",
+  "why": "Salt marsh fog, brine tang, drifting dust and tide-bell storms",
+  "grounded": true
+ }
 }

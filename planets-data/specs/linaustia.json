@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-torn mythic world of ash-skies and drowned cities, where frozen glaciers meet scorched badlands and tide-glass marshes."
+ "notes": "A storm-torn mythic world of ash-skies and drowned cities, where frozen glaciers meet scorched badlands and tide-glass marshes.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "white_ash",
+    "probability": 0.05
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.04
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a9bb0",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.linaustia.E5.events.000593",
+  "why": "Sundering wind crossing coast; frozen sky-realm; cold drifts",
+  "grounded": true
+ }
 }

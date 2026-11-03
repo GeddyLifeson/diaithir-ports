@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A violet-lit Arcane realm of glass-green lagoons, lantern-haunted groves and drowned cathedrals, with ash drifting over the mists."
+ "notes": "A violet-lit Arcane realm of glass-green lagoons, lantern-haunted groves and drowned cathedrals, with ash drifting over the mists.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#b7c9e2",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.ilyimeth.E6.places.000097",
+  "why": "Glasshouse gardens of mist and lanterns; soft, luminous, gentle air",
+  "grounded": true
+ }
 }

@@ -89,5 +89,17 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A quiet, ash-touched world of ringing stone and hidden hollows, where a steaming jungle gives way to glassy badlands and frozen plains under a pale, dim sky."
+ "notes": "A quiet, ash-touched world of ringing stone and hidden hollows, where a steaming jungle gives way to glassy badlands and frozen plains under a pale, dim sky.",
+ "atmo": {
+  "particles": [],
+  "fog": "#8a8f99",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "OU.osyuseth.E7.assay.003107",
+  "why": "Entries describe no weather or air; mild defaults chosen.",
+  "grounded": false
+ }
 }

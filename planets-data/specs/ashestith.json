@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A scorched ash-world of martial citadels, drowned glass cities and frozen steppes, its sky stained with fallen ash."
+ "notes": "A scorched ash-world of martial citadels, drowned glass cities and frozen steppes, its sky stained with fallen ash.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.04
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a6f5c",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MA.ashestith.E6.events.000492",
+  "why": "Ash-storms scoured the realm; ash-dunes, dying crimson giant.",
+  "grounded": true
+ }
 }

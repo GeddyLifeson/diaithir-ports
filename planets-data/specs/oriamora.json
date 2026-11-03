@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Oriamora's surface blends ash-dusted basalt savannas and glass badlands with lantern-lit wetlands and violet-skied cherry groves, under a sky tinged by the Arcane Realm's drifting fog and sundered wards."
+ "notes": "Oriamora's surface blends ash-dusted basalt savannas and glass badlands with lantern-lit wetlands and violet-skied cherry groves, under a sky tinged by the Arcane Realm's drifting fog and sundered wards.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#8a6a5a",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "AR.oriamora.E1.places.000056",
+  "why": "Basin of black glass with perpetual flame and sounding roots",
+  "grounded": true
+ }
 }

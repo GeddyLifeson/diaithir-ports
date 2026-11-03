@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Corentium is a storm-wracked, mythic realm of walled cities, drowned spires and shattered lands, rendered in ash-grey skies and cold, brooding greens."
+ "notes": "Corentium is a storm-wracked, mythic realm of walled cities, drowned spires and shattered lands, rendered in ash-grey skies and cold, brooding greens.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7a6a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.corentium.E4.places.000017",
+  "why": "Sunken glass-and-ash basin with stored pressure; ash and ominous hum",
+  "grounded": true
+ }
 }

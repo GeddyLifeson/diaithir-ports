@@ -119,5 +119,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A martial, ash-scoured world of fortified basalt terraces, sundered shards and ember-lakes, its cold highlands giving way to dry lowlands and a few sheltered groves."
+ "notes": "A martial, ash-scoured world of fortified basalt terraces, sundered shards and ember-lakes, its cold highlands giving way to dry lowlands and a few sheltered groves.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.06
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#c9d6e3",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.khairnar.E3.places.000043",
+  "why": "Frost soil and humming Weave winds suggest cold, quiet, spectral air",
+  "grounded": true
+ }
 }

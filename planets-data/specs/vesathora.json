@@ -109,5 +109,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Ash-hazed violet skies over a world of mourning groves, sundered badlands and frozen crystal peaks, with cherry and mushroom groves glowing like sanctuaries among the wreckage."
+ "notes": "Ash-hazed violet skies over a world of mourning groves, sundered badlands and frozen crystal peaks, with cherry and mushroom groves glowing like sanctuaries among the wreckage.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#8a8f99",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.vesathora.E4.events.000078",
+  "why": "Sundering tides and shard-storms over fractured seas; grey, storm-lit skies",
+  "grounded": true
+ }
 }

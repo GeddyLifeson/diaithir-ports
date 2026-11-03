@@ -109,5 +109,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-soiled, mythic world of ash-skies and drowned cities, its biomes drawn from the grey basalt, ochre plateaus, tidal flats and misty marshes named in the entries."
+ "notes": "A storm-soiled, mythic world of ash-skies and drowned cities, its biomes drawn from the grey basalt, ochre plateaus, tidal flats and misty marshes named in the entries.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "firefly",
+    "probability": 0.015
+   },
+   {
+    "type": "glow",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a8f99",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.45,
+  "precip_bias": "rain",
+  "storms": "stormy",
+  "why_entry": "MY.melauntus.E6.events.000430",
+  "why": "Storm-lord sky, squalls, tide-driven weather, sea-lanterns",
+  "grounded": true
+ }
 }

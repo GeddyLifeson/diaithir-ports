@@ -99,5 +99,30 @@
  "ocean_archetype": "warm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A martial world of ash, basalt and lava, where forges and war-engines have left scarred plains, sunken glass basins and fungal marshes beneath a boiling, cold-tinged sky."
+ "notes": "A martial world of ash, basalt and lava, where forges and war-engines have left scarred plains, sunken glass basins and fungal marshes beneath a boiling, cold-tinged sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "white_ash",
+    "probability": 0.05
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.04
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c8d4dc",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.drorkaigok.E6.places.000636",
+  "why": "Frost soil, ash-choked wastes, storm-lashed plains, glowing lanterns",
+  "grounded": true
+ }
 }

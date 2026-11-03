@@ -89,5 +89,26 @@
  "ocean_archetype": "frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A frost-bound northern realm of cold coasts and scattered peninsulas, with plains and taiga bordering a heated badland and swamp reaching toward a green-tinged horizon."
+ "notes": "A frost-bound northern realm of cold coasts and scattered peninsulas, with plains and taiga bordering a heated badland and swamp reaching toward a green-tinged horizon.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#c8d8e6",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.orintanum.E6.assay.000524",
+  "why": "Frost-obsessed hunter tracks crime lord; frost imagery",
+  "grounded": true
+ }
 }

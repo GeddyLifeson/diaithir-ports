@@ -109,5 +109,30 @@
  "ocean_archetype": "frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A frost-bound martial world whose cold northern ranges give way to sunlit river-cities and dry, ash-touched plains."
+ "notes": "A frost-bound martial world whose cold northern ranges give way to sunlit river-cities and dry, ash-touched plains.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9d8e4",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.crede.E1.assay.002378",
+  "why": "Frost soil and rain-giving rites suggest cold, wintry, storm-prone skies",
+  "grounded": true
+ }
 }

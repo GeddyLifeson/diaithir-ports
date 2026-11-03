@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dim ember-lit realm of ash skies and resonant stone, where bronze waters, reed canals and terraced grove-cities give way to cold black-glass peaks at the edge of the Ki world."
+ "notes": "A dim ember-lit realm of ash skies and resonant stone, where bronze waters, reed canals and terraced grove-cities give way to cold black-glass peaks at the edge of the Ki world.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "soul",
+    "probability": 0.03
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6a5a7a",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "KI.osutaala.E6.places.000088",
+  "why": "Sky-citadel shielded from view; hidden realm, dim mystical mood",
+  "grounded": false
+ }
 }

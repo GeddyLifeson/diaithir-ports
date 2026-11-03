@@ -109,5 +109,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Ashen-violet skies and lantern-lit arcane hues tie the biomes together, from frost-bound northern peaks and salt-glass shores to the dry, glass-black basins of the Sundering."
+ "notes": "Ashen-violet skies and lantern-lit arcane hues tie the biomes together, from frost-bound northern peaks and salt-glass shores to the dry, glass-black basins of the Sundering.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "end_rod",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.04
+   },
+   {
+    "type": "soul",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#9a7fc4",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "AR.elaelys.E6.places.001226",
+  "why": "Violet mists, hummed resonance, arcane storms, lantern-lit night.",
+  "grounded": false
+ }
 }

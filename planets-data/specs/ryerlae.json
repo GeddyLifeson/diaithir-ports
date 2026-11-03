@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A drowned arcane world of glass, mist and sunken archives, with ash-laden skies and luminous tides."
+ "notes": "A drowned arcane world of glass, mist and sunken archives, with ash-laden skies and luminous tides.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "soul",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.04
+   }
+  ],
+  "fog": "#8a7a8c",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.5,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "AR.ryerlae.E6.places.002274",
+  "why": "Basalt cliffs, sky perpetually bruised by ash, glowing sigils",
+  "grounded": true
+ }
 }

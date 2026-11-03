@@ -119,5 +119,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A violet-twilight world of silver rivers and ash-drifting wastelands, where frozen peaks and drowned swamps frame the scorched desert and badlands of the east."
+ "notes": "A violet-twilight world of silver rivers and ash-drifting wastelands, where frozen peaks and drowned swamps frame the scorched desert and badlands of the east.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "spore_blossom_air",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9d8b8",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.veneruamora.E2.assay.006207",
+  "why": "Open green meadow gathering place suggests mild, pleasant, blossoming air.",
+  "grounded": true
+ }
 }

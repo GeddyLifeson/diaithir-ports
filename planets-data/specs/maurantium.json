@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A stormy mythic world whose cold northern monolith, mired marshes, and sunlit deserts are stitched together by rain-swept grasslands and wind-carved waters."
+ "notes": "A stormy mythic world whose cold northern monolith, mired marshes, and sunlit deserts are stitched together by rain-swept grasslands and wind-carved waters.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "cherry_leaves",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#8a7f74",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.maurantium.E5.assay.010475",
+  "why": "Withered orange-stained marshland with wreckage and humming relics suggests ash and gloom",
+  "grounded": true
+ }
 }

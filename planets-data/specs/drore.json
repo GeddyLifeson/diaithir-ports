@@ -99,5 +99,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey, rain-soaked world of drowned cities, salt deserts and ash-grey reed basins, its dim violet-grey skies and quiet ruins shaped from the surviving Drore entries."
+ "notes": "A grey, rain-soaked world of drowned cities, salt deserts and ash-grey reed basins, its dim violet-grey skies and quiet ruins shaped from the surviving Drore entries.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "spore_blossom_air",
+    "probability": 0.03
+   },
+   {
+    "type": "ash",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a9a86",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.drore.E6.places.000516",
+  "why": "Tidal basin mist, reeds, tides, stilt-houses; grey, damp, murky air.",
+  "grounded": true
+ }
 }

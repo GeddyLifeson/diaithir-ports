@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A frost-bitten martial world whose sunken basalt cities hum with old resonance, its cold steel skies sheltering scorched badlands and root-haunted groves."
+ "notes": "A frost-bitten martial world whose sunken basalt cities hum with old resonance, its cold steel skies sheltering scorched badlands and root-haunted groves.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#c8d6e0",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.35,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.draktak.E6.places.000004",
+  "why": "Frost soil and iron-hot winds suggest snow, cold fog, and storms",
+  "grounded": true
+ }
 }

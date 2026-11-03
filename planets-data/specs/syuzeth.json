@@ -99,5 +99,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A scorched, ash-choked realm of glassfire ridges, dune seas, and fog-drowned coral valleys, ending in frozen glacial basins at the cold edge."
+ "notes": "A scorched, ash-choked realm of glassfire ridges, dune seas, and fog-drowned coral valleys, ending in frozen glacial basins at the cold edge.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#9fb7c9",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.9,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "ST.syuzeth.E7.assay.000655",
+  "why": "Remote unmapped star system, silent and unreachable; calm dark sky",
+  "grounded": false
+ }
 }

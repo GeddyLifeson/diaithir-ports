@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey-amber world of salt flats, drowned harbors and ash-dusted badlands, lit by a dim dusk and sheltered by smouldering skies."
+ "notes": "A grey-amber world of salt flats, drowned harbors and ash-dusted badlands, lit by a dim dusk and sheltered by smouldering skies.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a7f72",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.drurdon.E4.events.000629",
+  "why": "Sundering fault bled loose stone; ash-dusted sky fits",
+  "grounded": true
+ }
 }

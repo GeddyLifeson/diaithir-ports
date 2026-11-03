@@ -89,5 +89,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Ember-soil highlands of rain, lakes and warm mist give way to dune and volcanic-ember deserts, with frigid glass-ice peaks at the cold edge."
+ "notes": "Ember-soil highlands of rain, lakes and warm mist give way to dune and volcanic-ember deserts, with frigid glass-ice peaks at the cold edge.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#6b4a3a",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.ukaraeno.E3.assay.005628",
+  "why": "Storm winds, dry ember air, dim red haze, glowing sparks.",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "lukewarm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A sundered, ember-lit world of ash-drifted shard basins, glass cisterns and sealed vault-cities, its skies bruised violet over salt seas and luminous fungal deeps."
+ "notes": "A sundered, ember-lit world of ash-drifted shard basins, glass cisterns and sealed vault-cities, its skies bruised violet over salt seas and luminous fungal deeps.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a5a3c",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.5,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.tirakaluta.E6.events.000119",
+  "why": "Storms collide over drowned plains; sky splits burning.",
+  "grounded": true
+ }
 }

@@ -89,5 +89,30 @@
  "ocean_archetype": "frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A frost-bound Martial Realm of humming basalt terraces, walled fortress-towns and root-groves, rendered in cold grey-blue light with ash-tinted hot spots near the sundered shards."
+ "notes": "A frost-bound Martial Realm of humming basalt terraces, walled fortress-towns and root-groves, rendered in cold grey-blue light with ash-tinted hot spots near the sundered shards.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#c9d6e3",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.35,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.grimukougok.E1.places.000083",
+  "why": "Basalt valley humming with the Singing; frost soil suggests cold, snowy air.",
+  "grounded": true
+ }
 }

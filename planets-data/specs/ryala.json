@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A violet-lit arcane realm of glass deserts, crystal reefs and hovering sanctums, with a moon-tinged sky, drifting ash, and mist-touched marshes spanning cold peaks to hot basins."
+ "notes": "A violet-lit arcane realm of glass deserts, crystal reefs and hovering sanctums, with a moon-tinged sky, drifting ash, and mist-touched marshes spanning cold peaks to hot basins.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.07
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.05
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.04
+   }
+  ],
+  "fog": "#b9c8e6",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "AR.ryala.E6.places.004594",
+  "why": "Glacial sanctuary of blue spires, frost doors, luminous sea-mist",
+  "grounded": true
+ }
 }

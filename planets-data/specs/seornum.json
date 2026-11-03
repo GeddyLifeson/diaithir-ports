@@ -109,5 +109,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A hollow basalt world of humming terraces, temple braziers and slow river-ports, tiled from cold stony highlands through green groves and salt marsh to scorched tablelands."
+ "notes": "A hollow basalt world of humming terraces, temple braziers and slow river-ports, tiled from cold stony highlands through green groves and salt marsh to scorched tablelands.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a8076",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.seornum.E4.places.000069",
+  "why": "Scorched cliffs and braziers with a Fall-era ash-and-flame atmosphere",
+  "grounded": true
+ }
 }

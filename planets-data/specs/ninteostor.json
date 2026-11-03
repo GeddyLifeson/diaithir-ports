@@ -99,5 +99,30 @@
  "ocean_archetype": "warm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A mythic storm-world whose ash-tinged violet skies and tidal, mirror-shifted realms spread from lush sunlit orchards and salt marshes through scorched deserts and badlands to frozen peaks and a molten core-hollow."
+ "notes": "A mythic storm-world whose ash-tinged violet skies and tidal, mirror-shifted realms spread from lush sunlit orchards and salt marshes through scorched deserts and badlands to frozen peaks and a molten core-hollow.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b6160",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.ninteostor.E4.places.000369",
+  "why": "Storm-bells and scorched stone suggest ash-laden stormy air",
+  "grounded": true
+ }
 }

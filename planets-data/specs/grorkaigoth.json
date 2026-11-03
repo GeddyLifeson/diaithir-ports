@@ -99,5 +99,30 @@
  "ocean_archetype": "warm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A sunless ember-lit realm of basalt, ash, and singing stone, with marsh, badland, and thorn-forest terrain shaped by the Sundering and the Singing."
+ "notes": "A sunless ember-lit realm of basalt, ash, and singing stone, with marsh, badland, and thorn-forest terrain shaped by the Sundering and the Singing.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b5a52",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "KI.grorkaigoth.E6.places.000012",
+  "why": "Grey mist and bone-dust realm; spirits drift; dry, dim, subdued air.",
+  "grounded": true
+ }
 }

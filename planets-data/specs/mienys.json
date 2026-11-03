@@ -119,5 +119,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A mist-hung arcane world of humming roots, glass cisterns and sung valleys, sheltered groves and basalt courts, with hushed greys and violet light throughout."
+ "notes": "A mist-hung arcane world of humming roots, glass cisterns and sung valleys, sheltered groves and basalt courts, with hushed greys and violet light throughout.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   },
+   {
+    "type": "spore_blossom_air",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.04
+   }
+  ],
+  "fog": "#8fa3b8",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.mienys.E1.places.000094",
+  "why": "Humming hollow valley, ancient resonant stone, drifting silence and mist",
+  "grounded": true
+ }
 }

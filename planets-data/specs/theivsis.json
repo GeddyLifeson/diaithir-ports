@@ -79,5 +79,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "The planet is a scorched iron world of glass canyons, ember terraces and ash-choked basins, where the dying red light gives way to pale frozen plains and grey stony peaks."
+ "notes": "The planet is a scorched iron world of glass canyons, ember terraces and ash-choked basins, where the dying red light gives way to pale frozen plains and grey stony peaks.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.04
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7f78",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "ST.theivsis.E6.places.000140",
+  "why": "Cinder-glass reefs, dust-storms hardened into humming lattices, dim light.",
+  "grounded": true
+ }
 }

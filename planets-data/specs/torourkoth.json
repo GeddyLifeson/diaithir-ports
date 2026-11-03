@@ -119,5 +119,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A sunken, humming world of salt flats, cisterns and hollow spires where tended valleys and drowned marshes sit under a grey, watchful sky."
+ "notes": "A sunken, humming world of salt flats, cisterns and hollow spires where tended valleys and drowned marshes sit under a grey, watchful sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.25,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.torourkoth.E6.places.000014",
+  "why": "Salt-glass valley, drowned fog, lanterns against night, dry basins",
+  "grounded": true
+ }
 }

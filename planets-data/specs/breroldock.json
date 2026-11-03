@@ -119,5 +119,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey, rain-soaked world of drowned towns, salt flats, sealed bunkers and sunken ruins, with ochre and basalt tones from the Hollow soil."
+ "notes": "A grey, rain-soaked world of drowned towns, salt flats, sealed bunkers and sunken ruins, with ochre and basalt tones from the Hollow soil.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.012
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#7a6d62",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.35,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.breroldock.E6.places.000121",
+  "why": "Sinkhole walls hum at dusk; ochre strata, ash-choked fields, dry salt flats.",
+  "grounded": true
+ }
 }

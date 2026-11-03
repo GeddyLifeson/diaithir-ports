@@ -99,5 +99,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Thonudeld's surface tiles from frozen plateaus and windswept cliffs through salt marshes and drowned harbours to dry steppe and a warm reef coast, with the palette drawn from the cold stone, brine and rust in its place entries."
+ "notes": "Thonudeld's surface tiles from frozen plateaus and windswept cliffs through salt marshes and drowned harbours to dry steppe and a warm reef coast, with the palette drawn from the cold stone, brine and rust in its place entries.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#6b6258",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.thonudeld.E6.places.000927",
+  "why": "Basalt sea-stacks and salvage-ruin imagery suggest grim, hazy, storm-battered air",
+  "grounded": true
+ }
 }

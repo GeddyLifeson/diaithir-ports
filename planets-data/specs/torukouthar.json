@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A martial-realm world of frost-hued valleys, humming basalt, and ash-glass shrines, where the Singing, Seeding, and Sundering left scarred ridges, fortress-cities, and ashen skies."
+ "notes": "A martial-realm world of frost-hued valleys, humming basalt, and ash-glass shrines, where the Singing, Seeding, and Sundering left scarred ridges, fortress-cities, and ashen skies.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a9bb0",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.torukouthar.E1.places.000081",
+  "why": "Frost soil and cold, hushed valleys suit snowy, still air",
+  "grounded": false
+ }
 }

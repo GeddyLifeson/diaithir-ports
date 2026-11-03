@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-soaked, ash-touched realm of mythic peaks, drowned sanctuaries and luminous tide-meadows, rendered in cold silver skies and sea-blue waters."
+ "notes": "A storm-soaked, ash-touched realm of mythic peaks, drowned sanctuaries and luminous tide-meadows, rendered in cold silver skies and sea-blue waters.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.08
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b5a52",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.25,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.corialor.E4.places.000181",
+  "why": "Smouldering sky, basalt, ember-glass, Sundering-scarred air",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Venilleth's surface moves from luminous hill-courts and cherry groves through mirrored seas and misted swamps to cold, cloud-wrapped peaks, all lit by a pale arcane sky."
+ "notes": "Venilleth's surface moves from luminous hill-courts and cherry groves through mirrored seas and misted swamps to cold, cloud-wrapped peaks, all lit by a pale arcane sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.025
+   }
+  ],
+  "fog": "#c9d6e8",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.venilleth.E6.powers.000467",
+  "why": "Silver lens-spirit pierces mist and smoke in marshlands",
+  "grounded": true
+ }
 }

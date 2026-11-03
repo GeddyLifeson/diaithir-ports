@@ -99,5 +99,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Kelaneld's humming basalt terraces, silver-barked groves and walled river-towns sit under a dim, cloud-veiled sky that carries the faint resonance of the Singing."
+ "notes": "Kelaneld's humming basalt terraces, silver-barked groves and walled river-towns sit under a dim, cloud-veiled sky that carries the faint resonance of the Singing.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a7a6a",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.kelaneld.E4.events.000070",
+  "why": "Sky rupture, scorching heat across broken shards, Sundering",
+  "grounded": true
+ }
 }

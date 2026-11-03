@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A realm of black glass, singing stone and old fire, its terraces and wardstones tinted in muted violet, ash-grey and pale luminous green."
+ "notes": "A realm of black glass, singing stone and old fire, its terraces and wardstones tinted in muted violet, ash-grey and pale luminous green.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9d8c0",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "AR.eleniel.E1.places.000100",
+  "why": "Humming hanging valley air, sap-bearing groves, mild and still.",
+  "grounded": false
+ }
 }

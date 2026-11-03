@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey, damp Grounded realm where lantern-lit ports, bronze-stone valleys and drowned coasts sit under a low sky, with salt marsh and reef-cities along the shore and dry, weathered badlands inland."
+ "notes": "A grey, damp Grounded realm where lantern-lit ports, bronze-stone valleys and drowned coasts sit under a low sky, with salt marsh and reef-cities along the shore and dry, weathered badlands inland.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#7a7463",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.bronurneld.E6.places.000040",
+  "why": "Mire fog, storms, drowned cemeteries, lantern-lit ferry towns, haunted hollows",
+  "grounded": true
+ }
 }

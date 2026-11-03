@@ -109,5 +109,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Grey salt marshes, silent ridgelands and warm wet coasts are arranged so the terrain tiles from the cold Osyuzeiseth heights through the rooted Teliarnium basin to the humid Syushiazith shore."
+ "notes": "Grey salt marshes, silent ridgelands and warm wet coasts are arranged so the terrain tiles from the cold Osyuzeiseth heights through the rooted Teliarnium basin to the humid Syushiazith shore.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b6258",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.3,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.halardore.E4.places.000022",
+  "why": "Shard-dust and sundering scars; dry, dusty, ash-like haze",
+  "grounded": true
+ }
 }

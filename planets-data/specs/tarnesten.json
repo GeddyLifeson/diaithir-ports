@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A soot-dimmed martial world of ash-choked badlands, iron-grey peaks, and fortress-coast waters, with cold highlands and swamps at its edges."
+ "notes": "A soot-dimmed martial world of ash-choked badlands, iron-grey peaks, and fortress-coast waters, with cold highlands and swamps at its edges.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#c9d6e3",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.tarnesten.E6.places.000556",
+  "why": "Frost soil, wind-carved ridges, seasonal ridge exposure, cold ironwood, resonant wind",
+  "grounded": true
+ }
 }

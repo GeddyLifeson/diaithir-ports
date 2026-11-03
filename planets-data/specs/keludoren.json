@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A frost-soiled martial world of ash-grey skies and dueling cities, where snowfields give way to windswept basalt ridges and a dry, sun-scorched desert at the warm edge."
+ "notes": "A frost-soiled martial world of ash-grey skies and dueling cities, where snowfields give way to windswept basalt ridges and a dry, sun-scorched desert at the warm edge.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9d6e3",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.keludoren.E6.places.000186",
+  "why": "Frost soil and cliff-cold highland air suggest snowfall and bitter winds.",
+  "grounded": true
+ }
 }

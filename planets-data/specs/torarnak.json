@@ -109,5 +109,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A sunless, ash-choked underworld of basalt highlands, fungal hollows and glowing lava seas, where fortress-cities and iron-forges cling to grim, war-scarred terrain."
+ "notes": "A sunless, ash-choked underworld of basalt highlands, fungal hollows and glowing lava seas, where fortress-cities and iron-forges cling to grim, war-scarred terrain.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#c8dcea",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.torarnak.E6.places.000322",
+  "why": "Frontier highland with cold air breathing from sealed tunnels; frost soil",
+  "grounded": true
+ }
 }

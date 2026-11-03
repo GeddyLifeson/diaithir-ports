@@ -99,5 +99,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grounded, ash-laden world of dusty deserts, humming basalt ridges and drowned estuaries, its biomes drawn only from the surviving place entries."
+ "notes": "A grounded, ash-laden world of dusty deserts, humming basalt ridges and drowned estuaries, its biomes drawn only from the surviving place entries.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8f99",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.crestornen.E6.assay.001037",
+  "why": "Machine-brutes and warfare in a dim, ash-choked, hostile world",
+  "grounded": true
+ }
 }

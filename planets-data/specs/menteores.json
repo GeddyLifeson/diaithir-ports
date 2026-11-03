@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-ruled realm of drowned reservoirs, glass spires and ash-veiled skies, where frost-crystal hollows sit beside sunken swamps and dusty badlands beneath a violet heaven."
+ "notes": "A storm-ruled realm of drowned reservoirs, glass spires and ash-veiled skies, where frost-crystal hollows sit beside sunken swamps and dusty badlands beneath a violet heaven.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.menteores.E6.places.000022",
+  "why": "Ashbright dust veil, storms, lantern-glass, dim sky",
+  "grounded": true
+ }
 }

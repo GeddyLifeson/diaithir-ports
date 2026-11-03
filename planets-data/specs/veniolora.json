@@ -109,5 +109,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A humming arcane world of drifting shards and bell-stone valleys, where lilac skies, violet mists and resonant waters mark the lands shaped by the Sundering and the Singing."
+ "notes": "A humming arcane world of drifting shards and bell-stone valleys, where lilac skies, violet mists and resonant waters mark the lands shaped by the Sundering and the Singing.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "firefly",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#c9d8e8",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.veniolora.E1.places.000158",
+  "why": "Humming valley of standing stones; luminous, calm, mildly mystical air.",
+  "grounded": true
+ }
 }

@@ -89,5 +89,30 @@
  "ocean_archetype": "warm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Ember soil and the Ki realm's sunlit and tidal moods shape a world of ice fields and salt-glass shores, ember-lit highlands, and violet-storm marshes."
+ "notes": "Ember soil and the Ki realm's sunlit and tidal moods shape a world of ice fields and salt-glass shores, ember-lit highlands, and violet-storm marshes.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#7a5c4a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.kaluvamoma.E6.places.000672",
+  "why": "Low storm-cloud, salt flats, basalt pillars, ember soil",
+  "grounded": true
+ }
 }

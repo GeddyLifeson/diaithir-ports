@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A martial ash-veiled world of terraced fortress valleys, basalt reefs and glass-river gorges, shaped by the Singing and the Sundering."
+ "notes": "A martial ash-veiled world of terraced fortress valleys, basalt reefs and glass-river gorges, shaped by the Singing and the Sundering.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.04
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.08
+   }
+  ],
+  "fog": "#b8c7d6",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.drathouggun.E6.powers.000019",
+  "why": "Frost soil, ash marches and cold weather; snow suits the frozen grounds",
+  "grounded": true
+ }
 }

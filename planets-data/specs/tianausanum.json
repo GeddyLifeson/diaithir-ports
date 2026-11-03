@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dim ember-lit world of drowned bell-cities, glass archipelagos, and sunless hollows, with stone peaks, ash-veiled deserts, and tidal swamps sitting under a perpetually dusky sky."
+ "notes": "A dim ember-lit world of drowned bell-cities, glass archipelagos, and sunless hollows, with stone peaks, ash-veiled deserts, and tidal swamps sitting under a perpetually dusky sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#7a5a48",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.tianausanum.E6.places.000042",
+  "why": "Scorched dust-choked expanse, sky veiled since war, ground dim-glowing.",
+  "grounded": true
+ }
 }

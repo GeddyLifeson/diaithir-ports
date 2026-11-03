@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "The ashen, resonant skies of Vesizora shape a tiled surface of cold glass ridges, scorched badlands and humming forests, drawn from the Singing, Sundering and Holy Age entries."
+ "notes": "The ashen, resonant skies of Vesizora shape a tiled surface of cold glass ridges, scorched badlands and humming forests, drawn from the Singing, Sundering and Holy Age entries.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "ash",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#6b5a4e",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "ST.vesizora.E6.places.000018",
+  "why": "Ion squalls and charged plasma drifting through dead star system",
+  "grounded": true
+ }
 }

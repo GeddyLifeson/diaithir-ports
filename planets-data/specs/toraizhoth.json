@@ -109,5 +109,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A hollow, humming world of reed terraces, basalt ridges and walled hill-towns, its soils ringing with the echo of the Singing and its skies moody with rain."
+ "notes": "A hollow, humming world of reed terraces, basalt ridges and walled hill-towns, its soils ringing with the echo of the Singing and its skies moody with rain.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#6b5a4a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.toraizhoth.E5.places.000241",
+  "why": "Walled town under siege, scorched ruins, dry hollow soil",
+  "grounded": true
+ }
 }

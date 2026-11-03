@@ -99,5 +99,30 @@
  "ocean_archetype": "warm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A volcanic, ember-lit world of dusky skies and ash-fall, with arid badlands and deserts giving way to humid coasts and wooded highlands."
+ "notes": "A volcanic, ember-lit world of dusky skies and ash-fall, with arid badlands and deserts giving way to humid coasts and wooded highlands.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#8a4a2a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.brurnadeld.E6.assay.003934",
+  "why": "Blazing falling-star strikes and fiery heat gauges suggest scorched, ember-choked skies.",
+  "grounded": true
+ }
 }

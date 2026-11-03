@@ -99,5 +99,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Seresum's surface tiles from Cintenes' sunlit forests, sands, frozen reaches and reed jungles to Orentastes' silver groves, Seornelor's dunes, Viarasia's pale basalt ridges and Nilliastum's frosted sky-island, with its sunken realms left for underground generation."
+ "notes": "Seresum's surface tiles from Cintenes' sunlit forests, sands, frozen reaches and reed jungles to Orentastes' silver groves, Seornelor's dunes, Viarasia's pale basalt ridges and Nilliastum's frosted sky-island, with its sunken realms left for underground generation.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   },
+   {
+    "type": "ash",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#b8a88a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.seresum.E6.assay.003166",
+  "why": "Arid sand transforms surface; dusty storm-tinged dry haze.",
+  "grounded": true
+ }
 }

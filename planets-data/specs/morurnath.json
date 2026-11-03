@@ -89,5 +89,17 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey-violet ash-stained realm of hollow valleys, drowned cities and wind-scoured highlands, lit by cold lanterns and drifting ash."
+ "notes": "A grey-violet ash-stained realm of hollow valleys, drowned cities and wind-scoured highlands, lit by cold lanterns and drifting ash.",
+ "atmo": {
+  "particles": [],
+  "fog": "#8a8f96",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.3,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.morurnath.E6.places.003317",
+  "why": "Grey shores and wind-scoured ledges suggest a dry, clear, breezy sky.",
+  "grounded": true
+ }
 }

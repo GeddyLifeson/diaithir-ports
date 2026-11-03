@@ -99,5 +99,30 @@
  "ocean_archetype": "lukewarm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dust-choked, ash-skied world of scorched basalt, sun-baked badlands and sludge-fed marshes, with cold ash-wastes at the edges where the thin, breathless air never warms."
+ "notes": "A dust-choked, ash-skied world of scorched basalt, sun-baked badlands and sludge-fed marshes, with cold ash-wastes at the edges where the thin, breathless air never warms.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "white_ash",
+    "probability": 0.035
+   },
+   {
+    "type": "cherry_leaves",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a9a9e",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.5,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.tarnedonath.E6.places.000095",
+  "why": "Ash-scarred plains under storm-laden sky, mixed weather with glowing sparks",
+  "grounded": true
+ }
 }

@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A cold, ash-laden world of frozen peaks and dusky badlands, with damp marsh pockets where moisture corrodes the mechanical servants that walk its wetlands."
+ "notes": "A cold, ash-laden world of frozen peaks and dusky badlands, with damp marsh pockets where moisture corrodes the mechanical servants that walk its wetlands.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#2a3550",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "ST.oseivsizith.E1.places.000504",
+  "why": "Glassy resonant basin hums; luminous, quiet, mostly dry skies.",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "warm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Ash-dark, ember-lit valleys and basalt terraces ring a glowing lava sea, with rare rain falling on the sheltered groves and meadows of the Weave."
+ "notes": "Ash-dark, ember-lit valleys and basalt terraces ring a glowing lava sea, with rare rain falling on the sheltered groves and meadows of the Weave.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.08
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#c9d8e6",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.draggouzhok.E3.places.000079",
+  "why": "Frost soil and landfall-shattered ridges suit snowfall and cold haze",
+  "grounded": true
+ }
 }

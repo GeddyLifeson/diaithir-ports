@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dim, ash-grey martial world of scorched badlands, glassy deserts and drowned reefs, lit by cold skies and sheltered by frost-bitten peaks."
+ "notes": "A dim, ash-grey martial world of scorched badlands, glassy deserts and drowned reefs, lit by cold skies and sheltered by frost-bitten peaks.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c4d4e0",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.vorairnok.E6.places.000099",
+  "why": "Frozen black glacier ridge; wind carries voices; snow dominates.",
+  "grounded": true
+ }
 }

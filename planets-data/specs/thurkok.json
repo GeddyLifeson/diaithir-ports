@@ -89,5 +89,30 @@
  "ocean_archetype": "lukewarm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Thurkok's grounded wastes of salt flats, ash and rust are rendered in dusty ochres and greys, with sparse green pockets where water is hidden."
+ "notes": "Thurkok's grounded wastes of salt flats, ash and rust are rendered in dusty ochres and greys, with sparse green pockets where water is hidden.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.05
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7f72",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.1,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.thurkok.E6.events.000232",
+  "why": "Ashen Noon scoured the basins; ash-dunes, salt flats, sun-scorched wastes.",
+  "grounded": true
+ }
 }

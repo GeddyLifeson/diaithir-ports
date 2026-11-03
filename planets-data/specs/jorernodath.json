@@ -99,5 +99,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grounded world of terraced valleys, basalt shrines and humming roots, with dry badlands and savanna giving way to wet groves, swamps and cold pine hills under a steady rain."
+ "notes": "A grounded world of terraced valleys, basalt shrines and humming roots, with dry badlands and savanna giving way to wet groves, swamps and cold pine hills under a steady rain.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#6b5e52",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.jorernodath.E1.places.000163",
+  "why": "Hollow valley, humming roots, warm evening pools, flame-era ash",
+  "grounded": true
+ }
 }

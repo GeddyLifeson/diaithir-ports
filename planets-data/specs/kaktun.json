@@ -99,5 +99,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Ash-drifted terraces and scoured salt flats under a dim sky, with silver-threaded valleys and quiet fields giving way to bone-coloured ruins and barren highlands."
+ "notes": "Ash-drifted terraces and scoured salt flats under a dim sky, with silver-threaded valleys and quiet fields giving way to bone-coloured ruins and barren highlands.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a8073",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.kaktun.E6.places.000015",
+  "why": "Salt flats, drifting ash and quiet storms wearing timbers",
+  "grounded": true
+ }
 }

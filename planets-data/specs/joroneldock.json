@@ -109,5 +109,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey, rain-soaked Grounded realm where jungle and swamp give way to dry desert and cold northern taiga, with the dim wet light of the Hollow soil tinting every surface."
+ "notes": "A grey, rain-soaked Grounded realm where jungle and swamp give way to dry desert and cold northern taiga, with the dim wet light of the Hollow soil tinting every surface.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "cherry_leaves",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7f72",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.joroneldock.E6.places.000220",
+  "why": "Scorched basin under occupation, sun-baked fields, ash-hazed skies, storms.",
+  "grounded": true
+ }
 }

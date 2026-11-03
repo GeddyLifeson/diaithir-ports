@@ -42,3 +42,6 @@ type="optional"
 versionRange="[0,)"
 ordering="AFTER"
 side="BOTH"
+
+[[mixins]]
+config="diaithir_planets.mixins.json"

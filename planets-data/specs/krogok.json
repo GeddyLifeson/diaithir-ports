@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A scorched world of ash-storms, basalt highlands, salt flats and sheltered groves, its seas replaced by molten lava."
+ "notes": "A scorched world of ash-storms, basalt highlands, salt flats and sheltered groves, its seas replaced by molten lava.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b4a3a",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.krogok.E4.places.000149",
+  "why": "Basalt highland, humming crust, ember-scarred ridges, dry sundering air.",
+  "grounded": true
+ }
 }

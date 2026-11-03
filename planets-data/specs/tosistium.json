@@ -89,5 +89,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Tosistium's surface moves from the wet, humming root-groves and slow green lakes of the Seeding and Singing toward the dry, basalt-terraced badlands and walled market plains of the Sundering, with mild rain falling over the hollow soil."
+ "notes": "Tosistium's surface moves from the wet, humming root-groves and slow green lakes of the Seeding and Singing toward the dry, basalt-terraced badlands and walled market plains of the Sundering, with mild rain falling over the hollow soil.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a9a9e",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.tosistium.E7.items.000024",
+  "why": "Lantern flames and hanging air, quiet calm, mild",
+  "grounded": false
+ }
 }

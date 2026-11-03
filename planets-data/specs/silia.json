@@ -109,5 +109,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A mythic realm of marsh-cities, glassy ash highlands and tide-chained black seas, where the land itself hums with memory and possible futures bloom in orchard groves."
+ "notes": "A mythic realm of marsh-cities, glassy ash highlands and tide-chained black seas, where the land itself hums with memory and possible futures bloom in orchard groves.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#8a7f78",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.3,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.silia.E6.places.000035",
+  "why": "Ash rivers, drowned seas and storm-tossed reefs suggest ash-laden stormy air.",
+  "grounded": true
+ }
 }

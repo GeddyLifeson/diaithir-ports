@@ -109,5 +109,17 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-soaked, ash-tinged world of drowned cities, sunless seas and restless dead, where dim mystical light tints every biome."
+ "notes": "A storm-soaked, ash-tinged world of drowned cities, sunless seas and restless dead, where dim mystical light tints every biome.",
+ "atmo": {
+  "particles": [],
+  "fog": "#8a9199",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.tasianium.E3.assay.014255",
+  "why": "Storm-sky spirits command weather; gray stormy dry air fits",
+  "grounded": true
+ }
 }

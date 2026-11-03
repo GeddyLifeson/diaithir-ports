@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Ash-grey skies and drowned terraces over a basin of sunken cities, deserts and marsh, with a few frost-bitten peaks and orchard valleys."
+ "notes": "Ash-grey skies and drowned terraces over a basin of sunken cities, deserts and marsh, with a few frost-bitten peaks and orchard valleys.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b6258",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.thudarneld.E6.events.021563",
+  "why": "Ash-fields and ash-storms dominate; dust-laden dry air, buried stormy skies",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Breraston's frozen, martial realm tiles from cold windswept peaks and snowfields through lush meadows and forests to arid plains, a shadowed desert settlement, and a murky swamp."
+ "notes": "Breraston's frozen, martial realm tiles from cold windswept peaks and snowfields through lush meadows and forests to arid plains, a shadowed desert settlement, and a murky swamp.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.08
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9d8e6",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.breraston.E2.assay.001170",
+  "why": "Frozen tract at the pale frost edge; soil is Frost.",
+  "grounded": true
+ }
 }

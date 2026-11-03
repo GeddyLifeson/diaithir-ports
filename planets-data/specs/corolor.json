@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Corolor is a stormy, mythic world of misty grasslands, drowned glass cities, sun-bleached desert basins, and frost-bound highlands, where the sea and sky glow with silver and indigo light."
+ "notes": "Corolor is a stormy, mythic world of misty grasslands, drowned glass cities, sun-bleached desert basins, and frost-bound highlands, where the sea and sky glow with silver and indigo light.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#8a7a6e",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.corolor.E4.assay.002526",
+  "why": "Unending rain and lightning, skies locked in tempest for generations.",
+  "grounded": true
+ }
 }

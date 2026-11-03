@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A violet-lit arcane world of drowned cities, luminous moss and singing glass, where ash-touched skies drift above fog-bound valleys, desert vaults and frozen calderas."
+ "notes": "A violet-lit arcane world of drowned cities, luminous moss and singing glass, where ash-touched skies drift above fog-bound valleys, desert vaults and frozen calderas.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#b9c9e8",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "AR.ryellae.E6.powers.000774",
+  "why": "Restorative breath and silvery lattices suggest a calm, luminous, mild sky",
+  "grounded": false
+ }
 }

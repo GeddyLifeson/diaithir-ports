@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Ash-stained grey skies and salt-marsh, desert and frozen-highland biomes echo the grounded, mournful, rust-and-tallow mood of Tarnurock's entries."
+ "notes": "Ash-stained grey skies and salt-marsh, desert and frozen-highland biomes echo the grounded, mournful, rust-and-tallow mood of Tarnurock's entries.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.1,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.tarnurock.E6.places.000132",
+  "why": "Cinder-choked hollow, ash-lakes, wandering dead, dust storms.",
+  "grounded": true
+ }
 }

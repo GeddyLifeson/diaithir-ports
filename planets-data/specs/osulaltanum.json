@@ -119,5 +119,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A cinder-choked world of ash winds, ember-lit badlands and smouldering swamps drawn from the Ki realm's sunken forges, dead cities and ash-grey pillars."
+ "notes": "A cinder-choked world of ash winds, ember-lit badlands and smouldering swamps drawn from the Ki realm's sunken forges, dead cities and ash-grey pillars.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a4a2a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.osulaltanum.E6.powers.000793",
+  "why": "Drifting ember-silt and cold ash sealing fractured horizons",
+  "grounded": true
+ }
 }

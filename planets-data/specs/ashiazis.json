@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dusky violet sky over a basalt-and-ember world where ash drifts from cooling stone, the crystalline spires and ion-lit dust of Ashiazis tinting its meadows, badlands and lava seas in muted, luminous hues."
+ "notes": "A dusky violet sky over a basalt-and-ember world where ash drifts from cooling stone, the crystalline spires and ion-lit dust of Ashiazis tinting its meadows, badlands and lava seas in muted, luminous hues.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.85,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "ST.ashiazis.E2.places.000273",
+  "why": "Ash-moon courts beneath eternal flame and hanging lamps",
+  "grounded": true
+ }
 }

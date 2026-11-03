@@ -99,5 +99,30 @@
  "ocean_archetype": "frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A frost-bitten Martial realm of scarred battlefields and ice peaks, softened by warm coastal and jungle pockets where the machine-war left its ruins."
+ "notes": "A frost-bitten Martial realm of scarred battlefields and ice peaks, softened by warm coastal and jungle pockets where the machine-war left its ruins.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.012
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.006
+   }
+  ],
+  "fog": "#8a8f99",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.joradernath.E3.places.000316",
+  "why": "Frost soil, ancient hearth, fuelless fire, cold basalt shelves",
+  "grounded": true
+ }
 }

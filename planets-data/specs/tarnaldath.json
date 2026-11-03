@@ -119,5 +119,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dim, ash-tinted realm of stellar dust where scorched deserts and badlands give way to frozen peaks, dark woods and violet seas beneath a lantern-lit sky."
+ "notes": "A dim, ash-tinted realm of stellar dust where scorched deserts and badlands give way to frozen peaks, dark woods and violet seas beneath a lantern-lit sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.07
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.05
+   },
+   {
+    "type": "soul",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a9bb0",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "ST.tarnaldath.E6.places.002189",
+  "why": "Living light and sunlit gardens suggest a calm, luminous, dry sky.",
+  "grounded": false
+ }
 }

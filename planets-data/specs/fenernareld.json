@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A soot-dimmed world of drowned cities, ash-choked skies, and basalt ridges where grounded survivors guard their tide-gates and listen to the humming stone."
+ "notes": "A soot-dimmed world of drowned cities, ash-choked skies, and basalt ridges where grounded survivors guard their tide-gates and listen to the humming stone.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#6b6258",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.fenernareld.E6.places.001225",
+  "why": "Silent ash field where earth gapes; lantern-glow and dread",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Torugun's surface cycles from scorched glass deserts and ash-veined badlands through jungle and swamp to frost-bound glacial peaks, under a perpetually ash-veiled sky over a lava sea."
+ "notes": "Torugun's surface cycles from scorched glass deserts and ash-veined badlands through jungle and swamp to frost-bound glacial peaks, under a perpetually ash-veiled sky over a lava sea.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#c9dbe8",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.torugun.E6.places.000119",
+  "why": "Frost soil and icy highlands suggest snowfall and cold, dense fog.",
+  "grounded": true
+ }
 }

@@ -99,5 +99,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Crare's surface runs from frozen tundra and salt-dry desert to swamp fen, grove valleys, and mushroom-lit hollows, reflecting its sealed halls, hum-stones, and ash-hazed ridges."
+ "notes": "Crare's surface runs from frozen tundra and salt-dry desert to swamp fen, grove valleys, and mushroom-lit hollows, reflecting its sealed halls, hum-stones, and ash-hazed ridges.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "white_ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#6b5a48",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.1,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.crare.E6.places.000119",
+  "why": "Fenornar: sky hazed by volcanic forge ash, arid highlands",
+  "grounded": true
+ }
 }

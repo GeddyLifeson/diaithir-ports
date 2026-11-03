@@ -109,5 +109,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A temperate-to-hot terraced world of root-held valleys, singing stone, and storm-scarred ruins, with cold ridges in the north and scorched mesa sands in the south."
+ "notes": "A temperate-to-hot terraced world of root-held valleys, singing stone, and storm-scarred ruins, with cold ridges in the north and scorched mesa sands in the south.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7f6e",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.5,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.kelolden.E1.places.000069",
+  "why": "Humming basalt valleys, resin lamps, dry stone terraces, quiet air",
+  "grounded": true
+ }
 }

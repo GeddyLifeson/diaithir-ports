@@ -109,5 +109,30 @@
  "ocean_archetype": "deep_frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "Orestanum's Mythic surface pairs sounding basalt and glass terraces with frozen tidal shores, their ash-laden winds and violet skies echoing the Sundering and the drowned spirits below."
+ "notes": "Orestanum's Mythic surface pairs sounding basalt and glass terraces with frozen tidal shores, their ash-laden winds and violet skies echoing the Sundering and the drowned spirits below.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#3a4a6b",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.orestanum.E6.places.000109",
+  "why": "Stormkeeper's peaks and wind-spirits suggest stormy, spirit-lit mixed weather",
+  "grounded": true
+ }
 }

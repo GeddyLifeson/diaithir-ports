@@ -98,5 +98,26 @@
  ],
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
- "river_archetype": "river"
+ "river_archetype": "river",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.15,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.listanum.E6.assay.000186",
+  "why": "Radiation and fleeing civilians suggest smoky, ashen, hazy skies",
+  "grounded": true
+ }
 }

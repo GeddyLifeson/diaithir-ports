@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Sallus blends misty drowned coasts, ember-lit basalt, and grey underworld groves under a storm-gray sky, with ash weather drifting over its mythic plains."
+ "notes": "Sallus blends misty drowned coasts, ember-lit basalt, and grey underworld groves under a storm-gray sky, with ash weather drifting over its mythic plains.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#6b5a52",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.sallus.E6.events.000270",
+  "why": "Sacrificial tempest over strait, ember-lit sky, ash, storms",
+  "grounded": true
+ }
 }

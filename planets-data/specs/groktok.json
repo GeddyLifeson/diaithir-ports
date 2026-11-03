@@ -89,5 +89,26 @@
  "ocean_archetype": "deep_frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "Frost-soil realm of ash-grey skies, scarred cliffs and drowned moorland, tiled from the Groktok entries."
+ "notes": "Frost-soil realm of ash-grey skies, scarred cliffs and drowned moorland, tiled from the Groktok entries.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b5e58",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MA.groktok.E6.places.001576",
+  "why": "Frost soil, but entries describe acidic storms, ash-plains, forge smoke, dark skies",
+  "grounded": true
+ }
 }

@@ -99,5 +99,22 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey-ashen Hollow world where humming stone, spore-light and sunless warrens give the surface a muted, rain-and-ash mood under heavy overcast."
+ "notes": "A grey-ashen Hollow world where humming stone, spore-light and sunless warrens give the surface a muted, rain-and-ash mood under heavy overcast.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   }
+  ],
+  "fog": "#6b6258",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.1,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.graikurn.E6.places.000008",
+  "why": "Smokestacks grind through clouds; forge-district soot and ash-laden air",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey-blue, hushed grounded world of humming stone, scoured basins, and walled terraces lit by lamps, with calm coasts under a pale sky."
+ "notes": "A grey-blue, hushed grounded world of humming stone, scoured basins, and walled terraces lit by lamps, with calm coasts under a pale sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.jorernaston.E6.powers.000015",
+  "why": "Storm-bound gales and coiled thunder dominate; dry, ashen, dusky air",
+  "grounded": true
+ }
 }

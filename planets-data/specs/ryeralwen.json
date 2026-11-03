@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A humming, silver-violet world of resonant valleys, glass-black ridges and walled harbors, with ash drifting over the dry dunes and sorrowful hollows."
+ "notes": "A humming, silver-violet world of resonant valleys, glass-black ridges and walled harbors, with ash drifting over the dry dunes and sorrowful hollows.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.07
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.05
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#a9c4d8",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "AR.ryeralwen.E6.places.000090",
+  "why": "Silver dusk, humming glass, stored starlight, lantern light, quiet air",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Khogar's Martial Realm is a land of walled cities, sieges, and silver-humming roots, rendered here in cold stone light, ash-tinged fog, and the lingering glow of ancient wards."
+ "notes": "Khogar's Martial Realm is a land of walled cities, sieges, and silver-humming roots, rendered here in cold stone light, ash-tinged fog, and the lingering glow of ancient wards.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a8f99",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.khogar.E3.places.000033",
+  "why": "Frost soil, sleeping wards, humming stone, quiet mesa atmosphere",
+  "grounded": true
+ }
 }

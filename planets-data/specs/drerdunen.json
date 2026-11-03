@@ -99,5 +99,22 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Iron-soiled Drerdunen is a stellar realm of ash-hung plains, rust-red badlands, and cold grey peaks, with its quiet coasts and mushroom-choked valleys drifting between sheltered warmth and bitter frost."
+ "notes": "Iron-soiled Drerdunen is a stellar realm of ash-hung plains, rust-red badlands, and cold grey peaks, with its quiet coasts and mushroom-choked valleys drifting between sheltered warmth and bitter frost.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#8a8d91",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.3,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "ST.drerdunen.E5.assay.003919",
+  "why": "Stale workshop air and machinery smoke suggest faint ash drifting, dry and calm.",
+  "grounded": true
+ }
 }

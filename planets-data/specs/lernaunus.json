@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "Storm-soiled Lernaunus mixes frozen Saltspire highlands, silver mist valleys, basalt sanctuaries and ash-grey moors across a cold-to-hot range, with rain-heavy wet lowlands and drifting dry basins."
+ "notes": "Storm-soiled Lernaunus mixes frozen Saltspire highlands, silver mist valleys, basalt sanctuaries and ash-grey moors across a cold-to-hot range, with rain-heavy wet lowlands and drifting dry basins.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b5e52",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.lernaunus.E5.events.000072",
+  "why": "Molten ash rains and storm-wracked moors dominate the planet's air.",
+  "grounded": true
+ }
 }

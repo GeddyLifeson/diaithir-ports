@@ -99,5 +99,26 @@
  "ocean_archetype": "warm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Sestia's surface blends ember-lit basalt and glass-black badlands with sun-scorched savanna, drowned-mist swamps and sea-glass coasts, all under an ash-tinged sky of slow-turning lantern light."
+ "notes": "Sestia's surface blends ember-lit basalt and glass-black badlands with sun-scorched savanna, drowned-mist swamps and sea-glass coasts, all under an ash-tinged sky of slow-turning lantern light.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a8077",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.sestia.E6.events.000400",
+  "why": "Volcanic ember and ash clashes with storms over ash-choked coasts",
+  "grounded": true
+ }
 }

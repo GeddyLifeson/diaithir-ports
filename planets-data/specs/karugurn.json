@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey, rain-soaked world of drowned valleys, frozen spires, and rust-red wastes, lit by a dim sky over ruined terraced cities."
+ "notes": "A grey, rain-soaked world of drowned valleys, frozen spires, and rust-red wastes, lit by a dim sky over ruined terraced cities.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.012
+   },
+   {
+    "type": "glow",
+    "probability": 0.008
+   }
+  ],
+  "fog": "#3a2f4a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.25,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.karugurn.E6.assay.000599",
+  "why": "Violet fog darkens vision; hollow, sealed, heavy air.",
+  "grounded": true
+ }
 }

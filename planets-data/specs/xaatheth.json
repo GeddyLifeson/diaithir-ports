@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A pale, humid, mist-wrapped world of ash-grey stone, hushed meadows and brackish seas, its biomes drawn from the sparse entries on the surface of Xaatheth."
+ "notes": "A pale, humid, mist-wrapped world of ash-grey stone, hushed meadows and brackish seas, its biomes drawn from the sparse entries on the surface of Xaatheth.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a9aa8",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "OU.xaatheth.E5.assay.001986",
+  "why": "Reddish downpour and smoke-blinding fog suit a stormy, oppressive sky.",
+  "grounded": true
+ }
 }

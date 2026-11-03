@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-soaked mythic realm of sunken cities, violet mists and basalt terraces, with lavender skies and humming stone bridging its swamps, jungles, deserts and icy highlands."
+ "notes": "A storm-soaked mythic realm of sunken cities, violet mists and basalt terraces, with lavender skies and humming stone bridging its swamps, jungles, deserts and icy highlands.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.25,
+  "precip_bias": "rain",
+  "storms": "stormy",
+  "why_entry": "MY.reoria.E6.events.000386",
+  "why": "Sky-wide cinder deluge and rain-sovereignty ending; soil Storm",
+  "grounded": true
+ }
 }

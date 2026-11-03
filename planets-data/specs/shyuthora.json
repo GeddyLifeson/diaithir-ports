@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A dim, ash-dusted world of frozen canyons and scorched basins, where salt-pale deserts meet murky green swamps under a steel-blue sky."
+ "notes": "A dim, ash-dusted world of frozen canyons and scorched basins, where salt-pale deserts meet murky green swamps under a steel-blue sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "soul",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8076",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.35,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "ST.shyuthora.E4.places.001259",
+  "why": "Ash-scarred basalt moon, burned lattices, dim scorched sky",
+  "grounded": true
+ }
 }

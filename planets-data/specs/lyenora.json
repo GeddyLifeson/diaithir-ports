@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dreaming, arcane world of verdant woods, stony highlands, and sun-scorched wastes bound by ridges and rivers of enchantment."
+ "notes": "A dreaming, arcane world of verdant woods, stony highlands, and sun-scorched wastes bound by ridges and rivers of enchantment.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a95a6",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.lyenora.E3.assay.001224",
+  "why": "Frozen age settles after catastrophe; cold, dim, wintry mood.",
+  "grounded": true
+ }
 }

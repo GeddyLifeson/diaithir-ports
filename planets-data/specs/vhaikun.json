@@ -99,5 +99,30 @@
  "ocean_archetype": "frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A frost-bitten martial realm of frozen moons, sunken fortresses and scorched rifts, its mood shifting from bleak snowfields to dark, humid woodland and ash-dry badlands."
+ "notes": "A frost-bitten martial realm of frozen moons, sunken fortresses and scorched rifts, its mood shifting from bleak snowfields to dark, humid woodland and ash-dry badlands.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8aa3b8",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.35,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.vhaikun.E3.assay.001199",
+  "why": "Frozen ice basin with silent, bowl-shaped frozen floor",
+  "grounded": true
+ }
 }

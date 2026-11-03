@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-soil world of rose-lit meadows, cherry groves, luminous mist and glass-blue seas, with scorched ember badlands and cold jagged peaks at its edges."
+ "notes": "A storm-soil world of rose-lit meadows, cherry groves, luminous mist and glass-blue seas, with scorched ember badlands and cold jagged peaks at its edges.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#c9d6e8",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.9,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "MY.telones.E6.places.000079",
+  "why": "Luminous mist and bright sky-gates suggest airy, calm, starlit atmosphere",
+  "grounded": true
+ }
 }

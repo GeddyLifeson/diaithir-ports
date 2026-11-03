@@ -119,5 +119,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A violet, ember-lit world of drowned citadels, glowing hearths and singing groves, its skies streaked with drifting ash over a tidal sea that seems to remember every oath."
+ "notes": "A violet, ember-lit world of drowned citadels, glowing hearths and singing groves, its skies streaked with drifting ash over a tidal sea that seems to remember every oath.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#2a2238",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.3,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "AR.miimeth.E6.powers.000475",
+  "why": "Shadow spheres and unlight blooms suggest a dim, dry, haunted atmosphere",
+  "grounded": true
+ }
 }

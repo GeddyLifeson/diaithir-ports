@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Venaemeth's surface is a patchwork of arcane frost-lands, ash-scoured basins, drowned mist-marshes and silver-misted meadows under a violet, ash-laden sky."
+ "notes": "Venaemeth's surface is a patchwork of arcane frost-lands, ash-scoured basins, drowned mist-marshes and silver-misted meadows under a violet, ash-laden sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.04
+   }
+  ],
+  "fog": "#a8c8e0",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.venaemeth.E6.places.000050",
+  "why": "Frozen sanctum and glass isles suggest bright, cold, luminous air",
+  "grounded": true
+ }
 }

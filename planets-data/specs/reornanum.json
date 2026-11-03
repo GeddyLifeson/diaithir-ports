@@ -109,5 +109,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Glass-, ice- and ember-themed mythic terrain echoes the entries' sunken basins, frozen wastes, and volcanic spires, with ash fall and tide-hum tones."
+ "notes": "Glass-, ice- and ember-themed mythic terrain echoes the entries' sunken basins, frozen wastes, and volcanic spires, with ash fall and tide-hum tones.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#6b5a4e",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.reornanum.E6.places.001552",
+  "why": "Storm-soil world of ash, grim tides and sealed glass vaults.",
+  "grounded": true
+ }
 }

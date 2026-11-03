@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A martial, ash-choked world of sunken fortresses and iron citadels, its scorched deserts and frost-scoured northern steppe rising into bronze-lit skies."
+ "notes": "A martial, ash-choked world of sunken fortresses and iron citadels, its scorched deserts and frost-scoured northern steppe rising into bronze-lit skies.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#c8dcea",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.vhoggaktak.E6.places.000008",
+  "why": "Frost-scoured northern steppe with windswept iron citadels and frost",
+  "grounded": true
+ }
 }

@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A grey-ashen hollow realm of basalt shelves, terraced grove-cities and humming roots, where smouldering highlands and dim, dreamlike hush give way to warm plains and wet, mournful swamps."
+ "notes": "A grey-ashen hollow realm of basalt shelves, terraced grove-cities and humming roots, where smouldering highlands and dim, dreamlike hush give way to warm plains and wet, mournful swamps.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#3a2f4a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.morarneld.E1.places.000096",
+  "why": "Hollow soil, low hum, murk, dark spirit-stained stone",
+  "grounded": true
+ }
 }

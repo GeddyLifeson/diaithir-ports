@@ -89,5 +89,30 @@
  "ocean_archetype": "frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A frost-bound martial realm of sunken vaults, iron steppes and drowned halls, shaded in cold blues and bronze."
+ "notes": "A frost-bound martial realm of sunken vaults, iron steppes and drowned halls, shaded in cold blues and bronze.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.012
+   },
+   {
+    "type": "soul",
+    "probability": 0.008
+   }
+  ],
+  "fog": "#8a8f9a",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.kraizhoth.E6.powers.000787",
+  "why": "Frost-soil world; cold ash and grave-spirit air fit martial ash-fields",
+  "grounded": true
+ }
 }

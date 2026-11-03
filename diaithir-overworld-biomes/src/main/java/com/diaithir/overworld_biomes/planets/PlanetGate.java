@@ -97,6 +97,14 @@ public final class PlanetGate {
         return true;
     }
 
+    /** Called before a player's saved position is resolved: loads the planet they were last in (if any). */
+    public static void preloadFor(MinecraftServer s, java.util.Optional<net.minecraft.nbt.CompoundTag> saved) {
+        saved.flatMap(t -> t.getString("Dimension")).ifPresent(dim -> {
+            Identifier id = Identifier.tryParse(dim);
+            if (id != null && id.getNamespace().equals(NS)) load(s, id.getPath());
+        });
+    }
+
     public static int live(MinecraftServer s) {
         return (int) s.forgeGetWorldMap().keySet().stream().filter(k -> k.identifier().getNamespace().equals(NS)).count();
     }
@@ -137,6 +145,13 @@ public final class PlanetGate {
                     return ok ? 1 : 0;
                 })))
                 .then(Commands.literal("go").then(Commands.argument("id", StringArgumentType.word()).executes(PlanetGate::go)))
+                .then(Commands.literal("preload").then(Commands.argument("player", StringArgumentType.word()).executes(c -> {
+                    var list = c.getSource().getServer().getPlayerList();
+                    var who = c.getSource().getServer().services().nameToIdCache().get(StringArgumentType.getString(c, "player"));
+                    if (who.isEmpty()) return 0;
+                    preloadFor(c.getSource().getServer(), list.getPlayerIo().load(who.get()));
+                    return 1;
+                })))
                 .then(Commands.literal("live").executes(c -> {
                     int n = live(c.getSource().getServer());
                     c.getSource().sendSuccess(() -> Component.literal(n + " planets loaded"), false);

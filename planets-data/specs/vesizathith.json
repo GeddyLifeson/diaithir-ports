@@ -99,5 +99,26 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dim, ash-drifting world of dry desert basins, cold stone peaks and humid swamp lowlands under a violet-tinged sky, with its sea a deep grey-blue."
+ "notes": "A dim, ash-drifting world of dry desert basins, cold stone peaks and humid swamp lowlands under a violet-tinged sky, with its sea a deep grey-blue.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a9bb0",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.9,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "ST.vesizathith.E6.places.002011",
+  "why": "Sunless cold vacuum with pale drifting ice-lanterns; dim light, no weather",
+  "grounded": false
+ }
 }

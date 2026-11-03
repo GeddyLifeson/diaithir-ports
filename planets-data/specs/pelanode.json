@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A violet-skied iron world of ash-choked deserts, glassy basins and humming crystal peaks, its seas tinged jade by drowned, luminous brine."
+ "notes": "A violet-skied iron world of ash-choked deserts, glassy basins and humming crystal peaks, its seas tinged jade by drowned, luminous brine.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7a6a",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "ST.pelanode.E6.places.003632",
+  "why": "Sable dust, basalt citadel, stolen stellar fire, cannon-spires.",
+  "grounded": true
+ }
 }

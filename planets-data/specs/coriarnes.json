@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-soaked mythic world of drowned cathedral-cities and tidal marshes, with glass and brass ruins glimmering under a heavy grey sky."
+ "notes": "A storm-soaked mythic world of drowned cathedral-cities and tidal marshes, with glass and brass ruins glimmering under a heavy grey sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.03
+   },
+   {
+    "type": "ash",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#4a5a6e",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.coriarnes.E6.places.000111",
+  "why": "Drowned tidal salt-marsh and sea storms suggest mist, storms, glowing moss and bells",
+  "grounded": true
+ }
 }

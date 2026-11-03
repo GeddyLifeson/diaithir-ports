@@ -99,5 +99,26 @@
  "ocean_archetype": "lukewarm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A hazy, ash-tinged world of scorched badlands, desert wastes, and misted marshes where ruins and hidden chambers lie beneath a grey sky."
+ "notes": "A hazy, ash-tinged world of scorched badlands, desert wastes, and misted marshes where ruins and hidden chambers lie beneath a grey sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.1,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "GR.kroukagar.E5.assay.008023",
+  "why": "Ash-ridden wasteland with dust and burned remains; dry, dim air",
+  "grounded": true
+ }
 }

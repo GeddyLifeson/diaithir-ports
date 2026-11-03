@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Silver-violet skies and hovering ash over a world of hum-tuned groves, glass orchards, and sunken basalt courts."
+ "notes": "Silver-violet skies and hovering ash over a world of hum-tuned groves, glass orchards, and sunken basalt courts.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.07
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.05
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#b8d8e8",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.nuimiel.E1.places.000140",
+  "why": "Grove-city of living roots, humming archways, mild luminous air",
+  "grounded": true
+ }
 }

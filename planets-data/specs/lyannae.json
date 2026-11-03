@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A violet-tinted arcane realm of drifting archipelagos, humming basins, drowned sanctuaries and ash-wracked peaks, under a low sky with silver mist."
+ "notes": "A violet-tinted arcane realm of drifting archipelagos, humming basins, drowned sanctuaries and ash-wracked peaks, under a low sky with silver mist.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "firefly",
+    "probability": 0.04
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#a9c4d6",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.lyannae.E6.places.000198",
+  "why": "Silver lake mirrors skies; lantern-lit, luminous, gentle; calm mist",
+  "grounded": true
+ }
 }

@@ -119,5 +119,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dusky ash-lit world of basalt, glass and drowned cities, its deserts and salt flats giving way to marshes and cold stone peaks."
+ "notes": "A dusky ash-lit world of basalt, glass and drowned cities, its deserts and salt flats giving way to marshes and cold stone peaks.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7a6a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.oriarium.E5.events.000708",
+  "why": "Sundering tide broke walls; stormy, drowned, ash-laden sky",
+  "grounded": true
+ }
 }

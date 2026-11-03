@@ -99,5 +99,17 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-torn, ash-laced mythic world whose shadowed plains, sunless swamps and frozen peaks echo the dread-haunted sites named in its entries."
+ "notes": "A storm-torn, ash-laced mythic world whose shadowed plains, sunless swamps and frozen peaks echo the dread-haunted sites named in its entries.",
+ "atmo": {
+  "particles": [],
+  "fog": "#8a9199",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.lialintor.E5.assay.002509",
+  "why": "Pervasive dull dread and gray stormy atmosphere suits the soil",
+  "grounded": false
+ }
 }

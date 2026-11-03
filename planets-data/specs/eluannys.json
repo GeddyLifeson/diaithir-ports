@@ -89,5 +89,17 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "Eluannys is a violet arcane realm of floating crystal archipelagos, drowned highlands and sky-cities, lit by moonlight and tidal mist."
+ "notes": "Eluannys is a violet arcane realm of floating crystal archipelagos, drowned highlands and sky-cities, lit by moonlight and tidal mist.",
+ "atmo": {
+  "particles": [],
+  "fog": "#c9d6c2",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.eluannys.E6.places.000005",
+  "why": "Twilight glassy crags humming with songs; mild, gentle atmosphere",
+  "grounded": false
+ }
 }

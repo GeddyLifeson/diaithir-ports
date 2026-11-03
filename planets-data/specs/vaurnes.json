@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A storm-soaked mythic realm of fog-bound marshes, basalt crags and drowned valleys, its cold northern edge gleaming with auroral light."
+ "notes": "A storm-soaked mythic realm of fog-bound marshes, basalt crags and drowned valleys, its cold northern edge gleaming with auroral light.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b7480",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.25,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.vaurnes.E4.events.000269",
+  "why": "Sundering shards, sky torn open, grey skies, storms",
+  "grounded": true
+ }
 }

@@ -89,5 +89,30 @@
  "ocean_archetype": "warm_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A wind-scoured martial world of ash-hazed basalt ridges, sunlit terraces and tide-worn coasts, where the Weave's dormant roots and training halls shape the land."
+ "notes": "A wind-scoured martial world of ash-hazed basalt ridges, sunlit terraces and tide-worn coasts, where the Weave's dormant roots and training halls shape the land.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#c9dbe8",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.suranareno.E6.places.000211",
+  "why": "Wind-scarred basalt valley, storms fighting stone, cold soil",
+  "grounded": true
+ }
 }

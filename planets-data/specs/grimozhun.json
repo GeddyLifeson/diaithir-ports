@@ -99,5 +99,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dim ash-choked realm of drowned cathedrals and basalt terraces, its badlands, swamps and frozen peaks tinted by ember light, tides and bell-song."
+ "notes": "A dim ash-choked realm of drowned cathedrals and basalt terraces, its badlands, swamps and frozen peaks tinted by ember light, tides and bell-song.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "soul",
+    "probability": 0.03
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#3a3436",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.grimozhun.E6.places.000491",
+  "why": "Sunken brine fortresses, ash-choked tides, and drifting ember-cairns suggest a heavy, ashen, stormy world",
+  "grounded": true
+ }
 }

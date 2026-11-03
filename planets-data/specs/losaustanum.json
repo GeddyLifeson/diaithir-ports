@@ -99,5 +99,26 @@
  "ocean_archetype": "ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A frost-bound world of cold northern tribes, sheltered coasts and harsh southern plains, where wind, snow and hard-fought rule shape the land."
+ "notes": "A frost-bound world of cold northern tribes, sheltered coasts and harsh southern plains, where wind, snow and hard-fought rule shape the land.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.11
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#c8dcea",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.losaustanum.E6.assay.000075",
+  "why": "Frozen southern peninsula locked in ice and cold winds.",
+  "grounded": true
+ }
 }

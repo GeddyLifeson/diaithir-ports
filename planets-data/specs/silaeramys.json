@@ -109,5 +109,30 @@
  "ocean_archetype": "frozen_ocean",
  "beach_archetype": "snowy_beach",
  "river_archetype": "frozen_river",
- "notes": "A violet-hued Arcane surface of frost plains, ember-tinted woodlands and crystal-bright highlands, with a hushed shoreline of pale glass isles and sunlit golden fields under a dusky sky."
+ "notes": "A violet-hued Arcane surface of frost plains, ember-tinted woodlands and crystal-bright highlands, with a hushed shoreline of pale glass isles and sunlit golden fields under a dusky sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "firefly",
+    "probability": 0.04
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#7fa9b8",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.silaeramys.E6.places.000093",
+  "why": "Luminous silver-blue fungal groves humming with faint resonance; calm, mild air",
+  "grounded": true
+ }
 }

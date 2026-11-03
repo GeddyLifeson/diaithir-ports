@@ -89,5 +89,30 @@
  "ocean_archetype": "deep_ocean",
  "beach_archetype": "beach",
  "river_archetype": "river",
- "notes": "A dim violet-lit world of drowned glass and salt marsh, where swamp, jungle and frozen highlands are spread across the cold-to-hot range under a perpetual arcane haze."
+ "notes": "A dim violet-lit world of drowned glass and salt marsh, where swamp, jungle and frozen highlands are spread across the cold-to-hot range under a perpetual arcane haze.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "spore_blossom_air",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#a8c8d8",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "AR.venarirleth.E6.places.000136",
+  "why": "Lantern-lit marsh town, tidal mists, wind-bells, glass fishers",
+  "grounded": true
+ }
 }
