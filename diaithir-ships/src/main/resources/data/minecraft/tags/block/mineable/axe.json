@@ -1,7 +1,10 @@
 {
-  "replace": false,
-  "values": [
-    "vs_eureka:floater",
-    "#vs_eureka:ship_helms"
-  ]
+ "replace": false,
+ "values": [
+  "vs_eureka:floater",
+  "#vs_eureka:ship_helms",
+  "archimedes:crate",
+  "archimedes:floater",
+  "archimedes:buffer"
+ ]
 }
