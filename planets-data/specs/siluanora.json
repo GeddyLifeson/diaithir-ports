@@ -1,0 +1,181 @@
+{
+ "sky": {
+  "sky": "#2a1f4a",
+  "fog": "#4b3a7a",
+  "cloud": "#99c9a8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6fb0"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "AR.siluanora.E6.places.004199",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#b08ee0",
+   "foliage": "#9a7fd6",
+   "water": "#7a6fd0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siluanora.E6.places.004238",
+   "archetype": "swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#4f8a5a",
+   "foliage": "#3e7a4a",
+   "water": "#3c5a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siluanora.E6.places.004043",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.6,
+   "grass": "#5a6e7a",
+   "foliage": "#4a6a8a",
+   "water": "#5a7ab0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siluanora.E6.places.003764",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c9a46a",
+   "foliage": "#b89060",
+   "water": "#7a8aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siluanora.E6.places.003916",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.6,
+   "grass": "#e0c9a0",
+   "foliage": "#d4b98a",
+   "water": "#9ab0d0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siluanora.E6.places.004261",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.0,
+   "grass": "#a8c8e0",
+   "foliage": "#90b8d8",
+   "water": "#7ab0e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.siluanora.E6.places.002172",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#8a8a9a",
+   "foliage": "#7a7a8c",
+   "water": "#6a7ab0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siluanora.E6.places.004230",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.4,
+   "grass": "#c98ac0",
+   "foliage": "#e8a0c8",
+   "water": "#b07ac8",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Violet-dusk Arcane skies over glass-blue tides and a drowsy, memory-soaked interior tiling from frozen peaks to dry badlands.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8fb8d8",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.siluanora.E6.places.004035",
+  "why": "Petal-strewn rose hall with luminous silver tides and lantern light",
+  "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "mangrove",
+    "leaves": "mangrove",
+    "weight": 3
+   },
+   {
+    "base": "jungle_tree",
+    "log": "jungle",
+    "leaves": "jungle",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "azalea",
+    "weight": 1
+   }
+  ],
+  "density": 1.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet",
+   "blue_orchid"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.siluanora.E6.places.004238",
+  "grounded": true
+ }
+}

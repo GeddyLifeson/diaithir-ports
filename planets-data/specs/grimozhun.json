@@ -1,0 +1,167 @@
+{
+ "sky": {
+  "sky": "#2a2f3d",
+  "fog": "#3b4150",
+  "cloud": "#66505a48",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2c4a5e"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.grimozhun.E6.places.000395",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#7a4a2a",
+   "foliage": "#8a5a32",
+   "water": "#3a4a5a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.grimozhun.E6.places.000322",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#5a4a3e",
+   "foliage": "#6b5a4a",
+   "water": "#3a4a5a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.grimozhun.E6.places.000463",
+   "archetype": "stony_peaks",
+   "temp": -0.6,
+   "humid": -0.2,
+   "grass": "#4a4f52",
+   "foliage": "#3c4144",
+   "water": "#3a4a5a",
+   "precip": "snow"
+  },
+  {
+   "entry": "KI.grimozhun.E6.places.000448",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#4f5a3a",
+   "foliage": "#3e4a2e",
+   "water": "#2e3f30",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.grimozhun.E6.places.000470",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": -0.4,
+   "grass": "#5c5440",
+   "foliage": "#4e4736",
+   "water": "#3a4a5a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.grimozhun.E6.places.000527",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#6a6a48",
+   "foliage": "#8a7a7a",
+   "water": "#3e5560",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.grimozhun.E6.places.000290",
+   "archetype": "dark_forest",
+   "temp": -0.1,
+   "humid": 0.3,
+   "grass": "#3a4a3a",
+   "foliage": "#2c3a2c",
+   "water": "#2e3f4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.grimozhun.E6.places.000535",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#6e7880",
+   "foliage": "#5a6670",
+   "water": "#4a6078",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dim ash-choked realm of drowned cathedrals and basalt terraces, its badlands, swamps and frozen peaks tinted by ember light, tides and bell-song.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#3a2e2a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.1,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.grimozhun.E6.places.000422",
+  "why": "Violet mists, void strikes, and sulfur seas suggest ash-choked stormy air",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 4
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.5,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "KI.grimozhun.E6.places.000484",
+  "grounded": true
+ }
+}

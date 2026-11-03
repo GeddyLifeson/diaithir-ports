@@ -1,0 +1,171 @@
+{
+ "sky": {
+  "sky": "#2a1d4a",
+  "fog": "#5b4a8a",
+  "cloud": "#a0e6d8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6f8c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.veontiastes.E6.places.000475",
+   "archetype": "snowy_plains",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#b49ccf",
+   "foliage": "#9a7fbf",
+   "water": "#d9a84a",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.veontiastes.E6.places.000478",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#8a4a2a",
+   "foliage": "#6b3a22",
+   "water": "#5a3a2a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.veontiastes.E6.places.000440",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.1,
+   "grass": "#c9a24a",
+   "foliage": "#b08a3a",
+   "water": "#4e7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.veontiastes.E6.places.000489",
+   "archetype": "jungle",
+   "temp": 0.4,
+   "humid": 0.8,
+   "grass": "#4a8a4a",
+   "foliage": "#3a7a3a",
+   "water": "#3f7f6f",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.veontiastes.E6.places.000464",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.4,
+   "grass": "#3e4a4a",
+   "foliage": "#2a3a3a",
+   "water": "#3a5060",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.veontiastes.E6.places.000459",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.6,
+   "grass": "#7a5a9a",
+   "foliage": "#6a4a8a",
+   "water": "#5a4a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.veontiastes.E6.places.000473",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.3,
+   "grass": "#e0a0c0",
+   "foliage": "#f0b0d0",
+   "water": "#9ab8d8",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.veontiastes.E6.places.000206",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6a7a5a",
+   "foliage": "#5a6a4a",
+   "water": "#7aa0a0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-skied mythic world of glass basins, ash-fall, and luminous mists, its biomes drawn only from the supplied entries' moods, elements and landscapes.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8fa6b8",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.veontiastes.E6.events.000589",
+  "why": "Sky-battle over drowned plains; storm-lord hunts warden",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "pink_petals",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "azure_bluet",
+   "lily_of_the_valley",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 2.5,
+   "redstone": 1.0,
+   "lapis": 1.0,
+   "diamond": 1.0
+  },
+  "why_entry": "MY.veontiastes.E6.places.000484",
+  "grounded": true
+ }
+}
