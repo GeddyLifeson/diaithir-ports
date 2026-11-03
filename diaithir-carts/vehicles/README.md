@@ -14,6 +14,12 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 2. Age VI to VII pump stations: IV `fuel_pump` decor tied to storage tanks and pipes, refuels any parked vehicle automatically, takes payment via the economy thread. Loading racks for tanker trucks, rail tank cars and ships (all through `FuelStore.transfer`).
 3. Refining comes from Foundry / tech-suite chains (crude to petrol, diesel, kerosene, avgas); the pack only needs the fluid ids in `fuels.csv`.
 
+## What Immersive Vehicles already has (read from the jar, 11-03)
+- Fuel: every vehicle has `fuelTank` (`EntityFluidTank`: `fill`, `drain`, `getFluidLevel`, `getMaxLevel`, `getFluid`, fluid name plus mod); the `fuel_pump` decor holds a tank and a hose connects it to a vehicle; engines name a `fuelType` that the IV config maps to fluids. So our pump station should fill IV's tanks through `EntityFluidTank`, with the pack's `FuelStore` as the storage side.
+- Roads: IV has its own road network (`BlockRoad`, `TileEntityRoad`, pack-defined `JSONRoadComponent` lanes and curves, `RoadFollowingState`). Our six surface blocks above are the walking, mount and cart roads; the vehicle roads should be IV road components in the `diaithirvehicles` pack (dirt, gravel, cobbled, macadam, asphalt, concrete) so IV lane joins and following work. Not written yet.
+- Driving: controls are `ComputedVariable`s on the vehicle (`throttleVar`, `brakeVar`, `parkingBrakeVar`, `autopilotValueVar`, steering angle through the physics class). An NPC driver should set these, not add physics.
+- Vehicles are Minecraft entities of `mcinterface261.BuilderEntityExisting` with a protected `entity` field, so a bridge from our mods needs reflection or a compile-only IV jar.
+
 ## NPC drivers and roads (plan, not built)
 - Drivers: an NPC takes the controller seat of a parked vehicle and follows a route of waypoints between stations or depots (courier depots #112 and the waypoints module are the existing hooks). Steering and throttle go through IV's own controller variables, not new physics. Ground first, trucks and trains threads reuse the same route format.
 - Road use: NPC drivers prefer higher tiers. Settlement and worldgen threads decide generated road networks.
