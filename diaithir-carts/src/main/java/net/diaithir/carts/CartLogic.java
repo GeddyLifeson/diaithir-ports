@@ -61,6 +61,11 @@ public final class CartLogic {
             return;
         }
         if (!HOLDS.isEmpty()) HOLDS.remove(cart.getUUID());
+        if (state.getBlock() instanceof OneWayRail) {
+            Vec3 ok = OneWayRail.allowed(state);
+            Vec3 d = cart.getDeltaMovement();
+            if (ok != null && d.x * ok.x + d.z * ok.z < -0.02) cart.setDeltaMovement(-d.x * 0.5, d.y, -d.z * 0.5);   // turned back
+        }
         if (state.getBlock() instanceof TierPoweredRail rail) {
             if (state.getValue(PoweredRailBlock.POWERED)) boost(cart, level, pos, state, rail.tier().boost);
             else halt(cart);

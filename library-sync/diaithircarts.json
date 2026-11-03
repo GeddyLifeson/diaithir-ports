@@ -48,5 +48,20 @@
   "id": "diaithircarts:block_signal",
   "name": "Block Signal",
   "text": "Faces a rail and guards the stretch of connected track from there, up to 32 rails each way, round curves and slopes. Red and a redstone signal of 15 while any minecart is on that stretch, green and 0 otherwise. Wire it to a station rail or a powered rail upstream to keep trains apart. Age V."
+ },
+ {
+  "id": "diaithircarts:one_way_rail",
+  "name": "One-Way Rail",
+  "text": "A rail that lets carts through one way only. The arrow on it points north or east; use it bare-handed to turn it round. A cart that rolls on against the arrow is turned back. Place it on a straight stretch. Age V."
+ },
+ {
+  "id": "diaithircarts:destination_rail",
+  "name": "Destination Rail",
+  "text": "Routes carts by name. It gives a redstone signal of 15 while a cart whose name matches its channel stands on it. Use it bare-handed to cycle the channel: any cart, or the letters A to P, matched against the cart name (name a cart \"C\" with a name tag). Power a three-way junction rail with it and the named carts take the branch. Age V."
+ },
+ {
+  "id": "diaithircarts:cart_loader",
+  "name": "Cart Loader",
+  "text": "Stands over a rail with a chest, barrel or tank on top. Every 8 ticks it moves up to 8 items, or 250 mB of fluid, between the container and the cart standing under it: loading from the container, or unloading into it (use it bare-handed to flip). Works on any cart that offers an item or fluid handler, including chest carts, hopper carts and the tank wagons from the yards. Redstone switches it off. Age V."
  }
 ]
