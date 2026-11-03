@@ -103,6 +103,37 @@ public final class Abilities {
         }
     }
 
+    /** Absorption orb in the offhand repairs the mainhand tool, spending one orb durability per point. */
+    public static void orbTick(ItemStack orb, net.minecraft.world.entity.Entity e) {
+        if (!(e instanceof Player p) || p.getOffhandItem() != orb) {
+            return;
+        }
+        ItemStack main = p.getMainHandItem();
+        if (main.is(orb.getItem()) || !main.isDamageableItem() || !main.isDamaged()
+            || !main.is(net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM, Identifier.fromNamespaceAndPath(DiaithirAurorian.ID, "absorption_orb_repairable")))) {
+            return;
+        }
+        orb.hurtAndBreak(1, p, EquipmentSlot.OFFHAND);
+        main.setDamageValue(main.getDamageValue() - 1);
+    }
+
+    /** Living divining rod: 75% of living things within 18 blocks glow for 6 s; 6 s cooldown. */
+    public static void divine(net.minecraft.server.level.ServerLevel level, Player p, ItemStack rod, net.minecraft.world.InteractionHand hand) {
+        for (LivingEntity l : level.getEntitiesOfClass(LivingEntity.class, p.getBoundingBox().inflate(18), x -> x != p)) {
+            if (p.getRandom().nextDouble() < 0.75) {
+                l.addEffect(new MobEffectInstance(MobEffects.GLOWING, 120));
+            }
+        }
+        rod.hurtAndBreak(1, p, hand == net.minecraft.world.InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+        p.getCooldowns().addCooldown(rod, 120);
+    }
+
+    /** Strange meat: one random 5 minute buff. */
+    public static void strangeMeat(LivingEntity user) {
+        List<Holder<MobEffect>> pool = List.of(MobEffects.REGENERATION, MobEffects.FIRE_RESISTANCE, MobEffects.STRENGTH, MobEffects.SATURATION, MobEffects.HASTE);
+        user.addEffect(new MobEffectInstance(pool.get(user.getRandom().nextInt(pool.size())), 6000));
+    }
+
     @SubscribeEvent
     public static void onIncoming(LivingIncomingDamageEvent e) {
         LivingEntity victim = e.getEntity();

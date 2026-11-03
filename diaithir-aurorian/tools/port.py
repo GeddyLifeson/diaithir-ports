@@ -22,9 +22,7 @@ EFFECTS = {"DAMAGE_RESISTANCE": "resistance", "DAMAGE_BOOST": "strength", "MOVEM
 AGE = {"SILENTWOOD": "I", "AURORIAN_STONE": "I", "CERULEAN": "II", "MOONSTONE": "II", "KNIGHT": "II", "SPECTRAL": "III",
        "AURORIAN_STEEL": "III", "AURORIANITE": "IV", "UMBRA": "IV", "CRYSTALLINE": "IV"}
 # Items whose behaviour lives in Java we have not ported yet; they are listed, not registered.
-DEFERRED_ITEMS = {"absorption_orb", "living_divining_rod", "mirror_of_guidance", "amulet_of_chroma", "emerald_amulet", "keepers_amulet",
-                  "ruby_amulet", "sapphire_amulet", "cerulean_arrow", "crystal_arrow", "strange_meat", "silentwood_bow",
-                  "crystalline_sword"}
+DEFERRED_ITEMS = {"mirror_of_guidance", "cerulean_arrow", "crystal_arrow", "silentwood_bow", "crystalline_sword"}
 DEFERRED_BLOCK_CLASS = {"SaplingBlock"}
 BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "FogWallBlock": "fog_wall", "ScrapperBlock": "scrapper", "MoonlightForgeBlock": "moonlight_forge", "CrystalBlock": "full", "BossSpawnerBlock": "boss_spawner", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
               "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "TallGrassBlock": "plant"}
@@ -86,7 +84,7 @@ def build_items(tools, armor):
         rarity = re.search(r"Rarity\.(\w+)", body)
         dur = re.search(r"durability\((\d+)\)", body)
         burn = re.search(r"basicItemWithBurntime\(.*?, (\d+)\)", body)
-        if group == "_SPAWN_EGGS" or "BaseAurorianArrow" in body or "Curio" in body:
+        if group == "_SPAWN_EGGS" or "BaseAurorianArrow" in body or False:
             continue
         spec = dict(id=iid)
         if rarity and rarity.group(1) != "COMMON":

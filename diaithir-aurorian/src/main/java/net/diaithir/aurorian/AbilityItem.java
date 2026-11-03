@@ -27,6 +27,26 @@ public class AbilityItem extends Item {
     public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot) {
         if (id.equals("umbra_greatsword")) {
             Abilities.greatswordTick(stack, entity);
+        } else if (id.equals("absorption_orb")) {
+            Abilities.orbTick(stack, entity);
         }
+    }
+
+    @Override
+    public net.minecraft.world.InteractionResult use(Level level, net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand) {
+        if (id.equals("living_divining_rod") && level instanceof ServerLevel sl) {
+            Abilities.divine(sl, player, player.getItemInHand(hand), hand);
+            return net.minecraft.world.InteractionResult.SUCCESS;
+        }
+        return super.use(level, player, hand);
+    }
+
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity user) {
+        ItemStack r = super.finishUsingItem(stack, level, user);
+        if (id.equals("strange_meat") && !level.isClientSide()) {
+            Abilities.strangeMeat(user);
+        }
+        return r;
     }
 }

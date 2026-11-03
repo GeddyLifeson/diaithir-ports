@@ -82,6 +82,34 @@
   }
  },
  "armor": {
+  "umbra": {
+   "name": "umbra",
+   "durability": 20,
+   "boots": 4,
+   "legs": 6,
+   "chest": 6,
+   "helmet": 4,
+   "enchant": 20,
+   "sound": "diamond",
+   "toughness": 0.0,
+   "knockback": 0.2,
+   "repair": "theaurorian:umbra_ingot",
+   "age": "IV"
+  },
+  "cerulean": {
+   "name": "cerulean",
+   "durability": 20,
+   "boots": 3,
+   "legs": 6,
+   "chest": 5,
+   "helmet": 3,
+   "enchant": 20,
+   "sound": "diamond",
+   "toughness": 1.0,
+   "knockback": 0.0,
+   "repair": "theaurorian:cerulean_ingot",
+   "age": "II"
+  },
   "knight": {
    "name": "knight",
    "durability": 20,
@@ -110,20 +138,6 @@
    "repair": "theaurorian:aurorian_steel_ingot",
    "age": "III"
   },
-  "umbra": {
-   "name": "umbra",
-   "durability": 20,
-   "boots": 4,
-   "legs": 6,
-   "chest": 6,
-   "helmet": 4,
-   "enchant": 20,
-   "sound": "diamond",
-   "toughness": 0.0,
-   "knockback": 0.2,
-   "repair": "theaurorian:umbra_ingot",
-   "age": "IV"
-  },
   "spectral": {
    "name": "spectral",
    "durability": 20,
@@ -137,20 +151,6 @@
    "knockback": 0.0,
    "repair": "theaurorian:spectral_silk",
    "age": "III"
-  },
-  "cerulean": {
-   "name": "cerulean",
-   "durability": 20,
-   "boots": 3,
-   "legs": 6,
-   "chest": 5,
-   "helmet": 3,
-   "enchant": 20,
-   "sound": "diamond",
-   "toughness": 1.0,
-   "knockback": 0.0,
-   "repair": "theaurorian:cerulean_ingot",
-   "age": "II"
   }
  },
  "items": [
@@ -377,6 +377,14 @@
    "nutrition": 0,
    "saturation": 0.0,
    "fast": true
+  },
+  {
+   "id": "strange_meat",
+   "kind": "food",
+   "nutrition": 8,
+   "saturation": 14.4,
+   "fast": false,
+   "durability": 10
   },
   {
    "id": "aurorian_steel_hoe",
@@ -681,6 +689,12 @@
    "speed": -3.0
   },
   {
+   "id": "living_divining_rod",
+   "rarity": "rare",
+   "kind": "item",
+   "durability": 100
+  },
+  {
    "id": "umbra_chestplate",
    "rarity": "rare",
    "kind": "armor",
@@ -711,6 +725,12 @@
    "durability": 1000
   },
   {
+   "id": "absorption_orb",
+   "rarity": "rare",
+   "kind": "item",
+   "durability": 250
+  },
+  {
    "id": "crystalline_pickaxe",
    "rarity": "rare",
    "kind": "pickaxe",
@@ -724,6 +744,31 @@
    "kind": "shield",
    "mat": "crystalline",
    "durability": 1000
+  },
+  {
+   "id": "amulet_of_chroma",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "emerald_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "keepers_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "ruby_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "sapphire_amulet",
+   "rarity": "epic",
+   "kind": "item"
   }
  ],
  "blocks": [

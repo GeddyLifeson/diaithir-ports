@@ -1,5 +1,10 @@
 package net.diaithir.aurorian;
 
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.InputStreamReader;
@@ -142,6 +147,14 @@ public final class DiaithirAurorian {
         });
     }
 
+    /** Upstream amulets are Curios items; the pack has no Curios API, so they apply their attributes while held in the offhand. */
+    private static final Map<String, List<Object[]>> AMULETS = Map.of(
+        "amulet_of_chroma", List.of(new Object[] {Attributes.MAX_HEALTH, AttributeModifier.Operation.ADD_VALUE, 2.0}, new Object[] {Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.ADD_MULTIPLIED_BASE, 0.05}, new Object[] {Attributes.KNOCKBACK_RESISTANCE, AttributeModifier.Operation.ADD_VALUE, 0.1}),
+        "emerald_amulet", List.<Object[]>of(new Object[] {Attributes.KNOCKBACK_RESISTANCE, AttributeModifier.Operation.ADD_VALUE, 0.2}),
+        "keepers_amulet", List.<Object[]>of(new Object[] {Attributes.ATTACK_KNOCKBACK, AttributeModifier.Operation.ADD_VALUE, 1.0}),
+        "ruby_amulet", List.<Object[]>of(new Object[] {Attributes.MAX_HEALTH, AttributeModifier.Operation.ADD_VALUE, 4.0}),
+        "sapphire_amulet", List.<Object[]>of(new Object[] {Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.ADD_MULTIPLIED_BASE, 0.1}));
+
     private static Item.Properties props(ItemSpec s) {
         Item.Properties p = switch (s.kind()) {
             case "armor" -> new Item.Properties().humanoidArmor(armorMaterial(s.mat()), ArmorType.valueOf(s.slot().toUpperCase()));
@@ -152,6 +165,14 @@ public final class DiaithirAurorian {
         };
         if (s.durability() != null && s.kind().equals("item")) {
             p = p.durability(s.durability());
+        }
+        var am = AMULETS.get(s.id());
+        if (am != null) {
+            ItemAttributeModifiers.Builder b = ItemAttributeModifiers.builder();
+            for (Object[] a : am) {
+                b.add((Holder<Attribute>) a[0], new AttributeModifier(Identifier.fromNamespaceAndPath(ID, s.id() + "_" + ((Holder<Attribute>) a[0]).getRegisteredName().replace(':', '_')), (double) a[2], (AttributeModifier.Operation) a[1]), EquipmentSlotGroup.OFFHAND);
+            }
+            p = p.stacksTo(1).component(DataComponents.ATTRIBUTE_MODIFIERS, b.build());
         }
         if (s.rarity() != null) {
             p = p.rarity(Rarity.valueOf(s.rarity().toUpperCase()));
