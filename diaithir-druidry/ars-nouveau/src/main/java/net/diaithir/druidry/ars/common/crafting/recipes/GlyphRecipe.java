@@ -128,7 +128,7 @@ public class GlyphRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
-    public RecipeSerializer<GlyphRecipe> getSerializer() {
+    public RecipeSerializer<? extends GlyphRecipe> getSerializer() {
         return Serializer.SERIALIZER;
     }
 

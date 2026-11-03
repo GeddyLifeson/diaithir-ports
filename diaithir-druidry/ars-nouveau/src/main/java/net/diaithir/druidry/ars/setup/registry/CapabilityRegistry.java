@@ -65,23 +65,13 @@ public class CapabilityRegistry {
         event.registerEntity(MANA_CAPABILITY, EntityType.PLAYER, (player, ctx) -> new ManaCap(player));
         event.registerEntity(PLAYER_DATA_CAP, EntityType.PLAYER, (player, ctx) -> new ANPlayerDataCap(player));
         // TODO(26.1): item handler capabilities (Capabilities.Item.BLOCK, ResourceHandler<ItemResource>) removed; need transfer-API rewrite
-        event.registerBlockEntity(MAP_INV_CAP, BlockRegistry.REPOSITORY_CONTROLLER_TILE.get(), (c, side) -> c.getControllerInv());
-        event.registerBlockEntity(FILTERSET_CAPABILITY, BlockRegistry.REPOSITORY_CONTROLLER_TILE.get(), (c, side) -> c);
-        event.registerBlockEntity(MAP_INV_CAP, BlockRegistry.REPOSITORY_TILE.get(), (c, side) -> c);
 
-        var sourceContainers = List.of(BlockRegistry.SOURCE_JAR_TILE, BlockRegistry.CREATIVE_SOURCE_JAR_TILE,
-                BlockRegistry.AGRONOMIC_SOURCELINK_TILE, BlockRegistry.ALCHEMICAL_TILE, BlockRegistry.VITALIC_TILE, BlockRegistry.MYCELIAL_TILE, BlockRegistry.VOLCANIC_TILE,
-                BlockRegistry.RELAY_COLLECTOR_TILE, BlockRegistry.RELAY_DEPOSIT_TILE, BlockRegistry.RELAY_WARP_TILE, BlockRegistry.ARCANE_RELAY_TILE,
-                BlockRegistry.IMBUEMENT_TILE);
+        var sourceContainers = List.of(BlockRegistry.SOURCE_JAR_TILE);
 
         for (var container : sourceContainers) {
             event.registerBlockEntity(SOURCE_CAPABILITY, container.get(), (sourceJar, side) -> sourceJar.getSourceStorage());
         }
 
-        event.registerBlockEntity(CapabilityRegistry.BLOCK_SPELL_RESOLVE_CAP, BlockRegistry.REPOSITORY_CONTROLLER_TILE.get(), (c, none) -> c.getSpellListener());
-        event.registerBlockEntity(CapabilityRegistry.BLOCK_SPELL_RESOLVE_CAP, BlockRegistry.PLANARIUM_TILE.get(), (c, none) -> c.onResolve());
-        event.registerBlockEntity(CapabilityRegistry.BLOCK_SPELL_RESOLVE_CAP, BlockRegistry.DECOR_BLOSSOM_TILE.get(), (c, none) -> c);
-        event.registerBlock(CapabilityRegistry.WANDABLE_BLOCK_CAPABILITY, (level, pos, state, be, side) -> BlockRegistry.DIM_BOUNDARY.get(), BlockRegistry.DIM_BOUNDARY.get());
     }
 
 
