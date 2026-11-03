@@ -1,0 +1,1 @@
+{"rules":[{"id":"unlock_on_visit","trigger":"visit_biome","effect":"unlock_codex_entry","cost_J":100}]}

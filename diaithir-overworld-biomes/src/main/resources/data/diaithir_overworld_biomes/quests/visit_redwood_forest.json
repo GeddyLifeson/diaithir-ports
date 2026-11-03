@@ -1,0 +1,1 @@
+{"id":"diaithir_overworld_biomes:quests/visit_redwood_forest","age":1,"task":{"type":"visit_biome","biome":"biomesoplenty:redwood_forest"},"codex_link":"biomesoplenty:redwood_forest","reward":{"energy_J":1000},"global_event":"biomes_ready"}
