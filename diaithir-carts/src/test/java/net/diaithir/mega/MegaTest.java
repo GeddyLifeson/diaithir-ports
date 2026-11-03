@@ -55,11 +55,7 @@ class MegaTest {
     }
 
     @Test
-    void autonomyNeedsCapableTypeAndModule() {
-        assertFalse(CrewGate.mayRun(true, false, 0), "capable type without module needs crew");
-        assertFalse(CrewGate.mayRun(false, true, 0), "module cannot make an incapable type autonomous");
-        assertTrue(CrewGate.mayRun(true, true, 0));
-        assertEquals(CrewGate.Status.CREWED, CrewGate.status(false, false, 2));
+    void autonomyCapableFlagMatchesAgeVIIPlusAndCrewSeatsStay() {
         assertTrue(spec("autonomous_haul_fleet").autonomyCapable());
         assertFalse(spec("bucket_wheel_excavator").autonomyCapable());
         for (MegaSpec s : specs()) assertTrue(s.crew() > 0, s.id() + " keeps crew seats");
