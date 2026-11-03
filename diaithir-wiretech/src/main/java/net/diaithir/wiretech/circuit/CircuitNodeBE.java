@@ -233,6 +233,10 @@ public final class CircuitNodeBE extends BlockEntity {
             }
         }
         readWorld(level, at, face, r);
+        if (level.getBlockEntity(at) instanceof BlockEntity target) {
+            var key = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(target.getType());
+            if (key != null && key.getNamespace().equals("belts")) BeltReading.read(target.saveWithoutMetadata(level.registryAccess()), r);
+        }
         var energy = level.getCapability(Capabilities.Energy.BLOCK, at, face);
         if (energy != null) {
             long now = energy.getAmountAsLong();

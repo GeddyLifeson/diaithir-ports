@@ -118,6 +118,12 @@ public final class CircuitSelfTest {
             level.setBlock(pRead2, Blocks.AIR.defaultBlockState(), 2 | 16 | 64);
             level.setBlock(pRail, Blocks.AIR.defaultBlockState(), 2 | 16 | 64);
             level.setBlock(pRail.below(), Blocks.AIR.defaultBlockState(), 2 | 16 | 64);
+            // belt contents from a chute save (shape taken from the belt fork's saveAdditional)
+            Signals belt = new Signals();
+            BeltReading.read(BeltReading.sample(new String[] {"minecraft:coal", "minecraft:iron_ingot", "minecraft:coal"}, new int[] {1, 1, 1}, new byte[] {0, 1, 1}), belt);
+            if (belt.get("minecraft:coal") != 2 || belt.get("si:belt_items") != 3 || belt.get("si:belt_lane0") != 1 || belt.get("si:belt_lane1") != 2) {
+                fails.add("circuit: belt reader said " + belt);
+            }
             // errors and saving
             try {
                 c.setProgram("arith a + 1 -> b");
