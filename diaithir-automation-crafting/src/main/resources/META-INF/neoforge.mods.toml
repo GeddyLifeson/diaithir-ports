@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "LGPL-3.0-or-later"
+
+[[mods]]
+modId = "diaithirautomationcrafting"
+version = "${version}"
+displayName = "Diaithir Automation and Crafting"
+description = "Research and bulk crafting: Researcher, Packager and Unpackager benches. Port of The Package Mod by whizzball1 (LGPL-3.0) to NeoForge 26.1.2; packages are datapack JSON and research is shared by the whole server."
+
+[[dependencies.diaithirautomationcrafting]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

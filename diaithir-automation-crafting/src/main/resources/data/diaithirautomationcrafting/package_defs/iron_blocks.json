@@ -1,0 +1,25 @@
+{
+  "name": "Iron block",
+  "result": {
+    "item": "minecraft:iron_block",
+    "count": 64
+  },
+  "inputs": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 576
+    }
+  ],
+  "research": {
+    "items": [
+      {
+        "item": "minecraft:iron_ingot",
+        "count": 16
+      }
+    ],
+    "packs": [],
+    "prereqs": [
+      "diaithirautomationcrafting:torches"
+    ]
+  }
+}
