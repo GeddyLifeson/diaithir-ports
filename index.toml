@@ -67545,11 +67545,6 @@ hash = "63775455b75dc742c3092e5d9e45fe9b91afd10cd292615c5321f305c5c0f795"
 metafile = true
 
 [[files]]
-file = "mods/PWIC-V0.3TD_21_fix.pw.toml"
-hash = "7fc3ab805d5d0d9a2078be01cafe23a6c4a5b75f4e310c6160d8d64122d814df"
-metafile = true
-
-[[files]]
 file = "mods/RecurrentComplexVolts-26.1.2-0.7.3.0.pw.toml"
 hash = "955aafb70ff6bf5b769ef5aac99281d1834d0517994bcb2e0b3d8dd06423be96"
 metafile = true
@@ -67886,7 +67881,7 @@ hash = "a26770ced4657a9ace26725b7c9189e3883671f689f9ce8c919f695a335ae4c8"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "a35eb6c7604d0c48ec613fee8a43a76cf5cfbcf589dcfff67c472facbf6da7b6"
+hash = "85bdbdbce4dc2b558b1461561f37b6e7524092466f81d8c49290ad2576deb6a2"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
