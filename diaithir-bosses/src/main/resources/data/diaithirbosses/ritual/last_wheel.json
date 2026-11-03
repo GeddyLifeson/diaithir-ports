@@ -1,0 +1,50 @@
+{
+ "boss": "last_wheel",
+ "steps": [
+  {
+   "type": "offer",
+   "item": "#diaithirbosses:offering_feast",
+   "count": 1
+  },
+  {
+   "type": "offer",
+   "item": "minecraft:clock",
+   "count": 12
+  },
+  {
+   "type": "hunt",
+   "mob": "minecraft:enderman",
+   "count": 20
+  },
+  {
+   "type": "stones",
+   "sequence": [
+    0,
+    8,
+    3,
+    8,
+    0,
+    2,
+    6
+   ]
+  },
+  {
+   "type": "hour",
+   "from": 17000,
+   "to": 19000
+  },
+  {
+   "type": "coop",
+   "players": 3
+  },
+  {
+   "type": "defend",
+   "seconds": 150,
+   "mobs": [
+    "minecraft:enderman",
+    "minecraft:vindicator",
+    "minecraft:skeleton"
+   ]
+  }
+ ]
+}

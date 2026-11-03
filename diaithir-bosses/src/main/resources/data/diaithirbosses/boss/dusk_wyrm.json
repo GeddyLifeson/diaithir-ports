@@ -1,0 +1,198 @@
+{
+ "id": "dusk_wyrm",
+ "name": "Dourchadas Natuir",
+ "name_en": "Dusk Wyrm",
+ "age": 8,
+ "tier": "ascendant_3",
+ "own": {
+  "kind": "phantom",
+  "scale": 3.2,
+  "hp": 2025,
+  "damage": 44,
+  "armor": 22,
+  "speed": 0.3,
+  "knockback_resistance": 1.0,
+  "follow_range": 56,
+  "fire_immune": false
+ },
+ "bar": {
+  "color": "purple",
+  "overlay": "notched_12"
+ },
+ "scaling": {
+  "hp_per_age": 0.22,
+  "damage_per_age": 0.1,
+  "hp_per_extra_player": 0.5,
+  "max_age_steps": 4
+ },
+ "arena": {
+  "radius": 32,
+  "lock": true,
+  "leash": true,
+  "burn": 22.1
+ },
+ "max_hit_fraction": 0.06,
+ "respawn": {
+  "mode": "cooldown",
+  "ticks": 96000
+ },
+ "hostile": true,
+ "xp": 5500,
+ "equipment": {},
+ "attacks": {
+  "dive": {
+   "telegraph": 20,
+   "cooldown": 90,
+   "active": 16,
+   "speed": 1.15,
+   "damage": 40.8,
+   "radius": 2.4,
+   "type": "charge"
+  },
+  "gloom_breath": {
+   "telegraph": 28,
+   "cooldown": 150,
+   "radius": 9,
+   "duration": 200,
+   "effect": "minecraft:darkness",
+   "amp": 0,
+   "ticks": 140,
+   "type": "cloud"
+  },
+  "wing_gale": {
+   "telegraph": 30,
+   "cooldown": 110,
+   "radius": 14,
+   "damage": 30.6,
+   "knockback": 1.6,
+   "type": "wave"
+  },
+  "night_bolt": {
+   "telegraph": 26,
+   "cooldown": 85,
+   "count": 5,
+   "damage": 28.9,
+   "range": 40,
+   "fire": false,
+   "type": "bolt",
+   "effect": "minecraft:wither",
+   "amp": 0,
+   "ticks": 100
+  },
+  "eclipse": {
+   "telegraph": 36,
+   "cooldown": 220,
+   "radius": 18,
+   "effect": "minecraft:blindness",
+   "ticks": 140,
+   "amp": 0,
+   "damage": 13.6,
+   "type": "roar"
+  },
+  "well": {
+   "telegraph": 44,
+   "cooldown": 200,
+   "radius": 16,
+   "damage": 17,
+   "power": 1.1,
+   "type": "gravity_well"
+  }
+ },
+ "phases": [
+  {
+   "at": 1.0,
+   "name": "I",
+   "speed": 1.0,
+   "damage": 1.0,
+   "cooldown": 1.0,
+   "attacks": [
+    "dive",
+    "night_bolt"
+   ]
+  },
+  {
+   "at": 0.65,
+   "name": "II",
+   "speed": 1.12,
+   "damage": 1.15,
+   "cooldown": 0.85,
+   "attacks": [
+    "dive",
+    "night_bolt",
+    "wing_gale",
+    "gloom_breath"
+   ],
+   "invuln": 40
+  },
+  {
+   "at": 0.3,
+   "name": "III",
+   "speed": 1.25,
+   "damage": 1.3,
+   "cooldown": 0.7,
+   "attacks": [
+    "dive",
+    "night_bolt",
+    "wing_gale",
+    "gloom_breath",
+    "eclipse",
+    "well"
+   ],
+   "invuln": 40
+  }
+ ],
+ "loot": [
+  {
+   "item": "minecraft:nether_star",
+   "min": 1,
+   "max": 5,
+   "min_age": 8,
+   "chance": 0.8,
+   "per_age": 0
+  },
+  {
+   "item": "minecraft:diamond",
+   "min": 4,
+   "max": 10,
+   "min_age": 6,
+   "chance": 1.0,
+   "per_age": 2
+  },
+  {
+   "item": "minecraft:netherite_scrap",
+   "min": 6,
+   "max": 15,
+   "min_age": 7,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:experience_bottle",
+   "min": 6,
+   "max": 14,
+   "min_age": 7,
+   "chance": 1.0,
+   "per_age": 2
+  },
+  {
+   "item": "diaithirbosses:boss_hollow_core",
+   "min": 1,
+   "max": 3,
+   "min_age": 7,
+   "chance": 1.0,
+   "per_age": 0
+  }
+ ],
+ "structure": null,
+ "mythic": false,
+ "entity": "diaithirbosses:dusk_wyrm",
+ "creature_id": null,
+ "summon": {
+  "rite": "ascendant_altar",
+  "requires_kills": [
+   "foundry_sovereign",
+   "mist_weaver",
+   "ash_seraph"
+  ]
+ }
+}

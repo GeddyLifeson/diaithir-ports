@@ -1,0 +1,200 @@
+{
+ "id": "foundry_sovereign",
+ "name": "Kierdach Rìg",
+ "name_en": "Foundry Sovereign",
+ "age": 8,
+ "tier": "ascendant_2",
+ "own": {
+  "kind": "golem",
+  "scale": 3.0,
+  "hp": 1500,
+  "damage": 39,
+  "armor": 20,
+  "speed": 0.3,
+  "knockback_resistance": 1.0,
+  "follow_range": 56,
+  "fire_immune": false
+ },
+ "bar": {
+  "color": "yellow",
+  "overlay": "notched_12"
+ },
+ "scaling": {
+  "hp_per_age": 0.22,
+  "damage_per_age": 0.1,
+  "hp_per_extra_player": 0.5,
+  "max_age_steps": 4
+ },
+ "arena": {
+  "radius": 32,
+  "lock": true,
+  "leash": true,
+  "burn": 19.5
+ },
+ "max_hit_fraction": 0.06,
+ "respawn": {
+  "mode": "cooldown",
+  "ticks": 96000
+ },
+ "hostile": true,
+ "xp": 4000,
+ "equipment": {},
+ "attacks": {
+  "press": {
+   "telegraph": 38,
+   "cooldown": 90,
+   "radius": 8,
+   "damage": 37.4,
+   "knockback": 1.2,
+   "type": "slam"
+  },
+  "slag_volley": {
+   "telegraph": 30,
+   "cooldown": 95,
+   "count": 5,
+   "damage": 27.2,
+   "range": 36,
+   "fire": true,
+   "type": "bolt"
+  },
+  "assemble": {
+   "telegraph": 50,
+   "cooldown": 300,
+   "count": 2,
+   "minion": "minecraft:iron_golem",
+   "cap": 4,
+   "radius": 6,
+   "type": "summon"
+  },
+  "overclock": {
+   "telegraph": 34,
+   "cooldown": 200,
+   "radius": 16,
+   "effect": "minecraft:weakness",
+   "ticks": 140,
+   "amp": 1,
+   "damage": 13.6,
+   "type": "roar"
+  },
+  "pylon_arc": {
+   "telegraph": 38,
+   "cooldown": 140,
+   "count": 5,
+   "damage": 30.6,
+   "radius": 3.0,
+   "type": "lightning"
+  }
+ },
+ "phases": [
+  {
+   "at": 1.0,
+   "name": "I",
+   "speed": 1.0,
+   "damage": 1.0,
+   "cooldown": 1.0,
+   "attacks": [
+    "press",
+    "slag_volley"
+   ]
+  },
+  {
+   "at": 0.65,
+   "name": "II",
+   "speed": 1.12,
+   "damage": 1.15,
+   "cooldown": 0.85,
+   "attacks": [
+    "press",
+    "slag_volley",
+    "assemble",
+    "pylon_arc"
+   ],
+   "invuln": 40
+  },
+  {
+   "at": 0.3,
+   "name": "III",
+   "speed": 1.25,
+   "damage": 1.3,
+   "cooldown": 0.7,
+   "attacks": [
+    "press",
+    "slag_volley",
+    "assemble",
+    "pylon_arc",
+    "overclock"
+   ],
+   "invuln": 40
+  }
+ ],
+ "loot": [
+  {
+   "item": "minecraft:netherite_ingot",
+   "min": 1,
+   "max": 4,
+   "min_age": 8,
+   "chance": 0.7,
+   "per_age": 0
+  },
+  {
+   "item": "minecraft:diamond",
+   "min": 4,
+   "max": 10,
+   "min_age": 6,
+   "chance": 1.0,
+   "per_age": 2
+  },
+  {
+   "item": "minecraft:netherite_scrap",
+   "min": 4,
+   "max": 10,
+   "min_age": 7,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:experience_bottle",
+   "min": 6,
+   "max": 14,
+   "min_age": 7,
+   "chance": 1.0,
+   "per_age": 2
+  },
+  {
+   "item": "diaithirbosses:boss_hollow_core",
+   "min": 1,
+   "max": 2,
+   "min_age": 7,
+   "chance": 1.0,
+   "per_age": 0
+  },
+  {
+   "item": "diaithirbosses:boss_catalyst_t2",
+   "min": 1,
+   "max": 2,
+   "min_age": 7,
+   "chance": 1.0,
+   "per_age": 0
+  },
+  {
+   "item": "diaithirbosses:boss_sovereign_core",
+   "min": 1,
+   "max": 1,
+   "min_age": 8,
+   "chance": 1.0,
+   "per_age": 0
+  }
+ ],
+ "structure": null,
+ "mythic": false,
+ "entity": "diaithirbosses:foundry_sovereign",
+ "creature_id": null,
+ "summon": {
+  "rite": "ascendant_altar",
+  "requires_kills": [
+   "antlered_hollow",
+   "cauldron_heart",
+   "tide_reaver"
+  ]
+ }
+}

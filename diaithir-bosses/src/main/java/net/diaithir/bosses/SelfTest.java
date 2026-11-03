@@ -32,7 +32,7 @@ import net.neoforged.neoforge.common.util.FakePlayerFactory;
 public final class SelfTest {
     private static final List<String> FAILS = new ArrayList<>();
     private static int ok;
-    private static final Set<String> TYPES = Set.of("slam", "charge", "leap", "bolt", "summon", "lightning", "cloud", "wave", "heal", "roar");
+    private static final Set<String> TYPES = Set.of("slam", "charge", "leap", "bolt", "summon", "lightning", "cloud", "wave", "heal", "roar", "gravity_well", "rewind");
 
     private static void check(boolean c, String what) {
         if (c) ok++;
@@ -95,7 +95,7 @@ public final class SelfTest {
                 for (Data.Phase ph : p.phases) for (String a : ph.attacks) check(p.attacks.containsKey(a), p.id + ": phase uses known attack " + a);
                 for (Data.Attack a : p.attacks.values()) check(TYPES.contains(a.type), p.id + ": attack type " + a.type);
                 check(DiaithirBosses.TROPHIES.containsKey(p.id), p.id + ": has a trophy");
-                check(p.age >= 1 && p.age <= 7, p.id + ": Age in range");
+                check(p.age >= 1 && p.age <= Ages.RODOS, p.id + ": Age in range");
             }
             for (Data.Profile p : Data.profiles().values()) {
                 var type = BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(p.entity));
@@ -110,7 +110,9 @@ public final class SelfTest {
             attach(level, c0, fp);
             altar(level, c0, fp);
             elites(level, c0);
+            rites(src, level, c0, fp);
         } finally {
+            Ritual.TEST_PLAYERS.clear();
             Ages.forced = oldForce;
             fp.setPos(0, 300, 0);
         }
@@ -118,6 +120,90 @@ public final class SelfTest {
         System.out.println("[bossesselftest] " + msg);
         src.sendSuccess(() -> Component.literal(msg), false);
         return FAILS.isEmpty() ? 1 : 0;
+    }
+
+    /** Every Ascendant rite has steps and ends in a defend; one rite is played through start to boss. */
+    private static void rites(CommandSourceStack src, ServerLevel level, BlockPos c0, FakePlayer fp) {
+        AscendantData data = AscendantData.get(level.getServer());
+        Ages.forced = Ages.RODOS;
+        data.clearDefeats();
+        for (Data.Profile p : Data.profiles().values()) {
+            if (p.summon == null) continue;
+            Ritual.Def d = Ritual.def(p.id);
+            check(d != null && d.steps.size() >= 4, p.id + ": has a rite of four or more steps");
+            if (d != null) check(d.steps.get(d.steps.size() - 1).type.equals("defend"), p.id + ": rite ends in a defend");
+        }
+        BlockPos altar = c0.above();
+        String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
+        fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
+        Ritual.TEST_PLAYERS.add(fp);
+        data.removeRitual(key);
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(!data.rituals().containsKey(key), "rite: an empty hand does not start one");
+        Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get()));
+        check(data.rituals().containsKey(key), "rite: a champion token starts one");
+        Ritual.Def d = Ritual.def("antlered_hollow");
+        for (Ritual.Step st : d.steps) {
+            switch (st.type) {
+                case "offer" -> {
+                    Ritual.use(level, altar, fp, new ItemStack(st.item.startsWith("#") ? net.minecraft.world.item.Items.CAKE : BuiltInRegistries.ITEM.getValue(Identifier.parse(st.item)), st.count));
+                    check(!data.rituals().get(key).endsWith("|0|0"), "rite: the offering is taken");
+                }
+                case "hunt" -> {
+                    var type = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.parse(st.mob));
+                    for (int i = 0; i < st.count; i++) {
+                        var e = type.create(level, net.minecraft.world.entity.EntitySpawnReason.MOB_SUMMONED);
+                        e.snapTo(altar.getX() + 4, altar.getY(), altar.getZ(), 0, 0);
+                        Ritual.onKill((net.minecraft.world.entity.LivingEntity) e);
+                    }
+                }
+                case "stones" -> {
+                    int wrong = (st.sequence.get(0) + 1) % 9;
+                    String before = data.rituals().get(key);
+                    float hp = fp.getHealth();
+                    Ritual.seal(level, altar.east(3), wrong, fp);
+                    check(data.rituals().get(key).equals(before), "rite: a wrong rune keeps the step at zero");
+                    fp.setHealth(hp);
+                    for (int r : st.sequence) Ritual.seal(level, altar.east(3), r, fp);
+                }
+                case "hour" -> {
+                    long before = level.getOverworldClockTime() % 24000;
+                    boolean in = st.from <= st.to ? before >= st.from && before <= st.to : before >= st.from || before <= st.to;
+                    check(!in, "rite: the hour step is closed outside its window (clock " + before + ")");
+                    Ritual.use(level, altar, fp, ItemStack.EMPTY);
+                    check(data.rituals().get(key).contains("|" + d.steps.indexOf(st) + "|"), "rite: wrong hour does not advance");
+                    src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.from + 10));
+                    long now = level.getOverworldClockTime() % 24000;
+                    check(now >= st.from && now <= st.to, "rite: the test could set the clock (" + now + ")");
+                    Ritual.use(level, altar, fp, ItemStack.EMPTY);
+                }
+                case "defend" -> {
+                    Ritual.use(level, altar, fp, ItemStack.EMPTY);
+                    check(Ritual.DEFEND_START.containsKey(key), "rite: the defend step starts");
+                    Ritual.DEFEND_START.put(key, level.getGameTime() - 20L * st.seconds - 40);
+                    Ritual.step(src.getServer());
+                }
+                default -> check(false, "rite: unknown step type " + st.type);
+            }
+        }
+        check(!data.rituals().containsKey(key), "rite: finished and cleared");
+        var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+        check(woken.size() == 1, "rite: the boss wakes (" + woken.size() + ")");
+        woken.forEach(Mob::discard);
+        // solo path of the co-op step: one fighter, a rite for two, tokens call spirits
+        Ritual.Def fd = Ritual.def("foundry_sovereign");
+        int ci = -1;
+        for (int i = 0; i < fd.steps.size(); i++) if (fd.steps.get(i).type.equals("coop")) ci = i;
+        check(ci >= 0, "rite: foundry_sovereign has a co-op step");
+        data.putRitual(key, "foundry_sovereign|" + ci + "|0");
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(data.rituals().get(key).startsWith("foundry_sovereign|" + ci + "|"), "rite: one fighter cannot pass a two-fighter step");
+        Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get()));
+        check(data.rituals().get(key).startsWith("foundry_sovereign|" + (ci + 1) + "|"), "rite: a token calls a spirit that stands in");
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(24), m -> m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+        data.removeRitual(key);
+        data.clearDefeats();
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG)).forEach(Mob::discard);
     }
 
     private static Mob spawnAt(ServerLevel level, Data.Profile p, BlockPos c0) {
@@ -194,7 +280,7 @@ public final class SelfTest {
         Mob b = spawnAt(level, p, c0);
         if (a != null && b != null) {
             float ea = a.getMaxHealth() * BossController.ALL.get(a.getUUID()).damageDivisor, eb = b.getMaxHealth() * BossController.ALL.get(b.getUUID()).damageDivisor;
-            check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + BossController.ALL.get(a.getUUID()).damageDivisor + "/" + BossController.ALL.get(b.getUUID()).damageDivisor + " near " + BossController.ALL.get(a.getUUID()).participants().size() + ")");
+            if (p.age < Ages.RODOS) check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + BossController.ALL.get(a.getUUID()).damageDivisor + "/" + BossController.ALL.get(b.getUUID()).damageDivisor + " near " + BossController.ALL.get(a.getUUID()).participants().size() + ")");
         }
         if (a != null) a.discard();
         if (b != null) b.discard();

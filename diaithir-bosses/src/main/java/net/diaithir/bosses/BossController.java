@@ -153,7 +153,8 @@ public final class BossController {
     /** Scaling by Age and by the number of fighters present at the moment the boss appears. */
     private void scaleOnSpawn() {
         int near = Math.max(1, participants().size());
-        double hpMul = ageScale(true) + prof.scaling.hp_per_extra_player * (near - 1);
+        Difficulty.Mode mode = Difficulty.current(level.getServer());
+        double hpMul = (ageScale(true) + prof.scaling.hp_per_extra_player * (near - 1)) * mode.hp * EventHooks.hpMul(prof, level);
         AttributeInstance hp = mob.getAttribute(Attributes.MAX_HEALTH);
         double base = hp != null ? hp.getBaseValue() : 1;
         if (hp != null && !prof.ownsEntity() && prof.own.hp > base) {
@@ -170,7 +171,7 @@ public final class BossController {
         AttributeInstance dm = mob.getAttribute(Attributes.ATTACK_DAMAGE);
         if (dm != null) {
             dm.removeModifier(DMG_MOD);
-            dm.addPermanentModifier(new AttributeModifier(DMG_MOD, ageScale(false) - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            dm.addPermanentModifier(new AttributeModifier(DMG_MOD, ageScale(false) * mode.damage * EventHooks.damageMul(prof, level) - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         }
         mob.setHealth(mob.getMaxHealth());
         float want = (float) (base * hpMul);
@@ -204,12 +205,25 @@ public final class BossController {
 
     private static boolean fights(ServerPlayer p) { return !p.isCreative() && !p.isSpectator(); }
 
+    // ------------------------------------------------------------------ trails (for rewind)
+    /** One position per second for the last six seconds, per fighter. */
+    private final Map<UUID, java.util.ArrayDeque<Vec3>> trails = new ConcurrentHashMap<>();
+
+    private void recordTrails(List<ServerPlayer> ps) {
+        for (ServerPlayer p : ps) {
+            var q = trails.computeIfAbsent(p.getUUID(), k -> new java.util.ArrayDeque<>());
+            q.addLast(p.position());
+            while (q.size() > 6) q.removeFirst();
+        }
+    }
+
     // ------------------------------------------------------------------ tick
     public void tick() {
         if (dead || !mob.isAlive()) return;
         ticks++;
         List<ServerPlayer> ps = participants();
         if (ticks % 5 == 0) refreshBar(ps);
+        if (ticks % 20 == 0) recordTrails(ps);
         bar.setProgress(Math.clamp(mob.getHealth() / mob.getMaxHealth(), 0.0F, 1.0F));
         mob.setPersistenceRequired();
         tickZones();
@@ -354,7 +368,7 @@ public final class BossController {
     }
 
     private void finish(Data.Attack a) {
-        cooldown = (int) Math.max(10, a.cooldown * ph().cooldown);
+        cooldown = (int) Math.max(10, a.cooldown * ph().cooldown * Difficulty.current(level.getServer()).cooldown);
         last = current;
         current = null;
         airborne = 0;
@@ -392,7 +406,7 @@ public final class BossController {
         double k = 1.0 - (double) telegraph / Math.max(1, a.telegraph);
         Vec3 p = mob.position().add(0, 0.15, 0);
         switch (a.type) {
-            case "slam", "wave", "leap", "roar", "cloud" -> {
+            case "slam", "wave", "leap", "roar", "cloud", "gravity_well", "rewind" -> {
                 ring(ParticleTypes.CRIT, p, a.radius, (int) Math.min(64, a.radius * 8));
                 ring(ParticleTypes.FLAME, p, a.radius * k, (int) Math.min(40, a.radius * 5));
             }
@@ -480,6 +494,37 @@ public final class BossController {
             case "heal" -> {
                 mob.heal((float) (mob.getMaxHealth() * a.amount));
                 level.sendParticles(ParticleTypes.HAPPY_VILLAGER, mob.getX(), mob.getY() + 1, mob.getZ(), 30, 1, 1, 1, 0.1);
+                finish(a);
+            }
+            case "gravity_well" -> {
+                // the well forms where the boss stands: everyone in range is dragged toward it and hurt on the way
+                for (ServerPlayer p : ps) {
+                    if (p.distanceToSqr(mob) > a.radius * a.radius) continue;
+                    Vec3 d = mob.position().subtract(p.position());
+                    Vec3 pull = new Vec3(d.x, 0.15, d.z).normalize().scale(Math.min(2.5, a.power * (0.5 + d.length() / a.radius)));
+                    p.setDeltaMovement(pull);
+                    p.hurtMarked = true;
+                    damage(p, a.damage);
+                    applyEffect(p, "minecraft:slowness", 40, 1);
+                }
+                ring(ParticleTypes.REVERSE_PORTAL, mob.position().add(0, 0.2, 0), a.radius * 0.5, 32);
+                sound(SoundEvents.ENDER_DRAGON_GROWL, 1.2F, 0.6F);
+                finish(a);
+            }
+            case "rewind" -> {
+                // everyone in range is put back where they stood about five seconds ago
+                for (ServerPlayer p : ps) {
+                    if (p.distanceToSqr(mob) > a.radius * a.radius) continue;
+                    var q = trails.get(p.getUUID());
+                    if (q == null || q.isEmpty()) continue;
+                    Vec3 back = q.peekFirst();
+                    level.sendParticles(ParticleTypes.REVERSE_PORTAL, p.getX(), p.getY() + 1, p.getZ(), 30, 0.3, 0.6, 0.3, 0.2);
+                    p.teleportTo(back.x, back.y, back.z);
+                    damage(p, a.damage);
+                    applyEffect(p, "minecraft:nausea", 100, 0);
+                    level.sendParticles(ParticleTypes.REVERSE_PORTAL, back.x, back.y + 1, back.z, 30, 0.3, 0.6, 0.3, 0.2);
+                }
+                sound(SoundEvents.CHORUS_FRUIT_TELEPORT, 1.6F, 0.6F);
                 finish(a);
             }
             case "roar" -> {
@@ -584,7 +629,7 @@ public final class BossController {
             var item = BuiltInRegistries.ITEM.getOptional(Identifier.parse(l.item));
             if (item.isEmpty() || item.get() == net.minecraft.world.item.Items.AIR) continue;
             int n = l.min + rnd.nextInt(Math.max(1, l.max - l.min + 1)) + l.per_age * (worldAge - l.min_age) / 2;
-            addStacks(out, item.get(), Math.max(1, n));
+            addStacks(out, item.get(), Math.max(1, (int) Math.round(n * Difficulty.current(level.getServer()).loot)));
         }
         var trophy = DiaithirBosses.TROPHIES.get(prof.id);
         if (trophy != null) out.add(new ItemStack(trophy.get()));
@@ -609,7 +654,9 @@ public final class BossController {
             ie.setDeltaMovement((rnd.nextDouble() - 0.5) * 0.3, 0.3, (rnd.nextDouble() - 0.5) * 0.3);
             level.addFreshEntity(ie);
         }
-        int xp = prof.xp;
+        int xp = (int) (prof.xp * Difficulty.current(level.getServer()).xp);
+        AscendantData.get(level.getServer()).defeat(prof.id, level.getGameTime());
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new EventHooks.BossDefeatedEvent(prof.id, worldAge));
         while (xp > 0) {
             int c = Math.min(xp, 400);
             ExperienceOrb.award(level, mob.position(), c);
