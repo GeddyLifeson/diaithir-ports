@@ -14,3 +14,8 @@ Server with both jars and PAL: boots clean. `/firearmsselftest` then `/animselft
 
 ## Spell Engine spells
 Script check of the wizards, archers, skill_tree and spell_engine jars: all 34 animation ids used by their spells exist in the shipped player_animations. Paladins and rogues jars were not available to check.
+
+## Body layer (headless server + single-mod client, cloud)
+Dedicated server with PAL: boots clean, `/animselftest` ok=859 bad=0 (body.json loads with PAL's loader, all 87 clips have length and bones, every action and held-item phase points at a clip, sample vanilla items resolve to the right kind).
+Single-mod client (gradle runClient under Xvfb, llvmpipe, joined the local server as Tester): the `body` PAL layer registers and plays on a real client. Driven by rcon, the log shows first plays of act.hurt (damage), act.fall (tp 150 up), act.tread (water), act.die and act.drop_item (server one-shot packet reached the client). Not tested: the other clips in motion, remote players seeing each other, first-person arms, and how the poses look (no screenshots; angles follow the vanilla ModelPart convention). "done" in ANIMATIONS_COVERAGE.csv means clip plus tag/state exists and loads, same standard as the weapon layer.
+Run: `./gradlew runClient -PjoinArgs="--username Tester --quickPlayMultiplayer 127.0.0.1:25565"` with `runServer` (rcon in run/server.properties).

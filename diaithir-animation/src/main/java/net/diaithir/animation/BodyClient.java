@@ -44,6 +44,7 @@ public final class BodyClient {
         String item = "";
     }
     private static final Map<Integer, S> STATE = new ConcurrentHashMap<>();
+    private static final java.util.Set<String> SEEN = ConcurrentHashMap.newKeySet();
 
     static void init(IEventBus bus) {
         bus.addListener(FMLClientSetupEvent.class, e -> e.enqueueWork(() ->
@@ -82,6 +83,7 @@ public final class BodyClient {
     private static boolean play(Avatar a, String once, String loop) {
         PlayerAnimationController c = layer(a);
         if (c == null) return false;
+        if (SEEN.add(String.valueOf(once) + ">" + loop)) com.mojang.logging.LogUtils.getLogger().info("[body] first play {} then {} on {}", once, loop, a.getName().getString());
         RawAnimation r = RawAnimation.begin();
         Animation o = clip(once), l = clip(loop);
         if (o != null) r.thenPlay(o);
