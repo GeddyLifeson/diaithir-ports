@@ -1,0 +1,19 @@
+{
+ "replace": false,
+ "values": [
+  "stellaris:earth_operation_base",
+  "stellaris:earth_satellite",
+  "stellaris:lunar_outpost",
+  "stellaris:meteor",
+  "stellaris:moon_destroyed_spaceship",
+  "stellaris:moon_destroyed_village",
+  "stellaris:moon_dungeon",
+  "stellaris:moon_first_landing",
+  "stellaris:moon_launchpad",
+  "stellaris:moon_space_base",
+  "stellaris:moon_sphere",
+  "stellaris:moon_village",
+  "stellaris:novite",
+  "stellaris:small_moon_dungeon"
+ ]
+}

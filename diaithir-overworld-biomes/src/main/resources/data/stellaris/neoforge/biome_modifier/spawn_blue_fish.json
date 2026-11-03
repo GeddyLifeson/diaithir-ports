@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#stellaris:is_earth_orbit",
+ "spawners": {
+  "type": "stellaris:blue_fish",
+  "weight": 6,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

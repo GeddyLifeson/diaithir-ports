@@ -119,6 +119,11 @@ for n in items:
             break
     else: sitems.append(n)
 put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems, 'gear': list(GEAR.values()), 'portals': [{k: p[k] for k in ('block', 'activator', 'frame')} for p in cfg.get('portals', [])]})
+for old, new in cfg.get('migrate_blocks', {}).items():  # ids the realm no longer registers (machines, fluids): old saves and recipes resolve to a vanilla stand-in
+    migr.append({'registry': 'minecraft:block', 'old': f'{NS}:{old}', 'new': new})
+    migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{old}', 'new': new})
+for old, new in cfg.get('migrate_items', {}).items():
+    migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{old}', 'new': new})
 put(f'data/{NS}/id_migrations.json', migr)
 
 # ---------- assets: copy vanilla shapes, rename, stand-in textures ----------
@@ -353,7 +358,8 @@ for D in dims:
     ns_['sea_level'] = D.get('sea_level', 40)
     if base != 'overworld': ns_['aquifers_enabled'] = False
     sr = ns_['surface_rule']['sequence'][:2] if base == 'nether' else ([ns_['surface_rule']['sequence'][0]] if base == 'overworld' else [])
-    if base == 'overworld': ns_['default_fluid'] = {'Name': 'minecraft:water', 'Properties': {'level': '0'}}
+    if base == 'overworld': ns_['default_fluid'] = {'Name': 'minecraft:water', 'Properties': {'level': '0'}} if D.get('fluid') != 'air' else {'Name': 'minecraft:air'}
+    if D.get('fluid') == 'air': ns_['aquifers_enabled'] = False
     rules = []
     for b, st in style.items():
         if 'top' in st and b in dbio:
@@ -407,8 +413,8 @@ from PIL import Image
 KIND_TEX = {'zombie':'zombie/zombie','illager':'illager/vindicator','golem':'iron_golem/iron_golem','spider':'spider/spider','ravager':'illager/ravager',
             'blaze':'blaze/blaze','silverfish':'silverfish/silverfish','phantom':'phantom/phantom','guardian':'guardian/guardian','hoglin':'hoglin/hoglin'}
 BASE = {'zombie':(20,3),'illager':(24,5),'golem':(100,9),'spider':(16,3),'ravager':(60,7),'blaze':(20,4),'silverfish':(8,1.5),'phantom':(18,3),'guardian':(30,6),'hoglin':(40,5)}
-BOSS_RX = re.compile(r'(queen|_prime$|gigas|verdant_engine|forgotten_guardian|greater_dweller|^slider$|sentry_golem|^tempest$|^fractus_prime$)')
-PASSIVE_RX = re.compile(r'(bunny|whale|cow|phyg|sheepuff|^moa$|glitterwing|prismallard|lizard|^gwib|^mog$|smog_mog|rootmin|variant_bee|honey_slime|kirrid|burrukai|aechor|sprout|^gloomper$|stoneborn)')
+BOSS_RX = re.compile(r'(heart_of_luna|star_crawler_boss|queen|_prime$|gigas|verdant_engine|forgotten_guardian|greater_dweller|^slider$|sentry_golem|^tempest$|^fractus_prime$)')
+PASSIVE_RX = re.compile(r'(^alien$|blue_fish|bunny|whale|cow|phyg|sheepuff|^moa$|glitterwing|prismallard|lizard|^gwib|^mog$|smog_mog|rootmin|variant_bee|honey_slime|kirrid|burrukai|aechor|sprout|^gloomper$|stoneborn)')
 KIND_RX = [('spider', r'(spider|weaver|vermis|trilobita|echinus|spina|palus|scuttler|skephid)'), ('phantom', r'(bee|wing|zephyr|whale|flying|prismallard|tempest)'),
            ('guardian', r'(gwib|watcher|aechor)'), ('golem', r'(golem|slider|taluton|stoneborn|forgotten|nargoyle|sentry)'),
            ('ravager', r'(beast|burrukai|taegore|gigas|muncher|rotbelcher|engine|moa)'), ('hoglin', r'(dweller|brute|^mog$|smog_mog|kirrid|phyg|cow|sheepuff)'),

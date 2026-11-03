@@ -27,13 +27,14 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 final class RealmMobsClient {
     private RealmMobsClient() {}
 
-    static void init(IEventBus bus) {
-        bus.addListener(EntityRenderersEvent.RegisterRenderers.class, RealmMobsClient::renderers);
+    static void init(IEventBus bus, String modId) {
+        bus.addListener(EntityRenderersEvent.RegisterRenderers.class, e -> renderers(e, modId + ":"));
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    private static void renderers(EntityRenderersEvent.RegisterRenderers e) {
+    private static void renderers(EntityRenderersEvent.RegisterRenderers e, String pre) {
         RealmMobs.TYPES.forEach((key, holder) -> {
+            if (!key.startsWith(pre)) return;
             String[] p = key.split(":");
             Identifier t = Identifier.fromNamespaceAndPath(p[0], "textures/entity/" + p[1] + ".png");
             EntityType type = (EntityType) holder.get();
