@@ -83,7 +83,21 @@
   "diaithirbosses:boss_hollow_core": "Rodos",
   "diaithirbosses:ageshard": "Rodos",
   "diaithirbosses:boss_catalyst_t2": "Rodos",
-  "diaithirbosses:boss_sovereign_core": "Rodos"
+  "diaithirbosses:boss_sovereign_core": "Rodos",
+  "diaithirbosses:age_warden_1_trophy": "I",
+  "diaithirbosses:age_warden_1_spawn_egg": "I",
+  "diaithirbosses:age_warden_2_trophy": "II",
+  "diaithirbosses:age_warden_2_spawn_egg": "II",
+  "diaithirbosses:age_warden_3_trophy": "III",
+  "diaithirbosses:age_warden_3_spawn_egg": "III",
+  "diaithirbosses:age_warden_4_trophy": "IV",
+  "diaithirbosses:age_warden_4_spawn_egg": "IV",
+  "diaithirbosses:age_warden_5_trophy": "V",
+  "diaithirbosses:age_warden_5_spawn_egg": "V",
+  "diaithirbosses:age_warden_6_trophy": "VI",
+  "diaithirbosses:age_warden_6_spawn_egg": "VI",
+  "diaithirbosses:age_warden_8_trophy": "Rodos",
+  "diaithirbosses:age_warden_8_spawn_egg": "Rodos"
  },
  "entities": {
   "diaithirbosses:tribal_chief": "I",
@@ -120,6 +134,13 @@
   "diaithirbosses:ash_seraph": "Rodos",
   "diaithirbosses:dusk_wyrm": "Rodos",
   "diaithirbosses:rootbreaker": "Rodos",
-  "diaithirbosses:last_wheel": "Rodos"
+  "diaithirbosses:last_wheel": "Rodos",
+  "diaithirbosses:age_warden_1": "I",
+  "diaithirbosses:age_warden_2": "II",
+  "diaithirbosses:age_warden_3": "III",
+  "diaithirbosses:age_warden_4": "IV",
+  "diaithirbosses:age_warden_5": "V",
+  "diaithirbosses:age_warden_6": "VI",
+  "diaithirbosses:age_warden_8": "Rodos"
  }
 }
