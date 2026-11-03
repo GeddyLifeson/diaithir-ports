@@ -38,7 +38,7 @@ public class FaunaRenderer extends MobRenderer<FaunaMob, FaunaState, PlanModel> 
     @Override
     public Identifier getTextureLocation(FaunaState state) {
         if (state.species != null) {
-            Identifier own = Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/" + state.species.id + ".png");
+            Identifier own = Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/" + state.species.id.toLowerCase(java.util.Locale.ROOT) + ".png");
             if (EXISTS.computeIfAbsent(own, id -> Minecraft.getInstance().getResourceManager().getResource(id).isPresent())) return own;
         }
         return Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/plan/" + plan.name + ".png");
