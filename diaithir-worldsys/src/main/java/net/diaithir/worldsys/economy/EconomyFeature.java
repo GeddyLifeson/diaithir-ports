@@ -19,7 +19,7 @@ public final class EconomyFeature {
     private static final long WEEK_TICKS = 24000L * 7;
 
     public static void register(IEventBus modBus) {
-        NeoForge.EVENT_BUS.addListener(ServerStartingEvent.class, e -> EconWorld.server(e.getServer()));
+        NeoForge.EVENT_BUS.addListener(ServerStartingEvent.class, e -> { EconWorld.server(e.getServer()); TechBridge.init(e.getServer().getServerDirectory()); });
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, e -> EconWorld.publishTable());
         if (System.getProperty("diaithir.econselftest") != null)
             NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, e -> {
