@@ -1,0 +1,1 @@
+64 px redraw of the 63 circuit-network block faces and 6 wire coil items of ports #214 (same file names, namespace diaithir_wiretech). Copy assets/ over the 16 px placeholders. Generated, not yet seen in a client. Other wiretech textures (arc furnace, casings, dusts) are still 16 px.
