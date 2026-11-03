@@ -1,0 +1,174 @@
+{
+ "entries": [
+  {
+   "id": "diaithirfirearms:sidearm_light",
+   "name": "Light Sidearm",
+   "class": "pistol",
+   "age": "VI",
+   "ammo": "diaithirfirearms:ammo_9mm",
+   "damage_hp": 5,
+   "magazine": 15,
+   "range_m": 40
+  },
+  {
+   "id": "diaithirfirearms:sidearm_heavy",
+   "name": "Heavy Sidearm",
+   "class": "pistol",
+   "age": "VI",
+   "ammo": "diaithirfirearms:ammo_45",
+   "damage_hp": 6.5,
+   "magazine": 8,
+   "range_m": 40
+  },
+  {
+   "id": "diaithirfirearms:magnum",
+   "name": "Magnum Revolver",
+   "class": "pistol",
+   "age": "VI",
+   "ammo": "diaithirfirearms:ammo_magnum",
+   "damage_hp": 10,
+   "magazine": 6,
+   "range_m": 55
+  },
+  {
+   "id": "diaithirfirearms:smg_compact",
+   "name": "Compact Submachine Gun",
+   "class": "smg",
+   "age": "VII",
+   "ammo": "diaithirfirearms:ammo_9mm",
+   "damage_hp": 4,
+   "magazine": 30,
+   "range_m": 30
+  },
+  {
+   "id": "diaithirfirearms:carbine",
+   "name": "Carbine",
+   "class": "rifle",
+   "age": "VII",
+   "ammo": "diaithirfirearms:ammo_556",
+   "damage_hp": 6,
+   "magazine": 30,
+   "range_m": 70
+  },
+  {
+   "id": "diaithirfirearms:assault_rifle",
+   "name": "Assault Rifle",
+   "class": "rifle",
+   "age": "VII",
+   "ammo": "diaithirfirearms:ammo_762",
+   "damage_hp": 8,
+   "magazine": 30,
+   "range_m": 75
+  },
+  {
+   "id": "diaithirfirearms:marksman_rifle",
+   "name": "Marksman Rifle",
+   "class": "rifle",
+   "age": "VII",
+   "ammo": "diaithirfirearms:ammo_762",
+   "damage_hp": 12,
+   "magazine": 20,
+   "range_m": 110
+  },
+  {
+   "id": "diaithirfirearms:sniper_rifle",
+   "name": "Sniper Rifle",
+   "class": "sniper",
+   "age": "VII",
+   "ammo": "diaithirfirearms:ammo_762",
+   "damage_hp": 22,
+   "magazine": 5,
+   "range_m": 160
+  },
+  {
+   "id": "diaithirfirearms:antimaterial_rifle",
+   "name": "Anti-Materiel Rifle",
+   "class": "sniper",
+   "age": "RODOS",
+   "ammo": "diaithirfirearms:ammo_50bmg",
+   "damage_hp": 34,
+   "magazine": 5,
+   "range_m": 200
+  },
+  {
+   "id": "diaithirfirearms:pump_shotgun",
+   "name": "Pump Shotgun",
+   "class": "shotgun",
+   "age": "VI",
+   "ammo": "diaithirfirearms:ammo_12g",
+   "damage_hp": 2.5,
+   "magazine": 6,
+   "range_m": 25
+  },
+  {
+   "id": "diaithirfirearms:combat_shotgun",
+   "name": "Combat Shotgun",
+   "class": "shotgun",
+   "age": "VII",
+   "ammo": "diaithirfirearms:ammo_12g",
+   "damage_hp": 2.5,
+   "magazine": 8,
+   "range_m": 25
+  },
+  {
+   "id": "diaithirfirearms:auto_shotgun",
+   "name": "Automatic Shotgun",
+   "class": "shotgun",
+   "age": "VII",
+   "ammo": "diaithirfirearms:ammo_12g",
+   "damage_hp": 2.2,
+   "magazine": 20,
+   "range_m": 22
+  },
+  {
+   "id": "diaithirfirearms:light_mg",
+   "name": "Light Machine Gun",
+   "class": "lmg",
+   "age": "VII",
+   "ammo": "diaithirfirearms:ammo_556",
+   "damage_hp": 5.5,
+   "magazine": 100,
+   "range_m": 70
+  },
+  {
+   "id": "diaithirfirearms:minigun",
+   "name": "Rotary Minigun",
+   "class": "lmg",
+   "age": "RODOS",
+   "ammo": "diaithirfirearms:ammo_762",
+   "damage_hp": 6,
+   "magazine": 200,
+   "range_m": 60
+  },
+  {
+   "id": "diaithirfirearms:grenade_launcher",
+   "name": "Grenade Launcher",
+   "class": "launcher",
+   "age": "VII",
+   "ammo": "diaithirfirearms:grenade_40mm",
+   "damage_hp": 12,
+   "magazine": 6,
+   "range_m": 60
+  },
+  {
+   "id": "diaithirfirearms:rocket_launcher",
+   "name": "Rocket Launcher",
+   "class": "launcher",
+   "age": "RODOS",
+   "ammo": "diaithirfirearms:rocket",
+   "damage_hp": 25,
+   "magazine": 1,
+   "range_m": 90
+  },
+  {
+   "id": "diaithirfirearms:energy_rifle",
+   "name": "Energy Rifle",
+   "class": "energy",
+   "age": "RODOS",
+   "ammo": "diaithirfirearms:energy_cell",
+   "damage_hp": 9,
+   "magazine": 24,
+   "range_m": 90
+  }
+ ]
+}

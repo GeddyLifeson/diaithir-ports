@@ -1,0 +1,113 @@
+{
+ "sidearm_light": {
+  "english": "Light Sidearm"
+ },
+ "sidearm_heavy": {
+  "english": "Heavy Sidearm"
+ },
+ "magnum": {
+  "english": "Magnum Revolver"
+ },
+ "smg_compact": {
+  "english": "Compact Submachine Gun"
+ },
+ "carbine": {
+  "english": "Carbine"
+ },
+ "assault_rifle": {
+  "english": "Assault Rifle"
+ },
+ "marksman_rifle": {
+  "english": "Marksman Rifle"
+ },
+ "sniper_rifle": {
+  "english": "Sniper Rifle"
+ },
+ "antimaterial_rifle": {
+  "english": "Anti-Materiel Rifle"
+ },
+ "pump_shotgun": {
+  "english": "Pump Shotgun"
+ },
+ "combat_shotgun": {
+  "english": "Combat Shotgun"
+ },
+ "auto_shotgun": {
+  "english": "Automatic Shotgun"
+ },
+ "light_mg": {
+  "english": "Light Machine Gun"
+ },
+ "minigun": {
+  "english": "Rotary Minigun"
+ },
+ "grenade_launcher": {
+  "english": "Grenade Launcher"
+ },
+ "rocket_launcher": {
+  "english": "Rocket Launcher"
+ },
+ "energy_rifle": {
+  "english": "Energy Rifle"
+ },
+ "ammo_9mm": {
+  "english": "9 mm Round"
+ },
+ "ammo_45": {
+  "english": ".45 Round"
+ },
+ "ammo_magnum": {
+  "english": "Magnum Round"
+ },
+ "ammo_556": {
+  "english": "5.56 mm Round"
+ },
+ "ammo_762": {
+  "english": "7.62 mm Round"
+ },
+ "ammo_12g": {
+  "english": "12 Gauge Shell"
+ },
+ "ammo_50bmg": {
+  "english": ".50 Round"
+ },
+ "grenade_40mm": {
+  "english": "40 mm Grenade"
+ },
+ "rocket": {
+  "english": "Rocket"
+ },
+ "energy_cell": {
+  "english": "Energy Cell"
+ },
+ "sight_red_dot": {
+  "english": "Red Dot Sight"
+ },
+ "sight_x4": {
+  "english": "Four-Power Scope"
+ },
+ "sight_x8": {
+  "english": "Eight-Power Scope"
+ },
+ "suppressor": {
+  "english": "Suppressor"
+ },
+ "muzzle_brake": {
+  "english": "Muzzle Brake"
+ },
+ "foregrip": {
+  "english": "Foregrip"
+ },
+ "gunmetal_nugget": {
+  "english": "Gunmetal Nugget"
+ },
+ "gunmetal_ingot": {
+  "english": "Gunmetal Ingot"
+ },
+ "gunmetal_mesh": {
+  "english": "Gunmetal Mesh"
+ },
+ "gun_internals": {
+  "english": "Gun Internals"
+ }
+}
