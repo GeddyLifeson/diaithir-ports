@@ -1,1 +1,6 @@
-{"model": {"type": "minecraft:model", "model": "diaithirworldsys:item/ruby"}}
+{
+ "model": {
+  "type": "minecraft:model",
+  "model": "diaithirworldsys:item/ruby"
+ }
+}

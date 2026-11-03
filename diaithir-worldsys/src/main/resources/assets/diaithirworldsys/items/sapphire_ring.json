@@ -1,1 +1,6 @@
-{"model": {"type": "minecraft:model", "model": "diaithirworldsys:item/sapphire_ring"}}
+{
+ "model": {
+  "type": "minecraft:model",
+  "model": "diaithirworldsys:item/sapphire_ring"
+ }
+}

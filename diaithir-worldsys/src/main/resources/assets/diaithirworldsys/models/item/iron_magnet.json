@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "diaithirworldsys:item/iron_magnet"
-  }
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirworldsys:item/iron_magnet"
+ }
 }

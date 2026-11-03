@@ -1,1 +1,6 @@
-{"parent": "minecraft:item/generated", "textures": {"layer0": "diaithirworldsys:item/sapphire"}}
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirworldsys:item/sapphire"
+ }
+}

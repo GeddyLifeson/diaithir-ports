@@ -1,33 +1,33 @@
 [
  {
   "registry": "minecraft:item",
-  "old": "jewelry:ruby",
-  "new": "diaithirworldsys:ruby"
+  "old": "utilitarian:angel_block",
+  "new": "diaithirworldsys:angel_block"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:angel_block",
+  "new": "diaithirworldsys:angel_block"
  },
  {
   "registry": "minecraft:item",
-  "old": "jewelry:sapphire",
-  "new": "diaithirworldsys:sapphire"
+  "old": "utilitarian:fluid_hopper",
+  "new": "diaithirworldsys:fluid_hopper"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:fluid_hopper",
+  "new": "diaithirworldsys:fluid_hopper"
  },
  {
   "registry": "minecraft:item",
-  "old": "jewelry:topaz",
-  "new": "diaithirworldsys:topaz"
+  "old": "utilitarian:redstone_clock",
+  "new": "diaithirworldsys:redstone_clock"
  },
  {
-  "registry": "minecraft:item",
-  "old": "irons_jewelry:ruby",
-  "new": "diaithirworldsys:ruby"
- },
- {
-  "registry": "minecraft:item",
-  "old": "irons_jewelry:sapphire",
-  "new": "diaithirworldsys:sapphire"
- },
- {
-  "registry": "minecraft:item",
-  "old": "irons_jewelry:topaz",
-  "new": "diaithirworldsys:topaz"
+  "registry": "minecraft:block",
+  "old": "utilitarian:redstone_clock",
+  "new": "diaithirworldsys:redstone_clock"
  },
  {
   "registry": "minecraft:item",
@@ -46,6 +46,21 @@
  },
  {
   "registry": "minecraft:item",
+  "old": "jewelry:ruby",
+  "new": "diaithirworldsys:ruby"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:sapphire",
+  "new": "diaithirworldsys:sapphire"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:topaz",
+  "new": "diaithirworldsys:topaz"
+ },
+ {
+  "registry": "minecraft:item",
   "old": "simplemagnets:basicmagnet",
   "new": "diaithirworldsys:iron_magnet"
  },
@@ -61,12 +76,957 @@
  },
  {
   "registry": "minecraft:item",
+  "old": "guardvillagers:guard_spawn_egg",
+  "new": "diaithirworldsys:village_guard_spawn_egg"
+ },
+ {
+  "registry": "minecraft:item",
   "old": "explorerscompass:explorerscompass",
   "new": "diaithirworldsys:wayfinder_compass"
  },
  {
   "registry": "minecraft:item",
-  "old": "guardvillagers:guard_spawn_egg",
-  "new": "diaithirworldsys:village_guard_spawn_egg"
+  "old": "jewelry:citrine",
+  "new": "diaithirworldsys:jewelry_citrine"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:citrine_necklace",
+  "new": "diaithirworldsys:jewelry_citrine_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:citrine_ring",
+  "new": "diaithirworldsys:jewelry_citrine_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:copper_ring",
+  "new": "diaithirworldsys:jewelry_copper_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:deepslate_gem_vein",
+  "new": "diaithirworldsys:jewelry_deepslate_gem_vein"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "jewelry:deepslate_gem_vein",
+  "new": "diaithirworldsys:jewelry_deepslate_gem_vein"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:diamond_necklace",
+  "new": "diaithirworldsys:jewelry_diamond_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:diamond_ring",
+  "new": "diaithirworldsys:jewelry_diamond_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:emerald_necklace",
+  "new": "diaithirworldsys:jewelry_emerald_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:gem_vein",
+  "new": "diaithirworldsys:jewelry_gem_vein"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "jewelry:gem_vein",
+  "new": "diaithirworldsys:jewelry_gem_vein"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:gold_ring",
+  "new": "diaithirworldsys:jewelry_gold_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:iron_ring",
+  "new": "diaithirworldsys:jewelry_iron_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:jade",
+  "new": "diaithirworldsys:jewelry_jade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:jade_necklace",
+  "new": "diaithirworldsys:jewelry_jade_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:jade_ring",
+  "new": "diaithirworldsys:jewelry_jade_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:jewelers_kit",
+  "new": "diaithirworldsys:jewelry_jewelers_kit"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "jewelry:jewelers_kit",
+  "new": "diaithirworldsys:jewelry_jewelers_kit"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_citrine_necklace",
+  "new": "diaithirworldsys:jewelry_netherite_citrine_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_citrine_ring",
+  "new": "diaithirworldsys:jewelry_netherite_citrine_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_jade_necklace",
+  "new": "diaithirworldsys:jewelry_netherite_jade_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_jade_ring",
+  "new": "diaithirworldsys:jewelry_netherite_jade_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_ruby_necklace",
+  "new": "diaithirworldsys:jewelry_netherite_ruby_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_ruby_ring",
+  "new": "diaithirworldsys:jewelry_netherite_ruby_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_sapphire_necklace",
+  "new": "diaithirworldsys:jewelry_netherite_sapphire_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_sapphire_ring",
+  "new": "diaithirworldsys:jewelry_netherite_sapphire_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_tanzanite_necklace",
+  "new": "diaithirworldsys:jewelry_netherite_tanzanite_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_tanzanite_ring",
+  "new": "diaithirworldsys:jewelry_netherite_tanzanite_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_topaz_necklace",
+  "new": "diaithirworldsys:jewelry_netherite_topaz_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:netherite_topaz_ring",
+  "new": "diaithirworldsys:jewelry_netherite_topaz_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:ruby_necklace",
+  "new": "diaithirworldsys:jewelry_ruby_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:sapphire_necklace",
+  "new": "diaithirworldsys:jewelry_sapphire_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:socket_mount",
+  "new": "diaithirworldsys:jewelry_socket_mount"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:tanzanite",
+  "new": "diaithirworldsys:jewelry_tanzanite"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:tanzanite_necklace",
+  "new": "diaithirworldsys:jewelry_tanzanite_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:tanzanite_ring",
+  "new": "diaithirworldsys:jewelry_tanzanite_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:topaz_necklace",
+  "new": "diaithirworldsys:jewelry_topaz_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_arcane_necklace",
+  "new": "diaithirworldsys:jewelry_unique_arcane_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_arcane_ring",
+  "new": "diaithirworldsys:jewelry_unique_arcane_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_archer_necklace",
+  "new": "diaithirworldsys:jewelry_unique_archer_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_archer_ring",
+  "new": "diaithirworldsys:jewelry_unique_archer_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_attack_necklace",
+  "new": "diaithirworldsys:jewelry_unique_attack_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_attack_ring",
+  "new": "diaithirworldsys:jewelry_unique_attack_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_crit_necklace",
+  "new": "diaithirworldsys:jewelry_unique_crit_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_crit_ring",
+  "new": "diaithirworldsys:jewelry_unique_crit_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_dex_necklace",
+  "new": "diaithirworldsys:jewelry_unique_dex_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_dex_ring",
+  "new": "diaithirworldsys:jewelry_unique_dex_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_fire_necklace",
+  "new": "diaithirworldsys:jewelry_unique_fire_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_fire_ring",
+  "new": "diaithirworldsys:jewelry_unique_fire_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_frost_necklace",
+  "new": "diaithirworldsys:jewelry_unique_frost_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_frost_ring",
+  "new": "diaithirworldsys:jewelry_unique_frost_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_healing_necklace",
+  "new": "diaithirworldsys:jewelry_unique_healing_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_healing_ring",
+  "new": "diaithirworldsys:jewelry_unique_healing_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_spell_necklace",
+  "new": "diaithirworldsys:jewelry_unique_spell_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_spell_ring",
+  "new": "diaithirworldsys:jewelry_unique_spell_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_tank_necklace",
+  "new": "diaithirworldsys:jewelry_unique_tank_necklace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:unique_tank_ring",
+  "new": "diaithirworldsys:jewelry_unique_tank_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:black_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_black_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:black_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_black_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:black_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_black_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:black_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_black_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:blue_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_blue_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:blue_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_blue_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:blue_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_blue_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:blue_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_blue_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:brown_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_brown_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:brown_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_brown_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:brown_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_brown_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:brown_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_brown_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:cursed_grrass",
+  "new": "diaithirworldsys:utilitarian_cursed_grrass"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:cursed_grrass",
+  "new": "diaithirworldsys:utilitarian_cursed_grrass"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:cyan_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_cyan_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:cyan_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_cyan_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:cyan_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_cyan_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:cyan_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_cyan_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:drit",
+  "new": "diaithirworldsys:utilitarian_drit"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:drit",
+  "new": "diaithirworldsys:utilitarian_drit"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:gray_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_gray_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:gray_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_gray_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:gray_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_gray_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:gray_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_gray_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:green_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_green_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:green_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_green_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:green_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_green_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:green_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_green_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:grrass",
+  "new": "diaithirworldsys:utilitarian_grrass"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:grrass",
+  "new": "diaithirworldsys:utilitarian_grrass"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:inverted_lapis_lamp",
+  "new": "diaithirworldsys:utilitarian_inverted_lapis_lamp"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:inverted_lapis_lamp",
+  "new": "diaithirworldsys:utilitarian_inverted_lapis_lamp"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:inverted_redstone_lamp",
+  "new": "diaithirworldsys:utilitarian_inverted_redstone_lamp"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:inverted_redstone_lamp",
+  "new": "diaithirworldsys:utilitarian_inverted_redstone_lamp"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:lapis_lamp",
+  "new": "diaithirworldsys:utilitarian_lapis_lamp"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:lapis_lamp",
+  "new": "diaithirworldsys:utilitarian_lapis_lamp"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:light_blue_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_light_blue_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:light_blue_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_light_blue_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:light_blue_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_light_blue_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:light_blue_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_light_blue_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:light_gray_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_light_gray_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:light_gray_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_light_gray_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:light_gray_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_light_gray_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:light_gray_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_light_gray_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:lime_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_lime_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:lime_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_lime_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:lime_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_lime_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:lime_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_lime_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:magenta_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_magenta_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:magenta_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_magenta_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:magenta_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_magenta_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:magenta_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_magenta_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:magnet",
+  "new": "diaithirworldsys:utilitarian_magnet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:magnet",
+  "new": "diaithirworldsys:utilitarian_magnet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:no_raider_block",
+  "new": "diaithirworldsys:utilitarian_no_raider_block"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:no_raider_block",
+  "new": "diaithirworldsys:utilitarian_no_raider_block"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:no_soliciting_banner",
+  "new": "diaithirworldsys:utilitarian_no_soliciting_banner"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:no_soliciting_banner",
+  "new": "diaithirworldsys:utilitarian_no_soliciting_banner"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:orange_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_orange_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:orange_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_orange_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:orange_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_orange_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:orange_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_orange_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:pink_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_pink_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:pink_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_pink_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:pink_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_pink_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:pink_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_pink_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:purple_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_purple_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:purple_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_purple_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:purple_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_purple_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:purple_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_purple_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:red_snad",
+  "new": "diaithirworldsys:utilitarian_red_snad"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:red_snad",
+  "new": "diaithirworldsys:utilitarian_red_snad"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:red_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_red_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:red_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_red_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:red_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_red_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:red_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_red_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:restraining_order",
+  "new": "diaithirworldsys:utilitarian_restraining_order"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:slime_bucket",
+  "new": "diaithirworldsys:utilitarian_slime_bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:snad",
+  "new": "diaithirworldsys:utilitarian_snad"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:snad",
+  "new": "diaithirworldsys:utilitarian_snad"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:soul_snad",
+  "new": "diaithirworldsys:utilitarian_soul_snad"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:soul_snad",
+  "new": "diaithirworldsys:utilitarian_soul_snad"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:sound_muffler",
+  "new": "diaithirworldsys:utilitarian_sound_muffler"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:sound_muffler",
+  "new": "diaithirworldsys:utilitarian_sound_muffler"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:tiny_charcoal",
+  "new": "diaithirworldsys:utilitarian_tiny_charcoal"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:tiny_coal",
+  "new": "diaithirworldsys:utilitarian_tiny_coal"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:tps_meter",
+  "new": "diaithirworldsys:utilitarian_tps_meter"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:tps_meter",
+  "new": "diaithirworldsys:utilitarian_tps_meter"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:trowel",
+  "new": "diaithirworldsys:utilitarian_trowel"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:unname_tag",
+  "new": "diaithirworldsys:utilitarian_unname_tag"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:well_behaved_dropper",
+  "new": "diaithirworldsys:utilitarian_well_behaved_dropper"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:well_behaved_dropper",
+  "new": "diaithirworldsys:utilitarian_well_behaved_dropper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:white_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_white_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:white_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_white_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:white_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_white_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:white_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_white_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:yellow_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_yellow_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:yellow_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_yellow_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:yellow_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_yellow_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:yellow_trapped_soliciting_carpet",
+  "new": "diaithirworldsys:utilitarian_yellow_trapped_soliciting_carpet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "simplemagnets:advanced_demagnetization_coil",
+  "new": "diaithirworldsys:simplemagnets_advanced_demagnetization_coil"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "simplemagnets:advanced_demagnetization_coil",
+  "new": "diaithirworldsys:simplemagnets_advanced_demagnetization_coil"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "simplemagnets:basic_demagnetization_coil",
+  "new": "diaithirworldsys:simplemagnets_basic_demagnetization_coil"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "simplemagnets:basic_demagnetization_coil",
+  "new": "diaithirworldsys:simplemagnets_basic_demagnetization_coil"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:anvil",
+  "new": "diaithirworldsys:crafting_on_a_stick_anvil"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:cartography_table",
+  "new": "diaithirworldsys:crafting_on_a_stick_cartography_table"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:chipped_anvil",
+  "new": "diaithirworldsys:crafting_on_a_stick_chipped_anvil"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:damaged_anvil",
+  "new": "diaithirworldsys:crafting_on_a_stick_damaged_anvil"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:grindstone",
+  "new": "diaithirworldsys:crafting_on_a_stick_grindstone"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:loom",
+  "new": "diaithirworldsys:crafting_on_a_stick_loom"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:smithing_table",
+  "new": "diaithirworldsys:crafting_on_a_stick_smithing_table"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:stonecutter",
+  "new": "diaithirworldsys:crafting_on_a_stick_stonecutter"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:auto_trader",
+  "new": "diaithirworldsys:easy_villagers_auto_trader"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "easy_villagers:auto_trader",
+  "new": "diaithirworldsys:easy_villagers_auto_trader"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:breeder",
+  "new": "diaithirworldsys:easy_villagers_breeder"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "easy_villagers:breeder",
+  "new": "diaithirworldsys:easy_villagers_breeder"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:converter",
+  "new": "diaithirworldsys:easy_villagers_converter"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "easy_villagers:converter",
+  "new": "diaithirworldsys:easy_villagers_converter"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:farmer",
+  "new": "diaithirworldsys:easy_villagers_farmer"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "easy_villagers:farmer",
+  "new": "diaithirworldsys:easy_villagers_farmer"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:incubator",
+  "new": "diaithirworldsys:easy_villagers_incubator"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "easy_villagers:incubator",
+  "new": "diaithirworldsys:easy_villagers_incubator"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:inventory_viewer",
+  "new": "diaithirworldsys:easy_villagers_inventory_viewer"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:iron_farm",
+  "new": "diaithirworldsys:easy_villagers_iron_farm"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "easy_villagers:iron_farm",
+  "new": "diaithirworldsys:easy_villagers_iron_farm"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:trader",
+  "new": "diaithirworldsys:easy_villagers_trader"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "easy_villagers:trader",
+  "new": "diaithirworldsys:easy_villagers_trader"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "easy_villagers:villager",
+  "new": "diaithirworldsys:easy_villagers_villager"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "guardvillagers:illusioner_spawn_egg",
+  "new": "diaithirworldsys:guardvillagers_illusioner_spawn_egg"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "irons_jewelry:ruby",
+  "new": "diaithirworldsys:ruby"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "irons_jewelry:sapphire",
+  "new": "diaithirworldsys:sapphire"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "irons_jewelry:topaz",
+  "new": "diaithirworldsys:topaz"
  }
 ]
