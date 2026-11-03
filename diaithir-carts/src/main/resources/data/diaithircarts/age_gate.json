@@ -9,11 +9,12 @@
   "tier2": {
     "age": 5,
     "items": [
-      "diaithircarts:steel_rail",
-      "diaithircarts:steel_powered_rail",
-      "diaithircarts:station_rail",
+      "diaithircarts:chain_cutters",
       "diaithircarts:coupling_chain",
-      "diaithircarts:chain_cutters"
+      "diaithircarts:station_rail",
+      "diaithircarts:steel_powered_rail",
+      "diaithircarts:steel_rail",
+      "diaithircarts:timetable"
     ]
   },
   "tier3": {
@@ -151,6 +152,15 @@
     "age": 7,
     "items": [
       "diaithircarts:rail_automated_yard"
+    ]
+  },
+  "routing": {
+    "age": 5,
+    "items": [
+      "diaithircarts:one_way_rail",
+      "diaithircarts:destination_rail",
+      "diaithircarts:cart_loader",
+      "diaithircarts:locking_rail"
     ]
   }
 }

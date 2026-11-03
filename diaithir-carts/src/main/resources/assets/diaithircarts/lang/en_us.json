@@ -119,5 +119,10 @@
  "block.diaithircarts.crane_hammerhead": "Hammerhead crane",
  "block.diaithircarts.crane_gantry": "Overhead gantry crane",
  "block.diaithircarts.crane_container": "Container ship-to-shore crane",
- "block.diaithircarts.crane_mobile": "Diesel mobile crane"
+ "block.diaithircarts.crane_mobile": "Diesel mobile crane",
+ "block.diaithircarts.one_way_rail": "One-Way Rail",
+ "block.diaithircarts.destination_rail": "Destination Rail",
+ "block.diaithircarts.cart_loader": "Cart Loader",
+ "block.diaithircarts.locking_rail": "Locking Rail",
+ "item.diaithircarts.timetable": "Timetable"
 }

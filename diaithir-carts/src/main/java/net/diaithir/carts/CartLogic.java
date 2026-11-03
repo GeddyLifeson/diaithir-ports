@@ -22,6 +22,7 @@ public final class CartLogic {
         final Vec3 dir;
         int waited;
         boolean passing;
+        boolean wasPowered;
 
         Hold(BlockPos at, Vec3 dir) {
             this.at = at;
@@ -60,7 +61,16 @@ public final class CartLogic {
             station(cart, level, pos, state);
             return;
         }
+        if (state.getBlock() instanceof LockingRail) {
+            locking(cart, level, pos, state);
+            return;
+        }
         if (!HOLDS.isEmpty()) HOLDS.remove(cart.getUUID());
+        if (state.getBlock() instanceof OneWayRail) {
+            Vec3 ok = OneWayRail.allowed(state);
+            Vec3 d = cart.getDeltaMovement();
+            if (ok != null && d.x * ok.x + d.z * ok.z < -0.02) cart.setDeltaMovement(-d.x * 0.5, d.y, -d.z * 0.5);   // turned back
+        }
         if (state.getBlock() instanceof TierPoweredRail rail) {
             if (state.getValue(PoweredRailBlock.POWERED)) boost(cart, level, pos, state, rail.tier().boost);
             else halt(cart);
@@ -99,7 +109,9 @@ public final class CartLogic {
 
     private static void station(AbstractMinecart cart, ServerLevel level, BlockPos pos, BlockState state) {
         if (Coupling.hasLeader(cart)) return; // a coupled follower goes where its leader goes
-        boolean powered = state.getValue(PoweredRailBlock.POWERED);
+        Schedule sch = Schedule.get(cart);
+        boolean crewed = Autonomy.mayRun(cart);
+        boolean powered = state.getValue(PoweredRailBlock.POWERED) && (sch == null || crewed);
         Hold h = HOLDS.get(cart.getUUID());
         if (h != null && !h.at.equals(pos)) {
             HOLDS.remove(cart.getUUID());
@@ -107,7 +119,9 @@ public final class CartLogic {
         }
         Vec3 d = cart.getDeltaMovement();
         double sp = d.horizontalDistance();
+        boolean target = sch != null && sch.target().equals(pos);
         if (powered) {
+            if (target) Schedule.set(cart, sch.advance());
             if (h != null) {
                 if (sp < 0.03) cart.setDeltaMovement(h.dir.x * 0.2, d.y, h.dir.z * 0.2);
                 HOLDS.remove(cart.getUUID());
@@ -121,17 +135,68 @@ public final class CartLogic {
             HOLDS.put(cart.getUUID(), h);
         }
         if (h.passing) return;
+        if (sch != null && crewed && !target) {   // a scheduled, crewed cart does not stop at stations that are not its next stop
+            h.passing = true;
+            if (sp < 0.03) cart.setDeltaMovement(h.dir.x * 0.3, d.y, h.dir.z * 0.3);
+            return;
+        }
         if (sp < 0.03) {
             cart.setDeltaMovement(0, d.y, 0);
+            if (sch != null && !crewed) return;   // no crew: wait here until someone climbs aboard (or the Age brings autonomy)
             h.waited++;
             int seconds = StationRail.SECONDS[state.getValue(StationRail.DELAY)];
             if (seconds > 0 && h.waited >= seconds * 20) {
+                if (target) Schedule.set(cart, sch.advance());
                 h.passing = true;
                 cart.setDeltaMovement(h.dir.x * 0.3, d.y, h.dir.z * 0.3);
             }
         } else {
             cart.setDeltaMovement(d.x * 0.5, d.y, d.z * 0.5);
         }
+    }
+
+    private static void locking(AbstractMinecart cart, ServerLevel level, BlockPos pos, BlockState state) {
+        if (Coupling.hasLeader(cart)) return;
+        Hold h = HOLDS.get(cart.getUUID());
+        if (h != null && !h.at.equals(pos)) {
+            HOLDS.remove(cart.getUUID());
+            h = null;
+        }
+        boolean powered = state.getValue(PoweredRailBlock.POWERED);
+        Vec3 d = cart.getDeltaMovement();
+        double sp = d.horizontalDistance();
+        if (h == null) {
+            Vec3 dir = sp > 0.01 ? new Vec3(d.x / sp, 0, d.z / sp) : axis(state);
+            h = new Hold(pos, dir);
+            h.wasPowered = powered;
+            HOLDS.put(cart.getUUID(), h);
+        }
+        if (h.passing) return;
+        if (sp >= 0.03) {
+            cart.setDeltaMovement(d.x * 0.5, d.y, d.z * 0.5);
+            return;
+        }
+        cart.setDeltaMovement(0, d.y, 0);
+        boolean release;
+        if (state.getValue(LockingRail.MODE) == 0) release = powered && !h.wasPowered;
+        else release = ahead(level, pos, h.dir);
+        h.wasPowered = powered;
+        if (release) {
+            h.passing = true;
+            cart.setDeltaMovement(h.dir.x * 0.3, d.y, h.dir.z * 0.3);
+        }
+    }
+
+    /** True when no other cart is on the rails ahead of pos in direction dir (up to LockingRail.AHEAD of them). */
+    private static boolean ahead(ServerLevel level, BlockPos pos, Vec3 dir) {
+        net.minecraft.core.Direction face = net.minecraft.core.Direction.getApproximateNearest(dir.x, 0, dir.z);
+        for (BlockPos n : new BlockPos[]{pos.relative(face), pos.relative(face).above(), pos.relative(face).below()}) {
+            if (RailTrace.isRail(level, n)) {
+                java.util.List<BlockPos> rails = RailTrace.trace(level, n, LockingRail.AHEAD, pos);
+                return !RailTrace.occupied(level, rails);
+            }
+        }
+        return true;
     }
 
     private static Vec3 axis(BlockState state) {
