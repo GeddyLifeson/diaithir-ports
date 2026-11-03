@@ -9,3 +9,11 @@ Foundry parts of the automation and crafting module, in the same layout as `diai
 
 Regenerate everything from the progression graph: `python3 -I tools/gen_assets.py [graph.json]`.
 Test: `./gradlew runServer` then `diaithircrafting selftest`.
+
+## Stations (diaithir_stations)
+Second mod in the same jar, package `net.diaithir.stations`. Crafting grid only for simple everyday things; everything else is a part cast or forged at a station, an assembly of a few major parts, or a process.
+- Recipes are data under `data/<ns>/diaithir_stations/station_recipe/*.json`: `station` (graph key), `stage` (part, assembly, process), `ingredients` (item or tag, count, up to 9), `result`, `time_s`, optional `operator` (needs a fed Operator Seat in range). This is a reload-listener data type, not a vanilla recipe type, so it does not show in the recipe book.
+- Blocks: `diaithir_stations:foundry_hearth_bench` (I), `foundry_wright_bench` (III), `foundry_smeltery` (IV), `foundry_steam_forge` (V), `foundry_fabricator` (VIII). The graph proposes `diaithir:` ids; the registry namespace is the mod id.
+- Use: use with items to load (sneak: one), empty hand to start the first satisfied recipe, sneak empty hand to take the contents back. The result drops on top when the job ends.
+- The smeltery is a single block for now; the multiblock with cast basins is a follow-up. The steam forge does not yet need boiler power.
+- Test: `diaithir_stations selftest`.

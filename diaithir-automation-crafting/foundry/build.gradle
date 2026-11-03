@@ -15,7 +15,10 @@ neoForge {
             programArgument '--nogui'
         }
     }
-    mods { diaithircrafting { sourceSet(sourceSets.main) } }
+    mods {
+        diaithircrafting { sourceSet(sourceSets.main) }
+        diaithir_stations { sourceSet(sourceSets.main) }
+    }
 }
 
 processResources {

@@ -12,3 +12,14 @@ description = "Foundry parts for the automation and crafting module: the Operato
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[mods]]
+modId = "diaithir_stations"
+version = "${version}"
+displayName = "Diaithir Stations"
+description = "Station framework: data-driven station recipes (part, assembly, process) and the Foundry stations hearth bench, wright bench, smeltery, steam forge and fabricator. Our own clean-room design."
+
+[[dependencies.diaithir_stations]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

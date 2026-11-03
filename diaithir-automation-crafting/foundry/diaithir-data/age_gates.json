@@ -8,7 +8,12 @@
     "diaithircrafting:foundry_research_pack_4": "VI",
     "diaithircrafting:foundry_research_pack_5": "VII",
     "diaithircrafting:foundry_research_pack_6": "VIII",
-    "diaithircrafting:foundry_research_pack_7": "RODOS"
+    "diaithircrafting:foundry_research_pack_7": "RODOS",
+    "diaithir_stations:foundry_hearth_bench": "I",
+    "diaithir_stations:foundry_wright_bench": "III",
+    "diaithir_stations:foundry_smeltery": "IV",
+    "diaithir_stations:foundry_steam_forge": "V",
+    "diaithir_stations:foundry_fabricator": "VIII"
   },
   "_note": "Same Ages as data/diaithircrafting/age_gate.json, taken from plans/progression/graph.json."
 }

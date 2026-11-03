@@ -147,6 +147,51 @@ wr(os.path.join(D, "age_gate.json"), {f"tier{AGE_NUM[a]}": {"age": AGE_NUM[a], "
 wr(os.path.join(FOUNDRY, "diaithir-data", "age_gates.json"), {"namespaces": {}, "items": items_age,
     "_note": "Same Ages as data/diaithircrafting/age_gate.json, taken from plans/progression/graph.json."})
 
+
+# ---- Stations (diaithir_stations): five bench/forge blocks, one tinted plate each
+NS2 = "diaithir_stations"
+A2 = os.path.join(ROOT, "assets", NS2)
+D2 = os.path.join(ROOT, "data", NS2)
+for d in ("textures/block", "models/block", "blockstates", "items", "lang"):
+    os.makedirs(os.path.join(A2, d), exist_ok=True)
+os.makedirs(os.path.join(D2, "recipe"), exist_ok=True)
+STATIONS = [("foundry_hearth_bench", "Hearth Bench", (200, 110, 40), "I"), ("foundry_wright_bench", "Wright Bench", (170, 130, 70), "III"),
+            ("foundry_smeltery", "Smeltery", (230, 90, 30), "IV"), ("foundry_steam_forge", "Steam Forge", (200, 200, 205), "V"),
+            ("foundry_fabricator", "Fabricator", (60, 200, 220), "VIII")]
+lang2 = {}
+ages2 = {}
+for name, title, col, age in STATIONS:
+    im = plate()
+    d = ImageDraw.Draw(im)
+    d.rectangle([10, 12, 53, 40], fill=DARK + (255,), outline=EDGE + (255,), width=2)
+    d.rectangle([14, 16, 49, 36], fill=tuple(c // 3 for c in col) + (255,))
+    d.line([14, 30, 49, 30], fill=col + (255,))
+    lamp(d, 20, 48, col)
+    lamp(d, 44, 48, col)
+    hazard(im, 55, 60)
+    im.save(os.path.join(A2, "textures", "block", name + ".png"))
+    wr(os.path.join(A2, "models", "block", name + ".json"), {"parent": "minecraft:block/cube_all", "textures": {"all": NS2 + ":block/" + name}})
+    wr(os.path.join(A2, "blockstates", name + ".json"), {"variants": {"": {"model": NS2 + ":block/" + name}}})
+    wr(os.path.join(A2, "items", name + ".json"), {"model": {"type": "minecraft:model", "model": NS2 + ":block/" + name}})
+    lang2["block.%s.%s" % (NS2, name)] = title
+    ages2[NS2 + ":" + name] = age
+wr(os.path.join(A2, "lang", "en_us.json"), lang2)
+BENCH_RECIPES = {
+    "foundry_hearth_bench": (["SSS", "SFS", "SSS"], {"S": "minecraft:stone", "F": "minecraft:furnace"}),
+    "foundry_wright_bench": (["IPI", "PHP", "III"], {"I": "minecraft:iron_ingot", "P": "minecraft:oak_planks", "H": NS2 + ":foundry_hearth_bench"}),
+    "foundry_smeltery": (["BBB", "BWB", "BFB"], {"B": "minecraft:bricks", "W": NS2 + ":foundry_wright_bench", "F": "minecraft:blast_furnace"}),
+    "foundry_steam_forge": (["SSS", "SMS", "CCC"], {"S": "#c:ingots/steel", "M": NS2 + ":foundry_smeltery", "C": "minecraft:copper_ingot"}),
+    "foundry_fabricator": (["NNN", "NFN", "NNN"], {"N": "#c:plates/nanoalloy", "F": NS2 + ":foundry_steam_forge"}),
+}
+for name, (pat, key) in BENCH_RECIPES.items():
+    wr(os.path.join(D2, "recipe", name + ".json"), {"type": "minecraft:crafting_shaped", "key": key, "pattern": pat,
+        "result": {"id": NS2 + ":" + name, "count": 1}, "category": "misc"})
+wr(os.path.join(ROOT, "data", "c", "tags", "item", "plates", "nanoalloy.json"), {"values": []})
+wr(os.path.join(D2, "age_gate.json"), {"tier%d" % AGE_NUM[a]: {"age": AGE_NUM[a], "items": sorted(k for k, v in ages2.items() if v == a)} for a in sorted(set(ages2.values()), key=lambda x: AGE_NUM[x])})
+ages_all = json.load(open(os.path.join(FOUNDRY, "diaithir-data", "age_gates.json")))
+ages_all["items"].update(ages2)
+wr(os.path.join(FOUNDRY, "diaithir-data", "age_gates.json"), ages_all)
+
 # W (watts) and s (seconds per job) per machine. Graph values where the graph has them; the rest are set here in SI per UNITS.md.
 EXTRA = {"tech.belts": (0.0, None), "tech.circuits": (30000.0, 1.5), "tech.circuits_adv": (60000.0, 3.0), "tech.operator": (100.0, None),
          "tech.reclaimer": (100000.0, 3.0), "tech.heat_grid": (0.0, None), "tech.inserter": (None, 0.8), "tech.miner": (None, 4.0),

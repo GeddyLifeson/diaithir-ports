@@ -1,0 +1,32 @@
+{
+  "tier1": {
+    "age": 1,
+    "items": [
+      "diaithir_stations:foundry_hearth_bench"
+    ]
+  },
+  "tier3": {
+    "age": 3,
+    "items": [
+      "diaithir_stations:foundry_wright_bench"
+    ]
+  },
+  "tier4": {
+    "age": 4,
+    "items": [
+      "diaithir_stations:foundry_smeltery"
+    ]
+  },
+  "tier5": {
+    "age": 5,
+    "items": [
+      "diaithir_stations:foundry_steam_forge"
+    ]
+  },
+  "tier8": {
+    "age": 8,
+    "items": [
+      "diaithir_stations:foundry_fabricator"
+    ]
+  }
+}
