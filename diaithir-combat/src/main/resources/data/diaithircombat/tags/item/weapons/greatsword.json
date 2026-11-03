@@ -23,6 +23,7 @@
   {
    "id": "spartanweaponry:steel_greatsword",
    "required": false
-  }
+  },
+  "diaithircombat:lib_greatsword"
  ]
 }

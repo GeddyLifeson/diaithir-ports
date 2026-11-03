@@ -23,6 +23,7 @@
   {
    "id": "spartanweaponry:steel_quarterstaff",
    "required": false
-  }
+  },
+  "diaithircombat:lib_staff"
  ]
 }

@@ -23,6 +23,7 @@
   {
    "id": "spartanweaponry:steel_rapier",
    "required": false
-  }
+  },
+  "diaithircombat:lib_rapier"
  ]
 }
