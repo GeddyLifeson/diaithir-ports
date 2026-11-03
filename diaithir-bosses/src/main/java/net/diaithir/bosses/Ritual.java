@@ -107,6 +107,7 @@ public final class Ritual {
         Def d = def(RITE + id);
         if (r == null || d == null) return Component.literal("no such rite");
         AscendantData data = AscendantData.get(sl.getServer());
+        if (!sl.dimension().identifier().toString().equals(r.dimension)) return Component.literal(r.name + " is worked on " + r.planet);
         if (Ages.current(sl.getServer()) < r.gate_age) return Component.literal(r.name + " opens in Age " + Ages.name(r.gate_age));
         if (data.beaten(RITE + id)) return Component.literal(r.name + " is already learned");
         String k = key(altar);
@@ -122,10 +123,20 @@ public final class Ritual {
     /** A player uses the Ascendant altar, with something in hand or without. */
     public static void use(ServerLevel sl, BlockPos altar, Player player, ItemStack held) {
         if (sl.getDifficulty() == Difficulty.PEACEFUL) { player.sendSystemMessage(Component.translatable("boss.diaithirbosses.peaceful")); return; }
-        if (sl.dimension() != net.minecraft.world.level.Level.OVERWORLD) { player.sendSystemMessage(Component.translatable("boss.diaithirbosses.overworld_only")); return; }
+        String page = RiteLibrary.pageRite(held);
         AscendantData data = AscendantData.get(sl.getServer());
         String k = key(altar);
         String raw = data.rituals().get(k);
+        if (raw == null && page != null) {
+            Component why = beginRite(sl, altar, page);
+            if (why != null) player.sendSystemMessage(why);
+            else if (!player.isCreative()) held.shrink(1);
+            return;
+        }
+        if (raw != null && raw.startsWith(RITE)) {
+            var r = RiteLibrary.get(raw.split("\\|")[0].substring(RITE.length()));
+            if (r != null && !sl.dimension().identifier().toString().equals(r.dimension)) { player.sendSystemMessage(Component.literal("This rite belongs to " + r.planet + ".")); return; }
+        } else if (sl.dimension() != net.minecraft.world.level.Level.OVERWORLD) { player.sendSystemMessage(Component.translatable("boss.diaithirbosses.overworld_only")); return; }
         if (raw == null) { begin(sl, altar, player, held, data); return; }
         State st = State.parse(raw);
         Def d = def(st.boss);
@@ -228,12 +239,29 @@ public final class Ritual {
             if (st.boss.startsWith(RITE)) {
                 data.defeat(st.boss, sl.getGameTime());
                 tell(sl, altar, Component.literal("You have learned " + d.name + "."));
+                reward(sl, altar, st.boss.substring(RITE.length()));
             } else if (p != null) DiaithirBosses.spawn(sl, p, Vec3.atBottomCenterOf(altar.above(2)), altar);
             return;
         }
         data.putRitual(k, new State(st.boss, next, 0).toString());
         tell(sl, altar, Component.translatable("ritual.diaithirbosses.step_done"));
         tell(sl, altar, clue(st.boss, next));
+    }
+
+    /** Pays a finished Library rite: the school's spell scroll (loot table in diaithir-druidry) drops at the altar. */
+    static int reward(ServerLevel sl, BlockPos altar, String id) {
+        RiteLibrary.Rite r = RiteLibrary.get(id);
+        if (r == null) return 0;
+        var table = sl.getServer().reloadableRegistries().getLootTable(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.LOOT_TABLE, RiteLibrary.rewardTable(r)));
+        var params = new net.minecraft.world.level.storage.loot.LootParams.Builder(sl)
+            .withParameter(net.minecraft.world.level.storage.loot.parameters.LootContextParams.ORIGIN, Vec3.atCenterOf(altar))
+            .create(net.minecraft.world.level.storage.loot.parameters.LootContextParamSets.CHEST);
+        int n = 0;
+        for (ItemStack it : table.getRandomItems(params)) {
+            sl.addFreshEntity(new net.minecraft.world.entity.item.ItemEntity(sl, altar.getX() + 0.5, altar.getY() + 1.2, altar.getZ() + 0.5, it));
+            n++;
+        }
+        return n;
     }
 
     private static List<Mob> spirits(ServerLevel sl, BlockPos altar) {

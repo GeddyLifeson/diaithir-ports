@@ -94,6 +94,12 @@ public final class BossCommands {
                     + ", opens Age " + Ages.name(r.gate_age) + ", " + r.steps.size() + " steps): " + r.text), false);
                 return r.steps.size();
             })))
+            .then(Commands.literal("page").then(Commands.argument("id", StringArgumentType.word()).executes(c -> {
+                var r = RiteLibrary.get(StringArgumentType.getString(c, "id"));
+                if (r == null) { c.getSource().sendFailure(Component.literal("no such rite")); return 0; }
+                c.getSource().getPlayerOrException().getInventory().add(RiteLibrary.page(r));
+                return 1;
+            })))
             .then(Commands.literal("begin").then(Commands.argument("id", StringArgumentType.word()).executes(c -> {
                 var src = c.getSource();
                 ServerLevel l = src.getLevel();

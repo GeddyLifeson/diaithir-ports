@@ -136,6 +136,34 @@ public final class RiteLibrary {
         return d;
     }
 
+    private static final Map<String, String> SCROLL_POOL = Map.of("draeid", "druid", "fiusaichi", "ovate", "bardu", "bard", "filid", "filid",
+        "fitech", "fitech", "sitichi", "sidhe", "gouba", "smith");
+
+    /** The loot table that pays a finished rite: a spell scroll of the rite's school and tier band (data in diaithir-druidry). */
+    public static Identifier rewardTable(Rite r) {
+        String pool = SCROLL_POOL.getOrDefault(r.school, "druid");
+        return Identifier.fromNamespaceAndPath(NS, "rite_reward/" + pool + "_" + (r.tier <= 2 ? "1" : r.tier <= 4 ? "2" : "3"));
+    }
+
+    /** A Rite page for the entry: name, its own text as lore, the id in custom data. */
+    public static net.minecraft.world.item.ItemStack page(Rite r) {
+        var st = new net.minecraft.world.item.ItemStack(DiaithirBosses.RITE_PAGE.get());
+        var tag = new net.minecraft.nbt.CompoundTag();
+        tag.putString("rite", r.id);
+        st.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(tag));
+        st.set(net.minecraft.core.component.DataComponents.ITEM_NAME, net.minecraft.network.chat.Component.literal(r.name));
+        st.set(net.minecraft.core.component.DataComponents.LORE, new net.minecraft.world.item.component.ItemLore(List.of(net.minecraft.network.chat.Component.literal(r.text))));
+        return st;
+    }
+
+    /** The rite id a page carries, or null. */
+    public static String pageRite(net.minecraft.world.item.ItemStack st) {
+        var cd = st.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
+        if (cd == null || !st.is(DiaithirBosses.RITE_PAGE.get())) return null;
+        String id = cd.copyTag().getStringOr("rite", "");
+        return id.isEmpty() ? null : id;
+    }
+
     private static int indexOfTree(String name) {
         for (int i = 0; i < Ritual.TREES.length; i++) if (Ritual.TREES[i].equalsIgnoreCase(name)) return i;
         return -1;

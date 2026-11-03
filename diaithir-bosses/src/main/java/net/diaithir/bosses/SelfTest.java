@@ -235,7 +235,7 @@ public final class SelfTest {
                     if (st.mob != null && BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(st.mob)).isEmpty()) why = "creature " + st.mob;
                 }
                 if (why != null) { bad++; if (shown++ < 5) System.out.println("[bossesselftest] bad rite " + r.id + ": " + why); }
-                if (sample == null && r.tier == 7 && r.steps.stream().anyMatch(x -> x.step.equals("coop")) && r.steps.stream().anyMatch(x -> x.step.equals("stones"))) sample = r;
+                if (sample == null && r.dimension.equals("minecraft:overworld") && r.tier == 7 && r.steps.stream().anyMatch(x -> x.step.equals("coop")) && r.steps.stream().anyMatch(x -> x.step.equals("stones"))) sample = r;
             }
         }
         System.out.println("[bossesselftest] library rites: " + total + " in " + files.size() + " files, " + bad + " bad");
@@ -251,11 +251,17 @@ public final class SelfTest {
         Ages.forced = 1;
         check(Ritual.beginRite(level, altar, sample.id) != null && !data.rituals().containsKey(key), "library: " + sample.name + " is closed before Age " + Ages.name(sample.gate_age));
         Ages.forced = sample.gate_age;
-        check(Ritual.beginRite(level, altar, sample.id) == null && data.rituals().containsKey(key), "library: " + sample.name + " begins at its gate Age");
+        RiteLibrary.Rite far = RiteLibrary.universeFile("alaenneirae").values().iterator().next();
+        check(Ritual.beginRite(level, altar, far.id) != null && !data.rituals().containsKey(key), "library: a rite of " + far.planet + " does not run in the overworld");
+        ItemStack page = RiteLibrary.page(sample);
+        check(sample.id.equals(RiteLibrary.pageRite(page)), "library: the rite page carries its entry id");
+        Ritual.use(level, altar, fp, page);
+        check(data.rituals().containsKey(key) && data.rituals().get(key).startsWith(Ritual.RITE + sample.id + "|0|"), "library: " + sample.name + " begins from its page at its gate Age");
         check(Ritual.beginRite(level, altar, sample.id) != null, "library: a second rite cannot start on a busy altar");
         play(src, level, altar, fp, key, Ritual.def(Ritual.RITE + sample.id));
         System.out.println("[bossesselftest] library rite played: " + sample.id + " (" + sample.name + ", " + sample.steps.size() + " steps)");
         check(!data.rituals().containsKey(key), "library: the rite finished and cleared");
+        System.out.println("[bossesselftest] library reward items dropped at the altar: " + level.getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class, new AABB(altar).inflate(4)).size() + " (spell_engine absent in the test run)");
         check(data.beaten(Ritual.RITE + sample.id), "library: the spell is learned");
         check(Ritual.beginRite(level, altar, sample.id) != null, "library: a learned rite is not run twice");
         data.clearDefeats();
