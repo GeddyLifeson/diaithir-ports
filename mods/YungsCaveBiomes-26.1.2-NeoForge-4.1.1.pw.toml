@@ -1,0 +1,12 @@
+name = "YungsCaveBiomes"
+filename = "YungsCaveBiomes-26.1.2-NeoForge-4.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/cs7iGVq1/versions/oXLoOQEW/YungsCaveBiomes-26.1.2-NeoForge-4.1.1.jar"
+hash-format = "sha256"
+hash = "2bff32a14a2945adaa6aa752a0fa1a9da3d410cebaf1fe1b354a9a7ba820412b"
+
+[update.modrinth]
+mod-id = "cs7iGVq1"
+version = "oXLoOQEW"
