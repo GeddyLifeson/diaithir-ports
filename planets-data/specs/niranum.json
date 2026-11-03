@@ -107,22 +107,18 @@
     "probability": 0.03
    },
    {
-    "type": "ash",
-    "probability": 0.02
-   },
-   {
     "type": "glow",
     "probability": 0.02
    }
   ],
-  "fog": "#8a7f6e",
+  "fog": "#8a9a88",
   "fog_density": "thin",
   "night": "normal",
-  "stars": 0.6,
-  "precip_bias": "dry",
+  "stars": 0.4,
+  "precip_bias": "mixed",
   "storms": "calm",
   "why_entry": "GR.niranum.E1.places.000015",
-  "why": "Hollow basin humming stone; warm lamps, gentle dry air",
-  "grounded": true
+  "why": "Hollow basin with humming stone, mild grounded air",
+  "grounded": false
  }
 }

@@ -103,26 +103,26 @@
  "atmo": {
   "particles": [
    {
-    "type": "ash",
-    "probability": 0.035
-   },
-   {
     "type": "glow",
-    "probability": 0.02
+    "probability": 0.06
    },
    {
     "type": "end_rod",
-    "probability": 0.012
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
    }
   ],
-  "fog": "#8a6a5a",
-  "fog_density": "normal",
+  "fog": "#c9a77a",
+  "fog_density": "thin",
   "night": "normal",
-  "stars": 0.4,
-  "precip_bias": "dry",
+  "stars": 0.6,
+  "precip_bias": "mixed",
   "storms": "calm",
-  "why_entry": "AR.oriamora.E1.places.000056",
-  "why": "Basin of black glass with perpetual flame and sounding roots",
-  "grounded": true
+  "why_entry": "AR.oriamora.E1.events.000017",
+  "why": "Singing roots and temple flame; mild, grounded arcane atmosphere",
+  "grounded": false
  }
 }

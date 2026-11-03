@@ -104,25 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
-   },
-   {
-    "type": "white_ash",
     "probability": 0.03
    },
    {
-    "type": "soul",
+    "type": "white_ash",
     "probability": 0.02
    }
   ],
-  "fog": "#6b6a66",
+  "fog": "#8a8f94",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.1,
-  "precip_bias": "dry",
+  "stars": 0.2,
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "GR.crodaston.E6.events.000492",
-  "why": "Cold resonance pulses, drowned quarters, fog-choked basin, sunken ruins",
+  "why_entry": "GR.crodaston.E6.events.000796",
+  "why": "Floodlight cascades, cold static, and drowned harbors; grounded, stormy coastal haze.",
   "grounded": true
  }
 }

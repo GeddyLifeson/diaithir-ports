@@ -107,22 +107,18 @@
     "probability": 0.05
    },
    {
-    "type": "sculk_soul",
-    "probability": 0.03
-   },
-   {
-    "type": "soul",
+    "type": "end_rod",
     "probability": 0.02
    }
   ],
-  "fog": "#6b6160",
+  "fog": "#8a7a6a",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
   "precip_bias": "dry",
   "storms": "stormy",
   "why_entry": "MY.ninteostor.E4.places.000369",
-  "why": "Storm-bells and scorched stone suggest ash-laden stormy air",
+  "why": "Storm-bells, scorched stone, Fall-cracked sky; ashy stormy air",
   "grounded": true
  }
 }

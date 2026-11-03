@@ -98,21 +98,21 @@
    },
    {
     "type": "end_rod",
-    "probability": 0.05
+    "probability": 0.04
    },
    {
     "type": "firefly",
     "probability": 0.03
    }
   ],
-  "fog": "#a9c4d8",
+  "fog": "#b9c9d9",
   "fog_density": "thin",
   "night": "dark",
   "stars": 0.7,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "calm",
-  "why_entry": "AR.ryeralwen.E6.places.000090",
-  "why": "Silver dusk, humming glass, stored starlight, lantern light, quiet air",
+  "why_entry": "AR.ryeralwen.E6.places.000085",
+  "why": "Silver dusk, drifting sky-harbors, lantern-lit cloud sea, shimmering glass light.",
   "grounded": true
  }
 }

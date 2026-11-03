@@ -104,25 +104,25 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.06
-   },
-   {
-    "type": "glow",
     "probability": 0.03
    },
    {
-    "type": "end_rod",
+    "type": "glow",
     "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.01
    }
   ],
-  "fog": "#8a6a4f",
-  "fog_density": "thin",
+  "fog": "#8a6a4a",
+  "fog_density": "normal",
   "night": "dark",
   "stars": 0.4,
   "precip_bias": "dry",
   "storms": "calm",
-  "why_entry": "KI.coreoserus.E1.places.000050",
-  "why": "Basalt hollows and ember soil suggest dry, ash-dusted air.",
+  "why_entry": "KI.coreoserus.E1.places.000095",
+  "why": "Basalt hollows, banked flame temples, ember soil, sun-baked dry ravines",
   "grounded": true
  }
 }

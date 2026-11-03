@@ -117,18 +117,22 @@
     "probability": 0.06
    },
    {
-    "type": "white_ash",
+    "type": "glow",
     "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
    }
   ],
-  "fog": "#6b5a4e",
+  "fog": "#4a4a52",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "MY.reornanum.E6.places.001552",
-  "why": "Storm-soil world of ash, grim tides and sealed glass vaults.",
+  "why_entry": "MY.reornanum.E6.places.001496",
+  "why": "Ember-bright grasslands, storm-remembering spires, hushed storms and ash-warden fortresses",
   "grounded": true
  }
 }

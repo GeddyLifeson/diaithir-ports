@@ -98,21 +98,17 @@
    },
    {
     "type": "glow",
-    "probability": 0.02
-   },
-   {
-    "type": "soul",
-    "probability": 0.01
+    "probability": 0.03
    }
   ],
-  "fog": "#6b4a3a",
+  "fog": "#8a3a1e",
   "fog_density": "normal",
   "night": "dark",
   "stars": 0.4,
   "precip_bias": "dry",
   "storms": "stormy",
   "why_entry": "KI.ukaraeno.E3.assay.005628",
-  "why": "Storm winds, dry ember air, dim red haze, glowing sparks.",
+  "why": "Storms, cinder-thick air, and fire-blasted sky; dry scorched land",
   "grounded": true
  }
 }

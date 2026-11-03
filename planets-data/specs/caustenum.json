@@ -91,24 +91,15 @@
  "river_archetype": "river",
  "notes": "A storm-scarred world of ash-dusted badlands, ruined sacred peaks and fire-mountains, cooled by stormy seas and frozen northern clans.",
  "atmo": {
-  "particles": [
-   {
-    "type": "ash",
-    "probability": 0.05
-   },
-   {
-    "type": "glow",
-    "probability": 0.02
-   }
-  ],
-  "fog": "#8a7a6a",
-  "fog_density": "thick",
-  "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
-  "storms": "stormy",
-  "why_entry": "MY.caustenum.E3.assay.017413",
-  "why": "Soil Storm and stormy dark air; ash fits a strained, dusty planet.",
+  "particles": [],
+  "fog": "#8a9aa6",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "MY.caustenum.E1.assay.017673",
+  "why": "Entries describe no real weather; mild, clear, lightly misted air chosen.",
   "grounded": false
  }
 }

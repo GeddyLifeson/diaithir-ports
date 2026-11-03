@@ -104,21 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.03
    },
    {
     "type": "glow",
     "probability": 0.02
    }
   ],
-  "fog": "#8a8478",
-  "fog_density": "thick",
-  "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
+  "fog": "#8a8c93",
+  "fog_density": "normal",
+  "night": "dim",
+  "stars": 0.4,
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "MY.amarnes.E4.events.000048",
-  "why": "Sundering, burning fire, ash, collapse; storms fit the landfall and Sundering",
+  "why_entry": "MY.amarnes.E5.places.000091",
+  "why": "Walled cities, sundering, war-torn skies; ash and light.",
   "grounded": true
  }
 }

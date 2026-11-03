@@ -94,25 +94,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.03
-   },
-   {
-    "type": "soul",
-    "probability": 0.02
+    "probability": 0.06
    },
    {
     "type": "glow",
     "probability": 0.02
    }
   ],
-  "fog": "#6b5e52",
+  "fog": "#6b5a4a",
   "fog_density": "normal",
   "night": "dark",
-  "stars": 0.4,
+  "stars": 0.2,
   "precip_bias": "dry",
   "storms": "stormy",
   "why_entry": "MY.lernaunus.E5.events.000072",
-  "why": "Molten ash rains and storm-wracked moors dominate the planet's air.",
+  "why": "Sealed molten ash tide breached holding walls; storm-soil, ashen skies",
   "grounded": true
  }
 }

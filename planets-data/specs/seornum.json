@@ -114,25 +114,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.02
+    "probability": 0.05
    },
    {
     "type": "glow",
     "probability": 0.02
-   },
-   {
-    "type": "white_ash",
-    "probability": 0.01
    }
   ],
-  "fog": "#8a8076",
-  "fog_density": "thick",
+  "fog": "#6b6258",
+  "fog_density": "normal",
   "night": "dark",
-  "stars": 0.2,
+  "stars": 0.4,
   "precip_bias": "dry",
   "storms": "calm",
-  "why_entry": "GR.seornum.E4.places.000069",
-  "why": "Scorched cliffs and braziers with a Fall-era ash-and-flame atmosphere",
+  "why_entry": "GR.seornum.E1.places.000002",
+  "why": "Basalt hollow humming, cracked clay, scorched Fall ruins, ash-blighted sky",
   "grounded": true
  }
 }

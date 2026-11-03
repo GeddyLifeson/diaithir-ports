@@ -115,14 +115,14 @@
     "probability": 0.01
    }
   ],
-  "fog": "#7a5a48",
-  "fog_density": "thick",
+  "fog": "#6a5a6e",
+  "fog_density": "normal",
   "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
-  "storms": "stormy",
+  "stars": 0.3,
+  "precip_bias": "mixed",
+  "storms": "calm",
   "why_entry": "KI.tianausanum.E6.places.000042",
-  "why": "Scorched dust-choked expanse, sky veiled since war, ground dim-glowing.",
+  "why": "Veiled sky and dim glow, drifting ash, no storms",
   "grounded": true
  }
 }

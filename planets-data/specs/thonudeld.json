@@ -104,21 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.04
    },
    {
-    "type": "end_rod",
-    "probability": 0.03
+    "type": "snowflake",
+    "probability": 0.02
    }
   ],
-  "fog": "#6b6258",
+  "fog": "#8a8f99",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "GR.thonudeld.E6.places.000927",
-  "why": "Basalt sea-stacks and salvage-ruin imagery suggest grim, hazy, storm-battered air",
+  "why_entry": "GR.thonudeld.E6.places.000816",
+  "why": "Frozen coast, storms, blasted ruins, war-torn skies, grit and ash",
   "grounded": true
  }
 }

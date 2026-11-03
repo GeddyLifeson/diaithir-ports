@@ -107,12 +107,8 @@
     "probability": 0.05
    },
    {
-    "type": "end_rod",
-    "probability": 0.02
-   },
-   {
     "type": "glow",
-    "probability": 0.015
+    "probability": 0.02
    }
   ],
   "fog": "#8a4a2a",
@@ -122,7 +118,7 @@
   "precip_bias": "dry",
   "storms": "stormy",
   "why_entry": "KI.brurnadeld.E6.assay.003934",
-  "why": "Blazing falling-star strikes and fiery heat gauges suggest scorched, ember-choked skies.",
+  "why": "Blazing falling-star strikes and ember soil suggest a hot, scorched, ashen sky",
   "grounded": true
  }
 }

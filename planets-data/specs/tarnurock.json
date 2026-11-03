@@ -103,26 +103,26 @@
  "atmo": {
   "particles": [
    {
-    "type": "ash",
-    "probability": 0.05
+    "type": "snowflake",
+    "probability": 0.04
    },
    {
     "type": "white_ash",
     "probability": 0.03
    },
    {
-    "type": "soul",
-    "probability": 0.02
+    "type": "firefly",
+    "probability": 0.01
    }
   ],
-  "fog": "#8a8478",
-  "fog_density": "thick",
-  "night": "dark",
-  "stars": 0.1,
-  "precip_bias": "dry",
+  "fog": "#9aa3a8",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "GR.tarnurock.E6.places.000132",
-  "why": "Cinder-choked hollow, ash-lakes, wandering dead, dust storms.",
+  "why_entry": "GR.tarnurock.E6.places.000185",
+  "why": "frozen grey cliffs, wind, ice ledges, glacier echoes",
   "grounded": true
  }
 }

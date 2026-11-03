@@ -107,22 +107,18 @@
     "probability": 0.05
    },
    {
-    "type": "soul",
+    "type": "end_rod",
     "probability": 0.03
-   },
-   {
-    "type": "sculk_soul",
-    "probability": 0.02
    }
   ],
-  "fog": "#6a5a7a",
+  "fog": "#8a7a6a",
   "fog_density": "normal",
   "night": "dark",
   "stars": 0.4,
   "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "KI.osutaala.E6.places.000088",
-  "why": "Sky-citadel shielded from view; hidden realm, dim mystical mood",
-  "grounded": false
+  "storms": "stormy",
+  "why_entry": "KI.osutaala.E6.events.000130",
+  "why": "Cataclysmic rupture, war-torn sky, sealed ember-lit realm",
+  "grounded": true
  }
 }

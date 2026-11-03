@@ -124,25 +124,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.04
    },
    {
-    "type": "end_rod",
-    "probability": 0.03
-   },
-   {
-    "type": "soul",
+    "type": "glow",
     "probability": 0.02
    }
   ],
   "fog": "#8a7f78",
-  "fog_density": "thin",
+  "fog_density": "thick",
   "night": "dark",
-  "stars": 0.4,
+  "stars": 0.2,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "MY.teleontanum.E4.events.000094",
-  "why": "Sundering-era rift tremors and sundering ash suggest stormy dry air",
+  "why_entry": "MY.teleontanum.E4.places.000066",
+  "why": "Glass and ash valley, sundered worlds, stormy tempests, ember-lit stone",
   "grounded": true
  }
 }

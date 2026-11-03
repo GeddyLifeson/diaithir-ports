@@ -104,15 +104,11 @@
   "particles": [
    {
     "type": "sculk_soul",
-    "probability": 0.03
+    "probability": 0.02
    },
    {
     "type": "soul",
-    "probability": 0.02
-   },
-   {
-    "type": "glow",
-    "probability": 0.02
+    "probability": 0.012
    }
   ],
   "fog": "#2a2f36",
@@ -121,8 +117,8 @@
   "stars": 0.0,
   "precip_bias": "dry",
   "storms": "calm",
-  "why_entry": "GR.voraikun.E6.places.000224",
-  "why": "Sealed underground vault of bones, sunless, sealed halls",
-  "grounded": true
+  "why_entry": "GR.voraikun.E6.assay.000437",
+  "why": "Underground rail halts with no open sky or weather",
+  "grounded": false
  }
 }

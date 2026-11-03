@@ -103,22 +103,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "glow",
-    "probability": 0.05
+    "type": "ash",
+    "probability": 0.03
    },
    {
     "type": "end_rod",
-    "probability": 0.03
+    "probability": 0.02
    }
   ],
-  "fog": "#2a3550",
-  "fog_density": "thin",
+  "fog": "#8a7a6e",
+  "fog_density": "thick",
   "night": "dark",
-  "stars": 0.7,
+  "stars": 0.2,
   "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "ST.oseivsizith.E1.places.000504",
-  "why": "Glassy resonant basin hums; luminous, quiet, mostly dry skies.",
+  "storms": "stormy",
+  "why_entry": "ST.oseivsizith.E6.events.000409",
+  "why": "Ember-fields, burning fleets and ash-drifting combat zones fit ashen skies",
   "grounded": true
  }
 }

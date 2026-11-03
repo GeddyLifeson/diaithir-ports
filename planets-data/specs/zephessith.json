@@ -111,14 +111,14 @@
     "probability": 0.03
    }
   ],
-  "fog": "#b8c4d6",
+  "fog": "#8fa3b8",
   "fog_density": "thin",
-  "night": "dark",
+  "night": "bright",
   "stars": 0.9,
   "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "ST.zephessith.E6.places.000057",
-  "why": "Luminous spores and pale crystal reefs drift in still starlit void",
-  "grounded": false
+  "storms": "stormy",
+  "why_entry": "ST.zephessith.E6.places.000059",
+  "why": "Storm-winds harvested, gas giant, glassy rings, void expanse",
+  "grounded": true
  }
 }

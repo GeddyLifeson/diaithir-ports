@@ -123,26 +123,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "ash",
+    "type": "firefly",
     "probability": 0.03
-   },
-   {
-    "type": "soul",
-    "probability": 0.012
    },
    {
     "type": "glow",
     "probability": 0.02
    }
   ],
-  "fog": "#7a6d62",
+  "fog": "#8a9aa8",
   "fog_density": "normal",
-  "night": "dark",
-  "stars": 0.35,
-  "precip_bias": "dry",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "GR.breroldock.E6.places.000121",
-  "why": "Sinkhole walls hum at dusk; ochre strata, ash-choked fields, dry salt flats.",
+  "why_entry": "GR.breroldock.E6.events.000259",
+  "why": "Sunken flats, silt, storms, and tuned sound suggest moody mixed weather",
   "grounded": true
  }
 }

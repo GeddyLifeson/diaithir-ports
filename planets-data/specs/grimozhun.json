@@ -108,21 +108,21 @@
    },
    {
     "type": "soul",
-    "probability": 0.03
+    "probability": 0.02
    },
    {
     "type": "sculk_soul",
-    "probability": 0.02
+    "probability": 0.01
    }
   ],
-  "fog": "#3a3436",
+  "fog": "#3a2e2a",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.2,
+  "stars": 0.1,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "KI.grimozhun.E6.places.000491",
-  "why": "Sunken brine fortresses, ash-choked tides, and drifting ember-cairns suggest a heavy, ashen, stormy world",
+  "why_entry": "KI.grimozhun.E6.places.000422",
+  "why": "Violet mists, void strikes, and sulfur seas suggest ash-choked stormy air",
   "grounded": true
  }
 }

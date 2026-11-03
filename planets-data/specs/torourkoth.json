@@ -124,7 +124,7 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.06
+    "probability": 0.05
    },
    {
     "type": "glow",
@@ -132,13 +132,13 @@
    }
   ],
   "fog": "#8a8478",
-  "fog_density": "thin",
+  "fog_density": "normal",
   "night": "dark",
-  "stars": 0.25,
-  "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "GR.torourkoth.E6.places.000014",
-  "why": "Salt-glass valley, drowned fog, lanterns against night, dry basins",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.torourkoth.E5.events.000138",
+  "why": "Walled Age sundering, war-torn skies, and ember-lit temple fires",
   "grounded": true
  }
 }

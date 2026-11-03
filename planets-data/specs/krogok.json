@@ -104,25 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.06
    },
    {
     "type": "glow",
     "probability": 0.03
-   },
-   {
-    "type": "soul",
-    "probability": 0.02
    }
   ],
-  "fog": "#6b4a3a",
-  "fog_density": "normal",
+  "fog": "#8a6a5a",
+  "fog_density": "thick",
   "night": "dark",
-  "stars": 0.4,
+  "stars": 0.2,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "KI.krogok.E4.places.000149",
-  "why": "Basalt highland, humming crust, ember-scarred ridges, dry sundering air.",
+  "why_entry": "KI.krogok.E6.places.000058",
+  "why": "Ash-storms sweep the surface; sealed hollow cities against ash",
   "grounded": true
  }
 }

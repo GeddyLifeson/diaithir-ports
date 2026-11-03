@@ -103,22 +103,26 @@
  "atmo": {
   "particles": [
    {
-    "type": "firefly",
-    "probability": 0.03
+    "type": "spore_blossom_air",
+    "probability": 0.06
    },
    {
     "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
     "probability": 0.02
    }
   ],
-  "fog": "#e8c9a0",
+  "fog": "#8fb8a0",
   "fog_density": "thin",
-  "night": "bright",
-  "stars": 0.4,
-  "precip_bias": "dry",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
   "storms": "calm",
-  "why_entry": "AR.eliolerae.E6.events.000250",
-  "why": "Dawn sky of liquid amber, gilded wave-like light",
-  "grounded": true
+  "why_entry": "AR.eliolerae.E6.places.000065",
+  "why": "Drifting blue-glass sky-city with humming currents suggests soft, luminous calm air",
+  "grounded": false
  }
 }

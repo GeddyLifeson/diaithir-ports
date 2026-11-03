@@ -118,21 +118,21 @@
    },
    {
     "type": "end_rod",
-    "probability": 0.03
+    "probability": 0.04
    },
    {
-    "type": "soul",
+    "type": "white_ash",
     "probability": 0.02
    }
   ],
-  "fog": "#b8c4d8",
+  "fog": "#b8c4d6",
   "fog_density": "thin",
-  "night": "dark",
+  "night": "bright",
   "stars": 0.7,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "calm",
   "why_entry": "AR.lyannora.E1.places.000015",
-  "why": "Humming resonant stone and shimmering air suggest luminous, still atmosphere",
-  "grounded": true
+  "why": "Humming glass-stone and shimmering air suggest a luminous, calm, arcane atmosphere",
+  "grounded": false
  }
 }

@@ -93,26 +93,26 @@
  "atmo": {
   "particles": [
    {
-    "type": "glow",
+    "type": "firefly",
     "probability": 0.03
    },
    {
-    "type": "soul",
+    "type": "glow",
     "probability": 0.02
    },
    {
-    "type": "end_rod",
-    "probability": 0.01
+    "type": "spore_blossom_air",
+    "probability": 0.02
    }
   ],
-  "fog": "#8a9a9e",
+  "fog": "#6b7f5c",
   "fog_density": "normal",
-  "night": "normal",
-  "stars": 0.4,
-  "precip_bias": "dry",
+  "night": "dark",
+  "stars": 0.55,
+  "precip_bias": "mixed",
   "storms": "calm",
-  "why_entry": "GR.tosistium.E7.items.000024",
-  "why": "Lantern flames and hanging air, quiet calm, mild",
+  "why_entry": "GR.tosistium.E1.places.000003",
+  "why": "Hollow valley, humming stone, mild resin-scented, lamp-lit calm air",
   "grounded": false
  }
 }

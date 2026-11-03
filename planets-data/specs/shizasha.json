@@ -94,21 +94,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.03
    },
    {
-    "type": "ash",
-    "probability": 0.04
+    "type": "glow",
+    "probability": 0.02
    }
   ],
-  "fog": "#8a7a6e",
-  "fog_density": "thick",
+  "fog": "#5a4a3c",
+  "fog_density": "normal",
   "night": "dark",
-  "stars": 0.2,
+  "stars": 0.4,
   "precip_bias": "dry",
   "storms": "stormy",
   "why_entry": "ST.shizasha.E6.places.000070",
-  "why": "Basalt spires, wind-carved salt flats, sun-scorched world",
+  "why": "Dry sun-scorched basalt salt flats, hot canyons, dusky sky",
   "grounded": true
  }
 }

@@ -94,25 +94,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.08
+    "probability": 0.06
    },
    {
     "type": "glow",
     "probability": 0.03
-   },
-   {
-    "type": "soul",
-    "probability": 0.02
    }
   ],
-  "fog": "#6b5a52",
+  "fog": "#3a2a2a",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.25,
+  "stars": 0.2,
   "precip_bias": "dry",
   "storms": "stormy",
   "why_entry": "MY.corialor.E4.places.000181",
-  "why": "Smouldering sky, basalt, ember-glass, Sundering-scarred air",
+  "why": "Smouldering sky, ember-glass and basalt, Sundering-scarred terrain",
   "grounded": true
  }
 }

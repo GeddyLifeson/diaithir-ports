@@ -93,22 +93,26 @@
  "atmo": {
   "particles": [
    {
-    "type": "ash",
-    "probability": 0.02
+    "type": "glow",
+    "probability": 0.06
    },
    {
-    "type": "glow",
-    "probability": 0.015
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
    }
   ],
-  "fog": "#8a7a6a",
-  "fog_density": "thick",
-  "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
+  "fog": "#8a6e5c",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "mixed",
   "storms": "stormy",
   "why_entry": "MY.ameosastia.E3.assay.000888",
-  "why": "Storm-fire rites and lightning-stunned foes suggest a stormy, ash-laced sky",
+  "why": "Storm-fire, lightning, and war-torn sky suggest stormy weather",
   "grounded": true
  }
 }

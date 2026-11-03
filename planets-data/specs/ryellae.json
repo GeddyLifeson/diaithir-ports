@@ -107,22 +107,22 @@
     "probability": 0.05
    },
    {
-    "type": "end_rod",
+    "type": "firefly",
     "probability": 0.03
    },
    {
-    "type": "firefly",
+    "type": "end_rod",
     "probability": 0.02
    }
   ],
-  "fog": "#b9c9e8",
+  "fog": "#8a9bb8",
   "fog_density": "thin",
-  "night": "bright",
-  "stars": 0.7,
-  "precip_bias": "dry",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
   "storms": "calm",
-  "why_entry": "AR.ryellae.E6.powers.000774",
-  "why": "Restorative breath and silvery lattices suggest a calm, luminous, mild sky",
+  "why_entry": "AR.ryellae.E6.places.000488",
+  "why": "Arcane glow and luminous conduits suggest a soft, mild, shimmering sky.",
   "grounded": false
  }
 }

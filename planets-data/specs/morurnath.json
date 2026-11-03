@@ -93,13 +93,13 @@
  "atmo": {
   "particles": [],
   "fog": "#8a8f96",
-  "fog_density": "thin",
+  "fog_density": "normal",
   "night": "normal",
   "stars": 0.3,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "calm",
   "why_entry": "GR.morurnath.E6.places.003317",
-  "why": "Grey shores and wind-scoured ledges suggest a dry, clear, breezy sky.",
-  "grounded": true
+  "why": "Grey shores and wind-scoured ledges suggest mild, unremarkable weather",
+  "grounded": false
  }
 }

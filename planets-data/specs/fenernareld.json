@@ -104,25 +104,25 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.035
+    "probability": 0.05
    },
    {
     "type": "glow",
     "probability": 0.02
    },
    {
-    "type": "sculk_soul",
-    "probability": 0.012
+    "type": "snowflake",
+    "probability": 0.015
    }
   ],
-  "fog": "#6b6258",
+  "fog": "#7a7d82",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "stormy",
   "why_entry": "GR.fenernareld.E6.places.001225",
-  "why": "Silent ash field where earth gapes; lantern-glow and dread",
+  "why": "Ash-silent field with sudden gaps; storms and mist recur across entries",
   "grounded": true
  }
 }

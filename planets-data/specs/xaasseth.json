@@ -109,16 +109,20 @@
    {
     "type": "end_rod",
     "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
    }
   ],
   "fog": "#8a6fb0",
   "fog_density": "thin",
   "night": "bright",
-  "stars": 0.4,
-  "precip_bias": "dry",
+  "stars": 0.7,
+  "precip_bias": "mixed",
   "storms": "calm",
   "why_entry": "ST.xaasseth.E6.places.001245",
-  "why": "violet fog, glass gardens, light bending, calm sky",
+  "why": "Violet fog, hanging glass gardens, light shifting and bending",
   "grounded": true
  }
 }

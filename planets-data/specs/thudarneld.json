@@ -104,25 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.035
-   },
-   {
-    "type": "glow",
-    "probability": 0.02
+    "probability": 0.03
    },
    {
     "type": "white_ash",
     "probability": 0.02
    }
   ],
-  "fog": "#6b6258",
+  "fog": "#8a8176",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "stormy",
   "why_entry": "GR.thudarneld.E6.events.021563",
-  "why": "Ash-fields and ash-storms dominate; dust-laden dry air, buried stormy skies",
+  "why": "Ash-fields, dust-laden storms and grey dust dominate Thudarneld's sky.",
   "grounded": true
  }
 }

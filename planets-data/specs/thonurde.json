@@ -111,24 +111,15 @@
  "river_archetype": "river",
  "notes": "A grey, rain-soaked grounded world whose marshes, tidelands and wind-scoured highlands tile from cold stone plateaus to ember-warm basins and dry ash-blue mesas.",
  "atmo": {
-  "particles": [
-   {
-    "type": "ash",
-    "probability": 0.02
-   },
-   {
-    "type": "glow",
-    "probability": 0.01
-   }
-  ],
-  "fog": "#8a8a8f",
+  "particles": [],
+  "fog": "#8a9296",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "GR.thonurde.E6.places.000363",
-  "why": "Brimstone basins and yellow vapor, dusty grey wastes, harsh stormy coasts",
+  "why_entry": "GR.thonurde.E6.places.000350",
+  "why": "Salt-scoured, mist-bound, brine-hazed realm with storms and tides",
   "grounded": true
  }
 }

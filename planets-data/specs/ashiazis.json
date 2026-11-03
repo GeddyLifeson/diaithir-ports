@@ -103,10 +103,6 @@
  "atmo": {
   "particles": [
    {
-    "type": "ash",
-    "probability": 0.05
-   },
-   {
     "type": "end_rod",
     "probability": 0.03
    },
@@ -115,14 +111,14 @@
     "probability": 0.02
    }
   ],
-  "fog": "#8a8478",
-  "fog_density": "normal",
-  "night": "dark",
-  "stars": 0.85,
-  "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "ST.ashiazis.E2.places.000273",
-  "why": "Ash-moon courts beneath eternal flame and hanging lamps",
-  "grounded": true
+  "fog": "#8a8fa6",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.9,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.ashiazis.E4.events.000242",
+  "why": "Sky-lattice shattered, light pouring through broken shell; stellar war skies",
+  "grounded": false
  }
 }

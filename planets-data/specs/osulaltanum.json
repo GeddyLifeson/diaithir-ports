@@ -124,21 +124,25 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
    },
    {
     "type": "soul",
-    "probability": 0.02
+    "probability": 0.01
    }
   ],
   "fog": "#8a4a2a",
-  "fog_density": "thick",
+  "fog_density": "normal",
   "night": "dark",
-  "stars": 0.2,
+  "stars": 0.4,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "KI.osulaltanum.E6.powers.000793",
-  "why": "Drifting ember-silt and cold ash sealing fractured horizons",
+  "why_entry": "KI.osulaltanum.E6.powers.000892",
+  "why": "Scorching vortex vaporizes water; storms and heat dominate the realm",
   "grounded": true
  }
 }

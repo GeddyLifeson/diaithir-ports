@@ -41,14 +41,14 @@
     "probability": 0.02
    }
   ],
-  "fog": "#8fa3b8",
+  "fog": "#6a7a8c",
   "fog_density": "thin",
-  "night": "normal",
-  "stars": 0.7,
-  "precip_bias": "dry",
+  "night": "dark",
+  "stars": 0.8,
+  "precip_bias": "mixed",
   "storms": "calm",
   "why_entry": "MY.sinolor.E7.assay.000001",
-  "why": "Paired tunnels in star-regions suggest a mild, luminous, spacelike sky",
+  "why": "Paired tunnels between distant star regions suggest a distant, luminous, airy sky",
   "grounded": false
  }
 }

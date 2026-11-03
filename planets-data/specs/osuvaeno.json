@@ -99,20 +99,16 @@
    {
     "type": "glow",
     "probability": 0.03
-   },
-   {
-    "type": "end_rod",
-    "probability": 0.02
    }
   ],
   "fog": "#8a6a52",
   "fog_density": "normal",
-  "night": "dark",
+  "night": "normal",
   "stars": 0.4,
   "precip_bias": "dry",
-  "storms": "stormy",
-  "why_entry": "KI.osuvaeno.E6.events.000171",
-  "why": "Sudden force surges reshape environment; storm-smith echoes charge the air.",
+  "storms": "calm",
+  "why_entry": "KI.osuvaeno.E4.places.000216",
+  "why": "Drowned glass city humming with stored light, dry ember air",
   "grounded": true
  }
 }

@@ -114,7 +114,7 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.035
    },
    {
     "type": "end_rod",
@@ -126,13 +126,13 @@
    }
   ],
   "fog": "#8a7f78",
-  "fog_density": "normal",
+  "fog_density": "thick",
   "night": "dark",
   "stars": 0.3,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "MY.silia.E6.places.000035",
-  "why": "Ash rivers, drowned seas and storm-tossed reefs suggest ash-laden stormy air.",
+  "why_entry": "MY.silia.E4.events.000273",
+  "why": "Flames split the sky into shards; ash and storm-lit ruin dominate.",
   "grounded": true
  }
 }

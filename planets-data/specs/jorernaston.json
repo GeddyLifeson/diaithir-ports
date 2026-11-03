@@ -107,22 +107,22 @@
     "probability": 0.05
    },
    {
-    "type": "white_ash",
-    "probability": 0.03
+    "type": "glow",
+    "probability": 0.02
    },
    {
-    "type": "soul",
-    "probability": 0.02
+    "type": "end_rod",
+    "probability": 0.01
    }
   ],
-  "fog": "#8a8478",
+  "fog": "#8a8073",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.2,
+  "stars": 0.4,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "GR.jorernaston.E6.powers.000015",
-  "why": "Storm-bound gales and coiled thunder dominate; dry, ashen, dusky air",
+  "why_entry": "GR.jorernaston.E3.places.000031",
+  "why": "Dry wind-scoured basin of clay flats; rain-free, sky-split.",
   "grounded": true
  }
 }

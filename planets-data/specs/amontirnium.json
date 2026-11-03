@@ -123,26 +123,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "ash",
+    "type": "white_ash",
     "probability": 0.02
    },
    {
     "type": "glow",
-    "probability": 0.04
-   },
-   {
-    "type": "end_rod",
     "probability": 0.03
    }
   ],
-  "fog": "#8a8a9a",
+  "fog": "#8a8f99",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
+  "stars": 0.4,
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "MY.amontirnium.E6.places.000428",
-  "why": "Ash-grey hills under an unsettled, wind-swept sky with storms",
+  "why_entry": "MY.amontirnium.E6.events.000577",
+  "why": "Crimson tempest-event erupts over the sky; storms and lightning-heavy air",
   "grounded": true
  }
 }

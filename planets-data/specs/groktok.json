@@ -94,21 +94,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.03
+    "probability": 0.05
    },
    {
     "type": "white_ash",
-    "probability": 0.02
+    "probability": 0.03
    }
   ],
-  "fog": "#6b5e58",
+  "fog": "#6b6670",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "MA.groktok.E6.places.001576",
-  "why": "Frost soil, but entries describe acidic storms, ash-plains, forge smoke, dark skies",
+  "why_entry": "MA.groktok.E6.places.001684",
+  "why": "Dead airless ash-grey world, scorched forge-plains, acidic and ash storms.",
   "grounded": true
  }
 }

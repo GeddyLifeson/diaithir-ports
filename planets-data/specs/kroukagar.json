@@ -104,21 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.03
    },
    {
     "type": "white_ash",
-    "probability": 0.03
+    "probability": 0.02
    }
   ],
   "fog": "#8a8478",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.1,
+  "stars": 0.2,
   "precip_bias": "dry",
-  "storms": "calm",
+  "storms": "stormy",
   "why_entry": "GR.kroukagar.E5.assay.008023",
-  "why": "Ash-ridden wasteland with dust and burned remains; dry, dim air",
+  "why": "Scorched ash-ridden wasteland with dusty industrial air and tempests",
   "grounded": true
  }
 }

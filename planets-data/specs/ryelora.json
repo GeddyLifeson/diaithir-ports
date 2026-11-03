@@ -107,22 +107,18 @@
     "probability": 0.05
    },
    {
-    "type": "end_rod",
-    "probability": 0.03
-   },
-   {
     "type": "soul",
-    "probability": 0.02
+    "probability": 0.03
    }
   ],
-  "fog": "#b8c4cc",
-  "fog_density": "thin",
+  "fog": "#5a6a7a",
+  "fog_density": "thick",
   "night": "dark",
-  "stars": 0.6,
-  "precip_bias": "dry",
+  "stars": 0.2,
+  "precip_bias": "mixed",
   "storms": "calm",
-  "why_entry": "AR.ryelora.E6.places.000158",
-  "why": "Lantern-lit sunken vaults, silent glass halls, luminous mist and drifting spirits.",
-  "grounded": false
+  "why_entry": "AR.ryelora.E6.places.000204",
+  "why": "Drowned caverns, marsh-gas and reed; damp, murky, dim glowing lights",
+  "grounded": true
  }
 }

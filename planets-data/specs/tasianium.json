@@ -111,15 +111,24 @@
  "river_archetype": "river",
  "notes": "A storm-soaked, ash-tinged world of drowned cities, sunless seas and restless dead, where dim mystical light tints every biome.",
  "atmo": {
-  "particles": [],
-  "fog": "#8a9199",
-  "fog_density": "thick",
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#6b6470",
+  "fog_density": "normal",
   "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
+  "stars": 0.3,
+  "precip_bias": "mixed",
   "storms": "stormy",
   "why_entry": "MY.tasianium.E3.assay.014255",
-  "why": "Storm-sky spirits command weather; gray stormy dry air fits",
+  "why": "Storm spirits grant weather command; sky-bound outcast gifts imply storm-touched air.",
   "grounded": true
  }
 }

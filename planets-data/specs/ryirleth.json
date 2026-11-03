@@ -117,22 +117,22 @@
     "probability": 0.05
    },
    {
-    "type": "end_rod",
+    "type": "firefly",
     "probability": 0.03
    },
    {
-    "type": "soul",
+    "type": "end_rod",
     "probability": 0.02
    }
   ],
-  "fog": "#8a9bb0",
+  "fog": "#8fa3a8",
   "fog_density": "thin",
-  "night": "dark",
-  "stars": 0.7,
-  "precip_bias": "dry",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
   "storms": "calm",
   "why_entry": "AR.ryirleth.E1.places.000060",
-  "why": "Bell-shaped stone humming upward; quiet, luminous, dry air",
-  "grounded": true
+  "why": "Bell-shaped groves and humming stone suggest mild, luminous, quiet air.",
+  "grounded": false
  }
 }

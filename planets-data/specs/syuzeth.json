@@ -103,22 +103,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "end_rod",
-    "probability": 0.03
+    "type": "white_ash",
+    "probability": 0.02
    },
    {
     "type": "glow",
-    "probability": 0.02
+    "probability": 0.03
    }
   ],
-  "fog": "#9fb7c9",
-  "fog_density": "thin",
+  "fog": "#8a9bb0",
+  "fog_density": "thick",
   "night": "dark",
-  "stars": 0.9,
-  "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "ST.syuzeth.E7.assay.000655",
-  "why": "Remote unmapped star system, silent and unreachable; calm dark sky",
-  "grounded": false
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.syuzeth.E6.places.000012",
+  "why": "Shuddering salt flats, dunes, wavering air, storm-wracked worlds fit well",
+  "grounded": true
  }
 }

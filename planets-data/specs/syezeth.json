@@ -123,26 +123,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "end_rod",
-    "probability": 0.02
-   },
-   {
     "type": "glow",
-    "probability": 0.03
+    "probability": 0.05
    },
    {
-    "type": "sculk_soul",
-    "probability": 0.01
+    "type": "end_rod",
+    "probability": 0.03
    }
   ],
-  "fog": "#8fa6b8",
-  "fog_density": "thin",
+  "fog": "#8fa3b8",
+  "fog_density": "normal",
   "night": "normal",
   "stars": 0.6,
-  "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "ST.syezeth.E1.places.000267",
-  "why": "Frozen starlight hollow with a standing pitch; calm, clear air",
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.syezeth.E5.assay.000363",
+  "why": "Machines draw lightning from the sky; storms are part of the world",
   "grounded": true
  }
 }

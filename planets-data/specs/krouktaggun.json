@@ -101,15 +101,24 @@
  "river_archetype": "river",
  "notes": "A grey, rain-stirred realm of scarred basalt, hymn-glowing stone and humming groves, with silver-green grasses in the valleys and drowned salt marshes along the coast.",
  "atmo": {
-  "particles": [],
-  "fog": "#8a9296",
-  "fog_density": "thin",
-  "night": "dark",
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "normal",
+  "night": "normal",
   "stars": 0.4,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "calm",
-  "why_entry": "GR.krouktaggun.E1.places.000010",
-  "why": "Resonant stone hums; quiet, dry, dim, cold-grey air.",
-  "grounded": false
+  "why_entry": "GR.krouktaggun.E1.places.000044",
+  "why": "Hollow basins hum, walls of stone, dusk glow; mild dusty air",
+  "grounded": true
  }
 }

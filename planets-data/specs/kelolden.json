@@ -113,22 +113,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "glow",
-    "probability": 0.03
+    "type": "ash",
+    "probability": 0.02
    },
    {
-    "type": "white_ash",
-    "probability": 0.02
+    "type": "sculk_soul",
+    "probability": 0.03
    }
   ],
-  "fog": "#8a7f6e",
-  "fog_density": "thin",
+  "fog": "#5a5560",
+  "fog_density": "normal",
   "night": "dark",
-  "stars": 0.5,
+  "stars": 0.4,
   "precip_bias": "dry",
   "storms": "calm",
-  "why_entry": "GR.kelolden.E1.places.000069",
-  "why": "Humming basalt valleys, resin lamps, dry stone terraces, quiet air",
+  "why_entry": "GR.kelolden.E3.assay.000564",
+  "why": "Scorching ash plains and smoking peaks suggest a dry, hazy surface",
   "grounded": true
  }
 }

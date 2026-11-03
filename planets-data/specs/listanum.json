@@ -103,21 +103,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.035
+    "probability": 0.04
    },
    {
     "type": "glow",
     "probability": 0.02
    }
   ],
-  "fog": "#8a8478",
-  "fog_density": "thick",
-  "night": "dark",
-  "stars": 0.15,
-  "precip_bias": "dry",
+  "fog": "#8a8f99",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.3,
+  "precip_bias": "mixed",
   "storms": "stormy",
   "why_entry": "GR.listanum.E6.assay.000186",
-  "why": "Radiation and fleeing civilians suggest smoky, ashen, hazy skies",
+  "why": "Radiation fallout and war-torn skies suggest ash and stormy haze",
   "grounded": true
  }
 }

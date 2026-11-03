@@ -103,22 +103,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "glow",
-    "probability": 0.06
+    "type": "end_rod",
+    "probability": 0.04
    },
    {
-    "type": "end_rod",
+    "type": "glow",
     "probability": 0.03
    }
   ],
-  "fog": "#8a9bb0",
+  "fog": "#8a7fa6",
   "fog_density": "thin",
   "night": "dark",
-  "stars": 0.9,
+  "stars": 0.7,
   "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "ST.vesizathith.E6.places.002011",
-  "why": "Sunless cold vacuum with pale drifting ice-lanterns; dim light, no weather",
-  "grounded": false
+  "storms": "stormy",
+  "why_entry": "ST.vesizathith.E6.events.006019",
+  "why": "Stellar convergence and shockwaves suggest a dark, dusty, storm-lit sky",
+  "grounded": true
  }
 }

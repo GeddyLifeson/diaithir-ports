@@ -99,20 +99,16 @@
    {
     "type": "end_rod",
     "probability": 0.02
-   },
-   {
-    "type": "snowflake",
-    "probability": 0.01
    }
   ],
-  "fog": "#c9d6e8",
-  "fog_density": "thin",
+  "fog": "#a8b8d0",
+  "fog_density": "normal",
   "night": "bright",
   "stars": 0.9,
-  "precip_bias": "dry",
+  "precip_bias": "mixed",
   "storms": "calm",
   "why_entry": "MY.telones.E6.places.000079",
-  "why": "Luminous mist and bright sky-gates suggest airy, calm, starlit atmosphere",
-  "grounded": true
+  "why": "Luminous mist and glass light suggest a calm, mild, starlit sky",
+  "grounded": false
  }
 }

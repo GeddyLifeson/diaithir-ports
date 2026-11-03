@@ -91,15 +91,24 @@
  "river_archetype": "river",
  "notes": "A quiet, ash-touched world of ringing stone and hidden hollows, where a steaming jungle gives way to glassy badlands and frozen plains under a pale, dim sky.",
  "atmo": {
-  "particles": [],
-  "fog": "#8a8f99",
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a7f74",
   "fog_density": "thin",
-  "night": "normal",
-  "stars": 0.6,
+  "night": "dark",
+  "stars": 0.4,
   "precip_bias": "dry",
   "storms": "calm",
-  "why_entry": "OU.osyuseth.E7.assay.003107",
-  "why": "Entries describe no weather or air; mild defaults chosen.",
-  "grounded": false
+  "why_entry": "OU.osyuseth.E6.places.000101",
+  "why": "Ancient salt basins, dim sun, dry evaporated seas, sediment spires.",
+  "grounded": true
  }
 }

@@ -124,25 +124,25 @@
   "particles": [
    {
     "type": "glow",
-    "probability": 0.07
+    "probability": 0.06
    },
    {
     "type": "end_rod",
-    "probability": 0.05
+    "probability": 0.03
    },
    {
-    "type": "soul",
-    "probability": 0.03
+    "type": "firefly",
+    "probability": 0.02
    }
   ],
-  "fog": "#8a9bb0",
+  "fog": "#2a3a52",
   "fog_density": "thin",
-  "night": "bright",
+  "night": "dark",
   "stars": 0.7,
-  "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "ST.tarnaldath.E6.places.002189",
-  "why": "Living light and sunlit gardens suggest a calm, luminous, dry sky.",
-  "grounded": false
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.tarnaldath.E6.events.001812",
+  "why": "Singing rings and lightning-like convergence over dying stars suggest stormy, luminous skies",
+  "grounded": true
  }
 }

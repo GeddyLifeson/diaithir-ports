@@ -101,15 +101,24 @@
  "river_archetype": "river",
  "notes": "A storm-torn, ash-laced mythic world whose shadowed plains, sunless swamps and frozen peaks echo the dread-haunted sites named in its entries.",
  "atmo": {
-  "particles": [],
-  "fog": "#8a9199",
+  "particles": [
+   {
+    "type": "firefly",
+    "probability": 0.02
+   },
+   {
+    "type": "sculk_soul",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#3a4a52",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
+  "stars": 0.4,
+  "precip_bias": "mixed",
   "storms": "stormy",
-  "why_entry": "MY.lialintor.E5.assay.002509",
-  "why": "Pervasive dull dread and gray stormy atmosphere suits the soil",
+  "why_entry": "MY.lialintor.E1.assay.001178",
+  "why": "Sea-power and sunken continent suggest murky, stormy marsh-and-tide atmosphere.",
   "grounded": false
  }
 }

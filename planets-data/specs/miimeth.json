@@ -127,18 +127,22 @@
     "probability": 0.05
    },
    {
-    "type": "sculk_soul",
+    "type": "firefly",
     "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
    }
   ],
-  "fog": "#2a2238",
-  "fog_density": "thick",
+  "fog": "#c9b8e0",
+  "fog_density": "thin",
   "night": "dark",
-  "stars": 0.3,
-  "precip_bias": "dry",
+  "stars": 0.7,
+  "precip_bias": "mixed",
   "storms": "calm",
-  "why_entry": "AR.miimeth.E6.powers.000475",
-  "why": "Shadow spheres and unlight blooms suggest a dim, dry, haunted atmosphere",
-  "grounded": true
+  "why_entry": "AR.miimeth.E6.powers.000338",
+  "why": "Arcane shimmer and lantern light suggest soft luminous air, not ash",
+  "grounded": false
  }
 }

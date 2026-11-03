@@ -104,17 +104,25 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.012
+    "probability": 0.04
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
    }
   ],
-  "fog": "#8a8d91",
-  "fog_density": "thin",
-  "night": "normal",
-  "stars": 0.3,
-  "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "ST.drerdunen.E5.assay.003919",
-  "why": "Stale workshop air and machinery smoke suggest faint ash drifting, dry and calm.",
+  "fog": "#8a8478",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.drerdunen.E6.assay.002536",
+  "why": "Iron warships, sealed factories and machinery smoke suggest hazy industrial skies",
   "grounded": true
  }
 }

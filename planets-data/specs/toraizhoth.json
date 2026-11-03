@@ -114,21 +114,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.02
+    "probability": 0.05
    },
    {
     "type": "glow",
-    "probability": 0.01
+    "probability": 0.02
    }
   ],
-  "fog": "#6b5a4a",
+  "fog": "#6b6a68",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "GR.toraizhoth.E5.places.000241",
-  "why": "Walled town under siege, scorched ruins, dry hollow soil",
+  "why_entry": "GR.toraizhoth.E5.events.000216",
+  "why": "Signal-fires, dry hours, smoke-choked war-torn skies, walled sieges",
   "grounded": true
  }
 }

@@ -103,26 +103,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "glow",
+    "type": "firefly",
     "probability": 0.03
    },
    {
     "type": "end_rod",
     "probability": 0.02
-   },
-   {
-    "type": "ash",
-    "probability": 0.015
    }
   ],
-  "fog": "#6b5a4e",
+  "fog": "#8a9aa8",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
+  "stars": 0.4,
+  "precip_bias": "mixed",
   "storms": "stormy",
   "why_entry": "ST.vesizora.E6.places.000018",
-  "why": "Ion squalls and charged plasma drifting through dead star system",
-  "grounded": true
+  "why": "Ion squalls and charged plasma drift endlessly across dead system",
+  "grounded": false
  }
 }

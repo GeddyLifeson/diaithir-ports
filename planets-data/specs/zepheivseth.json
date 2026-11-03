@@ -104,21 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.02
+    "probability": 0.03
    },
    {
     "type": "glow",
-    "probability": 0.01
+    "probability": 0.02
    }
   ],
-  "fog": "#8a6a3a",
-  "fog_density": "normal",
+  "fog": "#8a7a6a",
+  "fog_density": "thick",
   "night": "dark",
-  "stars": 0.2,
+  "stars": 0.4,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "ST.zepheivseth.E6.places.001840",
-  "why": "Amber-shrouded hazy world, solvent-tasting sky, singing stone.",
+  "why_entry": "ST.zepheivseth.E6.places.001848",
+  "why": "Scorched magma world, sulfur haze, glowing molten rivers, storm-like dust",
   "grounded": true
  }
 }

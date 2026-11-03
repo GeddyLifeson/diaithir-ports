@@ -104,25 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.035
+    "probability": 0.08
    },
    {
-    "type": "white_ash",
-    "probability": 0.02
-   },
-   {
-    "type": "soul",
-    "probability": 0.01
+    "type": "glow",
+    "probability": 0.012
    }
   ],
-  "fog": "#8a8073",
+  "fog": "#8a7f74",
   "fog_density": "thick",
   "night": "dark",
-  "stars": 0.2,
-  "precip_bias": "dry",
+  "stars": 0.25,
+  "precip_bias": "mixed",
   "storms": "stormy",
   "why_entry": "GR.kaktun.E6.places.000015",
-  "why": "Salt flats, drifting ash and quiet storms wearing timbers",
+  "why": "Drifting ash and quiet storms wear the land's timbers",
   "grounded": true
  }
 }

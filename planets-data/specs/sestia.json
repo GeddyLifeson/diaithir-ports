@@ -104,21 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.06
+    "probability": 0.03
    },
    {
-    "type": "white_ash",
-    "probability": 0.03
+    "type": "glow",
+    "probability": 0.02
    }
   ],
-  "fog": "#8a8077",
+  "fog": "#8a7f74",
   "fog_density": "thick",
   "night": "dark",
   "stars": 0.2,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "MY.sestia.E6.events.000400",
-  "why": "Volcanic ember and ash clashes with storms over ash-choked coasts",
+  "why_entry": "MY.sestia.E6.events.000392",
+  "why": "Sea storms, standing waves, volcanic fire, ash-caked slopes, storm-glass",
   "grounded": true
  }
 }

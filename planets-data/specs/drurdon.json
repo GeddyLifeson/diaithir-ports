@@ -104,25 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
-   },
-   {
-    "type": "glow",
     "probability": 0.02
    },
    {
-    "type": "soul",
-    "probability": 0.01
+    "type": "glow",
+    "probability": 0.012
    }
   ],
-  "fog": "#8a7f72",
+  "fog": "#8a8f96",
   "fog_density": "normal",
-  "night": "normal",
+  "night": "dark",
   "stars": 0.4,
-  "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "GR.drurdon.E4.events.000629",
-  "why": "Sundering fault bled loose stone; ash-dusted sky fits",
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.drurdon.E6.places.000450",
+  "why": "Grey rain-slick metropolis, endless hum, war-torn skies and storms.",
   "grounded": true
  }
 }

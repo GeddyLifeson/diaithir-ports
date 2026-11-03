@@ -113,22 +113,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "ash",
-    "probability": 0.05
+    "type": "glow",
+    "probability": 0.02
    },
    {
-    "type": "end_rod",
+    "type": "ash",
     "probability": 0.02
    }
   ],
-  "fog": "#6b6258",
+  "fog": "#8a8478",
   "fog_density": "normal",
-  "night": "dark",
-  "stars": 0.3,
-  "precip_bias": "dry",
-  "storms": "calm",
-  "why_entry": "GR.halardore.E4.places.000022",
-  "why": "Shard-dust and sundering scars; dry, dusty, ash-like haze",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.halardore.E5.events.000093",
+  "why": "Sundering landfall surge and breaking walls suggests violent storms",
   "grounded": true
  }
 }

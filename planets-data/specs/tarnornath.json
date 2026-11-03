@@ -104,21 +104,21 @@
   "particles": [
    {
     "type": "ash",
-    "probability": 0.05
+    "probability": 0.035
    },
    {
     "type": "glow",
     "probability": 0.02
    }
   ],
-  "fog": "#8a7b6e",
-  "fog_density": "thin",
+  "fog": "#8a8074",
+  "fog_density": "thick",
   "night": "dark",
-  "stars": 0.4,
+  "stars": 0.2,
   "precip_bias": "dry",
-  "storms": "stormy",
-  "why_entry": "GR.tarnornath.E6.places.000038",
-  "why": "Obsidian terraces, salt marsh, humming beacon-stones, wind-scoured flats",
+  "storms": "calm",
+  "why_entry": "GR.tarnornath.E3.assay.001812",
+  "why": "Low plain, catastrophe-scarred, sky turned strange green above it",
   "grounded": true
  }
 }

@@ -103,26 +103,22 @@
  "atmo": {
   "particles": [
    {
-    "type": "ash",
+    "type": "glow",
     "probability": 0.05
    },
    {
-    "type": "glow",
+    "type": "soul",
     "probability": 0.03
-   },
-   {
-    "type": "end_rod",
-    "probability": 0.02
    }
   ],
-  "fog": "#8a5a3c",
+  "fog": "#8a6a4f",
   "fog_density": "normal",
   "night": "dark",
   "stars": 0.5,
   "precip_bias": "dry",
   "storms": "stormy",
-  "why_entry": "KI.tirakaluta.E6.events.000119",
-  "why": "Storms collide over drowned plains; sky splits burning.",
+  "why_entry": "KI.tirakaluta.E6.events.000120",
+  "why": "Restless starlit winds and storm-shattered skies with scattered lights",
   "grounded": true
  }
 }
