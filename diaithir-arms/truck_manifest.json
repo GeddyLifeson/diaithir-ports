@@ -178,11 +178,11 @@
    "gvw_kg": 36000,
    "fuel_l": 720,
    "age": "VII",
-   "wiki": "Kenworth_K100"
+   "wiki": "Kenworth"
   },
   {
    "id": "truck_kamaz_5320",
-   "name": "KamAZ-5320",
+   "name": "KAMAZ",
    "maker": "KamAZ",
    "year": 1976,
    "country": "SU",
@@ -193,7 +193,7 @@
    "gvw_kg": 22000,
    "fuel_l": 369,
    "age": "VII",
-   "wiki": "KamAZ-5320"
+   "wiki": "KAMAZ"
   },
   {
    "id": "truck_mack_superliner",
@@ -283,7 +283,7 @@
    "gvw_kg": 36000,
    "fuel_l": 804,
    "age": "VII",
-   "wiki": "Freightliner_FLD"
+   "wiki": "Freightliner_Trucks"
   },
   {
    "id": "truck_renault_magnum",
@@ -615,7 +615,7 @@
    "length_m": 13.6,
    "mass_kg": 11000,
    "age": "VII",
-   "wiki": "Curtain-sided_trailer"
+   "wiki": "Semi-trailer"
   },
   {
    "id": "trailer_dump_trailer",
@@ -645,7 +645,7 @@
    "length_m": 16.2,
    "mass_kg": 9500,
    "age": "VI",
-   "wiki": "Livestock_transporter"
+   "wiki": "Livestock_trailer"
   },
   {
    "id": "trailer_step_deck",
@@ -675,7 +675,7 @@
    "length_m": 18.0,
    "mass_kg": 30000,
    "age": "VII",
-   "wiki": "Modular_trailer"
+   "wiki": "Semi-trailer"
   },
   {
    "id": "trailer_tank_transporter",
@@ -690,7 +690,7 @@
    "length_m": 15.5,
    "mass_kg": 18750,
    "age": "VII",
-   "wiki": "M1000_Heavy_Equipment_Transporter_Semitrailer"
+   "wiki": "Semi-trailer"
   }
  ],
  "construction": [
@@ -762,7 +762,7 @@
    "fuel_l": 432,
    "road_role": "grade",
    "age": "VII",
-   "wiki": "Grader_(road_construction)"
+   "wiki": "Motor_grader"
   },
   {
    "id": "cv_cat_966_loader",
@@ -846,7 +846,7 @@
    "fuel_l": 960,
    "road_role": "mill",
    "age": "VII",
-   "wiki": "Road_milling"
+   "wiki": "Cold_planer"
   },
   {
    "id": "cv_putzmeister_pump",

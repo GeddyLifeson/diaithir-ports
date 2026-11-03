@@ -10,14 +10,14 @@ truck_mack_r600,tractor,Mack R-Series,Mack,1966,US,conv,250,5500,36000,VII,https
 truck_peterbilt_359,tractor,Peterbilt 359,Peterbilt,1967,US,conv,300,6200,36000,VII,https://en.wikipedia.org/wiki/Peterbilt_359
 truck_intl_transtar,tractor,International Transtar,International,1969,US,cab,250,5500,36000,VII,https://en.wikipedia.org/wiki/International_Transtar
 truck_mb_ng,tractor,Mercedes-Benz NG,Mercedes-Benz,1973,DE,cab,240,5360,38000,VII,https://en.wikipedia.org/wiki/Mercedes-Benz_NG
-truck_kenworth_k100,tractor,Kenworth K100,Kenworth,1975,US,cab,300,6200,36000,VII,https://en.wikipedia.org/wiki/Kenworth_K100
-truck_kamaz_5320,tractor,KamAZ-5320,KamAZ,1976,SU,cab,154,4156,22000,VII,https://en.wikipedia.org/wiki/KamAZ-5320
+truck_kenworth_k100,tractor,Kenworth K100,Kenworth,1975,US,cab,300,6200,36000,VII,https://en.wikipedia.org/wiki/Kenworth
+truck_kamaz_5320,tractor,KAMAZ,KamAZ,1976,SU,cab,154,4156,22000,VII,https://en.wikipedia.org/wiki/KAMAZ
 truck_mack_superliner,tractor,Mack Super-Liner,Mack,1977,US,conv,320,6480,36000,VII,https://en.wikipedia.org/wiki/Mack_Super-Liner
 truck_tatra_815,tractor,Tatra 815,Tatra,1982,CS,cab,210,4940,40000,VII,https://en.wikipedia.org/wiki/Tatra_815
 truck_sinotruk_howo,tractor,Sinotruk Howo,Sinotruk,1983,CN,cab,290,6060,40000,VII,https://en.wikipedia.org/wiki/Sinotruk
 truck_scania_143,tractor,Scania 143,Scania,1988,SE,cab,330,6620,40000,VII,https://en.wikipedia.org/wiki/Scania_3-series
 truck_peterbilt_379,tractor,Peterbilt 379,Peterbilt,1987,US,conv,335,6690,36000,VII,https://en.wikipedia.org/wiki/Peterbilt_379
-truck_freightliner_fld120,tractor,Freightliner FLD120,Freightliner,1989,US,conv,335,6690,36000,VII,https://en.wikipedia.org/wiki/Freightliner_FLD
+truck_freightliner_fld120,tractor,Freightliner FLD120,Freightliner,1989,US,conv,335,6690,36000,VII,https://en.wikipedia.org/wiki/Freightliner_Trucks
 truck_renault_magnum,tractor,Renault Magnum,Renault,1990,FR,cab,340,6760,40000,VII,https://en.wikipedia.org/wiki/Renault_Magnum
 truck_volvo_fh,tractor,Volvo FH,Volvo,1993,SE,cab,340,6760,40000,VII,https://en.wikipedia.org/wiki/Volvo_FH
 truck_isuzu_giga,tractor,Isuzu Giga,Isuzu,1994,JP,cab,260,5640,25000,VII,https://en.wikipedia.org/wiki/Isuzu_Giga
@@ -39,22 +39,22 @@ trailer_reefer,trailer,Refrigerated Trailer,,1939,,box,,9750,19000,VI,https://en
 trailer_lowboy,trailer,Lowboy Trailer,,1940,,lowboy,,15000,40000,VI,https://en.wikipedia.org/wiki/Lowboy_(trailer)
 trailer_car_carrier,trailer,Car Carrier Trailer,,1950,,carrier,,9250,17000,VII,https://en.wikipedia.org/wiki/Car_carrier_trailer
 trailer_log_trailer,trailer,Log Trailer,,1930,,log,,11000,24000,VI,https://en.wikipedia.org/wiki/Log_truck
-trailer_curtainsider,trailer,Curtainsider Trailer,,1960,,curtain,,11000,24000,VII,https://en.wikipedia.org/wiki/Curtain-sided_trailer
+trailer_curtainsider,trailer,Curtainsider Trailer,,1960,,curtain,,11000,24000,VII,https://en.wikipedia.org/wiki/Semi-trailer
 trailer_dump_trailer,trailer,Dump Trailer,,1930,,dump,,11000,24000,VI,https://en.wikipedia.org/wiki/Dump_truck
-trailer_livestock,trailer,Livestock Trailer,,1930,,livestock,,9500,18000,VI,https://en.wikipedia.org/wiki/Livestock_transporter
+trailer_livestock,trailer,Livestock Trailer,,1930,,livestock,,9500,18000,VI,https://en.wikipedia.org/wiki/Livestock_trailer
 trailer_step_deck,trailer,Step-Deck Trailer,,1940,,step,,10500,22000,VI,https://en.wikipedia.org/wiki/Flatbed_trailer
-trailer_modular_heavy,trailer,Modular Heavy-Haul Trailer,,1953,,modular,,30000,100000,VII,https://en.wikipedia.org/wiki/Modular_trailer
-trailer_tank_transporter,trailer,Heavy Equipment Transporter Semitrailer,,1977,,lowboy,,18750,55000,VII,https://en.wikipedia.org/wiki/M1000_Heavy_Equipment_Transporter_Semitrailer
+trailer_modular_heavy,trailer,Modular Heavy-Haul Trailer,,1953,,modular,,30000,100000,VII,https://en.wikipedia.org/wiki/Semi-trailer
+trailer_tank_transporter,trailer,Heavy Equipment Transporter Semitrailer,,1977,,lowboy,,18750,55000,VII,https://en.wikipedia.org/wiki/Semi-trailer
 cv_steam_roller,construction,Aveling and Porter Road Roller,Aveling and Porter,1867,UK,roller,30,12000,,VI,https://en.wikipedia.org/wiki/Road_roller
 cv_transit_mixer,construction,Concrete Transit Mixer,Jaeger,1916,US,mixer,220,14000,,VI,https://en.wikipedia.org/wiki/Concrete_mixer
 cv_d9_dozer,construction,Caterpillar D9 Bulldozer,Caterpillar,1954,US,dozer,350,49000,,VII,https://en.wikipedia.org/wiki/Caterpillar_D9
 cv_jcb_3cx,construction,JCB 3CX Backhoe Loader,JCB,1953,UK,backhoe,55,7000,,VII,https://en.wikipedia.org/wiki/Backhoe_loader
-cv_cat_140_grader,construction,Caterpillar 140 Motor Grader,Caterpillar,1961,US,grader,180,17000,,VII,https://en.wikipedia.org/wiki/Grader_(road_construction)
+cv_cat_140_grader,construction,Caterpillar 140 Motor Grader,Caterpillar,1961,US,grader,180,17000,,VII,https://en.wikipedia.org/wiki/Motor_grader
 cv_cat_966_loader,construction,Caterpillar 966 Wheel Loader,Caterpillar,1963,US,loader,150,17000,,VII,https://en.wikipedia.org/wiki/Loader_(equipment)
 cv_barber_greene_paver,construction,Asphalt Paver,Barber-Greene,1931,US,paver,110,15000,,VI,https://en.wikipedia.org/wiki/Paver_(vehicle)
 cv_bomag_roller,construction,Vibratory Road Roller,Bomag,1957,DE,roller,100,11000,,VII,https://en.wikipedia.org/wiki/Road_roller
 cv_bobcat_m440,construction,Bobcat M-440 Skid-Steer Loader,Bobcat,1960,US,skid,14,1200,,VII,https://en.wikipedia.org/wiki/Skid-steer_loader
 cv_cat_320_excavator,construction,Caterpillar 320 Excavator,Caterpillar,1987,US,excavator,110,20000,,VII,https://en.wikipedia.org/wiki/Excavator
-cv_wirtgen_miller,construction,Road Milling Machine,Wirtgen,1969,DE,miller,400,28000,,VII,https://en.wikipedia.org/wiki/Road_milling
+cv_wirtgen_miller,construction,Road Milling Machine,Wirtgen,1969,DE,miller,400,28000,,VII,https://en.wikipedia.org/wiki/Cold_planer
 cv_putzmeister_pump,construction,Concrete Pump Truck,Putzmeister,1958,DE,pump,300,28000,,VII,https://en.wikipedia.org/wiki/Concrete_pump
 cv_cat_797_haul,construction,Caterpillar 797 Haul Truck,Caterpillar,1999,US,haul,2983,360000,,VII,https://en.wikipedia.org/wiki/Caterpillar_797

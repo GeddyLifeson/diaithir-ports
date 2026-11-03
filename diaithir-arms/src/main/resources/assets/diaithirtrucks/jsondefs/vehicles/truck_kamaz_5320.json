@@ -1,8 +1,8 @@
 {
  "general": {
   "type": "vehicle",
-  "name": "KamAZ-5320",
-  "description": "KamAZ-5320 (1976, SU): 154 kW tractor unit, 3 axles, gross 22 t.",
+  "name": "KAMAZ",
+  "description": "KAMAZ (1976, SU): 154 kW tractor unit, 3 axles, gross 22 t.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:10"
@@ -155,7 +155,7 @@
  "definitions": [
   {
    "subName": "",
-   "name": "KamAZ-5320 (Red)",
+   "name": "KAMAZ (Red)",
    "modelName": "truck_kamaz_5320",
    "textureName": "paint",
    "extraMaterialLists": [
@@ -164,7 +164,7 @@
   },
   {
    "subName": "_white",
-   "name": "KamAZ-5320 (White)",
+   "name": "KAMAZ (White)",
    "modelName": "truck_kamaz_5320",
    "textureName": "paint_white",
    "extraMaterialLists": [
@@ -173,7 +173,7 @@
   },
   {
    "subName": "_blue",
-   "name": "KamAZ-5320 (Blue)",
+   "name": "KAMAZ (Blue)",
    "modelName": "truck_kamaz_5320",
    "textureName": "paint_blue",
    "extraMaterialLists": [
