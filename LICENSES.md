@@ -1,2 +1,3 @@
 | diaithir-worldgen-structures | own (clean-room) | MIT | data-only; no third-party content |
 | diaithir-worldsys | MIT | Own clean-room module (20 features), source in diaithir-worldsys/ |
+| diaithir-carts (net.diaithir.mega.shape) | RFTools Builder shape formulas, McJtyMods/RFToolsBuilder | MIT | Copyright (c) 2019 McJtyMods. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the Software without restriction, subject to inclusion of this copyright notice and the MIT permission notice (full text: upstream LICENSE). Ported to pure Java; no new jar |
