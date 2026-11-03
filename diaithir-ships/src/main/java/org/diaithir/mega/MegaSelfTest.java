@@ -45,6 +45,9 @@ public final class MegaSelfTest {
         check("wages: operator job automated", MegaCabBlockEntity.autonomousCrew("machine_operator", cab));
         check("wages: other jobs untouched", !MegaCabBlockEntity.autonomousCrew("cook", cab));
 
+        check("engines: haul truck takes arcane_motor and diesel, not steam", cab.acceptsEngine("arcane_motor") && !cab.acceptsEngine("steam_piston"));
+        cab.setSpec("megamachines:steam_navvy");
+        check("engines: Age V steam navvy has no arcane_motor", !cab.acceptsEngine("arcane_motor") && cab.acceptsEngine("steam_piston"));
         check("catalog has 12 vehicles", MegaCatalog.ids().size() == 12);
         finish(level);
     }
