@@ -147,7 +147,10 @@ public sealed interface Logic permits Logic.Constant, Logic.Arith, Logic.Decider
         static String name(String t) {
             String s = t.toLowerCase();
             if (s.matches("[a-z]")) return "virtual:" + s;
-            if (s.indexOf(':') >= 0) return s;
+            if (s.indexOf(':') >= 0) {
+                if (!s.matches("[a-z0-9_.-]+:[a-z0-9_./-]+")) throw new IllegalArgumentException("Bad signal name: " + t);
+                return s;
+            }
             if (!s.matches("[a-z0-9_./-]+")) throw new IllegalArgumentException("Bad signal name: " + t);
             return "minecraft:" + s;
         }

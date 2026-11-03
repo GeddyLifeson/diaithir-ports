@@ -77,6 +77,7 @@ public final class CircuitNodeBE extends BlockEntity {
     }
 
     private void setProgramQuiet(String text) {
+        if (text.length() > 300) throw new IllegalArgumentException("A program can be at most 300 characters.");
         Logic l = Logic.parse(text);
         if (!fits(l)) throw new IllegalArgumentException("A " + kind.display + " cannot run '" + text + "'.");
         this.logic = l;
@@ -106,9 +107,15 @@ public final class CircuitNodeBE extends BlockEntity {
                 + "\nSees red " + seen.red() + " green " + seen.green() + "\nSays " + out;
     }
 
+    /** Keeps a string inside its packet codec limit so an oversized program or signal list cannot break the packet. */
+    private static String clip(String s, int max) {
+        return s.length() <= max ? s : s.substring(0, max - 3) + "...";
+    }
+
     /** What a screen shows. msg is an error or a short note, resetProgram tells the screen to replace the text in its box. */
     public CircuitPayloads.View view(String msg, boolean resetProgram) {
-        return new CircuitPayloads.View(worldPosition, program, seen.red().pretty(), seen.green().pretty(), out.pretty(), msg, resetProgram);
+        return new CircuitPayloads.View(worldPosition, clip(program, 300), clip(seen.red().pretty(), 1500), clip(seen.green().pretty(), 1500),
+                clip(out.pretty(), 1500), clip(msg, 300), resetProgram);
     }
 
     /** Programs this node for a player. Returns the reply for their screen. */
@@ -174,6 +181,7 @@ public final class CircuitNodeBE extends BlockEntity {
         if (!(level instanceof ServerLevel sl)) return;
         for (Link l : new ArrayList<>(links)) {
             if (sl.getBlockEntity(l.other) instanceof CircuitNodeBE peer) peer.dropLinksTo(pos);
+            if (l.other.equals(pos) && !l.selfOut) continue; // a wire from this node to itself has two entries but one coil
             Block.popResource(sl, pos, new ItemStack(Machines.CIRCUIT_COILS.get(Machines.coilKey(l.color, l.tier)).get()));
         }
         links.clear();
@@ -186,8 +194,9 @@ public final class CircuitNodeBE extends BlockEntity {
         seen = in;
         if (kind == CircuitKind.READER) return read(level, gameTime);
         Logic.Ctx ctx = new Logic.Ctx(gameTime, worldPosition.asLong(), id -> {
-            var item = BuiltInRegistries.ITEM.getOptional(net.minecraft.resources.Identifier.parse(id));
-            return item.map(i -> new ItemStack(i).getMaxStackSize()).orElse(64);
+            var rl = net.minecraft.resources.Identifier.tryParse(id);
+            if (rl == null) return 64;
+            return BuiltInRegistries.ITEM.getOptional(rl).map(i -> new ItemStack(i).getMaxStackSize()).orElse(64);
         });
         if (kind.acts()) {
             boolean on = ((Logic.When) logic).test(in);

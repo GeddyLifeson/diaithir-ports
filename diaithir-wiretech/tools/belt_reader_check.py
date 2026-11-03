@@ -7,13 +7,17 @@ with Lane('beltread', jars, out=out, srv_xmx='2G') as L:
     L.start_client(); d = L.drive
     L.server_cmd('gamemode survival Tester'); L.server_cmd('time set day')
     L.wait_render()
+    bad = []
     for c in ['setblock 1 -60 -9 air', 'setblock 1 -60 -3 air', 'setblock 1 -60 -2 air', 'setblock 0 -60 -3 air',
               'setblock 1 -60 -2 chest', 'setblock 1 -60 -3 belts:chute[facing=north]', 'setblock 1 -60 -9 belts:chute[facing=north]',
               'data merge block 1 -60 -3 {target:[I;1,-60,-9]}',
               'item replace block 1 -60 -2 container.0 with minecraft:coal 5', 'item replace block 1 -60 -2 container.1 with minecraft:iron_ingot 3',
               'setblock 0 -60 -3 diaithir_wiretech:electronic_circuit_reader[facing=west]']:
-        print(c, '->', L.server_cmd(c, 0.8))
+        r = L.server_cmd(c, 0.8); print(c, '->', r)
+        if not c.endswith(' air') and any('Could not' in x or 'Unknown' in x for x in r): bad.append(c)
     time.sleep(6)
     print(L.server_cmd('data get block 1 -60 -3', 1.5))
     L.look(0.5, -60, 0.5, 180, 20); time.sleep(1); d.key('r'); time.sleep(4); L.shot('belt_reader.png')
     print(L.log_lines('server', r'Exception|belts.*(rror|ail)')[-6:])
+    if bad:
+        print('FAIL', bad); sys.exit(1)
