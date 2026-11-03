@@ -10,7 +10,8 @@ import li.cil.oc2.common.util.TickUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtUtils;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.phys.Vec3;
 
@@ -113,13 +114,13 @@ public final class RobotMovementAction extends AbstractRobotAction {
 
         NBTUtils.putEnum(tag, DIRECTION_TAG_NAME, direction);
         if (origin != null) {
-            tag.put(ORIGIN_TAG_NAME, NbtUtils.writeBlockPos(origin));
+            tag.put(ORIGIN_TAG_NAME, writeBlockPos(origin));
         }
         if (start != null) {
-            tag.put(START_TAG_NAME, NbtUtils.writeBlockPos(start));
+            tag.put(START_TAG_NAME, writeBlockPos(start));
         }
         if (target != null) {
-            tag.put(TARGET_TAG_NAME, NbtUtils.writeBlockPos(target));
+            tag.put(TARGET_TAG_NAME, writeBlockPos(target));
         }
 
         return tag;
@@ -133,15 +134,23 @@ public final class RobotMovementAction extends AbstractRobotAction {
         if (direction == null) direction = MovementDirection.FORWARD;
         direction = direction.resolve();
         if (tag.contains(ORIGIN_TAG_NAME)) {
-            origin = NbtUtils.readBlockPos(tag, ORIGIN_TAG_NAME).orElseThrow();
+            origin = readBlockPos(tag, ORIGIN_TAG_NAME);
         }
         if (tag.contains(START_TAG_NAME)) {
-            start = NbtUtils.readBlockPos(tag, START_TAG_NAME).orElseThrow();
+            start = readBlockPos(tag, START_TAG_NAME);
         }
         if (tag.contains(TARGET_TAG_NAME)) {
-            target = NbtUtils.readBlockPos(tag, TARGET_TAG_NAME).orElseThrow();
+            target = readBlockPos(tag, TARGET_TAG_NAME);
             targetPos = getTargetPositionInBlock(target);
         }
+    }
+
+    private static Tag writeBlockPos(final BlockPos pos) {
+        return BlockPos.CODEC.encodeStart(NbtOps.INSTANCE, pos).getOrThrow();
+    }
+
+    private static BlockPos readBlockPos(final CompoundTag tag, final String key) {
+        return BlockPos.CODEC.parse(NbtOps.INSTANCE, Objects.requireNonNull(tag.get(key))).getOrThrow();
     }
 
     private void moveAndResolveCollisions(final Robot robot) {

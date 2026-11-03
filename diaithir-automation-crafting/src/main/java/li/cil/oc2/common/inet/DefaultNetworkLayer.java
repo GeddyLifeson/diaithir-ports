@@ -108,7 +108,7 @@ public final class DefaultNetworkLayer implements NetworkLayer {
             return;
         }
         packet.get(); // too hard, ignore
-        int messageLength = Short.toUnsignedInt(packet.getShortOr(), (short) 0);
+        int messageLength = Short.toUnsignedInt(packet.getShort());
         if (packet.remaining() + 4 < messageLength) {
             LOGGER.trace("Packet size is lower than IP message size");
             return;

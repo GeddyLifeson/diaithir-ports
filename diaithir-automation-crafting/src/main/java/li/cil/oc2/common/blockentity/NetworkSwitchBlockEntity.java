@@ -13,10 +13,10 @@ import li.cil.oc2.common.Constants;
 import li.cil.oc2.common.capabilities.Capabilities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.*;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
 
 
@@ -190,52 +190,40 @@ public final class NetworkSwitchBlockEntity extends ModBlockEntity implements Na
     }
 
     @Override
-    public void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
+    public void saveAdditional(final ValueOutput output) {
+        super.saveAdditional(output);
 
-        ListTag hosts = new ListTag();
+        ValueOutput.ValueOutputList hosts = output.childrenList("hosts");
         for (Map.Entry<Long, HostEntry> host : hostTable.entrySet()) {
-            CompoundTag thisHost = new CompoundTag();
-            thisHost.put("mac", LongTag.valueOf(host.getKey()));
-            thisHost.put("side", IntTag.valueOf(host.getValue().iface));
-            thisHost.put("timestamp", LongTag.valueOf(host.getValue().timestamp));
-            hosts.add(thisHost);
+            ValueOutput thisHost = hosts.addChild();
+            thisHost.putLong("mac", host.getKey());
+            thisHost.putInt("side", host.getValue().iface);
+            thisHost.putLong("timestamp", host.getValue().timestamp);
         }
-        tag.put("hosts", hosts);
 
-        ListTag ports = new ListTag();
+        ValueOutput.ValueOutputList ports = output.childrenList("ports");
         for (PortSettings myPort : portSettings) {
-            CompoundTag port = new CompoundTag();
-            myPort.save(port);
-            ports.add(port);
+            myPort.save(ports.addChild());
         }
-        tag.put("ports", ports);
     }
 
     @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
+    public void loadAdditional(final ValueInput input) {
+        super.loadAdditional(input);
 
-        Tag hosts = tag.get("hosts");
-        if (hosts != null) {
-            for (Tag host_ : ((ListTag) hosts)) {
-                CompoundTag host = (CompoundTag) host_;
-                hostTable.put(
-                    host.getLongOr("mac", 0L),
-                    new HostEntry(
-                        tag.getIntOr("side", 0),
-                        tag.getLongOr("timestamp", 0L)
-                    )
-                );
-            }
+        for (ValueInput host : input.childrenListOrEmpty("hosts")) {
+            hostTable.put(
+                host.getLongOr("mac", 0L),
+                new HostEntry(
+                    input.getIntOr("side", 0),
+                    input.getLongOr("timestamp", 0L)
+                )
+            );
         }
 
-        Tag ports = tag.get("ports");
-        if (ports != null) {
-            int i = 0;
-            for (Tag port : ((ListTag) ports)) {
-                portSettings[i++] = PortSettings.load((CompoundTag) port);
-            }
+        int i = 0;
+        for (ValueInput port : input.childrenListOrEmpty("ports")) {
+            portSettings[i++] = PortSettings.load(port);
         }
 
     }
@@ -412,20 +400,20 @@ public final class NetworkSwitchBlockEntity extends ModBlockEntity implements Na
             this((short) 0, emptyList(), false, true);
         }
 
-        public void save(final CompoundTag tag) {
-            tag.put("untagged", ShortTag.valueOf(untagged));
-            tag.put("tagged", new IntArrayTag(tagged.stream().map(s -> (int) s).collect(Collectors.toList())));
-            tag.put("hairpin", ByteTag.valueOf(hairpin));
-            tag.put("trunkAll", ByteTag.valueOf(trunkAll));
+        public void save(final ValueOutput output) {
+            output.putShort("untagged", untagged);
+            output.putIntArray("tagged", tagged.stream().mapToInt(s -> (int) s).toArray());
+            output.putBoolean("hairpin", hairpin);
+            output.putBoolean("trunkAll", trunkAll);
         }
 
-        public static PortSettings load(final CompoundTag tag) {
-            short untagged = tag.getShortOr("untagged", (short) 0);
-            List<Short> tagged = Arrays.stream(tag.getIntArray("tagged").orElse(new int[0]))
+        public static PortSettings load(final ValueInput input) {
+            short untagged = (short) input.getShortOr("untagged", (short) 0);
+            List<Short> tagged = Arrays.stream(input.getIntArray("tagged").orElse(new int[0]))
                 .mapToObj(i -> (short) i)
                 .collect(Collectors.toList());
-            boolean hairpin = tag.getBooleanOr("hairpin", false);
-            boolean trunkAll = tag.getBooleanOr("trunkAll", false);
+            boolean hairpin = input.getBooleanOr("hairpin", false);
+            boolean trunkAll = input.getBooleanOr("trunkAll", false);
 
             return new PortSettings(untagged, tagged, hairpin, trunkAll);
         }

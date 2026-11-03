@@ -3,7 +3,6 @@
 package li.cil.oc2.common.util;
 
 import li.cil.oc2.api.API;
-import li.cil.oc2.common.mixin.ServerChunkCacheMixin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.SectionPos;
 import net.minecraft.world.level.ChunkPos;
@@ -19,9 +18,10 @@ import java.util.WeakHashMap;
 
 @EventBusSubscriber(modid = API.MOD_ID)
 public final class ChunkUtils {
+    // TODO(oc2-restore) ServerChunkCacheMixin import removed, mixin package is excluded from this compile stage.
     /**
      * All chunks marked for lazy saving. The lazy unsaved state will be applied when
-     * chunks unload and when chunks get explicitly saved, via the {@link ServerChunkCacheMixin}.
+     * chunks unload and when chunks get explicitly saved, via the {@code ServerChunkCacheMixin}.
      */
     private static final Set<ChunkAccess> UNSAVED_CHUNKS = Collections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap<>()));
 
@@ -36,7 +36,7 @@ public final class ChunkUtils {
      * </ul>
      * <p>
      * This is intended for things that change every tick, which would lead to saving to NBT every
-     * single tick, when setting {@link net.minecraft.world.level.chunk.ChunkAccess#setUnsaved(boolean)}
+     * single tick, when calling {@link net.minecraft.world.level.chunk.ChunkAccess#markUnsaved()}
      * directly.
      * <p>
      * Instead, this sets a flag on the chunk, which, if true, will cause the chunk to be marked as
@@ -60,7 +60,7 @@ public final class ChunkUtils {
      * </ul>
      * <p>
      * This is intended for things that change every tick, which would lead to saving to NBT every
-     * single tick, when setting {@link net.minecraft.world.level.chunk.ChunkAccess#setUnsaved(boolean)}
+     * single tick, when calling {@link net.minecraft.world.level.chunk.ChunkAccess#markUnsaved()}
      * directly.
      * <p>
      * Instead, this sets a flag on the chunk, which, if true, will cause the chunk to be marked as
@@ -89,7 +89,7 @@ public final class ChunkUtils {
      * </ul>
      * <p>
      * This is intended for things that change every tick, which would lead to saving to NBT every
-     * single tick, when setting {@link net.minecraft.world.level.chunk.ChunkAccess#setUnsaved(boolean)}
+     * single tick, when calling {@link net.minecraft.world.level.chunk.ChunkAccess#markUnsaved()}
      * directly.
      * <p>
      * Instead, this sets a flag on the chunk, which, if true, will cause the chunk to be marked as
@@ -100,8 +100,8 @@ public final class ChunkUtils {
      * @param chunkPos the position of the chunk.
      */
     public static void setLazyUnsaved(final LevelAccessor level, final ChunkPos chunkPos) {
-        final int chunkX = chunkPos.x;
-        final int chunkZ = chunkPos.z;
+        final int chunkX = chunkPos.x();
+        final int chunkZ = chunkPos.z();
         if (level.hasChunk(chunkX, chunkZ)) {
             setLazyUnsaved(level.getChunk(chunkX, chunkZ));
         }
@@ -113,7 +113,7 @@ public final class ChunkUtils {
      */
     public static void applyChunkLazyUnsaved() {
         for (final ChunkAccess chunk : UNSAVED_CHUNKS) {
-            chunk.setUnsaved(true);
+            chunk.markUnsaved();
         }
         UNSAVED_CHUNKS.clear();
     }
@@ -122,7 +122,7 @@ public final class ChunkUtils {
     public static void handleChunkUnload(final ChunkEvent.Unload event) {
         final ChunkAccess chunk = event.getChunk();
         if (UNSAVED_CHUNKS.remove(chunk)) {
-            chunk.setUnsaved(true);
+            chunk.markUnsaved();
         }
     }
 }

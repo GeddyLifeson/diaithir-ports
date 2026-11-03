@@ -12,8 +12,8 @@ import li.cil.oc2.common.bus.device.util.OptionalAddress;
 import li.cil.oc2.common.serialization.BlobStorage;
 import li.cil.oc2.common.util.NBTTagIds;
 import li.cil.oc2.common.vm.device.SimpleFramebufferDevice;
-import li.cil.oc2.jcodec.common.model.Picture;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
@@ -55,9 +55,9 @@ public final class ProjectorDevice extends IdentityProxy<BlockEntity> implements
         return framebufferDevice != null && framebufferDevice.hasChanges();
     }
 
-    public boolean applyChanges(final Picture picture) {
-        final SimpleFramebufferDevice framebufferDevice = device;
-        return framebufferDevice != null && framebufferDevice.applyChanges(picture);
+    // TODO(oc2-restore): jcodec Picture is not available in this compile stage; applying changes is a no-op.
+    public boolean applyChanges(final Object picture) {
+        return false;
     }
 
     @Override
@@ -106,7 +106,7 @@ public final class ProjectorDevice extends IdentityProxy<BlockEntity> implements
         final CompoundTag tag = new CompoundTag();
 
         if (blobHandle != null) {
-            tag.putUUID(BLOB_HANDLE_TAG_NAME, blobHandle);
+            tag.putIntArray(BLOB_HANDLE_TAG_NAME, UUIDUtil.uuidToIntArray(blobHandle));
         }
         if (address.isPresent()) {
             tag.putLong(ADDRESS_TAG_NAME, address.getAsLong());
@@ -117,11 +117,12 @@ public final class ProjectorDevice extends IdentityProxy<BlockEntity> implements
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, final CompoundTag tag) {
-        if (tag.hasUUID(BLOB_HANDLE_TAG_NAME)) {
-            blobHandle = tag.getUUID(BLOB_HANDLE_TAG_NAME);
+        final int[] blobHandleArray = tag.getIntArray(BLOB_HANDLE_TAG_NAME).orElse(null);
+        if (blobHandleArray != null && blobHandleArray.length == 4) {
+            blobHandle = UUIDUtil.uuidFromIntArray(blobHandleArray);
         }
         if (tag.contains(ADDRESS_TAG_NAME)) {
-            address.set(tag.getLongOr(ADDRESS_TAG_NAME), 0L);
+            address.set(tag.getLongOr(ADDRESS_TAG_NAME, 0L));
         }
     }
 

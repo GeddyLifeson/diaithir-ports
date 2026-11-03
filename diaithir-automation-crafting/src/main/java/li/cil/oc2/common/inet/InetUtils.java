@@ -18,7 +18,7 @@ public final class InetUtils {
         final int halfSize = size >>> 1;
         int checksum = 0;
         for (int i = 0; i < halfSize; ++i) {
-            checksum += Short.toUnsignedInt(buffer.getShortOr(), (short) 0);
+            checksum += Short.toUnsignedInt(buffer.getShort());
         }
         if ((size & 1) != 0) {
             checksum += (buffer.get() << 8) & 0xFFFF;

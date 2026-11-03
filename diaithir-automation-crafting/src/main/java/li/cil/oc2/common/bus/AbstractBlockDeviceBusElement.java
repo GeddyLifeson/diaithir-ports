@@ -16,6 +16,7 @@ import li.cil.oc2.common.capabilities.Capabilities;
 import li.cil.oc2.common.util.LevelUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
@@ -54,8 +55,8 @@ public abstract class AbstractBlockDeviceBusElement extends AbstractGroupingDevi
 
             final BlockPos neighborPos = getPosition().relative(neighborDirection);
 
-            final ChunkPos chunkPos = new ChunkPos(neighborPos);
-            if (!level.hasChunk(chunkPos.x, chunkPos.z)) {
+            final ChunkPos chunkPos = ChunkPos.containing(neighborPos);
+            if (!level.hasChunk(chunkPos.x(), chunkPos.z())) {
                 return Optional.empty();
             }
 
@@ -158,7 +159,7 @@ public abstract class AbstractBlockDeviceBusElement extends AbstractGroupingDevi
         super.onEntryRemoved(dataKey, tag, query);
         assert query != null : "Passed null query for block device bus element.";
         final Registry<BlockDeviceProvider> registry = Providers.blockDeviceProviderRegistry();
-        final BlockDeviceProvider provider = registry.get(Identifier.parse(dataKey));
+        final BlockDeviceProvider provider = registry.get(Identifier.parse(dataKey)).map(Holder::value).orElse(null);
         if (provider != null) {
             provider.unmount(query, tag);
         }

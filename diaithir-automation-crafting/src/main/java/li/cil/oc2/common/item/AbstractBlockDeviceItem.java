@@ -5,7 +5,6 @@ package li.cil.oc2.common.item;
 import li.cil.oc2.api.bus.device.data.BlockDeviceData;
 import li.cil.oc2.common.bus.device.data.BlockDeviceDataRegistry;
 import li.cil.oc2.common.util.ItemStackUtils;
-import net.minecraft.ResourceLocationException;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -45,9 +44,9 @@ public abstract class AbstractBlockDeviceItem extends ModItem {
 
         Identifier location = defaultData;
         if (!StringUtil.isNullOrEmpty(registryName)) {
-            try {
-                location = Identifier.parse(registryName);
-            } catch (final ResourceLocationException ignored) {
+            final Identifier parsed = Identifier.tryParse(registryName);
+            if (parsed != null) {
+                location = parsed;
             }
         }
 

@@ -20,11 +20,13 @@ import li.cil.sedna.api.memory.MemoryMap;
 import li.cil.sedna.device.flash.FlashMemoryDevice;
 import li.cil.sedna.memory.MemoryMaps;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
 import java.nio.ByteBuffer;
+import java.util.Optional;
 
 import static li.cil.oc2.common.item.AbstractBlockDeviceItem.DATA_TAG_NAME;
 
@@ -115,8 +117,9 @@ public final class ByteBufferFlashStorageDevice extends IdentityProxy<ItemStack>
                 data = ByteBuffer.allocate(12*Constants.MEGABYTE);
                 data.clear();
                 CompoundTag tag = ItemStackUtils.getModDataTag(identity).getCompoundOrEmpty(DATA_TAG_NAME);
-                if (tag.hasUUID("blob")) {
-                    BlobStorage.getOrOpen(tag.getUUID("blob")).read(data, 0);
+                final Optional<int[]> blobId = tag.getIntArray("blob");
+                if (blobId.isPresent() && blobId.get().length == 4) {
+                    BlobStorage.getOrOpen(UUIDUtil.uuidFromIntArray(blobId.get())).read(data, 0);
                 }
             } catch(Exception e) {
                 System.out.println("Error message: " + e.getMessage());

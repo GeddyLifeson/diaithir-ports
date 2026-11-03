@@ -69,7 +69,7 @@ public abstract class AbstractGroupingDeviceBusElement<TEntry extends AbstractGr
 
             final CompoundTag sideTag = new CompoundTag();
 
-            sideTag.putUUID(GROUP_ID_TAG_NAME, groupIds[i]);
+            sideTag.putIntArray(GROUP_ID_TAG_NAME, uuidToIntArray(groupIds[i]));
             sideTag.put(GROUP_DATA_TAG_NAME, groupData[i]);
 
             listTag.add(sideTag);
@@ -87,8 +87,9 @@ public abstract class AbstractGroupingDeviceBusElement<TEntry extends AbstractGr
         for (int i = 0; i < count; i++) {
             final CompoundTag sideTag = listTag.getCompoundOrEmpty(i);
 
-            if (sideTag.hasUUID(GROUP_ID_TAG_NAME)) {
-                groupIds[i] = sideTag.getUUID(GROUP_ID_TAG_NAME);
+            final Optional<int[]> groupIdArray = sideTag.getIntArray(GROUP_ID_TAG_NAME).filter(array -> array.length == 4);
+            if (groupIdArray.isPresent()) {
+                groupIds[i] = uuidFromIntArray(groupIdArray.get());
             }
             if (sideTag.contains(GROUP_DATA_TAG_NAME)) {
                 groupData[i] = sideTag.getCompoundOrEmpty(GROUP_DATA_TAG_NAME);
@@ -153,7 +154,7 @@ public abstract class AbstractGroupingDeviceBusElement<TEntry extends AbstractGr
                 // this indefinitely, if no new devices are detected for this index.
                 final CompoundTag devicesTag = groupData[index];
                 if (!devicesTag.isEmpty()) {
-                    final Iterator<String> iterator = devicesTag.getAllKeys().iterator();
+                    final Iterator<String> iterator = devicesTag.keySet().iterator();
                     while (iterator.hasNext()) {
                         final String dataKey = iterator.next();
                         if (devicesTag.contains(dataKey)) {
@@ -197,7 +198,7 @@ public abstract class AbstractGroupingDeviceBusElement<TEntry extends AbstractGr
         // the list of serialized data we have for devices that have gone missing without being
         // explicitly removed. This can happen if a device is removed while the bus element is
         // unloaded. We need to call dispose on the provider if we detect this.
-        final HashSet<String> invalidDataKeys = new HashSet<>(devicesTag.getAllKeys());
+        final HashSet<String> invalidDataKeys = new HashSet<>(devicesTag.keySet());
         for (final TEntry entry : addedEntries) {
             entry.getDeviceDataKey().ifPresent(key -> {
                 invalidDataKeys.remove(key);
@@ -264,5 +265,18 @@ public abstract class AbstractGroupingDeviceBusElement<TEntry extends AbstractGr
         }
 
         groupData[index] = devicesTag;
+    }
+
+    private static int[] uuidToIntArray(final UUID uuid) {
+        final long most = uuid.getMostSignificantBits();
+        final long least = uuid.getLeastSignificantBits();
+        return new int[]{(int) (most >> 32), (int) most, (int) (least >> 32), (int) least};
+    }
+
+    private static UUID uuidFromIntArray(final int[] array) {
+        return new UUID(
+            ((long) array[0] << 32) | (array[1] & 0xFFFFFFFFL),
+            ((long) array[2] << 32) | (array[3] & 0xFFFFFFFFL)
+        );
     }
 }

@@ -69,8 +69,9 @@ public final class SoundCardItemDevice extends AbstractItemRPCDevice {
 
             gameTimeCooldownExpiresAt = gameTime + COOLDOWN_IN_TICKS;
 
-            final SoundEvent soundEvent = BuiltInRegistries.SOUND_EVENT.get(Identifier.parse(name));
-            if (soundEvent == null) throw new IllegalArgumentException("Sound not found.");
+            final SoundEvent soundEvent = BuiltInRegistries.SOUND_EVENT.get(Identifier.parse(name))
+                .map(ref -> ref.value())
+                .orElseThrow(() -> new IllegalArgumentException("Sound not found."));
             level.playSound(null, location.blockPos(), soundEvent, SoundSource.BLOCKS, volume, pitch);
         }));
     }

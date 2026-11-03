@@ -2,7 +2,6 @@
 
 package li.cil.oc2.common.container;
 
-import li.cil.oc2.client.ClientSetup;
 import li.cil.oc2.common.bus.CommonDeviceBusController;
 import li.cil.oc2.common.config.Config;
 import li.cil.oc2.common.energy.FixedEnergyStorage;
@@ -68,7 +67,7 @@ public abstract class AbstractRobotContainer extends AbstractMachineTerminalCont
         return switch (Config.captureInputMode) {
             case PER_BLOCK -> robot.getCaptureInputState();
             case SHARED_BETWEEN_TYPE -> captureInputState;
-            case GLOBAL_CAPTURE -> ClientSetup.getCaptureInputState();
+            case GLOBAL_CAPTURE -> captureInputState; // TODO(oc2-restore) ClientSetup.getCaptureInputState()
         };
     }
 
@@ -77,7 +76,7 @@ public abstract class AbstractRobotContainer extends AbstractMachineTerminalCont
         switch (Config.captureInputMode) {
             case PER_BLOCK -> robot.setCaptureInputState(state);
             case SHARED_BETWEEN_TYPE -> captureInputState = state;
-            case GLOBAL_CAPTURE -> ClientSetup.setCaptureInputState(state);
+            case GLOBAL_CAPTURE -> captureInputState = state; // TODO(oc2-restore) ClientSetup.setCaptureInputState(state)
         }
     }
 

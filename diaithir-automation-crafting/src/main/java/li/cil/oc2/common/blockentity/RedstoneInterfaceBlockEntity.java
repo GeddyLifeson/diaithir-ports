@@ -7,15 +7,14 @@ import li.cil.oc2.api.bus.device.object.NamedDevice;
 import li.cil.oc2.api.bus.device.object.Parameter;
 import li.cil.oc2.api.util.Side;
 import li.cil.oc2.common.Constants;
-import li.cil.oc2.common.integration.util.BundledRedstone;
 import li.cil.oc2.common.util.HorizontalBlockUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.fml.ModList;
 import java.util.*;
 import javax.annotation.Nullable;
@@ -57,28 +56,42 @@ public final class RedstoneInterfaceBlockEntity extends ModBlockEntity implement
     ///////////////////////////////////////////////////////////////////
 
     @Override
-    protected void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
+    protected void saveAdditional(final ValueOutput tag) {
+        super.saveAdditional(tag);
 
-        tag.putByteArray(OUTPUT_TAG_NAME, output);
-        CompoundTag tag_bundled_output = new CompoundTag();
+        tag.putIntArray(OUTPUT_TAG_NAME, toIntArray(output));
+        final ValueOutput tag_bundled_output = tag.child(BUNDLED_TAG_NAME);
         for (Direction dir : Direction.values()) {
-            tag_bundled_output.putByteArray(dir.getName(), bundled_output[dir.get3DDataValue()]);
+            tag_bundled_output.putIntArray(dir.getName(), toIntArray(bundled_output[dir.get3DDataValue()]));
         }
-        tag.put(BUNDLED_TAG_NAME, tag_bundled_output);
     }
 
     @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
-        final byte[] serializedOutput = tag.getByteArray(OUTPUT_TAG_NAME).orElse(new byte[0]);
-        System.arraycopy(serializedOutput, 0, output, 0, Math.min(serializedOutput.length, output.length));
+    public void loadAdditional(final ValueInput tag) {
+        super.loadAdditional(tag);
+        final int[] serializedOutput = tag.getIntArray(OUTPUT_TAG_NAME).orElse(new int[0]);
+        copyToByteArray(serializedOutput, output);
 
-        final CompoundTag tag_bundled_output = tag.getCompoundOrEmpty(BUNDLED_TAG_NAME);
+        final ValueInput tag_bundled_output = tag.childOrEmpty(BUNDLED_TAG_NAME);
         for (Direction dir : Direction.values()) {
-            final byte[] serializedBundledOutput = tag_bundled_output.getByteArray(dir.getName()).orElse(new byte[0]);
+            final int[] serializedBundledOutput = tag_bundled_output.getIntArray(dir.getName()).orElse(new int[0]);
             byte[] dest_output = bundled_output[dir.get3DDataValue()];
-            System.arraycopy(serializedBundledOutput, 0, dest_output, 0, Math.min(serializedBundledOutput.length, dest_output.length));
+            copyToByteArray(serializedBundledOutput, dest_output);
+        }
+    }
+
+    private static int[] toIntArray(final byte[] bytes) {
+        final int[] result = new int[bytes.length];
+        for (int i = 0; i < bytes.length; i++) {
+            result[i] = bytes[i];
+        }
+        return result;
+    }
+
+    private static void copyToByteArray(final int[] source, final byte[] dest) {
+        final int count = Math.min(source.length, dest.length);
+        for (int i = 0; i < count; i++) {
+            dest[i] = (byte) source[i];
         }
     }
 
@@ -102,8 +115,8 @@ public final class RedstoneInterfaceBlockEntity extends ModBlockEntity implement
         assert direction != null;
 
         final BlockPos neighborPos = pos.relative(direction);
-        final ChunkPos chunkPos = new ChunkPos(neighborPos);
-        if (!level.hasChunk(chunkPos.x, chunkPos.z)) {
+        final ChunkPos chunkPos = ChunkPos.containing(neighborPos);
+        if (!level.hasChunk(chunkPos.x(), chunkPos.z())) {
             return 0;
         }
 
@@ -144,12 +157,8 @@ public final class RedstoneInterfaceBlockEntity extends ModBlockEntity implement
         if(!ModList.get().isLoaded("projectred_transmission")) throw new IllegalStateException();
         if (side == null) throw new IllegalArgumentException();
 
-        BundledRedstone bundledRedstone = BundledRedstone.getInstance();
-        if (bundledRedstone.isAvailable()) {
-            return bundledRedstone.getBundledInput(this.level, this.getBlockPos(), side.getDirection().getOpposite());
-        } else {
-            return new byte[Constants.BLOCK_FACE_COUNT];
-        }
+        // TODO(oc2-restore): BundledRedstone integration (li.cil.oc2.common.integration.util) is excluded; no bundled input available.
+        return new byte[Constants.BLOCK_FACE_COUNT];
     }
 
     @Callback(name = GET_BUNDLED_OUTPUT)
@@ -308,8 +317,8 @@ public final class RedstoneInterfaceBlockEntity extends ModBlockEntity implement
         final Direction direction = Side.relativeDirection(pos, fromPos);
         assert direction != null;
 
-        final ChunkPos chunkPos = new ChunkPos(fromPos);
-        if (!level.hasChunk(chunkPos.x, chunkPos.z)) {
+        final ChunkPos chunkPos = ChunkPos.containing(fromPos);
+        if (!level.hasChunk(chunkPos.x(), chunkPos.z())) {
             sl = 0;
         } else {
             sl = level.getSignal(fromPos, direction);

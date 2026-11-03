@@ -18,13 +18,14 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.StringSplitter;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.chat.*;
+import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.ClientHooks;
@@ -45,15 +46,15 @@ public final class TooltipUtils {
 
     ///////////////////////////////////////////////////////////////////
 
-    public static void drawTooltip(final GuiGraphics graphics, final List<? extends FormattedText> tooltip, final int x, final int y) {
+    public static void drawTooltip(final GuiGraphicsExtractor graphics, final List<? extends FormattedText> tooltip, final int x, final int y) {
         drawTooltip(graphics, tooltip, x, y, 200, ItemStack.EMPTY);
     }
 
-    public static void drawTooltip(final GuiGraphics graphics, final List<? extends FormattedText> tooltip, final int x, final int y, final int widthHint) {
+    public static void drawTooltip(final GuiGraphicsExtractor graphics, final List<? extends FormattedText> tooltip, final int x, final int y, final int widthHint) {
         drawTooltip(graphics, tooltip, x, y, widthHint, ItemStack.EMPTY);
     }
 
-    public static void drawTooltip(final GuiGraphics graphics, final List<? extends FormattedText> tooltip, final int x, final int y, final int widthHint, final ItemStack itemStack) {
+    public static void drawTooltip(final GuiGraphicsExtractor graphics, final List<? extends FormattedText> tooltip, final int x, final int y, final int widthHint, final ItemStack itemStack) {
         final Minecraft minecraft = Minecraft.getInstance();
         final Screen screen = minecraft.screen;
         if (screen == null) {
@@ -64,14 +65,20 @@ public final class TooltipUtils {
         final int targetWidth = Math.min(availableWidth, widthHint);
         final Font font = ClientHooks.getTooltipFont(itemStack, minecraft.font);
 
+        final Language language = Language.getInstance();
         final boolean needsWrapping = tooltip.stream().anyMatch(line -> font.width(line) > targetWidth);
         if (!needsWrapping) {
-            graphics.renderComponentTooltip(font, tooltip, x, y, itemStack);
+            final List<FormattedCharSequence> lines = tooltip.stream()
+                .map(line -> language.getVisualOrder(line))
+                .toList();
+            graphics.setTooltipForNextFrame(font, lines, x, y);
         } else {
             final StringSplitter splitter = font.getSplitter();
-            final List<? extends FormattedText> wrappedTooltip = tooltip.stream().flatMap(line ->
-                splitter.splitLines(line, targetWidth, Style.EMPTY).stream()).toList();
-            graphics.renderComponentTooltip(font, wrappedTooltip, x, y, itemStack);
+            final List<FormattedCharSequence> wrappedTooltip = tooltip.stream().flatMap(line ->
+                splitter.splitLines(line, targetWidth, Style.EMPTY).stream())
+                .map(line -> language.getVisualOrder(line))
+                .toList();
+            graphics.setTooltipForNextFrame(font, wrappedTooltip, x, y);
         }
     }
 
@@ -80,7 +87,7 @@ public final class TooltipUtils {
             return;
         }
 
-        final String translationKey = stack.getDescriptionId() + Constants.TOOLTIP_DESCRIPTION_SUFFIX;
+        final String translationKey = stack.getItem().getDescriptionId() + Constants.TOOLTIP_DESCRIPTION_SUFFIX;
         final Language language = Language.getInstance();
         if (language.has(translationKey)) {
             final MutableComponent description = Component.translatable(translationKey);
@@ -192,7 +199,7 @@ public final class TooltipUtils {
                 final ItemStack existingStack = stacks.get(j);
                 if (ItemStack.matches(existingStack, itemStack) &&
                     ItemStack.matches(existingStack, itemStack)) {
-                    final int existingCount = stackSizes.getIntOr(j, 0);
+                    final int existingCount = stackSizes.getInt(j);
                     stackSizes.set(j, existingCount + itemStack.getCount());
                     didMerge = true;
                     break;

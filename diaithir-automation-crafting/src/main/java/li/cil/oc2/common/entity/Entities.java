@@ -4,6 +4,9 @@ package li.cil.oc2.common.entity;
 
 import li.cil.oc2.api.API;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -30,6 +33,7 @@ public final class Entities {
 
     @SuppressWarnings("SameParameterValue")
     private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(final String name, final EntityType.EntityFactory<T> factory, final MobCategory classification, final Function<EntityType.Builder<T>, EntityType.Builder<T>> customizer) {
-        return ENTITIES.register(name, () -> customizer.apply(EntityType.Builder.of(factory, classification)).build(name));
+        final ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(API.MOD_ID, name));
+        return ENTITIES.register(name, () -> customizer.apply(EntityType.Builder.of(factory, classification)).build(key));
     }
 }

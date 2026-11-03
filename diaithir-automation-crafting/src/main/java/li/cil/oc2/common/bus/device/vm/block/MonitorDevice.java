@@ -12,8 +12,8 @@ import li.cil.oc2.common.bus.device.util.OptionalAddress;
 import li.cil.oc2.common.serialization.BlobStorage;
 import li.cil.oc2.common.util.NBTTagIds;
 import li.cil.oc2.common.vm.device.SimpleFramebufferDevice;
-import li.cil.oc2.jcodec.common.model.Picture;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.Optional;
 import java.util.UUID;
 
 public final class MonitorDevice extends IdentityProxy<BlockEntity> implements VMDevice {
@@ -55,9 +56,9 @@ public final class MonitorDevice extends IdentityProxy<BlockEntity> implements V
         return framebufferDevice != null && framebufferDevice.hasChanges();
     }
 
-    public boolean applyChanges(final Picture picture) {
-        final SimpleFramebufferDevice framebufferDevice = device;
-        return framebufferDevice != null && framebufferDevice.applyChanges(picture);
+    // TODO(oc2-restore): li.cil.oc2.jcodec Picture is excluded from this compile stage, restore Picture parameter and delegate to framebuffer device.
+    public boolean applyChanges(final Object picture) {
+        return false;
     }
 
     @Override
@@ -106,7 +107,7 @@ public final class MonitorDevice extends IdentityProxy<BlockEntity> implements V
         final CompoundTag tag = new CompoundTag();
 
         if (blobHandle != null) {
-            tag.putUUID(BLOB_HANDLE_TAG_NAME, blobHandle);
+            tag.putIntArray(BLOB_HANDLE_TAG_NAME, UUIDUtil.uuidToIntArray(blobHandle));
         }
         if (address.isPresent()) {
             tag.putLong(ADDRESS_TAG_NAME, address.getAsLong());
@@ -117,11 +118,12 @@ public final class MonitorDevice extends IdentityProxy<BlockEntity> implements V
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, final CompoundTag tag) {
-        if (tag.hasUUID(BLOB_HANDLE_TAG_NAME)) {
-            blobHandle = tag.getUUID(BLOB_HANDLE_TAG_NAME);
+        final Optional<int[]> blobHandleTag = tag.getIntArray(BLOB_HANDLE_TAG_NAME);
+        if (blobHandleTag.isPresent() && blobHandleTag.get().length == 4) {
+            blobHandle = UUIDUtil.uuidFromIntArray(blobHandleTag.get());
         }
         if (tag.contains(ADDRESS_TAG_NAME)) {
-            address.set(tag.getLongOr(ADDRESS_TAG_NAME), 0L);
+            address.set(tag.getLongOr(ADDRESS_TAG_NAME, 0L));
         }
     }
 

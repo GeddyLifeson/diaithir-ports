@@ -38,7 +38,7 @@ public final class FirmwareRegistry {
 
     @Nullable
     public static Firmware getValue(final Identifier location) {
-        return REGISTRY.get(location);
+        return REGISTRY.getValue(location);
     }
 
     public static Stream<Firmware> values() {

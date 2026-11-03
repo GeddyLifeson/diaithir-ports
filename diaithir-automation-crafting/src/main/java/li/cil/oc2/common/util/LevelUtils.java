@@ -20,8 +20,8 @@ import java.util.function.Function;
 public final class LevelUtils {
     @Nullable
     public static BlockEntity getBlockEntityIfChunkExists(final LevelAccessor level, final BlockPos pos) {
-        final ChunkPos chunkPos = new ChunkPos(pos);
-        if (!level.hasChunk(chunkPos.x, chunkPos.z)) {
+        final ChunkPos chunkPos = ChunkPos.containing(pos);
+        if (!level.hasChunk(chunkPos.x(), chunkPos.z())) {
             return null;
         }
 
@@ -30,8 +30,8 @@ public final class LevelUtils {
 
     @Nullable
     public static String getBlockName(final LevelAccessor level, final BlockPos pos) {
-        final ChunkPos chunkPos = new ChunkPos(pos);
-        if (!level.hasChunk(chunkPos.x, chunkPos.z)) {
+        final ChunkPos chunkPos = ChunkPos.containing(pos);
+        if (!level.hasChunk(chunkPos.x(), chunkPos.z())) {
             return null;
         }
 

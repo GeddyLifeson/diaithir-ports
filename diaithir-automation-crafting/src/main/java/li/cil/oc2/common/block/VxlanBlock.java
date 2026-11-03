@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.redstone.Orientation;
 
 import javax.annotation.Nullable;
 
@@ -45,7 +46,7 @@ public final class VxlanBlock extends HorizontalDirectionalBlock implements Enti
 
     @SuppressWarnings("deprecation")
     @Override
-    public void neighborChanged(final BlockState state, final Level level, final BlockPos pos, final Block changedBlock, final BlockPos changedBlockPos, final boolean isMoving) {
+    public void neighborChanged(final BlockState state, final Level level, final BlockPos pos, final Block changedBlock, @Nullable final Orientation orientation, final boolean isMoving) {
         final BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof final VxlanBlockEntity vxlanEntity) {
             vxlanEntity.handleNeighborChanged();

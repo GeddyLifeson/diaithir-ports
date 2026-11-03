@@ -20,6 +20,7 @@ import li.cil.oc2.common.util.NBTTagIds;
 import li.cil.sedna.api.device.BlockDevice;
 import li.cil.sedna.device.virtio.VirtIOBlockDevice;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.nbt.CompoundTag;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -124,14 +125,15 @@ public abstract class AbstractBlockStorageDevice<TBlock extends BlockDevice, TId
     @Override
     public void exportToItemStack(final CompoundTag nbt) {
         if (blobHandle != null) {
-            nbt.putUUID(BLOB_HANDLE_TAG_NAME, blobHandle);
+            nbt.putIntArray(BLOB_HANDLE_TAG_NAME, UUIDUtil.uuidToIntArray(blobHandle));
         }
     }
 
     @Override
     public void importFromItemStack(final CompoundTag nbt) {
-        if (nbt.hasUUID(BLOB_HANDLE_TAG_NAME)) {
-            blobHandle = nbt.getUUID(BLOB_HANDLE_TAG_NAME);
+        final UUID handle = readBlobHandle(nbt);
+        if (handle != null) {
+            blobHandle = handle;
         }
     }
 
@@ -140,7 +142,7 @@ public abstract class AbstractBlockStorageDevice<TBlock extends BlockDevice, TId
         final CompoundTag tag = new CompoundTag();
 
         if (blobHandle != null) {
-            tag.putUUID(BLOB_HANDLE_TAG_NAME, blobHandle);
+            tag.putIntArray(BLOB_HANDLE_TAG_NAME, UUIDUtil.uuidToIntArray(blobHandle));
         }
 
         if (device != null) {
@@ -161,24 +163,25 @@ public abstract class AbstractBlockStorageDevice<TBlock extends BlockDevice, TId
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, final CompoundTag tag) {
-        if (tag.hasUUID(BLOB_HANDLE_TAG_NAME)) {
-            blobHandle = tag.getUUID(BLOB_HANDLE_TAG_NAME);
+        final UUID handle = readBlobHandle(tag);
+        if (handle != null) {
+            blobHandle = handle;
         }
 
         if (tag.contains(DEVICE_TAG_NAME)) {
             deviceTag = tag.getCompoundOrEmpty(DEVICE_TAG_NAME);
         }
         if (tag.contains(ADDRESS_TAG_NAME)) {
-            address.set(tag.getLongOr(ADDRESS_TAG_NAME), 0L);
+            address.set(tag.getLongOr(ADDRESS_TAG_NAME, 0L));
         }
         if (tag.contains(INTERRUPT_TAG_NAME)) {
-            interrupt.set(tag.getIntOr(INTERRUPT_TAG_NAME), 0);
+            interrupt.set(tag.getIntOr(INTERRUPT_TAG_NAME, 0));
         }
     }
 
     public static void unmount(final CompoundTag tag) {
-        if (tag.hasUUID(BLOB_HANDLE_TAG_NAME)) {
-            final UUID blobHandle = tag.getUUID(BLOB_HANDLE_TAG_NAME);
+        final UUID blobHandle = readBlobHandle(tag);
+        if (blobHandle != null) {
             if (AsyncConfig.SERVER.asyncStorageOperations.get()) {
                 BlobStorage.closeAsync(blobHandle).exceptionally(e -> {
                     LOGGER.error("Error closing blob asynchronously during unmount: " + blobHandle, e);
@@ -188,6 +191,14 @@ public abstract class AbstractBlockStorageDevice<TBlock extends BlockDevice, TId
                 BlobStorage.close(blobHandle);
             }
         }
+    }
+
+    @Nullable
+    private static UUID readBlobHandle(final CompoundTag tag) {
+        return tag.getIntArray(BLOB_HANDLE_TAG_NAME)
+            .filter(array -> array.length == 4)
+            .map(UUIDUtil::uuidFromIntArray)
+            .orElse(null);
     }
 
     @Subscribe

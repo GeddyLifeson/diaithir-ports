@@ -9,6 +9,7 @@ import li.cil.oc2.api.util.RobotOperationSide;
 import li.cil.oc2.common.capabilities.Capabilities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
@@ -62,7 +63,7 @@ public final class InventoryOperationsModuleDevice extends AbstractItemRPCDevice
 
         // And if putting it back fails, just drop it. Avoid destroying items.
         if (!remaining.isEmpty()) {
-            entity.spawnAtLocation(remaining);
+            spawnAtLocation(remaining);
         }
     }
 
@@ -106,7 +107,7 @@ public final class InventoryOperationsModuleDevice extends AbstractItemRPCDevice
 
         if (!stack.isEmpty()) {
             dropped += stack.getCount();
-            entity.spawnAtLocation(stack);
+            spawnAtLocation(stack);
         }
 
         return dropped;
@@ -149,7 +150,7 @@ public final class InventoryOperationsModuleDevice extends AbstractItemRPCDevice
 
         if (!stack.isEmpty()) {
             dropped += stack.getCount();
-            entity.spawnAtLocation(stack);
+            spawnAtLocation(stack);
         }
 
         return dropped;
@@ -196,6 +197,12 @@ public final class InventoryOperationsModuleDevice extends AbstractItemRPCDevice
     }
 
     ///////////////////////////////////////////////////////////////////
+
+    private void spawnAtLocation(final ItemStack stack) {
+        if (entity.level() instanceof final ServerLevel serverLevel) {
+            entity.spawnAtLocation(serverLevel, stack);
+        }
+    }
 
     private ItemStack insertStartingAt(final IItemHandler handler, ItemStack stack, final int startSlot, final boolean simulate) {
         for (int i = 0; i < handler.getSlots(); i++) {
@@ -290,7 +297,7 @@ public final class InventoryOperationsModuleDevice extends AbstractItemRPCDevice
                 // And if putting it back fails, just drop it. Avoid destroying items.
                 if (!overflow.isEmpty()) {
                     remaining -= overflow.getCount();
-                    entity.spawnAtLocation(overflow);
+                    spawnAtLocation(overflow);
                 }
             }
 
@@ -323,7 +330,7 @@ public final class InventoryOperationsModuleDevice extends AbstractItemRPCDevice
         // And if putting it back fails, just drop it. Avoid destroying items.
         if (!overflow.isEmpty()) {
             // NB: not counting this towards taken count since it did not end up in our inventory.
-            entity.spawnAtLocation(overflow);
+            spawnAtLocation(overflow);
         }
 
         return taken;

@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public record ChunkLocation(WeakReference<LevelAccessor> level, ChunkPos position) {
     public static ChunkLocation of(final LevelAccessor level, final BlockPos position) {
-        return new ChunkLocation(new WeakReference<>(level), new ChunkPos(position));
+        return new ChunkLocation(new WeakReference<>(level), ChunkPos.containing(position));
     }
 
     public static ChunkLocation of(final LevelAccessor level, final ChunkPos position) {

@@ -14,7 +14,7 @@ public final class RecipeSerializers {
 
     ///////////////////////////////////////////////////////////////////
 
-    public static final DeferredHolder<RecipeSerializer<?>, WrenchRecipe.Serializer> WRENCH = RECIPE_SERIALIZERS.register("wrench", () -> WrenchRecipe.Serializer.INSTANCE);
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<WrenchRecipe>> WRENCH = RECIPE_SERIALIZERS.register("wrench", () -> WrenchRecipe.Serializer.INSTANCE);
 
     ///////////////////////////////////////////////////////////////////
 

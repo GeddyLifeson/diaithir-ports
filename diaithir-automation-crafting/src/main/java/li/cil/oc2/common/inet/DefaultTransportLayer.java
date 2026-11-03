@@ -414,7 +414,7 @@ public final class DefaultTransportLayer implements TransportLayer {
 
                 final short srcPort = data.getShort();
                 final short dstPort = data.getShort();
-                final int datagramLength = Short.toUnsignedInt(data.getShortOr(), (short) 0);
+                final int datagramLength = Short.toUnsignedInt(data.getShort());
                 data.getShort(); // udp checksum
 
                 if (data.remaining() + UDP_HEADER_SIZE < datagramLength) {

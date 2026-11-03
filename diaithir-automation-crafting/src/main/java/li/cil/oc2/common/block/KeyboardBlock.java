@@ -3,16 +3,13 @@
 package li.cil.oc2.common.block;
 
 import com.mojang.serialization.MapCodec;
-import li.cil.oc2.client.gui.KeyboardScreen;
 import li.cil.oc2.common.blockentity.BlockEntities;
 import li.cil.oc2.common.blockentity.KeyboardBlockEntity;
 import li.cil.oc2.common.util.VoxelShapeUtils;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -83,7 +80,7 @@ public final class KeyboardBlock extends HorizontalDirectionalBlock implements E
             openKeyboardScreen(keyboard);
         }
 
-        return InteractionResult.sidedSuccess(level.isClientSide());
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -107,7 +104,6 @@ public final class KeyboardBlock extends HorizontalDirectionalBlock implements E
 
     @OnlyIn(Dist.CLIENT)
     private static void openKeyboardScreen(final KeyboardBlockEntity keyboard) {
-        final KeyboardScreen screen = new KeyboardScreen(keyboard);
-        Minecraft.getInstance().setScreen(screen);
+        // TODO(oc2-restore): open KeyboardScreen (li.cil.oc2.client.gui) once the client package is compiled again.
     }
 }

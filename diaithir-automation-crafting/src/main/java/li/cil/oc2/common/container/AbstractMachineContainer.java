@@ -35,15 +35,15 @@ public abstract class AbstractMachineContainer extends AbstractContainer {
     public abstract void sendPowerStateToServer(final boolean value);
 
     public int getEnergy() {
-        return energyInfo.getIntOr(ENERGY_STORED_INDEX, 0);
+        return energyInfo.get(ENERGY_STORED_INDEX);
     }
 
     public int getEnergyCapacity() {
-        return energyInfo.getIntOr(ENERGY_CAPACITY_INDEX, 0);
+        return energyInfo.get(ENERGY_CAPACITY_INDEX);
     }
 
     public int getEnergyConsumption() {
-        return energyInfo.getIntOr(ENERGY_CONSUMPTION_INDEX, 0);
+        return energyInfo.get(ENERGY_CONSUMPTION_INDEX);
     }
 
     ///////////////////////////////////////////////////////////////////

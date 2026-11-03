@@ -2,7 +2,6 @@
 
 package li.cil.oc2.common.container;
 
-import li.cil.oc2.client.ClientSetup;
 import li.cil.oc2.common.block.Blocks;
 import li.cil.oc2.common.blockentity.MonitorBlockEntity;
 import li.cil.oc2.common.bus.CommonDeviceBusController;
@@ -21,6 +20,8 @@ import javax.annotation.Nullable;
 public abstract class AbstractMonitorContainer extends AbstractMachineContainer {
     private final MonitorBlockEntity monitor;
     private static boolean captureInputState = Config.captureInputDefaultState;
+    // TODO(oc2-restore): global capture state was held in li.cil.oc2.client.ClientSetup
+    private static boolean globalCaptureInputState = false;
 
     ///////////////////////////////////////////////////////////////////
 
@@ -50,7 +51,7 @@ public abstract class AbstractMonitorContainer extends AbstractMachineContainer 
         return switch (Config.captureInputMode) {
             case PER_BLOCK -> monitor.getCaptureInputState();
             case SHARED_BETWEEN_TYPE -> captureInputState;
-            case GLOBAL_CAPTURE -> ClientSetup.getCaptureInputState();
+            case GLOBAL_CAPTURE -> globalCaptureInputState; // TODO(oc2-restore)
         };
     }
 
@@ -58,7 +59,7 @@ public abstract class AbstractMonitorContainer extends AbstractMachineContainer 
         switch (Config.captureInputMode) {
             case PER_BLOCK -> monitor.setCaptureInputState(state);
             case SHARED_BETWEEN_TYPE -> captureInputState = state;
-            case GLOBAL_CAPTURE -> ClientSetup.setCaptureInputState(state);
+            case GLOBAL_CAPTURE -> globalCaptureInputState = state; // TODO(oc2-restore)
         }
     }
 

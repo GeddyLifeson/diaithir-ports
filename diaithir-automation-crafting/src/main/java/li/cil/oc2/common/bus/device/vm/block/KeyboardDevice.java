@@ -110,10 +110,10 @@ public final class KeyboardDevice<T> extends IdentityProxy<T> implements VMDevic
             deviceTag = tag.getCompoundOrEmpty(DEVICE_TAG_NAME);
         }
         if (tag.contains(ADDRESS_TAG_NAME)) {
-            address.set(tag.getLongOr(ADDRESS_TAG_NAME), 0L);
+            address.set(tag.getLongOr(ADDRESS_TAG_NAME, 0L));
         }
         if (tag.contains(INTERRUPT_TAG_NAME)) {
-            interrupt.set(tag.getIntOr(INTERRUPT_TAG_NAME), 0);
+            interrupt.set(tag.getIntOr(INTERRUPT_TAG_NAME, 0));
         }
     }
 

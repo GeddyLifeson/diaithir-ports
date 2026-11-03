@@ -4,30 +4,29 @@ package li.cil.oc2.common.block;
 
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
-import li.cil.oc2.client.gui.BusInterfaceScreen;
 import li.cil.oc2.common.Constants;
 import li.cil.oc2.common.blockentity.BlockEntities;
 import li.cil.oc2.common.blockentity.BusCableBlockEntity;
-import li.cil.oc2.common.integration.Wrenches;
 import li.cil.oc2.common.item.Items;
 import li.cil.oc2.common.util.ItemStackUtils;
 import li.cil.oc2.common.util.LevelUtils;
-import net.minecraft.Util;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.util.Util;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
@@ -37,6 +36,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -47,8 +47,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -114,7 +112,7 @@ public final class BusCableBlock extends BaseEntityBlock {
 
     public static Direction getHitSide(final BlockPos pos, final BlockHitResult hit) {
         final Vec3 localHitPos = hit.getLocation().subtract(Vec3.atCenterOf(pos));
-        return Direction.getNearest(localHitPos.x, localHitPos.y, localHitPos.z);
+        return Direction.getApproximateNearest(localHitPos.x, localHitPos.y, localHitPos.z);
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -197,10 +195,10 @@ public final class BusCableBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(final ItemStack heldItem, final BlockState state, final Level level, final BlockPos pos, final Player player, final InteractionHand hand, final BlockHitResult hitResult) {
+    protected InteractionResult useItemOn(final ItemStack heldItem, final BlockState state, final Level level, final BlockPos pos, final Player player, final InteractionHand hand, final BlockHitResult hitResult) {
         if (heldItem.getItem() == Items.BUS_CABLE.get() ||
             heldItem.getItem() == Items.BUS_INTERFACE.get()) {
-            return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.PASS;
         }
 
         final BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -208,26 +206,26 @@ public final class BusCableBlock extends BaseEntityBlock {
             return super.useItemOn(heldItem, state, level, pos, player, hand, hitResult);
         }
 
-        if (Wrenches.isWrench(heldItem)) {
+        if (isWrench(heldItem)) {
             if (player.isShiftKeyDown()) {
                 final ItemStack facadeItem = busCableBlockEntity.getFacade();
                 if (!facadeItem.isEmpty()) {
                     if (!level.isClientSide()) {
                         busCableBlockEntity.removeFacade();
-                        if (!player.isCreative() && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
+                        if (shouldDropBlocks(level, player)) {
                             ItemStackUtils.spawnAsEntity(level, pos, facadeItem, hitResult.getDirection()).ifPresent(entity -> {
                                 entity.setNoPickUpDelay();
                                 entity.playerTouch(player);
                             });
                         }
                     }
-                    return ItemInteractionResult.sidedSuccess(level.isClientSide());
+                    return sidedSuccess(level);
                 } else {
                     // NB: leave wrenching logic up to wrench when the to-be-removed interface is the last
                     //     part of this bus. This ensures we properly remove the block itself without having
                     //     to duplicate the logic needed for that.
                     if (getPartCount(state) > 1 && (tryRemoveInterface(state, level, pos, player, hitResult) || tryRemoveCable(state, level, pos, player))) {
-                        return ItemInteractionResult.sidedSuccess(level.isClientSide());
+                        return sidedSuccess(level);
                     }
                 }
             } else {
@@ -236,18 +234,20 @@ public final class BusCableBlock extends BaseEntityBlock {
                     if (level.isClientSide()) {
                         openBusInterfaceScreen(busCableBlockEntity, side);
                     }
-                    return ItemInteractionResult.sidedSuccess(level.isClientSide());
+                    return sidedSuccess(level);
                 }
             }
         } else if (!player.isShiftKeyDown() && !state.getValue(HAS_FACADE) && getInterfaceCount(state) == 0) {
             switch (busCableBlockEntity.getFacadeType(heldItem)) {
                 case INVALID_BLOCK -> {
                     if (!level.isClientSide()) {
-                        player.displayClientMessage(text("message.{mod}.invalid_facade_block"), true);
+                        if (player instanceof final ServerPlayer serverPlayer) {
+                            serverPlayer.sendSystemMessage(text("message.{mod}.invalid_facade_block"), true);
+                        }
                     }
 
                     // Always return success (even on failure) to avoid accidentally placing blocks.
-                    return ItemInteractionResult.sidedSuccess(level.isClientSide());
+                    return sidedSuccess(level);
                 }
                 case VALID_BLOCK -> {
                     if (!level.isClientSide()) {
@@ -256,7 +256,7 @@ public final class BusCableBlock extends BaseEntityBlock {
                             heldItem.shrink(1);
                         }
                     }
-                    return ItemInteractionResult.sidedSuccess(level.isClientSide());
+                    return sidedSuccess(level);
                 }
             }
         }
@@ -318,7 +318,7 @@ public final class BusCableBlock extends BaseEntityBlock {
 
     @SuppressWarnings("deprecation")
     @Override
-    public BlockState updateShape(BlockState state, final Direction facing, final BlockState facingState, final LevelAccessor level, final BlockPos currentPos, final BlockPos facingPos) {
+    public BlockState updateShape(BlockState state, final LevelReader level, final ScheduledTickAccess ticks, final BlockPos currentPos, final Direction facing, final BlockPos facingPos, final BlockState facingState, final RandomSource random) {
         final EnumProperty<ConnectionType> property = FACING_TO_CONNECTION_MAP.get(facing);
         if (state.getValue(property) == ConnectionType.INTERFACE) {
             return state;
@@ -349,10 +349,10 @@ public final class BusCableBlock extends BaseEntityBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(final BlockState state, final HitResult hit, final LevelReader level, final BlockPos pos, final Player player) {
+    public ItemStack getCloneItemStack(final LevelReader level, final BlockPos pos, final BlockState state, final boolean includeData, final Player player) {
         final BlockEntity blockEntity = level.getBlockEntity(pos);
         if (!(blockEntity instanceof final BusCableBlockEntity busCable)) {
-            return super.getCloneItemStack(state, hit, level, pos, player);
+            return super.getCloneItemStack(level, pos, state, includeData, player);
         }
 
         final ItemStack facadeItem = busCable.getFacade();
@@ -360,6 +360,7 @@ public final class BusCableBlock extends BaseEntityBlock {
             return facadeItem;
         }
 
+        final HitResult hit = player.pick(player.blockInteractionRange(), 1.0f, false);
         if (hit instanceof final BlockHitResult blockHit) {
             final Direction side = getHitSide(pos, blockHit);
             if (getConnectionType(state, side) == ConnectionType.INTERFACE) {
@@ -367,7 +368,7 @@ public final class BusCableBlock extends BaseEntityBlock {
             }
         }
 
-        return super.getCloneItemStack(state, hit, level, pos, player);
+        return super.getCloneItemStack(level, pos, state, includeData, player);
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -395,6 +396,21 @@ public final class BusCableBlock extends BaseEntityBlock {
     }
 
     ///////////////////////////////////////////////////////////////////
+
+    private static InteractionResult sidedSuccess(final Level level) {
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
+    }
+
+    private static boolean shouldDropBlocks(final Level level, final Player player) {
+        return !player.isCreative() &&
+            level instanceof final ServerLevel serverLevel &&
+            serverLevel.getGameRules().get(GameRules.BLOCK_DROPS);
+    }
+
+    private static boolean isWrench(final ItemStack stack) {
+        // TODO(oc2-restore): Wrenches integration is excluded from this compile stage.
+        return false;
+    }
 
     private static boolean canHaveCableTo(final BlockState state, final Direction side) {
         return state.getBlock() == Blocks.BUS_CABLE.get() &&
@@ -446,7 +462,7 @@ public final class BusCableBlock extends BaseEntityBlock {
     private static void handlePartRemoved(final BlockState state, final Level level, final BlockPos pos, @Nullable final Direction side, final Player player, final ItemStack drop, final boolean neighborConnectionChanged) {
         onConnectionTypeChanged(level, pos, side, neighborConnectionChanged);
 
-        if (!player.isCreative() && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
+        if (shouldDropBlocks(level, player)) {
             ItemStackUtils.spawnAsEntity(level, pos, drop, side).ifPresent(entity -> {
                 entity.setNoPickUpDelay();
                 entity.playerTouch(player);
@@ -456,17 +472,15 @@ public final class BusCableBlock extends BaseEntityBlock {
         LevelUtils.playSound(level, pos, state.getSoundType(), SoundType::getBreakSound);
     }
 
-    private static void onConnectionTypeChanged(final LevelAccessor level, final BlockPos pos, @Nullable final Direction face, final boolean neighborConnectionChanged) {
+    private static void onConnectionTypeChanged(final BlockGetter level, final BlockPos pos, @Nullable final Direction face, final boolean neighborConnectionChanged) {
         final BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof final BusCableBlockEntity busCable) {
             busCable.handleConfigurationChanged(face, neighborConnectionChanged);
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     private static void openBusInterfaceScreen(final BusCableBlockEntity blockEntity, final Direction side) {
-        final BusInterfaceScreen screen = new BusInterfaceScreen(blockEntity, side);
-        Minecraft.getInstance().setScreen(screen);
+        // TODO(oc2-restore): BusInterfaceScreen lives in li.cil.oc2.client, which is excluded from this compile stage.
     }
 
     private static VoxelShape[] makeShapes() {

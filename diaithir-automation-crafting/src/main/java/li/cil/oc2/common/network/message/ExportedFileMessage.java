@@ -4,7 +4,6 @@ package li.cil.oc2.common.network.message;
 
 import io.netty.buffer.ByteBuf;
 import li.cil.oc2.api.API;
-import li.cil.oc2.client.gui.FileChooserScreen;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
@@ -40,12 +39,6 @@ public record ExportedFileMessage(String name, byte[] data) implements AbstractM
     ///////////////////////////////////////////////////////////////////
 
     public void handleMessage(IPayloadContext context) {
-        FileChooserScreen.openFileChooserForSave(name, path -> {
-            try {
-                Files.write(path, data);
-            } catch (final IOException e) {
-                LOGGER.error(e);
-            }
-        });
+        // TODO(oc2-restore): FileChooserScreen.openFileChooserForSave(name, path -> Files.write(path, data)) lives in li.cil.oc2.client.gui which is excluded from this compile stage.
     }
 }

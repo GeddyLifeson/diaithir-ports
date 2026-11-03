@@ -4,7 +4,6 @@ package li.cil.oc2.common.blockentity;
 
 import li.cil.oc2.api.API;
 import li.cil.oc2.api.capabilities.NetworkInterface;
-import li.cil.oc2.client.renderer.NetworkCableRenderer;
 import li.cil.oc2.common.block.Blocks;
 import li.cil.oc2.common.config.Config;
 import li.cil.oc2.common.block.NetworkConnectorBlock;
@@ -18,7 +17,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.NbtUtils;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ChunkPos;
@@ -26,6 +24,8 @@ import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -43,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Optional;
 
 @EventBusSubscriber(modid = API.MOD_ID)
 public final class NetworkConnectorBlockEntity extends ModBlockEntity implements TickableBlockEntity {
@@ -176,7 +177,7 @@ public final class NetworkConnectorBlockEntity extends ModBlockEntity implements
     public void setConnectedPositionsClient(final ArrayList<BlockPos> positions) {
         connectorPositions.clear();
         connectorPositions.addAll(positions);
-        NetworkCableRenderer.invalidateConnections();
+        // TODO(oc2-restore): NetworkCableRenderer.invalidateConnections();
     }
 
     @Override
@@ -215,8 +216,8 @@ public final class NetworkConnectorBlockEntity extends ModBlockEntity implements
 
         final ListTag connections = new ListTag();
         for (final BlockPos position : connectorPositions) {
-            final CompoundTag connectionTag = new CompoundTag(1);
-            connectionTag.put("pos", NbtUtils.writeBlockPos(position));
+            final CompoundTag connectionTag = new CompoundTag();
+            connectionTag.putIntArray("pos", new int[]{position.getX(), position.getY(), position.getZ()});
             connections.add(connectionTag);
         }
         tag.put(CONNECTIONS_TAG_NAME, connections);
@@ -225,50 +226,54 @@ public final class NetworkConnectorBlockEntity extends ModBlockEntity implements
     }
 
     @Override
-    public void handleUpdateTag(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.handleUpdateTag(tag, registries);
+    public void handleUpdateTag(final ValueInput input) {
+        super.handleUpdateTag(input);
 
-        final ListTag connections = tag.getListOrEmpty(CONNECTIONS_TAG_NAME);
-        for (int i = 0; i < Math.min(connections.size(), MAX_CONNECTION_COUNT); i++) {
-            final CompoundTag connectionTag = connections.getCompoundOrEmpty(i);
-            final BlockPos position = NbtUtils.readBlockPos(connectionTag, "pos").orElseThrow();
+        input.childrenListOrEmpty(CONNECTIONS_TAG_NAME).stream().limit(MAX_CONNECTION_COUNT).forEach(connectionTag -> {
+            final BlockPos position = connectionTag.read("pos", BlockPos.CODEC).orElseThrow();
             connectorPositions.add(position);
             dirtyConnectors.add(position);
-        }
+        });
     }
 
     @Override
-    protected void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
+    protected void saveAdditional(final ValueOutput output) {
+        super.saveAdditional(output);
 
-        final ListTag connections = new ListTag();
+        final ValueOutput.ValueOutputList connections = output.childrenList(CONNECTIONS_TAG_NAME);
         for (final BlockPos position : connectorPositions) {
-            final CompoundTag connectionTag = new CompoundTag(2);
-            connectionTag.put("pos", NbtUtils.writeBlockPos(position));
+            final ValueOutput connectionTag = connections.addChild();
+            connectionTag.store("pos", BlockPos.CODEC, position);
             if (ownedCables.contains(position)) {
                 connectionTag.putBoolean(IS_OWNER_TAG_NAME, true);
             }
-            connections.add(connectionTag);
         }
-        tag.put(CONNECTIONS_TAG_NAME, connections);
     }
 
     @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
+    public void loadAdditional(final ValueInput input) {
+        super.loadAdditional(input);
 
-        final ListTag connections = tag.getListOrEmpty(CONNECTIONS_TAG_NAME);
-        for (int i = 0; i < Math.min(connections.size(), MAX_CONNECTION_COUNT); i++) {
-            final CompoundTag connectionTag = connections.getCompoundOrEmpty(i);
-            final BlockPos position = NbtUtils.readBlockPos(connectionTag, "pos")
-                .or(() -> NBTUtils.readBlockPosLegacy(connectionTag))
+        input.childrenListOrEmpty(CONNECTIONS_TAG_NAME).stream().limit(MAX_CONNECTION_COUNT).forEach(connectionTag -> {
+            final BlockPos position = connectionTag.read("pos", BlockPos.CODEC)
+                .or(() -> readBlockPosLegacy(connectionTag))
                 .orElseThrow();
             connectorPositions.add(position);
             dirtyConnectors.add(position);
             if (connectionTag.getBooleanOr(IS_OWNER_TAG_NAME, false)) {
                 ownedCables.add(position);
             }
+        });
+    }
+
+    private static Optional<BlockPos> readBlockPosLegacy(final ValueInput tag) {
+        final Optional<Integer> x = tag.getInt("x");
+        final Optional<Integer> y = tag.getInt("y");
+        final Optional<Integer> z = tag.getInt("z");
+        if (x.isPresent() && y.isPresent() && z.isPresent()) {
+            return Optional.of(new BlockPos(x.get(), y.get(), z.get()));
         }
+        return Optional.empty();
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -292,7 +297,7 @@ public final class NetworkConnectorBlockEntity extends ModBlockEntity implements
     protected void loadClient() {
         super.loadClient();
 
-        NetworkCableRenderer.addNetworkConnector(this);
+        // TODO(oc2-restore): NetworkCableRenderer.addNetworkConnector(this);
     }
 
     @Override
@@ -365,8 +370,8 @@ public final class NetworkConnectorBlockEntity extends ModBlockEntity implements
             return;
         }
 
-        final ChunkPos destinationChunk = new ChunkPos(connectedPosition);
-        if (!level.hasChunk(destinationChunk.x, destinationChunk.z)) {
+        final ChunkPos destinationChunk = ChunkPos.containing(connectedPosition);
+        if (!level.hasChunk(destinationChunk.x(), destinationChunk.z())) {
             ServerScheduler.schedule(level, () -> dirtyConnectors.add(connectedPosition), RETRY_UNLOADED_CHUNK_INTERVAL);
             return;
         }

@@ -4,7 +4,6 @@ package li.cil.oc2.common.config;
 
 import li.cil.oc2.common.Constants;
 import li.cil.oc2.common.config.client.GUISpec;
-import net.minecraft.world.item.Tiers;
 
 import java.util.Arrays;
 import java.util.List;
@@ -45,7 +44,7 @@ public final class Config {
     public static int inventoryOperationsModuleEnergyPerTick = 1;
     public static int networkTunnelEnergyPerTick = 2;
 
-    public static String blockOperationsModuleToolTier = Tiers.DIAMOND.name();
+    public static String blockOperationsModuleToolTier = "DIAMOND";
     public static long soundCardCoolDownSeconds = 2;
 
     public static UUID fakePlayerUUID = UUID.fromString("e39dd9a7-514f-4a2d-aa5e-b6030621416d");

@@ -2,7 +2,6 @@
 
 package li.cil.oc2.common.container;
 
-import li.cil.oc2.client.ClientSetup;
 import li.cil.oc2.common.block.Blocks;
 import li.cil.oc2.common.blockentity.ComputerBlockEntity;
 import li.cil.oc2.common.bus.CommonDeviceBusController;
@@ -25,6 +24,8 @@ import java.nio.ByteBuffer;
 public abstract class AbstractComputerContainer extends AbstractMachineTerminalContainer {
     private final ComputerBlockEntity computer;
     private static boolean captureInputState = Config.captureInputDefaultState;
+    // TODO(oc2-restore): global capture state was held by li.cil.oc2.client.ClientSetup, which is excluded from this compile stage
+    private static boolean globalCaptureInputState = Config.captureInputDefaultState;
 
     ///////////////////////////////////////////////////////////////////
 
@@ -67,7 +68,7 @@ public abstract class AbstractComputerContainer extends AbstractMachineTerminalC
         return switch (Config.captureInputMode) {
             case PER_BLOCK -> computer.getCaptureInputState();
             case SHARED_BETWEEN_TYPE -> captureInputState;
-            case GLOBAL_CAPTURE -> ClientSetup.getCaptureInputState();
+            case GLOBAL_CAPTURE -> globalCaptureInputState; // TODO(oc2-restore): ClientSetup.getCaptureInputState()
         };
     }
 
@@ -76,7 +77,7 @@ public abstract class AbstractComputerContainer extends AbstractMachineTerminalC
         switch (Config.captureInputMode) {
             case PER_BLOCK -> computer.setCaptureInputState(state);
             case SHARED_BETWEEN_TYPE -> captureInputState = state;
-            case GLOBAL_CAPTURE -> ClientSetup.setCaptureInputState(state);
+            case GLOBAL_CAPTURE -> globalCaptureInputState = state; // TODO(oc2-restore): ClientSetup.setCaptureInputState(state)
         }
     }
 

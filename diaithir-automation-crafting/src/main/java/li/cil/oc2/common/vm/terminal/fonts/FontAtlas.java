@@ -31,14 +31,14 @@ public class FontAtlas {
         this.atlasWidth = initialWidth;
         this.atlasHeight = initialHeight;
         this.atlasImage = new NativeImage(atlasWidth, atlasHeight, false);
-        this.dynamicTexture = new DynamicTexture(atlasImage);
+        this.dynamicTexture = new DynamicTexture(() -> fontAtlasName, atlasImage);
         this.resources = Identifier.fromNamespaceAndPath("oc2r", fontAtlasName);
         Minecraft.getInstance().getTextureManager().register(resources, dynamicTexture);
         this.glyphs = new ArrayList<>();
 
         for (int x = 0; x < atlasWidth; x++) {
             for (int y = 0; y < atlasHeight; y++) {
-                this.atlasImage.setPixelRGBA(x, y, new Color(0, 0, 0, 0).getRGB());
+                this.atlasImage.setPixel(x, y, new Color(0, 0, 0, 0).getRGB());
             }
         }
 
@@ -73,7 +73,7 @@ public class FontAtlas {
         for (int y = 0; y < glyph.image.getHeight(); y++) {
             for (int x = 0; x < glyph.image.getWidth(); x++) {
                 int color = glyph.image.getRGB(x, y);
-                atlasImage.setPixelRGBA(currentX + x, currentY + y, color);
+                atlasImage.setPixelABGR(currentX + x, currentY + y, color);
             }
         }
 
@@ -100,8 +100,8 @@ public class FontAtlas {
 
         for (int y = 0; y < atlasHeight; y++) {
             for (int x = 0; x < atlasWidth; x++) {
-                int color = atlasImage.getPixelRGBA(x, y);
-                newAtlasImage.setPixelRGBA(x, y, color);
+                int color = atlasImage.getPixel(x, y);
+                newAtlasImage.setPixel(x, y, color);
             }
         }
 

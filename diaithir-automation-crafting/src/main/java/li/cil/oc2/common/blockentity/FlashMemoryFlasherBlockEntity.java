@@ -19,13 +19,14 @@ import li.cil.oc2.common.util.SoundEvents;
 import li.cil.oc2.common.util.ThrottledSoundEmitter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -130,31 +131,20 @@ public final class FlashMemoryFlasherBlockEntity extends ModBlockEntity implemen
         );
     }
 
+    // The update tag (getUpdateTag/handleUpdateTag) is built from saveAdditional/loadAdditional by default.
+
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        final CompoundTag tag = super.getUpdateTag(registries);
-        tag.put(Constants.ITEMS_TAG_NAME, itemHandler.serializeNBT(registries));
-        return tag;
+    protected void saveAdditional(final ValueOutput output) {
+        super.saveAdditional(output);
+
+        itemHandler.serialize(output.child(Constants.ITEMS_TAG_NAME));
     }
 
     @Override
-    public void handleUpdateTag(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.handleUpdateTag(tag, registries);
-        itemHandler.deserializeNBT(registries, tag.getCompoundOrEmpty(Constants.ITEMS_TAG_NAME));
-    }
+    protected void loadAdditional(final ValueInput input) {
+        super.loadAdditional(input);
 
-    @Override
-    protected void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
-
-        tag.put(Constants.ITEMS_TAG_NAME, itemHandler.serializeNBT(registries));
-    }
-
-    @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
-
-        itemHandler.deserializeNBT(registries, tag.getCompoundOrEmpty(Constants.ITEMS_TAG_NAME));
+        itemHandler.deserialize(input.childOrEmpty(Constants.ITEMS_TAG_NAME));
     }
 
     @Override
@@ -202,9 +192,9 @@ public final class FlashMemoryFlasherBlockEntity extends ModBlockEntity implemen
         }
 
         @Override
-        public CompoundTag serializeNBT(HolderLookup.Provider provider) {
+        public void serialize(final ValueOutput output) {
             exportDeviceDataToItemStack(getStackInSlotRaw(0));
-            return super.serializeNBT(provider);
+            super.serialize(output);
         }
 
         @Override

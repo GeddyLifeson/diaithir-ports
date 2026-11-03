@@ -55,7 +55,7 @@ public final class DefaultLinkLocalLayer implements LinkLocalLayer {
     public DefaultLinkLocalLayer(final LayerParameters layerParameters, final NetworkLayer networkLayer) {
         layerParameters.getSavedState().ifPresent(tag -> {
             if (tag instanceof CompoundTag layerState) {
-                final String ipAddressString = layerState.getString(IPv4_ADDRESS_TAG);
+                final String ipAddressString = layerState.getStringOr(IPv4_ADDRESS_TAG, "");
                 if (!ipAddressString.isEmpty()) {
                     try {
                         myIpV4Address = InetUtils.parseIpv4Address(ipAddressString);

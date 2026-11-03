@@ -46,7 +46,8 @@ public final class Items {
     ///////////////////////////////////////////////////////////////////
 
     public static final DeferredItem<Item> WRENCH = register("wrench", WrenchItem::new);
-    public static final DeferredItem<Item> MANUAL = register("manual", ManualItem::new);
+    // TODO(oc2-restore): ManualItem depends on the excluded manual package, use a plain mod item for now
+    public static final DeferredItem<Item> MANUAL = register("manual", ModItem::new);
 
     public static final DeferredItem<Item> ROBOT = register("robot", RobotItem::new);
     public static final DeferredItem<NetworkCableItem> NETWORK_CABLE = register("network_cable", NetworkCableItem::new);

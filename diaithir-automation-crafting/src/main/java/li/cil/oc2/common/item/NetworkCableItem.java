@@ -8,12 +8,10 @@ import li.cil.oc2.common.blockentity.NetworkConnectorBlockEntity;
 import li.cil.oc2.common.blockentity.NetworkConnectorBlockEntity.ConnectionResult;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
@@ -29,14 +27,14 @@ public final class NetworkCableItem extends ModItem {
     ///////////////////////////////////////////////////////////////////
 
     @Override
-    public InteractionResultHolder<ItemStack> use(final Level level, final Player player, final InteractionHand hand) {
+    public InteractionResult use(final Level level, final Player player, final InteractionHand hand) {
         if (player.isShiftKeyDown()) {
             if (player instanceof final ServerPlayer serverPlayer) {
                 final CompoundTag persistentData = serverPlayer.getPersistentData();
                 persistentData.remove(LINK_START_TAG_NAME);
             }
 
-            return InteractionResultHolder.success(player.getItemInHand(hand));
+            return InteractionResult.SUCCESS;
         }
 
         return super.use(level, player, hand);
@@ -64,13 +62,13 @@ public final class NetworkCableItem extends ModItem {
 
         if (!level.isClientSide() && player instanceof final ServerPlayer serverPlayer) {
             final CompoundTag persistentData = serverPlayer.getPersistentData();
-            final Optional<BlockPos> startPos = NbtUtils.readBlockPos(persistentData, LINK_START_TAG_NAME);
+            final Optional<BlockPos> startPos = persistentData.read(LINK_START_TAG_NAME, BlockPos.CODEC);
             persistentData.remove(LINK_START_TAG_NAME);
             if (startPos.isEmpty() || Objects.equals(startPos.get(), currentPos)) {
                 if (currentConnector.canConnectMore()) {
-                    persistentData.put(LINK_START_TAG_NAME, NbtUtils.writeBlockPos(currentPos));
+                    persistentData.store(LINK_START_TAG_NAME, BlockPos.CODEC, currentPos);
                 } else {
-                    player.displayClientMessage(Component.translatable(Constants.CONNECTOR_ERROR_FULL), true);
+                    serverPlayer.sendSystemMessage(Component.translatable(Constants.CONNECTOR_ERROR_FULL), true);
                 }
             } else {
                 final BlockEntity startBlockEntity = level.getBlockEntity(startPos.get());
@@ -88,24 +86,24 @@ public final class NetworkCableItem extends ModItem {
                         break;
 
                     case FAILURE:
-                        persistentData.put(LINK_START_TAG_NAME, NbtUtils.writeBlockPos(startPos.get()));
+                        persistentData.store(LINK_START_TAG_NAME, BlockPos.CODEC, startPos.get());
                         break;
                     case FAILURE_FULL:
-                        persistentData.put(LINK_START_TAG_NAME, NbtUtils.writeBlockPos(startPos.get()));
-                        player.displayClientMessage(Component.translatable(Constants.CONNECTOR_ERROR_FULL), true);
+                        persistentData.store(LINK_START_TAG_NAME, BlockPos.CODEC, startPos.get());
+                        serverPlayer.sendSystemMessage(Component.translatable(Constants.CONNECTOR_ERROR_FULL), true);
                         break;
                     case FAILURE_TOO_FAR:
-                        persistentData.put(LINK_START_TAG_NAME, NbtUtils.writeBlockPos(startPos.get()));
-                        player.displayClientMessage(Component.translatable(Constants.CONNECTOR_ERROR_TOO_FAR), true);
+                        persistentData.store(LINK_START_TAG_NAME, BlockPos.CODEC, startPos.get());
+                        serverPlayer.sendSystemMessage(Component.translatable(Constants.CONNECTOR_ERROR_TOO_FAR), true);
                         break;
                     case FAILURE_OBSTRUCTED:
-                        persistentData.put(LINK_START_TAG_NAME, NbtUtils.writeBlockPos(startPos.get()));
-                        player.displayClientMessage(Component.translatable(Constants.CONNECTOR_ERROR_OBSTRUCTED), true);
+                        persistentData.store(LINK_START_TAG_NAME, BlockPos.CODEC, startPos.get());
+                        serverPlayer.sendSystemMessage(Component.translatable(Constants.CONNECTOR_ERROR_OBSTRUCTED), true);
                         break;
                 }
             }
         }
 
-        return InteractionResult.sidedSuccess(level.isClientSide());
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
     }
 }

@@ -14,6 +14,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -24,7 +25,9 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public final class BusCableItem extends ModBlockItem {
     public BusCableItem(final Block block) {
@@ -35,9 +38,11 @@ public final class BusCableItem extends ModBlockItem {
 
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void appendHoverText(final ItemStack stack, final TooltipContext context, final List<Component> tooltip, final TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
-        TooltipUtils.addEnergyConsumption(Config.busCableEnergyPerTick, tooltip);
+    public void appendHoverText(final ItemStack stack, final TooltipContext context, final TooltipDisplay display, final Consumer<Component> tooltip, final TooltipFlag flag) {
+        super.appendHoverText(stack, context, display, tooltip, flag);
+        final List<Component> lines = new ArrayList<>();
+        TooltipUtils.addEnergyConsumption(Config.busCableEnergyPerTick, lines);
+        lines.forEach(tooltip);
     }
 
     @Override
@@ -76,6 +81,6 @@ public final class BusCableItem extends ModBlockItem {
             stack.shrink(1);
         }
 
-        return InteractionResult.sidedSuccess(level.isClientSide());
+        return InteractionResult.SUCCESS;
     }
 }

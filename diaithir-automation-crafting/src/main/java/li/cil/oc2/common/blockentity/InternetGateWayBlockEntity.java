@@ -3,6 +3,8 @@ package li.cil.oc2.common.blockentity;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.Dynamic;
 import li.cil.oc2.api.API;
 import li.cil.oc2.api.capabilities.NetworkInterface;
 import li.cil.oc2.common.block.Blocks;
@@ -17,13 +19,15 @@ import li.cil.oc2.common.util.ChunkUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
-import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 
 import net.neoforged.bus.api.SubscribeEvent;
@@ -68,20 +72,23 @@ public class InternetGateWayBlockEntity extends ModBlockEntity implements Networ
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)  {
-        super.loadAdditional(tag, registries);
-        internetState = tag.get(Constants.INTERNET_ADAPTER_TAG_NAME);
-        energy.deserializeNBT(registries, tag.getCompoundOrEmpty(Constants.ENERGY_TAG_NAME));
+    protected void loadAdditional(final ValueInput input)  {
+        super.loadAdditional(input);
+        internetState = input.read(Constants.INTERNET_ADAPTER_TAG_NAME, Codec.PASSTHROUGH)
+            .map(dynamic -> (Tag) dynamic.convert(NbtOps.INSTANCE).getValue())
+            .orElse(null);
+        energy.deserialize(input.childOrEmpty(Constants.ENERGY_TAG_NAME));
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)  {
-        super.saveAdditional(tag, registries);
+    protected void saveAdditional(final ValueOutput output)  {
+        super.saveAdditional(output);
         if (internetConnection != null) {
             internetConnection.saveAdapterState()
-                .ifPresent(adapterState -> tag.put(Constants.INTERNET_ADAPTER_TAG_NAME, adapterState));
+                .ifPresent(adapterState -> output.store(Constants.INTERNET_ADAPTER_TAG_NAME,
+                    Codec.PASSTHROUGH, new Dynamic<>(NbtOps.INSTANCE, adapterState)));
         }
-        tag.put(Constants.ENERGY_TAG_NAME, energy.serializeNBT(registries));
+        energy.serialize(output.child(Constants.ENERGY_TAG_NAME));
         LOGGER.trace("State saved");
     }
 
@@ -94,18 +101,9 @@ public class InternetGateWayBlockEntity extends ModBlockEntity implements Networ
     }
 
     @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider lookupProvider)
-    {
-        CompoundTag compoundtag = pkt.getTag();
-        if (compoundtag != null) {
-            handleUpdateTag(compoundtag, lookupProvider);
-        }
-    }
-
-    @Override
-    public void handleUpdateTag(final CompoundTag tag, HolderLookup.Provider registries) {
-        inboundCount = tag.getIntOr("inbound_count", 0);
-        outboundCount = tag.getIntOr("outbound_count", 0);
+    public void handleUpdateTag(final ValueInput input) {
+        inboundCount = input.getIntOr("inbound_count", 0);
+        outboundCount = input.getIntOr("outbound_count", 0);
         handledInboundCount = Math.max(handledInboundCount, inboundCount-128);
         handledOutboundCount = Math.max(handledOutboundCount, outboundCount-128);
     }

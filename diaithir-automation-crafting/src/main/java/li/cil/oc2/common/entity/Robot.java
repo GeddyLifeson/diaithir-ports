@@ -2,6 +2,8 @@
 
 package li.cil.oc2.common.entity;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.Dynamic;
 import li.cil.oc2.api.API;
 import li.cil.oc2.api.bus.DeviceBusElement;
 import li.cil.oc2.api.bus.device.Device;
@@ -23,7 +25,6 @@ import li.cil.oc2.common.container.RobotTerminalContainer;
 import li.cil.oc2.common.energy.FixedEnergyStorage;
 import li.cil.oc2.common.entity.robot.*;
 import li.cil.oc2.common.ext.ICaptureInputStateStorage;
-import li.cil.oc2.common.integration.Wrenches;
 import li.cil.oc2.common.item.Items;
 import li.cil.oc2.common.network.Network;
 import li.cil.oc2.common.network.message.*;
@@ -38,9 +39,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Cursor3D;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -48,9 +52,11 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
+import net.minecraft.util.ProblemReporter;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
@@ -63,6 +69,10 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.TagValueInput;
+import net.minecraft.world.level.storage.TagValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.AABB;
@@ -94,6 +104,11 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
     public static final EntityDataAccessor<BlockPos> TARGET_POSITION = SynchedEntityData.defineId(Robot.class, EntityDataSerializers.BLOCK_POS);
     public static final EntityDataAccessor<Direction> TARGET_DIRECTION = SynchedEntityData.defineId(Robot.class, EntityDataSerializers.DIRECTION);
     public static final EntityDataAccessor<Byte> SELECTED_SLOT = SynchedEntityData.defineId(Robot.class, EntityDataSerializers.BYTE);
+
+    private static final Codec<Tag> TAG_CODEC = Codec.PASSTHROUGH.<Tag>xmap(
+        dynamic -> dynamic.convert(NbtOps.INSTANCE).getValue(),
+        tag -> new Dynamic<>(NbtOps.INSTANCE, tag)
+    );
 
     private static final String TERMINAL_TAG_NAME = "terminal";
     private static final String STATE_TAG_NAME = "state";
@@ -263,7 +278,9 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
 
         final ItemStack stack = new ItemStack(Items.ROBOT.get());
         exportToItemStack(stack);
-        spawnAtLocation(stack);
+        if (level() instanceof final ServerLevel serverLevel) {
+            spawnAtLocation(serverLevel, stack);
+        }
 
         discard();
         LevelUtils.playSound(level(), blockPosition(), SoundType.METAL, SoundType::getBreakSound);
@@ -332,6 +349,11 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
     }
 
     @Override
+    public boolean hurtServer(final ServerLevel level, final DamageSource source, final float damage) {
+        return false;
+    }
+
+    @Override
     public boolean skipAttackInteraction(final Entity entity) {
         if (entity instanceof Player player && player.isCreative()) {
             dropSelf();
@@ -340,10 +362,11 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
     }
 
     @Override
-    public InteractionResult interact(final Player player, final InteractionHand hand) {
+    public InteractionResult interact(final Player player, final InteractionHand hand, final Vec3 location) {
         final ItemStack stack = player.getItemInHand(hand);
         if (!level().isClientSide()) {
-            if (Wrenches.isWrench(stack)) {
+            final boolean isWrench = false; // TODO(oc2-restore) Wrenches.isWrench(stack)
+            if (isWrench) {
                 if (player.isShiftKeyDown()) {
                     dropSelf();
                 } else if (player instanceof final ServerPlayer serverPlayer) {
@@ -358,7 +381,7 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
             }
         }
 
-        return InteractionResult.sidedSuccess(level().isClientSide());
+        return level().isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
     }
 
     @Override
@@ -387,7 +410,7 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@Nullable final Entity entity) {
         return true;
     }
 
@@ -401,9 +424,13 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
         deviceItems.saveItems(container);
         stack.set(li.cil.oc2.common.components.DataComponents.RESTRICTED_CONTAINER, container);
 
+        final TagValueOutput energyOutput = TagValueOutput.createWithContext(ProblemReporter.DISCARDING, registryAccess());
+        energy.serialize(energyOutput);
+        final CompoundTag energyTag = energyOutput.buildResult();
+
         CustomData.update(DataComponents.CUSTOM_DATA, stack, (nbt) -> {
             var tag = NBTUtils.getOrCreateChildTag(nbt, MOD_TAG_NAME);
-            tag.put(ENERGY_TAG_NAME, energy.serializeNBT(registryAccess()));
+            tag.put(ENERGY_TAG_NAME, energyTag);
         });
     }
 
@@ -416,10 +443,10 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
             deviceItems.loadItems(provider, container);
         } else {
             deviceItems.loadItems(provider, itemsTag);
-            inventory.deserializeNBT(provider, itemsTag.getCompoundOrEmpty(INVENTORY_TAG_NAME));
+            inventory.deserialize(TagValueInput.create(ProblemReporter.DISCARDING, provider, itemsTag.getCompoundOrEmpty(INVENTORY_TAG_NAME)));
         }
 
-        energy.deserializeNBT(provider, NBTUtils.getChildTag(stack, MOD_TAG_NAME, ENERGY_TAG_NAME));
+        energy.deserialize(TagValueInput.create(ProblemReporter.DISCARDING, provider, NBTUtils.getChildTag(stack, MOD_TAG_NAME, ENERGY_TAG_NAME)));
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -432,34 +459,38 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
     }
 
     @Override
-    protected void addAdditionalSaveData(final CompoundTag tag) {
+    protected void addAdditionalSaveData(final ValueOutput output) {
         final var provider = registryAccess();
         if (virtualMachine.getRunState() != VMRunState.STOPPED) {
-            tag.put(STATE_TAG_NAME, virtualMachine.serialize());
-            tag.put(TERMINAL_TAG_NAME, NBTSerialization.serialize(terminal));
+            output.store(STATE_TAG_NAME, TAG_CODEC, virtualMachine.serialize());
+            output.store(TERMINAL_TAG_NAME, TAG_CODEC, NBTSerialization.serialize(terminal));
         }
 
-        tag.put(COMMAND_PROCESSOR_TAG_NAME, actionProcessor.serialize());
-        tag.put(BUS_ELEMENT_TAG_NAME, busElement.serialize());
-        tag.put(ITEMS_TAG_NAME, deviceItems.saveItems(provider));
-        tag.put(DEVICES_TAG_NAME, deviceItems.saveDevices(provider));
-        tag.put(ENERGY_TAG_NAME, energy.serializeNBT(provider));
-        tag.put(INVENTORY_TAG_NAME, inventory.serializeNBT(provider));
-        tag.putByte(SELECTED_SLOT_TAG_NAME, getEntityData().get(SELECTED_SLOT));
+        output.store(COMMAND_PROCESSOR_TAG_NAME, TAG_CODEC, actionProcessor.serialize());
+        output.store(BUS_ELEMENT_TAG_NAME, TAG_CODEC, busElement.serialize());
+        output.store(ITEMS_TAG_NAME, TAG_CODEC, deviceItems.saveItems(provider));
+        output.store(DEVICES_TAG_NAME, TAG_CODEC, deviceItems.saveDevices(provider));
+        energy.serialize(output.child(ENERGY_TAG_NAME));
+        inventory.serialize(output.child(INVENTORY_TAG_NAME));
+        output.putByte(SELECTED_SLOT_TAG_NAME, getEntityData().get(SELECTED_SLOT));
     }
 
     @Override
-    protected void readAdditionalSaveData(final CompoundTag tag) {
+    protected void readAdditionalSaveData(final ValueInput input) {
         final var provider = registryAccess();
-        virtualMachine.deserialize(tag.getCompoundOrEmpty(STATE_TAG_NAME));
-        NBTSerialization.deserialize(tag.getCompoundOrEmpty(TERMINAL_TAG_NAME), terminal);
-        actionProcessor.deserialize(tag.getCompoundOrEmpty(COMMAND_PROCESSOR_TAG_NAME));
-        busElement.deserialize(tag.getCompoundOrEmpty(BUS_ELEMENT_TAG_NAME));
-        deviceItems.loadItems(provider, tag.getCompoundOrEmpty(ITEMS_TAG_NAME));
-        deviceItems.loadDevices(provider, tag.getCompoundOrEmpty(DEVICES_TAG_NAME));
-        energy.deserializeNBT(provider, tag.getCompoundOrEmpty(ENERGY_TAG_NAME));
-        inventory.deserializeNBT(provider, tag.getCompoundOrEmpty(INVENTORY_TAG_NAME));
-        setSelectedSlot(tag.getByteOr(SELECTED_SLOT_TAG_NAME), (byte) 0);
+        virtualMachine.deserialize(readTag(input, STATE_TAG_NAME));
+        NBTSerialization.deserialize(readTag(input, TERMINAL_TAG_NAME), terminal);
+        actionProcessor.deserialize(readTag(input, COMMAND_PROCESSOR_TAG_NAME));
+        busElement.deserialize(readTag(input, BUS_ELEMENT_TAG_NAME));
+        deviceItems.loadItems(provider, readTag(input, ITEMS_TAG_NAME));
+        deviceItems.loadDevices(provider, readTag(input, DEVICES_TAG_NAME));
+        energy.deserialize(input.childOrEmpty(ENERGY_TAG_NAME));
+        inventory.deserialize(input.childOrEmpty(INVENTORY_TAG_NAME));
+        setSelectedSlot(input.getByteOr(SELECTED_SLOT_TAG_NAME, (byte) 0));
+    }
+
+    private static CompoundTag readTag(final ValueInput input, final String name) {
+        return input.read(name, CompoundTag.CODEC).orElseGet(CompoundTag::new);
     }
 
     @Override
@@ -467,8 +498,8 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
         return Entity.MovementEmission.NONE;
     }
 
-    @Override
-    protected void checkInsideBlocks() {
+    // TODO(oc2-restore) checkInsideBlocks() no longer exists in Entity; suppress block effects instead.
+    public void applyEffectsFromBlocks() {
     }
 
 
@@ -500,7 +531,7 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
             return;
         }
 
-        final ChunkPos chunkPos = new ChunkPos(blockPosition());
+        final ChunkPos chunkPos = ChunkPos.containing(blockPosition());
         if (!Objects.equals(chunkPos, event.getChunk().getPos())) {
             return;
         }
@@ -809,13 +840,14 @@ public final class Robot extends Entity implements li.cil.oc2.api.capabilities.R
 
         public CompoundTag serialize() {
             final CompoundTag tag = new CompoundTag();
-            tag.putUUID(DEVICE_ID_TAG_NAME, deviceId);
+            tag.putIntArray(DEVICE_ID_TAG_NAME, UUIDUtil.uuidToIntArray(deviceId));
             return tag;
         }
 
         public void deserialize(final CompoundTag tag) {
-            if (tag.hasUUID(DEVICE_ID_TAG_NAME)) {
-                deviceId = tag.getUUID(DEVICE_ID_TAG_NAME);
+            final Optional<int[]> id = tag.getIntArray(DEVICE_ID_TAG_NAME);
+            if (id.isPresent() && id.get().length == 4) {
+                deviceId = UUIDUtil.uuidFromIntArray(id.get());
             }
         }
     }

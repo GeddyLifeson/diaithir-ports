@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.redstone.Orientation;
 
 import javax.annotation.Nullable;
 
@@ -70,8 +71,10 @@ public final class RedstoneInterfaceBlock extends HorizontalDirectionalBlock imp
 
     @Override
     @SuppressWarnings({"deprecation", "DataFlowIssue"})
-    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+    protected void neighborChanged(final BlockState state, final Level worldIn, final BlockPos pos, final Block blockIn, @Nullable final Orientation orientation, final boolean isMoving) {
         RedstoneInterfaceBlockEntity ribe = (RedstoneInterfaceBlockEntity) worldIn.getBlockEntity(pos);
+        // The neighbor position is no longer passed directly; derive it from the update orientation.
+        final BlockPos fromPos = orientation != null ? pos.relative(orientation.getFront().getOpposite()) : pos;
         ribe.neighborChanged(fromPos);
     }
 

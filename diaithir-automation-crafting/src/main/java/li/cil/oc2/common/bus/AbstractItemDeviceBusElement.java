@@ -102,7 +102,7 @@ public abstract class AbstractItemDeviceBusElement extends AbstractGroupingDevic
     protected void onEntryRemoved(final String dataKey, final CompoundTag tag, @Nullable final ItemDeviceQuery query) {
         super.onEntryRemoved(dataKey, tag, query);
         final Registry<ItemDeviceProvider> registry = Providers.itemDeviceProviderRegistry();
-        final ItemDeviceProvider provider = registry.get(Identifier.parse(dataKey));
+        final ItemDeviceProvider provider = registry.getValue(Identifier.parse(dataKey));
         if (provider != null) {
             provider.unmount(query, tag);
         }

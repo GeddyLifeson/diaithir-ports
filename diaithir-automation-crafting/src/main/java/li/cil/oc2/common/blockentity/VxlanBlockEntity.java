@@ -10,11 +10,11 @@ import li.cil.oc2.common.util.LevelUtils;
 import li.cil.oc2.common.vxlan.TunnelManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener;
@@ -110,18 +110,18 @@ public final class VxlanBlockEntity extends ModBlockEntity implements NetworkInt
     ///////////////////////////////////////////////////////////////////
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)  {
-        super.loadAdditional(tag, registries);
-        if (level != null && !level.isClientSide() && tag.contains("vti")) {
-            vti = tag.getIntOr("vti", 0);
+    public void loadAdditional(final ValueInput input)  {
+        super.loadAdditional(input);
+        if (level != null && !level.isClientSide()) {
+            input.getInt("vti").ifPresent(value -> vti = value);
         }
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)  {
-        super.saveAdditional(tag, registries);
+    public void saveAdditional(final ValueOutput output)  {
+        super.saveAdditional(output);
         if (level != null && !level.isClientSide()) {
-            tag.putInt("vti", vti);
+            output.putInt("vti", vti);
         }
     }
 

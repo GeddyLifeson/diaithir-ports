@@ -6,6 +6,7 @@ import li.cil.oc2.api.API;
 import li.cil.oc2.common.network.message.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.SectionPos;
+import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -16,9 +17,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
-import net.neoforged.neoforge.network.handling.DirectionalPayloadHandler;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 @EventBusSubscriber(modid = API.MOD_ID)
@@ -58,7 +59,13 @@ public final class Network {
         registrar.playToClient(DiskDriveFloppyMessage.TYPE, DiskDriveFloppyMessage.STREAM_CODEC, DiskDriveFloppyMessage::handleMessage);
         registrar.playToClient(FirmwareFlasherMessage.TYPE, FirmwareFlasherMessage.STREAM_CODEC, FirmwareFlasherMessage::handleMessage);
 
-        registrar.playBidirectional(BusInterfaceNameMessage.TYPE, BusInterfaceNameMessage.STREAM_CODEC, new DirectionalPayloadHandler<>(BusInterfaceNameMessage::handleClientMessage, BusInterfaceNameMessage::handleServerMessage));
+        registrar.playBidirectional(BusInterfaceNameMessage.TYPE, BusInterfaceNameMessage.STREAM_CODEC, (message, context) -> {
+            if (context.flow() == PacketFlow.CLIENTBOUND) {
+                message.handleClientMessage(context);
+            } else {
+                message.handleServerMessage(context);
+            }
+        });
 
         registrar.playToClient(ExportedFileMessage.TYPE, ExportedFileMessage.STREAM_CODEC, ExportedFileMessage::handleMessage);
         registrar.playToClient(RequestImportedFileMessage.TYPE, RequestImportedFileMessage.STREAM_CODEC, RequestImportedFileMessage::handleMessage);
@@ -88,7 +95,7 @@ public final class Network {
     }
 
     public static void sendToServer(final CustomPacketPayload message) {
-        PacketDistributor.sendToServer(message);
+        ClientPacketDistributor.sendToServer(message);
     }
 
     public static void sendToClient(final CustomPacketPayload message, final ServerPlayer player) {

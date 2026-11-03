@@ -5,7 +5,6 @@ package li.cil.oc2.common;
 import joptsimple.util.InetAddressConverter;
 import li.cil.ceres.Ceres;
 import li.cil.oc2.api.API;
-import li.cil.oc2.client.manual.Manuals;
 import li.cil.oc2.common.block.BlockCodecs;
 import li.cil.oc2.common.block.Blocks;
 import li.cil.oc2.common.blockentity.BlockEntities;
@@ -31,12 +30,10 @@ import li.cil.oc2.common.util.SoundEvents;
 import li.cil.oc2.common.vm.provider.DeviceTreeProviders;
 import li.cil.sedna.Sedna;
 import org.apache.logging.log4j.LogManager;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.loading.FMLLoader;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -84,9 +81,7 @@ public final class Main {
         RegistryUtils.finish(modBus);
 
         modBus.register(CommonSetup.class);
-        if (FMLLoader.getDist() == Dist.CLIENT) {
-            Manuals.initialize(modBus);
-        }
+        // TODO(oc2-restore): client-side Manuals.initialize(modBus) removed (li.cil.oc2.client.manual excluded)
 
         ItemGroup.TAB_REGISTER.register(modBus);
 

@@ -107,8 +107,8 @@ public final class RedstoneInterfaceCardItemDevice extends AbstractItemRPCDevice
         assert direction != null;
 
         final BlockPos neighborPos = pos.relative(direction);
-        final ChunkPos chunkPos = new ChunkPos(neighborPos);
-        if (!level.hasChunk(chunkPos.x, chunkPos.z)) {
+        final ChunkPos chunkPos = ChunkPos.containing(neighborPos);
+        if (!level.hasChunk(chunkPos.x(), chunkPos.z())) {
             return 0;
         }
 

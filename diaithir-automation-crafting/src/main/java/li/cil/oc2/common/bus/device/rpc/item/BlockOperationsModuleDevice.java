@@ -12,6 +12,8 @@ import li.cil.oc2.common.util.TickUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Vec3i;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -22,9 +24,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
-import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
@@ -48,6 +48,15 @@ public final class BlockOperationsModuleDevice extends AbstractItemRPCDevice {
     private static final String LAST_OPERATION_TAG_NAME = "cooldown";
 
     private static final int COOLDOWN = TickUtils.toTicks(Duration.ofSeconds(1));
+
+    private static final ToolMaterial[] TOOL_MATERIALS = {
+        ToolMaterial.WOOD,
+        ToolMaterial.STONE,
+        ToolMaterial.IRON,
+        ToolMaterial.GOLD,
+        ToolMaterial.DIAMOND,
+        ToolMaterial.NETHERITE
+    };
 
     ///////////////////////////////////////////////////////////////////
 
@@ -146,8 +155,9 @@ public final class BlockOperationsModuleDevice extends AbstractItemRPCDevice {
         final Direction direction = RobotOperationSide.toGlobal(entity, side);
         final BlockPos blockPos = entity.blockPosition().relative(direction);
         final Direction oppositeDirection = direction.getOpposite();
+        final Vec3i oppositeNormal = new Vec3i(oppositeDirection.getStepX(), oppositeDirection.getStepY(), oppositeDirection.getStepZ());
         final BlockHitResult hit = new BlockHitResult(
-            Vec3.atCenterOf(blockPos).add(Vec3.atCenterOf(oppositeDirection.getNormal()).scale(0.5)),
+            Vec3.atCenterOf(blockPos).add(Vec3.atCenterOf(oppositeNormal).scale(0.5)),
             oppositeDirection,
             blockPos,
             false);
@@ -190,12 +200,12 @@ public final class BlockOperationsModuleDevice extends AbstractItemRPCDevice {
 
         final ItemStack extracted = inventory.extractItem(selectedSlot, 1, true);
 
-        final Tier tier = getRepairItemTier(extracted);
+        final ToolMaterial tier = getRepairItemTier(extracted);
         if (tier == null) {
             return false;
         }
 
-        final int repairValue = tier.getUses();
+        final int repairValue = tier.durability();
         if (repairValue == 0) {
             return false;
         }
@@ -248,13 +258,8 @@ public final class BlockOperationsModuleDevice extends AbstractItemRPCDevice {
             return false;
         }
 
-        Tier toolTier;
-        try {
-            toolTier = Tiers.valueOf( Config.blockOperationsModuleToolTier );
-        } catch (IllegalArgumentException e) {
-            toolTier = null;
-        }
-        if (toolTier == null || blockState.is(toolTier.getIncorrectBlocksForDrops())) {
+        final ToolMaterial toolTier = getToolMaterial(Config.blockOperationsModuleToolTier);
+        if (toolTier == null || blockState.is(toolTier.incorrectBlocksForDrops())) {
             return false;
         }
 
@@ -268,7 +273,7 @@ public final class BlockOperationsModuleDevice extends AbstractItemRPCDevice {
         damage += 1;
         identity.setDamageValue(damage);
 
-        if (!blockState.onDestroyedByPlayer(level, blockPos, player, true, level.getFluidState(blockPos))) {
+        if (!blockState.onDestroyedByPlayer(level, blockPos, player, ItemStack.EMPTY, true, level.getFluidState(blockPos))) {
             return false;
         }
 
@@ -279,13 +284,36 @@ public final class BlockOperationsModuleDevice extends AbstractItemRPCDevice {
     }
 
     @Nullable
-    private Tier getRepairItemTier(final ItemStack stack) {
+    private static ToolMaterial getToolMaterial(final String name) {
+        if (name == null) {
+            return null;
+        }
+
+        return switch (name) {
+            case "WOOD" -> ToolMaterial.WOOD;
+            case "STONE" -> ToolMaterial.STONE;
+            case "IRON" -> ToolMaterial.IRON;
+            case "GOLD" -> ToolMaterial.GOLD;
+            case "DIAMOND" -> ToolMaterial.DIAMOND;
+            case "NETHERITE" -> ToolMaterial.NETHERITE;
+            default -> null;
+        };
+    }
+
+    @Nullable
+    private ToolMaterial getRepairItemTier(final ItemStack stack) {
         if (stack.isEmpty()) {
             return null;
         }
 
-        if (stack.getItem() instanceof final TieredItem tieredItem) {
-            return tieredItem.getTier();
+        // Tools no longer carry a tier, derive it from the tool component and the durability.
+        if (stack.has(DataComponents.TOOL)) {
+            final int maxDamage = stack.getMaxDamage();
+            for (final ToolMaterial material : TOOL_MATERIALS) {
+                if (material.durability() == maxDamage) {
+                    return material;
+                }
+            }
         }
 
         return null;

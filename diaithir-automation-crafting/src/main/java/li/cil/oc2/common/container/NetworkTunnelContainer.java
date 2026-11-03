@@ -24,7 +24,7 @@ public final class NetworkTunnelContainer extends AbstractContainer {
         player.openMenu(new MenuProvider() {
             @Override
             public Component getDisplayName() {
-                return player.getItemInHand(hand).getItem().getDescription();
+                return Component.translatable(player.getItemInHand(hand).getItem().getDescriptionId());
             }
 
             @Override

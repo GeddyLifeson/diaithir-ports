@@ -8,8 +8,10 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
+import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.level.storage.TagValueOutput;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
@@ -80,15 +82,18 @@ public final class NBTUtils {
     }
 
     public static CompoundTag makeInventoryTag(HolderLookup.Provider provider, final ItemStack... items) {
-        return new ItemStackHandler(NonNullList.of(ItemStack.EMPTY, items)).serializeNBT(provider);
+        final ItemStackHandler handler = new ItemStackHandler(NonNullList.of(ItemStack.EMPTY, items));
+        final TagValueOutput output = TagValueOutput.createWithContext(ProblemReporter.DISCARDING, provider);
+        handler.serialize(output);
+        return output.buildResult();
     }
 
     /// Tries to read an older format read/writeBlockPos used to use
     public static Optional<BlockPos> readBlockPosLegacy(CompoundTag tag)
     {
-        if (!tag.contains("X", 99) ||
-            !tag.contains("Y", 99) ||
-            !tag.contains("Z", 99)
+        if (tag.getInt("X").isEmpty() ||
+            tag.getInt("Y").isEmpty() ||
+            tag.getInt("Z").isEmpty()
         ) {
             return Optional.empty();
         }

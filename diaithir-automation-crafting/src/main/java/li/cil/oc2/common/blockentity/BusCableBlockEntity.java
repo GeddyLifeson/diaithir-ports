@@ -2,8 +2,8 @@
 
 package li.cil.oc2.common.blockentity;
 
+import com.mojang.serialization.Codec;
 import li.cil.oc2.api.API;
-import li.cil.oc2.client.model.BusCableBakedModel;
 import li.cil.oc2.common.config.Config;
 import li.cil.oc2.common.Constants;
 import li.cil.oc2.common.block.BusCableBlock;
@@ -18,12 +18,10 @@ import li.cil.oc2.common.util.ItemStackUtils;
 import li.cil.oc2.common.util.LevelUtils;
 import li.cil.oc2.common.util.NBTTagIds;
 import li.cil.oc2.common.util.ServerScheduler;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.BlockModelShaper;
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtOps;
@@ -34,24 +32,23 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.client.model.data.ModelData;
 
 import javax.annotation.Nullable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 
 import static java.util.Objects.requireNonNull;
-import static li.cil.oc2.client.model.BusCableBakedModel.*;
 
 @EventBusSubscriber(modid = API.MOD_ID)
 public final class BusCableBlockEntity extends ModBlockEntity {
@@ -60,8 +57,6 @@ public final class BusCableBlockEntity extends ModBlockEntity {
         INVALID_BLOCK,
         VALID_BLOCK,
     }
-
-    private ModelData currentModelData = ModelData.EMPTY;
 
     private static final String BUS_ELEMENT_TAG_NAME = "busElement";
     private static final String INTERFACE_NAMES_TAG_NAME = "interfaceNames";
@@ -121,7 +116,7 @@ public final class BusCableBlockEntity extends ModBlockEntity {
 
         if (level == null ||
             state.getRenderShape() != RenderShape.MODEL ||
-            !state.isSolidRender(level, getBlockPos()) ||
+            !state.isSolidRender() ||
             state.getBlock() instanceof EntityBlock) {
             return FacadeType.INVALID_BLOCK;
         }
@@ -198,107 +193,40 @@ public final class BusCableBlockEntity extends ModBlockEntity {
         }
     }
 
-    @Override
-    public ModelData getModelData()
-    {
-        if (level == null) return ModelData.EMPTY;
-        BlockState state = getBlockState();
-        BlockPos pos = getBlockPos();
-        if (state.hasProperty(BusCableBlock.HAS_FACADE) && state.getValue(BusCableBlock.HAS_FACADE)) {
-            BlockState facadeState;
-            final ItemStack facadeItem = getFacade();
-
-            facadeState = ItemStackUtils.getBlockState(facadeItem);
-            if (facadeState == null) {
-                facadeState = Blocks.IRON_BLOCK.defaultBlockState();
-            }
-
-            final BlockModelShaper shapes = Minecraft.getInstance().getBlockRenderer().getBlockModelShaper();
-            final BakedModel model = shapes.getBlockModel(facadeState);
-            ModelData data = model.getModelData(level, pos, facadeState, currentModelData);
-
-            currentModelData = ModelData.builder()
-                .with(BUS_CABLE_FACADE_PROPERTY, new BusCableBakedModel.BusCableFacade(facadeState, model, data))
-                .build();
-
-            return currentModelData;
-        }
-
-        Direction supportSide = null;
-        for (final Direction direction : Constants.DIRECTIONS) {
-            if (isNeighborInDirectionSolid(level, pos, direction)) {
-                final EnumProperty<BusCableBlock.ConnectionType> property = BusCableBlock.FACING_TO_CONNECTION_MAP.get(direction);
-                if (state.hasProperty(property) && state.getValue(property) == BusCableBlock.ConnectionType.INTERFACE) {
-                    return currentModelData; // Plug is already supporting us, bail.
-                }
-
-                if (supportSide == null) { // Prefer vertical supports.
-                    supportSide = direction;
-                }
-            }
-        }
-
-        if (supportSide != null) {
-            currentModelData = ModelData.builder()
-                .with(BUS_CABLE_SUPPORT_PROPERTY, new BusCableBakedModel.BusCableSupportSide(supportSide))
-                .build();
-            return currentModelData;
-        }
-
-        return currentModelData;
-    }
+    // TODO(oc2-restore): getModelData (facade/support model data) removed together with the client model package.
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         final CompoundTag tag = super.getUpdateTag(registries);
 
         tag.put(INTERFACE_NAMES_TAG_NAME, serializeInterfaceNames());
-        if (facade == ItemStack.EMPTY) {
-            tag.put(FACADE_TAG_NAME, new CompoundTag());
-        } else {
-            var facade_nbt = ItemStack.CODEC.encodeStart(NbtOps.INSTANCE, facade);
-            tag.put(FACADE_TAG_NAME, facade_nbt.getOrThrow());
-        }
+        var facade_nbt = ItemStack.OPTIONAL_CODEC.encodeStart(registries.createSerializationContext(NbtOps.INSTANCE), facade);
+        tag.put(FACADE_TAG_NAME, facade_nbt.getOrThrow());
 
         return tag;
     }
 
     @Override
-    public void handleUpdateTag(final CompoundTag tag, HolderLookup.Provider registries) {
-        deserializeInterfaceNames(tag.getListOrEmpty(INTERFACE_NAMES_TAG_NAME));
+    protected void saveAdditional(final ValueOutput output) {
+        super.saveAdditional(output);
 
-        var facade_nbt = tag.getCompoundOrEmpty(FACADE_TAG_NAME);
-        if (!facade_nbt.isEmpty()) {
-            var facade_parsed = ItemStack.CODEC.parse(NbtOps.INSTANCE, facade_nbt);
-            facade = facade_parsed.getOrThrow();
-        } else {
-            facade = ItemStack.EMPTY;
-        }
+        final HolderLookup.Provider registries = level != null ? level.registryAccess() : RegistryAccess.EMPTY;
+        output.store(BUS_ELEMENT_TAG_NAME, CompoundTag.CODEC, busElement.save(registries));
+        output.store(INTERFACE_NAMES_TAG_NAME, Codec.STRING.listOf(), getInterfaceNameList());
+        output.store(FACADE_TAG_NAME, ItemStack.OPTIONAL_CODEC, facade);
     }
 
     @Override
-    protected void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
+    public void loadAdditional(final ValueInput input) {
+        super.loadAdditional(input);
 
-        tag.put(BUS_ELEMENT_TAG_NAME, busElement.save(registries));
-        tag.put(INTERFACE_NAMES_TAG_NAME, serializeInterfaceNames());
-        var facade_nbt = ItemStack.OPTIONAL_CODEC.encodeStart(NbtOps.INSTANCE, facade);
-        tag.put(FACADE_TAG_NAME, facade_nbt.getOrThrow());
-    }
-
-    @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
-        busElement.loadAdditional(tag.getCompoundOrEmpty(BUS_ELEMENT_TAG_NAME), registries);
-        deserializeInterfaceNames(tag.getListOrEmpty(INTERFACE_NAMES_TAG_NAME));
-        var facade_nbt = tag.getCompoundOrEmpty(FACADE_TAG_NAME);
-        try {
-            facade = ItemStack.OPTIONAL_CODEC.parse(NbtOps.INSTANCE, facade_nbt).getOrThrow();
-        } catch (IllegalStateException e) {
-            // It was ok for older minecraft versions to serialize ItemStack.EMPTY literally
-            // Newer versions throw an error if they see a minecraft:air serialized
-            facade = ItemStack.EMPTY;
-        }
+        final HolderLookup.Provider registries = input.lookup();
+        input.read(BUS_ELEMENT_TAG_NAME, CompoundTag.CODEC)
+            .ifPresent(busTag -> busElement.loadAdditional(busTag, registries));
+        deserializeInterfaceNames(input.read(INTERFACE_NAMES_TAG_NAME, Codec.STRING.listOf()).orElse(List.of()));
+        // It was ok for older minecraft versions to serialize ItemStack.EMPTY literally
+        // Newer versions throw an error if they see a minecraft:air serialized
+        facade = input.read(FACADE_TAG_NAME, ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
 
         requestModelDataUpdate();
     }
@@ -361,9 +289,17 @@ public final class BusCableBlockEntity extends ModBlockEntity {
         return tag;
     }
 
-    private void deserializeInterfaceNames(final ListTag tag) {
+    private List<String> getInterfaceNameList() {
+        final java.util.ArrayList<String> names = new java.util.ArrayList<>(Constants.BLOCK_FACE_COUNT);
         for (int i = 0; i < Constants.BLOCK_FACE_COUNT; i++) {
-            final String name = tag.getStringOr(i, "").trim();
+            names.add(getInterfaceName(Direction.from3DDataValue(i)));
+        }
+        return names;
+    }
+
+    private void deserializeInterfaceNames(final List<String> names) {
+        for (int i = 0; i < Constants.BLOCK_FACE_COUNT; i++) {
+            final String name = (i < names.size() ? names.get(i) : "").trim();
             interfaceNames[i] = name.substring(0, Math.min(32, name.length()));
         }
     }

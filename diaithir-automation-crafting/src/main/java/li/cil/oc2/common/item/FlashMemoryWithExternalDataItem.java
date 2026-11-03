@@ -5,12 +5,11 @@ package li.cil.oc2.common.item;
 import li.cil.oc2.api.bus.device.data.Firmware;
 import li.cil.oc2.common.bus.device.data.FirmwareRegistry;
 import li.cil.oc2.common.util.ItemStackUtils;
-import net.minecraft.ResourceLocationException;
-import net.minecraft.Util;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.StringUtil;
+import net.minecraft.util.Util;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
 
@@ -43,9 +42,9 @@ public final class FlashMemoryWithExternalDataItem extends ModItem {
 
         Identifier location = defaultData;
         if (!StringUtil.isNullOrEmpty(registryName)) {
-            try {
-                location = Identifier.parse(registryName);
-            } catch (final ResourceLocationException ignored) {
+            final Identifier parsed = Identifier.tryParse(registryName);
+            if (parsed != null) {
+                location = parsed;
             }
         }
 
@@ -74,21 +73,21 @@ public final class FlashMemoryWithExternalDataItem extends ModItem {
     @Override
     public Component getName(final ItemStack stack) {
         final Firmware firmware = getFirmware(stack);
+        final Component baseName = Component.translatable(getOrCreateDescriptionId());
         if (firmware != null) {
             return Component.literal("")
-                .append(super.getName(stack))
+                .append(baseName)
                 .append(" (")
                 .append(firmware.getDisplayName())
                 .append(")");
         } else {
-            return super.getName(stack);
+            return baseName;
         }
     }
 
     ///////////////////////////////////////////////////////////////////
 
-    @Override
-    protected String getOrCreateDescriptionId() {
+    private String getOrCreateDescriptionId() {
         if (descriptionId == null) {
             descriptionId = Util.makeDescriptionId("item", Items.FLASH_MEMORY.getId());
         }

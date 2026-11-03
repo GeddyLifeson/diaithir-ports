@@ -3,10 +3,9 @@
 package li.cil.oc2.common.container;
 
 import li.cil.oc2.common.util.NBTTagIds;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.ValueInput;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class FixedSizeItemStackHandler extends ItemStackHandler {
@@ -34,14 +33,24 @@ public class FixedSizeItemStackHandler extends ItemStackHandler {
     }
 
     @Override
-    public void deserializeNBT(HolderLookup.Provider provider, final CompoundTag tag) {
+    public void deserialize(final ValueInput input) {
         // Our size is fixed, don't trust NBT data we're loading.
-        if (tag.contains(SIZE_TAG_NAME)) {
-            final CompoundTag safeTag = tag.copy();
-            safeTag.remove(SIZE_TAG_NAME);
-            super.deserializeNBT(provider, safeTag);
-        } else {
-            super.deserializeNBT(provider, tag);
+        final int fixedSize = getSlots();
+        super.deserialize(input);
+
+        final int loadedSize = getSlots();
+        if (loadedSize != fixedSize) {
+            final ItemStack[] loaded = new ItemStack[loadedSize];
+            for (int slot = 0; slot < loadedSize; slot++) {
+                loaded[slot] = getStackInSlot(slot);
+            }
+
+            setSize(fixedSize);
+
+            final int count = Math.min(fixedSize, loadedSize);
+            for (int slot = 0; slot < count; slot++) {
+                setStackInSlot(slot, loaded[slot]);
+            }
         }
     }
 }

@@ -3,7 +3,6 @@
 package li.cil.oc2.common.blockentity;
 
 import li.cil.oc2.api.API;
-import li.cil.oc2.client.renderer.MonitorGUIRenderer;
 import li.cil.oc2.common.block.Blocks;
 import li.cil.oc2.common.config.Config;
 import li.cil.oc2.common.block.MonitorBlock;
@@ -18,11 +17,6 @@ import li.cil.oc2.common.network.MonitorLoadBalancer;
 import li.cil.oc2.common.network.Network;
 import li.cil.oc2.common.network.message.*;
 import li.cil.oc2.common.vm.device.SimpleFramebufferDevice;
-import li.cil.oc2.jcodec.codecs.h264.H264Decoder;
-import li.cil.oc2.jcodec.codecs.h264.H264Encoder;
-import li.cil.oc2.jcodec.codecs.h264.encode.CQPRateControl;
-import li.cil.oc2.jcodec.common.model.ColorSpace;
-import li.cil.oc2.jcodec.common.model.Picture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -30,12 +24,13 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 
 import javax.annotation.Nullable;
-import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -43,7 +38,6 @@ import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.zip.DataFormatException;
-import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
 import static li.cil.oc2.common.bus.device.vm.block.MonitorDevice.HEIGHT;
@@ -53,7 +47,8 @@ import static li.cil.oc2.common.bus.device.vm.block.MonitorDevice.WIDTH;
 public final class MonitorBlockEntity extends ModBlockEntity implements TickableBlockEntity, ICaptureInputStateStorage {
     @FunctionalInterface
     public interface FrameConsumer {
-        void processFrame(final Picture picture);
+        // TODO(oc2-restore): parameter was a jcodec Picture, restore once li.cil.oc2.jcodec is compiled again.
+        void processFrame(final Object picture);
     }
 
     ///////////////////////////////////////////////////////////////////
@@ -81,7 +76,7 @@ public final class MonitorBlockEntity extends ModBlockEntity implements Tickable
     private boolean isPowered;
 
     @Nullable private CompletableFuture<?> runningDecode;
-    private final H264Decoder decoder = new H264Decoder();
+    // TODO(oc2-restore): H264Decoder decoder = new H264Decoder();
     private final ByteBuffer decoderBuffer = ByteBuffer.allocateDirect(WIDTH * HEIGHT * SimpleFramebufferDevice.STRIDE);
     @Nullable private FrameConsumer frameConsumer;
 
@@ -89,10 +84,11 @@ public final class MonitorBlockEntity extends ModBlockEntity implements Tickable
     private final DeviceGroup deviceGroup = new DeviceGroup(this);
     private final MonitorDevice monitorDevice = new MonitorDevice(this, this::handleMountedChanged);
     private final KeyboardDevice<BlockEntity> keyboardDevice = new KeyboardDevice<>(this);
-    private final Picture picture = Picture.create(WIDTH, HEIGHT, ColorSpace.YUV420J);
-    private final MonitorGUIRenderer monitor = new MonitorGUIRenderer();
+    // TODO(oc2-restore): Picture picture = Picture.create(WIDTH, HEIGHT, ColorSpace.YUV420J);
+    private final Object picture = new Object();
+    // TODO(oc2-restore): MonitorGUIRenderer monitor = new MonitorGUIRenderer();
 
-    private final H264Encoder encoder = new H264Encoder(new CQPRateControl(12));
+    // TODO(oc2-restore): H264Encoder encoder = new H264Encoder(new CQPRateControl(12));
     private final ByteBuffer encoderBuffer = ByteBuffer.allocateDirect(WIDTH * HEIGHT * SimpleFramebufferDevice.STRIDE);
 
     private boolean captureInputState;
@@ -111,7 +107,7 @@ public final class MonitorBlockEntity extends ModBlockEntity implements Tickable
 
     public boolean isMounted() { return isMounted; }
 
-    public MonitorGUIRenderer getMonitor() { return monitor; }
+    // TODO(oc2-restore): public MonitorGUIRenderer getMonitor() { return monitor; }
 
     private long lastKeepAliveSentAt;
 
@@ -131,33 +127,9 @@ public final class MonitorBlockEntity extends ModBlockEntity implements Tickable
 
     @Nullable
     private ByteBuffer encodeFrame() {
-        final boolean hasChanges = monitorDevice.applyChanges(picture);
-        if (!hasChanges && !needsIDR) {
-            return null;
-        }
-
+        // TODO(oc2-restore): H264 encoding and deflate compression of the frame, requires jcodec.
         encoderBuffer.clear();
-        final ByteBuffer frameData;
-        try {
-            if (needsIDR) {
-                frameData = encoder.encodeIDRFrame(picture, encoderBuffer);
-                needsIDR = false;
-            } else {
-                frameData = encoder.encodeFrame(picture, encoderBuffer).data();
-            }
-        } catch (final BufferOverflowException ignored) {
-            return null;
-        }
-
-        final Deflater deflater = new Deflater(Deflater.BEST_COMPRESSION);
-        deflater.setInput(frameData);
-        deflater.finish();
-        final ByteBuffer compressedFrameData = ByteBuffer.allocateDirect(1024 * 1024);
-        deflater.deflate(compressedFrameData, Deflater.FULL_FLUSH);
-        deflater.end();
-        compressedFrameData.flip();
-
-        return compressedFrameData;
+        return null;
     }
 
     private void handleMountedChanged(final boolean value) {
@@ -185,7 +157,7 @@ public final class MonitorBlockEntity extends ModBlockEntity implements Tickable
         // Hence, we need to check the loaded state here, lest we ghost load the chunk, breaking everything.
         if (level != null && !level.isClientSide() && level.isLoaded(getBlockPos())) {
             if (this.isMounted && !isMounted) {
-                Arrays.fill(picture.getPlaneData(0), (byte) -128);
+                // TODO(oc2-restore): Arrays.fill(picture.getPlaneData(0), (byte) -128);
             }
 
             this.isMounted = isMounted;
@@ -212,7 +184,7 @@ public final class MonitorBlockEntity extends ModBlockEntity implements Tickable
         deviceGroup.addDevice(monitorDevice);
         deviceGroup.addDevice(keyboardDevice);
 
-        encoder.setKeyInterval(100);
+        // TODO(oc2-restore): encoder.setKeyInterval(100);
 
         // We want to unload devices even on level unload to free global resources.
         setNeedsLevelUnloadEvent();
@@ -283,7 +255,7 @@ public final class MonitorBlockEntity extends ModBlockEntity implements Tickable
                 inflater.inflate(decoderBuffer);
                 decoderBuffer.flip();
 
-                decoder.decodeFrame(decoderBuffer, picture.getData());
+                // TODO(oc2-restore): decoder.decodeFrame(decoderBuffer, picture.getData());
 
                 synchronized (picture) {
                     if (frameConsumer != null) {
@@ -306,29 +278,32 @@ public final class MonitorBlockEntity extends ModBlockEntity implements Tickable
     }
 
     @Override
-    public void handleUpdateTag(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.handleUpdateTag(tag, registries);
+    public void handleUpdateTag(final ValueInput input) {
+        super.handleUpdateTag(input);
 
-        isMounted = tag.getBooleanOr(IS_RENDERING_TAG_NAME, false);
-        hasEnergy = tag.getBooleanOr(HAS_ENERGY_TAG_NAME, false);
-        isPowered = tag.getBooleanOr(STATE_TAG_NAME, false);
+        isMounted = input.getBooleanOr(IS_RENDERING_TAG_NAME, false);
+        hasEnergy = input.getBooleanOr(HAS_ENERGY_TAG_NAME, false);
+        isPowered = input.getBooleanOr(STATE_TAG_NAME, false);
     }
 
     @Override
-    protected void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
+    protected void saveAdditional(final ValueOutput output) {
+        super.saveAdditional(output);
 
-        tag.put(ENERGY_TAG_NAME, energy.serializeNBT(registries));
-        tag.putBoolean(IS_RENDERING_TAG_NAME, isPowered);
+        output.putInt(ENERGY_TAG_NAME, energy.getEnergyStored());
+        output.putBoolean(IS_RENDERING_TAG_NAME, isPowered);
     }
 
     @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
+    public void loadAdditional(final ValueInput input) {
+        super.loadAdditional(input);
 
-        energy.deserializeNBT(registries, tag.getCompoundOrEmpty(ENERGY_TAG_NAME));
-        hasEnergy = tag.getBooleanOr(HAS_ENERGY_TAG_NAME, false);
-        isPowered = tag.getBooleanOr(IS_RENDERING_TAG_NAME, false);
+        final int storedEnergy = input.getIntOr(ENERGY_TAG_NAME, 0);
+        if (storedEnergy > 0) {
+            energy.receiveEnergy(storedEnergy, false);
+        }
+        hasEnergy = input.getBooleanOr(HAS_ENERGY_TAG_NAME, false);
+        isPowered = input.getBooleanOr(IS_RENDERING_TAG_NAME, false);
     }
 
     ///////////////////////////////////////////////////////////////////

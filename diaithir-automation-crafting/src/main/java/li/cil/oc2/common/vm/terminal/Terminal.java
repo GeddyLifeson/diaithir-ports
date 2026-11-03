@@ -1,7 +1,6 @@
 package li.cil.oc2.common.vm.terminal;
 
 import com.google.gson.annotations.SerializedName;
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import it.unimi.dsi.fastutil.bytes.ByteArrayFIFOQueue;
 import li.cil.ceres.api.Serialized;
@@ -15,8 +14,6 @@ import li.cil.oc2.common.vm.terminal.fonts.Glyph;
 import li.cil.oc2.common.vm.terminal.modes.ModeState;
 import li.cil.oc2.common.vm.terminal.modes.PrivateModeState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.neoforged.api.distmarker.Dist;
@@ -852,7 +849,6 @@ public class Terminal {
         /// ////////////////////////////////////////////////////////////
 
         public final Terminal terminal;
-        public final VertexBuffer[] lines = new VertexBuffer[HEIGHT];
 
         public final AtomicInteger dirty = new AtomicInteger(-1);
 
@@ -887,56 +883,13 @@ public class Terminal {
 
         @Override
         public void close() {
-            for (int i = 0; i < lines.length; i++) {
-                final VertexBuffer line = lines[i];
-                if (line != null) {
-                    line.close();
-                    lines[i] = null;
-                }
-            }
+            // TODO(oc2-restore): release per-line GPU buffers once the new render pipeline is implemented.
         }
 
         /// ////////////////////////////////////////////////////////////
 
-        public int findLineIndex(VertexBuffer[] vba, VertexBuffer vb) {
-            int i = 0;
-            while (i < vba.length) {
-                if (vba[i] == vb) {
-                    return i;
-                }
-                i++;
-            }
-            return -1;
-        }
-
         public void renderBuffer(final PoseStack stack, final Matrix4f projectionMatrix, boolean renderingToBlock) {
-            final ShaderInstance shader = GameRenderer.getPositionTexColorShader();
-            if (shader == null) {
-                return;
-            }
-
-            RenderSystem.depthMask(false);
-            RenderSystem.setShaderTexture(0, FontHandling.getAtlas());
-
-            var modelViewMatrix = stack.last().pose();
-            if (renderingToBlock) {
-                modelViewMatrix = new Matrix4f(RenderSystem.getModelViewMatrix()).mul(modelViewMatrix);
-            }
-
-            for (final VertexBuffer line : lines) {
-                if (line != null && !line.isInvalid()) {
-                    try {
-                        line.bind();
-                        line.drawWithShader(modelViewMatrix, projectionMatrix, shader);
-                        VertexBuffer.unbind();
-                    } catch (Exception e) {
-                        System.out.println("ERROR: " + e.getMessage());
-                        System.out.println(findLineIndex(lines, line));
-                    }
-                }
-            }
-
-            RenderSystem.depthMask(true);
+            // TODO(oc2-restore): VertexBuffer/ShaderInstance based drawing no longer exists in 26.1.2, reimplement with the new render pipeline.
         }
 
         @SuppressWarnings("resource")
@@ -946,7 +899,7 @@ public class Terminal {
             }
 
             final int mask = dirty.getAndSet(0);
-            for (int row = 0; row < lines.length; row++) {
+            for (int row = 0; row < HEIGHT; row++) {
                 if ((mask & (1 << row)) == 0) {
                     continue;
                 }
@@ -959,22 +912,9 @@ public class Terminal {
 
                 MeshData rb = builder.build();
 
+                // TODO(oc2-restore): upload the mesh to a GPU buffer per line instead of discarding it.
                 if (rb != null) {
-                    if (lines[row] == null) {
-                        lines[row] = new VertexBuffer(VertexBuffer.Usage.DYNAMIC);
-                    } else if (lines[row] != null) {
-                        lines[row].close();
-                        lines[row] = new VertexBuffer(VertexBuffer.Usage.DYNAMIC);
-                    }
-
-                    if (!lines[row].isInvalid()) {
-                        lines[row].bind();
-                        lines[row].upload(rb);
-                        VertexBuffer.unbind();
-                    }
-                } else if (lines[row] != null) {
-                    lines[row].close();
-                    lines[row] = null;
+                    rb.close();
                 }
             }
         }
@@ -1112,7 +1052,6 @@ public class Terminal {
         }
 
         public void renderCursor(final PoseStack stack) {
-            BufferUploader.reset();
             if (!terminal.currentPrivateModeState.DECTCEM) return;
             int globalY = terminal.lastRowToDisplayMax - (HEIGHT - terminal.y);
             int localY = HEIGHT + (globalY - terminal.lastRowToDisplay);
@@ -1122,9 +1061,6 @@ public class Terminal {
             if (terminal.x < 0 || terminal.x >= WIDTH || ((!useAltBuffer && localY < 0) || terminal.y < 0) || ((!useAltBuffer && localY >= HEIGHT) || terminal.y >= HEIGHT) || (!useAltBuffer && globalY > terminal.lastRowToDisplay)) {
                 return;
             }
-
-            RenderSystem.depthMask(false);
-            RenderSystem.setShader(GameRenderer::getPositionColorShader);
 
             stack.pushPose();
             stack.translate(terminal.x * CHAR_WIDTH, (useAltBuffer ? terminal.y : localY) * CHAR_HEIGHT, 0);
@@ -1159,11 +1095,10 @@ public class Terminal {
             }
 
             MeshData rb = buffer.buildOrThrow();
-            BufferUploader.drawWithShader(rb);
+            // TODO(oc2-restore): draw the cursor mesh with the new render pipeline (BufferUploader/RenderSystem.setShader no longer exist).
+            rb.close();
 
             stack.popPose();
-
-            RenderSystem.depthMask(true);
         }
 
         public static boolean isPrintableCharacter(final int ch) {

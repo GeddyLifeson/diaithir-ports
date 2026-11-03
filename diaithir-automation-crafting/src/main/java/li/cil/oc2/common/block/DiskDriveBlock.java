@@ -9,7 +9,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -62,7 +61,7 @@ public final class DiskDriveBlock extends HorizontalDirectionalBlock implements 
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(final ItemStack stack, final BlockState state, final Level level, final BlockPos pos, final Player player, final InteractionHand hand, final BlockHitResult hitResult) {
+    protected InteractionResult useItemOn(final ItemStack stack, final BlockState state, final Level level, final BlockPos pos, final Player player, final InteractionHand hand, final BlockHitResult hitResult) {
         final BlockEntity blockEntity = level.getBlockEntity(pos);
         if (!(blockEntity instanceof DiskDriveBlockEntity diskDrive)) {
             return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
@@ -73,7 +72,7 @@ public final class DiskDriveBlock extends HorizontalDirectionalBlock implements 
                 if (!level.isClientSide()) {
                     player.setItemInHand(hand, diskDrive.insert(stack, player));
                 }
-                return ItemInteractionResult.sidedSuccess(level.isClientSide());
+                return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
             }
         }
 
@@ -92,7 +91,7 @@ public final class DiskDriveBlock extends HorizontalDirectionalBlock implements 
                 if (!level.isClientSide()) {
                     diskDrive.eject(player);
                 }
-                return InteractionResult.sidedSuccess(level.isClientSide());
+                return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
             }
         }
 

@@ -53,7 +53,7 @@ public final class ItemStackUtils {
             return Optional.empty();
         }
 
-        final RandomSource rng = level.random;
+        final RandomSource rng = level.getRandom();
 
         final float tx = 0.5f * (rng.nextFloat() - 1.0f);
         final float ty = 0.5f * (rng.nextFloat() - 1.0f);
@@ -78,11 +78,11 @@ public final class ItemStackUtils {
             return spawnAsEntity(level, pos, stack);
         }
 
-        if (level.isClientSide || stack.isEmpty()) {
+        if (level.isClientSide() || stack.isEmpty()) {
             return Optional.empty();
         }
 
-        final RandomSource rng = level.random;
+        final RandomSource rng = level.getRandom();
 
         final float ox = direction.getStepX();
         final float oy = direction.getStepY();

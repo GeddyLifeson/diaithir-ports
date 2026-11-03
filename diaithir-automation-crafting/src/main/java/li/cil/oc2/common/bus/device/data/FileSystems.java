@@ -15,10 +15,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
-import net.minecraft.util.profiling.ProfilerFiller;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.server.ServerStoppedEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -82,8 +81,8 @@ public final class FileSystems {
     ///////////////////////////////////////////////////////////////////
 
     @SubscribeEvent
-    public static void handleAddReloadListenerEvent(final AddReloadListenerEvent event) {
-        event.addListener(ReloadListener.INSTANCE);
+    public static void handleAddReloadListenerEvent(final AddServerReloadListenersEvent event) {
+        event.addListener(Identifier.fromNamespaceAndPath(API.MOD_ID, "file_systems"), ReloadListener.INSTANCE);
     }
 
     @SubscribeEvent
@@ -171,10 +170,11 @@ public final class FileSystems {
         public static final ReloadListener INSTANCE = new ReloadListener();
 
         @Override
-        public CompletableFuture<Void> reload(final PreparableReloadListener.PreparationBarrier stage, final ResourceManager resourceManager, final ProfilerFiller preparationsProfiler, final ProfilerFiller reloadProfiler, final Executor backgroundExecutor, final Executor gameExecutor) {
+        public CompletableFuture<Void> reload(final PreparableReloadListener.SharedState currentReload, final Executor taskExecutor, final PreparableReloadListener.PreparationBarrier preparationBarrier, final Executor reloadExecutor) {
+            final ResourceManager resourceManager = currentReload.resourceManager();
             return CompletableFuture
-                .runAsync(() -> FileSystems.reload(resourceManager), backgroundExecutor)
-                .thenCompose(stage::wait);
+                .runAsync(() -> FileSystems.reload(resourceManager), taskExecutor)
+                .thenCompose(preparationBarrier::wait);
         }
     }
 

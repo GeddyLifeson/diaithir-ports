@@ -3,7 +3,6 @@
 package li.cil.oc2.common.container;
 
 import li.cil.oc2.api.API;
-import li.cil.oc2.client.gui.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -35,11 +34,12 @@ public final class Containers {
 
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
-        event.register(COMPUTER.get(), ComputerContainerScreen::new);
-        event.register(COMPUTER_TERMINAL.get(), ComputerTerminalScreen::new);
-        event.register(MONITOR.get(), MonitorDisplayScreen::new);
-        event.register(ROBOT.get(), RobotContainerScreen::new);
-        event.register(ROBOT_TERMINAL.get(), RobotTerminalScreen::new);
-        event.register(NETWORK_TUNNEL.get(), NetworkTunnelScreen::new);
+        // TODO(oc2-restore): register menu screens once li.cil.oc2.client.gui is ported:
+        // COMPUTER -> ComputerContainerScreen::new
+        // COMPUTER_TERMINAL -> ComputerTerminalScreen::new
+        // MONITOR -> MonitorDisplayScreen::new
+        // ROBOT -> RobotContainerScreen::new
+        // ROBOT_TERMINAL -> RobotTerminalScreen::new
+        // NETWORK_TUNNEL -> NetworkTunnelScreen::new
     }
 }

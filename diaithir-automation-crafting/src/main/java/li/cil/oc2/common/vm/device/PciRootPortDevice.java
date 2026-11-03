@@ -58,7 +58,7 @@ public final class PciRootPortDevice implements MemoryMappedDevice {
         if (offset >= 0 && offset <= length - (1 << sizeLog2)) {
             System.out.printf("PCI config read: %x %x%n", offset, sizeLog2);
             if (offset == 0x10) {
-                long res = buffer.getIntOr(offset, 0);
+                long res = buffer.getInt(offset);
                 System.out.printf("        00:00.0 BAR0 read    %x%n", res);
                 res = res & 0xFFFFF000L;
                 System.out.printf("Clipped 00:00.0 BAR0 read to %x%n", res);
@@ -66,9 +66,9 @@ public final class PciRootPortDevice implements MemoryMappedDevice {
             }
             return switch (sizeLog2) {
                 case 0 -> buffer.get(offset);
-                case 1 -> buffer.getShortOr(offset, (short) 0);
-                case 2 -> buffer.getIntOr(offset, 0);
-                case 3 -> buffer.getLongOr(offset, 0L);
+                case 1 -> buffer.getShort(offset);
+                case 2 -> buffer.getInt(offset);
+                case 3 -> buffer.getLong(offset);
                 default -> throw new IllegalArgumentException();
             };
         } else {

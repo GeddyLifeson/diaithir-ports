@@ -2,7 +2,6 @@
 
 package li.cil.oc2.common.container;
 
-import li.cil.oc2.client.gui.Sprites;
 import li.cil.oc2.common.bus.CommonDeviceBusController;
 import li.cil.oc2.common.energy.FixedEnergyStorage;
 import li.cil.oc2.common.entity.Robot;
@@ -17,6 +16,11 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public final class RobotTerminalContainer extends AbstractRobotContainer {
+    // TODO(oc2-restore): These mirror Sprites.TERMINAL_SCREEN.width/height from li.cil.oc2.client.gui.Sprites,
+    // which is excluded from this compile stage. Replace with the real sprite size once the client package is restored.
+    private static final int TERMINAL_SCREEN_WIDTH = 336;
+    private static final int TERMINAL_SCREEN_HEIGHT = 208;
+
     public static void createServer(final Robot robot, final FixedEnergyStorage energy, final CommonDeviceBusController busController, final ServerPlayer player) {
         player.openMenu(new MenuProvider() {
             @Override
@@ -48,8 +52,8 @@ public final class RobotTerminalContainer extends AbstractRobotContainer {
 
         // It's kinda dumb we need to access technically-client-side stuff here, but that's the nature of containers
         // needing to specify display positions for some reason.
-        final int terminalScreenWidth = Sprites.TERMINAL_SCREEN.width;
-        final int terminalScreenHeight = Sprites.TERMINAL_SCREEN.height;
+        final int terminalScreenWidth = TERMINAL_SCREEN_WIDTH;
+        final int terminalScreenHeight = TERMINAL_SCREEN_HEIGHT;
 
         final ItemStackHandler inventory = robot.getInventory();
         for (int slot = 0; slot < inventory.getSlots(); slot++) {

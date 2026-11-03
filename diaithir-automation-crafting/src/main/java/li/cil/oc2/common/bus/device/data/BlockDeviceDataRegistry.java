@@ -43,7 +43,7 @@ public final class BlockDeviceDataRegistry {
 
     @Nullable
     public static BlockDeviceData getValue(final Identifier location) {
-        final BlockDeviceData value = REGISTRY.get(location);
+        final BlockDeviceData value = REGISTRY.getValue(location);
         if (value != null) {
             return value;
         }

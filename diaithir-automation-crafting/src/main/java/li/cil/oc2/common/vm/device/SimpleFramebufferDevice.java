@@ -2,8 +2,6 @@
 
 package li.cil.oc2.common.vm.device;
 
-import li.cil.oc2.jcodec.common.model.Picture;
-import li.cil.oc2.jcodec.scale.RgbToYuv420j;
 import li.cil.sedna.api.device.MemoryMappedDevice;
 import li.cil.sedna.api.memory.MemoryAccessException;
 import li.cil.sedna.utils.DirectByteBufferUtils;
@@ -60,58 +58,22 @@ public final class SimpleFramebufferDevice implements MemoryMappedDevice {
         return !dirtyLines.isEmpty();
     }
 
-    public boolean applyChanges(final Picture picture) {
+    // TODO(oc2-restore): li.cil.oc2.jcodec Picture is excluded; planes are passed as raw {Y, U, V} byte arrays.
+    public boolean applyChanges(final byte[][] yuvPlanes) {
         if (dirtyLines.isEmpty()) {
             return false;
         }
 
         synchronized (buffer) {
-            convertR5G6B5ToYUV420J(buffer, width, height, picture);
+            convertR5G6B5ToYUV420J(buffer, width, height, yuvPlanes);
         }
 
         return true;
     }
 
-    public static void convertR5G6B5ToYUV420J(ByteBuffer rgbBuffer, int width, int height, Picture yuvPicture) {
-
-        // Retrieve the YUV planes from the Picture object
-        byte[][] yuvData = yuvPicture.getData();
-        byte[] yPlane = yuvData[0];
-        byte[] uPlane = yuvData[1];
-        byte[] vPlane = yuvData[2];
-
-        int uvWidth = width / 2;
-
-        // Iterate through each pixel
-        for (int j = 0; j < height; j++) {
-            for (int i = 0; i < width; i++) {
-                int index = j * width + i;
-
-                // Extract pixel data from ByteBuffer
-                short pixel = rgbBuffer.getShort(index * 2);
-
-                final int r5 = (pixel >>> 11) & 0b11111;
-                final int g6 = (pixel >>> 5) & 0b111111;
-                final int b5 = pixel & 0b11111;
-                final byte r = (byte) ((r5 * 255 / 0b11111) - 128);
-                final byte g = (byte) ((g6 * 255 / 0b111111) - 128);
-                final byte b = (byte) ((b5 * 255 / 0b11111) - 128);
-
-                int[] yuv = new int[3];
-
-                RgbToYuv420j.rgb2yuv(r, g, b, yuv);
-
-                // Set Y plane
-                yPlane[index] = (byte) yuv[0];
-
-                // Set U and V planes (subsampled)
-                if (j % 2 == 0 && i % 2 == 0) {
-                    int uvIndex = (j / 2) * uvWidth + (i / 2);
-                    uPlane[uvIndex] = (byte) yuv[1];
-                    vPlane[uvIndex] = (byte) yuv[2];
-                }
-            }
-        }
+    // TODO(oc2-restore): li.cil.oc2.jcodec RgbToYuv420j is excluded; conversion is a no-op until restored.
+    public static void convertR5G6B5ToYUV420J(ByteBuffer rgbBuffer, int width, int height, byte[][] yuvPlanes) {
+        // Intentionally left as a no-op (see TODO above).
     }
 
     @Override
@@ -124,9 +86,9 @@ public final class SimpleFramebufferDevice implements MemoryMappedDevice {
         if (offset >= 0 && offset <= length - (1 << sizeLog2)) {
             return switch (sizeLog2) {
                 case 0 -> buffer.get(offset);
-                case 1 -> buffer.getShortOr(offset, (short) 0);
-                case 2 -> buffer.getIntOr(offset, 0);
-                case 3 -> buffer.getLongOr(offset, 0L);
+                case 1 -> buffer.getShort(offset);
+                case 2 -> buffer.getInt(offset);
+                case 3 -> buffer.getLong(offset);
                 default -> throw new IllegalArgumentException();
             };
         } else {

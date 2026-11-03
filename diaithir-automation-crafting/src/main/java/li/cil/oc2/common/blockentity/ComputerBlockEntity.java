@@ -2,13 +2,14 @@
 
 package li.cil.oc2.common.blockentity;
 
+import com.google.gson.JsonParser;
+import com.mojang.serialization.JsonOps;
 import li.cil.oc2.api.API;
 import li.cil.oc2.api.bus.DeviceBusElement;
 import li.cil.oc2.api.bus.device.Device;
 import li.cil.oc2.api.bus.device.DeviceTypes;
 import li.cil.oc2.api.bus.device.provider.ItemDeviceQuery;
 import li.cil.oc2.api.capabilities.TerminalUserProvider;
-import li.cil.oc2.client.audio.LoopingSoundManager;
 import li.cil.oc2.common.block.Blocks;
 import li.cil.oc2.common.components.DataComponents;
 import li.cil.oc2.common.components.RestrictedContainer;
@@ -35,9 +36,12 @@ import li.cil.oc2.common.vm.terminal.Terminal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.UUIDUtil;
+import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.ComponentSerialization;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -45,6 +49,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -210,17 +216,12 @@ public final class ComputerBlockEntity extends ModBlockEntity implements Termina
     }
 
     @Override
-    protected void applyImplicitComponents(final DataComponentInput componentInput) {
+    protected void applyImplicitComponents(final DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         var container = componentInput.get(DataComponents.RESTRICTED_CONTAINER);
         if (container != null) {
             deviceItems.loadItems(getLevel().registryAccess(), container);
-        } else {
-            var block_entity_data = componentInput.get(net.minecraft.core.component.DataComponents.BLOCK_ENTITY_DATA);
-            if (block_entity_data == null) return;
-            var tag = block_entity_data.copyTag();
-            tag.size();
         }
     }
 
@@ -240,50 +241,75 @@ public final class ComputerBlockEntity extends ModBlockEntity implements Termina
         tag.put(TERMINAL_TAG_NAME, NBTSerialization.serialize(terminal));
         tag.putInt(AbstractVirtualMachine.BUS_STATE_TAG_NAME, virtualMachine.getBusState().ordinal());
         tag.putInt(AbstractVirtualMachine.RUN_STATE_TAG_NAME, virtualMachine.getRunState().ordinal());
-        tag.putString(AbstractVirtualMachine.BOOT_ERROR_TAG_NAME, Component.Serializer.toJson(virtualMachine.getBootError(), registries));
+
+        final Component bootError = virtualMachine.getBootError();
+        if (bootError != null) {
+            tag.putString(AbstractVirtualMachine.BOOT_ERROR_TAG_NAME, ComponentSerialization.CODEC
+                .encodeStart(registries.createSerializationContext(JsonOps.INSTANCE), bootError)
+                .getOrThrow()
+                .toString());
+        } else {
+            tag.putString(AbstractVirtualMachine.BOOT_ERROR_TAG_NAME, "");
+        }
 
         return tag;
     }
 
     @Override
-    public void handleUpdateTag(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.handleUpdateTag(tag, registries);
+    public void handleUpdateTag(final ValueInput input) {
+        super.handleUpdateTag(input);
 
-        NBTSerialization.deserialize(tag.getCompoundOrEmpty(TERMINAL_TAG_NAME), terminal);
+        NBTSerialization.deserialize(readTag(input, TERMINAL_TAG_NAME), terminal);
 
         // Only update client-side state on the client
         if (level != null && level.isClientSide()) {
-            virtualMachine.setBusStateClient(CommonDeviceBusController.BusState.values()[tag.getIntOr(AbstractVirtualMachine.BUS_STATE_TAG_NAME, 0)]);
-            virtualMachine.setRunStateClient(VMRunState.values()[tag.getIntOr(AbstractVirtualMachine.RUN_STATE_TAG_NAME, 0)]);
-            virtualMachine.setBootErrorClient(Component.Serializer.fromJson(tag.getStringOr(AbstractVirtualMachine.BOOT_ERROR_TAG_NAME, ""), registries));
+            virtualMachine.setBusStateClient(CommonDeviceBusController.BusState.values()[input.getIntOr(AbstractVirtualMachine.BUS_STATE_TAG_NAME, 0)]);
+            virtualMachine.setRunStateClient(VMRunState.values()[input.getIntOr(AbstractVirtualMachine.RUN_STATE_TAG_NAME, 0)]);
+
+            final String bootErrorJson = input.getStringOr(AbstractVirtualMachine.BOOT_ERROR_TAG_NAME, "");
+            if (bootErrorJson.isEmpty()) {
+                virtualMachine.setBootErrorClient(null);
+            } else {
+                virtualMachine.setBootErrorClient(ComponentSerialization.CODEC
+                    .parse(input.lookup().createSerializationContext(JsonOps.INSTANCE), JsonParser.parseString(bootErrorJson))
+                    .getOrThrow());
+            }
         }
     }
 
     @Override
-    protected void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
+    protected void saveAdditional(final ValueOutput output) {
+        super.saveAdditional(output);
+
+        final HolderLookup.Provider registries = getLevel().registryAccess();
 
         if (virtualMachine.getRunState() != VMRunState.STOPPED) {
-            tag.put(STATE_TAG_NAME, virtualMachine.serialize());
-            tag.put(TERMINAL_TAG_NAME, NBTSerialization.serialize(terminal));
+            output.store(STATE_TAG_NAME, CompoundTag.CODEC, virtualMachine.serialize());
+            output.store(TERMINAL_TAG_NAME, CompoundTag.CODEC, NBTSerialization.serialize(terminal));
         }
 
-        tag.put(ENERGY_TAG_NAME, energy.serializeNBT(registries));
-        tag.put(BUS_ELEMENT_TAG_NAME, busElement.save(registries));
-        tag.put(ITEMS_TAG_NAME, deviceItems.saveItems(registries));
-        tag.put(DEVICES_TAG_NAME, deviceItems.saveDevices(registries));
+        energy.serialize(output.child(ENERGY_TAG_NAME));
+        output.store(BUS_ELEMENT_TAG_NAME, CompoundTag.CODEC, busElement.save(registries));
+        output.store(ITEMS_TAG_NAME, CompoundTag.CODEC, deviceItems.saveItems(registries));
+        output.store(DEVICES_TAG_NAME, CompoundTag.CODEC, deviceItems.saveDevices(registries));
     }
 
     @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
+    public void loadAdditional(final ValueInput input) {
+        super.loadAdditional(input);
 
-        energy.deserializeNBT(registries, tag.getCompoundOrEmpty(ENERGY_TAG_NAME));
-        busElement.loadAdditional(tag.getCompoundOrEmpty(BUS_ELEMENT_TAG_NAME), registries);
-        deviceItems.loadItems(registries, tag.getCompoundOrEmpty(ITEMS_TAG_NAME));
-        deviceItems.loadDevices(registries, tag.getCompoundOrEmpty(DEVICES_TAG_NAME));
-        virtualMachine.deserialize(tag.getCompoundOrEmpty(STATE_TAG_NAME));
-        NBTSerialization.deserialize(tag.getCompoundOrEmpty(TERMINAL_TAG_NAME), terminal);
+        final HolderLookup.Provider registries = input.lookup();
+
+        energy.deserialize(input.childOrEmpty(ENERGY_TAG_NAME));
+        busElement.loadAdditional(readTag(input, BUS_ELEMENT_TAG_NAME), registries);
+        deviceItems.loadItems(registries, readTag(input, ITEMS_TAG_NAME));
+        deviceItems.loadDevices(registries, readTag(input, DEVICES_TAG_NAME));
+        virtualMachine.deserialize(readTag(input, STATE_TAG_NAME));
+        NBTSerialization.deserialize(readTag(input, TERMINAL_TAG_NAME), terminal);
+    }
+
+    private static CompoundTag readTag(final ValueInput input, final String name) {
+        return input.read(name, CompoundTag.CODEC).orElseGet(CompoundTag::new);
     }
 
     public void exportToItemStack(final ItemStack stack) {
@@ -459,15 +485,15 @@ public final class ComputerBlockEntity extends ModBlockEntity implements Termina
         @Override
         public CompoundTag save(HolderLookup.Provider registries) {
             final CompoundTag tag = super.save(registries);
-            tag.putUUID(DEVICE_ID_TAG_NAME, deviceId);
+            tag.putIntArray(DEVICE_ID_TAG_NAME, UUIDUtil.uuidToIntArray(deviceId));
             return tag;
         }
 
         public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
             super.loadAdditional(tag, registries);
-            if (tag.hasUUID(DEVICE_ID_TAG_NAME)) {
-                deviceId = tag.getUUID(DEVICE_ID_TAG_NAME);
-            }
+            tag.getIntArray(DEVICE_ID_TAG_NAME)
+                .filter(array -> array.length == 4)
+                .ifPresent(array -> deviceId = UUIDUtil.uuidFromIntArray(array));
         }
     }
 
@@ -492,13 +518,9 @@ public final class ComputerBlockEntity extends ModBlockEntity implements Termina
         public void setRunStateClient(final VMRunState value) {
             super.setRunStateClient(value);
 
-            if (value == VMRunState.RUNNING) {
-                if (!LoopingSoundManager.isPlaying(ComputerBlockEntity.this) && level != null) {
-                    LoopingSoundManager.play(ComputerBlockEntity.this, SoundEvents.COMPUTER_RUNNING.get(), level.getRandom().nextInt(MAX_RUNNING_SOUND_DELAY));
-                }
-            } else {
-                LoopingSoundManager.stop(ComputerBlockEntity.this);
-            }
+            // TODO(oc2-restore): looping computer running sound (LoopingSoundManager.isPlaying/play/stop,
+            //  play SoundEvents.COMPUTER_RUNNING with random delay up to MAX_RUNNING_SOUND_DELAY while RUNNING,
+            //  stop otherwise) lives in li.cil.oc2.client.audio which is excluded from this compile stage.
         }
 
         @Override

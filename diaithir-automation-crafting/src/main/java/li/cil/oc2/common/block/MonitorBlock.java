@@ -7,21 +7,14 @@ import li.cil.oc2.common.config.Config;
 import li.cil.oc2.common.blockentity.BlockEntities;
 import li.cil.oc2.common.blockentity.MonitorBlockEntity;
 import li.cil.oc2.common.blockentity.TickableBlockEntity;
-import li.cil.oc2.common.integration.Wrenches;
 import li.cil.oc2.common.network.Network;
 import li.cil.oc2.common.network.message.MonitorPowerMessageForwarded;
 import li.cil.oc2.common.util.VoxelShapeUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -41,12 +34,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
+// TODO(oc2-restore): li.cil.oc2.common.integration.Wrenches import removed (was unused here)
 public final class MonitorBlock extends HorizontalDirectionalBlock implements EnergyConsumingBlock, EntityBlock {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     // We bake the "screen" indent on the front into the collision shape, to prevent stuff being
@@ -83,12 +74,6 @@ public final class MonitorBlock extends HorizontalDirectionalBlock implements En
 
     ///////////////////////////////////////////////////////////////////
 
-    @OnlyIn(Dist.CLIENT)
-    @Override
-    public void appendHoverText(final ItemStack stack, final Item.TooltipContext context, final List<Component> tooltip, final TooltipFlag advanced) {
-        super.appendHoverText(stack, context, tooltip, advanced);
-    }
-
     @SuppressWarnings("deprecation")
     @Override
     public VoxelShape getShape(final BlockState state, final BlockGetter level, final BlockPos pos, final CollisionContext context) {
@@ -115,7 +100,7 @@ public final class MonitorBlock extends HorizontalDirectionalBlock implements En
                 monitor.openTerminalScreen(serverPlayer);
             }
         }
-        return InteractionResult.sidedSuccess(level.isClientSide());
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
     }
 
     @Override

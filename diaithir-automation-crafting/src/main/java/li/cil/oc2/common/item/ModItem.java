@@ -7,12 +7,15 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ModItem extends Item {
     public ModItem(final Properties properties) {
@@ -27,9 +30,11 @@ public class ModItem extends Item {
 
     @OnlyIn(Dist.CLIENT)
     @Override
-    public void appendHoverText(final ItemStack stack, final TooltipContext context, final List<Component> components, final TooltipFlag flag) {
-        super.appendHoverText(stack, context, components, flag);
-        TooltipUtils.tryAddDescription(stack, components);
+    public void appendHoverText(final ItemStack stack, final TooltipContext context, final TooltipDisplay display, final Consumer<Component> components, final TooltipFlag flag) {
+        super.appendHoverText(stack, context, display, components, flag);
+        final List<Component> descriptions = new ArrayList<>();
+        TooltipUtils.tryAddDescription(stack, descriptions);
+        descriptions.forEach(components);
     }
 
     ///////////////////////////////////////////////////////////////////

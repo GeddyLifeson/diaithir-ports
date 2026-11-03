@@ -14,6 +14,7 @@ import li.cil.oc2.common.util.NBTTagIds;
 import li.cil.sedna.api.device.PhysicalMemory;
 import li.cil.sedna.device.memory.ByteBufferMemory;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
@@ -87,7 +88,7 @@ public final class MemoryDevice extends IdentityProxy<ItemStack> implements VMDe
         final CompoundTag tag = new CompoundTag();
 
         if (blobHandle != null) {
-            tag.putUUID(BLOB_HANDLE_TAG_NAME, blobHandle);
+            tag.putIntArray(BLOB_HANDLE_TAG_NAME, UUIDUtil.uuidToIntArray(blobHandle));
         }
         if (address.isPresent()) {
             tag.putLong(ADDRESS_TAG_NAME, address.getAsLong());
@@ -98,11 +99,11 @@ public final class MemoryDevice extends IdentityProxy<ItemStack> implements VMDe
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, final CompoundTag tag) {
-        if (tag.hasUUID(BLOB_HANDLE_TAG_NAME)) {
-            blobHandle = tag.getUUID(BLOB_HANDLE_TAG_NAME);
-        }
+        tag.getIntArray(BLOB_HANDLE_TAG_NAME)
+            .filter(array -> array.length == 4)
+            .ifPresent(array -> blobHandle = UUIDUtil.uuidFromIntArray(array));
         if (tag.contains(ADDRESS_TAG_NAME)) {
-            address.set(tag.getLongOr(ADDRESS_TAG_NAME), 0L);
+            address.set(tag.getLongOr(ADDRESS_TAG_NAME, 0L));
         }
     }
 

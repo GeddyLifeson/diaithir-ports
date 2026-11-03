@@ -13,6 +13,7 @@ import li.cil.oc2.common.serialization.BlobStorage;
 import li.cil.oc2.common.util.NBTTagIds;
 import li.cil.oc2.common.vm.device.PciRootPortDevice;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
@@ -20,6 +21,7 @@ import javax.annotation.Nullable;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.Optional;
 import java.util.UUID;
 
 public final class PciCardCageDevice extends IdentityProxy<BlockEntity> implements VMDevice {
@@ -96,7 +98,7 @@ public final class PciCardCageDevice extends IdentityProxy<BlockEntity> implemen
         final CompoundTag tag = new CompoundTag();
 
         if (blobHandle != null) {
-            tag.putUUID(BLOB_HANDLE_TAG_NAME, blobHandle);
+            tag.putIntArray(BLOB_HANDLE_TAG_NAME, UUIDUtil.uuidToIntArray(blobHandle));
         }
         if (address.isPresent()) {
             tag.putLong(ADDRESS_TAG_NAME, address.getAsLong());
@@ -107,11 +109,12 @@ public final class PciCardCageDevice extends IdentityProxy<BlockEntity> implemen
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, final CompoundTag tag) {
-        if (tag.hasUUID(BLOB_HANDLE_TAG_NAME)) {
-            blobHandle = tag.getUUID(BLOB_HANDLE_TAG_NAME);
+        final Optional<int[]> blobHandleTag = tag.getIntArray(BLOB_HANDLE_TAG_NAME);
+        if (blobHandleTag.isPresent() && blobHandleTag.get().length == 4) {
+            blobHandle = UUIDUtil.uuidFromIntArray(blobHandleTag.get());
         }
         if (tag.contains(ADDRESS_TAG_NAME)) {
-            address.set(tag.getLongOr(ADDRESS_TAG_NAME), 0L);
+            address.set(tag.getLongOr(ADDRESS_TAG_NAME, 0L));
         }
     }
 

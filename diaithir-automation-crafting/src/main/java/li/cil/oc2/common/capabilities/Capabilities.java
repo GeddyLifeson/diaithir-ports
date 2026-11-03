@@ -37,22 +37,24 @@ public final class Capabilities {
         public static final EntityCapability<li.cil.oc2.api.capabilities.Robot, @Nullable Void> ENTITY = EntityCapability.createVoid(Identifier.fromNamespaceAndPath(API.MOD_ID, "robot"), li.cil.oc2.api.capabilities.Robot.class);
     }
 
-    // Re-export Neoforge's capabilities to save everyone else from the conflicting class names
+    // NeoForge's legacy capability constants (EnergyStorage, ItemHandler, FluidHandler) no longer exist in
+    // net.neoforged.neoforge.capabilities.Capabilities, as the transfer API was replaced. The legacy handler types
+    // are kept, so they are exposed here as mod-owned capabilities with the same shape as before.
     public static final class EnergyStorage {
-        public static final BlockCapability<IEnergyStorage, @Nullable Direction> BLOCK = net.neoforged.neoforge.capabilities.Capabilities.EnergyStorage.BLOCK;
-        public static final EntityCapability<IEnergyStorage, @Nullable Direction> ENTITY = net.neoforged.neoforge.capabilities.Capabilities.EnergyStorage.ENTITY;
-        public static final ItemCapability<IEnergyStorage, @Nullable Void> ITEM = net.neoforged.neoforge.capabilities.Capabilities.EnergyStorage.ITEM;
+        public static final BlockCapability<IEnergyStorage, @Nullable Direction> BLOCK = BlockCapability.createSided(Identifier.fromNamespaceAndPath(API.MOD_ID, "energy_storage"), IEnergyStorage.class);
+        public static final EntityCapability<IEnergyStorage, @Nullable Direction> ENTITY = EntityCapability.createSided(Identifier.fromNamespaceAndPath(API.MOD_ID, "energy_storage"), IEnergyStorage.class);
+        public static final ItemCapability<IEnergyStorage, @Nullable Void> ITEM = ItemCapability.createVoid(Identifier.fromNamespaceAndPath(API.MOD_ID, "energy_storage"), IEnergyStorage.class);
     }
 
     public static final class ItemHandler {
-        public static final BlockCapability<IItemHandler, @Nullable Direction> BLOCK = net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK;
-        public static final EntityCapability<IItemHandler, @Nullable Void> ENTITY = net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.ENTITY;
-        public static final ItemCapability<IItemHandler, @Nullable Void> ITEM = net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.ITEM;
+        public static final BlockCapability<IItemHandler, @Nullable Direction> BLOCK = BlockCapability.createSided(Identifier.fromNamespaceAndPath(API.MOD_ID, "item_handler"), IItemHandler.class);
+        public static final EntityCapability<IItemHandler, @Nullable Void> ENTITY = EntityCapability.createVoid(Identifier.fromNamespaceAndPath(API.MOD_ID, "item_handler"), IItemHandler.class);
+        public static final ItemCapability<IItemHandler, @Nullable Void> ITEM = ItemCapability.createVoid(Identifier.fromNamespaceAndPath(API.MOD_ID, "item_handler"), IItemHandler.class);
     }
 
     public static final class FluidHandler {
-        public static final BlockCapability<IFluidHandler, @Nullable Direction> BLOCK = net.neoforged.neoforge.capabilities.Capabilities.FluidHandler.BLOCK;
-        public static final EntityCapability<IFluidHandler, @Nullable Direction> ENTITY = net.neoforged.neoforge.capabilities.Capabilities.FluidHandler.ENTITY;
-        public static final ItemCapability<IFluidHandlerItem, @Nullable Void> ITEM = net.neoforged.neoforge.capabilities.Capabilities.FluidHandler.ITEM;
+        public static final BlockCapability<IFluidHandler, @Nullable Direction> BLOCK = BlockCapability.createSided(Identifier.fromNamespaceAndPath(API.MOD_ID, "fluid_handler"), IFluidHandler.class);
+        public static final EntityCapability<IFluidHandler, @Nullable Direction> ENTITY = EntityCapability.createSided(Identifier.fromNamespaceAndPath(API.MOD_ID, "fluid_handler"), IFluidHandler.class);
+        public static final ItemCapability<IFluidHandlerItem, @Nullable Void> ITEM = ItemCapability.createVoid(Identifier.fromNamespaceAndPath(API.MOD_ID, "fluid_handler_item"), IFluidHandlerItem.class);
     }
 }

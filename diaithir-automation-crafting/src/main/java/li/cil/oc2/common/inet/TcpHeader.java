@@ -39,9 +39,9 @@ public class TcpHeader {
         rst = ((flags >>> 2) & 1) == 1;
         syn = ((flags >>> 1) & 1) == 1;
         fin = (flags & 1) == 1;
-        window = Short.toUnsignedInt(data.getShortOr(), (short) 0);
+        window = Short.toUnsignedInt(data.getShort());
         data.getShort(); // checksum
-        urgentPointer = Short.toUnsignedInt(data.getShortOr(), (short) 0);
+        urgentPointer = Short.toUnsignedInt(data.getShort());
 
         maxSegmentSize = -1;
 
@@ -62,7 +62,7 @@ public class TcpHeader {
                     data.position(position);
                     return false;
                 }
-                maxSegmentSize = Short.toUnsignedInt(data.getShortOr(), (short) 0);
+                maxSegmentSize = Short.toUnsignedInt(data.getShort());
             } else {
                 // Skip unknown option
                 data.position(data.position() + size - 2);

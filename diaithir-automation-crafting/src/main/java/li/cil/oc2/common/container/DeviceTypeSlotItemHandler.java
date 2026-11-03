@@ -2,10 +2,8 @@
 
 package li.cil.oc2.common.container;
 
-import com.mojang.datafixers.util.Pair;
 import li.cil.oc2.api.bus.device.DeviceType;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
@@ -25,11 +23,11 @@ public final class DeviceTypeSlotItemHandler extends SlotItemHandler {
 
     @Nullable
     @Override
-    public Pair<Identifier, Identifier> getNoItemIcon() {
+    public Identifier getNoItemIcon() {
         if (hasItem()) {
             return super.getNoItemIcon();
         } else {
-            return Pair.of(InventoryMenu.BLOCK_ATLAS, deviceType.getBackgroundIcon());
+            return deviceType.getBackgroundIcon();
         }
     }
 }

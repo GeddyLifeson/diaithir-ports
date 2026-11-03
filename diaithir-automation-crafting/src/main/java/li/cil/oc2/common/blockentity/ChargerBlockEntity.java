@@ -13,13 +13,13 @@ import li.cil.oc2.common.energy.FixedEnergyStorage;
 import li.cil.oc2.common.util.ChunkUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -35,6 +35,8 @@ import static java.util.Collections.singletonList;
 
 @EventBusSubscriber(modid = API.MOD_ID)
 public final class ChargerBlockEntity extends ModBlockEntity implements NamedDevice, TickableBlockEntity {
+    private static final String ENERGY_VALUE_TAG_NAME = "energy";
+
     private static final Predicate<Entity> ENTITY_PREDICATE =
         EntitySelector.NO_SPECTATORS
             .and(EntitySelector.ENTITY_STILL_ALIVE);
@@ -79,17 +81,19 @@ public final class ChargerBlockEntity extends ModBlockEntity implements NamedDev
     }
 
     @Override
-    protected void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
+    protected void saveAdditional(final ValueOutput output) {
+        super.saveAdditional(output);
 
-        tag.put(Constants.ENERGY_TAG_NAME, energy.serializeNBT(registries));
+        output.child(Constants.ENERGY_TAG_NAME).putInt(ENERGY_VALUE_TAG_NAME, energy.getEnergyStored());
     }
 
     @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
+    public void loadAdditional(final ValueInput input) {
+        super.loadAdditional(input);
 
-        energy.deserializeNBT(registries, tag.getCompoundOrEmpty(Constants.ENERGY_TAG_NAME));
+        final int stored = input.childOrEmpty(Constants.ENERGY_TAG_NAME).getIntOr(ENERGY_VALUE_TAG_NAME, 0);
+        energy.extractEnergy(energy.getEnergyStored(), false);
+        energy.receiveEnergy(stored, false);
     }
 
     @Callback
@@ -167,7 +171,7 @@ public final class ChargerBlockEntity extends ModBlockEntity implements NamedDev
         assert level != null;
 
         final int amount = Math.min(energy.getEnergyStored(), Config.chargerEnergyPerTick);
-        final boolean simulate = level.isClientSide;
+        final boolean simulate = level.isClientSide();
         if (energy.extractEnergy(energyStorage.receiveEnergy(amount, simulate), simulate) > 0) {
             isCharging = true;
         }

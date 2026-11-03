@@ -30,7 +30,7 @@ public final class WrenchItem extends ModItem {
             final BlockState rotatedState = blockState.rotate(level, pos, face == Direction.UP ? Rotation.CLOCKWISE_90 : Rotation.COUNTERCLOCKWISE_90);
             if (!Objects.equals(blockState, rotatedState)) {
                 level.setBlockAndUpdate(pos, rotatedState);
-                return InteractionResult.sidedSuccess(level.isClientSide());
+                return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
             }
         }
 
@@ -64,7 +64,7 @@ public final class WrenchItem extends ModItem {
             serverPlayer.gameMode.destroyBlock(pos);
         }
 
-        return InteractionResult.sidedSuccess(level.isClientSide());
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
     }
 
     @Override

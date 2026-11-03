@@ -3,15 +3,12 @@
 package li.cil.oc2.common.vm;
 
 import com.google.gson.annotations.SerializedName;
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import org.joml.Matrix4f;
 import it.unimi.dsi.fastutil.bytes.ByteArrayFIFOQueue;
 import li.cil.ceres.api.Serialized;
 import li.cil.oc2.api.API;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -1003,7 +1000,7 @@ public final class OldTerminal {
         /// ////////////////////////////////////////////////////////////
 
         private final OldTerminal terminal;
-        private final VertexBuffer[] lines = new VertexBuffer[HEIGHT];
+        // TODO(oc2-restore): VertexBuffer line cache removed, no longer exists in 26.1.2.
 
         private final AtomicInteger dirty = new AtomicInteger(-1);
 
@@ -1032,87 +1029,17 @@ public final class OldTerminal {
 
         @Override
         public void close() {
-            for (int i = 0; i < lines.length; i++) {
-                final VertexBuffer line = lines[i];
-                if (line != null) {
-                    line.close();
-                    lines[i] = null;
-                }
-            }
+            // TODO(oc2-restore): release GPU line buffers once the new render pipeline is used.
         }
 
         /// ////////////////////////////////////////////////////////////
 
-        private int findLineIndex(VertexBuffer[] vba, VertexBuffer vb) {
-            int i = 0;
-            while (i < vba.length) {
-                if (vba[i] == vb) {
-                    return i;
-                }
-                i++;
-            }
-            return -1;
-        }
-
         private void renderBuffer(final PoseStack stack, final Matrix4f projectionMatrix) {
-            final ShaderInstance shader = GameRenderer.getPositionTexColorShader();
-            if (shader == null) {
-                return;
-            }
-
-            RenderSystem.depthMask(false);
-            RenderSystem.setShaderTexture(0, LOCATION_FONT_TEXTURE);
-
-            for (final VertexBuffer line : lines) {
-                if (!line.isInvalid()) {
-                    try {
-                        line.bind();
-                        line.drawWithShader(stack.last().pose(), projectionMatrix, shader);
-                        VertexBuffer.unbind();
-                    } catch (Exception e) {
-                        System.out.println("ERROR: " + e.getMessage());
-                        System.out.println(findLineIndex(lines, line));
-                    }
-                }
-            }
-
-            RenderSystem.depthMask(true);
+            // TODO(oc2-restore): draw cached line meshes with the 26.1 render pipeline (previously VertexBuffer + ShaderInstance).
         }
 
         private void validateLineCache() {
-            if (dirty.get() == 0) {
-                return;
-            }
-
-
-            final int mask = dirty.getAndSet(0);
-            for (int row = 0; row < lines.length; row++) {
-                if ((mask & (1 << row)) == 0) {
-                    continue;
-                }
-                BufferBuilder builder = Tesselator.getInstance()
-                    .begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
-
-                final Matrix4f matrix = new Matrix4f().translate(0, row * CHAR_HEIGHT, 0);
-
-                renderBackground(matrix, builder, row);
-                renderForeground(matrix, builder, row);
-
-                MeshData rb = builder.buildOrThrow();
-
-                if (lines[row] == null) {
-                    lines[row] = new VertexBuffer(VertexBuffer.Usage.DYNAMIC);
-                } else if (lines[row] != null) {
-                    lines[row].close();
-                    lines[row] = new VertexBuffer(VertexBuffer.Usage.DYNAMIC);
-                }
-
-                if (!lines[row].isInvalid()) {
-                    lines[row].bind();
-                    lines[row].upload(rb);
-                    VertexBuffer.unbind();
-                }
-            }
+            // TODO(oc2-restore): rebuild dirty line meshes and upload them (previously VertexBuffer.upload).
         }
 
         private void renderBackground(final Matrix4f matrix, final BufferBuilder buffer, final int row) {
@@ -1260,37 +1187,7 @@ public final class OldTerminal {
         }
 
         private void renderCursor(final PoseStack stack) {
-            BufferUploader.reset();
-            if (terminal.x < 0 || terminal.x >= WIDTH || terminal.y < 0 || terminal.y >= HEIGHT) {
-                return;
-            }
-
-            RenderSystem.depthMask(false);
-            RenderSystem.setShader(GameRenderer::getPositionColorShader);
-
-            stack.pushPose();
-            stack.translate(terminal.x * CHAR_WIDTH, terminal.y * CHAR_HEIGHT, 0);
-
-            final Matrix4f matrix = stack.last().pose();
-            final BufferBuilder buffer = Tesselator.getInstance()
-                .begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-
-            final int foreground = COLORS[Color.WHITE];
-            final float r = ((foreground >> 16) & 0xFF) / 255f;
-            final float g = ((foreground >> 8) & 0xFF) / 255f;
-            final float b = ((foreground) & 0xFF) / 255f;
-
-            buffer.addVertex(matrix, 0, CHAR_HEIGHT, 0).setColor(r, g, b, 1);
-            buffer.addVertex(matrix, CHAR_WIDTH, CHAR_HEIGHT, 0).setColor(r, g, b, 1);
-            buffer.addVertex(matrix, CHAR_WIDTH, 0, 0).setColor(r, g, b, 1);
-            buffer.addVertex(matrix, 0, 0, 0).setColor(r, g, b, 1);
-
-            MeshData rb = buffer.buildOrThrow();
-            BufferUploader.drawWithShader(rb);
-
-            stack.popPose();
-
-            RenderSystem.depthMask(true);
+            // TODO(oc2-restore): draw the cursor quad with the 26.1 render pipeline (previously BufferUploader + position color shader).
         }
 
         private static boolean isPrintableCharacter(final char ch) {
@@ -1300,5 +1197,3 @@ public final class OldTerminal {
         }
     }
 }
-
-

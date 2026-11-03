@@ -40,7 +40,7 @@ public class ColorDataSerializer implements Serializer<Terminal.ColorData> {
             return new Terminal.ColorData();
         }
 
-        final int combined = deserializationVisitor.getIntOr("value", 0);
+        final int combined = deserializationVisitor.getInt("value");
         return toColorData(combined);
     }
 }

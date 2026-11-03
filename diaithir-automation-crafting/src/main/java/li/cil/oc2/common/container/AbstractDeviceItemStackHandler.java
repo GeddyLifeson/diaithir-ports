@@ -6,7 +6,12 @@ import li.cil.oc2.common.bus.AbstractItemDeviceBusElement;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.TagValueInput;
+import net.minecraft.world.level.storage.TagValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
@@ -34,17 +39,19 @@ public abstract class AbstractDeviceItemStackHandler extends FixedSizeItemStackH
     }
 
     @Override
-    public final CompoundTag serializeNBT(HolderLookup.Provider provider) {
+    public final void serialize(final ValueOutput output) {
         throw new UnsupportedOperationException("Use saveItems and saveDevices instead.");
     }
 
     @Override
-    public final void deserializeNBT(HolderLookup.Provider provider, final CompoundTag tag) {
+    public final void deserialize(final ValueInput input) {
         throw new UnsupportedOperationException("Use loadItems and loadDevices instead.");
     }
 
     public CompoundTag saveItems(HolderLookup.Provider provider) {
-        return super.serializeNBT(provider);
+        final TagValueOutput output = TagValueOutput.createWithContext(ProblemReporter.DISCARDING, provider);
+        super.serialize(output);
+        return output.buildResult();
     }
 
     public CompoundTag saveDevices(HolderLookup.Provider provider) {
@@ -52,7 +59,7 @@ public abstract class AbstractDeviceItemStackHandler extends FixedSizeItemStackH
     }
 
     public void loadItems(HolderLookup.Provider provider, final CompoundTag tag) {
-        super.deserializeNBT(provider, tag);
+        super.deserialize(TagValueInput.create(ProblemReporter.DISCARDING, provider, tag));
         for (int slot = 0; slot < getSlots(); slot++) {
             getBusElement().handleSlotContentsChanged(provider, slot, getStackInSlot(slot));
         }

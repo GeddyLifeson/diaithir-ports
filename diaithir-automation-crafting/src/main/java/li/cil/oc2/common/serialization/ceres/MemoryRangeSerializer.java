@@ -25,6 +25,6 @@ public final class MemoryRangeSerializer implements Serializer<MemoryRange> {
             return (MemoryRange) value;
         }
 
-        return MemoryRange.of(visitor.getLongOr("start", 0L), visitor.getLongOr("end", 0L));
+        return MemoryRange.of(visitor.getLong("start"), visitor.getLong("end"));
     }
 }

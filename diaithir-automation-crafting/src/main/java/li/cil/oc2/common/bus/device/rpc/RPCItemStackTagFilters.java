@@ -4,17 +4,20 @@ package li.cil.oc2.common.bus.device.rpc;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import li.cil.oc2.api.API;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.FileToIdConverter;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
+import net.minecraft.util.ExtraCodecs;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -43,21 +46,21 @@ public final class RPCItemStackTagFilters {
     ///////////////////////////////////////////////////////////////////
 
     @SubscribeEvent
-    public static void handleAddReloadListenerEvent(final AddReloadListenerEvent event) {
-        event.addListener(ReloadListener.INSTANCE);
+    public static void handleAddReloadListenerEvent(final AddServerReloadListenersEvent event) {
+        event.addListener(Identifier.fromNamespaceAndPath(API.MOD_ID, "item_tag_filters"), ReloadListener.INSTANCE);
     }
 
     ///////////////////////////////////////////////////////////////////
 
-    private static final class ReloadListener extends SimpleJsonResourceReloadListener {
+    private static final class ReloadListener extends SimpleJsonResourceReloadListener<JsonElement> {
         private static final Gson GSON = new GsonBuilder()
-            .registerTypeAdapter(Identifier.class, new Identifier.Serializer())
+            .registerTypeAdapter(Identifier.class, (JsonDeserializer<Identifier>) (json, type, context) -> Identifier.parse(json.getAsString()))
             .create();
 
         public static final ReloadListener INSTANCE = new ReloadListener();
 
         public ReloadListener() {
-            super(GSON, "item_tag_filters");
+            super(ExtraCodecs.JSON, FileToIdConverter.json("item_tag_filters"));
         }
 
         @Override

@@ -14,6 +14,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -79,24 +81,30 @@ public final class PciCardCageBlockEntity extends ModBlockEntity implements Tick
     }
 
     @Override
-    public void handleUpdateTag(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.handleUpdateTag(tag, registries);
+    public void handleUpdateTag(final ValueInput input) {
+        super.handleUpdateTag(input);
 
-        hasEnergy = tag.getBooleanOr(HAS_ENERGY_TAG_NAME, false);
+        hasEnergy = input.getBooleanOr(HAS_ENERGY_TAG_NAME, false);
     }
 
     @Override
-    protected void saveAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
+    protected void saveAdditional(final ValueOutput output) {
+        super.saveAdditional(output);
 
-        tag.put(ENERGY_TAG_NAME, energy.serializeNBT(registries));
+        output.putInt(ENERGY_TAG_NAME, energy.getEnergyStored());
     }
 
     @Override
-    public void loadAdditional(final CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
+    public void loadAdditional(final ValueInput input) {
+        super.loadAdditional(input);
 
-        energy.deserializeNBT(registries, tag.getCompoundOrEmpty(ENERGY_TAG_NAME));
+        final int storedEnergy = input.getIntOr(ENERGY_TAG_NAME, 0);
+        final int currentEnergy = energy.getEnergyStored();
+        if (storedEnergy > currentEnergy) {
+            energy.receiveEnergy(storedEnergy - currentEnergy, false);
+        } else if (storedEnergy < currentEnergy) {
+            energy.extractEnergy(currentEnergy - storedEnergy, false);
+        }
     }
 
 
