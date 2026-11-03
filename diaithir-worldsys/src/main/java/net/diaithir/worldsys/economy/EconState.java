@@ -9,6 +9,8 @@ import java.util.Map;
 public final class EconState {
     public final EconModel.State market = new EconModel.State();
     public final Map<String, Cur> cur = new HashMap<>();
+    /** A culture's own money design, set when it reforms. */
+    public final Map<String, String> own = new HashMap<>();
     public final Map<String, Des> des = new HashMap<>();
     public final Map<String, Bank> bank = new HashMap<>();
     public final Map<String, Bonds> bonds = new HashMap<>();

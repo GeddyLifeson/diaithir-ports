@@ -30,7 +30,30 @@ public final class EconWorld {
 
     public static EconSave save() { return EconSave.get(server.overworld()); }
     public static EconState state() { return save().state; }
-    public static void dirty() { save().setDirty(); }
+    public static volatile boolean tableDirty = true;
+    private static long tablePublished = Long.MIN_VALUE;
+
+    public static void dirty() { save().setDirty(); tableDirty = true; }
+
+    /** Writes the Codex price table now. */
+    public static void publishTable() {
+        try {
+            Double year = EconHooks.calendarYear.get();
+            String date = year != null ? String.valueOf(year) : "week " + state().week;
+            var table = EconTable.build(state(), data(), claims(), REGIONS, EconWorld::ctx, date, state().week);
+            EconTable.write(server.getWorldPath(net.minecraft.world.level.storage.LevelResource.ROOT), table);
+            tableDirty = false;
+            tablePublished = server.overworld().getGameTime();
+        } catch (java.io.IOException | RuntimeException e) {
+            System.out.println("[economy] price table not written: " + e);
+        }
+    }
+
+    /** From Age V a trade updates the table at once, at most every 5 seconds; earlier it is published weekly. */
+    public static void publishIfDue() {
+        if (!tableDirty || server.overworld().getGameTime() - tablePublished < 100) return;
+        for (EconClaims.Claim c : claims()) if (EconPolity.AGES.indexOf(ageOf(c.culture())) >= EconPolity.AGES.indexOf("V")) { publishTable(); return; }
+    }
 
     /** Territory, refreshed about once a game month: the engine's world simulation if it is loaded, else the historical towns as one culture. */
     public static List<EconClaims.Claim> claims() {
@@ -88,7 +111,7 @@ public final class EconWorld {
         EconData d = data();
         EconState st = state();
         String age = culture == null ? "VII" : ageOf(culture);
-        return EconMarket.ctx(st, d, culture, age, List.of(Map.of(), d.cultureMoney),
+        return EconMarket.ctx(st, d, culture, age, List.of(st.own, d.cultureMoney),
             id -> d.good(id) == null ? 1.0 : EconModel.mid(st.market, REGIONS, d::good, town, id, null, 0), EconWorld::cultureName);
     }
 

@@ -20,6 +20,7 @@ public final class EconomyFeature {
 
     public static void register(IEventBus modBus) {
         NeoForge.EVENT_BUS.addListener(ServerStartingEvent.class, e -> EconWorld.server(e.getServer()));
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, e -> EconWorld.publishTable());
         if (System.getProperty("diaithir.econselftest") != null)
             NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, e -> {
                 try { int w = selfTest(); System.out.println("[econselftest] done weeks=" + w); }
@@ -52,8 +53,10 @@ public final class EconomyFeature {
         var server = e.getServer();
         if (EconWorld.server() == null) EconWorld.server(server);
         long t = server.overworld().getGameTime();
+        if (t % 100 == 0) EconWorld.publishIfDue();
         if (t == 0 || t % WEEK_TICKS != 0) return;
         weekly();
+        EconWorld.publishTable();
     }
 
     /** Once a week, in the order the KubeJS economy runs it (econWeekly). */
@@ -74,7 +77,12 @@ public final class EconomyFeature {
             EconMarket.Ctx ctx = EconWorld.ctx(s.getValue(), culture);
             String age = EconWorld.ageOf(culture);
             if (ctx.kind() == EconPolity.Kind.COIN && ctx.did() != null) EconFrictions.wear(st, culture, ctx.did());
-            EconPolity.week(st, culture, ctx.did(), ctx.kind(), WEEKLY_BILL * st.cur(culture).ref, ctx.rate());
+            var cs = EconPolity.week(st, culture, ctx.did(), ctx.kind(), WEEKLY_BILL * st.cur(culture).ref, ctx.rate());
+            if (cs.reform) {
+                final String town = s.getValue();
+                String to = EconPolity.reform(st, culture, ctx.did(), age, data.designs, id -> EconModel.mid(st.market, EconWorld.REGIONS, data::good, town, id, null, 0), id -> data.good(id).base());
+                if (to != null) System.out.println("[economy] " + culture + " reforms its money from " + ctx.design().name() + " to " + data.designs.get(to).name());
+            }
             int ai = EconPolity.AGES.indexOf(age);
             if (ai >= EconPolity.AGES.indexOf("V")) EconBonds.week(st, culture);
             if (ai >= EconPolity.AGES.indexOf("III")) EconBank.week(st.bank(culture), age, ctx.rate());

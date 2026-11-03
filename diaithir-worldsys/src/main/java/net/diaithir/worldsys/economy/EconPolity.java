@@ -128,4 +128,21 @@ public final class EconPolity {
         if (s.peg == null) return false;
         return Math.pow(Math.max(1, s.ref) / Math.max(1, s.money), 0.4) * (1 - st.des(did).debase) >= 0.9;
     }
+
+    /** The culture moves to the commodity design whose staple has held its value best, and starts a fresh money. Returns the new design id or null. */
+    public static String reform(EconState st, String culture, String currentDid, String age, Map<String, EconData.DesignData> designs, Function<String, Double> midOf, Function<String, Double> baseOf) {
+        EconState.Cur s = st.cur(culture);
+        String best = null;
+        double bv = -1;
+        for (var e : designs.entrySet()) {
+            EconData.DesignData d = e.getValue();
+            if (d.design().commodityGood() == null || e.getKey().equals(currentDid) || !EconCompany.ageLe(d.age(), age)) continue;
+            double v = midOf.apply(d.design().commodityGood()) / baseOf.apply(d.design().commodityGood());
+            if (v > bv) { bv = v; best = e.getKey(); }
+        }
+        if (best == null) return null;
+        st.own.put(culture, best);
+        s.weak = 0; s.reform = false; s.rateRef = 0; s.prevRate = 0; s.did = "";
+        return best;
+    }
 }

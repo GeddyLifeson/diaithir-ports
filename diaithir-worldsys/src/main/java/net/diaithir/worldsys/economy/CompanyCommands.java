@@ -55,6 +55,34 @@ final class CompanyCommands {
 
     static LiteralArgumentBuilder<CommandSourceStack> build() {
         return Commands.literal("company")
+            .executes(c -> run(c, x -> {
+                EconState.Company co = EconWorld.state().company.get(key(x.p()));
+                if (co == null) { x.h().tell("No company yet. /company found <name> in a built office."); return; }
+                String unit = EconWorld.ctx(null, co.home).unit();
+                x.h().tell(co.name + (co.closed ? " (bankrupt)" : "") + ": " + (long) Math.floor(co.money) + " " + unit + ", owes " + (long) Math.floor(co.loan) + ".");
+                if (co.lines.isEmpty()) { x.h().tell("No lines. /company towns, /company vehicles, then /company line <from> <to> <vehicle>."); return; }
+                int i = 1;
+                for (EconState.Line l : co.lines) {
+                    EconCompany.Vehicle v = EconCompany.vehicle(l.vehicle);
+                    x.h().tell(i++ + ". " + l.from + " to " + l.to + ", " + l.n + " x " + (v == null ? l.vehicle : v.name()) + ": " + l.units + " units hauled over " + l.weeks
+                        + " weeks, profit " + (long) Math.floor(EconCompany.profit(l)) + (l.cargo != null ? ", now " + x.h().itemName(l.cargo) : "") + ".");
+                }
+            }))
+            .then(Commands.literal("towns").executes(c -> run(c, x -> {
+                EconState.Company co = EconWorld.state().company.get(key(x.p()));
+                String culture = co != null ? co.home : x.at() == null ? null : x.at().culture();
+                if (culture == null) { x.h().tell("Stand in a culture's town or found a company."); return; }
+                var ids = EconWorld.data().openIds(EconWorld.ageOf(culture));
+                EconState st = EconWorld.state();
+                for (EconClaims.Claim t : EconWorld.claims()) {
+                    if (!t.culture().equals(culture)) continue;
+                    var gaps = new java.util.ArrayList<java.util.Map.Entry<String, Double>>();
+                    for (String id : ids) gaps.add(java.util.Map.entry(id, EconCompany.gap(st, EconWorld.data()::good, t.town(), id)));
+                    String want = gaps.stream().filter(g -> g.getValue() < 0).sorted(java.util.Map.Entry.comparingByValue()).limit(3).map(g -> x.h().itemName(g.getKey()) + " " + (long) Math.floor(-g.getValue())).collect(java.util.stream.Collectors.joining(", "));
+                    String have = gaps.stream().filter(g -> g.getValue() > 0).sorted(java.util.Map.Entry.<String, Double>comparingByValue().reversed()).limit(3).map(g -> x.h().itemName(g.getKey()) + " " + (long) Math.floor(g.getValue())).collect(java.util.stream.Collectors.joining(", "));
+                    x.h().tell(t.town() + " (" + t.name() + "): wants " + (want.isEmpty() ? "nothing" : want) + "; has spare " + (have.isEmpty() ? "nothing" : have) + ".");
+                }
+            })))
             .then(Commands.literal("found").then(Commands.argument("name", StringArgumentType.string()).executes(c -> run(c, x -> found(x, StringArgumentType.getString(c, "name"))))))
             .then(amountCmd("fund", (x, co, n) -> {
                 if (!home(x, co, "Fund the company")) return;
