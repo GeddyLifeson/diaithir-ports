@@ -14,6 +14,9 @@ neoForge {
             server()
             programArgument '--nogui'
         }
+        client {
+            client()
+        }
     }
     mods { diaithiranimation { sourceSet(sourceSets.main) } }
 }
@@ -23,18 +26,15 @@ processResources {
     filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
 }
 
-sourceSets.test.java.srcDirs = []
 repositories {
     mavenCentral()
+    exclusiveContent {
+        forRepository { maven { url = 'https://api.modrinth.com/maven' } }
+        filter { includeGroup 'maven.modrinth' }
+    }
 }
 
 dependencies {
-    implementation "org.slf4j:slf4j-api:2.0.16"
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
-    testImplementation 'com.google.code.gson:gson:2.11.0'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
-}
-
-test {
-    useJUnitPlatform()
+    // Player Animation Library 1.2.8 (MIT), Modrinth version id QmAdOGjK = PlayerAnimationLibMerged-1.2.8+mc.26.1
+    implementation 'maven.modrinth:player-animation-library:QmAdOGjK'
 }
