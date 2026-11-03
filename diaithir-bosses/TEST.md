@@ -17,3 +17,5 @@ Update: cap_other_mods (default true) also caps other mods' rolls at max_combine
 
 ## Test 11-03 (planet bosses)
 Headless server boots, loads 26 profiles and 1,767 planet bosses. /bossesselftest: 1,767 profiles checked (phases, attacks, Age 1-8, entity type, look file, texture present) and the full boss test on one boss per body plan (21): ok=33941, 3 bad (Age-8 bosses have no later Age to scale into; test now skips that check). Not tested: a client (models and renderer never seen in game).
+
+Update 11-03 (stacked on #125): the 9 Ascendant bosses now use per-boss looks (kind look_*); planet lairs (structure planet_lair, one per ~18 chunks in every diaithir_planets dimension, altar picks a planet boss by position); Age 8 bosses tested for base health. /bossesselftest: 35 bosses, ok=34463 bad=0. A lair template places and holds an empty boss altar; lairs not yet generated in a real planet dimension.
