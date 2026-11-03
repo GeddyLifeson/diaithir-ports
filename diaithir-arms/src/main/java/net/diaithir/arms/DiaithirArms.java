@@ -167,6 +167,7 @@ public final class DiaithirArms {
                 ALL.put(s.id(), ITEMS.registerItem(s.id(), factory(s), () -> props(s)));
             }
         }
+        Roster.register(ITEMS, ALL);
         for (String id : DATA.parts()) {
             ALL.put(id, ITEMS.registerSimpleItem(id));
         }

@@ -14,3 +14,6 @@ Not tested: a real client (rendering of icons, worn armour layers, bow and cross
 ## Haulage and construction pack (diaithirtrucks)
 - `tools/IvPackCheck.java` against Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar and gson 2.10.1: tank pack ok=13 bad=0 (control), trucks pack ok=114 bad=0 (75 vehicle defs, 39 part defs), every model and texture file present, every `defaultPart` resolves.
 - Not tested: server boot with the pack, summon of the items, driving, hitching, cargo GUI, mounted cars, client rendering.
+
+## Roster
+`/armsselftest` after the roster: ok=108 bad=0 (30 roster items checked for weapon component, durability and reach), 0 ERROR lines (2026-11-03).
