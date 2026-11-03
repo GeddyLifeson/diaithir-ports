@@ -67,3 +67,12 @@ Offering feast comes from the kitchen module through the tag `#diaithirbosses:of
 
 ## Regenerate
 `python3 -I tools/gen_ascendant.py <vanilla skins dir>` (S0312 in Global-Repo). Additive: does not wipe `gen.py` output.
+
+## The Shardfall Gate (graph node `win.gate`)
+Block `shardfall_gate` (overworld, Age Rodos, unbreakable like the altars), rite in `data/diaithirbosses/gate.json`, code `Gate`, `ShardfallGateBlock`, test `GateTest`. Quests in `quests/gate.json`, chapter "The Shardfall Gate" in the Codex handbook (both made by `tools/gen_gate.py`). Reaches players as quests, not a switch. No lore text exists for the Gate in the Panscriptum or the library, so the text is only what the player must do.
+1. **Shut until** The Last Wheel is beaten and the rush is cleared (`AscendantData.beaten`).
+2. **Keystones:** the 16 inputs of `win.gate`. `rush.cleared` is read from boss data. The others are attested by their owner module with `Gate.attest(server, resource)` (or `/boss gate attest <resource>`), or offered: sneak-use the Gate with an item of tag `diaithir:progression/<resource>`. With DiaithirRPG's progression glue loaded, a fighter whose `win.gate` needs are met there (`ProgressionService.complete`) fills all of them.
+3. **Hour:** use the Gate at midnight (17000 to 19000).
+4. **Hold:** the Gate for 120 s against waves (scale with fighters), a widening ring of light; leave it alone and the step resets.
+5. **Opening:** stored once (`AscendantData`, key `shardfall_gate`), announced to the server, sound and light pillar, end credits for fighters within 64 blocks, `Gate.GateOpenedEvent` on the bus. `Gate.isOpen(server)` is the world's `win.modpack_complete`.
+`/boss gate` shows the state.

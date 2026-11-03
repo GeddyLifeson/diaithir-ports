@@ -65,6 +65,9 @@ public final class DiaithirBosses {
     public static final DeferredBlock<Block> OGHAM_STONE = BLOCKS.registerBlock("ogham_stone", OghamStoneBlock::new,
         () -> BlockBehaviour.Properties.of().strength(3.0F, 12.0F).lightLevel(s -> 4));
     public static final DeferredItem<net.minecraft.world.item.BlockItem> OGHAM_STONE_ITEM = ITEMS.registerSimpleBlockItem(OGHAM_STONE);
+    public static final DeferredBlock<Block> SHARDFALL_GATE = BLOCKS.registerBlock("shardfall_gate", ShardfallGateBlock::new,
+        () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).requiresCorrectToolForDrops().lightLevel(s -> 12));
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> SHARDFALL_GATE_ITEM = ITEMS.registerSimpleBlockItem(SHARDFALL_GATE);
     public static final DeferredItem<Item> BOSS_CATALYST = ITEMS.registerSimpleItem("boss_catalyst");
     public static final DeferredItem<Item> HOLLOW_CORE = ITEMS.registerSimpleItem("boss_hollow_core");
     public static final DeferredItem<Item> BOSS_CATALYST_T2 = ITEMS.registerSimpleItem("boss_catalyst_t2");
@@ -81,6 +84,7 @@ public final class DiaithirBosses {
             out.accept(ALTAR_ITEM.get());
             out.accept(ASCENDANT_ALTAR_ITEM.get());
             out.accept(OGHAM_STONE_ITEM.get());
+            out.accept(SHARDFALL_GATE_ITEM.get());
             out.accept(BOSS_CATALYST.get());
             out.accept(HOLLOW_CORE.get());
             out.accept(BOSS_CATALYST_T2.get());

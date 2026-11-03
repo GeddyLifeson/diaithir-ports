@@ -105,6 +105,7 @@ public final class BossEvents {
     public static void serverTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) {
         Rush.tick(e.getServer());
         Ritual.tick(e.getServer());
+        Gate.tick(e.getServer());
     }
 
     @SubscribeEvent

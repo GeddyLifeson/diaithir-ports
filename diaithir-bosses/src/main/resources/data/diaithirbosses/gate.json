@@ -1,0 +1,88 @@
+{
+ "_doc": "Shardfall Gate rite (graph node win.gate, plans/PROGRESSION.md). keystones = the 16 inputs of the node. An owner module attests its resource with Gate.attest(server, resource), or players offer an item of the tag (sneak-use with it in hand). 'auto' keystones are read from boss data. After the keystones: the hour step, then the defend step; then the Gate opens.",
+ "id": "diaithirbosses:shardfall_gate",
+ "min_age": 8,
+ "requires_kills": [
+  "last_wheel"
+ ],
+ "keystones": [
+  {
+   "resource": "resonator.shard",
+   "tag": "diaithir:progression/resonator.shard"
+  },
+  {
+   "resource": "research.pack_7",
+   "tag": "diaithir:progression/research.pack_7"
+  },
+  {
+   "resource": "focus.shard",
+   "tag": "diaithir:progression/focus.shard"
+  },
+  {
+   "resource": "feast.ages",
+   "tag": "diaithir:progression/feast.ages"
+  },
+  {
+   "resource": "farm.living_seed",
+   "tag": "diaithir:progression/farm.living_seed"
+  },
+  {
+   "resource": "creature.menagerie",
+   "tag": "diaithir:progression/creature.menagerie"
+  },
+  {
+   "resource": "rush.cleared",
+   "tag": "diaithir:progression/rush.cleared",
+   "auto": "rush"
+  },
+  {
+   "resource": "depot.global",
+   "tag": "diaithir:progression/depot.global"
+  },
+  {
+   "resource": "trans.orbital_link",
+   "tag": "diaithir:progression/trans.orbital_link"
+  },
+  {
+   "resource": "ship.shard_ark",
+   "tag": "diaithir:progression/ship.shard_ark"
+  },
+  {
+   "resource": "treasury.shard",
+   "tag": "diaithir:progression/treasury.shard"
+  },
+  {
+   "resource": "settle.capital",
+   "tag": "diaithir:progression/settle.capital"
+  },
+  {
+   "resource": "accord.rodos",
+   "tag": "diaithir:progression/accord.rodos"
+  },
+  {
+   "resource": "module.legendary",
+   "tag": "diaithir:progression/module.legendary"
+  },
+  {
+   "resource": "shard_land.access",
+   "tag": "diaithir:progression/shard_land.access"
+  },
+  {
+   "resource": "planner",
+   "tag": "diaithir:progression/planner"
+  }
+ ],
+ "hour": {
+  "from": 17000,
+  "to": 19000
+ },
+ "defend": {
+  "type": "defend",
+  "seconds": 120,
+  "mobs": [
+   "minecraft:enderman",
+   "minecraft:vindicator",
+   "minecraft:skeleton"
+  ]
+ }
+}

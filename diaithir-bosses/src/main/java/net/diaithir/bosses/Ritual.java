@@ -306,7 +306,7 @@ public final class Ritual {
         }
     }
 
-    private static void wave(ServerLevel sl, BlockPos altar, Step s, int players) {
+    static void wave(ServerLevel sl, BlockPos altar, Step s, int players) {
         int alive = sl.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.isAlive() && m.entityTags().contains(WAVE_TAG)).size();
         int n = Math.min(3 + players * 2, 16 - alive);
         for (int i = 0; i < n && !s.mobs.isEmpty(); i++) {
