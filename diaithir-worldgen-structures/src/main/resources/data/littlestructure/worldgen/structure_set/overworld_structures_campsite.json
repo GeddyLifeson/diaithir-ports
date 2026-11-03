@@ -1,0 +1,20 @@
+{
+  "structures": [
+    {
+      "structure": "littlestructure:campsite",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 45,
+    "separation": 32,
+    "spread_type": "linear",
+    "salt": 143896,
+    "predicate": "littlestructure:no_water",
+    "exclusion_zone": {
+      "other_set": "minecraft:villages",
+      "chunk_count": 4
+    }
+  }
+}

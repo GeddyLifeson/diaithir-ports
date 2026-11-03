@@ -1,5 +1,11 @@
 {
  "values": [
-  "diaithir_worldgen:nether_blackstone_ring"
+  "diaithir_worldgen:nether_blackstone_ring",
+  "ancient_ruins:frost_altar",
+  "ancient_ruins:mossy_maze",
+  "ancient_ruins:jungle_shrine",
+  "littlestructure:chorus_garden",
+  "littlestructure:monolith_ruin",
+  "littlestructure:ceremonial_statue"
  ]
 }
