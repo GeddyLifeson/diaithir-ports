@@ -1,0 +1,8 @@
+[
+ {
+  "id": "diaithircomputing:reckoner",
+  "name": "Reckoner",
+  "native": "àiremachd",
+  "text": "A block that runs a Lua program. Use a book and quill (or a written book) on it to load the program from its pages, then use it bare-handed, or give it a rising redstone signal, to run it. Programs can print, read redstone from each side, set the redstone it gives out on each side, list the items in a neighbouring chest, and read the time and weather. A program that runs past 200,000 instructions is stopped. Age VI."
+ }
+]

@@ -1,0 +1,5 @@
+{
+ "note": "Nearest equivalents only. A Reckoner has no turtle, monitor, disk or network parts yet, so those ids are not migrated.",
+ "blocks": {"computercraft:computer_normal": "diaithircomputing:reckoner", "computercraft:computer_advanced": "diaithircomputing:reckoner"},
+ "items": {"computercraft:computer_normal": "diaithircomputing:reckoner", "computercraft:computer_advanced": "diaithircomputing:reckoner"}
+}
