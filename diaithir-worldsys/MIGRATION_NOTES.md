@@ -1,0 +1,3 @@
+# Id migration notes
+
+`id_migrations.json` maps the old ids this module has an equivalent for (read from the replaced jars' item and block registries). Not mapped, because this module has no equivalent: Easy Villagers blocks and villager item, most Jewelry rings, necklaces and gems (only ruby, sapphire and topaz rings and gems), Utilitarian carpets, lamps, sand variants and tools, the other Crafting on a Stick stations, Simple Magnets demagnetization coils, Guard Villagers illusioner egg, and all FTB / Pufferfish data (quests, ranks, ultimine settings, skill trees), which live in world and config files, not registries. Those need a data conversion step owned by the quest and permission systems.

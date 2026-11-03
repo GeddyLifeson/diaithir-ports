@@ -1,1 +1,87 @@
-[]
+[
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:angel_block",
+  "new": "diaithirworldsys:angel_block"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:angel_block",
+  "new": "diaithirworldsys:angel_block"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:fluid_hopper",
+  "new": "diaithirworldsys:fluid_hopper"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:fluid_hopper",
+  "new": "diaithirworldsys:fluid_hopper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "utilitarian:redstone_clock",
+  "new": "diaithirworldsys:redstone_clock"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "utilitarian:redstone_clock",
+  "new": "diaithirworldsys:redstone_clock"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:ruby_ring",
+  "new": "diaithirworldsys:ruby_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:sapphire_ring",
+  "new": "diaithirworldsys:sapphire_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:topaz_ring",
+  "new": "diaithirworldsys:topaz_ring"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:ruby",
+  "new": "diaithirworldsys:ruby"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:sapphire",
+  "new": "diaithirworldsys:sapphire"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jewelry:topaz",
+  "new": "diaithirworldsys:topaz"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "simplemagnets:basicmagnet",
+  "new": "diaithirworldsys:iron_magnet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "simplemagnets:advancedmagnet",
+  "new": "diaithirworldsys:gold_magnet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "crafting_on_a_stick:crafting_table",
+  "new": "diaithirworldsys:pocket_bench"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "guardvillagers:guard_spawn_egg",
+  "new": "diaithirworldsys:village_guard_spawn_egg"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "explorerscompass:explorerscompass",
+  "new": "diaithirworldsys:wayfinder_compass"
+ }
+]
