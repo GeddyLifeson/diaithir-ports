@@ -681,9 +681,6 @@ source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/assembly_
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/charging_table.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/gate_interface.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/integration_table.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/jei/assembly_table_bc8.png,buildcraftsilicon,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/jei/integration_table_bc7.png,buildcraftsilicon,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/jei/programming_table_bc7.png,buildcraftsilicon,256,256,original-pending-retexture
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/packager.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/programming_table.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/stamper.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
