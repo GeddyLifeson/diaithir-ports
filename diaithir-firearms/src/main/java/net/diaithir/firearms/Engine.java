@@ -121,7 +121,7 @@ public final class Engine {
             float yaw = sp.getYRot() + (float) (sp.getRandom().nextGaussian() * spread * 0.5);
             float pitch = sp.getXRot() + (float) (sp.getRandom().nextGaussian() * spread * 0.5);
             Vec3 dir = Vec3.directionFromRotation(pitch, yaw);
-            hits += shoot(sp, lv, g, eye, dir, quiet, i == 0) ? 1 : 0;
+            hits += shoot(sp, lv, stack, g, eye, dir, quiet, i == 0) ? 1 : 0;
         }
         Vec3 muzzle = eye.add(Vec3.directionFromRotation(sp.getXRot(), sp.getYRot()).scale(0.8));
         lv.sendParticles(ParticleTypes.SMOKE, muzzle.x, muzzle.y - 0.15, muzzle.z, 2, 0.02, 0.02, 0.02, 0.0);
@@ -135,7 +135,7 @@ public final class Engine {
         return hits;
     }
 
-    private static boolean shoot(ServerPlayer sp, ServerLevel lv, Defs.Gun g, Vec3 eye, Vec3 dir, float quiet, boolean tracer) {
+    private static boolean shoot(ServerPlayer sp, ServerLevel lv, ItemStack stack, Defs.Gun g, Vec3 eye, Vec3 dir, float quiet, boolean tracer) {
         Vec3 end = eye.add(dir.scale(g.range()));
         BlockHitResult bh = lv.clip(new ClipContext(eye, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, sp));
         if (bh.getType() != HitResult.Type.MISS) end = bh.getLocation();
