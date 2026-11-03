@@ -78,6 +78,7 @@ public final class DiaithirCarts {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         Coupling.ATTACHMENTS.register(bus);
+        net.diaithir.freight.Freight.init(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); }
             if (e.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) ROAD_ITEMS.forEach(i -> e.accept(i.get()));

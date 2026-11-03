@@ -20,3 +20,6 @@ Clean-room rail mod for NeoForge 26.1.2, written from public descriptions of the
 - Test: `/diaithircarts routingtest` (owners) runs carts against and with one-way rails, named and unnamed carts on a destination rail, and a cart loader loading, unloading and switched off by redstone.
 - **Locking rail**: stops a cart and keeps it. Bare hand cycles the mode. Latch (amber) holds until the rail goes from unpowered to powered (a pulse; already powered on arrival does not release). Interlock (green) holds until the 32 rails ahead are clear of other carts. The routing test covers both.
 - Coke oven and blast furnace are not built here: they already exist in diaithir-wiretech (ports #163).
+
+## Freight
+Pallets, barrels, chests, crates, walkable shipping containers (20 and 40 ft, reefer, tank), loading docks and rift docks. See FREIGHT.md. Test: `/diaithircarts freighttest` (owners).
