@@ -7,6 +7,8 @@ import com.zigythebird.playeranim.api.PlayerAnimationAccess;
 import com.zigythebird.playeranim.api.PlayerAnimationFactory;
 import com.zigythebird.playeranimcore.animation.Animation;
 import com.zigythebird.playeranimcore.animation.RawAnimation;
+import com.zigythebird.playeranimcore.api.firstPerson.FirstPersonConfiguration;
+import com.zigythebird.playeranimcore.api.firstPerson.FirstPersonMode;
 import com.zigythebird.playeranimcore.enums.PlayState;
 import java.util.List;
 import java.util.Map;
@@ -55,8 +57,8 @@ public final class AnimClient {
 
     static void init(IEventBus bus) {
         bus.addListener(FMLClientSetupEvent.class, e -> e.enqueueWork(() -> {
-            PlayerAnimationFactory.ANIMATION_DATA_FACTORY.registerFactory(MAIN, 1500, a -> new PlayerAnimationController(a, (c, d, s) -> PlayState.STOP));
-            PlayerAnimationFactory.ANIMATION_DATA_FACTORY.registerFactory(OFF, 1400, a -> new PlayerAnimationController(a, (c, d, s) -> PlayState.STOP));
+            PlayerAnimationFactory.ANIMATION_DATA_FACTORY.registerFactory(MAIN, 1500, AnimClient::controller);
+            PlayerAnimationFactory.ANIMATION_DATA_FACTORY.registerFactory(OFF, 1400, AnimClient::controller);
         }));
         bus.addListener(RegisterKeyMappingsEvent.class, e -> {
             inspect = new KeyMapping("key." + DiaithirAnimation.ID + ".inspect", InputConstants.Type.KEYSYM, org.lwjgl.glfw.GLFW.GLFW_KEY_H,
@@ -64,6 +66,14 @@ public final class AnimClient {
             e.register(inspect);
         });
         NeoForge.EVENT_BUS.addListener(ClientTickEvent.Post.class, e -> tick());
+    }
+
+    /** First person: while a clip plays, the third-person arms and held items are shown so gun and swing clips are visible from the player's own view. */
+    private static PlayerAnimationController controller(Avatar a) {
+        var c = new PlayerAnimationController(a, (ctl, d, s) -> PlayState.STOP);
+        c.setFirstPersonConfiguration(new FirstPersonConfiguration(true, true, true, true));
+        c.setFirstPersonModeHandler(ctl -> ctl.isPlayingTriggeredAnimation() ? FirstPersonMode.THIRD_PERSON_MODEL : FirstPersonMode.NONE);
+        return c;
     }
 
     private static PlayerAnimationController layer(Avatar a, Identifier id) {

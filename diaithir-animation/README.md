@@ -14,5 +14,8 @@ MIT, original poses. Player animations on Player Animation Library 1.2.8 (MIT, r
 - Komrag (diaithir-combat) needs no change: it already swings the vanilla arm on the server, which the client animates.
 - diaithir-firearms: `AnimHook` (soft MethodHandle, no-op without this mod) calls fire, dry and reload. Separate PR stacked on #158.
 
+## Spells
+Class-skill poses are Spell Engine's own PAL clips; all 34 distinct animation ids used by the wizards, archers, skill tree and rpg_series spells exist in the shipped jars (checked by script). Paladins and rogues jars not checked yet.
+
 ## Not done
-First-person view of the clips, spell hit effects and projectile entity animations (VFX lanes), tank turret/driver (no tank exists yet), visual tuning of poses on a real client (angles follow vanilla ModelPart convention).
+Visual check of first person (enabled: third-person arms and items show while a clip plays), spell hit effects and projectile entity animations (VFX lanes), tank turret/driver (no tank exists yet), visual tuning of poses on a real client (angles follow vanilla ModelPart convention).

@@ -8,3 +8,9 @@ Dedicated server (gradle runServer + rcon), mod alone with PAL: boots with no er
 - tag resolution: iron sword/axe/pickaxe/shovel/hoe, bow, crossbow, shield, shears resolve to the right class (vanilla items only; the firearms jar was not loaded).
 
 Not tested: a real client (PAL layer registration, trigger and playback, pose look, first person, the H key, packets on a live connection), firearms ids in tags with the firearms jar loaded (hook compiles on #158), Komrag combo timing with real swings. Done in the coverage CSV means clip plus tag class exists and loads, not that the poses were seen in game.
+
+## With diaithir-firearms (#158 + hook PR) loaded
+Server with both jars and PAL: boots clean. `/firearmsselftest` then `/animselftest`: ok=461 bad=0 (own-gun ids resolve to the right classes and the own reload clip name), `clips_sent=16`, so the firearms hook reaches Anim from fire and reload. Packets were sent to a fake player; nothing was received by a real client.
+
+## Spell Engine spells
+Script check of the wizards, archers, skill_tree and spell_engine jars: all 34 animation ids used by their spells exist in the shipped player_animations. Paladins and rogues jars were not available to check.

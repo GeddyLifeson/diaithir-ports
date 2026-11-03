@@ -5,8 +5,13 @@ import net.neoforged.neoforge.network.PacketDistributor;
 
 /** Server API. Other modules call these (diaithir-firearms through a soft MethodHandle); everything is visual only. */
 public final class Anim {
+    private static int CALLS;
+    /** Clips sent since boot (selftest). */
+    public static int calls() { return CALLS; }
+
     /** Plays a named clip (see clips.json) on the player for everyone who sees them. */
     public static void play(ServerPlayer p, String clip) {
+        CALLS++;
         PacketDistributor.sendToPlayersTrackingEntityAndSelf(p, new Net.Play(p.getId(), clip));
     }
 

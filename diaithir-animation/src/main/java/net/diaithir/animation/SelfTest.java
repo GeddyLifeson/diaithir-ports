@@ -34,7 +34,7 @@ public final class SelfTest {
                 .requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
                 .executes(c -> {
                     run();
-                    String msg = "animselftest ok=" + ok + " bad=" + bad;
+                    String msg = "animselftest ok=" + ok + " bad=" + bad + " clips_sent=" + Anim.calls();
                     System.out.println("[animselftest] " + msg);
                     c.getSource().sendSuccess(() -> Component.literal(msg), false);
                     return bad == 0 ? 1 : 0;
@@ -89,6 +89,7 @@ public final class SelfTest {
             check(k != null && k.gun() && k.cls().equals(s.getValue()), s.getKey() + " -> " + (k == null ? "none" : k.cls()));
             if (k != null) check(k.clip(it.get(), "reload").startsWith("gun." + s.getKey().substring(s.getKey().indexOf(':') + 1)), "own reload clip for " + s.getKey());
         }
+        System.out.println("[animselftest] clips sent since boot: " + Anim.calls());
         System.out.println("[animselftest] clips checked " + clips + ", loaded " + all.size());
         LOG.forEach(System.out::println);
     }
