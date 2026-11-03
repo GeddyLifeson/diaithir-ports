@@ -1,0 +1,322 @@
+[
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:auroral_garden",
+"new": "diaithir_overworld_biomes:auroral_garden"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:bayou",
+"new": "diaithir_overworld_biomes:bayou"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:bog",
+"new": "diaithir_overworld_biomes:bog"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:cold_desert",
+"new": "diaithir_overworld_biomes:cold_desert"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:coniferous_forest",
+"new": "diaithir_overworld_biomes:coniferous_forest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:crag",
+"new": "diaithir_overworld_biomes:crag"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:crystalline_chasm",
+"new": "diaithir_overworld_biomes:crystalline_chasm"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:dead_forest",
+"new": "diaithir_overworld_biomes:dead_forest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:dryland",
+"new": "diaithir_overworld_biomes:dryland"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:dune_beach",
+"new": "diaithir_overworld_biomes:dune_beach"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:erupting_inferno",
+"new": "diaithir_overworld_biomes:erupting_inferno"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:field",
+"new": "diaithir_overworld_biomes:field"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:fir_clearing",
+"new": "diaithir_overworld_biomes:fir_clearing"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:floodplain",
+"new": "diaithir_overworld_biomes:floodplain"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:forested_field",
+"new": "diaithir_overworld_biomes:forested_field"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:fungal_jungle",
+"new": "diaithir_overworld_biomes:fungal_jungle"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:glowing_grotto",
+"new": "diaithir_overworld_biomes:glowing_grotto"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:gravel_beach",
+"new": "diaithir_overworld_biomes:gravel_beach"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:highland",
+"new": "diaithir_overworld_biomes:highland"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:hot_springs",
+"new": "diaithir_overworld_biomes:hot_springs"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:jade_cliffs",
+"new": "diaithir_overworld_biomes:jade_cliffs"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:lavender_field",
+"new": "diaithir_overworld_biomes:lavender_field"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:lush_desert",
+"new": "diaithir_overworld_biomes:lush_desert"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:lush_savanna",
+"new": "diaithir_overworld_biomes:lush_savanna"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:maple_woods",
+"new": "diaithir_overworld_biomes:maple_woods"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:marsh",
+"new": "diaithir_overworld_biomes:marsh"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:mediterranean_forest",
+"new": "diaithir_overworld_biomes:mediterranean_forest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:moor",
+"new": "diaithir_overworld_biomes:moor"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:muskeg",
+"new": "diaithir_overworld_biomes:muskeg"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:mystic_grove",
+"new": "diaithir_overworld_biomes:mystic_grove"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:old_growth_dead_forest",
+"new": "diaithir_overworld_biomes:old_growth_dead_forest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:old_growth_woodland",
+"new": "diaithir_overworld_biomes:old_growth_woodland"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:ominous_woods",
+"new": "diaithir_overworld_biomes:ominous_woods"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:orchard",
+"new": "diaithir_overworld_biomes:orchard"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:origin_valley",
+"new": "diaithir_overworld_biomes:origin_valley"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:overgrown_greens",
+"new": "diaithir_overworld_biomes:overgrown_greens"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:pasture",
+"new": "diaithir_overworld_biomes:pasture"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:prairie",
+"new": "diaithir_overworld_biomes:prairie"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:pumpkin_patch",
+"new": "diaithir_overworld_biomes:pumpkin_patch"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:rainforest",
+"new": "diaithir_overworld_biomes:rainforest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:redwood_forest",
+"new": "diaithir_overworld_biomes:redwood_forest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:rocky_rainforest",
+"new": "diaithir_overworld_biomes:rocky_rainforest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:rocky_shrubland",
+"new": "diaithir_overworld_biomes:rocky_shrubland"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:scrubland",
+"new": "diaithir_overworld_biomes:scrubland"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:seasonal_forest",
+"new": "diaithir_overworld_biomes:seasonal_forest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:shrubland",
+"new": "diaithir_overworld_biomes:shrubland"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:snowblossom_grove",
+"new": "diaithir_overworld_biomes:snowblossom_grove"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:snowy_coniferous_forest",
+"new": "diaithir_overworld_biomes:snowy_coniferous_forest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:snowy_fir_clearing",
+"new": "diaithir_overworld_biomes:snowy_fir_clearing"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:snowy_maple_woods",
+"new": "diaithir_overworld_biomes:snowy_maple_woods"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:spider_nest",
+"new": "diaithir_overworld_biomes:spider_nest"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:subtropics",
+"new": "diaithir_overworld_biomes:subtropics"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:tropics",
+"new": "diaithir_overworld_biomes:tropics"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:tundra",
+"new": "diaithir_overworld_biomes:tundra"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:undergrowth",
+"new": "diaithir_overworld_biomes:undergrowth"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:visceral_heap",
+"new": "diaithir_overworld_biomes:visceral_heap"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:volcanic_plains",
+"new": "diaithir_overworld_biomes:volcanic_plains"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:volcano",
+"new": "diaithir_overworld_biomes:volcano"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:wasteland",
+"new": "diaithir_overworld_biomes:wasteland"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:wasteland_steppe",
+"new": "diaithir_overworld_biomes:wasteland_steppe"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:wetland",
+"new": "diaithir_overworld_biomes:wetland"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:wintry_origin_valley",
+"new": "diaithir_overworld_biomes:wintry_origin_valley"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:withered_abyss",
+"new": "diaithir_overworld_biomes:withered_abyss"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "biomesoplenty:woodland",
+"new": "diaithir_overworld_biomes:woodland"
+}
+]

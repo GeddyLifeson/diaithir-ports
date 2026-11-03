@@ -1,0 +1,17 @@
+[
+{
+"registry": "minecraft:worldgen/biome",
+"old": "nullscape:crystal_peaks",
+"new": "diaithir_end:crystal_peaks"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "nullscape:shadowlands",
+"new": "diaithir_end:shadowlands"
+},
+{
+"registry": "minecraft:worldgen/biome",
+"old": "nullscape:void_barrens",
+"new": "diaithir_end:void_barrens"
+}
+]
