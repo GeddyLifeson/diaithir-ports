@@ -6,7 +6,7 @@ public record Fuel(String id, String name, Kind kind, String age, double mjPerUn
 
     public double joulesPerUnit() { return mjPerUnit * 1e6; }
 
-    /** Stored energy for a quantity (L for liquids, kg otherwise), in joules. */
+    /** Stored energy for a quantity (L for liquids, magic quanta for magic, kg otherwise), in joules. */
     public double energyJ(double quantity) { return quantity * joulesPerUnit(); }
 
     /** Mass of a quantity in kg. */
