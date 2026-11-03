@@ -180,16 +180,32 @@ public final class TurtleEntity extends ComputerEntity {
         if (in.isEmpty()) return fail("slot is empty");
         ItemStack out = in.split(Math.min(count, in.getCount()));
         BlockPos at = worldPosition.relative(d);
+        int put = Inventories.insert(level, at, d.getOpposite(), out);
+        wait = PLACE_TICKS;
+        if (put >= 0) {   // an inventory is there: what did not fit goes back into the slot
+            ItemStack rest = out.copyWithCount(out.getCount() - put);
+            if (!rest.isEmpty()) { if (in.isEmpty()) slots[selected - 1] = rest; else in.grow(rest.getCount()); }
+            setChanged();
+            return put > 0 ? LuaValue.TRUE : fail("it is full");
+        }
         ItemEntity e = new ItemEntity(level, at.getX() + 0.5, at.getY() + 0.5, at.getZ() + 0.5, out, 0, 0, 0);
         e.setDefaultPickUpDelay();
         level.addFreshEntity(e);
-        wait = PLACE_TICKS;
         setChanged();
         return LuaValue.TRUE;
     }
 
     private Varargs suck(Direction d) {
         BlockPos at = worldPosition.relative(d);
+        ItemStack got = Inventories.extractFirst(level, at, d.getOpposite(), 64);
+        if (got != null) {
+            if (got.isEmpty()) return fail("nothing to take");
+            ItemStack rest = store(got);
+            if (!rest.isEmpty()) Inventories.insert(level, at, d.getOpposite(), rest);
+            wait = PLACE_TICKS;
+            setChanged();
+            return LuaValue.TRUE;
+        }
         for (ItemEntity e : level.getEntitiesOfClass(ItemEntity.class, new AABB(at).inflate(0.4))) {
             ItemStack rest = store(e.getItem());
             if (rest.getCount() == e.getItem().getCount()) continue;

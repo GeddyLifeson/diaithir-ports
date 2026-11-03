@@ -61,3 +61,51 @@ w(f'data/{ID}/loot_table/blocks/turtle.json', {'type': 'minecraft:block', 'pools
 w('data/minecraft/tags/block/mineable/pickaxe.json', {'values': [f'{ID}:reckoner', f'{ID}:turtle']})
 w('data/minecraft/tags/block/needs_stone_tool.json', {'values': [f'{ID}:reckoner', f'{ID}:turtle']})
 w(f'data/{ID}/age_gate.json', {'reckoner': {'age': 6, 'items': [f'{ID}:reckoner']}, 'turtle': {'age': 7, 'items': [f'{ID}:turtle']}})
+
+# ---- Cable, Disk Drive, Disk
+def plain(name, base, accent):
+    random.seed(name)
+    im = Image.new('RGB', (64, 64))
+    for x in range(64):
+        for y in range(64):
+            g = base + random.randint(-5, 5); im.putpixel((x, y), (g, g + 3, g + 8))
+    for i in range(64):
+        for t in range(3):
+            for xy in ((i, t), (i, 63 - t), (t, i), (63 - t, i)): im.putpixel(xy, (36, 40, 48))
+    if accent:
+        for x in range(12, 52):
+            for y in range(26, 32): im.putpixel((x, y), (20, 20, 24))   # the disk slot
+        for x in range(46, 52): im.putpixel((x, 44), accent); im.putpixel((x, 45), accent)
+    p = os.path.join(R, f'assets/{ID}/textures/block/{name}.png'); os.makedirs(os.path.dirname(p), exist_ok=True); im.save(p)
+plain('cable', 110, None); plain('disk_drive', 74, (90, 220, 120))
+w(f'assets/{ID}/models/block/cable.json', {'parent': 'minecraft:block/block', 'textures': {'all': f'{ID}:block/cable', 'particle': f'{ID}:block/cable'},
+  'elements': [{'from': [4, 4, 4], 'to': [12, 12, 12], 'faces': {d: {'texture': '#all'} for d in ('north', 'east', 'south', 'west', 'up', 'down')}}]})
+w(f'assets/{ID}/blockstates/cable.json', {'variants': {'': {'model': f'{ID}:block/cable'}}})
+w(f'assets/{ID}/items/cable.json', {'model': {'type': 'minecraft:model', 'model': f'{ID}:block/cable'}})
+w(f'assets/{ID}/models/block/disk_drive.json', {'parent': 'minecraft:block/cube_all', 'textures': {'all': f'{ID}:block/disk_drive'}})
+w(f'assets/{ID}/blockstates/disk_drive.json', {'variants': {'': {'model': f'{ID}:block/disk_drive'}}})
+w(f'assets/{ID}/items/disk_drive.json', {'model': {'type': 'minecraft:model', 'model': f'{ID}:block/disk_drive'}})
+im = Image.new('RGBA', (32, 32), (0, 0, 0, 0))
+for x in range(4, 28):
+    for y in range(4, 28): im.putpixel((x, y), (60, 80, 140, 255))
+for x in range(10, 22):
+    for y in range(4, 12): im.putpixel((x, y), (200, 200, 210, 255))
+for x in range(9, 23):
+    for y in range(16, 26): im.putpixel((x, y), (235, 235, 225, 255))
+p = os.path.join(R, f'assets/{ID}/textures/item/disk.png'); os.makedirs(os.path.dirname(p), exist_ok=True); im.save(p)
+w(f'assets/{ID}/models/item/disk.json', {'parent': 'minecraft:item/generated', 'textures': {'layer0': f'{ID}:item/disk'}})
+w(f'assets/{ID}/items/disk.json', {'model': {'type': 'minecraft:model', 'model': f'{ID}:item/disk'}})
+lang.update({f'block.{ID}.cable': 'Cable', f'block.{ID}.disk_drive': 'Disk Drive', f'item.{ID}.disk': 'Disk'})
+json.dump(lang, open(lp, 'w'), indent=1)
+w(f'data/{ID}/recipe/cable.json', {'type': 'minecraft:crafting_shaped', 'category': 'redstone', 'pattern': ['III', 'RRR', 'III'],
+  'key': {'I': 'minecraft:iron_nugget', 'R': 'minecraft:redstone'}, 'result': {'id': f'{ID}:cable', 'count': 6}})
+w(f'data/{ID}/recipe/disk_drive.json', {'type': 'minecraft:crafting_shaped', 'category': 'redstone', 'pattern': ['III', 'IHI', 'IRI'],
+  'key': {'I': 'minecraft:iron_ingot', 'H': 'minecraft:hopper', 'R': 'minecraft:redstone'}, 'result': {'id': f'{ID}:disk_drive', 'count': 1}})
+w(f'data/{ID}/recipe/disk.json', {'type': 'minecraft:crafting_shapeless', 'category': 'redstone',
+  'ingredients': ['minecraft:paper', 'minecraft:redstone', 'minecraft:iron_nugget'], 'result': {'id': f'{ID}:disk', 'count': 1}})
+for n in ('cable', 'disk_drive'):
+    w(f'data/{ID}/loot_table/blocks/{n}.json', {'type': 'minecraft:block', 'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': f'{ID}:{n}'}], 'conditions': [{'condition': 'minecraft:survives_explosion'}]}]})
+w('data/minecraft/tags/block/mineable/pickaxe.json', {'values': [f'{ID}:reckoner', f'{ID}:turtle', f'{ID}:cable', f'{ID}:disk_drive']})
+w('data/minecraft/tags/block/needs_stone_tool.json', {'values': [f'{ID}:reckoner', f'{ID}:turtle', f'{ID}:disk_drive']})
+w(f'data/{ID}/age_gate.json', {'reckoner': {'age': 6, 'items': [f'{ID}:reckoner']}, 'turtle': {'age': 7, 'items': [f'{ID}:turtle']},
+  'cable': {'age': 6, 'items': [f'{ID}:cable']}, 'disk_drive': {'age': 6, 'items': [f'{ID}:disk_drive', f'{ID}:disk']}})

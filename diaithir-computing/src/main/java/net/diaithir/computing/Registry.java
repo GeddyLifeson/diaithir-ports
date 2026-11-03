@@ -31,12 +31,22 @@ final class Registry {
     static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TurtleEntity>> TURTLE_ENTITY =
             ENTITIES.register("turtle", () -> new BlockEntityType<>(TurtleEntity::new, TURTLE.get()));
 
+    static final DeferredBlock<CableBlock> CABLE = BLOCKS.registerBlock("cable", CableBlock::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1F).sound(SoundType.METAL).noOcclusion());
+    static final DeferredItem<net.minecraft.world.item.BlockItem> CABLE_ITEM = ITEMS.registerSimpleBlockItem("cable", CABLE);
+    static final DeferredBlock<DriveBlock> DRIVE = BLOCKS.registerBlock("disk_drive", DriveBlock::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3F, 9F).sound(SoundType.METAL).requiresCorrectToolForDrops());
+    static final DeferredItem<net.minecraft.world.item.BlockItem> DRIVE_ITEM = ITEMS.registerSimpleBlockItem("disk_drive", DRIVE);
+    static final DeferredItem<Item> DISK = ITEMS.registerItem("disk", Item::new, p -> p.stacksTo(1));
+    static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DriveEntity>> DRIVE_ENTITY =
+            ENTITIES.register("disk_drive", () -> new BlockEntityType<>(DriveEntity::new, DRIVE.get()));
+
     static void register(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         ENTITIES.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { e.accept(RECKONER_ITEM.get()); e.accept(TURTLE_ITEM.get()); }
+            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { e.accept(RECKONER_ITEM.get()); e.accept(TURTLE_ITEM.get()); e.accept(CABLE_ITEM.get()); e.accept(DRIVE_ITEM.get()); e.accept(DISK.get()); }
         });
     }
 

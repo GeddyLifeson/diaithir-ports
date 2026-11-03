@@ -21,16 +21,42 @@ final class Net {
         if (s != null) s.remove(e);
     }
 
-    /** Returns how many computers got it. */
+    /** Computers joined to this one through connected cables, at any distance. */
+    static Set<ComputerEntity> wired(ComputerEntity from) {
+        Set<ComputerEntity> out = new HashSet<>();
+        net.minecraft.world.level.Level level = from.getLevel();
+        java.util.ArrayDeque<net.minecraft.core.BlockPos> todo = new java.util.ArrayDeque<>();
+        Set<net.minecraft.core.BlockPos> seen = new HashSet<>();
+        net.minecraft.core.BlockPos origin = from.getBlockPos();
+        for (net.minecraft.core.Direction d : net.minecraft.core.Direction.values()) {
+            net.minecraft.core.BlockPos n = origin.relative(d);
+            if (level.getBlockState(n).is(Registry.CABLE.get()) && seen.add(n)) todo.add(n);
+        }
+        while (!todo.isEmpty() && seen.size() <= MAX_CABLES) {
+            net.minecraft.core.BlockPos c = todo.poll();
+            for (net.minecraft.core.Direction d : net.minecraft.core.Direction.values()) {
+                net.minecraft.core.BlockPos n = c.relative(d);
+                if (level.getBlockState(n).is(Registry.CABLE.get())) { if (seen.add(n)) todo.add(n); }
+                else if (level.getBlockEntity(n) instanceof ComputerEntity ce && ce != from) out.add(ce);
+            }
+        }
+        return out;
+    }
+
+    static final int MAX_CABLES = 512;
+
+    /** Returns how many computers got it: those within RANGE blocks, and those on the same cable network at any distance. */
     static int send(ComputerEntity from, int channel, String message) {
         Set<ComputerEntity> s = NODES.get(from.getLevel().dimension());
-        if (s == null) return 0;
+        Set<ComputerEntity> targets = new HashSet<>(wired(from));
+        if (s != null) for (ComputerEntity to : s) {
+            if (to != from && Math.sqrt(to.getBlockPos().distSqr(from.getBlockPos())) <= RANGE) targets.add(to);
+        }
         String msg = message.length() > MAX_CHARS ? message.substring(0, MAX_CHARS) : message;
         int n = 0;
-        for (ComputerEntity to : s) {
-            if (to == from || !to.listening.contains(channel)) continue;
+        for (ComputerEntity to : targets) {
+            if (!to.listening.contains(channel) || to.getLevel() != from.getLevel()) continue;
             double d = Math.sqrt(to.getBlockPos().distSqr(from.getBlockPos()));
-            if (d > RANGE) continue;
             if (to.inbox.size() < INBOX) { to.inbox.add(new Msg(channel, msg, (int) Math.round(d))); n++; }
         }
         return n;

@@ -18,3 +18,10 @@ Not built (CC: Tweaked parts without a replacement): large monitors and a termin
 Age gate in `data/diaithircomputing/age_gate.json` (Age VI), Codex text in `library-sync/diaithircomputing.json`, `id_migrations.json` for old worlds. `tools/gen_assets.py` (script S6845, module M0096) writes textures, models, lang, recipe, loot and tags.
 
 Test: `/diaithircomputing selftest` (owners). Builds a Reckoner beside a chest and runs programs: print, inventory totals, redstone, io/os/debug/require refused, an infinite loop stopped, a syntax error, NBT saving; then sleep, a sign monitor, wireless messages (channel, range) and a Wayfarer that walks two blocks, turns, digs, places, refuels, is blocked, and runs out of fuel. Prints PASS or what failed. Run headless: `./gradlew runServer` with rcon enabled.
+
+## Monitors, cables, disks, chests (added)
+- **Tall monitors**: `monitor.write(side, row, text)` rows 1-4 go to the sign beside the computer; more signs hung directly below it extend the screen, up to eight signs (32 rows). `monitor.rows(side)` counts rows, `monitor.clear(side)` blanks them.
+- **Cable** (`diaithircomputing:cable`): a run of up to 512 touching cables joins every computer touching it into one wired network; `net.send` reaches listeners on it at any distance, on top of the 64-block wireless range.
+- **Disk Drive and Disk**: use a Disk on a drive, sneak with an empty hand to take it out. `disk.present/list/read/write/delete/free(side, ...)`; 16 files, 8000 characters each, 32000 per disk; names are letters, digits, `_ . -`. Files live in the disk item, so they travel with it.
+- **Chests**: the Wayfarer's `drop` and `suck` move items into and out of a container in front of it (any item handler), else drop to or pick up from the world.
+- Self-test now also covers all of these.

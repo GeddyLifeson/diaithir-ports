@@ -10,5 +10,18 @@
   "items": [
    "diaithircomputing:turtle"
   ]
+ },
+ "cable": {
+  "age": 6,
+  "items": [
+   "diaithircomputing:cable"
+  ]
+ },
+ "disk_drive": {
+  "age": 6,
+  "items": [
+   "diaithircomputing:disk_drive",
+   "diaithircomputing:disk"
+  ]
  }
 }

@@ -107,6 +107,88 @@ final class SelfTest {
         level.setBlock(farAt, Blocks.AIR.defaultBlockState(), 3);
 
         turtle(server, level, fails, at.offset(0, 0, -20));
+        extras(server, level, fails, be, at);
+    }
+
+
+    /** Tall monitors, wired cables beyond wireless range, disk drives and chest transfer by a turtle. */
+    private static void extras(MinecraftServer server, ServerLevel level, List<String> fails, ReckonerEntity be, BlockPos at) {
+        // tall monitor: a stack of three signs gives 12 rows
+        BlockPos s1 = at.north();
+        for (int i = 0; i < 3; i++) level.setBlock(s1.below(i), Blocks.OAK_SIGN.defaultBlockState(), 3);
+        be.setProgram("print(monitor.rows('north')) print(monitor.write('north', 6, 'row six')) print(monitor.write('north', 13, 'x')) monitor.clear('north')");
+        be.run();
+        if (!be.log.get(0).equals("12") || !be.log.get(1).equals("true") || !be.log.get(2).startsWith("false")) fails.add("tall monitor " + be.log);
+        if (!(level.getBlockEntity(s1.below(1)) instanceof net.minecraft.world.level.block.entity.SignBlockEntity mid)) fails.add("no middle sign");
+        else if (!mid.getFrontText().getMessage(1, false).getString().isEmpty()) fails.add("monitor.clear left text");
+        be.setProgram("monitor.write('north', 6, 'row six')");
+        be.run();
+        if (level.getBlockEntity(s1.below(1)) instanceof net.minecraft.world.level.block.entity.SignBlockEntity mid2 && !mid2.getFrontText().getMessage(1, false).getString().equals("row six")) fails.add("row 6 not on the second sign");
+        for (int i = 0; i < 3; i++) level.setBlock(s1.below(i), Blocks.AIR.defaultBlockState(), 3);
+
+        // cables: a computer 70 blocks away hears one over a cable run
+        BlockPos farAt = at.offset(0, 0, 70);
+        level.getChunk(farAt);
+        for (int z = 1; z < 70; z++) { level.getChunk(at.offset(0, 0, z)); level.setBlock(at.offset(0, 0, z), Registry.CABLE.get().defaultBlockState(), 3); }
+        level.setBlock(farAt, Registry.RECKONER.get().defaultBlockState(), 3);
+        ReckonerEntity far = (ReckonerEntity) level.getBlockEntity(farAt);
+        be.setProgram("net.listen(9) print(net.wait())");
+        be.run();
+        far.setProgram("print(net.send(9, 'over the wire'))");
+        far.run();
+        be.tickProgram();
+        if (be.running() || !far.log.equals(List.of("1")) || be.log.isEmpty() || !be.log.get(0).contains("over the wire")) fails.add("cable send: " + far.log + " / " + be.log);
+        level.setBlock(at.offset(0, 0, 35), Blocks.AIR.defaultBlockState(), 3);   // break the run
+        far.setProgram("print(net.send(9, 'cut'))");
+        far.run();
+        if (!far.log.equals(List.of("0"))) fails.add("a cut cable still carried " + far.log);
+        for (int z = 1; z < 70; z++) level.setBlock(at.offset(0, 0, z), Blocks.AIR.defaultBlockState(), 3);
+        level.setBlock(farAt, Blocks.AIR.defaultBlockState(), 3);
+
+        // disk drive
+        BlockPos drive = at.south();
+        level.setBlock(drive, Registry.DRIVE.get().defaultBlockState(), 3);
+        be.setProgram("print(disk.present('south'))");
+        be.run();
+        if (!be.log.equals(List.of("false"))) fails.add("empty drive present " + be.log);
+        if (level.getBlockEntity(drive) instanceof DriveEntity de) de.disk = new ItemStack(Registry.DISK.get());
+        else { fails.add("no drive entity"); return; }
+        be.setProgram("print(disk.present('south')) print(disk.write('south', 'notes.txt', 'abc')) print(disk.write('south', 'bad name', 'x')) "
+                + "print(disk.read('south', 'notes.txt')) print(disk.list('south')[1]) print(disk.free('south')) print(disk.delete('south', 'notes.txt')) print(disk.read('south', 'notes.txt')) "
+                + "print(disk.write('south', 'big', string.rep('x', 9000)))");
+        be.run();
+        List<String> want = List.of("true", "true", "false\tfile names are 1 to 32 letters, digits, _ . -", "abc", "notes.txt", "31997", "true", "nil", "false\ta file holds at most 8000 characters");
+        if (!be.log.equals(want)) fails.add("disk output " + be.log);
+        be.setProgram("disk.write('south', 'keep', 'persisted')");
+        be.run();
+        net.minecraft.nbt.CompoundTag tag = level.getBlockEntity(drive).saveWithoutMetadata(server.registryAccess());
+        if (!tag.contains("disk")) fails.add("disk not saved");
+        else if (!Disks.files(((DriveEntity) level.getBlockEntity(drive)).disk).getStringOr("keep", "").equals("persisted")) fails.add("file lost");
+        be.setProgram("print(disk.present('west')) print(disk.read('west', 'x'))");
+        be.run();
+        if (!be.log.equals(List.of("false", "nil\tno disk drive on that side")) && !be.log.get(0).equals("false")) fails.add("no drive side " + be.log);
+        level.setBlock(drive, Blocks.AIR.defaultBlockState(), 3);
+
+        // turtle with a chest: drop into it, suck back out
+        BlockPos start = at.offset(0, 0, -40);
+        level.getChunk(start);
+        for (int dx = -2; dx <= 2; dx++) for (int dz = -3; dz <= 1; dz++) {
+            level.setBlock(start.offset(dx, 0, dz), Blocks.AIR.defaultBlockState(), 3);
+            level.setBlock(start.offset(dx, -1, dz), Blocks.STONE.defaultBlockState(), 3);
+        }
+        BlockPos chestAt = start.north();
+        level.setBlock(chestAt, Blocks.CHEST.defaultBlockState(), 3);
+        level.setBlock(start, Registry.TURTLE.get().defaultBlockState().setValue(TurtleBlock.FACING, Direction.NORTH), 3);
+        TurtleEntity t = (TurtleEntity) level.getBlockEntity(start);
+        t.slots[0] = new ItemStack(Items.IRON_INGOT, 10);
+        t.setProgram("print(turtle.drop('forward')) print(turtle.getCount(1)) turtle.select(2) print(turtle.suck('forward')) print(turtle.getCount(2))");
+        t.run();
+        for (int i = 0; i < 20 && t.running(); i++) t.tickProgram();
+        int inChest = 0;
+        if (level.getBlockEntity(chestAt) instanceof ChestBlockEntity c) for (int i = 0; i < c.getContainerSize(); i++) inChest += c.getItem(i).getCount();
+        if (inChest != 0 || t.slots[1].getCount() != 10 || !t.log.equals(List.of("true", "0", "true", "10"))) fails.add("chest transfer: chest=" + inChest + " log=" + t.log + " " + t.error);
+        level.setBlock(start, Blocks.AIR.defaultBlockState(), 3);
+        level.setBlock(chestAt, Blocks.AIR.defaultBlockState(), 3);
     }
 
     private static TurtleEntity find(ServerLevel level, BlockPos... where) {

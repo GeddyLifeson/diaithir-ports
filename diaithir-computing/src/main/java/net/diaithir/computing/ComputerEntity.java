@@ -163,6 +163,9 @@ public abstract class ComputerEntity extends BlockEntity {
                 return message(inbox.poll());
             case "net_send": return LuaValue.valueOf(Net.send(this, y.arg(2).checkint(), y.arg(3).tojstring()));
             case "inv_list": return inventoryList(Direction.from3DDataValue(y.arg(2).checkint()));
+            case "monitor_clear": return clearSigns(Direction.from3DDataValue(y.arg(2).checkint()));
+            case "monitor_rows": return LuaValue.valueOf(column(Direction.from3DDataValue(y.arg(2).checkint())).size() * 4);
+            case "disk": return Disks.op(level, worldPosition, y);
             case "monitor": return writeSign(Direction.from3DDataValue(y.arg(2).checkint()), y.arg(3).checkint(), y.arg(4).tojstring());
             default: return action(act, y);
         }
@@ -183,14 +186,36 @@ public abstract class ComputerEntity extends BlockEntity {
         return out;
     }
 
-    private Varargs writeSign(Direction d, int line, String text) {
-        if (line < 1 || line > 4) return LuaValue.varargsOf(LuaValue.FALSE, LuaValue.valueOf("line 1 to 4"));
-        if (!(level.getBlockEntity(worldPosition.relative(d)) instanceof SignBlockEntity sign)) return LuaValue.varargsOf(LuaValue.FALSE, LuaValue.valueOf("no sign on that side"));
+    /** The signs stacked downward from the one beside the computer on that side. */
+    private List<SignBlockEntity> column(Direction d) {
+        List<SignBlockEntity> out = new ArrayList<>();
+        for (BlockPos p = worldPosition.relative(d); out.size() < MAX_SIGNS && level.getBlockEntity(p) instanceof SignBlockEntity sb; p = p.below()) out.add(sb);
+        return out;
+    }
+
+    static final int MAX_SIGNS = 8;
+
+    private Varargs writeSign(Direction d, int row, String text) {
+        List<SignBlockEntity> signs = column(d);
+        if (signs.isEmpty()) return LuaValue.varargsOf(LuaValue.FALSE, LuaValue.valueOf("no sign on that side"));
+        if (row < 1 || row > signs.size() * 4) return LuaValue.varargsOf(LuaValue.FALSE, LuaValue.valueOf("row 1 to " + signs.size() * 4));
+        SignBlockEntity sign = signs.get((row - 1) / 4);
+        int line = (row - 1) % 4;
         String t = text.length() > 40 ? text.substring(0, 40) : text;
-        sign.updateText(st -> st.setMessage(line - 1, Component.literal(t)), true);
+        sign.updateText(st -> st.setMessage(line, Component.literal(t)), true);
         sign.setChanged();
         level.sendBlockUpdated(sign.getBlockPos(), sign.getBlockState(), sign.getBlockState(), 3);
         return LuaValue.TRUE;
+    }
+
+    private Varargs clearSigns(Direction d) {
+        List<SignBlockEntity> signs = column(d);
+        for (SignBlockEntity sb : signs) {
+            sb.updateText(st -> { for (int i = 0; i < 4; i++) st = st.setMessage(i, Component.empty()); return st; }, true);
+            sb.setChanged();
+            level.sendBlockUpdated(sb.getBlockPos(), sb.getBlockState(), sb.getBlockState(), 3);
+        }
+        return LuaValue.valueOf(signs.size() * 4);
     }
 
     /** The api every program gets. Reads come from values copied before the slice; anything that touches the world yields. */
@@ -233,7 +258,21 @@ public abstract class ComputerEntity extends BlockEntity {
                 return g.yield(LuaValue.varargsOf(new LuaValue[]{LuaValue.valueOf("monitor"), LuaValue.valueOf(side(a.arg(1))), a.arg(2), LuaValue.valueOf(a.arg(3).tojstring())}));
             }
         });
+        monitor.set("clear", new OneArgFunction() {
+            @Override public LuaValue call(LuaValue side) { return g.yield(LuaValue.varargsOf(LuaValue.valueOf("monitor_clear"), LuaValue.valueOf(side(side)))).arg1(); }
+        });
+        monitor.set("rows", new OneArgFunction() {
+            @Override public LuaValue call(LuaValue side) { return g.yield(LuaValue.varargsOf(LuaValue.valueOf("monitor_rows"), LuaValue.valueOf(side(side)))).arg1(); }
+        });
         g.set("monitor", monitor);
+
+        LuaTable disk = new LuaTable();   // disk.present/list/read/write/delete(side, ...): the disk drive beside the computer
+        for (String op : new String[]{"present", "list", "read", "write", "delete", "free"}) disk.set(op, new VarArgFunction() {
+            @Override public Varargs invoke(Varargs a) {
+                return g.yield(LuaValue.varargsOf(new LuaValue[]{LuaValue.valueOf("disk"), LuaValue.valueOf(op), LuaValue.valueOf(side(a.arg(1))), a.arg(2), a.arg(3)}));
+            }
+        });
+        g.set("disk", disk);
 
         LuaTable net = new LuaTable();
         net.set("listen", new OneArgFunction() {
