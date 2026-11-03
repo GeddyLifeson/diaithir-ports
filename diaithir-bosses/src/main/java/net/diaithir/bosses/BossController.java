@@ -205,12 +205,25 @@ public final class BossController {
 
     private static boolean fights(ServerPlayer p) { return !p.isCreative() && !p.isSpectator(); }
 
+    // ------------------------------------------------------------------ trails (for rewind)
+    /** One position per second for the last six seconds, per fighter. */
+    private final Map<UUID, java.util.ArrayDeque<Vec3>> trails = new ConcurrentHashMap<>();
+
+    private void recordTrails(List<ServerPlayer> ps) {
+        for (ServerPlayer p : ps) {
+            var q = trails.computeIfAbsent(p.getUUID(), k -> new java.util.ArrayDeque<>());
+            q.addLast(p.position());
+            while (q.size() > 6) q.removeFirst();
+        }
+    }
+
     // ------------------------------------------------------------------ tick
     public void tick() {
         if (dead || !mob.isAlive()) return;
         ticks++;
         List<ServerPlayer> ps = participants();
         if (ticks % 5 == 0) refreshBar(ps);
+        if (ticks % 20 == 0) recordTrails(ps);
         bar.setProgress(Math.clamp(mob.getHealth() / mob.getMaxHealth(), 0.0F, 1.0F));
         mob.setPersistenceRequired();
         tickZones();
@@ -393,7 +406,7 @@ public final class BossController {
         double k = 1.0 - (double) telegraph / Math.max(1, a.telegraph);
         Vec3 p = mob.position().add(0, 0.15, 0);
         switch (a.type) {
-            case "slam", "wave", "leap", "roar", "cloud" -> {
+            case "slam", "wave", "leap", "roar", "cloud", "gravity_well", "rewind" -> {
                 ring(ParticleTypes.CRIT, p, a.radius, (int) Math.min(64, a.radius * 8));
                 ring(ParticleTypes.FLAME, p, a.radius * k, (int) Math.min(40, a.radius * 5));
             }
@@ -481,6 +494,37 @@ public final class BossController {
             case "heal" -> {
                 mob.heal((float) (mob.getMaxHealth() * a.amount));
                 level.sendParticles(ParticleTypes.HAPPY_VILLAGER, mob.getX(), mob.getY() + 1, mob.getZ(), 30, 1, 1, 1, 0.1);
+                finish(a);
+            }
+            case "gravity_well" -> {
+                // the well forms where the boss stands: everyone in range is dragged toward it and hurt on the way
+                for (ServerPlayer p : ps) {
+                    if (p.distanceToSqr(mob) > a.radius * a.radius) continue;
+                    Vec3 d = mob.position().subtract(p.position());
+                    Vec3 pull = new Vec3(d.x, 0.15, d.z).normalize().scale(Math.min(2.5, a.power * (0.5 + d.length() / a.radius)));
+                    p.setDeltaMovement(pull);
+                    p.hurtMarked = true;
+                    damage(p, a.damage);
+                    applyEffect(p, "minecraft:slowness", 40, 1);
+                }
+                ring(ParticleTypes.REVERSE_PORTAL, mob.position().add(0, 0.2, 0), a.radius * 0.5, 32);
+                sound(SoundEvents.ENDER_DRAGON_GROWL, 1.2F, 0.6F);
+                finish(a);
+            }
+            case "rewind" -> {
+                // everyone in range is put back where they stood about five seconds ago
+                for (ServerPlayer p : ps) {
+                    if (p.distanceToSqr(mob) > a.radius * a.radius) continue;
+                    var q = trails.get(p.getUUID());
+                    if (q == null || q.isEmpty()) continue;
+                    Vec3 back = q.peekFirst();
+                    level.sendParticles(ParticleTypes.REVERSE_PORTAL, p.getX(), p.getY() + 1, p.getZ(), 30, 0.3, 0.6, 0.3, 0.2);
+                    p.teleportTo(back.x, back.y, back.z);
+                    damage(p, a.damage);
+                    applyEffect(p, "minecraft:nausea", 100, 0);
+                    level.sendParticles(ParticleTypes.REVERSE_PORTAL, back.x, back.y + 1, back.z, 30, 0.3, 0.6, 0.3, 0.2);
+                }
+                sound(SoundEvents.CHORUS_FRUIT_TELEPORT, 1.6F, 0.6F);
                 finish(a);
             }
             case "roar" -> {

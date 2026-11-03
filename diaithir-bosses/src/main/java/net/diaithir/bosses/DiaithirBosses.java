@@ -67,6 +67,8 @@ public final class DiaithirBosses {
     public static final DeferredItem<net.minecraft.world.item.BlockItem> OGHAM_STONE_ITEM = ITEMS.registerSimpleBlockItem(OGHAM_STONE);
     public static final DeferredItem<Item> BOSS_CATALYST = ITEMS.registerSimpleItem("boss_catalyst");
     public static final DeferredItem<Item> HOLLOW_CORE = ITEMS.registerSimpleItem("boss_hollow_core");
+    public static final DeferredItem<Item> BOSS_CATALYST_T2 = ITEMS.registerSimpleItem("boss_catalyst_t2");
+    public static final DeferredItem<Item> BOSS_SOVEREIGN_CORE = ITEMS.registerSimpleItem("boss_sovereign_core");
     public static final DeferredItem<Item> AGESHARD = ITEMS.registerSimpleItem("ageshard");
     public static final DeferredItem<Item> RUSH_LAUREL = ITEMS.registerSimpleItem("rush_laurel");
     public static final DeferredItem<Item> TOKEN = ITEMS.registerSimpleItem("champion_token");
@@ -83,6 +85,8 @@ public final class DiaithirBosses {
             out.accept(OGHAM_STONE_ITEM.get());
             out.accept(BOSS_CATALYST.get());
             out.accept(HOLLOW_CORE.get());
+            out.accept(BOSS_CATALYST_T2.get());
+            out.accept(BOSS_SOVEREIGN_CORE.get());
             out.accept(AGESHARD.get());
             out.accept(RUSH_LAUREL.get());
             out.accept(TOKEN.get());

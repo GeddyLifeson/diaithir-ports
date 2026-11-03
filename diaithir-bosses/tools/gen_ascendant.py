@@ -88,16 +88,18 @@ KIT = {
                        ph=(["cinder_fan", "scorch_ring"], ["cinder_fan", "scorch_ring", "smoulder"], ["cinder_fan", "scorch_ring", "smoulder", "pyre_strike"]),
                        fire_immune=True),
     "dusk_wyrm": dict(atk=lambda a: {"dive": charge(a, 1.2, 20, 90, 16), "gloom_breath": cloud(a, "minecraft:darkness", 9, 28, 150, 140, 0),
-                                     "wing_gale": wave(a, 14, 0.9, 30, 110), "night_bolt": bolt(a, 5, 0.85, 26, 85, effect="minecraft:wither", rng=40), "eclipse": roar(a, 18, "minecraft:blindness", 140, 0, 36, 220)},
-                      ph=(["dive", "night_bolt"], ["dive", "night_bolt", "wing_gale", "gloom_breath"], ["dive", "night_bolt", "wing_gale", "gloom_breath", "eclipse"])),
+                                     "wing_gale": wave(a, 14, 0.9, 30, 110), "night_bolt": bolt(a, 5, 0.85, 26, 85, effect="minecraft:wither", rng=40), "eclipse": roar(a, 18, "minecraft:blindness", 140, 0, 36, 220),
+                                     "well": G["A"]("gravity_well", telegraph=44, cooldown=200, radius=16, damage=round(G["DMG"][a] * 0.5), power=1.1)},
+                      ph=(["dive", "night_bolt"], ["dive", "night_bolt", "wing_gale", "gloom_breath"], ["dive", "night_bolt", "wing_gale", "gloom_breath", "eclipse", "well"])),
     "rootbreaker": dict(atk=lambda a: {"maul": slam(a, 7, 1.2, 30, 85), "stampede": charge(a, 1.3, 20, 90, 18), "thorn_burst": bolt(a, 6, 0.7, 26, 85, effect="minecraft:poison", rng=32),
                                        "quake": wave(a, 13, 1.0, 36, 130), "sprout": summon(a, "minecraft:vindicator", 3, 6, 44, 240)},
                         ph=(["maul", "stampede"], ["maul", "stampede", "thorn_burst", "quake"], ["maul", "stampede", "thorn_burst", "quake", "sprout"])),
     "last_wheel": dict(atk=lambda a: {"spoke_cut": slam(a, 8, 1.2, 26, 75), "turn": charge(a, 1.3, 18, 80, 18), "age_bolt": bolt(a, 7, 0.8, 24, 80, rng=40),
                                       "season": cloud(a, "minecraft:wither", 9, 24, 140, 120, 1), "recall": summon(a, "minecraft:vindicator", 3, 6, 40, 220),
-                                      "stop_time": roar(a, 20, "minecraft:slowness", 160, 2, 40, 240), "year_end": lightning(a, 6, 1.1, 36, 120)},
+                                      "stop_time": roar(a, 20, "minecraft:slowness", 160, 2, 40, 240),
+                                      "rewind": G["A"]("rewind", telegraph=40, cooldown=260, radius=24, damage=round(G["DMG"][a] * 0.4)), "year_end": lightning(a, 6, 1.1, 36, 120)},
                        ph=(["spoke_cut", "turn", "age_bolt"], ["spoke_cut", "turn", "age_bolt", "season", "recall"],
-                           ["spoke_cut", "turn", "age_bolt", "season", "recall", "stop_time", "year_end"])),
+                           ["spoke_cut", "turn", "age_bolt", "season", "recall", "stop_time", "year_end", "rewind"])),
 }
 LOOT_DROP = {   # signature drop per boss: existing items only; new materials arrive with the worldgen module (see docs/ASCENDANT.md)
     "antlered_hollow": "minecraft:netherite_scrap", "cauldron_heart": "minecraft:echo_shard", "tide_reaver": "minecraft:heart_of_the_sea",
@@ -312,7 +314,8 @@ print("rites:", len(RITE))
 
 # ---- boss materials (names fixed with plans/PROGRESSION.md): catalyst (tier I+), hollow core (tier II+), ageshard (The Last Wheel only)
 from PIL import ImageDraw
-MAT = {"boss_catalyst": ("Boss catalyst", (90, 200, 170), "VII"), "boss_hollow_core": ("Hollow core", (170, 120, 230), "Rodos"), "ageshard": ("Ageshard", (250, 220, 110), "Rodos")}
+MAT = {"boss_catalyst": ("Boss catalyst", (90, 200, 170), "VII"), "boss_hollow_core": ("Hollow core", (170, 120, 230), "Rodos"), "boss_catalyst_t2": ("Greater boss catalyst", (70, 170, 230), "Rodos"), "boss_sovereign_core": ("Sovereign core", (230, 140, 60), "Rodos"),
+       "ageshard": ("Ageshard", (250, 220, 110), "Rodos")}
 for mid, (label, col, age) in MAT.items():
     im = Image.new("RGBA", (16, 16), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     d.polygon([(8, 1), (13, 8), (8, 15), (3, 8)], fill=col + (255,), outline=tuple(v // 3 for v in col) + (255,)); d.line([(8, 3), (8, 13)], fill=(255, 255, 255, 140))
@@ -325,7 +328,10 @@ W(os.path.join(AS, "lang/en_us.json"), lang); W(os.path.join(ROOT, "age_gates.js
 for bid, tier, age_, _ in new_ids:
     pp = R(os.path.join(DA, "boss", bid + ".json"))
     pp["loot"] = [l for l in pp["loot"] if not l["item"].startswith(NS + ":")]
-    pp["loot"].append(L(NS + ":boss_catalyst", 1, 2, 7, 1.0, 0)) if tier == 1 else pp["loot"].append(L(NS + ":boss_hollow_core", 1, tier - 1, 8, 1.0, 0))
+    if tier == 1: pp["loot"].append(L(NS + ":boss_catalyst", 1, 2, 7, 1.0, 0))
+    pp["loot"].append(L(NS + ":boss_hollow_core", 1, tier, 7, 1.0, 0))
+    if tier <= 2: pp["loot"].append(L(NS + ":boss_catalyst_t2", 1, 2, 7, 1.0, 0))
+    if bid == "foundry_sovereign": pp["loot"].append(L(NS + ":boss_sovereign_core", 1, 1, 8, 1.0, 0))
     if bid == "last_wheel": pp["loot"].append(L(NS + ":ageshard", 2, 3, 8, 1.0, 0))
     W(os.path.join(DA, "boss", bid + ".json"), pp)
 W(os.path.join(DA, "tags/item/offering_feast.json"), {"values": ["minecraft:cake", "minecraft:pumpkin_pie", "minecraft:suspicious_stew", "minecraft:rabbit_stew",

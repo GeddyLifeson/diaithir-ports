@@ -81,7 +81,9 @@
   "diaithirbosses:ogham_stone": "VII",
   "diaithirbosses:boss_catalyst": "VII",
   "diaithirbosses:boss_hollow_core": "Rodos",
-  "diaithirbosses:ageshard": "Rodos"
+  "diaithirbosses:ageshard": "Rodos",
+  "diaithirbosses:boss_catalyst_t2": "Rodos",
+  "diaithirbosses:boss_sovereign_core": "Rodos"
  },
  "entities": {
   "diaithirbosses:tribal_chief": "I",
