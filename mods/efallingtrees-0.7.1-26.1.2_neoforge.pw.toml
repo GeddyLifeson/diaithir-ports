@@ -1,0 +1,12 @@
+name = "enhanced-falling-trees"
+filename = "efallingtrees-0.7.1-26.1.2+neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/UJMd74i4/versions/zaKr0AM3/efallingtrees-0.7.1-26.1.2%2Bneoforge.jar"
+hash-format = "sha256"
+hash = "e152d7eaba4bc876b059ec1349d90b47c143d74309b5d124b4599450a92e25ab"
+
+[update.modrinth]
+mod-id = "UJMd74i4"
+version = "zaKr0AM3"
