@@ -1,0 +1,173 @@
+{
+"replace": false,
+"values": [
+{
+"id": "aether_ii:large_moa_saddlebag",
+"required": false
+},
+{
+"id": "aether_ii:moa_saddle",
+"required": false
+},
+{
+"id": "aether_ii:moa_saddlebag",
+"required": false
+},
+{
+"id": "apothic_enchanting:ender_lead",
+"required": false
+},
+{
+"id": "apothic_enchanting:flimsy_ender_lead",
+"required": false
+},
+{
+"id": "apothic_enchanting:occult_ender_lead",
+"required": false
+},
+{
+"id": "geore:budding_lead",
+"required": false
+},
+{
+"id": "jaopca:neovitae_fragments.lead",
+"required": false
+},
+{
+"id": "jaopca:neovitae_gravels.lead",
+"required": false
+},
+{
+"id": "jaopca:oritech_clumps.lead",
+"required": false
+},
+{
+"id": "jaopca:oritech_gems.lead",
+"required": false
+},
+{
+"id": "jaopca:oritech_small_clumps.lead",
+"required": false
+},
+{
+"id": "mekanism:block_lead",
+"required": false
+},
+{
+"id": "mekanism:block_raw_lead",
+"required": false
+},
+{
+"id": "mekanism:clump_lead",
+"required": false
+},
+{
+"id": "mekanism:crystal_lead",
+"required": false
+},
+{
+"id": "mekanism:dirty_dust_lead",
+"required": false
+},
+{
+"id": "mekanism:dust_lead",
+"required": false
+},
+{
+"id": "mekanism:ingot_lead",
+"required": false
+},
+{
+"id": "mekanism:nugget_lead",
+"required": false
+},
+{
+"id": "mekanism:raw_lead",
+"required": false
+},
+{
+"id": "mekanism:shard_lead",
+"required": false
+},
+{
+"id": "minecraft:black_harness",
+"required": false
+},
+{
+"id": "minecraft:blue_harness",
+"required": false
+},
+{
+"id": "minecraft:brown_harness",
+"required": false
+},
+{
+"id": "minecraft:cyan_harness",
+"required": false
+},
+{
+"id": "minecraft:gray_harness",
+"required": false
+},
+{
+"id": "minecraft:green_harness",
+"required": false
+},
+{
+"id": "minecraft:lead",
+"required": false
+},
+{
+"id": "minecraft:light_blue_harness",
+"required": false
+},
+{
+"id": "minecraft:light_gray_harness",
+"required": false
+},
+{
+"id": "minecraft:lime_harness",
+"required": false
+},
+{
+"id": "minecraft:magenta_harness",
+"required": false
+},
+{
+"id": "minecraft:orange_harness",
+"required": false
+},
+{
+"id": "minecraft:pink_harness",
+"required": false
+},
+{
+"id": "minecraft:purple_harness",
+"required": false
+},
+{
+"id": "minecraft:red_harness",
+"required": false
+},
+{
+"id": "minecraft:saddle",
+"required": false
+},
+{
+"id": "minecraft:white_harness",
+"required": false
+},
+{
+"id": "minecraft:yellow_harness",
+"required": false
+},
+{
+"id": "modern_industrialization:raw_lead",
+"required": false
+},
+{
+"id": "theurgy:alchemical_sulfur_lead",
+"required": false
+}
+]
+}

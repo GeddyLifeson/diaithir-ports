@@ -1,0 +1,64 @@
+{
+ "general": {
+  "type": "engine_car",
+  "name": "Mack Type 75 pumper Engine",
+  "materialLists": [
+   [
+    "minecraft:iron_block:0:2"
+   ],
+   [
+    "minecraft:piston:0:2"
+   ]
+  ]
+ },
+ "engine": {
+  "type": "NORMAL",
+  "isAutomatic": true,
+  "fuelType": "gasoline",
+  "fuelConsumption": 0.5,
+  "maxRPM": 4500,
+  "maxSafeRPM": 4185,
+  "idleRPM": 700,
+  "startRPM": 500,
+  "stallRPM": 350,
+  "revlimitRPM": 4725,
+  "starterPower": 6,
+  "gearRatios": [
+   -3.5,
+   0.0,
+   3.6,
+   2.1,
+   1.4,
+   1.0
+  ],
+  "upShiftRPM": [
+   3150,
+   3150,
+   3150,
+   3150
+  ],
+  "downShiftRPM": [
+   1350,
+   1350,
+   1350,
+   1350
+  ],
+  "shiftSpeed": 10,
+  "clutchTime": 12,
+  "revResistance": 8,
+  "heatingCoefficient": 0.4,
+  "coolingCoefficient": 0.6,
+  "engineWearFactor": 0.3
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Mack Type 75 pumper Engine",
+   "modelName": "vehicle_engine",
+   "textureName": "vehicle_engine",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}
