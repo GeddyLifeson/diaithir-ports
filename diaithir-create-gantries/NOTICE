@@ -1,0 +1,11 @@
+Gantry split (diaithir-create-gantries)
+
+Behaviour folded from Create: Extended Gantries 1.0.0 by MR-Spagetty (https://github.com/MR-Spagetty/create-extended-gantries,
+commit c31ddb67e8fc38f001f1a3991981a98645dfac88), licensed GPL-3.0-only (LICENSE-ExtendedGantries-GPL-3.0 is the
+upstream licence text). The upstream works on Create 6.0.x for Minecraft 1.20.1/1.21.1 with Registrate; this module is a
+fresh implementation of the same behaviour on the Create port in this repository (branch claude/create, mod id
+diaithir_create), using NeoForge's BlockEntityTypeAddBlocksEvent instead of a second block entity type and
+MixinExtras wraps in place of upstream's redirects. No upstream models or textures are used.
+
+Because the idea and the mixin points follow the GPL-3.0 original, this module is distributed under GPL-3.0-only.
+It is a separate jar and does not change the licence of the Create port (MIT).

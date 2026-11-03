@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "GPL-3.0-only"
+
+[[mods]]
+modId = "diaithirgantries"
+version = "${version}"
+displayName = "Diaithir Create Gantries"
+authors = "Diaithir; gantry split after MR-Spagetty (GPL-3.0)"
+description = '''Gantry split shafts for the Create port, folded from Create: Extended Gantries by MR-Spagetty (GPL-3.0).'''
+
+[[mixins]]
+config = "diaithirgantries.mixins.json"
+
+[[dependencies.diaithirgantries]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.diaithirgantries]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.1,27)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.diaithirgantries]]
+modId = "diaithir_create"
+type = "required"
+versionRange = "[6.0,)"
+ordering = "AFTER"
+side = "BOTH"
