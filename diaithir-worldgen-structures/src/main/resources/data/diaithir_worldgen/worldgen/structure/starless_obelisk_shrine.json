@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_end_highlands",
+ "biomes": "#diaithir_worldgen:s/starless_obelisk_shrine",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

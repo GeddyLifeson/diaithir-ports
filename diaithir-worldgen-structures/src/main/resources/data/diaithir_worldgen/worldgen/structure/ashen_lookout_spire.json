@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_nether_wastes",
+ "biomes": "#diaithir_worldgen:s/ashen_lookout_spire",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

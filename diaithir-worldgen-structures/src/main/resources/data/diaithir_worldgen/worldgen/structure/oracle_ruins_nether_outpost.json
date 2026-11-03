@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_nether",
+ "biomes": "#diaithir_worldgen:s/oracle_ruins_nether_outpost",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

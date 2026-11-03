@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_plains_or_savanna",
+ "biomes": "#diaithir_worldgen:s/ferrous_outpost_surface",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

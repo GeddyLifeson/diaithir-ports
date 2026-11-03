@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_cold_ocean",
+ "biomes": "#diaithir_worldgen:s/tidal_watchtower",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

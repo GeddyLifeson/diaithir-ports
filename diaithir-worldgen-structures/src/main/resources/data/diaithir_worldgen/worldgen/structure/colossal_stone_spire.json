@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_mountain",
+ "biomes": "#diaithir_worldgen:s/colossal_stone_spire",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

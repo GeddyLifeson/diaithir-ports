@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_nether",
+ "biomes": "#diaithir_worldgen:s/basalt_fissure_maw",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

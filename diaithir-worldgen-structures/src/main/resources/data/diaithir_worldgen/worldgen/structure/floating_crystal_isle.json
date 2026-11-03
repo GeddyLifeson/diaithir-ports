@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_end",
+ "biomes": "#diaithir_worldgen:s/floating_crystal_isle",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

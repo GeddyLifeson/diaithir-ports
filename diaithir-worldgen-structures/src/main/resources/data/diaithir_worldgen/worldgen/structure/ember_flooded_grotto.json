@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:has_structure/ocean_ruin",
+ "biomes": "#diaithir_worldgen:s/ember_flooded_grotto",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

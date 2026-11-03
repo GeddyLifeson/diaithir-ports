@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_nether_basalt_delta",
+ "biomes": "#diaithir_worldgen:s/buried_nether_sanctum",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_savanna",
+ "biomes": "#diaithir_worldgen:s/transit_hub_wreck",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

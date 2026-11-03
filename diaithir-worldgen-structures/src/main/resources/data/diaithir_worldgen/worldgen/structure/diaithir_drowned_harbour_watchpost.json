@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_overworld",
+ "biomes": "#diaithir_worldgen:s/diaithir_drowned_harbour_watchpost",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_end_highlands",
+ "biomes": "#diaithir_worldgen:s/void_lantern_obelisk",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_deep_ocean",
+ "biomes": "#diaithir_worldgen:s/sunken_harbor_wreck_town",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

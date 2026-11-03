@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_dark_oak_forest",
+ "biomes": "#diaithir_worldgen:s/deep_raider_hideout",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

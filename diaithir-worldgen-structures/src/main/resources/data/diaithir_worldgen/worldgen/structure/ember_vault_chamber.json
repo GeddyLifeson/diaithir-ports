@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_overworld",
+ "biomes": "#diaithir_worldgen:s/ember_vault_chamber",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

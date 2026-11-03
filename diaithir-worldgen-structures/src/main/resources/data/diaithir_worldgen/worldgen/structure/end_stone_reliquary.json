@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_end_city",
+ "biomes": "#diaithir_worldgen:s/end_stone_reliquary",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

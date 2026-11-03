@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:end_highlands",
+ "biomes": "#diaithir_worldgen:s/obsidian_spire_hold",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

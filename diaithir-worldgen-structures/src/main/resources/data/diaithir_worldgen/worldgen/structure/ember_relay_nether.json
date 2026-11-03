@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_nether_fortress_safe",
+ "biomes": "#diaithir_worldgen:s/ember_relay_nether",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

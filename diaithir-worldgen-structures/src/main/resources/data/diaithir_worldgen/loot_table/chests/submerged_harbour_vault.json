@@ -160,7 +160,7 @@
     },
     {
      "type": "minecraft:item",
-     "name": "minecraft:pottery_sherd_angler",
+     "name": "minecraft:angler_pottery_sherd",
      "weight": 3,
      "functions": [
       {

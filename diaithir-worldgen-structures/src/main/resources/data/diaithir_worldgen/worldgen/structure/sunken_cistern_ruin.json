@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_desert",
+ "biomes": "#diaithir_worldgen:s/sunken_cistern_ruin",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

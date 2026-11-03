@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_jungle",
+ "biomes": "#diaithir_worldgen:s/jungle_overgrown_ruin_courtyard",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

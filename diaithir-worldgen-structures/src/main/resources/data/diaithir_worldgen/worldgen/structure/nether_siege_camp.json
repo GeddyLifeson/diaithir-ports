@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:nether_wastes",
+ "biomes": "#diaithir_worldgen:s/nether_siege_camp",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

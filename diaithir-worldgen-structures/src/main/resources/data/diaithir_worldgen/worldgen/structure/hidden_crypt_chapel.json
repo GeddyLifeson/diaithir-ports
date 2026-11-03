@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_taiga",
+ "biomes": "#diaithir_worldgen:s/hidden_crypt_chapel",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

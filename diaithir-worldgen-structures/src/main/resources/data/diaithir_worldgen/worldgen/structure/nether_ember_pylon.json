@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_nether",
+ "biomes": "#diaithir_worldgen:s/nether_ember_pylon",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

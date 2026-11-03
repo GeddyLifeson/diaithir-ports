@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_nether",
+ "biomes": "#diaithir_worldgen:s/nether_raider_bastion_arena",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

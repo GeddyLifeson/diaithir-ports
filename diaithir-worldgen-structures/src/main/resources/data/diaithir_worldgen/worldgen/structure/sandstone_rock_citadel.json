@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_desert_plateau",
+ "biomes": "#diaithir_worldgen:s/sandstone_rock_citadel",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

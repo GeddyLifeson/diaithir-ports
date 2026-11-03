@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_stony_peaks_or_dripstone",
+ "biomes": "#diaithir_worldgen:s/ferrous_depot_underground",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

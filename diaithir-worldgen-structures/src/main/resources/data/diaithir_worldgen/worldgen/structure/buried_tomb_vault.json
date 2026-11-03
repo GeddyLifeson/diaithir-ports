@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:has_structure/desert_pyramid",
+ "biomes": "#diaithir_worldgen:s/buried_tomb_vault",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

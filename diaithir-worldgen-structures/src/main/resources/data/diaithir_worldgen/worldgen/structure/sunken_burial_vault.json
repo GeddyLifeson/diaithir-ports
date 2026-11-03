@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_desert",
+ "biomes": "#diaithir_worldgen:s/sunken_burial_vault",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

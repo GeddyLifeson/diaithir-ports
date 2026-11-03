@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_swamp_village_biome",
+ "biomes": "#diaithir_worldgen:s/swamp_settlement_boardwalk_camp",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

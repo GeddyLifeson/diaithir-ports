@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:has_structure/nether_fortress",
+ "biomes": "#diaithir_worldgen:s/nether_root_sanctum",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

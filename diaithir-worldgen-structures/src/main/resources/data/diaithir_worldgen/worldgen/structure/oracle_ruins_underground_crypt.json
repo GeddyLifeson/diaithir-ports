@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_overworld_underground",
+ "biomes": "#diaithir_worldgen:s/oracle_ruins_underground_crypt",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

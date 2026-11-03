@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_overworld",
+ "biomes": "#diaithir_worldgen:s/diaithir_airship_sky",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

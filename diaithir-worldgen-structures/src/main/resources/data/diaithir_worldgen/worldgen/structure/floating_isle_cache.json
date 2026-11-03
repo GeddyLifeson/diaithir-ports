@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_overworld_sky_islands",
+ "biomes": "#diaithir_worldgen:s/floating_isle_cache",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

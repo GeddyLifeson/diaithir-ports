@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_ocean",
+ "biomes": "#diaithir_worldgen:s/diaithir_ship_wreck_shoreline",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

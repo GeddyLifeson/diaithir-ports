@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_soul_sand_valley",
+ "biomes": "#diaithir_worldgen:s/soulsand_sinkhole_ruin",
  "step": "underground_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#minecraft:is_end",
+ "biomes": "#diaithir_worldgen:s/end_raider_relic_circle",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "none",

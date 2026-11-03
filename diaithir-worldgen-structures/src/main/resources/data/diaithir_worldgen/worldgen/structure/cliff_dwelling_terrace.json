@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir:is_badlands_cliff",
+ "biomes": "#diaithir_worldgen:s/cliff_dwelling_terrace",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",
