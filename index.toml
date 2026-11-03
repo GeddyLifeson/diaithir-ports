@@ -67895,11 +67895,6 @@ hash = "cb691f5cd0802796d954babb0fd3c484ab803e6102a2c0fb889cb9e57951b013"
 metafile = true
 
 [[files]]
-file = "mods/BiomesOPlenty-neoforge-26.1.2-26.1.2.0.21.pw.toml"
-hash = "a520d0be02389ef18c8a363000dc39c6944c7f5bdd5300fa0369aa6336c5d8d4"
-metafile = true
-
-[[files]]
 file = "mods/BuriedWrecks-neoforge-26.1.2-13.1.0.pw.toml"
 hash = "cd250a81b07015f9c3f0b15f204068358882998b7bdfdebe56636a44fc094118"
 metafile = true
@@ -68365,11 +68360,11 @@ hash = "0417dd8d6730ffcdcbbf257bf63ee1552c446a6ee58f126ed591c99f5ca21463"
 
 [[files]]
 file = "mods/diaithir-overworld-biomes-neoforge-26.1.2-1.0.0.jar"
-hash = "c116d410ac95658aa2b419ee722880fbc6b3f69ce5b9648c1b5539b9f53b6c4d"
+hash = "a26770ced4657a9ace26725b7c9189e3883671f689f9ce8c919f695a335ae4c8"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "a3784a1e2441771b7a3228b76c4e9f3ca450f99241bcbf651255995822b8d04c"
+hash = "a35eb6c7604d0c48ec613fee8a43a76cf5cfbcf589dcfff67c472facbf6da7b6"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
@@ -68693,11 +68688,6 @@ metafile = true
 [[files]]
 file = "mods/muchmoredungeons-neoforge-26.1.2-2.0.0.pw.toml"
 hash = "1f2e18acca3a510669eb0971b2c7e714036a5748a1cc5160308c1be87771f808"
-metafile = true
-
-[[files]]
-file = "mods/natures_spirit-neoforge-2.3.0_26.1.2.pw.toml"
-hash = "d14ba815587859669c1ce2edf0603a8623482629ef883833c44f0126854f2c80"
 metafile = true
 
 [[files]]
