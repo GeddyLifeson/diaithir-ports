@@ -1,0 +1,12 @@
+{
+ "materials": [
+  "materials_base.json"
+ ],
+ "improvements": [
+  "improvements_base.json"
+ ],
+ "blueprints": [
+  "blueprints_arms.json",
+  "blueprints_guns.json"
+ ]
+}
