@@ -13,11 +13,12 @@
     "cast_cost_runes": 1,
     "fuel_energy_J": 120
    },
-   "recipe": [
-    "diaithir_runes:rune_blank",
-    "diaithir_runes:reagent_ainnir"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "fuel_rune_ainnir_bright",
@@ -32,12 +33,12 @@
     "fuel_energy_J": 480,
     "spell_power_bonus": 0.15
    },
-   "recipe": [
-    "diaithir_runes:fuel_rune_ainnir_dim",
-    "c:gems/amethyst",
-    "c:dusts/glowstone"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "fuel_rune_tine_dim",
@@ -51,11 +52,12 @@
     "cast_cost_runes": 1,
     "fuel_energy_J": 120
    },
-   "recipe": [
-    "diaithir_runes:rune_blank",
-    "diaithir_runes:reagent_tine"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "fuel_rune_tine_bright",
@@ -70,12 +72,12 @@
     "fuel_energy_J": 480,
     "spell_power_bonus": 0.15
    },
-   "recipe": [
-    "diaithir_runes:fuel_rune_tine_dim",
-    "c:dusts/blaze",
-    "c:ingots/copper"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "fuel_rune_sioc_dim",
@@ -89,11 +91,12 @@
     "cast_cost_runes": 1,
     "fuel_energy_J": 120
    },
-   "recipe": [
-    "diaithir_runes:rune_blank",
-    "diaithir_runes:reagent_sioc"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "fuel_rune_sioc_bright",
@@ -108,12 +111,12 @@
     "fuel_energy_J": 480,
     "spell_power_bonus": 0.15
    },
-   "recipe": [
-    "diaithir_runes:fuel_rune_sioc_dim",
-    "c:gems/diamond",
-    "c:dusts/snow"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "rune_blank",
@@ -123,11 +126,12 @@
     "mass_kg": 0.4,
     "stack": 64
    },
-   "recipe": [
-    "c:stones",
-    "c:ingots/bronze"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "reagent_ainnir",
@@ -138,11 +142,12 @@
     "stack": 64,
     "element": "arcane"
    },
-   "recipe": [
-    "c:dyes/purple",
-    "c:dusts/lapis"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "reagent_tine",
@@ -153,11 +158,12 @@
     "stack": 64,
     "element": "fire"
    },
-   "recipe": [
-    "c:dyes/red",
-    "c:dusts/redstone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "reagent_sioc",
@@ -168,11 +174,12 @@
     "stack": 64,
     "element": "frost"
    },
-   "recipe": [
-    "c:dyes/light_blue",
-    "c:dusts/ice"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "rune_altar",
@@ -185,12 +192,12 @@
     "energy_per_craft_J": 200,
     "mass_kg": 180
    },
-   "recipe": [
-    "c:stones",
-    "c:ingots/bronze",
-    "c:gems/lapis"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_ainnir_novice",
@@ -202,12 +209,12 @@
     "mass_kg": 1.1,
     "attack_speed_hz": 1.4
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:gems/amethyst",
-    "c:ingots/bronze"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_tine_novice",
@@ -219,12 +226,12 @@
     "mass_kg": 1.1,
     "attack_speed_hz": 1.4
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:dusts/blaze",
-    "c:ingots/bronze"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_sioc_novice",
@@ -236,12 +243,12 @@
     "mass_kg": 1.1,
     "attack_speed_hz": 1.4
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:gems/quartz",
-    "c:ingots/bronze"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_ainnir_adept",
@@ -253,12 +260,12 @@
     "mass_kg": 1.4,
     "attack_speed_hz": 1.3
    },
-   "recipe": [
-    "diaithir_runes:staff_ainnir_novice",
-    "c:ingots/steel",
-    "c:gems/diamond"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_tine_adept",
@@ -270,12 +277,12 @@
     "mass_kg": 1.4,
     "attack_speed_hz": 1.3
    },
-   "recipe": [
-    "diaithir_runes:staff_tine_novice",
-    "c:ingots/steel",
-    "c:dusts/blaze"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_sioc_adept",
@@ -287,12 +294,12 @@
     "mass_kg": 1.4,
     "attack_speed_hz": 1.3
    },
-   "recipe": [
-    "diaithir_runes:staff_sioc_novice",
-    "c:ingots/steel",
-    "c:gems/diamond"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "rune_wizard_hood_novice",
@@ -303,11 +310,12 @@
     "spell_power_all": 0.5,
     "mass_kg": 0.6
    },
-   "recipe": [
-    "c:leathers",
-    "c:dyes/purple"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "rune_wizard_robe_novice",
@@ -318,11 +326,12 @@
     "spell_power_all": 1.0,
     "mass_kg": 1.2
    },
-   "recipe": [
-    "c:leathers",
-    "c:dyes/purple"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "rune_wizard_hood_adept",
@@ -333,11 +342,12 @@
     "spell_power_all": 1.5,
     "mass_kg": 0.7
    },
-   "recipe": [
-    "diaithir_runes:rune_wizard_hood_novice",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "rune_wizard_robe_adept",
@@ -348,11 +358,12 @@
     "spell_power_all": 2.5,
     "mass_kg": 1.4
    },
-   "recipe": [
-    "diaithir_runes:rune_wizard_robe_novice",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "rune_wizard_hood_master",
@@ -364,12 +375,12 @@
     "toughness": 1.0,
     "mass_kg": 0.8
    },
-   "recipe": [
-    "diaithir_runes:rune_wizard_hood_adept",
-    "c:ingots/composite",
-    "c:gems/diamond"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "rune_wizard_robe_master",
@@ -381,12 +392,12 @@
     "toughness": 2.0,
     "mass_kg": 1.6
    },
-   "recipe": [
-    "diaithir_runes:rune_wizard_robe_adept",
-    "c:ingots/composite",
-    "c:gems/diamond"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "spell_rune_bolt_arcane",

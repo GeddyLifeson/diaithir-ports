@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/corentium/settlement/0/kaikun",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/corentium/my_corentium_e5_places_000024",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

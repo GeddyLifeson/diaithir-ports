@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/eleirenora/settlement/3/miilora",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/eleirenora/ar_eleirenora_e6_places_000079",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

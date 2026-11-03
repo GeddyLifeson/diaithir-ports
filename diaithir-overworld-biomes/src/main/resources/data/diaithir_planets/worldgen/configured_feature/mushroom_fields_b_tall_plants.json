@@ -1,0 +1,1 @@
+{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"data":{"Name":"minecraft:warped_roots"},"weight":3},{"data":{"Name":"minecraft:warped_fungus"},"weight":2},{"data":{"Name":"minecraft:brown_mushroom"},"weight":2}]}}}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/nuilleimwen/settlement/0/alaareirla",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/nuilleimwen/ar_nuilleimwen_e3_places_000066",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

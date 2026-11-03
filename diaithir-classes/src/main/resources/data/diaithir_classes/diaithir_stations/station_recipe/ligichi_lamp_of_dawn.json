@@ -1,0 +1,24 @@
+{
+ "station": "altar.basic",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/composite",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/amber",
+   "count": 1
+  },
+  {
+   "tag": "c:glass_blocks",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/glowstone",
+   "count": 1
+  }
+ ],
+ "result": "diaithir_classes:ligichi_lamp_of_dawn",
+ "time_s": 20
+}

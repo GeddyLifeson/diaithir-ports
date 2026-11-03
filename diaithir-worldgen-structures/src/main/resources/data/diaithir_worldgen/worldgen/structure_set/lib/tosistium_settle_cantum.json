@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tosistium/settlement_0_cantum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tosistium/settlement_1_cantum",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 265391924
+ }
+}

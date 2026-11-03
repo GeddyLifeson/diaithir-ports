@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/suranareno/settlement/1/silemeth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/suranareno/ma_suranareno_e7_places_000767",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

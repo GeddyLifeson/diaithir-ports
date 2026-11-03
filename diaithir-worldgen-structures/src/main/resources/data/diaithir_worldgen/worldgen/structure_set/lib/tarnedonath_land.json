@@ -1,0 +1,82 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/forge_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/forge_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/forge_3_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/fortress_2_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/fortress_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/hall_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/hall_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/landmark_2_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/landmark_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/ruin_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/ruin_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/temple_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/tower_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/tower_2_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/tower_3_land",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 207408977
+ }
+}

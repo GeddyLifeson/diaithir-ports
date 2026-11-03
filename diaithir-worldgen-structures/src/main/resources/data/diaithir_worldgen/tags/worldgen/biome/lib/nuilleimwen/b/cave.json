@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:nuilleimwen_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuilleimwen_grottoes",
+   "required": false
+  }
+ ]
+}

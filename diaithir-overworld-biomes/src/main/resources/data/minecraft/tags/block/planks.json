@@ -1,1 +1,26 @@
-{"replace": false, "values": ["biomesoplenty:cherry_planks", "biomesoplenty:dead_planks", "biomesoplenty:empyreal_planks", "biomesoplenty:fir_planks", "biomesoplenty:hellbark_planks", "biomesoplenty:jacaranda_planks", "biomesoplenty:magic_planks", "biomesoplenty:mahogany_planks", "biomesoplenty:maple_planks", "biomesoplenty:origin_oak_planks", "biomesoplenty:palm_planks", "biomesoplenty:pine_planks", "biomesoplenty:redwood_planks", "biomesoplenty:umbran_planks", "biomesoplenty:willow_planks", "natures_spirit:aspen_planks", "natures_spirit:coconut_mosaic", "natures_spirit:joshua_mosaic", "natures_spirit:mahogany_mosaic", "natures_spirit:maple_planks", "natures_spirit:sugi_mosaic", "natures_spirit:wisteria_mosaic", "natures_spirit:wisteria_planks"]}
+{
+ "replace": false,
+ "values": [
+  "aether_ii:amberoot_base_planks",
+  "aether_ii:amberoot_planks",
+  "aether_ii:amberoot_top_planks",
+  "aether_ii:greatroot_base_planks",
+  "aether_ii:greatroot_planks",
+  "aether_ii:greatroot_top_planks",
+  "aether_ii:skyroot_base_planks",
+  "aether_ii:skyroot_planks",
+  "aether_ii:skyroot_top_planks",
+  "aether_ii:wisproot_base_planks",
+  "aether_ii:wisproot_planks",
+  "aether_ii:wisproot_top_planks",
+  "the_backwoods:false_oak_planks",
+  "the_backwoods:petrified_oak_planks",
+  "the_backwoods:petrified_rotten_oak_planks",
+  "the_backwoods:rotten_oak_planks",
+  "the_backwoods:splintered_oak_planks",
+  "undergarden:ancient_root_planks",
+  "undergarden:grongle_planks",
+  "undergarden:smogstem_planks",
+  "undergarden:wigglewood_planks"
+ ]
+}

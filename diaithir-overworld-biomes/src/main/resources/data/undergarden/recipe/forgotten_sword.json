@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "undergarden:forgotten_ingot",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "#",
+  "#",
+  "S"
+ ],
+ "result": {
+  "id": "undergarden:forgotten_sword"
+ }
+}

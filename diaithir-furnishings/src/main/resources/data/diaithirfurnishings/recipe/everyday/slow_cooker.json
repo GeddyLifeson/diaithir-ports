@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#c:ingots/iron",
- "result": {
-  "id": "diaithirfurnishings:slow_cooker",
-  "count": 1
- }
-}

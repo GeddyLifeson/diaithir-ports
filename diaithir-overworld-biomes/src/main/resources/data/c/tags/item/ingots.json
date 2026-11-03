@@ -1,0 +1,12 @@
+{
+ "replace": false,
+ "values": [
+  "#c:ingots/cloggrum",
+  "#c:ingots/faded_copper",
+  "#c:ingots/faded_gold",
+  "#c:ingots/faded_iron",
+  "#c:ingots/faded_netherite",
+  "#c:ingots/forgotten",
+  "#c:ingots/froststeel"
+ ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "vs_tournament:ore_phynite_upper",
+    "vs_tournament:ore_phynite_middle",
+    "vs_tournament:ore_phynite_small"
+  ],
+  "step": "underground_ores"
+}

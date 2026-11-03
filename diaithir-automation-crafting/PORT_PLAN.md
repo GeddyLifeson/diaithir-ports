@@ -6,7 +6,8 @@ Licence read (see NOTICE.md): MIT code, CC0 assets. Port allowed. No overlap rul
 Target module: `diaithir-automation-crafting` (programmable machine side of the Foundry set; robots are the route-unit layer for `diaithir-logistics-utilities`). Package `li.cil.oc2` is kept for credit; block and item ids keep the `oc2r:` namespace so nothing migrates.
 
 ## State
-Step 0 (this PR): licence check, upstream snapshot under `upstream/oc2r-1.21.1/` (sources and non-binary resources only, not built), NOTICE.md.
+Step 1 done (cloud, 2026-11-03): `libs/ceres-0.0.4.jar` (Ceres e883ffe) and `libs/sedna-0.0.0.jar` (Sedna 8450eed) built from source with `tools/build_sedna.sh` (plain javac, release 17; both compile clean, 0 errors). Not yet run: the booted-VM test belongs to step 5. Sedna bundles only a 48 KB riscv resource folder, so Minux guest images are a separate open question.
+Step 0 (earlier): licence check, upstream snapshot under `upstream/oc2r-1.21.1/` (sources and non-binary resources only, not built), NOTICE.md.
 
 ## Steps
 1. Sedna, Ceres and the Minux images: Sedna and Ceres are on GitHub Packages (needs auth), so pull the sources, build them with JDK 25 and include them in the module (jar-in-jar or source). Check the Minux image licence and size.

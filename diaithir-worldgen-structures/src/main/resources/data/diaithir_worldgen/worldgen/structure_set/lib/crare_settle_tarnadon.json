@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_0_tarnadon",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_1_tarnadon",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/settlement_3_tarnadon",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 224630724
+ }
+}

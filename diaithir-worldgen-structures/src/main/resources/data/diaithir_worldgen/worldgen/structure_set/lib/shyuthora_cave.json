@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/delve_0_cave",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/delve_1_cave",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/delve_2_cave",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/delve_3_cave",
+   "weight": 13
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 260456118
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/harbor_0_coast",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/harbor_1_coast",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/harbor_2_coast",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 166755364
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/delve_0_cave",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/delve_1_cave",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/delve_2_cave",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 106038387
+ }
+}

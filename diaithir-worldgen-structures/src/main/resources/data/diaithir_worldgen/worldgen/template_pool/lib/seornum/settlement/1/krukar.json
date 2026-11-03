@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/seornum/settlement/1/krukar",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/seornum/gr_seornum_e3_places_000089",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

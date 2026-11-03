@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_0_any",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_1_any",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_2_any",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/settlement_3_any",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 248506026
+ }
+}

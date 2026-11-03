@@ -1,0 +1,5 @@
+[
+ {"id": "theaurorian_furnace", "targets": ["theaurorian:aurorian_furnace"], "slots": 3, "kinds": ["speed", "efficiency"], "max_quality": 3},
+ {"id": "theaurorian_scrapper", "targets": ["theaurorian:scrapper"], "slots": 2, "kinds": ["speed"], "max_quality": 3},
+ {"id": "theaurorian_moonlight_forge", "targets": ["theaurorian:moonlight_forge"], "slots": 2, "kinds": ["speed"], "max_quality": 3}
+]

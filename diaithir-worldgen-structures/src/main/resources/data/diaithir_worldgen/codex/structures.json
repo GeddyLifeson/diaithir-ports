@@ -1,0 +1,3351 @@
+[
+ {
+  "id": "diaithir_worldgen:abandoned_mine_camp",
+  "kind": "structure",
+  "name": "Abandoned Mine Camp",
+  "text": "jigsaw tent-and-crate yard branching into a short shaft stub",
+  "dimension": "overworld",
+  "biomes": "#has_structure/mineshaft_adjacent",
+  "loot": "mining_provisions",
+  "mobs": "cave spiders and zombies",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/abandoned_mine_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/abandoned_mine_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/abandoned_mine_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:abyssal_obelisk_deep",
+  "kind": "structure",
+  "name": "Abyssal Obelisk Deep",
+  "text": "narrow obelisk template anchored to deep seabed with a submerged staircase",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_deep_ocean",
+  "loot": "deep-sea minerals and rare relic fragments",
+  "mobs": "elder-guardian-like sentinels and drowned",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/abyssal_obelisk_deep",
+  "connects": [
+   "tags:diaithir_worldgen:s/abyssal_obelisk_deep",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/abyssal_obelisk_deep"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ash_wasteland_crypt",
+  "kind": "structure",
+  "name": "Ash Wasteland Crypt",
+  "text": "Template crypt of blackstone blocks with a stepped altar hall and collapsed side vaults",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "ritual remains: soul lanterns, gold ingots, obsidian-tipped tools",
+  "mobs": "wither skeletons and blazes around the altar",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ash_wasteland_crypt",
+  "connects": [
+   "tags:diaithir_worldgen:s/ash_wasteland_crypt",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ash_wasteland_crypt"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ashen_bastion",
+  "kind": "structure",
+  "name": "Ashen Bastion",
+  "text": "Walled fortification with a central keep, courtyard barracks, and two jigsaw-linked siege platforms.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:badlands_and_mesa",
+  "loot": "Armour fragments, banner cloth, and cracked shields.",
+  "mobs": "Pillagers and vindicators stationed at the gates, with a rare captain.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/ashen_bastion",
+  "connects": [
+   "tags:diaithir_worldgen:s/ashen_bastion",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ashen_bastion"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ashen_forge_camp",
+  "kind": "structure",
+  "name": "Ashen Forge Camp",
+  "text": "Open basalt platform with a central forge template and scattered anvil-and-chest pieces.",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "Smithing materials: quartz, gold nuggets, blackstone tools.",
+  "mobs": "Magma cubes and wither skeletons near forge.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ashen_forge_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/ashen_forge_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ashen_forge_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ashen_forge_hollow",
+  "kind": "structure",
+  "name": "Ashen Forge Hollow",
+  "text": "blackstone hollow with three stacked galleries joined by a central lift shaft",
+  "dimension": "nether",
+  "biomes": "#diaithir:is_nether_wastes",
+  "loot": "forge tools, gold nuggets, ancient armour pieces",
+  "mobs": "magma cubes and wither skeletons near the lift",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ashen_forge_hollow",
+  "connects": [
+   "tags:diaithir_worldgen:s/ashen_forge_hollow",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ashen_forge_hollow"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ashen_lookout_spire",
+  "kind": "structure",
+  "name": "Ashen Lookout Spire",
+  "text": "Tall narrow tower of basalt pieces with a brazier crown and a bridge piece leading to an adjacent ledge.",
+  "dimension": "nether",
+  "biomes": "#diaithir:is_nether_wastes",
+  "loot": "nether wart, blackstone tools, fire resistance items",
+  "mobs": "magma cubes and wither-skeleton-free blaze patrols",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/ashen_lookout_spire",
+  "connects": [
+   "tags:diaithir_worldgen:s/ashen_lookout_spire",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ashen_lookout_spire"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ashen_nether_bastion_outpost",
+  "kind": "structure",
+  "name": "Ashen Nether Bastion Outpost",
+  "text": "basalt platform template with a bridge jigsaw branch and a caged chest room beneath",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "nether wart, blaze rods, gilded blackstone",
+  "mobs": "blazes and magma cubes around the bridge",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ashen_nether_bastion_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/ashen_nether_bastion_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ashen_nether_bastion_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:basalt_fissure_maw",
+  "kind": "structure",
+  "name": "Basalt Fissure Maw",
+  "text": "jigsaw pool of a crater rim with a descending basalt funnel leading to a lava-lit chamber",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "forge debris with magma cream, gold, and nether quartz",
+  "mobs": "magma cubes and blazes",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/basalt_fissure_maw",
+  "connects": [
+   "tags:diaithir_worldgen:s/basalt_fissure_maw",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/basalt_fissure_maw"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:buried_nether_sanctum",
+  "kind": "structure",
+  "name": "Buried Nether Sanctum",
+  "text": "Half-buried blackstone shrine with a central altar room and sealed crypt beneath.",
+  "dimension": "nether",
+  "biomes": "#diaithir:is_nether_basalt_delta",
+  "loot": "ember_relics",
+  "mobs": "magma cubes and wither skeletons",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/buried_nether_sanctum",
+  "connects": [
+   "tags:diaithir_worldgen:s/buried_nether_sanctum",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/buried_nether_sanctum"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:buried_obelisk_shrine",
+  "kind": "structure",
+  "name": "Buried Obelisk Shrine",
+  "text": "vertical obelisk pillar with a sand-filled base room reached through a dug shaft and a short tunnel",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "ritual offerings, potions, scarab-themed charms",
+  "mobs": "scorpions and silverfish swarms",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/buried_obelisk_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/buried_obelisk_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/buried_obelisk_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:buried_orchard_vault",
+  "kind": "structure",
+  "name": "Buried Orchard Vault",
+  "text": "Partially buried stone vault with a surface ring of collapsed fence posts and an underground chamber with a single locked door template",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_plains",
+  "loot": "preserved food, seeds and ancient tools",
+  "mobs": "silverfish and husks inside the vault",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/buried_orchard_vault",
+  "connects": [
+   "tags:diaithir_worldgen:s/buried_orchard_vault",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/buried_orchard_vault"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:buried_tomb_vault",
+  "kind": "structure",
+  "name": "Buried Tomb Vault",
+  "text": "small underground vault reached by a sand-collapsed shaft, single sealed sarcophagus room",
+  "dimension": "overworld",
+  "biomes": "#minecraft:has_structure/desert_pyramid",
+  "loot": "burial goods, lapis trinkets, rare enchanted books",
+  "mobs": "silverfish swarms within stone walls and a single wither skeleton",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/buried_tomb_vault",
+  "connects": [
+   "tags:diaithir_worldgen:s/buried_tomb_vault",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/buried_tomb_vault"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:buried_vault_shrine",
+  "kind": "structure",
+  "name": "Buried Vault Shrine",
+  "text": "template underground chamber with sand-filled corridors and a sealed central altar",
+  "dimension": "overworld",
+  "biomes": "#is_desert_or_badlands",
+  "loot": "relics_and_currency",
+  "mobs": "husks and silverfish",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/buried_vault_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/buried_vault_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/buried_vault_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:cliff_dwelling_terrace",
+  "kind": "structure",
+  "name": "Cliff Dwelling Terrace",
+  "text": "Stacked terraced houses cut into a cliff face linked by stairs and a bridge piece.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_badlands_cliff",
+  "loot": "abandoned_household_supplies",
+  "mobs": "vindicators and pillagers with few evokers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/cliff_dwelling_terrace",
+  "connects": [
+   "tags:diaithir_worldgen:s/cliff_dwelling_terrace",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/cliff_dwelling_terrace"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:collapsed_pyramid_tomb",
+  "kind": "structure",
+  "name": "Collapsed Pyramid Tomb",
+  "text": "stepped sandstone shell with an upper broken entry, two interior halls linked by a trapped pressure corridor, and a boss crypt at the base",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "royal regalia, enchanted books, golden ornaments",
+  "mobs": "pharaoh-style elite mummy boss and husk guardians",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/collapsed_pyramid_tomb",
+  "connects": [
+   "tags:diaithir_worldgen:s/collapsed_pyramid_tomb",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/collapsed_pyramid_tomb"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:colossal_stone_spire",
+  "kind": "structure",
+  "name": "Colossal Stone Spire",
+  "text": "single jigsaw pool starting from a stone base, stacking tapering pillar pieces with an exposed ore-veined core and an open shelf near the top",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_mountain",
+  "loot": "mountaineer cache with iron, emeralds, and climbing supplies",
+  "mobs": "goats and occasional stray skeletons in the upper shelf",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/colossal_stone_spire",
+  "connects": [
+   "tags:diaithir_worldgen:s/colossal_stone_spire",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/colossal_stone_spire"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:coral_archive_ruin",
+  "kind": "structure",
+  "name": "Coral Archive Ruin",
+  "text": "multi-chamber template with flooded corridors linked by arched doorways",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_warm_ocean",
+  "loot": "ink-stained scrolls, coral blocks and prismarine shards",
+  "mobs": "guardians and drowned in corridors",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/coral_archive_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/coral_archive_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/coral_archive_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:coral_reef_outpost",
+  "kind": "structure",
+  "name": "Coral Reef Outpost",
+  "text": "Low coral-built lookout tower with a submerged courtyard and two side annex rooms connected by short tunnels.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_warm_ocean",
+  "loot": "coral blocks, sea lanterns, tridents and rare nautilus shells",
+  "mobs": "guardians near tower base, pufferfish swarms",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/coral_reef_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/coral_reef_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/coral_reef_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:cracked_obelisk_ruin",
+  "kind": "structure",
+  "name": "Cracked Obelisk Ruin",
+  "text": "Half-buried monolith with a sand-filled base chamber, a sloped entry ramp and a cracked capstone piece.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "ancient relic fragments, gold and sand-worn trinkets",
+  "mobs": "husks and desert pillagers",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/cracked_obelisk_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/cracked_obelisk_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/cracked_obelisk_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:crimson_gorge_camp",
+  "kind": "structure",
+  "name": "Crimson Gorge Camp",
+  "text": "Template camp of stacked crimson log platforms joined by jigsaw ladders around a central fire pit",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_crimson_forest",
+  "loot": "Crimson fungus rations and hoglin trophies",
+  "mobs": "Hoglins and zombified piglins",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/crimson_gorge_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/crimson_gorge_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/crimson_gorge_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:crystal_grotto_shrine",
+  "kind": "structure",
+  "name": "Crystal Grotto Shrine",
+  "text": "Underground amethyst-lined cavern chamber with a stepped altar room and a narrow entry tunnel.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_mountain",
+  "loot": "gems and enchanting materials: amethyst shards, lapis, experience bottles",
+  "mobs": "silverfish in the walls and a few skeletons",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/crystal_grotto_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/crystal_grotto_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/crystal_grotto_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:cursed_bastion_hold",
+  "kind": "structure",
+  "name": "Cursed Bastion Hold",
+  "text": "fortified hold with blackstone walls, iron-bar cells, and a raised central dais room",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether_wastes",
+  "loot": "forgotten armory: netherite scraps, soul lanterns, chain armor",
+  "mobs": "piglins, piglin brutes, and wither skeletons",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/cursed_bastion_hold",
+  "connects": [
+   "tags:diaithir_worldgen:s/cursed_bastion_hold",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/cursed_bastion_hold"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:cyclopean_citadel_ruin",
+  "kind": "structure",
+  "name": "Cyclopean Citadel Ruin",
+  "text": "Template-based fortified hilltop with massive stacked stone walls, a gated lion-relief archway, and a ruined central megaron hall with broken pillars",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_hill",
+  "loot": "royal armory: iron swords, shields, chainmail, scattered treasure chests",
+  "mobs": "skeleton archers on wall walkways, vindicator-style patrol in the courtyard",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/cyclopean_citadel_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/cyclopean_citadel_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/cyclopean_citadel_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:deep_raider_hideout",
+  "kind": "structure",
+  "name": "Deep Raider Hideout",
+  "text": "half-buried wood cabin cluster with a trapdoor cellar and tunnel jigsaw pieces",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_dark_oak_forest",
+  "loot": "stolen chests, enchanted books, rare crossbows",
+  "mobs": "evoker and vex pair in the cellar, pillagers in cabins",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/deep_raider_hideout",
+  "connects": [
+   "tags:diaithir_worldgen:s/deep_raider_hideout",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/deep_raider_hideout"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:desert_oasis_settlement",
+  "kind": "structure",
+  "name": "Desert Oasis Settlement",
+  "text": "Sandstone courtyard around a water pool, flat-roofed dwellings with shaded arcades and a watchtower template at one corner.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "desert trade goods, cacti products, clay pottery",
+  "mobs": "husks near edges, villagers, desert traders",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/desert_oasis_settlement",
+  "connects": [
+   "tags:diaithir_worldgen:s/desert_oasis_settlement",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/desert_oasis_settlement"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:desert_raider_arena",
+  "kind": "structure",
+  "name": "Desert Raider Arena",
+  "text": "Sunken circular sand pit with a raised stone ring rim, four corner watchtowers, and a central pillared dais reached by a short ramp.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "Raider war chests with emeralds, iron gear, dyed banners, and rare totem fragments.",
+  "mobs": "Pillagers and vindicators patrolling the rim, with an evoker guarding the dais.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/desert_raider_arena",
+  "connects": [
+   "tags:diaithir_worldgen:s/desert_raider_arena",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/desert_raider_arena"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:desert_raider_outpost",
+  "kind": "structure",
+  "name": "Desert Raider Outpost",
+  "text": "Small walled camp with a canvas-roof tent cluster, a cage of captive villagers, and a single lookout tower.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "Campfire supplies, bread, arrows, and basic emerald pouches.",
+  "mobs": "Pillagers and a single illusioner near the cages.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/desert_raider_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/desert_raider_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/desert_raider_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_airship_sky",
+  "kind": "structure",
+  "name": "Diaithir Airship Sky",
+  "text": "Floating wooden galleon anchored above terrain at high altitude, with a bridge-connected stern cabin and a sail-rigging deck.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_overworld",
+  "loot": "Elytra fragments, phantom-themed loot, rare enchanted books, and navigation gear.",
+  "mobs": "Phantoms circling the rigging and a single illager captain on the deck.",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/diaithir_airship_sky",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_airship_sky",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_airship_sky"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_buried_mine_shaft_depot",
+  "kind": "structure",
+  "name": "Diaithir Buried Mine Shaft Depot",
+  "text": "Underground supply depot of cobblestone and oak planks with a single vertical ladder shaft, two side storage rooms and a locked trapdoor cellar.",
+  "dimension": "overworld",
+  "biomes": "#has_structure/mineshaft",
+  "loot": "Mining tools, lanterns, coal, iron nuggets and a single enchanted book in the cellar.",
+  "mobs": "Silverfish inside stone walls and occasional skeleton archers in the upper room.",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/diaithir_buried_mine_shaft_depot",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_buried_mine_shaft_depot",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_buried_mine_shaft_depot"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_city_taiga",
+  "kind": "structure",
+  "name": "Diaithir City Taiga",
+  "text": "large fortified city with cathedral keep, district grid of spruce halls, and outer palisade with watchtowers",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "armour, smithing materials, enchanted book libraries, ornate chests",
+  "mobs": "villagers, iron golems, armoured guard variants, cats and wolves in courtyards",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/diaithir_city_taiga",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_city_taiga",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_city_taiga"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_coastal_watchtower",
+  "kind": "structure",
+  "name": "Diaithir Coastal Watchtower",
+  "text": "Three-storey stone tower with an open top platform and a spiral stair template, placed just above the waterline.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_beach",
+  "loot": "Arrows, iron ingots, and signal-related redstone components.",
+  "mobs": "Husks and skeletons on the upper floors.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/diaithir_coastal_watchtower",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_coastal_watchtower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_coastal_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_drowned_harbour_watchpost",
+  "kind": "structure",
+  "name": "Diaithir Drowned Harbour Watchpost",
+  "text": "Tall timber-and-stone lookout tower on stilts over shallow water, with a ground-level storage room, a ladder to an open observation deck, and a lit beacon at the top.",
+  "dimension": "overworld",
+  "biomes": "#is_beach",
+  "loot": "Fishing gear, cooked fish-themed food, saddles, and dropped navigation maps.",
+  "mobs": "Drowned and husk patrol near the base, with an occasional squid pen beneath the platform.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/diaithir_drowned_harbour_watchpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_drowned_harbour_watchpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_drowned_harbour_watchpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_floating_raft",
+  "kind": "structure",
+  "name": "Diaithir Floating Raft",
+  "text": "Small surface platform of joined planks with a lantern post and a ladder dropping into an underwater storage pocket.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_ocean",
+  "loot": "Fishing loot, bread, kelp bundles, and common tools.",
+  "mobs": "Squid and drowned that climb the ladder.",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/diaithir_floating_raft",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_floating_raft",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_floating_raft"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_hamlet_plains",
+  "kind": "structure",
+  "name": "Diaithir Hamlet Plains",
+  "text": "small jigsaw cluster of 4-6 timber houses around a central well with a dirt lane spine",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_plains",
+  "loot": "farm supplies, bread, tools, light bookshelves",
+  "mobs": "villagers, iron golem, stray cats, occasional wandering trader",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_hamlet_plains",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_hamlet_plains",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_hamlet_plains"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_kelp_grotto",
+  "kind": "structure",
+  "name": "Diaithir Kelp Grotto",
+  "text": "Cave-like stone outcrop with a hollow interior chamber opened by a narrow vertical shaft into the kelp forest.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_cold_ocean",
+  "loot": "Dried kelp, ink sacs, and raw fish caches.",
+  "mobs": "Cod, salmon, and occasional glow squid.",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/diaithir_kelp_grotto",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_kelp_grotto",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_kelp_grotto"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_outpost_desert",
+  "kind": "structure",
+  "name": "Diaithir Outpost Desert",
+  "text": "sandstone market town with domed water cistern, shaded bazaar arcades, and a central obelisk plaza",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "desert trade, cactus crafts, gold, suspicious sand",
+  "mobs": "villagers, husks near wells, occasional desert wanderer trader",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_outpost_desert",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_outpost_desert",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_outpost_desert"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_pillager_outpost_ruined",
+  "kind": "structure",
+  "name": "Diaithir Pillager Outpost Ruined",
+  "text": "Wooden palisade enclosing a wooden tower with a rope ladder, a campfire, and tent-like crates scattered around.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_overworld",
+  "loot": "Crossbows, arrows, ominous banner materials, and raw meat.",
+  "mobs": "Pillager patrols with a pillager captain and a few illagers guarding the tower top.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/diaithir_pillager_outpost_ruined",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_pillager_outpost_ruined",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_pillager_outpost_ruined"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_reef_temple",
+  "kind": "structure",
+  "name": "Diaithir Reef Temple",
+  "text": "Stepped sandstone-and-prismarine temple with a central shrine room reached by a jigsaw corridor of three connected pieces.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_warm_ocean",
+  "loot": "Prismarine crystals, gold and emerald caches, and a single enchanted book chest.",
+  "mobs": "Guardian pairs and elder guardian in the shrine room.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/diaithir_reef_temple",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_reef_temple",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_reef_temple"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_settlement_snowy",
+  "kind": "structure",
+  "name": "Diaithir Settlement Snowy",
+  "text": "compact snowbound village with heated longhouses around a frozen square and a log palisade gate",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_snowy",
+  "loot": "winter provisions, furs, ice tools, coal",
+  "mobs": "villagers, strays, snow golems in square, iron golem",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_settlement_snowy",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_settlement_snowy",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_settlement_snowy"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_ship_wreck_shoreline",
+  "kind": "structure",
+  "name": "Diaithir Ship Wreck Shoreline",
+  "text": "Partially submerged wooden hull resting on sand, with broken masts, a cargo hold, and a half-buried chest room below deck.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_ocean",
+  "loot": "Treasure maps, dried kelp, gold-tinted trade goods, and salvaged rope.",
+  "mobs": "Drowned and occasional squid in the surrounding water.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_ship_wreck_shoreline",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_ship_wreck_shoreline",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_ship_wreck_shoreline"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_sunken_reliquary",
+  "kind": "structure",
+  "name": "Diaithir Sunken Reliquary",
+  "text": "Partially flooded stone-brick vault built from a central chamber with four radiating corridor jigsaw pieces, half-buried under sand and sealed by a broken iron grate entrance.",
+  "dimension": "overworld",
+  "biomes": "#is_ocean",
+  "loot": "Salvaged maritime supplies: sea lanterns, prismarine shards, rope, gold trade goods and rare nautilus-themed trinkets.",
+  "mobs": "Drowned and guardian-style aquatic guards near the centre, with a small cave spider cluster in the corridors.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_sunken_reliquary",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_sunken_reliquary",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_sunken_reliquary"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_sunken_ruins",
+  "kind": "structure",
+  "name": "Diaithir Sunken Ruins",
+  "text": "Single-room coral-covered stone ruin with two entrance arches and a shallow central altar pad, built from a small jigsaw pool of wall and floor pieces.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_ocean",
+  "loot": "Scattered coral-crafting materials, sea lanterns, and minor treasure chests.",
+  "mobs": "Drowned and occasional cod shoals around the entrances.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/diaithir_sunken_ruins",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_sunken_ruins",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_sunken_ruins"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_town_savanna",
+  "kind": "structure",
+  "name": "Diaithir Town Savanna",
+  "text": "medium walled town with gatehouse, market square, and two-storey acacia houses joined by a stone road",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "trade goods, pottery, leather, emerald caches in market stalls",
+  "mobs": "villagers, pillagers in raid-variant patrols, vindicator guards",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_town_savanna",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_town_savanna",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_town_savanna"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_village_savanna",
+  "kind": "structure",
+  "name": "Diaithir Village Savanna",
+  "text": "Acacia-timber longhouses on raised stone platforms with a market square, livestock pens, and a watchtower at each corner.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "Saddles, hay bales, wheat, leather, and trade-oriented chests in the market.",
+  "mobs": "Villagers, iron golems, wandering traders' pack animals, and occasional vindicator patrols.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/diaithir_village_savanna",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_village_savanna",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_village_savanna"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_village_snowy",
+  "kind": "structure",
+  "name": "Diaithir Village Snowy",
+  "text": "Spruce-log cabins with steep roofs and snow-cleared paths around a heated smithy and a central longhouse.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "Coal, iron ingots, fur-based armour pieces, and cold-weather food.",
+  "mobs": "Villagers, iron golems, and stray skeletons near the outer walls.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_village_snowy",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_village_snowy",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_village_snowy"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:diaithir_wreck_galleon",
+  "kind": "structure",
+  "name": "Diaithir Wreck Galleon",
+  "text": "Partially submerged wooden galleon template tilted on the seabed with a broken mast and an internal cargo hold piece.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_deep_ocean",
+  "loot": "Nautical supplies, maps, barrels of preserved food, and rare navigation items.",
+  "mobs": "Drowned crew and guardian patrols near the hull.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/diaithir_wreck_galleon",
+  "connects": [
+   "tags:diaithir_worldgen:s/diaithir_wreck_galleon",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/diaithir_wreck_galleon"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:drowned_archive",
+  "kind": "structure",
+  "name": "Drowned Archive",
+  "text": "half-submerged shelved hall with a sealed reading alcove and a collapsed side corridor",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_ocean",
+  "loot": "waterlogged manuscripts and enchanted-glass shards",
+  "mobs": "drowned and guardians-free ambient squid",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/drowned_archive",
+  "connects": [
+   "tags:diaithir_worldgen:s/drowned_archive",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/drowned_archive"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:drowned_citadel",
+  "kind": "structure",
+  "name": "Drowned Citadel",
+  "text": "Partially flooded coastal citadel with a submerged lower hall and an open-air upper gallery.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:ocean_and_coast",
+  "loot": "Tridents, prismarine shards, and waterlogged tomes.",
+  "mobs": "Drowned and guardians patrolling the flooded hall.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/drowned_citadel",
+  "connects": [
+   "tags:diaithir_worldgen:s/drowned_citadel",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/drowned_citadel"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:drowned_market_ruin",
+  "kind": "structure",
+  "name": "Drowned Market Ruin",
+  "text": "Partially collapsed row of stall frames around an open square, with a broken awning ring and one intact storage shed.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_ocean",
+  "loot": "trade goods, emeralds, spoiled food and cartography scraps",
+  "mobs": "drowned with husk variants, zombies on the rare dry edges",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/drowned_market_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/drowned_market_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/drowned_market_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:dune_waystone_rest",
+  "kind": "structure",
+  "name": "Dune Waystone Rest",
+  "text": "Shaded four-pillar rest hut with a sand-filled lower chamber and a sealed sarcophagus-like chest niche.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_desert",
+  "loot": "water flasks, desert herbs, map fragments",
+  "mobs": "husks and cave-spider-free sand wanderers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/dune_waystone_rest",
+  "connects": [
+   "tags:diaithir_worldgen:s/dune_waystone_rest",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/dune_waystone_rest"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_cellar_crypt",
+  "kind": "structure",
+  "name": "Ember Cellar Crypt",
+  "text": "Small buried stone-brick crypt with a central sarcophagus room, two side alcoves, and a single sloped entry corridor using template pieces.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_overworld",
+  "loot": "Burial goods: old coins, bones, lanterns, and a rare relic chest.",
+  "mobs": "Skeletons and zombies with occasional husks near the sarcophagus.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ember_cellar_crypt",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_cellar_crypt",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_cellar_crypt"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_end_reliquary",
+  "kind": "structure",
+  "name": "Ember End Reliquary",
+  "text": "Small end-stone reliquary with a floating platform core, four corner pillars, and a single entrance bridge template.",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end",
+  "loot": "Ender pearls, chorus fruit, and a rare end-themed relic.",
+  "mobs": "Endermen and shulkers near the core platform.",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/ember_end_reliquary",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_end_reliquary",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_end_reliquary"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_flooded_grotto",
+  "kind": "structure",
+  "name": "Ember Flooded Grotto",
+  "text": "Partly submerged mossy grotto with a water-filled central pool room and two dry ledge rooms reached by stairs.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:has_structure/ocean_ruin",
+  "loot": "Prismarine shards, fishing gear, and waterlogged supplies.",
+  "mobs": "Drowned and guardians-free aquatic zombies; squids in the pool.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ember_flooded_grotto",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_flooded_grotto",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_flooded_grotto"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_forge_ruin",
+  "kind": "structure",
+  "name": "Ember Forge Ruin",
+  "text": "Collapsed forge hall with lava channel moat, broken walls and a sealed chest room",
+  "dimension": "nether",
+  "biomes": "#is_nether_fossil_or_basalt",
+  "loot": "Blackstone tools, gold nuggets, magma cream and fire-resistance potions",
+  "mobs": "Magma cubes and blazes around the channel",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ember_forge_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_forge_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_forge_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_grove_shrine",
+  "kind": "structure",
+  "name": "Ember Grove Shrine",
+  "text": "Ring of charred stone pillars surrounding a raised altar platform with a sunken offering pit.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "fire-themed tools, blaze-adjacent crafting materials and gold",
+  "mobs": "magma cubes and skeletons on the altar ring",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ember_grove_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_grove_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_grove_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_hollow_shrine",
+  "kind": "structure",
+  "name": "Ember Hollow Shrine",
+  "text": "Single-room jigsaw: stone plinth entry, one side alcove, central brazier pedestal, capped by a small roof piece.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_plains",
+  "loot": "lantern oil, candles, simple cloth scraps",
+  "mobs": "sparse zombies and skeletons near the entrance",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ember_hollow_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_hollow_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_hollow_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_nether_ossuary",
+  "kind": "structure",
+  "name": "Ember Nether Ossuary",
+  "text": "Netherrack ossuary with a bone-pillar hall, a lava-moat altar, and a jigsaw side corridor leading to a loot antechamber.",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "Nether wart, soul sand supplies, gold, and bone-themed trinkets.",
+  "mobs": "Wither skeletons and magma cubes around the altar.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ember_nether_ossuary",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_nether_ossuary",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_nether_ossuary"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_relay_nether",
+  "kind": "structure",
+  "name": "Ember Relay Nether",
+  "text": "jigsaw platform cluster on basalt pillars linked by bridge segments and a central beacon-style shrine",
+  "dimension": "nether",
+  "biomes": "#diaithir:is_nether_fortress_safe",
+  "loot": "blaze-themed fuel, nether wart, glowstone-based tech parts",
+  "mobs": "blazes and magma cubes near the shrine",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ember_relay_nether",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_relay_nether",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_relay_nether"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_shrine_nether",
+  "kind": "structure",
+  "name": "Ember Shrine Nether",
+  "text": "Small open-roofed shrine on a basalt platform with four pillars and a central altar template.",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "nether-themed blocks, gold and rare brewing materials",
+  "mobs": "magma cubes and wither skeletons",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ember_shrine_nether",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_shrine_nether",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_shrine_nether"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_spire_outpost",
+  "kind": "structure",
+  "name": "Ember Spire Outpost",
+  "text": "Single-piece ember spire tower with a jigsaw-attached base courtyard and two rope-bridge stubs",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether_wastes",
+  "loot": "Basalt-forge supplies and gilded trinkets",
+  "mobs": "Magma cubes and piglin brutes",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/ember_spire_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_spire_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_spire_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_vault_chamber",
+  "kind": "structure",
+  "name": "Ember Vault Chamber",
+  "text": "Deeper cobblestone vault with a four-way crossroad hall, a locked treasure alcove, and jigsaw-linked side rooms.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_overworld",
+  "loot": "Mixed tools, enchanted books, iron ingots, and an achievement-tagged cache.",
+  "mobs": "Spiders, cave-style zombies, and a single silverfish nest per room.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ember_vault_chamber",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_vault_chamber",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_vault_chamber"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_watch_outpost",
+  "kind": "structure",
+  "name": "Ember Watch Outpost",
+  "text": "single-story stone watchtower with a jigsaw-linked wooden annex and a basement cellar",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_plains",
+  "loot": "travelling scout supplies, torches, arrows, bread",
+  "mobs": "pillagers and vindicators on the upper floor, spiders in the cellar",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/ember_watch_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_watch_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_watch_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ember_watchtower",
+  "kind": "structure",
+  "name": "Ember Watchtower",
+  "text": "template tower with spiral stair cores and a rooftop signal brazier, optional ruined wall pieces around the base",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "signal flares, torches, iron tools, cooked food",
+  "mobs": "husks and pillagers patrolling the stairs",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ember_watchtower",
+  "connects": [
+   "tags:diaithir_worldgen:s/ember_watchtower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ember_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_canopy_outpost",
+  "kind": "structure",
+  "name": "End Canopy Outpost",
+  "text": "Small elevated canopy platform on chorus-stone columns with a single ladder spine and a dome vault.",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end_city",
+  "loot": "end-themed exploration gear and ender-touched seeds",
+  "mobs": "endermen and shulkers around the dome",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/end_canopy_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_canopy_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_canopy_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_obelisk_ruin",
+  "kind": "structure",
+  "name": "End Obelisk Ruin",
+  "text": "Single obelisk pillar on a small platform with a ring of broken pillars and a hidden stair down.",
+  "dimension": "end",
+  "biomes": "#diaithir:is_end_highlands",
+  "loot": "void_fragments",
+  "mobs": "endermen and silverfish",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/end_obelisk_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_obelisk_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_obelisk_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_observatory_outpost",
+  "kind": "structure",
+  "name": "End Observatory Outpost",
+  "text": "Template: domed observatory on pillar stumps with spiral stair and sealed upper chamber",
+  "dimension": "end",
+  "biomes": "#diaithir:is_end_highlands",
+  "loot": "lenses, star charts, end-stone tools",
+  "mobs": "endermen, shulkers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/end_observatory_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_observatory_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_observatory_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_observatory_ring",
+  "kind": "structure",
+  "name": "End Observatory Ring",
+  "text": "circular jigsaw ring of pale stone arches around an open lens platform",
+  "dimension": "end",
+  "biomes": "#is_end_highlands",
+  "loot": "star_charts_and_crystals",
+  "mobs": "endermen and shulkers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/end_observatory_ring",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_observatory_ring",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_observatory_ring"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_obsidian_monolith",
+  "kind": "structure",
+  "name": "End Obsidian Monolith",
+  "text": "tall obsidian spire wrapped in a stone brick shell with a single entry ring",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end",
+  "loot": "crystal fragments, end stone shards, rare elytra-adjacent gear",
+  "mobs": "endermen and a shulker pair guarding the crown",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/end_obsidian_monolith",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_obsidian_monolith",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_obsidian_monolith"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_obsidian_spire",
+  "kind": "structure",
+  "name": "End Obsidian Spire",
+  "text": "Tall obsidian column with a caged top chamber and a spiral exterior staircase.",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end",
+  "loot": "end-themed trinkets: ender pearls, chorus fruit, end stone bricks",
+  "mobs": "endermen and shulkers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/end_obsidian_spire",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_obsidian_spire",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_obsidian_spire"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_obsidian_spire_camp",
+  "kind": "structure",
+  "name": "End Obsidian Spire Camp",
+  "text": "Small obsidian spire with a base platform, a single interior chamber, and a glowing crystal cluster at the summit.",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end",
+  "loot": "Ender pearls, chorus fruit, and end stone shards.",
+  "mobs": "Endermen and shulkers.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/end_obsidian_spire_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_obsidian_spire_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_obsidian_spire_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_raider_relic_circle",
+  "kind": "structure",
+  "name": "End Raider Relic Circle",
+  "text": "Small obsidian ring with a floating end-stone plinth holding a single relic chest.",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end",
+  "loot": "Rare relic loot and experience-oriented drops.",
+  "mobs": "A lone evoker and two vexes.",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/end_raider_relic_circle",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_raider_relic_circle",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_raider_relic_circle"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_stone_reliquary",
+  "kind": "structure",
+  "name": "End Stone Reliquary",
+  "text": "floating end stone cube reliquary with a central pedestal reached by a spiral ramp",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end_city",
+  "loot": "ender-themed relics and shulker-shell caches",
+  "mobs": "endermen and endermites",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/end_stone_reliquary",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_stone_reliquary",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_stone_reliquary"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:end_void_obelisk",
+  "kind": "structure",
+  "name": "End Void Obelisk",
+  "text": "Slender purpur obelisk with floating landing pad and single top cage",
+  "dimension": "end",
+  "biomes": "#diaithir:is_end",
+  "loot": "end stone crafting items, chorus fruit, rare elytra-adjacent trinkets",
+  "mobs": "endermen and shulkers around pad",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/end_void_obelisk",
+  "connects": [
+   "tags:diaithir_worldgen:s/end_void_obelisk",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/end_void_obelisk"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ferrous_depot_underground",
+  "kind": "structure",
+  "name": "Ferrous Depot Underground",
+  "text": "template corridor network with a rail-hub room, ladder shafts, and a sealed vault pocket",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_stony_peaks_or_dripstone",
+  "loot": "ore, lanterns, minecart supplies, rare crafted gear",
+  "mobs": "cave spiders and silverfish, occasional skeleton archers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ferrous_depot_underground",
+  "connects": [
+   "tags:diaithir_worldgen:s/ferrous_depot_underground",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ferrous_depot_underground"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ferrous_outpost_surface",
+  "kind": "structure",
+  "name": "Ferrous Outpost Surface",
+  "text": "jigsaw start pool of a small walled yard with a central storage hall and two side annex pieces, all terminated by template caps",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_plains_or_savanna",
+  "loot": "tools, iron scraps, basic provisions",
+  "mobs": "zombies and skeletons in low numbers, one iron golem sentry",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ferrous_outpost_surface",
+  "connects": [
+   "tags:diaithir_worldgen:s/ferrous_outpost_surface",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ferrous_outpost_surface"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:floating_crystal_isle",
+  "kind": "structure",
+  "name": "Floating Crystal Isle",
+  "text": "single template of a floating islet with a central crystal pillar and a ring of outer ledges",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end",
+  "loot": "void relic cache with ender pearls, chorus fruit, and obsidian tools",
+  "mobs": "endermen and shulkers",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/floating_crystal_isle",
+  "connects": [
+   "tags:diaithir_worldgen:s/floating_crystal_isle",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/floating_crystal_isle"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:floating_isle_cache",
+  "kind": "structure",
+  "name": "Floating Isle Cache",
+  "text": "Small grass and stone island with a single chest pedestal and a rope-bridge piece on one side.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_overworld_sky_islands",
+  "loot": "rare trade goods: emeralds, name tags, saddles, golden apples",
+  "mobs": "phantoms at night and a few bats",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/floating_isle_cache",
+  "connects": [
+   "tags:diaithir_worldgen:s/floating_isle_cache",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/floating_isle_cache"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:flooded_idol_chamber",
+  "kind": "structure",
+  "name": "Flooded Idol Chamber",
+  "text": "Submerged stone chamber with a central altar platform, water-filled rooms and a ladder-accessible upper gallery.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_jungle",
+  "loot": "rare gems, water-breathing style rewards, ceremonial items",
+  "mobs": "drowned, guardian-like aquatic guards",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/flooded_idol_chamber",
+  "connects": [
+   "tags:diaithir_worldgen:s/flooded_idol_chamber",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/flooded_idol_chamber"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:forest_collapsed_watchtower",
+  "kind": "structure",
+  "name": "Forest Collapsed Watchtower",
+  "text": "Tall cracked stone tower with a partially collapsed upper floor, a spiral interior stair, and a rubble base that spills onto the forest floor.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_forest",
+  "loot": "Archer supplies, arrows, and scattered mid-tier armour pieces.",
+  "mobs": "Skeletons on upper floors and pillagers patrolling the rubble base.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/forest_collapsed_watchtower",
+  "connects": [
+   "tags:diaithir_worldgen:s/forest_collapsed_watchtower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/forest_collapsed_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:forest_overgrown_outpost",
+  "kind": "structure",
+  "name": "Forest Overgrown Outpost",
+  "text": "Small single-storey stone outpost with a rotting timber annex, placed on the terrain surface with a short jigsaw branch leading to a broken watchpost.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_forest",
+  "loot": "Scattered tools, rotten food, and low-tier ruined gear.",
+  "mobs": "Forest-dwelling hostile mobs such as zombies and skeletons, occasional spiders near the vegetation edge.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/forest_overgrown_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/forest_overgrown_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/forest_overgrown_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:forest_sunken_shrine",
+  "kind": "structure",
+  "name": "Forest Sunken Shrine",
+  "text": "Half-buried stone shrine with a central altar room and a descending stair leading into a small vaulted chamber.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_forest",
+  "loot": "Ritual trinkets, mossy books, and minor enchanted items.",
+  "mobs": "Husks and cave-spider-style mobs guarding the lower chamber, with a rare vindicator near the altar.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/forest_sunken_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/forest_sunken_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/forest_sunken_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:forgotten_mine_camp",
+  "kind": "structure",
+  "name": "Forgotten Mine Camp",
+  "text": "Wooden camp with a tent-like cabin, an ore sorting shed, and a short rail spur leading into a sealed mine entrance.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_hill",
+  "loot": "Coal, iron nuggets, lanterns, and tools.",
+  "mobs": "Cave spiders and silverfish around the mine entrance.",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/forgotten_mine_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/forgotten_mine_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/forgotten_mine_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:fortified_manor_keep",
+  "kind": "structure",
+  "name": "Fortified Manor Keep",
+  "text": "walled manor with courtyard, great hall template, and cellar branch sealed by a trapdoor",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "lord's storehouse: armor pieces, saddles, golden apples in cellar",
+  "mobs": "pillagers and evokers in the courtyard",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/fortified_manor_keep",
+  "connects": [
+   "tags:diaithir_worldgen:s/fortified_manor_keep",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/fortified_manor_keep"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frost_outpost",
+  "kind": "structure",
+  "name": "Frost Outpost",
+  "text": "jigsaw cluster of insulated cabins around a central heating stack",
+  "dimension": "overworld",
+  "biomes": "#is_snowy",
+  "loot": "cold_weather_gear",
+  "mobs": "strays and snow golems",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/frost_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/frost_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frost_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frost_waystation_snowy",
+  "kind": "structure",
+  "name": "Frost Waystation Snowy",
+  "text": "compact jigsaw cabin with attached sled shed and a snow-covered roof template",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_snowy_taiga_or_frozen",
+  "loot": "food rations, warm clothing, coal and furs",
+  "mobs": "strays and polar-themed passive animals",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/frost_waystation_snowy",
+  "connects": [
+   "tags:diaithir_worldgen:s/frost_waystation_snowy",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frost_waystation_snowy"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frost_world_tree_hollow",
+  "kind": "structure",
+  "name": "Frost World Tree Hollow",
+  "text": "Frozen trunk interior with spiralling ice-glass stairs, side alcoves and a locked crown chamber.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "cold-resistant gear, packed ice blocks and unique frozen trinkets",
+  "mobs": "strays and snow golems guarding the stairwell",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/frost_world_tree_hollow",
+  "connects": [
+   "tags:diaithir_worldgen:s/frost_world_tree_hollow",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frost_world_tree_hollow"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frostbitten_shrine",
+  "kind": "structure",
+  "name": "Frostbitten Shrine",
+  "text": "ice-brick shrine with a central altar pillar and one exterior stair spur",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_taiga",
+  "loot": "cold-weather gear, packed ice, enchanted books",
+  "mobs": "strays and snow golems as guardians",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/frostbitten_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/frostbitten_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frostbitten_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frostbound_beacon_keep",
+  "kind": "structure",
+  "name": "Frostbound Beacon Keep",
+  "text": "Ice-brick keep with central shaft, side bridge and frozen chest vault",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_snowy",
+  "loot": "cold-weather gear, blue ice items, enchanted books",
+  "mobs": "stray skeletons and snow golem remnants",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/frostbound_beacon_keep",
+  "connects": [
+   "tags:diaithir_worldgen:s/frostbound_beacon_keep",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frostbound_beacon_keep"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frostbound_cairn",
+  "kind": "structure",
+  "name": "Frostbound Cairn",
+  "text": "Stacked template of three offset stone tiers with an exposed interior stair spiral and a single chest landing.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_snowy",
+  "loot": "cold-weather gear, ice shards, preserved food",
+  "mobs": "strays and snow-biome ambient animals",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/frostbound_cairn",
+  "connects": [
+   "tags:diaithir_worldgen:s/frostbound_cairn",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frostbound_cairn"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frostbound_ice_drillsite",
+  "kind": "structure",
+  "name": "Frostbound Ice Drillsite",
+  "text": "Half-buried drilling rig template with a vertical shaft down to a short tunnel branch",
+  "dimension": "overworld",
+  "biomes": "#is_snowy",
+  "loot": "Iron tools, coal, packed ice blocks and cold-resistant gear fragments",
+  "mobs": "Strays and silverfish in the shaft",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/frostbound_ice_drillsite",
+  "connects": [
+   "tags:diaithir_worldgen:s/frostbound_ice_drillsite",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frostbound_ice_drillsite"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frostbound_keep",
+  "kind": "structure",
+  "name": "Frostbound Keep",
+  "text": "Walled courtyard keep with four corner turrets, central hall and a frozen gatehouse jigsaw piece.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "armour pieces, iron gear and cold-weather food",
+  "mobs": "strays and pillager patrols",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/frostbound_keep",
+  "connects": [
+   "tags:diaithir_worldgen:s/frostbound_keep",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frostbound_keep"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frostbound_ossuary",
+  "kind": "structure",
+  "name": "Frostbound Ossuary",
+  "text": "half-buried crypt template with a central altar room and branching bone-lined tunnels",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "bones, bone meal, frost-themed armour trims",
+  "mobs": "skeletons and strays with occasional bogged variants",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/frostbound_ossuary",
+  "connects": [
+   "tags:diaithir_worldgen:s/frostbound_ossuary",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frostbound_ossuary"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frostbound_outpost",
+  "kind": "structure",
+  "name": "Frostbound Outpost",
+  "text": "Low wooden hall with snow roof pieces, a fenced yard, and a basement storage piece.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "Winter provisions: cooked food, leather, coal, ice-themed tools.",
+  "mobs": "Strays and wolves around the yard.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/frostbound_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/frostbound_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frostbound_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:frozen_cairn_vault",
+  "kind": "structure",
+  "name": "Frozen Cairn Vault",
+  "text": "Snow-capped stone cairn with a narrow ice-lined passage leading to a small domed chamber containing a barrel cache.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_snowy",
+  "loot": "cold-storage supplies, preserved food, rare ice-themed ornaments",
+  "mobs": "strays, snow golem spawns, frozen zombies",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/frozen_cairn_vault",
+  "connects": [
+   "tags:diaithir_worldgen:s/frozen_cairn_vault",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/frozen_cairn_vault"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:glacial_arch_bridge",
+  "kind": "structure",
+  "name": "Glacial Arch Bridge",
+  "text": "template of a natural ice arch spanning a gorge with a frozen cave passage beneath",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "explorer chest with packed ice, blue ice, and frost-themed trinkets",
+  "mobs": "polar bears and strays",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/glacial_arch_bridge",
+  "connects": [
+   "tags:diaithir_worldgen:s/glacial_arch_bridge",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/glacial_arch_bridge"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:hamlet_farmstead_cluster",
+  "kind": "structure",
+  "name": "Hamlet Farmstead Cluster",
+  "text": "Central well plaza with four jigsaw-linked farmstead pods, fenced crop plots and a single road spine; roof variants chosen per biome.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_plains",
+  "loot": "farming supplies, bread, seeds, basic tools",
+  "mobs": "passive farm animals and a few village guards",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/hamlet_farmstead_cluster",
+  "connects": [
+   "tags:diaithir_worldgen:s/hamlet_farmstead_cluster",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/hamlet_farmstead_cluster"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:hidden_crypt_chapel",
+  "kind": "structure",
+  "name": "Hidden Crypt Chapel",
+  "text": "underground chapel with pew rows, altar room, and sealed sarcophagus alcove reached by a short tunnel",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "reliquary treasure: gold trinkets, enchanted books, bones",
+  "mobs": "zombies, husks, and a rare cave spider nest near the crypt",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/hidden_crypt_chapel",
+  "connects": [
+   "tags:diaithir_worldgen:s/hidden_crypt_chapel",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/hidden_crypt_chapel"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:hollow_chapel_ruin",
+  "kind": "structure",
+  "name": "Hollow Chapel Ruin",
+  "text": "Overgrown chapel ruin with a collapsed nave, a surviving bell tower, and a crypt entrance.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:taiga_and_forest",
+  "loot": "Candles, old ledgers, and buried reliquary boxes.",
+  "mobs": "Skeletons and zombies in the crypt, with silverfish in the masonry.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/hollow_chapel_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/hollow_chapel_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/hollow_chapel_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:hollow_crystal_vault",
+  "kind": "structure",
+  "name": "Hollow Crystal Vault",
+  "text": "Floating ring of crystal-pillar pieces enclosing a shallow chamber with a single raised altar template.",
+  "dimension": "end",
+  "biomes": "#diaithir:is_end_highlands",
+  "loot": "end stone shards, crystal dust, rare enchanted books",
+  "mobs": "endermen and shulkers",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/hollow_crystal_vault",
+  "connects": [
+   "tags:diaithir_worldgen:s/hollow_crystal_vault",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/hollow_crystal_vault"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:jungle_canopy_relay",
+  "kind": "structure",
+  "name": "Jungle Canopy Relay",
+  "text": "Vine-covered timber tower on raised root platform with rope-bridge exit",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_jungle",
+  "loot": "seeds, cocoa, jungle wood trade chests",
+  "mobs": "ocelot and vine-dwelling spiders",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/jungle_canopy_relay",
+  "connects": [
+   "tags:diaithir_worldgen:s/jungle_canopy_relay",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/jungle_canopy_relay"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:jungle_outpost_cliff_post",
+  "kind": "structure",
+  "name": "Jungle Outpost Cliff Post",
+  "text": "Small clifftop lookout tower with a ladder-access platform and one supply hut, placed against natural stone walls.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_jungle_village_biome",
+  "loot": "scouting supplies, arrows, emerald caches",
+  "mobs": "pillagers and a patrol of two vindicators",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/jungle_outpost_cliff_post",
+  "connects": [
+   "tags:diaithir_worldgen:s/jungle_outpost_cliff_post",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/jungle_outpost_cliff_post"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:jungle_overgrown_ruin_courtyard",
+  "kind": "structure",
+  "name": "Jungle Overgrown Ruin Courtyard",
+  "text": "Open courtyard of broken pillars and a small shrine template, connected via jigsaw to scattered rubble pieces",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_jungle",
+  "loot": "common ruin supplies, pottery shards, obsidian tools",
+  "mobs": "zombies and husks in shaded corners",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/jungle_overgrown_ruin_courtyard",
+  "connects": [
+   "tags:diaithir_worldgen:s/jungle_overgrown_ruin_courtyard",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/jungle_overgrown_ruin_courtyard"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:jungle_settlement_ruin_grove",
+  "kind": "structure",
+  "name": "Jungle Settlement Ruin Grove",
+  "text": "Partially overgrown ring of huts around a shrine template, with vine-covered wall pieces and a collapsed watchtower jigsaw end.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_jungle_village_biome",
+  "loot": "ancient shrine offerings, mossy stone, rare enchanted books",
+  "mobs": "villagers plus a small spawn of cave spiders hiding in foliage",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/jungle_settlement_ruin_grove",
+  "connects": [
+   "tags:diaithir_worldgen:s/jungle_settlement_ruin_grove",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/jungle_settlement_ruin_grove"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:jungle_settlement_stilt_hub",
+  "kind": "structure",
+  "name": "Jungle Settlement Stilt Hub",
+  "text": "Elevated plank hub on tall stilts with a central longhouse, two jigsaw side wings, and a rope-bridge connector pool feeding the outer pieces.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_jungle_village_biome",
+  "loot": "tropical trade goods, bamboo tools, cocoa and melon provisions",
+  "mobs": "peaceful villagers and jungle-themed wandering traders, occasional parrots",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/jungle_settlement_stilt_hub",
+  "connects": [
+   "tags:diaithir_worldgen:s/jungle_settlement_stilt_hub",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/jungle_settlement_stilt_hub"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:jungle_stepped_temple",
+  "kind": "structure",
+  "name": "Jungle Stepped Temple",
+  "text": "Single stepped pyramid base with central stair spine, one entrance jigsaw piece, and a rear chamber template",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_jungle",
+  "loot": "ceremonial offerings, carved gold trinkets, jade ornaments",
+  "mobs": "jungle cats, spiders, and a few skeletons near the chamber",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/jungle_stepped_temple",
+  "connects": [
+   "tags:diaithir_worldgen:s/jungle_stepped_temple",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/jungle_stepped_temple"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:kelp_cistern_complex",
+  "kind": "structure",
+  "name": "Kelp Cistern Complex",
+  "text": "ring of cisterns connected by a central jigsaw hub with open kelp-filled courtyard",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_ocean",
+  "loot": "preserved food, kelp-based crafting material",
+  "mobs": "cod, salmon and occasional drowned",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/kelp_cistern_complex",
+  "connects": [
+   "tags:diaithir_worldgen:s/kelp_cistern_complex",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/kelp_cistern_complex"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:kelp_forest_watchpost",
+  "kind": "structure",
+  "name": "Kelp Forest Watchpost",
+  "text": "Narrow spiral platform rising through kelp canopy with a hollow beacon room at the top and a ground-level supply cellar.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_cold_ocean",
+  "loot": "kelp-preserved food, glow ink, lantern and bone meal",
+  "mobs": "elder guardian-style sentries, glow squids, cave-style eels",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/kelp_forest_watchpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/kelp_forest_watchpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/kelp_forest_watchpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:knights_market_square",
+  "kind": "structure",
+  "name": "Knights Market Square",
+  "text": "open village-scale square with stall pieces, central well, and a banner-draped gatehouse",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_plains",
+  "loot": "merchant chests with bread, tools, and modest emeralds",
+  "mobs": "peaceful villagers with occasional armored illager raiders",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/knights_market_square",
+  "connects": [
+   "tags:diaithir_worldgen:s/knights_market_square",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/knights_market_square"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:lichen_cliff_dwelling",
+  "kind": "structure",
+  "name": "Lichen Cliff Dwelling",
+  "text": "jigsaw pool of carved terrace rooms stepped along a cliff face with a central pathway",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_badlands",
+  "loot": "nomad camp with terracotta, dye, and cured food",
+  "mobs": "husks and cave spiders",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/lichen_cliff_dwelling",
+  "connects": [
+   "tags:diaithir_worldgen:s/lichen_cliff_dwelling",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/lichen_cliff_dwelling"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:megalithic_passage_mound",
+  "kind": "structure",
+  "name": "Megalithic Passage Mound",
+  "text": "Grassy earthen mound with a central stone-lined passage leading to a corbelled chamber, entrance kerb ring placed via jigsaw on terrain surface.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_hill",
+  "loot": "ceremonial burial goods, flint tools, polished bone ornaments",
+  "mobs": "silverfish in stone cracks, skeletons in inner chamber, occasional zombies",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/megalithic_passage_mound",
+  "connects": [
+   "tags:diaithir_worldgen:s/megalithic_passage_mound",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/megalithic_passage_mound"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:monumental_tomb_gate",
+  "kind": "structure",
+  "name": "Monumental Tomb Gate",
+  "text": "Two-tier pillared gateway with a sealed inner vault reached by a sand-filled corridor.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_desert_dunes",
+  "loot": "ceremonial_burial_goods",
+  "mobs": "husks and cave-spider style crawlers in vault",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/monumental_tomb_gate",
+  "connects": [
+   "tags:diaithir_worldgen:s/monumental_tomb_gate",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/monumental_tomb_gate"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:mossveil_warrens",
+  "kind": "structure",
+  "name": "Mossveil Warrens",
+  "text": "overgrown multi-room burrow linked by narrow tunnels and a canopy platform",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_jungle",
+  "loot": "jungle foraging loot, cocoa, bamboo tools, emeralds",
+  "mobs": "cave spiders and vine-dwelling silverfish",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/mossveil_warrens",
+  "connects": [
+   "tags:diaithir_worldgen:s/mossveil_warrens",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/mossveil_warrens"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_ash_crypt",
+  "kind": "structure",
+  "name": "Nether Ash Crypt",
+  "text": "cracked basalt mausoleum with a single gated antechamber and a sealed inner ossuary",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "bone relics, soul-infused lanterns, obsidian shards",
+  "mobs": "wither skeletons and magma cubes",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_ash_crypt",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_ash_crypt",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_ash_crypt"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_basalt_shrine",
+  "kind": "structure",
+  "name": "Nether Basalt Shrine",
+  "text": "basalt platform with four pillars and central altar, bridged by a jigsaw chain of catwalks",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "blaze-forged gear, soul sand reagents, gold cache",
+  "mobs": "blazes and magma cubes around the altar, wither skeletons on the bridges",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/nether_basalt_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_basalt_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_basalt_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_bastion_outpost",
+  "kind": "structure",
+  "name": "Nether Bastion Outpost",
+  "text": "Small fortified brick platform with a gatehouse piece, two side walls, and a lava moat ring.",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "nether resources: gold, wart, obsidian, blaze-themed rods",
+  "mobs": "magma cubes and wither skeletons",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/nether_bastion_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_bastion_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_bastion_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_ember_pylon",
+  "kind": "structure",
+  "name": "Nether Ember Pylon",
+  "text": "Blackstone pylon with exposed lava-channel core and two stacked observation decks",
+  "dimension": "nether",
+  "biomes": "#diaithir:is_nether",
+  "loot": "nether materials, gilded blackstone, ember fuel",
+  "mobs": "magma cube and blaze near core, wither skeleton on upper deck",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_ember_pylon",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_ember_pylon",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_ember_pylon"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_forge_hold",
+  "kind": "structure",
+  "name": "Nether Forge Hold",
+  "text": "template basalt forge platform with chimney spurs and a lava moat ring",
+  "dimension": "nether",
+  "biomes": "#is_nether_fortress_adjacent",
+  "loot": "forging_materials",
+  "mobs": "magma cubes and blazes",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_forge_hold",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_forge_hold",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_forge_hold"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_market_remnant",
+  "kind": "structure",
+  "name": "Nether Market Remnant",
+  "text": "Template: open stall rows around a central well, scorched awnings, underground storage",
+  "dimension": "nether",
+  "biomes": "#diaithir:is_nether_wastes",
+  "loot": "nether crops, trade bundles, scorched tools",
+  "mobs": "piglins, zombified piglins, magma cubes",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_market_remnant",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_market_remnant",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_market_remnant"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_raider_bastion_arena",
+  "kind": "structure",
+  "name": "Nether Raider Bastion Arena",
+  "text": "Blackstone arena ringed by lava channels with four gated entry arches and a raised judge platform.",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "Blackstone tools, gold, and crossbow enchantments.",
+  "mobs": "Piglin-style raiders replaced by pillager-themed mobs at fixed spawn points.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_raider_bastion_arena",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_raider_bastion_arena",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_raider_bastion_arena"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_root_sanctum",
+  "kind": "structure",
+  "name": "Nether Root Sanctum",
+  "text": "Floating-style root cluster of basalt roots wrapping a small ritual chamber with four entry tunnels.",
+  "dimension": "nether",
+  "biomes": "#minecraft:has_structure/nether_fortress",
+  "loot": "nether botanical drops, glowstone-based lighting gear and rare armour trims",
+  "mobs": "wither skeletons and magma cubes in side tunnels",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/nether_root_sanctum",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_root_sanctum",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_root_sanctum"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_siege_camp",
+  "kind": "structure",
+  "name": "Nether Siege Camp",
+  "text": "Ruined outpost of stacked fortress bricks with a fenced inner yard and a broken siege engine.",
+  "dimension": "nether",
+  "biomes": "#diaithir:nether_wastes",
+  "loot": "Blaze rods, nether wart, and soot-stained supply crates.",
+  "mobs": "Wither skeletons and blazes around the fenced yard.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/nether_siege_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_siege_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_siege_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:oasis_watch_tower",
+  "kind": "structure",
+  "name": "Oasis Watch Tower",
+  "text": "Tall square tower with spiral interior stair and a ground-level well room.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_desert_oasis",
+  "loot": "water_and_survival_gear",
+  "mobs": "drowned-style aquatic mobs near well, skeletons above",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/oasis_watch_tower",
+  "connects": [
+   "tags:diaithir_worldgen:s/oasis_watch_tower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/oasis_watch_tower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:obelisk_colonnade_ruin",
+  "kind": "structure",
+  "name": "Obelisk Colonnade Ruin",
+  "text": "ring of four broken columns flanking a central obelisk stub with buried stairwell via jigsaw connector",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "tools, sandstone trade goods, faded banners",
+  "mobs": "sand spiders and small husk groups near the stairwell",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/obelisk_colonnade_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/obelisk_colonnade_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/obelisk_colonnade_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:obsidian_spire_hold",
+  "kind": "structure",
+  "name": "Obsidian Spire Hold",
+  "text": "Narrow obsidian spire fortress with a spiral stair and a sealed upper chamber.",
+  "dimension": "end",
+  "biomes": "#diaithir:end_highlands",
+  "loot": "Ender pearls, chorus fruit caches, and sealed reliquary chests.",
+  "mobs": "Endermen and shulkers guarding the stair.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/obsidian_spire_hold",
+  "connects": [
+   "tags:diaithir_worldgen:s/obsidian_spire_hold",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/obsidian_spire_hold"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ogham_great_circle",
+  "kind": "structure",
+  "name": "Ogham Great Circle",
+  "text": "great stone circle: nine ogham stones with a ring of plain menhirs and moss walls",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_ogham_great_circle",
+  "loot": "none",
+  "mobs": "none",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/ogham_great_circle",
+  "connects": [
+   "tags:diaithir_worldgen:s/ogham_great_circle",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ogham_great_circle"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ogham_hollow_ring",
+  "kind": "structure",
+  "name": "Ogham Hollow Ring",
+  "text": "stone circle hidden in a wet wood, nine ogham stones draped in moss",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_ogham_hollow_ring",
+  "loot": "none",
+  "mobs": "none",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/ogham_hollow_ring",
+  "connects": [
+   "tags:diaithir_worldgen:s/ogham_hollow_ring",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ogham_hollow_ring"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ogham_stone_circle",
+  "kind": "structure",
+  "name": "Ogham Stone Circle",
+  "text": "stone circle of nine ogham stones around a plinth for the Ascendant altar",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_ogham_circle",
+  "loot": "none",
+  "mobs": "none",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/ogham_stone_circle",
+  "connects": [
+   "tags:diaithir_worldgen:s/ogham_stone_circle",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ogham_stone_circle"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:oracle_ruins_desert_sanctum",
+  "kind": "structure",
+  "name": "Oracle Ruins Desert Sanctum",
+  "text": "Sand-buried sanctum with stepped pyramid core, half-exposed colonnade, and hidden staircase to a tomb vault",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "desert relics: gold, emeralds, brushed artifact fragments",
+  "mobs": "husks and cave-spider-free dry-biome zombies, tomb-guard skeletons inside vault",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/oracle_ruins_desert_sanctum",
+  "connects": [
+   "tags:diaithir_worldgen:s/oracle_ruins_desert_sanctum",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/oracle_ruins_desert_sanctum"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:oracle_ruins_nether_outpost",
+  "kind": "structure",
+  "name": "Oracle Ruins Nether Outpost",
+  "text": "Scorched basalt platform with broken marble-like pillars and a central fire-lit oracle stone",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_nether",
+  "loot": "infernal offerings: gold, glowstone, netherite scraps, blaze rods",
+  "mobs": "wither skeletons and blazes around the central stone",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/oracle_ruins_nether_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/oracle_ruins_nether_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/oracle_ruins_nether_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:oracle_ruins_shrine",
+  "kind": "structure",
+  "name": "Oracle Ruins Shrine",
+  "text": "Small open-air altar ring of four fallen columns around a central brazier pedestal, linked by a single rubble path",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "ritual supplies: torches, bones, cooked food, minor gems",
+  "mobs": "zombies and spiders near the brazier, skeletons on column tops",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/oracle_ruins_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/oracle_ruins_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/oracle_ruins_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:oracle_ruins_temple",
+  "kind": "structure",
+  "name": "Oracle Ruins Temple",
+  "text": "Central hypostyle hall with collonaded courtyard, sunken oracle chamber at core, and a broken colonnade entry path using jigsaw pieces with 3 height variants",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_forest",
+  "loot": "ancient offerings: gold ingots, lapis, enchanted books, suspicious sand",
+  "mobs": "skeletons and husks patrolling ruined colonnades, occasional vex in the oracle chamber",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/oracle_ruins_temple",
+  "connects": [
+   "tags:diaithir_worldgen:s/oracle_ruins_temple",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/oracle_ruins_temple"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:oracle_ruins_underground_crypt",
+  "kind": "structure",
+  "name": "Oracle Ruins Underground Crypt",
+  "text": "Subterranean cavern crypt with carved corridor rings, central oracle basin, and sealed side alcoves",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_overworld_underground",
+  "loot": "crypt treasure: iron, diamonds, rare enchanted gear, bones",
+  "mobs": "skeletons and silverfish in corridors, spider nests in alcoves",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/oracle_ruins_underground_crypt",
+  "connects": [
+   "tags:diaithir_worldgen:s/oracle_ruins_underground_crypt",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/oracle_ruins_underground_crypt"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:overgrown_camp_ruin",
+  "kind": "structure",
+  "name": "Overgrown Camp Ruin",
+  "text": "Ring of collapsed tents and a central campfire pit, connected by short wooden path pieces.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "camping gear: leather, cooked food, torches, rotten cloth",
+  "mobs": "wandering husks and cave spiders hiding under debris",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/overgrown_camp_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/overgrown_camp_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/overgrown_camp_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:overgrown_causeway_ruin",
+  "kind": "structure",
+  "name": "Overgrown Causeway Ruin",
+  "text": "Long broken stone causeway with arched gate pieces and vine-covered collapsed sections.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_jungle",
+  "loot": "food, bamboo-era supplies and simple tools",
+  "mobs": "ocelots, cave spiders and wandering zombies",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/overgrown_causeway_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/overgrown_causeway_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/overgrown_causeway_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:overgrown_hidden_passage",
+  "kind": "structure",
+  "name": "Overgrown Hidden Passage",
+  "text": "Short stone corridor pieces with a secret wall hatch leading to a vaulted side room containing a pressure-plate trap.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_jungle",
+  "loot": "ancient maps, arrows, tripwire-trap rewards",
+  "mobs": "cave spiders, silverfish",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/overgrown_hidden_passage",
+  "connects": [
+   "tags:diaithir_worldgen:s/overgrown_hidden_passage",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/overgrown_hidden_passage"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:overgrown_mall_ruin",
+  "kind": "structure",
+  "name": "Overgrown Mall Ruin",
+  "text": "Template: two-storey shell with atrium, broken skylight, vine-covered storefront rooms",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_forest",
+  "loot": "retail goods, food rations, dyes, junk electronics",
+  "mobs": "zombies, spiders, cave spiders",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/overgrown_mall_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/overgrown_mall_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/overgrown_mall_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:overgrown_quarry_camp",
+  "kind": "structure",
+  "name": "Overgrown Quarry Camp",
+  "text": "Terraced quarry pit with tent-like template shelters on each ledge and a rope ladder linking levels",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_hill",
+  "loot": "mining tools, ore fragments and rations",
+  "mobs": "cave spiders and zombies at dusk",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/overgrown_quarry_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/overgrown_quarry_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/overgrown_quarry_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:overgrown_shrine_ruin",
+  "kind": "structure",
+  "name": "Overgrown Shrine Ruin",
+  "text": "Single-room moss-covered shrine with a central altar template and two entrance variants.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_jungle",
+  "loot": "Offerings: emeralds, vines, bamboo-themed trade bait, lapis.",
+  "mobs": "Zombies and silverfish near altar.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/overgrown_shrine_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/overgrown_shrine_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/overgrown_shrine_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:overgrown_watchtower",
+  "kind": "structure",
+  "name": "Overgrown Watchtower",
+  "text": "Tall stone-brick tower with a ground-floor storeroom, spiral interior staircase, and a top lookout platform with a ladder down the outer wall.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_plains",
+  "loot": "Arrows, bread, iron tools, and stored food.",
+  "mobs": "Zombies and occasional pillagers on the upper floors.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/overgrown_watchtower",
+  "connects": [
+   "tags:diaithir_worldgen:s/overgrown_watchtower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/overgrown_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:raider_camp_clearing",
+  "kind": "structure",
+  "name": "Raider Camp Clearing",
+  "text": "ring of hide tents and a central campfire pit, template pieces placed on a flat jigsaw pool",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "food, leather, crossbows, iron nuggets",
+  "mobs": "pillager and illager beast pair, campfire keeps them idle until players approach",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/raider_camp_clearing",
+  "connects": [
+   "tags:diaithir_worldgen:s/raider_camp_clearing",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/raider_camp_clearing"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:raider_watch_camp",
+  "kind": "structure",
+  "name": "Raider Watch Camp",
+  "text": "Wooden stockade ring with a central tower, banner poles, and tents clustered beside a supply cart template.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_overworld",
+  "loot": "crossbows, arrows, raid banners, emeralds",
+  "mobs": "pillagers, vindicator captains, ravager mounts rare",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/raider_watch_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/raider_watch_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/raider_watch_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:raider_watch_tower",
+  "kind": "structure",
+  "name": "Raider Watch Tower",
+  "text": "single tall timber watchtower with a ground-level storeroom and a lookout platform, connected by a jigsaw ladder shaft",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_plains",
+  "loot": "raider gear, arrows, dyed banners, emeralds",
+  "mobs": "pillager patrol with one vindicator captain, spawns in lookout",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/raider_watch_tower",
+  "connects": [
+   "tags:diaithir_worldgen:s/raider_watch_tower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/raider_watch_tower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ransacked_hamlet",
+  "kind": "structure",
+  "name": "Ransacked Hamlet",
+  "text": "four to six broken house templates around a well, with scattered crates and overturned carts",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "looted village supplies, bread, seeds, damaged tools",
+  "mobs": "abandoned villagers as passive decoration, occasional pillager stragglers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/ransacked_hamlet",
+  "connects": [
+   "tags:diaithir_worldgen:s/ransacked_hamlet",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ransacked_hamlet"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ruined_bridge_crossing",
+  "kind": "structure",
+  "name": "Ruined Bridge Crossing",
+  "text": "Broken stone bridge spanning a ravine or river, with collapsed sections and a small watchtower stub at one end.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_jungle",
+  "loot": "rope, lanterns, minor weapons",
+  "mobs": "skeletons, vines-dwelling creepers",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ruined_bridge_crossing",
+  "connects": [
+   "tags:diaithir_worldgen:s/ruined_bridge_crossing",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ruined_bridge_crossing"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ruined_feast_hall",
+  "kind": "structure",
+  "name": "Ruined Feast Hall",
+  "text": "ruin of a feast hall with a long table, hearth and a dais of offering-dish chests",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_feast_hall",
+  "loot": "offering dishes (cake, pumpkin pie, stews)",
+  "mobs": "none",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ruined_feast_hall",
+  "connects": [
+   "tags:diaithir_worldgen:s/ruined_feast_hall",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ruined_feast_hall"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ruined_feast_hall_long",
+  "kind": "structure",
+  "name": "Ruined Feast Hall Long",
+  "text": "great ruined feast hall, two tables, hearth and a dais of offering-dish chests",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_feast_hall_long",
+  "loot": "offering dishes (cake, pumpkin pie, stews)",
+  "mobs": "none",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ruined_feast_hall_long",
+  "connects": [
+   "tags:diaithir_worldgen:s/ruined_feast_hall_long",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ruined_feast_hall_long"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ruined_watch_spire",
+  "kind": "structure",
+  "name": "Ruined Watch Spire",
+  "text": "Single stone shaft with broken upper ring, jigsaw-attached ground-level courtyard and one buried cellar branch",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_plains",
+  "loot": "scattered tools, weathered armour pieces, minor food",
+  "mobs": "skeleton and zombie patrol at ground level, spider in cellar",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ruined_watch_spire",
+  "connects": [
+   "tags:diaithir_worldgen:s/ruined_watch_spire",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ruined_watch_spire"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ruined_watchtower",
+  "kind": "structure",
+  "name": "Ruined Watchtower",
+  "text": "single jigsaw entry tower with stacked stone platforms, spiral stair template, and collapsed rampart side pieces",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_forest",
+  "loot": "abandoned guard supplies: iron gear, arrows, scattered coins",
+  "mobs": "skeletons and vindicators patrolling the upper floors",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ruined_watchtower",
+  "connects": [
+   "tags:diaithir_worldgen:s/ruined_watchtower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ruined_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ruined_waystation_village",
+  "kind": "structure",
+  "name": "Ruined Waystation Village",
+  "text": "Partially collapsed houses with broken palisade, overgrown paths and a half-standing chapel template as the focal point.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_forest",
+  "loot": "salvaged tools, books, scattered emeralds",
+  "mobs": "zombie villagers, skeleton scouts",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ruined_waystation_village",
+  "connects": [
+   "tags:diaithir_worldgen:s/ruined_waystation_village",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ruined_waystation_village"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sandstone_rock_citadel",
+  "kind": "structure",
+  "name": "Sandstone Rock Citadel",
+  "text": "Carved sandstone facade entrance feeding a jigsaw chain of hallway pieces ending in a central chamber with hidden side passages.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_desert_plateau",
+  "loot": "ancient_trade_cache",
+  "mobs": "husks and desert skeletons with occasional wither skeleton in deep chambers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sandstone_rock_citadel",
+  "connects": [
+   "tags:diaithir_worldgen:s/sandstone_rock_citadel",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sandstone_rock_citadel"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:savanna_ruined_watchtower",
+  "kind": "structure",
+  "name": "Savanna Ruined Watchtower",
+  "text": "Tall narrow tower with a broken upper floor and a ground-level entry jigsaw piece",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_savanna",
+  "loot": "watch supplies, arrows, sealed pottery",
+  "mobs": "skeletons and occasional spiders at the top",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/savanna_ruined_watchtower",
+  "connects": [
+   "tags:diaithir_worldgen:s/savanna_ruined_watchtower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/savanna_ruined_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:savanna_sunstone_altar",
+  "kind": "structure",
+  "name": "Savanna Sunstone Altar",
+  "text": "Low raised altar platform with four corner braziers and a buried storage template beneath",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_savanna",
+  "loot": "sun-themed relics, copper and gold bundles",
+  "mobs": "husks and desert-style skeletons near the altar",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/savanna_sunstone_altar",
+  "connects": [
+   "tags:diaithir_worldgen:s/savanna_sunstone_altar",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/savanna_sunstone_altar"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:siege_stockade",
+  "kind": "structure",
+  "name": "Siege Stockade",
+  "text": "palisade wall enclosing a ruined courtyard with a gate jigsaw piece and a single ransacked barracks",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "weapons, ropes, tripwire and bundled supplies",
+  "mobs": "pillager squad with ravager mount in the courtyard",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/siege_stockade",
+  "connects": [
+   "tags:diaithir_worldgen:s/siege_stockade",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/siege_stockade"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sky_root_ruin",
+  "kind": "structure",
+  "name": "Sky Root Ruin",
+  "text": "Sprawling buried root-arch complex with a central hollow trunk shaft, branching jigsaw wings and a sealed vault at the base.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_forest",
+  "loot": "ancient botanical relics, enchanted saplings and rare seeds",
+  "mobs": "husks and silverfish in cavities, occasional bee swarms near canopy",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/sky_root_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/sky_root_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sky_root_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:snowy_outpost_lodge",
+  "kind": "structure",
+  "name": "Snowy Outpost Lodge",
+  "text": "Compact cluster of insulated cabins around a central hearth, stacked snow-covered roofs and a short stair spine to a lookout.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_snowy",
+  "loot": "winter gear, furs, preserved food",
+  "mobs": "strays, polar-themed villagers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/snowy_outpost_lodge",
+  "connects": [
+   "tags:diaithir_worldgen:s/snowy_outpost_lodge",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/snowy_outpost_lodge"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:soulsand_sinkhole_ruin",
+  "kind": "structure",
+  "name": "Soulsand Sinkhole Ruin",
+  "text": "Partially sunken stone well ruin with a jigsaw spiral staircase leading to a sealed vault",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_soul_sand_valley",
+  "loot": "Soul lantern caches and ancient netherite fragments",
+  "mobs": "Skeletons and soul-touched wither skeletons",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/soulsand_sinkhole_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/soulsand_sinkhole_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/soulsand_sinkhole_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:spiral_carved_chamber",
+  "kind": "structure",
+  "name": "Spiral Carved Chamber",
+  "text": "Partially buried stone room with spiral and zigzag carved wall template pieces and a single sealed hidden vault below.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "carved stone trinkets, ancient ink pots, hidden cache",
+  "mobs": "husks and stray skeletons, cave spiders in vault",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/spiral_carved_chamber",
+  "connects": [
+   "tags:diaithir_worldgen:s/spiral_carved_chamber",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/spiral_carved_chamber"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:starless_obelisk_shrine",
+  "kind": "structure",
+  "name": "Starless Obelisk Shrine",
+  "text": "Single tall template obelisk shrine on a platform with a spiral staircase and sealed relic cell",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end_highlands",
+  "loot": "relics: end-stone gems, ancient scrolls, enchanted books",
+  "mobs": "endermen and a shulker pair guarding the cell",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/starless_obelisk_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/starless_obelisk_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/starless_obelisk_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:submerged_harbour_vault",
+  "kind": "structure",
+  "name": "Submerged Harbour Vault",
+  "text": "Jigsaw quay of stone piers and a sunken storehouse with flooded rooms connected by arched passages",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_ocean",
+  "loot": "trade cargo: amphorae, nautical maps, prismarine trinkets, fishing gear",
+  "mobs": "drowned and guardian-like sentries in flooded halls",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/submerged_harbour_vault",
+  "connects": [
+   "tags:diaithir_worldgen:s/submerged_harbour_vault",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/submerged_harbour_vault"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunbaked_lookout_tower",
+  "kind": "structure",
+  "name": "Sunbaked Lookout Tower",
+  "text": "Tall sandstone tower with external stair spiral and rooftop lantern platform",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_desert",
+  "loot": "desert trade goods, gold trinkets, cartography items",
+  "mobs": "husk and dried ghost-like wanderers near base",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/sunbaked_lookout_tower",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunbaked_lookout_tower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunbaked_lookout_tower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_beehive_tomb",
+  "kind": "structure",
+  "name": "Sunken Beehive Tomb",
+  "text": "Jigsaw-built corbelled dome entrance with a sloped dromos corridor leading to a central circular chamber, placed half-buried at surface level",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "funerary goods: gold rings, bronze weapons, ceramic urns, rare gemstones",
+  "mobs": "husks and skeletons in the entry corridor, a single elite zombie guardian in the chamber",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/sunken_beehive_tomb",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_beehive_tomb",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_beehive_tomb"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_burial_vault",
+  "kind": "structure",
+  "name": "Sunken Burial Vault",
+  "text": "single entrance room chained via two jigsaw corridor pieces to a sealed central sarcophagus chamber with a hidden stair",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "ancient funerary goods, gold trinkets, linen and dye",
+  "mobs": "desert scorpions and shambling wrapped mummies",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_burial_vault",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_burial_vault",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_burial_vault"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_canal_station",
+  "kind": "structure",
+  "name": "Sunken Canal Station",
+  "text": "Half-flooded wooden dock hub with three jigsaw arms extending over shallow water and a central underwater cache",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_river",
+  "loot": "fishing gear and waterlogged crates",
+  "mobs": "drowned and squids in the flooded section",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_canal_station",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_canal_station",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_canal_station"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_canopy_grove",
+  "kind": "structure",
+  "name": "Sunken Canopy Grove",
+  "text": "template of a giant hollow tree trunk with a root cellar beneath and branching platform rings above",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_forest",
+  "loot": "forager stash with saplings, mushrooms, and seeds",
+  "mobs": "bees, foxes, and spiders in the root cellar",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_canopy_grove",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_canopy_grove",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_canopy_grove"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_cistern_ruin",
+  "kind": "structure",
+  "name": "Sunken Cistern Ruin",
+  "text": "half-buried sandstone cistern with flooded lower chamber and side corridor",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_desert",
+  "loot": "water-themed relics, glass bottles, gold trinkets",
+  "mobs": "husks and drowned in the flooded chamber",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/sunken_cistern_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_cistern_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_cistern_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_district_ruin",
+  "kind": "structure",
+  "name": "Sunken District Ruin",
+  "text": "Jigsaw: central plaza piece, four street arms, collapsed towers as terminal pieces, half-buried foundations",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_plains",
+  "loot": "abandoned civic supplies, tools, faded maps",
+  "mobs": "zombies, skeletons, occasional husks",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/sunken_district_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_district_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_district_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_fishing_hamlet",
+  "kind": "structure",
+  "name": "Sunken Fishing Hamlet",
+  "text": "Central plaza with 4-6 stilted cabin pieces linked by jigsaw walkways, sea-floor piers and a drying rack, anchored on sand with kelp-lined edges.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_warm_ocean",
+  "loot": "fishing supplies, preserved fish, coral dye and nets",
+  "mobs": "drowned, squids, cod schools near pier edges",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_fishing_hamlet",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_fishing_hamlet",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_fishing_hamlet"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_harbor_wreck_town",
+  "kind": "structure",
+  "name": "Sunken Harbor Wreck Town",
+  "text": "Cluster of tilted hull-shaped halls and rope bridges arranged around a central keel plaza, partly buried in gravel.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_deep_ocean",
+  "loot": "ship chests, rope, prismarine shards and navigation charts",
+  "mobs": "drowned with trident users, sea-dwelling skeleton archers",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_harbor_wreck_town",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_harbor_wreck_town",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_harbor_wreck_town"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_illager_pit",
+  "kind": "structure",
+  "name": "Sunken Illager Pit",
+  "text": "Stepped dirt-and-cobble trench with wooden scaffold platforms descending to a central iron-banded chest room.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "Crossbows, enchanted books, and low-tier gear.",
+  "mobs": "Pillager archers on the scaffolds with occasional ravager.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_illager_pit",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_illager_pit",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_illager_pit"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_orchard_ruin",
+  "kind": "structure",
+  "name": "Sunken Orchard Ruin",
+  "text": "Wide open courtyard of irregular wall fragments with a central dead-tree template and a half-buried cellar piece.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_forest",
+  "loot": "saplings, seeds, fruit preserves, rusted tools",
+  "mobs": "husks and foxes",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/sunken_orchard_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_orchard_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_orchard_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_relay_outpost",
+  "kind": "structure",
+  "name": "Sunken Relay Outpost",
+  "text": "Surface watchtower template linked to a buried cellar via a short jigsaw corridor with a rotating pillar hub",
+  "dimension": "overworld",
+  "biomes": "#is_plains",
+  "loot": "Scouting supplies, maps, lanterns and a few dyed banners",
+  "mobs": "Occasional wandering pillagers and sentinel-style guards in pairs",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/sunken_relay_outpost",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_relay_outpost",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_relay_outpost"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_reliquary",
+  "kind": "structure",
+  "name": "Sunken Reliquary",
+  "text": "single jigsaw root with a flooded stone hall, two side annexes linked by a submerged corridor, ends in a sealed vault",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_ocean",
+  "loot": "waterlogged relics, enchanted books, prismarine trinkets",
+  "mobs": "drowned and guardians near the vault",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_reliquary",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_reliquary",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_reliquary"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_sanctum_rockcut",
+  "kind": "structure",
+  "name": "Sunken Sanctum Rockcut",
+  "text": "single rock-cut sandstone facade with carved entry hall, inner chamber and side alcoves via terrain_adapting template pool",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "ancient relics, gilded jewelry, sealed scroll cases",
+  "mobs": "desert husks and tomb guardians that wake when chests are opened",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_sanctum_rockcut",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_sanctum_rockcut",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_sanctum_rockcut"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_shrine_ruin",
+  "kind": "structure",
+  "name": "Sunken Shrine Ruin",
+  "text": "Single-room stone shrine with a half-buried entrance hall, one side corridor, and a rooftop observation nook connected by a short staircase piece.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_forest",
+  "loot": "Relics, scattered gold and emerald, and occasional map fragments.",
+  "mobs": "Skeletons and spiders near the entrance, with a rare cave spider nest in the corridor.",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/sunken_shrine_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_shrine_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_shrine_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_shrine_small",
+  "kind": "structure",
+  "name": "Sunken Shrine Small",
+  "text": "single-room jigsaw with one entry pillar and a sealed altar pad atop a seabed template",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_ocean",
+  "loot": "fishing gear and sea-glass trinkets",
+  "mobs": "drowned and squids near the entrance",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/sunken_shrine_small",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_shrine_small",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_shrine_small"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_siege_camp",
+  "kind": "structure",
+  "name": "Sunken Siege Camp",
+  "text": "ring of tent and cart pieces around a half-buried trebuchet frame with a ditch perimeter",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_desert",
+  "loot": "siege cache: crossbows, gunpowder-free ammunition, iron ingots",
+  "mobs": "husks and skeletons hiding in tents",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_siege_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_siege_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_siege_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_stone_ring",
+  "kind": "structure",
+  "name": "Sunken Stone Ring",
+  "text": "Circular ring of mossy stone walls with a central courtyard, four gate pieces, and a partially flooded lower chamber reached by a spiral stair template.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_jungle",
+  "loot": "jungle explorer supplies, gold trinkets, bamboo-themed tools",
+  "mobs": "zombies, skeletons, spiders with occasional jungle cats",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_stone_ring",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_stone_ring",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_stone_ring"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_tomb_stones",
+  "kind": "structure",
+  "name": "Sunken Tomb Stones",
+  "text": "Low ring of standing stones around a half-sunken passage with a stepped ramp entrance and a trapdoor drop into a short tunnel.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_savanna",
+  "loot": "weathered tools, copper charms, bones",
+  "mobs": "zombies and drowned near water edges, bogged in mud pockets",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/sunken_tomb_stones",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_tomb_stones",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_tomb_stones"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_watch_tower",
+  "kind": "structure",
+  "name": "Sunken Watch Tower",
+  "text": "Ground-level stone base chains into a three-storey timber tower via jigsaw pieces with a hidden cellar branch.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_plains",
+  "loot": "Scouts' supplies: torches, arrows, bread, iron nuggets.",
+  "mobs": "Occasional skeletons and spiders on upper floors.",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/sunken_watch_tower",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_watch_tower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_watch_tower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_watchtower",
+  "kind": "structure",
+  "name": "Sunken Watchtower",
+  "text": "Single stone-brick tower with a jigsaw-linked ground foyer, spiral stair pieces, and a top lookout room.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_forest",
+  "loot": "scouting supplies: arrows, bread, iron nuggets, compass fragments",
+  "mobs": "skeletons and spiders near the base, occasional zombie villager",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/sunken_watchtower",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_watchtower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:sunken_workshop",
+  "kind": "structure",
+  "name": "Sunken Workshop",
+  "text": "template pier of half-submerged plank rooms linked by a short walkway",
+  "dimension": "overworld",
+  "biomes": "#is_swamp_or_mangrove",
+  "loot": "tools_and_tinkering",
+  "mobs": "drowned and slimes",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/sunken_workshop",
+  "connects": [
+   "tags:diaithir_worldgen:s/sunken_workshop",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/sunken_workshop"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:swamp_settlement_boardwalk_camp",
+  "kind": "structure",
+  "name": "Swamp Settlement Boardwalk Camp",
+  "text": "Low stilted cabins linked by a branching boardwalk jigsaw network with a central fishing dock and herb garden plot.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_swamp_village_biome",
+  "loot": "fishing gear, lily pads, mushroom and herb supplies",
+  "mobs": "villagers and swamp witches seeking shelter, slimes near the water edges",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/swamp_settlement_boardwalk_camp",
+  "connects": [
+   "tags:diaithir_worldgen:s/swamp_settlement_boardwalk_camp",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/swamp_settlement_boardwalk_camp"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:swamp_settlement_hermit_mill",
+  "kind": "structure",
+  "name": "Swamp Settlement Hermit Mill",
+  "text": "Single large windmill-shaped focal building surrounded by a palisade and three small dwelling pieces joined by a jigsaw path.",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_swamp_village_biome",
+  "loot": "grain stores, brewing ingredients, sugar cane and wheat bundles",
+  "mobs": "villagers and a lone hermit trader, occasional zombies at night",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/swamp_settlement_hermit_mill",
+  "connects": [
+   "tags:diaithir_worldgen:s/swamp_settlement_hermit_mill",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/swamp_settlement_hermit_mill"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:tidal_watchtower",
+  "kind": "structure",
+  "name": "Tidal Watchtower",
+  "text": "tall stacked jigsaw tower rising from the seabed with a broken top platform",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_cold_ocean",
+  "loot": "signal lanterns and frost-iron tools",
+  "mobs": "drowned and stray-like skeletons on the platform",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/tidal_watchtower",
+  "connects": [
+   "tags:diaithir_worldgen:s/tidal_watchtower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/tidal_watchtower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:timber_village_hub",
+  "kind": "structure",
+  "name": "Timber Village Hub",
+  "text": "Log-walled market square with a bell tower template, three workshop houses and a palisade gate on the entry axis.",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_taiga",
+  "loot": "woodworking tools, smoked food, fishing gear",
+  "mobs": "villagers, wandering traders, occasional wolves",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/timber_village_hub",
+  "connects": [
+   "tags:diaithir_worldgen:s/timber_village_hub",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/timber_village_hub"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:transit_hub_wreck",
+  "kind": "structure",
+  "name": "Transit Hub Wreck",
+  "text": "Jigsaw: elevated platform, rail tunnel stubs, stalled carriage templates",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_savanna",
+  "loot": "transport tickets, minecart parts, rails, lanterns",
+  "mobs": "skeletons, strays, bats",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/transit_hub_wreck",
+  "connects": [
+   "tags:diaithir_worldgen:s/transit_hub_wreck",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/transit_hub_wreck"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:verdant_grotto_shrine",
+  "kind": "structure",
+  "name": "Verdant Grotto Shrine",
+  "text": "Partially overgrown stone pool enclosure with a central altar piece and vine-draped side alcoves",
+  "dimension": "overworld",
+  "biomes": "#is_jungle",
+  "loot": "Bamboo-era trade goods, cocoa, emeralds and a single enchanted book",
+  "mobs": "Spiders and wandering cave-themed mobs near the pool edge",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/verdant_grotto_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/verdant_grotto_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/verdant_grotto_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:verdant_shrine_ring",
+  "kind": "structure",
+  "name": "Verdant Shrine Ring",
+  "text": "ring of four shrine pods around an open clearing, each pod a small jigsaw piece with a central pedestal",
+  "dimension": "overworld",
+  "biomes": "#minecraft:is_forest",
+  "loot": "saplings, flowers, mossy building blocks, seeds",
+  "mobs": "passive animals and wandering zombies at night",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/verdant_shrine_ring",
+  "connects": [
+   "tags:diaithir_worldgen:s/verdant_shrine_ring",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/verdant_shrine_ring"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:void_lantern_obelisk",
+  "kind": "structure",
+  "name": "Void Lantern Obelisk",
+  "text": "tall obelisk tower with a spiral stair and a sealed top chamber",
+  "dimension": "end",
+  "biomes": "#diaithir:is_end_highlands",
+  "loot": "end-stone crystals, shulker-themed rare items, experience bottles",
+  "mobs": "endermen and endermites on the stair",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/void_lantern_obelisk",
+  "connects": [
+   "tags:diaithir_worldgen:s/void_lantern_obelisk",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/void_lantern_obelisk"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:void_monolith_spire",
+  "kind": "structure",
+  "name": "Void Monolith Spire",
+  "text": "Tall obsidian spire with spiral ramp ascending to a crystal-topped cap room",
+  "dimension": "end",
+  "biomes": "#is_end_highlands",
+  "loot": "Chorus fruit, end stone shards and a rare elytra-style crafting reward",
+  "mobs": "Endermen and shulkers on the ramp",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/void_monolith_spire",
+  "connects": [
+   "tags:diaithir_worldgen:s/void_monolith_spire",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/void_monolith_spire"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:void_obelisk_array",
+  "kind": "structure",
+  "name": "Void Obelisk Array",
+  "text": "tall obelisk template with three floating satellite pillars linked by short bridges",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end",
+  "loot": "end stone crystals, chorus fruit, rare shulker shells",
+  "mobs": "endermen and a few shulkers",
+  "age": "VI",
+  "quest": "diaithir_worldgen:find/void_obelisk_array",
+  "connects": [
+   "tags:diaithir_worldgen:s/void_obelisk_array",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/void_obelisk_array"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:void_obelisk_site",
+  "kind": "structure",
+  "name": "Void Obelisk Site",
+  "text": "Tall obelisk template on an end-stone plinth with a lower ring of pillar pieces.",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end_highlands",
+  "loot": "Relic cache: ender pearls, chorus fruit, obsidian, experience bottles.",
+  "mobs": "Endermen and shulkers.",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/void_obelisk_site",
+  "connects": [
+   "tags:diaithir_worldgen:s/void_obelisk_site",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/void_obelisk_site"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:void_survey_end",
+  "kind": "structure",
+  "name": "Void Survey End",
+  "text": "floating template platform with a ring of pylons and a single observation tower piece",
+  "dimension": "end",
+  "biomes": "#diaithir:is_end_highlands",
+  "loot": "end stone tools, chorus-derived components, rare charts",
+  "mobs": "endermen and shulker sentinels",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/void_survey_end",
+  "connects": [
+   "tags:diaithir_worldgen:s/void_survey_end",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/void_survey_end"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:warden_gate_end",
+  "kind": "structure",
+  "name": "Warden Gate End",
+  "text": "Circular end-stone dais with a ring of standing gate pieces and a sealed boss chamber in the centre.",
+  "dimension": "end",
+  "biomes": "#minecraft:is_end",
+  "loot": "end-themed rare crafting materials and boss rewards",
+  "mobs": "endermen and a single custom boss encounter",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/warden_gate_end",
+  "connects": [
+   "tags:diaithir_worldgen:s/warden_gate_end",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/warden_gate_end"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:warped_grove_shrine",
+  "kind": "structure",
+  "name": "Warped Grove Shrine",
+  "text": "Small shrine template of warped stone pillars with an offering altar and a single portal stub",
+  "dimension": "nether",
+  "biomes": "#minecraft:is_warped_forest",
+  "loot": "Warped mushroom stew and enderman-themed relics",
+  "mobs": "Endermen and shulkers",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/warped_grove_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/warped_grove_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/warped_grove_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:weathered_waystation",
+  "kind": "structure",
+  "name": "Weathered Waystation",
+  "text": "small surface shelter with a storage annex and a rope-ladder well, assembled from a jigsaw pool of three pieces",
+  "dimension": "overworld",
+  "biomes": "#diaithir:is_plains_like",
+  "loot": "travel rations and spare cartography kits",
+  "mobs": "no hostile spawns; one wandering trader villager variant",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/weathered_waystation",
+  "connects": [
+   "tags:diaithir_worldgen:s/weathered_waystation",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/weathered_waystation"
+  ]
+ }
+]

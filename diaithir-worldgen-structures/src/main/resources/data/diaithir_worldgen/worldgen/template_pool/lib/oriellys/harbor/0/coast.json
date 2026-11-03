@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/oriellys/harbor/0/coast",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/oriellys/ar_oriellys_e4_places_000021",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:miarlinnys_elena",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miarlinnys_garkar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miarlinnys_ilyiriel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miarlinnys_lyamora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miarlinnys_lyerys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miarlinnys_miamora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miarlinnys_nuemiel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miarlinnys_ryelys",
+   "required": false
+  }
+ ]
+}

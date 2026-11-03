@@ -1,0 +1,23 @@
+{
+  "station": "research.bench",
+  "stage": "process",
+  "time_s": 10,
+  "ingredients": [
+    {
+      "tag": "c:plates/copper",
+      "count": 1
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 1
+    },
+    {
+      "item": "minecraft:gold_nugget",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:foundry_research_pack_4",
+    "count": 1
+  }
+}

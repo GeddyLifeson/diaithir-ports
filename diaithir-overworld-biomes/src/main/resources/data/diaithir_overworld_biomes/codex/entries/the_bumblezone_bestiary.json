@@ -1,0 +1,15 @@
+{
+ "id": "diaithir_overworld_biomes:the_bumblezone_bestiary",
+ "category": "bestiary",
+ "title": "codex.diaithir_overworld_biomes.the_bumblezone_bestiary.title",
+ "body": "codex.diaithir_overworld_biomes.the_bumblezone_bestiary.body",
+ "age": 2,
+ "icon": "the_bumblezone:bee_queen_spawn_egg",
+ "unlock": {
+  "type": "kill_entity_tag",
+  "tag": "the_bumblezone:the_bumblezone_mobs"
+ },
+ "covers": {
+  "entities": "#the_bumblezone:the_bumblezone_mobs"
+ }
+}

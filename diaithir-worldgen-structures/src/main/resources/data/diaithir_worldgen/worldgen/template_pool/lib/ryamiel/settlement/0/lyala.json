@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ryamiel/settlement/0/lyala",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ryamiel/ar_ryamiel_e5_places_000161",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

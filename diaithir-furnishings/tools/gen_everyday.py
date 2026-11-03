@@ -123,6 +123,7 @@ def main():
     gates = {}; entries = []; tags = {}
     for p in ("items", "models/item", "textures/item"): (A / p).mkdir(parents=True, exist_ok=True)
     (D / "recipe/everyday").mkdir(parents=True, exist_ok=True)
+    for f in (D / "recipe/everyday").glob("*.json"): f.unlink()
     for r in rows:
         iid, cat = r["id"], r["category"]; ag = age(r["earliest"], r.get("year", ""))
         tool = cat in TOOLS and cat != "measuring"
@@ -138,7 +139,7 @@ def main():
         base = SOURCE_MATERIAL.get(cat, "#minecraft:planks")
         if base == "M": base = METAL.get(ag, "#c:ingots/iron")
         elif base == "C": base = "minecraft:clay_ball" if ag in ("I", "II") else METAL.get(ag, "#c:ingots/iron")
-        if cat != "farm_machine":  # farm machines are built on the Gear benches (diaithir-gear), never cut or crafted
+        if cat == "furniture":  # everything else is made at the Smithy and Workshop Bench (diaithir-gear tools/gen_workshop.py)
             json.dump({"type": "minecraft:stonecutting", "ingredient": base, "result": {"id": f"{NS}:{iid}", "count": 1}},
                       open(D / f"recipe/everyday/{iid}.json", "w"), indent=1)
         gates[f"{NS}:{iid}"] = "RODOS" if ag == "RODOS" else ag

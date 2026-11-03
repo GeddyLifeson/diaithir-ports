@@ -1,0 +1,142 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crede/forge_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/forge_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/forge_2_land",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/forge_3_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/fortress_0_land",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/fortress_1_land",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/fortress_2_land",
+   "weight": 35
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/fortress_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/garden_2_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/garden_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/hall_0_land",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/hall_1_land",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/hall_2_land",
+   "weight": 58
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/hall_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/landmark_0_land",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/landmark_1_land",
+   "weight": 43
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/landmark_2_land",
+   "weight": 91
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/landmark_3_land",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/ruin_0_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/ruin_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/ruin_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/temple_0_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/temple_1_land",
+   "weight": 34
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/temple_2_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/tomb_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/tomb_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/tower_0_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/tower_1_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/tower_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/tower_3_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 101523845
+ }
+}

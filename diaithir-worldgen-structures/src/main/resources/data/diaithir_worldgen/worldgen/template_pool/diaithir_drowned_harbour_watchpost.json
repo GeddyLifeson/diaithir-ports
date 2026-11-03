@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:diaithir_drowned_harbour_watchpost",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:diaithir_drowned_harbour_watchpost",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

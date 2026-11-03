@@ -1,0 +1,45 @@
+{
+  "tier1": {
+    "age": 1,
+    "items": [
+      "diaithircrafting:foundry_research_pack_1"
+    ]
+  },
+  "tier3": {
+    "age": 3,
+    "items": [
+      "diaithircrafting:foundry_research_pack_2"
+    ]
+  },
+  "tier5": {
+    "age": 5,
+    "items": [
+      "diaithircrafting:foundry_research_pack_3"
+    ]
+  },
+  "tier6": {
+    "age": 6,
+    "items": [
+      "diaithircrafting:foundry_research_pack_4"
+    ]
+  },
+  "tier7": {
+    "age": 7,
+    "items": [
+      "diaithircrafting:foundry_operator_seat",
+      "diaithircrafting:foundry_research_pack_5"
+    ]
+  },
+  "tier8": {
+    "age": 8,
+    "items": [
+      "diaithircrafting:foundry_research_pack_6"
+    ]
+  },
+  "tier9": {
+    "age": 9,
+    "items": [
+      "diaithircrafting:foundry_research_pack_7"
+    ]
+  }
+}

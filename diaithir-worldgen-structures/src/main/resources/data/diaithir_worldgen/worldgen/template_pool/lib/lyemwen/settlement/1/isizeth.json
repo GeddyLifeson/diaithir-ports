@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/lyemwen/settlement/1/isizeth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyemwen/ar_lyemwen_e4_places_000065",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

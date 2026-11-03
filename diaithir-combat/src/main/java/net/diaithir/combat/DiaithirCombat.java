@@ -38,13 +38,14 @@ public final class DiaithirCombat {
         Consolidated.load();
         ConsolidatedItems.register(bus);
         ConsolidatedBehaviour.register();
+        LibraryGear.register(bus);
         bus.addListener(Net::register);
         NeoForge.EVENT_BUS.register(this);
         if (FMLEnvironment.getDist().isClient()) CombatClient.init(bus);
     }
 
     @SubscribeEvent
-    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); }
+    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); LibraryGear.commands(e.getDispatcher()); }
 
     @SubscribeEvent
     public void serverTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) { SelfTest.tick(); }
@@ -54,7 +55,7 @@ public final class DiaithirCombat {
 
     @SubscribeEvent
     public void tick(PlayerTickEvent.Post e) {
-        if (e.getEntity() instanceof ServerPlayer sp) Engine.tick(sp);
+        if (e.getEntity() instanceof ServerPlayer sp) { Engine.tick(sp); LibraryGear.tick(sp); }
     }
 
     @SubscribeEvent
@@ -66,6 +67,7 @@ public final class DiaithirCombat {
         if (!(e.getEntity() instanceof ServerPlayer sp) || !CombatConfig.ENABLED.getAsBoolean()) return;
         if (Cat.melee(sp.getMainHandItem()) == null) return;
         e.setCanceled(true);
+        if (!LibraryGear.usable(sp, sp.getMainHandItem())) return;
         Engine.swing(sp);
     }
 

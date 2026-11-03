@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0_tarnadeld",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_1_tarnadeld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2_tarnadeld",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_3_tarnadeld",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 57739823
+ }
+}

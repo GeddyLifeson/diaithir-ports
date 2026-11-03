@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "the_backwoods:item/stilt_walker_spawn_egg"
+ }
+}

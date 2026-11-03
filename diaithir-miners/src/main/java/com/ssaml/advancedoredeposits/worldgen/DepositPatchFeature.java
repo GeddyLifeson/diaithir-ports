@@ -28,6 +28,11 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 public class DepositPatchFeature extends Feature<NoneFeatureConfiguration> {
+    /** Debug counters read by the self-test: feature calls, tiles placed, and why candidates were refused. */
+    public static final java.util.concurrent.atomic.AtomicInteger CALLS = new java.util.concurrent.atomic.AtomicInteger();
+    public static final java.util.concurrent.atomic.AtomicInteger PLACED = new java.util.concurrent.atomic.AtomicInteger();
+    public static final java.util.concurrent.atomic.AtomicInteger NO_SURFACE = new java.util.concurrent.atomic.AtomicInteger();
+    public static final java.util.concurrent.atomic.AtomicInteger BAD_BIOME = new java.util.concurrent.atomic.AtomicInteger();
     private static final int SURFACE_SCAN_DEPTH = 48;
     private static final int OBSTRUCTION_CLEAR_HEIGHT = 48;
     private static final int TREE_CLEAR_RADIUS = 16;
@@ -44,6 +49,7 @@ public class DepositPatchFeature extends Feature<NoneFeatureConfiguration> {
             return false;
         }
 
+        CALLS.incrementAndGet();
         WorldGenLevel level = context.level();
         BlockPos origin = context.origin();
         int chunkX = origin.getX() >> 4;
@@ -95,11 +101,14 @@ public class DepositPatchFeature extends Feature<NoneFeatureConfiguration> {
 
                 BlockPos surface = surfacePos(level, x, z);
                 if (surface == null || !isValidSurface(level, surface, plan.type(), plan.patchId())) {
+                    NO_SURFACE.incrementAndGet();
                     continue;
                 }
                 if (!isAllowedBiome(level, surface)) {
+                    BAD_BIOME.incrementAndGet();
                     continue;
                 }
+                PLACED.incrementAndGet();
 
                 double distance = Math.sqrt(Math.max(0.0D, normalized));
                 int remaining = remainingForDistance(distance, plan.diameter(), maxForPatch);

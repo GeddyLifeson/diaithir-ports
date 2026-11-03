@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_0_any",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelolden/settlement_1_any",
+   "weight": 7
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 179154800
+ }
+}

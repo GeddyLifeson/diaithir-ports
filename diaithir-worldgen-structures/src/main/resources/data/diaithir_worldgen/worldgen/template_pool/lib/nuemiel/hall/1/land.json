@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/nuemiel/hall/1/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/nuemiel/ar_nuemiel_e7_places_000139",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:graikurn_drairnoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:graikurn_grouzhun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:graikurn_khoukogoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:graikurn_krogurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:graikurn_tenlaruta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:graikurn_torougun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:graikurn_vanavamoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:graikurn_voroktoth",
+   "required": false
+  }
+ ]
+}

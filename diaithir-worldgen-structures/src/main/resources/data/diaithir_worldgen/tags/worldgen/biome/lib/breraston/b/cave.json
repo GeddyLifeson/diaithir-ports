@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:breraston_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:breraston_grottoes",
+   "required": false
+  }
+ ]
+}

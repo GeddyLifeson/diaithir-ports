@@ -1,0 +1,179 @@
+{
+ "sky": {
+  "sky": "#7a8fb0",
+  "fog": "#a9b8c9",
+  "cloud": "#d8e4f0c0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3b6e8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.reornanum.E6.places.001306",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#6f8f5a",
+   "foliage": "#5c7d4a",
+   "water": "#3e5f55",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.reornanum.E6.places.001240",
+   "archetype": "snowy_plains",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#9fb8c4",
+   "foliage": "#8aa6b5",
+   "water": "#9ad0e6",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.reornanum.E6.places.001305",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.8,
+   "grass": "#b8a48a",
+   "foliage": "#a3907a",
+   "water": "#6b7f8c",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.reornanum.E6.places.001217",
+   "archetype": "jungle",
+   "temp": 0.8,
+   "humid": 0.9,
+   "grass": "#5e9a4f",
+   "foliage": "#4a8a3c",
+   "water": "#4f8f7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.reornanum.E6.places.001424",
+   "archetype": "stony_peaks",
+   "temp": 0.1,
+   "humid": -0.4,
+   "grass": "#7d7a70",
+   "foliage": "#6e6b62",
+   "water": "#5a7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.reornanum.E6.places.001202",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.3,
+   "grass": "#8fbf6a",
+   "foliage": "#7aaf5c",
+   "water": "#5fa3b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.reornanum.E6.places.001339",
+   "archetype": "taiga",
+   "temp": -0.3,
+   "humid": 0.4,
+   "grass": "#6f9a6a",
+   "foliage": "#5a8a5c",
+   "water": "#4a7a80",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.reornanum.E6.places.001448",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.1,
+   "grass": "#a8d68f",
+   "foliage": "#e8b4d0",
+   "water": "#8cc8e0",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.reornanum.E6.places.001369",
+   "archetype": "eroded_badlands",
+   "temp": 0.9,
+   "humid": -0.5,
+   "grass": "#c07a5a",
+   "foliage": "#b06a4c",
+   "water": "#7a6a8a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Glass-, ice- and ember-themed mythic terrain echoes the entries' sunken basins, frozen wastes, and volcanic spires, with ash fall and tide-hum tones.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.06
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#4a4a52",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.reornanum.E6.places.001496",
+  "why": "Ember-bright grasslands, storm-remembering spires, hushed storms and ash-warden fortresses",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "jungle_tree",
+    "log": "mangrove",
+    "leaves": "mangrove",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.8,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   }
+  ],
+  "flowers": [
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 0.6,
+   "copper": 0.6,
+   "gold": 0.5,
+   "redstone": 0.6,
+   "lapis": 0.4,
+   "diamond": 0.5
+  },
+  "why_entry": "MY.reornanum.E6.places.001150",
+  "grounded": false
+ }
+}

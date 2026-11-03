@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "#diaithirfurnishings:metal/bronze",
- "result": {
-  "id": "diaithirfurnishings:file",
-  "count": 1
- }
-}

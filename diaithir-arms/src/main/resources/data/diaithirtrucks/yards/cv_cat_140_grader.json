@@ -1,0 +1,50 @@
+{
+ "id": "cv_cat_140_grader",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 16,
+  "h": 6
+ },
+ "result": "mts:diaithirtrucks.cv_cat_140_grader",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 600,
+   "ghost": "diaithirtrucks:ghost/cv_cat_140_grader_chassis"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "wheel",
+     "count": 6
+    }
+   ],
+   "base_ticks": 400,
+   "ghost": "diaithirtrucks:ghost/cv_cat_140_grader_gear"
+  },
+  {
+   "id": "crew",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 1
+    }
+   ],
+   "base_ticks": 100,
+   "ghost": "diaithirtrucks:ghost/cv_cat_140_grader_cab"
+  }
+ ],
+ "crane_speedup": 1.0
+}

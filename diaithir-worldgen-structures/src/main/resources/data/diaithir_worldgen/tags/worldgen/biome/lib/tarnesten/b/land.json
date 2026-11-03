@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:tarnesten_brusten",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnesten_halenoden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnesten_jorodere",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnesten_joruraneld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnesten_moredorneld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnesten_pelenaston",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnesten_tarneden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnesten_tharoldock",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,171 @@
+{
+ "sky": {
+  "sky": "#8fa9b8",
+  "fog": "#b9c4c8",
+  "cloud": "#e6ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6f8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.thonurde.E6.places.000427",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#5f7a4a",
+   "foliage": "#4e6b3c",
+   "water": "#3d5a48",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.thonurde.E6.places.000341",
+   "archetype": "mangrove_swamp",
+   "temp": 0.6,
+   "humid": 0.8,
+   "grass": "#6b8a4f",
+   "foliage": "#587a42",
+   "water": "#44624f",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.thonurde.E6.places.000355",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": 0.0,
+   "grass": "#7d8a6a",
+   "foliage": "#5c6e52",
+   "water": "#4f6b78",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.thonurde.E6.places.000359",
+   "archetype": "taiga",
+   "temp": -0.3,
+   "humid": 0.4,
+   "grass": "#6a8060",
+   "foliage": "#4a6a4a",
+   "water": "#4a6e7c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.thonurde.E6.places.000313",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#a89a6a",
+   "foliage": "#8f8456",
+   "water": "#7a8c8e",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thonurde.E6.places.000316",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#8fae6a",
+   "foliage": "#7a9a58",
+   "water": "#5e8aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.thonurde.E6.places.000362",
+   "archetype": "snowy_plains",
+   "temp": -0.8,
+   "humid": -0.2,
+   "grass": "#a4b4a8",
+   "foliage": "#8ea296",
+   "water": "#6c8ea4",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.thonurde.E6.places.000410",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#b09a7a",
+   "foliage": "#94846a",
+   "water": "#7c9098",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thonurde.E6.places.000446",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -0.9,
+   "grass": "#c9b68a",
+   "foliage": "#a89a72",
+   "water": "#6f9aa0",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, rain-soaked grounded world whose marshes, tidelands and wind-scoured highlands tile from cold stone plateaus to ember-warm basins and dry ash-blue mesas.",
+ "atmo": {
+  "particles": [],
+  "fog": "#8a9296",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.thonurde.E6.places.000350",
+  "why": "Salt-scoured, mist-bound, brine-hazed realm with storms and tides",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.2,
+   "iron": 2.2,
+   "copper": 2.0,
+   "gold": 0.6,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.4
+  },
+  "why_entry": "GR.thonurde.E6.places.000359",
+  "grounded": true
+ }
+}

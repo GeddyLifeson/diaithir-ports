@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_0_seorentium",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_1_seorentium",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_2_seorentium",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 168721457
+ }
+}

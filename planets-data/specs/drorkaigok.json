@@ -1,0 +1,169 @@
+{
+ "sky": {
+  "sky": "#3a2a2e",
+  "fog": "#4a3c44",
+  "cloud": "#66ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#4a1a0e"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "MA.drorkaigok.E6.places.000652",
+   "archetype": "jungle",
+   "temp": 0.8,
+   "humid": 0.7,
+   "grass": "#4f5a2a",
+   "foliage": "#3d4a1e",
+   "water": "#2c3a2a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.drorkaigok.E6.places.000653",
+   "archetype": "desert",
+   "temp": 1,
+   "humid": -0.9,
+   "grass": "#c8a46a",
+   "foliage": "#b89058",
+   "water": "#7a6a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.drorkaigok.E6.places.000644",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#5a6a3a",
+   "foliage": "#4a5c2e",
+   "water": "#4a5a48",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.drorkaigok.E6.places.000589",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.6,
+   "grass": "#8a5a3a",
+   "foliage": "#7a4a30",
+   "water": "#6a3a2a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.drorkaigok.E6.places.000635",
+   "archetype": "frozen_peaks",
+   "temp": -0.7,
+   "humid": -0.2,
+   "grass": "#9ab0c0",
+   "foliage": "#8aa0b0",
+   "water": "#a8c8e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.drorkaigok.E6.places.000647",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.4,
+   "grass": "#6a6660",
+   "foliage": "#5a5650",
+   "water": "#5a6470",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.drorkaigok.E6.places.000596",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#9a6a4a",
+   "foliage": "#8a5a3c",
+   "water": "#7a5040",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.drorkaigok.E6.places.000632",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.6,
+   "grass": "#6a7a40",
+   "foliage": "#50642e",
+   "water": "#3e5a40",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "warm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A martial world of ash, basalt and lava, where forges and war-engines have left scarred plains, sunken glass basins and fungal marshes beneath a boiling, cold-tinged sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "white_ash",
+    "probability": 0.05
+   },
+   {
+    "type": "snowflake",
+    "probability": 0.04
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c8d4dc",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.drorkaigok.E6.places.000636",
+  "why": "Frost soil, ash-choked wastes, storm-lashed plains, glowing lanterns",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "allium"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 0.5,
+   "diamond": 0.7
+  },
+  "why_entry": "MA.drorkaigok.E6.places.000651",
+  "grounded": true
+ }
+}

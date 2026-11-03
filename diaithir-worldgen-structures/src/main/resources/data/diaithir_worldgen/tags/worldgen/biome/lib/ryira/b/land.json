@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ryira_alaimennys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryira_ilyimiel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryira_lyalae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryira_miamionora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryira_miiriolae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryira_nuarleth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryira_ryimiel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryira_venuanimora",
+   "required": false
+  }
+ ]
+}

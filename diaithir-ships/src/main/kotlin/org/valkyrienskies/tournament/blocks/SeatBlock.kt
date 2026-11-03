@@ -1,0 +1,89 @@
+package org.valkyrienskies.tournament.blocks
+
+import org.valkyrienskies.tournament.registry.DeferredRegister
+
+import net.minecraft.commands.arguments.EntityAnchorArgument
+import net.minecraft.core.BlockPos
+import net.minecraft.core.Direction
+import net.minecraft.world.InteractionHand
+import net.minecraft.world.InteractionResult
+import net.minecraft.world.entity.player.Player
+import net.minecraft.world.item.context.BlockPlaceContext
+import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.HorizontalDirectionalBlock
+import net.minecraft.world.level.block.SoundType
+import net.minecraft.world.level.block.state.BlockState
+import net.minecraft.world.level.block.state.StateDefinition
+import net.minecraft.world.level.material.MapColor
+import net.minecraft.world.phys.BlockHitResult
+import net.minecraft.world.phys.shapes.CollisionContext
+import net.minecraft.world.phys.shapes.VoxelShape
+import org.joml.Vector3d
+import org.joml.Vector3dc
+import org.valkyrienskies.mod.common.ValkyrienSkiesMod
+import org.valkyrienskies.mod.common.util.toDoubles
+import org.valkyrienskies.tournament.doc.Doc
+import org.valkyrienskies.tournament.doc.Documented
+import org.valkyrienskies.tournament.doc.documentation
+
+class SeatBlock : HorizontalDirectionalBlock(
+    DeferredRegister.blockProps()
+        .mapColor(MapColor.WOOL)
+        .strength(1.0f, 2.0f)
+        .sound(SoundType.WOOL))
+{
+    private val SEAT_AABB: VoxelShape = box(0.0, 0.0, 0.0, 16.0, 8.0, 16.0)
+
+    override fun codec(): com.mojang.serialization.MapCodec<SeatBlock> = com.mojang.serialization.MapCodec.unit { throw UnsupportedOperationException("SeatBlock has no serialisable codec") }
+
+    init {
+        registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH))
+    }
+
+    override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
+        builder.add(FACING)
+    }
+
+    override fun getStateForPlacement(ctx: BlockPlaceContext): BlockState? {
+        return defaultBlockState()
+                .setValue(FACING, ctx.horizontalDirection.opposite)
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun getShape(
+        state: BlockState,
+        level: BlockGetter,
+        pos: BlockPos,
+        context: CollisionContext
+    ): VoxelShape = SEAT_AABB
+
+    override fun useWithoutItem(
+        state: BlockState,
+        level: Level,
+        pos: BlockPos,
+        player: Player,
+        hit: BlockHitResult
+    ): InteractionResult {
+        if (level.isClientSide) return InteractionResult.SUCCESS
+        val seatEntity = ValkyrienSkiesMod.SHIP_MOUNTING_ENTITY_TYPE.create(level, net.minecraft.world.entity.EntitySpawnReason.TRIGGERED)!!.apply {
+            val seatEntityPos: Vector3dc = Vector3d(pos.x + .5, pos.y.toDouble(), pos.z + .5)
+            setPos(seatEntityPos.x(), seatEntityPos.y(), seatEntityPos.z())
+            lookAt(EntityAnchorArgument.Anchor.EYES, state.getValue(FACING).unitVec3i.toDoubles().add(position()))
+            isController = true
+        }
+
+        level.addFreshEntity(seatEntity)
+        player.startRiding(seatEntity)
+        return InteractionResult.CONSUME
+    }
+
+    class DocImpl: Documented {
+        override fun getDoc() = documentation {
+            page("Seat")
+                .kind(Doc.Kind.BLOCK)
+                .summary("A seat that players can use")
+        }
+    }
+}

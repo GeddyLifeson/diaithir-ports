@@ -1,0 +1,14 @@
+{
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "the_backwoods:stair_to_nowhere_loot",
+    "processors": "minecraft:empty",
+    "projection": "rigid"
+   }
+  }
+ ]
+}

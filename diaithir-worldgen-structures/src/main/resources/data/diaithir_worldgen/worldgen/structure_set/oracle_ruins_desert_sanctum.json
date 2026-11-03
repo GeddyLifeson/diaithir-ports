@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:oracle_ruins_desert_sanctum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 30,
+  "separation": 10,
+  "salt": 16278919
+ }
+}

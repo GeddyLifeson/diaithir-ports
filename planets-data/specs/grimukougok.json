@@ -1,0 +1,157 @@
+{
+ "sky": {
+  "sky": "#7a8fa6",
+  "fog": "#9fb3c4",
+  "cloud": "#e6f0fa",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6e8c"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MA.grimukougok.E1.places.000084",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": -0.2,
+   "grass": "#7d9a6e",
+   "foliage": "#6b8a5c",
+   "water": "#4a7090",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.grimukougok.E1.places.000022",
+   "archetype": "stony_peaks",
+   "temp": -0.5,
+   "humid": 0.0,
+   "grass": "#6e8068",
+   "foliage": "#5a6c58",
+   "water": "#3f6e8c",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.grimukougok.E2.places.000025",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": -0.4,
+   "grass": "#8ca0b0",
+   "foliage": "#7a8e9c",
+   "water": "#5a7f9a",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.grimukougok.E4.places.000087",
+   "archetype": "eroded_badlands",
+   "temp": 0.2,
+   "humid": -0.7,
+   "grass": "#9a8a6a",
+   "foliage": "#8a7a5c",
+   "water": "#6a7f8c",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.grimukougok.E5.places.000055",
+   "archetype": "taiga",
+   "temp": -0.4,
+   "humid": 0.3,
+   "grass": "#6f8f6a",
+   "foliage": "#4f7050",
+   "water": "#3c6a80",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.grimukougok.E1.places.000044",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.2,
+   "humid": 0.5,
+   "grass": "#5f7d5a",
+   "foliage": "#46664a",
+   "water": "#3c6a80",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.grimukougok.E7.places.000060",
+   "archetype": "meadow",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#8aa878",
+   "foliage": "#739a64",
+   "water": "#4f7f96",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A frost-bound Martial Realm of humming basalt terraces, walled fortress-towns and root-groves, rendered in cold grey-blue light with ash-tinted hot spots near the sundered shards.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#c9d6e3",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.35,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.grimukougok.E1.places.000083",
+  "why": "Basalt valley humming with the Singing; frost soil suggests cold, snowy air.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 2.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MA.grimukougok.E1.places.000044",
+  "grounded": false
+ }
+}

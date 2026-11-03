@@ -1,0 +1,191 @@
+{
+ "sky": {
+  "sky": "#6a7f8c",
+  "fog": "#9fb3bf",
+  "cloud": "#b0ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2c4a5e"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.silia.E1.places.000036",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6b8a4a",
+   "foliage": "#5d7a3c",
+   "water": "#3d5a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.silia.E1.places.000248",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.8,
+   "grass": "#7a9a52",
+   "foliage": "#6c8f45",
+   "water": "#4a6a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.silia.E7.places.000283",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#a08a6a",
+   "foliage": "#8f7a5c",
+   "water": "#5a6e7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.silia.E7.places.000261",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#8fbf7a",
+   "foliage": "#e8a0c0",
+   "water": "#7fa8b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.silia.E3.places.000291",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.2,
+   "grass": "#7d8a80",
+   "foliage": "#6e7d74",
+   "water": "#5e7a8a",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.silia.E6.places.000034",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.6,
+   "grass": "#5f7a5a",
+   "foliage": "#4f6a4c",
+   "water": "#2e4a58",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.silia.E6.places.000035",
+   "archetype": "windswept_savanna",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#9a8a5a",
+   "foliage": "#877a4c",
+   "water": "#4e6a72",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.silia.E5.places.000279",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.1,
+   "grass": "#8fb070",
+   "foliage": "#7fa062",
+   "water": "#4a7a9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.silia.E7.places.000285",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c8b080",
+   "foliage": "#b8a070",
+   "water": "#6a8a9a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A mythic realm of marsh-cities, glassy ash highlands and tide-chained black seas, where the land itself hums with memory and possible futures bloom in orchard groves.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#8a7f78",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.3,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "MY.silia.E4.events.000273",
+  "why": "Flames split the sky into shards; ash and storm-lit ruin dominate.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MY.silia.E1.places.000245",
+  "grounded": true
+ }
+}

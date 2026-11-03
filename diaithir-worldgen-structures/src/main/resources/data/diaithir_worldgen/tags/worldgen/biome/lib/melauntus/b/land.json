@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:melauntus_cauniaror",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:melauntus_leolanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:melauntus_nauranum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:melauntus_noranus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:melauntus_salaustium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:melauntus_teoles",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:melauntus_tillones",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:melauntus_veornanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:melauntus_vostentia",
+   "required": false
+  }
+ ]
+}

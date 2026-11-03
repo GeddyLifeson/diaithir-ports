@@ -1,0 +1,172 @@
+{
+ "sky": {
+  "sky": "#7fa8c9",
+  "fog": "#b9d3e6",
+  "cloud": "#e6ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f76a8"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "AR.elaennirlys.E3.assay.010178",
+   "archetype": "flower_forest",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#7ab65c",
+   "foliage": "#5fa04a",
+   "water": "#3f76a8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.elaennirlys.E3.assay.010052",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6a9a4e",
+   "foliage": "#4d7a3a",
+   "water": "#4a6b3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.elaennirlys.E2.assay.005538",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.1,
+   "grass": "#9ab85a",
+   "foliage": "#8aa84e",
+   "water": "#3f76a8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.elaennirlys.E3.assay.032817",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.2,
+   "grass": "#8ab07a",
+   "foliage": "#6f9a64",
+   "water": "#3f76a8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.elaennirlys.E3.assay.011808",
+   "archetype": "snowy_slopes",
+   "temp": -0.7,
+   "humid": 0.3,
+   "grass": "#a8c4b8",
+   "foliage": "#8fb0a4",
+   "water": "#3d6e96",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.elaennirlys.E2.assay.029104",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c9b46a",
+   "foliage": "#b8a25c",
+   "water": "#3f76a8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.elaennirlys.E2.assay.011201",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#6c8f5e",
+   "foliage": "#58785a",
+   "water": "#3f76a8",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A realm of forest, highland and desert contrasts, lit by soft wind-carried light where ancient shrines and buried ruins lie beneath quiet hills.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.06
+   },
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c8d4e0",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "AR.elaennirlys.E3.assay.033311",
+  "why": "Stormcrest peaks and icy highlands suggest cold, stormy, snowy air.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "poppy",
+   "oxeye_daisy",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 1.0,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.elaennirlys.E2.assay.032995",
+  "grounded": false
+ }
+}

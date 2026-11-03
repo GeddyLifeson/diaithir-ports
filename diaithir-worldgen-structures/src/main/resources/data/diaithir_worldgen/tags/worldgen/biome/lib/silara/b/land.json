@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:silara_drunestock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silara_halodar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silara_kairnar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silara_orastes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silara_oriaremwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silara_tiranaroma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silara_ukaraloma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silara_venera",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silara_vesasith",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:iron_nugget",
+  "minecraft:gunpowder",
+  "minecraft:paper"
+ ],
+ "result": {
+  "id": "diaithirfirearms:ammo_ball_arquebus",
+  "count": 8
+ }
+}

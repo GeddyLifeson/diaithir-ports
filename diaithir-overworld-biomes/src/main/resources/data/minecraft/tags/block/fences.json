@@ -1,1 +1,16 @@
-{"replace": false, "values": ["biomesoplenty:cherry_fence", "biomesoplenty:dead_fence", "biomesoplenty:empyreal_fence", "biomesoplenty:fir_fence", "biomesoplenty:hellbark_fence", "biomesoplenty:jacaranda_fence", "biomesoplenty:magic_fence", "biomesoplenty:mahogany_fence", "biomesoplenty:maple_fence", "biomesoplenty:origin_oak_fence", "biomesoplenty:palm_fence", "biomesoplenty:pine_fence", "biomesoplenty:redwood_fence", "biomesoplenty:umbran_fence", "biomesoplenty:willow_fence", "natures_spirit:aspen_fence", "natures_spirit:maple_fence", "natures_spirit:wisteria_fence"]}
+{
+ "replace": false,
+ "values": [
+  "aether_ii:amberoot_fence",
+  "aether_ii:greatroot_fence",
+  "aether_ii:skyroot_fence",
+  "aether_ii:wisproot_fence",
+  "the_backwoods:petrified_oak_fence",
+  "the_backwoods:petrified_rotten_oak_fence",
+  "the_backwoods:rotten_oak_fence",
+  "undergarden:ancient_root_fence",
+  "undergarden:grongle_fence",
+  "undergarden:smogstem_fence",
+  "undergarden:wigglewood_fence"
+ ]
+}

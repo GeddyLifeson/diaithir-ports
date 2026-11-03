@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:string",
- "result": {
-  "id": "diaithirfurnishings:backstrap_loom",
-  "count": 1
- }
-}

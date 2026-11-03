@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:string",
- "result": {
-  "id": "diaithirfurnishings:embroidery_hoop",
-  "count": 1
- }
-}

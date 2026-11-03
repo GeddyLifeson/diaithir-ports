@@ -1,0 +1,20 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:dusts/redstone",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/amethyst",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/steel",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:rune_ainnis",
+ "time_s": 5
+}
