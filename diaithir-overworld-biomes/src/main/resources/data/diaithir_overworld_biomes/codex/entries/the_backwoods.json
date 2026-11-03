@@ -13,7 +13,7 @@
   "biomes": [
    "#the_backwoods:is_the_backwoods"
   ],
-  "blocks": 57,
+  "blocks": 61,
   "items": 65
  },
  "quest": "diaithir_overworld_biomes:the_backwoods_descent"

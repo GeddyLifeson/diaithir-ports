@@ -13,8 +13,8 @@
   "biomes": [
    "#undergarden:is_undergarden"
   ],
-  "blocks": 215,
-  "items": 41
+  "blocks": 216,
+  "items": 42
  },
  "quest": "diaithir_overworld_biomes:undergarden_descent"
 }

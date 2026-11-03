@@ -159,5 +159,35 @@
    "filler_block": "nullstone",
    "title": "The Sub-Strata"
   }
+ ],
+ "portals": [
+  {
+   "block": "backwoods_portal",
+   "target": "the_backwoods:backwoods",
+   "pad": "the_backwoods:cobbled_nullstone",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:cobbled_nullstone"
+  },
+  {
+   "block": "loss_portal",
+   "target": "the_backwoods:loss",
+   "pad": "the_backwoods:cracked_nullstone",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:faded_block"
+  },
+  {
+   "block": "the_grain_portal",
+   "target": "the_backwoods:the_grain",
+   "pad": "the_backwoods:nullstone",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:amber_grit"
+  },
+  {
+   "block": "the_petrified_weald_portal",
+   "target": "the_backwoods:the_petrified_weald",
+   "pad": "the_backwoods:petrified_oak_planks",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:petrified_oak_planks"
+  }
  ]
 }

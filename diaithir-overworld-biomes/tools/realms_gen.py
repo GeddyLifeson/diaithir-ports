@@ -32,12 +32,15 @@ VANILLA_SKIP = [  # (regex, vanilla block/item it migrates to)
  (r'portal$', None), (r'_stem_attached$', 'minecraft:attached_pumpkin_stem'), (r'^gloomgourd_stem$', 'minecraft:pumpkin_stem'),
  (r'_plant$', None), (r'^infuser$', 'minecraft:enchanting_table'), (r'^seeping_ink$', None),
 ]
+PORTALS = {p['block']: p for p in cfg.get('portals', [])}
 def skip_target(n):
+    if n in PORTALS: return (False, None)
     for rx, t in VANILLA_SKIP:
         if re.search(rx, n): return (True, t)
     return (False, None)
 PLANT = re.compile(cfg.get('plant_rx', r'(bush|grass|vine|bristle|butterbunch|kelp|sprout|sapling|shimmerweed|miserabell|thornreed|twistybush|growth|ditchbulb|bloom|fern|flower|^(blood|indigo|ink|puff|veil)_mushroom$|mushroom_veil|gronglet|boomgourd)'))
 def classify(n):
+    if n in PORTALS: return 'portal'
     for suf, k in [('_stairs','stairs'),('_stair','stairs'),('_slab','slab'),('_wall','wall'),('_fence_gate','gate'),('_gate','gate'),('_fence','fence'),
                    ('_button','button'),('_pressure_plate','plate'),('_door','door'),('_trapdoor','trapdoor'),
                    ('_glass_pane','pane'),('_pane','pane')]:
@@ -49,6 +52,7 @@ def classify(n):
 WOODS = sorted({n[:-7] for n in blocks if n.endswith('_planks')}, key=len, reverse=True)
 METALS = sorted({n[:-6] for n in items if n.endswith('_ingot')}, key=len, reverse=True)
 def material(n):
+    if n in PORTALS: return 'portal'
     for w in WOODS:
         if re.fullmatch(r'(stripped_)?' + re.escape(w) + r'_(log|wood)', n): return 'log'
         if n.startswith(w + '_') or n == w + '_planks':
@@ -80,6 +84,7 @@ for n in blocks:
         if not b: e['kind'] = 'block'
         else: e['base'] = b
     if k in ('door','fence','gate','button','plate','trapdoor') and m in ('stone','metal','glass'): pass
+    if k == 'portal': p = PORTALS[n]; e.update({'target': p['target'], 'back': p.get('back', 'minecraft:overworld'), 'pad': p['pad']})
     man.append(e); made.add(n)
     # slab/stairs need base registered first
 man.sort(key=lambda e: 0 if 'base' not in e else 1)
@@ -87,7 +92,7 @@ SK_ITEM = [(r'_(sword|battleaxe|spear)$','minecraft:iron_sword'),(r'_axe$','mine
  (r'_shovel$','minecraft:iron_shovel'),(r'_hoe$','minecraft:iron_hoe'),(r'_helmet$','minecraft:iron_helmet'),(r'_chestplate$','minecraft:iron_chestplate'),
  (r'_leggings$','minecraft:iron_leggings'),(r'_boots$','minecraft:iron_boots'),(r'_chest_boat$','minecraft:oak_chest_boat'),(r'_boat$','minecraft:oak_boat'),
  (r'_shield$','minecraft:shield'),(r'_bucket$','minecraft:bucket'),(r'_spawn_egg$',None),(r'^music_disc_',None),(r'smithing_template$',None),
- (r'^(slingshot|javelin|catalyst|crumbling_catalyst|denizen_mask)$',None),(r'(sign)$','minecraft:oak_sign'),(r'_bed$','minecraft:red_bed'),(r'_stew$','minecraft:mushroom_stew'),(r'_bowl$','minecraft:bowl')]
+ (r'^(slingshot|javelin|crumbling_catalyst|denizen_mask)$',None),(r'(sign)$','minecraft:oak_sign'),(r'_bed$','minecraft:red_bed'),(r'_stew$','minecraft:mushroom_stew'),(r'_bowl$','minecraft:bowl')]
 sitems = []
 for n in items:
     if n in made: continue
@@ -97,13 +102,13 @@ for n in items:
             if t: migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{n}', 'new': t})
             break
     else: sitems.append(n)
-put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems})
+put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems, 'portals': [{k: p[k] for k in ('block', 'activator', 'frame')} for p in cfg.get('portals', [])]})
 put(f'data/{NS}/id_migrations.json', migr)
 
 # ---------- assets: copy vanilla shapes, rename, stand-in textures ----------
 TPL = {'stairs':'oak_stairs','slab':'oak_slab','wall':'cobblestone_wall','fence':'oak_fence','gate':'oak_fence_gate','button':'oak_button',
        'plate':'oak_pressure_plate','door':'oak_door','trapdoor':'oak_trapdoor','pillar':'oak_log','pane':'glass_pane'}
-STAND = {'wood':'oak_planks','log':'oak_log','leaves':'oak_leaves','soil':'dirt','turf':'grass_block_side','plant':'short_grass','glass':'glass',
+STAND = {'portal':'purple_stained_glass','wood':'oak_planks','log':'oak_log','leaves':'oak_leaves','soil':'dirt','turf':'grass_block_side','plant':'short_grass','glass':'glass',
          'metal':'iron_block','ore':'iron_ore','mushroom':'brown_mushroom_block','stone':'stone'}
 def tex(mat, key=None):
     if mat == 'log': return 'minecraft:block/oak_log_top' if key in ('end','top','bottom') else 'minecraft:block/oak_log'
@@ -164,6 +169,7 @@ put(f'assets/{NS}/textures/block/_art_needed.txt',
 # ---------- loot, recipes ----------
 for e in man:
     bid = e['id']
+    if e['kind'] == 'portal': continue
     put(f'data/{NS}/loot_table/blocks/{bid}.json', {'type': 'minecraft:block', 'random_sequence': f'{NS}:blocks/{bid}',
         'pools': [{'rolls': 1.0, 'bonus_rolls': 0.0, 'conditions': [{'condition': 'minecraft:survives_explosion'}],
                    'entries': [{'type': 'minecraft:item', 'name': f'{NS}:{bid}'}]}]})

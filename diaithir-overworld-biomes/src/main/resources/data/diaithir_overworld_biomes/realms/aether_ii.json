@@ -37,6 +37,14 @@
    "mat": "stone"
   },
   {
+   "id": "aether_portal",
+   "kind": "portal",
+   "mat": "portal",
+   "target": "aether_ii:aether_holy_isles",
+   "back": "minecraft:overworld",
+   "pad": "aether_ii:holystone"
+  },
+  {
    "id": "agiosite",
    "kind": "block",
    "mat": "stone"
@@ -2890,5 +2898,12 @@
   "zanite_shortsword",
   "zanite_trowel",
   "zephyr_husk"
+ ],
+ "portals": [
+  {
+   "block": "aether_portal",
+   "activator": "minecraft:glowstone_dust",
+   "frame": "aether_ii:aether_portal_frame"
+  }
  ]
 }

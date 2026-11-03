@@ -13,7 +13,7 @@
   "biomes": [
    "#aether_ii:is_aether_ii"
   ],
-  "blocks": 529,
+  "blocks": 530,
   "items": 173
  },
  "quest": "diaithir_overworld_biomes:aether_ii_descent"

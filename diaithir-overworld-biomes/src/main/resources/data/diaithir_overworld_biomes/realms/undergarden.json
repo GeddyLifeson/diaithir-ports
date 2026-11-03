@@ -732,6 +732,14 @@
    "mat": "plant"
   },
   {
+   "id": "undergarden_portal",
+   "kind": "portal",
+   "mat": "portal",
+   "target": "undergarden:undergarden",
+   "back": "minecraft:overworld",
+   "pad": "undergarden:depthrock_bricks"
+  },
+  {
    "id": "utheric_gronglet",
    "kind": "cross",
    "mat": "plant"
@@ -1134,6 +1142,7 @@
   "blood_globule",
   "blue_mogmoss",
   "brute_tusk",
+  "catalyst",
   "cloggrum_ingot",
   "cloggrum_nugget",
   "cooked_gwibling",
@@ -1170,5 +1179,12 @@
   "utheric_cluster",
   "utheric_shard",
   "utherium_crystal"
+ ],
+ "portals": [
+  {
+   "block": "undergarden_portal",
+   "activator": "undergarden:catalyst",
+   "frame": "undergarden:forgotten_block"
+  }
  ]
 }

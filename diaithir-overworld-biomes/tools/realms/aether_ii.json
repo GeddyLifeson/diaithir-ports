@@ -37,5 +37,14 @@
     }
    }
   }
+ ],
+ "portals": [
+  {
+   "block": "aether_portal",
+   "target": "aether_ii:aether_holy_isles",
+   "pad": "aether_ii:holystone",
+   "activator": "minecraft:glowstone_dust",
+   "frame": "aether_ii:aether_portal_frame"
+  }
  ]
 }

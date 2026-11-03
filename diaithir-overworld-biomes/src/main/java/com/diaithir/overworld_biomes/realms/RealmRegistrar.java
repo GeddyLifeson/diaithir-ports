@@ -38,10 +38,16 @@ public final class RealmRegistrar {
             String kind = b.get("kind").getAsString();
             String mat = b.get("mat").getAsString();
             DeferredBlock<Block> base = b.has("base") ? made.get(b.get("base").getAsString()) : null;
-            Function<BlockBehaviour.Properties, Block> f = props -> make(kind, mat, base, props);
+            Function<BlockBehaviour.Properties, Block> f = kind.equals("portal")
+                    ? props -> new RealmPortalBlock(props, b.get("target").getAsString(), b.get("back").getAsString(), b.get("pad").getAsString())
+                    : props -> make(kind, mat, base, props);
             DeferredBlock<Block> db = blocks.registerBlock(id, f, () -> props(mat, kind));
             made.put(id, db);
             items.registerSimpleBlockItem(id, db);
+        }
+        if (m.has("portals")) for (JsonElement e : m.getAsJsonArray("portals")) {
+            JsonObject r = e.getAsJsonObject();
+            RealmPortals.add(modId, r.get("activator").getAsString(), r.get("frame").getAsString(), r.get("block").getAsString());
         }
         for (JsonElement e : m.getAsJsonArray("items")) items.registerSimpleItem(e.getAsString());
         blocks.register(bus);
@@ -56,6 +62,7 @@ public final class RealmRegistrar {
             case "soil" -> BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT);
             case "turf" -> BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK);
             case "plant" -> BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS);
+            case "portal" -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_PORTAL);
             case "glass" -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS);
             case "metal" -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK);
             case "ore" -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE);

@@ -12,6 +12,14 @@
    "mat": "plant"
   },
   {
+   "id": "backwoods_portal",
+   "kind": "portal",
+   "mat": "portal",
+   "target": "the_backwoods:backwoods",
+   "back": "minecraft:overworld",
+   "pad": "the_backwoods:cobbled_nullstone"
+  },
+  {
    "id": "blindspot_splinter_spawner",
    "kind": "block",
    "mat": "stone"
@@ -75,6 +83,14 @@
    "id": "lignum_caro_trapdoor",
    "kind": "trapdoor",
    "mat": "stone"
+  },
+  {
+   "id": "loss_portal",
+   "kind": "portal",
+   "mat": "portal",
+   "target": "the_backwoods:loss",
+   "back": "minecraft:overworld",
+   "pad": "the_backwoods:cracked_nullstone"
   },
   {
    "id": "memory_quartz",
@@ -227,6 +243,22 @@
    "mat": "plant"
   },
   {
+   "id": "the_grain_portal",
+   "kind": "portal",
+   "mat": "portal",
+   "target": "the_backwoods:the_grain",
+   "back": "minecraft:overworld",
+   "pad": "the_backwoods:nullstone"
+  },
+  {
+   "id": "the_petrified_weald_portal",
+   "kind": "portal",
+   "mat": "portal",
+   "target": "the_backwoods:the_petrified_weald",
+   "back": "minecraft:overworld",
+   "pad": "the_backwoods:petrified_oak_planks"
+  },
+  {
    "id": "cobbled_nullstone_slab",
    "kind": "slab",
    "mat": "stone",
@@ -365,5 +397,27 @@
   "tetherless_pearl",
   "the_petrified_weald",
   "windcap_mushroom"
+ ],
+ "portals": [
+  {
+   "block": "backwoods_portal",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:cobbled_nullstone"
+  },
+  {
+   "block": "loss_portal",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:faded_block"
+  },
+  {
+   "block": "the_grain_portal",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:amber_grit"
+  },
+  {
+   "block": "the_petrified_weald_portal",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:petrified_oak_planks"
+  }
  ]
 }
