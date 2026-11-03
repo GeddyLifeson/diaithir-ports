@@ -34,7 +34,7 @@ public final class PlannerItem extends Item {
                 player.sendOverlayMessage(Component.literal("Not an upgradable machine. Hold a module in your other hand to upgrade."));
                 return InteractionResult.FAIL;
             }
-            player.sendSystemMessage(Component.literal(describe(host.get())));
+            if (player instanceof net.minecraft.server.level.ServerPlayer sp) Upgrades.openMenu(sp, target);
             return InteractionResult.SUCCESS;
         }
         if (ctx.getLevel().isClientSide()) return InteractionResult.SUCCESS;
