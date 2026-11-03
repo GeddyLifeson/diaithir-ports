@@ -134,6 +134,18 @@ def main():
         sets.append(i)
     idmap=json.load(open(R+"/tools/id_map.json")) if os.path.exists(R+"/tools/id_map.json") else {}
     w("migration.json",{"registry":"worldgen/structure","old_to_new":{o:n for o,n in idmap.items() if n.split(":")[1] in mig or n.endswith(":none")},"new_from_mod":mig})
+    for fn in sorted(os.listdir(R+"/pools")) if os.path.isdir(R+"/pools") else []:
+        bp=json.load(open(R+"/pools/"+fn)); i="city/"+fn[:-5]
+        w(f"data/{NS}/structure/{i}.nbt",template(bp))
+        w(f"data/{NS}/worldgen/template_pool/{i}.json",{"name":f"{NS}:{i}","fallback":"minecraft:empty","elements":[{"weight":1,"element":{"element_type":"minecraft:single_pool_element","location":f"{NS}:{i}","projection":"rigid","processors":"minecraft:empty"}}]})
+    for line in open(R+"/tools/unbound_biome_tags.txt").read().split():
+        if ":" not in line or line.startswith("minecraft:root") or line.endswith(":"): continue
+        n,p=line.split(":",1)
+        if p=="has_structure/ocean_ruin": vals=["#minecraft:has_structure/ocean_ruin_cold","#minecraft:has_structure/ocean_ruin_warm"]
+        elif "underground" in p: vals=["minecraft:lush_caves","minecraft:dripstone_caves","minecraft:deep_dark"]
+        elif "sky_islands" in p: vals=["minecraft:the_end"]
+        else: vals=[v for k in biome_keys(p.replace("is_",""),"overworld") for v in CANON[k]]
+        w(f"data/{n}/tags/worldgen/biome/{p}.json",{"values":vals})
     for k in usedk|{"overworld"}: w(f"data/{NS}/tags/worldgen/biome/b/{k}.json",{"values":CANON[k]})
     w(f"data/{NS}/tags/worldgen/biome/never.json",{"values":[]})
     w(f"data/{NS}/worldgen/template_pool/none.json",{"name":f"{NS}:none","fallback":"minecraft:empty","elements":[]})
