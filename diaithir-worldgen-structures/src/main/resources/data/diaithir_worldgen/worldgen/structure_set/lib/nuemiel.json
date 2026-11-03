@@ -1,0 +1,62 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/fortress_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/garden_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/hall_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/hall_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/harbor_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/temple_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/temple_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuemiel/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 245676769
+ }
+}

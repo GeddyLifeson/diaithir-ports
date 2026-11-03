@@ -1,0 +1,86 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/bridge_2",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/delve_0",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/delve_2",
+   "weight": 166
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/forge_2",
+   "weight": 103
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/fortress_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/hall_2",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/harbor_0",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/harbor_2",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/landmark_2",
+   "weight": 49
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/temple_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/temple_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/temple_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/tomb_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/tower_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/voraikun/tower_2",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 108200628
+ }
+}

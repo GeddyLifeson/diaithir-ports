@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/amontirnium/hall/0",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/amontirnium/my_amontirnium_e6_places_000432",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

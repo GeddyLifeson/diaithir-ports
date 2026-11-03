@@ -1,0 +1,186 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/alaima/bridge_0",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/bridge_1",
+   "weight": 27
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/bridge_2",
+   "weight": 37
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/delve_0",
+   "weight": 71
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/delve_1",
+   "weight": 164
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/delve_2",
+   "weight": 124
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/delve_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/forge_0",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/forge_1",
+   "weight": 35
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/forge_2",
+   "weight": 107
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/forge_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/fortress_0",
+   "weight": 41
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/fortress_1",
+   "weight": 209
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/fortress_2",
+   "weight": 123
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/fortress_3",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/garden_0",
+   "weight": 37
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/garden_1",
+   "weight": 50
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/garden_2",
+   "weight": 68
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/garden_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/hall_0",
+   "weight": 37
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/hall_1",
+   "weight": 173
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/hall_2",
+   "weight": 285
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/hall_3",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/harbor_0",
+   "weight": 56
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/harbor_1",
+   "weight": 62
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/harbor_2",
+   "weight": 95
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/harbor_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/landmark_0",
+   "weight": 84
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/landmark_1",
+   "weight": 235
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/landmark_2",
+   "weight": 492
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/landmark_3",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/ruin_0",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/ruin_1",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/ruin_2",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/temple_0",
+   "weight": 65
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/temple_1",
+   "weight": 91
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/temple_2",
+   "weight": 47
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/tomb_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/tomb_1",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/tomb_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/tower_0",
+   "weight": 73
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/tower_1",
+   "weight": 101
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/tower_2",
+   "weight": 167
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/tower_3",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 24631162
+ }
+}

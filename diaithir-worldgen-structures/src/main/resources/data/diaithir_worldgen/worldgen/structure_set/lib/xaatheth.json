@@ -1,0 +1,158 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/bridge_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/delve_0",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/delve_2",
+   "weight": 26
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/forge_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/forge_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/forge_2",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/forge_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/fortress_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/fortress_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/fortress_2",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/garden_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/garden_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/garden_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/hall_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/hall_2",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/hall_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/harbor_0",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/harbor_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/harbor_2",
+   "weight": 26
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/landmark_0",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/landmark_1",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/landmark_2",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/landmark_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/ruin_0",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/ruin_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/ruin_2",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/temple_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/temple_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/temple_2",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/tomb_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/tower_0",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/tower_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/tower_2",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/tower_3",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 162268539
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/fortress_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/fortress_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/hall_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/landmark_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/temple_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 77533641
+ }
+}

@@ -1,0 +1,138 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/delve_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/delve_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/delve_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/delve_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/forge_2",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/forge_3",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/fortress_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/fortress_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/fortress_2",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/fortress_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/garden_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/hall_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/hall_2",
+   "weight": 27
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/hall_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/harbor_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/harbor_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/landmark_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/landmark_2",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/landmark_3",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/ruin_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/ruin_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/ruin_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/temple_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/temple_1",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tomb_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tower_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tower_2",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 97028349
+ }
+}

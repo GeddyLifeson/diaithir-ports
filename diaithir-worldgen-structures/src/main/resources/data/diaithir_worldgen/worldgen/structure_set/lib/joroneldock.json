@@ -1,0 +1,118 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/bridge_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/delve_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/delve_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/forge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/forge_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/fortress_1",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/fortress_2",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/fortress_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/garden_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/hall_2",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/harbor_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/harbor_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/harbor_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/landmark_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/landmark_2",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/ruin_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/ruin_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/ruin_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/temple_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/tower_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joroneldock/tower_2",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 187064445
+ }
+}

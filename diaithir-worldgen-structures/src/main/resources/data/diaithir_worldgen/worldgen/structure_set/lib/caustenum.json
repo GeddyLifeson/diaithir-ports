@@ -1,0 +1,170 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/bridge_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/delve_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/delve_1",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/delve_2",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/forge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/forge_2",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/forge_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/fortress_0",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/fortress_1",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/fortress_2",
+   "weight": 53
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/fortress_3",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/garden_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/garden_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/garden_2",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/hall_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/hall_1",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/hall_2",
+   "weight": 258
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/hall_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/harbor_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/harbor_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/harbor_2",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/landmark_0",
+   "weight": 26
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/landmark_1",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/landmark_2",
+   "weight": 173
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/landmark_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/ruin_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/ruin_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/ruin_2",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/temple_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/temple_1",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/temple_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tomb_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tomb_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tower_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tower_1",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tower_2",
+   "weight": 46
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 16270805
+ }
+}

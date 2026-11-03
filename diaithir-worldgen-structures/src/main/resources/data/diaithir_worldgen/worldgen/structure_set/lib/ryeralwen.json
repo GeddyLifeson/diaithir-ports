@@ -1,0 +1,30 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/hall_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/harbor_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/ruin_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/temple_1",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 137207990
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/veontiastes/harbor/2",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/veontiastes/my_veontiastes_e3_places_000462",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

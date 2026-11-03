@@ -1,0 +1,74 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/reoria/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/delve_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/fortress_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/hall_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/harbor_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/harbor_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/temple_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/temple_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/tower_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/tower_1",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 89053216
+ }
+}

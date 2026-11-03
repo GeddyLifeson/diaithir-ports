@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/miana/tower/0",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/miana/ar_miana_e7_places_000696",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

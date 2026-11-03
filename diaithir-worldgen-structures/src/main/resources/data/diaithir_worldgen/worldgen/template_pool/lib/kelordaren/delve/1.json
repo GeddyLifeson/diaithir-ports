@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kelordaren/delve/1",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kelordaren/gr_kelordaren_e1_places_000068",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

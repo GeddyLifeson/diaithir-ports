@@ -1,0 +1,38 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/hall_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/harbor_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/harbor_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/harbor_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/harbor_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/temple_1",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 224782906
+ }
+}

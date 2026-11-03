@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/sestia/tower/2",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/sestia/my_sestia_e1_places_000487",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

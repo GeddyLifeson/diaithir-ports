@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/morarneld/delve/2",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/morarneld/gr_morarneld_e6_assay_000258",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

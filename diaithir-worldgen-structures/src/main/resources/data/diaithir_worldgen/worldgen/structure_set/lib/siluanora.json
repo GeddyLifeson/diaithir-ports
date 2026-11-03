@@ -1,0 +1,174 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/bridge_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/bridge_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/delve_0",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/delve_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/delve_2",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/forge_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/forge_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/forge_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/fortress_0",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/fortress_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/fortress_2",
+   "weight": 27
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/fortress_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/garden_0",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/garden_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/garden_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/hall_0",
+   "weight": 42
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/hall_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/hall_2",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/harbor_0",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/harbor_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/harbor_2",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/harbor_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/landmark_0",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/landmark_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/landmark_2",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/landmark_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/ruin_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/ruin_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/ruin_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/temple_0",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/temple_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/temple_2",
+   "weight": 36
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tomb_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tomb_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tower_0",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tower_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tower_2",
+   "weight": 42
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 95701784
+ }
+}

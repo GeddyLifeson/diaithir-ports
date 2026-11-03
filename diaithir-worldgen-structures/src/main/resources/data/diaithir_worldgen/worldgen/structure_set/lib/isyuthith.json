@@ -1,0 +1,118 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/delve_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/delve_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/forge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/forge_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/fortress_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/garden_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/hall_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/hall_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/hall_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/harbor_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/harbor_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/harbor_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/landmark_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/landmark_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/temple_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/tower_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/tower_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/isyuthith/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 111059155
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/delve_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/forge_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/fortress_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/fortress_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/garden_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/hall_1",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/hall_2",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/harbor_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/landmark_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/temple_1",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/tomb_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/tower_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/brurnadeld/tower_2",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 28078969
+ }
+}

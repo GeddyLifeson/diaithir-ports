@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/tarnordath/landmark/1",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/tarnordath/st_tarnordath_e4_assay_001054",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

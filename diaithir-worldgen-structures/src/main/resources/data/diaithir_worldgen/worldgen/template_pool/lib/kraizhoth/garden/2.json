@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kraizhoth/garden/2",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kraizhoth/ma_kraizhoth_e5_assay_001126",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

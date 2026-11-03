@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/eleniel/tower/0",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/eleniel/ar_eleniel_e3_places_000048",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/fortress_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/fortress_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/garden_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/harbor_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/landmark_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/landmark_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/ruin_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/temple_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/tower_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/tower_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/tower_3",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 232193533
+ }
+}

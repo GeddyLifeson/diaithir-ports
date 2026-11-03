@@ -1,0 +1,150 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/bridge_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/delve_0",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/delve_1",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/delve_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/forge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/forge_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/fortress_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/fortress_1",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/fortress_2",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/garden_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/garden_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/garden_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/hall_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/hall_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/hall_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/harbor_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/harbor_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/landmark_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/landmark_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/landmark_2",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/landmark_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/ruin_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/ruin_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/temple_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/temple_1",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/temple_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/tomb_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/tomb_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/tower_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/tower_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/tower_2",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 251401392
+ }
+}

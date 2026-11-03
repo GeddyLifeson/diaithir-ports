@@ -1,0 +1,54 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/delve_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/fortress_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/fortress_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/harbor_0",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/harbor_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/temple_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/tower_1",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 250937892
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/serarnum/harbor/0",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/serarnum/my_serarnum_e3_places_000086",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

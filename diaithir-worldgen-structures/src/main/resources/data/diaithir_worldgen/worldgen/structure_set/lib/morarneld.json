@@ -1,0 +1,42 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/delve_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/hall_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/landmark_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/temple_1",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 139136903
+ }
+}

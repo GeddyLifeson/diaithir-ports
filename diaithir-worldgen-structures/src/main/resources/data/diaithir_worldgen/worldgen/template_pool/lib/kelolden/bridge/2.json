@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kelolden/bridge/2",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kelolden/gr_kelolden_e5_assay_000148",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

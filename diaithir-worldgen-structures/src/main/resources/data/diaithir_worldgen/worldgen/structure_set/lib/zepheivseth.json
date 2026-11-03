@@ -1,0 +1,162 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/delve_0",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/delve_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/delve_2",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/forge_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/forge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/forge_2",
+   "weight": 34
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/forge_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/fortress_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/fortress_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/fortress_2",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/fortress_3",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/garden_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/garden_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/hall_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/hall_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/harbor_0",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/harbor_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/landmark_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/landmark_2",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/landmark_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/ruin_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/ruin_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/ruin_2",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/ruin_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/temple_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/temple_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/temple_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/tomb_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/tomb_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/tomb_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/tower_0",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/tower_2",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 234076980
+ }
+}

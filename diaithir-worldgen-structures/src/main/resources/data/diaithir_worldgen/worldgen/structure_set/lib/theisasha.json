@@ -1,0 +1,74 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/delve_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/forge_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/fortress_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/fortress_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/garden_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/harbor_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/ruin_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/temple_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/theisasha/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 145403797
+ }
+}

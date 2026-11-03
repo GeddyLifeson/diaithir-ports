@@ -1,0 +1,158 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/bridge_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/bridge_1",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/delve_0",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/delve_1",
+   "weight": 53
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/delve_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/forge_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/forge_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/fortress_0",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/fortress_1",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/fortress_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/fortress_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/garden_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/garden_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/hall_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/hall_1",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/hall_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/harbor_0",
+   "weight": 69
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/harbor_1",
+   "weight": 76
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/harbor_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/landmark_0",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/landmark_1",
+   "weight": 34
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/landmark_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/ruin_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/ruin_1",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/temple_0",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/temple_1",
+   "weight": 62
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/temple_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/tomb_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/tomb_1",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/tower_0",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/tower_1",
+   "weight": 30
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 247353256
+ }
+}

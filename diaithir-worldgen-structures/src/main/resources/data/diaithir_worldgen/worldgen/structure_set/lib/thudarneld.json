@@ -1,0 +1,202 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/bridge_0",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/bridge_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/bridge_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/bridge_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/delve_0",
+   "weight": 79
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/delve_1",
+   "weight": 53
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/delve_2",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/delve_3",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/forge_0",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/forge_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/forge_2",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/forge_3",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/fortress_0",
+   "weight": 43
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/fortress_1",
+   "weight": 58
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/fortress_2",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/fortress_3",
+   "weight": 42
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/garden_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/garden_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/garden_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/garden_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/hall_0",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/hall_1",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/hall_2",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/hall_3",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/harbor_0",
+   "weight": 136
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/harbor_1",
+   "weight": 63
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/harbor_2",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/harbor_3",
+   "weight": 140
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/landmark_0",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/landmark_1",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/landmark_2",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/landmark_3",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/ruin_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/ruin_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/ruin_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/ruin_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/temple_0",
+   "weight": 38
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/temple_1",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/temple_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/temple_3",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tomb_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tomb_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tomb_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tomb_3",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tower_0",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tower_1",
+   "weight": 37
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tower_2",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tower_3",
+   "weight": 33
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 146460624
+ }
+}

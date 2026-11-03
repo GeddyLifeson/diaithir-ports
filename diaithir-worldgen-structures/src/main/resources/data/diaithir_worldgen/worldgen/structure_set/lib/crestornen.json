@@ -1,0 +1,62 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/forge_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/forge_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/fortress_2",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/fortress_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/hall_2",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/harbor_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/landmark_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/landmark_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/ruin_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 165540233
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/temple_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/tower_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/tower_1",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 170580506
+ }
+}

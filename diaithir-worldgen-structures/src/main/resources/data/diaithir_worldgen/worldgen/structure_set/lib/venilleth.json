@@ -1,0 +1,30 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/delve_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/hall_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/harbor_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venilleth/temple_1",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 63612901
+ }
+}

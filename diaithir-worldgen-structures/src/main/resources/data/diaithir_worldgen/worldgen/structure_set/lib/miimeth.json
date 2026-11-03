@@ -1,0 +1,30 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miimeth/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miimeth/garden_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miimeth/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miimeth/harbor_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miimeth/temple_1",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 73845803
+ }
+}

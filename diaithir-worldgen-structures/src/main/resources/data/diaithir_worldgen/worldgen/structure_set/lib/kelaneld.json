@@ -1,0 +1,30 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/landmark_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/temple_1",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 224457900
+ }
+}

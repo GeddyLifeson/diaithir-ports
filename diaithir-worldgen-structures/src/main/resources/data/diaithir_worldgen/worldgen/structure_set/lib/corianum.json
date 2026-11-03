@@ -1,0 +1,46 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/corianum/delve_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/delve_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/fortress_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corianum/temple_1",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 80804288
+ }
+}

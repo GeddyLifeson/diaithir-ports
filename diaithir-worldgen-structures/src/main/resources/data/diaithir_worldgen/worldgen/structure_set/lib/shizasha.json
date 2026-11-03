@@ -1,0 +1,178 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/bridge_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/bridge_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/bridge_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/delve_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/delve_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/delve_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/delve_3",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/forge_2",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/forge_3",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/fortress_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/fortress_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/fortress_2",
+   "weight": 55
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/fortress_3",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/garden_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/garden_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/garden_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/garden_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/hall_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/hall_1",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/hall_2",
+   "weight": 141
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/hall_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/harbor_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/harbor_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/harbor_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/landmark_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/landmark_1",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/landmark_2",
+   "weight": 67
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/landmark_3",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/ruin_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/ruin_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/ruin_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/ruin_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/temple_1",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tomb_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tomb_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tower_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tower_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tower_2",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tower_3",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 205475381
+ }
+}

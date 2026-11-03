@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/isyuthith/bridge/2",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/isyuthith/st_isyuthith_e6_factions_000315",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

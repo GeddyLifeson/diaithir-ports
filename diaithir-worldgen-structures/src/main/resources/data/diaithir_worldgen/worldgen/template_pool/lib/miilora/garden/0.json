@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/miilora/garden/0",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/miilora/ar_miilora_e4_places_000175",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

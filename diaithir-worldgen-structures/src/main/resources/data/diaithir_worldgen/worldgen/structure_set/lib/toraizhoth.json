@@ -1,0 +1,50 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/delve_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/forge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/fortress_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/fortress_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/garden_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/hall_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/landmark_2",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/landmark_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/toraizhoth/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 105725657
+ }
+}

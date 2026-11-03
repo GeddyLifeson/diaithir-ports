@@ -1,0 +1,198 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/bridge_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/bridge_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/bridge_2",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/bridge_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/delve_0",
+   "weight": 64
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/delve_1",
+   "weight": 71
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/delve_2",
+   "weight": 167
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/delve_3",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/forge_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/forge_1",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/forge_2",
+   "weight": 137
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/forge_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/fortress_0",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/fortress_1",
+   "weight": 120
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/fortress_2",
+   "weight": 228
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/fortress_3",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/garden_0",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/garden_1",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/garden_2",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/garden_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/hall_0",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/hall_1",
+   "weight": 72
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/hall_2",
+   "weight": 191
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/hall_3",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/harbor_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/harbor_1",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/harbor_2",
+   "weight": 36
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/harbor_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/landmark_0",
+   "weight": 69
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/landmark_1",
+   "weight": 110
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/landmark_2",
+   "weight": 280
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/landmark_3",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/ruin_0",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/ruin_1",
+   "weight": 56
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/ruin_2",
+   "weight": 77
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/ruin_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/temple_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/temple_1",
+   "weight": 43
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/temple_2",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tomb_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tomb_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tomb_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tower_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tower_1",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tower_2",
+   "weight": 66
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 81265190
+ }
+}

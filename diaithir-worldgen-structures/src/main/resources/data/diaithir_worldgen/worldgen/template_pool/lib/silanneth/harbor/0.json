@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/silanneth/harbor/0",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silanneth/ar_silanneth_e4_places_000023",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

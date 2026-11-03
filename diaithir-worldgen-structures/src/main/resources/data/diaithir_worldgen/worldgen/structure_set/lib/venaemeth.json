@@ -1,0 +1,106 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/forge_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/fortress_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/garden_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/garden_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/garden_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/hall_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/hall_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/harbor_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/harbor_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/harbor_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/landmark_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/landmark_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/landmark_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/temple_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/temple_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/temple_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/tower_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venaemeth/tower_2",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 210314606
+ }
+}

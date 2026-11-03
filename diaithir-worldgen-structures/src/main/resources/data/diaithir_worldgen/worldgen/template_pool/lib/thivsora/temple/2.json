@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/thivsora/temple/2",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/thivsora/st_thivsora_e6_places_000056",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

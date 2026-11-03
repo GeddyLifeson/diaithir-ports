@@ -1,0 +1,42 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/delve_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/fortress_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/hall_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/harbor_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/temple_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/tower_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 99875202
+ }
+}

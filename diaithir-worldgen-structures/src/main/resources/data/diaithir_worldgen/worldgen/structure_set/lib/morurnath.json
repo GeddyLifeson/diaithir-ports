@@ -1,0 +1,94 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/delve_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/forge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/fortress_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/fortress_1",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/fortress_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/garden_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/hall_1",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/hall_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/hall_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/harbor_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/harbor_1",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/landmark_1",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/landmark_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/ruin_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/temple_1",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/tower_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/tower_1",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/tower_2",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 235490269
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/fortress_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/fortress_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/garden_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/garden_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/hall_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/hall_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/hall_3",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/harbor_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/harbor_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/harbor_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/landmark_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/landmark_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/temple_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/temple_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/tomb_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/tower_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/tower_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 151046111
+ }
+}

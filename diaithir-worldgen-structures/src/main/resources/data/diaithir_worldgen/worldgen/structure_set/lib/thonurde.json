@@ -1,0 +1,106 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/bridge_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/delve_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/delve_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/forge_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/forge_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/fortress_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/fortress_2",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/garden_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/hall_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/hall_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/harbor_0",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/harbor_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/harbor_2",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/landmark_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/ruin_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/temple_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/temple_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/tower_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/tower_2",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 258954016
+ }
+}

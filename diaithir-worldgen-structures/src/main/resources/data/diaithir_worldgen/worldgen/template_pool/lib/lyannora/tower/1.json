@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/lyannora/tower/1",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyannora/ar_lyannora_e1_places_000057",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

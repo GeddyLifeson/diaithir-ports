@@ -1,0 +1,94 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/delve_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/forge_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/fortress_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/fortress_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/fortress_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/garden_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/hall_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/hall_2",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/harbor_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/landmark_2",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/temple_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/temple_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/temple_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/tomb_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 202173887
+ }
+}

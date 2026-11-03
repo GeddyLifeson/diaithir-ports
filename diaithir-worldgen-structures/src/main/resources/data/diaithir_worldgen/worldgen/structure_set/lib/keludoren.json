@@ -1,0 +1,54 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/fortress_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/fortress_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/harbor_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/temple_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/tower_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/keludoren/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 142504569
+ }
+}

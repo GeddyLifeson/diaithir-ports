@@ -1,0 +1,58 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/delve_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/harbor_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/temple_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/tomb_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/tower_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 247554157
+ }
+}

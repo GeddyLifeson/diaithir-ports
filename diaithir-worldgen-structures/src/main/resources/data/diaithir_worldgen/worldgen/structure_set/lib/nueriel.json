@@ -1,0 +1,110 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/bridge_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/delve_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/delve_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/delve_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/forge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/fortress_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/fortress_1",
+   "weight": 33
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/fortress_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/garden_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/garden_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/hall_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/hall_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/harbor_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/harbor_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/landmark_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/landmark_1",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/landmark_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/ruin_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/ruin_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/temple_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/temple_1",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/tomb_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/tower_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/tower_1",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 39818917
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/delve_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/forge_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/forge_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/fortress_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/fortress_1",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/fortress_2",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/fortress_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/garden_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/garden_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/hall_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/hall_2",
+   "weight": 47
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/harbor_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/landmark_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/landmark_2",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/landmark_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/temple_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/temple_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/tomb_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/tower_2",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 158807973
+ }
+}

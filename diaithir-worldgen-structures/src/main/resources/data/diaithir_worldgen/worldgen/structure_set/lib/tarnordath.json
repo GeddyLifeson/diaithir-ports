@@ -1,0 +1,62 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/delve_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/forge_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/fortress_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/fortress_2",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/garden_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/hall_2",
+   "weight": 40
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/landmark_2",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/tomb_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/tower_2",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 130061271
+ }
+}

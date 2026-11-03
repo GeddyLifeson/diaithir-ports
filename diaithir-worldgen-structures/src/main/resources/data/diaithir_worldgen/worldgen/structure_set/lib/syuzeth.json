@@ -1,0 +1,94 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/delve_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/delve_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/forge_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/forge_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/fortress_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/fortress_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/fortress_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/fortress_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/garden_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/garden_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/hall_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/hall_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/hall_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/landmark_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/landmark_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/tower_2",
+   "weight": 7
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 120019990
+ }
+}

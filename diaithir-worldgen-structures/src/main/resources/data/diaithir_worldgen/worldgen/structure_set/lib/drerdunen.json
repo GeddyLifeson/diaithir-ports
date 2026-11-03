@@ -1,0 +1,194 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/bridge_0",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/bridge_1",
+   "weight": 30
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/bridge_2",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/bridge_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/delve_0",
+   "weight": 83
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/delve_1",
+   "weight": 95
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/delve_2",
+   "weight": 37
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/delve_3",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/forge_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/forge_1",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/forge_2",
+   "weight": 37
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/forge_3",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/fortress_0",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/fortress_1",
+   "weight": 111
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/fortress_2",
+   "weight": 80
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/fortress_3",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/garden_0",
+   "weight": 26
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/garden_1",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/garden_2",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/garden_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/hall_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/hall_1",
+   "weight": 36
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/hall_2",
+   "weight": 43
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/hall_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/harbor_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/harbor_1",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/harbor_2",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/harbor_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/landmark_0",
+   "weight": 47
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/landmark_1",
+   "weight": 106
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/landmark_2",
+   "weight": 124
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/landmark_3",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/ruin_0",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/ruin_1",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/ruin_2",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/ruin_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/temple_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/temple_1",
+   "weight": 70
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/temple_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/tomb_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/tomb_1",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/tower_0",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/tower_1",
+   "weight": 56
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/tower_2",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/tower_3",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 97086733
+ }
+}

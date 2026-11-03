@@ -1,0 +1,190 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/bridge_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/bridge_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/delve_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/delve_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/delve_2",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/delve_3",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/forge_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/forge_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/forge_2",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/forge_3",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/fortress_0",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/fortress_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/fortress_2",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/fortress_3",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/garden_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/garden_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/garden_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/hall_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/hall_2",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/hall_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/harbor_0",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/harbor_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/harbor_2",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/harbor_3",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/landmark_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/landmark_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/landmark_2",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/landmark_3",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/ruin_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/ruin_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/ruin_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/ruin_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/temple_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/temple_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/temple_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/temple_3",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/tomb_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/tomb_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/tower_0",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/tower_1",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/tower_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/tower_3",
+   "weight": 22
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 10560595
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/linaustia/delve/3",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/linaustia/my_linaustia_e7_assay_000715",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

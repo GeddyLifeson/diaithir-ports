@@ -1,0 +1,110 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/delve_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/forge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/fortress_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/fortress_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/garden_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/hall_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/hall_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/hall_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/hall_3",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/harbor_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/harbor_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/harbor_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/landmark_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/landmark_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/temple_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/temple_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/temple_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/tower_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/tower_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/tower_3",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 25897016
+ }
+}

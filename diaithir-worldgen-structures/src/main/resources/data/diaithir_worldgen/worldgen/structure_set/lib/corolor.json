@@ -1,0 +1,134 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/corolor/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/delve_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/delve_1",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/delve_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/forge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/forge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/fortress_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/fortress_1",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/fortress_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/fortress_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/garden_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/garden_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/hall_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/hall_1",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/hall_2",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/harbor_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/harbor_1",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/harbor_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/landmark_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/landmark_1",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/landmark_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/ruin_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/temple_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/temple_1",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/temple_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/tomb_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/tower_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/tower_1",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/tower_2",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 88404005
+ }
+}

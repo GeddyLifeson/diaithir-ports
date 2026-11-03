@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/siliorlora/garden/0",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/siliorlora/ar_siliorlora_e6_places_000180",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

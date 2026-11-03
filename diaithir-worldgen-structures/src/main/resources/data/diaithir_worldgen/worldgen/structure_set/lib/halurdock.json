@@ -1,0 +1,50 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/hall_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/hall_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/harbor_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/harbor_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/harbor_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/harbor_3",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/tomb_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/tower_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 16214770
+ }
+}

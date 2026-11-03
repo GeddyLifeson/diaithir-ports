@@ -1,0 +1,54 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/venualys/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/delve_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/garden_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/harbor_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/harbor_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/ruin_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/temple_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/tower_1",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 119026932
+ }
+}

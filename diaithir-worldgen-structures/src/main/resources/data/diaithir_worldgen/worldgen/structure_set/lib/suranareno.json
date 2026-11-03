@@ -1,0 +1,46 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/fortress_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/hall_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/temple_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/suranareno/temple_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 72001777
+ }
+}

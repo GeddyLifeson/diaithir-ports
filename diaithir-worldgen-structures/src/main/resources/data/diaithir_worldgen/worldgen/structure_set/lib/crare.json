@@ -1,0 +1,66 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crare/bridge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/fortress_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/fortress_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/fortress_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/garden_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/harbor_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/landmark_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/tower_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/tower_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/tower_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crare/tower_3",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 53003345
+ }
+}

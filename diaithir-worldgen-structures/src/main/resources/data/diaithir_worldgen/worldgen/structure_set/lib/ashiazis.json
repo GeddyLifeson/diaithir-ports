@@ -1,0 +1,54 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/delve_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/delve_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/forge_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/forge_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/fortress_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/fortress_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/ruin_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/tower_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 260509382
+ }
+}

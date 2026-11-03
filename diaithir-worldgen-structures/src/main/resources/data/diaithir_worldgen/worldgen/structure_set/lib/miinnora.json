@@ -1,0 +1,50 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/delve_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/fortress_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/garden_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/harbor_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/harbor_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/temple_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/tomb_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/tower_1",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 74849229
+ }
+}

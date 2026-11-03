@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/eleniel/delve/1",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/eleniel/ar_eleniel_e1_places_000096",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

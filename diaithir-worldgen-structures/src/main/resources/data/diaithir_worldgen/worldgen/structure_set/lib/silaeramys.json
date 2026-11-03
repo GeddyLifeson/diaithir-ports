@@ -1,0 +1,134 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/delve_0",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/delve_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/delve_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/forge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/forge_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/fortress_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/fortress_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/fortress_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/garden_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/hall_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/hall_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/hall_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/harbor_0",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/harbor_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/landmark_0",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/landmark_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/landmark_2",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/ruin_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/ruin_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/temple_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/temple_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/temple_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/tower_0",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/tower_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/tower_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silaeramys/tower_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 111244264
+ }
+}

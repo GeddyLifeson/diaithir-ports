@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/coriarnes/hall/0",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/coriarnes/my_coriarnes_e6_places_000144",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

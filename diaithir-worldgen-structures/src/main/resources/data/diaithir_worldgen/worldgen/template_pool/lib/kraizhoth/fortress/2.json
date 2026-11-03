@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kraizhoth/fortress/2",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kraizhoth/ma_kraizhoth_e6_assay_001056",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

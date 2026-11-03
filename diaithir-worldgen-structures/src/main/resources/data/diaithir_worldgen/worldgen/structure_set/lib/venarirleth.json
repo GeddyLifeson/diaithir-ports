@@ -1,0 +1,82 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/bridge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/forge_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/fortress_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/fortress_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/fortress_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/garden_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/hall_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/hall_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/harbor_0",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/harbor_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/landmark_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/temple_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/tomb_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/tower_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/tower_1",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 89959775
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/sestia/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/delve_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/delve_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/fortress_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/harbor_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/landmark_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/temple_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/temple_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/tower_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 45301178
+ }
+}

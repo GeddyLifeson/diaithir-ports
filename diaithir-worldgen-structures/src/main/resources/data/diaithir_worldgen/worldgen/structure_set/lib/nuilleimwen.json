@@ -1,0 +1,30 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/delve_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/delve_1",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/hall_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/hall_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/harbor_1",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 228647534
+ }
+}

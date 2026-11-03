@@ -1,0 +1,158 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/bridge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/bridge_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/bridge_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/delve_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/delve_1",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/delve_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/delve_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/forge_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/forge_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/forge_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/fortress_0",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/fortress_1",
+   "weight": 43
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/fortress_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/fortress_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/garden_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/garden_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/hall_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/hall_1",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/hall_2",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/harbor_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/harbor_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/landmark_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/landmark_1",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/landmark_2",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/landmark_3",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/ruin_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/ruin_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/ruin_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/ruin_3",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/temple_1",
+   "weight": 30
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/temple_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/tomb_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/tomb_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/tower_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/tower_1",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/tower_2",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/tower_3",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 148670330
+ }
+}
