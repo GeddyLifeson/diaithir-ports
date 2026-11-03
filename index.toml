@@ -68459,12 +68459,12 @@ hash = "878216e9821205274599be070d3a2e21bb8dcb7fa91c11e2fe7c8cba2c6ffcb1"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "c4ab40f85443ed7151345a01b7424ed7ee52129c4c24e347b9aede96bb263ec9"
+hash = "0bead35eccbf68b519022b574d5f1299c57db922cabd091a36d4138a3c2a3476"
 metafile = true
 
 [[files]]
 file = "mods/diaithir-libraries-neoforge-26.1.2-1.0.0.jar"
-hash = "ba0a83cc6a71fe3fb752a6b927b3f69f835731963c5a2d5f21901930a69bde10"
+hash = "4a7518b738e39762d5ab495b196483f32e0d1558b5277e8e8c29fd1af46ca09f"
 
 [[files]]
 file = "mods/diaithir-linked-storage-neoforge-26.1.2-1.0.0.jar"
