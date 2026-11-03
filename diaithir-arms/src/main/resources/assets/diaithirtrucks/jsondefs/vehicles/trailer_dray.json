@@ -45,7 +45,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -56,7 +58,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -67,7 +71,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -78,7 +84,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -90,17 +98,6 @@
     "interactable_crate"
    ],
    "defaultPart": "diaithirtrucks:crate_s"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    0.8999999999999999,
-    0
-   ],
-   "width": 1.8,
-   "height": 1.2
   }
  ],
  "definitions": [
@@ -147,6 +144,31 @@
       3.85
      ],
      "distance": 2.0
+    }
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "vehicle",
+    "entity",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "health": 800,
+   "armorThickness": 3.0,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.8999999999999999,
+      0
+     ],
+     "width": 1.8,
+     "height": 1.2
     }
    ]
   }

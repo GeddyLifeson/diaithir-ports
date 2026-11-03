@@ -1,6 +1,6 @@
 {
  "general": {
-  "type": "ground_tread",
+  "type": "ground_wheel",
   "name": "Tank Track (narrow)",
   "materialLists": [
    [
@@ -9,16 +9,14 @@
   ]
  },
  "ground": {
-  "isTread": true,
+  "isWheel": true,
   "width": 0.7,
   "height": 0.85,
   "flatHeight": 0.85,
   "climbHeight": 0.85,
   "motiveFriction": 1.0,
   "lateralFriction": 1.4,
-  "extraCollisionBoxOffset": 0.0,
-  "spacing": 6.4,
-  "canGoFlat": false
+  "extraCollisionBoxOffset": 0.0
  },
  "definitions": [
   {

@@ -55,7 +55,9 @@
    "types": [
     "engine_tank"
    ],
-   "defaultPart": "diaithirtanks:tank_engine"
+   "defaultPart": "diaithirtanks:tank_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -64,9 +66,11 @@
     0.0
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirtanks:tank_track"
+   "defaultPart": "diaithirtanks:tank_track",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -75,9 +79,11 @@
     0.0
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirtanks:tank_track"
+   "defaultPart": "diaithirtanks:tank_track",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -117,57 +123,73 @@
     "gun_tank"
    ],
    "defaultPart": "diaithirtanks:tank_gun_120",
+   "minValue": 0.0,
+   "maxValue": 1000.0,
    "minYaw": -180,
    "maxYaw": 180,
    "minPitch": -8,
    "maxPitch": 20
   }
  ],
- "collision": [
+ "collisionGroups": [
   {
-   "pos": [
-    0,
-    1.1,
-    0.0
+   "collisionTypes": [
+    "block",
+    "vehicle",
+    "entity",
+    "attack",
+    "bullet"
    ],
-   "width": 2.6,
-   "height": 1.2
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    2.4
-   ],
-   "width": 2.6,
-   "height": 1.0
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    -2.4
-   ],
-   "width": 2.6,
-   "height": 1.0
-  },
-  {
-   "pos": [
-    -1.6,
-    0.7,
-    0.0
-   ],
-   "width": 1.0,
-   "height": 1.2
-  },
-  {
-   "pos": [
-    1.6,
-    0.7,
-    0.0
-   ],
-   "width": 1.0,
-   "height": 1.2
+   "isInterior": false,
+   "health": 1500,
+   "armorThickness": 300.0,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.1,
+      0.0
+     ],
+     "width": 2.6,
+     "height": 1.2
+    },
+    {
+     "pos": [
+      0,
+      1.0,
+      2.4
+     ],
+     "width": 2.6,
+     "height": 1.0
+    },
+    {
+     "pos": [
+      0,
+      1.0,
+      -2.4
+     ],
+     "width": 2.6,
+     "height": 1.0
+    },
+    {
+     "pos": [
+      -1.6,
+      0.7,
+      0.0
+     ],
+     "width": 1.0,
+     "height": 1.2
+    },
+    {
+     "pos": [
+      1.6,
+      0.7,
+      0.0
+     ],
+     "width": 1.0,
+     "height": 1.2
+    }
+   ]
   }
  ],
  "definitions": [
