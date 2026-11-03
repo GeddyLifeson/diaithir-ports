@@ -68501,6 +68501,10 @@ file = "mods/diaithir-aircraft-neoforge-26.1.2-1.0.0.jar"
 hash = "8d24a2b4c6bd216707fb6a26aead7c3032993766f679f5b736fd89715901ab50"
 
 [[files]]
+file = "mods/diaithir-arms-neoforge-26.1.2-1.0.0.jar"
+hash = "35b7677c2e4695ae153cd69e95036c6a5d150b2365468363ed70dd581fd51d3f"
+
+[[files]]
 file = "mods/diaithir-attribute-fixes-neoforge-26.1.2-1.0.0.jar"
 hash = "c2ce1d1b08963f804212e199a27b8480872943704c1f8b1c63850e446fdc474f"
 
@@ -68752,8 +68756,8 @@ file = "mods/diaithir-server-logic-tweaks-neoforge-26.1.2-1.0.0.jar"
 hash = "52d8efc7d1a634c67a6b5b06d12a23af0839460bd2cc745822949b81019de058"
 
 [[files]]
-file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.2.jar"
-hash = "cf63a9c79c3d8a2168fde855b4654737e7a547f69715e3b6d602ddef801a11a4"
+file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.4-with-archimedes-128.jar"
+hash = "f5a61731b186b35ec1080e03d16ba4947cbfd9e6b45a7d95044ff3e1d625d2f1"
 
 [[files]]
 file = "mods/diaithir-structures-data-neoforge-26.1.2-1.1.1.jar"
