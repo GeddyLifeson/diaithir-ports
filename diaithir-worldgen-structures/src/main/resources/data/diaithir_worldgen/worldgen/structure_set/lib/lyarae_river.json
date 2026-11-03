@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/bridge_0_river",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/bridge_3_river",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 178706203
+ }
+}

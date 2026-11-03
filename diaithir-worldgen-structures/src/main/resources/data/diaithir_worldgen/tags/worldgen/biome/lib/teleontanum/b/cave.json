@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:teleontanum_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_grottoes",
+   "required": false
+  }
+ ]
+}

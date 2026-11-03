@@ -1,0 +1,58 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/forge_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/hall_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/hall_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/hall_2_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/landmark_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/landmark_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/landmark_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ninteostor/temple_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 234243821
+ }
+}

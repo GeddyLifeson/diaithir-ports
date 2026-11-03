@@ -1,0 +1,7 @@
+{
+ "input": "minecraft:iron_pickaxe",
+ "output": {
+  "id": "minecraft:iron_nugget",
+  "count": 18
+ }
+}

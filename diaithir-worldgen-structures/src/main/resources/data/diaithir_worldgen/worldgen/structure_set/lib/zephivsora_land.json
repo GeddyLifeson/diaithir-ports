@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/ruin_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/temple_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephivsora/tomb_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 155841570
+ }
+}

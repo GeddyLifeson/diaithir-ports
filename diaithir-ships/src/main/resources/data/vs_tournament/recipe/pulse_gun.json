@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "U#U",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "#": "vs_tournament:thruster",
+    "/": "minecraft:stick",
+    "U": "vs_tournament:upgrade_thruster"
+  },
+  "result": {
+    "id": "vs_tournament:pulse_gun",
+    "count": 1
+  }
+}

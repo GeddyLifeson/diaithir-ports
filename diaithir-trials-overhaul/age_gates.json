@@ -1,0 +1,9 @@
+{
+ "_doc": "Same shape as DiaithirRPG content/tech_ages.json. The whole notenoughtrials namespace wakes at Age IV (iron): the chambers need wind charges, copper scraping and trial keys.",
+ "namespaces": {
+  "notenoughtrials": "IV"
+ },
+ "items": {
+  "minecraft:heavy_core": "V"
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:kaktun_gaiktak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaktun_ilyannuara",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaktun_jorenoron",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaktun_karuktoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaktun_syazasha",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaktun_ukasalari",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaktun_vhagairkun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaktun_vorouthar",
+   "required": false
+  }
+ ]
+}

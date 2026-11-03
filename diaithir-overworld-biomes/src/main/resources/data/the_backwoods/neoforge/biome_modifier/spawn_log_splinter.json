@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#the_backwoods:is_loss",
+ "spawners": {
+  "type": "the_backwoods:log_splinter",
+  "weight": 10,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

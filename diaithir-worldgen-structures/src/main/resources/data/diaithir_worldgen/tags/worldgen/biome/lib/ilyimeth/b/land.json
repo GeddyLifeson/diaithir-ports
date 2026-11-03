@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ilyimeth_alaemeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyimeth_alainnae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyimeth_elaeriel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyimeth_elerlys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyimeth_ryenniel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyimeth_silara",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyimeth_venalleth",
+   "required": false
+  }
+ ]
+}

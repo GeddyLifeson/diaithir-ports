@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/veniolora/landmark/1/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/veniolora/ar_veniolora_e3_assay_000243",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

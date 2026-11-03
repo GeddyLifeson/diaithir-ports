@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "pattern": ["X X", "###", "###"], "key": {"X": "minecraft:iron_chain", "#": "biomesoplenty:stripped_willow_log"}, "result": {"id": "biomesoplenty:willow_hanging_sign", "count": 6}}

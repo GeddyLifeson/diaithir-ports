@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:zephivsora_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_grottoes",
+   "required": false
+  }
+ ]
+}

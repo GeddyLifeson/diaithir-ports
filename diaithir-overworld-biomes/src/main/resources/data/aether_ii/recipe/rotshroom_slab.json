@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aether_ii:rotshroom"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "aether_ii:rotshroom_slab",
+  "count": 6
+ }
+}

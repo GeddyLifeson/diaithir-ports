@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/stairs",
+ "textures": {
+  "bottom": "undergarden:block/depthrock_tile_stairs",
+  "side": "undergarden:block/depthrock_tile_stairs",
+  "top": "undergarden:block/depthrock_tile_stairs"
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "the_bumblezone:sempiternal_sanctum_blue",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 28,
+  "separation": 8,
+  "salt": 46855
+ }
+}

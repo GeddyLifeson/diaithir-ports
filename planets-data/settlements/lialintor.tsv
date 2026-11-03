@@ -1,0 +1,72 @@
+entry_id	name	tier	era	biome_entry
+MY.lialintor.E1.assay.001708	Coriasanium	1	E1	MY.lialintor.E5.assay.001259
+MY.lialintor.E1.assay.001923	Sontes	1	E1	MY.lialintor.E3.assay.001791
+MY.lialintor.E1.assay.002484	Valiantium Mernia	1	E1	MY.lialintor.E3.assay.001694
+MY.lialintor.E1.places.000400	Kakturn	2	E1	MY.lialintor.E3.assay.001694
+MY.lialintor.E2.assay.000560	Saulanum	2	E2	MY.lialintor.E3.assay.003024
+MY.lialintor.E2.assay.001224	Moses	2	E2	MY.lialintor.E3.assay.002987
+MY.lialintor.E2.assay.001307	Corisus	2	E2	MY.lialintor.E5.assay.001259
+MY.lialintor.E2.assay.001745	Amaunelium	2	E2	MY.lialintor.E3.assay.003024
+MY.lialintor.E2.assay.001774	Viallia	2	E2	MY.lialintor.E3.assay.003024
+MY.lialintor.E2.assay.001831	Telentones	2	E2	MY.lialintor.E5.assay.001259
+MY.lialintor.E2.assay.001942	Amerum	2	E2	MY.lialintor.E3.assay.003024
+MY.lialintor.E3.assay.000505	Santanum	3	E3	MY.lialintor.E1.assay.000606
+MY.lialintor.E3.assay.000903	Tiantum	3	E3	MY.lialintor.E3.assay.001694
+MY.lialintor.E3.assay.001208	Vornium	3	E3	MY.lialintor.E3.assay.003024
+MY.lialintor.E3.assay.001246	Cirnum	3	E3	MY.lialintor.E3.assay.003024
+MY.lialintor.E3.assay.001453	Teliasia	3	E3	MY.lialintor.E3.assay.001791
+MY.lialintor.E3.assay.001694	Vorus	3	E3	MY.lialintor.E1.assay.000606
+MY.lialintor.E3.assay.001817	Vasoranum	3	E3	MY.lialintor.E3.assay.001694
+MY.lialintor.E3.assay.002064	Nosor	3	E3	MY.lialintor.E3.assay.001694
+MY.lialintor.E3.assay.002172	Moses Riasonia	3	E3	MY.lialintor.E3.assay.003024
+MY.lialintor.E3.assay.002888	Amaunor	3	E3	MY.lialintor.E5.assay.001259
+MY.lialintor.E3.assay.002946	Leonaurnus	3	E3	MY.lialintor.E2.assay.001307
+MY.lialintor.E3.assay.002987	Ceostia	3	E3	MY.lialintor.E3.assay.001694
+MY.lialintor.E3.assay.003049	Sereonaulor	3	E3	MY.lialintor.E3.assay.001791
+MY.lialintor.E3.assay.003088	Tantum Corallium	3	E3	MY.lialintor.E2.assay.000850
+MY.lialintor.E3.assay.003089	Amistiantus	3	E3	MY.lialintor.E2.assay.000850
+MY.lialintor.E4.assay.000737	Tirnus	4	E4	MY.lialintor.E2.assay.000850
+MY.lialintor.E4.assay.000774	Cirneoles	4	E4	MY.lialintor.E3.assay.001694
+MY.lialintor.E4.assay.001628	Meonia	4	E4	MY.lialintor.E3.assay.001791
+MY.lialintor.E4.assay.001819	Telisialium	4	E4	MY.lialintor.E3.assay.003024
+MY.lialintor.E4.assay.001888	Saullor Teleontium	4	E4	MY.lialintor.E3.assay.001694
+MY.lialintor.E4.assay.002547	Nenastor	4	E4	MY.lialintor.E5.assay.001259
+MY.lialintor.E4.assay.002784	Nares Vialium	4	E4	MY.lialintor.E2.assay.000850
+MY.lialintor.E4.assay.002834	Lonernor	4	E4	MY.lialintor.E1.assay.000606
+MY.lialintor.E5.assay.000682	Mausium	5	E5	MY.lialintor.E2.assay.000850
+MY.lialintor.E5.assay.000867	Terus	5	E5	MY.lialintor.E3.assay.002987
+MY.lialintor.E5.assay.000960	Orines	5	E5	MY.lialintor.E1.assay.000606
+MY.lialintor.E5.assay.001001	Caunium	5	E5	MY.lialintor.E3.assay.001791
+MY.lialintor.E5.assay.001120	Ciarnus	5	E5	MY.lialintor.E3.assay.001791
+MY.lialintor.E5.assay.001151	Tinanum	5	E5	MY.lialintor.E3.assay.002987
+MY.lialintor.E5.assay.001353	Amantus	5	E5	MY.lialintor.E3.assay.001694
+MY.lialintor.E5.assay.001378	Voniantor	5	E5	MY.lialintor.E3.assay.001694
+MY.lialintor.E5.assay.001459	Taurnum	5	E5	MY.lialintor.E5.assay.001259
+MY.lialintor.E5.assay.001486	Telolanum	5	E5	MY.lialintor.E2.assay.000850
+MY.lialintor.E5.assay.001579	Sernirum	5	E5	MY.lialintor.E3.assay.001791
+MY.lialintor.E5.assay.001597	Telianes	5	E5	MY.lialintor.E3.assay.001694
+MY.lialintor.E5.assay.001698	Varnum	5	E5	MY.lialintor.E3.assay.001694
+MY.lialintor.E5.assay.001814	Naullus	5	E5	MY.lialintor.E2.assay.001307
+MY.lialintor.E5.assay.001868	Toseoranum	5	E5	MY.lialintor.E2.assay.001307
+MY.lialintor.E5.assay.001940	Veostor	5	E5	MY.lialintor.E2.assay.000850
+MY.lialintor.E5.assay.001955	Amollintum	5	E5	MY.lialintor.E3.assay.001791
+MY.lialintor.E5.assay.001984	Valeontolum	5	E5	MY.lialintor.E2.assay.000850
+MY.lialintor.E5.assay.002367	Laurnes	5	E5	MY.lialintor.E3.assay.001694
+MY.lialintor.E5.assay.002502	Niasaustia	5	E5	MY.lialintor.E3.assay.001694
+MY.lialintor.E5.assay.003008	Vantaulles	5	E5	MY.lialintor.E1.assay.000606
+MY.lialintor.E6.assay.000534	Toria	6	E6	MY.lialintor.E2.assay.000850
+MY.lialintor.E6.assay.000578	Meornor	6	E6	MY.lialintor.E3.assay.001694
+MY.lialintor.E6.assay.000915	Cintoses	6	E6	MY.lialintor.E2.assay.001307
+MY.lialintor.E6.assay.000963	Carneolum	6	E6	MY.lialintor.E3.assay.001694
+MY.lialintor.E6.assay.001080	Ronaulus	6	E6	MY.lialintor.E1.assay.000606
+MY.lialintor.E6.assay.001187	Telernus	6	E6	MY.lialintor.E5.assay.001259
+MY.lialintor.E6.assay.001334	Millontum	6	E6	MY.lialintor.E3.assay.001694
+MY.lialintor.E6.assay.001373	Tilia	6	E6	MY.lialintor.E3.assay.003024
+MY.lialintor.E6.assay.001425	Teonilia Corilauses	6	E6	MY.lialintor.E3.assay.002987
+MY.lialintor.E6.assay.001454	Lernum	6	E6	MY.lialintor.E2.assay.000850
+MY.lialintor.E6.assay.001532	Cianolles	6	E6	MY.lialintor.E3.assay.001791
+MY.lialintor.E6.assay.001828	Silles	6	E6	MY.lialintor.E3.assay.001694
+MY.lialintor.E6.assay.002832	Rolles	6	E6	MY.lialintor.E3.assay.003024
+MY.lialintor.E7.places.000413	Ilosanuta	2	E7	MY.lialintor.E2.assay.001307
+MY.lialintor.E7.places.000433	Droukozhok	3	E7	MY.lialintor.E3.assay.002987
+MY.lialintor.E7.places.000464	Tiravaroma	4	E7	MY.lialintor.E3.assay.002987

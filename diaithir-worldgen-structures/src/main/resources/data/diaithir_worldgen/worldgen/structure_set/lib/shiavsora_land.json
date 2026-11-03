@@ -1,0 +1,94 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/forge_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/forge_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/forge_3_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/fortress_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/fortress_3_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/hall_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/hall_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/hall_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/landmark_2_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/landmark_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/ruin_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/temple_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/temple_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/temple_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/tomb_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/tower_3_land",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 187381529
+ }
+}

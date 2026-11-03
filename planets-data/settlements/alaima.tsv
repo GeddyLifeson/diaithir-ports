@@ -1,0 +1,563 @@
+entry_id	name	tier	era	biome_entry
+AR.alaima.E1.assay.012516	Rosaullanum	1	E1	AR.alaima.E6.places.003073
+AR.alaima.E1.assay.016823	Viastor	1	E1	AR.alaima.E6.places.003633
+AR.alaima.E1.assay.018983	Valelirnum	1	E1	AR.alaima.E6.places.003558
+AR.alaima.E1.places.007272	Ilonalrarum	5	E1	AR.alaima.E6.places.003073
+AR.alaima.E2.assay.008760	Rentium	2	E2	AR.alaima.E6.places.002777
+AR.alaima.E2.assay.009027	Orolor	2	E2	AR.alaima.E6.places.003050
+AR.alaima.E2.assay.009350	Amolernium	2	E2	AR.alaima.E6.places.003871
+AR.alaima.E2.assay.009564	Releonia	2	E2	AR.alaima.E6.places.002842
+AR.alaima.E2.assay.010477	Rontiastum	2	E2	AR.alaima.E6.places.003558
+AR.alaima.E2.assay.010651	Virnanum Neollanum	2	E2	AR.alaima.E6.places.003197
+AR.alaima.E2.assay.011062	Rorenium	2	E2	AR.alaima.E6.places.003073
+AR.alaima.E2.assay.013593	Rastium Amilium	2	E2	AR.alaima.E6.places.003871
+AR.alaima.E2.assay.014968	Corisus Oriaseornus	2	E2	AR.alaima.E6.places.003633
+AR.alaima.E2.assay.015534	Oreornalum	2	E2	AR.alaima.E6.places.002842
+AR.alaima.E2.assay.015682	Teolor Coraulum	2	E2	AR.alaima.E6.places.003050
+AR.alaima.E2.assay.015683	Orirnus Leornes	2	E2	AR.alaima.E6.places.003197
+AR.alaima.E2.assay.015785	Rolles Amisernes	2	E2	AR.alaima.E6.places.002777
+AR.alaima.E2.assay.015826	Lelus Ciallium	2	E2	AR.alaima.E6.places.003197
+AR.alaima.E2.assay.016782	Cellanum	2	E2	AR.alaima.E6.places.003050
+AR.alaima.E2.assay.017640	Oriantastor	2	E2	AR.alaima.E6.places.003558
+AR.alaima.E2.assay.018206	Teones	2	E2	AR.alaima.E6.places.003633
+AR.alaima.E2.assay.019476	Seroranum Tirnus	2	E2	AR.alaima.E6.places.003633
+AR.alaima.E2.assay.020224	Amarnium Amauntornes	2	E2	AR.alaima.E6.places.003633
+AR.alaima.E2.places.007214	Mielinnae	2	E2	AR.alaima.E6.places.002777
+AR.alaima.E2.places.007249	Elaema	4	E2	AR.alaima.E6.places.003558
+AR.alaima.E3.assay.007643	Causeollus	3	E3	AR.alaima.E1.assay.019709
+AR.alaima.E3.assay.007841	Teontonus	3	E3	AR.alaima.E6.places.003197
+AR.alaima.E3.assay.008080	Amiantanum	3	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.assay.008158	Rarostanum	3	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.assay.008341	Seosallor	3	E3	AR.alaima.E1.assay.019709
+AR.alaima.E3.assay.008369	Centium	3	E3	AR.alaima.E1.assay.019709
+AR.alaima.E3.assay.008785	Telornirium	3	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.assay.009091	Lentor	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.assay.009242	Ralaunes	3	E3	AR.alaima.E6.places.003073
+AR.alaima.E3.assay.010417	Sialum	3	E3	AR.alaima.E6.places.003871
+AR.alaima.E3.assay.010452	Serarnum Corelaunes	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.assay.010537	Molles	3	E3	AR.alaima.E6.places.002842
+AR.alaima.E3.assay.010988	Corolirnia	3	E3	AR.alaima.E6.places.003871
+AR.alaima.E3.assay.011123	Saullus	3	E3	AR.alaima.E6.places.003633
+AR.alaima.E3.assay.011146	Viales	3	E3	AR.alaima.E6.places.003197
+AR.alaima.E3.assay.011227	Siarnilles	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.assay.011612	Leoranus	3	E3	AR.alaima.E6.places.003558
+AR.alaima.E3.assay.011805	Serosium Siarus	3	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.assay.012101	Malanum Sorallus	3	E3	AR.alaima.E6.places.003558
+AR.alaima.E3.assay.012347	Roniastum	3	E3	AR.alaima.E6.places.003197
+AR.alaima.E3.assay.012497	Oriarnanum Loriastum	3	E3	AR.alaima.E6.places.003197
+AR.alaima.E3.assay.012844	Tauleorum	3	E3	AR.alaima.E6.places.003871
+AR.alaima.E3.assay.013062	Teollum Molles	3	E3	AR.alaima.E6.places.003633
+AR.alaima.E3.assay.013209	Vellus	3	E3	AR.alaima.E6.places.003633
+AR.alaima.E3.assay.013321	Lestantes	3	E3	AR.alaima.E6.places.002842
+AR.alaima.E3.assay.013527	Ameolia	3	E3	AR.alaima.E6.places.003197
+AR.alaima.E3.assay.013693	Callus	3	E3	AR.alaima.E6.places.003871
+AR.alaima.E3.assay.014215	Lantus Raulles	3	E3	AR.alaima.E6.places.003197
+AR.alaima.E3.assay.015050	Coriasus	3	E3	AR.alaima.E6.places.003197
+AR.alaima.E3.assay.015171	Losternanum	3	E3	AR.alaima.E6.places.003197
+AR.alaima.E3.assay.015307	Neonum Mauntiallus	3	E3	AR.alaima.E6.places.002842
+AR.alaima.E3.assay.015335	Orelles	3	E3	AR.alaima.E6.places.003558
+AR.alaima.E3.assay.015673	Corillia Lernus	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.assay.015837	Tianisia	3	E3	AR.alaima.E6.places.002842
+AR.alaima.E3.assay.016558	Teliasia Mentium	3	E3	AR.alaima.E6.places.003073
+AR.alaima.E3.assay.016760	Telisostum	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.assay.016831	Tostesor	3	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.assay.016899	Seolestanum	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.assay.017076	Orontum	3	E3	AR.alaima.E1.assay.019709
+AR.alaima.E3.assay.017171	Lanium Collanum	3	E3	AR.alaima.E6.places.003073
+AR.alaima.E3.assay.017284	Amentia Valisanum	3	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.assay.017927	Mistor Tirelles	3	E3	AR.alaima.E6.places.003871
+AR.alaima.E3.assay.018379	Oranornum	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.assay.018624	Orausia	3	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.assay.018871	Valauntanum Rollor	3	E3	AR.alaima.E6.places.003073
+AR.alaima.E3.assay.019492	Vaselor	3	E3	AR.alaima.E6.places.003871
+AR.alaima.E3.assay.019667	Selus Serenilor	3	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.assay.020344	Coreonirnum	3	E3	AR.alaima.E6.places.002842
+AR.alaima.E3.assay.020480	Seontor Coriantes	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.assay.020661	Cernes Serestium	3	E3	AR.alaima.E6.places.003050
+AR.alaima.E3.places.004258	Lyimarwen	6	E3	AR.alaima.E6.places.002777
+AR.alaima.E3.places.007218	Veniolwen	2	E3	AR.alaima.E6.places.003633
+AR.alaima.E3.places.007254	Savseizeth	4	E3	AR.alaima.E6.places.002777
+AR.alaima.E4.assay.007443	Coraulor	4	E4	AR.alaima.E6.places.003558
+AR.alaima.E4.assay.009788	Lausiror	4	E4	AR.alaima.E1.assay.019709
+AR.alaima.E4.assay.011749	Larus	4	E4	AR.alaima.E1.assay.019709
+AR.alaima.E4.assay.013457	Vistia Amastor	4	E4	AR.alaima.E6.places.002777
+AR.alaima.E4.assay.013576	Rausteorium	4	E4	AR.alaima.E6.places.003633
+AR.alaima.E4.assay.014770	Rausanum	4	E4	AR.alaima.E6.places.003197
+AR.alaima.E4.assay.015056	Rentiarus	4	E4	AR.alaima.E6.places.003871
+AR.alaima.E4.assay.015656	Ranteonus	4	E4	AR.alaima.E6.places.003073
+AR.alaima.E4.assay.015942	Selium Naullium	4	E4	AR.alaima.E6.places.003558
+AR.alaima.E4.assay.016223	Ventum Sasteolor	4	E4	AR.alaima.E6.places.003197
+AR.alaima.E4.assay.018558	Leornor Reores	4	E4	AR.alaima.E1.assay.019709
+AR.alaima.E4.assay.018563	Meosia	4	E4	AR.alaima.E6.places.003073
+AR.alaima.E4.assay.018842	Orentus Teontum	4	E4	AR.alaima.E6.places.003197
+AR.alaima.E4.assay.020199	Orerium Saurnorus	4	E4	AR.alaima.E6.places.002777
+AR.alaima.E4.assay.021046	Tistarnes	4	E4	AR.alaima.E6.places.003633
+AR.alaima.E4.places.007240	Tarnostock	3	E4	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.007314	Telauntum	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.007480	Telolintus	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.007556	Mentor	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.007991	Teostolium	5	E5	AR.alaima.E6.places.003558
+AR.alaima.E5.assay.008655	Collia	5	E5	AR.alaima.E6.places.003050
+AR.alaima.E5.assay.008761	Celiranum	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.008770	Tarnilles	5	E5	AR.alaima.E6.places.003558
+AR.alaima.E5.assay.008905	Ceornestes	5	E5	AR.alaima.E6.places.002777
+AR.alaima.E5.assay.009514	Viastium	5	E5	AR.alaima.E1.assay.019709
+AR.alaima.E5.assay.009710	Orarnia	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.009792	Tontelanum	5	E5	AR.alaima.E6.places.002777
+AR.alaima.E5.assay.009871	Oraulor	5	E5	AR.alaima.E6.places.003050
+AR.alaima.E5.assay.010100	Centor	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.010195	Coraustanum	5	E5	AR.alaima.E6.places.002777
+AR.alaima.E5.assay.010406	Seronum	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.010636	Ameosirnus	5	E5	AR.alaima.E6.places.003073
+AR.alaima.E5.assay.010854	Seriantes Noses	5	E5	AR.alaima.E6.places.003871
+AR.alaima.E5.assay.011070	Senintus	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.011118	Oreollestus	5	E5	AR.alaima.E6.places.003871
+AR.alaima.E5.assay.011333	Corilornes Teleostorus	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.011498	Menillia	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.011685	Valesaunia	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.011721	Amernia	5	E5	AR.alaima.E6.places.003073
+AR.alaima.E5.assay.011789	Telornum	5	E5	AR.alaima.E6.places.003871
+AR.alaima.E5.assay.011953	Valiasor	5	E5	AR.alaima.E1.assay.019709
+AR.alaima.E5.assay.011955	Rernum	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.012384	Mianeolanum	5	E5	AR.alaima.E1.assay.019709
+AR.alaima.E5.assay.012391	Velornia	5	E5	AR.alaima.E6.places.003050
+AR.alaima.E5.assay.012749	Taria	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.013356	Valenes	5	E5	AR.alaima.E6.places.003050
+AR.alaima.E5.assay.013916	Coraustum Vereontia	5	E5	AR.alaima.E6.places.003871
+AR.alaima.E5.assay.014015	Niaraullia	5	E5	AR.alaima.E6.places.003558
+AR.alaima.E5.assay.014074	Telalestia	5	E5	AR.alaima.E1.assay.019709
+AR.alaima.E5.assay.014314	Valeonum Varus	5	E5	AR.alaima.E6.places.003050
+AR.alaima.E5.assay.014456	Vaurallus Larnires	5	E5	AR.alaima.E6.places.003073
+AR.alaima.E5.assay.014713	Teloria	5	E5	AR.alaima.E6.places.003871
+AR.alaima.E5.assay.014914	Valeseostum	5	E5	AR.alaima.E6.places.003558
+AR.alaima.E5.assay.014995	Masolia	5	E5	AR.alaima.E1.assay.019709
+AR.alaima.E5.assay.015344	Sesonia	5	E5	AR.alaima.E6.places.003050
+AR.alaima.E5.assay.015505	Saunium Vernones	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.015894	Serentum Amauseontia	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.015923	Rallosanum	5	E5	AR.alaima.E6.places.003050
+AR.alaima.E5.assay.016169	Vantesum	5	E5	AR.alaima.E6.places.003073
+AR.alaima.E5.assay.016335	Vaustanum Amiseontor	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.016419	Sellaurnia	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.016552	Orisum Lestus	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.016570	Laulum Teloniarus	5	E5	AR.alaima.E1.assay.019709
+AR.alaima.E5.assay.016669	Rinostanum	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.016762	Millium Amiares	5	E5	AR.alaima.E6.places.003871
+AR.alaima.E5.assay.016943	Seraules	5	E5	AR.alaima.E6.places.003558
+AR.alaima.E5.assay.017049	Teleores Orirnium	5	E5	AR.alaima.E6.places.003073
+AR.alaima.E5.assay.017186	Carnium Orauntia	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.017365	Cisia Vines	5	E5	AR.alaima.E6.places.003073
+AR.alaima.E5.assay.017717	Leonium Telonauria	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.017931	Saustanum Tastus	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.017947	Amisor Taunollanum	5	E5	AR.alaima.E1.assay.019709
+AR.alaima.E5.assay.018098	Vallus Amiallares	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.018355	Telarniarus	5	E5	AR.alaima.E6.places.003050
+AR.alaima.E5.assay.018380	Veorintus Telostanum	5	E5	AR.alaima.E6.places.002777
+AR.alaima.E5.assay.018510	Tostanum Meolliarnum	5	E5	AR.alaima.E6.places.003073
+AR.alaima.E5.assay.018697	Amialanum Orarnanum	5	E5	AR.alaima.E6.places.003558
+AR.alaima.E5.assay.018727	Coriases	5	E5	AR.alaima.E6.places.002777
+AR.alaima.E5.assay.018781	Villor Valeolor	5	E5	AR.alaima.E6.places.003558
+AR.alaima.E5.assay.018895	Telornium Valles	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.018904	Seonus Valianeles	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.019098	Vistiantor	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.019160	Riales Varolanum	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.assay.019849	Riallum Lilanum	5	E5	AR.alaima.E6.places.003871
+AR.alaima.E5.assay.019994	Serasanum	5	E5	AR.alaima.E6.places.003073
+AR.alaima.E5.assay.020251	Seristum Serosiarnum	5	E5	AR.alaima.E1.assay.019709
+AR.alaima.E5.assay.020362	Coriasium	5	E5	AR.alaima.E6.places.003558
+AR.alaima.E5.assay.020539	Tanolia	5	E5	AR.alaima.E6.places.003633
+AR.alaima.E5.assay.020547	Colium Mornia	5	E5	AR.alaima.E6.places.003197
+AR.alaima.E5.assay.021122	Orernia Miarnellus	5	E5	AR.alaima.E6.places.002842
+AR.alaima.E5.places.007262	Isazith	4	E5	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.007685	Linterus	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.008102	Causteonium	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.assay.008221	Teosanum	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.008302	Liares	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.008537	Sauranum Corareollia	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.assay.008609	Castornia	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.assay.009221	Veriles	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.009559	Naurnialium	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.assay.009614	Amornanum	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.assay.009682	Rarnestium	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.009813	Amisontium	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.assay.009890	Nistosium	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.assay.010008	Nauntalor	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.010267	Telonia	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.010416	Sarnintes	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.010447	Serentus	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.010797	Teornoles	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.assay.011315	Telerantum	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.assay.011353	Millornor	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.assay.011506	Seraunantia	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.012011	Niaranor	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.012252	Amiallenus	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.012377	Teollium Coristia	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.012739	Cellum	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.012780	Nontium	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.012929	Oriarnanum Amaulastium	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.013036	Tasenus	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.013208	Callia Telirnenum	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.013222	Telontum	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.assay.013265	Sallor	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.013350	Amiantesor	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.assay.013546	Valolum	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.013566	Liastia Amauria	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.013646	Oronum	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.014792	Valonor Loleontum	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.assay.014888	Tirnor Telaria	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.014964	Viallaunus	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.015028	Orirum	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.015371	Sorneolles	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.assay.015752	Ceolaunum	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.015810	Calles Valornialus	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.015876	Amarnontes	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.assay.015970	Amintium Misor	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.assay.016209	Vostaunanum	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.016273	Oreolausum	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.016519	Seolianor	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.016547	Leosia	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.assay.016745	Meneollus	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.016842	Vises Valaures	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.assay.017000	Menanum Rinernes	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.017008	Serisanum Valornelus	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.017041	Relles Siarnus	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.017096	Oriaraulium	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.assay.017328	Marnum	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.assay.017460	Valinornia	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.017544	Viastum Valestintia	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.017643	Cornor	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.018055	Larnus	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.assay.018104	Salonum	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.assay.018337	Tonialor	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.assay.018669	Orialor Amiror	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.019037	Tilus	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.assay.019073	Amintestus	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.assay.019106	Cintor Valiasirum	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.assay.019589	Rallor Amiastia	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.019838	Tillor	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.019907	Sauleostium	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.assay.019932	Lasaunus	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.assay.020025	Orianeranum	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.020075	Losiranum	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.assay.020116	Rosia Valauranum	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.assay.020209	Tauntum Corus	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.020223	Valiarum	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.assay.020319	Seroresum	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.assay.020427	Mosallia	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.assay.021015	Lisium Seraulum	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.000062	Ilyiniel	1	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.000808	Oriineriel	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.000913	Elirwen	3	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.001128	Venaerima	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.001163	Elamuarlae	3	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.001219	Lyirlana	3	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.001654	Venaniel	7	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.002671	Ryareneth	3	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002672	Elennora	3	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.002679	Nuamuana	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.002681	Nuaneth	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.002683	Elionneriel	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.002686	Sileirlae	3	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.002689	Oriemwen	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002694	Silionuara	4	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.002698	Miinys	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002699	Nuarleniel	4	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.002709	Nuara	1	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.002713	Siliomora	3	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.002714	Venaeniel	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002715	Mialwen	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002716	Venuamanora	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.002731	Elarys	5	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.002735	Ryelleth	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002742	Venara	3	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002749	Elaerla	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002756	Venilora	7	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002758	Ryerliometh	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002764	Ryimaenwen	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.002768	Eleirelys	2	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.002773	Miinna	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002779	Silaemwen	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.002785	Alaannuarys	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.002788	Venioniel	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.002800	Elamenna	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.002803	Lyenniel	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.002809	Orierlilys	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.002818	Silinneth	5	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.002820	Ryeneth	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002827	Venarlys	2	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.002832	Miirlora	5	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002835	Elinys	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.002843	Silerlanae	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.002850	Elionnemys	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.002856	Sileiriel	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.002860	Nuariel	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.002862	Sileniel	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002877	Veneila	1	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.002882	Miellae	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.002902	Nuariollys	5	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002924	Ilyelora	2	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.002928	Sileilora	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.002930	Ryiniel	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.002934	Nuerwen	1	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002940	Silionirys	7	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.002943	Orienna	3	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002950	Venaeneilae	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.002952	Venerinae	3	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.002955	Silanimys	5	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002963	Sileiruarla	1	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.002975	Ilyaneila	1	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.002976	Venarleth	1	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002979	Ryanaeliel	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.002980	Oriilys	4	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.002991	Miirliel	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.002993	Venaelae	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003006	Alaeleth	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003008	Eliniolwen	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003009	Ryeneimora	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003017	Ryeliel	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003019	Silanna	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003033	Elaereilwen	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003047	Lyenora	1	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003061	Veneimeth	2	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003063	Oriirleilys	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003073	Mielora	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003074	Alainneth	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003075	Nuima	1	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003081	Orielluamys	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003102	Miarora	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003103	Oriemiolwen	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003107	Oriilliomys	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003109	Elimeth	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003122	Ilyennys	4	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003125	Elariel	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003128	Mielleimora	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003130	Venareimora	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003131	Lyelys	1	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003133	Miirerlys	3	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003134	Ryinnora	3	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003140	Orienwen	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003150	Elaerleth	1	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003154	Ryanima	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003156	Oriineth	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003162	Oriamys	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003176	Ryamwen	3	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003187	Ilyara	4	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003189	Eleimiel	1	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003190	Lyirae	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003193	Sileimarla	4	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003204	Miariola	3	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003206	Veneiriomae	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003208	Lyarleimae	5	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003214	Miannys	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003215	Elaerlimys	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003219	Mianneth	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003235	Ryillora	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003247	Ilyimora	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003248	Silarae	1	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003275	Orienora	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003279	Ryennys	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003283	Alainnamae	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003295	Miarora	1	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003297	Eluanameth	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003306	Alaileth	5	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003311	Lyalora	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003315	Alaalwen	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003317	Alainnae	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003323	Siliomys	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003327	Veniolae	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003332	Elinnys	1	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003338	Silionnora	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003340	Lyeramora	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003359	Miimarwen	3	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003364	Elaerama	3	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003368	Ilyira	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003369	Ryilenneth	1	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003370	Nualeirlys	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003372	Ryimae	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003388	Silaenneth	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003398	Siliorae	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003401	Ryemys	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003405	Nuiniel	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003418	Nuellae	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003425	Silela	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003443	Orieniorla	3	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003455	Ryeniel	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003456	Silaela	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003470	Nuanae	2	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003472	Elaena	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003478	Ilyennora	1	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003487	Alairlemeth	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003488	Ryaleinae	1	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003490	Silionneth	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003494	Ryarilys	2	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003498	Elioreina	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003501	Miereth	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003502	Nuima	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003506	Oriallema	3	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003508	Eliomaelora	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003513	Sileimerora	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003514	Silaelerae	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003518	Miillora	1	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003524	Ryanniel	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003528	Ilyemeth	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003539	Sileilaemys	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003540	Oriarliel	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003547	Elanora	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003550	Silinnarys	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003569	Silionnae	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003572	Oriileinna	1	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003576	Elaleth	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003577	Lyalwen	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003586	Ilyirlora	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003591	Silemora	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003592	Silimwen	4	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003598	Sileneth	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003599	Veniorys	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003607	Ilyirwen	3	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003609	Silaenniel	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003610	Oriirla	3	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003611	Nuama	7	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003624	Eliorys	1	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003630	Venirla	1	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003633	Sileilae	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003634	Sileiriel	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003644	Elaennarae	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003655	Nueniel	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003656	Miamuarwen	1	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003670	Venameth	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003673	Alainnae	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003691	Nuimeinae	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003695	Ryiniel	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003718	Elionnelae	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003721	Venimwen	4	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003723	Miinnae	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003724	Alaannora	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003725	Venaemarys	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003726	Oriineilwen	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003727	Veneiniel	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003730	Nuerlora	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003731	Oriellimae	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003733	Miemualwen	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003734	Oriiliel	1	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003741	Silionnys	4	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.003749	Venariolla	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003753	Ryelora	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003760	Sileimwen	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003761	Mienniel	7	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003762	Nuilora	3	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003770	Venalwen	1	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003774	Ryenneth	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003778	Elirlys	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003796	Ilyinys	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003800	Ryenae	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003801	Ilyeriel	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003804	Nuinameth	3	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003805	Silaemwen	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003808	Oriamaellae	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003815	Elaenniel	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003816	Elaemwen	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003825	Elemora	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003827	Alaennae	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003829	Elaleina	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003831	Nuemae	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003835	Venualamys	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003844	Oriillora	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003845	Eleiriel	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003853	Miileth	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003857	Oriarlae	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003860	Ryanniel	2	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003863	Lyamiel	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003880	Alaemwen	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003884	Elaenuamora	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003885	Siliolora	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003890	Eleimeth	2	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.003893	Silima	4	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003898	Eluamenwen	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003907	Eluanneth	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.003913	Ilyamae	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.003918	Veninys	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.003924	Veneireth	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003928	Eleinarora	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003931	Venineirora	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003944	Alaamaerys	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.003951	Sileinnera	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.003956	Ilyennys	4	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003972	Elamae	3	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.003987	Silioranae	3	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.003995	Venallereth	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004021	Elemalae	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.004022	Ryalinniel	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004023	Miennora	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004028	Elemeth	2	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.004037	Mienae	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004042	Ryarlys	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004043	Lyiraneth	6	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.004050	Venamenys	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.004060	Lyila	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.004063	Miareina	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.004064	Elaemeth	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.004070	Miallae	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004072	Venerora	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.004078	Lyennys	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004082	Nuireth	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.004088	Silaemeniel	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004092	Alaimiel	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004098	Venaemualla	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.004103	Elannae	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004104	Miilleth	4	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004105	Ryira	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.004109	Venualemiel	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.004110	Orieneila	4	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004112	Mierlinae	3	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004116	Eliolora	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.004130	Ryenioriel	1	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004146	Ryinnae	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.004154	Ilyerleth	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.004155	Eleneth	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.004163	Venuamiel	6	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004165	Venuariel	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.004169	Ryereth	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.004191	Ryerliola	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004193	Venimae	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.004197	Orianeth	6	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.004198	Ryillora	3	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.004201	Veninellora	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004205	Sileneima	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004210	Lyemaneth	3	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.004216	Miinaeleth	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.004219	Venuallys	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.004221	Silaeniel	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004230	Ryillaenora	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.004232	Silaerwen	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004236	Elioleth	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.004239	Elirlamwen	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004242	Elanae	6	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.004243	Nuiriel	2	E6	AR.alaima.E6.places.003558
+AR.alaima.E6.places.004251	Siliolinna	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004252	Venirae	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004254	Miirlalwen	2	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004255	Eleilora	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.004268	Silaerinwen	2	E6	AR.alaima.E6.places.002842
+AR.alaima.E6.places.004270	Eluamora	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.004287	Elana	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004289	Elualora	4	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.004299	Eleniel	3	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004312	Sileirlys	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004323	Nuilleineth	2	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004326	Ilyaleth	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004329	Oriimae	6	E6	AR.alaima.E6.places.003073
+AR.alaima.E6.places.004334	Lyilenna	2	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.004350	Eluarlenna	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.004351	Miellys	6	E6	AR.alaima.E6.places.002777
+AR.alaima.E6.places.004353	Alaimeth	2	E6	AR.alaima.E6.places.003197
+AR.alaima.E6.places.004354	Elaemuannys	2	E6	AR.alaima.E6.places.003871
+AR.alaima.E6.places.004355	Nuilae	6	E6	AR.alaima.E6.places.003050
+AR.alaima.E6.places.004357	Venaerys	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.004359	Elionnimae	6	E6	AR.alaima.E1.assay.019709
+AR.alaima.E6.places.006968	Miarora	3	E6	AR.alaima.E6.places.003633
+AR.alaima.E6.places.007187	Alaira	6	E6	AR.alaima.E6.places.003633
+AR.alaima.E7.assay.009794	Taulium Ameornisum	7	E7	AR.alaima.E6.places.003050
+AR.alaima.E7.assay.012855	Amolasanum	7	E7	AR.alaima.E1.assay.019709
+AR.alaima.E7.assay.015994	Callum	7	E7	AR.alaima.E1.assay.019709
+AR.alaima.E7.assay.018486	Amilonor	7	E7	AR.alaima.E6.places.003073
+AR.alaima.E7.assay.019032	Ceontelum	7	E7	AR.alaima.E6.places.003197
+AR.alaima.E7.places.004337	Silenna	6	E7	AR.alaima.E6.places.003633

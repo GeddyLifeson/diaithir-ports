@@ -58,7 +58,7 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
 
     // ClientChunkCache.Storage is a private class, so access the field through a coerced accessor
     @Unique
-    private Object vs$getStorage() {
+    private ClientChunkCache.Storage vs$currentStorage() {
         return ((ClientChunkCacheAccessor) (Object) this).vs$getStorage();
     }
     @Shadow
@@ -91,7 +91,7 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
         final Map<Heightmap.Types, long[]> tag,
         final Consumer<BlockEntityTagOutput> consumer, final CallbackInfoReturnable<LevelChunk> cir) {
         final ClientChunkCacheStorageAccessor clientChunkMapAccessor =
-            ClientChunkCacheStorageAccessor.class.cast(vs$getStorage());
+            ClientChunkCacheStorageAccessor.class.cast((Object) vs$currentStorage());
         if (!clientChunkMapAccessor.callInRange(x, z)) {
             if (VSGameUtilsKt.isChunkInShipyard(level, x, z)) {
                 if (Minecraft.getInstance().levelRenderer instanceof final LevelRendererDuck levelRenderer) {
@@ -215,7 +215,7 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
         if (chunk == null) {
             return;
         }
-        final ClientChunkCacheStorageAccessor clientChunkMapAccessor = ClientChunkCacheStorageAccessor.class.cast(vs$getStorage());
+        final ClientChunkCacheStorageAccessor clientChunkMapAccessor = ClientChunkCacheStorageAccessor.class.cast((Object) vs$currentStorage());
         clientChunkMapAccessor.setChunkCount(clientChunkMapAccessor.getChunkCount() - 1);
         level.unload(chunk);
         if (ValkyrienCommonMixinConfigPlugin.getVSRenderer() != VSRenderer.SODIUM) {

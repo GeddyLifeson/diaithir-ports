@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnornath/settlement_0_mirnor_oraunestium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnornath/settlement_1_mirnor_oraunestium",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnornath/settlement_2_mirnor_oraunestium",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnornath/settlement_3_mirnor_oraunestium",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 95331189
+ }
+}

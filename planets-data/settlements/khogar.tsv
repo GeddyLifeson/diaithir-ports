@@ -1,0 +1,11 @@
+entry_id	name	tier	era	biome_entry
+MA.khogar.E1.places.000099	Gruthak	5	E1	MA.khogar.E3.places.000033
+MA.khogar.E2.places.000083	Sirantium	4	E2	MA.khogar.E3.places.000033
+MA.khogar.E2.places.000084	Jorurnedeld	4	E2	MA.khogar.E3.places.000045
+MA.khogar.E3.places.000045	Jorurede	2	E3	MA.khogar.E3.places.000033
+MA.khogar.E5.places.000036	Thardock	1	E5	MA.khogar.E3.places.000033
+MA.khogar.E5.places.000037	Seisiazeth	1	E5	MA.khogar.E5.places.000037
+MA.khogar.E5.places.000050	Brode	2	E5	MA.khogar.E2.places.000083
+MA.khogar.E5.places.000070	Neorastia	3	E5	MA.khogar.E3.places.000045
+MA.khogar.E5.places.000095	Osumatarala	4	E5	MA.khogar.E5.places.000095
+MA.khogar.E7.places.000052	Ciantanum	2	E7	MA.khogar.E5.places.000095

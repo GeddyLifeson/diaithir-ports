@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:veontiastes_ameosiallor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veontiastes_collirium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veontiastes_orelausium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veontiastes_silanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veontiastes_soreoles",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veontiastes_teolia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veontiastes_ventiastor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veontiastes_voses",
+   "required": false
+  }
+ ]
+}

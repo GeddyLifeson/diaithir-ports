@@ -4,8 +4,8 @@
  "name_en": "Ceramic Warlord",
  "age": 7,
  "own": {
-  "kind": "zombie",
-  "scale": 1.6,
+  "kind": "look_tall",
+  "scale": 1.25,
   "hp": 950,
   "damage": 24,
   "armor": 16,
@@ -255,5 +255,6 @@
  },
  "mythic": false,
  "entity": "diaithirbosses:ceramic_warlord",
- "creature_id": null
+ "creature_id": null,
+ "look": true
 }

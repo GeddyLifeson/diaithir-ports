@@ -1,0 +1,8 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="diaithir_worldgen"
+version="1.0.0"
+displayName="Diaithir Worldgen Structures"
+description="One clean-room structure module replacing the adventure, ruins, dungeon, village and Yung's structure mods. Original layouts; ids migrate via migration.json."

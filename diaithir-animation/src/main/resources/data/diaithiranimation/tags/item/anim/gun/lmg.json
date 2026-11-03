@@ -2,11 +2,175 @@
 "replace": false,
 "values": [
 {
+"id": "diaithirfirearms:aat52",
+"required": false
+},
+{
+"id": "diaithirfirearms:bar_m1918",
+"required": false
+},
+{
+"id": "diaithirfirearms:breda_30",
+"required": false
+},
+{
+"id": "diaithirfirearms:bren_gun",
+"required": false
+},
+{
+"id": "diaithirfirearms:browning_m1917",
+"required": false
+},
+{
+"id": "diaithirfirearms:browning_m1919",
+"required": false
+},
+{
+"id": "diaithirfirearms:browning_m2",
+"required": false
+},
+{
+"id": "diaithirfirearms:chauchat",
+"required": false
+},
+{
+"id": "diaithirfirearms:dp27",
+"required": false
+},
+{
+"id": "diaithirfirearms:dshk",
+"required": false
+},
+{
+"id": "diaithirfirearms:fiat_revelli_1914",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_mag",
+"required": false
+},
+{
+"id": "diaithirfirearms:gatling_gun",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk21",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_mg4",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_mg5",
+"required": false
+},
+{
+"id": "diaithirfirearms:hotchkiss_m1914",
+"required": false
+},
+{
+"id": "diaithirfirearms:kord_hmg",
+"required": false
+},
+{
+"id": "diaithirfirearms:kpv",
+"required": false
+},
+{
+"id": "diaithirfirearms:lewis_gun",
+"required": false
+},
+{
 "id": "diaithirfirearms:light_mg",
 "required": false
 },
 {
+"id": "diaithirfirearms:m134_minigun",
+"required": false
+},
+{
+"id": "diaithirfirearms:m249_saw",
+"required": false
+},
+{
+"id": "diaithirfirearms:m60",
+"required": false
+},
+{
+"id": "diaithirfirearms:madsen_lmg",
+"required": false
+},
+{
+"id": "diaithirfirearms:maxim_gun",
+"required": false
+},
+{
+"id": "diaithirfirearms:mg08",
+"required": false
+},
+{
+"id": "diaithirfirearms:mg34",
+"required": false
+},
+{
+"id": "diaithirfirearms:mg42",
+"required": false
+},
+{
 "id": "diaithirfirearms:minigun",
+"required": false
+},
+{
+"id": "diaithirfirearms:negev",
+"required": false
+},
+{
+"id": "diaithirfirearms:nsv",
+"required": false
+},
+{
+"id": "diaithirfirearms:pkm",
+"required": false
+},
+{
+"id": "diaithirfirearms:rpd",
+"required": false
+},
+{
+"id": "diaithirfirearms:rpk",
+"required": false
+},
+{
+"id": "diaithirfirearms:schwarzlose_m07",
+"required": false
+},
+{
+"id": "diaithirfirearms:sg43",
+"required": false
+},
+{
+"id": "diaithirfirearms:type92_hmg",
+"required": false
+},
+{
+"id": "diaithirfirearms:type96_lmg",
+"required": false
+},
+{
+"id": "diaithirfirearms:ultimax_100",
+"required": false
+},
+{
+"id": "diaithirfirearms:vickers_gun",
+"required": false
+},
+{
+"id": "diaithirfirearms:vz59",
+"required": false
+},
+{
+"id": "diaithirfirearms:zb26",
 "required": false
 },
 {

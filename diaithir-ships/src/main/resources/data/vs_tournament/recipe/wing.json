@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ccc",
+    "nin",
+    "ccc"
+  ],
+  "key": {
+    "c": "#minecraft:wool_carpets",
+    "n": "minecraft:iron_nugget",
+    "i": "minecraft:iron_ingot"
+  },
+  "result": {
+    "id": "valkyrienskies:test_wing",
+    "count": 5
+  }
+}

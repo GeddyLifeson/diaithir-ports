@@ -2,11 +2,91 @@
 "replace": false,
 "values": [
 {
+"id": "diaithirfirearms:accuracy_aw",
+"required": false
+},
+{
 "id": "diaithirfirearms:antimaterial_rifle",
 "required": false
 },
 {
+"id": "diaithirfirearms:barrett_m82",
+"required": false
+},
+{
+"id": "diaithirfirearms:barrett_mrad",
+"required": false
+},
+{
+"id": "diaithirfirearms:boys_at_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:cheytac_m200",
+"required": false
+},
+{
+"id": "diaithirfirearms:l96a1",
+"required": false
+},
+{
+"id": "diaithirfirearms:m110_sass",
+"required": false
+},
+{
+"id": "diaithirfirearms:orsis_t5000",
+"required": false
+},
+{
+"id": "diaithirfirearms:pgm_hecate2",
+"required": false
+},
+{
+"id": "diaithirfirearms:ptrd41",
+"required": false
+},
+{
+"id": "diaithirfirearms:ptrs41",
+"required": false
+},
+{
+"id": "diaithirfirearms:pzb39",
+"required": false
+},
+{
+"id": "diaithirfirearms:remington_700",
+"required": false
+},
+{
+"id": "diaithirfirearms:sako_trg",
+"required": false
+},
+{
 "id": "diaithirfirearms:sniper_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:steyr_hs50",
+"required": false
+},
+{
+"id": "diaithirfirearms:steyr_ssg69",
+"required": false
+},
+{
+"id": "diaithirfirearms:sv98",
+"required": false
+},
+{
+"id": "diaithirfirearms:svd",
+"required": false
+},
+{
+"id": "diaithirfirearms:tac50",
+"required": false
+},
+{
+"id": "diaithirfirearms:vss_vintorez",
 "required": false
 }
 ]

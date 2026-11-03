@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "belts:belt_tier3",
+    "d": "minecraft:diamond"
+  },
+  "pattern": [
+    "bbb",
+    "bdb",
+    "bbb"
+  ],
+  "result": {
+    "count": 8,
+    "id": "belts:belt_tier4"
+  }
+}

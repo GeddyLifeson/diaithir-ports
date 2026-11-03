@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kelordaren/settlement/1/zephyustis",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kelordaren/gr_kelordaren_e5_places_000058",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

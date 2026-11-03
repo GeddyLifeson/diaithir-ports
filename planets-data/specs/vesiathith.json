@@ -1,0 +1,163 @@
+{
+ "sky": {
+  "sky": "#8a5a2b",
+  "fog": "#c9a46a",
+  "cloud": "#66ffe0b0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#3a2a1a"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "ST.vesiathith.E6.places.000400",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#7d6e5a",
+   "foliage": "#6b5e4c",
+   "water": "#4a4038",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesiathith.E6.places.000431",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -0.9,
+   "grass": "#c8a46a",
+   "foliage": "#b89058",
+   "water": "#6a5a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesiathith.E6.places.001349",
+   "archetype": "jungle",
+   "temp": 0.7,
+   "humid": 0.9,
+   "grass": "#5f7a3a",
+   "foliage": "#4e8a3a",
+   "water": "#5a6a40",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesiathith.E6.places.000373",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6a7a4a",
+   "foliage": "#5a7048",
+   "water": "#7fd0b0",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesiathith.E6.places.001263",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.7,
+   "grass": "#5e6e42",
+   "foliage": "#4a6a3a",
+   "water": "#6a6a48",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesiathith.E6.places.000368",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#a0583a",
+   "foliage": "#8a4a32",
+   "water": "#6a4a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesiathith.E6.places.001246",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": 0.1,
+   "grass": "#7a7468",
+   "foliage": "#6a6458",
+   "water": "#5a5a60",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesiathith.E6.places.001245",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.0,
+   "grass": "#c8d8e0",
+   "foliage": "#b8c8d8",
+   "water": "#a0c8e0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A volcanic iron-crusted world of ash-choked badlands, scorched deserts, and storm-lashed swamps, with a glowing lava sea and frozen crystal peaks at the cold edge.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7a6a",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.vesiathith.E6.places.001319",
+  "why": "Storm-lashed war world; grounded planetary air, clouds, storms.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 3.0,
+   "copper": 2.0,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.vesiathith.E6.places.001279",
+  "grounded": true
+ }
+}

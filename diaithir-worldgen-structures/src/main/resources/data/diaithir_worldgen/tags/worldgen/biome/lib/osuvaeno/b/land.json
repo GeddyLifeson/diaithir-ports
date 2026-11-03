@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:osuvaeno_halornock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:osuvaeno_ilosavaleno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:osuvaeno_ilotanuta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:osuvaeno_ilyana",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:osuvaeno_osuvauta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:osuvaeno_tarnordath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:osuvaeno_vanasanoma",
+   "required": false
+  }
+ ]
+}

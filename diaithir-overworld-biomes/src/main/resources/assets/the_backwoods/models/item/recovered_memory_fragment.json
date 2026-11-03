@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "the_backwoods:item/recovered_memory_fragment"
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ashestith_asheivsith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashestith_isiazis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashestith_osazith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashestith_sheisora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashestith_syathyuzis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashestith_veseivsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashestith_zephasis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashestith_zepheivsis",
+   "required": false
+  }
+ ]
+}

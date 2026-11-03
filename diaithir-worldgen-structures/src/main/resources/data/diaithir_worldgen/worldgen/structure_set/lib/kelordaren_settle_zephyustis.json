@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_0_zephyustis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelordaren/settlement_1_zephyustis",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 257677932
+ }
+}

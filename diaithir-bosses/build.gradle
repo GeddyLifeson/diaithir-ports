@@ -13,6 +13,8 @@ neoForge {
         server {
             server()
             programArgument '--nogui'
+            // dev runs and the self test read the Library rites straight from diaithir-druidry's data
+            systemProperty 'diaithir.rites', file('../diaithir-druidry/src/main/resources/data/diaithir_druidry/rites').absolutePath
         }
     }
     mods { diaithirbosses { sourceSet(sourceSets.main) } }

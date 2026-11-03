@@ -1,0 +1,54 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silara/forge_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/forge_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/fortress_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/hall_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/hall_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/temple_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/tower_3_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 188588083
+ }
+}

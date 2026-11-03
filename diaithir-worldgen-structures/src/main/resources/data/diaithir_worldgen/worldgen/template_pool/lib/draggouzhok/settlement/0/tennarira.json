@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/draggouzhok/settlement/0/tennarira",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/draggouzhok/ma_draggouzhok_e5_places_000033",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

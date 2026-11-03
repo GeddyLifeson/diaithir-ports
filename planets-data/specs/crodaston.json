@@ -1,0 +1,169 @@
+{
+ "sky": {
+  "sky": "#7a8c96",
+  "fog": "#9aa6ab",
+  "cloud": "#b0ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "frequent"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6e7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.crodaston.E6.places.000502",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6b7f4a",
+   "foliage": "#5f7a3c",
+   "water": "#4a6b5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crodaston.E6.places.000507",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.8,
+   "grass": "#5e7a46",
+   "foliage": "#4f6e3a",
+   "water": "#3c5e56",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crodaston.E6.places.000556",
+   "archetype": "windswept_hills",
+   "temp": 0.0,
+   "humid": 0.1,
+   "grass": "#7f8f6a",
+   "foliage": "#6d7d5a",
+   "water": "#5a7a84",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crodaston.E6.places.000617",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#8a8a7a",
+   "foliage": "#747466",
+   "water": "#587080",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.crodaston.E6.places.000614",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#9a7a5a",
+   "foliage": "#8a6a4a",
+   "water": "#6a7a7e",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.crodaston.E6.places.000577",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#a09a62",
+   "foliage": "#8f8a52",
+   "water": "#60808a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.crodaston.E6.places.000647",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.3,
+   "grass": "#8fa66a",
+   "foliage": "#7e9a5a",
+   "water": "#5c8290",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crodaston.E6.places.000580",
+   "archetype": "eroded_badlands",
+   "temp": 0.2,
+   "humid": -0.7,
+   "grass": "#6e7474",
+   "foliage": "#5e6464",
+   "water": "#4e6a74",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grounded, drowned-tide world of salt marsh, reclaimed harbors, and ash-grey hills under a perpetual grey sky, with stone monuments and sunken cities standing above brackish water.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.03
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8f94",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.crodaston.E6.events.000796",
+  "why": "Floodlight cascades, cold static, and drowned harbors; grounded, stormy coastal haze.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "brown_mushroom",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 2.0,
+   "iron": 2.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 1.0,
+   "diamond": 1.0
+  },
+  "why_entry": "GR.crodaston.E6.places.000613",
+  "grounded": false
+ }
+}

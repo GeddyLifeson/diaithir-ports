@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "undergarden:forgotten_ingot"
+ },
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "result": {
+  "id": "undergarden:forgotten_block"
+ }
+}

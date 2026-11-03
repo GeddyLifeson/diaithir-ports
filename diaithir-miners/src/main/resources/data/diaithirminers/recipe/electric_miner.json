@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " B ",
+    "nRn",
+    " D "
+  ],
+  "key": {
+    "B": "minecraft:iron_block",
+    "R": "minecraft:redstone_block",
+    "D": "diaithirminers:drill_head",
+    "n": "minecraft:iron_nugget"
+  },
+  "result": {
+    "id": "diaithirminers:electric_miner"
+  }
+}

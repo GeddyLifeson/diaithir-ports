@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:oriellys_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oriellys_grottoes",
+   "required": false
+  }
+ ]
+}

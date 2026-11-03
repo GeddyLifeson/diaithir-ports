@@ -1,0 +1,1 @@
+{"type":"minecraft:random_selector","config":{"default":"diaithir_overworld_biomes:seasonal_forest_oak_tree","features":[{"chance":0.3,"feature":"diaithir_overworld_biomes:seasonal_forest_fancy_tree"}]}}

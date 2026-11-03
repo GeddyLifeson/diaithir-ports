@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/reoria/settlement/1/orolia",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/reoria/my_reoria_e5_places_000480",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

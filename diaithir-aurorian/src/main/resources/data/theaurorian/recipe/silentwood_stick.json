@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "S",
+  "S"
+ ],
+ "key": {
+  "S": "theaurorian:silentwood_planks"
+ },
+ "result": {
+  "id": "theaurorian:silentwood_stick",
+  "count": 4
+ }
+}

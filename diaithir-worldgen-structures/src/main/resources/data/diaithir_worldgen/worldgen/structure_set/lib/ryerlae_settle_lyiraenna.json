@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_lyiraenna",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_lyiraenna",
+   "weight": 10
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 143097250
+ }
+}

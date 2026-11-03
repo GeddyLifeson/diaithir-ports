@@ -1,0 +1,11 @@
+entry_id	name	tier	era	biome_entry
+ST.vesathora.E3.places.000075	Osurallauta	2	E3	ST.vesathora.E6.places.000023
+ST.vesathora.E3.places.000076	Tirasauta	2	E3	ST.vesathora.E3.places.000075
+ST.vesathora.E4.places.000094	Miinae	3	E4	ST.vesathora.E5.places.000060
+ST.vesathora.E5.places.000060	Meranalira	1	E5	ST.vesathora.E2.places.000053
+ST.vesathora.E5.places.000079	Cestornanum	2	E5	ST.vesathora.E6.places.000018
+ST.vesathora.E6.places.000018	Thyuvsasha	2	E6	ST.vesathora.E6.places.000018
+ST.vesathora.E6.places.000022	Vesavsith	6	E6	ST.vesathora.E3.places.000075
+ST.vesathora.E6.places.000024	Syatheiseth	2	E6	ST.vesathora.E4.places.000094
+ST.vesathora.E6.places.000025	Shestith	2	E6	ST.vesathora.E7.places.000083
+ST.vesathora.E7.places.000083	Serillor	2	E7	ST.vesathora.E6.places.000023

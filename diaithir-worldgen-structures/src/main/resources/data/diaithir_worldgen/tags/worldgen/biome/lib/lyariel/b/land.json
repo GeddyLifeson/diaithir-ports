@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:lyariel_elalioma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_miiraemae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_oriella",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_orielwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_oriereth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_oriirae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_ryerys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_silaelys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_silamwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyariel_silioleth",
+   "required": false
+  }
+ ]
+}

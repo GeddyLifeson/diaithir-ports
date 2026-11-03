@@ -1,0 +1,7 @@
+{
+ "input": "minecraft:iron_chestplate",
+ "output": {
+  "id": "minecraft:iron_nugget",
+  "count": 48
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "sky": {
+  "sky": "#3a2f4f",
+  "fog": "#5a4a6e",
+  "cloud": "#66c8b0c0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "OU.theisasha.E6.places.000170",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#9a8a5a",
+   "foliage": "#8a7a4a",
+   "water": "#5a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.theisasha.E6.places.000123",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#8a6a4a",
+   "foliage": "#9a5a3a",
+   "water": "#5a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.theisasha.E6.places.000097",
+   "archetype": "mushroom_fields",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#6a7a6a",
+   "foliage": "#7a8a7a",
+   "water": "#4a5a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.theisasha.E6.places.000105",
+   "archetype": "eroded_badlands",
+   "temp": 0.1,
+   "humid": -0.4,
+   "grass": "#5a5a5a",
+   "foliage": "#6a6a6a",
+   "water": "#4a4a5a",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.theisasha.E6.places.000093",
+   "archetype": "dark_forest",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#5f7f6a",
+   "foliage": "#6a9a7a",
+   "water": "#4a6a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.theisasha.E6.places.000137",
+   "archetype": "snowy_slopes",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#c8d8e8",
+   "foliage": "#b8c8d8",
+   "water": "#7fa8c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "OU.theisasha.E6.places.000126",
+   "archetype": "frozen_peaks",
+   "temp": -1.0,
+   "humid": -0.2,
+   "grass": "#d0dce6",
+   "foliage": "#c0ccd6",
+   "water": "#8ab0c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "OU.theisasha.E6.places.000148",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#7a8a5a",
+   "foliage": "#8a9a6a",
+   "water": "#5a6a5a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A scorched, ash-drifting surface of salt basins, glass-veined badlands and dim spore-forests, with frozen peaks and violet-tinged sky standing in for the quiet, dying-sun atmosphere of the entries.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#b8c9d9",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.85,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "OU.theisasha.E6.places.000149",
+  "why": "Frozen crescent, dim ember sun, humming vents at night",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "blue_orchid",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 1.0,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 2.5
+  },
+  "why_entry": "OU.theisasha.E6.places.000093",
+  "grounded": false
+ }
+}

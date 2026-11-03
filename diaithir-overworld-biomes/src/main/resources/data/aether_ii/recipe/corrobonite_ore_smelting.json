@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "cookingtime": 200,
+ "experience": 1.0,
+ "ingredient": "aether_ii:corrobonite_ore",
+ "result": {
+  "id": "aether_ii:corrobonite_crystal"
+ }
+}

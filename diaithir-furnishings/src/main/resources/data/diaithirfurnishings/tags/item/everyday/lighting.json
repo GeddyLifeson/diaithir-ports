@@ -1,0 +1,15 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirfurnishings:oil_lamp",
+  "diaithirfurnishings:candle",
+  "diaithirfurnishings:rushlight",
+  "diaithirfurnishings:candlestick",
+  "diaithirfurnishings:candelabra",
+  "diaithirfurnishings:lantern",
+  "diaithirfurnishings:hurricane_lantern",
+  "diaithirfurnishings:torch",
+  "diaithirfurnishings:chimney_lamp",
+  "diaithirfurnishings:snuffer"
+ ]
+}

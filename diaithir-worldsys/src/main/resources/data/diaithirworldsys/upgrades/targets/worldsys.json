@@ -1,0 +1,99 @@
+[
+ {
+  "id": "utilityblocks_clock",
+  "targets": [
+   "diaithirworldsys:redstone_clock"
+  ],
+  "slots": 2,
+  "kinds": [
+   "speed"
+  ],
+  "max_quality": 3
+ },
+ {
+  "id": "utilityblocks_fluid_hopper",
+  "targets": [
+   "diaithirworldsys:fluid_hopper"
+  ],
+  "slots": 3,
+  "kinds": [
+   "speed",
+   "efficiency"
+  ],
+  "max_quality": 3
+ },
+ {
+  "id": "villager_breeder",
+  "targets": [
+   "diaithirworldsys:easy_villagers_breeder"
+  ],
+  "slots": 3,
+  "kinds": [
+   "speed",
+   "efficiency"
+  ],
+  "max_quality": 3
+ },
+ {
+  "id": "villager_farmer",
+  "targets": [
+   "diaithirworldsys:easy_villagers_farmer"
+  ],
+  "slots": 3,
+  "kinds": [
+   "speed",
+   "efficiency",
+   "productivity"
+  ],
+  "max_quality": 3
+ },
+ {
+  "id": "villager_auto_trader",
+  "targets": [
+   "diaithirworldsys:easy_villagers_auto_trader"
+  ],
+  "slots": 2,
+  "kinds": [
+   "speed",
+   "efficiency"
+  ],
+  "max_quality": 3
+ },
+ {
+  "id": "villager_converter",
+  "targets": [
+   "diaithirworldsys:easy_villagers_converter"
+  ],
+  "slots": 2,
+  "kinds": [
+   "speed",
+   "efficiency"
+  ],
+  "max_quality": 3
+ },
+ {
+  "id": "villager_incubator",
+  "targets": [
+   "diaithirworldsys:easy_villagers_incubator"
+  ],
+  "slots": 2,
+  "kinds": [
+   "speed",
+   "efficiency"
+  ],
+  "max_quality": 3
+ },
+ {
+  "id": "villager_iron_farm",
+  "targets": [
+   "diaithirworldsys:easy_villagers_iron_farm"
+  ],
+  "slots": 3,
+  "kinds": [
+   "speed",
+   "efficiency",
+   "productivity"
+  ],
+  "max_quality": 3
+ }
+]

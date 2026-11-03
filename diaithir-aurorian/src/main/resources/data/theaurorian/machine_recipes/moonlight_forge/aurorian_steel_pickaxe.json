@@ -1,0 +1,8 @@
+{
+ "input": "theaurorian:moonstone_pickaxe",
+ "output": {
+  "id": "theaurorian:aurorian_steel_pickaxe",
+  "count": 1
+ },
+ "catalyst": "theaurorian:aurorian_steel_ingot"
+}

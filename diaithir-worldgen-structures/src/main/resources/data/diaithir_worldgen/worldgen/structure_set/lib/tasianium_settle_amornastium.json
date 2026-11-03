@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_0_amornastium",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_1_amornastium",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_2_amornastium",
+   "weight": 20
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 220734528
+ }
+}

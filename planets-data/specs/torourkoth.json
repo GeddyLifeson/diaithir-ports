@@ -1,0 +1,191 @@
+{
+ "sky": {
+  "sky": "#8fa6b8",
+  "fog": "#b9c4cc",
+  "cloud": "#e6f0f5f2",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6e8c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.torourkoth.E2.places.000100",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.0,
+   "grass": "#8db35a",
+   "foliage": "#7aa04e",
+   "water": "#4f7ea3",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.torourkoth.E5.places.000141",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": -0.1,
+   "grass": "#7f9a5c",
+   "foliage": "#6b8a4e",
+   "water": "#4a7596",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.torourkoth.E6.places.000014",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6b8f55",
+   "foliage": "#5a7d4a",
+   "water": "#5b6e4f",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.torourkoth.E6.places.000015",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#a39a6b",
+   "foliage": "#8f8a5e",
+   "water": "#8fa3ab",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.torourkoth.E4.places.000136",
+   "archetype": "eroded_badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#9a8f6a",
+   "foliage": "#7d7556",
+   "water": "#6f8f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.torourkoth.E3.places.000013",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.2,
+   "grass": "#4f6b48",
+   "foliage": "#3f5c3d",
+   "water": "#3b5566",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.torourkoth.E3.places.000088",
+   "archetype": "flower_forest",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#7fb06a",
+   "foliage": "#8fc27a",
+   "water": "#6fa3b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.torourkoth.E7.places.000076",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#c2b07a",
+   "foliage": "#b0a06c",
+   "water": "#9bb0b5",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.torourkoth.E6.places.000016",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.3,
+   "grass": "#b5a65e",
+   "foliage": "#a3954f",
+   "water": "#7e9aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.torourkoth.E7.places.000096",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.6,
+   "grass": "#9fca8a",
+   "foliage": "#e8b4c8",
+   "water": "#8fb4c4",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A sunken, humming world of salt flats, cisterns and hollow spires where tended valleys and drowned marshes sit under a grey, watchful sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.05
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8478",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.torourkoth.E5.events.000138",
+  "why": "Walled Age sundering, war-torn skies, and ember-lit temple fires",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.8,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy",
+   "cornflower",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.2,
+   "gold": 0.6,
+   "redstone": 0.8,
+   "lapis": 1.0,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.torourkoth.E3.places.000088",
+  "grounded": true
+ }
+}

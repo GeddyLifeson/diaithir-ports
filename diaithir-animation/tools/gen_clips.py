@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generates the player animation clips (PAL JSON) and item tags for diaithir-animation.
 
-Usage: gen_clips.py [coverage.csv]   (default /mnt/project-files/plans/ANIMATIONS_COVERAGE.csv)
+Usage: gen_clips.py [coverage.csv] [--guns=<diaithir-firearms guns.json>]   (default /mnt/project-files/plans/ANIMATIONS_COVERAGE.csv)
 Writes assets/diaithiranimation/player_animations/{melee,tools,guns,casting}.json, data/diaithiranimation/tags/item/anim/*.json
 and clips.json (class -> clip names, read by the mod and the selftest).
 Angles are degrees, vanilla ModelPart convention: arm xRot -90 = straight forward, yRot toward the body centre is negative for the right arm.
@@ -12,7 +12,9 @@ import csv, json, os, re, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src", "main")
 ASSET = os.path.join(ROOT, "resources", "assets", "diaithiranimation", "player_animations")
 TAGS = os.path.join(ROOT, "resources", "data", "diaithiranimation", "tags", "item", "anim")
-CSV = sys.argv[1] if len(sys.argv) > 1 else "/mnt/project-files/plans/ANIMATIONS_COVERAGE.csv"
+args = [a for a in sys.argv[1:] if not a.startswith("--guns=")]
+CSV = args[0] if args else "/mnt/project-files/plans/ANIMATIONS_COVERAGE.csv"
+GUNS_JSON = next((a[7:] for a in sys.argv[1:] if a.startswith("--guns=")), os.path.join(ROOT, "..", "..", "..", "diaithir-firearms", "src", "main", "resources", "guns.json"))
 
 def clip(length, bones, loop=False):
     """bones: {bone: [(t, [x,y,z]), ...]} -> one PAL/Bedrock-style animation."""
@@ -133,6 +135,7 @@ GUN = {  # class: (hold arm pose R, L, aim R, L, recoil deg, reload seconds, one
     "shotgun":  (A(-40, -20, 0), A(-55, 35, 0), A(-86, -16, 0), A(-92, 45, 0), 12, 2.4, False),
     "lmg":      (A(-40, -25, 0), A(-60, 35, 0), A(-84, -20, 0), A(-88, 40, 0), 3, 3.4, False),
     "launcher": (A(-30, -25, 0), A(-60, 40, 0), A(-70, -35, 20), A(-80, 30, 0), 14, 3.0, False),
+    "musket":   (A(-40, -20, 0), A(-55, 35, 0), A(-86, -18, 0), A(-90, 45, 0), 10, 4.0, False),
     "energy":   (A(-45, -15, 0), A(-50, 30, 0), A(-86, -12, 0), A(-88, 40, 0), 2, 2.0, False),
 }
 # reload ticks per own gun (diaithir-firearms guns.json "reload"); the clip is exactly as long as the server reload
@@ -142,6 +145,11 @@ RELOAD = {"sidearm_light": 40, "sidearm_heavy": 44, "magnum": 60, "smg_compact":
 OWN = {"sidearm_light": "pistol", "sidearm_heavy": "pistol", "magnum": "pistol", "smg_compact": "smg", "carbine": "rifle", "assault_rifle": "rifle",
        "marksman_rifle": "rifle", "sniper_rifle": "sniper", "antimaterial_rifle": "sniper", "pump_shotgun": "shotgun", "combat_shotgun": "shotgun",
        "auto_shotgun": "shotgun", "light_mg": "lmg", "minigun": "lmg", "grenade_launcher": "launcher", "rocket_launcher": "launcher", "energy_rifle": "energy"}
+
+if os.path.exists(GUNS_JSON):  # the real roster replaces the built-in table: one reload clip per gun, as long as its server reload
+    _g = json.load(open(GUNS_JSON))["guns"]
+    RELOAD = {g["id"]: g["reload"] for g in _g}
+    OWN = {g["id"]: g["class"] for g in _g}
 
 def reload_clip(c, rl):
     hr, hl = GUN[c][0], GUN[c][1]

@@ -1,0 +1,46 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miilora/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miilora/fortress_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miilora/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miilora/hall_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miilora/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miilora/landmark_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miilora/temple_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miilora/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miilora/tower_1_land",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 198926409
+ }
+}

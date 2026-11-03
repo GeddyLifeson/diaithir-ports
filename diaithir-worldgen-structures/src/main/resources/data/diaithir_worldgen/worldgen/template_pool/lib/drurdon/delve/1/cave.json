@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/drurdon/delve/1/cave",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drurdon/gr_drurdon_e1_places_000693",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

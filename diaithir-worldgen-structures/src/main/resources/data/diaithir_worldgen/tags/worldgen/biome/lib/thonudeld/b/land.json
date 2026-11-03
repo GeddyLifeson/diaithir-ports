@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:thonudeld_fenonar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thonudeld_fenuldereld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thonudeld_joreneld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thonudeld_joruldar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thonudeld_kelurdaneld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thonudeld_morunar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thonudeld_morunedeld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thonudeld_tarnuldock",
+   "required": false
+  }
+ ]
+}

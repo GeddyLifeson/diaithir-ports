@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/drathouggun/settlement/0/kragourkoth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drathouggun/ma_drathouggun_e3_places_000076",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

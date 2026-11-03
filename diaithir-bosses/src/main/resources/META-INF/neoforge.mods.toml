@@ -13,3 +13,10 @@ description = '''Boss fights for every Age of Diaithir: war leaders, siege const
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+# load after the myth creatures so our look (registered later) replaces theirs for the four creatures our boss kits attach to
+[[dependencies.diaithirbosses]]
+modId = "diaithir_myth"
+type = "optional"
+ordering = "AFTER"
+side = "BOTH"

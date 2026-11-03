@@ -1,0 +1,71 @@
+{
+ "quests": [
+  {
+   "id": "theaurorian:silentwood_age",
+   "title": "Silentwood and Aurorian stone",
+   "obtain": [
+    "theaurorian:silentwood_pickaxe",
+    "theaurorian:aurorian_stone_pickaxe"
+   ],
+   "requires": null,
+   "live": true
+  },
+  {
+   "id": "theaurorian:ore_hunt",
+   "title": "Cerulean and moonstone",
+   "obtain": [
+    "theaurorian:cerulean_ingot",
+    "theaurorian:moonstone_ingot"
+   ],
+   "requires": "theaurorian:silentwood_age",
+   "live": true
+  },
+  {
+   "id": "theaurorian:moonstone_gear",
+   "title": "Moonstone and cerulean gear",
+   "obtain": [
+    "theaurorian:moonstone_sword",
+    "theaurorian:cerulean_chestplate"
+   ],
+   "requires": "theaurorian:ore_hunt",
+   "live": true
+  },
+  {
+   "id": "theaurorian:steel",
+   "title": "Aurorian steel",
+   "obtain": [
+    "theaurorian:aurorian_steel_sword",
+    "theaurorian:aurorian_steel_chestplate"
+   ],
+   "requires": "theaurorian:moonstone_gear",
+   "live": true
+  },
+  {
+   "id": "theaurorian:runestone_dungeon",
+   "title": "Runestone dungeon and its keeper",
+   "obtain": [
+    "theaurorian:aurorianite_ingot"
+   ],
+   "requires": "theaurorian:steel",
+   "live": false
+  },
+  {
+   "id": "theaurorian:darkstone_dungeon",
+   "title": "Darkstone dungeon",
+   "obtain": [
+    "theaurorian:umbra_ingot"
+   ],
+   "requires": "theaurorian:runestone_dungeon",
+   "live": false
+  },
+  {
+   "id": "theaurorian:moon_temple",
+   "title": "Moon temple",
+   "obtain": [
+    "theaurorian:crystalline_ingot"
+   ],
+   "requires": "theaurorian:darkstone_dungeon",
+   "live": false
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/forge_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/fortress_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/hall_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/hall_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/landmark_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/temple_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/tower_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/tower_2_land",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 214964009
+ }
+}

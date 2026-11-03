@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_tarnenode",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_tarnenode",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_tarnenode",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_tarnenode",
+   "weight": 28
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 253892534
+ }
+}

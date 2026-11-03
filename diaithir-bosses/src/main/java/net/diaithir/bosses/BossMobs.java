@@ -90,6 +90,11 @@ public final class BossMobs {
         k("phantom", BPhantom::new, net.minecraft.world.entity.monster.Monster::createMonsterAttributes, 0.9F, 0.5F);
         k("guardian", BGuardian::new, Guardian::createAttributes, 0.85F, 0.85F);
         k("hoglin", BHoglin::new, Hoglin::createAttributes, 1.3965F, 1.4F);
+        // bodies with a per-boss model and texture (see PlanetBoss and client/LookStore)
+        k("look_tall", PlanetBoss::new, net.minecraft.world.entity.monster.Monster::createMonsterAttributes, 0.9F, 2.3F);
+        k("look_wide", PlanetBoss::new, net.minecraft.world.entity.monster.Monster::createMonsterAttributes, 1.7F, 1.8F);
+        k("look_low", PlanetBoss::new, net.minecraft.world.entity.monster.Monster::createMonsterAttributes, 1.5F, 0.9F);
+        k("look_float", PlanetBoss::new, net.minecraft.world.entity.monster.Monster::createMonsterAttributes, 1.0F, 1.9F);
     }
 
     private BossMobs() {}

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nuileiniel/settlement_0_silirlamys",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuileiniel/settlement_1_silirlamys",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuileiniel/settlement_2_silirlamys",
+   "weight": 16
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 87681255
+ }
+}

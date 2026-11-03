@@ -1,0 +1,20 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/quartz",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/redstone",
+   "count": 2
+  }
+ ],
+ "result": "diaithirrelics:rune_anchor",
+ "time_s": 5
+}

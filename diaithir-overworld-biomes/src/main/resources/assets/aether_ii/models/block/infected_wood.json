@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "aether_ii:block/infected_wood",
+  "side": "aether_ii:block/infected_wood"
+ }
+}

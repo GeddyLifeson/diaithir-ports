@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#the_backwoods:is_the_familiar",
+ "spawners": {
+  "type": "the_backwoods:petrified_lignum_trilobita",
+  "weight": 10,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

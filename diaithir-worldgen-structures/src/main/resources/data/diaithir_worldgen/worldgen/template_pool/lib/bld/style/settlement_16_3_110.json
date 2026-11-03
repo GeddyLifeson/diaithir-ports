@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/bld/style/settlement_16_3_110",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/bld/style/settlement_16_3_110",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

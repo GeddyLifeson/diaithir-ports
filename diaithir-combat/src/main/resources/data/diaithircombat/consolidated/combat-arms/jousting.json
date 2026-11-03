@@ -1,0 +1,603 @@
+{
+ "slug": "diaithir_joust",
+ "items": [
+  {
+   "id": "lann_darach",
+   "kind": "weapon",
+   "name_en": "Oak Lance",
+   "attrs": {
+    "base_damage_hp": 7.0,
+    "min_charge_speed_m_s": 4.0,
+    "unseat_speed_m_s": 8.0,
+    "reach_m": 4.5,
+    "durability": 120,
+    "mass_kg": 4.5,
+    "shatter_chance": 0.05,
+    "mounted_only": true,
+    "speed_scaling": true
+   },
+   "age": "I",
+   "station_recipe": {
+    "station": "station.hearth_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "lann_copair",
+   "kind": "weapon",
+   "name_en": "Copper Lance",
+   "attrs": {
+    "base_damage_hp": 8.0,
+    "min_charge_speed_m_s": 4.0,
+    "unseat_speed_m_s": 8.0,
+    "reach_m": 4.5,
+    "durability": 180,
+    "mass_kg": 5.2,
+    "shatter_chance": 0.05,
+    "mounted_only": true,
+    "speed_scaling": true
+   },
+   "age": "II",
+   "station_recipe": {
+    "station": "station.hearth_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "lann_prais",
+   "kind": "weapon",
+   "name_en": "Bronze Lance",
+   "attrs": {
+    "base_damage_hp": 9.5,
+    "min_charge_speed_m_s": 4.0,
+    "unseat_speed_m_s": 8.0,
+    "reach_m": 4.5,
+    "durability": 260,
+    "mass_kg": 5.8,
+    "shatter_chance": 0.05,
+    "mounted_only": true,
+    "speed_scaling": true
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "lann_iarunn",
+   "kind": "weapon",
+   "name_en": "Iron Lance",
+   "attrs": {
+    "base_damage_hp": 11.0,
+    "min_charge_speed_m_s": 4.0,
+    "unseat_speed_m_s": 8.0,
+    "reach_m": 4.5,
+    "durability": 340,
+    "mass_kg": 6.4,
+    "shatter_chance": 0.05,
+    "mounted_only": true,
+    "speed_scaling": true
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "station.smeltery",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "lann_cruaidh",
+   "kind": "weapon",
+   "name_en": "Steel Lance",
+   "attrs": {
+    "base_damage_hp": 13.0,
+    "min_charge_speed_m_s": 4.0,
+    "unseat_speed_m_s": 8.0,
+    "reach_m": 4.5,
+    "durability": 450,
+    "mass_kg": 6.8,
+    "shatter_chance": 0.05,
+    "mounted_only": true,
+    "speed_scaling": true
+   },
+   "age": "V",
+   "extra": null,
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "lann_coimpeasta",
+   "kind": "weapon",
+   "name_en": "Composite Lance",
+   "attrs": {
+    "base_damage_hp": 15.0,
+    "min_charge_speed_m_s": 4.0,
+    "unseat_speed_m_s": 8.0,
+    "reach_m": 4.5,
+    "durability": 600,
+    "mass_kg": 6.0,
+    "shatter_chance": 0.05,
+    "mounted_only": true,
+    "speed_scaling": true
+   },
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "clar_targaid",
+   "kind": "block",
+   "name_en": "Tilting Target (Quintain)",
+   "attrs": {
+    "records_speed": true,
+    "records_score": true,
+    "max_stored_score_pts": 9999,
+    "mass_kg": 60,
+    "swing_arm_resets_after_s": 3.0,
+    "combo_window_s": 5.0
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "meirge_comhrac",
+   "kind": "block",
+   "name_en": "Tournament Banner",
+   "attrs": {
+    "decoration_only": true,
+    "mass_kg": 2
+   },
+   "recipe": [
+    "c:dyes",
+    "c:string",
+    "c:rods/wooden",
+    "minecraft:white_wool"
+   ],
+   "age": "II"
+  },
+  {
+   "id": "bacla_comhrac",
+   "kind": "block",
+   "name_en": "Tournament Barrier",
+   "attrs": {
+    "decoration_only": true,
+    "mass_kg": 40,
+    "height_m": 1.5
+   },
+   "recipe": [
+    "minecraft:oak_fence",
+    "minecraft:oak_fence",
+    "minecraft:oak_planks",
+    "c:dyes"
+   ],
+   "age": "II"
+  },
+  {
+   "id": "bratach_lainne",
+   "kind": "relic",
+   "name_en": "Lance Pennon",
+   "attrs": {
+    "cosmetic": true,
+    "morale_buff_duration_s": 60,
+    "morale_buff_attack_pct": 2.0,
+    "mass_kg": 0.1
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "ogham_luas",
+   "kind": "rune",
+   "name_en": "Ogham Rune of Speed",
+   "attrs": {
+    "attribute": "diaithirjoust:charge_speed_factor",
+    "amount": 0.1,
+    "op": "add_multiplied_base"
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
+  },
+  {
+   "id": "ogham_neart",
+   "kind": "rune",
+   "name_en": "Ogham Rune of Might",
+   "attrs": {
+    "attribute": "diaithirjoust:lance_damage_pct",
+    "amount": 0.1,
+    "op": "add_multiplied_base"
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
+  },
+  {
+   "id": "ogham_crann",
+   "kind": "rune",
+   "name_en": "Ogham Rune of Timber",
+   "attrs": {
+    "attribute": "diaithirjoust:shatter_chance",
+    "amount": -0.02,
+    "op": "add_value"
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
+  },
+  {
+   "id": "seilbhe_marcaigh",
+   "kind": "skill",
+   "name_en": "Mounted Charge Mastery",
+   "attrs": {
+    "effect": "charge stamina cost -15 pct",
+    "stamina_cost_pct": -15.0,
+    "max_level": 3
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "seilbhe_stad",
+   "kind": "skill",
+   "name_en": "Steady Seat",
+   "attrs": {
+    "effect": "unseat resistance +20 pct, stun -5 ticks per level",
+    "unseat_resist_pct": 20.0,
+    "stun_reduce_ticks": 5,
+    "max_level": 3
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "draiocht_bris",
+   "kind": "enchant",
+   "name_en": "Splinterward",
+   "attrs": {
+    "effect": "shatter chance halved per level",
+    "shatter_mult": 0.5,
+    "max_level": 2,
+    "applies_to": "lance"
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "luas_cumhachta",
+   "kind": "enchant",
+   "name_en": "Mounted Momentum",
+   "attrs": {
+    "effect": "speedFactor +0.05 per level",
+    "speed_factor_add": 0.05,
+    "max_level": 3,
+    "applies_to": "lance"
+   },
+   "recipe": null,
+   "age": "VI"
+  },
+  {
+   "id": "ruaig_ceilge",
+   "kind": "spell",
+   "name_en": "Charge Surge",
+   "attrs": {
+    "effect": "stacks with Laech charge: adds +1.0 m/s mount speed for 2 s on lance hit",
+    "speed_bonus_m_s": 1.0,
+    "duration_s": 2.0,
+    "cooldown_s": 20.0,
+    "mana": 12.0,
+    "note": "does not duplicate Laech charge, uses its mount-speed hook"
+   },
+   "recipe": null,
+   "age": "VI"
+  },
+  {
+   "id": "cluiche_comhrac",
+   "kind": "event",
+   "name_en": "Tournament Round",
+   "attrs": {
+    "scoring": "clean hit 10 pts, combo +5 pts per successive hit within 5 s, max combo x5",
+    "decoration_only": false
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "briseadh_foirfe",
+   "kind": "event",
+   "name_en": "Perfect Shatter",
+   "attrs": {
+    "trigger_speed_m_s": 10.0,
+    "splinter_particles": 24,
+    "item_broken": true
+   },
+   "recipe": null,
+   "age": "IV"
+  }
+ ],
+ "events": [
+  {
+   "id": "charge_hit",
+   "trigger": "mounted_lance_impact_speed_ge_min",
+   "effect": "damage = base x (1 + speedFactor x m_per_s), capped at config ceiling; durability loss heavy; 30 tick use cooldown"
+  },
+  {
+   "id": "unseat",
+   "trigger": "mounted_lance_impact_speed_ge_unseat_on_mounted_target",
+   "effect": "dismount target, stun 20 ticks; shield block cancels unseat but costs durability"
+  },
+  {
+   "id": "lance_shatter",
+   "trigger": "lance_hit_at_top_speed",
+   "effect": "5 percent roll, lance broken, splinter particles, sound"
+  },
+  {
+   "id": "quintain_score",
+   "trigger": "lance_hits_quintain",
+   "effect": "record speed (m/s), add points, start or extend 5 s combo window"
+  },
+  {
+   "id": "charge_stamina",
+   "trigger": "couch_lance_use_start",
+   "effect": "spend stamina via diaithir-combat stamina-lite; sneak parry disabled while couched"
+  }
+ ],
+ "skills": [
+  {
+   "id": "seilbhe_marcaigh",
+   "tree": "cavalry",
+   "max_level": 3
+  },
+  {
+   "id": "seilbhe_stad",
+   "tree": "cavalry",
+   "max_level": 3
+  }
+ ],
+ "id_migration": {
+  "jousting:lance_wood": "diaithirjoust:lann_darach",
+  "jousting:lance_copper": "diaithirjoust:lann_copair",
+  "jousting:lance_bronze": "diaithirjoust:lann_prais",
+  "jousting:lance_iron": "diaithirjoust:lann_iarunn",
+  "jousting:lance_steel": "diaithirjoust:lann_cruaidh",
+  "jousting:lance_composite": "diaithirjoust:lann_coimpeasta",
+  "jousting:quintain": "diaithirjoust:clar_targaid",
+  "jousting:tournament_banner": "diaithirjoust:meirge_comhrac",
+  "jousting:tournament_barrier": "diaithirjoust:bacla_comhrac",
+  "jousting:lance_pennon": "diaithirjoust:bratach_lainne"
+ },
+ "c_tags": {
+  "c:ingots/copper": [
+   "minecraft:copper_ingot"
+  ],
+  "c:ingots/bronze": [
+   "diaithirarms:bronze_ingot"
+  ],
+  "c:ingots/iron": [
+   "minecraft:iron_ingot"
+  ],
+  "c:ingots/steel": [
+   "diaithirarms:steel_ingot"
+  ],
+  "c:ingots/composite": [
+   "diaithirarms:composite_ingot"
+  ],
+  "c:rods/wooden": [
+   "minecraft:stick"
+  ],
+  "c:gems/amethyst": [
+   "minecraft:amethyst_shard"
+  ],
+  "c:strings": [
+   "minecraft:string"
+  ],
+  "c:dyes": [
+   "minecraft:red_dye",
+   "minecraft:blue_dye",
+   "minecraft:yellow_dye",
+   "minecraft:white_dye"
+  ],
+  "diaithircombat:weapons/lance": [
+   "diaithirjoust:lann_darach",
+   "diaithirjoust:lann_copair",
+   "diaithirjoust:lann_prais",
+   "diaithirjoust:lann_iarunn",
+   "diaithirjoust:lann_cruaidh",
+   "diaithirjoust:lann_coimpeasta"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "lann_copair_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/copper",
+    "c:rods/wooden",
+    "c:strings"
+   ]
+  },
+  {
+   "id": "lann_prais_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:rods/wooden",
+    "c:strings"
+   ]
+  },
+  {
+   "id": "lann_iarunn_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/iron",
+    "c:rods/wooden",
+    "c:strings"
+   ]
+  },
+  {
+   "id": "lann_cruaidh_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:rods/wooden",
+    "c:strings"
+   ]
+  },
+  {
+   "id": "lann_coimpeasta_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/composite",
+    "c:rods/wooden",
+    "c:strings"
+   ]
+  },
+  {
+   "id": "ogham_luas_craft",
+   "inputs_as_c_tags": [
+    "c:gems/amethyst",
+    "c:ingots/copper"
+   ]
+  },
+  {
+   "id": "ogham_neart_craft",
+   "inputs_as_c_tags": [
+    "c:gems/amethyst",
+    "c:ingots/iron"
+   ]
+  },
+  {
+   "id": "bratach_lainne_craft",
+   "inputs_as_c_tags": [
+    "c:dyes",
+    "c:strings"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "diaithirjoust:clar_targaid",
+   "kind": "item",
+   "units_SI": "slots=1 (score token output), stack_limit_kg=0"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "lance_socket_runes",
+   "target": "diaithircombat:weapons/lance",
+   "slots": 2,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "lance_enchant_slots",
+   "target": "diaithircombat:weapons/lance",
+   "slots": 2,
+   "kinds": [
+    "enchant"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "lance_pennon_attach",
+   "target": "diaithircombat:weapons/lance",
+   "slots": 1,
+   "kinds": [
+    "relic"
+   ],
+   "max_quality": 1
+  }
+ ],
+ "global_events": [
+  {
+   "id": "joust_hit_notify",
+   "subscribes_to": "diaithir:combat/charge_hit",
+   "effect": "emits tournament score packet to nearby quintain, awards class XP to Laech"
+  },
+  {
+   "id": "joust_unseat_notify",
+   "subscribes_to": "diaithir:combat/unseat",
+   "effect": "fires dismount event for mount AI and Codex discovery trigger"
+  },
+  {
+   "id": "age_gate_unlock",
+   "subscribes_to": "diaithir:progression/age_reached",
+   "effect": "unlocks lance tier recipes for the matching Age"
+  },
+  {
+   "id": "laech_charge_stack",
+   "subscribes_to": "diaithir:classes/laech_charge_cast",
+   "effect": "adds mount speed bonus to active couched lance for 2 s"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "codex.joust.lance",
+   "connects_to": [
+    "codex.arms.spear",
+    "codex.combat.thrust"
+   ]
+  },
+  {
+   "entry": "codex.joust.couching",
+   "connects_to": [
+    "codex.combat.stamina",
+    "codex.mounts.horse_tiers"
+   ]
+  },
+  {
+   "entry": "codex.joust.unseat",
+   "connects_to": [
+    "codex.combat.shield_block",
+    "codex.mounts.dismount"
+   ]
+  },
+  {
+   "entry": "codex.joust.quintain",
+   "connects_to": [
+    "codex.joust.tournament",
+    "codex.classes.laech"
+   ]
+  },
+  {
+   "entry": "codex.joust.tournament",
+   "connects_to": [
+    "codex.events.cluiche_comhrac",
+    "codex.decor.banner"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "quest_joust_first_charge",
+  "intro": "The Ard-Righ's marshal wants a rider who can strike true at full gallop. Craft a lance, mount a horse, and hit the quintain at speed.",
+  "links_to": [
+   "codex.joust.lance",
+   "codex.joust.quintain",
+   "codex.arms.spear"
+  ]
+ },
+ "java_notes": "Server-side mount horizontal velocity read, couched-use state per player, speed-scaled damage with config cap, unseat and stun application with shield-cancel check, shatter roll, stamina hook into diaithir-combat. Quintain block entity storing score, combo timer, speed. Attributes charge_speed_factor, lance_damage_pct, shatter_chance. Config: speedFactor, minSpeed, unseatSpeed, stunTicks, shatterChance, enabled."
+}

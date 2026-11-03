@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/coreoserus/hall/3/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/coreoserus/ki_coreoserus_e7_assay_000175",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}
