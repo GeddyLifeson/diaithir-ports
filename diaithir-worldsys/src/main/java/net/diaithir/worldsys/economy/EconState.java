@@ -13,6 +13,10 @@ public final class EconState {
     public final Map<String, Bank> bank = new HashMap<>();
     public final Map<String, Bonds> bonds = new HashMap<>();
     public final Map<String, Company> company = new HashMap<>();
+    public final Map<String, Double> season = new HashMap<>();
+    public final Map<String, ShareCompany> shares = new HashMap<>();
+    public final Map<String, Map<String, Integer>> holdings = new HashMap<>();
+    public final Map<String, Double> div = new HashMap<>();
     public long week;
 
     /** A culture's money in circulation, the supply it was set against, trade balance, treasury and wage pool. */
@@ -25,7 +29,10 @@ public final class EconState {
     /** A coin's first value is pegged to the staple it replaced: perUnit of that good. */
     public static final class Peg { public double perUnit; public String good; }
 
-    public static final class Des { public double debase, rate0; }
+    public static final class Des { public double debase, rate0, worn; }
+
+    /** A joint-stock company on the exchange. */
+    public static final class ShareCompany { public String name, culture; public double float_ = 1000, fair = 100, z; }
 
     public static final class Pledge { public double value; public List<Item> items = new ArrayList<>(); }
     public static final class Item { public String id; public int n; }
