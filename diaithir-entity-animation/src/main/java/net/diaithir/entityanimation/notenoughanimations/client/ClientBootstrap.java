@@ -31,7 +31,6 @@ public final class ClientBootstrap {
         NeoForge.EVENT_BUS.register(ClientEvents.class);
         container.registerExtensionPoint(IConfigScreenFactory.class,
                 (IConfigScreenFactory) (mc, parent) -> new net.neoforged.neoforge.client.gui.ConfigurationScreen(container, parent));
-        AnimationData.rebuildOverrides();
     }
 
     static void openConfig() {
