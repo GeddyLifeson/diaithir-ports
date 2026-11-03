@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/hay_block_side"
+  "all": "diaithircropgenes:block/woven_fence"
  }
 }

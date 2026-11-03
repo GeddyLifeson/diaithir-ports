@@ -1,9 +1,9 @@
 {
  "parent": "minecraft:block/slab_top",
  "textures": {
-  "bottom": "minecraft:block/terracotta",
-  "top": "minecraft:block/terracotta",
-  "side": "minecraft:block/terracotta",
-  "particle": "minecraft:block/terracotta"
+  "bottom": "diaithircropgenes:block/terracotta_tile_slab_top",
+  "top": "diaithircropgenes:block/terracotta_tile_slab_top",
+  "side": "diaithircropgenes:block/terracotta_tile_slab_top",
+  "particle": "diaithircropgenes:block/terracotta_tile_slab_top"
  }
 }

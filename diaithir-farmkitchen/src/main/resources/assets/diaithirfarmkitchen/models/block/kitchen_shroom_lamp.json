@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/shroomlight"
+  "all": "diaithirfarmkitchen:block/kitchen_shroom_lamp"
  }
 }

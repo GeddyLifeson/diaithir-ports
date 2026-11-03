@@ -1,1 +1,6 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"minecraft:block/barrel_side"}}
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirfarmkitchen:block/spice_rack"
+ }
+}

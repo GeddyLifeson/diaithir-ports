@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/farmland_moist"
+  "all": "diaithirfarmkitchen:block/farmland_rich"
  }
 }

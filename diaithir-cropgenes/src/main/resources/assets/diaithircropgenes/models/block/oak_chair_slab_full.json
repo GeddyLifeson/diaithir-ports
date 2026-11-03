@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/oak_planks"
+  "all": "diaithircropgenes:block/oak_chair_slab_full"
  }
 }

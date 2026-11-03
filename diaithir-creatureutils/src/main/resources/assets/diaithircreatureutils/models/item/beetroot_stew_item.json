@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "minecraft:item/beetroot_soup"
+  "layer0": "diaithircreatureutils:item/beetroot_stew_item"
  }
 }

@@ -1,9 +1,9 @@
 {
  "parent": "minecraft:block/slab",
  "textures": {
-  "bottom": "minecraft:block/white_wool",
-  "top": "minecraft:block/white_wool",
-  "side": "minecraft:block/white_wool",
-  "particle": "minecraft:block/white_wool"
+  "bottom": "diaithirfarmkitchen:block/market_stall_awning",
+  "top": "diaithirfarmkitchen:block/market_stall_awning",
+  "side": "diaithirfarmkitchen:block/market_stall_awning",
+  "particle": "diaithirfarmkitchen:block/market_stall_awning"
  }
 }

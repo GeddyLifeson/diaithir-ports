@@ -1,9 +1,9 @@
 {
  "parent": "minecraft:block/slab_top",
  "textures": {
-  "bottom": "minecraft:block/stone",
-  "top": "minecraft:block/stone",
-  "side": "minecraft:block/stone",
-  "particle": "minecraft:block/stone"
+  "bottom": "diaithirfarmkitchen:block/counter_stone_slab_top",
+  "top": "diaithirfarmkitchen:block/counter_stone_slab_top",
+  "side": "diaithirfarmkitchen:block/counter_stone_slab_top",
+  "particle": "diaithirfarmkitchen:block/counter_stone_slab_top"
  }
 }

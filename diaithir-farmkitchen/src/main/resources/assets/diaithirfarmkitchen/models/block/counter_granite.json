@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/granite"
+  "all": "diaithirfarmkitchen:block/counter_granite"
  }
 }

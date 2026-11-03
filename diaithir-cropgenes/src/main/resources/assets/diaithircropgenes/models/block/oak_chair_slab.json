@@ -1,9 +1,9 @@
 {
  "parent": "minecraft:block/slab",
  "textures": {
-  "bottom": "minecraft:block/oak_planks",
-  "top": "minecraft:block/oak_planks",
-  "side": "minecraft:block/oak_planks",
-  "particle": "minecraft:block/oak_planks"
+  "bottom": "diaithircropgenes:block/oak_chair_slab",
+  "top": "diaithircropgenes:block/oak_chair_slab",
+  "side": "diaithircropgenes:block/oak_chair_slab",
+  "particle": "diaithircropgenes:block/oak_chair_slab"
  }
 }

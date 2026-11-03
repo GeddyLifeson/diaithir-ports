@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/copper_block"
+  "all": "diaithircropgenes:block/copper_plate_block"
  }
 }

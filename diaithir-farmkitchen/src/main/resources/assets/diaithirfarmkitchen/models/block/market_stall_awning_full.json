@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/white_wool"
+  "all": "diaithirfarmkitchen:block/market_stall_awning_full"
  }
 }
