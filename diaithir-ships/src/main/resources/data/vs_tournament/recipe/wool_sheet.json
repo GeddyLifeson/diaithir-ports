@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:wool",
+    "vs_tournament:hammer"
+  ],
+  "result": {
+    "id": "vs_tournament:wool_sheet",
+    "count": 4
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "***",
+    "###"
+  ],
+  "key": {
+    "#": "vs_tournament:steel_ingot",
+    "*": "vs_tournament:steel_gear"
+  },
+  "result": {
+    "id": "vs_tournament:mechanical_press",
+    "count": 1
+  }
+}

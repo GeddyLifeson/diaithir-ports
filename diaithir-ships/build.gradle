@@ -19,12 +19,14 @@ repositories {
     mavenCentral()
     maven { url = 'https://maven.valkyrienskies.org/' }
     maven { url = 'https://jitpack.io' }
+    maven { url = 'https://maven.vxcc.dev/libs' }
     maven { url = 'https://thedarkcolour.github.io/KotlinForForge/' }
 }
 
 dependencies {
     ['api', 'internal', 'util'].each { implementation "org.valkyrienskies.core:${it}:${vs_core_version}" }
     runtimeOnly "org.valkyrienskies.core:impl:${vs_core_version}"
+    implementation 'me.alex_s168:blitz:0.25'
 }
 
 // Bundled runtime libs that Minecraft/NeoForge do not provide (jar-in-jar, ranged so Kotlin for Forge etc. can coexist).
@@ -38,6 +40,9 @@ jj('org.yaml:snakeyaml', '[1.33,)', '1.33')
 jj('com.github.Rubydesic:jackson-kotlin-dsl', '[1.2.0,)', '1.2.0')
 jj('com.networknt:json-schema-validator', '[1.0.71,)', '1.0.71')
 jj('com.ethlo.time:itu', '[1.7.0,)', '1.7.0')
+jj('me.alex_s168:blitz', '[0.25,)', '0.25')
+jj('org.jetbrains.kotlinx:kotlinx-io-core-jvm', '[0.3.1,)', '0.3.1')
+jj('org.jetbrains.kotlinx:kotlinx-io-bytestring-jvm', '[0.3.1,)', '0.3.1')
 jj('org.joml:joml-primitives', '[1.10.0,)', '1.10.0')
 
 // vs-core (api/impl/internal/util, Apache-2.0) is shaded straight into the mod jar.
@@ -46,7 +51,7 @@ dependencies { vsCore('javax.inject:javax.inject:1'); ['api','internal','util','
 tasks.named('jar') {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from({ configurations.vsCore.collect { zipTree(it) } }) { exclude 'META-INF/MANIFEST.MF', 'META-INF/*.SF', 'META-INF/*.RSA', 'META-INF/*.DSA', 'META-INF/maven/**', 'META-INF/LICENSE*' }
-    from('NOTICE') ; from('LICENSE-vs-core-Apache-2.0') ; from('LICENSE') ; from('LICENSE-Eureka-Apache-2.0'); from('NOTICE-Eureka')
+    from('NOTICE') ; from('LICENSE-vs-core-Apache-2.0') ; from('LICENSE') ; from('LICENSE-Eureka-Apache-2.0'); from('NOTICE-Eureka'); from('LICENSE-Tournament-Apache-2.0'); from('NOTICE-Tournament')
 }
 
 kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25 } }
