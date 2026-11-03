@@ -43,5 +43,10 @@
   "id": "diaithircarts:chain_cutters",
   "name": "Snithrekel",
   "text": "Chain cutters. Sneak and use on a cart to cut its link and get the chain back. Age V."
+ },
+ {
+  "id": "diaithircarts:block_signal",
+  "name": "Block Signal",
+  "text": "Faces a rail and guards the stretch of connected track from there, up to 32 rails each way, round curves and slopes. Red and a redstone signal of 15 while any minecart is on that stretch, green and 0 otherwise. Wire it to a station rail or a powered rail upstream to keep trains apart. Age V."
  }
 ]
