@@ -1,0 +1,24 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/iron",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/diamond",
+   "count": 1
+  },
+  {
+   "tag": "c:storage_blocks/copper",
+   "count": 1
+  },
+  {
+   "tag": "c:stones",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:teallach_cumhacht",
+ "time_s": 20
+}

@@ -1,0 +1,1 @@
+{"id":"diaithir_overworld_biomes:quests/visit_unwound","age":"Rodos","task":{"type":"visit_biome","biome":"diaithir_overworld_biomes:unwound"},"codex_link":"diaithir_overworld_biomes:unwound","reward":{"energy_J":15000},"global_event":"biomes_ready"}

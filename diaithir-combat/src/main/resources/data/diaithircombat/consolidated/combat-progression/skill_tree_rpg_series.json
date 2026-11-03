@@ -13,12 +13,12 @@
     "anneal_energy_J": 2400,
     "crafting_mass_kg": 0.05
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:gems/amethyst",
-    "c:dusts/redstone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "skills:clar_na_scil",
@@ -59,13 +59,12 @@
     "anneal_energy_J": 9000,
     "mass_kg": 0.05
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:gems/diamond",
-    "c:dusts/redstone",
-    "c:gems/amethyst"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "skills:clar_ard_scil",
