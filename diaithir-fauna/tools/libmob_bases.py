@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# S6874 Writes library_mob_bases.tsv: Library mob entries that exist as a mod creature (exact match) spawn as that creature.
+# S6879 Writes library_mob_bases.tsv: Library mob entries that exist as a mod creature (exact match) spawn as that creature.
 """Usage: libmob_bases.py [MATCH_TSV]. Source: /mnt/project-files/mobs-names/MATCH_PANSCRIPTUM.tsv (status exact). Row: entry id, entity id."""
 import csv, os, sys
 M = sys.argv[1] if len(sys.argv) > 1 else '/mnt/project-files/mobs-names/MATCH_PANSCRIPTUM.tsv'
