@@ -50,9 +50,9 @@ Drops: `diaithirbosses:boss_catalyst` (tier I), `boss_hollow_core` (tier II and 
 - `/bossesrushtest`: the whole rush (6 base then 9 Ascendant bosses) with a fake fighter on a headless server, real server ticks: killed 15/15, cleared flag set, best time stored, rewards given. A fake player stands in for a bot client; a real client is still the PC lane.
 
 ## Not done
-2. Global Events: wired by name to #111 (`EventHooks`): blood moon halves altar rest times, storms sharpen Tide Reaver and Ash Seraph, an Ascendant eclipse event is registered with `WorldEvents.register` and strengthens the Dusk Wyrm; `BossDefeatedEvent` and `RushClearedEvent` go out on the NeoForge bus. Not run against #111 in a world yet. Quest completion stays a data contract until the quest module lands.
+2. Global Events: wired by name to #111 (`EventHooks`) and run on a booted server with the #111 jar: `/worldevents start ascendant_eclipse` works (registered through `WorldEvents.register`) and lifts Dusk Wyrm health x1.1; a started blood moon halves altar rest times (`/boss events` shows the active effects); storms sharpen Tide Reaver and Ash Seraph; `BossDefeatedEvent` and `RushClearedEvent` go out on the NeoForge bus. Note: #111's `start` posts `WorldEventStartedEvent` even when the event refuses to run (no player in the overworld), so the blood-moon hook also fires then. Quest completion stays a data contract until the quest module lands.
 3. **Biomes and materials**: designed here (Thornwake, Cinderfen, The Unwound; ores `hollowsteel`, `emberglass`, `slagiron`), built by the worldgen threads. Hidden, world-spread rite sites need that worldgen.
-5. Art: textures are recolours of vanilla skins; 64 px art goes to the texture lanes. Ogham stone and altar use vanilla block textures.
+5. Art: all 35 boss skins, items and the three blocks are the Textures lane's own art.
 6. No client world-join test yet (needs the PC lane); no multiplayer balance pass.
 
 ## Regenerate

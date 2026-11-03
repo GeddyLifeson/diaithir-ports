@@ -49,6 +49,12 @@ public final class BossCommands {
                 c.getSource().sendSuccess(() -> Component.literal(n == 0 ? "Age follows diaithir-ages" : "Age forced to " + Ages.name(n)), true);
                 return 1;
             })))
+            .then(Commands.literal("events").executes(c -> {
+                var l = c.getSource().getServer().overworld();
+                c.getSource().sendSuccess(() -> Component.literal("Boss event effects active: " + EventHooks.activeNames(l)
+                    + ", altar rest x" + EventHooks.respawnMul(l) + ", dusk_wyrm hp x" + EventHooks.hpMul(Data.byId("dusk_wyrm"), l)), false);
+                return EventHooks.activeNames(l).size();
+            }))
             .then(Commands.literal("mode").executes(c -> {
                 var m = Difficulty.current(c.getSource().getServer());
                 c.getSource().sendSuccess(() -> Component.literal("Boss mode: " + m.id), false);
