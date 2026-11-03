@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  "diaithircarts:steel_rail",
+  "minecraft:name_tag",
+  "minecraft:redstone"
+ ],
+ "result": {
+  "id": "diaithircarts:destination_rail",
+  "count": 1
+ }
+}
