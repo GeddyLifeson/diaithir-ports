@@ -19,3 +19,6 @@ Not tested: a real player or client (held gun firing real hitscan bullets, heads
 Not tested: a real client (rendering of tinted layers, overlay text), a real Age scoreboard, firearms reading `diaithirgear.damage_mul` in the full pack, benches with hoppers.
 
 With the three rosters the catalogue is 15 materials and 892 blueprints; items of other mods are hidden here until their module loads (checked: load, no data errors).
+
+## Tool Belt
+Headless boot clean (0 errors); `summon item ... toolbelt:belt` works. Radial menu and screens compile but are client-only and untested headless.

@@ -25,6 +25,9 @@ public final class DiaithirGear {
         Parity.load();
         Sets.load();
         net.diaithir.gear.workshop.Workshop.init(bus);
+        net.diaithir.gear.toolbelt.ToolBelt.init(container, bus);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient())
+            new net.diaithir.gear.toolbelt.client.ToolBeltClient(container, bus);
         NeoForge.EVENT_BUS.register(this);
     }
 
