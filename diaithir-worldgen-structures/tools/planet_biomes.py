@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# S6844 Planet biome map: settlement biome_entry (entry id) -> diaithir_planets biome id, per planet. Writes planet_biome_map.json.
+# S6848 Planet biome map: settlement biome_entry (entry id) -> diaithir_planets biome id, per planet. Writes planet_biome_map.json.
 """Usage: planet_biomes.py REF   (REF = git ref of diaithir-ports holding diaithir-overworld-biomes, e.g. pr145c).
 specs/<planet>.json lists the land biomes in order, each with the Library entry it is named for; the planet stem's multi_noise
 biome list holds the same biomes in the same order, so index i of one is index i of the other."""
