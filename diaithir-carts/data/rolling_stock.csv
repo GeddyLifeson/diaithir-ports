@@ -1,0 +1,53 @@
+id,category,name,year,mass_kg,power_w_or_capacity,source
+loco_rocket,loco_steam,Rocket (Stephenson),1829,4250,15000,https://en.wikipedia.org/wiki/Rocket_(locomotive)
+loco_adler,loco_steam,Adler 2-2-2,1835,9000,30000,https://en.wikipedia.org/wiki/Adler_(locomotive)
+loco_americanboiler,loco_steam,American 4-4-0,1850,30000,400000,https://en.wikipedia.org/wiki/4-4-0
+loco_consolidation,loco_steam,Consolidation 2-8-0,1866,55000,900000,https://en.wikipedia.org/wiki/2-8-0
+loco_mogul,loco_steam,Mogul 2-6-0,1860,38000,500000,https://en.wikipedia.org/wiki/2-6-0
+loco_pacific,loco_steam,Pacific 4-6-2,1901,95000,1800000,https://en.wikipedia.org/wiki/4-6-2
+loco_mallard,loco_steam,LNER Class A4 Mallard,1938,165000,2000000,https://en.wikipedia.org/wiki/LNER_Class_A4_4468_Mallard
+loco_big_boy,loco_steam,Big Boy 4-8-8-4,1941,540000,4700000,https://en.wikipedia.org/wiki/Union_Pacific_4000_class
+loco_garratt,loco_steam,Garratt articulated,1909,110000,1500000,https://en.wikipedia.org/wiki/Garratt_locomotive
+loco_shay,loco_steam,Shay geared,1880,40000,300000,https://en.wikipedia.org/wiki/Shay_locomotive
+loco_tank,loco_steam,Tank engine 0-6-0T,1870,30000,250000,https://en.wikipedia.org/wiki/Tank_locomotive
+loco_f_unit,loco_diesel,EMD F-unit (F7),1949,106000,1118000,https://en.wikipedia.org/wiki/EMD_F7
+loco_gp7,loco_diesel,EMD GP7 road switcher,1949,112000,1119000,https://en.wikipedia.org/wiki/EMD_GP7
+loco_sw1,loco_diesel,EMD SW1 switcher,1939,90000,447000,https://en.wikipedia.org/wiki/EMD_SW1
+loco_gp38,loco_diesel,EMD GP38-2,1972,117000,1493000,https://en.wikipedia.org/wiki/EMD_GP38-2
+loco_sd40,loco_diesel,EMD SD40-2,1972,167000,2237000,https://en.wikipedia.org/wiki/EMD_SD40-2
+loco_dash9,loco_diesel,GE Dash 9-44CW,1993,188000,3281000,https://en.wikipedia.org/wiki/GE_Dash_9-44CW
+loco_zephyr,loco_diesel,Pioneer Zephyr railcar,1934,90000,448000,https://en.wikipedia.org/wiki/Pioneer_Zephyr
+loco_hst,loco_diesel,InterCity 125 HST power car,1976,70000,1678000,https://en.wikipedia.org/wiki/British_Rail_Class_43_(HST)
+loco_gg1,loco_electric,PRR GG1,1934,208000,3400000,https://en.wikipedia.org/wiki/PRR_GG1
+loco_ae,loco_electric,SBB Ae 6/6,1952,120000,4000000,https://en.wikipedia.org/wiki/SBB-CFF-FFS_Ae_6/6
+loco_shinkansen0,loco_electric,Shinkansen 0 Series,1964,60000,185000,https://en.wikipedia.org/wiki/0_Series_Shinkansen
+loco_tgv,loco_electric,TGV Sud-Est power car,1978,67000,3100000,https://en.wikipedia.org/wiki/TGV_Sud-Est
+loco_ice,loco_electric,ICE 1 power car,1991,78000,4800000,https://en.wikipedia.org/wiki/InterCityExpress
+loco_battery,loco_electric,Battery-electric locomotive,1900,40000,200000,https://en.wikipedia.org/wiki/Battery_electric_locomotive
+wag_boxcar,freight,Boxcar,1830,18000,60000,https://en.wikipedia.org/wiki/Boxcar
+wag_covered_hopper,freight,Covered hopper,1950,26000,90000,https://en.wikipedia.org/wiki/Covered_hopper
+wag_open_hopper,freight,Open hopper (coal),1860,20000,80000,https://en.wikipedia.org/wiki/Hopper_car
+wag_tank,freight,Tank car,1865,25000,100000,https://en.wikipedia.org/wiki/Tank_car
+wag_flatcar,freight,Flatcar,1830,20000,80000,https://en.wikipedia.org/wiki/Flatcar
+wag_gondola,freight,Gondola,1850,20000,85000,https://en.wikipedia.org/wiki/Gondola_(rail)
+wag_reefer,freight,Refrigerator car,1867,28000,60000,https://en.wikipedia.org/wiki/Refrigerator_car
+wag_well,freight,Well car (container),1984,24000,100000,https://en.wikipedia.org/wiki/Well_car
+wag_autorack,freight,Autorack,1960,35000,40000,https://en.wikipedia.org/wiki/Autorack
+wag_ore,freight,Ore jenny,1900,23000,120000,https://en.wikipedia.org/wiki/Ore_car
+wag_stock,freight,Stock car,1860,17000,40000,https://en.wikipedia.org/wiki/Stock_car_(rail)
+wag_caboose,freight,Caboose,1860,15000,0,https://en.wikipedia.org/wiki/Caboose
+wag_log,freight,Bulkhead flat (log car),1890,19000,70000,https://en.wikipedia.org/wiki/Log_car
+wag_crane,freight,Rail crane (wrecker),1900,80000,0,https://en.wikipedia.org/wiki/Crane_(rail)
+wag_schnabel,freight,Schnabel car (heavy load),1900,40000,150000,https://en.wikipedia.org/wiki/Schnabel_car
+pas_compartment,passenger,Compartment coach,1830,15000,40,https://en.wikipedia.org/wiki/Passenger_car_(rail)
+pas_open_saloon,passenger,Open-saloon coach,1860,30000,60,https://en.wikipedia.org/wiki/Passenger_car_(rail)
+pas_pullman,passenger,Pullman sleeper,1865,50000,30,https://en.wikipedia.org/wiki/Pullman_Company
+pas_dining,passenger,Dining car,1868,48000,40,https://en.wikipedia.org/wiki/Dining_car
+pas_observation,passenger,Observation car,1890,45000,30,https://en.wikipedia.org/wiki/Observation_car
+pas_baggage,passenger,Baggage car,1850,28000,0,https://en.wikipedia.org/wiki/Baggage_car
+pas_mail,passenger,Railway post office,1864,32000,0,https://en.wikipedia.org/wiki/Railway_post_office
+pas_streamliner,passenger,Streamliner stainless coach,1934,42000,70,https://en.wikipedia.org/wiki/Budd_Company
+pas_bilevel,passenger,Bi-level commuter coach,1950,48000,140,https://en.wikipedia.org/wiki/Bilevel_rail_car
+pas_dome,passenger,Vista Dome coach,1945,50000,60,https://en.wikipedia.org/wiki/Dome_car
+pas_subway,passenger,Metro car,1863,30000,200,https://en.wikipedia.org/wiki/Rapid_transit
+pas_tram,passenger,Streetcar,1832,15000,70,https://en.wikipedia.org/wiki/Tram

@@ -1,0 +1,2 @@
+rolling_stock.csv: one iconic design per type, no variants. Columns: id, category (loco_steam|loco_diesel|loco_electric|freight|passenger), name, first-service year (Age gate), empty mass in kg (rounded, approximate), power_w_or_capacity (locos: rated W; freight: payload kg; passenger: seats), Wikipedia source.
+Status: article URLs written from memory and not yet fetched (Wikipedia is unreachable from the cloud proxy); masses and powers are rounded and must be checked against each page before release.
