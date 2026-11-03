@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#6a7f9e",
+  "fog": "#8a9bb0",
+  "cloud": "#c8d4e4",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e5a7a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MY.maurantium.E1.assay.004095",
+   "archetype": "snowy_plains",
+   "temp": -0.8,
+   "humid": 0.2,
+   "grass": "#b8c8d0",
+   "foliage": "#9fb4bf",
+   "water": "#3d6b8a",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.maurantium.E3.assay.009741",
+   "archetype": "forest",
+   "temp": 0.0,
+   "humid": 0.4,
+   "grass": "#6e8f4e",
+   "foliage": "#5a7d3a",
+   "water": "#3a6a80",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.maurantium.E2.assay.006310",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#5f7a4a",
+   "foliage": "#4e6b3c",
+   "water": "#4a5e48",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.maurantium.E4.assay.002950",
+   "archetype": "plains",
+   "temp": 0.1,
+   "humid": 0.0,
+   "grass": "#7a8a5a",
+   "foliage": "#6a7a4c",
+   "water": "#4a6a78",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.maurantium.E5.assay.006500",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c9b27a",
+   "foliage": "#b89f68",
+   "water": "#4f7f94",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.maurantium.E3.assay.003622",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.5,
+   "grass": "#a8875a",
+   "foliage": "#94744c",
+   "water": "#5a7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.maurantium.E1.assay.004299",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.5,
+   "grass": "#7fa35a",
+   "foliage": "#6c9048",
+   "water": "#3f7090",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A stormy mythic world whose cold northern monolith, mired marshes, and sunlit deserts are stitched together by rain-swept grasslands and wind-carved waters."
+}

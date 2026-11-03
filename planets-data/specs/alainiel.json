@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#3b4a6b",
+  "fog": "#8a9bb8",
+  "cloud": "#aa2a3140",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a6fa0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.alainiel.E6.places.000406",
+   "archetype": "dark_forest",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#5e6b4a",
+   "foliage": "#4a5a3a",
+   "water": "#3d5a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alainiel.E6.places.000368",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#7a6a4a",
+   "foliage": "#6a5a3a",
+   "water": "#5a4a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alainiel.E6.places.000390",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6e8a7a",
+   "foliage": "#5a7a6a",
+   "water": "#5a8aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.alainiel.E6.places.000386",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#b8c8d8",
+   "foliage": "#a8b8c8",
+   "water": "#8ab0d0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.alainiel.E6.places.000387",
+   "archetype": "cherry_grove",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#c8b8d8",
+   "foliage": "#d8a8c8",
+   "water": "#9ab0d8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alainiel.E4.places.000476",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.3,
+   "humid": 0.5,
+   "grass": "#4a6a5a",
+   "foliage": "#3a5a4a",
+   "water": "#3a6a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.alainiel.E6.places.000375",
+   "archetype": "meadow",
+   "temp": 0.4,
+   "humid": 0.1,
+   "grass": "#c8b060",
+   "foliage": "#b8a050",
+   "water": "#d0a860",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alainiel.E6.places.000368",
+   "archetype": "eroded_badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#8a5a3a",
+   "foliage": "#7a4a3a",
+   "water": "#6a4a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alainiel.E6.places.000409",
+   "archetype": "mushroom_fields",
+   "temp": 0.0,
+   "humid": 0.9,
+   "grass": "#5a4a7a",
+   "foliage": "#6a5a8a",
+   "water": "#4a4a7a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A surface of storm-smeared plains, ash-bright badlands, mirror-lake swamps and glass-blue deeps, drawn from the Arcane realm's dreams, memories and ruin."
+}

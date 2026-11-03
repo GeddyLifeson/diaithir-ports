@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8a9bb0",
+  "fog": "#a8b4bf",
+  "cloud": "#e0e6ea",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5a6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.drore.E6.places.000486",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b5a46a",
+   "foliage": "#a89a5c",
+   "water": "#4a6e7a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drore.E6.places.000500",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#a8875a",
+   "foliage": "#9a7a50",
+   "water": "#4a6e7a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drore.E6.places.000493",
+   "archetype": "savanna",
+   "temp": 0.4,
+   "humid": -0.2,
+   "grass": "#a6a85a",
+   "foliage": "#8f9450",
+   "water": "#4f7080",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drore.E6.places.000516",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#6a7a55",
+   "foliage": "#58684a",
+   "water": "#3e5a58",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drore.E6.places.000499",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#5e7a5a",
+   "foliage": "#4e6a4c",
+   "water": "#3a5a5e",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drore.E6.places.000471",
+   "archetype": "plains",
+   "temp": 0.0,
+   "humid": 0.0,
+   "grass": "#7f8a6a",
+   "foliage": "#6e7a5c",
+   "water": "#4f6a78",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drore.E6.places.000466",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": 0.1,
+   "grass": "#6e7a66",
+   "foliage": "#5c6a58",
+   "water": "#4a6470",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drore.E6.places.000477",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.2,
+   "grass": "#9aa6a8",
+   "foliage": "#8a9698",
+   "water": "#7a95a6",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, rain-soaked world of drowned cities, salt deserts and ash-grey reed basins, its dim violet-grey skies and quiet ruins shaped from the surviving Drore entries."
+}

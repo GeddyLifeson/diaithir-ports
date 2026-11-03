@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#6b7a80",
+  "fog": "#9aa6a8",
+  "cloud": "#b0c9c8c8",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "frequent"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f4a4f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.drunesteld.E6.places.000580",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.4,
+   "grass": "#7d8a6a",
+   "foliage": "#6f7d5c",
+   "water": "#3d5a60",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drunesteld.E6.places.000409",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#5e6e4a",
+   "foliage": "#4e5e3c",
+   "water": "#2e4238",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drunesteld.E6.places.000438",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#4f6a45",
+   "foliage": "#3f5a38",
+   "water": "#2a3f3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drunesteld.E6.places.000771",
+   "archetype": "plains",
+   "temp": 0.0,
+   "humid": 0.1,
+   "grass": "#7f8c66",
+   "foliage": "#6c7a58",
+   "water": "#3f5a5e",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drunesteld.E6.places.000543",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#7a7e70",
+   "foliage": "#666a5c",
+   "water": "#40505a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drunesteld.E6.places.000363",
+   "archetype": "snowy_taiga",
+   "temp": -0.7,
+   "humid": 0.3,
+   "grass": "#6e7e6a",
+   "foliage": "#58705c",
+   "water": "#3a5a68",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.drunesteld.E6.places.000442",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.7,
+   "grass": "#9a8a60",
+   "foliage": "#8a7a52",
+   "water": "#55707a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drunesteld.E6.places.000646",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#a8966a",
+   "foliage": "#948258",
+   "water": "#4f6e76",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, rain-soaked world of drowned marsh-cities, basalt terraces and tide-bells, with dry rust-coloured ruins fading toward the desert edge."
+}

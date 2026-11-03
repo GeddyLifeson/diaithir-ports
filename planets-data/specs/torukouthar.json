@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#6b5e8a",
+  "fog": "#8a7fa6",
+  "cloud": "#c8b8e0e8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e4a5c"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MA.torukouthar.E1.places.000081",
+   "archetype": "meadow",
+   "temp": -0.2,
+   "humid": 0.1,
+   "grass": "#7a8f6a",
+   "foliage": "#6e8260",
+   "water": "#3d5a6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.torukouthar.E3.places.000088",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#4a5e52",
+   "foliage": "#3a4d45",
+   "water": "#2c4a58",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.torukouthar.E4.places.000091",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#5c5f6e",
+   "foliage": "#4e5260",
+   "water": "#354a66",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torukouthar.E1.places.000103",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.3,
+   "humid": 0.5,
+   "grass": "#5e7a5a",
+   "foliage": "#4a6650",
+   "water": "#3a5566",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.torukouthar.E2.places.000105",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.6,
+   "grass": "#8a7258",
+   "foliage": "#7a6650",
+   "water": "#6e5a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torukouthar.E3.places.000126",
+   "archetype": "eroded_badlands",
+   "temp": 0.4,
+   "humid": -0.5,
+   "grass": "#6e6a72",
+   "foliage": "#5e5a64",
+   "water": "#4e4e5e",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torukouthar.E4.places.000129",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": -0.1,
+   "grass": "#9aa8b8",
+   "foliage": "#8a98aa",
+   "water": "#7090b0",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.torukouthar.E7.places.000101",
+   "archetype": "windswept_hills",
+   "temp": 0.2,
+   "humid": -0.2,
+   "grass": "#7c7a68",
+   "foliage": "#6a6856",
+   "water": "#4a5a6a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A martial-realm world of frost-hued valleys, humming basalt, and ash-glass shrines, where the Singing, Seeding, and Sundering left scarred ridges, fortress-cities, and ashen skies."
+}

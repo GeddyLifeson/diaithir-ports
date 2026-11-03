@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8a9bb0",
+  "fog": "#a7b4c2",
+  "cloud": "#e6ecf2cc",
+  "cloud_height": 192
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6e8c"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.kelaneld.E1.places.000086",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.4,
+   "grass": "#7f8a6e",
+   "foliage": "#6b7a5c",
+   "water": "#4a6b80",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kelaneld.E1.places.000010",
+   "archetype": "stony_peaks",
+   "temp": -0.5,
+   "humid": -0.6,
+   "grass": "#6e7a72",
+   "foliage": "#5d6b63",
+   "water": "#3e5a6e",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kelaneld.E2.places.000040",
+   "archetype": "cherry_grove",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#9bb08a",
+   "foliage": "#c9b8c2",
+   "water": "#5f8aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kelaneld.E2.places.000088",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#b5a66e",
+   "foliage": "#9c8f5a",
+   "water": "#5a7f94",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kelaneld.E3.places.000092",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#8fae6a",
+   "foliage": "#7c9c5c",
+   "water": "#4f8aa6",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kelaneld.E4.places.000051",
+   "archetype": "jungle",
+   "temp": 0.8,
+   "humid": 0.8,
+   "grass": "#6fa04e",
+   "foliage": "#4c8a3c",
+   "water": "#3d7d6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kelaneld.E4.places.000094",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.7,
+   "grass": "#b78a5a",
+   "foliage": "#a0734c",
+   "water": "#6f8fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kelaneld.E5.places.000028",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.9,
+   "grass": "#c9b27e",
+   "foliage": "#b09c6c",
+   "water": "#5c8ea4",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Kelaneld's humming basalt terraces, silver-barked groves and walled river-towns sit under a dim, cloud-veiled sky that carries the faint resonance of the Singing."
+}

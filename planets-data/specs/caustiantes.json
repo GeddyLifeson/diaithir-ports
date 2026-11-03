@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#3a4a4e",
+  "fog": "#6b7a72",
+  "cloud": "#8c9a9e8c",
+  "cloud_height": 160
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2c6e6a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.caustiantes.E6.places.000056",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#7f9a8c",
+   "foliage": "#6f8a7e",
+   "water": "#8fd0d8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.caustiantes.E1.places.000283",
+   "archetype": "snowy_taiga",
+   "temp": -0.7,
+   "humid": 0.4,
+   "grass": "#6f9078",
+   "foliage": "#5a7a68",
+   "water": "#9ad4e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.caustiantes.E6.places.000304",
+   "archetype": "savanna",
+   "temp": 0.0,
+   "humid": -0.5,
+   "grass": "#8a8f6a",
+   "foliage": "#7a7f5e",
+   "water": "#4f7f80",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.caustiantes.E6.places.000054",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#5e7a58",
+   "foliage": "#4f6e4e",
+   "water": "#4a6e5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.caustiantes.E6.places.000279",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#9a7a5a",
+   "foliage": "#8a6a4e",
+   "water": "#6a8a8c",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.caustiantes.E7.places.000323",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#a09a84",
+   "foliage": "#948e78",
+   "water": "#5f8a8e",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.caustiantes.E6.places.000297",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#4e6a4a",
+   "foliage": "#3e5a3e",
+   "water": "#3e6a68",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-soiled mythic world of drowned cathedrals, ash-grey marshes and frozen glass plains, its skies stained with ash and its seas holding the memory of old oaths."
+}

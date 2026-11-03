@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8a9bb0",
+  "fog": "#b8b0a0",
+  "cloud": "#99d9d0d0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "none",
+  "water": "#3f6e8c"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.kaktun.E6.places.000014",
+   "archetype": "badlands",
+   "temp": 0.4,
+   "humid": -0.6,
+   "grass": "#7a6e5a",
+   "foliage": "#6b6052",
+   "water": "#4a5a66",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kaktun.E3.places.000035",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#8fb88a",
+   "foliage": "#7fae7a",
+   "water": "#5e8fa8",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kaktun.E3.places.000034",
+   "archetype": "flower_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#7fb07a",
+   "foliage": "#6fa06c",
+   "water": "#5a8aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kaktun.E2.places.000027",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#b8a867",
+   "foliage": "#a89a5c",
+   "water": "#6a8c94",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kaktun.E5.places.000062",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.1,
+   "grass": "#9cbc7e",
+   "foliage": "#8cae72",
+   "water": "#5f8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kaktun.E6.places.000013",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#a9955f",
+   "foliage": "#998a58",
+   "water": "#6b7f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kaktun.E4.places.000095",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": 0.0,
+   "grass": "#84a27a",
+   "foliage": "#73916c",
+   "water": "#557f9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kaktun.E3.places.000089",
+   "archetype": "stony_peaks",
+   "temp": -0.5,
+   "humid": -0.1,
+   "grass": "#7f8c7c",
+   "foliage": "#6d7b6c",
+   "water": "#55707f",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Ash-drifted terraces and scoured salt flats under a dim sky, with silver-threaded valleys and quiet fields giving way to bone-coloured ruins and barren highlands."
+}

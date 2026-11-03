@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a5cb8",
+  "fog": "#a890d8",
+  "cloud": "#d8c8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6fa0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.nuimiel.E1.places.000197",
+   "archetype": "beach",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#7fa89a",
+   "foliage": "#6f9c8c",
+   "water": "#4a8fb5",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuimiel.E1.places.000121",
+   "archetype": "eroded_badlands",
+   "temp": 0.4,
+   "humid": -0.4,
+   "grass": "#9a8fb0",
+   "foliage": "#8a7fa0",
+   "water": "#5a7fb0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuimiel.E1.places.000137",
+   "archetype": "flower_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#8fd0b0",
+   "foliage": "#7fc0a0",
+   "water": "#5aa0c8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuimiel.E7.places.000154",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#b8e0c8",
+   "foliage": "#e8b8d8",
+   "water": "#6ab0d8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuimiel.E7.places.000131",
+   "archetype": "plains",
+   "temp": 0.0,
+   "humid": 0.0,
+   "grass": "#a8c8b8",
+   "foliage": "#98b8a8",
+   "water": "#6090c0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuimiel.E5.places.000152",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#b0c890",
+   "foliage": "#a0b880",
+   "water": "#6a9ab8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuimiel.E4.places.000166",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#a09080",
+   "foliage": "#907f70",
+   "water": "#607898",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuimiel.E2.places.000146",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.4,
+   "grass": "#4a6a6a",
+   "foliage": "#3a5a5a",
+   "water": "#3a5f8a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Silver-violet skies and hovering ash over a world of hum-tuned groves, glass orchards, and sunken basalt courts."
+}

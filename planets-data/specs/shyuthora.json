@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#2a3b5c",
+  "fog": "#4a5a7a",
+  "cloud": "#c8d4e8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.shyuthora.E7.assay.009106",
+   "archetype": "frozen_peaks",
+   "temp": -1,
+   "humid": 0,
+   "grass": "#8fa8b8",
+   "foliage": "#7f98a8",
+   "water": "#7aa0c0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.shyuthora.E7.assay.005012",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.8,
+   "grass": "#6b5b4a",
+   "foliage": "#5e4f40",
+   "water": "#6a7f8c",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.shyuthora.E6.assay.005023",
+   "archetype": "snowy_plains",
+   "temp": -0.7,
+   "humid": -0.2,
+   "grass": "#a9bfd0",
+   "foliage": "#97aec0",
+   "water": "#7aa0c0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.shyuthora.E7.assay.010567",
+   "archetype": "eroded_badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#9a5a3a",
+   "foliage": "#874c30",
+   "water": "#8a6a5a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.shyuthora.E6.assay.002846",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#4f6b4a",
+   "foliage": "#3f5d3c",
+   "water": "#4a6a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.shyuthora.E4.places.001181",
+   "archetype": "desert",
+   "temp": 1,
+   "humid": -1,
+   "grass": "#c8a878",
+   "foliage": "#b89868",
+   "water": "#a8906a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.shyuthora.E2.assay.012012",
+   "archetype": "forest",
+   "temp": 0,
+   "humid": 0.5,
+   "grass": "#5a7a4a",
+   "foliage": "#4a6a3a",
+   "water": "#4f7a8a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A dim, ash-dusted world of frozen canyons and scorched basins, where salt-pale deserts meet murky green swamps under a steel-blue sky."
+}

@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#8a9bb0",
+  "fog": "#a8b4c0",
+  "cloud": "#cc f0f2f5",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e5a6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.joroneldock.E1.assay.001271",
+   "archetype": "swamp",
+   "temp": 0.6,
+   "humid": 0.9,
+   "grass": "#4f6b3a",
+   "foliage": "#3d5a2c",
+   "water": "#4a5a3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.joroneldock.E5.assay.001222",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.7,
+   "grass": "#5a7a3c",
+   "foliage": "#4a6a2e",
+   "water": "#3f5a48",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.joroneldock.E6.places.000207",
+   "archetype": "jungle",
+   "temp": 0.8,
+   "humid": 0.9,
+   "grass": "#3e7a2a",
+   "foliage": "#2f6a1e",
+   "water": "#2f5a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.joroneldock.E6.places.000213",
+   "archetype": "windswept_hills",
+   "temp": 0.0,
+   "humid": 0.2,
+   "grass": "#7a8a6a",
+   "foliage": "#6a7a5a",
+   "water": "#4a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.joroneldock.E6.assay.001187",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.1,
+   "grass": "#a09a52",
+   "foliage": "#8f8a44",
+   "water": "#4f7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.joroneldock.E6.assay.000877",
+   "archetype": "stony_peaks",
+   "temp": -0.3,
+   "humid": -0.2,
+   "grass": "#8a9080",
+   "foliage": "#7a8070",
+   "water": "#5a6a78",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.joroneldock.E6.places.000223",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -0.9,
+   "grass": "#c8b070",
+   "foliage": "#b8a060",
+   "water": "#6a8a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.joroneldock.E6.assay.001050",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.6,
+   "grass": "#b08a5a",
+   "foliage": "#a07a4a",
+   "water": "#6a7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.joroneldock.E6.assay.001464",
+   "archetype": "snowy_taiga",
+   "temp": -0.9,
+   "humid": 0.4,
+   "grass": "#8ab0a0",
+   "foliage": "#6a9a88",
+   "water": "#5a8aa8",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, rain-soaked Grounded realm where jungle and swamp give way to dry desert and cold northern taiga, with the dim wet light of the Hollow soil tinting every surface."
+}

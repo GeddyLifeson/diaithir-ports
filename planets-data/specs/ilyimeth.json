@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#4a3a6e",
+  "fog": "#8a7bb0",
+  "cloud": "#b0c8ffd0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3d6fa0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.ilyimeth.E6.places.000083",
+   "archetype": "meadow",
+   "temp": 0.5,
+   "humid": 0.1,
+   "grass": "#a6d98c",
+   "foliage": "#b8e6a0",
+   "water": "#8ad0e0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ilyimeth.E6.places.000095",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#b09a7a",
+   "foliage": "#a88d6e",
+   "water": "#7a8fb0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ilyimeth.E6.places.000069",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#8fbf88",
+   "foliage": "#a3cc96",
+   "water": "#6fa8c0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ilyimeth.E6.places.000075",
+   "archetype": "frozen_peaks",
+   "temp": -0.7,
+   "humid": 0.3,
+   "grass": "#c8dcea",
+   "foliage": "#b0cce0",
+   "water": "#9ac8e8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.ilyimeth.E6.places.000073",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.6,
+   "grass": "#4f7a6a",
+   "foliage": "#3f6a5c",
+   "water": "#4a7a9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ilyimeth.E6.places.000066",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#7a6fb0",
+   "foliage": "#8f7fc8",
+   "water": "#6a5aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ilyimeth.E6.places.000062",
+   "archetype": "cherry_grove",
+   "temp": 0.6,
+   "humid": 0.5,
+   "grass": "#c8a8d8",
+   "foliage": "#e8b8e0",
+   "water": "#a8c8f0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-lit Arcane realm of glass-green lagoons, lantern-haunted groves and drowned cathedrals, with ash drifting over the mists."
+}

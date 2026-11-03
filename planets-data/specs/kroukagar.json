@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8a9a9e",
+  "fog": "#a7b3b5",
+  "cloud": "#c8ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f5f5a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.kroukagar.E6.assay.011321",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#7a6a4e",
+   "foliage": "#6b5d44",
+   "water": "#3f5f5a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kroukagar.E6.assay.011723",
+   "archetype": "wooded_badlands",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#6f7f52",
+   "foliage": "#5c6e45",
+   "water": "#3f5f5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kroukagar.E5.assay.016916",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#8a7556",
+   "foliage": "#76654a",
+   "water": "#3f5f5a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kroukagar.E3.assay.006640",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b8a878",
+   "foliage": "#a39468",
+   "water": "#4a6b66",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.kroukagar.E3.assay.002299",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": -0.1,
+   "grass": "#7c8a6a",
+   "foliage": "#66775a",
+   "water": "#3f5f5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kroukagar.E2.assay.017670",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6a7d52",
+   "foliage": "#587046",
+   "water": "#4d6b5c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kroukagar.E6.places.000055",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#5f7a55",
+   "foliage": "#4f6b4a",
+   "water": "#4d6b5c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.kroukagar.E2.assay.012052",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.3,
+   "grass": "#9a8c5a",
+   "foliage": "#8a7d4c",
+   "water": "#4a6b66",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "lukewarm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A hazy, ash-tinged world of scorched badlands, desert wastes, and misted marshes where ruins and hidden chambers lie beneath a grey sky."
+}

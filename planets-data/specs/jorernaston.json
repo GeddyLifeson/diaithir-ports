@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8a9bb0",
+  "fog": "#a7b4c2",
+  "cloud": "#e0ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "none",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6b8c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.jorernaston.E3.places.000031",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b8a97a",
+   "foliage": "#a8966a",
+   "water": "#5c7d8a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.jorernaston.E1.places.000083",
+   "archetype": "badlands",
+   "temp": 0.4,
+   "humid": -0.5,
+   "grass": "#8f8a7a",
+   "foliage": "#7d7868",
+   "water": "#4f6a78",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.jorernaston.E1.places.000025",
+   "archetype": "stony_peaks",
+   "temp": 0.0,
+   "humid": -0.2,
+   "grass": "#7f8a8c",
+   "foliage": "#6e7a7c",
+   "water": "#4a6d86",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.jorernaston.E7.places.000075",
+   "archetype": "eroded_badlands",
+   "temp": 0.3,
+   "humid": -0.4,
+   "grass": "#9a8c78",
+   "foliage": "#877a68",
+   "water": "#55707f",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.jorernaston.E5.places.000073",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.2,
+   "grass": "#7c9a6e",
+   "foliage": "#6a8a5e",
+   "water": "#4d7a96",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.jorernaston.E2.places.000086",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.1,
+   "grass": "#8ea56a",
+   "foliage": "#7c9459",
+   "water": "#4f7b97",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.jorernaston.E7.places.000041",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.5,
+   "grass": "#6f8a72",
+   "foliage": "#5f7a63",
+   "water": "#3f6b8c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.jorernaston.E4.places.000034",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.2,
+   "grass": "#a09a6a",
+   "foliage": "#8f8a5c",
+   "water": "#5a7f92",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey-blue, hushed grounded world of humming stone, scoured basins, and walled terraces lit by lamps, with calm coasts under a pale sky."
+}

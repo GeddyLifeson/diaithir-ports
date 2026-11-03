@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8a5a3c",
+  "fog": "#c9a27a",
+  "cloud": "#66f2e6d0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#5a3a2a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.torugun.E6.places.000143",
+   "archetype": "desert",
+   "temp": 1,
+   "humid": -1,
+   "grass": "#b8a060",
+   "foliage": "#a0883c",
+   "water": "#7a5a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torugun.E6.places.000103",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#9a6a48",
+   "foliage": "#8a5a3a",
+   "water": "#5a4030",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torugun.E6.places.000099",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#6a4a3a",
+   "foliage": "#5a3a2e",
+   "water": "#4a3228",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torugun.E6.places.000104",
+   "archetype": "jungle",
+   "temp": 0.7,
+   "humid": 0.8,
+   "grass": "#4a7a3a",
+   "foliage": "#3a6a2e",
+   "water": "#5a6a3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.torugun.E6.places.000135",
+   "archetype": "snowy_slopes",
+   "temp": -0.8,
+   "humid": 0.2,
+   "grass": "#c8d4dc",
+   "foliage": "#a8c0cc",
+   "water": "#8ab4d0",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.torugun.E6.places.000166",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#d8e6ee",
+   "foliage": "#b8d0dc",
+   "water": "#9ac4dc",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.torugun.E6.places.000168",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#5a6a3a",
+   "foliage": "#4a5a2e",
+   "water": "#4a5a3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.torugun.E6.places.000175",
+   "archetype": "savanna",
+   "temp": 0.5,
+   "humid": -0.2,
+   "grass": "#a08a4a",
+   "foliage": "#8a7a3a",
+   "water": "#6a5a3a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Torugun's surface cycles from scorched glass deserts and ash-veined badlands through jungle and swamp to frost-bound glacial peaks, under a perpetually ash-veiled sky over a lava sea."
+}

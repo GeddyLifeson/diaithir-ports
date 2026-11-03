@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a6e5c",
+  "fog": "#8c8270",
+  "cloud": "#b0a48c8c",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a5a4c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.tarnedonath.E6.places.000110",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#a8875c",
+   "foliage": "#8f7650",
+   "water": "#6b7a6e",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.tarnedonath.E6.places.000143",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#b5773e",
+   "foliage": "#9a6234",
+   "water": "#7d8c80",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.tarnedonath.E6.places.000106",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#a9914f",
+   "foliage": "#86733f",
+   "water": "#6f7a66",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.tarnedonath.E6.places.000133",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#6b7a4e",
+   "foliage": "#56653e",
+   "water": "#4d5b47",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tarnedonath.E6.places.000125",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5e7044",
+   "foliage": "#4b5c36",
+   "water": "#43534a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tarnedonath.E6.places.000117",
+   "archetype": "eroded_badlands",
+   "temp": 0.4,
+   "humid": -0.2,
+   "grass": "#8f7a5a",
+   "foliage": "#78664a",
+   "water": "#68706a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.tarnedonath.E6.places.000140",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.7,
+   "grass": "#7c8288",
+   "foliage": "#6a7075",
+   "water": "#8a9aa6",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.tarnedonath.E6.places.000113",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": 0.1,
+   "grass": "#7f8a6a",
+   "foliage": "#6c7758",
+   "water": "#63737c",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "lukewarm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dust-choked, ash-skied world of scorched basalt, sun-baked badlands and sludge-fed marshes, with cold ash-wastes at the edges where the thin, breathless air never warms."
+}

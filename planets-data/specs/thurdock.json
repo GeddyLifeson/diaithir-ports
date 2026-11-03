@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#7a8fa3",
+  "fog": "#9aa6b0",
+  "cloud": "#e0ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.thurdock.E1.places.000153",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#5a7a4a",
+   "foliage": "#4f6b3c",
+   "water": "#4a6a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.thurdock.E1.places.000089",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.7,
+   "grass": "#6b8a4f",
+   "foliage": "#5c7a3e",
+   "water": "#4d6b5c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.thurdock.E1.places.000070",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.3,
+   "grass": "#7d8a6a",
+   "foliage": "#6b7a5a",
+   "water": "#5f7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thurdock.E4.places.000134",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#c9b98a",
+   "foliage": "#b5a878",
+   "water": "#7fa0a8",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thurdock.E4.places.000133",
+   "archetype": "taiga",
+   "temp": -0.4,
+   "humid": 0.2,
+   "grass": "#6f8a6a",
+   "foliage": "#5a7a5a",
+   "water": "#4f6f80",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.thurdock.E4.places.000119",
+   "archetype": "stony_peaks",
+   "temp": -0.5,
+   "humid": -0.2,
+   "grass": "#7a7f74",
+   "foliage": "#66705f",
+   "water": "#5a6f80",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.thurdock.E2.places.000074",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.6,
+   "grass": "#b8925a",
+   "foliage": "#a67f4f",
+   "water": "#8a7f6a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thurdock.E3.places.000077",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#8fb86a",
+   "foliage": "#7fa35a",
+   "water": "#6a9aa8",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.thurdock.E7.places.000123",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.1,
+   "grass": "#a8a862",
+   "foliage": "#97954f",
+   "water": "#78988a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Thurdock's surface is a patchwork of humming root-hollows, black stone terraces, and walled market lands, all tinted by the cool grey light of a Grounded realm."
+}

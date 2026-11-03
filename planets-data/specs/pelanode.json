@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a1f4a",
+  "fog": "#4b3a6e",
+  "cloud": "#66c8a0ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f8a7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.pelanode.E6.places.003646",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b8a060",
+   "foliage": "#a88f50",
+   "water": "#6b8c7a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.pelanode.E6.places.003699",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#9c7a4a",
+   "foliage": "#8a6a3c",
+   "water": "#5a7a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.pelanode.E6.places.003942",
+   "archetype": "eroded_badlands",
+   "temp": 0.5,
+   "humid": -0.3,
+   "grass": "#7a5a48",
+   "foliage": "#6a4e40",
+   "water": "#4a6a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.pelanode.E6.places.004022",
+   "archetype": "savanna",
+   "temp": 0.4,
+   "humid": 0.0,
+   "grass": "#9a9a58",
+   "foliage": "#8a8c50",
+   "water": "#5c8a7c",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.pelanode.E6.places.003926",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#5e8a6a",
+   "foliage": "#4c7a5a",
+   "water": "#3a7a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.pelanode.E6.places.003984",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.2,
+   "grass": "#6a8a7a",
+   "foliage": "#587a6a",
+   "water": "#3e8a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.pelanode.E6.places.005983",
+   "archetype": "meadow",
+   "temp": -0.4,
+   "humid": 0.4,
+   "grass": "#7aaa8a",
+   "foliage": "#6a9a7a",
+   "water": "#4a9a9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.pelanode.E6.places.004066",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#a8c8d8",
+   "foliage": "#94b4c4",
+   "water": "#7aa8c8",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-skied iron world of ash-choked deserts, glassy basins and humming crystal peaks, its seas tinged jade by drowned, luminous brine."
+}

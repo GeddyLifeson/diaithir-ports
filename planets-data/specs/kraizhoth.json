@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#3a4a5c",
+  "fog": "#5a6b7d",
+  "cloud": "#aaffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2c4a6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MA.kraizhoth.E6.places.000175",
+   "archetype": "frozen_peaks",
+   "temp": -1,
+   "humid": 0,
+   "grass": "#8fa6b8",
+   "foliage": "#7f9aab",
+   "water": "#3d5f80",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.kraizhoth.E6.places.000160",
+   "archetype": "taiga",
+   "temp": -0.5,
+   "humid": 0.6,
+   "grass": "#5c7a6a",
+   "foliage": "#4e6b5c",
+   "water": "#2f4f5f",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.kraizhoth.E6.places.000200",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#7a8a7e",
+   "foliage": "#6b7b70",
+   "water": "#4a6070",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.kraizhoth.E6.places.000159",
+   "archetype": "badlands",
+   "temp": 0.4,
+   "humid": -0.8,
+   "grass": "#9a7a5a",
+   "foliage": "#8a6a4a",
+   "water": "#5a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.kraizhoth.E6.places.000189",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#a6a06a",
+   "foliage": "#959060",
+   "water": "#5f7f8f",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.kraizhoth.E6.places.000164",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#5f7560",
+   "foliage": "#4f6550",
+   "water": "#3a4f4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.kraizhoth.E4.places.000959",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#4f6a55",
+   "foliage": "#3f5a45",
+   "water": "#34505a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A frost-bound martial realm of sunken vaults, iron steppes and drowned halls, shaded in cold blues and bronze."
+}

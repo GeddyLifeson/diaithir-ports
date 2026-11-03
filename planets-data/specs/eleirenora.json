@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a5cb8",
+  "fog": "#b9a6d9",
+  "cloud": "#c8b8ffb0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a3c8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.eleirenora.E6.places.000117",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#c9a6e8",
+   "foliage": "#e8b8d8",
+   "water": "#8f7fd6",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eleirenora.E6.places.000068",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": -0.3,
+   "grass": "#a8c8e8",
+   "foliage": "#b8d0f0",
+   "water": "#7fb0e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.eleirenora.E6.places.000085",
+   "archetype": "flower_forest",
+   "temp": 0.1,
+   "humid": 0.6,
+   "grass": "#7fc08a",
+   "foliage": "#5fa870",
+   "water": "#6a9fd0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.eleirenora.E6.places.000133",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6a8a5a",
+   "foliage": "#587a4a",
+   "water": "#3e5a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.eleirenora.E2.assay.002192",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.7,
+   "grass": "#c08a5a",
+   "foliage": "#b07a48",
+   "water": "#9a6a50",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eleirenora.E2.assay.000905",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.2,
+   "grass": "#c8b060",
+   "foliage": "#a89a48",
+   "water": "#8aa090",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eleirenora.E6.places.000075",
+   "archetype": "meadow",
+   "temp": 0.0,
+   "humid": 0.1,
+   "grass": "#9ad0b0",
+   "foliage": "#80b898",
+   "water": "#7fa8d8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eleirenora.E6.places.000141",
+   "archetype": "snowy_slopes",
+   "temp": -0.6,
+   "humid": 0.4,
+   "grass": "#c0dcf0",
+   "foliage": "#a8c8e0",
+   "water": "#90b8e8",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet, ash-drifting arcane world where cherry groves, meadows and flower forests drift between glowing crystalline frozen peaks, molten badlands and drowned swamps."
+}

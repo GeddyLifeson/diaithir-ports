@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#8fa6b8",
+  "fog": "#c4d0d8",
+  "cloud": "#e6ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6e8c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.seornum.E1.places.000055",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.5,
+   "grass": "#7f9a6a",
+   "foliage": "#6b8a5c",
+   "water": "#4f7aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.seornum.E1.places.000002",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#8a9488",
+   "foliage": "#72807a",
+   "water": "#4f7aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.seornum.E3.places.000041",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#8db978",
+   "foliage": "#e8b6c8",
+   "water": "#5b8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.seornum.E3.places.000040",
+   "archetype": "forest",
+   "temp": 0.2,
+   "humid": 0.5,
+   "grass": "#6f9a5e",
+   "foliage": "#4f7d46",
+   "water": "#3f7a9c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.seornum.E3.places.000059",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#a8a85e",
+   "foliage": "#8f9150",
+   "water": "#4f8aa6",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.seornum.E4.places.000094",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.8,
+   "grass": "#6a8a58",
+   "foliage": "#58744a",
+   "water": "#4a6e5c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.seornum.E4.places.000090",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#b08a5a",
+   "foliage": "#9a7a4e",
+   "water": "#5a8aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.seornum.E2.places.000034",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.1,
+   "grass": "#8cb070",
+   "foliage": "#78a060",
+   "water": "#5a94b0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.seornum.E7.places.000102",
+   "archetype": "jagged_peaks",
+   "temp": -0.6,
+   "humid": 0.2,
+   "grass": "#7c8a7e",
+   "foliage": "#66756a",
+   "water": "#4a7896",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A hollow basalt world of humming terraces, temple braziers and slow river-ports, tiled from cold stony highlands through green groves and salt marsh to scorched tablelands."
+}

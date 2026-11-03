@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#5b6fa8",
+  "fog": "#8aa0c8",
+  "cloud": "#e6ecff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6fa0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.miana.E6.places.000610",
+   "archetype": "frozen_peaks",
+   "temp": -1,
+   "humid": 0.2,
+   "grass": "#a9c4d8",
+   "foliage": "#9fb8cc",
+   "water": "#b8d4e8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.miana.E6.places.000614",
+   "archetype": "swamp",
+   "temp": -0.2,
+   "humid": 0.9,
+   "grass": "#6e9a5c",
+   "foliage": "#5f8a4e",
+   "water": "#4f8a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miana.E6.places.000625",
+   "archetype": "mangrove_swamp",
+   "temp": 0.1,
+   "humid": 0.9,
+   "grass": "#5c8f6a",
+   "foliage": "#4d7f5c",
+   "water": "#3d7a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miana.E1.places.000156",
+   "archetype": "windswept_hills",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#4a5c6e",
+   "foliage": "#3e5060",
+   "water": "#2c4a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miana.E6.places.000617",
+   "archetype": "windswept_savanna",
+   "temp": 0.5,
+   "humid": -0.2,
+   "grass": "#8f9a6a",
+   "foliage": "#7f8a5a",
+   "water": "#6a80a0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miana.E6.places.000602",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.5,
+   "grass": "#9ec8a0",
+   "foliage": "#e8b8d0",
+   "water": "#9ac8d8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miana.E4.places.000735",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b8a070",
+   "foliage": "#a89060",
+   "water": "#c09060",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miana.E7.places.000740",
+   "archetype": "plains",
+   "temp": 0.1,
+   "humid": -0.1,
+   "grass": "#8fb874",
+   "foliage": "#7aa860",
+   "water": "#5a8fb8",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A luminous, storm-lit world of frozen peaks, drowned swamps and glass-hued sanctuaries, its skies shifting between violet dusk and starlight."
+}

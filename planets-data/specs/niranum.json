@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8fa6b8",
+  "fog": "#b9c4cc",
+  "cloud": "#e6ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f76c4"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.niranum.E6.places.000001",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6a8f4e",
+   "foliage": "#5c7d45",
+   "water": "#4a6b5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.niranum.E1.places.000015",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": 0.1,
+   "grass": "#7f9a6a",
+   "foliage": "#6b8a5c",
+   "water": "#4f7fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.niranum.E3.places.000025",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#8cb86a",
+   "foliage": "#7aa65a",
+   "water": "#5b8fd0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.niranum.E2.places.000064",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.7,
+   "grass": "#b5a46a",
+   "foliage": "#a3935c",
+   "water": "#6e8fa6",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.niranum.E4.places.000027",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.9,
+   "grass": "#d4bc84",
+   "foliage": "#c2ab74",
+   "water": "#5a9ab8",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.niranum.E7.places.000054",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.8,
+   "grass": "#4fa04a",
+   "foliage": "#3f8f3c",
+   "water": "#3d8fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.niranum.E5.places.000076",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": -0.1,
+   "grass": "#97b862",
+   "foliage": "#86a854",
+   "water": "#4c86c0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.niranum.E2.places.000018",
+   "archetype": "stony_peaks",
+   "temp": -0.6,
+   "humid": -0.4,
+   "grass": "#8a9088",
+   "foliage": "#7a8078",
+   "water": "#6a8fb0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grounded realm of humming valleys, flame-lit courts, and drowned harbors, its biomes drawn from terraced stone, storm-swept salt, and river-cut granary country."
+}

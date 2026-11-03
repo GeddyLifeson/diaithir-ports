@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#8fb8d6",
+  "fog": "#c9d9e6",
+  "cloud": "#e6ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f8fb0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.kaluvamoma.E6.places.000663",
+   "archetype": "frozen_peaks",
+   "temp": -1,
+   "humid": 0,
+   "grass": "#9ab8c8",
+   "foliage": "#8aa6b8",
+   "water": "#8fd0e8",
+   "precip": "snow"
+  },
+  {
+   "entry": "KI.kaluvamoma.E6.places.000527",
+   "archetype": "snowy_plains",
+   "temp": -0.7,
+   "humid": 0.2,
+   "grass": "#b8d8e8",
+   "foliage": "#a8c8d8",
+   "water": "#7fc4e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "KI.kaluvamoma.E6.places.000654",
+   "archetype": "taiga",
+   "temp": -0.3,
+   "humid": 0.5,
+   "grass": "#5f8f6a",
+   "foliage": "#4f7f5a",
+   "water": "#4a8ca8",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.kaluvamoma.E6.places.000389",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.9,
+   "grass": "#6e8e5a",
+   "foliage": "#5e7e4a",
+   "water": "#3f7f7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.kaluvamoma.E6.places.000678",
+   "archetype": "savanna",
+   "temp": 0.5,
+   "humid": -0.4,
+   "grass": "#c9a45c",
+   "foliage": "#b8943c",
+   "water": "#5fa8c0",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.kaluvamoma.E6.places.000675",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b8703c",
+   "foliage": "#a0602c",
+   "water": "#c8602a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.kaluvamoma.E6.places.000662",
+   "archetype": "jungle",
+   "temp": 0.7,
+   "humid": 0.9,
+   "grass": "#4fa04a",
+   "foliage": "#3f903a",
+   "water": "#5fb8a0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "warm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Ember soil and the Ki realm's sunlit and tidal moods shape a world of ice fields and salt-glass shores, ember-lit highlands, and violet-storm marshes."
+}

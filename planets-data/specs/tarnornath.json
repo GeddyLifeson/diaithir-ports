@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8fa6b8",
+  "fog": "#b9c4cc",
+  "cloud": "#b0f2f0f0",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f5f70"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.tarnornath.E3.assay.003017",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#8fb85a",
+   "foliage": "#7fa84c",
+   "water": "#3f6f8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tarnornath.E3.assay.002825",
+   "archetype": "meadow",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#7aa860",
+   "foliage": "#6c9a55",
+   "water": "#3d7388",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tarnornath.E6.assay.003103",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6f7a4a",
+   "foliage": "#5c6a3a",
+   "water": "#4a5a40",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tarnornath.E3.assay.007274",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c8b070",
+   "foliage": "#b89c60",
+   "water": "#7a9a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.tarnornath.E6.assay.005639",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#c0866a",
+   "foliage": "#a8705a",
+   "water": "#6d8a88",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.tarnornath.E4.assay.007410",
+   "archetype": "snowy_taiga",
+   "temp": -0.7,
+   "humid": 0.2,
+   "grass": "#9ab09a",
+   "foliage": "#6f8f7a",
+   "water": "#7fa0b8",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.tarnornath.E7.assay.003194",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#b8c8d8",
+   "foliage": "#a0b4c8",
+   "water": "#8cb0d0",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.tarnornath.E6.assay.000572",
+   "archetype": "windswept_savanna",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#a8a058",
+   "foliage": "#938a48",
+   "water": "#5f7f8c",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dim, ash-dusted world of drowned gardens, buried fortresses and cold frontiers, where sparse wanderers meet silence, rot and sudden refuge."
+}

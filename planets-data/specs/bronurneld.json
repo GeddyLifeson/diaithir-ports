@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8a9a9e",
+  "fog": "#a7b0b2",
+  "cloud": "#c8d1d3",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6b6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.bronurneld.E6.places.000001",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.8,
+   "grass": "#6e8a4e",
+   "foliage": "#5f7d45",
+   "water": "#3c6a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.bronurneld.E6.places.000034",
+   "archetype": "mushroom_fields",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#4f6e5c",
+   "foliage": "#5c8c7a",
+   "water": "#2f5a66",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.bronurneld.E6.places.000043",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#a58a5c",
+   "foliage": "#8f7650",
+   "water": "#5a6e70",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.bronurneld.E6.places.000027",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.4,
+   "grass": "#9c8466",
+   "foliage": "#7e6c52",
+   "water": "#50666a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.bronurneld.E6.places.000031",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#7f9a5a",
+   "foliage": "#6a8a4c",
+   "water": "#4a7478",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.bronurneld.E6.places.000038",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": 0.1,
+   "grass": "#6c8060",
+   "foliage": "#58704f",
+   "water": "#44686c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.bronurneld.E6.places.000036",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#9a9060",
+   "foliage": "#82784e",
+   "water": "#58706e",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.bronurneld.E6.places.000023",
+   "archetype": "snowy_taiga",
+   "temp": -0.7,
+   "humid": 0.5,
+   "grass": "#7a8a7a",
+   "foliage": "#5c6e62",
+   "water": "#3e6266",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, damp Grounded realm where lantern-lit ports, bronze-stone valleys and drowned coasts sit under a low sky, with salt marsh and reef-cities along the shore and dry, weathered badlands inland."
+}

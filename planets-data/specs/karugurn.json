@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a8f9c",
+  "fog": "#9fb3bf",
+  "cloud": "#e6f0f5cc",
+  "cloud_height": 190
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3d5a6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.karugurn.E6.places.000084",
+   "archetype": "frozen_peaks",
+   "temp": -1,
+   "humid": -0.2,
+   "grass": "#8fb0b8",
+   "foliage": "#7f9fa8",
+   "water": "#9ed0e6",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.karugurn.E6.places.000089",
+   "archetype": "meadow",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#8fa870",
+   "foliage": "#9bb27a",
+   "water": "#3e5f70",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.karugurn.E6.places.000085",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5f7a4a",
+   "foliage": "#4e6b3c",
+   "water": "#2e3f32",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.karugurn.E6.places.000076",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.8,
+   "grass": "#4f8a3a",
+   "foliage": "#3e7a2e",
+   "water": "#3f7a60",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.karugurn.E6.places.000091",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b5744a",
+   "foliage": "#a65f3a",
+   "water": "#8a6a50",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.karugurn.E6.places.000098",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.9,
+   "grass": "#9a8f80",
+   "foliage": "#8a8070",
+   "water": "#7c7a78",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.karugurn.E6.places.000096",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.2,
+   "grass": "#4a5a4a",
+   "foliage": "#3a4a3c",
+   "water": "#2c3a40",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.karugurn.E6.places.000093",
+   "archetype": "cherry_grove",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#7fa86a",
+   "foliage": "#c99ab0",
+   "water": "#7fa0b0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, rain-soaked world of drowned valleys, frozen spires, and rust-red wastes, lit by a dim sky over ruined terraced cities."
+}

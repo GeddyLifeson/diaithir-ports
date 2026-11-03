@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#7a5fa8",
+  "fog": "#b8a6d9",
+  "cloud": "#c8b8f0c8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6f8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.oriilora.E1.places.000153",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#8fb35a",
+   "foliage": "#7aa050",
+   "water": "#4a7fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriilora.E1.places.000125",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#9aa89a",
+   "foliage": "#8a9a8a",
+   "water": "#5a8aa8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.oriilora.E3.places.000129",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#a88f6a",
+   "foliage": "#9a8060",
+   "water": "#6a7f9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriilora.E4.places.000097",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.1,
+   "humid": 0.6,
+   "grass": "#6f9a7a",
+   "foliage": "#4f8a6a",
+   "water": "#3f7f8f",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriilora.E5.places.000117",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": -0.1,
+   "grass": "#8aa070",
+   "foliage": "#6f9060",
+   "water": "#4a7f9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriilora.E6.places.000046",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#7a6fb0",
+   "foliage": "#8a6fc0",
+   "water": "#5a5f9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriilora.E6.places.000041",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.2,
+   "grass": "#c890a8",
+   "foliage": "#e8a0c0",
+   "water": "#7a9ac0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriilora.E7.places.000146",
+   "archetype": "eroded_badlands",
+   "temp": 0.4,
+   "humid": -0.5,
+   "grass": "#9a8a7a",
+   "foliage": "#8a7a6a",
+   "water": "#6a6f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriilora.E6.places.000015",
+   "archetype": "ice_spikes",
+   "temp": -0.7,
+   "humid": 0.2,
+   "grass": "#b8d0e0",
+   "foliage": "#a0c0d8",
+   "water": "#8ab0d0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-lit arcane world of drowned cities, glass isles and humming stone, where mist, ash and shifting skies give way to frozen peaks and rose-hued terraces."
+}

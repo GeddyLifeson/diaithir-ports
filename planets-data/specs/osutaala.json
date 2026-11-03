@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a1a3a",
+  "fog": "#4a2a4a",
+  "cloud": "#99ff8844",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#8a6a3a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.osutaala.E1.places.000132",
+   "archetype": "windswept_hills",
+   "temp": 0.2,
+   "humid": -0.4,
+   "grass": "#7a6a4a",
+   "foliage": "#6a5a3a",
+   "water": "#5a4a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.osutaala.E2.places.000172",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#b0643a",
+   "foliage": "#a0542a",
+   "water": "#8a6a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.osutaala.E3.places.000158",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.8,
+   "grass": "#4a8a3a",
+   "foliage": "#3a7a2a",
+   "water": "#3a6a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.osutaala.E4.places.000183",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.2,
+   "grass": "#a09040",
+   "foliage": "#907a30",
+   "water": "#6a6a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.osutaala.E5.places.000209",
+   "archetype": "taiga",
+   "temp": -0.3,
+   "humid": 0.2,
+   "grass": "#5a7a5a",
+   "foliage": "#4a6a4a",
+   "water": "#4a5a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.osutaala.E6.places.000089",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5a7a4a",
+   "foliage": "#4a6a3a",
+   "water": "#5a6a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.osutaala.E7.places.000164",
+   "archetype": "cherry_grove",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#8a8a6a",
+   "foliage": "#9a7a8a",
+   "water": "#7a7a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.osutaala.E6.places.000090",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.3,
+   "grass": "#6a7a8a",
+   "foliage": "#5a6a7a",
+   "water": "#4a5a6a",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dim ember-lit realm of ash skies and resonant stone, where bronze waters, reed canals and terraced grove-cities give way to cold black-glass peaks at the edge of the Ki world."
+}

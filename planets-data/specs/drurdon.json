@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a6a5a",
+  "fog": "#a89478",
+  "cloud": "#66d8c8b0",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f5f6a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.drurdon.E6.places.000414",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#a0603a",
+   "foliage": "#8c5a3a",
+   "water": "#5e6a6e",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drurdon.E6.places.000436",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b8a060",
+   "foliage": "#a89058",
+   "water": "#6a7a7c",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drurdon.E6.places.000410",
+   "archetype": "savanna",
+   "temp": 0.4,
+   "humid": -0.2,
+   "grass": "#9a9a58",
+   "foliage": "#8a8a4a",
+   "water": "#5a7078",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drurdon.E6.places.000426",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.8,
+   "grass": "#5a6a4a",
+   "foliage": "#4e6242",
+   "water": "#3e5a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drurdon.E6.places.000409",
+   "archetype": "eroded_badlands",
+   "temp": 0.3,
+   "humid": -0.4,
+   "grass": "#b09a78",
+   "foliage": "#9a8a6a",
+   "water": "#6a6a70",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drurdon.E6.places.000435",
+   "archetype": "snowy_taiga",
+   "temp": -0.8,
+   "humid": 0.2,
+   "grass": "#7a8a7a",
+   "foliage": "#5e7a6a",
+   "water": "#5a7284",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.drurdon.E6.places.000460",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#6a7a50",
+   "foliage": "#587046",
+   "water": "#3a5a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drurdon.E6.places.000459",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.3,
+   "grass": "#8a7a5a",
+   "foliage": "#7a6a4a",
+   "water": "#5a6a70",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey-amber world of salt flats, drowned harbors and ash-dusted badlands, lit by a dim dusk and sheltered by smouldering skies."
+}

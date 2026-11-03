@@ -1,0 +1,123 @@
+{
+ "sky": {
+  "sky": "#6a4fa3",
+  "fog": "#8e7bc4",
+  "cloud": "#c0a8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#3b2a5c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.ryamiel.E1.places.000186",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#7a4a2e",
+   "foliage": "#8a5a3a",
+   "water": "#5a3a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryamiel.E1.places.000142",
+   "archetype": "eroded_badlands",
+   "temp": 0.5,
+   "humid": -0.4,
+   "grass": "#9a8fb0",
+   "foliage": "#a79cc0",
+   "water": "#6b5a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryamiel.E1.places.000232",
+   "archetype": "mushroom_fields",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#6e5a9a",
+   "foliage": "#8f6fc0",
+   "water": "#4a3a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryamiel.E2.places.000172",
+   "archetype": "cherry_grove",
+   "temp": 0.0,
+   "humid": 0.5,
+   "grass": "#c9a0d8",
+   "foliage": "#e8b8e8",
+   "water": "#7a60a0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryamiel.E2.places.000215",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": 0.0,
+   "grass": "#8a7ab0",
+   "foliage": "#9b8cc2",
+   "water": "#5e4e8e",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryamiel.E3.places.000176",
+   "archetype": "flower_forest",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#7fb08a",
+   "foliage": "#a0d8b0",
+   "water": "#5a8aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryamiel.E3.places.000193",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.6,
+   "grass": "#4a5a6a",
+   "foliage": "#3a4a5a",
+   "water": "#3e4e7e",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryamiel.E7.places.000165",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#5a7a6a",
+   "foliage": "#6a8a7a",
+   "water": "#3a5a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryamiel.E7.places.000227",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": -0.2,
+   "grass": "#c8d8f0",
+   "foliage": "#d8e4f8",
+   "water": "#a8c0e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.ryamiel.E5.places.000161",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.3,
+   "grass": "#a09060",
+   "foliage": "#b0a070",
+   "water": "#6a6a9a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-lit world of singing stone, drifting archives and ember-moss valleys, where lava seas and ash fall beneath silver-clouded skies."
+}

@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#6a5ca8",
+  "fog": "#8f86c4",
+  "cloud": "#c8b8ffb0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6f8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.venileth.E1.places.000176",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#7a6a5a",
+   "foliage": "#6b5e52",
+   "water": "#4a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venileth.E1.places.000156",
+   "archetype": "stony_peaks",
+   "temp": 0.0,
+   "humid": -0.2,
+   "grass": "#8a8fb0",
+   "foliage": "#7c83a8",
+   "water": "#5a6a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venileth.E4.places.000119",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#9ad0b8",
+   "foliage": "#8cc4a8",
+   "water": "#5aa0b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venileth.E3.places.000134",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.6,
+   "grass": "#b8a8e0",
+   "foliage": "#e0b8f0",
+   "water": "#6a90c0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venileth.E7.places.000148",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.3,
+   "humid": 0.5,
+   "grass": "#5a7a6a",
+   "foliage": "#4a6a5e",
+   "water": "#3a6a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venileth.E4.places.000120",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6a8a7a",
+   "foliage": "#5a7a6e",
+   "water": "#4a7a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venileth.E3.places.000184",
+   "archetype": "eroded_badlands",
+   "temp": 0.8,
+   "humid": -0.4,
+   "grass": "#a08a70",
+   "foliage": "#8a7a66",
+   "water": "#6a7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venileth.E2.places.000177",
+   "archetype": "windswept_hills",
+   "temp": -0.5,
+   "humid": 0.1,
+   "grass": "#7a8a9a",
+   "foliage": "#6a7a8e",
+   "water": "#4a6a8a",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-lit world of drowned cathedrals, ash-dusted badlands and singing stone, where the sea holds the fractured light of the Sundering."
+}

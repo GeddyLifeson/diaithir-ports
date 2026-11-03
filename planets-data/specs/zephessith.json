@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#1a1430",
+  "fog": "#2c2448",
+  "cloud": "#66e0c8f0",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e5a7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.zephessith.E6.places.000035",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#8a6a4a",
+   "foliage": "#9a7a5a",
+   "water": "#4a6a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.zephessith.E6.places.000046",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#b0643a",
+   "foliage": "#c0744a",
+   "water": "#5a7a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.zephessith.E6.places.000013",
+   "archetype": "stony_peaks",
+   "temp": -0.6,
+   "humid": -0.2,
+   "grass": "#6a7a8a",
+   "foliage": "#7a8a9a",
+   "water": "#3e5f7e",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.zephessith.E6.places.000044",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#a8d8e8",
+   "foliage": "#b8e8f8",
+   "water": "#7fc4e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.zephessith.E6.places.000032",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#7fd6c4",
+   "foliage": "#8fe6d4",
+   "water": "#4aa8b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.zephessith.E6.places.000053",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#c8a0d8",
+   "foliage": "#e0b8f0",
+   "water": "#7a8ad0",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.zephessith.E6.places.000061",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#4a7a6a",
+   "foliage": "#5a8a7a",
+   "water": "#2e6a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.zephessith.E6.places.000059",
+   "archetype": "windswept_savanna",
+   "temp": 0.5,
+   "humid": -0.3,
+   "grass": "#a8a060",
+   "foliage": "#b8b070",
+   "water": "#5a7a9a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dim, starlit world of crystal lattices and orbital foundries, its surfaces tinged with violet dusk, gold stellar light and ash drifting from the sky."
+}

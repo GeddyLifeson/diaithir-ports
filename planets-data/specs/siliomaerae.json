@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a3d6b",
+  "fog": "#4a6a9a",
+  "cloud": "#90c8e8f0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a8fb8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.siliomaerae.E6.places.000160",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#8ab87a",
+   "foliage": "#7aa86a",
+   "water": "#5a9ac0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siliomaerae.E6.places.000072",
+   "archetype": "flower_forest",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#8cc08a",
+   "foliage": "#78b080",
+   "water": "#5aa0c8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siliomaerae.E6.places.000906",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b0a070",
+   "foliage": "#a09060",
+   "water": "#6a8aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siliomaerae.E1.places.000220",
+   "archetype": "savanna",
+   "temp": 0.8,
+   "humid": -0.3,
+   "grass": "#b8a060",
+   "foliage": "#a89050",
+   "water": "#6a90a8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siliomaerae.E6.places.000615",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.0,
+   "grass": "#a8c8d8",
+   "foliage": "#90b0c0",
+   "water": "#7ab0d0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.siliomaerae.E6.places.000520",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#6a9a6a",
+   "foliage": "#5a8a5a",
+   "water": "#4a7a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siliomaerae.E6.places.001027",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#c8b888",
+   "foliage": "#b8a878",
+   "water": "#5a8aa8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siliomaerae.E6.places.000294",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#a8d8b8",
+   "foliage": "#f0b8d0",
+   "water": "#78b8d8",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A silver-tided arcane world of sunken glass cities, drowned archipelagos and singing waters, with dry ash-scarred badlands and frosted highlands at its edges."
+}

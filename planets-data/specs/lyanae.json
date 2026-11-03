@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#7fb4d9",
+  "fog": "#b8d4e6",
+  "cloud": "#e6ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e6fa8"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "KI.lyanae.E6.places.000417",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c9b97a",
+   "foliage": "#b8a86a",
+   "water": "#3a9bb5",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.lyanae.E6.places.000406",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#b5a05e",
+   "foliage": "#a4884f",
+   "water": "#4f8aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.lyanae.E6.places.000452",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#b3b35a",
+   "foliage": "#9aa04e",
+   "water": "#4a9bb0",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.lyanae.E6.places.000402",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#8dbf5a",
+   "foliage": "#7aaa4a",
+   "water": "#3f84b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.lyanae.E6.places.000421",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#6fa35a",
+   "foliage": "#5c9450",
+   "water": "#3c7f80",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.lyanae.E6.places.000460",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#5f8f5f",
+   "foliage": "#4f7f5a",
+   "water": "#3b7a8c",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.lyanae.E2.places.000829",
+   "archetype": "taiga",
+   "temp": -0.2,
+   "humid": 0.3,
+   "grass": "#7aa070",
+   "foliage": "#5f8a5f",
+   "water": "#3e6f9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.lyanae.E3.places.000834",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": -0.1,
+   "grass": "#8aa06a",
+   "foliage": "#728f58",
+   "water": "#4a7fa8",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.lyanae.E6.places.000466",
+   "archetype": "snowy_plains",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#c8d8d0",
+   "foliage": "#b0c8c0",
+   "water": "#7fb0d0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A sun-scorched Ki realm of desert salt basins and glass-dune frontiers gives way to humid mangrove lagoons and cold, sea-battered highlands, all under a blue sky tinged with ember-coloured haze."
+}

@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#3a2a4a",
+  "fog": "#5a3f5e",
+  "cloud": "#99c9a0a0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f6f8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.lyarae.E6.places.003938",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": -0.2,
+   "grass": "#8a7a6a",
+   "foliage": "#6b5b4b",
+   "water": "#3f7f9f",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.lyarae.E6.places.003848",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#a0603a",
+   "foliage": "#8a4a2a",
+   "water": "#4f7f8f",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.lyarae.E6.places.003850",
+   "archetype": "mushroom_fields",
+   "temp": 0.4,
+   "humid": 0.6,
+   "grass": "#7a2a3a",
+   "foliage": "#8a3040",
+   "water": "#5a2a3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.lyarae.E6.places.003662",
+   "archetype": "dark_forest",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#3a5a3a",
+   "foliage": "#2a4a2a",
+   "water": "#2f5f6f",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.lyarae.E6.places.003922",
+   "archetype": "stony_peaks",
+   "temp": -0.3,
+   "humid": -0.6,
+   "grass": "#5a4a6a",
+   "foliage": "#4a3a5a",
+   "water": "#3a5a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.lyarae.E6.places.003851",
+   "archetype": "ice_spikes",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#9ab0c0",
+   "foliage": "#8aa0b0",
+   "water": "#7fa8c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "KI.lyarae.E6.places.003779",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c9a86a",
+   "foliage": "#b89858",
+   "water": "#5a9a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.lyarae.E6.places.003602",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#4f6f4a",
+   "foliage": "#3f5f3a",
+   "water": "#3a6a5a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dusky ash-tinged world of glass spires, hollow basins, and sunken shrines, with mournful pale-blue lakes and copper-tinged fungal flats."
+}

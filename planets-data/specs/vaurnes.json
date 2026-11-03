@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#5a6470",
+  "fog": "#8a949e",
+  "cloud": "#b0ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "frequent"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3e5f6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MY.vaurnes.E6.places.000189",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#5e7a52",
+   "foliage": "#4f6b48",
+   "water": "#4a5e5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.vaurnes.E6.places.000177",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.8,
+   "grass": "#5c7550",
+   "foliage": "#46603f",
+   "water": "#3b5558",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.vaurnes.E6.places.000196",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.5,
+   "grass": "#4a6240",
+   "foliage": "#3a5234",
+   "water": "#41564f",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.vaurnes.E6.places.000199",
+   "archetype": "meadow",
+   "temp": -0.2,
+   "humid": 0.1,
+   "grass": "#7a8a6a",
+   "foliage": "#68785a",
+   "water": "#5a6e72",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.vaurnes.E6.places.000185",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#7d8078",
+   "foliage": "#6a6e66",
+   "water": "#56646a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.vaurnes.E6.places.000195",
+   "archetype": "taiga",
+   "temp": -0.6,
+   "humid": 0.3,
+   "grass": "#5f7a6a",
+   "foliage": "#4c6658",
+   "water": "#48636e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.vaurnes.E6.places.000187",
+   "archetype": "snowy_taiga",
+   "temp": -0.9,
+   "humid": 0.0,
+   "grass": "#8a9aa0",
+   "foliage": "#6f8088",
+   "water": "#5c7c8c",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.vaurnes.E6.places.000198",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.6,
+   "grass": "#6e7a66",
+   "foliage": "#5c6a56",
+   "water": "#5a6a70",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-soaked mythic realm of fog-bound marshes, basalt crags and drowned valleys, its cold northern edge gleaming with auroral light."
+}

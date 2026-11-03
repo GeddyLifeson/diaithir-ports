@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#6b5a8c",
+  "fog": "#a89bc4",
+  "cloud": "#c8f0e6e8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "frequent"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3d6e8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.menteores.E1.places.000284",
+   "archetype": "windswept_hills",
+   "temp": 0.2,
+   "humid": -0.4,
+   "grass": "#8a7a5c",
+   "foliage": "#9c8a6a",
+   "water": "#4f7a94",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.menteores.E3.places.000375",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.8,
+   "grass": "#4f9e5a",
+   "foliage": "#3c8a4a",
+   "water": "#3f8f8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.menteores.E6.places.000021",
+   "archetype": "ice_spikes",
+   "temp": -0.9,
+   "humid": 0.3,
+   "grass": "#b8d8e8",
+   "foliage": "#a4c8dc",
+   "water": "#7fb4d4",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.menteores.E6.places.000192",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5e7a4a",
+   "foliage": "#4e6a3c",
+   "water": "#3e5e5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.menteores.E7.places.000363",
+   "archetype": "plains",
+   "temp": 0.1,
+   "humid": 0.0,
+   "grass": "#7f9a6a",
+   "foliage": "#6f8a5c",
+   "water": "#5a7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.menteores.E4.places.000423",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#a8805a",
+   "foliage": "#94704e",
+   "water": "#8a6a5a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.menteores.E6.places.000022",
+   "archetype": "frozen_peaks",
+   "temp": -0.6,
+   "humid": -0.2,
+   "grass": "#c8dce8",
+   "foliage": "#b4ccdc",
+   "water": "#8ab8d8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.menteores.E6.places.000031",
+   "archetype": "taiga",
+   "temp": -0.3,
+   "humid": 0.5,
+   "grass": "#6a8a7a",
+   "foliage": "#5a7a6a",
+   "water": "#4a7a8c",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-ruled realm of drowned reservoirs, glass spires and ash-veiled skies, where frost-crystal hollows sit beside sunken swamps and dusty badlands beneath a violet heaven."
+}

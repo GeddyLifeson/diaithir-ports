@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a3b5c",
+  "fog": "#4a5a70",
+  "cloud": "#b0ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5c6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "ST.oseivsizith.E7.assay.001075",
+   "archetype": "snowy_plains",
+   "temp": -1.0,
+   "humid": -0.2,
+   "grass": "#8fa6b8",
+   "foliage": "#7d95a6",
+   "water": "#3a5f7a",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.oseivsizith.E4.assay.002729",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#9bb0c2",
+   "foliage": "#88a0b4",
+   "water": "#3d6480",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.oseivsizith.E6.assay.001844",
+   "archetype": "swamp",
+   "temp": 0.0,
+   "humid": 0.9,
+   "grass": "#4f6b4a",
+   "foliage": "#3e5a3c",
+   "water": "#3b5e4f",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.oseivsizith.E6.assay.002640",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#a67c52",
+   "foliage": "#8f6a45",
+   "water": "#4d6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.oseivsizith.E7.assay.001206",
+   "archetype": "eroded_badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#9c6b4e",
+   "foliage": "#84594a",
+   "water": "#5a6e6a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.oseivsizith.E6.assay.002616",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": -0.1,
+   "grass": "#7f9a5c",
+   "foliage": "#6d8a4e",
+   "water": "#4a7088",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.oseivsizith.E6.assay.001310",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.5,
+   "grass": "#4a5e3e",
+   "foliage": "#3a4d31",
+   "water": "#3c5565",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.oseivsizith.E6.places.000283",
+   "archetype": "jagged_peaks",
+   "temp": -0.4,
+   "humid": -0.4,
+   "grass": "#7a8594",
+   "foliage": "#66707e",
+   "water": "#44607a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A cold, ash-laden world of frozen peaks and dusky badlands, with damp marsh pockets where moisture corrodes the mechanical servants that walk its wetlands."
+}

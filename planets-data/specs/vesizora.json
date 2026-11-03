@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#1b1030",
+  "fog": "#2a1840",
+  "cloud": "#66ff9966",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e5d7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.vesizora.E1.places.000188",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b5843c",
+   "foliage": "#9c6b2e",
+   "water": "#3a6b8c",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesizora.E1.places.000176",
+   "archetype": "dark_forest",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#4f6b3a",
+   "foliage": "#3b5227",
+   "water": "#2f5570",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesizora.E4.places.000197",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#a9c7d6",
+   "foliage": "#8fb3c4",
+   "water": "#6fa3c0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.vesizora.E4.places.000164",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.9,
+   "grass": "#c46a3a",
+   "foliage": "#a34f2a",
+   "water": "#4d7fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesizora.E3.places.000224",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5e7a4a",
+   "foliage": "#4a6638",
+   "water": "#3d5f5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesizora.E6.places.000009",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#d9a85b",
+   "foliage": "#c4914a",
+   "water": "#4a7a96",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesizora.E7.places.000174",
+   "archetype": "ice_spikes",
+   "temp": -1.0,
+   "humid": 0.0,
+   "grass": "#c8e3f0",
+   "foliage": "#b0d4e6",
+   "water": "#7fb6d4",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.vesizora.E2.places.000208",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#a8a04a",
+   "foliage": "#8c8a3c",
+   "water": "#4f7f9a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "The ashen, resonant skies of Vesizora shape a tiled surface of cold glass ridges, scorched badlands and humming forests, drawn from the Singing, Sundering and Holy Age entries."
+}

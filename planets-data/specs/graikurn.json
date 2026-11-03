@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#3a3530",
+  "fog": "#4a4238",
+  "cloud": "#8c7f6a",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e3b40"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.graikurn.E6.places.000015",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#4f5a3a",
+   "foliage": "#3d4a2c",
+   "water": "#1f2a26",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.graikurn.E6.places.000011",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#8a7a5a",
+   "foliage": "#6e5e46",
+   "water": "#5a5040",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.graikurn.E6.places.000020",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#5c5852",
+   "foliage": "#4a4640",
+   "water": "#3c3e42",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.graikurn.E6.places.000006",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.6,
+   "grass": "#4a6a5a",
+   "foliage": "#3a7a6a",
+   "water": "#2a4a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.graikurn.E1.places.000180",
+   "archetype": "meadow",
+   "temp": 0.0,
+   "humid": 0.2,
+   "grass": "#6a6a4a",
+   "foliage": "#5a6a44",
+   "water": "#4a5a58",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.graikurn.E6.places.000023",
+   "archetype": "eroded_badlands",
+   "temp": 0.5,
+   "humid": -0.5,
+   "grass": "#3a3432",
+   "foliage": "#2e2a28",
+   "water": "#1e1c22",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.graikurn.E4.places.000190",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": -0.1,
+   "grass": "#6a6650",
+   "foliage": "#58573f",
+   "water": "#4e5558",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.graikurn.E6.places.000027",
+   "archetype": "dark_forest",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#3e4a36",
+   "foliage": "#2c3a28",
+   "water": "#2a3434",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey-ashen Hollow world where humming stone, spore-light and sunless warrens give the surface a muted, rain-and-ash mood under heavy overcast."
+}

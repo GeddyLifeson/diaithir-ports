@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#8fa6c8",
+  "fog": "#b9c9e0",
+  "cloud": "#d8ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6fa0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.venualys.E6.places.000085",
+   "archetype": "snowy_plains",
+   "temp": -1,
+   "humid": 0.2,
+   "grass": "#b8d8e8",
+   "foliage": "#a8c8d8",
+   "water": "#4a7ab0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.venualys.E6.places.000106",
+   "archetype": "ice_spikes",
+   "temp": -0.7,
+   "humid": -0.3,
+   "grass": "#c0e0f0",
+   "foliage": "#b0d0e8",
+   "water": "#5a8ac0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.venualys.E6.places.000098",
+   "archetype": "frozen_peaks",
+   "temp": -0.6,
+   "humid": 0.1,
+   "grass": "#a8c0d8",
+   "foliage": "#98b8d0",
+   "water": "#4a6ab0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.venualys.E6.places.000080",
+   "archetype": "taiga",
+   "temp": -0.3,
+   "humid": 0.4,
+   "grass": "#6a9a8a",
+   "foliage": "#4a7a6a",
+   "water": "#3a6a9a",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.venualys.E6.places.000078",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#7aa8a0",
+   "foliage": "#5a8a88",
+   "water": "#3f78a8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venualys.E6.places.000105",
+   "archetype": "swamp",
+   "temp": 0.5,
+   "humid": 0.8,
+   "grass": "#7ab09a",
+   "foliage": "#68a088",
+   "water": "#4a8aa8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venualys.E6.places.000101",
+   "archetype": "jagged_peaks",
+   "temp": -0.2,
+   "humid": -0.5,
+   "grass": "#9ab0d0",
+   "foliage": "#8aa0c0",
+   "water": "#5a7ab8",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A pale, humming arcane realm of frost-bound plains, glass spires and still silver lakes, with warmer salt marshes along the coast."
+}

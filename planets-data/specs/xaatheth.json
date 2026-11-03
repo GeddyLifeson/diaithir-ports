@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a8fa6",
+  "fog": "#b8c4cc",
+  "cloud": "#ccf2f2f2",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a6b7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "OU.xaatheth.E6.places.000615",
+   "archetype": "taiga",
+   "temp": -0.6,
+   "humid": 0.2,
+   "grass": "#6e8a7a",
+   "foliage": "#5c7a6e",
+   "water": "#4a6b7a",
+   "precip": "snow"
+  },
+  {
+   "entry": "OU.xaatheth.E6.places.000459",
+   "archetype": "meadow",
+   "temp": -0.2,
+   "humid": -0.1,
+   "grass": "#9aa88c",
+   "foliage": "#8a9a7c",
+   "water": "#5a7585",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.xaatheth.E6.places.000416",
+   "archetype": "flower_forest",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#a8b89a",
+   "foliage": "#94a88a",
+   "water": "#5a7a85",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.xaatheth.E6.places.000060",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.8,
+   "grass": "#6a8a6e",
+   "foliage": "#587a62",
+   "water": "#4d6e6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.xaatheth.E6.places.000481",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#c4b89a",
+   "foliage": "#b0a488",
+   "water": "#6a8590",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.xaatheth.E6.places.000279",
+   "archetype": "savanna",
+   "temp": 0.9,
+   "humid": -0.4,
+   "grass": "#c2b68c",
+   "foliage": "#a9a07a",
+   "water": "#6a8590",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.xaatheth.E6.places.000132",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.9,
+   "grass": "#7aa08a",
+   "foliage": "#6a9078",
+   "water": "#4d7a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.xaatheth.E6.places.000227",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": -0.5,
+   "grass": "#8a9a8a",
+   "foliage": "#7a8a7a",
+   "water": "#5a7585",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A pale, humid, mist-wrapped world of ash-grey stone, hushed meadows and brackish seas, its biomes drawn from the sparse entries on the surface of Xaatheth."
+}

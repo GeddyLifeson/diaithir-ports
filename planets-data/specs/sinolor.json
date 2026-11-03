@@ -1,0 +1,33 @@
+{
+ "sky": {
+  "sky": "#3b4a6b",
+  "fog": "#7f8fa6",
+  "cloud": "#b0c4de66",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "none",
+  "water": "#3f5f7a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MY.sinolor.E7.assay.000001",
+   "archetype": "windswept_hills",
+   "temp": 0,
+   "humid": -0.2,
+   "grass": "#6b7d5a",
+   "foliage": "#5a6b4a",
+   "water": "#3f5f7a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Only one entry supports terrain, so the surface is a single windswept expanse under a storm-dark sky, with the paired tunnels suggested by the wind-shaped hills."
+}

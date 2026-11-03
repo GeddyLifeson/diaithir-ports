@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#7fb7c9",
+  "fog": "#a9d6e0",
+  "cloud": "#c8ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a5a7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.veneiluana.E1.places.001360",
+   "archetype": "forest",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#7fb069",
+   "foliage": "#5f9e4f",
+   "water": "#4fa3c7",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneiluana.E1.places.001397",
+   "archetype": "stony_peaks",
+   "temp": 0.0,
+   "humid": -0.4,
+   "grass": "#8a9a6a",
+   "foliage": "#7a8a5a",
+   "water": "#4fa3c7",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veneiluana.E2.places.001344",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#b08a5a",
+   "foliage": "#a07a4a",
+   "water": "#5aa0b0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veneiluana.E2.places.001406",
+   "archetype": "eroded_badlands",
+   "temp": 0.5,
+   "humid": -0.5,
+   "grass": "#a58a6a",
+   "foliage": "#95795a",
+   "water": "#5aa0b0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veneiluana.E3.places.001345",
+   "archetype": "birch_forest",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#9bc47a",
+   "foliage": "#8fbf6f",
+   "water": "#6bb8d4",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneiluana.E3.places.001411",
+   "archetype": "meadow",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#a8d88a",
+   "foliage": "#90c878",
+   "water": "#6bb8d4",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneiluana.E4.places.001372",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c9b98a",
+   "foliage": "#b8a878",
+   "water": "#5aa0b0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veneiluana.E4.places.001347",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": 0.0,
+   "grass": "#8fb88a",
+   "foliage": "#7fa87a",
+   "water": "#4a90b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veneiluana.E6.places.001295",
+   "archetype": "windswept_savanna",
+   "temp": 0.4,
+   "humid": -0.2,
+   "grass": "#b9c27a",
+   "foliage": "#a9b26a",
+   "water": "#5a9fc0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A silver-lit grove world of sunken citadels and glass shards, where the cold blue deep and the humming stone set a quiet, sorcerous mood."
+}

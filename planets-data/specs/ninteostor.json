@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a5cb8",
+  "fog": "#9b87c9",
+  "cloud": "#c8b8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f6f8f"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "MY.ninteostor.E6.places.000310",
+   "archetype": "flower_forest",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#7fbf6a",
+   "foliage": "#6fae5c",
+   "water": "#4a8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.ninteostor.E6.places.000329",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c9a86a",
+   "foliage": "#b89a5c",
+   "water": "#c9a86a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.ninteostor.E6.places.000306",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#6b8f4e",
+   "foliage": "#587a3f",
+   "water": "#3b5f5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.ninteostor.E6.places.000318",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.6,
+   "grass": "#8a7a5c",
+   "foliage": "#7a6a4c",
+   "water": "#6a5a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.ninteostor.E6.places.000337",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": 0.1,
+   "grass": "#7aa08a",
+   "foliage": "#6a907a",
+   "water": "#5a8aa0",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.ninteostor.E6.places.000334",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.6,
+   "grass": "#4f6b4a",
+   "foliage": "#3f5b3a",
+   "water": "#2a4a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.ninteostor.E6.places.000331",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.3,
+   "grass": "#a8b8d8",
+   "foliage": "#98a8c8",
+   "water": "#8aa8c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.ninteostor.E6.places.000320",
+   "archetype": "stony_peaks",
+   "temp": 0.8,
+   "humid": -0.2,
+   "grass": "#8a4a3a",
+   "foliage": "#7a3a2a",
+   "water": "#c85a2a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "warm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A mythic storm-world whose ash-tinged violet skies and tidal, mirror-shifted realms spread from lush sunlit orchards and salt marshes through scorched deserts and badlands to frozen peaks and a molten core-hollow."
+}

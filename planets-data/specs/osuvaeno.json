@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#8a6a4f",
+  "fog": "#b08a6a",
+  "cloud": "#c8a07a6e",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#3a2a20"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "KI.osuvaeno.E4.places.000215",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#7a5a3a",
+   "foliage": "#6b4a2e",
+   "water": "#4a3a2a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.osuvaeno.E2.places.000255",
+   "archetype": "stony_peaks",
+   "temp": 0.5,
+   "humid": -0.3,
+   "grass": "#5a4a3c",
+   "foliage": "#4a3c30",
+   "water": "#3e3228",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.osuvaeno.E3.places.000256",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": 0.1,
+   "grass": "#a3804a",
+   "foliage": "#8f6f3e",
+   "water": "#6a5030",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.osuvaeno.E7.places.000248",
+   "archetype": "old_growth_pine_taiga",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#6e7a4a",
+   "foliage": "#55663a",
+   "water": "#4a5a3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.osuvaeno.E5.places.000268",
+   "archetype": "windswept_hills",
+   "temp": 0.2,
+   "humid": -0.1,
+   "grass": "#7a7050",
+   "foliage": "#66603f",
+   "water": "#50483a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.osuvaeno.E6.places.000091",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#8a6a48",
+   "foliage": "#765838",
+   "water": "#5a4530",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.osuvaeno.E6.places.000088",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#7c6a5a",
+   "foliage": "#6a5a4a",
+   "water": "#4a4038",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A scorched ember-realm of basalt terraces, sealed heat and drifting ash, where the lava seas and glass-black hills hold the scars of the Sundering."
+}

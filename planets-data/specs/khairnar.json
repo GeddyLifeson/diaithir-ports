@@ -1,0 +1,123 @@
+{
+ "sky": {
+  "sky": "#7a8c9e",
+  "fog": "#a9b4bf",
+  "cloud": "#e6ecf2f0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#3a4a5c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.khairnar.E1.places.000091",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#8a7a5c",
+   "foliage": "#7d6e52",
+   "water": "#5b6b7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.khairnar.E1.places.000074",
+   "archetype": "eroded_badlands",
+   "temp": 0.5,
+   "humid": -0.5,
+   "grass": "#7f6f58",
+   "foliage": "#6f6150",
+   "water": "#5b6b7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.khairnar.E2.places.000040",
+   "archetype": "stony_peaks",
+   "temp": 0.2,
+   "humid": -0.4,
+   "grass": "#6b6e74",
+   "foliage": "#5a5d63",
+   "water": "#4d5b6b",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.khairnar.E2.places.000077",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": -0.2,
+   "grass": "#7c7f70",
+   "foliage": "#6a6d5e",
+   "water": "#4d5b6b",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.khairnar.E3.places.000043",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#9c8c5a",
+   "foliage": "#8a7a4c",
+   "water": "#6a7a88",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.khairnar.E3.places.000080",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.1,
+   "grass": "#8f9a6a",
+   "foliage": "#7f8a5c",
+   "water": "#5a7080",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.khairnar.E4.places.000060",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.5,
+   "grass": "#5e6b4e",
+   "foliage": "#4b5a3e",
+   "water": "#4a5c64",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.khairnar.E4.places.000107",
+   "archetype": "taiga",
+   "temp": -0.2,
+   "humid": 0.3,
+   "grass": "#66705a",
+   "foliage": "#525f4c",
+   "water": "#4a5c6c",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.khairnar.E5.places.000062",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#a89470",
+   "foliage": "#94805c",
+   "water": "#6a7a88",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.khairnar.E5.places.000067",
+   "archetype": "snowy_plains",
+   "temp": -0.6,
+   "humid": -0.1,
+   "grass": "#a4aeb4",
+   "foliage": "#8f9aa2",
+   "water": "#6a7f94",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A martial, ash-scoured world of fortified basalt terraces, sundered shards and ember-lakes, its cold highlands giving way to dry lowlands and a few sheltered groves."
+}

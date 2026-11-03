@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a8a9a",
+  "fog": "#9aa6b0",
+  "cloud": "#b0ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6f8a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.drernen.E1.places.000510",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#7fa35a",
+   "foliage": "#6f9450",
+   "water": "#4a7a96",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drernen.E2.places.000517",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#4f6b3e",
+   "foliage": "#3d5a30",
+   "water": "#3a5f7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drernen.E6.places.000249",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#8a8f7a",
+   "foliage": "#7a806c",
+   "water": "#4e6e84",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drernen.E6.places.000221",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.7,
+   "grass": "#5e7a4a",
+   "foliage": "#4e6a3c",
+   "water": "#3d5f5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drernen.E6.places.000228",
+   "archetype": "jungle",
+   "temp": 0.7,
+   "humid": 0.9,
+   "grass": "#4fa35a",
+   "foliage": "#3d9a4c",
+   "water": "#2f8a9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.drernen.E6.places.000225",
+   "archetype": "taiga",
+   "temp": -0.4,
+   "humid": 0.2,
+   "grass": "#6a8a6a",
+   "foliage": "#4f7a5a",
+   "water": "#3f6a80",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.drernen.E6.places.000206",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#a58a5a",
+   "foliage": "#8f7a4f",
+   "water": "#6a7f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.drernen.E6.places.000235",
+   "archetype": "windswept_hills",
+   "temp": 0.5,
+   "humid": 0.0,
+   "grass": "#9fb07a",
+   "foliage": "#8a9e6a",
+   "water": "#5a8aa0",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grounded, humming world of rain-soaked valleys, fortified coasts, and sealed underground vaults, shaded by cool grey skies and marsh-dark forests."
+}

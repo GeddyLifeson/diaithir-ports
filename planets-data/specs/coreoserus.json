@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#4a6fa5",
+  "fog": "#9fb8c8",
+  "cloud": "#e6ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e5f8a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "KI.coreoserus.E1.places.000050",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#b5a642",
+   "foliage": "#9c8f35",
+   "water": "#3f76a3",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.coreoserus.E1.places.000049",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c28a4a",
+   "foliage": "#a8733e",
+   "water": "#3f76a3",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.coreoserus.E3.places.000073",
+   "archetype": "forest",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#6fa34f",
+   "foliage": "#4e8a3a",
+   "water": "#3a7fa8",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.coreoserus.E3.assay.000147",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#a8c4c8",
+   "foliage": "#8fb0b8",
+   "water": "#7fb3d5",
+   "precip": "snow"
+  },
+  {
+   "entry": "KI.coreoserus.E3.assay.000206",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.2,
+   "grass": "#3f5f3a",
+   "foliage": "#2f4a2c",
+   "water": "#2d4f66",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.coreoserus.E4.places.000059",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5e7a3c",
+   "foliage": "#4a6a33",
+   "water": "#4f6b4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.coreoserus.E6.assay.000163",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": -0.2,
+   "grass": "#7f9a6a",
+   "foliage": "#66805a",
+   "water": "#4a7ea0",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.coreoserus.E7.places.000063",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#7a6fa0",
+   "foliage": "#6a5c8c",
+   "water": "#5a4f8a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A realm of sundered shards and humming stone, where cold peaks, scorched basins, and drowned citadels sit beside groves of living light and courts of old war."
+}

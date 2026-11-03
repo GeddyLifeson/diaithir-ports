@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#7a5fb0",
+  "fog": "#b9a6d9",
+  "cloud": "#c8e0ffe6",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a6fa8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.ryirleth.E1.places.000079",
+   "archetype": "badlands",
+   "temp": 0.4,
+   "humid": -0.7,
+   "grass": "#b8a890",
+   "foliage": "#a89478",
+   "water": "#5c7a94",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryirleth.E3.places.000067",
+   "archetype": "eroded_badlands",
+   "temp": 0.8,
+   "humid": -0.9,
+   "grass": "#9a6e5a",
+   "foliage": "#8a5a48",
+   "water": "#6a5a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryirleth.E5.places.000073",
+   "archetype": "plains",
+   "temp": 0.1,
+   "humid": 0.0,
+   "grass": "#8fb070",
+   "foliage": "#7aa060",
+   "water": "#4a7aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryirleth.E7.places.000056",
+   "archetype": "flower_forest",
+   "temp": 0.2,
+   "humid": 0.5,
+   "grass": "#7ab070",
+   "foliage": "#6aa060",
+   "water": "#5a8ab0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryirleth.E3.places.000048",
+   "archetype": "birch_forest",
+   "temp": 0.3,
+   "humid": 0.3,
+   "grass": "#a8c880",
+   "foliage": "#98b870",
+   "water": "#6a9ac0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryirleth.E4.places.000092",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#6a8a6a",
+   "foliage": "#5a7a5a",
+   "water": "#3a6a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryirleth.E2.places.000028",
+   "archetype": "meadow",
+   "temp": -0.2,
+   "humid": 0.2,
+   "grass": "#a0b8d8",
+   "foliage": "#90a8c8",
+   "water": "#7aa8d0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryirleth.E7.places.000074",
+   "archetype": "snowy_slopes",
+   "temp": -0.7,
+   "humid": 0.1,
+   "grass": "#d8e8f0",
+   "foliage": "#c8d8e0",
+   "water": "#8ab0d0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.ryirleth.E4.places.000036",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#c0d0e8",
+   "foliage": "#b0c0d8",
+   "water": "#90b0e0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-lit world of broken light: drowned cathedral-cities and glass-green valleys give way to silver groves, ash-dusted stone basins, and cold frozen peaks beneath a sky tinged by the Shards."
+}

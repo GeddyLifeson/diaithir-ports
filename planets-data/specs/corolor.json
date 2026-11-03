@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#3b4a7a",
+  "fog": "#5c6b99",
+  "cloud": "#88c8d8e8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a5f8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.corolor.E6.places.000209",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#8fb85a",
+   "foliage": "#7aa84e",
+   "water": "#3f7fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corolor.E6.places.000219",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.8,
+   "grass": "#4f8f3a",
+   "foliage": "#3d7a2e",
+   "water": "#2f6f7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corolor.E6.places.000223",
+   "archetype": "snowy_taiga",
+   "temp": -0.8,
+   "humid": 0.2,
+   "grass": "#7aa08a",
+   "foliage": "#6a8f7a",
+   "water": "#9fc8dc",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.corolor.E3.assay.001865",
+   "archetype": "sparse_jungle",
+   "temp": 0.7,
+   "humid": 0.5,
+   "grass": "#6fae4a",
+   "foliage": "#5a9e3a",
+   "water": "#3a8aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corolor.E6.places.000195",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.9,
+   "grass": "#6a7a5a",
+   "foliage": "#5a6a4a",
+   "water": "#4a5a5e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corolor.E3.assay.002253",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#b8875a",
+   "foliage": "#a0764e",
+   "water": "#5a7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corolor.E3.assay.000565",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": 0.1,
+   "grass": "#7a9a5e",
+   "foliage": "#6a8a4e",
+   "water": "#4a7ea0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Corolor is a stormy, mythic world of misty grasslands, drowned glass cities, sun-bleached desert basins, and frost-bound highlands, where the sea and sky glow with silver and indigo light."
+}

@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#2a1f4d",
+  "fog": "#3b2f6b",
+  "cloud": "#8c7fd6aa",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2c5a8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.venarirleth.E6.places.000112",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#5b6e4a",
+   "foliage": "#4f6340",
+   "water": "#3f5c6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venarirleth.E6.places.000138",
+   "archetype": "jungle",
+   "temp": 0.7,
+   "humid": 0.9,
+   "grass": "#3f7a4e",
+   "foliage": "#2f6b48",
+   "water": "#2c6a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venarirleth.E6.places.000156",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#7a6a5a",
+   "foliage": "#6e6058",
+   "water": "#4a5a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venarirleth.E6.places.000336",
+   "archetype": "snowy_taiga",
+   "temp": -0.7,
+   "humid": 0.2,
+   "grass": "#6e8a7a",
+   "foliage": "#58735f",
+   "water": "#5a7a92",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.venarirleth.E6.places.000337",
+   "archetype": "forest",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#5e7f56",
+   "foliage": "#4d6c46",
+   "water": "#4b6f8f",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venarirleth.E6.places.000175",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.2,
+   "grass": "#6a6f7a",
+   "foliage": "#5c6370",
+   "water": "#4d5f7a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venarirleth.E6.places.000123",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.7,
+   "grass": "#5d7048",
+   "foliage": "#4a6038",
+   "water": "#3a6a6e",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dim violet-lit world of drowned glass and salt marsh, where swamp, jungle and frozen highlands are spread across the cold-to-hot range under a perpetual arcane haze."
+}

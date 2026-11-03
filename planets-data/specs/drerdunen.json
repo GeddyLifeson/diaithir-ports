@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7fa6c9",
+  "fog": "#a9bfd0",
+  "cloud": "#ddffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2c5c7a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "ST.drerdunen.E1.assay.009192",
+   "archetype": "beach",
+   "temp": 0.5,
+   "humid": 0.4,
+   "grass": "#a8b860",
+   "foliage": "#8fa64e",
+   "water": "#2f6f8f",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.drerdunen.E1.assay.012766",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": -0.2,
+   "grass": "#8ea070",
+   "foliage": "#728a58",
+   "water": "#3a6a84",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.drerdunen.E1.assay.011361",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b3a16a",
+   "foliage": "#9a8a58",
+   "water": "#5a6f80",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.drerdunen.E1.assay.000823",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.6,
+   "grass": "#7a8f6a",
+   "foliage": "#6a7d5c",
+   "water": "#3d6e7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.drerdunen.E2.assay.003122",
+   "archetype": "meadow",
+   "temp": 0.0,
+   "humid": 0.1,
+   "grass": "#8aa860",
+   "foliage": "#73944c",
+   "water": "#3b6d88",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.drerdunen.E3.assay.002022",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#b0a85a",
+   "foliage": "#97914a",
+   "water": "#46788f",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.drerdunen.E3.assay.008597",
+   "archetype": "taiga",
+   "temp": -0.4,
+   "humid": 0.5,
+   "grass": "#6f8f72",
+   "foliage": "#4f7159",
+   "water": "#3a6a80",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.drerdunen.E3.assay.007149",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.5,
+   "grass": "#c8d4dc",
+   "foliage": "#aabac6",
+   "water": "#7fb0cc",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Iron-soiled Drerdunen is a stellar realm of ash-hung plains, rust-red badlands, and cold grey peaks, with its quiet coasts and mushroom-choked valleys drifting between sheltered warmth and bitter frost."
+}

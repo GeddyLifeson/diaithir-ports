@@ -1,0 +1,123 @@
+{
+ "sky": {
+  "sky": "#8fa9c7",
+  "fog": "#c9d6e2",
+  "cloud": "#d8ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a5c7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.amontirnium.E6.places.000453",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.1,
+   "grass": "#7fb069",
+   "foliage": "#6a9a58",
+   "water": "#3c7fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.amontirnium.E6.places.000425",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#9cc97a",
+   "foliage": "#8ab868",
+   "water": "#4a8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.amontirnium.E6.places.000420",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6e8f5e",
+   "foliage": "#5d7d6a",
+   "water": "#6b5f9e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.amontirnium.E6.places.000419",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#5f7f5a",
+   "foliage": "#4e7050",
+   "water": "#4a5a6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.amontirnium.E6.places.000166",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#8a9a6a",
+   "foliage": "#7a8a5a",
+   "water": "#4a7090",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.amontirnium.E6.places.000430",
+   "archetype": "taiga",
+   "temp": -0.5,
+   "humid": 0.3,
+   "grass": "#6f9a7a",
+   "foliage": "#4f7a62",
+   "water": "#3e6e88",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.amontirnium.E6.places.000445",
+   "archetype": "stony_peaks",
+   "temp": -0.3,
+   "humid": -0.2,
+   "grass": "#7d8478",
+   "foliage": "#6d756a",
+   "water": "#506a80",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.amontirnium.E6.places.000401",
+   "archetype": "snowy_slopes",
+   "temp": -0.9,
+   "humid": 0.0,
+   "grass": "#c8d8e0",
+   "foliage": "#a8c0cc",
+   "water": "#5a8aa8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.amontirnium.E6.places.000402",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c9b27a",
+   "foliage": "#b89e6a",
+   "water": "#3a8aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.amontirnium.E2.places.000427",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#b88a5a",
+   "foliage": "#a0784e",
+   "water": "#3f7c94",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "warm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-soul world of sea-cliffs, misty marshes, windswept basalt and salt-white harbours, its light shifting from violet dusk to amber sun."
+}

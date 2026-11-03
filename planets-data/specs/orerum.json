@@ -1,0 +1,73 @@
+{
+ "sky": {
+  "sky": "#5a6e8c",
+  "fog": "#7d8a9e",
+  "cloud": "#a0ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f5f7a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MY.orerum.E5.assay.000002",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#8fb36a",
+   "foliage": "#7fa35c",
+   "water": "#3f5f7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.orerum.E5.assay.000028",
+   "archetype": "meadow",
+   "temp": 0.4,
+   "humid": 0.3,
+   "grass": "#9bc17a",
+   "foliage": "#88b06a",
+   "water": "#4a6e88",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.orerum.E6.assay.000031",
+   "archetype": "birch_forest",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#86b06f",
+   "foliage": "#78a062",
+   "water": "#46667f",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.orerum.E6.assay.000023",
+   "archetype": "flower_forest",
+   "temp": 0.5,
+   "humid": 0.6,
+   "grass": "#94b873",
+   "foliage": "#82a866",
+   "water": "#4b6d86",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.orerum.E6.assay.000024",
+   "archetype": "stony_peaks",
+   "temp": -0.6,
+   "humid": -0.4,
+   "grass": "#7d8a7a",
+   "foliage": "#6f7d6e",
+   "water": "#3c5570",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-soaked realm of quiet settlements and a sealed, dream-bound continent of stone peaks, joined by gentle meadows and birch woods under heavy grey skies."
+}

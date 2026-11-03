@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#8fb3d9",
+  "fog": "#b8cfe6",
+  "cloud": "#ddffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e6fa3"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.lyenora.E2.assay.003425",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.7,
+   "grass": "#5fae4a",
+   "foliage": "#3f9a3a",
+   "water": "#3a7fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.lyenora.E2.assay.000538",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": 0.0,
+   "grass": "#7f9a6a",
+   "foliage": "#6b8a5a",
+   "water": "#3d6f9e",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.lyenora.E2.assay.005144",
+   "archetype": "plains",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#9dc75a",
+   "foliage": "#86b84a",
+   "water": "#4a86b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.lyenora.E2.assay.002173",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c9b96a",
+   "foliage": "#b8a85a",
+   "water": "#4b8fb0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.lyenora.E2.assay.003110",
+   "archetype": "snowy_plains",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#c8d8d0",
+   "foliage": "#a8c0b4",
+   "water": "#5a8ab0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.lyenora.E2.assay.002858",
+   "archetype": "windswept_forest",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#6aa84f",
+   "foliage": "#4f9440",
+   "water": "#3b78a8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.lyenora.E2.assay.005039",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#b5763f",
+   "foliage": "#9a6234",
+   "water": "#8a6a4a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dreaming, arcane world of verdant woods, stony highlands, and sun-scorched wastes bound by ridges and rivers of enchantment."
+}

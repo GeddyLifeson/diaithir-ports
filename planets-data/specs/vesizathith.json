@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#1a1f3a",
+  "fog": "#2b2f4a",
+  "cloud": "#66b8c8e0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5a7a"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "ST.vesizathith.E6.places.002230",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b5a06a",
+   "foliage": "#a88f5c",
+   "water": "#3d6e8a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesizathith.E5.assay.006971",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#a2783f",
+   "foliage": "#8f6a38",
+   "water": "#4a6f80",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesizathith.E6.places.002279",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#5a7a4a",
+   "foliage": "#4b6b3d",
+   "water": "#3a5f5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesizathith.E6.places.002224",
+   "archetype": "snowy_taiga",
+   "temp": -0.7,
+   "humid": 0.2,
+   "grass": "#8fa8a0",
+   "foliage": "#6f8f88",
+   "water": "#7fa7c4",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.vesizathith.E6.places.005766",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#c8d8e8",
+   "foliage": "#b0c4d8",
+   "water": "#8ab4d0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.vesizathith.E6.places.002011",
+   "archetype": "cherry_grove",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#9ec4b8",
+   "foliage": "#c9a0c0",
+   "water": "#88b8d0",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesizathith.E1.places.006204",
+   "archetype": "forest",
+   "temp": 0.0,
+   "humid": 0.5,
+   "grass": "#6a9a5a",
+   "foliage": "#4f7f48",
+   "water": "#4f7a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesizathith.E6.places.002275",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.1,
+   "grass": "#7a8a7a",
+   "foliage": "#66756a",
+   "water": "#5a7a90",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dim, ash-drifting world of dry desert basins, cold stone peaks and humid swamp lowlands under a violet-tinged sky, with its sea a deep grey-blue."
+}

@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#3a2f5c",
+  "fog": "#6b5a8f",
+  "cloud": "#90e0c0a0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a4a7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.eleniel.E2.places.000106",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": -0.2,
+   "grass": "#8a9c6e",
+   "foliage": "#7d9466",
+   "water": "#3d5f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eleniel.E1.places.000096",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#4a4256",
+   "foliage": "#3b3448",
+   "water": "#2e2a40",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eleniel.E5.places.000054",
+   "archetype": "stony_peaks",
+   "temp": -0.3,
+   "humid": 0.1,
+   "grass": "#6e7068",
+   "foliage": "#5c5e58",
+   "water": "#2c3f5e",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.eleniel.E3.places.000048",
+   "archetype": "meadow",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#7fb08a",
+   "foliage": "#6a9a78",
+   "water": "#4a7a8c",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.eleniel.E4.places.000086",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.4,
+   "grass": "#5a3f4a",
+   "foliage": "#4a3340",
+   "water": "#3a2a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eleniel.E7.places.000092",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.6,
+   "grass": "#4e6a52",
+   "foliage": "#3c5443",
+   "water": "#2f4a50",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.eleniel.E2.places.000080",
+   "archetype": "sunflower_plains",
+   "temp": 0.4,
+   "humid": 0.0,
+   "grass": "#b5a878",
+   "foliage": "#a39a6a",
+   "water": "#4a6a92",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eleniel.E1.places.000100",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.7,
+   "grass": "#9a8fb8",
+   "foliage": "#b89ac4",
+   "water": "#5a6a9a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A realm of black glass, singing stone and old fire, its terraces and wardstones tinted in muted violet, ash-grey and pale luminous green."
+}

@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#2a1f4d",
+  "fog": "#5b4a8a",
+  "cloud": "#66c8b8ff",
+  "cloud_height": 190
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#7a4fb8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.silena.E6.places.002010",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#8fa8c8",
+   "foliage": "#b8a0e0",
+   "water": "#c48ad8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.silena.E6.places.002039",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.4,
+   "grass": "#5a4d8a",
+   "foliage": "#7b5fb0",
+   "water": "#9a7ad0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.silena.E6.places.002240",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.6,
+   "grass": "#8a3a4a",
+   "foliage": "#b03a52",
+   "water": "#7a3050",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.silena.E6.places.001941",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b89a6a",
+   "foliage": "#a88a5a",
+   "water": "#6a5a80",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silena.E6.places.002291",
+   "archetype": "ice_spikes",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#a8c8e8",
+   "foliage": "#9ab8e0",
+   "water": "#8ab0e8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.silena.E6.places.001210",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.2,
+   "grass": "#6a6a9a",
+   "foliage": "#8080b0",
+   "water": "#7a70b0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silena.E6.places.002053",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": -0.3,
+   "grass": "#9a8ac0",
+   "foliage": "#b0a0d0",
+   "water": "#8a70b8",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Silena's surface blends violet glass-marsh, ashen dusk-hills and drowned crystal seas under a perpetually twilight sky, with the desert and frozen wastes marking its drained and sealed extremes."
+}

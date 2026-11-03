@@ -1,0 +1,123 @@
+{
+ "sky": {
+  "sky": "#2a1f4d",
+  "fog": "#5b4a8a",
+  "cloud": "#90c8e6ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3c2f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.lyariel.E6.places.000126",
+   "archetype": "sparse_jungle",
+   "temp": 0.6,
+   "humid": 0.5,
+   "grass": "#6e8f6a",
+   "foliage": "#8f6fb8",
+   "water": "#4a3d8f",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000109",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.2,
+   "grass": "#7fb27a",
+   "foliage": "#e8a8d8",
+   "water": "#6a5fb0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000140",
+   "archetype": "mangrove_swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#4f8a6a",
+   "foliage": "#3fa88a",
+   "water": "#2f5f6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000166",
+   "archetype": "ice_spikes",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#a8c8d8",
+   "foliage": "#b0d0e8",
+   "water": "#8fb8e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000164",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#7a7a8a",
+   "foliage": "#6a6a7a",
+   "water": "#5a6a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000096",
+   "archetype": "frozen_peaks",
+   "temp": -0.6,
+   "humid": 0.0,
+   "grass": "#9ab8c8",
+   "foliage": "#a8c0d8",
+   "water": "#7aa0c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000113",
+   "archetype": "jungle",
+   "temp": 0.5,
+   "humid": 0.7,
+   "grass": "#4a8a5a",
+   "foliage": "#3a7a6a",
+   "water": "#3f7fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000101",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5a7a6a",
+   "foliage": "#6a8a7a",
+   "water": "#3a4f7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000098",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b8a878",
+   "foliage": "#a89868",
+   "water": "#5a6a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.lyariel.E6.places.000090",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#c08a6a",
+   "foliage": "#b07a5a",
+   "water": "#5a5a9a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-tinted world of drowned archives, silver mist and floating spires, where ash drifts over ancient ruins and the sea hums with stored sorcery."
+}

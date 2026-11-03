@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#3a2a24",
+  "fog": "#5a4438",
+  "cloud": "#99c4a08a",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e3b40"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "MA.groktok.E5.places.001652",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#7a6a50",
+   "foliage": "#6b5d45",
+   "water": "#1f2a30",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.groktok.E6.places.001402",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#8a5a3a",
+   "foliage": "#7a4c30",
+   "water": "#3b3a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.groktok.E5.places.001574",
+   "archetype": "savanna",
+   "temp": 0.4,
+   "humid": -0.2,
+   "grass": "#9a8a50",
+   "foliage": "#8c7d46",
+   "water": "#3d4a52",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.groktok.E6.places.001776",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#5a6a4a",
+   "foliage": "#4a5c40",
+   "water": "#3a4a46",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.groktok.E6.places.001545",
+   "archetype": "taiga",
+   "temp": -0.2,
+   "humid": 0.5,
+   "grass": "#4a5e4c",
+   "foliage": "#3e5242",
+   "water": "#2f3d44",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.groktok.E6.places.001868",
+   "archetype": "stony_peaks",
+   "temp": -0.5,
+   "humid": 0.0,
+   "grass": "#6e6a64",
+   "foliage": "#5c5852",
+   "water": "#2d3a42",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.groktok.E6.places.001584",
+   "archetype": "snowy_plains",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#c8d0d4",
+   "foliage": "#b4bcc0",
+   "water": "#3c5260",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "Frost-soil realm of ash-grey skies, scarred cliffs and drowned moorland, tiled from the Groktok entries."
+}

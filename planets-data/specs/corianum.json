@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#6b5a8a",
+  "fog": "#9a86b8",
+  "cloud": "#d8c8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.corianum.E3.places.000522",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#6e8a5a",
+   "foliage": "#5a7a4a",
+   "water": "#4a6a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corianum.E3.places.000525",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#7a6a5a",
+   "foliage": "#6a5a4a",
+   "water": "#5a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corianum.E1.places.000473",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#8fbf8a",
+   "foliage": "#c9a0c4",
+   "water": "#6f9fb8",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corianum.E1.places.000499",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.1,
+   "grass": "#7a7a80",
+   "foliage": "#6a6a72",
+   "water": "#5a6a8a",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.corianum.E4.places.000464",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.1,
+   "grass": "#7f8a70",
+   "foliage": "#6f7a62",
+   "water": "#5f7088",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corianum.E2.places.000502",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#a09060",
+   "foliage": "#8a7a50",
+   "water": "#6a7f90",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corianum.E4.places.000467",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.3,
+   "grass": "#9ab0b8",
+   "foliage": "#8aa0a8",
+   "water": "#6a8aa8",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Corianum's storm-soil realm of Mythic sorrow and echoing stone is rendered in ash-violet skies, sombre glass-and-basalt terrain, and cold blue waters beneath drifting sundered shards."
+}

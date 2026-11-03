@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8a6a5a",
+  "fog": "#b89a86",
+  "cloud": "#c0d8c8c8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a5a52"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.ashestith.E6.places.000127",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#a8943c",
+   "foliage": "#9a8a48",
+   "water": "#5a6a60",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.ashestith.E6.places.000135",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.5,
+   "grass": "#9a7a4a",
+   "foliage": "#8a6a40",
+   "water": "#4a5a5a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.ashestith.E6.places.000443",
+   "archetype": "eroded_badlands",
+   "temp": 0.5,
+   "humid": -0.3,
+   "grass": "#8a6a50",
+   "foliage": "#7a5a48",
+   "water": "#4a5058",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.ashestith.E6.places.000420",
+   "archetype": "savanna",
+   "temp": 0.4,
+   "humid": 0.0,
+   "grass": "#a09040",
+   "foliage": "#8c8038",
+   "water": "#5a6a5e",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.ashestith.E6.places.000382",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.6,
+   "grass": "#6a7a50",
+   "foliage": "#5a6a48",
+   "water": "#4e5e52",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.ashestith.E6.places.000396",
+   "archetype": "jungle",
+   "temp": 0.5,
+   "humid": 0.8,
+   "grass": "#5e8a4a",
+   "foliage": "#4e7a3e",
+   "water": "#4a6e5e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.ashestith.E6.places.000448",
+   "archetype": "frozen_peaks",
+   "temp": -0.5,
+   "humid": 0.1,
+   "grass": "#8a9a9a",
+   "foliage": "#7a8c8c",
+   "water": "#6a8088",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.ashestith.E6.places.000435",
+   "archetype": "snowy_plains",
+   "temp": -0.9,
+   "humid": -0.4,
+   "grass": "#a8b4b8",
+   "foliage": "#98a6aa",
+   "water": "#7a90a0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A scorched ash-world of martial citadels, drowned glass cities and frozen steppes, its sky stained with fallen ash."
+}

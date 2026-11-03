@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a1f4d",
+  "fog": "#3d3366",
+  "cloud": "#66a8c9e8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.alaenneirae.E6.places.000561",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": -0.4,
+   "grass": "#3b4a4f",
+   "foliage": "#2c3a40",
+   "water": "#2a3f55",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alaenneirae.E6.places.000625",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#8a4a2c",
+   "foliage": "#a1603a",
+   "water": "#6b4a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alaenneirae.E4.places.000729",
+   "archetype": "stony_peaks",
+   "temp": 0.2,
+   "humid": -0.5,
+   "grass": "#5c5a60",
+   "foliage": "#4a4850",
+   "water": "#3f4a5c",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alaenneirae.E3.places.000694",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.3,
+   "grass": "#7aa86a",
+   "foliage": "#5f9054",
+   "water": "#4f8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.alaenneirae.E6.places.000636",
+   "archetype": "cherry_grove",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#a8d88a",
+   "foliage": "#f2b8d6",
+   "water": "#8fb8e0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.alaenneirae.E6.places.000634",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": 0.1,
+   "grass": "#6e8a8c",
+   "foliage": "#587478",
+   "water": "#5d7fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.alaenneirae.E6.places.000623",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#4f7a5a",
+   "foliage": "#3d6447",
+   "water": "#3a5e6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.alaenneirae.E4.places.000711",
+   "archetype": "mushroom_fields",
+   "temp": 0.0,
+   "humid": 0.7,
+   "grass": "#6b5c8a",
+   "foliage": "#8e6fb0",
+   "water": "#5a4c7a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A ash-dark arcane world of fractured basalt highlands, humming glass-green basins, and luminous fungal groves where cloud-spires and storms drift over a salt-remembering sea."
+}

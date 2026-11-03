@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a6fb5",
+  "fog": "#c8b8e0",
+  "cloud": "#c0e6d8f0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6fa8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.siliorlora.E6.places.000202",
+   "archetype": "sparse_jungle",
+   "temp": 0.4,
+   "humid": 0.6,
+   "grass": "#7fbf6a",
+   "foliage": "#6fd4b0",
+   "water": "#3fa0b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siliorlora.E6.places.000196",
+   "archetype": "ice_spikes",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#b8d8e8",
+   "foliage": "#a8c8e0",
+   "water": "#8ad0f0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.siliorlora.E6.places.000189",
+   "archetype": "dark_forest",
+   "temp": -0.1,
+   "humid": 0.5,
+   "grass": "#4a7a5a",
+   "foliage": "#3a6a50",
+   "water": "#3a5a80",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siliorlora.E6.places.000187",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.7,
+   "grass": "#c8a070",
+   "foliage": "#b89060",
+   "water": "#e0a060",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siliorlora.E6.places.000183",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": -0.1,
+   "grass": "#9ed08a",
+   "foliage": "#8ec87a",
+   "water": "#5a9ad0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siliorlora.E6.places.000181",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.9,
+   "grass": "#d8c080",
+   "foliage": "#c8b070",
+   "water": "#c0a870",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siliorlora.E6.places.000180",
+   "archetype": "cherry_grove",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#a8e0b0",
+   "foliage": "#f0b8d8",
+   "water": "#88b8e0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siliorlora.E6.places.000198",
+   "archetype": "meadow",
+   "temp": -0.3,
+   "humid": 0.1,
+   "grass": "#b0d890",
+   "foliage": "#a0d080",
+   "water": "#6aa8d8",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A twilight arcane world of glass terraces, hovering archipelagos and humming lattices, where the sky carries a violet glow and ashen drift."
+}

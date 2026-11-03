@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#6f8fb0",
+  "fog": "#b8c9d6",
+  "cloud": "#e6ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6f8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.joradernath.E6.assay.000497",
+   "archetype": "frozen_peaks",
+   "temp": -1,
+   "humid": -0.2,
+   "grass": "#a8c4c8",
+   "foliage": "#8fb0b8",
+   "water": "#5e8fa8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.joradernath.E2.assay.000613",
+   "archetype": "jagged_peaks",
+   "temp": -0.8,
+   "humid": -0.4,
+   "grass": "#9bb3bd",
+   "foliage": "#86a2ad",
+   "water": "#5e8fa8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.joradernath.E6.assay.000540",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.9,
+   "grass": "#c9a86a",
+   "foliage": "#b8955a",
+   "water": "#7a9aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.joradernath.E6.assay.000371",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.6,
+   "grass": "#b5884f",
+   "foliage": "#a07442",
+   "water": "#7a8f96",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.joradernath.E5.assay.000581",
+   "archetype": "jungle",
+   "temp": 0.7,
+   "humid": 0.8,
+   "grass": "#5f9e4a",
+   "foliage": "#4a8a3c",
+   "water": "#3f8c7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.joradernath.E5.assay.000524",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#4f7a45",
+   "foliage": "#3e6a38",
+   "water": "#4a7a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.joradernath.E4.assay.000820",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.0,
+   "grass": "#8cb85f",
+   "foliage": "#7aa650",
+   "water": "#4f8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.joradernath.E6.assay.001029",
+   "archetype": "beach",
+   "temp": 0.5,
+   "humid": 0.6,
+   "grass": "#9cc070",
+   "foliage": "#88aa60",
+   "water": "#3aa0b8",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A frost-bitten Martial realm of scarred battlefields and ice peaks, softened by warm coastal and jungle pockets where the machine-war left its ruins."
+}

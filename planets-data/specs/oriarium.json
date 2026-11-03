@@ -1,0 +1,123 @@
+{
+ "sky": {
+  "sky": "#c9a46a",
+  "fog": "#e6c79a",
+  "cloud": "#ccf2d9b8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f6f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.oriarium.E6.places.000104",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b8a25a",
+   "foliage": "#a89048",
+   "water": "#3f8f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.oriarium.E6.places.000535",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#9c7a4a",
+   "foliage": "#8a6a40",
+   "water": "#4a7a80",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.oriarium.E6.places.000565",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#b5a04f",
+   "foliage": "#9e8a42",
+   "water": "#4f8a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.oriarium.E6.places.000530",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6f8f5a",
+   "foliage": "#5f7f4a",
+   "water": "#4c7a6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.oriarium.E6.places.000564",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#6a8a58",
+   "foliage": "#587c4c",
+   "water": "#3d6e6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.oriarium.E1.places.000533",
+   "archetype": "plains",
+   "temp": 0.0,
+   "humid": 0.2,
+   "grass": "#a8a86a",
+   "foliage": "#94945a",
+   "water": "#4a7f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.oriarium.E6.places.000219",
+   "archetype": "meadow",
+   "temp": -0.3,
+   "humid": 0.5,
+   "grass": "#8ea86a",
+   "foliage": "#7e9a5c",
+   "water": "#3f8a92",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.oriarium.E6.places.000209",
+   "archetype": "windswept_hills",
+   "temp": -0.6,
+   "humid": -0.1,
+   "grass": "#7f8a70",
+   "foliage": "#6f7a62",
+   "water": "#4a6e7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.oriarium.E6.places.000563",
+   "archetype": "taiga",
+   "temp": -0.7,
+   "humid": 0.6,
+   "grass": "#6d8a6a",
+   "foliage": "#587a5c",
+   "water": "#3e6a78",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.oriarium.E3.places.000697",
+   "archetype": "snowy_slopes",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#c8d4dc",
+   "foliage": "#b4c4ce",
+   "water": "#7fa8c0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dusky ash-lit world of basalt, glass and drowned cities, its deserts and salt flats giving way to marshes and cold stone peaks."
+}

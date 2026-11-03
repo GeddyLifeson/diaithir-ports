@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#7a8fa6",
+  "fog": "#9aaab8",
+  "cloud": "#c8d4e0c0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a4a5e"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.corialor.E6.places.000107",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#9fb8c8",
+   "foliage": "#8fa6b8",
+   "water": "#7fb6d8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.corialor.E4.places.000182",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#c9a46a",
+   "foliage": "#b8905a",
+   "water": "#4a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corialor.E6.places.000124",
+   "archetype": "jagged_peaks",
+   "temp": -0.3,
+   "humid": 0.1,
+   "grass": "#6a7a6e",
+   "foliage": "#5e6e62",
+   "water": "#3f5f70",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corialor.E6.places.000127",
+   "archetype": "cherry_grove",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#a8c4a0",
+   "foliage": "#c9a8c8",
+   "water": "#8fb8c8",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corialor.E6.places.000126",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#6b8a5a",
+   "foliage": "#587a4a",
+   "water": "#4f6b5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corialor.E1.places.000120",
+   "archetype": "warm_ocean",
+   "temp": 0.7,
+   "humid": 0.8,
+   "grass": "#8ab88a",
+   "foliage": "#7aa87a",
+   "water": "#3aa8b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corialor.E6.places.000109",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b87a4a",
+   "foliage": "#a86a3a",
+   "water": "#6a7a8a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-soaked, ash-touched realm of mythic peaks, drowned sanctuaries and luminous tide-meadows, rendered in cold silver skies and sea-blue waters."
+}

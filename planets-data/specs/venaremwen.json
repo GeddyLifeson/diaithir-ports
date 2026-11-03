@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#6a4fa3",
+  "fog": "#8f7cc4",
+  "cloud": "#b8a8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3b5b9a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.venaremwen.E2.places.000433",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#8a6e4b",
+   "foliage": "#7d6a52",
+   "water": "#4e5f8c",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venaremwen.E7.places.000459",
+   "archetype": "ice_spikes",
+   "temp": -0.6,
+   "humid": 0.2,
+   "grass": "#a9c8e8",
+   "foliage": "#94b8d8",
+   "water": "#6f9bd1",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.venaremwen.E5.places.000456",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#7a7f8c",
+   "foliage": "#6b707c",
+   "water": "#4a5a80",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venaremwen.E3.places.000505",
+   "archetype": "eroded_badlands",
+   "temp": 0.4,
+   "humid": -0.5,
+   "grass": "#9a7bb0",
+   "foliage": "#86699c",
+   "water": "#5b4f9e",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venaremwen.E2.places.000431",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#5c4a8a",
+   "foliage": "#6e56a0",
+   "water": "#4b4a8f",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venaremwen.E5.places.000474",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.3,
+   "grass": "#7c6fa0",
+   "foliage": "#6a5e8c",
+   "water": "#4f5aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venaremwen.E2.places.000497",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.5,
+   "grass": "#c59ad6",
+   "foliage": "#e0b0e8",
+   "water": "#7c6ec0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venaremwen.E3.places.000480",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5e7a6a",
+   "foliage": "#4f6b5c",
+   "water": "#3f5f7a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet arcane world of sundered citadels, humming glass basins, and hushed wards, where ash drifts rarely over badlands and mushroom fields while shadowed mires and frosted spires hold the edges of its doors between worlds."
+}

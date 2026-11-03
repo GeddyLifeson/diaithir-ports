@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#2b1f4a",
+  "fog": "#4a3c6e",
+  "cloud": "#8ce0c8f0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3d6fa8"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "AR.nuemiel.E1.places.000142",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": 0.1,
+   "grass": "#7a8f6e",
+   "foliage": "#6b8a72",
+   "water": "#4f7fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuemiel.E1.places.000117",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#a88a5c",
+   "foliage": "#9c7a4e",
+   "water": "#6e8fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuemiel.E3.places.000148",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#8fb8a0",
+   "foliage": "#a9d4b8",
+   "water": "#5a8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuemiel.E4.places.000154",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#4f6e5a",
+   "foliage": "#3f5c4c",
+   "water": "#2f5a6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuemiel.E4.places.000155",
+   "archetype": "eroded_badlands",
+   "temp": 0.4,
+   "humid": -0.5,
+   "grass": "#6e5a6e",
+   "foliage": "#5c4a5c",
+   "water": "#4a3c6e",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuemiel.E6.places.000051",
+   "archetype": "snowy_taiga",
+   "temp": -0.7,
+   "humid": 0.3,
+   "grass": "#9ec9d9",
+   "foliage": "#b8dce8",
+   "water": "#8cc4e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.nuemiel.E6.places.000017",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#c8e6f0",
+   "foliage": "#dff2f8",
+   "water": "#a8d8f0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.nuemiel.E7.places.000113",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.6,
+   "grass": "#c98fb0",
+   "foliage": "#e8a8c8",
+   "water": "#b07aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuemiel.E6.places.000055",
+   "archetype": "mushroom_fields",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6e4f8a",
+   "foliage": "#8a6aa8",
+   "water": "#5a4a8a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A realm of hums, sundered shards, and glass-black basins under a violet twilight sky, where Arcane ruins and floating archives mark each era."
+}

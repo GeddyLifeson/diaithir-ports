@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8fa9c4",
+  "fog": "#b8c7d6",
+  "cloud": "#e6eef5",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6f8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.druderath.E1.places.000071",
+   "archetype": "flower_forest",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#7fb069",
+   "foliage": "#6aa35a",
+   "water": "#4f8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.druderath.E1.places.000116",
+   "archetype": "meadow",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#9bbf7a",
+   "foliage": "#8db36e",
+   "water": "#5d9cc2",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.druderath.E2.places.000105",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#b9a06a",
+   "foliage": "#a88f5c",
+   "water": "#6e8fa3",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.druderath.E4.places.000110",
+   "archetype": "stony_peaks",
+   "temp": -0.3,
+   "humid": -0.5,
+   "grass": "#7d8078",
+   "foliage": "#6f7268",
+   "water": "#4b6a7f",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.druderath.E6.assay.000328",
+   "archetype": "jungle",
+   "temp": 0.7,
+   "humid": 0.9,
+   "grass": "#4f9a4a",
+   "foliage": "#3f8a3c",
+   "water": "#3d7f7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.druderath.E6.assay.000201",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c7b27a",
+   "foliage": "#b59e6a",
+   "water": "#5f8aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.druderath.E5.assay.000382",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#4d7a4a",
+   "foliage": "#3e6b3c",
+   "water": "#3f6e7e",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.druderath.E6.assay.000284",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6b8a5a",
+   "foliage": "#5d7d4f",
+   "water": "#4a6e6a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A rust-toned iron world where ash-laden skies drift over halls, groves and forges, each biome echoing the mood and light of its entry."
+}

@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#7fa6c9",
+  "fog": "#b9cfe0",
+  "cloud": "#cc8fb6e8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "frequent"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f7fb5"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.nueriel.E2.assay.003795",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6f9a4e",
+   "foliage": "#5c8a3e",
+   "water": "#4a6e5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nueriel.E6.places.000076",
+   "archetype": "taiga",
+   "temp": -0.3,
+   "humid": 0.4,
+   "grass": "#7aa35a",
+   "foliage": "#4f7a52",
+   "water": "#3f76a0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nueriel.E6.places.000067",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#c9a86a",
+   "foliage": "#b8935a",
+   "water": "#5f8fb0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nueriel.E1.assay.001404",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#d8c48a",
+   "foliage": "#c9b273",
+   "water": "#4f8fbf",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nueriel.E3.assay.002189",
+   "archetype": "snowy_plains",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#c8dcd8",
+   "foliage": "#a9c4bf",
+   "water": "#9fc4e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.nueriel.E3.assay.003753",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.2,
+   "grass": "#8fa08a",
+   "foliage": "#7a8c7a",
+   "water": "#5a80a8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nueriel.E3.assay.004079",
+   "archetype": "plains",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#9bc17a",
+   "foliage": "#85b06a",
+   "water": "#4f86c0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nueriel.E2.assay.003626",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.6,
+   "grass": "#8fd08a",
+   "foliage": "#7cc07a",
+   "water": "#5a9ad0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nueriel.E6.places.000050",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.7,
+   "grass": "#b7e0a0",
+   "foliage": "#f3b6d6",
+   "water": "#7fb8e0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A soaked, storm-lit world of luminous arcane sanctums and drowned cities, bordered by ash-scarred badlands and frozen highlands."
+}

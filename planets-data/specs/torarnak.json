@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#6b5f58",
+  "fog": "#4a4240",
+  "cloud": "#66473a3a",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#2a2220"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MA.torarnak.E6.places.000316",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.8,
+   "grass": "#7a4a6a",
+   "foliage": "#8a3e5c",
+   "water": "#3a3046",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.torarnak.E6.places.000310",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.7,
+   "grass": "#a0583a",
+   "foliage": "#8c4a2e",
+   "water": "#6e3a2a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torarnak.E6.places.000321",
+   "archetype": "stony_peaks",
+   "temp": 0.4,
+   "humid": -0.5,
+   "grass": "#3f3a3a",
+   "foliage": "#4a4444",
+   "water": "#2e2a30",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torarnak.E6.places.000312",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#6b4a40",
+   "foliage": "#5a3e36",
+   "water": "#3a2e2e",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torarnak.E1.places.000276",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -0.9,
+   "grass": "#b08a5a",
+   "foliage": "#9a7a4e",
+   "water": "#5a4a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torarnak.E6.places.000296",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.7,
+   "grass": "#4f5a3a",
+   "foliage": "#5c6b40",
+   "water": "#3a4a3c",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.torarnak.E6.places.000303",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.2,
+   "grass": "#5a5550",
+   "foliage": "#4e4a46",
+   "water": "#3a3634",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.torarnak.E6.places.000315",
+   "archetype": "taiga",
+   "temp": -0.4,
+   "humid": 0.3,
+   "grass": "#4a5a48",
+   "foliage": "#3e4e3e",
+   "water": "#34403a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.torarnak.E6.places.000305",
+   "archetype": "windswept_savanna",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#8a7040",
+   "foliage": "#7a6236",
+   "water": "#4a4034",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A sunless, ash-choked underworld of basalt highlands, fungal hollows and glowing lava seas, where fortress-cities and iron-forges cling to grim, war-scarred terrain."
+}

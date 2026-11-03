@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#8fb3c9",
+  "fog": "#c9d6dc",
+  "cloud": "#e6ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f76c4"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.crestardock.E3.places.000095",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.2,
+   "grass": "#8ebf4e",
+   "foliage": "#7aab3c",
+   "water": "#3f76c4",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crestardock.E3.places.000118",
+   "archetype": "flower_forest",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#7fb24a",
+   "foliage": "#66a03a",
+   "water": "#4a8fd1",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crestardock.E1.places.000156",
+   "archetype": "swamp",
+   "temp": 0.5,
+   "humid": 0.8,
+   "grass": "#6f9a4a",
+   "foliage": "#5c8a3e",
+   "water": "#5f7a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crestardock.E6.places.000048",
+   "archetype": "jungle",
+   "temp": 0.9,
+   "humid": 0.9,
+   "grass": "#5ba83a",
+   "foliage": "#3d8c2a",
+   "water": "#3f8f7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crestardock.E6.places.000036",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.0,
+   "grass": "#9aa88a",
+   "foliage": "#8a9c7a",
+   "water": "#4a7ab0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crestardock.E6.places.000033",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#b5a06a",
+   "foliage": "#a89060",
+   "water": "#5a8ab0",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.crestardock.E6.places.000044",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.6,
+   "grass": "#8f9490",
+   "foliage": "#7f8580",
+   "water": "#4a6a8a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Grounded lowlands of salt, ash-scarred marsh and neon-lit ruin under a hazy amber-grey sky, with the Hollow soil's humming groves and Sundering-split cliffs."
+}

@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#7fa6c4",
+  "fog": "#b8cfd9",
+  "cloud": "#e6f2ffcc",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f76a8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.tosistium.E1.places.000028",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6b8f4e",
+   "foliage": "#5c7a3a",
+   "water": "#4a6b5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tosistium.E3.places.000010",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#7fb069",
+   "foliage": "#6aa35a",
+   "water": "#4f8fa6",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tosistium.E3.places.000038",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#8fc27a",
+   "foliage": "#7ab86a",
+   "water": "#5a9bb8",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tosistium.E7.places.000023",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.1,
+   "grass": "#9bbf6a",
+   "foliage": "#8ab25c",
+   "water": "#4f86b0",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.tosistium.E4.places.000076",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.2,
+   "grass": "#7a9a5e",
+   "foliage": "#688a50",
+   "water": "#4a7d9c",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.tosistium.E1.places.000070",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#a8a06a",
+   "foliage": "#938a5c",
+   "water": "#6d8ea0",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.tosistium.E5.places.000084",
+   "archetype": "savanna",
+   "temp": 0.8,
+   "humid": -0.3,
+   "grass": "#b0b46e",
+   "foliage": "#9ca65e",
+   "water": "#5f94b0",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Tosistium's surface moves from the wet, humming root-groves and slow green lakes of the Seeding and Singing toward the dry, basalt-terraced badlands and walled market plains of the Sundering, with mild rain falling over the hollow soil."
+}

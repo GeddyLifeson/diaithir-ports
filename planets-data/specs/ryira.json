@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a1f4a",
+  "fog": "#5b4a8a",
+  "cloud": "#90a0ffd0",
+  "cloud_height": 210
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5f8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.ryira.E6.places.000193",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#4a6b5a",
+   "foliage": "#3a5a4a",
+   "water": "#2a4a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryira.E6.places.000410",
+   "archetype": "snowy_slopes",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#9ab0c0",
+   "foliage": "#8aa0b0",
+   "water": "#7fa8c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.ryira.E6.places.001323",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#c9a050",
+   "foliage": "#b89040",
+   "water": "#6a8aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryira.E6.places.000555",
+   "archetype": "windswept_hills",
+   "temp": 0.0,
+   "humid": 0.2,
+   "grass": "#7a8a7a",
+   "foliage": "#6a7a6a",
+   "water": "#5a7a9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryira.E6.places.000468",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.5,
+   "grass": "#a0c08a",
+   "foliage": "#e8a0c0",
+   "water": "#7aa0c0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryira.E6.places.000551",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c8b080",
+   "foliage": "#b8a070",
+   "water": "#6a9ab0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryira.E6.places.002616",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#6a5a8a",
+   "foliage": "#8a6aaa",
+   "water": "#4a4a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryira.E6.places.000466",
+   "archetype": "jagged_peaks",
+   "temp": -0.4,
+   "humid": -0.5,
+   "grass": "#8a8aa0",
+   "foliage": "#7a7a90",
+   "water": "#6a80a0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Ash-veiled arcane realm of violet mists, crystal spires, and luminous tidal glyphs, spread across desert, marsh, highland and drowned coast."
+}

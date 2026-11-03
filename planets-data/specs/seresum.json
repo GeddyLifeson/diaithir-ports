@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a8fa6",
+  "fog": "#9fb0c0",
+  "cloud": "#d8ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5f7a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MY.seresum.E6.places.000081",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#8fb85a",
+   "foliage": "#7aa84a",
+   "water": "#3f7fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.seresum.E6.places.000085",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#9ab868",
+   "foliage": "#8fb070",
+   "water": "#3f7fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.seresum.E6.places.000087",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c9b47a",
+   "foliage": "#b8a86a",
+   "water": "#4a8aa8",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.seresum.E6.places.000078",
+   "archetype": "swamp",
+   "temp": 0.5,
+   "humid": 0.8,
+   "grass": "#5f8a4a",
+   "foliage": "#4f7a3a",
+   "water": "#3a6a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.seresum.E6.places.000111",
+   "archetype": "snowy_slopes",
+   "temp": -0.7,
+   "humid": -0.2,
+   "grass": "#a8c0a0",
+   "foliage": "#8fb09a",
+   "water": "#7aa8c0",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.seresum.E6.places.000096",
+   "archetype": "jungle",
+   "temp": 0.8,
+   "humid": 0.9,
+   "grass": "#4a9a3a",
+   "foliage": "#3a8a2a",
+   "water": "#3a7a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.seresum.E6.places.000113",
+   "archetype": "savanna",
+   "temp": 0.9,
+   "humid": -0.3,
+   "grass": "#a09a5a",
+   "foliage": "#8a8a4a",
+   "water": "#5a8a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.seresum.E6.places.000125",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.5,
+   "grass": "#8a8a80",
+   "foliage": "#7a7a70",
+   "water": "#5a7a8a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Seresum's surface tiles from Cintenes' sunlit forests, sands, frozen reaches and reed jungles to Orentastes' silver groves, Seornelor's dunes, Viarasia's pale basalt ridges and Nilliastum's frosted sky-island, with its sunken realms left for underground generation."
+}

@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a1f4a",
+  "fog": "#4b3d7a",
+  "cloud": "#66a98fd8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3b6fa0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.ryelora.E6.places.000148",
+   "archetype": "flower_forest",
+   "temp": 0.4,
+   "humid": 0.5,
+   "grass": "#7fc27a",
+   "foliage": "#9be08f",
+   "water": "#4f9fd0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryelora.E6.places.000247",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.3,
+   "grass": "#3f6b5a",
+   "foliage": "#2f5248",
+   "water": "#34607e",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryelora.E6.places.000358",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.2,
+   "grass": "#6d7a68",
+   "foliage": "#5e6f5c",
+   "water": "#40669a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryelora.E6.places.000223",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5a7a4a",
+   "foliage": "#4e6e3e",
+   "water": "#3d5f5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryelora.E6.places.000359",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#a8875a",
+   "foliage": "#94764f",
+   "water": "#8a6fb0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryelora.E6.places.000249",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c9b27a",
+   "foliage": "#b89f6a",
+   "water": "#6f8fb0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryelora.E6.places.000189",
+   "archetype": "ice_spikes",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#9fc4d6",
+   "foliage": "#88b3c8",
+   "water": "#7fb4d6",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.ryelora.E6.places.000152",
+   "archetype": "mushroom_fields",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#6fb0c8",
+   "foliage": "#58a0b8",
+   "water": "#4fa5c2",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dreamlit, mana-charged world of glasshouses, drowned vaults and violet ash, with its sunless hollows and silver waters rendered in cool moody tones."
+}

@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#8fa3b8",
+  "fog": "#a9b6c4",
+  "cloud": "#d8ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6b7a"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "MY.sallus.E6.places.000230",
+   "archetype": "beach",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#7a9a6a",
+   "foliage": "#6d8f5e",
+   "water": "#4a7a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.sallus.E6.places.000102",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": -0.2,
+   "grass": "#8a9a7a",
+   "foliage": "#7a8c6a",
+   "water": "#6a8fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.sallus.E6.places.000228",
+   "archetype": "stony_peaks",
+   "temp": 0.5,
+   "humid": -0.5,
+   "grass": "#9a7a5a",
+   "foliage": "#8a6a4a",
+   "water": "#5a6f80",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.sallus.E6.places.000231",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#7a5a4a",
+   "foliage": "#6a4a3a",
+   "water": "#5a5a60",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.sallus.E6.places.000225",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.9,
+   "grass": "#6a7a5a",
+   "foliage": "#5a6a4a",
+   "water": "#4a6a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.sallus.E6.places.000227",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.4,
+   "grass": "#8fb070",
+   "foliage": "#e8a0b8",
+   "water": "#6a9ab0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.sallus.E6.places.000223",
+   "archetype": "dark_forest",
+   "temp": -0.1,
+   "humid": 0.5,
+   "grass": "#4a6a4a",
+   "foliage": "#3a5a3a",
+   "water": "#4a5f6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.sallus.E6.places.000221",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#b8a880",
+   "foliage": "#a89870",
+   "water": "#6a7f8a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Sallus blends misty drowned coasts, ember-lit basalt, and grey underworld groves under a storm-gray sky, with ash weather drifting over its mythic plains."
+}

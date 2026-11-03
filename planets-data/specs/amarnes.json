@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#5a4a6e",
+  "fog": "#8a7a9a",
+  "cloud": "#c8b8d8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e4a5c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.amarnes.E5.places.000096",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.0,
+   "grass": "#8a9a6a",
+   "foliage": "#7a8a5a",
+   "water": "#3a5a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.amarnes.E1.places.000034",
+   "archetype": "flower_forest",
+   "temp": 0.4,
+   "humid": 0.5,
+   "grass": "#6a9a6a",
+   "foliage": "#5a8a5a",
+   "water": "#3a6a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.amarnes.E7.places.000102",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#9aa88a",
+   "foliage": "#8a9a7a",
+   "water": "#4a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.amarnes.E4.places.000090",
+   "archetype": "eroded_badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#a08a6a",
+   "foliage": "#907a5a",
+   "water": "#5a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.amarnes.E7.places.000098",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5a7a5a",
+   "foliage": "#4a6a4a",
+   "water": "#2a4a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.amarnes.E5.places.000055",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.1,
+   "grass": "#7a8a6a",
+   "foliage": "#6a7a5a",
+   "water": "#3a5a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.amarnes.E3.places.000071",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b09a70",
+   "foliage": "#a08a60",
+   "water": "#5a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.amarnes.E7.places.000084",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#6a6a72",
+   "foliage": "#5a5a62",
+   "water": "#3a4a5a",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-soiled mythic world of walled cities, drowned archives and ash-hung skies, its biomes drawn from the entries' stone, groves, sea and sealed halls."
+}

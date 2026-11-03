@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a1f4d",
+  "fog": "#3b2f63",
+  "cloud": "#90b9a0ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2c5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.ryenaerlae.E1.places.000082",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.2,
+   "grass": "#6d8f7a",
+   "foliage": "#58806b",
+   "water": "#3f6e8c",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryenaerlae.E1.places.000011",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.1,
+   "grass": "#7a9e8c",
+   "foliage": "#668c78",
+   "water": "#4a7f9e",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryenaerlae.E2.places.000016",
+   "archetype": "savanna",
+   "temp": 0.3,
+   "humid": -0.4,
+   "grass": "#b8a878",
+   "foliage": "#a39560",
+   "water": "#5a7f96",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryenaerlae.E2.places.000018",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#c9b48a",
+   "foliage": "#b5a07a",
+   "water": "#5f8a9c",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryenaerlae.E3.places.000086",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.6,
+   "grass": "#a88a6a",
+   "foliage": "#94775c",
+   "water": "#6a8fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryenaerlae.E4.places.000052",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#8fb88f",
+   "foliage": "#7aa67e",
+   "water": "#4f8aa6",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryenaerlae.E6.places.000003",
+   "archetype": "cherry_grove",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#c7a6c9",
+   "foliage": "#e0b3d6",
+   "water": "#7aa6c4",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryenaerlae.E7.places.000058",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.8,
+   "grass": "#4f6b5a",
+   "foliage": "#3f5a4c",
+   "water": "#3a5f72",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A twilight Arcane world of silver stone, humming roots and glass islets, its soil of Bloom glowing faintly beneath an ash-streaked violet sky."
+}

@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#6a5fa8",
+  "fog": "#8c7fc4",
+  "cloud": "#c8b8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "none",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3d5fa0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.silemuarora.E1.places.000063",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.4,
+   "grass": "#7a8fb0",
+   "foliage": "#6f86a8",
+   "water": "#4f73b0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silemuarora.E1.places.000004",
+   "archetype": "stony_peaks",
+   "temp": -0.6,
+   "humid": -0.5,
+   "grass": "#8a9ac0",
+   "foliage": "#7f8fb8",
+   "water": "#5a7cc0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silemuarora.E3.places.000030",
+   "archetype": "flower_forest",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#8fb8d8",
+   "foliage": "#a0c8e8",
+   "water": "#5a9ad8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silemuarora.E3.places.000075",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#6aa0a8",
+   "foliage": "#5c9298",
+   "water": "#3f7fa8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.silemuarora.E3.places.000074",
+   "archetype": "meadow",
+   "temp": 0.0,
+   "humid": 0.1,
+   "grass": "#9ab0d0",
+   "foliage": "#8aa4c8",
+   "water": "#6a8fc8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silemuarora.E5.places.000021",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": -0.1,
+   "grass": "#a8b8c8",
+   "foliage": "#98aabc",
+   "water": "#5a80b8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silemuarora.E4.places.000080",
+   "archetype": "eroded_badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#5a5878",
+   "foliage": "#4e4c70",
+   "water": "#4a4a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silemuarora.E7.places.000040",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.5,
+   "grass": "#c8a8e0",
+   "foliage": "#d8b8f0",
+   "water": "#8a7ad8",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A silent lavender-violet realm of resonant stone, silver groves and glass-black basins, humming under a pale violet sky."
+}

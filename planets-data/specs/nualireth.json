@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a5cb8",
+  "fog": "#b9a6d9",
+  "cloud": "#d8c8ff80",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6f8f"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "AR.nualireth.E1.places.000036",
+   "archetype": "badlands",
+   "temp": 0.2,
+   "humid": -0.6,
+   "grass": "#8a7fa0",
+   "foliage": "#7d6fa6",
+   "water": "#4a5f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nualireth.E4.places.000079",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.8,
+   "grass": "#6b4f7a",
+   "foliage": "#5a3f6e",
+   "water": "#4a3f6e",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nualireth.E2.places.000072",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.2,
+   "grass": "#9a8fb8",
+   "foliage": "#8070a8",
+   "water": "#4f6a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nualireth.E3.places.000059",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#7f6fb0",
+   "foliage": "#9a7fd0",
+   "water": "#5a4a9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nualireth.E5.places.000082",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": 0.0,
+   "grass": "#a09ac0",
+   "foliage": "#8a84b0",
+   "water": "#5a6a9a",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.nualireth.E4.places.000049",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#5f7a8a",
+   "foliage": "#4f6a7a",
+   "water": "#3f5f7f",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nualireth.E7.places.000107",
+   "archetype": "dark_forest",
+   "temp": -0.2,
+   "humid": 0.5,
+   "grass": "#4f4a7a",
+   "foliage": "#3f3a6a",
+   "water": "#3a4a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nualireth.E6.places.000017",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.3,
+   "grass": "#c8d0f0",
+   "foliage": "#b0b8e0",
+   "water": "#8ab0d8",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Basalt terraces, singing stone, and fissures that breathe light give Nualireth violet skies, ash drifting from the Sundering, and a quiet, resonant mix of badlands, mushroom fields and frozen peaks."
+}

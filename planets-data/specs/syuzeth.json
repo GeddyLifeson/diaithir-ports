@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#4a3f6b",
+  "fog": "#6b5a7a",
+  "cloud": "#aaffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5a6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "ST.syuzeth.E6.places.000053",
+   "archetype": "badlands",
+   "temp": 1,
+   "humid": -1,
+   "grass": "#7a4a2e",
+   "foliage": "#8a5a3a",
+   "water": "#c8602a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.syuzeth.E6.places.000057",
+   "archetype": "desert",
+   "temp": 1,
+   "humid": -1,
+   "grass": "#c9a86a",
+   "foliage": "#b89058",
+   "water": "#d4a040",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.syuzeth.E6.places.000012",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.8,
+   "grass": "#a06a40",
+   "foliage": "#8c5c38",
+   "water": "#b87a48",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.syuzeth.E6.places.000050",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.8,
+   "grass": "#6a5a3a",
+   "foliage": "#5a4a48",
+   "water": "#7a3a3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.syuzeth.E6.places.000060",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#3a2a3a",
+   "foliage": "#4a2a4a",
+   "water": "#5a2a5e",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.syuzeth.E6.places.000031",
+   "archetype": "windswept_hills",
+   "temp": 0,
+   "humid": 0.5,
+   "grass": "#6a6a7a",
+   "foliage": "#5a5a6a",
+   "water": "#6a7a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.syuzeth.E6.places.000037",
+   "archetype": "frozen_peaks",
+   "temp": -1,
+   "humid": -0.3,
+   "grass": "#c8d8e8",
+   "foliage": "#b0c4d8",
+   "water": "#a8c8e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.syuzeth.E6.places.000003",
+   "archetype": "snowy_plains",
+   "temp": -0.8,
+   "humid": 0.2,
+   "grass": "#dfe8f0",
+   "foliage": "#cfdce8",
+   "water": "#a0c0d8",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A scorched, ash-choked realm of glassfire ridges, dune seas, and fog-drowned coral valleys, ending in frozen glacial basins at the cold edge."
+}

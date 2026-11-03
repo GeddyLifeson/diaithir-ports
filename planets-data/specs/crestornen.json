@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a8fa3",
+  "fog": "#b8c4cc",
+  "cloud": "#e6ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5f6e"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.crestornen.E1.places.000514",
+   "archetype": "forest",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#7f9a6a",
+   "foliage": "#6b8c5a",
+   "water": "#3f6e78",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crestornen.E3.places.000556",
+   "archetype": "jagged_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#8a8f7a",
+   "foliage": "#6f7a66",
+   "water": "#4a6068",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.crestornen.E1.assay.001332",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c2a878",
+   "foliage": "#b09a6a",
+   "water": "#8a9a88",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.crestornen.E6.places.000367",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#a88a64",
+   "foliage": "#97795a",
+   "water": "#6e7d80",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.crestornen.E6.places.000375",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#6e8a5c",
+   "foliage": "#587a4c",
+   "water": "#4c6a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crestornen.E4.places.000564",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.2,
+   "grass": "#8c9a7c",
+   "foliage": "#78886a",
+   "water": "#50707a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.crestornen.E6.places.000369",
+   "archetype": "taiga",
+   "temp": -0.5,
+   "humid": 0.5,
+   "grass": "#7a9080",
+   "foliage": "#5f7a6a",
+   "water": "#4a6a78",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.crestornen.E6.places.000378",
+   "archetype": "savanna",
+   "temp": 0.5,
+   "humid": -0.3,
+   "grass": "#b5a46e",
+   "foliage": "#a39560",
+   "water": "#7a8c8a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grounded, ash-laden world of dusty deserts, humming basalt ridges and drowned estuaries, its biomes drawn only from the surviving place entries."
+}

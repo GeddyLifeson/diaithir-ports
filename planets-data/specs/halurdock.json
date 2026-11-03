@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#3b2f6e",
+  "fog": "#6b5c9a",
+  "cloud": "#c8b8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a4f6e"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.halurdock.E6.places.000036",
+   "archetype": "sunflower_plains",
+   "temp": 0.6,
+   "humid": 0.2,
+   "grass": "#c9d86a",
+   "foliage": "#e0c25a",
+   "water": "#4fa3c7",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.halurdock.E6.places.000043",
+   "archetype": "badlands",
+   "temp": 0.5,
+   "humid": -0.8,
+   "grass": "#b56a3a",
+   "foliage": "#a0523a",
+   "water": "#6f8fa0",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.halurdock.E7.places.000113",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.6,
+   "grass": "#4c7a3a",
+   "foliage": "#3f6a2e",
+   "water": "#3c6e7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.halurdock.E5.places.000109",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.2,
+   "grass": "#7f9a6a",
+   "foliage": "#6a8a5a",
+   "water": "#4a7a96",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.halurdock.E6.places.000038",
+   "archetype": "stony_peaks",
+   "temp": -0.6,
+   "humid": -0.4,
+   "grass": "#6a6a72",
+   "foliage": "#5a5a66",
+   "water": "#3f5f7a",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.halurdock.E1.places.000134",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#5a7a4a",
+   "foliage": "#4e6e3e",
+   "water": "#3a5a52",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.halurdock.E3.places.000082",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.7,
+   "grass": "#7a5fa0",
+   "foliage": "#8a6ab8",
+   "water": "#5a4a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.halurdock.E6.places.000040",
+   "archetype": "jungle",
+   "temp": 0.8,
+   "humid": 0.8,
+   "grass": "#3f9a4a",
+   "foliage": "#2f8a3a",
+   "water": "#3a8aa0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A stellar realm of glowing ruins, gilded arenas, and resonant basalt basins under a violet, ash-laden sky."
+}

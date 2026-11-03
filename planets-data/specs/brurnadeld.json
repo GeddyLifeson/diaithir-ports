@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#c96a3a",
+  "fog": "#e0a878",
+  "cloud": "#e6d2b4a0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6e7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.brurnadeld.E2.assay.000622",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c7b26a",
+   "foliage": "#b59a58",
+   "water": "#4a7f8c",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.brurnadeld.E2.assay.003455",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#b9825a",
+   "foliage": "#9c6b48",
+   "water": "#4a7f8c",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.brurnadeld.E1.assay.001281",
+   "archetype": "savanna",
+   "temp": 0.5,
+   "humid": -0.2,
+   "grass": "#bfa35e",
+   "foliage": "#a89048",
+   "water": "#4f8590",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.brurnadeld.E5.assay.003378",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#a7b25c",
+   "foliage": "#94a04f",
+   "water": "#4a7f8c",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.brurnadeld.E3.assay.002954",
+   "archetype": "forest",
+   "temp": 0.0,
+   "humid": 0.5,
+   "grass": "#6e8f4a",
+   "foliage": "#5a7d3c",
+   "water": "#3f6e7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.brurnadeld.E3.assay.000981",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.3,
+   "humid": 0.6,
+   "grass": "#5f7d52",
+   "foliage": "#4b6a44",
+   "water": "#3a6270",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.brurnadeld.E3.assay.003636",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#6b8a48",
+   "foliage": "#587a3a",
+   "water": "#44705a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.brurnadeld.E3.assay.000624",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.2,
+   "grass": "#7f8f5a",
+   "foliage": "#6a7c4c",
+   "water": "#3f6e7a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "warm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A volcanic, ember-lit world of dusky skies and ash-fall, with arid badlands and deserts giving way to humid coasts and wooded highlands."
+}

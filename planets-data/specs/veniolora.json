@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#6a5acd",
+  "fog": "#9b8fd6",
+  "cloud": "#d8c8ffb0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#7fb3d5"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.veniolora.E1.places.000158",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#8fd3a8",
+   "foliage": "#7ed6b0",
+   "water": "#6fb8d9",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veniolora.E1.places.000112",
+   "archetype": "flower_forest",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#9be3b5",
+   "foliage": "#b59cff",
+   "water": "#7fc4e8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veniolora.E3.assay.000240",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.0,
+   "grass": "#a8d88a",
+   "foliage": "#9ccf7a",
+   "water": "#6fa8d0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veniolora.E4.places.000146",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#c9d8b8",
+   "foliage": "#b8c9a4",
+   "water": "#8fb8d6",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veniolora.E2.places.000092",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.1,
+   "grass": "#c7c2e8",
+   "foliage": "#b3aed9",
+   "water": "#9ab4e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.veniolora.E2.places.000165",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.8,
+   "grass": "#d9b98c",
+   "foliage": "#c9a878",
+   "water": "#a6c4d6",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.veniolora.E4.places.000101",
+   "archetype": "swamp",
+   "temp": 0.5,
+   "humid": 0.8,
+   "grass": "#7fbf9a",
+   "foliage": "#6aa88a",
+   "water": "#5fa7a0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veniolora.E3.assay.000236",
+   "archetype": "dark_forest",
+   "temp": -0.1,
+   "humid": 0.2,
+   "grass": "#5e8a7a",
+   "foliage": "#4f7a6c",
+   "water": "#5b8fa8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.veniolora.E7.places.000155",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#e0c79a",
+   "foliage": "#d4b583",
+   "water": "#94b8c9",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A humming arcane world of drifting shards and bell-stone valleys, where lilac skies, violet mists and resonant waters mark the lands shaped by the Sundering and the Singing."
+}

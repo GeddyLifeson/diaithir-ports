@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#8fb4d9",
+  "fog": "#c9d9e6",
+  "cloud": "#e6ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f76c4"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.crede.E3.assay.003583",
+   "archetype": "snowy_taiga",
+   "temp": -0.8,
+   "humid": 0.2,
+   "grass": "#7aa39a",
+   "foliage": "#5f8c7e",
+   "water": "#3a6fa8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.crede.E2.assay.003384",
+   "archetype": "snowy_plains",
+   "temp": -0.6,
+   "humid": -0.3,
+   "grass": "#a9c4c9",
+   "foliage": "#8fb0b8",
+   "water": "#4a7fb5",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.crede.E1.places.000192",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.5,
+   "grass": "#c8dce6",
+   "foliage": "#b0c8d4",
+   "water": "#5b8fc0",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.crede.E6.places.000090",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.6,
+   "grass": "#8a8f99",
+   "foliage": "#6f747e",
+   "water": "#4e7fa6",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.crede.E6.places.000045",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.2,
+   "grass": "#7f9a8c",
+   "foliage": "#66806f",
+   "water": "#4b82b0",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.crede.E3.assay.002916",
+   "archetype": "taiga",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#7c9d86",
+   "foliage": "#5d8068",
+   "water": "#4a86b8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.crede.E3.assay.003808",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.1,
+   "grass": "#9bb88a",
+   "foliage": "#7fa070",
+   "water": "#4c90c4",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.crede.E2.assay.003746",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.4,
+   "grass": "#b8b070",
+   "foliage": "#9c9458",
+   "water": "#5a9ec8",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.crede.E6.places.000013",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c9b98a",
+   "foliage": "#b0a274",
+   "water": "#4f96c0",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A frost-bound martial world whose cold northern ranges give way to sunlit river-cities and dry, ash-touched plains."
+}

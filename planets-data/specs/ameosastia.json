@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#3a2f4a",
+  "fog": "#5b4a66",
+  "cloud": "#99332a2a",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e4a4f"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "MY.ameosastia.E1.assay.002534",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#4f5a2e",
+   "foliage": "#3e4a22",
+   "water": "#3b4a2a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.ameosastia.E1.assay.004940",
+   "archetype": "mangrove_swamp",
+   "temp": 0.5,
+   "humid": 0.8,
+   "grass": "#5a6633",
+   "foliage": "#4a5a2a",
+   "water": "#38483a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.ameosastia.E3.assay.004494",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#5c6b3a",
+   "foliage": "#46572c",
+   "water": "#34443a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.ameosastia.E2.assay.003105",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.3,
+   "grass": "#3f4a2b",
+   "foliage": "#2f3a22",
+   "water": "#2e3e3a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.ameosastia.E3.assay.005366",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#8a5a3a",
+   "foliage": "#7a4e33",
+   "water": "#4a4048",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.ameosastia.E3.assay.002498",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b08a5a",
+   "foliage": "#a07a4e",
+   "water": "#5a5060",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.ameosastia.E2.assay.004976",
+   "archetype": "snowy_taiga",
+   "temp": -0.7,
+   "humid": 0.2,
+   "grass": "#7a8a7a",
+   "foliage": "#5f7266",
+   "water": "#3a4f66",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-torn realm of ash-choked marshes, scorched badlands, and frozen coasts, shaped by the mythic ruins of Roserium and the taint-soaked halls of the blight."
+}

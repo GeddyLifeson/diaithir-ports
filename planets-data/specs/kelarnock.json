@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#3b4a5c",
+  "fog": "#6f7f8f",
+  "cloud": "#66c8d0d8",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f4f5f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "OU.kelarnock.E6.places.000007",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.6,
+   "grass": "#7a8068",
+   "foliage": "#6b7060",
+   "water": "#4a6070",
+   "precip": "snow"
+  },
+  {
+   "entry": "OU.kelarnock.E6.places.002117",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.8,
+   "grass": "#6e6a5a",
+   "foliage": "#5c5a4c",
+   "water": "#3d5566",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.kelarnock.E6.places.000067",
+   "archetype": "badlands",
+   "temp": 0.2,
+   "humid": -0.9,
+   "grass": "#8a7a62",
+   "foliage": "#7d6e58",
+   "water": "#4a5a62",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.kelarnock.E6.places.001527",
+   "archetype": "savanna",
+   "temp": 0.5,
+   "humid": -0.5,
+   "grass": "#8f8a5c",
+   "foliage": "#7f7c4e",
+   "water": "#3f5a5a",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.kelarnock.E6.places.002198",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#4a5a48",
+   "foliage": "#3c4c3e",
+   "water": "#34484f",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.kelarnock.E6.places.007469",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#5e6e52",
+   "foliage": "#4f6046",
+   "water": "#3b5249",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.kelarnock.E6.places.007316",
+   "archetype": "mangrove_swamp",
+   "temp": 0.6,
+   "humid": 0.9,
+   "grass": "#5a6a4e",
+   "foliage": "#4a5c42",
+   "water": "#2f4f5f",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, dusk-lit world of basalt and glass where ash-dim skies, humming ruins and still dark water give way from frozen peaks through barren badlands to damp, sunless swamps."
+}

@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#3a2f6b",
+  "fog": "#5d4c8f",
+  "cloud": "#66c9b0ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.nuilleimwen.E1.places.000117",
+   "archetype": "stony_peaks",
+   "temp": 0.1,
+   "humid": -0.2,
+   "grass": "#7a8fa6",
+   "foliage": "#6f86a0",
+   "water": "#4f6d8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuilleimwen.E1.places.000055",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": 0.1,
+   "grass": "#a9d6e5",
+   "foliage": "#8fc7d9",
+   "water": "#5fa8c8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuilleimwen.E3.places.000104",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": 0.2,
+   "grass": "#c9a24a",
+   "foliage": "#b8862e",
+   "water": "#4a7f9c",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuilleimwen.E4.places.000087",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#6e8f6a",
+   "foliage": "#7fa27a",
+   "water": "#3d6b6b",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuilleimwen.E6.places.000007",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#d9b8e0",
+   "foliage": "#e8a6d0",
+   "water": "#8fb8e8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuilleimwen.E7.places.000113",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#e8d7a3",
+   "foliage": "#d4c08a",
+   "water": "#6fa3b8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuilleimwen.E2.places.000122",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.4,
+   "grass": "#c77d4a",
+   "foliage": "#b06a3c",
+   "water": "#7a8a9a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A resonant, ash-stirred world of humming basalt, glass-walled cloisters and silver orchards under a violet sky, with its sunken vaults and tide-gates echoing the Sundering."
+}

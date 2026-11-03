@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#8a7fb8",
+  "fog": "#a89cc8",
+  "cloud": "#c8b8f0c8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5f8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.ryeralwen.E1.places.000162",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#7a8f6a",
+   "foliage": "#6b8a5e",
+   "water": "#4a6f9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryeralwen.E1.places.000131",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.4,
+   "humid": 0.4,
+   "grass": "#5e7a5a",
+   "foliage": "#4f7050",
+   "water": "#3e6585",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryeralwen.E3.places.000140",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.1,
+   "grass": "#8fb08a",
+   "foliage": "#7fa67a",
+   "water": "#5a80a8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryeralwen.E3.places.000137",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.5,
+   "grass": "#9cb88e",
+   "foliage": "#c9a0b8",
+   "water": "#6a90b0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.ryeralwen.E2.places.000118",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.7,
+   "grass": "#8a7a5e",
+   "foliage": "#7a6a4e",
+   "water": "#4a6a88",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryeralwen.E4.places.000123",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#a89a6e",
+   "foliage": "#948660",
+   "water": "#5a7a94",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.ryeralwen.E5.places.000185",
+   "archetype": "beach",
+   "temp": 0.5,
+   "humid": 0.6,
+   "grass": "#8aa878",
+   "foliage": "#78966a",
+   "water": "#3a6a90",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A humming, silver-violet world of resonant valleys, glass-black ridges and walled harbors, with ash drifting over the dry dunes and sorrowful hollows."
+}

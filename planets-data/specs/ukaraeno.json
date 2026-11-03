@@ -1,0 +1,93 @@
+{
+ "sky": {
+  "sky": "#7a9cb8",
+  "fog": "#a9bfcc",
+  "cloud": "#e6f0f7",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "frequent"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.ukaraeno.E6.places.002916",
+   "archetype": "beach",
+   "temp": 0.4,
+   "humid": 0.6,
+   "grass": "#8fa86a",
+   "foliage": "#7f9a5c",
+   "water": "#3d6e88",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.ukaraeno.E6.places.001392",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": -0.1,
+   "grass": "#6e8a5a",
+   "foliage": "#5f7d4f",
+   "water": "#3a6a84",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.ukaraeno.E6.places.001540",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#8db06a",
+   "foliage": "#9cba72",
+   "water": "#4a7a92",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.ukaraeno.E6.places.001466",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c9a86a",
+   "foliage": "#b89558",
+   "water": "#8a9a6e",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.ukaraeno.E6.places.000619",
+   "archetype": "swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#7a9a5a",
+   "foliage": "#6a8a50",
+   "water": "#4f6e5e",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.ukaraeno.E6.places.001490",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.4,
+   "grass": "#a8c4d4",
+   "foliage": "#9ab8c8",
+   "water": "#8fb4cc",
+   "precip": "snow"
+  },
+  {
+   "entry": "KI.ukaraeno.E6.places.001415",
+   "archetype": "stony_peaks",
+   "temp": -0.5,
+   "humid": -0.2,
+   "grass": "#7d8a80",
+   "foliage": "#6f7d74",
+   "water": "#4a6a7c",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Ember-soil highlands of rain, lakes and warm mist give way to dune and volcanic-ember deserts, with frigid glass-ice peaks at the cold edge."
+}

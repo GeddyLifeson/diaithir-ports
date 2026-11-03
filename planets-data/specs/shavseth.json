@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#1a1a33",
+  "fog": "#2b2350",
+  "cloud": "#8058d8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "rare"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a1f5c"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "OU.shavseth.E6.places.000373",
+   "archetype": "frozen_peaks",
+   "temp": -1,
+   "humid": -0.6,
+   "grass": "#9fb8d6",
+   "foliage": "#a8c4e0",
+   "water": "#8fb3e8",
+   "precip": "snow"
+  },
+  {
+   "entry": "OU.shavseth.E6.places.000119",
+   "archetype": "mushroom_fields",
+   "temp": -0.2,
+   "humid": 0.8,
+   "grass": "#5a3f8c",
+   "foliage": "#6b4fa0",
+   "water": "#3b2a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.shavseth.E6.places.000159",
+   "archetype": "savanna",
+   "temp": 0.5,
+   "humid": -0.3,
+   "grass": "#b8a878",
+   "foliage": "#a89a6a",
+   "water": "#6e6aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.shavseth.E6.places.000308",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c9a86a",
+   "foliage": "#b8985a",
+   "water": "#7a6fa8",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.shavseth.E6.places.000133",
+   "archetype": "ice_spikes",
+   "temp": -0.6,
+   "humid": 0.2,
+   "grass": "#8fa6c8",
+   "foliage": "#9ab4d4",
+   "water": "#7ea0d8",
+   "precip": "snow"
+  },
+  {
+   "entry": "OU.shavseth.E6.places.000232",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.9,
+   "grass": "#4a5a6e",
+   "foliage": "#3e4f63",
+   "water": "#2c3a5c",
+   "precip": "rain"
+  },
+  {
+   "entry": "OU.shavseth.E6.places.000247",
+   "archetype": "eroded_badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#7a5a6a",
+   "foliage": "#6a4a5c",
+   "water": "#4a3a6e",
+   "precip": "none"
+  },
+  {
+   "entry": "OU.shavseth.E6.places.000196",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": 0.1,
+   "grass": "#7f8fb0",
+   "foliage": "#6f7fa0",
+   "water": "#5a6eb0",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A violet-lit outer realm of drowned glass, frozen starlight, and slow ash-grey tides, with its driest ochre deserts and mist-wrapped basins fading toward cold crystal peaks."
+}

@@ -1,0 +1,113 @@
+{
+ "sky": {
+  "sky": "#7a6fa8",
+  "fog": "#3b3358",
+  "cloud": "#66ddd0d8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e4f7a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "AR.silaeramys.E1.assay.001025",
+   "archetype": "forest",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#8a7a3a",
+   "foliage": "#c4632a",
+   "water": "#3a5a78",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.silaeramys.E1.assay.001045",
+   "archetype": "snowy_plains",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#b8c4d0",
+   "foliage": "#a8c0cc",
+   "water": "#7fa4c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.silaeramys.E1.assay.002120",
+   "archetype": "snowy_slopes",
+   "temp": -0.7,
+   "humid": -0.1,
+   "grass": "#c8d4dc",
+   "foliage": "#b0c4d0",
+   "water": "#7fa4c8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.silaeramys.E1.assay.002864",
+   "archetype": "plains",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#7a8a52",
+   "foliage": "#6f8048",
+   "water": "#3f6a8c",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.silaeramys.E3.assay.001350",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.2,
+   "grass": "#6b7a5a",
+   "foliage": "#5a6e4e",
+   "water": "#3f6a8c",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silaeramys.E1.assay.002376",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#b8864a",
+   "foliage": "#a86a3a",
+   "water": "#8a6a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silaeramys.E1.assay.001066",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#a07a50",
+   "foliage": "#8a6540",
+   "water": "#7a6a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silaeramys.E6.places.000097",
+   "archetype": "sunflower_plains",
+   "temp": 0.5,
+   "humid": 0.0,
+   "grass": "#d9b84a",
+   "foliage": "#e0c040",
+   "water": "#4a7aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.silaeramys.E6.places.000132",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#8a6fb0",
+   "foliage": "#a88ad0",
+   "water": "#5a4a8a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A violet-hued Arcane surface of frost plains, ember-tinted woodlands and crystal-bright highlands, with a hushed shoreline of pale glass isles and sunlit golden fields under a dusky sky."
+}

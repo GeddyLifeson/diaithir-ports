@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#7a8a9a",
+  "fog": "#9aa8b4",
+  "cloud": "#c8d2dcaa",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5a6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.krouktaggun.E1.places.000044",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#7a6a4a",
+   "foliage": "#6a5a3a",
+   "water": "#4a5a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.krouktaggun.E1.places.000030",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#4a6a4a",
+   "foliage": "#3a5a3a",
+   "water": "#3e5c6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.krouktaggun.E3.places.000015",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.1,
+   "grass": "#6a7a7a",
+   "foliage": "#5a6a6a",
+   "water": "#4a6a80",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.krouktaggun.E4.places.000037",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.4,
+   "humid": 0.5,
+   "grass": "#4f6b58",
+   "foliage": "#3f5b48",
+   "water": "#3c5f70",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.krouktaggun.E4.places.000078",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5a6e52",
+   "foliage": "#4a5e42",
+   "water": "#4a6a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.krouktaggun.E4.places.000055",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#7c7460",
+   "foliage": "#6c6450",
+   "water": "#56666e",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.krouktaggun.E5.places.000081",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.2,
+   "grass": "#7c9a5a",
+   "foliage": "#6c8a4a",
+   "water": "#4a7090",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.krouktaggun.E7.places.000038",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.6,
+   "grass": "#8aa870",
+   "foliage": "#c8a0b0",
+   "water": "#6a8a9a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, rain-stirred realm of scarred basalt, hymn-glowing stone and humming groves, with silver-green grasses in the valleys and drowned salt marshes along the coast."
+}

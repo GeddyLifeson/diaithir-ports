@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#3b2a4a",
+  "fog": "#5a4a6a",
+  "cloud": "#b0302a20",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#7a2a1e"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "MY.serarnum.E4.places.000105",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#8a5a3a",
+   "foliage": "#6a4a3a",
+   "water": "#7a2a1e",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.serarnum.E7.places.000134",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#9a7a5a",
+   "foliage": "#7a5a4a",
+   "water": "#5a4a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.serarnum.E2.places.000098",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.2,
+   "grass": "#a08a4a",
+   "foliage": "#8a7a3a",
+   "water": "#6a5a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.serarnum.E3.places.000102",
+   "archetype": "windswept_hills",
+   "temp": 0.1,
+   "humid": 0.0,
+   "grass": "#5a5a4a",
+   "foliage": "#4a4a3a",
+   "water": "#4a4a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.serarnum.E1.places.000076",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.6,
+   "grass": "#3a4a3a",
+   "foliage": "#2a3a2a",
+   "water": "#3a4a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.serarnum.E3.places.000086",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#4a5a3a",
+   "foliage": "#3a4a2a",
+   "water": "#4a5a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.serarnum.E4.places.000127",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#6a6a6a",
+   "foliage": "#5a5a5a",
+   "water": "#5a5a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.serarnum.E5.places.000109",
+   "archetype": "mushroom_fields",
+   "temp": -0.1,
+   "humid": 0.9,
+   "grass": "#5a4a6a",
+   "foliage": "#4a3a5a",
+   "water": "#5a4a7a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-torn Mythic world of basalt terraces, ash-choked badlands, and humming ruins where dim lava seas and ashfall mark the ever-breaking sky of the Sundering."
+}

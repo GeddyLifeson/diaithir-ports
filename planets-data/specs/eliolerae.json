@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#2a1f4a",
+  "fog": "#4b3d7a",
+  "cloud": "#90a4d4a0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5f8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.eliolerae.E6.places.000312",
+   "archetype": "windswept_hills",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#7fb8a0",
+   "foliage": "#6aa890",
+   "water": "#4fb3c8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.eliolerae.E1.places.000506",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#6b6f7a",
+   "foliage": "#5a5f6b",
+   "water": "#3d5a80",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eliolerae.E4.places.000492",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#b5654a",
+   "foliage": "#a0553d",
+   "water": "#c9785a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eliolerae.E6.places.000065",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#a8d8ea",
+   "foliage": "#9ccfe0",
+   "water": "#7fc8e8",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.eliolerae.E6.places.000296",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#c9b458",
+   "foliage": "#b8a24a",
+   "water": "#d4a64a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.eliolerae.E6.places.000240",
+   "archetype": "birch_forest",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#9bc49a",
+   "foliage": "#88b587",
+   "water": "#6fa8c4",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.eliolerae.E6.places.000286",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.6,
+   "grass": "#e8a0c0",
+   "foliage": "#f2b8d0",
+   "water": "#d890b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.eliolerae.E6.places.000308",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5a7a8a",
+   "foliage": "#6a8a9a",
+   "water": "#4a7090",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Shifting ash-lit skies and drifting glass isles over slow, luminous seas give this arcane world a dreamlike, reverent character."
+}

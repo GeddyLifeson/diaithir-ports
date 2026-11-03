@@ -1,0 +1,103 @@
+{
+ "sky": {
+  "sky": "#3b2f4a",
+  "fog": "#5a4b6b",
+  "cloud": "#8c7fa0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e4a5c"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "MY.lialintor.E2.assay.001307",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#5c6e4a",
+   "foliage": "#4a5a3c",
+   "water": "#3a4a3e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.lialintor.E2.assay.000850",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b89a6a",
+   "foliage": "#a88a5a",
+   "water": "#4a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.lialintor.E1.assay.000606",
+   "archetype": "snowy_plains",
+   "temp": -0.9,
+   "humid": 0.1,
+   "grass": "#8fa39a",
+   "foliage": "#7a9088",
+   "water": "#3e5a6e",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.lialintor.E3.assay.001791",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.7,
+   "grass": "#8a6a48",
+   "foliage": "#7a5a3c",
+   "water": "#4a5a5e",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.lialintor.E3.assay.001694",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": 0.0,
+   "grass": "#6b7a5e",
+   "foliage": "#56684c",
+   "water": "#3f5e6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.lialintor.E3.assay.002987",
+   "archetype": "frozen_peaks",
+   "temp": -0.6,
+   "humid": -0.2,
+   "grass": "#9aa8b4",
+   "foliage": "#8a98a4",
+   "water": "#4e6a80",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.lialintor.E3.assay.003024",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.4,
+   "grass": "#3e4a3a",
+   "foliage": "#2e3a2c",
+   "water": "#34464e",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.lialintor.E5.assay.001259",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#7a8a68",
+   "foliage": "#66775a",
+   "water": "#3e5a6a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A storm-torn, ash-laced mythic world whose shadowed plains, sunless swamps and frozen peaks echo the dread-haunted sites named in its entries."
+}

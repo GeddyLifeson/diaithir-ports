@@ -1,0 +1,123 @@
+{
+ "sky": {
+  "sky": "#7a8a99",
+  "fog": "#9aa6ad",
+  "cloud": "#e0c8d4d4",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5f6e"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.breroldock.E6.places.000175",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b8a060",
+   "foliage": "#a89050",
+   "water": "#4a6e7a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000176",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#a6a04e",
+   "foliage": "#9a8f48",
+   "water": "#4a6e7a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000146",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.8,
+   "grass": "#5e7a4a",
+   "foliage": "#4f6e3e",
+   "water": "#3f5e52",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000156",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5c7a48",
+   "foliage": "#4a6b3a",
+   "water": "#2e4a4c",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000113",
+   "archetype": "snowy_taiga",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#7f9a80",
+   "foliage": "#5f7d68",
+   "water": "#5a7a8c",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000159",
+   "archetype": "frozen_peaks",
+   "temp": -1.0,
+   "humid": -0.2,
+   "grass": "#8aa0a8",
+   "foliage": "#7a9098",
+   "water": "#6d8fa3",
+   "precip": "snow"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000122",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#9a6a4a",
+   "foliage": "#8a5e44",
+   "water": "#4a6e7a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000117",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.4,
+   "grass": "#4f6a52",
+   "foliage": "#3f5a46",
+   "water": "#3f5e62",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000131",
+   "archetype": "windswept_hills",
+   "temp": 0.2,
+   "humid": -0.1,
+   "grass": "#7a8a6a",
+   "foliage": "#6a7a5c",
+   "water": "#4a6e7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.breroldock.E6.places.000172",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.3,
+   "grass": "#7f9a6a",
+   "foliage": "#6f8a5a",
+   "water": "#4a6e7a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey, rain-soaked world of drowned towns, salt flats, sealed bunkers and sunken ruins, with ochre and basalt tones from the Hollow soil."
+}
