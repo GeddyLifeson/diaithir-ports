@@ -12061,10 +12061,6 @@ file = "kubejs/data/backrooms/predicate/loop_needed.json"
 hash = "e9c317b43a0c64cd2d7e97b7f4aa022d923f5ce617fba7cb9f8596e495b4b478"
 
 [[files]]
-file = "kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json"
-hash = "86ae65651753a394e41ed4d6efd6fdc4de636f0682cfc21ad49ff5d710dc9fdd"
-
-[[files]]
 file = "kubejs/data/c/tags/item/crops/rice.json"
 hash = "dce84b58381040338f8be656d564de077590194892058abed1a5b5234f94c133"
 
