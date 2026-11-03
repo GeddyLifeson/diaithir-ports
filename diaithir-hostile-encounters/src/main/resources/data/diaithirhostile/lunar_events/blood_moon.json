@@ -21,5 +21,6 @@
     "cap": 14,
     "interval_ticks": 40,
     "biome_monsters": true
-  }
+  },
+  "block_sleeping": true
 }

@@ -25,5 +25,7 @@
       "effect": "minecraft:luck",
       "amplifier": 0
     }
-  ]
+  ],
+  "beacon_radius": 1.5,
+  "enchant_cost": 0.5
 }

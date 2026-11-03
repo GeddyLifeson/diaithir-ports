@@ -18,5 +18,11 @@
       "effect": "minecraft:luck",
       "amplifier": 4
     }
-  ]
+  ],
+  "beacon_radius": 2.0,
+  "enchant_cost": 0.25,
+  "meteor": {
+    "interval_ticks": 2400,
+    "radius": 3
+  }
 }
