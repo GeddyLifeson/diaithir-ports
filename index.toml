@@ -69578,11 +69578,6 @@ hash = "b2e8b3121b5f6a61bf54895870453117c27928059c4472a517ea0ccf4bb849e8"
 metafile = true
 
 [[files]]
-file = "mods/villager-trading-plus-neoforge-26.1.2-1.3.0.pw.toml"
-hash = "4a39b58d4a42f6989e4754f8f6b6d75950f81d7bf827ecb460fa6733e6bd1ddd"
-metafile = true
-
-[[files]]
 file = "mods/visuality-3.0.0.pw.toml"
 hash = "60219788be371fe88b947eac3ac54a9145823a61b41d2efa488bf1e302955884"
 metafile = true
