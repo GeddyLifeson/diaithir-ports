@@ -1,0 +1,21 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:storage_blocks/iron",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/dorchamhiotal",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/aureal",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:inneoin_chumasc",
+ "time_s": 20,
+ "operator": true
+}

@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  "diaithircarts:station_rail",
+  "minecraft:iron_bars"
+ ],
+ "result": {
+  "id": "diaithircarts:locking_rail",
+  "count": 1
+ }
+}

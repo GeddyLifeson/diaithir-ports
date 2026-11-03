@@ -11,6 +11,11 @@ final class CartCommands {
 
     static void register(CommandDispatcher<CommandSourceStack> d) {
         d.register(Commands.literal("diaithircarts")
+                .then(Commands.literal("routingtest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+                    String err = RoutingTest.start(c.getSource());
+                    c.getSource().sendSuccess(() -> Component.literal(err == null ? "Routing test started (about 9 seconds)" : "Routing test not started: " + err), false);
+                    return err == null ? 1 : 0;
+                }))
                 .then(Commands.literal("signaltest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
                     String err = SignalTest.start(c.getSource());
                     c.getSource().sendSuccess(() -> Component.literal(err == null ? "Signal test started (about 4 seconds)" : "Signal test not started: " + err), false);

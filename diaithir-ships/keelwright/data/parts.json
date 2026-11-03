@@ -1,36 +1,364 @@
 {
-  "_doc": "Keelwright part catalog. Single source for blocks, balance, Codex pages and Age gates. Own design; no third-party ship data. Units: mass in kg-blocks, power in PU/tick, thrust in kN, hp per block.",
-  "hull_classes": {
-    "sea":   {"needs_buoyancy": true,  "min_thrust_per_mass": 0.02, "max_thrust_per_mass": 0.6},
-    "air":   {"needs_buoyancy": true,  "min_thrust_per_mass": 0.05, "max_thrust_per_mass": 1.0},
-    "space": {"needs_buoyancy": false, "min_thrust_per_mass": 0.10, "max_thrust_per_mass": 3.0}
+ "_doc": "Keelwright part catalog. Single source for blocks, balance, Codex pages and Age gates. Own design; no third-party ship data. Units: mass in kg-blocks, power in PU/tick, thrust in kN, hp per block. Parts with a station are made only at that yard (ids from plans/progression/graph.json stations); others use the crafting grid or benches.",
+ "hull_classes": {
+  "sea": {
+   "needs_buoyancy": true,
+   "min_thrust_per_mass": 0.02,
+   "max_thrust_per_mass": 0.6
   },
-  "parts": [
-    {"id": "timber_plate",  "kind": "hull",    "age": 2, "classes": ["sea","air"],         "mass": 4,  "hp": 40},
-    {"id": "bronze_plate",  "kind": "hull",    "age": 3, "classes": ["sea","air"],         "mass": 7,  "hp": 90},
-    {"id": "iron_plate",    "kind": "hull",    "age": 5, "classes": ["sea","air","space"], "mass": 10, "hp": 160},
-    {"id": "steel_plate",   "kind": "hull",    "age": 6, "classes": ["sea","air","space"], "mass": 12, "hp": 260},
-    {"id": "alloy_plate",   "kind": "hull",    "age": 7, "classes": ["space"],             "mass": 14, "hp": 420},
-    {"id": "voidglass_plate","kind": "hull",   "age": 8, "classes": ["space"],             "mass": 9,  "hp": 520},
-    {"id": "helm",          "kind": "control", "age": 2, "classes": ["sea","air","space"], "mass": 6,  "hp": 60, "crew_slots": 1},
-    {"id": "sail_mast",     "kind": "drive",   "age": 2, "classes": ["sea"],               "mass": 8,  "hp": 50, "thrust": 20, "power": 0},
-    {"id": "steam_engine",  "kind": "drive",   "age": 5, "classes": ["sea","air"],         "mass": 30, "hp": 120, "thrust": 90, "power": 0, "fuel_per_tick": 0.02},
-    {"id": "ion_drive",     "kind": "drive",   "age": 8, "classes": ["space"],             "mass": 40, "hp": 140, "thrust": 160, "power": 6},
-    {"id": "fusion_drive",  "kind": "drive",   "age": 8, "classes": ["space"],             "mass": 90, "hp": 220, "thrust": 520, "power": 14},
-    {"id": "heartcore_s",   "kind": "power",   "age": 6, "classes": ["sea","air","space"], "mass": 25, "hp": 100, "power": -20, "crew_slots": 1},
-    {"id": "heartcore_l",   "kind": "power",   "age": 8, "classes": ["space"],             "mass": 70, "hp": 200, "power": -80, "crew_slots": 2},
-    {"id": "cell",          "kind": "storage", "age": 6, "classes": ["sea","air","space"], "mass": 8,  "hp": 40, "capacity": 400},
-    {"id": "conduit",       "kind": "link",    "age": 6, "classes": ["sea","air","space"], "mass": 1,  "hp": 15},
-    {"id": "ballista",      "kind": "weapon",  "age": 3, "classes": ["sea"],               "mass": 12, "hp": 50, "power": 0, "damage": 30, "ammo": "bolt", "crew_slots": 1},
-    {"id": "cannon",        "kind": "weapon",  "age": 5, "classes": ["sea","air"],         "mass": 24, "hp": 80, "power": 0, "damage": 80, "ammo": "shot", "crew_slots": 1},
-    {"id": "pulse_beam",    "kind": "weapon",  "age": 7, "classes": ["air","space"],       "mass": 20, "hp": 70, "power": 8, "damage": 45},
-    {"id": "rail_lance",    "kind": "weapon",  "age": 8, "classes": ["space"],             "mass": 45, "hp": 90, "power": 12, "damage": 200, "ammo": "slug", "crew_slots": 1},
-    {"id": "ward_emitter",  "kind": "shield",  "age": 7, "classes": ["air","space"],       "mass": 18, "hp": 60, "power": 10, "absorb": 400},
-    {"id": "quarters",      "kind": "crew",    "age": 2, "classes": ["sea","air","space"], "mass": 6,  "hp": 40, "beds": 2},
-    {"id": "mess",          "kind": "crew",    "age": 2, "classes": ["sea","air","space"], "mass": 6,  "hp": 40, "feeds": 6},
-    {"id": "airlock",       "kind": "life",    "age": 8, "classes": ["space"],             "mass": 8,  "hp": 70},
-    {"id": "lifesupport",   "kind": "life",    "age": 8, "classes": ["space"],             "mass": 14, "hp": 60, "power": 4, "breathers": 12},
-    {"id": "balloon",       "kind": "lift",    "age": 4, "classes": ["air"],               "mass": 5,  "hp": 30, "lift": 60},
-    {"id": "floater",       "kind": "lift",    "age": 2, "classes": ["sea"],               "mass": 2,  "hp": 20, "lift": 25}
-  ]
+  "air": {
+   "needs_buoyancy": true,
+   "min_thrust_per_mass": 0.05,
+   "max_thrust_per_mass": 1.0
+  },
+  "space": {
+   "needs_buoyancy": false,
+   "min_thrust_per_mass": 0.1,
+   "max_thrust_per_mass": 3.0
+  }
+ },
+ "parts": [
+  {
+   "id": "timber_plate",
+   "kind": "hull",
+   "age": 2,
+   "classes": [
+    "sea",
+    "air"
+   ],
+   "mass": 4,
+   "hp": 40,
+   "station": "slipway"
+  },
+  {
+   "id": "bronze_plate",
+   "kind": "hull",
+   "age": 3,
+   "classes": [
+    "sea",
+    "air"
+   ],
+   "mass": 7,
+   "hp": 90,
+   "station": "slipway"
+  },
+  {
+   "id": "iron_plate",
+   "kind": "hull",
+   "age": 5,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 10,
+   "hp": 160,
+   "station": "drydock"
+  },
+  {
+   "id": "steel_plate",
+   "kind": "hull",
+   "age": 6,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 12,
+   "hp": 260,
+   "station": "drydock"
+  },
+  {
+   "id": "alloy_plate",
+   "kind": "hull",
+   "age": 8,
+   "classes": [
+    "space"
+   ],
+   "mass": 14,
+   "hp": 420,
+   "station": "spaceyard"
+  },
+  {
+   "id": "voidglass_plate",
+   "kind": "hull",
+   "age": 8,
+   "classes": [
+    "space"
+   ],
+   "mass": 9,
+   "hp": 520,
+   "station": "spaceyard"
+  },
+  {
+   "id": "helm",
+   "kind": "control",
+   "age": 2,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 6,
+   "hp": 60,
+   "crew_slots": 1
+  },
+  {
+   "id": "sail_mast",
+   "kind": "drive",
+   "age": 2,
+   "classes": [
+    "sea"
+   ],
+   "mass": 8,
+   "hp": 50,
+   "thrust": 20,
+   "power": 0,
+   "station": "slipway"
+  },
+  {
+   "id": "steam_engine",
+   "kind": "drive",
+   "age": 5,
+   "classes": [
+    "sea",
+    "air"
+   ],
+   "mass": 30,
+   "hp": 120,
+   "thrust": 90,
+   "power": 0,
+   "fuel_per_tick": 0.02,
+   "station": "drydock"
+  },
+  {
+   "id": "ion_drive",
+   "kind": "drive",
+   "age": 8,
+   "classes": [
+    "space"
+   ],
+   "mass": 40,
+   "hp": 140,
+   "thrust": 160,
+   "power": 6,
+   "station": "spaceyard"
+  },
+  {
+   "id": "fusion_drive",
+   "kind": "drive",
+   "age": 8,
+   "classes": [
+    "space"
+   ],
+   "mass": 90,
+   "hp": 220,
+   "thrust": 520,
+   "power": 14,
+   "station": "spaceyard"
+  },
+  {
+   "id": "heartcore_s",
+   "kind": "power",
+   "age": 6,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 25,
+   "hp": 100,
+   "power": -20,
+   "crew_slots": 1,
+   "station": "drydock"
+  },
+  {
+   "id": "heartcore_l",
+   "kind": "power",
+   "age": 8,
+   "classes": [
+    "space"
+   ],
+   "mass": 70,
+   "hp": 200,
+   "power": -80,
+   "crew_slots": 2,
+   "station": "spaceyard"
+  },
+  {
+   "id": "cell",
+   "kind": "storage",
+   "age": 6,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 8,
+   "hp": 40,
+   "capacity": 400
+  },
+  {
+   "id": "conduit",
+   "kind": "link",
+   "age": 6,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 1,
+   "hp": 15
+  },
+  {
+   "id": "ballista",
+   "kind": "weapon",
+   "age": 3,
+   "classes": [
+    "sea"
+   ],
+   "mass": 12,
+   "hp": 50,
+   "power": 0,
+   "damage": 30,
+   "ammo": "bolt",
+   "crew_slots": 1
+  },
+  {
+   "id": "cannon",
+   "kind": "weapon",
+   "age": 5,
+   "classes": [
+    "sea",
+    "air"
+   ],
+   "mass": 24,
+   "hp": 80,
+   "power": 0,
+   "damage": 80,
+   "ammo": "shot",
+   "crew_slots": 1,
+   "station": "drydock"
+  },
+  {
+   "id": "pulse_beam",
+   "kind": "weapon",
+   "age": 7,
+   "classes": [
+    "air",
+    "space"
+   ],
+   "mass": 20,
+   "hp": 70,
+   "power": 8,
+   "damage": 45,
+   "station": "drydock"
+  },
+  {
+   "id": "rail_lance",
+   "kind": "weapon",
+   "age": 8,
+   "classes": [
+    "space"
+   ],
+   "mass": 45,
+   "hp": 90,
+   "power": 12,
+   "damage": 200,
+   "ammo": "slug",
+   "crew_slots": 1,
+   "station": "spaceyard"
+  },
+  {
+   "id": "ward_emitter",
+   "kind": "shield",
+   "age": 7,
+   "classes": [
+    "air",
+    "space"
+   ],
+   "mass": 18,
+   "hp": 60,
+   "power": 10,
+   "absorb": 400,
+   "station": "spaceyard"
+  },
+  {
+   "id": "quarters",
+   "kind": "crew",
+   "age": 2,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 6,
+   "hp": 40,
+   "beds": 2
+  },
+  {
+   "id": "mess",
+   "kind": "crew",
+   "age": 2,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 6,
+   "hp": 40,
+   "feeds": 6
+  },
+  {
+   "id": "airlock",
+   "kind": "life",
+   "age": 8,
+   "classes": [
+    "space"
+   ],
+   "mass": 8,
+   "hp": 70,
+   "station": "spaceyard"
+  },
+  {
+   "id": "lifesupport",
+   "kind": "life",
+   "age": 8,
+   "classes": [
+    "space"
+   ],
+   "mass": 14,
+   "hp": 60,
+   "power": 4,
+   "breathers": 12,
+   "station": "spaceyard"
+  },
+  {
+   "id": "balloon",
+   "kind": "lift",
+   "age": 4,
+   "classes": [
+    "air"
+   ],
+   "mass": 5,
+   "hp": 30,
+   "lift": 60
+  },
+  {
+   "id": "floater",
+   "kind": "lift",
+   "age": 2,
+   "classes": [
+    "sea"
+   ],
+   "mass": 2,
+   "hp": 20,
+   "lift": 25
+  }
+ ],
+ "_stations": {
+  "slipway": "Age II, wooden and bronze hulls, masts",
+  "drydock": "Age V, iron/steel hulls, engines, reactors, big guns",
+  "spaceyard": "Age VIII, space hulls, drives, wards; ground or orbital"
+ }
 }

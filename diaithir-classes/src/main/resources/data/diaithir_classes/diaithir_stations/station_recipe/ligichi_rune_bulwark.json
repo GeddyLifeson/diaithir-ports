@@ -1,0 +1,16 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:gems/amber",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/steel",
+   "count": 1
+  }
+ ],
+ "result": "diaithir_classes:ligichi_rune_bulwark",
+ "time_s": 5
+}
