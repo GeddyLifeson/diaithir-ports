@@ -26,6 +26,7 @@ public final class DiaithirClaims {
 
     public DiaithirClaims(IEventBus bus) {
         ATTACH.register(bus);
+        net.diaithir.claims.log.GriefLog.init();
         bus.addListener((net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent e) ->
             e.registrar("1").optional()
                 .playToClient(MapPayload.TYPE, MapPayload.CODEC, (payload, ctx) -> {
