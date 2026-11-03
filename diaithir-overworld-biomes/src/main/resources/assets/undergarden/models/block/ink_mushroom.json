@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cross",
  "textures": {
-  "cross": "minecraft:block/short_grass"
+  "cross": "undergarden:block/ink_mushroom"
  }
 }

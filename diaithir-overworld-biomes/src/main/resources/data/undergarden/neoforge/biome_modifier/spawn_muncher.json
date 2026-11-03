@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#undergarden:is_undergarden",
+ "spawners": {
+  "type": "undergarden:muncher",
+  "weight": 10,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

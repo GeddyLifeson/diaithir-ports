@@ -1,0 +1,21 @@
+{
+ "id": "diaithir_overworld_biomes:the_backwoods_hunt",
+ "codex_link": "diaithir_overworld_biomes:the_backwoods_bestiary",
+ "age": 4,
+ "age_gate": "diaithir:age/4",
+ "title": "Hunt: The Backwoods",
+ "description": "Defeat one creature of The Backwoods.",
+ "tasks": [
+  {
+   "type": "kill",
+   "entity_tag": "the_backwoods:the_backwoods_mobs",
+   "count": 1
+  }
+ ],
+ "rewards": [
+  {
+   "type": "energy",
+   "amount_j": 100
+  }
+ ]
+}

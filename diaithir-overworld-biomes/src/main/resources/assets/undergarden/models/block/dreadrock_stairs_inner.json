@@ -1,8 +1,8 @@
 {
  "parent": "minecraft:block/inner_stairs",
  "textures": {
-  "bottom": "minecraft:block/stone",
-  "side": "minecraft:block/stone",
-  "top": "minecraft:block/stone"
+  "bottom": "undergarden:block/dreadrock_stairs",
+  "side": "undergarden:block/dreadrock_stairs",
+  "top": "undergarden:block/dreadrock_stairs"
  }
 }

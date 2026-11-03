@@ -1,8 +1,8 @@
 {
  "parent": "minecraft:block/inner_stairs",
  "textures": {
-  "bottom": "minecraft:block/stone",
-  "side": "minecraft:block/stone",
-  "top": "minecraft:block/stone"
+  "bottom": "the_bumblezone:block/ancient_wax_bricks_stairs",
+  "side": "the_bumblezone:block/ancient_wax_bricks_stairs",
+  "top": "the_bumblezone:block/ancient_wax_bricks_stairs"
  }
 }

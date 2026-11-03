@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/cube_column",
  "textures": {
-  "end": "minecraft:block/stone",
-  "side": "minecraft:block/stone"
+  "end": "the_backwoods:block/scandere_lignum_log",
+  "side": "the_backwoods:block/scandere_lignum_log"
  }
 }

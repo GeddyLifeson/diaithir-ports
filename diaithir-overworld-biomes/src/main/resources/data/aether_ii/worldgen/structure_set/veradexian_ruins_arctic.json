@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "aether_ii:veradexian_ruins_arctic",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 28,
+  "separation": 8,
+  "salt": 19842
+ }
+}

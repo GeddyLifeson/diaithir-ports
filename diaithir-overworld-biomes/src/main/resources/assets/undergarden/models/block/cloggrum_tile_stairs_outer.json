@@ -1,8 +1,8 @@
 {
  "parent": "minecraft:block/outer_stairs",
  "textures": {
-  "bottom": "minecraft:block/stone",
-  "side": "minecraft:block/stone",
-  "top": "minecraft:block/stone"
+  "bottom": "undergarden:block/cloggrum_tile_stairs",
+  "side": "undergarden:block/cloggrum_tile_stairs",
+  "top": "undergarden:block/cloggrum_tile_stairs"
  }
 }

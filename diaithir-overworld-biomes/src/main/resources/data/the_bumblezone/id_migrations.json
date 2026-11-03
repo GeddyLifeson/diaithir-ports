@@ -16,11 +16,6 @@
  },
  {
   "registry": "minecraft:item",
-  "old": "the_bumblezone:stinger_spear",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
   "old": "the_bumblezone:sugar_water_bucket",
   "new": "minecraft:bucket"
  }

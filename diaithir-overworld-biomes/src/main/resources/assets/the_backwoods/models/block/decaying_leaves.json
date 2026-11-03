@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/oak_leaves"
+  "all": "the_backwoods:block/decaying_leaves"
  }
 }
