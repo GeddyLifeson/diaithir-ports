@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:dark_oak_planks",
+  "C": "minecraft:chest"
+ },
+ "pattern": [
+  "PPP",
+  "PCP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:dark_oak_sideboard",
+  "count": 1
+ }
+}

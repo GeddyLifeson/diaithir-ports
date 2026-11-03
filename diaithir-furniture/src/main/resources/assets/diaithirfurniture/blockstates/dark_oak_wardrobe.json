@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirfurniture:block/dark_oak_wardrobe"
+  },
+  "facing=east": {
+   "model": "diaithirfurniture:block/dark_oak_wardrobe",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirfurniture:block/dark_oak_wardrobe",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirfurniture:block/dark_oak_wardrobe",
+   "y": 270
+  }
+ }
+}
