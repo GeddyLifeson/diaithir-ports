@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0_rinauria",
+   "weight": 57
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1_rinauria",
+   "weight": 268
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2_rinauria",
+   "weight": 29
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 204388629
+ }
+}

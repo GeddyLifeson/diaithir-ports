@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_0_xaevseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_1_xaevseth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_2_xaevseth",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_3_xaevseth",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 128518473
+ }
+}

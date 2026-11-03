@@ -1,0 +1,20 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 3
+  },
+  {
+   "tag": "c:rods/wooden",
+   "count": 3
+  },
+  {
+   "tag": "c:leathers",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:gai_sleagh_marcach",
+ "time_s": 20
+}

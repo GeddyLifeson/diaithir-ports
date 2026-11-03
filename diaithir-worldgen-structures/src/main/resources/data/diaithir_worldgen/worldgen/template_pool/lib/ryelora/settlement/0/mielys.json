@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ryelora/settlement/0/mielys",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ryelora/ar_ryelora_e6_places_000145",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

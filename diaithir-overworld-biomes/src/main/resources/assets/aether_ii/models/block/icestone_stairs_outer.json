@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/outer_stairs",
+ "textures": {
+  "bottom": "aether_ii:block/icestone_stairs",
+  "side": "aether_ii:block/icestone_stairs",
+  "top": "aether_ii:block/icestone_stairs"
+ }
+}

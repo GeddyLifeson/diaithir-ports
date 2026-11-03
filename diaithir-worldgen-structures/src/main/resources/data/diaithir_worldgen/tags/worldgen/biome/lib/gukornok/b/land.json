@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:gukornok_drorkun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gukornok_droukoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gukornok_grornaithak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gukornok_karornak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gukornok_thornun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gukornok_torokoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gukornok_vorurkok",
+   "required": false
+  }
+ ]
+}

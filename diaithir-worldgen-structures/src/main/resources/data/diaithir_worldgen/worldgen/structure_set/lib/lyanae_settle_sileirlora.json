@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_sileirlora",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_sileirlora",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_sileirlora",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 178734649
+ }
+}

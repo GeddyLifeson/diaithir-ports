@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:kaluvamoma_iloramira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaluvamoma_ilovaeno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaluvamoma_merasankaum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaluvamoma_osukaruta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaluvamoma_osusaltaeno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaluvamoma_surataneno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kaluvamoma_ukasavamoma",
+   "required": false
+  }
+ ]
+}

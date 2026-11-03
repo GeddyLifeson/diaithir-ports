@@ -1,0 +1,17 @@
+{
+ "replace": false,
+ "values": [
+  "aether_ii:arkenium_pickaxe",
+  "aether_ii:gravitite_pickaxe",
+  "aether_ii:holystone_pickaxe",
+  "aether_ii:skyroot_pickaxe",
+  "aether_ii:zanite_pickaxe",
+  "the_backwoods:faded_pickaxe",
+  "the_backwoods:recovered_faded_pickaxe",
+  "the_backwoods:rotten_pickaxe",
+  "undergarden:cloggrum_pickaxe",
+  "undergarden:forgotten_pickaxe",
+  "undergarden:froststeel_pickaxe",
+  "undergarden:utherium_pickaxe"
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "general": {
+  "type": "engine_car",
+  "name": "Diesel Engine 600 kW (Stock)",
+  "materialLists": [
+   [
+    "minecraft:iron_block:0:10"
+   ],
+   [
+    "minecraft:piston:0:8"
+   ]
+  ]
+ },
+ "engine": {
+  "type": "NORMAL",
+  "isAutomatic": false,
+  "fuelType": "diesel",
+  "fuelConsumption": 1.8,
+  "maxRPM": 2400,
+  "maxSafeRPM": 2208,
+  "idleRPM": 600,
+  "startRPM": 450,
+  "stallRPM": 350,
+  "revlimitRPM": 2640,
+  "starterPower": 6,
+  "gearRatios": [
+   -9.0,
+   0.0,
+   12.0,
+   8.0,
+   5.5,
+   4.0,
+   3.0,
+   2.2,
+   1.6,
+   1.2
+  ],
+  "upShiftRPM": [
+   2040,
+   2040,
+   2040,
+   2040,
+   2040,
+   2040,
+   2040
+  ],
+  "downShiftRPM": [
+   1000,
+   1000,
+   1000,
+   1000,
+   1000,
+   1000,
+   1000
+  ],
+  "shiftSpeed": 14,
+  "clutchTime": 14,
+  "revResistance": 8,
+  "heatingCoefficient": 0.4,
+  "coolingCoefficient": 0.6,
+  "engineWearFactor": 0.3
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Diesel Engine 600 kW (Stock)",
+   "modelName": "engine_e700",
+   "textureName": "engine",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

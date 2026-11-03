@@ -1,0 +1,50 @@
+{
+ "id": "cv_jcb_3cx",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 16,
+  "h": 6
+ },
+ "result": "mts:diaithirtrucks.cv_jcb_3cx",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 600,
+   "ghost": "diaithirtrucks:ghost/cv_jcb_3cx_chassis"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "wheel",
+     "count": 4
+    }
+   ],
+   "base_ticks": 400,
+   "ghost": "diaithirtrucks:ghost/cv_jcb_3cx_gear"
+  },
+  {
+   "id": "crew",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 1
+    }
+   ],
+   "base_ticks": 100,
+   "ghost": "diaithirtrucks:ghost/cv_jcb_3cx_cab"
+  }
+ ],
+ "crane_speedup": 1.0
+}

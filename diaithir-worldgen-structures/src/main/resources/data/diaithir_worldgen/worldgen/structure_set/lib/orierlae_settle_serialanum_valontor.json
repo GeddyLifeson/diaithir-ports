@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_0_serialanum_valontor",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_1_serialanum_valontor",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_2_serialanum_valontor",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 248740582
+ }
+}

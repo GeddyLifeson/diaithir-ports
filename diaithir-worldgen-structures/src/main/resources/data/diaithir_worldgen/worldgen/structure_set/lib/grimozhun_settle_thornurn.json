@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_0_thornurn",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_1_thornurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_2_thornurn",
+   "weight": 9
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 213679318
+ }
+}

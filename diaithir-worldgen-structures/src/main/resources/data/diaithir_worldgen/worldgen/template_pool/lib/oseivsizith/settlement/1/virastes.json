@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/oseivsizith/settlement/1/virastes",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/oseivsizith/st_oseivsizith_e4_assay_001869",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

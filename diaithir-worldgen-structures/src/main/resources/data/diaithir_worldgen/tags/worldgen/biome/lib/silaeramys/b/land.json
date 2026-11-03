@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:silaeramys_coraunium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silaeramys_mantirnor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silaeramys_menia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silaeramys_miantia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silaeramys_mirnum_lialirnia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silaeramys_ryaniel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silaeramys_siluarimeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silaeramys_valaunus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silaeramys_vonor",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/silena/bridge/3/river",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silena/ar_silena_e6_places_003095",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

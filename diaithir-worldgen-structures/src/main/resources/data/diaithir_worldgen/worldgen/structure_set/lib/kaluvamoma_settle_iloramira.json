@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_0_iloramira",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_1_iloramira",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_2_iloramira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_3_iloramira",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 228808483
+ }
+}

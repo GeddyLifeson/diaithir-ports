@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/settlement_0_sernia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/settlement_2_sernia",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 11790532
+ }
+}

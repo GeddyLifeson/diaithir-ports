@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "the_bumblezone:block/empty_honeycomb_brood_block"
+ }
+}

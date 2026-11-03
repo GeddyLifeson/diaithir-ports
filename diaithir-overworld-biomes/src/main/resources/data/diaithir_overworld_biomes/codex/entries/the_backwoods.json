@@ -1,0 +1,20 @@
+{
+ "id": "diaithir_overworld_biomes:the_backwoods",
+ "category": "dimension",
+ "title": "codex.diaithir_overworld_biomes.the_backwoods.title",
+ "body": "codex.diaithir_overworld_biomes.the_backwoods.body",
+ "age": 4,
+ "icon": "the_backwoods:rotten_oak_log",
+ "unlock": {
+  "type": "enter_dimension",
+  "dimension": "the_backwoods:backwoods"
+ },
+ "covers": {
+  "biomes": [
+   "#the_backwoods:is_the_backwoods"
+  ],
+  "blocks": 61,
+  "items": 65
+ },
+ "quest": "diaithir_overworld_biomes:the_backwoods_descent"
+}

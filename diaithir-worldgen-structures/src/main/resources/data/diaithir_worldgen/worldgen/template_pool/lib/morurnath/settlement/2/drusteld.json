@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/morurnath/settlement/2/drusteld",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/morurnath/gr_morurnath_e6_assay_004300",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -47,6 +47,7 @@
   {
    "id": "spartanweaponry:steel_scythe",
    "required": false
-  }
+  },
+  "diaithircombat:lib_battleaxe"
  ]
 }

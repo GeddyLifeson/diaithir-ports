@@ -1,0 +1,114 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/forge_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/forge_2_land",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/forge_3_land",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/fortress_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/fortress_2_land",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/fortress_3_land",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/garden_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/hall_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/hall_2_land",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/hall_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/landmark_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/landmark_2_land",
+   "weight": 26
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/landmark_3_land",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/ruin_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/ruin_3_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/temple_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/temple_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/temple_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/temple_3_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/tower_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/tower_3_land",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 167993573
+ }
+}

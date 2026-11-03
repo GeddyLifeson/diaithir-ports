@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_0_cornor",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_1_cornor",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_2_cornor",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 228022983
+ }
+}

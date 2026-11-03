@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_0_any",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_1_any",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_2_any",
+   "weight": 99
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_3_any",
+   "weight": 24
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 107727615
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirfirearms:gunmetal_nugget",
+  "minecraft:tnt"
+ ],
+ "result": {
+  "id": "diaithirfirearms:grenade_40mm",
+  "count": 2
+ }
+}

@@ -1,0 +1,2160 @@
+{
+ "age": "IV",
+ "vendors": [
+  {
+   "id": "miller",
+   "name": "Moilder",
+   "role": "Miller",
+   "spawn": [
+    "every settlement",
+    "mill"
+   ],
+   "needs": "water_mill",
+   "items": {
+    "aether_ii:cockatrice_feather": {
+     "price": 1,
+     "stock": 32
+    },
+    "biomesoplenty:fir_chest_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "biomesoplenty:origin_oak_chest_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "biomesoplenty:willow_chest_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:birch_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:mangrove_chest_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "productivetrees:butternut_planks": {
+     "price": 1,
+     "stock": 32
+    },
+    "framedblocks:framed_flat_elev_inner_double_slope_slab_corner": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:wheat": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:breeze_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:dye_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:gaia_spirit_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:knightmetal_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:neutronium_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:saltpeter_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:spirited_crystal_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:wood_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "productivetrees:butternut_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "strainers:seed_bag": {
+     "price": 2,
+     "stock": 16
+    },
+    "aether_ii:moa_egg_curved_green": {
+     "price": 3,
+     "stock": 11
+    },
+    "aether_ii:moa_egg_eyes_blue": {
+     "price": 3,
+     "stock": 11
+    },
+    "aether_ii:moa_egg_flat_light_blue": {
+     "price": 3,
+     "stock": 11
+    },
+    "aether_ii:moa_egg_pointed_blooming_red": {
+     "price": 3,
+     "stock": 11
+    },
+    "aether_ii:moa_egg_pointed_orange": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmersdelight:bacon_and_eggs": {
+     "price": 3,
+     "stock": 11
+    },
+    "forestry:baobab_chest_boat": {
+     "price": 3,
+     "stock": 11
+    },
+    "forestry:coconut_chest_boat": {
+     "price": 3,
+     "stock": 11
+    },
+    "forestry:fir_chest_boat": {
+     "price": 3,
+     "stock": 11
+    },
+    "forestry:kapok_chest_boat": {
+     "price": 3,
+     "stock": 11
+    },
+    "forestry:mahoe_boat": {
+     "price": 3,
+     "stock": 11
+    },
+    "forestry:palm_boat": {
+     "price": 3,
+     "stock": 11
+    },
+    "forestry:plum_chest_boat": {
+     "price": 3,
+     "stock": 11
+    },
+    "forestry:wenge_boat": {
+     "price": 3,
+     "stock": 11
+    },
+    "framedblocks:framed_double_corner": {
+     "price": 3,
+     "stock": 11
+    },
+    "framedblocks:framed_ext_double_corner_slope_panel": {
+     "price": 3,
+     "stock": 11
+    },
+    "framedblocks:framed_flat_inv_double_slope_panel_corner": {
+     "price": 3,
+     "stock": 11
+    },
+    "framedblocks:framed_inv_double_corner_slope_panel_w": {
+     "price": 3,
+     "stock": 11
+    },
+    "framedblocks:framed_masonry_corner": {
+     "price": 3,
+     "stock": 11
+    },
+    "framedblocks:framed_small_prism_corner_slope_panel_w": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:black_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:lime_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "mysticalagriculture:gold_seeds": {
+     "price": 3,
+     "stock": 11
+    },
+    "productivetrees:butternut_crate": {
+     "price": 3,
+     "stock": 11
+    },
+    "productivetrees:roasted_butternut_crate": {
+     "price": 3,
+     "stock": 11
+    },
+    "aether_ii:moa_egg_keratin_bley": {
+     "price": 4,
+     "stock": 8
+    },
+    "mcwbridges:cobblestone_bridge_pier": {
+     "price": 4,
+     "stock": 8
+    },
+    "minecraft:wheat_seeds": {
+     "price": 4,
+     "stock": 8
+    },
+    "mysticalagriculture:rabbit_seeds": {
+     "price": 4,
+     "stock": 8
+    },
+    "silentgear:flax_seeds": {
+     "price": 4,
+     "stock": 8
+    },
+    "productivetrees:breadfruit_door": {
+     "price": 5,
+     "stock": 6
+    },
+    "productivetrees:sugar_apple_sign": {
+     "price": 5,
+     "stock": 6
+    },
+    "mysticalagriculture:compressed_iron_seeds": {
+     "price": 6,
+     "stock": 5
+    },
+    "farmersdelight:sweet_berry_cookie": {
+     "price": 7,
+     "stock": 5
+    },
+    "mcwbridges:birch_bridge_pier": {
+     "price": 7,
+     "stock": 5
+    },
+    "mcwbridges:nether_bricks_bridge_pier": {
+     "price": 7,
+     "stock": 5
+    },
+    "minecolonies:barbarianegg": {
+     "price": 7,
+     "stock": 5
+    },
+    "minecolonies:norsemenchiefegg": {
+     "price": 7,
+     "stock": 5
+    },
+    "occultism:otherplanks_boat": {
+     "price": 7,
+     "stock": 5
+    },
+    "productivetrees:breadfruit_fruit": {
+     "price": 7,
+     "stock": 5
+    },
+    "productivetrees:sugar_apple_stripped_log": {
+     "price": 7,
+     "stock": 5
+    },
+    "tconstruct:ender_slime_grass_seeds": {
+     "price": 8,
+     "stock": 4
+    },
+    "mysticalagriculture:awakened_supremium_leggings": {
+     "price": 10,
+     "stock": 4
+    },
+    "mysticalagriculture:end_steel_seeds": {
+     "price": 13,
+     "stock": 4
+    },
+    "farmersdelight:milk_bottle": {
+     "price": 16,
+     "stock": 4
+    },
+    "tconstruct:earth_cake": {
+     "price": 16,
+     "stock": 4
+    },
+    "silentgear:coating_blueprint": {
+     "price": 20,
+     "stock": 4
+    },
+    "silentgear:leggings": {
+     "price": 26,
+     "stock": 4
+    },
+    "diaithir_drinks:eggnog": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:grain_neutral_spirit": {
+     "price": 36,
+     "stock": 4
+    },
+    "mysticalagriculture:netherite_seeds": {
+     "price": 40,
+     "stock": 4
+    },
+    "diaithir_drinks:high_rye_bourbon": {
+     "price": 48,
+     "stock": 4
+    },
+    "mysticalagriculture:prudentium_leggings": {
+     "price": 64,
+     "stock": 4
+    },
+    "productivebees:spawn_egg_creeper_bee": {
+     "price": 64,
+     "stock": 4
+    },
+    "productivebees:spawn_egg_nomad_bee": {
+     "price": 64,
+     "stock": 4
+    },
+    "occultism:spawn_egg/afrit_unbound": {
+     "price": 159,
+     "stock": 4
+    },
+    "occultism:spawn_egg/familiar_devil": {
+     "price": 159,
+     "stock": 4
+    },
+    "occultism:spawn_egg/marid": {
+     "price": 159,
+     "stock": 4
+    },
+    "occultism:spawn_egg/possessed_skeleton": {
+     "price": 159,
+     "stock": 4
+    },
+    "occultism:spawn_egg/wild_hunt_wither_skeleton": {
+     "price": 159,
+     "stock": 4
+    },
+    "occultism:spawn_egg/familiar_dragon": {
+     "price": 631,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "scribe",
+   "name": "Skrìubaichi",
+   "role": "Scribe",
+   "spawn": [
+    "every settlement",
+    "library"
+   ],
+   "needs": "writing",
+   "items": {
+    "bibliocraft:acacia_fancy_sign": {
+     "price": 12,
+     "stock": 4
+    },
+    "bibliocraft:acacia_shelf": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:black_acacia_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:black_cherry_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:black_mangrove_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:black_spruce_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:blue_bamboo_seat": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:blue_crimson_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:blue_mangrove_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:blue_warped_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:brown_birch_flat_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:brown_dark_oak_seat": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:brown_oak_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:brown_warped_tall_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:cyan_acacia_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:cyan_crimson_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:cyan_mangrove_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:cyan_spruce_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:gray_acacia_seat": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:gray_cherry_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:gray_jungle_tall_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:gray_spruce_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:green_bamboo_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:green_crimson_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:green_mangrove_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:green_spruce_tall_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:light_blue_acacia_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:light_blue_crimson_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:light_blue_mangrove_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:light_blue_spruce_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:light_gray_bamboo_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:light_gray_crimson_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:light_gray_oak_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:light_gray_warped_flat_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:lime_birch_seat": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:lime_dark_oak_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:lime_oak_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:lock_and_key": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:magenta_cherry_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:magenta_jungle_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:magenta_pale_oak_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:mangrove_table": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:orange_bamboo_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:orange_dark_oak_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:orange_oak_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:orange_warped_seat": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:pink_bamboo_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:pink_crimson_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:pink_oak_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:pink_warped_flat_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:purple_birch_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:purple_dark_oak_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:purple_oak_tall_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:purple_warped_wall_display_case": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:red_cherry_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:red_jungle_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:red_pale_oak_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:spruce_shelf": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:white_bamboo_fancy_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:white_crimson_raised_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:white_mangrove_seat": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:white_spruce_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:wood/oak/fancy_clock_inventory": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:yellow_birch_flat_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:yellow_dark_oak_seat": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:yellow_oak_small_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:yellow_warped_tall_seat_back": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:blue_waxed_exposed_fancy_copper_lantern": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:cyan_fancy_copper_lamp": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:gray_oxidized_fancy_copper_lamp": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:green_weathered_fancy_copper_lantern": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:light_gray_waxed_exposed_fancy_copper_lantern": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:magenta_fancy_copper_lamp": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:orange_waxed_oxidized_fancy_copper_lantern": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:purple_fancy_copper_lantern": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:red_waxed_weathered_fancy_copper_lamp": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:white_waxed_weathered_fancy_copper_lamp": {
+     "price": 20,
+     "stock": 4
+    },
+    "bibliocraft:brown_fancy_gold_lamp": {
+     "price": 26,
+     "stock": 4
+    },
+    "bibliocraft:pale_oak_fancy_armor_stand": {
+     "price": 26,
+     "stock": 4
+    },
+    "bibliocraft:cookie_jar": {
+     "price": 40,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "joiner",
+   "name": "Dèanaduirfiuda",
+   "role": "Joiner",
+   "spawn": [
+    "every settlement",
+    "workshop"
+   ],
+   "items": {
+    "mcwwindows:andesite_four_window": {
+     "price": 8,
+     "stock": 4
+    },
+    "mcwwindows:granite_window": {
+     "price": 8,
+     "stock": 4
+    },
+    "mcwdoors:acacia_western_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:birch_barn_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:cherry_cottage_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:crimson_japanese2_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:dark_oak_mystic_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:jungle_modern_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:mangrove_nether_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:oak_nether_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:pale_oak_stable_head_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:spruce_western_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwdoors:warped_whispering_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:bamboo_barn_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:birch_cottage_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:cherry_whispering_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:dark_oak_barrel_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:jungle_four_panel_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:metal_full_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:pale_oak_barn_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:spruce_cottage_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "mcwtrpdoors:warped_swamp_trapdoor": {
+     "price": 12,
+     "stock": 4
+    },
+    "utilitarian:blue_soliciting_carpet": {
+     "price": 15,
+     "stock": 4
+    },
+    "utilitarian:pink_trapped_soliciting_carpet": {
+     "price": 15,
+     "stock": 4
+    },
+    "mcwdoors:print_whispering": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:acacia_kitchen_sink": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:birch_double_drawer_counter": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:black_chaise": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:cherry_drawer_counter": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:crimson_coffee_table": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:crimson_stool_chair": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:dark_oak_drawer_counter": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:jungle_bookshelf": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:jungle_lower_bookshelf_drawer": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:mangrove_coffee_table": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:mangrove_modern_wardrobe": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:oak_end_table": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:pale_oak_chair": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:pale_oak_modern_wardrobe": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:spruce_double_drawer": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:spruce_wardrobe": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_acacia_large_drawer": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_birch_double_kitchen_cabinet": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_cherry_bookshelf_cupboard": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_cherry_lower_triple_drawer": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_crimson_double_wardrobe": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_dark_oak_chair": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_dark_oak_modern_desk": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_jungle_drawer_counter": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_mangrove_coffee_table": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_mangrove_stool_chair": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_oak_glass_kitchen_cabinet": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_pale_oak_covered_desk": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_pale_oak_striped_chair": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_spruce_kitchen_cabinet": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_warped_desk": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:stripped_warped_triple_drawer": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwfurnitures:warped_kitchen_sink": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwlights:black_ceiling_light": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwlights:dark_oak_ceiling_fan_light": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwlights:lime_ceiling_light": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwlights:red_ceiling_light": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwlights:striped_garden_light": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwtrpdoors:print_four_panel": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:birch_four_window": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:blue_curtain": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:crimson_louvered_shutter": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:dark_oak_plank_parapet": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:jungle_louvered_shutter": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:mangrove_log_parapet": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:oak_louvered_shutter": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:pale_oak_plank_window": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:red_sandstone_window2": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:stripped_acacia_log_window": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:stripped_jungle_pane_window": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwwindows:warped_blinds": {
+     "price": 16,
+     "stock": 4
+    },
+    "utilitarian:drit": {
+     "price": 16,
+     "stock": 4
+    },
+    "mcwlights:copper_small_chandelier": {
+     "price": 20,
+     "stock": 4
+    },
+    "utilitarian:no_soliciting_banner": {
+     "price": 20,
+     "stock": 4
+    },
+    "utilitarian:angel_block": {
+     "price": 32,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "alchemist",
+   "name": "Mieskuireòir",
+   "role": "Alchemist",
+   "spawn": [
+    "temple",
+    "academy"
+   ],
+   "needs": "alchemy",
+   "items": {
+    "neovitae:raw_crystal_shard": {
+     "price": 7,
+     "stock": 5
+    },
+    "theurgy:alchemical_sulfur_cobbled_deepslate": {
+     "price": 8,
+     "stock": 4
+    },
+    "forbidden_arcanus:nuggety_aurum_leaves": {
+     "price": 10,
+     "stock": 4
+    },
+    "evilcraft:undead_fence_gate": {
+     "price": 12,
+     "stock": 4
+    },
+    "forbidden_arcanus:edelwood_door": {
+     "price": 12,
+     "stock": 4
+    },
+    "forbidden_arcanus:runic_glass_pane": {
+     "price": 12,
+     "stock": 4
+    },
+    "neovitae:dungeon_polished_stairs": {
+     "price": 12,
+     "stock": 4
+    },
+    "neovitae:dungeon_tile_wall": {
+     "price": 12,
+     "stock": 4
+    },
+    "evilcraft:blood_chest": {
+     "price": 16,
+     "stock": 4
+    },
+    "evilcraft:bucket_eternal_water": {
+     "price": 16,
+     "stock": 4
+    },
+    "evilcraft:garmonbozia": {
+     "price": 16,
+     "stock": 4
+    },
+    "evilcraft:promise_tier_1": {
+     "price": 16,
+     "stock": 4
+    },
+    "evilcraft:vengeance_focus_2": {
+     "price": 16,
+     "stock": 4
+    },
+    "forbidden_arcanus:blood_test_tube": {
+     "price": 16,
+     "stock": 4
+    },
+    "forbidden_arcanus:dark_oak_wand": {
+     "price": 16,
+     "stock": 4
+    },
+    "forbidden_arcanus:elementarium": {
+     "price": 16,
+     "stock": 4
+    },
+    "forbidden_arcanus:omega_arcoin": {
+     "price": 16,
+     "stock": 4
+    },
+    "forbidden_arcanus:stone_blacksmith_gavel": {
+     "price": 16,
+     "stock": 4
+    },
+    "mysticalagriculture:imperium_growth_accelerator": {
+     "price": 16,
+     "stock": 4
+    },
+    "mysticalagriculture:prudentium_watering_can": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:air_scribe_tool": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:array_liquified_experience": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:blight_whetstone": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:bow_power_anointment_xl": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:dungeon_brick2_c": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:dungeon_eye_d": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:dungeon_pillar_special_v": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:dungeon_stone": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:dungeon_tilespecial_st": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:hellfire_forge": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:master_core_speed": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:reagent_growth": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:rune_2_dislocation": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:shaped_charge_deep": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:simple_key": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:sulfur": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:variant/blood_orb_apprentice_fill_1": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:variant/blood_orb_master_fill_5": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:variant/sentient_axe_nihilum": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:variant/spiritus_gem_greater_ruina": {
+     "price": 16,
+     "stock": 4
+    },
+    "neovitae:weak_filling_agent": {
+     "price": 16,
+     "stock": 4
+    },
+    "occultism:vitality_compass/compass_09": {
+     "price": 16,
+     "stock": 4
+    },
+    "occultism:vitality_compass/compass_31": {
+     "price": 16,
+     "stock": 4
+    },
+    "reliquary:fertile_lily_pad": {
+     "price": 16,
+     "stock": 4
+    },
+    "reliquary:pedestals/light_blue_pedestal": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_niter_animals_abundant": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_acacia_log": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_birch_log": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_colorless": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_flax": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_illwood": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_mandarin": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_onion": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_rooted_dirt": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_stone": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_white_wool": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:divination_rod_t2/0": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:divination_rod_t4/2": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:jar_label_frame_common_icon": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:pyromantic_brazier": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:sulfur_attuned_divination_rod_common/4": {
+     "price": 16,
+     "stock": 4
+    },
+    "theurgy:sulfur_attuned_divination_rod_rare/7": {
+     "price": 16,
+     "stock": 4
+    },
+    "forbidden_arcanus:corrupted_arcane_crystal": {
+     "price": 20,
+     "stock": 4
+    },
+    "neovitae:basic_cutting_fluid": {
+     "price": 20,
+     "stock": 4
+    },
+    "neovitae:routing_conduit": {
+     "price": 20,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_tin": {
+     "price": 20,
+     "stock": 4
+    },
+    "mysticalagriculture:imperium_axe": {
+     "price": 26,
+     "stock": 4
+    },
+    "mysticalagriculture:prudentium_bow": {
+     "price": 26,
+     "stock": 4
+    },
+    "mysticalagriculture:tertium_helmet": {
+     "price": 26,
+     "stock": 4
+    },
+    "neovitae:variant/sentient_shovel_invictus": {
+     "price": 26,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_azure_silver": {
+     "price": 26,
+     "stock": 4
+    },
+    "forbidden_arcanus:aurealic_obsidian_skull": {
+     "price": 32,
+     "stock": 4
+    },
+    "neovitae:essentia_vitae_block": {
+     "price": 32,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_echo": {
+     "price": 32,
+     "stock": 4
+    },
+    "theurgy:other_minerals_common_icon": {
+     "price": 32,
+     "stock": 4
+    },
+    "neovitae:netherite_scrap_dust": {
+     "price": 40,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_pineapple": {
+     "price": 40,
+     "stock": 4
+    },
+    "forbidden_arcanus:aquatic_dragon_scale": {
+     "price": 64,
+     "stock": 4
+    },
+    "evilcraft:blood_waxed_coal_block": {
+     "price": 144,
+     "stock": 4
+    },
+    "forbidden_arcanus:stygian_steel_block": {
+     "price": 234,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "chest_maker",
+   "name": "Dèanaduirkisti",
+   "role": "Chest Maker",
+   "spawn": [
+    "every settlement",
+    "market"
+   ],
+   "items": {
+    "waystones:andesite_waystone": {
+     "price": 8,
+     "stock": 4
+    },
+    "archers:large_quiver": {
+     "price": 16,
+     "stock": 4
+    },
+    "geore:monazite_spyglass_in_hand": {
+     "price": 16,
+     "stock": 4
+    },
+    "geore:uraninite_spyglass_in_hand": {
+     "price": 16,
+     "stock": 4
+    },
+    "ironfurnaces:item_copy": {
+     "price": 16,
+     "stock": 4
+    },
+    "minecraft:deepslate_diamond_ore": {
+     "price": 16,
+     "stock": 4
+    },
+    "minecraft:lodestone_compass": {
+     "price": 16,
+     "stock": 4
+    },
+    "paladins:ruby_claymore": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:advanced_magnet_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:advanced_void_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:chipped/alchemy_bench_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:feeding_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:mob_catcher_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:stack_downgrade_tier_2": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:stack_upgrade_starter_tier_to_tier_3_conversion": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:stack_upgrade_tier_2": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:stonecutter_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:acacia_storage_connector": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:advanced_magnet_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:barrel": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:chipped/botanist_workbench_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:dark_oak_storage_connector": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:jukebox_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:magnet_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:pale_oak_storage_connector": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:stack_downgrade_tier_2": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:stack_upgrade_tier_1_plus_to_tier_3_conversion": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:stack_upgrade_tier_1_to_tier_4_conversion": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:stack_upgrade_tier_3": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:stonecutter_upgrade": {
+     "price": 16,
+     "stock": 4
+    },
+    "sophisticatedstorage:upgrade_base": {
+     "price": 16,
+     "stock": 4
+    },
+    "waystones:mud_bricks_waystone": {
+     "price": 16,
+     "stock": 4
+    },
+    "waystones:purpur_waystone": {
+     "price": 16,
+     "stock": 4
+    },
+    "geore:diamond_shard": {
+     "price": 20,
+     "stock": 4
+    },
+    "geore:medium_zinc_bud": {
+     "price": 20,
+     "stock": 4
+    },
+    "geore:zinc_spyglass_in_hand": {
+     "price": 20,
+     "stock": 4
+    },
+    "ironfurnaces:upgrade_iron": {
+     "price": 20,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:auto_smelting_upgrade": {
+     "price": 20,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:iron_backpack": {
+     "price": 20,
+     "stock": 4
+    },
+    "sophisticatedstorage:basic_to_iron_tier_upgrade": {
+     "price": 20,
+     "stock": 4
+    },
+    "sophisticatedstorage:copper_to_iron_tier_upgrade": {
+     "price": 20,
+     "stock": 4
+    },
+    "sophisticatedstorage:limited_copper_barrel_2": {
+     "price": 20,
+     "stock": 4
+    },
+    "sophisticatedstorage:limited_iron_barrel_4": {
+     "price": 20,
+     "stock": 4
+    },
+    "archers:royal_longbow": {
+     "price": 26,
+     "stock": 4
+    },
+    "geore:redstone_spyglass_in_hand": {
+     "price": 26,
+     "stock": 4
+    },
+    "ironfurnaces:upgrade_silver2": {
+     "price": 26,
+     "stock": 4
+    },
+    "sophisticatedstorage:gold_shulker_box": {
+     "price": 26,
+     "stock": 4
+    },
+    "waystones:gold_warp_stone": {
+     "price": 26,
+     "stock": 4
+    },
+    "geore:black_quartz_spyglass_in_hand": {
+     "price": 32,
+     "stock": 4
+    },
+    "geore:emerald_spyglass_in_hand": {
+     "price": 32,
+     "stock": 4
+    },
+    "geore:quartz_spyglass": {
+     "price": 32,
+     "stock": 4
+    },
+    "geore:small_diamond_bud": {
+     "price": 32,
+     "stock": 4
+    },
+    "minecraft:ender_chest": {
+     "price": 32,
+     "stock": 4
+    },
+    "sophisticatedbackpacks:advanced_pump_upgrade": {
+     "price": 32,
+     "stock": 4
+    },
+    "sophisticatedstorage:basic_to_diamond_tier_upgrade": {
+     "price": 32,
+     "stock": 4
+    },
+    "sophisticatedstorage:limited_diamond_barrel_1": {
+     "price": 32,
+     "stock": 4
+    },
+    "sophisticatedstorage:xp_pump_upgrade": {
+     "price": 32,
+     "stock": 4
+    },
+    "waystones:emerald_portstone": {
+     "price": 32,
+     "stock": 4
+    },
+    "ironfurnaces:iron_furnace": {
+     "price": 40,
+     "stock": 4
+    },
+    "archers:ruby_rapid_crossbow": {
+     "price": 51,
+     "stock": 4
+    },
+    "minecraft:diamond_helmet": {
+     "price": 51,
+     "stock": 4
+    },
+    "minecraft:diamond_spear": {
+     "price": 51,
+     "stock": 4
+    },
+    "paladins:ruby_great_hammer": {
+     "price": 51,
+     "stock": 4
+    },
+    "archers:netherite_longbow_pulling_1": {
+     "price": 64,
+     "stock": 4
+    },
+    "ironfurnaces:diamond_furnace": {
+     "price": 64,
+     "stock": 4
+    },
+    "minecraft:diamond_chestplate": {
+     "price": 64,
+     "stock": 4
+    },
+    "minecraft:rib_armor_trim_smithing_template": {
+     "price": 64,
+     "stock": 4
+    },
+    "minecraft:tide_armor_trim_smithing_template": {
+     "price": 64,
+     "stock": 4
+    },
+    "paladins:netherite_holy_wand": {
+     "price": 64,
+     "stock": 4
+    },
+    "sophisticatedstorage:basic_to_netherite_tier_upgrade": {
+     "price": 64,
+     "stock": 4
+    },
+    "sophisticatedstorage:netherite_barrel": {
+     "price": 64,
+     "stock": 4
+    },
+    "archers:netherite_heavy_crossbow": {
+     "price": 100,
+     "stock": 4
+    },
+    "archers:netherite_longbow": {
+     "price": 100,
+     "stock": 4
+    },
+    "archers:netherite_rapid_crossbow_arrow": {
+     "price": 100,
+     "stock": 4
+    },
+    "archers:netherite_spear": {
+     "price": 100,
+     "stock": 4
+    },
+    "minecraft:netherite_nautilus_armor": {
+     "price": 100,
+     "stock": 4
+    },
+    "paladins:netherite_crusader_armor_chest": {
+     "price": 100,
+     "stock": 4
+    },
+    "paladins:netherite_kite_shield_blocking": {
+     "price": 100,
+     "stock": 4
+    },
+    "sophisticatedstorage:diamond_to_netherite_tier_upgrade": {
+     "price": 126,
+     "stock": 4
+    },
+    "minecraft:diamond_block": {
+     "price": 3600,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "brewer",
+   "name": "Dèanaduirgrùid",
+   "role": "Brewer",
+   "spawn": [
+    "every settlement",
+    "brewhouse"
+   ],
+   "items": {
+    "diaithir_drinks:ginger_beer_brewed": {
+     "price": 8,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "vintner",
+   "name": "Dèanaduirfìuna",
+   "role": "Vintner",
+   "spawn": [
+    "every settlement",
+    "vineyard"
+   ],
+   "items": {
+    "diaithir_drinks:kombucha": {
+     "price": 7,
+     "stock": 5
+    },
+    "diaithir_drinks:blanc_de_blancs": {
+     "price": 14,
+     "stock": 4
+    },
+    "diaithir_drinks:cava": {
+     "price": 14,
+     "stock": 4
+    },
+    "diaithir_drinks:cremant": {
+     "price": 14,
+     "stock": 4
+    },
+    "diaithir_drinks:prosecco": {
+     "price": 14,
+     "stock": 4
+    },
+    "diaithir_drinks:txakoli": {
+     "price": 14,
+     "stock": 4
+    },
+    "diaithir_drinks:blanc_de_noirs": {
+     "price": 17,
+     "stock": 4
+    },
+    "diaithir_drinks:lambrusco": {
+     "price": 17,
+     "stock": 4
+    },
+    "diaithir_drinks:pet_nat": {
+     "price": 17,
+     "stock": 4
+    },
+    "diaithir_drinks:rose_champagne": {
+     "price": 17,
+     "stock": 4
+    },
+    "diaithir_drinks:vermouth": {
+     "price": 23,
+     "stock": 4
+    },
+    "diaithir_drinks:pommeau": {
+     "price": 25,
+     "stock": 4
+    },
+    "diaithir_drinks:marsala": {
+     "price": 26,
+     "stock": 4
+    },
+    "diaithir_drinks:pineau_des_charentes": {
+     "price": 26,
+     "stock": 4
+    },
+    "diaithir_drinks:banyuls_and_maury": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:fino_and_manzanilla_sherry": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:samos_muscat": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:sercial_madeira": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:commandaria": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:rutherglen_muscat": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:verdelho_madeira": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:amontillado_sherry": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:malaga": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:white_port": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:bual_madeira": {
+     "price": 34,
+     "stock": 4
+    },
+    "diaithir_drinks:amarone": {
+     "price": 35,
+     "stock": 4
+    },
+    "diaithir_drinks:oloroso_and_cream_sherry": {
+     "price": 35,
+     "stock": 4
+    },
+    "diaithir_drinks:palo_cortado_sherry": {
+     "price": 35,
+     "stock": 4
+    },
+    "diaithir_drinks:colheita_port": {
+     "price": 38,
+     "stock": 4
+    },
+    "diaithir_drinks:late_bottled_vintage_port": {
+     "price": 38,
+     "stock": 4
+    },
+    "diaithir_drinks:madeira": {
+     "price": 38,
+     "stock": 4
+    },
+    "diaithir_drinks:tawny_port": {
+     "price": 38,
+     "stock": 4
+    },
+    "diaithir_drinks:malmsey_madeira": {
+     "price": 40,
+     "stock": 4
+    },
+    "diaithir_drinks:pedro_ximenez_sherry": {
+     "price": 40,
+     "stock": 4
+    },
+    "diaithir_drinks:vintage_port": {
+     "price": 40,
+     "stock": 4
+    },
+    "diaithir_drinks:port": {
+     "price": 41,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "distiller",
+   "name": "Dèanaduiroisgebeta",
+   "role": "Distiller",
+   "spawn": [
+    "every settlement",
+    "still house"
+   ],
+   "items": {
+    "diaithir_drinks:orange_bitter_aperitivo": {
+     "price": 23,
+     "stock": 4
+    },
+    "diaithir_drinks:artichoke_amaro": {
+     "price": 24,
+     "stock": 4
+    },
+    "diaithir_drinks:gentian_aperitif": {
+     "price": 24,
+     "stock": 4
+    },
+    "diaithir_drinks:passion_fruit_liqueur": {
+     "price": 24,
+     "stock": 4
+    },
+    "diaithir_drinks:peach_liqueur": {
+     "price": 24,
+     "stock": 4
+    },
+    "diaithir_drinks:elderflower_liqueur": {
+     "price": 25,
+     "stock": 4
+    },
+    "diaithir_drinks:melon_liqueur": {
+     "price": 25,
+     "stock": 4
+    },
+    "diaithir_drinks:blue_curacao": {
+     "price": 26,
+     "stock": 4
+    },
+    "diaithir_drinks:falernum": {
+     "price": 26,
+     "stock": 4
+    },
+    "diaithir_drinks:gin_cup_liqueur": {
+     "price": 26,
+     "stock": 4
+    },
+    "diaithir_drinks:maraschino_liqueur": {
+     "price": 26,
+     "stock": 4
+    },
+    "diaithir_drinks:black_raspberry_liqueur": {
+     "price": 27,
+     "stock": 4
+    },
+    "diaithir_drinks:creme_de_cassis": {
+     "price": 27,
+     "stock": 4
+    },
+    "diaithir_drinks:creme_de_banane": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:creme_de_menthe": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:horny_goat_herb_liquor": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:red_bitter_aperitivo": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:amaro": {
+     "price": 29,
+     "stock": 4
+    },
+    "diaithir_drinks:aromatic_bitters": {
+     "price": 29,
+     "stock": 4
+    },
+    "diaithir_drinks:limoncello": {
+     "price": 29,
+     "stock": 4
+    },
+    "diaithir_drinks:orange_liqueur": {
+     "price": 29,
+     "stock": 4
+    },
+    "diaithir_drinks:genepy": {
+     "price": 30,
+     "stock": 4
+    },
+    "diaithir_drinks:palinka": {
+     "price": 30,
+     "stock": 4
+    },
+    "diaithir_drinks:pastis": {
+     "price": 30,
+     "stock": 4
+    },
+    "diaithir_drinks:peach_whiskey_liqueur": {
+     "price": 30,
+     "stock": 4
+    },
+    "diaithir_drinks:slivovitz": {
+     "price": 30,
+     "stock": 4
+    },
+    "diaithir_drinks:amaretto": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:coffee_liqueur": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:hazelnut_liqueur": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:cream_liqueur": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:fernet": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:heather_honey_whisky_liqueur": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:monastic_herbal_liqueur": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:ouzo": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:advocaat": {
+     "price": 33,
+     "stock": 4
+    },
+    "diaithir_drinks:nocino": {
+     "price": 34,
+     "stock": 4
+    },
+    "diaithir_drinks:sambuca": {
+     "price": 35,
+     "stock": 4
+    },
+    "diaithir_drinks:absinthe": {
+     "price": 36,
+     "stock": 4
+    },
+    "diaithir_drinks:alpine_herbal_liqueur": {
+     "price": 36,
+     "stock": 4
+    },
+    "diaithir_drinks:blended_scotch": {
+     "price": 41,
+     "stock": 4
+    },
+    "diaithir_drinks:cachaca": {
+     "price": 41,
+     "stock": 4
+    },
+    "diaithir_drinks:canadian_whisky": {
+     "price": 41,
+     "stock": 4
+    },
+    "diaithir_drinks:grain_whisky_scotch": {
+     "price": 41,
+     "stock": 4
+    },
+    "diaithir_drinks:applejack": {
+     "price": 43,
+     "stock": 4
+    },
+    "diaithir_drinks:muscat_brandy_blend": {
+     "price": 43,
+     "stock": 4
+    },
+    "diaithir_drinks:aged_cachaca": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:anejo_and_reposado_tequila": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:blended_malt_scotch": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:calvados": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:grappa_riserva": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:irish_whiskey": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:japanese_whisky": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:orange_cognac_liqueur": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:single_malt_scotch_highland": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:single_malt_scotch_speyside": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:single_pot_still_irish_whiskey": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:south_african_brandy_cape": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:wheat_whiskey": {
+     "price": 44,
+     "stock": 4
+    },
+    "diaithir_drinks:rhum_agricole_aged": {
+     "price": 45,
+     "stock": 4
+    },
+    "diaithir_drinks:rye_whiskey": {
+     "price": 45,
+     "stock": 4
+    },
+    "diaithir_drinks:armagnac": {
+     "price": 46,
+     "stock": 4
+    },
+    "diaithir_drinks:solera_aged_rum": {
+     "price": 46,
+     "stock": 4
+    },
+    "diaithir_drinks:spiced_rum": {
+     "price": 46,
+     "stock": 4
+    },
+    "diaithir_drinks:bourbon_whiskey": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:brandy_and_cognac": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:charcoal_mellowed_whiskey": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:extra_anejo_tequila": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:hot_climate_corn_whiskey": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:indian_single_malt": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:mezcal_anejo": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:rum": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:scotch_whisky": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:single_malt_scotch_islay": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:taiwanese_whisky": {
+     "price": 47,
+     "stock": 4
+    },
+    "diaithir_drinks:high_rye_bourbon": {
+     "price": 48,
+     "stock": 4
+    },
+    "diaithir_drinks:wheated_bourbon": {
+     "price": 48,
+     "stock": 4
+    },
+    "diaithir_drinks:jamaican_pot_still_rum": {
+     "price": 49,
+     "stock": 4
+    },
+    "diaithir_drinks:demerara_rum": {
+     "price": 50,
+     "stock": 4
+    },
+    "diaithir_drinks:navy_rum": {
+     "price": 50,
+     "stock": 4
+    }
+   }
+  }
+ ]
+}

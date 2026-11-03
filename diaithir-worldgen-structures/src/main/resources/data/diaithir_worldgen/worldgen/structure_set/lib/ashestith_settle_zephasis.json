@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0_zephasis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_1_zephasis",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 78130164
+ }
+}

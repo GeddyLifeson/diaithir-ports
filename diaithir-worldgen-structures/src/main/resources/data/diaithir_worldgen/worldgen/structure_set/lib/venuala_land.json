@@ -1,0 +1,66 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/venuala/forge_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/fortress_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/fortress_3_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/hall_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/hall_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/hall_2_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/hall_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/landmark_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/landmark_2_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/temple_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/tower_0_land",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 174170474
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/orestanum/fortress/1/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/orestanum/my_orestanum_e4_places_000186",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

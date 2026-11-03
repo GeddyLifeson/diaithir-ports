@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/venaemeth/settlement/1/nuemirae",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/venaemeth/ar_venaemeth_e1_places_000241",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/delve_0_cave",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/delve_1_cave",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 80792272
+ }
+}

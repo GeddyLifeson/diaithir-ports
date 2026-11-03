@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/eleniel/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eleniel/temple_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eleniel/tower_0_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 36508419
+ }
+}

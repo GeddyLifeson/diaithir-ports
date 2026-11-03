@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/osyuseth/settlement/1/veseithis",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/osyuseth/ou_osyuseth_e3_assay_002909",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/osyuseth/ou_osyuseth_e4_assay_003611",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:draktak_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:draktak_grottoes",
+   "required": false
+  }
+ ]
+}

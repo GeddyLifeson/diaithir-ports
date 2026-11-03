@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/zephessith/settlement/1/thavsis",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/zephessith/st_zephessith_e5_places_000150",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

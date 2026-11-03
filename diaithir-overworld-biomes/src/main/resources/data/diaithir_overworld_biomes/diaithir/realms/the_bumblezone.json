@@ -1,0 +1,12 @@
+{
+ "realm": "the_bumblezone",
+ "dimension": "the_bumblezone:the_bumblezone",
+ "dimensions": [
+  "the_bumblezone:the_bumblezone"
+ ],
+ "age": 2,
+ "age_gate": "diaithir:age/2",
+ "units": "SI",
+ "replaces": "the_bumblezone",
+ "licence_note": "clean-room; no third-party code, art or data copied"
+}

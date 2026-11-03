@@ -1,0 +1,25 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirfurnishings:quern",
+  "diaithirfurnishings:millstone",
+  "diaithirfurnishings:mortar_pestle",
+  "diaithirfurnishings:dehydrator_rack",
+  "diaithirfurnishings:canning_jar",
+  "diaithirfurnishings:preserving_jar",
+  "diaithirfurnishings:pickle_crock",
+  "diaithirfurnishings:rolling_pin",
+  "diaithirfurnishings:pasta_cutter",
+  "diaithirfurnishings:cookie_cutter",
+  "diaithirfurnishings:cookie_press",
+  "diaithirfurnishings:piping_bag",
+  "diaithirfurnishings:dough_scraper",
+  "diaithirfurnishings:kneading_trough",
+  "diaithirfurnishings:proofing_basket",
+  "diaithirfurnishings:bread_lame",
+  "diaithirfurnishings:mixing_bowl",
+  "diaithirfurnishings:colander",
+  "diaithirfurnishings:sieve",
+  "diaithirfurnishings:cheesecloth"
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/fortress_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/hall_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/hall_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/landmark_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/landmark_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/temple_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/temple_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veontiastes/tower_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 50059392
+ }
+}

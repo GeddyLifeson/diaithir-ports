@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/breroldock/settlement/3/brede",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/breroldock/gr_breroldock_e6_places_000155",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

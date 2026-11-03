@@ -1,0 +1,54 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/forge_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/forge_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/fortress_2_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/fortress_3_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/hall_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/hall_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/landmark_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/ruin_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/temple_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/tower_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/tower_3_land",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 119416269
+ }
+}

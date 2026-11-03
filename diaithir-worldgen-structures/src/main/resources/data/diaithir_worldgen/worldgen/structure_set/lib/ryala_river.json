@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryala/bridge_0_river",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryala/bridge_1_river",
+   "weight": 14
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 254920868
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "values": [
+  "minecraft:swamp",
+  "minecraft:mangrove_swamp",
+  "minecraft:dark_forest",
+  "minecraft:old_growth_birch_forest",
+  {
+   "id": "diaithir_biomes:thornwake",
+   "required": false
+  },
+  {
+   "id": "diaithir_biomes:cinderfen",
+   "required": false
+  }
+ ]
+}

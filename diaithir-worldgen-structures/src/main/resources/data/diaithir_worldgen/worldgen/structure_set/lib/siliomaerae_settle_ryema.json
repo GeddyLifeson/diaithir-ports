@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_0_ryema",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/settlement_1_ryema",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 78640478
+ }
+}

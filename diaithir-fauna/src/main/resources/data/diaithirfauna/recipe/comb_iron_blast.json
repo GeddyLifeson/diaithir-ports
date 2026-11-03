@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:blasting",
+ "category": "misc",
+ "ingredient": "diaithirfauna:comb_iron",
+ "result": {
+  "id": "minecraft:iron_nugget",
+  "count": 6
+ },
+ "experience": 0.35,
+ "cookingtime": 100
+}

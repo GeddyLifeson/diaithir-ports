@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/eleirenora/harbor_0_coast",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eleirenora/harbor_1_coast",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eleirenora/harbor_2_coast",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eleirenora/harbor_3_coast",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 26585354
+ }
+}

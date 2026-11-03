@@ -46,6 +46,7 @@ public final class FaunaMod {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, Revival.SPEC);
         ENTITIES.register(bus);
         Fossils.register(bus);
+        net.diaithir.fauna.bees.Bees.register(bus);
     }
 
     @SubscribeEvent
@@ -93,6 +94,12 @@ public final class FaunaMod {
                             c.getSource().sendSuccess(() -> Component.literal(s.id + " (" + s.per + ", " + s.form + ")"), false);
                             return 1;
                         })))
+                .then(Commands.literal("beetest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+                    var fails = net.diaithir.fauna.bees.BeeTest.run(c.getSource().getServer());
+                    String line = fails.isEmpty() ? "Bees self test PASS" : "Bees self test FAIL: " + String.join("; ", fails);
+                    c.getSource().sendSuccess(() -> Component.literal(line), false);
+                    return fails.isEmpty() ? 1 : 0;
+                }))
                 .then(Commands.literal("census").executes(c -> {
                     String r = Census.run(c.getSource().getLevel());
                     c.getSource().sendSuccess(() -> Component.literal(r), false);
@@ -113,6 +120,23 @@ public final class FaunaMod {
                     var sp = c.getSource().getPlayerOrException();
                     return Revival.revive(sp, c.getSource().getLevel(), sp.blockPosition()) ? 1 : 0;
                 }))
+                .then(Commands.literal("libsummon").then(Commands.argument("entry", StringArgumentType.word())
+                        .executes(c -> {
+                            Species s = Species.byId(StringArgumentType.getString(c, "entry"));
+                            if (s == null || s.title == null) {
+                                c.getSource().sendFailure(Component.literal("No Library creature with that entry id"));
+                                return 0;
+                            }
+                            var at = c.getSource().getPosition();
+                            return LibrarySpawner.spawn(c.getSource().getLevel(), s, at.x, at.y, at.z, EntitySpawnReason.COMMAND) != null ? 1 : 0;
+                        })))
+                .then(Commands.literal("libspawntest").then(Commands.argument("attempts", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 200))
+                        .then(Commands.argument("age", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 20)).executes(c -> {
+                            String r = LibrarySpawner.test(c.getSource().getLevel(), c.getSource().getPosition(),
+                                    com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "attempts"), com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "age"));
+                            c.getSource().sendSuccess(() -> Component.literal(r), false);
+                            return 1;
+                        }))))
                 .then(Commands.literal("summon").then(Commands.argument("species", StringArgumentType.word())
                         .suggests((c, b) -> SharedSuggestionProvider.suggest(Species.ALL.stream().map(s -> s.id), b))
                         .executes(c -> {

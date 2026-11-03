@@ -1,0 +1,106 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/forge_1_land",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/forge_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/fortress_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/fortress_1_land",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/fortress_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/garden_1_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/garden_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/hall_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/hall_1_land",
+   "weight": 30
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/hall_2_land",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/landmark_0_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/landmark_1_land",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/landmark_2_land",
+   "weight": 50
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/ruin_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/ruin_1_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/temple_1_land",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/temple_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/tomb_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/tomb_1_land",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/tower_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ameosastia/tower_2_land",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 71240982
+ }
+}

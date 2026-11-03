@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:vaurnes_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:vaurnes_grottoes",
+   "required": false
+  }
+ ]
+}

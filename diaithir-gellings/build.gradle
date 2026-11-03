@@ -1,0 +1,37 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-gellings-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    runs {
+        client {
+            client()
+            programArguments.addAll '--username', 'Tester', '--quickPlayMultiplayer', (findProperty('qp') ?: 'localhost:25565')
+            jvmArgument '-Xmx3G'
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+    mods { diaithirgellings { sourceSet(sourceSets.main) } }
+}
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+

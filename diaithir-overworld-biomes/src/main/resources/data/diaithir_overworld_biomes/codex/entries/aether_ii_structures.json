@@ -1,0 +1,15 @@
+{
+ "id": "diaithir_overworld_biomes:aether_ii_structures",
+ "category": "structure",
+ "title": "codex.diaithir_overworld_biomes.aether_ii_structures.title",
+ "body": "codex.diaithir_overworld_biomes.aether_ii_structures.body",
+ "age": 3,
+ "icon": "aether_ii:holystone",
+ "unlock": {
+  "type": "locate_structure_tag",
+  "tag": "aether_ii:aether_ii_structures"
+ },
+ "covers": {
+  "structures": "#aether_ii:aether_ii_structures"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/drerdunen/settlement/0/maustolum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drerdunen/st_drerdunen_e1_assay_011361",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

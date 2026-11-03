@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:lyirlora_elarys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyirlora_eleirluamae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyirlora_ilyeriona",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyirlora_lyimeinae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyirlora_mierluaniel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyirlora_ryarlae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyirlora_ryeneth",
+   "required": false
+  }
+ ]
+}

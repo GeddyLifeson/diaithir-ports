@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_venaemora",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_venaemora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_2_venaemora",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 251680605
+ }
+}

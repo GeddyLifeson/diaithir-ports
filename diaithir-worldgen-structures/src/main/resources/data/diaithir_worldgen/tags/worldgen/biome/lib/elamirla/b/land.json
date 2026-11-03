@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:elamirla_anamalum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elamirla_anavaloma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elamirla_kougok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elamirla_silirlora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elamirla_tentus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elamirla_toruthoggok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elamirla_veneimae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elamirla_venellys",
+   "required": false
+  }
+ ]
+}

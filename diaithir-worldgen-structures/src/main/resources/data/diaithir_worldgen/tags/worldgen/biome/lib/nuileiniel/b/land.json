@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:nuileiniel_eleila",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuileiniel_ilyerleth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuileiniel_lyarerla",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuileiniel_mianae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuileiniel_orianiomwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuileiniel_ryallaemeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuileiniel_silemuara",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuileiniel_silirlamys",
+   "required": false
+  }
+ ]
+}

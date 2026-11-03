@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "diaithirworldsys:easy_villagers_farmer",
+  "#c:storage_blocks/iron",
+  "#c:storage_blocks/iron",
+  "#c:storage_blocks/iron",
+  "#c:storage_blocks/iron",
+  "minecraft:carved_pumpkin"
+ ],
+ "result": {
+  "id": "diaithirworldsys:easy_villagers_iron_farm"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/sestia/settlement/1/nornium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/sestia/my_sestia_e5_places_000476",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

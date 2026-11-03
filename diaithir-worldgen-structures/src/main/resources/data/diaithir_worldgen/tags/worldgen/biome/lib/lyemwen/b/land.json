@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:lyemwen_corolum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_isizeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_jorade",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_kalukanira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_leontaror",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_osukanuta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_suramanoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_thazora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_toruggozhak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyemwen_vesetheizis",
+   "required": false
+  }
+ ]
+}

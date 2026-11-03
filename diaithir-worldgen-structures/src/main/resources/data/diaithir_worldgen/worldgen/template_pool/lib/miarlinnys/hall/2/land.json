@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/miarlinnys/hall/2/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/miarlinnys/ar_miarlinnys_e1_places_000262",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

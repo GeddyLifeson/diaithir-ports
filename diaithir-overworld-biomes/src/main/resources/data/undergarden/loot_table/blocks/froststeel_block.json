@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "undergarden:blocks/froststeel_block",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "undergarden:froststeel_block"
+    }
+   ]
+  }
+ ]
+}

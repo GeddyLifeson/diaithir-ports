@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/orientable",
+ "textures": {
+  "top": "diaithircomputing:block/turtle_top",
+  "front": "diaithircomputing:block/turtle_front",
+  "side": "diaithircomputing:block/turtle_side"
+ }
+}

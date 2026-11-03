@@ -1,0 +1,34 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/hall_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/landmark_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/temple_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veniolora/tomb_1_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 229758931
+ }
+}

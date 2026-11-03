@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ryelora_alaarlenwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryelora_eluanneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryelora_mielys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryelora_nuarliel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryelora_oriama",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryelora_silemwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryelora_silimiel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryelora_siliremeth",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/forge_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/forge_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/fortress_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/fortress_2_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/fortress_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/garden_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/garden_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/hall_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/hall_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/hall_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/landmark_2_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/landmark_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syuzeth/tower_2_land",
+   "weight": 7
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 115910467
+ }
+}

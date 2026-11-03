@@ -1,0 +1,1 @@
+{"parent":"diaithir_nether:root","display":{"icon":{"id":"diaithir_nether:ember_ingot"},"title":{"translate":"advancement.diaithir_nether.ember.title"},"description":{"translate":"advancement.diaithir_nether.ember.description"}},"criteria":{"has_ingot":{"trigger":"minecraft:inventory_changed","conditions":{"items":[{"items":"diaithir_nether:ember_ingot"}]}}}}

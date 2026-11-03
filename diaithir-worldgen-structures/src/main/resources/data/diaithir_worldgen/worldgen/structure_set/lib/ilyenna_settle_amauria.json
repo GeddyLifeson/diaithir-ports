@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_0_amauria",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1_amauria",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2_amauria",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 91821950
+ }
+}
