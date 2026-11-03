@@ -1010,6 +1010,30 @@
    ]
   },
   {
+   "structure": "diaithir_worldgen:ogham_great_circle",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ogham_hollow_ring",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ogham_stone_circle",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
    "structure": "diaithir_worldgen:oracle_ruins_desert_sanctum",
    "ruin_states": [
     "intact",
@@ -1139,6 +1163,22 @@
   },
   {
    "structure": "diaithir_worldgen:ruined_bridge_crossing",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ruined_feast_hall",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ruined_feast_hall_long",
    "ruin_states": [
     "intact",
     "looted",

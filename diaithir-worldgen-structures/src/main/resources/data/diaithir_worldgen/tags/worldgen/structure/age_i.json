@@ -9,6 +9,9 @@
   "diaithir_worldgen:frozen_cairn_vault",
   "diaithir_worldgen:glacial_arch_bridge",
   "diaithir_worldgen:megalithic_passage_mound",
+  "diaithir_worldgen:ogham_great_circle",
+  "diaithir_worldgen:ogham_hollow_ring",
+  "diaithir_worldgen:ogham_stone_circle",
   "diaithir_worldgen:oracle_ruins_underground_crypt"
  ]
 }

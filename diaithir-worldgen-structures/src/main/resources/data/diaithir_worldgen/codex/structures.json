@@ -2125,6 +2125,57 @@
   ]
  },
  {
+  "id": "diaithir_worldgen:ogham_great_circle",
+  "kind": "structure",
+  "name": "Ogham Great Circle",
+  "text": "great stone circle: nine ogham stones with a ring of plain menhirs and moss walls",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_ogham_great_circle",
+  "loot": "none",
+  "mobs": "none",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/ogham_great_circle",
+  "connects": [
+   "tags:diaithir_worldgen:s/ogham_great_circle",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ogham_great_circle"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ogham_hollow_ring",
+  "kind": "structure",
+  "name": "Ogham Hollow Ring",
+  "text": "stone circle hidden in a wet wood, nine ogham stones draped in moss",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_ogham_hollow_ring",
+  "loot": "none",
+  "mobs": "none",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/ogham_hollow_ring",
+  "connects": [
+   "tags:diaithir_worldgen:s/ogham_hollow_ring",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ogham_hollow_ring"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ogham_stone_circle",
+  "kind": "structure",
+  "name": "Ogham Stone Circle",
+  "text": "stone circle of nine ogham stones around a plinth for the Ascendant altar",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_ogham_circle",
+  "loot": "none",
+  "mobs": "none",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/ogham_stone_circle",
+  "connects": [
+   "tags:diaithir_worldgen:s/ogham_stone_circle",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ogham_stone_circle"
+  ]
+ },
+ {
   "id": "diaithir_worldgen:oracle_ruins_desert_sanctum",
   "kind": "structure",
   "name": "Oracle Ruins Desert Sanctum",
@@ -2411,6 +2462,40 @@
    "tags:diaithir_worldgen:s/ruined_bridge_crossing",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/ruined_bridge_crossing"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ruined_feast_hall",
+  "kind": "structure",
+  "name": "Ruined Feast Hall",
+  "text": "ruin of a feast hall with a long table, hearth and a dais of offering-dish chests",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_feast_hall",
+  "loot": "offering dishes (cake, pumpkin pie, stews)",
+  "mobs": "none",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ruined_feast_hall",
+  "connects": [
+   "tags:diaithir_worldgen:s/ruined_feast_hall",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ruined_feast_hall"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:ruined_feast_hall_long",
+  "kind": "structure",
+  "name": "Ruined Feast Hall Long",
+  "text": "great ruined feast hall, two tables, hearth and a dais of offering-dish chests",
+  "dimension": "overworld",
+  "biomes": "#diaithir_worldgen:has_feast_hall_long",
+  "loot": "offering dishes (cake, pumpkin pie, stews)",
+  "mobs": "none",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/ruined_feast_hall_long",
+  "connects": [
+   "tags:diaithir_worldgen:s/ruined_feast_hall_long",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/ruined_feast_hall_long"
   ]
  },
  {

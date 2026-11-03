@@ -1250,6 +1250,36 @@
   "next": null
  },
  {
+  "id": "diaithir_worldgen:find/ogham_great_circle",
+  "title": "Find Ogham Great Circle",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ogham_great_circle"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ogham_hollow_ring",
+  "title": "Find Ogham Hollow Ring",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ogham_hollow_ring"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ogham_stone_circle",
+  "title": "Find Ogham Stone Circle",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ogham_stone_circle"
+  },
+  "next": null
+ },
+ {
   "id": "diaithir_worldgen:find/oracle_ruins_desert_sanctum",
   "title": "Find Oracle Ruins Desert Sanctum",
   "age": "II",
@@ -1416,6 +1446,26 @@
   "goal": {
    "type": "locate_structure",
    "structure": "diaithir_worldgen:ruined_bridge_crossing"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ruined_feast_hall",
+  "title": "Find Ruined Feast Hall",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ruined_feast_hall"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/ruined_feast_hall_long",
+  "title": "Find Ruined Feast Hall Long",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:ruined_feast_hall_long"
   },
   "next": null
  },
