@@ -1,1 +1,1 @@
-{"type":"minecraft:crafting_shapeless","ingredients":[{"item":"diaithir_overworld_biomes:ember_core"},{"tag":"c:stones"}],"result":{"id":"diaithir_overworld_biomes:ember_basalt","count":2}}
+{"type":"minecraft:crafting_shapeless","ingredients":["diaithir_overworld_biomes:ember_core","#c:stones"],"result":{"id":"diaithir_overworld_biomes:ember_basalt","count":2}}
