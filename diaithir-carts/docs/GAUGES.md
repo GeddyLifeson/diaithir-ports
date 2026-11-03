@@ -7,17 +7,19 @@ Two gauges only. Every US and UK train is mapped onto one of them (other gauges 
 
 ## Real figures and what the game does with them
 
-Figures are rounded values of the kind the standard references give (AREMA and Network Rail guidance, D&RGW and EBT histories). They were recalled, not fetched, so they stay approximate until checked against the Wikipedia pages for Track gauge, Narrow-gauge railway and Loading gauge.
+Fetched from Wikipedia on 2026-11-03 (article wikitext). Rows marked **no source** could not be found in the fetched pages and are kept from general knowledge until someone finds a page; they are not claimed as sourced.
 
 | | Standard | Narrow (3 ft) | Game rule |
 |---|---|---|---|
-| Minimum curve radius | about 150 m (yards and branches), 300 m and up on main lines | about 55 m (D&RGW 30 degree curves are 58 m) | Curved rail: a vehicle keeps `sqrt(R_game / R_min)` of its speed, with the game curve about 40 m real (8 blocks at 1:5). Standard 0.52, narrow 0.85 (`Gauge.curveSpeed`) |
-| Ruling grade | about 2 % (US main lines 1 to 2.2 %) | about 4 % (Cumbres, Marshall) | Ascending rail: speed kept per tick 0.96 standard, 0.98 narrow, so narrow loses half as much (`Gauge.gradeKeep`) |
-| Axle load | 25 t (UK RA8 to RA10) to 32.5 t (US 286k) | about 8 to 12 t | Narrow freight carries 0.4 of the standard payload; narrow vehicles weigh 0.5 of the standard type; no narrow vehicle over 90 t (`Gauge.payload`, `maxMassKg`) |
-| Loading gauge | US Plate F about 3.2 m wide, 5.2 m high; UK W6 to W12 smaller | about 2.4 m wide, 3.4 m high | A narrow wagon cannot carry a full standard container (a container thread rule: narrow takes half-size boxes and pallets only) |
-| Top speed | freight 80 mph (130 km/h), passenger 125 mph and up | about 45 km/h typical, 90 km/h the best | Rail caps, 1 block per tick = 72 km/h: bronze 0.6, steel 0.9, fast 1.2 (standard); narrow 0.5 = 36 km/h (the ratio narrow to steel, 0.55, matches 45 to 80 km/h) |
-| Construction cost per km | 1.0 | about 0.5 to 0.7 | Narrow rail costs 5 copper for 24 (0.21 per rail) against 6 for 16 (0.375) for bronze, 0.56 of it |
-| When | bronze rail Age III, steel V, fast VI | Age III | Narrow arrives with the first rail and is the cheap way to open mountains and mines |
+| Minimum curve radius | 288 ft (88 m) for interchange equipment, normally 410 ft (125 m), 574 ft (175 m) preferred for long freight (North America) [Minimum railway curve radius] | **no source** for 3 ft; about 55 m kept. Sourced for a 2 ft line: Welsh Highland 40 m. The article says the sharpest curves are on the narrowest gauges | Curved rail: a vehicle keeps `sqrt(R_game / R_min)` of its speed, with the game curve taken as 40 m (8 blocks at 1:5): standard 0.57 (R 125 m), narrow 0.85 (R 55 m) (`Gauge.curveSpeed`) |
+| Ruling grade | 2.2 % was the US standard grade set by Congress in the 1850s; Southern Pacific across Nevada and Utah faced 0.43 % [Ruling gradient] | about 4 %: the Cumbres and Toltec climbs on a grade averaging 4 % [Cumbres and Toltec Scenic Railroad] | Ascending rail: speed kept per tick 0.96 standard, 0.98 narrow, the 2.2 to 4 ratio read as half the loss (`Gauge.gradeKeep`) |
+| Axle load | UK diesels were built to 19 long tons (19.3 t) a axle before the 1990s; the highest in the world is 40 t (Fortescue) [Axle load]. US 32.5 t: **no source** | **no source**; about 8 to 12 t kept | Narrow freight carries 0.4 of the standard payload; narrow vehicles weigh 0.5 of the standard type; none over 90 t (`Gauge.payload`, `maxMassKg`) |
+| Loading gauge | AAR Plate B 10 ft 8 in by 15 ft 1 in (3.25 m by 4.60 m); Plate F 10 ft 8 in by 17 ft (3.25 m by 5.18 m). Great Britain has the most restrictive loading gauge for its track gauge (W6A to W12) [Loading gauge] | **no source**; about 2.4 m by 3.4 m kept | A narrow wagon cannot carry a full standard container: half-size boxes and pallets only |
+| Speed | The same curve that allows 145 km/h on standard gauge allows 130 km/h on 3 ft 6 in gauge; narrow gauge trains cannot run as fast [Narrow-gauge railway]. Freight 80 mph and passenger 125 mph: **no source** | about 45 km/h typical kept: **no source** | Rail caps, 1 block per tick = 72 km/h: bronze 0.6, steel 0.9, fast 1.2 (standard); narrow 0.5 = 36 km/h |
+| Construction cost | Narrow gauge is usually built with tighter curves, smaller structure gauges and lighter rails, so can cost less to build, equip and operate, mostly in mountains (Spooner, 1879, cited by [Narrow-gauge railway]). The 0.6 ratio: **no source** | | Narrow rail costs 5 copper for 24 (0.21 per rail) against 6 for 16 (0.375) for bronze, 0.56 of it |
+| When | bronze rail Age III, steel V, fast VI | Age III | Narrow arrives with the first rail |
+
+Pages: https://en.wikipedia.org/wiki/Minimum_railway_curve_radius , /Ruling_gradient , /Axle_load , /Loading_gauge , /Narrow-gauge_railway , /Cumbres_and_Toltec_Scenic_Railroad , /3_ft_gauge_railways .
 
 ## Rules
 

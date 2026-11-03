@@ -10,9 +10,9 @@ package net.diaithir.carts;
  */
 public enum Gauge {
     ANY("any", 1.0, 1.0, 1.0, Integer.MAX_VALUE, 1.0),
-    STANDARD("standard", 0.52, 0.96, 1.0, Integer.MAX_VALUE, 1.0),
+    STANDARD("standard", 0.57, 0.96, 1.0, Integer.MAX_VALUE, 1.0),
     NARROW("narrow", 0.85, 0.98, 0.4, 90_000, 0.6),
-    BOTH("both", 0.52, 0.96, 1.0, Integer.MAX_VALUE, 1.0);
+    BOTH("both", 0.57, 0.96, 1.0, Integer.MAX_VALUE, 1.0);
 
     public final String id;
     /** Share of the rail's speed cap a cart keeps on a curved rail. */
