@@ -25922,7 +25922,7 @@ hash = "0a4d50813595f17a6507f9f96906332e572c9f874f37aa0c222063db37b734b6"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/tech_ages_data.js"
-hash = "a5003c91f1ea33e8eddc1a72f20c6a6d9c0c4d75b8f23d78f1c0b7d67a9dbb0f"
+hash = "41a4d0261870c5572b05ed143837b2c36732f71e1ba160cfab1b02119755eea1"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/unify.js"
