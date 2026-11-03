@@ -24,6 +24,7 @@ public final class BiomesOPlentyModule {
         com.diaithir.overworld_biomes.planets.PlanetGate.init();
         com.diaithir.overworldbiomes.compat.CompatBlocks.init(modBus);
         com.diaithir.overworld_biomes.planets.PlanetFlora.init(modBus);
+        com.diaithir.overworld_biomes.planets.PlanetColony.init();
         NeoForge.EVENT_BUS.addListener(com.diaithir.overworldbiomes.compat.SaplingGrowthCheck::onRegister);
         GlobalEventsHook.fire("module_loaded", MOD_ID);
     }
