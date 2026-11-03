@@ -38,13 +38,23 @@ public final class PlannerItem extends Item {
             return InteractionResult.SUCCESS;
         }
         if (ctx.getLevel().isClientSide()) return InteractionResult.SUCCESS;
-        ModuleSpec to = mi.spec();
         int budget = player.isCreative() ? Integer.MAX_VALUE : held.getCount();
+        int used = upgradeArea(ctx.getLevel(), ctx.getClickedPos(), mi.spec(), budget, old -> giveBack(ctx, player, old));
+        if (!player.isCreative()) held.shrink(used);
+        player.sendOverlayMessage(Component.literal("Upgraded " + used + " module" + (used == 1 ? "" : "s")));
+        return InteractionResult.SUCCESS;
+    }
+
+    /**
+     * Swap every lower-tier module of the same kind within RADIUS of c for `to`, at most `budget` swaps.
+     * Each replaced module is passed to `returned`. Returns the number of swaps.
+     */
+    static int upgradeArea(net.minecraft.world.level.Level level, BlockPos c, ModuleSpec to, int budget,
+                           java.util.function.Consumer<ModuleSpec> returned) {
         List<Slotted> blocks = new ArrayList<>();
         List<BlockEntity> bes = new ArrayList<>();
-        BlockPos c = ctx.getClickedPos();
         for (BlockPos p : BlockPos.betweenClosed(c.offset(-RADIUS, -RADIUS, -RADIUS), c.offset(RADIUS, RADIUS, RADIUS))) {
-            BlockEntity be = ctx.getLevel().getBlockEntity(p);
+            BlockEntity be = level.getBlockEntity(p);
             if (be == null) continue;
             Upgrades.host(be).ifPresent(h -> { blocks.add(h.slots()); bes.add(be); });
         }
@@ -55,7 +65,7 @@ public final class PlannerItem extends Item {
             for (int i = 0; i < s.modules().size() && used < budget; i++) {
                 ModuleSpec old = s.modules().get(i).spec();
                 if (old.kind() == to.kind() && old.tier() < to.tier() && s.replace(i, to, Quality.NORMAL)) {
-                    giveBack(ctx, player, old);
+                    returned.accept(old);
                     used++;
                     changed = true;
                 }
@@ -65,9 +75,7 @@ public final class PlannerItem extends Item {
                 bes.get(b).setChanged();
             }
         }
-        if (!player.isCreative()) held.shrink(used);
-        player.sendOverlayMessage(Component.literal("Upgraded " + used + " module" + (used == 1 ? "" : "s")));
-        return InteractionResult.SUCCESS;
+        return used;
     }
 
     /** One-line readout: slots used, each module, and the resulting speed, output and power multipliers. */

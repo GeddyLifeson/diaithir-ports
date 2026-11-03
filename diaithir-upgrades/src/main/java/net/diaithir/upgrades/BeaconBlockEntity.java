@@ -23,6 +23,16 @@ public final class BeaconBlockEntity extends BlockEntity {
     @Override
     public void onLoad() {
         super.onLoad();
+        track();
+    }
+
+    @Override
+    public void setLevel(Level level) {
+        super.setLevel(level);
+        track();
+    }
+
+    private void track() {
         if (level != null) LOADED.computeIfAbsent(level, l -> ConcurrentHashMap.newKeySet()).add(worldPosition.immutable());
     }
 

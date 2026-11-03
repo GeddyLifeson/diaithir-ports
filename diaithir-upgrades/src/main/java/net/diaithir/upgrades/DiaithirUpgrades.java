@@ -32,6 +32,12 @@ public final class DiaithirUpgrades {
         Registry.register(bus);
         bus.addListener(RegisterCapabilitiesEvent.class, DiaithirUpgrades::registerCaps);
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.RightClickBlock.class, Removal::onRightClick);
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, e -> {
+            if (System.getenv("DIAITHIR_UPGRADES_SELFTEST") == null) return;
+            var fails = SelfTest.run(e.getServer());
+            if (fails.isEmpty()) org.slf4j.LoggerFactory.getLogger(ID).info("SELFTEST PASS");
+            else fails.forEach(x -> org.slf4j.LoggerFactory.getLogger(ID).error("SELFTEST FAIL: {}", x));
+        });
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class,
                 e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "targets"), new Rules()));
     }
