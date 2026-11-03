@@ -17,6 +17,7 @@ public final class EconState {
     public final Map<String, ShareCompany> shares = new HashMap<>();
     public final Map<String, Map<String, Integer>> holdings = new HashMap<>();
     public final Map<String, Double> div = new HashMap<>();
+    public final Map<String, PlayerQuest> quests = new HashMap<>();
     public long week;
 
     /** A culture's money in circulation, the supply it was set against, trade balance, treasury and wage pool. */
@@ -55,6 +56,15 @@ public final class EconState {
     public static final class Line { public String from, to, vehicle, cargo; public int n = 1, weeks, units; public double upkeep, rev, cost; }
     public static final class Company { public String name, home; public double money, loan; public List<Line> lines = new ArrayList<>(); public int broke; public long founded; public boolean closed; }
 
+    /** A player's progress in the company quests: Safe passage (caravan) and Found a company. */
+    public static final class PlayerQuest {
+        public String caravan, company;
+        public int talks;
+        public CaravanJob job;
+    }
+    public static final class CaravanJob { public String id, from, fromName, to, name; public int n; public long week; }
+
+    public PlayerQuest quest(String player) { return quests.computeIfAbsent(player, k -> new PlayerQuest()); }
     public Bonds bonds(String culture) { return bonds.computeIfAbsent(culture, k -> new Bonds()); }
     public Cur cur(String culture) { return cur.computeIfAbsent(culture, k -> new Cur()); }
     public Des des(String did) { return des.computeIfAbsent(did, k -> new Des()); }
