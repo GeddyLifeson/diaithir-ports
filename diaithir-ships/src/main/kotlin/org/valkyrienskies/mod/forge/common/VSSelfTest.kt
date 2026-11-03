@@ -164,6 +164,8 @@ object VSSelfTest {
         val blocks = reg.keySet().filter { it.namespace == "vs_tournament" }
         val items = net.minecraft.core.registries.BuiltInRegistries.ITEM.keySet().filter { it.namespace == "vs_tournament" }
         val recipes = server.recipeManager.recipes.filter { it.id().identifier().namespace == "vs_tournament" }
+        val cooked = listOf("fuel/fuel_paste", "fuel/fuel_paste_with_campfire", "ingot_phynite")
+        log.info("selftest-tournament-cooking: {}", cooked.joinToString { id -> id + "=" + recipes.any { it.id().identifier().path == id } })
         log.info("selftest-tournament: blocks={} items={} recipes={} beTypes={} triggers={}", blocks.size, items.size, recipes.size,
             net.minecraft.core.registries.BuiltInRegistries.BLOCK_ENTITY_TYPE.keySet().filter { it.namespace == "vs_tournament" }.size,
             net.minecraft.core.registries.BuiltInRegistries.TRIGGER_TYPES.keySet().filter { it.namespace == "vs_tournament" }.size)
