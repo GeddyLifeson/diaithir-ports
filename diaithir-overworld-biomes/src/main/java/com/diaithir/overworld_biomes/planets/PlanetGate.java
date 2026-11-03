@@ -88,12 +88,41 @@ public final class PlanetGate {
         return lvl;
     }
 
-    /** Moves a player to the planet's surface at 0,0 (loads the planet first). */
+    private static final java.util.Map<String, int[]> LAND = new java.util.concurrent.ConcurrentHashMap<>();
+    private static final String[] ROLE = {"_sea", "_deep_sea", "_shore", "_river", "_hollows", "_grottoes"};
+
+    private static boolean isLand(ServerLevel lvl, int x, int z) {
+        var k = lvl.getUncachedNoiseBiome(x >> 2, 16, z >> 2).unwrapKey();
+        if (k.isEmpty()) return false;
+        String p = k.get().identifier().getPath();
+        for (String r : ROLE) if (p.endsWith(r)) return false;
+        return true;
+    }
+
+    /** Nearest point to 0,0 that is land with land all around it (biome check only, no chunks generated). */
+    public static int[] findLand(ServerLevel lvl, String id) {
+        return LAND.computeIfAbsent(id, i -> {
+            int[][] d = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}};
+            int[][] n4 = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+            for (int r = 0; r <= 12000; r += 32)
+                for (int k = 0; k < 32; k++) {
+                    int x = (int) Math.round(Math.cos(k * Math.PI / 16) * r), z = (int) Math.round(Math.sin(k * Math.PI / 16) * r);
+                    boolean ok = isLand(lvl, x, z);
+                    for (int[] b : n4) ok = ok && isLand(lvl, x + b[0] * 24, z + b[1] * 24);
+                    if (ok) return new int[]{x, z};
+                }
+            return new int[]{0, 0};
+        });
+    }
+
+    /** Moves a player to dry land near the planet's origin (loads the planet first). */
     public static boolean enter(ServerPlayer p, String id) {
         ServerLevel lvl = load(p.level().getServer(), id);
         if (lvl == null) return false;
-        int y = lvl.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 1;
-        p.teleport(new TeleportTransition(lvl, new Vec3(0.5, y, 0.5), Vec3.ZERO, p.getYRot(), 0f, TeleportTransition.DO_NOTHING));
+        int[] xz = findLand(lvl, id);
+        lvl.getChunk(xz[0] >> 4, xz[1] >> 4);
+        int y = lvl.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, xz[0], xz[1]) + 1;
+        p.teleport(new TeleportTransition(lvl, new Vec3(xz[0] + 0.5, y, xz[1] + 0.5), Vec3.ZERO, p.getYRot(), 0f, TeleportTransition.DO_NOTHING));
         return true;
     }
 
@@ -161,6 +190,14 @@ public final class PlanetGate {
                     String m = l == null ? "not loaded" : PlanetWeather.describe(l);
                     c.getSource().sendSuccess(() -> Component.literal(m), false);
                     return l == null ? 0 : 1;
+                })))
+                .then(Commands.literal("land").then(Commands.argument("id", StringArgumentType.word()).executes(c -> {
+                    String id = StringArgumentType.getString(c, "id");
+                    ServerLevel l = load(c.getSource().getServer(), id);
+                    if (l == null) return 0;
+                    int[] xz = findLand(l, id);
+                    c.getSource().sendSuccess(() -> Component.literal("land at " + xz[0] + " " + xz[1]), false);
+                    return 1;
                 })))
                 .then(Commands.literal("live").executes(c -> {
                     int n = live(c.getSource().getServer());
