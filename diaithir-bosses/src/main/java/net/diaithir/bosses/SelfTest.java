@@ -111,6 +111,7 @@ public final class SelfTest {
             altar(level, c0, fp);
             elites(level, c0);
             rites(src, level, c0, fp);
+            library(src, level, c0, fp);
         } finally {
             Ritual.TEST_PLAYERS.clear();
             Ages.forced = oldForce;
@@ -143,6 +144,31 @@ public final class SelfTest {
         Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get()));
         check(data.rituals().containsKey(key), "rite: a champion token starts one");
         Ritual.Def d = Ritual.def("antlered_hollow");
+        play(src, level, altar, fp, key, d);
+        check(!data.rituals().containsKey(key), "rite: finished and cleared");
+        var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+        check(woken.size() == 1, "rite: the boss wakes (" + woken.size() + ")");
+        woken.forEach(Mob::discard);
+        // solo path of the co-op step: one fighter, a rite for two, tokens call spirits
+        Ritual.Def fd = Ritual.def("foundry_sovereign");
+        int ci = -1;
+        for (int i = 0; i < fd.steps.size(); i++) if (fd.steps.get(i).type.equals("coop")) ci = i;
+        check(ci >= 0, "rite: foundry_sovereign has a co-op step");
+        data.putRitual(key, "foundry_sovereign|" + ci + "|0");
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(data.rituals().get(key).startsWith("foundry_sovereign|" + ci + "|"), "rite: one fighter cannot pass a two-fighter step");
+        Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get()));
+        check(data.rituals().get(key).startsWith("foundry_sovereign|" + (ci + 1) + "|"), "rite: a token calls a spirit that stands in");
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(24), m -> m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+        data.removeRitual(key);
+        data.clearDefeats();
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG)).forEach(Mob::discard);
+    }
+
+
+    /** Plays every step of a rite at the altar the way a player would: offer, kills, wrong then right runes, the hour, co-op by token, defend. */
+    private static void play(CommandSourceStack src, ServerLevel level, BlockPos altar, FakePlayer fp, String key, Ritual.Def d) {
+        AscendantData data = AscendantData.get(level.getServer());
         for (Ritual.Step st : d.steps) {
             switch (st.type) {
                 case "offer" -> {
@@ -167,6 +193,7 @@ public final class SelfTest {
                     for (int r : st.sequence) Ritual.seal(level, altar.east(3), r, fp);
                 }
                 case "hour" -> {
+                    src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.to + 2000) % 24000);
                     long before = level.getOverworldClockTime() % 24000;
                     boolean in = st.from <= st.to ? before >= st.from && before <= st.to : before >= st.from || before <= st.to;
                     check(!in, "rite: the hour step is closed outside its window (clock " + before + ")");
@@ -177,6 +204,10 @@ public final class SelfTest {
                     check(now >= st.from && now <= st.to, "rite: the test could set the clock (" + now + ")");
                     Ritual.use(level, altar, fp, ItemStack.EMPTY);
                 }
+                case "coop" -> {
+                    Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get(), 3));
+                    check(!data.rituals().get(key).contains("|" + d.steps.indexOf(st) + "|"), "rite: co-op by token passes (" + d.boss + ")");
+                }
                 case "defend" -> {
                     Ritual.use(level, altar, fp, ItemStack.EMPTY);
                     check(Ritual.DEFEND_START.containsKey(key), "rite: the defend step starts");
@@ -186,24 +217,49 @@ public final class SelfTest {
                 default -> check(false, "rite: unknown step type " + st.type);
             }
         }
-        check(!data.rituals().containsKey(key), "rite: finished and cleared");
-        var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
-        check(woken.size() == 1, "rite: the boss wakes (" + woken.size() + ")");
-        woken.forEach(Mob::discard);
-        // solo path of the co-op step: one fighter, a rite for two, tokens call spirits
-        Ritual.Def fd = Ritual.def("foundry_sovereign");
-        int ci = -1;
-        for (int i = 0; i < fd.steps.size(); i++) if (fd.steps.get(i).type.equals("coop")) ci = i;
-        check(ci >= 0, "rite: foundry_sovereign has a co-op step");
-        data.putRitual(key, "foundry_sovereign|" + ci + "|0");
-        Ritual.use(level, altar, fp, ItemStack.EMPTY);
-        check(data.rituals().get(key).startsWith("foundry_sovereign|" + ci + "|"), "rite: one fighter cannot pass a two-fighter step");
-        Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get()));
-        check(data.rituals().get(key).startsWith("foundry_sovereign|" + (ci + 1) + "|"), "rite: a token calls a spirit that stands in");
-        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(24), m -> m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+    }
+
+    /** The Library's rites: all convert to valid steps (items and creatures exist); one tier-7 rite is played through, the gate holds. */
+    private static void library(CommandSourceStack src, ServerLevel level, BlockPos c0, FakePlayer fp) {
+        var files = RiteLibrary.universes();
+        if (files.isEmpty()) { System.out.println("[bossesselftest] skip library rites (no diaithir_druidry rite data; set -Ddiaithir.rites)"); return; }
+        int total = 0, bad = 0, shown = 0;
+        RiteLibrary.Rite sample = null;
+        for (String f : files) {
+            for (RiteLibrary.Rite r : RiteLibrary.universeFile(f).values()) {
+                total++;
+                Ritual.Def d = RiteLibrary.def(r.id);
+                String why = d == null || d.steps.isEmpty() ? "no steps" : null;
+                if (why == null) for (Ritual.Step st : d.steps) {
+                    if (st.item != null && !st.item.startsWith("#") && BuiltInRegistries.ITEM.getOptional(Identifier.parse(st.item)).isEmpty()) why = "item " + st.item;
+                    if (st.mob != null && BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(st.mob)).isEmpty()) why = "creature " + st.mob;
+                }
+                if (why != null) { bad++; if (shown++ < 5) System.out.println("[bossesselftest] bad rite " + r.id + ": " + why); }
+                if (sample == null && r.tier == 7 && r.steps.stream().anyMatch(x -> x.step.equals("coop")) && r.steps.stream().anyMatch(x -> x.step.equals("stones"))) sample = r;
+            }
+        }
+        System.out.println("[bossesselftest] library rites: " + total + " in " + files.size() + " files, " + bad + " bad");
+        check(total > 50000, "library: " + total + " rites loaded from " + files.size() + " universe files");
+        check(bad == 0, "library: every rite converts to valid steps (" + bad + " bad of " + total + ")");
+        if (sample == null) { check(false, "library: found a tier 7 rite with co-op and stones to play"); return; }
+        AscendantData data = AscendantData.get(level.getServer());
+        BlockPos altar = c0.above();
+        String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
         data.removeRitual(key);
+        Ritual.TEST_PLAYERS.add(fp);
+        fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
+        Ages.forced = 1;
+        check(Ritual.beginRite(level, altar, sample.id) != null && !data.rituals().containsKey(key), "library: " + sample.name + " is closed before Age " + Ages.name(sample.gate_age));
+        Ages.forced = sample.gate_age;
+        check(Ritual.beginRite(level, altar, sample.id) == null && data.rituals().containsKey(key), "library: " + sample.name + " begins at its gate Age");
+        check(Ritual.beginRite(level, altar, sample.id) != null, "library: a second rite cannot start on a busy altar");
+        play(src, level, altar, fp, key, Ritual.def(Ritual.RITE + sample.id));
+        System.out.println("[bossesselftest] library rite played: " + sample.id + " (" + sample.name + ", " + sample.steps.size() + " steps)");
+        check(!data.rituals().containsKey(key), "library: the rite finished and cleared");
+        check(data.beaten(Ritual.RITE + sample.id), "library: the spell is learned");
+        check(Ritual.beginRite(level, altar, sample.id) != null, "library: a learned rite is not run twice");
         data.clearDefeats();
-        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG)).forEach(Mob::discard);
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
     }
 
     private static Mob spawnAt(ServerLevel level, Data.Profile p, BlockPos c0) {

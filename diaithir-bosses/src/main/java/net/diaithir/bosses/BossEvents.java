@@ -102,6 +102,16 @@ public final class BossEvents {
     }
 
     @SubscribeEvent
+    public static void serverStarting(net.neoforged.neoforge.event.server.ServerStartingEvent e) {
+        RiteLibrary.server = e.getServer();
+    }
+
+    @SubscribeEvent
+    public static void serverStopped(net.neoforged.neoforge.event.server.ServerStoppedEvent e) {
+        RiteLibrary.server = null;
+    }
+
+    @SubscribeEvent
     public static void serverTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) {
         Rush.tick(e.getServer());
         Ritual.tick(e.getServer());

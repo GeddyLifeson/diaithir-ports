@@ -34,18 +34,20 @@ import net.minecraft.world.phys.Vec3;
 public final class Ritual {
     public static final String[] TREES = {"Birch", "Rowan", "Alder", "Willow", "Ash", "Hawthorn", "Oak", "Holly", "Hazel"};
     public static final String[] RUNES = {"ᚁ", "ᚂ", "ᚃ", "ᚄ", "ᚅ", "ᚆ", "ᚇ", "ᚈ", "ᚉ"};
+    /** Prefix of a state's boss field when the rite is a Library rite (a spell) and not a boss rite. */
+    public static final String RITE = "rite:";
     public static final String WAVE_TAG = "diaithirbosses.rite_wave";
     public static final String SPIRIT_TAG = "diaithirbosses.rite_spirit";
     private static final Gson GSON = new Gson();
 
     public static final class Step {
-        public String type, item, mob;
+        public String type, item, mob, clue;
         public int count = 1, seconds = 60, from, to = 24000, players = 1;
         public List<Integer> sequence = new ArrayList<>();
         public List<String> mobs = new ArrayList<>();
     }
 
-    public static final class Def { public String boss; public List<Step> steps = new ArrayList<>(); }
+    public static final class Def { public String boss, name, text; public List<Step> steps = new ArrayList<>(); }
 
     private static final Map<String, Def> DEFS = new HashMap<>();
     /** Game time at which a defend step began, by altar key (not saved: a restart restarts that step). */
@@ -60,6 +62,7 @@ public final class Ritual {
     }
 
     public static Def def(String boss) {
+        if (boss.startsWith(RITE)) return RiteLibrary.def(boss.substring(RITE.length()));
         return DEFS.computeIfAbsent(boss, b -> {
             InputStream in = Ritual.class.getResourceAsStream("/data/" + DiaithirBosses.ID + "/ritual/" + b + ".json");
             if (in == null) return null;
@@ -90,7 +93,30 @@ public final class Ritual {
         for (ServerPlayer p : sl.players()) if (p.distanceToSqr(Vec3.atCenterOf(at)) < 48 * 48) p.sendSystemMessage(c);
     }
 
-    private static Component clue(String boss, int step) { return Component.translatable("ritual.diaithirbosses." + boss + "." + step); }
+    private static Component clue(String boss, int step) {
+        if (boss.startsWith(RITE)) {
+            Def d = def(boss);
+            return d != null && step < d.steps.size() ? Component.literal(d.steps.get(step).clue) : Component.empty();
+        }
+        return Component.translatable("ritual.diaithirbosses." + boss + "." + step);
+    }
+
+    /** Starts a Library rite at an altar. Returns why not, or null when it began. */
+    public static Component beginRite(ServerLevel sl, BlockPos altar, String id) {
+        RiteLibrary.Rite r = RiteLibrary.get(id);
+        Def d = def(RITE + id);
+        if (r == null || d == null) return Component.literal("no such rite");
+        AscendantData data = AscendantData.get(sl.getServer());
+        if (Ages.current(sl.getServer()) < r.gate_age) return Component.literal(r.name + " opens in Age " + Ages.name(r.gate_age));
+        if (data.beaten(RITE + id)) return Component.literal(r.name + " is already learned");
+        String k = key(altar);
+        if (data.rituals().containsKey(k)) return Component.literal("a rite is already running at this altar");
+        data.putRitual(k, new State(RITE + id, 0, 0).toString());
+        tell(sl, altar, Component.literal(r.text));
+        tell(sl, altar, Component.translatable("ritual.diaithirbosses.begin"));
+        tell(sl, altar, clue(RITE + id, 0));
+        return null;
+    }
 
     // ------------------------------------------------------------------ the altar
     /** A player uses the Ascendant altar, with something in hand or without. */
@@ -199,7 +225,10 @@ public final class Ritual {
             dismissSpirits(sl, altar);
             Data.Profile p = Data.byId(st.boss);
             tell(sl, altar, Component.translatable("ritual.diaithirbosses.done"));
-            if (p != null) DiaithirBosses.spawn(sl, p, Vec3.atBottomCenterOf(altar.above(2)), altar);
+            if (st.boss.startsWith(RITE)) {
+                data.defeat(st.boss, sl.getGameTime());
+                tell(sl, altar, Component.literal("You have learned " + d.name + "."));
+            } else if (p != null) DiaithirBosses.spawn(sl, p, Vec3.atBottomCenterOf(altar.above(2)), altar);
             return;
         }
         data.putRitual(k, new State(st.boss, next, 0).toString());
