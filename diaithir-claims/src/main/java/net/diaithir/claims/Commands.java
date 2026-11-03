@@ -38,6 +38,8 @@ public final class Commands {
                 .executes(c -> trust(c.getSource().getPlayerOrException(), EntityArgument.getPlayer(c, "who"), true))))
             .then(net.minecraft.commands.Commands.literal("untrust").then(net.minecraft.commands.Commands.argument("who", EntityArgument.player())
                 .executes(c -> trust(c.getSource().getPlayerOrException(), EntityArgument.getPlayer(c, "who"), false))))
+            .then(net.minecraft.commands.Commands.literal("selftest").requires(src -> src.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
+                .executes(c -> SelfTest.run(c.getSource().getPlayerOrException())))
             .then(net.minecraft.commands.Commands.literal("map").executes(c -> map(c.getSource().getPlayerOrException()))));
     }
 

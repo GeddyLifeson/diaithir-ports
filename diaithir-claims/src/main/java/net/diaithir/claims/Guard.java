@@ -58,8 +58,13 @@ public final class Guard {
         }
     }
 
+    /** Drops every claimed position from an explosion's block list. */
+    static void strip(LevelAccessor level, java.util.List<BlockPos> blocks) {
+        blocks.removeIf(pos -> claimAt(level, pos).isPresent());
+    }
+
     @SubscribeEvent
     public void onBoom(ExplosionEvent.Detonate e) {
-        e.getAffectedBlocks().removeIf(pos -> claimAt(e.getLevel(), pos).isPresent());
+        strip(e.getLevel(), e.getAffectedBlocks());
     }
 }
