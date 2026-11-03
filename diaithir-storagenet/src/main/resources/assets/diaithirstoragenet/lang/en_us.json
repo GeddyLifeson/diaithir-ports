@@ -5,5 +5,6 @@
   "block.diaithirstoragenet.export_cable": "Ekthurmael",
   "block.diaithirstoragenet.filter_cable": "Pelquanor",
   "block.diaithirstoragenet.terminal": "Zhaldorith",
-  "block.diaithirstoragenet.crafting_terminal": "Quenvarosh"
+  "block.diaithirstoragenet.crafting_terminal": "Quenvarosh",
+  "block.diaithirstoragenet.wireless_transmitter": "Wireless transmitter"
 }

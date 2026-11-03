@@ -34,6 +34,12 @@ final class StorageCommands {
                     c.getSource().sendSuccess(() -> Component.literal("Search cleared"), false);
                     return 1;
                 }))
+                .then(Commands.literal("wirelesstest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+                    List<String> fails = WirelessSelfTest.run(c.getSource().getServer());
+                    String line = fails.isEmpty() ? "Wireless link test PASS" : "Wireless link test FAIL: " + String.join("; ", fails);
+                    c.getSource().sendSuccess(() -> Component.literal(line), false);
+                    return fails.isEmpty() ? 1 : 0;
+                }))
                 .then(Commands.literal("selftest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
                     List<String> fails = StorageSelfTest.run(c.getSource().getServer());
                     String line = fails.isEmpty() ? "Storagenet self test PASS" : "Storagenet self test FAIL: " + String.join("; ", fails);

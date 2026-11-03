@@ -34,6 +34,11 @@ public final class Networks {
         if (s != null) for (ControllerBlockEntity c : s) c.markDirty();
     }
 
+    /** A wireless transmitter changed: every controller in every level re-walks on its next use. */
+    public static void markDirtyEverywhere() {
+        for (Set<ControllerBlockEntity> s : CONTROLLERS.values()) for (ControllerBlockEntity c : s) c.markDirty();
+    }
+
     /** The network that includes this position, or null if no controller reaches it. */
     public static @Nullable Network find(Level level, BlockPos pos) {
         Set<ControllerBlockEntity> s = CONTROLLERS.get(level);

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": "#c:ingots/iron",
+    "E": "minecraft:ender_pearl",
+    "C": "diaithirstoragenet:cable"
+  },
+  "pattern": [
+    "SES",
+    "ECE",
+    "SES"
+  ],
+  "result": {
+    "id": "diaithirstoragenet:wireless_transmitter",
+    "count": 1
+  },
+  "category": "misc"
+}

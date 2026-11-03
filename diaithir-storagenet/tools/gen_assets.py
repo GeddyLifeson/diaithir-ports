@@ -22,7 +22,7 @@ BLK = (30, 30, 30)
 rnd = random.Random(11)
 
 COL = {"controller": (230, 120, 30), "cable": (200, 200, 70), "import_cable": (80, 200, 110), "export_cable": (80, 150, 230),
-       "filter_cable": (200, 90, 220), "terminal": (80, 200, 230), "crafting_terminal": (240, 190, 30)}
+       "filter_cable": (200, 90, 220), "terminal": (80, 200, 230), "crafting_terminal": (240, 190, 30), "wireless_transmitter": (160, 90, 230)}
 
 
 def plate():
@@ -119,6 +119,18 @@ for k, lines in (("terminal", True), ("crafting_terminal", False)):
                 p[j, i] = EDGE + (255,)
     save(t, k + "_top")
 
+# wireless transmitter: steel plate with a violet ring and an antenna dot (drawn after all other textures so earlier random draws are unchanged)
+w = plate()
+wp = w.load()
+for y in range(16):
+    for x in range(16):
+        d2 = (x - 7.5) ** 2 + (y - 7.5) ** 2
+        if 20 <= d2 <= 30:
+            wp[x, y] = COL["wireless_transmitter"] + (255,)
+        elif d2 <= 3:
+            wp[x, y] = (235, 235, 245, 255)
+save(w, "wireless_transmitter")
+
 
 def wj(path, obj):
     with open(os.path.join(A, path), "w") as f:
@@ -142,6 +154,10 @@ for k in ("terminal", "crafting_terminal"):
         variants[f"facing={facing}"] = v
     wj(f"blockstates/{k}.json", {"variants": variants})
     wj(f"items/{k}.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/{k}"}})
+
+wj("models/block/wireless_transmitter.json", {"parent": "minecraft:block/cube_all", "textures": {"all": f"{NS}:block/wireless_transmitter"}})
+wj("blockstates/wireless_transmitter.json", {"variants": {"": {"model": f"{NS}:block/wireless_transmitter"}}})
+wj("items/wireless_transmitter.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/wireless_transmitter"}})
 
 FACE = lambda: {f: {"texture": "#all"} for f in ("north", "south", "east", "west", "up", "down")}
 wj("models/block/cable_core.json", {"textures": {"particle": "#all"}, "elements": [{"from": [6, 6, 6], "to": [10, 10, 10], "faces": FACE()}]})
@@ -169,6 +185,7 @@ NAMES = {
     "filter_cable": ("Pelquanor", "Filter cable. Stops the network storing anything but whitelisted items (or anything on a blacklist) in the inventories touching it. Whitelisted items are stored there first. Age V."),
     "terminal": ("Zhaldorith", "Access terminal, Age VI. Opens a grid of everything in the network. Left click takes a stack, right click one, shift click sends it to your inventory; click with an item on the cursor or shift click your own items to store them. Sort by name, count or mod, and search with /diaithirstoragenet search text (or @mod)."),
     "crafting_terminal": ("Quenvarosh", "Crafting terminal, Age VI. A crafting table that refills its grid from the whole network: when a grid slot runs empty after a craft it takes one more of that item from storage. Place or hold the first items yourself."),
+    "wireless_transmitter": ("Wireless transmitter", "Wireless transmitter, Age VII. A network block with a frequency from 0 to 99 (use it bare-handed to step up, sneak to step down). Networks with a transmitter on the same frequency share their storage, at any distance and across dimensions; both transmitters must be loaded. Folded from the Interdimensional Wireless Transmitter idea."),
 }
 lang = {f"block.{NS}.{k}": v[0] for k, v in NAMES.items()}
 wj("lang/en_us.json", lang)
@@ -179,7 +196,8 @@ with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as 
 
 with open(os.path.join(D, "age_gate.json"), "w") as f:
     json.dump({"tier1": {"age": 5, "items": [f"{NS}:cable", f"{NS}:import_cable", f"{NS}:export_cable", f"{NS}:filter_cable"]},
-               "tier2": {"age": 6, "items": [f"{NS}:controller", f"{NS}:terminal", f"{NS}:crafting_terminal"]}}, f, indent=2)
+               "tier2": {"age": 6, "items": [f"{NS}:controller", f"{NS}:terminal", f"{NS}:crafting_terminal"]},
+               "tier3": {"age": 7, "items": [f"{NS}:wireless_transmitter"]}}, f, indent=2)
     f.write("\n")
 
 
@@ -206,4 +224,14 @@ shapeless("export_cable", [f"{NS}:cable", "minecraft:dropper"])
 shapeless("filter_cable", [f"{NS}:cable", "minecraft:comparator"])
 shaped("terminal", ["IGI", "GCG", "IRI"], {"I": "minecraft:iron_ingot", "G": "minecraft:glass_pane", "C": f"{NS}:cable", "R": "minecraft:redstone"})
 shapeless("crafting_terminal", [f"{NS}:terminal", "minecraft:crafting_table"])
+shaped("wireless_transmitter", ["SES", "ECE", "SES"], {"S": "#c:ingots/iron", "E": "minecraft:ender_pearl", "C": f"{NS}:cable"})
+os.makedirs(os.path.join(D, "loot_table/blocks"), exist_ok=True)
+with open(os.path.join(D, "loot_table/blocks/wireless_transmitter.json"), "w") as f:
+    json.dump({"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:wireless_transmitter"}],
+                                                   "conditions": [{"condition": "minecraft:survives_explosion"}]}]}, f, indent=2)
+    f.write("\n")
+os.makedirs(os.path.join(ROOT, "data/minecraft/tags/block/mineable"), exist_ok=True)
+with open(os.path.join(ROOT, "data/minecraft/tags/block/mineable/pickaxe.json"), "w") as f:
+    json.dump({"values": [f"{NS}:wireless_transmitter"]}, f, indent=2)
+    f.write("\n")
 print("ok")

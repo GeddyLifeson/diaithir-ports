@@ -33,5 +33,10 @@
   "id": "diaithirstoragenet:crafting_terminal",
   "name": "Quenvarosh",
   "text": "Crafting terminal, Age VI. A crafting table that refills its grid from the whole network: when a grid slot runs empty after a craft it takes one more of that item from storage. Place or hold the first items yourself."
+ },
+ {
+  "id": "diaithirstoragenet:wireless_transmitter",
+  "name": "Wireless transmitter",
+  "text": "Wireless transmitter, Age VII. A network block with a frequency from 0 to 99 (use it bare-handed to step up, sneak to step down). Networks with a transmitter on the same frequency share their storage, at any distance and across dimensions; both transmitters must be loaded. Folded from the Interdimensional Wireless Transmitter idea."
  }
 ]
