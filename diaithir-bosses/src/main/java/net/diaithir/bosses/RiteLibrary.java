@@ -164,6 +164,25 @@ public final class RiteLibrary {
         return id.isEmpty() ? null : id;
     }
 
+    private static Map<String, String> bosses;
+    /** Test hook: extra rite to boss pairs. */
+    static final Map<String, String> TEST_BOSS = new HashMap<>();
+
+    /** The boss a finished rite wakes (data/diaithirbosses/rite_bosses.json: rite id to boss id), or null. */
+    public static synchronized String bossFor(String riteId) {
+        if (TEST_BOSS.containsKey(riteId)) return TEST_BOSS.get(riteId);
+        if (bosses == null) {
+            bosses = new HashMap<>();
+            try (InputStream in = RiteLibrary.class.getResourceAsStream("/data/" + DiaithirBosses.ID + "/rite_bosses.json")) {
+                if (in != null) {
+                    JsonObject o = GSON.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), JsonObject.class);
+                    o.entrySet().forEach(e -> bosses.put(e.getKey(), e.getValue().getAsString()));
+                }
+            } catch (Exception ignored) { }
+        }
+        return bosses.get(riteId);
+    }
+
     private static int indexOfTree(String name) {
         for (int i = 0; i < Ritual.TREES.length; i++) if (Ritual.TREES[i].equalsIgnoreCase(name)) return i;
         return -1;

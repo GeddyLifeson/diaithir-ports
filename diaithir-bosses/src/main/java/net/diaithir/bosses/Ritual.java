@@ -239,7 +239,10 @@ public final class Ritual {
             if (st.boss.startsWith(RITE)) {
                 data.defeat(st.boss, sl.getGameTime());
                 tell(sl, altar, Component.literal("You have learned " + d.name + "."));
-                reward(sl, altar, st.boss.substring(RITE.length()));
+                String rid = st.boss.substring(RITE.length());
+                reward(sl, altar, rid);
+                Data.Profile wake = Data.byId(String.valueOf(RiteLibrary.bossFor(rid)));
+                if (wake != null) DiaithirBosses.spawn(sl, wake, Vec3.atBottomCenterOf(altar.above(2)), altar);
             } else if (p != null) DiaithirBosses.spawn(sl, p, Vec3.atBottomCenterOf(altar.above(2)), altar);
             return;
         }

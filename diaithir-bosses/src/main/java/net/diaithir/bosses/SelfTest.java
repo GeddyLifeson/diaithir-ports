@@ -258,7 +258,13 @@ public final class SelfTest {
         Ritual.use(level, altar, fp, page);
         check(data.rituals().containsKey(key) && data.rituals().get(key).startsWith(Ritual.RITE + sample.id + "|0|"), "library: " + sample.name + " begins from its page at its gate Age");
         check(Ritual.beginRite(level, altar, sample.id) != null, "library: a second rite cannot start on a busy altar");
+        Data.Profile any = Data.profiles().values().iterator().next();
+        RiteLibrary.TEST_BOSS.put(sample.id, any.id);
         play(src, level, altar, fp, key, Ritual.def(Ritual.RITE + sample.id));
+        RiteLibrary.TEST_BOSS.remove(sample.id);
+        var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+        check(woken.size() == 1, "library: the finished rite wakes its mapped boss (" + woken.size() + ")");
+        woken.forEach(Mob::discard);
         System.out.println("[bossesselftest] library rite played: " + sample.id + " (" + sample.name + ", " + sample.steps.size() + " steps)");
         check(!data.rituals().containsKey(key), "library: the rite finished and cleared");
         System.out.println("[bossesselftest] library reward items dropped at the altar: " + level.getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class, new AABB(altar).inflate(4)).size() + " (spell_engine absent in the test run)");
