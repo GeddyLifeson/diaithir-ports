@@ -11,6 +11,8 @@ public final class EconState {
     public final Map<String, Cur> cur = new HashMap<>();
     public final Map<String, Des> des = new HashMap<>();
     public final Map<String, Bank> bank = new HashMap<>();
+    public final Map<String, Bonds> bonds = new HashMap<>();
+    public final Map<String, Company> company = new HashMap<>();
     public long week;
 
     /** A culture's money in circulation, the supply it was set against, trade balance, treasury and wage pool. */
@@ -39,6 +41,13 @@ public final class EconState {
         public boolean failed, endowed;
     }
 
+    public static final class Bond { public String who; public double face, rate; public int left, late; }
+    public static final class Bonds { public List<Bond> list = new ArrayList<>(); public final Map<String, Double> due = new HashMap<>(); public int blot; }
+
+    public static final class Line { public String from, to, vehicle, cargo; public int n = 1, weeks, units; public double upkeep, rev, cost; }
+    public static final class Company { public String name, home; public double money, loan; public List<Line> lines = new ArrayList<>(); public int broke; public long founded; public boolean closed; }
+
+    public Bonds bonds(String culture) { return bonds.computeIfAbsent(culture, k -> new Bonds()); }
     public Cur cur(String culture) { return cur.computeIfAbsent(culture, k -> new Cur()); }
     public Des des(String did) { return des.computeIfAbsent(did, k -> new Des()); }
     public Bank bank(String culture) { return bank.computeIfAbsent(culture, k -> new Bank()); }
