@@ -4,8 +4,8 @@
  "name_en": "Maktìrikrìuch",
  "age": 4,
  "own": {
-  "kind": "hoglin",
-  "scale": 2.4,
+  "kind": "look_wide",
+  "scale": 1.49,
   "hp": 620,
   "damage": 12,
   "armor": 10,
@@ -197,5 +197,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:maktirikriuch",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

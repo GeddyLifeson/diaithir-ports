@@ -5,7 +5,7 @@
  "age": 7,
  "tier": "ascendant_1",
  "own": {
-  "kind": "hoglin",
+  "kind": "look_wide",
   "scale": 1.9,
   "hp": 950,
   "damage": 24,
@@ -182,5 +182,6 @@
  "summon": {
   "rite": "ascendant_altar",
   "requires_kills": []
- }
+ },
+ "look": true
 }

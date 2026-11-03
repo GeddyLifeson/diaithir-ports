@@ -21,10 +21,12 @@ public final class BossCommands {
             .then(Commands.literal("list").executes(c -> {
                 Data.profiles().values().forEach(p -> c.getSource().sendSuccess(() -> Component.literal(
                     p.id + " (Age " + Ages.name(p.age) + ", " + p.entity + (p.mythic ? ", kit of " + p.creature_id : "") + ")"), false));
-                return Data.profiles().size();
+                c.getSource().sendSuccess(() -> Component.literal(Data.planetBosses().size() + " planet bosses (use /boss spawn <id>; ids are lower-case Library entry ids)"), false);
+                return Data.profiles().size() + Data.planetBosses().size();
             }))
             .then(Commands.literal("spawn").then(Commands.argument("id", StringArgumentType.word())
-                .suggests((c, b) -> net.minecraft.commands.SharedSuggestionProvider.suggest(Data.profiles().keySet(), b))
+                .suggests((c, b) -> net.minecraft.commands.SharedSuggestionProvider.suggest(
+                    java.util.stream.Stream.concat(Data.profiles().keySet().stream(), Data.planetBosses().keySet().stream()), b))
                 .executes(c -> {
                     Data.Profile p = Data.byId(StringArgumentType.getString(c, "id"));
                     if (p == null) { c.getSource().sendFailure(Component.literal("no such boss")); return 0; }

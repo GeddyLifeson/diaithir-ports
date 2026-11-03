@@ -5,7 +5,7 @@
  "age": 8,
  "tier": "ascendant_3",
  "own": {
-  "kind": "phantom",
+  "kind": "look_wide",
   "scale": 3.2,
   "hp": 2025,
   "damage": 44,
@@ -194,5 +194,6 @@
    "mist_weaver",
    "ash_seraph"
   ]
- }
+ },
+ "look": true
 }
