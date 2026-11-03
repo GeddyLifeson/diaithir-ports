@@ -1,0 +1,123 @@
+[
+ {
+  "feature": "vehicletuning",
+  "age": "II",
+  "title": "Vehicle Tuning",
+  "text": "A compatibility layer that balances third-party cars, boats and aircraft against the rest of the pack. It holds clamped speed, fuel burn, damage and repair multipliers. When a vehicle or aircraft mod is installed, a boosted profile becomes active. It adds no blocks, items or entities of its own."
+ },
+ {
+  "feature": "portallinkfix",
+  "age": "II",
+  "title": "Portal Link Fix",
+  "text": "Nether portal travel is checked on the server. The scaled destination is clamped inside the destination world border, and an existing portal within 16 blocks of the exact scaled spot is preferred before the wider vanilla search picks a distant one. The player sees an overlay message when the destination was adjusted. It has no blocks or items and no switch."
+ },
+ {
+  "feature": "aircrafttuning",
+  "age": "V",
+  "title": "Aircraft Tuning",
+  "text": "A compat layer that holds balance numbers for aircraft from addon mods. Each aircraft type has multipliers for speed, lift and fuel burn, plus a Create stress cost per second for rotor-driven types. Unknown types use neutral values. It adds no blocks or items, and other modules read the values to keep flight balanced."
+ },
+ {
+  "feature": "worldqol",
+  "age": "I",
+  "title": "World Comforts",
+  "text": "Small server-side comforts with no switches. Farmland is never trampled. Waking from a bed grants brief Regeneration and a message. Saplings that expire on dirt or grass plant themselves. Sneak with an empty hand and right-click a fully grown crop to harvest and replant it, at the cost of one seed.",
+  "glossary": []
+ },
+ {
+  "feature": "itemmagnets",
+  "age": "II",
+  "title": "Item Magnets",
+  "text": "Iron and Gold Magnets pull nearby dropped items toward you while carried in your inventory, hotbar or offhand. Iron reaches 6 blocks, Gold reaches 12 and pulls harder. The strongest magnet wins. Sneak to pause attraction. Items very close to you are left to normal pickup."
+ },
+ {
+  "feature": "utilityblocks",
+  "age": "II",
+  "title": "Utility Blocks",
+  "text": "Five small helpers. The Angel Block item places a stone block in mid air up to five blocks away when you use it without aiming at a block. Sky Sand never falls. The Redstone Clock pulses for 2 ticks every second. The Fluid Hopper, funnel down, removes a source fluid above it every 8 ticks. The Lamp Block gives light level 15 with no power."
+ },
+ {
+  "feature": "veinbreaker",
+  "age": "I",
+  "title": "Veinbreaker",
+  "text": "Crouch while mining an ore with a tool that can harvest it, and the whole connected vein of the same ore breaks with it. Up to 64 blocks within 12 blocks of the first one. Every extra block drops its normal loot at you, wears the tool by one point and tires you a little. The chain stops before the tool would break. Creative mode is unaffected."
+ },
+ {
+  "feature": "skilltrees",
+  "age": "I",
+  "title": "Skill Trees",
+  "text": "Four skills level as you play. Mining grows from breaking ores and stone, combat from kills, farming from harvesting mature crops, and exploring from distance travelled. Each level up to 20 grants a small permanent bonus: faster block breaking, extra attack damage, more health, faster movement. Progress persists through death. Use /skills to view your levels."
+ },
+ {
+  "feature": "gemrings",
+  "age": "II",
+  "title": "Gem Rings",
+  "text": "Ruby, sapphire and topaz sometimes drop as bonus loot when you mine ore. Combine one gem with four gold ingots to craft a ring. Carry a ring anywhere in your inventory to gain its effect: ruby gives Strength I, sapphire gives Water Breathing, topaz gives Haste I. Rings do not stack."
+ },
+ {
+  "feature": "mobbraintuning",
+  "age": "I",
+  "title": "Mob Brain Tuning",
+  "text": "Saves server time by freezing mobs that are far from every player and waking them when someone comes close. Pets, bosses, named or persistent mobs and riders are never frozen. Operators can switch off panic, wander, look around, avoid players and mob attacks with /mobbrain disable or enable. Changes affect mobs loaded afterwards and reset on restart."
+ },
+ {
+  "feature": "structurecompass",
+  "age": "II",
+  "title": "Wayfinder Compass",
+  "text": "A compass ringed by gold and redstone that hunts structures. Right click to search up to 100 chunks for the selected type. Sneak right click cycles village, stronghold, mineshaft, shipwreck, ruined portal, pillager outpost, ancient city and trial chambers. The actionbar shows target, distance and direction. 40 tick cooldown."
+ },
+ {
+  "feature": "packversioncheck",
+  "age": "I",
+  "title": "Pack Version Check",
+  "text": "The server list shows the modpack version next to the server name. When you join, your client reports its own pack version. If it differs from the server, you are disconnected with both versions shown, so everyone plays the same pack. Clients without the mod are only accepted if the server allows unversioned players."
+ },
+ {
+  "feature": "pocketbench",
+  "age": "I",
+  "title": "Pocket Bench",
+  "text": "A portable crafting grid made from a crafting table and a stick. Use it in the air or on any block to open a 3x3 crafting grid wherever you stand, no table needed. Sneak-use on a block to interact with that block normally, such as chests and doors. It has a 1.5 second cooldown."
+ },
+ {
+  "feature": "gridkeys",
+  "age": "I",
+  "title": "Grid Keys",
+  "text": "Three unbound keys act on whatever crafting grid you have open. Rotate turns a square grid a quarter turn clockwise. Balance spreads each stack type evenly across the slots holding it. Clear returns every grid item to your inventory and drops any overflow. Bind them in Controls under Grid Keys."
+ },
+ {
+  "feature": "calmpiglins",
+  "age": "III",
+  "title": "Calm Piglins",
+  "text": "Piglins stay calm toward a player who is bartering with them. Right-click a piglin with gold, or drop gold near one, and that player is treated as a trader for two seconds. During that window the piglin cannot become angry at them. Attacking piglins or opening chests still angers them once the grace window ends."
+ },
+ {
+  "feature": "villagercare",
+  "age": "I",
+  "title": "Villager Care",
+  "text": "Villagers are steadier in this pack. A villager you have traded with keeps its profession even if its workstation is lost. Every dawn all trades restock once. Villagers only panic when a hostile is within six blocks. Bad reputation can never push a price above one and a half times its base cost."
+ },
+ {
+  "feature": "admincommands",
+  "age": "I",
+  "title": "Server Utility Commands",
+  "text": "Players can set a home, return to it, visit world spawn, step back to their last position or death point, and ask friends for teleports with a 60 second request window. Operators at permission level 2 can heal, feed, toggle flight, go invisible and pull players to them. Homes reset on restart."
+ },
+ {
+  "feature": "questbook",
+  "age": "I",
+  "title": "Quest Book",
+  "text": "A server side quest list with kill, mine, collect and craft tasks. Progress is shared by team or kept per player when teamless. Create or join a team with /quests team, check /quests list and /quests progress. Finishing a quest pays its reward to the finisher and notifies online teammates."
+ },
+ {
+  "feature": "rankperms",
+  "age": "I",
+  "title": "Ranks and Permissions",
+  "text": "Operators create named ranks with /rank. Each rank has a priority, a chat prefix text, a prefix colour and a set of permission nodes. A player holds one rank, saved with the server world. The prefix shows in chat, the tab list and above the head. Wildcard nodes like a.b.* match any child node. Other systems query the rank to allow or deny actions."
+ },
+ {
+  "feature": "villageguards",
+  "age": "I",
+  "title": "Village Guard",
+  "text": "A sturdy iron-armed defender that appears when villagers settle a new area. Guards patrol villages, retaliate when hurt, and hunt hostile monsters, raiders and pillagers. They never attack players or villagers. A spawn egg is in the creative spawn eggs tab. One guard per village area is spawned every few minutes at most."
+ }
+]
