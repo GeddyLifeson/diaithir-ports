@@ -32,6 +32,7 @@ def wikidata():
     return out
 def category(c, hint, depth, seen, out):
     if c in seen or depth < 0: return
+    if re.search(r"\d", c) and c.endswith("_locomotives") and not re.search(r"class|Class|series", c): return   # wheel-arrangement categories hold only pages already listed
     seen.add(c); print('cat', c, len(out), flush=True); url = "https://en.wikipedia.org/wiki/Category:" + c
     while url:
         cf = os.path.join(CACHE, "cat_" + re.sub(r"[^A-Za-z0-9_.-]", "_", url)[-140:] + ".html")
@@ -119,7 +120,8 @@ def parse(t, txt, hint):
     if not gauge: return None
     name = re.sub(r"\s*\(.*?\)$", "", t.replace("_", " "))
     mass = weight_kg(field(ib, "locoweight", "weight", "unitweight", "mass", "tareweight", "emptyweight", "locotenderweight"))
-    cap = int(re.sub(r"[^\d]", "", re.search(r"[\d,]+", field(ib, "seating", "capacity", "seats", "carryingcapacity", "payload", "loadlimit") or "0").group(0) or 0) or 0)
+    cm = re.search(r"\d[\d,]*", field(ib, "seating", "capacity", "seats", "carryingcapacity", "payload", "loadlimit"))
+    cap = int(cm.group(0).replace(",", "")) if cm else 0
     pw = power_w(field(ib, "poweroutput", "power", "powerout", "continuouspower"))
     role = clean(field(ib, "type")).lower()[:40]
     row = dict(page=t, category=cat, name=name, year=year(txt, ib), mass_kg=mass, power_w=pw if cat != "passenger" and cat != "freight" else cap, gauge=gauge, gauge_mm=g,
