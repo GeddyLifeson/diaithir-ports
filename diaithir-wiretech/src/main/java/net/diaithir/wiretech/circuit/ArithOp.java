@@ -28,6 +28,9 @@ public enum ArithOp {
 
     private static long pow(int a, int b) {
         if (b < 0) return 0;
+        if (a == 0) return b == 0 ? 1 : 0;
+        if (a == 1) return 1;
+        if (a == -1) return (b & 1) == 0 ? 1 : -1;
         long r = 1;
         for (int i = 0; i < b && Math.abs(r) <= Integer.MAX_VALUE; i++) r *= a;
         return r;

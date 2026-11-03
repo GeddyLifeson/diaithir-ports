@@ -120,6 +120,9 @@ public final class CoreCheck {
         eq("mod0", 0L, ArithOp.MOD.apply(5, 0));
         eq("pow", 1024L, ArithOp.POW.apply(2, 10));
         eq("negpow", 0L, ArithOp.POW.apply(2, -1));
+        eq("pow1", 1L, ArithOp.POW.apply(1, Integer.MAX_VALUE));
+        eq("pow-1", -1L, ArithOp.POW.apply(-1, Integer.MAX_VALUE));
+        eq("pow0", 0L, ArithOp.POW.apply(0, Integer.MAX_VALUE));
         eq("shl", 8L, ArithOp.SHL.apply(1, 3));
         eq("xor", 6L, ArithOp.XOR.apply(5, 3));
         eq("saturate", Integer.MAX_VALUE, new Signals().add("x", Integer.MAX_VALUE).add("x", 5).get("x"));
