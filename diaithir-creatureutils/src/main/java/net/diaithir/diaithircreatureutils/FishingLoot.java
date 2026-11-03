@@ -1,4 +1,4 @@
-package net.diaithir.tablemod;
+package net.diaithir.diaithircreatureutils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,7 @@ public final class FishingLoot {
     }
 
     private static Item modItem(String name) {
-        return BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath(TableMod.ID, name));
+        return BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath(CreatureutilsMod.ID, name));
     }
 
     @SubscribeEvent

@@ -1,24 +1,27 @@
-package net.diaithir.tablemod;
+package net.diaithir.diaithircreatureutils;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
 import java.util.function.Function;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-@Mod(TableMod.ID)
-public final class TableMod {
-    public static final String ID = "diaithirbuildcraft2";
+@Mod(CreatureutilsMod.ID)
+public final class CreatureutilsMod {
+    public static final String ID = "diaithircreatureutils";
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
 
     static {
-        try (var in = new InputStreamReader(TableMod.class.getResourceAsStream("/data/" + ID + "/table.json"))) {
+        try (var in = new InputStreamReader(CreatureutilsMod.class.getResourceAsStream("/data/" + ID + "/table.json"))) {
             JsonArray rows = JsonParser.parseReader(in).getAsJsonArray();
             for (JsonElement e : rows) {
                 var o = e.getAsJsonObject();
@@ -46,10 +49,17 @@ public final class TableMod {
         } catch (java.io.IOException ex) {
             throw new IllegalStateException(ex);
         }
+        for (String f : FishingLoot.FISH) {
+            ITEMS.registerSimpleItem(f, () -> new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).build()));
+            ITEMS.registerSimpleItem("cooked_" + f, () -> new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build()));
+        }
+        ITEMS.registerSimpleItem("worm_bait");
+        ITEMS.registerSimpleItem("fish_fillet");
     }
 
-    public TableMod(IEventBus bus) {
+    public CreatureutilsMod(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        NeoForge.EVENT_BUS.register(FishingLoot.class);
     }
 }

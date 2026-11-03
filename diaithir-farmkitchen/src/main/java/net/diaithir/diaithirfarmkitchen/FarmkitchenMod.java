@@ -1,4 +1,4 @@
-package net.diaithir.tablemod;
+package net.diaithir.diaithirfarmkitchen;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -13,14 +13,14 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-@Mod(TableMod.ID)
-public final class TableMod {
+@Mod(FarmkitchenMod.ID)
+public final class FarmkitchenMod {
     public static final String ID = "diaithirfarmkitchen";
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
 
     static {
-        try (var in = new InputStreamReader(TableMod.class.getResourceAsStream("/data/" + ID + "/table.json"))) {
+        try (var in = new InputStreamReader(FarmkitchenMod.class.getResourceAsStream("/data/" + ID + "/table.json"))) {
             JsonArray rows = JsonParser.parseReader(in).getAsJsonArray();
             for (JsonElement e : rows) {
                 var o = e.getAsJsonObject();
@@ -73,7 +73,7 @@ public final class TableMod {
         ITEMS.registerSimpleBlockItem(spice);
     }
 
-    public TableMod(IEventBus bus) {
+    public FarmkitchenMod(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
     }

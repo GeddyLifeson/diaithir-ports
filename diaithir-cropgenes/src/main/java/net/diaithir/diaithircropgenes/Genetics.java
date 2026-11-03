@@ -1,4 +1,4 @@
-package net.diaithir.tablemod;
+package net.diaithir.diaithircropgenes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +38,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class Genetics {
     public static final String[] SPECIES = {"wheat_line", "barley", "flax", "sunroot", "cinder_bean", "amber_rice"};
 
-    private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(TableMod.ID + "_genes");
-    private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TableMod.ID);
+    private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CropgenesMod.ID + "_genes");
+    private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CropgenesMod.ID);
     private static final DeferredRegister<BlockEntityType<?>> BE_TYPES =
-            DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, TableMod.ID);
+            DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, CropgenesMod.ID);
 
     public static final List<DeferredBlock<GeneticCropBlock>> CROPS = new ArrayList<>();
     public static final List<DeferredItem<Item>> SEEDS = new ArrayList<>();

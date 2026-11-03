@@ -1,4 +1,4 @@
-package net.diaithir.tablemod;
+package net.diaithir.diaithirbuildcraft2;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -11,14 +11,14 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-@Mod(TableMod.ID)
-public final class TableMod {
-    public static final String ID = "diaithircropgenes";
+@Mod(Buildcraft2Mod.ID)
+public final class Buildcraft2Mod {
+    public static final String ID = "diaithirbuildcraft2";
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
 
     static {
-        try (var in = new InputStreamReader(TableMod.class.getResourceAsStream("/data/" + ID + "/table.json"))) {
+        try (var in = new InputStreamReader(Buildcraft2Mod.class.getResourceAsStream("/data/" + ID + "/table.json"))) {
             JsonArray rows = JsonParser.parseReader(in).getAsJsonArray();
             for (JsonElement e : rows) {
                 var o = e.getAsJsonObject();
@@ -48,9 +48,8 @@ public final class TableMod {
         }
     }
 
-    public TableMod(IEventBus bus) {
+    public Buildcraft2Mod(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
-        Genetics.register(bus);
     }
 }

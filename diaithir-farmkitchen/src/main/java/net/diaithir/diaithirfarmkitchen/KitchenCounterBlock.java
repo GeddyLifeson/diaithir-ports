@@ -1,4 +1,4 @@
-package net.diaithir.tablemod;
+package net.diaithir.diaithirfarmkitchen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -119,7 +119,7 @@ public class KitchenCounterBlock extends Block {
                 }
                 tx.commit();
             }
-            Item product = BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath(TableMod.ID, r.product()));
+            Item product = BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath(FarmkitchenMod.ID, r.product()));
             ItemStack out = new ItemStack(product, r.count());
             if (!player.getInventory().add(out)) player.drop(out, false);
             player.sendSystemMessage(Component.literal("Cooked " + r.id()));
