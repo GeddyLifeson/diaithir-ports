@@ -89,6 +89,18 @@ for on in (False, True):
             px[x, y] = sig + (255,)
     save(im, f"textures/block/station_rail{'_on' if on else ''}.png")
 
+# one-way: steel rails with a white arrow pointing up the image (north); the blockstate rotates it
+im = rail_image(PAL["steel"], False, None)
+px = im.load()
+for i in range(5):
+    w = i
+    for x in range(8 - w, 9 + w):
+        px[x, 4 + i] = (245, 245, 245, 255)
+for y in range(9, 13):
+    for x in (7, 8):
+        px[x, y] = (245, 245, 245, 255)
+save(im, "textures/block/one_way_rail.png")
+
 # items: a chain of oval links on a diagonal, and cutters (red handles, steel jaws)
 chain = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
 cp = chain.load()
@@ -186,6 +198,9 @@ def powered(name, off_tex, on_tex):
 for t in PAL:
     powered(f"{t}_powered_rail", f"{t}_powered_rail", f"{t}_powered_rail_on")
 powered("station_rail", "station_rail", "station_rail_on")
+block_model("one_way_rail", FLAT, "one_way_rail")
+wj("blockstates/one_way_rail.json", {"variants": {f"facing={f}": v("one_way_rail", y) for f, y in (("north", 0), ("east", 90), ("south", 180), ("west", 270))}})
+item_def("one_way_rail", None, "block/one_way_rail")
 item_def("coupling_chain", None, "item/coupling_chain")
 item_def("chain_cutters", None, "item/chain_cutters")
 
@@ -197,6 +212,7 @@ NAMES = {
     "fast_rail": ("Zephrakund", "High-speed rail. Carts ride it up to 1.2 blocks per tick, three times vanilla speed. Keep curves gentle. Age VI."),
     "fast_powered_rail": ("Zephravoss", "High-speed powered rail. The strongest boost, caps at 1.2 blocks per tick. Age VI."),
     "station_rail": ("Haldurmek", "Station rail. Stops a cart that rolls onto it and holds it until the rail is powered, or until its timer ends. Use it bare-handed to cycle the timer: signal only, 2, 5, 15 or 60 seconds. A coupled follower follows its leader instead. Age V."),
+    "one_way_rail": ("Eskavorn", "One-way rail. A steel-speed rail with an arrow, set to the way you face when you place it. A cart rolling against the arrow is stopped dead; carts going with it pass as on any rail. Place it straight, on a flat run. Age V."),
     "coupling_chain": ("Quelvarith", "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."),
     "chain_cutters": ("Snithrekel", "Chain cutters. Sneak and use on a cart to cut its link and get the chain back. Age V."),
 }
@@ -211,7 +227,7 @@ with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as 
 
 with open(os.path.join(D, "age_gate.json"), "w") as f:
     json.dump({"tier1": {"age": 3, "items": [f"{NS}:bronze_rail", f"{NS}:bronze_powered_rail"]},
-               "tier2": {"age": 5, "items": [f"{NS}:steel_rail", f"{NS}:steel_powered_rail", f"{NS}:station_rail", f"{NS}:coupling_chain", f"{NS}:chain_cutters"]},
+               "tier2": {"age": 5, "items": [f"{NS}:steel_rail", f"{NS}:steel_powered_rail", f"{NS}:station_rail", f"{NS}:one_way_rail", f"{NS}:coupling_chain", f"{NS}:chain_cutters"]},
                "tier3": {"age": 6, "items": [f"{NS}:fast_rail", f"{NS}:fast_powered_rail"]}}, f, indent=2)
     f.write("\n")
 
@@ -240,6 +256,7 @@ shaped("fast_rail", ["RRR", "RDR", "RRR"], {"R": f"{NS}:steel_rail", "D": "minec
 for t in PAL:
     shaped(f"{t}_powered_rail", ["G G", "GTG", " R "], {"G": "minecraft:gold_ingot", "T": f"{NS}:{t}_rail", "R": "minecraft:redstone"}, 2)
 recipe("station_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_powered_rail", "minecraft:clock"]})
+recipe("one_way_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_rail", "minecraft:iron_ingot"]})
 shaped("coupling_chain", [" N ", "NIN", " N "], {"N": "minecraft:iron_nugget", "I": "minecraft:iron_ingot"}, 2)
 shaped("chain_cutters", ["I I", " S ", "C C"], {"I": "minecraft:iron_ingot", "S": "minecraft:stick", "C": "minecraft:copper_ingot"})
 print("ok")

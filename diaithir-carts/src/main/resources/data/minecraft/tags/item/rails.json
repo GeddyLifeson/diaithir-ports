@@ -6,6 +6,7 @@
     "diaithircarts:steel_powered_rail",
     "diaithircarts:fast_rail",
     "diaithircarts:fast_powered_rail",
-    "diaithircarts:station_rail"
+    "diaithircarts:station_rail",
+    "diaithircarts:one_way_rail"
   ]
 }

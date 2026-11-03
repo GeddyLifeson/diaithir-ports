@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "diaithircarts:steel_rail",
+    "minecraft:iron_ingot"
+  ],
+  "result": {
+    "id": "diaithircarts:one_way_rail",
+    "count": 1
+  },
+  "category": "misc"
+}

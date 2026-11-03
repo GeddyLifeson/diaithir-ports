@@ -35,6 +35,11 @@
   "text": "Station rail. Stops a cart that rolls onto it and holds it until the rail is powered, or until its timer ends. Use it bare-handed to cycle the timer: signal only, 2, 5, 15 or 60 seconds. A coupled follower follows its leader instead. Age V."
  },
  {
+  "id": "diaithircarts:one_way_rail",
+  "name": "Eskavorn",
+  "text": "One-way rail. A steel-speed rail with an arrow, set to the way you face when you place it. A cart rolling against the arrow is stopped dead; carts going with it pass as on any rail. Place it straight, on a flat run. Age V."
+ },
+ {
   "id": "diaithircarts:coupling_chain",
   "name": "Quelvarith",
   "text": "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."
@@ -43,10 +48,5 @@
   "id": "diaithircarts:chain_cutters",
   "name": "Snithrekel",
   "text": "Chain cutters. Sneak and use on a cart to cut its link and get the chain back. Age V."
- },
- {
-  "id": "diaithircarts:block_signal",
-  "name": "Block Signal",
-  "text": "Faces a rail and guards the stretch of connected track from there, up to 32 rails each way, round curves and slopes. Red and a redstone signal of 15 while any minecart is on that stretch, green and 0 otherwise. Wire it to a station rail or a powered rail upstream to keep trains apart. Age V."
  }
 ]

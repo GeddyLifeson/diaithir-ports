@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "diaithircarts:block/one_way_rail"
+    },
+    "facing=east": {
+      "model": "diaithircarts:block/one_way_rail",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "diaithircarts:block/one_way_rail",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "diaithircarts:block/one_way_rail",
+      "y": 270
+    }
+  }
+}

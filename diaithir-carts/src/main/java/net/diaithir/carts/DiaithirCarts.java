@@ -47,12 +47,14 @@ public final class DiaithirCarts {
     public static final DeferredBlock<TierPoweredRail> FAST_POWERED_RAIL = BLOCKS.registerBlock("fast_powered_rail", p -> new TierPoweredRail(p, Tier.FAST), DiaithirCarts::rail);
     public static final DeferredBlock<StationRail> STATION_RAIL = BLOCKS.registerBlock("station_rail", StationRail::new, DiaithirCarts::rail);
 
+    public static final DeferredBlock<OneWayRail> ONE_WAY_RAIL = BLOCKS.registerBlock("one_way_rail", OneWayRail::new, DiaithirCarts::rail);
+
     public static final DeferredBlock<BlockSignal> BLOCK_SIGNAL = BLOCKS.registerBlock("block_signal", BlockSignal::new,
             () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F).sound(SoundType.METAL).lightLevel(s -> s.getValue(BlockSignal.RED) ? 7 : 3));
     public static final DeferredItem<BlockItem> BLOCK_SIGNAL_ITEM = ITEMS.registerSimpleBlockItem(BLOCK_SIGNAL);
 
     public static final List<DeferredBlock<? extends Block>> ALL_RAILS = List.of(BRONZE_RAIL, BRONZE_POWERED_RAIL, STEEL_RAIL, STEEL_POWERED_RAIL, FAST_RAIL,
-            FAST_POWERED_RAIL, STATION_RAIL);
+            FAST_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL);
     public static final List<DeferredItem<BlockItem>> RAIL_ITEMS = ALL_RAILS.stream().map(b -> ITEMS.registerSimpleBlockItem(b)).toList();
 
     public static final DeferredItem<Item> COUPLING_CHAIN = ITEMS.registerSimpleItem("coupling_chain");

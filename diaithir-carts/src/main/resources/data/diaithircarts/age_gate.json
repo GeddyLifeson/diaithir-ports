@@ -12,6 +12,7 @@
       "diaithircarts:steel_rail",
       "diaithircarts:steel_powered_rail",
       "diaithircarts:station_rail",
+      "diaithircarts:one_way_rail",
       "diaithircarts:coupling_chain",
       "diaithircarts:chain_cutters"
     ]
@@ -21,12 +22,6 @@
     "items": [
       "diaithircarts:fast_rail",
       "diaithircarts:fast_powered_rail"
-    ]
-  },
-  "signal": {
-    "age": 5,
-    "items": [
-      "diaithircarts:block_signal"
     ]
   }
 }
