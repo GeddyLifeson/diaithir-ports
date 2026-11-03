@@ -1,0 +1,8 @@
+name = "diaithir-clientcore-rewrite-neoforge-26.1.2-1.0.0"
+filename = "diaithir-clientcore-rewrite-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-clientcombat/client/diaithir-clientcore-rewrite-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "ba9c0785ec96c36de701c1387e885ebe9fa9d0ce055fa6b4b1fc5f9f08efb573"

@@ -1,0 +1,8 @@
+name = "diaithir-inventory-ui-rewrite-neoforge-26.1.2-1.0.0"
+filename = "diaithir-inventory-ui-rewrite-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-clientcombat/client/diaithir-inventory-ui-rewrite-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "13beeefc5bf01360643e1efa1fb40444ac267620c333aa5d1cb708312e19bb7f"

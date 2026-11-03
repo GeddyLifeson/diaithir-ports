@@ -57258,18 +57258,6 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/frost_lily_occu
 hash = "87b491d76fb188eba18ffbe35f2b456130fe60c702dafb2a9a9ea965ff1f3b0d"
 
 [[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/fungyss_mekanism_crushing.json"
-hash = "a21f5aa118d301d7673f2307a6929faa2fd9c0b800f7d846afe0184ed91648e8"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/fungyss_modern_industrialization_macerator.json"
-hash = "06f0e018cf1039bf42e9d3c7674b84848e2c98d580a238340a7f201607c0ad39"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/fungyss_occultism_crushing.json"
-hash = "0ecfce2845df805bc3ae7b9b0d74b3dc289fd8abec7ddc8d93d5b6ad5b0b5931"
-
-[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/glowflower_mekanism_crushing.json"
 hash = "260df7a5def089a33f3a9a8b0a2a9aa87a5f4272316c6ee6b56477109d2657a6"
 
@@ -58144,18 +58132,6 @@ hash = "0b68c402650365f38725362b0fa8deee00229ba25c0945e72eb6ccb68a55a8b2"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/wither_rose_occultism_crushing.json"
 hash = "6852f2182c5084a5af40f74c9c0f16e4772725b33dfd9f36cfac3642e4f68582"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/yellow_orchid_mekanism_crushing.json"
-hash = "d66c2f07628f600c7ae6a67f98951b8fadbfff7b3d6fcd95ff1cc4db837fcb94"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/yellow_orchid_modern_industrialization_macerator.json"
-hash = "01ebfae95fc3f38d5682c7c9e713d2fa581c429aa0f94f70673b4d3b32365e1d"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/yellow_orchid_occultism_crushing.json"
-hash = "e5daac4038716a4555c3e6d61a90119d2e2f1fc60095fc94d1fec340951eab28"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust_calcination.json"
@@ -67929,11 +67905,6 @@ hash = "a1affd6a877fc0ed611f209c5c0db608be85fa4b54419d928a62ae51617f58fb"
 metafile = true
 
 [[files]]
-file = "mods/BetterAdvancements-NeoForge-26.1.2-0.5.0.63.pw.toml"
-hash = "89027cc74c13211be55ded3fa94500634f78190b6b491305cd9197678ac9612e"
-metafile = true
-
-[[files]]
 file = "mods/BetterF3-18.0.2-NeoForge-26.1.pw.toml"
 hash = "cb691f5cd0802796d954babb0fd3c484ab803e6102a2c0fb889cb9e57951b013"
 metafile = true
@@ -67961,11 +67932,6 @@ metafile = true
 [[files]]
 file = "mods/ConstructionSticks-26.1.2-3.2.1.pw.toml"
 hash = "1f1adc675cea699b2efdc749c8b258a5c47c4f50bde28b7a0ac6dc24ec23a7ae"
-metafile = true
-
-[[files]]
-file = "mods/CrashAssistant-neoforge-26.1-1.11.11.pw.toml"
-hash = "57392887384f10c78d22986e323a7622396c72b73f4f0d9b53c4c5495488d5a8"
 metafile = true
 
 [[files]]
@@ -68069,11 +68035,6 @@ metafile = true
 [[files]]
 file = "mods/KotlinLangForge-2.16.0-k2.4.21-3.1_neoforge.pw.toml"
 hash = "72642d0745acd4c097878b30e493d0aa8f0a62cd90208841f346e60f38297a27"
-metafile = true
-
-[[files]]
-file = "mods/LongerChatHistory-neoforge-1.8.pw.toml"
-hash = "3905eea72d52f6b7f4bdc327a065819afd2ae4df62d1a51041df93d39faf98dd"
 metafile = true
 
 [[files]]
@@ -68223,11 +68184,6 @@ hash = "cc0ef94a8e8dbd157b4a852900d7df8dbbb1433a48fe39fdb1af5f1e8a85d696"
 metafile = true
 
 [[files]]
-file = "mods/UndeadNights-2.2.5-NeoForge-mc26.1.pw.toml"
-hash = "083cb8d10afe2717f72df4665732def80342d3baf7d6e03adc0d79f14b6c2ee1"
-metafile = true
-
-[[files]]
 file = "mods/UndergroundVillages-neoforge-26.1.2-11.0.0.pw.toml"
 hash = "6729a392eb04f939ae34183413e2185e7f4e8bd8beea15d909a0cf7aff051a42"
 metafile = true
@@ -68292,11 +68248,6 @@ hash = "c253c72322204d8ec44078b404cc8b5ae007a65f6d50f11d13e56293b30e4b39"
 metafile = true
 
 [[files]]
-file = "mods/archers-neoforge-3.1.3.002_26.1.2.pw.toml"
-hash = "889434c2e3d91e8d528db3e335e06c8082355ce1d398cb9c55a54022ca1635cc"
-metafile = true
-
-[[files]]
 file = "mods/architectury-neoforge-20.1.17.pw.toml"
 hash = "faf1af4dff1fd928cb6c0aaf14ae3ecc9088654aae4f9da8fa24db3b582978d9"
 metafile = true
@@ -68314,11 +68265,6 @@ metafile = true
 [[files]]
 file = "mods/athena-4.7.3.pw.toml"
 hash = "4f6b93ca71351ae1d4ea1b38f3b6ff2ef1efdafbc145de670bb6f55fb25bbdd0"
-metafile = true
-
-[[files]]
-file = "mods/auroral-26.1.2-1.5.9.pw.toml"
-hash = "c55ebca2a737d5cee3ad3827f013abd4fe1a817fce35d0a791d21c3a725c9718"
 metafile = true
 
 [[files]]
@@ -68357,11 +68303,6 @@ hash = "d4015c35bc297f0c72ffbf54bbeff964b8543d864088712399e2966946ade477"
 metafile = true
 
 [[files]]
-file = "mods/bettercombat-neoforge-3.2.2_26.1.2.pw.toml"
-hash = "3acdf1ac827b4d716e1f564b5eb2cbd3912e41e83a3f99effac092841fc78cf1"
-metafile = true
-
-[[files]]
 file = "mods/biolith-neoforge-3.6.0.pw.toml"
 hash = "2e36b62f2ec13ed94b570966ddfe8927c8792ff2c1289f264050a482e6b2ab0c"
 metafile = true
@@ -68393,11 +68334,6 @@ metafile = true
 [[files]]
 file = "mods/camol-26.1.2-0.4.1.pw.toml"
 hash = "557e67ed6c67f211e8be5192c0d28a483307eddb118ae08b4cd7262ed95f9cee"
-metafile = true
-
-[[files]]
-file = "mods/caravans-neoforge-26.1-3.0.0.pw.toml"
-hash = "c3fe90cc90701944220b0c4bfaa9f2415ff08989750abcfaf7a215113acf3866"
 metafile = true
 
 [[files]]
@@ -68451,11 +68387,6 @@ hash = "6febeca95bb509df8b8980fd5981d41db34aeeb0d34e01d95142af8a44cb733b"
 metafile = true
 
 [[files]]
-file = "mods/combat_roll-neoforge-3.0.1_26.1.2.pw.toml"
-hash = "67b9b513e6069ba093a841b761c91d87ef7f44f4ef1db6e520f125da84c9ddb6"
-metafile = true
-
-[[files]]
 file = "mods/comforts-neoforge-15.0.0_26.1.2.pw.toml"
 hash = "5008c35cb2c032a4c36871070bd885258263b6f4699e9acccaa16fa9be9f939c"
 metafile = true
@@ -68504,11 +68435,6 @@ hash = "3bca39e3c21ca505e808bf8c5aece16429b8ac33835504ef61699ea4a5e84a10"
 metafile = true
 
 [[files]]
-file = "mods/critical_strike-neoforge-1.0.6_26.1.2.pw.toml"
-hash = "6c5095dbe061f69ccd0f58ca2bd03eeff36df7dd5cfdc014b5c310f8c1797a54"
-metafile = true
-
-[[files]]
 file = "mods/ctm-26.1.2.11.pw.toml"
 hash = "13bc7448b6ee2853d9cba15327f058ef926b575920867c06b0b6969ad3b53d96"
 metafile = true
@@ -68551,6 +68477,10 @@ file = "mods/diaithir-aircraft-neoforge-26.1.2-1.0.0.jar"
 hash = "8d24a2b4c6bd216707fb6a26aead7c3032993766f679f5b736fd89715901ab50"
 
 [[files]]
+file = "mods/diaithir-arms-neoforge-26.1.2-1.0.0.jar"
+hash = "35b7677c2e4695ae153cd69e95036c6a5d150b2365468363ed70dd581fd51d3f"
+
+[[files]]
 file = "mods/diaithir-attribute-fixes-neoforge-26.1.2-1.0.0.jar"
 hash = "c2ce1d1b08963f804212e199a27b8480872943704c1f8b1c63850e446fdc474f"
 
@@ -68569,13 +68499,41 @@ hash = "e0c4162d1a3280b86e14b6c65aabdee4d5a1dbb5c3e5304ab35ba591eafaa2fa"
 metafile = true
 
 [[files]]
+file = "mods/diaithir-chat-client-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "0c1581dc1da032fb9dff807d2357e89b6de54414136a8f164f8a9c82d4eb7c5b"
+metafile = true
+
+[[files]]
 file = "mods/diaithir-chests-drawers-neoforge-26.1.2-1.0.0.jar"
 hash = "abef1b7e43057ac60d89b4a112a1dcf379909662207dbf044f17997e79d19880"
+
+[[files]]
+file = "mods/diaithir-classes-rewrite-neoforge-26.1.2-1.0.0.jar"
+hash = "4106adc00fac3ce62523fb7f75c720f9e456768795f92b0e236db39edada6816"
+
+[[files]]
+file = "mods/diaithir-client-render-culling-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "ffd86ba912320287c6ab006ea1de7c8d275657fdc8af38d324276cbfc6e67880"
+metafile = true
 
 [[files]]
 file = "mods/diaithir-client-view-input-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "652aa3fc2b18eda27f0a480797c3d3e4e71d74c4e94d47cc99285f87d2b5428e"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-client-view-input-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "a4b6e4d7a5751fa630fab836330a910a80d6ced6d7b9aeec213f216e17c6870d"
+metafile = true
+
+[[files]]
+file = "mods/diaithir-clientcore-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "24cb6a146d93314dc7b068d6630401c7c1791422cdba95fd70c478ae1c7c59df"
+metafile = true
+
+[[files]]
+file = "mods/diaithir-combat-rewrite-neoforge-26.1.2-1.0.0.jar"
+hash = "f5c465fdb350d435d2cd2c8e00f1e801a4cfd7f867664c2c2e13ab4a9bc00c73"
 
 [[files]]
 file = "mods/diaithir-content-data-neoforge-26.1.2-1.0.0.jar"
@@ -68584,6 +68542,11 @@ hash = "5d91401e17175186c6768dd424224b2ad4b9a91932d59b0c9934e15a6dac1abd"
 [[files]]
 file = "mods/diaithir-core-systems-neoforge-26.1.2-1.0.0.jar"
 hash = "3c2fc0d5fc329b2027a86839e95c8235b95cb734d8fb50c9b5c842547cc1ac05"
+
+[[files]]
+file = "mods/diaithir-crash-tools-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "044dbe8a0608a1366b0e47b54bce28596cf754b0c5b656f77e8238b09cd5438c"
+metafile = true
 
 [[files]]
 file = "mods/diaithir-creature-utilities-neoforge-26.1.2-1.0.0.jar"
@@ -68624,6 +68587,11 @@ hash = "4a8875e9429c18e6e21d7f5633089b9185d0c8aaaa7286cba369bf16970d4650"
 metafile = true
 
 [[files]]
+file = "mods/diaithir-entity-animation-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "e3240cdcf1b244579f2867ef448023c5ced144e9fcd19345785e92571d708526"
+metafile = true
+
+[[files]]
 file = "mods/diaithir-filters-rewrite-neoforge-26.1.2-1.0.0.jar"
 hash = "c1ee8aa4862c6dea8e97a92dee05da3b5527ffeb0472b248ca63f04824ce44d5"
 
@@ -68653,12 +68621,22 @@ file = "mods/diaithir-hud-overlays-neoforge-26.1.2-1.0.0.jar"
 hash = "ffdc5010bed17a8688806acc0168038554be1222784b4935fcf803886292a3dd"
 
 [[files]]
+file = "mods/diaithir-hud-overlays-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "2942950e442f19b69da5becd5a36a658713faa5bb685d0a6169254b80da7c21d"
+metafile = true
+
+[[files]]
 file = "mods/diaithir-integrated-addons-neoforge-26.1.2-1.0.0.jar"
 hash = "8c262d0559f4919fc8d25b69ff9a6fc3b51f119f7af5368fac2d7858c319a17a"
 
 [[files]]
 file = "mods/diaithir-inventory-tools-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "3607e4512a4fe08ab33cbfe443fb8ee465f0361a10efbe0b11401329b87d15be"
+metafile = true
+
+[[files]]
+file = "mods/diaithir-inventory-ui-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "233e5a0dfa528f2ffcd3246859e236dcd0896f476aec2d454b0116fc92d64137"
 metafile = true
 
 [[files]]
@@ -68734,6 +68712,10 @@ file = "mods/diaithir-power-storage-neoforge-26.1.2-1.0.0.jar"
 hash = "cb2ec6a119abc50c7134f9a9b1eaec31f72b52936420ec9047a5bf8729b28305"
 
 [[files]]
+file = "mods/diaithir-relics-rewrite-neoforge-26.1.2-1.0.0.jar"
+hash = "ee47896bb2123386e1a434983823cbb425a749683e7385ef1764452f24de07c9"
+
+[[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
 hash = "123c12803fa3cce0201092cdcda81d73ef177cc5f2996c86948383fa5d5caa08"
 
@@ -68750,8 +68732,8 @@ file = "mods/diaithir-server-logic-tweaks-neoforge-26.1.2-1.0.0.jar"
 hash = "52d8efc7d1a634c67a6b5b06d12a23af0839460bd2cc745822949b81019de058"
 
 [[files]]
-file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.2.jar"
-hash = "cf63a9c79c3d8a2168fde855b4654737e7a547f69715e3b6d602ddef801a11a4"
+file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.4-with-archimedes-128.jar"
+hash = "f5a61731b186b35ec1080e03d16ba4947cbfd9e6b45a7d95044ff3e1d625d2f1"
 
 [[files]]
 file = "mods/diaithir-structures-data-neoforge-26.1.2-1.1.1.jar"
@@ -68760,6 +68742,11 @@ hash = "5959a53df38ae1e34917e96328e8723ea7e981914fed244f6521fef081e44c99"
 [[files]]
 file = "mods/diaithir-tech-automation-neoforge-26.1.2-1.0.0.jar"
 hash = "9b1ce108146bf5c77e7e6015cd100ad41d4c08b25df59dcad128ceae4eb7a1e4"
+
+[[files]]
+file = "mods/diaithir-tooltipfx-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "ebc8d3d0c62cd104c574b5cdef692a22632dd667a26ae8f364db6a841ba2e0e5"
+metafile = true
 
 [[files]]
 file = "mods/diaithir-tooltips-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68792,6 +68779,11 @@ file = "mods/diaithir-world-visuals-neoforge-26.1.2-1.0.0.jar"
 hash = "1c7f4101b4d290265c2671dca8bfb209da33db1ef089381fe425be0ef295740f"
 
 [[files]]
+file = "mods/diaithir-world-visuals-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "27ad66f261912ac7df006a5edd85747506aa9f8e94f16b9ca9021ff861f5fde6"
+metafile = true
+
+[[files]]
 file = "mods/diaithir-worldgen-chunk-opts-neoforge-26.1.2-1.0.0.jar"
 hash = "1820b9411421b05edef8781c0dd0f4b44fc4abb5410611478858bf22d07ab7a2"
 
@@ -68802,11 +68794,6 @@ hash = "d421acfd3ae142cf53c065e5c0197cdf16354f8546422eb82d1bd3b418634920"
 [[files]]
 file = "mods/diaithir-yungs-structures-neoforge-26.1.2-1.0.0.jar"
 hash = "9ba96fd63d1dd3a8f8d037d13f4467839b9c34bf410fe40e624b3af6191b433b"
-
-[[files]]
-file = "mods/durabilitytooltip-1.2.0-neoforge-mc26.1.pw.toml"
-hash = "961bfef0d27c772050e74259c5877c9fdbc41bfd31e54034a3248e7437316a23"
-metafile = true
 
 [[files]]
 file = "mods/dynamic-fps-3.11.7_minecraft-26.1.0-neoforge.pw.toml"
@@ -68874,11 +68861,6 @@ hash = "a835149685c16b7ebd9a2f44cfcf7fa412fd8283b6c25651eeb992d60678f09c"
 metafile = true
 
 [[files]]
-file = "mods/entityculling-neoforge-1.11.3-mc26.1.2.pw.toml"
-hash = "f42317e8e7f5bb9a4251e13ae453a73cda16f9e3ac54743ae3f0e230a996beb5"
-metafile = true
-
-[[files]]
 file = "mods/epherolib-neoforge-26.1-1.3.0.pw.toml"
 hash = "3185755a0666b5a13c372a673292fae57886f8b5b9a56eb4ed45b1112c15dffd"
 metafile = true
@@ -68900,21 +68882,6 @@ metafile = true
 [[files]]
 file = "mods/ferritecore-9.0.0-neoforge.pw.toml"
 hash = "8a25454a50328d395224c968d5e4bb0f0d043acbfeb76cdccae73e0bffe9a936"
-metafile = true
-
-[[files]]
-file = "mods/firstperson-neoforge-2.7.3-mc26.1.2.pw.toml"
-hash = "a3d03fa23de8b861f6488e4dbc874da5d716215754cfa586f8183037e632752f"
-metafile = true
-
-[[files]]
-file = "mods/flickerfix-26.1-7.0.0.pw.toml"
-hash = "1f767f4b227c79bcb225104ef06509d68a1ad06f5a8a0e80b066c25e20e37e46"
-metafile = true
-
-[[files]]
-file = "mods/forbidden_arcanus-26.1.2-2.8.0-beta.2.pw.toml"
-hash = "79dda55e5c724c611630da822230d4939693aec9eb70ccd8c3c5833670101220"
 metafile = true
 
 [[files]]
@@ -69041,11 +69008,6 @@ hash = "1729cc972dbd9c1e640dfa6c7dd462cfe2a08669e177213378522f5ba138cbb0"
 metafile = true
 
 [[files]]
-file = "mods/inventoryessentials-neoforge-26.1.2-26.1.2.7.pw.toml"
-hash = "397f2578b003657cce9eabffcd4608c95463c8e07e3ee1356597f2baaf3617d1"
-metafile = true
-
-[[files]]
 file = "mods/irons_lib-26.1.2-2.2.0.pw.toml"
 hash = "01ded9ef6b6461fbdb38b8539986838aa53aaa56535ad9b2a642c0a3a43c79f2"
 metafile = true
@@ -69063,11 +69025,6 @@ metafile = true
 [[files]]
 file = "mods/jewelry-neoforge-2.5.1_26.1.2.pw.toml"
 hash = "5929fb0d5d7aedf9fc7c6ebecdc3ccbbb3ee1e2d784e22bab010ecd53c146a5d"
-metafile = true
-
-[[files]]
-file = "mods/jousting-26.1.2-v1.0.12.pw.toml"
-hash = "62d57917c26493ecfb836ef1e583275e2b84370647d33fda2dc35e38ebb62f17"
 metafile = true
 
 [[files]]
@@ -69120,11 +69077,6 @@ metafile = true
 [[files]]
 file = "mods/l2library-26.1.2.1_2.pw.toml"
 hash = "058f2671d534a0ce38b095ef4bfc6889a6a318362d5b23b21922e8019d96266b"
-metafile = true
-
-[[files]]
-file = "mods/lambdynamiclights-4.11.2_26.1.2.pw.toml"
-hash = "aa34806602226af525bb2f15c1a9fef55e551da9a8eebf149c4eebbe87c5388e"
 metafile = true
 
 [[files]]
@@ -69279,11 +69231,6 @@ hash = "fd0f566611427aac6096cb5e9a19cf0bcaf63cad85e30bfc11df4e5b53d2beb6"
 metafile = true
 
 [[files]]
-file = "mods/notenoughanimations-neoforge-1.12.5-mc26.1.2.pw.toml"
-hash = "92306b6538f31770d8260dc5e6505ae954835bfc1bb5be951741ac0f15de106d"
-metafile = true
-
-[[files]]
 file = "mods/occultism-26.1.2-neoforge-1.256.1.pw.toml"
 hash = "38124e715fcf24756940718e479d027789cb793738d98e6b785b5633b25bf33f"
 metafile = true
@@ -69306,11 +69253,6 @@ metafile = true
 [[files]]
 file = "mods/packetfixer-neoforge-3.3.4-26.1.pw.toml"
 hash = "f269e05fe12696e4fb3346c1ce4454ab64be379ed3ee1719a1e2e537486da813"
-metafile = true
-
-[[files]]
-file = "mods/paladins-neoforge-3.1.3.002_26.1.2.pw.toml"
-hash = "0719deb29d1098f59bf24902c4fb8f6605c4cd41ad945bdb11fb544d989185b2"
 metafile = true
 
 [[files]]
@@ -69353,11 +69295,6 @@ hash = "629a9f2868b394c56f316918cec989f8ae9ddeb8e42421d6107ab1278f2945a4"
 metafile = true
 
 [[files]]
-file = "mods/pylons-26.1-6.0.1.pw.toml"
-hash = "778ca167925e10aac247ebfbad4f9c60ab37b609967fd3634976911e8289a6fb"
-metafile = true
-
-[[files]]
 file = "mods/railcraft-reborn-26.1.2-1.4.4.pw.toml"
 hash = "b715436cadeac0d6b0007d3bed7ea3c382371d0d45e7e2d92454d8b5e7f56c2c"
 metafile = true
@@ -69383,11 +69320,6 @@ hash = "96cdc7ccd1257bbf3900a48643c53b36fa43d8b5086054dc559262c1086e724f"
 metafile = true
 
 [[files]]
-file = "mods/reliquary-26.1.2-2.0.92.1563.pw.toml"
-hash = "7a1509c9f159ec85546090c054305885ee23d97727aba75c332002fba3773e35"
-metafile = true
-
-[[files]]
 file = "mods/rftoolsbase-1.21-6.0.11.jar"
 hash = "a133203d8b4f9e1adf7ed68c970b874205c56b89b11f1386f432911a07cb1802"
 
@@ -69398,16 +69330,6 @@ hash = "e0550031104462d54bdc7015d68bea1d08c096cc6b3b05a542f26e75a131076b"
 [[files]]
 file = "mods/rhino-2101.2.8-build.91.pw.toml"
 hash = "668a4e4ae5992b60963e701349120a782b87f8e90382495be101108247f9892d"
-metafile = true
-
-[[files]]
-file = "mods/rogues-neoforge-3.1.3.002_26.1.2.pw.toml"
-hash = "1ee3d03464a4e2c826a4f1c7b8d41015114831260e63d9a02524eed9b70d0d1d"
-metafile = true
-
-[[files]]
-file = "mods/runes-neoforge-1.3.2_26.1.2.pw.toml"
-hash = "c3f461f53c4fe9bd9fd745c67aec1dc7c4cc8bf34721c39baf21085c078dbe82"
 metafile = true
 
 [[files]]
@@ -69446,16 +69368,6 @@ metafile = true
 [[files]]
 file = "mods/simplemagnets-1.1.12-neoforge-mc26.1.pw.toml"
 hash = "86e19d7250e8ad2bcee8511e89b6e9780a77c7383ca507a6728db00ae387e08d"
-metafile = true
-
-[[files]]
-file = "mods/skill_tree-neoforge-1.6.2_26.1.2.pw.toml"
-hash = "8936983d944a59a78a594e1017b5f25c96d58046286c8084ed74b84800eebf2e"
-metafile = true
-
-[[files]]
-file = "mods/skinlayers3d-neoforge-1.11.4-mc26.1.2.pw.toml"
-hash = "2f72b8719309d43f24504c92e01e3f82af612ed32ce8839102bc7689b3d87a65"
 metafile = true
 
 [[files]]
@@ -69544,11 +69456,6 @@ hash = "e2c7a120abb1a4abc721337ec32f5bc60b29c57f91655447f8dc05799862c607"
 metafile = true
 
 [[files]]
-file = "mods/trashslot-neoforge-26.1.2-26.1.2.4.pw.toml"
-hash = "52d44d93c9dde9c68f7d6be37e339c955418152d5d20ada2b609f32e9c76de72"
-metafile = true
-
-[[files]]
 file = "mods/twilightforest-26.1.2-4.9.3817-universal.pw.toml"
 hash = "a880aade85c1489bfc57b12af3ff610816c9546030eed6a28e03ec4f749d0c44"
 metafile = true
@@ -69595,11 +69502,6 @@ metafile = true
 [[files]]
 file = "mods/wits-1.4.3_26.1-neoforge.pw.toml"
 hash = "25ad79923fa6f74cd93434afff01bad82bd6bff330fd512c9b7879d0c42e5705"
-metafile = true
-
-[[files]]
-file = "mods/wizards-neoforge-3.1.3.002_26.1.2.pw.toml"
-hash = "cd025bb3da05fa6d50b2a6f9f6e3ef46d9892618ebf25496be549d5cb20d6002"
 metafile = true
 
 [[files]]
