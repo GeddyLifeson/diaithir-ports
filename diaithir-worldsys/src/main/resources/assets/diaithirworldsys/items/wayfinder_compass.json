@@ -1,6 +1,6 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "diaithirworldsys:item/wayfinder_compass"
-  }
+ "model": {
+  "type": "minecraft:model",
+  "model": "diaithirworldsys:item/wayfinder_compass"
+ }
 }

@@ -29,5 +29,6 @@ public final class DiaithirWorldSys {
         net.diaithir.worldsys.villageguards.VillageGuardsFeature.register(bus);
         net.diaithir.worldsys.villagercare.VillagerCareFeature.register(bus);
         net.diaithir.worldsys.worldqol.WorldQolFeature.register(bus);
+        net.diaithir.worldsys.legacy.LegacyFeature.register(bus);
     }
 }
