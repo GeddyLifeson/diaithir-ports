@@ -7,6 +7,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.ArrayList;
@@ -86,5 +87,33 @@ public final class YardSelfTest {
         for (int i = 0; i < 100; i++) be.tick();
         if (be.active()) f.add("still building");
         if (be.lastRollout.isEmpty() || !BuiltInRegistries.ITEM.getKey(be.lastRollout.getItem()).toString().equals("diaithircarts:loco_rocket")) f.add("no rollout");
+        // rolling stock becomes the matching existing cart entity
+        BlockPos rail = at.offset(6, 0, -6);
+        level.setBlock(rail, Blocks.RAIL.defaultBlockState(), 2);
+        cart(level, rail, "wag_boxcar", net.minecraft.world.entity.EntityType.CHEST_MINECART, f);
+        cart(level, rail, "wag_tank", net.minecraft.world.entity.EntityType.HOPPER_MINECART, f);
+        cart(level, rail, "loco_gp7", net.minecraft.world.entity.EntityType.FURNACE_MINECART, f);
+        cart(level, rail, "pas_dining", net.minecraft.world.entity.EntityType.MINECART, f);
+        // blueprint build by a manned crane from a depot chest, no hand installs
+        level.setBlock(at.offset(0, 0, 1), Blocks.CHEST.defaultBlockState(), 2);
+        net.minecraft.world.Container depot = (net.minecraft.world.Container) level.getBlockEntity(at.offset(0, 0, 1));
+        depot.setItem(0, new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse("diaithircarts:wheelset_xs")), 4));
+        depot.setItem(1, new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse("diaithircarts:body_xs")), 1));
+        if (be.select("yard_wag_wagonway") != null) { f.add("wagonway not selectable"); return; }
+        for (int i = 0; i < 400; i++) be.tick();
+        if (!be.active() || be.build().stageIndex() != 0) f.add("built with nobody at the crane");
+        var villager = net.minecraft.world.entity.EntityType.VILLAGER.create(level, net.minecraft.world.entity.EntitySpawnReason.COMMAND);
+        villager.setPos(at.getX() + 2.5, at.getY(), at.getZ() + 2.5);
+        level.addFreshEntity(villager);
+        for (int i = 0; i < 2000 && be.active(); i++) be.tick();
+        if (be.active() || !BuiltInRegistries.ITEM.getKey(be.lastRollout.getItem()).toString().equals("diaithircarts:wag_wagonway")) f.add("operator did not finish the blueprint build");
+        villager.discard();
+    }
+
+    private static void cart(ServerLevel level, BlockPos rail, String id, net.minecraft.world.entity.EntityType<?> want, List<String> f) {
+        var c = RollingStockItem.spawn(level, rail, new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse("diaithircarts:" + id))));
+        if (c == null || c.getType() != want) f.add(id + " spawned " + (c == null ? "nothing" : c.getType().toString()));
+        else if (c.getCustomName() == null) f.add(id + " has no name");
+        if (c != null) c.discard();
     }
 }

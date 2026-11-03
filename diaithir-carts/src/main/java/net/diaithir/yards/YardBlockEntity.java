@@ -3,6 +3,7 @@ package net.diaithir.yards;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -19,6 +20,7 @@ import java.util.List;
 public final class YardBlockEntity extends BlockEntity {
     public static final int REACH = 8;
 
+    private int autoCd;
     private String yardId = "";
     private BuildState build;
 
@@ -78,8 +80,49 @@ public final class YardBlockEntity extends BlockEntity {
         return Component.literal(sb.append(String.format("%.0f%%", build.stageProgress() * 100)).toString());
     }
 
+    /** A crane is manned when a player or an entity of tag diaithircarts:crane_operators (villagers, workers) stands within reach of one. */
+    boolean manned() {
+        if (level == null) return false;
+        var box = new net.minecraft.world.phys.AABB(worldPosition).inflate(REACH);
+        for (net.minecraft.world.entity.LivingEntity e : level.getEntitiesOfClass(net.minecraft.world.entity.LivingEntity.class, box)) {
+            if (e instanceof net.minecraft.world.entity.player.Player p && !p.isSpectator()) return true;
+            if (BuiltInRegistries.ENTITY_TYPE.wrapAsHolder(e.getType()).is(OPERATORS)) return true;
+        }
+        return false;
+    }
+
+    public static final net.minecraft.tags.TagKey<net.minecraft.world.entity.EntityType<?>> OPERATORS =
+            net.minecraft.tags.TagKey.create(Registries.ENTITY_TYPE, Identifier.parse("diaithircarts:crane_operators"));
+
+    /** Build from the blueprint (the chosen design): a manned crane takes the next needed part from containers touching the controller. */
+    private void autoBuild() {
+        if (build.complete() || ++autoCd % 10 != 0 || !manned()) return;
+        YardDef d = YardRegistry.yard(yardId).orElse(null);
+        if (d == null) return;
+        for (YardDef.Slot slot : d.stages().get(build.stageIndex()).slots()) {
+            long have = build.stageParts().stream().filter(p -> p.kind().equals(slot.kind())).count();
+            if (have >= slot.count()) continue;
+            for (net.minecraft.core.Direction dir : net.minecraft.core.Direction.values()) {
+                if (!(level.getBlockEntity(worldPosition.relative(dir)) instanceof net.minecraft.world.Container box)) continue;
+                for (int i = 0; i < box.getContainerSize(); i++) {
+                    ItemStack s = box.getItem(i);
+                    if (s.isEmpty()) continue;
+                    PartDef part = YardRegistry.part(BuiltInRegistries.ITEM.getKey(s.getItem()).toString()).orElse(null);
+                    if (part == null || !part.kind().equals(slot.kind())) continue;
+                    if (install(part) == BuildState.InstallResult.OK) {
+                        s.shrink(1);
+                        box.setChanged();
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
     public void tick() {
         if (build == null || level == null || level.isClientSide()) return;
+        autoBuild();
+        if (build == null) return;
         double[] c = cranes();
         YardDef d = YardRegistry.yard(yardId).orElse(null);
         if (d == null) return;
