@@ -25,12 +25,18 @@ final class Registry {
     static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ReckonerEntity>> RECKONER_ENTITY =
             ENTITIES.register("reckoner", () -> new BlockEntityType<>(ReckonerEntity::new, RECKONER.get()));
 
+    static final DeferredBlock<TurtleBlock> TURTLE = BLOCKS.registerBlock("turtle", TurtleBlock::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3F, 9F).sound(SoundType.METAL).requiresCorrectToolForDrops());
+    static final DeferredItem<net.minecraft.world.item.BlockItem> TURTLE_ITEM = ITEMS.registerSimpleBlockItem("turtle", TURTLE);
+    static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TurtleEntity>> TURTLE_ENTITY =
+            ENTITIES.register("turtle", () -> new BlockEntityType<>(TurtleEntity::new, TURTLE.get()));
+
     static void register(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         ENTITIES.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) e.accept(RECKONER_ITEM.get());
+            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { e.accept(RECKONER_ITEM.get()); e.accept(TURTLE_ITEM.get()); }
         });
     }
 

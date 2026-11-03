@@ -35,3 +35,29 @@ w(f'data/{ID}/loot_table/blocks/reckoner.json', {'type': 'minecraft:block', 'poo
 w('data/minecraft/tags/block/mineable/pickaxe.json', {'values': [f'{ID}:reckoner']})
 w('data/minecraft/tags/block/needs_stone_tool.json', {'values': [f'{ID}:reckoner']})
 w(f'data/{ID}/age_gate.json', {'reckoner': {'age': 6, 'items': [f'{ID}:reckoner']}})
+
+# ---- Wayfarer (turtle): orientable block, front shows a lit visor
+def turtle_tex(name, kind):
+    random.seed(name); im = Image.new('RGB', (64, 64))
+    for x in range(64):
+        for y in range(64):
+            g = 92 + random.randint(-6, 6); im.putpixel((x, y), (g + 18, g + 6, g - 14))
+    for i in range(64):
+        for t in range(3):
+            for xy in ((i, t), (i, 63 - t), (t, i), (63 - t, i)): im.putpixel(xy, (50, 38, 22))
+    if kind == 'front':
+        for x in range(12, 52):
+            for y in range(20, 36): im.putpixel((x, y), (255, 190, 60) if (x + y) % 9 else (255, 230, 140))
+    p = os.path.join(R, f'assets/{ID}/textures/block/{name}.png'); im.save(p)
+for n, k in (('turtle_side', 'side'), ('turtle_top', 'top'), ('turtle_front', 'front')): turtle_tex(n, k)
+w(f'assets/{ID}/models/block/turtle.json', {'parent': 'minecraft:block/orientable', 'textures': {'top': f'{ID}:block/turtle_top', 'front': f'{ID}:block/turtle_front', 'side': f'{ID}:block/turtle_side'}})
+w(f'assets/{ID}/blockstates/turtle.json', {'variants': {'facing=north': {'model': f'{ID}:block/turtle'}, 'facing=east': {'model': f'{ID}:block/turtle', 'y': 90},
+  'facing=south': {'model': f'{ID}:block/turtle', 'y': 180}, 'facing=west': {'model': f'{ID}:block/turtle', 'y': 270}}})
+w(f'assets/{ID}/items/turtle.json', {'model': {'type': 'minecraft:model', 'model': f'{ID}:block/turtle'}})
+lp = os.path.join(R, f'assets/{ID}/lang/en_us.json'); lang = json.load(open(lp)); lang[f'block.{ID}.turtle'] = 'Wayfarer'; json.dump(lang, open(lp, 'w'), indent=1)
+w(f'data/{ID}/recipe/turtle.json', {'type': 'minecraft:crafting_shaped', 'category': 'redstone', 'pattern': ['IPI', 'ICI', 'IBI'],
+  'key': {'I': 'minecraft:iron_ingot', 'P': 'minecraft:iron_pickaxe', 'C': f'{ID}:reckoner', 'B': 'minecraft:chest'}, 'result': {'id': f'{ID}:turtle', 'count': 1}})
+w(f'data/{ID}/loot_table/blocks/turtle.json', {'type': 'minecraft:block', 'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': f'{ID}:turtle'}], 'conditions': [{'condition': 'minecraft:survives_explosion'}]}]})
+w('data/minecraft/tags/block/mineable/pickaxe.json', {'values': [f'{ID}:reckoner', f'{ID}:turtle']})
+w('data/minecraft/tags/block/needs_stone_tool.json', {'values': [f'{ID}:reckoner', f'{ID}:turtle']})
+w(f'data/{ID}/age_gate.json', {'reckoner': {'age': 6, 'items': [f'{ID}:reckoner']}, 'turtle': {'age': 7, 'items': [f'{ID}:turtle']}})

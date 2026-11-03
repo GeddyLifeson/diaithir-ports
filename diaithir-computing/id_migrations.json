@@ -1,5 +1,15 @@
 {
- "note": "Nearest equivalents only. A Reckoner has no turtle, monitor, disk or network parts yet, so those ids are not migrated.",
- "blocks": {"computercraft:computer_normal": "diaithircomputing:reckoner", "computercraft:computer_advanced": "diaithircomputing:reckoner"},
- "items": {"computercraft:computer_normal": "diaithircomputing:reckoner", "computercraft:computer_advanced": "diaithircomputing:reckoner"}
+ "note": "Nearest equivalents only. Turtles map to the Wayfarer; monitors, disk drives and cables have no equivalent (signs work as monitors).",
+ "blocks": {
+  "computercraft:computer_normal": "diaithircomputing:reckoner",
+  "computercraft:computer_advanced": "diaithircomputing:reckoner",
+  "computercraft:turtle_normal": "diaithircomputing:turtle",
+  "computercraft:turtle_advanced": "diaithircomputing:turtle"
+ },
+ "items": {
+  "computercraft:computer_normal": "diaithircomputing:reckoner",
+  "computercraft:computer_advanced": "diaithircomputing:reckoner",
+  "computercraft:turtle_normal": "diaithircomputing:turtle",
+  "computercraft:turtle_advanced": "diaithircomputing:turtle"
+ }
 }

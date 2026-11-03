@@ -2,7 +2,12 @@
  {
   "id": "diaithircomputing:reckoner",
   "name": "Reckoner",
-  "native": "àiremachd",
-  "text": "A block that runs a Lua program. Use a book and quill (or a written book) on it to load the program from its pages, then use it bare-handed, or give it a rising redstone signal, to run it. Programs can print, read redstone from each side, set the redstone it gives out on each side, list the items in a neighbouring chest, and read the time and weather. A program that runs past 200,000 instructions is stopped. Age VI."
+  "native": "\u00e0iremachd",
+  "text": "A block that runs a Lua program. Use a book and quill (or a written book) on it to load the program from its pages, then use it bare-handed, or give it a rising redstone signal, to run it; use it again to stop a running program. Programs can print, sleep(ticks), read redstone from each side, set the redstone it gives out, list the items in a neighbouring chest, write to a sign beside it with monitor.write(side, line, text), and send and receive wireless messages within 64 blocks with net.listen, net.send, net.receive and net.wait. A slice of a program that runs past 200,000 instructions is stopped. Age VI."
+ },
+ {
+  "id": "diaithircomputing:turtle",
+  "name": "Wayfarer",
+  "text": "A Reckoner that walks. It moves one block at a time, digs, places blocks, drops and picks up items and carries sixteen stacks. It burns fuel to move: turtle.refuel() burns a fuel item from the selected slot (a second of burn time is one unit; it starts with 20). turtle.forward(), back(), up(), down(), turnLeft(), turnRight(), dig(dir), place(dir), detect(dir), inspect(dir), drop(dir), suck(dir), select(n), getCount(n), getItem(n), getFuel(); directions are forward, back, left, right, up, down. Loaded and started like a Reckoner, and it has the same net, monitor, redstone and sleep functions. Age VII."
  }
 ]
