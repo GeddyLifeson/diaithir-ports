@@ -68,10 +68,24 @@ public final class Station {
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) ITEM_LIST.forEach(i -> e.accept(i.get()));
         });
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.ServerTickEvent.Post.class, e -> {
+            if (watchLeft > 0 && --watchLeft % 20 == 0 && watchSource != null) {
+                var pos = watchSource.getEntity() != null ? watchSource.getEntity().position() : watchSource.getPosition();
+                String st = IvControl.status(watchSource.getLevel(), pos, 8.0);
+                String line = "t-" + watchLeft / 20 + "s " + (st == null ? "no vehicle" : st);
+                watchSource.sendSuccess(() -> Component.literal(line), false);
+            }
+        });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> e.getDispatcher().register(Commands.literal("diaithirvehicle")
                 .then(Commands.literal("toggle").executes(c -> ignition(c.getSource(), null)))
                 .then(Commands.literal("start").executes(c -> ignition(c.getSource(), true)))
                 .then(Commands.literal("stop").executes(c -> ignition(c.getSource(), false)))
+                .then(Commands.literal("watch").then(Commands.argument("seconds", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 60)).executes(c -> {
+                    watchSource = c.getSource();
+                    watchLeft = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "seconds") * 20;
+                    c.getSource().sendSuccess(() -> Component.literal("Watching the nearest vehicle once a second; hold W now"), false);
+                    return 1;
+                })))
                 .then(Commands.literal("status").executes(c -> {
                     String st = IvControl.status(c.getSource().getLevel(), c.getSource().getPosition(), 8.0);
                     c.getSource().sendSuccess(() -> Component.literal(st == null ? "No vehicle within 8 blocks" : "Vehicle: " + st), false);
@@ -101,6 +115,9 @@ public final class Station {
                     return err == null ? 1 : 0;
                 }))));
     }
+
+    private static net.minecraft.commands.CommandSourceStack watchSource;
+    private static int watchLeft;
 
     /** Start or stop the engines of the nearest Immersive Vehicles vehicle within 6 blocks of whoever ran the command. */
     private static int ignition(net.minecraft.commands.CommandSourceStack src, Boolean start) {
