@@ -37,8 +37,11 @@ public final class PlanWandItem extends Item {
             return InteractionResult.SUCCESS;
         }
         ItemStack other = player.getItemInHand(ctx.getHand() == InteractionHand.MAIN_HAND ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND);
+        if (other.isEmpty() && !(level.getBlockState(clicked).getBlock() instanceof GhostBlock) && player.isShiftKeyDown()) {
+            return mark(level, player, clicked);
+        }
         if (!(other.getItem() instanceof BlockItem bi) || bi.getBlock() instanceof GhostBlock) {
-            player.sendOverlayMessage(Component.literal("Hold the block to plan in your other hand"));
+            player.sendOverlayMessage(Component.literal("Hold the block to plan in your other hand, or sneak with an empty hand to mark a block for demolition"));
             return InteractionResult.FAIL;
         }
         BlockPlaceContext pc = new BlockPlaceContext(ctx);
@@ -52,6 +55,26 @@ public final class PlanWandItem extends Item {
         BlockPos at = pc.getClickedPos();
         level.setBlock(at, DiaithirLogistics.GHOST.get().defaultBlockState(), 3);
         if (level.getBlockEntity(at) instanceof GhostBlockEntity g) g.setTarget(target);
+        return InteractionResult.SUCCESS;
+    }
+
+    /** Sneak with an empty other hand: mark the block for the nearest depot in reach to demolish (deconstruction plan). */
+    private static InteractionResult mark(Level level, Player player, BlockPos clicked) {
+        DepotBlockEntity best = null;
+        double bd = Double.MAX_VALUE;
+        double r2 = Math.pow(Config.SERVICE_RADIUS.get(), 2);
+        for (BlockPos dp : Sites.depots(level)) {
+            double d = dp.distSqr(clicked);
+            if (d <= r2 && d < bd && level.getBlockEntity(dp) instanceof DepotBlockEntity be) {
+                best = be;
+                bd = d;
+            }
+        }
+        if (best == null) {
+            player.sendOverlayMessage(Component.literal("No depot reaches that block"));
+            return InteractionResult.FAIL;
+        }
+        player.sendOverlayMessage(Component.literal(best.mark(clicked) ? "Marked for demolition" : "Already marked"));
         return InteractionResult.SUCCESS;
     }
 }

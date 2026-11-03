@@ -76,6 +76,17 @@ final class FoundrySelfTest {
             if (depot.couriersOut() != 0) fails.add("sent a courier with no stock");
             level.setBlock(g3, Blocks.AIR.defaultBlockState(), 3);
 
+            // 3b. demolition mark: a courier breaks the block and the drops land in stock
+            level.setBlock(at.offset(0, 0, -3), Blocks.DIRT.defaultBlockState(), 3);
+            int dirtBefore = count(chest, Items.DIRT);
+            depot.mark(at.offset(0, 0, -3));
+            long t3b = t + 4000;
+            depot.work(level, t3b);
+            depot.work(level, t3b + 200);
+            if (!level.getBlockState(at.offset(0, 0, -3)).isAir()) fails.add("marked block not demolished");
+            if (count(chest, Items.DIRT) != dirtBefore + 1) fails.add("demolition drops did not reach stock (" + count(chest, Items.DIRT) + ")");
+            depot.work(level, t3b + 400);
+
             // 4. courier cap
             chest.setItem(0, new ItemStack(Items.STONE, 20));
             int cap = Config.COURIERS_PER_DEPOT.get();
