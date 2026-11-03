@@ -2,11 +2,95 @@
 "replace": false,
 "values": [
 {
+"id": "diaithirfirearms:ags17",
+"required": false
+},
+{
+"id": "diaithirfirearms:at4",
+"required": false
+},
+{
+"id": "diaithirfirearms:bazooka_m1",
+"required": false
+},
+{
+"id": "diaithirfirearms:carl_gustaf_m2",
+"required": false
+},
+{
+"id": "diaithirfirearms:gp25",
+"required": false
+},
+{
 "id": "diaithirfirearms:grenade_launcher",
 "required": false
 },
 {
+"id": "diaithirfirearms:hk_gmg",
+"required": false
+},
+{
+"id": "diaithirfirearms:m203",
+"required": false
+},
+{
+"id": "diaithirfirearms:m20_bazooka",
+"required": false
+},
+{
+"id": "diaithirfirearms:m3_maaws",
+"required": false
+},
+{
+"id": "diaithirfirearms:m72_law",
+"required": false
+},
+{
+"id": "diaithirfirearms:m79",
+"required": false
+},
+{
+"id": "diaithirfirearms:milkor_mgl",
+"required": false
+},
+{
+"id": "diaithirfirearms:mk19",
+"required": false
+},
+{
+"id": "diaithirfirearms:panzerfaust_3",
+"required": false
+},
+{
+"id": "diaithirfirearms:panzerfaust_60",
+"required": false
+},
+{
+"id": "diaithirfirearms:panzerschreck",
+"required": false
+},
+{
+"id": "diaithirfirearms:piat",
+"required": false
+},
+{
 "id": "diaithirfirearms:rocket_launcher",
+"required": false
+},
+{
+"id": "diaithirfirearms:rpg2",
+"required": false
+},
+{
+"id": "diaithirfirearms:rpg29",
+"required": false
+},
+{
+"id": "diaithirfirearms:rpg7",
+"required": false
+},
+{
+"id": "diaithirfirearms:rpo_a_shmel",
 "required": false
 },
 {

@@ -10,7 +10,39 @@
 "required": false
 },
 {
+"id": "diaithirfirearms:ak12",
+"required": false
+},
+{
+"id": "diaithirfirearms:ak47",
+"required": false
+},
+{
+"id": "diaithirfirearms:ak74",
+"required": false
+},
+{
+"id": "diaithirfirearms:arisaka_type38",
+"required": false
+},
+{
+"id": "diaithirfirearms:arisaka_type99",
+"required": false
+},
+{
 "id": "diaithirfirearms:assault_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:berdan_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:beretta_ar70",
+"required": false
+},
+{
+"id": "diaithirfirearms:beretta_arx160",
 "required": false
 },
 {
@@ -18,7 +50,251 @@
 "required": false
 },
 {
+"id": "diaithirfirearms:carcano_m91",
+"required": false
+},
+{
+"id": "diaithirfirearms:cetme_c",
+"required": false
+},
+{
+"id": "diaithirfirearms:chassepot",
+"required": false
+},
+{
+"id": "diaithirfirearms:cz_bren_805",
+"required": false
+},
+{
+"id": "diaithirfirearms:daewoo_k2",
+"required": false
+},
+{
+"id": "diaithirfirearms:dreyse_needle_gun",
+"required": false
+},
+{
+"id": "diaithirfirearms:famas",
+"required": false
+},
+{
+"id": "diaithirfirearms:fg42",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_f2000",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_fal",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_fnc",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_scar_h",
+"required": false
+},
+{
+"id": "diaithirfirearms:galil",
+"required": false
+},
+{
+"id": "diaithirfirearms:gewehr_43",
+"required": false
+},
+{
+"id": "diaithirfirearms:gewehr_88",
+"required": false
+},
+{
+"id": "diaithirfirearms:gras_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:henry_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk33",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_416",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_417",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_g3",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_g36",
+"required": false
+},
+{
+"id": "diaithirfirearms:insas",
+"required": false
+},
+{
+"id": "diaithirfirearms:iwi_tavor",
+"required": false
+},
+{
+"id": "diaithirfirearms:kar98k",
+"required": false
+},
+{
+"id": "diaithirfirearms:krag_jorgensen",
+"required": false
+},
+{
+"id": "diaithirfirearms:lebel_1886",
+"required": false
+},
+{
+"id": "diaithirfirearms:m14",
+"required": false
+},
+{
+"id": "diaithirfirearms:m16",
+"required": false
+},
+{
+"id": "diaithirfirearms:m1917_enfield",
+"required": false
+},
+{
+"id": "diaithirfirearms:m1_carbine",
+"required": false
+},
+{
+"id": "diaithirfirearms:m1_garand",
+"required": false
+},
+{
+"id": "diaithirfirearms:mannlicher_1895",
+"required": false
+},
+{
 "id": "diaithirfirearms:marksman_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:martini_henry",
+"required": false
+},
+{
+"id": "diaithirfirearms:mas_36",
+"required": false
+},
+{
+"id": "diaithirfirearms:mauser_1871",
+"required": false
+},
+{
+"id": "diaithirfirearms:mosin_nagant",
+"required": false
+},
+{
+"id": "diaithirfirearms:qbz191",
+"required": false
+},
+{
+"id": "diaithirfirearms:qbz95",
+"required": false
+},
+{
+"id": "diaithirfirearms:rolling_block",
+"required": false
+},
+{
+"id": "diaithirfirearms:ross_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:sa80_l85",
+"required": false
+},
+{
+"id": "diaithirfirearms:schmidt_rubin_k31",
+"required": false
+},
+{
+"id": "diaithirfirearms:sharps_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:sig_510",
+"required": false
+},
+{
+"id": "diaithirfirearms:sig_sg550",
+"required": false
+},
+{
+"id": "diaithirfirearms:sks",
+"required": false
+},
+{
+"id": "diaithirfirearms:smle",
+"required": false
+},
+{
+"id": "diaithirfirearms:snider_enfield",
+"required": false
+},
+{
+"id": "diaithirfirearms:spencer_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:springfield_1873",
+"required": false
+},
+{
+"id": "diaithirfirearms:springfield_1903",
+"required": false
+},
+{
+"id": "diaithirfirearms:steyr_aug",
+"required": false
+},
+{
+"id": "diaithirfirearms:stg44",
+"required": false
+},
+{
+"id": "diaithirfirearms:svt_40",
+"required": false
+},
+{
+"id": "diaithirfirearms:type64",
+"required": false
+},
+{
+"id": "diaithirfirearms:type81",
+"required": false
+},
+{
+"id": "diaithirfirearms:type89",
+"required": false
+},
+{
+"id": "diaithirfirearms:vz58",
+"required": false
+},
+{
+"id": "diaithirfirearms:winchester_1873",
+"required": false
+},
+{
+"id": "diaithirfirearms:winchester_1894",
 "required": false
 },
 {
