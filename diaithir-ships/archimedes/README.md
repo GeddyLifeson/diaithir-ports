@@ -9,3 +9,6 @@ Engines: right-click with coal or wood to fuel; each burning engine adds speed w
 
 Not in v1 (the original had them): walking around inside a moving ship (the hull is one box for other entities), gauge blocks, parachutes, seat entities beyond the helm, GUIs for helm/engine, ship renaming.
 Headless check: `-Darchimedes.selftest=true` builds a boat in a pool, floats it, drives it, disassembles it.
+
+Integration data: `../age_gates.json` (Age II timber parts, III balloons, IV engine), `names_map.json` (Diaithiris names from compute job `archimedes_names`, archaic layer applied; 130-culture drop at /mnt/project-files/names/inbox/archimedes.json), Library rows in /mnt/project-files/library-sync/archimedes.json.
+Render check still open: needs a client join (ships spawn via helm right-click or the selftest boat).
