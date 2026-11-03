@@ -1,0 +1,159 @@
+package net.diaithir.druidry.ars.common.block;
+
+import net.diaithir.druidry.ars.api.event.ScribesTableInteractEvent;
+import net.diaithir.druidry.ars.api.item.IScribeable;
+import net.diaithir.druidry.ars.common.block.tile.ScribesTile;
+import net.diaithir.druidry.ars.common.items.DominionWand;
+import net.diaithir.druidry.ars.common.items.SpellBook;
+import net.diaithir.druidry.ars.common.network.Networking;
+import net.diaithir.druidry.ars.common.network.PacketOpenGlyphCraft;
+import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+
+public class ScribesBlock extends TableBlock {
+
+    public ScribesBlock() {
+        super();
+        NeoForge.EVENT_BUS.register(this);
+    }
+
+
+    @Override
+    public ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+        if (handIn != InteractionHand.MAIN_HAND || !(world.getBlockEntity(pos) instanceof ScribesTile tile)) {
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        }
+        if (player.getItemInHand(handIn).getItem() instanceof SpellBook && !player.isShiftKeyDown()) {
+            if (player instanceof ServerPlayer serverPlayer) {
+                Networking.sendToPlayerClient(new PacketOpenGlyphCraft(pos), serverPlayer);
+            }
+            return ItemInteractionResult.sidedSuccess(world.isClientSide);
+        }
+
+        if (state.getValue(ScribesBlock.PART) != ThreePartBlock.HEAD) {
+            BlockPos headPos = pos.relative(ScribesBlock.getConnectedDirection(state));
+            if (world.getBlockEntity(headPos) instanceof ScribesTile head) {
+                BlockState headState = head.getBlockState();
+                return headState.useItemOn(heldStack, world, player, handIn, hit.withPosition(headPos));
+            }
+
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        }
+
+        var interactEvent = NeoForge.EVENT_BUS.post(new ScribesTableInteractEvent(world, pos, tile, player, handIn, heldStack));
+        if (interactEvent.isCanceled()) {
+            return interactEvent.result;
+        }
+
+        if (!player.isShiftKeyDown()) {
+            if (!world.isClientSide) {
+                if (!tile.consumeStack(player.getItemInHand(handIn))) {
+                    if (!tile.getStack().isEmpty() && player.getItemInHand(handIn).isEmpty()) {
+                        ItemEntity item = new ItemEntity(world, player.getX(), player.getY(), player.getZ(), tile.getStack());
+                        world.addFreshEntity(item);
+                        tile.setStack(ItemStack.EMPTY);
+                    } else if (!player.getInventory().getSelected().isEmpty()) {
+                        if (!tile.getStack().isEmpty()) {
+                            ItemEntity item = new ItemEntity(world, player.getX(), player.getY(), player.getZ(), tile.getStack());
+                            world.addFreshEntity(item);
+                        }
+
+                        tile.setStack(player.getInventory().removeItem(player.getInventory().selected, 1));
+                    }
+                    BlockState updateState = tile.getBlockState();
+                    world.sendBlockUpdated(tile.getBlockPos(), updateState, updateState, 2);
+                }
+            }
+            return ItemInteractionResult.sidedSuccess(world.isClientSide);
+        }
+
+        ItemStack stack = tile.getStack();
+        if (player.getItemInHand(handIn).getItem() instanceof DominionWand) {
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        }
+        if (stack == null || stack.isEmpty())
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+
+        if (stack.getItem() instanceof IScribeable scribeable) {
+            if (!world.isClientSide) {
+                scribeable.onScribe(world, pos, player, handIn, stack);
+                BlockState updateState = tile.getBlockState();
+                world.sendBlockUpdated(tile.getBlockPos(), updateState, updateState, 2);
+            }
+            return ItemInteractionResult.sidedSuccess(world.isClientSide);
+        }
+
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
+
+    @Override
+    public BlockState playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
+        super.playerWillDestroy(worldIn, pos, state, player);
+        if (worldIn.getBlockEntity(pos) instanceof ScribesTile tile && tile.getStack() != null) {
+            worldIn.addFreshEntity(new ItemEntity(worldIn, pos.getX(), pos.getY(), pos.getZ(), tile.getStack()));
+            tile.refundConsumed();
+        }
+        return state;
+    }
+
+
+    // If the user breaks the other side of the table, this side needs to drop its item
+    public BlockState tearDown(BlockState state, Direction direction, BlockState state2, LevelAccessor world, BlockPos pos, BlockPos pos2) {
+        if (!world.isClientSide()) {
+            BlockEntity entity = world.getBlockEntity(pos);
+            if (entity instanceof ScribesTile tile && tile.getStack() != null && world instanceof ServerLevelAccessor levelAccessor) {
+                world.addFreshEntity(new ItemEntity(levelAccessor.getLevel(), pos.getX(), pos.getY(), pos.getZ(), tile.getStack()));
+                tile.setStack(ItemStack.EMPTY);
+                tile.refundConsumed();
+            }
+        }
+        return Blocks.AIR.defaultBlockState();
+    }
+
+
+    @SubscribeEvent
+    public void rightClick(PlayerInteractEvent.RightClickBlock event) {
+        if (!(event.getLevel().getBlockEntity(event.getPos()) instanceof ScribesTile))
+            return;
+        Level world = event.getLevel();
+        BlockPos pos = event.getPos();
+        BlockState state = world.getBlockState(pos);
+        if (state.getBlock() instanceof ScribesBlock) {
+            ItemStack stack = event.getEntity().getItemInHand(event.getHand());
+            if (stack.getItem() instanceof DominionWand) {
+                return;
+            }
+            ItemInteractionResult result = BlockRegistry.SCRIBES_BLOCK.get().useItemOn(stack, state, world, pos, event.getEntity(), event.getHand(), event.getHitVec());
+            event.setCancellationResult(result.result());
+            event.setCanceled(true);
+        }
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new ScribesTile(pos, state);
+    }
+
+    @Override
+    public boolean isPathfindable(BlockState pState, PathComputationType pType) {
+        return false;
+    }
+}

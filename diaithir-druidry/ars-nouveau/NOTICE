@@ -1,0 +1,5 @@
+Ars Nouveau (c) Bailey Hollingsworth, LGPL-3.0 (see LICENSE in this folder, whose first paragraph reserves all rights on assets).
+This directory holds a port of the Ars Nouveau CODE to NeoForge 26.1.2 under the same LGPL-3.0, packages renamed to net.diaithir.druidry.ars.
+Upstream: https://github.com/baileyholl/Ars-Nouveau (branch main, 5.13.4, MC 1.21.1). The port is modified from the original.
+Textures, models, sounds and other assets are ALL RIGHTS RESERVED upstream and are NOT included: art here is redrawn from scratch.
+The rest of diaithir-druidry stays MIT; only this directory is LGPL-3.0.
