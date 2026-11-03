@@ -24,6 +24,10 @@ public final class YardRegistry {
 
     public static void rollout(String yardId, RolloutHook h) { HOOKS.put(yardId, h); }
 
+    public static java.util.Collection<YardDef> yards() { return java.util.List.copyOf(YARDS.values()); }
+
+    public static java.util.Collection<PartDef> parts() { return java.util.List.copyOf(PARTS.values()); }
+
     public static Optional<YardDef> yard(String id) { return Optional.ofNullable(YARDS.get(id)); }
 
     public static Optional<PartDef> part(String item) { return Optional.ofNullable(PARTS.get(item)); }

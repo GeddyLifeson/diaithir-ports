@@ -21,6 +21,24 @@ public final class BuildState {
         return new BuildState(def);
     }
 
+    /** Rebuild a saved state. */
+    public static BuildState restore(YardDef def, int stage, int ticks, List<PartDef> installed, List<PartDef> stageParts) {
+        BuildState b = new BuildState(def);
+        b.stage = stage;
+        b.ticks = ticks;
+        b.installed.addAll(installed);
+        b.stageParts.addAll(stageParts);
+        return b;
+    }
+
+    public int progressTicks() {
+        return ticks;
+    }
+
+    public List<PartDef> stageParts() {
+        return List.copyOf(stageParts);
+    }
+
     public int stageIndex() {
         return stage;
     }

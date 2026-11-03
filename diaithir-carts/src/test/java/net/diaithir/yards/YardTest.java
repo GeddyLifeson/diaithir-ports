@@ -43,4 +43,18 @@ class YardTest {
         assertSame(out[0] = YardRegistry.finish("steam_loco", null, null, b), out[0]);
         assertNotNull(out[0]);
     }
+
+    @Test
+    void restoreAndLists() {
+        YardDef d = loco();
+        YardRegistry.register(d);
+        YardRegistry.register(PartDef.of("x", "bogie", 1).block("mod:block"));
+        assertTrue(YardRegistry.yards().stream().anyMatch(y -> y.id().equals("steam_loco")));
+        assertEquals("mod:block", YardRegistry.part("x").get().block());
+        PartDef bogie = PartDef.of("bogie", "bogie", 300);
+        BuildState b = BuildState.restore(d, 1, 10, List.of(bogie, bogie), List.of());
+        assertEquals(1, b.stageIndex());
+        assertEquals(600, b.stats().massKg());
+        assertEquals(0, d.footprint().w());
+    }
 }
