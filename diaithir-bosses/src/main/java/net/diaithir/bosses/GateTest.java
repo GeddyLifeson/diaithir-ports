@@ -35,6 +35,34 @@ final class GateTest {
         if (!ok) { fails++; System.out.println("[bossesselftest] gate FAIL: " + what); }
     }
 
+    /**
+     * /bossesgatelink: with DiaithirRPG's progression glue loaded, run "/ages progression walk" first. A fighter with no progression flags
+     * fills no keystone; the walker (it holds every node and the win flag there) fills all 16 with one use of the Gate.
+     */
+    static int link(CommandSourceStack s) {
+        var srv = s.getServer();
+        ServerLevel level = srv.overworld();
+        fails = checks = 0;
+        check("diaithir_ages is loaded", net.neoforged.fml.ModList.get().isLoaded("diaithir_ages"));
+        BlockPos g = new BlockPos(0, 230, 0);
+        Integer old = Ages.forced;
+        Ages.forced = Ages.RODOS;
+        AscendantData d = AscendantData.get(srv);
+        d.clearDefeats();
+        d.defeat("last_wheel", 0);
+        d.defeat(Rush.CFG.id, 0);
+        FakePlayer nobody = FakePlayerFactory.get(level, new GameProfile(UUID.fromString("00000000-0000-4000-8000-00000000b058"), "[gate-link-none]"));
+        Gate.use(level, g, nobody, ItemStack.EMPTY);
+        check("a fighter without progression flags fills nothing (15 missing)", Gate.missing(srv).size() == 15);
+        FakePlayer walker = FakePlayerFactory.get(level, new GameProfile(UUID.nameUUIDFromBytes("progression_walk".getBytes(java.nio.charset.StandardCharsets.UTF_8)), "progression_walk"));
+        Gate.use(level, g, walker, ItemStack.EMPTY);
+        check("the walker (every node done) fills all 16 keystones", Gate.missing(srv).isEmpty());
+        d.clearDefeats();
+        Ages.forced = old;
+        System.out.println("[bossesselftest] gatelink " + (fails == 0 ? "OK" : "FAIL") + ": checks=" + checks + " bad=" + fails);
+        return fails == 0 ? 1 : 0;
+    }
+
     private static String lastMsg() { return Gate.locked(src.getServer()) == null ? "unlocked" : "locked"; }
 
     static int start(CommandSourceStack s) {

@@ -105,6 +105,7 @@ public final class BossCommands {
             })));
         d.register(Commands.literal("bossesrushtest").requires(BossCommands::gm).executes(c -> RushTest.start(c.getSource())));
         d.register(Commands.literal("bossesgatetest").requires(BossCommands::gm).executes(c -> GateTest.start(c.getSource())));
+        d.register(Commands.literal("bossesgatelink").requires(BossCommands::gm).executes(c -> GateTest.link(c.getSource())));
         d.register(Commands.literal("bossesselftest").requires(BossCommands::gm).executes(c -> SelfTest.start(c.getSource())));
     }
 
