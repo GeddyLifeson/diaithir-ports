@@ -5,10 +5,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
 import java.util.function.Function;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 @Mod(TableMod.ID)
@@ -46,10 +49,17 @@ public final class TableMod {
         } catch (java.io.IOException ex) {
             throw new IllegalStateException(ex);
         }
+        for (String f : FishingLoot.FISH) {
+            ITEMS.registerSimpleItem(f, () -> new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).build()));
+            ITEMS.registerSimpleItem("cooked_" + f, () -> new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build()));
+        }
+        ITEMS.registerSimpleItem("worm_bait");
+        ITEMS.registerSimpleItem("fish_fillet");
     }
 
     public TableMod(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        NeoForge.EVENT_BUS.register(FishingLoot.class);
     }
 }

@@ -51,5 +51,6 @@ public final class TableMod {
     public TableMod(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        Genetics.register(bus);
     }
 }

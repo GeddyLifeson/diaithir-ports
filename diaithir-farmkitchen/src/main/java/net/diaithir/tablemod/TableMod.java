@@ -5,6 +5,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
 import java.util.function.Function;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -46,6 +48,29 @@ public final class TableMod {
         } catch (java.io.IOException ex) {
             throw new IllegalStateException(ex);
         }
+        registerKitchen();
+    }
+
+    private static void food(String name, int nutrition, float saturation) {
+        ITEMS.registerSimpleItem(name, () -> new Item.Properties()
+                .food(new FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturation).build()));
+    }
+
+    private static void registerKitchen() {
+        food("ration", 4, 0.8f);
+        food("hearty_stew", 10, 0.9f);
+        food("offering_feast", 16, 1.2f);
+        food("travelers_bread", 6, 0.7f);
+        food("smoked_fish_plate", 8, 0.9f);
+        var counter = BLOCKS.registerBlock("kitchen_counter", KitchenCounterBlock::new,
+                () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+        ITEMS.registerSimpleBlockItem(counter);
+        var pantry = BLOCKS.registerBlock("pantry_shelf", Block::new,
+                () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+        ITEMS.registerSimpleBlockItem(pantry);
+        var spice = BLOCKS.registerBlock("spice_rack", Block::new,
+                () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+        ITEMS.registerSimpleBlockItem(spice);
     }
 
     public TableMod(IEventBus bus) {
