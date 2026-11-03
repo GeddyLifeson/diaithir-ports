@@ -1,0 +1,26 @@
+{
+ "id": "trailer_car_carrier",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 25,
+  "h": 6
+ },
+ "result": "mts:diaithirtrucks.trailer_car_carrier",
+ "stages": [
+  {
+   "id": "running_gear",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "wheel",
+     "count": 4
+    }
+   ],
+   "base_ticks": 400,
+   "ghost": "diaithirtrucks:ghost/trailer_car_carrier_gear"
+  }
+ ],
+ "crane_speedup": 1.0
+}

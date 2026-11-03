@@ -1,0 +1,154 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Dry Van Trailer",
+  "description": "Dry Van Trailer (1914): 16.2 m, 2 axles, payload 20 t. Hooks onto any tractor fifth wheel.",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:25"
+   ],
+   [
+    "minecraft:iron_block:0:2"
+   ],
+   [
+    "minecraft:redstone:0:8"
+   ],
+   [
+    "minecraft:black_dye:0:4"
+   ]
+  ],
+  "health": 800
+ },
+ "motorized": {
+  "emptyMass": 10000,
+  "fuelCapacity": 0,
+  "defaultFuelQty": 0,
+  "hasRunningLights": true,
+  "hasHeadlights": true,
+  "axleRatio": 3.6,
+  "brakingFactor": 1.4,
+  "dragCoefficient": 0.8,
+  "crossSectionalArea": 9.0,
+  "steeringForceFactor": 1.0,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0,
+  "isTrailer": true
+ },
+ "parts": [
+  {
+   "pos": [
+    -0.95,
+    0.5,
+    -6.8999999999999995
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0.95,
+    0.5,
+    -6.8999999999999995
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    -0.95,
+    0.5,
+    -5.549999999999999
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0.95,
+    0.5,
+    -5.549999999999999
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0,
+    1.6,
+    0
+   ],
+   "types": [
+    "interactable_crate"
+   ],
+   "defaultPart": "diaithirtrucks:crate_l"
+  }
+ ],
+ "collision": [
+  {
+   "pos": [
+    0,
+    2.3,
+    0
+   ],
+   "width": 2.6,
+   "height": 4.0
+  }
+ ],
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Dry Van Trailer (Red)",
+   "modelName": "trailer_dry_van",
+   "textureName": "paint",
+   "extraMaterialLists": [
+    []
+   ]
+  },
+  {
+   "subName": "_white",
+   "name": "Dry Van Trailer (White)",
+   "modelName": "trailer_dry_van",
+   "textureName": "paint_white",
+   "extraMaterialLists": [
+    []
+   ]
+  },
+  {
+   "subName": "_blue",
+   "name": "Dry Van Trailer (Blue)",
+   "modelName": "trailer_dry_van",
+   "textureName": "paint_blue",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "rendering": {},
+ "connectionGroups": [
+  {
+   "groupName": "kingpin",
+   "canInitiateConnections": false,
+   "isHookup": true,
+   "connections": [
+    {
+     "type": "fifthwheel",
+     "pos": [
+      0,
+      1.3,
+      7.1
+     ],
+     "distance": 2.0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "id": "trailer_log_trailer",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 16,
+  "h": 6
+ },
+ "result": "mts:diaithirtrucks.trailer_log_trailer",
+ "stages": [
+  {
+   "id": "running_gear",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "wheel",
+     "count": 4
+    }
+   ],
+   "base_ticks": 400,
+   "ghost": "diaithirtrucks:ghost/trailer_log_trailer_gear"
+  },
+  {
+   "id": "cargo",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "hold",
+     "count": 1
+    }
+   ],
+   "base_ticks": 300,
+   "ghost": "diaithirtrucks:ghost/trailer_log_trailer_body"
+  }
+ ],
+ "crane_speedup": 1.0
+}

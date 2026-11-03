@@ -1,0 +1,358 @@
+{
+ "mts:diaithirtrucks.truck_scammell_scarab": {
+  "diaithiris": "karbad tarruing Skambeld Skarab",
+  "english": "Scammell Scarab"
+ },
+ "mts:diaithirtrucks.truck_diamond_t_980": {
+  "diaithiris": "karbad tarruing Diamund T 980",
+  "english": "Diamond T 980"
+ },
+ "mts:diaithirtrucks.truck_foden_s21": {
+  "diaithiris": "karbad tarruing Fouden S21 Mikkey Mousi",
+  "english": "Foden S21 Mickey Mouse"
+ },
+ "mts:diaithirtrucks.truck_mack_b61": {
+  "diaithiris": "karbad tarruing Makk B-Sieries",
+  "english": "Mack B-Series"
+ },
+ "mts:diaithirtrucks.truck_kenworth_w900": {
+  "diaithiris": "karbad tarruing Kienwurd W900",
+  "english": "Kenworth W900"
+ },
+ "mts:diaithirtrucks.truck_volvo_f88": {
+  "diaithiris": "karbad tarruing Voulvo F88",
+  "english": "Volvo F88"
+ },
+ "mts:diaithirtrucks.truck_maz_504": {
+  "diaithiris": "karbad tarruing MAUZ-504",
+  "english": "MAZ-504"
+ },
+ "mts:diaithirtrucks.truck_mack_r600": {
+  "diaithiris": "karbad tarruing Makk R-Sieries",
+  "english": "Mack R-Series"
+ },
+ "mts:diaithirtrucks.truck_peterbilt_359": {
+  "diaithiris": "karbad tarruing Pieterbilt 359",
+  "english": "Peterbilt 359"
+ },
+ "mts:diaithirtrucks.truck_intl_transtar": {
+  "diaithiris": "karbad tarruing Internationul Transtur",
+  "english": "International Transtar"
+ },
+ "mts:diaithirtrucks.truck_mb_ng": {
+  "diaithiris": "karbad tarruing Mierkedes-Bienz NGU",
+  "english": "Mercedes-Benz NG"
+ },
+ "mts:diaithirtrucks.truck_kenworth_k100": {
+  "diaithiris": "karbad tarruing Kienwurd K100",
+  "english": "Kenworth K100"
+ },
+ "mts:diaithirtrucks.truck_kamaz_5320": {
+  "diaithiris": "karbad tarruing Kaumaz-5320",
+  "english": "KamAZ-5320"
+ },
+ "mts:diaithirtrucks.truck_mack_superliner": {
+  "diaithiris": "karbad tarruing Makk Suiper-Liener",
+  "english": "Mack Super-Liner"
+ },
+ "mts:diaithirtrucks.truck_tatra_815": {
+  "diaithiris": "karbad tarruing Tautra 815",
+  "english": "Tatra 815"
+ },
+ "mts:diaithirtrucks.truck_sinotruk_howo": {
+  "diaithiris": "karbad tarruing Sienotruk Houwo",
+  "english": "Sinotruk Howo"
+ },
+ "mts:diaithirtrucks.truck_scania_143": {
+  "diaithiris": "karbad tarruing Skania 143",
+  "english": "Scania 143"
+ },
+ "mts:diaithirtrucks.truck_peterbilt_379": {
+  "diaithiris": "karbad tarruing Pieterbilt 379",
+  "english": "Peterbilt 379"
+ },
+ "mts:diaithirtrucks.truck_freightliner_fld120": {
+  "diaithiris": "karbad tarruing Freigtliner FLDU120",
+  "english": "Freightliner FLD120"
+ },
+ "mts:diaithirtrucks.truck_renault_magnum": {
+  "diaithiris": "karbad tarruing Rienault Maugnum",
+  "english": "Renault Magnum"
+ },
+ "mts:diaithirtrucks.truck_volvo_fh": {
+  "diaithiris": "karbad tarruing Voulvo FHU",
+  "english": "Volvo FH"
+ },
+ "mts:diaithirtrucks.truck_isuzu_giga": {
+  "diaithiris": "karbad tarruing Iesuzu Giega",
+  "english": "Isuzu Giga"
+ },
+ "mts:diaithirtrucks.truck_mercedes_actros": {
+  "diaithiris": "karbad tarruing Mierkedes-Bienz Aktros",
+  "english": "Mercedes-Benz Actros"
+ },
+ "mts:diaithirtrucks.truck_fuso_super_great": {
+  "diaithiris": "karbad tarruing Mitsubisi Fuiso Suiper Griet",
+  "english": "Mitsubishi Fuso Super Great"
+ },
+ "mts:diaithirtrucks.truck_volvo_vnl": {
+  "diaithiris": "karbad tarruing Voulvo VNU",
+  "english": "Volvo VN"
+ },
+ "mts:diaithirtrucks.truck_daf_xf": {
+  "diaithiris": "karbad tarruing DAUF XFU",
+  "english": "DAF XF"
+ },
+ "mts:diaithirtrucks.truck_iveco_stralis": {
+  "diaithiris": "karbad tarruing Iveko Straulis",
+  "english": "Iveco Stralis"
+ },
+ "mts:diaithirtrucks.truck_freightliner_cascadia": {
+  "diaithiris": "karbad tarruing Freigtliner Kaskadia",
+  "english": "Freightliner Cascadia"
+ },
+ "mts:diaithirtrucks.truck_man_tgx": {
+  "diaithiris": "karbad tarruing MAUN TGXU",
+  "english": "MAN TGX"
+ },
+ "mts:diaithirtrucks.truck_tata_prima": {
+  "diaithiris": "karbad tarruing Tauta Priema",
+  "english": "Tata Prima"
+ },
+ "mts:diaithirtrucks.truck_western_star_4900": {
+  "diaithiris": "karbad tarruing Wiestern Staur 4900",
+  "english": "Western Star 4900"
+ },
+ "mts:diaithirtrucks.truck_kenworth_t680": {
+  "diaithiris": "karbad tarruing Kienwurd T680",
+  "english": "Kenworth T680"
+ },
+ "mts:diaithirtrucks.trailer_dry_van": {
+  "diaithiris": "karbad luichda Dryu Vaun Traileri",
+  "english": "Dry Van Trailer"
+ },
+ "mts:diaithirtrucks.trailer_flatbed": {
+  "diaithiris": "karbad luichda Flautbed Traileri",
+  "english": "Flatbed Trailer"
+ },
+ "mts:diaithirtrucks.trailer_container_chassis": {
+  "diaithiris": "karbad luichda Kontuiner Chaussis",
+  "english": "Container Chassis"
+ },
+ "mts:diaithirtrucks.trailer_tanker": {
+  "diaithiris": "karbad luichda Taunk Traileri",
+  "english": "Tank Trailer"
+ },
+ "mts:diaithirtrucks.trailer_reefer": {
+  "diaithiris": "karbad luichda Riefrigerated Traileri",
+  "english": "Refrigerated Trailer"
+ },
+ "mts:diaithirtrucks.trailer_lowboy": {
+  "diaithiris": "karbad luichda Louwboy Traileri",
+  "english": "Lowboy Trailer"
+ },
+ "mts:diaithirtrucks.trailer_car_carrier": {
+  "diaithiris": "karbad luichda Kar Karrier Traileri",
+  "english": "Car Carrier Trailer"
+ },
+ "mts:diaithirtrucks.trailer_log_trailer": {
+  "diaithiris": "karbad luichda Loug Traileri",
+  "english": "Log Trailer"
+ },
+ "mts:diaithirtrucks.trailer_curtainsider": {
+  "diaithiris": "karbad luichda Kurtuinsider Traileri",
+  "english": "Curtainsider Trailer"
+ },
+ "mts:diaithirtrucks.trailer_dump_trailer": {
+  "diaithiris": "karbad luichda Duimp Traileri",
+  "english": "Dump Trailer"
+ },
+ "mts:diaithirtrucks.trailer_livestock": {
+  "diaithiris": "karbad luichda Livestokk Traileri",
+  "english": "Livestock Trailer"
+ },
+ "mts:diaithirtrucks.trailer_step_deck": {
+  "diaithiris": "karbad luichda Stiep-Diekk Traileri",
+  "english": "Step-Deck Trailer"
+ },
+ "mts:diaithirtrucks.trailer_modular_heavy": {
+  "diaithiris": "karbad luichda Modulur Hievy-Haulu Traileri",
+  "english": "Modular Heavy-Haul Trailer"
+ },
+ "mts:diaithirtrucks.trailer_tank_transporter": {
+  "diaithiris": "karbad luichda Hievy Ieqoipment Transpurter Siemitruiler",
+  "english": "Heavy Equipment Transporter Semitrailer"
+ },
+ "mts:diaithirtrucks.cv_steam_roller": {
+  "diaithiris": "karbad oibri Auveling aund Pourter Roadu Rolder",
+  "english": "Aveling and Porter Road Roller"
+ },
+ "mts:diaithirtrucks.cv_transit_mixer": {
+  "diaithiris": "karbad oibri Konkreti Traunsit Miexer",
+  "english": "Concrete Transit Mixer"
+ },
+ "mts:diaithirtrucks.cv_d9_dozer": {
+  "diaithiris": "karbad oibri Katerpildur D9 Bulddozer",
+  "english": "Caterpillar D9 Bulldozer"
+ },
+ "mts:diaithirtrucks.cv_jcb_3cx": {
+  "diaithiris": "karbad oibri JKB 3KX Bakkhoe Loaderi",
+  "english": "JCB 3CX Backhoe Loader"
+ },
+ "mts:diaithirtrucks.cv_cat_140_grader": {
+  "diaithiris": "karbad oibri Katerpildur 140 Motur Grauder",
+  "english": "Caterpillar 140 Motor Grader"
+ },
+ "mts:diaithirtrucks.cv_cat_966_loader": {
+  "diaithiris": "karbad oibri Katerpildur 966 Wheeli Loaderi",
+  "english": "Caterpillar 966 Wheel Loader"
+ },
+ "mts:diaithirtrucks.cv_barber_greene_paver": {
+  "diaithiris": "karbad oibri Asphult Pauver",
+  "english": "Asphalt Paver"
+ },
+ "mts:diaithirtrucks.cv_bomag_roller": {
+  "diaithiris": "karbad oibri Vibratury Roadu Rolder",
+  "english": "Vibratory Road Roller"
+ },
+ "mts:diaithirtrucks.cv_bobcat_m440": {
+  "diaithiris": "karbad oibri Bobkat M-440 Skied-Steeri Loaderi",
+  "english": "Bobcat M-440 Skid-Steer Loader"
+ },
+ "mts:diaithirtrucks.cv_cat_320_excavator": {
+  "diaithiris": "karbad oibri Katerpildur 320 Iexkavatur",
+  "english": "Caterpillar 320 Excavator"
+ },
+ "mts:diaithirtrucks.cv_wirtgen_miller": {
+  "diaithiris": "karbad oibri Roadu Milding Machini",
+  "english": "Road Milling Machine"
+ },
+ "mts:diaithirtrucks.cv_putzmeister_pump": {
+  "diaithiris": "karbad oibri Konkreti Puimp Trukk",
+  "english": "Concrete Pump Truck"
+ },
+ "mts:diaithirtrucks.cv_cat_797_haul": {
+  "diaithiris": "karbad oibri Katerpildur 797 Haulu Trukk",
+  "english": "Caterpillar 797 Haul Truck"
+ },
+ "mts:diaithirtrucks.engine_e150_stock": {
+  "diaithiris": "indel Dieseli Iengini 130 kwu (Stokk)",
+  "english": "Diesel Engine 130 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_e150_eff": {
+  "diaithiris": "indel Dieseli Iengini 130 kwu (Ieffikienky)",
+  "english": "Diesel Engine 130 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_e150_speed": {
+  "diaithiris": "indel Dieseli Iengini 130 kwu (Speedi)",
+  "english": "Diesel Engine 130 kW (Speed)"
+ },
+ "mts:diaithirtrucks.engine_e250_stock": {
+  "diaithiris": "indel Dieseli Iengini 250 kwu (Stokk)",
+  "english": "Diesel Engine 250 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_e250_eff": {
+  "diaithiris": "indel Dieseli Iengini 250 kwu (Ieffikienky)",
+  "english": "Diesel Engine 250 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_e250_speed": {
+  "diaithiris": "indel Dieseli Iengini 250 kwu (Speedi)",
+  "english": "Diesel Engine 250 kW (Speed)"
+ },
+ "mts:diaithirtrucks.engine_e350_stock": {
+  "diaithiris": "indel Dieseli Iengini 335 kwu (Stokk)",
+  "english": "Diesel Engine 335 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_e350_eff": {
+  "diaithiris": "indel Dieseli Iengini 335 kwu (Ieffikienky)",
+  "english": "Diesel Engine 335 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_e350_speed": {
+  "diaithiris": "indel Dieseli Iengini 335 kwu (Speedi)",
+  "english": "Diesel Engine 335 kW (Speed)"
+ },
+ "mts:diaithirtrucks.engine_e450_stock": {
+  "diaithiris": "indel Dieseli Iengini 400 kwu (Stokk)",
+  "english": "Diesel Engine 400 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_e450_eff": {
+  "diaithiris": "indel Dieseli Iengini 400 kwu (Ieffikienky)",
+  "english": "Diesel Engine 400 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_e450_speed": {
+  "diaithiris": "indel Dieseli Iengini 400 kwu (Speedi)",
+  "english": "Diesel Engine 400 kW (Speed)"
+ },
+ "mts:diaithirtrucks.engine_e700_stock": {
+  "diaithiris": "indel Dieseli Iengini 600 kwu (Stokk)",
+  "english": "Diesel Engine 600 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_e700_eff": {
+  "diaithiris": "indel Dieseli Iengini 600 kwu (Ieffikienky)",
+  "english": "Diesel Engine 600 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_e700_speed": {
+  "diaithiris": "indel Dieseli Iengini 600 kwu (Speedi)",
+  "english": "Diesel Engine 600 kW (Speed)"
+ },
+ "mts:diaithirtrucks.engine_e3000_stock": {
+  "diaithiris": "indel Dieseli Iengini 2500 kwu (Stokk)",
+  "english": "Diesel Engine 2500 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_e3000_eff": {
+  "diaithiris": "indel Dieseli Iengini 2500 kwu (Ieffikienky)",
+  "english": "Diesel Engine 2500 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_e3000_speed": {
+  "diaithiris": "indel Dieseli Iengini 2500 kwu (Speedi)",
+  "english": "Diesel Engine 2500 kW (Speed)"
+ },
+ "mts:diaithirtrucks.crate_s": {
+  "diaithiris": "kiend Kargo Hould 18 slouts",
+  "english": "Cargo Hold 18 slots"
+ },
+ "mts:diaithirtrucks.crate_m": {
+  "diaithiris": "kiend Kargo Hould 54 slouts",
+  "english": "Cargo Hold 54 slots"
+ },
+ "mts:diaithirtrucks.crate_l": {
+  "diaithiris": "kiend Kargo Hould 108 slouts",
+  "english": "Cargo Hold 108 slots"
+ },
+ "mts:diaithirtrucks.tank_10": {
+  "diaithiris": "kiend Taunk 10000 L",
+  "english": "Tank 10000 L"
+ },
+ "mts:diaithirtrucks.tank_20": {
+  "diaithiris": "kiend Taunk 20000 L",
+  "english": "Tank 20000 L"
+ },
+ "mts:diaithirtrucks.tank_30": {
+  "diaithiris": "kiend Taunk 30000 L",
+  "english": "Tank 30000 L"
+ },
+ "mts:diaithirtrucks.truck_wheel": {
+  "diaithiris": "rod Trukk Wheeli",
+  "english": "Truck Wheel"
+ },
+ "mts:diaithirtrucks.heavy_wheel": {
+  "diaithiris": "rod Hievy Wheeli",
+  "english": "Heavy Wheel"
+ },
+ "mts:diaithirtrucks.giant_wheel": {
+  "diaithiris": "rod Giantu Wheeli",
+  "english": "Giant Wheel"
+ },
+ "mts:diaithirtrucks.small_wheel": {
+  "diaithiris": "rod Smald Wheeli",
+  "english": "Small Wheel"
+ },
+ "mts:diaithirtrucks.cv_track": {
+  "diaithiris": "rod Machini Trakk",
+  "english": "Machine Track"
+ },
+ "mts:diaithirtrucks.seat": {
+  "diaithiris": "rod Kab Siet",
+  "english": "Cab Seat"
+ }
+}
