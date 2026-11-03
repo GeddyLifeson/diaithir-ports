@@ -1,0 +1,7535 @@
+[
+ {
+  "id": "hw_hand_axe",
+  "station": "smithy",
+  "base": "spartanweaponry:hand_axe",
+  "age": 1,
+  "kind": "melee",
+  "damage": 4.0,
+  "speed": -3.1,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_flint_tipped_spear",
+  "station": "smithy",
+  "base": "spartanweaponry:flint_tipped_spear",
+  "age": 1,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_atlatl",
+  "station": "smithy",
+  "base": "spartanweaponry:atlatl",
+  "age": 1,
+  "kind": "melee",
+  "damage": 3.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_boomerang",
+  "station": "smithy",
+  "base": "spartanweaponry:boomerang",
+  "age": 1,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.0,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_macuahuitl",
+  "station": "smithy",
+  "base": "spartanweaponry:macuahuitl",
+  "age": 1,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_mace_head",
+  "station": "smithy",
+  "base": "spartanweaponry:mace_head",
+  "age": 2,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -2.8,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_khopesh",
+  "station": "smithy",
+  "base": "spartanweaponry:khopesh",
+  "age": 3,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_sickle_sword",
+  "station": "smithy",
+  "base": "spartanweaponry:sickle_sword",
+  "age": 3,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_hittite_chariot_spear",
+  "station": "smithy",
+  "base": "spartanweaponry:hittite_chariot_spear",
+  "age": 3,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_sagaris",
+  "station": "smithy",
+  "base": "spartanweaponry:sagaris",
+  "age": 3,
+  "kind": "melee",
+  "damage": 4.0,
+  "speed": -3.1,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_dory",
+  "station": "smithy",
+  "base": "spartanweaponry:dory",
+  "age": 4,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_xiphos",
+  "station": "smithy",
+  "base": "spartanweaponry:xiphos",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_kopis",
+  "station": "smithy",
+  "base": "spartanweaponry:kopis",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_sarissa",
+  "station": "smithy",
+  "base": "spartanweaponry:sarissa",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_akinakes",
+  "station": "smithy",
+  "base": "spartanweaponry:akinakes",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_gladius",
+  "station": "smithy",
+  "base": "spartanweaponry:gladius",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_pugio",
+  "station": "smithy",
+  "base": "spartanweaponry:pugio",
+  "age": 4,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_pilum",
+  "station": "smithy",
+  "base": "spartanweaponry:pilum",
+  "age": 4,
+  "kind": "melee",
+  "damage": 3.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_spatha",
+  "station": "smithy",
+  "base": "spartanweaponry:spatha",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_plumbata",
+  "station": "smithy",
+  "base": "spartanweaponry:plumbata",
+  "age": 4,
+  "kind": "melee",
+  "damage": 3.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_zhanmadao",
+  "station": "smithy",
+  "base": "spartanweaponry:zhanmadao",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.0,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_jian",
+  "station": "smithy",
+  "base": "spartanweaponry:jian",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_dao",
+  "station": "smithy",
+  "base": "spartanweaponry:dao",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_ji",
+  "station": "smithy",
+  "base": "spartanweaponry:ji",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_guandao",
+  "station": "smithy",
+  "base": "spartanweaponry:guandao",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_qiang",
+  "station": "smithy",
+  "base": "spartanweaponry:qiang",
+  "age": 4,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_dagger_axe",
+  "station": "smithy",
+  "base": "spartanweaponry:dagger_axe",
+  "age": 3,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_katana",
+  "station": "smithy",
+  "base": "spartanweaponry:katana",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.0,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_tachi",
+  "station": "smithy",
+  "base": "spartanweaponry:tachi",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.0,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_wakizashi",
+  "station": "smithy",
+  "base": "spartanweaponry:wakizashi",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.0,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_tanto",
+  "station": "smithy",
+  "base": "spartanweaponry:tanto",
+  "age": 4,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_naginata",
+  "station": "smithy",
+  "base": "spartanweaponry:naginata",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_yari",
+  "station": "smithy",
+  "base": "spartanweaponry:yari",
+  "age": 5,
+  "kind": "melee",
+  "damage": 8.0,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_nodachi",
+  "station": "smithy",
+  "base": "spartanweaponry:nodachi",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.0,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_kanabo",
+  "station": "smithy",
+  "base": "spartanweaponry:kanabo",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_shuriken",
+  "station": "smithy",
+  "base": "spartanweaponry:shuriken",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_kris",
+  "station": "smithy",
+  "base": "spartanweaponry:kris",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_kukri",
+  "station": "smithy",
+  "base": "spartanweaponry:kukri",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_talwar",
+  "station": "smithy",
+  "base": "spartanweaponry:talwar",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_khanda",
+  "station": "smithy",
+  "base": "spartanweaponry:khanda",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_urumi",
+  "station": "smithy",
+  "base": "spartanweaponry:urumi",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.0,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_katar",
+  "station": "smithy",
+  "base": "spartanweaponry:katar",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_chakram",
+  "station": "smithy",
+  "base": "spartanweaponry:chakram",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_dandpatta",
+  "station": "smithy",
+  "base": "spartanweaponry:dandpatta",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_shamshir",
+  "station": "smithy",
+  "base": "spartanweaponry:shamshir",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_scimitar",
+  "station": "smithy",
+  "base": "spartanweaponry:scimitar",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_kilij",
+  "station": "smithy",
+  "base": "spartanweaponry:kilij",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_yatagan",
+  "station": "smithy",
+  "base": "spartanweaponry:yatagan",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_sabre",
+  "station": "smithy",
+  "base": "spartanweaponry:sabre",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_shashka",
+  "station": "smithy",
+  "base": "spartanweaponry:shashka",
+  "age": 6,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_byzantine_kontarion",
+  "station": "smithy",
+  "base": "spartanweaponry:byzantine_kontarion",
+  "age": 4,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_arming_sword",
+  "station": "smithy",
+  "base": "spartanweaponry:arming_sword",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_viking_sword",
+  "station": "smithy",
+  "base": "spartanweaponry:viking_sword",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_seax",
+  "station": "smithy",
+  "base": "spartanweaponry:seax",
+  "age": 4,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_dane_axe",
+  "station": "smithy",
+  "base": "spartanweaponry:dane_axe",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -3.0,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_bearded_axe",
+  "station": "smithy",
+  "base": "spartanweaponry:bearded_axe",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -3.0,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_francisca",
+  "station": "smithy",
+  "base": "spartanweaponry:francisca",
+  "age": 4,
+  "kind": "melee",
+  "damage": 4.0,
+  "speed": -3.1,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_angon",
+  "station": "smithy",
+  "base": "spartanweaponry:angon",
+  "age": 4,
+  "kind": "melee",
+  "damage": 3.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_longsword",
+  "station": "smithy",
+  "base": "spartanweaponry:longsword",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_zweihander",
+  "station": "smithy",
+  "base": "spartanweaponry:zweihander",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_claymore",
+  "station": "smithy",
+  "base": "spartanweaponry:claymore",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_falchion",
+  "station": "smithy",
+  "base": "spartanweaponry:falchion",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_messer",
+  "station": "smithy",
+  "base": "spartanweaponry:messer",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_estoc",
+  "station": "smithy",
+  "base": "spartanweaponry:estoc",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -1.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_rapier",
+  "station": "smithy",
+  "base": "spartanweaponry:rapier",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -1.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_smallsword",
+  "station": "smithy",
+  "base": "spartanweaponry:smallsword",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -1.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_cutlass",
+  "station": "smithy",
+  "base": "spartanweaponry:cutlass",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_backsword",
+  "station": "smithy",
+  "base": "spartanweaponry:backsword",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_katzbalger",
+  "station": "smithy",
+  "base": "spartanweaponry:katzbalger",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_cinquedea",
+  "station": "smithy",
+  "base": "spartanweaponry:cinquedea",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_rondel_dagger",
+  "station": "smithy",
+  "base": "spartanweaponry:rondel_dagger",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_main_gauche",
+  "station": "smithy",
+  "base": "spartanweaponry:main_gauche",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_stiletto",
+  "station": "smithy",
+  "base": "spartanweaponry:stiletto",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_misericorde",
+  "station": "smithy",
+  "base": "spartanweaponry:misericorde",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_bollock_dagger",
+  "station": "smithy",
+  "base": "spartanweaponry:bollock_dagger",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_sgian_dubh",
+  "station": "smithy",
+  "base": "spartanweaponry:sgian_dubh",
+  "age": 6,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_dirk",
+  "station": "smithy",
+  "base": "spartanweaponry:dirk",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_pike",
+  "station": "smithy",
+  "base": "spartanweaponry:pike",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_halberd",
+  "station": "smithy",
+  "base": "spartanweaponry:halberd",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_bill",
+  "station": "smithy",
+  "base": "spartanweaponry:bill",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_glaive",
+  "station": "smithy",
+  "base": "spartanweaponry:glaive",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_voulge",
+  "station": "smithy",
+  "base": "spartanweaponry:voulge",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_bardiche",
+  "station": "smithy",
+  "base": "spartanweaponry:bardiche",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_poleaxe",
+  "station": "smithy",
+  "base": "spartanweaponry:poleaxe",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_lucerne_hammer",
+  "station": "smithy",
+  "base": "spartanweaponry:lucerne_hammer",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_partisan",
+  "station": "smithy",
+  "base": "spartanweaponry:partisan",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_ranseur",
+  "station": "smithy",
+  "base": "spartanweaponry:ranseur",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_spetum",
+  "station": "smithy",
+  "base": "spartanweaponry:spetum",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_fauchard",
+  "station": "smithy",
+  "base": "spartanweaponry:fauchard",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_guisarme",
+  "station": "smithy",
+  "base": "spartanweaponry:guisarme",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_godendag",
+  "station": "smithy",
+  "base": "spartanweaponry:godendag",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_morning_star",
+  "station": "smithy",
+  "base": "spartanweaponry:morning_star",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.8,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_flail",
+  "station": "smithy",
+  "base": "spartanweaponry:flail",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -3.2,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_flanged_mace",
+  "station": "smithy",
+  "base": "spartanweaponry:flanged_mace",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.8,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_warhammer",
+  "station": "smithy",
+  "base": "spartanweaponry:warhammer",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.9,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_horseman_s_pick",
+  "station": "smithy",
+  "base": "spartanweaponry:horseman_s_pick",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.9,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_lance",
+  "station": "smithy",
+  "base": "spartanweaponry:lance",
+  "age": 4,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_quarterstaff",
+  "station": "smithy",
+  "base": "spartanweaponry:quarterstaff",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_trident",
+  "station": "smithy",
+  "base": "spartanweaponry:trident",
+  "age": 4,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_kpinga",
+  "station": "smithy",
+  "base": "spartanweaponry:kpinga",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_shotel",
+  "station": "smithy",
+  "base": "spartanweaponry:shotel",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_takoba",
+  "station": "smithy",
+  "base": "spartanweaponry:takoba",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_ikakalaka",
+  "station": "smithy",
+  "base": "spartanweaponry:ikakalaka",
+  "age": 6,
+  "kind": "melee",
+  "damage": 8.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_assegai",
+  "station": "smithy",
+  "base": "spartanweaponry:assegai",
+  "age": 5,
+  "kind": "melee",
+  "damage": 8.0,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_knobkerrie",
+  "station": "smithy",
+  "base": "spartanweaponry:knobkerrie",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_ngombe_axe",
+  "station": "smithy",
+  "base": "spartanweaponry:ngombe_axe",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -3.1,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_tomahawk",
+  "station": "smithy",
+  "base": "spartanweaponry:tomahawk",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -3.1,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_tepoztopilli",
+  "station": "smithy",
+  "base": "spartanweaponry:tepoztopilli",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_mapuche_lance",
+  "station": "smithy",
+  "base": "spartanweaponry:mapuche_lance",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_maori_taiaha",
+  "station": "smithy",
+  "base": "spartanweaponry:maori_taiaha",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_mere",
+  "station": "smithy",
+  "base": "spartanweaponry:mere",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_leiomano",
+  "station": "smithy",
+  "base": "spartanweaponry:leiomano",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_fijian_cannibal_club",
+  "station": "smithy",
+  "base": "spartanweaponry:fijian_cannibal_club",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_mace",
+  "station": "smithy",
+  "base": "spartanweaponry:mace",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.8,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_shestopyor",
+  "station": "smithy",
+  "base": "spartanweaponry:shestopyor",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.8,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_gada",
+  "station": "smithy",
+  "base": "spartanweaponry:gada",
+  "age": 3,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -2.8,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_vajra_mace",
+  "station": "smithy",
+  "base": "spartanweaponry:vajra_mace",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -2.8,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_bagh_nakh",
+  "station": "smithy",
+  "base": "spartanweaponry:bagh_nakh",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_tabar",
+  "station": "smithy",
+  "base": "spartanweaponry:tabar",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -3.1,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_pallasch",
+  "station": "smithy",
+  "base": "spartanweaponry:pallasch",
+  "age": 6,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_briquet",
+  "station": "smithy",
+  "base": "spartanweaponry:briquet",
+  "age": 6,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_naval_cutlass",
+  "station": "smithy",
+  "base": "spartanweaponry:naval_cutlass",
+  "age": 7,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_trench_knife",
+  "station": "smithy",
+  "base": "spartanweaponry:trench_knife",
+  "age": 7,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_fairbairn_sykes_knife",
+  "station": "smithy",
+  "base": "spartanweaponry:fairbairn_sykes_knife",
+  "age": 7,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_ka_bar",
+  "station": "smithy",
+  "base": "spartanweaponry:ka_bar",
+  "age": 7,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_bowie_knife",
+  "station": "smithy",
+  "base": "spartanweaponry:bowie_knife",
+  "age": 6,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_trench_club",
+  "station": "smithy",
+  "base": "spartanweaponry:trench_club",
+  "age": 7,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_swordstick",
+  "station": "smithy",
+  "base": "spartanweaponry:swordstick",
+  "age": 6,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.6,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_bayonet",
+  "station": "smithy",
+  "base": "spartanweaponry:bayonet",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_spontoon",
+  "station": "smithy",
+  "base": "spartanweaponry:spontoon",
+  "age": 6,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_winged_lance",
+  "station": "smithy",
+  "base": "spartanweaponry:winged_lance",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_kontusz_era_sabre",
+  "station": "smithy",
+  "base": "spartanweaponry:kontusz_era_sabre",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_dha",
+  "station": "smithy",
+  "base": "spartanweaponry:dha",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_parang",
+  "station": "smithy",
+  "base": "spartanweaponry:parang",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_kampilan",
+  "station": "smithy",
+  "base": "spartanweaponry:kampilan",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_barong",
+  "station": "smithy",
+  "base": "spartanweaponry:barong",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_badik",
+  "station": "smithy",
+  "base": "spartanweaponry:badik",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_golok",
+  "station": "smithy",
+  "base": "spartanweaponry:golok",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_jambiya",
+  "station": "smithy",
+  "base": "spartanweaponry:jambiya",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_kard",
+  "station": "smithy",
+  "base": "spartanweaponry:kard",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_hwando",
+  "station": "smithy",
+  "base": "spartanweaponry:hwando",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_woldo",
+  "station": "smithy",
+  "base": "spartanweaponry:woldo",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -3.0,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_chinese_jiu_li_dao",
+  "station": "smithy",
+  "base": "spartanweaponry:chinese_jiu_li_dao",
+  "age": 6,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.0,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_chinese_dadao",
+  "station": "smithy",
+  "base": "spartanweaponry:chinese_dadao",
+  "age": 6,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_sansetsukon",
+  "station": "smithy",
+  "base": "spartanweaponry:sansetsukon",
+  "age": 4,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -3.2,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_throwing_spear",
+  "station": "smithy",
+  "base": "spartanweaponry:throwing_spear",
+  "age": 4,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_lochaber_axe",
+  "station": "smithy",
+  "base": "spartanweaponry:lochaber_axe",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_jedburgh_axe",
+  "station": "smithy",
+  "base": "spartanweaponry:jedburgh_axe",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_sword_breaker",
+  "station": "smithy",
+  "base": "spartanweaponry:sword_breaker",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_hunting_hanger",
+  "station": "smithy",
+  "base": "spartanweaponry:hunting_hanger",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -2.4,
+  "durability": 400,
+  "ref_mass_kg": 1.2,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 0.15,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "guard",
+    "role": "guard",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "sword"
+ },
+ {
+  "id": "hw_knuckle_knife",
+  "station": "smithy",
+  "base": "spartanweaponry:knuckle_knife",
+  "age": 7,
+  "kind": "melee",
+  "damage": 6.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_brass_knuckles",
+  "station": "smithy",
+  "base": "spartanweaponry:brass_knuckles",
+  "age": 6,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_baton",
+  "station": "smithy",
+  "base": "spartanweaponry:baton",
+  "age": 6,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_shillelagh",
+  "station": "smithy",
+  "base": "spartanweaponry:shillelagh",
+  "age": 6,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_sap",
+  "station": "smithy",
+  "base": "spartanweaponry:sap",
+  "age": 6,
+  "kind": "melee",
+  "damage": 7.0,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_inca_star_mace",
+  "station": "smithy",
+  "base": "spartanweaponry:inca_star_mace",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.8,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_aztec_atlatl",
+  "station": "smithy",
+  "base": "spartanweaponry:aztec_atlatl",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.0,
+  "speed": -2.8,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_maya_obsidian_spear",
+  "station": "smithy",
+  "base": "spartanweaponry:maya_obsidian_spear",
+  "age": 4,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_cossack_nagaika",
+  "station": "smithy",
+  "base": "spartanweaponry:cossack_nagaika",
+  "age": 6,
+  "kind": "melee",
+  "damage": 8.0,
+  "speed": -3.2,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_kusarigama",
+  "station": "smithy",
+  "base": "spartanweaponry:kusarigama",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -3.2,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_nunchaku",
+  "station": "smithy",
+  "base": "spartanweaponry:nunchaku",
+  "age": 5,
+  "kind": "melee",
+  "damage": 7.5,
+  "speed": -3.2,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_sai",
+  "station": "smithy",
+  "base": "spartanweaponry:sai",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -1.5,
+  "durability": 300,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.06,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "dagger"
+ },
+ {
+  "id": "hw_tonfa",
+  "station": "smithy",
+  "base": "spartanweaponry:tonfa",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_bo_staff",
+  "station": "smithy",
+  "base": "spartanweaponry:bo_staff",
+  "age": 4,
+  "kind": "melee",
+  "damage": 5.0,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_jo_staff",
+  "station": "smithy",
+  "base": "spartanweaponry:jo_staff",
+  "age": 5,
+  "kind": "melee",
+  "damage": 5.5,
+  "speed": -2.6,
+  "durability": 350,
+  "ref_mass_kg": 1.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 1,
+    "litres": 0.08,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.9,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "spear"
+ },
+ {
+  "id": "hw_jitte",
+  "station": "smithy",
+  "base": "spartanweaponry:jitte",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_tessen",
+  "station": "smithy",
+  "base": "spartanweaponry:tessen",
+  "age": 5,
+  "kind": "melee",
+  "damage": 6.5,
+  "speed": -2.7,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ },
+ {
+  "id": "hw_kama",
+  "station": "smithy",
+  "base": "spartanweaponry:kama",
+  "age": 5,
+  "kind": "melee",
+  "damage": 4.5,
+  "speed": -3.1,
+  "durability": 400,
+  "ref_mass_kg": 1.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "head",
+    "role": "head",
+    "count": 3,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "handle",
+    "role": "handle",
+    "count": 1,
+    "litres": 0.3,
+    "damage": 0.1,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "axe"
+ }
+]

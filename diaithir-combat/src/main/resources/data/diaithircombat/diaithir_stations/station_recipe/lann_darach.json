@@ -1,0 +1,20 @@
+{
+ "station": "station.hearth_bench",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "item": "minecraft:oak_planks",
+   "count": 2
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  },
+  {
+   "tag": "c:string",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:lann_darach",
+ "time_s": 20
+}

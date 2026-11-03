@@ -1,0 +1,21 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "item": "diaithir_runes:rune_wizard_hood_adept",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/composite",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/diamond",
+   "count": 1
+  }
+ ],
+ "result": "diaithir_classes:rune_wizard_hood_master",
+ "time_s": 20,
+ "operator": true
+}

@@ -1,0 +1,873 @@
+{
+ "values": [
+  {
+   "id": "#diaithir_worldgen:lib/alaenneirae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/alaima.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/alaimeinora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/alainiel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/amarnes.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ameosastia.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/amontirnium.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ashestith.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ashiazis.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/breraston.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/breroldock.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/bronurneld.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/brurnadeld.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/caustenum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/caustiantes.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/corentium.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/coreoserus.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/corialor.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/corianum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/coriarnes.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/corolor.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/crare.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/crede.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/crestardock.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/crestornen.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/crodaston.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/crurnon.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/diaithir.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/draggouzhok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/draktak.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/drathouggun.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/drerdunen.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/drernen.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/drore.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/drorkaigok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/druderath.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/drunesteld.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/drurdon.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/elaelys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/elaennirlys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/elamirla.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/eleirenora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/eleniel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/eliolerae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/eluannys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/fenarnock.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/fenernareld.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/gouthun.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/graikurn.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/grimozhun.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/grimukougok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/groktok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/grorkaigoth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/gukornok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/halardore.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/halurdock.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ilyenna.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ilyimeth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/isyuthith.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/joradernath.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/jorernaston.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/jorernodath.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/joroneldock.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/kaktun.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/kaluvamoma.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/karugurn.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/kelaneld.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/kelarnock.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/kelolden.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/kelordaren.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/keludoren.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/khairnar.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/khogar.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/kraizhoth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/krarnaizhok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/krogok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/kroukagar.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/krouktaggun.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lernaunus.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lialintor.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/linaustia.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/listanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/losaustanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lyanae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lyannae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lyannora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lyarae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lyariel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lyemwen.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lyenora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/lyirlora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/maurantium.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/melauntus.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/menteores.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/miana.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/miarlinnys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/mieneth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/mienys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/miilora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/miimeth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/miinnora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/morarneld.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/morurnath.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ninteostor.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/niranum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/nualireth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/nuemiel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/nueriel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/nuileiniel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/nuilleimwen.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/nuimiel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/orerum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/orestanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/oriamora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/oriarium.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/oriellys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/orienna.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/orierlae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/oriilora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/oriinnys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/orintanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/oseivsizith.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/osulaltanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/osutaala.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/osuvaeno.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/osyuseth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/pelanode.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/reoria.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/reornanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryala.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryamiel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryanirae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryellae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryelora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryenaerlae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryeralwen.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryerlae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryira.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ryirleth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/sallus.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/seornum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/serarnum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/seraurnanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/seresum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/sestia.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/shavseth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/shiavsora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/shizasha.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/shyuthora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/silaeramys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/silanneth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/silara.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/silemuarora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/silena.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/silenioriel.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/silia.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/siliomaerae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/siliorlora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/siluanae.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/siluanora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/suranareno.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/syezeth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/syuzeth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tarnaldath.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tarnedonath.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tarnesten.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tarnor.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tarnordath.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tarnornath.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tarnurock.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tasianium.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/teleontanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/telones.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/theisasha.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/theivsis.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/thivsora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/thonudeld.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/thonurde.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/thudarneld.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/thurdock.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/thurkok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tianausanum.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tirakaluta.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/toraizhoth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/torarnak.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/torourkoth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/torugun.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/torukouthar.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/tosistium.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/ukaraeno.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/vaurnes.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/venaemeth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/venaremwen.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/venarirleth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/veneiluana.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/veneruamora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/venileth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/venilleth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/veniolora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/venuala.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/venualys.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/veontiastes.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/vesathora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/vesiathith.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/vesizathith.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/vesizora.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/vhaikun.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/vhoggaktak.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/voraikun.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/vorairnok.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/xaasseth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/xaatheth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/zepheistith.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/zepheivseth.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/zephessith.json",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:lib/zephivsora.json",
+   "required": false
+  },
+  "#diaithir_worldgen:rc/stone",
+  "#diaithir_worldgen:rc/sand",
+  "#diaithir_worldgen:rc/nether",
+  "#diaithir_worldgen:rc/ice",
+  "#diaithir_worldgen:rc/deep"
+ ]
+}
