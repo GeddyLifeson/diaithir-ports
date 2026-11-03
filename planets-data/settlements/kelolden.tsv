@@ -1,0 +1,15 @@
+entry_id	name	tier	era	biome_entry
+GR.kelolden.E1.places.000057	Torouthurn	3	E1	GR.kelolden.E1.places.000069
+GR.kelolden.E1.places.000069	Moredarnen	4	E1	GR.kelolden.E1.assay.000161
+GR.kelolden.E1.places.000071	Siasora	4	E1	GR.kelolden.E7.assay.000357
+GR.kelolden.E2.places.000035	Morarnock	2	E2	GR.kelolden.E5.assay.000318
+GR.kelolden.E3.places.000014	Voraithak	1	E3	GR.kelolden.E1.assay.000161
+GR.kelolden.E3.places.000015	Kalumalari	1	E3	GR.kelolden.E7.places.000051
+GR.kelolden.E3.places.000037	Ilorasanira	2	E3	GR.kelolden.E7.assay.000357
+GR.kelolden.E3.places.000061	Xaastith	3	E3	GR.kelolden.E1.assay.000161
+GR.kelolden.E3.places.000078	Oreorus	4	E3	GR.kelolden.E1.places.000069
+GR.kelolden.E4.places.000039	Thanedock	2	E4	GR.kelolden.E1.assay.000161
+GR.kelolden.E4.places.000081	Lyemiriel	4	E4	GR.kelolden.E7.places.000051
+GR.kelolden.E5.places.000021	Cranon	1	E5	GR.kelolden.E3.places.000061
+GR.kelolden.E5.places.000064	Eluarora	3	E5	GR.kelolden.E1.assay.000161
+GR.kelolden.E7.places.000051	Vanamalum	2	E7	GR.kelolden.E5.assay.000318

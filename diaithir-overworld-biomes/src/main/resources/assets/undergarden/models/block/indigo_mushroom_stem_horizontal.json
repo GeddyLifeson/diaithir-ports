@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column_horizontal",
+ "textures": {
+  "end": "minecraft:block/brown_mushroom_block",
+  "side": "minecraft:block/brown_mushroom_block"
+ }
+}

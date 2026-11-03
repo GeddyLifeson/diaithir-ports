@@ -1,0 +1,5 @@
+{
+ "outputs": ["^lightmanscurrency:.*coin", "^diaithir:coin_", "^numismatics:.*(coin|bevel|sprocket|cog|crown|sun|spur)"],
+ "types": ["lightmanscurrency:coin_mint"],
+ "blocks": ["lightmanscurrency:coin_mint"]
+}

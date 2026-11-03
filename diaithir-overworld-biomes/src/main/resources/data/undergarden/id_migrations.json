@@ -1,0 +1,502 @@
+[
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:ancient_root_hanging_sign",
+  "new": "minecraft:oak_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:ancient_root_sign",
+  "new": "minecraft:oak_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:ancient_root_wall_hanging_sign",
+  "new": "minecraft:oak_wall_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:ancient_root_wall_sign",
+  "new": "minecraft:oak_wall_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:cloggrum_bars",
+  "new": "minecraft:iron_bars"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:cloggrum_ladder",
+  "new": "minecraft:ladder"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:cloggrum_lantern",
+  "new": "minecraft:lantern"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:deepsoil_farmland",
+  "new": "minecraft:farmland"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:depthrock_bed",
+  "new": "minecraft:red_bed"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:depthrock_pot",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:gloom_o_lantern",
+  "new": "minecraft:lantern"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:gloomgourd_stem",
+  "new": "minecraft:pumpkin_stem"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:gloomgourd_stem_attached",
+  "new": "minecraft:attached_pumpkin_stem"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:grongle_hanging_sign",
+  "new": "minecraft:oak_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:grongle_sign",
+  "new": "minecraft:oak_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:grongle_wall_hanging_sign",
+  "new": "minecraft:oak_wall_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:grongle_wall_sign",
+  "new": "minecraft:oak_wall_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:infuser",
+  "new": "minecraft:enchanting_table"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_amorous_bristle",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_blood_mushroom",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_butterbunch",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_grongle_sapling",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_indigo_mushroom",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_ink_mushroom",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_miserabell",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_puff_mushroom",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_shimmerweed",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_smogstem_sapling",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_veil_mushroom",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:potted_wigglewood_sapling",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:shard_o_lantern",
+  "new": "minecraft:lantern"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:shard_torch",
+  "new": "minecraft:torch"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:shard_wall_torch",
+  "new": "minecraft:wall_torch"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:smogstem_hanging_sign",
+  "new": "minecraft:oak_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:smogstem_sign",
+  "new": "minecraft:oak_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:smogstem_wall_hanging_sign",
+  "new": "minecraft:oak_wall_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:smogstem_wall_sign",
+  "new": "minecraft:oak_wall_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:virulent_mix_cauldron",
+  "new": "minecraft:cauldron"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:wigglewood_hanging_sign",
+  "new": "minecraft:oak_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:wigglewood_sign",
+  "new": "minecraft:oak_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:wigglewood_wall_hanging_sign",
+  "new": "minecraft:oak_wall_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "undergarden:wigglewood_wall_sign",
+  "new": "minecraft:oak_wall_sign"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:ancient_chestplate",
+  "new": "minecraft:iron_chestplate"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:ancient_helmet",
+  "new": "minecraft:iron_helmet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:ancient_leggings",
+  "new": "minecraft:iron_leggings"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:ancient_root_boat",
+  "new": "minecraft:oak_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:ancient_root_chest_boat",
+  "new": "minecraft:oak_chest_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:bloody_stew",
+  "new": "minecraft:mushroom_stew"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_axe",
+  "new": "minecraft:iron_axe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_battleaxe",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_boots",
+  "new": "minecraft:iron_boots"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_bucket",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_chestplate",
+  "new": "minecraft:iron_chestplate"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_helmet",
+  "new": "minecraft:iron_helmet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_hoe",
+  "new": "minecraft:iron_hoe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_leggings",
+  "new": "minecraft:iron_leggings"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_pickaxe",
+  "new": "minecraft:iron_pickaxe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_shield",
+  "new": "minecraft:shield"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_shovel",
+  "new": "minecraft:iron_shovel"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_spear",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:cloggrum_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:forgotten_axe",
+  "new": "minecraft:iron_axe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:forgotten_battleaxe",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:forgotten_hoe",
+  "new": "minecraft:iron_hoe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:forgotten_pickaxe",
+  "new": "minecraft:iron_pickaxe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:forgotten_shovel",
+  "new": "minecraft:iron_shovel"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:forgotten_spear",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:forgotten_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_axe",
+  "new": "minecraft:iron_axe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_boots",
+  "new": "minecraft:iron_boots"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_chestplate",
+  "new": "minecraft:iron_chestplate"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_helmet",
+  "new": "minecraft:iron_helmet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_hoe",
+  "new": "minecraft:iron_hoe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_leggings",
+  "new": "minecraft:iron_leggings"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_pickaxe",
+  "new": "minecraft:iron_pickaxe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_shovel",
+  "new": "minecraft:iron_shovel"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_spear",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:froststeel_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:grongle_boat",
+  "new": "minecraft:oak_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:grongle_chest_boat",
+  "new": "minecraft:oak_chest_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:gwibling_bucket",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:indigo_stew",
+  "new": "minecraft:mushroom_stew"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:inky_stew",
+  "new": "minecraft:mushroom_stew"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:slop_bowl",
+  "new": "minecraft:bowl"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:smogstem_boat",
+  "new": "minecraft:oak_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:smogstem_chest_boat",
+  "new": "minecraft:oak_chest_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_axe",
+  "new": "minecraft:iron_axe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_boots",
+  "new": "minecraft:iron_boots"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_chestplate",
+  "new": "minecraft:iron_chestplate"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_helmet",
+  "new": "minecraft:iron_helmet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_hoe",
+  "new": "minecraft:iron_hoe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_leggings",
+  "new": "minecraft:iron_leggings"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_pickaxe",
+  "new": "minecraft:iron_pickaxe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_shovel",
+  "new": "minecraft:iron_shovel"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_spear",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:utherium_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:veiled_stew",
+  "new": "minecraft:mushroom_stew"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:virulent_mix_bucket",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:wigglewood_boat",
+  "new": "minecraft:oak_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "undergarden:wigglewood_chest_boat",
+  "new": "minecraft:oak_chest_boat"
+ }
+]

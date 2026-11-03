@@ -1,0 +1,49 @@
+{
+ "boss": "rootbreaker",
+ "steps": [
+  {
+   "type": "offer",
+   "item": "#diaithirbosses:offering_feast",
+   "count": 1
+  },
+  {
+   "type": "offer",
+   "item": "minecraft:resin_brick",
+   "count": 16
+  },
+  {
+   "type": "hunt",
+   "mob": "minecraft:vindicator",
+   "count": 15
+  },
+  {
+   "type": "stones",
+   "sequence": [
+    0,
+    6,
+    0,
+    6,
+    5,
+    0
+   ]
+  },
+  {
+   "type": "hour",
+   "from": 23000,
+   "to": 1000
+  },
+  {
+   "type": "coop",
+   "players": 3
+  },
+  {
+   "type": "defend",
+   "seconds": 120,
+   "mobs": [
+    "minecraft:vindicator",
+    "minecraft:zombie",
+    "minecraft:spider"
+   ]
+  }
+ ]
+}

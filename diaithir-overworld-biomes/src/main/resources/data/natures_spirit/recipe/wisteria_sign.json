@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "pattern": ["###", "###", " S "], "key": {"#": "natures_spirit:wisteria_planks", "S": "minecraft:stick"}, "result": {"id": "natures_spirit:wisteria_sign", "count": 3}}

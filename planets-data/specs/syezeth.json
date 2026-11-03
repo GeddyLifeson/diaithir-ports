@@ -1,0 +1,183 @@
+{
+ "sky": {
+  "sky": "#6a8fb8",
+  "fog": "#9fb8cc",
+  "cloud": "#e8f0f8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5c78"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.syezeth.E1.places.000267",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#a8c4d8",
+   "foliage": "#8fb0c8",
+   "water": "#7fb0d0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.syezeth.E4.places.000313",
+   "archetype": "ice_spikes",
+   "temp": -0.7,
+   "humid": 0.2,
+   "grass": "#b8d4e6",
+   "foliage": "#a0c0d4",
+   "water": "#90c0e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.syezeth.E1.places.000271",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.4,
+   "grass": "#8a9aa8",
+   "foliage": "#7a8a98",
+   "water": "#6a9ab8",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.syezeth.E3.places.000331",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.3,
+   "grass": "#7fa08a",
+   "foliage": "#6f9078",
+   "water": "#5f8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.syezeth.E3.places.000328",
+   "archetype": "taiga",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#6e9a7a",
+   "foliage": "#5e8a6a",
+   "water": "#4f86a8",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.syezeth.E7.places.000301",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#9ec88a",
+   "foliage": "#f0b8d0",
+   "water": "#78b8d8",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.syezeth.E3.places.000292",
+   "archetype": "flower_forest",
+   "temp": 0.4,
+   "humid": 0.6,
+   "grass": "#8cc070",
+   "foliage": "#78b060",
+   "water": "#5aa8c8",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.syezeth.E6.places.000244",
+   "archetype": "mangrove_swamp",
+   "temp": 0.6,
+   "humid": 0.8,
+   "grass": "#7aa860",
+   "foliage": "#6a9850",
+   "water": "#4f8a78",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.syezeth.E6.places.000245",
+   "archetype": "savanna",
+   "temp": 0.8,
+   "humid": 0.2,
+   "grass": "#c8b878",
+   "foliage": "#b8a868",
+   "water": "#7aa8c0",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.syezeth.E6.places.000242",
+   "archetype": "eroded_badlands",
+   "temp": 1.0,
+   "humid": -0.8,
+   "grass": "#c89a68",
+   "foliage": "#b88a58",
+   "water": "#8a9ab0",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "Syezeth's surface runs from singing frozen peaks and mirror-glass ice basins in the cold, through misty glass-island forests and cherry groves, to sunlit savannas and a red sun-scorched badlands in the heat, with the sea kept under a cold deep-frozen ocean.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8fa3b8",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.syezeth.E5.assay.000363",
+  "why": "Machines draw lightning from the sky; storms are part of the world",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 3.0,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.syezeth.E6.assay.000614",
+  "grounded": false
+ }
+}

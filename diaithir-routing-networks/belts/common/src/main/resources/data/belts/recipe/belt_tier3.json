@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "belts:improved_belt",
+    "i": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "bbb",
+    "bib",
+    "bbb"
+  ],
+  "result": {
+    "count": 8,
+    "id": "belts:belt_tier3"
+  }
+}

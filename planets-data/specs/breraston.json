@@ -1,0 +1,174 @@
+{
+ "sky": {
+  "sky": "#8fb3d9",
+  "fog": "#c4d6e6",
+  "cloud": "#e6ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3d6fa3"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.breraston.E1.assay.001820",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": 0.0,
+   "grass": "#8db360",
+   "foliage": "#7aa04e",
+   "water": "#3f76e4",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.breraston.E2.assay.001926",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#9ccf6a",
+   "foliage": "#88bb55",
+   "water": "#3f76e4",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.breraston.E3.assay.002764",
+   "archetype": "forest",
+   "temp": 0.0,
+   "humid": 0.5,
+   "grass": "#79c05a",
+   "foliage": "#59ae30",
+   "water": "#3f76e4",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.breraston.E3.assay.000792",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.1,
+   "grass": "#8ab689",
+   "foliage": "#6da06d",
+   "water": "#3f76e4",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.breraston.E3.assay.001560",
+   "archetype": "snowy_plains",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#a7c5a0",
+   "foliage": "#8fb08a",
+   "water": "#3d57d6",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.breraston.E3.assay.004354",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.0,
+   "grass": "#b0c8c0",
+   "foliage": "#9bb8ae",
+   "water": "#3d57d6",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.breraston.E4.assay.004457",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#bfb36a",
+   "foliage": "#aca057",
+   "water": "#32a598",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.breraston.E5.assay.002018",
+   "archetype": "swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#6a7039",
+   "foliage": "#6a7039",
+   "water": "#617b64",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Breraston's frozen, martial realm tiles from cold windswept peaks and snowfields through lush meadows and forests to arid plains, a shadowed desert settlement, and a murky swamp.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.08
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9d8e6",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "calm",
+  "why_entry": "MA.breraston.E2.assay.001170",
+  "why": "Frozen tract at the pale frost edge; soil is Frost.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 3
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 0.8,
+   "gold": 0.6,
+   "redstone": 0.8,
+   "lapis": 0.6,
+   "diamond": 0.8
+  },
+  "why_entry": "MA.breraston.E3.assay.001560",
+  "grounded": true
+ }
+}

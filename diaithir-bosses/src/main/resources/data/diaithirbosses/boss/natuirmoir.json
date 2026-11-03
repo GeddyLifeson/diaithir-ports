@@ -4,8 +4,8 @@
  "name_en": "Natuirmoir",
  "age": 3,
  "own": {
-  "kind": "guardian",
-  "scale": 3.4,
+  "kind": "look_low",
+  "scale": 1.85,
   "hp": 520,
   "damage": 9,
   "armor": 8,
@@ -195,5 +195,6 @@
  "mythic": true,
  "entity": "diaithir_myth:natuirmoir",
  "fallback_own": true,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

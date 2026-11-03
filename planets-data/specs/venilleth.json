@@ -1,0 +1,175 @@
+{
+ "sky": {
+  "sky": "#8fb4d9",
+  "fog": "#c9dcef",
+  "cloud": "#e6f2ffcc",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4f9bb8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.venilleth.E2.places.000548",
+   "archetype": "windswept_hills",
+   "temp": 0.4,
+   "humid": -0.3,
+   "grass": "#b8a878",
+   "foliage": "#a89a6a",
+   "water": "#6f9fb5",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venilleth.E6.places.000440",
+   "archetype": "ocean",
+   "temp": 0.2,
+   "humid": 0.7,
+   "grass": "#c9d8c4",
+   "foliage": "#b5cbb0",
+   "water": "#7fb8d4",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venilleth.E4.places.000521",
+   "archetype": "birch_forest",
+   "temp": 0.3,
+   "humid": 0.4,
+   "grass": "#9fc27a",
+   "foliage": "#c4d98a",
+   "water": "#5e9fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venilleth.E1.places.000509",
+   "archetype": "cherry_grove",
+   "temp": 0.2,
+   "humid": 0.2,
+   "grass": "#8fbf86",
+   "foliage": "#e8b4c8",
+   "water": "#6ab0c4",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venilleth.E3.places.000554",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.9,
+   "grass": "#6f9a6a",
+   "foliage": "#5c8a5c",
+   "water": "#4a7d74",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venilleth.E5.places.000499",
+   "archetype": "plains",
+   "temp": 0.5,
+   "humid": 0.0,
+   "grass": "#a8c46e",
+   "foliage": "#94b35e",
+   "water": "#5f9dbb",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.venilleth.E7.places.000506",
+   "archetype": "mushroom_fields",
+   "temp": -0.1,
+   "humid": 0.6,
+   "grass": "#7a8fa0",
+   "foliage": "#8a7fb8",
+   "water": "#4d6f8c",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.venilleth.E1.places.000434",
+   "archetype": "jagged_peaks",
+   "temp": -0.5,
+   "humid": -0.2,
+   "grass": "#c8d4dc",
+   "foliage": "#b0c0cc",
+   "water": "#8fb8d0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Venilleth's surface moves from luminous hill-courts and cherry groves through mirrored seas and misted swamps to cold, cloud-wrapped peaks, all lit by a pale arcane sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.025
+   }
+  ],
+  "fog": "#c9d6e8",
+  "fog_density": "thin",
+  "night": "bright",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.venilleth.E6.powers.000467",
+  "why": "Silver lens-spirit pierces mist and smoke in marshlands",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "pink_petals",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "white_tulip",
+   "oxeye_daisy",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 0.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 1.5,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.venilleth.E1.places.000563",
+  "grounded": false
+ }
+}
