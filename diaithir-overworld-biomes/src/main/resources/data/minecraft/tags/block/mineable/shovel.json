@@ -1,20 +1,6 @@
 {
  "replace": false,
  "values": [
-  "undergarden:ashen_deepturf",
-  "undergarden:ashen_deepturf_block",
-  "undergarden:blue_mogmoss_rug",
-  "undergarden:coarse_deepsoil",
-  "undergarden:deepsoil",
-  "undergarden:deepturf",
-  "undergarden:deepturf_block",
-  "undergarden:depthrock_pebbles",
-  "undergarden:frozen_deepturf",
-  "undergarden:frozen_deepturf_block",
-  "undergarden:goo",
-  "undergarden:goo_block",
-  "undergarden:mogmoss_rug",
-  "undergarden:sediment",
-  "undergarden:tall_deepturf"
+  "aether_ii:quicksoil"
  ]
 }

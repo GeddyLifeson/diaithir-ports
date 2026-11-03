@@ -1,14 +1,12 @@
 {
  "replace": false,
  "values": [
-  "#c:ores/cloggrum",
-  "#c:ores/coal",
-  "#c:ores/diamond",
-  "#c:ores/froststeel",
-  "#c:ores/gold",
-  "#c:ores/iron",
-  "#c:ores/regalium",
-  "#c:ores/rogdorium",
-  "#c:ores/utherium"
+  "#c:ores/ambrosium",
+  "#c:ores/arkenium",
+  "#c:ores/corrobonite",
+  "#c:ores/glint",
+  "#c:ores/gravitite",
+  "#c:ores/quartz",
+  "#c:ores/zanite"
  ]
 }

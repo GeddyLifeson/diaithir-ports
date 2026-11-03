@@ -36,23 +36,27 @@ def skip_target(n):
     for rx, t in VANILLA_SKIP:
         if re.search(rx, n): return (True, t)
     return (False, None)
-PLANT = re.compile(r'(bush|grass|vine|bristle|butterbunch|kelp|sprout|sapling|shimmerweed|miserabell|thornreed|twistybush|growth|ditchbulb|bloom|fern|flower|^(blood|indigo|ink|puff|veil)_mushroom$|mushroom_veil|gronglet|boomgourd)')
+PLANT = re.compile(cfg.get('plant_rx', r'(bush|grass|vine|bristle|butterbunch|kelp|sprout|sapling|shimmerweed|miserabell|thornreed|twistybush|growth|ditchbulb|bloom|fern|flower|^(blood|indigo|ink|puff|veil)_mushroom$|mushroom_veil|gronglet|boomgourd)'))
 def classify(n):
-    for suf, k in [('_stairs','stairs'),('_slab','slab'),('_wall','wall'),('_fence_gate','gate'),('_fence','fence'),
+    for suf, k in [('_stairs','stairs'),('_stair','stairs'),('_slab','slab'),('_wall','wall'),('_fence_gate','gate'),('_gate','gate'),('_fence','fence'),
                    ('_button','button'),('_pressure_plate','plate'),('_door','door'),('_trapdoor','trapdoor'),
                    ('_glass_pane','pane'),('_pane','pane')]:
         if n.endswith(suf): return k
     if re.search(r'(_log|_wood|_stem|_pillar)$', n) and not n.startswith('potted'): return 'pillar'
     if n.endswith('_leaves'): return 'leaves'
-    if PLANT.search(n) and not re.search(r'(cap|block|_stem|_log)$', n): return 'cross'
+    if PLANT.search(n) and not re.search(r'(cap|block|_stem|_log|_planks|_leaves)$', n): return 'cross'
     return 'block'
+WOODS = sorted({n[:-7] for n in blocks if n.endswith('_planks')}, key=len, reverse=True)
+METALS = sorted({n[:-6] for n in items if n.endswith('_ingot')}, key=len, reverse=True)
 def material(n):
-    if re.search(r'(grongle|smogstem|wigglewood|ancient_root)', n) and not n.startswith('rogdoric'):
-        if n.endswith('_leaves'): return 'leaves'
-        return 'log' if re.search(r'(_log|_wood)$', n) else 'wood'
+    for w in WOODS:
+        if re.fullmatch(r'(stripped_)?' + re.escape(w) + r'_(log|wood)', n): return 'log'
+        if n.startswith(w + '_') or n == w + '_planks':
+            return 'leaves' if n.endswith('_leaves') else 'wood'
     if n.endswith('_leaves'): return 'leaves'
     if n.endswith('_ore'): return 'ore'
-    if re.search(r'(cloggrum|froststeel|regalium|rogdorium|utherium|forgotten)_(block|tiles|pillar|grate)|^(raw_)', n): return 'metal'
+    for mt in METALS:
+        if re.fullmatch(r'(raw_)?' + re.escape(mt) + r'(_block)?|' + re.escape(mt) + r'_(tiles|pillar|grate|plating)', n): return 'metal'
     if 'glass' in n: return 'glass'
     if re.search(r'(turf)', n): return 'turf'
     if re.search(r'(soil|goo|mogmoss|sediment$|pebble)', n): return 'soil'
@@ -60,7 +64,7 @@ def material(n):
     if classify(n) == 'cross': return 'plant'
     return 'stone'
 def base_of(n, kind):
-    suf = {'stairs':'_stairs','slab':'_slab','wall':'_wall'}[kind]; b = n[:-len(suf)]
+    b = re.sub(r'_(stairs|stair|slab|wall)$', '', n)
     for c in (b, b + '_planks', b + '_block', b + 's', b + '_stone'):
         if c in bset: return c
     return None
@@ -154,7 +158,6 @@ for n in sitems:
     item(n, f'{NS}:item/{n}'); lang[f'item.{NS}.{n}'] = title(n)
 for b in biomes: lang[f'biome.{NS}.{b}'] = title(b)
 lang[f'dimension.{NS}'] = cfg['title']
-put(f'assets/{NS}/lang/en_us.json', lang)
 put(f'assets/{NS}/textures/block/_art_needed.txt',
     'Stand-in vanilla textures are used until the art pipeline supplies 64px Industrial Factory style art for each id listed in data/%s/realms/%s.json.\n' % (OWN, NS))
 
@@ -164,6 +167,7 @@ for e in man:
     put(f'data/{NS}/loot_table/blocks/{bid}.json', {'type': 'minecraft:block', 'random_sequence': f'{NS}:blocks/{bid}',
         'pools': [{'rolls': 1.0, 'bonus_rolls': 0.0, 'conditions': [{'condition': 'minecraft:survives_explosion'}],
                    'entries': [{'type': 'minecraft:item', 'name': f'{NS}:{bid}'}]}]})
+SRC = lambda b: re.sub(r'_(fence_gate|gate|fence|door|trapdoor|button|pressure_plate|stairs|stair|slab|wall)$', '', b)
 def R(name, o): put(f'data/{NS}/recipe/{name}.json', o)
 def res(i, c=1): return {'id': f'{NS}:{i}', 'count': c} if c > 1 else {'id': f'{NS}:{i}'}
 for e in man:
@@ -172,26 +176,26 @@ for e in man:
     elif k == 'slab' and b: R(bid, {'type':'minecraft:crafting_shaped','category':'building','key':{'#':f'{NS}:{b}'},'pattern':['###'],'result':res(bid,6)})
     elif k == 'wall' and b: R(bid, {'type':'minecraft:crafting_shaped','category':'building','key':{'#':f'{NS}:{b}'},'pattern':['###','###'],'result':res(bid,6)})
     elif k in ('button',): 
-        src = bid[:-7] + '_planks' if bid[:-7] + '_planks' in bset else bid[:-7]
+        src = SRC(bid) + '_planks' if SRC(bid) + '_planks' in bset else SRC(bid)
         if src in bset: R(bid, {'type':'minecraft:crafting_shapeless','category':'redstone','ingredients':[f'{NS}:{src}'],'result':res(bid)})
     elif k == 'plate':
-        src = bid[:-15] + '_planks' if bid[:-15] + '_planks' in bset else bid[:-15]
+        src = SRC(bid) + '_planks' if SRC(bid) + '_planks' in bset else SRC(bid)
         if src in bset: R(bid, {'type':'minecraft:crafting_shaped','category':'redstone','key':{'#':f'{NS}:{src}'},'pattern':['##'],'result':res(bid)})
     elif k == 'fence':
-        src = bid[:-6] + '_planks'
+        src = SRC(bid) + '_planks'
         if src in bset: R(bid, {'type':'minecraft:crafting_shaped','category':'misc','key':{'#':f'{NS}:{src}','S':'minecraft:stick'},'pattern':['#S#','#S#'],'result':res(bid,3)})
     elif k == 'gate':
-        src = bid[:-11] + '_planks'
+        src = SRC(bid) + '_planks'
         if src in bset: R(bid, {'type':'minecraft:crafting_shaped','category':'redstone','key':{'#':f'{NS}:{src}','S':'minecraft:stick'},'pattern':['S#S','S#S'],'result':res(bid)})
     elif k == 'door':
-        src = bid[:-5] + '_planks'
+        src = SRC(bid) + '_planks'
         if src in bset: R(bid, {'type':'minecraft:crafting_shaped','category':'redstone','key':{'#':f'{NS}:{src}'},'pattern':['##','##','##'],'result':res(bid,3)})
     elif k == 'trapdoor':
-        src = bid[:-9] + '_planks'
+        src = SRC(bid) + '_planks'
         if src in bset: R(bid, {'type':'minecraft:crafting_shaped','category':'redstone','key':{'#':f'{NS}:{src}'},'pattern':['###','###'],'result':res(bid,2)})
     elif bid.endswith('_log') and bid[:-4] + '_planks' in bset:
         R(bid[:-4] + '_planks', {'type':'minecraft:crafting_shapeless','category':'building','ingredients':[f'#{NS}:{bid[:-4]}_logs'],'result':res(bid[:-4]+'_planks',4)})
-        put(f'data/{NS}/tags/item/{bid[:-4]}_logs.json', {'replace': False, 'values': [f'{NS}:{bid[:-4]}_log', f'{NS}:{bid[:-4]}_wood', f'{NS}:stripped_{bid[:-4]}_log', f'{NS}:stripped_{bid[:-4]}_wood']})
+        put(f'data/{NS}/tags/item/{bid[:-4]}_logs.json', {'replace': False, 'values': [f'{NS}:{x}' for x in (bid[:-4]+'_log', bid[:-4]+'_wood', 'stripped_'+bid[:-4]+'_log', 'stripped_'+bid[:-4]+'_wood') if x in made]})
     elif bid.endswith('_block') and bid[:-6] + '_ingot' in iset:
         mt = bid[:-6]
         R(bid, {'type':'minecraft:crafting_shaped','category':'building','key':{'#':f'{NS}:{mt}_ingot'},'pattern':['###']*3,'result':res(bid)})
@@ -202,7 +206,7 @@ VANORE = {'iron':('minecraft:iron_ingot',0.7),'gold':('minecraft:gold_ingot',1.0
 for e in man:
     bid = e['id']
     if e['kind'] != 'block' or not bid.endswith('_ore'): continue
-    mt = bid[:-4].split('_', 1)[1]
+    mt = bid[:-4].split('_')[-1]
     out, xp = VANORE.get(mt, (f'{NS}:{mt}_ingot' if mt + '_ingot' in iset else (f'{NS}:{mt}_crystal' if mt + '_crystal' in iset else None), 1.0))
     if out: R(f'{bid}_smelting', {'type':'minecraft:smelting','category':'misc','cookingtime':200,'experience':xp,'ingredient':f'{NS}:{bid}','result':{'id':out}})
 for src, dst in [('raw_cloggrum','cloggrum_ingot'),('raw_froststeel','froststeel_ingot')]:
@@ -223,7 +227,7 @@ for e in man:
     if bid.endswith('_planks'): addtag('minecraft/tags/block/planks', v); addtag('minecraft/tags/item/planks', v)
     if k == 'cross' and re.search('sapling', bid): addtag('minecraft/tags/block/saplings', v)
     if bid.endswith('_ore'):
-        mt = bid[:-4].split('_', 1)[1]; addtag('c/tags/block/ores', v); addtag('c/tags/item/ores', v)
+        mt = bid[:-4].split('_')[-1]; addtag('c/tags/block/ores', v); addtag('c/tags/item/ores', v)
         addtag(f'c/tags/block/ores/{mt}', v); addtag(f'c/tags/item/ores/{mt}', v)
     if bid.endswith('_block') and bid[:-6] + '_ingot' in iset:
         mt = bid[:-6]; addtag('c/tags/block/storage_blocks', v); addtag('c/tags/item/storage_blocks', v)
@@ -241,67 +245,85 @@ for p in list(tg):
         if child not in tg[parent]: tg[parent].append(child)
 for p, vals in tg.items(): put(f'data/{p}.json', {'replace': False, 'values': sorted(set(vals))})
 
-# ---------- dimension ----------
-nt = vj('data/minecraft/dimension_type/the_nether.json')
-nt.update({'coordinate_scale': 1.0, 'has_ceiling': True, 'has_skylight': False, 'has_fixed_time': True, 'ambient_light': 0.08, 'logical_height': 256, 'height': 256, 'min_y': 0,
-           'infiniburn': '#minecraft:infiniburn_overworld'})
-a = nt['attributes']
-for k in ('minecraft:gameplay/fast_lava','minecraft:gameplay/piglins_zombify','minecraft:gameplay/respawn_anchor_works','minecraft:gameplay/water_evaporates','minecraft:visual/default_dripstone_particle'): a.pop(k, None)
-a['minecraft:gameplay/bed_rule'] = {'can_set_spawn': 'always', 'can_sleep': 'always', 'explodes': False}
-a['minecraft:gameplay/sky_light_level'] = 3.0
-a['minecraft:visual/fog_start_distance'] = 6.0; a['minecraft:visual/fog_end_distance'] = 72.0
-a['minecraft:visual/ambient_light_color'] = '#1c2433'
-put(f'data/{NS}/dimension_type/{cfg["dimension"]}.json', nt)
-ns_ = vj('data/minecraft/worldgen/noise_settings/nether.json')
-ns_['default_block'] = {'Name': f'{NS}:{cfg["default_block"]}'}
-ns_['default_fluid'] = {'Name': 'minecraft:water', 'Properties': {'level': '0'}}
-ns_['sea_level'] = cfg['sea_level']; ns_['aquifers_enabled'] = False
-def blk(n): return {'type': 'minecraft:block', 'result_state': {'Name': n}}
+# ---------- dimensions ----------
+ref = lambda x: x if ':' in x else f'{NS}:{x}'
+def blk(n): return {'type': 'minecraft:block', 'result_state': {'Name': ref(n)}}
 def cond(c, t): return {'type': 'minecraft:condition', 'if_true': c, 'then_run': t}
-sr = ns_['surface_rule']['sequence'][:2]
-top = blk(f'{NS}:{cfg["top_block"]}'); fill = blk(f'{NS}:{cfg["filler_block"]}')
-rules = []
-for b, st in cfg['biome_style'].items():
-    if 'top' in st:
-        rules.append(cond({'type':'minecraft:biome','biome_is':[f'{NS}:{b}']}, {'type':'minecraft:sequence','sequence':[
-            cond({'type':'minecraft:stone_depth','offset':0,'surface_type':'floor','add_surface_depth':False,'secondary_depth_range':0}, blk(f'{NS}:{st["top"]}')),
-            cond({'type':'minecraft:stone_depth','offset':0,'surface_type':'floor','add_surface_depth':True,'secondary_depth_range':3}, fill)]}))
-rules.append(cond({'type':'minecraft:stone_depth','offset':0,'surface_type':'floor','add_surface_depth':False,'secondary_depth_range':0}, top))
-rules.append(cond({'type':'minecraft:stone_depth','offset':0,'surface_type':'floor','add_surface_depth':True,'secondary_depth_range':3}, fill))
-ns_['surface_rule'] = {'type': 'minecraft:sequence', 'sequence': sr + rules}
-put(f'data/{NS}/worldgen/noise_settings/{cfg["dimension"]}.json', ns_)
-nw = vj('data/minecraft/worldgen/biome/nether_wastes.json')
-cols = {b: cfg['biome_style'].get(b, {}) for b in biomes}
-for b in biomes:
-    o = json.loads(json.dumps(nw)); st = cols[b]
-    o['attributes'] = {'minecraft:visual/fog_color': st.get('fog', cfg['ambient']['fog']), 'minecraft:visual/sky_color': cfg['ambient']['sky']}
-    o['carvers'] = []; o['has_precipitation'] = False; o['temperature'] = st.get('temp', 0.5); o['downfall'] = 0.4
-    o['effects'] = {'water_color': st.get('water', cfg['ambient']['water'])}
-    o['features'] = [[] for _ in range(11)]
-    o['features'][5] = ['minecraft:ore_dirt']  # ore_dirt only; bespoke placed features follow in worldgen slice 2
-    o['features'][5] = []
-    put(f'data/{NS}/worldgen/biome/{b}.json', o)
-# multi_noise grid over temperature x humidity (own layout), ordered by biome style temperature
-bl = sorted(biomes, key=lambda b: (cols[b].get('temp', 0.5), b)); nbio = len(bl); cells = []
-cols_n = 5; rows_n = (nbio + cols_n - 1) // cols_n
-for i, b in enumerate(bl):
-    c, r = i % cols_n, i // cols_n
-    lo_t, hi_t = -1 + 2 * c / cols_n, -1 + 2 * (c + 1) / cols_n
-    lo_h, hi_h = -1 + 2 * r / rows_n, -1 + 2 * (r + 1) / rows_n
-    cells.append({'biome': f'{NS}:{b}', 'parameters': {'temperature': [round(lo_t, 3), round(hi_t, 3)], 'humidity': [round(lo_h, 3), round(hi_h, 3)],
-                  'continentalness': [-1.0, 1.0], 'erosion': [-1.0, 1.0], 'weirdness': [-1.0, 1.0], 'depth': [0.0, 1.0], 'offset': 0.0}})
-put(f'data/{NS}/dimension/{cfg["dimension"]}.json', {'type': f'{NS}:{cfg["dimension"]}', 'generator': {'type': 'minecraft:noise', 'settings': f'{NS}:{cfg["dimension"]}',
-    'biome_source': {'type': 'minecraft:multi_noise', 'biomes': cells}}})
+FLOOR = {'type':'minecraft:stone_depth','offset':0,'surface_type':'floor','add_surface_depth':False,'secondary_depth_range':0}
+FILL = {'type':'minecraft:stone_depth','offset':0,'surface_type':'floor','add_surface_depth':True,'secondary_depth_range':3}
+dims = cfg.get('dimensions') or [{'name': cfg['dimension'], **{k: cfg[k] for k in ('default_block','top_block','filler_block','sea_level','ambient','biome_style') if k in cfg}}]
+allbiomes = set()
+for D in dims:
+    dn = D['name']; style = D.get('biome_style', {}); amb = D.get('ambient', cfg.get('ambient'))
+    dbio = [b for b in biomes if b in D['biomes']] if 'biomes' in D else list(biomes)
+    allbiomes.update(dbio)
+    base = D.get('base', 'nether')
+    nt = vj(f'data/minecraft/dimension_type/{"the_nether" if base == "nether" else "overworld"}.json')
+    nt['coordinate_scale'] = 1.0
+    if base == 'nether':
+        nt.update({'coordinate_scale': 1.0, 'has_ceiling': True, 'has_skylight': False, 'has_fixed_time': True, 'ambient_light': 0.08, 'logical_height': 256, 'height': 256, 'min_y': 0,
+                   'infiniburn': '#minecraft:infiniburn_overworld'})
+        a = nt['attributes']
+        for k in ('minecraft:gameplay/fast_lava','minecraft:gameplay/piglins_zombify','minecraft:gameplay/respawn_anchor_works','minecraft:gameplay/water_evaporates','minecraft:visual/default_dripstone_particle'): a.pop(k, None)
+        a['minecraft:gameplay/bed_rule'] = {'can_set_spawn': 'always', 'can_sleep': 'always', 'explodes': False}
+        a['minecraft:gameplay/sky_light_level'] = 3.0
+        a['minecraft:visual/fog_start_distance'] = 6.0; a['minecraft:visual/fog_end_distance'] = 72.0
+        a['minecraft:visual/ambient_light_color'] = D.get('light', '#1c2433')
+    elif base == 'overworld':
+        pass
+    else:  # open sky (islands in the air)
+        nt.update({'coordinate_scale': 1.0, 'logical_height': 384, 'height': 384, 'min_y': 0, 'has_ender_dragon_fight': False})
+        nt.pop('has_ender_dragon_fight', None) if False else None
+        nt['has_fixed_time'] = D.get('fixed_time', False)
+    put(f'data/{NS}/dimension_type/{dn}.json', nt)
+    ns_ = vj('data/minecraft/worldgen/noise_settings/' + {'nether': 'nether', 'end': 'end', 'overworld': 'overworld'}[base] + '.json')
+    if base == 'overworld': ns_['ore_veins_enabled'] = False; ns_['aquifers_enabled'] = True
+    ns_['default_block'] = {'Name': ref(D['default_block'])}
+    ns_['default_fluid'] = {'Name': 'minecraft:water', 'Properties': {'level': '0'}} if base == 'nether' else {'Name': 'minecraft:air'}
+    ns_['sea_level'] = D.get('sea_level', 40)
+    if base != 'overworld': ns_['aquifers_enabled'] = False
+    sr = ns_['surface_rule']['sequence'][:2] if base == 'nether' else ([ns_['surface_rule']['sequence'][0]] if base == 'overworld' else [])
+    if base == 'overworld': ns_['default_fluid'] = {'Name': 'minecraft:water', 'Properties': {'level': '0'}}
+    rules = []
+    for b, st in style.items():
+        if 'top' in st and b in dbio:
+            rules.append(cond({'type':'minecraft:biome','biome_is':[f'{NS}:{b}']}, {'type':'minecraft:sequence','sequence':[cond(FLOOR, blk(st['top'])), cond(FILL, blk(D['filler_block']))]}))
+    if D.get('top_block'): rules.append(cond(FLOOR, blk(D['top_block'])))
+    if D.get('filler_block'): rules.append(cond(FILL, blk(D['filler_block'])))
+    ns_['surface_rule'] = {'type': 'minecraft:sequence', 'sequence': sr + rules} if (sr or rules) else ns_['surface_rule']
+    put(f'data/{NS}/worldgen/noise_settings/{dn}.json', ns_)
+    nw = vj('data/minecraft/worldgen/biome/nether_wastes.json')
+    for b in dbio:
+        o = json.loads(json.dumps(nw)); st = style.get(b, {})
+        o['attributes'] = {'minecraft:visual/fog_color': st.get('fog', amb['fog']), 'minecraft:visual/sky_color': amb['sky']}
+        o['carvers'] = []; o['has_precipitation'] = False; o['temperature'] = st.get('temp', 0.5); o['downfall'] = 0.4
+        o['effects'] = {'water_color': st.get('water', amb['water'])}
+        o['features'] = [[] for _ in range(11)]
+        put(f'data/{NS}/worldgen/biome/{b}.json', o)
+    bl = sorted(dbio, key=lambda b: (style.get(b, {}).get('temp', 0.5), b)); nbio = len(bl); cells = []
+    cols_n = 5; rows_n = max(1, (nbio + cols_n - 1) // cols_n)
+    for i, b in enumerate(bl):
+        c, r = i % cols_n, i // cols_n
+        lo_t, hi_t = -1 + 2 * c / cols_n, -1 + 2 * (c + 1) / cols_n
+        lo_h, hi_h = -1 + 2 * r / rows_n, -1 + 2 * (r + 1) / rows_n
+        cells.append({'biome': f'{NS}:{b}', 'parameters': {'temperature': [round(lo_t, 3), round(hi_t, 3)], 'humidity': [round(lo_h, 3), round(hi_h, 3)],
+                      'continentalness': [-2.0, 2.0], 'erosion': [-2.0, 2.0], 'weirdness': [-2.0, 2.0], 'depth': [-2.0, 2.0], 'offset': 0.0}})
+    put(f'data/{NS}/dimension/{dn}.json', {'type': f'{NS}:{dn}', 'generator': {'type': 'minecraft:noise', 'settings': f'{NS}:{dn}',
+        'biome_source': {'type': 'minecraft:multi_noise', 'biomes': cells}}})
+    put(f'data/{NS}/tags/worldgen/biome/is_{dn}.json', {'replace': False, 'values': [f'{NS}:{b}' for b in dbio]})
+    lang[f'dimension.{NS}.{dn}'] = D.get('title', title(dn))
 put(f'data/{NS}/tags/worldgen/biome/is_{NS}.json', {'replace': False, 'values': [f'{NS}:{b}' for b in biomes]})
+put(f'assets/{NS}/lang/en_us.json', lang)
+DIMS = [f'{NS}:{D["name"]}' for D in dims]
 
 # ---------- age gate, quest, codex ----------
-put(f'data/{OWN}/diaithir/realms/{NS}.json', {'realm': NS, 'dimension': f'{NS}:{cfg["dimension"]}', 'age': cfg['age'], 'age_gate': f'diaithir:age/{cfg["age"]}',
+put(f'data/{OWN}/diaithir/realms/{NS}.json', {'realm': NS, 'dimension': DIMS[0], 'dimensions': DIMS, 'age': cfg['age'], 'age_gate': f'diaithir:age/{cfg["age"]}',
     'units': 'SI', 'replaces': NS, 'licence_note': 'clean-room; no third-party code, art or data copied'})
 put(f'data/{OWN}/quests/{NS}_descent.json', {'id': f'{OWN}:{NS}_descent', 'codex_link': f'{OWN}:{NS}', 'age': cfg['age'], 'age_gate': f'diaithir:age/{cfg["age"]}',
-    'title': f'Descent: {cfg["title"]}', 'description': f'Enter {cfg["title"]} and mine its first ore.', 'tasks': [{'type': 'dimension', 'dimension': f'{NS}:{cfg["dimension"]}'}],
+    'title': f'Descent: {cfg["title"]}', 'description': f'Enter {cfg["title"]} and mine its first ore.', 'tasks': [{'type': 'dimension', 'dimension': DIMS[0]}],
     'rewards': [{'type': 'energy', 'amount_j': 100}], 'next': []})
 put(f'data/{OWN}/codex/entries/{NS}.json', {'id': f'{OWN}:{NS}', 'category': 'dimension', 'title': f'codex.{OWN}.{NS}.title', 'body': f'codex.{OWN}.{NS}.body',
-    'age': cfg['age'], 'icon': cfg['icon'], 'unlock': {'type': 'enter_dimension', 'dimension': f'{NS}:{cfg["dimension"]}'},
+    'age': cfg['age'], 'icon': cfg['icon'], 'unlock': {'type': 'enter_dimension', 'dimension': DIMS[0]},
     'covers': {'biomes': [f'#{NS}:is_{NS}'], 'blocks': len(man), 'items': len(sitems)}, 'quest': f'{OWN}:{NS}_descent'})
 lp = RES / f'assets/{OWN}/lang/en_us.json'; L = json.loads(lp.read_text()) if lp.exists() else {}
 L[f'codex.{OWN}.{NS}.title'] = cfg['title']

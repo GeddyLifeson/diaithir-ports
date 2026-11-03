@@ -44,6 +44,24 @@ version="${version}"
 displayName="The Undergarden (Diaithir)"
 description="Compatibility alias: clean-room replacement for The Undergarden, same modid and ids, original worldgen."
 
+[[mods]]
+modId="the_backwoods"
+version="1.0.0"
+displayName="The Backwoods (Diaithir)"
+description="Compatibility alias: clean-room replacement for The Backwoods, same modid and ids, original worldgen."
+
+[[mods]]
+modId="the_bumblezone"
+version="1.0.0"
+displayName="The Bumblezone (Diaithir)"
+description="Compatibility alias: clean-room replacement for The Bumblezone, same modid and ids, original worldgen."
+
+[[mods]]
+modId="aether_ii"
+version="1.0.0"
+displayName="The Aether II (Diaithir)"
+description="Compatibility alias: clean-room replacement for The Aether II, same modid and ids, original worldgen."
+
 [[dependencies.diaithir_overworld_biomes]]
 modId="neoforge"
 type="required"

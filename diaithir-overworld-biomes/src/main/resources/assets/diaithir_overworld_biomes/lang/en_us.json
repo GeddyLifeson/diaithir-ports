@@ -86,5 +86,11 @@
  "biome.diaithir_overworld_biomes.withered_abyss": "Withered Abyss",
  "biome.diaithir_overworld_biomes.woodland": "Woodland",
  "codex.diaithir_overworld_biomes.undergarden.title": "The Undergarden",
- "codex.diaithir_overworld_biomes.undergarden.body": "The Undergarden: replacement realm with the same ids as the original mod; 215 blocks, 20 biomes."
+ "codex.diaithir_overworld_biomes.undergarden.body": "The Undergarden: replacement realm with the same ids as the original mod; 215 blocks, 20 biomes.",
+ "codex.diaithir_overworld_biomes.the_backwoods.title": "The Backwoods",
+ "codex.diaithir_overworld_biomes.the_backwoods.body": "The Backwoods: replacement realm with the same ids as the original mod; 57 blocks, 26 biomes.",
+ "codex.diaithir_overworld_biomes.the_bumblezone.title": "The Bumblezone",
+ "codex.diaithir_overworld_biomes.the_bumblezone.body": "The Bumblezone: replacement realm with the same ids as the original mod; 99 blocks, 9 biomes.",
+ "codex.diaithir_overworld_biomes.aether_ii.title": "The Aether II",
+ "codex.diaithir_overworld_biomes.aether_ii.body": "The Aether II: replacement realm with the same ids as the original mod; 529 blocks, 16 biomes."
 }

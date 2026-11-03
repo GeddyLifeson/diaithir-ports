@@ -9,7 +9,7 @@
   {
    "id": "ancient_root",
    "kind": "block",
-   "mat": "wood"
+   "mat": "stone"
   },
   {
    "id": "ancient_root_button",
@@ -389,7 +389,7 @@
   {
    "id": "gronglet",
    "kind": "cross",
-   "mat": "wood"
+   "mat": "plant"
   },
   {
    "id": "hanging_grongle_leaves",
@@ -484,7 +484,7 @@
   {
    "id": "regalium_block",
    "kind": "block",
-   "mat": "metal"
+   "mat": "stone"
   },
   {
    "id": "rogdoric_ancient_root",
@@ -499,7 +499,7 @@
   {
    "id": "rogdorium_block",
    "kind": "block",
-   "mat": "metal"
+   "mat": "stone"
   },
   {
    "id": "sediment",
@@ -734,12 +734,12 @@
   {
    "id": "utheric_gronglet",
    "kind": "cross",
-   "mat": "wood"
+   "mat": "plant"
   },
   {
    "id": "utherium_block",
    "kind": "block",
-   "mat": "metal"
+   "mat": "stone"
   },
   {
    "id": "utherium_growth",

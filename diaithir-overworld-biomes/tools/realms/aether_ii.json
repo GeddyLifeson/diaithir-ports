@@ -1,0 +1,41 @@
+{
+ "modid": "aether_ii",
+ "title": "The Aether II",
+ "age": 3,
+ "icon": "aether_ii:holystone",
+ "plant_rx": "(grass|bundle|sapling|flower|blossom|bush|moss$|vine|tuft|sprout|^medium_aether_grass$)",
+ "dimensions": [
+  {
+   "name": "aether_holy_isles",
+   "title": "The Aether II",
+   "base": "end",
+   "default_block": "holystone",
+   "top_block": "aether_grass_block",
+   "filler_block": "aether_dirt",
+   "sea_level": 0,
+   "ambient": {
+    "fog": "#c9e0f5",
+    "sky": "#8fc4f5",
+    "water": "#6fb4e8"
+   },
+   "biome_style": {
+    "frigid_sierra": {
+     "temp": 0.0,
+     "fog": "#dbe9f5"
+    },
+    "sheer_tundra": {
+     "temp": 0.0,
+     "fog": "#e2eef8"
+    },
+    "frozen_lakes": {
+     "temp": 0.0,
+     "fog": "#d6e8f4"
+    },
+    "battleground_wastes": {
+     "temp": 0.8,
+     "fog": "#d6c9b8"
+    }
+   }
+  }
+ ]
+}

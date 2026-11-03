@@ -1,13 +1,12 @@
 {
  "replace": false,
  "values": [
-  "undergarden:ancient_root_button",
-  "undergarden:depthrock_button",
-  "undergarden:dreadrock_button",
-  "undergarden:grongle_button",
-  "undergarden:shiverstone_button",
-  "undergarden:smogstem_button",
-  "undergarden:tremblecrust_button",
-  "undergarden:wigglewood_button"
+  "aether_ii:amberoot_button",
+  "aether_ii:greatroot_button",
+  "aether_ii:holystone_button",
+  "aether_ii:sentry_button",
+  "aether_ii:skyroot_button",
+  "aether_ii:undershale_brick_button",
+  "aether_ii:wisproot_button"
  ]
 }

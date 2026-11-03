@@ -1,9 +1,7 @@
 {
  "replace": false,
  "values": [
-  "#c:nuggets/cloggrum",
-  "#c:nuggets/forgotten",
-  "#c:nuggets/froststeel",
-  "#c:nuggets/rogdorium"
+  "#c:nuggets/faded_gold",
+  "#c:nuggets/fractus_core"
  ]
 }

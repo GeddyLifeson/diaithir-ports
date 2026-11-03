@@ -1,13 +1,11 @@
 {
  "replace": false,
  "values": [
-  "undergarden:ancient_root_pressure_plate",
-  "undergarden:depthrock_pressure_plate",
-  "undergarden:dreadrock_pressure_plate",
-  "undergarden:grongle_pressure_plate",
-  "undergarden:shiverstone_pressure_plate",
-  "undergarden:smogstem_pressure_plate",
-  "undergarden:tremblecrust_pressure_plate",
-  "undergarden:wigglewood_pressure_plate"
+  "aether_ii:amberoot_pressure_plate",
+  "aether_ii:greatroot_pressure_plate",
+  "aether_ii:holystone_pressure_plate",
+  "aether_ii:skyroot_pressure_plate",
+  "aether_ii:undershale_brick_pressure_plate",
+  "aether_ii:wisproot_pressure_plate"
  ]
 }
