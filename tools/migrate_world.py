@@ -9,6 +9,9 @@ from pathlib import Path
 import nbtlib
 from nbtlib import tag
 
+from collections import Counter
+SEEN = Counter()
+
 def load_map(paths):
     files = []
     for p in map(Path, paths):
@@ -26,6 +29,7 @@ def walk(t, m, counter):
         new = m.get(str(t))
         if new:
             counter[0] += 1
+            SEEN[str(t).split(':')[0]] += 1
             return tag.String(new)
         return t
     if isinstance(t, tag.Compound):
@@ -104,6 +108,7 @@ def main():
                 f.save(dat)
             total += c[0]; print(dat, c[0])
     print("renamed", total, "ids" if not dry else "ids (dry run)")
+    print("by old namespace:", dict(SEEN.most_common()))
 
 if __name__ == "__main__":
     main()
