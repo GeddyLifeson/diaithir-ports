@@ -82,4 +82,15 @@ public final class EconData {
         double[] p = prices.get(id);
         return p == null ? null : new EconModel.Good(p[0], Math.max(8, Math.round(256 / Math.sqrt(p[0]))));
     }
+
+    /** Goods open to trade in an Age: those whose opening Age is not later. */
+    public List<String> openIds(String age) {
+        int a = EconPolity.AGES.indexOf(age);
+        List<String> out = new ArrayList<>();
+        for (String id : prices.keySet()) {
+            String g = EconHooks.goodAge.apply(id);
+            if (EconPolity.AGES.indexOf(g == null ? "I" : g) <= a) out.add(id);
+        }
+        return out;
+    }
 }

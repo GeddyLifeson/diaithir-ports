@@ -19,4 +19,6 @@ public final class EconHooks {
     public static volatile Supplier<Double> calendarYear = () -> null;
     /** The outdoor temperature in C at a town's position, or null for room temperature. */
     public static volatile java.util.function.BiFunction<Double, Double, Double> temperatureAt = (x, z) -> null;
+    /** The Age a good opens in (the tech tree's techAgeOf); "I" when unknown. */
+    public static volatile Function<String, String> goodAge = id -> "I";
 }

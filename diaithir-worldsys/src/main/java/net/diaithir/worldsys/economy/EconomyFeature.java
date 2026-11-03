@@ -38,28 +38,48 @@ public final class EconomyFeature {
         EconWorld.dirty();
     }
 
+    private static final double WEEKLY_BILL = 0.004;
+
     private static void tick(ServerTickEvent.Post e) {
         var server = e.getServer();
         if (EconWorld.server() == null) EconWorld.server(server);
         long t = server.overworld().getGameTime();
         if (t == 0 || t % WEEK_TICKS != 0) return;
+        weekly();
+    }
+
+    /** Once a week, in the order the KubeJS economy runs it (econWeekly). */
+    static void weekly() {
         EconState st = EconWorld.state();
+        var data = EconWorld.data();
         st.week++;
         EconWorld.claims();
-        List<String> cultures = new ArrayList<>();
-        for (EconClaims.Claim c : EconWorld.claims()) if (!cultures.contains(c.culture())) cultures.add(c.culture());
-        for (String culture : cultures) {
+        EconFrictions.spoil(st, data::good, region -> {
+            double[] pos = EconWorld.REGIONS.get(region);
+            return pos == null ? 1.0 : EconFrictions.warmth(EconHooks.temperatureAt.apply(pos[0], pos[1]));
+        }, id -> null);
+        EconFrictions.season(st, data::good, st.week, region -> null);
+        java.util.Map<String, String> seat = new java.util.LinkedHashMap<>();
+        for (EconClaims.Claim c : EconWorld.claims()) seat.putIfAbsent(c.culture(), c.town());
+        for (var s : seat.entrySet()) {
+            String culture = s.getKey();
+            EconMarket.Ctx ctx = EconWorld.ctx(s.getValue(), culture);
             String age = EconWorld.ageOf(culture);
-            EconState.Bank b = st.bank.get(culture);
-            EconState.Cur cur = st.cur.get(culture);
-            if (b != null && cur != null && cur.rateRef > 0) EconBank.week(b, age, cur.prevRate > 0 ? cur.prevRate : 1);
-            for (String n : EconBonds.week(st, culture)) server.sendSystemMessage(Component.literal(n));
+            if (ctx.kind() == EconPolity.Kind.COIN && ctx.did() != null) EconFrictions.wear(st, culture, ctx.did());
+            EconPolity.week(st, culture, ctx.did(), ctx.kind(), WEEKLY_BILL * st.cur(culture).ref, ctx.rate());
+            int ai = EconPolity.AGES.indexOf(age);
+            if (ai >= EconPolity.AGES.indexOf("V")) EconBonds.week(st, culture);
+            if (ai >= EconPolity.AGES.indexOf("III")) EconBank.week(st.bank(culture), age, ctx.rate());
         }
+        EconCompany.week(st, EconWorld.REGIONS, data::good, culture -> EconWorld.ctx(null, culture).scale(), culture -> data.openIds(EconWorld.ageOf(culture)));
+        java.util.List<String> traders = seat.keySet().stream().filter(c -> EconPolity.AGES.indexOf(EconWorld.ageOf(c)) >= EconPolity.AGES.indexOf(EconExchange.AGE)).toList();
+        if (!traders.isEmpty()) EconExchange.week(st, traders, EconWorld::cultureName);
         EconWorld.dirty();
     }
 
     private static void commands(RegisterCommandsEvent e) {
         e.getDispatcher().register(BankCommands.bank());
+        e.getDispatcher().register(ExchangeCommands.build());
         e.getDispatcher().register(BankCommands.bond());
         e.getDispatcher().register(CompanyCommands.build()
             .then(Commands.literal("quest").executes(ctx -> {
