@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/leaves",
+"textures": {
+"all": "diaithir_planets:block/kroukagar_naunolus_leaves"
+}
+}

@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/leaves",
+"textures": {
+"all": "diaithir_planets:block/vhaikun_teloriasus_leaves"
+}
+}

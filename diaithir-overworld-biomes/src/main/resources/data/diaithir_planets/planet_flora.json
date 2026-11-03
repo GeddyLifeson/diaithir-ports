@@ -1,0 +1,3282 @@
+[
+{
+"id": "alaenneirae_ilyerae_log",
+"kind": "log"
+},
+{
+"id": "alaenneirae_ilyerae_leaves",
+"kind": "leaves"
+},
+{
+"id": "alaenneirae_nuillionora_plant",
+"kind": "plant"
+},
+{
+"id": "alaenneirae_halaste_ore",
+"kind": "ore"
+},
+{
+"id": "alaimeinora_tintus_log",
+"kind": "log"
+},
+{
+"id": "alaimeinora_tintus_leaves",
+"kind": "leaves"
+},
+{
+"id": "alaimeinora_sasteria_plant",
+"kind": "plant"
+},
+{
+"id": "alaimeinora_miaraullus_ore",
+"kind": "ore"
+},
+{
+"id": "alainiel_ilyenwen_log",
+"kind": "log"
+},
+{
+"id": "alainiel_ilyenwen_leaves",
+"kind": "leaves"
+},
+{
+"id": "alainiel_nesanum_plant",
+"kind": "plant"
+},
+{
+"id": "alainiel_veneinaela_ore",
+"kind": "ore"
+},
+{
+"id": "ameosastia_ashevsith_log",
+"kind": "log"
+},
+{
+"id": "ameosastia_ashevsith_leaves",
+"kind": "leaves"
+},
+{
+"id": "ameosastia_nintosum_plant",
+"kind": "plant"
+},
+{
+"id": "ameosastia_lastes_ore",
+"kind": "ore"
+},
+{
+"id": "amontirnium_mantiarnor_log",
+"kind": "log"
+},
+{
+"id": "amontirnium_mantiarnor_leaves",
+"kind": "leaves"
+},
+{
+"id": "amontirnium_ceres_plant",
+"kind": "plant"
+},
+{
+"id": "amontirnium_viarnium_ore",
+"kind": "ore"
+},
+{
+"id": "ashestith_ashyuzora_log",
+"kind": "log"
+},
+{
+"id": "ashestith_ashyuzora_leaves",
+"kind": "leaves"
+},
+{
+"id": "ashestith_syathyuzis_plant",
+"kind": "plant"
+},
+{
+"id": "ashestith_syitheth_ore",
+"kind": "ore"
+},
+{
+"id": "ashiazis_tenlansaoma_log",
+"kind": "log"
+},
+{
+"id": "ashiazis_tenlansaoma_leaves",
+"kind": "leaves"
+},
+{
+"id": "ashiazis_osevsith_plant",
+"kind": "plant"
+},
+{
+"id": "ashiazis_ashyusora_ore",
+"kind": "ore"
+},
+{
+"id": "breraston_teleornolus_log",
+"kind": "log"
+},
+{
+"id": "breraston_teleornolus_leaves",
+"kind": "leaves"
+},
+{
+"id": "breraston_centanum_plant",
+"kind": "plant"
+},
+{
+"id": "breraston_costium_orerillus_ore",
+"kind": "ore"
+},
+{
+"id": "breroldock_vosaunus_log",
+"kind": "log"
+},
+{
+"id": "breroldock_vosaunus_leaves",
+"kind": "leaves"
+},
+{
+"id": "breroldock_syethiasith_plant",
+"kind": "plant"
+},
+{
+"id": "breroldock_branath_ore",
+"kind": "ore"
+},
+{
+"id": "bronurneld_thadath_log",
+"kind": "log"
+},
+{
+"id": "bronurneld_thadath_leaves",
+"kind": "leaves"
+},
+{
+"id": "bronurneld_vilaustium_plant",
+"kind": "plant"
+},
+{
+"id": "bronurneld_gouzhurkok_ore",
+"kind": "ore"
+},
+{
+"id": "brurnadeld_ciaraulor_log",
+"kind": "log"
+},
+{
+"id": "brurnadeld_ciaraulor_leaves",
+"kind": "leaves"
+},
+{
+"id": "brurnadeld_cauntoles_plant",
+"kind": "plant"
+},
+{
+"id": "brurnadeld_naurestanum_ore",
+"kind": "ore"
+},
+{
+"id": "caustenum_viasternium_log",
+"kind": "log"
+},
+{
+"id": "caustenum_viasternium_leaves",
+"kind": "leaves"
+},
+{
+"id": "caustenum_lianelium_plant",
+"kind": "plant"
+},
+{
+"id": "caustenum_vallium_liastia_ore",
+"kind": "ore"
+},
+{
+"id": "caustiantes_serialerum_log",
+"kind": "log"
+},
+{
+"id": "caustiantes_serialerum_leaves",
+"kind": "leaves"
+},
+{
+"id": "caustiantes_aminanum_plant",
+"kind": "plant"
+},
+{
+"id": "caustiantes_kelurnock_ore",
+"kind": "ore"
+},
+{
+"id": "corentium_vhoukurkun_log",
+"kind": "log"
+},
+{
+"id": "corentium_vhoukurkun_leaves",
+"kind": "leaves"
+},
+{
+"id": "corentium_zephyuthora_plant",
+"kind": "plant"
+},
+{
+"id": "corentium_lilestium_ore",
+"kind": "ore"
+},
+{
+"id": "coreoserus_cellus_log",
+"kind": "log"
+},
+{
+"id": "coreoserus_cellus_leaves",
+"kind": "leaves"
+},
+{
+"id": "coreoserus_teoria_plant",
+"kind": "plant"
+},
+{
+"id": "coreoserus_croldune_ore",
+"kind": "ore"
+},
+{
+"id": "corialor_elinaemwen_log",
+"kind": "log"
+},
+{
+"id": "corialor_elinaemwen_leaves",
+"kind": "leaves"
+},
+{
+"id": "corialor_telaunum_plant",
+"kind": "plant"
+},
+{
+"id": "corialor_amasium_ore",
+"kind": "ore"
+},
+{
+"id": "corianum_orielae_log",
+"kind": "log"
+},
+{
+"id": "corianum_orielae_leaves",
+"kind": "leaves"
+},
+{
+"id": "corianum_silelys_plant",
+"kind": "plant"
+},
+{
+"id": "corianum_thurnouggak_ore",
+"kind": "ore"
+},
+{
+"id": "coriarnes_vaulor_log",
+"kind": "log"
+},
+{
+"id": "coriarnes_vaulor_leaves",
+"kind": "leaves"
+},
+{
+"id": "coriarnes_siantum_plant",
+"kind": "plant"
+},
+{
+"id": "coriarnes_mauntanium_ore",
+"kind": "ore"
+},
+{
+"id": "corolor_nironum_log",
+"kind": "log"
+},
+{
+"id": "corolor_nironum_leaves",
+"kind": "leaves"
+},
+{
+"id": "corolor_costor_plant",
+"kind": "plant"
+},
+{
+"id": "corolor_niarum_ore",
+"kind": "ore"
+},
+{
+"id": "crare_halade_log",
+"kind": "log"
+},
+{
+"id": "crare_halade_leaves",
+"kind": "leaves"
+},
+{
+"id": "crare_syusora_plant",
+"kind": "plant"
+},
+{
+"id": "crare_fenoron_ore",
+"kind": "ore"
+},
+{
+"id": "crede_calium_log",
+"kind": "log"
+},
+{
+"id": "crede_calium_leaves",
+"kind": "leaves"
+},
+{
+"id": "crede_cestes_plant",
+"kind": "plant"
+},
+{
+"id": "crede_raullantes_ore",
+"kind": "ore"
+},
+{
+"id": "crestardock_joroldar_log",
+"kind": "log"
+},
+{
+"id": "crestardock_joroldar_leaves",
+"kind": "leaves"
+},
+{
+"id": "crestardock_garkak_plant",
+"kind": "plant"
+},
+{
+"id": "crestardock_grathaiktun_ore",
+"kind": "ore"
+},
+{
+"id": "crestornen_carnenus_log",
+"kind": "log"
+},
+{
+"id": "crestornen_carnenus_leaves",
+"kind": "leaves"
+},
+{
+"id": "crestornen_amorum_plant",
+"kind": "plant"
+},
+{
+"id": "crestornen_lyerla_ore",
+"kind": "ore"
+},
+{
+"id": "crodaston_pelostudon_log",
+"kind": "log"
+},
+{
+"id": "crodaston_pelostudon_leaves",
+"kind": "leaves"
+},
+{
+"id": "crodaston_mierlae_plant",
+"kind": "plant"
+},
+{
+"id": "crodaston_grothurn_ore",
+"kind": "ore"
+},
+{
+"id": "crurnon_morunaldon_log",
+"kind": "log"
+},
+{
+"id": "crurnon_morunaldon_leaves",
+"kind": "leaves"
+},
+{
+"id": "crurnon_kelure_plant",
+"kind": "plant"
+},
+{
+"id": "crurnon_breldath_ore",
+"kind": "ore"
+},
+{
+"id": "draggouzhok_tennarira_log",
+"kind": "log"
+},
+{
+"id": "draggouzhok_tennarira_leaves",
+"kind": "leaves"
+},
+{
+"id": "draggouzhok_elarlora_plant",
+"kind": "plant"
+},
+{
+"id": "draggouzhok_joradeld_ore",
+"kind": "ore"
+},
+{
+"id": "draktak_oseisheth_log",
+"kind": "log"
+},
+{
+"id": "draktak_oseisheth_leaves",
+"kind": "leaves"
+},
+{
+"id": "draktak_miannys_plant",
+"kind": "plant"
+},
+{
+"id": "draktak_grourkak_ore",
+"kind": "ore"
+},
+{
+"id": "drathouggun_ashiasizora_log",
+"kind": "log"
+},
+{
+"id": "drathouggun_ashiasizora_leaves",
+"kind": "leaves"
+},
+{
+"id": "drathouggun_tiravanuta_plant",
+"kind": "plant"
+},
+{
+"id": "drathouggun_kragourkoth_ore",
+"kind": "ore"
+},
+{
+"id": "drerdunen_terninus_log",
+"kind": "log"
+},
+{
+"id": "drerdunen_terninus_leaves",
+"kind": "leaves"
+},
+{
+"id": "drerdunen_tontaullum_plant",
+"kind": "plant"
+},
+{
+"id": "drerdunen_sereorium_ore",
+"kind": "ore"
+},
+{
+"id": "drernen_valiniasia_log",
+"kind": "log"
+},
+{
+"id": "drernen_valiniasia_leaves",
+"kind": "leaves"
+},
+{
+"id": "drernen_ukatalvauta_plant",
+"kind": "plant"
+},
+{
+"id": "drernen_corialaunus_ore",
+"kind": "ore"
+},
+{
+"id": "drore_orianiel_log",
+"kind": "log"
+},
+{
+"id": "drore_orianiel_leaves",
+"kind": "leaves"
+},
+{
+"id": "drore_halodurnock_plant",
+"kind": "plant"
+},
+{
+"id": "drore_vorothurkak_ore",
+"kind": "ore"
+},
+{
+"id": "drorkaigok_thogathak_log",
+"kind": "log"
+},
+{
+"id": "drorkaigok_thogathak_leaves",
+"kind": "leaves"
+},
+{
+"id": "drorkaigok_khouktun_plant",
+"kind": "plant"
+},
+{
+"id": "drorkaigok_vorokak_ore",
+"kind": "ore"
+},
+{
+"id": "druderath_ceornonus_log",
+"kind": "log"
+},
+{
+"id": "druderath_ceornonus_leaves",
+"kind": "leaves"
+},
+{
+"id": "druderath_valium_plant",
+"kind": "plant"
+},
+{
+"id": "druderath_taunanum_ore",
+"kind": "ore"
+},
+{
+"id": "drunesteld_pelorne_log",
+"kind": "log"
+},
+{
+"id": "drunesteld_pelorne_leaves",
+"kind": "leaves"
+},
+{
+"id": "drunesteld_fenuston_plant",
+"kind": "plant"
+},
+{
+"id": "drunesteld_moruneld_ore",
+"kind": "ore"
+},
+{
+"id": "drurdon_grimaktun_log",
+"kind": "log"
+},
+{
+"id": "drurdon_grimaktun_leaves",
+"kind": "leaves"
+},
+{
+"id": "drurdon_osukamala_plant",
+"kind": "plant"
+},
+{
+"id": "drurdon_asheisteth_ore",
+"kind": "ore"
+},
+{
+"id": "elaennirlys_teleolia_log",
+"kind": "log"
+},
+{
+"id": "elaennirlys_teleolia_leaves",
+"kind": "leaves"
+},
+{
+"id": "elaennirlys_amianolles_plant",
+"kind": "plant"
+},
+{
+"id": "elaennirlys_vosus_ore",
+"kind": "ore"
+},
+{
+"id": "elamirla_sevseth_log",
+"kind": "log"
+},
+{
+"id": "elamirla_sevseth_leaves",
+"kind": "leaves"
+},
+{
+"id": "elamirla_fenurnar_plant",
+"kind": "plant"
+},
+{
+"id": "elamirla_brurde_ore",
+"kind": "ore"
+},
+{
+"id": "eleirenora_siluaminys_log",
+"kind": "log"
+},
+{
+"id": "eleirenora_siluaminys_leaves",
+"kind": "leaves"
+},
+{
+"id": "eleirenora_silenaerlys_plant",
+"kind": "plant"
+},
+{
+"id": "eleirenora_venemaera_ore",
+"kind": "ore"
+},
+{
+"id": "eleniel_zephizevsis_log",
+"kind": "log"
+},
+{
+"id": "eleniel_zephizevsis_leaves",
+"kind": "leaves"
+},
+{
+"id": "eleniel_seronor_plant",
+"kind": "plant"
+},
+{
+"id": "eleniel_ukalamoma_ore",
+"kind": "ore"
+},
+{
+"id": "eliolerae_druldon_log",
+"kind": "log"
+},
+{
+"id": "eliolerae_druldon_leaves",
+"kind": "leaves"
+},
+{
+"id": "eliolerae_veontiasia_plant",
+"kind": "plant"
+},
+{
+"id": "eliolerae_voragurkun_ore",
+"kind": "ore"
+},
+{
+"id": "eluannys_nalium_oraunor_log",
+"kind": "log"
+},
+{
+"id": "eluannys_nalium_oraunor_leaves",
+"kind": "leaves"
+},
+{
+"id": "eluannys_roria_plant",
+"kind": "plant"
+},
+{
+"id": "eluannys_corellases_ore",
+"kind": "ore"
+},
+{
+"id": "fenarnock_meramaala_log",
+"kind": "log"
+},
+{
+"id": "fenarnock_meramaala_leaves",
+"kind": "leaves"
+},
+{
+"id": "fenarnock_vhouktagun_plant",
+"kind": "plant"
+},
+{
+"id": "fenarnock_tistes_ore",
+"kind": "ore"
+},
+{
+"id": "fenernareld_morarnesten_log",
+"kind": "log"
+},
+{
+"id": "fenernareld_morarnesten_leaves",
+"kind": "leaves"
+},
+{
+"id": "fenernareld_halonen_plant",
+"kind": "plant"
+},
+{
+"id": "fenernareld_crerden_ore",
+"kind": "ore"
+},
+{
+"id": "gouthun_vorurkoukun_log",
+"kind": "log"
+},
+{
+"id": "gouthun_vorurkoukun_leaves",
+"kind": "leaves"
+},
+{
+"id": "gouthun_lyemaerlys_plant",
+"kind": "plant"
+},
+{
+"id": "gouthun_miilora_ore",
+"kind": "ore"
+},
+{
+"id": "graikurn_alaerora_log",
+"kind": "log"
+},
+{
+"id": "graikurn_alaerora_leaves",
+"kind": "leaves"
+},
+{
+"id": "graikurn_tarniallum_plant",
+"kind": "plant"
+},
+{
+"id": "graikurn_grimaizhak_ore",
+"kind": "ore"
+},
+{
+"id": "grimozhun_gothaiktun_log",
+"kind": "log"
+},
+{
+"id": "grimozhun_gothaiktun_leaves",
+"kind": "leaves"
+},
+{
+"id": "grimozhun_khurnaggok_plant",
+"kind": "plant"
+},
+{
+"id": "grimozhun_gaiktougoth_ore",
+"kind": "ore"
+},
+{
+"id": "grimukougok_khathurn_log",
+"kind": "log"
+},
+{
+"id": "grimukougok_khathurn_leaves",
+"kind": "leaves"
+},
+{
+"id": "grimukougok_surakanala_plant",
+"kind": "plant"
+},
+{
+"id": "grimukougok_telaurium_ore",
+"kind": "ore"
+},
+{
+"id": "groktok_tharkak_log",
+"kind": "log"
+},
+{
+"id": "groktok_tharkak_leaves",
+"kind": "leaves"
+},
+{
+"id": "groktok_vorakun_plant",
+"kind": "plant"
+},
+{
+"id": "groktok_torournak_ore",
+"kind": "ore"
+},
+{
+"id": "grorkaigoth_khornak_log",
+"kind": "log"
+},
+{
+"id": "grorkaigoth_khornak_leaves",
+"kind": "leaves"
+},
+{
+"id": "grorkaigoth_thukok_plant",
+"kind": "plant"
+},
+{
+"id": "grorkaigoth_osunalira_ore",
+"kind": "ore"
+},
+{
+"id": "gukornok_tiramaruta_log",
+"kind": "log"
+},
+{
+"id": "gukornok_tiramaruta_leaves",
+"kind": "leaves"
+},
+{
+"id": "gukornok_mellia_plant",
+"kind": "plant"
+},
+{
+"id": "gukornok_lareornes_ore",
+"kind": "ore"
+},
+{
+"id": "halardore_drouktar_log",
+"kind": "log"
+},
+{
+"id": "halardore_drouktar_leaves",
+"kind": "leaves"
+},
+{
+"id": "halardore_vorouthurn_plant",
+"kind": "plant"
+},
+{
+"id": "halardore_krouthak_ore",
+"kind": "ore"
+},
+{
+"id": "halurdock_grimuthakar_log",
+"kind": "log"
+},
+{
+"id": "halurdock_grimuthakar_leaves",
+"kind": "leaves"
+},
+{
+"id": "halurdock_thaiggaktak_plant",
+"kind": "plant"
+},
+{
+"id": "halurdock_raurnium_ore",
+"kind": "ore"
+},
+{
+"id": "ilyenna_viantum_log",
+"kind": "log"
+},
+{
+"id": "ilyenna_viantum_leaves",
+"kind": "leaves"
+},
+{
+"id": "ilyenna_corostellor_plant",
+"kind": "plant"
+},
+{
+"id": "ilyenna_telaunus_ore",
+"kind": "ore"
+},
+{
+"id": "ilyimeth_alaemeth_log",
+"kind": "log"
+},
+{
+"id": "ilyimeth_alaemeth_leaves",
+"kind": "leaves"
+},
+{
+"id": "ilyimeth_eluara_plant",
+"kind": "plant"
+},
+{
+"id": "ilyimeth_serenium_ore",
+"kind": "ore"
+},
+{
+"id": "isyuthith_vesezasha_log",
+"kind": "log"
+},
+{
+"id": "isyuthith_vesezasha_leaves",
+"kind": "leaves"
+},
+{
+"id": "isyuthith_zephashis_plant",
+"kind": "plant"
+},
+{
+"id": "isyuthith_siathora_ore",
+"kind": "ore"
+},
+{
+"id": "joradernath_caullostia_log",
+"kind": "log"
+},
+{
+"id": "joradernath_caullostia_leaves",
+"kind": "leaves"
+},
+{
+"id": "joradernath_vines_plant",
+"kind": "plant"
+},
+{
+"id": "joradernath_renium_ore",
+"kind": "ore"
+},
+{
+"id": "jorernaston_thurdock_log",
+"kind": "log"
+},
+{
+"id": "jorernaston_thurdock_leaves",
+"kind": "leaves"
+},
+{
+"id": "jorernaston_miilora_plant",
+"kind": "plant"
+},
+{
+"id": "jorernaston_osazasha_ore",
+"kind": "ore"
+},
+{
+"id": "jorernodath_elina_log",
+"kind": "log"
+},
+{
+"id": "jorernodath_elina_leaves",
+"kind": "leaves"
+},
+{
+"id": "jorernodath_carnus_plant",
+"kind": "plant"
+},
+{
+"id": "jorernodath_grukaizhar_ore",
+"kind": "ore"
+},
+{
+"id": "joroneldock_valirenor_log",
+"kind": "log"
+},
+{
+"id": "joroneldock_valirenor_leaves",
+"kind": "leaves"
+},
+{
+"id": "joroneldock_telaulor_plant",
+"kind": "plant"
+},
+{
+"id": "joroneldock_broden_ore",
+"kind": "ore"
+},
+{
+"id": "kaluvamoma_osukaruta_log",
+"kind": "log"
+},
+{
+"id": "kaluvamoma_osukaruta_leaves",
+"kind": "leaves"
+},
+{
+"id": "kaluvamoma_surataneno_plant",
+"kind": "plant"
+},
+{
+"id": "kaluvamoma_ilotanum_ore",
+"kind": "ore"
+},
+{
+"id": "karugurn_vasteosum_log",
+"kind": "log"
+},
+{
+"id": "karugurn_vasteosum_leaves",
+"kind": "leaves"
+},
+{
+"id": "karugurn_osukanraeno_plant",
+"kind": "plant"
+},
+{
+"id": "karugurn_seorium_ore",
+"kind": "ore"
+},
+{
+"id": "kelaneld_venerae_log",
+"kind": "log"
+},
+{
+"id": "kelaneld_venerae_leaves",
+"kind": "leaves"
+},
+{
+"id": "kelaneld_shiazis_plant",
+"kind": "plant"
+},
+{
+"id": "kelaneld_elionora_ore",
+"kind": "ore"
+},
+{
+"id": "kelarnock_kelustarde_log",
+"kind": "log"
+},
+{
+"id": "kelarnock_kelustarde_leaves",
+"kind": "leaves"
+},
+{
+"id": "kelarnock_drare_plant",
+"kind": "plant"
+},
+{
+"id": "kelarnock_tholde_ore",
+"kind": "ore"
+},
+{
+"id": "kelolden_seornus_log",
+"kind": "log"
+},
+{
+"id": "kelolden_seornus_leaves",
+"kind": "leaves"
+},
+{
+"id": "kelolden_telentia_plant",
+"kind": "plant"
+},
+{
+"id": "kelolden_amausia_ore",
+"kind": "ore"
+},
+{
+"id": "kelordaren_syezivseth_log",
+"kind": "log"
+},
+{
+"id": "kelordaren_syezivseth_leaves",
+"kind": "leaves"
+},
+{
+"id": "kelordaren_torazhugun_plant",
+"kind": "plant"
+},
+{
+"id": "kelordaren_tarnarock_ore",
+"kind": "ore"
+},
+{
+"id": "keludoren_tirasaroma_log",
+"kind": "log"
+},
+{
+"id": "keludoren_tirasaroma_leaves",
+"kind": "leaves"
+},
+{
+"id": "keludoren_jorernen_plant",
+"kind": "plant"
+},
+{
+"id": "keludoren_drestock_ore",
+"kind": "ore"
+},
+{
+"id": "khairnar_haleronath_log",
+"kind": "log"
+},
+{
+"id": "khairnar_haleronath_leaves",
+"kind": "leaves"
+},
+{
+"id": "khairnar_siliorina_plant",
+"kind": "plant"
+},
+{
+"id": "khairnar_teliarnium_ore",
+"kind": "ore"
+},
+{
+"id": "khogar_thevsaseth_log",
+"kind": "log"
+},
+{
+"id": "khogar_thevsaseth_leaves",
+"kind": "leaves"
+},
+{
+"id": "khogar_ukamatanum_plant",
+"kind": "plant"
+},
+{
+"id": "khogar_tenmanuta_ore",
+"kind": "ore"
+},
+{
+"id": "kraizhoth_alaareth_log",
+"kind": "log"
+},
+{
+"id": "kraizhoth_alaareth_leaves",
+"kind": "leaves"
+},
+{
+"id": "kraizhoth_venillora_plant",
+"kind": "plant"
+},
+{
+"id": "kraizhoth_raulinium_ore",
+"kind": "ore"
+},
+{
+"id": "krarnaizhok_sileniolora_log",
+"kind": "log"
+},
+{
+"id": "krarnaizhok_sileniolora_leaves",
+"kind": "leaves"
+},
+{
+"id": "krarnaizhok_kalunaroma_plant",
+"kind": "plant"
+},
+{
+"id": "krarnaizhok_telerus_ore",
+"kind": "ore"
+},
+{
+"id": "krogok_anakataleno_log",
+"kind": "log"
+},
+{
+"id": "krogok_anakataleno_leaves",
+"kind": "leaves"
+},
+{
+"id": "krogok_nuela_plant",
+"kind": "plant"
+},
+{
+"id": "krogok_thogaithun_ore",
+"kind": "ore"
+},
+{
+"id": "kroukagar_naunolus_log",
+"kind": "log"
+},
+{
+"id": "kroukagar_naunolus_leaves",
+"kind": "leaves"
+},
+{
+"id": "kroukagar_telones_plant",
+"kind": "plant"
+},
+{
+"id": "kroukagar_serostiria_ore",
+"kind": "ore"
+},
+{
+"id": "krouktaggun_neornostium_log",
+"kind": "log"
+},
+{
+"id": "krouktaggun_neornostium_leaves",
+"kind": "leaves"
+},
+{
+"id": "krouktaggun_venaellae_plant",
+"kind": "plant"
+},
+{
+"id": "krouktaggun_voraiktak_ore",
+"kind": "ore"
+},
+{
+"id": "lernaunus_orostellor_log",
+"kind": "log"
+},
+{
+"id": "lernaunus_orostellor_leaves",
+"kind": "leaves"
+},
+{
+"id": "lernaunus_sereontes_plant",
+"kind": "plant"
+},
+{
+"id": "lernaunus_thoggourkok_ore",
+"kind": "ore"
+},
+{
+"id": "lialintor_kalunarum_log",
+"kind": "log"
+},
+{
+"id": "lialintor_kalunarum_leaves",
+"kind": "leaves"
+},
+{
+"id": "lialintor_colus_plant",
+"kind": "plant"
+},
+{
+"id": "lialintor_ceornanum_ore",
+"kind": "ore"
+},
+{
+"id": "linaustia_saurnium_log",
+"kind": "log"
+},
+{
+"id": "linaustia_saurnium_leaves",
+"kind": "leaves"
+},
+{
+"id": "linaustia_ralliasia_plant",
+"kind": "plant"
+},
+{
+"id": "linaustia_carus_ore",
+"kind": "ore"
+},
+{
+"id": "losaustanum_teleriasor_log",
+"kind": "log"
+},
+{
+"id": "losaustanum_teleriasor_leaves",
+"kind": "leaves"
+},
+{
+"id": "losaustanum_telanus_plant",
+"kind": "plant"
+},
+{
+"id": "losaustanum_telolerum_ore",
+"kind": "ore"
+},
+{
+"id": "lyanae_naustaranum_log",
+"kind": "log"
+},
+{
+"id": "lyanae_naustaranum_leaves",
+"kind": "leaves"
+},
+{
+"id": "lyanae_vellum_plant",
+"kind": "plant"
+},
+{
+"id": "lyanae_orausterium_ore",
+"kind": "ore"
+},
+{
+"id": "lyannae_elameinnora_log",
+"kind": "log"
+},
+{
+"id": "lyannae_elameinnora_leaves",
+"kind": "leaves"
+},
+{
+"id": "lyannae_silireth_plant",
+"kind": "plant"
+},
+{
+"id": "lyannae_lyirenwen_ore",
+"kind": "ore"
+},
+{
+"id": "lyannora_fenaste_log",
+"kind": "log"
+},
+{
+"id": "lyannora_fenaste_leaves",
+"kind": "leaves"
+},
+{
+"id": "lyannora_eleirlemys_plant",
+"kind": "plant"
+},
+{
+"id": "lyannora_ameolor_ore",
+"kind": "ore"
+},
+{
+"id": "lyarae_siluarla_log",
+"kind": "log"
+},
+{
+"id": "lyarae_siluarla_leaves",
+"kind": "leaves"
+},
+{
+"id": "lyarae_lyaneth_plant",
+"kind": "plant"
+},
+{
+"id": "lyarae_xaathis_ore",
+"kind": "ore"
+},
+{
+"id": "lyariel_elalioma_log",
+"kind": "log"
+},
+{
+"id": "lyariel_elalioma_leaves",
+"kind": "leaves"
+},
+{
+"id": "lyariel_ryema_plant",
+"kind": "plant"
+},
+{
+"id": "lyariel_lyina_ore",
+"kind": "ore"
+},
+{
+"id": "lyemwen_toruggozhak_log",
+"kind": "log"
+},
+{
+"id": "lyemwen_toruggozhak_leaves",
+"kind": "leaves"
+},
+{
+"id": "lyemwen_corolum_plant",
+"kind": "plant"
+},
+{
+"id": "lyemwen_osutalkaeno_ore",
+"kind": "ore"
+},
+{
+"id": "lyenora_serilentor_log",
+"kind": "log"
+},
+{
+"id": "lyenora_serilentor_leaves",
+"kind": "leaves"
+},
+{
+"id": "lyenora_meornanum_plant",
+"kind": "plant"
+},
+{
+"id": "lyenora_serentialor_ore",
+"kind": "ore"
+},
+{
+"id": "lyirlora_elineth_log",
+"kind": "log"
+},
+{
+"id": "lyirlora_elineth_leaves",
+"kind": "leaves"
+},
+{
+"id": "lyirlora_elirualys_plant",
+"kind": "plant"
+},
+{
+"id": "lyirlora_venarwen_ore",
+"kind": "ore"
+},
+{
+"id": "maurantium_mialeranum_log",
+"kind": "log"
+},
+{
+"id": "maurantium_mialeranum_leaves",
+"kind": "leaves"
+},
+{
+"id": "maurantium_nauroses_plant",
+"kind": "plant"
+},
+{
+"id": "maurantium_vantus_milauntanum_ore",
+"kind": "ore"
+},
+{
+"id": "melauntus_suralameno_log",
+"kind": "log"
+},
+{
+"id": "melauntus_suralameno_leaves",
+"kind": "leaves"
+},
+{
+"id": "melauntus_vostentia_plant",
+"kind": "plant"
+},
+{
+"id": "melauntus_ashestith_ore",
+"kind": "ore"
+},
+{
+"id": "menteores_vosastor_log",
+"kind": "log"
+},
+{
+"id": "menteores_vosastor_leaves",
+"kind": "leaves"
+},
+{
+"id": "menteores_venaustus_plant",
+"kind": "plant"
+},
+{
+"id": "menteores_thivseth_ore",
+"kind": "ore"
+},
+{
+"id": "miana_venualeira_log",
+"kind": "log"
+},
+{
+"id": "miana_venualeira_leaves",
+"kind": "leaves"
+},
+{
+"id": "miana_silualwen_plant",
+"kind": "plant"
+},
+{
+"id": "miana_ryilleira_ore",
+"kind": "ore"
+},
+{
+"id": "miarlinnys_garkar_log",
+"kind": "log"
+},
+{
+"id": "miarlinnys_garkar_leaves",
+"kind": "leaves"
+},
+{
+"id": "miarlinnys_nuemiel_plant",
+"kind": "plant"
+},
+{
+"id": "miarlinnys_vellanum_ore",
+"kind": "ore"
+},
+{
+"id": "mienys_kruthaggoth_log",
+"kind": "log"
+},
+{
+"id": "mienys_kruthaggoth_leaves",
+"kind": "leaves"
+},
+{
+"id": "mienys_silenniorys_plant",
+"kind": "plant"
+},
+{
+"id": "mienys_corontum_ore",
+"kind": "ore"
+},
+{
+"id": "miilora_ilyerleth_log",
+"kind": "log"
+},
+{
+"id": "miilora_ilyerleth_leaves",
+"kind": "leaves"
+},
+{
+"id": "miilora_elarlora_plant",
+"kind": "plant"
+},
+{
+"id": "miilora_raustium_ore",
+"kind": "ore"
+},
+{
+"id": "miimeth_tenkansaum_log",
+"kind": "log"
+},
+{
+"id": "miimeth_tenkansaum_leaves",
+"kind": "leaves"
+},
+{
+"id": "miimeth_osutameno_plant",
+"kind": "plant"
+},
+{
+"id": "miimeth_shistora_ore",
+"kind": "ore"
+},
+{
+"id": "miinnora_veneimae_log",
+"kind": "log"
+},
+{
+"id": "miinnora_veneimae_leaves",
+"kind": "leaves"
+},
+{
+"id": "miinnora_ilorakalari_plant",
+"kind": "plant"
+},
+{
+"id": "miinnora_mielirlae_ore",
+"kind": "ore"
+},
+{
+"id": "morarneld_tantus_log",
+"kind": "log"
+},
+{
+"id": "morarneld_tantus_leaves",
+"kind": "leaves"
+},
+{
+"id": "morarneld_reonia_plant",
+"kind": "plant"
+},
+{
+"id": "morarneld_thuggun_ore",
+"kind": "ore"
+},
+{
+"id": "morurnath_thazora_log",
+"kind": "log"
+},
+{
+"id": "morurnath_thazora_leaves",
+"kind": "leaves"
+},
+{
+"id": "morurnath_tarnenar_plant",
+"kind": "plant"
+},
+{
+"id": "morurnath_oreolus_ore",
+"kind": "ore"
+},
+{
+"id": "ninteostor_thunaden_log",
+"kind": "log"
+},
+{
+"id": "ninteostor_thunaden_leaves",
+"kind": "leaves"
+},
+{
+"id": "ninteostor_lesintum_plant",
+"kind": "plant"
+},
+{
+"id": "ninteostor_oreorium_ore",
+"kind": "ore"
+},
+{
+"id": "niranum_fenestardar_log",
+"kind": "log"
+},
+{
+"id": "niranum_fenestardar_leaves",
+"kind": "leaves"
+},
+{
+"id": "niranum_eleinwen_plant",
+"kind": "plant"
+},
+{
+"id": "niranum_kelodanath_ore",
+"kind": "ore"
+},
+{
+"id": "nualireth_thiseth_log",
+"kind": "log"
+},
+{
+"id": "nualireth_thiseth_leaves",
+"kind": "leaves"
+},
+{
+"id": "nualireth_ukavamuta_plant",
+"kind": "plant"
+},
+{
+"id": "nualireth_silimenae_ore",
+"kind": "ore"
+},
+{
+"id": "nuemiel_kalutamira_log",
+"kind": "log"
+},
+{
+"id": "nuemiel_kalutamira_leaves",
+"kind": "leaves"
+},
+{
+"id": "nuemiel_miirae_plant",
+"kind": "plant"
+},
+{
+"id": "nuemiel_veneliel_ore",
+"kind": "ore"
+},
+{
+"id": "nueriel_drozhurnun_log",
+"kind": "log"
+},
+{
+"id": "nueriel_drozhurnun_leaves",
+"kind": "leaves"
+},
+{
+"id": "nueriel_serialor_plant",
+"kind": "plant"
+},
+{
+"id": "nueriel_serausinium_ore",
+"kind": "ore"
+},
+{
+"id": "nuileiniel_ryennae_log",
+"kind": "log"
+},
+{
+"id": "nuileiniel_ryennae_leaves",
+"kind": "leaves"
+},
+{
+"id": "nuileiniel_ilyelae_plant",
+"kind": "plant"
+},
+{
+"id": "nuileiniel_nuelys_ore",
+"kind": "ore"
+},
+{
+"id": "nuilleimwen_miannora_log",
+"kind": "log"
+},
+{
+"id": "nuilleimwen_miannora_leaves",
+"kind": "leaves"
+},
+{
+"id": "nuilleimwen_mierlae_plant",
+"kind": "plant"
+},
+{
+"id": "nuilleimwen_kraggak_ore",
+"kind": "ore"
+},
+{
+"id": "nuimiel_halerdulden_log",
+"kind": "log"
+},
+{
+"id": "nuimiel_halerdulden_leaves",
+"kind": "leaves"
+},
+{
+"id": "nuimiel_mialla_plant",
+"kind": "plant"
+},
+{
+"id": "nuimiel_corarilles_ore",
+"kind": "ore"
+},
+{
+"id": "orerum_meostanum_log",
+"kind": "log"
+},
+{
+"id": "orerum_meostanum_leaves",
+"kind": "leaves"
+},
+{
+"id": "orerum_loria_plant",
+"kind": "plant"
+},
+{
+"id": "orerum_monallum_ore",
+"kind": "ore"
+},
+{
+"id": "orestanum_thathis_log",
+"kind": "log"
+},
+{
+"id": "orestanum_thathis_leaves",
+"kind": "leaves"
+},
+{
+"id": "orestanum_venillora_plant",
+"kind": "plant"
+},
+{
+"id": "orestanum_vorothaktar_ore",
+"kind": "ore"
+},
+{
+"id": "oriamora_ryannileth_log",
+"kind": "log"
+},
+{
+"id": "oriamora_ryannileth_leaves",
+"kind": "leaves"
+},
+{
+"id": "oriamora_tarialia_plant",
+"kind": "plant"
+},
+{
+"id": "oriamora_vhorkak_ore",
+"kind": "ore"
+},
+{
+"id": "oriarium_amestollia_log",
+"kind": "log"
+},
+{
+"id": "oriarium_amestollia_leaves",
+"kind": "leaves"
+},
+{
+"id": "oriarium_rosiantia_plant",
+"kind": "plant"
+},
+{
+"id": "oriarium_nintum_ore",
+"kind": "ore"
+},
+{
+"id": "oriellys_morarustock_log",
+"kind": "log"
+},
+{
+"id": "oriellys_morarustock_leaves",
+"kind": "leaves"
+},
+{
+"id": "oriellys_kaigak_plant",
+"kind": "plant"
+},
+{
+"id": "oriellys_toroukornak_ore",
+"kind": "ore"
+},
+{
+"id": "orienna_silirwen_log",
+"kind": "log"
+},
+{
+"id": "orienna_silirwen_leaves",
+"kind": "leaves"
+},
+{
+"id": "orienna_caunia_plant",
+"kind": "plant"
+},
+{
+"id": "orienna_kalularum_ore",
+"kind": "ore"
+},
+{
+"id": "orierlae_serentares_log",
+"kind": "log"
+},
+{
+"id": "orierlae_serentares_leaves",
+"kind": "leaves"
+},
+{
+"id": "orierlae_valistes_plant",
+"kind": "plant"
+},
+{
+"id": "orierlae_telirnaurum_ore",
+"kind": "ore"
+},
+{
+"id": "oriilora_ryimwen_log",
+"kind": "log"
+},
+{
+"id": "oriilora_ryimwen_leaves",
+"kind": "leaves"
+},
+{
+"id": "oriilora_xaizeisora_plant",
+"kind": "plant"
+},
+{
+"id": "oriilora_torozhak_ore",
+"kind": "ore"
+},
+{
+"id": "oriinnys_oriemiel_log",
+"kind": "log"
+},
+{
+"id": "oriinnys_oriemiel_leaves",
+"kind": "leaves"
+},
+{
+"id": "oriinnys_crodock_plant",
+"kind": "plant"
+},
+{
+"id": "oriinnys_veonium_ore",
+"kind": "ore"
+},
+{
+"id": "orintanum_rirnia_log",
+"kind": "log"
+},
+{
+"id": "orintanum_rirnia_leaves",
+"kind": "leaves"
+},
+{
+"id": "orintanum_serosum_plant",
+"kind": "plant"
+},
+{
+"id": "orintanum_caustia_ore",
+"kind": "ore"
+},
+{
+"id": "oseivsizith_nauliasor_log",
+"kind": "log"
+},
+{
+"id": "oseivsizith_nauliasor_leaves",
+"kind": "leaves"
+},
+{
+"id": "oseivsizith_neorenus_plant",
+"kind": "plant"
+},
+{
+"id": "oseivsizith_marum_ore",
+"kind": "ore"
+},
+{
+"id": "osulaltanum_kalulanoma_log",
+"kind": "log"
+},
+{
+"id": "osulaltanum_kalulanoma_leaves",
+"kind": "leaves"
+},
+{
+"id": "osulaltanum_pelarnon_plant",
+"kind": "plant"
+},
+{
+"id": "osulaltanum_suravamira_ore",
+"kind": "ore"
+},
+{
+"id": "osutaala_telintia_log",
+"kind": "log"
+},
+{
+"id": "osutaala_telintia_leaves",
+"kind": "leaves"
+},
+{
+"id": "osutaala_sisum_plant",
+"kind": "plant"
+},
+{
+"id": "osutaala_khaggar_ore",
+"kind": "ore"
+},
+{
+"id": "osuvaeno_grimaigukar_log",
+"kind": "log"
+},
+{
+"id": "osuvaeno_grimaigukar_leaves",
+"kind": "leaves"
+},
+{
+"id": "osuvaeno_osuvauta_plant",
+"kind": "plant"
+},
+{
+"id": "osuvaeno_tarnordath_ore",
+"kind": "ore"
+},
+{
+"id": "osyuseth_coreontia_log",
+"kind": "log"
+},
+{
+"id": "osyuseth_coreontia_leaves",
+"kind": "leaves"
+},
+{
+"id": "osyuseth_amontor_veoles_plant",
+"kind": "plant"
+},
+{
+"id": "osyuseth_valeones_ore",
+"kind": "ore"
+},
+{
+"id": "pelanode_dranorath_log",
+"kind": "log"
+},
+{
+"id": "pelanode_dranorath_leaves",
+"kind": "leaves"
+},
+{
+"id": "pelanode_velium_plant",
+"kind": "plant"
+},
+{
+"id": "pelanode_ciallium_ore",
+"kind": "ore"
+},
+{
+"id": "reoria_rellaurnum_log",
+"kind": "log"
+},
+{
+"id": "reoria_rellaurnum_leaves",
+"kind": "leaves"
+},
+{
+"id": "reoria_costes_plant",
+"kind": "plant"
+},
+{
+"id": "reoria_seraustium_ore",
+"kind": "ore"
+},
+{
+"id": "reornanum_coraurus_log",
+"kind": "log"
+},
+{
+"id": "reornanum_coraurus_leaves",
+"kind": "leaves"
+},
+{
+"id": "reornanum_corirnum_plant",
+"kind": "plant"
+},
+{
+"id": "reornanum_veolauranum_ore",
+"kind": "ore"
+},
+{
+"id": "ryala_elalwen_log",
+"kind": "log"
+},
+{
+"id": "ryala_elalwen_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryala_alainemys_plant",
+"kind": "plant"
+},
+{
+"id": "ryala_elerionneth_ore",
+"kind": "ore"
+},
+{
+"id": "ryamiel_drasture_log",
+"kind": "log"
+},
+{
+"id": "ryamiel_drasture_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryamiel_lyala_plant",
+"kind": "plant"
+},
+{
+"id": "ryamiel_raniallium_ore",
+"kind": "ore"
+},
+{
+"id": "ryanirae_syatheshora_log",
+"kind": "log"
+},
+{
+"id": "ryanirae_syatheshora_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryanirae_tarnere_plant",
+"kind": "plant"
+},
+{
+"id": "ryanirae_moranerneld_ore",
+"kind": "ore"
+},
+{
+"id": "ryellae_venirora_log",
+"kind": "log"
+},
+{
+"id": "ryellae_venirora_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryellae_venaerae_plant",
+"kind": "plant"
+},
+{
+"id": "ryellae_lyemiel_ore",
+"kind": "ore"
+},
+{
+"id": "ryelora_alairuannae_log",
+"kind": "log"
+},
+{
+"id": "ryelora_alairuannae_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryelora_nuarliel_plant",
+"kind": "plant"
+},
+{
+"id": "ryelora_nuara_ore",
+"kind": "ore"
+},
+{
+"id": "ryenaerlae_tiranaruta_log",
+"kind": "log"
+},
+{
+"id": "ryenaerlae_tiranaruta_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryenaerlae_rarialles_plant",
+"kind": "plant"
+},
+{
+"id": "ryenaerlae_taullum_ore",
+"kind": "ore"
+},
+{
+"id": "ryeralwen_oresum_log",
+"kind": "log"
+},
+{
+"id": "ryeralwen_oresum_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryeralwen_teleoses_plant",
+"kind": "plant"
+},
+{
+"id": "ryeralwen_ryaniorys_ore",
+"kind": "ore"
+},
+{
+"id": "ryerlae_tiallium_log",
+"kind": "log"
+},
+{
+"id": "ryerlae_tiallium_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryerlae_teleoranum_vinanum_plant",
+"kind": "plant"
+},
+{
+"id": "ryerlae_miasanor_ore",
+"kind": "ore"
+},
+{
+"id": "ryira_silanaelwen_log",
+"kind": "log"
+},
+{
+"id": "ryira_silanaelwen_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryira_elenuarwen_plant",
+"kind": "plant"
+},
+{
+"id": "ryira_eluannareth_ore",
+"kind": "ore"
+},
+{
+"id": "ryirleth_droukun_log",
+"kind": "log"
+},
+{
+"id": "ryirleth_droukun_leaves",
+"kind": "leaves"
+},
+{
+"id": "ryirleth_ashiavsora_plant",
+"kind": "plant"
+},
+{
+"id": "ryirleth_thivsis_ore",
+"kind": "ore"
+},
+{
+"id": "sallus_sereoralia_log",
+"kind": "log"
+},
+{
+"id": "sallus_sereoralia_leaves",
+"kind": "leaves"
+},
+{
+"id": "sallus_vhaktun_plant",
+"kind": "plant"
+},
+{
+"id": "sallus_cintes_ore",
+"kind": "ore"
+},
+{
+"id": "seornum_crostene_log",
+"kind": "log"
+},
+{
+"id": "seornum_crostene_leaves",
+"kind": "leaves"
+},
+{
+"id": "seornum_oriemeilla_plant",
+"kind": "plant"
+},
+{
+"id": "seornum_kelanulden_ore",
+"kind": "ore"
+},
+{
+"id": "serarnum_dreraste_log",
+"kind": "log"
+},
+{
+"id": "serarnum_dreraste_leaves",
+"kind": "leaves"
+},
+{
+"id": "serarnum_ilovaleno_plant",
+"kind": "plant"
+},
+{
+"id": "serarnum_nualiniel_ore",
+"kind": "ore"
+},
+{
+"id": "seraurnanum_voroggukoth_log",
+"kind": "log"
+},
+{
+"id": "seraurnanum_voroggukoth_leaves",
+"kind": "leaves"
+},
+{
+"id": "seraurnanum_halerdosten_plant",
+"kind": "plant"
+},
+{
+"id": "seraurnanum_mosor_ore",
+"kind": "ore"
+},
+{
+"id": "seresum_saurus_log",
+"kind": "log"
+},
+{
+"id": "seresum_saurus_leaves",
+"kind": "leaves"
+},
+{
+"id": "seresum_lornum_plant",
+"kind": "plant"
+},
+{
+"id": "seresum_sereonium_ore",
+"kind": "ore"
+},
+{
+"id": "sestia_drutharkak_log",
+"kind": "log"
+},
+{
+"id": "sestia_drutharkak_leaves",
+"kind": "leaves"
+},
+{
+"id": "sestia_liantor_plant",
+"kind": "plant"
+},
+{
+"id": "sestia_telaurnia_ore",
+"kind": "ore"
+},
+{
+"id": "shavseth_osaziavsora_log",
+"kind": "log"
+},
+{
+"id": "shavseth_osaziavsora_leaves",
+"kind": "leaves"
+},
+{
+"id": "shavseth_thiaseth_plant",
+"kind": "plant"
+},
+{
+"id": "shavseth_osyuziathis_ore",
+"kind": "ore"
+},
+{
+"id": "shiavsora_isathith_log",
+"kind": "log"
+},
+{
+"id": "shiavsora_isathith_leaves",
+"kind": "leaves"
+},
+{
+"id": "shiavsora_zephissith_plant",
+"kind": "plant"
+},
+{
+"id": "shiavsora_siazis_ore",
+"kind": "ore"
+},
+{
+"id": "shyuthora_coreoliasum_log",
+"kind": "log"
+},
+{
+"id": "shyuthora_coreoliasum_leaves",
+"kind": "leaves"
+},
+{
+"id": "shyuthora_lostium_plant",
+"kind": "plant"
+},
+{
+"id": "shyuthora_coreonum_ore",
+"kind": "ore"
+},
+{
+"id": "silaeramys_sornor_log",
+"kind": "log"
+},
+{
+"id": "silaeramys_sornor_leaves",
+"kind": "leaves"
+},
+{
+"id": "silaeramys_riasia_plant",
+"kind": "plant"
+},
+{
+"id": "silaeramys_orillontus_ore",
+"kind": "ore"
+},
+{
+"id": "silanneth_iseivsizora_log",
+"kind": "log"
+},
+{
+"id": "silanneth_iseivsizora_leaves",
+"kind": "leaves"
+},
+{
+"id": "silanneth_anasakamira_plant",
+"kind": "plant"
+},
+{
+"id": "silanneth_peloston_ore",
+"kind": "ore"
+},
+{
+"id": "silara_drunestock_log",
+"kind": "log"
+},
+{
+"id": "silara_drunestock_leaves",
+"kind": "leaves"
+},
+{
+"id": "silara_niantus_plant",
+"kind": "plant"
+},
+{
+"id": "silara_serellium_ore",
+"kind": "ore"
+},
+{
+"id": "silemuarora_ilovameno_log",
+"kind": "log"
+},
+{
+"id": "silemuarora_ilovameno_leaves",
+"kind": "leaves"
+},
+{
+"id": "silemuarora_veorum_plant",
+"kind": "plant"
+},
+{
+"id": "silemuarora_halestornar_ore",
+"kind": "ore"
+},
+{
+"id": "silena_ilyelora_log",
+"kind": "log"
+},
+{
+"id": "silena_ilyelora_leaves",
+"kind": "leaves"
+},
+{
+"id": "silena_silerae_plant",
+"kind": "plant"
+},
+{
+"id": "silena_mialina_ore",
+"kind": "ore"
+},
+{
+"id": "silenioriel_collentum_log",
+"kind": "log"
+},
+{
+"id": "silenioriel_collentum_leaves",
+"kind": "leaves"
+},
+{
+"id": "silenioriel_serenanum_plant",
+"kind": "plant"
+},
+{
+"id": "silenioriel_cintenes_ore",
+"kind": "ore"
+},
+{
+"id": "silia_lyilana_log",
+"kind": "log"
+},
+{
+"id": "silia_lyilana_leaves",
+"kind": "leaves"
+},
+{
+"id": "silia_halode_plant",
+"kind": "plant"
+},
+{
+"id": "silia_silerlys_ore",
+"kind": "ore"
+},
+{
+"id": "siliomaerae_elerys_log",
+"kind": "log"
+},
+{
+"id": "siliomaerae_elerys_leaves",
+"kind": "leaves"
+},
+{
+"id": "siliomaerae_eliolemora_plant",
+"kind": "plant"
+},
+{
+"id": "siliomaerae_elamwen_ore",
+"kind": "ore"
+},
+{
+"id": "siliorlora_teorus_log",
+"kind": "log"
+},
+{
+"id": "siliorlora_teorus_leaves",
+"kind": "leaves"
+},
+{
+"id": "siliorlora_amanternes_plant",
+"kind": "plant"
+},
+{
+"id": "siliorlora_orelles_ore",
+"kind": "ore"
+},
+{
+"id": "siluanae_valosanum_maullanum_log",
+"kind": "log"
+},
+{
+"id": "siluanae_valosanum_maullanum_leaves",
+"kind": "leaves"
+},
+{
+"id": "siluanae_teleolaunor_plant",
+"kind": "plant"
+},
+{
+"id": "siluanae_orintes_liastus_ore",
+"kind": "ore"
+},
+{
+"id": "siluanora_oriiralleth_log",
+"kind": "log"
+},
+{
+"id": "siluanora_oriiralleth_leaves",
+"kind": "leaves"
+},
+{
+"id": "siluanora_oriarae_plant",
+"kind": "plant"
+},
+{
+"id": "siluanora_elileth_ore",
+"kind": "ore"
+},
+{
+"id": "suranareno_kruktarnun_log",
+"kind": "log"
+},
+{
+"id": "suranareno_kruktarnun_leaves",
+"kind": "leaves"
+},
+{
+"id": "suranareno_valauntires_plant",
+"kind": "plant"
+},
+{
+"id": "suranareno_maserium_ore",
+"kind": "ore"
+},
+{
+"id": "syezeth_narus_log",
+"kind": "log"
+},
+{
+"id": "syezeth_narus_leaves",
+"kind": "leaves"
+},
+{
+"id": "syezeth_oraustirnes_plant",
+"kind": "plant"
+},
+{
+"id": "syezeth_tarnelum_ore",
+"kind": "ore"
+},
+{
+"id": "tarnaldath_oriantes_log",
+"kind": "log"
+},
+{
+"id": "tarnaldath_oriantes_leaves",
+"kind": "leaves"
+},
+{
+"id": "tarnaldath_minolor_plant",
+"kind": "plant"
+},
+{
+"id": "tarnaldath_sereosanum_valosteolor_ore",
+"kind": "ore"
+},
+{
+"id": "tarnesten_tarnaldock_log",
+"kind": "log"
+},
+{
+"id": "tarnesten_tarnaldock_leaves",
+"kind": "leaves"
+},
+{
+"id": "tarnesten_laules_plant",
+"kind": "plant"
+},
+{
+"id": "tarnesten_kelustarde_ore",
+"kind": "ore"
+},
+{
+"id": "tarnor_morernon_log",
+"kind": "log"
+},
+{
+"id": "tarnor_morernon_leaves",
+"kind": "leaves"
+},
+{
+"id": "tarnor_osasora_plant",
+"kind": "plant"
+},
+{
+"id": "tarnor_osumalum_ore",
+"kind": "ore"
+},
+{
+"id": "tarnordath_alailae_log",
+"kind": "log"
+},
+{
+"id": "tarnordath_alailae_leaves",
+"kind": "leaves"
+},
+{
+"id": "tarnordath_valaustus_plant",
+"kind": "plant"
+},
+{
+"id": "tarnordath_coreornum_ore",
+"kind": "ore"
+},
+{
+"id": "tarnornath_corentornus_log",
+"kind": "log"
+},
+{
+"id": "tarnornath_corentornus_leaves",
+"kind": "leaves"
+},
+{
+"id": "tarnornath_rantia_plant",
+"kind": "plant"
+},
+{
+"id": "tarnornath_norniallium_ore",
+"kind": "ore"
+},
+{
+"id": "tarnurock_halurnar_log",
+"kind": "log"
+},
+{
+"id": "tarnurock_halurnar_leaves",
+"kind": "leaves"
+},
+{
+"id": "tarnurock_miemeillora_plant",
+"kind": "plant"
+},
+{
+"id": "tarnurock_kelornardon_ore",
+"kind": "ore"
+},
+{
+"id": "tasianium_serolia_log",
+"kind": "log"
+},
+{
+"id": "tasianium_serolia_leaves",
+"kind": "leaves"
+},
+{
+"id": "tasianium_neollum_plant",
+"kind": "plant"
+},
+{
+"id": "tasianium_siantolium_ore",
+"kind": "ore"
+},
+{
+"id": "teleontanum_tiravauta_log",
+"kind": "log"
+},
+{
+"id": "teleontanum_tiravauta_leaves",
+"kind": "leaves"
+},
+{
+"id": "teleontanum_mintes_plant",
+"kind": "plant"
+},
+{
+"id": "teleontanum_graithogoth_ore",
+"kind": "ore"
+},
+{
+"id": "telones_laulesium_log",
+"kind": "log"
+},
+{
+"id": "telones_laulesium_leaves",
+"kind": "leaves"
+},
+{
+"id": "telones_sereostium_plant",
+"kind": "plant"
+},
+{
+"id": "telones_saullum_ore",
+"kind": "ore"
+},
+{
+"id": "theisasha_saseth_log",
+"kind": "log"
+},
+{
+"id": "theisasha_saseth_leaves",
+"kind": "leaves"
+},
+{
+"id": "theisasha_ashyuzeth_plant",
+"kind": "plant"
+},
+{
+"id": "theisasha_ashithis_ore",
+"kind": "ore"
+},
+{
+"id": "theivsis_xaizith_log",
+"kind": "log"
+},
+{
+"id": "theivsis_xaizith_leaves",
+"kind": "leaves"
+},
+{
+"id": "theivsis_ashevsith_plant",
+"kind": "plant"
+},
+{
+"id": "theivsis_syaseth_ore",
+"kind": "ore"
+},
+{
+"id": "thivsora_oseithasha_log",
+"kind": "log"
+},
+{
+"id": "thivsora_oseithasha_leaves",
+"kind": "leaves"
+},
+{
+"id": "thivsora_seshora_plant",
+"kind": "plant"
+},
+{
+"id": "thivsora_tarnerock_ore",
+"kind": "ore"
+},
+{
+"id": "thonudeld_nales_log",
+"kind": "log"
+},
+{
+"id": "thonudeld_nales_leaves",
+"kind": "leaves"
+},
+{
+"id": "thonudeld_brernath_plant",
+"kind": "plant"
+},
+{
+"id": "thonudeld_cosiares_ore",
+"kind": "ore"
+},
+{
+"id": "thonurde_keluldon_log",
+"kind": "log"
+},
+{
+"id": "thonurde_keluldon_leaves",
+"kind": "leaves"
+},
+{
+"id": "thonurde_pelulderath_plant",
+"kind": "plant"
+},
+{
+"id": "thonurde_tarnolden_ore",
+"kind": "ore"
+},
+{
+"id": "thudarneld_moraden_log",
+"kind": "log"
+},
+{
+"id": "thudarneld_moraden_leaves",
+"kind": "leaves"
+},
+{
+"id": "thudarneld_tarneldar_plant",
+"kind": "plant"
+},
+{
+"id": "thudarneld_morernadock_ore",
+"kind": "ore"
+},
+{
+"id": "thurdock_suratanira_log",
+"kind": "log"
+},
+{
+"id": "thurdock_suratanira_leaves",
+"kind": "leaves"
+},
+{
+"id": "thurdock_elionae_plant",
+"kind": "plant"
+},
+{
+"id": "thurdock_drenude_ore",
+"kind": "ore"
+},
+{
+"id": "thurkok_surakaruta_log",
+"kind": "log"
+},
+{
+"id": "thurkok_surakaruta_leaves",
+"kind": "leaves"
+},
+{
+"id": "thurkok_zephizis_plant",
+"kind": "plant"
+},
+{
+"id": "thurkok_kraithagok_ore",
+"kind": "ore"
+},
+{
+"id": "tianausanum_telastus_log",
+"kind": "log"
+},
+{
+"id": "tianausanum_telastus_leaves",
+"kind": "leaves"
+},
+{
+"id": "tianausanum_serasia_plant",
+"kind": "plant"
+},
+{
+"id": "tianausanum_valarium_ore",
+"kind": "ore"
+},
+{
+"id": "tirakaluta_syethith_log",
+"kind": "log"
+},
+{
+"id": "tirakaluta_syethith_leaves",
+"kind": "leaves"
+},
+{
+"id": "tirakaluta_vanasamum_plant",
+"kind": "plant"
+},
+{
+"id": "tirakaluta_orerium_ore",
+"kind": "ore"
+},
+{
+"id": "toraizhoth_gougok_log",
+"kind": "log"
+},
+{
+"id": "toraizhoth_gougok_leaves",
+"kind": "leaves"
+},
+{
+"id": "toraizhoth_nestum_plant",
+"kind": "plant"
+},
+{
+"id": "toraizhoth_serentus_ore",
+"kind": "ore"
+},
+{
+"id": "torarnak_kruzhak_log",
+"kind": "log"
+},
+{
+"id": "torarnak_kruzhak_leaves",
+"kind": "leaves"
+},
+{
+"id": "torarnak_krournazhak_plant",
+"kind": "plant"
+},
+{
+"id": "torarnak_grimazhurn_ore",
+"kind": "ore"
+},
+{
+"id": "torourkoth_venellys_log",
+"kind": "log"
+},
+{
+"id": "torourkoth_venellys_leaves",
+"kind": "leaves"
+},
+{
+"id": "torourkoth_sillium_plant",
+"kind": "plant"
+},
+{
+"id": "torourkoth_tirakaoma_ore",
+"kind": "ore"
+},
+{
+"id": "torugun_lyemiel_log",
+"kind": "log"
+},
+{
+"id": "torugun_lyemiel_leaves",
+"kind": "leaves"
+},
+{
+"id": "torugun_kalulauta_plant",
+"kind": "plant"
+},
+{
+"id": "torugun_sauranum_ore",
+"kind": "ore"
+},
+{
+"id": "torukouthar_osisteth_log",
+"kind": "log"
+},
+{
+"id": "torukouthar_osisteth_leaves",
+"kind": "leaves"
+},
+{
+"id": "torukouthar_vestor_plant",
+"kind": "plant"
+},
+{
+"id": "torukouthar_corelus_ore",
+"kind": "ore"
+},
+{
+"id": "tosistium_thastasha_log",
+"kind": "log"
+},
+{
+"id": "tosistium_thastasha_leaves",
+"kind": "leaves"
+},
+{
+"id": "tosistium_grarnun_plant",
+"kind": "plant"
+},
+{
+"id": "tosistium_tentaum_ore",
+"kind": "ore"
+},
+{
+"id": "ukaraeno_suramarala_log",
+"kind": "log"
+},
+{
+"id": "ukaraeno_suramarala_leaves",
+"kind": "leaves"
+},
+{
+"id": "ukaraeno_vanakaala_plant",
+"kind": "plant"
+},
+{
+"id": "ukaraeno_tiramaoma_ore",
+"kind": "ore"
+},
+{
+"id": "vaurnes_sereostaria_log",
+"kind": "log"
+},
+{
+"id": "vaurnes_sereostaria_leaves",
+"kind": "leaves"
+},
+{
+"id": "vaurnes_lilastium_plant",
+"kind": "plant"
+},
+{
+"id": "vaurnes_celes_ore",
+"kind": "ore"
+},
+{
+"id": "venaemeth_valaunum_log",
+"kind": "log"
+},
+{
+"id": "venaemeth_valaunum_leaves",
+"kind": "leaves"
+},
+{
+"id": "venaemeth_nuemae_plant",
+"kind": "plant"
+},
+{
+"id": "venaemeth_vorallia_ore",
+"kind": "ore"
+},
+{
+"id": "venaremwen_thistasha_log",
+"kind": "log"
+},
+{
+"id": "venaremwen_thistasha_leaves",
+"kind": "leaves"
+},
+{
+"id": "venaremwen_shyusith_plant",
+"kind": "plant"
+},
+{
+"id": "venaremwen_ilyireth_ore",
+"kind": "ore"
+},
+{
+"id": "veneiluana_osusalira_log",
+"kind": "log"
+},
+{
+"id": "veneiluana_osusalira_leaves",
+"kind": "leaves"
+},
+{
+"id": "veneiluana_ilyerlarae_plant",
+"kind": "plant"
+},
+{
+"id": "veneiluana_mileostum_ore",
+"kind": "ore"
+},
+{
+"id": "veneruamora_coriarnium_log",
+"kind": "log"
+},
+{
+"id": "veneruamora_coriarnium_leaves",
+"kind": "leaves"
+},
+{
+"id": "veneruamora_carniallus_plant",
+"kind": "plant"
+},
+{
+"id": "veneruamora_cenaustor_ore",
+"kind": "ore"
+},
+{
+"id": "venileth_venerana_log",
+"kind": "log"
+},
+{
+"id": "venileth_venerana_leaves",
+"kind": "leaves"
+},
+{
+"id": "venileth_tinum_plant",
+"kind": "plant"
+},
+{
+"id": "venileth_kelarurdock_ore",
+"kind": "ore"
+},
+{
+"id": "venilleth_raseontium_log",
+"kind": "log"
+},
+{
+"id": "venilleth_raseontium_leaves",
+"kind": "leaves"
+},
+{
+"id": "venilleth_elioleth_plant",
+"kind": "plant"
+},
+{
+"id": "venilleth_osumaum_ore",
+"kind": "ore"
+},
+{
+"id": "veniolora_valor_log",
+"kind": "log"
+},
+{
+"id": "veniolora_valor_leaves",
+"kind": "leaves"
+},
+{
+"id": "veniolora_corones_plant",
+"kind": "plant"
+},
+{
+"id": "veniolora_teontium_ore",
+"kind": "ore"
+},
+{
+"id": "venuala_gaiktok_log",
+"kind": "log"
+},
+{
+"id": "venuala_gaiktok_leaves",
+"kind": "leaves"
+},
+{
+"id": "venuala_alainnora_plant",
+"kind": "plant"
+},
+{
+"id": "venuala_rastes_ore",
+"kind": "ore"
+},
+{
+"id": "venualys_veneilwen_log",
+"kind": "log"
+},
+{
+"id": "venualys_veneilwen_leaves",
+"kind": "leaves"
+},
+{
+"id": "venualys_alairae_plant",
+"kind": "plant"
+},
+{
+"id": "venualys_amausium_ore",
+"kind": "ore"
+},
+{
+"id": "veontiastes_nistus_log",
+"kind": "log"
+},
+{
+"id": "veontiastes_nistus_leaves",
+"kind": "leaves"
+},
+{
+"id": "veontiastes_ameosiallor_plant",
+"kind": "plant"
+},
+{
+"id": "veontiastes_silanum_ore",
+"kind": "ore"
+},
+{
+"id": "vesathora_surasaneno_log",
+"kind": "log"
+},
+{
+"id": "vesathora_surasaneno_leaves",
+"kind": "leaves"
+},
+{
+"id": "vesathora_vanakarala_plant",
+"kind": "plant"
+},
+{
+"id": "vesathora_druktaizhun_ore",
+"kind": "ore"
+},
+{
+"id": "vesiathith_osestora_log",
+"kind": "log"
+},
+{
+"id": "vesiathith_osestora_leaves",
+"kind": "leaves"
+},
+{
+"id": "vesiathith_iloraala_plant",
+"kind": "plant"
+},
+{
+"id": "vesiathith_zepheishis_ore",
+"kind": "ore"
+},
+{
+"id": "vesizathith_shyustora_log",
+"kind": "log"
+},
+{
+"id": "vesizathith_shyustora_leaves",
+"kind": "leaves"
+},
+{
+"id": "vesizathith_tirnolum_plant",
+"kind": "plant"
+},
+{
+"id": "vesizathith_vesyuzeth_ore",
+"kind": "ore"
+},
+{
+"id": "vesizora_voroktar_log",
+"kind": "log"
+},
+{
+"id": "vesizora_voroktar_leaves",
+"kind": "leaves"
+},
+{
+"id": "vesizora_halenurdeld_plant",
+"kind": "plant"
+},
+{
+"id": "vesizora_liarnium_ore",
+"kind": "ore"
+},
+{
+"id": "vhaikun_teloriasus_log",
+"kind": "log"
+},
+{
+"id": "vhaikun_teloriasus_leaves",
+"kind": "leaves"
+},
+{
+"id": "vhaikun_neornolor_plant",
+"kind": "plant"
+},
+{
+"id": "vhaikun_corastelles_ore",
+"kind": "ore"
+},
+{
+"id": "vhoggaktak_nuerliriel_log",
+"kind": "log"
+},
+{
+"id": "vhoggaktak_nuerliriel_leaves",
+"kind": "leaves"
+},
+{
+"id": "vhoggaktak_tenralnauta_plant",
+"kind": "plant"
+},
+{
+"id": "vhoggaktak_voraigoth_ore",
+"kind": "ore"
+},
+{
+"id": "voraikun_veseisora_log",
+"kind": "log"
+},
+{
+"id": "voraikun_veseisora_leaves",
+"kind": "leaves"
+},
+{
+"id": "voraikun_venium_plant",
+"kind": "plant"
+},
+{
+"id": "voraikun_draggournak_ore",
+"kind": "ore"
+},
+{
+"id": "vorairnok_osutalum_log",
+"kind": "log"
+},
+{
+"id": "vorairnok_osutalum_leaves",
+"kind": "leaves"
+},
+{
+"id": "vorairnok_krugournoth_plant",
+"kind": "plant"
+},
+{
+"id": "vorairnok_khairnak_ore",
+"kind": "ore"
+},
+{
+"id": "xaasseth_zephazora_log",
+"kind": "log"
+},
+{
+"id": "xaasseth_zephazora_leaves",
+"kind": "leaves"
+},
+{
+"id": "xaasseth_thyusasha_plant",
+"kind": "plant"
+},
+{
+"id": "xaasseth_zephethess_ore",
+"kind": "ore"
+},
+{
+"id": "xaatheth_corintares_log",
+"kind": "log"
+},
+{
+"id": "xaatheth_corintares_leaves",
+"kind": "leaves"
+},
+{
+"id": "xaatheth_amintor_plant",
+"kind": "plant"
+},
+{
+"id": "xaatheth_taunorium_ore",
+"kind": "ore"
+},
+{
+"id": "zepheistith_nanum_log",
+"kind": "log"
+},
+{
+"id": "zepheistith_nanum_leaves",
+"kind": "leaves"
+},
+{
+"id": "zepheistith_coriarnelus_plant",
+"kind": "plant"
+},
+{
+"id": "zepheistith_corilia_ore",
+"kind": "ore"
+},
+{
+"id": "zepheivseth_theisith_log",
+"kind": "log"
+},
+{
+"id": "zepheivseth_theisith_leaves",
+"kind": "leaves"
+},
+{
+"id": "zepheivseth_ashiathora_plant",
+"kind": "plant"
+},
+{
+"id": "zepheivseth_zepheizeth_ore",
+"kind": "ore"
+},
+{
+"id": "zephessith_venaenila_log",
+"kind": "log"
+},
+{
+"id": "zephessith_venaenila_leaves",
+"kind": "leaves"
+},
+{
+"id": "zephessith_iseistora_plant",
+"kind": "plant"
+},
+{
+"id": "zephessith_thyussora_ore",
+"kind": "ore"
+},
+{
+"id": "zephivsora_xaesasha_log",
+"kind": "log"
+},
+{
+"id": "zephivsora_xaesasha_leaves",
+"kind": "leaves"
+},
+{
+"id": "zephivsora_thakar_plant",
+"kind": "plant"
+},
+{
+"id": "zephivsora_halostudock_ore",
+"kind": "ore"
+}
+]

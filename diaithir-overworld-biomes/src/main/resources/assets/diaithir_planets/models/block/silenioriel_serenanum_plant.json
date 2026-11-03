@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/cross",
+"textures": {
+"cross": "diaithir_planets:block/silenioriel_serenanum_plant"
+}
+}
