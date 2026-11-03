@@ -1,1 +1,1 @@
-{"id":"diaithir_overworld_biomes:quests/visit_bog","age":1,"task":{"type":"visit_biome","biome":"diaithir_overworld_biomes:bog"},"codex_link":"diaithir_overworld_biomes:bog","reward":{"energy_J":1000},"global_event":"biomes_ready"}
+{"id":"diaithir_overworld_biomes:quests/visit_bog","age":1,"task":{"type":"visit_biome","biome":"biomesoplenty:bog"},"codex_link":"biomesoplenty:bog","reward":{"energy_J":1000},"global_event":"biomes_ready"}
