@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#minecraft:planks",
+ "result": {
+  "id": "diaithirfurnishings:laundry_paddle",
+  "count": 1
+ }
+}

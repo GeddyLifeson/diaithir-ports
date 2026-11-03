@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:flint",
+ "result": {
+  "id": "diaithirfurnishings:scraper",
+  "count": 1
+ }
+}

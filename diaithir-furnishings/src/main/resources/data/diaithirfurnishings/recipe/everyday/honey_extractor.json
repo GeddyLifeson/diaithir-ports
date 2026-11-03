@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:honeycomb",
+ "result": {
+  "id": "diaithirfurnishings:honey_extractor",
+  "count": 1
+ }
+}

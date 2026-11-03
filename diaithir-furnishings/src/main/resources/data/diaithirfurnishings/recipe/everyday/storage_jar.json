@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#minecraft:planks",
+ "result": {
+  "id": "diaithirfurnishings:storage_jar",
+  "count": 1
+ }
+}

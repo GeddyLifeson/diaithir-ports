@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:clay_ball",
+ "result": {
+  "id": "diaithirfurnishings:tumbler",
+  "count": 1
+ }
+}

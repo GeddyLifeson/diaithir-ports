@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#minecraft:planks",
+ "result": {
+  "id": "diaithirfurnishings:fan_hand",
+  "count": 1
+ }
+}

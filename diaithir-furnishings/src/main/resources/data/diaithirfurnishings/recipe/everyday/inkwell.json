@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:paper",
+ "result": {
+  "id": "diaithirfurnishings:inkwell",
+  "count": 1
+ }
+}

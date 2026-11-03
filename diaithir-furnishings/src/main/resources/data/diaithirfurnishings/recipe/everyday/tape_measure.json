@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#c:ingots/iron",
+ "result": {
+  "id": "diaithirfurnishings:tape_measure",
+  "count": 1
+ }
+}

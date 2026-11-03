@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:paper",
+ "result": {
+  "id": "diaithirfurnishings:ink_stick",
+  "count": 1
+ }
+}

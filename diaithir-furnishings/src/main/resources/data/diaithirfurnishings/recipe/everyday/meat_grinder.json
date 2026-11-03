@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#c:ingots/iron",
+ "result": {
+  "id": "diaithirfurnishings:meat_grinder",
+  "count": 1
+ }
+}

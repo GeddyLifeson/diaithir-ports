@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#diaithirfurnishings:metal/bronze",
+ "result": {
+  "id": "diaithirfurnishings:halter",
+  "count": 1
+ }
+}

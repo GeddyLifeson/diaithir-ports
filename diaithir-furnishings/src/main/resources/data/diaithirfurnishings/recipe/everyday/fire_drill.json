@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:flint",
+ "result": {
+  "id": "diaithirfurnishings:fire_drill",
+  "count": 1
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#minecraft:planks",
+ "result": {
+  "id": "diaithirfurnishings:mortar_pestle",
+  "count": 1
+ }
+}

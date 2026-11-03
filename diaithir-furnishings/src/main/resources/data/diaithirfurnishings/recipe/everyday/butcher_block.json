@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#c:ingots/iron",
+ "result": {
+  "id": "diaithirfurnishings:butcher_block",
+  "count": 1
+ }
+}

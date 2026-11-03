@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#c:ingots/iron",
+ "result": {
+  "id": "diaithirfurnishings:slide_rule",
+  "count": 1
+ }
+}

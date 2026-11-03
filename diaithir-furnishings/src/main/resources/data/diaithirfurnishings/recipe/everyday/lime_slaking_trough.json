@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#c:ingots/iron",
+ "result": {
+  "id": "diaithirfurnishings:lime_slaking_trough",
+  "count": 1
+ }
+}

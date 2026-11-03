@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:honeycomb",
+ "result": {
+  "id": "diaithirfurnishings:smoker",
+  "count": 1
+ }
+}

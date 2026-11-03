@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:string",
+ "result": {
+  "id": "diaithirfurnishings:lobster_pot",
+  "count": 1
+ }
+}
