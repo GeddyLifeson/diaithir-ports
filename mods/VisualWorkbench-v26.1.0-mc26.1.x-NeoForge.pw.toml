@@ -1,0 +1,12 @@
+name = "visual-workbench"
+filename = "VisualWorkbench-v26.1.0-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/kfqD1JRw/versions/cIEtLn9n/VisualWorkbench-v26.1.0-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "17e3c6baecb193a32ed33598cb20adbd6177e29c784b35998633c3f0e56bca80"
+
+[update.modrinth]
+mod-id = "kfqD1JRw"
+version = "cIEtLn9n"
