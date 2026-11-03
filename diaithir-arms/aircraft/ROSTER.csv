@@ -1,4 +1,13 @@
 id,name,first_flight_year,category,country,age,source
+kite,"Kite",-400,kite,China,III,https://en.wikipedia.org/wiki/Kite
+kongming_lantern,"Kongming lantern",230,balloon,China,III,https://en.wikipedia.org/wiki/Kongming_lantern
+montgolfier_balloon,"Montgolfier hot-air balloon",1783,balloon,France,IV,https://en.wikipedia.org/wiki/Montgolfière
+charles_hydrogen_balloon,"Charles hydrogen balloon",1783,balloon,France,IV,https://en.wikipedia.org/wiki/Gas_balloon
+giffard_airship,"Giffard steam airship",1852,airship,France,V,https://en.wikipedia.org/wiki/Henri_Giffard
+cayley_glider,"Cayley glider",1853,glider,UK,V,https://en.wikipedia.org/wiki/George_Cayley
+lilienthal_glider,"Lilienthal Normalsegelapparat",1894,glider,Germany,V,https://en.wikipedia.org/wiki/Otto_Lilienthal
+zeppelin_lz1,"Zeppelin LZ 1",1900,airship,Germany,V,https://en.wikipedia.org/wiki/LZ_1
+hindenburg,"LZ 129 Hindenburg",1936,airship,Germany,VI,https://en.wikipedia.org/wiki/LZ_129_Hindenburg
 wright_flyer,"Wright Flyer",1903,pioneer,USA,VI,https://en.wikipedia.org/wiki/Wright_Flyer
 bleriot_xi,"Blériot XI",1909,pioneer,France,VI,https://en.wikipedia.org/wiki/Blériot_XI
 fokker_eindecker,"Fokker E.III Eindecker",1915,fighter,Germany,VI,https://en.wikipedia.org/wiki/Fokker_Eindecker
