@@ -1,0 +1,2 @@
+rootProject.name = 'diaithir-vehicles-crayfish'
+includeBuild('../diaithir-vehicles')

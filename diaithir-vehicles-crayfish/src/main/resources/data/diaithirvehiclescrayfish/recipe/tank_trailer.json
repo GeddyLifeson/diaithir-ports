@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "diaithirvehicles:fuel_tank",
+    "minecraft:minecart",
+    "minecraft:minecart",
+    "diaithirvehiclescrayfish:trailer_hitch"
+  ],
+  "result": {
+    "id": "diaithirvehiclescrayfish:tank_trailer",
+    "count": 1
+  }
+}

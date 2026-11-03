@@ -4,6 +4,7 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.148'
 }
 
+group = 'net.diaithir'
 version = project.mod_version
 base.archivesName = 'diaithir-vehicles-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
