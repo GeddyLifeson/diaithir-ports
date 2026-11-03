@@ -7,8 +7,7 @@
    "age": "I",
    "name": "Forge Age I gear",
    "needs": [
-    "minecraft:flint",
-    "leather"
+    "tool.flint"
    ],
    "makes": [
     "libgear.a1"
@@ -16,7 +15,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a1",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   },
   {
    "id": "combat.gear_a2",
@@ -26,7 +25,7 @@
    "needs": [
     "gate.II",
     "c:ingots/copper",
-    "leather"
+    "libgear.a1"
    ],
    "makes": [
     "libgear.a2"
@@ -34,7 +33,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a2",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   },
   {
    "id": "combat.gear_a3",
@@ -44,7 +43,7 @@
    "needs": [
     "gate.III",
     "c:ingots/bronze",
-    "leather"
+    "libgear.a2"
    ],
    "makes": [
     "libgear.a3"
@@ -52,7 +51,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a3",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   },
   {
    "id": "combat.gear_a4",
@@ -62,7 +61,7 @@
    "needs": [
     "gate.IV",
     "c:ingots/iron",
-    "leather"
+    "libgear.a3"
    ],
    "makes": [
     "libgear.a4"
@@ -70,7 +69,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a4",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   },
   {
    "id": "combat.gear_a5",
@@ -80,7 +79,7 @@
    "needs": [
     "gate.V",
     "c:ingots/steel",
-    "leather"
+    "libgear.a4"
    ],
    "makes": [
     "libgear.a5"
@@ -88,7 +87,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a5",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   },
   {
    "id": "combat.gear_a6",
@@ -98,7 +97,7 @@
    "needs": [
     "gate.VI",
     "c:plates/steel",
-    "leather"
+    "libgear.a5"
    ],
    "makes": [
     "libgear.a6"
@@ -106,7 +105,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a6",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   },
   {
    "id": "combat.gear_a7",
@@ -115,8 +114,8 @@
    "name": "Forge Age VII gear",
    "needs": [
     "gate.VII",
-    "c:ingots/hollowsteel",
-    "leather"
+    "c:ingots/tempered",
+    "libgear.a6"
    ],
    "makes": [
     "libgear.a7"
@@ -124,7 +123,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a7",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   },
   {
    "id": "combat.gear_a8",
@@ -133,8 +132,8 @@
    "name": "Forge Age VIII gear",
    "needs": [
     "gate.VIII",
-    "c:plates/nanoalloy",
-    "leather"
+    "c:ingots/netherite",
+    "libgear.a7"
    ],
    "makes": [
     "libgear.a8"
@@ -142,7 +141,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a8",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   },
   {
    "id": "combat.gear_a9",
@@ -151,8 +150,8 @@
    "name": "Forge Age RODOS gear",
    "needs": [
     "gate.RODOS",
-    "c:ingots/netherite",
-    "leather"
+    "c:ingots/rodos_alloy",
+    "libgear.a8"
    ],
    "makes": [
     "libgear.a9"
@@ -160,7 +159,7 @@
    "module": "diaithir-combat-classes",
    "quest": "q.combat.gear_a9",
    "item": "diaithircombat:lib_sword",
-   "note": "Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
+   "note": "Needs the previous Age gear (libgear). Any lib_<class> recipe of this Age; the stack becomes a real Library entry of that class and Age (forge_age component)."
   }
  ]
 }

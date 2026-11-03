@@ -4,7 +4,7 @@
    "type": "neoforge:not",
    "value": {
     "type": "neoforge:tag_empty",
-    "tag": "c:plates/steel"
+    "tag": "diaithircombat:gear_material/a6"
    }
   }
  ],
@@ -12,11 +12,11 @@
  "type": "minecraft:crafting_shapeless",
  "category": "equipment",
  "ingredients": [
-  "#c:plates/steel",
-  "#c:plates/steel",
-  "#c:plates/steel",
-  "#c:plates/steel",
-  "#c:plates/steel"
+  "#diaithircombat:gear_material/a6",
+  "#diaithircombat:gear_material/a6",
+  "#diaithircombat:gear_material/a6",
+  "#diaithircombat:gear_material/a6",
+  "#diaithircombat:gear_material/a6"
  ],
  "result": {
   "id": "diaithircombat:lib_head",

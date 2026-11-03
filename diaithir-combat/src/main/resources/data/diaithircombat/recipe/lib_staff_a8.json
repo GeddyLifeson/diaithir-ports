@@ -4,7 +4,7 @@
    "type": "neoforge:not",
    "value": {
     "type": "neoforge:tag_empty",
-    "tag": "c:plates/nanoalloy"
+    "tag": "diaithircombat:gear_material/a8"
    }
   }
  ],
@@ -12,7 +12,7 @@
  "type": "minecraft:crafting_shapeless",
  "category": "equipment",
  "ingredients": [
-  "#c:plates/nanoalloy",
+  "#diaithircombat:gear_material/a8",
   "minecraft:stick",
   "minecraft:stick"
  ],

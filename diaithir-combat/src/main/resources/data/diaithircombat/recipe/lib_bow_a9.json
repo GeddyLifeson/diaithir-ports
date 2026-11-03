@@ -4,7 +4,7 @@
    "type": "neoforge:not",
    "value": {
     "type": "neoforge:tag_empty",
-    "tag": "c:ingots/netherite"
+    "tag": "diaithircombat:gear_material/a9"
    }
   }
  ],
@@ -12,7 +12,7 @@
  "type": "minecraft:crafting_shapeless",
  "category": "equipment",
  "ingredients": [
-  "#c:ingots/netherite",
+  "#diaithircombat:gear_material/a9",
   "minecraft:string",
   "minecraft:string",
   "minecraft:stick"

@@ -4,7 +4,7 @@
    "type": "neoforge:not",
    "value": {
     "type": "neoforge:tag_empty",
-    "tag": "c:ingots/hollowsteel"
+    "tag": "diaithircombat:gear_material/a7"
    }
   }
  ],
@@ -12,14 +12,14 @@
  "type": "minecraft:crafting_shapeless",
  "category": "equipment",
  "ingredients": [
-  "#c:ingots/hollowsteel",
-  "#c:ingots/hollowsteel",
-  "#c:ingots/hollowsteel",
-  "#c:ingots/hollowsteel",
-  "#c:ingots/hollowsteel",
-  "#c:ingots/hollowsteel",
-  "#c:ingots/hollowsteel",
-  "#c:ingots/hollowsteel"
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7"
  ],
  "result": {
   "id": "diaithircombat:lib_chest",

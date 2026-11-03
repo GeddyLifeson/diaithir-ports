@@ -4,7 +4,7 @@
    "type": "neoforge:not",
    "value": {
     "type": "neoforge:tag_empty",
-    "tag": "c:ingots/iron"
+    "tag": "diaithircombat:gear_material/a4"
    }
   }
  ],
@@ -12,9 +12,9 @@
  "type": "minecraft:crafting_shapeless",
  "category": "equipment",
  "ingredients": [
-  "#c:ingots/iron",
-  "#c:ingots/iron",
-  "#c:ingots/iron",
+  "#diaithircombat:gear_material/a4",
+  "#diaithircombat:gear_material/a4",
+  "#diaithircombat:gear_material/a4",
   "minecraft:stick"
  ],
  "result": {

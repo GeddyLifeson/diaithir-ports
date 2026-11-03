@@ -4,7 +4,7 @@
    "type": "neoforge:not",
    "value": {
     "type": "neoforge:tag_empty",
-    "tag": "c:ingots/copper"
+    "tag": "diaithircombat:gear_material/a2"
    }
   }
  ],
@@ -12,7 +12,7 @@
  "type": "minecraft:crafting_shapeless",
  "category": "equipment",
  "ingredients": [
-  "#c:ingots/copper",
+  "#diaithircombat:gear_material/a2",
   "minecraft:string",
   "minecraft:string",
   "minecraft:stick"

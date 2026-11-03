@@ -285,6 +285,18 @@ public final class LibraryGear {
                 c.getSource().sendSuccess(() -> Component.literal("[libgear] classes x Ages ok=" + o + " bad=" + b + " of " + LIST.size() + " entries"), false);
                 return b == 0 ? 1 : 0;
             }))
+            .then(Commands.literal("pick").then(Commands.argument("planet", StringArgumentType.word()).executes(c -> {
+                String pl = StringArgumentType.getString(c, "planet");
+                int open = OPENS.getOrDefault(pl, 1), bad = 0, n = 200;
+                java.util.Map<String, Integer> byCls = new java.util.TreeMap<>();
+                for (int i = 0; i < n; i++) {
+                    Row r = pick(pl, "any", List.of(), open, Math.min(9, open + 2), c.getSource().getLevel().getRandom());
+                    if (r == null || !r.planet.equals(pl) || r.gate < open || r.gate > open + 2) bad++; else byCls.merge(r.cls, 1, Integer::sum);
+                }
+                final int b = bad; final String m = byCls.toString();
+                c.getSource().sendSuccess(() -> Component.literal("[libgear] pick " + pl + " opens " + open + " bad=" + b + "/" + n + " " + m), false);
+                return b == 0 ? 1 : 0;
+            })))
             .then(Commands.literal("count").executes(c -> { c.getSource().sendSuccess(() -> Component.literal(LIST.size() + " entries"), false); return LIST.size(); })));
     }
 }

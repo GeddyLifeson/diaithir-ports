@@ -4,7 +4,7 @@
    "type": "neoforge:not",
    "value": {
     "type": "neoforge:tag_empty",
-    "tag": "c:ingots/bronze"
+    "tag": "diaithircombat:gear_material/a3"
    }
   }
  ],
@@ -12,8 +12,8 @@
  "type": "minecraft:crafting_shapeless",
  "category": "equipment",
  "ingredients": [
-  "#c:ingots/bronze",
-  "#c:ingots/bronze"
+  "#diaithircombat:gear_material/a3",
+  "#diaithircombat:gear_material/a3"
  ],
  "result": {
   "id": "diaithircombat:lib_trinket",
