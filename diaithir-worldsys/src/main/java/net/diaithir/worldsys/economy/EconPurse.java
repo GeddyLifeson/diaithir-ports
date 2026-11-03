@@ -11,6 +11,8 @@ public final class EconPurse {
         int count(String item);
         void take(String item, int n);
         void give(String item, int n);
+        /** The mean price factor of the first n bottles of a catalogued drink the holder carries (aged or strong ones fetch more); 1 for anything else. */
+        default double bottleFactor(String item, int n) { return 1; }
     }
 
     public static long own(Holder p, List<EconOffers.Denom> denoms) {

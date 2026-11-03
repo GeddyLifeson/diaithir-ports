@@ -20,6 +20,24 @@ final class MarketCommands {
 
     private interface Act { void go(ServerPlayer p, ServerPlayerHolder h, EconMarket.Ctx ctx, EconClaims.Claim at); }
 
+    /** With the ages engine, only goods a nearby keeper's trade deals in may be bought or sold here. Without it any keeper deals in anything open. */
+    private static java.util.function.Predicate<String> vendorGate(ServerPlayer p, EconQuests.Player h, EconMarket.Ctx ctx) {
+        if (EconWorld.worldAge() == null || ctx.culture() == null || "wilds".equals(ctx.culture())) return id -> true;
+        var vs = EconWorld.vendors(ctx.culture());
+        if (vs.isEmpty()) return id -> true;
+        var kinds = new java.util.ArrayList<EconOffers.Vendor>();
+        for (Villager v : p.level().getEntitiesOfClass(Villager.class, p.getBoundingBox().inflate(24))) {
+            if (!v.isAlive()) continue;
+            var k = EconOffers.vendorFor(v.getVillagerData().profession().unwrapKey().map(r -> r.identifier().getPath()).orElse("none"), vs);
+            if (k != null) kinds.add(k);
+        }
+        return id -> {
+            if (kinds.stream().anyMatch(k -> k.items().contains(id))) return true;
+            h.tell(kinds.isEmpty() ? "No keeper here deals in that." : "No keeper here deals in that. Try " + kinds.stream().map(k -> k.id().replace('_', ' ')).distinct().collect(java.util.stream.Collectors.joining(" or ")) + ".");
+            return false;
+        };
+    }
+
     private static boolean nearKeeper(ServerPlayer p) { return !p.level().getEntitiesOfClass(Villager.class, p.getBoundingBox().inflate(8)).isEmpty(); }
 
     private static int at(CommandContext<CommandSourceStack> c, boolean needKeeper, Act fn) throws CommandSyntaxException {
@@ -66,10 +84,13 @@ final class MarketCommands {
         return true;
     }
 
-    static void buy(EconQuests.Player h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n) {
+    static void buy(EconQuests.Player h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n) { buy(h, ctx, at, id, n, x -> true); }
+
+    static void buy(EconQuests.Player h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n, java.util.function.Predicate<String> allows) {
         EconState st = EconWorld.state();
         String town = town(at);
         if (!open(id, ctx)) { h.tell("No store sells that in this Age."); return; }
+        if (!allows.test(id)) return;
         double have = held(town, id);
         if (have < n) { h.tell("The store has only " + (long) Math.floor(have) + "."); return; }
         long price = EconModel.trade(st.market, EconWorld.REGIONS, EconWorld.data()::good, town, id, n, true, ctx.scale());
@@ -94,14 +115,17 @@ final class MarketCommands {
         h.tell("Bought " + n + " " + h.itemName(id) + " for " + (price + tax) + " " + ctx.unit() + (tax > 0 ? " (tax " + tax + ")" : "") + ".");
     }
 
-    static void sell(EconQuests.Player h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n) {
+    static void sell(EconQuests.Player h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n) { sell(h, ctx, at, id, n, x -> true); }
+
+    static void sell(EconQuests.Player h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n, java.util.function.Predicate<String> allows) {
         EconState st = EconWorld.state();
         String town = town(at);
         if (!open(id, ctx)) { h.tell("No store buys that in this Age."); return; }
+        if (!allows.test(id)) return;
         n = Math.min(n, h.count(id));
         if (n < 1) { h.tell("You have none to sell."); return; }
         long paid = EconModel.trade(st.market, EconWorld.REGIONS, EconWorld.data()::good, town, id, n, false, ctx.scale());
-        paid = Math.max(1, paid);
+        paid = Math.max(1, Math.round(paid * h.bottleFactor(id, n)));
         long tax = (long) Math.floor(paid * (at == null ? 0 : EconPolity.taxRate(null, ctx.culture(), ctx.age(), st)));
         if (paid - tax < 1) { st.market.stock.get(town).merge(id, (double) -n, Double::sum); h.tell("That is not worth a single coin here. Sell more at once."); return; }
         if (!commodityPay(ctx, town, -(paid - tax))) { st.market.stock.get(town).merge(id, (double) -n, Double::sum); h.tell("The keeper has not enough " + ctx.design().name() + " to pay you. Sell for goods, or sell less."); return; }
@@ -120,7 +144,8 @@ final class MarketCommands {
                 String id = StringArgumentType.getString(c, "item");
                 if (!id.contains(":")) id = "minecraft:" + id;
                 int n = IntegerArgumentType.getInteger(c, "count");
-                if (buying) buy(h, ctx, at, id, n); else sell(h, ctx, at, id, n);
+                java.util.function.Predicate<String> ok = vendorGate(p, h, ctx);
+                if (buying) buy(h, ctx, at, id, n, ok); else sell(h, ctx, at, id, n, ok);
             }))));
     }
 
@@ -141,7 +166,7 @@ final class MarketCommands {
             .then(Commands.literal("sellhand").executes(c -> at(c, true, (p, h, ctx, at) -> {
                 var st = p.getMainHandItem();
                 if (st.isEmpty()) { h.tell("Hold what you sell."); return; }
-                sell(h, ctx, at, BuiltInRegistries.ITEM.getKey(st.getItem()).toString(), st.getCount());
+                sell(h, ctx, at, BuiltInRegistries.ITEM.getKey(st.getItem()).toString(), st.getCount(), vendorGate(p, h, ctx));
             })));
     }
 

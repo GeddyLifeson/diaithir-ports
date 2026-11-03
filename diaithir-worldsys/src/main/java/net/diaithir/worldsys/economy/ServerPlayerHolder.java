@@ -53,4 +53,27 @@ final class ServerPlayerHolder implements EconQuests.Player {
     }
 
     public String itemName(String id) { return new ItemStack(item(id)).getHoverName().getString(); }
+
+    public double bottleFactor(String id, int n) {
+        var styles = EconWorld.data().drinks;
+        if (!styles.containsKey(id.substring(id.indexOf(':') + 1))) return 1;
+        try {
+            Item it = item(id);
+            int left = n;
+            double sum = 0;
+            var inv = p.getInventory();
+            for (int i = 0; i < inv.getContainerSize() && left > 0; i++) {
+                ItemStack st = inv.getItem(i);
+                if (st.isEmpty() || !st.is(it)) continue;
+                var cd = st.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
+                var b = EconDrinks.bottleData(cd == null ? "" : cd.copyTag().toString());
+                int take = Math.min(left, st.getCount());
+                sum += take * EconDrinks.factor(styles, id, b.abv(), b.aged());
+                left -= take;
+            }
+            return n - left > 0 ? (sum + left) / n : 1;
+        } catch (RuntimeException e) {
+            return 1;
+        }
+    }
 }
