@@ -46,6 +46,7 @@ public final class IncendiumRegistries {
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
         ENTITIES.register(bus);
+        bus.addListener(IncendiumAttributes::onAttributes);
     }
 
     private IncendiumRegistries() {}

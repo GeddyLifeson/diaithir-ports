@@ -36,7 +36,6 @@ public final class NetherExRegistries {
     public static final DeferredBlock<Block> BRIMSTONE_BLOCK = stone("brimstone_block", MapColor.COLOR_YELLOW, 1.2f);
     public static final DeferredBlock<Block> RUSTWOOD_PLANKS = stone("rustwood_planks", MapColor.COLOR_ORANGE, 2.0f);
     public static final DeferredBlock<Block> RUSTWOOD_LOG = stone("rustwood_log", MapColor.COLOR_BROWN, 2.0f);
-    public static final DeferredBlock<Block> EMBER_ORE = block("ember_ore", () -> BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).strength(3.0f, 3.0f).requiresCorrectToolForDrops().lightLevel(s -> 7));
     public static final DeferredBlock<Block> CINDER_MOSS = block("cinder_moss", () -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(0.3f).sound(SoundType.MOSS));
     public static final DeferredBlock<Block> HEAT_GLASS = block("heat_glass", () -> BlockBehaviour.Properties.of().strength(0.6f).sound(SoundType.GLASS).noOcclusion());
 

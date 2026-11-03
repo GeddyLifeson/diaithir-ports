@@ -19,7 +19,6 @@ import com.mojang.serialization.Codec;
 
 import java.util.function.Supplier;
 
-@Mod(BiomeCompassMod.MOD_ID)
 public final class BiomeCompassMod {
     public static final String MOD_ID = "diaithir_overworld_biomes";
 
@@ -43,13 +42,12 @@ public final class BiomeCompassMod {
             .displayItems((params, out) -> out.accept(BIOME_COMPASS.get()))
             .build());
 
-    public BiomeCompassMod(IEventBus bus) {
+    public static void init(IEventBus bus, net.neoforged.fml.ModContainer c) {
         ITEMS.register(bus);
         COMPONENTS.register(bus);
         TABS.register(bus);
         bus.addListener(RegisterPayloadHandlersEvent.class, CompassNetwork::register);
         bus.addListener(RegisterEvent.class, MigrationTable::onRegister);
-        net.neoforged.fml.ModContainer c = ModLoadingContext.get().getActiveContainer();
         c.registerConfig(ModConfig.Type.SERVER, CompassConfig.SERVER_SPEC);
         c.registerConfig(ModConfig.Type.CLIENT, CompassConfig.CLIENT_SPEC);
         CompassEvents.init();

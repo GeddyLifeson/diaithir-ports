@@ -16,7 +16,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-@Mod(NoMoreCraters.MOD_ID)
 public final class NoMoreCraters {
     public static final String MOD_ID = "diaithir_overworld_biomes";
     public static final Identifier LEGACY_MOD_ID_NOTE = Identifier.fromNamespaceAndPath("nomorecraters", "config");
@@ -29,10 +28,10 @@ public final class NoMoreCraters {
             () -> BlockBehaviour.Properties.of().strength(3.0F, 6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
     public static final DeferredItem<BlockItem> METEOR_TRACE_ITEM = ITEMS.registerSimpleBlockItem("meteor_trace", METEOR_TRACE);
 
-    public NoMoreCraters(IEventBus modBus) {
+    public static void init(IEventBus modBus, net.neoforged.fml.ModContainer container) {
         BLOCKS.register(modBus);
         ITEMS.register(modBus);
-        ModLoadingContext.get().getActiveContainer().registerConfig(ModConfig.Type.COMMON, MeteorConfig.SPEC, "nomorecraters-common.toml");
+        container.registerConfig(ModConfig.Type.COMMON, MeteorConfig.SPEC, "diaithir_overworld_biomes-meteors.toml");
         MeteorEvents.register();
     }
 }

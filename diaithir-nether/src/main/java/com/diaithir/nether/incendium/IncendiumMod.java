@@ -11,10 +11,9 @@ import net.neoforged.neoforge.common.NeoForge;
 public final class IncendiumMod {
     public IncendiumMod(IEventBus modBus, ModContainer container) {
         IncendiumRegistries.register(modBus);
-        modBus.register(IncendiumEvents.class);
-        NeoForge.EVENT_BUS.register(IncendiumEvents.class);
+        com.diaithir.nether.netherex.NetherExModule.init(modBus, container);
+        com.diaithir.nether.nether.NetherContent.register(modBus);
         container.registerConfig(ModConfig.Type.COMMON, IncendiumConfig.SPEC, "diaithir-nether-common.toml");
         boolean codex = ModList.get().isLoaded("diaithir_codex");
-        IncendiumEvents.fireGlobalEventHook("incendium_init" + (codex ? ":codex" : ""), 3);
     }
 }

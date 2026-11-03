@@ -11,7 +11,7 @@ public final class CaveBiomesModule {
     private CaveBiomesModule() {}
 
     public static void init(IEventBus modBus, ModContainer container) {
-        container.registerConfig(ModConfig.Type.COMMON, CaveBiomesConfig.SPEC, "diaithir_overworld_biomes-common.toml");
+        container.registerConfig(ModConfig.Type.COMMON, CaveBiomesConfig.SPEC, "diaithir_overworld_biomes-caves.toml");
         CaveBiomesEvents.register(modBus);
         CaveBiomeContent.register(modBus);
     }

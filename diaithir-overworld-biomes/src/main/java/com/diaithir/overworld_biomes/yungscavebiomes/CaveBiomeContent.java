@@ -1,7 +1,5 @@
 package com.diaithir.overworld_biomes.yungscavebiomes;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -11,7 +9,6 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 public final class CaveBiomeContent {
@@ -37,7 +34,7 @@ public final class CaveBiomeContent {
     private CaveBiomeContent() {}
 
     private static DeferredBlock<Block> block(String name, UnaryOperator<BlockBehaviour.Properties> props) {
-        DeferredBlock<Block> b = BLOCKS.registerBlock(name, Block::new, () -> props.apply(BlockBehaviour.Properties.of()));
+        DeferredBlock<Block> b = BLOCKS.registerBlock(name, Block::new, props);
         ITEMS.registerSimpleBlockItem(b);
         return b;
     }

@@ -1,1 +1,1 @@
-{"type":"neoforge:add_features","neoforge:conditions":[{"type":"diaithir_overworld_biomes:blooming_toggle","key":"vegetation"}],"biomes":["minecraft:plains","minecraft:sunflower_plains","minecraft:meadow"],"features":["diaithir_overworld_biomes:plains_flowers","diaithir_overworld_biomes:plains_tall_grass"],"step":"vegetal_decoration"}
+{"type":"neoforge:add_features","biomes":["minecraft:plains","minecraft:sunflower_plains","minecraft:meadow"],"features":["diaithir_overworld_biomes:plains_flowers","diaithir_overworld_biomes:plains_tall_grass"],"step":"vegetal_decoration"}

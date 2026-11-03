@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="diaithir_nether"
-version="${file.jarVersion}"
+version="1.0.0"
 displayName="Diaithir Nether"
 description='''New Nether biomes, blocks and items with data-driven worldgen.'''
 

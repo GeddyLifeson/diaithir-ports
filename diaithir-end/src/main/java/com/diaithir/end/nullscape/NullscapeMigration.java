@@ -1,31 +1,17 @@
 package com.diaithir.end.nullscape;
 
-import java.util.Map;
-import net.minecraft.resources.Identifier;
-
-public final class NullscapeMigration {
- public static final Map<String, String> LEGACY_ALIASES = Map.ofEntries(
- Map.entry("shattered_plateau", "shattered_plateau"),
- Map.entry("hollow_spires", "hollow_spires"),
- Map.entry("ashen_basin", "ashen_basin"),
- Map.entry("veil_reach", "veil_reach"),
- Map.entry("fractured_ridge", "fractured_ridge"),
- Map.entry("echo_flats", "echo_flats"),
- Map.entry("end", "end_surreal"),
- Map.entry("void_stone", "void_stone"),
- Map.entry("ash_sediment", "ash_sediment"),
- Map.entry("rubble", "rubble"),
- Map.entry("stone_spike", "stone_spike"),
- Map.entry("sediment_patch", "sediment_patch"));
-
- /**
- * Resolves a legacy path to the current identifier, or null if there is no alias.
+/**
+ * Placeholder for Nullscape migration logic.
+ *
+ * This class intentionally has no @SubscribeEvent methods and must NOT be
+ * registered on the event bus (doing so throws IllegalArgumentException at
+ * mod construction). Call its static helpers directly where needed.
  */
- public static Identifier resolve(String legacyPath) {
- String target = LEGACY_ALIASES.get(legacyPath);
- if (target == null) return null;
- return NullscapeConstants.id(target);
- }
+public final class NullscapeMigration {
+    private NullscapeMigration() {
+    }
 
- private NullscapeMigration() {}
+    public static void init() {
+        // no-op: migration hooks are applied through data (upgrade_rules/nullscape.json)
+    }
 }

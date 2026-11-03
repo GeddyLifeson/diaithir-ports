@@ -14,12 +14,10 @@ public final class CaveBiomesConfig {
     public static final ModConfigSpec.BooleanValue PARTICLES;
     public static final ModConfigSpec.IntValue MIN_Y;
     public static final ModConfigSpec.IntValue MAX_Y;
-    public static final Map<String, ModConfigSpec.BooleanValue> ENABLED = new HashMap<>();
 
     static {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
         RARITY = b.defineInRange("biomeRarityMultiplier", 1.0, 0.0, 2.0);
-        for (String n : CaveBiomes.NAMES) ENABLED.put(n, b.define("enable_" + n, true));
         SET_PIECES = b.define("generateSetPieces", true);
         SET_PIECE_FREQ = b.defineInRange("setPieceFrequency", 20, 0, 100);
         AMBIENT_MOBS = b.define("enableAmbientMobs", true);
@@ -32,7 +30,6 @@ public final class CaveBiomesConfig {
     private CaveBiomesConfig() {}
 
     public static boolean enabled(String biome) {
-        ModConfigSpec.BooleanValue v = ENABLED.get(biome);
-        return v != null && v.get();
+        return true;
     }
 }

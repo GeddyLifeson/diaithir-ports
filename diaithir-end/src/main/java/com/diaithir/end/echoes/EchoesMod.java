@@ -44,7 +44,9 @@ public final class EchoesMod {
         }
     }
 
-    public EchoesMod(IEventBus modBus) {
+    public EchoesMod(IEventBus modBus, net.neoforged.fml.ModContainer container) {
+        com.diaithir.end.registry.ModBlocks.register(modBus);
+        com.diaithir.end.nullscape.Nullscape.init(modBus, container);
         NeoForge.EVENT_BUS.register(this);
     }
 
