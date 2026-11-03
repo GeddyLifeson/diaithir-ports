@@ -45,8 +45,8 @@ public final class RouterBlock extends BaseEntityBlock {
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
             InteractionHand hand, BlockHitResult hit) {
-        if (!(level.getBlockEntity(pos) instanceof RouterBlockEntity router)) return InteractionResult.PASS;
-        if (level.isClientSide()) return stack.isEmpty() ? InteractionResult.PASS : InteractionResult.SUCCESS;
+        if (!(level.getBlockEntity(pos) instanceof RouterBlockEntity router)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (level.isClientSide()) return stack.isEmpty() ? InteractionResult.TRY_WITH_EMPTY_HAND : InteractionResult.SUCCESS;
         if (stack.getItem() instanceof ModuleItem m) {
             boolean ok = router.installModule(m.kind(), stack.getOrDefault(RoutingRefs.filterData(), FilterData.EMPTY));
             if (ok && !player.hasInfiniteMaterials()) stack.shrink(1);
@@ -64,7 +64,7 @@ public final class RouterBlock extends BaseEntityBlock {
             player.sendOverlayMessage(Component.literal("Router filter: " + router.filter().describe()));
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.PASS;
+        return InteractionResult.TRY_WITH_EMPTY_HAND;
     }
 
     @Override

@@ -18,11 +18,11 @@
   "item.diaithirrouting.fluid_module": "Fluid Module",
   "item.diaithirrouting.energy_module": "Energy Module",
   "item.diaithirrouting.round_robin_module": "Round Robin Module",
-  "gui.diaithirrouting.match_durability": "Match durability",
-  "gui.diaithirrouting.ignore_data": "Ignore data",
-  "gui.diaithirrouting.blacklist": "Blacklist",
-  "gui.diaithirrouting.match_tag": "Match tag",
+  "gui.diaithirrouting.match_durability": "Dura",
+  "gui.diaithirrouting.ignore_data": "Data",
+  "gui.diaithirrouting.blacklist": "Black",
+  "gui.diaithirrouting.match_tag": "Tag",
   "gui.diaithirrouting.range": "Range: %s blocks",
-  "gui.diaithirrouting.whitelist": "Whitelist",
+  "gui.diaithirrouting.whitelist": "White",
   "container.diaithirrouting.router": "Router"
 }

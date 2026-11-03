@@ -22,7 +22,7 @@ public final class RouterScreen extends AbstractContainerScreen<RouterMenu> {
             final int id = i;
             addRenderableWidget(Button.builder(label(id), b -> {
                 sendButton(id);
-            }).bounds(leftPos + 30 + i * 36, topPos + 44, 34, 14).build());
+            }).bounds(leftPos + 30 + i * 36, topPos + 47, 34, 14).build());
         }
     }
 
@@ -60,6 +60,6 @@ public final class RouterScreen extends AbstractContainerScreen<RouterMenu> {
             g.fill(x, y, x + 18, y + 18, 0xFF373737);
             g.fill(x + 1, y + 1, x + 17, y + 17, 0xFF5E5E5E);
         }
-        g.text(font, Component.translatable("gui.diaithirrouting.range", menu.rangeValue()), leftPos + 30, topPos + 50 - 14, 0xFF202020, false);
+        g.text(font, Component.translatable("gui.diaithirrouting.range", menu.rangeValue()), leftPos + 30, topPos + 37, 0xFF202020, false);
     }
 }
