@@ -1,0 +1,72 @@
+{
+ "type": "the_backwoods:rotting",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "the_backwoods:rotting",
+  "biome_source": {
+   "type": "minecraft:multi_noise",
+   "biomes": [
+    {
+     "biome": "the_backwoods:rotting_deep",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       -0.6
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:splinter_nest",
+     "parameters": {
+      "temperature": [
+       -0.6,
+       -0.2
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    }
+   ]
+  }
+ }
+}

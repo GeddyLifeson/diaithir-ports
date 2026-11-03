@@ -1,0 +1,38 @@
+{
+ "modid": "the_bumblezone",
+ "title": "The Bumblezone",
+ "age": 2,
+ "icon": "the_bumblezone:honey_crystal",
+ "plant_rx": "(crystalline_flower|pollen$)",
+ "dimensions": [
+  {
+   "name": "the_bumblezone",
+   "title": "The Bumblezone",
+   "base": "nether",
+   "default_block": "filled_porous_honeycomb_block",
+   "top_block": "honeycomb_brood_block",
+   "filler_block": "porous_honeycomb_block",
+   "sea_level": 50,
+   "light": "#3b2a0a",
+   "ambient": {
+    "fog": "#f0b030",
+    "sky": "#e8a020",
+    "water": "#e0a040"
+   },
+   "biome_style": {
+    "sugar_water_floor": {
+     "temp": 0.9,
+     "fog": "#f4d070"
+    },
+    "crystal_canyon": {
+     "temp": 0.2,
+     "fog": "#c8e8f0"
+    },
+    "floral_meadow": {
+     "temp": 0.6,
+     "fog": "#f0c850"
+    }
+   }
+  }
+ ]
+}

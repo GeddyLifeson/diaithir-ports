@@ -1,1 +1,12 @@
-{"replace":false,"values":[]}
+{
+ "replace": false,
+ "values": [
+  "#c:ores/ambrosium",
+  "#c:ores/arkenium",
+  "#c:ores/corrobonite",
+  "#c:ores/glint",
+  "#c:ores/gravitite",
+  "#c:ores/quartz",
+  "#c:ores/zanite"
+ ]
+}

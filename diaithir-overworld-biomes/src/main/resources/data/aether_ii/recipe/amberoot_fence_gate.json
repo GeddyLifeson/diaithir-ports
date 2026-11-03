@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "#": "aether_ii:amberoot_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "S#S",
+  "S#S"
+ ],
+ "result": {
+  "id": "aether_ii:amberoot_fence_gate"
+ }
+}

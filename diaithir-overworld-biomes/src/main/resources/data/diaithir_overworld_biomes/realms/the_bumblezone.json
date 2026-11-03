@@ -1,0 +1,573 @@
+{
+ "modid": "the_bumblezone",
+ "blocks": [
+  {
+   "id": "ancient_wax_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ancient_wax_compound_eyes",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ancient_wax_diamond",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "beehive_beeswax",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "carvable_wax",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "crystalline_flower",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "dense_bubble_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "empty_honeycomb_brood_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "essence_block_blue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "essence_block_green",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "essence_block_purple",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "essence_block_red",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "essence_block_white",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "essence_block_yellow",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "filled_porous_honeycomb_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "glistering_honey_crystal",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "heavy_air",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "honey_cocoon",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "honey_crystal",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "honey_fluid_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "honey_web",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "honeycomb_brood_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "infinity_barrier",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_channel",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_channel_blue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_channel_green",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_channel_purple",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_channel_red",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_channel_white",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_channel_yellow",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_corner",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_corner_blue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_corner_green",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_corner_purple",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_corner_red",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_corner_white",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_corner_yellow",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_node",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_node_blue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_node_green",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_node_purple",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_node_red",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_node_white",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "luminescent_wax_node_yellow",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "pile_of_pollen",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "pile_of_pollen_suspicious",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "porous_honeycomb_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "potion_candle_base",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "redstone_honey_web",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "royal_jelly_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "royal_jelly_fluid_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sticky_honey_redstone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sticky_honey_residue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_black",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_blue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_brown",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_cyan",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_gray",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_green",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_light_blue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_light_gray",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_lime",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_magenta",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_orange",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_pink",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_purple",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_red",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_white",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "string_curtain_yellow",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sugar_infused_cobblestone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sugar_infused_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sugar_water_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sugar_water_bubble_column_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_black",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_blue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_brown",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_cyan",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_gray",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_green",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_light_blue",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_light_gray",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_lime",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_magenta",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_orange",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_pink",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_purple",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_red",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_white",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_base_yellow",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_wick",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "super_candle_wick_soul",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "windy_air",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ancient_wax_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "ancient_wax_bricks"
+  },
+  {
+   "id": "ancient_wax_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "ancient_wax_bricks"
+  },
+  {
+   "id": "ancient_wax_compound_eyes_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "ancient_wax_compound_eyes"
+  },
+  {
+   "id": "ancient_wax_compound_eyes_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "ancient_wax_compound_eyes"
+  },
+  {
+   "id": "ancient_wax_diamond_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "ancient_wax_diamond"
+  },
+  {
+   "id": "ancient_wax_diamond_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "ancient_wax_diamond"
+  }
+ ],
+ "items": [
+  "banner_pattern_arrows",
+  "banner_pattern_bee",
+  "banner_pattern_eyes",
+  "banner_pattern_honeycombs",
+  "banner_pattern_peace",
+  "banner_pattern_pluses",
+  "banner_pattern_sun",
+  "banner_pattern_swords",
+  "bee_bread",
+  "bee_cannon",
+  "bee_soup",
+  "bee_stinger",
+  "bumble_bee_chestplate_1",
+  "bumble_bee_chestplate_2",
+  "bumble_bee_chestplate_trans_1",
+  "bumble_bee_chestplate_trans_2",
+  "buzzing_briefcase",
+  "carpenter_bee_boots_1",
+  "carpenter_bee_boots_2",
+  "carvable_wax_bricks",
+  "carvable_wax_chains",
+  "carvable_wax_chiseled",
+  "carvable_wax_diamond",
+  "carvable_wax_flower",
+  "carvable_wax_grate",
+  "carvable_wax_music",
+  "carvable_wax_wavy",
+  "crystal_cannon",
+  "dirt_pellet",
+  "essence_calming",
+  "essence_continuity",
+  "essence_knowing",
+  "essence_life",
+  "essence_of_the_bees",
+  "essence_radiance",
+  "essence_raging",
+  "flower_headwear",
+  "honey_bee_leggings_1",
+  "honey_bee_leggings_2",
+  "honey_compass",
+  "honey_crystal_shards",
+  "pollen_puff",
+  "potion_candle",
+  "royal_jelly_bottle",
+  "stingless_bee_helmet_1",
+  "stingless_bee_helmet_2",
+  "sugar_water_bottle",
+  "super_candle",
+  "super_candle_black",
+  "super_candle_blue",
+  "super_candle_brown",
+  "super_candle_cyan",
+  "super_candle_gray",
+  "super_candle_green",
+  "super_candle_light_blue",
+  "super_candle_light_gray",
+  "super_candle_lime",
+  "super_candle_magenta",
+  "super_candle_orange",
+  "super_candle_pink",
+  "super_candle_purple",
+  "super_candle_red",
+  "super_candle_white",
+  "super_candle_yellow"
+ ],
+ "portals": []
+}
