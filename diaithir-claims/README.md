@@ -10,3 +10,6 @@ Clean-room chunk claims (stands in for FTB Chunks, all rights reserved). MIT. Wr
 
 ## Capitals (MCA Capitals replacement, stage 1)
 Package `net.diaithir.claims.capitals`: `/capital found|list|info|swear|leave|heir|abdicate`. A capital stands on your own claim; one ruler, an optional heir, subjects in the order they swore; when the ruler dies or abdicates the heir (else the first subject) rules. Clean-room from the behaviour of MCA Capitals (GPL-3.0, 1.21.1, 28.8k lines on MCA 7.7.7 internals); no code taken. Later stages: MCA Reborn villagers as subjects, nobles and houses, taxes via Lightman's Currency.
+
+## Taxes (Tale of Kingdoms idea, clean-room)
+`/capital tax set ITEM AMOUNT` (ruler), `/capital pay` (subject, once per real day), `/capital treasury [take]` (ruler). Stacked on the capitals package. Tale of Kingdoms is LGPL-3.0 (Fabric 1.21.1); no code taken. Later: Lightman's Currency coins as the tax item, tax collection by MCA villagers.
