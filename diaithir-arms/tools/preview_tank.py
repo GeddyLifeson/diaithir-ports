@@ -3,6 +3,8 @@
 import math, sys
 from PIL import Image, ImageDraw
 M, OUT = sys.argv[1], sys.argv[2]
+D = sys.argv[3] if len(sys.argv) > 3 else '1'
+SUF = '' if D == '1' else '2'
 A = f'{M}/src/main/resources/assets/diaithirtanks'
 def load(path):
     V, VT, objs, cur = [], [], {}, None
@@ -14,7 +16,7 @@ def load(path):
         elif p[0] == 'vt': VT.append(tuple(map(float, p[1:3])))
         elif p[0] == 'f': cur.append([(V[int(x.split('/')[0]) - 1], VT[int(x.split('/')[1]) - 1]) for x in p[1:]])
     return objs
-tex = Image.open(f'{A}/textures/vehicles/tank_mk1.png').convert('RGB')
+tex = Image.open(f'{A}/textures/vehicles/tank_mk{D}.png').convert('RGB')
 def color(uvs):
     u = sum(a[1][0] for a in uvs) / len(uvs); v = sum(a[1][1] for a in uvs) / len(uvs)
     return tex.getpixel((min(127, int(u * 128)), min(127, int((1 - v) * 128))))
@@ -39,8 +41,8 @@ def draw(models, yaw, pitch, size, scale):
     for _, pts, col in sorted(polys, key=lambda t: -t[0]):
         d.polygon([(p[0], p[1]) for p in pts], fill=col, outline=(20, 20, 20))
     return im
-hull, track, turret = load(f'{A}/objmodels/vehicles/tank_mk1.obj'), load(f'{A}/objmodels/parts/tank_track.obj'), load(f'{A}/objmodels/parts/tank_gun_main.obj')
-mods = [((0, 0, 0), hull), ((-1.35, 0, 0), track), ((1.35, 0, 0), track), ((0, 1.5, -0.3), turret)]
+hull, track, turret = load(f'{A}/objmodels/vehicles/tank_mk{D}.obj'), load(f'{A}/objmodels/parts/tank_track{SUF}.obj'), load(f'{A}/objmodels/parts/tank_gun_main{SUF}.obj')
+mods = [((0, 0, 0), hull), ((-1.35 + 0.1 * (D == '2'), 0, 0), track), ((1.35 - 0.1 * (D == '2'), 0, 0), track), ((0, 1.5 if D == '1' else 1.25, -0.3), turret)]
 views = [(math.radians(35), math.radians(20)), (math.radians(90), math.radians(8)), (math.radians(180), math.radians(25))]
 out = Image.new('RGB', (1500, 500))
 for i, (y, p) in enumerate(views): out.paste(draw(mods, y, p, 500, 52), (i * 500, 0))

@@ -123,6 +123,42 @@ def turret_model():
     o.add('sight', box(-0.55, 0.8, 1.0, -0.2, 1.0, 1.4), R['glass'])
     return o
 
+def hull2_model():
+    o = Obj()
+    o.add('hull', box(-1.15, 0.5, -3.1, 1.15, 1.2, 2.3) + wedge(-1.15, 1.15, 0.5, 1.2, 2.3, 3.3, 0.7), R['camo'])
+    o.add('skirt_l', box(-1.75, 0.45, -2.9, -1.5, 1.0, 2.7), R['metal'])
+    o.add('skirt_r', box(1.5, 0.45, -2.9, 1.75, 1.0, 2.7), R['metal'])
+    o.add('fuel_l', cyl_z(-1.0, 1.35, -3.0, -1.4, 0.18, 8), R['dark'])
+    o.add('fuel_r', cyl_z(1.0, 1.35, -3.0, -1.4, 0.18, 8), R['dark'])
+    o.add('log', cyl_z(0.0, 1.3, -3.2, -1.0, 0.14, 8), R['dark'])
+    o.add('hatch_driver', box(-0.3, 0.9, 1.9, 0.3, 1.1, 2.5), R['dark'])
+    o.add('lamp_l', box(-0.9, 0.85, 3.2, -0.65, 1.0, 3.3), R['glass'])
+    o.add('lamp_r', box(0.65, 0.85, 3.2, 0.9, 1.0, 3.3), R['glass'])
+    return o
+
+def track2_model():
+    o = Obj()
+    o.add('track', box(-0.35, 0.05, -3.2, 0.35, 0.7, 3.2), R['track'])
+    for i in range(6):
+        o.add(f'wheel{i}', cyl_x(0.42, -2.5 + i * 0.95, -0.4, 0.4, 0.34, 8), R['metal'])
+    o.add('sprocket', cyl_x(0.5, 2.9, -0.4, 0.4, 0.36, 8), R['dark'])
+    o.add('idler', cyl_x(0.5, -3.0, -0.4, 0.4, 0.34, 8), R['dark'])
+    return o
+
+def turret2_model():
+    o = Obj()
+    # low cast dome: stacked octagon-ish prisms
+    o.add('turret', box(-0.95, 0.0, -0.9, 0.95, 0.5, 1.0) + box(-0.75, 0.5, -0.7, 0.75, 0.75, 0.8) + wedge(-0.95, 0.95, 0.0, 0.5, 1.0, 1.5, 0.3), R['camo'])
+    o.add('mantlet', box(-0.3, 0.1, 1.45, 0.3, 0.55, 1.7), R['metal'])
+    o.add('barrel', cyl_z(0.0, 0.32, 1.7, 6.4, 0.125, 10), R['dark'])
+    o.add('fume_extractor', cyl_z(0.0, 0.32, 3.9, 4.6, 0.16, 10), R['metal'])
+    o.add('hatch_cdr', box(0.2, 0.75, -0.3, 0.7, 0.88, 0.2), R['dark'])
+    o.add('mg_mount', box(0.3, 0.88, -0.1, 0.4, 1.05, 0.5), R['dark'])
+    o.add('sight', box(-0.5, 0.75, 0.5, -0.2, 0.92, 0.9), R['glass'])
+    o.add('smoke_l', cyl_z(-0.85, 0.35, 0.4, 0.8, 0.08, 6), R['dark'])
+    o.add('smoke_r', cyl_z(0.85, 0.35, 0.4, 0.8, 0.08, 6), R['dark'])
+    return o
+
 def engine_model():
     o = Obj(); o.add('engine', box(-0.5, 0.0, -0.5, 0.5, 0.6, 0.5), R['metal']); return o
 def seat_model():
@@ -143,7 +179,12 @@ camos = {'': ((74, 84, 52), [(56, 66, 40), (96, 88, 56), (46, 52, 38)]), '_deser
 for suf, (base, spots) in camos.items():
     atlas(base, spots, f'{A}/textures/vehicles/tank_mk1{suf}.png')
     atlas(base, spots, f'{A}/textures/parts/tank_track{suf}.png') if False else None
-for n in ('tank_track', 'tank_gun_main', 'tank_engine', 'tank_seat'):
+hull2_model().write(f'{A}/objmodels/vehicles/tank_mk2.obj')
+track2_model().write(f'{A}/objmodels/parts/tank_track2.obj')
+turret2_model().write(f'{A}/objmodels/parts/tank_gun_main2.obj')
+for suf, (base, spots) in camos.items():
+    atlas(base, spots, f'{A}/textures/vehicles/tank_mk2{suf}.png')
+for n in ('tank_track', 'tank_gun_main', 'tank_engine', 'tank_seat', 'tank_track2', 'tank_gun_main2'):
     atlas(camos[''][0], camos[''][1], f'{A}/textures/parts/{n}.png')
 for n in ('tank_shell_ap', 'tank_shell_he'):
     atlas((120, 110, 70), [(150, 140, 90)], f'{A}/textures/bullets/{n}.png')
@@ -165,12 +206,17 @@ w(f'{A}/jsondefs/parts/tank_engine.json', {
 w(f'{A}/jsondefs/parts/tank_seat.json', {
  'general': {'type': 'seat', 'name': 'Tank Crew Seat', 'materialLists': [['minecraft:iron_ingot:0:4']]},
  'definitions': [{'subName': '', 'name': 'Tank Crew Seat', 'extraMaterialLists': [[]]}]})
-w(f'{A}/jsondefs/parts/tank_gun_main.json', {
- 'general': {'type': 'gun_tank', 'name': 'Tank Gun 120 mm', 'materialLists': [['minecraft:iron_block:0:8'], ['minecraft:gunpowder:0:16']]},
- 'gun': {'capacity': 1, 'reloadTime': 80, 'muzzleVelocity': 160, 'fireDelay': 2.0, 'bulletSpreadFactor': 0.0, 'diameter': 120, 'minCaseLength': 100, 'maxCaseLength': 900,
-         'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20, 'yawSpeed': 0.6, 'pitchSpeed': 0.5, 'isSemiAuto': True, 'autoReload': True},
- 'definitions': [{'subName': '', 'name': 'Tank Gun 120 mm', 'extraMaterialLists': [[]]}],
- 'rendering': {'rotatableModelObjects': []}})
+GUNS = {  # id: (name, bore mm, reload ticks, velocity, model, yaw speed, pitch speed)
+ 'tank_gun_105': ('Tank Gun 105 mm', 105, 90, 150, 'tank_gun_main', 0.55, 0.45),
+ 'tank_gun_120': ('Tank Gun 120 mm', 120, 80, 160, 'tank_gun_main', 0.6, 0.5),
+ 'tank_gun_125': ('Tank Gun 125 mm (autoloader)', 125, 60, 165, 'tank_gun_main2', 0.5, 0.45),
+}
+for gid, (nm, bore, rl, vel, model, ys, ps) in GUNS.items():
+    w(f'{A}/jsondefs/parts/{gid}.json', {
+     'general': {'type': 'gun_tank', 'name': nm, 'materialLists': [['minecraft:iron_block:0:8'], ['minecraft:gunpowder:0:16']]},
+     'gun': {'capacity': 1, 'reloadTime': rl, 'muzzleVelocity': vel, 'fireDelay': 2.0, 'bulletSpreadFactor': 0.0, 'diameter': bore, 'minCaseLength': 100, 'maxCaseLength': 900,
+             'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20, 'yawSpeed': ys, 'pitchSpeed': ps, 'isSemiAuto': True, 'autoReload': True},
+     'definitions': [{'subName': '', 'name': nm, 'modelName': model, 'textureName': model, 'extraMaterialLists': [[]]}]})
 for b, desc, dmg, types, extra in (('ap', 'Armour-Piercing Tank Shell', 55.0, ['armor_piercing'], {'armorPenetration': 80.0}),
                                     ('he', 'High-Explosive Tank Shell', 25.0, ['explosive'], {'blastStrength': 4.0, 'blastDamage': 40.0, 'blastRadiusXZ': 6.0, 'blastRadiusY': 4.0, 'maxDamageRadius': 2.5})):
     bl = {'types': types, 'diameter': 120.0, 'damage': dmg, 'caseLength': 600.0, 'quantity': 4, 'maxVelocity': 160, 'despawnTime': 400, 'impactDespawnTime': 1, 'gravitationalVelocity': 0.0}
@@ -178,25 +224,46 @@ for b, desc, dmg, types, extra in (('ap', 'Armour-Piercing Tank Shell', 55.0, ['
     w(f'{A}/jsondefs/bullets/tank_shell_{b}.json', {'general': {'type': 'bullet', 'name': desc, 'materialLists': [['minecraft:gunpowder:0:2', 'minecraft:iron_ingot:0:3']]}, 'bullet': bl,
         'definitions': [{'subName': '', 'name': desc, 'extraMaterialLists': [[]]}]})
 
-PARTS = [
- {'pos': [0, 0.9, -2.2], 'types': ['engine_tank'], 'isPermanent': False, 'defaultPart': f'{PK}:tank_engine'},
- {'pos': [-1.35, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:tank_track'},
- {'pos': [1.35, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:tank_track'},
- {'pos': [0.0, 0.95, 1.9], 'types': ['seat'], 'isController': True, 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
- {'pos': [0.7, 1.2, -0.4], 'types': ['seat'], 'defaultPart': f'{PK}:tank_seat'},
- {'pos': [0.0, 1.5, -0.3], 'types': ['gun_tank'], 'defaultPart': f'{PK}:tank_gun_main', 'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20,
-  'isExterior': False},
+def parts(design, gun, track):
+    seat_z = 1.9 if design == 1 else 1.7
+    return [
+     {'pos': [0, 0.9, -2.2], 'types': ['engine_tank'], 'defaultPart': f'{PK}:tank_engine'},
+     {'pos': [-1.35 if design == 1 else -1.25, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:{track}'},
+     {'pos': [1.35 if design == 1 else 1.25, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:{track}'},
+     {'pos': [0.0, 0.95, seat_z], 'types': ['seat'], 'isController': True, 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
+     {'pos': [0.6, 1.2, -0.4], 'types': ['seat'], 'defaultPart': f'{PK}:tank_seat'},
+     {'pos': [0.0, 1.5 if design == 1 else 1.25, -0.3], 'types': ['gun_tank'], 'defaultPart': f'{PK}:{gun}', 'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20},
+    ]
+# id, design, display, gun, health, mass, Age, description
+VEHICLES = [
+ ('tank_mk1', 1, 'Main Battle Tank Mk I', 'tank_gun_105', 1000, 38000, 'VII', 'Early heavy tracked armour with a 105 mm gun.'),
+ ('tank_mk1a', 1, 'Main Battle Tank Mk IA', 'tank_gun_120', 1200, 42000, 'VII', 'Mk I with the 120 mm gun and a thicker front.'),
+ ('tank_mk1b', 1, 'Main Battle Tank Mk IB', 'tank_gun_120', 1500, 46000, 'RODOS', 'Mk IA with composite side skirts and a stronger engine.'),
+ ('tank_mk2', 2, 'Main Battle Tank Mk II', 'tank_gun_125', 800, 36000, 'VII', 'Low, domed three-crew tank with an autoloaded 125 mm gun.'),
+ ('tank_mk2a', 2, 'Main Battle Tank Mk IIA', 'tank_gun_125', 1000, 40000, 'VII', 'Mk II with added turret armour and smoke launchers.'),
+ ('tank_mk2b', 2, 'Main Battle Tank Mk IIB', 'tank_gun_125', 1300, 44000, 'RODOS', 'Mk IIA with composite armour and a stronger engine.'),
 ]
-w(f'{A}/jsondefs/vehicles/tank_mk1.json', {
- 'general': {'type': 'vehicle', 'name': 'Main Battle Tank Mk I', 'description': 'Original heavy tracked armour for Age VII. Driver in the hull, commander and gunner under the turret.',
-             'materialLists': MAT_VEH, 'health': 1200},
- 'motorized': {'emptyMass': 42000, 'fuelCapacity': 1500, 'defaultFuelQty': 600, 'hasSkidSteer': True, 'hasPermanentSkidSteer': True, 'hasRunningLights': True, 'hasHeadlights': True,
-               'axleRatio': 3.6, 'brakingFactor': 1.2, 'dragCoefficient': 0.9, 'crossSectionalArea': 8.0, 'steeringForceFactor': 1.0, 'overSteer': 0.0, 'underSteer': 0.0,
-               'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0, 'isBigTruck': False},
- 'car': {'isFrontWheelDrive': True, 'isRearWheelDrive': False, 'axleRatio': 3.6, 'dragCoefficient': 0.9},
- 'parts': PARTS,
- 'collision': [{'pos': [0, 1.1, 0.0], 'width': 2.6, 'height': 1.2}, {'pos': [0, 1.0, 2.4], 'width': 2.6, 'height': 1.0}, {'pos': [0, 1.0, -2.4], 'width': 2.6, 'height': 1.0},
-               {'pos': [-1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}, {'pos': [1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}],
- 'definitions': [{'subName': s, 'name': 'Main Battle Tank Mk I' + n, 'extraMaterialLists': [[]]} for s, n in (('', ' (Forest)'), ('_desert', ' (Desert)'), ('_snow', ' (Winter)'))],
- 'rendering': {}})
+CAMO_N = (('', ' (Forest)'), ('_desert', ' (Desert)'), ('_snow', ' (Winter)'))
+for vid, design, nm, gun, hp, mass, age, desc in VEHICLES:
+    mdl = 'tank_mk1' if design == 1 else 'tank_mk2'
+    mat = [['minecraft:iron_ingot:0:%d' % (hp // 12)], ['minecraft:iron_block:0:%d' % (hp // 100)], ['minecraft:redstone:0:16'], ['minecraft:gunpowder:0:8']]
+    w(f'{A}/jsondefs/vehicles/{vid}.json', {
+     'general': {'type': 'vehicle', 'name': nm, 'description': desc, 'materialLists': mat, 'health': hp},
+     'motorized': {'emptyMass': mass, 'fuelCapacity': 1500, 'defaultFuelQty': 600, 'hasSkidSteer': True, 'hasPermanentSkidSteer': True, 'hasRunningLights': True, 'hasHeadlights': True,
+                   'axleRatio': 3.6, 'brakingFactor': 1.2, 'dragCoefficient': 0.9, 'crossSectionalArea': 8.0, 'steeringForceFactor': 1.0, 'overSteer': 0.0, 'underSteer': 0.0,
+                   'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0, 'isBigTruck': False},
+     'car': {'isFrontWheelDrive': True, 'isRearWheelDrive': False, 'axleRatio': 3.6, 'dragCoefficient': 0.9},
+     'parts': parts(design, gun, 'tank_track' if design == 1 else 'tank_track2'),
+     'collision': [{'pos': [0, 1.1, 0.0], 'width': 2.6, 'height': 1.2}, {'pos': [0, 1.0, 2.4], 'width': 2.6, 'height': 1.0}, {'pos': [0, 1.0, -2.4], 'width': 2.6, 'height': 1.0},
+                   {'pos': [-1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}, {'pos': [1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}],
+     'definitions': [{'subName': sfx, 'name': nm + lab, 'modelName': mdl, 'textureName': mdl + sfx, 'extraMaterialLists': [[]]} for sfx, lab in CAMO_N],
+     'rendering': {}})
+w(f'{A}/jsondefs/parts/tank_track2.json', {
+ 'general': {'type': 'ground_tread', 'name': 'Tank Track (narrow)', 'materialLists': [['minecraft:iron_ingot:0:20']]},
+ 'ground': {'isTread': True, 'width': 0.7, 'height': 0.85, 'flatHeight': 0.85, 'climbHeight': 0.85, 'motiveFriction': 1.0, 'lateralFriction': 1.4, 'extraCollisionBoxOffset': 0.0, 'spacing': 6.4, 'canGoFlat': False},
+ 'definitions': [{'subName': '', 'name': 'Tank Track (narrow)', 'extraMaterialLists': [[]]}]})
+import pathlib
+pathlib.Path(f'{A}/jsondefs/parts/tank_gun_main.json').unlink(missing_ok=True)
+w(f'{M}/tank_manifest.json', {'vehicles': [{'id': v[0], 'name': v[2], 'age': v[6], 'desc': v[7], 'camo': [c[0] for c in CAMO_N]} for v in VEHICLES],
+                              'parts': ['tank_track', 'tank_track2', 'tank_engine', 'tank_seat'] + list(GUNS), 'bullets': ['tank_shell_ap', 'tank_shell_he']})
 print('tank pack written', A)

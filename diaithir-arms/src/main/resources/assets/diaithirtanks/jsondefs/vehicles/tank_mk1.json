@@ -2,13 +2,13 @@
  "general": {
   "type": "vehicle",
   "name": "Main Battle Tank Mk I",
-  "description": "Original heavy tracked armour for Age VII. Driver in the hull, commander and gunner under the turret.",
+  "description": "Early heavy tracked armour with a 105 mm gun.",
   "materialLists": [
    [
-    "minecraft:iron_ingot:0:96"
+    "minecraft:iron_ingot:0:83"
    ],
    [
-    "minecraft:iron_block:0:12"
+    "minecraft:iron_block:0:10"
    ],
    [
     "minecraft:redstone:0:16"
@@ -17,10 +17,10 @@
     "minecraft:gunpowder:0:8"
    ]
   ],
-  "health": 1200
+  "health": 1000
  },
  "motorized": {
-  "emptyMass": 42000,
+  "emptyMass": 38000,
   "fuelCapacity": 1500,
   "defaultFuelQty": 600,
   "hasSkidSteer": true,
@@ -55,7 +55,6 @@
    "types": [
     "engine_tank"
    ],
-   "isPermanent": false,
    "defaultPart": "diaithirtanks:tank_engine"
   },
   {
@@ -99,7 +98,7 @@
   },
   {
    "pos": [
-    0.7,
+    0.6,
     1.2,
     -0.4
    ],
@@ -117,12 +116,11 @@
    "types": [
     "gun_tank"
    ],
-   "defaultPart": "diaithirtanks:tank_gun_main",
+   "defaultPart": "diaithirtanks:tank_gun_105",
    "minYaw": -180,
    "maxYaw": 180,
    "minPitch": -8,
-   "maxPitch": 20,
-   "isExterior": false
+   "maxPitch": 20
   }
  ],
  "collision": [
@@ -176,6 +174,8 @@
   {
    "subName": "",
    "name": "Main Battle Tank Mk I (Forest)",
+   "modelName": "tank_mk1",
+   "textureName": "tank_mk1",
    "extraMaterialLists": [
     []
    ]
@@ -183,6 +183,8 @@
   {
    "subName": "_desert",
    "name": "Main Battle Tank Mk I (Desert)",
+   "modelName": "tank_mk1",
+   "textureName": "tank_mk1_desert",
    "extraMaterialLists": [
     []
    ]
@@ -190,6 +192,8 @@
   {
    "subName": "_snow",
    "name": "Main Battle Tank Mk I (Winter)",
+   "modelName": "tank_mk1",
+   "textureName": "tank_mk1_snow",
    "extraMaterialLists": [
     []
    ]

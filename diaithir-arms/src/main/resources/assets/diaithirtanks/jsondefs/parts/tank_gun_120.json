@@ -33,12 +33,11 @@
   {
    "subName": "",
    "name": "Tank Gun 120 mm",
+   "modelName": "tank_gun_main",
+   "textureName": "tank_gun_main",
    "extraMaterialLists": [
     []
    ]
   }
- ],
- "rendering": {
-  "rotatableModelObjects": []
- }
+ ]
 }
