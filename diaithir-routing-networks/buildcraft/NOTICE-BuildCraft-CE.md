@@ -7,4 +7,5 @@ Credit: BuildCraft Community Edition by CurativeTree, ShipovskijKorp, Memesis414
 
 Only the layers needed for 26.1.2 NeoForge are vendored (source-shared, 1.21.X and 26.X families, neoforge platform, 26.1.2 version overlay, build-config, build-logic, builds/26.X, scripts). Forge, Fabric and older-generation layers are omitted.
 
-Art: the upstream textures are NOT cleared for the Diaithir pack. They are listed in TEXTURE_MANIFEST.csv and must be replaced by our own 64 px Industrial Factory textures before this module ships. Mod id and block ids stay as upstream so worlds and recipes keep working; new Foundry content in this module gets the `foundry_` prefix.
+
+Art: 966 textures are replaced by our own 64 px Industrial Factory redraws (same paths, status `own-64px` in TEXTURE_MANIFEST.csv; fluid `.mcmeta` files kept from upstream). Still upstream originals: 51 GUI sheets and guide pages, and the robot entity skins (placeholder redraws are not used). These must be replaced before this module ships. Mod id and block ids stay as upstream; new Foundry content gets the `foundry_` prefix.
