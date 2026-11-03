@@ -4,6 +4,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.server.level.ServerLevel;
@@ -48,13 +49,14 @@ public final class DiaithirCarts {
     public static final DeferredBlock<StationRail> STATION_RAIL = BLOCKS.registerBlock("station_rail", StationRail::new, DiaithirCarts::rail);
 
     public static final DeferredBlock<OneWayRail> ONE_WAY_RAIL = BLOCKS.registerBlock("one_way_rail", OneWayRail::new, DiaithirCarts::rail);
+    public static final DeferredBlock<DestinationRail> DESTINATION_RAIL = BLOCKS.registerBlock("destination_rail", DestinationRail::new, DiaithirCarts::rail);
 
     public static final DeferredBlock<BlockSignal> BLOCK_SIGNAL = BLOCKS.registerBlock("block_signal", BlockSignal::new,
             () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F).sound(SoundType.METAL).lightLevel(s -> s.getValue(BlockSignal.RED) ? 7 : 3));
     public static final DeferredItem<BlockItem> BLOCK_SIGNAL_ITEM = ITEMS.registerSimpleBlockItem(BLOCK_SIGNAL);
 
     public static final List<DeferredBlock<? extends Block>> ALL_RAILS = List.of(BRONZE_RAIL, BRONZE_POWERED_RAIL, STEEL_RAIL, STEEL_POWERED_RAIL, FAST_RAIL,
-            FAST_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL);
+            FAST_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL, DESTINATION_RAIL);
     public static final List<DeferredItem<BlockItem>> RAIL_ITEMS = ALL_RAILS.stream().map(b -> ITEMS.registerSimpleBlockItem(b)).toList();
 
     public static final DeferredItem<Item> COUPLING_CHAIN = ITEMS.registerSimpleItem("coupling_chain");
@@ -64,6 +66,7 @@ public final class DiaithirCarts {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         Coupling.ATTACHMENTS.register(bus);
+        Destination.ATTACHMENTS.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); }
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
@@ -79,13 +82,14 @@ public final class DiaithirCarts {
             if (e.getEntity() instanceof AbstractMinecart cart && cart.level() instanceof ServerLevel level && cart.getRemovalReason() != null
                     && cart.getRemovalReason().shouldDestroy()) Coupling.onRemoved(level, cart);
         });
-        NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); });
+        NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); DestinationTest.tick(e.getServer()); });
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, DiaithirCarts::interact);
     }
 
     private static void interact(PlayerInteractEvent.EntityInteract e) {
         if (!(e.getTarget() instanceof AbstractMinecart cart)) return;
         ItemStack held = e.getItemStack();
+        if (label(e, cart, held)) return;
         boolean chain = held.is(COUPLING_CHAIN.get());
         boolean cutters = held.is(CHAIN_CUTTERS.get()) && e.getEntity().isShiftKeyDown();
         if (!chain && !cutters) return;
@@ -100,5 +104,26 @@ public final class DiaithirCarts {
         } else {
             e.getEntity().sendOverlayMessage(Component.literal("This cart is not coupled."));
         }
+    }
+
+    /** Cart labelling: a dye on a cart sets its destination (uses one dye); an empty hand while sneaking clears it. */
+    private static boolean label(PlayerInteractEvent.EntityInteract e, AbstractMinecart cart, ItemStack held) {
+        DyeColor dye = DyeColor.getColor(held);
+        boolean clear = held.isEmpty() && e.getEntity().isShiftKeyDown() && Destination.labelOf(cart) != 0;
+        if (dye == null && !clear) return false;
+        e.setCancellationResult(InteractionResult.SUCCESS);
+        e.setCanceled(true);
+        if (!(e.getLevel() instanceof ServerLevel)) return true;
+        if (clear) {
+            Destination.setLabel(cart, 0);
+            e.getEntity().sendOverlayMessage(Component.literal("Destination label removed."));
+        } else if (Destination.labelOf(cart) == dye.getId() + 1) {
+            e.getEntity().sendOverlayMessage(Component.literal("This cart already goes to " + Destination.describe(dye.getId() + 1) + "."));
+        } else {
+            Destination.setLabel(cart, dye.getId() + 1);
+            if (!e.getEntity().isCreative()) held.shrink(1);
+            e.getEntity().sendOverlayMessage(Component.literal("Destination: " + Destination.describe(dye.getId() + 1)));
+        }
+        return true;
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "diaithircarts:block/destination_rail_15"
+  }
+}

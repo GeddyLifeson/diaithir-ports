@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "diaithircarts:steel_rail",
+    "minecraft:redstone",
+    "minecraft:lapis_lazuli"
+  ],
+  "result": {
+    "id": "diaithircarts:destination_rail",
+    "count": 1
+  },
+  "category": "misc"
+}

@@ -101,6 +101,25 @@ for y in range(9, 13):
         px[x, y] = (245, 245, 245, 255)
 save(im, "textures/block/one_way_rail.png")
 
+# destination rail: steel rails with a hazard-free coloured bar across the middle; 17 channels (0 = any, 1..16 = dye colours), lit and unlit
+DYES = [(249, 255, 254), (249, 128, 29), (199, 78, 189), (58, 179, 218), (254, 216, 61), (128, 199, 31), (243, 139, 170), (71, 79, 82),
+        (157, 157, 151), (22, 156, 156), (137, 50, 184), (60, 68, 170), (131, 84, 50), (94, 124, 22), (176, 46, 38), (29, 29, 33)]
+for ch in range(17):
+    for on in (False, True):
+        im = rail_image(PAL["steel"], False, None)
+        px = im.load()
+        col = (150, 156, 164) if ch == 0 else DYES[ch - 1]
+        if on:
+            col = tuple(min(255, int(c * 1.0 + 40)) for c in col)
+        for y in range(6, 10):
+            for x in range(2, 14):
+                edge = y in (6, 9) or x in (2, 13)
+                px[x, y] = (tuple(int(c * 0.55) for c in col) if edge and not on else (255, 255, 255) if edge else col) + (255,)
+        if ch == 0:
+            for x in range(5, 11):
+                px[x, 7] = px[x, 8] = (60, 64, 70, 255)
+        save(im, f"textures/block/destination_rail_{ch}{'_on' if on else ''}.png")
+
 # items: a chain of oval links on a diagonal, and cutters (red handles, steel jaws)
 chain = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
 cp = chain.load()
@@ -201,6 +220,20 @@ powered("station_rail", "station_rail", "station_rail_on")
 block_model("one_way_rail", FLAT, "one_way_rail")
 wj("blockstates/one_way_rail.json", {"variants": {f"facing={f}": v("one_way_rail", y) for f, y in (("north", 0), ("east", 90), ("south", 180), ("west", 270))}})
 item_def("one_way_rail", None, "block/one_way_rail")
+var = {}
+for ch in range(17):
+    for on in (False, True):
+        tex = f"destination_rail_{ch}{'_on' if on else ''}"
+        block_model(tex, FLAT, tex)
+        block_model(tex + "_raised_ne", NE, tex)
+        block_model(tex + "_raised_sw", SW, tex)
+        p = f"channel={ch},powered=" + ("true" if on else "false")
+        var[f"{p},shape=north_south"] = v(tex)
+        var[f"{p},shape=east_west"] = v(tex, 90)
+        for sh, (k, y) in SLOPES.items():
+            var[f"{p},shape={sh}"] = v(f"{tex}_raised_{k}", y)
+wj("blockstates/destination_rail.json", {"variants": var})
+item_def("destination_rail", None, "block/destination_rail_0")
 item_def("coupling_chain", None, "item/coupling_chain")
 item_def("chain_cutters", None, "item/chain_cutters")
 
@@ -213,6 +246,7 @@ NAMES = {
     "fast_powered_rail": ("Zephravoss", "High-speed powered rail. The strongest boost, caps at 1.2 blocks per tick. Age VI."),
     "station_rail": ("Haldurmek", "Station rail. Stops a cart that rolls onto it and holds it until the rail is powered, or until its timer ends. Use it bare-handed to cycle the timer: signal only, 2, 5, 15 or 60 seconds. A coupled follower follows its leader instead. Age V."),
     "one_way_rail": ("Eskavorn", "One-way rail. A steel-speed rail with an arrow, set to the way you face when you place it. A cart rolling against the arrow is stopped dead; carts going with it pass as on any rail. Place it straight, on a flat run. Age V."),
+    "destination_rail": ("Tarvelmok", "Destination rail. A steel-speed detector rail with a coloured bar. Label a cart by using a dye on it (sneak with an empty hand to wipe the label); use a dye on the rail to choose which label it reads, an empty hand to make it read every cart. It gives a redstone signal only while a cart with a matching label is on it, so a row of them sorts a mixed line: wire each to a powered rail or junction. Age V."),
     "coupling_chain": ("Quelvarith", "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."),
     "chain_cutters": ("Snithrekel", "Chain cutters. Sneak and use on a cart to cut its link and get the chain back. Age V."),
 }
@@ -227,7 +261,7 @@ with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as 
 
 with open(os.path.join(D, "age_gate.json"), "w") as f:
     json.dump({"tier1": {"age": 3, "items": [f"{NS}:bronze_rail", f"{NS}:bronze_powered_rail"]},
-               "tier2": {"age": 5, "items": [f"{NS}:steel_rail", f"{NS}:steel_powered_rail", f"{NS}:station_rail", f"{NS}:one_way_rail", f"{NS}:coupling_chain", f"{NS}:chain_cutters"]},
+               "tier2": {"age": 5, "items": [f"{NS}:steel_rail", f"{NS}:steel_powered_rail", f"{NS}:station_rail", f"{NS}:one_way_rail", f"{NS}:destination_rail", f"{NS}:coupling_chain", f"{NS}:chain_cutters"]},
                "tier3": {"age": 6, "items": [f"{NS}:fast_rail", f"{NS}:fast_powered_rail"]}}, f, indent=2)
     f.write("\n")
 
@@ -257,6 +291,7 @@ for t in PAL:
     shaped(f"{t}_powered_rail", ["G G", "GTG", " R "], {"G": "minecraft:gold_ingot", "T": f"{NS}:{t}_rail", "R": "minecraft:redstone"}, 2)
 recipe("station_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_powered_rail", "minecraft:clock"]})
 recipe("one_way_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_rail", "minecraft:iron_ingot"]})
+recipe("destination_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_rail", "minecraft:redstone", "minecraft:lapis_lazuli"]})
 shaped("coupling_chain", [" N ", "NIN", " N "], {"N": "minecraft:iron_nugget", "I": "minecraft:iron_ingot"}, 2)
 shaped("chain_cutters", ["I I", " S ", "C C"], {"I": "minecraft:iron_ingot", "S": "minecraft:stick", "C": "minecraft:copper_ingot"})
 print("ok")

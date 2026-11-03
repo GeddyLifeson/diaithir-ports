@@ -7,6 +7,7 @@
   "block.diaithircarts.fast_powered_rail": "Zephravoss",
   "block.diaithircarts.station_rail": "Haldurmek",
   "block.diaithircarts.one_way_rail": "Eskavorn",
+  "block.diaithircarts.destination_rail": "Tarvelmok",
   "item.diaithircarts.coupling_chain": "Quelvarith",
   "item.diaithircarts.chain_cutters": "Snithrekel"
 }

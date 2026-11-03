@@ -40,6 +40,11 @@
   "text": "One-way rail. A steel-speed rail with an arrow, set to the way you face when you place it. A cart rolling against the arrow is stopped dead; carts going with it pass as on any rail. Place it straight, on a flat run. Age V."
  },
  {
+  "id": "diaithircarts:destination_rail",
+  "name": "Tarvelmok",
+  "text": "Destination rail. A steel-speed detector rail with a coloured bar. Label a cart by using a dye on it (sneak with an empty hand to wipe the label); use a dye on the rail to choose which label it reads, an empty hand to make it read every cart. It gives a redstone signal only while a cart with a matching label is on it, so a row of them sorts a mixed line: wire each to a powered rail or junction. Age V."
+ },
+ {
   "id": "diaithircarts:coupling_chain",
   "name": "Quelvarith",
   "text": "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."

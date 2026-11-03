@@ -1,0 +1,718 @@
+{
+  "variants": {
+    "channel=0,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_0"
+    },
+    "channel=0,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_0",
+      "y": 90
+    },
+    "channel=0,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_0_raised_ne",
+      "y": 90
+    },
+    "channel=0,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_0_raised_ne"
+    },
+    "channel=0,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_0_raised_sw"
+    },
+    "channel=0,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_0_raised_sw",
+      "y": 90
+    },
+    "channel=0,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_0_on"
+    },
+    "channel=0,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_0_on",
+      "y": 90
+    },
+    "channel=0,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_0_on_raised_ne",
+      "y": 90
+    },
+    "channel=0,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_0_on_raised_ne"
+    },
+    "channel=0,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_0_on_raised_sw"
+    },
+    "channel=0,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_0_on_raised_sw",
+      "y": 90
+    },
+    "channel=1,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_1"
+    },
+    "channel=1,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_1",
+      "y": 90
+    },
+    "channel=1,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_1_raised_ne",
+      "y": 90
+    },
+    "channel=1,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_1_raised_ne"
+    },
+    "channel=1,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_1_raised_sw"
+    },
+    "channel=1,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_1_raised_sw",
+      "y": 90
+    },
+    "channel=1,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_1_on"
+    },
+    "channel=1,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_1_on",
+      "y": 90
+    },
+    "channel=1,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_1_on_raised_ne",
+      "y": 90
+    },
+    "channel=1,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_1_on_raised_ne"
+    },
+    "channel=1,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_1_on_raised_sw"
+    },
+    "channel=1,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_1_on_raised_sw",
+      "y": 90
+    },
+    "channel=2,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_2"
+    },
+    "channel=2,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_2",
+      "y": 90
+    },
+    "channel=2,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_2_raised_ne",
+      "y": 90
+    },
+    "channel=2,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_2_raised_ne"
+    },
+    "channel=2,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_2_raised_sw"
+    },
+    "channel=2,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_2_raised_sw",
+      "y": 90
+    },
+    "channel=2,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_2_on"
+    },
+    "channel=2,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_2_on",
+      "y": 90
+    },
+    "channel=2,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_2_on_raised_ne",
+      "y": 90
+    },
+    "channel=2,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_2_on_raised_ne"
+    },
+    "channel=2,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_2_on_raised_sw"
+    },
+    "channel=2,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_2_on_raised_sw",
+      "y": 90
+    },
+    "channel=3,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_3"
+    },
+    "channel=3,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_3",
+      "y": 90
+    },
+    "channel=3,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_3_raised_ne",
+      "y": 90
+    },
+    "channel=3,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_3_raised_ne"
+    },
+    "channel=3,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_3_raised_sw"
+    },
+    "channel=3,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_3_raised_sw",
+      "y": 90
+    },
+    "channel=3,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_3_on"
+    },
+    "channel=3,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_3_on",
+      "y": 90
+    },
+    "channel=3,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_3_on_raised_ne",
+      "y": 90
+    },
+    "channel=3,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_3_on_raised_ne"
+    },
+    "channel=3,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_3_on_raised_sw"
+    },
+    "channel=3,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_3_on_raised_sw",
+      "y": 90
+    },
+    "channel=4,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_4"
+    },
+    "channel=4,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_4",
+      "y": 90
+    },
+    "channel=4,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_4_raised_ne",
+      "y": 90
+    },
+    "channel=4,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_4_raised_ne"
+    },
+    "channel=4,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_4_raised_sw"
+    },
+    "channel=4,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_4_raised_sw",
+      "y": 90
+    },
+    "channel=4,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_4_on"
+    },
+    "channel=4,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_4_on",
+      "y": 90
+    },
+    "channel=4,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_4_on_raised_ne",
+      "y": 90
+    },
+    "channel=4,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_4_on_raised_ne"
+    },
+    "channel=4,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_4_on_raised_sw"
+    },
+    "channel=4,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_4_on_raised_sw",
+      "y": 90
+    },
+    "channel=5,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_5"
+    },
+    "channel=5,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_5",
+      "y": 90
+    },
+    "channel=5,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_5_raised_ne",
+      "y": 90
+    },
+    "channel=5,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_5_raised_ne"
+    },
+    "channel=5,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_5_raised_sw"
+    },
+    "channel=5,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_5_raised_sw",
+      "y": 90
+    },
+    "channel=5,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_5_on"
+    },
+    "channel=5,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_5_on",
+      "y": 90
+    },
+    "channel=5,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_5_on_raised_ne",
+      "y": 90
+    },
+    "channel=5,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_5_on_raised_ne"
+    },
+    "channel=5,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_5_on_raised_sw"
+    },
+    "channel=5,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_5_on_raised_sw",
+      "y": 90
+    },
+    "channel=6,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_6"
+    },
+    "channel=6,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_6",
+      "y": 90
+    },
+    "channel=6,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_6_raised_ne",
+      "y": 90
+    },
+    "channel=6,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_6_raised_ne"
+    },
+    "channel=6,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_6_raised_sw"
+    },
+    "channel=6,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_6_raised_sw",
+      "y": 90
+    },
+    "channel=6,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_6_on"
+    },
+    "channel=6,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_6_on",
+      "y": 90
+    },
+    "channel=6,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_6_on_raised_ne",
+      "y": 90
+    },
+    "channel=6,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_6_on_raised_ne"
+    },
+    "channel=6,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_6_on_raised_sw"
+    },
+    "channel=6,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_6_on_raised_sw",
+      "y": 90
+    },
+    "channel=7,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_7"
+    },
+    "channel=7,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_7",
+      "y": 90
+    },
+    "channel=7,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_7_raised_ne",
+      "y": 90
+    },
+    "channel=7,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_7_raised_ne"
+    },
+    "channel=7,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_7_raised_sw"
+    },
+    "channel=7,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_7_raised_sw",
+      "y": 90
+    },
+    "channel=7,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_7_on"
+    },
+    "channel=7,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_7_on",
+      "y": 90
+    },
+    "channel=7,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_7_on_raised_ne",
+      "y": 90
+    },
+    "channel=7,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_7_on_raised_ne"
+    },
+    "channel=7,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_7_on_raised_sw"
+    },
+    "channel=7,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_7_on_raised_sw",
+      "y": 90
+    },
+    "channel=8,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_8"
+    },
+    "channel=8,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_8",
+      "y": 90
+    },
+    "channel=8,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_8_raised_ne",
+      "y": 90
+    },
+    "channel=8,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_8_raised_ne"
+    },
+    "channel=8,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_8_raised_sw"
+    },
+    "channel=8,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_8_raised_sw",
+      "y": 90
+    },
+    "channel=8,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_8_on"
+    },
+    "channel=8,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_8_on",
+      "y": 90
+    },
+    "channel=8,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_8_on_raised_ne",
+      "y": 90
+    },
+    "channel=8,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_8_on_raised_ne"
+    },
+    "channel=8,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_8_on_raised_sw"
+    },
+    "channel=8,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_8_on_raised_sw",
+      "y": 90
+    },
+    "channel=9,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_9"
+    },
+    "channel=9,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_9",
+      "y": 90
+    },
+    "channel=9,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_9_raised_ne",
+      "y": 90
+    },
+    "channel=9,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_9_raised_ne"
+    },
+    "channel=9,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_9_raised_sw"
+    },
+    "channel=9,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_9_raised_sw",
+      "y": 90
+    },
+    "channel=9,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_9_on"
+    },
+    "channel=9,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_9_on",
+      "y": 90
+    },
+    "channel=9,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_9_on_raised_ne",
+      "y": 90
+    },
+    "channel=9,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_9_on_raised_ne"
+    },
+    "channel=9,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_9_on_raised_sw"
+    },
+    "channel=9,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_9_on_raised_sw",
+      "y": 90
+    },
+    "channel=10,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_10"
+    },
+    "channel=10,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_10",
+      "y": 90
+    },
+    "channel=10,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_10_raised_ne",
+      "y": 90
+    },
+    "channel=10,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_10_raised_ne"
+    },
+    "channel=10,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_10_raised_sw"
+    },
+    "channel=10,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_10_raised_sw",
+      "y": 90
+    },
+    "channel=10,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_10_on"
+    },
+    "channel=10,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_10_on",
+      "y": 90
+    },
+    "channel=10,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_10_on_raised_ne",
+      "y": 90
+    },
+    "channel=10,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_10_on_raised_ne"
+    },
+    "channel=10,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_10_on_raised_sw"
+    },
+    "channel=10,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_10_on_raised_sw",
+      "y": 90
+    },
+    "channel=11,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_11"
+    },
+    "channel=11,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_11",
+      "y": 90
+    },
+    "channel=11,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_11_raised_ne",
+      "y": 90
+    },
+    "channel=11,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_11_raised_ne"
+    },
+    "channel=11,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_11_raised_sw"
+    },
+    "channel=11,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_11_raised_sw",
+      "y": 90
+    },
+    "channel=11,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_11_on"
+    },
+    "channel=11,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_11_on",
+      "y": 90
+    },
+    "channel=11,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_11_on_raised_ne",
+      "y": 90
+    },
+    "channel=11,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_11_on_raised_ne"
+    },
+    "channel=11,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_11_on_raised_sw"
+    },
+    "channel=11,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_11_on_raised_sw",
+      "y": 90
+    },
+    "channel=12,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_12"
+    },
+    "channel=12,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_12",
+      "y": 90
+    },
+    "channel=12,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_12_raised_ne",
+      "y": 90
+    },
+    "channel=12,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_12_raised_ne"
+    },
+    "channel=12,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_12_raised_sw"
+    },
+    "channel=12,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_12_raised_sw",
+      "y": 90
+    },
+    "channel=12,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_12_on"
+    },
+    "channel=12,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_12_on",
+      "y": 90
+    },
+    "channel=12,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_12_on_raised_ne",
+      "y": 90
+    },
+    "channel=12,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_12_on_raised_ne"
+    },
+    "channel=12,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_12_on_raised_sw"
+    },
+    "channel=12,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_12_on_raised_sw",
+      "y": 90
+    },
+    "channel=13,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_13"
+    },
+    "channel=13,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_13",
+      "y": 90
+    },
+    "channel=13,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_13_raised_ne",
+      "y": 90
+    },
+    "channel=13,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_13_raised_ne"
+    },
+    "channel=13,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_13_raised_sw"
+    },
+    "channel=13,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_13_raised_sw",
+      "y": 90
+    },
+    "channel=13,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_13_on"
+    },
+    "channel=13,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_13_on",
+      "y": 90
+    },
+    "channel=13,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_13_on_raised_ne",
+      "y": 90
+    },
+    "channel=13,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_13_on_raised_ne"
+    },
+    "channel=13,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_13_on_raised_sw"
+    },
+    "channel=13,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_13_on_raised_sw",
+      "y": 90
+    },
+    "channel=14,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_14"
+    },
+    "channel=14,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_14",
+      "y": 90
+    },
+    "channel=14,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_14_raised_ne",
+      "y": 90
+    },
+    "channel=14,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_14_raised_ne"
+    },
+    "channel=14,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_14_raised_sw"
+    },
+    "channel=14,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_14_raised_sw",
+      "y": 90
+    },
+    "channel=14,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_14_on"
+    },
+    "channel=14,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_14_on",
+      "y": 90
+    },
+    "channel=14,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_14_on_raised_ne",
+      "y": 90
+    },
+    "channel=14,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_14_on_raised_ne"
+    },
+    "channel=14,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_14_on_raised_sw"
+    },
+    "channel=14,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_14_on_raised_sw",
+      "y": 90
+    },
+    "channel=15,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_15"
+    },
+    "channel=15,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_15",
+      "y": 90
+    },
+    "channel=15,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_15_raised_ne",
+      "y": 90
+    },
+    "channel=15,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_15_raised_ne"
+    },
+    "channel=15,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_15_raised_sw"
+    },
+    "channel=15,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_15_raised_sw",
+      "y": 90
+    },
+    "channel=15,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_15_on"
+    },
+    "channel=15,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_15_on",
+      "y": 90
+    },
+    "channel=15,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_15_on_raised_ne",
+      "y": 90
+    },
+    "channel=15,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_15_on_raised_ne"
+    },
+    "channel=15,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_15_on_raised_sw"
+    },
+    "channel=15,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_15_on_raised_sw",
+      "y": 90
+    },
+    "channel=16,powered=false,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_16"
+    },
+    "channel=16,powered=false,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_16",
+      "y": 90
+    },
+    "channel=16,powered=false,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_16_raised_ne",
+      "y": 90
+    },
+    "channel=16,powered=false,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_16_raised_ne"
+    },
+    "channel=16,powered=false,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_16_raised_sw"
+    },
+    "channel=16,powered=false,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_16_raised_sw",
+      "y": 90
+    },
+    "channel=16,powered=true,shape=north_south": {
+      "model": "diaithircarts:block/destination_rail_16_on"
+    },
+    "channel=16,powered=true,shape=east_west": {
+      "model": "diaithircarts:block/destination_rail_16_on",
+      "y": 90
+    },
+    "channel=16,powered=true,shape=ascending_east": {
+      "model": "diaithircarts:block/destination_rail_16_on_raised_ne",
+      "y": 90
+    },
+    "channel=16,powered=true,shape=ascending_north": {
+      "model": "diaithircarts:block/destination_rail_16_on_raised_ne"
+    },
+    "channel=16,powered=true,shape=ascending_south": {
+      "model": "diaithircarts:block/destination_rail_16_on_raised_sw"
+    },
+    "channel=16,powered=true,shape=ascending_west": {
+      "model": "diaithircarts:block/destination_rail_16_on_raised_sw",
+      "y": 90
+    }
+  }
+}

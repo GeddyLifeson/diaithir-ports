@@ -16,6 +16,11 @@ final class CartCommands {
                     c.getSource().sendSuccess(() -> Component.literal(err == null ? "Signal test started (about 4 seconds)" : "Signal test not started: " + err), false);
                     return err == null ? 1 : 0;
                 }))
+                .then(Commands.literal("desttest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+                    String err = DestinationTest.start(c.getSource());
+                    c.getSource().sendSuccess(() -> Component.literal(err == null ? "Destination test started (about 7 seconds)" : "Destination test not started: " + err), false);
+                    return err == null ? 1 : 0;
+                }))
                 .then(Commands.literal("selftest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
                     String err = CartSelfTest.start(c.getSource());
                     c.getSource().sendSuccess(() -> Component.literal(err == null ? "Carts self test started (about 10 seconds)" : "Carts self test not started: " + err), false);
