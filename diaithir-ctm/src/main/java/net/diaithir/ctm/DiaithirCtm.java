@@ -1,47 +1,42 @@
 package net.diaithir.ctm;
 
-import java.util.HashMap;
-import java.util.Map;
-import net.minecraft.client.renderer.block.dispatch.BlockStateModel;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.tags.TagKey;
 import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
-import net.neoforged.neoforge.client.event.ModelEvent;
-import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
-@Mod(value = DiaithirCtm.ID, dist = Dist.CLIENT)
+@Mod(DiaithirCtm.ID)
 public final class DiaithirCtm {
     public static final String ID = "diaithirctm";
     public static final TagKey<Block> CONNECT = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ID, "connect"));
 
-    private static final ModConfigSpec.Builder B = new ModConfigSpec.Builder();
-    public static final ModConfigSpec.BooleanValue ENABLED = B.comment("Draw connected textures for blocks in the diaithirctm:connect tag. Off until checked in a client.").define("enabled", false);
-    private static final ModConfigSpec SPEC = B.build();
+    private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
+    private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
+
+    public static final DeferredBlock<Block> GLASS = BLOCKS.registerBlock("connected_glass", Block::new,
+        () -> BlockBehaviour.Properties.of().mapColor(MapColor.NONE).sound(SoundType.GLASS).strength(0.3F).noOcclusion().isValidSpawn((s, l, p, t) -> false)
+            .isRedstoneConductor((s, l, p) -> false).isSuffocating((s, l, p) -> false).isViewBlocking((s, l, p) -> false));
+    public static final DeferredBlock<Block> PLATING = BLOCKS.registerBlock("connected_plating", Block::new,
+        () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.METAL).strength(3.0F, 6.0F).requiresCorrectToolForDrops());
+    public static final DeferredItem<BlockItem> GLASS_ITEM = ITEMS.registerSimpleBlockItem(GLASS);
+    public static final DeferredItem<BlockItem> PLATING_ITEM = ITEMS.registerSimpleBlockItem(PLATING);
 
     public DiaithirCtm(IEventBus bus, ModContainer container) {
-        container.registerConfig(ModConfig.Type.CLIENT, SPEC);
-        bus.addListener(DiaithirCtm::bake);
-    }
-
-    private static void bake(ModelEvent.ModifyBakingResult e) {
-        if (!ENABLED.get()) {
-            return;
+        BLOCKS.register(bus);
+        ITEMS.register(bus);
+        if (FMLEnvironment.getDist().isClient()) {
+            ClientSetup.init(bus, container);
         }
-        Map<BlockState, BlockStateModel> models = e.getBakingResult().blockStateModels();
-        Map<BlockState, BlockStateModel> swap = new HashMap<>();
-        for (Map.Entry<BlockState, BlockStateModel> en : models.entrySet()) {
-            if (en.getKey().is(CONNECT)) {
-                swap.put(en.getKey(), new CtmModel(en.getValue()));
-            }
-        }
-        models.putAll(swap);
     }
 }

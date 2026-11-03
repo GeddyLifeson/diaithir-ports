@@ -6,7 +6,7 @@ license = "MIT"
 modId = "diaithirctm"
 version = "${version}"
 displayName = "Diaithir Connected Textures"
-description = "Blocks in the diaithirctm:connect tag draw edges only where no same block touches, from a 4 by 4 sheet of 16 edge tiles. Client only and off by default (client config: enabled). Clean-room; no code taken."
+description = "Blocks in the diaithirctm:connect tag draw edges only where no same block touches, from a 4 by 4 sheet of 16 edge tiles. Adds Connected Glass and Connected Plating to try it. Off by default (client config: enabled). Clean-room; no code taken."
 
 [[dependencies.diaithirctm]]
 modId = "neoforge"

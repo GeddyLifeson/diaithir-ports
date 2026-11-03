@@ -18,8 +18,11 @@ import org.jspecify.annotations.Nullable;
 
 /** Wraps a block's model so each face picks its tile of the connected sheet from the neighbours. */
 final class CtmModel extends DelegateBlockStateModel {
-    CtmModel(BlockStateModel delegate) {
+    private final TextureAtlasSprite sheet;
+
+    CtmModel(BlockStateModel delegate, TextureAtlasSprite sheet) {
         super(delegate);
+        this.sheet = sheet;
     }
 
     @Override
@@ -27,7 +30,7 @@ final class CtmModel extends DelegateBlockStateModel {
         List<BlockStateModelPart> inner = new ArrayList<>();
         delegate.collectParts(level, pos, state, random, inner);
         for (BlockStateModelPart part : inner) {
-            parts.add(new Part(part, level, pos, state));
+            parts.add(new Part(part, level, pos, state, sheet));
         }
     }
 
@@ -36,8 +39,10 @@ final class CtmModel extends DelegateBlockStateModel {
         private final BlockAndTintGetter level;
         private final BlockPos pos;
         private final BlockState state;
+        private final TextureAtlasSprite sheet;
 
-        Part(BlockStateModelPart inner, BlockAndTintGetter level, BlockPos pos, BlockState state) {
+        Part(BlockStateModelPart inner, BlockAndTintGetter level, BlockPos pos, BlockState state, TextureAtlasSprite sheet) {
+            this.sheet = sheet;
             this.inner = inner;
             this.level = level;
             this.pos = pos;
@@ -60,16 +65,19 @@ final class CtmModel extends DelegateBlockStateModel {
         private BakedQuad retile(BakedQuad q) {
             Direction face = q.direction();
             int mask = Mask.of(face, d -> level.getBlockState(pos.relative(d)).is(state.getBlock()));
-            TextureAtlasSprite s = q.materialInfo().sprite();
-            float u0 = s.getU0(), u1 = s.getU1(), v0 = s.getV0(), v1 = s.getV1();
+            BakedQuad.MaterialInfo m = q.materialInfo();
+            TextureAtlasSprite s = m.sprite();
+            float ou0 = s.getU0(), ou1 = s.getU1(), ov0 = s.getV0(), ov1 = s.getV1();
+            float u0 = sheet.getU0(), u1 = sheet.getU1(), v0 = sheet.getV0(), v1 = sheet.getV1();
             long[] uv = new long[4];
             for (int i = 0; i < 4; i++) {
-                float ru = (UVPair.unpackU(q.packedUV(i)) - u0) / (u1 - u0);
-                float rv = (UVPair.unpackV(q.packedUV(i)) - v0) / (v1 - v0);
+                float ru = (UVPair.unpackU(q.packedUV(i)) - ou0) / (ou1 - ou0);
+                float rv = (UVPair.unpackV(q.packedUV(i)) - ov0) / (ov1 - ov0);
                 uv[i] = UVPair.pack(u0 + Mask.tile(ru, mask % 4) * (u1 - u0), v0 + Mask.tile(rv, mask / 4) * (v1 - v0));
             }
             return new BakedQuad(q.position0(), q.position1(), q.position2(), q.position3(), uv[0], uv[1], uv[2], uv[3],
-                face, q.materialInfo(), q.bakedNormals(), q.bakedColors());
+                face, new BakedQuad.MaterialInfo(sheet, m.layer(), m.itemRenderType(), m.tintIndex(), m.shade(), m.lightEmission(), m.ambientOcclusion()),
+                q.bakedNormals(), q.bakedColors());
         }
 
         @Override

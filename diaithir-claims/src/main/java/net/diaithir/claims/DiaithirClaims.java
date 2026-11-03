@@ -27,11 +27,27 @@ public final class DiaithirClaims {
     public DiaithirClaims(IEventBus bus) {
         ATTACH.register(bus);
         bus.addListener((net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent e) ->
-            e.registrar("1").optional().playToClient(MapPayload.TYPE, MapPayload.CODEC, (payload, ctx) -> {
-                if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
-                    ctx.enqueueWork(() -> ClientHooks.open(payload));
-                }
-            }));
+            e.registrar("1").optional()
+                .playToClient(MapPayload.TYPE, MapPayload.CODEC, (payload, ctx) -> {
+                    if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+                        ctx.enqueueWork(() -> ClientHooks.open(payload));
+                    }
+                })
+                .playToClient(ClaimInfo.TYPE, ClaimInfo.CODEC, (payload, ctx) -> {
+                    if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+                        ctx.enqueueWork(() -> ClientHooks.info(payload));
+                    }
+                })
+                .playToServer(ClaimQuery.TYPE, ClaimQuery.CODEC, (q, ctx) -> {
+                    if (ctx.player() instanceof net.minecraft.server.level.ServerPlayer sp) {
+                        LevelChunk ch = sp.level().getChunkSource().getChunkNow(q.cx(), q.cz());
+                        String owner = ch == null ? "" : at(ch).map(Claim::ownerName).orElse("");
+                        net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(sp, new ClaimInfo(q.cx(), q.cz(), owner));
+                    }
+                }));
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+            bus.addListener((net.neoforged.fml.event.lifecycle.InterModEnqueueEvent e) -> e.enqueueWork(ClientHooks::register));
+        }
         NeoForge.EVENT_BUS.register(new Guard());
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.RegisterCommandsEvent e) -> Commands.register(e.getDispatcher()));
     }
