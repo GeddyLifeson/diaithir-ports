@@ -1,0 +1,10 @@
+{
+  "note": "Neither source mod was in the Diaithir pack, so no world holds the old ids. NeoForge 26.1 has no registry alias hook; if an old world appears, remap with a datapack-free script using this table.",
+  "advanced_ore_deposits:*_deposit": "diaithirminers:*_deposit",
+  "advanced_ore_deposits:raw_*_chunk": "diaithirminers:raw_*_chunk",
+  "advanced_ore_deposits:zinc_*": "dropped (Create zinc not in pack)",
+  "factoriores:burner_miner": "diaithirminers:burner_miner",
+  "factoriores:electrical_miner": "diaithirminers:electric_miner",
+  "factoriores:drill_head": "diaithirminers:drill_head",
+  "factoriores:mechanical_miner / creative_miner / sulfur / lixiviant fluid ores": "not ported"
+}

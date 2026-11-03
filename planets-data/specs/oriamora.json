@@ -1,0 +1,175 @@
+{
+ "sky": {
+  "sky": "#7a5cb8",
+  "fog": "#c9b8e8",
+  "cloud": "#b0ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6fb0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.oriamora.E1.places.000053",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#b8a060",
+   "foliage": "#a88a50",
+   "water": "#4a7ab0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriamora.E1.places.000056",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#8a6a50",
+   "foliage": "#7a5a48",
+   "water": "#5a6f90",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriamora.E3.places.000086",
+   "archetype": "flower_forest",
+   "temp": 0.2,
+   "humid": 0.5,
+   "grass": "#7fb86a",
+   "foliage": "#6aa85a",
+   "water": "#3f8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriamora.E3.places.000084",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#6a9a6a",
+   "foliage": "#5a8a5a",
+   "water": "#3a6a70",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriamora.E5.places.000063",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.0,
+   "grass": "#9ac07a",
+   "foliage": "#8ab06a",
+   "water": "#4a80b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriamora.E7.places.000069",
+   "archetype": "cherry_grove",
+   "temp": 0.1,
+   "humid": 0.3,
+   "grass": "#a8d08a",
+   "foliage": "#e8a0c8",
+   "water": "#6a90c8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriamora.E4.places.000088",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": -0.2,
+   "grass": "#8aa890",
+   "foliage": "#789a80",
+   "water": "#5a7ab0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriamora.E2.places.000080",
+   "archetype": "taiga",
+   "temp": -0.4,
+   "humid": 0.3,
+   "grass": "#6a9a78",
+   "foliage": "#587f68",
+   "water": "#3f6f90",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Oriamora's surface blends ash-dusted basalt savannas and glass badlands with lantern-lit wetlands and violet-skied cherry groves, under a sky tinged by the Arcane Realm's drifting fog and sundered wards.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "soul",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9a77a",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.oriamora.E1.events.000017",
+  "why": "Singing roots and temple flame; mild, grounded arcane atmosphere",
+  "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "azalea",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.2,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.oriamora.E1.places.000053",
+  "grounded": false
+ }
+}

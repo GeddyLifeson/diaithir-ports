@@ -42,6 +42,7 @@ import org.jspecify.annotations.Nullable;
 @Mod(DiaithirBosses.ID)
 public final class DiaithirBosses {
     public static final String ID = "diaithirbosses";
+    public static final org.slf4j.Logger LOG = com.mojang.logging.LogUtils.getLogger();
 
     private static final DeferredRegister.Entities ENTITIES = DeferredRegister.createEntities(ID);
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
@@ -53,11 +54,27 @@ public final class DiaithirBosses {
     public static final Map<String, DeferredHolder<EntityType<?>, ? extends EntityType<? extends Mob>>> MOBS = new LinkedHashMap<>();
     public static final Map<String, DeferredItem<Item>> EGGS = new LinkedHashMap<>();
     public static final Map<String, DeferredItem<Item>> TROPHIES = new LinkedHashMap<>();
+    /** The four hitbox classes planet bosses share: tall, wide, low and floating. */
+    public static final Map<String, DeferredHolder<EntityType<?>, EntityType<PlanetBoss>>> PLANET = new LinkedHashMap<>();
+    private static final Map<String, float[]> PLANET_BOX = Map.of("tall", new float[] {0.9F, 2.3F}, "wide", new float[] {1.7F, 1.8F},
+        "low", new float[] {1.5F, 0.9F}, "float", new float[] {1.0F, 1.9F});
     private static final Map<String, java.util.function.Supplier<AttributeSupplier.Builder>> ATTRS = new LinkedHashMap<>();
 
     public static final DeferredBlock<Block> ALTAR = BLOCKS.registerBlock("boss_altar", AltarBlock::new,
         () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).requiresCorrectToolForDrops().lightLevel(s -> 7));
     public static final DeferredItem<net.minecraft.world.item.BlockItem> ALTAR_ITEM = ITEMS.registerSimpleBlockItem(ALTAR);
+    public static final DeferredBlock<Block> ASCENDANT_ALTAR = BLOCKS.registerBlock("ascendant_altar", AscendantAltarBlock::new,
+        () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).requiresCorrectToolForDrops().lightLevel(s -> 10));
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> ASCENDANT_ALTAR_ITEM = ITEMS.registerSimpleBlockItem(ASCENDANT_ALTAR);
+    public static final DeferredBlock<Block> OGHAM_STONE = BLOCKS.registerBlock("ogham_stone", OghamStoneBlock::new,
+        () -> BlockBehaviour.Properties.of().strength(3.0F, 12.0F).lightLevel(s -> 4));
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> OGHAM_STONE_ITEM = ITEMS.registerSimpleBlockItem(OGHAM_STONE);
+    public static final DeferredItem<Item> BOSS_CATALYST = ITEMS.registerSimpleItem("boss_catalyst");
+    public static final DeferredItem<Item> HOLLOW_CORE = ITEMS.registerSimpleItem("boss_hollow_core");
+    public static final DeferredItem<Item> BOSS_CATALYST_T2 = ITEMS.registerSimpleItem("boss_catalyst_t2");
+    public static final DeferredItem<Item> BOSS_SOVEREIGN_CORE = ITEMS.registerSimpleItem("boss_sovereign_core");
+    public static final DeferredItem<Item> AGESHARD = ITEMS.registerSimpleItem("ageshard");
+    public static final DeferredItem<Item> RUSH_LAUREL = ITEMS.registerSimpleItem("rush_laurel");
     public static final DeferredItem<Item> TOKEN = ITEMS.registerSimpleItem("champion_token");
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AltarBlockEntity>> ALTAR_BE =
         BLOCK_ENTITIES.register("boss_altar", () -> new BlockEntityType<>(AltarBlockEntity::new, ALTAR.get()));
@@ -66,6 +83,14 @@ public final class DiaithirBosses {
         .icon(() -> new ItemStack(ALTAR_ITEM.get()))
         .displayItems((params, out) -> {
             out.accept(ALTAR_ITEM.get());
+            out.accept(ASCENDANT_ALTAR_ITEM.get());
+            out.accept(OGHAM_STONE_ITEM.get());
+            out.accept(BOSS_CATALYST.get());
+            out.accept(HOLLOW_CORE.get());
+            out.accept(BOSS_CATALYST_T2.get());
+            out.accept(BOSS_SOVEREIGN_CORE.get());
+            out.accept(AGESHARD.get());
+            out.accept(RUSH_LAUREL.get());
             out.accept(TOKEN.get());
             EGGS.values().forEach(i -> out.accept(i.get()));
             TROPHIES.values().forEach(i -> out.accept(i.get()));
@@ -91,13 +116,20 @@ public final class DiaithirBosses {
             });
             EGGS.put(p.id, ITEMS.registerItem(p.id + "_spawn_egg", props -> new SpawnEggItem(props.spawnEgg(t.get()))));
         }
+        PLANET_BOX.forEach((k, wh) -> PLANET.put(k, ENTITIES.registerEntityType("planet_boss_" + k, PlanetBoss::new, MobCategory.MONSTER,
+            b -> b.sized(wh[0], wh[1]).clientTrackingRange(10).fireImmune())));
         BLOCKS.register(bus);
         ITEMS.register(bus);
         ENTITIES.register(bus);
         BLOCK_ENTITIES.register(bus);
         TABS.register(bus);
-        bus.addListener(EntityAttributeCreationEvent.class, e ->
-            MOBS.forEach((id, t) -> e.put((EntityType) t.get(), ATTRS.get(id).get().build())));
+        bus.addListener(EntityAttributeCreationEvent.class, e -> {
+            MOBS.forEach((id, t) -> e.put((EntityType) t.get(), ATTRS.get(id).get().build()));
+            PLANET.values().forEach(t -> e.put(t.get(), net.minecraft.world.entity.monster.Monster.createMonsterAttributes()
+                .add(Attributes.MAX_HEALTH, 100).add(Attributes.ATTACK_DAMAGE, 6).add(Attributes.FOLLOW_RANGE, 48)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 1.0).add(Attributes.STEP_HEIGHT, 1.0).build()));
+        });
+        bus.addListener(net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent.class, e -> e.enqueueWork(EventHooks::register));
         NeoForge.EVENT_BUS.register(BossEvents.class);
         if (FMLEnvironment.getDist() == Dist.CLIENT) net.diaithir.bosses.client.BossClient.init(bus);
     }
@@ -109,6 +141,15 @@ public final class DiaithirBosses {
         var e = type.get().create(level, EntitySpawnReason.MOB_SUMMONED);
         if (!(e instanceof Mob m)) return null;
         m.snapTo(at.x, at.y, at.z, level.getRandom().nextFloat() * 360F, 0);
+        if (m instanceof PlanetBoss pb) {
+            pb.setLook(p.id);
+            var sc = pb.getAttribute(Attributes.SCALE);
+            if (sc != null) sc.setBaseValue(p.own.scale);
+            var sp = pb.getAttribute(Attributes.MOVEMENT_SPEED);
+            if (sp != null) sp.setBaseValue(p.own.speed);
+            var ar = pb.getAttribute(Attributes.ARMOR);
+            if (ar != null) ar.setBaseValue(p.own.armor);
+        }
         if (altar != null) {
             m.addTag(AltarBlockEntity.posTag(altar));
             m.addTag(BossController.T_ARENA + altar.getX() + "," + altar.getY() + "," + altar.getZ());

@@ -1,0 +1,252 @@
+{
+ "type": "the_backwoods:the_familiar",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "the_backwoods:the_familiar",
+  "biome_source": {
+   "type": "minecraft:multi_noise",
+   "biomes": [
+    {
+     "biome": "the_backwoods:mirrored_birch_forest",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       -0.6
+      ],
+      "humidity": [
+       -1.0,
+       0.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:mirrored_desert",
+     "parameters": {
+      "temperature": [
+       -0.6,
+       -0.2
+      ],
+      "humidity": [
+       -1.0,
+       0.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:mirrored_forest",
+     "parameters": {
+      "temperature": [
+       -0.2,
+       0.2
+      ],
+      "humidity": [
+       -1.0,
+       0.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:mirrored_jungle",
+     "parameters": {
+      "temperature": [
+       0.2,
+       0.6
+      ],
+      "humidity": [
+       -1.0,
+       0.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:mirrored_ocean",
+     "parameters": {
+      "temperature": [
+       0.6,
+       1.0
+      ],
+      "humidity": [
+       -1.0,
+       0.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:mirrored_plains",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       -0.6
+      ],
+      "humidity": [
+       0.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:mirrored_savannah",
+     "parameters": {
+      "temperature": [
+       -0.6,
+       -0.2
+      ],
+      "humidity": [
+       0.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:mirrored_taiga",
+     "parameters": {
+      "temperature": [
+       -0.2,
+       0.2
+      ],
+      "humidity": [
+       0.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "diaithircombat:gear_material/a9"
+   }
+  }
+ ],
+ "_age": "RODOS",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#diaithircombat:gear_material/a9",
+  "#diaithircombat:gear_material/a9",
+  "minecraft:string",
+  "minecraft:string",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_longbow",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 9
+  }
+ }
+}

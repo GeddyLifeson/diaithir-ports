@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" G ", "GRG", " G "],
+  "key": {
+    "G": "minecraft:gold_ingot",
+    "R": "diaithirworldsys:ruby"
+  },
+  "result": {"id": "diaithirworldsys:ruby_ring"}
+}

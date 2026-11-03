@@ -1,0 +1,132 @@
+{
+ "type": "the_backwoods:backwoods",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "the_backwoods:backwoods",
+  "biome_source": {
+   "type": "minecraft:multi_noise",
+   "biomes": [
+    {
+     "biome": "the_backwoods:deep_backwoods",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       -0.6
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:the_thicket",
+     "parameters": {
+      "temperature": [
+       -0.6,
+       -0.2
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:weald_outskirts",
+     "parameters": {
+      "temperature": [
+       -0.2,
+       0.2
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "the_backwoods:wood_plains",
+     "parameters": {
+      "temperature": [
+       0.2,
+       0.6
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -2.0,
+       2.0
+      ],
+      "erosion": [
+       -2.0,
+       2.0
+      ],
+      "weirdness": [
+       -2.0,
+       2.0
+      ],
+      "depth": [
+       -2.0,
+       2.0
+      ],
+      "offset": 0.0
+     }
+    }
+   ]
+  }
+ }
+}

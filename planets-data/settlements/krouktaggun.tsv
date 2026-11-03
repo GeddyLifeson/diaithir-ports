@@ -1,0 +1,15 @@
+entry_id	name	tier	era	biome_entry
+GR.krouktaggun.E1.places.000030	Theishis	2	E1	GR.krouktaggun.E3.places.000015
+GR.krouktaggun.E1.places.000044	Grorkak	3	E1	GR.krouktaggun.E4.places.000037
+GR.krouktaggun.E2.places.000045	Eleirenneth	3	E2	GR.krouktaggun.E4.places.000055
+GR.krouktaggun.E2.places.000069	Draizharnun	4	E2	GR.krouktaggun.E4.places.000078
+GR.krouktaggun.E2.places.000073	Vharnoggok	4	E2	GR.krouktaggun.E1.places.000030
+GR.krouktaggun.E3.places.000050	Ryinnaelys	3	E3	GR.krouktaggun.E4.places.000078
+GR.krouktaggun.E4.places.000018	Thithora	1	E4	GR.krouktaggun.E4.places.000055
+GR.krouktaggun.E4.places.000037	Orilasanum	2	E4	GR.krouktaggun.E4.places.000078
+GR.krouktaggun.E4.places.000078	Sileimae	4	E4	GR.krouktaggun.E5.places.000081
+GR.krouktaggun.E5.places.000081	Ilonamari	4	E5	GR.krouktaggun.E1.places.000044
+GR.krouktaggun.E5.places.000085	Voraithurn	4	E5	GR.krouktaggun.E4.places.000037
+GR.krouktaggun.E7.places.000040	Serisor	2	E7	GR.krouktaggun.E4.places.000037
+GR.krouktaggun.E7.places.000091	Brasturden	4	E7	GR.krouktaggun.E3.places.000015
+GR.krouktaggun.E7.places.000092	Launasia	4	E7	GR.krouktaggun.E1.places.000030

@@ -1,0 +1,526 @@
+{
+ "diaithir": {
+  "coin": "Bound airgidi",
+  "currency": "Airgied"
+ },
+ "sahul_pleistocene_core_tool_and_scraper_tradition": {
+  "coin": "Khafek nolo wafu",
+  "currency": "Khafek kefoyi wafu"
+ },
+ "sundaland_and_wallacea_pleistocene_holocene_foragers": {
+  "coin": "Nopzir kena timeraq",
+  "currency": "Nopzir berdi timeraq"
+ },
+ "balangoda_culture": {
+  "coin": "Zapusa kechuch zech botma",
+  "currency": "Teso kechuch"
+ },
+ "tasmanian_late_pleistocene_foragers_kutikina_warreen": {
+  "coin": "Seteta pubip susla sesqu",
+  "currency": "Pulas pubip"
+ },
+ "dyuktai_culture": {
+  "coin": "Wupuz babsa wamoz",
+  "currency": "Wupuz poka wamoz"
+ },
+ "iberomaurusian": {
+  "coin": "Tazukhi qizid khu",
+  "currency": "Khu tazukhi suchuqu"
+ },
+ "robberg_industry": {
+  "coin": "Pogqose nzagqoho nincu",
+  "currency": "Nincu pogqose dagcu"
+ },
+ "magdalenian": {
+  "coin": "Qo chogu huhipu",
+  "currency": "Qo fuzoz huhipu"
+ },
+ "yenisei_upper_palaeolithic_afontova_gora_kokorevo": {
+  "coin": "Chihaq fi hum",
+  "currency": "Chihaq pon hum"
+ },
+ "north_china_late_palaeolithic_microblade_groups_shuidonggou_xiachuan": {
+  "coin": "Zivi tare dasqe",
+  "currency": "Zivi kakmak dasqe"
+ },
+ "zarzian": {
+  "coin": "Jrhanyam zugege tugo",
+  "currency": "Jrhanyam kacush tugo"
+ },
+ "early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong": {
+  "coin": "Kirigi quni bame",
+  "currency": "Kirigi bep bame"
+ },
+ "transbaikal_and_mongolian_late_palaeolithic_microblade_groups": {
+  "coin": "Duitoi tog kuitoil",
+  "currency": "Duitoi mo kuitoil"
+ },
+ "geometric_kebaran": {
+  "coin": "Kaghu nuqu wudhub",
+  "currency": "Kaghu tsaghir wudhub"
+ },
+ "epipalaeolithic_egypt_isnan_afian_qarunian": {
+  "coin": "Bir gitu raka",
+  "currency": "Bir huru raka"
+ },
+ "incipient_jomon": {
+  "coin": "Sero no kanyom kanai",
+  "currency": "Sero no pe kanai"
+ },
+ "hamburgian": {
+  "coin": "Betu he guwar",
+  "currency": "Betu peyo guwar"
+ },
+ "eburran": {
+  "coin": "Lucis ru kifmu",
+  "currency": "Kifmu lucis zef"
+ },
+ "qadan": {
+  "coin": "Ndusdyu mongk phirund",
+  "currency": "Ndusdyu min phirund"
+ },
+ "sebilian": {
+  "coin": "Ndusdyu mongk phirund",
+  "currency": "Ndusdyu min phirund"
+ },
+ "abriense_tequendamense_and_el_jobo": {
+  "coin": "Seno tibas tinapi",
+  "currency": "Seno tsid tinapi"
+ },
+ "monte_verde_ii": {
+  "coin": "Luncha le chuho lusilhi",
+  "currency": "Luncha le gamli lusilhi"
+ },
+ "natufian": {
+  "coin": "Kaghunu nuqshi wudhub",
+  "currency": "Kaghunu tsaghir wudhub"
+ },
+ "federmesser_group_tjongerian_havelte": {
+  "coin": "Bihe hisa guwor",
+  "currency": "Bihe pimi guwor"
+ },
+ "final_epigravettian": {
+  "coin": "Xrygyntom kuxeto mede",
+  "currency": "Xrygyntom labahmo mede"
+ },
+ "russian_plain_volga_and_urals_final_palaeolithic_and_early_mesolithic_foragers": {
+  "coin": "Ku pengara lita",
+  "currency": "Ku washa lita"
+ },
+ "west_african_late_stone_age_and_early_pottery_foragers_iwo_eleru_ounjougou": {
+  "coin": "Nyisye bate dukukp",
+  "currency": "Ghikpo dukukp nyisye"
+ },
+ "nenana_complex": {
+  "coin": "Bugoz hok ye ngohi qenoz",
+  "currency": "Gibug zizoke"
+ },
+ "bromme_lyngby_culture": {
+  "coin": "Xrygyntom hino guwor",
+  "currency": "Xrygyntom piyo guwor"
+ },
+ "clovis": {
+  "coin": "Niz zi yuyegyi gagze awaase",
+  "currency": "Geniha yenu"
+ },
+ "creswellian": {
+  "coin": "Xexusom wuyte sitpun",
+  "currency": "Xexusom nu sitpun"
+ },
+ "eastern_paleoindian_fluted_point_groups_gainey_barnes_cumberland_debert": {
+  "coin": "Kino lex xothin ti'in he",
+  "currency": "Chichitha tolexe"
+ },
+ "fishtail_point_tradition": {
+  "coin": "Memud pugma gena",
+  "currency": "Memud nangede gena"
+ },
+ "late_paleoindian_and_early_archaic_of_mesoamerica_lerma_santa_marta": {
+  "coin": "Wiwuf qub moyome",
+  "currency": "Wiwuf bif moyome"
+ },
+ "paijan_culture": {
+  "coin": "'ilha pa muyu qhukha",
+  "currency": "'ilha pa uchuk qhukha"
+ },
+ "paleocoastal_pacific_channel_islands_pacific_northwest": {
+  "coin": "Tiqi dituqi tidniq qway gidnip",
+  "currency": "Daqa duqci"
+ },
+ "pedra_pintada_lower_amazon": {
+  "coin": "Koma raya bahlal",
+  "currency": "Koma miri bahlal"
+ },
+ "swiderian": {
+  "coin": "Bihe hino guwar",
+  "currency": "Bihe piyo guwar"
+ },
+ "trialetian": {
+  "coin": "Zho isy quson polu",
+  "currency": "Zho isy kesen polu"
+ },
+ "ushki_lake_kamchatka": {
+  "coin": "Nunrulu hurada rituyi",
+  "currency": "Nunrulu nub rituyi"
+ },
+ "western_stemmed_tradition": {
+  "coin": "Huwe tsuk tsu lid wikuhe",
+  "currency": "Ni'ukuma niyuktuk"
+ },
+ "ahrensburgian": {
+  "coin": "Bihe hino guwar",
+  "currency": "Bihe piyo guwar"
+ },
+ "folsom": {
+  "coin": "Nizza zi yuyigyi gagze awaase",
+  "currency": "Ginpu yindi"
+ },
+ "las_vegas_culture": {
+  "coin": "Hunso muhka guh'edh",
+  "currency": "Hunso tsid guh'edh"
+ },
+ "dalton_tradition": {
+  "coin": "Kino lex xuthin ti'in he",
+  "currency": "Chichitha tule"
+ },
+ "nanzhuangtou": {
+  "coin": "Zivpu tare dahqe",
+  "currency": "Zivpu kakmak dahqe"
+ },
+ "azilian": {
+  "coin": "Quhu chuggi huhpu",
+  "currency": "Quhu fuzuzgo huhpu"
+ },
+ "central_brazilian_highland_hunter_gatherers_lagoa_santa_itaparica": {
+  "coin": "Kryt njuutand njiinja",
+  "currency": "Kryt nundiiree njiinja"
+ },
+ "harifian": {
+  "coin": "Kaghunu nuqshi wudhub",
+  "currency": "Kaghunu tsaghir wudhub"
+ },
+ "upper_tigris_epipalaeolithic_protoneolithic_hallan_cemi_kortik_tepe": {
+  "coin": "Guningu qipe tuay",
+  "currency": "Guningu ripe tuay"
+ },
+ "mureybetian": {
+  "coin": "Kaghu nuqshi wudhub",
+  "currency": "Kaghu tsaghir wudhub"
+ },
+ "indian_mesolithic_microlithic_foragers_bhimbetka_sarai_nahar_rai": {
+  "coin": "Furekhe wefide khelis chufifi",
+  "currency": "Khelis giruweg"
+ },
+ "oakhurst_industry": {
+  "coin": "Pogqose nzagqoho nincu",
+  "currency": "Nincu pogqose datsi"
+ },
+ "plano_complex_agate_basin_hell_gap_cody": {
+  "coin": "Nizza zi jujigyi gagze awaase",
+  "currency": "Ginpu jindi"
+ },
+ "hoabinhian": {
+  "coin": "Ngabju lichit sithe",
+  "currency": "Ngabju darpe sithe"
+ },
+ "komsa_culture": {
+  "coin": "Jasnuc pengara sinop",
+  "currency": "Jasnuc washa sinop"
+ },
+ "magosian_obsolete_term": {
+  "coin": "Ngurocha qok dochume",
+  "currency": "Dochume ngurocha dit"
+ },
+ "pre_pottery_neolithic_a": {
+  "coin": "Kaghu nuqshi wudhub",
+  "currency": "Kaghu tsaghir wudhub"
+ },
+ "zengpiyan": {
+  "coin": "Puzngu pijpuru jifarza",
+  "currency": "Puzngu parup jifarza"
+ },
+ "early_holocene_sahara_foragers_early_acacus": {
+  "coin": "Ngathi mongk khizux",
+  "currency": "Ngathi min khizux"
+ },
+ "andean_puna_hunters_lauricocha_junin": {
+  "coin": "'ilha pa muyu qhukha",
+  "currency": "'ilha pa uchuk qhukha"
+ },
+ "khiamian": {
+  "coin": "Kaghunu nuqshi wudhub",
+  "currency": "Kaghunu tsaghir wudhub"
+ },
+ "paleo_arctic_tradition": {
+  "coin": "Rodya rartu ni qiqin rinun",
+  "currency": "Yariq rudror"
+ },
+ "early_mesolithic_britain_star_carr": {
+  "coin": "Xexusom wuyte sedpun",
+  "currency": "Xexusom nodi sedpun"
+ },
+ "amotape_complex": {
+  "coin": "Hona muhika guh'idh",
+  "currency": "Hona tsid guh'idh"
+ },
+ "capsian": {
+  "coin": "Tazkhi qizid khu",
+  "currency": "Khu tazkhi huchuqu"
+ },
+ "maglemosian": {
+  "coin": "Bihe hino guwor",
+  "currency": "Bihe piyo guwor"
+ },
+ "pre_pottery_neolithic_b": {
+  "coin": "Kaghu nuqu wudhub",
+  "currency": "Kaghu tsaghir wudhub"
+ },
+ "sumnagin_culture": {
+  "coin": "Kumul yum tanih",
+  "currency": "Kumul kichug tanih"
+ },
+ "kunda_culture": {
+  "coin": "Jasnuc pengara sinop",
+  "currency": "Jasnuc washa sinop"
+ },
+ "fosna_hensbacka_culture": {
+  "coin": "Jasnuc pengara sinub",
+  "currency": "Jasnuc washa sinub"
+ },
+ "central_african_late_stone_age_tshitolian": {
+  "coin": "Yogaga nudu a gimi",
+  "currency": "Gimi a yogaga gake"
+ },
+ "new_guinea_highlands_foragers_and_early_kuk_agriculture": {
+  "coin": "Pafuzo dafa tacha gapom",
+  "currency": "Tacha lohas"
+ },
+ "early_archaic_eastern_north_america": {
+  "coin": "Kino rix xothin ti'in hihe",
+  "currency": "Chichitha tor"
+ },
+ "the_island_court_home_pantheon": {
+  "coin": "Bound airgidi",
+  "currency": "Airgied"
+ },
+ "the_river_court": {
+  "coin": "Metal round n Hmt",
+  "currency": "Metal nDs n Hmt"
+ },
+ "the_two_river_court": {
+  "coin": "Metalum roundum sha kaspu",
+  "currency": "Metalum sehru sha kaspu"
+ },
+ "the_thousand_god_court": {
+  "coin": "Gold round metal",
+  "currency": "Gold smal metal"
+ },
+ "the_sea_coast_court": {
+  "coin": "Metal round silber",
+  "currency": "Metal smal silber"
+ },
+ "the_palace_court": {
+  "coin": "Arguros strongylos metallon",
+  "currency": "Arguros mikros metallon"
+ },
+ "the_mountain_court": {
+  "coin": "Argyros strongylos metallon",
+  "currency": "Argyros mikros metallon"
+ },
+ "the_seven_hills_court": {
+  "coin": "Metallum rotundus aes",
+  "currency": "Aes metallum parvus"
+ },
+ "the_ash_tree_court": {
+  "coin": "Silfr roundr malmr",
+  "currency": "Silfr litill malmr"
+ },
+ "the_birch_grove_court": {
+  "coin": "Zelezo round metal",
+  "currency": "Zelezo smal metal"
+ },
+ "the_amber_court": {
+  "coin": "Sidabras apvalus metalas",
+  "currency": "Sidabras mazas metalas"
+ },
+ "the_marsh_and_bear_court": {
+  "coin": "Silber round metal",
+  "currency": "Silber smal metal"
+ },
+ "the_wide_sky_court": {
+  "coin": "Silber round metal",
+  "currency": "Silber smal metal"
+ },
+ "the_light_and_flame_court": {
+  "coin": "Metal round ya gold",
+  "currency": "Metal smal ya gold"
+ },
+ "the_many_armed_court": {
+  "coin": "Nautilusa shankha mandala loha",
+  "currency": "Kourie shankha"
+ },
+ "the_heaven_and_earth_court": {
+  "coin": "銅圓",
+  "currency": "銅小"
+ },
+ "the_kami_court": {
+  "coin": "Koper no round metal",
+  "currency": "Koper no smal metal"
+ },
+ "the_crossroads_court": {
+  "coin": "Irin round ti babaganran",
+  "currency": "Babaganran ti irin kekere"
+ },
+ "the_corn_and_star_court": {
+  "coin": "Metal pet u koper",
+  "currency": "Metal smal u koper"
+ },
+ "the_fifth_sun_court": {
+  "coin": "Metal round tepoztli",
+  "currency": "Metal tepiton tepoztli"
+ },
+ "the_mountain_and_mother_court": {
+  "coin": "Koper pa muyu lata",
+  "currency": "Koper pa huch'uy lata"
+ },
+ "the_ocean_and_voyage_court": {
+  "coin": "Metal round a shel a nautilus",
+  "currency": "Shel a kourie"
+ },
+ "the_eternal_blue_sky_court": {
+  "coin": "Koper round metal",
+  "currency": "Koper smal metal"
+ },
+ "the_rift_and_cattle_court": {
+  "coin": "Metali round ya bronse",
+  "currency": "Bronse ya metali dogo"
+ },
+ "the_cliff_and_mask_court": {
+  "coin": "Ng round ye shel ye nautilus",
+  "currency": "Shel ye kourie"
+ },
+ "the_lotus_and_peak_court": {
+  "coin": "Metal round zangs",
+  "currency": "Metal chud zangs"
+ },
+ "the_rice_and_volcano_court": {
+  "coin": "Gansa bunter ning timah",
+  "currency": "Gansa smal ning timah"
+ },
+ "the_fire_and_peak_court": {
+  "coin": "Arcat bolorak metal",
+  "currency": "Arcat smal metal"
+ },
+ "the_river_and_forest_court": {
+  "coin": "Metal round gem blue pirang",
+  "currency": "Bead uampum"
+ },
+ "kuonrig": {
+  "coin": "Metal redondo de prata",
+  "currency": "Bar de ouro"
+ },
+ "lasuirrig": {
+  "coin": "Filizz mok e nuqra",
+  "currency": "Filizz mok e zar"
+ },
+ "kuonspiusach": {
+  "coin": "Logam bundar timah",
+  "currency": "Benih hot"
+ },
+ "talumnuod": {
+  "coin": "Metal redondo de plata",
+  "currency": "Bar de plata"
+ },
+ "dunbuldach": {
+  "coin": "銅圓",
+  "currency": "銀"
+ },
+ "gainemrig": {
+  "coin": "Umba na kourie",
+  "currency": "Asa fine na gwal"
+ },
+ "guoltintech": {
+  "coin": "Gold round metal",
+  "currency": "Bord hinweisschild"
+ },
+ "saertulmach": {
+  "coin": "Silver round metal",
+  "currency": "Board sign"
+ },
+ "iarnbotrach": {
+  "coin": "Srebro round metal",
+  "currency": "Lag pljus"
+ },
+ "oilen_nuod": {
+  "coin": "Akagane no maro kane",
+  "currency": "Gin no maro kane"
+ },
+ "deiskertfurraigi": {
+  "coin": "Gold round metal",
+  "currency": "Board sign"
+ },
+ "solasstaid": {
+  "coin": "Metall rund metall",
+  "currency": "Brada plus"
+ },
+ "katuirliunach": {
+  "coin": "圓",
+  "currency": "物"
+ },
+ "olumaein": {
+  "coin": "Metal mustadir dahab",
+  "currency": "Zayt"
+ },
+ "eolaskumlacht": {
+  "coin": "Data round metal",
+  "currency": "Data token"
+ },
+ "skielbaili": {
+  "coin": "Komurra spielg",
+  "currency": "Spielg"
+ },
+ "realtsiulach": {
+  "coin": "Bound riondag",
+  "currency": "Komurra riondag"
+ },
+ "roudosach": {
+  "coin": "Bound òiri",
+  "currency": "Klàrkloichi"
+ },
+ "glasdumuin": {
+  "coin": "Bound sìul",
+  "currency": "Sìul glaus"
+ },
+ "sinsermeisin": {
+  "coin": "Bound dielun",
+  "currency": "Dielun"
+ },
+ "longkodlata": {
+  "coin": "Bound kadul",
+  "currency": "Kadul loung"
+ },
+ "soulasfada": {
+  "coin": "Bound grianu",
+  "currency": "Grianu"
+ },
+ "fairechrotlach": {
+  "coin": "Bound kuoirt",
+  "currency": "Kuoirt"
+ },
+ "liekdeirendach": {
+  "coin": "Bound doildeg",
+  "currency": "Doildeg"
+ },
+ "kloichchruind": {
+  "coin": "Bound kloch",
+  "currency": "Kloch"
+ },
+ "kiedtra": {
+  "coin": "Bound sligech",
+  "currency": "Sligech"
+ },
+ "teinedeired": {
+  "coin": "Bound guol",
+  "currency": "Teini deirendach"
+ }
+}

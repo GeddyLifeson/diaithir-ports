@@ -1,0 +1,1 @@
+Stand-in vanilla textures are used until the art pipeline supplies 64px Industrial Factory style art for each id listed in data/diaithir_overworld_biomes/realms/aether_ii.json.

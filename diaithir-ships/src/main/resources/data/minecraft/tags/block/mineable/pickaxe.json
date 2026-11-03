@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "archimedes:engine",
+    "archimedes:marker",
     "vs_eureka:anchor",
     "vs_eureka:ballast",
     "vs_eureka:engine",

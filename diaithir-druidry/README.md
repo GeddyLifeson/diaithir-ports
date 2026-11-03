@@ -49,3 +49,7 @@ python3 build.py 0.1.0             # build/diaithir_druidry-0.1.0.jar
 * No new Spell Power attributes (Java only). A later small Java module can register `druid`, `ovate`, ... as real schools and the spell JSON only needs its `school` changed.
 * Staves are components on a vanilla stick, so Age gating of the staff is by recipe materials, not by item id.
 * No custom projectile models or sounds yet: spells use Spell Engine's particles and sounds.
+
+## Rites from the Library (52k)
+
+`data/diaithir_druidry/rites/<universe>.json` (215 files, `_index.json` lists counts): one rite per Library SPELL entry (51,884), format `rite.v1`. Name, text, Age and school come from the entry and its Realm (Martial Fitech, Ki Filid, Arcane Fiusaichi, Stellar Bardu, Mythic Draeid, Grounded Gouba, Outer Sitichi). Steps use the Ascendant rite vocabulary (offer, hunt, stones, hour, feast, coop, defend), picked deterministically from the entry id and Age tier. Loaded per universe, so no 52k registrations. Regenerate: `python3 -I tools/gen_rites.py <content.sqlite> <library.sqlite> <planets.tsv>`; each rite also has `planet`, `dimension` and `gate_age` (planet opens_age + tier - 1) (Global-Repo S-id in the PR).

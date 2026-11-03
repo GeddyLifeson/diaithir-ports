@@ -1,0 +1,192 @@
+{
+ "sky": {
+  "sky": "#4a3c7a",
+  "fog": "#2b2350",
+  "cloud": "#8fa8ffd0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f5fa3"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.elaelys.E6.places.001198",
+   "archetype": "snowy_taiga",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#a8c9d8",
+   "foliage": "#7fa3b8",
+   "water": "#8fbfe0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.elaelys.E6.places.001475",
+   "archetype": "frozen_peaks",
+   "temp": -0.7,
+   "humid": 0.1,
+   "grass": "#b5d6e6",
+   "foliage": "#9ec4d9",
+   "water": "#9fd3f0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.elaelys.E6.places.001135",
+   "archetype": "beach",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#c9b8e8",
+   "foliage": "#b59fd9",
+   "water": "#5f8fd6",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.elaelys.E6.places.001231",
+   "archetype": "meadow",
+   "temp": 0.0,
+   "humid": 0.4,
+   "grass": "#7fb07a",
+   "foliage": "#6a9a86",
+   "water": "#5a8fbf",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.elaelys.E6.places.001064",
+   "archetype": "mushroom_fields",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#6fd1c4",
+   "foliage": "#58b8c9",
+   "water": "#4fa6b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.elaelys.E6.places.001195",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.8,
+   "grass": "#5e8a6a",
+   "foliage": "#4a7560",
+   "water": "#3d6e6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.elaelys.E6.places.001141",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.3,
+   "grass": "#e0a8d8",
+   "foliage": "#f0b8e0",
+   "water": "#8ab4e8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.elaelys.E6.places.000966",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#8a5a7a",
+   "foliage": "#6e4a6a",
+   "water": "#6a6fa8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.elaelys.E4.places.001518",
+   "archetype": "eroded_badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#7a4f6e",
+   "foliage": "#5f3f5c",
+   "water": "#5a5f9a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Ashen-violet skies and lantern-lit arcane hues tie the biomes together, from frost-bound northern peaks and salt-glass shores to the dry, glass-black basins of the Sundering.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7fb8",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "AR.elaelys.E6.places.001252",
+  "why": "Glass reefs and violet sky; arcane tempests described across entries.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "azalea",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "pink_petals",
+    "weight": 2
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet",
+   "oxeye_daisy",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 2.5,
+   "diamond": 2.0
+  },
+  "why_entry": "AR.elaelys.E6.places.000868",
+  "grounded": true
+ }
+}

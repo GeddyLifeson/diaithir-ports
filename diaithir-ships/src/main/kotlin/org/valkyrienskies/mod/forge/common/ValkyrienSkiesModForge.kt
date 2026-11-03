@@ -110,6 +110,8 @@ class ValkyrienSkiesModForge(modBus: IEventBus, container: ModContainer) {
         if (isClient) org.valkyrienskies.eureka.EurekaMod.initClient(modBus)
         org.valkyrienskies.tournament.TournamentMod.init(modBus, container)
         if (isClient) org.valkyrienskies.tournament.TournamentMod.initClient(modBus)
+        org.diaithir.archimedes.ArchimedesMod.init(modBus, container)
+        if (isClient) org.diaithir.archimedes.ArchimedesClient.init(modBus)
         VSEntityManager.registerContraptionHandler(ContraptionShipyardEntityHandlerForge)
 
         // Register the ModConfigSpecs with NeoForge so their ConfigValues have a backing

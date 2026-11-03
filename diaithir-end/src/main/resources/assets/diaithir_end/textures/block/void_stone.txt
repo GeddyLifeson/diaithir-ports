@@ -1,0 +1,1 @@
+64px Industrial Factory style: riveted slate-dark panels, muted steel seams, hazard accent line along lower edge. (texture binary supplied by art pipeline)

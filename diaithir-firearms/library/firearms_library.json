@@ -1,0 +1,240 @@
+[
+ [
+  "Gunna",
+  "concept",
+  6,
+  "firearms",
+  "Guns of the later Ages, made from gunmetal, gun hearts and iron nets. Sidearms and the scatter gun come first, rifles and the belt-fed gun in Age VII, long guns, rockets and energy weapons with Rodos."
+ ],
+ [
+  "daug bhieg",
+  "item",
+  6,
+  "firearms",
+  "Light Sidearm: sidearm of Age VI. 5 hp a shot, 300 rounds a minute, one shot per pull, 15 in the magazine, effective to 40 m, uses 9 mm Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "daug throum",
+  "item",
+  6,
+  "firearms",
+  "Heavy Sidearm: sidearm of Age VI. 6.5 hp a shot, 240 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m, uses .45 Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "daug mhòir",
+  "item",
+  6,
+  "firearms",
+  "Magnum Revolver: sidearm of Age VI. 10 hp a shot, 100 rounds a minute, one shot per pull, 6 in the magazine, effective to 55 m, uses Magnum Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda luod",
+  "item",
+  7,
+  "firearms",
+  "Compact Submachine Gun: submachine gun of Age VII. 4 hp a shot, 600 rounds a minute, automatic, 30 in the magazine, effective to 30 m, uses 9 mm Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda goiridi",
+  "item",
+  7,
+  "firearms",
+  "Carbine: rifle of Age VII. 6 hp a shot, 400 rounds a minute, automatic, 30 in the magazine, effective to 70 m, uses 5.56 mm Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda kogaid",
+  "item",
+  7,
+  "firearms",
+  "Assault Rifle: rifle of Age VII. 8 hp a shot, 300 rounds a minute, automatic, 30 in the magazine, effective to 75 m, uses 7.62 mm Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda kindtech",
+  "item",
+  7,
+  "firearms",
+  "Marksman Rifle: rifle of Age VII. 12 hp a shot, 150 rounds a minute, one shot per pull, 20 in the magazine, effective to 110 m, uses 7.62 mm Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda fauda",
+  "item",
+  7,
+  "firearms",
+  "Sniper Rifle: long-range rifle of Age VII. 22 hp a shot, 40 rounds a minute, one shot per pull, 5 in the magazine, effective to 160 m, uses 7.62 mm Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda sàir fhauda",
+  "item",
+  8,
+  "firearms",
+  "Anti-Materiel Rifle: long-range rifle of Age RODOS. 34 hp a shot, 30 rounds a minute, one shot per pull, 5 in the magazine, effective to 200 m, uses .50 Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gundasìl",
+  "item",
+  6,
+  "firearms",
+  "Pump Shotgun: scatter gun of Age VI. 2.5 hp x8 pellets a shot, 60 rounds a minute, one shot per pull, 6 in the magazine, effective to 25 m, uses 12 Gauge Shell. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gundasìl kogaid",
+  "item",
+  7,
+  "firearms",
+  "Combat Shotgun: scatter gun of Age VII. 2.5 hp x8 pellets a shot, 120 rounds a minute, one shot per pull, 8 in the magazine, effective to 25 m, uses 12 Gauge Shell. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gundasìl luod",
+  "item",
+  7,
+  "firearms",
+  "Automatic Shotgun: scatter gun of Age VII. 2.2 hp x8 pellets a shot, 240 rounds a minute, automatic, 20 in the magazine, effective to 22 m, uses 12 Gauge Shell. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda luod troum",
+  "item",
+  7,
+  "firearms",
+  "Light Machine Gun: belt-fed gun of Age VII. 5.5 hp a shot, 400 rounds a minute, automatic, 100 in the magazine, effective to 70 m, uses 5.56 mm Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda kroind",
+  "item",
+  8,
+  "firearms",
+  "Rotary Minigun: belt-fed gun of Age RODOS. 6 hp a shot, 1200 rounds a minute, automatic, 200 in the magazine, effective to 60 m, uses 7.62 mm Round. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gundumòr bieg",
+  "item",
+  7,
+  "firearms",
+  "Grenade Launcher: launcher of Age VII. 12 hp a shot, 50 rounds a minute, one shot per pull, 6 in the magazine, effective to 60 m, uses 40 mm Grenade. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "pìub nau seigednèim",
+  "item",
+  8,
+  "firearms",
+  "Rocket Launcher: launcher of Age RODOS. 25 hp a shot, 24 rounds a minute, one shot per pull, 1 in the magazine, effective to 90 m, uses Rocket. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "gunda dieluin",
+  "item",
+  8,
+  "firearms",
+  "Energy Rifle: energy weapon of Age RODOS. 9 hp a shot, 200 rounds a minute, automatic, 24 in the magazine, effective to 90 m, uses Energy Cell. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it."
+ ],
+ [
+  "peiler bieg",
+  "item",
+  6,
+  "firearms",
+  "9 mm Round: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "peiler troum",
+  "item",
+  6,
+  "firearms",
+  ".45 Round: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "peiler mòir",
+  "item",
+  6,
+  "firearms",
+  "Magnum Round: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "peiler kael",
+  "item",
+  7,
+  "firearms",
+  "5.56 mm Round: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "peiler fauda",
+  "item",
+  7,
+  "firearms",
+  "7.62 mm Round: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "sìul",
+  "item",
+  6,
+  "firearms",
+  "12 Gauge Shell: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "peiler sàir",
+  "item",
+  8,
+  "firearms",
+  ".50 Round: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "bald smùiri",
+  "item",
+  7,
+  "firearms",
+  "40 mm Grenade: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "seigednèim",
+  "item",
+  8,
+  "firearms",
+  "Rocket: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "kild dieluin",
+  "item",
+  8,
+  "firearms",
+  "Energy Cell: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload."
+ ],
+ [
+  "sùili bhieg dhierg",
+  "item",
+  7,
+  "firearms",
+  "Red Dot Sight: zooms the view 1.25x while sneaking. One of each kind per gun."
+ ],
+ [
+  "sùili fhauda",
+  "item",
+  7,
+  "firearms",
+  "Four-Power Scope: zooms the view 4x while sneaking. One of each kind per gun."
+ ],
+ [
+  "sàirsùil",
+  "item",
+  7,
+  "firearms",
+  "Eight-Power Scope: zooms the view 8x while sneaking. One of each kind per gun."
+ ],
+ [
+  "tousd beòili",
+  "item",
+  7,
+  "firearms",
+  "Suppressor: quietens the shot and trims damage by a tenth. One of each kind per gun."
+ ],
+ [
+  "kaskun beòili",
+  "item",
+  7,
+  "firearms",
+  "Muzzle Brake: cuts recoil by two fifths. One of each kind per gun."
+ ],
+ [
+  "grèimi làimi",
+  "item",
+  7,
+  "firearms",
+  "Foregrip: tightens spread by three tenths. One of each kind per gun."
+ ]
+]
