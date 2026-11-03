@@ -943,6 +943,16 @@
    "copy": "minecraft:iron_ore"
   },
   {
+   "id": "aurorian_portal",
+   "kind": "portal",
+   "copy": "minecraft:nether_portal"
+  },
+  {
+   "id": "aurorian_portal_frame",
+   "kind": "portal_frame",
+   "copy": "theaurorian:aurorian_cobblestone"
+  },
+  {
    "id": "moon_gem",
    "kind": "full",
    "copy": "minecraft:stone"

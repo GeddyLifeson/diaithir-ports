@@ -78,6 +78,8 @@ public final class DiaithirAurorian {
     public record Data(Map<String, ToolMat> tools, Map<String, ArmorMat> armor, List<ItemSpec> items, List<BlockSpec> blocks) {}
 
     public static final Data DATA = load();
+    public static DeferredBlock<Block> PORTAL;
+    public static DeferredBlock<Block> PORTAL_FRAME;
 
     private static Data load() {
         try (Reader r = new InputStreamReader(DiaithirAurorian.class.getResourceAsStream("/data/" + ID + "/aurorian.json"))) {
@@ -195,6 +197,8 @@ public final class DiaithirAurorian {
             case "wall" -> new WallBlock(p);
             case "fence" -> new FenceBlock(p);
             case "keyhole" -> new GateKeyholeBlock(p, Identifier.parse(b.key()), Boolean.TRUE.equals(b.lockpick()));
+            case "portal" -> new AurorianPortalBlock(p.noCollision().strength(-1.0F).lightLevel(s -> 11).noLootTable().pushReaction(net.minecraft.world.level.material.PushReaction.BLOCK));
+            case "portal_frame" -> new PortalFrameBlock(p);
             case "bars" -> new IronBarsBlock(p);
             case "log" -> new RotatedPillarBlock(p);
             case "leaves" -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, p.noOcclusion());
@@ -207,6 +211,11 @@ public final class DiaithirAurorian {
         for (BlockSpec b : DATA.blocks()) {
             DeferredBlock<Block> blk = BLOCKS.registerBlock(b.id(), p -> makeBlock(b, p), () -> blockProps(b));
             BLK.put(b.id(), blk);
+            if (b.id().equals("aurorian_portal")) {
+                PORTAL = blk;
+            } else if (b.id().equals("aurorian_portal_frame")) {
+                PORTAL_FRAME = blk;
+            }
             ALL.put(b.id(), ITEMS.registerItem(b.id(), p -> new net.minecraft.world.item.BlockItem(blk.get(), p), () -> new Item.Properties().useBlockDescriptionPrefix()));
         }
         for (ItemSpec s : DATA.items()) {
@@ -216,6 +225,7 @@ public final class DiaithirAurorian {
             .title(Component.translatable("itemGroup.theaurorian"))
             .icon(() -> new ItemStack(ALL.get("aurorian_steel_ingot").get()))
             .displayItems((params, out) -> ALL.values().forEach(i -> out.accept(i.get()))).build());
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));
         BLOCKS.register(bus);
         ITEMS.register(bus);
         TABS.register(bus);

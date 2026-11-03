@@ -26,10 +26,10 @@ DEFERRED_ITEMS = {"absorption_orb", "living_divining_rod", "mirror_of_guidance",
                   "ruby_amulet", "sapphire_amulet", "cerulean_arrow", "crystal_arrow", "strange_meat", "silentwood_bow",
                   "umbra_chestplate", "umbra_greatsword", "crystalline_sword", "spectral_helmet", "spectral_chestplate",
                   "spectral_leggings", "spectral_boots"}
-DEFERRED_BLOCK_CLASS = {"AurorianPortal", "AurorianPortalFrame",
+DEFERRED_BLOCK_CLASS = {
                         "AurorianFurnaceBlock", "BossSpawnerBlock", "MoonlightForgeBlock", "ScrapperBlock", "SilentwoodChestBlock",
                         "SilentwoodCraftingTableBlock", "ChimneyBlock", "CrystalBlock", "FogWallBlock", "SaplingBlock"}
-BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
+BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
               "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "TallGrassBlock": "plant"}
 
 
