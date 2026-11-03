@@ -52,24 +52,68 @@
   {
    "pos": [
     -1.05,
-    0,
-    0
+    0.35,
+    -1.6
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:track_apc"
+   "defaultPart": "diaithirvehicles:wheel_apc"
+  },
+  {
+   "pos": [
+    -1.05,
+    0.35,
+    0.0
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_apc"
+  },
+  {
+   "pos": [
+    -1.05,
+    0.35,
+    1.6
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_apc"
   },
   {
    "pos": [
     1.05,
-    0,
-    0
+    0.35,
+    -1.6
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:track_apc"
+   "defaultPart": "diaithirvehicles:wheel_apc"
+  },
+  {
+   "pos": [
+    1.05,
+    0.35,
+    0.0
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_apc"
+  },
+  {
+   "pos": [
+    1.05,
+    0.35,
+    1.6
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_apc"
   },
   {
    "pos": [

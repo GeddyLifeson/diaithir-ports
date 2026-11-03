@@ -41,6 +41,8 @@ def body_model(kind):
     if kind == 'wrecker': o.add('boom', box(-.15, low + .35, -hl, .15, H + .4, -hl + 1.6), R['metal'])
     if kind == 'firetruck': o.add('ladder', box(-.3, H, -hl + .2, .3, H + .25, hl - 1.6), R['metal'])
     if kind == 'pickup': o.add('bed', box(-hw, low + .35, -hl, hw, low + .8, -.1), R['dark'])
+    if kind == 'apc':  # tracks are part of the body: Immersive Vehicles tread parts need a tread path in the model, so invisible road wheels carry and drive the hull
+        for sx in (-1, 1): o.add('track_%d' % sx, box(sx * (hw - .3) - .3, .05, -2.4, sx * (hw - .3) + .3, .7, 2.4), R['dark'])
     o.add('lamp_l', box(-hw + .1, low + .4, hl, -hw + .4, low + .6, hl + .05), R['glass'])
     o.add('lamp_r', box(hw - .4, low + .4, hl, hw - .1, low + .6, hl + .05), R['glass'])
     return o
@@ -64,11 +66,11 @@ simple(f'{A}/objmodels/parts/vehicle_engine.obj', 'engine', box(-.4, 0, -.4, .4,
 atlas((90, 90, 90), f'{A}/textures/parts/vehicle_seat.png'); atlas((90, 90, 90), f'{A}/textures/parts/vehicle_engine.png')
 w(f'{A}/jsondefs/parts/vehicle_seat.json', {'general': {'type': 'seat', 'name': 'Vehicle Seat', 'materialLists': [['minecraft:white_wool:0:2']]},
    'definitions': [{'subName': '', 'name': 'Vehicle Seat', 'extraMaterialLists': [[]]}]})
-w(f'{A}/jsondefs/parts/track_apc.json', {'general': {'type': 'ground_tread', 'name': 'APC Track', 'materialLists': [['minecraft:iron_ingot:0:16']]},
-   'ground': {'isTread': True, 'width': 0.6, 'height': 0.7, 'flatHeight': 0.7, 'climbHeight': 0.7, 'motiveFriction': 1.0, 'lateralFriction': 1.3, 'extraCollisionBoxOffset': 0.0, 'spacing': 4.6, 'canGoFlat': False},
-   'definitions': [{'subName': '', 'name': 'APC Track', 'extraMaterialLists': [[]]}]})
-simple(f'{A}/objmodels/parts/track_apc.obj', 'track', box(-.3, .05, -2.4, .3, .7, 2.4))
-atlas((46, 44, 42), f'{A}/textures/parts/track_apc.png')
+w(f'{A}/jsondefs/parts/wheel_apc.json', {'general': {'type': 'ground_wheel', 'name': 'APC Road Wheel', 'materialLists': [['minecraft:iron_ingot:0:6']]},
+   'ground': {'isWheel': True, 'width': 0.6, 'height': 0.7, 'motiveFriction': 1.0, 'lateralFriction': 1.3},
+   'definitions': [{'subName': '', 'name': 'APC Road Wheel', 'modelName': 'wheel_apc', 'textureName': 'wheel_apc', 'extraMaterialLists': [[]]}]})
+simple(f'{A}/objmodels/parts/wheel_apc.obj', 'hub', box(-.01, .34, -.01, .01, .36, .01))
+atlas((46, 44, 42), f'{A}/textures/parts/wheel_apc.png')
 manifest = []
 for v in rows:
     kind = v['body']; L, W, H, r, paint, (dm, dkw, dl) = BODY[kind]; vid = v['id']; fuel = v['fuel']; name = v['iconic_design']
@@ -88,7 +90,7 @@ for v in rows:
     hl, hw = L / 2, W / 2
     parts = [{'pos': [0, 0.7, hl - 1.0], 'types': ['engine_car'], 'defaultPart': f'{PK}:engine_{vid}'}]
     if kind == 'apc':
-        parts += [{'pos': [sx * (hw - .3), 0, 0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:track_apc'} for sx in (-1, 1)]
+        parts += [{'pos': [sx * (hw - .3), .35, z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:wheel_apc'} for sx in (-1, 1) for z in (-1.6, 0.0, 1.6)]
     else:
         for z in ((hl - .9, -hl + .9) if L < 7 else (hl - 1.0, -hl + 1.2, -hl + 2.6)):
             parts += [{'pos': [sx * (hw - .12), r, z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:wheel_{vid}'} for sx in (-1, 1)]

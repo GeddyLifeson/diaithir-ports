@@ -62,24 +62,80 @@
   {
    "pos": [
     -1.25,
-    0.0,
+    0.45,
+    -2.5
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
+  },
+  {
+   "pos": [
+    -1.25,
+    0.45,
     0.0
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirtanks:tank_track2"
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
+  },
+  {
+   "pos": [
+    -1.25,
+    0.45,
+    2.5
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
   },
   {
    "pos": [
     1.25,
-    0.0,
+    0.45,
+    -2.5
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
+  },
+  {
+   "pos": [
+    1.25,
+    0.45,
     0.0
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirtanks:tank_track2"
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
+  },
+  {
+   "pos": [
+    1.25,
+    0.45,
+    2.5
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
   },
   {
    "pos": [

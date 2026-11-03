@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "APC Road Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:6"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.6,
+  "height": 0.7,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.3
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "APC Road Wheel",
+   "modelName": "wheel_apc",
+   "textureName": "wheel_apc",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

@@ -51,6 +51,9 @@ for key, (ox, oy, label, var, top, ticks, labels) in inst.items():
     }
 os.makedirs(os.path.join(root, "textures"), exist_ok=True)
 sheet.save(os.path.join(root, "textures", "instruments.png"))
+os.makedirs(os.path.join(root, "textures", "items", "instruments"), exist_ok=True)
+for key, (ox, oy, *_rest) in inst.items():
+    sheet.crop((ox, oy, ox + 128, oy + 128)).resize((32, 32), Image.LANCZOS).save(os.path.join(root, "textures", "items", "instruments", key + ".png"))
 os.makedirs(os.path.join(root, "jsondefs", "instruments"), exist_ok=True)
 for k, v in defs.items():
     json.dump(v, open(os.path.join(root, "jsondefs", "instruments", k + ".json"), "w"), indent=1)
