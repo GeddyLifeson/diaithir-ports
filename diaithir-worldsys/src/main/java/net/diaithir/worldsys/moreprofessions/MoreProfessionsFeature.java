@@ -148,7 +148,9 @@ public final class MoreProfessionsFeature {
                 if (v.getVillagerXp() == 0) { // job token gone before any trade: back to a plain villager
                     v.setData(JOB, "");
                     v.setData(DONE, 0);
-                    v.overrideOffers(null);
+                    // profession round trip makes the villager drop its offers and roll vanilla fletcher trades again
+                    v.setVillagerData(v.getVillagerData().withProfession(level.registryAccess(), VillagerProfession.NONE));
+                    v.setVillagerData(v.getVillagerData().withProfession(level.registryAccess(), VillagerProfession.FLETCHER));
                 }
                 else if (j == null && !fletcher) { v.setData(JOB, ""); v.setData(DONE, 0); }
                 return;
