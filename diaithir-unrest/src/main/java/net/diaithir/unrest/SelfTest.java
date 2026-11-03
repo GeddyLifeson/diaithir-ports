@@ -65,15 +65,16 @@ public final class SelfTest {
             f.add(c.x() + 2, c.z(), 4000);
             double before = f.total();
             nest.step(level);
-            if (nest.store() <= 0) fails.add("nest absorbed nothing");
+            if (nest.lifetime() <= 0) fails.add("nest absorbed nothing");
             if (f.total() >= before) fails.add("absorbing did not lower the field");
-            if (waves.get() == 0) fails.add("no wave posted at store " + nest.store());
+            if (waves.get() == 0) fails.add("no wave posted");
+            if (waves.get() != 5) fails.add("expected 5 waves from 1000 absorbed at cost 200, got " + waves.get());
             // cancelled waves cost nothing
             cancel[0] = true;
             double store = nest.store();
             f.add(c.x() + 2, c.z(), 4000);
             nest.step(level);
-            if (nest.store() < store) fails.add("a cancelled wave still cost store");
+            if (nest.store() < store + 900) fails.add("a cancelled wave still cost store (" + store + " -> " + nest.store() + ")");
             // Meter reads the chunk
             level.setBlock(at.above(), DiaithirUnrest.METER.get().defaultBlockState(), 3);
             if (Unrest.at(level, at) < 0) fails.add("negative reading");
