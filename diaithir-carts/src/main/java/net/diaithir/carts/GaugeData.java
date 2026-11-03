@@ -16,6 +16,9 @@ public final class GaugeData {
     /** The gauge of a vehicle (a cart spawned from rolling stock). Plain carts have none and run anywhere. */
     public static final Supplier<AttachmentType<String>> TYPE = ATTACHMENTS.register("gauge", () -> AttachmentType.builder(() -> "any").serialize(Codec.STRING.fieldOf("id")).build());
 
+    /** Crew a vehicle needs to run (steam locomotive 2: driver and fireman). 0 means the default of 1. */
+    public static final Supplier<AttachmentType<Integer>> CREW = ATTACHMENTS.register("crew", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT.fieldOf("n")).build());
+
     public static Gauge of(AbstractMinecart cart) {
         return Gauge.of(cart.getData(TYPE));
     }

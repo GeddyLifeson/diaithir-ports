@@ -81,6 +81,7 @@ public final class RollingStockItem extends Item {
         cart.setPos(pos.getX() + 0.5, pos.getY() + 0.0625, pos.getZ() + 0.5);
         cart.setCustomName(Component.literal(r.vehicleName));
         GaugeData.set(cart, r.gauge);
+        cart.setData(net.diaithir.carts.GaugeData.CREW, r.crew);
         level.addFreshEntity(cart);
         return cart;
     }

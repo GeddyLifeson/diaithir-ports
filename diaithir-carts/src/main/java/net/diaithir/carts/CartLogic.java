@@ -52,6 +52,12 @@ public final class CartLogic {
         return s != null && s != RailShape.NORTH_SOUTH && s != RailShape.EAST_WEST && !s.isSlope();
     }
 
+    /** Slots of a freight cart that take cargo: the vehicle's gauge payload share of the container (narrow 40 %), at least one. */
+    public static int slotLimit(AbstractMinecart cart) {
+        int size = cart instanceof net.minecraft.world.entity.vehicle.minecart.AbstractMinecartContainer c ? c.getContainerSize() : 0;
+        return Math.max(1, (int) Math.floor(size * GaugeData.of(cart).payload));
+    }
+
     public static void forget(UUID cart) {
         HOLDS.remove(cart);
     }

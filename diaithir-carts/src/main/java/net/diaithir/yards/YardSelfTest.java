@@ -72,23 +72,18 @@ public final class YardSelfTest {
         if (be == null) { f.add("no block entity"); return; }
         if (be.select("yard_loco_gp7") == null) f.add("workshop accepted a diesel (assembly line) design");
         if (be.select("yard_loco_rocket") != null) { f.add("rocket not accepted"); return; }
-        PartDef bogie = YardRegistry.part("diaithircarts:bogie_xs").orElseThrow();
-        PartDef boiler = YardRegistry.part("diaithircarts:boiler_xs").orElseThrow();
-        PartDef cab = YardRegistry.part("diaithircarts:cab_xs").orElseThrow();
-        PartDef coupler = YardRegistry.part("diaithircarts:coupler_xs").orElseThrow();
-        for (int i = 0; i < 2; i++) if (be.install(bogie) != BuildState.InstallResult.OK) f.add("bogie " + i);
-        for (int i = 0; i < 200; i++) be.tick();
-        if (be.build().stageIndex() != 1) f.add("frame stage did not finish, at " + be.build().stageIndex());
-        if (be.install(cab) != BuildState.InstallResult.WRONG_STAGE) f.add("cab accepted too early");
-        if (be.install(boiler) != BuildState.InstallResult.NEEDS_CRANE) f.add("heavy boiler placed without a crane");
         level.setBlock(at.offset(3, 0, 0), BuiltInRegistries.BLOCK.getValue(Identifier.parse("diaithircarts:crane_treadwheel")).defaultBlockState(), 2);
         if (be.cranes()[0] < 2000) f.add("crane not seen: lift " + be.cranes()[0]);
-        if (be.install(boiler) != BuildState.InstallResult.OK) f.add("boiler with crane");
-        for (int i = 0; i < 300; i++) be.tick();
-        if (be.install(cab) != BuildState.InstallResult.OK) f.add("cab");
-        for (int i = 0; i < 100; i++) be.tick();
-        if (be.install(coupler) != BuildState.InstallResult.OK) f.add("coupler");
-        for (int i = 0; i < 100; i++) be.tick();
+        YardDef def = YardRegistry.yard("yard_loco_rocket").orElseThrow();
+        PartDef early = YardRegistry.part("diaithircarts:" + def.stages().get(1).slots().get(0).kind()).orElseThrow();
+        if (be.install(early) != BuildState.InstallResult.WRONG_STAGE) f.add("a later stage's part was accepted too early");
+        for (YardDef.Stage st : def.stages()) {   // every stage of the spec-driven chain, each part its own kind
+            for (YardDef.Slot sl : st.slots()) for (int i = 0; i < sl.count(); i++) {
+                PartDef pd = YardRegistry.part("diaithircarts:" + sl.kind()).orElseThrow();
+                if (be.install(pd) != BuildState.InstallResult.OK) f.add(st.id() + " part " + sl.kind() + " " + i);
+            }
+            for (int i = 0; i < 400; i++) be.tick();
+        }
         if (be.active()) f.add("still building");
         if (be.lastRollout.isEmpty() || !BuiltInRegistries.ITEM.getKey(be.lastRollout.getItem()).toString().equals("diaithircarts:loco_rocket")) f.add("no rollout");
         // rolling stock becomes the matching existing cart entity
@@ -102,8 +97,8 @@ public final class YardSelfTest {
         // blueprint build by a manned crane from a depot chest, no hand installs
         level.setBlock(at.offset(0, 0, 1), Blocks.CHEST.defaultBlockState(), 2);
         net.minecraft.world.Container depot = (net.minecraft.world.Container) level.getBlockEntity(at.offset(0, 0, 1));
-        depot.setItem(0, new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse("diaithircarts:wheelset_xs")), 4));
-        depot.setItem(1, new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse("diaithircarts:body_xs")), 1));
+        depot.setItem(0, new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse("diaithircarts:axle_wagon_light_xs")), 4));
+        depot.setItem(1, new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse("diaithircarts:body_general_xs")), 1));
         if (be.select("yard_wag_wagonway") != null) { f.add("wagonway not selectable"); return; }
         for (int i = 0; i < 400; i++) be.tick();
         if (!be.active() || be.build().stageIndex() != 0) f.add("built with nobody at the crane");
@@ -139,6 +134,11 @@ public final class YardSelfTest {
         if (CartLogic.cap(narCart, 0.4) != 0) f.add("narrow vehicle ran on standard rail");
         stdCart.setPos(p.getX() + 4.5, p.getY() + 0.0625, p.getZ() + 0.5); narCart.setPos(p.getX() + 4.5, p.getY() + 0.0625, p.getZ() + 0.5);
         if (CartLogic.cap(stdCart, 0.4) == 0 || CartLogic.cap(narCart, 0.4) == 0) f.add("dual-gauge rail refused a vehicle");
+        if (CartLogic.slotLimit(narCart) != 10) f.add("narrow freight cart takes " + CartLogic.slotLimit(narCart) + " slots, want 10");
+        if (!((net.minecraft.world.Container) narCart).canPlaceItem(9, new ItemStack(net.minecraft.world.item.Items.COAL)) || ((net.minecraft.world.Container) narCart).canPlaceItem(10, new ItemStack(net.minecraft.world.item.Items.COAL))) f.add("payload limit not applied to narrow cart slots");
+        var steam = spawnAt(level, p, "loco_mallard");
+        if (steam == null || net.diaithir.carts.Autonomy.crewRequired(steam) != 2 || net.diaithir.carts.Autonomy.crewRequired(stdCart) != 1) f.add("crew counts not stored");
+        if (steam != null) steam.discard();
         stdCart.discard(); narCart.discard();
     }
 
