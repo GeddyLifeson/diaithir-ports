@@ -25,6 +25,21 @@ Extinct species come back only in the far future. Craft a revival matrix (amethy
 
 Gate by DNA tier: tier 1 needs Age VII, tiers 2-3 Age VIII (Future), tiers 4-5 Age IX (Rodos). The Age is the larger of the server config `age` and the score of the fake player `#age` in the objective `diaithirfauna_age`; the Age scripts set it (`/scoreboard players set #age diaithirfauna_age 7`, also from KubeJS with `server.runCommandSilent`). Default 0: nothing is revivable. Create the objective once with `/scoreboard objectives add diaithirfauna_age dummy`.
 
+## Species bees (clean-room stand-in for Productive Bees)
+Productive Bees is all rights reserved, so this is our own design, from the public idea only. Vanilla bees carry a species (attachment `bee_species`). Wild bees pick a surface species (meadow, sandy, muddy) when they appear; two parents of a crossing pair breed the crossed species (coal = meadow + sandy, iron = coal + muddy, and so on up to diamond; the table is `data/diaithirfauna/bees/species.json`), other pairings give a parent's species. A Bee Jar catches a bee (use on it) and lets it out (use on the ground). The Apiary holds up to three jars of bees and, with at least three flowers within five blocks, by day and out of the rain, makes one comb per bee every three minutes. Empty hand takes the combs, sneaking also takes the bees out in jars. Combs are smelted (or blasted for double) or crafted into the resource; all combs are in tag `c:combs`. Age gates in `age_gate_bees.json`, Codex text in `library-sync/diaithirfauna-bees.json`, `id_migrations_bees.json` for old worlds. `tools/gen_bee_assets.py` (S-id claimed) writes assets and data.
+
+Test: `/fauna beetest` (owners) checks that every species can be bred from wild bees, outputs exist, crossing (both orders), the jar, the apiary capacity, combs with flowers and none without, and saving. Headless only.
+
+Traits: every bee has genes "species/productivity/endurance" (0 to 3 each). Productivity makes combs 25 percent faster a level. Endurance 1 lets a bee work in rain, 2 also after dark. A child's traits are its parents' average, nudged now and then. Genes sync to the client, ride in the jar and the apiary, and are shown in the jar tooltip and apiary status.
+
+Wild nests: `nest_meadow` (plains, forests), `nest_sandy` (desert, beach, badlands, savanna), `nest_muddy` (swamps, rivers) come up on the surface (worldgen files `nest_*`). By day a nest lets out bees of its species, up to three of that species within 24 blocks. Breaking a nest drops the nest.
+
+Species colours: `client/SpeciesBeeRenderer` replaces the vanilla bee renderer and tints the body of the vanilla bee texture to the species colour, built in memory from the player's own vanilla textures when first needed (nothing derived from Mojang textures is shipped). Compiled and the server side is tested; the renderer has not been run in a client.
+
+`tools/gen_bee_migrations.py` writes `id_migrations_bees.json` from Productive Bees' public language file (131 blocks: nests and hives, 2 items: cages to jars and combs where we have the same resource, 8 bee entities to a plain bee).
+
+Not built: hopper or pipe output from the apiary, a trait-inspecting item, nests in the Nether or End.
+
 ## Library mobs (Panscriptum)
 `data/diaithirfauna/library_mobs.tsv.gz` holds one row per Library MOB entry (id, name, body plan, Age tier, kg, scale, diet, flags, element), 59,351 of 59,431 (81 entries the sorter kept failing on). They use the 71 body plans, are kept out of `Species.ALL`, spawn tables and suggestions, and appear only through `/fauna libsummon <entry id>` or code (`Species.byId`). The Age tier raises health and damage (+40% per tier above 1, damage capped at 40). Names are the entry names; temper "hostile" sets the aggressive flag. Rebuild: `tools/libmob_extract.py JOB` (S6832), `tools/libmob_run.py JOB` (S6833), `tools/libmob_build.py JOB` (S6834). Stats come only from the entry's own text; no text is written.
 
