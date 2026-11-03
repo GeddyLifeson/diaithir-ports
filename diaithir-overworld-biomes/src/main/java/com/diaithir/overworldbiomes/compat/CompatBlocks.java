@@ -49,7 +49,7 @@ public final class CompatBlocks {
                 JsonArray arr = ns.getValue().getAsJsonArray();
                 for (JsonElement e : arr) {
                     JsonObject o = e.getAsJsonObject();
-                    register(blocks, items, o.get("id").getAsString(), o.get("kind").getAsString());
+                    register(ns.getKey(), blocks, items, o.get("id").getAsString(), o.get("kind").getAsString());
                 }
                 blocks.register(bus);
                 items.register(bus);
@@ -59,7 +59,7 @@ public final class CompatBlocks {
         }
     }
 
-    private static void register(DeferredRegister.Blocks blocks, DeferredRegister.Items items, String id, String kind) {
+    private static void register(String modNs, DeferredRegister.Blocks blocks, DeferredRegister.Items items, String id, String kind) {
         switch (kind) {
             case "item" -> items.registerSimpleItem(id);
             case "planks" -> block(blocks, items, id, p -> new Block(p.mapColor(MapColor.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
@@ -74,6 +74,14 @@ public final class CompatBlocks {
             case "button" -> block(blocks, items, id, p -> new net.minecraft.world.level.block.ButtonBlock(BlockSetType.OAK, 30, p.noCollision().strength(0.5F).sound(SoundType.WOOD)));
             case "plate" -> block(blocks, items, id, p -> new net.minecraft.world.level.block.PressurePlateBlock(BlockSetType.OAK, p.mapColor(MapColor.WOOD).noCollision().strength(0.5F).sound(SoundType.WOOD)));
             case "leaves" -> block(blocks, items, id, p -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, p.mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion()));
+            case "sapling" -> {
+                String tree = modNs + "_" + id.substring(0, id.length() - "_sapling".length()) + "_tree";
+                var key = net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.CONFIGURED_FEATURE,
+                        net.minecraft.resources.Identifier.fromNamespaceAndPath("diaithir_overworld_biomes", tree));
+                var grower = new net.minecraft.world.level.block.grower.TreeGrower(id, java.util.Optional.empty(), java.util.Optional.of(key), java.util.Optional.empty());
+                block(blocks, items, id, p -> new net.minecraft.world.level.block.SaplingBlock(grower, p.mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            }
+            case "tall" -> block(blocks, items, id, p -> new net.minecraft.world.level.block.DoublePlantBlock(p.mapColor(MapColor.PLANT).noCollision().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
             case "plant" -> block(blocks, items, id, p -> new net.minecraft.world.level.block.BushBlock(p.mapColor(MapColor.PLANT).noCollision().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
             default -> block(blocks, items, id, p -> new Block(p.mapColor(MapColor.STONE).strength(1.5F, 6.0F).sound(SoundType.STONE)));
         }

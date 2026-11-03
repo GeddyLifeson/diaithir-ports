@@ -1,1 +1,1 @@
-{"variants": {"": {"model": "biomesoplenty:block/flowering_oak_sapling"}}}
+{"variants": {"stage=0": {"model": "biomesoplenty:block/flowering_oak_sapling"}, "stage=1": {"model": "biomesoplenty:block/flowering_oak_sapling"}}}

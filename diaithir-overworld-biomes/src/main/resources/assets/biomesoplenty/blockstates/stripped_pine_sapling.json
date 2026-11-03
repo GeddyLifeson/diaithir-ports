@@ -1,1 +1,1 @@
-{"variants": {"": {"model": "biomesoplenty:block/stripped_pine_sapling"}}}
+{"variants": {"stage=0": {"model": "biomesoplenty:block/stripped_pine_sapling"}, "stage=1": {"model": "biomesoplenty:block/stripped_pine_sapling"}}}

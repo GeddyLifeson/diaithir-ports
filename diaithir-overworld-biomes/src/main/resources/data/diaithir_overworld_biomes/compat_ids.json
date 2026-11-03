@@ -70,7 +70,7 @@
 },
 {
 "id": "cherry_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "cherry_sign",
@@ -122,7 +122,7 @@
 },
 {
 "id": "cypress_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "dead_boat",
@@ -170,7 +170,7 @@
 },
 {
 "id": "dead_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "dead_sign",
@@ -238,7 +238,7 @@
 },
 {
 "id": "empyreal_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "empyreal_sign",
@@ -310,7 +310,7 @@
 },
 {
 "id": "fir_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "fir_sign",
@@ -338,7 +338,7 @@
 },
 {
 "id": "flowering_oak_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "glowflower",
@@ -398,7 +398,7 @@
 },
 {
 "id": "hellbark_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "hellbark_sign",
@@ -470,7 +470,7 @@
 },
 {
 "id": "jacaranda_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "jacaranda_sign",
@@ -542,7 +542,7 @@
 },
 {
 "id": "magic_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "magic_sign",
@@ -610,7 +610,7 @@
 },
 {
 "id": "mahogany_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "mahogany_sign",
@@ -678,7 +678,7 @@
 },
 {
 "id": "maple_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "maple_sign",
@@ -710,7 +710,7 @@
 },
 {
 "id": "orange_autumn_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "orange_cosmos",
@@ -718,7 +718,7 @@
 },
 {
 "id": "orange_maple_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "orange_sand",
@@ -782,7 +782,7 @@
 },
 {
 "id": "origin_oak_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "origin_oak_sign",
@@ -810,7 +810,7 @@
 },
 {
 "id": "origin_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "palm_boat",
@@ -858,7 +858,7 @@
 },
 {
 "id": "palm_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "palm_sign",
@@ -926,7 +926,7 @@
 },
 {
 "id": "pine_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "pine_sign",
@@ -954,7 +954,7 @@
 },
 {
 "id": "pink_cherry_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "pink_daffodil",
@@ -974,11 +974,11 @@
 },
 {
 "id": "rainbow_birch_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "red_maple_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "redwood_boat",
@@ -1026,7 +1026,7 @@
 },
 {
 "id": "redwood_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "redwood_sign",
@@ -1070,7 +1070,7 @@
 },
 {
 "id": "snowblossom_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "sprout",
@@ -1214,7 +1214,7 @@
 },
 {
 "id": "stripped_pine_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "stripped_pine_sign",
@@ -1270,11 +1270,11 @@
 },
 {
 "id": "tall_lavender",
-"kind": "plant"
+"kind": "tall"
 },
 {
 "id": "tall_white_lavender",
-"kind": "plant"
+"kind": "tall"
 },
 {
 "id": "tiny_cactus",
@@ -1330,7 +1330,7 @@
 },
 {
 "id": "umbran_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "umbran_sign",
@@ -1366,7 +1366,7 @@
 },
 {
 "id": "white_cherry_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "white_lavender",
@@ -1434,7 +1434,7 @@
 },
 {
 "id": "willow_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "willow_sign",
@@ -1462,11 +1462,11 @@
 },
 {
 "id": "yellow_autumn_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "yellow_maple_sapling",
-"kind": "plant"
+"kind": "sapling"
 }
 ],
 "natures_spirit": [
@@ -1520,7 +1520,7 @@
 },
 {
 "id": "aspen_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "aspen_sign",
@@ -1548,7 +1548,7 @@
 },
 {
 "id": "blue_wisteria_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "bluebell",
@@ -1756,7 +1756,7 @@
 },
 {
 "id": "maple_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "maple_sign",
@@ -1816,7 +1816,7 @@
 },
 {
 "id": "pink_wisteria_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "polished_chert",
@@ -1860,7 +1860,7 @@
 },
 {
 "id": "purple_wisteria_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "red_maple_leaves",
@@ -1960,7 +1960,7 @@
 },
 {
 "id": "white_wisteria_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "wisteria_boat",
@@ -2020,7 +2020,7 @@
 },
 {
 "id": "wisteria_sapling",
-"kind": "plant"
+"kind": "sapling"
 },
 {
 "id": "wisteria_sign",
