@@ -1,0 +1,16 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:dyes/red",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/redstone",
+   "count": 1
+  }
+ ],
+ "result": "diaithir_classes:reagent_tine",
+ "time_s": 5
+}

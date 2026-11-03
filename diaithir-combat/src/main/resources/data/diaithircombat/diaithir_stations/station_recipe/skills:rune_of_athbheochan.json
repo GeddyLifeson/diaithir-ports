@@ -1,0 +1,24 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/diamond",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/redstone",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/amethyst",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:skills:rune_of_athbheochan",
+ "time_s": 5
+}
