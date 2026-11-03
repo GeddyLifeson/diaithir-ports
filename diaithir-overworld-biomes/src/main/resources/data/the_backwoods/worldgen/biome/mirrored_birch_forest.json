@@ -18,7 +18,10 @@
   [],
   [],
   [],
-  [],
+  [
+   "the_backwoods:patch_petrified_weald_foliage",
+   "the_backwoods:patch_sedgebrush"
+  ],
   []
  ],
  "has_precipitation": false,

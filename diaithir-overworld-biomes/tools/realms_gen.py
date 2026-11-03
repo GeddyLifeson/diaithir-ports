@@ -251,6 +251,45 @@ for p in list(tg):
         if child not in tg[parent]: tg[parent].append(child)
 for p, vals in tg.items(): put(f'data/{p}.json', {'replace': False, 'values': sorted(set(vals))})
 
+
+# ---------- slice 3: trees and plant patches ----------
+import copy
+oak = vj('data/minecraft/worldgen/configured_feature/oak.json')
+SURF = {'type': 'minecraft:all_of', 'predicates': [{'type': 'minecraft:matching_blocks', 'blocks': 'minecraft:air'}, {'type': 'minecraft:solid', 'offset': [0, -1, 0]}]}
+def placed(feature, count, spread=7, rarity=None):
+    pl = ([{'type': 'minecraft:rarity_filter', 'chance': rarity}] if rarity else []) + [
+        {'type': 'minecraft:in_square'},
+        {'type': 'minecraft:height_range', 'height': {'type': 'minecraft:uniform', 'max_inclusive': {'below_top': 8}, 'min_inclusive': {'above_bottom': 8}}},
+        {'type': 'minecraft:biome'}, {'type': 'minecraft:count', 'count': count},
+        {'type': 'minecraft:random_offset', 'xz_spread': {'type': 'minecraft:trapezoid', 'max': spread, 'min': -spread, 'plateau': 0}, 'y_spread': {'type': 'minecraft:trapezoid', 'max': 4, 'min': -4, 'plateau': 0}},
+        {'type': 'minecraft:block_predicate_filter', 'predicate': SURF}]
+    return {'feature': feature, 'placement': pl}
+FAM = {}
+for w in WOODS:
+    lg = next((w + x for x in ('_log', '_wood') if w + x in made), None)
+    lv = w + '_leaves' if w + '_leaves' in made else None
+    if lg and lv:
+        o = copy.deepcopy(oak)
+        o['config']['trunk_provider']['state'] = {'Name': f'{NS}:{lg}', 'Properties': {'axis': 'y'}}
+        o['config']['foliage_provider']['state'] = {'Name': f'{NS}:{lv}'}
+        o['config']['trunk_placer']['base_height'] = 4 + len(w) % 3
+        o['config'].pop('below_trunk_provider', None)
+        put(f'data/{NS}/worldgen/configured_feature/tree_{w}.json', o)
+        put(f'data/{NS}/worldgen/placed_feature/tree_{w}.json', placed(f'{NS}:tree_{w}', 60, 7))
+        FAM[w] = f'{NS}:tree_{w}'
+PLANTS = [e['id'] for e in man if e['kind'] == 'cross' and 'sapling' not in e['id'] and not e['id'].endswith('_plant') and 'mushroom' not in e['id']]
+for pl in PLANTS:
+    put(f'data/{NS}/worldgen/configured_feature/patch_{pl}.json', {'type': 'minecraft:simple_block', 'config': {'to_place': {'type': 'minecraft:simple_state_provider', 'state': {'Name': f'{NS}:{pl}'}}}})
+    put(f'data/{NS}/worldgen/placed_feature/patch_{pl}.json', placed(f'{NS}:patch_{pl}', 96, 7))
+def veg_for(b, i):
+    fs = [f for f in FAM if f in b or f.replace('_oak', '') in b]
+    if not fs and re.search(r'(forest|wood|thicket|grove|jungle|taiga|swamp)', b) and FAM: fs = [sorted(FAM)[i % len(FAM)]]
+    feats = [FAM[f] for f in fs]
+    if PLANTS and not re.search(r'(sea|ocean|lake|abyss|barren|grain|still|loss)', b):
+        k = max(2, len(PLANTS) // 4)
+        feats += [f'{NS}:patch_{PLANTS[(i * 3 + j) % len(PLANTS)]}' for j in range(min(k, 4))]
+    return sorted(set(feats))
+
 # ---------- dimensions ----------
 ref = lambda x: x if ':' in x else f'{NS}:{x}'
 def blk(n): return {'type': 'minecraft:block', 'result_state': {'Name': ref(n)}}
@@ -305,6 +344,7 @@ for D in dims:
         o['carvers'] = []; o['has_precipitation'] = False; o['temperature'] = st.get('temp', 0.5); o['downfall'] = 0.4
         o['effects'] = {'water_color': st.get('water', amb['water'])}
         o['features'] = [[] for _ in range(11)]
+        o['features'][9] = veg_for(b, biomes.index(b))
         put(f'data/{NS}/worldgen/biome/{b}.json', o)
     bl = sorted(dbio, key=lambda b: (style.get(b, {}).get('temp', 0.5), b)); nbio = len(bl); cells = []
     cols_n = 5; rows_n = max(1, (nbio + cols_n - 1) // cols_n)

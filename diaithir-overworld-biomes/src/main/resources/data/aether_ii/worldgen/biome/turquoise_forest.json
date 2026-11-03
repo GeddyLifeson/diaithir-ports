@@ -18,7 +18,13 @@
   [],
   [],
   [],
-  [],
+  [
+   "aether_ii:patch_medium_aether_grass",
+   "aether_ii:patch_poasprout",
+   "aether_ii:patch_rotgrowth_vines",
+   "aether_ii:patch_shayelinn_moss_vines",
+   "aether_ii:tree_greatroot"
+  ],
   []
  ],
  "has_precipitation": false,

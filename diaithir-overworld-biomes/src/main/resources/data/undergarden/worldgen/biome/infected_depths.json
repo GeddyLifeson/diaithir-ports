@@ -18,7 +18,12 @@
   [],
   [],
   [],
-  [],
+  [
+   "undergarden:patch_droopvine",
+   "undergarden:patch_glitterkelp",
+   "undergarden:patch_gronglet",
+   "undergarden:patch_miserabell"
+  ],
   []
  ],
  "has_precipitation": false,

@@ -18,7 +18,10 @@
   [],
   [],
   [],
-  [],
+  [
+   "the_backwoods:patch_sedgebrush",
+   "the_backwoods:patch_tall_sedgebrush"
+  ],
   []
  ],
  "has_precipitation": false,

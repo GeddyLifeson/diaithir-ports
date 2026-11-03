@@ -18,7 +18,12 @@
   [],
   [],
   [],
-  [],
+  [
+   "undergarden:patch_blisterberry_bush",
+   "undergarden:patch_boomgourd",
+   "undergarden:patch_butterbunch",
+   "undergarden:patch_droopvine"
+  ],
   []
  ],
  "has_precipitation": false,

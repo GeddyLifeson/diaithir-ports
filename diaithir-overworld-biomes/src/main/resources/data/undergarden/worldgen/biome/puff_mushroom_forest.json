@@ -18,7 +18,13 @@
   [],
   [],
   [],
-  [],
+  [
+   "undergarden:patch_tall_shimmerweed",
+   "undergarden:patch_thornreed",
+   "undergarden:patch_twistybush",
+   "undergarden:patch_underbean_bush",
+   "undergarden:tree_wigglewood"
+  ],
   []
  ],
  "has_precipitation": false,

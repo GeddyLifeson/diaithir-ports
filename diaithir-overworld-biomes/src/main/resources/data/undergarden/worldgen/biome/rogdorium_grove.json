@@ -18,7 +18,13 @@
   [],
   [],
   [],
-  [],
+  [
+   "undergarden:patch_amorous_bristle",
+   "undergarden:patch_underbean_bush",
+   "undergarden:patch_utheric_gronglet",
+   "undergarden:patch_utherium_growth",
+   "undergarden:tree_grongle"
+  ],
   []
  ],
  "has_precipitation": false,

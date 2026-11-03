@@ -18,7 +18,13 @@
   [],
   [],
   [],
-  [],
+  [
+   "undergarden:patch_butterbunch",
+   "undergarden:patch_droopvine",
+   "undergarden:patch_glitterkelp",
+   "undergarden:patch_gronglet",
+   "undergarden:tree_smogstem"
+  ],
   []
  ],
  "has_precipitation": false,

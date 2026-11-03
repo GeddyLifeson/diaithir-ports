@@ -18,7 +18,10 @@
   [],
   [],
   [],
-  [],
+  [
+   "the_backwoods:patch_ash_rose",
+   "the_backwoods:patch_petrified_weald_foliage"
+  ],
   []
  ],
  "has_precipitation": false,

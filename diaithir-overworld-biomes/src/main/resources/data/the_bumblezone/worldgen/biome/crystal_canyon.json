@@ -18,7 +18,10 @@
   [],
   [],
   [],
-  [],
+  [
+   "the_bumblezone:patch_crystalline_flower",
+   "the_bumblezone:patch_pile_of_pollen"
+  ],
   []
  ],
  "has_precipitation": false,

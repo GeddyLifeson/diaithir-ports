@@ -18,7 +18,12 @@
   [],
   [],
   [],
-  [],
+  [
+   "aether_ii:patch_ambrelinn_moss_vines",
+   "aether_ii:patch_blueberry_bush",
+   "aether_ii:patch_brettl_flower",
+   "aether_ii:patch_brettl_grass_bundle"
+  ],
   []
  ],
  "has_precipitation": false,

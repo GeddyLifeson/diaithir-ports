@@ -18,7 +18,12 @@
   [],
   [],
   [],
-  [],
+  [
+   "aether_ii:patch_rotgrowth_vines",
+   "aether_ii:patch_shayelinn_moss_vines",
+   "aether_ii:patch_short_aether_grass",
+   "aether_ii:patch_tall_aether_grass"
+  ],
   []
  ],
  "has_precipitation": false,

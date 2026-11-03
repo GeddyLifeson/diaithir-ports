@@ -18,7 +18,12 @@
   [],
   [],
   [],
-  [],
+  [
+   "undergarden:patch_gronglet",
+   "undergarden:patch_miserabell",
+   "undergarden:patch_rogdoric_gronglet",
+   "undergarden:patch_shimmerweed"
+  ],
   []
  ],
  "has_precipitation": false,
