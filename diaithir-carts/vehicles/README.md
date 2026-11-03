@@ -26,6 +26,9 @@ Fuel barrel (Age II, 200 L), hand pump (Age III, 5 L per use), fuel tank (Age VI
 ## Cargo decks (freight, diaithir-ports #229)
 `roster.csv` has `deck_cells` (w x h x l in 1 m cells) and `deck_rating_kg` for vehicles with a load deck: ox cart, Ford F-1 pickup, VW Type 2 van (half-ton and van ratings, approximate). Plan: each such vehicle entity carries a `CargoBay` (attachment on the IV entity) sized from these columns, and loading uses `Containers.lift` / `Containers.lower` with the deck rating as the lifter weight so docks can reach containers riding a vehicle. Waiting on #229 to merge (CargoBay is only on that branch). Trucks, rolling stock and ships set their own decks.
 
+## Integration tickets (plans/INTEGRATION_TICKETS.tsv, lane Cars)
+About 60 pairings (CARxMAG, CARxELE, CARxFLU, CARxFUL, CARxHEA, CARxMEC, CARxPNE, CARxTRN, CARxNPC, CARxUPG, CARxWTH and so on). First: CARxMAG, magic-burning engines. ports #257 adds the `arcane_motor` engine class and magic fuel rows to the shared table (`Engine.accepts(id)`); it is not on the base yet. When it lands: merge it, add arcane engine variants to the pack, and decide how mana reaches an IV tank (IV fuel is a fluid name, so mana needs its own fluid name and a pump source). The rest follow the Age and upgrade rules of the lanes that own the other side.
+
 ## Port sources from the mod survey (plans/MOD_SURVEY.md)
 MrCrayfish's Vehicle Unofficial (GPL-3) for car features, MineColonies (GPL-3) and the Guard Villagers fork (MIT) for NPC driver behaviour. Porting GPL-3 code makes the receiving module GPL-3, so anything ported from them goes in its own module or jar section with its licence recorded, not into this MIT module. Check IV first (it already has pumps, tanks, roads and control variables), then these.
 
