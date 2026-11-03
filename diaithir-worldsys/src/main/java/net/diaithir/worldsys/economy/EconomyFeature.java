@@ -59,6 +59,8 @@ public final class EconomyFeature {
     }
 
     private static void commands(RegisterCommandsEvent e) {
+        e.getDispatcher().register(BankCommands.bank());
+        e.getDispatcher().register(BankCommands.bond());
         e.getDispatcher().register(CompanyCommands.build()
             .then(Commands.literal("quest").executes(ctx -> {
                 var p = ctx.getSource().getPlayerOrException();
