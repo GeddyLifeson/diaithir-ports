@@ -21,6 +21,7 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 - Vehicles are Minecraft entities of `mcinterface261.BuilderEntityExisting` with a protected `entity` field, so a bridge from our mods needs reflection or a compile-only IV jar.
 
 ## NPC drivers and roads (plan, not built)
+- Wages (RPG #259): every NPC driver is paid crew and is registered with `global.WAGE_HIRE(entity, job, companyKey)` when hired. Fully autonomous (no crew, no wage) from Age VII on; the autonomy and wages threads own those rules.
 - Drivers: an NPC takes the controller seat of a parked vehicle and follows a route of waypoints between stations or depots (courier depots #112 and the waypoints module are the existing hooks). Steering and throttle go through IV's own controller variables, not new physics. Ground first, trucks and trains threads reuse the same route format.
 - Road use: NPC drivers prefer higher tiers. Settlement and worldgen threads decide generated road networks.
 
