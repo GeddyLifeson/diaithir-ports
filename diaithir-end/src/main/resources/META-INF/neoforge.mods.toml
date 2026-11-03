@@ -8,6 +8,18 @@ version="1.0.0"
 displayName="Diaithir End Echoes"
 description='''Nine original vanilla-block structures on the End outer islands.'''
 
+[[mods]]
+modId="nullscape"
+version="1.0.0"
+displayName="Nullscape (Diaithir)"
+description="Compatibility alias: this module replaces the nullscape mod; dependencies on nullscape resolve here."
+
+[[mods]]
+modId="echoes_of_the_end"
+version="1.0.0"
+displayName="Echoes of the End (Diaithir)"
+description="Compatibility alias: this module replaces the echoes_of_the_end mod; dependencies on echoes_of_the_end resolve here."
+
 [[dependencies.diaithir_end]]
 modId="neoforge"
 type="required"
