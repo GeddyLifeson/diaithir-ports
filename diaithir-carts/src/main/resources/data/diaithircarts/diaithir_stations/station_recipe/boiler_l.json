@@ -1,0 +1,28 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 35,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 64
+  },
+  {
+   "item": "minecraft:copper_ingot",
+   "count": 50
+  },
+  {
+   "item": "minecraft:furnace",
+   "count": 7
+  },
+  {
+   "item": "minecraft:bucket",
+   "count": 7
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:boiler_l",
+  "count": 1
+ }
+}

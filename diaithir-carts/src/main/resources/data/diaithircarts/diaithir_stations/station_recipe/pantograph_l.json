@@ -1,0 +1,22 @@
+{
+ "station": "station.steam_forge",
+ "stage": "part",
+ "time_s": 35,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:copper_ingot",
+   "count": 38
+  },
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 19
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:pantograph_l",
+  "count": 1
+ },
+ "power": "steam",
+ "w": 20000
+}

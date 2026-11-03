@@ -62,6 +62,7 @@ public final class DiaithirCarts {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         Coupling.ATTACHMENTS.register(bus);
+        net.diaithir.yards.YardContent.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); }
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
@@ -77,7 +78,7 @@ public final class DiaithirCarts {
             if (e.getEntity() instanceof AbstractMinecart cart && cart.level() instanceof ServerLevel level && cart.getRemovalReason() != null
                     && cart.getRemovalReason().shouldDestroy()) Coupling.onRemoved(level, cart);
         });
-        NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); });
+        NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); net.diaithir.yards.YardSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); });
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, DiaithirCarts::interact);
     }
 

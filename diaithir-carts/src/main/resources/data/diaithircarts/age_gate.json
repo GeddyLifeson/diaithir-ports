@@ -28,5 +28,129 @@
     "items": [
       "diaithircarts:block_signal"
     ]
+  },
+  "yards_age3": {
+    "age": 3,
+    "items": [
+      "diaithircarts:rail_workshop"
+    ]
+  },
+  "yards_age4": {
+    "age": 4,
+    "items": [
+      "diaithircarts:body_xs",
+      "diaithircarts:boiler_xs",
+      "diaithircarts:crane_a_frame",
+      "diaithircarts:crane_shear_legs",
+      "diaithircarts:crane_treadwheel",
+      "diaithircarts:loco_cugnot",
+      "diaithircarts:loco_horse_gin",
+      "diaithircarts:rail_erecting_shop",
+      "diaithircarts:wag_chaldron",
+      "diaithircarts:wag_tub",
+      "diaithircarts:wag_wagonway",
+      "diaithircarts:wheelset_xs"
+    ]
+  },
+  "yards_age5": {
+    "age": 5,
+    "items": [
+      "diaithircarts:body_m",
+      "diaithircarts:body_s",
+      "diaithircarts:bogie_l",
+      "diaithircarts:bogie_m",
+      "diaithircarts:bogie_s",
+      "diaithircarts:bogie_xs",
+      "diaithircarts:boiler_l",
+      "diaithircarts:boiler_m",
+      "diaithircarts:boiler_s",
+      "diaithircarts:cab_l",
+      "diaithircarts:cab_m",
+      "diaithircarts:cab_s",
+      "diaithircarts:cab_xs",
+      "diaithircarts:coupler_l",
+      "diaithircarts:coupler_m",
+      "diaithircarts:coupler_s",
+      "diaithircarts:coupler_xs",
+      "diaithircarts:crane_gantry",
+      "diaithircarts:crane_hammerhead",
+      "diaithircarts:crane_steam",
+      "diaithircarts:loco_adler",
+      "diaithircarts:loco_americanboiler",
+      "diaithircarts:loco_battery",
+      "diaithircarts:loco_consolidation",
+      "diaithircarts:loco_garratt",
+      "diaithircarts:loco_mogul",
+      "diaithircarts:loco_pacific",
+      "diaithircarts:loco_rocket",
+      "diaithircarts:loco_shay",
+      "diaithircarts:loco_tank",
+      "diaithircarts:loco_trevithick",
+      "diaithircarts:pantograph_m",
+      "diaithircarts:pas_baggage",
+      "diaithircarts:pas_compartment",
+      "diaithircarts:pas_dining",
+      "diaithircarts:pas_horse_omnibus",
+      "diaithircarts:pas_mail",
+      "diaithircarts:pas_observation",
+      "diaithircarts:pas_open_saloon",
+      "diaithircarts:pas_pullman",
+      "diaithircarts:pas_stagecoach_rail",
+      "diaithircarts:pas_subway",
+      "diaithircarts:pas_tram",
+      "diaithircarts:traction_motor_m",
+      "diaithircarts:wag_boxcar",
+      "diaithircarts:wag_caboose",
+      "diaithircarts:wag_crane",
+      "diaithircarts:wag_flatcar",
+      "diaithircarts:wag_gondola",
+      "diaithircarts:wag_log",
+      "diaithircarts:wag_open_hopper",
+      "diaithircarts:wag_ore",
+      "diaithircarts:wag_reefer",
+      "diaithircarts:wag_schnabel",
+      "diaithircarts:wag_stock",
+      "diaithircarts:wag_tank",
+      "diaithircarts:wheelset_s"
+    ]
+  },
+  "yards_age6": {
+    "age": 6,
+    "items": [
+      "diaithircarts:crane_container",
+      "diaithircarts:crane_mobile",
+      "diaithircarts:diesel_engine_l",
+      "diaithircarts:diesel_engine_m",
+      "diaithircarts:loco_ae",
+      "diaithircarts:loco_big_boy",
+      "diaithircarts:loco_dash9",
+      "diaithircarts:loco_f_unit",
+      "diaithircarts:loco_gg1",
+      "diaithircarts:loco_gp38",
+      "diaithircarts:loco_gp7",
+      "diaithircarts:loco_hst",
+      "diaithircarts:loco_ice",
+      "diaithircarts:loco_mallard",
+      "diaithircarts:loco_sd40",
+      "diaithircarts:loco_shinkansen0",
+      "diaithircarts:loco_sw1",
+      "diaithircarts:loco_tgv",
+      "diaithircarts:loco_zephyr",
+      "diaithircarts:pantograph_l",
+      "diaithircarts:pas_bilevel",
+      "diaithircarts:pas_dome",
+      "diaithircarts:pas_streamliner",
+      "diaithircarts:rail_assembly_line",
+      "diaithircarts:traction_motor_l",
+      "diaithircarts:wag_autorack",
+      "diaithircarts:wag_covered_hopper",
+      "diaithircarts:wag_well"
+    ]
+  },
+  "yards_age7": {
+    "age": 7,
+    "items": [
+      "diaithircarts:rail_automated_yard"
+    ]
   }
 }

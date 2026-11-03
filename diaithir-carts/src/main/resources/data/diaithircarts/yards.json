@@ -1,0 +1,3873 @@
+{
+ "parts": [
+  {
+   "item": "diaithircarts:body_m",
+   "kind": "body",
+   "mass_kg": 8000,
+   "power_w": 0,
+   "hp": 30,
+   "min_age": 5,
+   "block": "",
+   "name": "M body"
+  },
+  {
+   "item": "diaithircarts:body_s",
+   "kind": "body",
+   "mass_kg": 4000,
+   "power_w": 0,
+   "hp": 30,
+   "min_age": 5,
+   "block": "",
+   "name": "S body"
+  },
+  {
+   "item": "diaithircarts:body_xs",
+   "kind": "body",
+   "mass_kg": 400,
+   "power_w": 0,
+   "hp": 30,
+   "min_age": 4,
+   "block": "",
+   "name": "XS body"
+  },
+  {
+   "item": "diaithircarts:bogie_l",
+   "kind": "bogie",
+   "mass_kg": 10000,
+   "power_w": 0,
+   "hp": 60,
+   "min_age": 5,
+   "block": "",
+   "name": "L bogie"
+  },
+  {
+   "item": "diaithircarts:bogie_m",
+   "kind": "bogie",
+   "mass_kg": 4000,
+   "power_w": 0,
+   "hp": 60,
+   "min_age": 5,
+   "block": "",
+   "name": "M bogie"
+  },
+  {
+   "item": "diaithircarts:bogie_s",
+   "kind": "bogie",
+   "mass_kg": 2000,
+   "power_w": 0,
+   "hp": 60,
+   "min_age": 5,
+   "block": "",
+   "name": "S bogie"
+  },
+  {
+   "item": "diaithircarts:bogie_xs",
+   "kind": "bogie",
+   "mass_kg": 200,
+   "power_w": 0,
+   "hp": 60,
+   "min_age": 5,
+   "block": "",
+   "name": "XS bogie"
+  },
+  {
+   "item": "diaithircarts:boiler_l",
+   "kind": "boiler",
+   "mass_kg": 37500,
+   "power_w": 3000000,
+   "hp": 80,
+   "min_age": 5,
+   "block": "",
+   "name": "L boiler"
+  },
+  {
+   "item": "diaithircarts:boiler_m",
+   "kind": "boiler",
+   "mass_kg": 15000,
+   "power_w": 1200000,
+   "hp": 80,
+   "min_age": 5,
+   "block": "",
+   "name": "M boiler"
+  },
+  {
+   "item": "diaithircarts:boiler_s",
+   "kind": "boiler",
+   "mass_kg": 7500,
+   "power_w": 600000,
+   "hp": 80,
+   "min_age": 5,
+   "block": "",
+   "name": "S boiler"
+  },
+  {
+   "item": "diaithircarts:boiler_xs",
+   "kind": "boiler",
+   "mass_kg": 750,
+   "power_w": 60000,
+   "hp": 80,
+   "min_age": 4,
+   "block": "",
+   "name": "XS boiler"
+  },
+  {
+   "item": "diaithircarts:cab_l",
+   "kind": "cab",
+   "mass_kg": 4500,
+   "power_w": 0,
+   "hp": 20,
+   "min_age": 5,
+   "block": "",
+   "name": "L cab"
+  },
+  {
+   "item": "diaithircarts:cab_m",
+   "kind": "cab",
+   "mass_kg": 1800,
+   "power_w": 0,
+   "hp": 20,
+   "min_age": 5,
+   "block": "",
+   "name": "M cab"
+  },
+  {
+   "item": "diaithircarts:cab_s",
+   "kind": "cab",
+   "mass_kg": 900,
+   "power_w": 0,
+   "hp": 20,
+   "min_age": 5,
+   "block": "",
+   "name": "S cab"
+  },
+  {
+   "item": "diaithircarts:cab_xs",
+   "kind": "cab",
+   "mass_kg": 90,
+   "power_w": 0,
+   "hp": 20,
+   "min_age": 5,
+   "block": "",
+   "name": "XS cab"
+  },
+  {
+   "item": "diaithircarts:coupler_l",
+   "kind": "coupler",
+   "mass_kg": 300,
+   "power_w": 0,
+   "hp": 80,
+   "min_age": 5,
+   "block": "",
+   "name": "L coupler"
+  },
+  {
+   "item": "diaithircarts:coupler_m",
+   "kind": "coupler",
+   "mass_kg": 120,
+   "power_w": 0,
+   "hp": 80,
+   "min_age": 5,
+   "block": "",
+   "name": "M coupler"
+  },
+  {
+   "item": "diaithircarts:coupler_s",
+   "kind": "coupler",
+   "mass_kg": 60,
+   "power_w": 0,
+   "hp": 80,
+   "min_age": 5,
+   "block": "",
+   "name": "S coupler"
+  },
+  {
+   "item": "diaithircarts:coupler_xs",
+   "kind": "coupler",
+   "mass_kg": 6,
+   "power_w": 0,
+   "hp": 80,
+   "min_age": 5,
+   "block": "",
+   "name": "XS coupler"
+  },
+  {
+   "item": "diaithircarts:diesel_engine_l",
+   "kind": "diesel_engine",
+   "mass_kg": 22500,
+   "power_w": 3750000,
+   "hp": 70,
+   "min_age": 6,
+   "block": "",
+   "name": "L diesel engine"
+  },
+  {
+   "item": "diaithircarts:diesel_engine_m",
+   "kind": "diesel_engine",
+   "mass_kg": 9000,
+   "power_w": 1500000,
+   "hp": 70,
+   "min_age": 6,
+   "block": "",
+   "name": "M diesel engine"
+  },
+  {
+   "item": "diaithircarts:pantograph_l",
+   "kind": "pantograph",
+   "mass_kg": 1000,
+   "power_w": 0,
+   "hp": 15,
+   "min_age": 6,
+   "block": "",
+   "name": "L pantograph"
+  },
+  {
+   "item": "diaithircarts:pantograph_m",
+   "kind": "pantograph",
+   "mass_kg": 400,
+   "power_w": 0,
+   "hp": 15,
+   "min_age": 5,
+   "block": "",
+   "name": "M pantograph"
+  },
+  {
+   "item": "diaithircarts:traction_motor_l",
+   "kind": "traction_motor",
+   "mass_kg": 12500,
+   "power_w": 7500000,
+   "hp": 60,
+   "min_age": 6,
+   "block": "",
+   "name": "L traction motor"
+  },
+  {
+   "item": "diaithircarts:traction_motor_m",
+   "kind": "traction_motor",
+   "mass_kg": 5000,
+   "power_w": 3000000,
+   "hp": 60,
+   "min_age": 5,
+   "block": "",
+   "name": "M traction motor"
+  },
+  {
+   "item": "diaithircarts:wheelset_s",
+   "kind": "wheelset",
+   "mass_kg": 300,
+   "power_w": 0,
+   "hp": 40,
+   "min_age": 5,
+   "block": "",
+   "name": "S wheelset"
+  },
+  {
+   "item": "diaithircarts:wheelset_xs",
+   "kind": "wheelset",
+   "mass_kg": 30,
+   "power_w": 0,
+   "hp": 40,
+   "min_age": 4,
+   "block": "",
+   "name": "XS wheelset"
+  }
+ ],
+ "yards": [
+  {
+   "id": "yard_loco_rocket",
+   "tier": "WORKSHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_rocket",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_adler",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_adler",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_americanboiler",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_americanboiler",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_consolidation",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_consolidation",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_mogul",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_mogul",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_pacific",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_pacific",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_mallard",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_mallard",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_big_boy",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_big_boy",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_garratt",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_garratt",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_shay",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_shay",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_tank",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_tank",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_f_unit",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_f_unit",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "diesel_engine",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_gp7",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_gp7",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "diesel_engine",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_sw1",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_sw1",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "diesel_engine",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_gp38",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_gp38",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "diesel_engine",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_sd40",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_sd40",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "diesel_engine",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_dash9",
+   "tier": "AUTOMATED",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_dash9",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "diesel_engine",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_zephyr",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_zephyr",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "diesel_engine",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_hst",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_hst",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "diesel_engine",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_gg1",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_gg1",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "traction_motor",
+       "count": 1
+      },
+      {
+       "kind": "pantograph",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_ae",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_ae",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "traction_motor",
+       "count": 1
+      },
+      {
+       "kind": "pantograph",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_shinkansen0",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_shinkansen0",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "traction_motor",
+       "count": 1
+      },
+      {
+       "kind": "pantograph",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_tgv",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_tgv",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "traction_motor",
+       "count": 1
+      },
+      {
+       "kind": "pantograph",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_ice",
+   "tier": "AUTOMATED",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_ice",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "traction_motor",
+       "count": 1
+      },
+      {
+       "kind": "pantograph",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_battery",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_battery",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "traction_motor",
+       "count": 1
+      },
+      {
+       "kind": "pantograph",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    },
+    {
+     "id": "cab",
+     "slots": [
+      {
+       "kind": "cab",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/cab"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_boxcar",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_boxcar",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_covered_hopper",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_covered_hopper",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_open_hopper",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_open_hopper",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_tank",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_tank",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_flatcar",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_flatcar",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_gondola",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_gondola",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_reefer",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_reefer",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_well",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_well",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_autorack",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_autorack",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_ore",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_ore",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_stock",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_stock",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_caboose",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_caboose",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_log",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_log",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_crane",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_crane",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_schnabel",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_schnabel",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_compartment",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_compartment",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_open_saloon",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_open_saloon",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_pullman",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_pullman",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_dining",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_dining",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_observation",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_observation",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_baggage",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_baggage",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_mail",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_mail",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_streamliner",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_streamliner",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_bilevel",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_bilevel",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_dome",
+   "tier": "ASSEMBLY_LINE",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_dome",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 6,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_subway",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_subway",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_tram",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_tram",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "bogie",
+       "count": 2
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    },
+    {
+     "id": "coupling",
+     "slots": [
+      {
+       "kind": "coupler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/coupling"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_wagonway",
+   "tier": "WORKSHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_wagonway",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "wheelset",
+       "count": 4
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    }
+   ],
+   "age": 4,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_chaldron",
+   "tier": "WORKSHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_chaldron",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "wheelset",
+       "count": 4
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    }
+   ],
+   "age": 4,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_wag_tub",
+   "tier": "WORKSHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:wag_tub",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "wheelset",
+       "count": 4
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    }
+   ],
+   "age": 4,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_horse_omnibus",
+   "tier": "ERECTING_SHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_horse_omnibus",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "wheelset",
+       "count": 4
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_pas_stagecoach_rail",
+   "tier": "WORKSHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:pas_stagecoach_rail",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "wheelset",
+       "count": 4
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "body",
+     "slots": [
+      {
+       "kind": "body",
+       "count": 1
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/body"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_cugnot",
+   "tier": "WORKSHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_cugnot",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "wheelset",
+       "count": 4
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    }
+   ],
+   "age": 4,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_trevithick",
+   "tier": "WORKSHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_trevithick",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "wheelset",
+       "count": 4
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    }
+   ],
+   "age": 5,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  },
+  {
+   "id": "yard_loco_horse_gin",
+   "tier": "WORKSHOP",
+   "site": "GROUND",
+   "result": "diaithircarts:loco_horse_gin",
+   "stages": [
+    {
+     "id": "frame",
+     "slots": [
+      {
+       "kind": "wheelset",
+       "count": 4
+      }
+     ],
+     "base_ticks": 60,
+     "ghost": "diaithircarts:yard/frame"
+    },
+    {
+     "id": "power",
+     "slots": [
+      {
+       "kind": "boiler",
+       "count": 1
+      }
+     ],
+     "base_ticks": 100,
+     "ghost": "diaithircarts:yard/power"
+    }
+   ],
+   "age": 4,
+   "footprint": [
+    5,
+    20,
+    6
+   ]
+  }
+ ],
+ "controllers": [
+  {
+   "id": "rail_workshop",
+   "tier": "WORKSHOP",
+   "name": "Rail Workshop",
+   "age": 3
+  },
+  {
+   "id": "rail_erecting_shop",
+   "tier": "ERECTING_SHOP",
+   "name": "Erecting Shop",
+   "age": 4
+  },
+  {
+   "id": "rail_assembly_line",
+   "tier": "ASSEMBLY_LINE",
+   "name": "Rail Assembly Line",
+   "age": 6
+  },
+  {
+   "id": "rail_automated_yard",
+   "tier": "AUTOMATED",
+   "name": "Automated Rail Yard",
+   "age": 7
+  }
+ ],
+ "cranes": [
+  {
+   "id": "crane_treadwheel",
+   "name": "Treadwheel crane",
+   "lift_kg": 2000,
+   "age": 4,
+   "speed": 2.1
+  },
+  {
+   "id": "crane_shear_legs",
+   "name": "Shear legs",
+   "lift_kg": 5000,
+   "age": 4,
+   "speed": 2.23
+  },
+  {
+   "id": "crane_a_frame",
+   "name": "A-frame derrick",
+   "lift_kg": 3000,
+   "age": 4,
+   "speed": 2.16
+  },
+  {
+   "id": "crane_steam",
+   "name": "Steam crane",
+   "lift_kg": 20000,
+   "age": 5,
+   "speed": 2.43
+  },
+  {
+   "id": "crane_hammerhead",
+   "name": "Hammerhead crane",
+   "lift_kg": 150000,
+   "age": 5,
+   "speed": 2.73
+  },
+  {
+   "id": "crane_gantry",
+   "name": "Overhead gantry crane",
+   "lift_kg": 100000,
+   "age": 5,
+   "speed": 2.67
+  },
+  {
+   "id": "crane_container",
+   "name": "Container ship-to-shore crane",
+   "lift_kg": 65000,
+   "age": 6,
+   "speed": 2.6
+  },
+  {
+   "id": "crane_mobile",
+   "name": "Diesel mobile crane",
+   "lift_kg": 50000,
+   "age": 6,
+   "speed": 2.57
+  }
+ ],
+ "vehicles": [
+  {
+   "id": "loco_rocket",
+   "name": "Rocket (Stephenson)",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 4250,
+   "rated": 15000
+  },
+  {
+   "id": "loco_adler",
+   "name": "Adler 2-2-2",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 9000,
+   "rated": 30000
+  },
+  {
+   "id": "loco_americanboiler",
+   "name": "American 4-4-0",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 30000,
+   "rated": 400000
+  },
+  {
+   "id": "loco_consolidation",
+   "name": "Consolidation 2-8-0",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 55000,
+   "rated": 900000
+  },
+  {
+   "id": "loco_mogul",
+   "name": "Mogul 2-6-0",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 38000,
+   "rated": 500000
+  },
+  {
+   "id": "loco_pacific",
+   "name": "Pacific 4-6-2",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 95000,
+   "rated": 1800000
+  },
+  {
+   "id": "loco_mallard",
+   "name": "LNER Class A4 Mallard",
+   "age": 6,
+   "category": "loco_steam",
+   "mass_kg": 165000,
+   "rated": 2000000
+  },
+  {
+   "id": "loco_big_boy",
+   "name": "Big Boy 4-8-8-4",
+   "age": 6,
+   "category": "loco_steam",
+   "mass_kg": 540000,
+   "rated": 4700000
+  },
+  {
+   "id": "loco_garratt",
+   "name": "Garratt articulated",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 110000,
+   "rated": 1500000
+  },
+  {
+   "id": "loco_shay",
+   "name": "Shay geared",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 40000,
+   "rated": 300000
+  },
+  {
+   "id": "loco_tank",
+   "name": "Tank engine 0-6-0T",
+   "age": 5,
+   "category": "loco_steam",
+   "mass_kg": 30000,
+   "rated": 250000
+  },
+  {
+   "id": "loco_f_unit",
+   "name": "EMD F-unit (F7)",
+   "age": 6,
+   "category": "loco_diesel",
+   "mass_kg": 106000,
+   "rated": 1118000
+  },
+  {
+   "id": "loco_gp7",
+   "name": "EMD GP7 road switcher",
+   "age": 6,
+   "category": "loco_diesel",
+   "mass_kg": 112000,
+   "rated": 1119000
+  },
+  {
+   "id": "loco_sw1",
+   "name": "EMD SW1 switcher",
+   "age": 6,
+   "category": "loco_diesel",
+   "mass_kg": 90000,
+   "rated": 447000
+  },
+  {
+   "id": "loco_gp38",
+   "name": "EMD GP38-2",
+   "age": 6,
+   "category": "loco_diesel",
+   "mass_kg": 117000,
+   "rated": 1493000
+  },
+  {
+   "id": "loco_sd40",
+   "name": "EMD SD40-2",
+   "age": 6,
+   "category": "loco_diesel",
+   "mass_kg": 167000,
+   "rated": 2237000
+  },
+  {
+   "id": "loco_dash9",
+   "name": "GE Dash 9-44CW",
+   "age": 6,
+   "category": "loco_diesel",
+   "mass_kg": 188000,
+   "rated": 3281000
+  },
+  {
+   "id": "loco_zephyr",
+   "name": "Pioneer Zephyr railcar",
+   "age": 6,
+   "category": "loco_diesel",
+   "mass_kg": 90000,
+   "rated": 448000
+  },
+  {
+   "id": "loco_hst",
+   "name": "InterCity 125 HST power car",
+   "age": 6,
+   "category": "loco_diesel",
+   "mass_kg": 70000,
+   "rated": 1678000
+  },
+  {
+   "id": "loco_gg1",
+   "name": "PRR GG1",
+   "age": 6,
+   "category": "loco_electric",
+   "mass_kg": 208000,
+   "rated": 3400000
+  },
+  {
+   "id": "loco_ae",
+   "name": "SBB Ae 6/6",
+   "age": 6,
+   "category": "loco_electric",
+   "mass_kg": 120000,
+   "rated": 4000000
+  },
+  {
+   "id": "loco_shinkansen0",
+   "name": "Shinkansen 0 Series",
+   "age": 6,
+   "category": "loco_electric",
+   "mass_kg": 60000,
+   "rated": 185000
+  },
+  {
+   "id": "loco_tgv",
+   "name": "TGV Sud-Est power car",
+   "age": 6,
+   "category": "loco_electric",
+   "mass_kg": 67000,
+   "rated": 3100000
+  },
+  {
+   "id": "loco_ice",
+   "name": "ICE 1 power car",
+   "age": 6,
+   "category": "loco_electric",
+   "mass_kg": 78000,
+   "rated": 4800000
+  },
+  {
+   "id": "loco_battery",
+   "name": "Battery-electric locomotive",
+   "age": 5,
+   "category": "loco_electric",
+   "mass_kg": 40000,
+   "rated": 200000
+  },
+  {
+   "id": "wag_boxcar",
+   "name": "Boxcar",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 18000,
+   "rated": 60000
+  },
+  {
+   "id": "wag_covered_hopper",
+   "name": "Covered hopper",
+   "age": 6,
+   "category": "freight",
+   "mass_kg": 26000,
+   "rated": 90000
+  },
+  {
+   "id": "wag_open_hopper",
+   "name": "Open hopper (coal)",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 20000,
+   "rated": 80000
+  },
+  {
+   "id": "wag_tank",
+   "name": "Tank car",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 25000,
+   "rated": 100000
+  },
+  {
+   "id": "wag_flatcar",
+   "name": "Flatcar",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 20000,
+   "rated": 80000
+  },
+  {
+   "id": "wag_gondola",
+   "name": "Gondola",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 20000,
+   "rated": 85000
+  },
+  {
+   "id": "wag_reefer",
+   "name": "Refrigerator car",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 28000,
+   "rated": 60000
+  },
+  {
+   "id": "wag_well",
+   "name": "Well car (container)",
+   "age": 6,
+   "category": "freight",
+   "mass_kg": 24000,
+   "rated": 100000
+  },
+  {
+   "id": "wag_autorack",
+   "name": "Autorack",
+   "age": 6,
+   "category": "freight",
+   "mass_kg": 35000,
+   "rated": 40000
+  },
+  {
+   "id": "wag_ore",
+   "name": "Ore jenny",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 23000,
+   "rated": 120000
+  },
+  {
+   "id": "wag_stock",
+   "name": "Stock car",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 17000,
+   "rated": 40000
+  },
+  {
+   "id": "wag_caboose",
+   "name": "Caboose",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 15000,
+   "rated": 0
+  },
+  {
+   "id": "wag_log",
+   "name": "Bulkhead flat (log car)",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 19000,
+   "rated": 70000
+  },
+  {
+   "id": "wag_crane",
+   "name": "Rail crane (wrecker)",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 80000,
+   "rated": 0
+  },
+  {
+   "id": "wag_schnabel",
+   "name": "Schnabel car (heavy load)",
+   "age": 5,
+   "category": "freight",
+   "mass_kg": 40000,
+   "rated": 150000
+  },
+  {
+   "id": "pas_compartment",
+   "name": "Compartment coach",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 15000,
+   "rated": 40
+  },
+  {
+   "id": "pas_open_saloon",
+   "name": "Open-saloon coach",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 30000,
+   "rated": 60
+  },
+  {
+   "id": "pas_pullman",
+   "name": "Pullman sleeper",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 50000,
+   "rated": 30
+  },
+  {
+   "id": "pas_dining",
+   "name": "Dining car",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 48000,
+   "rated": 40
+  },
+  {
+   "id": "pas_observation",
+   "name": "Observation car",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 45000,
+   "rated": 30
+  },
+  {
+   "id": "pas_baggage",
+   "name": "Baggage car",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 28000,
+   "rated": 0
+  },
+  {
+   "id": "pas_mail",
+   "name": "Railway post office",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 32000,
+   "rated": 0
+  },
+  {
+   "id": "pas_streamliner",
+   "name": "Streamliner stainless coach",
+   "age": 6,
+   "category": "passenger",
+   "mass_kg": 42000,
+   "rated": 70
+  },
+  {
+   "id": "pas_bilevel",
+   "name": "Bi-level commuter coach",
+   "age": 6,
+   "category": "passenger",
+   "mass_kg": 48000,
+   "rated": 140
+  },
+  {
+   "id": "pas_dome",
+   "name": "Vista Dome coach",
+   "age": 6,
+   "category": "passenger",
+   "mass_kg": 50000,
+   "rated": 60
+  },
+  {
+   "id": "pas_subway",
+   "name": "Metro car",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 30000,
+   "rated": 200
+  },
+  {
+   "id": "pas_tram",
+   "name": "Streetcar",
+   "age": 5,
+   "category": "passenger",
+   "mass_kg": 15000,
+   "rated": 70
+  },
+  {
+   "id": "wag_wagonway",
+   "name": "Horse-drawn wagonway wagon",
+   "age": 4,
+   "category": "primitive_wagon",
+   "mass_kg": 800,
+   "rated": 500
+  },
+  {
+   "id": "wag_chaldron",
+   "name": "Chaldron wagon",
+   "age": 4,
+   "category": "primitive_wagon",
+   "mass_kg": 1500,
+   "rated": 2500
+  },
+  {
+   "id": "wag_tub",
+   "name": "Tub boat tram",
+   "age": 4,
+   "category": "primitive_wagon",
+   "mass_kg": 400,
+   "rated": 300
+  },
+  {
+   "id": "pas_horse_omnibus",
+   "name": "Horse tram car",
+   "age": 5,
+   "category": "primitive_wagon",
+   "mass_kg": 1500,
+   "rated": 20
+  },
+  {
+   "id": "pas_stagecoach_rail",
+   "name": "Railed stagecoach body (Stockton and Darlington)",
+   "age": 5,
+   "category": "primitive_wagon",
+   "mass_kg": 1200,
+   "rated": 6
+  },
+  {
+   "id": "loco_cugnot",
+   "name": "Cugnot steam dray",
+   "age": 4,
+   "category": "loco_primitive",
+   "mass_kg": 2800,
+   "rated": 2000
+  },
+  {
+   "id": "loco_trevithick",
+   "name": "Trevithick Penydarren",
+   "age": 5,
+   "category": "loco_primitive",
+   "mass_kg": 5000,
+   "rated": 4000
+  },
+  {
+   "id": "loco_horse_gin",
+   "name": "Horse gin capstan engine",
+   "age": 4,
+   "category": "loco_primitive",
+   "mass_kg": 300,
+   "rated": 700
+  }
+ ]
+}
