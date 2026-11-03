@@ -129,8 +129,8 @@
   {
    "collisionTypes": [
     "block",
+    "entity",
     "vehicle",
-    "click",
     "attack",
     "bullet"
    ],
