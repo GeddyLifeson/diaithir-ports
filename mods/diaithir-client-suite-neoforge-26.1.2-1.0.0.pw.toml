@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-supermods/client/diaithir-client-suite-neoforge-26.1.2-1.0.0.jar"
 hash-format = "sha256"
-hash = "2d0e5caa3d7a2ac38965598df2be375527fa8ec2d166864648fbf1362431912c"
+hash = "0ea80c9b6786981be8aa1246e754f83234a6638bced96efe316eea42717498aa"
