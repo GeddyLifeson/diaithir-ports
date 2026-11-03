@@ -45,11 +45,13 @@ Drops: `diaithirbosses:boss_catalyst` (tier I), `boss_hollow_core` (tier II and 
 ## Java now in the PR
 `Rush` (rush.json), `Difficulty` + `AscendantData` (mode, wins, rites, best time; `/boss mode`, `/boss rush start|stop`), `AscendantAltarBlock`, `OghamStoneBlock`, `Ritual`. Built on JDK 25 / NeoForge 26.1.2.116. `/bossesselftest` on a flat server: 35 bosses, 1964 checks, 0 failed, including one full rite (feast, offering, hunt, wrong and right runes, hour window, defend, boss wakes).
 
+## Also done
+- Attack types `gravity_well` (Dusk Wyrm: drags fighters in range to the boss and hurts them) and `rewind` (The Last Wheel: puts fighters back where they stood about five seconds ago, from a per-fighter one-second trail). Both run in the self test.
+- `/bossesrushtest`: the whole rush (6 base then 9 Ascendant bosses) with a fake fighter on a headless server, real server ticks: killed 15/15, cleared flag set, best time stored, rewards given. A fake player stands in for a bot client; a real client is still the PC lane.
+
 ## Not done
-1. Rush has no run in the self test yet (needs a real player to fight); the rush controller compiles and loads `rush.json`.
 2. Global Events: wired by name to #111 (`EventHooks`): blood moon halves altar rest times, storms sharpen Tide Reaver and Ash Seraph, an Ascendant eclipse event is registered with `WorldEvents.register` and strengthens the Dusk Wyrm; `BossDefeatedEvent` and `RushClearedEvent` go out on the NeoForge bus. Not run against #111 in a world yet. Quest completion stays a data contract until the quest module lands.
 3. **Biomes and materials**: designed here (Thornwake, Cinderfen, The Unwound; ores `hollowsteel`, `emberglass`, `slagiron`), built by the worldgen threads. Hidden, world-spread rite sites need that worldgen.
-4. Attack types `gravity_well` and `rewind`.
 5. Art: textures are recolours of vanilla skins; 64 px art goes to the texture lanes. Ogham stone and altar use vanilla block textures.
 6. No client world-join test yet (needs the PC lane); no multiplayer balance pass.
 

@@ -32,7 +32,7 @@ import net.neoforged.neoforge.common.util.FakePlayerFactory;
 public final class SelfTest {
     private static final List<String> FAILS = new ArrayList<>();
     private static int ok;
-    private static final Set<String> TYPES = Set.of("slam", "charge", "leap", "bolt", "summon", "lightning", "cloud", "wave", "heal", "roar");
+    private static final Set<String> TYPES = Set.of("slam", "charge", "leap", "bolt", "summon", "lightning", "cloud", "wave", "heal", "roar", "gravity_well", "rewind");
 
     private static void check(boolean c, String what) {
         if (c) ok++;

@@ -95,6 +95,13 @@
    "damage": 13.6,
    "type": "roar"
   },
+  "rewind": {
+   "telegraph": 40,
+   "cooldown": 260,
+   "radius": 24,
+   "damage": 14,
+   "type": "rewind"
+  },
   "year_end": {
    "telegraph": 36,
    "cooldown": 120,
@@ -145,7 +152,8 @@
     "season",
     "recall",
     "stop_time",
-    "year_end"
+    "year_end",
+    "rewind"
    ],
    "invuln": 40
   }

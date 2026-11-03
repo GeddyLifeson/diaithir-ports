@@ -50,6 +50,11 @@ public final class Rush {
     private static ServerLevel level;
     private static UUID current;
     private static final List<UUID> fighters = new ArrayList<>();
+    /** Fighters outside the player list (the self test's fake player). */
+    static final List<ServerPlayer> TEST_PLAYERS = new ArrayList<>();
+
+    static net.minecraft.world.entity.Entity currentBoss() { return level != null && current != null ? level.getEntity(current) : null; }
+    static int index() { return index; }
 
     public static boolean active() { return running; }
 
@@ -89,6 +94,7 @@ public final class Rush {
         List<ServerPlayer> out = new ArrayList<>();
         for (UUID id : fighters) {
             ServerPlayer p = server.getPlayerList().getPlayer(id);
+            if (p == null) p = TEST_PLAYERS.stream().filter(t -> t.getUUID().equals(id)).findFirst().orElse(null);
             if (p != null && p.isAlive() && !p.isSpectator()) out.add(p);
         }
         return out;

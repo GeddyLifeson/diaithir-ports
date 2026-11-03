@@ -88,6 +88,14 @@
    "amp": 0,
    "damage": 13.6,
    "type": "roar"
+  },
+  "well": {
+   "telegraph": 44,
+   "cooldown": 200,
+   "radius": 16,
+   "damage": 17,
+   "power": 1.1,
+   "type": "gravity_well"
   }
  },
  "phases": [
@@ -127,7 +135,8 @@
     "night_bolt",
     "wing_gale",
     "gloom_breath",
-    "eclipse"
+    "eclipse",
+    "well"
    ],
    "invuln": 40
   }
