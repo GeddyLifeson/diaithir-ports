@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:sidearm_light",
- "result": {
-  "id": "diaithirfirearms:mauser_c96",
-  "count": 1
- }
-}

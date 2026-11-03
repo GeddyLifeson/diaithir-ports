@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:rocket_launcher",
- "result": {
-  "id": "diaithirfirearms:panzerfaust_3",
-  "count": 1
- }
-}

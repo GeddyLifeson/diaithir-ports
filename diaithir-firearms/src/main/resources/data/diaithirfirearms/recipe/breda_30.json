@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:light_mg",
- "result": {
-  "id": "diaithirfirearms:breda_30",
-  "count": 1
- }
-}

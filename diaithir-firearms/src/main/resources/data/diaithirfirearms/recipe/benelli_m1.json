@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:pump_shotgun",
- "result": {
-  "id": "diaithirfirearms:benelli_m1",
-  "count": 1
- }
-}

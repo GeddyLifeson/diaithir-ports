@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:smg_compact",
- "result": {
-  "id": "diaithirfirearms:m3_grease_gun",
-  "count": 1
- }
-}

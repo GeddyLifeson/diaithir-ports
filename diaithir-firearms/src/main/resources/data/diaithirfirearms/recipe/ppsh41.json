@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:smg_compact",
- "result": {
-  "id": "diaithirfirearms:ppsh41",
-  "count": 1
- }
-}

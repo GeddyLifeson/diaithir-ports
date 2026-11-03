@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:sidearm_light",
- "result": {
-  "id": "diaithirfirearms:wheellock_pistol",
-  "count": 1
- }
-}

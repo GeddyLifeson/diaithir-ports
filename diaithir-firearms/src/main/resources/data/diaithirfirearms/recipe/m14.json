@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:carbine",
- "result": {
-  "id": "diaithirfirearms:m14",
-  "count": 1
- }
-}

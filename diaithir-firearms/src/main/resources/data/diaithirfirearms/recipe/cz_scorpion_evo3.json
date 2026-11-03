@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:smg_compact",
- "result": {
-  "id": "diaithirfirearms:cz_scorpion_evo3",
-  "count": 1
- }
-}

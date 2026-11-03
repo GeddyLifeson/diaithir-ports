@@ -118,10 +118,9 @@ for a in used:
     if f'{NS}:{a}' not in ammo_tag['values']: ammo_tag['values'].append(f'{NS}:{a}')
 w(f'src/main/resources/data/{NS}/tags/item/guns.json', guns_tag); w(f'src/main/resources/data/{NS}/tags/item/ammo.json', ammo_tag)
 def recipe(name, body): w(f'src/main/resources/data/{NS}/recipe/{name}.json', body)
-for r in rows:   # stonecutter: one recipe per design, no pattern clashes between guns of a class
-    src = CLS[r['cls']][4]
-    ing = f'{NS}:{src}' if src else 'minecraft:iron_ingot'
-    recipe(r['id'], {'type': 'minecraft:stonecutting', 'ingredient': ing, 'result': {'id': f'{NS}:{r["id"]}', 'count': 1}})
+# roster guns have no recipe here: the gunsmith bench (diaithir-gear) is the only way to make them
+import pathlib
+for r in rows: pathlib.Path(f'{M}/src/main/resources/data/{NS}/recipe/{r["id"]}.json').unlink(missing_ok=True)
 for a in used:
     c = next(x for x in cal.values() if x['id'] == a)
     if c['kind'] == 'powder': ing = ['minecraft:iron_nugget', 'minecraft:gunpowder', 'minecraft:paper']

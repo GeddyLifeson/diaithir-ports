@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "minecraft:iron_ingot",
- "result": {
-  "id": "diaithirfirearms:springfield_1861",
-  "count": 1
- }
-}

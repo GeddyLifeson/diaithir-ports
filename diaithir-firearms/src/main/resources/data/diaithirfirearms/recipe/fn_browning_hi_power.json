@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:sidearm_light",
- "result": {
-  "id": "diaithirfirearms:fn_browning_hi_power",
-  "count": 1
- }
-}

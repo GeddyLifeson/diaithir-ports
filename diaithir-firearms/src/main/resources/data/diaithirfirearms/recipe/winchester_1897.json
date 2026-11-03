@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:pump_shotgun",
- "result": {
-  "id": "diaithirfirearms:winchester_1897",
-  "count": 1
- }
-}

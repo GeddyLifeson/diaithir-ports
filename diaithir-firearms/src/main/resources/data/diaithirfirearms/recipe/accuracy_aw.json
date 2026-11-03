@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:sniper_rifle",
- "result": {
-  "id": "diaithirfirearms:accuracy_aw",
-  "count": 1
- }
-}

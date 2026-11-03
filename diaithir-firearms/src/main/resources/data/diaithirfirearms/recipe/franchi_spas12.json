@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:pump_shotgun",
- "result": {
-  "id": "diaithirfirearms:franchi_spas12",
-  "count": 1
- }
-}

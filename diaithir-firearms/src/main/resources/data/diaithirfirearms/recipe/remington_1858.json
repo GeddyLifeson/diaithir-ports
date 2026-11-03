@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "diaithirfirearms:sidearm_light",
- "result": {
-  "id": "diaithirfirearms:remington_1858",
-  "count": 1
- }
-}
