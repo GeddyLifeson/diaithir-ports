@@ -232,6 +232,7 @@ public final class CircuitNodeBE extends BlockEntity {
                 if (!res.isEmpty() && n > 0) r.add(BuiltInRegistries.FLUID.getKey(res.getFluid()).toString(), n);
             }
         }
+        readWorld(level, at, face, r);
         var energy = level.getCapability(Capabilities.Energy.BLOCK, at, face);
         if (energy != null) {
             long now = energy.getAmountAsLong();
@@ -244,6 +245,36 @@ public final class CircuitNodeBE extends BlockEntity {
             prevEnergy = -1;
         }
         return r;
+    }
+
+    /**
+     * Signals any block can give with no code of its own: comparator output (si:analog, 0 to 15), integer and boolean block state properties
+     * (state:powered, state:delay, state:lit...), and for a rail the carts on it (si:vehicles, si:speed_mps, and the items in a chest cart),
+     * which makes station rails, signals and train stops readable.
+     */
+    private static void readWorld(ServerLevel level, BlockPos at, Direction face, Signals r) {
+        BlockState bs = level.getBlockState(at);
+        if (bs.hasAnalogOutputSignal()) r.set("si:analog", bs.getAnalogOutputSignal(level, at, face));
+        for (net.minecraft.world.level.block.state.properties.Property<?> p : bs.getProperties()) {
+            Object v = bs.getValue(p);
+            if (v instanceof Integer i) r.set("state:" + p.getName(), i);
+            else if (v instanceof Boolean b) r.set("state:" + p.getName(), b ? 1 : 0);
+        }
+        if (bs.getBlock() instanceof net.minecraft.world.level.block.BaseRailBlock) {
+            var carts = level.getEntitiesOfClass(net.minecraft.world.entity.vehicle.minecart.AbstractMinecart.class, new net.minecraft.world.phys.AABB(at));
+            r.set("si:vehicles", carts.size());
+            double fastest = 0;
+            for (var c : carts) {
+                fastest = Math.max(fastest, c.getDeltaMovement().horizontalDistance() * 20.0);
+                if (c instanceof net.minecraft.world.Container ct) {
+                    for (int i = 0; i < ct.getContainerSize(); i++) {
+                        ItemStack st = ct.getItem(i);
+                        if (!st.isEmpty()) r.add(BuiltInRegistries.ITEM.getKey(st.getItem()).toString(), st.getCount());
+                    }
+                }
+            }
+            r.set("si:speed_mps", Math.round(fastest));
+        }
     }
 
     // ---- save, load, client sync -------------------------------------------------------------------------------------------------

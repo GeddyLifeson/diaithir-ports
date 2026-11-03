@@ -87,6 +87,37 @@ public final class CircuitSelfTest {
             if (la.getBlockState().getValue(CircuitBlock.LIT)) fails.add("circuit: lamp stayed on after program change");
             if (ga.getBlockState().getValue(CircuitBlock.LIT)) fails.add("circuit: gate stayed on after the signal dropped");
             if (CircuitBlock.gatesAllow(level, pGate.east())) fails.add("circuit: an unlit gate did not block its neighbour");
+            // direct readers: comparator, block state, rails and carts
+            BlockPos pRail = pReader.east(6), pRead2 = pRail.south();
+            level.setBlock(pRail.below(), Blocks.STONE.defaultBlockState(), 2);
+            level.setBlock(pRail, Blocks.POWERED_RAIL.defaultBlockState().setValue(net.minecraft.world.level.block.PoweredRailBlock.POWERED, true), 3);
+            level.setBlock(pRead2, block("electronic_circuit_reader").setValue(CircuitBlock.FACING, Direction.SOUTH), 3);
+            var cart = net.minecraft.world.entity.EntityType.CHEST_MINECART.create(level, net.minecraft.world.entity.EntitySpawnReason.COMMAND);
+            if (cart == null) fails.add("circuit: could not make a cart");
+            else {
+                cart.setPos(pRail.getX() + 0.5, pRail.getY() + 0.1, pRail.getZ() + 0.5);
+                cart.setItem(0, new net.minecraft.world.item.ItemStack(Items.COAL, 7));
+                level.addFreshEntity(cart);
+            }
+            CircuitNodeBE rd = node(level, pRead2);
+            ticks(level, 3);
+            if (rd == null || rd.out.get("si:vehicles") != 1 || rd.out.get("minecraft:coal") != 7) {
+                fails.add("circuit: rail reader said " + (rd == null ? "null" : rd.out) + ", want vehicles=1 coal=7");
+            }
+            BlockPos pRep = pRead2.east(2), pRead3 = pRep.south();
+            level.setBlock(pRep.below(), Blocks.STONE.defaultBlockState(), 2);
+            level.setBlock(pRep, Blocks.REPEATER.defaultBlockState().setValue(net.minecraft.world.level.block.RepeaterBlock.DELAY, 3), 3);
+            level.setBlock(pRead3, block("electronic_circuit_reader").setValue(CircuitBlock.FACING, Direction.SOUTH), 3);
+            ticks(level, 3);
+            if (node(level, pRead3) == null || node(level, pRead3).out.get("state:delay") != 3) {
+                fails.add("circuit: block state reader said " + (node(level, pRead3) == null ? "null" : node(level, pRead3).out) + ", want state:delay=3");
+            }
+            for (BlockPos q : new BlockPos[] {pRead3, pRep, pRep.below()}) level.setBlock(q, Blocks.AIR.defaultBlockState(), 2 | 16 | 64);
+            if (node(level, pReader).out.get("si:analog") < 1) fails.add("circuit: chest reader gave no comparator level: " + node(level, pReader).out);
+            if (cart != null) cart.discard();
+            level.setBlock(pRead2, Blocks.AIR.defaultBlockState(), 2 | 16 | 64);
+            level.setBlock(pRail, Blocks.AIR.defaultBlockState(), 2 | 16 | 64);
+            level.setBlock(pRail.below(), Blocks.AIR.defaultBlockState(), 2 | 16 | 64);
             // errors and saving
             try {
                 c.setProgram("arith a + 1 -> b");
