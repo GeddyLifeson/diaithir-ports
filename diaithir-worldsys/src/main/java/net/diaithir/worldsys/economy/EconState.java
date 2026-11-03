@@ -23,6 +23,7 @@ public final class EconState {
     public static final class Cur {
         public double money, ref, tb, flow, vol, infl, weak, treasury, wagePool, arrears, taxMul = 1, rateRef, prevRate;
         public boolean reform;
+        public String did;
         public Peg peg;
     }
 
