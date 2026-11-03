@@ -35,8 +35,14 @@ class ThrusterBlockEntity(
 
     private fun tick(level: ServerLevel) {
         val controller = TournamentShips.getOrCreate(level, worldPosition) ?: return
-        val thruster = controller.thrusterV2(worldPosition)!!
-        val state = level.getBlockState(worldPosition)!!
+        val state = level.getBlockState(worldPosition)
+        // the block may have been placed (assembled) before its ship controller existed, so register it lazily
+        val thruster = controller.thrusterV2(worldPosition) ?: run {
+            val data = TournamentShips.ThrusterDataV2(
+                state.getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.FACING).unitVec3i.toJOMLD(), 0f)
+            controller.addThrusterV2(worldPosition, data)
+            data
+        }
         val signal = level.getBestNeighborSignal(worldPosition)
 
         if (!throttleForced) {

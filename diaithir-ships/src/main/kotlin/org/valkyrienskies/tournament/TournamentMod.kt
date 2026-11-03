@@ -85,6 +85,7 @@ object TournamentMod {
         vsApi.registerAttachment(TournamentShips::class.java)
 
         vsApi.shipLoadEvent.on { e ->
+            TournamentShips.pending.remove(e.ship.id)?.let { if (e.ship.getAttachment<TournamentShips>() == null) e.ship.setAttachment(it) }
             migrateShipController(e.ship)
         }
     }

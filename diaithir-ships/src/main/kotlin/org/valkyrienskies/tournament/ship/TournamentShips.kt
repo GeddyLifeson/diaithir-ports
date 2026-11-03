@@ -267,6 +267,10 @@ class TournamentShips: ShipPhysicsListener
         }
     }
 
+    /** Counts of registered force providers (used by the opt-in self test). */
+    fun debugCounts(): String =
+        "thrustersV2=${thrustersV2_2.contents().count()} balloons=${balloons.size} spinners=${spinners.size} propellers=${propellers.size} fuelCap=$fuelCap"
+
     fun addThrusterV2(
         pos: BlockPos,
         data: ThrusterDataV2
@@ -330,10 +334,14 @@ class TournamentShips: ShipPhysicsListener
     }
 
     companion object {
+        /** Controllers created for ships that are not loaded yet (just assembled); attached once the ship loads. */
+        @JvmField
+        val pending = java.util.concurrent.ConcurrentHashMap<Long, TournamentShips>()
+
         @OptIn(GameTickOnly::class, VsBeta::class)
         fun getOrCreate(ship: LoadedServerShip, level: DimensionId) =
             ship.getAttachment<TournamentShips>()
-                ?: TournamentShips().also {
+                ?: (pending.remove(ship.id) ?: TournamentShips()).also {
                     it.level = level
                     ship.setAttachment(it)
                 }
@@ -343,9 +351,11 @@ class TournamentShips: ShipPhysicsListener
             getOrCreate(ship, ship.chunkClaimDimension)
 
         @OptIn(GameTickOnly::class)
-        fun getOrCreate(level: Level, pos: BlockPos)  =
-            ((level.getLoadedShipManagingPos(pos)
-                ?: level.getShipManagingPos(pos))
-                    as? LoadedServerShip)?.let { getOrCreate(it) }
+        fun getOrCreate(level: Level, pos: BlockPos): TournamentShips? {
+            val managing = level.getShipManagingPos(pos) ?: return null
+            ((level.getLoadedShipManagingPos(pos) as? LoadedServerShip) ?: (managing as? LoadedServerShip))?.let { return getOrCreate(it) }
+            val server = managing as? org.valkyrienskies.core.api.ships.ServerShip ?: return null
+            return pending.computeIfAbsent(server.id) { TournamentShips().also { t -> t.level = server.chunkClaimDimension } }
+        }
     }
 }
