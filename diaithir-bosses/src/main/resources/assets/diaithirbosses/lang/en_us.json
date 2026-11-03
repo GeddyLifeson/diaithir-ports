@@ -246,5 +246,7 @@
  "item.diaithirbosses.boss_hollow_core": "Hollow core",
  "item.diaithirbosses.ageshard": "Ageshard",
  "ritual.diaithirbosses.spirit_called": "%s rite spirit(s) rise to stand with you.",
- "ritual.diaithirbosses.spirit": "Rite spirit"
+ "ritual.diaithirbosses.spirit": "Rite spirit",
+ "item.diaithirbosses.boss_catalyst_t2": "Greater boss catalyst",
+ "item.diaithirbosses.boss_sovereign_core": "Sovereign core"
 }

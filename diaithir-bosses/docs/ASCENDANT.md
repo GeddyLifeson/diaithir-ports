@@ -39,8 +39,18 @@ No boss appears from a single click. A rite is a chain of steps with a cryptic c
 Tier I rites have 6 steps, tier II 7, tier III 7 to 8. Each rite ends in the boss waking at the altar. Progress is saved per altar. Tiers II and III still need the lower tier beaten once.
 Not copied from anything: the steps, riddles, trees and items are ours, built from Celtic lore (ogham, the tree calendar) and the Age clock.
 
-## Materials and the progression web (plans/PROGRESSION.md)
-Drops: `diaithirbosses:boss_catalyst` (tier I), `boss_hollow_core` (tier II and III), `ageshard` (The Last Wheel only). Offering feast comes from the kitchen module through the tag above. Ids as proposed by the progression thread.
+## Materials and the Shardfall Gate (plans/PROGRESSION.md)
+What bosses give, by item (ids as the progression graph names them):
+| Item | From | Graph node it feeds |
+|---|---|---|
+| `boss_catalyst` | tier I bosses | research pack 5, tier 3 modules (`combat.bosses`) |
+| `boss_hollow_core` | every Ascendant boss | fusion core, pack 6 (`combat.asc1`) |
+| `boss_catalyst_t2` | tier I and II bosses | the rush, legendary modules |
+| `boss_sovereign_core` | Foundry Sovereign | Last Wheel summon (`combat.asc3`) |
+| `ageshard` | The Last Wheel | shard resonator, pack 7, shard focus, the shard land (`research.pack_7`, `tech.shard_resonator`, `magic.shard_focus`, `explore.shard_land`) |
+| rush rewards | the rush | champion tokens, netherite, a nether star, `rush_laurel`; `AscendantData` marks `ascendant_rush` cleared (graph resource `rush.cleared`, needed by `win.gate` and by legendary modules) |
+The Gate (`win.gate`) needs `ageshard`-made items, `rush.cleared` and `module.legendary` among 16 inputs. Not built: the Gate itself, its rite and ceremony (design task for Codex and campaign threads). The boss side that the Gate reads is `AscendantData.beaten(id)` and `RushClearedEvent`.
+Offering feast comes from the kitchen module through the tag `#diaithirbosses:offering_feast`.
 
 ## Java now in the PR
 `Rush` (rush.json), `Difficulty` + `AscendantData` (mode, wins, rites, best time; `/boss mode`, `/boss rush start|stop`), `AscendantAltarBlock`, `OghamStoneBlock`, `Ritual`. Built on JDK 25 / NeoForge 26.1.2.116. `/bossesselftest` on a flat server: 35 bosses, 1964 checks, 0 failed, including one full rite (feast, offering, hunt, wrong and right runes, hour window, defend, boss wakes).

@@ -314,7 +314,8 @@ print("rites:", len(RITE))
 
 # ---- boss materials (names fixed with plans/PROGRESSION.md): catalyst (tier I+), hollow core (tier II+), ageshard (The Last Wheel only)
 from PIL import ImageDraw
-MAT = {"boss_catalyst": ("Boss catalyst", (90, 200, 170), "VII"), "boss_hollow_core": ("Hollow core", (170, 120, 230), "Rodos"), "ageshard": ("Ageshard", (250, 220, 110), "Rodos")}
+MAT = {"boss_catalyst": ("Boss catalyst", (90, 200, 170), "VII"), "boss_hollow_core": ("Hollow core", (170, 120, 230), "Rodos"), "boss_catalyst_t2": ("Greater boss catalyst", (70, 170, 230), "Rodos"), "boss_sovereign_core": ("Sovereign core", (230, 140, 60), "Rodos"),
+       "ageshard": ("Ageshard", (250, 220, 110), "Rodos")}
 for mid, (label, col, age) in MAT.items():
     im = Image.new("RGBA", (16, 16), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     d.polygon([(8, 1), (13, 8), (8, 15), (3, 8)], fill=col + (255,), outline=tuple(v // 3 for v in col) + (255,)); d.line([(8, 3), (8, 13)], fill=(255, 255, 255, 140))
@@ -327,7 +328,10 @@ W(os.path.join(AS, "lang/en_us.json"), lang); W(os.path.join(ROOT, "age_gates.js
 for bid, tier, age_, _ in new_ids:
     pp = R(os.path.join(DA, "boss", bid + ".json"))
     pp["loot"] = [l for l in pp["loot"] if not l["item"].startswith(NS + ":")]
-    pp["loot"].append(L(NS + ":boss_catalyst", 1, 2, 7, 1.0, 0)) if tier == 1 else pp["loot"].append(L(NS + ":boss_hollow_core", 1, tier - 1, 8, 1.0, 0))
+    if tier == 1: pp["loot"].append(L(NS + ":boss_catalyst", 1, 2, 7, 1.0, 0))
+    pp["loot"].append(L(NS + ":boss_hollow_core", 1, tier, 7, 1.0, 0))
+    if tier <= 2: pp["loot"].append(L(NS + ":boss_catalyst_t2", 1, 2, 7, 1.0, 0))
+    if bid == "foundry_sovereign": pp["loot"].append(L(NS + ":boss_sovereign_core", 1, 1, 8, 1.0, 0))
     if bid == "last_wheel": pp["loot"].append(L(NS + ":ageshard", 2, 3, 8, 1.0, 0))
     W(os.path.join(DA, "boss", bid + ".json"), pp)
 W(os.path.join(DA, "tags/item/offering_feast.json"), {"values": ["minecraft:cake", "minecraft:pumpkin_pie", "minecraft:suspicious_stew", "minecraft:rabbit_stew",

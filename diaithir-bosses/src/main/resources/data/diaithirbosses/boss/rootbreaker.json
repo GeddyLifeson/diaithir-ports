@@ -165,8 +165,8 @@
   {
    "item": "diaithirbosses:boss_hollow_core",
    "min": 1,
-   "max": 2,
-   "min_age": 8,
+   "max": 3,
+   "min_age": 7,
    "chance": 1.0,
    "per_age": 0
   }
