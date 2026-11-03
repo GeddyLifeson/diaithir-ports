@@ -98,3 +98,33 @@ new = [('one_way_rail', 'One-Way Rail', 'A rail that lets carts through one way 
 for n, name, text in new:
     if not any(e['id'] == f'{ID}:{n}' for e in c): c.append({'id': f'{ID}:{n}', 'name': name, 'text': text})
 json.dump(c, open(cp, 'w'), indent=1)
+
+# ---- locking rail: a padlock-style marker, amber for latch, green for interlock
+def lock(colour):
+    def f(px):
+        for x in range(5, 11):
+            for y in range(7, 12): px[x, y] = colour
+        for x, y in ((6, 5), (7, 4), (8, 4), (9, 5), (6, 6), (9, 6)): px[x, y] = colour
+    return f
+marked('locking_rail', lock((240, 160, 40, 255))); marked('locking_rail_interlock', lock((70, 210, 120, 255)))
+var = {}
+for mode, t in ((0, 'locking_rail'), (1, 'locking_rail_interlock')):
+    model(t, FLAT, t); model(t + '_raised_ne', NE, t); model(t + '_raised_sw', SW, t)
+    p = f'mode={mode}'
+    var[f'{p},shape=north_south'] = v(t); var[f'{p},shape=east_west'] = v(t, 90)
+    for s, (k, y) in SLOPES.items(): var[f'{p},shape={s}'] = v(f'{t}_raised_{k}', y)
+w(f'assets/{ID}/blockstates/locking_rail.json', {'variants': var})
+w(f'assets/{ID}/items/locking_rail.json', {'model': {'type': 'minecraft:model', 'model': f'{ID}:item/locking_rail'}})
+w(f'assets/{ID}/models/item/locking_rail.json', {'parent': 'minecraft:item/generated', 'textures': {'layer0': f'{ID}:block/locking_rail'}})
+w(f'data/{ID}/loot_table/blocks/locking_rail.json', {'type': 'minecraft:block', 'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': f'{ID}:locking_rail'}], 'conditions': [{'condition': 'minecraft:survives_explosion'}]}]})
+w(f'data/{ID}/recipe/locking_rail.json', {'type': 'minecraft:crafting_shapeless', 'category': 'redstone', 'ingredients': [f'{ID}:station_rail', 'minecraft:iron_bars'], 'result': {'id': f'{ID}:locking_rail', 'count': 1}})
+for rel in ('data/minecraft/tags/block/rails.json', 'data/minecraft/tags/item/rails.json', 'data/minecraft/tags/block/mineable/pickaxe.json'):
+    t = rj(rel)
+    if f'{ID}:locking_rail' not in t['values']: t['values'].append(f'{ID}:locking_rail')
+    w(rel, t)
+l = rj(lp); l[f'block.{ID}.locking_rail'] = 'Locking Rail'; w(lp, l)
+a = rj(ap); a['routing']['items'].append(f'{ID}:locking_rail') if f'{ID}:locking_rail' not in a['routing']['items'] else None; w(ap, a)
+c = json.load(open(cp))
+if not any(e['id'] == f'{ID}:locking_rail' for e in c):
+    c.append({'id': f'{ID}:locking_rail', 'name': 'Locking Rail', 'text': 'Stops a cart that rolls onto it and keeps it there. Use it bare-handed to change mode. Latch (amber) holds the cart until the rail goes from unpowered to powered, a redstone pulse; a rail already powered when the cart arrived does not release it. Interlock (green) holds the cart until the 32 rails ahead are clear of other carts, then lets it go. Age V.'})
+    json.dump(c, open(cp, 'w'), indent=1)

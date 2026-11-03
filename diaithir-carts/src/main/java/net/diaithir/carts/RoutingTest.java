@@ -29,7 +29,7 @@ final class RoutingTest {
     private static CommandSourceStack source;
     private static ServerLevel level;
     private static BlockPos at;
-    private static AbstractMinecart a, b, named, plain;
+    private static AbstractMinecart a, b, named, plain, latchCart, ilCart, blocker;
     private static MinecartChest chestCart;
     private static double minB;
     private static int t = -1;
@@ -54,7 +54,7 @@ final class RoutingTest {
         at = new BlockPos(0, 232, 40);
         for (int cx = 0; cx <= 2; cx++) for (int cz = 1; cz <= 4; cz++) { level.getChunk(cx, cz); level.setChunkForced(cx, cz, true); }
         fails.clear();
-        for (int x = -2; x <= 40; x++) for (int z = -3; z <= 22; z++) {
+        for (int x = -2; x <= 40; x++) for (int z = -3; z <= 24; z++) {
             for (int y = 0; y <= 4; y++) level.setBlock(at.offset(x, y, z), Blocks.AIR.defaultBlockState(), 3);
             level.setBlock(at.offset(x, -1, z), Blocks.STONE.defaultBlockState(), 3);
         }
@@ -79,6 +79,15 @@ final class RoutingTest {
         chestCart = EntityType.CHEST_MINECART.create(level, EntitySpawnReason.COMMAND);
         chestCart.setPos(railAt.getX() + 0.5, railAt.getY() + 0.1, railAt.getZ() + 0.5);
         level.addFreshEntity(chestCart);
+        // locking rails: z=12 latch, z=16 interlock with a blocker parked ahead
+        for (int z : new int[]{12, 20}) for (int x = 0; x <= 30; x++) {
+            if (x == 10) level.setBlock(at.offset(x, 0, z), DiaithirCarts.LOCKING_RAIL.get().defaultBlockState().setValue(net.minecraft.world.level.block.PoweredRailBlock.SHAPE, RailShape.EAST_WEST)
+                    .setValue(LockingRail.MODE, z == 12 ? 0 : 1), 3);
+            else rail(at.offset(x, 0, z), Blocks.RAIL, RailShape.EAST_WEST);
+        }
+        latchCart = spawn(at.offset(5, 0, 12), 0.3);
+        ilCart = spawn(at.offset(5, 0, 20), 0.3);
+        blocker = spawn(at.offset(22, 0, 20), 0);
         // names
         named = spawn(dest, 0);
         named.setCustomName(Component.literal("C"));
@@ -105,6 +114,18 @@ final class RoutingTest {
             if (a.getX() < 21) fails.add("a cart going with the one-way rails stopped at x=" + a.getX());
             if (minB < 19.4) fails.add("a cart got past a one-way rail against it (min x " + minB + ")");
             if (b.getX() < 20.4) fails.add("the turned-back cart did not come back, x=" + b.getX());
+        }
+        if (t <= 60) { if (latchCart.getX() < 9.5) latchCart.setDeltaMovement(0.3, 0, 0); if (ilCart.getX() < 9.5) ilCart.setDeltaMovement(0.3, 0, 0); }
+        if (t == 70) {
+            if (latchCart.getX() < 10 || latchCart.getX() >= 11 || latchCart.getDeltaMovement().horizontalDistance() > 0.05) fails.add("latch did not hold the cart: x=" + latchCart.getX());
+            if (ilCart.getX() < 10 || ilCart.getX() >= 11) fails.add("interlock did not hold the cart with a cart ahead: x=" + ilCart.getX());
+            level.setBlock(at.offset(10, 0, 11), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);   // powers the latch rail: a pulse
+            blocker.discard();
+        }
+        if (t == 71 && latchCart.getX() < 11) { /* give the pulse a tick to be seen */ }
+        if (t == 125) {
+            if (latchCart.getX() < 11.5) fails.add("latch did not release on a pulse: x=" + latchCart.getX());
+            if (ilCart.getX() < 11.5) fails.add("interlock did not release when the track ahead cleared: x=" + ilCart.getX());
         }
         if (t == 60) {
             var st = level.getBlockState(dest);
@@ -141,7 +162,7 @@ final class RoutingTest {
             String line = fails.isEmpty() ? "Routing self test PASS" : "Routing self test FAIL: " + String.join("; ", fails);
             LOG.info(line);
             source.sendSuccess(() -> Component.literal(line), false);
-            for (var e : List.of(a, b, plain, chestCart)) if (e != null) e.discard();
+            for (var e : List.of(a, b, plain, chestCart, latchCart, ilCart)) if (e != null) e.discard();
             for (int cx = 0; cx <= 2; cx++) for (int cz = 1; cz <= 4; cz++) level.setChunkForced(cx, cz, false);
             t = -1;
         }

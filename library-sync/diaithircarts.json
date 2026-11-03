@@ -63,5 +63,10 @@
   "id": "diaithircarts:cart_loader",
   "name": "Cart Loader",
   "text": "Stands over a rail with a chest, barrel or tank on top. Every 8 ticks it moves up to 8 items, or 250 mB of fluid, between the container and the cart standing under it: loading from the container, or unloading into it (use it bare-handed to flip). Works on any cart that offers an item or fluid handler, including chest carts, hopper carts and the tank wagons from the yards. Redstone switches it off. Age V."
+ },
+ {
+  "id": "diaithircarts:locking_rail",
+  "name": "Locking Rail",
+  "text": "Stops a cart that rolls onto it and keeps it there. Use it bare-handed to change mode. Latch (amber) holds the cart until the rail goes from unpowered to powered, a redstone pulse; a rail already powered when the cart arrived does not release it. Interlock (green) holds the cart until the 32 rails ahead are clear of other carts, then lets it go. Age V."
  }
 ]
