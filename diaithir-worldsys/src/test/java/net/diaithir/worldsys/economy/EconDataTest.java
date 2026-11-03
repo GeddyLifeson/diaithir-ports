@@ -55,9 +55,17 @@ class EconDataTest {
     void gatesComeFromTheGraph() throws Exception {
         EconData d = EconData.load();
         assertEquals(45, d.gates.size());
-        assertEquals("VI", d.ageOfGood("diaithir:foundry_drill"));
-        assertEquals("RODOS", d.ageOfGood("diaithir:foundry_research_pack_7"));
+        assertEquals("VI", d.ageOfGood("diaithircrafting:foundry_drill"));
+        assertEquals("RODOS", d.ageOfGood("diaithircrafting:foundry_research_pack_7"));
         assertEquals("I", d.ageOfGood("diaithircombat:lib_sword")); // gear a1..a9 share one item; it opens with the first
         assertEquals("III", d.ageOfGood("minecraft:iron_ingot")); // hand-priced staples keep their own Age
+    }
+
+    @Test
+    void craftedItemsArePricedFromTheirRecipes() throws Exception {
+        EconData d = EconData.load();
+        // pack_4: copper ingot 12 + redstone 8 + gold nugget 6, each plus 0.25 tw labour
+        assertEquals(26.75, d.good("diaithircrafting:foundry_research_pack_4").base(), 1e-9);
+        assertEquals("VI", d.ageOfGood("diaithircrafting:foundry_research_pack_4"));
     }
 }

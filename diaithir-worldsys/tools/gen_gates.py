@@ -7,6 +7,8 @@ ages = g["ages"]
 out = {}
 for n in g["nodes"]:
     it = n.get("item")
+    if it and it.startswith("diaithir:foundry_"):
+        it = "diaithircrafting:" + it.split(":", 1)[1]  # real ids (ports #163); the graph still carries the proposed diaithir: ids
     if not it:
         continue
     cur = out.get(it)

@@ -70,6 +70,11 @@ public final class EconData {
             d.goods.put(e.getKey(), new double[] {a.get(0).getAsDouble(), a.get(1).getAsDouble()});
             d.goodAges.put(e.getKey(), a.get(2).getAsString());
         }
+        for (var e : read("derived_prices.json").getAsJsonObject().entrySet()) { // crafted items priced from their recipes (tools/gen_derived_prices.py)
+            JsonArray a = e.getValue().getAsJsonArray();
+            d.goods.put(e.getKey(), new double[] {a.get(0).getAsDouble(), a.get(1).getAsDouble()});
+            d.goodAges.put(e.getKey(), a.get(2).getAsString());
+        }
         for (var e : read("gates.json").getAsJsonObject().entrySet()) d.gates.put(e.getKey(), e.getValue().getAsJsonArray().get(0).getAsString());
         JsonObject ta = read("tech_ages.json").getAsJsonObject();
         for (var e : ta.getAsJsonObject("items").entrySet()) d.techItems.put(e.getKey(), e.getValue().getAsString());

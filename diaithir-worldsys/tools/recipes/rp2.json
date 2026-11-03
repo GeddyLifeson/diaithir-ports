@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#c:gears/iron",
+    "minecraft:paper",
+    "minecraft:ink_sac"
+  ],
+  "result": {
+    "id": "diaithircrafting:foundry_research_pack_2",
+    "count": 2
+  },
+  "category": "misc"
+}
