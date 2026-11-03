@@ -69,9 +69,16 @@ public final class LibrarySpawner {
         int[] planet = PLANET_OF_DIM.get(dim);
         if (planet == null) return null;
         int age = Math.max(1, Revival.age(level));
-        List<Species> ok = new ArrayList<>();
-        for (Species s : onPlanet(PLANET_ID_OF_DIM.get(dim))) if (s.plan.equals(plan) && s.has(Species.F_AGGRESSIVE) && opensAt(s, planet[0]) <= age) ok.add(s);
-        return ok.isEmpty() ? null : ok.get(rnd.nextInt(ok.size()));
+        List<Species> hostile = new ArrayList<>(), any = new ArrayList<>(), young = new ArrayList<>();
+        for (Species s : onPlanet(PLANET_ID_OF_DIM.get(dim))) {
+            if (!s.plan.equals(plan)) continue;
+            if (opensAt(s, planet[0]) <= age) (s.has(Species.F_AGGRESSIVE) ? hostile : any).add(s);
+            else young.add(s);
+        }
+        // Age-allowed hostile first, then any allowed, then (so a spawner never produces nothing) the planet's own lowest tier of that plan
+        List<Species> from = !hostile.isEmpty() ? hostile : !any.isEmpty() ? any : young;
+        if (from == young) young.sort(java.util.Comparator.comparingInt(x -> x.tier));
+        return from.isEmpty() ? null : from == young ? young.get(0) : from.get(rnd.nextInt(from.size()));
     }
 
     @SubscribeEvent
