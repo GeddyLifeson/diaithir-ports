@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithircrafting"
+version = "${version}"
+displayName = "Diaithir Automation and Crafting: Foundry"
+description = "Foundry parts for the automation and crafting module: the Operator Seat (machines need a food-fed worker) and the research packs 1 to 7 that feed the Age gates. Our own clean-room design."
+
+[[dependencies.diaithircrafting]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

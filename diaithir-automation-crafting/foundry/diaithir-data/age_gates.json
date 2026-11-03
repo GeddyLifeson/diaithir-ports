@@ -1,0 +1,14 @@
+{
+  "namespaces": {},
+  "items": {
+    "diaithircrafting:foundry_operator_seat": "VII",
+    "diaithircrafting:foundry_research_pack_1": "I",
+    "diaithircrafting:foundry_research_pack_2": "III",
+    "diaithircrafting:foundry_research_pack_3": "V",
+    "diaithircrafting:foundry_research_pack_4": "VI",
+    "diaithircrafting:foundry_research_pack_5": "VII",
+    "diaithircrafting:foundry_research_pack_6": "VIII",
+    "diaithircrafting:foundry_research_pack_7": "RODOS"
+  },
+  "_note": "Same Ages as data/diaithircrafting/age_gate.json, taken from plans/progression/graph.json."
+}
