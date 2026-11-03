@@ -30,6 +30,12 @@ public final class SelfTest {
     }
 
     static void register(CommandDispatcher<CommandSourceStack> d) {
+        d.register(Commands.literal("animplay").requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
+                .then(Commands.argument("player", net.minecraft.commands.arguments.EntityArgument.player())
+                        .then(Commands.argument("clip", com.mojang.brigadier.arguments.StringArgumentType.greedyString()).executes(c -> {
+                            Anim.play(net.minecraft.commands.arguments.EntityArgument.getPlayer(c, "player"), com.mojang.brigadier.arguments.StringArgumentType.getString(c, "clip"));
+                            return 1;
+                        }))));
         d.register(Commands.literal("animselftest")
                 .requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
                 .executes(c -> {

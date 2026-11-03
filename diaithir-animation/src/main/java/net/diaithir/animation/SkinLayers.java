@@ -38,6 +38,10 @@ import org.joml.Vector3f;
  */
 public final class SkinLayers {
     static final double LOD_BLOCKS = 20;
+    /** /skinlayers on|off (default on). */
+    static volatile boolean enabled = true;
+    /** /skinlayersbench: draws the voxel model this many extra times per player, to measure the frame cost. */
+    static volatile int benchCopies;
     private static final ContextKey<Data> KEY = new ContextKey<>(Identifier.fromNamespaceAndPath(DiaithirAnimation.ID, "skin_layers"));
     private static final int CACHE_MAX = 48;
     private static EntityModelSet models;
@@ -50,7 +54,7 @@ public final class SkinLayers {
 
     /** Original overlay flags, restored on the layer's own model. */
     record Flags(boolean hat, boolean jacket, boolean leftPants, boolean rightPants, boolean leftSleeve, boolean rightSleeve) { }
-    record Mesh(SkinModel model) { }
+    record Mesh(SkinModel model, int quads) { }
     record Data(Mesh mesh, Identifier texture, Flags flags) { }
 
     static void init(IEventBus bus) {
@@ -62,6 +66,7 @@ public final class SkinLayers {
                 if (r != null) { addLayer(r); PLAYERS.add(r); }
             }
         });
+        SkinTest.init();
         NeoForge.EVENT_BUS.addListener(RenderLivingEvent.Pre.class, e -> { if (PLAYERS.contains(e.getRenderer())) pre(e.getRenderState()); });
     }
 
@@ -91,7 +96,7 @@ public final class SkinLayers {
 
     /** Before the avatar is drawn: swap vanilla's flat overlay for our voxels when we can. */
     private static void pre(Object o) {
-        if (!(o instanceof AvatarRenderState s) || models == null) return;
+        if (!(o instanceof AvatarRenderState s) || models == null || !enabled) return;
         s.setRenderData(KEY, null);
         if (s.isInvisible || s.distanceToCameraSq > LOD_BLOCKS * LOD_BLOCKS) return;
         Identifier tex = s.skin.body().texturePath();
@@ -101,7 +106,7 @@ public final class SkinLayers {
         s.showHat = s.showJacket = s.showLeftPants = s.showRightPants = s.showLeftSleeve = s.showRightSleeve = false;
     }
 
-    private static Mesh mesh(Identifier tex, boolean slim) {
+    static Mesh mesh(Identifier tex, boolean slim) {
         String key = tex + (slim ? "#slim" : "#wide");
         Optional<Mesh> c = CACHE.get(key);
         if (c != null) return c.orElse(null);
@@ -133,16 +138,17 @@ public final class SkinLayers {
             if (img.getWidth() != SkinVoxels.TEX || img.getHeight() != SkinVoxels.TEX) return null;
             final NativeImage im = img;
             java.util.function.IntBinaryOperator alpha = (x, y) -> im.getPixel(x, y) >>> 24;
-            return new Mesh(new SkinModel(root(slim, alpha), slim));
+            int[] quads = new int[1];
+            return new Mesh(new SkinModel(root(slim, alpha, quads), slim), quads[0]);
         } finally {
             if (own) img.close();
         }
     }
 
-    private static ModelPart root(boolean slim, java.util.function.IntBinaryOperator alpha) {
+    private static ModelPart root(boolean slim, java.util.function.IntBinaryOperator alpha, int[] quads) {
         ModelPart v = models.bakeLayer(slim ? ModelLayers.PLAYER_SLIM : ModelLayers.PLAYER);
         Map<String, List<ModelPart.Cube>> cubes = new java.util.HashMap<>();
-        SkinVoxels.boxes(slim).forEach((name, box) -> cubes.put(name, cubes(SkinVoxels.build(box, alpha))));
+        SkinVoxels.boxes(slim).forEach((name, box) -> { var q = SkinVoxels.build(box, alpha); quads[0] += q.size(); cubes.put(name, cubes(q)); });
         return same(v, List.of(), Map.of(
                 "head", same(v.getChild("head"), List.of(), Map.of("hat", same(v.getChild("head").getChild("hat"), cubes.get("hat"), Map.of()))),
                 "body", same(v.getChild("body"), List.of(), Map.of("jacket", same(v.getChild("body").getChild("jacket"), cubes.get("jacket"), Map.of()))),
@@ -206,6 +212,12 @@ public final class SkinLayers {
             Data d = state.getRenderData(KEY);
             if (d == null || state.isInvisible) return;
             renderColoredCutoutModel(d.mesh().model(), d.texture(), poseStack, collector, lightCoords, state, -1, 1);
+            for (int i = 0; i < benchCopies; i++) {
+                poseStack.pushPose();
+                poseStack.translate(((i % 10) - 5) * 0.9, 0.0, ((i / 10) % 10) * 0.9 + 1.0);
+                renderColoredCutoutModel(d.mesh().model(), d.texture(), poseStack, collector, lightCoords, state, -1, 1);
+                poseStack.popPose();
+            }
         }
     }
 
