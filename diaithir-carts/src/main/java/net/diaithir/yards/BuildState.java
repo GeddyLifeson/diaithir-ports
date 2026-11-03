@@ -5,7 +5,7 @@ import java.util.List;
 
 /** Progress of one vehicle on a yard. Saved by the controller block entity. */
 public final class BuildState {
-    public enum InstallResult { OK, WRONG_STAGE, NO_SLOT, AGE_LOCKED, NEEDS_CRANE, DONE }
+    public enum InstallResult { OK, WRONG_STAGE, NO_SLOT, AGE_LOCKED, NEEDS_CRANE, TIER_LOCKED, DONE }
 
     private final YardDef def;
     private int stage;
@@ -61,7 +61,7 @@ public final class BuildState {
     /** Do work. Returns true when the stage finished and the build moved on. Work only counts once all slots are full. */
     public boolean advance(int workTicks, double craneSpeed) {
         if (complete() || !slotsFull()) return false;
-        ticks += (int) Math.max(1, Math.round(workTicks * craneSpeed * def.craneSpeedup()));
+        ticks += (int) Math.max(1, Math.round(workTicks * craneSpeed * def.craneSpeedup() * def.tier().speed));
         if (ticks < def.stages().get(stage).baseTicks()) return false;
         installed.addAll(stageParts);
         stageParts.clear();

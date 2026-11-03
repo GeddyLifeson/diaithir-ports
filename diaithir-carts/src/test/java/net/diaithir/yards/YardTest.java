@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class YardTest {
     private static YardDef loco() {
-        return new YardDef("steam_loco", YardDef.Site.GROUND, List.of(), "loco",
+        return new YardDef("steam_loco", YardDef.Tier.WORKSHOP, YardDef.Site.GROUND, List.of(), "loco",
                 List.of(new YardDef.Stage("frame", List.of(new YardDef.Slot("bogie", 2)), 40, "g1"),
                         new YardDef.Stage("power", List.of(new YardDef.Slot("boiler", 1)), 100, "g2"),
                         new YardDef.Stage("cab", List.of(new YardDef.Slot("cab", 1)), 40, "g3")), 1.0);

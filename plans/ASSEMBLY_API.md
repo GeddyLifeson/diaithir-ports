@@ -27,6 +27,14 @@ YardRegistry.rollout(id, hook);                // owner of a yard type supplies 
 - ships: `ShipAssembler` call in `RolloutHook`, mass + thrust + buoyancy onto the VS2 ship
 - space: orbital site, `thrust_n/mass_kg`, `power_w` on the Keelwright ship
 
+## Yard tiers (sites evolve with the Ages)
+`YardTier` on every `YardDef`, each with a work-speed multiplier and the vehicle classes it may build (`YardDef.minTier` on a vehicle, via `tier` field):
+1. `WORKSHOP` (hand-built slipway, smithy, wheelwright; speed x1; cranes: treadwheel/shear legs) - wagons, carts, small boats.
+2. `ERECTING_SHOP` (overhead and steam cranes; x2) - steam locomotives, sailing/steam ships, early cars.
+3. `ASSEMBLY_LINE` (powered stations, electric gantries; x4) - diesel/electric rolling stock, trucks, farm machines, aircraft.
+4. `AUTOMATED` (robotic cells, container and gantry cranes, blueprint crews; x8) - modern stock, spacecraft in orbital yards.
+Upgrading a yard replaces the controller with the next tier on the same footprint (diaithir-upgrades). A part or vehicle with a higher tier than the yard returns `TIER_LOCKED`.
+
 ## Cranes and heavy parts
 - `PartDef.heavy` (true when `mass_kg` >= 500): heavy parts cannot be carried. The item is a crate/ingot-style handle that stays on the bench; moving it needs a crane (`CraneLift`): crane picks the part at a source (bench, depot, flatcar, ship hold) and sets it at a yard slot or target container.
 - Crane set by Age: treadwheel crane, steam crane, diesel mobile crane, electric gantry/overhead, port/container crane. Each has `lift_kg`, `reach_m`, `speed` (m/s); `CraneSpeed` for stage work = product of crane `speed` multipliers in reach of the site.
