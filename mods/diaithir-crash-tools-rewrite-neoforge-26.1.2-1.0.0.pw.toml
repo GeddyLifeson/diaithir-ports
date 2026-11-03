@@ -1,8 +1,0 @@
-name = "diaithir-crash-tools-rewrite-neoforge-26.1.2-1.0.0"
-filename = "diaithir-crash-tools-rewrite-neoforge-26.1.2-1.0.0.jar"
-side = "client"
-
-[download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-clientcombat/client/diaithir-crash-tools-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash-format = "sha256"
-hash = "ff6635b5fc13bb40170c26a2975d2247dc31a1ca1b566990b5d6c70eb6b99850"

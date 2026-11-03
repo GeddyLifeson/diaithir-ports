@@ -1,8 +1,0 @@
-name = "diaithir-client-render-culling-rewrite-neoforge-26.1.2-1.0.0"
-filename = "diaithir-client-render-culling-rewrite-neoforge-26.1.2-1.0.0.jar"
-side = "client"
-
-[download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-clientcombat/client/diaithir-client-render-culling-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash-format = "sha256"
-hash = "721741e9fe9596221f27f925bc05778bd3638d9d91652cc7d9b1f455057e88b3"
