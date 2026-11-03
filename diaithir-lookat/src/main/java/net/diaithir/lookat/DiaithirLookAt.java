@@ -19,6 +19,7 @@ public final class DiaithirLookAt {
     public static final String ID = "diaithirlookat";
 
     public DiaithirLookAt(IEventBus bus) {
+        bus.addListener((net.neoforged.fml.event.lifecycle.InterModProcessEvent e) -> Providers.collect());
         bus.addListener((RegisterGuiLayersEvent e) -> e.registerAboveAll(Identifier.fromNamespaceAndPath(ID, "box"), DiaithirLookAt::render));
     }
 
@@ -50,7 +51,17 @@ public final class DiaithirLookAt {
         }
         if (hit instanceof BlockHitResult b && hit.getType() == HitResult.Type.BLOCK) {
             var state = mc.level.getBlockState(b.getBlockPos());
-            return Info.forBlock(state, state.getBlock().getName().getString(), BuiltInRegistries.BLOCK.getKey(state.getBlock()).getNamespace());
+            String[] base = Info.forBlock(state, state.getBlock().getName().getString(), BuiltInRegistries.BLOCK.getKey(state.getBlock()).getNamespace());
+            java.util.List<String> extra = Providers.lines(mc.level, b.getBlockPos(), BuiltInRegistries.BLOCK.getKey(state.getBlock()));
+            if (extra.isEmpty()) {
+                return base;
+            }
+            String[] all = new String[base.length + extra.size()];
+            System.arraycopy(base, 0, all, 0, base.length);
+            for (int i = 0; i < extra.size(); i++) {
+                all[base.length + i] = extra.get(i);
+            }
+            return all;
         }
         return null;
     }

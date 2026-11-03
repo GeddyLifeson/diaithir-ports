@@ -26,6 +26,12 @@ public final class DiaithirClaims {
 
     public DiaithirClaims(IEventBus bus) {
         ATTACH.register(bus);
+        bus.addListener((net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent e) ->
+            e.registrar("1").optional().playToClient(MapPayload.TYPE, MapPayload.CODEC, (payload, ctx) -> {
+                if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+                    ctx.enqueueWork(() -> ClientHooks.open(payload));
+                }
+            }));
         NeoForge.EVENT_BUS.register(new Guard());
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.RegisterCommandsEvent e) -> Commands.register(e.getDispatcher()));
     }

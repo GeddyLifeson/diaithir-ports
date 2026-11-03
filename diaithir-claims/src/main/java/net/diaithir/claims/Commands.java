@@ -40,7 +40,8 @@ public final class Commands {
                 .executes(c -> trust(c.getSource().getPlayerOrException(), EntityArgument.getPlayer(c, "who"), false))))
             .then(net.minecraft.commands.Commands.literal("selftest").requires(src -> src.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
                 .executes(c -> SelfTest.run(c.getSource().getPlayerOrException())))
-            .then(net.minecraft.commands.Commands.literal("map").executes(c -> map(c.getSource().getPlayerOrException()))));
+            .then(net.minecraft.commands.Commands.literal("map").executes(c -> map(c.getSource().getPlayerOrException()))
+                .then(net.minecraft.commands.Commands.literal("chat").executes(c -> chatMap(c.getSource().getPlayerOrException())))));
     }
 
     static int claim(ServerPlayer p) {
@@ -92,8 +93,26 @@ public final class Commands {
         return 1;
     }
 
-    /** Chat map, 11 by 11 chunks around you. # yours, X someone else's, . free, @ you. */
+    /** /claim map opens the map screen (21 by 21 chunks); /claim map chat prints 11 by 11 chunks around you. # yours, X someone else's, . free, @ you. */
     static int map(ServerPlayer p) {
+        if (!p.connection.hasChannel(MapPayload.TYPE)) {
+            return chatMap(p);
+        }
+        ChunkPos me = p.chunkPosition();
+        int n = MapPayload.SIZE, r = n / 2;
+        byte[] cells = new byte[n * n];
+        for (int dz = -r; dz <= r; dz++) {
+            for (int dx = -r; dx <= r; dx++) {
+                LevelChunk ch = p.level().getChunkSource().getChunkNow(me.x() + dx, me.z() + dz);
+                Optional<Claim> c = ch == null ? Optional.empty() : DiaithirClaims.at(ch);
+                cells[(dz + r) * n + dx + r] = (byte) (c.isEmpty() ? 0 : c.get().allows(p.getUUID()) ? 1 : 2);
+            }
+        }
+        net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, new MapPayload(me.x(), me.z(), cells));
+        return 1;
+    }
+
+    static int chatMap(ServerPlayer p) {
         ChunkPos me = p.chunkPosition();
         for (int dz = -5; dz <= 5; dz++) {
             StringBuilder sb = new StringBuilder();

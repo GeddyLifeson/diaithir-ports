@@ -38,6 +38,10 @@ public final class DiaithirWaypoints {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         ATTACH.register(bus);
+        bus.addListener((net.neoforged.fml.event.lifecycle.InterModEnqueueEvent e) -> e.enqueueWork(() ->
+            net.neoforged.fml.InterModComms.sendTo("diaithirlookat", "block/" + ID + ":waypoint_stone", () ->
+                (java.util.function.BiFunction<net.minecraft.world.level.Level, net.minecraft.core.BlockPos, java.util.List<String>>)
+                    (level, pos) -> java.util.List.of(Names.of(pos)))));
         NeoForge.EVENT_BUS.addListener((RegisterCommandsEvent e) -> Travel.commands(e.getDispatcher()));
     }
 }
