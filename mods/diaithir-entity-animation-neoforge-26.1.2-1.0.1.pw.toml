@@ -1,0 +1,8 @@
+name = "diaithir-entity-animation-neoforge"
+filename = "diaithir-entity-animation-neoforge-26.1.2-1.0.1.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-2-1/client/diaithir-entity-animation-neoforge-26.1.2-1.0.1.jar"
+hash-format = "sha256"
+hash = "ca3d79f3527cd170e27fff97871e09e11263ae0ea7e419efd16158d402ffc6c1"
