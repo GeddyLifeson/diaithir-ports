@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_cellor",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_cellor",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_3_cellor",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 164780294
+ }
+}

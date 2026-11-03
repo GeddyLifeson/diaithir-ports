@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0_thezasha",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_1_thezasha",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_3_thezasha",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 3931346
+ }
+}

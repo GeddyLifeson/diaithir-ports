@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_0_any",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_1_any",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tirakaluta/settlement_3_any",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 54835597
+ }
+}

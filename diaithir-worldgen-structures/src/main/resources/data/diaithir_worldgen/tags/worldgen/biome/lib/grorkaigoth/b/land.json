@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:grorkaigoth_ashavseth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grorkaigoth_grimournun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grorkaigoth_kaizhar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grorkaigoth_khornak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grorkaigoth_thuggorkoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grorkaigoth_thukok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grorkaigoth_veneineth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grorkaigoth_vorogoth",
+   "required": false
+  }
+ ]
+}

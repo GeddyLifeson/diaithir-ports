@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:eluannys_elanniel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eluannys_lyenirlys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eluannys_nuiniolora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eluannys_ryanuamys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eluannys_valarum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eluannys_venamora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eluannys_venuarlora",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ninteostor_lausornanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ninteostor_lialium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ninteostor_mernus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ninteostor_rintum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ninteostor_sanium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ninteostor_seornaullia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ninteostor_sillaunus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ninteostor_taulanum",
+   "required": false
+  }
+ ]
+}

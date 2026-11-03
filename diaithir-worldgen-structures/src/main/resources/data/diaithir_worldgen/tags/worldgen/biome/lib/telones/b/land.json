@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:telones_amaustanor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:telones_laulesium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:telones_leornes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:telones_losiarus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:telones_rallor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:telones_sereostium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:telones_telines",
+   "required": false
+  }
+ ]
+}

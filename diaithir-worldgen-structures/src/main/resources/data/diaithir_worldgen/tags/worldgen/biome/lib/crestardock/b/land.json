@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:crestardock_druron",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crestardock_jorernen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crestardock_joroldar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crestardock_krothurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crestardock_shyuzora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crestardock_sizavsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crestardock_thuldar",
+   "required": false
+  }
+ ]
+}

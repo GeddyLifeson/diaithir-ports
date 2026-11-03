@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_0_kalunaroma",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osulaltanum/settlement_1_kalunaroma",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 98448788
+ }
+}

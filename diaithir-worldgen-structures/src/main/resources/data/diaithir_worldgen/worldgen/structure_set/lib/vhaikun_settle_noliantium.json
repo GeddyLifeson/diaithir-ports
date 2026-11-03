@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_0_noliantium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_1_noliantium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vhaikun/settlement_2_noliantium",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 251398589
+ }
+}

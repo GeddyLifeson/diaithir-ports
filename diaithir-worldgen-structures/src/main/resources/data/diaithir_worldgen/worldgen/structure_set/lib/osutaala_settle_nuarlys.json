@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/osutaala/settlement_0_nuarlys",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osutaala/settlement_2_nuarlys",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 62705334
+ }
+}

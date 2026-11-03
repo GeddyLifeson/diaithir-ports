@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_0_any",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_any",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_any",
+   "weight": 130
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_any",
+   "weight": 69
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 227456738
+ }
+}

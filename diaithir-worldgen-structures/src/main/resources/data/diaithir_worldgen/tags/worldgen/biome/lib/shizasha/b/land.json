@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:shizasha_shathyuzora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:shizasha_thiasyuzis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:shizasha_thivsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:shizasha_veseizith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:shizasha_vesyuthis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:shizasha_xaevseth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:shizasha_zephyusasha",
+   "required": false
+  }
+ ]
+}
