@@ -2,7 +2,11 @@
  "module": "diaithirhudoverlays",
  "side": "client",
  "features": [
-  "betteradvancements"
+  "autohud",
+  "betteradvancements",
+  "leavebars",
+  "pickupnotifier",
+  "talkballoons"
  ],
  "codex": {
   "entry": "diaithirhudoverlays.overview",

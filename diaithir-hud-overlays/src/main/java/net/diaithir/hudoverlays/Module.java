@@ -9,6 +9,10 @@ public final class Module {
     public static final String ID = "diaithirhudoverlays";
 
     public Module(IEventBus bus, ModContainer container) {
+        net.diaithir.hudoverlays.talkballoons.Feature.init(bus, container);
+        net.diaithir.hudoverlays.autohud.Feature.init(bus, container);
+        net.diaithir.hudoverlays.pickupnotifier.Feature.init(bus, container);
+        net.diaithir.hudoverlays.leavebars.Feature.init(bus, container);
         net.diaithir.hudoverlays.betteradvancements.Feature.init(bus, container);
     }
 }
