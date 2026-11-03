@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_0",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_1",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miana/settlement_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 104882977
+ }
+}

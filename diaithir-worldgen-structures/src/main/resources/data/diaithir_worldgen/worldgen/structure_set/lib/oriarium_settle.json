@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_0",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_2",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 176671312
+ }
+}

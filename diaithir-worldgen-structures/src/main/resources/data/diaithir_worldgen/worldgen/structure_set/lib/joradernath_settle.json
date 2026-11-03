@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2",
+   "weight": 71
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_3",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 127029330
+ }
+}

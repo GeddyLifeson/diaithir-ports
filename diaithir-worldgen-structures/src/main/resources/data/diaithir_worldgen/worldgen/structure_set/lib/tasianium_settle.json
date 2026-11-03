@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_0",
+   "weight": 74
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_1",
+   "weight": 180
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_2",
+   "weight": 175
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_3",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 11647483
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/teleontanum/settlement_0",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/teleontanum/settlement_1",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 36781947
+ }
+}

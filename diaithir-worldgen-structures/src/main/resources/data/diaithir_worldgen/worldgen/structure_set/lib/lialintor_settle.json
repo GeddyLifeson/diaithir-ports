@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lialintor/settlement_0",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lialintor/settlement_1",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lialintor/settlement_2",
+   "weight": 34
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 143866279
+ }
+}

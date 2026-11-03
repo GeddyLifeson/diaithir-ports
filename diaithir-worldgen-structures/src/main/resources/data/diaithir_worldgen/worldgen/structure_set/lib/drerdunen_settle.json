@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0",
+   "weight": 47
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1",
+   "weight": 118
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2",
+   "weight": 159
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 127870274
+ }
+}

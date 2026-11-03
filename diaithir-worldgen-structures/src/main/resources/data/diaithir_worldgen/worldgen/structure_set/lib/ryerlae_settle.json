@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0",
+   "weight": 83
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1",
+   "weight": 69
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 241051821
+ }
+}

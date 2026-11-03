@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/settlement_0",
+   "weight": 59
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/settlement_1",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/settlement_2",
+   "weight": 134
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/settlement_3",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 217401092
+ }
+}

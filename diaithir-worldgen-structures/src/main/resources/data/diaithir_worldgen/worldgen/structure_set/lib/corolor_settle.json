@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_0",
+   "weight": 65
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_1",
+   "weight": 73
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_2",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 11175082
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_0",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_2",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/settlement_3",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 61403971
+ }
+}

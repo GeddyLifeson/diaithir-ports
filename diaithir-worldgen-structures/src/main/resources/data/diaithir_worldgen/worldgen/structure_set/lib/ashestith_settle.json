@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_0",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_2",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashestith/settlement_3",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 18635790
+ }
+}

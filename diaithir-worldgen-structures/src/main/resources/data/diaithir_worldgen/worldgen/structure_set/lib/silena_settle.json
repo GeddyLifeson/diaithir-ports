@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silena/settlement_0",
+   "weight": 53
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/settlement_1",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/settlement_2",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/settlement_3",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 231794053
+ }
+}

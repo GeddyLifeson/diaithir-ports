@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_0",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_1",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_2",
+   "weight": 78
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 70819174
+ }
+}

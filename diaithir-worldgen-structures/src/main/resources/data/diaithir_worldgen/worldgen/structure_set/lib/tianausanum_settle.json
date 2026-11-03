@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/settlement_0",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/settlement_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/settlement_2",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tianausanum/settlement_3",
+   "weight": 12
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 144314140
+ }
+}

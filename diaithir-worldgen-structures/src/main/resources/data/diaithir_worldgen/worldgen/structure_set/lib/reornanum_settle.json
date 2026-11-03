@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/reornanum/settlement_0",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reornanum/settlement_1",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reornanum/settlement_2",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reornanum/settlement_3",
+   "weight": 31
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 226495281
+ }
+}

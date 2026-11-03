@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_0",
+   "weight": 159
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_1",
+   "weight": 112
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_2",
+   "weight": 281
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_3",
+   "weight": 10
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 150979470
+ }
+}

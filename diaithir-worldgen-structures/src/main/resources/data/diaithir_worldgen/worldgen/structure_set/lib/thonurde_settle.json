@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_0",
+   "weight": 35
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_1",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_2",
+   "weight": 63
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonurde/settlement_3",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 91021854
+ }
+}

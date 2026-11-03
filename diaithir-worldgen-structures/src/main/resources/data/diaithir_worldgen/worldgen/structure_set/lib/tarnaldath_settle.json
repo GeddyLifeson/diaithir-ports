@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_0",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_1",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_2",
+   "weight": 87
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_3",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 88180067
+ }
+}

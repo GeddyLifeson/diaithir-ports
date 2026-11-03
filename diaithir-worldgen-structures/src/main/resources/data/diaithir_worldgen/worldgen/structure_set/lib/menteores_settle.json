@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/menteores/settlement_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/menteores/settlement_1",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 95275590
+ }
+}

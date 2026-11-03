@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/vorairnok/settlement/1",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/vorairnok/ma_vorairnok_e7_places_000305",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

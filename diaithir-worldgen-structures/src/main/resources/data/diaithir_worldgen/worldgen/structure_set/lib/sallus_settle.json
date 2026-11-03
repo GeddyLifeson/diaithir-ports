@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/sallus/settlement_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sallus/settlement_1",
+   "weight": 9
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 250541184
+ }
+}

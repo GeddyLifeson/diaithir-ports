@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/settlement_0",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/settlement_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/settlement_2",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 158146938
+ }
+}

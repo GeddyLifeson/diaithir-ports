@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/settlement_0",
+   "weight": 333
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/settlement_1",
+   "weight": 968
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/settlement_2",
+   "weight": 329
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/settlement_3",
+   "weight": 18
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 28,
+  "separation": 9,
+  "salt": 248903385
+ }
+}

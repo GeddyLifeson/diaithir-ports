@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_0",
+   "weight": 69
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_1",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_2",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_3",
+   "weight": 20
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 163690786
+ }
+}

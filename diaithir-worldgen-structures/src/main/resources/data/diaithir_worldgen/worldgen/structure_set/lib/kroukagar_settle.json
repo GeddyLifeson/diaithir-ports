@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/settlement_0",
+   "weight": 90
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/settlement_1",
+   "weight": 155
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/settlement_2",
+   "weight": 303
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/settlement_3",
+   "weight": 7
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 258505519
+ }
+}

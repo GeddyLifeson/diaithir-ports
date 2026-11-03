@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_0",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_2",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 167384791
+ }
+}

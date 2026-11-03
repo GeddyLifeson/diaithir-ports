@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_0",
+   "weight": 390
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_1",
+   "weight": 1861
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/settlement_2",
+   "weight": 168
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 28,
+  "separation": 9,
+  "salt": 227582698
+ }
+}

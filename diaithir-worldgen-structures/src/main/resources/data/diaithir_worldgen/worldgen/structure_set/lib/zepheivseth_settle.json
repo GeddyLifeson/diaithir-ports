@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/settlement_0",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/settlement_1",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/settlement_2",
+   "weight": 84
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheivseth/settlement_3",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 134554747
+ }
+}

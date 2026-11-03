@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/groktok/settlement_0",
+   "weight": 49
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/settlement_1",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/settlement_2",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/settlement_3",
+   "weight": 30
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 142314058
+ }
+}

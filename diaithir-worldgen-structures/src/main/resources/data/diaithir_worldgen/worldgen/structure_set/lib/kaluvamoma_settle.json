@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_0",
+   "weight": 35
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_1",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_2",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_3",
+   "weight": 10
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 209969733
+ }
+}

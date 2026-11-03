@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_0",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venualys/settlement_1",
+   "weight": 7
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 179504564
+ }
+}

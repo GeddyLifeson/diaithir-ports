@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_0",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_1",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_2",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/syezeth/settlement_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 251937913
+ }
+}

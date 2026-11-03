@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_0",
+   "weight": 72
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_1",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_2",
+   "weight": 59
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/settlement_3",
+   "weight": 48
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 136311737
+ }
+}

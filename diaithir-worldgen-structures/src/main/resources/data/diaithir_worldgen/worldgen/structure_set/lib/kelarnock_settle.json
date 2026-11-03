@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/settlement_0",
+   "weight": 126
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/settlement_1",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/settlement_2",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/settlement_3",
+   "weight": 117
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 155555501
+ }
+}

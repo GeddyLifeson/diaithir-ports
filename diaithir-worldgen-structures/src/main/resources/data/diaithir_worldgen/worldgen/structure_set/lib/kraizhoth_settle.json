@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_0",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_1",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_2",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/settlement_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 168247524
+ }
+}

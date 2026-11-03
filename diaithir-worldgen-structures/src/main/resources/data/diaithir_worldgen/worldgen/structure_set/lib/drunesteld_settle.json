@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/settlement_0",
+   "weight": 101
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/settlement_1",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/settlement_2",
+   "weight": 120
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 50476922
+ }
+}

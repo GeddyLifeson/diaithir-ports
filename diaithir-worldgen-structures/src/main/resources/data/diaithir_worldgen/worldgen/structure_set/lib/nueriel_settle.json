@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0",
+   "weight": 33
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1",
+   "weight": 81
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 97603366
+ }
+}

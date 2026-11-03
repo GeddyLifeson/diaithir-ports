@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_0",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_1",
+   "weight": 47
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ilyenna/settlement_2",
+   "weight": 24
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 171312314
+ }
+}

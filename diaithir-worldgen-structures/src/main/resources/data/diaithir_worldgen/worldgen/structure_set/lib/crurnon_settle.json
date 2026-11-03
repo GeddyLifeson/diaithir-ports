@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_1",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/settlement_2",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 84660117
+ }
+}

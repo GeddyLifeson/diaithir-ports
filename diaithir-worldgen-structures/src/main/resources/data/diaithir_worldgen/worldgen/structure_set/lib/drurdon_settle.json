@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/settlement_0",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/settlement_1",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/settlement_2",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drurdon/settlement_3",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 98593264
+ }
+}

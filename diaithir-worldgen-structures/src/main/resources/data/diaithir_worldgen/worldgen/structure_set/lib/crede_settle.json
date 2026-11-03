@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_0",
+   "weight": 168
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_1",
+   "weight": 102
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_2",
+   "weight": 66
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_3",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 265683281
+ }
+}

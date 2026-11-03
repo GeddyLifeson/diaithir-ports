@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_0",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_1",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/morurnath/settlement_2",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 35090548
+ }
+}

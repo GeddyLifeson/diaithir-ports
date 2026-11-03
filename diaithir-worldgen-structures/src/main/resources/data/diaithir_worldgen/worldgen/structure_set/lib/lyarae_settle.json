@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_0",
+   "weight": 75
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_1",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_2",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyarae/settlement_3",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 212019806
+ }
+}

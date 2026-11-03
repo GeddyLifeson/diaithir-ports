@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_0",
+   "weight": 61
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_1",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_2",
+   "weight": 90
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_3",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 203977535
+ }
+}

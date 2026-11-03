@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/eleniel/settlement_0",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eleniel/settlement_1",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 233385211
+ }
+}

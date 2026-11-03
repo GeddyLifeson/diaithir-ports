@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/settlement_0",
+   "weight": 190
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/settlement_1",
+   "weight": 65
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/settlement_2",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/settlement_3",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 36,
+  "separation": 12,
+  "salt": 105553829
+ }
+}

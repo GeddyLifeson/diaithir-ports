@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/settlement_0",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/settlement_1",
+   "weight": 14
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 27519255
+ }
+}

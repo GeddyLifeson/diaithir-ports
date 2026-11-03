@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_0",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_2",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnurock/settlement_3",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 45824909
+ }
+}

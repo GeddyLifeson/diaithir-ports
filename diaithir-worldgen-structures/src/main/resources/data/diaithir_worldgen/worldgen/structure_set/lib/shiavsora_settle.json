@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_1",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_2",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3",
+   "weight": 22
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 16,
+  "salt": 7063432
+ }
+}
