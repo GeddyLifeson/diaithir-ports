@@ -40,6 +40,16 @@ public sealed interface Rule {
 
         boolean hasEnchantment(String enchantmentId);
 
+        /** Max stack size of the item. Default 64 so older probes keep working. */
+        default int maxStack() {
+            return 64;
+        }
+
+        /** True when the stack carries the data component with this id (the Item Filters "NBT" filters, 26.1 style). */
+        default boolean hasComponent(String componentId) {
+            return false;
+        }
+
         static Probe of(ItemStack s) {
             return new Probe() {
                 public String itemId() {
@@ -56,6 +66,16 @@ public sealed interface Rule {
                 public int durabilityPercent() {
                     if (!s.isDamageableItem()) return 100;
                     return (s.getMaxDamage() - s.getDamageValue()) * 100 / Math.max(1, s.getMaxDamage());
+                }
+
+                public int maxStack() {
+                    return s.getMaxStackSize();
+                }
+
+                public boolean hasComponent(String componentId) {
+                    Identifier id = Identifier.tryParse(componentId);
+                    if (id == null) return false;
+                    return s.getComponents().keySet().stream().anyMatch(t -> id.equals(BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(t)));
                 }
 
                 public boolean hasEnchantment(String id) {
@@ -139,6 +159,56 @@ public sealed interface Rule {
         }
     }
 
+    /** Item id matches a regular expression (Item Filters' regex filter). Invalid patterns match nothing. */
+    record RegexRule(String pattern) implements Rule {
+        public boolean test(Probe p) {
+            try {
+                return java.util.regex.Pattern.compile(pattern).matcher(p.itemId()).matches();
+            } catch (java.util.regex.PatternSyntaxException e) {
+                return false;
+            }
+        }
+
+        public int size() {
+            return 1;
+        }
+
+        public int depth() {
+            return 1;
+        }
+    }
+
+    /** Max stack size in an inclusive range (Item Filters' max-count filter). */
+    record StackSizeRule(int min, int max) implements Rule {
+        public boolean test(Probe p) {
+            int m = p.maxStack();
+            return m >= min && m <= max;
+        }
+
+        public int size() {
+            return 1;
+        }
+
+        public int depth() {
+            return 1;
+        }
+    }
+
+    /** Stack carries a given data component (Item Filters' weak NBT filter, mapped to 26.1 components). */
+    record ComponentRule(String component) implements Rule {
+        public boolean test(Probe p) {
+            return p.hasComponent(component);
+        }
+
+        public int size() {
+            return 1;
+        }
+
+        public int depth() {
+            return 1;
+        }
+    }
+
     record And(List<Rule> children) implements Rule {
         public boolean test(Probe p) {
             for (Rule r : children) if (!r.test(p)) return false;
@@ -191,11 +261,17 @@ public sealed interface Rule {
             Codec.intRange(0, 100).fieldOf("max").forGetter(DurabilityRule::max)).apply(i, DurabilityRule::new));
     MapCodec<EnchantRule> ENCH_CODEC = RecordCodecBuilder.mapCodec(i -> i.group(Codec.STRING.fieldOf("enchantment").forGetter(EnchantRule::enchantment)).apply(i, EnchantRule::new));
 
+    MapCodec<RegexRule> REGEX_CODEC = RecordCodecBuilder.mapCodec(i -> i.group(Codec.STRING.fieldOf("regex").forGetter(RegexRule::pattern)).apply(i, RegexRule::new));
+    MapCodec<StackSizeRule> STACK_CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
+            Codec.intRange(1, 1024).fieldOf("stack_min").forGetter(StackSizeRule::min),
+            Codec.intRange(1, 1024).fieldOf("stack_max").forGetter(StackSizeRule::max)).apply(i, StackSizeRule::new));
+    MapCodec<ComponentRule> COMP_CODEC = RecordCodecBuilder.mapCodec(i -> i.group(Codec.STRING.fieldOf("component").forGetter(ComponentRule::component)).apply(i, ComponentRule::new));
+
     Codec<Rule> CODEC = Codec.recursive("diaithirfilters_rule", self -> {
         MapCodec<And> and = RecordCodecBuilder.mapCodec(i -> i.group(self.listOf().fieldOf("all").forGetter(And::children)).apply(i, And::new));
         MapCodec<Or> or = RecordCodecBuilder.mapCodec(i -> i.group(self.listOf().fieldOf("any").forGetter(Or::children)).apply(i, Or::new));
         MapCodec<Not> not = RecordCodecBuilder.mapCodec(i -> i.group(self.fieldOf("not").forGetter(Not::child)).apply(i, Not::new));
-        List<MapCodec<? extends Rule>> all = List.of(ITEM_CODEC, TAG_CODEC, MOD_CODEC, DUR_CODEC, ENCH_CODEC, and, or, not);
+        List<MapCodec<? extends Rule>> all = List.of(ITEM_CODEC, TAG_CODEC, MOD_CODEC, DUR_CODEC, ENCH_CODEC, REGEX_CODEC, STACK_CODEC, COMP_CODEC, and, or, not);
         return new Codec<Rule>() {
             @Override
             public <T> DataResult<Pair<Rule, T>> decode(DynamicOps<T> ops, T input) {
@@ -214,6 +290,9 @@ public sealed interface Rule {
                     case ModRule r -> MOD_CODEC.codec().encode(r, ops, prefix);
                     case DurabilityRule r -> DUR_CODEC.codec().encode(r, ops, prefix);
                     case EnchantRule r -> ENCH_CODEC.codec().encode(r, ops, prefix);
+                    case RegexRule r -> REGEX_CODEC.codec().encode(r, ops, prefix);
+                    case StackSizeRule r -> STACK_CODEC.codec().encode(r, ops, prefix);
+                    case ComponentRule r -> COMP_CODEC.codec().encode(r, ops, prefix);
                     case And r -> and.codec().encode(r, ops, prefix);
                     case Or r -> or.codec().encode(r, ops, prefix);
                     case Not r -> not.codec().encode(r, ops, prefix);
@@ -232,6 +311,9 @@ public sealed interface Rule {
             case ModRule x -> "mod " + x.modId();
             case DurabilityRule x -> "durability " + x.min() + "-" + x.max() + "%";
             case EnchantRule x -> "enchant " + x.enchantment();
+            case RegexRule x -> "regex " + x.pattern();
+            case StackSizeRule x -> "stack size " + x.min() + "-" + x.max();
+            case ComponentRule x -> "has " + x.component();
             case And x -> join("AND", x.children());
             case Or x -> join("OR", x.children());
             case Not x -> "NOT (" + describe(x.child()) + ")";
