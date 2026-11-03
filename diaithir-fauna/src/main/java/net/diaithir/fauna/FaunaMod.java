@@ -127,12 +127,8 @@ public final class FaunaMod {
                                 c.getSource().sendFailure(Component.literal("No Library creature with that entry id"));
                                 return 0;
                             }
-                            ServerLevel level = c.getSource().getLevel();
-                            FaunaMob m = TYPES.get(s.plan).get().create(level, EntitySpawnReason.COMMAND);
-                            m.setPos(c.getSource().getPosition());
-                            m.setSpecies(s);
-                            level.addFreshEntity(m);
-                            return 1;
+                            var at = c.getSource().getPosition();
+                            return LibrarySpawner.spawn(c.getSource().getLevel(), s, at.x, at.y, at.z, EntitySpawnReason.COMMAND) != null ? 1 : 0;
                         })))
                 .then(Commands.literal("libspawntest").then(Commands.argument("attempts", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 200))
                         .then(Commands.argument("age", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 20)).executes(c -> {
