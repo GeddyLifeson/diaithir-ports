@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "Apache-2.0"
+
+[[mods]]
+modId = "diaithiradmincore"
+version = "${version}"
+displayName = "Diaithir Admin-core"
+description = "Scheduled world backups, folded from Simple Backups (Apache-2.0)."
+
+[[dependencies.diaithiradmincore]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+side = "BOTH"
