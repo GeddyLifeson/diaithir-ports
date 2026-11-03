@@ -68094,6 +68094,11 @@ file = "mods/Vampirism-26.1.2-2.0.0-alpha.2-diaithir.1.jar"
 hash = "f223c7a3a06d9efa7ce6de4c9a4126f2e58ef20c8724575bac0df37eaafb9bea"
 
 [[files]]
+file = "mods/VisualWorkbench-v26.1.0-mc26.1.x-NeoForge.pw.toml"
+hash = "dbf91719c8bffc24c7b30eeb2ddeb2a96fd031911956e0962a5ab006f636e2d9"
+metafile = true
+
+[[files]]
 file = "mods/YungsBetterCaves-26.1.2-NeoForge-4.1.2.pw.toml"
 hash = "8a1b3baaf9ebca3559a0d5cf7488d3067a3c64ee8deec71afbe7463bd2282e41"
 metafile = true
@@ -68151,6 +68156,11 @@ metafile = true
 [[files]]
 file = "mods/athena-4.7.3.pw.toml"
 hash = "4f6b93ca71351ae1d4ea1b38f3b6ff2ef1efdafbc145de670bb6f55fb25bbdd0"
+metafile = true
+
+[[files]]
+file = "mods/autotools-neoforge-3.4.3.pw.toml"
+hash = "406793a23d638a4321b0543226171caf56c862718082a01c8ed2633ef22a8a6c"
 metafile = true
 
 [[files]]
@@ -68264,6 +68274,11 @@ hash = "ee1345f4c017722df9e130517f327b4d0d7dacc116d9c3b0e768291aae4517cb"
 [[files]]
 file = "mods/crashutilities-10.0.1.pw.toml"
 hash = "5ae188ee00c257bde7330af03a137034b3dd96bc7e25ddf89a59c93a4be8e0e4"
+metafile = true
+
+[[files]]
+file = "mods/crawl-mc26.1.2-neoforge-0.15.0.pw.toml"
+hash = "ec4f3bc4460a25c0c3b03211540af23d0d11101ba1f338c0d8d6bf442d41b38e"
 metafile = true
 
 [[files]]
@@ -68412,6 +68427,11 @@ metafile = true
 [[files]]
 file = "mods/easy_npc_config_ui-neoforge-26.1.2-7.16.0.pw.toml"
 hash = "4b25d6714882366141610cc314d80e8580eed3ff72d3c287e85fa74b3b620708"
+metafile = true
+
+[[files]]
+file = "mods/efallingtrees-0.7.1-26.1.2_neoforge.pw.toml"
+hash = "4195feb725cf20f1049287a7ff7c03d84443212fa2f0b599532a0608f07ba726"
 metafile = true
 
 [[files]]
@@ -68787,6 +68807,11 @@ hash = "34f7f78b8d1be2d4a7c55915c7e791801008d25dcf6d502e023d7ee236d18375"
 metafile = true
 
 [[files]]
+file = "mods/shulkerboxtooltip-neoforge-5.4.3_26.1.1.pw.toml"
+hash = "a75e8e9351e28083c2f515b077fc273bd9f01dfc3369cc6f6993663ab9e377f3"
+metafile = true
+
+[[files]]
 file = "mods/silent-gear-26.1.2-neoforge-4.2.3.pw.toml"
 hash = "c0b7a2dbeac899a98e7d6d99810a1eb8920f90340740cff6b721f580fa851581"
 metafile = true
@@ -68794,6 +68819,11 @@ metafile = true
 [[files]]
 file = "mods/silentgems-26.1.2-neoforge-5.1.4.pw.toml"
 hash = "d11532920e66be61be1af57763102659b528fbcf7d2b230c0708876ed07adb0f"
+metafile = true
+
+[[files]]
+file = "mods/smoothswapping-0.9.9-26.1-neoforge.pw.toml"
+hash = "e2c816248c108ecca9afcb5902dc6916d7312052f6da74f937adc039439dc21d"
 metafile = true
 
 [[files]]

@@ -1,0 +1,12 @@
+name = "minecraft_autotools"
+filename = "autotools-neoforge-3.4.3.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/zgVJyCgK/versions/N7ITiYT6/autotools-neoforge-3.4.3.jar"
+hash-format = "sha256"
+hash = "9f6c46e96238ac08f07e79710eeef462dbf8838ae6df9dd4b17417474c30a19c"
+
+[update.modrinth]
+mod-id = "zgVJyCgK"
+version = "N7ITiYT6"
