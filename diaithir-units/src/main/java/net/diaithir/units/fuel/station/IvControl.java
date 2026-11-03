@@ -108,7 +108,7 @@ final class IvControl {
             sb.append(' ').append(f[1]).append('=').append(text);
         }
         try {
-            sb.append(" speed=").append(String.format("%.3f", named(v, "velocity"))).append(" blocks/tick");
+            sb.append(" speed=").append(String.format("%.3f", named(v, "velocity"))).append(" m/s");
             sb.append(" mass=").append(Math.round((double) v.getClass().getMethod("getMass").invoke(v))).append(" kg");
         } catch (ReflectiveOperationException | RuntimeException ex) {
             sb.append(" speed=?");

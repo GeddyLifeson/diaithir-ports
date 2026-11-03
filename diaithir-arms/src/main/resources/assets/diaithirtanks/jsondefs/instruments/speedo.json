@@ -7,6 +7,7 @@
    ]
   ]
  },
+ "textureName": "instruments.png",
  "components": [
   {
    "xCenter": 0,
@@ -27,7 +28,7 @@
    "textureHeight": 128,
    "rotationVariable": "velocity",
    "rotationOffset": -135.0,
-   "rotationFactor": 324.0,
+   "rotationFactor": 16.2,
    "rotationClampMin": -135.0,
    "rotationClampMax": 135.0
   }

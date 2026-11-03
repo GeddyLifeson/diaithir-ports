@@ -39,10 +39,11 @@ defs = {}
 for key, (ox, oy, label, var, top, ticks, labels) in inst.items():
     face(ox, oy, ticks, labels)
     needle(ox + 0, oy + 128)
-    # velocity is blocks/tick; km/h = blocks/tick * 72 (1 block = 1 m, 20 ticks/s). Needle sweeps 270 degrees over the scale.
-    factor = 270.0 / (top / 72.0) if key == "speedo" else (270.0 if key == "fuel" else 270.0 / 8000.0)
+    # the IV "velocity" variable is metres per second (measured: 4.2 shown, about 3.5 blocks/s travelled while accelerating); km/h = m/s * 3.6. Needle sweeps 270 degrees over the scale.
+    factor = 270.0 / (top / 3.6) if key == "speedo" else (270.0 if key == "fuel" else 270.0 / 8000.0)
     defs[key] = {
         "general": {"name": label, "materialLists": [["minecraft:iron_ingot:0:1"]]},
+        "textureName": "instruments.png",
         "components": [
             {"xCenter": 0, "yCenter": 0, "scale": 1.0, "textureXCenter": ox + 64, "textureYCenter": oy + 64, "textureWidth": 128, "textureHeight": 128},
             {"xCenter": 0, "yCenter": 0, "scale": 1.0, "textureXCenter": ox + 64, "textureYCenter": oy + 192, "textureWidth": 128, "textureHeight": 128,
@@ -51,9 +52,12 @@ for key, (ox, oy, label, var, top, ticks, labels) in inst.items():
     }
 os.makedirs(os.path.join(root, "textures"), exist_ok=True)
 sheet.save(os.path.join(root, "textures", "instruments.png"))
-os.makedirs(os.path.join(root, "textures", "items", "instruments"), exist_ok=True)
+os.makedirs(os.path.join(root, "textures", "item", "instruments"), exist_ok=True)
 for key, (ox, oy, *_rest) in inst.items():
-    sheet.crop((ox, oy, ox + 128, oy + 128)).resize((32, 32), Image.LANCZOS).save(os.path.join(root, "textures", "items", "instruments", key + ".png"))
+    sheet.crop((ox, oy, ox + 128, oy + 128)).resize((32, 32), Image.LANCZOS).save(os.path.join(root, "textures", "item", "instruments", key + ".png"))
+os.makedirs(os.path.join(root, "models", "item", "instruments"), exist_ok=True)
+for key in inst:
+    json.dump({"parent": "mts:item/basic", "textures": {"layer0": f"{pack}:item/instruments/{key}"}}, open(os.path.join(root, "models", "item", "instruments", key + ".json"), "w"), indent=1)
 os.makedirs(os.path.join(root, "jsondefs", "instruments"), exist_ok=True)
 for k, v in defs.items():
     json.dump(v, open(os.path.join(root, "jsondefs", "instruments", k + ".json"), "w"), indent=1)
