@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# S6927
 """Spawn-to-Gate pipeline (headless, cloud only).
 Stages: install (packwiz server side) -> neoforge -> boot -> drive (fake-player progression walk, Gate link + rite) -> report.
 Usage: spawn_to_gate.py [--branch claude/pack-v1-3-wave6] [--work /tmp/s2g] [--stage install|boot|drive|all] [--xmx 6G] [--keep]
