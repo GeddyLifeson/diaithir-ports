@@ -1,0 +1,635 @@
+{
+ "_comment": "One row per bee species. Wild species have a biome tag; bred species have two parents (a bee of each parent, bred with flowers, has a 1 in 2 chance of the child). Run tools/gen_bees.py after editing sources there.",
+ "species": [
+  {
+   "id": "ashy_mining",
+   "name": "Ashy Mining Bee",
+   "body": [
+    154,
+    150,
+    144
+   ],
+   "stripe": [
+    58,
+    56,
+    54
+   ],
+   "biome": "minecraft:is_forest",
+   "parents": null,
+   "smelts_to": "minecraft:flint",
+   "count": 2
+  },
+  {
+   "id": "blue_banded",
+   "name": "Blue-Banded Bee",
+   "body": [
+    95,
+    134,
+    200
+   ],
+   "stripe": [
+    28,
+    42,
+    70
+   ],
+   "biome": "c:is_plains",
+   "parents": null,
+   "smelts_to": "minecraft:blue_dye",
+   "count": 2
+  },
+  {
+   "id": "chocolate_mining",
+   "name": "Chocolate Mining Bee",
+   "body": [
+    122,
+    75,
+    44
+   ],
+   "stripe": [
+    42,
+    23,
+    12
+   ],
+   "biome": "minecraft:is_jungle",
+   "parents": null,
+   "smelts_to": "minecraft:cocoa_beans",
+   "count": 2
+  },
+  {
+   "id": "digger",
+   "name": "Digger Bee",
+   "body": [
+    185,
+    130,
+    76
+   ],
+   "stripe": [
+    70,
+    40,
+    15
+   ],
+   "biome": "minecraft:is_river",
+   "parents": null,
+   "smelts_to": "minecraft:clay_ball",
+   "count": 2
+  },
+  {
+   "id": "leafcutter",
+   "name": "Leafcutter Bee",
+   "body": [
+    106,
+    154,
+    66
+   ],
+   "stripe": [
+    34,
+    56,
+    26
+   ],
+   "biome": "minecraft:is_taiga",
+   "parents": null,
+   "smelts_to": "minecraft:oak_sapling",
+   "count": 1
+  },
+  {
+   "id": "mason",
+   "name": "Mason Bee",
+   "body": [
+    138,
+    143,
+    153
+   ],
+   "stripe": [
+    46,
+    49,
+    56
+   ],
+   "biome": "minecraft:is_mountain",
+   "parents": null,
+   "smelts_to": "minecraft:brick",
+   "count": 2
+  },
+  {
+   "id": "carpenter",
+   "name": "Carpenter Bee",
+   "body": [
+    122,
+    82,
+    48
+   ],
+   "stripe": [
+    30,
+    18,
+    8
+   ],
+   "biome": "minecraft:is_badlands",
+   "parents": null,
+   "smelts_to": "minecraft:stick",
+   "count": 4
+  },
+  {
+   "id": "sweat",
+   "name": "Sweat Bee",
+   "body": [
+    63,
+    165,
+    140
+   ],
+   "stripe": [
+    18,
+    58,
+    48
+   ],
+   "biome": "minecraft:is_savanna",
+   "parents": null,
+   "smelts_to": "minecraft:sugar",
+   "count": 2
+  },
+  {
+   "id": "squash",
+   "name": "Squash Bee",
+   "body": [
+    224,
+    160,
+    48
+   ],
+   "stripe": [
+    90,
+    58,
+    8
+   ],
+   "biome": "c:is_swamp",
+   "parents": null,
+   "smelts_to": "minecraft:pumpkin_seeds",
+   "count": 2
+  },
+  {
+   "id": "reed",
+   "name": "Reed Bee",
+   "body": [
+    166,
+    184,
+    106
+   ],
+   "stripe": [
+    58,
+    70,
+    32
+   ],
+   "biome": "minecraft:is_beach",
+   "parents": null,
+   "smelts_to": "minecraft:sugar_cane",
+   "count": 2
+  },
+  {
+   "id": "hoarder",
+   "name": "Hoarder Bee",
+   "body": [
+    214,
+    178,
+    74
+   ],
+   "stripe": [
+    74,
+    56,
+    10
+   ],
+   "biome": "c:is_desert",
+   "parents": null,
+   "smelts_to": "minecraft:gold_nugget",
+   "count": 3
+  },
+  {
+   "id": "nomad",
+   "name": "Nomad Bee",
+   "body": [
+    220,
+    220,
+    214
+   ],
+   "stripe": [
+    90,
+    90,
+    88
+   ],
+   "biome": "c:is_snowy",
+   "parents": null,
+   "smelts_to": "minecraft:snowball",
+   "count": 4
+  },
+  {
+   "id": "lumber",
+   "name": "Lumber Bee",
+   "body": [
+    138,
+    106,
+    58
+   ],
+   "stripe": [
+    42,
+    28,
+    10
+   ],
+   "biome": "minecraft:is_hill",
+   "parents": null,
+   "smelts_to": "minecraft:oak_log",
+   "count": 1
+  },
+  {
+   "id": "aquatic",
+   "name": "Aquatic Bee",
+   "body": [
+    58,
+    138,
+    184
+   ],
+   "stripe": [
+    14,
+    46,
+    68
+   ],
+   "biome": "minecraft:is_ocean",
+   "parents": null,
+   "smelts_to": "minecraft:kelp",
+   "count": 3
+  },
+  {
+   "id": "iron",
+   "name": "Iron Bee",
+   "body": [
+    200,
+    200,
+    200
+   ],
+   "stripe": [
+    80,
+    80,
+    80
+   ],
+   "biome": null,
+   "parents": [
+    "ashy_mining",
+    "mason"
+   ],
+   "smelts_to": "minecraft:iron_nugget",
+   "count": 4
+  },
+  {
+   "id": "copper",
+   "name": "Copper Bee",
+   "body": [
+    200,
+    118,
+    74
+   ],
+   "stripe": [
+    90,
+    44,
+    20
+   ],
+   "biome": null,
+   "parents": [
+    "digger",
+    "mason"
+   ],
+   "smelts_to": "minecraft:copper_nugget",
+   "count": 4
+  },
+  {
+   "id": "gold",
+   "name": "Gold Bee",
+   "body": [
+    240,
+    208,
+    64
+   ],
+   "stripe": [
+    106,
+    80,
+    8
+   ],
+   "biome": null,
+   "parents": [
+    "hoarder",
+    "iron"
+   ],
+   "smelts_to": "minecraft:gold_nugget",
+   "count": 5
+  },
+  {
+   "id": "coal",
+   "name": "Coal Bee",
+   "body": [
+    58,
+    58,
+    62
+   ],
+   "stripe": [
+    14,
+    14,
+    16
+   ],
+   "biome": null,
+   "parents": [
+    "ashy_mining",
+    "carpenter"
+   ],
+   "smelts_to": "minecraft:coal",
+   "count": 1
+  },
+  {
+   "id": "redstone",
+   "name": "Redstone Bee",
+   "body": [
+    200,
+    40,
+    28
+   ],
+   "stripe": [
+    74,
+    10,
+    6
+   ],
+   "biome": null,
+   "parents": [
+    "chocolate_mining",
+    "copper"
+   ],
+   "smelts_to": "minecraft:redstone",
+   "count": 3
+  },
+  {
+   "id": "lapis",
+   "name": "Lapis Bee",
+   "body": [
+    42,
+    80,
+    184
+   ],
+   "stripe": [
+    10,
+    26,
+    72
+   ],
+   "biome": null,
+   "parents": [
+    "blue_banded",
+    "iron"
+   ],
+   "smelts_to": "minecraft:lapis_lazuli",
+   "count": 3
+  },
+  {
+   "id": "quartz",
+   "name": "Quartz Bee",
+   "body": [
+    236,
+    230,
+    220
+   ],
+   "stripe": [
+    138,
+    132,
+    120
+   ],
+   "biome": null,
+   "parents": [
+    "sweat",
+    "iron"
+   ],
+   "smelts_to": "minecraft:quartz",
+   "count": 2
+  },
+  {
+   "id": "glowstone",
+   "name": "Glowstone Bee",
+   "body": [
+    240,
+    200,
+    96
+   ],
+   "stripe": [
+    138,
+    90,
+    20
+   ],
+   "biome": null,
+   "parents": [
+    "hoarder",
+    "redstone"
+   ],
+   "smelts_to": "minecraft:glowstone_dust",
+   "count": 3
+  },
+  {
+   "id": "diamond",
+   "name": "Diamond Bee",
+   "body": [
+    88,
+    216,
+    208
+   ],
+   "stripe": [
+    18,
+    104,
+    96
+   ],
+   "biome": null,
+   "parents": [
+    "gold",
+    "lapis"
+   ],
+   "smelts_to": "minecraft:diamond",
+   "count": 1
+  },
+  {
+   "id": "emerald",
+   "name": "Emerald Bee",
+   "body": [
+    56,
+    184,
+    88
+   ],
+   "stripe": [
+    14,
+    74,
+    28
+   ],
+   "biome": null,
+   "parents": [
+    "gold",
+    "leafcutter"
+   ],
+   "smelts_to": "minecraft:emerald",
+   "count": 1
+  },
+  {
+   "id": "amethyst",
+   "name": "Amethyst Bee",
+   "body": [
+    154,
+    106,
+    208
+   ],
+   "stripe": [
+    60,
+    28,
+    100
+   ],
+   "biome": null,
+   "parents": [
+    "quartz",
+    "lapis"
+   ],
+   "smelts_to": "minecraft:amethyst_shard",
+   "count": 2
+  },
+  {
+   "id": "obsidian",
+   "name": "Obsidian Bee",
+   "body": [
+    42,
+    28,
+    64
+   ],
+   "stripe": [
+    10,
+    4,
+    20
+   ],
+   "biome": null,
+   "parents": [
+    "coal",
+    "lapis"
+   ],
+   "smelts_to": "minecraft:obsidian",
+   "count": 1
+  },
+  {
+   "id": "slimy",
+   "name": "Slimy Bee",
+   "body": [
+    120,
+    200,
+    80
+   ],
+   "stripe": [
+    42,
+    90,
+    28
+   ],
+   "biome": null,
+   "parents": [
+    "squash",
+    "reed"
+   ],
+   "smelts_to": "minecraft:slime_ball",
+   "count": 2
+  },
+  {
+   "id": "blazing",
+   "name": "Blazing Bee",
+   "body": [
+    240,
+    144,
+    32
+   ],
+   "stripe": [
+    120,
+    40,
+    0
+   ],
+   "biome": null,
+   "parents": [
+    "glowstone",
+    "copper"
+   ],
+   "smelts_to": "minecraft:blaze_powder",
+   "count": 2
+  },
+  {
+   "id": "magmatic",
+   "name": "Magmatic Bee",
+   "body": [
+    200,
+    74,
+    24
+   ],
+   "stripe": [
+    56,
+    14,
+    4
+   ],
+   "biome": null,
+   "parents": [
+    "blazing",
+    "coal"
+   ],
+   "smelts_to": "minecraft:magma_cream",
+   "count": 1
+  },
+  {
+   "id": "ender",
+   "name": "Ender Bee",
+   "body": [
+    58,
+    124,
+    120
+   ],
+   "stripe": [
+    10,
+    28,
+    28
+   ],
+   "biome": null,
+   "parents": [
+    "obsidian",
+    "quartz"
+   ],
+   "smelts_to": "minecraft:ender_pearl",
+   "count": 1
+  },
+  {
+   "id": "prismarine",
+   "name": "Prismarine Bee",
+   "body": [
+    88,
+    168,
+    152
+   ],
+   "stripe": [
+    24,
+    68,
+    56
+   ],
+   "biome": null,
+   "parents": [
+    "aquatic",
+    "quartz"
+   ],
+   "smelts_to": "minecraft:prismarine_shard",
+   "count": 2
+  },
+  {
+   "id": "ancient",
+   "name": "Ancient Bee",
+   "body": [
+    90,
+    74,
+    68
+   ],
+   "stripe": [
+    26,
+    18,
+    16
+   ],
+   "biome": null,
+   "parents": [
+    "magmatic",
+    "obsidian"
+   ],
+   "smelts_to": "minecraft:netherite_scrap",
+   "count": 1
+  }
+ ]
+}

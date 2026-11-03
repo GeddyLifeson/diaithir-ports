@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_mason",
+ "result": {
+  "id": "minecraft:brick",
+  "count": 2
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_redstone",
+ "result": {
+  "id": "minecraft:redstone",
+  "count": 3
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

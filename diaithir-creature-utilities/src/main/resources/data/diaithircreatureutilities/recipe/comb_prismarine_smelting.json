@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_prismarine",
+ "result": {
+  "id": "minecraft:prismarine_shard",
+  "count": 2
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}
