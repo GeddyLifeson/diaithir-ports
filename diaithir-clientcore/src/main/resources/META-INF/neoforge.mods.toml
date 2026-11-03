@@ -16,3 +16,6 @@ side = "BOTH"
 
 [[mixins]]
 config = "diaithir_audio_soundphysics.mixins.json"
+
+[[mixins]]
+config = "diaithir_disableaccessibility.mixins.json"

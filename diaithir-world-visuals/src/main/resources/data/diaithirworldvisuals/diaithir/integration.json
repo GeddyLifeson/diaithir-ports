@@ -2,8 +2,10 @@
  "module": "diaithirworldvisuals",
  "side": "client",
  "features": [
+  "fallingleaves",
   "flickerfix",
-  "lambdynamiclights"
+  "lambdynamiclights",
+  "skyaesthetics"
  ],
  "codex": {
   "entry": "diaithirworldvisuals.overview",

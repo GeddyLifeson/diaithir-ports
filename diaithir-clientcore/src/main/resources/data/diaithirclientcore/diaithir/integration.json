@@ -3,6 +3,7 @@
  "side": "client",
  "features": [
   "diaithirearlywindow",
+  "disableaccessibility",
   "soundmuffler",
   "soundphysics",
   "surroundings"

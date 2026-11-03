@@ -8,6 +8,9 @@ base.archivesName = 'diaithir-client-render-culling-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
+    accessTransformers {
+        from "src/main/resources/META-INF/immediatelyfast.at.cfg"
+    }
     version = project.neo_version
     runs {
         server {
