@@ -1,0 +1,14 @@
+{
+ "_source": "Default ore rows of Industrial Foregoing laser drill recipes (Buuz135, MIT): depth band and weight; catalyst is the lens colour as a dye. Biome filters dropped (no biome tags in the pure rule yet); gold keeps its non-end band.",
+ "rows": [
+  {"output": "minecraft:coal", "catalyst": "minecraft:black_dye", "rarity": [{"dim_blacklist": ["minecraft:the_end"], "depth_min": 5, "depth_max": 132, "weight": 10}]},
+  {"output": "minecraft:raw_iron", "catalyst": "minecraft:brown_dye", "rarity": [{"dim_blacklist": ["minecraft:the_end"], "depth_min": 5, "depth_max": 68, "weight": 20}]},
+  {"output": "minecraft:redstone", "catalyst": "minecraft:red_dye", "rarity": [{"dim_blacklist": ["minecraft:the_end"], "depth_min": 5, "depth_max": 16, "weight": 28}]},
+  {"output": "minecraft:raw_gold", "catalyst": "minecraft:yellow_dye", "rarity": [{"dim_blacklist": ["minecraft:the_end"], "depth_min": 5, "depth_max": 32, "weight": 6}]},
+  {"output": "minecraft:lapis_lazuli", "catalyst": "minecraft:blue_dye", "rarity": [{"dim_blacklist": ["minecraft:the_end"], "depth_min": 13, "depth_max": 34, "weight": 14}]},
+  {"output": "minecraft:emerald", "catalyst": "minecraft:lime_dye", "rarity": [{"dim_blacklist": ["minecraft:the_end"], "depth_min": 5, "depth_max": 29, "weight": 8}]},
+  {"output": "minecraft:diamond", "catalyst": "minecraft:light_blue_dye", "rarity": [{"dim_blacklist": ["minecraft:the_end"], "depth_min": 5, "depth_max": 16, "weight": 4}]},
+  {"output": "minecraft:quartz", "catalyst": "minecraft:white_dye", "rarity": [{"dim_whitelist": ["minecraft:the_nether"], "depth_min": 7, "depth_max": 117, "weight": 12}]},
+  {"output": "minecraft:glowstone_dust", "catalyst": "minecraft:yellow_dye", "rarity": [{"dim_whitelist": ["minecraft:the_nether"], "depth_min": 7, "depth_max": 117, "weight": 8}]}
+ ]
+}

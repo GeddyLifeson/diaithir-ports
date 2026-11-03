@@ -37,6 +37,7 @@ public final class MegaMod {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
+        MegaBlocks.init(bus);
         NeoForge.EVENT_BUS.addListener(MegaMod::commands);
         if (Boolean.getBoolean("megamachines.selftest")) NeoForge.EVENT_BUS.register(new MegaSelfTest());
     }

@@ -27,7 +27,10 @@ dependencies {
     ['api', 'internal', 'util'].each { implementation "org.valkyrienskies.core:${it}:${vs_core_version}" }
     runtimeOnly "org.valkyrienskies.core:impl:${vs_core_version}"
     implementation 'me.alex_s168:blitz:0.25'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
 }
+test { useJUnitPlatform() }
 
 // Bundled runtime libs that Minecraft/NeoForge do not provide (jar-in-jar, ranged so Kotlin for Forge etc. can coexist).
 def jj = { String n, String range, String pref -> dependencies.jarJar(n) { version { strictly range; prefer pref } } }
