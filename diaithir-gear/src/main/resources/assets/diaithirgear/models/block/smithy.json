@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:block/cube_bottom_top",
+ "textures": {
+  "top": "diaithirgear:block/smithy_top",
+  "side": "diaithirgear:block/smithy_side",
+  "bottom": "diaithirgear:block/smithy_bottom",
+  "particle": "diaithirgear:block/smithy_side"
+ }
+}
