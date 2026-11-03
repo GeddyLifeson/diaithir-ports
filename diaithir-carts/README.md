@@ -28,7 +28,7 @@ Not done yet: vehicles are plain carts (no per-class models, mass or power in mo
 
 ## Timetables and autonomy
 - **Timetable** (Age V): use on station rails in order to write the stops, then use on a cart to give it the schedule; it loops. A scheduled cart stops only at its next stop and waits there by the station's own rule (a timer, or a redstone signal, so a circuit gate or reader on the station controls release). Sneak and use in the air to wipe it.
-- **Crew.** Before Age VII a scheduled cart runs only with a living rider aboard (player, villager or other NPC); without one it holds at the next station. From Age VII (`Autonomy.AUTONOMY_AGE`) it runs with no crew. `Autonomy.status(vehicle)` gives UNCREWED, CREWED or AUTONOMOUS, and `Autonomy.autonomousCrew(job, culture)` is the predicate behind `global.AUTONOMOUS_CREW(job, culture)` for the wages thread. The Ages module sets `Autonomy.ageSupplier` at startup (0 until then).
+- **Crew and autonomy.** A scheduled cart runs only with a living rider aboard (player, villager or other NPC); without one it holds at the next station. Autonomy is never automatic: the vehicle type must be capable (entity type tag `diaithircarts:autonomy_capable`, which other vehicle mods add to) and it must have an **Autonomy Module** (Age VII item, use it on the vehicle) fitted. Then it runs with no crew. `Autonomy.status(vehicle)` gives UNCREWED, CREWED or AUTONOMOUS, and `Autonomy.autonomousCrew(job, vehicle)` is the predicate behind `global.AUTONOMOUS_CREW(job, vehicle)` for the wages thread.
 - Test: `/diaithircarts scheduletest` (owners).
 
 ## Gauges and the full US/UK roster

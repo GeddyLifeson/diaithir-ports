@@ -73,7 +73,10 @@ public final class DiaithirCarts {
     public static final DeferredItem<Item> MANA_CELL = ITEMS.registerItem("mana_cell", Item::new, p -> p.stacksTo(16));
     public static final DeferredItem<Item> TIMETABLE = ITEMS.registerItem("timetable", TimetableItem::new, p -> p.stacksTo(1));
 
+    public static final DeferredItem<Item> AUTONOMY_MODULE = ITEMS.registerItem("autonomy_module", Item::new, p -> p.stacksTo(16));
+
     public DiaithirCarts(IEventBus bus) {
+        Autonomy.ATTACHMENTS.register(bus);
         Schedule.ATTACHMENTS.register(bus);
         GaugeData.ATTACHMENTS.register(bus);
         MagicFuel.ATTACHMENTS.register(bus);
@@ -88,6 +91,7 @@ public final class DiaithirCarts {
                 e.accept(COUPLING_CHAIN.get());
                 e.accept(CHAIN_CUTTERS.get());
                 e.accept(TIMETABLE.get());
+                e.accept(AUTONOMY_MODULE.get());
             }
         });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> CartCommands.register(e.getDispatcher()));
@@ -108,6 +112,16 @@ public final class DiaithirCarts {
         if (e.getLevel() instanceof ServerLevel && (held.is(MagicFuel.FUEL) || held.is(MANA_FIREBOX.get()) || held.is(MANA_CELL.get()))) {
             var r = MagicFuel.use(cart, e.getEntity(), e.getHand(), held);
             if (r != null) { e.setCancellationResult(r); e.setCanceled(true); }
+            return;
+        }
+        if (held.is(AUTONOMY_MODULE.get())) {
+            e.setCancellationResult(InteractionResult.SUCCESS);
+            e.setCanceled(true);
+            if (e.getLevel() instanceof ServerLevel) {
+                boolean ok = Autonomy.fit(cart);
+                if (ok && !e.getEntity().isCreative()) held.shrink(1);
+                e.getEntity().sendOverlayMessage(Component.literal(ok ? "Autonomy module fitted" : Autonomy.capable(cart) ? "Already has a module" : "This vehicle cannot be made autonomous"));
+            }
             return;
         }
         if (held.is(TIMETABLE.get())) {

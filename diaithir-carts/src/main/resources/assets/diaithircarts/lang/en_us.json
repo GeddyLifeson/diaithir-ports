@@ -958,5 +958,6 @@
  "item.diaithircarts.axle_trail_std_m": "M Trailing Axle",
  "item.diaithircarts.axle_trail_std_s": "S Trailing Axle",
  "item.diaithircarts.tank_m": "M Water Tank",
- "item.diaithircarts.tender_std_s": "S Tender"
+ "item.diaithircarts.tender_std_s": "S Tender",
+ "item.diaithircarts.autonomy_module": "Autonomy Module"
 }

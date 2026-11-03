@@ -6,6 +6,7 @@ Lists: Wikidata classes + Wikipedia category pages (HTML, depth 2). Articles: ra
 Usage: python3 tools/harvest_stock.py CACHE_DIR [THREADS]"""
 import csv, html, json, os, re, sys, time, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
+CACHE = "."
 UA = {"User-Agent": "diaithir-trains/1.0 (game data harvest)"}
 WD_CLASSES = {"Q19832486": "loco", "Q811704": "unit", "Q76154857": "tram", "Q63040754": "mu", "Q3959904": "mu", "Q752392": "mu", "Q208502": "freight",
               "Q753779": "passenger", "Q483373": "mu", "Q1567915": "mu", "Q16814621": "passenger", "Q15825863": "tram", "Q9166501": "freight"}
@@ -33,7 +34,11 @@ def category(c, hint, depth, seen, out):
     if c in seen or depth < 0: return
     seen.add(c); print('cat', c, len(out), flush=True); url = "https://en.wikipedia.org/wiki/Category:" + c
     while url:
-        page = get(url); time.sleep(1.0)
+        cf = os.path.join(CACHE, "cat_" + re.sub(r"[^A-Za-z0-9_.-]", "_", url)[-140:] + ".html")
+        if os.path.exists(cf): page = open(cf).read()
+        else:
+            page = get(url); time.sleep(1.0)
+            if page: open(cf, "w").write(page)
         if not page: return
         sub = re.search(r'id="mw-subcategories"(.*?)(?:id="mw-pages"|printfooter)', page, re.S)
         for s in re.findall(r'href="/wiki/Category:([^"#?]+)"', sub.group(1) if sub else ""):
@@ -127,10 +132,10 @@ def num(s):
     m = re.findall(r"\d[\d,]*\.?\d*", re.sub(r"<[^>]+>|\{\{.*?\}\}", " ", s)); return float(m[0].replace(",", "")) if m else 0
 COLS = "page category name year mass_kg power_w gauge gauge_mm source wheel cylinders valve_gear boiler_bar fuel driver_mm prime_mover transmission role".split()
 if __name__ == "__main__":
-    cache = sys.argv[1]; threads = int(sys.argv[2]) if len(sys.argv) > 2 else 6; os.makedirs(cache, exist_ok=True)
+    cache = CACHE = sys.argv[1]; threads = int(sys.argv[2]) if len(sys.argv) > 2 else 6; os.makedirs(cache, exist_ok=True)
     lst = wikidata(); print(len(lst), "wikidata pages", flush=True)
     seen = set()
-    with ThreadPoolExecutor(6) as ex: list(ex.map(lambda ch: category(ch[0], ch[1], 2, seen, lst), SEED_CATS.items()))
+    with ThreadPoolExecutor(6) as ex: list(ex.map(lambda ch: category(ch[0], ch[1], 0 if "wheel_arrangement" in ch[0] else 2, seen, lst), SEED_CATS.items()))
     print(len(lst), "pages with categories", flush=True)
     ts = sorted(lst)
     with ThreadPoolExecutor(threads) as ex: texts = list(ex.map(lambda t: raw(t, cache), ts))

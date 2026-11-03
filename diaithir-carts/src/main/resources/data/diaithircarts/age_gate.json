@@ -3,9 +3,7 @@
     "age": 3,
     "items": [
       "diaithircarts:bronze_rail",
-      "diaithircarts:bronze_powered_rail",
-      "diaithircarts:narrow_rail",
-      "diaithircarts:narrow_powered_rail"
+      "diaithircarts:bronze_powered_rail"
     ]
   },
   "tier2": {
@@ -13,8 +11,6 @@
     "items": [
       "diaithircarts:chain_cutters",
       "diaithircarts:coupling_chain",
-      "diaithircarts:dual_powered_rail",
-      "diaithircarts:dual_rail",
       "diaithircarts:station_rail",
       "diaithircarts:steel_powered_rail",
       "diaithircarts:steel_rail",
@@ -41,6 +37,12 @@
       "diaithircarts:destination_rail",
       "diaithircarts:cart_loader",
       "diaithircarts:locking_rail"
+    ]
+  },
+  "autonomy": {
+    "age": 7,
+    "items": [
+      "diaithircarts:autonomy_module"
     ]
   },
   "yards_age3": {

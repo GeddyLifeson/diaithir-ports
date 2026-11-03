@@ -1,39 +1,65 @@
 package net.diaithir.carts;
 
+import com.mojang.serialization.Codec;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.neoforged.neoforge.attachment.AttachmentType;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-import java.util.function.IntSupplier;
+import java.util.function.Supplier;
 
 /**
- * Crewed or autonomous. Before {@link #AUTONOMY_AGE} (Age VII) a scheduled vehicle only runs while someone drives it (a player or any other living rider,
- * villagers and NPCs included). From that Age on it runs with no crew. Other mods read {@link #status} (for example the wages thread, which charges
- * crew only while the status is CREWED) and the Age comes from {@link #ageSupplier}, which the Ages module replaces at startup.
+ * Crewed or autonomous. Autonomy is never automatic: a vehicle runs without crew only when its type is capable (it is in the entity type tag
+ * diaithircarts:autonomy_capable, which other vehicle mods add their types to) and it has an autonomy module fitted (the item, Age VII, used on the vehicle).
+ * Without both, a scheduled vehicle runs only while a living rider (player, villager, NPC) is aboard. The wages thread reads {@link #autonomousCrew}
+ * and retires the crew of a vehicle for which it is true.
  */
 public final class Autonomy {
     private Autonomy() {}
 
-    public static final int AUTONOMY_AGE = 7;
-
     public enum Status { UNCREWED, CREWED, AUTONOMOUS }
 
-    /** The current server Age. Replaced by the Ages module; 0 until then, so nothing is autonomous by accident. */
-    public static volatile IntSupplier ageSupplier = () -> 0;
+    public static final TagKey<EntityType<?>> CAPABLE = TagKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(DiaithirCarts.ID, "autonomy_capable"));
 
-    public static boolean unlocked() {
-        return ageSupplier.getAsInt() >= AUTONOMY_AGE;
-    }
+    public static final DeferredRegister<AttachmentType<?>> ATTACHMENTS = DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, DiaithirCarts.ID);
+    public static final Supplier<AttachmentType<Boolean>> MODULE = ATTACHMENTS.register("autonomy_module", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL.fieldOf("fitted")).build());
 
-    /** Crew jobs that automation replaces at Age VII. */
+    /** Crew jobs that an autonomy module replaces. */
     public static final java.util.Set<String> AUTOMATED_JOBS = java.util.Set.of("driver", "train_driver", "cart_driver", "crane_operator", "machine_operator");
 
-    /** The predicate behind global.AUTONOMOUS_CREW(job, culture). The Age is server-wide, so culture does not change the answer; it is kept so callers can pass both. */
-    public static boolean autonomousCrew(String job, String culture) {
-        return unlocked() && AUTOMATED_JOBS.contains(job);
+    public static boolean capable(Entity vehicle) {
+        return vehicle.getType().builtInRegistryHolder().is(CAPABLE);
+    }
+
+    public static boolean hasModule(Entity vehicle) {
+        return vehicle.hasData(MODULE) && vehicle.getData(MODULE);
+    }
+
+    /** True when the vehicle is capable and has a module fitted. */
+    public static boolean autonomous(Entity vehicle) {
+        return capable(vehicle) && hasModule(vehicle);
+    }
+
+    /** Fits a module. False when the type is not capable or one is already fitted. */
+    public static boolean fit(Entity vehicle) {
+        if (!capable(vehicle) || hasModule(vehicle)) return false;
+        vehicle.setData(MODULE, true);
+        return true;
+    }
+
+    /** The predicate behind global.AUTONOMOUS_CREW(job, vehicle): true when this job on this vehicle is automated, so the crew can be retired. */
+    public static boolean autonomousCrew(String job, Entity vehicle) {
+        return AUTOMATED_JOBS.contains(job) && autonomous(vehicle);
     }
 
     public static Status status(Entity vehicle) {
-        if (unlocked()) return Status.AUTONOMOUS;
+        if (autonomous(vehicle)) return Status.AUTONOMOUS;
         return crewOnBoard(vehicle) >= crewRequired(vehicle) ? Status.CREWED : Status.UNCREWED;
     }
 
@@ -45,7 +71,7 @@ public final class Autonomy {
     /** Living riders aboard (spectators excluded). The wages thread pays each of them while the vehicle is CREWED, up to {@link #crewRequired}. */
     public static int crewOnBoard(Entity vehicle) {
         int n = 0;
-        for (Entity rider : vehicle.getPassengers()) if (rider instanceof net.minecraft.world.entity.LivingEntity && !(rider instanceof Player p && p.isSpectator())) n++;
+        for (Entity rider : vehicle.getPassengers()) if (rider instanceof LivingEntity && !(rider instanceof Player p && p.isSpectator())) n++;
         return n;
     }
 
