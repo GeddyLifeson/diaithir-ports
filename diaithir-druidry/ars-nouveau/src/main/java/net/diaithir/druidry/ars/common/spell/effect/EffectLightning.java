@@ -8,7 +8,7 @@ import net.diaithir.druidry.ars.common.spell.augment.AugmentDampen;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentDurationDown;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentExtendTime;
 import net.diaithir.druidry.ars.setup.registry.ModEntities;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -51,7 +51,7 @@ public class EffectLightning extends AbstractEffect {
     }
 
     @Override
-    protected void addDefaultAugmentLimits(Map<ResourceLocation, Integer> defaults) {
+    protected void addDefaultAugmentLimits(Map<Identifier, Integer> defaults) {
         defaults.put(AugmentAmplify.INSTANCE.getRegistryName(), 2);
     }
 

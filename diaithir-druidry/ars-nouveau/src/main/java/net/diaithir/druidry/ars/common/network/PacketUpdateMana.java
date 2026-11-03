@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.client.ClientInfo;
 import net.diaithir.druidry.ars.common.capability.ManaData;
 import net.diaithir.druidry.ars.setup.registry.AttachmentsRegistry;
 import net.diaithir.druidry.ars.setup.registry.CapabilityRegistry;
@@ -38,8 +37,6 @@ public class PacketUpdateMana extends AbstractPacket {
         if (cap != null) {
             cap.setManaData(data);
         }
-        //sync the client cache of reserved mana
-        ClientInfo.reservedOverlayMana = data.getReservedMana();
     }
 
     public static final Type<PacketUpdateMana> TYPE = new Type<>(ArsNouveau.prefix("update_mana"));

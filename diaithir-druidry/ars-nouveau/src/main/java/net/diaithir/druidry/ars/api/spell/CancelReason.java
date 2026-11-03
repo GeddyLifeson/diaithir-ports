@@ -1,9 +1,9 @@
 package net.diaithir.druidry.ars.api.spell;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
-public record CancelReason(ResourceLocation id) {
+public record CancelReason(Identifier id) {
     public static CancelReason FILTER_FAILED = new CancelReason(ArsNouveau.prefix("filter_failed"));
     /**
      * When a spell is canceled because it will now resolve differently. Used for cases like Orbit or Delay.

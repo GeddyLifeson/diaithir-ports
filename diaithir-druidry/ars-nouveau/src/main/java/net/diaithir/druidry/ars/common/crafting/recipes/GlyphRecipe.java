@@ -1,19 +1,21 @@
 package net.diaithir.druidry.ars.common.crafting.recipes;
 
 import net.diaithir.druidry.ars.api.spell.AbstractSpellPart;
-import net.diaithir.druidry.ars.common.block.tile.ScribesTile;
 import net.diaithir.druidry.ars.common.items.Glyph;
 import net.diaithir.druidry.ars.setup.registry.RecipeRegistry;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.PlacementInfo;
+import net.minecraft.world.item.crafting.RecipeBookCategories;
+import net.minecraft.world.item.crafting.RecipeBookCategory;
+import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -23,7 +25,7 @@ import net.minecraft.world.level.Level;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GlyphRecipe implements Recipe<ScribesTile> {
+public class GlyphRecipe implements Recipe<RecipeInput> {
 
     public final ItemStack output;
     public final List<Ingredient> inputs;
@@ -49,7 +51,7 @@ public class GlyphRecipe implements Recipe<ScribesTile> {
 
     public GlyphRecipe withIngredient(TagKey<Item> tag, int count) {
         for (int i = 0; i < count; i++) {
-            withIngredient(Ingredient.of(tag));
+            withIngredient(Ingredient.of(net.minecraft.core.registries.BuiltInRegistries.ITEM.getOrThrow(tag)));
         }
         return this;
     }
@@ -68,7 +70,7 @@ public class GlyphRecipe implements Recipe<ScribesTile> {
     }
 
     public GlyphRecipe withStack(ItemStack i) {
-        this.inputs.add(Ingredient.of(i));
+        this.inputs.add(Ingredient.of(i.getItem()));
         return this;
     }
 
@@ -84,15 +86,14 @@ public class GlyphRecipe implements Recipe<ScribesTile> {
     }
 
     @Override
-    public boolean matches(ScribesTile pContainer, Level pLevel) {
+    public boolean matches(RecipeInput pContainer, Level pLevel) {
         return false;
     }
 
     @Override
-    public ItemStack assemble(ScribesTile p_345149_, HolderLookup.Provider p_346030_) {
+    public ItemStack assemble(RecipeInput input) {
         return output.copy();
     }
-
 
     public ItemStack getOutput() {
         return output;
@@ -107,26 +108,38 @@ public class GlyphRecipe implements Recipe<ScribesTile> {
     }
 
     @Override
-    public boolean canCraftInDimensions(int pWidth, int pHeight) {
-        return true;
+    public boolean showNotification() {
+        return false;
     }
 
     @Override
-    public ItemStack getResultItem(HolderLookup.Provider pRegistries) {
-        return output.copy();
+    public String group() {
+        return "";
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
-        return RecipeRegistry.GLYPH_SERIALIZER.get();
+    public PlacementInfo placementInfo() {
+        return PlacementInfo.NOT_PLACEABLE;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeBookCategory recipeBookCategory() {
+        return RecipeBookCategories.CRAFTING_MISC;
+    }
+
+    @Override
+    public RecipeSerializer<GlyphRecipe> getSerializer() {
+        return Serializer.SERIALIZER;
+    }
+
+    @Override
+    public RecipeType<GlyphRecipe> getType() {
         return RecipeRegistry.GLYPH_TYPE.get();
     }
 
-    public static class Serializer implements RecipeSerializer<GlyphRecipe> {
+    public static class Serializer {
+        private Serializer() {}
+
 
         public static void toNetwork(RegistryFriendlyByteBuf buffer, GlyphRecipe recipe) {
             buffer.writeInt(recipe.inputs.size());
@@ -157,14 +170,7 @@ public class GlyphRecipe implements Recipe<ScribesTile> {
                 GlyphRecipe.Serializer::toNetwork, GlyphRecipe.Serializer::fromNetwork
         );
 
-        @Override
-        public MapCodec<GlyphRecipe> codec() {
-            return CODEC;
-        }
-
-        @Override
-        public StreamCodec<RegistryFriendlyByteBuf, GlyphRecipe> streamCodec() {
-            return STREAM_CODEC;
-        }
+        /** Port note: RecipeSerializer is a record in 26.1; register this instance. */
+        public static final RecipeSerializer<GlyphRecipe> SERIALIZER = new RecipeSerializer<>(CODEC, STREAM_CODEC);
     }
 }

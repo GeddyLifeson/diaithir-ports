@@ -3,13 +3,13 @@ package net.diaithir.druidry.ars.common.spell.rewind;
 import net.diaithir.druidry.ars.ArsNouveau;
 import net.diaithir.druidry.ars.api.spell.IContextAttachment;
 import net.diaithir.druidry.ars.api.spell.SpellContext;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import javax.annotation.Nullable;
 import java.util.*;
 
 public class RewindAttachment implements IContextAttachment {
-    public static final ResourceLocation ID = ArsNouveau.prefix("rewind");
+    public static final Identifier ID = ArsNouveau.prefix("rewind");
 
     private final Map<Long, List<IRewindCallback>> rewindEvents = new HashMap<>();
     private long lockedTime = 0;
@@ -33,7 +33,7 @@ public class RewindAttachment implements IContextAttachment {
     }
 
     @Override
-    public ResourceLocation id() {
+    public Identifier id() {
         return ID;
     }
 

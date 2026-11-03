@@ -7,7 +7,6 @@ import net.diaithir.druidry.ars.api.item.inv.IMapInventory;
 import net.diaithir.druidry.ars.api.mana.IManaCap;
 import net.diaithir.druidry.ars.api.source.ISourceCap;
 import net.diaithir.druidry.ars.api.spell.IResolveListener;
-import net.diaithir.druidry.ars.common.block.tile.MobJarTile;
 import net.diaithir.druidry.ars.common.capability.ANPlayerDataCap;
 import net.diaithir.druidry.ars.common.capability.IPlayerCap;
 import net.diaithir.druidry.ars.common.capability.ManaCap;
@@ -23,7 +22,6 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.EntityCapability;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.neoforged.neoforge.items.wrapper.InvWrapper;
 
 import java.util.List;
 
@@ -66,20 +64,9 @@ public class CapabilityRegistry {
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
         event.registerEntity(MANA_CAPABILITY, EntityType.PLAYER, (player, ctx) -> new ManaCap(player));
         event.registerEntity(PLAYER_DATA_CAP, EntityType.PLAYER, (player, ctx) -> new ANPlayerDataCap(player));
-        var containers = List.of(BlockRegistry.ENCHANTING_APP_TILE,
-                BlockRegistry.IMBUEMENT_TILE,
-                BlockRegistry.SCRIBES_TABLE_TILE,
-                BlockRegistry.ARCANE_PEDESTAL_TILE,
-                BlockRegistry.ARCHWOOD_CHEST_TILE);
-        for (var container : containers) {
-            event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, container.get(), (c, side) -> new InvWrapper(c));
-        }
-
-        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BlockRegistry.CRAFTING_LECTERN_TILE.get(), (c, side) -> c.getCapability(c, side));
-        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BlockRegistry.REPOSITORY_CONTROLLER_TILE.get(), (c, side) -> c.getControllerInv());
+        // TODO(26.1): item handler capabilities (Capabilities.Item.BLOCK, ResourceHandler<ItemResource>) removed; need transfer-API rewrite
         event.registerBlockEntity(MAP_INV_CAP, BlockRegistry.REPOSITORY_CONTROLLER_TILE.get(), (c, side) -> c.getControllerInv());
         event.registerBlockEntity(FILTERSET_CAPABILITY, BlockRegistry.REPOSITORY_CONTROLLER_TILE.get(), (c, side) -> c);
-        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BlockRegistry.REPOSITORY_TILE.get(), (c, side) -> c);
         event.registerBlockEntity(MAP_INV_CAP, BlockRegistry.REPOSITORY_TILE.get(), (c, side) -> c);
 
         var sourceContainers = List.of(BlockRegistry.SOURCE_JAR_TILE, BlockRegistry.CREATIVE_SOURCE_JAR_TILE,
@@ -91,7 +78,6 @@ public class CapabilityRegistry {
             event.registerBlockEntity(SOURCE_CAPABILITY, container.get(), (sourceJar, side) -> sourceJar.getSourceStorage());
         }
 
-        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BlockRegistry.MOB_JAR_TILE.get(), (c, side) -> MobJarTile.SavingItemHandler.of(c, c.getEntityCapability(Capabilities.ItemHandler.ENTITY_AUTOMATION, null)));
         event.registerBlockEntity(CapabilityRegistry.BLOCK_SPELL_RESOLVE_CAP, BlockRegistry.REPOSITORY_CONTROLLER_TILE.get(), (c, none) -> c.getSpellListener());
         event.registerBlockEntity(CapabilityRegistry.BLOCK_SPELL_RESOLVE_CAP, BlockRegistry.PLANARIUM_TILE.get(), (c, none) -> c.onResolve());
         event.registerBlockEntity(CapabilityRegistry.BLOCK_SPELL_RESOLVE_CAP, BlockRegistry.DECOR_BLOSSOM_TILE.get(), (c, none) -> c);

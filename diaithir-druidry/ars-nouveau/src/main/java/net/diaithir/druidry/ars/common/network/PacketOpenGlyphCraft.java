@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.client.gui.book.GlyphUnlockMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -29,7 +28,7 @@ public class PacketOpenGlyphCraft extends AbstractPacket {
 
     @Override
     public void onClientReceived(Minecraft minecraft, Player player) {
-        GlyphUnlockMenu.open(scribePos);
+        // Port note: client-side handling not ported.
     }
 
     @Override

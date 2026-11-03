@@ -1,29 +1,19 @@
 package net.diaithir.druidry.ars.common.items;
 
-import net.diaithir.druidry.ars.api.documentation.DocClientUtils;
 import net.diaithir.druidry.ars.api.entity.IDecoratable;
 import net.diaithir.druidry.ars.api.item.IRadialProvider;
 import net.diaithir.druidry.ars.api.item.IWandable;
-import net.diaithir.druidry.ars.client.gui.radial_menu.GuiRadialMenu;
-import net.diaithir.druidry.ars.client.gui.radial_menu.RadialMenu;
-import net.diaithir.druidry.ars.client.gui.radial_menu.RadialMenuSlot;
-import net.diaithir.druidry.ars.client.gui.utils.RenderUtils;
 import net.diaithir.druidry.ars.common.items.data.DominionWandData;
-import net.diaithir.druidry.ars.common.network.HighlightAreaPacket;
-import net.diaithir.druidry.ars.common.network.Networking;
-import net.diaithir.druidry.ars.common.network.PacketUpdateDominionWand;
 import net.diaithir.druidry.ars.common.util.PortUtil;
 import net.diaithir.druidry.ars.setup.registry.CapabilityRegistry;
 import net.diaithir.druidry.ars.setup.registry.DataComponentRegistry;
 import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
 import net.diaithir.druidry.ars.setup.registry.SoundRegistry;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -35,47 +25,26 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DominionWand extends ModItem implements IRadialProvider {
+public class DominionWand extends ModItem  {
     public DominionWand() {
         super(ItemsRegistry.defaultItemProperties().stacksTo(1).component(DataComponentRegistry.DOMINION_WAND, new DominionWandData()));
     }
 
     @Override
-    public void inventoryTick(@NotNull ItemStack pStack, @NotNull Level pLevel, @NotNull Entity pEntity, int pSlotId, boolean pIsSelected) {
-        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
-        if (!pIsSelected || pLevel.isClientSide || pLevel.getGameTime() % 5 != 0) {
-            return;
-        }
-        DominionWandData data = pStack.getOrDefault(DataComponentRegistry.DOMINION_WAND, new DominionWandData());
-
-        if (data.storedPos().isPresent()) {
-            if (pLevel.getBlockEntity(data.storedPos().get().pos()) instanceof IWandable wandable) {
-                Networking.sendToPlayerClient(new HighlightAreaPacket(wandable.getWandHighlight(new ArrayList<>()), 10), (ServerPlayer) pEntity);
-            }
-            return;
-        }
-        if (pLevel.getEntity(data.getStoredEntity()) instanceof IWandable wandable) {
-            Networking.sendToPlayerClient(new HighlightAreaPacket(wandable.getWandHighlight(new ArrayList<>()), 10), (ServerPlayer) pEntity);
-        }
-    }
-
-    @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack doNotUseStack, Player playerEntity, @NotNull LivingEntity target, @NotNull InteractionHand hand) {
 
-        if (playerEntity.level.isClientSide || hand != InteractionHand.MAIN_HAND)
+        if (playerEntity.level().isClientSide() || hand != InteractionHand.MAIN_HAND)
             return InteractionResult.PASS;
 
         ItemStack stack = playerEntity.getItemInHand(hand);
         DominionWandData data = stack.getOrDefault(DataComponentRegistry.DOMINION_WAND, new DominionWandData());
-        Level level = playerEntity.level;
+        Level level = playerEntity.level();
         if (playerEntity.isShiftKeyDown() && target instanceof IWandable wandable) {
             var result = wandable.onClearConnections(playerEntity);
             playSoundFromResult(level, target.getOnPos(), result);
@@ -88,7 +57,7 @@ public class DominionWand extends ModItem implements IRadialProvider {
             PortUtil.sendMessage(playerEntity, Component.translatable("ars_nouveau.dominion_wand.stored_entity"));
             return InteractionResult.SUCCESS;
         }
-        Level world = data.storedPos().isPresent() ? playerEntity.getServer().getLevel(data.storedPos().get().dimension()) : playerEntity.getCommandSenderWorld();
+        Level world = data.storedPos().isPresent() ? playerEntity.level().getServer().getLevel(data.storedPos().get().dimension()) : playerEntity.level();
 
         if (data.storedPos().isPresent() && world.getBlockEntity(data.storedPos().get().pos()) instanceof IWandable wandable) {
             var result = wandable.onFirstConnection(data.storedPos().orElse(null), data.face().orElse(null), target, playerEntity);
@@ -122,14 +91,14 @@ public class DominionWand extends ModItem implements IRadialProvider {
 
     @Override
     public @NotNull InteractionResult useOn(UseOnContext context) {
-        if (context.getLevel().isClientSide || context.getPlayer() == null)
+        if (context.getLevel().isClientSide() || context.getPlayer() == null)
             return super.useOn(context);
         BlockPos pos = context.getClickedPos();
         Direction face = context.getClickedFace();
         Player playerEntity = context.getPlayer();
         ItemStack stack = context.getItemInHand();
         DominionWandData data = stack.getOrDefault(DataComponentRegistry.DOMINION_WAND, new DominionWandData());
-        Level world = data.storedPos().isPresent() ? playerEntity.getServer().getLevel(data.storedPos().get().dimension()) : context.getLevel();
+        Level world = data.storedPos().isPresent() ? playerEntity.level().getServer().getLevel(data.storedPos().get().dimension()) : context.getLevel();
 
         if (playerEntity.isShiftKeyDown() && world.getBlockEntity(pos) instanceof IWandable wandable && !data.hasStoredData()) {
             var result = wandable.onClearConnections(playerEntity);
@@ -144,7 +113,7 @@ public class DominionWand extends ModItem implements IRadialProvider {
             if (data.strict()) data = data.setFace(face);
             stack.set(DataComponentRegistry.DOMINION_WAND, data);
             PortUtil.sendMessage(playerEntity, Component.translatable("ars_nouveau.dominion_wand.position_set"));
-            playSoundFromResult(playerEntity.level, pos, IWandable.Result.SELECT);
+            playSoundFromResult(playerEntity.level(), pos, IWandable.Result.SELECT);
             return InteractionResult.SUCCESS;
         }
 
@@ -183,7 +152,7 @@ public class DominionWand extends ModItem implements IRadialProvider {
         Player playerEntity = context.getPlayer();
         ItemStack stack = context.getItemInHand();
         DominionWandData data = stack.getOrDefault(DataComponentRegistry.DOMINION_WAND, new DominionWandData());
-        Level world = data.storedPos().isPresent() ? playerEntity.getServer().getLevel(data.storedPos().get().dimension()) : context.getLevel();
+        Level world = data.storedPos().isPresent() ? playerEntity.level().getServer().getLevel(data.storedPos().get().dimension()) : context.getLevel();
 
         if (world.getBlockEntity(atPos) instanceof IWandable wandable) {
             return wandable;
@@ -196,28 +165,28 @@ public class DominionWand extends ModItem implements IRadialProvider {
     }
 
     @Override
-    public @NotNull String getDescriptionId(ItemStack pStack) {
+    public @NotNull Component getName(@NotNull ItemStack pStack) {
         DominionWandData data = pStack.getOrDefault(DataComponentRegistry.DOMINION_WAND, new DominionWandData());
-        if (data.strict()) return super.getDescriptionId(pStack) + ".strict";
-        return super.getDescriptionId(pStack);
+        if (data.strict()) return Component.translatable(this.getDescriptionId() + ".strict");
+        return super.getName(pStack);
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext world, @NotNull List<Component> tooltip, @NotNull TooltipFlag p_77624_4_) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext world, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, @NotNull TooltipFlag p_77624_4_) {
         DominionWandData data = stack.getOrDefault(DataComponentRegistry.DOMINION_WAND, new DominionWandData());
         if (data.storedEntityId() == DominionWandData.NULL_ENTITY) {
-            tooltip.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.dominion_wand.no_entity"), world));
+            tooltip.accept(Component.translatable("ars_nouveau.dominion_wand.no_entity"));
         } else {
-            tooltip.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.dominion_wand.entity_stored"), world));
+            tooltip.accept(Component.translatable("ars_nouveau.dominion_wand.entity_stored"));
         }
 
         if (data.storedPos().isEmpty()) {
-            tooltip.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.dominion_wand.no_location"), world));
+            tooltip.accept(Component.translatable("ars_nouveau.dominion_wand.no_location"));
         } else {
-            tooltip.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.dominion_wand.position_stored", getGlobalPosString(data.getValidPos())), world));
+            tooltip.accept(Component.translatable("ars_nouveau.dominion_wand.position_stored", getGlobalPosString(data.getValidPos())));
         }
 
-        if (data.strict()) tooltip.addAll(DocClientUtils.splitTooltip(Component.literal("Side-Sensitive"), world));
+        if (data.strict()) tooltip.accept(Component.literal("Side-Sensitive"));
     }
 
     public static String getPosString(BlockPos pos) {
@@ -226,24 +195,10 @@ public class DominionWand extends ModItem implements IRadialProvider {
 
     public static String getGlobalPosString(GlobalPos globalPos) {
         BlockPos pos = globalPos.pos();
-        ResourceLocation dimLoc = globalPos.dimension().location();
+        Identifier dimLoc = globalPos.dimension().identifier();
         String translationKey = dimLoc.getPath() + "." + dimLoc.getNamespace() + ".name";
         String translation = Component.translatable(translationKey).getString();
         return Component.translatable("ars_nouveau.global_position", pos.getX(), pos.getY(), pos.getZ(), translation.equals(translationKey) ? dimLoc.toString() : translation).getString();
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    @Override
-    public void onRadialKeyPressed(ItemStack stack, Player player) {
-        Minecraft.getInstance().setScreen(new GuiRadialMenu<>(getRadialMenuProviderForDominion(stack)));
-    }
-
-    public RadialMenu<String> getRadialMenuProviderForDominion(ItemStack stack) {
-        return new RadialMenu<>((int slot) ->
-                Networking.sendToServer(new PacketUpdateDominionWand(slot)),
-                getRadialMenuSlotsForDominion(stack),
-                RenderUtils::drawString,
-                0);
     }
 
     public enum DominionSlots {
@@ -260,14 +215,6 @@ public class DominionWand extends ModItem implements IRadialProvider {
         public Component translatable() {
             return Component.translatable(key);
         }
-    }
-
-    public List<RadialMenuSlot<String>> getRadialMenuSlotsForDominion(ItemStack stack) {
-        List<RadialMenuSlot<String>> radialMenuSlots = new ArrayList<>();
-        radialMenuSlots.add(new RadialMenuSlot<>(DominionSlots.CLEAR.translatable().getString(), DominionSlots.CLEAR.key));
-        radialMenuSlots.add(new RadialMenuSlot<>(DominionSlots.NORMAL.translatable().getString(), DominionSlots.NORMAL.key));
-        radialMenuSlots.add(new RadialMenuSlot<>(DominionSlots.STRICT.translatable().getString(), DominionSlots.STRICT.key));
-        return radialMenuSlots;
     }
 
     public void playSoundFromResult(Level level, BlockPos at, IWandable.Result result) {

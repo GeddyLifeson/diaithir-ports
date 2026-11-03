@@ -1,11 +1,8 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.common.mixin.ChatComponentAccessor;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.GuiMessageTag;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.components.ChatComponent;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentSerialization;
@@ -76,18 +73,9 @@ public class PacketNoSpamChatMessage extends AbstractPacket {
 
     @Override
     public void onClientReceived(Minecraft minecraft, Player player) {
-        // This packet is only registered to be received on the client
-        if (overlayMessage) {
-            if (Minecraft.getInstance().player != null) {
-                Minecraft.getInstance().player.displayClientMessage(message, true);
-            }
-        } else {
-            ChatComponent gui = minecraft.gui.getChat();
-            ChatComponentAccessor chatComponentAccessor = (ChatComponentAccessor) gui;
-            chatComponentAccessor.getAllMessages().removeIf(m -> m.signature() != null && m.signature().equals(AN_SIGNATURE));
-            gui.rescaleChat();
-            gui.addMessage(message.plainCopy().setStyle(Style.EMPTY.withColor(ChatFormatting.GOLD)), AN_SIGNATURE, GuiMessageTag.system());
-
+        // Port note: chat-history de-duplication (mixin accessor) removed; messages are shown plainly.
+        if (player != null) {
+            player.sendOverlayMessage(overlayMessage ? message : message.plainCopy().setStyle(Style.EMPTY.withColor(ChatFormatting.GOLD)));
         }
     }
 

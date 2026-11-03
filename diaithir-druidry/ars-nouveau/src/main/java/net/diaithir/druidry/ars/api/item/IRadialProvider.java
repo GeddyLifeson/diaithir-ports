@@ -1,6 +1,5 @@
 package net.diaithir.druidry.ars.api.item;
 
-import net.diaithir.druidry.ars.client.registry.ModKeyBindings;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
@@ -15,7 +14,7 @@ public interface IRadialProvider {
      */
     @OnlyIn(Dist.CLIENT)
     default int forKey() {
-        return ModKeyBindings.OPEN_RADIAL_HUD.getKey().getValue();
+        return com.mojang.blaze3d.platform.InputConstants.KEY_G;
     }
 
     /**

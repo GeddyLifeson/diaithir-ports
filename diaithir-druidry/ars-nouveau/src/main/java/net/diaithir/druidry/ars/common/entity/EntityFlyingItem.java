@@ -1,20 +1,12 @@
 package net.diaithir.druidry.ars.common.entity;
 
 import net.diaithir.druidry.ars.api.util.BlockUtil;
-import net.diaithir.druidry.ars.api.util.NBTUtil;
 import net.diaithir.druidry.ars.api.util.NearbyPlayerCache;
-import net.diaithir.druidry.ars.client.particle.GlowParticleData;
-import net.diaithir.druidry.ars.client.particle.ParticleColor;
-import net.diaithir.druidry.ars.client.particle.ParticleUtil;
 import net.diaithir.druidry.ars.common.util.EasingManager;
 import net.diaithir.druidry.ars.common.util.EasingType;
 import net.diaithir.druidry.ars.setup.registry.DataSerializers;
 import net.diaithir.druidry.ars.setup.registry.ModEntities;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -22,6 +14,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
@@ -142,11 +136,8 @@ public class EntityFlyingItem extends ColoredProjectile {
 
         Vec3 start = entityData.get(from);
         Vec3 end = entityData.get(to);
-        if (BlockUtil.distanceFrom(level, end, this.position()) <= 1 || this.age > 1000 || BlockUtil.distanceFrom(level, end, this.position()) > 16) {
+        if (BlockUtil.distanceFrom(level(), end, this.position()) <= 1 || this.age > 1000 || BlockUtil.distanceFrom(level(), end, this.position()) > 16) {
             this.remove(RemovalReason.DISCARDED);
-            if (level.isClientSide && entityData.get(SPAWN_TOUCH)) {
-                ParticleUtil.spawnTouch((ClientLevel) level, BlockPos.containing(end.x, end.y, end.z), new ParticleColor(this.entityData.get(RED), this.entityData.get(GREEN), this.entityData.get(BLUE)));
-            }
             return;
         }
 
@@ -166,31 +157,11 @@ public class EntityFlyingItem extends ColoredProjectile {
         double lerpZ = lerp(time, start.z(), end.z(), type);
 
         Vec3 adjustedPos = new Vec3(posX, end.y(), posZ);
-        if (BlockUtil.distanceFrom(level, end, adjustedPos) <= 0.5) {
+        if (BlockUtil.distanceFrom(level(), end, adjustedPos) <= 0.5) {
             posY = getY() - 0.05;
             this.setPos(lerpX, posY, lerpZ);
         } else {
             this.setPos(lerpX, lerpY, lerpZ);
-        }
-
-        if (level.isClientSide && this.age > 1 && !this.getEntityData().get(IS_BUBBLE)) {
-            double deltaX = getX() - xOld;
-            double deltaY = getY() - yOld;
-            double deltaZ = getZ() - zOld;
-            double dist = Math.ceil(Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ) * 20);
-            int counter = 0;
-
-            for (double i = 0; i < dist; i++) {
-                double coeff = i / dist;
-                counter += level.random.nextInt(3);
-                if (counter % (Minecraft.getInstance().options.particles().get().getId() == 0 ? 1 : 2 * Minecraft.getInstance().options.particles().get().getId()) == 0) {
-                    level.addAlwaysVisibleParticle(GlowParticleData.createData(
-                                    new ParticleColor(this.entityData.get(RED), this.entityData.get(GREEN), this.entityData.get(BLUE))),
-                            true,
-                            (float) (xo + deltaX * coeff), (float) (yo + deltaY * coeff), (float) (zo + deltaZ * coeff), 0.0125f * (random.nextFloat() - 0.5f), 0.0125f * (random.nextFloat() - 0.5f), 0.0125f * (random.nextFloat() - 0.5f));
-                }
-            }
-
         }
     }
 
@@ -208,7 +179,7 @@ public class EntityFlyingItem extends ColoredProjectile {
         if (this.entityData.get(DIDOFFSET))
             return this.entityData.get(OFFSET);
 
-        double distance = BlockUtil.distanceFrom(level, start, end);
+        double distance = BlockUtil.distanceFrom(level(), start, end);
         if (distance <= 1.5)
             return 2.5;
 
@@ -216,30 +187,27 @@ public class EntityFlyingItem extends ColoredProjectile {
     }
 
     @Override
-    public void load(CompoundTag compound) {
-        super.load(compound);
-        this.entityData.set(HELD_ITEM, ItemStack.parseOptional(level.registryAccess(), compound.getCompound("item")));
-        this.age = compound.getInt("age");
-        this.entityData.set(DIDOFFSET, compound.getBoolean("didoffset"));
-        this.entityData.set(OFFSET, compound.getFloat("offset"));
-        this.entityData.set(EntityFlyingItem.from, NBTUtil.getVec(compound, "from"));
-        this.entityData.set(EntityFlyingItem.to, NBTUtil.getVec(compound, "to"));
+    protected void readAdditionalSaveData(ValueInput input) {
+        super.readAdditionalSaveData(input);
+        this.entityData.set(HELD_ITEM, input.read("item", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY));
+        this.age = input.getIntOr("age", 0);
+        this.entityData.set(DIDOFFSET, input.getBooleanOr("didoffset", false));
+        this.entityData.set(OFFSET, input.getFloatOr("offset", 0f));
+        this.entityData.set(EntityFlyingItem.from, input.read("from", Vec3.CODEC).orElse(Vec3.ZERO));
+        this.entityData.set(EntityFlyingItem.to, input.read("to", Vec3.CODEC).orElse(Vec3.ZERO));
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
+    protected void addAdditionalSaveData(ValueOutput output) {
+        super.addAdditionalSaveData(output);
         if (getStack() != null) {
-            Tag tag = getStack().saveOptional(level.registryAccess());
-            compound.put("item", tag);
+            output.store("item", ItemStack.OPTIONAL_CODEC, getStack());
         }
-        compound.putInt("age", age);
-        compound.putBoolean("didoffset", this.entityData.get(DIDOFFSET));
-        compound.putFloat("offset", this.entityData.get(OFFSET));
-        if (from != null)
-            NBTUtil.storeVec(compound, "from", this.entityData.get(EntityFlyingItem.from));
-        if (to != null)
-            NBTUtil.storeVec(compound, "to", this.entityData.get(EntityFlyingItem.to));
+        output.putInt("age", age);
+        output.putBoolean("didoffset", this.entityData.get(DIDOFFSET));
+        output.putFloat("offset", this.entityData.get(OFFSET));
+        output.store("from", Vec3.CODEC, this.entityData.get(EntityFlyingItem.from));
+        output.store("to", Vec3.CODEC, this.entityData.get(EntityFlyingItem.to));
     }
 
     public ItemStack getStack() {

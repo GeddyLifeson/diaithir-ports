@@ -46,7 +46,7 @@ public class Rewards {
             }
         } catch (IOException var2) {
             var2.printStackTrace();
-            if (!FMLEnvironment.production) {
+            if (!FMLEnvironment.isProduction()) {
                 throw new RuntimeException("Failed to load supporters.json");
             }
         }
@@ -61,7 +61,7 @@ public class Rewards {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            if (!FMLEnvironment.production) {
+            if (!FMLEnvironment.isProduction()) {
                 throw new RuntimeException("Failed to load starbuncle_plush.json");
             }
             STARBUNCLE_PLUSH_MESSAGE = "Click here to order a Starbuncle Plush from Makeship!";
@@ -95,7 +95,7 @@ public class Rewards {
             this.color = color;
             this.bio = bio;
 
-            if (!FMLEnvironment.production) {
+            if (!FMLEnvironment.isProduction()) {
                 if (name == null) {
                     throw new RuntimeException("Name is null");
                 }

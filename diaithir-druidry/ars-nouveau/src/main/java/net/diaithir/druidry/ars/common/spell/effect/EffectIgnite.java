@@ -8,7 +8,7 @@ import net.diaithir.druidry.ars.common.spell.augment.*;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -49,7 +49,7 @@ public class EffectIgnite extends AbstractEffect {
         }
         BlockState hitState = world.getBlockState(rayTraceResult.getBlockPos());
         if (hitState.getBlock() instanceof CandleBlock && CandleBlock.canLight(hitState) || hitState.getBlock() instanceof CampfireBlock && CampfireBlock.canLight(hitState)) {
-            AbstractCandleBlock.setLit(world, hitState, rayTraceResult.getBlockPos(), true);
+            world.setBlock(rayTraceResult.getBlockPos(), hitState.setValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.LIT, true), 11);
             return;
         }
 
@@ -74,7 +74,7 @@ public class EffectIgnite extends AbstractEffect {
     }
 
     @Override
-    protected void addDefaultAugmentLimits(Map<ResourceLocation, Integer> defaults) {
+    protected void addDefaultAugmentLimits(Map<Identifier, Integer> defaults) {
         super.addDefaultAugmentLimits(defaults);
         defaults.put(AugmentSensitive.INSTANCE.getRegistryName(), 1);
     }

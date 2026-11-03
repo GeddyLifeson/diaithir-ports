@@ -1,9 +1,6 @@
 package net.diaithir.druidry.ars.common.spell.method;
 
 
-import net.diaithir.druidry.ars.api.particle.ParticleEmitter;
-import net.diaithir.druidry.ars.api.particle.timelines.PantomimeTimeline;
-import net.diaithir.druidry.ars.api.registry.ParticleTimelineRegistry;
 import net.diaithir.druidry.ars.api.spell.*;
 import net.diaithir.druidry.ars.common.lib.GlyphLib;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentAmplify;
@@ -11,7 +8,7 @@ import net.diaithir.druidry.ars.common.spell.augment.AugmentDampen;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentSensitive;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -40,18 +37,14 @@ public class MethodPantomime extends AbstractCastMethod {
         double dist = viewXRot < 45.0f ? 2 + offset : 3 + offset;
         Vec3 to = eyes.add(shooter.getViewVector(1.0f).scale(dist));
         BlockPos toPos = BlockPos.containing(to);
-        return new BlockHitResult(to, Direction.getNearest(to.x, to.y, to.z).getOpposite(), toPos, true);
+        return new BlockHitResult(to, Direction.getApproximateNearest(to.x, to.y, to.z).getOpposite(), toPos, true);
     }
 
     public CastResolveType getTarget(Level world, LivingEntity shooter, SpellResolver resolver, SpellStats stats) {
         BlockHitResult res = findPosition(shooter, stats);
 
         if (res == null) return CastResolveType.FAILURE;
-        PantomimeTimeline pantomimeTimeline = resolver.spellContext.getParticleTimeline(ParticleTimelineRegistry.PANTOMIME_TIMELINE.get());
-        ParticleEmitter emitter = createStaticEmitter(pantomimeTimeline.onResolvingEffect, res.getLocation());
         resolver.onResolveEffect(world, res);
-        emitter.tick(world);
-        pantomimeTimeline.resolveSound.sound.playSound(world, res.getLocation().x, res.getLocation().y, res.getLocation().z);
         return CastResolveType.SUCCESS;
     }
 
@@ -67,7 +60,7 @@ public class MethodPantomime extends AbstractCastMethod {
 
     @Override
     public CastResolveType onCastOnBlock(BlockHitResult blockRayTraceResult, LivingEntity caster, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
-        return getTarget(caster.getCommandSenderWorld(), caster, resolver, spellStats);
+        return getTarget(caster.level(), caster, resolver, spellStats);
     }
 
     @Override
@@ -87,7 +80,7 @@ public class MethodPantomime extends AbstractCastMethod {
     }
 
     @Override
-    protected void addDefaultAugmentLimits(Map<ResourceLocation, Integer> defaults) {
+    protected void addDefaultAugmentLimits(Map<Identifier, Integer> defaults) {
         super.addDefaultAugmentLimits(defaults);
         defaults.put(AugmentDampen.INSTANCE.getRegistryName(), 1);
     }

@@ -2,7 +2,7 @@ package net.diaithir.druidry.ars.common.capability;
 
 import net.diaithir.druidry.ars.api.familiar.AbstractFamiliarHolder;
 import net.diaithir.druidry.ars.api.spell.AbstractSpellPart;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import javax.annotation.Nullable;
 import java.util.Collection;
@@ -40,12 +40,12 @@ public interface IPlayerCap {
     Collection<FamiliarData> getUnlockedFamiliars();
 
     @Nullable
-    FamiliarData getFamiliarData(ResourceLocation id);
+    FamiliarData getFamiliarData(Identifier id);
 
     @Nullable
     FamiliarData getLastSummonedFamiliar();
 
-    void setLastSummonedFamiliar(ResourceLocation lastSummonedFamiliar);
+    void setLastSummonedFamiliar(Identifier lastSummonedFamiliar);
 
     void setUnlockedFamiliars(Collection<FamiliarData> familiars);
 

@@ -189,7 +189,7 @@ public class SpellStats {
                     spellStats.modifierItems.add(item);
                 }
             }
-            for (ItemStack i : entity.getAllSlots()) {
+            for (ItemStack i : net.diaithir.druidry.ars.api.util.EquipUtil.all(entity)) {
                 spellStats.modifierItems.add(i);
             }
 

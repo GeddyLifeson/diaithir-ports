@@ -1,9 +1,5 @@
 package net.diaithir.druidry.ars.common.spell.method;
 
-import net.diaithir.druidry.ars.api.particle.ParticleEmitter;
-import net.diaithir.druidry.ars.api.particle.configurations.properties.SoundProperty;
-import net.diaithir.druidry.ars.api.particle.timelines.TimelineEntryData;
-import net.diaithir.druidry.ars.api.registry.ParticleTimelineRegistry;
 import net.diaithir.druidry.ars.api.spell.*;
 import net.diaithir.druidry.ars.common.lib.GlyphLib;
 import net.diaithir.druidry.ars.common.network.Networking;
@@ -46,41 +42,22 @@ public class MethodTouch extends AbstractCastMethod {
         Level world = context.getLevel();
         BlockHitResult res = new BlockHitResult(context.getClickLocation(), context.getClickedFace(), context.getClickedPos(), false);
         resolver.onResolveEffect(world, res);
-        ParticleEmitter particleEmitter = resolveEmitter(spellContext, res.getLocation());
-        particleEmitter.tick(world);
-        playResolveSound(spellContext, world, res.getLocation());
         addFadingLight(context.getLevel(), res.getBlockPos().getX() + 0.5, res.getBlockPos().getY() + 0.5, res.getBlockPos().getZ() + 0.5);
         return CastResolveType.SUCCESS;
     }
 
     @Override
     public CastResolveType onCastOnBlock(BlockHitResult res, LivingEntity caster, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
-        resolver.onResolveEffect(caster.getCommandSenderWorld(), res);
-        ParticleEmitter particleEmitter = resolveEmitter(spellContext, res.getLocation());
-        particleEmitter.tick(caster.level);
-        playResolveSound(spellContext, caster.level(), res.getLocation());
+        resolver.onResolveEffect(caster.level(), res);
         addFadingLight(caster.level(), res.getBlockPos().getX() + 0.5, res.getBlockPos().getY() + 0.5, res.getBlockPos().getZ() + 0.5);
         return CastResolveType.SUCCESS;
     }
 
     @Override
     public CastResolveType onCastOnEntity(ItemStack stack, LivingEntity caster, Entity target, InteractionHand hand, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
-        resolver.onResolveEffect(caster.getCommandSenderWorld(), new EntityHitResult(target));
-        ParticleEmitter particleEmitter = resolveEmitter(spellContext, target.position);
-        particleEmitter.tick(caster.level);
-        playResolveSound(spellContext, caster.level(), target.position());
+        resolver.onResolveEffect(caster.level(), new EntityHitResult(target));
         addFadingLight(caster.level(), target.blockPosition().getX() + 0.5, target.blockPosition().getY() + 0.5, target.blockPosition().getZ() + 0.5);
         return spellContext.getCaster().getCasterType() != SpellContext.CasterType.RUNE ? CastResolveType.SUCCESS : CastResolveType.SUCCESS_NO_EXPEND;
-    }
-
-    public ParticleEmitter resolveEmitter(SpellContext spellContext, Vec3 position) {
-        TimelineEntryData entryData = spellContext.getParticleTimeline(ParticleTimelineRegistry.TOUCH_TIMELINE.get()).onResolvingEffect;
-        return createStaticEmitter(entryData, position);
-    }
-
-    public void playResolveSound(SpellContext spellContext, Level level, Vec3 position) {
-        SoundProperty soundProperty = spellContext.getParticleTimeline(ParticleTimelineRegistry.TOUCH_TIMELINE.get()).resolveSound;
-        soundProperty.sound.playSound(level, position.x, position.y, position.z);
     }
 
     public void addFadingLight(Level level, double x, double y, double z) {

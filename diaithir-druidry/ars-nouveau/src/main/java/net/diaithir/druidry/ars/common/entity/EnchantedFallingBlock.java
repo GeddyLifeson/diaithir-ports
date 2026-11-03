@@ -1,6 +1,5 @@
 package net.diaithir.druidry.ars.common.entity;
 
-import net.diaithir.druidry.ars.api.registry.ParticleTimelineRegistry;
 import net.diaithir.druidry.ars.api.spell.SpellContext;
 import net.diaithir.druidry.ars.api.spell.SpellResolver;
 import net.diaithir.druidry.ars.api.spell.SpellStats;
@@ -12,7 +11,6 @@ import net.diaithir.druidry.ars.common.items.curios.ShapersFocus;
 import net.diaithir.druidry.ars.common.spell.rewind.BlockToEntityRewind;
 import net.diaithir.druidry.ars.common.spell.rewind.EntityToBlockRewind;
 import net.diaithir.druidry.ars.common.spell.rewind.RewindAttachment;
-import net.diaithir.druidry.ars.common.util.ANCodecs;
 import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
 import net.diaithir.druidry.ars.setup.registry.ModEntities;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
@@ -20,15 +18,11 @@ import net.minecraft.CrashReportCategory;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtOps;
-import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
-import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -44,7 +38,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ResolvableProfile;
 import net.minecraft.world.item.context.DirectionalPlaceContext;
 import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -55,18 +48,19 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.level.gamerules.GameRules;
+import net.minecraft.world.level.storage.TagValueInput;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.entity.IEntityWithComplexSpawn;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
-public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntity, IEntityWithComplexSpawn {
+public class EnchantedFallingBlock extends ColoredProjectile implements IEntityWithComplexSpawn {
 
     public BlockState blockState = Blocks.SAND.defaultBlockState();
     public int time;
@@ -197,28 +191,28 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
         if (!this.isNoGravity()) {
             this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.04D, 0.0D));
         }
-        EntityHitResult hitEntity = findHitEntity(this.position, this.position.add(this.getDeltaMovement()));
+        EntityHitResult hitEntity = findHitEntity(this.position(), this.position().add(this.getDeltaMovement()));
         if (hitEntity != null) {
             onHitEntity(hitEntity);
         }
         this.move(MoverType.SELF, this.getDeltaMovement());
-        if (!this.level.isClientSide && !this.isRemoved()) {
+        if (!this.level().isClientSide() && !this.isRemoved()) {
             BlockPos blockpos = this.blockPosition();
             boolean isConcrete = this.blockState.getBlock() instanceof ConcretePowderBlock;
-            boolean isConcreteInWater = isConcrete && this.level.getFluidState(blockpos).is(FluidTags.WATER);
+            boolean isConcreteInWater = isConcrete && this.level().getFluidState(blockpos).is(FluidTags.WATER);
             double d0 = this.getDeltaMovement().lengthSqr();
             if (isConcrete && d0 > 1.0D) { // if we are concrete powder
-                BlockHitResult blockhitresult = this.level.clip(new ClipContext(new Vec3(this.xo, this.yo, this.zo), this.position(), ClipContext.Block.COLLIDER, ClipContext.Fluid.SOURCE_ONLY, this));
-                if (blockhitresult.getType() != HitResult.Type.MISS && this.level.getFluidState(blockhitresult.getBlockPos()).is(FluidTags.WATER)) {
+                BlockHitResult blockhitresult = this.level().clip(new ClipContext(new Vec3(this.xo, this.yo, this.zo), this.position(), ClipContext.Block.COLLIDER, ClipContext.Fluid.SOURCE_ONLY, this));
+                if (blockhitresult.getType() != HitResult.Type.MISS && this.level().getFluidState(blockhitresult.getBlockPos()).is(FluidTags.WATER)) {
                     blockpos = blockhitresult.getBlockPos();
                     isConcreteInWater = true;
                 }
             }
 
             if (!this.onGround() && !isConcreteInWater) {
-                if (!this.level.isClientSide && (this.time > 100 && (blockpos.getY() <= this.level.getMinBuildHeight() || blockpos.getY() > this.level.getMaxBuildHeight()) || this.time > 600)) {
-                    if (this.dropItem && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-                        this.spawnAtLocation(block);
+                if (!this.level().isClientSide() && (this.time > 100 && (blockpos.getY() <= this.level().getMinY() || blockpos.getY() > this.level().getMaxY()) || this.time > 600)) {
+                    if (this.dropItem && ((ServerLevel) this.level()).getGameRules().get(GameRules.ENTITY_DROPS)) {
+                        this.spawnAtLocation((ServerLevel) this.level(), block);
                     }
 
                     this.discard();
@@ -235,9 +229,9 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
     public BlockPos groundBlock(boolean ignoreAir) {
         Block block = this.blockState.getBlock();
         BlockPos blockpos = this.blockPosition();
-        BlockState blockstate = this.level.getBlockState(blockpos);
+        BlockState blockstate = this.level().getBlockState(blockpos);
         boolean isConcrete = this.blockState.getBlock() instanceof ConcretePowderBlock;
-        boolean isConcreteInWater = isConcrete && this.level.getFluidState(blockpos).is(FluidTags.WATER);
+        boolean isConcreteInWater = isConcrete && this.level().getFluidState(blockpos).is(FluidTags.WATER);
         this.setDeltaMovement(this.getDeltaMovement().multiply(0.7D, -0.5D, 0.7D));
         if (blockstate.is(Blocks.MOVING_PISTON))
             return null;
@@ -246,35 +240,29 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
             this.callOnBrokenAfterFall(block, blockpos);
             return null;
         }
-        boolean canBeReplaced = blockstate.canBeReplaced(new DirectionalPlaceContext(this.level, blockpos, Direction.DOWN, ItemStack.EMPTY, Direction.UP));
-        boolean isFreeBelow = FallingBlock.isFree(this.level.getBlockState(blockpos.below())) && (!isConcrete || !isConcreteInWater);
-        boolean canSurvive = this.blockState.canSurvive(this.level, blockpos) && (!isFreeBelow || ignoreAir);
+        boolean canBeReplaced = blockstate.canBeReplaced(new DirectionalPlaceContext(this.level(), blockpos, Direction.DOWN, ItemStack.EMPTY, Direction.UP));
+        boolean isFreeBelow = FallingBlock.isFree(this.level().getBlockState(blockpos.below())) && (!isConcrete || !isConcreteInWater);
+        boolean canSurvive = this.blockState.canSurvive(this.level(), blockpos) && (!isFreeBelow || ignoreAir);
         if (canBeReplaced && canSurvive) {
-            if (this.blockState.hasProperty(BlockStateProperties.WATERLOGGED) && this.level.getFluidState(blockpos).getType() == Fluids.WATER) {
+            if (this.blockState.hasProperty(BlockStateProperties.WATERLOGGED) && this.level().getFluidState(blockpos).getType() == Fluids.WATER) {
                 this.blockState = this.blockState.setValue(BlockStateProperties.WATERLOGGED, Boolean.TRUE);
             }
 
-            if (this.level.setBlock(blockpos, this.blockState, 3)) {
-                ((ServerLevel) this.level).getChunkSource().chunkMap.broadcast(this, new ClientboundBlockUpdatePacket(blockpos, this.level.getBlockState(blockpos)));
+            if (this.level().setBlock(blockpos, this.blockState, 3)) {
                 this.discard();
-                if (block instanceof Fallable fallable) {
-                    fallable.onLand(this.level, blockpos, this.blockState, blockstate, new FallingBlockEntity(level, this.getX(), this.getY(), this.getZ(), this.blockState));
-                } else if (context != null && resolver != null) {
-                    RewindAttachment.get(context).addRewindEvent(level.getGameTime(), new EntityToBlockRewind(this, blockpos, this.blockState));
+                if (context != null && resolver != null) {
+                    RewindAttachment.get(context).addRewindEvent(level().getGameTime(), new EntityToBlockRewind(this, blockpos, this.blockState));
                     ShapersFocus.tryPropagateBlockSpell(new BlockHitResult(
                             new Vec3(blockpos.getX(), blockpos.getY(), blockpos.getZ()), Direction.DOWN, blockpos, false
-                    ), level, getOwner(), context, resolver);
+                    ), level(), getOwner(), context, resolver);
                 }
 
                 if (this.blockData != null && this.blockState.hasBlockEntity()) {
-                    BlockEntity blockentity = this.level.getBlockEntity(blockpos);
+                    BlockEntity blockentity = this.level().getBlockEntity(blockpos);
                     if (blockentity != null) {
 
                         try {
-                            blockentity.loadWithComponents(this.blockData, level.registryAccess());
-                            if (blockentity instanceof SkullBlockEntity sk && this.blockData != null && this.blockData.contains("SkullOwner")) {
-                                sk.setOwner(ANCodecs.decode(level.registryAccess(), ResolvableProfile.CODEC, this.blockData.getCompound("SkullOwner")));
-                            }
+                            blockentity.loadWithComponents(TagValueInput.create(ProblemReporter.DISCARDING, this.level().registryAccess(), this.blockData));
                         } catch (Exception exception) {
                             exception.printStackTrace();
                         }
@@ -282,38 +270,24 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
                         blockentity.setChanged();
                     }
                 }
-                if (this.level.getBlockEntity(blockpos) instanceof MageBlockTile mbt) {
-                    if (context != null) {
-                        mbt.color = context.getSpell().particleTimeline().get(ParticleTimelineRegistry.MAGEBLOCK_TIMELINE.get()).getColor();
-                    }
+                if (this.level().getBlockEntity(blockpos) instanceof MageBlockTile mbt) {
                     mbt.setChanged();
                 }
 
                 return blockpos;
-            } else if (this.dropItem && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+            } else if (this.dropItem && ((ServerLevel) this.level()).getGameRules().get(GameRules.ENTITY_DROPS)) {
                 this.discard();
                 this.callOnBrokenAfterFall(block, blockpos);
                 ItemStack itemstack = new ItemStack(block);
-                if (this.blockData != null && this.getBlockState().is(Blocks.PLAYER_HEAD)) {
-                    ResolvableProfile.CODEC
-                            .parse(NbtOps.INSTANCE, blockData.get("profile"))
-                            .resultOrPartial().ifPresent(profile -> itemstack.set(DataComponents.PROFILE, profile));
-                }
-                this.spawnAtLocation(itemstack);
+                this.spawnAtLocation((ServerLevel) this.level(), itemstack);
                 return null;
             }
         } else {
             this.discard();
-            if (this.dropItem && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+            if (this.dropItem && ((ServerLevel) this.level()).getGameRules().get(GameRules.ENTITY_DROPS)) {
                 this.callOnBrokenAfterFall(block, blockpos);
                 ItemStack itemstack = new ItemStack(block);
-                if (this.blockData != null && this.getBlockState().is(Blocks.PLAYER_HEAD)) {
-                    ResolvableProfile.CODEC
-                            .parse(NbtOps.INSTANCE, blockData.get("profile"))
-                            .resultOrPartial().ifPresent(profile -> itemstack.set(DataComponents.PROFILE, profile));
-
-                }
-                this.spawnAtLocation(itemstack);
+                this.spawnAtLocation((ServerLevel) this.level(), itemstack);
             }
         }
         return null;
@@ -322,7 +296,7 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
     public float getStateDamageBonus() {
         float destroySpeed = 1.0f;
         try {
-            destroySpeed = this.blockState.getDestroySpeed(level, blockPosition());
+            destroySpeed = this.blockState.getDestroySpeed(level(), blockPosition());
         } catch (Exception e) {
             // Passing unexpected values here, catch any errors
         }
@@ -350,7 +324,7 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
             entity.igniteForTicks(5);
         }
 
-        if (entity.hurt(damagesource, (float) i)) {
+        if (this.level() instanceof ServerLevel serverLevel && entity.hurtServer(serverLevel, damagesource, (float) i)) {
             if (isEnderman) {
                 return;
             }
@@ -377,9 +351,9 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
     public @NotNull DamageSource getDamageSource(Entity owner, Entity entity) {
         DamageSource damagesource;
         if (owner == null) {
-            damagesource = level.damageSources().thrown(this, owner);
+            damagesource = level().damageSources().thrown(this, owner);
         } else {
-            damagesource = level.damageSources().thrown(this, owner);
+            damagesource = level().damageSources().thrown(this, owner);
             if (owner instanceof LivingEntity livingOwner) {
                 livingOwner.setLastHurtMob(entity);
             }
@@ -390,6 +364,7 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
     public void doPostHurtEffects(LivingEntity livingentity) {
     }
 
+    @Override
     public void fillCrashReportCategory(@NotNull CrashReportCategory pCategory) {
         super.fillCrashReportCategory(pCategory);
         pCategory.setDetail("Immitating BlockState", this.blockState.toString());
@@ -404,10 +379,6 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
         return new ClientboundAddEntityPacket(this, p_352287_, Block.getId(this.getBlockState()));
     }
 
-    public boolean onlyOpCanSetNbt() {
-        return true;
-    }
-
     public void recreateFromPacket(@NotNull ClientboundAddEntityPacket pPacket) {
         super.recreateFromPacket(pPacket);
         this.blockState = Block.stateById(pPacket.getData());
@@ -420,31 +391,24 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
     }
 
     public void callOnBrokenAfterFall(Block p_149651_, BlockPos p_149652_) {
-        if (p_149651_ instanceof Fallable) {
-            ((Fallable) p_149651_).onBrokenAfterFall(this.level, p_149652_, new FallingBlockEntity(level, this.getX(), this.getY(), this.getZ(), this.blockState));
-        }
+        // Fallable callbacks need a vanilla FallingBlockEntity (private constructor in 26.1); dropped in the port.
 
     }
 
-    public boolean causeFallDamage(float pFallDistance, float pMultiplier, @NotNull DamageSource pSource) {
+    public boolean causeFallDamage(double pFallDistance, float pMultiplier, @NotNull DamageSource pSource) {
         if (!this.hurtEntities) {
             return false;
         } else {
-            int i = Mth.ceil(pFallDistance - 1.0F);
+            int i = Mth.ceil(pFallDistance - 1.0D);
             if (i < 0) {
                 return false;
             } else {
                 Predicate<Entity> predicate = EntitySelector.NO_CREATIVE_OR_SPECTATOR.and(EntitySelector.LIVING_ENTITY_STILL_ALIVE);
                 DamageSource damagesource;
-                if (this.blockState.getBlock() instanceof Fallable fallable) {
-                    damagesource = fallable.getFallDamageSource(this);
-                } else {
-
-                    damagesource = level.damageSources().fallingBlock(this);
-                }
+                damagesource = level().damageSources().fallingBlock(this);
 
                 float f = (float) Math.min(Mth.floor((float) i * this.fallDamagePerDistance), this.fallDamageMax);
-                this.level.getEntities(this, this.getBoundingBox(), predicate).forEach(p_149649_ -> p_149649_.hurt(damagesource, f));
+                this.level().getEntities(this, this.getBoundingBox(), predicate).forEach(p_149649_ -> { if (this.level() instanceof ServerLevel sl) p_149649_.hurtServer(sl, damagesource, f); });
                 boolean flag = this.blockState.is(BlockTags.ANVIL);
                 if (flag && f > 0.0F && this.random.nextFloat() < 0.05F + (float) i * 0.05F) {
                     BlockState blockstate = AnvilBlock.damage(this.blockState);
@@ -460,46 +424,38 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
         }
     }
 
-    public void addAdditionalSaveData(CompoundTag pCompound) {
-        super.addAdditionalSaveData(pCompound);
-        pCompound.put("BlockState", NbtUtils.writeBlockState(this.blockState));
-        pCompound.putInt("Time", this.time);
-        pCompound.putBoolean("DropItem", this.dropItem);
-        pCompound.putBoolean("HurtEntities", this.hurtEntities);
-        pCompound.putFloat("FallHurtAmount", this.fallDamagePerDistance);
-        pCompound.putInt("FallHurtMax", this.fallDamageMax);
+    @Override
+    protected void addAdditionalSaveData(ValueOutput output) {
+        super.addAdditionalSaveData(output);
+        output.store("BlockState", BlockState.CODEC, this.blockState);
+        output.putInt("Time", this.time);
+        output.putBoolean("DropItem", this.dropItem);
+        output.putBoolean("HurtEntities", this.hurtEntities);
+        output.putFloat("FallHurtAmount", this.fallDamagePerDistance);
+        output.putInt("FallHurtMax", this.fallDamageMax);
         if (this.blockData != null) {
-            pCompound.put("TileEntityData", this.blockData);
+            output.store("TileEntityData", CompoundTag.CODEC, this.blockData);
         }
     }
 
-    /**
-     * (abstract) Protected helper method to read subclass entity data from NBT.
-     */
-    protected void readAdditionalSaveData(@NotNull CompoundTag pCompound) {
-        super.readAdditionalSaveData(pCompound);
-        this.blockState = NbtUtils.readBlockState(this.level().holderLookup(Registries.BLOCK), pCompound.getCompound("BlockState"));
-        this.time = pCompound.getInt("Time");
-        if (pCompound.contains("HurtEntities")) {
-            this.hurtEntities = pCompound.getBoolean("HurtEntities");
-            this.fallDamagePerDistance = pCompound.getFloat("FallHurtAmount");
-            this.fallDamageMax = pCompound.getInt("FallHurtMax");
+    @Override
+    protected void readAdditionalSaveData(ValueInput input) {
+        super.readAdditionalSaveData(input);
+        this.blockState = input.read("BlockState", BlockState.CODEC).orElse(Blocks.SAND.defaultBlockState());
+        this.time = input.getIntOr("Time", 0);
+        if (input.getBooleanOr("HurtEntities", false)) {
+            this.hurtEntities = true;
+            this.fallDamagePerDistance = input.getFloatOr("FallHurtAmount", 0f);
+            this.fallDamageMax = input.getIntOr("FallHurtMax", 40);
         } else if (this.blockState.is(BlockTags.ANVIL)) {
             this.hurtEntities = true;
         }
-
-        if (pCompound.contains("DropItem")) {
-            this.dropItem = pCompound.getBoolean("DropItem");
-        }
-
-        if (pCompound.contains("TileEntityData")) {
-            this.blockData = pCompound.getCompound("TileEntityData");
-        }
+        this.dropItem = input.getBooleanOr("DropItem", true);
+        input.read("TileEntityData", CompoundTag.CODEC).ifPresent(tag -> this.blockData = tag);
 
         if (this.blockState.isAir()) {
             this.blockState = Blocks.SAND.defaultBlockState();
         }
-
     }
 
     public void setHurtsEntities(float p_149657_, int p_149658_) {
@@ -547,19 +503,9 @@ public class EnchantedFallingBlock extends ColoredProjectile implements GeoEntit
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return GeckoLibUtil.createInstanceCache(this);
-    }
-
-    @Override
     public void writeSpawnData(RegistryFriendlyByteBuf buffer) {
         buffer.writeInt(Block.getId(blockState));
-        buffer.writeNbt(blockData);
+        buffer.writeNbt(blockData == null ? new CompoundTag() : blockData);
     }
 
     @Override

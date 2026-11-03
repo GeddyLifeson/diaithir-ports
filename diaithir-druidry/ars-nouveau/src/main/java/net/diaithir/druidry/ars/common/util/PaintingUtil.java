@@ -9,15 +9,12 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.entity.decoration.Painting;
-import net.minecraft.world.entity.decoration.PaintingVariant;
+import net.minecraft.world.entity.decoration.painting.PaintingVariant;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.CustomData;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class PaintingUtil {
@@ -30,7 +27,7 @@ public class PaintingUtil {
             .map(lookup -> {
                 RegistryOps<Tag> registryOps = registries.createSerializationContext(NbtOps.INSTANCE);
                 return lookup.listElementIds()
-                    .filter(key -> key.location().getNamespace().equals(id))
+                    .filter(key -> key.identifier().getNamespace().equals(id))
                     .map(key -> getPainting(registries, key, registryOps))
                     .collect(Collectors.toList());
             }).orElse(new ArrayList<>());
@@ -49,11 +46,7 @@ public class PaintingUtil {
         if (painting == null) return ItemStack.EMPTY;
 
         ItemStack is = new ItemStack(Items.PAINTING);
-        CustomData data = CustomData.EMPTY
-                .update(tag -> tag.putString("id", "minecraft:painting"))
-                .update(registryOps, Painting.VARIANT_MAP_CODEC, painting)
-                .mapOrElse(Function.identity(),err -> CustomData.EMPTY);
-        is.set(DataComponents.ENTITY_DATA, data);
+        is.set(DataComponents.PAINTING_VARIANT, painting);
         return is;
     }
 }

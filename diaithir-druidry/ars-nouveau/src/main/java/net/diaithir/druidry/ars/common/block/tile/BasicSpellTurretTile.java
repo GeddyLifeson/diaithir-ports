@@ -12,9 +12,6 @@ import net.diaithir.druidry.ars.api.util.SourceUtil;
 import net.diaithir.druidry.ars.common.block.BasicSpellTurret;
 import net.diaithir.druidry.ars.common.block.ITickable;
 import net.diaithir.druidry.ars.common.entity.EntityFollowProjectile;
-import net.diaithir.druidry.ars.common.network.Networking;
-import net.diaithir.druidry.ars.common.network.PacketOneShotAnimation;
-import net.diaithir.druidry.ars.common.util.ANCodecs;
 import net.diaithir.druidry.ars.common.util.PortUtil;
 import net.diaithir.druidry.ars.setup.registry.AttachmentsRegistry;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
@@ -22,8 +19,10 @@ import net.diaithir.druidry.ars.setup.registry.CapabilityRegistry;
 import com.mojang.authlib.GameProfile;
 import it.unimi.dsi.fastutil.Pair;
 import net.minecraft.core.*;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
@@ -35,16 +34,12 @@ import net.neoforged.neoforge.capabilities.ICapabilityProvider;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public class BasicSpellTurretTile extends ModdedTile implements ITooltipProvider, GeoBlockEntity, IAnimationListener, ITickable, ICapabilityProvider<BasicSpellTurretTile, Void, SpellCaster>, IWandable {
+public class BasicSpellTurretTile extends ModdedTile implements ITooltipProvider, IAnimationListener, ITickable, ICapabilityProvider<BasicSpellTurretTile, Void, SpellCaster>, IWandable {
     boolean playRecoil;
     protected SpellCaster spellCaster = new SpellCaster(0, null, false, null, 1);
     @Nullable UUID uuid = null;
@@ -95,7 +90,6 @@ public class BasicSpellTurretTile extends ModdedTile implements ITooltipProvider
             }
         }
 
-        Networking.sendToNearbyClient(level, pos, new PacketOneShotAnimation(pos));
         Position iposition = BasicSpellTurret.getDispensePosition(pos, level.getBlockState(pos).getValue(BasicSpellTurret.FACING));
         Direction direction = level.getBlockState(pos).getValue(BasicSpellTurret.FACING);
         FakePlayer fakePlayer = uuid != null
@@ -109,21 +103,19 @@ public class BasicSpellTurretTile extends ModdedTile implements ITooltipProvider
     }
 
     @Override
-    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(pTag, pRegistries);
-        pTag.put("spell_caster", ANCodecs.encode(SpellCaster.CODEC.codec(), spellCaster));
+    protected void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
+        output.store("spell_caster", SpellCaster.CODEC.codec(), spellCaster);
         if (uuid != null) {
-            pTag.putUUID("uuid", uuid);
+            output.store("uuid", UUIDUtil.CODEC, uuid);
         }
     }
 
     @Override
-    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        super.loadAdditional(pTag, pRegistries);
-        this.spellCaster = ANCodecs.decode(SpellCaster.CODEC.codec(), pTag.get("spell_caster"));
-        if (pTag.contains("uuid")) {
-            uuid = pTag.getUUID("uuid");
-        }
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
+        input.read("spell_caster", SpellCaster.CODEC.codec()).ifPresent(c -> this.spellCaster = c);
+        uuid = input.read("uuid", UUIDUtil.CODEC).orElse(null);
     }
 
     @Override
@@ -137,30 +129,6 @@ public class BasicSpellTurretTile extends ModdedTile implements ITooltipProvider
         if (sp != null) {
             tooltip.add(Component.translatable("ars_nouveau.spell_turret.linked_source_provider", sp.first().toShortString()));
         }
-    }
-
-    public PlayState walkPredicate(AnimationState<?> event) {
-        if (playRecoil) {
-            event.getController().forceAnimationReset();
-            event.getController().setAnimation(RawAnimation.begin().thenPlay("recoil"));
-            playRecoil = false;
-        }
-        return PlayState.CONTINUE;
-    }
-
-    AnimationController castController;
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        castController = new AnimationController<>(this, "castController", 0, this::walkPredicate);
-        data.add(castController);
-    }
-
-    AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return factory;
     }
 
     @Override

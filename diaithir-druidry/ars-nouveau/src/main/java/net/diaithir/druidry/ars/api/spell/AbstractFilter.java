@@ -1,7 +1,7 @@
 package net.diaithir.druidry.ars.api.spell;
 
 import net.diaithir.druidry.ars.api.documentation.DocAssets;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
@@ -15,7 +15,7 @@ import java.util.Set;
  */
 public abstract class AbstractFilter extends AbstractEffect implements IFilter {
 
-    public AbstractFilter(ResourceLocation registryName, String name) {
+    public AbstractFilter(Identifier registryName, String name) {
         super(registryName, name);
     }
 

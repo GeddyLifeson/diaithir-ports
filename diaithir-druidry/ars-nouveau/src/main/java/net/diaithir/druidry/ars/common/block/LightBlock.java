@@ -29,7 +29,7 @@ public class LightBlock extends ModBlock implements ITickableBlock, SimpleWaterl
     protected static final VoxelShape SHAPE = Block.box(4.0D, 4.0D, 4.0D, 12.0D, 12.0D, 12.0D);
 
     public LightBlock() {
-        super(defaultProperties().lightLevel((bs) -> bs.getValue(LIGHT_LEVEL) == 0 ? 14 : bs.getValue(LIGHT_LEVEL)).noCollission().noOcclusion().dynamicShape().strength(0f, 0f));
+        super(defaultProperties().lightLevel((bs) -> bs.getValue(LIGHT_LEVEL) == 0 ? 14 : bs.getValue(LIGHT_LEVEL)).noCollision().noOcclusion().dynamicShape().strength(0f, 0f));
         registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false));
     }
 
@@ -45,7 +45,7 @@ public class LightBlock extends ModBlock implements ITickableBlock, SimpleWaterl
 
     @Override
     public RenderShape getRenderShape(BlockState p_149645_1_) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.MODEL;
     }
 
 
@@ -58,7 +58,7 @@ public class LightBlock extends ModBlock implements ITickableBlock, SimpleWaterl
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof LightTile tile) {
-            RandomSource random = context.getLevel().random;
+            RandomSource random = context.getLevel().getRandom();
             tile.color = new ParticleColor(
                     Math.max(10, random.nextInt(255)),
                     Math.max(10, random.nextInt(255)),
@@ -79,9 +79,9 @@ public class LightBlock extends ModBlock implements ITickableBlock, SimpleWaterl
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction side, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, net.minecraft.world.level.LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction side, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         if (stateIn.getValue(WATERLOGGED)) {
-            worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+            ticks.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
         }
         return stateIn;
     }

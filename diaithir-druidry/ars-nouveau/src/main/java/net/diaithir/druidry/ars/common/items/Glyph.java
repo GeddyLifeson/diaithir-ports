@@ -1,23 +1,19 @@
 package net.diaithir.druidry.ars.common.items;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.api.documentation.DocClientUtils;
 import net.diaithir.druidry.ars.api.registry.GlyphRegistry;
 import net.diaithir.druidry.ars.api.spell.AbstractSpellPart;
 import net.diaithir.druidry.ars.api.spell.SpellSchool;
-import net.diaithir.druidry.ars.client.gui.SchoolTooltip;
 import net.diaithir.druidry.ars.common.capability.IPlayerCap;
 import net.diaithir.druidry.ars.setup.config.Config;
 import net.diaithir.druidry.ars.setup.registry.CapabilityRegistry;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -40,8 +36,8 @@ public class Glyph extends ModItem {
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level worldIn, @NotNull Player playerIn, @NotNull InteractionHand handIn) {
-        if (worldIn.isClientSide)
+    public @NotNull InteractionResult use(Level worldIn, @NotNull Player playerIn, @NotNull InteractionHand handIn) {
+        if (worldIn.isClientSide())
             return super.use(worldIn, playerIn, handIn);
 
         if (!Config.isGlyphEnabled(this.spellPart.getRegistryName())) {
@@ -82,7 +78,7 @@ public class Glyph extends ModItem {
     }
 
     @Override
-    public @Nullable String getCreatorModId(@NotNull ItemStack itemStack) {
+    public @Nullable String getCreatorModId(net.minecraft.core.HolderLookup.Provider registries, @NotNull ItemStack itemStack) {
         return ModList.get()
                 .getModContainerById(spellPart.getRegistryName().getNamespace())
                 .map(ModContainer::getModInfo)
@@ -90,18 +86,18 @@ public class Glyph extends ModItem {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltip2, @NotNull TooltipFlag flagIn) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip2, @NotNull TooltipFlag flagIn) {
         if (spellPart == null)
             return;
 
         if (!Config.isGlyphEnabled(this.spellPart.getRegistryName())) {
-            tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("tooltip.ars_nouveau.glyph_disabled"), context));
+            tooltip2.accept(Component.translatable("tooltip.ars_nouveau.glyph_disabled"));
         } else if (spellPart != null) {
-            tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("tooltip.ars_nouveau.glyph_level", spellPart.getConfigTier().value).setStyle(Style.EMPTY.withColor(ChatFormatting.BLUE)), context));
-            if (Screen.hasShiftDown() && !spellPart.spellSchools.isEmpty()) {
-                tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.schools"), context));
+            tooltip2.accept(Component.translatable("tooltip.ars_nouveau.glyph_level", spellPart.getConfigTier().value).setStyle(Style.EMPTY.withColor(ChatFormatting.BLUE)));
+            if (net.diaithir.druidry.ars.common.items.TooltipUtil.hasShiftDown() && !spellPart.spellSchools.isEmpty()) {
+                tooltip2.accept(Component.translatable("ars_nouveau.schools"));
                 for (SpellSchool s : spellPart.spellSchools) {
-                    tooltip2.addAll(DocClientUtils.splitTooltip(s.getTextComponent(), context));
+                    tooltip2.accept(s.getTextComponent());
                 }
             }
         }
@@ -111,23 +107,15 @@ public class Glyph extends ModItem {
         IPlayerCap playerDataCap = CapabilityRegistry.getPlayerDataCap(player);
         if (playerDataCap != null) {
             if (playerDataCap.knowsGlyph(spellPart) || GlyphRegistry.getDefaultStartingSpells().contains(spellPart)) {
-                tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("tooltip.ars_nouveau.glyph_known").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN)), context));
+                tooltip2.accept(Component.translatable("tooltip.ars_nouveau.glyph_known").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN)));
             } else {
-                tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("tooltip.ars_nouveau.glyph_unknown").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), context));
+                tooltip2.accept(Component.translatable("tooltip.ars_nouveau.glyph_unknown").setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)));
             }
         }
-        if (flagIn.hasShiftDown()) {
-            tooltip2.addAll(DocClientUtils.splitTooltip(spellPart.getBookDescLang(), context));
+        if (net.diaithir.druidry.ars.common.items.TooltipUtil.hasShiftDown()) {
+            tooltip2.accept(spellPart.getBookDescLang());
         } else {
-            tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("tooltip.ars_nouveau.hold_shift", Component.keybind("key.sneak")), context));
+            tooltip2.accept(Component.translatable("tooltip.ars_nouveau.hold_shift", Component.keybind("key.sneak")));
         }
-    }
-
-    @Override
-    public @NotNull Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack pStack) {
-        if (!Screen.hasShiftDown() && spellPart != null && !spellPart.spellSchools.isEmpty()) {
-            return Optional.of(new SchoolTooltip(spellPart, true));
-        }
-        return Optional.empty();
     }
 }

@@ -27,7 +27,7 @@ import net.neoforged.neoforge.common.UsernameCache;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import net.neoforged.neoforge.event.EventHooks;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.level.block.BreakBlockEvent;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
 
@@ -90,7 +90,7 @@ public class BlockUtil {
         if (!(world instanceof ServerLevel serverLevel))
             return false;
         Player playerEntity = ANFakePlayer.getOrFakePlayer(serverLevel, caster);
-        if (ANEventBus.post(new BlockEvent.BreakEvent(world, pos, world.getBlockState(pos), playerEntity)))
+        if (ANEventBus.post(new BreakBlockEvent(world, pos, world.getBlockState(pos), playerEntity)))
             return false;
         world.getBlockState(pos).getBlock().playerWillDestroy(world, pos, world.getBlockState(pos), playerEntity);
         return world.destroyBlock(pos, dropBlock);
@@ -101,7 +101,7 @@ public class BlockUtil {
             return false;
 
         Player playerEntity = ANFakePlayer.getOrFakePlayer(serverLevel, caster);
-        return !ANEventBus.post(new BlockEvent.BreakEvent(world, pos, world.getBlockState(pos), playerEntity));
+        return !ANEventBus.post(new BreakBlockEvent(world, pos, world.getBlockState(pos), playerEntity));
     }
 
     public static void safelyUpdateState(Level world, BlockPos pos, BlockState state) {
@@ -123,7 +123,7 @@ public class BlockUtil {
             return false;
 
         Player playerEntity = ANFakePlayer.getOrFakePlayer(serverLevel, caster);
-        if (ANEventBus.post(new BlockEvent.BreakEvent(world, pos, world.getBlockState(pos), playerEntity)))
+        if (ANEventBus.post(new BreakBlockEvent(world, pos, world.getBlockState(pos), playerEntity)))
             return false;
 
         return destroyBlockWithoutSound(world, pos, dropBlock, playerEntity);
@@ -153,9 +153,9 @@ public class BlockUtil {
         if (world == null || pos == null) return new ArrayList<>();
         ArrayList<IItemHandler> iInventories = new ArrayList<>();
         for (Direction d : Direction.values()) {
-            var cap = world.getCapability(Capabilities.ItemHandler.BLOCK, pos.relative(d), null);
+            var cap = world.getCapability(Capabilities.Item.BLOCK, pos.relative(d), null);
             if (cap != null) {
-                iInventories.add(cap);
+                iInventories.add(IItemHandler.of(cap));
             }
         }
 
@@ -217,14 +217,14 @@ public class BlockUtil {
             }
         }
 
-        player.getInventory().items.set(player.getInventory().selected, mainhand);
+        player.getInventory().setItem(player.getInventory().getSelectedSlot(), mainhand);
 
         if (!bypassTool && (state.getDestroySpeed(level, pos) < 0 || !state.canHarvestBlock(level, pos, player))) {
             return false;
         }
 
         GameType type = player.getAbilities().instabuild ? GameType.CREATIVE : GameType.SURVIVAL;
-        BlockEvent.BreakEvent exp = CommonHooks.fireBlockBreak(level, type, player, pos, state);
+        BreakBlockEvent exp = CommonHooks.fireBlockBreak(level, type, player, pos, state);
         if (exp.isCanceled()) {
             return false;
         } else {
@@ -272,7 +272,7 @@ public class BlockUtil {
      * @return If the block was actually removed.
      */
     public static boolean removeBlock(ServerLevel level, ServerPlayer player, BlockPos pos, BlockState state, boolean canHarvest) {
-        boolean removed = state.onDestroyedByPlayer(level, pos, player, canHarvest, level.getFluidState(pos));
+        boolean removed = state.onDestroyedByPlayer(level, pos, player, player.getMainHandItem(), canHarvest, level.getFluidState(pos));
         if (removed) {
             state.getBlock().destroy(level, pos, state);
         }

@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -27,12 +27,12 @@ public class SconceBlock extends TickableModBlock {
                     Direction.WEST, Block.box(10.0D, 3.0D, 5D, 16.0D, 13.0D, 11D),
                     Direction.EAST, Block.box(0.0D, 3.0D, 5D, 6.0D, 13.0D, 11D)));
 
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 
     public static final Property<Integer> LIGHT_LEVEL = IntegerProperty.create("level", 0, 15);
 
     public SconceBlock() {
-        super(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(2.0f, 3.0f).noOcclusion().noCollission().lightLevel((b) -> b.getValue(LIGHT_LEVEL)));
+        super(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(2.0f, 3.0f).noOcclusion().noCollision().lightLevel((b) -> b.getValue(LIGHT_LEVEL)));
     }
 
     @Override
@@ -51,7 +51,7 @@ public class SconceBlock extends TickableModBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState p_196271_1_, Direction p_196271_2_, BlockState p_196271_3_, LevelAccessor p_196271_4_, BlockPos p_196271_5_, BlockPos p_196271_6_) {
+    public BlockState updateShape(BlockState p_196271_1_, net.minecraft.world.level.LevelReader p_196271_4_, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos p_196271_5_, Direction p_196271_2_, BlockPos p_196271_6_, BlockState p_196271_3_, net.minecraft.util.RandomSource random) {
         return p_196271_2_.getOpposite() == p_196271_1_.getValue(FACING) && !p_196271_1_.canSurvive(p_196271_4_, p_196271_5_) ? Blocks.AIR.defaultBlockState() : p_196271_1_;
     }
 

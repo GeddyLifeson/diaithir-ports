@@ -15,20 +15,19 @@ import net.diaithir.druidry.ars.api.spell.SpellStats;
 import net.diaithir.druidry.ars.api.util.BlockUtil;
 import net.diaithir.druidry.ars.api.util.SourceUtil;
 import net.diaithir.druidry.ars.client.particle.ColorPos;
-import net.diaithir.druidry.ars.client.particle.GlowParticleData;
 import net.diaithir.druidry.ars.client.particle.ParticleColor;
-import net.diaithir.druidry.ars.client.particle.ParticleUtil;
 import net.diaithir.druidry.ars.common.block.ITickable;
 import net.diaithir.druidry.ars.common.block.RitualBrazierBlock;
 import net.diaithir.druidry.ars.common.util.PortUtil;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -41,16 +40,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 
-public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, GeoBlockEntity, ILightable, ITickable, IInvProvider, IDispellable, IWandable {
+public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, ILightable, ITickable, IInvProvider, IDispellable, IWandable {
     public AbstractRitual ritual;
-    AnimatableInstanceCache manager = GeckoLibUtil.createInstanceCache(this);
     public boolean isDecorative;
     public ParticleColor color = ParticleColor.defaultParticleColor();
     public boolean isOff;
@@ -68,16 +62,7 @@ public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, G
 
     @Override
     public void onFinishedConnectionFirst(@Nullable BlockPos storedPos, @Nullable LivingEntity storedEntity, Player playerEntity) {
-        // check if position is a BrazierRelayTile
-        if (storedPos != null && level.getBlockEntity(storedPos) instanceof BrazierRelayTile relayTile) {
-            if (BlockUtil.distanceFrom(level, getBlockPos(), storedPos) > 16) {
-                PortUtil.sendMessage(playerEntity, Component.translatable("ars_nouveau.connections.fail"));
-                return;
-            }
-            relayPos = storedPos.immutable();
-            PortUtil.sendMessage(playerEntity, Component.translatable("ars_nouveau.brazier_relay.connected"));
-            updateBlock();
-        }
+        // Brazier relays were not ported (26.1), so there is nothing to connect to.
     }
 
     @Override
@@ -97,42 +82,14 @@ public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, G
         return list;
     }
 
+    /** Client flame particles were not ported (26.1). */
     public void makeParticle(ParticleColor centerColor, ParticleColor outerColor, int intensity) {
-        Level world = getLevel();
-        BlockPos pos = getBlockPos();
-        double xzOffset = 0.25;
-        boolean isWeakFire = ritual != null && ritual.needsSourceNow();
-        double centerYMax = isWeakFire ? 0.1 : 0.2;
-        double outerYMax = isWeakFire ? 0.5 : 0.7;
-        double ySpeed = isWeakFire ? 0.02f : 0.05f;
-        intensity = isWeakFire ? intensity / 2 : intensity;
-        for (int i = 0; i < intensity; i++) {
-            world.addParticle(
-                    GlowParticleData.createData(centerColor.nextColor((int) level.getGameTime() * 10)),
-                    pos.getX() + 0.5 + ParticleUtil.inRange(-xzOffset / 2, xzOffset / 2), pos.getY() + 1 + ParticleUtil.inRange(-0.05, centerYMax), pos.getZ() + 0.5 + ParticleUtil.inRange(-xzOffset / 2, xzOffset / 2),
-                    0, ParticleUtil.inRange(0.0, ySpeed), 0);
-        }
-        for (int i = 0; i < intensity; i++) {
-            world.addParticle(
-                    GlowParticleData.createData(outerColor.nextColor((int) level.getGameTime() * 10)),
-                    pos.getX() + 0.5 + ParticleUtil.inRange(-xzOffset, xzOffset), pos.getY() + 1 + ParticleUtil.inRange(0, outerYMax), pos.getZ() + 0.5 + ParticleUtil.inRange(-xzOffset, xzOffset),
-                    0, ParticleUtil.inRange(0.0, ySpeed), 0);
-        }
-        if (relayPos != null && level.getBlockEntity(relayPos) instanceof BrazierRelayTile relayTile) {
-            relayTile.makeParticle(centerColor, outerColor, intensity);
-        }
     }
 
     @Override
     public void tick() {
-        if (isDecorative && level.isClientSide) {
-            makeParticle(color.nextColor((int) level.getGameTime() * 20), color.nextColor((int) level.getGameTime() * 20 + 200), 10);
+        if (isDecorative && level.isClientSide()) {
             return;
-        }
-
-
-        if (level.isClientSide && ritual != null) {
-            makeParticle(ritual.getCenterColor(), ritual.getOuterColor(), ritual.getParticleIntensity());
         }
         if (isOff)
             return;
@@ -146,7 +103,7 @@ public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, G
                 updateBlock();
                 return;
             }
-            if (!ritual.isRunning() && !level.isClientSide && level.getGameTime() % 5 == 0) {
+            if (!ritual.isRunning() && !level.isClientSide() && level.getGameTime() % 5 == 0) {
                 level.getEntitiesOfClass(ItemEntity.class, new AABB(getBlockPos()).inflate(1)).forEach(i -> {
                     tryBurnStack(i.getItem());
                 });
@@ -166,13 +123,7 @@ public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, G
                     return;
                 }
             }
-            if (this.relayPos != null && level.isLoaded(this.relayPos) && level.getBlockEntity(this.relayPos) instanceof BrazierRelayTile relayTile) {
-                ritual.tryTick(relayTile);
-                relayTile.ticksToLightOff = 2;
-                relayTile.isDecorative = false;
-            } else {
-                ritual.tryTick(this);
-            }
+            ritual.tryTick(this);
         }
     }
 
@@ -189,9 +140,8 @@ public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, G
     }
 
     public boolean tryBurnStack(ItemStack stack) {
-        if (ritual != null && !ritual.isRunning() && !level.isClientSide && ritual.canConsumeItem(stack)) {
+        if (ritual != null && !ritual.isRunning() && !level.isClientSide() && ritual.canConsumeItem(stack)) {
             ritual.onItemConsumed(stack);
-            ParticleUtil.spawnPoof((ServerLevel) level, getBlockPos());
             level.playSound(null, getBlockPos(), SoundEvents.FIRECHARGE_USE, SoundSource.NEUTRAL, 0.3f, 1.0f);
             return true;
         }
@@ -219,44 +169,44 @@ public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, G
         ritual.onStart(player);
     }
 
+    private RegistryAccess registries() {
+        return level != null ? level.registryAccess() : RegistryAccess.EMPTY;
+    }
+
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-        super.loadAdditional(tag, pRegistries);
-        String ritualIDString = tag.getString("ritualID");
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
+        String ritualIDString = input.getStringOr("ritualID", "");
         if (!ritualIDString.isEmpty()) {
-            ResourceLocation ritualID = ResourceLocation.tryParse(ritualIDString);
+            Identifier ritualID = Identifier.tryParse(ritualIDString);
             ritual = RitualRegistry.getRitual(ritualID);
             if (ritual != null) {
                 ritual.tile = this;
-                ritual.read(pRegistries, tag);
+                ritual.read(input.lookup(), input.read("ritualData", CompoundTag.CODEC).orElse(new CompoundTag()));
             }
         } else {
             ritual = null;
         }
-        color = ParticleColorRegistry.from(tag.getCompound("color"));
-        isDecorative = tag.getBoolean("decorative");
-        isOff = tag.getBoolean("off");
-
-        if (tag.contains("relayPos")) {
-            this.relayPos = BlockPos.of(tag.getLong("relayPos"));
-        }
+        color = input.read("color", CompoundTag.CODEC).map(ParticleColorRegistry::from).orElse(ParticleColor.defaultParticleColor());
+        isDecorative = input.getBooleanOr("decorative", false);
+        isOff = input.getBooleanOr("off", false);
+        this.relayPos = input.read("relayPos", BlockPos.CODEC).orElse(null);
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(tag, pRegistries);
+    protected void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
         if (ritual != null) {
-            tag.putString("ritualID", ritual.getRegistryName().toString());
-            ritual.write(pRegistries, tag);
-        } else {
-            tag.remove("ritualID");
+            output.putString("ritualID", ritual.getRegistryName().toString());
+            CompoundTag ritualTag = new CompoundTag();
+            ritual.write(registries(), ritualTag);
+            output.store("ritualData", CompoundTag.CODEC, ritualTag);
         }
-        tag.put("color", color.serialize());
-        tag.putBoolean("decorative", isDecorative);
-        tag.putBoolean("off", isOff);
-        // store the relay position
+        output.store("color", CompoundTag.CODEC, color.serialize());
+        output.putBoolean("decorative", isDecorative);
+        output.putBoolean("off", isOff);
         if (this.relayPos != null) {
-            tag.putLong("relayPos", this.relayPos.asLong());
+            output.store("relayPos", BlockPos.CODEC, this.relayPos);
         }
     }
 
@@ -264,7 +214,7 @@ public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, G
         return this.ritual == null || this.ritual.isRunning();
     }
 
-    public void setRitual(ResourceLocation selectedRitual) {
+    public void setRitual(Identifier selectedRitual) {
         this.ritual = RitualRegistry.getRitual(selectedRitual);
         if (ritual != null) {
             this.ritual.tile = this;
@@ -307,15 +257,6 @@ public class RitualBrazierTile extends ModdedTile implements ITooltipProvider, G
         }
     }
 
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar animatableManager) {
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return manager;
-    }
 
     @Override
     public void onLight(HitResult rayTraceResult, Level world, LivingEntity shooter, SpellStats stats, SpellContext spellContext) {

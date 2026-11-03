@@ -8,7 +8,7 @@ import net.diaithir.druidry.ars.common.spell.augment.AugmentDurationDown;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentExtendTime;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentFortune;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentRandomize;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -78,7 +78,7 @@ public class EffectHarm extends AbstractEffect implements IDamageEffect, IPotion
     }
 
     @Override
-    protected void addDefaultAugmentLimits(Map<ResourceLocation, Integer> defaults) {
+    protected void addDefaultAugmentLimits(Map<Identifier, Integer> defaults) {
         defaults.put(AugmentAmplify.INSTANCE.getRegistryName(), 2);
     }
 

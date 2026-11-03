@@ -44,10 +44,10 @@ public interface ICasterTool extends IScribeable, IDisplayMana, ISpellHotkeyList
             // Thanks mojang
             String[] words = new String[]{"the", "elder", "scrolls", "klaatu", "berata", "niktu", "xyzzy", "bless", "curse", "light", "darkness", "fire", "air", "earth", "water", "hot", "dry", "cold", "wet", "ignite", "snuff", "embiggen", "twist", "shorten", "stretch", "fiddle", "destroy", "imbue", "galvanize", "enchant", "free", "limited", "range", "of", "towards", "inside", "sphere", "cube", "self", "other", "ball", "mental", "physical", "grow", "shrink", "demon", "elemental", "spirit", "animal", "creature", "beast", "humanoid", "undead", "fresh", "stale", "phnglui", "mglwnafh", "cthulhu", "rlyeh", "wgahnagl", "fhtagn", "baguette"};
             // Pick between 3 and 5 words
-            int numWords = world.random.nextInt(3) + 3;
+            int numWords = world.getRandom().nextInt(3) + 3;
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < numWords; i++) {
-                sb.append(words[world.random.nextInt(words.length)]).append(" ");
+                sb.append(words[world.getRandom().nextInt(words.length)]).append(" ");
             }
             tableCaster.setHidden(true)
                     .setHiddenRecipe(sb.toString())
@@ -100,6 +100,6 @@ public interface ICasterTool extends IScribeable, IDisplayMana, ISpellHotkeyList
     default void getInformation(ItemStack stack, Item.TooltipContext context, List<Component> tooltip2, TooltipFlag flagIn) {
         AbstractCaster<?> caster = getSpellCaster(stack);
         if (caster == null) return;
-        stack.addToTooltip(caster.getComponentType(), context, component -> tooltip2.addAll(DocClientUtils.splitTooltip(component, context)), flagIn);
+        caster.addToTooltip(context, component -> tooltip2.addAll(DocClientUtils.splitTooltip(component, context)), flagIn, stack.getComponents());
     }
 }

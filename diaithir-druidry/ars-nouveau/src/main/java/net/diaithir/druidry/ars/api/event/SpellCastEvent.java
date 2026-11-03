@@ -18,6 +18,6 @@ public class SpellCastEvent extends LivingEvent implements ICancellableEvent {
     }
 
     public Level getWorld() {
-        return this.getEntity().level;
+        return this.getEntity().level();
     }
 }

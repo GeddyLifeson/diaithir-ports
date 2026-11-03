@@ -1,21 +1,18 @@
 package net.diaithir.druidry.ars.common.entity;
 
 import net.diaithir.druidry.ars.api.util.BlockUtil;
-import net.diaithir.druidry.ars.api.util.NBTUtil;
 import net.diaithir.druidry.ars.api.util.NearbyPlayerCache;
-import net.diaithir.druidry.ars.client.particle.GlowParticleData;
 import net.diaithir.druidry.ars.client.particle.ParticleColor;
-import net.diaithir.druidry.ars.client.particle.ParticleUtil;
 import net.diaithir.druidry.ars.setup.registry.ModEntities;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.Vec3;
 
 public class EntityFollowProjectile extends ColoredProjectile {
@@ -107,10 +104,7 @@ public class EntityFollowProjectile extends ColoredProjectile {
         }
         Vec3 vec3d2 = this.getDeltaMovement();
         BlockPos dest = this.entityData.get(EntityFollowProjectile.to);
-        if (BlockUtil.distanceFrom(level, this.blockPosition(), dest) < 1 || this.age > 1000 || BlockUtil.distanceFrom(level, this.blockPosition(), dest) > this.entityData.get(DESPAWN)) {
-            if (level.isClientSide && entityData.get(SPAWN_TOUCH)) {
-                ParticleUtil.spawnTouch((ClientLevel) level, this.getOnPos(), new ParticleColor(this.entityData.get(RED), this.entityData.get(GREEN), this.entityData.get(BLUE)));
-            }
+        if (BlockUtil.distanceFrom(level(), this.blockPosition(), dest) < 1 || this.age > 1000 || BlockUtil.distanceFrom(level(), this.blockPosition(), dest) > this.entityData.get(DESPAWN)) {
             this.remove(RemovalReason.DISCARDED);
             return;
         }
@@ -144,45 +138,20 @@ public class EntityFollowProjectile extends ColoredProjectile {
         this.setPos(posX, posY, posZ);
 
         this.setDeltaMovement(motionX, motionY, motionZ);
-
-        if (level.isClientSide && this.age > 1) {
-            double deltaX = getX() - xOld;
-            double deltaY = getY() - yOld;
-            double deltaZ = getZ() - zOld;
-            float dist = (float) (Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ) * 8.0f);
-            for (double i = 0.0; i <= dist; i++) {
-                double coeff = (i / dist);
-                level.addAlwaysVisibleParticle(GlowParticleData.createData(new ParticleColor(this.entityData.get(RED), this.entityData.get(GREEN), this.entityData.get(BLUE))),
-                        true,
-                        (getX() + deltaX * coeff), (getY() + deltaY * coeff), (getZ() + deltaZ * coeff),
-                        0.0125f * (random.nextFloat() - 0.5f), 0.0125f * (random.nextFloat() - 0.5f), 0.0125f * (random.nextFloat() - 0.5f));
-
-            }
-
-        }
     }
 
     @Override
-    public void setRemoved(RemovalReason reason) {
-        if (reason == RemovalReason.UNLOADED_TO_CHUNK)
-            reason = RemovalReason.DISCARDED;
-        super.setRemoved(reason);
+    protected void readAdditionalSaveData(ValueInput input) {
+        super.readAdditionalSaveData(input);
+        this.entityData.set(EntityFollowProjectile.from, input.read("from", BlockPos.CODEC).orElse(BlockPos.ZERO));
+        this.entityData.set(EntityFollowProjectile.to, input.read("to", BlockPos.CODEC).orElse(BlockPos.ZERO));
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
-        this.entityData.set(EntityFollowProjectile.from, NBTUtil.getBlockPos(compound, "from"));
-        this.entityData.set(EntityFollowProjectile.to, NBTUtil.getBlockPos(compound, "to"));
-    }
-
-    @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        if (from != null)
-            NBTUtil.storeBlockPos(compound, "from", this.entityData.get(EntityFollowProjectile.from));
-        if (to != null)
-            NBTUtil.storeBlockPos(compound, "to", this.entityData.get(EntityFollowProjectile.to));
+    protected void addAdditionalSaveData(ValueOutput output) {
+        super.addAdditionalSaveData(output);
+        output.store("from", BlockPos.CODEC, this.entityData.get(EntityFollowProjectile.from));
+        output.store("to", BlockPos.CODEC, this.entityData.get(EntityFollowProjectile.to));
     }
 
     @Override

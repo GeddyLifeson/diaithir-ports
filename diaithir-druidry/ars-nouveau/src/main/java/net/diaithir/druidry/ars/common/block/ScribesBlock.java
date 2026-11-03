@@ -12,12 +12,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -37,15 +37,15 @@ public class ScribesBlock extends TableBlock {
 
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+    public InteractionResult useItemOn(ItemStack heldStack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
         if (handIn != InteractionHand.MAIN_HAND || !(world.getBlockEntity(pos) instanceof ScribesTile tile)) {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.TRY_WITH_EMPTY_HAND;
         }
         if (player.getItemInHand(handIn).getItem() instanceof SpellBook && !player.isShiftKeyDown()) {
             if (player instanceof ServerPlayer serverPlayer) {
                 Networking.sendToPlayerClient(new PacketOpenGlyphCraft(pos), serverPlayer);
             }
-            return ItemInteractionResult.sidedSuccess(world.isClientSide);
+            return InteractionResult.SUCCESS;
         }
 
         if (state.getValue(ScribesBlock.PART) != ThreePartBlock.HEAD) {
@@ -55,7 +55,7 @@ public class ScribesBlock extends TableBlock {
                 return headState.useItemOn(heldStack, world, player, handIn, hit.withPosition(headPos));
             }
 
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.TRY_WITH_EMPTY_HAND;
         }
 
         var interactEvent = NeoForge.EVENT_BUS.post(new ScribesTableInteractEvent(world, pos, tile, player, handIn, heldStack));
@@ -64,44 +64,44 @@ public class ScribesBlock extends TableBlock {
         }
 
         if (!player.isShiftKeyDown()) {
-            if (!world.isClientSide) {
+            if (!world.isClientSide()) {
                 if (!tile.consumeStack(player.getItemInHand(handIn))) {
                     if (!tile.getStack().isEmpty() && player.getItemInHand(handIn).isEmpty()) {
                         ItemEntity item = new ItemEntity(world, player.getX(), player.getY(), player.getZ(), tile.getStack());
                         world.addFreshEntity(item);
                         tile.setStack(ItemStack.EMPTY);
-                    } else if (!player.getInventory().getSelected().isEmpty()) {
+                    } else if (!player.getInventory().getSelectedItem().isEmpty()) {
                         if (!tile.getStack().isEmpty()) {
                             ItemEntity item = new ItemEntity(world, player.getX(), player.getY(), player.getZ(), tile.getStack());
                             world.addFreshEntity(item);
                         }
 
-                        tile.setStack(player.getInventory().removeItem(player.getInventory().selected, 1));
+                        tile.setStack(player.getInventory().removeItem(player.getInventory().getSelectedSlot(), 1));
                     }
                     BlockState updateState = tile.getBlockState();
                     world.sendBlockUpdated(tile.getBlockPos(), updateState, updateState, 2);
                 }
             }
-            return ItemInteractionResult.sidedSuccess(world.isClientSide);
+            return InteractionResult.SUCCESS;
         }
 
         ItemStack stack = tile.getStack();
         if (player.getItemInHand(handIn).getItem() instanceof DominionWand) {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.TRY_WITH_EMPTY_HAND;
         }
         if (stack == null || stack.isEmpty())
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.TRY_WITH_EMPTY_HAND;
 
         if (stack.getItem() instanceof IScribeable scribeable) {
-            if (!world.isClientSide) {
+            if (!world.isClientSide()) {
                 scribeable.onScribe(world, pos, player, handIn, stack);
                 BlockState updateState = tile.getBlockState();
                 world.sendBlockUpdated(tile.getBlockPos(), updateState, updateState, 2);
             }
-            return ItemInteractionResult.sidedSuccess(world.isClientSide);
+            return InteractionResult.SUCCESS;
         }
 
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        return InteractionResult.TRY_WITH_EMPTY_HAND;
     }
 
     @Override
@@ -116,11 +116,12 @@ public class ScribesBlock extends TableBlock {
 
 
     // If the user breaks the other side of the table, this side needs to drop its item
-    public BlockState tearDown(BlockState state, Direction direction, BlockState state2, LevelAccessor world, BlockPos pos, BlockPos pos2) {
+    @Override
+    public BlockState tearDown(BlockState state, Direction direction, BlockState state2, LevelReader world, BlockPos pos, BlockPos pos2) {
         if (!world.isClientSide()) {
             BlockEntity entity = world.getBlockEntity(pos);
             if (entity instanceof ScribesTile tile && tile.getStack() != null && world instanceof ServerLevelAccessor levelAccessor) {
-                world.addFreshEntity(new ItemEntity(levelAccessor.getLevel(), pos.getX(), pos.getY(), pos.getZ(), tile.getStack()));
+                levelAccessor.getLevel().addFreshEntity(new ItemEntity(levelAccessor.getLevel(), pos.getX(), pos.getY(), pos.getZ(), tile.getStack()));
                 tile.setStack(ItemStack.EMPTY);
                 tile.refundConsumed();
             }
@@ -141,8 +142,8 @@ public class ScribesBlock extends TableBlock {
             if (stack.getItem() instanceof DominionWand) {
                 return;
             }
-            ItemInteractionResult result = BlockRegistry.SCRIBES_BLOCK.get().useItemOn(stack, state, world, pos, event.getEntity(), event.getHand(), event.getHitVec());
-            event.setCancellationResult(result.result());
+            InteractionResult result = BlockRegistry.SCRIBES_BLOCK.get().useItemOn(stack, state, world, pos, event.getEntity(), event.getHand(), event.getHitVec());
+            event.setCancellationResult(result);
             event.setCanceled(true);
         }
     }
@@ -153,7 +154,7 @@ public class ScribesBlock extends TableBlock {
     }
 
     @Override
-    public boolean isPathfindable(BlockState pState, PathComputationType pType) {
+    protected boolean isPathfindable(BlockState pState, PathComputationType pType) {
         return false;
     }
 }

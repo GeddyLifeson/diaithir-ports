@@ -4,8 +4,6 @@ import net.diaithir.druidry.ars.api.ANFakePlayer;
 import net.diaithir.druidry.ars.api.event.SpellDamageEvent;
 import net.diaithir.druidry.ars.api.perk.PerkAttributes;
 import net.diaithir.druidry.ars.api.util.DamageUtil;
-import net.diaithir.druidry.ars.common.mixin.looting.EnchantedCountIncreaseFunctionMixin;
-import net.diaithir.druidry.ars.common.mixin.looting.LootItemRandomChanceWithEnchantedBonusConditionMixin;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentFortune;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentRandomize;
 import net.diaithir.druidry.ars.setup.registry.DamageTypesRegistry;
@@ -48,7 +46,7 @@ public interface IDamageEffect {
             totalDamage += randomRolls(stats, server);
 
         ///Make sure your DamageSource is an instance of SpellDamageSource,made with [#source(LevelAccessor , ResourceKey)] or manually,
-        ///The luck augment will be used during loot generation [LootItemRandomChanceWithEnchantedBonusConditionMixin] and [EnchantedCountIncreaseFunctionMixin]
+        ///The luck augment will be used during loot generation the looting mixins
         if (source instanceof DamageUtil.SpellDamageSource spellSource) {
             spellSource.setLuckLevel(stats.getBuffCount(AugmentFortune.INSTANCE));
         }
@@ -61,7 +59,7 @@ public interface IDamageEffect {
         if (totalDamage <= 0 || preDamage.isCanceled())
             return false;
 
-        if (!entity.hurt(source, totalDamage)) {
+        if (!entity.hurtServer(server, source, totalDamage)) {
             return false;
         }
 
@@ -74,7 +72,7 @@ public interface IDamageEffect {
     }
 
     default int randomRolls(SpellStats stats, ServerLevel server) {
-        return stats.getBuffCount(AugmentRandomize.INSTANCE) * server.random.nextIntBetweenInclusive(-1, 1);
+        return stats.getBuffCount(AugmentRandomize.INSTANCE) * server.getRandom().nextIntBetweenInclusive(-1, 1);
     }
 
     /**

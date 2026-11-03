@@ -2,27 +2,19 @@ package net.diaithir.druidry.ars.common.entity;
 
 import net.diaithir.druidry.ars.api.block.IPrismaticBlock;
 import net.diaithir.druidry.ars.api.event.SpellProjectileHitEvent;
-import net.diaithir.druidry.ars.api.particle.ParticleEmitter;
-import net.diaithir.druidry.ars.api.particle.timelines.ProjectileTimeline;
-import net.diaithir.druidry.ars.api.particle.timelines.TimelineEntryData;
-import net.diaithir.druidry.ars.api.particle.timelines.TimelineMap;
-import net.diaithir.druidry.ars.api.registry.ParticleTimelineRegistry;
 import net.diaithir.druidry.ars.api.sound.ConfiguredSpellSound;
 import net.diaithir.druidry.ars.api.spell.Spell;
 import net.diaithir.druidry.ars.api.spell.SpellContext;
 import net.diaithir.druidry.ars.api.spell.SpellResolver;
-import net.diaithir.druidry.ars.client.ClientInfo;
 import net.diaithir.druidry.ars.common.lib.EntityTags;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentPierce;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentSensitive;
 import net.diaithir.druidry.ars.common.spell.method.MethodProjectile;
-import net.diaithir.druidry.ars.common.util.ANCodecs;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import net.diaithir.druidry.ars.setup.registry.DataSerializers;
 import net.diaithir.druidry.ars.setup.registry.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -39,23 +31,20 @@ import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.TargetBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.portal.DimensionTransition;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.portal.TeleportTransition;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
-import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class EntityProjectileSpell extends ColoredProjectile implements GeoEntity {
+public class EntityProjectileSpell extends ColoredProjectile {
 
     public int age;
     protected boolean playedSpawnParticle;
@@ -71,10 +60,6 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
     public boolean canTraversePortals = true;
     public int prismRedirect;
     public boolean redirected;
-    public ParticleEmitter tickEmitter;
-    public ParticleEmitter resolveEmitter;
-    public ParticleEmitter onSpawnEmitter;
-    public ParticleEmitter flairEmitter;
     public ConfiguredSpellSound castSound;
     public ConfiguredSpellSound resolveSound;
 
@@ -137,12 +122,12 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
     @Override
     public void tick() {
         super.tick();
-        if (age == 0 && castSound != null && !level.isClientSide) {
-            castSound.playSound(level, getX(), getY(), getZ());
+        if (age == 0 && castSound != null && !level().isClientSide()) {
+            castSound.playSound(level(), getX(), getY(), getZ());
         }
         age++;
 
-        if ((!level.isClientSide && this.age > getExpirationTime()) || (!level.isClientSide && resolver() == null)) {
+        if ((!level().isClientSide() && this.age > getExpirationTime()) || (!level().isClientSide() && resolver() == null)) {
             this.remove(RemovalReason.DISCARDED);
             return;
         }
@@ -162,7 +147,7 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
             tickNextPosition();
         }
 
-        if (level.isClientSide && this.age >= getParticleDelay()) {
+        if (level().isClientSide() && this.age >= getParticleDelay()) {
             playParticles();
         }
     }
@@ -170,7 +155,7 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
     public HitResult getHitResult() {
         Vec3 thisPosition = this.position();
         Vec3 nextPosition = getNextHitPosition();
-        return this.level.clip(new ClipContext(thisPosition, nextPosition, numSensitive > 0 ? ClipContext.Block.OUTLINE : ClipContext.Block.COLLIDER,
+        return this.level().clip(new ClipContext(thisPosition, nextPosition, numSensitive > 0 ? ClipContext.Block.OUTLINE : ClipContext.Block.COLLIDER,
                 ClipContext.Fluid.NONE, this));
     }
 
@@ -178,7 +163,7 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
     protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
         super.defineSynchedData(pBuilder);
         pBuilder.define(OWNER_ID, -1);
-        pBuilder.define(SPELL_RESOLVER, new SpellResolver(new SpellContext(level, new Spell(), null, null)));
+        pBuilder.define(SPELL_RESOLVER, new SpellResolver(new SpellContext(level(), new Spell(), null, null)));
     }
 
     /**
@@ -199,11 +184,11 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
 
         if (raytraceresult != null && raytraceresult.getType() != HitResult.Type.MISS && !net.neoforged.neoforge.event.EventHooks.onProjectileImpact(this, raytraceresult)) {
             this.onHit(raytraceresult);
-            this.hasImpulse = true;
+            this.needsSync = true;
         }
         if (raytraceresult != null && raytraceresult.getType() == HitResult.Type.MISS && raytraceresult instanceof BlockHitResult blockHitResult
                 && canTraversePortals()) {
-            BlockRegistry.PORTAL_BLOCK.get().onProjectileHit(level, level.getBlockState(BlockPos.containing(raytraceresult.getLocation())),
+            BlockRegistry.PORTAL_BLOCK.get().onProjectileHit(level(), level().getBlockState(BlockPos.containing(raytraceresult.getLocation())),
                     blockHitResult, this);
 
         }
@@ -247,50 +232,16 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
         return 2;
     }
 
+    /** Particle timelines/emitters are client-side and were not ported (26.1). */
     public void buildEmitters() {
-        TimelineMap timelineMap = this.resolver().spell.particleTimeline();
-        ProjectileTimeline projectileTimeline = timelineMap.get(ParticleTimelineRegistry.PROJECTILE_TIMELINE.get());
-        TimelineEntryData trailConfig = projectileTimeline.trailEffect;
-        TimelineEntryData resolveConfig = projectileTimeline.onResolvingEffect;
-        TimelineEntryData spawnConfig = projectileTimeline.onSpawnEffect;
-        TimelineEntryData flairConfig = projectileTimeline.flairEffect;
-
-        this.tickEmitter = new ParticleEmitter(() -> this.getPosition(ClientInfo.partialTicks), this::getRotationVector, trailConfig);
-        this.resolveEmitter = new ParticleEmitter(() -> this.getPosition(ClientInfo.partialTicks), this::getRotationVector, resolveConfig);
-        this.onSpawnEmitter = new ParticleEmitter(() -> this.getPosition(ClientInfo.partialTicks), this::getRotationVector, spawnConfig);
-        this.flairEmitter = new ParticleEmitter(() -> this.getPosition(ClientInfo.partialTicks), this::getRotationVector, flairConfig);
-
-        Vec3 center = this.getDimensions(getPose()).makeBoundingBox(0, 0, 0).getCenter();
-        this.tickEmitter.setPositionOffset(center);
-        this.resolveEmitter.setPositionOffset(center);
-        this.onSpawnEmitter.setPositionOffset(center);
-        this.flairEmitter.setPositionOffset(center);
-
-        this.castSound = projectileTimeline.castSound.sound;
-        this.resolveSound = projectileTimeline.resolveSound.sound;
     }
 
     public void playParticles() {
-        if (tickEmitter == null && resolver() != null) {
-            buildEmitters();
-        }
-        if (this.tickEmitter != null) {
-            this.tickEmitter.tick(level);
-        }
-
-        if (flairEmitter != null) {
-            this.flairEmitter.tick(level);
-        }
-
-        if (!playedSpawnParticle && onSpawnEmitter != null) {
-            this.onSpawnEmitter.tick(level);
-            playedSpawnParticle = true;
-        }
     }
 
     @Nullable
     protected EntityHitResult findHitEntity(Vec3 pStartVec, Vec3 pEndVec) {
-        return ProjectileUtil.getEntityHitResult(this.level, this, pStartVec, pEndVec, this.getBoundingBox().expandTowards(this.getDeltaMovement()).inflate(1.0D), this::canHitEntity);
+        return ProjectileUtil.getEntityHitResult(this.level(), this, pStartVec, pEndVec, this.getBoundingBox().expandTowards(this.getDeltaMovement()).inflate(1.0D), this::canHitEntity);
     }
 
     /**
@@ -311,18 +262,16 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
         Vec3 vec3d = (new Vec3(x, y, z)).normalize().add(this.random.nextGaussian() * (double) 0.0075F * (double) inaccuracy, this.random.nextGaussian() * (double) 0.0075F * (double) inaccuracy, this.random.nextGaussian() * (double) 0.0075F * (double) inaccuracy).scale(velocity);
         this.setDeltaMovement(vec3d);
         float f = Mth.sqrt((float) vec3d.horizontalDistanceSqr());
-        this.yRot = (float) (Mth.atan2(vec3d.x, vec3d.z) * (double) (180F / (float) Math.PI));
-        this.xRot = (float) (Mth.atan2(vec3d.y, f) * (double) (180F / (float) Math.PI));
-        this.yRotO = this.yRot;
-        this.xRotO = this.xRot;
+        this.setYRot((float) (Mth.atan2(vec3d.x, vec3d.z) * (double) (180F / (float) Math.PI)));
+        this.setXRot((float) (Mth.atan2(vec3d.y, f) * (double) (180F / (float) Math.PI)));
+        this.yRotO = this.getYRot();
+        this.xRotO = this.getXRot();
 
     }
 
     @Override
-    public void setRemoved(RemovalReason reason) {
-        if (reason == RemovalReason.UNLOADED_TO_CHUNK)
-            reason = RemovalReason.DISCARDED;
-        super.setRemoved(reason);
+    public void onRemoval(RemovalReason reason) {
+        super.onRemoval(reason);
     }
 
     public EntityProjectileSpell setGravity(boolean noGravity) {
@@ -343,7 +292,7 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
     protected void attemptRemoval() {
         this.pierceLeft--;
         if (this.pierceLeft < 0) {
-            this.level.broadcastEntityEvent(this, (byte) 3);
+            this.level().broadcastEntityEvent(this, (byte) 3);
             this.remove(RemovalReason.DISCARDED);
         }
     }
@@ -377,8 +326,8 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
         result = transformHitResult(result);
 
         if (result instanceof BlockHitResult blockHitResult && !this.isRemoved() && !hitList.contains(blockHitResult.getBlockPos())
-                && level.getBlockState(blockHitResult.getBlockPos()).getBlock() instanceof IPrismaticBlock prismaticBlock) {
-            if (!level.isClientSide) {
+                && level().getBlockState(blockHitResult.getBlockPos()).getBlock() instanceof IPrismaticBlock prismaticBlock) {
+            if (!level().isClientSide()) {
                 SpellProjectileHitEvent event = new SpellProjectileHitEvent(this, result);
                 NeoForge.EVENT_BUS.post(event);
                 if (event.isCanceled()) {
@@ -389,7 +338,7 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
             return;
         }
 
-        if (!level.isClientSide) {
+        if (!level().isClientSide()) {
 
             SpellProjectileHitEvent event = new SpellProjectileHitEvent(this, result);
             NeoForge.EVENT_BUS.post(event);
@@ -400,7 +349,7 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
             if (result instanceof EntityHitResult entityHitResult) {
                 if (entityHitResult.getEntity().equals(this.getOwner())) return;
                 if (this.resolver() != null) {
-                    this.resolver().onResolveEffect(level, result);
+                    this.resolver().onResolveEffect(level(), result);
                     sendResolveParticles();
                     attemptRemoval();
                 }
@@ -408,10 +357,10 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
 
             if (result instanceof BlockHitResult blockraytraceresult && !this.isRemoved() && !hitList.contains(blockraytraceresult.getBlockPos())) {
 
-                BlockState state = level.getBlockState(blockraytraceresult.getBlockPos());
+                BlockState state = level().getBlockState(blockraytraceresult.getBlockPos());
 
                 if (state.is(BlockTags.PORTALS)) {
-                    state.entityInside(level, blockraytraceresult.getBlockPos(), this);
+                    state.entityInside(level(), blockraytraceresult.getBlockPos(), this, net.minecraft.world.entity.InsideBlockEffectApplier.NOOP, false);
                     return;
                 }
 
@@ -429,7 +378,7 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
 
                 if (this.resolver() != null) {
                     this.hitList.add(blockraytraceresult.getBlockPos());
-                    this.resolver().onResolveEffect(this.level, blockraytraceresult);
+                    this.resolver().onResolveEffect(this.level(), blockraytraceresult);
                 }
 
                 sendResolveParticles();
@@ -440,13 +389,13 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
 
     protected void redirect(IPrismaticBlock prismaticBlock, BlockHitResult hitResult) {
         BlockPos hitPos = hitResult.getBlockPos();
-        if (level.isClientSide) {
+        if (level().isClientSide()) {
             Vec3 center = Vec3.atCenterOf(hitPos);
             this.setPos(center.x, center.y, center.z);
 
         }
         Vec3 priorPosition = position();
-        prismaticBlock.onHit(level, level.getBlockState(hitPos), hitPos, this);
+        prismaticBlock.onHit(level(), level().getBlockState(hitPos), hitPos, this);
 
         if (!this.isRemoved() && !position().equals(priorPosition)) {
             this.redirected = true;
@@ -455,15 +404,14 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
     }
 
     public void sendResolveParticles() {
-        this.resolveEmitter.tick(level);
-        if (!level.isClientSide && resolveSound != null) {
-            resolveSound.playSound(level, getX(), getY(), getZ());
+        if (!level().isClientSide() && resolveSound != null) {
+            resolveSound.playSound(level(), getX(), getY(), getZ());
         }
     }
 
     @Override
     protected boolean canHitEntity(Entity entity) {
-        return super.canHitEntity(entity) || entity.getType().is(EntityTags.SPELL_CAN_HIT);
+        return super.canHitEntity(entity) || entity.getType().builtInRegistryHolder().is(EntityTags.SPELL_CAN_HIT);
     }
 
     @Deprecated(forRemoval = true)
@@ -481,7 +429,7 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
     @Override
     public void recreateFromPacket(ClientboundAddEntityPacket pPacket) {
         super.recreateFromPacket(pPacket);
-        Entity entity = this.level.getEntity(pPacket.getData());
+        Entity entity = this.level().getEntity(pPacket.getData());
         if (entity != null) {
             this.setOwner(entity);
         }
@@ -498,41 +446,34 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
     }
 
     @Override
-    public void load(CompoundTag compound) {
-        super.load(compound);
-        if (resolver() != null) {
-            resolver().spellContext.level = this.level;
-        }
-    }
-
-    @Override
-    public void readAdditionalSaveData(CompoundTag tag) {
-        super.readAdditionalSaveData(tag);
+    protected void readAdditionalSaveData(ValueInput input) {
+        super.readAdditionalSaveData(input);
         this.spellResolver = null;
-        if (tag.contains("pierce")) {
-            this.pierceLeft = tag.getInt("pierce");
-        }
-        isNoGravity = tag.getBoolean("gravity");
-        this.entityData.set(OWNER_ID, tag.getInt("ownerId"));
-        if (tag.contains("resolver")) {
-            setResolver(SpellResolver.rehydratedFromTag(tag.getCompound("resolver"), (ServerLevel) level));
+        input.getInt("pierce").ifPresent(i -> this.pierceLeft = i);
+        isNoGravity = input.getBooleanOr("gravity", true);
+        this.entityData.set(OWNER_ID, input.getIntOr("ownerId", -1));
+        if (this.level() instanceof ServerLevel serverLevel) {
+            input.read(SpellResolver.CODEC).ifPresent(resolver -> {
+                resolver.spellContext.rehydrate(serverLevel);
+                setResolver(resolver);
+            });
         }
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag tag) {
-        super.addAdditionalSaveData(tag);
-        tag.putInt("pierce", this.pierceLeft);
-        tag.putBoolean("gravity", isNoGravity);
-        tag.putInt("ownerId", this.entityData.get(OWNER_ID));
+    protected void addAdditionalSaveData(ValueOutput output) {
+        super.addAdditionalSaveData(output);
+        output.putInt("pierce", this.pierceLeft);
+        output.putBoolean("gravity", isNoGravity);
+        output.putInt("ownerId", this.entityData.get(OWNER_ID));
         if (this.resolver() != null) {
-            tag.put("resolver", ANCodecs.encode(SpellResolver.CODEC.codec(), this.resolver()));
+            output.store(SpellResolver.CODEC, this.resolver());
         }
     }
 
     @Override
-    public Entity changeDimension(@NotNull DimensionTransition transition) {
-        Entity changed = super.changeDimension(transition);
+    public Entity teleport(TeleportTransition transition) {
+        Entity changed = super.teleport(transition);
         if (!(changed instanceof EntityProjectileSpell spell)) {
             return changed;
         }
@@ -542,16 +483,5 @@ public class EntityProjectileSpell extends ColoredProjectile implements GeoEntit
         spell.age = this.age;
         spell.numSensitive = this.numSensitive;
         return changed;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-    }
-
-    AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
     }
 }

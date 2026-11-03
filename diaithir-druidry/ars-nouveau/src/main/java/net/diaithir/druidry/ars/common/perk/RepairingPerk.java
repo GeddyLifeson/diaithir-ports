@@ -6,7 +6,7 @@ import net.diaithir.druidry.ars.api.util.PerkUtil;
 import net.diaithir.druidry.ars.setup.config.Config;
 import net.diaithir.druidry.ars.setup.registry.CapabilityRegistry;
 import net.diaithir.druidry.ars.setup.registry.DataComponentRegistry;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
@@ -14,12 +14,12 @@ public class RepairingPerk extends Perk {
 
     public static final RepairingPerk INSTANCE = new RepairingPerk(ArsNouveau.prefix("thread_repairing"));
 
-    public RepairingPerk(ResourceLocation key) {
+    public RepairingPerk(Identifier key) {
         super(key);
     }
 
     public static void attemptRepair(ItemStack stack, LivingEntity entity) {
-        if (entity.level.getGameTime() % 200 != 0 || stack.getDamageValue() <= 0) {
+        if (entity.level().getGameTime() % 200 != 0 || stack.getDamageValue() <= 0) {
             return;
         }
 
@@ -41,7 +41,9 @@ public class RepairingPerk extends Perk {
     public void onAdded(LivingEntity entity) {
         double repairLevel = PerkUtil.countForPerk(RepairingPerk.INSTANCE, entity);
         if (repairLevel >= 3) {
-            for (ItemStack slot : entity.getArmorSlots()) {
+            for (net.minecraft.world.entity.EquipmentSlot es : net.minecraft.world.entity.EquipmentSlot.values()) {
+            if (!es.isArmor()) continue;
+            ItemStack slot = entity.getItemBySlot(es);
                 slot.set(DataComponentRegistry.UNBREAKING, true);
             }
         }
@@ -49,7 +51,9 @@ public class RepairingPerk extends Perk {
 
     @Override
     public void onRemoved(LivingEntity entity) {
-        for (ItemStack slot : entity.getArmorSlots()) {
+        for (net.minecraft.world.entity.EquipmentSlot es : net.minecraft.world.entity.EquipmentSlot.values()) {
+            if (!es.isArmor()) continue;
+            ItemStack slot = entity.getItemBySlot(es);
             slot.remove(DataComponentRegistry.UNBREAKING);
         }
     }

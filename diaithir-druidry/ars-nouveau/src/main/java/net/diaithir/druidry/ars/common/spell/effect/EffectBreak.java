@@ -9,7 +9,7 @@ import net.diaithir.druidry.ars.common.lib.GlyphLib;
 import net.diaithir.druidry.ars.common.spell.augment.*;
 import net.diaithir.druidry.ars.common.util.HolderHelper;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -41,8 +41,8 @@ public class EffectBreak extends AbstractEffect {
 
     public ItemStack getStack(LivingEntity shooter, BlockHitResult blockHitResult) {
         ItemStack stack = shooter.getMainHandItem().copy();
-        boolean usePick = shooter.level.getBlockState(blockHitResult.getBlockPos()).is(BlockTagProvider.BREAK_WITH_PICKAXE);
-        if (usePick || stack.isEmpty() || !stack.isCorrectToolForDrops(shooter.level.getBlockState(blockHitResult.getBlockPos()))) {
+        boolean usePick = shooter.level().getBlockState(blockHitResult.getBlockPos()).is(BlockTagProvider.BREAK_WITH_PICKAXE);
+        if (usePick || stack.isEmpty() || !stack.isCorrectToolForDrops(shooter.level().getBlockState(blockHitResult.getBlockPos()))) {
             return new ItemStack(Items.DIAMOND_PICKAXE);
         }
         return stack;
@@ -53,7 +53,7 @@ public class EffectBreak extends AbstractEffect {
         BlockPos pos = rayTraceResult.getBlockPos();
         BlockState state;
 
-        MobEffectInstance miningFatigue = shooter.getEffect(MobEffects.DIG_SLOWDOWN);
+        MobEffectInstance miningFatigue = shooter.getEffect(MobEffects.MINING_FATIGUE);
         if (miningFatigue != null)
             spellStats.setAmpMultiplier(spellStats.getAmpMultiplier() - miningFatigue.getAmplifier());
 
@@ -71,7 +71,7 @@ public class EffectBreak extends AbstractEffect {
             stack.enchant(HolderHelper.unwrap(world, Enchantments.SILK_TOUCH), numSilkTouch);
         }
         for (BlockPos pos1 : posList) {
-            if (world.isOutsideBuildHeight(pos1) || world.random.nextFloat() < spellStats.getBuffCount(AugmentRandomize.INSTANCE) * 0.25F) {
+            if (world.isOutsideBuildHeight(pos1) || world.getRandom().nextFloat() < spellStats.getBuffCount(AugmentRandomize.INSTANCE) * 0.25F) {
                 continue;
             }
             state = world.getBlockState(pos1);
@@ -121,7 +121,7 @@ public class EffectBreak extends AbstractEffect {
     }
 
     @Override
-    protected void addDefaultAugmentLimits(Map<ResourceLocation, Integer> defaults) {
+    protected void addDefaultAugmentLimits(Map<Identifier, Integer> defaults) {
         defaults.put(AugmentFortune.INSTANCE.getRegistryName(), 4);
         defaults.put(AugmentSensitive.INSTANCE.getRegistryName(), 1);
     }

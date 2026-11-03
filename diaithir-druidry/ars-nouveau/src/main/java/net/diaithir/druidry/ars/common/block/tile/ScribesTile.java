@@ -2,26 +2,26 @@ package net.diaithir.druidry.ars.common.block.tile;
 
 import net.diaithir.druidry.ars.api.client.ITooltipProvider;
 import net.diaithir.druidry.ars.api.item.IWandable;
-import net.diaithir.druidry.ars.api.util.NBTUtil;
-import net.diaithir.druidry.ars.client.particle.ParticleColor;
-import net.diaithir.druidry.ars.client.particle.ParticleUtil;
 import net.diaithir.druidry.ars.common.block.ITickable;
 import net.diaithir.druidry.ars.common.block.ScribesBlock;
 import net.diaithir.druidry.ars.common.block.ThreePartBlock;
 import net.diaithir.druidry.ars.common.crafting.recipes.GlyphRecipe;
 import net.diaithir.druidry.ars.common.entity.EntityFlyingItem;
-import net.diaithir.druidry.ars.common.network.Networking;
-import net.diaithir.druidry.ars.common.network.PacketOneShotAnimation;
 import net.diaithir.druidry.ars.common.util.PortUtil;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import net.diaithir.druidry.ars.setup.registry.RecipeRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.transaction.Transaction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -35,26 +35,19 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.animatable.GeoAnimatable;
-import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class ScribesTile extends ModdedTile implements GeoBlockEntity, ITickable, Container, ITooltipProvider, IAnimationListener, IWandable, RecipeInput {
+public class ScribesTile extends ModdedTile implements ITickable, Container, ITooltipProvider, IAnimationListener, IWandable, RecipeInput {
     private ItemStack stack = ItemStack.EMPTY;
     boolean synced;
     public List<ItemStack> consumedStacks = new ArrayList<>();
     public RecipeHolder<GlyphRecipe> recipe;
-    ResourceLocation recipeID; // Cached for after load
+    Identifier recipeID; // Cached for after load
     public boolean crafting;
     public int craftingTicks;
     public boolean autoYoink = true;
@@ -67,22 +60,26 @@ public class ScribesTile extends ModdedTile implements GeoBlockEntity, ITickable
     public void tick() {
         if (getBlockState().getValue(ScribesBlock.PART) != ThreePartBlock.HEAD)
             return;
-        if (!level.isClientSide && !synced) {
+        if (!level.isClientSide() && !synced) {
             updateBlock();
             synced = true;
         }
         if (craftingTicks > 0)
             craftingTicks--;
 
-        if (recipeID != null && recipeID.equals(ResourceLocation.withDefaultNamespace(""))) {
+        if (recipeID != null && recipeID.equals(Identifier.withDefaultNamespace(""))) {
             recipe = null; // Used on client to remove recipe since for some forsaken reason world is missing during load.
         }
 
-        if (recipeID != null && !recipeID.toString().isEmpty() && (recipe == null || !recipe.id().equals(recipeID)) && level.getRecipeManager() != null) {
-            recipe = level.getRecipeManager().byKeyTyped(RecipeRegistry.GLYPH_TYPE.get(), recipeID);
+        if (recipeID != null && !recipeID.toString().isEmpty() && (recipe == null || !recipe.id().identifier().equals(recipeID)) && level instanceof ServerLevel serverLevel) {
+            // Recipes only exist on the server in 26.1; the client keeps recipe == null.
+            recipe = serverLevel.recipeAccess().byKey(ResourceKey.create(Registries.RECIPE, recipeID))
+                    .filter(h -> h.value() instanceof GlyphRecipe)
+                    .map(h -> (RecipeHolder<GlyphRecipe>) h)
+                    .orElse(null);
             setChanged();
         }
-        if (!level.isClientSide && level.getGameTime() % 5 == 0 && recipe != null) {
+        if (!level.isClientSide() && level.getGameTime() % 5 == 0 && recipe != null) {
             boolean foundStack = false;
             List<ItemEntity> nearbyItems = level.getEntitiesOfClass(ItemEntity.class, new AABB(getBlockPos()).inflate(2));
             for (ItemEntity e : nearbyItems) {
@@ -91,7 +88,6 @@ public class ScribesTile extends ModdedTile implements GeoBlockEntity, ITickable
                     copyStack.setCount(1);
                     consumedStacks.add(copyStack);
                     e.getItem().shrink(1);
-                    ParticleUtil.spawnTouchPacket(level, e.getOnPos(), ParticleColor.defaultParticleColor());
                     updateBlock();
                     foundStack = true;
                     break;
@@ -104,18 +100,17 @@ public class ScribesTile extends ModdedTile implements GeoBlockEntity, ITickable
             if (getRemainingRequired().isEmpty() && !crafting) {
                 crafting = true;
                 craftingTicks = 120;
-                Networking.sendToNearbyClient(level, getBlockPos(), new PacketOneShotAnimation(getBlockPos(), 0));
                 updateBlock();
             }
         }
-        if (level.isClientSide && craftingTicks == 0 && crafting) {
+        if (level.isClientSide() && craftingTicks == 0 && crafting) {
             crafting = false;
             setChanged();
         }
-        if (!level.isClientSide && crafting && craftingTicks == 0 && recipe != null) {
+        if (!level.isClientSide() && crafting && craftingTicks == 0 && recipe != null) {
             level.addFreshEntity(new ItemEntity(level, getX() + 0.5, getY() + 1.1, getZ() + 0.5, recipe.value().output.copy()));
             recipe = null;
-            recipeID = ResourceLocation.withDefaultNamespace("");
+            recipeID = Identifier.withDefaultNamespace("");
             crafting = false;
             consumedStacks = new ArrayList<>();
             updateBlock();
@@ -124,13 +119,20 @@ public class ScribesTile extends ModdedTile implements GeoBlockEntity, ITickable
 
     public void takeNearby() {
         for (BlockPos bPos : BlockPos.betweenClosed(worldPosition.north(6).east(6).below(2), worldPosition.south(6).west(6).above(2))) {
-            IItemHandler handler = level.getCapability(Capabilities.ItemHandler.BLOCK, bPos, null);
+            ResourceHandler<ItemResource> handler = level.getCapability(Capabilities.Item.BLOCK, bPos, null);
             if (handler != null) {
-                for (int i = 0; i < handler.getSlots(); i++) {
-                    ItemStack stack = handler.extractItem(i, 1, true);
+                for (int i = 0; i < handler.size(); i++) {
+                    ItemResource resource = handler.getResource(i);
+                    if (resource.isEmpty() || handler.getAmountAsInt(i) <= 0) continue;
+                    ItemStack stack = resource.toStack(1);
                     if (canConsumeItemstack(stack)) {
-                        ItemStack stack1 = handler.extractItem(i, 1, false);
-                        stack1.copy().setCount(1);
+                        int extracted;
+                        try (Transaction transaction = Transaction.openRoot()) {
+                            extracted = handler.extract(i, resource, 1, transaction);
+                            if (extracted > 0) transaction.commit();
+                        }
+                        if (extracted <= 0) continue;
+                        ItemStack stack1 = resource.toStack(1);
                         consumedStacks.add(stack1);
                         EntityFlyingItem flyingItem = new EntityFlyingItem(level, bPos, getBlockPos());
                         flyingItem.setStack(stack1);
@@ -148,7 +150,6 @@ public class ScribesTile extends ModdedTile implements GeoBlockEntity, ITickable
             return false;
         ItemStack copyStack = stack.split(1);
         consumedStacks.add(copyStack);
-        ParticleUtil.spawnTouchPacket(level, getBlockPos().above(), ParticleColor.defaultParticleColor());
         updateBlock();
         return true;
     }
@@ -183,7 +184,7 @@ public class ScribesTile extends ModdedTile implements GeoBlockEntity, ITickable
             return;
         tile.refundConsumed();
         tile.recipe = recipe;
-        tile.recipeID = recipe.id();
+        tile.recipeID = recipe.id().identifier();
         PortUtil.sendMessage(player, Component.translatable("ars_nouveau.scribes_table.started_crafting").withStyle(ChatFormatting.GOLD));
         tile.updateBlock();
     }
@@ -271,64 +272,36 @@ public class ScribesTile extends ModdedTile implements GeoBlockEntity, ITickable
     }
 
     @Override
-    protected void loadAdditional(@NotNull CompoundTag compound, HolderLookup.@NotNull Provider pRegistries) {
-        super.loadAdditional(compound, pRegistries);
-        stack = ItemStack.parseOptional(pRegistries, compound.getCompound("itemStack"));
-        if (compound.contains("recipe")) {
-            recipeID = ResourceLocation.tryParse(compound.getString("recipe"));
-        }
-        CompoundTag itemsTag = new CompoundTag();
-        itemsTag.putInt("numStacks", consumedStacks.size());
-        this.consumedStacks = NBTUtil.readItems(pRegistries, compound, "consumed");
-        this.craftingTicks = compound.getInt("craftingTicks");
-        this.crafting = compound.getBoolean("crafting");
-        this.autoYoink = !compound.contains("autoYoink") || compound.getBoolean("autoYoink");
+    protected void loadAdditional(@NotNull ValueInput input) {
+        super.loadAdditional(input);
+        stack = input.read("itemStack", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
+        input.getString("recipe").ifPresent(r -> recipeID = Identifier.tryParse(r));
+        this.consumedStacks = new ArrayList<>(input.read("consumed", ItemStack.OPTIONAL_CODEC.listOf()).orElse(List.of()));
+        this.craftingTicks = input.getIntOr("craftingTicks", 0);
+        this.crafting = input.getBooleanOr("crafting", false);
+        this.autoYoink = input.getBooleanOr("autoYoink", true);
     }
 
     @Override
-    public void saveAdditional(@NotNull CompoundTag compound, HolderLookup.@NotNull Provider pRegistries) {
-        super.saveAdditional(compound, pRegistries);
+    public void saveAdditional(@NotNull ValueOutput output) {
+        super.saveAdditional(output);
         if (!stack.isEmpty()) {
-            Tag reagentTag = stack.save(pRegistries);
-
-            compound.put("itemStack", reagentTag);
+            output.store("itemStack", ItemStack.OPTIONAL_CODEC, stack);
         }
         if (recipe != null) {
-            compound.putString("recipe", recipe.id().toString());
+            output.putString("recipe", recipe.id().identifier().toString());
         } else {
-            compound.putString("recipe", "");
+            output.putString("recipe", "");
         }
-        NBTUtil.writeItems(pRegistries, compound, "consumed", consumedStacks);
-        compound.putInt("craftingTicks", craftingTicks);
-        compound.putBoolean("crafting", crafting);
-        compound.putBoolean("autoYoink", autoYoink);
+        output.store("consumed", ItemStack.OPTIONAL_CODEC.listOf(), consumedStacks.stream().filter(i -> !i.isEmpty()).toList());
+        output.putInt("craftingTicks", craftingTicks);
+        output.putBoolean("crafting", crafting);
+        output.putBoolean("autoYoink", autoYoink);
     }
 
-    private <E extends BlockEntity & GeoAnimatable> PlayState idlePredicate(AnimationState<E> event) {
-        return PlayState.CONTINUE;
-    }
-
+    /** Glyph-crafting animation (GeckoLib) was removed in the 26.1 port. */
     @Override
     public void startAnimation(int arg) {
-        if (controller == null) {
-            return;
-        }
-        controller.forceAnimationReset();
-        controller.setAnimation(RawAnimation.begin().thenPlay("create_glyph2"));
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        this.controller = new AnimationController<>(this, "controller", 1, this::idlePredicate);
-        data.add(controller);
-    }
-
-    AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
-    AnimationController<ScribesTile> controller;
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return factory;
     }
 
     @Override

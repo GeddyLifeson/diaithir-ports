@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.block;
 
 import net.diaithir.druidry.ars.common.block.tile.SourceJarTile;
-import net.diaithir.druidry.ars.api.documentation.DocClientUtils;
 import net.diaithir.druidry.ars.common.items.data.BlockFillContents;
 import net.diaithir.druidry.ars.common.lib.LibBlockNames;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
@@ -23,6 +22,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -50,18 +50,14 @@ public class SourceJar extends SourceBlock implements SimpleWaterloggedBlock {
     public static final Property<Integer> fill = IntegerProperty.create("fill", 0, 11);
 
     public SourceJar() {
-        this(TickableModBlock.defaultProperties().noOcclusion(), LibBlockNames.SOURCE_JAR);
+        this(TickableModBlock.defaultProperties().noOcclusion().pushReaction(PushReaction.DESTROY), LibBlockNames.SOURCE_JAR);
     }
 
-    public SourceJar(Properties properties, String registryName) {
+    public SourceJar(BlockBehaviour.Properties properties, String registryName) {
         super(properties, registryName);
         registerDefaultState(defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
-    @Override
-    public @Nullable PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -105,9 +101,9 @@ public class SourceJar extends SourceBlock implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction side, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, net.minecraft.world.level.LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction side, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         if (stateIn.getValue(WATERLOGGED)) {
-            worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+            ticks.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
         }
         return stateIn;
     }
@@ -122,7 +118,7 @@ public class SourceJar extends SourceBlock implements SimpleWaterloggedBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide && player.isCreative() && level.getBlockEntity(pos) instanceof SourceJarTile jarTile) {
+        if (!level.isClientSide() && player.isCreative() && level.getBlockEntity(pos) instanceof SourceJarTile jarTile) {
             int source = player.isCrouching() ? -1000 : 1000;
             jarTile.addSource(source);
         }
@@ -135,18 +131,11 @@ public class SourceJar extends SourceBlock implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState blockState, Level worldIn, BlockPos pos) {
+    public int getAnalogOutputSignal(BlockState blockState, Level worldIn, BlockPos pos, Direction direction) {
         SourceJarTile tile = (SourceJarTile) worldIn.getBlockEntity(pos);
         if (tile == null || tile.getSource() <= 0) return 0;
         int step = (tile.getMaxSource() - 1) / 14;
         return (tile.getSource() - 1) / step + 1;
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
-        super.appendHoverText(stack, context, tooltip, flagIn);
-        int mana = BlockFillContents.get(stack);
-        tooltip.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.source_jar.fullness", (mana * 100) / 10000), context));
     }
 
     @Override

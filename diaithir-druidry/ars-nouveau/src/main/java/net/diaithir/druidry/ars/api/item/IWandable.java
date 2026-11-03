@@ -24,7 +24,7 @@ public interface IWandable {
             return;
         }
 
-        if (playerEntity.level.dimension().equals(dim)) {
+        if (playerEntity.level().dimension().equals(dim)) {
             onFinishedConnectionFirst(storedPos != null ? storedPos.pos() : null, storedEntity, playerEntity);
         }
     }
@@ -40,7 +40,7 @@ public interface IWandable {
             return;
         }
 
-        if (playerEntity.level.dimension().equals(dim)) {
+        if (playerEntity.level().dimension().equals(dim)) {
             onFinishedConnectionLast(storedPos != null ? storedPos.pos() : null, storedEntity, playerEntity);
         }
     }
@@ -70,7 +70,7 @@ public interface IWandable {
             return;
         }
 
-        if (playerEntity.level.dimension().equals(dim)) {
+        if (playerEntity.level().dimension().equals(dim)) {
             onFinishedConnectionFirst(storedPos != null ? storedPos.pos() : null, face, storedEntity, playerEntity);
         }
     }
@@ -82,7 +82,7 @@ public interface IWandable {
             return;
         }
 
-        if (playerEntity.level.dimension().equals(dim)) {
+        if (playerEntity.level().dimension().equals(dim)) {
             onFinishedConnectionLast(storedPos != null ? storedPos.pos() : null, face, storedEntity, playerEntity);
         }
     }
@@ -103,7 +103,7 @@ public interface IWandable {
             return Result.FAIL;
         }
 
-        if (playerEntity.level.dimension().equals(dim)) {
+        if (playerEntity.level().dimension().equals(dim)) {
             onFinishedConnectionFirst(storedPos != null ? storedPos.pos() : null, face, storedEntity, playerEntity);
         }
         return Result.SUCCESS;
@@ -115,7 +115,7 @@ public interface IWandable {
             return Result.FAIL;
         }
 
-        if (playerEntity.level.dimension().equals(dim)) {
+        if (playerEntity.level().dimension().equals(dim)) {
             onFinishedConnectionLast(storedPos != null ? storedPos.pos() : null, face, storedEntity, playerEntity);
         }
         return Result.SUCCESS;
@@ -151,7 +151,7 @@ public interface IWandable {
         }
 
         if (storedEntity != null) {
-            return storedEntity.level.dimension();
+            return storedEntity.level().dimension();
         }
 
         return null;

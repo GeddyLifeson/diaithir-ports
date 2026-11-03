@@ -105,7 +105,7 @@ public class RotatingSpellTurret extends BasicSpellTurret {
                 Vec3 aimVec = rotatingTurretTile.getShootAngle().add(rotatingTurretTile.getX() + 0.5, rotatingTurretTile.getY() + 0.5, rotatingTurretTile.getZ() + 0.5);
                 List<LivingEntity> entityList = serverLevel.getEntitiesOfClass(LivingEntity.class, new AABB(touchPos));
                 if (!entityList.isEmpty()) {
-                    LivingEntity entity = entityList.get(serverLevel.random.nextInt(entityList.size()));
+                    LivingEntity entity = entityList.get(serverLevel.getRandom().nextInt(entityList.size()));
                     resolver.onCastOnEntity(ItemStack.EMPTY, entity, InteractionHand.MAIN_HAND);
                 } else {
                     resolver.onCastOnBlock(new BlockHitResult(aimVec, facingDir.getOpposite(), BlockPos.containing(aimVec.x(), aimVec.y(), aimVec.z()), true));

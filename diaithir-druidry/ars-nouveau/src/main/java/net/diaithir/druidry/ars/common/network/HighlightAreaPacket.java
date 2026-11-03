@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.client.ClientInfo;
 import net.diaithir.druidry.ars.client.particle.ColorPos;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -50,6 +49,6 @@ public class HighlightAreaPacket extends AbstractPacket {
 
     @Override
     public void onClientReceived(Minecraft minecraft, Player player) {
-        ClientInfo.highlightPosition(colorPos, ticks);
+        // Port note: client highlight rendering not ported.
     }
 }

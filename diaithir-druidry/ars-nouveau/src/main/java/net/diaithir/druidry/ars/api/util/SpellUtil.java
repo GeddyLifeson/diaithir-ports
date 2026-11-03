@@ -10,8 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -45,21 +44,21 @@ public class SpellUtil {
     }
 
     public static boolean isCorrectHarvestLevel(int strength, BlockState state) {
-        Tier tier = switch (strength) {
+        ToolMaterial tier = switch (strength) {
             case 2:
-                yield Tiers.STONE;
+                yield ToolMaterial.STONE;
             case 3:
-                yield Tiers.IRON;
+                yield ToolMaterial.IRON;
             case 4:
-                yield Tiers.DIAMOND;
+                yield ToolMaterial.DIAMOND;
             case 5:
-                yield Tiers.NETHERITE;
+                yield ToolMaterial.NETHERITE;
             default:
-                yield Tiers.WOOD;
+                yield ToolMaterial.WOOD;
         };
         if (strength > 5)
-            tier = Tiers.NETHERITE;
-        return !BuiltInRegistries.BLOCK.getOrCreateTag(tier.getIncorrectBlocksForDrops()).contains(state.getBlockHolder());
+            tier = ToolMaterial.NETHERITE;
+        return !state.is(tier.incorrectBlocksForDrops());
     }
 
 
@@ -72,7 +71,7 @@ public class SpellUtil {
     }
 
     public static List<BlockPos> calcAOEBlocks(LivingEntity caster, BlockPos origin, BlockHitResult mop, int width, int height, int depth, int distance) {
-        Vec3i hitVec = caster.getDirection().getNormal();
+        Vec3i hitVec = caster.getDirection().getUnitVec3i();
         if (caster instanceof FakePlayer) { // Do I know why I need this? No. But I do, or else spell turrets break on the wrong plane.
             mop = new BlockHitResult(mop.getLocation(), mop.getDirection(), mop.getBlockPos(), false);
         }
@@ -81,7 +80,7 @@ public class SpellUtil {
     }
 
     public static List<BlockPos> calcAOEBlocks(Vec3 hitVec, BlockPos origin, BlockHitResult mop, int width, int height, int depth, int distance) {
-        return calcAOEBlocks(Direction.getNearest(hitVec.x, hitVec.y, hitVec.z).getOpposite().getNormal(), origin, mop, width, height, depth, distance);
+        return calcAOEBlocks(Direction.getApproximateNearest(hitVec.x, hitVec.y, hitVec.z).getOpposite().getUnitVec3i(), origin, mop, width, height, depth, distance);
     }
 
     // https://github.com/SlimeKnights/TinkersConstruct/blob/1.12/src/main/java/slimeknights/tconstruct/library/utils/ToolHelper.java

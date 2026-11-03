@@ -7,11 +7,11 @@ import net.diaithir.druidry.ars.client.particle.ParticleColor;
 import net.diaithir.druidry.ars.common.block.ITickable;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.IntTag;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.NotNull;
 
 public class MageBlockTile extends ModdedTile implements ITickable, IDispellable, IWololoable {
@@ -29,7 +29,7 @@ public class MageBlockTile extends ModdedTile implements ITickable, IDispellable
     public void tick() {
         if (isPermanent)
             return;
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             age++;
             //15 seconds
             if (age > (20 * 15 + 20 * 5 * lengthModifier)) {
@@ -41,27 +41,27 @@ public class MageBlockTile extends ModdedTile implements ITickable, IDispellable
 
 
     @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider lookupProvider) {
-        super.handleUpdateTag(tag, lookupProvider);
+    public void handleUpdateTag(ValueInput input) {
+        super.handleUpdateTag(input);
         level.sendBlockUpdated(worldPosition, level.getBlockState(worldPosition), level.getBlockState(worldPosition), 8);
     }
 
     @Override
-    protected void loadAdditional(CompoundTag compound, HolderLookup.Provider pRegistries) {
-        super.loadAdditional(compound, pRegistries);
-        this.age = compound.getInt("age");
-        this.color = ParticleColorRegistry.from(compound.getCompound("lightColor"));
-        this.isPermanent = compound.getBoolean("permanent");
-        this.lengthModifier = compound.getDouble("modifier");
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
+        this.age = input.getIntOr("age", 0);
+        this.color = input.read("lightColor", CompoundTag.CODEC).map(ParticleColorRegistry::from).orElse(ParticleColor.defaultParticleColor());
+        this.isPermanent = input.getBooleanOr("permanent", false);
+        this.lengthModifier = input.getDoubleOr("modifier", 0);
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(tag, pRegistries);
-        tag.put("age", IntTag.valueOf(age));
-        tag.put("lightColor", color.serialize());
-        tag.putBoolean("permanent", isPermanent);
-        tag.putDouble("modifier", lengthModifier);
+    protected void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
+        output.putInt("age", age);
+        output.store("lightColor", CompoundTag.CODEC, color.serialize());
+        output.putBoolean("permanent", isPermanent);
+        output.putDouble("modifier", lengthModifier);
     }
 
     @Override

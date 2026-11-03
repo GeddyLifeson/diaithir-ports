@@ -5,20 +5,20 @@ import net.diaithir.druidry.ars.api.spell.AbstractSpellPart;
 import net.diaithir.druidry.ars.api.spell.IContextManipulator;
 import net.diaithir.druidry.ars.api.spell.SpellValidationError;
 import net.diaithir.druidry.ars.common.spell.effect.EffectReset;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class InvalidCombinationValidator extends ScanningSpellValidator<Map<ResourceLocation, Integer>> {
+public class InvalidCombinationValidator extends ScanningSpellValidator<Map<Identifier, Integer>> {
     @Override
-    protected Map<ResourceLocation, Integer> initContext() {
+    protected Map<Identifier, Integer> initContext() {
         return new HashMap<>();
     }
 
     @Override
-    protected void digestSpellPart(Map<ResourceLocation, Integer> partCounts, int position, AbstractSpellPart spellPart, List<SpellValidationError> validationErrors) {
+    protected void digestSpellPart(Map<Identifier, Integer> partCounts, int position, AbstractSpellPart spellPart, List<SpellValidationError> validationErrors) {
         if (spellPart instanceof IContextManipulator manipulator) {
             for (AbstractSpellPart resettable : manipulator.bypassCombinationLimitsFor()) {
                 partCounts.remove(resettable.getRegistryName());
@@ -31,7 +31,7 @@ public class InvalidCombinationValidator extends ScanningSpellValidator<Map<Reso
             partCounts.put(spellPart.getRegistryName(), 1);
         }
 
-        for (ResourceLocation invalidPart : spellPart.invalidCombinations.parseComboLimits()) {
+        for (Identifier invalidPart : spellPart.invalidCombinations.parseComboLimits()) {
             AbstractSpellPart offendingPart = GlyphRegistry.getSpellPart(invalidPart);
             if (offendingPart == null)
                 continue;
@@ -49,7 +49,7 @@ public class InvalidCombinationValidator extends ScanningSpellValidator<Map<Reso
                 }
             }
         }
-        for (ResourceLocation location : partCounts.keySet()) {
+        for (Identifier location : partCounts.keySet()) {
             AbstractSpellPart part = GlyphRegistry.getSpellPart(location);
             if (part == null)
                 return;
@@ -64,7 +64,7 @@ public class InvalidCombinationValidator extends ScanningSpellValidator<Map<Reso
     }
 
     @Override
-    protected void finish(Map<ResourceLocation, Integer> context, List<SpellValidationError> validationErrors) {
+    protected void finish(Map<Identifier, Integer> context, List<SpellValidationError> validationErrors) {
     }
 
     protected static class InvalidCombinationValidatorError extends BaseSpellValidationError {

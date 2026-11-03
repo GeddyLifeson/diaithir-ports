@@ -16,8 +16,8 @@ public class DamageUtil {
     //Implementation can be swapped to use AT methods of DamageSource, but use of this class will allow access to addons without the requirement of ATs
 
     static public DamageSource source(LevelAccessor level, ResourceKey<DamageType> key) {
-        Registry<DamageType> registry = level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE);
-        return new DamageSource(registry.getHolderOrThrow(key));
+        Registry<DamageType> registry = level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE);
+        return new DamageSource(registry.getOrThrow(key));
     }
 
     static public DamageSource source(LevelAccessor level, ResourceKey<DamageType> key, @Nullable Entity entity) {
@@ -25,7 +25,7 @@ public class DamageUtil {
     }
 
     static public DamageSource source(LevelAccessor level, ResourceKey<DamageType> key, @Nullable Entity entity, @Nullable Entity direct) {
-        Holder.Reference<DamageType> type = level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(key);
+        Holder.Reference<DamageType> type = level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(key);
         if (entity != null && direct != null)
             return new SpellDamageSource(type, entity, direct);
         else if (entity != null)

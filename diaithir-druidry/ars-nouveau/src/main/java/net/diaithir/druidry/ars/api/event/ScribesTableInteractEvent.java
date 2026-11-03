@@ -3,7 +3,7 @@ package net.diaithir.druidry.ars.api.event;
 import net.diaithir.druidry.ars.common.block.tile.ScribesTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -21,7 +21,7 @@ public class ScribesTableInteractEvent extends Event implements ICancellableEven
     public Player player;
     public InteractionHand hand;
     public ItemStack stack;
-    public ItemInteractionResult result;
+    public InteractionResult result;
 
     public ScribesTableInteractEvent(Level level, BlockPos pos, ScribesTile tile, Player player, InteractionHand hand, ItemStack stack) {
         this.level = level;
@@ -30,6 +30,6 @@ public class ScribesTableInteractEvent extends Event implements ICancellableEven
         this.player = player;
         this.hand = hand;
         this.stack = stack;
-        this.result = ItemInteractionResult.sidedSuccess(level.isClientSide);
+        this.result = level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
     }
 }

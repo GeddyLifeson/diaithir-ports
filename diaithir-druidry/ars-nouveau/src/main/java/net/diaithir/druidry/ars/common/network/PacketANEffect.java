@@ -2,11 +2,8 @@ package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
 import net.diaithir.druidry.ars.api.registry.ParticleColorRegistry;
-import net.diaithir.druidry.ars.client.particle.GlowParticleData;
-import net.diaithir.druidry.ars.client.particle.HelixParticleData;
 import net.diaithir.druidry.ars.client.particle.ParticleColor;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -87,30 +84,7 @@ public class PacketANEffect extends AbstractPacket {
 
     @Override
     public void onClientReceived(Minecraft minecraft, Player player) {
-        ClientLevel world = minecraft.level;
-        ParticleColor color = ParticleColorRegistry.from(particleNbt);
-        switch (type) {
-            case BURST -> {
-                for (int i = 0; i < 10; i++) {
-                    double d0 = x + 0.5; //+ world.rand.nextFloat();
-                    double d1 = y + 1.2;//+ world.rand.nextFloat() ;
-                    double d2 = z + .5; //+ world.rand.nextFloat();
-                    world.addAlwaysVisibleParticle(GlowParticleData.createData(color),
-                            true,
-                            d0, d1, d2,
-                            (world.random.nextFloat() - 0.5) / 3.0,
-                            (world.random.nextFloat() - 0.5) / 3.0,
-                            (world.random.nextFloat() - 0.5) / 3.0);
-                }
-            }
-            case TIMED_HELIX -> {
-
-                int numParticles = 8;
-                for (int i = 0; i < numParticles; i++) {
-                    world.addAlwaysVisibleParticle(HelixParticleData.createData(color, 0.25f, 1.00f, 50, i * 360F / numParticles), true, x + 0.5, y + 0.1 * i, z + 0.5, 0, 0, 0);
-                }
-            }
-        }
+        // Port note: client-side handling not ported.
     }
 
     public enum EffectType {

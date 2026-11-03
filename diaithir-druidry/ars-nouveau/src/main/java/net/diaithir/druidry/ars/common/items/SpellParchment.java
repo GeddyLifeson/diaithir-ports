@@ -1,26 +1,17 @@
 package net.diaithir.druidry.ars.common.items;
 
-import net.diaithir.druidry.ars.api.documentation.DocClientUtils;
 import net.diaithir.druidry.ars.api.item.ICasterTool;
-import net.diaithir.druidry.ars.api.particle.timelines.IParticleTimeline;
 import net.diaithir.druidry.ars.api.registry.SpellCasterRegistry;
 import net.diaithir.druidry.ars.api.spell.AbstractCaster;
-import net.diaithir.druidry.ars.api.spell.ITimelined;
 import net.diaithir.druidry.ars.api.spell.SpellCaster;
-import net.diaithir.druidry.ars.api.util.IWololoable;
-import net.diaithir.druidry.ars.client.gui.SpellTooltip;
-import net.diaithir.druidry.ars.client.particle.ParticleColor;
-import net.diaithir.druidry.ars.setup.config.Config;
 import net.diaithir.druidry.ars.setup.registry.DataComponentRegistry;
 import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -48,9 +39,9 @@ public class SpellParchment extends ModItem implements ICasterTool {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltip2, @NotNull TooltipFlag flagIn) {
-        stack.addToTooltip(DataComponentRegistry.SPELL_CASTER, context, component -> tooltip2.addAll(DocClientUtils.splitTooltip(component, context)), flagIn);
-        super.appendHoverText(stack, context, tooltip2, flagIn);
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip2, @NotNull TooltipFlag flagIn) {
+        stack.addToTooltip(DataComponentRegistry.SPELL_CASTER, context, display, tooltip2, flagIn);
+        super.appendHoverText(stack, context, display, tooltip2, flagIn);
     }
     
     @Override
@@ -59,52 +50,6 @@ public class SpellParchment extends ModItem implements ICasterTool {
             return super.useOn(pContext);
         }
 
-        var tile = level.getBlockEntity(pContext.getClickedPos());
-        var hand = pContext.getItemInHand();
-        
-        InteractionResult result = copyTimeline(player, level, hand, tile);
-        if (result.consumesAction()) {
-            return result;
-        }
-
         return super.useOn(pContext);
-    }
-
-    public InteractionResult copyTimeline(ServerPlayer player, ServerLevel level, ItemStack hand, BlockEntity tile) {
-        if (!(tile instanceof ITimelined<?> timelined)) {
-            return InteractionResult.PASS;
-        }
-
-        //noinspection rawtypes
-        IParticleTimeline timeline = timelined.getTimeline();
-        ParticleColor color = tile instanceof IWololoable wololoable ? wololoable.getColor() : ParticleColor.defaultParticleColor();
-
-        ItemStack stack = hand.copyWithCount(1);
-        AbstractCaster<?> caster = SpellCasterRegistry.from(stack);
-        if (caster == null) {
-            return InteractionResult.FAIL;
-        }
-
-        //noinspection unchecked
-        var newTimeline = caster.getSpell().particleTimeline().put(timeline.getType(), timeline);
-        caster.setSpell(caster.getSpell().withColor(color).withTimeline(newTimeline)).saveToStack(stack);
-        
-        if (!player.hasInfiniteMaterials()) {
-            hand.shrink(1);
-        }
-
-        if (!player.addItem(stack)) {
-            level.addFreshEntity(new ItemEntity(level, player.getX(), player.getY(), player.getZ(), stack));
-        }
-
-        return InteractionResult.SUCCESS;
-    }
-
-    @Override
-    public @NotNull Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack pStack) {
-        AbstractCaster<?> caster = getSpellCaster(pStack);
-        if (caster != null && Config.GLYPH_TOOLTIPS.get() && !Screen.hasShiftDown() && !caster.isSpellHidden() && !caster.getSpell().isEmpty())
-            return Optional.of(new SpellTooltip(caster));
-        return Optional.empty();
     }
 }

@@ -10,7 +10,6 @@ import net.diaithir.druidry.ars.api.spell.wrapped_caster.PlayerCaster;
 import net.diaithir.druidry.ars.api.util.SpellUtil;
 import net.diaithir.druidry.ars.client.particle.ParticleColor;
 import net.diaithir.druidry.ars.common.block.tile.ScribesTile;
-import net.diaithir.druidry.ars.common.datagen.BlockTagProvider;
 import net.diaithir.druidry.ars.common.network.PacketCastSpell;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentSensitive;
 import net.diaithir.druidry.ars.common.util.PortUtil;
@@ -26,12 +25,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -46,7 +44,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -279,15 +277,15 @@ public abstract class AbstractCaster<T extends AbstractCaster<T>> implements Too
         return spell;
     }
 
-    public InteractionResultHolder<ItemStack> castSpell(Level worldIn, LivingEntity entity, InteractionHand handIn, @Nullable Component invalidMessage, @NotNull Spell spell) {
+    public InteractionResult castSpell(Level worldIn, LivingEntity entity, InteractionHand handIn, @Nullable Component invalidMessage, @NotNull Spell spell) {
         ItemStack stack = entity.getItemInHand(handIn);
 
         if (!(worldIn instanceof ServerLevel serverLevel))
-            return InteractionResultHolder.pass(entity.getItemInHand(handIn));
+            return InteractionResult.PASS;
         spell = modifySpellBeforeCasting(serverLevel, entity, handIn, spell);
         if (!spell.isValid() && invalidMessage != null) {
             PortUtil.sendMessageNoSpam(entity, invalidMessage);
-            return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+            return InteractionResult.SUCCESS;
         }
         Player player = ANFakePlayer.getOrFakePlayer(serverLevel, entity);
         IWrappedCaster wrappedCaster = entity instanceof Player pCaster ? new PlayerCaster(pCaster) : new LivingCaster(entity);
@@ -297,16 +295,16 @@ public abstract class AbstractCaster<T extends AbstractCaster<T>> implements Too
         if (result instanceof BlockHitResult blockHit) {
             BlockEntity tile = worldIn.getBlockEntity(blockHit.getBlockPos());
             if (tile instanceof ScribesTile)
-                return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+                return InteractionResult.SUCCESS;
 
-            if (!entity.isShiftKeyDown() && tile != null && !(worldIn.getBlockState(blockHit.getBlockPos()).is(BlockTagProvider.IGNORE_TILE))) {
-                return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+            if (!entity.isShiftKeyDown() && tile != null && !(worldIn.getBlockState(blockHit.getBlockPos()).is(net.diaithir.druidry.ars.common.datagen.BlockTagProvider.IGNORE_TILE))) {
+                return InteractionResult.SUCCESS;
             }
         }
 
         if (result instanceof EntityHitResult entityHitResult && entityHitResult.getEntity() instanceof LivingEntity) {
             resolver.onCastOnEntity(stack, entityHitResult.getEntity(), handIn);
-            return new InteractionResultHolder<>(InteractionResult.CONSUME, stack);
+            return InteractionResult.CONSUME;
         }
 
         if (result instanceof BlockHitResult blockHitResult && (result.getType() == HitResult.Type.BLOCK || isSensitive)) {
@@ -316,19 +314,19 @@ public abstract class AbstractCaster<T extends AbstractCaster<T>> implements Too
             } else {
                 resolver.onCastOnBlock(blockHitResult);
             }
-            return new InteractionResultHolder<>(InteractionResult.CONSUME, stack);
+            return InteractionResult.CONSUME;
         }
 
         resolver.onCast(stack, worldIn);
-        return new InteractionResultHolder<>(InteractionResult.CONSUME, stack);
+        return InteractionResult.CONSUME;
     }
 
-    public InteractionResultHolder<ItemStack> castSpell(Level worldIn, LivingEntity playerIn, InteractionHand handIn, Component invalidMessage) {
+    public InteractionResult castSpell(Level worldIn, LivingEntity playerIn, InteractionHand handIn, Component invalidMessage) {
         return castSpell(worldIn, playerIn, handIn, invalidMessage, getSpell(worldIn, playerIn, handIn, this));
     }
 
     public void castOnServer(InteractionHand handIn, Component invalidMessage) {
-        PacketDistributor.sendToServer(new PacketCastSpell(this, handIn, invalidMessage));
+        ClientPacketDistributor.sendToServer(new PacketCastSpell(this, handIn, invalidMessage));
     }
 
     @SuppressWarnings("unchecked")
@@ -370,7 +368,7 @@ public abstract class AbstractCaster<T extends AbstractCaster<T>> implements Too
     protected abstract T build(int slot, String flavorText, Boolean isHidden, String hiddenText, int maxSlots, SpellSlotMap spells);
 
     @Override
-    public void addToTooltip(Item.@NotNull TooltipContext pContext, @NotNull Consumer<Component> pTooltipAdder, @NotNull TooltipFlag pTooltipFlag) {
+    public void addToTooltip(Item.@NotNull TooltipContext pContext, @NotNull Consumer<Component> pTooltipAdder, @NotNull TooltipFlag pTooltipFlag, @NotNull net.minecraft.core.component.DataComponentGetter pComponents) {
         if (getSpell().isEmpty()) {
             pTooltipAdder.accept(Component.translatable("ars_nouveau.tooltip.can_inscribe"));
             return;
@@ -379,7 +377,7 @@ public abstract class AbstractCaster<T extends AbstractCaster<T>> implements Too
             pTooltipAdder.accept(Component.literal(getSpellName()));
         }
         if (isSpellHidden()) {
-            pTooltipAdder.accept(Component.literal(getHiddenRecipe()).withStyle(Style.EMPTY.withFont(ResourceLocation.fromNamespaceAndPath("minecraft", "alt")).withColor(ChatFormatting.GOLD)));
+            pTooltipAdder.accept(Component.literal(getHiddenRecipe()).withStyle(Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(Identifier.fromNamespaceAndPath("minecraft", "alt"))).withColor(ChatFormatting.GOLD)));
         } else {
             Spell spell = getSpell();
             pTooltipAdder.accept(Component.literal(spell.getDisplayString()));

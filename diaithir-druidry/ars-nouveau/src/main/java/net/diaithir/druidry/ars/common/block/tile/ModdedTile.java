@@ -4,7 +4,8 @@ import net.diaithir.druidry.ars.setup.registry.BlockEntityTypeRegistryWrapper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -25,14 +26,8 @@ public class ModdedTile extends BlockEntity {
 
     @Override
     @Nullable
-    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
-    }
-
-    @Override
-    public void onDataPacket(@NotNull Connection net, @NotNull ClientboundBlockEntityDataPacket pkt, HolderLookup.@NotNull Provider lookupProvider) {
-        super.onDataPacket(net, pkt, lookupProvider);
-        handleUpdateTag(pkt.getTag(), lookupProvider);
     }
 
     public boolean updateBlock() {
@@ -47,9 +42,7 @@ public class ModdedTile extends BlockEntity {
 
     @Override
     public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider pRegistries) {
-        CompoundTag tag = new CompoundTag();
-        this.saveAdditional(tag, pRegistries);
-        return tag;
+        return this.saveCustomOnly(pRegistries);
     }
 
     public double getX() {

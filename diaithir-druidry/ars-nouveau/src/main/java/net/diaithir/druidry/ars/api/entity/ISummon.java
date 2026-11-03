@@ -1,6 +1,7 @@
 package net.diaithir.druidry.ars.api.entity;
 
 import net.diaithir.druidry.ars.api.event.SummonEvent;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
@@ -32,13 +33,19 @@ public interface ISummon extends OwnableEntity {
         NeoForge.EVENT_BUS.post(new SummonEvent.Death(world, this, source, didExpire));
     }
 
+    /** 26.1: OwnableEntity only exposes an EntityReference; this keeps the old UUID accessor. */
+    default @Nullable UUID getOwnerUUID() {
+        var ref = getOwnerReference();
+        return ref == null ? null : ref.getUUID();
+    }
+
     default void writeOwner(CompoundTag tag) {
         if (getOwnerUUID() != null)
-            tag.putUUID("owner", getOwnerUUID());
+            tag.putIntArray("owner", UUIDUtil.uuidToIntArray(getOwnerUUID()));
     }
 
     default @Nullable Entity readOwner(ServerLevel world, CompoundTag tag) {
-        return tag.contains("owner") ? world.getEntity(tag.getUUID("owner")) : null;
+        return tag.getIntArray("owner").map(arr -> world.getEntity(UUIDUtil.uuidFromIntArray(arr))).orElse(null);
     }
 
     /*

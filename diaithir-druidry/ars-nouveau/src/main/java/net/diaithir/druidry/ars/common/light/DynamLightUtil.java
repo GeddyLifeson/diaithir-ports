@@ -5,7 +5,7 @@ import net.diaithir.druidry.ars.setup.config.Config;
 import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.ItemLike;
 
 public class DynamLightUtil {
     public static int getJarOfLightLuminance(Player p) {
-        NonNullList<ItemStack> list = p.inventory.items;
+        NonNullList<ItemStack> list = p.getInventory().getNonEquipmentItems();
         for (int i = 0; i < 9; i++) {
             ItemStack jar = list.get(i);
             if (jar.is(ItemsRegistry.JAR_OF_LIGHT.asItem())) {
@@ -49,7 +49,8 @@ public class DynamLightUtil {
 
     public static int getPlayerLight(Player player) {
         int max = 0;
-        for (ItemStack item : player.getAllSlots()) {
+        for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
+            ItemStack item = player.getInventory().getItem(slot);
             if (item.isEmpty()) continue;
             max = Math.max(max, Config.ITEM_LIGHTMAP.getOrDefault(keyFor(item.getItem()), 0));
         }
@@ -76,11 +77,11 @@ public class DynamLightUtil {
         return Config.ITEM_LIGHTMAP.getOrDefault(keyFor(itemLike), 0);
     }
 
-    public static ResourceLocation keyFor(Entity entity) {
+    public static Identifier keyFor(Entity entity) {
         return BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
     }
 
-    public static ResourceLocation keyFor(ItemLike itemLike) {
+    public static Identifier keyFor(ItemLike itemLike) {
         return BuiltInRegistries.ITEM.getKey(itemLike.asItem());
     }
 

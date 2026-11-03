@@ -24,9 +24,10 @@ public class InvUtil {
         for (Direction d : Direction.values()) {
             BlockPos relativePos = pos.relative(d);
 
-            IItemHandler handler = level.getCapability(Capabilities.ItemHandler.BLOCK, relativePos, level.getBlockState(relativePos), null, d.getOpposite());
-            if (handler == null)
+            var resourceHandler = level.getCapability(Capabilities.Item.BLOCK, relativePos, level.getBlockState(relativePos), null, d.getOpposite());
+            if (resourceHandler == null)
                 continue;
+            IItemHandler handler = IItemHandler.of(resourceHandler);
             inventories.add(new FilterableItemHandler(handler, FilterSet.forPosition(level, relativePos)));
         }
         return inventories;
@@ -47,7 +48,7 @@ public class InvUtil {
 
     public static List<FilterableItemHandler> fromPlayer(Player player) {
         List<FilterableItemHandler> list = new ArrayList<>();
-        list.add(new FilterableItemHandler(new PlayerMainInvWrapper(player.inventory), new ArrayList<>()));
+        list.add(new FilterableItemHandler(new PlayerMainInvWrapper(player.getInventory()), new ArrayList<>()));
         return list;
     }
 }

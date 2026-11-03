@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.client.ClientInfo;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
@@ -21,8 +20,7 @@ public class NotEnoughManaPacket extends AbstractPacket {
 
     @Override
     public void onClientReceived(Minecraft minecraft, Player player) {
-        ClientInfo.redOverlayTicks = 35;
-        ClientInfo.redOverlayMana = totalCost;
+        // Port note: client-side handling not ported.
     }
 
     public static void encode(NotEnoughManaPacket msg, RegistryFriendlyByteBuf RegistryFriendlyByteBuf) {

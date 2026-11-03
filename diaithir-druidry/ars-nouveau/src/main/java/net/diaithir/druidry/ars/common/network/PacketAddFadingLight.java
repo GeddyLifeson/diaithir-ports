@@ -1,17 +1,12 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.api.event.EventQueue;
-import net.diaithir.druidry.ars.api.event.FadeLightTimedEvent;
-import net.diaithir.druidry.ars.common.light.LightManager;
-import net.diaithir.druidry.ars.setup.config.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.phys.Vec3;
 
 public class PacketAddFadingLight extends AbstractPacket {
     public static final Type<PacketAddFadingLight> TYPE = new Type(ArsNouveau.prefix("add_fading_light"));
@@ -52,19 +47,6 @@ public class PacketAddFadingLight extends AbstractPacket {
 
     @Override
     public void onClientReceived(Minecraft minecraft, Player player) {
-        Handle.handle(this, minecraft, player);
-    }
-
-    private static class Handle {
-        public static void handle(PacketAddFadingLight packet, Minecraft minecraft, Player player) {
-            if (LightManager.shouldUpdateDynamicLight() || LightManager.dynamicLightsContext != null) {
-                var event = new FadeLightTimedEvent(minecraft.level, new Vec3(packet.x, packet.y, packet.z), Config.TOUCH_LIGHT_DURATION.get(), Config.TOUCH_LIGHT_LUMINANCE.get());
-                EventQueue.getClientQueue().addEvent(event);
-
-                if (LightManager.dynamicLightsContext != null) {
-                    LightManager.dynamicLightsContext.dynamicLightBehaviorManager().add(event);
-                }
-            }
-        }
+        // Port note: client-side handling not ported.
     }
 }

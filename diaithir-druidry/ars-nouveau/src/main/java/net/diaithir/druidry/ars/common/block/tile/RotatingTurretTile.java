@@ -6,21 +6,18 @@ import net.diaithir.druidry.ars.api.spell.EntitySpellResolver;
 import net.diaithir.druidry.ars.api.spell.SpellContext;
 import net.diaithir.druidry.ars.api.spell.wrapped_caster.TileCaster;
 import net.diaithir.druidry.ars.api.util.SourceUtil;
-import net.diaithir.druidry.ars.client.particle.ParticleUtil;
 import net.diaithir.druidry.ars.common.block.RotatingSpellTurret;
 import net.diaithir.druidry.ars.common.entity.EntityFollowProjectile;
-import net.diaithir.druidry.ars.common.network.Networking;
-import net.diaithir.druidry.ars.common.network.PacketOneShotAnimation;
 import net.diaithir.druidry.ars.common.util.PortUtil;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import net.diaithir.druidry.ars.setup.registry.CapabilityRegistry;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Position;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
@@ -56,7 +53,7 @@ public class RotatingTurretTile extends BasicSpellTurretTile implements IWandabl
     public void tick() {
         super.tick();
         // Animated in the renderer
-        if (level.isClientSide) {
+        if (level.isClientSide()) {
             if (clientNeededX != neededRotationX) {
                 float diff = neededRotationX - clientNeededX;
                 if (Math.abs(diff) < 0.1) {
@@ -136,7 +133,6 @@ public class RotatingTurretTile extends BasicSpellTurretTile implements IWandabl
         neededRotationY = angle;
 
         updateBlock();
-        ParticleUtil.beam(blockPos, getBlockPos(), level);
         PortUtil.sendMessageNoSpam(playerEntity, Component.literal("Turret now aims to " + blockPos.toShortString()));
     }
 
@@ -177,7 +173,6 @@ public class RotatingTurretTile extends BasicSpellTurretTile implements IWandabl
             }
         }
 
-        Networking.sendToNearbyClient(level, pos, new PacketOneShotAnimation(pos));
         Position iposition = RotatingSpellTurret.getDispensePosition(pos, this);
         FakePlayer fakePlayer = uuid != null
                 ? FakePlayerFactory.get(level, new GameProfile(uuid, ""))
@@ -225,8 +220,8 @@ public class RotatingTurretTile extends BasicSpellTurretTile implements IWandabl
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(tag, pRegistries);
+    protected void saveAdditional(ValueOutput tag) {
+        super.saveAdditional(tag);
         tag.putFloat("rotationY", rotationY);
         tag.putFloat("rotationX", rotationX);
         tag.putFloat("neededRotationY", neededRotationY);
@@ -234,12 +229,12 @@ public class RotatingTurretTile extends BasicSpellTurretTile implements IWandabl
     }
 
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider pRegistries) {
-        super.loadAdditional(tag, pRegistries);
-        rotationX = tag.getFloat("rotationX");
-        rotationY = tag.getFloat("rotationY");
-        neededRotationX = tag.getFloat("neededRotationX");
-        neededRotationY = tag.getFloat("neededRotationY");
+    protected void loadAdditional(ValueInput tag) {
+        super.loadAdditional(tag);
+        rotationX = tag.getFloatOr("rotationX", 0f);
+        rotationY = tag.getFloatOr("rotationY", 0f);
+        neededRotationX = tag.getFloatOr("neededRotationX", 0f);
+        neededRotationY = tag.getFloatOr("neededRotationY", 0f);
     }
 
     public float getRotationX() {

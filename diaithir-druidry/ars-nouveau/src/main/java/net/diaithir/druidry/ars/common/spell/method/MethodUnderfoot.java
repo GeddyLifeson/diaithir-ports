@@ -26,20 +26,20 @@ public class MethodUnderfoot extends AbstractCastMethod {
     }
 
     public static List<Entity> getEntitiesBeneath(LivingEntity caster, Level world) {
-        return world.getEntities(caster, caster.getBoundingBox().inflate(0.1, 1.5, 0.1), entity -> entity.isAlive() && !entity.getType().is(EntityTags.UNDERFOOT_BLACKLIST) && (entity instanceof LivingEntity || entity.getType().is(EntityTags.UNDERFOOT_WHITELIST)));
+        return world.getEntities(caster, caster.getBoundingBox().inflate(0.1, 1.5, 0.1), entity -> entity.isAlive() && !entity.getType().builtInRegistryHolder().is(EntityTags.UNDERFOOT_BLACKLIST) && (entity instanceof LivingEntity || entity.getType().builtInRegistryHolder().is(EntityTags.UNDERFOOT_WHITELIST)));
     }
 
     @Override
     public CastResolveType onCast(@Nullable ItemStack stack, LivingEntity caster, Level world, SpellStats spellStats, SpellContext context, SpellResolver resolver) {
         // check if the caster has an entity beneath them or is riding one
         if (caster.getVehicle() != null) {
-            resolver.onResolveEffect(caster.getCommandSenderWorld(), new EntityHitResult(caster.getVehicle()));
+            resolver.onResolveEffect(caster.level(), new EntityHitResult(caster.getVehicle()));
         } else {
             List<Entity> nearbyEntities = getEntitiesBeneath(caster, world);
             if (!nearbyEntities.isEmpty()) {
-                resolver.onResolveEffect(caster.getCommandSenderWorld(), new EntityHitResult(nearbyEntities.getFirst()));
+                resolver.onResolveEffect(caster.level(), new EntityHitResult(nearbyEntities.getFirst()));
             } else {
-                resolver.onResolveEffect(caster.getCommandSenderWorld(), new BlockHitResult(caster.position, Direction.DOWN, caster.blockPosition().below(), true));
+                resolver.onResolveEffect(caster.level(), new BlockHitResult(caster.position(), Direction.DOWN, caster.blockPosition().below(), true));
             }
         }
         return CastResolveType.SUCCESS;
@@ -48,13 +48,13 @@ public class MethodUnderfoot extends AbstractCastMethod {
     @Override
     public CastResolveType onCastOnBlock(UseOnContext context, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
         LivingEntity caster = context.getPlayer();
-        resolver.onResolveEffect(caster.getCommandSenderWorld(), new BlockHitResult(caster.position, Direction.DOWN, caster.blockPosition().below(), true));
+        resolver.onResolveEffect(caster.level(), new BlockHitResult(caster.position(), Direction.DOWN, caster.blockPosition().below(), true));
         return CastResolveType.SUCCESS;
     }
 
     @Override
     public CastResolveType onCastOnBlock(BlockHitResult blockRayTraceResult, LivingEntity caster, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
-        resolver.onResolveEffect(caster.getCommandSenderWorld(), new BlockHitResult(caster.position, Direction.DOWN, caster.blockPosition().below(), true));
+        resolver.onResolveEffect(caster.level(), new BlockHitResult(caster.position(), Direction.DOWN, caster.blockPosition().below(), true));
         return CastResolveType.SUCCESS;
     }
 
@@ -62,13 +62,13 @@ public class MethodUnderfoot extends AbstractCastMethod {
     public CastResolveType onCastOnEntity(@Nullable ItemStack stack, LivingEntity caster, Entity target, InteractionHand hand, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
         // check if the caster has an entity beneath them or is riding one
         if (caster.getVehicle() != null) {
-            resolver.onResolveEffect(caster.getCommandSenderWorld(), new EntityHitResult(caster.getVehicle()));
+            resolver.onResolveEffect(caster.level(), new EntityHitResult(caster.getVehicle()));
         } else {
-            List<Entity> nearbyEntities = getEntitiesBeneath(caster, caster.getCommandSenderWorld());
+            List<Entity> nearbyEntities = getEntitiesBeneath(caster, caster.level());
             if (!nearbyEntities.isEmpty()) {
-                resolver.onResolveEffect(caster.getCommandSenderWorld(), new EntityHitResult(nearbyEntities.getFirst()));
+                resolver.onResolveEffect(caster.level(), new EntityHitResult(nearbyEntities.getFirst()));
             } else {
-                resolver.onResolveEffect(caster.getCommandSenderWorld(), new BlockHitResult(caster.position, Direction.DOWN, caster.blockPosition().below(), true));
+                resolver.onResolveEffect(caster.level(), new BlockHitResult(caster.position(), Direction.DOWN, caster.blockPosition().below(), true));
             }
         }
         return CastResolveType.SUCCESS;

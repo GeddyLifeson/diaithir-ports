@@ -8,9 +8,7 @@ import net.diaithir.druidry.ars.common.network.PacketDismountCamera;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
-import net.minecraft.client.multiplayer.ClientChunkCache;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.core.SectionPos;
 import net.minecraft.network.protocol.game.ServerboundMovePlayerPacket;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,7 +21,8 @@ import net.neoforged.neoforge.client.event.ClientTickEvent;
 public class CameraController {
     public static CameraType previousCameraType;
     public static boolean resetOverlaysAfterDismount = false;
-    private static ClientChunkCache.Storage cameraStorage;
+    private static float lastSentYRot;
+    private static float lastSentXRot;
     private static boolean wasUpPressed;
     private static boolean wasDownPressed;
     private static boolean wasLeftPressed;
@@ -31,7 +30,7 @@ public class CameraController {
 
     @SubscribeEvent
     public static void onClientTick(ClientTickEvent.Pre event) {
-        Entity cameraEntity = Minecraft.getInstance().cameraEntity;
+        Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
 
         if (cameraEntity instanceof ScryerCamera cam) {
             Options options = Minecraft.getInstance().options;
@@ -60,7 +59,7 @@ public class CameraController {
 
     @SubscribeEvent
     public static void onClientTick(ClientTickEvent.Post event) {
-        Entity cameraEntity = Minecraft.getInstance().cameraEntity;
+        Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
 
         if (cameraEntity instanceof ScryerCamera cam) {
             Options options = Minecraft.getInstance().options;
@@ -89,11 +88,14 @@ public class CameraController {
 
                 //update other players with the head rotation
                 LocalPlayer player = Minecraft.getInstance().player;
-                double yRotChange = player.getYRot() - player.yRotLast;
-                double xRotChange = player.getXRot() - player.xRotLast;
+                double yRotChange = player.getYRot() - lastSentYRot;
+                double xRotChange = player.getXRot() - lastSentXRot;
 
-                if (yRotChange != 0.0D || xRotChange != 0.0D)
-                    player.connection.send(new ServerboundMovePlayerPacket.Rot(player.getYRot(), player.getXRot(), player.onGround()));
+                if (yRotChange != 0.0D || xRotChange != 0.0D) {
+                    lastSentYRot = player.getYRot();
+                    lastSentXRot = player.getXRot();
+                    player.connection.send(new ServerboundMovePlayerPacket.Rot(player.getYRot(), player.getXRot(), player.onGround(), player.horizontalCollision));
+                }
             }
         }
     }
@@ -123,7 +125,7 @@ public class CameraController {
     }
 
     public static void moveViewHorizontally(ScryerCamera cam, float yRot, float next) {
-        BlockState state = cam.level.getBlockState(cam.blockPosition());
+        BlockState state = cam.level().getBlockState(cam.blockPosition());
 
         if (state.hasProperty(ScryerCrystal.FACING)) {
             float checkNext = next;
@@ -145,20 +147,10 @@ public class CameraController {
         }
     }
 
-    public static ClientChunkCache.Storage getCameraStorage() {
-        return cameraStorage;
-    }
-
-    public static void setCameraStorage(ClientChunkCache.Storage cameraStorage) {
-        CameraController.cameraStorage = cameraStorage;
-    }
-
+    /**
+     * The client chunk-storage swap used to render chunks around the camera relied on private ClientChunkCache internals
+     * (and a mixin) that do not exist in 26.1, so this is a no-op in the port.
+     */
     public static void setRenderPosition(Entity entity) {
-        if (entity instanceof ScryerCamera) {
-            SectionPos cameraPos = SectionPos.of(entity);
-
-            cameraStorage.viewCenterX = cameraPos.x();
-            cameraStorage.viewCenterZ = cameraPos.z();
-        }
     }
 }

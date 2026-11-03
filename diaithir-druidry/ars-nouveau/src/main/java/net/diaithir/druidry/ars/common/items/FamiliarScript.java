@@ -1,12 +1,11 @@
 package net.diaithir.druidry.ars.common.items;
 
-import net.diaithir.druidry.ars.api.documentation.DocClientUtils;
 import net.diaithir.druidry.ars.api.familiar.AbstractFamiliarHolder;
 import net.diaithir.druidry.ars.common.capability.IPlayerCap;
 import net.diaithir.druidry.ars.setup.registry.CapabilityRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -32,8 +31,8 @@ public class FamiliarScript extends ModItem {
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level worldIn, @NotNull Player playerIn, @NotNull InteractionHand handIn) {
-        if (worldIn.isClientSide || handIn != InteractionHand.MAIN_HAND)
+    public @NotNull InteractionResult use(Level worldIn, @NotNull Player playerIn, @NotNull InteractionHand handIn) {
+        if (worldIn.isClientSide() || handIn != InteractionHand.MAIN_HAND)
             return super.use(worldIn, playerIn, handIn);
 
         IPlayerCap familiarCap = CapabilityRegistry.getPlayerDataCap(playerIn);
@@ -58,7 +57,7 @@ public class FamiliarScript extends ModItem {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltip2, @NotNull TooltipFlag flagIn) {
-        tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.familiar.script"), context));
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip2, @NotNull TooltipFlag flagIn) {
+        tooltip2.accept(Component.translatable("ars_nouveau.familiar.script"));
     }
 }

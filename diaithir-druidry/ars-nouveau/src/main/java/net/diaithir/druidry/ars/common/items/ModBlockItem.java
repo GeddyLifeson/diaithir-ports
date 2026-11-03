@@ -1,12 +1,13 @@
 package net.diaithir.druidry.ars.common.items;
 
-import net.diaithir.druidry.ars.api.documentation.DocClientUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.component.TooltipDisplay;
+import java.util.function.Consumer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +38,10 @@ public class ModBlockItem extends BlockItem {
      * allows items to add custom lines of information to the mouseover description
      */
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip2, TooltipFlag flagIn) {
-        super.appendHoverText(stack, context, tooltip2, flagIn);
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip2, TooltipFlag flagIn) {
+        super.appendHoverText(stack, context, display, tooltip2, flagIn);
         if (tooltip != null && !tooltip.isEmpty()) {
-            tooltip.forEach(component -> tooltip2.addAll(DocClientUtils.splitTooltip(component, context)));
+            tooltip.forEach(tooltip2);
         }
     }
 }

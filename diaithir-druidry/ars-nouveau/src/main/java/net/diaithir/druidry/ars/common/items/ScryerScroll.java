@@ -1,6 +1,5 @@
 package net.diaithir.druidry.ars.common.items;
 
-import net.diaithir.druidry.ars.api.documentation.DocClientUtils;
 import net.diaithir.druidry.ars.api.camera.ICameraMountable;
 import net.diaithir.druidry.ars.common.items.data.ScryPosData;
 import net.diaithir.druidry.ars.common.util.PortUtil;
@@ -12,6 +11,8 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.component.TooltipDisplay;
+import java.util.function.Consumer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class ScryerScroll extends ModItem {
 
     @Override
     public @NotNull InteractionResult useOn(UseOnContext pContext) {
-        if (pContext.getLevel().isClientSide)
+        if (pContext.getLevel().isClientSide())
             return super.useOn(pContext);
         if (pContext.getLevel().getBlockEntity(pContext.getClickedPos()) instanceof ICameraMountable) {
             ScryPosData data = new ScryPosData(new GlobalPos(pContext.getLevel().dimension(), pContext.getClickedPos()));
@@ -38,15 +39,15 @@ public class ScryerScroll extends ModItem {
 
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltip2, @NotNull TooltipFlag flagIn) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull TooltipDisplay display, @NotNull Consumer<Component> tooltip2, @NotNull TooltipFlag flagIn) {
         ScryPosData data = stack.get(DataComponentRegistry.SCRY_DATA);
         var globalPos = data.pos().orElse(null);
         if (globalPos != null) {
             BlockPos pos = globalPos.pos();
-            tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.scryer_scroll.bound", pos.getX() + ", " + pos.getY() + ", " + pos.getZ()), context));
+            tooltip2.accept(Component.translatable("ars_nouveau.scryer_scroll.bound", pos.getX() + ", " + pos.getY() + ", " + pos.getZ()));
         } else {
-            tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("ars_nouveau.scryer_scroll.craft"), context));
+            tooltip2.accept(Component.translatable("ars_nouveau.scryer_scroll.craft"));
         }
-        super.appendHoverText(stack, context, tooltip2, flagIn);
+        super.appendHoverText(stack, context, display, tooltip2, flagIn);
     }
 }

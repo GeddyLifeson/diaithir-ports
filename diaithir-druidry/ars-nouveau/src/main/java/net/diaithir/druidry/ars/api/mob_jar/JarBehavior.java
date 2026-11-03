@@ -28,7 +28,7 @@ public class JarBehavior<T extends Entity> {
 
     public void use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit, MobJarTile tile) {
         T entity = entityFromJar(tile);
-        if (entity.getType().is(EntityTags.INTERACT_JAR_BLACKLIST)) return;
+        if (entity.getType().builtInRegistryHolder().is(EntityTags.INTERACT_JAR_BLACKLIST)) return;
 
         if (entity instanceof LivingEntity livingEntity) {
             ItemStack handItem = player.getItemInHand(handIn);
@@ -40,7 +40,7 @@ public class JarBehavior<T extends Entity> {
         }
 
         if (entity instanceof Mob mob) {
-            mob.interact(player, handIn);
+            mob.interact(player, handIn, mob.position());
             syncClient(tile);
         }
     }

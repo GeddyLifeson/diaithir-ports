@@ -59,7 +59,7 @@ public class PerkUtil {
 
     public static List<PerkInstance> getPerksFromLiving(LivingEntity player) {
         List<PerkInstance> perkInstances = new ArrayList<>();
-        for (ItemStack stack : player.getArmorSlots()) {
+        for (ItemStack stack : EquipUtil.armor(player)) {
             perkInstances.addAll(getPerksFromItem(stack));
         }
         return perkInstances;
@@ -67,7 +67,7 @@ public class PerkUtil {
 
     public static int countForPerk(IPerk perk, LivingEntity entity) {
         int maxCount = 0;
-        for (ItemStack stack : entity.getArmorSlots()) {
+        for (ItemStack stack : EquipUtil.armor(entity)) {
             var data = stack.get(DataComponentRegistry.ARMOR_PERKS);
             if (data == null) {
                 continue;
@@ -85,7 +85,7 @@ public class PerkUtil {
         ArmorPerkHolder highestHolder = null;
         ItemStack selectedStack = null;
         int maxCount = 0;
-        for (ItemStack stack : entity.getArmorSlots()) {
+        for (ItemStack stack : EquipUtil.armor(entity)) {
             var data = stack.get(DataComponentRegistry.ARMOR_PERKS);
             if (data == null) {
                 continue;

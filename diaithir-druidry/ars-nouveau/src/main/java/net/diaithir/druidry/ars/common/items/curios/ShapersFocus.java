@@ -35,7 +35,7 @@ public class ShapersFocus extends ArsNouveauCurio implements ISpellModifierItem 
         SpellContext context = spellContext.makeChildContext();
         spellContext.setCanceled(true);
         fallingblockentity.context = context;
-        EntityHitResult hitResult = new EntityHitResult(fallingblockentity, fallingblockentity.position);
+        EntityHitResult hitResult = new EntityHitResult(fallingblockentity, fallingblockentity.position());
         SpellResolver newResolver = resolver.getNewResolver(context);
         if (spellContext.isDelayed()) {
             var currenDelay = spellContext.getDelayedSpellEvent();
@@ -44,7 +44,7 @@ public class ShapersFocus extends ArsNouveauCurio implements ISpellModifierItem 
             EventQueue.getServerInstance().addEvent(delayedSpellEvent);
             context.delay(delayedSpellEvent);
         } else {
-            newResolver.onResolveEffect(level, new EntityHitResult(fallingblockentity, fallingblockentity.position));
+            newResolver.onResolveEffect(level, new EntityHitResult(fallingblockentity, fallingblockentity.position()));
         }
         return context;
     }

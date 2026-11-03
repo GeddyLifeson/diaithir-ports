@@ -3,7 +3,6 @@ package net.diaithir.druidry.ars.common.light;
 import net.diaithir.druidry.ars.ArsNouveau;
 import net.diaithir.druidry.ars.setup.config.Config;
 import net.diaithir.druidry.ars.setup.registry.ModEntities;
-import dev.lambdaurora.lambdynlights.api.DynamicLightsContext;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.core.BlockPos;
@@ -33,21 +32,22 @@ public class LightManager {
     public static int lastUpdateCount = 0;
     private static final Map<EntityType<?>, List<Function<?, Integer>>> LIGHT_REGISTRY = new HashMap<>();
 
-    public static DynamicLightsContext dynamicLightsContext = null;
+    /** LambDynamicLights API context (not available in the 26.1 port; always null). */
+    public static Object dynamicLightsContext = null;
 
     public static void init() {
 
         register(EntityType.PLAYER, DynamLightUtil::getJarOfLightLuminance);
 
         register(EntityType.FALLING_BLOCK, (p) -> {
-            return p.getBlockState().getLightEmission(p.level, p.blockPosition());
+            return p.getBlockState().getLightEmission();
         });
 
         register(ModEntities.ENCHANTED_FALLING_BLOCK.get(), p -> {
-            return p.getBlockState().getLightEmission(p.level, p.blockPosition());
+            return p.getBlockState().getLightEmission();
         });
         register(ModEntities.ENCHANTED_MAGE_BLOCK.get(), p -> {
-            return p.getBlockState().getLightEmission(p.level, p.blockPosition());
+            return p.getBlockState().getLightEmission();
         });
         register(ModEntities.ENTITY_FLYING_ITEM.get(), (p -> 10));
         register(ModEntities.ENTITY_FOLLOW_PROJ.get(), (p -> 10));
@@ -56,14 +56,14 @@ public class LightManager {
         register(ModEntities.LINGER_SPELL.get(), (p -> 15));
         register(ModEntities.WALL_SPELL.get(), (p -> 15));
         register(ModEntities.STARBUNCLE_TYPE.get(), (p -> {
-            if (p.level.getBrightness(LightLayer.BLOCK, p.blockPosition()) < 6) {
+            if (p.level().getBrightness(LightLayer.BLOCK, p.blockPosition()) < 6) {
                 return 10;
             }
             return 0;
         }));
 
         register(ModEntities.ENTITY_FAMILIAR_STARBUNCLE.get(), (p -> {
-            if (p.level.getBrightness(LightLayer.BLOCK, p.blockPosition()) < 6) {
+            if (p.level().getBrightness(LightLayer.BLOCK, p.blockPosition()) < 6) {
                 return 10;
             }
             return 0;
@@ -80,7 +80,6 @@ public class LightManager {
         register(EntityType.ITEM_FRAME, (p) -> DynamLightUtil.fromItemLike((p.getItem().getItem())));
         register(EntityType.GLOW_ITEM_FRAME, (p) -> Math.max(14, DynamLightUtil.fromItemLike((p.getItem().getItem()))));
         register(EntityType.GLOW_SQUID, (p) -> (int) Mth.clampedLerp(0.f, 12.f, 1.f - p.getDarkTicksRemaining() / 10.f));
-        register(ModEntities.ANIMATED_BLOCK.get(), (p) -> p.getBlockState().getLightEmission(p.level, p.blockPosition()));
     }
 
     public static <T extends Entity> void register(EntityType<T> type, Function<T, Integer> luminanceFunction) {

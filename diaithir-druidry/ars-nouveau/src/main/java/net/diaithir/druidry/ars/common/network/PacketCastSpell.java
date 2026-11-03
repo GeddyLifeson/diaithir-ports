@@ -29,9 +29,9 @@ public class PacketCastSpell extends AbstractPacket {
 
     public PacketCastSpell(AbstractCaster<?> caster, InteractionHand hand, @Nullable Component invalidMessage) {
         this.slot = caster.getCurrentSlot();
-        var cam = Minecraft.getInstance().cameraEntity;
-        this.xRot = cam.xRot;
-        this.yRot = cam.yRot;
+        var cam = Minecraft.getInstance().getCameraEntity();
+        this.xRot = cam.getXRot();
+        this.yRot = cam.getYRot();
         this.hand = hand;
         this.invalidMessage = invalidMessage;
     }
@@ -43,7 +43,7 @@ public class PacketCastSpell extends AbstractPacket {
         this.yRot = buf.readFloat();
         this.hand = buf.readEnum(InteractionHand.class);
         if (buf.readBoolean()) {
-            this.invalidMessage = buf.readJsonWithCodec(ComponentSerialization.CODEC);
+            this.invalidMessage = ComponentSerialization.STREAM_CODEC.decode(buf);
         }
     }
 
@@ -55,7 +55,7 @@ public class PacketCastSpell extends AbstractPacket {
         buf.writeEnum(this.hand);
         if (invalidMessage != null) {
             buf.writeBoolean(true);
-            buf.writeJsonWithCodec(ComponentSerialization.CODEC, this.invalidMessage);
+            ComponentSerialization.STREAM_CODEC.encode(buf, this.invalidMessage);
         } else {
             buf.writeBoolean(false);
         }
@@ -67,12 +67,12 @@ public class PacketCastSpell extends AbstractPacket {
 
         AbstractCaster<?> caster = SpellCasterRegistry.from(stack);
         if (caster != null) {
-            float pXRot = player.xRot;
-            float pYRot = player.yRot;
+            float pXRot = player.getXRot();
+            float pYRot = player.getYRot();
             player.setXRot(this.xRot);
             player.setYHeadRot(this.yRot);
 
-            caster.castSpell(player.level, player, this.hand, this.invalidMessage, caster.getSpell(this.slot));
+            caster.castSpell(player.level(), player, this.hand, this.invalidMessage, caster.getSpell(this.slot));
 
             player.setXRot(pXRot);
             player.setYHeadRot(pYRot);

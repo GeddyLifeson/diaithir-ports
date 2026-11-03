@@ -1,11 +1,8 @@
 package net.diaithir.druidry.ars.api.item;
 
 import net.diaithir.druidry.ars.common.items.ModItem;
-import net.minecraft.world.item.ItemStack;
-import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-public abstract class ArsNouveauCurio extends ModItem implements ICurioItem {
+public abstract class ArsNouveauCurio extends ModItem {
 
     public ArsNouveauCurio() {
         this(new Properties().stacksTo(1));
@@ -16,8 +13,4 @@ public abstract class ArsNouveauCurio extends ModItem implements ICurioItem {
         super(properties);
     }
 
-    @Override
-    public boolean canEquipFromUse(SlotContext slotContext, ItemStack stack) {
-        return true;
-    }
 }

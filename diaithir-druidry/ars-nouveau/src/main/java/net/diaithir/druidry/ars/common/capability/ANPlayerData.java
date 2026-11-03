@@ -4,22 +4,21 @@ import net.diaithir.druidry.ars.api.registry.GlyphRegistry;
 import net.diaithir.druidry.ars.api.spell.AbstractSpellPart;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.util.INBTSerializable;
+import net.minecraft.resources.Identifier;
+import net.neoforged.neoforge.common.util.ValueIOSerializable;
 import org.jetbrains.annotations.UnknownNullability;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ANPlayerData implements INBTSerializable<CompoundTag> {
+public class ANPlayerData implements ValueIOSerializable {
     public Set<AbstractSpellPart> glyphs = new HashSet<>();
 
     public Set<FamiliarData> familiars = new HashSet<>();
 
-    public ResourceLocation lastSummonedFamiliar;
+    public Identifier lastSummonedFamiliar;
 
-    @Override
     public @UnknownNullability CompoundTag serializeNBT(HolderLookup.Provider provider) {
         CompoundTag tag = new CompoundTag();
 
@@ -44,25 +43,34 @@ public class ANPlayerData implements INBTSerializable<CompoundTag> {
         return tag;
     }
 
-    @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
         glyphs = new HashSet<>();
         familiars = new HashSet<>();
 
-        CompoundTag glyphsTag = nbt.getCompound("glyphs");
-        for (int i = 0; i < glyphsTag.getInt("size"); i++) {
-            ResourceLocation id = ResourceLocation.parse(glyphsTag.getString("glyph" + i));
+        CompoundTag glyphsTag = nbt.getCompoundOrEmpty("glyphs");
+        for (int i = 0; i < glyphsTag.getIntOr("size", 0); i++) {
+            Identifier id = Identifier.parse(glyphsTag.getStringOr("glyph" + i, ""));
             AbstractSpellPart part = GlyphRegistry.getSpellPart(id);
             if (part != null)
                 glyphs.add(part);
         }
 
-        CompoundTag familiarsTag = nbt.getCompound("familiars");
-        for (int i = 0; i < familiarsTag.getInt("size"); i++) {
-            familiars.add(new FamiliarData(familiarsTag.getCompound("familiar" + i)));
+        CompoundTag familiarsTag = nbt.getCompoundOrEmpty("familiars");
+        for (int i = 0; i < familiarsTag.getIntOr("size", 0); i++) {
+            familiars.add(new FamiliarData(familiarsTag.getCompoundOrEmpty("familiar" + i)));
         }
         if (nbt.contains("lastSummonedFamiliar")) {
-            lastSummonedFamiliar = ResourceLocation.parse(nbt.getString("lastSummonedFamiliar"));
+            lastSummonedFamiliar = Identifier.parse(nbt.getStringOr("lastSummonedFamiliar", ""));
         }
+    }
+
+    @Override
+    public void serialize(net.minecraft.world.level.storage.ValueOutput output) {
+        output.store("data", CompoundTag.CODEC, serializeNBT(null));
+    }
+
+    @Override
+    public void deserialize(net.minecraft.world.level.storage.ValueInput input) {
+        input.read("data", CompoundTag.CODEC).ifPresent(t -> deserializeNBT(null, t));
     }
 }

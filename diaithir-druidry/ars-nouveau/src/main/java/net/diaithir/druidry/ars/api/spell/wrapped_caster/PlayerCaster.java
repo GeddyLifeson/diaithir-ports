@@ -26,7 +26,7 @@ public class PlayerCaster extends LivingCaster {
     @Override
     public @NotNull List<FilterableItemHandler> getInventory() {
         List<FilterableItemHandler> base = new ArrayList<>();
-        base.add(new FilterableItemHandler(new PlayerMainInvWrapper(player.inventory), new ArrayList<>()));
+        base.add(new FilterableItemHandler(new PlayerMainInvWrapper(player.getInventory()), new ArrayList<>()));
         return base;
     }
 

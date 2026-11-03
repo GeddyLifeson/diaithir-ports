@@ -1,14 +1,10 @@
 package net.diaithir.druidry.ars.common.capability;
 
 import net.diaithir.druidry.ars.api.source.ISourceCap;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.IntTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.util.Mth;
-import net.neoforged.neoforge.common.util.INBTSerializable;
-import org.jetbrains.annotations.NotNull;
+import net.neoforged.neoforge.common.util.ValueIOSerializable;
 
-public class SourceStorage implements ISourceCap, INBTSerializable<Tag> {
+public class SourceStorage implements ISourceCap, ValueIOSerializable {
     protected int source;
     protected int capacity;
     protected int maxReceive;
@@ -175,15 +171,13 @@ public class SourceStorage implements ISourceCap, INBTSerializable<Tag> {
     }
 
     @Override
-    public Tag serializeNBT(HolderLookup.@NotNull Provider provider) {
-        return IntTag.valueOf(this.getSource());
+    public void serialize(net.minecraft.world.level.storage.ValueOutput output) {
+        output.putInt("source", this.getSource());
     }
 
     @Override
-    public void deserializeNBT(HolderLookup.@NotNull Provider provider, @NotNull Tag nbt) {
-        if (!(nbt instanceof IntTag intNbt))
-            throw new IllegalArgumentException("Can not deserialize to an instance that isn't the default implementation");
-        this.source = intNbt.getAsInt();
+    public void deserialize(net.minecraft.world.level.storage.ValueInput input) {
+        this.source = input.getIntOr("source", 0);
     }
 
     /**

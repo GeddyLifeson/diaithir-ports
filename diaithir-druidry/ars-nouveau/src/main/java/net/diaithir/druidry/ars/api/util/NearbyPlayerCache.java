@@ -16,7 +16,7 @@ public class NearbyPlayerCache {
     private static final Map<String, Cache<Long, CacheResult>> levelPlayerCache = new ConcurrentHashMap<>();
 
     public static boolean isPlayerNearby(BlockPos pos, ServerLevel level, int range) {
-        String key = level.dimension().location().toString();
+        String key = level.dimension().identifier().toString();
         if (!levelPlayerCache.containsKey(key))
             levelPlayerCache.put(key, CacheBuilder.newBuilder().maximumSize(1000).build());
         Cache<Long, CacheResult> positionCache = levelPlayerCache.get(key);
@@ -28,7 +28,7 @@ public class NearbyPlayerCache {
             return playerResult.isPlayerNearby();
         }
 
-        long nextCheck = gameTime + 500 + level.random.nextInt(20);
+        long nextCheck = gameTime + 500 + level.getRandom().nextInt(20);
 
         for (Player player : level.players()) {
             if (BlockUtil.distanceFrom(level, player.blockPosition(), pos) < range) {

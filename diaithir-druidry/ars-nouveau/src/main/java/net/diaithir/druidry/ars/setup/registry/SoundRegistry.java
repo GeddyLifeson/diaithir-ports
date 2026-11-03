@@ -4,6 +4,7 @@ import net.diaithir.druidry.ars.ArsNouveau;
 import net.diaithir.druidry.ars.api.registry.SpellSoundRegistry;
 import net.diaithir.druidry.ars.api.sound.SpellSound;
 import net.minecraft.core.Holder;
+import net.minecraft.resources.Identifier;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
@@ -84,15 +85,15 @@ public class SoundRegistry {
     public static SpellSound BUBBLE_COLUMN_UPWARDS_INSIDE = register(SoundEvents.BUBBLE_COLUMN_UPWARDS_INSIDE, "bubble_column_upwards_inside");
     public static SpellSound BUCKET_EMPTY = register(SoundEvents.BUCKET_EMPTY, "bucket_empty");
     public static SpellSound BUCKET_FILL = register(SoundEvents.BUCKET_FILL, "bucket_fill");
-    public static SpellSound CAT_AMBIENT = register(SoundEvents.CAT_AMBIENT, "cat_ambient");
-    public static SpellSound CAT_HISS = register(SoundEvents.CAT_HISS, "cat_hiss");
+    public static SpellSound CAT_AMBIENT = register(vanilla("entity.cat.ambient"), "cat_ambient");
+    public static SpellSound CAT_HISS = register(vanilla("entity.cat.hiss"), "cat_hiss");
     public static SpellSound CHAIN_BREAK = register(SoundEvents.CHAIN_BREAK, "chain_break");
     public static SpellSound CHAIN_FALL = register(SoundEvents.CHAIN_FALL, "chain_fall");
     public static SpellSound CHICKEN_EGG = register(SoundEvents.CHICKEN_EGG, "chicken_egg");
-    public static SpellSound CHICKEN_AMBIENT = register(SoundEvents.CHICKEN_AMBIENT, "chicken_ambient");
+    public static SpellSound CHICKEN_AMBIENT = register(vanilla("entity.chicken.ambient"), "chicken_ambient");
     public static SpellSound CHORUS_FRUIT_TELEPORT = register(SoundEvents.CHORUS_FRUIT_TELEPORT, "chorus_fruit_teleport");
     public static SpellSound COMPARATOR_CLICK = register(SoundEvents.COMPARATOR_CLICK, "comparator_click");
-    public static SpellSound COW_AMBIENT = register(SoundEvents.COW_AMBIENT, "cow_ambient");
+    public static SpellSound COW_AMBIENT = register(vanilla("entity.cow.ambient"), "cow_ambient");
     public static SpellSound CREEPER_PRIMED = register(SoundEvents.CREEPER_PRIMED, "creeper_primed");
     public static SpellSound DOLPHIN_AMBIENT = register(SoundEvents.DOLPHIN_AMBIENT, "dolphin_ambient");
     public static SpellSound DOLPHIN_ATTACK = register(SoundEvents.DOLPHIN_ATTACK, "dolphin_attack");
@@ -194,8 +195,8 @@ public class SoundRegistry {
     public static SpellSound WITCH_DRINK = register(SoundEvents.WITCH_DRINK, "witch_drink");
     public static SpellSound WOLF_ARMOR_BREAK = register(SoundEvents.WOLF_ARMOR_BREAK, "wolf_armor_break");
     public static SpellSound WOLF_ARMOR_CRACK = register(SoundEvents.WOLF_ARMOR_CRACK, "wolf_armor_crack");
-    public static SpellSound WOLF_AMBIENT = register(SoundEvents.WOLF_AMBIENT, "wolf_ambient");
-    public static SpellSound WOLF_HOWL = register(SoundEvents.WOLF_HOWL, "wolf_howl");
+    public static SpellSound WOLF_AMBIENT = register(vanilla("entity.wolf.ambient"), "wolf_ambient");
+    public static SpellSound WOLF_HOWL = register(vanilla("entity.wolf.howl"), "wolf_howl");
     public static SpellSound WOLF_SHAKE = register(SoundEvents.WOLF_SHAKE, "wolf_shake");
     public static SpellSound ZOMBIE_INFECT = register(SoundEvents.ZOMBIE_INFECT, "zombie_infect");
     public static SpellSound ZOMBIE_VILLAGER_CONVERTED = register(SoundEvents.ZOMBIE_VILLAGER_CONVERTED, "zombie_villager_converted");
@@ -233,6 +234,10 @@ public class SoundRegistry {
 
     public static SpellSound register(SoundEvent soundEvent, String name) {
         return SpellSoundRegistry.registerSpellSound(new SpellSound(Holder.direct(soundEvent), Component.translatable("ars_nouveau.sound." + name), ArsNouveau.prefix(name)));
+    }
+
+    static SoundEvent vanilla(String path) {
+        return SoundEvent.createVariableRangeEvent(Identifier.withDefaultNamespace(path));
     }
 
     static SoundEvent makeSound(String name) {

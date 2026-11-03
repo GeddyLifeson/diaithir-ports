@@ -12,7 +12,6 @@ import net.diaithir.druidry.ars.setup.registry.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.SectionPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ChunkTrackingView;
 import net.minecraft.server.level.ServerLevel;
@@ -20,7 +19,10 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
 import java.util.ArrayList;
@@ -81,7 +83,7 @@ public class ScryerCamera extends Entity {
     }
 
     private void setInitialPitchYaw() {
-        Direction facing = this.level.getBlockState(this.blockPosition()).getValue(ScryerCrystal.FACING);
+        Direction facing = this.level().getBlockState(this.blockPosition()).getValue(ScryerCrystal.FACING);
         if (facing == Direction.NORTH) {
             this.setYRot(180.0F);
         } else if (facing == Direction.WEST) {
@@ -110,7 +112,7 @@ public class ScryerCamera extends Entity {
     }
 
     public void tick() {
-        if (this.level.isClientSide) {
+        if (this.level().isClientSide()) {
             if (this.screenshotSoundCooldown > 0) {
                 --this.screenshotSoundCooldown;
             }
@@ -122,7 +124,7 @@ public class ScryerCamera extends Entity {
             if (this.toggleNightVisionCooldown > 0) {
                 --this.toggleNightVisionCooldown;
             }
-        } else if (this.level.getBlockState(this.blockPosition()).getBlock() != BlockRegistry.SCRYERS_CRYSTAL.get()) {
+        } else if (this.level().getBlockState(this.blockPosition()).getBlock() != BlockRegistry.SCRYERS_CRYSTAL.get()) {
             this.discard();
         }
 
@@ -150,7 +152,7 @@ public class ScryerCamera extends Entity {
     }
 
     public boolean isCameraDown() {
-        BlockEntity var2 = this.level.getBlockEntity(this.blockPosition());
+        BlockEntity var2 = this.level().getBlockEntity(this.blockPosition());
         return var2 instanceof ScryerCrystalTile cam && cam.down;
     }
 
@@ -159,9 +161,9 @@ public class ScryerCamera extends Entity {
     }
 
     public void stopViewing(ServerPlayer player) {
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide()) {
             this.discard();
-            player.camera = player;
+            player.setCamera(player);
             Networking.sendToPlayerClient(new PacketSetCameraView(player), player);
             DISMOUNTED_PLAYERS.add(player);
         }
@@ -174,9 +176,9 @@ public class ScryerCamera extends Entity {
     }
 
     public void discardCamera() {
-        if (!this.level.isClientSide) {
+        if (!this.level().isClientSide()) {
 
-            if (level.getBlockEntity(this.blockPosition()) instanceof ICameraMountable camMount) {
+            if (level().getBlockEntity(this.blockPosition()) instanceof ICameraMountable camMount) {
                 camMount.stopViewing();
             }
 
@@ -201,11 +203,16 @@ public class ScryerCamera extends Entity {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag tag) {
+    protected void addAdditionalSaveData(ValueOutput output) {
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag tag) {
+    protected void readAdditionalSaveData(ValueInput input) {
+    }
+
+    @Override
+    public boolean hurtServer(ServerLevel level, DamageSource source, float damage) {
+        return false;
     }
 
     public boolean isAlwaysTicking() {

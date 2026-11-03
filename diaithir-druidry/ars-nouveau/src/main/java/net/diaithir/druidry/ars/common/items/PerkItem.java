@@ -1,11 +1,12 @@
 package net.diaithir.druidry.ars.common.items;
 
-import net.diaithir.druidry.ars.api.documentation.DocClientUtils;
 import net.diaithir.druidry.ars.api.perk.IPerk;
 import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
+import java.util.function.Consumer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -29,14 +30,14 @@ public class PerkItem extends ModItem {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltip2, @NotNull TooltipFlag flagIn) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull TooltipDisplay display, @NotNull Consumer<Component> tooltip2, @NotNull TooltipFlag flagIn) {
         if (perk == null)
             return;
 
-        if (flagIn.hasShiftDown()) {
-            tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable(perk.getDescriptionKey()), context));
+        if (TooltipUtil.hasShiftDown()) {
+            tooltip2.accept(Component.translatable(perk.getDescriptionKey()));
         } else {
-            tooltip2.addAll(DocClientUtils.splitTooltip(Component.translatable("tooltip.ars_nouveau.hold_shift", Component.keybind("key.sneak")), context));
+            tooltip2.accept(Component.translatable("tooltip.ars_nouveau.hold_shift", Component.keybind("key.sneak")));
         }
     }
 }

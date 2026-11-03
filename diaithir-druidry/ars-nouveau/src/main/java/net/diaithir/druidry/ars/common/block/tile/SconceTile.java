@@ -1,48 +1,34 @@
 package net.diaithir.druidry.ars.common.block.tile;
 
 import net.diaithir.druidry.ars.api.entity.IDispellable;
-import net.diaithir.druidry.ars.api.particle.ParticleEmitter;
-import net.diaithir.druidry.ars.api.particle.PropertyParticleOptions;
-import net.diaithir.druidry.ars.api.particle.configurations.LightBlobMotion;
-import net.diaithir.druidry.ars.api.particle.configurations.properties.ColorProperty;
-import net.diaithir.druidry.ars.api.particle.timelines.LightTimeline;
-import net.diaithir.druidry.ars.api.particle.timelines.TimelineEntryData;
 import net.diaithir.druidry.ars.api.registry.ParticleColorRegistry;
-import net.diaithir.druidry.ars.api.registry.ParticlePropertyRegistry;
-import net.diaithir.druidry.ars.api.registry.ParticleTimelineRegistry;
 import net.diaithir.druidry.ars.api.spell.ILightable;
-import net.diaithir.druidry.ars.api.spell.ITimelined;
 import net.diaithir.druidry.ars.api.spell.SpellContext;
 import net.diaithir.druidry.ars.api.spell.SpellStats;
 import net.diaithir.druidry.ars.api.util.IWololoable;
 import net.diaithir.druidry.ars.client.particle.ParticleColor;
-import net.diaithir.druidry.ars.client.particle.ParticleUtil;
-import net.diaithir.druidry.ars.client.registry.ModParticles;
 import net.diaithir.druidry.ars.common.block.ITickable;
 import net.diaithir.druidry.ars.common.block.SconceBlock;
-import net.diaithir.druidry.ars.common.block.ScribesBlock;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentDampen;
-import net.diaithir.druidry.ars.common.util.ANCodecs;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.Vec2;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
-public class SconceTile extends ModdedTile implements ILightable, ITickable, IDispellable, IWololoable, ITimelined<LightTimeline> {
-    protected LightTimeline timeline = new LightTimeline();
+/**
+ * Ported from Ars Nouveau (LGPL-3.0). The particle timeline/emitter (flame particles) was not ported (26.1).
+ */
+public class SconceTile extends ModdedTile implements ILightable, ITickable, IDispellable, IWololoable {
     protected ParticleColor color = ParticleColor.defaultParticleColor();
     public boolean lit;
-    ParticleEmitter particleEmitter;
 
     public SconceTile(BlockPos pos, BlockState state) {
         super(BlockRegistry.SCONCE_TILE, pos, state);
@@ -53,36 +39,21 @@ public class SconceTile extends ModdedTile implements ILightable, ITickable, IDi
     }
 
     @Override
-    public void loadAdditional(CompoundTag compound, HolderLookup.Provider pRegistries) {
-        super.loadAdditional(compound, pRegistries);
-        this.color = ParticleColorRegistry.from(compound.getCompound("color"));
-        lit = compound.getBoolean("lit");
-        if (compound.contains("timeline")) {
-            this.timeline = ANCodecs.decode(LightTimeline.CODEC.codec(), compound.getCompound("timeline"));
-        } else {
-            this.timeline = new LightTimeline();
-            PropertyParticleOptions particleOptions = new PropertyParticleOptions(ModParticles.NEW_GLOW_TYPE.get());
-            ColorProperty colorProperty = new ColorProperty();
-            colorProperty.particleColor = color;
-            particleOptions.map.set(ParticlePropertyRegistry.COLOR_PROPERTY.get(), colorProperty);
-            timeline.onTickEffect = new TimelineEntryData(new LightBlobMotion(), particleOptions);
-        }
-        particleEmitter = new ParticleEmitter(() -> this.getBlockPos().getCenter(), () -> new Vec2(0, 0), timeline.onTickEffect);
+    public void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
+        this.color = input.read("color", CompoundTag.CODEC).map(ParticleColorRegistry::from).orElse(ParticleColor.defaultParticleColor());
+        lit = input.getBooleanOr("lit", false);
     }
 
     @Override
-    public void saveAdditional(CompoundTag compound, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(compound, pRegistries);
-        compound.put("color", color.serialize());
-        compound.putBoolean("lit", lit);
-        compound.put("timeline", ANCodecs.encode(LightTimeline.CODEC.codec(), timeline));
+    public void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
+        output.store("color", CompoundTag.CODEC, color.serialize());
+        output.putBoolean("lit", lit);
     }
 
     @Override
     public void onLight(HitResult rayTraceResult, Level world, LivingEntity shooter, SpellStats stats, SpellContext spellContext) {
-        this.color = spellContext.getParticleTimeline(ParticleTimelineRegistry.LIGHT_TIMELINE.get()).onTickEffect.particleOptions().colorProp().particleColor;
-        this.timeline = spellContext.getParticleTimeline(ParticleTimelineRegistry.LIGHT_TIMELINE.get());
-        particleEmitter = new ParticleEmitter(() -> this.getBlockPos().getCenter(), () -> new Vec2(0, 0), timeline.onTickEffect);
         lit = true;
         if (rayTraceResult instanceof BlockHitResult) {
             BlockState state = world.getBlockState(((BlockHitResult) rayTraceResult).getBlockPos());
@@ -95,38 +66,6 @@ public class SconceTile extends ModdedTile implements ILightable, ITickable, IDi
 
     @Override
     public void tick() {
-        if (!level.isClientSide() || !lit)
-            return;
-        BlockPos pos = getBlockPos();
-        double xzOffset = 0.15;
-        BlockState state = getBlockState();
-        if (!(state.hasProperty(ScribesBlock.FACING)))
-            return;
-
-        double xOffset = ParticleUtil.inRange(-xzOffset / 4, xzOffset / 4);
-        double zOffset = ParticleUtil.inRange(-xzOffset / 4, xzOffset / 4);
-        double centerX = pos.getX() + xOffset;
-        double centerZ = pos.getZ() + zOffset;
-        if (state.getValue(ScribesBlock.FACING) == Direction.NORTH) {
-            centerX += 0.5;
-            centerZ += 0.8;
-        }
-        if (state.getValue(ScribesBlock.FACING) == Direction.SOUTH) {
-            centerX += 0.5;
-            centerZ += 0.2;
-        }
-        if (state.getValue(ScribesBlock.FACING) == Direction.EAST) {
-            centerX += 0.2;
-            centerZ += 0.5;
-        }
-        if (state.getValue(ScribesBlock.FACING) == Direction.WEST) {
-            centerX += 0.8;
-            centerZ += 0.5;
-        }
-        if (particleEmitter != null) {
-            particleEmitter.setPosition(new Vec3(centerX, pos.getY() + 0.9 + ParticleUtil.inRange(-0.00, 0.1), centerZ));
-            particleEmitter.tick(level);
-        }
     }
 
     @Override
@@ -146,10 +85,5 @@ public class SconceTile extends ModdedTile implements ILightable, ITickable, IDi
     @Override
     public ParticleColor getColor() {
         return color;
-    }
-
-    @Override
-    public LightTimeline getTimeline() {
-        return timeline;
     }
 }

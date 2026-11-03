@@ -1,13 +1,9 @@
 package net.diaithir.druidry.ars.api.event;
 
-import net.diaithir.druidry.ars.api.particle.ParticleEmitter;
-import net.diaithir.druidry.ars.api.particle.timelines.DelayTimeline;
-import net.diaithir.druidry.ars.api.registry.ParticleTimelineRegistry;
 import net.diaithir.druidry.ars.api.spell.SpellResolver;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.Vec2;
 
 public class DelayedSpellEvent implements ITimedEvent {
     public int duration;
@@ -15,7 +11,6 @@ public class DelayedSpellEvent implements ITimedEvent {
     public final HitResult result;
     public final Level world;
     public final boolean showParticles;
-    public ParticleEmitter emitter;
 
     public DelayedSpellEvent(int delay, HitResult result, Level world, SpellResolver resolver) {
         this(delay, result, world, resolver, true);
@@ -34,19 +29,6 @@ public class DelayedSpellEvent implements ITimedEvent {
         duration--;
         if (duration <= 0 && serverSide) {
             resolveSpell();
-        } else if (!serverSide && result != null) {
-            if (emitter == null) {
-                DelayTimeline delayTimeline = resolver.spell.particleTimeline().get(ParticleTimelineRegistry.DELAY_TIMELINE.get());
-                emitter = new ParticleEmitter(result::getLocation, () -> new Vec2(0, 0), delayTimeline.onTickEffect);
-            }
-            if (showParticles) {
-                emitter.tick(world);
-                if (duration <= 0) {
-                    DelayTimeline delayTimeline = resolver.spell.particleTimeline().get(ParticleTimelineRegistry.DELAY_TIMELINE.get());
-                    ParticleEmitter resolveEmitter = new ParticleEmitter(result::getLocation, () -> new Vec2(0, 0), delayTimeline.onResolvingEffect);
-                    resolveEmitter.tick(world);
-                }
-            }
         }
     }
 
@@ -56,8 +38,6 @@ public class DelayedSpellEvent implements ITimedEvent {
         if (result instanceof EntityHitResult ehr && ehr.getEntity().isRemoved()) {
             return;
         }
-        DelayTimeline delayTimeline = resolver.spell.particleTimeline().get(ParticleTimelineRegistry.DELAY_TIMELINE.get());
-        delayTimeline.resolvingSound().sound.playSound(world, result.getLocation());
         resolver.resume(world);
     }
 

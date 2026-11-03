@@ -3,7 +3,7 @@ package net.diaithir.druidry.ars.api.spell;
 import com.google.common.collect.ImmutableMap;
 import net.diaithir.druidry.ars.common.util.ANCodecs;
 import com.mojang.serialization.Codec;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 

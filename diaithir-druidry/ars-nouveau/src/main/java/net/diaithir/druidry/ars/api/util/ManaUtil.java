@@ -10,7 +10,7 @@ import net.diaithir.druidry.ars.api.perk.PerkAttributes;
 import net.diaithir.druidry.ars.api.spell.Spell;
 import net.diaithir.druidry.ars.setup.config.ServerConfig;
 import net.diaithir.druidry.ars.setup.registry.CapabilityRegistry;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
@@ -32,7 +32,7 @@ public class ManaUtil {
                     discounts.addAndGet(discountItem.getManaDiscount(item, spell));
             }
         }
-        for (ItemStack armor : e.getArmorSlots()) {
+        for (ItemStack armor : EquipUtil.armor(e)) {
             if (armor.getItem() instanceof IManaDiscountEquipment discountItem)
                 discounts.addAndGet(discountItem.getManaDiscount(armor, spell));
         }
@@ -58,8 +58,8 @@ public class ManaUtil {
 
     // UUIDs for the configurable bonus on mana attributes, to include them in multiplier calculations.
     // Only updated if the value changes.
-    static final ResourceLocation MAX_MANA_MODIFIER = ArsNouveau.prefix("max_mana_mod");
-    static final ResourceLocation MANA_REGEN_MODIFIER = ArsNouveau.prefix("max_regen_mod");
+    static final Identifier MAX_MANA_MODIFIER = ArsNouveau.prefix("max_mana_mod");
+    static final Identifier MANA_REGEN_MODIFIER = ArsNouveau.prefix("max_regen_mod");
 
     // Calculate Max Mana & Mana Reserve to keep track of the mana reserved by familiars & co.
     public static Mana calcMaxMana(Player e) {

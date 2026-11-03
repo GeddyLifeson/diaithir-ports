@@ -4,7 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 
@@ -48,7 +48,7 @@ public class NBTUtil {
 
     @Deprecated
     public static BlockPos getBlockPos(CompoundTag tag, String prefix) {
-        return BlockPos.containing(tag.getDouble(prefix + "_x"), tag.getDouble(prefix + "_y"), tag.getDouble(prefix + "_z"));
+        return BlockPos.containing(tag.getDoubleOr(prefix + "_x", 0), tag.getDoubleOr(prefix + "_y", 0), tag.getDoubleOr(prefix + "_z", 0));
     }
 
     public static BlockPos getPos(int[] arr) {
@@ -59,13 +59,13 @@ public class NBTUtil {
         if (tag == null) {
             return null;
         }
-        return new Vec3(tag.getDouble(prefix + "_x"), tag.getDouble(prefix + "_y"), tag.getDouble(prefix + "_z"));
+        return new Vec3(tag.getDoubleOr(prefix + "_x", 0), tag.getDoubleOr(prefix + "_y", 0), tag.getDoubleOr(prefix + "_z", 0));
     }
 
     public static @Nullable BlockPos getNullablePos(CompoundTag tag, String prefix) {
         if (!tag.contains(prefix + "_x"))
             return null;
-        return BlockPos.containing(tag.getDouble(prefix + "_x"), tag.getDouble(prefix + "_y"), tag.getDouble(prefix + "_z"));
+        return BlockPos.containing(tag.getDoubleOr(prefix + "_x", 0), tag.getDoubleOr(prefix + "_y", 0), tag.getDoubleOr(prefix + "_z", 0));
     }
 
 
@@ -79,11 +79,11 @@ public class NBTUtil {
         if (tag == null)
             return stacks;
         try {
-            CompoundTag itemsTag = tag.getCompound(prefix + "_tag");
-            int numItems = itemsTag.getInt("itemsSize");
+            CompoundTag itemsTag = tag.getCompoundOrEmpty(prefix + "_tag");
+            int numItems = itemsTag.getIntOr("itemsSize", 0);
             for (int i = 0; i < numItems; i++) {
                 String key = prefix + "_" + i;
-                stacks.add(ItemStack.parseOptional(pRegistries, itemsTag.getCompound(key)));
+                stacks.add(ItemStack.CODEC.parse(pRegistries.createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), itemsTag.getCompoundOrEmpty(key)).result().orElse(ItemStack.EMPTY));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -96,7 +96,7 @@ public class NBTUtil {
         items = items.stream().filter(stack -> !stack.isEmpty()).collect(Collectors.toList());
         for (int i = 0; i < items.size(); i++) {
             ItemStack stack = items.get(i);
-            Tag itemTag = stack.save(pRegistries);
+            Tag itemTag = ItemStack.CODEC.encodeStart(pRegistries.createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), stack).getOrThrow();
             allItemsTag.put(prefix + "_" + i, itemTag);
         }
         allItemsTag.putInt("itemsSize", items.size());
@@ -109,9 +109,9 @@ public class NBTUtil {
         if (tag == null)
             return strings;
 
-        for (String s : tag.getAllKeys()) {
+        for (String s : tag.keySet()) {
             if (s.contains(prefix)) {
-                strings.add(tag.getString(s));
+                strings.add(tag.getStringOr(s, ""));
             }
         }
         return strings;
@@ -125,12 +125,12 @@ public class NBTUtil {
         }
     }
 
-    public static void writeResourceLocations(CompoundTag tag, String prefix, Collection<ResourceLocation> resourceLocations) {
-        writeStrings(tag, prefix, resourceLocations.stream().map(ResourceLocation::toString).collect(Collectors.toList()));
+    public static void writeResourceLocations(CompoundTag tag, String prefix, Collection<Identifier> resourceLocations) {
+        writeStrings(tag, prefix, resourceLocations.stream().map(Identifier::toString).collect(Collectors.toList()));
     }
 
-    public static List<ResourceLocation> readResourceLocations(CompoundTag tag, String prefix) {
-        return readStrings(tag, prefix).stream().map(ResourceLocation::tryParse).collect(Collectors.toList());
+    public static List<Identifier> readResourceLocations(CompoundTag tag, String prefix) {
+        return readStrings(tag, prefix).stream().map(Identifier::tryParse).collect(Collectors.toList());
     }
 
     public static String getItemKey(ItemStack stack, String prefix) {
