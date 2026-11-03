@@ -2136,7 +2136,7 @@
   "age": "I",
   "quest": "diaithir_worldgen:find/ogham_great_circle",
   "connects": [
-   "tags:minecraft:is_overworld",
+   "tags:diaithir_worldgen:s/ogham_great_circle",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/ogham_great_circle"
   ]
@@ -2153,7 +2153,7 @@
   "age": "I",
   "quest": "diaithir_worldgen:find/ogham_hollow_ring",
   "connects": [
-   "tags:minecraft:is_overworld",
+   "tags:diaithir_worldgen:s/ogham_hollow_ring",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/ogham_hollow_ring"
   ]
@@ -2170,7 +2170,7 @@
   "age": "I",
   "quest": "diaithir_worldgen:find/ogham_stone_circle",
   "connects": [
-   "tags:minecraft:is_overworld",
+   "tags:diaithir_worldgen:s/ogham_stone_circle",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/ogham_stone_circle"
   ]
@@ -2476,7 +2476,7 @@
   "age": "II",
   "quest": "diaithir_worldgen:find/ruined_feast_hall",
   "connects": [
-   "tags:minecraft:is_overworld",
+   "tags:diaithir_worldgen:s/ruined_feast_hall",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/ruined_feast_hall"
   ]
@@ -2493,7 +2493,7 @@
   "age": "II",
   "quest": "diaithir_worldgen:find/ruined_feast_hall_long",
   "connects": [
-   "tags:minecraft:is_overworld",
+   "tags:diaithir_worldgen:s/ruined_feast_hall_long",
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/ruined_feast_hall_long"
   ]

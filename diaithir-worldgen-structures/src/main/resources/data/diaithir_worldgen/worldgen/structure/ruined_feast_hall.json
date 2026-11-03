@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir_worldgen:has_feast_hall",
+ "biomes": "#diaithir_worldgen:s/ruined_feast_hall",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

@@ -67,6 +67,7 @@ BL,IT=_reg("block"),_reg("item")
 BFIX={"blackstone_bricks":"polished_blackstone_bricks","chain":"iron_chain","cut_sandstone_stairs":"sandstone_stairs","door_placeholder_unused":"air","infested_end_stone_bricks":"end_stone_bricks","sandstone_bricks":"cut_sandstone"}
 IFIX={"pottery_sherd_angler":"angler_pottery_sherd","smithing_template":"netherite_upgrade_smithing_template"}
 def fixblock(spec):
+    if re.match(r"(?!minecraft:)[a-z0-9_.-]+:",spec): return spec  # other mods' blocks (e.g. diaithirbosses:ogham_stone)
     m=re.match(r"(?:minecraft:)?([^\[]+)(.*)$",spec); n,rest=m.group(1),m.group(2)
     n=BFIX.get(n,n)
     if n not in BL: n="stone_bricks"; rest=""
@@ -114,7 +115,7 @@ def main():
         except Exception as e: print("skip",i,e); continue
         w(f"data/{NS}/worldgen/template_pool/{i}.json",{"name":f"{NS}:{i}","fallback":"minecraft:empty","elements":[{"weight":1,"element":{"element_type":"minecraft:single_pool_element","location":f"{NS}:{i}","projection":"rigid","processors":"minecraft:empty"}}]})
         ks=biome_keys(s["biome_tag"],s["dimension"]); usedk.update(ks)
-        w(f"data/{NS}/tags/worldgen/biome/s/{i}.json",{"values":[f"#{NS}:b/{k}" for k in ks]}); tg=f"{NS}:s/{i}"
+        w(f"data/{NS}/tags/worldgen/biome/s/{i}.json",{"values":[s["biome_tag"]] if s["biome_tag"].startswith("#"+NS+":") else [f"#{NS}:b/{k}" for k in ks]}); tg=f"{NS}:s/{i}"
         adj={"surface":"beard_thin","buried":"none","underwater":"beard_thin"}.get(bp.get("surface"),"none")
         step={"surface":"surface_structures","buried":"underground_structures","underwater":"surface_structures","nether_lava":"underground_structures"}.get(bp.get("surface"),"surface_structures")
         w(f"data/{NS}/worldgen/structure/{i}.json",{"type":"minecraft:jigsaw","biomes":"#"+tg,"step":step,"spawn_overrides":{},"terrain_adaptation":adj,"start_pool":f"{NS}:{i}","size":1,"start_height":{"absolute":bp.get("y_offset",0)},"project_start_to_heightmap":"WORLD_SURFACE_WG" if bp.get("surface")=="surface" else "OCEAN_FLOOR_WG" if bp.get("surface")=="underwater" else None,"max_distance_from_center":16,"use_expansion_hack":False} if False else {"type":"minecraft:jigsaw","biomes":"#"+tg,"step":step,"spawn_overrides":{},"terrain_adaptation":adj,"start_pool":f"{NS}:{i}","size":1,"start_height":{"absolute":bp.get("y_offset",0)},**({"project_start_to_heightmap":"WORLD_SURFACE_WG"} if bp.get("surface")=="surface" else {"project_start_to_heightmap":"OCEAN_FLOOR_WG"} if bp.get("surface")=="underwater" else {}),"max_distance_from_center":16,"use_expansion_hack":False})

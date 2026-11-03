@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir_worldgen:has_ogham_circle",
+ "biomes": "#diaithir_worldgen:s/ogham_stone_circle",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",

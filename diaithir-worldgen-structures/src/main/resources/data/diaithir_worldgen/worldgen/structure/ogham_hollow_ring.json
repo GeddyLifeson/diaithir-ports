@@ -1,6 +1,6 @@
 {
  "type": "minecraft:jigsaw",
- "biomes": "#diaithir_worldgen:has_ogham_hollow_ring",
+ "biomes": "#diaithir_worldgen:s/ogham_hollow_ring",
  "step": "surface_structures",
  "spawn_overrides": {},
  "terrain_adaptation": "beard_thin",
