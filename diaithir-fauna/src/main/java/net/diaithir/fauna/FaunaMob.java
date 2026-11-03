@@ -124,7 +124,7 @@ public class FaunaMob extends PathfinderMob {
         if (species() == null) {
             Species s = null;
             if (group instanceof Herd h && Habitat.candidates(plan.name, level, blockPosition()).contains(h.species)) s = h.species;
-            if (reason != EntitySpawnReason.NATURAL && reason != EntitySpawnReason.CHUNK_GENERATION) s = LibrarySpawner.pickFor(level, plan.name, random);
+            if (reason != EntitySpawnReason.NATURAL && reason != EntitySpawnReason.CHUNK_GENERATION) s = LibrarySpawner.pickFor(level, blockPosition(), plan.name, random);
             if (s == null) s = Habitat.pick(plan.name, level, blockPosition(), random);
             if (s == null && reason != EntitySpawnReason.NATURAL && reason != EntitySpawnReason.CHUNK_GENERATION) {
                 var all = Species.ofPlan(plan.name).stream().filter(x -> !x.fossil).toList();
