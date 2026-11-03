@@ -1,0 +1,32 @@
+{
+  "tier2": {
+    "age": 2,
+    "items": [
+      "diaithir_materials:concrete_pozzolan"
+    ]
+  },
+  "tier4": {
+    "age": 4,
+    "items": [
+      "diaithir_materials:cement_powder"
+    ]
+  },
+  "tier5": {
+    "age": 5,
+    "items": [
+      "diaithir_materials:concrete_portland"
+    ]
+  },
+  "tier6": {
+    "age": 6,
+    "items": [
+      "diaithir_materials:concrete_reinforced"
+    ]
+  },
+  "tier7": {
+    "age": 7,
+    "items": [
+      "diaithir_materials:concrete_precast"
+    ]
+  }
+}

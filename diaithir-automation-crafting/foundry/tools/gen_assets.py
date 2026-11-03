@@ -280,3 +280,7 @@ for nid, n in nodes.items():
     prev = age
 wr(os.path.join(DP, "pack.mcmeta"), {"pack": {"min_format": 101, "max_format": 101, "description": "Foundry Age research gates (progression graph)"}})
 print("ok", len(stats), "machines", len(nodes), "nodes")
+
+# building materials: shared property table, concrete line built so far
+import runpy
+runpy.run_path(os.path.join(HERE, "gen_materials.py"))
