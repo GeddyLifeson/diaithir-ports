@@ -1,0 +1,12 @@
+name = "natures_spirit-neoforge"
+filename = "natures_spirit-neoforge-2.3.0+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WBvnqHfV/versions/fXzcxJN1/natures_spirit-neoforge-2.3.0%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "7bdb0d858b640f9090f7ea4616321d4477fbf633a136c2347769c9716669384e"
+
+[update.modrinth]
+mod-id = "WBvnqHfV"
+version = "fXzcxJN1"

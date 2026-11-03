@@ -1,0 +1,8 @@
+name = "diaithir-libraries-client-neoforge-26.1.2-1.0.0"
+filename = "diaithir-libraries-client-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-libs/client/diaithir-libraries-client-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "334666536345cfb8aeeb11ff5e90c2cd973d00fe5f47641fa9c1098479277651"

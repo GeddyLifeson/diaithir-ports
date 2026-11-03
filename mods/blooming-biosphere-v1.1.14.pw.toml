@@ -1,0 +1,12 @@
+name = "blooming-biosphere"
+filename = "blooming-biosphere-v1.1.14.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Ds9FyUc7/versions/ZdjVZvLW/blooming-biosphere-v1.1.14.jar"
+hash-format = "sha256"
+hash = "ea9d39035e8f86bc78e81bf00797339017ccb3fdfa74972ac2c2234c065d21bf"
+
+[update.modrinth]
+mod-id = "Ds9FyUc7"
+version = "ZdjVZvLW"
