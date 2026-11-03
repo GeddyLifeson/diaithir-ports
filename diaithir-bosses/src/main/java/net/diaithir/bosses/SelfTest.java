@@ -140,6 +140,16 @@ public final class SelfTest {
             check(d != null && d.steps.size() >= 4, p.id + ": has a rite of four or more steps");
             if (d != null) check(d.steps.get(d.steps.size() - 1).type.equals("defend"), p.id + ": rite ends in a defend");
         }
+        for (int n : new int[]{1, 2, 3, 4, 5, 6, 8}) {
+            Ritual.Def w = Ritual.def("age_warden_" + n);
+            check(w != null && w.steps.size() >= 5, "age_warden_" + n + ": has a rite of five or more steps");
+            if (w == null) continue;
+            check(w.steps.get(w.steps.size() - 1).type.equals("defend"), "age_warden_" + n + ": rite ends in a defend");
+            for (Ritual.Step st : w.steps) {
+                if (st.item != null && !st.item.startsWith("#")) check(BuiltInRegistries.ITEM.getOptional(Identifier.parse(st.item)).isPresent(), "age_warden_" + n + ": item " + st.item + " exists");
+                if (st.mob != null) check(BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(st.mob)).isPresent(), "age_warden_" + n + ": creature " + st.mob + " exists");
+            }
+        }
         BlockPos altar = c0.above();
         String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
         fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
