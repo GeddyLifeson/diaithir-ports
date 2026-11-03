@@ -95,13 +95,14 @@ public final class CircuitSelfTest {
             var cart = net.minecraft.world.entity.EntityType.CHEST_MINECART.create(level, net.minecraft.world.entity.EntitySpawnReason.COMMAND);
             if (cart == null) fails.add("circuit: could not make a cart");
             else {
+                cart.setCustomName(net.minecraft.network.chat.Component.literal("Alpha 1"));
                 cart.setPos(pRail.getX() + 0.5, pRail.getY() + 0.1, pRail.getZ() + 0.5);
                 cart.setItem(0, new net.minecraft.world.item.ItemStack(Items.COAL, 7));
                 level.addFreshEntity(cart);
             }
             CircuitNodeBE rd = node(level, pRead2);
             ticks(level, 3);
-            if (rd == null || rd.out.get("si:vehicles") != 1 || rd.out.get("minecraft:coal") != 7) {
+            if (rd == null || rd.out.get("si:vehicles") != 1 || rd.out.get("minecraft:coal") != 7 || rd.out.get("cart:alpha_1") != 1) {
                 fails.add("circuit: rail reader said " + (rd == null ? "null" : rd.out) + ", want vehicles=1 coal=7");
             }
             BlockPos pRep = pRead2.east(2), pRead3 = pRep.south();

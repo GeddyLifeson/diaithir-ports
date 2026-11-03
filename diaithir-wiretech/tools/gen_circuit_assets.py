@@ -43,7 +43,8 @@ def write(path, data):
 
 
 def png(path, img):
-    path = os.path.join(ROOT, path); os.makedirs(os.path.dirname(path), exist_ok=True); img.save(path)
+    path = os.path.join(ROOT, path); os.makedirs(os.path.dirname(path), exist_ok=True)
+    if not os.path.exists(path): img.save(path)  # keep the 64 px art drop; these 16 px images are only placeholders for a fresh checkout
 
 
 def plate(base, seed):

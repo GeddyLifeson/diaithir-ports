@@ -254,7 +254,7 @@ public final class CircuitNodeBE extends BlockEntity {
     /**
      * Signals any block can give with no code of its own: comparator output (si:analog, 0 to 15), integer and boolean block state properties
      * (state:powered, state:delay, state:lit...), and for a rail the carts on it (si:vehicles, si:speed_mps, and the items in a chest cart),
-     * which makes station rails, signals and train stops readable.
+     * which makes station rails, signals and train stops readable (named carts give cart:<name>=1, so a decider can route by name like a destination rail).
      */
     private static void readWorld(ServerLevel level, BlockPos at, Direction face, Signals r) {
         BlockState bs = level.getBlockState(at);
@@ -270,6 +270,7 @@ public final class CircuitNodeBE extends BlockEntity {
             double fastest = 0;
             for (var c : carts) {
                 fastest = Math.max(fastest, c.getDeltaMovement().horizontalDistance() * 20.0);
+                if (c.hasCustomName()) r.add("cart:" + c.getCustomName().getString().toLowerCase().replaceAll("[^a-z0-9]+", "_"), 1);
                 if (c instanceof net.minecraft.world.Container ct) {
                     for (int i = 0; i < ct.getContainerSize(); i++) {
                         ItemStack st = ct.getItem(i);
