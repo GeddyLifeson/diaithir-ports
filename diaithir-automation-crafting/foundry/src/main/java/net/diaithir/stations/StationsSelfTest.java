@@ -40,6 +40,11 @@ final class StationsSelfTest {
         check(fails, StationRecipes.forStation("research.bench").size() == 6, "research bench has " + StationRecipes.forStation("research.bench").size() + " recipes, expected 6");
         check(fails, StationRecipes.forStation("machine.assembler").stream().anyMatch(r -> r.result().item().value() == DiaithirCrafting.OPERATOR_SEAT_ITEM.get()), "operator seat is not an assembler recipe");
 
+        // munitions Ages I to III (plans/MUNITIONS.md): 24 parts and 9 rounds, every result a registered item, each round built from loaded parts
+        long muni = java.util.stream.Stream.of("station.hearth_bench", "station.wright_bench").flatMap(k -> StationRecipes.forStation(k).stream())
+                .filter(r -> r.result().item().value() != Items.AIR).count();
+        check(fails, muni == 33, "munition recipes loaded: " + muni + ", expected 33");
+
         StationRecipe nail = parse(level, "{\"station\":\"station.wright_bench\",\"stage\":\"part\",\"time_s\":1,"
                 + "\"ingredients\":[{\"item\":\"minecraft:iron_ingot\",\"count\":2},{\"tag\":\"minecraft:planks\"}],\"result\":{\"id\":\"minecraft:iron_nugget\",\"count\":9}}");
         check(fails, nail != null, "good recipe did not parse");

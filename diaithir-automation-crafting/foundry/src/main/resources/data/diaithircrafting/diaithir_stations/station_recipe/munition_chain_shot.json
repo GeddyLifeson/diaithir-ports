@@ -1,0 +1,19 @@
+{
+  "station": "station.wright_bench",
+  "stage": "assembly",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_chain_shot_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_chain_shot_charge",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_chain_shot",
+    "count": 1
+  }
+}

@@ -110,6 +110,9 @@ for i in range(1, 8):
     wr(os.path.join(A, "items", n + ".json"), {"model": {"type": "minecraft:model", "model": f"{NS}:item/{n}"}})
     wr(os.path.join(A, "models", "item", n + ".json"), {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{n}"}})
     lang[f"item.{NS}.{n}"] = f"Research Pack {i}"
+sys.path.insert(0, HERE)
+import gen_munitions_content
+gen_munitions_content.build(D, A, wr, lang)
 wr(os.path.join(A, "lang", "en_us.json"), lang)
 
 # Recipes: stand-in ingredients per the progression graph needs; boss drops replace the echo shard, nether star and dragon breath later

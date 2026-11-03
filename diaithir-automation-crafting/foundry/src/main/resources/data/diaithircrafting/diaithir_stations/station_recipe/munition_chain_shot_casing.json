@@ -1,0 +1,15 @@
+{
+  "station": "station.wright_bench",
+  "stage": "part",
+  "time_s": 4,
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_chain_shot_casing",
+    "count": 1
+  }
+}

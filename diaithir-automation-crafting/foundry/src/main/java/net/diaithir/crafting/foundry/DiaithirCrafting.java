@@ -52,6 +52,17 @@ public final class DiaithirCrafting {
         for (int i = 1; i <= 7; i++) PACKS.add(ITEMS.registerSimpleItem("foundry_research_pack_" + i));
     }
 
+    /** Munition part and round items (plans/MUNITIONS.md), ids listed in munition_items.txt by tools/gen_munitions_content.py. */
+    public static final List<DeferredItem<Item>> MUNITIONS = new ArrayList<>();
+    static {
+        try (var in = DiaithirCrafting.class.getResourceAsStream("/munition_items.txt")) {
+            if (in != null) new String(in.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8).lines()
+                    .filter(l -> !l.isBlank()).forEach(n -> MUNITIONS.add(ITEMS.registerSimpleItem(n.strip())));
+        } catch (java.io.IOException e) {
+            throw new IllegalStateException("munition_items.txt unreadable", e);
+        }
+    }
+
     public DiaithirCrafting(IEventBus bus, ModContainer container) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
@@ -61,7 +72,7 @@ public final class DiaithirCrafting {
                 e.registerBlockEntity(Capabilities.Item.BLOCK, OPERATOR_SEAT_BE.get(), (be, side) -> be.food.view()));
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) e.accept(OPERATOR_SEAT_ITEM.get());
-            if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) for (DeferredItem<Item> p : PACKS) e.accept(p.get());
+            if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) { for (DeferredItem<Item> p : PACKS) e.accept(p.get()); for (DeferredItem<Item> m : MUNITIONS) e.accept(m.get()); }
         });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> e.getDispatcher().register(Commands.literal(ID)
                 .then(Commands.literal("selftest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
