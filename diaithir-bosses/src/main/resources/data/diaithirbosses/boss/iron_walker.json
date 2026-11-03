@@ -4,8 +4,8 @@
  "name_en": "Iron Walker",
  "age": 4,
  "own": {
-  "kind": "golem",
-  "scale": 2.0,
+  "kind": "look_tall",
+  "scale": 2.7,
   "hp": 520,
   "damage": 12,
   "armor": 10,

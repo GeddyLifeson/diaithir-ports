@@ -865,7 +865,19 @@ for R in roster:
 # ---------------------------------------------------------------- Ascendant bosses (own profiles, same look system)
 ASC = {"antlered_hollow": ("quadruped", "Hollow"), "cauldron_heart": ("golem", "Ember"), "tide_reaver": ("aquatic", "Storm"),
        "foundry_sovereign": ("giant", "Iron"), "mist_weaver": ("arachnid", "Quiet"), "ash_seraph": ("humanoid:winged", "Ember"),
-       "dusk_wyrm": ("dragon", "Hollow"), "rootbreaker": ("treant", "Bloom"), "last_wheel": ("spirit", "Iron")}
+       "dusk_wyrm": ("dragon", "Hollow"), "rootbreaker": ("treant", "Bloom"), "last_wheel": ("spirit", "Iron"),
+       # the seven older own bosses and the mythic-court kits (each gets its own look instead of a vanilla body)
+       "tribal_chief": ("humanoid:brute", "Grounded"), "stone_colossus": ("giant", "Hollow"), "bronze_warking": ("humanoid:king", "Ember"),
+       "rot_swarm_lord": ("insect", "Bloom"), "iron_walker": ("golem", "Iron"), "steel_marshal": ("humanoid:multiarm", "Iron"),
+       "ceramic_warlord": ("humanoid:knight", "Storm"), "botunkas": ("arachnid", "Bloom"), "driegunmorgil": ("dragon", "Frost"),
+       "driegunsalund": ("serpent", "Storm"), "famuirmeirgi": ("golem", "Quiet"), "maerkistechuimni": ("spirit", "Quiet"),
+       "maktirikriuch": ("quadruped", "Frost"), "natuirkriegach": ("insect", "Hollow"), "natuirmoir": ("aquatic", "Storm"),
+       "natuirrig": ("serpent", "Bloom"), "natuirsaegul": ("aquatic", "Frost"), "natuirtuar": ("bird", "Quiet"),
+       "niechgleididdouras": ("golem", "Storm"), "oilebeistbouglach": ("hydra", "Bloom"), "ridiriknok": ("humanoid:king", "Bloom"),
+       "stoirmiduislach": ("spirit", "Storm"), "tarbiumachuoirtach": ("humanoid:fiend", "Ember"), "tarbspeiri": ("quadruped", "Iron"),
+       "toimsechunleomund": ("quadruped", "Ember"), "toisechmarb": ("humanoid:reaper", "Storm")}
+OLD_H = {"zombie": 1.95, "illager": 1.95, "golem": 2.7, "spider": 0.9, "ravager": 2.2, "blaze": 1.8, "silverfish": 0.3, "phantom": 0.5,
+         "guardian": 0.85, "hoglin": 1.4}
 for aid, (arch, soil) in ASC.items():
     pf = f"{out}/data/diaithirbosses/boss/{aid}.json"
     if not os.path.exists(pf):
@@ -873,8 +885,13 @@ for aid, (arch, soil) in ASC.items():
     prof = json.load(open(pf))
     rng = rng_for("asc", aid)
     b = build_look(arch, rng)
-    pal, _ = palette(rng, soil, "Mythic", prof.get("name_en", aid), prof.get("name_en", aid))
+    pal, _ = palette(rng, soil, "Mythic", prof.get("name_en") or aid, prof.get("name_en") or aid)
     emit(aid, aid, arch, b, pal, rng.choice(PATTERNS), rng.choice([2, 3, 4, 6]))
+    old_kind = prof["own"]["kind"]
+    if not old_kind.startswith("look_"):  # re-size: the vanilla body was another height, keep the boss about as tall
+        want = max(OLD_H.get(old_kind, 2.0) * prof["own"]["scale"], 2.2)
+        top = max(c[4] for p in b.parts for c in p.cubes) / 16
+        prof["own"]["scale"] = round(max(0.8, min(4.5, want / top)), 2)
     prof["own"]["kind"] = "look_" + HITBOX[arch.split(":")[0]]
     json.dump(prof, open(pf, "w"), indent=1, ensure_ascii=False)
     print("ascendant", aid, arch, prof["own"]["kind"])

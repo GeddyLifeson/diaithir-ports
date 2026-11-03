@@ -4,8 +4,8 @@
  "name_en": "Driegunmòrgil",
  "age": 3,
  "own": {
-  "kind": "phantom",
-  "scale": 3.6,
+  "kind": "look_wide",
+  "scale": 0.8,
   "hp": 520,
   "damage": 9,
   "armor": 8,

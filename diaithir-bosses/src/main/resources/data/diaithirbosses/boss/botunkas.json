@@ -4,8 +4,8 @@
  "name_en": "Botunkas",
  "age": 4,
  "own": {
-  "kind": "spider",
-  "scale": 3.2,
+  "kind": "look_wide",
+  "scale": 2.43,
   "hp": 620,
   "damage": 12,
   "armor": 10,

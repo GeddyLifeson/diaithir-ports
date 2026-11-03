@@ -4,8 +4,8 @@
  "name_en": "Famuirmeirgi",
  "age": 7,
  "own": {
-  "kind": "golem",
-  "scale": 3.1,
+  "kind": "look_tall",
+  "scale": 4.19,
   "hp": 950,
   "damage": 24,
   "armor": 16,

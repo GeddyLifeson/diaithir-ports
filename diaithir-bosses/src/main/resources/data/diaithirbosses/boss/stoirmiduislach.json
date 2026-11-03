@@ -4,8 +4,8 @@
  "name_en": "Stoirmiduislach",
  "age": 7,
  "own": {
-  "kind": "blaze",
-  "scale": 3.0,
+  "kind": "look_float",
+  "scale": 1.66,
   "hp": 950,
   "damage": 24,
   "armor": 16,

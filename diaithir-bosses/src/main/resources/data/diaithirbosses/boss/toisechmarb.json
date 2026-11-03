@@ -4,8 +4,8 @@
  "name_en": "Toisechmarb",
  "age": 6,
  "own": {
-  "kind": "zombie",
-  "scale": 1.6,
+  "kind": "look_tall",
+  "scale": 1.06,
   "hp": 820,
   "damage": 19,
   "armor": 14,

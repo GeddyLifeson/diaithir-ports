@@ -4,8 +4,8 @@
  "name_en": "Plague Swarm Lord",
  "age": 3,
  "own": {
-  "kind": "spider",
-  "scale": 2.8,
+  "kind": "look_low",
+  "scale": 1.75,
   "hp": 400,
   "damage": 9,
   "armor": 8,

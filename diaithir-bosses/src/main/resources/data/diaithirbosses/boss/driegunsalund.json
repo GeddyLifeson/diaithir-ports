@@ -4,8 +4,8 @@
  "name_en": "Driegunsalund",
  "age": 3,
  "own": {
-  "kind": "phantom",
-  "scale": 4.0,
+  "kind": "look_low",
+  "scale": 1.35,
   "hp": 520,
   "damage": 9,
   "armor": 8,

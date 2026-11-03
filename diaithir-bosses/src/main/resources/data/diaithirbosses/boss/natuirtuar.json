@@ -4,8 +4,8 @@
  "name_en": "Natuirtùar",
  "age": 7,
  "own": {
-  "kind": "phantom",
-  "scale": 4.2,
+  "kind": "look_tall",
+  "scale": 0.8,
   "hp": 950,
   "damage": 24,
   "armor": 16,

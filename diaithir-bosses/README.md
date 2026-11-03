@@ -16,3 +16,5 @@ Every Panscriptum planet has 6 to 12 bosses (more for bigger planets, one per Ag
 - Stats and attacks come from a per-body-plan template (`planet_templates.json`) scaled by the gate Age (`opens_age + tier - 1`, max 8). Profiles are expanded from `planet_bosses.json` at startup; `/boss spawn <id>` works with the lower-case entry id.
 - `rite_bosses.json` maps each rite id (druidry `rite.v1`) to the boss it wakes, on the same planet and Age.
 - `tools/gen_planet_bosses.py` regenerates all of it from planets.tsv, the content and library databases and the rites list; `tools/planet_bosses_report.md` has the counts.
+
+Note: tools/gen.py still writes the old vanilla-body textures; rerun tools/gen_planet_bosses.py after it, which gives every own boss (the 7 older, the mythic kits when diaithir_myth is absent, the 9 Ascendant) its own look and re-sizes it.

@@ -4,8 +4,8 @@
  "name_en": "Oilebeistbouglach",
  "age": 4,
  "own": {
-  "kind": "silverfish",
-  "scale": 7.0,
+  "kind": "look_wide",
+  "scale": 1.21,
   "hp": 620,
   "damage": 12,
   "armor": 10,

@@ -4,8 +4,8 @@
  "name_en": "Bronze War-King",
  "age": 3,
  "own": {
-  "kind": "illager",
-  "scale": 1.5,
+  "kind": "look_tall",
+  "scale": 1.23,
   "hp": 400,
   "damage": 9,
   "armor": 8,
