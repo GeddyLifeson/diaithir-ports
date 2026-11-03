@@ -5,7 +5,7 @@
  "age": 8,
  "tier": "ascendant_3",
  "own": {
-  "kind": "illager",
+  "kind": "look_float",
   "scale": 2.0,
   "hp": 2025,
   "damage": 44,

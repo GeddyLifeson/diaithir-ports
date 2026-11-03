@@ -168,6 +168,8 @@ public final class SelfTest {
                     for (int r : st.sequence) Ritual.seal(level, altar.east(3), r, fp);
                 }
                 case "hour" -> {
+                    // the world clock depends on how long the server has run, so put it outside the window first
+                    src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.to + 1200) % 24000);
                     long before = level.getOverworldClockTime() % 24000;
                     boolean in = st.from <= st.to ? before >= st.from && before <= st.to : before >= st.from || before <= st.to;
                     check(!in, "rite: the hour step is closed outside its window (clock " + before + ")");
@@ -280,9 +282,16 @@ public final class SelfTest {
         Mob a = spawnAt(level, p, c0);
         Ages.forced = Math.min(8, p.age + 3);
         Mob b = spawnAt(level, p, c0);
-        if (a != null && b != null && p.age < 8) { // an Age 8 boss has no later Age to scale into
-            float ea = a.getMaxHealth() * BossController.ALL.get(a.getUUID()).damageDivisor, eb = b.getMaxHealth() * BossController.ALL.get(b.getUUID()).damageDivisor;
-            if (p.age < Ages.RODOS) check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + BossController.ALL.get(a.getUUID()).damageDivisor + "/" + BossController.ALL.get(b.getUUID()).damageDivisor + " near " + BossController.ALL.get(a.getUUID()).participants().size() + ")");
+        if (a != null && b != null) {
+            BossController ca = BossController.ALL.get(a.getUUID()), cb = BossController.ALL.get(b.getUUID());
+            float ea = a.getMaxHealth() * ca.damageDivisor, eb = b.getMaxHealth() * cb.damageDivisor;
+            if (p.age < 8) {
+                check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + ca.damageDivisor + "/" + cb.damageDivisor + " near " + ca.participants().size() + ")");
+            } else {
+                // the last Age has no later Age to grow into: it keeps its full base health and still grows with the fighters present
+                check(ea >= (float) p.own.hp * 0.999F && eb == ea, n + ": Age 8 boss keeps its base health at every later Age (" + ea + ", " + eb + " vs " + p.own.hp + ")");
+                check(p.scaling.hp_per_extra_player > 0, n + ": grows with extra fighters");
+            }
         }
         if (a != null) a.discard();
         if (b != null) b.discard();
@@ -307,6 +316,7 @@ public final class SelfTest {
             sample.putIfAbsent(p.arch, p);
         }
         check(planets.size() >= 200, "planet bosses cover " + planets.size() + " planets");
+        check(PlanetBoss.class.getResource("/data/" + DiaithirBosses.ID + "/structure/planet_lair.nbt") != null, "planet lair template present");
         for (Data.Profile p : sample.values()) runBoss(level, c0, fp, p);
         System.out.println("[bossesselftest] planet bosses " + all.size() + " on " + planets.size() + " planets, full test on " + sample.size() + " body plans");
     }

@@ -120,7 +120,10 @@ public final class Data {
 
     /** The profile that drives a creature: a planet boss by its own id, any other by its entity type. */
     public static Profile profileFor(net.minecraft.world.entity.Mob m) {
-        if (m instanceof PlanetBoss pb) return planetBosses.get(pb.bossId());
+        if (m instanceof PlanetBoss pb) {
+            Profile p = planetBosses.get(pb.bossId());
+            if (p != null) return p;
+        }
         return byEntity.get(net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getKey(m.getType()).toString());
     }
     public static Elites elites() { return elites; }

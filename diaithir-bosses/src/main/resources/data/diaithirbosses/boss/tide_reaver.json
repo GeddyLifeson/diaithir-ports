@@ -5,7 +5,7 @@
  "age": 7,
  "tier": "ascendant_1",
  "own": {
-  "kind": "guardian",
+  "kind": "look_low",
   "scale": 2.2,
   "hp": 950,
   "damage": 24,

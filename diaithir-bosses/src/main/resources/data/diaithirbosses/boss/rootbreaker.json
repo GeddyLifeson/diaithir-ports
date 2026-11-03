@@ -5,7 +5,7 @@
  "age": 8,
  "tier": "ascendant_3",
  "own": {
-  "kind": "ravager",
+  "kind": "look_tall",
   "scale": 2.4,
   "hp": 2025,
   "damage": 44,

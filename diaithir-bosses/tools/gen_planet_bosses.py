@@ -813,6 +813,22 @@ os.makedirs(f"{out}/assets/diaithirbosses/looks", exist_ok=True)
 os.makedirs(f"{out}/assets/diaithirbosses/textures/entity/planet", exist_ok=True)
 os.makedirs(f"{out}/data/diaithirbosses", exist_ok=True)
 
+def emit(bid, eid, arch, b, pal, pat, eyes):
+    size, uv = pack(b.parts)
+    seed = int(hashlib.sha256(eid.encode()).hexdigest()[:6], 16)
+    paint(b.parts, size, uv, pal, pat, seed, eyes).save(f"{out}/assets/diaithirbosses/textures/entity/planet/{bid}.png", optimize=True)
+    parts = []
+    for pi, p in enumerate(b.parts):
+        px, py, pf = p.pivot
+        cubes = []
+        for ci, c in enumerate(p.cubes):
+            x0, y0, f0, x1, y1, f1, tag = c
+            u, v, w, h, d = uv[(pi, ci)]
+            cubes.append([x0 - px, round(py - y1, 2), round(pf - f1, 2), x1 - x0, y1 - y0, f1 - f0, u, v])
+        parts.append(dict(n=p.name, o=[round(px, 2), round(24 - py, 2), round(-pf, 2)], r=[round(x, 3) for x in p.rot], c=cubes))
+    json.dump(dict(id=bid, tex=size, arch=arch, parts=parts), open(f"{out}/assets/diaithirbosses/looks/{bid}.json", "w"), separators=(",", ":"))
+
+
 sigs, bosses, rite_map, per_arch = {}, [], {}, defaultdict(int)
 for R in roster:
     P, eid = R["P"], R["eid"]
@@ -830,19 +846,7 @@ for R in roster:
         if sig not in sigs:
             break
     sigs[sig] = bid
-    size, uv = pack(b.parts)
-    seed = int(hashlib.sha256(eid.encode()).hexdigest()[:6], 16)
-    paint(b.parts, size, uv, pal, pat, seed, eyes).save(f"{out}/assets/diaithirbosses/textures/entity/planet/{bid}.png", optimize=True)
-    parts = []
-    for pi, p in enumerate(b.parts):
-        px, py, pf = p.pivot
-        cubes = []
-        for ci, c in enumerate(p.cubes):
-            x0, y0, f0, x1, y1, f1, tag = c
-            u, v, w, h, d = uv[(pi, ci)]
-            cubes.append([x0 - px, round(py - y1, 2), round(pf - f1, 2), x1 - x0, y1 - y0, f1 - f0, u, v])
-        parts.append(dict(n=p.name, o=[round(px, 2), round(24 - py, 2), round(-pf, 2)], r=[round(x, 3) for x in p.rot], c=cubes))
-    json.dump(dict(id=bid, tex=size, arch=arch, parts=parts), open(f"{out}/assets/diaithirbosses/looks/{bid}.json", "w"), separators=(",", ":"))
+    emit(bid, eid, arch, b, pal, pat, eyes)
     top = max((c[4] for p in b.parts for c in p.cubes), default=32)
     hp = round((140 + 95 * gate) * ARCH_ATTACKS[arch][1])
     sc = round(0.9 + 0.12 * gate + rng.uniform(0, .25), 2)
@@ -856,6 +860,24 @@ for R in roster:
     bosses.append(dict(id=bid, planet=P["id"], dimension=P["dim"], name=R["name"], entry=eid, tier=R["tier"], age=gate, arch=arch,
                        hitbox=HITBOX[arch.split(":")[0]], scale=sc, hp=hp, bar=BAR.get(P["realm"], "red"), rite=rite, pattern=pat,
                        eyes=eyes, source=how, height=round(top)))
+
+
+# ---------------------------------------------------------------- Ascendant bosses (own profiles, same look system)
+ASC = {"antlered_hollow": ("quadruped", "Hollow"), "cauldron_heart": ("golem", "Ember"), "tide_reaver": ("aquatic", "Storm"),
+       "foundry_sovereign": ("giant", "Iron"), "mist_weaver": ("arachnid", "Quiet"), "ash_seraph": ("humanoid:winged", "Ember"),
+       "dusk_wyrm": ("dragon", "Hollow"), "rootbreaker": ("treant", "Bloom"), "last_wheel": ("spirit", "Iron")}
+for aid, (arch, soil) in ASC.items():
+    pf = f"{out}/data/diaithirbosses/boss/{aid}.json"
+    if not os.path.exists(pf):
+        continue
+    prof = json.load(open(pf))
+    rng = rng_for("asc", aid)
+    b = build_look(arch, rng)
+    pal, _ = palette(rng, soil, "Mythic", prof.get("name_en", aid), prof.get("name_en", aid))
+    emit(aid, aid, arch, b, pal, rng.choice(PATTERNS), rng.choice([2, 3, 4, 6]))
+    prof["own"]["kind"] = "look_" + HITBOX[arch.split(":")[0]]
+    json.dump(prof, open(pf, "w"), indent=1, ensure_ascii=False)
+    print("ascendant", aid, arch, prof["own"]["kind"])
 
 json.dump(bosses, open(f"{out}/data/diaithirbosses/planet_bosses.json", "w"), separators=(",", ":"), ensure_ascii=False)
 json.dump({a: template(a) for a in ARCH_ATTACKS}, open(f"{out}/data/diaithirbosses/planet_templates.json", "w"), indent=1)

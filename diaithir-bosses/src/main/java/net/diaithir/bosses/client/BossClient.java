@@ -70,6 +70,7 @@ public final class BossClient {
                 case "hoglin" -> e.registerEntityRenderer(type, ctx -> new HoglinRenderer(ctx) {
                     @Override public Identifier getTextureLocation(HoglinRenderState s) { return t; }
                 });
+                case "look_tall", "look_wide", "look_low", "look_float" -> e.registerEntityRenderer(type, PlanetBossRenderer::new);
                 default -> throw new IllegalStateException("no renderer for kind " + p.own.kind + " (" + BossMobs.KINDS.keySet() + ")");
             }
         }
