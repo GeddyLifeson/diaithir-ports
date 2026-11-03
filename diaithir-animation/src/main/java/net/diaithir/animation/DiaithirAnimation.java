@@ -16,9 +16,10 @@ public final class DiaithirAnimation {
     public DiaithirAnimation(IEventBus bus) {
         bus.addListener(Net::register);
         NeoForge.EVENT_BUS.register(this);
-        if (FMLEnvironment.getDist().isClient()) AnimClient.init(bus);
+        NeoForge.EVENT_BUS.register(new BodyServer());
+        if (FMLEnvironment.getDist().isClient()) { AnimClient.init(bus); BodyClient.init(bus); }
     }
 
-    @SubscribeEvent public void tags(TagsUpdatedEvent e) { Kind.invalidate(); }
+    @SubscribeEvent public void tags(TagsUpdatedEvent e) { Kind.invalidate(); BodyKind.invalidate(); }
     @SubscribeEvent public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); }
 }
