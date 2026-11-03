@@ -84,7 +84,7 @@ public abstract class PotionFlask extends ModItem {
             for (MobEffectInstance effectinstance : data.contents().getAllEffects()) {
                 effectinstance = getEffectInstance(effectinstance);
                 if (effectinstance.getEffect().value().isInstantenous()) {
-                    effectinstance.getEffect().value().applyInstantenousEffect(playerentity, playerentity, entityLiving, effectinstance.getAmplifier(), 1.0D);
+                    effectinstance.getEffect().value().applyInstantenousEffect((net.minecraft.server.level.ServerLevel) worldIn, playerentity, playerentity, entityLiving, effectinstance.getAmplifier(), 1.0D);
                 } else {
                     entityLiving.addEffect(new MobEffectInstance(effectinstance));
                 }
@@ -147,6 +147,6 @@ public abstract class PotionFlask extends ModItem {
         super.appendHoverText(stack, context, tooltipDisplay, tooltip, flagIn);
         MultiPotionContents data = stack.getOrDefault(DataComponentRegistry.MULTI_POTION, new MultiPotionContents(0, PotionContents.EMPTY, 8));
         tooltip.accept(Component.translatable("ars_nouveau.flask.charges", data.charges()).withStyle(Style.EMPTY.withColor(ChatFormatting.GOLD)));
-        PotionContents.addPotionTooltip(data.contents().getAllEffects(), tooltip::add, 1.0F, context.tickRate());
+        PotionContents.addPotionTooltip(data.contents().getAllEffects(), tooltip, 1.0F, context.tickRate());
     }
 }

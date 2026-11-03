@@ -43,7 +43,7 @@ public record CodexData(Optional<UUID> uuid, String playerName, List<Identifier>
     }
 
     @Override
-    public void addToTooltip(net.minecraft.world.item.Item.TooltipContext pContext, Consumer<Component> pTooltipAdder, TooltipFlag pTooltipFlag) {
+    public void addToTooltip(net.minecraft.world.item.Item.TooltipContext pContext, Consumer<Component> pTooltipAdder, TooltipFlag pTooltipFlag, net.minecraft.core.component.DataComponentGetter components) {
         if (this.glyphIds().isEmpty()) {
             pTooltipAdder.accept(Component.translatable("ars_nouveau.codex_tooltip"));
         } else {

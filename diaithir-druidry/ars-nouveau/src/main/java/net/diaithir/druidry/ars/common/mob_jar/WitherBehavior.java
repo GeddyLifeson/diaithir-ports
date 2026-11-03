@@ -43,7 +43,7 @@ public class WitherBehavior extends JarBehavior<WitherBoss> {
     private void destroyBlocks(MobJarTile tile) {
         BlockPos pos = tile.getBlockPos();
         WitherBoss entity = entityFromJar(tile);
-        if (!EventHooks.canEntityGrief(tile.getLevel(), entity)) return;
+        if (!(tile.getLevel() instanceof net.minecraft.server.level.ServerLevel sl) || !EventHooks.canEntityGrief(sl, entity)) return;
         for (BlockPos block : BlockPos.betweenClosed(pos.offset(-1, -1, -1), pos.offset(1, 1, 1))) {
             if (block.equals(pos)) continue;
             BlockState bs = tile.getLevel().getBlockState(block);

@@ -2,7 +2,6 @@ package net.diaithir.druidry.ars.common.event;
 
 import net.diaithir.druidry.ars.ArsNouveau;
 import net.diaithir.druidry.ars.common.block.tile.MobJarTile;
-import net.diaithir.druidry.ars.common.mixin.jar.MobAccessorMixin;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -26,11 +25,9 @@ public class JarEvents {
         if(e.getLevel().getBlockEntity(e.getPos().below()) instanceof MobJarTile mobJarTile){
             LevelAccessor level = e.getLevel();
             RandomSource random = level.getRandom();
-            if(mobJarTile.getEntity() instanceof MobAccessorMixin mob){
-                SoundEvent soundEvent = mob.callGetAmbientSound();
-                if(soundEvent == null)
-                    return;
-                e.getLevel().playSound(null, e.getPos(), soundEvent, SoundSource.BLOCKS, 1.0F, 1.0F);
+            if(mobJarTile.getEntity() instanceof net.minecraft.world.entity.Mob mob){
+                // Port note: MobAccessorMixin removed; plays the mob's own ambient sound at its position.
+                mob.playAmbientSound();
                 e.setCanceled(true);
             }else if(mobJarTile.getEntity() instanceof LightningBolt bolt){
                 e.getLevel().playSound(null, e.getPos(), SoundEvents.LIGHTNING_BOLT_THUNDER, SoundSource.BLOCKS, 10000.0F, 0.8F + random.nextFloat() * 0.2F);

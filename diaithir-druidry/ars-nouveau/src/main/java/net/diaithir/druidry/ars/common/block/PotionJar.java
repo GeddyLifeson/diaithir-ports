@@ -90,14 +90,14 @@ public class PotionJar extends ModBlock implements SimpleWaterloggedBlock, Entit
         }else if (stack.getItem() == Items.GLASS_BOTTLE && tile.getAmount() >= 100) {
             ItemStack potionStack = new ItemStack(Items.POTION);
             PotionContents contents = tile.getData();
-            potionStack.set(DataComponents.POTION_CONTENTS, new PotionContents(contents.potion(), contents.customColor(), contents.customEffects()));
+            potionStack.set(DataComponents.POTION_CONTENTS, new PotionContents(contents.potion(), contents.customColor(), contents.customEffects(), contents.customName()));
             if(ItemUtil.shrinkHandAndAddStack(potionStack, handIn, player)){
                 tile.remove(100);
             }
         }else if(stack.getItem() == Items.ARROW && tile.getAmount() >= 10){
             ItemStack potionStack = new ItemStack(Items.TIPPED_ARROW);
             PotionContents contents = tile.getData();
-            potionStack.set(DataComponents.POTION_CONTENTS, new PotionContents(contents.potion(), contents.customColor(), contents.customEffects()));
+            potionStack.set(DataComponents.POTION_CONTENTS, new PotionContents(contents.potion(), contents.customColor(), contents.customEffects(), contents.customName()));
             if(ItemUtil.shrinkHandAndAddStack(potionStack, handIn, player)) {
                 tile.remove(10);
             }
@@ -121,20 +121,18 @@ public class PotionJar extends ModBlock implements SimpleWaterloggedBlock, Entit
         return new PotionJarTile(pos, state);
     }
 
-    @Override
+    /** Port note: Block no longer has appendHoverText; kept for the item to call. */
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext pContext, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag pTooltipFlag) {
-        var potion = stack.get(DataComponentRegistry.POTION_JAR);
+        var potion = stack.get(DataComponentRegistry.POTION_JAR.get());
         if(potion == null)
             return;
         var fill = potion.fill();
         var data = potion.contents();
         if(!data.equals(PotionContents.EMPTY)) {
-            ItemStack potionItem = new ItemStack(Items.POTION);
-            potionItem.set(DataComponents.POTION_CONTENTS, data);
-            tooltip.add(Component.translatable(potionItem.getDescriptionId()));
+            tooltip.accept(data.getName("item.minecraft.potion.effect."));
         }
-        PotionContents.addPotionTooltip(data.getAllEffects(), tooltip::add, 1.0F, 20.0f);
-        tooltip.add(Component.translatable("ars_nouveau.source_jar.fullness", (fill * 100) / 10000));
+        PotionContents.addPotionTooltip(data.getAllEffects(), tooltip, 1.0F, 20.0f);
+        tooltip.accept(Component.translatable("ars_nouveau.source_jar.fullness", (fill * 100) / 10000));
     }
 
     @Override

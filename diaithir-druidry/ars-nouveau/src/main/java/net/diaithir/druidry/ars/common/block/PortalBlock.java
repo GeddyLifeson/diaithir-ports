@@ -195,9 +195,9 @@ public class PortalBlock extends TickableModBlock {
             if (!frameTester.isValidFrame()) {
                 return Blocks.AIR.defaultBlockState();
             }
-            return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+            return super.updateShape(stateIn, worldIn, ticks, currentPos, facing, facingPos, facingState, random);
         }
-        return !flag && facingState.getBlock() != this && !(new Size(worldIn, currentPos, direction$axis1)).isComplete() ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+        return !flag && facingState.getBlock() != this && !(new Size(worldIn instanceof LevelAccessor la ? la : ((Level) worldIn), currentPos, direction$axis1)).isComplete() ? Blocks.AIR.defaultBlockState() : super.updateShape(stateIn, worldIn, ticks, currentPos, facing, facingPos, facingState, random);
     }
 
     @Override

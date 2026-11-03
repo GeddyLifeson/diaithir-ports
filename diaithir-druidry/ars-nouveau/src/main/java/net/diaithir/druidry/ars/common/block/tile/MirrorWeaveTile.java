@@ -43,18 +43,13 @@ public class MirrorWeaveTile extends ModdedTile implements ILightable {
     @Override
     public void saveAdditional(ValueOutput tag) {
         super.saveAdditional(tag);
-        tag.put("mimic_state",  NbtUtils.writeBlockState(mimicState));
+        tag.store("mimic_state", BlockState.CODEC, mimicState);
     }
 
     @Override
     protected void loadAdditional(ValueInput pTag) {
         super.loadAdditional(pTag);
-        if(pTag.read("mimic_state", com.mojang.serialization.Codec.PASSTHROUGH).isPresent()) {
-            HolderGetter<Block> holdergetter = this.level != null ? this.level.holderLookup(Registries.BLOCK) : BuiltInRegistries.BLOCK.asLookup();
-            mimicState = NbtUtils.readBlockState(holdergetter, pTag.childOrEmpty("mimic_state"));
-        }else{
-            mimicState = getDefaultBlockState();
-        }
+        mimicState = pTag.read("mimic_state", BlockState.CODEC).orElseGet(this::getDefaultBlockState);
     }
 
 

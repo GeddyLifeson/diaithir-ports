@@ -73,7 +73,7 @@ public class VolcanicSourcelinkTile extends SourcelinkTile {
     public int getSourceValue(ItemStack i) {
         int source = 0;
         int progress = 0;
-        int burnTime = i.getBurnTime(RecipeType.SMELTING);
+        int burnTime = i.getBurnTime(RecipeType.SMELTING, level.fuelValues());
         if (burnTime > 0) {
             source = burnTime / 12;
             progress = 1;
@@ -84,9 +84,6 @@ public class VolcanicSourcelinkTile extends SourcelinkTile {
         } else if (i.is(ItemTagProvider.ARCHWOOD_LOG_TAG)) {
             source += 50;
             progress += 3;
-        }
-        if (i.getItem() == ItemsRegistry.FIRE_ESSENCE.get()) {
-            source = 2000;
         }
         this.progress += progress;
         setChanged();

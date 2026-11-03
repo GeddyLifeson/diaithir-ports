@@ -44,7 +44,7 @@ public class IntangibleAirBlock extends TickableModBlock implements LiquidBlockC
     }
 
     @Override
-    public boolean canPlaceLiquid(@Nullable Player pPlayer, BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
+    public boolean canPlaceLiquid(@Nullable net.minecraft.world.entity.LivingEntity pPlayer, BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
         return false;
     }
 

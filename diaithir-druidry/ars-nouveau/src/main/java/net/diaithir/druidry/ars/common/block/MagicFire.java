@@ -85,7 +85,7 @@ public class MagicFire extends BaseFireBlock {
             voxelshape = Shapes.or(voxelshape, WEST_AABB);
         }
 
-        return voxelshape.isEmpty() ? DOWN_AABB : voxelshape;
+        return voxelshape.isEmpty() ? Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D) : voxelshape;
     }
 
     /**
@@ -137,7 +137,7 @@ public class MagicFire extends BaseFireBlock {
 
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         pLevel.scheduleTick(pPos, this, getFireTickDelay(pLevel.getRandom()));
-        if (pLevel.getGameRules().getBoolean(GameRules.RULE_DOFIRETICK)) {
+        if (true) {
             BlockState blockstate = pLevel.getBlockState(pPos.below());
             boolean fireSourceBelow = blockstate.isFireSource(pLevel, pPos, Direction.UP);
             int age = pState.getValue(AGE);
@@ -175,7 +175,7 @@ public class MagicFire extends BaseFireBlock {
     }
 
 
-    private BlockState getStateWithAge(LevelAccessor pLevel, BlockPos pPos, int pAge) {
+    private BlockState getStateWithAge(BlockGetter pLevel, BlockPos pPos, int pAge) {
         BlockState blockstate = getState(pLevel, pPos);
         return blockstate.setValue(AGE, pAge);
     }

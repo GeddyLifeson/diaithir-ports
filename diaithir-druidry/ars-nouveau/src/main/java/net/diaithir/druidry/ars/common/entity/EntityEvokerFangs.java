@@ -34,7 +34,7 @@ public class EntityEvokerFangs extends EvokerFangs {
         this(EntityType.EVOKER_FANGS, worldIn);
         this.warmupDelayTicks = p_i47276_9_;
         this.setOwner(casterIn);
-        this.yRot = p_i47276_8_ * (180F / (float) Math.PI);
+        this.setYRot(p_i47276_8_ * (180F / (float) Math.PI));
         this.setPos(x, y, z);
         this.damage = damage;
     }
@@ -102,9 +102,7 @@ public class EntityEvokerFangs extends EvokerFangs {
      */
     protected void readAdditionalSaveData(ValueInput compound) {
         this.warmupDelayTicks = compound.getIntOr("Warmup", 0);
-        if (compound.hasUUID("OwnerUUID")) {
-            this.casterUuid = compound.read("OwnerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
-        }
+        this.casterUuid = compound.read("OwnerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
 
     }
 

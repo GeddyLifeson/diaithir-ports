@@ -1,6 +1,5 @@
 package net.diaithir.druidry.ars.common.block;
 
-import net.diaithir.druidry.ars.common.entity.Starbuncle;
 import net.diaithir.druidry.ars.common.lib.EntityTags;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import com.mojang.serialization.MapCodec;
@@ -49,13 +48,8 @@ public class SourceBerryBush extends BushBlock implements BonemealableBlock {
     public static final MapCodec<SourceBerryBush> CODEC = simpleCodec(SourceBerryBush::new);
 
     @Override
-    protected MapCodec<? extends BushBlock> codec() {
-        return CODEC;
-    }
-
-    @Override
-    public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player) {
-        return new ItemStack(BlockRegistry.SOURCEBERRY_BUSH);
+    protected ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
+        return new ItemStack(BlockRegistry.SOURCEBERRY_BUSH.get());
     }
 
     @Override
@@ -107,7 +101,7 @@ public class SourceBerryBush extends BushBlock implements BonemealableBlock {
             return InteractionResult.TRY_WITH_EMPTY_HAND;
         } else if (i > 1) {
             int j = 1 + worldIn.getRandom().nextInt(2);
-            popResource(worldIn, pos, new ItemStack(BlockRegistry.SOURCEBERRY_BUSH, j + (flag ? 1 : 0)));
+            popResource(worldIn, pos, new ItemStack(BlockRegistry.SOURCEBERRY_BUSH.get(), j + (flag ? 1 : 0)));
             worldIn.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + worldIn.getRandom().nextFloat() * 0.4F);
             BlockState blockstate = state.setValue(AGE, 1);
             worldIn.setBlock(pos, blockstate, 3);
@@ -138,12 +132,4 @@ public class SourceBerryBush extends BushBlock implements BonemealableBlock {
         worldIn.setBlock(pos, state.setValue(AGE, i), 2);
     }
 
-    @Nullable
-    @Override
-    public PathType getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-        if(entity instanceof Starbuncle){
-            return PathType.WALKABLE;
-        }
-        return PathType.DAMAGE_OTHER;
-    }
 }

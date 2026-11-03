@@ -4,13 +4,11 @@ import net.diaithir.druidry.ars.api.item.ICasterTool;
 import net.diaithir.druidry.ars.api.mana.IManaDiscountEquipment;
 import net.diaithir.druidry.ars.api.spell.AbstractCaster;
 import net.diaithir.druidry.ars.api.spell.Spell;
-import net.diaithir.druidry.ars.client.gui.SpellTooltip;
 import net.diaithir.druidry.ars.common.items.data.TomeCasterData;
 import net.diaithir.druidry.ars.setup.config.Config;
 import net.diaithir.druidry.ars.setup.registry.DataComponentRegistry;
 import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -54,14 +52,14 @@ public class CasterTome extends ModItem implements ICasterTool, IManaDiscountEqu
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay, java.util.function.Consumer<net.minecraft.network.chat.Component> tooltip2, TooltipFlag flagIn) {
         AbstractCaster<?> caster = getSpellCaster(stack);
 
-        if (Config.GLYPH_TOOLTIPS.get() || Screen.hasShiftDown()) {
+        if (Config.GLYPH_TOOLTIPS.get()) {
             if (caster.isSpellHidden()) {
-                tooltip2.accept(Component.literal(caster.getHiddenRecipe()).withStyle(Style.EMPTY.withFont(Identifier.fromNamespaceAndPath("minecraft", "alt")).withColor(ChatFormatting.GOLD)));
+                tooltip2.accept(Component.literal(caster.getHiddenRecipe()).withStyle(Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(Identifier.fromNamespaceAndPath("minecraft", "alt"))).withColor(ChatFormatting.GOLD)));
             }
             if (!caster.getFlavorText().isEmpty())
                 tooltip2.accept(Component.literal(caster.getFlavorText()).withStyle(Style.EMPTY.withItalic(true).withColor(ChatFormatting.BLUE)));
         } else{
-            getInformation(stack, context, tooltip2, flagIn);
+            { java.util.List<Component> info = new java.util.ArrayList<>(); getInformation(stack, context, info, flagIn); info.forEach(tooltip2); }
         }
 
         tooltip2.accept(Component.translatable("tooltip.ars_nouveau.caster_tome"));
@@ -72,13 +70,5 @@ public class CasterTome extends ModItem implements ICasterTool, IManaDiscountEqu
     @Override
     public int getManaDiscount(ItemStack i, Spell spell) {
         return spell.getCost() / 2;
-    }
-
-    @Override
-    public @NotNull Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack pStack) {
-        AbstractCaster<?> caster = getSpellCaster(pStack);
-        if (!Screen.hasShiftDown() && Config.GLYPH_TOOLTIPS.get() && !caster.isSpellHidden() && !caster.getSpell().isEmpty())
-            return Optional.of(new SpellTooltip(caster));
-        return Optional.empty();
     }
 }

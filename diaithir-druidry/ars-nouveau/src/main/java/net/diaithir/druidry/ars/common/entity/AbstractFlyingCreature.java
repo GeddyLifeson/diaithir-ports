@@ -23,7 +23,7 @@ public abstract class AbstractFlyingCreature extends PathfinderMob {
     }
 
     public void travel(Vec3 pTravelVector) {
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             if (this.isInWater()) {
                 this.moveRelative(0.02F, pTravelVector);
                 this.move(MoverType.SELF, this.getDeltaMovement());

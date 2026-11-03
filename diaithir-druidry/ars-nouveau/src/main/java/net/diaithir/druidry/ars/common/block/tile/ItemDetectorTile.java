@@ -57,10 +57,11 @@ public class ItemDetectorTile extends ModdedTile implements ITickable, IWandable
         if(tile == null){
             return;
         }
-        IItemHandler handler = level.getCapability(Capabilities.ItemHandler.BLOCK, connectedPos, null);
-        if(handler == null){
+        var resourceHandler = level.getCapability(Capabilities.Item.BLOCK, connectedPos, null);
+        if(resourceHandler == null){
             return;
         }
+        IItemHandler handler = IItemHandler.of(resourceHandler);
         int found = 0;
         for(int i = 0; i < handler.getSlots(); i++){
             ItemStack ghostStack = handler.getStackInSlot(i);
@@ -123,7 +124,7 @@ public class ItemDetectorTile extends ModdedTile implements ITickable, IWandable
     @Override
     public void onFinishedConnectionLast(@Nullable BlockPos storedPos, @Nullable LivingEntity storedEntity, Player playerEntity) {
         if(storedPos != null){
-            if(level.getBlockEntity(storedPos) == null || level.getCapability(Capabilities.ItemHandler.BLOCK, storedPos, null) == null){
+            if(level.getBlockEntity(storedPos) == null || level.getCapability(Capabilities.Item.BLOCK, storedPos, null) == null){
                 return;
             }
             if(BlockUtil.distanceFrom(storedPos, worldPosition) > 30){

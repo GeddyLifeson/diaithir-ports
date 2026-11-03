@@ -186,12 +186,6 @@ public class EntityProjectileSpell extends ColoredProjectile {
             this.onHit(raytraceresult);
             this.needsSync = true;
         }
-        if (raytraceresult != null && raytraceresult.getType() == HitResult.Type.MISS && raytraceresult instanceof BlockHitResult blockHitResult
-                && canTraversePortals()) {
-            BlockRegistry.PORTAL_BLOCK.get().onProjectileHit(level(), level().getBlockState(BlockPos.containing(raytraceresult.getLocation())),
-                    blockHitResult, this);
-
-        }
     }
 
     /**

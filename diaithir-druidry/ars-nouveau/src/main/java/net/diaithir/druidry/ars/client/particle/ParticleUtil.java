@@ -55,7 +55,7 @@ public class ParticleUtil {
 
     public static void spawnFollowProjectile(Level world, BlockPos from, BlockPos to) {
         if (world.isLoaded(to) && world.isLoaded(from)) {
-            EntityFollowProjectile aoeProjectile = new EntityFollowProjectile(world, from, to);
+            EntityFollowProjectile aoeProjectile = new EntityFollowProjectile(world, from, to, ParticleColor.defaultParticleColor().toWrapper());
             world.addFreshEntity(aoeProjectile);
         }
     }

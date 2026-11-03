@@ -33,20 +33,20 @@ public class PotionSyncPacket extends AbstractPacket{
 
     public void toBytes(RegistryFriendlyByteBuf RegistryFriendlyByteBuf) {
         RegistryFriendlyByteBuf.writeInt(this.entity);
-        RegistryFriendlyByteBuf.writeResourceLocation(this.effect);
+        RegistryFriendlyByteBuf.writeIdentifier(this.effect);
         RegistryFriendlyByteBuf.writeInt(this.duration);
     }
 
     public PotionSyncPacket(RegistryFriendlyByteBuf RegistryFriendlyByteBuf) {
         this.entity = RegistryFriendlyByteBuf.readInt();
-        this.effect = RegistryFriendlyByteBuf.readResourceLocation();
+        this.effect = RegistryFriendlyByteBuf.readIdentifier();
         this.duration = RegistryFriendlyByteBuf.readInt();
     }
 
     @Override
     public void onClientReceived(Minecraft mc, Player player) {
         if (mc.level.getEntity(this.entity) instanceof LivingEntity living && living != ArsNouveau.proxy.getPlayer()) {
-            Holder<MobEffect> effect = BuiltInRegistries.MOB_EFFECT.getHolder(this.effect).orElse(null);
+            Holder<MobEffect> effect = BuiltInRegistries.MOB_EFFECT.get(this.effect).orElse(null);
             if (effect == null) return;
             if (duration > 0) {
                 living.addEffect(new MobEffectInstance(effect, duration, 0, false, false, false));

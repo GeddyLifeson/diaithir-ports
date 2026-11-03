@@ -36,7 +36,7 @@ public class MobJarItem extends BlockItem {
             name.withStyle(ChatFormatting.GRAY);
             pTooltip.accept(name);
         }
-        if (entity.getType().is(EntityTags.DRYGMY_BLACKLIST)) {
+        if (entity.typeHolder().is(EntityTags.DRYGMY_BLACKLIST)) {
             Component blacklisted = Component.translatable("ars_nouveau.drygmy.blacklist").withStyle(ChatFormatting.DARK_RED);
             pTooltip.accept(blacklisted);
         }

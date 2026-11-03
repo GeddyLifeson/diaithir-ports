@@ -183,14 +183,10 @@ public class RedstoneRelayTile extends ModdedTile implements IWandable, ITooltip
         poweredFrom = new ArrayList<>();
         powering = new ArrayList<>();
         currentParent = null;
-        ListTag listTag = pTag.getList("poweredFrom", 10);
-        for(int i = 0; i < listTag.size(); i++){
-            CompoundTag tag = listTag.getCompound(i);
+        for (ValueInput tag : pTag.childrenListOrEmpty("poweredFrom")) {
             poweredFrom.add(BlockPos.of(tag.getLongOr("pos", 0L)));
         }
-        ListTag poweringTag = pTag.getList("powering", 10);
-        for(int i = 0; i < poweringTag.size(); i++){
-            CompoundTag tag = poweringTag.getCompound(i);
+        for (ValueInput tag : pTag.childrenListOrEmpty("powering")) {
             powering.add(BlockPos.of(tag.getLongOr("pos", 0L)));
         }
 
@@ -205,21 +201,15 @@ public class RedstoneRelayTile extends ModdedTile implements IWandable, ITooltip
     @Override
     public void saveAdditional(ValueOutput tag) {
         super.saveAdditional(tag);
-        ListTag listTag = new ListTag();
+        ValueOutput.ValueOutputList listTag = tag.childrenList("poweredFrom");
         for(BlockPos pos : poweredFrom){
-            CompoundTag posTag = new CompoundTag();
-            posTag.putLong("pos", pos.asLong());
-            listTag.add(posTag);
+            listTag.addChild().putLong("pos", pos.asLong());
         }
-        tag.put("poweredFrom", listTag);
 
-        ListTag poweringTag = new ListTag();
+        ValueOutput.ValueOutputList poweringTag = tag.childrenList("powering");
         for(BlockPos pos : powering){
-            CompoundTag posTag = new CompoundTag();
-            posTag.putLong("pos", pos.asLong());
-            poweringTag.add(posTag);
+            poweringTag.addChild().putLong("pos", pos.asLong());
         }
-        tag.put("powering", poweringTag);
 
         tag.putInt("localPower", localPower);
         tag.putInt("currentPower", currentPower);
@@ -266,7 +256,6 @@ public class RedstoneRelayTile extends ModdedTile implements IWandable, ITooltip
 
 
 
-    @Override
     public double getTick(Object o) {
         return 0;
     }

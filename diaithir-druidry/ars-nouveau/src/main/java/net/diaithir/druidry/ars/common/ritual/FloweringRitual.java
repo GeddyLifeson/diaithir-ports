@@ -32,7 +32,7 @@ public class FloweringRitual extends FeaturePlacementRitual {
     public void addFeatures(List<IPlaceableFeature> features) {
         boolean isDesert = getConsumedItems().stream().anyMatch(i -> i.is(ItemTags.SAND));
         if(!isDesert) {
-            features.add(new PlaceBlockFeature(1.5, 0.8, () -> flowers.get(getWorld().random.nextInt(flowers.size())).defaultBlockState()));
+            features.add(new PlaceBlockFeature(1.5, 0.8, () -> flowers.get(getWorld().getRandom().nextInt(flowers.size())).defaultBlockState()));
             features.add(new BonemealFeature(5, 0.8));
         }else{
             features.add(new PlaceBlockFeature(3, 0.04, Blocks.CACTUS::defaultBlockState));

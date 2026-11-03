@@ -19,7 +19,7 @@ public class FireEssence extends ModItem {
     }
 
     @Override
-    public int getBurnTime(@NotNull ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+    public int getBurnTime(@NotNull ItemStack itemStack, @Nullable RecipeType<?> recipeType, net.minecraft.world.level.block.entity.FuelValues fuelValues) {
         return 200 * 20; // 200 seconds
     }
 

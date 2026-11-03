@@ -12,6 +12,7 @@ public class OpenChestEvent implements ITimedEvent {
     public int duration;
     public BlockPos pos;
     FakePlayer fakePlayer;
+    private int containerCounter = 0;
 
     public OpenChestEvent(ServerLevel level, BlockPos pos, int duration) {
         this.duration = duration;
@@ -23,10 +24,9 @@ public class OpenChestEvent implements ITimedEvent {
     public void open() {
         try {
             if (level.getBlockEntity(pos) instanceof ChestBlockEntity chestBlockEntity) {
-                fakePlayer.level() = level;
-                fakePlayer.containerCounter = fakePlayer.containerCounter % 100 + 1;
+                containerCounter = containerCounter % 100 + 1;
                 fakePlayer.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
-                fakePlayer.containerMenu = chestBlockEntity.createMenu(fakePlayer.containerCounter, fakePlayer.getInventory(), fakePlayer);
+                fakePlayer.containerMenu = chestBlockEntity.createMenu(containerCounter, fakePlayer.getInventory(), fakePlayer);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,9 +36,8 @@ public class OpenChestEvent implements ITimedEvent {
     public void attemptClose() {
         try {
             if (level.getBlockEntity(pos) instanceof ChestBlockEntity) {
-                fakePlayer.level() = level;
                 fakePlayer.setPos(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
-                fakePlayer.containerMenu = null;
+                fakePlayer.containerMenu = fakePlayer.inventoryMenu;
             }
         } catch (Exception e) {
             e.printStackTrace();

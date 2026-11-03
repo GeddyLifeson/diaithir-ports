@@ -5,9 +5,7 @@ import net.diaithir.druidry.ars.api.ArsNouveauAPI;
 import net.diaithir.druidry.ars.api.event.DispelEvent;
 import net.diaithir.druidry.ars.api.event.EventQueue;
 import net.diaithir.druidry.ars.api.event.ITimedEvent;
-import net.diaithir.druidry.ars.api.loot.DungeonLootTables;
 import net.diaithir.druidry.ars.api.perk.PerkAttributes;
-import net.diaithir.druidry.ars.api.recipe.MultiRecipeWrapper;
 import net.diaithir.druidry.ars.api.registry.*;
 import net.diaithir.druidry.ars.api.util.BlockUtil;
 import net.diaithir.druidry.ars.api.util.CuriosUtil;
@@ -85,9 +83,7 @@ public class EventHandler {
      */
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void serverStartedReload(net.neoforged.neoforge.event.server.ServerStartedEvent event) {
-        MultiRecipeWrapper.RECIPE_CACHE = new HashMap<>();
         EffectWololo.recipeCache = new FixedStack<>(EffectWololo.MAX_RECIPE_CACHE);
-        ArsNouveauAPI.getInstance().onResourceReload();
         var recipes = event.getServer().getRecipeManager();
         GenericRecipeRegistry.reloadAll(recipes);
         CasterTomeRegistry.reloadTomeData(recipes, event.getServer().getLevel(Level.OVERWORLD));
@@ -216,9 +212,6 @@ public class EventHandler {
     public static void fallEvent(LivingFallEvent fallEvent) {
         double jumpBonus = PerkUtil.countForPerk(JumpHeightPerk.INSTANCE, fallEvent.getEntity());
         fallEvent.setDistance((float) (fallEvent.getDistance() - (jumpBonus / 0.1)));
-        if (CuriosUtil.hasItem(fallEvent.getEntity(), ItemsRegistry.BELT_OF_LEVITATION.asItem())) {
-            fallEvent.setDistance(Math.max(0, fallEvent.getDistance() - 6));
-        }
     }
 
     @SubscribeEvent

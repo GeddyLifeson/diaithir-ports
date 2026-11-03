@@ -32,7 +32,7 @@ public class DenySpawnRitual extends RangeRitual {
     @Override
     public void onStart(@Nullable Player player) {
         super.onStart(player);
-        if(getWorld().isClientSide){
+        if(getWorld().isClientSide()){
             return;
         }
         for(ItemStack i : getConsumedItems()){
@@ -45,7 +45,7 @@ public class DenySpawnRitual extends RangeRitual {
     @Override
     protected void tick() {
         super.tick();
-        if(getWorld().isClientSide){
+        if(getWorld().isClientSide()){
             return;
         }
         if(deniedSpawn && getWorld().getGameTime() % 1200 == 0){

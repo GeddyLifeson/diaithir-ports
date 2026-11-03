@@ -30,9 +30,8 @@ public class RitualHealing extends AbstractRitual {
                 boolean didWorkOnce = false;
                 for (LivingEntity a : entities) {
                     if (a instanceof ZombieVillager zv) {
-                        zv.startConverting(player.map(Entity::getUUID).orElse(null), 0);
-                        didWorkOnce = true;
-                        continue;
+                        // TODO(port): ZombieVillager.startConverting is private in 26.1
+                                                continue;
                     }
 
                     if (a.getHealth() < a.getMaxHealth() || a.isInvertedHealAndHarm()) {

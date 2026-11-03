@@ -67,8 +67,8 @@ public class PotionJarTile extends ModdedTile implements ITooltipProvider, IWand
     }
 
     @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider lookupProvider) {
-        super.handleUpdateTag(tag, lookupProvider);
+    public void handleUpdateTag(ValueInput tag) {
+        super.handleUpdateTag(tag);
         level.sendBlockUpdated(worldPosition, level.getBlockState(worldPosition),  level.getBlockState(worldPosition), 8);
     }
 
@@ -114,9 +114,7 @@ public class PotionJarTile extends ModdedTile implements ITooltipProvider, IWand
     @Override
     public void getTooltip(List<Component> tooltip) {
         if(!data.equals(PotionContents.EMPTY)) {
-            ItemStack potion = new ItemStack(Items.POTION);
-            potion.set(DataComponents.POTION_CONTENTS, data);
-            tooltip.add(Component.translatable(potion.getDescriptionId()));
+            tooltip.add(data.getName("item.minecraft.potion.effect."));
         }
         PotionContents.addPotionTooltip(data.getAllEffects(), tooltip::add, 1.0F, 20.0f);
         tooltip.add(Component.translatable("ars_nouveau.source_jar.fullness", (getAmount() * 100) / this.getMaxFill()));
@@ -159,9 +157,9 @@ public class PotionJarTile extends ModdedTile implements ITooltipProvider, IWand
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput pComponentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter pComponentInput) {
         super.applyImplicitComponents(pComponentInput);
-        var jarContents = pComponentInput.getOrDefault(DataComponentRegistry.POTION_JAR, new PotionJarData(0, PotionContents.EMPTY, false));
+        var jarContents = pComponentInput.getOrDefault(DataComponentRegistry.POTION_JAR.get(), new PotionJarData(0, PotionContents.EMPTY, false));
         this.currentFill = jarContents.fill();
         this.data = jarContents.contents();
         this.isLocked = jarContents.locked();
@@ -170,7 +168,7 @@ public class PotionJarTile extends ModdedTile implements ITooltipProvider, IWand
     @Override
     protected void collectImplicitComponents(DataComponentMap.Builder pComponents) {
         super.collectImplicitComponents(pComponents);
-        pComponents.set(DataComponentRegistry.POTION_JAR, new PotionJarData(this.currentFill, this.data, this.isLocked));
+        pComponents.set(DataComponentRegistry.POTION_JAR.get(), new PotionJarData(this.currentFill, this.data, this.isLocked));
     }
 }
 

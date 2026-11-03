@@ -120,7 +120,7 @@ public class RuneBlock extends TickableModBlock {
             if (rune.spell != null) {
                 for (AbstractSpellPart part : rune.spell.recipe()) {
                     if ( part instanceof IFilter filter) {
-                        if (!filter.shouldResolveOnEntity(entityIn,worldIn)) {
+                        if (!filter.shouldResolveOnEntity(new net.minecraft.world.phys.EntityHitResult(entityIn), worldIn)) {
                             return;
                         }
                     } else break;

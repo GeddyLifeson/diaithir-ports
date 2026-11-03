@@ -13,10 +13,6 @@ public class ArcaneCoreTile extends ModdedTile {
 
 
 
-    public PlayState spin(AnimationState<?> e) {
-        e.getController().setAnimation(RawAnimation.begin().thenPlay("gem_spin"));
-        return PlayState.CONTINUE;
-    }
 
 
 }

@@ -27,11 +27,9 @@ public class JarOfLight extends ModItem {
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-        super.inventoryTick(stack, worldIn, entityIn, itemSlot, isSelected);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel worldIn, Entity entityIn, @org.jetbrains.annotations.Nullable net.minecraft.world.entity.EquipmentSlot slot) {
+        super.inventoryTick(stack, worldIn, entityIn, slot);
 
-        if (worldIn.isClientSide())
-            return;
         LightJarData data = stack.get(DataComponentRegistry.LIGHT_JAR);
         if (data == null || !data.enabled() || data.pos().isEmpty()) {
             return;

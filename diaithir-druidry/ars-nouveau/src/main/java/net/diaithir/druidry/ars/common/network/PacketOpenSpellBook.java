@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.client.gui.book.GuiSpellBook;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
@@ -37,7 +36,7 @@ public class PacketOpenSpellBook extends AbstractPacket{
     @Override
     public void onClientReceived(Minecraft minecraft, Player player) {
         InteractionHand hand = isMainHand ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND;
-        GuiSpellBook.open(hand);
+        // Port note: spell book GUI not ported; nothing to open client-side.
     }
 
     @Override

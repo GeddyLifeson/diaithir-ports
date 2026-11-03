@@ -60,7 +60,7 @@ public class EnchantingApparatusTile extends SingleItemTile implements Container
 
                 Vec3 particlePos = new Vec3(pos.getX(), pos.getY(), pos.getZ()).add(0.5, 0, 0.5);
                 particlePos = particlePos.add(ParticleUtil.pointInSphere());
-                world.addParticle(ParticleLineData.createData(new ParticleColor(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))),
+                world.addParticle(GlowParticleData.createData(new ParticleColor(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))),
                         particlePos.x(), particlePos.y() + 1, particlePos.z(),
                         pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
 
@@ -92,7 +92,7 @@ public class EnchantingApparatusTile extends SingleItemTile implements Container
             if (this.isCrafting) {
                 IEnchantingRecipe recipe = this.getRecipe(stack, null);
                 if (recipe != null) {
-                    this.stack = recipe.assemble(new ApparatusRecipeInput(this), level.registryAccess());
+                    this.stack = recipe.assemble(new ApparatusRecipeInput(this));
                     clearItems();
                     setChanged();
                     ParticleUtil.spawnPoof((ServerLevel) level, worldPosition);
@@ -134,8 +134,16 @@ public class EnchantingApparatusTile extends SingleItemTile implements Container
 
     public IEnchantingRecipe getRecipe(ItemStack stack, @Nullable Player playerEntity) {
         List<ItemStack> pedestalItems = getPedestalItems();
-        var holder = ArsNouveauAPI.getInstance().getEnchantingApparatusRecipes(level).stream().filter(r -> r.value().matches(new ApparatusRecipeInput(stack, pedestalItems, playerEntity), level)).findFirst().orElse(null);
-        return holder != null ? holder.value() : null;
+        if (!(level instanceof net.minecraft.server.level.ServerLevel serverLevel)) {
+            return null;
+        }
+        ApparatusRecipeInput input = new ApparatusRecipeInput(stack, pedestalItems, playerEntity);
+        for (net.minecraft.world.item.crafting.RecipeHolder<?> holder : serverLevel.recipeAccess().getRecipes()) {
+            if (holder.value() instanceof IEnchantingRecipe recipe && recipe.matches(input, level)) {
+                return recipe;
+            }
+        }
+        return null;
     }
 
     public boolean attemptCraft(ItemStack catalyst, @Nullable Player playerEntity) {
@@ -223,7 +231,6 @@ public class EnchantingApparatusTile extends SingleItemTile implements Container
 
 
 
-    @Override
     public double getBoneResetTime() {
         return 0;
     }

@@ -1,8 +1,6 @@
 package net.diaithir.druidry.ars.common.items;
 
-import net.diaithir.druidry.ars.client.renderer.item.ShieldModel;
 import net.diaithir.druidry.ars.common.perk.RepairingPerk;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -27,8 +25,8 @@ public class EnchantersShield extends ShieldItem {
     }
 
     @Override
-    public void inventoryTick(@NotNull ItemStack stack, @NotNull Level world, @NotNull Entity entity, int p_77663_4_, boolean p_77663_5_) {
-        super.inventoryTick(stack, world, entity, p_77663_4_, p_77663_5_);
+    public void inventoryTick(@NotNull ItemStack stack, @NotNull net.minecraft.server.level.ServerLevel world, @NotNull Entity entity, @org.jetbrains.annotations.Nullable net.minecraft.world.entity.EquipmentSlot slot) {
+        super.inventoryTick(stack, world, entity, slot);
         if(entity instanceof Player player)
             RepairingPerk.attemptRepair(stack, player);
     }

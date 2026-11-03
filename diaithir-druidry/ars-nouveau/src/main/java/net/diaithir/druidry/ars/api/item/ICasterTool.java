@@ -31,7 +31,7 @@ public interface ICasterTool extends IScribeable, IDisplayMana, ISpellHotkeyList
     default boolean onScribe(Level world, BlockPos pos, Player player, InteractionHand handIn, ItemStack tableStack) {
         ItemStack heldStack = player.getItemInHand(handIn);
         AbstractCaster<?> tableCaster = SpellCasterRegistry.from(tableStack);
-        if (!((heldStack.getItem() instanceof SpellBook) || (heldStack.getItem() instanceof SpellParchment) || (heldStack.getItem() == ItemsRegistry.MANIPULATION_ESSENCE.asItem())))
+        if (!((heldStack.getItem() instanceof SpellBook) || (heldStack.getItem() instanceof SpellParchment) ))
             return false;
         if (tableCaster == null) {
             return false;
@@ -40,7 +40,7 @@ public interface ICasterTool extends IScribeable, IDisplayMana, ISpellHotkeyList
         AbstractCaster<?> heldCaster = SpellCasterRegistry.from(heldStack);
         Spell spell = new Spell();
         // If the held item is a manipulation essence, set the spell to a random hidden spell
-        if (heldStack.getItem() == ItemsRegistry.MANIPULATION_ESSENCE.asItem()) {
+        if (false) {
             // Thanks mojang
             String[] words = new String[]{"the", "elder", "scrolls", "klaatu", "berata", "niktu", "xyzzy", "bless", "curse", "light", "darkness", "fire", "air", "earth", "water", "hot", "dry", "cold", "wet", "ignite", "snuff", "embiggen", "twist", "shorten", "stretch", "fiddle", "destroy", "imbue", "galvanize", "enchant", "free", "limited", "range", "of", "towards", "inside", "sphere", "cube", "self", "other", "ball", "mental", "physical", "grow", "shrink", "demon", "elemental", "spirit", "animal", "creature", "beast", "humanoid", "undead", "fresh", "stale", "phnglui", "mglwnafh", "cthulhu", "rlyeh", "wgahnagl", "fhtagn", "baguette"};
             // Pick between 3 and 5 words

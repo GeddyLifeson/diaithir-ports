@@ -51,27 +51,8 @@ public class EffectRedstone extends AbstractEffect {
                 world.neighborChanged(pos1, world.getBlockState(pos1).getBlock(), null);
                 world.updateNeighborsAt(pos1, world.getBlockState(pos1).getBlock());
             } else {
+                // TODO(port): temporary redstone block removed (TemporaryBlock not registered)
 
-                pos1 = pos1.relative(rayTraceResult.getDirection());
-
-                if (!world.isInWorldBounds(pos1))
-                    return;
-                boolean notReplaceable = !world.getBlockState(pos1).canBeReplaced();
-                if (notReplaceable)
-                    continue;
-                var event = NeoForge.EVENT_BUS.post(new BlockEvent.EntityPlaceEvent(BlockSnapshot.create(world.dimension(), world, pos1), world.getBlockState(pos1), fakePlayer));
-                if(event.isCanceled()){
-                    continue;
-                }
-                BlockState state1 = BlockRegistry.TEMPORARY_BLOCK.get().defaultBlockState().setValue(TemporaryBlock.POWER, signalModifier);
-                world.setBlockAndUpdate(pos1, state1);
-                if(world.getBlockEntity(pos1) instanceof TemporaryTile tile){
-                    tile.gameTime = world.getGameTime();
-                    tile.tickDuration = delay;
-                    tile.mimicState = Blocks.REDSTONE_BLOCK.defaultBlockState();
-                    tile.updateBlock();
-                }
-                world.sendBlockUpdated(pos1, world.getBlockState(pos1), world.getBlockState(pos1), 2);
             }
         }
 

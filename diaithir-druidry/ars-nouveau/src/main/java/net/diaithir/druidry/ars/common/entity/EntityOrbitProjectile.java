@@ -53,7 +53,7 @@ public class EntityOrbitProjectile extends EntityProjectileSpell {
 
     public EntityOrbitProjectile(Level world, SpellResolver resolver, Vec3 hitPos) {
         super(ModEntities.ORBIT_SPELL.get(), world, resolver);
-        setOwner(null);
+        setOwner((Entity) null);
         tracksGround = true;
         this.entityData.set(LAST_POS, hitPos);
     }

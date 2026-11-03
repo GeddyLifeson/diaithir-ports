@@ -57,7 +57,7 @@ public record WarpScrollData(Optional<BlockPos> pos, String dimension, Vec2 rota
     }
 
     @Override
-    public void addToTooltip(net.minecraft.world.item.Item.TooltipContext pContext, Consumer<Component> pTooltipAdder, TooltipFlag pTooltipFlag) {
+    public void addToTooltip(net.minecraft.world.item.Item.TooltipContext pContext, Consumer<Component> pTooltipAdder, TooltipFlag pTooltipFlag, net.minecraft.core.component.DataComponentGetter components) {
         if (!isValid()) {
             pTooltipAdder.accept(Component.translatable("ars_nouveau.warp_scroll.no_location"));
             return;

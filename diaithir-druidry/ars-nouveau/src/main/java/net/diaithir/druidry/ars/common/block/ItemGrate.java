@@ -8,7 +8,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -82,8 +81,8 @@ public class ItemGrate extends ModBlock implements BucketPickup{
     }
 
     @Override
-    protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pNeighborBlock, net.minecraft.world.level.redstone.Orientation pNeighborPos, boolean pMovedByPiston) {
-        super.neighborChanged(pState, pLevel, pPos, pNeighborBlock, pNeighborPos, pMovedByPiston);
+    protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pNeighborBlock, net.minecraft.world.level.redstone.Orientation pOrientation, boolean pMovedByPiston) {
+        super.neighborChanged(pState, pLevel, pPos, pNeighborBlock, pOrientation, pMovedByPiston);
         if(!pLevel.isClientSide() && pLevel.getBlockState(pPos.above()).getFluidState().isSource()){
             pLevel.scheduleTick(pPos, this, 10);
         }
@@ -110,10 +109,10 @@ public class ItemGrate extends ModBlock implements BucketPickup{
     protected VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         if(pContext instanceof EntityCollisionContext entityCollisionContext){
             var entity = entityCollisionContext.getEntity();
-            if(entity == null || entity.typeHolder().is(EntityTags.ITEM_GRATE_COLLIDE)){
+            if(entity == null || entity.is(EntityTags.ITEM_GRATE_COLLIDE)){
                 return super.getCollisionShape(pState, pLevel, pPos, pContext);
             }
-            if(entity instanceof ItemEntity || entity instanceof Projectile || entity.typeHolder().is(EntityTags.ITEM_GRATE_PASSABLE)){
+            if(entity instanceof ItemEntity || entity instanceof Projectile || entity.is(EntityTags.ITEM_GRATE_PASSABLE)){
                 return Shapes.empty();
             }
         }
@@ -136,7 +135,7 @@ public class ItemGrate extends ModBlock implements BucketPickup{
     }
 
     @Override
-    public ItemStack pickupBlock(@Nullable Player pPlayer, LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+    public ItemStack pickupBlock(@Nullable net.minecraft.world.entity.LivingEntity pPlayer, LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
         BlockState belowState = pLevel.getBlockState(pPos.below());
         if(belowState.getBlock() instanceof BucketPickup bucketPickup){
             return bucketPickup.pickupBlock(pPlayer, pLevel, pPos.below(), belowState);

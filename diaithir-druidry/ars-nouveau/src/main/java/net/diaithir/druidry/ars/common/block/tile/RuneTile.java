@@ -89,7 +89,7 @@ public class RuneTile extends ModdedTile implements ITickable, ITooltipProvider,
     @Override
     public void saveAdditional(ValueOutput tag) {
         super.saveAdditional(tag);
-        tag.put("spell", ANCodecs.encode(Spell.CODEC.codec(), spell));
+        tag.store("spell", Spell.CODEC.codec(), spell);
         tag.putBoolean("charged", isCharged);
         tag.putBoolean("redstone", disabled);
         tag.putBoolean("temp", isTemporary);
@@ -102,7 +102,7 @@ public class RuneTile extends ModdedTile implements ITickable, ITooltipProvider,
     @Override
     protected void loadAdditional(ValueInput tag) {
         super.loadAdditional(tag);
-        this.spell = ANCodecs.decode(Spell.CODEC.codec(), tag.childOrEmpty("spell"));
+        this.spell = tag.read("spell", Spell.CODEC.codec()).orElse(new Spell());
         this.isCharged = tag.getBooleanOr("charged", false);
         this.disabled = tag.getBooleanOr("redstone", false);
         this.isTemporary = tag.getBooleanOr("temp", false);
@@ -147,7 +147,7 @@ public class RuneTile extends ModdedTile implements ITickable, ITooltipProvider,
 
     @Override
     public void getTooltip(List<Component> tooltip) {
-        if (ArsNouveau.proxy.getPlayer().hasEffect(ModPotions.MAGIC_FIND_EFFECT)) {
+        if (ArsNouveau.proxy.getPlayer().isCrouching()) {
             tooltip.add(Component.literal(spell.getDisplayString()));
         }
     }

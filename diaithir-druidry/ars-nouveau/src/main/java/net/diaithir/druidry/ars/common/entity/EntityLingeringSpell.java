@@ -1,5 +1,6 @@
 package net.diaithir.druidry.ars.common.entity;
 
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.diaithir.druidry.ars.client.particle.ParticleUtil;
 import net.diaithir.druidry.ars.common.lib.EntityTags;
@@ -126,10 +127,6 @@ public class EntityLingeringSpell extends EntityProjectileSpell {
     protected void onHit(HitResult result) {
         if (!level().isClientSide() && result instanceof BlockHitResult && !this.isRemoved()) {
             BlockState state = level().getBlockState(((BlockHitResult) result).getBlockPos());
-            if (state.is(BlockTags.PORTALS)) {
-                state.entityInside(level(), ((BlockHitResult) result).getBlockPos(), this);
-                return;
-            }
             this.setLanded(true);
         }
     }
@@ -189,8 +186,8 @@ public class EntityLingeringSpell extends EntityProjectileSpell {
     }
 
     @Override
-    public void load(CompoundTag compound) {
-        super.load(compound);
+    protected void readAdditionalSaveData(ValueInput compound) {
+        super.readAdditionalSaveData(compound);
         setSensitive(compound.getBooleanOr("sensitive", false));
         setShouldFall(compound.getBooleanOr("shouldFall", false));
     }

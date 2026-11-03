@@ -58,11 +58,11 @@ public class PotionDiffuserTile extends ModdedTile implements ITickable, IWandab
                 for(LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, new AABB(getBlockPos()).inflate(10))){
                     lastConsumedPotion.forEachEffect(effectinstance -> {
                         if (effectinstance.getEffect().value().isInstantenous()) {
-                            effectinstance.getEffect().value().applyInstantenousEffect(null, null, entity, effectinstance.getAmplifier(), 1.0D);
+                            effectinstance.getEffect().value().applyInstantenousEffect((net.minecraft.server.level.ServerLevel) level, null, null, entity, effectinstance.getAmplifier(), 1.0D);
                         } else {
                             entity.addEffect(new MobEffectInstance(effectinstance), null);
                         }
-                    });
+                    }, 1.0F);
                 }
             }
         }
@@ -134,7 +134,7 @@ public class PotionDiffuserTile extends ModdedTile implements ITickable, IWandab
             tooltip.add(Component.translatable("ars_nouveau.potion_diffuser.off").withStyle(ChatFormatting.GOLD));
         }
         if(lastConsumedPotion != null){
-            lastConsumedPotion.addPotionTooltip(tooltip::add, 1.0f, 20f);
+            PotionContents.addPotionTooltip(lastConsumedPotion.getAllEffects(), tooltip::add, 1.0f, 20f);
         }
     }
 

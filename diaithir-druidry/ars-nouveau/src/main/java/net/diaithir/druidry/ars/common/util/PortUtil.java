@@ -5,12 +5,13 @@ import net.diaithir.druidry.ars.common.network.PacketNoSpamChatMessage;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.ItemStack;
 
 public class PortUtil {
     public static void sendMessage(Entity playerEntity, Component component) {
         if (playerEntity == null)
             return;
-        playerEntity.sendSystemMessage(component);
+        if (playerEntity instanceof net.minecraft.world.entity.player.Player p) p.sendSystemMessage(component);
     }
 
     public static void sendMessageNoSpam(Entity playerEntity, Component component) {

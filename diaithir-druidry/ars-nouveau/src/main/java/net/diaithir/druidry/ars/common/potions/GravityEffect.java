@@ -52,7 +52,7 @@ public class GravityEffect extends MobEffect {
     @SubscribeEvent
     public static void entityTick(PlayerTickEvent.Post e) {
         if ( e.getEntity().hasEffect(ModPotions.GRAVITY_EFFECT) && !e.getEntity().onGround() && !e.getEntity().isCreative()) {
-            e.getEntity().abilities.flying = false;
+            e.getEntity().getAbilities().flying = false;
         }
     }
 

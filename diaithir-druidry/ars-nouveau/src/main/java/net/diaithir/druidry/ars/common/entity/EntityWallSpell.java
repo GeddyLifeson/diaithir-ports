@@ -1,5 +1,6 @@
 package net.diaithir.druidry.ars.common.entity;
 
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.diaithir.druidry.ars.client.particle.ParticleLineData;
 import net.diaithir.druidry.ars.client.particle.ParticleUtil;
@@ -183,10 +184,6 @@ public class EntityWallSpell extends EntityProjectileSpell {
     protected void onHit(HitResult result) {
         if (!level().isClientSide() && result instanceof BlockHitResult && !this.isRemoved()) {
             BlockState state = level().getBlockState(((BlockHitResult) result).getBlockPos());
-            if (state.is(BlockTags.PORTALS)) {
-                state.entityInside(level(), ((BlockHitResult) result).getBlockPos(), this);
-                return;
-            }
             this.setLanded(true);
         }
     }
@@ -255,10 +252,10 @@ public class EntityWallSpell extends EntityProjectileSpell {
     }
 
     @Override
-    public void load(CompoundTag compound) {
-        super.load(compound);
+    protected void readAdditionalSaveData(ValueInput compound) {
+        super.readAdditionalSaveData(compound);
         setSensitive(compound.getBooleanOr("sensitive", false));
-        setDirection(Direction.valueOf(compound.getStringOr("direction", "")));
+        setDirection(Direction.valueOf(compound.getStringOr("direction", "UP")));
         setShouldFall(compound.getBooleanOr("should_fall", false));
     }
     public static class EntityHit{

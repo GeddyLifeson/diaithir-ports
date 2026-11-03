@@ -148,14 +148,14 @@ public class PortalTile extends ModdedTile implements ITickable, ITooltipProvide
             Networking.sendToNearbyClient(targetWorld, entity, new PacketWarpPosition(entity.getId(),target.getX() + 0.5, target.getY(), target.getZ() + 0.5, rotX, rotY));
             if (!entity.getPassengers().isEmpty()) {
                 //Force re-apply any passengers so that players don't get "stuck" outside what they may be riding
-                ((ServerChunkCache) entity.level().getChunkSource()).broadcast(entity, new ClientboundSetPassengersPacket(entity));
+                ((ServerChunkCache) entity.level().getChunkSource()).sendToTrackingPlayersAndSelf(entity, new ClientboundSetPassengersPacket(entity));
                 Entity controller = entity.getControllingPassenger();
                 if (controller != entity && controller instanceof ServerPlayer player && !(controller instanceof FakePlayer)) {
                     if (player.connection != null) {
                         //Force sync the fact that the vehicle moved to the client that is controlling it
                         // so that it makes sure to use the correct positions when sending move packets
                         // back to the server instead of running into moved wrongly issues
-                        player.connection.send(new ClientboundMoveVehiclePacket(entity));
+                        player.connection.send(ClientboundMoveVehiclePacket.fromEntity(entity));
                     }
                 }
             }
@@ -164,7 +164,9 @@ public class PortalTile extends ModdedTile implements ITickable, ITooltipProvide
         Vec3 destination = new Vec3(target.getX() + 0.5, target.getY(), target.getZ() + 0.5);
         //Note: We grab the passengers here instead of in placeEntity as changeDimension starts by removing any passengers
         List<Entity> passengers = entity.getPassengers();
-        return entity.changeDimension(new DimensionTransition ((ServerLevel) targetWorld, destination, new Vec3(0,0,0),rotationVec.y, rotationVec.x, false, DimensionTransition.DO_NOTHING));
+        float yRot = rotationVec != null ? rotationVec.y : entity.getYRot();
+        float xRot = rotationVec != null ? rotationVec.x : entity.getXRot();
+        return entity.teleport(new net.minecraft.world.level.portal.TeleportTransition((ServerLevel) targetWorld, destination, new Vec3(0, 0, 0), yRot, xRot, net.minecraft.world.level.portal.TeleportTransition.DO_NOTHING));
     }
 
     @Override

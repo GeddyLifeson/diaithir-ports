@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.api.event.ChimeraSummonEvent;
 import net.diaithir.druidry.ars.api.event.ITimedEvent;
 import net.diaithir.druidry.ars.common.event.timed.EruptionEvent;
 import net.minecraft.client.Minecraft;
@@ -56,7 +55,6 @@ public class PacketTimedEvent extends AbstractPacket{
     public static Map<String, Function<CompoundTag, Void>> methodMap = new HashMap<>();
 
     static {
-        methodMap.put(ChimeraSummonEvent.ID, (nbt) -> ChimeraSummonEvent.get(nbt).onPacketHandled());
         methodMap.put(EruptionEvent.ID, (nbt) -> EruptionEvent.get(nbt).onPacketHandled());
     }
 }

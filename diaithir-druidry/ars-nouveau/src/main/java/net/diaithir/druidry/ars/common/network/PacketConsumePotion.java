@@ -53,14 +53,14 @@ public class PacketConsumePotion extends AbstractPacket{
             PotionUtil.applyContents(contents, player, player, player);
             stack.shrink(1);
             player.getInventory().add(new ItemStack(Items.GLASS_BOTTLE));
-            player.level().playSound(null, player.blockPosition(), SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS, 0.5f, player.level().getRandom().nextFloat() * 0.1F + 0.9F);
+            player.level().playSound(null, player.blockPosition(), SoundEvents.GENERIC_DRINK.value(), SoundSource.PLAYERS, 0.5f, player.level().getRandom().nextFloat() * 0.1F + 0.9F);
         }else if(stack.getItem() instanceof PotionFlask){
             IPotionProvider data = PotionProviderRegistry.from(stack);
             if(data == null || data.getPotionData(stack) == PotionContents.EMPTY || data.usesRemaining(stack) <= 0)
                 return;
             data.applyEffects(stack, player, player, player);
             data.consumeUses(stack, 1, player);
-            player.level().playSound(null, player.blockPosition(), SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS, 0.5f, player.level().getRandom().nextFloat() * 0.1F + 0.9F);
+            player.level().playSound(null, player.blockPosition(), SoundEvents.GENERIC_DRINK.value(), SoundSource.PLAYERS, 0.5f, player.level().getRandom().nextFloat() * 0.1F + 0.9F);
         }
     }
 

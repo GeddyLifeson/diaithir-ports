@@ -36,12 +36,7 @@ public class MageBloomCrop extends CropBlock {
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return BlockRegistry.MAGE_BLOOM_CROP;
+        return BlockRegistry.MAGE_BLOOM_CROP.get();
     }
 
-    @Override
-    public void appendHoverText(ItemStack pStack, net.minecraft.world.item.Item.TooltipContext pContext, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> pTootipComponents, TooltipFlag pTooltipFlag) {
-        super.appendHoverText(pStack, pContext, pTootipComponents, pTooltipFlag);
-        pTootipComponents.add(Component.translatable("tooltip.magebloom"));
-    }
 }

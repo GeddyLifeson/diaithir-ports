@@ -55,6 +55,16 @@ public class SourcelinkTile extends AbstractSourceMachine implements ITickable {
         }
     }
 
+    public List<ArcanePedestalTile> getSurroundingPedestals() {
+        List<ArcanePedestalTile> inventories = new java.util.ArrayList<>();
+        for (BlockPos p : BlockPos.betweenClosed(getBlockPos().below().east().north(), getBlockPos().above().west().south())) {
+            if (level.getBlockEntity(p) instanceof ArcanePedestalTile pedestal) {
+                inventories.add(pedestal);
+            }
+        }
+        return inventories;
+    }
+
     public void getManaEvent(BlockPos sourcePos, int total) {
         this.addSource(total);
         spawnFollow(sourcePos, this.worldPosition);

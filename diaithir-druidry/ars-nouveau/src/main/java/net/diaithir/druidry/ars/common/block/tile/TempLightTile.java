@@ -31,7 +31,7 @@ public class TempLightTile extends LightTile {
     public void saveAdditional(ValueOutput tag) {
         super.saveAdditional(tag);
         tag.putDouble("modifier", lengthModifier);
-        tag.put("age", IntTag.valueOf(age));
+        tag.putInt("age", age);
     }
 
     @Override

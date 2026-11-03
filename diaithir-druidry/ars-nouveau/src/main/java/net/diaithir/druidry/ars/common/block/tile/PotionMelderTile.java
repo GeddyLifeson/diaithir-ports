@@ -104,13 +104,13 @@ public class PotionMelderTile extends ModdedTile implements ITickable, IWandable
                     double d1 = worldPosition.getY() + 1 + ParticleUtil.inRange(-0.1, 0.4);
                     double d2 = worldPosition.getZ() + .5 + ParticleUtil.inRange(-0.25, 0.25);
                     level.addParticle(GlowParticleData.createData(
-                                    ParticleColor.fromInt(PotionContents.getColor(data.getAllEffects()))),
+                                    ParticleColor.fromInt(PotionContents.getColorOptional(data.getAllEffects()).orElse(PotionContents.BASE_POTION_COLOR))),
                             d0, d1, d2,
                             0,
                             0.01f,
                             0);
                 }
-                lastMixedColor = PotionContents.getColor(data.getAllEffects());
+                lastMixedColor = PotionContents.getColorOptional(data.getAllEffects()).orElse(PotionContents.BASE_POTION_COLOR);
             }
             if (timeMixing >= 160)
                 timeMixing = 0;

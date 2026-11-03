@@ -1,8 +1,6 @@
 package net.diaithir.druidry.ars.client;
 
 import net.diaithir.druidry.ars.client.particle.ColorPos;
-import com.mojang.blaze3d.pipeline.TextureTarget;
-import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -25,11 +23,6 @@ public class ClientInfo {
 
     public static List<ColorPos> highlightPositions = new ArrayList<>();
     public static int highlightTicks;
-
-    public static TextureTarget skyRenderTarget;
-    public static ShaderInstance skyShader;
-    public static ShaderInstance blameShader;
-    public static ShaderInstance rainbowShader;
 
     public static boolean isSupporter = false;
 

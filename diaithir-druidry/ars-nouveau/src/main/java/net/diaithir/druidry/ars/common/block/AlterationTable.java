@@ -157,7 +157,7 @@ public class AlterationTable extends TableBlock{
         world.setBlock(lecternPos, state.setValue(PART, ThreePartBlock.OTHER), 3);
 
 
-        world.blockUpdated(pos, Blocks.AIR);
+        world.updateNeighborsAt(pos, Blocks.AIR);
         state.updateNeighbourShapes(world, pos, 3);
     }
 
@@ -172,7 +172,7 @@ public class AlterationTable extends TableBlock{
                }
            }
         }
-        return super.updateShape(state, direction, state2, world, pos, pos2);
+        return super.updateShape(state, world, ticks, pos, direction, pos2, state2, random);
     }
 
     public List<Direction> getConnectedDirections(BlockState state){

@@ -56,7 +56,7 @@ public class WorldUtil {
      */
     public static void markChunkDirty(final Level world, final BlockPos pos) {
         if (WorldUtil.isBlockLoaded(world, pos)) {
-            world.getChunk(pos.getX() >> 4, pos.getZ() >> 4).setUnsaved(true);
+            world.getChunk(pos.getX() >> 4, pos.getZ() >> 4).markUnsaved();
             final BlockState state = world.getBlockState(pos);
             world.sendBlockUpdated(pos, state, state, 3);
         }
@@ -70,7 +70,7 @@ public class WorldUtil {
      * @return true if loaded
      */
     public static boolean isChunkLoaded(final LevelAccessor world, final ChunkPos pos) {
-        return isChunkLoaded(world, pos.x, pos.z);
+        return isChunkLoaded(world, pos.x(), pos.z());
     }
 
     /**
@@ -128,7 +128,7 @@ public class WorldUtil {
      * @return true if so.
      */
     public static boolean isPastTime(final Level world, final int pastTime) {
-        return world.getDayTime() % 24000 <= pastTime;
+        return world.getOverworldClockTime() % 24000 <= pastTime;
     }
 
 
@@ -140,16 +140,7 @@ public class WorldUtil {
      * @return true if it matches.
      */
     public static boolean isOfWorldType(@NotNull final Level world, @NotNull final ResourceKey<DimensionType> type) {
-        RegistryAccess dynRegistries = world.registryAccess();
-        Identifier loc = dynRegistries.registry(Registries.DIMENSION_TYPE).get().getKey(world.dimensionType());
-        if (loc == null) {
-            if (world.isClientSide()) {
-                return world.dimensionType().effectsLocation().equals(type.location());
-            }
-            return false;
-        }
-        ResourceKey<DimensionType> regKey = ResourceKey.create(Registries.DIMENSION_TYPE, loc);
-        return regKey == type;
+        return world.dimensionTypeRegistration().is(type);
     }
 
     /**
@@ -161,7 +152,7 @@ public class WorldUtil {
      * @return true if peaceful
      */
     public static boolean isPeaceful(@NotNull final Level world) {
-        return !world.getLevelData().getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) || world.getDifficulty().equals(Difficulty.PEACEFUL);
+        return (world instanceof net.minecraft.server.level.ServerLevel sl && !sl.getGameRules().get(GameRules.SPAWN_MOBS)) || world.getDifficulty().equals(Difficulty.PEACEFUL);
     }
 
 }

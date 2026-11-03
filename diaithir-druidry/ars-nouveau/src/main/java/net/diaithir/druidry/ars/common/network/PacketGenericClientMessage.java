@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.network;
 
 import net.diaithir.druidry.ars.ArsNouveau;
-import net.diaithir.druidry.ars.common.items.curios.JumpingRing;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -32,9 +31,7 @@ public class PacketGenericClientMessage extends AbstractPacket{
 
     @Override
     public void onServerReceived(MinecraftServer minecraftServer, ServerPlayer player) {
-        if(action == Action.JUMP_RING){
-            JumpingRing.doJump(player);
-        }
+        // Port note: JUMP_RING handling removed with the Curios-based JumpingRing.
     }
 
     @Override

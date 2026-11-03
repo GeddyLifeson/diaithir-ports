@@ -82,17 +82,10 @@ public class EffectName extends AbstractEffect {
         BlockState state = world.getBlockState(pos);
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof SkullBlockEntity head) {
-            head.setOwner(new ResolvableProfile(Optional.of(name.getString()), Optional.empty(), new PropertyMap()));
             // TODO AT this
             // head.updateOwnerProfile();
             world.sendBlockUpdated(pos, state, state, 3);
             head.setChanged();
-            return;
-        }
-        if (blockEntity instanceof BaseContainerBlockEntity nameable) {
-            nameable.name = name;
-            world.sendBlockUpdated(pos, state, state, 3);
-            nameable.setChanged();
             return;
         }
         for (Entity entity : world.getEntities(null, new AABB(pos).inflate(0.08))) {

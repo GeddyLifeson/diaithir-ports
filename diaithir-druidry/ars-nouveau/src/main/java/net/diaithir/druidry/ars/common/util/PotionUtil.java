@@ -56,16 +56,18 @@ public class PotionUtil {
     public static void applyContents(PotionContents contents, @NotNull LivingEntity target, @Nullable LivingEntity source, @Nullable LivingEntity indirect){
         contents.forEachEffect(instance ->  {
             if (instance.getEffect().value().isInstantenous()) {
-                instance.getEffect().value().applyInstantenousEffect(source, indirect, target, instance.getAmplifier(), 1.0);
+                if (target.level() instanceof net.minecraft.server.level.ServerLevel sl) {
+                    instance.getEffect().value().applyInstantenousEffect(sl, source, indirect, target, instance.getAmplifier(), 1.0);
+                }
             } else {
                 target.addEffect(instance);
             }
-        });
+        }, 1.0F);
     }
 
     public static PotionContents merge(PotionContents contents1, PotionContents contents2){
         if(arePotionContentsEqual(contents1, contents2))
-            return new PotionContents(contents1.potion(), contents1.customColor(), contents1.customEffects());
+            return new PotionContents(contents1.potion(), contents1.customColor(), contents1.customEffects(), contents1.customName());
         Set<MobEffectInstance> set = new HashSet<>();
         for(MobEffectInstance effect : contents1.getAllEffects()){
             set.add(new MobEffectInstance(effect));
@@ -73,7 +75,7 @@ public class PotionUtil {
         for(MobEffectInstance effect : contents2.getAllEffects()){
             set.add(new MobEffectInstance(effect));
         }
-        contents1.potion().get().value().getEffects().forEach(set::remove);
-        return new PotionContents(contents1.potion(), contents1.customColor(), new ArrayList<>(set));
+        contents1.potion().ifPresent(p -> p.value().getEffects().forEach(set::remove));
+        return new PotionContents(contents1.potion(), contents1.customColor(), new ArrayList<>(set), contents1.customName());
     }
 }

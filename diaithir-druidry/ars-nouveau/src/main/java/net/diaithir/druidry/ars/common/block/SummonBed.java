@@ -70,9 +70,9 @@ public class SummonBed extends ModBlock {
      * This method is responsible for doing any modification on the motion of the entity that should result from the
      * landing.
      */
-    public void updateEntityAfterFallOn(BlockGetter pLevel, Entity pEntity) {
+    public void updateEntityMovementAfterFallOn(BlockGetter pLevel, Entity pEntity) {
         if (pEntity.isSuppressingBounce()) {
-            super.updateEntityAfterFallOn(pLevel, pEntity);
+            super.updateEntityMovementAfterFallOn(pLevel, pEntity);
         } else {
             this.bounceUp(pEntity);
         }

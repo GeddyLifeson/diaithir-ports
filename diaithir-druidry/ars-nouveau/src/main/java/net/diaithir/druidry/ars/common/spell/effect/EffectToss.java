@@ -88,11 +88,12 @@ public class EffectToss extends AbstractEffect {
             summonStack(shooter, spellContext, spellStats, world, pos, manager);
             return;
         }
-        IItemHandler targetInv = world.getCapability(Capabilities.ItemHandler.BLOCK, rayTraceResult.getBlockPos(), null);
+        var targetRes = world.getCapability(Capabilities.Item.BLOCK, rayTraceResult.getBlockPos(), null);
 
-        if (targetInv == null) {
+        if (targetRes == null) {
             return;
         }
+        IItemHandler targetInv = IItemHandler.of(targetRes);
 
         this.processStacks(shooter, spellContext, spellStats, manager, (stack) -> {
             stack.stack = ItemHandlerHelper.insertItemStacked(targetInv, stack.getStack(), false);

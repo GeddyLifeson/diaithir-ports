@@ -67,11 +67,11 @@ public abstract class AbstractEffect extends AbstractSpellPart {
     }
 
     public boolean canSummon(LivingEntity playerEntity) {
-        return isRealPlayer(playerEntity) && (playerEntity.getEffect(ModPotions.SUMMONING_SICKNESS_EFFECT) == null || (playerEntity instanceof Player player && player.isCreative()));
+        return isRealPlayer(playerEntity); // TODO(port): summoning sickness potion not ported
     }
 
     public void applySummoningSickness(LivingEntity playerEntity, int time) {
-        playerEntity.addEffect(new MobEffectInstance(ModPotions.SUMMONING_SICKNESS_EFFECT, time));
+        // TODO(port): summoning sickness potion not ported
     }
 
     public void summonLivingEntity(HitResult rayTraceResult, Level world, @NotNull LivingEntity shooter, SpellStats augments, SpellContext spellContext, @Nullable SpellResolver resolver, ISummon summon) {
@@ -79,7 +79,7 @@ public abstract class AbstractEffect extends AbstractSpellPart {
         LivingEntity summonLivingEntity = summon.getLivingEntity();
         if (summonLivingEntity != null) {
             world.addFreshEntity(summon.getLivingEntity());
-            if (resolver != null && resolver.hasFocus(ItemsRegistry.SUMMONING_FOCUS.get())) {
+            if (false) {
                 SpellContext newContext = resolver.spellContext.makeChildContext();
                 EntitySpellResolver spellResolver = new EntitySpellResolver(newContext.withWrappedCaster(new LivingCaster(summonLivingEntity)));
                 spellResolver.onResolveEffect(world, new EntityHitResult(summonLivingEntity));

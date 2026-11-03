@@ -2,12 +2,10 @@ package net.diaithir.druidry.ars.common.items;
 
 import net.diaithir.druidry.ars.api.item.ICasterTool;
 import net.diaithir.druidry.ars.api.spell.*;
-import net.diaithir.druidry.ars.client.renderer.item.WandRenderer;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentAccelerate;
 import net.diaithir.druidry.ars.common.spell.method.MethodProjectile;
 import net.diaithir.druidry.ars.common.util.PortUtil;
 import net.diaithir.druidry.ars.setup.registry.DataComponentRegistry;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -64,7 +62,7 @@ public class Wand extends ModItem implements ICasterTool {
 
     @Override
     public void appendHoverText(ItemStack stack, net.minecraft.world.item.Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay, java.util.function.Consumer<net.minecraft.network.chat.Component> tooltip2, TooltipFlag flagIn) {
-        getInformation(stack, context, tooltip2, flagIn);
+        { java.util.List<Component> info = new java.util.ArrayList<>(); getInformation(stack, context, info, flagIn); info.forEach(tooltip2); }
         super.appendHoverText(stack, context, tooltipDisplay, tooltip2, flagIn);
     }
 

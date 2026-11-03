@@ -155,4 +155,40 @@ public class ModEntities {
         return (worldIn.getBlockState(pos.below()).is(Blocks.GRASS_BLOCK) || worldIn.getBlockState(pos.below()).is(Blocks.SAND) || worldIn.getBlockState(pos.below()).is(Blocks.SANDSTONE)) && worldIn.getRawBrightness(pos, 0) > 8;
     }
 
+
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityProjectileSpell>> SPELL_PROJ_HOM = registerEntity(
+            LibEntityNames.SPELL_PROJ_HOM,
+            EntityType.Builder.<EntityProjectileSpell>of(EntityHomingProjectileSpell::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).noSave()
+                    .setTrackingRange(20).fireImmune()
+                    .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<Cinder>> CINDER = registerEntity(
+            LibEntityNames.CINDER,
+            EntityType.Builder.<Cinder>of(Cinder::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .fireImmune()
+                    .setTrackingRange(256));
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityOrbitProjectile>> ORBIT_SPELL = registerEntity(
+            LibEntityNames.ORBIT_PROJECTILE,
+            EntityType.Builder.<EntityOrbitProjectile>of(EntityOrbitProjectile::new, MobCategory.MISC).sized(0.5f, 0.5f).fireImmune()
+                    .clientTrackingRange(20).setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityLingeringSpell>> LINGER_SPELL = registerEntity(
+            LibEntityNames.LINGER,
+            EntityType.Builder.<EntityLingeringSpell>of(EntityLingeringSpell::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f)
+                    .setTrackingRange(20)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .noSave());
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityWallSpell>> WALL_SPELL = registerEntity(
+            LibEntityNames.WALL,
+            EntityType.Builder.<EntityWallSpell>of(EntityWallSpell::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f)
+                    .setTrackingRange(20)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .noSave());
+    public static final DeferredHolder<EntityType<?>, EntityType<IceShardEntity>> ICE_SHARD = registerEntity(
+            "ice_shard", EntityType.Builder.<IceShardEntity>of(IceShardEntity::new, MobCategory.MISC).sized(0.98F, 0.98F)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(256));
 }

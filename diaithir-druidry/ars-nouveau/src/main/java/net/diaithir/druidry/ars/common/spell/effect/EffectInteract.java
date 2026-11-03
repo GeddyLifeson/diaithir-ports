@@ -123,13 +123,13 @@ public class EffectInteract extends AbstractEffect {
             if(target instanceof  LivingEntity livingEntity) {
                 InteractionResult res = item.interactLivingEntity(player, livingEntity, getHand(player));
                 if (res != InteractionResult.SUCCESS) {
-                    target.interact(player, getHand(player));
+                    target.interact(player, getHand(player), target.position());
                 }
             }else{
-                target.interact(player, getHand(player));
+                target.interact(player, getHand(player), target.position());
             }
         } else {
-            player.interactOn(target, InteractionHand.MAIN_HAND);
+            player.interactOn(target, InteractionHand.MAIN_HAND, target.position());
         }
     }
 
