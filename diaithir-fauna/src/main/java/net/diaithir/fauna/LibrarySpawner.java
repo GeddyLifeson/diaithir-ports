@@ -1,0 +1,133 @@
+package net.diaithir.fauna;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.tick.LevelTickEvent;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Natural spawning of Panscriptum Library creatures. A planet is a dimension (data/diaithirfauna/library_planets.tsv: planet id, dimension,
+ * opens_age; Diaithir is the Overworld). An entry belongs to the planet named by its universe (second part of its id). A creature of tier t
+ * appears from Age opens_age + t - 1. Every few seconds each player gets one attempt near them, capped by how many Library creatures are around.
+ */
+@EventBusSubscriber(modid = FaunaMod.ID)
+public final class LibrarySpawner {
+    private static final Map<String, int[]> PLANET_OF_DIM = new HashMap<>(); // dimension id -> {opensAge}
+    private static final Map<String, String> PLANET_ID_OF_DIM = new HashMap<>();
+    private static final Map<String, List<Species>> BY_PLANET = new HashMap<>();
+    private static final int INTERVAL = 100, NEAR_CAP = 8;
+
+    static {
+        try (var r = new BufferedReader(new InputStreamReader(LibrarySpawner.class.getResourceAsStream("/data/diaithirfauna/library_planets.tsv"), StandardCharsets.UTF_8))) {
+            r.readLine();
+            String l;
+            while ((l = r.readLine()) != null) {
+                String[] c = l.split("\t");
+                PLANET_OF_DIM.put(c[1], new int[]{Integer.parseInt(c[2])});
+                PLANET_ID_OF_DIM.put(c[1], c[0]);
+            }
+        } catch (Exception e) {
+            throw new IllegalStateException("library_planets.tsv", e);
+        }
+        for (Species s : Species.LIB) BY_PLANET.computeIfAbsent(planetOf(s), k -> new ArrayList<>()).add(s);
+    }
+
+    private LibrarySpawner() {
+    }
+
+    /** "AR.alaima.E1.assay.007385" -> "alaima". */
+    public static String planetOf(Species s) {
+        String[] p = s.id.split("\\.");
+        return p.length > 1 ? p[1].toLowerCase(java.util.Locale.ROOT) : "";
+    }
+
+    public static List<Species> onPlanet(String planetId) { return BY_PLANET.getOrDefault(planetId, List.of()); }
+
+    /** Age (1+) at which a creature of this planet can appear. */
+    public static int opensAt(Species s, int planetOpens) { return planetOpens + s.tier - 1; }
+
+    /**
+     * For structure spawners (reason SPAWNER) naming a diaithirfauna:<plan> entity: a hostile creature of that plan from the planet the level is,
+     * allowed by the Age; null if the dimension is not a planet or the planet has none of that plan (the mob then falls back to its usual species).
+     */
+    public static Species pickFor(net.minecraft.world.level.ServerLevelAccessor la, String plan, net.minecraft.util.RandomSource rnd) {
+        ServerLevel level = la.getLevel();
+        String dim = level.dimension().identifier().toString();
+        int[] planet = PLANET_OF_DIM.get(dim);
+        if (planet == null) return null;
+        int age = Math.max(1, Revival.age(level));
+        List<Species> ok = new ArrayList<>();
+        for (Species s : onPlanet(PLANET_ID_OF_DIM.get(dim))) if (s.plan.equals(plan) && s.has(Species.F_AGGRESSIVE) && opensAt(s, planet[0]) <= age) ok.add(s);
+        return ok.isEmpty() ? null : ok.get(rnd.nextInt(ok.size()));
+    }
+
+    @SubscribeEvent
+    static void tick(LevelTickEvent.Post e) {
+        if (!(e.getLevel() instanceof ServerLevel level) || level.getGameTime() % INTERVAL != 0) return;
+        String dim = level.dimension().identifier().toString();
+        int[] planet = PLANET_OF_DIM.get(dim);
+        if (planet == null) return;
+        List<Species> all = onPlanet(PLANET_ID_OF_DIM.get(dim));
+        if (all.isEmpty()) return;
+        int age = Math.max(1, Revival.age(level));
+        for (ServerPlayer p : level.players()) attempt(level, p, all, planet[0], age);
+    }
+
+    static boolean attempt(ServerLevel level, ServerPlayer p, List<Species> all, int opens, int age) {
+        return attempt(level, p.getX(), p.getY(), p.getZ(), p.getBoundingBox().inflate(64), all, opens, age);
+    }
+
+    private static int libraryNear(ServerLevel level, double x, double y, double z) {
+        return level.getEntities(net.minecraft.world.level.entity.EntityTypeTest.forClass(FaunaMob.class),
+                m -> m.species() != null && m.species().tier > 0 && m.distanceToSqr(x, y, z) < 64 * 64).size();
+    }
+
+    static boolean attempt(ServerLevel level, double px, double py, double pz, net.minecraft.world.phys.AABB near, List<Species> all, int opens, int age) {
+        var rnd = level.getRandom();
+        if (libraryNear(level, px, py, pz) >= NEAR_CAP) return false;
+        Species s = all.get(rnd.nextInt(all.size()));
+        if (opensAt(s, opens) > age) return false;
+        Plan plan = Plan.ALL.get(s.plan);
+        double ang = rnd.nextDouble() * Math.PI * 2, dist = 24 + rnd.nextInt(24);
+        int x = (int) (px + Math.cos(ang) * dist), z = (int) (pz + Math.sin(ang) * dist);
+        if (!level.hasChunkAt(new BlockPos(x, 0, z))) return false;
+        BlockPos pos = new BlockPos(x, level.getHeight(plan.water() ? Heightmap.Types.OCEAN_FLOOR : Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z), z);
+        if (plan.water()) {
+            if (!level.getFluidState(pos).is(FluidTags.WATER)) return false;
+        } else {
+            if (level.getFluidState(pos).is(FluidTags.WATER) || level.getFluidState(pos.below()).is(FluidTags.WATER)) return false;
+            if (!level.getBlockState(pos.below()).isValidSpawn(level, pos.below(), FaunaMod.TYPES.get(s.plan).get())) return false;
+        }
+        FaunaMob m = FaunaMod.TYPES.get(s.plan).get().create(level, EntitySpawnReason.NATURAL);
+        if (m == null) return false;
+        m.setPos(pos.getX() + 0.5, pos.getY() + (plan.fly() ? 3 : 0), pos.getZ() + 0.5);
+        m.setSpecies(s);
+        level.addFreshEntity(m);
+        return true;
+    }
+
+    /** Op test: n attempts around a point at the given Age; returns "spawned/attempts planet" . */
+    static String test(ServerLevel level, net.minecraft.world.phys.Vec3 at, int n, int age) {
+        String dim = level.dimension().identifier().toString();
+        int[] planet = PLANET_OF_DIM.get(dim);
+        if (planet == null) return "not a planet dimension: " + dim;
+        List<Species> all = onPlanet(PLANET_ID_OF_DIM.get(dim));
+        int ok = 0;
+        var box = new net.minecraft.world.phys.AABB(at, at).inflate(64);
+        for (int i = 0; i < n; i++) if (attempt(level, at.x, at.y, at.z, box, all, planet[0], age)) ok++;
+        return ok + "/" + n + " (" + libraryNear(level, at.x, at.y, at.z) + " library creatures within 64) on " + PLANET_ID_OF_DIM.get(dim) + " (" + all.size() + " creatures, opens Age " + planet[0] + ")";
+    }
+}

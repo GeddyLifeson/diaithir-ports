@@ -124,6 +124,7 @@ public class FaunaMob extends PathfinderMob {
         if (species() == null) {
             Species s = null;
             if (group instanceof Herd h && Habitat.candidates(plan.name, level, blockPosition()).contains(h.species)) s = h.species;
+            if (reason == EntitySpawnReason.SPAWNER) s = LibrarySpawner.pickFor(level, plan.name, random);
             if (s == null) s = Habitat.pick(plan.name, level, blockPosition(), random);
             if (s == null && reason != EntitySpawnReason.NATURAL && reason != EntitySpawnReason.CHUNK_GENERATION) {
                 var all = Species.ofPlan(plan.name).stream().filter(x -> !x.fossil).toList();
@@ -270,7 +271,7 @@ public class FaunaMob extends PathfinderMob {
     }
 
     @Override
-    public boolean removeWhenFarAway(double distance) { return false; } // persistent like vanilla animals; the category cap keeps the count bounded
+    public boolean removeWhenFarAway(double distance) { return species() != null && species().tier > 0; } // wild fauna persist like vanilla animals; Library creatures despawn when far
 
     @Override
     public int getMaxSpawnClusterSize() { return 6; }

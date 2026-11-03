@@ -127,6 +127,13 @@ public final class FaunaMod {
                             level.addFreshEntity(m);
                             return 1;
                         })))
+                .then(Commands.literal("libspawntest").then(Commands.argument("attempts", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 200))
+                        .then(Commands.argument("age", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 20)).executes(c -> {
+                            String r = LibrarySpawner.test(c.getSource().getLevel(), c.getSource().getPosition(),
+                                    com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "attempts"), com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "age"));
+                            c.getSource().sendSuccess(() -> Component.literal(r), false);
+                            return 1;
+                        }))))
                 .then(Commands.literal("summon").then(Commands.argument("species", StringArgumentType.word())
                         .suggests((c, b) -> SharedSuggestionProvider.suggest(Species.ALL.stream().map(s -> s.id), b))
                         .executes(c -> {

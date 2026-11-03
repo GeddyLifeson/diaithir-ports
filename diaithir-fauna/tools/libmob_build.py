@@ -12,7 +12,9 @@ KG = {'tiny': 0.3, 'small': 6, 'medium': 70, 'large': 700, 'huge': 7000, 'coloss
 DIET = {'herb': 'herb', 'carn': 'carn', 'omni': 'omni', 'pisc': 'pisc', 'insect': 'insect', 'none': 'herb'}
 EL = {'none', 'fire', 'ice', 'lightning', 'poison', 'shadow', 'light', 'earth', 'water', 'wind'}
 # no bear, deer or humanoid plan exists in fauna: nearest body shape
-ALIAS = {'ungulate': 'giraffid', 'ungulate_placeholder': 'giraffid', 'ursine': 'primate_ape', 'ghost': 'primate_ape'}
+ALIAS = {'ungulate': 'giraffid', 'ungulate_placeholder': 'giraffid', 'ursine': 'primate_ape', 'ghost': 'primate_ape',
+         'turtle': 'sea_turtle', 'tortoise': 'sea_turtle', 'viperid_small': 'lizard', 'ant': 'beetle', 'spider': 'scorpion', 'finch': 'songbird',
+         'woodpecker': 'songbird', 'cuckoo': 'songbird', 'pelican': 'seabird', 'wolf': 'mustelid'}
 F_FLIES, F_SWIMS, F_AGGRESSIVE = 1 << 0, 1 << 7, 1 << 8
 sp = json.load(open(f'{RES}/species.json'))['species']
 plans = set(json.load(open(f'{RES}/plans/index.json')))
