@@ -41,6 +41,7 @@ public class FaunaRenderer extends MobRenderer<FaunaMob, FaunaState, PlanModel> 
             Identifier own = Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/" + state.species.id + ".png");
             if (EXISTS.computeIfAbsent(own, id -> Minecraft.getInstance().getResourceManager().getResource(id).isPresent())) return own;
         }
-        return Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/plan/" + plan.name + ".png");
+        String el = state.species != null && state.species.tier > 0 ? "_" + state.species.element : "_none"; // Library creatures: plan texture tinted by element
+        return Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/plan/" + plan.name + el + ".png");
     }
 }
