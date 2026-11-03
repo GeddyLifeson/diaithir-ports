@@ -1,10 +1,5 @@
 [
  {
-  "id": "diaithirvehicles:fuel_tank",
-  "name": "Fuel Tank",
-  "text": "Steel tank holding 8,000 L of one fuel. Fill and empty it with jerry cans or any fluid pipe. Shows up to every vehicle, ship and aircraft pump through the shared fuel capability. Age V."
- },
- {
   "id": "diaithirvehicles:jerry_can",
   "name": "Jerry Can",
   "text": "Holds 20 L of one fuel. Use on a tank to pour in, sneak-use to draw out, right-click a vehicle to refuel it. Age V."

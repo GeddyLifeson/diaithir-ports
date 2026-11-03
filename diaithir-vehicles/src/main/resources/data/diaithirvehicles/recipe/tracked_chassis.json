@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "I": "minecraft:iron_block",
-    "T": "diaithirvehicles:fuel_tank",
+    "T": "diaithirbridges:carrier_tank",
     "F": "minecraft:furnace",
     "P": "minecraft:piston"
   },

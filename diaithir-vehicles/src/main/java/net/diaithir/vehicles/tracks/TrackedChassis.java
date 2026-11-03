@@ -1,6 +1,11 @@
 package net.diaithir.vehicles.tracks;
 
-import net.diaithir.vehicles.fuel.FuelTank;
+import net.diaithir.units.fuel.Engine;
+import net.diaithir.units.fuel.FuelStore;
+import net.diaithir.units.fuel.Fuels;
+import net.diaithir.units.fuel.SimpleStore;
+import net.diaithir.vehicles.FuelBurn;
+import net.diaithir.vehicles.FuelHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -23,9 +28,23 @@ import net.minecraft.world.phys.Vec3;
  * A tracked chassis a player can sit in and drive: W/S throttle, A/D steer (pivots when standing). Fuel comes from its 600 L tank (diesel, 38.6 MJ/L);
  * the engine draws real power from {@link TrackDrive} and burns it through {@link FuelTank#burn}. Clean-room from tracked-vehicle behaviour; no Flan's Mod code or art.
  */
-public class TrackedChassis extends Entity {
-    public static final long TANK_L = 600;
-    public final FuelTank tank = new FuelTank(TANK_L);
+public class TrackedChassis extends Entity implements FuelHolder {
+    public static final double TANK_L = 600;
+    public final SimpleStore tank = new SimpleStore(TANK_L);
+    /** What pumps and cans see: the tank, but it only accepts what the diesel engine class accepts (diesel, biodiesel, heavy fuel oil). */
+    private final FuelStore view = new FuelStore() {
+        @Override public net.diaithir.units.fuel.Fuel fuel() { return tank.fuel(); }
+        @Override public double quantity() { return tank.quantity(); }
+        @Override public double capacity() { return tank.capacity(); }
+        @Override public double insert(net.diaithir.units.fuel.Fuel f, double amount) { return f != null && ENGINE.accepts(f.id()) ? tank.insert(f, amount) : 0; }
+        @Override public double extract(double amount) { return tank.extract(amount); }
+    };
+    private static final Engine ENGINE = Fuels.engine("diesel_engine");
+
+    @Override
+    public FuelStore fuelStore() {
+        return view;
+    }
     public final TrackDrive drive = new TrackDrive(TrackDrive.Spec.LIGHT_TANK);
     private double speed;
 
@@ -75,12 +94,12 @@ public class TrackedChassis extends Entity {
     /** One tick of driving at the given controls; returns the joules of fuel energy burnt. Also called by the selftest. */
     public double driveStep(double throttle, double steer) {
         double dt = 0.05;
-        boolean fuel = !tank.isEmpty();
+        boolean fuel = FuelBurn.canFeed(tank, ENGINE);
         TrackDrive.Out o = drive.step(throttle, steer, dt, fuel);
         double burnt = 0;
         if (o.powerW() > 0) {
             double want = o.powerW() * dt;
-            double got = tank.burn(want, TrackDrive.Spec.LIGHT_TANK.efficiency());
+            double got = FuelBurn.feed(tank, ENGINE, o.powerW(), dt);
             burnt = got;
             if (got < want * 0.999) drive.stop(); // ran dry mid-step
         }
@@ -115,14 +134,16 @@ public class TrackedChassis extends Entity {
 
     @Override
     protected void readAdditionalSaveData(ValueInput in) {
-        tank.load(in.getStringOr("fuel", ""), in.getLongOr("amount", 0));
+        var f = Fuels.get(in.getStringOr("fuel", ""));
+        double q = in.getDoubleOr("litres", 0);
+        if (f != null && q > 0) tank.insert(f, q);
     }
 
     @Override
     protected void addAdditionalSaveData(ValueOutput out) {
-        if (tank.fuelId() != null) {
-            out.putString("fuel", tank.fuelId());
-            out.putLong("amount", tank.amountL());
+        if (tank.fuel() != null) {
+            out.putString("fuel", tank.fuel().id());
+            out.putDouble("litres", tank.quantity());
         }
     }
 }

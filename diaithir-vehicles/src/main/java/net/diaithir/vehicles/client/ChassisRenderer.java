@@ -42,7 +42,7 @@ public class ChassisRenderer extends EntityRenderer<TrackedChassis, ChassisRende
     public void extractRenderState(TrackedChassis e, State s, float pt) {
         super.extractRenderState(e, s, pt);
         s.yRot = e.getYRot();
-        resolver.update(s.hull, BuiltInRegistries.BLOCK.getValue(Identifier.fromNamespaceAndPath("diaithirvehicles", "fuel_tank")).defaultBlockState(), CONTEXT);
+        resolver.update(s.hull, BuiltInRegistries.BLOCK.getValue(Identifier.fromNamespaceAndPath("diaithirbridges", "carrier_tank")).defaultBlockState(), CONTEXT);
         resolver.update(s.track, Blocks.POLISHED_BLACKSTONE.defaultBlockState(), CONTEXT);
     }
 

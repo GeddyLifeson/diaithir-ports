@@ -20,13 +20,13 @@ final class TrackTest {
         c.setPos(base.getX() + 0.5, base.getY(), base.getZ() + 0.5);
         c.setYRot(0);
         level.addFreshEntity(c);
-        c.tank.fill("c:diesel", 100, false);
+        c.tank.insert(net.diaithir.units.fuel.Fuels.get("diesel"), 100);
         double z0 = c.getZ();
         double burnt = 0;
         for (int i = 0; i < 100; i++) burnt += c.driveStep(1, 0);
         n++; if (c.getZ() - z0 < 15) bad.append(" drove only ").append(c.getZ() - z0);
         n++; if (c.speed() < 9.5) bad.append(" speed ").append(c.speed());
-        n++; if (burnt <= 0 || c.tank.amountL() >= 100) bad.append(" no fuel burnt");
+        n++; if (burnt <= 0 || c.tank.quantity() >= 100) bad.append(" no fuel burnt");
         n++; if (Math.abs(c.getYRot()) > 0.01) bad.append(" drifted");
         for (int i = 0; i < 40; i++) c.driveStep(0, 0);
         c.drive.stop();
@@ -35,7 +35,7 @@ final class TrackTest {
         for (int i = 0; i < 100; i++) c.driveStep(0, 1);
         n++; if (c.getYRot() - y0 < 90) bad.append(" pivot ").append(c.getYRot() - y0);
         n++; if (Math.hypot(c.getX() - x1, c.getZ() - z1) > 2.0) bad.append(" pivot moved");
-        c.tank.drain(1000, false);
+        c.tank.extract(1000);
         for (int i = 0; i < 100; i++) c.driveStep(1, 0);
         n++; if (Math.abs(c.speed()) > 0.01) bad.append(" dry speed ").append(c.speed());
         c.discard();

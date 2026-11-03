@@ -10,3 +10,6 @@ Canonical units: energy J (1 FE = 1 J), power W (1 FE/t = 20 W), fluid L (1 mB =
 
 Magic folds into energy: mana, aura, ember, LP and vis are 100 J each, Source is 1000 J.
 MIT. The pack reads no third-party code; ids are plain strings, so a missing mod costs nothing.
+
+## Magic as a fuel carrier (integration matrix, plans/INTEGRATION_MATRIX.md)
+`fuels.csv` has a `magic` kind: mana, aura, ember, life points, vis (100 J per quantum) and Source (1000 J), tied to the unit table by a test. The `arcane_motor` engine class (efficiency 0.60, a balance value, not a real figure) accepts them, and `steam_piston` accepts ember as a heat source. A locomotive, car, ship, plane or mega vehicle uses magic by listing `arcane_motor`; flow and range come from the same `Fuels` maths as diesel. `Engine.accepts(fuelId)` is the check.

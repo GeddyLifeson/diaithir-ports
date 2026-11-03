@@ -1,0 +1,21 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/composite",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/amber",
+   "count": 1
+  },
+  {
+   "item": "diaithir_classes:ligichi_emblem",
+   "count": 1
+  }
+ ],
+ "result": "diaithir_classes:ligichi_crozier_composite",
+ "time_s": 20,
+ "operator": true
+}
