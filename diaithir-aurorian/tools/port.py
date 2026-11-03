@@ -26,8 +26,8 @@ DEFERRED_ITEMS = {"absorption_orb", "living_divining_rod", "mirror_of_guidance",
                   "ruby_amulet", "sapphire_amulet", "cerulean_arrow", "crystal_arrow", "strange_meat", "silentwood_bow",
                   "umbra_chestplate", "umbra_greatsword", "crystalline_sword", "spectral_helmet", "spectral_chestplate",
                   "spectral_leggings", "spectral_boots"}
-DEFERRED_BLOCK_CLASS = {"MoonlightForgeBlock", "ScrapperBlock", "CrystalBlock", "SaplingBlock"}
-BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "FogWallBlock": "fog_wall", "BossSpawnerBlock": "boss_spawner", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
+DEFERRED_BLOCK_CLASS = {"SaplingBlock"}
+BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "FogWallBlock": "fog_wall", "ScrapperBlock": "scrapper", "MoonlightForgeBlock": "moonlight_forge", "CrystalBlock": "full", "BossSpawnerBlock": "boss_spawner", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
               "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "TallGrassBlock": "plant"}
 
 
@@ -402,6 +402,18 @@ def main():
             continue
         (rd / p.name).write_text(json.dumps(out, indent=1) + "\n")
         kept += 1
+    md = D / "machine_recipes"
+    for kind in ("scrapper", "moonlight_forge"):
+        (md / kind).mkdir(parents=True, exist_ok=True)
+        for p in sorted((MAIN / "data" / NS / "recipes" / kind).glob("*.json")):
+            r = json.loads(p.read_text())
+            refs = [r["input"].get("item", ""), r["output"]["item"]] + ([r["catalyst"].get("item", "")] if "catalyst" in r else [])
+            if any(x.startswith(NS + ":") and x not in known for x in refs):
+                continue
+            o = dict(input=conv_ing(r["input"]), output=dict(id=r["output"]["item"], count=r["output"].get("count", 1)))
+            if "catalyst" in r:
+                o["catalyst"] = conv_ing(r["catalyst"])
+            (md / kind / p.name).write_text(json.dumps(o, indent=1) + "\n")
     # loot tables (generated block drops)
     def prune(o):
         """Drop loot entries naming items that are not registered (deferred behaviour items)."""

@@ -82,20 +82,6 @@
   }
  },
  "armor": {
-  "knight": {
-   "name": "knight",
-   "durability": 20,
-   "boots": 3,
-   "legs": 6,
-   "chest": 5,
-   "helmet": 3,
-   "enchant": 5,
-   "sound": "iron",
-   "toughness": 0.0,
-   "knockback": 0.0,
-   "repair": null,
-   "age": "II"
-  },
   "aurorian_steel": {
    "name": "aurorian_steel",
    "durability": 33,
@@ -109,6 +95,20 @@
    "knockback": 0.1,
    "repair": "theaurorian:aurorian_steel_ingot",
    "age": "III"
+  },
+  "knight": {
+   "name": "knight",
+   "durability": 20,
+   "boots": 3,
+   "legs": 6,
+   "chest": 5,
+   "helmet": 3,
+   "enchant": 5,
+   "sound": "iron",
+   "toughness": 0.0,
+   "knockback": 0.0,
+   "repair": null,
+   "age": "II"
   },
   "cerulean": {
    "name": "cerulean",
@@ -953,6 +953,16 @@
    "copy": "minecraft:spawner"
   },
   {
+   "id": "moonlight_forge",
+   "kind": "moonlight_forge",
+   "copy": "minecraft:stone"
+  },
+  {
+   "id": "scrapper",
+   "kind": "scrapper",
+   "copy": "minecraft:stone"
+  },
+  {
    "id": "silentwood_chest",
    "kind": "chest",
    "copy": "minecraft:chest"
@@ -976,6 +986,12 @@
    "id": "chimney",
    "kind": "chimney",
    "copy": "minecraft:stone"
+  },
+  {
+   "id": "crystal",
+   "kind": "full",
+   "copy": "minecraft:stone",
+   "light": 15
   },
   {
    "id": "fog_wall",

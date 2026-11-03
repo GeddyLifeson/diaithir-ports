@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "III",
+  "ISI",
+  "CCC"
+ ],
+ "key": {
+  "I": "theaurorian:cerulean_ingot",
+  "S": "theaurorian:aurorian_furnace",
+  "C": "#theaurorian:aurorian_stones"
+ },
+ "result": {
+  "id": "theaurorian:scrapper",
+  "count": 1
+ }
+}

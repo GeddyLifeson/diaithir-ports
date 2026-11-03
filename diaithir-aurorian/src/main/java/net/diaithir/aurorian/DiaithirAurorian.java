@@ -79,6 +79,10 @@ public final class DiaithirAurorian {
 
     public static final Data DATA = load();
     public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<BossSpawnerBlockEntity>> SPAWNER_BE;
+    public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<MachineBlockEntity>> SCRAPPER_BE;
+    public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<MachineBlockEntity>> FORGE_BE;
+    public static DeferredBlock<Block> CRYSTAL;
+    public static final org.slf4j.Logger LOGGER = com.mojang.logging.LogUtils.getLogger();
     public static DeferredBlock<Block> CHIMNEY;
     public static DeferredBlock<Block> CHEST;
     public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<AurorianFurnaceBlockEntity>> FURNACE_BE;
@@ -218,6 +222,8 @@ public final class DiaithirAurorian {
             case "crafting_table" -> new SilentwoodCraftingTableBlock(p);
             case "fog_wall" -> new FogWallBlock(p.noCollision().noOcclusion().lightLevel(s -> 10));
             case "boss_spawner" -> new BossSpawnerBlock(p.noOcclusion());
+            case "scrapper" -> new MachineBlock(p, false);
+            case "moonlight_forge" -> new MachineBlock(p.noOcclusion(), true);
             case "portal_frame" -> new PortalFrameBlock(p);
             case "bars" -> new IronBarsBlock(p);
             case "log" -> new RotatedPillarBlock(p);
@@ -233,6 +239,13 @@ public final class DiaithirAurorian {
             BLK.put(b.id(), blk);
             if (b.id().equals("boss_spawner")) {
                 SPAWNER_BE = BLOCK_ENTITIES.register("boss_spawner", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>(BossSpawnerBlockEntity::new, blk.get()));
+            }
+            if (b.id().equals("crystal")) {
+                CRYSTAL = blk;
+            } else if (b.id().equals("scrapper")) {
+                SCRAPPER_BE = BLOCK_ENTITIES.register("scrapper", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>((pos, st) -> new MachineBlockEntity(SCRAPPER_BE.get(), pos, st, false), blk.get()));
+            } else if (b.id().equals("moonlight_forge")) {
+                FORGE_BE = BLOCK_ENTITIES.register("moonlight_forge", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>((pos, st) -> new MachineBlockEntity(FORGE_BE.get(), pos, st, true), blk.get()));
             }
             if (b.id().equals("chimney")) {
                 CHIMNEY = blk;
@@ -261,6 +274,8 @@ public final class DiaithirAurorian {
                 e.modify(net.minecraft.world.level.block.entity.BlockEntityType.CHEST, CHEST.get());
             }
         });
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent.class,
+            e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "machine_recipes"), MachineRecipes.listener()));
         AurorianMobs.init(bus);
         BLOCK_ENTITIES.register(bus);
         BLOCKS.register(bus);
