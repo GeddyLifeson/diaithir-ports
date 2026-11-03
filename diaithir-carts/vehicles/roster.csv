@@ -22,20 +22,3 @@ m113,ground,military,armoured personnel carrier,M113A1,1964,VII,diesel_engine,di
 ford_econoline_ambulance,ground,utility,ambulance,Ford Econoline ambulance,1961,VII,petrol_engine,petrol,4,,63,,,van,pack,med,Wikipedia: Ford E-Series
 toyota_corolla,ground,travel,sedan,Toyota Corolla (E10),1966,VII,petrol_engine,petrol,5,700,44,,40,sedan,pack,high,Wikipedia: Toyota Corolla (E10)
 nissan_leaf,ground,travel,electric car,Nissan Leaf (ZE0),2010,VII,electric_motor,li_ion_battery,5,1520,80,,96,,data,high,Wikipedia: Nissan Leaf
-montgolfier_balloon,air,travel,hot-air balloon,Montgolfier balloon,1783,V,,wood,2,,,,,,data,high,Wikipedia: Montgolfier brothers
-giffard_dirigible,air,travel,airship,Giffard dirigible,1852,V,steam_piston,coal,1,,2.2,,,,data,high,Wikipedia: Henri Giffard
-wright_flyer,air,travel,first aeroplane,Wright Flyer,1903,VI,petrol_engine,petrol,1,274,9,,,,data,high,Wikipedia: Wright Flyer
-bleriot_xi,air,travel,monoplane,Bleriot XI,1909,VI,petrol_engine,petrol,1,230,18.6,,,,data,high,Wikipedia: Bleriot XI
-sopwith_camel,air,military,biplane fighter,Sopwith Camel,1917,VI,avgas_piston,avgas,1,,97,,,,data,high,Wikipedia: Sopwith Camel
-ford_trimotor,air,travel,airliner,Ford Trimotor,1926,VI,avgas_piston,avgas,10,,,,,,data,high,Wikipedia: Ford Trimotor
-douglas_dc3,air,travel,airliner,Douglas DC-3,1935,VI,avgas_piston,avgas,21,,,,3100,,data,high,Wikipedia: Douglas DC-3
-supermarine_spitfire,air,military,fighter,Supermarine Spitfire,1938,VI,avgas_piston,avgas,1,,768,,386,,data,high,Wikipedia: Supermarine Spitfire
-messerschmitt_me262,air,military,jet fighter,Messerschmitt Me 262,1944,VI,jet_turbine,kerosene,1,,,17.6,,,data,med,Wikipedia: Messerschmitt Me 262
-de_havilland_comet,air,travel,jet airliner,de Havilland Comet,1949,VII,jet_turbine,jet_a1,36,,,,,,data,high,Wikipedia: de Havilland Comet
-cessna_172,air,travel,light aircraft,Cessna 172,1956,VII,avgas_piston,avgas,4,767,120,,200,,data,high,Wikipedia: Cessna 172
-bell_uh1_huey,air,military,helicopter,Bell UH-1 Iroquois,1956,VII,jet_turbine,jet_a1,12,,820,,,,data,med,Wikipedia: Bell UH-1 Iroquois
-boeing_707,air,travel,jet airliner,Boeing 707,1958,VII,jet_turbine,jet_a1,140,,,,,,data,high,Wikipedia: Boeing 707
-concorde,air,travel,supersonic airliner,Concorde,1969,VII,jet_turbine,jet_a1,100,,,,,,data,high,Wikipedia: Concorde
-boeing_747,air,travel,wide-body airliner,Boeing 747,1969,VII,jet_turbine,jet_a1,366,,,,,,data,high,Wikipedia: Boeing 747
-f16_fighting_falcon,air,military,multirole fighter,General Dynamics F-16,1978,VII,jet_turbine,jet_a1,1,,,129,,,data,high,Wikipedia: General Dynamics F-16 Fighting Falcon
-f22_raptor,air,military,stealth fighter,Lockheed Martin F-22 Raptor,2005,VII,jet_turbine,jet_a1,1,,,312,,,data,high,Wikipedia: Lockheed Martin F-22 Raptor
