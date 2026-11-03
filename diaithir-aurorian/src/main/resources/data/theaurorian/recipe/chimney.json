@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ISI",
+  "ISI",
+  "ISI"
+ ],
+ "key": {
+  "I": "#theaurorian:aurorian_stones",
+  "S": "theaurorian:cerulean_ingot"
+ },
+ "result": {
+  "id": "theaurorian:chimney",
+  "count": 1
+ }
+}

@@ -34,6 +34,15 @@
    "theaurorian:aurorian_plants"
   ]
  ],
- "spawners": {},
+ "spawners": {
+  "monster": [
+   {
+    "type": "theaurorian:hollow",
+    "maxCount": 6,
+    "minCount": 4,
+    "weight": 100
+   }
+  ]
+ },
  "spawn_costs": {}
 }

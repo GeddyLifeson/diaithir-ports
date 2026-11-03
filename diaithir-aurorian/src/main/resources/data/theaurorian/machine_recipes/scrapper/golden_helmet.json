@@ -1,0 +1,7 @@
+{
+ "input": "minecraft:golden_helmet",
+ "output": {
+  "id": "minecraft:gold_nugget",
+  "count": 30
+ }
+}

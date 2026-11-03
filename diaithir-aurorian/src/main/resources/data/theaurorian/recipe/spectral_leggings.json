@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "III",
+  "I I",
+  "I I"
+ ],
+ "key": {
+  "I": "theaurorian:spectral_silk"
+ },
+ "result": {
+  "id": "theaurorian:spectral_leggings",
+  "count": 1
+ }
+}

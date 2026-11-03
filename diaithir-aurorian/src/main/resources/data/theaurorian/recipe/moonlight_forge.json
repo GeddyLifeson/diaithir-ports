@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  " S ",
+  "IOI",
+  "OOO"
+ ],
+ "key": {
+  "S": "theaurorian:moon_gem",
+  "I": "theaurorian:moonstone_ingot",
+  "O": "#theaurorian:aurorian_stones"
+ },
+ "result": {
+  "id": "theaurorian:moonlight_forge",
+  "count": 1
+ }
+}
