@@ -34,3 +34,23 @@ for p in glob.glob(f'{A}/jsondefs/vehicles/*.json'):
         if 'click' in grp.get('collisionTypes', []): grp['collisionTypes'] = ['entity' if t == 'click' else t for t in grp['collisionTypes']]; ch = True
     if ch: save(p, j); n += 1
 print('ivfix', A, n, 'files changed')
+# item icons: every vehicle/part/bullet (and subName variant) needs models/item/<kind>/<id><subName>.json or IV logs "Missing textures in model" and draws magenta
+try:
+    from PIL import Image, ImageDraw
+except ImportError:
+    Image = None
+if Image:
+    PK = os.path.basename(os.path.normpath(A)); made = 0
+    for kind in ('vehicles', 'parts', 'bullets'):
+        for p in glob.glob(f'{A}/jsondefs/{kind}/*.json'):
+            j = load(p); base = os.path.basename(p)[:-5]
+            for dfn in (j.get('definitions') or [{'subName': ''}]):
+                nm = base + dfn.get('subName', ''); mp = f'{A}/models/item/{kind}/{nm}.json'
+                if os.path.exists(mp): continue
+                os.makedirs(os.path.dirname(mp), exist_ok=True); os.makedirs(f'{A}/textures/item', exist_ok=True)
+                h = sum(map(ord, nm)); rgb = (60 + h * 7 % 150, 60 + h * 13 % 150, 60 + h * 29 % 150)
+                im = Image.new('RGBA', (16, 16), (0, 0, 0, 0)); d_ = ImageDraw.Draw(im)
+                if kind == 'vehicles': d_.rectangle([1, 6, 14, 11], fill=rgb + (255,)); d_.rectangle([4, 3, 11, 6], fill=rgb + (255,)); d_.ellipse([2, 10, 5, 13], fill=(25, 25, 25, 255)); d_.ellipse([10, 10, 13, 13], fill=(25, 25, 25, 255))
+                else: d_.ellipse([3, 3, 12, 12], fill=rgb + (255,))
+                im.save(f'{A}/textures/item/{nm}.png'); open(mp, 'w').write(json.dumps({'parent': 'mts:item/basic', 'textures': {'layer0': f'{PK}:item/{nm}'}}, indent=1)); made += 1
+    print('ivfix icons', made)

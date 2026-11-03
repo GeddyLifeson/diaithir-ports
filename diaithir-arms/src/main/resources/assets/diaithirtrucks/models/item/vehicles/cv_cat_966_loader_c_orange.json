@@ -1,0 +1,6 @@
+{
+ "parent": "mts:item/basic",
+ "textures": {
+  "layer0": "diaithirtrucks:item/cv_cat_966_loader_c_orange"
+ }
+}
