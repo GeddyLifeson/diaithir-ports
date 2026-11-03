@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/template_glass_pane_noside",
  "textures": {
-  "pane": "minecraft:block/oak_planks"
+  "pane": "aether_ii:block/skyroot_framed_crude_scatterglass_pane"
  }
 }

@@ -22,6 +22,14 @@ def put(p, o):
     p.write_text(o if isinstance(o, str) else json.dumps(o, indent=1) + '\n')
 def vj(p): return json.loads(Z.read(p))
 
+def put_tag(path, vals):
+    """tags under minecraft/ and c/ are shared by every realm: keep other realms' entries, replace ours"""
+    p = RES / path
+    old = json.loads(p.read_text()).get('values', []) if p.exists() else []
+    keep = [v for v in old if not str(v).lstrip('#').startswith(NS + ':')]
+    put(path, {'replace': False, 'values': sorted(set(keep) | set(vals))})
+
+
 # ---------- classify blocks ----------
 VANILLA_SKIP = [  # (regex, vanilla block/item it migrates to)
  (r'_wall_hanging_sign$', 'minecraft:oak_wall_hanging_sign'), (r'_hanging_sign$', 'minecraft:oak_hanging_sign'),
@@ -93,8 +101,16 @@ SK_ITEM = [(r'_(sword|battleaxe|spear)$','minecraft:iron_sword'),(r'_axe$','mine
  (r'_leggings$','minecraft:iron_leggings'),(r'_boots$','minecraft:iron_boots'),(r'_chest_boat$','minecraft:oak_chest_boat'),(r'_boat$','minecraft:oak_boat'),
  (r'_shield$','minecraft:shield'),(r'_bucket$','minecraft:bucket'),(r'_spawn_egg$',None),(r'^music_disc_',None),(r'smithing_template$',None),
  (r'^(slingshot|javelin|crumbling_catalyst|denizen_mask)$',None),(r'(sign)$','minecraft:oak_sign'),(r'_bed$','minecraft:red_bed'),(r'_stew$','minecraft:mushroom_stew'),(r'_bowl$','minecraft:bowl')]
+TIER = [('skyroot','wood'),('rotten','wood'),('faded','wood'),('lignum','wood'),('heartwood','wood'),('petrified','stone'),('holystone','stone'),('recovered','stone'),
+        ('forgotten','diamond'),('froststeel','diamond'),('utherium','diamond'),('arkenium','diamond'),('gravitite','diamond'),('zanite','diamond')]
+GEAR = {}
+for n in items:
+    mt_ = re.fullmatch(r'(.+)_(sword|battleaxe|spear|axe|pickaxe|shovel|hoe|helmet|chestplate|leggings|boots)', n)
+    if mt_ and n not in made and not re.search(r'(shield|bucket)', n):
+        pre, kd = mt_.groups(); GEAR[n] = {'id': n, 'prefix': pre, 'kind': kd, 'tier': next((t for k, t in TIER if k in pre), 'iron')}
 sitems = []
 for n in items:
+    if n in GEAR: continue
     if n in made: continue
     if n in bset: continue  # block item of a skipped block
     for rx, t in SK_ITEM:
@@ -102,7 +118,7 @@ for n in items:
             if t: migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{n}', 'new': t})
             break
     else: sitems.append(n)
-put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems, 'portals': [{k: p[k] for k in ('block', 'activator', 'frame')} for p in cfg.get('portals', [])]})
+put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems, 'gear': list(GEAR.values()), 'portals': [{k: p[k] for k in ('block', 'activator', 'frame')} for p in cfg.get('portals', [])]})
 put(f'data/{NS}/id_migrations.json', migr)
 
 # ---------- assets: copy vanilla shapes, rename, stand-in textures ----------
@@ -110,10 +126,8 @@ TPL = {'stairs':'oak_stairs','slab':'oak_slab','wall':'cobblestone_wall','fence'
        'plate':'oak_pressure_plate','door':'oak_door','trapdoor':'oak_trapdoor','pillar':'oak_log','pane':'glass_pane'}
 STAND = {'portal':'purple_stained_glass','wood':'oak_planks','log':'oak_log','leaves':'oak_leaves','soil':'dirt','turf':'grass_block_side','plant':'short_grass','glass':'glass',
          'metal':'iron_block','ore':'iron_ore','mushroom':'brown_mushroom_block','stone':'stone'}
-def tex(mat, key=None):
-    if mat == 'log': return 'minecraft:block/oak_log_top' if key in ('end','top','bottom') else 'minecraft:block/oak_log'
-    if mat == 'turf': return 'minecraft:block/grass_block_top' if key in ('top','end') else 'minecraft:block/dirt'
-    return 'minecraft:block/' + STAND[mat]
+def tex(mat, key=None, bid=None):
+    return f'{NS}:block/{bid}' + ('_top' if mat in ('log',) and key in ('end', 'top', 'bottom') else '')
 def copy_models(tpl, bid, mat, base):
     """copy every vanilla model for template tpl, renamed to bid"""
     pre = f'assets/minecraft/models/block/{tpl}'
@@ -127,7 +141,7 @@ def copy_models(tpl, bid, mat, base):
             ps = o['parent'].replace('minecraft:block/', '').replace('block/', '')
             if ps == tpl or ps.startswith(tpl + '_'): o['parent'] = f'{NS}:block/{bid}{ps[len(tpl):]}'
         if 'textures' in o:
-            o['textures'] = {k: tex(mat, k) for k in o['textures']}
+            o['textures'] = {k: tex(mat, k, bid) for k in o['textures']}
         put(f'assets/{NS}/models/block/{bid}{stem[len(tpl):]}.json', o)
 def copy_state(tpl, bid, mat, base):
     s = Z.read(f'assets/minecraft/blockstates/{tpl}.json').decode()
@@ -151,20 +165,29 @@ for e in man:
         else: item(bid, f'{NS}:block/{bid}')
     elif k == 'cross':
         put(f'assets/{NS}/blockstates/{bid}.json', {'variants': {'': {'model': f'{NS}:block/{bid}'}}})
-        put(f'assets/{NS}/models/block/{bid}.json', {'parent': 'minecraft:block/cross', 'textures': {'cross': tex(m)}})
-        flat(bid, tex(m)); item(bid, f'{NS}:item/{bid}')
+        put(f'assets/{NS}/models/block/{bid}.json', {'parent': 'minecraft:block/cross', 'textures': {'cross': tex(m, None, bid)}})
+        flat(bid, tex(m, None, bid)); item(bid, f'{NS}:item/{bid}')
     else:
         put(f'assets/{NS}/blockstates/{bid}.json', {'variants': {'': {'model': f'{NS}:block/{bid}'}}})
-        put(f'assets/{NS}/models/block/{bid}.json', {'parent': 'minecraft:block/cube_all', 'textures': {'all': tex(m)}})
+        put(f'assets/{NS}/models/block/{bid}.json', {'parent': 'minecraft:block/cube_all', 'textures': {'all': tex(m, None, bid)}})
         item(bid, f'{NS}:block/{bid}')
     lang[f'block.{NS}.{bid}'] = title(bid)
 for n in sitems:
-    flat(n, 'minecraft:item/' + ('iron_ingot' if n.endswith(('ingot','nugget','crystal','rogdorium')) else 'paper'))
+    flat(n, f'{NS}:item/{n}')
     item(n, f'{NS}:item/{n}'); lang[f'item.{NS}.{n}'] = title(n)
 for b in biomes: lang[f'biome.{NS}.{b}'] = title(b)
 lang[f'dimension.{NS}'] = cfg['title']
-put(f'assets/{NS}/textures/block/_art_needed.txt',
-    'Stand-in vanilla textures are used until the art pipeline supplies 64px Industrial Factory style art for each id listed in data/%s/realms/%s.json.\n' % (OWN, NS))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent)); import realm_art
+SEEDRX = r'_(stairs|stair|slab|wall|fence_gate|gate|fence|door|trapdoor|button|pressure_plate)$'
+for e in man:
+    bid, m_ = e['id'], e['mat']; seed = re.sub(SEEDRX, '', bid)
+    if m_ == 'plant': wb_ = realm_art.plant(seed, bid)
+    else: wb_ = realm_art.block(seed, m_, seed)
+    p_ = RES / f'assets/{NS}/textures/block/{bid}.png'; p_.parent.mkdir(parents=True, exist_ok=True); p_.write_bytes(wb_)
+    if m_ == 'log': (RES / f'assets/{NS}/textures/block/{bid}_top.png').write_bytes(realm_art.block(seed, m_, seed, top=True))
+for n_ in sitems:
+    p_ = RES / f'assets/{NS}/textures/item/{n_}.png'; p_.parent.mkdir(parents=True, exist_ok=True); p_.write_bytes(realm_art.item(re.sub(r'^raw_', '', n_), n_))
+(RES / f'assets/{NS}/textures/block/_art_needed.txt').unlink(missing_ok=True)
 
 # ---------- loot, recipes ----------
 for e in man:
@@ -249,7 +272,9 @@ for p in list(tg):
         parent = '/'.join(p.split('/')[:4]); tg[parent] = [x for x in tg[parent] if not x.startswith(NS + ':')]
         child = '#c:' + '/'.join(p.split('/')[3:]); 
         if child not in tg[parent]: tg[parent].append(child)
-for p, vals in tg.items(): put(f'data/{p}.json', {'replace': False, 'values': sorted(set(vals))})
+for p, vals in tg.items():
+    if p.startswith(('minecraft/', 'c/')): put_tag(f'data/{p}.json', vals)
+    else: put(f'data/{p}.json', {'replace': False, 'values': sorted(set(vals))})
 
 
 # ---------- slice 3: trees and plant patches ----------
@@ -375,4 +400,181 @@ lp = RES / f'assets/{OWN}/lang/en_us.json'; L = json.loads(lp.read_text()) if lp
 L[f'codex.{OWN}.{NS}.title'] = cfg['title']
 L[f'codex.{OWN}.{NS}.body'] = cfg['title'] + ': replacement realm with the same ids as the original mod; ' + str(len(man)) + ' blocks, ' + str(len(biomes)) + ' biomes.'
 lp.write_text(json.dumps(L, indent=1) + '\n')
+
+# ---------- slice 4: mobs ----------
+import hashlib, colorsys, io
+from PIL import Image
+KIND_TEX = {'zombie':'zombie/zombie','illager':'illager/vindicator','golem':'iron_golem/iron_golem','spider':'spider/spider','ravager':'illager/ravager',
+            'blaze':'blaze/blaze','silverfish':'silverfish/silverfish','phantom':'phantom/phantom','guardian':'guardian/guardian','hoglin':'hoglin/hoglin'}
+BASE = {'zombie':(20,3),'illager':(24,5),'golem':(100,9),'spider':(16,3),'ravager':(60,7),'blaze':(20,4),'silverfish':(8,1.5),'phantom':(18,3),'guardian':(30,6),'hoglin':(40,5)}
+BOSS_RX = re.compile(r'(queen|_prime$|gigas|verdant_engine|forgotten_guardian|greater_dweller|^slider$|sentry_golem|^tempest$|^fractus_prime$)')
+PASSIVE_RX = re.compile(r'(bunny|whale|cow|phyg|sheepuff|^moa$|glitterwing|prismallard|lizard|^gwib|^mog$|smog_mog|rootmin|variant_bee|honey_slime|kirrid|burrukai|aechor|sprout|^gloomper$|stoneborn)')
+KIND_RX = [('spider', r'(spider|weaver|vermis|trilobita|echinus|spina|palus|scuttler|skephid)'), ('phantom', r'(bee|wing|zephyr|whale|flying|prismallard|tempest)'),
+           ('guardian', r'(gwib|watcher|aechor)'), ('golem', r'(golem|slider|taluton|stoneborn|forgotten|nargoyle|sentry)'),
+           ('ravager', r'(beast|burrukai|taegore|gigas|muncher|rotbelcher|engine|moa)'), ('hoglin', r'(dweller|brute|^mog$|smog_mog|kirrid|phyg|cow|sheepuff)'),
+           ('illager', r'(minion|denizen|edward|carrion)'), ('blaze', r'(blade|electric|^fractus)'),
+           ('silverfish', r'(swet|rootmin|lizard|scintling|rotling|slime|gloomper|bunny|chick|glitter|sploogie|puff|fractus)')]
+mobs = []
+mp = T / f'{A.realm}.mobs.txt'
+for n in ([l.strip() for l in mp.read_text().split('\n') if l.strip()] if mp.exists() else []):
+    kind = next((k for k, rx in KIND_RX if re.search(rx, n)), 'zombie')
+    boss = bool(BOSS_RX.search(n)); passive = (not boss) and bool(PASSIVE_RX.search(n))
+    hp, atk = BASE[kind]
+    if boss: hp, atk, sc = hp * 5 + 200, atk * 2, 1.6
+    elif passive: hp, atk, sc = max(8, hp // 2), 2, 1.0
+    else: sc = 1.0
+    mobs.append({'id': n, 'kind': kind, 'role': 'boss' if boss else ('passive' if passive else 'monster'), 'hp': hp, 'atk': atk, 'scale': sc})
+def tint(png, key, bright=1.0):
+    h = int(hashlib.sha256(f'{NS}:{key}'.encode()).hexdigest()[:8], 16)
+    hue, sat, val = (h % 360) / 360.0, 0.55 + ((h >> 9) % 40) / 100.0, 0.75 + ((h >> 17) % 30) / 100.0
+    im = Image.open(io.BytesIO(png)).convert('RGBA'); px = im.load()
+    for y in range(im.height):
+        for x in range(im.width):
+            r, g, b, a = px[x, y]
+            if a == 0: continue
+            l = (r + g + b) / 765.0
+            rr, gg, bb = colorsys.hsv_to_rgb(hue, min(1.0, sat), min(1.0, (0.15 + 0.85 * l) * val * bright))
+            px[x, y] = (int(rr * 255), int(gg * 255), int(bb * 255), a)
+    out = io.BytesIO(); im.save(out, 'PNG'); return out.getvalue()
+def wb(p, data):
+    p = RES / p; p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(data)
+egg = Z.read('assets/minecraft/textures/item/zombie_spawn_egg.png')
+dimtags = [D['name'] for D in (cfg.get('dimensions') or [{'name': cfg['dimension']}])]
+for i, m in enumerate(mobs):
+    n = m['id']
+    wb(f'assets/{NS}/textures/entity/{n}.png', tint(Z.read(f'assets/minecraft/textures/entity/{KIND_TEX[m["kind"]]}.png'), n, 1.15 if m['role'] == 'boss' else 1.0))
+    wb(f'assets/{NS}/textures/item/{n}_spawn_egg.png', tint(egg, n))
+    put(f'assets/{NS}/models/item/{n}_spawn_egg.json', {'parent': 'minecraft:item/generated', 'textures': {'layer0': f'{NS}:item/{n}_spawn_egg'}})
+    item(f'{n}_spawn_egg', f'{NS}:item/{n}_spawn_egg')
+    lang[f'entity.{NS}.{n}'] = title(n); lang[f'item.{NS}.{n}_spawn_egg'] = title(n) + ' Spawn Egg'
+    drop = {'zombie': 'minecraft:rotten_flesh', 'spider': 'minecraft:string'}.get(m['kind'], 'minecraft:bone')
+    if m['role'] == 'passive': drop = 'minecraft:leather'
+    cnt = (2, 4) if m['role'] == 'boss' else (0, 2)
+    if m['role'] == 'boss': drop = 'minecraft:diamond'
+    put(f'data/{NS}/loot_table/entities/{n}.json', {'type': 'minecraft:entity', 'random_sequence': f'{NS}:entities/{n}', 'pools': [{'rolls': 1.0, 'bonus_rolls': 0.0,
+        'entries': [{'type': 'minecraft:item', 'name': drop, 'functions': [{'function': 'minecraft:set_count', 'count': {'type': 'minecraft:uniform', 'min': cnt[0], 'max': cnt[1]}}]}]}]})
+    if m['role'] != 'boss':
+        put(f'data/{NS}/neoforge/biome_modifier/spawn_{n}.json', {'type': 'neoforge:add_spawns', 'biomes': f'#{NS}:is_{dimtags[i % len(dimtags)]}',
+            'spawners': {'type': f'{NS}:{n}', 'weight': 6 if m['role'] == 'passive' else 10, 'minCount': 1, 'maxCount': 3}})
+if mobs:
+    put(f'data/{NS}/tags/entity_type/bosses.json', {'replace': False, 'values': [f'{NS}:{m["id"]}' for m in mobs if m['role'] == 'boss']})
+    put(f'data/{NS}/tags/entity_type/{NS}_mobs.json', {'replace': False, 'values': [f'{NS}:{m["id"]}' for m in mobs]})
+    mf = json.loads((RES / f'data/{OWN}/realms/{NS}.json').read_text()); mf['mobs'] = mobs
+    put(f'data/{OWN}/realms/{NS}.json', mf)
+    put(f'data/{OWN}/codex/entries/{NS}_bestiary.json', {'id': f'{OWN}:{NS}_bestiary', 'category': 'bestiary', 'title': f'codex.{OWN}.{NS}_bestiary.title', 'body': f'codex.{OWN}.{NS}_bestiary.body',
+        'age': cfg['age'], 'icon': f'{NS}:{mobs[0]["id"]}_spawn_egg', 'unlock': {'type': 'kill_entity_tag', 'tag': f'{NS}:{NS}_mobs'}, 'covers': {'entities': f'#{NS}:{NS}_mobs'}})
+    put(f'data/{OWN}/quests/{NS}_hunt.json', {'id': f'{OWN}:{NS}_hunt', 'codex_link': f'{OWN}:{NS}_bestiary', 'age': cfg['age'], 'age_gate': f'diaithir:age/{cfg["age"]}',
+        'title': f'Hunt: {cfg["title"]}', 'description': f'Defeat one creature of {cfg["title"]}.', 'tasks': [{'type': 'kill', 'entity_tag': f'{NS}:{NS}_mobs', 'count': 1}], 'rewards': [{'type': 'energy', 'amount_j': 100}]})
+    L2 = json.loads(lp.read_text()); L2[f'codex.{OWN}.{NS}_bestiary.title'] = cfg['title'] + ' bestiary'
+    L2[f'codex.{OWN}.{NS}_bestiary.body'] = f'{len(mobs)} creatures: ' + ', '.join(title(m['id']) for m in mobs) + '.'
+    lp.write_text(json.dumps(L2, indent=1) + '\n')
+    put(f'assets/{NS}/lang/en_us.json', lang)
+
+
+# ---------- slice 6: gear ----------
+def tint_png(png, key, bright=1.0): return tint(png, key, bright)
+HELD = ('sword','battleaxe','spear','axe','pickaxe','shovel','hoe')
+VAN = {'battleaxe': 'axe', 'spear': 'sword'}
+mats = collections.OrderedDict()
+for g in GEAR.values():
+    n, kd, pre = g['id'], g['kind'], g['prefix']; vk = VAN.get(kd, kd)
+    wb(f'assets/{NS}/textures/item/{n}.png', tint_png(Z.read(f'assets/minecraft/textures/item/iron_{vk}.png'), pre))
+    put(f'assets/{NS}/models/item/{n}.json', {'parent': 'minecraft:item/handheld' if kd in HELD else 'minecraft:item/generated', 'textures': {'layer0': f'{NS}:item/{n}'}})
+    item(n, f'{NS}:item/{n}'); lang[f'item.{NS}.{n}'] = title(n)
+    mats.setdefault(pre, g)
+    ing = next((c for c in (pre + '_ingot', pre + '_crystal', pre) if c in iset), None)
+    plank = pre + '_planks' if pre + '_planks' in bset else None
+    src = f'{NS}:{ing}' if g['tier'] != 'wood' and ing else (f'{NS}:{plank}' if plank else ('minecraft:oak_planks' if g['tier'] == 'wood' else (f'{NS}:{ing}' if ing else None)))
+    pat = {'sword': ['#', '#', 'S'], 'spear': ['#', 'S', 'S'], 'pickaxe': ['###', ' S ', ' S '], 'axe': ['##', '#S', ' S'], 'battleaxe': ['###', '#S#', ' S '], 'shovel': ['#', 'S', 'S'],
+           'hoe': ['##', ' S', ' S'], 'helmet': ['###', '# #'], 'chestplate': ['# #', '###', '###'], 'leggings': ['###', '# #', '# #'], 'boots': ['# #', '# #']}[kd]
+    if src: R(n, {'type': 'minecraft:crafting_shaped', 'category': 'equipment', 'key': {'#': src, **({'S': 'minecraft:stick'} if any('S' in r for r in pat) else {})}, 'pattern': pat, 'result': res(n)})
+for pre, g in mats.items():
+    ing = next((c for c in (pre + '_ingot', pre + '_crystal', pre) if c in iset), None); plank = pre + '_planks' if pre + '_planks' in bset else None
+    vals = [f'{NS}:{ing}'] if ing and g['tier'] != 'wood' else ([f'{NS}:{plank}'] if plank else ['minecraft:oak_planks'])
+    put(f'data/{NS}/tags/item/repair/{pre}.json', {'replace': False, 'values': vals})
+    if any(x['prefix'] == pre and x['kind'] in ('helmet', 'chestplate', 'leggings', 'boots') for x in GEAR.values()):
+        put(f'assets/{NS}/equipment/{pre}.json', {'layers': {'humanoid': [{'texture': f'{NS}:{pre}'}], 'humanoid_leggings': [{'texture': f'{NS}:{pre}'}]}})
+        wb(f'assets/{NS}/textures/entity/equipment/humanoid/{pre}.png', tint_png(Z.read('assets/minecraft/textures/entity/equipment/humanoid/iron.png'), pre))
+        wb(f'assets/{NS}/textures/entity/equipment/humanoid_leggings/{pre}.png', tint_png(Z.read('assets/minecraft/textures/entity/equipment/humanoid_leggings/iron.png'), pre))
+if GEAR:
+    put(f'assets/{NS}/lang/en_us.json', lang)
+    for kd_, tg_ in (('sword', 'swords'), ('spear', 'swords'), ('axe', 'axes'), ('battleaxe', 'axes'), ('pickaxe', 'pickaxes'), ('shovel', 'shovels'), ('hoe', 'hoes'),
+                     ('helmet', 'head_armor'), ('chestplate', 'chest_armor'), ('leggings', 'leg_armor'), ('boots', 'foot_armor')):
+        v = [f'{NS}:{g["id"]}' for g in GEAR.values() if g['kind'] == kd_]
+        if v: put_tag(f'data/minecraft/tags/item/{tg_}.json', v)
+
+# ---------- slice 5: structures (procedural single templates, own design) ----------
+import struct, gzip
+def _s(x): b = x.encode(); return struct.pack('>H', len(b)) + b
+def nb(tag, name, v):
+    return bytes([tag]) + (_s(name) if name is not None else b'') + payload(tag, v)
+def payload(tag, v):
+    if tag == 3: return struct.pack('>i', v)
+    if tag == 8: return _s(v)
+    if tag == 9: t, items = v; return bytes([t]) + struct.pack('>i', len(items)) + b''.join(payload(t, i) for i in items)
+    if tag == 10: return b''.join(nb(t, k, x) for k, (t, x) in v.items()) + b'\x00'
+    raise ValueError(tag)
+def write_template(path, size, palette, blocks):
+    pal = [{'Name': (8, n)} for n in palette]
+    root = {'DataVersion': (3, 4790), 'size': (9, (3, list(size))), 'palette': (9, (10, pal)),
+            'blocks': (9, (10, [{'pos': (9, (3, list(p))), 'state': (3, i)} for p, i in blocks])), 'entities': (9, (10, []))}
+    data = bytes([10]) + _s('') + payload(10, root)
+    p = RES / path; p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(gzip.compress(data))
+sp = T / f'{A.realm}.structures.txt'
+structs = [l.strip() for l in sp.read_text().split('\n') if l.strip()] if sp.exists() else []
+solid = [b for b in made if (b.endswith(('_bricks', '_planks', '_tiles', '_flagstones', 'stone', 'rock')) and not b.endswith(('_ore',))) and next((e['kind'] for e in man if e['id'] == b), '') == 'block']
+if not solid: solid = [D0 for D0 in [cfg.get('default_block') or dims[0]['default_block']] if ':' not in D0] or ['stone']
+def pick(n, salt, lst): return lst[int(hashlib.sha256(f'{NS}:{n}:{salt}'.encode()).hexdigest()[:6], 16) % len(lst)]
+def full(b): return b if ':' in b else f'{NS}:{b}'
+sset = []
+for si, n in enumerate(structs):
+    base = n.replace('/', '_'); wall = full(pick(base, 'w', solid)); floor = full(pick(base, 'f', solid)); acc = full(pick(base, 'a', solid))
+    arche = 'tower' if re.search(r'(tower|pillar|monolith|spire|throne|aviary|fortress|sanctum)', base) else ('shrine' if re.search(r'(shrine|temple|fountain|garden|ranch|house|gazebo|beepartments|honitel|floor|ship|cave|stream)', base) else 'ruin')
+    blocks = {}; pal = ['minecraft:air', wall, floor, acc]
+    def put_(x, y, z, i): blocks[(x, y, z)] = i
+    W = 11 if arche != 'tower' else 7; H = 14 if arche == 'tower' else 6
+    for x in range(W):
+        for z in range(W):
+            for y in range(-5, H): put_(x, y + 5, z, 0)          # clear volume
+            for y in range(-5, 0): put_(x, y + 5, z, 2)          # foundation so it never floats
+            put_(x, 5, z, 2)
+    c = W // 2
+    for x in range(W):
+        for z in range(W):
+            edge = x in (0, W - 1) or z in (0, W - 1)
+            if arche == 'tower':
+                if edge:
+                    for y in range(1, H): 
+                        if not (z == 0 and x == c and y <= 2) and not (y % 5 == 3 and (x == c or z == c)): put_(x, 5 + y, z, 1)
+            elif arche == 'ruin':
+                if edge:
+                    h = 1 + int(hashlib.sha256(f'{base}{x}{z}'.encode()).hexdigest()[:2], 16) % 4
+                    if not (z == 0 and abs(x - c) <= 1):
+                        for y in range(1, h + 1): put_(x, 5 + y, z, 1)
+            else:  # shrine
+                if edge or (x % 4 == 2 and z % 4 == 2):
+                    if (x % 4 == 2 and z % 4 == 2) or (x, z) in ((0, 0), (0, W - 1), (W - 1, 0), (W - 1, W - 1)):
+                        for y in range(1, 5): put_(x, 5 + y, z, 1)
+                    else: put_(x, 6, z, 3)
+                if x in range(2, W - 2) and z in range(2, W - 2): put_(x, 5 + 5, z, 3)
+    write_template(f'data/{NS}/structure/{base}.json'.replace('.json', '.nbt'), (W, H + 5, W), pal, [((x, y, z), i) for (x, y, z), i in sorted(blocks.items())])
+    put(f'data/{NS}/worldgen/template_pool/{base}.json', {'fallback': 'minecraft:empty', 'elements': [{'weight': 1, 'element': {'element_type': 'minecraft:single_pool_element',
+        'location': f'{NS}:{base}', 'processors': 'minecraft:empty', 'projection': 'rigid'}}]})
+    dn = dimtags[si % len(dimtags)]; Dd = next(d for d in dims if d['name'] == dn); cave = Dd.get('base', 'nether') == 'nether'
+    sj = {'type': 'minecraft:jigsaw', 'biomes': f'#{NS}:is_{dn}', 'step': 'surface_structures', 'spawn_overrides': {}, 'terrain_adaptation': 'beard_thin',
+          'start_pool': f'{NS}:{base}', 'size': 1, 'max_distance_from_center': 30, 'use_expansion_hack': False}
+    if cave: sj['start_height'] = {'absolute': Dd.get('sea_level', 40) + 2}
+    else: sj['start_height'] = {'absolute': -4}; sj['project_start_to_heightmap'] = 'WORLD_SURFACE_WG'
+    put(f'data/{NS}/worldgen/structure/{base}.json', sj)
+    put(f'data/{NS}/worldgen/structure_set/{base}.json', {'structures': [{'structure': f'{NS}:{base}', 'weight': 1}],
+        'placement': {'type': 'minecraft:random_spread', 'spacing': 22 + si % 9, 'separation': 8, 'salt': 1000 + int(hashlib.sha256(f'{NS}{base}'.encode()).hexdigest()[:4], 16)}})
+    sset.append(f'{NS}:{base}')
+if sset:
+    put(f'data/{NS}/tags/worldgen/structure/{NS}_structures.json', {'replace': False, 'values': sset})
+    L3 = json.loads(lp.read_text()); L3[f'codex.{OWN}.{NS}_structures.title'] = cfg['title'] + ' structures'
+    L3[f'codex.{OWN}.{NS}_structures.body'] = f'{len(sset)} ruins, towers and shrines: ' + ', '.join(title(x.split(':')[1]) for x in sset) + '.'
+    lp.write_text(json.dumps(L3, indent=1) + '\n')
+    put(f'data/{OWN}/codex/entries/{NS}_structures.json', {'id': f'{OWN}:{NS}_structures', 'category': 'structure', 'title': f'codex.{OWN}.{NS}_structures.title',
+        'body': f'codex.{OWN}.{NS}_structures.body', 'age': cfg['age'], 'icon': cfg['icon'], 'unlock': {'type': 'locate_structure_tag', 'tag': f'{NS}:{NS}_structures'},
+        'covers': {'structures': f'#{NS}:{NS}_structures'}})
 print(NS, 'blocks', len(man), 'items', len(sitems), 'biomes', len(biomes), 'migrations', len(migr))

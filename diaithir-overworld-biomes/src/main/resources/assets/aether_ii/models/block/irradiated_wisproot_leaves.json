@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/oak_leaves"
+  "all": "aether_ii:block/irradiated_wisproot_leaves"
  }
 }

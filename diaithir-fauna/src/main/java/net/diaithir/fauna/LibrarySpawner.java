@@ -45,6 +45,22 @@ public final class LibrarySpawner {
         for (Species s : Species.LIB) BY_PLANET.computeIfAbsent(planetOf(s), k -> new ArrayList<>()).add(s);
     }
 
+    /** Library entries that exist as a mod creature (Alex's Mobs, Friends and Foes): entry id -> entity type id. */
+    private static final Map<String, String> BASE = new HashMap<>();
+
+    static {
+        var in = LibrarySpawner.class.getResourceAsStream("/data/diaithirfauna/library_mob_bases.tsv");
+        if (in != null) try (var r = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8))) {
+            String l;
+            while ((l = r.readLine()) != null) {
+                String[] c = l.split("\t");
+                if (c.length == 2) BASE.put(c[0], c[1]);
+            }
+        } catch (Exception e) {
+            throw new IllegalStateException("library_mob_bases.tsv", e);
+        }
+    }
+
     private LibrarySpawner() {
     }
 
@@ -63,15 +79,21 @@ public final class LibrarySpawner {
      * For structure spawners (reason SPAWNER) naming a diaithirfauna:<plan> entity: a hostile creature of that plan from the planet the level is,
      * allowed by the Age; null if the dimension is not a planet or the planet has none of that plan (the mob then falls back to its usual species).
      */
-    public static Species pickFor(net.minecraft.world.level.ServerLevelAccessor la, String plan, net.minecraft.util.RandomSource rnd) {
+    public static Species pickFor(net.minecraft.world.level.ServerLevelAccessor la, net.minecraft.core.BlockPos pos, String plan, net.minecraft.util.RandomSource rnd) {
+        Species s = pickFor(la, pos, plan, rnd, true);
+        return s != null ? s : pickFor(la, pos, plan, rnd, false); // a spawner never produces nothing: ignore the habitat if none fits
+    }
+
+    private static Species pickFor(net.minecraft.world.level.ServerLevelAccessor la, net.minecraft.core.BlockPos pos, String plan, net.minecraft.util.RandomSource rnd, boolean byHabitat) {
         ServerLevel level = la.getLevel();
         String dim = level.dimension().identifier().toString();
         int[] planet = PLANET_OF_DIM.get(dim);
         if (planet == null) return null;
         int age = Math.max(1, Revival.age(level));
+        int hm = Habitat.planetMask(la, pos);
         List<Species> hostile = new ArrayList<>(), any = new ArrayList<>(), young = new ArrayList<>();
         for (Species s : onPlanet(PLANET_ID_OF_DIM.get(dim))) {
-            if (!s.plan.equals(plan)) continue;
+            if (!s.plan.equals(plan) || (byHabitat && s.hab != 0 && (s.hab & hm) == 0)) continue;
             if (opensAt(s, planet[0]) <= age) (s.has(Species.F_AGGRESSIVE) ? hostile : any).add(s);
             else young.add(s);
         }
@@ -118,12 +140,8 @@ public final class LibrarySpawner {
             if (level.getFluidState(pos).is(FluidTags.WATER) || level.getFluidState(pos.below()).is(FluidTags.WATER)) return false;
             if (!level.getBlockState(pos.below()).isValidSpawn(level, pos.below(), FaunaMod.TYPES.get(s.plan).get())) return false;
         }
-        FaunaMob m = FaunaMod.TYPES.get(s.plan).get().create(level, EntitySpawnReason.NATURAL);
-        if (m == null) return false;
-        m.setPos(pos.getX() + 0.5, pos.getY() + (plan.fly() ? 3 : 0), pos.getZ() + 0.5);
-        m.setSpecies(s);
-        level.addFreshEntity(m);
-        return true;
+        if (s.hab != 0 && (s.hab & Habitat.planetMask(level, pos)) == 0) return false;
+        return spawn(level, s, pos.getX() + 0.5, pos.getY() + (plan.fly() ? 3 : 0), pos.getZ() + 0.5, EntitySpawnReason.NATURAL) != null;
     }
 
     /** Op test: n attempts around a point at the given Age; returns "spawned/attempts planet" . */
@@ -136,5 +154,30 @@ public final class LibrarySpawner {
         var box = new net.minecraft.world.phys.AABB(at, at).inflate(64);
         for (int i = 0; i < n; i++) if (attempt(level, at.x, at.y, at.z, box, all, planet[0], age)) ok++;
         return ok + "/" + n + " (" + libraryNear(level, at.x, at.y, at.z) + " library creatures within 64) on " + PLANET_ID_OF_DIM.get(dim) + " (" + all.size() + " creatures, opens Age " + planet[0] + ")";
+    }
+
+    /**
+     * Spawns the creature for a Library species at a position: the mod creature it is mapped to when that mod is loaded, else a FaunaMob on its
+     * body plan. The Age tier scales health either way. Returns the entity or null.
+     */
+    public static net.minecraft.world.entity.Entity spawn(ServerLevel level, Species s, double x, double y, double z, EntitySpawnReason reason) {
+        net.minecraft.world.entity.Entity e = null;
+        String base = BASE.get(s.id);
+        if (base != null) {
+            var type = net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getOptional(net.minecraft.resources.Identifier.parse(base));
+            if (type.isPresent()) e = type.get().create(level, reason);
+        }
+        if (e instanceof net.minecraft.world.entity.LivingEntity le && !(e instanceof FaunaMob)) {
+            var hp = le.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH);
+            if (hp != null && s.tier > 1) { hp.setBaseValue(hp.getBaseValue() * (1 + 0.4 * (s.tier - 1))); le.setHealth(le.getMaxHealth()); }
+        } else {
+            FaunaMob m = FaunaMod.TYPES.get(s.plan).get().create(level, reason);
+            if (m == null) return null;
+            m.setSpecies(s);
+            e = m;
+        }
+        e.setPos(x, y, z);
+        level.addFreshEntity(e);
+        return e;
     }
 }

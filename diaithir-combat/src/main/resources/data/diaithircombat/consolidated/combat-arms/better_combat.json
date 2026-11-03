@@ -32,12 +32,12 @@
     "impact_energy_J": 420,
     "mass_kg": 3.2
    },
-   "recipe": [
-    "c:ingots/steel x4",
-    "c:rods/wooden x1",
-    "c:leathers x1"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "gai_fada",
@@ -60,11 +60,12 @@
     "mass_kg": 2.4,
     "impact_energy_J": 300
    },
-   "recipe": [
-    "c:ingots/bronze x2",
-    "c:rods/wooden x2"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "cloidhmh_dluth",
@@ -90,11 +91,12 @@
     "mass_kg": 1.3,
     "impact_energy_J": 180
    },
-   "recipe": [
-    "c:ingots/iron x2",
-    "c:rods/wooden x1"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "station.smeltery",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "sgian_dubh_ceilg",
@@ -123,11 +125,12 @@
     "mass_kg": 0.4,
     "impact_energy_J": 70
    },
-   "recipe": [
-    "c:ingots/bronze x1",
-    "c:rods/wooden x1"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "tuagh_cath",
@@ -149,14 +152,15 @@
     "mass_kg": 1.9,
     "impact_energy_J": 260
    },
-   "recipe": [
-    "c:ingots/iron x3",
-    "c:rods/wooden x2"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "station.smeltery",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
-   "id": "cas\u00far_trom",
+   "id": "casúr_trom",
    "kind": "weapon",
    "name_en": "Casur Trom (Heavy Maul)",
    "attrs": {
@@ -180,11 +184,12 @@
     "mass_kg": 4.5,
     "impact_energy_J": 520
    },
-   "recipe": [
-    "c:ingots/steel x5",
-    "c:rods/wooden x2"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "gai_sleagh_marcach",
@@ -204,12 +209,12 @@
     "mass_kg": 3.0,
     "impact_energy_J": 480
    },
-   "recipe": [
-    "c:ingots/steel x3",
-    "c:rods/wooden x3",
-    "c:leathers x1"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "claidheamh_comhdhuilte",
@@ -233,12 +238,12 @@
     "mass_kg": 3.0,
     "impact_energy_J": 600
    },
-   "recipe": [
-    "c:ingots/composite x4",
-    "c:rods/wooden x1",
-    "c:gems/lunar x1"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "sgiath_buailte",
@@ -251,11 +256,12 @@
     "mass_kg": 0.6,
     "armor_points": 2
    },
-   "recipe": [
-    "c:ingots/bronze x2",
-    "c:leathers x2"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "cathbharr_laoch",
@@ -268,10 +274,12 @@
     "swing_arc_bonus_deg": 10,
     "mass_kg": 1.8
    },
-   "recipe": [
-    "c:ingots/steel x5"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "part",
+    "time_s": 10
+   }
   },
   {
    "id": "cruinneog_comhraig",
@@ -283,11 +291,12 @@
     "slot": "charm",
     "mass_kg": 0.1
    },
-   "recipe": [
-    "c:gems/amber x1",
-    "c:ingots/silver x1"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "seun_fiain",
@@ -299,11 +308,12 @@
     "slot": "charm",
     "mass_kg": 0.1
    },
-   "recipe": [
-    "c:gems/jade x1",
-    "c:ingots/silver x1"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "cloch_breith",
@@ -333,12 +343,12 @@
     "power_draw_W": 1500,
     "tank_L": 4
    },
-   "recipe": [
-    "c:ingots/steel x6",
-    "c:stones x4",
-    "c:ingots/copper x2"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ainmhi_dealraidh",
@@ -350,11 +360,12 @@
     "mass_kg": 180,
     "tank_L": 16
    },
-   "recipe": [
-    "c:stones x5",
-    "c:ingots/iron x1"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "station.smeltery",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "geas_dha_laimh",
@@ -395,11 +406,12 @@
      "greatsword"
     ]
    },
-   "recipe": [
-    "c:gems/amber x1",
-    "c:dusts/ogham x2"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "rune_snaimh",
@@ -409,11 +421,12 @@
     "effect": "combo_window_bonus_s",
     "amount": 0.25
    },
-   "recipe": [
-    "c:gems/jade x1",
-    "c:dusts/ogham x2"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "rune_tolladh",
@@ -428,14 +441,15 @@
      "lance"
     ]
    },
-   "recipe": [
-    "c:gems/lunar x1",
-    "c:dusts/ogham x2"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
-   "id": "ealain_ceithre_buill\u00ed",
+   "id": "ealain_ceithre_buillí",
    "kind": "skill",
    "name_en": "Ealain na gCeithre Bhuille (Four-Strike Art)",
    "attrs": {
@@ -560,11 +574,12 @@
     "slot": "charm",
     "mass_kg": 0.2
    },
-   "recipe": [
-    "c:gems/lunar x1",
-    "c:ingots/gold x1"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   }
  ],
  "events": [
@@ -600,7 +615,7 @@
   }
  ],
  "skills": [
-  "ealain_ceithre_buill\u00ed",
+  "ealain_ceithre_buillí",
   "ealain_dha_laimh",
   "ealain_dha_lann",
   "ealain_cul_ghearradh"
@@ -679,7 +694,7 @@
    "tuagh_cath"
   ],
   "diaithircombat:weapons/hammer_overhead": [
-   "cas\u00far_trom"
+   "casúr_trom"
   ],
   "diaithircombat:weapons/lance": [
    "gai_sleagh_marcach"
@@ -687,7 +702,7 @@
   "diaithircombat:two_handed": [
    "claidheamh_mor",
    "gai_fada",
-   "cas\u00far_trom",
+   "casúr_trom",
    "claidheamh_comhdhuilte"
   ],
   "diaithircombat:dual_wield": [
@@ -887,7 +902,7 @@
   "intro": "The old duellists say a blade is only half the fight. Set a Cloch Breith, strike it in four breaths without a pause, then three more in the broad sweep. The stone remembers every step.",
   "links_to": [
    "codex:comhrac_foirmeacha_intro",
-   "skill:ealain_ceithre_buill\u00ed",
+   "skill:ealain_ceithre_buillí",
    "age_gate:IV"
   ]
  },

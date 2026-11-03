@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "diaithirworldsys:topaz_ring",
+  "#c:ingots/netherite"
+ ],
+ "result": {
+  "id": "diaithirworldsys:jewelry_netherite_topaz_ring"
+ }
+}

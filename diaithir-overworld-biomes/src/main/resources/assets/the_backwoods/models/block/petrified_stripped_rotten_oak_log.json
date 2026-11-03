@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/cube_column",
  "textures": {
-  "end": "minecraft:block/stone",
-  "side": "minecraft:block/stone"
+  "end": "the_backwoods:block/petrified_stripped_rotten_oak_log",
+  "side": "the_backwoods:block/petrified_stripped_rotten_oak_log"
  }
 }

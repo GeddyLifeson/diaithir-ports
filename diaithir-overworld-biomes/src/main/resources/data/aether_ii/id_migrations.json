@@ -451,83 +451,8 @@
  },
  {
   "registry": "minecraft:item",
-  "old": "aether_ii:arkenium_axe",
-  "new": "minecraft:iron_axe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:arkenium_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:arkenium_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:arkenium_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:arkenium_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:arkenium_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
   "old": "aether_ii:arkenium_shield",
   "new": "minecraft:shield"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:arkenium_shovel",
-  "new": "minecraft:iron_shovel"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:beast_pelt_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:beast_pelt_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:beast_pelt_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:beast_pelt_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:burrukai_plate_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:burrukai_plate_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:burrukai_plate_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:burrukai_plate_leggings",
-  "new": "minecraft:iron_leggings"
  },
  {
   "registry": "minecraft:item",
@@ -536,88 +461,8 @@
  },
  {
   "registry": "minecraft:item",
-  "old": "aether_ii:gravitite_axe",
-  "new": "minecraft:iron_axe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:gravitite_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:gravitite_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:gravitite_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:gravitite_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:gravitite_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
   "old": "aether_ii:gravitite_shield",
   "new": "minecraft:shield"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:gravitite_shovel",
-  "new": "minecraft:iron_shovel"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:holystone_axe",
-  "new": "minecraft:iron_axe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:holystone_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:holystone_shovel",
-  "new": "minecraft:iron_shovel"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:neptune_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:neptune_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:neptune_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:neptune_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:sentry_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:skyroot_axe",
-  "new": "minecraft:iron_axe"
  },
  {
   "registry": "minecraft:item",
@@ -641,11 +486,6 @@
  },
  {
   "registry": "minecraft:item",
-  "old": "aether_ii:skyroot_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
   "old": "aether_ii:skyroot_powder_snow_bucket",
   "new": "minecraft:bucket"
  },
@@ -666,11 +506,6 @@
  },
  {
   "registry": "minecraft:item",
-  "old": "aether_ii:skyroot_shovel",
-  "new": "minecraft:iron_shovel"
- },
- {
-  "registry": "minecraft:item",
   "old": "aether_ii:skyroot_tadpole_bucket",
   "new": "minecraft:bucket"
  },
@@ -686,42 +521,7 @@
  },
  {
   "registry": "minecraft:item",
-  "old": "aether_ii:zanite_axe",
-  "new": "minecraft:iron_axe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:zanite_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:zanite_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:zanite_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:zanite_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:zanite_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
   "old": "aether_ii:zanite_shield",
   "new": "minecraft:shield"
- },
- {
-  "registry": "minecraft:item",
-  "old": "aether_ii:zanite_shovel",
-  "new": "minecraft:iron_shovel"
  }
 ]

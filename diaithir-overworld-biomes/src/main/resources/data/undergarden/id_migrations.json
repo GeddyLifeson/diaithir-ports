@@ -211,21 +211,6 @@
  },
  {
   "registry": "minecraft:item",
-  "old": "undergarden:ancient_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:ancient_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:ancient_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
   "old": "undergarden:ancient_root_boat",
   "new": "minecraft:oak_boat"
  },
@@ -241,153 +226,13 @@
  },
  {
   "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_axe",
-  "new": "minecraft:iron_axe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_battleaxe",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
   "old": "undergarden:cloggrum_bucket",
   "new": "minecraft:bucket"
  },
  {
   "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_hoe",
-  "new": "minecraft:iron_hoe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
   "old": "undergarden:cloggrum_shield",
   "new": "minecraft:shield"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_shovel",
-  "new": "minecraft:iron_shovel"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_spear",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:cloggrum_sword",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:forgotten_axe",
-  "new": "minecraft:iron_axe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:forgotten_battleaxe",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:forgotten_hoe",
-  "new": "minecraft:iron_hoe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:forgotten_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:forgotten_shovel",
-  "new": "minecraft:iron_shovel"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:forgotten_spear",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:forgotten_sword",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_axe",
-  "new": "minecraft:iron_axe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_hoe",
-  "new": "minecraft:iron_hoe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_shovel",
-  "new": "minecraft:iron_shovel"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_spear",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:froststeel_sword",
-  "new": "minecraft:iron_sword"
  },
  {
   "registry": "minecraft:item",
@@ -428,56 +273,6 @@
   "registry": "minecraft:item",
   "old": "undergarden:smogstem_chest_boat",
   "new": "minecraft:oak_chest_boat"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_axe",
-  "new": "minecraft:iron_axe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_boots",
-  "new": "minecraft:iron_boots"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_chestplate",
-  "new": "minecraft:iron_chestplate"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_helmet",
-  "new": "minecraft:iron_helmet"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_hoe",
-  "new": "minecraft:iron_hoe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_leggings",
-  "new": "minecraft:iron_leggings"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_pickaxe",
-  "new": "minecraft:iron_pickaxe"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_shovel",
-  "new": "minecraft:iron_shovel"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_spear",
-  "new": "minecraft:iron_sword"
- },
- {
-  "registry": "minecraft:item",
-  "old": "undergarden:utherium_sword",
-  "new": "minecraft:iron_sword"
  },
  {
   "registry": "minecraft:item",

@@ -1,8 +1,8 @@
 {
  "parent": "minecraft:block/slab_top",
  "textures": {
-  "bottom": "minecraft:block/stone",
-  "side": "minecraft:block/stone",
-  "top": "minecraft:block/stone"
+  "bottom": "undergarden:block/cloggrum_tile_slab",
+  "side": "undergarden:block/cloggrum_tile_slab",
+  "top": "undergarden:block/cloggrum_tile_slab"
  }
 }

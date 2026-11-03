@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  "diaithircarts:steel_rail",
+  "minecraft:arrow"
+ ],
+ "result": {
+  "id": "diaithircarts:one_way_rail",
+  "count": 1
+ }
+}

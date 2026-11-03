@@ -1,0 +1,11 @@
+{
+ "id": "diaithircrafting:codex/foundry_operator",
+ "name_en": "Operator Seat and research packs",
+ "what": "The Operator Seat is a worker's chair: machines that need an operator draw seconds of work from seats in range, and the worker eats food (nutrition times 120 s by default). Research packs 1 to 7 are the items the Age gates consume.",
+ "connects": {
+  "items": "ItemHandler capability on the seat (food only, insert only)",
+  "machines": "data/diaithircrafting/machine_stats.json holds W and s per Foundry machine",
+  "research": "datapack/foundry_ages holds the Age gate research nodes (Researcher #127)",
+  "quest": "diaithircrafting:quest/first_operator"
+ }
+}

@@ -18,7 +18,11 @@
   "pointblank:ammo68": "VII",
   "pointblank:ammo338lapua": "VII",
   "pointblank:ammo50bmg": "VII",
-  "pointblank:ammo12gauge": "VII"
+  "pointblank:ammo12gauge": "VII",
+  "diaithirgear:smithy": "I",
+  "diaithirgear:workshop_bench": "I",
+  "diaithirgear:gunsmith_bench": "VI",
+  "diaithirgear:schematic": "IV"
  },
  "families": {
   "holy": "IV",

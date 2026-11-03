@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/template_glass_pane_side",
  "textures": {
-  "edge": "minecraft:block/glass",
-  "pane": "minecraft:block/glass"
+  "edge": "aether_ii:block/arkenium_framed_crude_scatterglass_pane",
+  "pane": "aether_ii:block/arkenium_framed_crude_scatterglass_pane"
  }
 }

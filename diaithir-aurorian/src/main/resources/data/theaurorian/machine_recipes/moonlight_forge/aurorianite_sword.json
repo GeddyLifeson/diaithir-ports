@@ -1,0 +1,8 @@
+{
+ "input": "theaurorian:moonstone_sword",
+ "output": {
+  "id": "theaurorian:aurorianite_sword",
+  "count": 1
+ },
+ "catalyst": "theaurorian:aurorianite_ingot"
+}
