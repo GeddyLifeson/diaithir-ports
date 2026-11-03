@@ -111,6 +111,7 @@ class ValkyrienSkiesModForge(modBus: IEventBus, container: ModContainer) {
         org.valkyrienskies.tournament.TournamentMod.init(modBus, container)
         if (isClient) org.valkyrienskies.tournament.TournamentMod.initClient(modBus)
         org.diaithir.archimedes.ArchimedesMod.init(modBus, container)
+        org.diaithir.mega.MegaMod.init(modBus)
         if (isClient) org.diaithir.archimedes.ArchimedesClient.init(modBus)
         VSEntityManager.registerContraptionHandler(ContraptionShipyardEntityHandlerForge)
 

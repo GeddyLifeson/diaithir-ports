@@ -7,4 +7,4 @@ Mega construction and extraction vehicles (12) and megastructures (7), Age gated
 - Ships: VS2 walkable decks. Output as pallets and containers. Crew wages from the employer treasury.
 
 Check: `python3 -I tools/gen_megamachines.py /tmp/out` (rewrites nothing in the repo; compare with catalog.json).
-Java (chassis, dig engine, Heavy Yard) follows once the mod survey and #220 land.
+Cab block (diaithir-ships `org.diaithir.mega`): `megamachines:cab` block entity holds the spec id and the autonomy-module flag; crewless only if catalog `autonomy_capable` AND the module (`diaithircarts:autonomy_module`, by id) is fitted, else a living crew member within 4 m (ship-aware). `autonomousCrew(job, cab)` is the wages hook. Selftest: `-Dmegamachines.selftest=true runServer` (13 checks pass). `data/megamachines/catalog.json` in ships is a copy of `catalog.json` here until the dig-head thread unifies the core.
