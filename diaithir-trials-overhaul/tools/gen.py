@@ -1,4 +1,5 @@
 #!/usr/bin/env python3 -I
+# S6819 Writes the trials-overhaul Age gate, Codex handbook and quests from the real Not Enough Trials lang file.
 """Writes age_gates.json and codex/*.json from the real Not Enough Trials lang file.
 Usage: gen.py PATH_TO_NotEnoughTrials_jar   (the jar is third-party and never committed)."""
 import json, sys, zipfile, pathlib
