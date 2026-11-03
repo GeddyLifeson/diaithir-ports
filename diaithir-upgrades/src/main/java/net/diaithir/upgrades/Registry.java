@@ -28,5 +28,6 @@ final class Registry {
         BLOCKS.register(bus);
         ENTITIES.register(bus);
         Modules.ITEMS.registerSimpleBlockItem("beacon", BEACON);
+        Modules.ITEMS.registerItem("planner", p -> new PlannerItem(p.stacksTo(1)));
     }
 }
