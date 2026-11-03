@@ -68291,20 +68291,12 @@ hash = "6c2cb913e00714bf9970e91f795cd5a0e1c575bc3da8564a96ace45444be1bdb"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-ae2-extensions-neoforge-26.1.2-1.0.0.jar"
-hash = "0d84e97640d2d5b4797491cef6ce651c0dcb833a60f6b3bf7bbfda1f0519cbd0"
-
-[[files]]
 file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.6.jar"
 hash = "040e7725313ccf05766ee1bcaaa1d2cafba09331c7aba76f9bedfea6be6b9498"
 
 [[files]]
 file = "mods/diaithir-aircraft-neoforge-26.1.2-1.0.0.jar"
 hash = "8d24a2b4c6bd216707fb6a26aead7c3032993766f679f5b736fd89715901ab50"
-
-[[files]]
-file = "mods/diaithir-arms-neoforge-26.1.2-1.0.1.jar"
-hash = "f4e2fa5acc57117e0e6408b6666afd0f8eb58d05e2ca1b88afb740f365930348"
 
 [[files]]
 file = "mods/diaithir-attribute-fixes-neoforge-26.1.2-1.0.0.jar"
@@ -68316,10 +68308,6 @@ hash = "bc0c0c6c5bde89dd5dddcdb304f9e6a8516f8caec9fb726fb7454a2038b4b483"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-automation-crafting-neoforge-26.1.2-1.0.0.jar"
-hash = "adb870e2d9fc69f99a7638bfeaf7dbc4c81c15e0e59db94f2e1d383b85b75ffb"
-
-[[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
 hash = "e0c4162d1a3280b86e14b6c65aabdee4d5a1dbb5c3e5304ab35ba591eafaa2fa"
 metafile = true
@@ -68328,18 +68316,6 @@ metafile = true
 file = "mods/diaithir-chat-client-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "0c1581dc1da032fb9dff807d2357e89b6de54414136a8f164f8a9c82d4eb7c5b"
 metafile = true
-
-[[files]]
-file = "mods/diaithir-chests-drawers-neoforge-26.1.2-1.0.0.jar"
-hash = "abef1b7e43057ac60d89b4a112a1dcf379909662207dbf044f17997e79d19880"
-
-[[files]]
-file = "mods/diaithir-claims-neoforge-26.1.2-1.0.0.jar"
-hash = "29e7cb2e97993a1d6a980e86ca47821bcf425de05e7889e5595307e80e2e2889"
-
-[[files]]
-file = "mods/diaithir-classes-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "4106adc00fac3ce62523fb7f75c720f9e456768795f92b0e236db39edada6816"
 
 [[files]]
 file = "mods/diaithir-client-render-culling-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68360,14 +68336,6 @@ metafile = true
 file = "mods/diaithir-clientcore-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "24cb6a146d93314dc7b068d6630401c7c1791422cdba95fd70c478ae1c7c59df"
 metafile = true
-
-[[files]]
-file = "mods/diaithir-combat-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "f5c465fdb350d435d2cd2c8e00f1e801a4cfd7f867664c2c2e13ab4a9bc00c73"
-
-[[files]]
-file = "mods/diaithir-computing-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "0856d4aec46672cc2d7329a0bd5337d6831ad3623240d6972b62c058bd06c285"
 
 [[files]]
 file = "mods/diaithir-content-data-neoforge-26.1.2-1.0.0.jar"
@@ -68416,10 +68384,6 @@ hash = "2be6757f11fee031263f59db61f27ced0e6ea50345be43594af8f031aa9c2087"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-end-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "754f9803f2081c0bf3359436f85a6fd2cd2bfddd7e97d42b51189c1adc93545c"
-
-[[files]]
 file = "mods/diaithir-entity-animation-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "4a8875e9429c18e6e21d7f5633089b9185d0c8aaaa7286cba369bf16970d4650"
 metafile = true
@@ -68430,24 +68394,8 @@ hash = "e3240cdcf1b244579f2867ef448023c5ced144e9fcd19345785e92571d708526"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-filters-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "c1ee8aa4862c6dea8e97a92dee05da3b5527ffeb0472b248ca63f04824ce44d5"
-
-[[files]]
-file = "mods/diaithir-firearms-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "fe1af34e408332efe63dc662384e50407aa1d0e863bc6480ed19440ccf16431a"
-
-[[files]]
 file = "mods/diaithir-food-diet-neoforge-26.1.2-1.0.0.jar"
 hash = "45e937996b717013dfe893409d6abbe28554733b8ed7123e4eecb3f267f742b3"
-
-[[files]]
-file = "mods/diaithir-foundry-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "a1f14fafc3bd76461cf2e92ba18c639c5f350b10b36ee4296533f6ca6982261d"
-
-[[files]]
-file = "mods/diaithir-ground-water-transport-neoforge-26.1.2-1.0.0.jar"
-hash = "e58e70d8d87a16b59b0883b8c8ab255dbb882953f844455415dbfab89926bb4c"
 
 [[files]]
 file = "mods/diaithir-hostile-encounters-neoforge-26.1.2-1.0.0.jar"
@@ -68466,10 +68414,6 @@ hash = "ffdc5010bed17a8688806acc0168038554be1222784b4935fcf803886292a3dd"
 file = "mods/diaithir-hud-overlays-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "2942950e442f19b69da5becd5a36a658713faa5bb685d0a6169254b80da7c21d"
 metafile = true
-
-[[files]]
-file = "mods/diaithir-integrated-addons-neoforge-26.1.2-1.0.0.jar"
-hash = "8c262d0559f4919fc8d25b69ff9a6fc3b51f119f7af5368fac2d7858c319a17a"
 
 [[files]]
 file = "mods/diaithir-inventory-tools-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68499,36 +68443,12 @@ file = "mods/diaithir-libraries-neoforge-26.1.2-1.0.0.jar"
 hash = "aa34f7a35e348179a9bc1af065b2c8cb8ad2bb3a646b9b6e82cbe9064e94db58"
 
 [[files]]
-file = "mods/diaithir-linked-storage-neoforge-26.1.2-1.0.0.jar"
-hash = "66b42eaf45d955bc173848865d9d226f75e659ca9ab60d38db0ef8ced4d5dd27"
-
-[[files]]
-file = "mods/diaithir-linked-storage-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "11d6d42c7ee716a89312a90d2dccf9fc01bc04fea7621ca419b5950820e0dfba"
-
-[[files]]
-file = "mods/diaithir-logistics-utilities-neoforge-26.1.2-1.0.0.jar"
-hash = "1f2fbc9f2884a74db834c3fdf12fcdf277f19a97aeb3010eae8c385924b76dd4"
-
-[[files]]
 file = "mods/diaithir-macaw-blocks-neoforge-26.1.2-1.0.0.jar"
 hash = "1af2007f596d6da7b3143a8fde74ca01e482c582c73c6d7c60e692703dfb13b1"
 
 [[files]]
 file = "mods/diaithir-map-utility-neoforge-26.1.2-1.0.0.jar"
 hash = "55c0152ea0856560989bf0a136f88b1ae6a21ae6a58860070756d699217042de"
-
-[[files]]
-file = "mods/diaithir-mekanism-addons-neoforge-26.1.2-1.0.0.jar"
-hash = "7a1856ccda05aabbbdf4941e3fb6d7e8fc12b729fae2ac7431ba27bf7ebd31a9"
-
-[[files]]
-file = "mods/diaithir-migrate-neoforge-26.1.2-1.0.0.jar"
-hash = "33086f061c9b7d2d58cc72759ee71ea3cf6ee93316e4672b7e66f7482dfe282a"
-
-[[files]]
-file = "mods/diaithir-miners-neoforge-26.1.2-1.0.0.jar"
-hash = "554d704d18fe8e29d63c704a9cd8164e4011a89a90bc4a4c5ac2d091c4c79c1f"
 
 [[files]]
 file = "mods/diaithir-mystical-agriculture-neoforge-26.1.2-1.0.0.jar"
@@ -68539,10 +68459,6 @@ file = "mods/diaithir-nether-neoforge-26.1.2-1.0.0.jar"
 hash = "0ba7c999d78156918f01b747c38ad076d4745dcc4a5b3859b2ca7fefb981fa0d"
 
 [[files]]
-file = "mods/diaithir-nether-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "d6628c2b50cabe3e02001823c0e1eb61febd87f19a76edb657eb5d49a2f2165a"
-
-[[files]]
 file = "mods/diaithir-open-worlds-neoforge-26.1.2-1.0.0.jar"
 hash = "0417dd8d6730ffcdcbbf257bf63ee1552c446a6ee58f126ed591c99f5ca21463"
 
@@ -68551,40 +68467,12 @@ file = "mods/diaithir-overworld-biomes-neoforge-26.1.2-1.0.0.jar"
 hash = "c116d410ac95658aa2b419ee722880fbc6b3f69ce5b9648c1b5539b9f53b6c4d"
 
 [[files]]
-file = "mods/diaithir-personal-mobility-neoforge-26.1.2-1.0.0.jar"
-hash = "9df4da7caed74e3fd136216fb18ce05236349a7e1dc286da3f3a2135c636d6f1"
-
-[[files]]
-file = "mods/diaithir-pipes-neoforge-26.1.2-1.0.0.jar"
-hash = "34a8322788b4ebe83d80d791077c0bbb82688223e26d3edf8d15d74b34429722"
-
-[[files]]
-file = "mods/diaithir-pipes-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "bdcb126310483b9f3e73d1fbe48928737b0c521b4e691aa9f78963766c3c1800"
-
-[[files]]
-file = "mods/diaithir-portable-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "b013538b4fec9510fc91d60b09cf33b0317b5b2f8c23ab6fb05e990baa553441"
-
-[[files]]
-file = "mods/diaithir-power-storage-neoforge-26.1.2-1.0.0.jar"
-hash = "cb2ec6a119abc50c7134f9a9b1eaec31f72b52936420ec9047a5bf8729b28305"
-
-[[files]]
-file = "mods/diaithir-relics-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "ee47896bb2123386e1a434983823cbb425a749683e7385ef1764452f24de07c9"
+file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
+hash = "660ac296e74898ac6689db8d978cef47a9d0752a38224d9432cc87a54d4adff0"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
 hash = "123c12803fa3cce0201092cdcda81d73ef177cc5f2996c86948383fa5d5caa08"
-
-[[files]]
-file = "mods/diaithir-routing-networks-neoforge-26.1.2-1.0.0.jar"
-hash = "08bcc1044364a33b908bd391153a0846ecc3b46696c32c9050293c4b1f029691"
-
-[[files]]
-file = "mods/diaithir-routing-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "c80c4da45f82dc987b452ff78fb4aad01f7c4f2c891e09b071f87c6008e6d5aa"
 
 [[files]]
 file = "mods/diaithir-rpg-open-neoforge-26.1.2-1.0.0.jar"
@@ -68603,8 +68491,8 @@ file = "mods/diaithir-structures-data-neoforge-26.1.2-1.1.1.jar"
 hash = "5959a53df38ae1e34917e96328e8723ea7e981914fed244f6521fef081e44c99"
 
 [[files]]
-file = "mods/diaithir-tech-automation-neoforge-26.1.2-1.0.0.jar"
-hash = "b5ba2c5afe7f19a89751f50b23d0ecc300deb70afba645078888ab2caa0766da"
+file = "mods/diaithir-tech-suite-neoforge-26.1.2-1.0.0.jar"
+hash = "4668ee5acd070a2357f7a14f53b0210c7e945ef926af8bce4109d319e61d7537"
 
 [[files]]
 file = "mods/diaithir-tooltipfx-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68621,20 +68509,12 @@ file = "mods/diaithir-tooltips-neoforge-26.1.2-2.4.1.jar"
 hash = "65fc6a3a5a3e06243f313abbc32ab7e1bf1edc23b6dacde87c26f5e63c877132"
 
 [[files]]
-file = "mods/diaithir-ultimine-neoforge-26.1.2-1.0.0.jar"
-hash = "a18f6f76e3040143a2ff655c21f49820d92cd4f068f9d2214f36d44e3708df30"
-
-[[files]]
 file = "mods/diaithir-villager-trade-neoforge-26.1.2-1.0.0.jar"
 hash = "4679c0000bcae308c1a4d9c2b6f835efdae9ad5dc3f6d510a84b1cddff359241"
 
 [[files]]
 file = "mods/diaithir-villagers-npcs-neoforge-26.1.2-1.0.0.jar"
 hash = "2e34d7c8c211b540919c3f47fd81c34c493737e8dfff185d0dbe6ae52f030d86"
-
-[[files]]
-file = "mods/diaithir-waypoints-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "93910767a65cc861ac45c8f1768548d092242d5e59669cd3eae1a9d3c68d5a38"
 
 [[files]]
 file = "mods/diaithir-world-interaction-neoforge-26.1.2-1.0.0.jar"
@@ -68661,10 +68541,6 @@ hash = "1820b9411421b05edef8781c0dd0f4b44fc4abb5410611478858bf22d07ab7a2"
 [[files]]
 file = "mods/diaithir-worldgen-structures-neoforge-26.1.2-1.0.0.jar"
 hash = "d421acfd3ae142cf53c065e5c0197cdf16354f8546422eb82d1bd3b418634920"
-
-[[files]]
-file = "mods/diaithir-worldsys-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "736ffff552199631270c7c788b7ac6b384b30d249df6de33a52e5ee8079be8f9"
 
 [[files]]
 file = "mods/diaithir-yungs-structures-neoforge-26.1.2-1.0.0.jar"
