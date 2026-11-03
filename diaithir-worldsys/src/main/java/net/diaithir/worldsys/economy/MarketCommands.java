@@ -32,6 +32,19 @@ final class MarketCommands {
         return Command.SINGLE_SUCCESS;
     }
 
+    /** A visitor is a player whose home culture is another's. Home is the first culture a player trades in. */
+    static boolean foreign(EconState st, EconQuests.Player h, String culture) {
+        String home = st.home.computeIfAbsent(h.id(), k -> culture);
+        return !home.equals(culture);
+    }
+
+    /** A storeroom full of the money good takes no more of it (8 times the usual stock). */
+    private static boolean roomFor(EconMarket.Ctx ctx, String town, long units) {
+        if (ctx.kind() != EconPolity.Kind.COMMODITY) return true;
+        String g = ctx.design().design().commodityGood();
+        return held(town, g) + units * ctx.design().design().perUnit() <= 8 * EconWorld.data().good(g).usual();
+    }
+
     private static String town(EconClaims.Claim at) { return at == null ? "wilds" : at.town(); }
 
     private static double held(String town, String id) {
@@ -40,7 +53,7 @@ final class MarketCommands {
     }
 
     private static boolean open(String id, EconMarket.Ctx ctx) {
-        return EconWorld.data().good(id) != null && EconPolity.AGES.indexOf(EconHooks.goodAge.apply(id)) <= EconPolity.AGES.indexOf(ctx.age());
+        return EconWorld.data().good(id) != null && EconPolity.AGES.indexOf(EconWorld.data().ageOfGood(id)) <= EconPolity.AGES.indexOf(ctx.age());
     }
 
     /** A commodity money is physical: what buyers pay joins the store's stock of the staple, what it pays a seller comes out of it. */
@@ -53,7 +66,7 @@ final class MarketCommands {
         return true;
     }
 
-    private static void buy(ServerPlayerHolder h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n) {
+    static void buy(EconQuests.Player h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n) {
         EconState st = EconWorld.state();
         String town = town(at);
         if (!open(id, ctx)) { h.tell("No store sells that in this Age."); return; }
@@ -62,6 +75,11 @@ final class MarketCommands {
         long price = EconModel.trade(st.market, EconWorld.REGIONS, EconWorld.data()::good, town, id, n, true, ctx.scale());
         double rate = at == null ? 0 : EconPolity.taxRate(null, ctx.culture(), ctx.age(), st);
         long tax = (long) Math.ceil(price * rate);
+        if (!roomFor(ctx, town, price + tax)) {
+            st.market.stock.get(town).put(id, have);
+            h.tell("The keeper will take no more " + ctx.design().name() + " today: the storeroom is full of it. Pay in goods or in another money.");
+            return;
+        }
         if (!EconPurse.take(h, price + tax, ctx.denoms())) {
             st.market.stock.get(town).put(id, have);
             h.tell("That costs " + (price + tax) + " " + ctx.unit() + ". You have " + EconPurse.own(h, ctx.denoms()) + ".");
@@ -70,13 +88,13 @@ final class MarketCommands {
         commodityPay(ctx, town, price + tax);
         EconPolity.mint(st, ctx.culture(), -(price + tax));
         st.cur(ctx.culture()).treasury += tax;
-        EconPolity.flow(st, ctx.culture(), at != null ? price * ctx.rate() : 0);
+        if (at != null && foreign(st, h, ctx.culture())) EconPolity.flow(st, ctx.culture(), price * ctx.rate());
         st.cur(ctx.culture()).vol += price * ctx.rate();
         h.give(id, n);
         h.tell("Bought " + n + " " + h.itemName(id) + " for " + (price + tax) + " " + ctx.unit() + (tax > 0 ? " (tax " + tax + ")" : "") + ".");
     }
 
-    private static void sell(ServerPlayerHolder h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n) {
+    static void sell(EconQuests.Player h, EconMarket.Ctx ctx, EconClaims.Claim at, String id, int n) {
         EconState st = EconWorld.state();
         String town = town(at);
         if (!open(id, ctx)) { h.tell("No store buys that in this Age."); return; }
@@ -91,7 +109,7 @@ final class MarketCommands {
         EconPurse.give(h, paid - tax, ctx.denoms());
         EconPolity.mint(st, ctx.culture(), paid - tax);
         st.cur(ctx.culture()).treasury += tax;
-        EconPolity.flow(st, ctx.culture(), at != null ? -paid * ctx.rate() : 0);
+        if (at != null && foreign(st, h, ctx.culture())) EconPolity.flow(st, ctx.culture(), -paid * ctx.rate());
         st.cur(ctx.culture()).vol += paid * ctx.rate();
         h.tell("Sold " + n + " " + h.itemName(id) + " for " + (paid - tax) + " " + ctx.unit() + (tax > 0 ? " (tax " + tax + ")" : "") + ".");
     }

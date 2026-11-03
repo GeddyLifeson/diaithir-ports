@@ -12,7 +12,7 @@ public final class EconHooks {
     private EconHooks() {}
 
     /** The Age a culture has reached. */
-    public static volatile Function<String, String> ageOf = culture -> "VII";
+    public static volatile Function<String, String> ageOf = culture -> null;
     /** Does a culture know a tech? */
     public static volatile BiPredicate<String, String> techKnown = (culture, tech) -> true;
     /** The calendar year (negative before the common era), or null when none is published. */

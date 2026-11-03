@@ -11,6 +11,8 @@ public final class EconState {
     public final Map<String, Cur> cur = new HashMap<>();
     /** A culture's own money design, set when it reforms. */
     public final Map<String, String> own = new HashMap<>();
+    /** A player's home culture: the first one they trade in. */
+    public final Map<String, String> home = new HashMap<>();
     public final Map<String, Des> des = new HashMap<>();
     public final Map<String, Bank> bank = new HashMap<>();
     public final Map<String, Bonds> bonds = new HashMap<>();

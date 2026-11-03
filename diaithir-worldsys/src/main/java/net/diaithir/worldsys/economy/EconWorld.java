@@ -98,7 +98,22 @@ public final class EconWorld {
 
     public static String ageOf(String culture) {
         String a = culture == null ? null : EconHooks.ageOf.apply(culture);
-        return a != null && EconPolity.AGES.contains(a) ? a : "VII";
+        if (a != null && EconPolity.AGES.contains(a)) return a;
+        String w = worldAge();
+        return w != null ? w : "VII";
+    }
+
+    /** The world's Age from the ages engine (WorldState.age), or null without it. */
+    public static String worldAge() {
+        try {
+            Class<?> saved = Class.forName("net.diaithir.ages.mc.AgesSavedData");
+            Object inst = saved.getMethod("get", MinecraftServer.class).invoke(null, server);
+            Object world = inst.getClass().getField("world").get(inst);
+            String age = String.valueOf(world.getClass().getField("age").get(world));
+            return EconPolity.AGES.contains(age) ? age : null;
+        } catch (ReflectiveOperationException | RuntimeException e) {
+            return null;
+        }
     }
 
     public static String cultureName(String culture) {

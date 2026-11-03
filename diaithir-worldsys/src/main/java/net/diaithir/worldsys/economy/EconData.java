@@ -29,6 +29,11 @@ public final class EconData {
 
     public final Map<String, double[]> prices = new HashMap<>();
     public final Map<String, DesignData> designs = new LinkedHashMap<>();
+    /** The Age each good opens in (tech_ages.json: items beat namespaces); a good in neither is Age I. */
+    /** The hand-priced staples (ECON_GOODS): id to [base price, usual stock]; their opening Age is in goodAges. */
+    public final Map<String, double[]> goods = new HashMap<>();
+    public final Map<String, String> goodAges = new HashMap<>();
+    public final Map<String, String> techItems = new HashMap<>(), techNamespaces = new HashMap<>();
     public final Map<String, String> cultureMoney = new HashMap<>();
     public final Map<String, String> cultureNames = new HashMap<>();
     public final Map<String, EconDrinks.Style> drinks = new HashMap<>();
@@ -58,6 +63,14 @@ public final class EconData {
             JsonObject o = e.getValue().getAsJsonObject();
             d.drinks.put(e.getKey(), new EconDrinks.Style(o.has("abv") ? o.get("abv").getAsDouble() : 0, o.has("aged") && o.get("aged").getAsBoolean(), o.has("peak") ? o.get("peak").getAsDouble() : 0));
         }
+        for (var e : read("goods.json").getAsJsonObject().entrySet()) {
+            JsonArray a = e.getValue().getAsJsonArray();
+            d.goods.put(e.getKey(), new double[] {a.get(0).getAsDouble(), a.get(1).getAsDouble()});
+            d.goodAges.put(e.getKey(), a.get(2).getAsString());
+        }
+        JsonObject ta = read("tech_ages.json").getAsJsonObject();
+        for (var e : ta.getAsJsonObject("items").entrySet()) d.techItems.put(e.getKey(), e.getValue().getAsString());
+        for (var e : ta.getAsJsonObject("namespaces").entrySet()) d.techNamespaces.put(e.getKey(), e.getValue().getAsString());
         for (String f : VENDOR_FILES) {
             JsonObject root = read(f).getAsJsonObject();
             String age = root.get("age").getAsString();
@@ -79,6 +92,8 @@ public final class EconData {
 
     /** A good's [base price in tw, usual stock]; the usual stock follows the price (dearer goods are scarcer), as the KubeJS econGood. */
     public EconModel.Good good(String id) {
+        double[] g = goods.get(id);
+        if (g != null) return new EconModel.Good(g[0], g[1]);
         double[] p = prices.get(id);
         return p == null ? null : new EconModel.Good(p[0], Math.max(8, Math.round(256 / Math.sqrt(p[0]))));
     }
@@ -87,10 +102,28 @@ public final class EconData {
     public List<String> openIds(String age) {
         int a = EconPolity.AGES.indexOf(age);
         List<String> out = new ArrayList<>();
-        for (String id : prices.keySet()) {
-            String g = EconHooks.goodAge.apply(id);
+        for (String id : allIds()) {
+            String g = ageOfGood(id);
             if (EconPolity.AGES.indexOf(g == null ? "I" : g) <= a) out.add(id);
         }
         return out;
+    }
+
+    /** The Age a good opens in: the hook if a tech module answers, else the shipped tech_ages table. */
+    public String ageOfGood(String id) {
+        String own = goodAges.get(id);
+        if (own != null) return own;
+        String h = EconHooks.goodAge.apply(id);
+        if (h != null && !"I".equals(h)) return h;
+        String a = techItems.get(id);
+        if (a == null) a = techNamespaces.get(id.substring(0, Math.max(0, id.indexOf(':'))));
+        return a != null && EconPolity.AGES.contains(a) ? a : "I";
+    }
+
+    /** Every priced good: the table and the hand-priced staples. */
+    public java.util.Set<String> allIds() {
+        java.util.Set<String> s = new java.util.LinkedHashSet<>(prices.keySet());
+        s.addAll(goods.keySet());
+        return s;
     }
 }

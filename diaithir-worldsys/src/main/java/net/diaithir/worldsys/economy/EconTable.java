@@ -23,7 +23,7 @@ public final class EconTable {
         Map<String, List<String>> traders = new HashMap<>();
         for (var r : st.market.stock.entrySet()) for (String id : r.getValue().keySet()) traders.computeIfAbsent(id, k -> new java.util.ArrayList<>()).add(r.getKey());
         JsonObject base = new JsonObject(), prices = new JsonObject(), markets = new JsonObject(), rates = new JsonObject();
-        for (String id : data.prices.keySet()) {
+        for (String id : data.allIds()) {
             double b = data.good(id).base();
             base.addProperty(id, b);
             List<String> rs = traders.get(id);

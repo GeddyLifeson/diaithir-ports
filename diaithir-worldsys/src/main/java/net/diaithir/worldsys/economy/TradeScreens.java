@@ -64,6 +64,7 @@ final class TradeScreens {
 
     /** A trade done at the screen: the menu moved the items, the market settles prices, stock, tax and money. */
     static void settle(TradeWithVillagerEvent e) {
+        String who = e.getEntity().getUUID().toString();
         if (!(e.getAbstractVillager() instanceof Villager v)) return;
         Rec rec = OFFERS.get(v.getUUID());
         if (rec == null) return;
@@ -81,15 +82,19 @@ final class TradeScreens {
             payStaple(ctx, town, o.units());
             EconPolity.mint(st, culture, -o.units());
             st.cur(culture).treasury += tax;
+            if (foreign(st, who, culture)) EconPolity.flow(st, culture, o.units() * ctx.rate());
         } else {
             long paid = EconModel.trade(st.market, EconWorld.REGIONS, data::good, town, o.id(), o.n(), false, ctx.scale());
             payStaple(ctx, town, -o.units());
             EconPolity.mint(st, culture, o.units());
             st.cur(culture).treasury += Math.max(0, paid - o.units());
+            if (foreign(st, who, culture)) EconPolity.flow(st, culture, -o.units() * ctx.rate());
         }
         st.cur(culture).vol += o.units() * ctx.rate();
         EconWorld.dirty();
     }
+
+    private static boolean foreign(EconState st, String who, String culture) { return !st.home.computeIfAbsent(who, k -> culture).equals(culture); }
 
     private static void payStaple(EconMarket.Ctx ctx, String town, long units) {
         if (ctx.kind() != EconPolity.Kind.COMMODITY) return;

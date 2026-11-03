@@ -93,7 +93,48 @@ public final class EconomyFeature {
         EconWorld.dirty();
     }
 
+    /** A scripted player with a purse of coin items, for the headless comparison with the KubeJS economy. */
+    private static final class FakePlayer implements EconQuests.Player {
+        final java.util.Map<String, Integer> inv = new java.util.TreeMap<>();
+        public String id() { return "p1"; }
+        public int count(String item) { return inv.getOrDefault(item, 0); }
+        public void take(String item, int n) { inv.merge(item, -n, Integer::sum); if (inv.get(item) <= 0) inv.remove(item); }
+        public void give(String item, int n) { inv.merge(item, n, Integer::sum); }
+        public void tell(String text) { System.out.println("[econselftest] p1 hears: " + text); }
+        public void command(String command) { }
+        public String itemName(String item) { return item; }
+    }
+
+    private static final String[][] SCRIPT = {{"buy", "minecraft:iron_ingot", "5"}, {"buy", "minecraft:wheat", "20"}, {"sell", "minecraft:oak_log", "30"},
+        {"sell", "minecraft:iron_ingot", "3"}, {"buy", "minecraft:cobblestone", "64"}, {"sell", "minecraft:wheat", "10"}, {"buy", "minecraft:bread", "7"}};
+
+    /** Trades through the same code the commands use, then four weekly turns. Prints figures the Node harness (golden_week.js trades) prints too. */
+    static int tradesTest() {
+        EconState st = EconWorld.state();
+        EconClaims.Claim at = EconWorld.claims().get(0);
+        at = EconWorld.claimAt(at.x(), at.z());
+        EconMarket.Ctx ctx = EconWorld.ctx(at.town(), at.culture());
+        FakePlayer p = new FakePlayer();
+        EconPurse.give(p, 200000, ctx.denoms());
+        System.out.println("[econselftest] town=" + at.town() + " purse=" + EconPurse.own(p, ctx.denoms()));
+        for (String[] s : SCRIPT) {
+            if (s[0].equals("buy")) MarketCommands.buy(p, ctx, at, s[1], Integer.parseInt(s[2]));
+            else MarketCommands.sell(p, ctx, at, s[1], Integer.parseInt(s[2]));
+            ctx = EconWorld.ctx(at.town(), at.culture());
+        }
+        for (String[] s : SCRIPT) System.out.println("[econselftest] after " + s[1] + "=" + st.market.stock.get(at.town()).get(s[1]));
+        System.out.println("[econselftest] purseAfter=" + EconPurse.own(p, ctx.denoms()));
+        for (int i = 0; i < 4; i++) weekly();
+        ctx = EconWorld.ctx(at.town(), at.culture());
+        System.out.println("[econselftest] purse=" + EconPurse.own(p, ctx.denoms()));
+        for (String[] s : SCRIPT) System.out.println("[econselftest] stock " + s[1] + "=" + st.market.stock.get(at.town()).get(s[1]));
+        EconState.Cur c = st.cur(at.culture());
+        System.out.println("[econselftest] cur money=" + c.money + " treasury=" + c.treasury + " tb=" + c.tb + " vol=" + c.vol + " flow=" + c.flow + " wagePool=" + c.wagePool + " rate=" + ctx.rate());
+        return (int) st.week;
+    }
+
     static int selfTest() {
+        if ("trades".equals(System.getProperty("diaithir.econselftest"))) return tradesTest();
         for (int i = 0; i < 52; i++) weekly();
         EconState st = EconWorld.state();
         EconQuests.World w = world();
