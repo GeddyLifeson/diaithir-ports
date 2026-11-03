@@ -1,1 +1,23 @@
-{"item.diaithircropgenes.wheat_line_crop":"Wheat Line Grain","item.diaithircropgenes.barley_crop":"Barley","item.diaithircropgenes.flax_crop":"Flax","item.diaithircropgenes.sunroot_crop":"Sunroot","item.diaithircropgenes.cinder_bean_crop":"Cinder Bean","item.diaithircropgenes.amber_rice_crop":"Amber Rice","item.diaithircropgenes.wheat_line_seeds":"Wheat Line Seeds","item.diaithircropgenes.barley_seeds":"Barley Seeds","item.diaithircropgenes.flax_seeds":"Flax Seeds","item.diaithircropgenes.sunroot_seeds":"Sunroot Seeds","item.diaithircropgenes.cinder_bean_seeds":"Cinder Bean Seeds","item.diaithircropgenes.amber_rice_seeds":"Amber Rice Seeds","block.diaithircropgenes_genes.wheat_line_plant":"Wheat Line Plant","block.diaithircropgenes_genes.barley_plant":"Barley Plant","block.diaithircropgenes_genes.flax_plant":"Flax Plant","block.diaithircropgenes_genes.sunroot_plant":"Sunroot Plant","block.diaithircropgenes_genes.cinder_bean_plant":"Cinder Bean Plant","block.diaithircropgenes_genes.amber_rice_plant":"Amber Rice Plant"}
+{
+ "block.diaithircropgenes.auto_harvester": "Auto Harvester",
+ "block.diaithircropgenes.greenhouse_panel": "Greenhouse Panel",
+ "block.diaithircropgenes_genes.amber_rice_plant": "Amber Rice Plant",
+ "block.diaithircropgenes_genes.barley_plant": "Barley Plant",
+ "block.diaithircropgenes_genes.cinder_bean_plant": "Cinder Bean Plant",
+ "block.diaithircropgenes_genes.flax_plant": "Flax Plant",
+ "block.diaithircropgenes_genes.sunroot_plant": "Sunroot Plant",
+ "block.diaithircropgenes_genes.wheat_line_plant": "Wheat Line Plant",
+ "item.diaithircropgenes.amber_rice_crop": "Amber Rice",
+ "item.diaithircropgenes.amber_rice_seeds": "Amber Rice Seeds",
+ "item.diaithircropgenes.barley_crop": "Barley",
+ "item.diaithircropgenes.barley_seeds": "Barley Seeds",
+ "item.diaithircropgenes.cinder_bean_crop": "Cinder Bean",
+ "item.diaithircropgenes.cinder_bean_seeds": "Cinder Bean Seeds",
+ "item.diaithircropgenes.flax_crop": "Flax",
+ "item.diaithircropgenes.flax_seeds": "Flax Seeds",
+ "item.diaithircropgenes.living_seed": "Living Seed",
+ "item.diaithircropgenes.sunroot_crop": "Sunroot",
+ "item.diaithircropgenes.sunroot_seeds": "Sunroot Seeds",
+ "item.diaithircropgenes.wheat_line_crop": "Wheat Line Grain",
+ "item.diaithircropgenes.wheat_line_seeds": "Wheat Line Seeds"
+}

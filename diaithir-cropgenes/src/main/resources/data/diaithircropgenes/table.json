@@ -258,5 +258,20 @@
   "id": "crop_juice",
   "kind": "item",
   "light": 0
+ },
+ {
+  "id": "greenhouse_panel",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "auto_harvester",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "living_seed",
+  "kind": "item",
+  "light": 0
  }
 ]
