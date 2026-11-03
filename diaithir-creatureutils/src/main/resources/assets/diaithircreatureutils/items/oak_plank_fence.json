@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "diaithircreatureutils:block/oak_plank_fence"
+  "model": "diaithircreatureutils:block/oak_plank_fence_inventory"
  }
 }

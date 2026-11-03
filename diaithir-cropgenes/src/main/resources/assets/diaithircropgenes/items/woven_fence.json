@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "diaithircropgenes:block/woven_fence"
+  "model": "diaithircropgenes:block/woven_fence_inventory"
  }
 }

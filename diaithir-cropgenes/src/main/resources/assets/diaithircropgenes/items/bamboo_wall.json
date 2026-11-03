@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "diaithircropgenes:block/bamboo_wall"
+  "model": "diaithircropgenes:block/bamboo_wall_inventory"
  }
 }

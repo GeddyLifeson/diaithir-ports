@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "diaithircreatureutils:block/glass_pane"
+  "model": "diaithircreatureutils:item/glass_pane"
  }
 }

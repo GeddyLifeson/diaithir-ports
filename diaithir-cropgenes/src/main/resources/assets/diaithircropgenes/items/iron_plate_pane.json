@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "diaithircropgenes:block/iron_plate_pane"
+  "model": "diaithircropgenes:item/iron_plate_pane"
  }
 }

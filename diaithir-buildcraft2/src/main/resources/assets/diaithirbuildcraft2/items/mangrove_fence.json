@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "diaithirbuildcraft2:block/mangrove_fence"
+  "model": "diaithirbuildcraft2:block/mangrove_fence_inventory"
  }
 }

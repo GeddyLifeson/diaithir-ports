@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "diaithircreatureutils:block/prismarine_wall"
+  "model": "diaithircreatureutils:block/prismarine_wall_inventory"
  }
 }
