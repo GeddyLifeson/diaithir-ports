@@ -15,5 +15,6 @@
   "block.vs_yard.slipway_controller": "Slipway Controller",
   "block.vs_yard.treadwheel_crane": "Treadwheel Crane",
   "block.vs_yard.steam_crane": "Steam Crane",
-  "block.vs_yard.gantry_crane": "Gantry Crane"
+  "block.vs_yard.gantry_crane": "Gantry Crane",
+  "itemGroup.vs_yard.ship_yard": "Ship Yard"
 }

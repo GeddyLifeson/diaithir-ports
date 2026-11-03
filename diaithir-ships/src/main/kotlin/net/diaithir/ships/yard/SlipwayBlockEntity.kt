@@ -22,7 +22,7 @@ import kotlin.math.floor
 class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYardBlocks.SLIPWAY_BE.get(), pos, state) {
     var yardId: String = ""
     var build: BuildState? = null
-    var footprint = Footprint(5, 10, 5)
+    val footprint: YardDef.Footprint get() = def?.footprint() ?: YardDef.Footprint(5, 10, 5)
     var lastStats: Stats? = null
     var lastShipId: Long = -1
     /** Every installed part with the stage it went into (BuildState keeps only an unordered list). */
@@ -33,7 +33,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
 
     fun chooseYard(id: String): Boolean {
         val d = YardRegistry.yard(id).orElse(null) ?: return false
-        yardId = id; footprint = YardData.footprints[id] ?: footprint
+        yardId = id
         build = BuildState.start(d); log.clear(); setChanged(); return true
     }
 
@@ -55,7 +55,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     fun onUse(sneak: Boolean): String {
         val b = build
         if (b == null || (sneak && b.stageIndex() == 0 && log.isEmpty())) {
-            val ids = YardData.yardIds
+            val ids = YardData.yardIds()
             if (ids.isEmpty()) return "No yard types loaded."
             val next = ids[(ids.indexOf(yardId) + 1).mod(ids.size)]
             chooseYard(next)
@@ -71,7 +71,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         val lvl = level ?: return "no level"
         val d = def ?: return "no yard"
         if (!d.allowedIn(lvl.dimension().identifier().toString())) return "wrong dimension"
-        for (i in 0 until footprint.l) {
+        for (i in 0 until footprint.l()) {
             val below = lvl.getBlockState(worldPos(Cell(0, -1, 1 + i, "")))
             val water = !below.fluidState.isEmpty
             when (d.site()) {
@@ -90,7 +90,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         val b = build ?: return BuildState.InstallResult.NO_SLOT
         val lift = ShipYardBlocks.craneAt(level!!, worldPosition).second
         val stage = b.stageIndex()
-        val r = b.install(part, Int.MAX_VALUE, lift)
+        val r = b.install(part, AgeLookup.current((level as ServerLevel).server), lift)
         if (r == BuildState.InstallResult.OK) { log.add(Pair(stage, part)); syncBlocks(); setChanged() }
         return r
     }
@@ -172,7 +172,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         super.saveAdditional(output)
         output.putString("Yard", yardId)
         val b = build ?: return
-        output.putInt("Stage", b.stageIndex())
+        output.putInt("Stage", b.stageIndex()); output.putInt("Ticks", b.progressTicks())
         output.putString("Log", log.joinToString(",") { "${it.first}:${it.second.item()}" })
     }
 
@@ -181,17 +181,13 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         yardId = input.getStringOr("Yard", "")
         val d = def
         if (d == null) { build = null; return }
-        footprint = YardData.footprints[yardId] ?: footprint
-        // BuildState has no restore: replay the saved installs and stage advances (progress within a stage restarts)
-        val b = BuildState.start(d); log.clear()
-        val savedStage = input.getIntOr("Stage", 0)
-        for (e in input.getStringOr("Log", "").split(",").filter { it.isNotEmpty() }) {
+        val stage = input.getIntOr("Stage", 0)
+        val parts = input.getStringOr("Log", "").split(",").filter { it.isNotEmpty() }.mapNotNull { e ->
             val (st, item) = e.split(":", limit = 2).let { Pair(it[0].toInt(), it[1]) }
-            val part = YardRegistry.part(item).orElse(null) ?: continue
-            while (b.stageIndex() < st && b.advance(1_000_000, 1.0)) { /* finish earlier stages */ }
-            if (b.install(part, Int.MAX_VALUE, Double.MAX_VALUE) == BuildState.InstallResult.OK) log.add(Pair(st, part))
+            YardRegistry.part(item).orElse(null)?.let { Pair(st, it) }
         }
-        while (b.stageIndex() < savedStage && b.advance(1_000_000, 1.0)) { }
+        log.clear(); log.addAll(parts)
+        val b = BuildState.restore(d, stage, input.getIntOr("Ticks", 0), parts.filter { it.first < stage }.map { it.second }, parts.filter { it.first >= stage }.map { it.second })
         build = b
     }
 }

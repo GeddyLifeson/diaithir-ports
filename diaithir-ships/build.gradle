@@ -17,7 +17,7 @@ sourceSets {
 neoForge {
     accessTransformers.from(file("src/main/resources/META-INF/accesstransformer.cfg"))
     version = project.neo_version
-    runs { client { client(); gameDirectory = file('run-client'); programArguments.addAll('--username','Dev','--width','320','--height','200','--quickPlayMultiplayer','127.0.0.1:25565') ; jvmArguments.add('-Dmixin.debug.verify=true') }; server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dvs.selftest=true','-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
+    runs { client { client(); gameDirectory = file('run-client'); programArguments.addAll('--username','Dev','--width','320','--height','200','--quickPlayMultiplayer','127.0.0.1:25565') ; jvmArguments.add('-Dmixin.debug.verify=true') }; server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dvs.selftest=true','-Dvs.yardphase=' + (System.getenv('YARDPHASE') ?: ''),'-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
     mods { valkyrienskies { sourceSet(sourceSets.main); sourceSet(sourceSets.yardsApi) } }
 }
 

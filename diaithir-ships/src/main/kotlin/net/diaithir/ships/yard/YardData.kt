@@ -16,24 +16,19 @@ import org.slf4j.LoggerFactory
 object YardData {
     private val log = LoggerFactory.getLogger("vs_yard")
 
-    /** Ship-side data the shared API has no field for: the block a part places, and each yard's hull box. */
-    val partBlocks = HashMap<String, String>()
-    val footprints = HashMap<String, Footprint>()
-    val yardIds = ArrayList<String>()
+    fun yardIds(): List<String> = YardRegistry.yards().map { it.id() }.filter { it.startsWith("vs_yard:") }.sorted()
 
     fun parsePart(o: JsonObject, id: String): PartDef {
         fun d(k: String) = o.get(k)?.asDouble ?: 0.0
         val extra = LinkedHashMap<String, Double>()
         o.getAsJsonObject("extra")?.entrySet()?.forEach { extra[it.key] = it.value.asDouble }
         val item = o.get("item")?.asString ?: id
-        o.get("block")?.asString?.let { partBlocks[item] = it }
         return PartDef(item, o.get("kind")?.asString ?: error("part $id has no kind"), d("mass_kg"), d("hp"), d("power_w"),
-            d("thrust_n"), d("buoyancy_n"), d("capacity_l"), d("crew_slots").toInt(), o.get("min_age")?.asInt ?: 0, extra)
+            d("thrust_n"), d("buoyancy_n"), d("capacity_l"), d("crew_slots").toInt(), o.get("min_age")?.asInt ?: 0, extra, o.get("block")?.asString ?: "")
     }
 
     fun parseYard(o: JsonObject, id: String): YardDef {
         val fp = o.getAsJsonObject("footprint")
-        footprints[id] = Footprint(fp.get("w").asInt, fp.get("l").asInt, fp.get("h").asInt)
         val stages = o.getAsJsonArray("stages").map { e ->
             val s = e.asJsonObject
             YardDef.Stage(s.get("id").asString,
@@ -41,19 +36,20 @@ object YardData {
                 s.get("base_ticks")?.asInt ?: 100, s.get("ghost")?.asString ?: "")
         }
         val site = YardDef.Site.valueOf((o.get("site")?.asString ?: "ground").uppercase())
-        return YardDef(id, site, o.getAsJsonArray("dimensions")?.map { it.asString } ?: emptyList(),
-            o.get("result")?.asString ?: id, stages, o.get("crane_speedup")?.asDouble ?: 1.0)
+        val tier = YardDef.Tier.valueOf((o.get("tier")?.asString ?: "workshop").uppercase())
+        return YardDef(id, tier, site, o.getAsJsonArray("dimensions")?.map { it.asString } ?: emptyList(),
+            o.get("result")?.asString ?: id, stages, o.get("crane_speedup")?.asDouble ?: 1.0,
+            YardDef.Footprint(fp.get("w").asInt, fp.get("l").asInt, fp.get("h").asInt))
     }
 
     fun load(parts: Map<Identifier, JsonElement>, yards: Map<Identifier, JsonElement>) {
-        partBlocks.clear(); footprints.clear(); yardIds.clear()
         parts.forEach { (k, v) -> try { YardRegistry.register(parsePart(v.asJsonObject, k.toString())) } catch (e: Exception) { log.error("bad yard part {}: {}", k, e.toString()) } }
         yards.forEach { (k, v) -> try {
             val def = parseYard(v.asJsonObject, k.toString())
-            YardRegistry.register(def); yardIds.add(def.id())
+            YardRegistry.register(def)
             YardRegistry.rollout(def.id(), ShipYardMod.SHIP_HOOK)
         } catch (e: Exception) { log.error("bad yard {}: {}", k, e.toString()) } }
-        log.info("vs_yard: {} parts, {} yards loaded", parts.size, yardIds.size)
+        log.info("vs_yard: {} parts, {} yards loaded", parts.size, yardIds().size)
     }
 
     class Listener : SimplePreparableReloadListener<Pair<Map<Identifier, JsonElement>, Map<Identifier, JsonElement>>>() {

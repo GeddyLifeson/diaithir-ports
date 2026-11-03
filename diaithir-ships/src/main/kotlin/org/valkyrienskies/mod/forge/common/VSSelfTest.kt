@@ -51,30 +51,21 @@ object VSSelfTest {
 
     private var tournamentShip: ServerShip? = null
     private var yardShip: ServerShip? = null
+    private var yardShip2: ServerShip? = null
+    private val yardPhase = System.getProperty("vs.yardphase", "")
 
-    /** Ship yard: lays a hull on a slipway, installs every stage, launches, and checks a VS2 ship appears. */
-    private fun yardTest(server: net.minecraft.server.MinecraftServer, level: net.minecraft.server.level.ServerLevel) {
-        for (id in listOf("sloop_drydock", "motor_launch_drydock")) yardRun(level, id)
+    private fun yardPool(level: net.minecraft.server.level.ServerLevel, ox: Int) {
+        for (x in ox - 7..ox + 7) for (z in 37..63) for (y in 119..122) {
+            val wall = y == 119 || x == ox - 7 || x == ox + 7 || z == 37 || z == 63
+            level.setBlock(BlockPos(x, y, z), when { y == 122 && !(x == ox - 7 || x == ox + 7 || z == 37 || z == 63) -> Blocks.AIR.defaultBlockState(); y == 122 -> Blocks.STONE.defaultBlockState(); wall -> Blocks.STONE.defaultBlockState(); y <= 121 -> Blocks.WATER.defaultBlockState(); else -> Blocks.AIR.defaultBlockState() }, 2)
+        }
     }
 
-    private fun yardRun(level: net.minecraft.server.level.ServerLevel, yardName: String) {
-        val ox = if (yardName.startsWith("sloop")) 40 else 70
-        val ctrl = BlockPos(ox, 122, 40)
-        val def = net.diaithir.yards.YardRegistry.yard("vs_yard:" + yardName).orElse(null)
-        log.info("selftest-yard: {} parts={} def={} yards={}", yardName, net.diaithir.ships.yard.YardData.partBlocks.size, def?.id(), net.diaithir.ships.yard.YardData.yardIds)
-        if (def == null) return
-        val fp = net.diaithir.ships.yard.YardData.footprints["vs_yard:" + yardName]!!
-        for (z in 41..41 + fp.l) level.setBlock(BlockPos(ox, 121, z), Blocks.STONE.defaultBlockState(), 3)
-        level.setBlock(ctrl, net.diaithir.ships.yard.ShipYardBlocks.SLIPWAY.get().defaultBlockState(), 3)
-        val be = level.getBlockEntity(ctrl) as net.diaithir.ships.yard.SlipwayBlockEntity
-        be.chooseYard("vs_yard:" + yardName)
-        log.info("selftest-yard: siteCheck={}", be.siteCheck())
-        val keel = net.diaithir.yards.YardRegistry.part("vs_yard:keel_beam").get()
-        log.info("selftest-yard: keel without crane -> {}", be.install(keel))
-        level.setBlock(ctrl.offset(3, 0, 0), net.diaithir.ships.yard.ShipYardBlocks.STEAM_CRANE.get().defaultBlockState(), 3)
+    private fun installAll(level: net.minecraft.server.level.ServerLevel, be: net.diaithir.ships.yard.SlipwayBlockEntity, upToStage: Int) {
+        val def = be.def!!
         val b = be.build!!
         var guard = 0
-        while (!b.complete() && guard++ < 50) {
+        while (!b.complete() && b.stageIndex() < upToStage && guard++ < 50) {
             val st = def.stages()[b.stageIndex()]
             for (slot in st.slots()) repeat(slot.count()) {
                 val part = net.diaithir.ships.yard.ShipYardBlocks.PART_IDS.map { net.diaithir.yards.YardRegistry.part("vs_yard:" + it).get() }.first { it.kind() == slot.kind() }
@@ -85,13 +76,83 @@ object VSSelfTest {
             log.info("selftest-yard: stage {} progress {} hullBlocks={}", b.stageIndex(), b.stageProgress(), be.hullBlocks().size)
             be.work(100000)
         }
+    }
+
+    /** Ship yard: lays hulls on slipways, installs every stage, launches, applies the part stats, checks floating and thrust. */
+    private fun yardTest(server: net.minecraft.server.MinecraftServer, level: net.minecraft.server.level.ServerLevel) {
+        if (yardPhase == "save") {
+            net.diaithir.ships.yard.AgeLookup.override = 7
+            val ctrl = BlockPos(100, 122, 40)
+            for (z in 41..57) level.setBlock(BlockPos(100, 121, z), Blocks.STONE.defaultBlockState(), 3)
+            level.setBlock(ctrl, net.diaithir.ships.yard.ShipYardBlocks.SLIPWAY.get().defaultBlockState(), 3)
+            level.setBlock(ctrl.offset(3, 0, 0), net.diaithir.ships.yard.ShipYardBlocks.STEAM_CRANE.get().defaultBlockState(), 3)
+            val be = level.getBlockEntity(ctrl) as net.diaithir.ships.yard.SlipwayBlockEntity
+            be.chooseYard("vs_yard:sloop_drydock")
+            installAll(level, be, 3)
+            val b = be.build!!
+            val part = net.diaithir.yards.YardRegistry.part("vs_yard:hull_plank_set").get()
+            // leave stage 3 half done: one slot filled and some work in
+            be.install(net.diaithir.yards.YardRegistry.part("vs_yard:deck_plating").get())
+            be.work(10)
+            val line = "stage=" + b.stageIndex() + " ticks=" + b.progressTicks() + " installed=" + b.installed().size + " stageParts=" + b.stageParts().size + " hull=" + be.hullBlocks().size
+            java.io.File("yardsave.txt").writeText(line)
+            log.info("selftest-yard-save: {}", line)
+            server.execute { }
+            return
+        }
+        if (yardPhase == "resume") {
+            net.diaithir.ships.yard.AgeLookup.override = 7
+            val be = level.getBlockEntity(BlockPos(100, 122, 40)) as? net.diaithir.ships.yard.SlipwayBlockEntity
+            val b = be?.build
+            val line = if (b == null) "NO BUILD" else "stage=" + b.stageIndex() + " ticks=" + b.progressTicks() + " installed=" + b.installed().size + " stageParts=" + b.stageParts().size + " hull=" + be.hullBlocks().size
+            val saved = java.io.File("yardsave.txt").readText()
+            log.info("selftest-yard-resume: saved='{}' loaded='{}' match={}", saved, line, saved == line)
+            if (be != null && b != null) {
+                installAll(level, be, 99)
+                log.info("selftest-yard-resume: completed={} launch={}", b.complete(), be.launch())
+            }
+            return
+        }
+        // Age gating: Age I world cannot install a steam engine, Age VII can
+        net.diaithir.ships.yard.AgeLookup.override = 1
+        run {
+            val b = net.diaithir.yards.BuildState.start(net.diaithir.yards.YardRegistry.yard("vs_yard:sloop_drydock").get())
+            log.info("selftest-yard: age gate at Age I -> {}", b.install(net.diaithir.yards.YardRegistry.part("vs_yard:steam_engine").get(), net.diaithir.ships.yard.AgeLookup.current(server), 1e9))
+        }
+        net.diaithir.ships.yard.AgeLookup.override = 7
+        yardPool(level, 40); yardPool(level, 70)
+        yardShips.clear()
+        yardRun(level, "sloop_slipway_water", 40)
+        yardRun(level, "motor_launch_slipway_water", 70)
+        for (z in 41..57) level.setBlock(BlockPos(100, 121, z), Blocks.STONE.defaultBlockState(), 3)
+        yardRun(level, "sloop_drydock", 100)
+        yardShip = yardShips.getOrNull(0); yardShip2 = yardShips.getOrNull(1)
+    }
+
+    private val yardShips = ArrayList<ServerShip>()
+
+    private fun yardRun(level: net.minecraft.server.level.ServerLevel, yardName: String, ox: Int) {
+        val ctrl = BlockPos(ox, 122, 40)
+        val def = net.diaithir.yards.YardRegistry.yard("vs_yard:" + yardName).orElse(null)
+        log.info("selftest-yard: {} def={} yards={}", yardName, def?.id(), net.diaithir.ships.yard.YardData.yardIds())
+        if (def == null) return
+        level.setBlock(ctrl, net.diaithir.ships.yard.ShipYardBlocks.SLIPWAY.get().defaultBlockState(), 3)
+        val be = level.getBlockEntity(ctrl) as net.diaithir.ships.yard.SlipwayBlockEntity
+        be.chooseYard("vs_yard:" + yardName)
+        log.info("selftest-yard: siteCheck={}", be.siteCheck())
+        val keel = net.diaithir.yards.YardRegistry.part("vs_yard:keel_beam").get()
+        log.info("selftest-yard: keel without crane -> {}", be.install(keel))
+        level.setBlock(ctrl.offset(3, 0, 0), net.diaithir.ships.yard.ShipYardBlocks.STEAM_CRANE.get().defaultBlockState(), 3)
+        val b = be.build!!
+        installAll(level, be, 99)
         val stats = b.stats()
         log.info("selftest-yard: complete={} stats={} hullBlocks={}", b.complete(), stats, be.hullBlocks().size)
         val ships0 = shipWorldOf(level).allShips.size
         val id = be.launch()
         val s = shipWorldOf(level).allShips.firstOrNull { it.id == id }
-        yardShip = s
-        log.info("selftest-yard: launched shipId={} ships {} -> {} mass={}", id, ships0, shipWorldOf(level).allShips.size, s?.inertiaData?.mass)
+        if (s != null) yardShips.add(s)
+        val c = shipWorldOf(level).loadedShips.getById(id ?: -1)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)
+        log.info("selftest-yard: launched shipId={} ships {} -> {} blockMass={} control={}", id, ships0, shipWorldOf(level).allShips.size, s?.inertiaData?.mass, c?.let { "buoy=" + it.buoyancyN + " thrust=" + it.thrustN + " statMass=" + it.statMassKg })
     }
 
     /** Registry/recipe checks for the merged Tournament content plus a ship assembled from its blocks. */
@@ -184,6 +245,7 @@ object VSSelfTest {
             110 -> eurekaTest(server, level)
             130 -> tournamentTest(server, level)
             160 -> yardTest(server, level)
+            200 -> if (yardPhase == "save") server.halt(false)
             100 -> {
                 val blocks = HashSet<BlockPos>()
                 for (x in 0..2) for (z in 0..2) {
@@ -196,7 +258,7 @@ object VSSelfTest {
                 startY = s.transform.position.y()
                 log.info("selftest: assembled ship id={} slug={} pos={}", s.id, s.slug, s.transform.position)
             }
-            in 150..400 -> if (tick % 50 == 0) { yardShip?.let { log.info("selftest-yard: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) } ; tournamentShip?.let { t -> log.info("selftest-tournament: tick={} ship y={} {}", tick, t.transform.position.y(), shipWorldOf(level).loadedShips.getById(t.id)?.let { l -> org.valkyrienskies.tournament.ship.TournamentShips.getOrCreate(l).debugCounts() }) } ; eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) } }
+            in 150..400 -> if (tick % 50 == 0) { if (tick == 250) yardShip?.let { y -> (shipWorldOf(level).loadedShips.getById(y.id))?.eurekaControl()?.anchorsActive = 0 }; if (tick == 250) yardShip2?.let { s -> shipWorldOf(level).loadedShips.getById(s.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.manualThrottle = 1.0 }; for ((n, ys) in listOf(yardShip, yardShip2, yardShips.getOrNull(2)).withIndex()) ys?.let { log.info("selftest-yard: ship{} tick={} static={} pos={} vel={} ctl={}", n, tick, it.isStatic, it.transform.position, it.velocity, shipWorldOf(level).loadedShips.getById(it.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.let { c -> "buoyApplied=" + c.lastBuoyancyApplied + " thrustApplied=" + c.lastThrustApplied + " overlap=" + c.lastOverlap + " physMass=" + c.physMass + " physSpeed=" + c.physSpeed + " physStatic=" + c.physStatic }) } ; tournamentShip?.let { t -> log.info("selftest-tournament: tick={} ship y={} {}", tick, t.transform.position.y(), shipWorldOf(level).loadedShips.getById(t.id)?.let { l -> org.valkyrienskies.tournament.ship.TournamentShips.getOrCreate(l).debugCounts() }) } ; eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) } }
             in 140..400 -> if (tick % 40 == 0) ship?.let {
                 log.info("selftest: tick={} ship y={} (start {}) vel={} all={} loaded={} static={} mass={} chunkLoaded={} block={}", tick, it.transform.position.y(), startY, it.velocity, shipWorldOf(level).allShips.size, shipWorldOf(level).loadedShips.size, it.isStatic, it.inertiaData.mass, level.chunkSource.getChunkNow(it.chunkClaim.getCenterBlockCoordinates(level.yRange).x shr 4, it.chunkClaim.getCenterBlockCoordinates(level.yRange).z shr 4) != null, level.getBlockState(it.chunkClaim.getCenterBlockCoordinates(level.yRange).let { c -> net.minecraft.core.BlockPos(c.x, c.y, c.z) }))
             }

@@ -86,10 +86,19 @@ object ShipYardBlocks {
 
     val SLIPWAY_BE = BE_TYPES.register("slipway_controller") { BlockEntityType(::SlipwayBlockEntity, setOf(SLIPWAY.get())) }
 
+    val TABS = DeferredRegister.create(ID, Registries.CREATIVE_MODE_TAB)
+    val TAB = TABS.register("ship_yard") {
+        net.minecraft.world.item.CreativeModeTab.builder(net.minecraft.world.item.CreativeModeTab.Row.TOP, 0)
+            .title(Component.translatable("itemGroup.vs_yard.ship_yard"))
+            .icon { ItemStack(SLIPWAY.get().asItem()) }
+            .displayItems { _, out -> ITEMS.forEach { out.accept(it.get()) } }
+            .build()
+    }
+
     fun register() {
         BLOCKS.forEach { b -> ITEMS.register(b.name) { BlockItem(b.get(), DeferredRegister.itemProps().useBlockDescriptionPrefix()) } }
         PART_IDS.forEach { n -> ITEMS.register(n) { Item(DeferredRegister.itemProps()) } }
-        BLOCKS.applyAll(); ITEMS.applyAll(); BE_TYPES.applyAll()
+        BLOCKS.applyAll(); ITEMS.applyAll(); BE_TYPES.applyAll(); TABS.applyAll()
     }
 
     /** Crane in reach of a site: speed multiplier (product) and best lift. */

@@ -89,5 +89,6 @@
       "order": 5
     }
   ],
-  "crane_speedup": 1.0
+  "crane_speedup": 1.0,
+  "tier": "erecting_shop"
 }

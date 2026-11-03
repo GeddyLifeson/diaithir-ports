@@ -1,31 +1,29 @@
 package net.diaithir.ships.yard
 
 import net.diaithir.yards.PartDef
+import net.diaithir.yards.YardDef.Footprint
 import kotlin.math.max
 import kotlin.math.roundToInt
-
-/** Hull box of a yard in blocks (not part of the shared YardDef): w across, l along +z, h tall. */
-data class Footprint(val w: Int, val l: Int, val h: Int)
 
 /** A block at an offset from the slipway controller. The hull runs along +z, its centre line at dx = 0. */
 data class Cell(val dx: Int, val dy: Int, val dz: Int, val block: String)
 
 /** Deterministic hull geometry for a yard footprint; stage `ghost` ids pick which part of the hull a stage lays down. */
 object HullGen {
-    fun deckLayer(def: Footprint) = max(1, def.h - 2)
+    fun deckLayer(def: Footprint) = max(1, def.h() - 2)
 
     private fun halfWidth(def: Footprint, i: Int, j: Int): Int {
-        val t = if (def.l <= 1) 0.0 else i / (def.l - 1.0)
+        val t = if (def.l() <= 1) 0.0 else i / (def.l() - 1.0)
         val taper = if (t < 0.65) 1.0 else max(0.15, (1.0 - t) / 0.35)
         val lift = 0.5 + 0.5 * (j.toDouble() / deckLayer(def))
-        return ((def.w / 2.0) * taper * lift).roundToInt()
+        return ((def.w() / 2.0) * taper * lift).roundToInt()
     }
 
     /** Hull cells for a ghost id (keel, ribs, planking, deck); fittings are placed per installed part instead. */
     fun cells(def: Footprint, ghost: String): List<Cell> {
         val out = ArrayList<Cell>()
         val deck = deckLayer(def)
-        for (i in 0 until def.l) {
+        for (i in 0 until def.l()) {
             val z = 1 + i
             when (ghost) {
                 "keel" -> out.add(Cell(0, 0, z, "minecraft:spruce_log"))
@@ -50,12 +48,12 @@ object HullGen {
 
     /** Where the k-th installed part of a kind sits, from its numeric extras anchor_x / anchor_y / anchor_row (0..1 along the hull). */
     fun fitting(def: Footprint, part: PartDef, k: Int): Cell? {
-        val block = YardData.partBlocks[part.item()] ?: return null
+        val block = part.block().ifEmpty { return null }
         val ax = (part.extra()["anchor_x"] ?: 0.0).roundToInt()
-        val ay = (part.extra()["anchor_y"] ?: 1.0).roundToInt().coerceIn(1, def.h - 1)
+        val ay = (part.extra()["anchor_y"] ?: 1.0).roundToInt().coerceIn(1, def.h() - 1)
         val row = (part.extra()["anchor_row"] ?: 0.5)
-        val i = (row * (def.l - 1)).roundToInt() + (k / 2) * 2
+        val i = (row * (def.l() - 1)).roundToInt() + (k / 2) * 2
         val x = if (k % 2 == 0) ax else -ax
-        return Cell(x, ay, 1 + i.coerceIn(0, def.l - 1), block)
+        return Cell(x, ay, 1 + i.coerceIn(0, def.l() - 1), block)
     }
 }
