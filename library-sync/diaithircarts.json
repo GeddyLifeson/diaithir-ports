@@ -45,6 +45,11 @@
   "text": "Destination rail. A steel-speed detector rail with a coloured bar. Label a cart by using a dye on it (sneak with an empty hand to wipe the label); use a dye on the rail to choose which label it reads, an empty hand to make it read every cart. It gives a redstone signal only while a cart with a matching label is on it, so a row of them sorts a mixed line: wire each to a powered rail or junction. Age V."
  },
  {
+  "id": "diaithircarts:cart_loader",
+  "name": "Voskarmeth",
+  "text": "Cart loader. Put its back against a chest, barrel or hopper and its front toward a rail: it moves items between that container and a container cart (chest, hopper) standing on the rail, a stack every 8 ticks. Use it bare-handed to switch between loading and unloading; a redstone signal switches it off. Age V."
+ },
+ {
   "id": "diaithircarts:coupling_chain",
   "name": "Quelvarith",
   "text": "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."
