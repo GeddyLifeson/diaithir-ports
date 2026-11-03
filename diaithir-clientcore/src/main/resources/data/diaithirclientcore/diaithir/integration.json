@@ -4,6 +4,7 @@
  "features": [
   "diaithirearlywindow",
   "disableaccessibility",
+  "gpl.melodies",
   "soundmuffler",
   "soundphysics",
   "surroundings"
