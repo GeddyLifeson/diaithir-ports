@@ -6,6 +6,10 @@
     "diaithircarts:steel_powered_rail",
     "diaithircarts:fast_rail",
     "diaithircarts:fast_powered_rail",
-    "diaithircarts:station_rail"
+    "diaithircarts:station_rail",
+    "diaithircarts:cobbled_road",
+    "diaithircarts:macadam_road",
+    "diaithircarts:asphalt_road",
+    "diaithircarts:concrete_motorway"
   ]
 }

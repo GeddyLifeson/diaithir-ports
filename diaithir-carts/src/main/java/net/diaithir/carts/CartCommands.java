@@ -15,6 +15,11 @@ final class CartCommands {
                     String err = CartSelfTest.start(c.getSource());
                     c.getSource().sendSuccess(() -> Component.literal(err == null ? "Carts self test started (about 10 seconds)" : "Carts self test not started: " + err), false);
                     return err == null ? 1 : 0;
+                }))
+                .then(Commands.literal("roadtest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+                    String err = RoadTest.run(c.getSource().getServer());
+                    c.getSource().sendSuccess(() -> Component.literal(err == null ? "Road test PASS" : "Road test FAIL: " + err), false);
+                    return err == null ? 1 : 0;
                 })));
     }
 }

@@ -7,7 +7,7 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 - Age rule used (tech-tree thread owns the final call): up to 1885 = V (steam and animals), 1886 to 1945 = VI, 1946 on = VII; earlier primitives take I to III.
 - `tools/gen_vehicles.py` writes the pack (13 vehicles) from the roster and fuel table; `age_gates_vehicles.json` and `vehicle_manifest.json` beside it. Blank mass, power or tank cells use body-class defaults (design defaults, not sourced).
 - Fuel API in diaithir-units (`net.diaithir.units.fuel`): `Fuels` (registry from `fuels.csv`, 17 real fuels with MJ per L or kg, flow, range, IV consumption, upgrade-adjusted efficiency), `Engine` classes with typical efficiency, `FuelStore` (tank, jerrycan, pump and vehicle all speak it; transfer never creates or loses fuel), `SimpleStore`. SI only. Upgrade hook: `Fuels.upgradedEfficiency(base, lossCut)` takes the efficiency-module effect from diaithir-upgrades `Resolver`.
-- `roads.csv`: dirt, gravel, cobbled, macadam, asphalt, concrete motorway with Age and speed factor.
+- Roads, built: six road blocks (dirt track, gravel, cobbled, macadam, asphalt, concrete motorway) from `roads.csv` via `tools/gen_roads.py`, Age gated, with vanilla's block speed factor 1.0 to 2.0, so players, mounts, NPCs and carts move faster on better roads. `Roads.factorAt(level, pos)` is the lookup for other vehicle code. `/diaithircarts roadtest` passes on a headless server (the table, the lookup in a real world). Recipes are vanilla placeholders; Foundry/tech chains replace them. Not done: IV wheel grip on roads (IV reads its own friction), road generation in villages.
 
 ## Fueling by Age (Marlon 11-03: both, gated)
 1. Ages I to V manual: feed bags and troughs for draft animals (hay, oats), wood and coal shovelled into steam carriages, then jerrycans and barrels with a hand pump.
@@ -16,7 +16,7 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 
 ## NPC drivers and roads (plan, not built)
 - Drivers: an NPC takes the controller seat of a parked vehicle and follows a route of waypoints between stations or depots (courier depots #112 and the waypoints module are the existing hooks). Steering and throttle go through IV's own controller variables, not new physics. Ground first, trucks and trains threads reuse the same route format.
-- Roads: placeable road blocks per `roads.csv` tier with the speed factor applied to wheel friction for vehicles on them; Age gated, built with the bridges module's placement code where possible; NPC drivers prefer higher tiers. Settlement and worldgen threads decide generated road networks.
+- Road use: NPC drivers prefer higher tiers. Settlement and worldgen threads decide generated road networks.
 
 ## Not tested
 IV loading of the new pack (no headless boot with the full pack was run; the part files parse with IV's own classes, vehicle files need IV's custom point reader), consumption units (`fuelConsumption` assumed mB per tick), driving, any client rendering.
