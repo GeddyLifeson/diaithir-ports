@@ -78,6 +78,10 @@ public final class DiaithirAurorian {
     public record Data(Map<String, ToolMat> tools, Map<String, ArmorMat> armor, List<ItemSpec> items, List<BlockSpec> blocks) {}
 
     public static final Data DATA = load();
+    public static DeferredBlock<Block> CHIMNEY;
+    public static DeferredBlock<Block> CHEST;
+    public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<AurorianFurnaceBlockEntity>> FURNACE_BE;
+    private static final DeferredRegister<net.minecraft.world.level.block.entity.BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, ID);
     public static DeferredBlock<Block> PORTAL;
     public static DeferredBlock<Block> PORTAL_FRAME;
 
@@ -198,6 +202,10 @@ public final class DiaithirAurorian {
             case "fence" -> new FenceBlock(p);
             case "keyhole" -> new GateKeyholeBlock(p, Identifier.parse(b.key()), Boolean.TRUE.equals(b.lockpick()));
             case "portal" -> new AurorianPortalBlock(p.noCollision().strength(-1.0F).lightLevel(s -> 11).noLootTable().pushReaction(net.minecraft.world.level.material.PushReaction.BLOCK));
+            case "furnace" -> new AurorianFurnaceBlock(p);
+            case "chimney" -> new ChimneyBlock(p.noOcclusion());
+            case "chest" -> new SilentwoodChestBlock(p);
+            case "crafting_table" -> new SilentwoodCraftingTableBlock(p);
             case "portal_frame" -> new PortalFrameBlock(p);
             case "bars" -> new IronBarsBlock(p);
             case "log" -> new RotatedPillarBlock(p);
@@ -211,6 +219,13 @@ public final class DiaithirAurorian {
         for (BlockSpec b : DATA.blocks()) {
             DeferredBlock<Block> blk = BLOCKS.registerBlock(b.id(), p -> makeBlock(b, p), () -> blockProps(b));
             BLK.put(b.id(), blk);
+            if (b.id().equals("chimney")) {
+                CHIMNEY = blk;
+            } else if (b.id().equals("silentwood_chest")) {
+                CHEST = blk;
+            } else if (b.id().equals("aurorian_furnace")) {
+                FURNACE_BE = BLOCK_ENTITIES.register("aurorian_furnace", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>(AurorianFurnaceBlockEntity::new, blk.get()));
+            }
             if (b.id().equals("aurorian_portal")) {
                 PORTAL = blk;
             } else if (b.id().equals("aurorian_portal_frame")) {
@@ -226,6 +241,12 @@ public final class DiaithirAurorian {
             .icon(() -> new ItemStack(ALL.get("aurorian_steel_ingot").get()))
             .displayItems((params, out) -> ALL.values().forEach(i -> out.accept(i.get()))).build());
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));
+        bus.addListener(net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent.class, e -> {
+            if (CHEST != null) {
+                e.modify(net.minecraft.world.level.block.entity.BlockEntityType.CHEST, CHEST.get());
+            }
+        });
+        BLOCK_ENTITIES.register(bus);
         BLOCKS.register(bus);
         ITEMS.register(bus);
         TABS.register(bus);
