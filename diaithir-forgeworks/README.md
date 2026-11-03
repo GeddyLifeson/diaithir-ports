@@ -28,3 +28,5 @@ Recipes are data. Each machine has its own recipe type (`diaithirforgeworks:crus
 Self test: `/diaithirforgeworks selftest` (owners) places machines high above spawn, powers them through the energy capability, feeds them through the item capability and checks dust, tier speed, side config, redstone mode, the speed augment, the menu, bronze, planks and lava, then removes them. Server config `diaithirforgeworks-server.toml` has every number.
 
 Textures, models and recipes are written by `tools/gen_assets.py`. Display names are invented words; ids are English. The Age gate is `data/diaithirforgeworks/age_gate.json`.
+
+Alloy Forgery recipe set (wispforest, MIT, https://github.com/wisp-forest/alloy-forgery; its own mod has no NeoForge 26.1.2 build): the alloy furnace also smelts iron, copper and gold ore and raw ore to 3 ingots, makes 2 netherite ingots from 4 gold and 4 scrap, and 3 glass from 2 sand. Recipe data only, rewritten as `diaithirforgeworks:alloy_furnace` recipes; no upstream code or assets.

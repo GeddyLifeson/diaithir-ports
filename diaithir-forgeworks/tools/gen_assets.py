@@ -285,6 +285,12 @@ def main():
     mrec("crusher", "bone", [("minecraft:bone", 1)], ("minecraft:bone_meal", 6), None, 0, energy=800, time=80)
     mrec("alloy_furnace", "bronze", [(C, 3), (I, 1)], (f"{NS}:bronze_ingot", 4), energy=3200, time=200)
     mrec("alloy_furnace", "bronze_from_dust", [(d("copper"), 3), (d("iron"), 1)], (f"{NS}:bronze_ingot", 4), energy=2400, time=160)
+    # Alloy Forgery (wispforest, MIT) recipe set, folded into the alloy furnace: ores smelt to three ingots, netherite from gold and scrap, glass from sand
+    for metal in ("iron", "copper", "gold"):
+        mrec("alloy_furnace", f"{metal}_from_ore", [(f"#c:ores/{metal}", 1)], (f"minecraft:{metal}_ingot", 3), energy=3200, time=200)
+        mrec("alloy_furnace", f"{metal}_from_raw", [(f"#c:raw_materials/{metal}", 1)], (f"minecraft:{metal}_ingot", 3), energy=3200, time=200)
+    mrec("alloy_furnace", "netherite_from_gold_and_scrap", [("minecraft:gold_ingot", 4), ("minecraft:netherite_scrap", 4)], ("minecraft:netherite_ingot", 2), energy=9600, time=400)
+    mrec("alloy_furnace", "glass_from_sand", [("#minecraft:smelts_to_glass", 2)], ("minecraft:glass", 3), energy=1600, time=120)
     woods = [("oak", "logs"), ("spruce", "logs"), ("birch", "logs"), ("jungle", "logs"), ("acacia", "logs"), ("dark_oak", "logs"), ("cherry", "logs"),
              ("mangrove", "logs"), ("crimson", "stems"), ("warped", "stems")]
     for w, suffix in woods:
