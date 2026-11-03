@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirgear:item/workshop/grenade_launcher_barrel",
-  "layer1": "diaithirgear:item/workshop/grenade_launcher_lock",
-  "layer2": "diaithirgear:item/workshop/grenade_launcher_stock"
- }
-}

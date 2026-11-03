@@ -109,7 +109,7 @@ public final class StationEntity extends BlockEntity {
             if (parts.containsKey(s.name())) continue;
             need.add(Component.translatable("workshop.diaithirgear.slot_need", s.count(), Component.translatable("slot.diaithirgear." + s.name())));
         }
-        Component name = Component.translatable("blueprint.diaithirgear." + b.id());
+        Component name = Workshop.name(b);
         if (need.isEmpty()) return Component.translatable("workshop.diaithirgear.complete", name);
         Component list = Component.empty();
         for (int i = 0; i < need.size(); i++) list = Component.empty().append(list).append(i == 0 ? Component.empty() : Component.literal(", ")).append(need.get(i));

@@ -48,7 +48,7 @@ public final class StationBlock extends BaseEntityBlock {
             if (b == null) { say(player, "workshop.diaithirgear.unknown_schematic"); return InteractionResult.SUCCESS; }
             Workshop.learn(player, sch);
             stack.shrink(1);
-            player.sendOverlayMessage(Component.translatable("workshop.diaithirgear.learned", Component.translatable("blueprint.diaithirgear." + sch)));
+            player.sendOverlayMessage(Component.translatable("workshop.diaithirgear.learned", Workshop.name(b)));
             return InteractionResult.SUCCESS;
         }
         if (stack.has(Workshop.ASSEMBLY.get())) {

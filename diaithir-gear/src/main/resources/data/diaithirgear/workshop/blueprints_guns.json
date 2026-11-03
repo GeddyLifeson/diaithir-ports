@@ -695,5 +695,10173 @@
     "speed": 1.0
    }
   ]
+ },
+ {
+  "id": "chinese_hand_cannon",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:chinese_hand_cannon",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "arquebus",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:arquebus",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "tanegashima",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:tanegashima",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "matchlock_musket",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:matchlock_musket",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "wheellock_pistol",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:wheellock_pistol",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "brown_bess",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:brown_bess",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "charleville_musket",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:charleville_musket",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "kentucky_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:kentucky_rifle",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "baker_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:baker_rifle",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hall_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hall_rifle",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "dreyse_needle_gun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:dreyse_needle_gun",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "minie_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:minie_rifle",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "lorenz_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:lorenz_rifle",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "enfield_p53",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:enfield_p53",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "springfield_1861",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:springfield_1861",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 4.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sharps_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sharps_rifle",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "colt_dragoon",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:colt_dragoon",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "colt_navy_1851",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:colt_navy_1851",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "remington_1858",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:remington_1858",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "spencer_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:spencer_rifle",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "henry_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:henry_rifle",
+  "age": 5,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "winchester_1873",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:winchester_1873",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "winchester_1894",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:winchester_1894",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "snider_enfield",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:snider_enfield",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "martini_henry",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:martini_henry",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "chassepot",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:chassepot",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "gras_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:gras_rifle",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "berdan_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:berdan_rifle",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "rolling_block",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:rolling_block",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "springfield_1873",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:springfield_1873",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mauser_1871",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mauser_1871",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "gewehr_88",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:gewehr_88",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "kar98k",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:kar98k",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "lebel_1886",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:lebel_1886",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mas_36",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mas_36",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mannlicher_1895",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mannlicher_1895",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "carcano_m91",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:carcano_m91",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "krag_jorgensen",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:krag_jorgensen",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "schmidt_rubin_k31",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:schmidt_rubin_k31",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "smle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:smle",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m1917_enfield",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m1917_enfield",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "springfield_1903",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:springfield_1903",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m1_garand",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m1_garand",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m1_carbine",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m1_carbine",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "bar_m1918",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:bar_m1918",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mosin_nagant",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mosin_nagant",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "svt_40",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:svt_40",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sks",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sks",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "arisaka_type38",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:arisaka_type38",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "arisaka_type99",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:arisaka_type99",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ross_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ross_rifle",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "stg44",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:stg44",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fg42",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fg42",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "gewehr_43",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:gewehr_43",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mauser_c96",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mauser_c96",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "luger_p08",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:luger_p08",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "walther_p38",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:walther_p38",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "walther_ppk",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:walther_ppk",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "colt_m1911",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:colt_m1911",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "colt_saa",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:colt_saa",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "smith_wesson_model10",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:smith_wesson_model10",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "colt_1903",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:colt_1903",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_browning_hi_power",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_browning_hi_power",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_m1900",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_m1900",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "webley_mk6",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:webley_mk6",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "enfield_no2",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:enfield_no2",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "nagant_m1895",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:nagant_m1895",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "tokarev_tt33",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:tokarev_tt33",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "type14_nambu",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:type14_nambu",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "lebel_1892_revolver",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:lebel_1892_revolver",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "beretta_1934",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:beretta_1934",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "steyr_m1912",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:steyr_m1912",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "lahti_l35",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:lahti_l35",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "radom_vis35",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:radom_vis35",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mp18",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mp18",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "thompson_m1928",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:thompson_m1928",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mp40",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mp40",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ppsh41",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ppsh41",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "pps43",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:pps43",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sten_mk2",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sten_mk2",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "owen_gun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:owen_gun",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m3_grease_gun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m3_grease_gun",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "beretta_m38",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:beretta_m38",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "suomi_kp31",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:suomi_kp31",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mas_38",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mas_38",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "gatling_gun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:gatling_gun",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "maxim_gun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:maxim_gun",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "vickers_gun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:vickers_gun",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mg08",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mg08",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "browning_m1917",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:browning_m1917",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "browning_m1919",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:browning_m1919",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "browning_m2",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:browning_m2",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hotchkiss_m1914",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hotchkiss_m1914",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "lewis_gun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:lewis_gun",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "chauchat",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:chauchat",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mg34",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mg34",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mg42",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mg42",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "dp27",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:dp27",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "dshk",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:dshk",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sg43",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sg43",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "bren_gun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:bren_gun",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "type96_lmg",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:type96_lmg",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "type92_hmg",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:type92_hmg",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "madsen_lmg",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:madsen_lmg",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "breda_30",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:breda_30",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "zb26",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:zb26",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "schwarzlose_m07",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:schwarzlose_m07",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fiat_revelli_1914",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fiat_revelli_1914",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "winchester_1897",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:winchester_1897",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "winchester_1887",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:winchester_1887",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "winchester_model12",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:winchester_model12",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "browning_auto5",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:browning_auto5",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ithaca_37",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ithaca_37",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "panzerfaust_60",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:panzerfaust_60",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "panzerschreck",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:panzerschreck",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "bazooka_m1",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:bazooka_m1",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "piat",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:piat",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ptrd41",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ptrd41",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ptrs41",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ptrs41",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "boys_at_rifle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:boys_at_rifle",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "pzb39",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:pzb39",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ak47",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ak47",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m16",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m16",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ak74",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ak74",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_fal",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_fal",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_g3",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_g3",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m14",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m14",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "svd",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:svd",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "famas",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:famas",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "steyr_aug",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:steyr_aug",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "galil",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:galil",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "vz58",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:vz58",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sig_510",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sig_510",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sa80_l85",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sa80_l85",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "cetme_c",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:cetme_c",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "beretta_ar70",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:beretta_ar70",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "daewoo_k2",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:daewoo_k2",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk33",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk33",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "remington_700",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:remington_700",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "barrett_m82",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:barrett_m82",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "accuracy_aw",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:accuracy_aw",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "steyr_ssg69",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:steyr_ssg69",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m60",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m60",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "pkm",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:pkm",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "rpk",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:rpk",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "rpd",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:rpd",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_mag",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_mag",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m249_saw",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m249_saw",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "aat52",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:aat52",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk21",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk21",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "negev",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:negev",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ultimax_100",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ultimax_100",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "nsv",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:nsv",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "kpv",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:kpv",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m134_minigun",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m134_minigun",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "vz59",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:vz59",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "makarov_pm",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:makarov_pm",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "stechkin_aps",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:stechkin_aps",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "beretta_92",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:beretta_92",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "colt_python",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:colt_python",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sw_model29",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sw_model29",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "glock_17",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:glock_17",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sig_p220",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sig_p220",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sig_p226",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sig_p226",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "cz_75",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:cz_75",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_p7",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_p7",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "desert_eagle",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:desert_eagle",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "uzi",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:uzi",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mp5",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mp5",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sterling_smg",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sterling_smg",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "carl_gustaf_m45",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:carl_gustaf_m45",
+  "age": 6,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mat_49",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mat_49",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "vz61_skorpion",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:vz61_skorpion",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "beretta_m12",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:beretta_m12",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mac10",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mac10",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "pm63",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:pm63",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "remington_870",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:remington_870",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mossberg_500",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mossberg_500",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "remington_1100",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:remington_1100",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "benelli_m1",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:benelli_m1",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "franchi_spas12",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:franchi_spas12",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "rpg7",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:rpg7",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "rpg2",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:rpg2",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m72_law",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m72_law",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m20_bazooka",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m20_bazooka",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "carl_gustaf_m2",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:carl_gustaf_m2",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "at4",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:at4",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "panzerfaust_3",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:panzerfaust_3",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m79",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m79",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m203",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m203",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "gp25",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:gp25",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_g36",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_g36",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_416",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_416",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_417",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_417",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_scar_h",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_scar_h",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_f2000",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_f2000",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "iwi_tavor",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:iwi_tavor",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ak12",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ak12",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sig_sg550",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sig_sg550",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_fnc",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_fnc",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "type81",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:type81",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "qbz95",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:qbz95",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "insas",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:insas",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "beretta_arx160",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:beretta_arx160",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "cz_bren_805",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:cz_bren_805",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "qbz191",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:qbz191",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "type89",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:type89",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "type64",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:type64",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m110_sass",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m110_sass",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "l96a1",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:l96a1",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "tac50",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:tac50",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sako_trg",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sako_trg",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "steyr_hs50",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:steyr_hs50",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "pgm_hecate2",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:pgm_hecate2",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "cheytac_m200",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:cheytac_m200",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "orsis_t5000",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:orsis_t5000",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sv98",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sv98",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "vss_vintorez",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:vss_vintorez",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "barrett_mrad",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:barrett_mrad",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 5.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_mg4",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_mg4",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_mg5",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_mg5",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "kord_hmg",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:kord_hmg",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 8.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 3,
+    "litres": 0.09,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "glock_g22",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:glock_g22",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_usp",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_usp",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sig_p320",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sig_p320",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_five_seven",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_five_seven",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "walther_p99",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:walther_p99",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "springfield_xd",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:springfield_xd",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sw_mp",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sw_mp",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "yarygin_pya",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:yarygin_pya",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 1.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "fn_p90",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:fn_p90",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_mp7",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_mp7",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "kriss_vector",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:kriss_vector",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "steyr_tmp",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:steyr_tmp",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "cz_scorpion_evo3",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:cz_scorpion_evo3",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "pp19_bizon",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:pp19_bizon",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_ump",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_ump",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "sig_mpx",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:sig_mpx",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "benelli_m4",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:benelli_m4",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "saiga_12",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:saiga_12",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "aa12",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:aa12",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 3.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "rpg29",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:rpg29",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "m3_maaws",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:m3_maaws",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "rpo_a_shmel",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:rpo_a_shmel",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "mk19",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:mk19",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "ags17",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:ags17",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "milkor_mgl",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:milkor_mgl",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hk_gmg",
+  "station": "gunsmith",
+  "base": "diaithirfirearms:hk_gmg",
+  "age": 7,
+  "kind": "gun",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 1000,
+  "ref_mass_kg": 6.0,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 3,
+    "litres": 0.15000000000000002,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.06,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
  }
 ]

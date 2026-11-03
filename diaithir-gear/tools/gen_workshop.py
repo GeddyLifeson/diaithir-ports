@@ -53,11 +53,11 @@ blueprints = [
 ]
 
 # guns: slot recipe by class (barrel + lock + stock), counts scale with size; damage/spread come from barrel and lock
-SHAPE = {"pistol": (1, 1, 1), "smg": (2, 1, 1), "rifle": (2, 2, 2), "sniper": (3, 2, 2), "shotgun": (2, 2, 2), "lmg": (3, 3, 2), "launcher": (3, 2, 2), "energy": (2, 3, 1)}
+SHAPE = {"musket": (2, 1, 2), "pistol": (1, 1, 1), "smg": (2, 1, 1), "rifle": (2, 2, 2), "sniper": (3, 2, 2), "shotgun": (2, 2, 2), "lmg": (3, 3, 2), "launcher": (3, 2, 2), "energy": (2, 3, 1)}
 g = json.load(open(GUNS))
 for x in g["guns"]:
     b, l, s = SHAPE[x["class"]]
-    mass = {"pistol": 1.0, "smg": 2.5, "rifle": 3.5, "sniper": 5.5, "shotgun": 3.5, "lmg": 8.0, "launcher": 6.0, "energy": 3.0}[x["class"]]
+    mass = {"musket": 4.0, "pistol": 1.0, "smg": 2.5, "rifle": 3.5, "sniper": 5.5, "shotgun": 3.5, "lmg": 8.0, "launcher": 6.0, "energy": 3.0}[x["class"]]
     blueprints.append(bp(x["id"], "gunsmith", "diaithirfirearms:" + x["id"], AGES[x["age"].upper()], "gun", 1.0, 0.0, 1000, mass,
                          [slot("barrel", "barrel", b, 0.05 * b, 1.0, 0.5, 0.0), slot("lock", "lock", l, 0.03 * l, 0.4, 0.5, 0.5), slot("stock", "stock", s, 0.2 * s, 0.0, 0.3, 1.0)], 2))
 

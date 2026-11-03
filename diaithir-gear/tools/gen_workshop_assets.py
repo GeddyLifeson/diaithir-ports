@@ -58,8 +58,12 @@ def gun_layers():
     return {"barrel": lambda d: d.rectangle([7, 5, 15, 7], fill=(235, 235, 235, 255)),
             "lock": lambda d: d.rectangle([4, 5, 8, 9], fill=(210, 210, 210, 255)),
             "stock": lambda d: d.polygon([(0, 8), (4, 6), (5, 10), (2, 12)], fill=(200, 200, 200, 255))}
+gun_done = False
 for b in bps:
     if b["kind"] == "ranged": continue
+    if b["kind"] == "gun":
+        if gun_done: continue
+        gun_done = True; b = dict(b, id="gun")
     fn = gun_layers() if b["kind"] == "gun" else layers(b["id"])
     tex = {}; tints = []
     for i, s in enumerate(b["slots"]):
@@ -81,8 +85,9 @@ lang.update({"block.diaithirgear.smithy": "Smithy", "block.diaithirgear.gunsmith
     "workshop.diaithirgear.has_improvement": "Already has that improvement.", "workshop.diaithirgear.full": "No improvement slots left.",
     "workshop.diaithirgear.serviced": "%1$s: honing %2$s, damage %3$s, durability %4$s, %5$s kg", "workshop.diaithirgear.slot_need": "%1$s x %2$s",
     "workshop.diaithirgear.complete": "%1$s is ready. Take it with an empty hand.", "workshop.diaithirgear.missing": "%1$s needs %2$s"})
-for b in bps:
+for b in [x for x in bps if x["kind"] != "gun"]:
     lang[f"blueprint.diaithirgear.{b['id']}"] = b["id"].replace("_", " ").title()
+for b in bps:
     for s in b["slots"]: lang[f"slot.diaithirgear.{s['name']}"] = s["name"].replace("_", " ").title()
 for m in mats: lang[f"material.diaithirgear.{m['id']}"] = m["id"].replace("_", " ").title()
 json.dump(lang, open(p, "w"), indent=1, ensure_ascii=False)

@@ -1,7 +1,7 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "diaithirgear:item/workshop/smg_compact",
+  "model": "diaithirgear:item/workshop/gun",
   "tints": [
    {
     "type": "minecraft:custom_model_data",

@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirgear:item/workshop/sidearm_heavy_barrel",
-  "layer1": "diaithirgear:item/workshop/sidearm_heavy_lock",
-  "layer2": "diaithirgear:item/workshop/sidearm_heavy_stock"
- }
-}

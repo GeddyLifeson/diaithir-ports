@@ -184,11 +184,18 @@ public final class Workshop {
         List<Integer> colors = new ArrayList<>();
         for (Craft.Slot sl : bp.slots()) colors.add(mats.containsKey(sl.name()) ? mats.get(sl.name()).color() : 0xFFFFFF);
         st.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(), List.of(), colors));
-        if (!bp.kind().equals("ranged")) st.set(DataComponents.ITEM_MODEL, Identifier.fromNamespaceAndPath(DiaithirGear.ID, "workshop/" + bp.id()));
+        boolean gun = bp.kind().equals("gun");
+        if (!bp.kind().equals("ranged")) st.set(DataComponents.ITEM_MODEL, Identifier.fromNamespaceAndPath(DiaithirGear.ID, "workshop/" + (gun ? "gun" : bp.id())));
         Craft.Slot main = bp.slots().get(0);
-        st.set(DataComponents.ITEM_NAME, Component.translatable("workshop.diaithirgear.name",
+        if (!gun) st.set(DataComponents.ITEM_NAME, Component.translatable("workshop.diaithirgear.name",
                 Component.translatable("material.diaithirgear." + a.parts().getOrDefault(main.name(), "wood")),
                 Component.translatable("blueprint.diaithirgear." + bp.id())));
+    }
+
+    /** Display name of a blueprint: its own lang key, or for guns the gun item's name. */
+    public static Component name(Craft.Blueprint bp) {
+        Item base = Catalog.baseItem(bp);
+        return bp.kind().equals("gun") && base != null ? Component.translatable(base.getDescriptionId()) : Component.translatable("blueprint.diaithirgear." + bp.id());
     }
 
     // ---- honing: every hit or block broken counts as one use ---------------------------------------------------------------------
@@ -219,7 +226,7 @@ public final class Workshop {
     public void tooltip(ItemTooltipEvent e) {
         ItemStack st = e.getItemStack();
         String sch = st.get(SCHEMATIC.get());
-        if (sch != null) e.getToolTip().add(Component.translatable("blueprint.diaithirgear." + sch).withStyle(net.minecraft.ChatFormatting.GRAY));
+        if (sch != null) e.getToolTip().add((Catalog.blueprints().containsKey(sch) ? Workshop.name(Catalog.blueprints().get(sch)) : Component.literal(sch)).copy().withStyle(net.minecraft.ChatFormatting.GRAY));
         Assembly a = st.get(ASSEMBLY.get());
         if (a == null) return;
         Craft.Blueprint bp = Catalog.blueprints().get(a.blueprint());
