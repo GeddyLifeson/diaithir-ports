@@ -68017,6 +68017,16 @@ hash = "955aafb70ff6bf5b769ef5aac99281d1834d0517994bcb2e0b3d8dd06423be96"
 metafile = true
 
 [[files]]
+file = "mods/ResourcefulConfig-4.0.1.pw.toml"
+hash = "a590211cf5e676b9e1f329ef369ed31a491ef9d0a41bfdaa650499fab9833d6c"
+metafile = true
+
+[[files]]
+file = "mods/ResourcefulLib-4.0.1.pw.toml"
+hash = "76bd2eb43d3faaac3b7530e8c5f6e3476fabaa0e0026c626983eaabfe6a1819b"
+metafile = true
+
+[[files]]
 file = "mods/RootsClassic-26.1.2-1.6.7.pw.toml"
 hash = "45ee7dca127ef020fe1bd1320690f26be6086c21ce6dc661d8aba4d164dfd467"
 metafile = true
@@ -68126,6 +68136,11 @@ metafile = true
 [[files]]
 file = "mods/artifacts-neoforge-15.1.3.pw.toml"
 hash = "0ca711cf1efbbb60c1a96551add74bbe737c8f6276043adb07142f22619c59f7"
+metafile = true
+
+[[files]]
+file = "mods/athena-4.7.3.pw.toml"
+hash = "4f6b93ca71351ae1d4ea1b38f3b6ff2ef1efdafbc145de670bb6f55fb25bbdd0"
 metafile = true
 
 [[files]]
@@ -68464,7 +68479,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-libraries-neoforge-26.1.2-1.0.0.jar"
-hash = "4a7518b738e39762d5ab495b196483f32e0d1558b5277e8e8c29fd1af46ca09f"
+hash = "aa34f7a35e348179a9bc1af065b2c8cb8ad2bb3a646b9b6e82cbe9064e94db58"
 
 [[files]]
 file = "mods/diaithir-linked-storage-neoforge-26.1.2-1.0.0.jar"
@@ -69145,6 +69160,11 @@ metafile = true
 [[files]]
 file = "mods/yamlconfig-neoforge-20.1.2.pw.toml"
 hash = "ac6323f30094b8c68c18cc5261e8f65c931ace845f330bd95b389aabe770b5ea"
+metafile = true
+
+[[files]]
+file = "mods/yet_another_config_lib_v3-3.9.7_26.1-neoforge.pw.toml"
+hash = "97dbe61e58ddadd88691e5faed0f993d82dd36383265e2fc30d1eaae2b705258"
 metafile = true
 
 [[files]]
