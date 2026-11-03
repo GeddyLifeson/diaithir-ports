@@ -34,6 +34,21 @@ public final class Config {
     public static final ModConfigSpec.ConfigValue<List<? extends String>> GUARD_COMPONENTS = B
             .comment("Data component ids whose presence marks a storage cell or disk as holding items. A recipe of type diaithirbridges:empty_cell_convert refuses any input stack carrying one with content.")
             .defineListAllowEmpty("guardComponents", List.of("ae2:storage_cell_inv", "refinedstorage:storage_reference"), () -> "", o -> o instanceof String);
+    public static final ModConfigSpec.IntValue TANK_CAPACITY = B
+            .comment("Carrier tank capacity in the fuel's own unit: litres for liquids, kg for solids and batteries, quanta for magic.")
+            .defineInRange("tankCapacity", 8000, 100, 10_000_000);
+    public static final ModConfigSpec.IntValue MAGIC_BUFFER = B
+            .comment("Quanta the magic carrier holds before it stops taking reagents.")
+            .defineInRange("magicBuffer", 4000, 100, 1_000_000);
+    public static final ModConfigSpec.IntValue MAGIC_YIELD_PCT = B
+            .comment("Percent of a reagent's joules that come out as magic carrier quanta. 90 means a tenth is lost. Balance value.")
+            .defineInRange("magicYieldPct", 90, 1, 100);
+    public static final ModConfigSpec.IntValue LOCO_BUFFER = B
+            .comment("FE the locomotive charger holds.")
+            .defineInRange("locoBuffer", 2_000_000, 1000, 100_000_000);
+    public static final ModConfigSpec.IntValue LOCO_RATE = B
+            .comment("Most FE the locomotive charger takes in, or pours into one locomotive, per tick (1 FE = 1 J; 20 000 FE/t is 400 kW).")
+            .defineInRange("locoRate", 20_000, 1, 10_000_000);
     public static final ModConfigSpec SPEC = B.build();
 
     /** Value, or the default while the config is not loaded yet. */
