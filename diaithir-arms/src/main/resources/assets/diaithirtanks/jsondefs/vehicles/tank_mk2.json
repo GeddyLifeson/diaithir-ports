@@ -55,6 +55,8 @@
    "types": [
     "engine_tank"
    ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
    "defaultPart": "diaithirtanks:tank_engine"
   },
   {
@@ -123,51 +125,65 @@
    "maxPitch": 20
   }
  ],
- "collision": [
+ "collisionGroups": [
   {
-   "pos": [
-    0,
-    1.1,
-    0.0
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
    ],
-   "width": 2.6,
-   "height": 1.2
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    2.4
-   ],
-   "width": 2.6,
-   "height": 1.0
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    -2.4
-   ],
-   "width": 2.6,
-   "height": 1.0
-  },
-  {
-   "pos": [
-    -1.6,
-    0.7,
-    0.0
-   ],
-   "width": 1.0,
-   "height": 1.2
-  },
-  {
-   "pos": [
-    1.6,
-    0.7,
-    0.0
-   ],
-   "width": 1.0,
-   "height": 1.2
+   "isInterior": false,
+   "health": 800,
+   "armorThickness": 300.0,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.1,
+      0.0
+     ],
+     "width": 2.6,
+     "height": 1.2
+    },
+    {
+     "pos": [
+      0,
+      1.0,
+      2.4
+     ],
+     "width": 2.6,
+     "height": 1.0
+    },
+    {
+     "pos": [
+      0,
+      1.0,
+      -2.4
+     ],
+     "width": 2.6,
+     "height": 1.0
+    },
+    {
+     "pos": [
+      -1.6,
+      0.7,
+      0.0
+     ],
+     "width": 1.0,
+     "height": 1.2
+    },
+    {
+     "pos": [
+      1.6,
+      0.7,
+      0.0
+     ],
+     "width": 1.0,
+     "height": 1.2
+    }
+   ]
   }
  ],
  "definitions": [

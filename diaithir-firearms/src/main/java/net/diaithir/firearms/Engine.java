@@ -101,7 +101,7 @@ public final class Engine {
         if (now - s.lastShot < g.cooldown()) return;
         if (mag(stack) <= 0) {
             if (fresh) { if (ammoCount(sp, g) > 0 || sp.isCreative()) reload(sp); else say(sp, Component.translatable("diaithirfirearms.empty")); }
-            if (fresh) sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("dry_fire"), SoundSource.PLAYERS, 0.6f, 1f);
+            if (fresh) { AnimHook.gun(sp, "dry"); sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("dry_fire"), SoundSource.PLAYERS, 0.6f, 1f); }
             return;
         }
         s.lastShot = now;
@@ -132,6 +132,7 @@ public final class Engine {
         float recoil = g.recoil() * modifier(stack, "muzzle_recoil") * (sp.isShiftKeyDown() ? 0.7f : 1f);
         sp.connection.send(new ClientboundPlayerRotationPacket(0f, true, -recoil, true));
         say(sp, Component.translatable("diaithirfirearms.mag").append(": " + mag(stack) + "/" + g.mag()));
+        AnimHook.gun(sp, "fire");
         return hits;
     }
 
@@ -177,6 +178,7 @@ public final class Engine {
         x.reloadEnd = sp.level().getGameTime() + (long) (gi.gun.reload() * (under ? 1.5 : 1.0));
         x.reloadSlot = sp.getInventory().getSelectedSlot();
         say(sp, Component.translatable("diaithirfirearms.reload"));
+        AnimHook.gun(sp, "reload");
         sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("reload_start"), SoundSource.PLAYERS, 0.8f, 1f);
     }
 
