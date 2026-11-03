@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/bld/txt/landmark_747e32898e9a",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/bld/txt/landmark_747e32898e9a",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/bld/txt/delve_05ba529f2404",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/bld/txt/delve_05ba529f2404",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

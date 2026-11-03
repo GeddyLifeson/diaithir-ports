@@ -351,6 +351,7 @@ def structure_json(planet,cls,b,soil,start_pool,bio=""):
     return d
 
 def main():
+    txt_done=set()
     L=sqlite3.connect("file:"+SRC+"codex-store/library.sqlite?mode=ro",uri=True)
     C=sqlite3.connect("file:"+SRC+"library-content/content.sqlite?mode=ro",uri=True)
     P={r["planet_id"]:r for r in csv.DictReader(open(SRC+"planets/planets.tsv"),delimiter="\t")}
@@ -390,12 +391,18 @@ def main():
                 if b: bio=b.split(":")[1][len(planet)+1:] or "x"; bio_ids[(planet,bio)]=b
             else:
                 bio={"harbor":"coast","delve":"cave","bridge":"river"}.get(cls,"land")
-            if cls!="settlement" and planet=="diaithir":
+            if cls!="settlement":
                 tb=terra_build(text,cls)
                 if tb:
-                    bpath=f"lib/diaithir/b/{slug}"; cust=(tb[0],tb[1],tb[2]); terra_shapes[tb[3]]+=1
-                    w(f"data/{NS}/structure/{bpath}.nbt",building_nbt(cls,soil,2,cust))
-                    w(f"data/{NS}/worldgen/template_pool/{bpath}.json",{"name":f"{NS}:{bpath}","fallback":"minecraft:empty","elements":[{"weight":1,"element":{"element_type":"minecraft:single_pool_element","location":f"{NS}:{bpath}","projection":"rigid","processors":"minecraft:empty"}}]})
+                    terra_shapes[tb[3]]+=1
+                    if planet=="diaithir":
+                        bpath=f"lib/diaithir/b/{slug}"
+                    else:
+                        hk=hashlib.md5(repr((tb[:3],cls,soil)).encode()).hexdigest()[:12]; bpath=f"lib/bld/txt/{cls}_{hk}"
+                    if bpath not in txt_done:
+                        txt_done.add(bpath)
+                        w(f"data/{NS}/structure/{bpath}.nbt",building_nbt(cls,soil,2,(tb[0],tb[1],tb[2])))
+                        w(f"data/{NS}/worldgen/template_pool/{bpath}.json",{"name":f"{NS}:{bpath}","fallback":"minecraft:empty","elements":[{"weight":1,"element":{"element_type":"minecraft:single_pool_element","location":f"{NS}:{bpath}","projection":"rigid","processors":"minecraft:empty"}}]})
                     target=f"{NS}:{bpath}"
             hit=None; hook=None; wl=re.findall(r"[^\W\d_]+",text.lower()); nd=npcs.get(uni,{})
             for n in (3,2,1):
