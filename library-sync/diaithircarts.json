@@ -68,5 +68,10 @@
   "id": "diaithircarts:locking_rail",
   "name": "Locking Rail",
   "text": "Stops a cart that rolls onto it and keeps it there. Use it bare-handed to change mode. Latch (amber) holds the cart until the rail goes from unpowered to powered, a redstone pulse; a rail already powered when the cart arrived does not release it. Interlock (green) holds the cart until the 32 rails ahead are clear of other carts, then lets it go. Age V."
+ },
+ {
+  "id": "diaithircarts:reaper",
+  "name": "Reaper",
+  "text": "A steel cutter bar for the edge of a field. Every 2 seconds it cuts every fully grown crop in the strip in front of it (5 wide, 5 deep, at its own height), replants each at the first growth stage, and pushes the harvest into the chest, barrel, hopper or storage port behind it; with no room it spills the harvest on the ground. Use it bare-handed to turn it. Redstone switches it off. Age V."
  }
 ]
