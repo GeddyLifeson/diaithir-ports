@@ -1,1 +1,9 @@
 rootProject.name = 'diaithir-vehicles'
+
+// fuel carriers (Fuels, Engine, FuelStore) and the Ports.FUEL capability come from the sibling folders
+includeBuild('../diaithir-units') {
+    dependencySubstitution { substitute module('net.diaithir:diaithir-units') using project(':') }
+}
+includeBuild('../diaithir-bridges') {
+    dependencySubstitution { substitute module('net.diaithir:diaithir-bridges') using project(':') }
+}

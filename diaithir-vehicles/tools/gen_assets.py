@@ -13,8 +13,6 @@ for d in ("textures/block", "textures/item", "models/block", "models/item", "blo
     os.makedirs(os.path.join(A, d), exist_ok=True)
 for d in ("recipe", "loot_table/blocks"):
     os.makedirs(os.path.join(D, d), exist_ok=True)
-for d in ("tags/fluid", "tags/block/mineable"):
-    os.makedirs(os.path.join(ROOT, "data", "diaithir" if d == "tags/fluid" else "minecraft", d), exist_ok=True)
 os.makedirs(os.path.join(HERE, "..", "..", "library-sync"), exist_ok=True)
 rnd = random.Random(11)
 
@@ -67,31 +65,18 @@ def can_texture():
     return im
 
 
-tank_texture().save(os.path.join(A, "textures/block/fuel_tank.png"))
 can_texture().save(os.path.join(A, "textures/item/jerry_can.png"))
 
-wj("models/block/fuel_tank.json", {"parent": "minecraft:block/cube_all", "textures": {"all": f"{NS}:block/fuel_tank"}})
-wj("models/item/fuel_tank.json", {"parent": f"{NS}:block/fuel_tank"})
 wj("models/item/jerry_can.json", {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/jerry_can"}})
-wj("blockstates/fuel_tank.json", {"variants": {"": {"model": f"{NS}:block/fuel_tank"}}})
-for n in ("fuel_tank", "jerry_can"):
+for n in ("jerry_can",):
     wj(f"items/{n}.json", {"model": {"type": "minecraft:model", "model": f"{NS}:item/{n}"}})
-wj("lang/en_us.json", {"block.diaithirvehicles.fuel_tank": "Fuel Tank", "item.diaithirvehicles.jerry_can": "Jerry Can"})
+wj("lang/en_us.json", {"item.diaithirvehicles.jerry_can": "Jerry Can"})
 
-wj("loot_table/blocks/fuel_tank.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:fuel_tank"}],
-                                                                         "conditions": [{"condition": "minecraft:survives_explosion"}]}]}, D)
-wj("recipe/fuel_tank.json", {"type": "minecraft:crafting_shaped", "category": "misc", "key": {"I": "minecraft:iron_ingot", "B": "minecraft:bucket"},
-                              "pattern": ["III", "IBI", "III"], "result": {"id": f"{NS}:fuel_tank", "count": 1}}, D)
 wj("recipe/jerry_can.json", {"type": "minecraft:crafting_shaped", "category": "misc", "key": {"I": "minecraft:iron_ingot", "N": "minecraft:iron_nugget"},
                               "pattern": ["NI ", "I I", "III"], "result": {"id": f"{NS}:jerry_can", "count": 1}}, D)
-wj("tags/block/mineable/pickaxe.json", {"values": [f"{NS}:fuel_tank"]}, os.path.join(ROOT, "data", "minecraft"))
-wj("tags/block/needs_stone_tool.json", {"values": [f"{NS}:fuel_tank"]}, os.path.join(ROOT, "data", "minecraft"))
-# The fuel fluid tag: what the pack's fuel capability accepts. Optional entries, so it loads with no fuel mod present.
-wj("tags/fluid/fuel.json", {"values": [{"id": "#c:" + k, "required": False} for k in ("gasoline", "diesel", "biodiesel", "ethanol", "kerosene", "creosote")]}, os.path.join(ROOT, "data", "diaithir"))
-wj("age_gate.json", {"tier1": {"age": 5, "items": [f"{NS}:fuel_tank", f"{NS}:jerry_can"]}}, D)
+wj("age_gate.json", {"tier1": {"age": 5, "items": [f"{NS}:jerry_can"]}}, D)
 with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as f:
     json.dump([
-        {"id": f"{NS}:fuel_tank", "name": "Fuel Tank", "text": "Steel tank holding 8,000 L of one fuel. Fill and empty it with jerry cans or any fluid pipe. Shows up to every vehicle, ship and aircraft pump through the shared fuel capability. Age V."},
         {"id": f"{NS}:jerry_can", "name": "Jerry Can", "text": "Holds 20 L of one fuel. Use on a tank to pour in, sneak-use to draw out, right-click a vehicle to refuel it. Age V."},
     ], f, indent=1)
     f.write("\n")

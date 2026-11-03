@@ -4,6 +4,7 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.148'
 }
 
+group = 'net.diaithir'
 version = project.mod_version
 base.archivesName = 'diaithir-vehicles-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -29,6 +30,8 @@ repositories {
 }
 
 dependencies {
+    implementation 'net.diaithir:diaithir-units:1.0.0'
+    implementation 'net.diaithir:diaithir-bridges:1.0.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'com.google.code.gson:gson:2.11.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
