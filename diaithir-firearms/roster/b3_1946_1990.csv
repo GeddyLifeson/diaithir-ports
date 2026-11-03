@@ -1,0 +1,70 @@
+ak47|AK-47|USSR|1949|rifle|7_62x39|1|30|600|AK-47
+m16|M16|USA|1964|rifle|ammo_556|1|20|800|M16 rifle
+ak74|AK-74|USSR|1974|rifle|5_45x39|1|30|650|AK-74
+fn_fal|FN FAL|Belgium|1953|rifle|ammo_762|1|20|650|FN FAL
+hk_g3|Heckler & Koch G3|Germany|1959|rifle|ammo_762|1|20|500|Heckler & Koch G3
+m14|M14|USA|1959|rifle|ammo_762|1|20|700|M14 rifle
+svd|Dragunov SVD|USSR|1963|sniper|7_62x54r|0|10|30|Dragunov sniper rifle
+famas|FAMAS|France|1978|rifle|ammo_556|1|25|1000|FAMAS
+steyr_aug|Steyr AUG|Austria|1977|rifle|ammo_556|1|30|700|Steyr AUG
+galil|IMI Galil|Israel|1972|rifle|ammo_556|1|35|650|IMI Galil
+vz58|Vz. 58|Czechoslovakia|1958|rifle|7_62x39|1|30|800|Vz. 58
+sig_510|SIG Stgw 57|Switzerland|1957|rifle|7_5x53|1|24|500|Stgw 57
+sa80_l85|SA80 L85|Britain|1985|rifle|ammo_556|1|30|700|L85A1
+cetme_c|CETME Model C|Spain|1957|rifle|ammo_762|1|20|600|CETME rifle
+beretta_ar70|Beretta AR70|Italy|1972|rifle|ammo_556|1|30|650|Beretta AR70/90
+daewoo_k2|Daewoo K2|South Korea|1984|rifle|ammo_556|1|30|700|Daewoo K2
+hk33|Heckler & Koch HK33|Germany|1968|rifle|ammo_556|1|25|750|Heckler & Koch HK33
+remington_700|Remington Model 700|USA|1962|sniper|ammo_762|0|5|25|Remington Model 700
+barrett_m82|Barrett M82|USA|1982|sniper|ammo_50bmg|0|10|20|Barrett M82
+accuracy_aw|Accuracy International AW|Britain|1988|sniper|338_lapua|0|10|25|Accuracy International Arctic Warfare
+steyr_ssg69|Steyr SSG 69|Austria|1969|sniper|ammo_762|0|5|25|Steyr SSG 69
+m60|M60|USA|1957|lmg|ammo_762|1|100|550|M60 machine gun
+pkm|PK Machine Gun|USSR|1961|lmg|7_62x54r|1|100|650|PK machine gun
+rpk|RPK|USSR|1961|lmg|7_62x39|1|40|600|RPK
+rpd|RPD|USSR|1953|lmg|7_62x39|1|100|700|RPD machine gun
+fn_mag|FN MAG|Belgium|1958|lmg|ammo_762|1|100|850|FN MAG
+m249_saw|M249 SAW|USA|1984|lmg|ammo_556|1|200|850|M249 light machine gun
+aat52|AAT-52|France|1952|lmg|ammo_762|1|50|900|AA-52
+hk21|Heckler & Koch HK21|Germany|1961|lmg|ammo_762|1|100|900|Heckler & Koch HK21
+negev|IMI Negev|Israel|1985|lmg|ammo_556|1|150|1000|IMI Negev
+ultimax_100|Ultimax 100|Singapore|1982|lmg|ammo_556|1|100|500|Ultimax 100
+nsv|NSV Machine Gun|USSR|1971|lmg|12_7x108_nsv|1|50|700|NSV machine gun
+kpv|KPV Heavy Machine Gun|USSR|1949|lmg|14_5x114_kpv|1|40|600|KPV heavy machine gun
+m134_minigun|M134 Minigun|USA|1962|lmg|ammo_762|1|4000|3000|M134 Minigun
+vz59|Vz. 59|Czechoslovakia|1959|lmg|7_62x54r|1|50|750|Vz. 59
+makarov_pm|Makarov PM|USSR|1951|pistol|9x18|0|8|40|Makarov pistol
+stechkin_aps|Stechkin APS|USSR|1951|pistol|9x18|1|20|750|Stechkin automatic pistol
+beretta_92|Beretta 92|Italy|1976|pistol|ammo_9mm|0|15|45|Beretta 92
+colt_python|Colt Python|USA|1955|pistol|ammo_magnum|0|6|25|Colt Python
+sw_model29|Smith & Wesson Model 29|USA|1955|pistol|44_magnum|0|6|20|Smith & Wesson Model 29
+glock_17|Glock 17|Austria|1982|pistol|ammo_9mm|0|17|50|Glock 17
+sig_p220|SIG Sauer P220|Switzerland|1975|pistol|ammo_45|0|8|40|SIG Sauer P220
+sig_p226|SIG Sauer P226|Switzerland|1983|pistol|ammo_9mm|0|15|45|SIG Sauer P226
+cz_75|CZ 75|Czechoslovakia|1975|pistol|ammo_9mm|0|15|45|CZ 75
+hk_p7|Heckler & Koch P7|Germany|1979|pistol|ammo_9mm|0|8|40|Heckler & Koch P7
+desert_eagle|IMI Desert Eagle|Israel|1983|pistol|50_ae|0|7|30|IMI Desert Eagle
+uzi|Uzi|Israel|1954|smg|ammo_9mm|1|32|600|Uzi
+mp5|Heckler & Koch MP5|Germany|1966|smg|ammo_9mm|1|30|800|Heckler & Koch MP5
+sterling_smg|Sterling SMG|Britain|1953|smg|ammo_9mm|1|34|550|Sterling submachine gun
+carl_gustaf_m45|Carl Gustaf m/45|Sweden|1945|smg|ammo_9mm|1|36|600|Carl Gustaf m/45
+mat_49|MAT-49|France|1949|smg|ammo_9mm|1|32|600|MAT-49
+vz61_skorpion|Skorpion vz. 61|Czechoslovakia|1961|smg|32_acp|1|20|850|Škorpion vz. 61
+beretta_m12|Beretta Model 12|Italy|1959|smg|ammo_9mm|1|32|550|Beretta Model 12
+mac10|Ingram MAC-10|USA|1970|smg|ammo_45|1|30|1100|MAC-10
+pm63|PM-63|Poland|1965|smg|9x18|1|25|650|PM-63
+remington_870|Remington 870|USA|1950|shotgun|ammo_12g|0|5|45|Remington Model 870
+mossberg_500|Mossberg 500|USA|1961|shotgun|ammo_12g|0|6|45|Mossberg 500
+remington_1100|Remington 1100|USA|1963|shotgun|ammo_12g|0|4|60|Remington Model 1100
+benelli_m1|Benelli M1 Super 90|Italy|1985|shotgun|ammo_12g|0|7|60|Benelli M1
+franchi_spas12|Franchi SPAS-12|Italy|1979|shotgun|ammo_12g|0|8|55|Franchi SPAS-12
+rpg7|RPG-7|USSR|1961|launcher|rocket|0|1|4|RPG-7
+rpg2|RPG-2|USSR|1949|launcher|rocket|0|1|4|RPG-2
+m72_law|M72 LAW|USA|1963|launcher|rocket|0|1|3|M72 LAW
+m20_bazooka|M20 Super Bazooka|USA|1950|launcher|rocket|0|1|5|M20 Super Bazooka
+carl_gustaf_m2|Carl Gustaf 84 mm Recoilless Rifle|Sweden|1948|launcher|rocket|0|1|4|Carl Gustaf 8.4 cm recoilless rifle
+at4|AT4|Sweden|1984|launcher|rocket|0|1|3|AT4
+panzerfaust_3|Panzerfaust 3|Germany|1978|launcher|rocket|0|1|3|Panzerfaust 3
+m79|M79 Grenade Launcher|USA|1961|launcher|grenade_40mm|0|1|6|M79 grenade launcher
+m203|M203 Grenade Launcher|USA|1969|launcher|grenade_40mm|0|1|6|M203 grenade launcher
+gp25|GP-25|USSR|1978|launcher|grenade_40mm|0|1|6|GP-25

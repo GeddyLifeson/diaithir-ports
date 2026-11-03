@@ -1,0 +1,57 @@
+hk_g36|Heckler & Koch G36|Germany|1995|rifle|ammo_556|1|30|750|Heckler & Koch G36
+hk_416|Heckler & Koch HK416|Germany|2005|rifle|ammo_556|1|30|850|Heckler & Koch HK416
+hk_417|Heckler & Koch HK417|Germany|2005|rifle|ammo_762|1|20|600|Heckler & Koch HK417
+fn_scar_h|FN SCAR|Belgium|2009|rifle|ammo_762|1|20|600|FN SCAR
+fn_f2000|FN F2000|Belgium|2001|rifle|ammo_556|1|30|850|FN F2000
+iwi_tavor|IWI Tavor TAR-21|Israel|2001|rifle|ammo_556|1|30|750|IWI Tavor
+ak12|AK-12|Russia|2012|rifle|5_45x39|1|30|700|AK-12
+sig_sg550|SIG SG 550|Switzerland|1986|rifle|ammo_556|1|20|700|SIG SG 550
+fn_fnc|FN FNC|Belgium|1979|rifle|ammo_556|1|30|700|FN FNC
+type81|Type 81|China|1983|rifle|7_62x39|1|30|720|Type 81 assault rifle
+qbz95|QBZ-95|China|1997|rifle|5_8x42|1|30|650|QBZ-95
+insas|INSAS|India|1997|rifle|ammo_556|1|20|650|INSAS rifle
+beretta_arx160|Beretta ARX-160|Italy|2008|rifle|ammo_556|1|30|650|Beretta ARX160
+cz_bren_805|CZ 805 BREN|Czech Republic|2011|rifle|ammo_556|1|30|800|CZ 805 BREN
+qbz191|QBZ-191|China|2019|rifle|5_8x42|1|30|700|QBZ-191
+type89|Type 89|Japan|1989|rifle|ammo_556|1|30|750|Howa Type 89
+type64|Howa Type 64|Japan|1964|rifle|ammo_762|1|20|500|Howa Type 64
+m110_sass|M110 SASS|USA|2008|sniper|ammo_762|0|20|40|M110 Semi-Automatic Sniper System
+l96a1|Accuracy International L96A1|Britain|1985|sniper|ammo_762|0|10|25|Accuracy International L96A1
+tac50|McMillan TAC-50|USA|1989|sniper|ammo_50bmg|0|5|15|McMillan TAC-50
+sako_trg|Sako TRG|Finland|1990|sniper|338_lapua|0|10|25|Sako TRG
+steyr_hs50|Steyr HS .50|Austria|1990|sniper|ammo_50bmg|0|5|15|Steyr HS .50
+pgm_hecate2|PGM Hecate II|France|1993|sniper|ammo_50bmg|0|7|20|PGM Hécate II
+cheytac_m200|CheyTac Intervention|USA|2001|sniper|408_cheytac|0|7|20|CheyTac Intervention
+orsis_t5000|Orsis T-5000|Russia|2011|sniper|338_lapua|0|5|20|Orsis T-5000
+sv98|SV-98|Russia|2003|sniper|7_62x54r|0|10|25|SV-98
+vss_vintorez|VSS Vintorez|USSR|1987|sniper|9x39|1|10|900|VSS Vintorez
+barrett_mrad|Barrett MRAD|USA|2013|sniper|338_lapua|0|10|25|Barrett MRAD
+hk_mg4|Heckler & Koch MG4|Germany|2004|lmg|ammo_556|1|200|850|Heckler & Koch MG4
+hk_mg5|Heckler & Koch MG5|Germany|2015|lmg|ammo_762|1|100|700|Heckler & Koch MG5
+kord_hmg|Kord Machine Gun|Russia|1998|lmg|12_7x108|1|50|650|Kord machine gun
+glock_g22|Glock 22|Austria|1990|pistol|40_sw|0|15|45|Glock 22
+hk_usp|Heckler & Koch USP|Germany|1993|pistol|ammo_9mm|0|15|45|Heckler & Koch USP
+sig_p320|SIG Sauer P320|USA|2014|pistol|ammo_9mm|0|17|45|SIG Sauer P320
+fn_five_seven|FN Five-seveN|Belgium|1998|pistol|5_7x28|0|20|45|FN Five-seven
+walther_p99|Walther P99|Germany|1997|pistol|ammo_9mm|0|16|45|Walther P99
+springfield_xd|Springfield XD|Croatia|2001|pistol|ammo_9mm|0|16|45|Springfield Armory XD
+sw_mp|Smith & Wesson M&P|USA|2005|pistol|ammo_9mm|0|17|45|Smith & Wesson M&P
+yarygin_pya|Yarygin PYa|Russia|2003|pistol|ammo_9mm|0|17|45|Yarygin PYa
+fn_p90|FN P90|Belgium|1990|smg|5_7x28|1|50|900|FN P90
+hk_mp7|Heckler & Koch MP7|Germany|2001|smg|4_6x30|1|40|950|Heckler & Koch MP7
+kriss_vector|Kriss Vector|USA|2009|smg|ammo_45|1|25|1200|KRISS Vector
+steyr_tmp|Steyr TMP|Austria|1992|smg|ammo_9mm|1|30|900|Steyr TMP
+cz_scorpion_evo3|CZ Scorpion EVO 3|Czech Republic|2009|smg|ammo_9mm|1|30|1100|CZ Scorpion EVO 3
+pp19_bizon|PP-19 Bizon|Russia|1993|smg|9x18|1|64|700|PP-19 Bizon
+hk_ump|Heckler & Koch UMP|Germany|1999|smg|ammo_45|1|25|600|Heckler & Koch UMP
+sig_mpx|SIG MPX|USA|2013|smg|ammo_9mm|1|30|850|SIG MPX
+benelli_m4|Benelli M4 Super 90|Italy|1998|shotgun|ammo_12g|0|7|60|Benelli M4
+saiga_12|Saiga-12|Russia|1997|shotgun|ammo_12g|1|8|200|Saiga-12
+aa12|Auto Assault-12|USA|2005|shotgun|ammo_12g|1|20|300|Auto Assault-12
+rpg29|RPG-29|Russia|1989|launcher|rocket|0|1|3|RPG-29
+m3_maaws|M3 MAAWS|Sweden|1991|launcher|rocket|0|1|4|Carl Gustaf 8.4 cm recoilless rifle
+rpo_a_shmel|RPO-A Shmel|USSR|1988|launcher|rocket|0|1|3|RPO-A Shmel
+mk19|Mk 19 Grenade Launcher|USA|1968|launcher|40x53_grenade|1|32|350|Mk 19 grenade launcher
+ags17|AGS-17|USSR|1971|launcher|30x29_grenade|1|29|400|AGS-17
+milkor_mgl|Milkor MGL|South Africa|1983|launcher|grenade_40mm|0|6|60|Milkor MGL
+hk_gmg|Heckler & Koch GMG|Germany|2000|launcher|40x53_grenade|1|32|350|Heckler & Koch GMG
