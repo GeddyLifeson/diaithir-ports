@@ -1,0 +1,10 @@
+Create: Propulsion fold (diaithir-ships/keelwright)
+
+Part statistics and the fuel table are folded from Create: Propulsion by Sergey Feduk / DeltaSF
+(https://github.com/chj990707/Create-Propulsion, commit c74591d16b05d5baa6b2f7dde0518d8c42a1be3e), MIT licence
+(LICENSE-Propulsion-MIT, upstream text). Copyright (c) 2025 Sergey Feduk.
+
+Read from upstream: thruster/ion peak thrust (600 kN) and the rule that they match, propeller thrust ceiling
+(20 kN), redstone magnet range (32 m), thruster_fuels data (thrust and consumption multipliers per fuel).
+No upstream code, models, textures or sounds are copied. Numbers on the new parts are tuned to the Keelwright
+balance (thrust/mass ranges in parts.json), keeping the relations from upstream.
