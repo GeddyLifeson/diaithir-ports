@@ -99,7 +99,7 @@ public final class EconomyFeature {
         EconQuests.World w = world();
         System.out.println("[econselftest] weeks=" + st.week + " cultures=" + st.cur.size() + " claims=" + EconWorld.claims().size() + " stockTowns=" + st.market.stock.size()
             + " ctxOk=" + (EconWorld.ctx("wilds", null).scale() > 0) + " questsOn=" + w.companiesOn());
-        for (var e : st.cur.entrySet()) System.out.println("[econselftest] " + e.getKey() + " money=" + Math.round(e.getValue().money) + " ref=" + Math.round(e.getValue().ref) + " treasury=" + Math.round(e.getValue().treasury));
+        for (var e : st.cur.entrySet()) System.out.println("[econselftest] " + e.getKey() + " money=" + e.getValue().money + " ref=" + e.getValue().ref + " treasury=" + e.getValue().treasury + " tb=" + e.getValue().tb + " taxMul=" + e.getValue().taxMul);
         return (int) st.week;
     }
 
