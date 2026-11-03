@@ -42,6 +42,11 @@ class EconDataTest {
             EconBonds.week(st, "x");
         }
         assertTrue(Double.isFinite(co.money));
+        // the state survives a save and a load: the same money, lines, banks, bonds and stock
+        EconState back = EconJson.fromJson(EconJson.toJson(st));
+        assertEquals(EconJson.toJson(st), EconJson.toJson(back));
+        assertEquals(co.money, back.company.get("k").money);
+        assertEquals(st.market.stock.get("a").get("minecraft:wheat"), back.market.stock.get("a").get("minecraft:wheat"));
         assertTrue(line.units > 0, "the line hauled goods: " + line.units);
         for (var region : st.market.stock.values()) for (double v : region.values()) assertTrue(Double.isFinite(v) && v >= 0);
     }
