@@ -1,8 +1,5 @@
 package net.diaithir.ctm;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -19,7 +16,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(DiaithirCtm.ID)
 public final class DiaithirCtm {
     public static final String ID = "diaithirctm";
-    public static final TagKey<Block> CONNECT = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ID, "connect"));
 
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);

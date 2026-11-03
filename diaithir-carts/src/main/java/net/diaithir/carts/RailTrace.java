@@ -43,10 +43,14 @@ final class RailTrace {
     }
 
     /** The rails reached from start by following their connections, at most max of them, start included. */
-    static List<BlockPos> trace(Level level, BlockPos start, int max) {
+    static List<BlockPos> trace(Level level, BlockPos start, int max) { return trace(level, start, max, null); }
+
+    /** As above, but never walks through {@code avoid}: follows the track away from it. */
+    static List<BlockPos> trace(Level level, BlockPos start, int max, BlockPos avoid) {
         List<BlockPos> out = new ArrayList<>();
         if (!isRail(level, start)) return out;
         Set<BlockPos> seen = new HashSet<>();
+        if (avoid != null) seen.add(avoid);
         ArrayDeque<BlockPos> todo = new ArrayDeque<>();
         todo.add(start);
         seen.add(start);

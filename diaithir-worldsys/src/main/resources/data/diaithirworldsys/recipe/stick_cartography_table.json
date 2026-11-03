@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:stick",
+  "minecraft:cartography_table"
+ ],
+ "result": {
+  "id": "diaithirworldsys:crafting_on_a_stick_cartography_table"
+ }
+}

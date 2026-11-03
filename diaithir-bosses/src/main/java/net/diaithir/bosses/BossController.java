@@ -381,6 +381,11 @@ public final class BossController {
         last = current;
         current = null;
         airborne = 0;
+        anim("", 0);
+    }
+
+    private void anim(String type, int phase) {
+        if (mob instanceof PlanetBoss pb) pb.playAnim(type, phase);
     }
 
     /** Starts an attack by name (also used by the self test to run every attack of a boss). */
@@ -389,6 +394,7 @@ public final class BossController {
         if (a == null) return;
         current = name;
         telegraph = Math.max(1, a.telegraph);
+        anim(a.type, 1);
         hit.clear();
         marks.clear();
         LivingEntity t = mob.getTarget();
@@ -460,6 +466,7 @@ public final class BossController {
 
     private void fire(Data.Attack a, List<ServerPlayer> ps) {
         fired.merge(a.type, 1, Integer::sum);
+        anim(a.type, 2);
         switch (a.type) {
             case "slam", "wave" -> {
                 impact(a, ps, a.radius, a.damage, a.knockback);

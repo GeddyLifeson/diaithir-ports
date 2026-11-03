@@ -22,7 +22,25 @@ public final class Upgrades {
     public static final AttachmentType<SlotData> SLOTS =
             AttachmentType.builder(() -> SlotData.EMPTY).serialize(SlotData.CODEC).build();
 
+    public static final net.neoforged.neoforge.registries.DeferredRegister<net.minecraft.world.inventory.MenuType<?>> MENUS =
+            net.neoforged.neoforge.registries.DeferredRegister.create(net.minecraft.core.registries.Registries.MENU, DiaithirUpgrades.ID);
+    public static final net.neoforged.neoforge.registries.DeferredHolder<net.minecraft.world.inventory.MenuType<?>, net.minecraft.world.inventory.MenuType<UpgradeMenu>> MENU =
+            MENUS.register("modules", () -> net.neoforged.neoforge.common.extensions.IMenuTypeExtension.create(UpgradeMenu::new));
+
     private Upgrades() {}
+
+    /** Open the module screen for a machine. Server side only. */
+    public static boolean openMenu(net.minecraft.server.level.ServerPlayer player, BlockEntity be) {
+        var host = host(be);
+        if (host.isEmpty()) return false;
+        int n = host.get().slots().target().slots();
+        if (n <= 0) return false;
+        player.openMenu(new net.minecraft.world.SimpleMenuProvider(
+                (id, inv, pl) -> new UpgradeMenu(id, inv, be.getBlockPos(), n, be),
+                net.minecraft.network.chat.Component.literal("Modules")),
+                buf -> { buf.writeBlockPos(be.getBlockPos()); buf.writeVarInt(n); });
+        return true;
+    }
 
     public static Optional<Target> targetOf(BlockEntity be) {
         String id = BuiltInRegistries.BLOCK.getKey(be.getBlockState().getBlock()).toString();

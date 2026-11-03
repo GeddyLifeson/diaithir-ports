@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/wall_inventory",
  "textures": {
-  "wall": "minecraft:block/stone"
+  "wall": "undergarden:block/polished_sediment_stone_wall"
  }
 }

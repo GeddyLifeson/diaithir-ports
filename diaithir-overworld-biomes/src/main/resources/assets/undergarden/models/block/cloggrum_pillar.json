@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/cube_column",
  "textures": {
-  "end": "minecraft:block/iron_block",
-  "side": "minecraft:block/iron_block"
+  "end": "undergarden:block/cloggrum_pillar",
+  "side": "undergarden:block/cloggrum_pillar"
  }
 }

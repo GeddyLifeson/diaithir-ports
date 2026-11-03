@@ -97,8 +97,9 @@ public final class Villagercare2Feature {
         return d == null ? new CompoundTag() : d.copyTag();
     }
 
-    public static ItemStack babyStack() {
-        Villager v = new Villager(EntityType.VILLAGER, null);
+    public static ItemStack babyStack(ServerLevel level) {
+        Villager v = EntityType.VILLAGER.create(level, EntitySpawnReason.BREEDING);
+        if (v == null) return ItemStack.EMPTY;
         v.setAge(-24000);
         return pack(v);
     }
@@ -220,8 +221,8 @@ public final class Villagercare2Feature {
 
     /** Shared block entity holding villagers, breeder fuel and timers. */
     public static final class VillagerBE extends net.minecraft.world.level.block.entity.BlockEntity {
-        final java.util.List<CompoundTag> villagers = new java.util.ArrayList<>();
-        int food;
+        public final java.util.List<CompoundTag> villagers = new java.util.ArrayList<>();
+        public int food;
         int timer;
         long lastRestock;
 
@@ -281,13 +282,13 @@ public final class Villagercare2Feature {
             return false;
         }
 
-        void tick(ServerLevel level, int kind) {
+        public void tick(ServerLevel level, int kind) {
             if (kind == 1) {
                 if (villagers.size() < 2 || food < 12) return;
                 if (++timer < 6000) return;
                 timer = 0;
                 food -= 12;
-                push(level, babyStack());
+                push(level, babyStack(level));
                 setChanged();
             } else if (kind == 2) {
                 if (villagers.isEmpty()) return;

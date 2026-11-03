@@ -1,0 +1,1310 @@
+{
+ "ages": [
+  "ancient",
+  "ailean",
+  "holy",
+  "sundering",
+  "strangers",
+  "kingdom",
+  "dubhan",
+  "future"
+ ],
+ "stations": {
+  "casing": "casting_bay",
+  "charge": "powder_works",
+  "filler": "filler_station",
+  "fuze": "fuze_bench",
+  "guidance": "guidance_bench",
+  "motor": "casting_bay",
+  "round": "assembly_table"
+ },
+ "parts": [
+  {
+   "id": "stone_shot_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "ancient"
+  },
+  {
+   "id": "stone_shot_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "ancient"
+  },
+  {
+   "id": "iron_ball_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "ailean"
+  },
+  {
+   "id": "iron_ball_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "ailean"
+  },
+  {
+   "id": "chain_shot_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "holy"
+  },
+  {
+   "id": "chain_shot_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "holy"
+  },
+  {
+   "id": "fused_shell_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "sundering"
+  },
+  {
+   "id": "fused_shell_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "sundering"
+  },
+  {
+   "id": "fused_shell_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "sundering"
+  },
+  {
+   "id": "fused_shell_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "sundering"
+  },
+  {
+   "id": "steel_shell_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "strangers"
+  },
+  {
+   "id": "steel_shell_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "strangers"
+  },
+  {
+   "id": "steel_shell_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "strangers"
+  },
+  {
+   "id": "steel_shell_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "strangers"
+  },
+  {
+   "id": "he_shell_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "he_shell_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "kingdom"
+  },
+  {
+   "id": "he_shell_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "kingdom"
+  },
+  {
+   "id": "he_shell_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "kingdom"
+  },
+  {
+   "id": "guided_shell_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "dubhan"
+  },
+  {
+   "id": "guided_shell_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "dubhan"
+  },
+  {
+   "id": "guided_shell_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "dubhan"
+  },
+  {
+   "id": "guided_shell_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "dubhan"
+  },
+  {
+   "id": "pitch_arrow_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "ancient"
+  },
+  {
+   "id": "pitch_arrow_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "ancient"
+  },
+  {
+   "id": "greek_fire_pot_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "ailean"
+  },
+  {
+   "id": "greek_fire_pot_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "ailean"
+  },
+  {
+   "id": "fire_shell_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "sundering"
+  },
+  {
+   "id": "fire_shell_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "sundering"
+  },
+  {
+   "id": "cluster_incendiary_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "cluster_incendiary_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "kingdom"
+  },
+  {
+   "id": "fire_arrow_rocket_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "ancient"
+  },
+  {
+   "id": "fire_arrow_rocket_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "ancient"
+  },
+  {
+   "id": "fire_arrow_rocket_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "ancient"
+  },
+  {
+   "id": "fire_arrow_rocket_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "ancient"
+  },
+  {
+   "id": "war_rocket_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "ailean"
+  },
+  {
+   "id": "war_rocket_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "ailean"
+  },
+  {
+   "id": "war_rocket_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "ailean"
+  },
+  {
+   "id": "war_rocket_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "ailean"
+  },
+  {
+   "id": "spin_rocket_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "strangers"
+  },
+  {
+   "id": "spin_rocket_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "strangers"
+  },
+  {
+   "id": "spin_rocket_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "strangers"
+  },
+  {
+   "id": "spin_rocket_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "strangers"
+  },
+  {
+   "id": "rocket_pod_round_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "rocket_pod_round_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "kingdom"
+  },
+  {
+   "id": "rocket_pod_round_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "kingdom"
+  },
+  {
+   "id": "rocket_pod_round_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "guided_rocket_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "dubhan"
+  },
+  {
+   "id": "guided_rocket_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "dubhan"
+  },
+  {
+   "id": "guided_rocket_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "dubhan"
+  },
+  {
+   "id": "guided_rocket_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "dubhan"
+  },
+  {
+   "id": "thrown_pot_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "ancient"
+  },
+  {
+   "id": "thrown_pot_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "ancient"
+  },
+  {
+   "id": "thrown_pot_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "ancient"
+  },
+  {
+   "id": "powder_keg_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "ailean"
+  },
+  {
+   "id": "powder_keg_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "ailean"
+  },
+  {
+   "id": "powder_keg_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "ailean"
+  },
+  {
+   "id": "aerial_bomb_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "strangers"
+  },
+  {
+   "id": "aerial_bomb_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "strangers"
+  },
+  {
+   "id": "aerial_bomb_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "strangers"
+  },
+  {
+   "id": "cluster_bomb_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "cluster_bomb_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "kingdom"
+  },
+  {
+   "id": "cluster_bomb_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "kingdom"
+  },
+  {
+   "id": "smart_bomb_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "dubhan"
+  },
+  {
+   "id": "smart_bomb_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "dubhan"
+  },
+  {
+   "id": "smart_bomb_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "dubhan"
+  },
+  {
+   "id": "spar_torpedo_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "sundering"
+  },
+  {
+   "id": "spar_torpedo_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "sundering"
+  },
+  {
+   "id": "spar_torpedo_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "sundering"
+  },
+  {
+   "id": "spar_torpedo_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "sundering"
+  },
+  {
+   "id": "spar_torpedo_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "sundering"
+  },
+  {
+   "id": "self_propelled_torpedo_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "strangers"
+  },
+  {
+   "id": "self_propelled_torpedo_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "strangers"
+  },
+  {
+   "id": "self_propelled_torpedo_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "strangers"
+  },
+  {
+   "id": "self_propelled_torpedo_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "strangers"
+  },
+  {
+   "id": "self_propelled_torpedo_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "strangers"
+  },
+  {
+   "id": "wire_guided_torpedo_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "wire_guided_torpedo_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "kingdom"
+  },
+  {
+   "id": "wire_guided_torpedo_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "kingdom"
+  },
+  {
+   "id": "wire_guided_torpedo_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "kingdom"
+  },
+  {
+   "id": "wire_guided_torpedo_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "homing_torpedo_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "dubhan"
+  },
+  {
+   "id": "homing_torpedo_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "dubhan"
+  },
+  {
+   "id": "homing_torpedo_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "dubhan"
+  },
+  {
+   "id": "homing_torpedo_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "dubhan"
+  },
+  {
+   "id": "homing_torpedo_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "dubhan"
+  },
+  {
+   "id": "early_guided_rocket_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "sundering"
+  },
+  {
+   "id": "early_guided_rocket_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "sundering"
+  },
+  {
+   "id": "early_guided_rocket_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "sundering"
+  },
+  {
+   "id": "early_guided_rocket_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "sundering"
+  },
+  {
+   "id": "early_guided_rocket_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "sundering"
+  },
+  {
+   "id": "early_guided_rocket_guidance",
+   "kind": "guidance",
+   "station": "guidance_bench",
+   "age": "sundering"
+  },
+  {
+   "id": "radio_missile_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "strangers"
+  },
+  {
+   "id": "radio_missile_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "strangers"
+  },
+  {
+   "id": "radio_missile_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "strangers"
+  },
+  {
+   "id": "radio_missile_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "strangers"
+  },
+  {
+   "id": "radio_missile_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "strangers"
+  },
+  {
+   "id": "radio_missile_guidance",
+   "kind": "guidance",
+   "station": "guidance_bench",
+   "age": "strangers"
+  },
+  {
+   "id": "heat_seeker_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "heat_seeker_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "kingdom"
+  },
+  {
+   "id": "heat_seeker_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "kingdom"
+  },
+  {
+   "id": "heat_seeker_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "kingdom"
+  },
+  {
+   "id": "heat_seeker_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "kingdom"
+  },
+  {
+   "id": "heat_seeker_guidance",
+   "kind": "guidance",
+   "station": "guidance_bench",
+   "age": "kingdom"
+  },
+  {
+   "id": "radar_missile_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "dubhan"
+  },
+  {
+   "id": "radar_missile_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "dubhan"
+  },
+  {
+   "id": "radar_missile_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "dubhan"
+  },
+  {
+   "id": "radar_missile_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "dubhan"
+  },
+  {
+   "id": "radar_missile_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "dubhan"
+  },
+  {
+   "id": "radar_missile_guidance",
+   "kind": "guidance",
+   "station": "guidance_bench",
+   "age": "dubhan"
+  },
+  {
+   "id": "shard_missile_casing",
+   "kind": "casing",
+   "station": "casting_bay",
+   "age": "future"
+  },
+  {
+   "id": "shard_missile_charge",
+   "kind": "charge",
+   "station": "powder_works",
+   "age": "future"
+  },
+  {
+   "id": "shard_missile_filler",
+   "kind": "filler",
+   "station": "filler_station",
+   "age": "future"
+  },
+  {
+   "id": "shard_missile_fuze",
+   "kind": "fuze",
+   "station": "fuze_bench",
+   "age": "future"
+  },
+  {
+   "id": "shard_missile_motor",
+   "kind": "motor",
+   "station": "casting_bay",
+   "age": "future"
+  },
+  {
+   "id": "shard_missile_guidance",
+   "kind": "guidance",
+   "station": "guidance_bench",
+   "age": "future"
+  }
+ ],
+ "rounds": [
+  {
+   "id": "stone_shot",
+   "line": "shot",
+   "age": "ancient",
+   "mass_kg": 8,
+   "blast_J": 2000.0,
+   "range_m": 120,
+   "guidance": 0,
+   "parts": [
+    "stone_shot_casing",
+    "stone_shot_charge"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/shot",
+    "c:ammo/shot/ancient"
+   ]
+  },
+  {
+   "id": "iron_ball",
+   "line": "shot",
+   "age": "ailean",
+   "mass_kg": 10,
+   "blast_J": 6000.0,
+   "range_m": 200,
+   "guidance": 0,
+   "parts": [
+    "iron_ball_casing",
+    "iron_ball_charge"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/shot",
+    "c:ammo/shot/ailean"
+   ]
+  },
+  {
+   "id": "chain_shot",
+   "line": "shot",
+   "age": "holy",
+   "mass_kg": 11,
+   "blast_J": 7000.0,
+   "range_m": 220,
+   "guidance": 0,
+   "parts": [
+    "chain_shot_casing",
+    "chain_shot_charge"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/shot",
+    "c:ammo/shot/holy"
+   ]
+  },
+  {
+   "id": "fused_shell",
+   "line": "shell",
+   "age": "sundering",
+   "mass_kg": 14,
+   "blast_J": 200000.0,
+   "range_m": 800,
+   "guidance": 0,
+   "parts": [
+    "fused_shell_casing",
+    "fused_shell_charge",
+    "fused_shell_filler",
+    "fused_shell_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/shell",
+    "c:ammo/shell/sundering"
+   ]
+  },
+  {
+   "id": "steel_shell",
+   "line": "shell",
+   "age": "strangers",
+   "mass_kg": 18,
+   "blast_J": 400000.0,
+   "range_m": 1500,
+   "guidance": 0,
+   "parts": [
+    "steel_shell_casing",
+    "steel_shell_charge",
+    "steel_shell_filler",
+    "steel_shell_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/shell",
+    "c:ammo/shell/strangers"
+   ]
+  },
+  {
+   "id": "he_shell",
+   "line": "shell",
+   "age": "kingdom",
+   "mass_kg": 22,
+   "blast_J": 900000.0,
+   "range_m": 2500,
+   "guidance": 0,
+   "parts": [
+    "he_shell_casing",
+    "he_shell_charge",
+    "he_shell_filler",
+    "he_shell_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/shell",
+    "c:ammo/shell/kingdom"
+   ]
+  },
+  {
+   "id": "guided_shell",
+   "line": "shell",
+   "age": "dubhan",
+   "mass_kg": 24,
+   "blast_J": 1200000.0,
+   "range_m": 4000,
+   "guidance": 2,
+   "parts": [
+    "guided_shell_casing",
+    "guided_shell_charge",
+    "guided_shell_filler",
+    "guided_shell_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/shell",
+    "c:ammo/shell/dubhan"
+   ]
+  },
+  {
+   "id": "pitch_arrow",
+   "line": "incendiary",
+   "age": "ancient",
+   "mass_kg": 0.1,
+   "blast_J": 1000.0,
+   "range_m": 60,
+   "guidance": 0,
+   "parts": [
+    "pitch_arrow_casing",
+    "pitch_arrow_filler"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/incendiary",
+    "c:ammo/incendiary/ancient"
+   ]
+  },
+  {
+   "id": "greek_fire_pot",
+   "line": "incendiary",
+   "age": "ailean",
+   "mass_kg": 4,
+   "blast_J": 80000.0,
+   "range_m": 40,
+   "guidance": 0,
+   "parts": [
+    "greek_fire_pot_casing",
+    "greek_fire_pot_filler"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/incendiary",
+    "c:ammo/incendiary/ailean"
+   ]
+  },
+  {
+   "id": "fire_shell",
+   "line": "incendiary",
+   "age": "sundering",
+   "mass_kg": 14,
+   "blast_J": 150000.0,
+   "range_m": 900,
+   "guidance": 0,
+   "parts": [
+    "fire_shell_casing",
+    "fire_shell_filler"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/incendiary",
+    "c:ammo/incendiary/sundering"
+   ]
+  },
+  {
+   "id": "cluster_incendiary",
+   "line": "incendiary",
+   "age": "kingdom",
+   "mass_kg": 20,
+   "blast_J": 400000.0,
+   "range_m": 2000,
+   "guidance": 0,
+   "parts": [
+    "cluster_incendiary_casing",
+    "cluster_incendiary_filler"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/incendiary",
+    "c:ammo/incendiary/kingdom"
+   ]
+  },
+  {
+   "id": "fire_arrow_rocket",
+   "line": "rocket",
+   "age": "ancient",
+   "mass_kg": 0.3,
+   "blast_J": 2000.0,
+   "range_m": 100,
+   "guidance": 0,
+   "parts": [
+    "fire_arrow_rocket_casing",
+    "fire_arrow_rocket_charge",
+    "fire_arrow_rocket_fuze",
+    "fire_arrow_rocket_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/rocket",
+    "c:ammo/rocket/ancient"
+   ]
+  },
+  {
+   "id": "war_rocket",
+   "line": "rocket",
+   "age": "ailean",
+   "mass_kg": 6,
+   "blast_J": 50000.0,
+   "range_m": 600,
+   "guidance": 0,
+   "parts": [
+    "war_rocket_casing",
+    "war_rocket_charge",
+    "war_rocket_fuze",
+    "war_rocket_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/rocket",
+    "c:ammo/rocket/ailean"
+   ]
+  },
+  {
+   "id": "spin_rocket",
+   "line": "rocket",
+   "age": "strangers",
+   "mass_kg": 12,
+   "blast_J": 300000.0,
+   "range_m": 1800,
+   "guidance": 0,
+   "parts": [
+    "spin_rocket_casing",
+    "spin_rocket_charge",
+    "spin_rocket_fuze",
+    "spin_rocket_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/rocket",
+    "c:ammo/rocket/strangers"
+   ]
+  },
+  {
+   "id": "rocket_pod_round",
+   "line": "rocket",
+   "age": "kingdom",
+   "mass_kg": 9,
+   "blast_J": 400000.0,
+   "range_m": 2500,
+   "guidance": 0,
+   "parts": [
+    "rocket_pod_round_casing",
+    "rocket_pod_round_charge",
+    "rocket_pod_round_fuze",
+    "rocket_pod_round_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/rocket",
+    "c:ammo/rocket/kingdom"
+   ]
+  },
+  {
+   "id": "guided_rocket",
+   "line": "rocket",
+   "age": "dubhan",
+   "mass_kg": 14,
+   "blast_J": 700000.0,
+   "range_m": 4000,
+   "guidance": 2,
+   "parts": [
+    "guided_rocket_casing",
+    "guided_rocket_charge",
+    "guided_rocket_fuze",
+    "guided_rocket_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/rocket",
+    "c:ammo/rocket/dubhan"
+   ]
+  },
+  {
+   "id": "thrown_pot",
+   "line": "bomb",
+   "age": "ancient",
+   "mass_kg": 2,
+   "blast_J": 30000.0,
+   "range_m": 20,
+   "guidance": 0,
+   "parts": [
+    "thrown_pot_casing",
+    "thrown_pot_filler",
+    "thrown_pot_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/bomb",
+    "c:ammo/bomb/ancient"
+   ]
+  },
+  {
+   "id": "powder_keg",
+   "line": "bomb",
+   "age": "ailean",
+   "mass_kg": 25,
+   "blast_J": 400000.0,
+   "range_m": 15,
+   "guidance": 0,
+   "parts": [
+    "powder_keg_casing",
+    "powder_keg_filler",
+    "powder_keg_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/bomb",
+    "c:ammo/bomb/ailean"
+   ]
+  },
+  {
+   "id": "aerial_bomb",
+   "line": "bomb",
+   "age": "strangers",
+   "mass_kg": 120,
+   "blast_J": 6000000.0,
+   "range_m": 0,
+   "guidance": 0,
+   "parts": [
+    "aerial_bomb_casing",
+    "aerial_bomb_filler",
+    "aerial_bomb_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/bomb",
+    "c:ammo/bomb/strangers"
+   ]
+  },
+  {
+   "id": "cluster_bomb",
+   "line": "bomb",
+   "age": "kingdom",
+   "mass_kg": 160,
+   "blast_J": 8000000.0,
+   "range_m": 0,
+   "guidance": 0,
+   "parts": [
+    "cluster_bomb_casing",
+    "cluster_bomb_filler",
+    "cluster_bomb_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/bomb",
+    "c:ammo/bomb/kingdom"
+   ]
+  },
+  {
+   "id": "smart_bomb",
+   "line": "bomb",
+   "age": "dubhan",
+   "mass_kg": 150,
+   "blast_J": 9000000.0,
+   "range_m": 0,
+   "guidance": 3,
+   "parts": [
+    "smart_bomb_casing",
+    "smart_bomb_filler",
+    "smart_bomb_fuze"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/bomb",
+    "c:ammo/bomb/dubhan"
+   ]
+  },
+  {
+   "id": "spar_torpedo",
+   "line": "torpedo",
+   "age": "sundering",
+   "mass_kg": 60,
+   "blast_J": 1000000.0,
+   "range_m": 10,
+   "guidance": 0,
+   "parts": [
+    "spar_torpedo_casing",
+    "spar_torpedo_charge",
+    "spar_torpedo_filler",
+    "spar_torpedo_fuze",
+    "spar_torpedo_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/torpedo",
+    "c:ammo/torpedo/sundering"
+   ]
+  },
+  {
+   "id": "self_propelled_torpedo",
+   "line": "torpedo",
+   "age": "strangers",
+   "mass_kg": 400,
+   "blast_J": 5000000.0,
+   "range_m": 3000,
+   "guidance": 0,
+   "parts": [
+    "self_propelled_torpedo_casing",
+    "self_propelled_torpedo_charge",
+    "self_propelled_torpedo_filler",
+    "self_propelled_torpedo_fuze",
+    "self_propelled_torpedo_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/torpedo",
+    "c:ammo/torpedo/strangers"
+   ]
+  },
+  {
+   "id": "wire_guided_torpedo",
+   "line": "torpedo",
+   "age": "kingdom",
+   "mass_kg": 450,
+   "blast_J": 6000000.0,
+   "range_m": 6000,
+   "guidance": 1,
+   "parts": [
+    "wire_guided_torpedo_casing",
+    "wire_guided_torpedo_charge",
+    "wire_guided_torpedo_filler",
+    "wire_guided_torpedo_fuze",
+    "wire_guided_torpedo_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/torpedo",
+    "c:ammo/torpedo/kingdom"
+   ]
+  },
+  {
+   "id": "homing_torpedo",
+   "line": "torpedo",
+   "age": "dubhan",
+   "mass_kg": 480,
+   "blast_J": 7000000.0,
+   "range_m": 8000,
+   "guidance": 2,
+   "parts": [
+    "homing_torpedo_casing",
+    "homing_torpedo_charge",
+    "homing_torpedo_filler",
+    "homing_torpedo_fuze",
+    "homing_torpedo_motor"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/torpedo",
+    "c:ammo/torpedo/dubhan"
+   ]
+  },
+  {
+   "id": "early_guided_rocket",
+   "line": "missile",
+   "age": "sundering",
+   "mass_kg": 40,
+   "blast_J": 800000.0,
+   "range_m": 3000,
+   "guidance": 1,
+   "parts": [
+    "early_guided_rocket_casing",
+    "early_guided_rocket_charge",
+    "early_guided_rocket_filler",
+    "early_guided_rocket_fuze",
+    "early_guided_rocket_motor",
+    "early_guided_rocket_guidance"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/missile",
+    "c:ammo/missile/sundering"
+   ]
+  },
+  {
+   "id": "radio_missile",
+   "line": "missile",
+   "age": "strangers",
+   "mass_kg": 90,
+   "blast_J": 2000000.0,
+   "range_m": 8000,
+   "guidance": 1,
+   "parts": [
+    "radio_missile_casing",
+    "radio_missile_charge",
+    "radio_missile_filler",
+    "radio_missile_fuze",
+    "radio_missile_motor",
+    "radio_missile_guidance"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/missile",
+    "c:ammo/missile/strangers"
+   ]
+  },
+  {
+   "id": "heat_seeker",
+   "line": "missile",
+   "age": "kingdom",
+   "mass_kg": 85,
+   "blast_J": 2500000.0,
+   "range_m": 12000,
+   "guidance": 2,
+   "parts": [
+    "heat_seeker_casing",
+    "heat_seeker_charge",
+    "heat_seeker_filler",
+    "heat_seeker_fuze",
+    "heat_seeker_motor",
+    "heat_seeker_guidance"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/missile",
+    "c:ammo/missile/kingdom"
+   ]
+  },
+  {
+   "id": "radar_missile",
+   "line": "missile",
+   "age": "dubhan",
+   "mass_kg": 150,
+   "blast_J": 4000000.0,
+   "range_m": 40000,
+   "guidance": 3,
+   "parts": [
+    "radar_missile_casing",
+    "radar_missile_charge",
+    "radar_missile_filler",
+    "radar_missile_fuze",
+    "radar_missile_motor",
+    "radar_missile_guidance"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/missile",
+    "c:ammo/missile/dubhan"
+   ]
+  },
+  {
+   "id": "shard_missile",
+   "line": "missile",
+   "age": "future",
+   "mass_kg": 160,
+   "blast_J": 8000000.0,
+   "range_m": 80000,
+   "guidance": 3,
+   "parts": [
+    "shard_missile_casing",
+    "shard_missile_charge",
+    "shard_missile_filler",
+    "shard_missile_fuze",
+    "shard_missile_motor",
+    "shard_missile_guidance"
+   ],
+   "station": "assembly_table",
+   "tags": [
+    "c:ammo/missile",
+    "c:ammo/missile/future"
+   ]
+  }
+ ]
+}

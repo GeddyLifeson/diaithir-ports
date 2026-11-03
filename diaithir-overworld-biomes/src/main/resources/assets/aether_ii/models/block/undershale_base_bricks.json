@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/stone"
+  "all": "aether_ii:block/undershale_base_bricks"
  }
 }

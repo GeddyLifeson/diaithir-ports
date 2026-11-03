@@ -1,0 +1,14 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "aether_ii:burrukai_plate"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "aether_ii:burrukai_plate"
+   }
+  ]
+ }
+}

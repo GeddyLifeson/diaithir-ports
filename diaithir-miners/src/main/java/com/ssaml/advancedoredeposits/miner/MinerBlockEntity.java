@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.neoforge.transfer.energy.SimpleEnergyHandler;
-import net.neoforged.neoforge.transfer.transaction.Transaction;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -31,12 +30,29 @@ public class MinerBlockEntity extends BlockEntity implements WorldlyContainer {
     private static final int[] ANY = {0, 1};
 
     private final NonNullList<ItemStack> items = NonNullList.withSize(2, ItemStack.EMPTY);
-    public final SimpleEnergyHandler energy = new SimpleEnergyHandler(ENERGY_PER_TICK * 400, 1000, 0) {
+    /** Accepts power from outside (generators, cables); only the miner itself can draw it down. */
+    public final MinerEnergy energy = new MinerEnergy();
+
+    public final class MinerEnergy extends SimpleEnergyHandler {
+        MinerEnergy() {
+            super(ENERGY_PER_TICK * 400, 1000, 0);
+        }
+
         @Override
         protected void onEnergyChanged(int previous) {
             setChanged();
         }
-    };
+
+        boolean drain(int amount) {
+            if (energy < amount) {
+                return false;
+            }
+            int before = energy;
+            energy -= amount;
+            onEnergyChanged(before);
+            return true;
+        }
+    }
     private int progress;
     private int burnTime;
 
@@ -82,13 +98,7 @@ public class MinerBlockEntity extends BlockEntity implements WorldlyContainer {
 
     private boolean powered(MinerKind kind) {
         if (kind == MinerKind.ELECTRIC) {
-            try (Transaction tx = Transaction.openRoot()) {
-                if (energy.extract(ENERGY_PER_TICK, tx) == ENERGY_PER_TICK) {
-                    tx.commit();
-                    return true;
-                }
-            }
-            return false;
+            return energy.drain(ENERGY_PER_TICK);
         }
         if (burnTime <= 0) {
             ItemStack fuel = items.get(1);

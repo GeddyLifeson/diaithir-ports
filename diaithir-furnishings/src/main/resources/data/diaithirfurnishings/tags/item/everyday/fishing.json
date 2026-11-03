@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirfurnishings:fishing_rod",
+  "diaithirfurnishings:fishhook",
+  "diaithirfurnishings:fishing_net",
+  "diaithirfurnishings:fish_trap",
+  "diaithirfurnishings:harpoon",
+  "diaithirfurnishings:lobster_pot"
+ ]
+}

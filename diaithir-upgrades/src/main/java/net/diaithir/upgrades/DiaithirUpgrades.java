@@ -28,6 +28,7 @@ public final class DiaithirUpgrades {
     public DiaithirUpgrades(IEventBus bus) {
         ATTACHMENTS.register("slots", () -> Upgrades.SLOTS);
         ATTACHMENTS.register(bus);
+        Upgrades.MENUS.register(bus);
         Modules.register(bus);
         Registry.register(bus);
         bus.addListener(RegisterCapabilitiesEvent.class, DiaithirUpgrades::registerCaps);

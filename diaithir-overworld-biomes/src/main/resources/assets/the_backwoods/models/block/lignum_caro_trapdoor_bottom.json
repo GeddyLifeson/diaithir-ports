@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/template_trapdoor_bottom",
  "textures": {
-  "texture": "minecraft:block/stone"
+  "texture": "the_backwoods:block/lignum_caro_trapdoor"
  }
 }

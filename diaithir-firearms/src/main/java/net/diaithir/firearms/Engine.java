@@ -47,6 +47,13 @@ public final class Engine {
         return v;
     }
 
+    /** Multiplier a parts station stored on the gun (custom data diaithirgear.<key&gt;); 1 when the gun was not assembled there. */
+    static float crafted(ItemStack s, String key) {
+        var cd = s.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
+        if (cd == null) return 1f;
+        return cd.copyTag().getCompound("diaithirgear").flatMap(c -> c.getFloat(key)).orElse(1f);
+    }
+
     public static float zoom(ItemStack s) {
         float z = 1f;
         for (String a : atts(s)) { var d = Defs.ATTS.get(a); if (d != null && d.kind().equals("sight")) z = Math.max(z, d.value()); }
@@ -106,7 +113,7 @@ public final class Engine {
         ServerLevel lv = sp.level();
         setMag(stack, mag(stack) - 1);
         boolean under = ageOf(sp) < g.ageNo();
-        float spread = g.spread() * (under ? 2f : 1f) * (sp.isShiftKeyDown() ? 0.6f : 1f) * modifier(stack, "grip");
+        float spread = g.spread() * (under ? 2f : 1f) * (sp.isShiftKeyDown() ? 0.6f : 1f) * modifier(stack, "grip") * crafted(stack, "spread_mul");
         float quiet = modifier(stack, "muzzle_quiet");
         Vec3 eye = sp.getEyePosition();
         int hits = 0;
@@ -114,7 +121,7 @@ public final class Engine {
             float yaw = sp.getYRot() + (float) (sp.getRandom().nextGaussian() * spread * 0.5);
             float pitch = sp.getXRot() + (float) (sp.getRandom().nextGaussian() * spread * 0.5);
             Vec3 dir = Vec3.directionFromRotation(pitch, yaw);
-            hits += shoot(sp, lv, g, eye, dir, quiet, i == 0) ? 1 : 0;
+            hits += shoot(sp, lv, stack, g, eye, dir, quiet, i == 0) ? 1 : 0;
         }
         Vec3 muzzle = eye.add(Vec3.directionFromRotation(sp.getXRot(), sp.getYRot()).scale(0.8));
         lv.sendParticles(ParticleTypes.SMOKE, muzzle.x, muzzle.y - 0.15, muzzle.z, 2, 0.02, 0.02, 0.02, 0.0);
@@ -128,7 +135,7 @@ public final class Engine {
         return hits;
     }
 
-    private static boolean shoot(ServerPlayer sp, ServerLevel lv, Defs.Gun g, Vec3 eye, Vec3 dir, float quiet, boolean tracer) {
+    private static boolean shoot(ServerPlayer sp, ServerLevel lv, ItemStack stack, Defs.Gun g, Vec3 eye, Vec3 dir, float quiet, boolean tracer) {
         Vec3 end = eye.add(dir.scale(g.range()));
         BlockHitResult bh = lv.clip(new ClipContext(eye, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, sp));
         if (bh.getType() != HitResult.Type.MISS) end = bh.getLocation();
@@ -142,7 +149,7 @@ public final class Engine {
             Entity t = eh.getEntity();
             double dist = eye.distanceTo(impact);
             float fall = dist <= g.range() * 0.5 ? 1f : (float) (1.0 - 0.5 * (dist - g.range() * 0.5) / (g.range() * 0.5));
-            float dmg = g.damage() * Math.max(0.4f, fall) * (quiet < 1f ? 0.9f : 1f);
+            float dmg = g.damage() * crafted(stack, "damage_mul") * Math.max(0.4f, fall) * (quiet < 1f ? 0.9f : 1f);
             if (t instanceof LivingEntity le) {
                 if (impact.y > le.getEyeY() - 0.25) dmg *= 1.5f;
                 le.invulnerableTime = 0;

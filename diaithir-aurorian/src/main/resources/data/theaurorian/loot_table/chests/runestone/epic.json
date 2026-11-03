@@ -110,6 +110,11 @@
     {
      "type": "minecraft:item",
      "weight": 1,
+     "name": "theaurorian:living_divining_rod"
+    },
+    {
+     "type": "minecraft:item",
+     "weight": 1,
      "name": "theaurorian:aurorianite_sword"
     },
     {
@@ -126,6 +131,11 @@
      "type": "minecraft:item",
      "weight": 1,
      "name": "theaurorian:aurorianite_shovel"
+    },
+    {
+     "type": "minecraft:item",
+     "weight": 1,
+     "name": "theaurorian:sapphire_amulet"
     }
    ]
   },
