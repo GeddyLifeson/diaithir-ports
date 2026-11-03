@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "the_backwoods:petrified_rotten_oak_planks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "the_backwoods:petrified_rotten_oak_slab",
+  "count": 6
+ }
+}

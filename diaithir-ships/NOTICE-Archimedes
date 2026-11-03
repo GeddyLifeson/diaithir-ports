@@ -1,0 +1,12 @@
+Archimedes' Ships (org.diaithir.archimedes)
+
+Port of "Archimedes' Ships" by Ckathode (https://github.com/Ckathode/archimedes-ships, CurseForge 76474),
+MIT licence, Copyright (c) 2014 Ckathode. The licence text is in LICENSE-Archimedes-MIT and ships in the jar.
+
+What is ported: the idea and the rules (helm assembles the connected blocks into a ship, buoyancy from block
+density, floaters and balloons, engines, crates, buffer blocks, dismount disassembly). The code is a rewrite
+for NeoForge 26.1.2 (the original is Minecraft 1.7.10 code: metadata blocks, MobileChunk, Forge 1.7 networking),
+so no original source file survives unchanged.
+
+What is not from the original: every texture and model is drawn by archimedes/tools/gen_assets.py in our 64 px
+Industrial Factory style. No original asset ships. Names, recipes and numbers are our own.

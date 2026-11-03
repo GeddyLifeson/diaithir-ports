@@ -48,6 +48,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class DiaithirArms {
     public static final String ID = "diaithirarms";
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
+    private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
+    private static final DeferredRegister<net.minecraft.world.item.crafting.RecipeSerializer<?>> RECIPES =
+            DeferredRegister.create(Registries.RECIPE_SERIALIZER, ID);
+    public static final net.neoforged.neoforge.registries.DeferredBlock<TransmogTableBlock> TRANSMOG_TABLE = BLOCKS.registerBlock("transmog_table",
+            TransmogTableBlock::new, () -> net.minecraft.world.level.block.state.BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRAFTING_TABLE));
+    private static net.neoforged.neoforge.registries.DeferredItem<net.minecraft.world.item.BlockItem> TRANSMOG_ITEM;
     private static final Map<String, DeferredItem<Item>> ALL = new LinkedHashMap<>();
 
     public record ArmorMat(int durability, int boots, int legs, int chest, int helmet, int enchant, String sound,
@@ -164,10 +170,15 @@ public final class DiaithirArms {
         for (String id : DATA.parts()) {
             ALL.put(id, ITEMS.registerSimpleItem(id));
         }
+        BLOCKS.register(bus);
+        RECIPES.register("transmog", () -> TransmogRecipe.SERIALIZER);
+        RECIPES.register(bus);
+        TRANSMOG_ITEM = ITEMS.registerSimpleBlockItem("transmog_table", TRANSMOG_TABLE);
         ITEMS.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey().equals(CreativeModeTabs.COMBAT)) {
                 ALL.values().forEach(i -> e.accept(i.get()));
+                e.accept(TRANSMOG_ITEM.get());
             }
         });
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));

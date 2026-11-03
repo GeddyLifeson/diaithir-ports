@@ -85,7 +85,7 @@ public class FaunaMob extends PathfinderMob {
 
     public @Nullable Species species() {
         int i = this.entityData.get(SPECIES);
-        return i >= 0 && i < Species.ALL.size() ? Species.ALL.get(i) : null;
+        return Species.byIndex(i);
     }
 
     @Override
@@ -101,10 +101,11 @@ public class FaunaMob extends PathfinderMob {
     public void setSpecies(Species s) {
         this.entityData.set(SPECIES, s.index);
         setAttr(Attributes.SCALE, s.scale);
-        setAttr(Attributes.MAX_HEALTH, Mth.clamp(4 + Math.sqrt(s.kg) * 1.6, 4, 220));
+        double boost = s.tier > 0 ? 1 + 0.4 * (s.tier - 1) : 1; // Library creatures: Age tier raises health and damage
+        setAttr(Attributes.MAX_HEALTH, Mth.clamp(4 + Math.sqrt(s.kg) * 1.6, 4, 220) * boost);
         double speed = plan.water() ? 0.5 : 0.18 + (s.has(Species.F_FAST) ? 0.1 : 0) - Math.min(0.06, Math.log10(1 + s.kg) * 0.012);
         setAttr(Attributes.MOVEMENT_SPEED, speed);
-        setAttr(Attributes.ATTACK_DAMAGE, Mth.clamp(Math.sqrt(s.kg) * 0.7, 1, 16));
+        setAttr(Attributes.ATTACK_DAMAGE, Math.min(40, Mth.clamp(Math.sqrt(s.kg) * 0.7, 1, 16) * boost));
         this.setHealth(this.getMaxHealth());
         this.refreshDimensions();
         if (!goalsSet && !level().isClientSide()) registerSpeciesGoals(s);
@@ -123,9 +124,11 @@ public class FaunaMob extends PathfinderMob {
         if (species() == null) {
             Species s = null;
             if (group instanceof Herd h && Habitat.candidates(plan.name, level, blockPosition()).contains(h.species)) s = h.species;
+            if (reason != EntitySpawnReason.NATURAL && reason != EntitySpawnReason.CHUNK_GENERATION) s = LibrarySpawner.pickFor(level, plan.name, random);
             if (s == null) s = Habitat.pick(plan.name, level, blockPosition(), random);
             if (s == null && reason != EntitySpawnReason.NATURAL && reason != EntitySpawnReason.CHUNK_GENERATION) {
                 var all = Species.ofPlan(plan.name).stream().filter(x -> !x.fossil).toList();
+                if (all.isEmpty()) all = Species.ofPlan(plan.name);
                 if (!all.isEmpty()) s = all.get(random.nextInt(all.size()));
             }
             if (s == null) {
@@ -269,7 +272,7 @@ public class FaunaMob extends PathfinderMob {
     }
 
     @Override
-    public boolean removeWhenFarAway(double distance) { return false; } // persistent like vanilla animals; the category cap keeps the count bounded
+    public boolean removeWhenFarAway(double distance) { return species() != null && species().tier > 0; } // wild fauna persist like vanilla animals; Library creatures despawn when far
 
     @Override
     public int getMaxSpawnClusterSize() { return 6; }
@@ -277,7 +280,7 @@ public class FaunaMob extends PathfinderMob {
     @Override
     protected Component getTypeName() {
         Species s = species();
-        return s == null ? super.getTypeName() : Component.translatable("species.diaithirfauna." + s.id);
+        return s == null ? super.getTypeName() : s.title != null ? Component.literal(s.title) : Component.translatable("species.diaithirfauna." + s.id);
     }
 
     @Override

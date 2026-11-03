@@ -4,8 +4,8 @@
  "name_en": "Tarbspeiri",
  "age": 3,
  "own": {
-  "kind": "ravager",
-  "scale": 1.9,
+  "kind": "look_wide",
+  "scale": 1.97,
   "hp": 520,
   "damage": 9,
   "armor": 8,
@@ -194,5 +194,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:tarbspeiri",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

@@ -1,0 +1,47 @@
+{
+ "boss": "mist_weaver",
+ "steps": [
+  {
+   "type": "offer",
+   "item": "#diaithirbosses:offering_feast",
+   "count": 1
+  },
+  {
+   "type": "offer",
+   "item": "minecraft:string",
+   "count": 64
+  },
+  {
+   "type": "hunt",
+   "mob": "minecraft:spider",
+   "count": 30
+  },
+  {
+   "type": "stones",
+   "sequence": [
+    3,
+    6,
+    2,
+    4,
+    1
+   ]
+  },
+  {
+   "type": "hour",
+   "from": 17000,
+   "to": 19000
+  },
+  {
+   "type": "coop",
+   "players": 2
+  },
+  {
+   "type": "defend",
+   "seconds": 90,
+   "mobs": [
+    "minecraft:spider",
+    "minecraft:cave_spider"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "variants": {
+  "rune=0": {
+   "model": "diaithirbosses:block/ogham_stone"
+  },
+  "rune=1": {
+   "model": "diaithirbosses:block/ogham_stone"
+  },
+  "rune=2": {
+   "model": "diaithirbosses:block/ogham_stone"
+  },
+  "rune=3": {
+   "model": "diaithirbosses:block/ogham_stone"
+  },
+  "rune=4": {
+   "model": "diaithirbosses:block/ogham_stone"
+  },
+  "rune=5": {
+   "model": "diaithirbosses:block/ogham_stone"
+  },
+  "rune=6": {
+   "model": "diaithirbosses:block/ogham_stone"
+  },
+  "rune=7": {
+   "model": "diaithirbosses:block/ogham_stone"
+  },
+  "rune=8": {
+   "model": "diaithirbosses:block/ogham_stone"
+  }
+ }
+}

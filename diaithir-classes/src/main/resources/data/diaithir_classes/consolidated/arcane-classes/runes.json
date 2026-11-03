@@ -1,0 +1,666 @@
+{
+ "slug": "diaithir_runes",
+ "items": [
+  {
+   "id": "fuel_rune_ainnir_dim",
+   "kind": "rune",
+   "name_en": "Dim Ainnir Rune",
+   "attrs": {
+    "element": "arcane",
+    "school": "arcane",
+    "tier": 1,
+    "stack": 64,
+    "cast_cost_runes": 1,
+    "fuel_energy_J": 120
+   },
+   "recipe": [
+    "diaithir_runes:rune_blank",
+    "diaithir_runes:reagent_ainnir"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "fuel_rune_ainnir_bright",
+   "kind": "rune",
+   "name_en": "Bright Ainnir Rune",
+   "attrs": {
+    "element": "arcane",
+    "school": "arcane",
+    "tier": 2,
+    "stack": 64,
+    "cast_cost_runes": 1,
+    "fuel_energy_J": 480,
+    "spell_power_bonus": 0.15
+   },
+   "recipe": [
+    "diaithir_runes:fuel_rune_ainnir_dim",
+    "c:gems/amethyst",
+    "c:dusts/glowstone"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "fuel_rune_tine_dim",
+   "kind": "rune",
+   "name_en": "Dim Tine Rune",
+   "attrs": {
+    "element": "fire",
+    "school": "fire",
+    "tier": 1,
+    "stack": 64,
+    "cast_cost_runes": 1,
+    "fuel_energy_J": 120
+   },
+   "recipe": [
+    "diaithir_runes:rune_blank",
+    "diaithir_runes:reagent_tine"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "fuel_rune_tine_bright",
+   "kind": "rune",
+   "name_en": "Bright Tine Rune",
+   "attrs": {
+    "element": "fire",
+    "school": "fire",
+    "tier": 2,
+    "stack": 64,
+    "cast_cost_runes": 1,
+    "fuel_energy_J": 480,
+    "spell_power_bonus": 0.15
+   },
+   "recipe": [
+    "diaithir_runes:fuel_rune_tine_dim",
+    "c:dusts/blaze",
+    "c:ingots/copper"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "fuel_rune_sioc_dim",
+   "kind": "rune",
+   "name_en": "Dim Sioc Rune",
+   "attrs": {
+    "element": "frost",
+    "school": "frost",
+    "tier": 1,
+    "stack": 64,
+    "cast_cost_runes": 1,
+    "fuel_energy_J": 120
+   },
+   "recipe": [
+    "diaithir_runes:rune_blank",
+    "diaithir_runes:reagent_sioc"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "fuel_rune_sioc_bright",
+   "kind": "rune",
+   "name_en": "Bright Sioc Rune",
+   "attrs": {
+    "element": "frost",
+    "school": "frost",
+    "tier": 2,
+    "stack": 64,
+    "cast_cost_runes": 1,
+    "fuel_energy_J": 480,
+    "spell_power_bonus": 0.15
+   },
+   "recipe": [
+    "diaithir_runes:fuel_rune_sioc_dim",
+    "c:gems/diamond",
+    "c:dusts/snow"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "rune_blank",
+   "kind": "rune",
+   "name_en": "Blank Rune Stone",
+   "attrs": {
+    "mass_kg": 0.4,
+    "stack": 64
+   },
+   "recipe": [
+    "c:stones",
+    "c:ingots/bronze"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "reagent_ainnir",
+   "kind": "rune",
+   "name_en": "Ainnir Reagent",
+   "attrs": {
+    "mass_kg": 0.05,
+    "stack": 64,
+    "element": "arcane"
+   },
+   "recipe": [
+    "c:dyes/purple",
+    "c:dusts/lapis"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "reagent_tine",
+   "kind": "rune",
+   "name_en": "Tine Reagent",
+   "attrs": {
+    "mass_kg": 0.05,
+    "stack": 64,
+    "element": "fire"
+   },
+   "recipe": [
+    "c:dyes/red",
+    "c:dusts/redstone"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "reagent_sioc",
+   "kind": "rune",
+   "name_en": "Sioc Reagent",
+   "attrs": {
+    "mass_kg": 0.05,
+    "stack": 64,
+    "element": "frost"
+   },
+   "recipe": [
+    "c:dyes/light_blue",
+    "c:dusts/ice"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "rune_altar",
+   "kind": "block",
+   "name_en": "Rune Altar",
+   "attrs": {
+    "gui_slots": "base,reagent,catalyst,output",
+    "craft_time_s": 4,
+    "output_count": 1,
+    "energy_per_craft_J": 200,
+    "mass_kg": 180
+   },
+   "recipe": [
+    "c:stones",
+    "c:ingots/bronze",
+    "c:gems/lapis"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "staff_ainnir_novice",
+   "kind": "weapon",
+   "name_en": "Novice Ainnir Staff",
+   "attrs": {
+    "school": "arcane",
+    "spell_power_arcane": 4.0,
+    "mass_kg": 1.1,
+    "attack_speed_hz": 1.4
+   },
+   "recipe": [
+    "c:rods/wooden",
+    "c:gems/amethyst",
+    "c:ingots/bronze"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "staff_tine_novice",
+   "kind": "weapon",
+   "name_en": "Novice Tine Staff",
+   "attrs": {
+    "school": "fire",
+    "spell_power_fire": 4.0,
+    "mass_kg": 1.1,
+    "attack_speed_hz": 1.4
+   },
+   "recipe": [
+    "c:rods/wooden",
+    "c:dusts/blaze",
+    "c:ingots/bronze"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "staff_sioc_novice",
+   "kind": "weapon",
+   "name_en": "Novice Sioc Staff",
+   "attrs": {
+    "school": "frost",
+    "spell_power_frost": 4.0,
+    "mass_kg": 1.1,
+    "attack_speed_hz": 1.4
+   },
+   "recipe": [
+    "c:rods/wooden",
+    "c:gems/quartz",
+    "c:ingots/bronze"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "staff_ainnir_adept",
+   "kind": "weapon",
+   "name_en": "Adept Ainnir Staff",
+   "attrs": {
+    "school": "arcane",
+    "spell_power_arcane": 7.0,
+    "mass_kg": 1.4,
+    "attack_speed_hz": 1.3
+   },
+   "recipe": [
+    "diaithir_runes:staff_ainnir_novice",
+    "c:ingots/steel",
+    "c:gems/diamond"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "staff_tine_adept",
+   "kind": "weapon",
+   "name_en": "Adept Tine Staff",
+   "attrs": {
+    "school": "fire",
+    "spell_power_fire": 7.0,
+    "mass_kg": 1.4,
+    "attack_speed_hz": 1.3
+   },
+   "recipe": [
+    "diaithir_runes:staff_tine_novice",
+    "c:ingots/steel",
+    "c:dusts/blaze"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "staff_sioc_adept",
+   "kind": "weapon",
+   "name_en": "Adept Sioc Staff",
+   "attrs": {
+    "school": "frost",
+    "spell_power_frost": 7.0,
+    "mass_kg": 1.4,
+    "attack_speed_hz": 1.3
+   },
+   "recipe": [
+    "diaithir_runes:staff_sioc_novice",
+    "c:ingots/steel",
+    "c:gems/diamond"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "rune_wizard_hood_novice",
+   "kind": "armor",
+   "name_en": "Runecaller Hood",
+   "attrs": {
+    "armor": 1,
+    "spell_power_all": 0.5,
+    "mass_kg": 0.6
+   },
+   "recipe": [
+    "c:leathers",
+    "c:dyes/purple"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "rune_wizard_robe_novice",
+   "kind": "armor",
+   "name_en": "Runecaller Robe",
+   "attrs": {
+    "armor": 3,
+    "spell_power_all": 1.0,
+    "mass_kg": 1.2
+   },
+   "recipe": [
+    "c:leathers",
+    "c:dyes/purple"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "rune_wizard_hood_adept",
+   "kind": "armor",
+   "name_en": "Runemaster Hood",
+   "attrs": {
+    "armor": 2,
+    "spell_power_all": 1.5,
+    "mass_kg": 0.7
+   },
+   "recipe": [
+    "diaithir_runes:rune_wizard_hood_novice",
+    "c:ingots/steel"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "rune_wizard_robe_adept",
+   "kind": "armor",
+   "name_en": "Runemaster Robe",
+   "attrs": {
+    "armor": 5,
+    "spell_power_all": 2.5,
+    "mass_kg": 1.4
+   },
+   "recipe": [
+    "diaithir_runes:rune_wizard_robe_novice",
+    "c:ingots/steel"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "rune_wizard_hood_master",
+   "kind": "armor",
+   "name_en": "Runeweaver Hood",
+   "attrs": {
+    "armor": 3,
+    "spell_power_all": 2.5,
+    "toughness": 1.0,
+    "mass_kg": 0.8
+   },
+   "recipe": [
+    "diaithir_runes:rune_wizard_hood_adept",
+    "c:ingots/composite",
+    "c:gems/diamond"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "rune_wizard_robe_master",
+   "kind": "armor",
+   "name_en": "Runeweaver Robe",
+   "attrs": {
+    "armor": 7,
+    "spell_power_all": 4.0,
+    "toughness": 2.0,
+    "mass_kg": 1.6
+   },
+   "recipe": [
+    "diaithir_runes:rune_wizard_robe_adept",
+    "c:ingots/composite",
+    "c:gems/diamond"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "spell_rune_bolt_arcane",
+   "kind": "spell",
+   "name_en": "Ainnir Bolt",
+   "attrs": {
+    "school": "arcane",
+    "damage_base": 5.0,
+    "cooldown_s": 1.5,
+    "range_m": 24,
+    "rune_cost": 1
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "spell_rune_bolt_fire",
+   "kind": "spell",
+   "name_en": "Tine Bolt",
+   "attrs": {
+    "school": "fire",
+    "damage_base": 6.0,
+    "cooldown_s": 1.8,
+    "range_m": 22,
+    "burn_s": 3,
+    "rune_cost": 1
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "spell_rune_shard_frost",
+   "kind": "spell",
+   "name_en": "Sioc Shard",
+   "attrs": {
+    "school": "frost",
+    "damage_base": 5.0,
+    "cooldown_s": 1.6,
+    "range_m": 22,
+    "slow_s": 2,
+    "rune_cost": 1
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skill_runecraft",
+   "kind": "skill",
+   "name_en": "Runecraft",
+   "attrs": {
+    "effect": "rune_altar_craft_time_x0.8_per_level",
+    "max_level": 5
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "enchant_rune_thrift",
+   "kind": "enchant",
+   "name_en": "Rune Thrift",
+   "attrs": {
+    "max_level": 3,
+    "free_cast_chance_per_level": 0.1,
+    "applies_to": "staves"
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "event_rune_dry_cast",
+   "kind": "event",
+   "name_en": "Dry Cast",
+   "attrs": {
+    "effect": "cast refused, fizzle sound, 0.5 s lockout"
+   },
+   "recipe": null,
+   "age": "III"
+  }
+ ],
+ "events": [
+  {
+   "id": "rune_consume_on_cast",
+   "trigger": "spell_engine:cast_pre by caster holding or wearing a rune-fuel spell source",
+   "effect": "find first stack tagged diaithir_runes:fuel/<school> in inventory, shrink by rune_cost (config default 1), cancel the cast if none (fires dry_cast)"
+  },
+  {
+   "id": "rune_craft_complete",
+   "trigger": "rune_altar finishes a craft cycle",
+   "effect": "emit output rune, grant Runecraft xp, publish global event diaithir:rune_crafted"
+  },
+  {
+   "id": "rune_dry_cast",
+   "trigger": "cast cancelled for lack of fuel",
+   "effect": "play fizzle sound, 0.5 s cast lockout, actionbar hint naming the missing school"
+  }
+ ],
+ "skills": [
+  "skill_runecraft"
+ ],
+ "id_migration": {
+  "runes:arcane_rune": "diaithir_runes:fuel_rune_ainnir_dim",
+  "runes:fire_rune": "diaithir_runes:fuel_rune_tine_dim",
+  "runes:frost_rune": "diaithir_runes:fuel_rune_sioc_dim",
+  "runes:arcane_rune_tier_2": "diaithir_runes:fuel_rune_ainnir_bright",
+  "runes:fire_rune_tier_2": "diaithir_runes:fuel_rune_tine_bright",
+  "runes:frost_rune_tier_2": "diaithir_runes:fuel_rune_sioc_bright",
+  "runes:rune_crafting_altar": "diaithir_runes:rune_altar",
+  "runes:arcane_wand": "diaithir_runes:staff_ainnir_novice",
+  "runes:fire_wand": "diaithir_runes:staff_tine_novice",
+  "runes:frost_wand": "diaithir_runes:staff_sioc_novice"
+ },
+ "c_tags": {
+  "c:ingots/bronze": [
+   "diaithirarms:bronze_ingot"
+  ],
+  "c:ingots/steel": [
+   "diaithirarms:steel_ingot"
+  ],
+  "c:ingots/composite": [
+   "diaithirarms:composite_ingot"
+  ],
+  "diaithir_runes:fuel/arcane": [
+   "diaithir_runes:fuel_rune_ainnir_dim",
+   "diaithir_runes:fuel_rune_ainnir_bright"
+  ],
+  "diaithir_runes:fuel/fire": [
+   "diaithir_runes:fuel_rune_tine_dim",
+   "diaithir_runes:fuel_rune_tine_bright"
+  ],
+  "diaithir_runes:fuel/frost": [
+   "diaithir_runes:fuel_rune_sioc_dim",
+   "diaithir_runes:fuel_rune_sioc_bright"
+  ],
+  "diaithir_runes:reagents": [
+   "diaithir_runes:reagent_ainnir",
+   "diaithir_runes:reagent_tine",
+   "diaithir_runes:reagent_sioc"
+  ],
+  "diaithir_runes:staves": [
+   "diaithir_runes:staff_ainnir_novice",
+   "diaithir_runes:staff_tine_novice",
+   "diaithir_runes:staff_sioc_novice",
+   "diaithir_runes:staff_ainnir_adept",
+   "diaithir_runes:staff_tine_adept",
+   "diaithir_runes:staff_sioc_adept"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "rune_blank_from_stone_bronze",
+   "inputs_as_c_tags": [
+    "c:stones",
+    "c:ingots/bronze"
+   ]
+  },
+  {
+   "id": "reagent_ainnir_from_dye_lapis",
+   "inputs_as_c_tags": [
+    "c:dyes/purple",
+    "c:dusts/lapis"
+   ]
+  },
+  {
+   "id": "reagent_tine_from_dye_redstone",
+   "inputs_as_c_tags": [
+    "c:dyes/red",
+    "c:dusts/redstone"
+   ]
+  },
+  {
+   "id": "reagent_sioc_from_dye_ice",
+   "inputs_as_c_tags": [
+    "c:dyes/light_blue",
+    "c:dusts/ice"
+   ]
+  },
+  {
+   "id": "rune_altar_build",
+   "inputs_as_c_tags": [
+    "c:stones",
+    "c:ingots/bronze",
+    "c:gems/lapis"
+   ]
+  },
+  {
+   "id": "staff_adept_upgrade",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:gems/diamond",
+    "c:rods/wooden"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "diaithir_runes:rune_altar",
+   "kind": "energy",
+   "units_SI": "200 J per craft cycle, buffer 2000 J, max input 100 W"
+  },
+  {
+   "block": "diaithir_runes:rune_altar",
+   "kind": "item",
+   "units_SI": "4 slots (base, reagent, catalyst, output), 64 items per slot, unit: item count"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "staff_socket_upgrade",
+   "target": "diaithir_runes:staves",
+   "slots": 2,
+   "kinds": [
+    "ogham_rune",
+    "quality_gem"
+   ],
+   "max_quality": 5
+  },
+  {
+   "id": "robe_socket_upgrade",
+   "target": "diaithir_runes:rune_wizard_robe_*",
+   "slots": 1,
+   "kinds": [
+    "ogham_rune"
+   ],
+   "max_quality": 3
+  }
+ ],
+ "global_events": [
+  {
+   "id": "rune_crafted_broadcast",
+   "subscribes_to": "diaithir:rune_crafted",
+   "effect": "count crafted runes for age progress and codex unlocks"
+  },
+  {
+   "id": "rune_fuel_low_warn",
+   "subscribes_to": "diaithir:spell_cast_post",
+   "effect": "when caster holds 3 or fewer matching runes, show an actionbar warning"
+  },
+  {
+   "id": "age_gate_runes",
+   "subscribes_to": "diaithir:age_advanced",
+   "effect": "unlock bright rune recipes at Age V and master robes at Age VII"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "codex_rune_fuel",
+   "connects_to": [
+    "codex_ogham_runes",
+    "codex_spell_schools"
+   ]
+  },
+  {
+   "entry": "codex_rune_altar",
+   "connects_to": [
+    "codex_bronze_working",
+    "codex_rune_fuel"
+   ]
+  },
+  {
+   "entry": "codex_runecaller_gear",
+   "connects_to": [
+    "codex_fian_class",
+    "codex_cleirech_class"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "quest_first_rune",
+  "intro": "A druid tells you the old stones hold no power until a reagent wakes them. Build an altar and press your first rune.",
+  "links_to": [
+   "quest_ogham_ring",
+   "quest_first_staff"
+  ]
+ },
+ "java_notes": "Needed: one event handler on Spell Engine cast-pre that scans inventory for tag diaithir_runes:fuel/<school> and shrinks the stack or cancels with a dry-cast; RuneAltarBlock plus BlockEntity, Menu and Screen with an energy and item capability; optional tooltip for element and rune count. School ids are read from diaithir-druidry. Remap table is a one-time DFU/datapack step.",
+ "java_notes_extra": null
+}

@@ -1,0 +1,20 @@
+{
+ "id": "diaithir_overworld_biomes:undergarden",
+ "category": "dimension",
+ "title": "codex.diaithir_overworld_biomes.undergarden.title",
+ "body": "codex.diaithir_overworld_biomes.undergarden.body",
+ "age": 2,
+ "icon": "undergarden:depthrock",
+ "unlock": {
+  "type": "enter_dimension",
+  "dimension": "undergarden:undergarden"
+ },
+ "covers": {
+  "biomes": [
+   "#undergarden:is_undergarden"
+  ],
+  "blocks": 216,
+  "items": 42
+ },
+ "quest": "diaithir_overworld_biomes:undergarden_descent"
+}

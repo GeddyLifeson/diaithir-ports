@@ -1,0 +1,160 @@
+{
+ "sky": {
+  "sky": "#6b5a8a",
+  "fog": "#9a86b8",
+  "cloud": "#d8c8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5f7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MY.corianum.E3.places.000522",
+   "archetype": "swamp",
+   "temp": 0.4,
+   "humid": 0.9,
+   "grass": "#6e8a5a",
+   "foliage": "#5a7a4a",
+   "water": "#4a6a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corianum.E3.places.000525",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#7a6a5a",
+   "foliage": "#6a5a4a",
+   "water": "#5a6a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corianum.E1.places.000473",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#8fbf8a",
+   "foliage": "#c9a0c4",
+   "water": "#6f9fb8",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corianum.E1.places.000499",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.1,
+   "grass": "#7a7a80",
+   "foliage": "#6a6a72",
+   "water": "#5a6a8a",
+   "precip": "snow"
+  },
+  {
+   "entry": "MY.corianum.E4.places.000464",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.1,
+   "grass": "#7f8a70",
+   "foliage": "#6f7a62",
+   "water": "#5f7088",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corianum.E2.places.000502",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#a09060",
+   "foliage": "#8a7a50",
+   "water": "#6a7f90",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corianum.E4.places.000467",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": 0.3,
+   "grass": "#9ab0b8",
+   "foliage": "#8aa0a8",
+   "water": "#6a8aa8",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Corianum's storm-soil realm of Mythic sorrow and echoing stone is rendered in ash-violet skies, sombre glass-and-basalt terrain, and cold blue waters beneath drifting sundered shards.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "firefly",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#8fa3b8",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "MY.corianum.E1.places.000473",
+  "why": "Humming grove canopy at dusk suggests soft, luminous, gentle air.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.5
+  },
+  "why_entry": "MY.corianum.E1.places.000499",
+  "grounded": true
+ }
+}

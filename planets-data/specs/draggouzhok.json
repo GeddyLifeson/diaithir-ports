@@ -1,0 +1,169 @@
+{
+ "sky": {
+  "sky": "#7a6a5c",
+  "fog": "#9c8c7e",
+  "cloud": "#b0c8c0c0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#5a2a1a"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "MA.draggouzhok.E3.places.000080",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#7aa35a",
+   "foliage": "#6b9448",
+   "water": "#4a6e7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.draggouzhok.E1.places.000051",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.6,
+   "grass": "#a8864e",
+   "foliage": "#8f7040",
+   "water": "#8a5a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.draggouzhok.E5.places.000032",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#b5a04a",
+   "foliage": "#9c8a3e",
+   "water": "#7a7a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.draggouzhok.E1.places.000036",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#4e6b3a",
+   "foliage": "#3a5230",
+   "water": "#3f5a48",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.draggouzhok.E7.places.000088",
+   "archetype": "eroded_badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#8a7a6a",
+   "foliage": "#6e6052",
+   "water": "#6a5a50",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.draggouzhok.E4.places.000028",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.2,
+   "grass": "#7a7a72",
+   "foliage": "#66665e",
+   "water": "#5c6670",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.draggouzhok.E2.places.000055",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#c4a46a",
+   "foliage": "#a88c58",
+   "water": "#b07a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.draggouzhok.E3.places.000079",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": 0.1,
+   "grass": "#6e8a6a",
+   "foliage": "#587860",
+   "water": "#56707e",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "warm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Ash-dark, ember-lit valleys and basalt terraces ring a glowing lava sea, with rare rain falling on the sheltered groves and meadows of the Weave.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.08
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#c9d8e6",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.draggouzhok.E3.places.000079",
+  "why": "Frost soil and landfall-shattered ridges suit snowfall and cold haze",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MA.draggouzhok.E3.places.000080",
+  "grounded": false
+ }
+}

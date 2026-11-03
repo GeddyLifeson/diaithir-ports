@@ -1,0 +1,43 @@
+{
+ "general": {
+  "type": "gun_tank",
+  "name": "Tank Gun 120 mm",
+  "materialLists": [
+   [
+    "minecraft:iron_block:0:8"
+   ],
+   [
+    "minecraft:gunpowder:0:16"
+   ]
+  ]
+ },
+ "gun": {
+  "capacity": 1,
+  "reloadTime": 80,
+  "muzzleVelocity": 160,
+  "fireDelay": 2.0,
+  "bulletSpreadFactor": 0.0,
+  "diameter": 120,
+  "minCaseLength": 100,
+  "maxCaseLength": 900,
+  "minYaw": -180,
+  "maxYaw": 180,
+  "minPitch": -8,
+  "maxPitch": 20,
+  "yawSpeed": 0.6,
+  "pitchSpeed": 0.5,
+  "isSemiAuto": true,
+  "autoReload": true
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Tank Gun 120 mm",
+   "modelName": "tank_gun_main",
+   "textureName": "tank_gun_main",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

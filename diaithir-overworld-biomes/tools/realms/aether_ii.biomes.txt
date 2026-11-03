@@ -1,0 +1,16 @@
+battleground_wastes
+contaminated_jungle
+enduring_woodland
+expanse
+flourishing_field
+frigid_sierra
+frozen_lakes
+glistening_swamp
+hestveil_caverns
+magnetic_scar
+sheer_tundra
+shimmering_basin
+shrouded_forest
+turquoise_forest
+verdant_woods
+violet_highwoods

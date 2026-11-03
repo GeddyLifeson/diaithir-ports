@@ -4,8 +4,8 @@
  "name_en": "Natuirsaegul",
  "age": 4,
  "own": {
-  "kind": "guardian",
-  "scale": 4.4,
+  "kind": "look_low",
+  "scale": 2.06,
   "hp": 620,
   "damage": 12,
   "armor": 10,
@@ -195,5 +195,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:natuirsaegul",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }
