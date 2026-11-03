@@ -97,6 +97,198 @@
     "minecraft:smoker": {
      "price": 1,
      "stock": 32
+    },
+    "minecraft:deepslate_brick_slab": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:deepslate_brick_stairs": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:deepslate_brick_wall": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:muddy_mangrove_roots": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:cracked_deepslate_bricks": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:deepslate_bricks": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:end_stone_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:end_stone_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:end_stone_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:mossy_stone_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:mossy_stone_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:mossy_stone_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:mud_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:mud_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:mud_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:nether_brick_fence": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:nether_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:nether_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:nether_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:polished_blackstone_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:polished_blackstone_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:polished_blackstone_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:prismarine_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:prismarine_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:red_nether_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:red_nether_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:red_nether_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:resin_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:resin_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:resin_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stone_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stone_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stone_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:tuff_brick_slab": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:tuff_brick_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:tuff_brick_wall": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:black_glazed_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:black_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:blue_glazed_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:blue_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:brown_glazed_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:chiseled_nether_bricks": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:chiseled_resin_bricks": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:chiseled_stone_bricks": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:chiseled_tuff_bricks": {
+     "price": 3,
+     "stock": 11
     }
    }
   },
@@ -180,6 +372,214 @@
     "minecraft:leather": {
      "price": 8,
      "stock": 4
+    },
+    "minecraft:bamboo_button": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_chest_raft": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_door": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_fence": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_fence_gate": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_mosaic": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_mosaic_slab": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_mosaic_stairs": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_planks": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_pressure_plate": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_raft": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_shelf": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_sign": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_slab": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_stairs": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_trapdoor": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_wall_hanging_sign": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bamboo_wall_sign": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:cherry_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:dark_oak_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:jungle_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:pale_oak_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_acacia_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_bamboo": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_birch_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_cherry_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_dark_oak_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_jungle_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_oak_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_pale_oak_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:potted_spruce_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:stripped_bamboo_block": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:torchflower_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:glow_berries": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:copper_hoe": {
+     "price": 6,
+     "stock": 5
+    },
+    "minecraft:glistering_melon_slice": {
+     "price": 7,
+     "stock": 5
+    },
+    "minecraft:golden_hoe": {
+     "price": 7,
+     "stock": 5
+    },
+    "minecraft:bamboo_block": {
+     "price": 9,
+     "stock": 4
+    },
+    "minecraft:golden_carrot": {
+     "price": 10,
+     "stock": 4
+    },
+    "farmingforblockheads:feeding_trough": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:fertilized_farmland_healthy": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:fertilized_farmland_healthy_stable": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:fertilized_farmland_rich": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:fertilized_farmland_rich_stable": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:fertilized_farmland_stable": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:fox_note": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:green_fertilizer": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:market": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:red_fertilizer": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:yellow_fertilizer": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:chicken_nest": {
+     "price": 7,
+     "stock": 5
     }
    }
   },
@@ -259,6 +659,218 @@
     "minecraft:smoker": {
      "price": 1,
      "stock": 32
+    },
+    "minecraft:blue_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:brown_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:cyan_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:green_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:light_blue_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:light_gray_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:magenta_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:orange_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:pink_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:purple_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:red_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:suspicious_stew": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:white_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:yellow_candle_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:dragon_egg": {
+     "price": 10,
+     "stock": 4
+    },
+    "minecraft:golden_apple": {
+     "price": 10,
+     "stock": 4
+    },
+    "minecraft:golden_leggings": {
+     "price": 16,
+     "stock": 4
+    },
+    "cookingforblockheads:black_cabinet": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:black_connector": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:black_cooking_table": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:black_counter": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:black_fridge": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:black_kitchen_floor": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:black_oven": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:black_sink": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:blue_cabinet": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:blue_connector": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:blue_cooking_table": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:blue_counter": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:blue_fridge": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:blue_kitchen_floor": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:blue_oven": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:blue_sink": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:brown_cabinet": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:brown_connector": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:brown_cooking_table": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:brown_counter": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:brown_fridge": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:brown_kitchen_floor": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:brown_oven": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:brown_sink": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:cabinet": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:chef_hat": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:connector": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:cooking_table": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:counter": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:cow_jar": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:cyan_cabinet": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:cyan_connector": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:cyan_cooking_table": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:cyan_counter": {
+     "price": 3,
+     "stock": 11
+    },
+    "cookingforblockheads:cyan_fridge": {
+     "price": 3,
+     "stock": 11
     }
    }
   },
