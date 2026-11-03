@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:light_mg",
+ "result": {
+  "id": "diaithirfirearms:hk_mg4",
+  "count": 1
+ }
+}

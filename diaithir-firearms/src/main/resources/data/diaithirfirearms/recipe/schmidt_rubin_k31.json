@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:carbine",
+ "result": {
+  "id": "diaithirfirearms:schmidt_rubin_k31",
+  "count": 1
+ }
+}

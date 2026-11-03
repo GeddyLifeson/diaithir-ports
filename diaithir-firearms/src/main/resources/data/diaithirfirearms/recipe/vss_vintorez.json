@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:sniper_rifle",
+ "result": {
+  "id": "diaithirfirearms:vss_vintorez",
+  "count": 1
+ }
+}

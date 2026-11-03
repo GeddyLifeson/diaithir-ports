@@ -14,16 +14,19 @@ public final class Defs {
         public int ageNo() { return Defs.ageNo(age); }
     }
     public record Att(String id, String kind, float value) {}
-    record File(List<Gun> guns, List<Att> attachments) {}
+    record File(List<Gun> guns, List<Att> attachments, List<String> ammo) {}
 
     public static final Map<String, Gun> GUNS = new LinkedHashMap<>();
     public static final Map<String, Att> ATTS = new LinkedHashMap<>();
+    /** Extra ammunition item ids (roster calibers). */
+    public static final java.util.List<String> AMMO = new java.util.ArrayList<>();
 
     static {
         try (var r = new InputStreamReader(Defs.class.getResourceAsStream("/guns.json"))) {
             File f = new Gson().fromJson(r, File.class);
             f.guns().forEach(g -> GUNS.put(g.id(), g));
             f.attachments().forEach(a -> ATTS.put(a.id(), a));
+            if (f.ammo() != null) AMMO.addAll(f.ammo());
         } catch (Exception e) {
             throw new IllegalStateException("guns.json missing", e);
         }

@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:sniper_rifle",
+ "result": {
+  "id": "diaithirfirearms:orsis_t5000",
+  "count": 1
+ }
+}

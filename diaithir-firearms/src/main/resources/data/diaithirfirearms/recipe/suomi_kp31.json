@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:smg_compact",
+ "result": {
+  "id": "diaithirfirearms:suomi_kp31",
+  "count": 1
+ }
+}

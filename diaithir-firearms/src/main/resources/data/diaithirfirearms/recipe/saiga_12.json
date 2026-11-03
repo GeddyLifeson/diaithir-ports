@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:pump_shotgun",
+ "result": {
+  "id": "diaithirfirearms:saiga_12",
+  "count": 1
+ }
+}

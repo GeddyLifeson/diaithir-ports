@@ -1,0 +1,102 @@
+spencer_rifle|Spencer Repeating Rifle|USA|1860|rifle|rf_56_56|0|7|20|Spencer repeating rifle
+henry_rifle|Henry Repeating Rifle|USA|1860|rifle|rf_44_henry|0|16|25|Henry repeating rifle
+winchester_1873|Winchester Model 1873|USA|1873|rifle|44_40|0|15|30|Winchester Model 1873
+winchester_1894|Winchester Model 1894|USA|1894|rifle|30_30|0|7|30|Winchester Model 1894
+snider_enfield|Snider-Enfield|Britain|1866|rifle|577_snider|0|1|10|Snider–Enfield
+martini_henry|Martini-Henry|Britain|1871|rifle|577_450|0|1|12|Martini–Henry
+chassepot|Chassepot|France|1866|rifle|chassepot_11|0|1|10|Chassepot
+gras_rifle|Gras Rifle|France|1874|rifle|gras_11|0|1|10|Gras rifle
+berdan_rifle|Berdan Rifle|Russia|1868|rifle|berdan_10|0|1|10|Berdan rifle
+rolling_block|Remington Rolling Block|USA|1867|rifle|43_spanish|0|1|12|Remington Rolling Block rifle
+springfield_1873|Springfield Model 1873 Trapdoor|USA|1873|rifle|45_70|0|1|10|Springfield Model 1873
+mauser_1871|Mauser Model 1871|Germany|1871|rifle|11_15_mauser|0|1|10|Mauser Model 1871
+gewehr_88|Gewehr 88 Commission Rifle|Germany|1888|rifle|7_92x57|0|5|15|Gewehr 1888
+kar98k|Karabiner 98k|Germany|1935|rifle|7_92x57|0|5|15|Karabiner 98k
+lebel_1886|Lebel Model 1886|France|1886|rifle|8_lebel|0|8|10|Lebel Model 1886 rifle
+mas_36|MAS-36|France|1936|rifle|7_5x54|0|5|15|MAS-36
+mannlicher_1895|Mannlicher M1895|Austria-Hungary|1895|rifle|8x50r|0|5|20|Mannlicher M1895
+carcano_m91|Carcano M91|Italy|1891|rifle|6_5x52|0|6|15|Carcano
+krag_jorgensen|Krag-Jorgensen|Denmark|1889|rifle|30_40_krag|0|5|15|Krag–Jørgensen
+schmidt_rubin_k31|Schmidt-Rubin K31|Switzerland|1931|rifle|7_5x53|0|6|20|Schmidt–Rubin
+smle|Lee-Enfield SMLE|Britain|1907|rifle|303_british|0|10|25|Lee–Enfield
+m1917_enfield|M1917 Enfield|USA|1917|rifle|30_06|0|5|15|M1917 Enfield
+springfield_1903|Springfield M1903|USA|1903|rifle|30_06|0|5|15|M1903 Springfield
+m1_garand|M1 Garand|USA|1936|rifle|30_06|0|8|40|M1 Garand
+m1_carbine|M1 Carbine|USA|1942|rifle|30_carbine|0|15|40|M1 carbine
+bar_m1918|Browning Automatic Rifle|USA|1918|lmg|30_06|1|20|550|M1918 Browning Automatic Rifle
+mosin_nagant|Mosin-Nagant M1891|Russia|1891|rifle|7_62x54r|0|5|15|Mosin–Nagant
+svt_40|Tokarev SVT-40|USSR|1940|rifle|7_62x54r|0|10|40|SVT-40
+sks|Simonov SKS|USSR|1945|rifle|7_62x39|0|10|40|SKS
+arisaka_type38|Arisaka Type 38|Japan|1905|rifle|6_5x50|0|5|15|Type 38 rifle
+arisaka_type99|Arisaka Type 99|Japan|1939|rifle|7_7x58|0|5|15|Type 99 rifle
+ross_rifle|Ross Rifle|Canada|1905|rifle|303_british|0|5|20|Ross rifle
+stg44|StG 44|Germany|1944|rifle|7_92_kurz|1|30|500|StG 44
+fg42|FG 42|Germany|1943|rifle|7_92x57|1|20|750|FG 42
+gewehr_43|Gewehr 43|Germany|1943|rifle|7_92x57|0|10|40|Gewehr 43
+mauser_c96|Mauser C96|Germany|1896|pistol|7_63x25|0|10|60|Mauser C96
+luger_p08|Luger P08|Germany|1908|pistol|ammo_9mm|0|8|40|Luger pistol
+walther_p38|Walther P38|Germany|1938|pistol|ammo_9mm|0|8|40|Walther P38
+walther_ppk|Walther PPK|Germany|1931|pistol|380_acp|0|7|40|Walther PPK
+colt_m1911|Colt M1911|USA|1911|pistol|ammo_45|0|7|40|M1911 pistol
+colt_saa|Colt Single Action Army|USA|1873|pistol|45_colt|0|6|20|Colt Single Action Army
+smith_wesson_model10|Smith & Wesson Model 10|USA|1899|pistol|38_special|0|6|30|Smith & Wesson Model 10
+colt_1903|Colt Model 1903 Pocket Hammerless|USA|1903|pistol|32_acp|0|8|40|Colt Model 1903 Pocket Hammerless
+fn_browning_hi_power|Browning Hi-Power|Belgium|1935|pistol|ammo_9mm|0|13|40|Browning Hi-Power
+fn_m1900|FN Model 1900|Belgium|1900|pistol|32_acp|0|7|40|FN Model 1900
+webley_mk6|Webley Mk VI|Britain|1915|pistol|455_webley|0|6|20|Webley Revolver
+enfield_no2|Enfield No. 2 Mk I|Britain|1932|pistol|38_special|0|6|20|Enfield No. 2 Mk I
+nagant_m1895|Nagant M1895|Russia|1895|pistol|7_62_nagant|0|7|20|Nagant M1895
+tokarev_tt33|Tokarev TT-33|USSR|1933|pistol|7_62x25|0|8|40|TT-33
+type14_nambu|Type 14 Nambu|Japan|1925|pistol|8_nambu|0|8|40|Type 14 Nambu
+lebel_1892_revolver|Modele 1892 Revolver|France|1892|pistol|8_lebel|0|6|20|Modèle 1892 revolver
+beretta_1934|Beretta M1934|Italy|1934|pistol|380_acp|0|7|40|Beretta M1934
+steyr_m1912|Steyr M1912|Austria-Hungary|1912|pistol|ammo_9mm|0|8|40|Steyr M1912
+lahti_l35|Lahti L-35|Finland|1935|pistol|ammo_9mm|0|8|40|Lahti L-35
+radom_vis35|Radom Vis 35|Poland|1935|pistol|ammo_9mm|0|8|40|Radom Vis
+mp18|Bergmann MP 18|Germany|1918|smg|ammo_9mm|1|32|500|MP 18
+thompson_m1928|Thompson Submachine Gun|USA|1928|smg|ammo_45|1|30|700|Thompson submachine gun
+mp40|MP 40|Germany|1940|smg|ammo_9mm|1|32|500|MP 40
+ppsh41|PPSh-41|USSR|1941|smg|7_62x25|1|71|900|PPSh-41
+pps43|PPS-43|USSR|1943|smg|7_62x25|1|35|650|PPS-43
+sten_mk2|Sten Mk II|Britain|1941|smg|ammo_9mm|1|32|550|Sten
+owen_gun|Owen Gun|Australia|1942|smg|ammo_9mm|1|33|700|Owen Gun
+m3_grease_gun|M3 Grease Gun|USA|1942|smg|ammo_45|1|30|450|M3 submachine gun
+beretta_m38|Beretta Model 38|Italy|1938|smg|ammo_9mm|1|40|600|Beretta Model 38
+suomi_kp31|Suomi KP/-31|Finland|1931|smg|ammo_9mm|1|71|900|Suomi KP/-31
+mas_38|MAS-38|France|1938|smg|7_65_long|1|32|600|MAS-38 submachine gun
+gatling_gun|Gatling Gun|USA|1861|lmg|gatling_58|1|100|200|Gatling gun
+maxim_gun|Maxim Gun|Britain|1884|lmg|303_british|1|250|600|Maxim gun
+vickers_gun|Vickers Machine Gun|Britain|1912|lmg|303_british|1|250|450|Vickers machine gun
+mg08|MG 08|Germany|1908|lmg|7_92x57|1|250|500|MG 08
+browning_m1917|Browning M1917|USA|1917|lmg|30_06|1|250|450|M1917 Browning machine gun
+browning_m1919|Browning M1919|USA|1919|lmg|30_06|1|250|500|M1919 Browning machine gun
+browning_m2|Browning M2|USA|1933|lmg|ammo_50bmg|1|110|550|M2 Browning
+hotchkiss_m1914|Hotchkiss M1914|France|1914|lmg|8_lebel|1|24|450|Hotchkiss M1914 machine gun
+lewis_gun|Lewis Gun|USA|1913|lmg|303_british|1|47|550|Lewis gun
+chauchat|Chauchat|France|1915|lmg|8_lebel|1|20|240|Chauchat
+mg34|MG 34|Germany|1934|lmg|7_92x57|1|50|850|MG 34
+mg42|MG 42|Germany|1942|lmg|7_92x57|1|50|1200|MG 42
+dp27|DP-27|USSR|1928|lmg|7_62x54r|1|47|550|DP-27
+dshk|DShK|USSR|1938|lmg|12_7x108|1|50|600|DShK
+sg43|SG-43 Goryunov|USSR|1943|lmg|7_62x54r|1|250|650|SG-43 Goryunov
+bren_gun|Bren Gun|Britain|1938|lmg|303_british|1|30|500|Bren light machine gun
+type96_lmg|Type 96 Light Machine Gun|Japan|1936|lmg|6_5x50|1|30|550|Type 96 light machine gun
+type92_hmg|Type 92 Heavy Machine Gun|Japan|1932|lmg|7_7x58|1|30|450|Type 92 heavy machine gun
+madsen_lmg|Madsen Machine Gun|Denmark|1902|lmg|8x50r|1|30|450|Madsen machine gun
+breda_30|Breda Modello 30|Italy|1930|lmg|6_5x52|1|20|475|Breda Modello 30
+zb26|ZB vz. 26|Czechoslovakia|1926|lmg|7_92x57|1|20|500|ZB vz. 26
+schwarzlose_m07|Schwarzlose MG M.07/12|Austria-Hungary|1912|lmg|8x50r|1|250|400|Schwarzlose MG M.07/12
+fiat_revelli_1914|Fiat-Revelli Modello 1914|Italy|1914|lmg|6_5x52|1|50|500|Fiat–Revelli Modello 1914
+winchester_1897|Winchester Model 1897|USA|1897|shotgun|ammo_12g|0|5|40|Winchester Model 1897
+winchester_1887|Winchester Model 1887|USA|1887|shotgun|ammo_12g|0|5|40|Winchester Model 1887
+winchester_model12|Winchester Model 12|USA|1912|shotgun|ammo_12g|0|6|45|Winchester Model 12
+browning_auto5|Browning Auto-5|Belgium|1902|shotgun|ammo_12g|0|5|60|Browning Auto-5
+ithaca_37|Ithaca 37|USA|1937|shotgun|ammo_12g|0|5|45|Ithaca 37
+panzerfaust_60|Panzerfaust 60|Germany|1943|launcher|rocket|0|1|3|Panzerfaust
+panzerschreck|Panzerschreck|Germany|1943|launcher|rocket|0|1|5|Panzerschreck
+bazooka_m1|M1 Bazooka|USA|1942|launcher|rocket|0|1|5|Bazooka
+piat|PIAT|Britain|1942|launcher|rocket|0|1|4|PIAT
+ptrd41|PTRD-41|USSR|1941|sniper|14_5x114|0|1|8|PTRD-41
+ptrs41|PTRS-41|USSR|1941|sniper|14_5x114|0|5|15|PTRS-41
+boys_at_rifle|Boys Anti-Tank Rifle|Britain|1937|sniper|55_boys|0|5|10|Boys anti-tank rifle
+pzb39|Panzerbuchse 39|Germany|1939|sniper|7_92x94|0|1|10|Panzerbüchse 39

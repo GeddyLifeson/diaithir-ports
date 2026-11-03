@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:rocket_launcher",
+ "result": {
+  "id": "diaithirfirearms:rpg7",
+  "count": 1
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:smg_compact",
+ "result": {
+  "id": "diaithirfirearms:carl_gustaf_m45",
+  "count": 1
+ }
+}

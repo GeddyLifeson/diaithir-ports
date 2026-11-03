@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:sniper_rifle",
+ "result": {
+  "id": "diaithirfirearms:m110_sass",
+  "count": 1
+ }
+}

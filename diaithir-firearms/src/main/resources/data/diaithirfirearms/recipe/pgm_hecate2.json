@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:sniper_rifle",
+ "result": {
+  "id": "diaithirfirearms:pgm_hecate2",
+  "count": 1
+ }
+}

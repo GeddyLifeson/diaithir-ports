@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:sidearm_light",
+ "result": {
+  "id": "diaithirfirearms:enfield_no2",
+  "count": 1
+ }
+}

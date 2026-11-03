@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "diaithirfirearms:carbine",
+ "result": {
+  "id": "diaithirfirearms:arisaka_type38",
+  "count": 1
+ }
+}
