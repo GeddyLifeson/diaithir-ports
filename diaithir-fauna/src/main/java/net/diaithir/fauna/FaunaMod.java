@@ -113,6 +113,20 @@ public final class FaunaMod {
                     var sp = c.getSource().getPlayerOrException();
                     return Revival.revive(sp, c.getSource().getLevel(), sp.blockPosition()) ? 1 : 0;
                 }))
+                .then(Commands.literal("libsummon").then(Commands.argument("entry", StringArgumentType.word())
+                        .executes(c -> {
+                            Species s = Species.byId(StringArgumentType.getString(c, "entry"));
+                            if (s == null || s.title == null) {
+                                c.getSource().sendFailure(Component.literal("No Library creature with that entry id"));
+                                return 0;
+                            }
+                            ServerLevel level = c.getSource().getLevel();
+                            FaunaMob m = TYPES.get(s.plan).get().create(level, EntitySpawnReason.COMMAND);
+                            m.setPos(c.getSource().getPosition());
+                            m.setSpecies(s);
+                            level.addFreshEntity(m);
+                            return 1;
+                        })))
                 .then(Commands.literal("summon").then(Commands.argument("species", StringArgumentType.word())
                         .suggests((c, b) -> SharedSuggestionProvider.suggest(Species.ALL.stream().map(s -> s.id), b))
                         .executes(c -> {
