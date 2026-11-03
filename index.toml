@@ -67507,10 +67507,6 @@ hash = "0d917901f9f6df099122c394592cdcc4288b193bab132ef1d33b649ef1909e0a"
 metafile = true
 
 [[files]]
-file = "mods/Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar"
-hash = "5a818ea93c9b7d044437340fd2eaf3fba40c463df34225b5ee80701409f19711"
-
-[[files]]
 file = "mods/Jade-mc26.1-NeoForge-26.1.12.pw.toml"
 hash = "8da7017f425f634b3c2619f100548c05afa705391df2459674702068a911d189"
 metafile = true
@@ -67524,10 +67520,6 @@ metafile = true
 file = "mods/Measurements-neoforge-26.1-4.0.0.pw.toml"
 hash = "6ef94dc97c9079cf246ed3e3cbe13a70420a128ea12e8807acb0a6392a7b8b35"
 metafile = true
-
-[[files]]
-file = "mods/Mekanism-26.1.2-10.8.0.homebaked.jar"
-hash = "60f98131bfd89dd56316e2787fd7fbee1566f7446f95b44a665bf90ab22bb39b"
 
 [[files]]
 file = "mods/ModernNetworking-neoforge-2.0.1_26.1.2.pw.toml"
@@ -67775,10 +67767,6 @@ hash = "5ae188ee00c257bde7330af03a137034b3dd96bc7e25ddf89a59c93a4be8e0e4"
 metafile = true
 
 [[files]]
-file = "mods/create-neoforge-26.1.2-6.0.9-diaithir.8.jar"
-hash = "9b1528b264c946a89a41a2a363def8f821cdc196d7e3435c04ebd9f6c0e3f457"
-
-[[files]]
 file = "mods/cristellib-neoforge-26.1.2-3.1.13.pw.toml"
 hash = "3bca39e3c21ca505e808bf8c5aece16429b8ac33835504ef61699ea4a5e84a10"
 metafile = true
@@ -67799,8 +67787,8 @@ hash = "6c2cb913e00714bf9970e91f795cd5a0e1c575bc3da8564a96ace45444be1bdb"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-ae2-extensions-neoforge-26.1.2-1.0.0.jar"
-hash = "0d84e97640d2d5b4797491cef6ce651c0dcb833a60f6b3bf7bbfda1f0519cbd0"
+file = "mods/diaithir-adventure-suite-neoforge-26.1.2-1.0.0.jar"
+hash = "e008bb6cac6e6fc3bb251ff9d0e78f0e7a8ddb9018c2c4f2c0d367b36b989ec9"
 
 [[files]]
 file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.6.jar"
@@ -67810,10 +67798,6 @@ hash = "040e7725313ccf05766ee1bcaaa1d2cafba09331c7aba76f9bedfea6be6b9498"
 file = "mods/diaithir-audio-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "bc0c0c6c5bde89dd5dddcdb304f9e6a8516f8caec9fb726fb7454a2038b4b483"
 metafile = true
-
-[[files]]
-file = "mods/diaithir-blocks-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "0477d3ed92bd9e089d3759c8e1feb54d17ae776c5f95edc97b27db04efeda9db"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
@@ -67828,14 +67812,6 @@ metafile = true
 [[files]]
 file = "mods/diaithir-content-suite-neoforge-26.1.2-1.0.0.jar"
 hash = "414efc9393cdcb46bc410c2e0b1227ac1a091353c884e30d9ebbc6125d1dcb5c"
-
-[[files]]
-file = "mods/diaithir-core-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "d616a6f6fc3661aa33aab3cd4657f5faee7ba409f945c1b9870a12504a919391"
-
-[[files]]
-file = "mods/diaithir-creatures-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "3c84b67deb258dc58b77b9e05dbafc362dff1c078e6ae835807897b1ac2cf227"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
@@ -67853,6 +67829,10 @@ hash = "e3240cdcf1b244579f2867ef448023c5ced144e9fcd19345785e92571d708526"
 metafile = true
 
 [[files]]
+file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
+hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
+
+[[files]]
 file = "mods/diaithir-hud-overlays-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "2942950e442f19b69da5becd5a36a658713faa5bb685d0a6169254b80da7c21d"
 metafile = true
@@ -67868,16 +67848,16 @@ hash = "0bead35eccbf68b519022b574d5f1299c57db922cabd091a36d4138a3c2a3476"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-libraries-neoforge-26.1.2-1.0.0.jar"
-hash = "aa34f7a35e348179a9bc1af065b2c8cb8ad2bb3a646b9b6e82cbe9064e94db58"
+file = "mods/diaithir-platform-suite-neoforge-26.1.2-1.0.0.jar"
+hash = "cabe0e7b09155065768fcad0cc458887d021113d8ca0ec784b1e3457564395a8"
 
 [[files]]
-file = "mods/diaithir-open-worlds-neoforge-26.1.2-1.0.0.jar"
-hash = "0417dd8d6730ffcdcbbf257bf63ee1552c446a6ee58f126ed591c99f5ca21463"
+file = "mods/diaithir-power-suite-neoforge-26.1.2-1.0.0.jar"
+hash = "ab391fb6f4332268fbb27ab334bb4a8ba49843faae9cd81987db61f64c6227f5"
 
 [[files]]
-file = "mods/diaithir-overworld-biomes-neoforge-26.1.2-1.0.0.jar"
-hash = "a26770ced4657a9ace26725b7c9189e3883671f689f9ce8c919f695a335ae4c8"
+file = "mods/diaithir-realms-suite-neoforge-26.1.2-1.0.0.jar"
+hash = "4fc988eb8d7cb821375d657fa862ee2676541a5bd50a480b22ce1339962ce734"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
@@ -67886,22 +67866,6 @@ hash = "85bdbdbce4dc2b558b1461561f37b6e7524092466f81d8c49290ad2576deb6a2"
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
 hash = "123c12803fa3cce0201092cdcda81d73ef177cc5f2996c86948383fa5d5caa08"
-
-[[files]]
-file = "mods/diaithir-rpg-open-neoforge-26.1.2-1.0.0.jar"
-hash = "8047c1c12a280a3ca22a010f4e94634c3909ac25f1a7c4492c0d4c77d5cb5404"
-
-[[files]]
-file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.4-with-archimedes-128.jar"
-hash = "f5a61731b186b35ec1080e03d16ba4947cbfd9e6b45a7d95044ff3e1d625d2f1"
-
-[[files]]
-file = "mods/diaithir-tech-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "ff219771af41e7729303575a111ad3d56bd0233a29abdf1fefa55c5002ca211b"
-
-[[files]]
-file = "mods/diaithir-terrain-neoforge-26.1.2-1.0.0.jar"
-hash = "c116d410ac95658aa2b419ee722880fbc6b3f69ce5b9648c1b5539b9f53b6c4d"
 
 [[files]]
 file = "mods/diaithir-world-suite-neoforge-26.1.2-1.0.0.jar"
@@ -67964,10 +67928,6 @@ metafile = true
 file = "mods/epitaphs-2.4.0_26.1.2.pw.toml"
 hash = "3a817dba7383f7eb545a8f437eab75727a765c52d7eb2f040776622a64b81971"
 metafile = true
-
-[[files]]
-file = "mods/eternalstarlight-0.9.1+mc26.1.2.jar"
-hash = "d28804de6ae46792c3419c399f80e0d57da64d80c457092318850ccb22e48c4f"
 
 [[files]]
 file = "mods/ferritecore-9.0.0-neoforge.pw.toml"
@@ -68139,10 +68099,6 @@ hash = "256250a350ff319ac72ba3f55c65c44d9eb1984a01502723912fc6e6b4a47200"
 metafile = true
 
 [[files]]
-file = "mods/minevegas-casino-neoforge-26.1.2-1.0.4-diaithir.1.jar"
-hash = "cb65f63ba188feb168301369133c138163f1ee9a41cc27fd877944ee701228aa"
-
-[[files]]
 file = "mods/mininggadgets-1.19.3.pw.toml"
 hash = "2596071498e95dacd54e9b9ba33c256628a85c0a35c604f1513b5392532ca502"
 metafile = true
@@ -68205,10 +68161,6 @@ metafile = true
 file = "mods/packetfixer-neoforge-3.3.4-26.1.pw.toml"
 hash = "f269e05fe12696e4fb3346c1ce4454ab64be379ed3ee1719a1e2e537486da813"
 metafile = true
-
-[[files]]
-file = "mods/pneumaticcraft-repressurized-8.2.23.jar"
-hash = "b5e5672397990e4fabee0b29d24b01d53866c6d0862221228ae702614642df92"
 
 [[files]]
 file = "mods/productivebees-26.1.2-15.3.0.pw.toml"
