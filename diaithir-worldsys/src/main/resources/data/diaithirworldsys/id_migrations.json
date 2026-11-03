@@ -985,11 +985,6 @@
   "new": "diaithirworldsys:easy_villagers_inventory_viewer"
  },
  {
-  "registry": "minecraft:block",
-  "old": "easy_villagers:inventory_viewer",
-  "new": "diaithirworldsys:easy_villagers_inventory_viewer"
- },
- {
   "registry": "minecraft:item",
   "old": "easy_villagers:iron_farm",
   "new": "diaithirworldsys:easy_villagers_iron_farm"

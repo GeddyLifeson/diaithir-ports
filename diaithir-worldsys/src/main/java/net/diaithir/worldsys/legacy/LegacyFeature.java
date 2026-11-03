@@ -73,12 +73,7 @@ public final class LegacyFeature {
             "utilitarian_yellow_soliciting_carpet",
             "utilitarian_yellow_trapped_soliciting_carpet",
             "simplemagnets_advanced_demagnetization_coil",
-            "simplemagnets_basic_demagnetization_coil",
-            "easy_villagers_auto_trader",
-            "easy_villagers_converter",
-            "easy_villagers_incubator",
-            "easy_villagers_inventory_viewer",
-            "easy_villagers_iron_farm"
+            "simplemagnets_basic_demagnetization_coil"
     };
     private static final String[] ITEM_IDS = {
             "jewelry_socket_mount",

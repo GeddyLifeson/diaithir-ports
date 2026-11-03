@@ -33,5 +33,6 @@ public final class DiaithirWorldSys {
         net.diaithir.worldsys.villagercare2.Villagercare2Feature.register(bus);
         net.diaithir.worldsys.stationsticks.StationsticksFeature.register(bus);
         net.diaithir.worldsys.jewelrypowers.JewelrypowersFeature.register(bus);
+        net.diaithir.worldsys.villagercare3.Villagercare3Feature.register(bus);
     }
 }
