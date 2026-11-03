@@ -35,8 +35,8 @@ final class PlanetHazards {
         boolean day = level.isBrightOutside();
         for (ServerPlayer p : level.players()) {
             if (p.isCreative() || p.isSpectator() || !level.canSeeSky(p.blockPosition())) continue;
-            if (h.contains("ash_fall") && wet) p.addEffect(new MobEffectInstance(MobEffects.MINING_FATIGUE, 100, 0, true, false));
-            if (h.contains("storms") && storm) p.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100, 0, true, false));
+            if (h.contains("ash_fall") && wet) p.addEffect(new MobEffectInstance(MobEffects.MINING_FATIGUE, 100, 0, false, true, true));
+            if (h.contains("storms") && storm) p.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100, 0, false, true, true));
             if (h.contains("drought") && day) p.causeFoodExhaustion(0.4F);
             if (h.contains("freezing") && !p.getItemBySlot(EquipmentSlot.CHEST).is(Items.LEATHER_CHESTPLATE))
                 p.setTicksFrozen(Math.min(p.getTicksFrozen() + 10, p.getTicksRequiredToFreeze()));

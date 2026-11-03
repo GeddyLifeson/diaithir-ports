@@ -52,6 +52,7 @@ public final class PlanetColony {
 
     public static void init() {
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> register(e.getDispatcher()));
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) ColonyClient.init();
     }
 
     public static synchronized JsonObject profile(String id) {
@@ -66,6 +67,9 @@ public final class PlanetColony {
         JsonElement e = profiles.get(id);
         return e == null ? null : e.getAsJsonObject();
     }
+
+    /** All colony planet ids, sorted. */
+    public static List<String> planetIds() { return ids(); }
 
     private static List<String> ids() {
         profile("");
