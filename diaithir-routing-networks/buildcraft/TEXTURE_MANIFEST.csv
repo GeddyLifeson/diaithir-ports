@@ -1,13 +1,13 @@
 path,namespace,w,h,status
 source-families/26.X/src/main/resources/assets/buildcraftenergy/textures/block/mask/bucket_surface.png,buildcraftenergy,16,16,own-64px
-source-shared/src/main/resources/assets/buildcraft/guide/gui/icons.png,buildcraft,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraft/guide/gui/left_page.png,buildcraft,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraft/guide/gui/left_page_back.png,buildcraft,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraft/guide/gui/left_page_first.png,buildcraft,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraft/guide/gui/note.png,buildcraft,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraft/guide/gui/right_page.png,buildcraft,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraft/guide/gui/right_page_back.png,buildcraft,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraft/guide/gui/right_page_last.png,buildcraft,256,256,original-pending-retexture
+source-shared/src/main/resources/assets/buildcraft/guide/gui/icons.png,buildcraft,256,256,placeholder-boxes (needs hand-art pass)
+source-shared/src/main/resources/assets/buildcraft/guide/gui/left_page.png,buildcraft,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraft/guide/gui/left_page_back.png,buildcraft,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraft/guide/gui/left_page_first.png,buildcraft,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraft/guide/gui/note.png,buildcraft,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraft/guide/gui/right_page.png,buildcraft,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraft/guide/gui/right_page_back.png,buildcraft,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraft/guide/gui/right_page_last.png,buildcraft,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/addons/filler_planner.png,buildcraftbuilders,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/addons/filler_preview_white.png,buildcraftbuilders,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/blocks/architect/back.png,buildcraftbuilders,16,16,own-64px
@@ -163,16 +163,16 @@ source-shared/src/main/resources/assets/buildcraftbuilders/textures/filling/patt
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/filling/pattern/triangle.png,buildcraftbuilders,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/filling/type/filled.png,buildcraftbuilders,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/filling/type/hollow.png,buildcraftbuilders,16,16,own-64px
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/architect.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/architect_gui_large.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/blueprint/blue.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/builder.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/builder_blueprint.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/electronic_library.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/filler.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/filler_planner.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/quarry.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/replacer.png,buildcraftbuilders,256,256,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/architect.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/architect_gui_large.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/blueprint/blue.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/builder.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/builder_blueprint.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/electronic_library.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/filler.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/filler_planner.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/quarry.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftbuilders/textures/gui/replacer.png,buildcraftbuilders,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/items/blueprint/clean.png,buildcraftbuilders,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/items/blueprint/used.png,buildcraftbuilders,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftbuilders/textures/items/icons/urbanist_area.png,buildcraftbuilders,16,16,own-64px
@@ -218,12 +218,12 @@ source-shared/src/main/resources/assets/buildcraftcore/textures/blocks/misc/text
 source-shared/src/main/resources/assets/buildcraftcore/textures/blocks/misc/texture_yellow_dark.png,buildcraftcore,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftcore/textures/blocks/misc/texture_yellow_lit.png,buildcraftcore,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftcore/textures/blocks/misc/transparent.png,buildcraftcore,16,16,own-64px
-source-shared/src/main/resources/assets/buildcraftcore/textures/gui/generic_one_slot.png,buildcraftcore,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftcore/textures/gui/generic_ui.png,buildcraftcore,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftcore/textures/gui/ledger.png,buildcraftcore,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftcore/textures/gui/list.png,buildcraftcore,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftcore/textures/gui/list_new.png,buildcraftcore,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftcore/textures/gui/slot.png,buildcraftcore,32,32,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcraftcore/textures/gui/generic_one_slot.png,buildcraftcore,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftcore/textures/gui/generic_ui.png,buildcraftcore,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftcore/textures/gui/ledger.png,buildcraftcore,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftcore/textures/gui/list.png,buildcraftcore,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftcore/textures/gui/list_new.png,buildcraftcore,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftcore/textures/gui/slot.png,buildcraftcore,32,32,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftcore/textures/items/diamond_shard.png,buildcraftcore,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftcore/textures/items/fragile_fluid_shard_base.png,buildcraftcore,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftcore/textures/items/fragile_fluid_shard_fluid.png,buildcraftcore,16,16,own-64px
@@ -422,10 +422,10 @@ source-shared/src/main/resources/assets/buildcraftenergy/textures/blocks/fluids/
 source-shared/src/main/resources/assets/buildcraftenergy/textures/blocks/mj_dynamo/back.png,buildcraftenergy,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftenergy/textures/blocks/mj_dynamo/front.png,buildcraftenergy,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftenergy/textures/blocks/mj_dynamo/side.png,buildcraftenergy,16,16,own-64px
-source-shared/src/main/resources/assets/buildcraftenergy/textures/gui/combustion_engine_gui.png,buildcraftenergy,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftenergy/textures/gui/fe_engine_gui.png,buildcraftenergy,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftenergy/textures/gui/mj_dynamo_gui.png,buildcraftenergy,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftenergy/textures/gui/steam_engine_gui.png,buildcraftenergy,256,256,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcraftenergy/textures/gui/combustion_engine_gui.png,buildcraftenergy,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftenergy/textures/gui/fe_engine_gui.png,buildcraftenergy,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftenergy/textures/gui/mj_dynamo_gui.png,buildcraftenergy,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftenergy/textures/gui/steam_engine_gui.png,buildcraftenergy,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftenergy/textures/items/fuel_dense_bucket.png,buildcraftenergy,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftenergy/textures/items/fuel_gas_bucket.png,buildcraftenergy,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftenergy/textures/items/fuel_light_bucket.png,buildcraftenergy,16,16,own-64px
@@ -496,13 +496,13 @@ source-shared/src/main/resources/assets/buildcraftfactory/textures/blocks/tank/s
 source-shared/src/main/resources/assets/buildcraftfactory/textures/blocks/tube/default.png,buildcraftfactory,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftfactory/textures/blocks/tube/end.png,buildcraftfactory,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftfactory/textures/blocks/tube/side.png,buildcraftfactory,16,16,own-64px
-source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/autobench_item.png,buildcraftfactory,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/chute.png,buildcraftfactory,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/distiller.png,buildcraftfactory,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/energy_heater.png,buildcraftfactory,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/heat_exchanger.png,buildcraftfactory,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/refinery_filter.png,buildcraftfactory,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/tank.png,buildcraftfactory,256,256,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/autobench_item.png,buildcraftfactory,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/chute.png,buildcraftfactory,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/distiller.png,buildcraftfactory,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/energy_heater.png,buildcraftfactory,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/heat_exchanger.png,buildcraftfactory,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/refinery_filter.png,buildcraftfactory,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftfactory/textures/gui/tank.png,buildcraftfactory,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftfactory/textures/items/gel.png,buildcraftfactory,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftfactory/textures/items/gel_structure.png,buildcraftfactory,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftfactory/textures/items/plastic_sheet.png,buildcraftfactory,16,16,own-64px
@@ -515,8 +515,8 @@ source-shared/src/main/resources/assets/buildcraftlib/textures/blocks/engine/tru
 source-shared/src/main/resources/assets/buildcraftlib/textures/blocks/engine/trunk_overheat.png,buildcraftlib,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftlib/textures/blocks/engine/trunk_red.png,buildcraftlib,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftlib/textures/blocks/engine/trunk_yellow.png,buildcraftlib,16,16,own-64px
-source-shared/src/main/resources/assets/buildcraftlib/textures/gui/buttons.png,buildcraftlib,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftlib/textures/gui/misc_slots.png,buildcraftlib,256,256,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcraftlib/textures/gui/buttons.png,buildcraftlib,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftlib/textures/gui/misc_slots.png,buildcraftlib,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftlib/textures/icons/engine_active.png,buildcraftlib,16,96,own-64px
 source-shared/src/main/resources/assets/buildcraftlib/textures/icons/engine_inactive.png,buildcraftlib,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftlib/textures/icons/engine_overheat.png,buildcraftlib,16,16,own-64px
@@ -584,9 +584,9 @@ source-shared/src/main/resources/assets/buildcraftrobotics/textures/entities/rob
 source-shared/src/main/resources/assets/buildcraftrobotics/textures/entities/robot_shovelman_active.png,buildcraftrobotics,32,32,own-64px
 source-shared/src/main/resources/assets/buildcraftrobotics/textures/entities/robot_stripes.png,buildcraftrobotics,32,32,own-64px
 source-shared/src/main/resources/assets/buildcraftrobotics/textures/entities/robot_stripes_active.png,buildcraftrobotics,32,32,own-64px
-source-shared/src/main/resources/assets/buildcraftrobotics/textures/gui/block.png,buildcraftrobotics,16,16,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftrobotics/textures/gui/requester_gui.png,buildcraftrobotics,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftrobotics/textures/gui/zone_planner.png,buildcraftrobotics,256,256,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcraftrobotics/textures/gui/block.png,buildcraftrobotics,16,16,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftrobotics/textures/gui/requester_gui.png,buildcraftrobotics,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftrobotics/textures/gui/zone_planner.png,buildcraftrobotics,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftrobotics/textures/items/board/blue.png,buildcraftrobotics,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftrobotics/textures/items/board/blue_map.png,buildcraftrobotics,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftrobotics/textures/items/board/clean.png,buildcraftrobotics,16,16,own-64px
@@ -676,17 +676,17 @@ source-shared/src/main/resources/assets/buildcraftsilicon/textures/gates/gate_on
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gates/gate_or.png,buildcraftsilicon,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gates/gate_or_dark.png,buildcraftsilicon,32,32,own-64px
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gates/gate_or_lit.png,buildcraftsilicon,32,32,own-64px
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/advanced_crafting_table.png,buildcraftsilicon,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/assembly_table.png,buildcraftsilicon,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/charging_table.png,buildcraftsilicon,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/gate_interface.png,buildcraftsilicon,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/integration_table.png,buildcraftsilicon,256,256,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/advanced_crafting_table.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/assembly_table.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/charging_table.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/gate_interface.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/integration_table.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/jei/assembly_table_bc8.png,buildcraftsilicon,256,256,original-pending-retexture
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/jei/integration_table_bc7.png,buildcraftsilicon,256,256,original-pending-retexture
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/jei/programming_table_bc7.png,buildcraftsilicon,256,256,original-pending-retexture
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/packager.png,buildcraftsilicon,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/programming_table.png,buildcraftsilicon,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/stamper.png,buildcraftsilicon,256,256,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/packager.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/programming_table.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcraftsilicon/textures/gui/stamper.png,buildcraftsilicon,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/items/gatecopier/empty.png,buildcraftsilicon,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/items/gatecopier/full.png,buildcraftsilicon,16,16,own-64px
 source-shared/src/main/resources/assets/buildcraftsilicon/textures/items/gates/gate_expansion_clock.png,buildcraftsilicon,16,16,own-64px
@@ -732,14 +732,14 @@ source-shared/src/main/resources/assets/buildcrafttransport/textures/blocks/pipe
 source-shared/src/main/resources/assets/buildcrafttransport/textures/blocks/pipes/pipe_robot_station_cb.png,buildcrafttransport,16,16,own-64px
 source-shared/src/main/resources/assets/buildcrafttransport/textures/blocks/pipes/pipe_robot_station_linked_cb.png,buildcrafttransport,16,16,own-64px
 source-shared/src/main/resources/assets/buildcrafttransport/textures/blocks/pipes/pipe_robot_station_reserved_cb.png,buildcrafttransport,16,16,own-64px
-source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/empty_filtered_buffer_slot.png,buildcrafttransport,16,16,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/filter.png,buildcrafttransport,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/filter_cb.png,buildcrafttransport,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/filtered_buffer.png,buildcrafttransport,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/nothing_filtered_buffer_slot.png,buildcrafttransport,16,16,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emerald.png,buildcrafttransport,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emerald_button.png,buildcrafttransport,256,256,"own-recolour-of-upstream (derivative, layout kept)"
-source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emzuli.png,buildcrafttransport,256,256,"own-recolour-of-upstream (derivative, layout kept)"
+source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/empty_filtered_buffer_slot.png,buildcrafttransport,16,16,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/filter.png,buildcrafttransport,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/filter_cb.png,buildcrafttransport,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/filtered_buffer.png,buildcrafttransport,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/nothing_filtered_buffer_slot.png,buildcrafttransport,16,16,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emerald.png,buildcrafttransport,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emerald_button.png,buildcrafttransport,256,256,"own-drawn (layout only, 256 px)"
+source-shared/src/main/resources/assets/buildcrafttransport/textures/gui/pipe_emzuli.png,buildcrafttransport,256,256,"own-drawn (layout only, 256 px)"
 source-shared/src/main/resources/assets/buildcrafttransport/textures/items/pipe_power_adapter.png,buildcrafttransport,16,16,own-64px
 source-shared/src/main/resources/assets/buildcrafttransport/textures/items/pipewaterproof.png,buildcrafttransport,16,16,own-64px
 source-shared/src/main/resources/assets/buildcrafttransport/textures/items/pipewire/blue.png,buildcrafttransport,16,16,own-64px
