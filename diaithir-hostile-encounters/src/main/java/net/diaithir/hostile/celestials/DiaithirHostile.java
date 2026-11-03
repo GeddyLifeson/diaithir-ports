@@ -14,6 +14,7 @@ public final class DiaithirHostile {
     public DiaithirHostile(net.neoforged.bus.api.IEventBus bus) {
         net.diaithir.hostile.encounters.Consolidated.load();
         net.diaithir.hostile.encounters.ConsolidatedItems.register(bus);
+        net.diaithir.hostile.encounters.ConsolidatedBehaviour.register();
         NeoForge.EVENT_BUS.register(LunarEvents.class);
         NeoForge.EVENT_BUS.register(SelfTest.class);
         NeoForge.EVENT_BUS.register(WorldEventsBridge.class);
