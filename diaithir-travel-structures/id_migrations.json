@@ -1,0 +1,9 @@
+{
+  "_doc": "Old id -> new id when Laser Bridges & Doors (mod id laserbridges) is replaced by this module. Blocks, items and sound events keep their names; the namespace changes.",
+  "laserbridges:laser_source_block": "diaithirtravel:laser_source_block",
+  "laserbridges:laser_fence_source_block": "diaithirtravel:laser_fence_source_block",
+  "laserbridges:laser_block_powered": "diaithirtravel:laser_block_powered",
+  "laserbridges:laser_fence_powered": "diaithirtravel:laser_fence_powered",
+  "laserbridges:on": "diaithirtravel:on",
+  "laserbridges:off": "diaithirtravel:off"
+}

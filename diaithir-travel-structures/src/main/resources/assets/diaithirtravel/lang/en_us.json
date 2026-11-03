@@ -1,0 +1,7 @@
+{
+  "block.diaithirtravel.laser_source_block": "Laser Source",
+  "block.diaithirtravel.laser_fence_source_block": "Laser Fence Source",
+  "block.diaithirtravel.laser_block_powered": "Laser Block",
+  "block.diaithirtravel.laser_fence_powered": "Laser Block",
+  "diaithirtravel.configuration.title": "Travel structures"
+}

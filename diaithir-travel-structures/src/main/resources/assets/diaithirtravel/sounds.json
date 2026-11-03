@@ -1,0 +1,13 @@
+{
+  "on": {
+    "sounds": [
+      "diaithirtravel:on"
+    ]
+  },
+  "off": {
+    "sounds": [
+      "diaithirtravel:off"
+    ]
+  }
+}
+
