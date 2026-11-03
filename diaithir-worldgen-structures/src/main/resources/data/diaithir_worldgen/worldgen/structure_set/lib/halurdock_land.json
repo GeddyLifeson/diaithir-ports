@@ -1,0 +1,34 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/hall_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/hall_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/hall_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/tomb_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/halurdock/tower_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 97079116
+ }
+}

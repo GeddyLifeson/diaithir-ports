@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/delve_0_cave",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/delve_1_cave",
+   "weight": 17
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 216703253
+ }
+}

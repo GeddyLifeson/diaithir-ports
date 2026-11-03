@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/draggouzhok/delve/0/cave",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/draggouzhok/ma_draggouzhok_e1_places_000011",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

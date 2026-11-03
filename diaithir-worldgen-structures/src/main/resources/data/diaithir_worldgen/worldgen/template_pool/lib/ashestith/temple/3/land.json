@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ashestith/temple/3/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ashestith/ma_ashestith_e6_places_000393",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

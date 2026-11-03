@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/harbor_0_coast",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/harbor_1_coast",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/harbor_2_coast",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/pelanode/harbor_3_coast",
+   "weight": 11
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 258810140
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/seresum/forge_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/forge_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/forge_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/fortress_0_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/fortress_1_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/fortress_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/garden_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/hall_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/hall_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/hall_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/landmark_0_land",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/landmark_1_land",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/landmark_2_land",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/ruin_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/ruin_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/ruin_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/temple_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/temple_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/temple_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/tomb_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/tomb_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/tower_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/tower_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/seresum/tower_3_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 96147578
+ }
+}

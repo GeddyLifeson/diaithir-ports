@@ -1,0 +1,138 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/forge_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/forge_2_land",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/forge_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/fortress_0_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/fortress_1_land",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/fortress_2_land",
+   "weight": 53
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/fortress_3_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/garden_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/garden_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/garden_2_land",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/hall_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/hall_1_land",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/hall_2_land",
+   "weight": 258
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/hall_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/landmark_0_land",
+   "weight": 26
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/landmark_1_land",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/landmark_2_land",
+   "weight": 173
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/landmark_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/ruin_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/ruin_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/ruin_2_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/temple_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/temple_1_land",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/temple_2_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/temple_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tomb_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tomb_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tomb_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tower_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tower_1_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/tower_2_land",
+   "weight": 46
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 203760919
+ }
+}

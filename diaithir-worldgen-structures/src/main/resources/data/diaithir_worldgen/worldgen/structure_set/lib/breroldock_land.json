@@ -1,0 +1,46 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/forge_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/fortress_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/ruin_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/ruin_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/temple_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/tower_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/tower_3_land",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 129573213
+ }
+}

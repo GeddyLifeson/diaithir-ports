@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/bridge_0_river",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/bridge_1_river",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/bridge_2_river",
+   "weight": 20
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 205266453
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:corentium_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:corentium_grottoes",
+   "required": false
+  }
+ ]
+}

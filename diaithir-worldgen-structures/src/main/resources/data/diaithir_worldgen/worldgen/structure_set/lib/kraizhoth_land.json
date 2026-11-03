@@ -1,0 +1,106 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/forge_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/forge_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/fortress_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/fortress_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/fortress_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/garden_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/hall_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/hall_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/hall_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/landmark_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/landmark_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/landmark_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/ruin_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/ruin_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/temple_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/temple_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/temple_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/tomb_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/tower_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kraizhoth/tower_3_land",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 221810414
+ }
+}
