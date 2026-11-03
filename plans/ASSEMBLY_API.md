@@ -27,6 +27,13 @@ YardRegistry.rollout(id, hook);                // owner of a yard type supplies 
 - ships: `ShipAssembler` call in `RolloutHook`, mass + thrust + buoyancy onto the VS2 ship
 - space: orbital site, `thrust_n/mass_kg`, `power_w` on the Keelwright ship
 
+## Cranes and heavy parts
+- `PartDef.heavy` (true when `mass_kg` >= 500): heavy parts cannot be carried. The item is a crate/ingot-style handle that stays on the bench; moving it needs a crane (`CraneLift`): crane picks the part at a source (bench, depot, flatcar, ship hold) and sets it at a yard slot or target container.
+- Crane set by Age: treadwheel crane, steam crane, diesel mobile crane, electric gantry/overhead, port/container crane. Each has `lift_kg`, `reach_m`, `speed` (m/s); `CraneSpeed` for stage work = product of crane `speed` multipliers in reach of the site.
+- Yard stage rule: a slot with a heavy part needs a crane whose `lift_kg` >= part mass in reach, otherwise `NEEDS_CRANE`.
+- Loading API: `Crane.move(source, target, stack)` also used for containers between ships, trains and trucks.
+- Mod-first note: Create gantries/contraptions are the model for movement; no crane mod has a 26.1 build, so cranes are clean-room in diaithir-yards.
+
 ## Visual growth
 Each stage names a `ghost` structure template. The controller renders the ghost for the current stage plus every finished stage's real blocks; installing a part places its block(s) from the part's `block` field at the stage anchor. Progress ticks show as a scaffold fade.
 
