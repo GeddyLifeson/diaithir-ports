@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/door_top_left_open",
  "textures": {
-  "bottom": "minecraft:block/oak_planks",
-  "top": "minecraft:block/oak_planks"
+  "bottom": "undergarden:block/smogstem_door",
+  "top": "undergarden:block/smogstem_door"
  }
 }

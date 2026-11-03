@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/template_glass_pane_post",
  "textures": {
-  "edge": "minecraft:block/oak_planks",
-  "pane": "minecraft:block/oak_planks"
+  "edge": "aether_ii:block/skyroot_framed_scatterglass_pane",
+  "pane": "aether_ii:block/skyroot_framed_scatterglass_pane"
  }
 }

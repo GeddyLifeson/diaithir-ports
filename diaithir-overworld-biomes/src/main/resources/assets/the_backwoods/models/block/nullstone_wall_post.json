@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/template_wall_post",
  "textures": {
-  "wall": "minecraft:block/stone"
+  "wall": "the_backwoods:block/nullstone_wall"
  }
 }

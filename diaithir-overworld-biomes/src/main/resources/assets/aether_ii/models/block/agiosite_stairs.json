@@ -1,8 +1,8 @@
 {
  "parent": "minecraft:block/stairs",
  "textures": {
-  "bottom": "minecraft:block/stone",
-  "side": "minecraft:block/stone",
-  "top": "minecraft:block/stone"
+  "bottom": "aether_ii:block/agiosite_stairs",
+  "side": "aether_ii:block/agiosite_stairs",
+  "top": "aether_ii:block/agiosite_stairs"
  }
 }

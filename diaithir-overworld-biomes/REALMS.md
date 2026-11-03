@@ -34,3 +34,6 @@ One tree feature per wood family that has a log and leaves, one patch feature pe
 
 ## Not done yet (owners: mobs lane, structures lane, rites lane)
 Boss rituals, per-creature models and abilities, loot rooms and chests in structures, giant mushrooms, carvers, geode teleporter, gear abilities, shields and buckets (migrated to vanilla), block entities (chests, spawners, infuser), sanity mechanic, Bumblezone bee behaviour and fluids, Aether gear and gliding. Textures are stand-ins. Age placements for Undergarden, Backwoods and Bumblezone are approved by the coordinator (11-03) but not yet written into canon.md or PLACEMENTS.md.
+
+## Slice 7: generated art
+All realm blocks and simple items now use generated 64 px textures (tools/realm_art.py, procedural, own design; stairs/slabs/etc. share their parent's look; logs and turf get _top variants; leaves/glass/portals alpha; plants are cross sprites; ores have colored spots). No vanilla stand-in textures remain. Per-creature models and hand-painted art are still open.

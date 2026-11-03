@@ -126,10 +126,8 @@ TPL = {'stairs':'oak_stairs','slab':'oak_slab','wall':'cobblestone_wall','fence'
        'plate':'oak_pressure_plate','door':'oak_door','trapdoor':'oak_trapdoor','pillar':'oak_log','pane':'glass_pane'}
 STAND = {'portal':'purple_stained_glass','wood':'oak_planks','log':'oak_log','leaves':'oak_leaves','soil':'dirt','turf':'grass_block_side','plant':'short_grass','glass':'glass',
          'metal':'iron_block','ore':'iron_ore','mushroom':'brown_mushroom_block','stone':'stone'}
-def tex(mat, key=None):
-    if mat == 'log': return 'minecraft:block/oak_log_top' if key in ('end','top','bottom') else 'minecraft:block/oak_log'
-    if mat == 'turf': return 'minecraft:block/grass_block_top' if key in ('top','end') else 'minecraft:block/dirt'
-    return 'minecraft:block/' + STAND[mat]
+def tex(mat, key=None, bid=None):
+    return f'{NS}:block/{bid}' + ('_top' if mat in ('log',) and key in ('end', 'top', 'bottom') else '')
 def copy_models(tpl, bid, mat, base):
     """copy every vanilla model for template tpl, renamed to bid"""
     pre = f'assets/minecraft/models/block/{tpl}'
@@ -143,7 +141,7 @@ def copy_models(tpl, bid, mat, base):
             ps = o['parent'].replace('minecraft:block/', '').replace('block/', '')
             if ps == tpl or ps.startswith(tpl + '_'): o['parent'] = f'{NS}:block/{bid}{ps[len(tpl):]}'
         if 'textures' in o:
-            o['textures'] = {k: tex(mat, k) for k in o['textures']}
+            o['textures'] = {k: tex(mat, k, bid) for k in o['textures']}
         put(f'assets/{NS}/models/block/{bid}{stem[len(tpl):]}.json', o)
 def copy_state(tpl, bid, mat, base):
     s = Z.read(f'assets/minecraft/blockstates/{tpl}.json').decode()
@@ -167,20 +165,29 @@ for e in man:
         else: item(bid, f'{NS}:block/{bid}')
     elif k == 'cross':
         put(f'assets/{NS}/blockstates/{bid}.json', {'variants': {'': {'model': f'{NS}:block/{bid}'}}})
-        put(f'assets/{NS}/models/block/{bid}.json', {'parent': 'minecraft:block/cross', 'textures': {'cross': tex(m)}})
-        flat(bid, tex(m)); item(bid, f'{NS}:item/{bid}')
+        put(f'assets/{NS}/models/block/{bid}.json', {'parent': 'minecraft:block/cross', 'textures': {'cross': tex(m, None, bid)}})
+        flat(bid, tex(m, None, bid)); item(bid, f'{NS}:item/{bid}')
     else:
         put(f'assets/{NS}/blockstates/{bid}.json', {'variants': {'': {'model': f'{NS}:block/{bid}'}}})
-        put(f'assets/{NS}/models/block/{bid}.json', {'parent': 'minecraft:block/cube_all', 'textures': {'all': tex(m)}})
+        put(f'assets/{NS}/models/block/{bid}.json', {'parent': 'minecraft:block/cube_all', 'textures': {'all': tex(m, None, bid)}})
         item(bid, f'{NS}:block/{bid}')
     lang[f'block.{NS}.{bid}'] = title(bid)
 for n in sitems:
-    flat(n, 'minecraft:item/' + ('iron_ingot' if n.endswith(('ingot','nugget','crystal','rogdorium')) else 'paper'))
+    flat(n, f'{NS}:item/{n}')
     item(n, f'{NS}:item/{n}'); lang[f'item.{NS}.{n}'] = title(n)
 for b in biomes: lang[f'biome.{NS}.{b}'] = title(b)
 lang[f'dimension.{NS}'] = cfg['title']
-put(f'assets/{NS}/textures/block/_art_needed.txt',
-    'Stand-in vanilla textures are used until the art pipeline supplies 64px Industrial Factory style art for each id listed in data/%s/realms/%s.json.\n' % (OWN, NS))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent)); import realm_art
+SEEDRX = r'_(stairs|stair|slab|wall|fence_gate|gate|fence|door|trapdoor|button|pressure_plate)$'
+for e in man:
+    bid, m_ = e['id'], e['mat']; seed = re.sub(SEEDRX, '', bid)
+    if m_ == 'plant': wb_ = realm_art.plant(seed, bid)
+    else: wb_ = realm_art.block(seed, m_, seed)
+    p_ = RES / f'assets/{NS}/textures/block/{bid}.png'; p_.parent.mkdir(parents=True, exist_ok=True); p_.write_bytes(wb_)
+    if m_ == 'log': (RES / f'assets/{NS}/textures/block/{bid}_top.png').write_bytes(realm_art.block(seed, m_, seed, top=True))
+for n_ in sitems:
+    p_ = RES / f'assets/{NS}/textures/item/{n_}.png'; p_.parent.mkdir(parents=True, exist_ok=True); p_.write_bytes(realm_art.item(re.sub(r'^raw_', '', n_), n_))
+(RES / f'assets/{NS}/textures/block/_art_needed.txt').unlink(missing_ok=True)
 
 # ---------- loot, recipes ----------
 for e in man:
