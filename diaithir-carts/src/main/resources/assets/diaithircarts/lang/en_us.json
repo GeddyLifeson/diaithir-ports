@@ -12,5 +12,6 @@
  "block.diaithircarts.one_way_rail": "One-Way Rail",
  "block.diaithircarts.destination_rail": "Destination Rail",
  "block.diaithircarts.cart_loader": "Cart Loader",
- "block.diaithircarts.locking_rail": "Locking Rail"
+ "block.diaithircarts.locking_rail": "Locking Rail",
+ "item.diaithircarts.timetable": "Timetable"
 }

@@ -20,3 +20,8 @@ Clean-room rail mod for NeoForge 26.1.2, written from public descriptions of the
 - Test: `/diaithircarts routingtest` (owners) runs carts against and with one-way rails, named and unnamed carts on a destination rail, and a cart loader loading, unloading and switched off by redstone.
 - **Locking rail**: stops a cart and keeps it. Bare hand cycles the mode. Latch (amber) holds until the rail goes from unpowered to powered (a pulse; already powered on arrival does not release). Interlock (green) holds until the 32 rails ahead are clear of other carts. The routing test covers both.
 - Coke oven and blast furnace are not built here: they already exist in diaithir-wiretech (ports #163).
+
+## Timetables and autonomy
+- **Timetable** (Age V): use on station rails in order to write the stops, then use on a cart to give it the schedule; it loops. A scheduled cart stops only at its next stop and waits there by the station's own rule (a timer, or a redstone signal, so a circuit gate or reader on the station controls release). Sneak and use in the air to wipe it.
+- **Crew.** Before Age VII a scheduled cart runs only with a living rider aboard (player, villager or other NPC); without one it holds at the next station. From Age VII (`Autonomy.AUTONOMY_AGE`) it runs with no crew. `Autonomy.status(vehicle)` gives UNCREWED, CREWED or AUTONOMOUS, and `Autonomy.autonomousCrew(job, culture)` is the predicate behind `global.AUTONOMOUS_CREW(job, culture)` for the wages thread. The Ages module sets `Autonomy.ageSupplier` at startup (0 until then).
+- Test: `/diaithircarts scheduletest` (owners).

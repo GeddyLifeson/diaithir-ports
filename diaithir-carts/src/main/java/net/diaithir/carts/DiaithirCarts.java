@@ -65,7 +65,11 @@ public final class DiaithirCarts {
     public static final DeferredItem<Item> COUPLING_CHAIN = ITEMS.registerSimpleItem("coupling_chain");
     public static final DeferredItem<Item> CHAIN_CUTTERS = ITEMS.registerItem("chain_cutters", Item::new, p -> p.durability(96));
 
+    public static final DeferredItem<Item> TIMETABLE = ITEMS.registerItem("timetable", TimetableItem::new, p -> p.stacksTo(1));
+
     public DiaithirCarts(IEventBus bus) {
+        Schedule.ATTACHMENTS.register(bus);
+        Schedule.COMPONENTS.register(bus);
         BLOCKS.register(bus);
         ITEMS.register(bus);
         Coupling.ATTACHMENTS.register(bus);
@@ -74,6 +78,7 @@ public final class DiaithirCarts {
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
                 e.accept(COUPLING_CHAIN.get());
                 e.accept(CHAIN_CUTTERS.get());
+                e.accept(TIMETABLE.get());
             }
         });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> CartCommands.register(e.getDispatcher()));
@@ -84,13 +89,27 @@ public final class DiaithirCarts {
             if (e.getEntity() instanceof AbstractMinecart cart && cart.level() instanceof ServerLevel level && cart.getRemovalReason() != null
                     && cart.getRemovalReason().shouldDestroy()) Coupling.onRemoved(level, cart);
         });
-        NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); RoutingTest.tick(e.getServer()); });
+        NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); RoutingTest.tick(e.getServer()); ScheduleTest.tick(e.getServer()); });
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, DiaithirCarts::interact);
     }
 
     private static void interact(PlayerInteractEvent.EntityInteract e) {
         if (!(e.getTarget() instanceof AbstractMinecart cart)) return;
         ItemStack held = e.getItemStack();
+        if (held.is(TIMETABLE.get())) {
+            e.setCancellationResult(InteractionResult.SUCCESS);
+            e.setCanceled(true);
+            if (e.getLevel() instanceof ServerLevel) {
+                if (held.has(Schedule.ITEM.get()) && !held.get(Schedule.ITEM.get()).stops().isEmpty()) {
+                    Schedule.set(cart, new Schedule(held.get(Schedule.ITEM.get()).stops(), 0));
+                    e.getEntity().sendOverlayMessage(Component.literal("Schedule given: " + held.get(Schedule.ITEM.get()).stops().size() + " stops"));
+                } else {
+                    Schedule.clear(cart);
+                    e.getEntity().sendOverlayMessage(Component.literal("Schedule cleared"));
+                }
+            }
+            return;
+        }
         boolean chain = held.is(COUPLING_CHAIN.get());
         boolean cutters = held.is(CHAIN_CUTTERS.get()) && e.getEntity().isShiftKeyDown();
         if (!chain && !cutters) return;
