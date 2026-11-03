@@ -10,10 +10,7 @@
     5
    ],
    "blocks": 89,
-   "foreign_blocks": {
-    "northstar:mars_gravel": 40,
-    "northstar:mars_worm_nest": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "mars_worm_nest_2.nbt",
@@ -23,12 +20,7 @@
     3
    ],
    "blocks": 58,
-   "foreign_blocks": {
-    "northstar:mars_gravel": 21,
-    "northstar:mars_roots": 8,
-    "northstar:mars_soil": 10,
-    "northstar:mars_worm_nest": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "mars_worm_nest_3.nbt",
@@ -38,13 +30,7 @@
     6
    ],
    "blocks": 157,
-   "foreign_blocks": {
-    "northstar:glowing_mars_roots": 2,
-    "northstar:mars_gravel": 59,
-    "northstar:mars_roots": 15,
-    "northstar:mars_soil": 23,
-    "northstar:mars_worm_nest": 2
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "mars_worm_nest_4.nbt",
@@ -54,12 +40,7 @@
     5
    ],
    "blocks": 106,
-   "foreign_blocks": {
-    "northstar:mars_gravel": 36,
-    "northstar:mars_roots": 8,
-    "northstar:mars_soil": 10,
-    "northstar:mars_worm_nest": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "mars_worm_nest_big.nbt",
@@ -69,13 +50,7 @@
     7
    ],
    "blocks": 293,
-   "foreign_blocks": {
-    "northstar:glowing_mars_roots": 2,
-    "northstar:mars_gravel": 71,
-    "northstar:mars_roots": 21,
-    "northstar:mars_soil": 47,
-    "northstar:mars_worm_nest": 3
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "fossil/ribs_1.nbt",
@@ -95,9 +70,7 @@
     18
    ],
    "blocks": 137,
-   "foreign_blocks": {
-    "northstar:venus_coal_ore": 90
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "fossil/ribs_2.nbt",
@@ -117,9 +90,7 @@
     22
    ],
    "blocks": 301,
-   "foreign_blocks": {
-    "northstar:venus_coal_ore": 183
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "fossil/ribs_3.nbt",
@@ -139,9 +110,7 @@
     15
    ],
    "blocks": 126,
-   "foreign_blocks": {
-    "northstar:venus_coal_ore": 74
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "fossil/ribs_4.nbt",
@@ -161,9 +130,7 @@
     12
    ],
    "blocks": 76,
-   "foreign_blocks": {
-    "northstar:venus_coal_ore": 49
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "lunar_base/brig.nbt",
@@ -173,12 +140,7 @@
     5
    ],
    "blocks": 225,
-   "foreign_blocks": {
-    "northstar:titanium_pillar": 6,
-    "northstar:titanium_plating": 85,
-    "northstar:titanium_sheetmetal": 42,
-    "northstar:titanium_space_door": 2
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "lunar_base/entrance.nbt",
@@ -197,15 +159,7 @@
     "create:mechanical_piston_head": 1,
     "create:piston_extension_pole": 5,
     "create:shaft": 11,
-    "create:sticky_mechanical_piston": 2,
-    "northstar:glowstone_lamp": 4,
-    "northstar:titanium_grate": 8,
-    "northstar:titanium_pillar": 247,
-    "northstar:titanium_plating": 3169,
-    "northstar:titanium_plating_slab": 39,
-    "northstar:titanium_plating_stairs": 5,
-    "northstar:titanium_plating_vertical_slab": 5,
-    "northstar:titanium_sheetmetal": 158
+    "create:sticky_mechanical_piston": 2
    }
   },
   {
@@ -217,13 +171,7 @@
    ],
    "blocks": 225,
    "foreign_blocks": {
-    "create:industrial_iron_block": 7,
-    "northstar:extinguished_lantern": 1,
-    "northstar:titanium_pillar": 6,
-    "northstar:titanium_plating": 76,
-    "northstar:titanium_sheetmetal": 46,
-    "northstar:titanium_space_door": 2,
-    "northstar:vent": 1
+    "create:industrial_iron_block": 7
    }
   },
   {
@@ -234,9 +182,7 @@
     3
    ],
    "blocks": 135,
-   "foreign_blocks": {
-    "northstar:titanium_pillar": 36
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "lunar_base/hall_cap.nbt",
@@ -246,12 +192,7 @@
     5
    ],
    "blocks": 100,
-   "foreign_blocks": {
-    "northstar:glowstone_lamp": 1,
-    "northstar:titanium_pillar": 28,
-    "northstar:titanium_plating": 32,
-    "northstar:titanium_sheetmetal": 8
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "lunar_base/hall_turn.nbt",
@@ -261,13 +202,7 @@
     9
    ],
    "blocks": 245,
-   "foreign_blocks": {
-    "northstar:glowstone_lamp": 1,
-    "northstar:titanium_pillar": 77,
-    "northstar:titanium_plating": 51,
-    "northstar:titanium_plating_slab": 2,
-    "northstar:titanium_sheetmetal": 20
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "lunar_base/hall_wall.nbt",
@@ -277,11 +212,7 @@
     1
    ],
    "blocks": 45,
-   "foreign_blocks": {
-    "northstar:titanium_pillar": 17,
-    "northstar:titanium_plating": 18,
-    "northstar:titanium_sheetmetal": 9
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "lunar_base/mess_hall.nbt",
@@ -292,13 +223,7 @@
    ],
    "blocks": 360,
    "foreign_blocks": {
-    "create:black_seat": 3,
-    "northstar:moon_stone_brick_wall": 2,
-    "northstar:titanium_pillar": 7,
-    "northstar:titanium_plating": 96,
-    "northstar:titanium_sheetmetal": 79,
-    "northstar:titanium_space_door": 2,
-    "northstar:vent": 1
+    "create:black_seat": 3
    }
   },
   {
@@ -313,15 +238,7 @@
     "create:encased_fluid_pipe": 8,
     "create:fluid_tank": 12,
     "create:industrial_iron_block": 1,
-    "create:mechanical_pump": 1,
-    "northstar:computer_rack": 6,
-    "northstar:extinguished_lantern": 2,
-    "northstar:oxygen_filler": 2,
-    "northstar:titanium_pillar": 6,
-    "northstar:titanium_plating": 73,
-    "northstar:titanium_sheetmetal": 47,
-    "northstar:titanium_space_door": 2,
-    "northstar:vent": 1
+    "create:mechanical_pump": 1
    }
   },
   {
@@ -336,14 +253,7 @@
     "create:andesite_ladder": 3,
     "create:fluid_tank": 54,
     "create:powered_shaft": 6,
-    "create:steam_engine": 6,
-    "northstar:glowstone_lamp": 1,
-    "northstar:titanium_grate": 15,
-    "northstar:titanium_pillar": 19,
-    "northstar:titanium_plating": 220,
-    "northstar:titanium_sheetmetal": 83,
-    "northstar:titanium_space_door": 2,
-    "northstar:vent": 1
+    "create:steam_engine": 6
    }
   },
   {
@@ -354,19 +264,7 @@
     9
    ],
    "blocks": 378,
-   "foreign_blocks": {
-    "northstar:extinguished_lantern": 2,
-    "northstar:martian_steel_pillar": 32,
-    "northstar:martian_steel_plating": 8,
-    "northstar:martian_steel_sheetmetal": 30,
-    "northstar:titanium_pillar": 21,
-    "northstar:titanium_plating": 96,
-    "northstar:titanium_plating_slab": 10,
-    "northstar:titanium_plating_stairs": 6,
-    "northstar:titanium_sheetmetal": 48,
-    "northstar:titanium_space_door": 1,
-    "northstar:vent": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/boiler_room.nbt",
@@ -378,16 +276,7 @@
    "blocks": 729,
    "foreign_blocks": {
     "create:andesite_ladder": 3,
-    "create:fluid_tank": 108,
-    "northstar:martian_steel_grate": 14,
-    "northstar:martian_steel_large_plating": 1,
-    "northstar:martian_steel_pillar": 48,
-    "northstar:martian_steel_plating": 84,
-    "northstar:titanium_pillar": 68,
-    "northstar:titanium_plating": 96,
-    "northstar:titanium_sheetmetal": 86,
-    "northstar:titanium_space_door": 1,
-    "northstar:vent": 1
+    "create:fluid_tank": 108
    }
   },
   {
@@ -398,22 +287,7 @@
     9
    ],
    "blocks": 413,
-   "foreign_blocks": {
-    "northstar:extinguished_lantern": 2,
-    "northstar:glowing_mars_roots": 2,
-    "northstar:mars_gravel": 114,
-    "northstar:mars_roots": 38,
-    "northstar:martian_steel_pillar": 22,
-    "northstar:martian_steel_plating": 6,
-    "northstar:martian_steel_sheetmetal": 18,
-    "northstar:titanium_pillar": 15,
-    "northstar:titanium_plating": 79,
-    "northstar:titanium_plating_slab": 8,
-    "northstar:titanium_plating_stairs": 5,
-    "northstar:titanium_sheetmetal": 35,
-    "northstar:titanium_space_door": 1,
-    "northstar:vent": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/collapsed_hall_1.nbt",
@@ -423,14 +297,7 @@
     5
    ],
    "blocks": 241,
-   "foreign_blocks": {
-    "northstar:mars_gravel": 86,
-    "northstar:martian_steel_pillar": 30,
-    "northstar:martian_steel_sheetmetal": 14,
-    "northstar:titanium_pillar": 32,
-    "northstar:titanium_plating": 29,
-    "northstar:titanium_sheetmetal": 16
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/collapsed_hall_2.nbt",
@@ -440,14 +307,7 @@
     5
    ],
    "blocks": 254,
-   "foreign_blocks": {
-    "northstar:mars_gravel": 94,
-    "northstar:martian_steel_pillar": 27,
-    "northstar:martian_steel_sheetmetal": 7,
-    "northstar:titanium_pillar": 29,
-    "northstar:titanium_plating": 27,
-    "northstar:titanium_sheetmetal": 14
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/collapsed_hall_3.nbt",
@@ -457,16 +317,7 @@
     5
    ],
    "blocks": 249,
-   "foreign_blocks": {
-    "northstar:glowing_mars_roots": 2,
-    "northstar:mars_gravel": 95,
-    "northstar:mars_roots": 25,
-    "northstar:martian_steel_pillar": 24,
-    "northstar:martian_steel_sheetmetal": 6,
-    "northstar:titanium_pillar": 23,
-    "northstar:titanium_plating": 28,
-    "northstar:titanium_sheetmetal": 12
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/collapsed_mess_hall.nbt",
@@ -476,21 +327,7 @@
     10
    ],
    "blocks": 632,
-   "foreign_blocks": {
-    "northstar:glowing_mars_roots": 6,
-    "northstar:mars_gravel": 115,
-    "northstar:mars_roots": 79,
-    "northstar:mars_worm_nest": 2,
-    "northstar:martian_steel_pillar": 37,
-    "northstar:martian_steel_plating": 5,
-    "northstar:martian_steel_sheetmetal": 63,
-    "northstar:titanium_pillar": 19,
-    "northstar:titanium_plating": 115,
-    "northstar:titanium_plating_slab": 6,
-    "northstar:titanium_sheetmetal": 47,
-    "northstar:titanium_space_door": 1,
-    "northstar:vent": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/collapsed_oxy_room.nbt",
@@ -504,15 +341,7 @@
     "create:encased_fluid_pipe": 3,
     "create:fluid_pipe": 10,
     "create:fluid_tank": 12,
-    "create:mechanical_pump": 1,
-    "northstar:mars_gravel": 78,
-    "northstar:martian_steel_plating": 9,
-    "northstar:martian_steel_sheetmetal": 16,
-    "northstar:oxygen_filler": 2,
-    "northstar:temperature_regulator": 1,
-    "northstar:titanium_plating": 74,
-    "northstar:titanium_plating_slab": 4,
-    "northstar:titanium_sheetmetal": 23
+    "create:mechanical_pump": 1
    }
   },
   {
@@ -523,16 +352,7 @@
     9
    ],
    "blocks": 443,
-   "foreign_blocks": {
-    "northstar:martian_steel_blue_lamp": 1,
-    "northstar:martian_steel_large_plating": 8,
-    "northstar:martian_steel_plating": 24,
-    "northstar:martian_steel_sheetmetal": 17,
-    "northstar:titanium_pillar": 24,
-    "northstar:titanium_plating": 148,
-    "northstar:titanium_plating_slab": 8,
-    "northstar:titanium_plating_stairs": 16
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/connector_start.nbt",
@@ -542,16 +362,7 @@
     9
    ],
    "blocks": 443,
-   "foreign_blocks": {
-    "northstar:martian_steel_blue_lamp": 1,
-    "northstar:martian_steel_large_plating": 8,
-    "northstar:martian_steel_plating": 24,
-    "northstar:martian_steel_sheetmetal": 17,
-    "northstar:titanium_pillar": 24,
-    "northstar:titanium_plating": 148,
-    "northstar:titanium_plating_slab": 8,
-    "northstar:titanium_plating_stairs": 16
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/entrance.nbt",
@@ -563,6 +374,7 @@
    "blocks": 4401,
    "foreign_blocks": {
     "create:andesite_encased_shaft": 3,
+    "create:cogwheel": 8,
     "create:gearbox": 15,
     "create:gearshift": 1,
     "create:hand_crank": 2,
@@ -575,23 +387,7 @@
     "create:rotation_speed_controller": 1,
     "create:shaft": 30,
     "create:sticky_mechanical_piston": 4,
-    "create:water_wheel": 1,
-    "northstar:glowstone_lamp": 6,
-    "northstar:iron_cogwheel": 8,
-    "northstar:martian_steel_blue_lamp": 4,
-    "northstar:martian_steel_grate": 9,
-    "northstar:martian_steel_large_plating": 27,
-    "northstar:martian_steel_pillar": 148,
-    "northstar:martian_steel_plating": 384,
-    "northstar:martian_steel_plating_slab": 38,
-    "northstar:martian_steel_plating_stairs": 10,
-    "northstar:martian_steel_plating_vertical_slab": 6,
-    "northstar:martian_steel_sheetmetal": 92,
-    "northstar:titanium_pillar": 126,
-    "northstar:titanium_plating": 2563,
-    "northstar:titanium_plating_slab": 41,
-    "northstar:titanium_plating_stairs": 39,
-    "northstar:titanium_sheetmetal": 107
+    "create:water_wheel": 1
    }
   },
   {
@@ -602,18 +398,7 @@
     11
    ],
    "blocks": 594,
-   "foreign_blocks": {
-    "northstar:glowstone_lamp": 6,
-    "northstar:mars_soil": 6,
-    "northstar:martian_steel_plating_vertical_slab": 8,
-    "northstar:martian_steel_sheetmetal": 63,
-    "northstar:martian_tall_grass": 6,
-    "northstar:titanium_pillar": 64,
-    "northstar:titanium_plating": 112,
-    "northstar:titanium_plating_slab": 4,
-    "northstar:titanium_sheetmetal": 111,
-    "northstar:titanium_space_door": 2
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/experiment_room2.nbt",
@@ -623,18 +408,7 @@
     11
    ],
    "blocks": 605,
-   "foreign_blocks": {
-    "northstar:mars_soil": 10,
-    "northstar:martian_steel_pillar": 53,
-    "northstar:martian_steel_plating": 3,
-    "northstar:martian_steel_plating_vertical_slab": 18,
-    "northstar:martian_steel_sheetmetal": 88,
-    "northstar:titanium_pillar": 9,
-    "northstar:titanium_plating": 155,
-    "northstar:titanium_plating_slab": 4,
-    "northstar:titanium_sheetmetal": 58,
-    "northstar:titanium_space_door": 2
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/experiment_room3.nbt",
@@ -644,20 +418,7 @@
     11
    ],
    "blocks": 720,
-   "foreign_blocks": {
-    "northstar:glowstone_lamp": 1,
-    "northstar:mars_soil": 1,
-    "northstar:martian_steel_pillar": 18,
-    "northstar:martian_steel_plating": 47,
-    "northstar:martian_steel_plating_stairs": 14,
-    "northstar:martian_steel_plating_vertical_slab": 22,
-    "northstar:martian_steel_sheetmetal": 98,
-    "northstar:titanium_pillar": 24,
-    "northstar:titanium_plating": 159,
-    "northstar:titanium_sheetmetal": 72,
-    "northstar:titanium_space_door": 5,
-    "northstar:vent": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/hall.nbt",
@@ -667,13 +428,7 @@
     5
    ],
    "blocks": 225,
-   "foreign_blocks": {
-    "northstar:martian_steel_pillar": 36,
-    "northstar:martian_steel_sheetmetal": 18,
-    "northstar:titanium_pillar": 36,
-    "northstar:titanium_plating": 36,
-    "northstar:titanium_sheetmetal": 18
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/ice_box.nbt",
@@ -683,17 +438,7 @@
     9
    ],
    "blocks": 535,
-   "foreign_blocks": {
-    "northstar:frost": 42,
-    "northstar:ice_box": 4,
-    "northstar:icicle": 9,
-    "northstar:martian_steel_plating": 85,
-    "northstar:martian_steel_sheetmetal": 74,
-    "northstar:titanium_pillar": 24,
-    "northstar:titanium_plating": 100,
-    "northstar:titanium_plating_slab": 4,
-    "northstar:titanium_sheetmetal": 42
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/mess_hall.nbt",
@@ -704,16 +449,7 @@
    ],
    "blocks": 550,
    "foreign_blocks": {
-    "create:black_seat": 8,
-    "northstar:martian_steel_pillar": 52,
-    "northstar:martian_steel_plating": 8,
-    "northstar:martian_steel_sheetmetal": 84,
-    "northstar:titanium_pillar": 22,
-    "northstar:titanium_plating": 124,
-    "northstar:titanium_plating_slab": 6,
-    "northstar:titanium_sheetmetal": 50,
-    "northstar:titanium_space_door": 1,
-    "northstar:vent": 1
+    "create:black_seat": 8
    }
   },
   {
@@ -728,14 +464,7 @@
     "create:encased_fluid_pipe": 3,
     "create:fluid_pipe": 10,
     "create:fluid_tank": 12,
-    "create:mechanical_pump": 1,
-    "northstar:martian_steel_plating": 9,
-    "northstar:martian_steel_sheetmetal": 16,
-    "northstar:oxygen_filler": 2,
-    "northstar:temperature_regulator": 1,
-    "northstar:titanium_plating": 93,
-    "northstar:titanium_plating_slab": 4,
-    "northstar:titanium_sheetmetal": 40
+    "create:mechanical_pump": 1
    }
   },
   {
@@ -746,15 +475,7 @@
     9
    ],
    "blocks": 405,
-   "foreign_blocks": {
-    "northstar:computer_rack": 60,
-    "northstar:extinguished_lantern": 2,
-    "northstar:martian_steel_plating": 38,
-    "northstar:martian_steel_sheetmetal": 60,
-    "northstar:titanium_plating": 103,
-    "northstar:titanium_plating_slab": 4,
-    "northstar:titanium_sheetmetal": 48
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "martian_base/storage.nbt",
@@ -765,14 +486,7 @@
    ],
    "blocks": 660,
    "foreign_blocks": {
-    "create:item_vault": 72,
-    "northstar:martian_steel_pillar": 20,
-    "northstar:martian_steel_plating": 40,
-    "northstar:martian_steel_sheetmetal": 120,
-    "northstar:titanium_pillar": 39,
-    "northstar:titanium_plating": 135,
-    "northstar:titanium_plating_slab": 21,
-    "northstar:titanium_sheetmetal": 54
+    "create:item_vault": 72
    }
   },
   {
@@ -783,13 +497,7 @@
     13
    ],
    "blocks": 1621,
-   "foreign_blocks": {
-    "northstar:sulfuric_acid": 163,
-    "northstar:venus_gravel": 36,
-    "northstar:venus_plume": 1,
-    "northstar:venus_stone": 470,
-    "northstar:volcanic_ash": 286
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "venus_plume/venus_plume_2.nbt",
@@ -799,13 +507,7 @@
     13
    ],
    "blocks": 1660,
-   "foreign_blocks": {
-    "northstar:sulfuric_acid": 151,
-    "northstar:venus_gravel": 41,
-    "northstar:venus_plume": 1,
-    "northstar:venus_stone": 480,
-    "northstar:volcanic_ash": 286
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "venus_plume/venus_plume_3.nbt",
@@ -815,13 +517,7 @@
     13
    ],
    "blocks": 1899,
-   "foreign_blocks": {
-    "northstar:sulfuric_acid": 163,
-    "northstar:venus_gravel": 36,
-    "northstar:venus_plume": 1,
-    "northstar:venus_stone": 469,
-    "northstar:volcanic_ash": 286
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "venus_plume/venus_plume_4.nbt",
@@ -831,13 +527,7 @@
     13
    ],
    "blocks": 1730,
-   "foreign_blocks": {
-    "northstar:sulfuric_acid": 152,
-    "northstar:venus_gravel": 52,
-    "northstar:venus_plume": 1,
-    "northstar:venus_stone": 469,
-    "northstar:volcanic_ash": 286
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "worm_nest/mars_worm_nest.nbt",
@@ -847,10 +537,7 @@
     5
    ],
    "blocks": 89,
-   "foreign_blocks": {
-    "northstar:mars_gravel": 40,
-    "northstar:mars_worm_nest": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "worm_nest/mars_worm_nest_2.nbt",
@@ -860,12 +547,7 @@
     3
    ],
    "blocks": 58,
-   "foreign_blocks": {
-    "northstar:mars_gravel": 21,
-    "northstar:mars_roots": 8,
-    "northstar:mars_soil": 10,
-    "northstar:mars_worm_nest": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "worm_nest/mars_worm_nest_3.nbt",
@@ -875,13 +557,7 @@
     6
    ],
    "blocks": 157,
-   "foreign_blocks": {
-    "northstar:glowing_mars_roots": 2,
-    "northstar:mars_gravel": 59,
-    "northstar:mars_roots": 15,
-    "northstar:mars_soil": 23,
-    "northstar:mars_worm_nest": 2
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "worm_nest/mars_worm_nest_4.nbt",
@@ -891,12 +567,7 @@
     5
    ],
    "blocks": 106,
-   "foreign_blocks": {
-    "northstar:mars_gravel": 36,
-    "northstar:mars_roots": 8,
-    "northstar:mars_soil": 10,
-    "northstar:mars_worm_nest": 1
-   }
+   "foreign_blocks": {}
   },
   {
    "file": "worm_nest/mars_worm_nest_big.nbt",
@@ -906,13 +577,8 @@
     7
    ],
    "blocks": 293,
-   "foreign_blocks": {
-    "northstar:glowing_mars_roots": 2,
-    "northstar:mars_gravel": 71,
-    "northstar:mars_roots": 21,
-    "northstar:mars_soil": 47,
-    "northstar:mars_worm_nest": 3
-   }
+   "foreign_blocks": {}
   }
- ]
+ ],
+ "note": "northstar: blocks remapped to vanilla stand-ins by tools/remap_northstar.py; create: blocks kept (Create ships in the pack)"
 }
