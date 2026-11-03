@@ -1,0 +1,93 @@
+{
+  "site": "ground",
+  "dimensions": [],
+  "footprint": {
+    "w": 5,
+    "l": 12,
+    "h": 5
+  },
+  "result": "vs_yard:ship",
+  "stages": [
+    {
+      "id": "keel",
+      "slots": [
+        {
+          "kind": "keel",
+          "count": 1
+        }
+      ],
+      "base_ticks": 40,
+      "ghost": "keel",
+      "order": 0
+    },
+    {
+      "id": "frames",
+      "slots": [
+        {
+          "kind": "frame",
+          "count": 2
+        }
+      ],
+      "base_ticks": 40,
+      "ghost": "ribs",
+      "order": 1
+    },
+    {
+      "id": "planking",
+      "slots": [
+        {
+          "kind": "hull",
+          "count": 2
+        }
+      ],
+      "base_ticks": 40,
+      "ghost": "planking",
+      "order": 2
+    },
+    {
+      "id": "decking",
+      "slots": [
+        {
+          "kind": "deck",
+          "count": 1
+        }
+      ],
+      "base_ticks": 40,
+      "ghost": "deck",
+      "order": 3
+    },
+    {
+      "id": "propulsion",
+      "slots": [
+        {
+          "kind": "thruster",
+          "count": 1
+        },
+        {
+          "kind": "propeller",
+          "count": 1
+        },
+        {
+          "kind": "fuel_tank",
+          "count": 1
+        }
+      ],
+      "base_ticks": 40,
+      "ghost": "fittings",
+      "order": 4
+    },
+    {
+      "id": "fittings",
+      "slots": [
+        {
+          "kind": "helm",
+          "count": 1
+        }
+      ],
+      "base_ticks": 40,
+      "ghost": "fittings",
+      "order": 5
+    }
+  ],
+  "crane_speedup": 1.0
+}
