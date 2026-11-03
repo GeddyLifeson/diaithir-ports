@@ -1,8 +1,0 @@
-name = "diaithir-tooltipfx-rewrite-neoforge-26.1.2-1.0.0"
-filename = "diaithir-tooltipfx-rewrite-neoforge-26.1.2-1.0.0.jar"
-side = "client"
-
-[download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-clientcombat/client/diaithir-tooltipfx-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash-format = "sha256"
-hash = "b1c6628b3fbe60a69fb5391aa2715d5f0dba00f3e888246bce8cc47879c86536"

@@ -1,8 +1,0 @@
-name = "diaithir-world-visuals-rewrite-neoforge-26.1.2-1.0.0"
-filename = "diaithir-world-visuals-rewrite-neoforge-26.1.2-1.0.0.jar"
-side = "client"
-
-[download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-clientcombat/client/diaithir-world-visuals-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash-format = "sha256"
-hash = "d006d8574f2b410e9e4c17166a86f4ce9fdf26c7cecfb2c99ef41a198830ac72"

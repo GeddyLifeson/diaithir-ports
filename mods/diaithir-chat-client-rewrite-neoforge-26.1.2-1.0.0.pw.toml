@@ -1,8 +1,0 @@
-name = "diaithir-chat-client-rewrite-neoforge-26.1.2-1.0.0"
-filename = "diaithir-chat-client-rewrite-neoforge-26.1.2-1.0.0.jar"
-side = "client"
-
-[download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-clientcombat/client/diaithir-chat-client-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash-format = "sha256"
-hash = "734713a7300ea8393d457fd428e2f66fcae174163073536b704fc7c2077d5784"
