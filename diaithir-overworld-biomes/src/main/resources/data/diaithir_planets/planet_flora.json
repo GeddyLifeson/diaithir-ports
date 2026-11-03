@@ -944,6 +944,22 @@
 "kind": "ore"
 },
 {
+"id": "kaktun_grimaithok_log",
+"kind": "log"
+},
+{
+"id": "kaktun_grimaithok_leaves",
+"kind": "leaves"
+},
+{
+"id": "kaktun_drernone_plant",
+"kind": "plant"
+},
+{
+"id": "kaktun_vhagairkun_ore",
+"kind": "ore"
+},
+{
 "id": "kaluvamoma_osukaruta_log",
 "kind": "log"
 },
@@ -1437,6 +1453,22 @@
 },
 {
 "id": "miarlinnys_vellanum_ore",
+"kind": "ore"
+},
+{
+"id": "mieneth_osashith_log",
+"kind": "log"
+},
+{
+"id": "mieneth_osashith_leaves",
+"kind": "leaves"
+},
+{
+"id": "mieneth_miiruanys_plant",
+"kind": "plant"
+},
+{
+"id": "mieneth_pelurnock_ore",
 "kind": "ore"
 },
 {
@@ -2240,6 +2272,22 @@
 "kind": "ore"
 },
 {
+"id": "shizasha_moseostanum_log",
+"kind": "log"
+},
+{
+"id": "shizasha_moseostanum_leaves",
+"kind": "leaves"
+},
+{
+"id": "shizasha_mones_plant",
+"kind": "plant"
+},
+{
+"id": "shizasha_lelianor_ore",
+"kind": "ore"
+},
+{
 "id": "shyuthora_coreoliasum_log",
 "kind": "log"
 },
@@ -2477,6 +2525,22 @@
 },
 {
 "id": "tarnaldath_sereosanum_valosteolor_ore",
+"kind": "ore"
+},
+{
+"id": "tarnedonath_karouggak_log",
+"kind": "log"
+},
+{
+"id": "tarnedonath_karouggak_leaves",
+"kind": "leaves"
+},
+{
+"id": "tarnedonath_kruzhouktun_plant",
+"kind": "plant"
+},
+{
+"id": "tarnedonath_pelernon_ore",
 "kind": "ore"
 },
 {
@@ -2925,6 +2989,22 @@
 },
 {
 "id": "venaremwen_ilyireth_ore",
+"kind": "ore"
+},
+{
+"id": "venarirleth_venuallae_log",
+"kind": "log"
+},
+{
+"id": "venarirleth_venuallae_leaves",
+"kind": "leaves"
+},
+{
+"id": "venarirleth_miamuanneth_plant",
+"kind": "plant"
+},
+{
+"id": "venarirleth_eliorys_ore",
 "kind": "ore"
 },
 {
