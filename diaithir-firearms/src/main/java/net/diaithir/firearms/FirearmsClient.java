@@ -16,6 +16,14 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 /** Reload key (R), scope zoom while sneaking with a sight fitted, and tooltips. */
 public final class FirearmsClient {
     private static KeyMapping reload;
+    private static final java.util.Map<String, String> NATIVE = loadNames();
+
+    @SuppressWarnings("unchecked")
+    private static java.util.Map<String, String> loadNames() {
+        try (var r = new java.io.InputStreamReader(FirearmsClient.class.getResourceAsStream("/names.json"))) {
+            return new com.google.gson.Gson().fromJson(r, java.util.Map.class);
+        } catch (Exception e) { return java.util.Map.of(); }
+    }
 
     static void init(IEventBus bus) {
         bus.addListener(RegisterKeyMappingsEvent.class, e -> {
@@ -42,6 +50,12 @@ public final class FirearmsClient {
                     + (g.auto() ? "auto" : "semi")));
             t.add(Component.translatable("diaithirfirearms.mag").append(": " + Engine.mag(e.getItemStack()) + "/" + g.mag()));
             t.add(Component.translatable("diaithirfirearms.age", g.age()));
+        });
+        NeoForge.EVENT_BUS.addListener(ItemTooltipEvent.class, e -> {
+            var id = net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(e.getItemStack().getItem());
+            if (!id.getNamespace().equals(DiaithirFirearms.ID)) return;
+            String n = NATIVE.get(id.getPath());
+            if (n != null) e.getToolTip().add(1, Component.literal(n).withStyle(net.minecraft.ChatFormatting.GRAY, net.minecraft.ChatFormatting.ITALIC));
         });
     }
 

@@ -12,7 +12,6 @@ import net.minecraft.network.protocol.game.ClientboundPlayerRotationPacket;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
@@ -95,6 +94,7 @@ public final class Engine {
         if (now - s.lastShot < g.cooldown()) return;
         if (mag(stack) <= 0) {
             if (fresh) { if (ammoCount(sp, g) > 0 || sp.isCreative()) reload(sp); else say(sp, Component.translatable("diaithirfirearms.empty")); }
+            if (fresh) sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("dry_fire"), SoundSource.PLAYERS, 0.6f, 1f);
             return;
         }
         s.lastShot = now;
@@ -119,8 +119,9 @@ public final class Engine {
         Vec3 muzzle = eye.add(Vec3.directionFromRotation(sp.getXRot(), sp.getYRot()).scale(0.8));
         lv.sendParticles(ParticleTypes.SMOKE, muzzle.x, muzzle.y - 0.15, muzzle.z, 2, 0.02, 0.02, 0.02, 0.0);
         float vol = switch (g.cls()) { case "pistol" -> 1.2f; case "smg" -> 1.4f; case "shotgun", "launcher" -> 2.2f; case "sniper" -> 3f; case "energy" -> 1.0f; default -> 2f; } * quiet * quiet * quiet;
-        var snd = g.cls().equals("energy") ? SoundEvents.BEACON_POWER_SELECT : g.cls().equals("launcher") ? SoundEvents.GENERIC_EXPLODE.value() : SoundEvents.FIREWORK_ROCKET_BLAST;
-        lv.playSound(null, sp.getX(), sp.getY(), sp.getZ(), snd, SoundSource.PLAYERS, vol, g.cls().equals("sniper") ? 0.6f : 1.4f - Math.min(0.5f, g.damage() / 60f));
+        String key = switch (g.cls()) { case "pistol" -> "shot_pistol"; case "smg" -> "shot_smg"; case "shotgun" -> "shot_shotgun"; case "sniper" -> "shot_sniper";
+            case "lmg" -> "shot_lmg"; case "launcher" -> "shot_launcher"; case "energy" -> "shot_energy"; default -> "shot_rifle"; };
+        lv.playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound(key), SoundSource.PLAYERS, vol, 0.95f + sp.getRandom().nextFloat() * 0.1f);
         float recoil = g.recoil() * modifier(stack, "muzzle_recoil") * (sp.isShiftKeyDown() ? 0.7f : 1f);
         sp.connection.send(new ClientboundPlayerRotationPacket(0f, true, -recoil, true));
         say(sp, Component.translatable("diaithirfirearms.mag").append(": " + mag(stack) + "/" + g.mag()));
@@ -169,7 +170,7 @@ public final class Engine {
         x.reloadEnd = sp.level().getGameTime() + (long) (gi.gun.reload() * (under ? 1.5 : 1.0));
         x.reloadSlot = sp.getInventory().getSelectedSlot();
         say(sp, Component.translatable("diaithirfirearms.reload"));
-        sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), SoundEvents.IRON_TRAPDOOR_OPEN, SoundSource.PLAYERS, 0.6f, 1.6f);
+        sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("reload_start"), SoundSource.PLAYERS, 0.8f, 1f);
     }
 
     /** Selftest: finish a started reload now. */
@@ -184,7 +185,7 @@ public final class Engine {
         x.reloadEnd = -1;
         int got = takeAmmo(sp, gi.gun, gi.gun.mag() - mag(s));
         setMag(s, mag(s) + got);
-        sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), SoundEvents.IRON_TRAPDOOR_CLOSE, SoundSource.PLAYERS, 0.6f, 1.8f);
+        sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("reload_end"), SoundSource.PLAYERS, 0.8f, 1f);
         say(sp, Component.translatable("diaithirfirearms.mag").append(": " + mag(s) + "/" + gi.gun.mag()));
     }
 
@@ -207,6 +208,7 @@ public final class Engine {
         cur.add(a.id());
         gun.set(DiaithirFirearms.ATT.get(), List.copyOf(cur));
         off.shrink(1);
+        sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("attach"), SoundSource.PLAYERS, 0.6f, 1f);
         say(sp, Component.translatable("diaithirfirearms.attached").append(": " + a.id()));
         return true;
     }

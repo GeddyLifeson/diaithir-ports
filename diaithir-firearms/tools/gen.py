@@ -4,6 +4,8 @@ Usage: python3 -I tools/gen.py <module dir>.  Writes src/main/resources/{guns.js
 names_map.json (English only; Diaithiris names come from the names pipeline), id_migrations.json, library/firearms_library.json.
 Textures are drawn here with PIL (16x16, flat shapes, no source art)."""
 import json, os, re, sys
+sys.path.insert(0, '/mnt/project-files/diaithiris-archaic/tools')
+import archaic
 from PIL import Image, ImageDraw
 
 M = sys.argv[1] if len(sys.argv) > 1 else '.'
@@ -76,6 +78,18 @@ def tex(name, fn):
     im = Image.new('RGBA', (16, 16), (0, 0, 0, 0)); d = ImageDraw.Draw(im); fn(d)
     p = f'{R}/assets/{NS}/textures/item/{name}.png'; os.makedirs(os.path.dirname(p), exist_ok=True); im.save(p)
 
+# Classical-spelling kennings (words from LEXICON.json, mutations and genitives by GRAMMAR.md), run through the archaic layer.
+CLASSICAL = {
+ 'sidearm_light': 'dag bheag', 'sidearm_heavy': 'dag throm', 'magnum': 'dag mhòr', 'smg_compact': 'gunna luath', 'carbine': 'gunna goirid',
+ 'assault_rifle': 'gunna cogaidh', 'marksman_rifle': 'gunna cinnteach', 'sniper_rifle': 'gunna fada', 'antimaterial_rifle': 'gunna sàr fhada',
+ 'pump_shotgun': 'gunnasìl', 'combat_shotgun': 'gunnasìl cogaidh', 'auto_shotgun': 'gunnasìl luath', 'light_mg': 'gunna luath trom',
+ 'minigun': 'gunna cruinn', 'grenade_launcher': 'gunnamòr beag', 'rocket_launcher': 'pìob na saigheadnèimh', 'energy_rifle': 'gunna dealain',
+ 'ammo_9mm': 'peilear beag', 'ammo_45': 'peilear trom', 'ammo_magnum': 'peilear mòr', 'ammo_556': 'peilear caol', 'ammo_762': 'peilear fada',
+ 'ammo_12g': 'sìol', 'ammo_50bmg': 'peilear sàr', 'grenade_40mm': 'ball smùir', 'rocket': 'saigheadnèimh', 'energy_cell': 'cill dealain',
+ 'sight_red_dot': 'sùil bheag dhearg', 'sight_x4': 'sùil fhada', 'sight_x8': 'sàrsùil', 'suppressor': 'tosd beòil', 'muzzle_brake': 'cascan beòil',
+ 'foregrip': 'grèim làimhe', 'gunmetal_nugget': 'meall gunna', 'gunmetal_ingot': 'iarann gunna', 'gunmetal_mesh': 'lìon iarainn', 'gun_internals': 'cridhe gunna',
+}
+
 DARK, MID, LIGHT, WOOD, BRASS = (38, 40, 46, 255), (74, 78, 88, 255), (122, 128, 140, 255), (110, 74, 42, 255), (196, 150, 58, 255)
 CYAN = (90, 220, 240, 255)
 
@@ -124,8 +138,9 @@ def draw_part(pid):
     return f
 
 names, ages, items = {}, {}, []
+NATIVE = {k: archaic.text(v) for k, v in CLASSICAL.items()}
 def item(i, english, age, tex_fn, handheld=True):
-    items.append(i); names[i] = {'english': english}; ages[f'{NS}:{i}'] = age
+    items.append(i); names[i] = {'diaithiris': NATIVE[i], 'english': english}; ages[f'{NS}:{i}'] = age
     w(f'src/main/resources/assets/{NS}/items/{i}.json', {'model': {'type': 'minecraft:model', 'model': f'{NS}:item/{i}'}})
     w(f'src/main/resources/assets/{NS}/models/item/{i}.json', {'parent': 'minecraft:item/handheld' if handheld else 'minecraft:item/generated', 'textures': {'layer0': f'{NS}:item/{i}'}})
     tex(i, tex_fn)
@@ -140,8 +155,9 @@ guns = [{'id': g[0], 'class': g[2], 'ammo': g[3], 'damage': g[4], 'cooldown': g[
 w('src/main/resources/guns.json', {'guns': guns, 'attachments': [{'id': a[0], 'kind': a[2], 'value': a[3]} for a in ATT]})
 w('src/main/resources/assets/%s/lang/en_us.json' % NS, {f'item.{NS}.{i}': names[i]['english'] for i in items} | {
     f'{NS}.reload': 'Reloading', f'{NS}.empty': 'No ammunition', f'{NS}.mag': 'Magazine', f'{NS}.age': 'Needs Age %s to handle well',
-    f'{NS}.attached': 'Attached', f'{NS}.detached': 'Removed', f'key.{NS}.reload': 'Reload', f'key.categories.{NS}': 'Diaithir Firearms'})
+    f'{NS}.attached': 'Attached', **{f'subtitles.{NS}.{n}': t for n, t in {'shot_pistol': 'Pistol fires', 'shot_smg': 'Submachine gun fires', 'shot_rifle': 'Rifle fires', 'shot_shotgun': 'Shotgun fires', 'shot_sniper': 'Sniper rifle fires', 'shot_lmg': 'Machine gun fires', 'shot_launcher': 'Launcher fires', 'shot_energy': 'Energy weapon fires', 'reload_start': 'Gun reloads', 'reload_end': 'Gun reloaded', 'dry_fire': 'Gun clicks', 'attach': 'Attachment fitted'}.items()}, f'{NS}.detached': 'Removed', f'key.{NS}.reload': 'Reload', f'key.categories.{NS}': 'Diaithir Firearms'})
 w('names_map.json', names)
+w('src/main/resources/names.json', {k: v['diaithiris'] for k, v in names.items()})
 w('age_gates.json', {'_doc': 'Same shape as DiaithirRPG content/tech_ages.json. Firearms start at Age VI; energy weapons and heavy weapons wait for Rodos.',
                      'namespaces': {NS: 'VI'}, 'items': ages})
 
@@ -198,6 +214,21 @@ for i in ids:
     mig[f'pointblank:{i}'] = t if ':' in t else f'{NS}:{t}'
 w('id_migrations.json', {'_doc': 'Point Blank (all rights reserved) ids -> diaithir-firearms archetypes. Old guns become the nearest class; skins fold into the base gun; scopes by zoom tier. Applied by the consolidation id-migration step.',
                          'items': mig})
-w('library/firearms_library.json', {'entries': [{'id': f'{NS}:{g[0]}', 'name': g[1], 'class': g[2], 'age': g[12], 'ammo': f'{NS}:{g[3]}',
-                                                'damage_hp': g[4], 'magazine': g[6], 'range_m': g[9]} for g in GUNS]})
+ROM = {'VI': 6, 'VII': 7, 'RODOS': 8}
+CLS = {'pistol': 'sidearm', 'smg': 'submachine gun', 'rifle': 'rifle', 'sniper': 'long-range rifle', 'shotgun': 'scatter gun', 'lmg': 'belt-fed gun', 'launcher': 'launcher', 'energy': 'energy weapon'}
+def gtext(g):
+    pel = f' x{g[10]} pellets' if g[10] > 1 else ''
+    return (f"{g[1]}: {CLS[g[2]]} of Age {g[12]}. {g[4]:g} hp{pel} a shot, {1200 // g[5]} rounds a minute, {'automatic' if g[11] else 'one shot per pull'}, "
+            f"{g[6]} in the magazine, effective to {g[9]} m, uses {names[g[3]]['english']}. Hold use to fire, R to reload, sneak + use with a fitting in the off hand to attach it.")
+lib = [[NATIVE['gun_internals'].split()[0] and 'Gunna', 'concept', 6, 'firearms', 'Guns of the later Ages, made from gunmetal, gun hearts and iron nets. Sidearms and the scatter gun come first, rifles and the belt-fed gun in Age VII, long guns, rockets and energy weapons with Rodos.']]
+for g in GUNS: lib.append([NATIVE[g[0]], 'item', ROM[g[12]], 'firearms', gtext(g)])
+for a_, e, ag in AMMO: lib.append([NATIVE[a_], 'item', ROM[ag], 'firearms', f'{e}: ammunition for the guns that name it. Crafted from gunmetal nuggets and powder; take it from your inventory at reload.'])
+for a_ in ATT: lib.append([NATIVE[a_[0]], 'item', ROM[a_[4]], 'firearms', f'{a_[1]}: ' + {'sight': f'zooms the view {a_[3]:g}x while sneaking.', 'muzzle_quiet': 'quietens the shot and trims damage by a tenth.', 'muzzle_recoil': 'cuts recoil by two fifths.', 'grip': 'tightens spread by three tenths.'}[a_[2]] + ' One of each kind per gun.'])
+w('library/firearms_library.json', lib)
+chap = [{'tier': 'class', 'name': 'Gunna', 'age': 'VI', 'text': lib[0][4],
+         'items': [{'id': f'{NS}:{g[0]}', 'name': NATIVE[g[0]], 'age': g[12], 'text': gtext(g)} for g in GUNS]},
+        {'tier': 'fittings', 'name': 'Feistean', 'age': 'VII', 'text': 'Ammunition, sights and fittings.',
+         'items': [{'id': f'{NS}:{x[0]}', 'name': NATIVE[x[0]], 'age': x[2] if len(x) > 2 and x[2] in ('VI', 'VII', 'RODOS') else 'VII', 'text': ''} for x in [(a[0], 0, a[2]) for a in AMMO]] +
+                  [{'id': f'{NS}:{a[0]}', 'name': NATIVE[a[0]], 'age': a[4], 'text': ''} for a in ATT]}]
+w('codex/firearms_handbook.json', {'id': f'{NS}:handbook', 'title': 'Gunna', 'chapters': chap})
 print(len(items), 'items;', len(mig), 'migrated;', 'unmapped:', unmapped)

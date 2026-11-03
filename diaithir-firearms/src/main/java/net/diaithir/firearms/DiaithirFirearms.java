@@ -35,6 +35,15 @@ public final class DiaithirFirearms {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<List<String>>> ATT =
             COMPONENTS.registerComponentType("att", b -> b.persistent(Codec.STRING.listOf()).networkSynchronized(ByteBufCodecs.STRING_UTF8.apply(ByteBufCodecs.list())));
 
+    private static final DeferredRegister<net.minecraft.sounds.SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, ID);
+    private static final java.util.Map<String, DeferredHolder<net.minecraft.sounds.SoundEvent, net.minecraft.sounds.SoundEvent>> SND = new java.util.HashMap<>();
+    static {
+        for (String n : List.of("shot_pistol", "shot_smg", "shot_rifle", "shot_shotgun", "shot_sniper", "shot_lmg", "shot_launcher", "shot_energy",
+                "reload_start", "reload_end", "dry_fire", "attach"))
+            SND.put(n, SOUNDS.register(n, () -> net.minecraft.sounds.SoundEvent.createVariableRangeEvent(net.minecraft.resources.Identifier.fromNamespaceAndPath(ID, n))));
+    }
+    public static net.minecraft.sounds.SoundEvent sound(String n) { return SND.get(n).get(); }
+
     private static final List<DeferredItem<? extends Item>> ALL = new java.util.ArrayList<>();
 
     public DiaithirFirearms(IEventBus bus, ModContainer container) {
@@ -43,6 +52,7 @@ public final class DiaithirFirearms {
         for (String id : EXTRA) ALL.add(ITEMS.registerSimpleItem(id));
         ITEMS.register(bus);
         COMPONENTS.register(bus);
+        SOUNDS.register(bus);
         bus.addListener(Net::register);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey().equals(CreativeModeTabs.COMBAT)) ALL.forEach(i -> e.accept(i.get()));

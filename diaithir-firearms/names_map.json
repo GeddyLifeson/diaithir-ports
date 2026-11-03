@@ -1,113 +1,150 @@
 {
  "sidearm_light": {
+  "diaithiris": "daug bhieg",
   "english": "Light Sidearm"
  },
  "sidearm_heavy": {
+  "diaithiris": "daug throum",
   "english": "Heavy Sidearm"
  },
  "magnum": {
+  "diaithiris": "daug mhòir",
   "english": "Magnum Revolver"
  },
  "smg_compact": {
+  "diaithiris": "gunda luod",
   "english": "Compact Submachine Gun"
  },
  "carbine": {
+  "diaithiris": "gunda goiridi",
   "english": "Carbine"
  },
  "assault_rifle": {
+  "diaithiris": "gunda kogaid",
   "english": "Assault Rifle"
  },
  "marksman_rifle": {
+  "diaithiris": "gunda kindtech",
   "english": "Marksman Rifle"
  },
  "sniper_rifle": {
+  "diaithiris": "gunda fauda",
   "english": "Sniper Rifle"
  },
  "antimaterial_rifle": {
+  "diaithiris": "gunda sàir fhauda",
   "english": "Anti-Materiel Rifle"
  },
  "pump_shotgun": {
+  "diaithiris": "gundasìl",
   "english": "Pump Shotgun"
  },
  "combat_shotgun": {
+  "diaithiris": "gundasìl kogaid",
   "english": "Combat Shotgun"
  },
  "auto_shotgun": {
+  "diaithiris": "gundasìl luod",
   "english": "Automatic Shotgun"
  },
  "light_mg": {
+  "diaithiris": "gunda luod troum",
   "english": "Light Machine Gun"
  },
  "minigun": {
+  "diaithiris": "gunda kroind",
   "english": "Rotary Minigun"
  },
  "grenade_launcher": {
+  "diaithiris": "gundumòr bieg",
   "english": "Grenade Launcher"
  },
  "rocket_launcher": {
+  "diaithiris": "pìub nau seigednèim",
   "english": "Rocket Launcher"
  },
  "energy_rifle": {
+  "diaithiris": "gunda dieluin",
   "english": "Energy Rifle"
  },
  "ammo_9mm": {
+  "diaithiris": "peiler bieg",
   "english": "9 mm Round"
  },
  "ammo_45": {
+  "diaithiris": "peiler troum",
   "english": ".45 Round"
  },
  "ammo_magnum": {
+  "diaithiris": "peiler mòir",
   "english": "Magnum Round"
  },
  "ammo_556": {
+  "diaithiris": "peiler kael",
   "english": "5.56 mm Round"
  },
  "ammo_762": {
+  "diaithiris": "peiler fauda",
   "english": "7.62 mm Round"
  },
  "ammo_12g": {
+  "diaithiris": "sìul",
   "english": "12 Gauge Shell"
  },
  "ammo_50bmg": {
+  "diaithiris": "peiler sàir",
   "english": ".50 Round"
  },
  "grenade_40mm": {
+  "diaithiris": "bald smùiri",
   "english": "40 mm Grenade"
  },
  "rocket": {
+  "diaithiris": "seigednèim",
   "english": "Rocket"
  },
  "energy_cell": {
+  "diaithiris": "kild dieluin",
   "english": "Energy Cell"
  },
  "sight_red_dot": {
+  "diaithiris": "sùili bhieg dhierg",
   "english": "Red Dot Sight"
  },
  "sight_x4": {
+  "diaithiris": "sùili fhauda",
   "english": "Four-Power Scope"
  },
  "sight_x8": {
+  "diaithiris": "sàirsùil",
   "english": "Eight-Power Scope"
  },
  "suppressor": {
+  "diaithiris": "tousd beòili",
   "english": "Suppressor"
  },
  "muzzle_brake": {
+  "diaithiris": "kaskun beòili",
   "english": "Muzzle Brake"
  },
  "foregrip": {
+  "diaithiris": "grèimi làimi",
   "english": "Foregrip"
  },
  "gunmetal_nugget": {
+  "diaithiris": "mield gunda",
   "english": "Gunmetal Nugget"
  },
  "gunmetal_ingot": {
+  "diaithiris": "iarund gunda",
   "english": "Gunmetal Ingot"
  },
  "gunmetal_mesh": {
+  "diaithiris": "lìun iaruind",
   "english": "Gunmetal Mesh"
  },
  "gun_internals": {
+  "diaithiris": "kridi gunda",
   "english": "Gun Internals"
  }
 }

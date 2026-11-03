@@ -15,8 +15,13 @@ Clean-room, MIT. Replaces the all-rights-reserved Vic's Point Blank in the pack.
 - Units: damage in hp, range in m, cooldown in ticks (20 = 1 s); tooltip shows rounds per minute.
 - Recipes take `#c:ingots/gunmetal` and vanilla items; gunmetal blends iron, copper and coal. Ammo uses gunpowder (paper for shells, TNT for grenades, firework rocket for rockets, redstone for cells).
 
+## Sounds, names, Codex
+- 12 sounds are synthesised by `tools/gen_sounds.py` (numpy waveforms, ffmpeg to .ogg; no samples, so no licence). Freesound was tried first and returned 403 from the cloud. They have not been listened to, only generated and registered; expect to retune them by ear on the PC.
+- Names: `names_map.json` has English plus Diaithiris kennings (words from LEXICON.json, grammar from GRAMMAR.md, run through `diaithiris-archaic/tools/archaic.py`). Items are named in English with the Diaithiris name as a grey italic tooltip line (`names.json`).
+- Codex: `library/firearms_library.json` (arms_library format) and `codex/firearms_handbook.json` (handbook chapters).
+
 ## Not done yet
-Gun and hit sounds are vanilla placeholders, recoil is a view kick only (no first-person animation), no underbarrel slot (the old underbarrel launchers map to the grenade launcher), no weapon printer / workstation blocks (their ids map to the smithing table), Diaithiris names are pending from the names pipeline (`names_map.json` has English only), Codex and quest entries wait for the Codex hook.
+No underbarrel slot (the old underbarrel launchers map to the grenade launcher), no weapon printer / workstation blocks (their ids map to the smithing table), recoil is a view kick only, no first-person animation or gun models (items use flat sprites), quests for the guns wait for the quest lane.
 
 ## Test
 `/firearmsselftest` (op): see TEST.md.
