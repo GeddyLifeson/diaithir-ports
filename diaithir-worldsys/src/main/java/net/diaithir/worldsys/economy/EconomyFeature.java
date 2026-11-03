@@ -20,6 +20,12 @@ public final class EconomyFeature {
 
     public static void register(IEventBus modBus) {
         NeoForge.EVENT_BUS.addListener(ServerStartingEvent.class, e -> EconWorld.server(e.getServer()));
+        if (System.getProperty("diaithir.econselftest") != null)
+            NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, e -> {
+                try { int w = selfTest(); System.out.println("[econselftest] done weeks=" + w); }
+                catch (Throwable t) { System.out.println("[econselftest] FAILED " + t); t.printStackTrace(System.out); }
+                e.getServer().halt(false);
+            });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, EconomyFeature::commands);
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, EconomyFeature::interact);
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, EconomyFeature::tick);
@@ -77,6 +83,16 @@ public final class EconomyFeature {
         EconWorld.dirty();
     }
 
+    static int selfTest() {
+        for (int i = 0; i < 52; i++) weekly();
+        EconState st = EconWorld.state();
+        EconQuests.World w = world();
+        System.out.println("[econselftest] weeks=" + st.week + " cultures=" + st.cur.size() + " claims=" + EconWorld.claims().size() + " stockTowns=" + st.market.stock.size()
+            + " ctxOk=" + (EconWorld.ctx("wilds", null).scale() > 0) + " questsOn=" + w.companiesOn());
+        for (var e : st.cur.entrySet()) System.out.println("[econselftest] " + e.getKey() + " money=" + Math.round(e.getValue().money) + " ref=" + Math.round(e.getValue().ref) + " treasury=" + Math.round(e.getValue().treasury));
+        return (int) st.week;
+    }
+
     private static void commands(RegisterCommandsEvent e) {
         e.getDispatcher().register(BankCommands.bank());
         e.getDispatcher().register(MarketCommands.market());
@@ -85,6 +101,11 @@ public final class EconomyFeature {
         e.getDispatcher().register(MarketCommands.economy());
         e.getDispatcher().register(ExchangeCommands.build());
         e.getDispatcher().register(BankCommands.bond());
+        e.getDispatcher().register(Commands.literal("econselftest").requires(s -> s.getEntity() == null || (s.getEntity() instanceof ServerPlayer sp && s.getServer().getPlayerList().isOp(sp.nameAndId()))).executes(c -> {
+            int w = selfTest();
+            c.getSource().sendSuccess(() -> Component.literal("[econselftest] weeks=" + w), false);
+            return Command.SINGLE_SUCCESS;
+        }));
         e.getDispatcher().register(CompanyCommands.build()
             .then(Commands.literal("quest").executes(ctx -> {
                 var p = ctx.getSource().getPlayerOrException();
