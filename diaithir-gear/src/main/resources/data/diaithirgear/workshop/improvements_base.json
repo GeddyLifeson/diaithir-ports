@@ -1,0 +1,30 @@
+[
+ {
+  "id": "keen",
+  "item": "minecraft:flint",
+  "damage": 0.5,
+  "durability": 0,
+  "name": "Keen edge"
+ },
+ {
+  "id": "balanced",
+  "item": "minecraft:iron_nugget",
+  "damage": 0.25,
+  "durability": 40,
+  "name": "Balanced"
+ },
+ {
+  "id": "wrapped",
+  "item": "minecraft:leather",
+  "damage": 0.0,
+  "durability": 80,
+  "name": "Wrapped grip"
+ },
+ {
+  "id": "fine",
+  "item": "minecraft:gold_nugget",
+  "damage": 0.0,
+  "durability": 120,
+  "name": "Fine finish"
+ }
+]

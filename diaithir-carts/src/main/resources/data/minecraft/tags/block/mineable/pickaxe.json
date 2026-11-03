@@ -10,6 +10,10 @@
     "diaithircarts:cobbled_road",
     "diaithircarts:macadam_road",
     "diaithircarts:asphalt_road",
-    "diaithircarts:concrete_motorway"
+    "diaithircarts:concrete_motorway",
+    "diaithircarts:one_way_rail",
+    "diaithircarts:destination_rail",
+    "diaithircarts:cart_loader",
+    "diaithircarts:locking_rail"
   ]
 }

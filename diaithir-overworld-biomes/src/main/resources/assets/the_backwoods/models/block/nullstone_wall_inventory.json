@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/wall_inventory",
  "textures": {
-  "wall": "minecraft:block/stone"
+  "wall": "the_backwoods:block/nullstone_wall"
  }
 }

@@ -1,0 +1,26 @@
+{
+ "type": "minecraft:entity",
+ "random_sequence": "the_backwoods:entities/verdant_engine",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:diamond",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

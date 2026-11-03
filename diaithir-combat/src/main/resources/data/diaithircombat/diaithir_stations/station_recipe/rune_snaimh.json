@@ -1,0 +1,16 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:gems/jade",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/ogham",
+   "count": 2
+  }
+ ],
+ "result": "diaithircombat:rune_snaimh",
+ "time_s": 5
+}

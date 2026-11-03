@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/fence_side",
  "textures": {
-  "texture": "minecraft:block/oak_planks"
+  "texture": "the_backwoods:block/rotten_oak_fence"
  }
 }

@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/wall_inventory",
  "textures": {
-  "wall": "minecraft:block/stone"
+  "wall": "undergarden:block/tremblecrust_wall"
  }
 }

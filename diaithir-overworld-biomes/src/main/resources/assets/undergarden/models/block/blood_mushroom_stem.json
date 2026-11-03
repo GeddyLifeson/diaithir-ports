@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/cube_column",
  "textures": {
-  "end": "minecraft:block/brown_mushroom_block",
-  "side": "minecraft:block/brown_mushroom_block"
+  "end": "undergarden:block/blood_mushroom_stem",
+  "side": "undergarden:block/blood_mushroom_stem"
  }
 }

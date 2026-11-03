@@ -58,5 +58,20 @@
     "items": [
       "diaithircarts:concrete_motorway"
     ]
+  },
+  "signal": {
+    "age": 5,
+    "items": [
+      "diaithircarts:block_signal"
+    ]
+  },
+  "routing": {
+    "age": 5,
+    "items": [
+      "diaithircarts:one_way_rail",
+      "diaithircarts:destination_rail",
+      "diaithircarts:cart_loader",
+      "diaithircarts:locking_rail"
+    ]
   }
 }

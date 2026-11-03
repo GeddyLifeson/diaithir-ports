@@ -43,3 +43,9 @@ for u, rs in by.items():
     f = re.sub(r'[^a-z0-9_]', '_', u.lower()); json.dump({'universe': u, 'format': 'rite.v1', 'rites': rs}, open(f'{OUT}/{f}.json', 'w'), ensure_ascii=False, separators=(',', ':')); idx[f] = len(rs)
 json.dump({'format': 'rite.v1', 'total': sum(idx.values()), 'files': idx, 'skipped_no_text': miss}, open(f'{OUT}/_index.json', 'w'), indent=1)
 print(sum(idx.values()), 'rites,', len(idx), 'files,', miss, 'without text')
+
+# Reward tables: a finished rite drops a spell scroll of its school; tier band 1 (rite tier 1-2), 2 (3-4), 3 (5-7).
+LT = os.path.join(OUT, '..', 'loot_table', 'rite_reward'); os.makedirs(LT, exist_ok=True)
+for pool in ['druid', 'ovate', 'bard', 'filid', 'fitech', 'sidhe', 'smith']:
+    for band, (lo, hi) in {'1': (0, 1), '2': (1, 2), '3': (2, 3)}.items():
+        json.dump({'type': 'minecraft:chest', 'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': 'spell_engine:spell_scroll', 'functions': [{'function': 'spell_engine:spell_bind_randomly', 'pool': f'#diaithir_druidry:spell_scroll/{pool}', 'tier': {'type': 'minecraft:uniform', 'min': lo, 'max': hi}, 'count': 1}]}]}]}, open(f'{LT}/{pool}_{band}.json', 'w'), indent=1)

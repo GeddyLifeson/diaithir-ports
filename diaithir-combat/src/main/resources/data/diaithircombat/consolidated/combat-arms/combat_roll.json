@@ -10,12 +10,12 @@
     "diaithir_combat:roll_cooldown": -1.5,
     "slot": "curio_anklet"
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:leather",
-    "c:ingots/bronze"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "bonn_luathe",
@@ -26,13 +26,12 @@
     "diaithir_combat:roll_charges": 0,
     "slot": "curio_anklet"
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:leather",
-    "c:string",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "nasc_dara",
@@ -43,12 +42,12 @@
     "diaithir_combat:roll_cooldown": 1.0,
     "slot": "curio_charm"
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:gems/amber",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "corrmhial_tumaidh",
@@ -60,12 +59,12 @@
     "diaithir_combat:roll_cooldown": -3.0,
     "slot": "curio_charm"
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:gems/diamond",
-    "c:feathers"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "rune_luas",
@@ -75,12 +74,12 @@
     "diaithir_combat:roll_cooldown": -1.0,
     "socket_target": "armor|ring"
    },
-   "recipe": [
-    "c:dusts/redstone",
-    "c:gems/quartz",
-    "c:ingots/bronze"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "rune_sraith",
@@ -90,12 +89,12 @@
     "diaithir_combat:roll_distance": 0.5,
     "socket_target": "armor|ring"
    },
-   "recipe": [
-    "c:dusts/redstone",
-    "c:gems/lapis",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "rune_dara_dara",
@@ -105,12 +104,12 @@
     "diaithir_combat:roll_charges": 1,
     "socket_target": "ring"
    },
-   "recipe": [
-    "c:dusts/glowstone",
-    "c:gems/emerald",
-    "c:ingots/composite"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "enchant_eadrom",

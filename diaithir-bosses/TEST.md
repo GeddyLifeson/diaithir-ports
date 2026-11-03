@@ -15,6 +15,16 @@ Champion Age health bonus adds to other mods' health changes (Dwarfs and Giants 
 
 Update: cap_other_mods (default true) also caps other mods' rolls at max_combined_health_multiplier; Remnants ranks.json health lowered (pack-config). bossesselftest ok=1476 bad=0; live 60 zombies foreign x0.60..x2.85 (the cap was not reached live with the new configs; the x9 synthetic case reaches it and passes), every champion total asserted <= 4.0.
 
+## Library rites (loader on the Ascendant altar)
+`RiteLibrary` reads diaithir-druidry `rites/<universe>.json` (system property `diaithir.rites`, else the datapack, else class path) and turns a rite into an altar rite (`Ritual.RITE` prefix). `/rite info <id>`, `/rite begin <id>` (within six blocks of an Ascendant altar; Age gate = planet opens_age + tier - 1). Finishing records the rite as learned (AscendantData, key `rite:<id>`).
+Headless boot (JDK 25, flat world, rcon) `/bossesselftest`: bosses tested=35 ok=1986 bad=0, including all 51,884 rites converted (items and creatures exist, 0 bad) and one tier 7 rite (Silenys, 7 steps) played through: gate closed below its Age, begins at it, busy altar refuses a second, offer, kills, wrong then right ogham runes, hour window, co-op by tokens, defend, learned, not run twice.
+Not done: learned rite does not yet grant the Spell Engine spell; no item path to start a rite (command only); rites run in the overworld altar, not yet on their planet dimension.
+
+Update (page, reward, planets, bosses): `rite_page` item (custom data `rite`) used on an Ascendant altar begins that rite; `/rite page <id>` gives one. A rite runs only in its own dimension (overworld for Diaithir). Finishing pays a spell scroll from `diaithir_druidry:rite_reward/<school>_<band>` (generated loot tables; Spell Engine absent in the test run, so 0 items there: unverified) and wakes the boss mapped in `rite_bosses.json` (planet bosses thread; test uses a mapped stand-in). Self test: ok=1992 bad=0, including the page start, the overworld refusing a planet rite, and the mapped boss waking.
+
+## Planet altars (data, S6831)
+`tools/gen_planet_altars.py <planets.tsv>` writes the shrine template `planet_altar.nbt` (9x5x9: stone brick floor, an Ascendant altar in the middle, four ogham stones, lantern posts), one shared pool, and per planet a jigsaw structure `planet_altar/<id>` (biomes `#diaithir_planets:<id>`, surface) and a structure set (spacing 24, separation 10). 215 planets (Terra uses the #136 rite sites).
+Headless (NeoForge 26.1.2, flat overworld, #145's `diaithir_planets` data as a world datapack): `/locate structure diaithirbosses:planet_altar/alaenneirae` found one 208 blocks away in that dimension and `.../ashestith` 204 blocks away in its own; `/place structure` put the shrine down and `/execute if block` found `diaithirbosses:ascendant_altar` at 4 64 4. Not tested: all 215 (two sampled), a rite run on a planet altar by a player, client view.
 ## Test 11-03 (planet bosses)
 Headless server boots, loads 26 profiles and 1,767 planet bosses. /bossesselftest: 1,767 profiles checked (phases, attacks, Age 1-8, entity type, look file, texture present) and the full boss test on one boss per body plan (21): ok=33941, 3 bad (Age-8 bosses have no later Age to scale into; test now skips that check). Not tested: a client (models and renderer never seen in game).
 

@@ -46,6 +46,7 @@ public final class FaunaMod {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, Revival.SPEC);
         ENTITIES.register(bus);
         Fossils.register(bus);
+        net.diaithir.fauna.bees.Bees.register(bus);
     }
 
     @SubscribeEvent
@@ -93,6 +94,12 @@ public final class FaunaMod {
                             c.getSource().sendSuccess(() -> Component.literal(s.id + " (" + s.per + ", " + s.form + ")"), false);
                             return 1;
                         })))
+                .then(Commands.literal("beetest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+                    var fails = net.diaithir.fauna.bees.BeeTest.run(c.getSource().getServer());
+                    String line = fails.isEmpty() ? "Bees self test PASS" : "Bees self test FAIL: " + String.join("; ", fails);
+                    c.getSource().sendSuccess(() -> Component.literal(line), false);
+                    return fails.isEmpty() ? 1 : 0;
+                }))
                 .then(Commands.literal("census").executes(c -> {
                     String r = Census.run(c.getSource().getLevel());
                     c.getSource().sendSuccess(() -> Component.literal(r), false);
@@ -120,12 +127,8 @@ public final class FaunaMod {
                                 c.getSource().sendFailure(Component.literal("No Library creature with that entry id"));
                                 return 0;
                             }
-                            ServerLevel level = c.getSource().getLevel();
-                            FaunaMob m = TYPES.get(s.plan).get().create(level, EntitySpawnReason.COMMAND);
-                            m.setPos(c.getSource().getPosition());
-                            m.setSpecies(s);
-                            level.addFreshEntity(m);
-                            return 1;
+                            var at = c.getSource().getPosition();
+                            return LibrarySpawner.spawn(c.getSource().getLevel(), s, at.x, at.y, at.z, EntitySpawnReason.COMMAND) != null ? 1 : 0;
                         })))
                 .then(Commands.literal("libspawntest").then(Commands.argument("attempts", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 200))
                         .then(Commands.argument("age", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 20)).executes(c -> {

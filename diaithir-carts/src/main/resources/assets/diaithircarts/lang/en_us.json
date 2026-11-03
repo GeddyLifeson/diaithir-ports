@@ -13,5 +13,10 @@
   "block.diaithircarts.cobbled_road": "Cobbled and paved stone road",
   "block.diaithircarts.macadam_road": "Macadam (crushed stone) road",
   "block.diaithircarts.asphalt_road": "Asphalt (tarmac) road",
-  "block.diaithircarts.concrete_motorway": "Concrete motorway"
+  "block.diaithircarts.concrete_motorway": "Concrete motorway",
+  "block.diaithircarts.block_signal": "Block Signal",
+  "block.diaithircarts.one_way_rail": "One-Way Rail",
+  "block.diaithircarts.destination_rail": "Destination Rail",
+  "block.diaithircarts.cart_loader": "Cart Loader",
+  "block.diaithircarts.locking_rail": "Locking Rail"
 }

@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/stone"
+  "all": "the_bumblezone:block/dense_bubble_block"
  }
 }
