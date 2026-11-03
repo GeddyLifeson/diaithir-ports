@@ -5,7 +5,7 @@ from lane import Lane
 def ok(c, r):
     t = ' '.join(r)
     if c.endswith(' air'): return True
-    want = 'Summoned' if c.startswith('summon') else 'Modified' if c.startswith('data merge') else 'Changed the block' if c.startswith('setblock') else None
+    want = 'Summoned' if c.startswith('summon') else 'Modified' if c.startswith('data merge') else 'Replaced' if c.startswith('item replace') else 'Changed the block' if c.startswith('setblock') else None
     return want is None or want in t
 
 out, *jars = sys.argv[1:]
