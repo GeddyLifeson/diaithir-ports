@@ -1,0 +1,9 @@
+{
+ "values": [
+  "diaithir_worldgen:rc/maze_stone",
+  "diaithir_worldgen:rc/maze_sand",
+  "diaithir_worldgen:rc/maze_nether",
+  "diaithir_worldgen:rc/maze_ice",
+  "diaithir_worldgen:rc/maze_deep"
+ ]
+}
