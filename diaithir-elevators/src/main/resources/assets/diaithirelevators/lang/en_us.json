@@ -1,5 +1,7 @@
 {
   "block.diaithirelevators.elevator_floor": "Dìrlàrach",
-  "block.diaithirelevators.elevator_controller": "Stiùrdh\u00ecrich",
-  "block.diaithirelevators.cabin_plate": "Bothanlàr"
+  "block.diaithirelevators.elevator_controller": "Stiùrdhìrich",
+  "block.diaithirelevators.cabin_plate": "Bothanlàr",
+  "block.diaithirelevators.bridge_emitter": "Lumvarrek",
+  "block.diaithirelevators.light_bridge": "Lumvarrek light"
 }

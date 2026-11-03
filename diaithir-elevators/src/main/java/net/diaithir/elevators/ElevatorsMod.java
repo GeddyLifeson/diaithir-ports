@@ -42,6 +42,13 @@ public final class ElevatorsMod {
     public static final Supplier<BlockEntityType<ControllerEntity>> CONTROLLER_ENTITY = ENTITIES.register("controller",
             () -> new BlockEntityType<>(ControllerEntity::new, CONTROLLER.get()));
 
+    public static final DeferredBlock<Block> EMITTER = BLOCKS.registerBlock("bridge_emitter", BridgeEmitter::new,
+            () -> steel().lightLevel(s -> s.getValue(BridgeEmitter.POWERED) ? 7 : 0));
+    public static final DeferredBlock<Block> LIGHT_BRIDGE = BLOCKS.registerBlock("light_bridge", LightBridge::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).strength(-1.0F, 3600000.0F).noOcclusion().noLootTable().lightLevel(s -> 10)
+                    .sound(SoundType.GLASS).isViewBlocking((a, b, c) -> false));
+    public static final DeferredItem<BlockItem> EMITTER_ITEM = ITEMS.registerSimpleBlockItem(EMITTER);
+
     private static BlockBehaviour.Properties steel() {
         return BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.5F, 6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops();
     }
@@ -56,6 +63,7 @@ public final class ElevatorsMod {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
                 e.accept(FLOOR_ITEM.get());
                 e.accept(CONTROLLER_ITEM.get());
+                e.accept(EMITTER_ITEM.get());
             }
         });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> register(e.getDispatcher()));

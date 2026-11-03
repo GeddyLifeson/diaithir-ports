@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "diaithirelevators:block/bridge_emitter_top",
+    "side": "diaithirelevators:block/bridge_emitter_side",
+    "front": "diaithirelevators:block/bridge_emitter_front_on"
+  }
+}

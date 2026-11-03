@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "diaithirelevators:block/bridge_emitter"
+  }
+}

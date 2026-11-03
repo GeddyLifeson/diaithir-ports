@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "axis_x=true": {
+      "model": "diaithirelevators:block/light_bridge_x",
+      "y": 90
+    },
+    "axis_x=false": {
+      "model": "diaithirelevators:block/light_bridge_x"
+    }
+  }
+}

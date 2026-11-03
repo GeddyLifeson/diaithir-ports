@@ -2,6 +2,7 @@
   "age": 5,
   "items": [
     "diaithirelevators:elevator_floor",
-    "diaithirelevators:elevator_controller"
+    "diaithirelevators:elevator_controller",
+    "diaithirelevators:bridge_emitter"
   ]
 }
