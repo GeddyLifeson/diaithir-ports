@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_0_nestia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ashiazis/settlement_1_nestia",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 218864414
+ }
+}

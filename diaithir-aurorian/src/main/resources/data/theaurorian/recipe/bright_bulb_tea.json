@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "theaurorian:cup",
+  "theaurorian:bright_bulb",
+  "theaurorian:bright_bulb",
+  "theaurorian:bright_bulb",
+  "theaurorian:bright_bulb",
+  "theaurorian:bright_bulb",
+  "theaurorian:bright_bulb",
+  "theaurorian:bright_bulb",
+  "theaurorian:bright_bulb"
+ ],
+ "result": {
+  "id": "theaurorian:bright_bulb_tea",
+  "count": 1
+ }
+}

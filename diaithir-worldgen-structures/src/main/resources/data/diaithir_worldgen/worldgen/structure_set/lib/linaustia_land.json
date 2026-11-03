@@ -1,0 +1,82 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/forge_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/forge_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/fortress_1_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/garden_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/hall_0_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/hall_1_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/landmark_1_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/ruin_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/ruin_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/temple_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/temple_1_land",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/temple_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/tomb_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/tower_1_land",
+   "weight": 10
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 148236072
+ }
+}

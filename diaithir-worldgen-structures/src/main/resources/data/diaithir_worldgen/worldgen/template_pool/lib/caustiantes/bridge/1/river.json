@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/caustiantes/bridge/1/river",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/caustiantes/my_caustiantes_e5_places_000457",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

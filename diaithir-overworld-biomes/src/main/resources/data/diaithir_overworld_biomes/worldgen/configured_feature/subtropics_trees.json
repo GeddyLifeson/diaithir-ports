@@ -1,0 +1,1 @@
+{"type":"minecraft:random_selector","config":{"default":{"feature":"diaithir_overworld_biomes:subtropics_broadleaf_tree","placement":[]},"features":[{"chance":0.4,"feature":{"feature":"diaithir_overworld_biomes:subtropics_palm_tree","placement":[]}}]}}

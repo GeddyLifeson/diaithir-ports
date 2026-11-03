@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ryira_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryira_grottoes",
+   "required": false
+  }
+ ]
+}

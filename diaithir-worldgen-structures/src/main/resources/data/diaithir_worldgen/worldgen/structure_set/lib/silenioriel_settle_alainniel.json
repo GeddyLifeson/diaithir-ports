@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silenioriel/settlement_0_alainniel",
+   "weight": 30
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silenioriel/settlement_1_alainniel",
+   "weight": 35
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silenioriel/settlement_2_alainniel",
+   "weight": 9
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 167198050
+ }
+}

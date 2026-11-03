@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/miilora/settlement/1/sileinna",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/miilora/ar_miilora_e6_places_000096",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

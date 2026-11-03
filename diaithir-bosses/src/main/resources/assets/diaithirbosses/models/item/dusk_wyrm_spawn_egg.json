@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirbosses:item/dusk_wyrm_spawn_egg"
+ }
+}

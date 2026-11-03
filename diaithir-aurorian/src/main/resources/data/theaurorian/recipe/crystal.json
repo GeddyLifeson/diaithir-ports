@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:smelting",
+ "ingredient": "theaurorian:geode",
+ "result": {
+  "id": "theaurorian:crystal"
+ },
+ "experience": 1.0,
+ "cookingtime": 200
+}

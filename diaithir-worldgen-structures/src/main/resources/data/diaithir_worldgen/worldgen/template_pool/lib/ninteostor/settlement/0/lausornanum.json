@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ninteostor/settlement/0/lausornanum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ninteostor/my_ninteostor_e6_places_000310",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

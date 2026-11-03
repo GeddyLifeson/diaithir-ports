@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "#c:ingots/bronze",
+   "required": false
+  },
+  {
+   "id": "diaithirforgeworks:bronze_ingot",
+   "required": false
+  },
+  "minecraft:copper_ingot"
+ ]
+}

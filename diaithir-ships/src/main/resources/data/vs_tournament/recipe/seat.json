@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "#O#",
+    "O O"
+  ],
+  "key": {
+    "#": "#minecraft:wool",
+    "O": "#minecraft:planks"
+  },
+  "result": {
+    "id": "vs_tournament:seat",
+    "count": 1
+  }
+}

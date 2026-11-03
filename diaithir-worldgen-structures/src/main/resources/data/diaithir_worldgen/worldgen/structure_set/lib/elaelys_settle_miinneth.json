@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/settlement_0_miinneth",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/settlement_1_miinneth",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/settlement_2_miinneth",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 167664064
+ }
+}

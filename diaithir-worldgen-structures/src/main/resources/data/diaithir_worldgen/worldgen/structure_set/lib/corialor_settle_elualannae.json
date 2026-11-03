@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/corialor/settlement_0_elualannae",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corialor/settlement_1_elualannae",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 48929544
+ }
+}

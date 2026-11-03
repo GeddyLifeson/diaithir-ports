@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:alaenneirae_ilyerae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaenneirae_lyirlora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaenneirae_nuelae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaenneirae_silelora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaenneirae_sileniel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaenneirae_tiranamoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaenneirae_veneirora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaenneirae_voraggurn",
+   "required": false
+  }
+ ]
+}

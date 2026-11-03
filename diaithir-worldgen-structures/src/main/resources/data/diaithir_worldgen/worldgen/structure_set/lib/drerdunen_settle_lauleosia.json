@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_lauleosia",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_lauleosia",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_lauleosia",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3_lauleosia",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 264251469
+ }
+}

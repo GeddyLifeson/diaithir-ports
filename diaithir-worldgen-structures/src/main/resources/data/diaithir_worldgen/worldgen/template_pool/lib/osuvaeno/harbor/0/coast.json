@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/osuvaeno/harbor/0/coast",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/osuvaeno/ki_osuvaeno_e3_places_000205",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

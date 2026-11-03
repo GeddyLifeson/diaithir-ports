@@ -1,0 +1,138 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/forge_2_land",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/forge_3_land",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/fortress_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/fortress_1_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/fortress_2_land",
+   "weight": 55
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/fortress_3_land",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/garden_2_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/garden_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/hall_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/hall_1_land",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/hall_2_land",
+   "weight": 141
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/hall_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/landmark_0_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/landmark_1_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/landmark_2_land",
+   "weight": 67
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/landmark_3_land",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/ruin_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/ruin_2_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/ruin_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/temple_1_land",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/temple_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tomb_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tomb_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tower_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tower_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tower_2_land",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/tower_3_land",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 213898896
+ }
+}

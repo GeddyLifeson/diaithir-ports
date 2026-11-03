@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "I I",
+  "III",
+  "III"
+ ],
+ "key": {
+  "I": "theaurorian:cerulean_ingot"
+ },
+ "result": {
+  "id": "theaurorian:cerulean_chestplate",
+  "count": 1
+ }
+}

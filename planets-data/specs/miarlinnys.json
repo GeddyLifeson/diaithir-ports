@@ -1,0 +1,167 @@
+{
+ "sky": {
+  "sky": "#5a4a7a",
+  "fog": "#7a6a9a",
+  "cloud": "#aa9bd0ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a5a8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.miarlinnys.E1.places.000208",
+   "archetype": "forest",
+   "temp": 0.0,
+   "humid": 0.4,
+   "grass": "#6fa35a",
+   "foliage": "#5c9a4a",
+   "water": "#3f6fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miarlinnys.E6.places.000162",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#6b8f6a",
+   "foliage": "#5a7f5e",
+   "water": "#4a6f8f",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miarlinnys.E6.places.000164",
+   "archetype": "river",
+   "temp": 0.1,
+   "humid": 0.6,
+   "grass": "#7a9a6a",
+   "foliage": "#6a8a5a",
+   "water": "#5a8fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miarlinnys.E6.places.000163",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#9a8a5a",
+   "foliage": "#8a7a4a",
+   "water": "#6a7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miarlinnys.E6.places.000185",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#7a7a8a",
+   "foliage": "#6a6a7a",
+   "water": "#5a5a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miarlinnys.E6.places.000173",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": -0.2,
+   "grass": "#8a9a8a",
+   "foliage": "#7a8a7a",
+   "water": "#5a6a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miarlinnys.E6.places.000181",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#4a6a5a",
+   "foliage": "#3a5a4a",
+   "water": "#3a4a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miarlinnys.E6.places.000174",
+   "archetype": "snowy_taiga",
+   "temp": -0.6,
+   "humid": 0.3,
+   "grass": "#8aa0a0",
+   "foliage": "#7a9090",
+   "water": "#6a8ab0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Miarlinnys is a realm of ash-hazed skies, sleeping arcane stone, and reed-lined rivers humming with stored sorcery, ranging from glassy swamps and sunken marshes to violet basalt peaks and frozen crags.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#b8c8d8",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.miarlinnys.E6.places.000162",
+  "why": "Silver reeds, misty tides, lantern-lit wetlands, soft sky, calm.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 0.8,
+   "iron": 0.6,
+   "copper": 0.7,
+   "gold": 0.5,
+   "redstone": 0.6,
+   "lapis": 0.8,
+   "diamond": 0.5
+  },
+  "why_entry": "AR.miarlinnys.E1.places.000208",
+  "grounded": true
+ }
+}

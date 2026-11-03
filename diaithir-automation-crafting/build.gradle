@@ -9,13 +9,24 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
     version = project.neo_version
+    accessTransformers.from('src/main/resources/META-INF/accesstransformer.cfg')
+    interfaceInjectionData.from('src/main/resources/interfaces.json')
     runs {
         server {
             server()
             programArgument '--nogui'
         }
+        client {
+            client()
+            if (project.hasProperty('joinServer')) {
+                programArguments.addAll('--username', 'Researcher', '--quickPlayMultiplayer', project.property('joinServer'))
+            }
+        }
     }
-    mods { diaithirautomationcrafting { sourceSet(sourceSets.main) } }
+    mods {
+        researcher { sourceSet(sourceSets.main) }
+        diaithirautomationcrafting { sourceSet(sourceSets.main) }
+    }
 }
 
 processResources {

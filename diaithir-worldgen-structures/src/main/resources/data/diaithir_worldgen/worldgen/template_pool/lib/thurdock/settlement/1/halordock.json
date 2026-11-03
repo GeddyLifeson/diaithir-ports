@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/thurdock/settlement/1/halordock",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/thurdock/gr_thurdock_e4_places_000137",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

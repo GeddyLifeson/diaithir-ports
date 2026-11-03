@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/drurdon/bridge/0/river",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drurdon/gr_drurdon_e6_places_000453",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

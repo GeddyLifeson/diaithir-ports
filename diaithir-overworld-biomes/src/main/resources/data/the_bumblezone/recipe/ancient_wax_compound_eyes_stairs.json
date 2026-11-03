@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "the_bumblezone:ancient_wax_compound_eyes"
+ },
+ "pattern": [
+  "#  ",
+  "## ",
+  "###"
+ ],
+ "result": {
+  "id": "the_bumblezone:ancient_wax_compound_eyes_stairs",
+  "count": 4
+ }
+}

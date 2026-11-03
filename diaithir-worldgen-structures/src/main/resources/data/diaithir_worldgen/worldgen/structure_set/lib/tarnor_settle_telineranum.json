@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_0_telineranum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnor/settlement_2_telineranum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 247505509
+ }
+}

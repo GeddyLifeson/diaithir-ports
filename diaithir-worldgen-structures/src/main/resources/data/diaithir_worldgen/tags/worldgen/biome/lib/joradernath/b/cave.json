@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:joradernath_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:joradernath_grottoes",
+   "required": false
+  }
+ ]
+}

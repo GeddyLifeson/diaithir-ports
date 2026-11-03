@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/karugurn/settlement/3/any",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/karugurn/gr_karugurn_e6_places_000087",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "IM ",
+  " I "
+ ],
+ "key": {
+  "I": "#c:ingots/gunmetal",
+  "M": "diaithirfirearms:gunmetal_mesh"
+ },
+ "result": {
+  "id": "diaithirfirearms:sidearm_heavy",
+  "count": 1
+ }
+}

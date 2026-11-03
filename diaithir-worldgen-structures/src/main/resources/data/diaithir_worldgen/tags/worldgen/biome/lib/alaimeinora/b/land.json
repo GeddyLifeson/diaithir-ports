@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:alaimeinora_alaalora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_amontor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_mielwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_oriimwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_serinarnes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_siliomys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_siluamora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_tarnanock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_valeonanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaimeinora_venarilwen",
+   "required": false
+  }
+ ]
+}

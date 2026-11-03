@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aether_ii:skyroot_planks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "aether_ii:skyroot_slab",
+  "count": 6
+ }
+}

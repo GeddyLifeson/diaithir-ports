@@ -1,0 +1,152 @@
+{
+ "sky": {
+  "sky": "#8a9bb0",
+  "fog": "#a7b3bd",
+  "cloud": "#c8ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6e7a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.morurnath.E1.places.003439",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#6b7d5a",
+   "foliage": "#5d6e4c",
+   "water": "#4a6470",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.morurnath.E1.places.003437",
+   "archetype": "meadow",
+   "temp": 0.3,
+   "humid": 0.2,
+   "grass": "#8fa07a",
+   "foliage": "#7f9268",
+   "water": "#5c7a86",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.morurnath.E3.places.003341",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": 0.1,
+   "grass": "#9a9a7a",
+   "foliage": "#88886a",
+   "water": "#58707a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.morurnath.E6.places.003212",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#8c7d66",
+   "foliage": "#7a6d58",
+   "water": "#6e6a60",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.morurnath.E6.places.003131",
+   "archetype": "dark_forest",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#4f5e45",
+   "foliage": "#3f4f38",
+   "water": "#3a4a52",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.morurnath.E6.places.003115",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#7a7a72",
+   "foliage": "#6a6a62",
+   "water": "#4e5e68",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.morurnath.E6.places.003083",
+   "archetype": "mangrove_swamp",
+   "temp": 0.6,
+   "humid": 0.9,
+   "grass": "#5e7a62",
+   "foliage": "#4e6c56",
+   "water": "#3d6470",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A grey-violet ash-stained realm of hollow valleys, drowned cities and wind-scoured highlands, lit by cold lanterns and drifting ash.",
+ "atmo": {
+  "particles": [],
+  "fog": "#8a8f96",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.3,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "GR.morurnath.E6.places.003317",
+  "why": "Grey shores and wind-scoured ledges suggest mild, unremarkable weather",
+  "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "poppy",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.2,
+   "copper": 1.0,
+   "gold": 0.8,
+   "redstone": 0.8,
+   "lapis": 0.5,
+   "diamond": 0.4
+  },
+  "why_entry": "GR.morurnath.E3.assay.003341",
+  "grounded": true
+ }
+}

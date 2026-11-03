@@ -1,0 +1,269 @@
+{
+ "slug": "diaithir_archery_extras",
+ "items": [
+  {
+   "id": "archery_trader_bench",
+   "kind": "block",
+   "name_en": "Bogaduir's Trader Bench",
+   "attrs": {
+    "mass_kg": 85,
+    "hardness": 2.5,
+    "light_level": 0,
+    "trade_anchor": true,
+    "poi_type": "diaithir_classes:archery_bench"
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "spell_entangle_net",
+   "kind": "spell",
+   "name_en": "Eiltneach Net (Entangle)",
+   "attrs": {
+    "cooldown_s": 18,
+    "cast_time_s": 0.6,
+    "radius_m": 3.0,
+    "effect": "diaithir_classes:entangled",
+    "root_duration_s": 3.0,
+    "range_m": 24
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "spell_barrage",
+   "kind": "spell",
+   "name_en": "Cith Barrage",
+   "attrs": {
+    "cooldown_s": 24,
+    "cast_time_s": 0.4,
+    "arrows": 8,
+    "burst_duration_s": 1.6,
+    "damage_pct_per_arrow": 70,
+    "range_m": 40
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "spell_ranged_haste_aura",
+   "kind": "spell",
+   "name_en": "Fonn Luath (Ranged Haste)",
+   "attrs": {
+    "cooldown_s": 28,
+    "duration_s": 10,
+    "draw_speed_bonus_pct": 20,
+    "target": "self"
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "spell_power_shot_heavy",
+   "kind": "spell",
+   "name_en": "Urchar Trom (Heavy Power Shot)",
+   "attrs": {
+    "cooldown_s": 20,
+    "charge_time_s": 1.2,
+    "damage_pct": 220,
+    "knockback_m": 2.5,
+    "range_m": 64
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "entangled_effect",
+   "kind": "enchant",
+   "name_en": "Entangled (status effect)",
+   "attrs": {
+    "move_speed_pct": -100,
+    "jump_disabled": true,
+    "max_duration_s": 6,
+    "boss_duration_multiplier": 0.25,
+    "purge_on_damage_threshold_J": 400
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "rune_ceilg_snare",
+   "kind": "rune",
+   "name_en": "Ogham Rune of the Snare",
+   "attrs": {
+    "adds_spell": "spell_entangle_net",
+    "spell_slot": "offhand_focus",
+    "socket_cost": 1,
+    "rune_family": "ogham"
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
+  },
+  {
+   "id": "fastening_net_quiver",
+   "kind": "relic",
+   "name_en": "Quiver of Woven Nets",
+   "attrs": {
+    "mass_kg": 0.9,
+    "sockets": 1,
+    "spell_cooldown_reduction_pct": 10,
+    "applies_to": "spell_entangle_net"
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  }
+ ],
+ "events": [
+  {
+   "id": "archery_bench_trade_refresh",
+   "trigger": "villager_level_up(profession=diaithir_classes:bogaduir_trader)",
+   "effect": "Adds one age-gated bow-class offer (draw_ticks tuned via diaithir-combat tags) plus one spell rune offer; trade tier follows the highest Age the player has unlocked."
+  },
+  {
+   "id": "entangle_applied",
+   "trigger": "effect_applied(diaithir_classes:entangled)",
+   "effect": "Spawns a root particle ring of 3.0 m radius and plays a snare sound; flying mobs are grounded for the duration."
+  },
+  {
+   "id": "barrage_cast",
+   "trigger": "spell_cast(spell_barrage)",
+   "effect": "Fires 8 arrows over 1.6 s, each consuming 1 arrow from the quiver (or none with an infinity-style enchant); each uses 70 percent of the Ranged Weapon API damage attribute."
+  }
+ ],
+ "skills": [],
+ "id_migration": {
+  "archers:short_bow": "diaithir_arms:bow_age_iii",
+  "archers:composite_bow": "diaithir_arms:bow_composite_age_vii",
+  "archers:ranger_helmet": "diaithir_classes:fian_helmet_steel",
+  "archers:ranger_chestplate": "diaithir_classes:fian_chestplate_steel",
+  "archers:ranger_leggings": "diaithir_classes:fian_leggings_steel",
+  "archers:ranger_boots": "diaithir_classes:fian_boots_steel",
+  "archers:composite_helmet": "diaithir_classes:fian_helmet_composite",
+  "archers:composite_chestplate": "diaithir_classes:fian_chestplate_composite",
+  "archers:composite_leggings": "diaithir_classes:fian_leggings_composite",
+  "archers:composite_boots": "diaithir_classes:fian_boots_composite",
+  "archers:archery_workbench": "diaithir_classes:archery_trader_bench"
+ },
+ "c_tags": {
+  "c:ingots/bronze": [
+   "diaithir_arms:ingot_bronze"
+  ],
+  "c:ingots/steel": [
+   "diaithir_arms:ingot_steel"
+  ],
+  "c:ingots/composite": [
+   "diaithir_arms:ingot_composite"
+  ],
+  "c:gems/amethyst": [
+   "minecraft:amethyst_shard"
+  ],
+  "c:strings": [
+   "minecraft:string"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "archery_trader_bench_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:planks",
+    "c:strings",
+    "c:leathers"
+   ]
+  },
+  {
+   "id": "rune_ceilg_snare_craft",
+   "inputs_as_c_tags": [
+    "c:gems/amethyst",
+    "c:ingots/bronze",
+    "c:dusts/glowstone"
+   ]
+  },
+  {
+   "id": "fastening_net_quiver_craft",
+   "inputs_as_c_tags": [
+    "c:leathers",
+    "c:strings",
+    "c:ingots/steel"
+   ]
+  }
+ ],
+ "capabilities": [],
+ "upgrade_rules": [
+  {
+   "id": "bow_class_spell_socket",
+   "target": "diaithir_arms:bow_*",
+   "slots": 1,
+   "kinds": [
+    "rune",
+    "relic"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "quiver_relic_socket",
+   "target": "diaithir_classes:fastening_net_quiver",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  }
+ ],
+ "global_events": [
+  {
+   "id": "snare_chain_with_combat",
+   "subscribes_to": "diaithir_combat:hit_resolved",
+   "effect": "If the target has the Entangled effect, ranged hits gain +15 percent crit chance (per diaithir-combat drop_reduction ruleset) for the remaining root time."
+  },
+  {
+   "id": "age_unlock_trade_gate",
+   "subscribes_to": "diaithir_core:age_unlocked",
+   "effect": "Re-rolls available bench offers so newly unlocked Age spells and rune recipes become purchasable."
+  }
+ ],
+ "codex": [
+  {
+   "entry": "The Bogaduir Bench",
+   "connects_to": [
+    "diaithir_classes:bogaduir",
+    "diaithir_arms:bows"
+   ]
+  },
+  {
+   "entry": "Eiltneach: The Entangling Net",
+   "connects_to": [
+    "diaithir_combat:status_effects",
+    "diaithir_classes:ogham_runes"
+   ]
+  },
+  {
+   "entry": "Cith: Barrage and Volley",
+   "connects_to": [
+    "diaithir_classes:bogaduir_spells",
+    "diaithir_combat:draw_ticks"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "first_net_cast",
+  "intro": "The Bogaduir at the old hill-fort offers to teach you the Eiltneach: bind a snare with an Ogham rune and catch your first quarry in the net.",
+  "links_to": [
+   "diaithir_classes:bogaduir_initiation",
+   "diaithir_arms:bow_age_iii_crafting"
+  ]
+ },
+ "java_notes": "Register the archery_trader_bench block with a POI type and a Bogaduir villager profession, and the entangled MobEffect (movement lock, flier grounding, boss-duration scaling, damage-purge threshold). Spells themselves are Spell Engine JSON. Ship names_map.json plus a DataFixer or remap table for archers:* ids, with unmapped items routed to a refund loot table."
+}

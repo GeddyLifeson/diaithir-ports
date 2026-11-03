@@ -1,0 +1,165 @@
+{
+ "sky": {
+  "sky": "#7a5a8c",
+  "fog": "#b08a6a",
+  "cloud": "#66ffe0c8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2a4a5e"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.tirakaluta.E4.places.000203",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#a0643c",
+   "foliage": "#8a5a3a",
+   "water": "#3a5a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.tirakaluta.E1.places.000169",
+   "archetype": "birch_forest",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#9ec8b0",
+   "foliage": "#b8d8c0",
+   "water": "#4a7a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.tirakaluta.E6.places.000090",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.5,
+   "grass": "#b08a6a",
+   "foliage": "#9a7a5a",
+   "water": "#5a8a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.tirakaluta.E6.places.000091",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5a7a58",
+   "foliage": "#4a6a48",
+   "water": "#2e4a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.tirakaluta.E6.places.000095",
+   "archetype": "mushroom_fields",
+   "temp": 0.0,
+   "humid": 0.7,
+   "grass": "#7a9ab8",
+   "foliage": "#66ffd0",
+   "water": "#3a4a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.tirakaluta.E2.places.000141",
+   "archetype": "savanna",
+   "temp": 0.7,
+   "humid": -0.2,
+   "grass": "#c8a050",
+   "foliage": "#b89040",
+   "water": "#6a8aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.tirakaluta.E6.places.000097",
+   "archetype": "sunflower_plains",
+   "temp": 0.4,
+   "humid": 0.2,
+   "grass": "#d8b060",
+   "foliage": "#e0b848",
+   "water": "#5a9ab0",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.tirakaluta.E7.places.000164",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#c9a870",
+   "foliage": "#b89860",
+   "water": "#8a9a9a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "lukewarm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A sundered, ember-lit world of ash-drifted shard basins, glass cisterns and sealed vault-cities, its skies bruised violet over salt seas and luminous fungal deeps.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "soul",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a6a4f",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.5,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.tirakaluta.E6.events.000120",
+  "why": "Restless starlit winds and storm-shattered skies with scattered lights",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "jungle_tree",
+    "log": "jungle",
+    "leaves": "jungle",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "nether_sprouts",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.5,
+   "copper": 2.0,
+   "gold": 1.5,
+   "redstone": 2.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "KI.tirakaluta.E4.places.000203",
+  "grounded": false
+ }
+}

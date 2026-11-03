@@ -1013,5 +1013,20 @@
   "registry": "minecraft:item",
   "old": "guardvillagers:illusioner_spawn_egg",
   "new": "diaithirworldsys:guardvillagers_illusioner_spawn_egg"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "irons_jewelry:ruby",
+  "new": "diaithirworldsys:ruby"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "irons_jewelry:sapphire",
+  "new": "diaithirworldsys:sapphire"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "irons_jewelry:topaz",
+  "new": "diaithirworldsys:topaz"
  }
 ]

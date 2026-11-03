@@ -49,6 +49,34 @@ object VSSelfTest {
         log.info("selftest-eureka: helm ship={} control={}", s?.id, s?.eurekaControl()?.let { c -> "helms=" + c.helms + " balloons=" + c.balloons + " floaters=" + c.floaters })
     }
 
+    private var tournamentShip: ServerShip? = null
+
+    /** Registry/recipe checks for the merged Tournament content plus a ship assembled from its blocks. */
+    private fun tournamentTest(server: net.minecraft.server.MinecraftServer, level: net.minecraft.server.level.ServerLevel) {
+        val reg = net.minecraft.core.registries.BuiltInRegistries.BLOCK
+        val blocks = reg.keySet().filter { it.namespace == "vs_tournament" }
+        val items = net.minecraft.core.registries.BuiltInRegistries.ITEM.keySet().filter { it.namespace == "vs_tournament" }
+        val recipes = server.recipeManager.recipes.filter { it.id().identifier().namespace == "vs_tournament" }
+        log.info("selftest-tournament: blocks={} items={} recipes={} beTypes={} triggers={}", blocks.size, items.size, recipes.size,
+            net.minecraft.core.registries.BuiltInRegistries.BLOCK_ENTITY_TYPE.keySet().filter { it.namespace == "vs_tournament" }.size,
+            net.minecraft.core.registries.BuiltInRegistries.TRIGGER_TYPES.keySet().filter { it.namespace == "vs_tournament" }.size)
+        val T = { n: String -> reg.getValue(net.minecraft.resources.Identifier.fromNamespaceAndPath("vs_tournament", n)).defaultBlockState() }
+        for (x in 20..24) for (z in 20..22) level.setBlock(BlockPos(x, 121, z), Blocks.OAK_PLANKS.defaultBlockState(), 3)
+        val assembler = BlockPos(20, 122, 21)
+        level.setBlock(assembler, T("ship_assembler"), 3)
+        level.setBlock(BlockPos(21, 122, 21), T("thruster"), 3)
+        level.setBlock(BlockPos(22, 122, 21), T("prop_big"), 3)
+        level.setBlock(BlockPos(23, 122, 21), T("balloon"), 3)
+        level.setBlock(BlockPos(24, 122, 21), T("spinner"), 3)
+        level.setBlock(BlockPos(21, 122, 20), T("fuel_tank_full_transparent"), 3)
+        level.setBlock(BlockPos(22, 122, 20), T("rotator"), 3)
+        level.setBlock(BlockPos(23, 122, 20), T("seat"), 3)
+        val structure = org.valkyrienskies.tournament.util.TournamentShipAssembler.findStructure(level, assembler)
+        val s = ShipAssembler.assembleToShipFull(level, structure).ship
+        tournamentShip = s
+        log.info("selftest-tournament: assembled ship={} structureSize={}", s.id, structure.size)
+    }
+
     /** Forces every mixin target class named by the common/forge mixin configs to load so mixin application errors surface. */
     private fun preloadMixinTargets() {
         val loader = VSSelfTest::class.java.classLoader
@@ -111,6 +139,7 @@ object VSSelfTest {
                 log.info("selftest: mock player placed")
             }
             110 -> eurekaTest(server, level)
+            130 -> tournamentTest(server, level)
             100 -> {
                 val blocks = HashSet<BlockPos>()
                 for (x in 0..2) for (z in 0..2) {
@@ -123,7 +152,7 @@ object VSSelfTest {
                 startY = s.transform.position.y()
                 log.info("selftest: assembled ship id={} slug={} pos={}", s.id, s.slug, s.transform.position)
             }
-            in 150..400 -> if (tick % 50 == 0) eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) }
+            in 150..400 -> if (tick % 50 == 0) { tournamentShip?.let { t -> log.info("selftest-tournament: tick={} ship y={} {}", tick, t.transform.position.y(), shipWorldOf(level).loadedShips.getById(t.id)?.let { l -> org.valkyrienskies.tournament.ship.TournamentShips.getOrCreate(l).debugCounts() }) } ; eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) } }
             in 140..400 -> if (tick % 40 == 0) ship?.let {
                 log.info("selftest: tick={} ship y={} (start {}) vel={} all={} loaded={} static={} mass={} chunkLoaded={} block={}", tick, it.transform.position.y(), startY, it.velocity, shipWorldOf(level).allShips.size, shipWorldOf(level).loadedShips.size, it.isStatic, it.inertiaData.mass, level.chunkSource.getChunkNow(it.chunkClaim.getCenterBlockCoordinates(level.yRange).x shr 4, it.chunkClaim.getCenterBlockCoordinates(level.yRange).z shr 4) != null, level.getBlockState(it.chunkClaim.getCenterBlockCoordinates(level.yRange).let { c -> net.minecraft.core.BlockPos(c.x, c.y, c.z) }))
             }

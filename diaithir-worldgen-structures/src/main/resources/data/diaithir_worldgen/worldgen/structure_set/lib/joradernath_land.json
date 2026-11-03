@@ -1,0 +1,94 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/forge_2_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/forge_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/fortress_1_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/fortress_2_land",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/fortress_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/garden_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/hall_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/hall_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/hall_2_land",
+   "weight": 47
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/landmark_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/landmark_2_land",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/landmark_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/ruin_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/temple_1_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/temple_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/tomb_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/tower_2_land",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 203488797
+ }
+}

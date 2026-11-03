@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/delve_0_cave",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/delve_1_cave",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/delve_2_cave",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 30479781
+ }
+}

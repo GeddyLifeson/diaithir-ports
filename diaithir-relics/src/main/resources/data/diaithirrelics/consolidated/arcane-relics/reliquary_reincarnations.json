@@ -1,0 +1,824 @@
+{
+ "slug": "diaithir_reincarnations",
+ "items": [
+  {
+   "id": "bat_wing_shard",
+   "kind": "relic",
+   "name_en": "Bat Wing Shard",
+   "attrs": {
+    "mass_kg": 0.02,
+    "source": "bat",
+    "stack": 64
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "slime_gel_core",
+   "kind": "relic",
+   "name_en": "Slime Gel Core",
+   "attrs": {
+    "mass_kg": 0.05,
+    "source": "slime",
+    "stack": 64
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "spider_venom_gland",
+   "kind": "relic",
+   "name_en": "Spider Venom Gland",
+   "attrs": {
+    "mass_kg": 0.03,
+    "source": "spider",
+    "stack": 64
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "zombie_marrow",
+   "kind": "relic",
+   "name_en": "Zombie Marrow",
+   "attrs": {
+    "mass_kg": 0.1,
+    "source": "zombie",
+    "stack": 64
+   },
+   "recipe": null,
+   "age": "II"
+  },
+  {
+   "id": "skeleton_ash_bone",
+   "kind": "relic",
+   "name_en": "Skeleton Ash Bone",
+   "attrs": {
+    "mass_kg": 0.15,
+    "source": "skeleton",
+    "stack": 64
+   },
+   "recipe": null,
+   "age": "II"
+  },
+  {
+   "id": "creeper_spark_salt",
+   "kind": "relic",
+   "name_en": "Creeper Spark Salt",
+   "attrs": {
+    "mass_kg": 0.04,
+    "source": "creeper",
+    "stack": 64
+   },
+   "recipe": null,
+   "age": "II"
+  },
+  {
+   "id": "blaze_ember_seed",
+   "kind": "relic",
+   "name_en": "Blaze Ember Seed",
+   "attrs": {
+    "mass_kg": 0.06,
+    "source": "blaze",
+    "stack": 64
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "wither_char_splinter",
+   "kind": "relic",
+   "name_en": "Wither Char Splinter",
+   "attrs": {
+    "mass_kg": 0.2,
+    "source": "wither_skeleton",
+    "stack": 64
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "essence_of_flight",
+   "kind": "relic",
+   "name_en": "Essence of Flight",
+   "attrs": {
+    "mass_kg": 0.05,
+    "yield_per_refine": 1
+   },
+   "age": "II",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "essence_of_ooze",
+   "kind": "relic",
+   "name_en": "Essence of Ooze",
+   "attrs": {
+    "mass_kg": 0.05,
+    "yield_per_refine": 1
+   },
+   "age": "II",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "essence_of_venom",
+   "kind": "relic",
+   "name_en": "Essence of Venom",
+   "attrs": {
+    "mass_kg": 0.05,
+    "yield_per_refine": 1
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "essence_of_the_grave",
+   "kind": "relic",
+   "name_en": "Essence of the Grave",
+   "attrs": {
+    "mass_kg": 0.08,
+    "yield_per_refine": 1
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "essence_of_storm",
+   "kind": "relic",
+   "name_en": "Essence of Storm",
+   "attrs": {
+    "mass_kg": 0.05,
+    "yield_per_refine": 1
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "essence_of_cinder",
+   "kind": "relic",
+   "name_en": "Essence of Cinder",
+   "attrs": {
+    "mass_kg": 0.06,
+    "yield_per_refine": 1
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "essence_of_ruin",
+   "kind": "relic",
+   "name_en": "Essence of Ruin",
+   "attrs": {
+    "mass_kg": 0.1,
+    "yield_per_refine": 1
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "crucible_of_echoes",
+   "kind": "block",
+   "name_en": "Crucible of Echoes",
+   "attrs": {
+    "mass_kg": 180,
+    "tank_L": 4,
+    "process_time_s": 8,
+    "power_W": 0,
+    "hardness": 4.0
+   },
+   "recipe": [
+    "c:ingots/iron",
+    "c:ingots/iron",
+    "c:ingots/iron",
+    "c:storage_blocks/iron",
+    "c:gems/diamond",
+    "c:cobblestones"
+   ],
+   "age": "II"
+  },
+  {
+   "id": "offering_pedestal",
+   "kind": "block",
+   "name_en": "Offering Pedestal",
+   "attrs": {
+    "mass_kg": 90,
+    "hardness": 3.0,
+    "item_slots": 1
+   },
+   "recipe": [
+    "c:stones",
+    "c:stones",
+    "c:ingots/copper",
+    "c:ingots/gold"
+   ],
+   "age": "II"
+  },
+  {
+   "id": "wardlight_lantern_block",
+   "kind": "block",
+   "name_en": "Wardlight Lantern",
+   "attrs": {
+    "mass_kg": 6,
+    "light_level": 15,
+    "power_W": 0,
+    "reserve_J": 0
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "gleaning_sickle",
+   "kind": "relic",
+   "name_en": "Gleaning Sickle",
+   "attrs": {
+    "toggle": true,
+    "harvest_radius_m": 5,
+    "cooldown_s": 15,
+    "durability": 400,
+    "drain_per_use": 1
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "ember_brazier_staff",
+   "kind": "relic",
+   "name_en": "Ember Brazier Staff",
+   "attrs": {
+    "toggle": true,
+    "drain_resource": "gunpowder",
+    "drain_period_s": 2,
+    "reserve_units": 64,
+    "cooldown_s": 10,
+    "burst_radius_m": 6,
+    "damage": 8
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "rime_burst_rod",
+   "kind": "relic",
+   "name_en": "Rime Burst Rod",
+   "attrs": {
+    "cooldown_s": 20,
+    "burst_radius_m": 6,
+    "slow_duration_s": 6,
+    "damage": 6
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "lantern_of_the_long_dark",
+   "kind": "relic",
+   "name_en": "Lantern of the Long Dark",
+   "attrs": {
+    "toggle": true,
+    "drain_resource": "glowstone_dust",
+    "drain_period_s": 3,
+    "reserve_units": 200,
+    "night_vision_s": 12,
+    "light_radius_m": 10
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "sparkflint_torch_wand",
+   "kind": "relic",
+   "name_en": "Sparkflint Torch Wand",
+   "attrs": {
+    "charges": 160,
+    "refill_item": "c:rods/wooden",
+    "charges_per_item": 4,
+    "place_range_m": 6
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "gate_pearl_charm",
+   "kind": "relic",
+   "name_en": "Gate Pearl Charm",
+   "attrs": {
+    "teleport_range_m": 40,
+    "cooldown_s": 30,
+    "charges": 16,
+    "refill_item": "c:ender_pearls",
+    "charges_per_item": 4
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "hearthmend_aura_brooch",
+   "kind": "relic",
+   "name_en": "Hearthmend Aura Brooch",
+   "attrs": {
+    "aura": "heal",
+    "pulse_period_s": 4,
+    "radius_m": 8,
+    "heal_J_equivalent_hearts": 1,
+    "curios_slot": "charm"
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "larder_aura_torc",
+   "kind": "relic",
+   "name_en": "Larder Aura Torc",
+   "attrs": {
+    "aura": "feed",
+    "pulse_period_s": 5,
+    "radius_m": 6,
+    "food_per_pulse": 1,
+    "curios_slot": "necklace"
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "fleetfoot_aura_anklet",
+   "kind": "relic",
+   "name_en": "Fleetfoot Aura Anklet",
+   "attrs": {
+    "aura": "speed",
+    "pulse_period_s": 3,
+    "radius_m": 4,
+    "speed_mult": 1.2,
+    "curios_slot": "charm"
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "cinderward_aura_ring",
+   "kind": "relic",
+   "name_en": "Cinderward Aura Ring",
+   "attrs": {
+    "aura": "fire_resistance",
+    "pulse_period_s": 4,
+    "radius_m": 10,
+    "curios_slot": "ring"
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "embershot_repeater",
+   "kind": "weapon",
+   "name_en": "Embershot Repeater",
+   "attrs": {
+    "damage_mult_vs_bow": 2.0,
+    "fire_period_ticks": 12,
+    "magazine_slots": 1,
+    "magazine_capacity": 16,
+    "range_m": 48,
+    "projectile_speed_m_s": 55,
+    "durability": 900
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "hollowbough_arc",
+   "kind": "weapon",
+   "name_en": "Hollowbough Arc",
+   "attrs": {
+    "damage_mult_vs_bow": 1.8,
+    "draw_period_ticks": 16,
+    "magazine_slots": 1,
+    "magazine_capacity": 24,
+    "range_m": 64,
+    "projectile_speed_m_s": 60,
+    "durability": 750
+   },
+   "age": "IV",
+   "station_recipe": {
+    "station": "station.smeltery",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "phoenix_tear_token",
+   "kind": "relic",
+   "name_en": "Phoenix Tear Token",
+   "attrs": {
+    "revive_hearts": 6,
+    "single_use": true,
+    "cooldown_s": 600,
+    "strip_xp_levels": 10,
+    "strip_reserve_fraction": 0.5,
+    "i_frame_s": 2,
+    "slot": "curio_charm"
+   },
+   "age": "VI",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "magazine_ember",
+   "kind": "relic",
+   "name_en": "Ember Round Magazine",
+   "attrs": {
+    "element": "fire",
+    "capacity": 16,
+    "effect": "ignite_5s",
+    "bonus_damage": 2,
+    "load_ticks": 20
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "magazine_rime",
+   "kind": "relic",
+   "name_en": "Rime Round Magazine",
+   "attrs": {
+    "element": "ice",
+    "capacity": 16,
+    "effect": "slow_4s",
+    "bonus_damage": 2,
+    "load_ticks": 20
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  }
+ ],
+ "events": [
+  {
+   "id": "toggle_drain_tick",
+   "trigger": "server player tick for held item with active toggle",
+   "effect": "consume 1 reserve unit every drain_period_s; auto-disable and play fizzle sound at 0 reserve"
+  },
+  {
+   "id": "aura_pulse",
+   "trigger": "server player tick when aura item is in inventory or curios and pulse timer elapsed",
+   "effect": "apply aura effect to carrier and allied players within radius_m; reset pulse timer"
+  },
+  {
+   "id": "lethal_damage_intercept",
+   "trigger": "LivingDeathEvent or lethal LivingDamageEvent on player carrying phoenix_tear_token",
+   "effect": "cancel death, set health to revive_hearts, strip xp and reserves, grant i-frames, consume token or start cooldown"
+  },
+  {
+   "id": "magazine_hit_effect",
+   "trigger": "projectile from loaded magazine hits entity",
+   "effect": "apply magazine element effect and bonus_damage server-side"
+  },
+  {
+   "id": "mob_drop_roll",
+   "trigger": "LivingDropsEvent for listed source mobs",
+   "effect": "global loot modifier adds the matching relic drop at a configured chance"
+  }
+ ],
+ "skills": [
+  {
+   "id": "relic_attunement",
+   "effect": "+10 percent reserve capacity and -10 percent cooldown per rank, max 3 ranks"
+  },
+  {
+   "id": "essence_refining",
+   "effect": "chance to refine 2 essences from one crucible cycle, 8 percent per rank, max 3 ranks"
+  }
+ ],
+ "id_migration": {
+  "xreliquary:bat_wing": "diaithirreincarnations:bat_wing_shard",
+  "xreliquary:slime_pearl": "diaithirreincarnations:slime_gel_core",
+  "xreliquary:spider_fang": "diaithirreincarnations:spider_venom_gland",
+  "xreliquary:zombie_heart": "diaithirreincarnations:zombie_marrow",
+  "xreliquary:skeleton_bone": "diaithirreincarnations:skeleton_ash_bone",
+  "xreliquary:creeper_gland": "diaithirreincarnations:creeper_spark_salt",
+  "xreliquary:blaze_core": "diaithirreincarnations:blaze_ember_seed",
+  "xreliquary:wither_rib": "diaithirreincarnations:wither_char_splinter",
+  "xreliquary:handgun": "diaithirreincarnations:embershot_repeater",
+  "xreliquary:phoenix_down": "diaithirreincarnations:phoenix_tear_token",
+  "xreliquary:mercy_cross": "diaithirreincarnations:hearthmend_aura_brooch",
+  "xreliquary:glowing_torch": "diaithirreincarnations:sparkflint_torch_wand"
+ },
+ "c_tags": {
+  "c:ingots/iron": [
+   "minecraft:iron_ingot"
+  ],
+  "c:ingots/copper": [
+   "minecraft:copper_ingot"
+  ],
+  "c:ingots/gold": [
+   "minecraft:gold_ingot"
+  ],
+  "c:ingots/netherite": [
+   "minecraft:netherite_ingot"
+  ],
+  "c:gems/diamond": [
+   "minecraft:diamond"
+  ],
+  "c:gems/emerald": [
+   "minecraft:emerald"
+  ],
+  "c:gems/quartz": [
+   "minecraft:quartz"
+  ],
+  "c:gems/amethyst": [
+   "minecraft:amethyst_shard"
+  ],
+  "c:dusts/glowstone": [
+   "minecraft:glowstone_dust"
+  ],
+  "c:dusts/redstone": [
+   "minecraft:redstone"
+  ],
+  "c:dusts/gunpowder": [
+   "minecraft:gunpowder"
+  ],
+  "c:ender_pearls": [
+   "minecraft:ender_pearl"
+  ],
+  "c:rods/wooden": [
+   "minecraft:stick"
+  ],
+  "diaithirreincarnations:relic_ammo": [
+   "magazine_ember",
+   "magazine_rime"
+  ],
+  "diaithirreincarnations:mob_essences": [
+   "essence_of_flight",
+   "essence_of_ooze",
+   "essence_of_venom",
+   "essence_of_the_grave",
+   "essence_of_storm",
+   "essence_of_cinder",
+   "essence_of_ruin"
+  ],
+  "diaithirreincarnations:aura_trinkets": [
+   "hearthmend_aura_brooch",
+   "larder_aura_torc",
+   "fleetfoot_aura_anklet",
+   "cinderward_aura_ring"
+  ],
+  "c:relics": [
+   "phoenix_tear_token",
+   "gate_pearl_charm",
+   "lantern_of_the_long_dark"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "crucible_refine_flight",
+   "inputs_as_c_tags": [
+    "diaithirreincarnations:mob_drops/bat",
+    "c:dusts/glowstone",
+    "c:gems/quartz"
+   ]
+  },
+  {
+   "id": "crucible_refine_cinder",
+   "inputs_as_c_tags": [
+    "diaithirreincarnations:mob_drops/blaze",
+    "c:ingots/gold",
+    "c:dusts/glowstone"
+   ]
+  },
+  {
+   "id": "repeater_assembly",
+   "inputs_as_c_tags": [
+    "diaithirreincarnations:mob_essences",
+    "c:ingots/iron",
+    "c:rods/wooden",
+    "c:dusts/gunpowder"
+   ]
+  },
+  {
+   "id": "phoenix_token_ritual",
+   "inputs_as_c_tags": [
+    "diaithirreincarnations:mob_essences",
+    "c:ingots/gold",
+    "c:storage_blocks/diamond"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "crucible_of_echoes",
+   "kind": "fluid",
+   "units_SI": "tank 4 L; accepts essence solvent, drains 0.5 L per refine cycle of 8 s"
+  },
+  {
+   "block": "crucible_of_echoes",
+   "kind": "item",
+   "units_SI": "4 input slots, 1 output slot; 1 item per slot per cycle"
+  },
+  {
+   "block": "offering_pedestal",
+   "kind": "item",
+   "units_SI": "1 slot; 1 item, hopper insert 1 per 0.5 s"
+  },
+  {
+   "block": "wardlight_lantern_block",
+   "kind": "energy",
+   "units_SI": "passive reserve 0 J; optional refuel by glowstone dust, 1 dust = 4800 J of burn time"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "magazine_socket_upgrade",
+   "target": "embershot_repeater",
+   "slots": 1,
+   "kinds": [
+    "magazine_ember",
+    "magazine_rime"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "arc_quiver_upgrade",
+   "target": "hollowbough_arc",
+   "slots": 1,
+   "kinds": [
+    "magazine_ember",
+    "magazine_rime"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "trinket_gem_upgrade",
+   "target": "aura_trinkets",
+   "slots": 2,
+   "kinds": [
+    "c:gems/diamond",
+    "c:gems/emerald",
+    "c:gems/amethyst"
+   ],
+   "max_quality": 5
+  },
+  {
+   "id": "reserve_capacity_upgrade",
+   "target": "lantern_of_the_long_dark",
+   "slots": 2,
+   "kinds": [
+    "essence_of_flight",
+    "c:dusts/glowstone"
+   ],
+   "max_quality": 4
+  }
+ ],
+ "global_events": [
+  {
+   "id": "reincarnation_global_recovery",
+   "subscribes_to": "player_revived_by_phoenix_tear",
+   "effect": "broadcast Diaithiris-text chat line to nearby players and apply 60 s weakness (-10 percent damage) to the revived player"
+  },
+  {
+   "id": "altar_resonance",
+   "subscribes_to": "relic_crafted_at_crucible",
+   "effect": "grants nearby players a 120 s regeneration pulse and increments server-wide relic count for Codex milestones"
+  },
+  {
+   "id": "hostile_mob_scent",
+   "subscribes_to": "mob_drop_roll",
+   "effect": "raises mob_drop chance by 15 percent during the Blood Moon global event"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "codex_mob_essences",
+   "connects_to": [
+    "crucible_of_echoes",
+    "mob_drop_roll",
+    "codex_relic_attunement"
+   ]
+  },
+  {
+   "entry": "codex_toggle_tools",
+   "connects_to": [
+    "ember_brazier_staff",
+    "lantern_of_the_long_dark",
+    "gleaning_sickle"
+   ]
+  },
+  {
+   "entry": "codex_magazine_ammo",
+   "connects_to": [
+    "embershot_repeater",
+    "hollowbough_arc",
+    "magazine_ember",
+    "magazine_rime"
+   ]
+  },
+  {
+   "entry": "codex_aura_trinkets",
+   "connects_to": [
+    "hearthmend_aura_brooch",
+    "larder_aura_torc",
+    "diaithir_relics:curios_slots"
+   ]
+  },
+  {
+   "entry": "codex_phoenix_token",
+   "connects_to": [
+    "phoenix_tear_token",
+    "diaithir_combat:dodge_iframes",
+    "reincarnation_global_recovery"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "quest_first_reincarnation",
+  "intro": "A shiver-ghost of the old hearths whispers: gather the stray gifts of night creatures, wake them in the Crucible of Echoes, and forge a token that refuses your last breath.",
+  "links_to": [
+   "diaithir_relics:first_relic",
+   "diaithir_combat:perfect_parry",
+   "crucible_of_echoes",
+   "phoenix_tear_token"
+  ]
+ },
+ "java_notes": "Datapack covers recipes, loot modifiers, tags, item components, Age gating. Java needed for: toggle state and per-tick drain, typed magazine loading and projectile effects, aura pulse scheduler, server-side lethal damage intercept with cooldown, cooldown overlay HUD, crucible block entity with fluid and item capabilities, client use-intent packet only."
+}

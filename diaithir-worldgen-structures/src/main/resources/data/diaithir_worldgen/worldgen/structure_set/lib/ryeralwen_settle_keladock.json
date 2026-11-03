@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_0_keladock",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/settlement_1_keladock",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 120296774
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_0_zephyusasha",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_1_zephyusasha",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimukougok/settlement_2_zephyusasha",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 182054569
+ }
+}

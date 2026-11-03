@@ -1,0 +1,214 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Concrete Transit Mixer",
+  "description": "Concrete Transit Mixer (1916, US): 220 kW, 14 t. Road role: mix.",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:35"
+   ],
+   [
+    "minecraft:iron_block:0:3"
+   ],
+   [
+    "minecraft:redstone:0:8"
+   ],
+   [
+    "minecraft:black_dye:0:4"
+   ]
+  ],
+  "health": 710
+ },
+ "motorized": {
+  "emptyMass": 14000,
+  "fuelCapacity": 528,
+  "defaultFuelQty": 264,
+  "hasRunningLights": true,
+  "hasHeadlights": true,
+  "axleRatio": 3.6,
+  "brakingFactor": 1.4,
+  "dragCoefficient": 0.8,
+  "crossSectionalArea": 9.0,
+  "steeringForceFactor": 1.0,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0
+ },
+ "parts": [
+  {
+   "pos": [
+    -1.0893333333333333,
+    0.5,
+    2.356
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    1.0893333333333333,
+    0.5,
+    2.356
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    -0.95,
+    0.5,
+    -1.444
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0.95,
+    0.5,
+    -1.444
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    -0.95,
+    0.5,
+    -2.7439999999999998
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0.95,
+    0.5,
+    -2.7439999999999998
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    -0.95,
+    0.5,
+    -4.0440000000000005
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0.95,
+    0.5,
+    -4.0440000000000005
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.0
+   ],
+   "types": [
+    "engine_car"
+   ],
+   "defaultPart": "diaithirtrucks:engine_e250_stock"
+  },
+  {
+   "pos": [
+    0.0,
+    2.0,
+    1.956
+   ],
+   "types": [
+    "seat"
+   ],
+   "isController": true,
+   "defaultPart": "diaithirtrucks:seat",
+   "dismountPos": [
+    -2.0,
+    0.0,
+    1.956
+   ]
+  },
+  {
+   "pos": [
+    0,
+    2.3,
+    -2.0
+   ],
+   "types": [
+    "interactable_crate"
+   ],
+   "defaultPart": "diaithirtrucks:crate_m"
+  }
+ ],
+ "collision": [
+  {
+   "pos": [
+    0,
+    2.25,
+    0
+   ],
+   "width": 2.5,
+   "height": 3.9
+  }
+ ],
+ "definitions": [
+  {
+   "subName": "_c",
+   "name": "Concrete Transit Mixer (Yellow)",
+   "modelName": "cv_transit_mixer",
+   "textureName": "paint_c",
+   "extraMaterialLists": [
+    []
+   ]
+  },
+  {
+   "subName": "_c_orange",
+   "name": "Concrete Transit Mixer (Orange)",
+   "modelName": "cv_transit_mixer",
+   "textureName": "paint_c_orange",
+   "extraMaterialLists": [
+    []
+   ]
+  },
+  {
+   "subName": "_c_white",
+   "name": "Concrete Transit Mixer (White)",
+   "modelName": "cv_transit_mixer",
+   "textureName": "paint_c_white",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "rendering": {},
+ "car": {
+  "isFrontWheelDrive": false,
+  "isRearWheelDrive": true,
+  "axleRatio": 3.6,
+  "dragCoefficient": 0.8,
+  "isBigTruck": true
+ }
+}

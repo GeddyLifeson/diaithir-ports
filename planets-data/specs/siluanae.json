@@ -1,0 +1,171 @@
+{
+ "sky": {
+  "sky": "#7a9cb8",
+  "fog": "#a8b8c4",
+  "cloud": "#e0ffffff",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f6f8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.siluanae.E3.assay.096819",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.5,
+   "grass": "#7d8c6a",
+   "foliage": "#6b7a58",
+   "water": "#3a6a80",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siluanae.E3.assay.148885",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b8843c",
+   "foliage": "#a0703a",
+   "water": "#5a4a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siluanae.E3.assay.102200",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.4,
+   "grass": "#c9a24a",
+   "foliage": "#b08a3c",
+   "water": "#4a7a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.siluanae.E2.assay.026826",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.6,
+   "grass": "#4a6a3a",
+   "foliage": "#3a5a2e",
+   "water": "#2e5a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siluanae.E2.assay.121491",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#6a7a4a",
+   "foliage": "#5a6a3a",
+   "water": "#3a5a50",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siluanae.E1.assay.052788",
+   "archetype": "snowy_taiga",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#8aa8a0",
+   "foliage": "#6a8a84",
+   "water": "#a8d0e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.siluanae.E3.assay.071842",
+   "archetype": "mushroom_fields",
+   "temp": 0.0,
+   "humid": 0.7,
+   "grass": "#7a6a8a",
+   "foliage": "#6a5a7a",
+   "water": "#4a4a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.siluanae.E3.assay.057481",
+   "archetype": "flower_forest",
+   "temp": 0.2,
+   "humid": 0.3,
+   "grass": "#8ac06a",
+   "foliage": "#7ab05a",
+   "water": "#5a9ab0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A pale-skied arcane realm of scorched plateaus, bone-strewn vaults, fungal fens and frost ravines, tiled from the supplied entries with ashfall drifting over it.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "spore_blossom_air",
+    "probability": 0.06
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8fb8a0",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.siluanae.E2.assay.116709",
+  "why": "Spore-rich lowland air between marsh and forest, mild, damp",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "AR.siluanae.E3.assay.020152",
+  "grounded": false
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ashiazis_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashiazis_grottoes",
+   "required": false
+  }
+ ]
+}

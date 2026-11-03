@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["PKP", "KBK", "PKP"], "key": {"P": "diaithirupgrades:circuit_efficiency_1", "K": "minecraft:glowstone_dust", "B": "minecraft:iron_ingot"}, "result": {"id": "diaithirupgrades:circuit_efficiency_2", "count": 1}}

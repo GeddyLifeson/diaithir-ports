@@ -1,0 +1,15 @@
+{
+ "id": "diaithir_overworld_biomes:aether_ii_bestiary",
+ "category": "bestiary",
+ "title": "codex.diaithir_overworld_biomes.aether_ii_bestiary.title",
+ "body": "codex.diaithir_overworld_biomes.aether_ii_bestiary.body",
+ "age": 3,
+ "icon": "aether_ii:aechor_plant_spawn_egg",
+ "unlock": {
+  "type": "kill_entity_tag",
+  "tag": "aether_ii:aether_ii_mobs"
+ },
+ "covers": {
+  "entities": "#aether_ii:aether_ii_mobs"
+ }
+}

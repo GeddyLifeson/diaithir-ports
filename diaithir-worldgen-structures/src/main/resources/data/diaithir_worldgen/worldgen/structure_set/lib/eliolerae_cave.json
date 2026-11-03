@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/delve_0_cave",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/delve_1_cave",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eliolerae/delve_2_cave",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 94674055
+ }
+}

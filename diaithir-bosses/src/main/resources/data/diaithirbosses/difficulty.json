@@ -1,0 +1,48 @@
+{
+ "_doc": "Boss difficulty modes. Multipliers apply to hp, damage and attack tempo of every boss profile and to Champion elite chance. Raised, never lowered, once chosen; drops and XP scale with the mode. Optional systems arrive as quests, so a mode is a quest reward, not a switch.",
+ "modes": [
+  {
+   "id": "standard",
+   "hp": 1.0,
+   "damage": 1.0,
+   "cooldown": 1.0,
+   "elite_chance": 1.0,
+   "loot": 1.0,
+   "xp": 1.0,
+   "quest": null
+  },
+  {
+   "id": "relentless",
+   "hp": 1.4,
+   "damage": 1.25,
+   "cooldown": 0.9,
+   "elite_chance": 1.5,
+   "loot": 1.25,
+   "xp": 1.5,
+   "quest": "ascendant/mode_relentless"
+  },
+  {
+   "id": "merciless",
+   "hp": 2.0,
+   "damage": 1.6,
+   "cooldown": 0.8,
+   "elite_chance": 2.0,
+   "loot": 1.6,
+   "xp": 2.0,
+   "no_regen_in_arena": true,
+   "quest": "ascendant/mode_merciless"
+  },
+  {
+   "id": "ordeal",
+   "hp": 2.8,
+   "damage": 2.2,
+   "cooldown": 0.7,
+   "elite_chance": 3.0,
+   "loot": 2.2,
+   "xp": 3.0,
+   "no_regen_in_arena": true,
+   "one_life_per_attempt": true,
+   "quest": "ascendant/mode_ordeal"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "general": {
+  "type": "gun_tank",
+  "name": "Tank Gun 125 mm (autoloader)",
+  "materialLists": [
+   [
+    "minecraft:iron_block:0:8"
+   ],
+   [
+    "minecraft:gunpowder:0:16"
+   ]
+  ]
+ },
+ "gun": {
+  "capacity": 1,
+  "reloadTime": 60,
+  "muzzleVelocity": 165,
+  "fireDelay": 2.0,
+  "bulletSpreadFactor": 0.0,
+  "diameter": 125,
+  "minCaseLength": 100,
+  "maxCaseLength": 900,
+  "minYaw": -180,
+  "maxYaw": 180,
+  "minPitch": -8,
+  "maxPitch": 20,
+  "yawSpeed": 0.5,
+  "pitchSpeed": 0.45,
+  "isSemiAuto": true,
+  "autoReload": true
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Tank Gun 125 mm (autoloader)",
+   "modelName": "tank_gun_main2",
+   "textureName": "tank_gun_main2",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

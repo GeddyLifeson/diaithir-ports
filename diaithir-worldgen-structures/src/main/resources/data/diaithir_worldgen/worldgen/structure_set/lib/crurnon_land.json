@@ -1,0 +1,34 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/hall_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/hall_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crurnon/landmark_2_land",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 145560286
+ }
+}

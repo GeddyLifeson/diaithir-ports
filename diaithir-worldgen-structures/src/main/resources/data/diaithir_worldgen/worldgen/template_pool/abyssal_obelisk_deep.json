@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:abyssal_obelisk_deep",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:abyssal_obelisk_deep",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

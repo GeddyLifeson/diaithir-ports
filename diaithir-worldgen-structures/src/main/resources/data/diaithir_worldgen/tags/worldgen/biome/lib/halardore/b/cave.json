@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:halardore_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:halardore_grottoes",
+   "required": false
+  }
+ ]
+}

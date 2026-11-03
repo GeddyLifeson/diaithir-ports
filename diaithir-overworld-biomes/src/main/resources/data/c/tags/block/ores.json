@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  "#c:ores/ambrosium",
+  "#c:ores/arkenium",
+  "#c:ores/cloggrum",
+  "#c:ores/coal",
+  "#c:ores/corrobonite",
+  "#c:ores/diamond",
+  "#c:ores/froststeel",
+  "#c:ores/glint",
+  "#c:ores/gold",
+  "#c:ores/gravitite",
+  "#c:ores/iron",
+  "#c:ores/quartz",
+  "#c:ores/regalium",
+  "#c:ores/rogdorium",
+  "#c:ores/utherium",
+  "#c:ores/zanite"
+ ]
+}

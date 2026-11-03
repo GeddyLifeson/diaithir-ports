@@ -1,0 +1,13 @@
+{
+ "type": "neoforge:add_features",
+ "biomes": [
+  "minecraft:plains",
+  "minecraft:sunflower_plains",
+  "minecraft:meadow",
+  "minecraft:flower_forest",
+  "minecraft:forest",
+  "minecraft:birch_forest"
+ ],
+ "features": "diaithirfauna:nest_meadow",
+ "step": "vegetal_decoration"
+}

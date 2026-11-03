@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_sillaures",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1_sillaures",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_sillaures",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_3_sillaures",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 53609331
+ }
+}

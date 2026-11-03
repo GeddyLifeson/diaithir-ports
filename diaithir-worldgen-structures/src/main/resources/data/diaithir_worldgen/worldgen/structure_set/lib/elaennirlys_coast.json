@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/harbor_0_coast",
+   "weight": 31
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/harbor_1_coast",
+   "weight": 137
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/harbor_2_coast",
+   "weight": 56
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 5478529
+ }
+}

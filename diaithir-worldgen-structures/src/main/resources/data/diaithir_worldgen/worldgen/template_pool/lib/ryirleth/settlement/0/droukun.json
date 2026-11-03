@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ryirleth/settlement/0/droukun",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ryirleth/ar_ryirleth_e4_places_000051",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

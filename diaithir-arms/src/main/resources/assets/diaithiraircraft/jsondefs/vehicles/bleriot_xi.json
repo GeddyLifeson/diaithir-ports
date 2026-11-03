@@ -1,0 +1,54 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Bl\u00e9riot XI",
+  "description": "pioneer, France, 1909. Source: https://en.wikipedia.org/wiki/Bl\u00e9riot_XI",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:8"
+   ]
+  ],
+  "health": 100
+ },
+ "motorized": {
+  "isAircraft": true,
+  "emptyMass": 230,
+  "fuelCapacity": 30,
+  "defaultFuelQty": 7,
+  "wingSpan": 7.7,
+  "wingArea": 7.0,
+  "tailDistance": 3.4,
+  "aileronArea": 1.2,
+  "elevatorArea": 0.9,
+  "rudderArea": 0.5,
+  "dragCoefficient": 0.05,
+  "crossSectionalArea": 0.5,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0
+ },
+ "parts": [
+  {
+   "pos": [
+    0.0,
+    0.8,
+    1.52
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:bleriot_xi_engine"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -0.38
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  }
+ ]
+}

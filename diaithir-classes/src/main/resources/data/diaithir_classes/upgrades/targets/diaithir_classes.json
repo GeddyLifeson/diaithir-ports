@@ -1,0 +1,70 @@
+{
+ "rules": [
+  {
+   "id": "diaithir_classes:ligichi_weapon_sockets",
+   "target": "diaithir_classes:ligichi_weapons",
+   "slots": 2,
+   "kinds": [
+    "rune",
+    "enchant"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithir_classes:ligichi_armor_sockets",
+   "target": "diaithir_classes:ligichi_plate",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithir_classes:ligichi_robe_sockets",
+   "target": "diaithir_classes:ligichi_robe_chest_composite",
+   "slots": 2,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithir_classes:staff_socket_upgrade",
+   "target": "diaithir_runes:staves",
+   "slots": 2,
+   "kinds": [
+    "ogham_rune",
+    "quality_gem"
+   ],
+   "max_quality": 5
+  },
+  {
+   "id": "diaithir_classes:robe_socket_upgrade",
+   "target": "diaithir_runes:rune_wizard_robe_*",
+   "slots": 1,
+   "kinds": [
+    "ogham_rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithir_classes:draoi_focus_socket",
+   "target": "diaithir_draoi:staves",
+   "slots": 2,
+   "kinds": [
+    "rune",
+    "gem"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithir_classes:draoi_robe_socket",
+   "target": "diaithir_draoi:robes",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  }
+ ]
+}

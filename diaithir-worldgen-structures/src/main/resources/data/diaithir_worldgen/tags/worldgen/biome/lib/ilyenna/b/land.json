@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ilyenna_amauria",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_cernor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_lanus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_oreolia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_saullia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_saurnes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_serallum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_serelor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_sireostor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_telor",
+   "required": false
+  }
+ ]
+}

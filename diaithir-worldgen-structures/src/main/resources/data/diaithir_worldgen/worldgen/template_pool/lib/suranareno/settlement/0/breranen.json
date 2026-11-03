@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/suranareno/settlement/0/breranen",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/suranareno/ma_suranareno_e5_places_000706",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_0_oriarnes",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_1_oriarnes",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_2_oriarnes",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 145711548
+ }
+}

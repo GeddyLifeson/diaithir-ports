@@ -1,0 +1,28 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:isyuthith_ashiavsith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:isyuthith_isiasora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:isyuthith_theiseth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:isyuthith_theisora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:isyuthith_vesathith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:isyuthith_xaestis",
+   "required": false
+  }
+ ]
+}
