@@ -12061,10 +12061,6 @@ file = "kubejs/data/backrooms/predicate/loop_needed.json"
 hash = "e9c317b43a0c64cd2d7e97b7f4aa022d923f5ce617fba7cb9f8596e495b4b478"
 
 [[files]]
-file = "kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json"
-hash = "86ae65651753a394e41ed4d6efd6fdc4de636f0682cfc21ad49ff5d710dc9fdd"
-
-[[files]]
 file = "kubejs/data/c/tags/item/crops/rice.json"
 hash = "dce84b58381040338f8be656d564de077590194892058abed1a5b5234f94c133"
 
@@ -27136,8 +27132,8 @@ file = "mods/diaithir-potions-neoforge-26.1.2-0.1.0.jar"
 hash = "a829082ade2b600abe1cb330c8774f30327da20c994b6cd5c4386ad12c16b3ff"
 
 [[files]]
-file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.7.jar"
-hash = "44eb2f784a577e6176c894bc8c70ceb4bac1a9355aba3d01001bd2484c173962"
+file = "mods/diaithir-ships-neoforge-26.1.2-2.4.12-diaithir.8.jar"
+hash = "17bd8fada2e4ea852b3fb4bbe2ddab2c698feb2c7eccc642f9dd198dc4b729bb"
 
 [[files]]
 file = "mods/diaithir-storagenet-neoforge-26.1.2-1.0.0.jar"
