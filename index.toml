@@ -57258,18 +57258,6 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/frost_lily_occu
 hash = "87b491d76fb188eba18ffbe35f2b456130fe60c702dafb2a9a9ea965ff1f3b0d"
 
 [[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/fungyss_mekanism_crushing.json"
-hash = "a21f5aa118d301d7673f2307a6929faa2fd9c0b800f7d846afe0184ed91648e8"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/fungyss_modern_industrialization_macerator.json"
-hash = "06f0e018cf1039bf42e9d3c7674b84848e2c98d580a238340a7f201607c0ad39"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/fungyss_occultism_crushing.json"
-hash = "0ecfce2845df805bc3ae7b9b0d74b3dc289fd8abec7ddc8d93d5b6ad5b0b5931"
-
-[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/glowflower_mekanism_crushing.json"
 hash = "260df7a5def089a33f3a9a8b0a2a9aa87a5f4272316c6ee6b56477109d2657a6"
 
@@ -58144,18 +58132,6 @@ hash = "0b68c402650365f38725362b0fa8deee00229ba25c0945e72eb6ccb68a55a8b2"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/wither_rose_occultism_crushing.json"
 hash = "6852f2182c5084a5af40f74c9c0f16e4772725b33dfd9f36cfac3642e4f68582"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/yellow_orchid_mekanism_crushing.json"
-hash = "d66c2f07628f600c7ae6a67f98951b8fadbfff7b3d6fcd95ff1cc4db837fcb94"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/yellow_orchid_modern_industrialization_macerator.json"
-hash = "01ebfae95fc3f38d5682c7c9e713d2fa581c429aa0f94f70673b4d3b32365e1d"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/yellow_orchid_occultism_crushing.json"
-hash = "e5daac4038716a4555c3e6d61a90119d2e2f1fc60095fc94d1fec340951eab28"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust_calcination.json"
