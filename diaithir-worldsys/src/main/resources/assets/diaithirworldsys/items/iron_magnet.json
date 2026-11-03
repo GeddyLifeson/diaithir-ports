@@ -1,6 +1,6 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "diaithirworldsys:item/iron_magnet"
-  }
+ "model": {
+  "type": "minecraft:model",
+  "model": "diaithirworldsys:item/iron_magnet"
+ }
 }

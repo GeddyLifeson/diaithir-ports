@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirworldsys:block/utilitarian_cyan_trapped_soliciting_carpet"
+ }
+}

@@ -1,6 +1,6 @@
 {
-  "model": {
-    "type": "minecraft:model",
-    "model": "diaithirworldsys:item/gold_magnet"
-  }
+ "model": {
+  "type": "minecraft:model",
+  "model": "diaithirworldsys:item/gold_magnet"
+ }
 }
