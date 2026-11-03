@@ -1,0 +1,17 @@
+{
+"replace": false,
+"values": [
+{
+"id": "diaithirfirearms:light_mg",
+"required": false
+},
+{
+"id": "diaithirfirearms:minigun",
+"required": false
+},
+{
+"id": "pointblank:m134minigun",
+"required": false
+}
+]
+}

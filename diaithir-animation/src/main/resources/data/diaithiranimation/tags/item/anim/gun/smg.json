@@ -1,0 +1,17 @@
+{
+"replace": false,
+"values": [
+{
+"id": "diaithirfirearms:smg_compact",
+"required": false
+},
+{
+"id": "pointblank:smg_muzzlebrake",
+"required": false
+},
+{
+"id": "pointblank:smg_suppressor",
+"required": false
+}
+]
+}

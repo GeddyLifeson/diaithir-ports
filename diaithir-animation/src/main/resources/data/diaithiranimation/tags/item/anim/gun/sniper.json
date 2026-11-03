@@ -1,0 +1,13 @@
+{
+"replace": false,
+"values": [
+{
+"id": "diaithirfirearms:antimaterial_rifle",
+"required": false
+},
+{
+"id": "diaithirfirearms:sniper_rifle",
+"required": false
+}
+]
+}

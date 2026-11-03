@@ -1,0 +1,21 @@
+{
+"replace": false,
+"values": [
+{
+"id": "diaithirfirearms:auto_shotgun",
+"required": false
+},
+{
+"id": "diaithirfirearms:combat_shotgun",
+"required": false
+},
+{
+"id": "diaithirfirearms:pump_shotgun",
+"required": false
+},
+{
+"id": "pointblank:m870modshotgun",
+"required": false
+}
+]
+}

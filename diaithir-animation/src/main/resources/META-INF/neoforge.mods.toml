@@ -1,0 +1,20 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithiranimation"
+version = "${version}"
+displayName = "Diaithir Animation"
+authors = "Diaithir"
+description = '''Player animations for melee swings, tools, bows, guns and casting, on top of Player Animation Library. Clips are data (assets/diaithiranimation/player_animations), weapon classes come from item tags (data/diaithiranimation/tags/item/anim), so any mod's weapon can be added from a datapack. Clean-room, original poses.'''
+
+[[dependencies.diaithiranimation]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithiranimation]]
+modId = "player_animation_library"
+type = "required"
+versionRange = "[1.2.8,)"

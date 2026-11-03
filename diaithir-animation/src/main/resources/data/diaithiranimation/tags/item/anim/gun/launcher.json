@@ -1,0 +1,61 @@
+{
+"replace": false,
+"values": [
+{
+"id": "diaithirfirearms:grenade_launcher",
+"required": false
+},
+{
+"id": "diaithirfirearms:rocket_launcher",
+"required": false
+},
+{
+"id": "industrialforegoing:infinity_launcher",
+"required": false
+},
+{
+"id": "pointblank:at4_rocket",
+"required": false
+},
+{
+"id": "pointblank:grenade",
+"required": false
+},
+{
+"id": "pointblank:grenade20mm",
+"required": false
+},
+{
+"id": "pointblank:grenade40mm",
+"required": false
+},
+{
+"id": "pointblank:m203launcher",
+"required": false
+},
+{
+"id": "pointblank:smaw_rocket",
+"required": false
+},
+{
+"id": "railcraft:abandoned_launcher_track",
+"required": false
+},
+{
+"id": "railcraft:electric_launcher_track",
+"required": false
+},
+{
+"id": "railcraft:iron_launcher_track",
+"required": false
+},
+{
+"id": "railcraft:reinforced_launcher_track",
+"required": false
+},
+{
+"id": "railcraft:strap_iron_launcher_track",
+"required": false
+}
+]
+}

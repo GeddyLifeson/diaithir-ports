@@ -1,0 +1,186 @@
+{
+ "classes": {
+  "sword": [
+   "block",
+   "draw",
+   "sheathe",
+   "swing1",
+   "swing2",
+   "swing3",
+   "thrust"
+  ],
+  "axe": [
+   "chop",
+   "draw",
+   "swing1",
+   "swing2",
+   "swing3"
+  ],
+  "spear": [
+   "charge",
+   "draw",
+   "throw",
+   "thrust"
+  ],
+  "dagger": [
+   "draw",
+   "slash",
+   "stab",
+   "throw"
+  ],
+  "mace": [
+   "draw",
+   "overhead",
+   "smash"
+  ],
+  "staff": [
+   "cast_raise",
+   "channel",
+   "draw",
+   "release"
+  ],
+  "shield": [
+   "block_hit",
+   "hold",
+   "lower",
+   "raise"
+  ],
+  "bow": [
+   "draw",
+   "hold",
+   "nock",
+   "release"
+  ],
+  "crossbow": [
+   "aim",
+   "fire",
+   "load"
+  ],
+  "pickaxe": [
+   "mine"
+  ],
+  "shovel": [
+   "dig"
+  ],
+  "hoe": [
+   "till"
+  ],
+  "shears": [
+   "snip"
+  ],
+  "gun.pistol": [
+   "aim",
+   "draw",
+   "dry",
+   "fire",
+   "hold",
+   "inspect",
+   "reload",
+   "sprint"
+  ],
+  "gun.smg": [
+   "aim",
+   "draw",
+   "dry",
+   "fire",
+   "hold",
+   "inspect",
+   "reload",
+   "sprint"
+  ],
+  "gun.rifle": [
+   "aim",
+   "draw",
+   "dry",
+   "fire",
+   "hold",
+   "inspect",
+   "reload",
+   "sprint"
+  ],
+  "gun.sniper": [
+   "aim",
+   "draw",
+   "dry",
+   "fire",
+   "hold",
+   "inspect",
+   "reload",
+   "sprint"
+  ],
+  "gun.shotgun": [
+   "aim",
+   "draw",
+   "dry",
+   "fire",
+   "hold",
+   "inspect",
+   "reload",
+   "sprint"
+  ],
+  "gun.lmg": [
+   "aim",
+   "draw",
+   "dry",
+   "fire",
+   "hold",
+   "inspect",
+   "reload",
+   "sprint"
+  ],
+  "gun.launcher": [
+   "aim",
+   "draw",
+   "dry",
+   "fire",
+   "hold",
+   "inspect",
+   "reload",
+   "sprint"
+  ],
+  "gun.energy": [
+   "aim",
+   "draw",
+   "dry",
+   "fire",
+   "hold",
+   "inspect",
+   "reload",
+   "sprint"
+  ],
+  "own_gun_reloads": [
+   "antimaterial_rifle",
+   "assault_rifle",
+   "auto_shotgun",
+   "carbine",
+   "combat_shotgun",
+   "energy_rifle",
+   "grenade_launcher",
+   "light_mg",
+   "magnum",
+   "marksman_rifle",
+   "minigun",
+   "pump_shotgun",
+   "rocket_launcher",
+   "sidearm_heavy",
+   "sidearm_light",
+   "smg_compact",
+   "sniper_rifle"
+  ]
+ },
+ "komrag": {
+  "dagger": "dagger",
+  "sword": "sword",
+  "rapier": "dagger",
+  "greatsword": "sword",
+  "axe": "axe",
+  "battleaxe": "axe",
+  "mace": "mace",
+  "warhammer": "mace",
+  "spear": "spear",
+  "polearm": "spear",
+  "staff": "staff",
+  "bow": "bow",
+  "longbow": "bow"
+ }
+}

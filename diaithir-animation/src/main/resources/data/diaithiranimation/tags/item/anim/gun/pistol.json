@@ -1,0 +1,17 @@
+{
+"replace": false,
+"values": [
+{
+"id": "diaithirfirearms:magnum",
+"required": false
+},
+{
+"id": "diaithirfirearms:sidearm_heavy",
+"required": false
+},
+{
+"id": "diaithirfirearms:sidearm_light",
+"required": false
+}
+]
+}
