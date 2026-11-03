@@ -79,6 +79,10 @@ public final class EconomyFeature {
 
     private static void commands(RegisterCommandsEvent e) {
         e.getDispatcher().register(BankCommands.bank());
+        e.getDispatcher().register(MarketCommands.market());
+        e.getDispatcher().register(MarketCommands.coin());
+        e.getDispatcher().register(MarketCommands.redeem());
+        e.getDispatcher().register(MarketCommands.economy());
         e.getDispatcher().register(ExchangeCommands.build());
         e.getDispatcher().register(BankCommands.bond());
         e.getDispatcher().register(CompanyCommands.build()
