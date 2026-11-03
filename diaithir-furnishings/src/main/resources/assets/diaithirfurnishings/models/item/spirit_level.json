@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/spirit_level"
+  "layer0": "diaithirfurnishings:item/spirit_level_head",
+  "layer1": "diaithirfurnishings:item/spirit_level_handle",
+  "layer2": "diaithirfurnishings:item/spirit_level_binding"
  }
 }

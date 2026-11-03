@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/frying_pan"
+  "layer0": "diaithirfurnishings:item/frying_pan_pot",
+  "layer1": "diaithirfurnishings:item/frying_pan_handle"
  }
 }

@@ -1,0 +1,2982 @@
+{
+ "id": "diaithirfurnishings:handbook",
+ "title": "Everyday objects",
+ "chapters": [
+  {
+   "tier": "apiary",
+   "name": "Apiary",
+   "age": "I",
+   "text": "Everyday objects: apiary.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:beehive_skep",
+     "name": "Skeip biech",
+     "age": "IV",
+     "text": "Bee skep: earliest widespread use Medieval (Europe). A beehive is an enclosed structure in which honey bees raise their young and produce honey as part of their seasonal cycle."
+    },
+    {
+     "id": "diaithirfurnishings:smoker",
+     "name": "Toitchaiteoir biech",
+     "age": "VI",
+     "text": "Bee smoker: earliest widespread use 1873 (USA). A bee smoker (usually called simply a smoker or a smokepot) is a device used in beekeeping to calm honey bees."
+    },
+    {
+     "id": "diaithirfurnishings:honey_extractor",
+     "name": "Meisín miela a bhainti",
+     "age": "VI",
+     "text": "Honey extractor: earliest widespread use 1865 (Austria). A honey extractor is a mechanical device used in extraction of honey from honeycombs."
+    }
+   ]
+  },
+  {
+   "tier": "cookware",
+   "name": "Cookware",
+   "age": "I",
+   "text": "Everyday objects: cookware.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:cooking_pot",
+     "name": "Pouta kókairechta",
+     "age": "I",
+     "text": "Cooking pot: earliest widespread use c. 18000 BC (East Asia). A cooking pot (saucepan in British English) is a large bowl that is heated in order to cook the food inside it."
+    },
+    {
+     "id": "diaithirfurnishings:cauldron",
+     "name": "Katur",
+     "age": "III",
+     "text": "Cauldron: earliest widespread use Bronze Age (Eurasia). A cauldron (or a caldron) is a large pot or kettle used for cooking or boiling, typically over an open fire."
+    },
+    {
+     "id": "diaithirfurnishings:dutch_oven",
+     "name": "Ófau oldundach",
+     "age": "V",
+     "text": "Dutch oven: earliest widespread use 1700s (Netherlands). A Dutch oven, Dutch pot (US English), or casserole dish (international) is a thick-walled cooking pot with a tight-fitting lid."
+    },
+    {
+     "id": "diaithirfurnishings:frying_pan",
+     "name": "Panda friuchta",
+     "age": "III",
+     "text": "Frying pan: earliest widespread use c. 2500 BC (Mesopotamia). A frying pan, also called frypan or skillet, is a flat-bottomed cookware used for frying, searing and browning foods."
+    },
+    {
+     "id": "diaithirfurnishings:wok",
+     "name": "Wouk",
+     "age": "IV",
+     "text": "Wok: earliest widespread use Han dynasty (China). A wok (simplified Chinese: 镬; traditional Chinese: 鑊; pinyin: huò; Cantonese Yale: wohk) is a deep round-bottomed cooking pan of either indigenous Chinese origin or derived from the South Asian karahi."
+    },
+    {
+     "id": "diaithirfurnishings:saucepan",
+     "name": "Sáspánu",
+     "age": "IV",
+     "text": "Saucepan: earliest widespread use Medieval (Europe). A saucepan is one of the basic forms of cookware (not technically a pan), in the form of a round cooking vessel, typically 3.5 to 4 inches (90 to 100 mm) deep, and wide enough to hold at least 1 US quart (33 imp fl oz; 950 ml) of water, with sizes typically ranging up to 4 US quarts (130 imp fl oz;"
+    },
+    {
+     "id": "diaithirfurnishings:tagine",
+     "name": "Pouta marakundach",
+     "age": "IV",
+     "text": "Tagine: earliest widespread use c. 800 (Morocco). A tagine or tajine, also tajin or tagin (Arabic: طاجين, romanized: ṭajīn) is a Maghrebi cuisine stew, named for the earthenware pot in which it is cooked."
+    },
+    {
+     "id": "diaithirfurnishings:clay_pot",
+     "name": "Pouta kré",
+     "age": "II",
+     "text": "Clay cooking pot: earliest widespread use Neolithic (Worldwide). Clay pot cooking is a process of cooking food in a ceramic pot."
+    },
+    {
+     "id": "diaithirfurnishings:steamer_basket",
+     "name": "Kiseán gaili",
+     "age": "II",
+     "text": "Bamboo steamer: earliest widespread use Neolithic (China). Bamboo steamers, called zhēnglóng (蒸籠) in Chinese, are a type of food steamer made of bamboo."
+    },
+    {
+     "id": "diaithirfurnishings:pressure_cooker",
+     "name": "Kókairi brúu",
+     "age": "V",
+     "text": "Pressure cooker: earliest widespread use 1679 (France). A pressure cooker is a sealed vessel used for cooking food with the use of high pressure steam and water or a water-based liquid, in a process called pressure cooking."
+    },
+    {
+     "id": "diaithirfurnishings:kettle",
+     "name": "Kitel",
+     "age": "V",
+     "text": "Kettle: earliest widespread use 1700s (Britain). A kettle, sometimes called a tea kettle or teakettle, is a device specialized for boiling water, commonly with a lid, spout, and handle."
+    },
+    {
+     "id": "diaithirfurnishings:teapot",
+     "name": "Tiepota",
+     "age": "V",
+     "text": "Teapot: earliest widespread use c. 1500 (China). A teapot is a vessel used for steeping tea leaves or a herbal mix in boiling or near-boiling water and serving the resulting infusion called tea; usually put in a teacup."
+    },
+    {
+     "id": "diaithirfurnishings:samovar",
+     "name": "Samavur",
+     "age": "V",
+     "text": "Samovar: earliest widespread use 1700s (Russia). A samovar (Russian: самовар, IPA: [səmɐˈvar] , lit. 'self-brewer') is a metal container traditionally used to heat and boil water."
+    },
+    {
+     "id": "diaithirfurnishings:coffee_pot",
+     "name": "Poiti chaifi",
+     "age": "V",
+     "text": "Coffee pot: earliest widespread use 1500s (Ottoman). A coffeemaker, coffee maker or coffee machine is a cooking appliance used to brew coffee."
+    },
+    {
+     "id": "diaithirfurnishings:cezve",
+     "name": "Poiti kaifé toirkech",
+     "age": "V",
+     "text": "Cezve: earliest widespread use 1500s (Ottoman). A cezve (Turkish: cezve, pronounced [dʒezˈve] ; Serbo-Croatian: džezva / џезва; Arabic: جِذوَة), also ibriki/briki (Greek: μπρίκι), srjep (Armenian: սրճեփ), rakwa (Arabic: ركوة), ghallaya (Arabic: غلاية), or kanaka (Arabic: كَنَكَة), is a small long-handled pot with a pouring lip designed specifical"
+    },
+    {
+     "id": "diaithirfurnishings:moka_pot",
+     "name": "Poiti mouka",
+     "age": "VI",
+     "text": "Moka pot: earliest widespread use 1933 (Italy). The moka pot is a stove-top or electric coffee maker that brews coffee by passing hot water driven by vapor pressure and heat-driven gas expansion through ground coffee."
+    },
+    {
+     "id": "diaithirfurnishings:percolator",
+     "name": "Peirkuladóir",
+     "age": "V",
+     "text": "Percolator: earliest widespread use 1810 (France). A coffee percolator is a type of pot used for the brewing of coffee by continually cycling the boiling or nearly boiling brew through the grounds using gravity until the required strength is reached."
+    },
+    {
+     "id": "diaithirfurnishings:double_boiler",
+     "name": "Poiti dhúbailti",
+     "age": "IV",
+     "text": "Double boiler: earliest widespread use Medieval (Europe). A bain-marie (English:  BAN-mə-REE, French: [bɛ̃ maʁi]), also known as a water bath or double boiler, a type of heated bath, is a piece of equipment used in science, industry, and cooking to heat materials gently or to keep materials warm over a period of time."
+    },
+    {
+     "id": "diaithirfurnishings:baking_sheet",
+     "name": "Plátau bákála",
+     "age": "IV",
+     "text": "Baking sheet: earliest widespread use Medieval (Europe). A sheet pan, also referred to as baking tray, baking sheet, or baking pan, is a flat, rectangular metal pan placed in an oven and used for baking pastries such as bread rolls, cookies, sheet cakes, Swiss rolls, and pizzas."
+    },
+    {
+     "id": "diaithirfurnishings:roasting_pan",
+     "name": "Panda róstau",
+     "age": "IV",
+     "text": "Roasting pan: earliest widespread use Medieval (Europe). A roasting pan or dripping pan is a piece of cookware used for roasting meat in an oven, either with or without vegetables or other ingredients."
+    },
+    {
+     "id": "diaithirfurnishings:griddle",
+     "name": "Greidel",
+     "age": "II",
+     "text": "Griddle: earliest widespread use Neolithic (Worldwide). A griddle, also called a girdle in Scotland, is a cooking device consisting mainly of a broad, usually flat cooking surface."
+    },
+    {
+     "id": "diaithirfurnishings:comal",
+     "name": "Plaitíni tortilda",
+     "age": "III",
+     "text": "Comal: earliest widespread use Pre-Columbian (Mesoamerica). A comal is a smooth, flat griddle typically used in Mexico, Central America, and parts of South America, to cook tortillas and arepas, toast spices and nuts, sear meat, and generally prepare food."
+    },
+    {
+     "id": "diaithirfurnishings:tandoor",
+     "name": "Taundúr",
+     "age": "III",
+     "text": "Tandoor: earliest widespread use c. 3000 BC (Indus). A tandoor ( or , Hindi: [t̪ən̪d̪uːɾ]) is a large vase-shaped oven, usually made of clay."
+    },
+    {
+     "id": "diaithirfurnishings:bread_oven",
+     "name": "Oigend auráin",
+     "age": "IV",
+     "text": "Beehive oven: earliest widespread use Roman (Europe). A masonry oven, colloquially known as a brick oven or stone oven, is an oven consisting of a baking chamber made of fireproof brick, concrete, stone, clay (clay oven), or cob (cob oven)."
+    },
+    {
+     "id": "diaithirfurnishings:spit",
+     "name": "Spíki róstau",
+     "age": "I",
+     "text": "Roasting spit: earliest widespread use Paleolithic (Worldwide). Rotisserie, also known as spit-roasting, is a style of roasting where meat is skewered on a spit – a long, solid rod used to hold food while it is being cooked over a fire in a fireplace or over a campfire, or roasted in an oven."
+    },
+    {
+     "id": "diaithirfurnishings:trivet",
+     "name": "Trípéaud",
+     "age": "IV",
+     "text": "Trivet: earliest widespread use Medieval (Europe). A trivet () is an object placed between a serving dish, bowl, pot, or pan and a dining table, usually to protect the table from heat damage."
+    },
+    {
+     "id": "diaithirfurnishings:trammel",
+     "name": "Krú krochta",
+     "age": "IV",
+     "text": "Pot hook: earliest widespread use Medieval (Europe). A trammel hook is an adjustable hook used to suspend objects at variable heights."
+    },
+    {
+     "id": "diaithirfurnishings:waffle_iron",
+     "name": "Iarund vaifilíi",
+     "age": "IV",
+     "text": "Waffle iron: earliest widespread use Medieval (Europe). A waffle iron or waffle maker is a kitchen utensil used to cook waffles between two hinged metal plates."
+    },
+    {
+     "id": "diaithirfurnishings:popcorn_popper",
+     "name": "Poupadóir aurán róstau",
+     "age": "V",
+     "text": "Popcorn popper: earliest widespread use 1800s (USA). A popcorn maker (also called a popcorn copper) is a machine used to make popcorn."
+    },
+    {
+     "id": "diaithirfurnishings:toaster",
+     "name": "Tóstaeri",
+     "age": "VI",
+     "text": "Toaster: earliest widespread use 1893 (Scotland). A toaster is a small electric appliance that uses radiant heat to cook sliced bread into toast."
+    },
+    {
+     "id": "diaithirfurnishings:muffin_tin",
+     "name": "Pauna mufun",
+     "age": "V",
+     "text": "Muffin tin: earliest widespread use 1800s (Europe). A muffin or cupcake tray  is a mold in which muffins or cupcakes are baked."
+    },
+    {
+     "id": "diaithirfurnishings:bundt_pan",
+     "name": "Panda buindt",
+     "age": "VI",
+     "text": "Bundt pan: earliest widespread use 1950 (USA). A Bundt cake is a cake that is baked in a Bundt pan, shaping it into a distinctive donut shape."
+    },
+    {
+     "id": "diaithirfurnishings:springform_pan",
+     "name": "Panda skoiti",
+     "age": "V",
+     "text": "Springform pan: earliest widespread use 1800s (Europe). A springform pan is a type of bakeware that features sides that can be removed from the base."
+    },
+    {
+     "id": "diaithirfurnishings:cake_pan",
+     "name": "Panda káka",
+     "age": "V",
+     "text": "Cake pan: earliest widespread use 1800s (Europe). Cookware and bakeware is food preparation equipment, such as cooking pots (saucepan in British English), frying pans, baking sheets etc."
+    },
+    {
+     "id": "diaithirfurnishings:pie_dish",
+     "name": "Miasu pieóg",
+     "age": "IV",
+     "text": "Pie dish: earliest widespread use Medieval (Europe). A pie is a baked dish which is usually made of a pastry dough casing that contains a filling of various sweet or savoury ingredients."
+    },
+    {
+     "id": "diaithirfurnishings:casserole",
+     "name": "Soitech kasuról",
+     "age": "IV",
+     "text": "Casserole dish: earliest widespread use Medieval (Europe). A casserole (French: diminutive of casse, from Provençal cassa, meaning 'saucepan') is a kind of large, deep pan or bowl used for cooking a variety of dishes in the oven; it is also a category of foods cooked in such a vessel."
+    },
+    {
+     "id": "diaithirfurnishings:terrine",
+     "name": "Teiríni",
+     "age": "IV",
+     "text": "Terrine: earliest widespread use Medieval (France). Terrine may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:ramekin",
+     "name": "Ramakuin",
+     "age": "V",
+     "text": "Ramekin: earliest widespread use 1800s (France). A ramekin (, ; also spelled ramequin) is a small dish used for culinary purposes."
+    },
+    {
+     "id": "diaithirfurnishings:paella_pan",
+     "name": "Panda paelda",
+     "age": "V",
+     "text": "Paella pan: earliest widespread use 1800s (Spain). Paella ( py-EL-ə,  pah-AY-yə; Valencian: [paˈeʎa]; Spanish: [paˈeʎa] or [paˈeʝa]) is a rice dish originally from the Valencian Community."
+    },
+    {
+     "id": "diaithirfurnishings:fondue_pot",
+     "name": "Poiti foundue",
+     "age": "VI",
+     "text": "Fondue pot: earliest widespread use 1900s (Switzerland). Fondue (UK:  FON-dew, US:  fon-DEW, French: [fɔ̃dy], Swiss Standard German: [fɔ̃ːˈdyː] ; Italian: fonduta) is a Swiss dish of melted cheese and wine served in a communal pot (caquelon or fondue pot) over a portable stove (réchaud) heated with a candle or spirit lamp, and eaten by dipping bread and s"
+    },
+    {
+     "id": "diaithirfurnishings:raclette_grill",
+     "name": "Griel rakletti",
+     "age": "VI",
+     "text": "Raclette grill: earliest widespread use 1900s (Switzerland). Raclette (, French: [ʁaklɛt] ) is a dish of Swiss origin, also popular in other countries, based on heating cheese and scraping off the melted part, then typically served with boiled potatoes."
+    },
+    {
+     "id": "diaithirfurnishings:barbecue_grill",
+     "name": "Grild barbaikéi",
+     "age": "I",
+     "text": "Barbecue grill: earliest widespread use Paleolithic (Worldwide). A barbecue grill or barbeque grill (known as a barbecue in Canada and barbecue or barbie in Australia and New Zealand) is a device that cooks food by applying heat from below."
+    },
+    {
+     "id": "diaithirfurnishings:hibachi",
+     "name": "Hiebachi",
+     "age": "IV",
+     "text": "Hibachi: earliest widespread use Heian (Japan). The hibachi (火鉢, 'fire bowl') is a traditional Japanese heating device."
+    },
+    {
+     "id": "diaithirfurnishings:kamado",
+     "name": "Kamado",
+     "age": "IV",
+     "text": "Kamado: earliest widespread use Kofun (Japan). A kamado (竈, 竃 or 灶) is a traditional Japanese wood- or charcoal-fueled cook stove."
+    },
+    {
+     "id": "diaithirfurnishings:tabun",
+     "name": "Taubún",
+     "age": "III",
+     "text": "Tabun oven: earliest widespread use Bronze Age (Levant). A tabun oven, or simply tabun (also transliterated taboon, from the Arabic: طابون), is a portable clay oven, shaped like a truncated cone."
+    },
+    {
+     "id": "diaithirfurnishings:earth_oven",
+     "name": "Oigend taulún",
+     "age": "I",
+     "text": "Earth oven: earliest widespread use Paleolithic (Worldwide). An earth oven, ground oven or cooking pit is one of the simplest and most ancient cooking structures."
+    },
+    {
+     "id": "diaithirfurnishings:clay_baker",
+     "name": "Báikeir kré",
+     "age": "IV",
+     "text": "Clay baker: earliest widespread use Roman (Rome). Roman cuisine is the cooking traditions and practices of the Italian city of Rome."
+    },
+    {
+     "id": "diaithirfurnishings:rice_cooker",
+     "name": "Kókairi rísu",
+     "age": "VI",
+     "text": "Rice cooker: earliest widespread use 1955 (Japan). A rice cooker or rice steamer is an automated kitchen appliance designed to boil or steam rice."
+    },
+    {
+     "id": "diaithirfurnishings:slow_cooker",
+     "name": "Kókairi mald",
+     "age": "VI",
+     "text": "Slow cooker: earliest widespread use 1936 (USA). A slow cooker (also known as a crock-pot after a trademark owned by Sunbeam Products, but sometimes used generically in the English-speaking world) is a countertop electrical cooking appliance used to simmer at a lower temperature than other cooking methods, such as baking, boiling, and frying."
+    },
+    {
+     "id": "diaithirfurnishings:food_steamer",
+     "name": "Gaetuiri miutuil",
+     "age": "IV",
+     "text": "Metal steamer: earliest widespread use Medieval (Europe). Steaming is a method of cooking using steam."
+    },
+    {
+     "id": "diaithirfurnishings:smoker_box",
+     "name": "Boska dieteig",
+     "age": "I",
+     "text": "Meat smoker: earliest widespread use Paleolithic (Worldwide). A smokehouse (North American) or smokery (British) is a building where meat or fish is cured with smoke."
+    }
+   ]
+  },
+  {
+   "tier": "dairy",
+   "name": "Dairy",
+   "age": "I",
+   "text": "Everyday objects: dairy.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:churn",
+     "name": "Maidm",
+     "age": "II",
+     "text": "Butter churn: earliest widespread use Neolithic (Worldwide). Churn may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:cheese_press",
+     "name": "Brúchánu káisi",
+     "age": "IV",
+     "text": "Cheese press: earliest widespread use Roman (Europe). A cheese press is a device for pressing whey from curds when making cheese."
+    },
+    {
+     "id": "diaithirfurnishings:cheese_mold",
+     "name": "Múnlau káisi",
+     "age": "IV",
+     "text": "Cheese mould: earliest widespread use Roman (Europe). Cheesemaking (or caseiculture) is the art of making cheese."
+    },
+    {
+     "id": "diaithirfurnishings:milking_stool",
+     "name": "Stólánu blieguin",
+     "age": "IV",
+     "text": "Milking stool: earliest widespread use Medieval (Europe). A stool is a raised seat commonly supported by three or four legs, but with neither armrests nor a backrest."
+    }
+   ]
+  },
+  {
+   "tier": "farm",
+   "name": "Farm",
+   "age": "I",
+   "text": "Everyday objects: farm.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:mattock",
+     "name": "Tuod tochuilti",
+     "age": "II",
+     "text": "Mattock: earliest widespread use Neolithic (Worldwide). A mattock () is a hand tool used for digging, prying, and chopping."
+    },
+    {
+     "id": "diaithirfurnishings:shovel",
+     "name": "Sluosaid",
+     "age": "II",
+     "text": "Shovel: earliest widespread use Neolithic (Worldwide). A shovel is a tool used for digging, lifting, and moving bulk materials, such as soil, coal, gravel, snow, sand, or ore."
+    },
+    {
+     "id": "diaithirfurnishings:spade",
+     "name": "Spádu",
+     "age": "III",
+     "text": "Spade: earliest widespread use Bronze Age (Europe). A spade is a tool primarily for digging, consisting of a long handle and blade, typically with the blade narrower and flatter than the common shovel."
+    },
+    {
+     "id": "diaithirfurnishings:trowel",
+     "name": "Land lám",
+     "age": "IV",
+     "text": "Garden trowel: earliest widespread use Medieval (Europe). A trowel is a small hand tool used for digging, applying, smoothing, or moving small amounts of viscous or particulate material."
+    },
+    {
+     "id": "diaithirfurnishings:hoe",
+     "name": "Adurk",
+     "age": "II",
+     "text": "Hoe: earliest widespread use Neolithic (Worldwide). A hoe is an ancient and versatile agricultural and horticultural hand tool used to shape soil, remove weeds, clear soil, and harvest root crops."
+    },
+    {
+     "id": "diaithirfurnishings:rake",
+     "name": "Kliad",
+     "age": "II",
+     "text": "Rake: earliest widespread use Neolithic (Worldwide). A rake (Old English raca, cognate with Dutch hark, German Rechen or Harke, from the root meaning 'to scrape together', 'heap up') is a broom for outside use; a versatile horticultural implement consisting of a toothed bar fixed transversely to a handle, or tines fixed to a handle, and used to collec"
+    },
+    {
+     "id": "diaithirfurnishings:pitchfork",
+     "name": "Kráfóg",
+     "age": "IV",
+     "text": "Pitchfork: earliest widespread use Iron Age (Eurasia). A pitchfork or hay fork is an agricultural tool used to pitch loose material, such as hay, straw, manure, or leaves."
+    },
+    {
+     "id": "diaithirfurnishings:hay_fork",
+     "name": "Fork féier",
+     "age": "IV",
+     "text": "Hay fork: earliest widespread use Medieval (Europe). Hayfork may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:scythe",
+     "name": "Spiel",
+     "age": "IV",
+     "text": "Scythe: earliest widespread use Iron Age (Europe). A scythe (, ) is an agricultural hand-tool for mowing grass or harvesting crops."
+    },
+    {
+     "id": "diaithirfurnishings:sickle",
+     "name": "Korrán",
+     "age": "I",
+     "text": "Sickle: earliest widespread use c. 10000 BC (Levant). A sickle, bagging hook, reaping-hook or grasshook is a single-handed agricultural tool designed with variously curved blades and typically used for harvesting or reaping grain crops, or cutting succulent forage chiefly for feeding livestock."
+    },
+    {
+     "id": "diaithirfurnishings:billhook",
+     "name": "Korrán láimi",
+     "age": "IV",
+     "text": "Billhook: earliest widespread use Iron Age (Europe). A billhook or bill hook is a versatile cutting tool used widely in agriculture and forestry for cutting woody material such as shrubs, small trees and branches."
+    },
+    {
+     "id": "diaithirfurnishings:machete",
+     "name": "Klaím mhóru",
+     "age": "V",
+     "text": "Machete: earliest widespread use 1500s (Americas). A machete (; Spanish pronunciation: [maˈtʃete]) is a broad blade originating from Central America."
+    },
+    {
+     "id": "diaithirfurnishings:secateurs",
+     "name": "Siusúr gairdíni",
+     "age": "V",
+     "text": "Secateurs: earliest widespread use 1800s (France). Pruning shears, also called hand pruners (in American English) or secateurs (in British English), are a type of scissors used for plants."
+    },
+    {
+     "id": "diaithirfurnishings:shears",
+     "name": "Siusúr kaerach",
+     "age": "IV",
+     "text": "Sheep shears: earliest widespread use Iron Age (Eurasia). Shears may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:hedge_shears",
+     "name": "Siusúr klaí",
+     "age": "IV",
+     "text": "Hedge shears: earliest widespread use Medieval (Europe). A hedge trimmer, shrub trimmer, or bush trimmer is a gardening tool or machine used for trimming (cutting, pruning) hedges or solitary shrubs (bushes)."
+    },
+    {
+     "id": "diaithirfurnishings:wheelbarrow",
+     "name": "Baurra rota",
+     "age": "IV",
+     "text": "Wheelbarrow: earliest widespread use c. 100 AD (China). A wheelbarrow is a small hand-propelled load-bearing vehicle, usually with just one wheel, designed to be pushed and guided by a single person using two handles at the rear."
+    },
+    {
+     "id": "diaithirfurnishings:plough",
+     "name": "Krand aruiri",
+     "age": "II",
+     "text": "Ard plough: earliest widespread use c. 4000 BC (Mesopotamia). The ard, ard plough, or scratch plough is a simple light plough without a mouldboard."
+    },
+    {
+     "id": "diaithirfurnishings:moldboard_plough",
+     "name": "Aruiri klatach",
+     "age": "IV",
+     "text": "Moldboard plough: earliest widespread use Medieval (Europe). A plough or plow (US) (both pronounced ) is a farm tool for loosening or turning soil before sowing seed or planting."
+    },
+    {
+     "id": "diaithirfurnishings:harrow",
+     "name": "Fiersaid",
+     "age": "IV",
+     "text": "Harrow: earliest widespread use Roman (Eurasia). In agriculture, a harrow is a farm implement used for surface tillage."
+    },
+    {
+     "id": "diaithirfurnishings:seed_drill",
+     "name": "Tiumuntán sílu",
+     "age": "V",
+     "text": "Seed drill: earliest widespread use 1701 (England). A seed drill is a device used in agriculture that sows seeds for crops by positioning them in the soil and burying them to a specific depth while being dragged by a tractor."
+    },
+    {
+     "id": "diaithirfurnishings:flail",
+     "name": "Suoiteán",
+     "age": "IV",
+     "text": "Threshing flail: earliest widespread use Medieval (Eurasia). Flail may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:winnowing_basket",
+     "name": "Kriatur",
+     "age": "II",
+     "text": "Winnowing basket: earliest widespread use Neolithic (Worldwide). Winnowing is a process by which chaff is separated from grain."
+    },
+    {
+     "id": "diaithirfurnishings:yoke",
+     "name": "Krand púiri",
+     "age": "II",
+     "text": "Ox yoke: earliest widespread use Neolithic (Worldwide). A yoke is a wooden beam used between a pair of oxen or other animals to enable them to pull together on a load when working in pairs, as oxen usually do."
+    },
+    {
+     "id": "diaithirfurnishings:milk_pail",
+     "name": "Boikéad baindi",
+     "age": "II",
+     "text": "Milk pail: earliest widespread use Neolithic (Worldwide). Pail may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:archimedes_screw",
+     "name": "Skriú airkiméides",
+     "age": "III",
+     "text": "Archimedes' screw: earliest widespread use c. 250 BC (Greece). An Archimedes' screw is a hydraulic machine composed of an outer cylinder and an inner cylinder with helical blades."
+    },
+    {
+     "id": "diaithirfurnishings:shaduf",
+     "name": "Krand oiski mieáchun",
+     "age": "III",
+     "text": "Shaduf: earliest widespread use c. 2000 BC (Mesopotamia). A shadoof (or shaduf, well pole, well sweep, sweep, swape, or simply a lift) is a tool that is used to lift water from a well or another water source onto land or into another waterway or basin."
+    },
+    {
+     "id": "diaithirfurnishings:noria",
+     "name": "Rod oiski",
+     "age": "III",
+     "text": "Noria: earliest widespread use Ancient (Levant). A noria (Arabic: ناعورة, romanized: nā‘ūra) is a hydropowered scoop wheel used to lift water into a small aqueduct, either for the purpose of irrigation or to supply water to cities and villages."
+    },
+    {
+     "id": "diaithirfurnishings:watering_can",
+     "name": "Kanda oiski",
+     "age": "IV",
+     "text": "Watering can: earliest widespread use Roman (Worldwide). A watering can (or watering pot or watering jug) is a portable container, usually with a handle and a funnel, used to water plants by hand."
+    },
+    {
+     "id": "diaithirfurnishings:horseshoe",
+     "name": "Krúb kapuild",
+     "age": "IV",
+     "text": "Horseshoe: earliest widespread use Roman (Europe). A horseshoe is a piece of equestrian equipment that protects a horse hoof from wear."
+    },
+    {
+     "id": "diaithirfurnishings:farrier_rasp",
+     "name": "Rauspa krúibeora",
+     "age": "IV",
+     "text": "Farrier's rasp: earliest widespread use Medieval (Europe). A farrier is a specialist in farriery: equine hoof care, including the trimming and balancing of horses' hooves and the placing of shoes on their hooves when necessary."
+    },
+    {
+     "id": "diaithirfurnishings:hoof_pick",
+     "name": "Piukán krúibi",
+     "age": "IV",
+     "text": "Hoof pick: earliest widespread use Medieval (Europe). Horse grooming is hygienic care given to a horse, or a process by which the horse's physical appearance is enhanced for horse shows or other types of competition."
+    },
+    {
+     "id": "diaithirfurnishings:saddle",
+     "name": "Dialdait",
+     "age": "III",
+     "text": "Saddle: earliest widespread use c. 700 BC (Eurasia). A saddle is a supportive structure for a rider of an animal, fastened to an animal's back by a girth."
+    },
+    {
+     "id": "diaithirfurnishings:stirrup",
+     "name": "Stiurap",
+     "age": "IV",
+     "text": "Stirrup: earliest widespread use c. 300 (China). A stirrup is one of a pair of light frames or rings attached to the saddle of a riding animal (usually a horse or other equine, such as a mule) by a strap (often called a stirrup leather) that holds its rider's foot, aiding in their mounting and support."
+    },
+    {
+     "id": "diaithirfurnishings:bridle",
+     "name": "Srianu",
+     "age": "II",
+     "text": "Bridle: earliest widespread use c. 3500 BC (Eurasia). A bridle is a piece of equipment used to direct a horse."
+    },
+    {
+     "id": "diaithirfurnishings:halter",
+     "name": "Halstur",
+     "age": "III",
+     "text": "Halter: earliest widespread use Ancient (Worldwide). A halter or headcollar is headgear placed on animals used to lead or tie up livestock and, occasionally, other animals; it fits behind the ears (behind the poll), and around the muzzle."
+    },
+    {
+     "id": "diaithirfurnishings:cowbell",
+     "name": "Klog bóu",
+     "age": "III",
+     "text": "Cowbell: earliest widespread use Ancient (Worldwide). A cowbell (or cow bell) is a bell worn around the neck of free-roaming livestock so herders can keep track of an animal via the sound of the bell when the animal is grazing out of view in hilly landscapes or vast plains."
+    }
+   ]
+  },
+  {
+   "tier": "fire",
+   "name": "Fire",
+   "age": "I",
+   "text": "Everyday objects: fire.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:fire_drill",
+     "name": "Biur tini",
+     "age": "I",
+     "text": "Fire drill: earliest widespread use Paleolithic (Worldwide). A fire drill is a method of practicing how a building should evacuate in the event of a fire or other emergencies."
+    },
+    {
+     "id": "diaithirfurnishings:fire_plough",
+     "name": "Triebán tini",
+     "age": "I",
+     "text": "Fire plough: earliest widespread use Paleolithic (Oceania). A fire plough (or fire plow) is a firelighting tool."
+    },
+    {
+     "id": "diaithirfurnishings:flint_and_steel",
+     "name": "Flient augus kruoch",
+     "age": "IV",
+     "text": "Flint and steel: earliest widespread use Iron Age (Eurasia). A fire striker or fire steel is a tool used in fire making, consisting of a piece of steel that can be struck against a flint, chert, or other hard rock in order to generate sparks."
+    },
+    {
+     "id": "diaithirfurnishings:tinderbox",
+     "name": "Boska smoleig",
+     "age": "IV",
+     "text": "Tinderbox: earliest widespread use Medieval (Europe). A tinderbox, or patch box, is a container made of wood or metal containing flint, firesteel, and tinder (typically charcloth, but possibly a small quantity of dry, finely divided fibrous matter such as hemp), used together to help kindle a fire."
+    },
+    {
+     "id": "diaithirfurnishings:match",
+     "name": "Méirdes",
+     "age": "V",
+     "text": "Friction match: earliest widespread use 1826 (England). A match is a tool for starting a fire."
+    },
+    {
+     "id": "diaithirfurnishings:lighter",
+     "name": "Laustóir",
+     "age": "V",
+     "text": "Pocket lighter: earliest widespread use 1823 (Germany). A lighter is a portable device which uses mechanical or electrical means to create a controlled flame, and can be used to ignite a variety of flammable items, such as cigarettes,  butane gas, fireworks, candles, or campfires."
+    },
+    {
+     "id": "diaithirfurnishings:tinder_fungus",
+     "name": "Fuingas smoleig",
+     "age": "II",
+     "text": "Tinder bracket: earliest widespread use Neolithic (Europe). Fomes fomentarius (commonly known as the tinder fungus, false tinder fungus, hoof fungus, tinder conk, tinder polypore or ice man fungus) is a perennial wood-decay basidiomycete found in Europe, Asia, Africa and North America."
+    },
+    {
+     "id": "diaithirfurnishings:tinder_pouch",
+     "name": "Spaurán tindi",
+     "age": "III",
+     "text": "Tinder pouch: earliest widespread use Ancient (Worldwide). Tinder is easily combustible material used to start a fire."
+    }
+   ]
+  },
+  {
+   "tier": "fishing",
+   "name": "Fishing",
+   "age": "I",
+   "text": "Everyday objects: fishing.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:fishing_rod",
+     "name": "Slaut iaskuirechta",
+     "age": "III",
+     "text": "Fishing rod: earliest widespread use c. 2000 BC (Egypt). A fishing rod  or fishing pole is a long, thin rod used by anglers to catch fish by manipulating a line ending in a hook (formerly known as an angle, hence the term \"angling\")."
+    },
+    {
+     "id": "diaithirfurnishings:fishhook",
+     "name": "Die-iask",
+     "age": "I",
+     "text": "Fish hook: earliest widespread use c. 40000 BC (Worldwide). A fish hook or fishhook, formerly also called an angle (from Old English angol and Proto-Germanic *angulaz), is a hook used to catch fish either by piercing and embedding onto the inside of the fish mouth (angling) or, more rarely, by impaling and snagging the external fish body."
+    },
+    {
+     "id": "diaithirfurnishings:fishing_net",
+     "name": "Líoun iaskuirechta",
+     "age": "I",
+     "text": "Fishing net: earliest widespread use Paleolithic (Worldwide). A fishing net or fish net is a net used for fishing."
+    },
+    {
+     "id": "diaithirfurnishings:fish_trap",
+     "name": "Gaisti éisk",
+     "age": "II",
+     "text": "Fish trap: earliest widespread use Neolithic (Worldwide). A fish trap is a trap used for catching fish and other aquatic animals of value."
+    },
+    {
+     "id": "diaithirfurnishings:harpoon",
+     "name": "Haurpún",
+     "age": "I",
+     "text": "Fishing harpoon: earliest widespread use c. 90000 BC (Africa). A harpoon is a long, spear-like projectile used in fishing, whaling, sealing, and other hunting to shoot, kill, and capture large fish such as sharks or marine mammals such as seals, sea cows, and whales."
+    },
+    {
+     "id": "diaithirfurnishings:lobster_pot",
+     "name": "Pold homuir",
+     "age": "IV",
+     "text": "Lobster pot: earliest widespread use Medieval (Europe). A lobster trap or lobster pot is a portable trap that traps lobsters or crayfish and is used in lobster fishing."
+    }
+   ]
+  },
+  {
+   "tier": "food_prep",
+   "name": "Food Prep",
+   "age": "I",
+   "text": "Everyday objects: food prep.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:quern",
+     "name": "Bróu láimi",
+     "age": "II",
+     "text": "Saddle quern: earliest widespread use Neolithic (Worldwide). A quern-stone is a stone tool for hand-grinding a wide variety of materials, especially for various types of grains."
+    },
+    {
+     "id": "diaithirfurnishings:millstone",
+     "name": "Kloch mhoilind",
+     "age": "IV",
+     "text": "Millstone: earliest widespread use Roman (Worldwide). Millstones or mill stones are stones used in gristmills, used for triturating, crushing or, more specifically, grinding wheat or other grains."
+    },
+    {
+     "id": "diaithirfurnishings:mortar_pestle",
+     "name": "Mrtau augus pieslí",
+     "age": "I",
+     "text": "Mortar and pestle: earliest widespread use c. 35000 BC (Worldwide). A mortar and pestle is a set of two simple tools used to prepare ingredients or substances by crushing and grinding them into a fine paste or powder in the kitchen, laboratory, and pharmacy."
+    },
+    {
+     "id": "diaithirfurnishings:dehydrator_rack",
+     "name": "Raka triumaiti",
+     "age": "I",
+     "text": "Drying rack: earliest widespread use Paleolithic (Worldwide). Food drying is a method of food preservation in which food is dried (dehydrated or desiccated)."
+    },
+    {
+     "id": "diaithirfurnishings:canning_jar",
+     "name": "Boidéul kanála",
+     "age": "VI",
+     "text": "Mason jar: earliest widespread use 1858 (USA). A Mason jar, also known as a canning jar, preserves jar or fruit jar, is a glass jar used in home canning to preserve food."
+    },
+    {
+     "id": "diaithirfurnishings:preserving_jar",
+     "name": "Boidéul kaemnaiti",
+     "age": "V",
+     "text": "Preserving jar: earliest widespread use 1810 (France). Canning is a method of food preservation in which food is processed and sealed in an airtight container (jars like Mason jars, and steel and tin cans)."
+    },
+    {
+     "id": "diaithirfurnishings:pickle_crock",
+     "name": "Kroguld biutáildi",
+     "age": "II",
+     "text": "Fermentation crock: earliest widespread use Neolithic (Worldwide). In food processing, fermentation is the conversion of carbohydrates to alcohol or organic acids using microorganisms—yeasts or bacteria—without an oxidizing agent being used in the reaction."
+    },
+    {
+     "id": "diaithirfurnishings:rolling_pin",
+     "name": "Roldadán",
+     "age": "IV",
+     "text": "Rolling pin: earliest widespread use Roman (Worldwide). A rolling pin is a cylindrical food preparation utensil used to shape and flatten dough."
+    },
+    {
+     "id": "diaithirfurnishings:pasta_cutter",
+     "name": "Rota taesráin",
+     "age": "IV",
+     "text": "Pastry wheel: earliest widespread use Medieval (Europe). A pastry wheel, also known as a pastry jigger or jagging wheel, is a kitchen tool which is used to cut pastry and other doughs."
+    },
+    {
+     "id": "diaithirfurnishings:cookie_cutter",
+     "name": "Gierrta briuska",
+     "age": "V",
+     "text": "Cookie cutter: earliest widespread use 1800s (Europe). A cookie cutter (also known as a biscuit cutter outside the US) is a tool for cutting cookie dough into a particular shape, by pressing a shaped blade down into the dough."
+    },
+    {
+     "id": "diaithirfurnishings:cookie_press",
+     "name": "Brúchánu briuska",
+     "age": "V",
+     "text": "Cookie press: earliest widespread use 1800s (Europe). A cookie press, also known as a cookie gun, is a device for making pressed cookies such as spritz cookies."
+    },
+    {
+     "id": "diaithirfurnishings:piping_bag",
+     "name": "Málau píoupála",
+     "age": "V",
+     "text": "Piping bag: earliest widespread use 1800s (France). A pastry bag (or piping bag in the Commonwealth) is an often cone- or triangular-shaped bag made from cloth, paper, plastic, or the intestinal lining of a lamb, that is squeezed by hand to pipe semi-solid foods by pressing them through a narrow opening at one end often fitted with a shaped nozzle, f"
+    },
+    {
+     "id": "diaithirfurnishings:dough_scraper",
+     "name": "Skríobtóir taes",
+     "age": "IV",
+     "text": "Bench scraper: earliest widespread use Medieval (Europe). A kitchen scraper is a kitchen implement made of metal, plastics (such as polyethylene, nylon, or polypropylene), wood, rubber or silicone rubber."
+    },
+    {
+     "id": "diaithirfurnishings:kneading_trough",
+     "name": "Tráta taesráin",
+     "age": "IV",
+     "text": "Dough trough: earliest widespread use Roman (Europe). In cooking (and more specifically baking), kneading is a process in the making of bread dough, used to mix the ingredients and add strength and stiffness to the final product."
+    },
+    {
+     "id": "diaithirfurnishings:proofing_basket",
+     "name": "Kiseán taesráin",
+     "age": "IV",
+     "text": "Banneton: earliest widespread use Medieval (Europe). Proofing (North American) or proving (British and Australasia) is a step in the preparation of yeast bread and other baked goods in which the dough is allowed to rest and rise a final time before baking."
+    },
+    {
+     "id": "diaithirfurnishings:bread_lame",
+     "name": "Skian auráin",
+     "age": "VI",
+     "text": "Bread lame: earliest widespread use 1900s (France). A lame (, from French lame, derived from Latin lāmina, meaning blade) is a double-sided blade that is used to slash the tops of bread loaves before baking."
+    },
+    {
+     "id": "diaithirfurnishings:mixing_bowl",
+     "name": "Babla mieskta",
+     "age": "II",
+     "text": "Mixing bowl: earliest widespread use Neolithic (Worldwide). A mixing bowl is a bowl used for mixing of ingredients."
+    },
+    {
+     "id": "diaithirfurnishings:colander",
+     "name": "Koisel",
+     "age": "IV",
+     "text": "Colander: earliest widespread use Medieval (Europe). A colander or cullender is a kitchen utensil perforated with holes used to strain foods such as pasta or to rinse vegetables."
+    },
+    {
+     "id": "diaithirfurnishings:sieve",
+     "name": "Kriatur",
+     "age": "II",
+     "text": "Sieve: earliest widespread use Neolithic (Worldwide). A sieve (), fine mesh strainer, or sift is a tool used for separating wanted elements from unwanted material or for controlling the particle size distribution of a sample, using a screen such as a woven mesh or net or perforated sheet material."
+    },
+    {
+     "id": "diaithirfurnishings:cheesecloth",
+     "name": "Éaudach káisi",
+     "age": "III",
+     "text": "Cheesecloth: earliest widespread use Ancient (Worldwide). Cheesecloth is a loose-woven gauze-like carded cotton cloth used primarily in cheesemaking and cooking."
+    }
+   ]
+  },
+  {
+   "tier": "furniture",
+   "name": "Furniture",
+   "age": "I",
+   "text": "Everyday objects: furniture.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:chair",
+     "name": "Kataeir admaid",
+     "age": "III",
+     "text": "Wooden chair: earliest widespread use Ancient (Worldwide). A chair (/t͡ʃɛɚ/ ) is a type of seat, typically designed for one person and consisting of one or more legs, a flat or slightly angled seat, and a back rest."
+    },
+    {
+     "id": "diaithirfurnishings:stool",
+     "name": "Stólu tríu chous",
+     "age": "III",
+     "text": "Three-legged stool: earliest widespread use Ancient (Worldwide). Stool may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:bench",
+     "name": "Binsi",
+     "age": "III",
+     "text": "Bench: earliest widespread use Ancient (Worldwide). A bench is a long seat on which several people may sit at the same time."
+    },
+    {
+     "id": "diaithirfurnishings:table",
+     "name": "Bourd admaid",
+     "age": "III",
+     "text": "Wooden table: earliest widespread use Ancient (Worldwide). A table is a piece of furniture with a raised flat top and is supported most commonly by 1 to 4 legs (although some can have more)."
+    },
+    {
+     "id": "diaithirfurnishings:bed",
+     "name": "Lieba",
+     "age": "III",
+     "text": "Bed frame: earliest widespread use Ancient (Worldwide). A bed is a piece of furniture that is used as a place to sleep, rest, and relax."
+    },
+    {
+     "id": "diaithirfurnishings:cradle",
+     "name": "Kliabán",
+     "age": "III",
+     "text": "Cradle: earliest widespread use Ancient (Worldwide). Cradle or Cradles may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:bookshelf",
+     "name": "Seilfi liebur",
+     "age": "IV",
+     "text": "Bookshelf: earliest widespread use Roman (Worldwide). A bookcase also called a bookshelf, is a piece of furniture with horizontal shelves, often in a cabinet, used to store books or other printed materials."
+    },
+    {
+     "id": "diaithirfurnishings:cupboard",
+     "name": "Kófra",
+     "age": "IV",
+     "text": "Cupboard: earliest widespread use Medieval (Europe). A cupboard is a piece of furniture for enclosing dishware or grocery items that are stored in a home."
+    },
+    {
+     "id": "diaithirfurnishings:wardrobe",
+     "name": "Prius éaudaí",
+     "age": "IV",
+     "text": "Wardrobe: earliest widespread use Medieval (Europe). A wardrobe, also called armoire or almirah, is a piece of standing furniture used for storing clothes."
+    }
+   ]
+  },
+  {
+   "tier": "general",
+   "name": "General",
+   "age": "I",
+   "text": "Everyday objects: general.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:hammer",
+     "name": "Kasúr krúka",
+     "age": "IV",
+     "text": "Claw hammer: earliest widespread use c. 1st c. AD (Rome). A claw hammer is a hammer primarily used in carpentry for driving nails into or pulling them from wood."
+    },
+    {
+     "id": "diaithirfurnishings:sledgehammer",
+     "name": "Kasúr móru",
+     "age": "III",
+     "text": "Sledgehammer: earliest widespread use Bronze Age (Europe). A sledgehammer or sledge is a tool with a flat, massive, often metal head, attached to a long wooden or solid handle."
+    },
+    {
+     "id": "diaithirfurnishings:mallet",
+     "name": "Kasúr admaid",
+     "age": "II",
+     "text": "Mallet: earliest widespread use Neolithic (Worldwide). A mallet is a tool used for imparting force on another object, often made of rubber or sometimes wood, that is smaller than a maul or beetle, and usually has a relatively large head."
+    },
+    {
+     "id": "diaithirfurnishings:vise",
+     "name": "Gléaus griemaiti",
+     "age": "IV",
+     "text": "Bench vise: earliest widespread use Roman (Europe). A vise or vice (British English) is a mechanical apparatus used to secure an object to allow work to be performed on it."
+    },
+    {
+     "id": "diaithirfurnishings:pincers",
+     "name": "Griemeig",
+     "age": "III",
+     "text": "Pincers: earliest widespread use Bronze Age (Eurasia). Pincer may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:wrench",
+     "name": "Spanur",
+     "age": "V",
+     "text": "Spanner wrench: earliest widespread use 1800s (Europe). A wrench or spanner  is a tool used to provide grip and mechanical advantage in applying torque to turn objects—usually rotary fasteners, such as nuts and bolts—or keep them from turning."
+    },
+    {
+     "id": "diaithirfurnishings:monkey_wrench",
+     "name": "Spanur inatraiti",
+     "age": "V",
+     "text": "Monkey wrench: earliest widespread use 1800s (Europe). An adjustable spanner (UK), also called a shifting spanner or shifter (Australia and New Zealand) or adjustable wrench (US and Canada), is any of various styles of spanner (wrench) with a movable jaw, allowing it to be used with different sizes of fastener head (nut, bolt, etc.) rather than just one"
+    },
+    {
+     "id": "diaithirfurnishings:screwdriver",
+     "name": "Skriúiri",
+     "age": "IV",
+     "text": "Screwdriver: earliest widespread use 1400s (Europe). A  screwdriver is a tool, manual or powered, used for turning screws."
+    },
+    {
+     "id": "diaithirfurnishings:crowbar",
+     "name": "Krobur",
+     "age": "IV",
+     "text": "Crowbar: earliest widespread use Medieval (Europe). A crowbar is a lever consisting of a metal bar with a single curved end and flattened points, used to force two objects apart or gain mechanical advantage in lifting; often the curved end has a notch for removing nails."
+    },
+    {
+     "id": "diaithirfurnishings:pulley",
+     "name": "Puilaí",
+     "age": "III",
+     "text": "Pulley: earliest widespread use c. 1500 BC (Mesopotamia). A pulley is a wheel on an axle or shaft enabling a taut cable or belt passing over the wheel to move and change direction, or transfer power between itself and a shaft."
+    },
+    {
+     "id": "diaithirfurnishings:block_and_tackle",
+     "name": "Blok augus taka",
+     "age": "IV",
+     "text": "Block and tackle: earliest widespread use Roman (Rome). A block and tackle, purchase, or only tackle is a system of two or more pulleys with a rope or cable threaded between them, used to provide tension and lift heavy loads."
+    },
+    {
+     "id": "diaithirfurnishings:winch",
+     "name": "Krand tarruingti",
+     "age": "III",
+     "text": "Winch: earliest widespread use Ancient (Greece). A winch is a mechanical device that is used to pull in (wind up) or let out (wind out) or otherwise adjust the tension of a rope or wire rope (also called \"cable\" or \"wire cable\")."
+    },
+    {
+     "id": "diaithirfurnishings:windlass",
+     "name": "Krand kasta",
+     "age": "III",
+     "text": "Windlass: earliest widespread use Ancient (Greece). The windlass  is a type of horizontal winch used to move heavy weights, featuring a cylinder (barrel) operated by a crank to wind a rope."
+    },
+    {
+     "id": "diaithirfurnishings:capstan",
+     "name": "Kaibisten",
+     "age": "IV",
+     "text": "Capstan: earliest widespread use Medieval (Europe). A capstan is a vertical-axled rotating machine developed for use on sailing ships to multiply the pulling force of sailors when hauling ropes, cables, and hawsers."
+    },
+    {
+     "id": "diaithirfurnishings:lever",
+     "name": "Luomán",
+     "age": "III",
+     "text": "Lever: earliest widespread use Ancient (Worldwide). A lever is a simple machine consisting of a beam or rigid rod pivoted at a fixed hinge or fulcrum."
+    },
+    {
+     "id": "diaithirfurnishings:ladder",
+     "name": "Dréimiri",
+     "age": "I",
+     "text": "Ladder: earliest widespread use Paleolithic (Worldwide). A ladder is a vertical or inclined set of rungs or steps commonly used for climbing or descending."
+    },
+    {
+     "id": "diaithirfurnishings:grappling_hook",
+     "name": "Krúka graupnéil",
+     "age": "III",
+     "text": "Grappling hook: earliest widespread use Ancient (Worldwide). A grappling hook, or grapnel, is a drag-looking device intended for grappling onto something."
+    },
+    {
+     "id": "diaithirfurnishings:shackle",
+     "name": "Kiengul iaruind",
+     "age": "IV",
+     "text": "Iron shackle: earliest widespread use Medieval (Europe). A shackle (or shacklebolt), also known as a gyve, is a U-shaped piece of metal secured with a clevis pin or bolt across the opening, or a hinged metal loop secured with a quick-release locking pin mechanism."
+    },
+    {
+     "id": "diaithirfurnishings:chain",
+     "name": "Slabra iaruind",
+     "age": "IV",
+     "text": "Iron chain: earliest widespread use Roman (Europe). A chain is a serial assembly of connected links typically made of metal, with an overall character similar to that of a rope in that it is flexible and curved in compression, but linear, rigid, and load-bearing in tension."
+    },
+    {
+     "id": "diaithirfurnishings:nail",
+     "name": "Tairni iaruind",
+     "age": "III",
+     "text": "Iron nail: earliest widespread use Bronze Age (Worldwide). In woodworking and construction, a nail is a small object made of metal (or wood, called a tree nail or \"trunnel\") which is used as a fastener, as a peg to hang something, or sometimes as a decoration."
+    },
+    {
+     "id": "diaithirfurnishings:screw",
+     "name": "Skriú admaid",
+     "age": "V",
+     "text": "Wood screw: earliest widespread use 1500s (Europe). A screw is an externally helical threaded fastener capable of being tightened or released by a twisting force (torque) to the head."
+    },
+    {
+     "id": "diaithirfurnishings:bolt_nut",
+     "name": "Boulta augus knó",
+     "age": "V",
+     "text": "Nut and bolt: earliest widespread use 1500s (Europe). A bolt is an externally helical threaded fastener capable of being tightened or released by a twisting force (torque) to a matching nut."
+    },
+    {
+     "id": "diaithirfurnishings:axle_grease_pot",
+     "name": "Pouta ungad",
+     "age": "III",
+     "text": "Grease pot: earliest widespread use Ancient (Worldwide). Grease is a solid or semisolid lubricant formed as a dispersion of thickening agents in a liquid lubricant."
+    },
+    {
+     "id": "diaithirfurnishings:oil_can",
+     "name": "Kanda oula",
+     "age": "V",
+     "text": "Oil can: earliest widespread use 1800s (Worldwide). An oil can (oilcan or oiler) is a can that holds oil (usually motor oil) for lubricating machines."
+    },
+    {
+     "id": "diaithirfurnishings:grease_gun",
+     "name": "Gunda ungaid",
+     "age": "VI",
+     "text": "Grease gun: earliest widespread use 1900s (Worldwide). A grease gun is a common workshop and garage tool used for lubrication."
+    },
+    {
+     "id": "diaithirfurnishings:hand_pump",
+     "name": "Kaidéul láimi",
+     "age": "III",
+     "text": "Hand pump: earliest widespread use c. 200 BC (Greece). A pump is a device that moves fluids (liquids or gases), or sometimes slurries, by mechanical action, typically converted from electrical energy into hydraulic or pneumatic energy."
+    }
+   ]
+  },
+  {
+   "tier": "glass",
+   "name": "Glass",
+   "age": "I",
+   "text": "Everyday objects: glass.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:glassblowing_pipe",
+     "name": "Píoubán gloini",
+     "age": "IV",
+     "text": "Blowpipe: earliest widespread use c. 50 BC (Levant). Glassblowing is a glassforming technique that involves inflating molten glass into a bubble (or parison) with the aid of a blowpipe (or blow tube)."
+    }
+   ]
+  },
+  {
+   "tier": "household",
+   "name": "Household",
+   "age": "I",
+   "text": "Everyday objects: household.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:sad_iron",
+     "name": "Iarund tiesa",
+     "age": "IV",
+     "text": "Sad iron: earliest widespread use Medieval (Europe). A clothes iron, also known as a flatiron, smoothing iron, dry iron, steam iron, and simply iron, is a small appliance that, when heated, is used to press clothes to remove wrinkles and unwanted creases."
+    },
+    {
+     "id": "diaithirfurnishings:padlock",
+     "name": "Glaus",
+     "age": "III",
+     "text": "Padlock: earliest widespread use c. 1000 BC (Eurasia). Padlocks are portable locks with a shackle that may be passed through an opening (such as a chain link, or hasp staple) to prevent use, theft, vandalism or harm."
+    },
+    {
+     "id": "diaithirfurnishings:key",
+     "name": "Eochuir",
+     "age": "III",
+     "text": "Door key: earliest widespread use c. 2000 BC (Egypt). A lock is a mechanical or electronic fastening device that is released by a physical object (such as a key, keycard, fingerprint, RFID card, security token or coin), by supplying secret information (such as a number or letter permutation or password), by a combination thereof, or it may only be able"
+    },
+    {
+     "id": "diaithirfurnishings:pin_tumbler_lock",
+     "name": "Glaus biuráin",
+     "age": "III",
+     "text": "Pin tumbler lock: earliest widespread use c. 2000 BC (Egypt). The pin tumbler lock, also known as the Yale lock (after Linus Yale Jr) is a lock mechanism that uses a series of spring-loaded pins of varying lengths to prevent the lock from opening without the correct key."
+    },
+    {
+     "id": "diaithirfurnishings:lever_lock",
+     "name": "Glaus luomáin",
+     "age": "V",
+     "text": "Lever lock: earliest widespread use 1778 (England). A lever tumbler lock is a type of lock whose mechanism uses a set of levers to prevent the bolt from moving in the lock."
+    },
+    {
+     "id": "diaithirfurnishings:hinge",
+     "name": "Lúbu dourais",
+     "age": "III",
+     "text": "Door hinge: earliest widespread use Ancient (Worldwide). A hinge is a mechanical bearing that connects two solid objects, typically allowing only a limited angle of rotation between them."
+    },
+    {
+     "id": "diaithirfurnishings:bucket",
+     "name": "Boikéad admaid",
+     "age": "II",
+     "text": "Wooden bucket: earliest widespread use Neolithic (Worldwide). A bucket is typically a watertight, vertical cylinder or truncated cone or square, with an open top and a flat bottom that is attached to a semicircular carrying handle called the bail."
+    },
+    {
+     "id": "diaithirfurnishings:well_bucket",
+     "name": "Boikéad tobuir",
+     "age": "III",
+     "text": "Well bucket and windlass: earliest widespread use Ancient (Worldwide). A well is an excavation or structure created on the earth by digging, driving, or drilling to access liquid resources, usually water."
+    },
+    {
+     "id": "diaithirfurnishings:funnel",
+     "name": "Fiedán tiontaiti",
+     "age": "IV",
+     "text": "Funnel: earliest widespread use Roman (Worldwide). A funnel is a tube or pipe that is wide at the top and narrow at the bottom, used for guiding liquid or powder into a small opening."
+    },
+    {
+     "id": "diaithirfurnishings:ladle_big",
+     "name": "Ladur móru",
+     "age": "II",
+     "text": "Dipper: earliest widespread use Neolithic (Worldwide). A ladle is a large, deep spoon, often used in the preparation and serving of soup, stew, or other foods."
+    },
+    {
+     "id": "diaithirfurnishings:fire_dog",
+     "name": "Andursaí",
+     "age": "IV",
+     "text": "Andiron: earliest widespread use Iron Age (Europe). An andiron,  firedog, fire-dog, fire dog,  iron-dog, or chenet is a bracket support, normally one of a pair, on which logs are laid for burning in an open fireplace, so that air may circulate under the firewood, allowing better burning and less smoke."
+    },
+    {
+     "id": "diaithirfurnishings:broom",
+     "name": "Skuob",
+     "age": "III",
+     "text": "Besom broom: earliest widespread use Ancient (Worldwide). A broom (), also known as a broomstick, is a cleaning tool, consisting of usually stiff fibers (often made of materials such as plastic, glued hair, or corn husks) attached to, and roughly parallel to, a cylindrical handle, the broomstick."
+    },
+    {
+     "id": "diaithirfurnishings:dustpan",
+     "name": "Liatróid lausta",
+     "age": "V",
+     "text": "Dustpan: earliest widespread use 1800s (Europe). A dustpan, the small version of which is also known as a \"hearth brush and shovel” (from its use of cleaning the fireplace hearth), is a cleaning utensil."
+    },
+    {
+     "id": "diaithirfurnishings:mop",
+     "name": "Maupa",
+     "age": "IV",
+     "text": "Mop: earliest widespread use Medieval (Europe). A mop (such as a floor mop) is a mass or bundle of coarse strings or yarn, etc., or a piece of cloth, sponge or other absorbent material, attached to a pole or stick."
+    },
+    {
+     "id": "diaithirfurnishings:scrub_brush",
+     "name": "Skuob skuobta",
+     "age": "IV",
+     "text": "Scrub brush: earliest widespread use Medieval (Europe). A brush is a common tool with bristles, wire, or other filaments."
+    },
+    {
+     "id": "diaithirfurnishings:wash_basin",
+     "name": "Báiesín nig",
+     "age": "III",
+     "text": "Wash basin: earliest widespread use Ancient (Worldwide). Basin may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:washboard",
+     "name": "Klár nig",
+     "age": "V",
+     "text": "Washboard: earliest widespread use 1797 (USA). Washboard may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:laundry_tub",
+     "name": "Toubán nig",
+     "age": "IV",
+     "text": "Wash tub: earliest widespread use Medieval (Europe). "
+    },
+    {
+     "id": "diaithirfurnishings:laundry_paddle",
+     "name": "Maidm nig",
+     "age": "IV",
+     "text": "Laundry beetle: earliest widespread use Medieval (Europe). Laundry is the washing of clothing and other textiles, and, more broadly, their drying and ironing as well."
+    },
+    {
+     "id": "diaithirfurnishings:mangle",
+     "name": "Mangul láimi",
+     "age": "V",
+     "text": "Hand mangle: earliest widespread use 1700s (Europe). A mangle is a mechanical laundry aid consisting of two rollers in a sturdy frame, connected by cogs and, in its home version, powered by a hand crank or by electricity."
+    },
+    {
+     "id": "diaithirfurnishings:clothespin",
+     "name": "Pionda éadeig",
+     "age": "V",
+     "text": "Clothes peg: earliest widespread use 1800s (USA). A clothespin (US English) or clothes peg (UK English), also spelled \"clothes pin\"  is a fastener used to hang up clothes for drying, usually on a clothes line."
+    },
+    {
+     "id": "diaithirfurnishings:clothesline",
+     "name": "Líni éadeig",
+     "age": "III",
+     "text": "Clothes line: earliest widespread use Ancient (Worldwide). A clothes line, also spelled clothesline, also known as a wash line, is a device for hanging clothes on for the purpose of drying or airing out the articles."
+    },
+    {
+     "id": "diaithirfurnishings:soap",
+     "name": "Galdúnach",
+     "age": "III",
+     "text": "Soap bar: earliest widespread use c. 2800 BC (Babylon). Soap is a salt of a fatty acid (sometimes other carboxylic acids) used for cleaning and lubricating products as well as other applications."
+    },
+    {
+     "id": "diaithirfurnishings:chamber_pot",
+     "name": "Póiet oíchi",
+     "age": "III",
+     "text": "Chamber pot: earliest widespread use Ancient (Greece). A chamber pot is a portable toilet, meant for nocturnal use in the bedroom."
+    },
+    {
+     "id": "diaithirfurnishings:bed_warmer",
+     "name": "Tiesuiri liepa",
+     "age": "IV",
+     "text": "Bed warming pan: earliest widespread use Medieval (Europe). A bed warmer or warming pan was a common household item in countries with cold winters, especially in Europe."
+    },
+    {
+     "id": "diaithirfurnishings:hot_water_bottle",
+     "name": "Boidéul oiski tie",
+     "age": "VI",
+     "text": "Hot water bottle: earliest widespread use 1903 (Europe). A hot-water bottle is a bottle filled with hot water and sealed with a stopper, used to provide warmth, typically while in bed, but also for the application of heat to a specific part of the body."
+    },
+    {
+     "id": "diaithirfurnishings:fan_hand",
+     "name": "Lúbauch láimi",
+     "age": "III",
+     "text": "Hand fan: earliest widespread use Ancient (Worldwide). A handheld fan, or simply hand fan, is a broad, flat surface that is waved back and forth to create an airflow."
+    },
+    {
+     "id": "diaithirfurnishings:umbrella",
+     "name": "Skád báiestí",
+     "age": "III",
+     "text": "Umbrella: earliest widespread use c. 1000 BC (China). An umbrella (parasol or rarely parapluie) is a folding canopy supported by wooden or metal ribs that is mounted on a wooden, metal, or plastic pole."
+    },
+    {
+     "id": "diaithirfurnishings:mirror_bronze",
+     "name": "Skátán láimi kré-uma",
+     "age": "III",
+     "text": "Bronze hand mirror: earliest widespread use c. 3000 BC (Egypt). A mirror, also known as a looking glass, is an object that reflects an image."
+    },
+    {
+     "id": "diaithirfurnishings:comb",
+     "name": "Fiakla",
+     "age": "II",
+     "text": "Comb: earliest widespread use Neolithic (Worldwide). A comb is a tool consisting of a shaft that holds a row of teeth for pulling through the hair to clean, untangle, or style it."
+    },
+    {
+     "id": "diaithirfurnishings:hairbrush",
+     "name": "Skuob gruoigi",
+     "age": "III",
+     "text": "Hairbrush: earliest widespread use Ancient (Worldwide). A hairbrush is a brush with rigid (hard or inflexible) or light and soft spokes used in hair care for smoothing, styling, and detangling human hair, or for grooming an animal's fur."
+    },
+    {
+     "id": "diaithirfurnishings:razor",
+     "name": "Rásúru",
+     "age": "III",
+     "text": "Straight razor: earliest widespread use Bronze Age (Eurasia). A razor is a bladed tool primarily used in the removal of body hair through the act of shaving."
+    },
+    {
+     "id": "diaithirfurnishings:tweezers",
+     "name": "Biuráin",
+     "age": "III",
+     "text": "Tweezers: earliest widespread use Bronze Age (Worldwide). Tweezers are small hand tools used for grasping objects too small to be easily handled with the human fingers."
+    },
+    {
+     "id": "diaithirfurnishings:toothbrush",
+     "name": "Skuob fiakla",
+     "age": "IV",
+     "text": "Toothbrush: earliest widespread use 1498 (China). A toothbrush is a special type of brush used to clean the teeth, gums, and tongue."
+    },
+    {
+     "id": "diaithirfurnishings:nail_clippers",
+     "name": "Gierrtóirí ingni",
+     "age": "VI",
+     "text": "Nail clippers: earliest widespread use 1870s (USA). A nail clipper (also called nail clippers, a nail trimmer, a nail cutter or nipper type) is a hand tool used to trim nails and hangnails."
+    },
+    {
+     "id": "diaithirfurnishings:fire_shovel",
+     "name": "Sluosaid tini",
+     "age": "IV",
+     "text": "Fire shovel: earliest widespread use Medieval (Europe). A fireplace or hearth is a structure made of brick, stone or metal designed to contain a fire."
+    },
+    {
+     "id": "diaithirfurnishings:coal_scuttle",
+     "name": "Boska guoil",
+     "age": "V",
+     "text": "Coal scuttle: earliest widespread use 1800s (Europe). A coal scuttle, sometimes spelled coalscuttle and also called a hod, \"coal bucket\", or \"coal pail\", is a bucket-like container for holding a small, intermediate supply of coal convenient to an indoor coal-fired stove or heater."
+    },
+    {
+     "id": "diaithirfurnishings:stove_cast_iron",
+     "name": "Stób iaruind",
+     "age": "V",
+     "text": "Cast iron stove: earliest widespread use 1700s (Europe). A stove or range is an appliance or construction that generates heat inside or atop the device using an energy source."
+    },
+    {
+     "id": "diaithirfurnishings:pot_belly_stove",
+     "name": "Stób boulgach",
+     "age": "V",
+     "text": "Pot-bellied stove: earliest widespread use 1800s (USA). A potbelly stove is a cast-iron, coal-burning or wood-burning stove that is cylindrical with a bulge in the middle."
+    },
+    {
+     "id": "diaithirfurnishings:kang",
+     "name": "Lieba thiesaiti",
+     "age": "II",
+     "text": "Kang bed-stove: earliest widespread use Neolithic (China). The kang (Chinese: 炕; pinyin: kàng; Manchu: ᠨᠠᡥᠠᠨ nahan, Kazakh: кән) is a traditional heated platform, 2 metres or more long, used for general living, working, entertaining and sleeping in the northern part of China, where the winter climate is cold."
+    },
+    {
+     "id": "diaithirfurnishings:brazier",
+     "name": "Brausúr guoil",
+     "age": "III",
+     "text": "Brazier: earliest widespread use Ancient (Worldwide). A brazier () is a container used to burn charcoal or other solid fuel for cooking, heating, and/or rituals."
+    },
+    {
+     "id": "diaithirfurnishings:kotatsu",
+     "name": "Táblau faei phloid",
+     "age": "IV",
+     "text": "Kotatsu: earliest widespread use 1400s (Japan). A kotatsu (Japanese: 炬燵 or こたつ) is a low, wooden table frame covered by a futon, or heavy blanket, upon which a table top sits."
+    },
+    {
+     "id": "diaithirfurnishings:bell",
+     "name": "Klog láimi",
+     "age": "III",
+     "text": "Hand bell: earliest widespread use c. 2000 BC (China). A handbell is a bell designed to be rung by hand."
+    },
+    {
+     "id": "diaithirfurnishings:gong",
+     "name": "Goung",
+     "age": "III",
+     "text": "Gong: earliest widespread use Bronze Age (East Asia). A gong is a percussion instrument originating from Southeast Asia, and used widely in Southeast Asian and East Asian musical traditions."
+    }
+   ]
+  },
+  {
+   "tier": "hunting",
+   "name": "Hunting",
+   "age": "I",
+   "text": "Everyday objects: hunting.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:snare",
+     "name": "Ribi",
+     "age": "I",
+     "text": "Snare trap: earliest widespread use Paleolithic (Worldwide). Animal trapping, or simply trapping or ginning, is the use of a device to remotely catch and often kill an animal."
+    }
+   ]
+  },
+  {
+   "tier": "leather",
+   "name": "Leather",
+   "age": "I",
+   "text": "Everyday objects: leather.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:awl",
+     "name": "Sub",
+     "age": "I",
+     "text": "Awl: earliest widespread use Paleolithic (Worldwide). Awl may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:tanning_beam",
+     "name": "Bíouma kraikend",
+     "age": "IV",
+     "text": "Fleshing beam: earliest widespread use Medieval (Europe). Tanning, or hide tanning, is the process of treating skins and hides of animals to produce leather."
+    },
+    {
+     "id": "diaithirfurnishings:cobblers_last",
+     "name": "Láisti brógau",
+     "age": "IV",
+     "text": "Cobbler's last: earliest widespread use Roman (Europe). A last is a mechanical form used by shoemakers and cordwainers in the manufacture and repair of shoes."
+    },
+    {
+     "id": "diaithirfurnishings:skinning_knife",
+     "name": "Skian chraikend",
+     "age": "I",
+     "text": "Skinning knife: earliest widespread use Paleolithic (Worldwide). The skinner knife or skinning knife is a professional tool for a skinner."
+    }
+   ]
+  },
+  {
+   "tier": "lighting",
+   "name": "Lighting",
+   "age": "I",
+   "text": "Everyday objects: lighting.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:oil_lamp",
+     "name": "Laumpa oula krèada",
+     "age": "I",
+     "text": "Clay oil lamp: earliest widespread use Paleolithic (Worldwide). An oil lamp is a lamp used to produce light continuously for a period of time using an oil-based fuel source."
+    },
+    {
+     "id": "diaithirfurnishings:candle",
+     "name": "Koindel",
+     "age": "III",
+     "text": "Tallow candle: earliest widespread use c. 200 BC (China). A candle is an ignitable wick embedded in wax, or another flammable solid substance such as tallow, that provides light, and in some cases, a fragrance."
+    },
+    {
+     "id": "diaithirfurnishings:rushlight",
+     "name": "Koindel luochra",
+     "age": "IV",
+     "text": "Rushlight: earliest widespread use Medieval (Europe). A rushlight is a type of candle or miniature torch formed by soaking the dried pith of the rush plant in fat or grease."
+    },
+    {
+     "id": "diaithirfurnishings:candlestick",
+     "name": "Koindleoir",
+     "age": "IV",
+     "text": "Candlestick: earliest widespread use Medieval (Europe). A candlestick (or candleholder) is a device used to hold a candle upright in place."
+    },
+    {
+     "id": "diaithirfurnishings:candelabra",
+     "name": "Koindlebra",
+     "age": "III",
+     "text": "Candelabra: earliest widespread use Ancient (Worldwide). A candelabrum (pl."
+    },
+    {
+     "id": "diaithirfurnishings:lantern",
+     "name": "Lóchrand adurk",
+     "age": "IV",
+     "text": "Horn lantern: earliest widespread use Medieval (Europe). A lantern is a source of lighting, often portable."
+    },
+    {
+     "id": "diaithirfurnishings:hurricane_lantern",
+     "name": "Lóchrand stoirmi",
+     "age": "VI",
+     "text": "Hurricane lantern: earliest widespread use 1860s (USA). A kerosene lamp (also known as a paraffin lamp in some countries) is a type of lighting device that uses kerosene as a fuel."
+    },
+    {
+     "id": "diaithirfurnishings:torch",
+     "name": "Tóirsi piki",
+     "age": "I",
+     "text": "Pitch torch: earliest widespread use Paleolithic (Worldwide). A torch is a stick with combustible material at one end which can be used as a light source or to set something on fire."
+    },
+    {
+     "id": "diaithirfurnishings:chimney_lamp",
+     "name": "Laumpa simléura",
+     "age": "V",
+     "text": "Argand lamp: earliest widespread use 1780 (Switzerland). The Argand lamp is a type of oil lamp invented in 1780 by Aimé Argand."
+    },
+    {
+     "id": "diaithirfurnishings:snuffer",
+     "name": "Múchtóier koindel",
+     "age": "IV",
+     "text": "Candle snuffer: earliest widespread use Medieval (Europe). A candle snuffer, candle extinguisher, or douter is an instrument used to extinguish burning candles, consisting of a small cone at the end of a handle."
+    }
+   ]
+  },
+  {
+   "tier": "masonry",
+   "name": "Masonry",
+   "age": "I",
+   "text": "Everyday objects: masonry.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:pitching_tool",
+     "name": "Piuk",
+     "age": "III",
+     "text": "Pitching tool: earliest widespread use Ancient (Worldwide). Stonemasonry, also called stonework or stonecraft, is the creation of buildings, structures, and sculpture using stone as the primary material."
+    },
+    {
+     "id": "diaithirfurnishings:brick_mold",
+     "name": "Múnlau bríkí",
+     "age": "III",
+     "text": "Brick mould: earliest widespread use c. 3000 BC (Mesopotamia). A brick is a type of building material used to build walls, pavements, and other elements in masonry construction."
+    },
+    {
+     "id": "diaithirfurnishings:lime_slaking_trough",
+     "name": "Umur aeil",
+     "age": "IV",
+     "text": "Mortar tub: earliest widespread use Roman (Europe). Mortar  is a workable paste which hardens to bind building blocks such as stones, bricks, and concrete masonry units, to fill and seal the irregular gaps between them, spread the weight of them evenly, and sometimes to add decorative colours or patterns to masonry walls."
+    }
+   ]
+  },
+  {
+   "tier": "measuring",
+   "name": "Measuring",
+   "age": "I",
+   "text": "Everyday objects: measuring.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:tape_measure",
+     "name": "Tomaseoir teibi",
+     "age": "V",
+     "text": "Tape measure: earliest widespread use 1829 (Britain). A tape measure or measuring tape is a long, flexible ruler used to measure length or distance."
+    },
+    {
+     "id": "diaithirfurnishings:ruler",
+     "name": "Rialóiri",
+     "age": "III",
+     "text": "Ruler: earliest widespread use c. 2500 BC (Indus). A ruler is an instrument used to make length measurements, whereby a length is read from a series of markings called \"rules\" along an edge of the device."
+    },
+    {
+     "id": "diaithirfurnishings:set_square",
+     "name": "Kiernóg tomais",
+     "age": "III",
+     "text": "Set square: earliest widespread use Ancient (Worldwide). A set square or triangle (American English) is an object used in engineering and technical drawing, with the aim of providing a straightedge at a right angle or other particular planar angle to a baseline."
+    },
+    {
+     "id": "diaithirfurnishings:try_square",
+     "name": "Kiernóg thriaili",
+     "age": "III",
+     "text": "Try square: earliest widespread use Ancient (Egypt). A square is a tool used for marking and referencing a 90° angle, though mitre squares are used for 45° angles."
+    },
+    {
+     "id": "diaithirfurnishings:plumb_bob",
+     "name": "Mieá skátánach",
+     "age": "III",
+     "text": "Plumb bob: earliest widespread use c. 2500 BC (Egypt). A plumb bob, plumb bob level, or plummet, is a weight, usually with a pointed tip on the bottom, suspended from a string and used as a vertical direction as a reference line, or plumb-line."
+    },
+    {
+     "id": "diaithirfurnishings:spirit_level",
+     "name": "Leibéul spiurad",
+     "age": "V",
+     "text": "Spirit level: earliest widespread use 1661 (France). A spirit level, bubble level, or simply a level, is an instrument designed to indicate whether a surface is horizontal (level) or vertical (plumb)."
+    },
+    {
+     "id": "diaithirfurnishings:chalk_line",
+     "name": "Líni chailk",
+     "age": "III",
+     "text": "Chalk line: earliest widespread use Ancient (Worldwide). A chalk line or chalk box is a tool for marking long, straight lines on relatively flat surfaces, much further than is practical by hand or with a straightedge."
+    },
+    {
+     "id": "diaithirfurnishings:compass_dividers",
+     "name": "Skoltuiri",
+     "age": "III",
+     "text": "Dividers: earliest widespread use Ancient (Worldwide). Calipers or callipers are an instrument used to measure the linear dimensions of an object or hole; namely, the length, width, thickness, diameter or depth of an object or hole."
+    },
+    {
+     "id": "diaithirfurnishings:sundial",
+     "name": "Gnoumón gréini",
+     "age": "III",
+     "text": "Sundial: earliest widespread use c. 1500 BC (Egypt). A sundial is a horological device that tells the time of day (referred to as civil time in modern usage) when direct sunlight shines by the apparent position of the Sun in the sky."
+    },
+    {
+     "id": "diaithirfurnishings:hourglass",
+     "name": "Uoiníocht ghainim",
+     "age": "IV",
+     "text": "Hourglass: earliest widespread use c. 1300 (Europe). An hourglass (or sandglass, sand timer, or sand clock) is a device used to measure the passage of time."
+    },
+    {
+     "id": "diaithirfurnishings:water_clock",
+     "name": "Klog oiski",
+     "age": "III",
+     "text": "Water clock: earliest widespread use c. 1500 BC (Egypt). Clepsydra may refer to:  Clepsydra, an alternative name for a water clock."
+    },
+    {
+     "id": "diaithirfurnishings:balance_scale",
+     "name": "Mieá kotrumaiti",
+     "age": "III",
+     "text": "Balance scale: earliest widespread use c. 2400 BC (Indus). A scale or balance is a device used to measure weight or mass."
+    },
+    {
+     "id": "diaithirfurnishings:steelyard",
+     "name": "Mieá lám",
+     "age": "IV",
+     "text": "Steelyard balance: earliest widespread use Roman (Rome). A steelyard balance, steelyard, or stilyard is a straight-beam balance with arms of unequal length."
+    },
+    {
+     "id": "diaithirfurnishings:spring_scale",
+     "name": "Mieá spriongachu",
+     "age": "V",
+     "text": "Spring scale: earliest widespread use 1770 (Britain). A spring scale, also known as a spring balance or newton meter, is a type of mechanical force gauge or weighing scale."
+    },
+    {
+     "id": "diaithirfurnishings:magnetic_compass",
+     "name": "Kompás meignéadach",
+     "age": "III",
+     "text": "Magnetic compass: earliest widespread use c. 200 BC (China). A compass is a device that shows the cardinal directions used for navigation and geographic orientation."
+    },
+    {
+     "id": "diaithirfurnishings:astrolabe",
+     "name": "Astrulab",
+     "age": "III",
+     "text": "Astrolabe: earliest widespread use c. 200 BC (Greece). An astrolabe (Ancient Greek: ἀστρολάβος, romanized: astrolábos, lit. 'star-taker'; Arabic: ٱلأَسْطُرلاب, romanized: al-Asṭurlāb; Persian: ستاره‌یاب, romanized: Setāreyāb) is an astronomical instrument dating to ancient times."
+    },
+    {
+     "id": "diaithirfurnishings:sextant",
+     "name": "Siestán",
+     "age": "V",
+     "text": "Sextant: earliest widespread use 1731 (Britain). A sextant is a doubly reflecting navigation instrument that measures the angular distance between two visible objects."
+    },
+    {
+     "id": "diaithirfurnishings:mercury_thermometer",
+     "name": "Teirmiméadur mierkuir",
+     "age": "V",
+     "text": "Mercury thermometer: earliest widespread use 1714 (Germany). A thermometer is a device that measures temperature (the hotness or coldness of an object)."
+    },
+    {
+     "id": "diaithirfurnishings:barometer",
+     "name": "Aerbrú-mhéadur",
+     "age": "V",
+     "text": "Barometer: earliest widespread use 1643 (Italy). A barometer is a scientific instrument that is used to measure air pressure."
+    },
+    {
+     "id": "diaithirfurnishings:slide_rule",
+     "name": "Riaili shliemnáin",
+     "age": "V",
+     "text": "Slide rule: earliest widespread use 1622 (England). A slide rule is a hand-operated mechanical calculator consisting of slidable rulers for conducting mathematical operations such as multiplication, division, exponents, roots, logarithms, and trigonometry."
+    }
+   ]
+  },
+  {
+   "tier": "metalwork",
+   "name": "Metalwork",
+   "age": "I",
+   "text": "Everyday objects: metalwork.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:punch",
+     "name": "Priuk lárnauch",
+     "age": "IV",
+     "text": "Centre punch: earliest widespread use Iron Age (Eurasia). A punch is a tool used to indent or create a hole through a hard surface."
+    },
+    {
+     "id": "diaithirfurnishings:hacksaw",
+     "name": "Sáb miutuil",
+     "age": "V",
+     "text": "Hacksaw: earliest widespread use 1800s (Europe). A hacksaw is a fine-toothed saw, originally and mainly made for cutting metal."
+    },
+    {
+     "id": "diaithirfurnishings:file",
+     "name": "Komad",
+     "age": "III",
+     "text": "File: earliest widespread use Bronze Age (Eurasia). A file is a tool used to remove fine amounts of material from a workpiece."
+    },
+    {
+     "id": "diaithirfurnishings:tongs",
+     "name": "Toungs gaba",
+     "age": "III",
+     "text": "Smith's tongs: earliest widespread use Bronze Age (Eurasia). Tongs are a type of tool used to grip and lift objects, often too hot to hold, instead of holding them with the hands."
+    },
+    {
+     "id": "diaithirfurnishings:anvil",
+     "name": "Indeoin",
+     "age": "III",
+     "text": "Anvil: earliest widespread use Bronze Age (Eurasia). An anvil is a metalworking tool consisting of a large block of metal (usually forged or cast steel), with a flattened top surface, upon which another object is struck (or \"worked\")."
+    },
+    {
+     "id": "diaithirfurnishings:swage",
+     "name": "Blok krutaiti",
+     "age": "IV",
+     "text": "Swage block: earliest widespread use Medieval (Europe). A swage block (or swager block) is a large, heavy block of cast iron or steel used in smithing, with variously sized holes in its face and usually with forms on the sides."
+    },
+    {
+     "id": "diaithirfurnishings:bellows",
+     "name": "Bolguiri",
+     "age": "III",
+     "text": "Bellows: earliest widespread use c. 1500 BC (Eurasia). Bellows are a device constructed to expel a controlled blast of air."
+    },
+    {
+     "id": "diaithirfurnishings:pliers",
+     "name": "Plieúrs",
+     "age": "III",
+     "text": "Pliers: earliest widespread use Bronze Age (Eurasia). Pliers are a hand tool used to hold objects firmly, possibly developed from tongs used to handle hot metal in Bronze Age Europe."
+    },
+    {
+     "id": "diaithirfurnishings:rivet",
+     "name": "Rievéad",
+     "age": "III",
+     "text": "Rivet: earliest widespread use Bronze Age (Worldwide). A rivet is a semi permanent mechanical fastener."
+    },
+    {
+     "id": "diaithirfurnishings:crucible",
+     "name": "Kroiskín",
+     "age": "III",
+     "text": "Crucible: earliest widespread use Ancient (Worldwide). A crucible is a container in which metals or other substances are melted or subjected to very high temperatures."
+    },
+    {
+     "id": "diaithirfurnishings:ingot_mold",
+     "name": "Múnlau ingini",
+     "age": "III",
+     "text": "Ingot mould: earliest widespread use Bronze Age (Worldwide). An ingot is a piece of relatively pure material, usually metal, that is cast into a shape suitable for further processing."
+    },
+    {
+     "id": "diaithirfurnishings:ladle_foundry",
+     "name": "Ladul kaisti",
+     "age": "III",
+     "text": "Casting ladle: earliest widespread use Bronze Age (Worldwide). A foundry is a factory that produces metal castings."
+    },
+    {
+     "id": "diaithirfurnishings:swage_hammer",
+     "name": "Kasúr dieng",
+     "age": "IV",
+     "text": "Cross-peen hammer: earliest widespread use Medieval (Europe). A ball-peen (also ball-pein) or machinist's hammer is a type of peening hammer used in metalworking."
+    },
+    {
+     "id": "diaithirfurnishings:trip_hammer",
+     "name": "Kasúr toisli",
+     "age": "IV",
+     "text": "Trip hammer: earliest widespread use Han (China). A trip hammer, also known as a tilt hammer or helve hammer, is a massive powered hammer, usually raised by a cam and then released to fall under the force of gravity."
+    },
+    {
+     "id": "diaithirfurnishings:wire_drawplate",
+     "name": "Plátau tarruingti",
+     "age": "IV",
+     "text": "Draw plate: earliest widespread use Medieval (Europe). Wire drawing is a metalworking process used to reduce the cross-section of a wire by pulling the wire through one or more dies."
+    },
+    {
+     "id": "diaithirfurnishings:jewelers_saw",
+     "name": "Sáb seodórad",
+     "age": "V",
+     "text": "Jeweller's saw: earliest widespread use 1800s (Europe). A piercing saw, also known as a jeweler's saw or jeweler's blade, is a type of saw commonly used in jewelry making on sheet metal."
+    }
+   ]
+  },
+  {
+   "tier": "mining",
+   "name": "Mining",
+   "age": "I",
+   "text": "Everyday objects: mining.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:pickaxe",
+     "name": "Píki",
+     "age": "II",
+     "text": "Pickaxe: earliest widespread use Neolithic (Worldwide). A pickaxe (American spelling: pickax), pick-axe, or pick is a generally T-shaped hand tool used for digging."
+    },
+    {
+     "id": "diaithirfurnishings:pick_hammer",
+     "name": "Kasúr karraigi",
+     "age": "V",
+     "text": "Rock hammer: earliest widespread use 1800s (Worldwide). A geologist's hammer, also known as rock hammer, rock pick, geological pick, or geo pick, is a specialized hammer used for splitting and breaking rocks."
+    },
+    {
+     "id": "diaithirfurnishings:miners_lamp",
+     "name": "Laumpa mianadórad",
+     "age": "V",
+     "text": "Davy lamp: earliest widespread use 1815 (Britain). The Davy lamp is a safety lamp used in flammable atmospheres, invented in 1815 by Sir Humphry Davy."
+    },
+    {
+     "id": "diaithirfurnishings:mining_hammer",
+     "name": "Trieskuir láimi",
+     "age": "V",
+     "text": "Hand-steel drill (jack hammer): earliest widespread use 1800s (Europe). A jackhammer (pneumatic drill, breaker, demolition hammer or road hammer in Commonwealth English) is a pneumatic or electro-mechanical tool that combines a hammer directly with a chisel."
+    }
+   ]
+  },
+  {
+   "tier": "pottery",
+   "name": "Pottery",
+   "age": "I",
+   "text": "Everyday objects: pottery.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:potters_wheel",
+     "name": "Rod potuiri",
+     "age": "II",
+     "text": "Potter's wheel: earliest widespread use c. 3500 BC (Mesopotamia). In pottery, a potter's wheel is a machine used in the shaping (known as throwing) of clay into round ceramic ware."
+    },
+    {
+     "id": "diaithirfurnishings:pottery_paddle",
+     "name": "Paidili potuiri",
+     "age": "II",
+     "text": "Paddle and anvil: earliest widespread use Neolithic (Worldwide). Pottery is the process and the products of forming vessels and other objects with clay and other raw materials, which are fired at high temperatures to give them a hard and durable form."
+    },
+    {
+     "id": "diaithirfurnishings:kiln",
+     "name": "Fournacha",
+     "age": "II",
+     "text": "Updraft kiln: earliest widespread use Neolithic (Worldwide). A kiln is a thermally insulated chamber, a type of oven, that produces temperatures sufficient to complete some process, such as hardening, drying, or chemical changes."
+    }
+   ]
+  },
+  {
+   "tier": "sharpening",
+   "name": "Sharpening",
+   "age": "I",
+   "text": "Everyday objects: sharpening.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:whetstone",
+     "name": "Kloch faebraiti",
+     "age": "II",
+     "text": "Whetstone: earliest widespread use Neolithic (Worldwide). Whetstone may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:grindstone",
+     "name": "Kloch ghrinditi",
+     "age": "IV",
+     "text": "Grindstone: earliest widespread use Roman (Worldwide). A grindstone, also known as grinding stone, is a sharpening stone used for grinding or sharpening ferrous tools, used since ancient times."
+    }
+   ]
+  },
+  {
+   "tier": "stone_tool",
+   "name": "Stone Tool",
+   "age": "I",
+   "text": "Everyday objects: stone tool.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:hand_axe",
+     "name": "Tuo láimi",
+     "age": "I",
+     "text": "Hand axe: earliest widespread use 1.7 Mya (Africa). A hand axe (or handaxe or  Acheulean hand axe) is a prehistoric stone tool with two faces that is the longest-used tool in human history."
+    },
+    {
+     "id": "diaithirfurnishings:scraper",
+     "name": "Skríobadán kraikend",
+     "age": "I",
+     "text": "Hide scraper: earliest widespread use Paleolithic (Worldwide). In prehistoric archaeology, scrapers are unifacial tools thought to have been used for hideworking and woodworking."
+    },
+    {
+     "id": "diaithirfurnishings:flint_blade",
+     "name": "Land chloichi",
+     "age": "I",
+     "text": "Flint blade: earliest widespread use Paleolithic (Worldwide). In archaeology, a lithic blade is a type of stone tool created during lithic reduction by striking a long narrow flake from a stone core."
+    },
+    {
+     "id": "diaithirfurnishings:stone_knife",
+     "name": "Skian chloichi",
+     "age": "I",
+     "text": "Stone knife: earliest widespread use Paleolithic (Worldwide). A knife (pl.: knives; from Old Norse knifr 'knife, dirk') is a tool or weapon with a cutting edge or blade, usually attached to a handle or hilt."
+    },
+    {
+     "id": "diaithirfurnishings:stone_hammerstone",
+     "name": "Kasúr kloichi",
+     "age": "I",
+     "text": "Hammerstone: earliest widespread use Paleolithic (Worldwide). In archaeology, a hammerstone is a hard cobble used to strike off lithic flakes from a lump of tool stone during the process of lithic reduction."
+    }
+   ]
+  },
+  {
+   "tier": "storage",
+   "name": "Storage",
+   "age": "I",
+   "text": "Everyday objects: storage.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:amphora",
+     "name": "Amfur",
+     "age": "II",
+     "text": "Amphora: earliest widespread use c. 5000 BC (Mediterranean). An amphora (; Ancient Greek: ἀμφορεύς, romanized: amphoreús; English pl. amphorae or amphoras) is a type of storage and transport jar with a pointed bottom and characteristic shape and size which fit tightly (and therefore safely) against each other in storage rooms and packages, tied together with"
+    },
+    {
+     "id": "diaithirfurnishings:pithos",
+     "name": "Pites",
+     "age": "III",
+     "text": "Pithos: earliest widespread use Bronze Age (Greece). Pithos (, Ancient Greek: πίθος, plural: pithoi πίθοι) is the Greek name of a large storage container."
+    },
+    {
+     "id": "diaithirfurnishings:kvevri",
+     "name": "Kvievri",
+     "age": "II",
+     "text": "Qvevri: earliest widespread use c. 6000 BC (Georgia). Kvevri or qvevri (Georgian: ქვევრი [ˈkʰvɛvɾi]) - also known as ch'uri  (Georgian: ჭური [ˈtʃʼuɾi]) in Western Georgia - are large earthenware vessels used for the fermentation, storage and aging of traditional Georgian wine."
+    },
+    {
+     "id": "diaithirfurnishings:storage_jar",
+     "name": "Kroguld stórálau kré",
+     "age": "II",
+     "text": "Clay storage jar: earliest widespread use Neolithic (Worldwide). A jar is a rigid, cylindrical, or slightly conical container, typically made of glass, ceramic, or plastic, with a wide mouth or opening that can be closed with a lid, screw cap, lug cap, cork stopper, roll-on cap, crimp-on cap, press-on cap, plastic shrink, heat-sealed lidding film, an inner seal,"
+    },
+    {
+     "id": "diaithirfurnishings:canopic_jar",
+     "name": "Krúiskín kanópach",
+     "age": "III",
+     "text": "Canopic jar: earliest widespread use c. 2600 BC (Egypt). Canopic jars are funerary vessels that were used by the ancient Egyptians to house embalmed organs that were removed during the mummification process."
+    },
+    {
+     "id": "diaithirfurnishings:bottle_glass",
+     "name": "Boidéul gloini",
+     "age": "IV",
+     "text": "Glass bottle: earliest widespread use Roman (Rome). A bottle is a narrow-necked container made of an impermeable material (such as glass, pottery, porcelain, plastic or aluminium) in various shapes and sizes that stores and transports liquids."
+    },
+    {
+     "id": "diaithirfurnishings:basket",
+     "name": "Kiseán",
+     "age": "I",
+     "text": "Woven basket: earliest widespread use Paleolithic (Worldwide). A basket is a container that is traditionally constructed from stiff fibers, and can be made from a range of materials, including wood splints, runners, and cane."
+    },
+    {
+     "id": "diaithirfurnishings:wicker_basket",
+     "name": "Kiseán sailech",
+     "age": "II",
+     "text": "Wicker basket: earliest widespread use Neolithic (Worldwide). Wicker is a method of weaving used to make products such as furniture and baskets, as well as a descriptor to classify such products."
+    },
+    {
+     "id": "diaithirfurnishings:creel",
+     "name": "Kliab",
+     "age": "IV",
+     "text": "Creel: earliest widespread use Medieval (Europe). Creel and Creels can refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:hamper",
+     "name": "Kiseán lóien",
+     "age": "IV",
+     "text": "Hamper: earliest widespread use Medieval (Europe). A hamper refers to one of several related basket-like items."
+    },
+    {
+     "id": "diaithirfurnishings:keg",
+     "name": "Baruildi bieg",
+     "age": "IV",
+     "text": "Keg: earliest widespread use Medieval (Europe). A keg is a small cask used for storing liquids."
+    },
+    {
+     "id": "diaithirfurnishings:crate",
+     "name": "Kliab admaid",
+     "age": "III",
+     "text": "Wooden crate: earliest widespread use Ancient (Worldwide). A crate is a large shipping container, often made of wood, typically used to transport or store large, heavy items."
+    },
+    {
+     "id": "diaithirfurnishings:chest",
+     "name": "Kófra admaid",
+     "age": "III",
+     "text": "Wooden chest: earliest widespread use Ancient (Worldwide). A chest (also called a coffer or kist) is a type of furniture typically having a rectangular structure with four walls and a removable or hinged lid, often rounded."
+    },
+    {
+     "id": "diaithirfurnishings:coffer",
+     "name": "Kófra",
+     "age": "IV",
+     "text": "Coffer: earliest widespread use Medieval (Europe). A coffer (or coffering) in  architecture is a series of sunken panels in the shape of a square, rectangle, or octagon in a ceiling, soffit or vault."
+    },
+    {
+     "id": "diaithirfurnishings:trunk",
+     "name": "Trunk taistili",
+     "age": "IV",
+     "text": "Travel trunk: earliest widespread use Medieval (Europe). A trunk, also known as a travel trunk, is a large cuboid container designed to hold clothes and other personal belongings."
+    },
+    {
+     "id": "diaithirfurnishings:satchel",
+     "name": "Málau skoili",
+     "age": "IV",
+     "text": "Satchel: earliest widespread use Roman (Europe). A satchel is a bag with a strap, traditionally used for carrying books."
+    },
+    {
+     "id": "diaithirfurnishings:saddlebag",
+     "name": "Málau kapuild",
+     "age": "III",
+     "text": "Saddlebag: earliest widespread use Ancient (Eurasia). Saddlebags are bags that are attached to saddles."
+    },
+    {
+     "id": "diaithirfurnishings:backpack",
+     "name": "Málau drouma",
+     "age": "II",
+     "text": "Backpack: earliest widespread use Neolithic (Worldwide). A backpack, also called knapsack, schoolbag, rucksack, pack, booksack, bookbag, haversack, packsack, or backsack, is in its simplest frameless form, a fabric sack carried on one’s back and secured with two straps that go over the shoulders, and is used to carry goods from one place to another."
+    },
+    {
+     "id": "diaithirfurnishings:purse",
+     "name": "Spaurán",
+     "age": "III",
+     "text": "Coin purse: earliest widespread use Ancient (Worldwide). A purse or pouch (from the Latin bursa, which in turn, is from the Greek βύρσα, býrsa, oxhide), sometimes called coin purse for clarity, is a small money bag or pouch, made for carrying coins."
+    },
+    {
+     "id": "diaithirfurnishings:tin_can",
+     "name": "Kanda stáien",
+     "age": "V",
+     "text": "Tin can: earliest widespread use 1810 (England). A steel can, tin can, tin (especially in British English, Australian English, Canadian English and South African English), or can is a  container made of thin metal, for distribution or storage of goods."
+    },
+    {
+     "id": "diaithirfurnishings:cookie_jar",
+     "name": "Krúiskín briuska",
+     "age": "VI",
+     "text": "Cookie jar: earliest widespread use 1900s (USA). Cookie jars are utilitarian or decorative ceramic or glass jars often found in American and Canadian kitchens."
+    },
+    {
+     "id": "diaithirfurnishings:spice_rack",
+     "name": "Sierrach spíousraí",
+     "age": "III",
+     "text": "Spice jar: earliest widespread use Ancient (Worldwide). In the culinary arts, a spice is a seed, fruit, root, bark, or other plant substance primarily used for flavouring or colouring food."
+    },
+    {
+     "id": "diaithirfurnishings:tea_caddy",
+     "name": "Boska taed",
+     "age": "V",
+     "text": "Tea caddy: earliest widespread use 1700s (Europe). A tea caddy is a box, jar, canister, or other receptacle used to store tea."
+    },
+    {
+     "id": "diaithirfurnishings:bread_box",
+     "name": "Boska auráin",
+     "age": "V",
+     "text": "Bread bin: earliest widespread use 1800s (Europe). A breadbox (chiefly American) or a breadbin (chiefly British) is a container for storing bread and other baked goods to keep them fresh."
+    },
+    {
+     "id": "diaithirfurnishings:ice_box",
+     "name": "Koisneoir oigir",
+     "age": "V",
+     "text": "Icebox: earliest widespread use 1800s (USA). An icebox (also called a cold closet) is a compact, non-mechanical refrigerator which was a common early-twentieth-century kitchen appliance before the development of safely powered refrigeration devices."
+    },
+    {
+     "id": "diaithirfurnishings:root_cellar_bin",
+     "name": "Boska fréamóg",
+     "age": "III",
+     "text": "Root bin: earliest widespread use Ancient (Worldwide). A root cellar (American and Canadian English), fruit cellar (Mid-Western American English) or earth cellar (British English) is a structure, usually underground or partially underground, used for storage of vegetables, fruits, nuts, or other foods."
+    }
+   ]
+  },
+  {
+   "tier": "tableware",
+   "name": "Tableware",
+   "age": "I",
+   "text": "Everyday objects: tableware.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:salt_cellar",
+     "name": "Sáisedán saluind",
+     "age": "III",
+     "text": "Salt cellar: earliest widespread use Ancient (Worldwide). A salt cellar (also called a salt, salt-box) is an article of tableware for holding and dispensing salt."
+    },
+    {
+     "id": "diaithirfurnishings:bowl",
+     "name": "Babla",
+     "age": "I",
+     "text": "Bowl: earliest widespread use Paleolithic (Worldwide). A bowl is a typically round dish or container generally used for preparing, serving, storing, or consuming food."
+    },
+    {
+     "id": "diaithirfurnishings:plate",
+     "name": "Plátau",
+     "age": "III",
+     "text": "Plate: earliest widespread use Ancient (Worldwide). A plate is a broad, mainly flat vessel on which food can be served."
+    },
+    {
+     "id": "diaithirfurnishings:trencher",
+     "name": "Plátau admaid",
+     "age": "IV",
+     "text": "Trencher: earliest widespread use Medieval (Europe). Trencher may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:platter",
+     "name": "Plátau friestuil",
+     "age": "III",
+     "text": "Serving platter: earliest widespread use Ancient (Worldwide). Platter may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:dinner_plate",
+     "name": "Plátau dindéir",
+     "age": "IV",
+     "text": "Porcelain plate: earliest widespread use Tang (China). Porcelain (), also called china, is a ceramic material made by heating raw materials, generally including kaolinite, in a kiln to temperatures between 1,200 and 1,400 °C (2,200 and 2,600 °F)."
+    },
+    {
+     "id": "diaithirfurnishings:saucer",
+     "name": "Fouchupán",
+     "age": "III",
+     "text": "Saucer: earliest widespread use Ancient (Worldwide). A saucer is a type of small dishware used to support a cup or a potted plant."
+    },
+    {
+     "id": "diaithirfurnishings:mug",
+     "name": "Muiga",
+     "age": "IV",
+     "text": "Mug: earliest widespread use Medieval (Europe). A mug is a type of cup, a drinking vessel usually intended for hot drinks such as coffee, hot chocolate, or tea."
+    },
+    {
+     "id": "diaithirfurnishings:tankard",
+     "name": "Kandán",
+     "age": "IV",
+     "text": "Tankard: earliest widespread use Medieval (Europe). A tankard is a form of drinkware consisting of a large, roughly cylindrical, drinking cup with a single handle."
+    },
+    {
+     "id": "diaithirfurnishings:goblet",
+     "name": "Goubléad",
+     "age": "III",
+     "text": "Goblet: earliest widespread use Ancient (Worldwide). A chalice (from Latin calix 'cup', taken from the Ancient Greek κύλιξ (kylix) 'cup') is a drinking cup raised on a stem with a foot or base."
+    },
+    {
+     "id": "diaithirfurnishings:wine_glass",
+     "name": "Gloini fíouna",
+     "age": "IV",
+     "text": "Wine glass: earliest widespread use Roman (Europe). A wine glass is a type of glass that is used for drinking or tasting wine."
+    },
+    {
+     "id": "diaithirfurnishings:tumbler",
+     "name": "Gloini ghierr",
+     "age": "IV",
+     "text": "Tumbler: earliest widespread use Roman (Europe). A tumbler is a flat-floored beverage container usually made of plastic, glass or stainless steel."
+    },
+    {
+     "id": "diaithirfurnishings:shot_glass",
+     "name": "Gloini dheochunda bhieg",
+     "age": "V",
+     "text": "Shot glass: earliest widespread use 1800s (Europe). A shot glass is a glass originally designed to hold or measure spirits or liquor, which is either imbibed straight from the glass (\"a shot\") or poured into a cocktail (\"a drink\")."
+    },
+    {
+     "id": "diaithirfurnishings:drinking_horn",
+     "name": "Adurk óiel",
+     "age": "II",
+     "text": "Drinking horn: earliest widespread use Neolithic (Eurasia). A drinking horn is the horn of a bovid or antler of an ungulate used as a drinking vessel."
+    },
+    {
+     "id": "diaithirfurnishings:tea_bowl",
+     "name": "Kupán taed",
+     "age": "IV",
+     "text": "Tea bowl: earliest widespread use Tang (China). Tea bowl may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:gaiwan",
+     "name": "Kupán taed sínéisech",
+     "age": "IV",
+     "text": "Gaiwan: earliest widespread use Ming (China). A gaiwan (simplified Chinese: 盖碗; traditional Chinese: 蓋碗; ) or zhong (盅) is a Chinese lidded bowl without a handle, used for the infusion of tea leaves and the consumption of tea."
+    },
+    {
+     "id": "diaithirfurnishings:sake_cup",
+     "name": "Kupán saki",
+     "age": "IV",
+     "text": "Sake cup: earliest widespread use Japan (Japan). A sake set (酒器, shuki) consists of the flask and cups used to serve sake."
+    },
+    {
+     "id": "diaithirfurnishings:pitcher",
+     "name": "Krúiskín",
+     "age": "III",
+     "text": "Pitcher: earliest widespread use Ancient (Worldwide). In American English, a pitcher is a container with a handle and a spout, used for storing and pouring liquids."
+    },
+    {
+     "id": "diaithirfurnishings:carafe",
+     "name": "Karafa",
+     "age": "IV",
+     "text": "Carafe: earliest widespread use Medieval (Europe). A carafe () is a glass container with a flared lip used for serving liquids, especially wine and coffee."
+    },
+    {
+     "id": "diaithirfurnishings:decanter",
+     "name": "Dikuntóir",
+     "age": "V",
+     "text": "Decanter: earliest widespread use 1700s (Europe). A decanter is a vessel that is used to hold the decantation of a liquid (such as wine) which may contain sediment."
+    },
+    {
+     "id": "diaithirfurnishings:wine_skin",
+     "name": "Saikín fíouna",
+     "age": "III",
+     "text": "Wineskin: earliest widespread use Ancient (Worldwide). A wine bottle is a bottle, generally a glass bottle, that is used for holding wine."
+    },
+    {
+     "id": "diaithirfurnishings:flask",
+     "name": "Flask taistili",
+     "age": "IV",
+     "text": "Pilgrim flask: earliest widespread use Medieval (Europe). Flask may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:gourd_canteen",
+     "name": "Boidéul kuocha",
+     "age": "II",
+     "text": "Gourd canteen: earliest widespread use Neolithic (Worldwide). Calabash (; Lagenaria siceraria) is a vine in the family Cucurbitaceae which is grown for its fruit."
+    },
+    {
+     "id": "diaithirfurnishings:canteen",
+     "name": "Kanda",
+     "age": "V",
+     "text": "Canteen: earliest widespread use 1800s (Worldwide). Canteen most often refers to:  Canteen (bottle), a water container Cafeteria, a type of food service location within an institution in which there is little or no waiting staff table service A complete set of cutlery comprising knives, forks, and spoons, usually sufficient for several place-settings"
+    },
+    {
+     "id": "diaithirfurnishings:thermos",
+     "name": "Flask insliti",
+     "age": "VI",
+     "text": "Vacuum flask: earliest widespread use 1892 (Britain). A vacuum flask (also known as a Dewar flask, Dewar bottle or thermos) is an insulating storage vessel that slows the rate at which its contents change in temperature."
+    },
+    {
+     "id": "diaithirfurnishings:punch_bowl",
+     "name": "Babla punuinsi",
+     "age": "V",
+     "text": "Punch bowl: earliest widespread use 1600s (India). A punch bowl or punchbowl is a bowl, often large and wide, for serving mixed drinks such as hippocras, punch or mulled wine, with a ladle."
+    },
+    {
+     "id": "diaithirfurnishings:tureen",
+     "name": "Túierín anraid",
+     "age": "V",
+     "text": "Soup tureen: earliest widespread use 1700s (France). A tureen is a serving dish for foods such as soups or stews, often shaped as a broad, deep, oval vessel with fixed handles and a low domed cover with a knob or handle."
+    },
+    {
+     "id": "diaithirfurnishings:gravy_boat",
+     "name": "Bádu grauvy",
+     "age": "V",
+     "text": "Gravy boat: earliest widespread use 1700s (France). A sauce boat, gravy boat, or saucière is a low jug or pitcher with a handle in which sauce or gravy is served."
+    },
+    {
+     "id": "diaithirfurnishings:butter_dish",
+     "name": "Miasu imi",
+     "age": "V",
+     "text": "Butter dish: earliest widespread use 1700s (Europe). A butter dish is defined as \"a usually round or rectangular dish often with a drainer and a cover for holding butter at table\"."
+    },
+    {
+     "id": "diaithirfurnishings:cake_stand",
+     "name": "Siestán káka",
+     "age": "V",
+     "text": "Cake stand: earliest widespread use 1800s (Europe). A cake stand is a type of tableware used for serving cake and other pastries, or a type of kitchen equipment used for holding cakes while they are decorated."
+    },
+    {
+     "id": "diaithirfurnishings:egg_cup",
+     "name": "Kupán oibi",
+     "age": "IV",
+     "text": "Egg cup: earliest widespread use Roman (Europe). An egg cup or eggcup, sometimes called an egg server, is an item of tableware used for serving and holding boiled eggs within their shell."
+    },
+    {
+     "id": "diaithirfurnishings:napkin",
+     "name": "Naipkín",
+     "age": "IV",
+     "text": "Napkin: earliest widespread use Roman (Rome). A napkin, serviette or face towelette is a square of cloth or paper tissue used at the table for wiping of the mouth and fingers while eating."
+    },
+    {
+     "id": "diaithirfurnishings:tablecloth",
+     "name": "Éaudach boirdi",
+     "age": "IV",
+     "text": "Tablecloth: earliest widespread use Medieval (Europe). A tablecloth is a cloth used to cover a table."
+    },
+    {
+     "id": "diaithirfurnishings:placemat",
+     "name": "Mauta boirdi",
+     "age": "V",
+     "text": "Placemat: earliest widespread use 1800s (Europe). A placemat or table mat is a covering or pad designating an individual place setting, unlike the larger tablecloth that covers the entire surface."
+    },
+    {
+     "id": "diaithirfurnishings:tray",
+     "name": "Tráidiri",
+     "age": "III",
+     "text": "Serving tray: earliest widespread use Ancient (Worldwide). A tray is a shallow platform designed for the carrying of items."
+    },
+    {
+     "id": "diaithirfurnishings:lazy_susan",
+     "name": "Táblau kasta",
+     "age": "V",
+     "text": "Lazy Susan: earliest widespread use 1700s (Europe). A lazy Susan is a turntable (rotating tray) placed on a table or countertop to aid in distributing food."
+    },
+    {
+     "id": "diaithirfurnishings:toothpick",
+     "name": "Biurán fiakla",
+     "age": "I",
+     "text": "Toothpick: earliest widespread use Paleolithic (Worldwide). A toothpick is a small thin stick of wood, plastic, bamboo, metal, bone or other substance with at least one and sometimes two pointed ends to insert between teeth to remove detritus, usually after a meal."
+    }
+   ]
+  },
+  {
+   "tier": "textile",
+   "name": "Textile",
+   "age": "I",
+   "text": "Everyday objects: textile.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:spinning_spindle",
+     "name": "Toild snáta",
+     "age": "II",
+     "text": "Drop spindle: earliest widespread use Neolithic (Worldwide). A spindle is a straight spike, usually made from wood, used for spinning, twisting fibers such as wool, flax, hemp, and cotton into yarn."
+    },
+    {
+     "id": "diaithirfurnishings:distaff",
+     "name": "Kuoildi snáta",
+     "age": "II",
+     "text": "Distaff: earliest widespread use Neolithic (Worldwide). A distaff (, , also called a rock) is a tool used in spinning."
+    },
+    {
+     "id": "diaithirfurnishings:spinning_wheel",
+     "name": "Rod snáta",
+     "age": "IV",
+     "text": "Spinning wheel: earliest widespread use c. 1000 (India). A spinning wheel is a device for spinning thread or yarn from fibres."
+    },
+    {
+     "id": "diaithirfurnishings:wool_comb",
+     "name": "Kíor olda",
+     "age": "IV",
+     "text": "Wool comb: earliest widespread use Iron Age (Europe). Combing is a method for preparing carded fibre for spinning."
+    },
+    {
+     "id": "diaithirfurnishings:carding_paddle",
+     "name": "Kardunda láimi",
+     "age": "IV",
+     "text": "Hand cards: earliest widespread use Medieval (Europe). In textile production, carding is a mechanical process that disentangles, cleans and intermixes fibres to produce a continuous web or sliver suitable for subsequent processing."
+    },
+    {
+     "id": "diaithirfurnishings:niddy_noddy",
+     "name": "Kuoildi faldaí",
+     "age": "IV",
+     "text": "Niddy-noddy: earliest widespread use Medieval (Europe). A niddy-noddy is a tool used to make skeins from yarn."
+    },
+    {
+     "id": "diaithirfurnishings:warp_weighted_loom",
+     "name": "Fíodmagg mieáchun-bhrietnaiti",
+     "age": "II",
+     "text": "Warp-weighted loom: earliest widespread use Neolithic (Europe). The warp-weighted loom is a simple and ancient form of loom in which the warp yarns hang freely from a bar, which is supported by upright poles which can be placed at a convenient slant against a wall."
+    },
+    {
+     "id": "diaithirfurnishings:backstrap_loom",
+     "name": "Fíodmagg drouma",
+     "age": "II",
+     "text": "Backstrap loom: earliest widespread use Neolithic (Americas). A loom is a device used to weave cloth and tapestry."
+    },
+    {
+     "id": "diaithirfurnishings:shuttle",
+     "name": "Fier fíodóirechta",
+     "age": "II",
+     "text": "Weaving shuttle: earliest widespread use Neolithic (Worldwide). A shuttle is a tool designed to neatly and compactly store a holder that carries the thread of the weft yarn while weaving with a loom."
+    },
+    {
+     "id": "diaithirfurnishings:flying_shuttle",
+     "name": "Fier eitilti",
+     "age": "V",
+     "text": "Flying shuttle: earliest widespread use 1733 (England). The flying shuttle or fly shuttle is a type of weaving shuttle."
+    },
+    {
+     "id": "diaithirfurnishings:spinning_jenny",
+     "name": "Sienaí snáta",
+     "age": "V",
+     "text": "Spinning jenny: earliest widespread use 1764 (England). The spinning jenny is a multi-spindle spinning frame, and was one of the key developments in the industrialisation of textile manufacturing during the early Industrial Revolution."
+    },
+    {
+     "id": "diaithirfurnishings:needle",
+     "name": "Snátaid",
+     "age": "I",
+     "text": "Sewing needle: earliest widespread use c. 50000 BC (Siberia). A sewing needle, used for hand-sewing, is a long slender tool with a pointed tip at one end and a hole (or eye) to hold the sewing thread."
+    },
+    {
+     "id": "diaithirfurnishings:bone_needle",
+     "name": "Snátaid chnáma",
+     "age": "I",
+     "text": "Bone needle: earliest widespread use c. 50000 BC (Worldwide). Needle or Needles may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:thimble",
+     "name": "Méarchosuint",
+     "age": "IV",
+     "text": "Thimble: earliest widespread use Roman (Rome). A thimble is a small pitted cup worn on the finger that protects it from being pricked or poked by a needle while sewing."
+    },
+    {
+     "id": "diaithirfurnishings:sewing_machine",
+     "name": "Indelra fueigti",
+     "age": "V",
+     "text": "Sewing machine: earliest widespread use 1790 (England). A sewing machine is a machine used to sew fabric and materials together with thread."
+    },
+    {
+     "id": "diaithirfurnishings:scissors",
+     "name": "Siusúr",
+     "age": "III",
+     "text": "Scissors: earliest widespread use c. 1500 BC (Egypt). Scissors or shears are hand-operated cutting tools that consist of a pair of pivoting blades whose sharpened edges slide firmly against and past each other when the handles (shank) on the opposite side of the pivot are squeezed shut."
+    },
+    {
+     "id": "diaithirfurnishings:knitting_needles",
+     "name": "Snátaidí figti",
+     "age": "IV",
+     "text": "Knitting needles: earliest widespread use c. 1000 (Egypt). A knitting needle or knitting pin is a tool in hand-knitting to produce knitted fabrics."
+    },
+    {
+     "id": "diaithirfurnishings:crochet_hook",
+     "name": "Krúka krochadóirechta",
+     "age": "V",
+     "text": "Crochet hook: earliest widespread use 1800s (Europe). A crochet hook is a tool used to create loops in thread or yarn and to interlock them into crochet stitches."
+    },
+    {
+     "id": "diaithirfurnishings:embroidery_hoop",
+     "name": "Frámau bróidnéirechta",
+     "age": "IV",
+     "text": "Embroidery hoop: earliest widespread use Medieval (Europe). Embroidery hoops and frames are tools used to keep fabric taut while working embroidery or other forms of needlework."
+    },
+    {
+     "id": "diaithirfurnishings:tatting_shuttle",
+     "name": "Indeld tautála",
+     "age": "V",
+     "text": "Tatting shuttle: earliest widespread use 1800s (Europe). Tatting is a technique for handcrafting a particularly durable lace from a series of knots and loops."
+    },
+    {
+     "id": "diaithirfurnishings:dye_vat",
+     "name": "Umur dataiti",
+     "age": "II",
+     "text": "Dye vat: earliest widespread use Neolithic (Worldwide). Dyeing is the application of dyes or pigments on textile materials such as fibers, yarns, and fabrics with the goal of achieving color with desired color fastness."
+    },
+    {
+     "id": "diaithirfurnishings:fulling_mallet",
+     "name": "Maidéul buolta",
+     "age": "IV",
+     "text": "Fulling stocks: earliest widespread use Medieval (Europe). Fulling, also known as tucking or walking (Scots: waukin, hence often spelt waulking in Scottish English), is a step in woollen clothmaking which involves the cleansing of woven cloth (particularly wool) to eliminate (lanolin) oils, dirt, and other impurities, and to make it shrink by friction and p"
+    }
+   ]
+  },
+  {
+   "tier": "utensil",
+   "name": "Utensil",
+   "age": "I",
+   "text": "Everyday objects: utensil.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:knife_kitchen",
+     "name": "Skian chistini",
+     "age": "I",
+     "text": "Kitchen knife: earliest widespread use Paleolithic (Worldwide). A kitchen knife is any knife that is intended to be used in food preparation, as opposed to a table knife used when eating, as part of a set of cutlery."
+    },
+    {
+     "id": "diaithirfurnishings:chef_knife",
+     "name": "Skian chókairi",
+     "age": "V",
+     "text": "Chef's knife: earliest widespread use 1800s (France). A chef's knife, also known as a cook's knife, is a medium to large sized generalist kitchen knife used in food preparation."
+    },
+    {
+     "id": "diaithirfurnishings:cleaver",
+     "name": "Tuo feolad",
+     "age": "IV",
+     "text": "Cleaver: earliest widespread use Han dynasty (China). A cleaver is a large knife that varies in its shape but usually resembles a rectangular-bladed tomahawk."
+    },
+    {
+     "id": "diaithirfurnishings:santoku",
+     "name": "Skian sauntoku",
+     "age": "VI",
+     "text": "Santoku: earliest widespread use 1940s (Japan). The santoku bōchō (Japanese: 三徳包丁; lit. '\"three virtues knife\" or \"three uses knife\"') or bunka bōchō (文化包丁) is a general-purpose kitchen knife originating in Japan."
+    },
+    {
+     "id": "diaithirfurnishings:bread_knife",
+     "name": "Skian auráin",
+     "age": "V",
+     "text": "Bread knife: earliest widespread use 1800s (Europe). Bread knives are used for cutting bread and are one of many kitchen knives used by cooks."
+    },
+    {
+     "id": "diaithirfurnishings:boning_knife",
+     "name": "Skian chnám",
+     "age": "IV",
+     "text": "Boning knife: earliest widespread use Medieval (Europe). A boning knife is a type of kitchen knife with a sharp point and a narrow blade."
+    },
+    {
+     "id": "diaithirfurnishings:fillet_knife",
+     "name": "Skian fhildéad",
+     "age": "V",
+     "text": "Fillet knife: earliest widespread use 1800s (Europe). A fillet knife (also called a filleting knife) is a kitchen knife used for filleting."
+    },
+    {
+     "id": "diaithirfurnishings:cheese_knife",
+     "name": "Skian káisi",
+     "age": "IV",
+     "text": "Cheese knife: earliest widespread use Medieval (Europe). A cheese knife is a type of kitchen knife specialized for the cutting of cheese."
+    },
+    {
+     "id": "diaithirfurnishings:butter_knife",
+     "name": "Skian imi",
+     "age": "V",
+     "text": "Butter knife: earliest widespread use 1700s (Europe). The butter knife is a table knife intended for serving butter and applying it to bread and crackers (\"spreading\")."
+    },
+    {
+     "id": "diaithirfurnishings:table_knife",
+     "name": "Skian bhoirdi",
+     "age": "IV",
+     "text": "Table knife: earliest widespread use Medieval (Europe). A table knife is an item of cutlery with a single cutting edge, and usually a blunt end – part of a table setting."
+    },
+    {
+     "id": "diaithirfurnishings:ulu",
+     "name": "Skian lietchiurklach",
+     "age": "III",
+     "text": "Ulu: earliest widespread use c. 2500 BC (Arctic). An ulu (Inuktitut: ᐅᓗ; plural: uluit; sometimes referred to as 'woman's knife') is an all-purpose knife traditionally used by Inuit, Iñupiat, Yupik, and Aleut women."
+    },
+    {
+     "id": "diaithirfurnishings:mezzaluna",
+     "name": "Skian lietgelaí",
+     "age": "IV",
+     "text": "Mezzaluna: earliest widespread use Medieval (Italy). A mezzaluna ( MET-sə-LOO-nə, Italian: [ˌmɛddzaˈluːna]) is a knife consisting of one or more curved blades with a handle on each end, which is rocked back and forth chopping the ingredients below with each movement."
+    },
+    {
+     "id": "diaithirfurnishings:peeler",
+     "name": "Skoránaí glausraí",
+     "age": "VI",
+     "text": "Vegetable peeler: earliest widespread use 1947 (Switzerland). A peeler (vegetable scraper) is a kitchen tool,  a distinct type of kitchen knife, consisting of a metal blade with a slot with a sharp edge attached to a handle, used to remove the outer layer (the \"skin\" or \"peel\") of some vegetables such as potatoes, broccoli stalks, and carrots, and fruits such"
+    },
+    {
+     "id": "diaithirfurnishings:grater",
+     "name": "Grátóier",
+     "age": "V",
+     "text": "Box grater: earliest widespread use 1540s (Italy). A grater, also referred to as a shredder, is a kitchen utensil used to grate or shred foods into fine pieces."
+    },
+    {
+     "id": "diaithirfurnishings:microplane",
+     "name": "Grátóier gléinech",
+     "age": "VI",
+     "text": "Rasp grater: earliest widespread use 1990s (USA). Microplane is a registered trademark of Grace Manufacturing Inc., a company that makes photo etched steel tools (surform tools) for grating, grinding and sanding."
+    },
+    {
+     "id": "diaithirfurnishings:mandoline",
+     "name": "Sliemnóir manduilín",
+     "age": "V",
+     "text": "Mandoline slicer: earliest widespread use 1800s (France). A mandoline (US) or mandolin (British) , is a culinary utensil used for slicing and for cutting juliennes; with suitable attachments, it can make crinkle-cuts."
+    },
+    {
+     "id": "diaithirfurnishings:fork_table",
+     "name": "Fork boirdi",
+     "age": "IV",
+     "text": "Table fork: earliest widespread use c. 1000 (Byzantium). In cutlery or kitchenware, a fork (from Latin: furca 'pitchfork') is a utensil, now usually made of metal, whose long handle terminates in a head that branches into several narrow and often slightly curved tines with which one can spear foods either to hold them to cut with a knife or to lift them t"
+    },
+    {
+     "id": "diaithirfurnishings:spoon",
+     "name": "Spúnógu",
+     "age": "I",
+     "text": "Spoon: earliest widespread use Paleolithic (Worldwide). A spoon (UK: , US:  SPOON) is a utensil consisting of a shallow bowl (also known as a head), oval or round, at the end of a handle."
+    },
+    {
+     "id": "diaithirfurnishings:soup_spoon",
+     "name": "Spúnógu anraid",
+     "age": "IV",
+     "text": "Soup spoon: earliest widespread use Medieval (Europe). A soup spoon is a type of spoon with a large or rounded bowl, used for consuming soup."
+    },
+    {
+     "id": "diaithirfurnishings:teaspoon",
+     "name": "Spúnógu taed",
+     "age": "V",
+     "text": "Teaspoon: earliest widespread use 1600s (Europe). A teaspoon (tsp.) is a small spoon that can be used to stir a cup of tea or coffee, or as a tool for measuring volume."
+    },
+    {
+     "id": "diaithirfurnishings:wooden_spoon",
+     "name": "Spúnógu admaid",
+     "age": "II",
+     "text": "Wooden spoon: earliest widespread use Neolithic (Worldwide). A wooden spoon is a utensil commonly used in food preparation."
+    },
+    {
+     "id": "diaithirfurnishings:spork",
+     "name": "Spúnork",
+     "age": "VI",
+     "text": "Spork: earliest widespread use 1900s (Worldwide). A spork is a form of cutlery and combination utensil taking the form of a spoon-like scoop with two to four fork-like tines."
+    },
+    {
+     "id": "diaithirfurnishings:chopsticks",
+     "name": "Slauta itecháin",
+     "age": "III",
+     "text": "Chopsticks: earliest widespread use c. 1200 BC (China). Chopsticks are shaped pairs of equal-length sticks that have been used as kitchen and eating utensils in most countries of the Sinosphere for over three millennia."
+    },
+    {
+     "id": "diaithirfurnishings:spatula",
+     "name": "Spautúla",
+     "age": "IV",
+     "text": "Spatula: earliest widespread use Roman (Worldwide). A spatula is a broad, flat, flexible blade used to mix, spread and lift material, including foods, drugs, plaster and paints."
+    },
+    {
+     "id": "diaithirfurnishings:whisk",
+     "name": "Fuoskuilteoir",
+     "age": "IV",
+     "text": "Whisk: earliest widespread use Medieval (Europe). A whisk is a cooking utensil which can be used to blend ingredients smooth or to incorporate air into a mixture, in a process known as whisking or whipping."
+    },
+    {
+     "id": "diaithirfurnishings:masher",
+     "name": "Brúieteoir prátauí",
+     "age": "V",
+     "text": "Potato masher: earliest widespread use 1800s (Europe). A potato masher, tater masher, bean masher, pea masher, masher, or crusher is a food preparation utensil used to crush soft food for such dishes as mashed potatoes, apple sauce, or refried beans."
+    },
+    {
+     "id": "diaithirfurnishings:ricer",
+     "name": "Brúieteoir prátauí",
+     "age": "V",
+     "text": "Potato ricer: earliest widespread use 1800s (Europe). A potato ricer (also called a ricer) is a kitchen implement used to process potatoes or other food by forcing it through a sheet of small holes, which are typically about the diameter of a grain of rice."
+    },
+    {
+     "id": "diaithirfurnishings:garlic_press",
+     "name": "Brúieteoir gairleoigi",
+     "age": "V",
+     "text": "Garlic press: earliest widespread use 1800s (Europe). A garlic press, also known as a garlic crusher, is a kitchen utensil to crush garlic cloves efficiently by forcing them through a grid of small holes, usually with some type of piston."
+    },
+    {
+     "id": "diaithirfurnishings:citrus_juicer",
+     "name": "Riemadóir kitrus",
+     "age": "V",
+     "text": "Citrus reamer: earliest widespread use 1800s (Europe). A juicer, also known as a juice extractor, is a tool used to extract juice from fruits, herbs, leafy greens and other types of vegetables in a process called juicing."
+    },
+    {
+     "id": "diaithirfurnishings:nutcracker",
+     "name": "Kranduiri",
+     "age": "IV",
+     "text": "Nutcracker: earliest widespread use Roman (Europe). A nutcracker is a tool designed to open nuts by cracking their shells."
+    },
+    {
+     "id": "diaithirfurnishings:meat_mallet",
+     "name": "Kasúr feolad",
+     "age": "IV",
+     "text": "Meat tenderizer: earliest widespread use Roman (Europe). A meat tenderizer or meat pounder is a tool for mechanically tenderizing and flattening slabs of meat."
+    },
+    {
+     "id": "diaithirfurnishings:meat_grinder",
+     "name": "Meisín miondaiti feolad",
+     "age": "V",
+     "text": "Meat grinder: earliest widespread use 1845 (Germany). A  meat grinder (also called a \"meat mincer\" in the UK) is a kitchen appliance for mincing (UK) or grinding (US) meat, fish, vegetables and other foods, raw or cooked."
+    },
+    {
+     "id": "diaithirfurnishings:sausage_stuffer",
+     "name": "Líounadóir puitóg",
+     "age": "IV",
+     "text": "Sausage stuffer: earliest widespread use Roman (Europe). A sausage is a type of meat product usually made from ground meat—often pork, beef, or poultry—along with salt, spices and other flavourings."
+    },
+    {
+     "id": "diaithirfurnishings:can_opener",
+     "name": "Oskuilteoir kandaí",
+     "age": "VI",
+     "text": "Can opener: earliest widespread use 1855 (England). A can opener (North American and Australian English) or tin opener (British English) is a mechanical device used to open metal tin cans."
+    },
+    {
+     "id": "diaithirfurnishings:bottle_opener",
+     "name": "Oskuilteoir boidéul",
+     "age": "VI",
+     "text": "Bottle opener: earliest widespread use 1892 (USA). A bottle opener or bottle cap opener is a device for removing metal bottle caps from glass bottles."
+    },
+    {
+     "id": "diaithirfurnishings:corkscrew",
+     "name": "Skriú kork",
+     "age": "V",
+     "text": "Corkscrew: earliest widespread use 1630s (England). A corkscrew is a tool for drawing corks from wine bottles and other household bottles that may be sealed with corks."
+    },
+    {
+     "id": "diaithirfurnishings:egg_beater",
+     "name": "Foindedán oibecha",
+     "age": "VI",
+     "text": "Hand egg beater: earliest widespread use 1856 (USA). Egg-beater, egg beater, or eggbeater may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:hand_mixer",
+     "name": "Miesktóir láimi",
+     "age": "V",
+     "text": "Hand-crank mixer: earliest widespread use 1800s (USA). A mixer (also called a hand mixer or stand mixer depending on the type) is a kitchen device that uses a gear-driven mechanism to rotate a set of \"beaters\" in a bowl containing the food or liquids to be prepared by mixing them."
+    },
+    {
+     "id": "diaithirfurnishings:blender",
+     "name": "Miesktóir",
+     "age": "VI",
+     "text": "Blender: earliest widespread use 1922 (USA). Blender may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:food_mill",
+     "name": "Moilend biad",
+     "age": "V",
+     "text": "Food mill: earliest widespread use 1800s (Europe). A food mill (also called passatutto, purée sieve, moulinette, mouli légumes, passe-vite, or triturator) is a food preparation utensil for mashing and sieving soft foods invented in Brussels in 1928 by Victor Simon."
+    },
+    {
+     "id": "diaithirfurnishings:salad_spinner",
+     "name": "Kasuiri sailéidi",
+     "age": "VI",
+     "text": "Salad spinner: earliest widespread use 1970s (France). A salad spinner, also known as a salad tosser, is a kitchen tool used to wash and remove excess water from salad greens."
+    },
+    {
+     "id": "diaithirfurnishings:tea_infuser",
+     "name": "Tíousán taed",
+     "age": "V",
+     "text": "Tea infuser: earliest widespread use 1800s (Europe). A tea infuser is a device in which loose, dried tea leaves are placed for steeping or brewing, in a mug or a teapot full of hot water."
+    },
+    {
+     "id": "diaithirfurnishings:tea_strainer",
+     "name": "Skaguiri taed",
+     "age": "V",
+     "text": "Tea strainer: earliest widespread use 1700s (Europe). A tea strainer is a type of strainer that is placed over or in a teacup to catch loose tea leaves."
+    },
+    {
+     "id": "diaithirfurnishings:coffee_grinder",
+     "name": "Meilteoiri kaifi",
+     "age": "V",
+     "text": "Hand coffee grinder: earliest widespread use 1500s (Ottoman). A burr mill, or burr grinder, is a mill used to grind hard, small food products between two revolving abrasive surfaces separated by a distance usually set by the user."
+    },
+    {
+     "id": "diaithirfurnishings:sugar_nippers",
+     "name": "Griemuiri siúkra",
+     "age": "V",
+     "text": "Sugar nippers: earliest widespread use 1700s (Europe). Sugar nips are a large pair of pincers with sharp blades, designed to cut sugar from a block."
+    },
+    {
+     "id": "diaithirfurnishings:measuring_cup",
+     "name": "Kupán tomais",
+     "age": "VI",
+     "text": "Measuring cup: earliest widespread use 1896 (USA). A measuring cup is a kitchen utensil used primarily to measure the volume of liquid or bulk solid cooking ingredients such as flour and sugar, especially for volumes from about 50 mL (approx."
+    },
+    {
+     "id": "diaithirfurnishings:measuring_spoon",
+     "name": "Spúnógu thomais",
+     "age": "V",
+     "text": "Measuring spoons: earliest widespread use 1800s (Europe). A measuring spoon is a spoon  used to measure an amount of an ingredient, either liquid or dry, when cooking."
+    },
+    {
+     "id": "diaithirfurnishings:cutting_board",
+     "name": "Bourd gierrta",
+     "age": "III",
+     "text": "Cutting board: earliest widespread use Ancient (Worldwide). A cutting board (or chopping board) is a durable flat surface on which to place material for cutting."
+    },
+    {
+     "id": "diaithirfurnishings:butcher_block",
+     "name": "Bourd búistéura",
+     "age": "IV",
+     "text": "Butcher block: earliest widespread use Medieval (Europe). A butcher block or butcher's block is a heavy-duty chopping block, typically laminated or hardwood."
+    }
+   ]
+  },
+  {
+   "tier": "woodwork",
+   "name": "Woodwork",
+   "age": "I",
+   "text": "Everyday objects: woodwork.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:adze",
+     "name": "Adurk",
+     "age": "II",
+     "text": "Adze: earliest widespread use c. 8000 BC (Worldwide). An adze () or adz is an ancient and versatile cutting tool similar to an axe but with the cutting edge perpendicular to the handle rather than parallel."
+    },
+    {
+     "id": "diaithirfurnishings:felling_axe",
+     "name": "Tuo chraind",
+     "age": "II",
+     "text": "Felling axe: earliest widespread use c. 8000 BC (Eurasia). An axe (; sometimes spelled ax in American English; see spelling differences) is an implement that has been used for thousands of years to shape, split, and cut wood, to harvest timber, and as a weapon."
+    },
+    {
+     "id": "diaithirfurnishings:broad_axe",
+     "name": "Tuo lietun",
+     "age": "III",
+     "text": "Broad axe: earliest widespread use c. 1000 BC (Europe). A broadaxe is a large broad-headed axe."
+    },
+    {
+     "id": "diaithirfurnishings:hatchet",
+     "name": "Tuo bhieg",
+     "age": "II",
+     "text": "Hatchet: earliest widespread use Neolithic (Worldwide). A hatchet (from the Old French hachete, a diminutive form of hache, 'axe' of Germanic origin) is a single-handed striking tool with a sharp blade on one side used to cut and split wood, and a hammerhead on the other side."
+    },
+    {
+     "id": "diaithirfurnishings:maul",
+     "name": "Maidm",
+     "age": "III",
+     "text": "Maul: earliest widespread use Bronze Age (Europe). A maul may refer to any number of large hammers, including:"
+    },
+    {
+     "id": "diaithirfurnishings:wedge",
+     "name": "Fliesk",
+     "age": "II",
+     "text": "Splitting wedge: earliest widespread use Neolithic (Worldwide). A wedge is a triangular shaped tool, a portable inclined plane, and one of the six simple machines."
+    },
+    {
+     "id": "diaithirfurnishings:chisel",
+     "name": "Suáilki",
+     "age": "II",
+     "text": "Chisel: earliest widespread use c. 6000 BC (Worldwide). A chisel is a hand tool with a characteristic wedge-shaped cutting edge on the end of its blade."
+    },
+    {
+     "id": "diaithirfurnishings:gouge",
+     "name": "Bierrad kuosach",
+     "age": "III",
+     "text": "Gouge: earliest widespread use Bronze Age (Eurasia). Gouge may refer to:"
+    },
+    {
+     "id": "diaithirfurnishings:bradawl",
+     "name": "Sub admaid",
+     "age": "IV",
+     "text": "Bradawl: earliest widespread use Medieval (Europe). A bradawl is a woodworking hand tool with a blade similar to that of a straight screwdriver and a handle typically made from wood or plastic."
+    },
+    {
+     "id": "diaithirfurnishings:hand_saw",
+     "name": "Sáb láimi",
+     "age": "III",
+     "text": "Handsaw: earliest widespread use c. 2000 BC (Egypt). In woodworking and carpentry, hand saws, also known as \"panel saws\", are used to cut pieces of wood into different shapes."
+    },
+    {
+     "id": "diaithirfurnishings:frame_saw",
+     "name": "Sáb frámau",
+     "age": "IV",
+     "text": "Frame saw: earliest widespread use Roman (Rome). A frame saw or sash saw is a type of saw which consists of a relatively narrow and flexible blade held under tension within a (generally wooden) rectangular frame (also called a sash or gate)."
+    },
+    {
+     "id": "diaithirfurnishings:bow_saw",
+     "name": "Sáb boga",
+     "age": "IV",
+     "text": "Bow saw: earliest widespread use Medieval (Europe). A bucksaw is a metal-framed crosscut saw in the shape of a bow with a coarse wide blade generally used with a sawbuck to cut logs or firewood to length (bucking)."
+    },
+    {
+     "id": "diaithirfurnishings:two_man_saw",
+     "name": "Sáb dháu fhier",
+     "age": "IV",
+     "text": "Two-man crosscut saw: earliest widespread use Roman (Europe). A crosscut saw (thwart saw) is any saw designed for cutting wood perpendicular to (across) the wood grain."
+    },
+    {
+     "id": "diaithirfurnishings:coping_saw",
+     "name": "Sáb kuortaiti",
+     "age": "V",
+     "text": "Coping saw: earliest widespread use 1800s (Europe). A coping saw is a type of bow saw used to cut intricate external shapes and interior cut-outs in woodworking or carpentry."
+    },
+    {
+     "id": "diaithirfurnishings:tenon_saw",
+     "name": "Sáb tienóin",
+     "age": "IV",
+     "text": "Tenon saw: earliest widespread use Medieval (Europe). A backsaw is any hand saw which has a stiffening rib on the edge opposite the cutting edge, enabling better control and more precise cutting than with other types of saws."
+    },
+    {
+     "id": "diaithirfurnishings:plane",
+     "name": "Heibil admaid",
+     "age": "IV",
+     "text": "Wooden jack plane: earliest widespread use Roman (Rome). A hand plane is a tool for shaping wood using muscle power to force the cutting iron (blade) over the wood surface."
+    },
+    {
+     "id": "diaithirfurnishings:spokeshave",
+     "name": "Spóksáb",
+     "age": "IV",
+     "text": "Spokeshave: earliest widespread use Medieval (Europe). A spokeshave is a hand tool used to shape and smooth woods in woodworking jobs such as making cart wheel spokes, chair legs, paddles, bows, and arrows."
+    },
+    {
+     "id": "diaithirfurnishings:drawknife",
+     "name": "Skian dháu láim",
+     "age": "IV",
+     "text": "Drawknife: earliest widespread use Medieval (Europe). A drawknife (drawing knife, draw shave, shaving knife) is a traditional woodworking hand tool used to shape wood by removing shavings."
+    },
+    {
+     "id": "diaithirfurnishings:froe",
+     "name": "Skoilteán",
+     "age": "IV",
+     "text": "Froe: earliest widespread use Medieval (Europe). A froe (or frow), shake axe or paling knife is a tool for splitting wood by cleaving it along the grain."
+    },
+    {
+     "id": "diaithirfurnishings:bow_drill",
+     "name": "Droil bhoga",
+     "age": "I",
+     "text": "Bow drill: earliest widespread use c. 10000 BC (Worldwide). A bow drill is a simple hand-operated type of tool, consisting of a rod (the spindle or drill shaft) that is set in rapid rotary motion by means of a cord wrapped around it, kept taut by a bow which is pushed back and forth with one hand."
+    },
+    {
+     "id": "diaithirfurnishings:brace_bit",
+     "name": "Biurán droileála",
+     "age": "IV",
+     "text": "Brace and bit: earliest widespread use Medieval (Europe). A brace is a hand tool used with a bit (drill bit or auger) to drill holes, usually in wood."
+    },
+    {
+     "id": "diaithirfurnishings:auger",
+     "name": "Taratán",
+     "age": "IV",
+     "text": "Auger: earliest widespread use Roman (Europe). An auger is a device to drill wood or other materials, consisting of a rotating metal shaft with a blade at the end that scrapes or cuts the wood."
+    },
+    {
+     "id": "diaithirfurnishings:gimlet",
+     "name": "Taratán bieg",
+     "age": "IV",
+     "text": "Gimlet: earliest widespread use Medieval (Europe). A gimlet is a hand tool for drilling small holes, mainly in wood, without splitting."
+    },
+    {
+     "id": "diaithirfurnishings:hand_drill",
+     "name": "Droil láimi",
+     "age": "V",
+     "text": "Hand drill: earliest widespread use 1800s (Europe). A hand drill is the simplest primitive method to produce rapid rotary motion of a rod."
+    },
+    {
+     "id": "diaithirfurnishings:rasp",
+     "name": "Ráspau",
+     "age": "IV",
+     "text": "Rasp: earliest widespread use Medieval (Europe). A rasp is a coarse form of file used for shaping wood, metal, or other material."
+    },
+    {
+     "id": "diaithirfurnishings:glue_pot",
+     "name": "Pouta glieú",
+     "age": "III",
+     "text": "Glue pot: earliest widespread use Ancient (Egypt). Animal glue is an adhesive that is created by prolonged boiling of animal connective tissue in a process called rendering."
+    },
+    {
+     "id": "diaithirfurnishings:clamp",
+     "name": "Klampa",
+     "age": "IV",
+     "text": "Clamp: earliest widespread use Roman (Europe). A clamp is a fastening device used to hold or secure objects tightly together to prevent movement or separation through the application of inward pressure."
+    },
+    {
+     "id": "diaithirfurnishings:sawhorse",
+     "name": "Kapuld sábála",
+     "age": "III",
+     "text": "Sawhorse: earliest widespread use Ancient (Worldwide). In woodworking, a saw-horse or sawhorse (saw-buck, trestle, buck) is a trestle structure used to support a board or plank for sawing."
+    },
+    {
+     "id": "diaithirfurnishings:workbench",
+     "name": "Binsi oibri",
+     "age": "III",
+     "text": "Workbench: earliest widespread use Ancient (Worldwide). A workbench is a sturdy table at which manual work is done."
+    },
+    {
+     "id": "diaithirfurnishings:lathe",
+     "name": "Meisín kasta admaid",
+     "age": "III",
+     "text": "Pole lathe: earliest widespread use c. 1300 BC (Egypt). A lathe () is a machine tool that rotates a workpiece about an axis of rotation to perform various operations such as cutting, sanding, knurling, drilling, deformation, facing, threading and turning, with tools that are applied to the workpiece to create an object with symmetry about that axis."
+    },
+    {
+     "id": "diaithirfurnishings:turning_tool",
+     "name": "Skian chausta admaid",
+     "age": "III",
+     "text": "Wood turning gouge: earliest widespread use Ancient (Worldwide). Woodturning is the craft of using a wood lathe with hand-held tools to cut a shape that is symmetrical around the axis of rotation."
+    },
+    {
+     "id": "diaithirfurnishings:cooper_adze",
+     "name": "Tuo kóipéura",
+     "age": "IV",
+     "text": "Cooper's adze: earliest widespread use Roman (Europe). A cooper is a craftsman who produces wooden casks, barrels, vats, buckets, tubs, troughs, and other similar containers from timber staves that were usually heated or steamed to make them pliable."
+    },
+    {
+     "id": "diaithirfurnishings:barrel_hoop",
+     "name": "Tiumánaí fáindi bairildi",
+     "age": "IV",
+     "text": "Barrel hoop driver: earliest widespread use Roman (Europe). A barrel or cask is a hollow cylindrical container with a bulging center, longer than it is wide."
+    },
+    {
+     "id": "diaithirfurnishings:wheelwright_wheel",
+     "name": "Rod spókach",
+     "age": "III",
+     "text": "Spoked wheel: earliest widespread use c. 2000 BC (Eurasia). A wheel is a rotating component (typically circular in shape) intended to turn on an axle bearing."
+    }
+   ]
+  },
+  {
+   "tier": "writing",
+   "name": "Writing",
+   "age": "I",
+   "text": "Everyday objects: writing.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:quill",
+     "name": "Piend kleiti",
+     "age": "IV",
+     "text": "Quill pen: earliest widespread use c. 600 (Europe). A quill is a writing tool made from a moulted flight feather of a large bird."
+    },
+    {
+     "id": "diaithirfurnishings:reed_pen",
+     "name": "Piend giulkaí",
+     "age": "III",
+     "text": "Reed pen: earliest widespread use c. 3000 BC (Egypt). A reed pen (Ancient Greek: κάλαμοι kalamoi; singular κάλαμος kalamos) or bamboo pen (traditional Chinese: 竹筆; simplified Chinese: 竹笔; pinyin: zhú bǐ) is a writing implement made by cutting and shaping a single reed straw or length of bamboo."
+    },
+    {
+     "id": "diaithirfurnishings:stylus",
+     "name": "Stílies",
+     "age": "III",
+     "text": "Stylus: earliest widespread use c. 3000 BC (Mesopotamia). A stylus is a writing implement or tool for scribing or marking into softer materials."
+    },
+    {
+     "id": "diaithirfurnishings:wax_tablet",
+     "name": "Táiebléad kéir",
+     "age": "III",
+     "text": "Wax tablet: earliest widespread use Ancient (Rome). A wax tablet is a tablet made of wood and covered with a layer of wax, often linked loosely to a cover tablet, as a \"double-leaved\"  diptych."
+    },
+    {
+     "id": "diaithirfurnishings:brush_pen",
+     "name": "Skuob chailgrafachu",
+     "age": "III",
+     "text": "Calligraphy brush: earliest widespread use c. 300 BC (China). Chinese calligraphy is the writing of Chinese characters as an art form, combining visual art and interpretation of their literary meaning."
+    },
+    {
+     "id": "diaithirfurnishings:inkwell",
+     "name": "Dabach dúchu",
+     "age": "III",
+     "text": "Inkwell: earliest widespread use Ancient (Worldwide). An inkwell is a small jar or container, often made of glass, porcelain, silver, brass, or pewter, used for holding ink in a place convenient for the person who is writing."
+    },
+    {
+     "id": "diaithirfurnishings:ink_stick",
+     "name": "Maidi dúchu",
+     "age": "III",
+     "text": "Ink stick: earliest widespread use c. 1000 BC (China). Inksticks (Chinese: 墨; pinyin: ) or ink cakes are a type of solid Chinese ink used traditionally in several Chinese, Japanese, and East Asian art forms such as calligraphy and brush painting."
+    },
+    {
+     "id": "diaithirfurnishings:inkstone",
+     "name": "Dúchlouch",
+     "age": "IV",
+     "text": "Inkstone: earliest widespread use Han (China). An inkstone is a stone mortar for the grinding and containment of ink."
+    },
+    {
+     "id": "diaithirfurnishings:steel_nib",
+     "name": "Piend kruoch",
+     "age": "V",
+     "text": "Steel nib pen: earliest widespread use 1822 (England). A dip pen is a writing instrument used to apply ink to paper by dipping into an inkwell."
+    },
+    {
+     "id": "diaithirfurnishings:fountain_pen",
+     "name": "Piend foinsi",
+     "age": "V",
+     "text": "Fountain pen: earliest widespread use 1827 (Romania). A fountain pen is a writing instrument that uses a metal nib to apply water-based ink to paper."
+    },
+    {
+     "id": "diaithirfurnishings:pencil",
+     "name": "Piend luoidi",
+     "age": "V",
+     "text": "Pencil: earliest widespread use 1560s (Italy). A pencil ( ) is a writing or drawing implement with a solid pigment core in a protective casing that reduces the risk of core breakage and keeps it from marking the user's hand."
+    },
+    {
+     "id": "diaithirfurnishings:sealing_stamp",
+     "name": "Staumpa séalaiti",
+     "age": "III",
+     "text": "Seal stamp: earliest widespread use Ancient (Worldwide). A seal is a device for making an impression in wax, clay, paper, or some other medium, including an embossment on paper, and is also the impression thus made."
+    },
+    {
+     "id": "diaithirfurnishings:papyrus_scroll",
+     "name": "Skrolda paupyrus",
+     "age": "III",
+     "text": "Papyrus scroll: earliest widespread use c. 3000 BC (Egypt). Papyrus ( pə-PY-rəs) is a substance used in ancient times as a writing surface."
+    },
+    {
+     "id": "diaithirfurnishings:abacus",
+     "name": "Abakas",
+     "age": "III",
+     "text": "Abacus: earliest widespread use c. 2400 BC (Mesopotamia). An abacus (pl."
+    },
+    {
+     "id": "diaithirfurnishings:printing_press",
+     "name": "Pries priontálad",
+     "age": "IV",
+     "text": "Printing press: earliest widespread use 1440 (Germany). A printing press is a machine that applies pressure to transfer ink onto a surface made of paper, cloth, or a similar material."
+    },
+    {
+     "id": "diaithirfurnishings:typewriter",
+     "name": "Klóskríobán",
+     "age": "VI",
+     "text": "Typewriter: earliest widespread use 1868 (USA). A typewriter is a mechanical or electromechanical machine for typing characters."
+    }
+   ]
+  }
+ ]
+}

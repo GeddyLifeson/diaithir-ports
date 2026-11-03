@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/kneading_trough"
+  "layer0": "diaithirfurnishings:item/kneading_trough_head",
+  "layer1": "diaithirfurnishings:item/kneading_trough_handle",
+  "layer2": "diaithirfurnishings:item/kneading_trough_binding"
  }
 }
