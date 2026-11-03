@@ -2899,6 +2899,248 @@
   "zanite_trowel",
   "zephyr_husk"
  ],
+ "gear": [
+  {
+   "id": "arkenium_axe",
+   "prefix": "arkenium",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_boots",
+   "prefix": "arkenium",
+   "kind": "boots",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_chestplate",
+   "prefix": "arkenium",
+   "kind": "chestplate",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_helmet",
+   "prefix": "arkenium",
+   "kind": "helmet",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_leggings",
+   "prefix": "arkenium",
+   "kind": "leggings",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_pickaxe",
+   "prefix": "arkenium",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_shovel",
+   "prefix": "arkenium",
+   "kind": "shovel",
+   "tier": "diamond"
+  },
+  {
+   "id": "beast_pelt_boots",
+   "prefix": "beast_pelt",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "beast_pelt_chestplate",
+   "prefix": "beast_pelt",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "beast_pelt_helmet",
+   "prefix": "beast_pelt",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "beast_pelt_leggings",
+   "prefix": "beast_pelt",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "burrukai_plate_boots",
+   "prefix": "burrukai_plate",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "burrukai_plate_chestplate",
+   "prefix": "burrukai_plate",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "burrukai_plate_helmet",
+   "prefix": "burrukai_plate",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "burrukai_plate_leggings",
+   "prefix": "burrukai_plate",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "gravitite_axe",
+   "prefix": "gravitite",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_boots",
+   "prefix": "gravitite",
+   "kind": "boots",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_chestplate",
+   "prefix": "gravitite",
+   "kind": "chestplate",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_helmet",
+   "prefix": "gravitite",
+   "kind": "helmet",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_leggings",
+   "prefix": "gravitite",
+   "kind": "leggings",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_pickaxe",
+   "prefix": "gravitite",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_shovel",
+   "prefix": "gravitite",
+   "kind": "shovel",
+   "tier": "diamond"
+  },
+  {
+   "id": "holystone_axe",
+   "prefix": "holystone",
+   "kind": "axe",
+   "tier": "stone"
+  },
+  {
+   "id": "holystone_pickaxe",
+   "prefix": "holystone",
+   "kind": "pickaxe",
+   "tier": "stone"
+  },
+  {
+   "id": "holystone_shovel",
+   "prefix": "holystone",
+   "kind": "shovel",
+   "tier": "stone"
+  },
+  {
+   "id": "neptune_boots",
+   "prefix": "neptune",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "neptune_chestplate",
+   "prefix": "neptune",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "neptune_helmet",
+   "prefix": "neptune",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "neptune_leggings",
+   "prefix": "neptune",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "sentry_boots",
+   "prefix": "sentry",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "skyroot_axe",
+   "prefix": "skyroot",
+   "kind": "axe",
+   "tier": "wood"
+  },
+  {
+   "id": "skyroot_pickaxe",
+   "prefix": "skyroot",
+   "kind": "pickaxe",
+   "tier": "wood"
+  },
+  {
+   "id": "skyroot_shovel",
+   "prefix": "skyroot",
+   "kind": "shovel",
+   "tier": "wood"
+  },
+  {
+   "id": "zanite_axe",
+   "prefix": "zanite",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_boots",
+   "prefix": "zanite",
+   "kind": "boots",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_chestplate",
+   "prefix": "zanite",
+   "kind": "chestplate",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_helmet",
+   "prefix": "zanite",
+   "kind": "helmet",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_leggings",
+   "prefix": "zanite",
+   "kind": "leggings",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_pickaxe",
+   "prefix": "zanite",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_shovel",
+   "prefix": "zanite",
+   "kind": "shovel",
+   "tier": "diamond"
+  }
+ ],
  "portals": [
   {
    "block": "aether_portal",

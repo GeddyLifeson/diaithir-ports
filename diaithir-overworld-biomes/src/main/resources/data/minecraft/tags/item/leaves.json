@@ -20,6 +20,11 @@
   "aether_ii:skyroot_leaves",
   "aether_ii:undergrowth_leaves",
   "aether_ii:wisproot_leaves",
-  "aether_ii:wisptop_leaves"
+  "aether_ii:wisptop_leaves",
+  "the_backwoods:decaying_leaves",
+  "undergarden:grongle_leaves",
+  "undergarden:hanging_grongle_leaves",
+  "undergarden:smogstem_leaves",
+  "undergarden:wigglewood_leaves"
  ]
 }

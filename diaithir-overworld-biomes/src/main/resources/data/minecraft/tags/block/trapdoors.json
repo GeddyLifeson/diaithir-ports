@@ -9,6 +9,12 @@
   "aether_ii:secret_skyroot_trapdoor",
   "aether_ii:secret_wisproot_trapdoor",
   "aether_ii:skyroot_trapdoor",
-  "aether_ii:wisproot_trapdoor"
+  "aether_ii:wisproot_trapdoor",
+  "the_backwoods:lignum_caro_trapdoor",
+  "the_backwoods:rotten_oak_trapdoor",
+  "undergarden:ancient_root_trapdoor",
+  "undergarden:grongle_trapdoor",
+  "undergarden:smogstem_trapdoor",
+  "undergarden:wigglewood_trapdoor"
  ]
 }

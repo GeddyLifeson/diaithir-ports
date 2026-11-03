@@ -50,6 +50,7 @@ public final class RealmRegistrar {
             RealmPortals.add(modId, r.get("activator").getAsString(), r.get("frame").getAsString(), r.get("block").getAsString());
         }
         for (JsonElement e : m.getAsJsonArray("items")) items.registerSimpleItem(e.getAsString());
+        if (m.has("gear")) RealmGear.register(modId, m, items);
         if (m.has("mobs")) RealmMobs.register(modId, m, bus, items);
         blocks.register(bus);
         items.register(bus);

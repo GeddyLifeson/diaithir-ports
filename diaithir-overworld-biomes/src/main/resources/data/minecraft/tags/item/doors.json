@@ -9,6 +9,10 @@
   "aether_ii:secret_skyroot_door",
   "aether_ii:secret_wisproot_door",
   "aether_ii:skyroot_door",
-  "aether_ii:wisproot_door"
+  "aether_ii:wisproot_door",
+  "undergarden:ancient_root_door",
+  "undergarden:grongle_door",
+  "undergarden:smogstem_door",
+  "undergarden:wigglewood_door"
  ]
 }

@@ -1,0 +1,14 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "undergarden:utherium"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "undergarden:utherium"
+   }
+  ]
+ }
+}

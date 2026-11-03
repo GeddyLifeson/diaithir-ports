@@ -22,6 +22,14 @@ def put(p, o):
     p.write_text(o if isinstance(o, str) else json.dumps(o, indent=1) + '\n')
 def vj(p): return json.loads(Z.read(p))
 
+def put_tag(path, vals):
+    """tags under minecraft/ and c/ are shared by every realm: keep other realms' entries, replace ours"""
+    p = RES / path
+    old = json.loads(p.read_text()).get('values', []) if p.exists() else []
+    keep = [v for v in old if not str(v).lstrip('#').startswith(NS + ':')]
+    put(path, {'replace': False, 'values': sorted(set(keep) | set(vals))})
+
+
 # ---------- classify blocks ----------
 VANILLA_SKIP = [  # (regex, vanilla block/item it migrates to)
  (r'_wall_hanging_sign$', 'minecraft:oak_wall_hanging_sign'), (r'_hanging_sign$', 'minecraft:oak_hanging_sign'),
@@ -93,8 +101,16 @@ SK_ITEM = [(r'_(sword|battleaxe|spear)$','minecraft:iron_sword'),(r'_axe$','mine
  (r'_leggings$','minecraft:iron_leggings'),(r'_boots$','minecraft:iron_boots'),(r'_chest_boat$','minecraft:oak_chest_boat'),(r'_boat$','minecraft:oak_boat'),
  (r'_shield$','minecraft:shield'),(r'_bucket$','minecraft:bucket'),(r'_spawn_egg$',None),(r'^music_disc_',None),(r'smithing_template$',None),
  (r'^(slingshot|javelin|crumbling_catalyst|denizen_mask)$',None),(r'(sign)$','minecraft:oak_sign'),(r'_bed$','minecraft:red_bed'),(r'_stew$','minecraft:mushroom_stew'),(r'_bowl$','minecraft:bowl')]
+TIER = [('skyroot','wood'),('rotten','wood'),('faded','wood'),('lignum','wood'),('heartwood','wood'),('petrified','stone'),('holystone','stone'),('recovered','stone'),
+        ('forgotten','diamond'),('froststeel','diamond'),('utherium','diamond'),('arkenium','diamond'),('gravitite','diamond'),('zanite','diamond')]
+GEAR = {}
+for n in items:
+    mt_ = re.fullmatch(r'(.+)_(sword|battleaxe|spear|axe|pickaxe|shovel|hoe|helmet|chestplate|leggings|boots)', n)
+    if mt_ and n not in made and not re.search(r'(shield|bucket)', n):
+        pre, kd = mt_.groups(); GEAR[n] = {'id': n, 'prefix': pre, 'kind': kd, 'tier': next((t for k, t in TIER if k in pre), 'iron')}
 sitems = []
 for n in items:
+    if n in GEAR: continue
     if n in made: continue
     if n in bset: continue  # block item of a skipped block
     for rx, t in SK_ITEM:
@@ -102,7 +118,7 @@ for n in items:
             if t: migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{n}', 'new': t})
             break
     else: sitems.append(n)
-put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems, 'portals': [{k: p[k] for k in ('block', 'activator', 'frame')} for p in cfg.get('portals', [])]})
+put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems, 'gear': list(GEAR.values()), 'portals': [{k: p[k] for k in ('block', 'activator', 'frame')} for p in cfg.get('portals', [])]})
 put(f'data/{NS}/id_migrations.json', migr)
 
 # ---------- assets: copy vanilla shapes, rename, stand-in textures ----------
@@ -249,7 +265,9 @@ for p in list(tg):
         parent = '/'.join(p.split('/')[:4]); tg[parent] = [x for x in tg[parent] if not x.startswith(NS + ':')]
         child = '#c:' + '/'.join(p.split('/')[3:]); 
         if child not in tg[parent]: tg[parent].append(child)
-for p, vals in tg.items(): put(f'data/{p}.json', {'replace': False, 'values': sorted(set(vals))})
+for p, vals in tg.items():
+    if p.startswith(('minecraft/', 'c/')): put_tag(f'data/{p}.json', vals)
+    else: put(f'data/{p}.json', {'replace': False, 'values': sorted(set(vals))})
 
 
 # ---------- slice 3: trees and plant patches ----------
@@ -444,6 +462,39 @@ if mobs:
     L2[f'codex.{OWN}.{NS}_bestiary.body'] = f'{len(mobs)} creatures: ' + ', '.join(title(m['id']) for m in mobs) + '.'
     lp.write_text(json.dumps(L2, indent=1) + '\n')
     put(f'assets/{NS}/lang/en_us.json', lang)
+
+
+# ---------- slice 6: gear ----------
+def tint_png(png, key, bright=1.0): return tint(png, key, bright)
+HELD = ('sword','battleaxe','spear','axe','pickaxe','shovel','hoe')
+VAN = {'battleaxe': 'axe', 'spear': 'sword'}
+mats = collections.OrderedDict()
+for g in GEAR.values():
+    n, kd, pre = g['id'], g['kind'], g['prefix']; vk = VAN.get(kd, kd)
+    wb(f'assets/{NS}/textures/item/{n}.png', tint_png(Z.read(f'assets/minecraft/textures/item/iron_{vk}.png'), pre))
+    put(f'assets/{NS}/models/item/{n}.json', {'parent': 'minecraft:item/handheld' if kd in HELD else 'minecraft:item/generated', 'textures': {'layer0': f'{NS}:item/{n}'}})
+    item(n, f'{NS}:item/{n}'); lang[f'item.{NS}.{n}'] = title(n)
+    mats.setdefault(pre, g)
+    ing = next((c for c in (pre + '_ingot', pre + '_crystal', pre) if c in iset), None)
+    plank = pre + '_planks' if pre + '_planks' in bset else None
+    src = f'{NS}:{ing}' if g['tier'] != 'wood' and ing else (f'{NS}:{plank}' if plank else ('minecraft:oak_planks' if g['tier'] == 'wood' else (f'{NS}:{ing}' if ing else None)))
+    pat = {'sword': ['#', '#', 'S'], 'spear': ['#', 'S', 'S'], 'pickaxe': ['###', ' S ', ' S '], 'axe': ['##', '#S', ' S'], 'battleaxe': ['###', '#S#', ' S '], 'shovel': ['#', 'S', 'S'],
+           'hoe': ['##', ' S', ' S'], 'helmet': ['###', '# #'], 'chestplate': ['# #', '###', '###'], 'leggings': ['###', '# #', '# #'], 'boots': ['# #', '# #']}[kd]
+    if src: R(n, {'type': 'minecraft:crafting_shaped', 'category': 'equipment', 'key': {'#': src, **({'S': 'minecraft:stick'} if any('S' in r for r in pat) else {})}, 'pattern': pat, 'result': res(n)})
+for pre, g in mats.items():
+    ing = next((c for c in (pre + '_ingot', pre + '_crystal', pre) if c in iset), None); plank = pre + '_planks' if pre + '_planks' in bset else None
+    vals = [f'{NS}:{ing}'] if ing and g['tier'] != 'wood' else ([f'{NS}:{plank}'] if plank else ['minecraft:oak_planks'])
+    put(f'data/{NS}/tags/item/repair/{pre}.json', {'replace': False, 'values': vals})
+    if any(x['prefix'] == pre and x['kind'] in ('helmet', 'chestplate', 'leggings', 'boots') for x in GEAR.values()):
+        put(f'assets/{NS}/equipment/{pre}.json', {'layers': {'humanoid': [{'texture': f'{NS}:{pre}'}], 'humanoid_leggings': [{'texture': f'{NS}:{pre}'}]}})
+        wb(f'assets/{NS}/textures/entity/equipment/humanoid/{pre}.png', tint_png(Z.read('assets/minecraft/textures/entity/equipment/humanoid/iron.png'), pre))
+        wb(f'assets/{NS}/textures/entity/equipment/humanoid_leggings/{pre}.png', tint_png(Z.read('assets/minecraft/textures/entity/equipment/humanoid_leggings/iron.png'), pre))
+if GEAR:
+    put(f'assets/{NS}/lang/en_us.json', lang)
+    for kd_, tg_ in (('sword', 'swords'), ('spear', 'swords'), ('axe', 'axes'), ('battleaxe', 'axes'), ('pickaxe', 'pickaxes'), ('shovel', 'shovels'), ('hoe', 'hoes'),
+                     ('helmet', 'head_armor'), ('chestplate', 'chest_armor'), ('leggings', 'leg_armor'), ('boots', 'foot_armor')):
+        v = [f'{NS}:{g["id"]}' for g in GEAR.values() if g['kind'] == kd_]
+        if v: put_tag(f'data/minecraft/tags/item/{tg_}.json', v)
 
 # ---------- slice 5: structures (procedural single templates, own design) ----------
 import struct, gzip

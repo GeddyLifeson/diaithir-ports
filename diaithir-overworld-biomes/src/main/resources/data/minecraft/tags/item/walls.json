@@ -17,6 +17,21 @@
   "aether_ii:sentry_brick_wall",
   "aether_ii:smooth_ichorite_wall",
   "aether_ii:undershale_brick_wall",
-  "aether_ii:undershale_wall"
+  "aether_ii:undershale_wall",
+  "the_backwoods:cobbled_nullstone_wall",
+  "the_backwoods:nullstone_wall",
+  "undergarden:depthrock_brick_wall",
+  "undergarden:depthrock_wall",
+  "undergarden:dreadrock_brick_wall",
+  "undergarden:dreadrock_wall",
+  "undergarden:polished_depthrock_wall",
+  "undergarden:polished_sediment_stone_wall",
+  "undergarden:sediment_stone_brick_wall",
+  "undergarden:sediment_stone_wall",
+  "undergarden:shiverstone_brick_wall",
+  "undergarden:shiverstone_wall",
+  "undergarden:smooth_sediment_stone_wall",
+  "undergarden:tremblecrust_brick_wall",
+  "undergarden:tremblecrust_wall"
  ]
 }

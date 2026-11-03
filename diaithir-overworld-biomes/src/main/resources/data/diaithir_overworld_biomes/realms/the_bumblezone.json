@@ -569,6 +569,14 @@
   "super_candle_white",
   "super_candle_yellow"
  ],
+ "gear": [
+  {
+   "id": "stinger_spear",
+   "prefix": "stinger",
+   "kind": "spear",
+   "tier": "iron"
+  }
+ ],
  "portals": [],
  "mobs": [
   {

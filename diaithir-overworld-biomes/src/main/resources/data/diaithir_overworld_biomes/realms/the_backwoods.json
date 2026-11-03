@@ -398,6 +398,122 @@
   "the_petrified_weald",
   "windcap_mushroom"
  ],
+ "gear": [
+  {
+   "id": "faded_axe",
+   "prefix": "faded",
+   "kind": "axe",
+   "tier": "wood"
+  },
+  {
+   "id": "faded_hoe",
+   "prefix": "faded",
+   "kind": "hoe",
+   "tier": "wood"
+  },
+  {
+   "id": "faded_pickaxe",
+   "prefix": "faded",
+   "kind": "pickaxe",
+   "tier": "wood"
+  },
+  {
+   "id": "faded_shovel",
+   "prefix": "faded",
+   "kind": "shovel",
+   "tier": "wood"
+  },
+  {
+   "id": "faded_sword",
+   "prefix": "faded",
+   "kind": "sword",
+   "tier": "wood"
+  },
+  {
+   "id": "heartwood_rotten_sword",
+   "prefix": "heartwood_rotten",
+   "kind": "sword",
+   "tier": "wood"
+  },
+  {
+   "id": "lignum_caro_sword",
+   "prefix": "lignum_caro",
+   "kind": "sword",
+   "tier": "wood"
+  },
+  {
+   "id": "petrified_rotten_axe",
+   "prefix": "petrified_rotten",
+   "kind": "axe",
+   "tier": "wood"
+  },
+  {
+   "id": "petrified_rotten_sword",
+   "prefix": "petrified_rotten",
+   "kind": "sword",
+   "tier": "wood"
+  },
+  {
+   "id": "recovered_faded_axe",
+   "prefix": "recovered_faded",
+   "kind": "axe",
+   "tier": "wood"
+  },
+  {
+   "id": "recovered_faded_hoe",
+   "prefix": "recovered_faded",
+   "kind": "hoe",
+   "tier": "wood"
+  },
+  {
+   "id": "recovered_faded_pickaxe",
+   "prefix": "recovered_faded",
+   "kind": "pickaxe",
+   "tier": "wood"
+  },
+  {
+   "id": "recovered_faded_shovel",
+   "prefix": "recovered_faded",
+   "kind": "shovel",
+   "tier": "wood"
+  },
+  {
+   "id": "recovered_faded_sword",
+   "prefix": "recovered_faded",
+   "kind": "sword",
+   "tier": "wood"
+  },
+  {
+   "id": "rotten_axe",
+   "prefix": "rotten",
+   "kind": "axe",
+   "tier": "wood"
+  },
+  {
+   "id": "rotten_hoe",
+   "prefix": "rotten",
+   "kind": "hoe",
+   "tier": "wood"
+  },
+  {
+   "id": "rotten_pickaxe",
+   "prefix": "rotten",
+   "kind": "pickaxe",
+   "tier": "wood"
+  },
+  {
+   "id": "rotten_shovel",
+   "prefix": "rotten",
+   "kind": "shovel",
+   "tier": "wood"
+  },
+  {
+   "id": "rotten_sword",
+   "prefix": "rotten",
+   "kind": "sword",
+   "tier": "wood"
+  }
+ ],
  "portals": [
   {
    "block": "backwoods_portal",

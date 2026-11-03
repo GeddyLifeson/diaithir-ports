@@ -26,6 +26,26 @@
   "aether_ii:stripped_wisproot_log",
   "aether_ii:stripped_wisproot_wood",
   "aether_ii:wisproot_log",
-  "aether_ii:wisproot_wood"
+  "aether_ii:wisproot_wood",
+  "the_backwoods:petrified_rotten_oak_log",
+  "the_backwoods:petrified_rotten_oak_wood",
+  "the_backwoods:petrified_splintered_oak_wood",
+  "the_backwoods:petrified_stripped_rotten_oak_log",
+  "the_backwoods:rotten_oak_log",
+  "the_backwoods:rotten_oak_wood",
+  "the_backwoods:scandere_lignum_log",
+  "the_backwoods:splintered_oak_wood",
+  "undergarden:grongle_log",
+  "undergarden:grongle_wood",
+  "undergarden:smogstem_log",
+  "undergarden:smogstem_wood",
+  "undergarden:stripped_grongle_log",
+  "undergarden:stripped_grongle_wood",
+  "undergarden:stripped_smogstem_log",
+  "undergarden:stripped_smogstem_wood",
+  "undergarden:stripped_wigglewood_log",
+  "undergarden:stripped_wigglewood_wood",
+  "undergarden:wigglewood_log",
+  "undergarden:wigglewood_wood"
  ]
 }

@@ -1180,6 +1180,254 @@
   "utheric_shard",
   "utherium_crystal"
  ],
+ "gear": [
+  {
+   "id": "ancient_chestplate",
+   "prefix": "ancient",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "ancient_helmet",
+   "prefix": "ancient",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "ancient_leggings",
+   "prefix": "ancient",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_axe",
+   "prefix": "cloggrum",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_battleaxe",
+   "prefix": "cloggrum",
+   "kind": "battleaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_boots",
+   "prefix": "cloggrum",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_chestplate",
+   "prefix": "cloggrum",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_helmet",
+   "prefix": "cloggrum",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_hoe",
+   "prefix": "cloggrum",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_leggings",
+   "prefix": "cloggrum",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_pickaxe",
+   "prefix": "cloggrum",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_shovel",
+   "prefix": "cloggrum",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_spear",
+   "prefix": "cloggrum",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "cloggrum_sword",
+   "prefix": "cloggrum",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "forgotten_axe",
+   "prefix": "forgotten",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "forgotten_battleaxe",
+   "prefix": "forgotten",
+   "kind": "battleaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "forgotten_hoe",
+   "prefix": "forgotten",
+   "kind": "hoe",
+   "tier": "diamond"
+  },
+  {
+   "id": "forgotten_pickaxe",
+   "prefix": "forgotten",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "forgotten_shovel",
+   "prefix": "forgotten",
+   "kind": "shovel",
+   "tier": "diamond"
+  },
+  {
+   "id": "forgotten_spear",
+   "prefix": "forgotten",
+   "kind": "spear",
+   "tier": "diamond"
+  },
+  {
+   "id": "forgotten_sword",
+   "prefix": "forgotten",
+   "kind": "sword",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_axe",
+   "prefix": "froststeel",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_boots",
+   "prefix": "froststeel",
+   "kind": "boots",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_chestplate",
+   "prefix": "froststeel",
+   "kind": "chestplate",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_helmet",
+   "prefix": "froststeel",
+   "kind": "helmet",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_hoe",
+   "prefix": "froststeel",
+   "kind": "hoe",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_leggings",
+   "prefix": "froststeel",
+   "kind": "leggings",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_pickaxe",
+   "prefix": "froststeel",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_shovel",
+   "prefix": "froststeel",
+   "kind": "shovel",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_spear",
+   "prefix": "froststeel",
+   "kind": "spear",
+   "tier": "diamond"
+  },
+  {
+   "id": "froststeel_sword",
+   "prefix": "froststeel",
+   "kind": "sword",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_axe",
+   "prefix": "utherium",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_boots",
+   "prefix": "utherium",
+   "kind": "boots",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_chestplate",
+   "prefix": "utherium",
+   "kind": "chestplate",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_helmet",
+   "prefix": "utherium",
+   "kind": "helmet",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_hoe",
+   "prefix": "utherium",
+   "kind": "hoe",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_leggings",
+   "prefix": "utherium",
+   "kind": "leggings",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_pickaxe",
+   "prefix": "utherium",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_shovel",
+   "prefix": "utherium",
+   "kind": "shovel",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_spear",
+   "prefix": "utherium",
+   "kind": "spear",
+   "tier": "diamond"
+  },
+  {
+   "id": "utherium_sword",
+   "prefix": "utherium",
+   "kind": "sword",
+   "tier": "diamond"
+  }
+ ],
  "portals": [
   {
    "block": "undergarden_portal",
