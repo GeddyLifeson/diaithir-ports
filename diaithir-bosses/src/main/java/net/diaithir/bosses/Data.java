@@ -56,7 +56,7 @@ public final class Data {
     public static final class Structure { public int style, spacing, separation; public String biomes; }
 
     public static final class Profile {
-        public String id, name, name_en, entity, creature_id, court, habitat, existing_model;
+        public String id, name, name_en, entity, creature_id, court, habitat, existing_model, planet, dimension, rite, arch;
         public int age = 1, xp = 100;
         public boolean hostile = true, mythic, fallback_own;
         public double max_hit_fraction = 0.1;
@@ -73,7 +73,7 @@ public final class Data {
 
         public String key() { return creature_id != null ? creature_id : id; }
         /** True when this profile spawns its own entity type (as opposed to attaching to another mod's). */
-        public boolean ownsEntity() { return entity.startsWith(DiaithirBosses.ID + ":"); }
+        public boolean ownsEntity() { return planet == null && entity.startsWith(DiaithirBosses.ID + ":"); }
         public String ownPath() { return id; }
     }
 
@@ -105,11 +105,19 @@ public final class Data {
 
     private static volatile Map<String, Profile> profiles = new LinkedHashMap<>();
     private static volatile Map<String, Profile> byEntity = new LinkedHashMap<>();
+    private static volatile Map<String, Profile> planetBosses = new LinkedHashMap<>();
     private static volatile Elites elites = new Elites();
 
     public static Map<String, Profile> profiles() { return profiles; }
     public static Profile byEntity(String entityId) { return byEntity.get(entityId); }
-    public static Profile byId(String id) { return profiles.get(id); }
+    public static Profile byId(String id) { Profile p = profiles.get(id); return p != null ? p : planetBosses.get(id); }
+    public static Map<String, Profile> planetBosses() { return planetBosses; }
+
+    /** The profile that drives a creature: a planet boss by its own id, any other by its entity type. */
+    public static Profile profileFor(net.minecraft.world.entity.Mob m) {
+        if (m instanceof PlanetBoss pb) return planetBosses.get(pb.bossId());
+        return byEntity.get(net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getKey(m.getType()).toString());
+    }
     public static Elites elites() { return elites; }
 
     /** A mythic kit whose creature is spawned by diaithir_myth attaches to that entity; otherwise it spawns its own. */
@@ -149,7 +157,63 @@ public final class Data {
             throw new IllegalStateException("elites.json missing", e);
         }
         install(out, el);
-        LOG.info("Loaded {} boss profiles and {} elite bases", out.size(), el.bases.size());
+        loadPlanetBosses();
+        LOG.info("Loaded {} boss profiles, {} planet bosses and {} elite bases", out.size(), planetBosses.size(), el.bases.size());
+    }
+
+    public static final class Template {
+        public double hp_factor = 1, damage_factor = 1, speed = .28;
+        public Map<String, Attack> attacks = new LinkedHashMap<>();
+        public List<Phase> phases = new ArrayList<>();
+    }
+
+    /** Compact record of a planet boss (planet_bosses.json); expanded into a full profile with its body plan's template. */
+    static final class PlanetRecord {
+        String id, planet, dimension, name, arch, hitbox, bar, rite;
+        int age;
+        float scale;
+        double hp;
+    }
+
+    private static final int[] LOOT_AGE = {1, 2, 3, 4, 5, 6, 7, 8};
+    private static final String[] LOOT = {"minecraft:bone", "minecraft:copper_ingot", "minecraft:iron_ingot", "minecraft:gold_ingot",
+        "minecraft:diamond", "minecraft:emerald", "minecraft:netherite_scrap", "minecraft:netherite_ingot"};
+
+    /** The planet roster from the jar: one profile per boss, all sharing the planet_boss_* entity types. */
+    private static void loadPlanetBosses() {
+        Map<String, Profile> out = new LinkedHashMap<>();
+        String base = "/data/" + DiaithirBosses.ID + "/";
+        try (Reader r = new InputStreamReader(Data.class.getResourceAsStream(base + "planet_bosses.json"), StandardCharsets.UTF_8);
+             Reader t = new InputStreamReader(Data.class.getResourceAsStream(base + "planet_templates.json"), StandardCharsets.UTF_8)) {
+            List<PlanetRecord> recs = GSON.fromJson(r, new TypeToken<List<PlanetRecord>>() {}.getType());
+            Map<String, Template> tpl = GSON.fromJson(t, new TypeToken<Map<String, Template>>() {}.getType());
+            for (PlanetRecord x : recs) {
+                Template tp = tpl.get(x.arch);
+                if (tp == null) throw new IllegalStateException("no template for " + x.arch);
+                Profile p = new Profile();
+                p.id = x.id; p.name = x.name; p.name_en = x.name; p.planet = x.planet; p.dimension = x.dimension; p.rite = x.rite; p.arch = x.arch;
+                p.age = x.age; p.entity = DiaithirBosses.ID + ":planet_boss_" + x.hitbox;
+                p.xp = 200 + 150 * x.age;
+                p.own.kind = "planet"; p.own.scale = x.scale; p.own.hp = x.hp; p.own.damage = 4 + 1.5 * x.age * tp.damage_factor;
+                p.own.armor = x.age; p.own.speed = tp.speed;
+                p.bar.color = x.bar;
+                p.attacks = tp.attacks;
+                p.phases = tp.phases;
+                for (int i = 0; i < LOOT.length; i++) {
+                    if (i + 1 > x.age) break;
+                    Loot l = new Loot();
+                    l.item = LOOT[i]; l.min = 2 + i; l.max = 4 + 2 * i; l.min_age = LOOT_AGE[i]; l.chance = i + 1 == x.age ? 1.0 : 0.5; l.per_age = 1;
+                    p.loot.add(l);
+                }
+                Loot tok = new Loot();
+                tok.item = DiaithirBosses.ID + ":champion_token"; tok.chance = 0.35; tok.min_age = x.age;
+                p.loot.add(tok);
+                out.put(p.id, p);
+            }
+        } catch (Exception e) {
+            throw new IllegalStateException("planet bosses missing", e);
+        }
+        planetBosses = out;
     }
 
     /** Datapack reload: profiles from every data/<ns>/boss/*.json, elites from data/diaithirbosses/elites.json. */

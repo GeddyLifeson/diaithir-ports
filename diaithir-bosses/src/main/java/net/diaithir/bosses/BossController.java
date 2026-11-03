@@ -91,8 +91,12 @@ public final class BossController {
     }
 
     // ------------------------------------------------------------------ setup
+    private Component displayName() {
+        return prof.planet != null ? Component.literal(prof.name) : Component.translatable("boss." + DiaithirBosses.ID + "." + prof.id);
+    }
+
     private Component title() {
-        Component name = Component.translatable("boss." + DiaithirBosses.ID + "." + prof.id);
+        Component name = displayName();
         return phase > 0 ? Component.translatable("boss." + DiaithirBosses.ID + ".phase", name, prof.phases.get(Math.min(phase, prof.phases.size() - 1)).name) : name;
     }
 
@@ -272,7 +276,7 @@ public final class BossController {
         ring(ParticleTypes.EXPLOSION, mob.position().add(0, 0.2, 0), 3.5, 14);
         level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, mob.getX(), mob.getY() + 1, mob.getZ(), 1, 0, 0, 0, 0);
         sound(SoundEvents.RAVAGER_ROAR, 2.0F, 0.7F);
-        Component msg = Component.translatable("boss." + DiaithirBosses.ID + ".phase", Component.translatable("boss." + DiaithirBosses.ID + "." + prof.id), ph.name);
+        Component msg = Component.translatable("boss." + DiaithirBosses.ID + ".phase", displayName(), ph.name);
         for (ServerPlayer p : participants()) p.sendSystemMessage(msg);
     }
 
@@ -623,7 +627,7 @@ public final class BossController {
                 if (level.getBlockEntity(p) instanceof AltarBlockEntity be) be.defeated(level.getGameTime());
             }
         }
-        Component msg = Component.translatable("death.attack.generic", Component.translatable("boss." + DiaithirBosses.ID + "." + prof.id));
+        Component msg = Component.translatable("death.attack.generic", displayName());
         for (ServerPlayer p : participants()) p.sendSystemMessage(msg);
         close();
     }

@@ -34,6 +34,7 @@ public final class BossClient {
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static void renderers(EntityRenderersEvent.RegisterRenderers e) {
+        DiaithirBosses.PLANET.values().forEach(t -> e.registerEntityRenderer(t.get(), PlanetBossRenderer::new));
         for (Data.Profile p : Data.profiles().values()) {
             if (!p.ownsEntity()) continue;
             Identifier t = Identifier.fromNamespaceAndPath(DiaithirBosses.ID, "textures/entity/" + p.id + ".png");

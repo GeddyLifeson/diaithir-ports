@@ -107,6 +107,7 @@ public final class SelfTest {
                 bosses++;
                 runBoss(level, c0, fp, p);
             }
+            planetBosses(level, c0, fp);
             attach(level, c0, fp);
             altar(level, c0, fp);
             elites(level, c0);
@@ -175,7 +176,8 @@ public final class SelfTest {
             check(fp.hurtMarked || fp.getHealth() < before, n + ": arena pushes a fighter who leaves");
             check(p.max_hit_fraction > 0 && p.max_hit_fraction < 1, n + ": hit cap sane");
             List<ItemStack> low = c.rollLoot(1), high = c.rollLoot(7);
-            check(high.stream().anyMatch(s -> s.getItem() == DiaithirBosses.TROPHIES.get(n).get()), n + ": drops its trophy");
+            var trophy = DiaithirBosses.TROPHIES.get(n);
+            check(trophy != null ? high.stream().anyMatch(s -> s.getItem() == trophy.get()) : !high.isEmpty(), n + ": drops its trophy or loot");
             check(p.loot.stream().noneMatch(l -> l.min_age > 1) || low.size() <= high.size(), n + ": loot grows with the Age");
             m.setInvulnerable(false);
             AABB box = m.getBoundingBox().inflate(6);
@@ -199,6 +201,28 @@ public final class SelfTest {
         if (a != null) a.discard();
         if (b != null) b.discard();
         level.getEntitiesOfClass(Mob.class, new AABB(c0).inflate(60), e -> e.entityTags().stream().anyMatch(t -> t.startsWith(BossController.T_MINION))).forEach(Mob::discard);
+    }
+
+    /** Planet bosses: every profile is well formed and has its look files; one boss per body plan runs the full boss test. */
+    private static void planetBosses(ServerLevel level, BlockPos c0, FakePlayer fp) {
+        var all = Data.planetBosses().values();
+        check(all.size() >= 1000, "planet bosses loaded: " + all.size());
+        java.util.Map<String, Data.Profile> sample = new java.util.LinkedHashMap<>();
+        java.util.Set<String> planets = new java.util.HashSet<>();
+        for (Data.Profile p : all) {
+            planets.add(p.planet);
+            check(!p.phases.isEmpty() && p.phases.get(0).at >= 0.999, p.id + ": first phase starts at full health");
+            for (Data.Phase ph : p.phases) for (String a : ph.attacks) check(p.attacks.containsKey(a), p.id + ": phase uses known attack " + a);
+            for (Data.Attack a : p.attacks.values()) check(TYPES.contains(a.type), p.id + ": attack type " + a.type);
+            check(p.age >= 1 && p.age <= 8, p.id + ": Age in range");
+            check(BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(p.entity)).isPresent(), p.id + ": entity type registered");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/looks/" + p.id + ".json") != null, p.id + ": look file");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/textures/entity/planet/" + p.id + ".png") != null, p.id + ": texture");
+            sample.putIfAbsent(p.arch, p);
+        }
+        check(planets.size() >= 200, "planet bosses cover " + planets.size() + " planets");
+        for (Data.Profile p : sample.values()) runBoss(level, c0, fp, p);
+        System.out.println("[bossesselftest] planet bosses " + all.size() + " on " + planets.size() + " planets, full test on " + sample.size() + " body plans");
     }
 
     /** The altar: Age gate, waking, no double wake, and the respawn rule after a kill. */
