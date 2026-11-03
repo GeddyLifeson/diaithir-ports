@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""S6831 Library gear textures: 64 px, Industrial-Factory look (dark outline, shaded metal, bright edge). Two layers per item:
+"""S6839 Library gear textures: 64 px, Industrial-Factory look (dark outline, shaded metal, bright edge). Two layers per item:
 layer0 untinted (outline, grip, accents by Age metal), layer1 near-white body that the game tints per entry (custom_model_data colour).
 Writes textures, models and item definitions for every weapon class and armor slot at Ages 1-9. Run from the module dir."""
 import json, math, os

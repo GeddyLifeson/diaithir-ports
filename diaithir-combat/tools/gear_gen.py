@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""S6830 Library weapon/armor -> compact gear table for diaithir-combat. Reads content.sqlite + codex library.sqlite (summary text, read only), keyword-classifies class/slot from the entry's own text, writes gear.tsv.gz (id, tier, gate Age, class, name). No text is invented or stored."""
+"""S6838 Library weapon/armor -> compact gear table for diaithir-combat. Reads content.sqlite + codex library.sqlite (summary text, read only), keyword-classifies class/slot from the entry's own text, writes gear.tsv.gz (id, tier, gate Age, class, name). No text is invented or stored."""
 import sqlite3, re, gzip, sys, collections
 CONTENT = '/mnt/project-files/library-content/content.sqlite'
 STORE = '/mnt/project-files/codex-store/library.sqlite'

@@ -144,7 +144,10 @@ public final class LibraryGear {
             b.add(Attributes.ARMOR, new AttributeModifier(mid, armorPoints(r.cls, r.gate), AttributeModifier.Operation.ADD_VALUE), g);
             if (toughness(r.gate) > 0) b.add(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(mid, toughness(r.gate), AttributeModifier.Operation.ADD_VALUE), g);
             if (SLOT.containsKey(r.cls)) {
-                s.set(DataComponents.EQUIPPABLE, net.minecraft.world.item.equipment.Equippable.builder(SLOT.get(r.cls)).build());
+                s.set(DataComponents.EQUIPPABLE, net.minecraft.world.item.equipment.Equippable.builder(SLOT.get(r.cls))
+                        .setAsset(net.minecraft.resources.ResourceKey.create(net.minecraft.world.item.equipment.EquipmentAssets.ROOT_ID,
+                                Identifier.fromNamespaceAndPath(DiaithirCombat.ID, "lib_t" + r.gate))).build());
+                s.set(DataComponents.DYED_COLOR, new net.minecraft.world.item.component.DyedItemColor(tint(r)));
                 s.set(DataComponents.MAX_DAMAGE, durability(r.gate));
                 s.set(DataComponents.DAMAGE, 0);
             }
