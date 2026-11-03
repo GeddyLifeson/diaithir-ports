@@ -1,0 +1,26 @@
+{
+ "general": {
+  "type": "interactable_barrel",
+  "name": "Tank 10000 L",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:6"
+   ]
+  ]
+ },
+ "interactable": {
+  "interactionType": "BARREL",
+  "inventoryUnits": 1,
+  "inventoryStackSize": 64,
+  "canBeOpenedInHand": false
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Tank 10000 L",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}
