@@ -22,7 +22,7 @@ public final class MegaBlocksSelfTest {
         ServerLevel level = e.getServer().overworld();
         level.setChunkForced(8, 8, true);
         BlockPos base = new BlockPos(128, 220, 128);
-        for (int x = -8; x <= 8; x++) for (int z = -8; z <= 8; z++) for (int y = -20; y <= 6; y++)
+        for (int x = -9; x <= 9; x++) for (int z = -9; z <= 9; z++) for (int y = -20; y <= 6; y++)
             level.setBlock(base.offset(x, y, z), Blocks.AIR.defaultBlockState(), 2);
 
         // quarry: stone floor under it, iron head cannot cut rock, carbide can; output stored, not spilled
@@ -41,7 +41,9 @@ public final class MegaBlocksSelfTest {
             check("iron head cannot cut rock", quarry.status() == QuarryBlockEntity.Status.HEAD_TOO_SOFT && quarry.dug() == 0);
             check("stone untouched", level.getBlockState(q.offset(0, -1, 0)).is(Blocks.STONE));
         }
-        BlockPos q2 = base.offset(0, 0, 0);
+        BlockPos q2 = base.offset(0, 0, 7);
+        for (int x = -2; x <= 2; x++) for (int z = -2; z <= 2; z++) for (int y = -3; y <= -1; y++)
+            level.setBlock(q2.offset(x, y, z), Blocks.STONE.defaultBlockState(), 2);
         level.setBlock(q2, MegaBlocks.QUARRY.get().defaultBlockState(), 2);       // fresh entity with a carbide head
         var quarry2 = (QuarryBlockEntity) level.getBlockEntity(q2);
         quarry2.setSpec("megamachines:bucket_wheel_excavator");
