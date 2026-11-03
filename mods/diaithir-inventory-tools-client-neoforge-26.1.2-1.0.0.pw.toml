@@ -1,8 +1,0 @@
-name = "diaithir-inventory-tools-client-neoforge-26.1.2-1.0.0"
-filename = "diaithir-inventory-tools-client-neoforge-26.1.2-1.0.0.jar"
-side = "client"
-
-[download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-fold4/client/diaithir-inventory-tools-client-neoforge-26.1.2-1.0.0.jar"
-hash-format = "sha256"
-hash = "644845a816845d2106d034f0ec8b1b640830cf8e822accc9fed897127ed2145f"
