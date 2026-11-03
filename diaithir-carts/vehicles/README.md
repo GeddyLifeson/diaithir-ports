@@ -24,5 +24,8 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 - Drivers: an NPC takes the controller seat of a parked vehicle and follows a route of waypoints between stations or depots (courier depots #112 and the waypoints module are the existing hooks). Steering and throttle go through IV's own controller variables, not new physics. Ground first, trucks and trains threads reuse the same route format.
 - Road use: NPC drivers prefer higher tiers. Settlement and worldgen threads decide generated road networks.
 
+## Tested
+Headless NeoForge 26.1.2.109 server with the IV jar and the pack as its own mod jar (a dev run loads carts as a folder, which IV does not scan): all 13 vehicles, an engine, a wheel, the seat and the APC track register as items (`summon item ... mts:diaithirvehicles.<id>` gives the named item, a bogus id gives Air) and the log has no pack parse errors. `/diaithircarts roadtest` passes.
+
 ## Not tested
-IV loading of the new pack (a headless dev-server boot with IV loaded no errors but did not register the pack's items, because IV scans mod jars and the dev run puts the carts mod on the classpath as a folder; needs a boot with the built carts jar in a real server mods folder, PC or a thread allowed to run the NeoForge installer; the part files parse with IV's own classes, vehicle files need IV's custom point reader), consumption units (`fuelConsumption` assumed mB per tick), driving, any client rendering.
+Driving, consumption units (`fuelConsumption` assumed mB per tick), client rendering, spawning a vehicle entity.
