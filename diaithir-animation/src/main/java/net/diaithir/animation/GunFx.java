@@ -73,6 +73,7 @@ final class GunFx {
 
     private static void item(Avatar a, ItemStack s, Vec3 at, Vec3 v) {
         a.level().addParticle(new ItemParticleOption(ParticleTypes.ITEM, s.getItem()), at.x, at.y, at.z, v.x, v.y, v.z);
+        System.out.println("[animfx] particle " + s.getItem() + " at " + String.format("%.2f,%.2f,%.2f", at.x, at.y, at.z) + " for entity " + a.getId());
     }
 
     /** Called for every gun clip the client starts on an avatar: "gun.<class or gun id>.<action>". */
@@ -81,8 +82,11 @@ final class GunFx {
         if (p.length < 3) return;
         String action = p[p.length - 1];
         Spec sp = spec(cls);
+        System.out.println("[animfx] clip " + name + " class " + cls + " entity " + a.getId());
         switch (action) {
             case "fire" -> {
+                var m = hand(a, true, 0.5);  // visible muzzle puff next to the casing
+                a.level().addParticle(ParticleTypes.SMOKE, m.x + a.getLookAngle().x * 0.4, m.y, m.z + a.getLookAngle().z * 0.4, 0, 0.01, 0);
                 if (sp.casing()) {
                     Vec3 side = new Vec3(-a.getLookAngle().z, 0, a.getLookAngle().x).normalize();
                     item(a, new ItemStack(Items.GOLD_NUGGET), hand(a, true, 0.5), side.scale(-0.12).add(0, 0.12, 0));
