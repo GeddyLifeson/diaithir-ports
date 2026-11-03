@@ -1,0 +1,1549 @@
+{
+ "listens": [
+  "diaithir:calendar_year",
+  "diaithir:disaster",
+  "diaithir:war",
+  "diaithir:raid"
+ ],
+ "fires": [
+  "diaithir:structure_discovered"
+ ],
+ "ruin_states": [
+  {
+   "structure": "diaithir_worldgen:abandoned_mine_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:abyssal_obelisk_deep",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ash_wasteland_crypt",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ashen_bastion",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ashen_forge_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ashen_forge_hollow",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ashen_lookout_spire",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ashen_nether_bastion_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:basalt_fissure_maw",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:buried_nether_sanctum",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:buried_obelisk_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:buried_orchard_vault",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:buried_tomb_vault",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:buried_vault_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:cliff_dwelling_terrace",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:collapsed_pyramid_tomb",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:colossal_stone_spire",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:coral_archive_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:coral_reef_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:cracked_obelisk_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:crimson_gorge_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:crystal_grotto_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:cursed_bastion_hold",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:cyclopean_citadel_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:deep_raider_hideout",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:desert_oasis_settlement",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:desert_raider_arena",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:desert_raider_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_airship_sky",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_buried_mine_shaft_depot",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_city_taiga",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_coastal_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_drowned_harbour_watchpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_floating_raft",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_hamlet_plains",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_kelp_grotto",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_outpost_desert",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_pillager_outpost_ruined",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_reef_temple",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_settlement_snowy",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_ship_wreck_shoreline",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_sunken_reliquary",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_sunken_ruins",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_town_savanna",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_village_savanna",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_village_snowy",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:diaithir_wreck_galleon",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:drowned_archive",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:drowned_citadel",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:drowned_market_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:dune_waystone_rest",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_cellar_crypt",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_end_reliquary",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_flooded_grotto",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_forge_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_grove_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_hollow_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_nether_ossuary",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_relay_nether",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_shrine_nether",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_spire_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_vault_chamber",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_watch_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ember_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_canopy_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_obelisk_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_observatory_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_observatory_ring",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_obsidian_monolith",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_obsidian_spire",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_obsidian_spire_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_raider_relic_circle",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_stone_reliquary",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:end_void_obelisk",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ferrous_depot_underground",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ferrous_outpost_surface",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:floating_crystal_isle",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:floating_isle_cache",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:flooded_idol_chamber",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:forest_collapsed_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:forest_overgrown_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:forest_sunken_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:forgotten_mine_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:fortified_manor_keep",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frost_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frost_waystation_snowy",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frost_world_tree_hollow",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frostbitten_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frostbound_beacon_keep",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frostbound_cairn",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frostbound_ice_drillsite",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frostbound_keep",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frostbound_ossuary",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frostbound_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:frozen_cairn_vault",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:glacial_arch_bridge",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:hamlet_farmstead_cluster",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:hidden_crypt_chapel",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:hollow_chapel_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:hollow_crystal_vault",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:jungle_canopy_relay",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:jungle_outpost_cliff_post",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:jungle_overgrown_ruin_courtyard",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:jungle_settlement_ruin_grove",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:jungle_settlement_stilt_hub",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:jungle_stepped_temple",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:kelp_cistern_complex",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:kelp_forest_watchpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:knights_market_square",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:lichen_cliff_dwelling",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:megalithic_passage_mound",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:monumental_tomb_gate",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:mossveil_warrens",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_ash_crypt",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_basalt_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_bastion_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_ember_pylon",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_forge_hold",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_market_remnant",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_raider_bastion_arena",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_root_sanctum",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_siege_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:oasis_watch_tower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:obelisk_colonnade_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:obsidian_spire_hold",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:oracle_ruins_desert_sanctum",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:oracle_ruins_nether_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:oracle_ruins_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:oracle_ruins_temple",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:oracle_ruins_underground_crypt",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:overgrown_camp_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:overgrown_causeway_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:overgrown_hidden_passage",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:overgrown_mall_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:overgrown_quarry_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:overgrown_shrine_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:overgrown_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:raider_camp_clearing",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:raider_watch_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:raider_watch_tower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ransacked_hamlet",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ruined_bridge_crossing",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ruined_watch_spire",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ruined_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:ruined_waystation_village",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sandstone_rock_citadel",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:savanna_ruined_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:savanna_sunstone_altar",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:siege_stockade",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sky_root_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:snowy_outpost_lodge",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:soulsand_sinkhole_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:spiral_carved_chamber",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:starless_obelisk_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:submerged_harbour_vault",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunbaked_lookout_tower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_beehive_tomb",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_burial_vault",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_canal_station",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_canopy_grove",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_cistern_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_district_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_fishing_hamlet",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_harbor_wreck_town",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_illager_pit",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_orchard_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_relay_outpost",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_reliquary",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_sanctum_rockcut",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_shrine_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_shrine_small",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_siege_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_stone_ring",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_tomb_stones",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_watch_tower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:sunken_workshop",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:swamp_settlement_boardwalk_camp",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:swamp_settlement_hermit_mill",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:tidal_watchtower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:timber_village_hub",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:transit_hub_wreck",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:verdant_grotto_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:verdant_shrine_ring",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:void_lantern_obelisk",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:void_monolith_spire",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:void_obelisk_array",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:void_obelisk_site",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:void_survey_end",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:warden_gate_end",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:warped_grove_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:weathered_waystation",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  }
+ ]
+}
