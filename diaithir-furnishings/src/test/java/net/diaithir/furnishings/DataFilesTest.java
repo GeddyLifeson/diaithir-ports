@@ -52,7 +52,7 @@ class DataFilesTest {
             assertTrue(ids.add(n), "duplicate " + n);
             json("assets/diaithirfurnishings/items/" + n + ".json");
             json("assets/diaithirfurnishings/models/item/" + n + ".json");
-            json("data/diaithirfurnishings/recipe/everyday/" + n + ".json");
+            if (!"farm_machine".equals(e.getAsJsonObject().get("category").getAsString())) json("data/diaithirfurnishings/recipe/everyday/" + n + ".json");  // farm machines are bench-built (diaithir-gear)
             assertNotNull(DataFilesTest.class.getResourceAsStream("/assets/diaithirfurnishings/textures/item/" + n + ".png"), n + " texture");
             assertTrue(lang.has("item.diaithirfurnishings." + n), n + " name");
             assertTrue(!lang.get("item.diaithirfurnishings." + n).getAsString().contains("\u2014"), "no em dash");
