@@ -10,6 +10,7 @@ public final class DiaithirWorldSys {
 
     public DiaithirWorldSys(IEventBus bus) {
         net.diaithir.worldsys.admincommands.AdminCommandsFeature.register(bus);
+        net.diaithir.worldsys.economy.EconomyFeature.register(bus);
         net.diaithir.worldsys.aircrafttuning.AircraftTuningFeature.register(bus);
         net.diaithir.worldsys.calmpiglins.CalmPiglinsFeature.register(bus);
         net.diaithir.worldsys.gemrings.GemRingsFeature.register(bus);
