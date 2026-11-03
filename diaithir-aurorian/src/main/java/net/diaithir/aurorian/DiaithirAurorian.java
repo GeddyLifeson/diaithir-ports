@@ -176,10 +176,10 @@ public final class DiaithirAurorian {
 
     private static Item make(ItemSpec s, Item.Properties p) {
         return switch (s.kind()) {
-            case "axe" -> new AxeItem(toolMaterial(s.mat()), s.damage(), s.speed(), p);
-            case "shovel" -> new ShovelItem(toolMaterial(s.mat()), s.damage(), s.speed(), p);
-            case "hoe" -> new HoeItem(toolMaterial(s.mat()), s.damage(), s.speed(), p);
-            default -> new Item(p);
+            case "axe" -> new AbilityAxe(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
+            case "shovel" -> new AbilityShovel(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
+            case "hoe" -> new AbilityHoe(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
+            default -> new AbilityItem(s.id(), p);
         };
     }
 
@@ -276,6 +276,7 @@ public final class DiaithirAurorian {
         });
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent.class,
             e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "machine_recipes"), MachineRecipes.listener()));
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(Abilities.class);
         AurorianMobs.init(bus);
         BLOCK_ENTITIES.register(bus);
         BLOCKS.register(bus);

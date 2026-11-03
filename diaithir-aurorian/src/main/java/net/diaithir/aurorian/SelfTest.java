@@ -20,6 +20,18 @@ final class SelfTest {
                 PortalFrameBlock.light(c.getSource().getLevel(), shape);
                 c.getSource().sendSuccess(() -> Component.literal("portal: lit " + shape.interior.size() + " blocks, axis " + shape.axis), false);
                 return shape.interior.size();
-            }))));
+            })))
+            .then(Commands.literal("steel").executes(c -> {
+                net.minecraft.world.item.ItemStack st = new net.minecraft.world.item.ItemStack(DiaithirAurorian.item("aurorian_steel_sword"));
+                var ench = c.getSource().getLevel().registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);
+                net.minecraft.world.item.enchantment.EnchantmentHelper.updateEnchantments(st, m -> m.set(ench.getOrThrow(net.minecraft.world.item.enchantment.Enchantments.SHARPNESS), 1));
+                var user = c.getSource().getEntityOrException() instanceof net.minecraft.world.entity.LivingEntity l ? l : null;
+                for (int i = 0; i < 100; i++) {
+                    Abilities.damage(st, 1, user, "aurorian_steel_sword");
+                }
+                String r = "steel: " + st.getEnchantments() .entrySet().stream().map(e -> e.getKey().getRegisteredName() + " " + e.getIntValue()).toList() + " " + st.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
+                c.getSource().sendSuccess(() -> Component.literal(r), false);
+                return 1;
+            })));
     }
 }

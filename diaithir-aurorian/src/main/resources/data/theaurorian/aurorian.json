@@ -82,6 +82,20 @@
   }
  },
  "armor": {
+  "knight": {
+   "name": "knight",
+   "durability": 20,
+   "boots": 3,
+   "legs": 6,
+   "chest": 5,
+   "helmet": 3,
+   "enchant": 5,
+   "sound": "iron",
+   "toughness": 0.0,
+   "knockback": 0.0,
+   "repair": null,
+   "age": "II"
+  },
   "aurorian_steel": {
    "name": "aurorian_steel",
    "durability": 33,
@@ -96,19 +110,33 @@
    "repair": "theaurorian:aurorian_steel_ingot",
    "age": "III"
   },
-  "knight": {
-   "name": "knight",
+  "umbra": {
+   "name": "umbra",
    "durability": 20,
-   "boots": 3,
+   "boots": 4,
    "legs": 6,
-   "chest": 5,
-   "helmet": 3,
-   "enchant": 5,
-   "sound": "iron",
+   "chest": 6,
+   "helmet": 4,
+   "enchant": 20,
+   "sound": "diamond",
+   "toughness": 0.0,
+   "knockback": 0.2,
+   "repair": "theaurorian:umbra_ingot",
+   "age": "IV"
+  },
+  "spectral": {
+   "name": "spectral",
+   "durability": 20,
+   "boots": 4,
+   "legs": 6,
+   "chest": 6,
+   "helmet": 4,
+   "enchant": 25,
+   "sound": "leather",
    "toughness": 0.0,
    "knockback": 0.0,
-   "repair": null,
-   "age": "II"
+   "repair": "theaurorian:spectral_silk",
+   "age": "III"
   },
   "cerulean": {
    "name": "cerulean",
@@ -593,6 +621,34 @@
    "slot": "leggings"
   },
   {
+   "id": "spectral_boots",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "boots"
+  },
+  {
+   "id": "spectral_chestplate",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "chestplate"
+  },
+  {
+   "id": "spectral_helmet",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "helmet"
+  },
+  {
+   "id": "spectral_leggings",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "leggings"
+  },
+  {
    "id": "aurorianite_axe",
    "rarity": "rare",
    "kind": "axe",
@@ -623,6 +679,21 @@
    "mat": "aurorianite",
    "damage": 1.5,
    "speed": -3.0
+  },
+  {
+   "id": "umbra_chestplate",
+   "rarity": "rare",
+   "kind": "armor",
+   "mat": "umbra",
+   "slot": "chestplate"
+  },
+  {
+   "id": "umbra_greatsword",
+   "rarity": "rare",
+   "kind": "sword",
+   "mat": "umbra",
+   "damage": 7.0,
+   "speed": -3.75
   },
   {
    "id": "umbra_pickaxe",
