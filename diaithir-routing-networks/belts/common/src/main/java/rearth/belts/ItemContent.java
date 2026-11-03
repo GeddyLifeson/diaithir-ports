@@ -23,6 +23,15 @@ public class ItemContent {
     public static final RegistrySupplier<Item> FOUNDRY_TUNNEL = ITEMS.register("foundry_tunnel", () -> new TooltipBlockItem(BlockContent.FOUNDRY_TUNNEL_BLOCK.get(), properties("foundry_tunnel")));
     public static final RegistrySupplier<Item> FOUNDRY_LOADER = ITEMS.register("foundry_loader", () -> new TooltipBlockItem(BlockContent.FOUNDRY_LOADER_BLOCK.get(), properties("foundry_loader")));
 
+    public static RegistrySupplier<Item> beltForTier(int tier) {
+        return switch (tier) {
+            case 2 -> IMPROVED_BELT;
+            case 3 -> BELT_TIER3;
+            case 4 -> BELT_TIER4;
+            default -> BELT;
+        };
+    }
+
     private static Item.Properties properties(String path) {
         return new Item.Properties().arch$tab(ItemGroupContent.BELTS_GROUP).setId(ResourceKey.create(Registries.ITEM, Belts.id(path)));
     }
