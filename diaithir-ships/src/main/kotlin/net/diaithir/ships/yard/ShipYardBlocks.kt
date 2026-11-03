@@ -69,7 +69,7 @@ object ShipYardBlocks {
 
     /** Part items, crafted elsewhere (foundry / crafting stations). Stats live in data/vs_yard/yard_parts. */
     val PART_IDS = listOf("keel_beam", "hull_frame", "hull_plank_set", "deck_plating", "steam_engine", "rudder",
-        "helm_kit", "anchor_kit", "floater_kit", "balloon_kit", "thruster_kit", "propeller_kit", "fuel_tank_kit")
+        "helm_kit", "anchor_kit", "floater_kit", "balloon_kit", "thruster_kit", "propeller_kit", "fuel_tank_kit", "ballast_plate")
 
     val SLIPWAY = BLOCKS.register("slipway_controller") {
         SlipwayControllerBlock(DeferredRegister.blockProps().mapColor(MapColor.METAL).strength(3.5F).sound(SoundType.METAL))

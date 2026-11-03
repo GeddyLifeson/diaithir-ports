@@ -7,6 +7,7 @@ import net.neoforged.neoforge.common.NeoForge
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent
 import org.valkyrienskies.mod.common.assembly.ShipAssembler
 import org.valkyrienskies.mod.common.shipObjectWorld
+import org.valkyrienskies.mod.common.dimensionId
 
 /** Ship side of the Assembly Yard API (net.diaithir.yards). Registers under namespace vs_yard. */
 object ShipYardMod {
@@ -19,6 +20,8 @@ object ShipYardMod {
         val blocks = be.hullBlocks()
         if (blocks.isEmpty()) null else {
             val ship = ShipAssembler.assembleToShipFull(level, blocks).ship
+            // apply the summed part mass to the VS2 ship's inertia (block masses are replaced by the part masses)
+            if (stats.massKg() > 0) applyMass(ship, stats.massKg())
             // apply the summed part stats to the new VS2 ship
             val c = YardShipControl()
             c.yardId = be.yardId; c.statMassKg = stats.massKg(); c.powerW = stats.powerW(); c.thrustN = stats.thrustN(); c.buoyancyN = stats.buoyancyN()
@@ -28,10 +31,28 @@ object ShipYardMod {
         }
     } }
 
+    /** Sets the ship's total mass to [target] kg by adding the difference at its centre of mass (ShipInertiaDataImpl.onSetBlock via reflection). */
+    fun applyMass(ship: org.valkyrienskies.core.api.ships.ServerShip, target: Double) {
+        try {
+            val inertia = ship.inertiaData
+            val delta = target - inertia.shipMass
+            val com = inertia.centerOfMassInShip
+            val m = inertia.javaClass.getMethod("onSetBlock", Int::class.java, Int::class.java, Int::class.java, Double::class.java, Double::class.java)
+            m.invoke(inertia, Math.floor(com.x()).toInt(), Math.floor(com.y()).toInt(), Math.floor(com.z()).toInt(), if (delta < 0) -delta else 0.0, if (delta > 0) delta else 0.0)
+        } catch (e: Throwable) { org.slf4j.LoggerFactory.getLogger("vs_yard").warn("cannot apply part mass: {}", e.toString()) }
+    }
+
     /** Per game tick: throttle follows the seated player's forward input (Eureka helm). */
     private fun driveThrottle(server: net.minecraft.server.MinecraftServer) {
         for (level in server.allLevels) for (ship in level.shipObjectWorld.loadedShips) {
+            if (ship.chunkClaimDimension != level.dimensionId) continue
             val c = ship.getAttachment(YardShipControl::class.java) ?: continue
+            val bb = ship.worldAABB
+            val cx = Math.floor((bb.minX() + bb.maxX()) / 2).toInt(); val cz = Math.floor((bb.minZ() + bb.maxZ()) / 2).toInt()
+            val y0 = Math.floor(bb.minY()).toInt(); val y1 = Math.ceil(bb.maxY()).toInt()
+            var wet = 0
+            for (y in y0 until y1) if (!level.getFluidState(net.minecraft.core.BlockPos(cx, y, cz)).isEmpty) wet++
+            c.cover = if (y1 > y0) wet.toDouble() / (y1 - y0) else 0.0
             c.throttle = ship.getAttachment(org.valkyrienskies.mod.api.SeatedControllingPlayer::class.java)?.forwardImpulse?.toDouble()?.coerceIn(0.0, 1.0) ?: 0.0
         }
     }

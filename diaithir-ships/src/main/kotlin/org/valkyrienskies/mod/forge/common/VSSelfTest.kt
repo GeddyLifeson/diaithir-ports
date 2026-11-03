@@ -55,8 +55,9 @@ object VSSelfTest {
     private val yardPhase = System.getProperty("vs.yardphase", "")
 
     private fun yardPool(level: net.minecraft.server.level.ServerLevel, ox: Int) {
-        for (x in ox - 7..ox + 7) for (z in 37..63) for (y in 119..122) {
-            val wall = y == 119 || x == ox - 7 || x == ox + 7 || z == 37 || z == 63
+        for (cx in ((ox - 8) shr 4)..((ox + 8) shr 4)) for (cz in (32 shr 4)..(64 shr 4)) level.setChunkForced(cx, cz, true)
+        for (x in ox - 7..ox + 7) for (z in 37..63) for (y in 115..122) {
+            val wall = y == 115 || x == ox - 7 || x == ox + 7 || z == 37 || z == 63
             level.setBlock(BlockPos(x, y, z), when { y == 122 && !(x == ox - 7 || x == ox + 7 || z == 37 || z == 63) -> Blocks.AIR.defaultBlockState(); y == 122 -> Blocks.STONE.defaultBlockState(); wall -> Blocks.STONE.defaultBlockState(); y <= 121 -> Blocks.WATER.defaultBlockState(); else -> Blocks.AIR.defaultBlockState() }, 2)
         }
     }
@@ -126,6 +127,8 @@ object VSSelfTest {
         yardRun(level, "motor_launch_slipway_water", 70)
         for (z in 41..57) level.setBlock(BlockPos(100, 121, z), Blocks.STONE.defaultBlockState(), 3)
         yardRun(level, "sloop_drydock", 100)
+        yardPool(level, 10)
+        yardRun(level, "motor_launch_heavy_water", 10)
         yardShip = yardShips.getOrNull(0); yardShip2 = yardShips.getOrNull(1)
     }
 
@@ -258,7 +261,9 @@ object VSSelfTest {
                 startY = s.transform.position.y()
                 log.info("selftest: assembled ship id={} slug={} pos={}", s.id, s.slug, s.transform.position)
             }
-            in 150..400 -> if (tick % 50 == 0) { if (tick == 250) yardShip?.let { y -> (shipWorldOf(level).loadedShips.getById(y.id))?.eurekaControl()?.anchorsActive = 0 }; if (tick == 250) yardShip2?.let { s -> shipWorldOf(level).loadedShips.getById(s.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.manualThrottle = 1.0 }; for ((n, ys) in listOf(yardShip, yardShip2, yardShips.getOrNull(2)).withIndex()) ys?.let { log.info("selftest-yard: ship{} tick={} static={} pos={} vel={} ctl={}", n, tick, it.isStatic, it.transform.position, it.velocity, shipWorldOf(level).loadedShips.getById(it.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.let { c -> "buoyApplied=" + c.lastBuoyancyApplied + " thrustApplied=" + c.lastThrustApplied + " overlap=" + c.lastOverlap + " physMass=" + c.physMass + " physSpeed=" + c.physSpeed + " physStatic=" + c.physStatic }) } ; tournamentShip?.let { t -> log.info("selftest-tournament: tick={} ship y={} {}", tick, t.transform.position.y(), shipWorldOf(level).loadedShips.getById(t.id)?.let { l -> org.valkyrienskies.tournament.ship.TournamentShips.getOrCreate(l).debugCounts() }) } ; eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) } }
+            in 251..299 -> if (tick % 6 == 0) log.info("selftest-yard-ab: tick={} light(3010kg) speed={} z={} | heavy(6010kg) speed={} z={}", tick,
+                yardShips.getOrNull(1)?.velocity?.length(), yardShips.getOrNull(1)?.transform?.position?.z(), yardShips.getOrNull(3)?.velocity?.length(), yardShips.getOrNull(3)?.transform?.position?.z())
+            in 150..400 -> if (tick % 50 == 0) { if (tick == 250) yardShip?.let { y -> (shipWorldOf(level).loadedShips.getById(y.id))?.eurekaControl()?.anchorsActive = 0 }; if (tick == 250) listOf(yardShip2, yardShips.getOrNull(3)).forEach { it?.let { s -> shipWorldOf(level).loadedShips.getById(s.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.manualThrottle = 1.0 } }; for ((n, ys) in listOf(yardShip, yardShip2, yardShips.getOrNull(2), yardShips.getOrNull(3)).withIndex()) ys?.let { log.info("selftest-yard: ship{} tick={} static={} pos={} vel={} ctl={}", n, tick, it.isStatic, it.transform.position, it.velocity, shipWorldOf(level).loadedShips.getById(it.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.let { c -> "buoyApplied=" + c.lastBuoyancyApplied + " thrustApplied=" + c.lastThrustApplied + " cover=" + c.cover + " aabbY=" + it.worldAABB.minY() + ".." + it.worldAABB.maxY() + " waterAtCentre=" + level.getFluidState(BlockPos(70, 120, 46)).isEmpty + " overlap=" + c.lastOverlap + " physMass=" + c.physMass + " physSpeed=" + c.physSpeed + " physStatic=" + c.physStatic }) } ; tournamentShip?.let { t -> log.info("selftest-tournament: tick={} ship y={} {}", tick, t.transform.position.y(), shipWorldOf(level).loadedShips.getById(t.id)?.let { l -> org.valkyrienskies.tournament.ship.TournamentShips.getOrCreate(l).debugCounts() }) } ; eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) } }
             in 140..400 -> if (tick % 40 == 0) ship?.let {
                 log.info("selftest: tick={} ship y={} (start {}) vel={} all={} loaded={} static={} mass={} chunkLoaded={} block={}", tick, it.transform.position.y(), startY, it.velocity, shipWorldOf(level).allShips.size, shipWorldOf(level).loadedShips.size, it.isStatic, it.inertiaData.mass, level.chunkSource.getChunkNow(it.chunkClaim.getCenterBlockCoordinates(level.yRange).x shr 4, it.chunkClaim.getCenterBlockCoordinates(level.yRange).z shr 4) != null, level.getBlockState(it.chunkClaim.getCenterBlockCoordinates(level.yRange).let { c -> net.minecraft.core.BlockPos(c.x, c.y, c.z) }))
             }

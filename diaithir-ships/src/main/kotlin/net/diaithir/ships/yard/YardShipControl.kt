@@ -26,13 +26,15 @@ class YardShipControl : ShipPhysicsListener {
     @Volatile var lastBuoyancyApplied = 0.0
     @Volatile var lastThrustApplied = 0.0
     @Volatile var lastOverlap = 0.0
+    /** Fraction of the hull's height under water, sampled on the game thread (VS2's liquidOverlap stays near zero for these hulls). */
+    @Volatile var cover = 0.0
     @Volatile var physMass = 0.0
     @Volatile var physSpeed = 0.0
     @Volatile var physStatic = false
 
     override fun physTick(physShip: PhysShip, physLevel: PhysLevel) {
-        val cover = physShip.liquidOverlap.coerceIn(0.0, 1.0)
-        lastOverlap = cover; physMass = physShip.mass; physSpeed = physShip.velocity.length(); physStatic = physShip.isStatic
+        val cover = this.cover.coerceIn(0.0, 1.0)
+        lastOverlap = physShip.liquidOverlap; physMass = physShip.mass; physSpeed = physShip.velocity.length(); physStatic = physShip.isStatic
         lastBuoyancyApplied = buoyancyN * cover
         if (lastBuoyancyApplied > 0) physShip.applyInvariantForce(Vector3d(0.0, lastBuoyancyApplied, 0.0))
         val t = maxOf(throttle, manualThrottle).coerceIn(0.0, 1.0)
