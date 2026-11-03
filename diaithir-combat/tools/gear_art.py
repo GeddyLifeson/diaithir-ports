@@ -30,7 +30,7 @@ def axis_shape(d0, d1, parts, tier, ang=-math.pi / 4):
         d.polygon(P, fill=col, outline=OUT if not layer else None)
     if d1 is not None: pass
 
-def weapon(cls, tier):
+def weapon(cls, tier, pull=0):
     l0 = Image.new('RGBA', (S, S), (0, 0, 0, 0)); l1 = Image.new('RGBA', (S, S), (0, 0, 0, 0))
     d0, d1 = ImageDraw.Draw(l0), ImageDraw.Draw(l1)
     def rect(x0, y0, x1, y1): return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
@@ -54,8 +54,12 @@ def weapon(cls, tier):
         n = 2 if cls == 'longbow' else 0
         pts = [(18 + n, 58), (14 + n, 40), (14 + n, 24), (22 + n, 6)]
         for i in range(len(pts) - 1): d1.line([pts[i], pts[i + 1]], fill=(235, 238, 242, 255), width=5)
-        d0.line([(22 + n, 6), (18 + n, 58)], fill=(200, 200, 190, 255), width=1)
-        out = Image.new('RGBA', (S, S), (0, 0, 0, 0)); out.alpha_composite(l0); out.alpha_composite(l1)
+        top, bot, mid = (22 + n, 6), (18 + n, 58), (16 + n, 32)
+        sx = [16 + n, 26, 34, 40][pull]
+        d0.line([top, (sx, 32), bot] if pull else [top, bot], fill=(200, 200, 190, 255), width=1)
+        if pull:  # nocked arrow, longer the further the draw
+            d0.line([(sx, 32), (sx + 24, 32 - 0)], fill=(96, 66, 40, 255), width=2)
+            d0.polygon([(sx + 24, 29), (sx + 30, 32), (sx + 24, 35)], fill=shade(METAL[tier - 1], .9), outline=OUT)
         return l0, l1
     ang = -math.pi / 4 if cls not in ('spear', 'polearm', 'staff', 'axe', 'battleaxe', 'mace', 'warhammer') else -math.pi / 5
     axis_shape(d0, d1, P, tier, ang)
@@ -82,18 +86,51 @@ def armor(slot, tier):
     if tier >= 8: d0.ellipse([28, 28, 36, 36], fill=(120, 255, 230, 255))
     return l0, l1
 
+def eq_texture(tier, legs):
+    """Worn layer (64x32, vanilla humanoid UV): grey plate panels, tinted per entry through the dyed_color component."""
+    im = Image.new('RGBA', (64, 32), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    pw = max(3, 9 - tier)  # panel size shrinks with Age: finer plating
+    for y in range(32):
+        for x in range(64):
+            seam = (x % pw == 0) or (y % pw == 0)
+            v = 150 if seam else 205 + 4 * ((x // pw + y // pw) % 3)
+            if (x % pw == 1 and y % pw == 1): v = 240
+            im.putpixel((x, y), (v, v, v, 255))
+    if tier >= 8:
+        for x in range(0, 64, 8): d.line([(x, 0), (x, 31)], fill=(235, 255, 250, 255))
+    return im
+
+def bow_models(A, name, t, l0, frames):
+    pass
+
 def main():
+    for t in range(1, 10):
+        for legs, sub in ((False, 'humanoid'), (True, 'humanoid_leggings')):
+            os.makedirs(A + 'textures/entity/equipment/' + sub, exist_ok=True)
+            eq_texture(t, legs).save(A + f'textures/entity/equipment/{sub}/lib_t{t}.png')
+        os.makedirs(A + 'equipment', exist_ok=True)
+        json.dump({'layers': {'humanoid': [{'texture': f'diaithircombat:lib_t{t}', 'dyeable': {'color_when_undyed': 16777215}}],
+                              'humanoid_leggings': [{'texture': f'diaithircombat:lib_t{t}', 'dyeable': {'color_when_undyed': 16777215}}]}},
+                  open(A + f'equipment/lib_t{t}.json', 'w'))
     os.makedirs(A + 'textures/item/library', exist_ok=True); os.makedirs(A + 'models/item/library', exist_ok=True); os.makedirs(A + 'items', exist_ok=True)
     for name, fn in [(c, lambda t, c=c: weapon(c, t)) for c in CLASSES] + [(s, lambda t, s=s: armor(s, t)) for s in SLOTS]:
         cases = []
-        for t in range(1, 10):
-            l0, l1 = fn(t)
-            key = f'lib_{name}_t{t}'
+        bow = name in ('bow', 'longbow')
+        tints = [{'type': 'minecraft:constant', 'value': 16777215}, {'type': 'minecraft:custom_model_data', 'index': 0, 'default': 16777215}]
+        def mk(key, l0, l1):
             l0.save(A + f'textures/item/library/{key}_a.png'); l1.save(A + f'textures/item/library/{key}_b.png')
             json.dump({'parent': 'minecraft:item/generated', 'textures': {'layer0': f'diaithircombat:item/library/{key}_a', 'layer1': f'diaithircombat:item/library/{key}_b'}},
                       open(A + f'models/item/library/{key}.json', 'w'))
-            cases.append({'when': f't{t}', 'model': {'type': 'minecraft:model', 'model': f'diaithircombat:item/library/{key}',
-                          'tints': [{'type': 'minecraft:constant', 'value': 16777215}, {'type': 'minecraft:custom_model_data', 'index': 0, 'default': 16777215}]}})
+            return {'type': 'minecraft:model', 'model': f'diaithircombat:item/library/{key}', 'tints': tints}
+        for t in range(1, 10):
+            l0, l1 = fn(t)
+            model = mk(f'lib_{name}_t{t}', l0, l1)
+            if bow:  # vanilla bow pull: using_item -> range_dispatch on use_duration (0.65 and 0.9 of a 1 s draw)
+                pm = [mk(f'lib_{name}_t{t}_pull{i}', *weapon(name, t, i)) for i in (1, 2, 3)]
+                model = {'type': 'minecraft:condition', 'property': 'minecraft:using_item', 'on_false': model,
+                         'on_true': {'type': 'minecraft:range_dispatch', 'property': 'minecraft:use_duration', 'scale': 0.05,
+                                     'entries': [{'threshold': 0.65, 'model': pm[1]}, {'threshold': 0.9, 'model': pm[2]}], 'fallback': pm[0]}}
+            cases.append({'when': f't{t}', 'model': model})
         json.dump({'model': {'type': 'minecraft:select', 'property': 'minecraft:custom_model_data', 'index': 0, 'cases': cases, 'fallback': cases[0]['model']}},
                   open(A + f'items/lib_{name}.json', 'w'))
     print('ok')
