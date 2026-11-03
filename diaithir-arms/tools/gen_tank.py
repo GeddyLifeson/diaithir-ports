@@ -204,7 +204,7 @@ for vid, design, nm, gun, hp, mass, age, desc in VEHICLES:
                    'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0, 'isBigTruck': False},
      'car': {'isFrontWheelDrive': True, 'isRearWheelDrive': False, 'axleRatio': 3.6, 'dragCoefficient': 0.9},
      'parts': parts(design, gun, 'tank_track' if design == 1 else 'tank_track2'),
-     'collisionGroups': [{'collisionTypes': ['block', 'vehicle', 'click', 'attack', 'bullet'], 'isInterior': False, 'health': hp, 'armorThickness': 300.0, 'collisions': [
+     'collisionGroups': [{'collisionTypes': ['block', 'entity', 'vehicle', 'attack', 'bullet'], 'isInterior': False, 'health': hp, 'armorThickness': 300.0, 'collisions': [
          {'pos': [0, 1.1, 0.0], 'width': 2.6, 'height': 1.2}, {'pos': [0, 1.0, 2.4], 'width': 2.6, 'height': 1.0}, {'pos': [0, 1.0, -2.4], 'width': 2.6, 'height': 1.0},
          {'pos': [-1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}, {'pos': [1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}]}],
      'definitions': [{'subName': sfx, 'name': nm + lab, 'modelName': mdl, 'textureName': mdl + sfx, 'extraMaterialLists': [[]]} for sfx, lab in CAMO_N],
