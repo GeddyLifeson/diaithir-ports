@@ -2,6 +2,7 @@ package net.diaithir.routing;
 
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -13,6 +14,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -31,6 +34,7 @@ public final class DiaithirRouting {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, ID);
     public static final DeferredRegister.DataComponents COMPONENTS = DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, ID);
+    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, ID);
 
     private static BlockBehaviour.Properties metal() {
         return BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0F, 8.0F).sound(SoundType.METAL).requiresCorrectToolForDrops();
@@ -80,12 +84,17 @@ public final class DiaithirRouting {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ModHopperBlockEntity>> HOPPER_BE = BLOCK_ENTITIES.register("hopper",
             () -> new BlockEntityType<>(ModHopperBlockEntity::new, COPPER_FILTER_HOPPER.get(), FAST_HOPPER.get(), FILTER_HOPPER.get(), ITEM_COLLECTOR.get()));
 
+    public static final DeferredHolder<MenuType<?>, MenuType<RouterMenu>> ROUTER_MENU = MENUS.register("router",
+            () -> IMenuTypeExtension.create(RouterMenu::client));
+
     public DiaithirRouting(IEventBus bus, ModContainer container) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         COMPONENTS.register(bus);
+        MENUS.register(bus);
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
+        bus.addListener(RegisterMenuScreensEvent.class, e -> e.register(ROUTER_MENU.get(), RouterScreen::new));
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
                 for (Item i : List.of(ROUTER_ITEM.get(), LASER_NODE_ITEM.get(), COPPER_FILTER_HOPPER_ITEM.get(), FAST_HOPPER_ITEM.get(),

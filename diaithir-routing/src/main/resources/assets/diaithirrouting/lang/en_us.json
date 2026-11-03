@@ -17,5 +17,12 @@
   "item.diaithirrouting.void_module": "Void Module",
   "item.diaithirrouting.fluid_module": "Fluid Module",
   "item.diaithirrouting.energy_module": "Energy Module",
-  "item.diaithirrouting.round_robin_module": "Round Robin Module"
+  "item.diaithirrouting.round_robin_module": "Round Robin Module",
+  "gui.diaithirrouting.match_durability": "Match durability",
+  "gui.diaithirrouting.ignore_data": "Ignore data",
+  "gui.diaithirrouting.blacklist": "Blacklist",
+  "gui.diaithirrouting.match_tag": "Match tag",
+  "gui.diaithirrouting.range": "Range: %s blocks",
+  "gui.diaithirrouting.whitelist": "Whitelist",
+  "container.diaithirrouting.router": "Router"
 }

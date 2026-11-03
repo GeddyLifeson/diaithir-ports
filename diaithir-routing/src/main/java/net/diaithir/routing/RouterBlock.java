@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jspecify.annotations.Nullable;
 
-/** The router. Hold a module to install it, a range card to upgrade range, a filter to attach it, or use empty-handed to list contents; sneak with an empty hand pops the last module. */
+/** The router. Right-click opens the GUI; sneak with an empty hand pops the last module; holding a module, range card or filter applies it directly. */
 public final class RouterBlock extends BaseEntityBlock {
     public static final MapCodec<RouterBlock> CODEC = simpleCodec(RouterBlock::new);
 
@@ -76,8 +77,8 @@ public final class RouterBlock extends BaseEntityBlock {
                 if (!player.getInventory().add(back)) player.drop(back, false);
                 player.sendOverlayMessage(Component.literal("Module removed"));
             }
-        } else {
-            player.sendOverlayMessage(Component.literal(router.describe()));
+        } else if (player instanceof ServerPlayer sp) {
+            sp.openMenu(router, buf -> buf.writeBlockPos(pos));
         }
         return InteractionResult.SUCCESS;
     }

@@ -3,8 +3,13 @@ package net.diaithir.routing;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.GlobalPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** Router state: up to nine modules, a router-wide filter, range cards and links to other routers in the same dimension. */
-public final class RouterBlockEntity extends BlockEntity {
+public final class RouterBlockEntity extends BlockEntity implements MenuProvider {
     public static final int MAX_MODULES = 9;
     public static final int MAX_LINKS = 8;
 
@@ -46,13 +51,39 @@ public final class RouterBlockEntity extends BlockEntity {
         return true;
     }
 
+    private static ItemStack toStack(Installed i) {
+        ItemStack out = new ItemStack(DiaithirRouting.MODULES.get(i.kind().ordinal()).get());
+        if (!i.filter().entries().isEmpty() || i.filter().blacklist()) out.set(DiaithirRouting.FILTER_DATA.get(), i.filter());
+        return out;
+    }
+
     public ItemStack popModule() {
         if (modules.isEmpty()) return ItemStack.EMPTY;
         Installed i = modules.remove(modules.size() - 1);
         setChanged();
-        ItemStack out = new ItemStack(DiaithirRouting.MODULES.get(i.kind().ordinal()).get());
-        if (!i.filter().entries().isEmpty() || i.filter().blacklist()) out.set(DiaithirRouting.FILTER_DATA.get(), i.filter());
-        return out;
+        return toStack(i);
+    }
+
+    /** Menu view of module slot i: the module item with its filter component, or empty. */
+    public ItemStack moduleStack(int i) {
+        return i >= 0 && i < modules.size() ? toStack(modules.get(i)) : ItemStack.EMPTY;
+    }
+
+    /** Sets module slot i from a stack; an empty or non-module stack clears it. Slots stay packed so the list never has holes. */
+    public void setModuleStack(int i, ItemStack s) {
+        if (i < 0 || i >= MAX_MODULES) return;
+        if (s.isEmpty() || !(s.getItem() instanceof ModuleItem m)) {
+            if (i < modules.size()) modules.remove(i);
+        } else {
+            Installed in = new Installed(m.kind(), s.getOrDefault(RoutingRefs.filterData(), FilterData.EMPTY));
+            if (i < modules.size()) modules.set(i, in);
+            else if (modules.size() < MAX_MODULES) modules.add(in);
+        }
+        setChanged();
+    }
+
+    public int moduleCount() {
+        return modules.size();
     }
 
     public void addRangeCard() {
@@ -70,6 +101,20 @@ public final class RouterBlockEntity extends BlockEntity {
 
     public void setFilter(FilterData f) {
         filter = f;
+        setChanged();
+    }
+
+    /** Sets one router-wide filter flag: 0 blacklist, 1 match tag, 2 match durability, 3 ignore data. Flips it. */
+    public void toggleFlag(int flag) {
+        switch (flag) {
+            case 0 -> filter = filter.withBlacklist(!filter.blacklist());
+            case 1 -> filter = filter.withMatchTag(!filter.matchTag());
+            case 2 -> filter = filter.withMatchDurability(!filter.matchDurability());
+            case 3 -> filter = filter.withIgnoreData(!filter.ignoreData());
+            default -> {
+                return;
+            }
+        }
         setChanged();
     }
 
@@ -93,6 +138,16 @@ public final class RouterBlockEntity extends BlockEntity {
         return sb.append("], range ").append(range()).append(", ").append(links.size()).append(" links, filter ").append(filter.describe()).toString();
     }
 
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable("container.diaithirrouting.router");
+    }
+
+    @Override
+    public AbstractContainerMenu createMenu(int id, Inventory inv, Player player) {
+        return new RouterMenu(id, inv, this);
+    }
+
     public void dropContents(ServerLevel level, BlockPos pos) {
         while (!modules.isEmpty()) {
             ItemStack s = popModule();
@@ -108,7 +163,7 @@ public final class RouterBlockEntity extends BlockEntity {
         if (modules.isEmpty() || ++cooldown < Config.OPERATION_INTERVAL.get()) return;
         cooldown = 0;
         List<Direction> sides = adjacentSides(level);
-        for (Installed m : modules) run(level, m, sides);
+        for (Installed m : new ArrayList<>(modules)) run(level, m, sides);
     }
 
     private List<Direction> adjacentSides(ServerLevel level) {
