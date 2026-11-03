@@ -35,6 +35,9 @@ public final class DiaithirCombat {
     public DiaithirCombat(IEventBus bus, ModContainer container) {
         container.registerConfig(ModConfig.Type.COMMON, CombatConfig.SPEC);
         Cat.load();
+        Consolidated.load();
+        ConsolidatedItems.register(bus);
+        ConsolidatedBehaviour.register();
         bus.addListener(Net::register);
         NeoForge.EVENT_BUS.register(this);
         if (FMLEnvironment.getDist().isClient()) CombatClient.init(bus);
