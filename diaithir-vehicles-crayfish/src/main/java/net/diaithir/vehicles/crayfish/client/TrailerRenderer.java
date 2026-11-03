@@ -45,7 +45,7 @@ public class TrailerRenderer extends EntityRenderer<TankTrailer, TrailerRenderer
         super.extractRenderState(e, s, pt);
         s.yRot = e.getYRot();
         s.xRot = e.getXRot();
-        Block b = BuiltInRegistries.BLOCK.getValue(Identifier.fromNamespaceAndPath("diaithirvehicles", "fuel_tank"));
+        Block b = BuiltInRegistries.BLOCK.getValue(Identifier.fromNamespaceAndPath("diaithirbridges", "carrier_tank"));
         resolver.update(s.body, b.defaultBlockState(), CONTEXT);
     }
 

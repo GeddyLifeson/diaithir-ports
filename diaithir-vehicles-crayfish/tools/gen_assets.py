@@ -113,7 +113,7 @@ def shaped(name, key, pattern, out):
 shaped("gas_pump", {"I": "minecraft:iron_ingot", "R": "minecraft:redstone", "G": "minecraft:glass_pane", "H": "minecraft:hopper"}, ["IGI", "IRI", "IHI"], "gas_pump")
 shaped("trailer_hitch", {"I": "minecraft:iron_ingot", "C": "minecraft:iron_chain"}, ["I I", "ICI", " C "], "trailer_hitch")
 shaped("repair_hammer", {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, ["III", " SI", " S "], "repair_hammer")
-wj("recipe/tank_trailer.json", {"type": "minecraft:crafting_shapeless", "category": "misc", "ingredients": ["diaithirvehicles:fuel_tank", "minecraft:minecart", "minecraft:minecart", f"{NS}:trailer_hitch"],
+wj("recipe/tank_trailer.json", {"type": "minecraft:crafting_shapeless", "category": "misc", "ingredients": ["diaithirbridges:carrier_tank", "minecraft:minecart", "minecraft:minecart", f"{NS}:trailer_hitch"],
                                 "result": {"id": f"{NS}:tank_trailer", "count": 1}}, D)
 wj("tags/block/mineable/pickaxe.json", {"values": [f"{NS}:gas_pump"]}, MC)
 wj("tags/block/needs_stone_tool.json", {"values": [f"{NS}:gas_pump"]}, MC)
@@ -121,7 +121,7 @@ wj("age_gate.json", {"tier1": {"age": 5, "items": [f"{NS}:gas_pump", f"{NS}:trai
 os.makedirs(os.path.join(HERE, "..", "..", "library-sync"), exist_ok=True)
 with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as f:
     json.dump([
-        {"id": f"{NS}:gas_pump", "name": "Fuel Pump", "text": "Stands on a fuel tank. Use it to take the hose, then use a vehicle or tank trailer to pump 50 L per use. The hose lets go if you walk 10 m away. Age V."},
+        {"id": f"{NS}:gas_pump", "name": "Fuel Pump", "text": "Stands on a Carrier Tank. Use it to take the hose, then use a vehicle or tank trailer to pump 50 L per use. The hose lets go if you walk 10 m away. Age V."},
         {"id": f"{NS}:trailer_hitch", "name": "Trailer Hitch", "text": "Use on a trailer to hook it to yourself or unhook it; use a vehicle with a tow bar to pass the trailer to it. Age V."},
         {"id": f"{NS}:repair_hammer", "name": "Repair Hammer", "text": "Each blow gives a damaged vehicle or trailer 5 health back. Age V."},
         {"id": f"{NS}:tank_trailer", "name": "Tank Trailer", "text": "Two-wheel fuel bowser with a 2,000 L tank. Towed with a hitch, filled by a pump, emptied into cans and vehicles. It takes crash damage and snaps free if the tow bar gets too far. Age V."},

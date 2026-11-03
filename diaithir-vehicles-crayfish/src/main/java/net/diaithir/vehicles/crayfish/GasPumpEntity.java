@@ -3,7 +3,7 @@
 package net.diaithir.vehicles.crayfish;
 
 import net.diaithir.vehicles.FuelLookup;
-import net.diaithir.vehicles.fuel.FuelStore;
+import net.diaithir.units.fuel.FuelStore;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -42,9 +42,9 @@ public class GasPumpEntity extends BlockEntity {
     }
 
     /** Moves up to the configured litres from the tank into {@code target}; returns litres moved. */
-    public long refuel(FuelStore target) {
+    public double refuel(FuelStore target) {
         FuelStore t = tank();
-        return t == null ? 0 : t.transferTo(target, Config.PUMP_LITRES_PER_USE.get());
+        return t == null ? 0 : FuelStore.transfer(t, target, Config.PUMP_LITRES_PER_USE.get());
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, GasPumpEntity be) {

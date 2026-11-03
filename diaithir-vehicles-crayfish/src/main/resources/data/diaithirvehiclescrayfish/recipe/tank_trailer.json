@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "diaithirvehicles:fuel_tank",
+    "diaithirbridges:carrier_tank",
     "minecraft:minecart",
     "minecraft:minecart",
     "diaithirvehiclescrayfish:trailer_hitch"

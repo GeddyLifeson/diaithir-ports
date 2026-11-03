@@ -2,8 +2,8 @@
 // Folded from MrCrayfish's Vehicle Mod (Unofficial 1.20.1 port by bay4lly; original by MrCrayfish, GPL). Rewritten for NeoForge 26.1.2; art is not used.
 package net.diaithir.vehicles.crayfish;
 
-import net.diaithir.vehicles.fuel.FuelCaps;
-import net.diaithir.vehicles.fuel.FuelStore;
+import net.diaithir.units.fuel.FuelStore;
+import net.diaithir.vehicles.FuelLookup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -61,7 +61,6 @@ public final class CrayfishVehicles {
         ENTITIES.register(bus);
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
         bus.addListener(RegisterCapabilitiesEvent.class, e -> {
-            e.registerEntity(FuelCaps.ENTITY, TANK_TRAILER.get(), (t, ctx) -> t.tank);
             e.registerEntity(CrayfishCaps.HEALTH, TANK_TRAILER.get(), (t, ctx) -> t.health);
         });
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
@@ -113,12 +112,12 @@ public final class CrayfishVehicles {
         }
         // Nozzle: with the hose in hand (no item needed), use any entity that has a fuel store.
         if (stack.isEmpty() && !e.getLevel().isClientSide()) {
-            FuelStore store = target.getCapability(FuelCaps.ENTITY, null);
+            FuelStore store = FuelLookup.entity(target);
             if (store == null) return;
             for (GasPumpEntity pump : nearbyPumps(e)) {
                 if (p.getUUID().equals(pump.fueler())) {
-                    long moved = pump.refuel(store);
-                    p.sendOverlayMessage(Component.literal(moved > 0 ? "Pumped " + moved + " L" : "Nothing pumped."));
+                    double moved = pump.refuel(store);
+                    p.sendOverlayMessage(Component.literal(moved > 0 ? "Pumped " + Math.round(moved * 10) / 10.0 + " L" : "Nothing pumped."));
                     done(e);
                     return;
                 }
