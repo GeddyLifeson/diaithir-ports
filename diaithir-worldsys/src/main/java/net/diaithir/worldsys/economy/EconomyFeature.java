@@ -59,7 +59,7 @@ public final class EconomyFeature {
     }
 
     private static void commands(RegisterCommandsEvent e) {
-        e.getDispatcher().register(Commands.literal("company")
+        e.getDispatcher().register(CompanyCommands.build()
             .then(Commands.literal("quest").executes(ctx -> {
                 var p = ctx.getSource().getPlayerOrException();
                 var q = EconWorld.state().quest(p.getUUID().toString());
