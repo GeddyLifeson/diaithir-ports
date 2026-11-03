@@ -67,7 +67,10 @@ public final class DiaithirCarts {
 
     public static final DeferredItem<Item> TIMETABLE = ITEMS.registerItem("timetable", TimetableItem::new, p -> p.stacksTo(1));
 
+    public static final DeferredItem<Item> AUTONOMY_MODULE = ITEMS.registerItem("autonomy_module", Item::new, p -> p.stacksTo(16));
+
     public DiaithirCarts(IEventBus bus) {
+        Autonomy.ATTACHMENTS.register(bus);
         Schedule.ATTACHMENTS.register(bus);
         Schedule.COMPONENTS.register(bus);
         BLOCKS.register(bus);
@@ -79,6 +82,7 @@ public final class DiaithirCarts {
                 e.accept(COUPLING_CHAIN.get());
                 e.accept(CHAIN_CUTTERS.get());
                 e.accept(TIMETABLE.get());
+                e.accept(AUTONOMY_MODULE.get());
             }
         });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> CartCommands.register(e.getDispatcher()));
@@ -96,6 +100,16 @@ public final class DiaithirCarts {
     private static void interact(PlayerInteractEvent.EntityInteract e) {
         if (!(e.getTarget() instanceof AbstractMinecart cart)) return;
         ItemStack held = e.getItemStack();
+        if (held.is(AUTONOMY_MODULE.get())) {
+            e.setCancellationResult(InteractionResult.SUCCESS);
+            e.setCanceled(true);
+            if (e.getLevel() instanceof ServerLevel) {
+                boolean ok = Autonomy.fit(cart);
+                if (ok && !e.getEntity().isCreative()) held.shrink(1);
+                e.getEntity().sendOverlayMessage(Component.literal(ok ? "Autonomy module fitted" : Autonomy.capable(cart) ? "Already has a module" : "This vehicle cannot be made autonomous"));
+            }
+            return;
+        }
         if (held.is(TIMETABLE.get())) {
             e.setCancellationResult(InteractionResult.SUCCESS);
             e.setCanceled(true);

@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * /diaithircarts scheduletest: two lanes with stations at x=10, 20 and 30 (the middle one holds 2 s, the others wait for a signal).
- * Lane 0: a crewed cart (villager aboard) with the schedule [20, 30]. Lane 1: the same schedule, no crew. The uncrewed cart is then released by switching to Age VII.
+ * Lane 0: a crewed cart (villager aboard) with the schedule [20, 30]. Lane 1: the same schedule, no crew. The uncrewed cart is then released by fitting an autonomy module.
  */
 final class ScheduleTest {
     private ScheduleTest() {}
@@ -87,10 +87,8 @@ final class ScheduleTest {
     static void tick(MinecraftServer server) {
         if (t < 0) return;
         t++;
-        if (t == 1) Autonomy.ageSupplier = () -> 0;
         for (int lane = 0; lane < 2; lane++) {
             AbstractMinecart c = carts[lane];
-            if (lane == 2 && t == 2) Autonomy.ageSupplier = () -> 0;
             if (c.isAlive() && t < 260 && !nearStation(c.getX() - at.getX()) && c.getDeltaMovement().horizontalDistance() < 0.2) c.setDeltaMovement(0.3, 0, 0);
         }
         // lane 2 runs under Age VII, the others under Age 0: switch the supplier by whose turn it is is not possible, so lane 2 gets its own check below
@@ -108,8 +106,11 @@ final class ScheduleTest {
             expect("crewed cart schedule should point at the second stop: " + Schedule.get(carts[0]).next(), Schedule.get(carts[0]).next() == 1);
             expect("uncrewed cart left its station x=" + x1, x1 >= 10 && x1 < 11);
             // now Age VII: the uncrewed cart is released and runs on
-            Autonomy.ageSupplier = () -> Autonomy.AUTONOMY_AGE;
-            expect("status under Age VII", Autonomy.status(carts[1]) == Autonomy.Status.AUTONOMOUS);
+            expect("a module must not be fitted by default", !Autonomy.autonomous(carts[1]));
+            expect("autonomousCrew must be false before a module", !Autonomy.autonomousCrew("driver", carts[1]));
+            expect("the module fits a capable cart", Autonomy.fit(carts[1]));
+            expect("status with a module", Autonomy.status(carts[1]) == Autonomy.Status.AUTONOMOUS);
+            expect("autonomousCrew with a module", Autonomy.autonomousCrew("driver", carts[1]) && !Autonomy.autonomousCrew("farmer", carts[1]));
             carts[1].setDeltaMovement(0.01, 0, 0);
         }
         if (t == 262) Schedule.set(carts[1], new Schedule(Schedule.get(carts[1]).stops(), 0));
@@ -117,7 +118,6 @@ final class ScheduleTest {
         if (t == 520) {
             double x1 = carts[1].getX() - at.getX();
             expect("autonomous cart should have reached its first stop x=20+, got x=" + x1, x1 >= 20);
-            Autonomy.ageSupplier = () -> 0;
             String line = fails.isEmpty() ? "Schedule self test PASS" : "Schedule self test FAIL: " + String.join("; ", fails);
             LOG.info(line);
             source.sendSuccess(() -> Component.literal(line), false);

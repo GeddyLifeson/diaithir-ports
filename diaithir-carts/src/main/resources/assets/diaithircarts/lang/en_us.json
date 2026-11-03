@@ -13,5 +13,6 @@
  "block.diaithircarts.destination_rail": "Destination Rail",
  "block.diaithircarts.cart_loader": "Cart Loader",
  "block.diaithircarts.locking_rail": "Locking Rail",
- "item.diaithircarts.timetable": "Timetable"
+ "item.diaithircarts.timetable": "Timetable",
+ "item.diaithircarts.autonomy_module": "Autonomy Module"
 }

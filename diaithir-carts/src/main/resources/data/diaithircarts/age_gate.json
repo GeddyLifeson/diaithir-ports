@@ -38,5 +38,11 @@
       "diaithircarts:cart_loader",
       "diaithircarts:locking_rail"
     ]
+  },
+  "autonomy": {
+    "age": 7,
+    "items": [
+      "diaithircarts:autonomy_module"
+    ]
   }
 }
