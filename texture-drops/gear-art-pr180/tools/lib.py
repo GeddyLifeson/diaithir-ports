@@ -2,11 +2,13 @@ import math
 from PIL import Image, ImageDraw, ImageFilter
 SS=4; N=64
 class Layer:
-    def __init__(s): s.im=Image.new('LA',(N*SS,N*SS),(0,0)); s.d=ImageDraw.Draw(s.im)
-    def poly(s,pts,g=200): s.d.polygon([(x*SS,y*SS) for x,y in pts],fill=(g,255))
-    def line(s,a,b,w=1,g=200): s.d.line([(a[0]*SS,a[1]*SS),(b[0]*SS,b[1]*SS)],fill=(g,255),width=max(1,int(w*SS)))
-    def ell(s,cx,cy,rx,ry,g=200): s.d.ellipse([(cx-rx)*SS,(cy-ry)*SS,(cx+rx)*SS,(cy+ry)*SS],fill=(g,255))
-    def rect(s,x0,y0,x1,y1,g=200): s.d.rectangle([x0*SS,y0*SS,x1*SS,y1*SS],fill=(g,255))
+    def __init__(s,k=1.0,ox=0.0,oy=0.0): s.k=k; s.ox=ox; s.oy=oy; s.im=Image.new('LA',(N*SS,N*SS),(0,0)); s.d=ImageDraw.Draw(s.im)
+    def T(s,x,y): return ((x*s.k+s.ox)*SS,(y*s.k+s.oy)*SS)
+    def poly(s,pts,g=200): s.d.polygon([s.T(x,y) for x,y in pts],fill=(g,255))
+    def line(s,a,b,w=1,g=200): s.d.line([s.T(*a),s.T(*b)],fill=(g,255),width=max(1,int(w*s.k*SS)))
+    def ell(s,cx,cy,rx,ry,g=200): s.d.ellipse([s.T(cx-rx,cy-ry),s.T(cx+rx,cy+ry)][0]+s.T(cx+rx,cy+ry),fill=(g,255))
+    def rect(s,x0,y0,x1,y1,g=200): s.d.rectangle(list(s.T(x0,y0))+list(s.T(x1,y1)),fill=(g,255))
+    def bbox(s): return s.im.getchannel('A').getbbox()
     def out(s,path,outline=70):
         a=s.im.resize((N,N),Image.BOX); L,A=a.split()
         A=A.point(lambda v:255 if v>110 else 0); L=L.point(lambda v:v)

@@ -2,15 +2,17 @@ from lib import *
 import json,sys,os
 def g(sp,k,d): 
     v=sp.get(k,d); return d if v in (None,'') else v
-def render(sp,outdir,gid):
+def render(sp,outdir,gid,_k=None):
     st=g(sp,'stock','straight'); lock=g(sp,'lock','semi'); cls=g(sp,'class','rifle')
     S={'none':0,'straight':15,'pistol_grip':9,'skeleton':14,'folding':13,'bullpup':0,'thumbhole':15,'full_wood':17,'club':14}.get(st,12)
     pistol = cls in('pistol','revolver','flintlock_pistol','wheellock','handcannon') and st in('none','pistol_grip','club')
+    if pistol: S=0
     R=10 if not pistol else 9
     B=int(g(sp,'barrel_len',30)); B=max(8,min(B,60-S-R-3))
     bw=max(1,min(5,int(g(sp,'barrel_w',2)))); cy=24
     x0=3; xr=x0+S; xb=xr+R; xe=xb+B
-    bar,lk,sk=Layer(),Layer(),Layer()
+    kk,ox,oy=_k if _k else (1.0,0.0,0.0)
+    bar,lk,sk=Layer(kk,ox,oy),Layer(kk,ox,oy),Layer(kk,ox,oy)
     style=g(sp,'barrel_style','round')
     bar.rect(xb-1,cy-bw/2,xe,cy+bw/2+0.4,215); bar.rect(xb-1,cy-bw/2,xe,cy-bw/2+0.9,250)
     if style=='octagon': bar.rect(xb,cy-bw/2-0.6,xe,cy-bw/2,235)
@@ -43,7 +45,7 @@ def render(sp,outdir,gid):
     elif lock=='lever': lk.line((xr+2,ry1),(xr+2,ry1+4),1,150); lk.line((xr+2,ry1+4),(xr+8,ry1+4),1,150); lk.line((xr+8,ry1+4),(xr+8,ry1),1,150)
     elif lock in('gas','semi'): lk.rect(xr+3,cy-bw/2-1.2,xb-2,cy-bw/2,250)
     tg=ry1; lk.line((xr+3,tg),(xr+3,tg+3),1,150); lk.line((xr+3,tg+3),(xr+7,tg+3),1,150); lk.line((xr+7,tg+3),(xr+7,tg),1,150)
-    if pistol: lk.poly([(xr-1,ry1),(xr+5,ry1),(xr+2,ry1+14),(xr-5,ry1+14)],175)
+    if pistol: lk.poly([(xr-1,ry1),(xr+5,ry1),(xr+3,ry1+11),(xr-3,ry1+11)],175)
     elif st in('pistol_grip','none') or cls in('smg','mg'):
         gx=xr+7; lk.poly([(gx+2,ry1),(gx+7,ry1),(gx+5,ry1+13),(gx-1,ry1+13)],175)
     mag=g(sp,'mag','none'); ml=int(g(sp,'mag_len',10)); mx=xr+(5 if not pistol else 3)
@@ -69,6 +71,10 @@ def render(sp,outdir,gid):
     if st=='bullpup':
         sk.poly([(x0,cy-bw/2-1.5),(xr+R-2,cy-bw/2-2),(xr+R-2,cy+bw/2+4),(x0+1,cy+bw/2+6)],190); sk.rect(x0,cy-bw/2-1.5,xr+R-2,cy-bw/2-0.4,240)
     if g(sp,'sling',False): sk.line((x0+2,cy+6),(xb+8,cy+7),0.8,150)
+    if _k is None:
+        bbs=[b for b in (bar.bbox(),lk.bbox(),sk.bbox()) if b]; x0=min(b[0] for b in bbs)/4; y0=min(b[1] for b in bbs)/4; x1=max(b[2] for b in bbs)/4; y1=max(b[3] for b in bbs)/4
+        k=min(58/max(1,x1-x0),44/max(1,y1-y0),2.2); ox=32-(x0+x1)/2*k; oy=32-(y0+y1)/2*k
+        return render(sp,outdir,gid,(k,ox,oy))
     return [l.out(f'{outdir}/{gid}_{name}.png') for l,name in((bar,'barrel'),(lk,'lock'),(sk,'stock'))]
 def comp(outdir,gid,cols=((140,140,150),(120,120,130),(150,100,60))):
     c=Image.new('RGBA',(64,64),(0,0,0,0))
