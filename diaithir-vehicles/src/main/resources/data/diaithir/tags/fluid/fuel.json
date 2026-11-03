@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "#c:gasoline",
+      "required": false
+    },
+    {
+      "id": "#c:diesel",
+      "required": false
+    },
+    {
+      "id": "#c:biodiesel",
+      "required": false
+    },
+    {
+      "id": "#c:ethanol",
+      "required": false
+    },
+    {
+      "id": "#c:kerosene",
+      "required": false
+    },
+    {
+      "id": "#c:creosote",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "tier1": {
+    "age": 5,
+    "items": [
+      "diaithirvehicles:fuel_tank",
+      "diaithirvehicles:jerry_can"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirvehicles"
+version = "${version}"
+displayName = "Diaithir Vehicles"
+description = "Shared vehicle layer: one fuel capability (a fuel store in SI units) that road vehicles, ships and aircraft expose, plus the fuel tank block and jerry can. Clean-room original."
+
+[[dependencies.diaithirvehicles]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
