@@ -205,8 +205,30 @@ final class MarketCommands {
         })));
     }
 
+    /** Pays a reward as a wage: from the wage pool of the culture the player stands in, in its money, to the purse. Returns the units paid (0 if the pool is dry, which goes into arrears). */
+    public static long payWage(ServerPlayer p, double tw) {
+        EconClaims.Claim at = EconWorld.claimAt(p.getX(), p.getZ());
+        ServerPlayerHolder h = new ServerPlayerHolder(p);
+        if (at == null) { h.tell("No one pays wages in the wilds."); return 0; }
+        EconMarket.Ctx ctx = EconWorld.ctx(at.town(), at.culture());
+        double paid = EconPolity.payWage(EconWorld.state(), at.culture(), tw);
+        long units = (long) Math.ceil(paid * ctx.scale());
+        if (paid > 0) EconPurse.give(h, units, ctx.denoms());
+        else h.tell("The town's till is empty, so it owes you.");
+        EconWorld.dirty();
+        return units;
+    }
+
     static LiteralArgumentBuilder<CommandSourceStack> economy() {
-        return Commands.literal("economy").executes(c -> at(c, false, (p, h, ctx, at) -> {
+        return Commands.literal("economy")
+            .then(Commands.literal("wage").requires(s -> s.getEntity() == null || (s.getEntity() instanceof ServerPlayer sp && s.getServer().getPlayerList().isOp(sp.nameAndId())))
+                .then(Commands.argument("player", net.minecraft.commands.arguments.EntityArgument.player())
+                    .then(Commands.argument("tw", com.mojang.brigadier.arguments.DoubleArgumentType.doubleArg(0)).executes(c -> {
+                        ServerPlayer p = net.minecraft.commands.arguments.EntityArgument.getPlayer(c, "player");
+                        long n = payWage(p, com.mojang.brigadier.arguments.DoubleArgumentType.getDouble(c, "tw"));
+                        return (int) Math.min(Integer.MAX_VALUE, n);
+                    }))))
+            .executes(c -> at(c, false, (p, h, ctx, at) -> {
             if (at == null) { h.tell("No culture claims this ground."); return; }
             EconState.Cur s = EconWorld.state().cur(ctx.culture());
             h.tell(EconWorld.cultureName(ctx.culture()) + ": " + ctx.unit());
