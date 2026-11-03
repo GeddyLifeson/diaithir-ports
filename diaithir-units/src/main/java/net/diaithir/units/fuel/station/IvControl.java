@@ -93,13 +93,19 @@ final class IvControl {
         } catch (ReflectiveOperationException | RuntimeException ex) {
             sb.append(" fuel=?");
         }
-        String[][] vars = {{"throttleVar", "throttle"}, {"brakeVar", "brake"}, {"parkingBrakeVar", "parkingBrake"}};
+        String[][] vars = {{"throttleVar", "throttle", "throttle"}, {"brakeVar", "brake", "brake"}, {"parkingBrakeVar", "parkingBrake", "parking_brake"}};
         for (String[] f : vars) {
+            String text;
             try {
-                sb.append(' ').append(f[1]).append('=').append(String.format("%.2f", var(v, f[0])));
+                text = String.format("%.2f", var(v, f[0]));
             } catch (ReflectiveOperationException | RuntimeException ex) {
-                sb.append(' ').append(f[1]).append("=?");
+                try {
+                    text = String.format("%.2f", named(v, f[2]));
+                } catch (ReflectiveOperationException | RuntimeException ex2) {
+                    text = "?";
+                }
             }
+            sb.append(' ').append(f[1]).append('=').append(text);
         }
         try {
             sb.append(" speed=").append(String.format("%.3f", named(v, "velocity"))).append(" blocks/tick");

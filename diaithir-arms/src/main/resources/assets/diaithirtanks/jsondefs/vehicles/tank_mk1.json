@@ -41,7 +41,7 @@
  },
  "car": {
   "isFrontWheelDrive": true,
-  "isRearWheelDrive": false,
+  "isRearWheelDrive": true,
   "axleRatio": 3.6,
   "dragCoefficient": 0.9
  },

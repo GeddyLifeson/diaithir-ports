@@ -100,7 +100,7 @@ for v in rows:
      'motorized': {'emptyMass': mass, 'fuelCapacity': int(tank * 1000), 'defaultFuelQty': int(tank * 500), 'hasRunningLights': True, 'hasHeadlights': True, 'axleRatio': 3.6, 'brakingFactor': 1.0,
                    'dragCoefficient': 0.5, 'crossSectionalArea': round(W * H * .8, 2), 'steeringForceFactor': 1.0, 'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0,
                    **({'hasSkidSteer': True, 'hasPermanentSkidSteer': True} if kind == 'apc' else {}), 'isBigTruck': kind in ('bus', 'firetruck')},
-     'car': {'isFrontWheelDrive': False, 'isRearWheelDrive': kind != 'apc', 'axleRatio': 3.6, 'dragCoefficient': 0.5},
+     'car': {'isFrontWheelDrive': kind == 'apc', 'isRearWheelDrive': True, 'axleRatio': 3.6, 'dragCoefficient': 0.5},
      'parts': parts, 'collision': [{'pos': [0, H / 2, 0], 'width': W, 'height': H}],
      'definitions': [{'subName': '', 'name': name, 'modelName': vid, 'textureName': vid, 'extraMaterialLists': [[]]}], 'rendering': {}})
     manifest.append({'id': vid, 'name': name, 'age': v['age'], 'role': v['role'], 'type': v['type'], 'fuel': fuel, 'mass_kg': mass, 'power_kw': kw, 'tank_l': tank})

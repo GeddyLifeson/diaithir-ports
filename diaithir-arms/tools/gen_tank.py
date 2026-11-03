@@ -202,7 +202,7 @@ for vid, design, nm, gun, hp, mass, age, desc in VEHICLES:
      'motorized': {'emptyMass': mass, 'fuelCapacity': 1500, 'defaultFuelQty': 600, 'hasSkidSteer': True, 'hasPermanentSkidSteer': True, 'hasRunningLights': True, 'hasHeadlights': True,
                    'axleRatio': 3.6, 'brakingFactor': 1.2, 'dragCoefficient': 0.9, 'crossSectionalArea': 8.0, 'steeringForceFactor': 1.0, 'overSteer': 0.0, 'underSteer': 0.0,
                    'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0, 'isBigTruck': False},
-     'car': {'isFrontWheelDrive': True, 'isRearWheelDrive': False, 'axleRatio': 3.6, 'dragCoefficient': 0.9},
+     'car': {'isFrontWheelDrive': True, 'isRearWheelDrive': True, 'axleRatio': 3.6, 'dragCoefficient': 0.9},
      'parts': parts(design, gun, 'tank_track' if design == 1 else 'tank_track2'),
      'collisionGroups': [{'collisionTypes': ['block', 'entity', 'vehicle', 'attack', 'bullet'], 'isInterior': False, 'health': hp, 'armorThickness': 300.0, 'collisions': [
          {'pos': [0, 1.1, 0.0], 'width': 2.6, 'height': 1.2}, {'pos': [0, 1.0, 2.4], 'width': 2.6, 'height': 1.0}, {'pos': [0, 1.0, -2.4], 'width': 2.6, 'height': 1.0},
