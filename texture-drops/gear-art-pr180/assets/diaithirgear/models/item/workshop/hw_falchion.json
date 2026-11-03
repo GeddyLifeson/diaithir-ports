@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/hw_falchion_head",
+  "layer1": "diaithirgear:item/workshop/hw_falchion_guard",
+  "layer2": "diaithirgear:item/workshop/hw_falchion_handle",
+  "layer3": "diaithirgear:item/workshop/hw_falchion_binding"
+ }
+}

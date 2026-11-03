@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_glue_pot_head",
+  "layer1": "diaithirgear:item/workshop/ev_glue_pot_handle",
+  "layer2": "diaithirgear:item/workshop/ev_glue_pot_binding"
+ }
+}

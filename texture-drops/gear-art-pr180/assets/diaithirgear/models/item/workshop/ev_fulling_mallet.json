@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_fulling_mallet_head",
+  "layer1": "diaithirgear:item/workshop/ev_fulling_mallet_handle",
+  "layer2": "diaithirgear:item/workshop/ev_fulling_mallet_binding"
+ }
+}

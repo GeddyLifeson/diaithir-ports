@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/m3_maaws_barrel",
+  "layer1": "diaithirgear:item/workshop/m3_maaws_lock",
+  "layer2": "diaithirgear:item/workshop/m3_maaws_stock"
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/hw_kilij_head",
+  "layer1": "diaithirgear:item/workshop/hw_kilij_guard",
+  "layer2": "diaithirgear:item/workshop/hw_kilij_handle",
+  "layer3": "diaithirgear:item/workshop/hw_kilij_binding"
+ }
+}

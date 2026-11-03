@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/colt_m1911_barrel",
+  "layer1": "diaithirgear:item/workshop/colt_m1911_lock",
+  "layer2": "diaithirgear:item/workshop/colt_m1911_stock"
+ }
+}

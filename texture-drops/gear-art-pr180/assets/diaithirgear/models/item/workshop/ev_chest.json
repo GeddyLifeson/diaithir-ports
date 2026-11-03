@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_chest_pot"
+ }
+}

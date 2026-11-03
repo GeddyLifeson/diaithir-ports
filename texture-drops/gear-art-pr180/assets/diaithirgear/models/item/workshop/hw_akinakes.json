@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/hw_akinakes_head",
+  "layer1": "diaithirgear:item/workshop/hw_akinakes_guard",
+  "layer2": "diaithirgear:item/workshop/hw_akinakes_handle",
+  "layer3": "diaithirgear:item/workshop/hw_akinakes_binding"
+ }
+}

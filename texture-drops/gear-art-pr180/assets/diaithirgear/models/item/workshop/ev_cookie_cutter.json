@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_cookie_cutter_head",
+  "layer1": "diaithirgear:item/workshop/ev_cookie_cutter_handle",
+  "layer2": "diaithirgear:item/workshop/ev_cookie_cutter_binding"
+ }
+}

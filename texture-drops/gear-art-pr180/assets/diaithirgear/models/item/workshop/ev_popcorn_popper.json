@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_popcorn_popper_pot",
+  "layer1": "diaithirgear:item/workshop/ev_popcorn_popper_handle"
+ }
+}

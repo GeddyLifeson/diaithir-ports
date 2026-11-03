@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_chopsticks_head",
+  "layer1": "diaithirgear:item/workshop/ev_chopsticks_handle"
+ }
+}

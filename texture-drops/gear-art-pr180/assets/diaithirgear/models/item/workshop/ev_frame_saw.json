@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_frame_saw_head",
+  "layer1": "diaithirgear:item/workshop/ev_frame_saw_handle",
+  "layer2": "diaithirgear:item/workshop/ev_frame_saw_binding"
+ }
+}

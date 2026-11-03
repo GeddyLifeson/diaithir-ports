@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/hw_hunting_hanger_head",
+  "layer1": "diaithirgear:item/workshop/hw_hunting_hanger_guard",
+  "layer2": "diaithirgear:item/workshop/hw_hunting_hanger_handle",
+  "layer3": "diaithirgear:item/workshop/hw_hunting_hanger_binding"
+ }
+}

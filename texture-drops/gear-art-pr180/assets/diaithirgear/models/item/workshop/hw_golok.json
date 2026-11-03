@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/hw_golok_head",
+  "layer1": "diaithirgear:item/workshop/hw_golok_guard",
+  "layer2": "diaithirgear:item/workshop/hw_golok_handle",
+  "layer3": "diaithirgear:item/workshop/hw_golok_binding"
+ }
+}

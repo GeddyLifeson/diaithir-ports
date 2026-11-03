@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_comb_head",
+  "layer1": "diaithirgear:item/workshop/ev_comb_handle",
+  "layer2": "diaithirgear:item/workshop/ev_comb_binding"
+ }
+}

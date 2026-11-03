@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/hw_viking_sword_head",
+  "layer1": "diaithirgear:item/workshop/hw_viking_sword_guard",
+  "layer2": "diaithirgear:item/workshop/hw_viking_sword_handle",
+  "layer3": "diaithirgear:item/workshop/hw_viking_sword_binding"
+ }
+}

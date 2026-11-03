@@ -1,0 +1,23 @@
+{
+ "model": {
+  "type": "minecraft:model",
+  "model": "diaithirgear:item/workshop/ev_block_and_tackle",
+  "tints": [
+   {
+    "type": "minecraft:custom_model_data",
+    "index": 0,
+    "default": 16777215
+   },
+   {
+    "type": "minecraft:custom_model_data",
+    "index": 1,
+    "default": 9202494
+   },
+   {
+    "type": "minecraft:custom_model_data",
+    "index": 2,
+    "default": 9202494
+   }
+  ]
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/charleville_musket_barrel",
+  "layer1": "diaithirgear:item/workshop/charleville_musket_lock",
+  "layer2": "diaithirgear:item/workshop/charleville_musket_stock"
+ }
+}

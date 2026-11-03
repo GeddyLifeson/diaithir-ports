@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_trowel_head",
+  "layer1": "diaithirgear:item/workshop/ev_trowel_handle",
+  "layer2": "diaithirgear:item/workshop/ev_trowel_binding"
+ }
+}

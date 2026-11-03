@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirgear:item/workshop/ev_food_mill_head",
+  "layer1": "diaithirgear:item/workshop/ev_food_mill_handle"
+ }
+}
