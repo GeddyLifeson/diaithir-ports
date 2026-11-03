@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#c:glass_blocks",
+  "minecraft:glowstone",
+  "minecraft:glowstone"
+ ],
+ "result": {
+  "id": "diaithirworldsys:utility_lamp"
+ }
+}
