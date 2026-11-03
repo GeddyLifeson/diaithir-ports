@@ -78,6 +78,7 @@ public final class DiaithirAurorian {
     public record Data(Map<String, ToolMat> tools, Map<String, ArmorMat> armor, List<ItemSpec> items, List<BlockSpec> blocks) {}
 
     public static final Data DATA = load();
+    public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<BossSpawnerBlockEntity>> SPAWNER_BE;
     public static DeferredBlock<Block> CHIMNEY;
     public static DeferredBlock<Block> CHEST;
     public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<AurorianFurnaceBlockEntity>> FURNACE_BE;
@@ -178,6 +179,15 @@ public final class DiaithirAurorian {
         };
     }
 
+    public static Item item(String id) {
+        return ALL.get(id).get();
+    }
+
+    /** Registers a spawn egg item named <id>_spawn_egg (called by AurorianMobs). */
+    static void addEgg(String id, java.util.function.Function<Item.Properties, Item> factory) {
+        ALL.put(id + "_spawn_egg", ITEMS.registerItem(id + "_spawn_egg", factory::apply));
+    }
+
     private static Block block(String id) {
         return id.startsWith("minecraft:") ? BuiltInRegistries.BLOCK.getValue(Identifier.parse(id)) : BLK.get(id.substring(ID.length() + 1)).get();
     }
@@ -206,6 +216,8 @@ public final class DiaithirAurorian {
             case "chimney" -> new ChimneyBlock(p.noOcclusion());
             case "chest" -> new SilentwoodChestBlock(p);
             case "crafting_table" -> new SilentwoodCraftingTableBlock(p);
+            case "fog_wall" -> new FogWallBlock(p.noCollision().noOcclusion().lightLevel(s -> 10));
+            case "boss_spawner" -> new BossSpawnerBlock(p.noOcclusion());
             case "portal_frame" -> new PortalFrameBlock(p);
             case "bars" -> new IronBarsBlock(p);
             case "log" -> new RotatedPillarBlock(p);
@@ -219,6 +231,9 @@ public final class DiaithirAurorian {
         for (BlockSpec b : DATA.blocks()) {
             DeferredBlock<Block> blk = BLOCKS.registerBlock(b.id(), p -> makeBlock(b, p), () -> blockProps(b));
             BLK.put(b.id(), blk);
+            if (b.id().equals("boss_spawner")) {
+                SPAWNER_BE = BLOCK_ENTITIES.register("boss_spawner", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>(BossSpawnerBlockEntity::new, blk.get()));
+            }
             if (b.id().equals("chimney")) {
                 CHIMNEY = blk;
             } else if (b.id().equals("silentwood_chest")) {
@@ -246,6 +261,7 @@ public final class DiaithirAurorian {
                 e.modify(net.minecraft.world.level.block.entity.BlockEntityType.CHEST, CHEST.get());
             }
         });
+        AurorianMobs.init(bus);
         BLOCK_ENTITIES.register(bus);
         BLOCKS.register(bus);
         ITEMS.register(bus);

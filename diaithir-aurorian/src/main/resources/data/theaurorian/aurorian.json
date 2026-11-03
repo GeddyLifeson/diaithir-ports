@@ -82,18 +82,18 @@
   }
  },
  "armor": {
-  "cerulean": {
-   "name": "cerulean",
+  "knight": {
+   "name": "knight",
    "durability": 20,
    "boots": 3,
    "legs": 6,
    "chest": 5,
    "helmet": 3,
-   "enchant": 20,
-   "sound": "diamond",
-   "toughness": 1.0,
+   "enchant": 5,
+   "sound": "iron",
+   "toughness": 0.0,
    "knockback": 0.0,
-   "repair": "theaurorian:cerulean_ingot",
+   "repair": null,
    "age": "II"
   },
   "aurorian_steel": {
@@ -110,18 +110,18 @@
    "repair": "theaurorian:aurorian_steel_ingot",
    "age": "III"
   },
-  "knight": {
-   "name": "knight",
+  "cerulean": {
+   "name": "cerulean",
    "durability": 20,
    "boots": 3,
    "legs": 6,
    "chest": 5,
    "helmet": 3,
-   "enchant": 5,
-   "sound": "iron",
-   "toughness": 0.0,
+   "enchant": 20,
+   "sound": "diamond",
+   "toughness": 1.0,
    "knockback": 0.0,
-   "repair": null,
+   "repair": "theaurorian:cerulean_ingot",
    "age": "II"
   }
  },
@@ -948,6 +948,11 @@
    "copy": "minecraft:furnace"
   },
   {
+   "id": "boss_spawner",
+   "kind": "boss_spawner",
+   "copy": "minecraft:spawner"
+  },
+  {
    "id": "silentwood_chest",
    "kind": "chest",
    "copy": "minecraft:chest"
@@ -971,6 +976,12 @@
    "id": "chimney",
    "kind": "chimney",
    "copy": "minecraft:stone"
+  },
+  {
+   "id": "fog_wall",
+   "kind": "fog_wall",
+   "copy": "theaurorian:runestone",
+   "light": 10
   },
   {
    "id": "moon_gem",

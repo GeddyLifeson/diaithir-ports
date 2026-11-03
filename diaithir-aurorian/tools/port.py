@@ -26,8 +26,8 @@ DEFERRED_ITEMS = {"absorption_orb", "living_divining_rod", "mirror_of_guidance",
                   "ruby_amulet", "sapphire_amulet", "cerulean_arrow", "crystal_arrow", "strange_meat", "silentwood_bow",
                   "umbra_chestplate", "umbra_greatsword", "crystalline_sword", "spectral_helmet", "spectral_chestplate",
                   "spectral_leggings", "spectral_boots"}
-DEFERRED_BLOCK_CLASS = {"BossSpawnerBlock", "MoonlightForgeBlock", "ScrapperBlock", "CrystalBlock", "FogWallBlock", "SaplingBlock"}
-BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
+DEFERRED_BLOCK_CLASS = {"MoonlightForgeBlock", "ScrapperBlock", "CrystalBlock", "SaplingBlock"}
+BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "FogWallBlock": "fog_wall", "BossSpawnerBlock": "boss_spawner", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
               "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "TallGrassBlock": "plant"}
 
 
@@ -282,7 +282,7 @@ def convert_worldgen(known):
         out = {"has_precipitation": b.get("precipitation", "none") != "none", "temperature": b["temperature"], "downfall": b["downfall"],
                "attributes": {"minecraft:visual/sky_color": hexcol(e["sky_color"]), "minecraft:visual/fog_color": hexcol(e["fog_color"])},
                "effects": {"water_color": hexcol(e["water_color"]), "water_fog_color": hexcol(e["water_fog_color"])},
-               "carvers": b["carvers"].get("air", []), "features": b["features"], "spawners": {}, "spawn_costs": {}}
+               "carvers": b["carvers"].get("air", []), "features": b["features"], "spawners": {k: v for k, v in b.get("spawners", {}).items()}, "spawn_costs": {}}
         f.write_text(json.dumps(out, indent=1) + "\n")
     # features: random_patch / flower become simple_block plus placement modifiers
     pf = wg / "placed_feature"
@@ -452,6 +452,8 @@ def main():
         if s.exists():
             shutil.copytree(s, D / sub, dirs_exist_ok=True)
     convert_worldgen(known)
+    if (OUT / "extra").exists():
+        shutil.copytree(OUT / "extra", RES / "data", dirs_exist_ok=True)
     if (MAIN / "data" / NS / "structures").exists():
         shutil.copytree(MAIN / "data" / NS / "structures", D / "structure", dirs_exist_ok=True)
     # assets
@@ -484,9 +486,17 @@ def main():
     for n in allids:
         mdl = "item" if (A / f"models/item/{n}.json").exists() else "block" if (A / f"models/block/{n}.json").exists() else "item"
         (idir / f"{n}.json").write_text(json.dumps(dict(model=dict(type="minecraft:model", model=f"{NS}:{mdl}/{n}")), indent=1) + "\n")
+    EGGS = ["hollow", "undead_knight", "dungeon_slime", "dungeon_keeper"]
+    for n in EGGS:
+        (idir / f"{n}_spawn_egg.json").write_text(json.dumps(dict(model=dict(type="minecraft:model", model="minecraft:item/template_spawn_egg",
+            tints=[dict(type="minecraft:constant", value=8117755), dict(type="minecraft:constant", value=3363951)])), indent=1) + "\n")
     # lang (keep keys for registered things and shared strings)
     lang = json.loads((MAIN / "assets" / NS / "lang/en_us.json").read_text())
     (A / "lang").mkdir(exist_ok=True)
+    for n in EGGS:
+        title = n.replace("_", " ").title()
+        lang.setdefault(f"entity.{NS}.{n}", title)
+        lang.setdefault(f"item.{NS}.{n}_spawn_egg", title + " Spawn Egg")
     (A / "lang/en_us.json").write_text(json.dumps(lang, indent=1, ensure_ascii=False) + "\n")
     # fuel data map
     fuels = {NS + ":" + i["id"]: {"burn_time": i["burn"]} for i in data["items"] if "burn" in i}
