@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:crafting_table",
+    "minecraft:stick"
+  ],
+  "result": {
+    "id": "diaithirworldsys:pocket_bench"
+  }
+}

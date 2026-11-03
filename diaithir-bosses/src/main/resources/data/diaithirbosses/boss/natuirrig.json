@@ -4,8 +4,8 @@
  "name_en": "Natuirrìg",
  "age": 4,
  "own": {
-  "kind": "silverfish",
-  "scale": 6.0,
+  "kind": "look_low",
+  "scale": 1.26,
   "hp": 620,
   "damage": 12,
   "armor": 10,
@@ -197,5 +197,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:natuirrig",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

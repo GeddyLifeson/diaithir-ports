@@ -1,0 +1,36 @@
+{
+ "listens": {
+  "disaster": [
+   "portallinkfix",
+   "aircrafttuning",
+   "utilityblocks"
+  ],
+  "weather": [
+   "aircrafttuning"
+  ],
+  "year_change": [
+   "utilityblocks"
+  ],
+  "plague": [
+   "villagercare"
+  ],
+  "raid": [
+   "villagercare",
+   "villageguards"
+  ],
+  "trade_boom": [
+   "villagercare"
+  ]
+ },
+ "fires": [
+  "diaithirworldsys_clock_pulse",
+  "diaithirworldsys_fluid_cleared",
+  "diaithirworldsys_skill_level_up",
+  "diaithirworldsys_pack_version_mismatch",
+  "diaithirworldsys_pack_version_missing",
+  "diaithirworldsys_quest_completed",
+  "diaithirworldsys_team_created",
+  "diaithirworldsys_rank_changed",
+  "diaithirworldsys_guard_spawned"
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "theaurorian:aurorian_cobblestone_stairs",
+  "theaurorian:aurorian_deepslate_stairs",
+  "theaurorian:runestone_stairs"
+ ]
+}

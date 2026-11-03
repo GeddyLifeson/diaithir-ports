@@ -5,7 +5,7 @@
  "age": 8,
  "tier": "ascendant_2",
  "own": {
-  "kind": "spider",
+  "kind": "look_wide",
   "scale": 2.4,
   "hp": 1500,
   "damage": 39,
@@ -182,5 +182,6 @@
    "cauldron_heart",
    "tide_reaver"
   ]
- }
+ },
+ "look": true
 }

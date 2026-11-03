@@ -71,6 +71,7 @@
   {
    "id": "diaithirarms:future_spear",
    "required": false
-  }
+  },
+  "diaithircombat:lib_spear"
  ]
 }

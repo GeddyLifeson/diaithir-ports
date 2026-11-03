@@ -1,0 +1,579 @@
+{
+ "age": "I",
+ "vendors": [
+  {
+   "id": "salt_trader",
+   "name": "Kiendaichi Salund",
+   "role": "Salt trader",
+   "spawn": [
+    "every settlement",
+    "salt works",
+    "shore"
+   ],
+   "items": {
+    "diaithir:salt_twist": {
+     "price": 1,
+     "stock": 32
+    },
+    "diaithir:salt_cake": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:dried_kelp": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:kelp": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:sea_pickle": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:sugar_cane": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:honeycomb": {
+     "price": 10,
+     "stock": 4
+    },
+    "minecraft:bowl": {
+     "price": 1,
+     "stock": 32
+    }
+   }
+  },
+  {
+   "id": "hide_worker",
+   "name": "Falaig-duir",
+   "role": "Hide worker",
+   "spawn": [
+    "every settlement",
+    "herding camp"
+   ],
+   "items": {
+    "minecraft:leather": {
+     "price": 8,
+     "stock": 4
+    },
+    "minecraft:rabbit_hide": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:string": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:feather": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:bone": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:leather_helmet": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:leather_chestplate": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:leather_leggings": {
+     "price": 4,
+     "stock": 8
+    },
+    "minecraft:leather_boots": {
+     "price": 2,
+     "stock": 16
+    }
+   }
+  },
+  {
+   "id": "fisher",
+   "name": "Iaskuir",
+   "role": "Fisher",
+   "spawn": [
+    "shore",
+    "river",
+    "lake"
+   ],
+   "items": {
+    "minecraft:cod": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:salmon": {
+     "price": 4,
+     "stock": 8
+    },
+    "minecraft:cooked_cod": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:cooked_salmon": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:tropical_fish": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:kelp": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:dried_kelp": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:string": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:fishing_rod": {
+     "price": 4,
+     "stock": 8
+    }
+   }
+  },
+  {
+   "id": "hunter",
+   "name": "Sielguir",
+   "role": "Hunter",
+   "spawn": [
+    "forest",
+    "hill",
+    "camp"
+   ],
+   "items": {
+    "minecraft:beef": {
+     "price": 5,
+     "stock": 6
+    },
+    "minecraft:porkchop": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:mutton": {
+     "price": 4,
+     "stock": 8
+    },
+    "minecraft:chicken": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:rabbit": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:cooked_beef": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:cooked_porkchop": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:cooked_mutton": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:cooked_chicken": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:cooked_rabbit": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:feather": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:bone": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:rabbit_hide": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:rabbit_foot": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:bow": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:arrow": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:flint": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stick": {
+     "price": 1,
+     "stock": 32
+    }
+   }
+  },
+  {
+   "id": "herb_healer",
+   "name": "Ligichi",
+   "role": "Healer and herb gatherer",
+   "spawn": [
+    "every settlement",
+    "grove"
+   ],
+   "items": {
+    "minecraft:sweet_berries": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:apple": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:honeycomb": {
+     "price": 10,
+     "stock": 4
+    },
+    "minecraft:dandelion": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:poppy": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:azure_bluet": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:oxeye_daisy": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:cornflower": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:lily_of_the_valley": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bowl": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:mushroom_stew": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:bone_meal": {
+     "price": 3,
+     "stock": 11
+    }
+   }
+  },
+  {
+   "id": "flint_smith",
+   "name": "Gouba",
+   "role": "Flint and stone worker",
+   "spawn": [
+    "every settlement",
+    "quarry"
+   ],
+   "items": {
+    "minecraft:flint": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:cobblestone": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:stone": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:gravel": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:stick": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:wooden_axe": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:wooden_pickaxe": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:wooden_shovel": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:wooden_hoe": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:wooden_sword": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stone_axe": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stone_pickaxe": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stone_shovel": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stone_hoe": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:stone_sword": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:coal": {
+     "price": 6,
+     "stock": 5
+    },
+    "minecraft:charcoal": {
+     "price": 1,
+     "stock": 32
+    }
+   }
+  },
+  {
+   "id": "timber_worker",
+   "name": "Fiud-duir",
+   "role": "Timber worker",
+   "spawn": [
+    "every settlement",
+    "forest"
+   ],
+   "items": {
+    "minecraft:oak_log": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:birch_log": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:spruce_log": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:oak_planks": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:birch_planks": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:spruce_planks": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:stick": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:oak_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:birch_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:spruce_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bowl": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:crafting_table": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:chest": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:ladder": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:oak_fence": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:torch": {
+     "price": 1,
+     "stock": 32
+    }
+   }
+  },
+  {
+   "id": "forager",
+   "name": "Bailduir",
+   "role": "Forager and gardener",
+   "spawn": [
+    "every settlement",
+    "field"
+   ],
+   "items": {
+    "minecraft:carrot": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:potato": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:baked_potato": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:beetroot": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:egg": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:pumpkin": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:melon_slice": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:sugar_cane": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bone_meal": {
+     "price": 3,
+     "stock": 11
+    }
+   }
+  },
+  {
+   "id": "brewer",
+   "name": "Dèanaduirgrùid",
+   "role": "Brewer",
+   "spawn": [
+    "every settlement",
+    "brewhouse"
+   ],
+   "items": {
+    "diaithir_drinks:hydromel": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:palm_wine": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:sakura": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:tepache": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:tiswin": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:toddy": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:tonto": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:nihamanchi": {
+     "price": 7,
+     "stock": 5
+    },
+    "diaithir_drinks:cauim": {
+     "price": 8,
+     "stock": 4
+    },
+    "diaithir_drinks:chicha": {
+     "price": 8,
+     "stock": 4
+    },
+    "diaithir_drinks:colonche": {
+     "price": 8,
+     "stock": 4
+    },
+    "diaithir_drinks:plum_jerkum": {
+     "price": 8,
+     "stock": 4
+    },
+    "diaithir_drinks:pulque": {
+     "price": 8,
+     "stock": 4
+    },
+    "diaithir_drinks:sato": {
+     "price": 8,
+     "stock": 4
+    },
+    "diaithir_drinks:kilju": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:tej": {
+     "price": 10,
+     "stock": 4
+    },
+    "diaithir_drinks:cyser": {
+     "price": 11,
+     "stock": 4
+    },
+    "diaithir_drinks:mead": {
+     "price": 11,
+     "stock": 4
+    },
+    "diaithir_drinks:melomel": {
+     "price": 11,
+     "stock": 4
+    },
+    "diaithir_drinks:metheglin": {
+     "price": 11,
+     "stock": 4
+    }
+   }
+  }
+ ]
+}

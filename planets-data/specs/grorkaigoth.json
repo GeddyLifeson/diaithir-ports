@@ -1,0 +1,169 @@
+{
+ "sky": {
+  "sky": "#2a1a2e",
+  "fog": "#3a2535",
+  "cloud": "#66402a2a",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "lava",
+  "water": "#8a2a10"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.grorkaigoth.E6.places.000010",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#4a6b4a",
+   "foliage": "#3f5e45",
+   "water": "#5fa8a0",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.grorkaigoth.E6.places.000013",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": -0.2,
+   "grass": "#4d4a48",
+   "foliage": "#3d3a38",
+   "water": "#3a4a55",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.grorkaigoth.E4.places.000306",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#7a5a40",
+   "foliage": "#6a4c36",
+   "water": "#4a3a30",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.grorkaigoth.E1.places.000293",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.6,
+   "grass": "#5a3a2a",
+   "foliage": "#7a3b1f",
+   "water": "#8a4a2a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.grorkaigoth.E6.places.000016",
+   "archetype": "dark_forest",
+   "temp": -0.1,
+   "humid": 0.3,
+   "grass": "#2f2a2a",
+   "foliage": "#241f22",
+   "water": "#3a3038",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.grorkaigoth.E6.places.000168",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#3e4a3a",
+   "foliage": "#354530",
+   "water": "#2e4a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.grorkaigoth.E7.places.000345",
+   "archetype": "eroded_badlands",
+   "temp": 0.5,
+   "humid": -0.5,
+   "grass": "#6b5a48",
+   "foliage": "#5a4a3c",
+   "water": "#504040",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.grorkaigoth.E3.places.000258",
+   "archetype": "cherry_grove",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#6e5a6a",
+   "foliage": "#8a6a7a",
+   "water": "#7a6a8a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "warm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A sunless ember-lit realm of basalt, ash, and singing stone, with marsh, badland, and thorn-forest terrain shaped by the Sundering and the Singing.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.012
+   }
+  ],
+  "fog": "#6a5448",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.5,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "KI.grorkaigoth.E6.powers.000116",
+  "why": "Storms, tempests and violet sparks; ember soil suggests ash",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 1.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "crimson_roots",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.0,
+   "copper": 1.5,
+   "gold": 1.0,
+   "redstone": 1.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "KI.grorkaigoth.E6.places.000011",
+  "grounded": false
+ }
+}

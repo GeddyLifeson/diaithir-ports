@@ -16,6 +16,9 @@ public final class Species {
     public static final List<String> FLAGS;
     public static final List<String> HABS;
     public static final List<Species> ALL = new ArrayList<>();
+    /** Panscriptum Library creatures (data/diaithirfauna/library_mobs.tsv.gz); kept out of ALL, spawn tables and suggestions. Index = ALL.size() + position. */
+    public static final List<Species> LIB = new ArrayList<>();
+    private static final Map<String, Species> LIB_BY_ID = new HashMap<>();
     private static final Map<String, Species> BY_ID = new HashMap<>();
     private static final Map<String, List<Species>> BY_PLAN = new HashMap<>();
 
@@ -35,6 +38,9 @@ public final class Species {
     /** latMin, latMax, lonMin, lonMax per box; empty means anywhere. */
     public final float[][] boxes;
     public final int index;
+    /** Library creatures only: Age tier 1-9, element, and the Library entry id (= id). */
+    public final int tier;
+    public final String element, title;
 
     static {
         try (Reader r = new InputStreamReader(Species.class.getResourceAsStream("/data/diaithirfauna/species.json"), StandardCharsets.UTF_8)) {
@@ -51,10 +57,42 @@ public final class Species {
         } catch (Exception ex) {
             throw new IllegalStateException("species.json", ex);
         }
+        loadLibrary();
+    }
+
+    /** Row: id, name, plan, tier, kg, scale, diet, flags, element. */
+    private Species(String[] c, int index) {
+        this.index = index;
+        id = c[0]; title = c[1]; name = c[1]; plan = c[2]; tier = Integer.parseInt(c[3]);
+        kg = Float.parseFloat(c[4]); scale = Float.parseFloat(c[5]); diet = c[6]; flags = Integer.parseInt(c[7]); element = c[8];
+        hab = 0; ext = Integer.MAX_VALUE; fossil = false; rock = ""; form = ""; per = ""; dna = 0; maFrom = 0; maTo = 0; boxes = new float[0][];
+    }
+
+    private static void loadLibrary() {
+        var in = Species.class.getResourceAsStream("/data/diaithirfauna/library_mobs.tsv.gz");
+        if (in == null) return;
+        try (var r = new java.io.BufferedReader(new InputStreamReader(new java.util.zip.GZIPInputStream(in), StandardCharsets.UTF_8))) {
+            String line;
+            int base = ALL.size();
+            while ((line = r.readLine()) != null) {
+                String[] c = line.split("\t", -1);
+                if (c.length < 9 || !Plan.ALL.containsKey(c[2])) continue;
+                Species s = new Species(c, base + LIB.size());
+                LIB.add(s);
+                LIB_BY_ID.put(s.id, s);
+            }
+        } catch (Exception ex) {
+            throw new IllegalStateException("library_mobs.tsv.gz", ex);
+        }
+    }
+
+    public static Species byIndex(int i) {
+        return i < 0 ? null : i < ALL.size() ? ALL.get(i) : i - ALL.size() < LIB.size() ? LIB.get(i - ALL.size()) : null;
     }
 
     private Species(JsonObject o, int index) {
         this.index = index;
+        tier = 0; element = "none"; title = null;
         id = o.get("id").getAsString();
         plan = o.get("plan").getAsString();
         name = o.get("name").getAsString();
@@ -82,7 +120,7 @@ public final class Species {
 
     public static final List<String> ROCKS;
 
-    public static Species byId(String id) { return BY_ID.get(id); }
+    public static Species byId(String id) { Species s = BY_ID.get(id); return s != null ? s : LIB_BY_ID.get(id); }
 
     public static List<Species> ofPlan(String plan) { return BY_PLAN.getOrDefault(plan, List.of()); }
 

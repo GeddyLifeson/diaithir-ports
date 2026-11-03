@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["ABA", "BKB", "ACA"], "key": {"A": "minecraft:redstone", "B": "minecraft:iron_ingot", "C": "minecraft:copper_ingot", "K": "minecraft:diamond"}, "result": {"id": "diaithirupgrades:circuit_quality_1", "count": 1}}

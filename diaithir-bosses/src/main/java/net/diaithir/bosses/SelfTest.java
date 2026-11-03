@@ -62,10 +62,14 @@ public final class SelfTest {
                     try { run(s); } finally {
                         ServerLevel lv = s.getServer().overworld();
                         for (int cx = -3; cx <= 2; cx++) for (int cz = -3; cz <= 2; cz++) lv.setChunkForced(cx, cz, false);
+                        ServerLevel pl2 = planetLevel(s.getServer());
+                        if (pl2 != null) pl2.setChunkForced(0, 0, false);
                     }
                 }
             });
         }
+        ServerLevel pl = planetLevel(src.getServer());
+        if (pl != null) { pl.getChunk(0, 0); pl.setChunkForced(0, 0, true); }
         pending = src;
         wait = 60;
         src.sendSuccess(() -> Component.literal("bosses self test starts in 3 seconds; the total goes to the log"), false);
@@ -107,8 +111,10 @@ public final class SelfTest {
                 bosses++;
                 runBoss(level, c0, fp, p);
             }
+            planetBosses(level, c0, fp);
             attach(level, c0, fp);
             altar(level, c0, fp);
+            planetLair(src.getServer());
             elites(level, c0);
             rites(src, level, c0, fp);
             library(src, level, c0, fp);
@@ -193,7 +199,8 @@ public final class SelfTest {
                     for (int r : st.sequence) Ritual.seal(level, altar.east(3), r, fp);
                 }
                 case "hour" -> {
-                    src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.to + 2000) % 24000);
+                    // the world clock depends on how long the server has run, so put it outside the window first
+                    src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.to + 1200) % 24000);
                     long before = level.getOverworldClockTime() % 24000;
                     boolean in = st.from <= st.to ? before >= st.from && before <= st.to : before >= st.from || before <= st.to;
                     check(!in, "rite: the hour step is closed outside its window (clock " + before + ")");
@@ -329,7 +336,8 @@ public final class SelfTest {
             check(fp.hurtMarked || fp.getHealth() < before, n + ": arena pushes a fighter who leaves");
             check(p.max_hit_fraction > 0 && p.max_hit_fraction < 1, n + ": hit cap sane");
             List<ItemStack> low = c.rollLoot(1), high = c.rollLoot(7);
-            check(high.stream().anyMatch(s -> s.getItem() == DiaithirBosses.TROPHIES.get(n).get()), n + ": drops its trophy");
+            var trophy = DiaithirBosses.TROPHIES.get(n);
+            check(trophy != null ? high.stream().anyMatch(s -> s.getItem() == trophy.get()) : !high.isEmpty(), n + ": drops its trophy or loot");
             check(p.loot.stream().noneMatch(l -> l.min_age > 1) || low.size() <= high.size(), n + ": loot grows with the Age");
             m.setInvulnerable(false);
             AABB box = m.getBoundingBox().inflate(6);
@@ -347,12 +355,91 @@ public final class SelfTest {
         Ages.forced = Math.min(8, p.age + 3);
         Mob b = spawnAt(level, p, c0);
         if (a != null && b != null) {
-            float ea = a.getMaxHealth() * BossController.ALL.get(a.getUUID()).damageDivisor, eb = b.getMaxHealth() * BossController.ALL.get(b.getUUID()).damageDivisor;
-            if (p.age < Ages.RODOS) check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + BossController.ALL.get(a.getUUID()).damageDivisor + "/" + BossController.ALL.get(b.getUUID()).damageDivisor + " near " + BossController.ALL.get(a.getUUID()).participants().size() + ")");
+            BossController ca = BossController.ALL.get(a.getUUID()), cb = BossController.ALL.get(b.getUUID());
+            float ea = a.getMaxHealth() * ca.damageDivisor, eb = b.getMaxHealth() * cb.damageDivisor;
+            if (p.age < 8) {
+                check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + ca.damageDivisor + "/" + cb.damageDivisor + " near " + ca.participants().size() + ")");
+            } else {
+                // the last Age has no later Age to grow into: it keeps its full base health and still grows with the fighters present
+                check(ea >= (float) p.own.hp * 0.999F && eb == ea, n + ": Age 8 boss keeps its base health at every later Age (" + ea + ", " + eb + " vs " + p.own.hp + ")");
+                check(p.scaling.hp_per_extra_player > 0, n + ": grows with extra fighters");
+            }
         }
         if (a != null) a.discard();
         if (b != null) b.discard();
         level.getEntitiesOfClass(Mob.class, new AABB(c0).inflate(60), e -> e.entityTags().stream().anyMatch(t -> t.startsWith(BossController.T_MINION))).forEach(Mob::discard);
+    }
+
+    /** Planet bosses: every profile is well formed and has its look files; one boss per body plan runs the full boss test. */
+    private static void planetBosses(ServerLevel level, BlockPos c0, FakePlayer fp) {
+        var all = Data.planetBosses().values();
+        check(all.size() >= 1000, "planet bosses loaded: " + all.size());
+        java.util.Map<String, Data.Profile> sample = new java.util.LinkedHashMap<>();
+        java.util.Set<String> planets = new java.util.HashSet<>();
+        for (Data.Profile p : all) {
+            planets.add(p.planet);
+            check(!p.phases.isEmpty() && p.phases.get(0).at >= 0.999, p.id + ": first phase starts at full health");
+            for (Data.Phase ph : p.phases) for (String a : ph.attacks) check(p.attacks.containsKey(a), p.id + ": phase uses known attack " + a);
+            for (Data.Attack a : p.attacks.values()) check(TYPES.contains(a.type), p.id + ": attack type " + a.type);
+            check(p.age >= 1 && p.age <= 8, p.id + ": Age in range");
+            check(BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(p.entity)).isPresent(), p.id + ": entity type registered");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/looks/" + p.id + ".json") != null, p.id + ": look file");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/textures/entity/planet/" + p.id + ".png") != null, p.id + ": texture");
+            sample.putIfAbsent(p.arch, p);
+        }
+        for (Data.Profile p : Data.profiles().values()) {
+            check(p.look, p.id + ": has its own look");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/looks/" + p.id + ".json") != null, p.id + ": look file");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/textures/entity/planet/" + p.id + ".png") != null, p.id + ": texture");
+        }
+        check(planets.size() >= 200, "planet bosses cover " + planets.size() + " planets");
+        check(PlanetBoss.class.getResource("/data/" + DiaithirBosses.ID + "/structure/planet_lair.nbt") != null, "planet lair template present");
+        for (Data.Profile p : sample.values()) runBoss(level, c0, fp, p);
+        System.out.println("[bossesselftest] planet bosses " + all.size() + " on " + planets.size() + " planets, full test on " + sample.size() + " body plans");
+    }
+
+    private static final String PLANET_TEST = "ashestith";
+
+    /** A planet dimension, when the planets datapack is loaded (it is optional for the test). */
+    private static ServerLevel planetLevel(net.minecraft.server.MinecraftServer srv) {
+        return srv.getLevel(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.DIMENSION,
+            Identifier.parse("diaithir_planets:" + PLANET_TEST)));
+    }
+
+    /** A lair altar (no boss set) in a planet dimension wakes one of that planet's own bosses. */
+    private static void planetLair(net.minecraft.server.MinecraftServer srv) {
+        ServerLevel pl = planetLevel(srv);
+        if (pl == null) {
+            System.out.println("[bossesselftest] planet lair: no planet dimensions loaded, skipped");
+            return;
+        }
+        BlockPos pos = new BlockPos(0, 150, 0);
+        for (int x = -4; x <= 4; x++) for (int z = -4; z <= 4; z++) {
+            pl.setBlock(pos.offset(x, -1, z), Blocks.STONE.defaultBlockState(), 2);
+            for (int h = 0; h <= 8; h++) pl.setBlock(pos.offset(x, h, z), Blocks.AIR.defaultBlockState(), 2);
+        }
+        pl.setBlock(pos, DiaithirBosses.ALTAR.get().defaultBlockState(), 3);
+        var be = (AltarBlockEntity) pl.getBlockEntity(pos);
+        check(be != null && be.boss.isEmpty(), "planet lair: altar starts without a boss");
+        if (be == null) return;
+        FakePlayer fp = FakePlayerFactory.get(pl, new GameProfile(UUID.fromString("00000000-0000-4000-8000-00000000b056"), "[lair-test]"));
+        fp.setPos(pos.getX() + 3.5, pos.getY(), pos.getZ() + 0.5);
+        Integer old = Ages.forced;
+        Ages.forced = 8;
+        try {
+            be.activate(fp);
+            Data.Profile p = Data.byId(be.boss);
+            check(p != null && PLANET_TEST.equals(p.planet), "planet lair: picked a boss of its own planet (" + be.boss + ")");
+            var found = pl.getEntitiesOfClass(Mob.class, new AABB(pos).inflate(10), m -> m.isAlive() && m.entityTags().contains(AltarBlockEntity.posTag(pos)));
+            check(found.size() == 1 && found.get(0) instanceof PlanetBoss, "planet lair: wakes a planet boss (" + found.size() + ")");
+            if (!found.isEmpty() && found.get(0) instanceof PlanetBoss pb) {
+                check(pb.bossId().equals(be.boss), "planet lair: the woken boss wears the picked look");
+                found.get(0).discard();
+            }
+        } finally {
+            Ages.forced = old;
+            pl.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+        }
     }
 
     /** The altar: Age gate, waking, no double wake, and the respawn rule after a kill. */

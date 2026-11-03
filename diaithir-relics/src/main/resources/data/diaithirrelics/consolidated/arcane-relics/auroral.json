@@ -1,0 +1,340 @@
+{
+ "slug": "diaithir_aurora",
+ "items": [
+  {
+   "id": "aurora_shard",
+   "kind": "relic",
+   "name_en": "Aurora Shard",
+   "attrs": {
+    "stack_max": 64,
+    "mass_kg": 0.05,
+    "light_emission_level": 9
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "charged_crystal_block",
+   "kind": "block",
+   "name_en": "Charged Crystal Block",
+   "attrs": {
+    "hardness": 3.0,
+    "light_emission_level": 10,
+    "event_charge_gain_per_s": 0.02,
+    "bonus_drop_chance": 0.25,
+    "fortune_applies": true,
+    "mass_kg": 12.0
+   },
+   "recipe": [
+    "c:gems/aurora x4 | c:ingots/bronze x1 | c:dusts/redstone x4"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "aurora_lantern",
+   "kind": "block",
+   "name_en": "Aurora Lantern",
+   "attrs": {
+    "light_emission_idle": 9,
+    "light_emission_during_event": 15,
+    "mass_kg": 2.5
+   },
+   "recipe": [
+    "c:ingots/bronze x4 | aurora_shard x1 | c:nuggets/bronze x4"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "skywatch_charm",
+   "kind": "relic",
+   "name_en": "Skywatch Charm",
+   "attrs": {
+    "curio_slot": "charm",
+    "shows_event_state": true,
+    "regen_buff_duration_s": 10,
+    "regen_buff_refresh_s": 5,
+    "regen_amplifier": 0,
+    "mass_kg": 0.1
+   },
+   "recipe": [
+    "aurora_shard x2 | c:ingots/silver x2 | c:leather x1"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "charge_siphon",
+   "kind": "block",
+   "name_en": "Charge Siphon",
+   "attrs": {
+    "converts_event_charge": true,
+    "max_output_W": 120,
+    "buffer_J": 24000,
+    "mass_kg": 18.0
+   },
+   "recipe": [
+    "c:ingots/steel x4 | c:ingots/copper x4 | aurora_shard x1"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "aurora_cell",
+   "kind": "block",
+   "name_en": "Aurora Cell",
+   "attrs": {
+    "fluid_capacity_L": 4.0,
+    "stores_liquid_light": true,
+    "mass_kg": 6.0
+   },
+   "recipe": [
+    "c:glass x4 | c:ingots/steel x2 | aurora_shard x2"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "boreal_veil_trigger",
+   "kind": "spell",
+   "name_en": "Boreal Veil",
+   "attrs": {
+    "cooldown_s": 60,
+    "radius_m": 8,
+    "duration_s": 15,
+    "reduces_incoming_projectile_damage_fraction": 0.2,
+    "requires_open_sky": true
+   },
+   "recipe": null,
+   "age": "VI"
+  },
+  {
+   "id": "rune_solas",
+   "kind": "rune",
+   "name_en": "Rune of Solas",
+   "attrs": {
+    "attribute": "minecraft:luck",
+    "amount": 1.0,
+    "op": "add_value",
+    "active_only_during_event": true
+   },
+   "recipe": [
+    "aurora_shard x1 | c:dusts/redstone x1"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "skyharvest",
+   "kind": "enchant",
+   "name_en": "Skyharvest",
+   "attrs": {
+    "max_level": 3,
+    "bonus_drop_chance_per_level": 0.05,
+    "applies_to": "c:tools/pickaxes",
+    "works_only_during_event": true
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "aurora_attunement",
+   "kind": "skill",
+   "name_en": "Aurora Attunement",
+   "attrs": {
+    "effect": "event_buff_duration_multiplier",
+    "multiplier": 1.5,
+    "cost_points": 2
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "night_ribbon_event",
+   "kind": "event",
+   "name_en": "Night Ribbon",
+   "attrs": {
+    "chance_per_eligible_night": 0.15,
+    "max_duration_s": 300,
+    "ends_at_dawn": true,
+    "clear_sky_required": true,
+    "dimensions": [
+     "minecraft:overworld"
+    ]
+   },
+   "recipe": null,
+   "age": "III"
+  }
+ ],
+ "events": [
+  {
+   "id": "aurora_roll",
+   "trigger": "server night start, once per night per eligible dimension, clear weather, biome temperature at or below 0.5 weighted",
+   "effect": "roll 0.15 (config); on success set aurora_active=true plus colour_seed, sync to clients, run until dawn or 6000 ticks"
+  },
+  {
+   "id": "aurora_bonus_harvest",
+   "trigger": "block break of charged_crystal_block or c:ores during aurora_active",
+   "effect": "loot modifier adds one extra drop at 25 percent chance, fortune applies"
+  },
+  {
+   "id": "aurora_regen_pulse",
+   "trigger": "player under open sky during aurora_active, every 100 ticks",
+   "effect": "apply regeneration amplifier 0 for 200 ticks if skywatch_charm equipped"
+  },
+  {
+   "id": "aurora_end",
+   "trigger": "dawn or timeout or weather change to rain/thunder",
+   "effect": "set aurora_active=false, reset block charge, sync to clients"
+  }
+ ],
+ "skills": [
+  "aurora_attunement"
+ ],
+ "id_migration": {
+  "auroral:aurora_shard": "diaithiraural:aurora_shard",
+  "auroral:aurora_lantern": "diaithiraural:aurora_lantern",
+  "auroral:charged_crystal": "diaithiraural:charged_crystal_block"
+ },
+ "c_tags": {
+  "c:gems/aurora": [
+   "diaithiraural:aurora_shard"
+  ],
+  "c:storage_blocks/aurora": [
+   "diaithiraural:charged_crystal_block"
+  ],
+  "c:tools/pickaxes": [],
+  "c:ingots/bronze": [],
+  "c:ingots/steel": [],
+  "c:ingots/silver": [],
+  "c:ingots/copper": [],
+  "c:dusts/redstone": [],
+  "c:glass": [],
+  "c:leather": []
+ },
+ "xmod_recipes": [
+  {
+   "id": "aurora_cell_xmod",
+   "inputs_as_c_tags": [
+    "c:glass",
+    "c:ingots/steel",
+    "c:gems/aurora"
+   ]
+  },
+  {
+   "id": "charge_siphon_xmod",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:ingots/copper",
+    "c:gems/aurora"
+   ]
+  },
+  {
+   "id": "skywatch_charm_xmod",
+   "inputs_as_c_tags": [
+    "c:gems/aurora",
+    "c:ingots/silver",
+    "c:leather"
+   ]
+  },
+  {
+   "id": "aurora_lantern_xmod",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:nuggets/bronze",
+    "c:gems/aurora"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "charge_siphon",
+   "kind": "energy",
+   "units_SI": "buffer 24000 J, output max 120 W, input only from aurora charge"
+  },
+  {
+   "block": "aurora_cell",
+   "kind": "fluid",
+   "units_SI": "4 L capacity, 0.5 L/s max transfer"
+  },
+  {
+   "block": "charged_crystal_block",
+   "kind": "item",
+   "units_SI": "drops 1 to 2 aurora_shard (0.05 kg each) per break"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "skywatch_rune_slot",
+   "target": "skywatch_charm",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "lantern_shard_slot",
+   "target": "aurora_lantern",
+   "slots": 1,
+   "kinds": [
+    "relic"
+   ],
+   "max_quality": 2
+  }
+ ],
+ "global_events": [
+  {
+   "id": "aurora_global_state",
+   "subscribes_to": "night_start",
+   "effect": "publish aurora_active and colour_seed so other modules can gate bonuses without polling"
+  },
+  {
+   "id": "aurora_weather_cancel",
+   "subscribes_to": "weather_change",
+   "effect": "end the aurora immediately on rain or thunder"
+  },
+  {
+   "id": "aurora_age_scaling",
+   "subscribes_to": "age_advance",
+   "effect": "raise bonus_drop_chance by 0.01 per Age above III, capped at 0.30"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "The Night Ribbon",
+   "connects_to": [
+    "aurora_shard",
+    "night_ribbon_event"
+   ]
+  },
+  {
+   "entry": "Charged Crystals",
+   "connects_to": [
+    "charged_crystal_block",
+    "skyharvest"
+   ]
+  },
+  {
+   "entry": "Keeping the Light",
+   "connects_to": [
+    "aurora_lantern",
+    "aurora_cell",
+    "charge_siphon"
+   ]
+  },
+  {
+   "entry": "The Watcher's Charm",
+   "connects_to": [
+    "skywatch_charm",
+    "rune_solas",
+    "aurora_attunement"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "first_ribbon",
+  "intro": "The old watchers say that on the coldest clear nights the sky itself gives up its light. Wait for the Night Ribbon and bring back a shard.",
+  "links_to": [
+   "aurora_shard",
+   "charged_crystal_block",
+   "skywatch_charm"
+  ]
+ },
+ "java_notes": "Needs: nightly roll with config chance plus server-to-client sync packet (boolean, colour seed); client sky ribbon renderer; charge accumulation on charged_crystal_block; regen handler for skywatch_charm; energy and fluid capability registration for siphon and cell; loot modifier gated on aurora_active. Mod identity unverified; all numbers are design proposals, config-tunable."
+}

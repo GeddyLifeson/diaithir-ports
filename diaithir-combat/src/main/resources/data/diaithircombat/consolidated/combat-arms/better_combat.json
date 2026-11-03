@@ -1,0 +1,895 @@
+{
+ "slug": "comhrac_combat_forms",
+ "items": [
+  {
+   "id": "claidheamh_mor",
+   "kind": "weapon",
+   "name_en": "Claidheamh Mor (Greatsword)",
+   "attrs": {
+    "class": "greatsword",
+    "two_handed": true,
+    "reach_m": 3.6,
+    "arc_deg": 150,
+    "max_targets": 5,
+    "combo_steps": 3,
+    "combo_window_s": 1.6,
+    "step_damage_mult": [
+     0.9,
+     1.0,
+     1.5
+    ],
+    "step_cooldown_mult": [
+     1.0,
+     1.1,
+     1.6
+    ],
+    "step_knockback_mult": [
+     0.8,
+     1.0,
+     1.8
+    ],
+    "attack_speed": -3.0,
+    "impact_energy_J": 420,
+    "mass_kg": 3.2
+   },
+   "recipe": [
+    "c:ingots/steel x4",
+    "c:rods/wooden x1",
+    "c:leathers x1"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "gai_fada",
+   "kind": "weapon",
+   "name_en": "Gai Fada (Long Spear)",
+   "attrs": {
+    "class": "polearm_line",
+    "two_handed": true,
+    "reach_m": 4.0,
+    "arc_deg": 8,
+    "shape": "line",
+    "max_targets": 2,
+    "combo_steps": 2,
+    "combo_window_s": 1.2,
+    "step_damage_mult": [
+     1.0,
+     1.3
+    ],
+    "attack_speed": -2.8,
+    "mass_kg": 2.4,
+    "impact_energy_J": 300
+   },
+   "recipe": [
+    "c:ingots/bronze x2",
+    "c:rods/wooden x2"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "cloidhmh_dluth",
+   "kind": "weapon",
+   "name_en": "Cloidhmh Dluth (Warblade)",
+   "attrs": {
+    "class": "sword_one_hand",
+    "two_handed": false,
+    "offhand_attack": true,
+    "alternate_hands": true,
+    "reach_m": 2.8,
+    "arc_deg": 100,
+    "max_targets": 3,
+    "combo_steps": 4,
+    "combo_window_s": 1.1,
+    "step_damage_mult": [
+     0.8,
+     0.9,
+     1.0,
+     1.3
+    ],
+    "attack_speed": -2.2,
+    "mass_kg": 1.3,
+    "impact_energy_J": 180
+   },
+   "recipe": [
+    "c:ingots/iron x2",
+    "c:rods/wooden x1"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "sgian_dubh_ceilg",
+   "kind": "weapon",
+   "name_en": "Sgian Dubh (Shadow Dirk)",
+   "attrs": {
+    "class": "dagger",
+    "offhand_attack": true,
+    "alternate_hands": true,
+    "shape": "line",
+    "reach_m": 2.2,
+    "arc_deg": 10,
+    "max_targets": 1,
+    "combo_steps": 5,
+    "combo_window_s": 0.9,
+    "step_damage_mult": [
+     0.8,
+     0.8,
+     0.9,
+     0.9,
+     1.4
+    ],
+    "sneak_pattern": "backstab",
+    "sneak_damage_mult": 1.8,
+    "attack_speed": -1.6,
+    "mass_kg": 0.4,
+    "impact_energy_J": 70
+   },
+   "recipe": [
+    "c:ingots/bronze x1",
+    "c:rods/wooden x1"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "tuagh_cath",
+   "kind": "weapon",
+   "name_en": "Tuagh Cath (War Axe)",
+   "attrs": {
+    "class": "axe_sweep",
+    "two_handed": false,
+    "reach_m": 3.0,
+    "arc_deg": 180,
+    "max_targets": 4,
+    "combo_steps": 2,
+    "combo_window_s": 1.4,
+    "step_damage_mult": [
+     1.0,
+     1.4
+    ],
+    "attack_speed": -3.0,
+    "mass_kg": 1.9,
+    "impact_energy_J": 260
+   },
+   "recipe": [
+    "c:ingots/iron x3",
+    "c:rods/wooden x2"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "cas\u00far_trom",
+   "kind": "weapon",
+   "name_en": "Casur Trom (Heavy Maul)",
+   "attrs": {
+    "class": "hammer_overhead",
+    "two_handed": true,
+    "reach_m": 2.6,
+    "arc_deg": 70,
+    "max_targets": 2,
+    "combo_steps": 2,
+    "combo_window_s": 1.8,
+    "step_damage_mult": [
+     1.1,
+     1.5
+    ],
+    "step_cooldown_mult": [
+     1.2,
+     1.8
+    ],
+    "stagger_s": 0.8,
+    "attack_speed": -3.2,
+    "mass_kg": 4.5,
+    "impact_energy_J": 520
+   },
+   "recipe": [
+    "c:ingots/steel x5",
+    "c:rods/wooden x2"
+   ],
+   "age": "VI"
+  },
+  {
+   "id": "gai_sleagh_marcach",
+   "kind": "weapon",
+   "name_en": "Gai Marcach (Charge Lance)",
+   "attrs": {
+    "class": "lance",
+    "two_handed": false,
+    "reach_m": 4.0,
+    "arc_deg": 6,
+    "shape": "line",
+    "max_targets": 2,
+    "combo_steps": 1,
+    "sneak_pattern": "charge_thrust",
+    "charge_speed_bonus_mps": 3.0,
+    "sneak_damage_mult": 1.6,
+    "mass_kg": 3.0,
+    "impact_energy_J": 480
+   },
+   "recipe": [
+    "c:ingots/steel x3",
+    "c:rods/wooden x3",
+    "c:leathers x1"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "claidheamh_comhdhuilte",
+   "kind": "weapon",
+   "name_en": "Claidheamh Comhdhuilte (Composite Claymore)",
+   "attrs": {
+    "class": "greatsword",
+    "two_handed": true,
+    "reach_m": 3.9,
+    "arc_deg": 170,
+    "max_targets": 5,
+    "combo_steps": 4,
+    "combo_window_s": 1.8,
+    "step_damage_mult": [
+     0.9,
+     1.0,
+     1.1,
+     1.5
+    ],
+    "attack_speed": -2.9,
+    "mass_kg": 3.0,
+    "impact_energy_J": 600
+   },
+   "recipe": [
+    "c:ingots/composite x4",
+    "c:rods/wooden x1",
+    "c:gems/lunar x1"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "sgiath_buailte",
+   "kind": "armor",
+   "name_en": "Sgiath Buailte (Striker's Bracer)",
+   "attrs": {
+    "slot": "offhand_bracer",
+    "hover_reach_bonus_m": 0.2,
+    "hit_energy_return_J": 4,
+    "mass_kg": 0.6,
+    "armor_points": 2
+   },
+   "recipe": [
+    "c:ingots/bronze x2",
+    "c:leathers x2"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "cathbharr_laoch",
+   "kind": "armor",
+   "name_en": "Cathbharr Laoich (Champion's Helm)",
+   "attrs": {
+    "slot": "head",
+    "armor_points": 4,
+    "toughness": 1.0,
+    "swing_arc_bonus_deg": 10,
+    "mass_kg": 1.8
+   },
+   "recipe": [
+    "c:ingots/steel x5"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "cruinneog_comhraig",
+   "kind": "relic",
+   "name_en": "Cruinneog Comhraig (Combo Orb)",
+   "attrs": {
+    "combo_window_bonus_s": 0.3,
+    "step_cooldown_mult_delta": -0.05,
+    "slot": "charm",
+    "mass_kg": 0.1
+   },
+   "recipe": [
+    "c:gems/amber x1",
+    "c:ingots/silver x1"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "seun_fiain",
+   "kind": "relic",
+   "name_en": "Seun Fiain (Hunter's Sigil)",
+   "attrs": {
+    "max_targets_bonus": 1,
+    "hover_target_range_bonus_m": 0.4,
+    "slot": "charm",
+    "mass_kg": 0.1
+   },
+   "recipe": [
+    "c:gems/jade x1",
+    "c:ingots/silver x1"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "cloch_breith",
+   "kind": "block",
+   "name_en": "Cloch Breith (Duelling Stone)",
+   "attrs": {
+    "purpose": "training_dummy_anchor",
+    "hardness": 3.0,
+    "mass_kg": 220,
+    "records_combo_stats": true,
+    "redstone_out_by_combo_step": true
+   },
+   "recipe": [
+    "c:stones x6",
+    "c:ingots/iron x2"
+   ],
+   "age": "II"
+  },
+  {
+   "id": "foirnis_airm",
+   "kind": "block",
+   "name_en": "Foirnis Airm (Weapon Forge)",
+   "attrs": {
+    "purpose": "sets_weapon_class_and_quality",
+    "hardness": 4.0,
+    "mass_kg": 350,
+    "power_draw_W": 1500,
+    "tank_L": 4
+   },
+   "recipe": [
+    "c:ingots/steel x6",
+    "c:stones x4",
+    "c:ingots/copper x2"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "ainmhi_dealraidh",
+   "kind": "block",
+   "name_en": "Cloch Fuinn (Quench Basin)",
+   "attrs": {
+    "purpose": "quenches_blades_for_quality",
+    "hardness": 2.5,
+    "mass_kg": 180,
+    "tank_L": 16
+   },
+   "recipe": [
+    "c:stones x5",
+    "c:ingots/iron x1"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "geas_dha_laimh",
+   "kind": "spell",
+   "name_en": "Geas Da Laimh (Two-Hand Binding)",
+   "attrs": {
+    "effect": "grants_arc_plus_20_deg_while_two_handed",
+    "duration_s": 12,
+    "cooldown_s": 60,
+    "mana_cost": 25
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "geas_dlath_buille",
+   "kind": "spell",
+   "name_en": "Geas Buille Dlath (Seamless Strike)",
+   "attrs": {
+    "effect": "next_combo_step_cooldown_mult_0_5",
+    "duration_s": 8,
+    "cooldown_s": 45,
+    "mana_cost": 20
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "rune_sguab",
+   "kind": "rune",
+   "name_en": "Rune Sguab (Sweep Rune)",
+   "attrs": {
+    "effect": "arc_deg_bonus",
+    "amount": 15,
+    "applies_to": [
+     "sweep",
+     "axe_sweep",
+     "greatsword"
+    ]
+   },
+   "recipe": [
+    "c:gems/amber x1",
+    "c:dusts/ogham x2"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "rune_snaimh",
+   "kind": "rune",
+   "name_en": "Rune Snaidhm (Link Rune)",
+   "attrs": {
+    "effect": "combo_window_bonus_s",
+    "amount": 0.25
+   },
+   "recipe": [
+    "c:gems/jade x1",
+    "c:dusts/ogham x2"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "rune_tolladh",
+   "kind": "rune",
+   "name_en": "Rune Tolladh (Pierce Rune)",
+   "attrs": {
+    "effect": "reach_bonus_m",
+    "amount": 0.3,
+    "applies_to": [
+     "line",
+     "dagger",
+     "lance"
+    ]
+   },
+   "recipe": [
+    "c:gems/lunar x1",
+    "c:dusts/ogham x2"
+   ],
+   "age": "VI"
+  },
+  {
+   "id": "ealain_ceithre_buill\u00ed",
+   "kind": "skill",
+   "name_en": "Ealain na gCeithre Bhuille (Four-Strike Art)",
+   "attrs": {
+    "unlock": "combo_step_4_reached_200_times",
+    "effect": "combo_steps_plus_1_for_one_hand_swords",
+    "max_level": 3
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "ealain_dha_laimh",
+   "kind": "skill",
+   "name_en": "Ealain an Dha Laimh (Two-Hand Mastery)",
+   "attrs": {
+    "unlock": "two_handed_kills_100",
+    "effect": "two_handed_step_cooldown_mult_minus_0_05_per_level",
+    "max_level": 5
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "ealain_dha_lann",
+   "kind": "skill",
+   "name_en": "Ealain an Dha Lann (Twin-Blade Art)",
+   "attrs": {
+    "unlock": "offhand_alternating_hits_150",
+    "effect": "offhand_damage_mult_plus_0_08_per_level",
+    "max_level": 4
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "ealain_cul_ghearradh",
+   "kind": "skill",
+   "name_en": "Ealain Cul-Ghearrtha (Backstab Art)",
+   "attrs": {
+    "unlock": "sneak_backstabs_50",
+    "effect": "sneak_damage_mult_plus_0_1_per_level",
+    "max_level": 3
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "beannacht_fuaim_lainne",
+   "kind": "enchant",
+   "name_en": "Beannacht Fuaim Lainne (Bladesong)",
+   "attrs": {
+    "effect": "combo_step_damage_mult_plus_0_04_per_level",
+    "max_level": 3,
+    "applies_to": "weapons"
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "beannacht_leathan_ruathar",
+   "kind": "enchant",
+   "name_en": "Beannacht Leathan Ruathair (Broad Sweep)",
+   "attrs": {
+    "effect": "max_targets_plus_1_per_level",
+    "max_level": 2,
+    "applies_to": "sweep_class"
+   },
+   "recipe": null,
+   "age": "VI"
+  },
+  {
+   "id": "beannacht_sinte",
+   "kind": "enchant",
+   "name_en": "Beannacht Sinte (Reach)",
+   "attrs": {
+    "effect": "reach_bonus_m_0_15_per_level",
+    "max_level": 3,
+    "applies_to": "weapons"
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "ceann_scoir_comhrac",
+   "kind": "event",
+   "name_en": "Comhrac Ceann Scoir (Cleaving Chain)",
+   "attrs": {
+    "fires_on": "combo_final_step_hits_3_or_more",
+    "reward": "temporary_haste"
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "ceilg_cul",
+   "kind": "event",
+   "name_en": "Buille Cul Ceilge (Hidden Stab)",
+   "attrs": {
+    "fires_on": "sneak_backstab",
+    "reward": "bleed_dot"
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "gal_marcach",
+   "kind": "event",
+   "name_en": "Gal Marcach (Charge Impact)",
+   "attrs": {
+    "fires_on": "lance_charge_hit",
+    "reward": "knockback_burst"
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "cloch_cuimhne_comhraic",
+   "kind": "relic",
+   "name_en": "Cloch Cuimhne Comhraic (Memory Stone)",
+   "attrs": {
+    "effect": "stores_last_combo_pattern_for_replay",
+    "slot": "charm",
+    "mass_kg": 0.2
+   },
+   "recipe": [
+    "c:gems/lunar x1",
+    "c:ingots/gold x1"
+   ],
+   "age": "VII"
+  }
+ ],
+ "events": [
+  {
+   "id": "fian_hit_volume_resolved",
+   "trigger": "server_resolves_swing_volume",
+   "effect": "emits per-target hit list (target, step, class) to Global Events; blocks vanilla single-target damage for the same swing"
+  },
+  {
+   "id": "fian_combo_final_step",
+   "trigger": "combo_step == combo_steps",
+   "effect": "applies the heavier step multiplier and longer cooldown; fires ceann_scoir_comhrac check"
+  },
+  {
+   "id": "fian_offhand_swing",
+   "trigger": "dual_wield_alternate",
+   "effect": "routes the swing to the off-hand stack, swaps hands for the next step, validates packet cooldown server-side"
+  },
+  {
+   "id": "fian_two_hand_lock",
+   "trigger": "equip_two_handed_weapon",
+   "effect": "blocks off-hand use and hides the off-hand item until main hand changes"
+  },
+  {
+   "id": "fian_hover_target",
+   "trigger": "swing_start",
+   "effect": "raycast within swing volume plus hover_reach bonus; hit lands even without exact crosshair alignment"
+  },
+  {
+   "id": "fian_block_aim_suppress",
+   "trigger": "crosshair_on_block",
+   "effect": "suppresses attack animation and swing volume so mining stays vanilla"
+  }
+ ],
+ "skills": [
+  "ealain_ceithre_buill\u00ed",
+  "ealain_dha_laimh",
+  "ealain_dha_lann",
+  "ealain_cul_ghearradh"
+ ],
+ "id_migration": {
+  "bettercombat:weapon_attributes/sword": "diaithircombat:weapons/sword_one_hand",
+  "bettercombat:weapon_attributes/axe": "diaithircombat:weapons/axe_sweep",
+  "bettercombat:weapon_attributes/greatsword": "diaithircombat:weapons/greatsword",
+  "bettercombat:weapon_attributes/spear": "diaithircombat:weapons/polearm_line",
+  "bettercombat:weapon_attributes/dagger": "diaithircombat:weapons/dagger",
+  "bettercombat:weapon_attributes/hammer": "diaithircombat:weapons/hammer_overhead",
+  "bettercombat:weapon_attributes/lance": "diaithircombat:weapons/lance",
+  "bettercombat:weapon_attributes/trident": "diaithircombat:weapons/trident_line",
+  "bettercombat:config": "config/diaithircombat/categories/global.json",
+  "spartanweaponry:*": "diaithircombat:weapons/<class> (tag membership only, no recreated ids)",
+  "diaithirarms:*": "diaithircombat:weapons/<class> (tag membership only, no recreated ids)"
+ },
+ "c_tags": {
+  "c:ingots/bronze": [
+   "diaithirarms:bronze_ingot"
+  ],
+  "c:ingots/steel": [
+   "diaithirarms:steel_ingot"
+  ],
+  "c:ingots/composite": [
+   "diaithirarms:composite_ingot"
+  ],
+  "c:ingots/iron": [
+   "minecraft:iron_ingot"
+  ],
+  "c:ingots/copper": [
+   "minecraft:copper_ingot"
+  ],
+  "c:ingots/gold": [
+   "minecraft:gold_ingot"
+  ],
+  "c:ingots/silver": [
+   "diaithirarms:silver_ingot"
+  ],
+  "c:rods/wooden": [
+   "minecraft:stick"
+  ],
+  "c:leathers": [
+   "minecraft:leather"
+  ],
+  "c:gems/amber": [
+   "diaithir_classes:amber"
+  ],
+  "c:gems/jade": [
+   "diaithir_classes:jade"
+  ],
+  "c:gems/lunar": [
+   "diaithir_classes:lunar_gem"
+  ],
+  "c:dusts/ogham": [
+   "diaithir_classes:ogham_dust"
+  ],
+  "c:stones": [
+   "minecraft:stone",
+   "minecraft:cobblestone"
+  ],
+  "diaithircombat:weapons/greatsword": [
+   "claidheamh_mor",
+   "claidheamh_comhdhuilte"
+  ],
+  "diaithircombat:weapons/polearm_line": [
+   "gai_fada"
+  ],
+  "diaithircombat:weapons/sword_one_hand": [
+   "cloidhmh_dluth"
+  ],
+  "diaithircombat:weapons/dagger": [
+   "sgian_dubh_ceilg"
+  ],
+  "diaithircombat:weapons/axe_sweep": [
+   "tuagh_cath"
+  ],
+  "diaithircombat:weapons/hammer_overhead": [
+   "cas\u00far_trom"
+  ],
+  "diaithircombat:weapons/lance": [
+   "gai_sleagh_marcach"
+  ],
+  "diaithircombat:two_handed": [
+   "claidheamh_mor",
+   "gai_fada",
+   "cas\u00far_trom",
+   "claidheamh_comhdhuilte"
+  ],
+  "diaithircombat:dual_wield": [
+   "cloidhmh_dluth",
+   "sgian_dubh_ceilg"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "fian_forge_steel_greatsword",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:rods/wooden",
+    "c:leathers"
+   ]
+  },
+  {
+   "id": "fian_forge_composite_claymore",
+   "inputs_as_c_tags": [
+    "c:ingots/composite",
+    "c:gems/lunar",
+    "c:rods/wooden"
+   ]
+  },
+  {
+   "id": "fian_forge_bronze_spear",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:rods/wooden"
+   ]
+  },
+  {
+   "id": "fian_rune_sweep",
+   "inputs_as_c_tags": [
+    "c:gems/amber",
+    "c:dusts/ogham"
+   ]
+  },
+  {
+   "id": "fian_relic_combo_orb",
+   "inputs_as_c_tags": [
+    "c:gems/amber",
+    "c:ingots/silver"
+   ]
+  },
+  {
+   "id": "fian_duelling_stone",
+   "inputs_as_c_tags": [
+    "c:stones",
+    "c:ingots/iron"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "foirnis_airm",
+   "kind": "energy",
+   "units_SI": "consumes 1500 W while forging; buffer 30000 J; max input 3000 W"
+  },
+  {
+   "block": "foirnis_airm",
+   "kind": "fluid",
+   "units_SI": "quench tank 4 L; accepts water only"
+  },
+  {
+   "block": "ainmhi_dealraidh",
+   "kind": "fluid",
+   "units_SI": "basin 16 L; accepts water and oil; drains 0.5 L per quench"
+  },
+  {
+   "block": "ainmhi_dealraidh",
+   "kind": "item",
+   "units_SI": "1 slot; blade up to 5 kg"
+  },
+  {
+   "block": "cloch_breith",
+   "kind": "item",
+   "units_SI": "1 weapon slot; reports combo step as redstone 0 to 15"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "fian_weapon_runes",
+   "target": "diaithircombat:weapons/*",
+   "slots": 2,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "fian_two_hand_runes",
+   "target": "diaithircombat:two_handed",
+   "slots": 3,
+   "kinds": [
+    "rune",
+    "enchant"
+   ],
+   "max_quality": 4
+  },
+  {
+   "id": "fian_dagger_runes",
+   "target": "diaithircombat:weapons/dagger",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "fian_charm_relics",
+   "target": "relic",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "fian_forge_quality",
+   "target": "diaithircombat:weapons/*",
+   "slots": 1,
+   "kinds": [
+    "quench",
+    "temper"
+   ],
+   "max_quality": 5
+  }
+ ],
+ "global_events": [
+  {
+   "id": "fian_combo_to_skill_xp",
+   "subscribes_to": "fian_combo_final_step",
+   "effect": "grants skill XP to the matching ealain_* skill and counts toward unlock thresholds"
+  },
+  {
+   "id": "fian_hit_to_codex",
+   "subscribes_to": "fian_hit_volume_resolved",
+   "effect": "first multi-target hit per weapon class unlocks its codex entry"
+  },
+  {
+   "id": "fian_two_hand_to_mana",
+   "subscribes_to": "fian_two_hand_lock",
+   "effect": "geas_dha_laimh and geas_dlath_buille read the lock state for their bonuses"
+  },
+  {
+   "id": "fian_dummy_to_quest",
+   "subscribes_to": "fian_hit_volume_resolved",
+   "effect": "hits on cloch_breith advance the quest comhrac_oideas"
+  },
+  {
+   "id": "fian_charge_to_event",
+   "subscribes_to": "fian_hover_target",
+   "effect": "lance charge hits fire gal_marcach knockback burst"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "comhrac_foirmeacha_intro",
+   "connects_to": [
+    "codex:arms/weapon_classes",
+    "codex:classes/fian",
+    "codex:classes/sleagh"
+   ]
+  },
+  {
+   "entry": "claidheamh_mor_lore",
+   "connects_to": [
+    "codex:comhrac_foirmeacha_intro",
+    "codex:arms/steel"
+   ]
+  },
+  {
+   "entry": "sgian_dubh_lore",
+   "connects_to": [
+    "codex:classes/ceilg",
+    "codex:comhrac_foirmeacha_intro"
+   ]
+  },
+  {
+   "entry": "rune_comhraic_lore",
+   "connects_to": [
+    "codex:classes/ogham_runes",
+    "codex:comhrac_foirmeacha_intro"
+   ]
+  },
+  {
+   "entry": "foirnis_airm_lore",
+   "connects_to": [
+    "codex:arms/forge",
+    "codex:classes/sockets"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "comhrac_oideas",
+  "intro": "The old duellists say a blade is only half the fight. Set a Cloch Breith, strike it in four breaths without a pause, then three more in the broad sweep. The stone remembers every step.",
+  "links_to": [
+   "codex:comhrac_foirmeacha_intro",
+   "skill:ealain_ceithre_buill\u00ed",
+   "age_gate:IV"
+  ]
+ },
+ "java_notes": "Needs: a swept-volume hit resolver server-side with per-class arc, reach and line shape; combo state machine per player; dual-wield swing routing and off-hand lock; hover raycast; packet cooldown validation; block-aim suppression; a client animation hook (PlayerAnimationLib) with vanilla swing fallback. Weapon-class numbers load from JSON and tags; Komrag stays the combo-table authority."
+}

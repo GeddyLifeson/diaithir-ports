@@ -1,0 +1,462 @@
+entry_id	name	tier	era	biome_entry
+ST.shyuthora.E1.assay.005401	Neolliasor	1	E1	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E1.assay.005924	Teliastor	1	E1	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E1.assay.006542	Lerum	1	E1	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E2.assay.005447	Amestirnor	2	E2	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E2.assay.007158	Tiastium	2	E2	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E2.assay.011448	Cosia Corantor	2	E2	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E2.assay.012012	Cistum	2	E2	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E2.places.002567	Alaalora	3	E2	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E3.assay.003403	Telaurantia	3	E3	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E3.assay.004213	Valeliarnor	3	E3	ST.shyuthora.E4.places.001181
+ST.shyuthora.E3.assay.004331	Veoraulor	3	E3	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E3.assay.004829	Maunialus	3	E3	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E3.assay.006325	Orases	3	E3	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E3.assay.007090	Sirnia Orirniastus	3	E3	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E3.assay.007308	Nestiror	3	E3	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E3.assay.009037	Ventarium	3	E3	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E3.assay.009334	Telanium	3	E3	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E3.assay.009542	Nianum Reostolor	3	E3	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E3.assay.010030	Maurus Valarium	3	E3	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E3.assay.010329	Oreles	3	E3	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E3.assay.010369	Niasillanum	3	E3	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E3.assay.010510	Seriastanum Raurantanum	3	E3	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E3.assay.010795	Nontellus	3	E3	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E3.assay.010905	Telarnum	3	E3	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E3.assay.011078	Vosum	3	E3	ST.shyuthora.E4.places.001181
+ST.shyuthora.E3.assay.011155	Saror	3	E3	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E3.assay.011465	Coreonum Corestus	3	E3	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E3.assay.011919	Naullium Sereollium	3	E3	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E3.assay.012065	Tiarnum Lases	3	E3	ST.shyuthora.E4.places.001181
+ST.shyuthora.E3.assay.012119	Mistiallor Taunus	3	E3	ST.shyuthora.E4.places.001181
+ST.shyuthora.E3.places.000620	Xaizeisteth	3	E3	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E3.places.001186	Thizeth	6	E3	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E3.places.001200	Osavsora	3	E3	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E3.places.001243	Veseizis	3	E3	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E4.assay.007363	Roniallus	4	E4	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E4.assay.009134	Valor Cirnus	4	E4	ST.shyuthora.E4.places.001181
+ST.shyuthora.E4.assay.009646	Seolornia	4	E4	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E4.assay.010005	Maulliarnus	4	E4	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E4.assay.010256	Talintus	4	E4	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E4.assay.011045	Melaurnus	4	E4	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E4.assay.011303	Serollenium	4	E4	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E4.assay.011383	Serisum Niasia	4	E4	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E4.assay.011573	Tolasia	4	E4	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E4.assay.011746	Coreontilia	4	E4	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E4.assay.011873	Ciaria Tellistum	4	E4	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E4.places.002556	Monintium	2	E4	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.003343	Tenium	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.003346	Oriareostus	5	E5	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E5.assay.004047	Senia	5	E5	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.004257	Laureolor	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.004708	Vesia	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.005043	Vaullinium	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.005140	Tisorum	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.005336	Mastum Ceontoles	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.005426	Valasorus	5	E5	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E5.assay.005605	Corosor	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.005825	Cernium Seriales	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.005907	Teoles Mestarnor	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.006094	Ameoranum Teorollus	5	E5	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E5.assay.006430	Ralor Cisanium	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.006535	Leolorus	5	E5	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E5.assay.006536	Reollaunor	5	E5	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E5.assay.006850	Orauneolles	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.007396	Seolanum	5	E5	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E5.assay.007447	Coriarnium Amarnia	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.007468	Mastium	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.007498	Telontum Amosanum	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.007758	Laurnanus	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.007867	Ceornausium	5	E5	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E5.assay.008098	Tosillum	5	E5	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E5.assay.008349	Caurium Rantor	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.008374	Veontosor	5	E5	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.008728	Telastus	5	E5	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.008838	Amausum	5	E5	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E5.assay.008890	Vaurnes	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.009000	Sintor Meontoles	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.009084	Valauntilum	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.009156	Lenor Saurelor	5	E5	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E5.assay.009284	Rauses	5	E5	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E5.assay.009322	Amenanum Tiarnintum	5	E5	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E5.assay.009403	Valeror	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.009752	Orialor Mintanum	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.009753	Misenium	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.009948	Caurnes	5	E5	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E5.assay.010207	Seosantium	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.assay.010345	Linarnum	5	E5	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E5.assay.010451	Corillorum	5	E5	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.010485	Meolus Serelium	5	E5	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E5.assay.010585	Amenauntes	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.010590	Sasteolia	5	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E5.assay.010869	Cintor	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.010912	Corinaullum Sesiaria	5	E5	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.011031	Corestillia	5	E5	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.011130	Meostiasum	5	E5	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.011232	Orentasum	5	E5	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E5.assay.011261	Tiranum Mollor	5	E5	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E5.assay.011325	Amauntes	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.011430	Tontanum Launum	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.011437	Mesillum	5	E5	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E5.assay.011788	Cauntus	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.011864	Roranum Taror	5	E5	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E5.assay.012096	Amiaranum Reollaurnus	5	E5	ST.shyuthora.E4.places.001181
+ST.shyuthora.E5.assay.012164	Rintes	5	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.places.002537	Costanum	1	E5	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E5.places.002560	Peludeld	2	E5	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.002705	Cistiantum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.002887	Rines	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.002943	Amontium	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.002966	Leontor	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.003029	Mianium	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.003055	Virelium	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.003084	Coristium	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.003174	Valistolus	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.003282	Viantostum	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.003350	Valeseolum	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.003375	Raurnes	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.003408	Reolanum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.003435	Oriasia	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.003440	Neoriasanum	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.003507	Coraurnum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.003535	Ronanum	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.003607	Oriasaustia	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.003611	Telaurnanus	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.003844	Corianeres	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.003848	Viria	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.004039	Causornia	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.004120	Corantes Taurnum	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.004131	Mantus	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.004171	Seriares	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.004227	Niallia Orintes	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.004249	Meorniastus	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.004316	Cellium	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.004503	Mausinor	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.004610	Riales	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.004691	Vontor	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.004728	Amallia Varnellor	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.004818	Amontia	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.004862	Ciraunum	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.004911	Serenialium	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.004923	Miarum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.005034	Vestor	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.005107	Seonistium	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.005165	Cosaurnia	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.005166	Amaulia	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.005172	Solausia	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005256	Lirentus	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.005278	Mirnum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.005359	Sellium	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.005374	Raurus	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005403	Orilor	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005425	Lontanum	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.005463	Liastarum	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.005510	Rialor Amiasistum	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.005573	Seraunes	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.005575	Seristarnum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005583	Nialor	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.005629	Teosaunes	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.005635	Vallor	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.005665	Seorniallia	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.005701	Corisallum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005710	Seontanor	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.005720	Orastor	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005749	Vauntares	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.005754	Corasum	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.005761	Oraurnanum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005792	Sialles	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.005826	Neoselanum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005836	Silus Oreostium	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.005859	Ameorasanum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.005898	Seriastia	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.005925	Valarnia	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.006173	Amoranum Leontanum	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.006177	Serintanum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.006239	Vornillia	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.006247	Nolanum	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.006360	Amirniarus	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.006389	Orolia	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.006457	Corirnanum	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.006474	Amasum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.006514	Mosus	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.006524	Veonor	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.006571	Seontarnes	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.006721	Nillus Oroses	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.006725	Rilleontium	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.006790	Veosor	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.006827	Meornum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.006863	Telaunilia	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.006989	Santanum Serillia	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.007081	Orantiasus	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.007105	Miallanum Manus	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.007117	Selornus	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.007190	Caustarnes	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.007210	Misus Coranterium	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.007231	Rillium Telisum	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.007236	Tontianes	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.007309	Teliarnes Teleoniaror	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.007322	Selantia	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.007664	Cernia Valistia	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.007704	Sonauntes	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.007712	Maullanum Niasor	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.007768	Cenia Tausia	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.007879	Amaurellum	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.007909	Oreostor Tausirnus	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.007975	Meostum Ceontosor	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.008024	Centes Amastontus	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.008040	Ameseorium	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.008048	Nolirnes	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.008130	Cirium	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.008149	Amiaronor	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.008151	Neornes Serellastia	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.008242	Caurnanum	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.008276	Laurum	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.008336	Testirum	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.008386	Serintaulum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.008428	Telostanum	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.008453	Rilliantum	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.008484	Orareosium	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.008501	Valintes	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.008508	Sosia	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.008550	Nausanum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.008725	Telanes	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.008740	Telereornus	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.008741	Leornia	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.008790	Telontum Ameonausium	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.008814	Centaror	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.008824	Amistiantor	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.008836	Lintiastum	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.008891	Amestum	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.008922	Amianales	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.008987	Tintialor	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.009101	Valiniaror	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.009121	Sarnialanum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.009148	Miallium Telentaror	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.009149	Leorniastor	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.009159	Mintallus	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.009198	Seraurnus	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.009246	Melaurnanum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.009258	Liantia	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009259	Serestium	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.009290	Tausanum	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009323	Restor	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009367	Orarillium	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009400	Amiareoses	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009425	Ameornor Corilanium	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.009460	Neonolus	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.009507	Seostanum	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.009510	Valeolor	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.009548	Telisum Valesanum	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.009578	Coreornium	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.009587	Taror	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.009590	Vonanum	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.009653	Venteoles	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.009727	Seraunus	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009758	Corostenor	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009810	Valarestor	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.009829	Amiarenor	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009835	Teleontes Lausum	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.009942	Amarnia	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.010103	Vianes Valiarnia	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.010114	Reosarium	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.010132	Amiasium	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.010193	Naustes	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.010221	Amoreollus Valaustium	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.010232	Liastus	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.010332	Corosentium	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.010347	Neonus Teres	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.010355	Nernes	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.010383	Ceostaullus	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.010402	Tolliantum	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.010502	Ternia Teosiania	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.010509	Cisonanum	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.010608	Tiallanum Valianus	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.010639	Tosor Tontor	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.010743	Rarnia Sesteontium	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.011012	Tolleosus	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.011055	Linosum	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.011116	Amerniasium	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.011136	Resia Miallus	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.011167	Valliarnum	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.011211	Teleosanum	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.011249	Mianes Lantosium	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.011281	Veontiania	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.011293	Teleostor	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.011298	Miseornor	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.011323	Ninus Amernium	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.011342	Lasestium	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.assay.011374	Laustintor	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.011376	Nauselum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.011408	Telianum Telanor	6	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.assay.011466	Oralaurus	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.011549	Neornum Lalentanum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.011639	Masaunum	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.assay.011757	Tiastum Teostelum	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.012089	Ceroles	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.012223	Amarnum	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.assay.012229	Nontastus	6	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.assay.012248	Orintanum Millauntium	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.assay.012251	Meonisor	6	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.assay.012288	Laraunus	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001012	Thezasha	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001013	Iseisith	2	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.places.001030	Vesasteth	7	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001032	Xaassith	7	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001035	Xaevseth	6	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001039	Sishith	7	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001046	Ashathis	2	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001049	Shizith	2	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001054	Shazivseth	2	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001056	Shistith	2	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.places.001057	Osezistith	6	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001067	Zepheshis	7	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001069	Isivseth	2	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001073	Thiassith	7	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001080	Osyushora	7	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.places.001082	Iseishora	2	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.places.001089	Iseshizith	7	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001091	Osezeth	2	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.places.001096	Shiasith	1	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.places.001098	Ashizis	7	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001109	Savsora	6	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001118	Isiashora	2	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001121	Thithora	2	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001134	Osyushora	2	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001135	Theistasha	2	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001145	Isiazis	7	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.places.001149	Veseizasha	7	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001155	Shesazeth	3	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001161	Iseitheth	7	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001170	Zephyushora	7	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.places.001177	Zephistasha	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.places.001178	Syisora	2	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001195	Iseisathora	3	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001210	Isasheth	7	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001217	Shyushora	2	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001218	Syisiazora	2	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001228	Osiavsora	2	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.places.001232	Osizith	2	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001233	Iseisteth	2	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001237	Syasora	7	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001241	Oseiseth	7	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.places.001248	Iseisora	6	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.places.001249	Ashiavseth	7	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001263	Siastora	7	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001273	Shivsora	7	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.places.001279	Xaezith	7	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001289	Xaivsezis	7	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001290	Sistyuzora	2	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001292	Xaezeithess	5	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001296	Shathis	3	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001298	Zephiazis	2	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001299	Syashizora	2	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001301	Zephisora	7	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.places.001307	Zephassora	2	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.places.001316	Xaitheishis	7	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001318	Syiziasith	2	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001320	Osatheth	2	E6	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E6.places.001321	Isyusteth	2	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001322	Vesiastith	2	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001326	Osazora	7	E6	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E6.places.001333	Osiazis	7	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001336	Ashizeth	2	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001339	Isiatheth	7	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001341	Zephiazeth	2	E6	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E6.places.001351	Isavseth	2	E6	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E6.places.001352	Isyuzasha	2	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001358	Asheizith	7	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E6.places.001361	Xaasitheth	2	E6	ST.shyuthora.E4.places.001181
+ST.shyuthora.E6.places.001362	Theizeth	5	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.places.001368	Zepheizess	7	E6	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E6.places.002300	Thazora	2	E6	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.002949	Riasanum	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.002967	Amialinor	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.002971	Misus	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.003047	Rarniastum	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.003615	Amalesia	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.003695	Renia Vastauntia	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.003748	Corianum	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.004278	Ciastes	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.004364	Villum	7	E7	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E7.assay.004515	Celanum	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.004909	Sinor	7	E7	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E7.assay.005120	Ceontollum	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.005244	Valornanum	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.005535	Solum	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.005738	Cinus	7	E7	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E7.assay.005783	Taunarnes	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.005845	Tonasor	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.006476	Niria Raustum	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.006645	Oreostum Tornanum	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.006671	Sestia	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.006753	Lirneostes	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.006864	Mirnolor	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.006897	Manistanum	7	E7	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E7.assay.006932	Rosiantor	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.006984	Solliaria	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.006987	Orestiarus	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.007113	Lintium	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.007131	Seraurnum	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.007174	Amiasilanum	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.007361	Amoliares	7	E7	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E7.assay.007630	Nares Coreneosus	7	E7	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E7.assay.007645	Oriastus Lontium	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.007682	Rinium	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.007813	Oroneolanum	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.007917	Telantia	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.008210	Oreosus	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.008309	Ciasia Meosaurus	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.008350	Colasum	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.008355	Sorenes	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.008387	Orirnaunus	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.008551	Tilaustia	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.008655	Mallium	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.008708	Sianes	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.008757	Monum Telianes	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.008791	Coriastolus	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.008898	Telorium	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.009063	Valeornelum	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.009122	Serausor	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.009150	Lastentanum	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.009174	Ameosia	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.009227	Tarnaules	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.009237	Tiantor Valinterum	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.009424	Mauranum Serores	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.009491	Naullium	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.009538	Neolanum	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.009703	Nostum Coriseontia	7	E7	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E7.assay.009732	Valenes Carniastor	7	E7	ST.shyuthora.E7.assay.010567
+ST.shyuthora.E7.assay.009776	Valialorum	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.009817	Tauntium	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.009821	Corasaures	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.009864	Amelliares	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.010004	Nillanium	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.010066	Teonentum	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.010108	Telornes Saunum	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.010165	Amistanum Telarnor	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.010288	Corintum Seralintum	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.010343	Sauria	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.010348	Nasaullus	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.010458	Vellanum	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.010515	Corases Saurnanum	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.010663	Mastor Viarninus	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.010711	Rentor	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.010982	Amaureonia	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.011040	Valelanum	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.011168	Sianus Rantinus	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.011194	Sentalum	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.011230	Oriastum	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.011378	Resirnum	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.011462	Risia Cores	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.011464	Coralaurus	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.011577	Cillium	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.011590	Teleoranum Cauleonanum	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.assay.011773	Monia Aminanum	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.011794	Orenium Cillium	7	E7	ST.shyuthora.E2.assay.012012
+ST.shyuthora.E7.assay.011867	Serauntisum	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.011878	Meornonus	7	E7	ST.shyuthora.E7.assay.009106
+ST.shyuthora.E7.assay.011927	Cellirnium	7	E7	ST.shyuthora.E7.assay.005012
+ST.shyuthora.E7.assay.011981	Amornium	7	E7	ST.shyuthora.E6.assay.005023
+ST.shyuthora.E7.assay.012156	Seralium Cestes	7	E7	ST.shyuthora.E6.assay.002846
+ST.shyuthora.E7.assay.012212	Teleosentia	7	E7	ST.shyuthora.E4.places.001181
+ST.shyuthora.E7.places.001085	Osisheth	2	E7	ST.shyuthora.E4.places.001181

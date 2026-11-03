@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" G ", "GTG", " G "],
+  "key": {
+    "G": "minecraft:gold_ingot",
+    "T": "diaithirworldsys:topaz"
+  },
+  "result": {"id": "diaithirworldsys:topaz_ring"}
+}

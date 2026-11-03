@@ -34,14 +34,14 @@ public final class BossEvents {
     @SubscribeEvent(priority = net.neoforged.bus.api.EventPriority.HIGHEST)
     public static void keepSize(EntityJoinLevelEvent e) {
         if (e.getLevel().isClientSide() || !(e.getEntity() instanceof Mob m)) return;
-        if (Data.byEntity(BuiltInRegistries.ENTITY_TYPE.getKey(m.getType()).toString()) != null) m.addTag("dwarfsandgiants:spawn_size_rolled");
+        if (Data.profileFor(m) != null) m.addTag("dwarfsandgiants:spawn_size_rolled");
     }
 
     @SubscribeEvent
     public static void join(EntityJoinLevelEvent e) {
         if (!(e.getLevel() instanceof ServerLevel sl) || !(e.getEntity() instanceof Mob m)) return;
         if (BossController.ALL.containsKey(m.getUUID())) return;
-        Data.Profile p = Data.byEntity(BuiltInRegistries.ENTITY_TYPE.getKey(m.getType()).toString());
+        Data.Profile p = Data.profileFor(m);
         if (p == null) return;
         BossController.ALL.put(m.getUUID(), new BossController(m, sl, p));
     }

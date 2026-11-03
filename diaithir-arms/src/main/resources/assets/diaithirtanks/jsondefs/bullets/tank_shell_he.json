@@ -1,0 +1,39 @@
+{
+ "general": {
+  "type": "bullet",
+  "name": "High-Explosive Tank Shell",
+  "materialLists": [
+   [
+    "minecraft:gunpowder:0:2",
+    "minecraft:iron_ingot:0:3"
+   ]
+  ]
+ },
+ "bullet": {
+  "types": [
+   "explosive"
+  ],
+  "diameter": 120.0,
+  "damage": 25.0,
+  "caseLength": 600.0,
+  "quantity": 4,
+  "maxVelocity": 160,
+  "despawnTime": 400,
+  "impactDespawnTime": 1,
+  "gravitationalVelocity": 0.0,
+  "blastStrength": 4.0,
+  "blastDamage": 40.0,
+  "blastRadiusXZ": 6.0,
+  "blastRadiusY": 4.0,
+  "maxDamageRadius": 2.5
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "High-Explosive Tank Shell",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+[
+ {
+  "registry": "minecraft:block",
+  "old": "the_backwoods:potted_ash_rose",
+  "new": "minecraft:flower_pot"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:faded_axe",
+  "new": "minecraft:iron_axe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:faded_hoe",
+  "new": "minecraft:iron_hoe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:faded_pickaxe",
+  "new": "minecraft:iron_pickaxe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:faded_shovel",
+  "new": "minecraft:iron_shovel"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:faded_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:heartwood_rotten_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:lignum_caro_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:petrified_rotten_axe",
+  "new": "minecraft:iron_axe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:petrified_rotten_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:recovered_faded_axe",
+  "new": "minecraft:iron_axe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:recovered_faded_hoe",
+  "new": "minecraft:iron_hoe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:recovered_faded_pickaxe",
+  "new": "minecraft:iron_pickaxe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:recovered_faded_shovel",
+  "new": "minecraft:iron_shovel"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:recovered_faded_sword",
+  "new": "minecraft:iron_sword"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:rotten_axe",
+  "new": "minecraft:iron_axe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:rotten_hoe",
+  "new": "minecraft:iron_hoe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:rotten_pickaxe",
+  "new": "minecraft:iron_pickaxe"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:rotten_shovel",
+  "new": "minecraft:iron_shovel"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "the_backwoods:rotten_sword",
+  "new": "minecraft:iron_sword"
+ }
+]

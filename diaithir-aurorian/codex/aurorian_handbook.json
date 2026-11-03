@@ -1,0 +1,290 @@
+{
+ "id": "theaurorian:handbook",
+ "title": "The Aurorian",
+ "chapters": [
+  {
+   "tier": "aurorianite",
+   "name": "Aurorianite",
+   "age": "IV",
+   "items": [
+    {
+     "id": "theaurorian:aurorianite_axe",
+     "name": "Aurorianite Axe",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorianite_pickaxe",
+     "name": "Aurorianite Pickaxe",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorianite_sword",
+     "name": "Aurorianite Sword",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorianite_shovel",
+     "name": "Aurorianite Shovel",
+     "age": "IV",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "aurorian_steel",
+   "name": "Aurorian Steel",
+   "age": "III",
+   "items": [
+    {
+     "id": "theaurorian:aurorian_steel_hoe",
+     "name": "Aurorian Steel Hoe",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_steel_leggings",
+     "name": "Aurorian Steel Leggings",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_steel_pickaxe",
+     "name": "Aurorian Steel Pickaxe",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_steel_shovel",
+     "name": "Aurorian Steel Shovel",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_steel_sword",
+     "name": "Aurorian Steel Sword",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_steel_axe",
+     "name": "Aurorian Steel Axe",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_steel_boots",
+     "name": "Aurorian Steel Boots",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_steel_chestplate",
+     "name": "Aurorian Steel Chestplate",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_steel_helmet",
+     "name": "Aurorian Steel Helmet",
+     "age": "III",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "aurorian_stone",
+   "name": "Aurorian Stone",
+   "age": "I",
+   "items": [
+    {
+     "id": "theaurorian:aurorian_stone_axe",
+     "name": "Aurorian Stone Axe",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_stone_hoe",
+     "name": "Aurorian Stone Hoe",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_stone_pickaxe",
+     "name": "Aurorian Stone Pickaxe",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_stone_shovel",
+     "name": "Aurorian Stone Shovel",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:aurorian_stone_sword",
+     "name": "Aurorian Stone Sword",
+     "age": "I",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "cerulean",
+   "name": "Cerulean",
+   "age": "II",
+   "items": [
+    {
+     "id": "theaurorian:cerulean_boots",
+     "name": "Cerulean Boots",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:cerulean_chestplate",
+     "name": "Cerulean Chestplate",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:cerulean_helmet",
+     "name": "Cerulean Helmet",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:cerulean_leggings",
+     "name": "Cerulean Leggings",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:cerulean_shield",
+     "name": "Cerulean Shield",
+     "age": "II",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "crystalline",
+   "name": "Crystalline",
+   "age": "IV",
+   "items": [
+    {
+     "id": "theaurorian:crystalline_pickaxe",
+     "name": "Crystalline Pickaxe",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:crystalline_shield",
+     "name": "Crystalline Shield",
+     "age": "IV",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "moonstone",
+   "name": "Moonstone",
+   "age": "II",
+   "items": [
+    {
+     "id": "theaurorian:moonstone_axe",
+     "name": "Moonstone Axe",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:moonstone_hoe",
+     "name": "Moonstone Hoe",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:moonstone_pickaxe",
+     "name": "Moonstone Pickaxe",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:moonstone_shield",
+     "name": "Moonstone Shield",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:moonstone_shovel",
+     "name": "Moonstone Shovel",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:moonstone_sword",
+     "name": "Moonstone Sword",
+     "age": "II",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "silentwood",
+   "name": "Silentwood",
+   "age": "I",
+   "items": [
+    {
+     "id": "theaurorian:silentwood_axe",
+     "name": "Silentwood Axe",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:silentwood_hoe",
+     "name": "Silentwood Hoe",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:silentwood_pickaxe",
+     "name": "Silentwood Pickaxe",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:silentwood_shovel",
+     "name": "Silentwood Shovel",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:silentwood_sword",
+     "name": "Silentwood Sword",
+     "age": "I",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "umbra",
+   "name": "Umbra",
+   "age": "IV",
+   "items": [
+    {
+     "id": "theaurorian:umbra_pickaxe",
+     "name": "Umbra Pickaxe",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:umbra_shield",
+     "name": "Umbra Shield",
+     "age": "IV",
+     "text": ""
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "sky": {
+  "sky": "#7a8c9e",
+  "fog": "#a9b4bf",
+  "cloud": "#e6eef5",
+  "cloud_height": 180
+ },
+ "weather": {
+  "kind": "rain",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e5f7a"
+ },
+ "terrain": "normal",
+ "biomes": [
+  {
+   "entry": "GR.listanum.E7.assay.000028",
+   "archetype": "ocean",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#6f9a5c",
+   "foliage": "#5e8a4c",
+   "water": "#24506b",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.listanum.E6.assay.000089",
+   "archetype": "warm_ocean",
+   "temp": 0.6,
+   "humid": 0.6,
+   "grass": "#8fb070",
+   "foliage": "#7fa460",
+   "water": "#3a7f99",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.listanum.E6.assay.000001",
+   "archetype": "lukewarm_ocean",
+   "temp": 0.7,
+   "humid": 0.5,
+   "grass": "#94b47a",
+   "foliage": "#84a86a",
+   "water": "#3f8aa3",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.listanum.E6.assay.000034",
+   "archetype": "beach",
+   "temp": 0.4,
+   "humid": 0.4,
+   "grass": "#a8b57a",
+   "foliage": "#97a86c",
+   "water": "#3b7089",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.listanum.E5.assay.000114",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#b09a63",
+   "foliage": "#9c8a58",
+   "water": "#4a6f80",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.listanum.E6.assay.000200",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#c8b47a",
+   "foliage": "#b5a46e",
+   "water": "#4a6f80",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.listanum.E6.assay.000110",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.1,
+   "grass": "#7d9164",
+   "foliage": "#6b7f56",
+   "water": "#3d6578",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.listanum.E6.assay.000184",
+   "archetype": "plains",
+   "temp": 0.1,
+   "humid": 0.2,
+   "grass": "#8aa66a",
+   "foliage": "#7a9a5e",
+   "water": "#3e6d86",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.04
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a8f99",
+  "fog_density": "normal",
+  "night": "normal",
+  "stars": 0.3,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "GR.listanum.E6.assay.000186",
+  "why": "Radiation fallout and war-torn skies suggest ash and stormy haze",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.5,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.listanum.E6.assay.000175",
+  "grounded": false
+ }
+}

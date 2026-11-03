@@ -1,0 +1,2420 @@
+entry_id	name	tier	era	biome_entry
+AR.elaennirlys.E1.assay.000449	Corarilanum	1	E1	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E1.assay.002920	Mianor	1	E1	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E1.assay.003535	Naulum	1	E1	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E1.assay.003961	Valestium	1	E1	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E1.assay.004163	Lirum	1	E1	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E1.assay.005309	Ceseornum	1	E1	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E1.assay.006392	Orosenor	1	E1	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E1.assay.009080	Raunanum	1	E1	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E1.assay.011352	Maustia	1	E1	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E1.assay.015233	Tirneontor	1	E1	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E1.assay.015774	Oraurnialus	1	E1	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E1.assay.017705	Valilanum Coriarolus	1	E1	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E1.assay.018101	Coriarnium Masornor	1	E1	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E1.assay.018340	Caurnor Serilanum	1	E1	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E1.assay.019018	Corallium Valestia	1	E1	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E1.assay.019128	Sereoliares	1	E1	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E1.assay.020082	Amistaurnes	1	E1	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E1.assay.020095	Sereonanum Ceolornia	1	E1	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E1.assay.020104	Ralum Sereosium	1	E1	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E1.assay.020230	Caustisanum	1	E1	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E1.assay.020737	Riasus Coraurnanum	1	E1	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E1.assay.020940	Veornium Tianintes	1	E1	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E1.assay.021531	Naulliastus	1	E1	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E1.assay.027816	Serintanum Seorus	1	E1	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E1.assay.028718	Valauntor Teleorus	1	E1	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E1.assay.030816	Calerus	1	E1	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E1.assay.031204	Orellisium	1	E1	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E1.assay.034227	Santeolia	1	E1	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E1.assay.035176	Corarnum Serintor	1	E1	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E1.assay.037082	Tiarnanum Valontanum	1	E1	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E1.assay.038211	Seornolus Valasanum	1	E1	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.000289	Sosalanum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.000348	Sereornanum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.000435	Teloleostor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.000512	Rantia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.000610	Maustum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.000655	Launes	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.000736	Virnes	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.000749	Oreosium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.000850	Neontostum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.000867	Teontus	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.000901	Coranium	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.001230	Leornonum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.001311	Torum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.001513	Serostia	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.001569	Orintiasium	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.001646	Lentum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.001665	Valonor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.002813	Tauriantus	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.002866	Sarnelium	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.002970	Veollaures	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.003067	Siallarnor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.003240	Niasallanum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.003309	Tarnaullus	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.003332	Virnus Oreolus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.003352	Tirniastia	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.003389	Teliases	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.003620	Coleontus	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.003671	Millor Minum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.003708	Valinium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.003780	Lirnor	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.003844	Ralles	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.003902	Ciarnentum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.004028	Sostor	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.004036	Rontasum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.004037	Carnum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.004159	Vonillum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.004183	Oraulleorum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.004434	Valaurus Valausanum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.004652	Miarnausia	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.004701	Cernastor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.004725	Nintium Meostanum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.004916	Amellia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.004943	Amerum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.004971	Amiasus Oreorium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.005093	Marus Ciantus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.005125	Neornor Cirnausum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.005126	Launtes Tallestanum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.005156	Sastor Serilor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.005291	Sarnor	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.005538	Rinauria	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.005669	Seostia	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.005915	Coreontolus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.005940	Rausanum Vollanum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.005941	Telastes Larus	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.005956	Siantia Launtes	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.005998	Viastia	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.006000	Sestum Sontes	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.006032	Seraurnones	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.006128	Ameolanum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.006216	Seriarnum Rellistia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.006328	Listum Narium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.006339	Orostalanum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.006361	Silenus	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.006374	Lostanum Callentanum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.006410	Minus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.006411	Nillium Minus	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.006617	Serantia	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.006627	Corosia Melaustor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.006653	Valelornus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.006656	Seriarnes	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.006773	Sereontales	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.006945	Oraurentum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.006949	Corialaurus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.006987	Amaustisor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.007001	Cernus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.007028	Solantes	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.007131	Ranteosia	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.007261	Larniarus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.007574	Laurnor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.007588	Sirnianor	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.007782	Corarnauses	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.007851	Valeoranum Monium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.007895	Riseornum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.008454	Viaseones	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.008496	Linteosia	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.008543	Vellium	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.008544	Vostaurnium	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.008736	Vostaunor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.008871	Colliastia	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.008897	Naunus Nonteorium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.008959	Vonauntus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.009104	Oraustia Valistornum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.009294	Corilastus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.009504	Neoserium	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.009762	Coriantes Oralleonor	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.009885	Ciastinum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.009999	Serirnanum Vollaunium	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.010067	Restianium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.010653	Valaulosia	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.011020	Lonantus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.011283	Montanum Orentium	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.011466	Veolles Seosallum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.011504	Nintum Valliasor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.011528	Sentonus	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.012282	Marnontum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.012466	Telauneria	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.012603	Sirnonus Rauntasor	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.013282	Manum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.013367	Ceollernium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.013377	Valiastia	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.013437	Lontastor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.013482	Oreonium Serinum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.013899	Mialus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.013908	Teliania Amantum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.014021	Orarium Sirnosia	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.014036	Menor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.014046	Reontosium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.014294	Vauntor Teollum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.014337	Ameoles Valaulanum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.014485	Celauses	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.014716	Rellostanum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.014748	Ceolles Ciallaurnus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.014817	Lanus Vauliaror	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.014835	Valorium Oriarnus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.014970	Siasanium	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.014980	Valeostium Valiantum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.014986	Lausarium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.015082	Nintes Vontiallia	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.015114	Taureonum Rialirnanum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.015118	Corasteonus	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.015218	Mollium Nollases	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.015254	Lastum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.015275	Ceorum Rolum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.015386	Reoses Maureornes	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.015448	Ninollum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.015541	Orolausor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.015666	Corialoses	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.016022	Amolanum Orillor	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.016153	Seostanum Mellia	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.016240	Tintaullor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.016335	Rileosia	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.016430	Cantiarnus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.016539	Resostor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.017023	Monalles	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.017086	Rilium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.017125	Seraurnia Telenaurium	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.017153	Naleontum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.017304	Raulises	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.017365	Tarnillanum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.017429	Meornalanum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.017434	Tiastor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.017446	Rareoles	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.017519	Vausallium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.017584	Siastarum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.017608	Sostum Vornium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.017683	Coleones	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.017686	Relastanum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.017723	Rasus Raunus	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.017908	Verintor	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.018133	Coreontanum Vaullium	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.018247	Narnium Venor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.018439	Telinernum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.018517	Cintes Sesium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.018596	Maures Telia	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.018772	Veosaurnes	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.018793	Cintanum Menia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.019089	Corauntes Vialornor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.019134	Misia Mones	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.019310	Cellintes	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.019338	Valiantus Sintiaror	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.019384	Corarnia Soriantium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.019410	Caunanum Reollanum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.019483	Corauntanum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.019965	Coriantanum Amelosium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.020211	Nolus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.020263	Tirnor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.020310	Lialoranum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.020423	Caunium Carus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.020462	Tolum Orallentium	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.020498	Valenarnes	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.020622	Caustia	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.020662	Viasteornia	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.020699	Mestanum Rarnausium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.020887	Corernia Soles	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.020895	Meniarnor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.020930	Mirnania	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.021173	Valenes Tellistum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.021265	Nalines	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.021293	Veostor Miarium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.021365	Vontirus	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.021370	Valianostum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.021384	Ameostalles	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.021458	Serentus Centum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.021469	Seliaria	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.021555	Nilanum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.021560	Caulistus	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.021624	Coriases Tarnor	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.021744	Amastornum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.021771	Vaurelor	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.021884	Rauntolor	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.021965	Lirnor Veornor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.021983	Tireolanum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.022146	Amontor Nolliaria	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.022399	Ceolanum Tausintia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.022749	Amentes	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.022789	Lineorum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.022828	Tasestor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.022841	Sirnaustor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.022848	Sinum Taullistum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.023042	Oriantium Tiarnanum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.023218	Amiarnes Teollisanum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.023221	Raustiarnia	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.023399	Lestaulium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.023513	Leorum Leosernum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.023648	Amiarnostus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.023824	Cesor Vernantum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.023833	Corium Corentiases	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.023892	Valeoresium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.024092	Vausalia	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.024351	Corintia Coriantia	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.024442	Reosonus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.024686	Ceonaurnus	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.024775	Sellirnia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.025066	Telaulus Amilliares	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.025159	Amantes Ceostus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.025253	Vallus Valesia	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.025365	Amisanum Orausillium	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.025492	Amintium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.025826	Mernanum Rasanum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.025868	Serialeonus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.025993	Amerus Viases	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.026001	Mornenum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.026022	Rantausia Cellia	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.026066	Lantor Mauranum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.026336	Amelles Serostor	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.026434	Amiallus Caules	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.026480	Amiales Conum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.026491	Seriallia Talum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.026495	Vallia Sostum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.026527	Rontiastus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.026605	Amaurium Oreostium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.026635	Nialus Valosiarnia	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.026662	Seontinum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.026668	Sintus Coriantor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.026780	Meriastium	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.026965	Tontia Sireolium	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.026973	Telornor Sialeornus	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.027041	Seriniarus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.027617	Vollanum Vilus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.027730	Valistium Lantialum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.027894	Resium Telialantus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.027996	Miasontum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.028082	Nontium Teleostus	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.028185	Veollum Valeostus	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.028333	Ciarnium Amintum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.028417	Launor Oroseollia	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.028537	Lernum Valeosus	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.028590	Callus Mirnus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.028647	Seraunor Seriarnium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.028770	Valantor Rarialanum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.029189	Lialornanum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.029392	Teleontus	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.029882	Ameostium Rollastum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.030065	Amasaunanum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.030346	Ciases Corasia	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.030357	Veonirnus	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.030359	Senor Serontia	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.030472	Laureonanum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.030506	Ameollus Naustum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.030540	Sentus Vernum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.030565	Teolistes	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.030618	Cisernor	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.030623	Tianor Seralia	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.030659	Renauntor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.030671	Liares Nillum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.030677	Naurus Vintianum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.030928	Rariasia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.030954	Orollistes	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.030981	Coriaranum Tiastor	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.030996	Saustillia	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.031000	Nostenum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.031025	Molor Meosia	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.031031	Nirnum Nernilles	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.031177	Virnolus	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.031185	Coralintium	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.031349	Vauristia Tisonia	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.031396	Riantanum Nernus	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.031439	Nauleres	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.031568	Tesontus	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.031574	Amenium Ciaraurnium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.032165	Cauntanum Sinia	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.032176	Oreornus Nornes	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.032710	Misia Tiastenus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.032864	Telastia Neolum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.033042	Laulium Milor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.033473	Tiastum Oronillia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.033744	Caunium Talliastus	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.033751	Ceorisor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.033791	Teollia Serelarnes	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.033803	Mausonanum	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.033822	Vaulostanum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.033873	Oraustantes	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.033876	Neriasus	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.033883	Amernilus	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.033896	Vausillium	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.033968	Leorastor	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.034047	Taustes Reoles	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.034448	Telineontia	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.034688	Seolanum Amosum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.034789	Amollor Rentes	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.034790	Orentes Corontanum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.034993	Vollium Sarnaustia	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.035038	Sinanum Veosium	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.035072	Amianontium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.035352	Leontenia	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.035561	Raurnus Cesoranum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.035583	Teliantor Ciastirum	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.035615	Virnor Serallistor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.035874	Veosus Amistia	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.035907	Cornistes	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.035953	Lisiania	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.036106	Cintaunor	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.036108	Lorniantum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.036110	Oreoliantum	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.036120	Cales Rasestanum	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.036309	Canaulia	2	E2	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E2.assay.036355	Contor Oristor	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.036420	Vonia Toleorium	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.036480	Vialum Cornanor	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.036608	Raurnus Toreonor	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.036659	Serisum Mistium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.036777	Orauniantor	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.036859	Telausanum Vantor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.036952	Rernium Vesalum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.037018	Taurinia	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.037125	Corires Ronor	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.037211	Nialleostor	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.037224	Siarnium Cilium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.037230	Telalostor	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.037282	Amasirnes	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.037377	Valistaunes	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.037621	Mianor Silerium	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.037627	Velles Valoralia	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.037642	Oreonialium	2	E2	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E2.assay.037651	Ceonum Ameolia	2	E2	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E2.assay.037766	Sianes Caurernum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.037773	Villernor	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.037851	Ameniasium	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.037890	Serones Viarnales	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.037982	Sornaullium	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.038011	Costesium	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.038094	Nellum Valisoranum	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.038139	Corallia Seontes	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.038261	Contes Nellisanum	2	E2	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E2.assay.038309	Oreolauntes	2	E2	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E2.assay.038380	Sorarnium Vontes	2	E2	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E2.assay.038529	Amiases Serillum	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E2.assay.038606	Laulia Amirnialus	2	E2	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.000341	Cilarnum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.000403	Launtestia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.000419	Teleostilor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.000486	Valoranum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.000498	Valistanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.000540	Amelium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.000556	Lianor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.000572	Vaustoria	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.000712	Vaurnium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.000726	Teliareosum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.000772	Cestia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.000803	Amontium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.000835	Oronteosus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.000843	Sereosia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.000879	Rosum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.000908	Teolum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.000914	Varneonia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.000969	Calus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.001015	Serolianum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.001051	Soranum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001059	Ameorneres	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.001072	Valestus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.001080	Riaselus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.001091	Telia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.001096	Telintor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.001107	Saulleranum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001110	Nariarnes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.001150	Norus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.001188	Nilaunus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.001206	Veornilum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001221	Orirnum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001263	Miria	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.001270	Marnes Amialeonor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001296	Saustum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001298	Vaunus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001339	Nornisium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001367	Meolles	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001374	Nalesium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.001392	Tiresus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.001403	Telernor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.001465	Nostalles	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001471	Mesaurium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001478	Lasus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.001480	Tirus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.001489	Maurnoses	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.001571	Narium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001595	Aminus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001653	Rantaustum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.001661	Nareosus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001674	Noriallium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.001786	Niales	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001804	Valauntium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001814	Sereornus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001822	Miallirum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001824	Corausia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.001888	Marnum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.001907	Varor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.001995	Seraunum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.002018	Torum Celes	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.002063	Lintoses	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.002082	Veolontanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.002118	Valauntesia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.002124	Orireoses	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.002130	Reonus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.002238	Vaullonus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.002321	Seriallus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.002323	Viliasor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.002344	Laulia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.002364	Lontium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.002367	Amasus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.002411	Nistium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.002444	Cialarnor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.002452	Corellium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.002460	Nausanum Niliasum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.002482	Cistum Seranus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.002522	Telornus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.002566	Serentum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.002627	Cornum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.002646	Veolanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.002689	Miastanum Tales	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.002734	Vollastor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.002744	Seornor Telornium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.002754	Tauntirnum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.002784	Telestium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.002863	Sosentia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.002888	Nonteorus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.002941	Leones Seonum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.002942	Amolistor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.002981	Seolanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.002994	Oreollum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.002995	Serastanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.002999	Renes Siallia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.003012	Seresium Oraullor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003020	Corolanus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.003075	Leornes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003078	Neoles	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.003088	Coraunia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003102	Leolastes	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.003113	Ralium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.003125	Tastus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.003131	Amaror	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.003148	Valiasenum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.003150	Tilor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.003182	Masia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003183	Taustanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.003219	Orontor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.003225	Ceostus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.003232	Lanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.003235	Valianor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003288	Valeontus Coriasantor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.003322	Costanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.003368	Veolosus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.003397	Rania	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.003409	Teliastus Monistanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.003414	Vasium Sinium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.003464	Nistum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.003470	Amiases Telornium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.003514	Vonaustium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.003516	Orosor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.003528	Mernaunor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003534	Nirnorus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003606	Sosirum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.003647	Orillor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.003781	Venaustor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.003783	Lianornus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.003787	Teosus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003797	Orasor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.003851	Nallanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.003874	Reornes Lausenum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.003884	Neonia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003911	Meoria	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.003953	Oreronanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.003964	Serilles Valeraunor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.003993	Ameoles	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.004007	Larium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.004044	Rirnum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.004049	Coriastor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.004123	Rarnonus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.004139	Castianor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.004149	Casteolus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.004187	Tilium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.004191	Tanelia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.004206	Leontiarium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.004295	Vaulium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.004296	Amistianor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.004298	Rornilles	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.004410	Nallia Rialles	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.004425	Valosanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.004494	Nollauria	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.004600	Maurnostes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.004697	Vastia Maurolium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.004758	Amalles	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.004778	Manus Tianaurum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.004869	Virus Meontium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.004884	Amolor Oraurnia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.004908	Santus Causianum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.004937	Sinium Serenontium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.004967	Ameornorum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.005002	Liarneolus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.005009	Siasentor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.005047	Ceontor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.005052	Mianteostum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.005129	Sentiasum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.005171	Corostus Reollarnes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.005194	Raustia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.005226	Milia Tianallor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.005235	Reonelles	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.005244	Tillus Casaurnium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.005256	Nonium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.005285	Cestium Menum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.005330	Veollor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.005343	Vonteonus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.005382	Orarniallia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.005396	Loseonor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.005425	Telestium Mellor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.005427	Tosiarnes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.005445	Serauranum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.005530	Sialleornus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.005537	Orisaures	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.005551	Nernum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.005596	Neornus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.005619	Larnesanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.005636	Vostauntum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.005641	Teollontor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.005687	Lornus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.005711	Serenialia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.005740	Telaunor Mirialor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.005800	Lileorium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.005809	Vaullia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.005842	Siasium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.005875	Liasanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.005903	Roses	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.005908	Sereolanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.005909	Oriallinium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.005937	Lianontus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.005958	Seostauntum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.005962	Mentastum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.005982	Oreorium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.005986	Telaurnium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006004	Nanoria	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.006010	Orauntium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006021	Leolium Sesia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006030	Veonostium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.006045	Teontia Vontor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006048	Telosanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006060	Telenor Vaullestia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.006093	Amistesia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006097	Telaurnus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006120	Tarneorus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006140	Cianosia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.006142	Telalia Cesteonium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.006149	Morillanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006161	Corostia Amolium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006174	Orianum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006183	Sallium Launtalum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.006194	Ciasonus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006200	Teliantoles	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006251	Orauleornus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006298	Amiares	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006304	Viarnor Rosanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.006315	Telerauntes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006337	Mianastes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006344	Mernor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006346	Telarestor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006355	Resales	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006396	Sauliaria	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.006397	Telintor Sirnes	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.006404	Coraustor Viarnanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006443	Amanes Telianeorus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.006448	Oreolus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006473	Casteria	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006475	Serintum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.006500	Orestes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.006510	Cirnantes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006525	Vaurnianium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.006576	Tiareostes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006580	Amallor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006581	Corollanor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006600	Corinium Vaustia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006613	Telonirnus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.006624	Seraustia Veontasanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006651	Seronum Ciallia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.006657	Nintium Milles	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006669	Serentiania	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006695	Valeoraunia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006725	Amolles	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006736	Mianum Tirentor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.006743	Vinostum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006785	Sarernium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006788	Valentes Teliasinus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006823	Ameontirnus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006831	Sereornium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.006864	Valeontes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006879	Telialestia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.006933	Amorum Tollauror	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.006944	Montallus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.006950	Sisteranum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.006959	Serostia Serauliria	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.006990	Sontum Amaulerium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.006994	Mesteontum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007035	Leornes Ameosaulles	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007046	Calliasum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.007059	Rarnilia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.007062	Lorauntes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.007129	Cellum Nirnum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.007137	Valeror	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.007139	Sorus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007144	Oreostilum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.007158	Telernor Siasum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.007167	Miarasus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.007178	Rausollum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.007205	Reniantium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007214	Virniarium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007220	Miarnenus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.007257	Nales Veralor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007259	Leoria	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.007264	Rilleostus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.007266	Vontasus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007298	Males Reraulles	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.007314	Amollium Orestasum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.007315	Nesteonus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.007340	Telianarnia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.007349	Oreones	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.007361	Telentus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.007370	Valestium Tosaustia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.007371	Oreoses	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.007377	Coliasus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007381	Cornaurus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.007400	Valialeores	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.007434	Telonisium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007484	Corostia Varnes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.007497	Serines Valelus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.007557	Valastum Teliasintes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007561	Teleolium Mausanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007565	Ceones	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.007595	Naulliranum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.007628	Liror Tornausium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.007642	Sores	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.007701	Viallires	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.007710	Sianus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.007717	Amaranum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.007751	Oreollus Meonia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.007768	Ameonternus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.007888	Laleontium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.007900	Serostor Telosium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.007901	Telinanum Seostum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.007905	Laureosium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.007914	Coreostes Lentalus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.007958	Orisor Tiastesium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.008029	Valaulium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.008036	Seralesium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.008050	Nostaulus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.008061	Tillum Lesteornia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.008081	Serelium Cialeonus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.008116	Valastor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.008132	Viasaustium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.008142	Mollor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.008146	Telileontes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.008186	Coriaraunus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.008217	Sirneres	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.008305	Amastium Nentistium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.008306	Oriarnontes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.008307	Telontum Neranum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.008314	Cianum Corilarnum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.008336	Teontor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.008342	Valeoles Ralleornes	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.008346	Taneontes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.008348	Serus Sestium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.008380	Amistia Sereolarus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.008385	Orilus Orarnium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.008392	Mastia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.008398	Neontium Siallor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.008558	Veostolanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.008580	Telaronia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.008638	Veres	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.008865	Teonium Ameonus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.008951	Serastum Oreolostum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.009040	Amesus Ciralles	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.009164	Veoleria	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.009237	Tolleranum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.009255	Riarnisus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.009355	Nallauria	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.009361	Ceolernia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.009414	Serentirnes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.009469	Maustus Cilares	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.009523	Coreostium Raurnia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.009656	Rostum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.009789	Cillum Laurnum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.009803	Tosum Amallor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.009846	Telasor Oriallanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.009918	Ciales Liarnolor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.009970	Amaullorum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.009981	Meostum Tirianum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.010015	Viaria Carnum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.010034	Oreornaulus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.010094	Naularnia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.010112	Laulornum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.010120	Oronia Vianaurnor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.010349	Ameosia Tisium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.010374	Amasor Males	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.010543	Serorneolia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.010731	Riantor Valisarum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.010752	Mauristia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.010782	Valenium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.010786	Seornium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.010874	Seronium Mellor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.010875	Seraria Telaulus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.011027	Coraustisor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.011087	Sonia Maurus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.011139	Corialus Corilares	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.011163	Orolintus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.011215	Casteosium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.011305	Valauliasor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.011462	Valeontia Rerum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.011469	Sonum Corania	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.011474	Nillium Lausum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.011495	Mintasor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.011601	Sentolium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.011684	Neornes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.011835	Villia Testum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.011916	Valirenum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.011937	Rentum Renarnium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.011965	Cellirnor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.011971	Vostium Lastium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.012050	Leornirum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.012190	Meosus Vaulanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.012197	Ceonterium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.012300	Mauronanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.012411	Corania Amirneosia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.012511	Saureolia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.012515	Tiarasor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.012573	Vosenor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.012747	Seliastia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.012778	Serillanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.012799	Telilor Tarollanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.012874	Sereorum Tolus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.012891	Tanium Amosirnum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.012919	Seontor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.012945	Valelum Oreoses	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.012954	Mireonia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013025	Cestia Leosor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013031	Vorium Virniastus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.013034	Oreolor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013058	Terones	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013069	Cestaria	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.013072	Castium Siror	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013074	Niallium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013077	Nialia Ceonor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.013091	Oreonia Nalum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013109	Neorastes	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.013177	Nialium Maustia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.013186	Orelleostes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013194	Ameollium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.013211	Valosus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.013219	Naraullor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013232	Sinum Ceria	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013275	Orallum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.013314	Rauntes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013330	Rastianor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013348	Miallauria	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.013361	Oroleonium Nosiarum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.013370	Cenistes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.013422	Niarestia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.013509	Valistentes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013520	Reonus Serasenia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013542	Corenes Teliasia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013560	Corenilus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013576	Lentor Naulestium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.013589	Mialeonia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013592	Ciarnor Marnes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013610	Niallanum Telaules	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013615	Tausor Vantium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013635	Tines	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.013660	Siaseollor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.013673	Corelanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013680	Ciarnorum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.013701	Valornanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013710	Liantanum Coraustium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.013738	Valiarnus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.013773	Cianarnor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013810	Liarium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.013834	Teliaror Lorus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.013893	Leoreles	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.013895	Amaunus Renilia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.013897	Mentium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.013907	Tianallum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.013938	Niasor Sasia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.013948	Orausastium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.013960	Cellor Nirus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.013971	Valinornia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.014009	Mollia Norus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.014031	Nisiastum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.014037	Nares Tastia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.014064	Oraustialum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.014077	Taurnum Telesanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.014095	Sorium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.014101	Teosiles	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.014128	Orelanum Visus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.014151	Teliantia Ciaranum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.014219	Reolisus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.014223	Siallaunia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.014240	Sianus Viastinor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.014269	Noserium Mesontium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.014297	Serorilus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.014298	Coniares	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.014331	Tillor Cellia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.014402	Neostauntor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.014436	Meonoria	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.014538	Serillus Teleorentia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.014540	Siallaures	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.014614	Lornia Teliarnor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.014662	Neones Tornor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.014685	Telisia Montus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.014705	Leonosium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.014713	Tanteollia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.014714	Serauntinum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.014749	Aminerium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.014757	Sirnaulium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.014893	Tarum Colum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.014932	Sarneontia Siantor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.015008	Mornanum Costarnor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.015051	Neolistum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.015056	Meollor Morialles	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.015180	Telantenus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.015219	Conallum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.015220	Seolaurus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.015237	Sontum Cernostium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.015261	Lares	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.015304	Cinteolium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.015310	Tesor Nolleontor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.015311	Saniantus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.015368	Nasaustum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.015411	Amontium Amellanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.015470	Miastanum Seriallanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.015484	Amaurnus Riantarnum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.015510	Valenarnum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.015681	Serestanum Nausia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.015710	Coraustor Tostor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.015716	Vosteornor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.015745	Talum Telauntanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.015833	Ciallus Linor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.015859	Amalontium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.015895	Corernium Coraullium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.015947	Valonauntes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.016146	Oreoles Teleonarnus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.016212	Tirniares	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.016282	Nirelium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.016448	Naunallia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.016519	Leolanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.016550	Neorium Caures	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.016604	Orirantus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.016669	Cinia Saunisanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.016671	Tiasium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.016745	Orerausanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.016892	Ceosialia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.016934	Amosernanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.016955	Telastinium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017006	Telores Vanialles	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017009	Oraleria	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017011	Seosolum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017025	Serillantia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.017043	Minternes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.017094	Lianor Veolostor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.017109	Valarum Sintum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.017119	Ceolliantor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017215	Millentia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.017236	Saustium Lornium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.017249	Vaulleontia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.017299	Rastaullor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.017347	Orostium Reosaulanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017353	Nillianus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017375	Rinum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.017384	Corinontia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.017399	Vernantium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017406	Valauntilus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.017486	Caurnilum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017501	Corirnum Cisteosanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017517	Telinostium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.017523	Lesum Viasor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017552	Neorus Ameosus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017567	Corintia Rilles	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017586	Telialium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017623	Sosernia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.017624	Riarium Sereorum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017655	Niasanum Corentor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017713	Orestor Orania	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.017722	Amirus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.017734	Vaulliasium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.017739	Tareollor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017745	Valineores	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.017761	Teleorium Oreostirnus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017772	Ceolus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017807	Telalornes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017814	Launteosor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017821	Seraunantus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.017834	Valiastores	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.017840	Minanum Solastium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017841	Sinor Sereolum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.017855	Vaunia Valesus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.017856	Oreolaustus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017910	Serirnes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017926	Teres Tastor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.017933	Lorus Narnia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.017934	Orantes Telastenium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.017963	Coriallor Sontiastium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017972	Oresium Lostum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.017975	Rasintes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.017995	Visor Nollium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.017998	Amauresor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.018012	Sornelia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.018041	Mornastia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.018051	Sarnum Vosales	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.018068	Vireolus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.018081	Taulles Oraulontus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.018102	Lentornus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.018104	Mentillium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.018107	Valeones Leores	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.018112	Lostilium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.018145	Coneolles	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.018146	Rosum Telianintia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.018191	Amialanum Tosialor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.018318	Soleoranum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.018334	Oralum Coreonium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.018371	Teleonia Teoses	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.018388	Teostirium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.018436	Laustium Tialarnor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.018473	Vollia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.018533	Naullaria	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.018634	Ameonaulor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.018650	Seresolanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.018663	Voneolor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.018689	Teonaullia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.018822	Viasia Caurnosor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.018831	Veostus Serantia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.018882	Sauntium Nauntus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.018924	Millarnus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.018949	Lernanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.018953	Raurnia Amestaror	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.018957	Telum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.019051	Vausum Laulor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.019069	Manium Tisteonus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.019108	Sernium Orintallus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.019145	Oraniales	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.019221	Oraulia Rastollum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.019330	Tilontum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.019373	Valernasium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.019486	Oreraullia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.019505	Mosiarnor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.019557	Cistum Rerum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.019563	Tastor Monia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.019584	Leror Riarneollum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.019596	Telianium Amollanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.019666	Vialentia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.019667	Reornaustum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.019695	Sirium Viarium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.019796	Celirnor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.019801	Siastor Corasia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.019809	Telaurnum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.019833	Cestaurnes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.019986	Valistianum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.020080	Caulium Sauralus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.020129	Rorium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.020135	Amontes Oreontillor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.020165	Corirus Coraurostum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.020215	Testium Lorum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.020234	Valonia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.020259	Tilles Cernanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.020286	Raurnostium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.020393	Orantiania	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.020418	Rausorus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.020487	Vestum Orollasum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.020494	Launtilum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.020526	Oreollor Neostauria	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.020610	Teleolia Maneollor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.020616	Amorus Lilor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.020645	Nallia Cantostia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.020712	Nerneosum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.020755	Millanor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.020758	Telastus Seresteolum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.020765	Vintaria	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.020825	Rallor Montanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.020838	Caliarnum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.020914	Vantium Telestia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.020931	Saunium Mellium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.020973	Tosus Valeosia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.021037	Corernia Rerium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.021066	Riantum Valorium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.021108	Tolia Ceonauror	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.021114	Meriarnia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.021120	Vaunor Vallor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.021243	Valaures Nintum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.021250	Liantor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.021266	Telasaurnus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.021382	Serollanum Mernialium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.021401	Misorus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.021445	Loneolus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.021451	Rillanum Meostes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.021482	Teliantor Cellosanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.021493	Orosia Canestum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.021527	Corasus Coriarnosus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.021543	Launeranum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.021556	Caunes Vianisanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.021584	Saurnesor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.021610	Siantor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.021675	Teleorones	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.021678	Sialeontus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.021694	Corastia Rostaulia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.021732	Vollum Nialintia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.021766	Tornum Oraustanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.021874	Serontia Valaulus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.021958	Amaseoles	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.022068	Rintia Naulliria	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.022106	Tauniastus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.022176	Ciantarnium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.022259	Oriantium Sauristor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.022354	Vauliasum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.022379	Sallanum Serontus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.022436	Coreollorum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.022557	Oraurnia Nastellia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.022565	Rirolus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.022731	Corianes Vareornia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.022890	Sirnia Amenanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.022925	Niastum Coranum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.022966	Seollenes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.022972	Valaurnes Vontium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.022981	Oralum Amallus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.022987	Tellanum Narnia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023027	Losistum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023065	Amelleornus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.023075	Telaustum Noranum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023119	Amosiarus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.023147	Lestes Sirestor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023177	Telornaunia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.023184	Ceontes Calleror	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.023190	Orirnus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023192	Nialostum Sanes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023200	Merostes Corillia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.023237	Rallium Ameostus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.023245	Meoranum Miasauria	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023252	Rentia Collintanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.023277	Corentor Oristeosia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.023285	Norium Oraullerus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023292	Sontium Meosia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.023297	Oreostus Sornor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023424	Oriantor Ciarnaures	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.023426	Rarnintium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.023465	Orisaurnes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.023502	Tasistia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023507	Serinus Variastes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023529	Orialanum Nania	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.023598	Mianiranum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.023603	Torantia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023688	Mirnostia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.023710	Causia Relium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023718	Amaullus Teornium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.023734	Vintanum Rornases	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023745	Valosum Amilanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.023751	Tontor Viarneones	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023753	Vaullor Causarus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.023755	Amauntor Orilor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023759	Lostialium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.023760	Meostor Valosor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.023764	Valiares Oranostia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023766	Tiranus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023767	Sereolus Siallanes	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.023769	Maranum Amernor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023775	Valernus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.023782	Nollum Venus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.023851	Vilaurus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.023893	Viasantium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.023897	Ciasonor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.023901	Valolium Corallonus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.023916	Tausenus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.023947	Sintaunia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.023964	Launiarus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023965	Seonia Rilleostor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.023969	Coreoranum Veornanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.023970	Ceollauntus Raunia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.024003	Raunor Nenallium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.024045	Seoriantor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.024062	Seostonanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.024064	Montia Vausor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.024146	Reosium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.024179	Lisenum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.024185	Seornus Calia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.024191	Mentus Orauleostia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.024224	Lontum Valausum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.024253	Vialaures	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.024269	Nialauntus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.024272	Niror Valestaures	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.024300	Volentus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.024311	Valiarnilum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.024315	Teosanum Vaunia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.024322	Lareornes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.024427	Teliranum Corirantia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.024500	Orines Velleonanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.024517	Nenor Tesanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.024528	Valeostirus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.024544	Reornolus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.024575	Seraurnus Sornanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.024663	Liranum Cintia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.024667	Oreosor Ceonestor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.024678	Coriarnia Corostes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.024680	Solles Teleoria	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.024692	Veornus Orania	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.024705	Sirnanum Tiastanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.024709	Valilor Sesteornium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.024711	Oreontialor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.024716	Lialium Amantaurnor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.024734	Seriasia Corelum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.024748	Teleontes Nantellia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.024973	Meolentor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.025017	Mosernes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.025030	Lonarium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.025157	Launes Amaunia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.025183	Corellia Riantastes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.025189	Seriallinor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.025192	Coralles Amoresum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.025233	Valasor Telones	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.025239	Toles Tasum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.025241	Serarnelium Orestes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.025311	Sereosium Telisia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.025327	Amausia Orilia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.025409	Valolernus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.025412	Telaranum Siallanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.025415	Solliria	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.025449	Corauntanes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.025453	Valiastones	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.025461	Lialasium Orilum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.025537	Tiantus Testanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.025550	Tirum Carnia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.025559	Rarnia Amiareoles	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.025581	Nallor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.025646	Telasus Villium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.025661	Orestum Corirnes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.025680	Velonium Corauntanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.025758	Rantus Seresolum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.025781	Causum Valiarnanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.025892	Veollenum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.025894	Amianus Mastenum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.025910	Reorauntium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.025919	Roseornium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.026056	Virneolus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.026080	Vesaurnes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.026088	Roserium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.026152	Mastanum Cestium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.026174	Saulintum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.026219	Teosanum Meostus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.026276	Orenteostum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.026277	Ameornilus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.026282	Tianus Serarianus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.026300	Amauntanum Malus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.026415	Nernes Seontanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.026418	Cilentum Linestus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.026455	Molaunum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.026613	Miasor Meostus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.026682	Orosia Valantiarus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.026686	Nollus Cernor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.026719	Maurestium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.026743	Rales Sarornia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.026748	Amesauranum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.026750	Neosiranum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.026764	Ceolles Montes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.026795	Telasiror	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.026805	Rallia Valesanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.026861	Lastirium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.026879	Valonor Vellasanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.026908	Rostiarum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.026928	Risia Tonises	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.026932	Amalium Seroreonium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.026956	Teores Sollanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.026987	Carnum Amintor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.027012	Orilanum Caullornus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.027031	Rernus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.027053	Cistonus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.027057	Mianares	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.027072	Rasor Nistasor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.027078	Oreniallia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.027110	Neollanes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.027159	Coraustium Coriastum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.027161	Mollium Serentilum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.027238	Teonisia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.027264	Tasanum Oreollum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.027277	Salles Laustum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.027479	Mialaurnium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.027505	Linanum Mausontia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.027675	Corasus Nironus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.027976	Nestauntus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.027997	Sosternum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.028021	Malliastus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.028100	Oriallia Amolor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.028103	Meolestium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.028175	Lintiasia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.028191	Senus Cesaurus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.028234	Rosiaranum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.028308	Telornanum Tiares	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.028352	Telialases	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.028390	Amialesia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.028458	Laulenanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.028557	Vonintes Tistia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.028625	Rolliarus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.028637	Nonium Seres	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.028644	Serauntanum Sereonia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.028645	Amosor Nenus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.028655	Miantor Amallauntes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.028676	Tellaunum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.028726	Reostanum Tonum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.028762	Vianum Telostia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.028783	Serarnium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.028966	Valeolornus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.028975	Raustiles	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.029059	Ciarium Lintanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.029063	Sereones Rarenus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.029113	Veostia Nantia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.029174	Mallus Lantia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.029175	Volliasum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.029188	Tanum Sistellia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.029226	Cernantes Reollontium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.029291	Coronia Teontanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.029325	Cestolium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.029345	Manaurnium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.029357	Corirestus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.029439	Valirum Amasillia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.029446	Seolium Neontaullia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.029499	Corisum Oreonaustum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.029539	Cirostus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.029572	Lenalum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.029649	Leornanum Corontanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.029807	Costum Silanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.029860	Meornus Reolliastum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.029906	Solliarnium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.029946	Amornus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.030066	Oreollostor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.030304	Reontes Reollum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.030329	Reristium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.030344	Cauria Orialostes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.030347	Corestantia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.030396	Collestum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.030411	Seraleorium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.030439	Amaulium Causantor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.030466	Rantium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.030490	Liasalium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.030512	Ameolor Cialastia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.030520	Sasum Mostor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.030528	Sollus Amenallus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.030580	Nilor Tiria	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.030584	Liasor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.030675	Telistanum Amestor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.030679	Releonia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.030688	Corarnes Tareontia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.030703	Corauntes Sereonus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.030728	Ciaranum Reontium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.030732	Terus Amostum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.030783	Taulleornia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.030841	Oriareolia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.030983	Riastasium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.031008	Larum Maliarum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.031030	Sarnor Ceonirus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.031032	Meontor Telaulanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031041	Veonor Tontum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031044	Masellium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031106	Vasteornes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031122	Nariarnia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031141	Virallium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.031221	Teornantum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.031238	Vostausum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031299	Orolaustus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.031301	Nantum Riarnes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031307	Teorniaria	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031333	Telauntus Teliantia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.031455	Seones Sillus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.031458	Vollauntium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.031465	Naunia Valausium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.031489	Reornium Ameollanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031496	Tauntinia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.031530	Neollernium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031551	Valastor Valauntia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.031622	Valantirnes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.031807	Seonum Reranum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031813	Varnus Amontium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031819	Telerum Miles	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.031826	Noreornium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031829	Lanteonum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031830	Liantia Seornollia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.031833	Vasellanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031834	Nistus Serialles	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031843	Mausterus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.031848	Amistes Amintes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.031852	Marnum Lauria	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.031854	Moleranum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031860	Reonor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.031922	Amausteolus Corestolum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.031964	Orarnia Amestia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.031976	Corasium Naliaranum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.031981	Veollium Amasenanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.031990	Ameollanus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.031995	Ameollium Nianor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032009	Verornum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032012	Celor Marelum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032021	Nontistum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032023	Ciallaror	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032033	Valeliarnum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032039	Viriastus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032044	Cantanum Seoria	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032108	Telernor Serellistum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032109	Siaria Launtus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032115	Nastum Sereosium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032119	Reolasum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032125	Talentus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032126	Saustornium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032131	Lestor Mialintium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032133	Tasteonanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032139	Cileostes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032150	Sialonanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032159	Amarnellum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032166	Valelia Serolor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032232	Virolium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032241	Tosistum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032246	Telorum Valantus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032247	Sorintium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032258	Noreostes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032279	Soria Seraullosia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032346	Ceosillus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032351	Toliania	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032375	Seriallia Lores	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032378	Leorium Valonanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032398	Valoniantum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032414	Caulentor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032415	Miraurnia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032416	Liasteontes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032419	Veornes Naraunum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032443	Orellium Rosiarus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032445	Vianor Vilanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032447	Valeonorus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032448	Monialum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032449	Carnanum Lianium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032464	Sereollum Oriarostium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032467	Neostanum Telires	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032469	Meontosia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032470	Corinastium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032473	Orenor Riasia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032593	Orallium Cirelanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032643	Contum Vaurnosia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032712	Caustia Telestum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032758	Nastus Oreornanes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032776	Sintores	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032779	Rasum Tianarnia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032786	Telauror Vastirum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032789	Valintesor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032794	Visteolanum Liarontus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032795	Talanum Saullium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.032799	Rones Nornus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032803	Viarum Mianum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032806	Coriarnus Teloristus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032817	Corasanum Valanor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032830	Coristum Saustanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032832	Teostus Nornus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032840	Liarnus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032841	Vauntum Mantum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032843	Viarauntus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.032844	Cosiarnium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.032845	Tosia Oreosanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032852	Sesum Maunus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032857	Serentes Oriarnanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032860	Niasteollia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032861	Meornes Amentostum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032862	Tintes Seornania	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032867	Sostium Cores	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032870	Vonor Valolanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032872	Vaniarus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.032874	Seriallus Vileontia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032877	Valirum Vontines	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032878	Serenarus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032879	Laustentia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032880	Serasium Valantum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032888	Mellistia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032889	Amerilor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032893	Nausia Oroneles	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032942	Amelosum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032943	Lelanum Orauniastia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032945	Veosia Telones	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.032946	Tostes Sereostor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.032947	Tausor Sereollus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032950	Saniantes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032953	Amianor Cisteoranum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.032955	Amiror Orinium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.032957	Valauntanum Oristanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032959	Liarnanum Tesia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032963	Cernanum Coreollium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.032967	Nianes Serorilles	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.032986	Amaunium Vilonum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.032988	Sostia Testum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033074	Vistalanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033127	Nauntum Milor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033130	Ventiarnor Corianarnes	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033140	Riantum Terus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033157	Neranum Cillauntum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033159	Telarium Lianus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033162	Naulanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033174	Valentaures	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033249	Orerneoles	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033271	Oraurnillia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033313	Oriallanum Lenus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033314	Valinor Serauntor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033315	Viasus Minarnium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033325	Veostiantor Serenium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033326	Serolles Cirium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033327	Telaror Cantollor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033328	Callus Ciantia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033333	Cenallanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033334	Nolliastium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033347	Raunalor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033348	Cillasum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033350	Seraullium Coralanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033355	Orentornium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033357	Valisor Restor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033361	Oreolausia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033364	Teorernia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033368	Resia Saunia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033418	Tenallus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033419	Cirnes Veorium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033420	Naustum Oreonisium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033428	Sereolaunia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033430	Meornia Costelles	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033433	Teliasinus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033434	Ciasaules	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033435	Lores Tirum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033436	Tiasum Rolaunia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033438	Salentus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033440	Tasor Lirentus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033449	Serasia Cornaulia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033453	Nantia Mirus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033454	Rialosus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033467	Amallum Valenausor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033469	Sellaurnes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033576	Rilarium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033578	Tentium Coriles	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033579	Meosia Tenia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033582	Teleornor Nintaulia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033586	Vestanum Neornia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033591	Telauria Sostiallia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033593	Contium Nianteosum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033605	Montes Ceosenanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033606	Serialarnia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033611	Ranium Amausanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033616	Ciarnia Orerum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033620	Corosinium Teleosus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033631	Seralonium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033645	Lornia Cenantus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033674	Orisum Leseostanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033703	Oraseoles	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033704	Corneolus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033709	Reseolus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033713	Amianes Coriallor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033716	Miantaria	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033720	Amiallestum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033730	Cornus Liantares	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033734	Rintanum Nillum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033737	Ameolia Vastium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033738	Orausonanum Reostanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033743	Valanum Lasia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.033748	Valonesus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033749	Lireonum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033809	Cauneostes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033813	Tiarus Viasinanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033815	Seronarnes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033818	Mentes Coriastia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033825	Vaulium Miaror	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033831	Seraunus Valiriases	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033833	Corosanum Mestor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033836	Amalium Rontum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033837	Teleontasia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033839	Telasanum Valauntia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.033851	Meontanum Teleolus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033922	Salor Orenontus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033929	Mintiallia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033931	Valornum Careontor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033934	Siles Laulor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.033937	Raulor Vaurnia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033940	Mantanum Vellanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033950	Orirnia Rollastus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.033952	Orontianium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033955	Miallanum Milles	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.033958	Sintes Seraneornia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.033971	Corallum Coreolia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.033974	Sereollisum Serarnes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.034037	Amiarnenor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034038	Malum Lestanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.034041	Toles Sereornum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034062	Valeosanum Tiallus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034064	Laurnium Viantia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034069	Cirnalia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.034073	Riantaunium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034077	Telirernia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034078	Amornirus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034079	Sauranum Sorellor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034080	Nesanum Ventor	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034081	Telosium Ciarnus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034084	Serostor Neontus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.034096	Mostentes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034149	Amoliarnium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034238	Sereonum Riantasanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034261	Amiarostor Nauntus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034262	Viarnus Seraurnanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034267	Oreosor Ceolliantes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.034274	Saurnor Sereoles	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.034285	Carnum Liales	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034289	Sialinus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034293	Orernauntum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034295	Veorirnum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034300	Orialeornum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034302	Nollanum Raurnialium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034313	Rines Lostanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034314	Ronternes	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034320	Mentornus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.034321	Tintium Reosiantus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034322	Tiarus Telostium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034323	Seriasum Viasenes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034341	Misanum Amisaulum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034374	Amanum Taurneostor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.034396	Serirnium Lialum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034399	Siriania	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.034411	Vaurnalum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034450	Lenaria	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034465	Telaunes Amenia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034470	Telaseonum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.034486	Orirnialus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.034489	Lilaustus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034499	Amaulleones Telialium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034551	Valantirnes Oriarium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034600	Lasus Seraunanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034646	Mauntes Teleostor	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.034664	Coreolles Lolistia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034671	Morus Corauntosia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.034677	Valaurus Loniarnes	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.034684	Valisor Rauntastus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.034741	Vonus Merilles	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034803	Oreonaustes	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034864	Reolium Serornium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034883	Rillia Orestialia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.034917	Siantonum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.034920	Niasenium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.034936	Silleosum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.035029	Viallium Visanum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.035091	Serelanor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035093	Ciases Oronia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.035115	Narium Seoliaria	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.035124	Liranum Lirania	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.035165	Coralia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.035167	Vianes Tiantisor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035181	Sellanor	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.035218	Amonintes	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.035228	Cialosium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.035292	Seolium Valeornium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.035295	Teliarium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.035356	Cinum Cerus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.035366	Tirnes Relles	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.035407	Niastelium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.035432	Morantus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.035484	Amastirnus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.035490	Viania Telaunia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035521	Ronum Oresium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.035525	Telornus Tiranum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.035530	Valorales	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.035535	Rirus Taurnus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.035539	Marneores	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035556	Valariasium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035579	Tiasternum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.035584	Amaunium Meontanus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.035651	Amaurirnia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.035682	Cerneorus Meorauntus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035822	Serentanes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035850	Launium Ceorinium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.035865	Caulliastes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035871	Orosor Ciarontor	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.035889	Vintallia	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.035891	Serontanum Nasor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.035911	Orialintus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035937	Nines Lauria	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.035984	Amiasarnes	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036001	Lenor Varnaustor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036014	Rollarnanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.036020	Amernoses Serauria	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036072	Leonteranum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.036079	Maunallium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.036085	Rornes Minanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.036186	Valiastor Rallum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.036189	Nialeonus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.036227	Siniantum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.036235	Cisiarnium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.036270	Vaurnolanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.036283	Restirium Sisor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036318	Corilleonum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.036348	Valausilium Taunanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.036360	Corallium Oresanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036368	Varnor Niasteontor	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.036422	Telornium Linia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.036453	Serentanum Telesum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.036475	Valorium Miasirnum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.036492	Moles Meollus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036497	Amesium Sentor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036519	Lialor Reostus	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.036525	Neolum Nallium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.036556	Cestiarus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.036566	Meornalium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.036633	Veontus Telaurum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.036649	Mialerium	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.036652	Mauntastium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036669	Orernantium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.036680	Telaniarus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.036737	Saunteornia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036805	Liasinum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.036812	Leontus Sales	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.036843	Serauntium Nereontium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.036844	Leolus Riantistia	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036877	Amentus Callesor	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036908	Tiasteosia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.036951	Oraunor Launiares	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.036960	Ciralia	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.036996	Meles Telosintes	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.037004	Sillia Amarium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.037079	Sonia Valelistum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.037085	Tastor Millum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.037133	Telontenia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.037156	Nirnium Rialania	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.037204	Valiasus Nauntisia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037212	Serosia Valesanum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.037218	Meniarnes	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.037223	Cilianum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037227	Liarneosus	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.037238	Amauntes Soneostum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037304	Males Amisteonia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.037338	Nontium Nirantum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037357	Siarnaurium Naulia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.037364	Nosanum Seriarnanum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.037397	Villasium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.037399	Valinor Teliarnium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.037406	Vorellanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.037444	Melus Neontilium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.037458	Larnor Nausillanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.037483	Miasistia	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.037516	Miasaullia	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.037537	Meniarnium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.037554	Ameontus Lestum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.037566	Nausollium	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.037571	Coreornum Orarnum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.037586	Meosium Larnus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.037597	Valistolum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.037634	Tollia Sollantia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037673	Tanteollia Oraunintium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037692	Serornes Seontum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037736	Oraseostia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.037871	Ventus Telaneorus	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.037906	Amialantium	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.037921	Sereosor Orastia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.037929	Nolia Valinium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037935	Mesaullus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.037966	Rauntum Vonum	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.037978	Amastor Telalornus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.037981	Santestanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.037994	Oriales Valeliarus	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.038018	Ameonor Valisornus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.038038	Solenanum	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.038047	Telorum Sereonus	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.038054	Tesor Maustolanum	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.038075	Valeolium Sosaurnor	3	E3	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E3.assay.038077	Niantus Corisum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.038084	Neonilus	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.038118	Saulasium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.038154	Rilaurnus Vosium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.038162	Cillaustum	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.038172	Lornires	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.038206	Ceontium Cornium	3	E3	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E3.assay.038265	Neosanum Telosanium	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.038274	Rosanum Lentia	3	E3	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E3.assay.038296	Amastium Corostanum	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.038327	Meosiantia	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.038378	Oreostor Nianium	3	E3	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E3.assay.038387	Valausium Liasanum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.038416	Rirnontum	3	E3	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E3.assay.038447	Serentausor Teleoserus	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.038479	Orastoles	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.038482	Coriarnanum Orasaustum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E3.assay.038487	Vaurallium	3	E3	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E3.assay.038555	Tasianum	3	E3	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.000327	Valiaror	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.000347	Niarnum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.000398	Ameolosium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.000451	Lelor	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.000467	Telauneolor	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.000515	Nostia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.000524	Renes	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.000619	Valastum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.000665	Voles	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.000836	Tilantus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.000944	Causteollor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.000958	Amintor Morillia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.000961	Sereonanum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.000970	Nisium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.000988	Riarantanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.001025	Virnaria	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.001154	Amaunus Senirnes	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.001222	Meolausium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.001266	Solaranum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.001346	Monisanum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.001394	Nallirnus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.001438	Serallum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.001495	Venum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.001536	Lerus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.001544	Sistaurium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.001574	Valeoseles	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.001584	Valenteonum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.001723	Teollanum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.001928	Neliasus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.002038	Teliantes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.002050	Ciaror	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.002057	Cauniantes	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.002205	Ninum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.002253	Cosus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.002369	Liaranum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.002417	Vestauntor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.002548	Relanium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.002672	Valausolium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.002703	Amianor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.002873	Loresum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.003046	Orosum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.003077	Amestiarum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.003212	Ceonium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.003217	Riastium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.003314	Lernus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.003355	Telantolus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.003493	Sisteornium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.003511	Coresanum Celanum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.003522	Valus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.003554	Seorum Reontirium	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.003614	Telistarus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.003616	Cilarnum Nisteornor	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.003685	Vauranum Cirnium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.003811	Talum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.003933	Amostia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.004080	Maullor Launores	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.004096	Meontiarnia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.004140	Cesiarium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.004277	Vostiasanum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.004285	Amiarneosum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.004350	Corontes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.004467	Teriantus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.004628	Ternes	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.004901	Lelises	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.004951	Valeornium Telostus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.004966	Amasanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.004977	Valiror Mirneonor	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.005067	Cinor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.005076	Orianaures	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.005095	Nostia Tausor	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.005135	Serellirnia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.005158	Orollia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.005172	Corenium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.005254	Oraurium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.005360	Mornales	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.005544	Ranoses	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.005604	Rirallum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.005618	Niasum Riantanum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.005708	Misia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.005748	Meorium Serarnia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.005911	Siastor Seranium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.005917	Celia	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.005931	Raunaria	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.005938	Ceostiantum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.006009	Caunes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.006016	Ameolliarum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006023	Oranus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006031	Serires Nosteror	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006109	Ameollanum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006127	Valineres	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.006157	Corosia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006172	Ceneostum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006178	Conaulia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006256	Nanus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.006307	Seristor	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006338	Verirnum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.006354	Lenus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006366	Nistum Ameontirnor	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006370	Rolauntes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.006432	Nelor	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006450	Valores	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006469	Coreostus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.006481	Rernasium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.006494	Tirellum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006502	Ameosolum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006519	Mauntenes	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.006536	Niarum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006732	Coreleoses	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.006777	Valostor	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006782	Rosus Liastum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006849	Viarnollium	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.006853	Ceosum Raules	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.006860	Amostor	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.006875	Serellistum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.006885	Vales Vania	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.006957	Coriastanum Nilia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.007021	Telantum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.007078	Sereolor Misum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.007150	Leontiasium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.007182	Rianes Veriles	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.007232	Valesus Valasolanum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.007308	Seosia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.007316	Telirus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.007435	Seraulanum Orellum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.007568	Ameollanum Ameolor	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.007581	Seralianium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.007697	Cianus Amornor	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.007707	Nallornus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.007721	Valaunalum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.007777	Liasus Ternium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.007785	Seraulor Seraunanum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.007800	Coreostia Vaneolum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.007824	Telaurium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.007834	Saunor Telaranum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.007847	Larnium Vistiarnia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.007889	Amestus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.007933	Vianarnum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.007963	Liantum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.008015	Lantum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.008022	Veonarnum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.008040	Telaurnilum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.008047	Velum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.008214	Miasteornia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.008244	Carausor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.008245	Coreosum Viantirnum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.008301	Telosanum Amiliarnor	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.008325	Veostus	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.008354	Raunus Ameontus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.008418	Oranium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.008828	Seronilia	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.008997	Niallestia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.009116	Serirnium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.009188	Telisalanum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.009258	Oreseornes	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.009265	Amenum Ristor	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.009382	Liarnaunus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.009444	Nernollus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.009542	Siaraurnia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.009623	Tisia Mostum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.009862	Maurasus	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.009874	Valinanum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.010062	Seronium Miarneollum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.010508	Seraulus Varontor	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.010547	Amintia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.010621	Milastor	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.010704	Manteorium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.010907	Naunus Viallia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.010999	Neonium	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.011410	Mauntanum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.011481	Vaurum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.011609	Meornelum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.011671	Rorestia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.011716	Costeonanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.011770	Raurnus Saunirnium	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.011834	Cintestum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.011865	Vonor Corastintia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.011874	Marnium Cinus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.012023	Siliantus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.012065	Ameollus Nintasor	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.012124	Amaules	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.012129	Laureostes	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.012295	Valesalia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.012454	Riralles	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.012467	Viarnus Caurnum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.012528	Cernanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.012661	Oreoliares	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.012687	Vores Telisanium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.012797	Ameornum Montor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.012881	Rialloses	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.012892	Rauntiasia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.012929	Sirnor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.012938	Valistus Leonum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.013013	Veontia Manor	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.013019	Veorauses	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.013110	Naustum Serornanum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.013126	Tariantus	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.013143	Serornellus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.013223	Lauria Amantia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.013311	Lianus Vianium	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.013439	Sereorium Seraunum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.013550	Coriarnum Seraunium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.013634	Vialantus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.013778	Launes Veornes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.013969	Amantia Caulum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.014004	Corares	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.014029	Aminarnium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.014068	Conaurnes	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.014094	Valeones Sesallium	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.014109	Nisia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.014133	Valinteoses	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.014225	Coraurum Valiarnanum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.014230	Meonus Amiarnium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.014238	Verneostia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.014398	Rollium Venus	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.014618	Amoneontium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.014882	Amilum Corestilia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.014943	Coriallus	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.014997	Valasanum Neollum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.015014	Tanes Telistus	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.015024	Serolus Cistium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.015090	Rornum Orinarnes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.015267	Coraunus Sereorum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.015297	Sauntor Seraniles	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.015334	Orirnia Teleornerus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.015408	Neosia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.015473	Telastus Teleonilor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.015516	Telistoria	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.015531	Ameontum Ciseores	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.015557	Siria Valisia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.015569	Riasium Tanesanum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.015629	Valesornor	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.015778	Calernus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.015966	Corernastia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.015987	Corallus	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.016024	Celliarium Veornelum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.016075	Telauranum Varia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.016076	Valaunisia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.016188	Soria Cosia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.016447	Oraustinium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.016481	Corollium Mollum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.016561	Cerneollum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.016641	Amausor Mastes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.016790	Vauntum Amantiasus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.016845	Valistium Amiantus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.016891	Tausia Orileosus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.016897	Seraunum Oreonia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.016919	Amantia Caseornes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.017226	Nialestium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.017438	Caustes Canteornium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.017488	Tolum Laustus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.017499	Telesor Lastus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.017516	Talium Serolles	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.017528	Serirnanum Lentium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.017592	Rauntalles	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.017670	Oriarus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.017690	Coristor	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.017737	Valintoria	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.017944	Noseontia	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.017950	Losium Tauloranum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.017993	Resteorus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.017994	Vausernus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.018038	Sirnor Orollaurnes	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.018042	Amares	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.018097	Rosanum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.018114	Castanum Amontanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.018130	Losia Manteollia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.018152	Ceoselanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.018248	Ralia Aminteollor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.018252	Teliastarum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.018357	Veosiallus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.018362	Ciases Valeosanum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.018375	Tanteornia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.018401	Nasauntes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.018423	Liarontes	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.018429	Leoses Vallium	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.018475	Telania Neolloses	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.018486	Saulonium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.018496	Centaunium	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.018557	Vares Rellanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.018587	Amiarnus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.018680	Cauntus Siasontia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.018685	Santeollor	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.018693	Coriniaria	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.018789	Oraullum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.018821	Tiasostum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.018911	Seollosia	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.019086	Vostarnes	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.019119	Laustontus	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.019138	Lesaustum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.019139	Serillia Amausia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.019225	Vorialum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.019286	Santia Amolentia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.019376	Serornia Nesantia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.019521	Tores	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.019553	Coreneoria	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.019581	Meria Saulines	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.019637	Oriaronum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.019678	Tonor Tauror	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.019726	Rirellanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.019782	Nollum Nestanum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.019810	Corentia Amantanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.019902	Seriallium Nilum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.019962	Raurnum Oriastarnia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.019989	Corisiares	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.020157	Valores Teseornum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.020225	Siseonor	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.020231	Valorianes	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.020252	Amarneosor	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.020353	Tantenor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.020478	Rintastum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.020561	Seriaranum Nirnia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.020623	Sellanum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.020675	Coronesia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.020706	Amentillum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.020730	Tariarnum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.020769	Veoliantes	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.020781	Selor Reosialanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.020784	Volor Amentiasium	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.020840	Seornum Rarnaullum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.020862	Coreostum Ameostus	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.020909	Corauranum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.021286	Telauntus Santeornum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.021311	Viasor Lausenor	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.021909	Sistor	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.022034	Calor Tantes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.022072	Ameonarus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.022169	Seolia Miria	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.022209	Rianes Ceorianum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.022266	Mestaunus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.022326	Orinus Coreornolia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.022431	Amernintor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.022511	Viania Caurarnes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.022545	Oriaranum Telaulornum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.022633	Nallus Tornes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.022754	Teolor Lonialum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.022826	Telolum Serosanum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.022862	Cornus	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.022929	Corenolia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.023080	Caures Tausialium	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.023112	Larnum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.023136	Malanum Sanor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.023289	Leorarnium	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.023384	Veseonium	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.023403	Coraullanum Taurnum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.023434	Tosium Cirnus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.023674	Teleosinus	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.023814	Neonum Villenium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.023899	Valiantor Riallus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.023914	Sianontes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.023951	Renum Taulontium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.023980	Vianor Corellires	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.024012	Tirum Caurnonum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.024037	Launia Mianium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.024242	Vauntanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.024345	Rentasus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.024396	Neosanum Telentisum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.024556	Amiantor Amanaulium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.024948	Amorus Nones	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.025212	Oriallantes	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.025303	Valasor Cesilus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.025308	Lerus Mestes	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.025541	Serillarnus	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.025592	Lauleostor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.025722	Telauntum Coriastum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.025743	Varnia Masiria	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.026054	Teollausium	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.026118	Tiasirnia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.026146	Amiria Roles	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.026250	Melum Lentia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.026268	Saullestor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.026393	Coraulleria	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.026531	Tauranum Coresor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.026547	Nausum Orosus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.026650	Vellaurium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.026678	Nauseolia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.026707	Coreorus	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.026745	Veonestes	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.026752	Tauralus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.026753	Rornium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.026853	Tiarentes	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.026890	Neonales	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.026954	Mornialia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.027205	Naunes Coriales	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.027486	Vistiarnus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.027702	Amiasum Viantes	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.027769	Reollorus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.027959	Oraullernum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.027991	Rellor Coraneornes	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.028154	Telantes Nenor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.028504	Mausornes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.028695	Vallauses	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.028932	Oranialles	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.028979	Lostium Cestes	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.029108	Seornia Sintor	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.029157	Vinor Serirnelia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.029160	Reontor Cillores	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.029308	Teontium Nilanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.029341	Lentor Coraniarum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.029388	Rellia Nostor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.029554	Senia Oraurium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.029634	Amiallanum Telauntus	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.029674	Raurilanum Valintus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.029745	Orares Mauntia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.029765	Amauntirnes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.029804	Corernia Corontium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.029856	Amentor Amonesia	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.030136	Telonalium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.030246	Cellaror	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.030301	Cistus Laurnor	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.030341	Nosus Amesia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.030390	Tisum Amantisanum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.030407	Mestus Corantes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.030408	Laurantia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.030566	Amisor Varnentus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.030568	Miastasium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.030578	Seraurianum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.030609	Nostellus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.030730	Rialauntor	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.030840	Tiarneosus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.030862	Telanelus	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.031037	Sinontium	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.031104	Nolia Ceornones	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.031171	Serinum Tistium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.031427	Vaunum Oraustor	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.031602	Vontium Oralia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.031730	Serelles Sirialor	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.031746	Caullor Ameonaustes	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.031767	Rosteonanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.032502	Nilles Siniastium	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.032557	Teleolanum Teliarnum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.032582	Sanaulor	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.032620	Tauntium Tasanum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.032670	Corausum Tiallanum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.033071	Valilor Seraunor	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.033414	Riarnonium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.033446	Noreosanum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.033560	Sones Oreostia	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.033634	Seresteorum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.033661	Valestus Serenia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.033699	Lestor Coraurnanum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.033705	Orintia Lilaunus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.033718	Teolus Cilum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.033741	Ranor Amauneollor	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.033802	Valolia Mastanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.033962	Valelium Cisanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.033986	Centornes	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.033993	Amerum Vanus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.034124	Corolaures	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.034157	Oreria Veontia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.034165	Orollausor	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.034340	Ameosiarium	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.034617	Nolles Ciantia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.034654	Cirium Rinia	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.034743	Lasum Tiaranum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.034837	Ameornollus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.035058	Amausteolus Reostia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.035084	Liseolium	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.035273	Mellium Sereosum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.035428	Orilia Veostorum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.035639	Oralium Corillum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.035786	Veonia Meornes	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.035851	Tasiastanum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.035885	Amaulentium	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.035910	Nilia Serontum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.035912	Vorausia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.035949	Visor Valeorestus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.035969	Salintum	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.035982	Corasium Telornestes	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.036031	Coreontanum Telostor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.036112	Reonestor	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.036117	Coraulestia	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.036332	Orelium Amarniallus	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.036337	Mollus Telaunernes	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.036366	Meonus Veollor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.036389	Rolanum Coreosus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.036488	Solles Sereostium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.036513	Nernus Tereonus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.036542	Valastanum Caulium	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.036643	Telornia Reosum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.036667	Lilor Cestania	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.036722	Vania Taunia	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.036754	Corillia Nauntiaror	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.036822	Tintium Ciraurnanum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.036840	Lintum Vollintus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.036979	Taulliasor	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.037003	Tillenor	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.037068	Restantia	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.037113	Serentostum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.037231	Oreontaulus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.037241	Amialentus	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.037268	Telauntium Oreostia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.037329	Amiantauria	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.037355	Raustinus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.037388	Valintium Amollum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.037400	Ciresanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.037416	Vausanum Maurus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.037420	Liarium Telonarnus	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.037424	Tallus Vintolanum	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E4.assay.037426	Seralles Miastanum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.037498	Nolastus	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.037527	Rinor Sereolenia	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.037533	Coroliarnes	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.037562	Oriseolus	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.037565	Solausum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.037569	Valasontus	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.037719	Nastus Siarosium	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.037875	Telostum Niarnium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.038008	Verisia	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.038130	Neornum Seraullum	4	E4	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E4.assay.038133	Valoses Nelum	4	E4	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E4.assay.038219	Niasilanum	4	E4	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E4.assay.038227	Vaunus Vaullirium	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.038337	Corolanum Restonium	4	E4	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E4.assay.038383	Vallisum	4	E4	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E4.assay.038402	Corolaunum	4	E4	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E4.assay.038427	Meostus Cernonia	4	E4	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.000442	Caulor	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.000456	Neolles	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.000711	Caullum	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.000730	Vianor	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.000990	Ceosum	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.001126	Teorium	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.001359	Sirium Maulium	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.001763	Tenor	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.001894	Nialausum	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.002115	Siseolia	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.002208	Tiastum Villor	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.002534	Amaurus Tornus	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.002983	Rostaulium	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.003315	Teliles	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.003440	Ternus	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.003497	Riastes Carnistor	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.003733	Verium	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.003839	Tianalum	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.003841	Saurillanum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.003871	Vaullor	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.003918	Mintenia	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.005021	Taustania	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.005368	Raunes	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.005403	Seristonia	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.005422	Oreosium Naunteolium	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.005722	Amonerum	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.005795	Oreralium	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.005863	Ceostialia	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.006152	Tesium	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.006518	Valaurus Restor	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.006897	Riaseonus	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.006931	Ceontanum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.007018	Valontia	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.007120	Amones Restia	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.007176	Relus Valeorernum	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.007606	Serialum Oraulia	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.007639	Rornes	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.007793	Valores Neosium	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.007826	Oraustum	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.007877	Naunes Corentanum	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.007976	Tosia	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.008458	Orosus Voles	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.008494	Siasium Mantor	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.008520	Amastanum	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.008539	Talleorus	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.008598	Nostor Cesium	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.008613	Vintesium	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.008740	Rintum Coriaselium	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.008969	Seorniranum	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.010133	Valeres Rintonia	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.010221	Corentes Amianes	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.010262	Meseollor	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.010313	Cosirum	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.011078	Corenes	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.011262	Sereneostia	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.011698	Amiastaunus	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.011714	Ceontanum Riallanum	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.011837	Ameoniria	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.011927	Caullus Coraulus	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.012139	Rauleosor	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.012363	Amosiarnium	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.012694	Niarostum	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.013229	Serarnelles	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.013312	Ciniantor	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.013381	Ciastium Maurnillium	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.013442	Amenausor	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.013614	Serasor Oreosia	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.014053	Veorelia	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.014471	Renium Meosus	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.014667	Ceonantium	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.014842	Corantor Vaustinor	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.015269	Telosus Seontillum	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.015425	Nelles Tollus	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.015589	Tostallum	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.015946	Cintus Oranor	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.015989	Mausirium	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.016279	Vaurus Taulia	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.016488	Serarnia Cantistium	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.016502	Telalenium	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.016526	Riles Corirnes	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.017545	Ralum Cauntiania	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.018116	Amirnor Rontia	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.018521	Lontum Oriantarnum	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.018983	Reontes	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.019091	Amonilia	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.019808	Nelium Larium	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.019967	Vontaurus	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.020087	Amiarnia Tiaseles	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.020217	Corolanum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.020220	Sereornium Serirnaulia	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.020357	Terosum	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.020412	Amiasallia	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.020670	Nauntor Varnaustium	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.020952	Telanaurum Reonor	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.020965	Valiastes	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.021590	Amolarnes	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.022122	Oraneornia	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.022219	Tasor Serantor	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.022374	Caulium Cialles	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.022462	Raustilia	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.022627	Seraulor Toreonus	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.022921	Nirolanum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.023651	Vasistium	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.023837	Lolia Valestus	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.024133	Laulanes	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.024448	Teollium Riarnellia	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.024483	Serauntia	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.024571	Valesiantus	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.024573	Vauntiasor	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.024595	Sosum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.024769	Amiania Amisia	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.024794	Vellum Neror	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.024935	Serauntium Mialantium	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.025187	Causastum	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.025235	Niarnaurum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.025280	Reontanum	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.025325	Nasteolles	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.025752	Laurnes Vinoles	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.026446	Amiasaullor	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.026542	Oraunares	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.027403	Casiarum	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.027953	Tarnes Raulia	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.027998	Misaunanum	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.028298	Valesastia	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.028767	Valirnor Merium	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.028815	Liantus Caulanum	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.029881	Reseolia	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.030262	Riarintium	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.030821	Oreostes Orantum	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.030881	Tasum Monesor	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.030949	Corolus Nostanum	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.030957	Corontaurum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.031016	Telia Melauranum	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.031292	Orollenes	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.031460	Telastiaror	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.032098	Orollianor	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.032113	Viarum Miantus	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.033069	Maunor Sirnostor	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.033688	Tiarontum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.033768	Serinollia Callaures	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.033959	Orausiarium	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.034071	Viarnenus Losor	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.034692	Mineostes	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.034723	Talum Teloleonum	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.035095	Tenor Valelosor	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.035185	Vaunium Vausum	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.035286	Vaustia Oranum	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.035647	Amastinus	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.035706	Corestor Rornus	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.035739	Rostialus	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.035767	Liases Raullium	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.035820	Seriastanum Tintanum	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.036034	Lonium Mistus	5	E5	AR.elaennirlys.E3.assay.032817
+AR.elaennirlys.E5.assay.036049	Orerus Orelia	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.036269	Meorisus	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.036651	Nesia Neseonum	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.assay.036946	Laurontor	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.037024	Listelium	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.037220	Miarnia Oriallus	5	E5	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E5.assay.037596	Lales Valantes	5	E5	AR.elaennirlys.E2.assay.011201
+AR.elaennirlys.E5.assay.037739	Launtor Oraules	5	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E5.assay.037743	Mianolor	5	E5	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E5.assay.037999	Sereornanum Valaustes	5	E5	AR.elaennirlys.E2.assay.005538
+AR.elaennirlys.E5.assay.038286	Amirnanum Orialles	5	E5	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E5.places.000227	Thevsistora	1	E5	AR.elaennirlys.E3.assay.010178
+AR.elaennirlys.E6.assay.004216	Seriares	6	E6	AR.elaennirlys.E3.assay.011808
+AR.elaennirlys.E6.assay.014134	Varanum	6	E6	AR.elaennirlys.E2.assay.029104
+AR.elaennirlys.E6.assay.032590	Sauntia Ceontium	6	E6	AR.elaennirlys.E3.assay.010052
+AR.elaennirlys.E6.assay.033970	Amosium Ceornor	6	E6	AR.elaennirlys.E2.assay.005538

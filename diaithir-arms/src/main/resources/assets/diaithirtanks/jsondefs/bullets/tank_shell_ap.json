@@ -1,0 +1,35 @@
+{
+ "general": {
+  "type": "bullet",
+  "name": "Armour-Piercing Tank Shell",
+  "materialLists": [
+   [
+    "minecraft:gunpowder:0:2",
+    "minecraft:iron_ingot:0:3"
+   ]
+  ]
+ },
+ "bullet": {
+  "types": [
+   "armor_piercing"
+  ],
+  "diameter": 120.0,
+  "damage": 55.0,
+  "caseLength": 600.0,
+  "quantity": 4,
+  "maxVelocity": 160,
+  "despawnTime": 400,
+  "impactDespawnTime": 1,
+  "gravitationalVelocity": 0.0,
+  "armorPenetration": 80.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Armour-Piercing Tank Shell",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

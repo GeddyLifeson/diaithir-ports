@@ -1,0 +1,174 @@
+{
+ "sky": {
+  "sky": "#8a9bb0",
+  "fog": "#a8b4c0",
+  "cloud": "#e0e8f0cc",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "snow",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3f6b8a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.keludoren.E6.places.000194",
+   "archetype": "snowy_taiga",
+   "temp": -0.8,
+   "humid": 0.6,
+   "grass": "#7a9a8a",
+   "foliage": "#5f7f6f",
+   "water": "#3a6a8a",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.keludoren.E6.places.000186",
+   "archetype": "windswept_hills",
+   "temp": -0.5,
+   "humid": -0.4,
+   "grass": "#7d8a78",
+   "foliage": "#627060",
+   "water": "#4a6a80",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.keludoren.E6.places.000198",
+   "archetype": "taiga",
+   "temp": -0.3,
+   "humid": 0.2,
+   "grass": "#6e8f72",
+   "foliage": "#4f7058",
+   "water": "#3d6a7d",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.keludoren.E6.places.000122",
+   "archetype": "plains",
+   "temp": 0.0,
+   "humid": 0.1,
+   "grass": "#8fa07a",
+   "foliage": "#748a62",
+   "water": "#4a7090",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.keludoren.E1.places.000303",
+   "archetype": "birch_forest",
+   "temp": 0.2,
+   "humid": 0.5,
+   "grass": "#94b07e",
+   "foliage": "#7fa070",
+   "water": "#5a8aa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.keludoren.E7.places.000298",
+   "archetype": "cherry_grove",
+   "temp": 0.3,
+   "humid": 0.6,
+   "grass": "#a8b888",
+   "foliage": "#d8a8b8",
+   "water": "#6a9ab0",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.keludoren.E6.places.000187",
+   "archetype": "savanna",
+   "temp": 0.6,
+   "humid": -0.2,
+   "grass": "#b8a878",
+   "foliage": "#9a9058",
+   "water": "#8a8a60",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.keludoren.E6.places.000197",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c8b888",
+   "foliage": "#a89868",
+   "water": "#b0a070",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_frozen_ocean",
+ "beach_archetype": "snowy_beach",
+ "river_archetype": "frozen_river",
+ "notes": "A frost-soiled martial world of ash-grey skies and dueling cities, where snowfields give way to windswept basalt ridges and a dry, sun-scorched desert at the warm edge.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "glow",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9d6e3",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.keludoren.E6.places.000186",
+  "why": "Frost soil and cliff-cold highland air suggest snowfall and bitter winds.",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 0.5,
+   "diamond": 0.4
+  },
+  "why_entry": "MA.keludoren.E1.places.000274",
+  "grounded": true
+ }
+}

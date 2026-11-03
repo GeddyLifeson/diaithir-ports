@@ -91,8 +91,12 @@ public final class BossController {
     }
 
     // ------------------------------------------------------------------ setup
+    private Component displayName() {
+        return prof.planet != null ? Component.literal(prof.name) : Component.translatable("boss." + DiaithirBosses.ID + "." + prof.id);
+    }
+
     private Component title() {
-        Component name = Component.translatable("boss." + DiaithirBosses.ID + "." + prof.id);
+        Component name = displayName();
         return phase > 0 ? Component.translatable("boss." + DiaithirBosses.ID + ".phase", name, prof.phases.get(Math.min(phase, prof.phases.size() - 1)).name) : name;
     }
 
@@ -172,6 +176,11 @@ public final class BossController {
         if (dm != null) {
             dm.removeModifier(DMG_MOD);
             dm.addPermanentModifier(new AttributeModifier(DMG_MOD, ageScale(false) * mode.damage * EventHooks.damageMul(prof, level) - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        }
+        if (prof.look && !prof.ownsEntity()) {
+            // another mod's creature drawn with our look: size it to the look
+            AttributeInstance sc = mob.getAttribute(Attributes.SCALE);
+            if (sc != null) sc.setBaseValue(prof.own.scale);
         }
         mob.setHealth(mob.getMaxHealth());
         float want = (float) (base * hpMul);
@@ -286,7 +295,7 @@ public final class BossController {
         ring(ParticleTypes.EXPLOSION, mob.position().add(0, 0.2, 0), 3.5, 14);
         level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, mob.getX(), mob.getY() + 1, mob.getZ(), 1, 0, 0, 0, 0);
         sound(SoundEvents.RAVAGER_ROAR, 2.0F, 0.7F);
-        Component msg = Component.translatable("boss." + DiaithirBosses.ID + ".phase", Component.translatable("boss." + DiaithirBosses.ID + "." + prof.id), ph.name);
+        Component msg = Component.translatable("boss." + DiaithirBosses.ID + ".phase", displayName(), ph.name);
         for (ServerPlayer p : participants()) p.sendSystemMessage(msg);
     }
 
@@ -670,7 +679,7 @@ public final class BossController {
                 if (level.getBlockEntity(p) instanceof AltarBlockEntity be) be.defeated(level.getGameTime());
             }
         }
-        Component msg = Component.translatable("death.attack.generic", Component.translatable("boss." + DiaithirBosses.ID + "." + prof.id));
+        Component msg = Component.translatable("death.attack.generic", displayName());
         for (ServerPlayer p : participants()) p.sendSystemMessage(msg);
         close();
     }

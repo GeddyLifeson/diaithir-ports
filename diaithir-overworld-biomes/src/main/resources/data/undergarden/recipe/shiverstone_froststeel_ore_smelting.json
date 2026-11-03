@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "cookingtime": 200,
+ "experience": 1.0,
+ "ingredient": "undergarden:shiverstone_froststeel_ore",
+ "result": {
+  "id": "undergarden:froststeel_ingot"
+ }
+}
