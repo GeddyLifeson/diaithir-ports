@@ -49,7 +49,7 @@ public final class AnimClient {
 
     private static final class S {
         String item = "", mode = "";
-        boolean swinging, using, charged, shield;
+        boolean swinging, using, charged, shield, srvSeat;
         int combo;
         long lastSwing = -1000, lastFire = -1000;
     }
@@ -110,6 +110,11 @@ public final class AnimClient {
     static void oneShot(Avatar a, String name) {
         if (name.startsWith("body.")) { BodyClient.oneShot(a, name); return; }
         S s = STATE.computeIfAbsent(a.getId(), k -> new S());
+        if (name.startsWith("seat.")) {
+            s.srvSeat = !name.equals("seat.none"); s.mode = ""; s.item = "";
+            if (s.srvSeat) play(a, MAIN, null, name); else stop(a, MAIN);
+            return;
+        }
         long now = a.level().getGameTime();
         boolean gun = name.startsWith("gun.");
         if (gun) { Kind gk = Kind.of(a.getMainHandItem()); if (gk != null && gk.gun()) GunFx.clip(a, name, gk.cls()); }
@@ -152,6 +157,7 @@ public final class AnimClient {
         long now = p.level().getGameTime();
         ItemStack hand = p.getMainHandItem();
         Kind k = Kind.of(hand);
+        if (s.srvSeat) return; // a server-sent seat loop (tank crew) owns the arms
         String key = k == null ? "" : (k.gun() ? "gun." : "") + k.cls() + ":" + hand.getItem();
         boolean changed = !key.equals(s.item);
         s.item = key;

@@ -35,3 +35,6 @@ Riders of entity types in `diaithiranimation:seat/{turret,driver,mounted_gun,can
 
 ## Not done
 Visual check of first person (enabled: third-person arms and items show while a clip plays), spell hit effects and projectile entity animations (VFX lanes), tank turret/driver (no tank exists yet), visual tuning of poses on a real client (angles follow vanilla ModelPart convention).
+
+## Tank crew (Immersive Vehicles)
+`SeatServer` (server, no-op without Immersive Vehicles): a rider on `mts:builder_seat` next to an `mts:builder_existing` whose saved data contains `diaithirtanks` gets `seat.driver` (nearer to local seat 1 at 0, 0.95, 1.9) or `seat.turret` (nearer to seat 2 at 0.6, 1.2, -0.4), matched in the vehicle's own frame; leaving sends `seat.none`. Unverified in a live world; the machine-gun mount and cannon do not exist yet.

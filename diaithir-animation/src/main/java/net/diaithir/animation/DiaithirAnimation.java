@@ -17,6 +17,7 @@ public final class DiaithirAnimation {
         bus.addListener(Net::register);
         NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.register(new BodyServer());
+        NeoForge.EVENT_BUS.register(new SeatServer());
         if (FMLEnvironment.getDist().isClient()) { AnimClient.init(bus); BodyClient.init(bus); GunFx.init(); ProjectileFx.init(); }
     }
 
