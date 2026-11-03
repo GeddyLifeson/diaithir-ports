@@ -1,5 +1,9 @@
 package net.diaithir.yards;
 
+import net.diaithir.carts.CartLogic;
+import net.diaithir.carts.DiaithirCarts;
+import net.diaithir.carts.Gauge;
+import net.diaithir.carts.GaugeData;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -94,6 +98,7 @@ public final class YardSelfTest {
         cart(level, rail, "wag_tank", net.minecraft.world.entity.EntityType.HOPPER_MINECART, f);
         cart(level, rail, "loco_gp7", net.minecraft.world.entity.EntityType.FURNACE_MINECART, f);
         cart(level, rail, "pas_dining", net.minecraft.world.entity.EntityType.MINECART, f);
+        gauge(level, rail.offset(6, 0, 0), f);
         // blueprint build by a manned crane from a depot chest, no hand installs
         level.setBlock(at.offset(0, 0, 1), Blocks.CHEST.defaultBlockState(), 2);
         net.minecraft.world.Container depot = (net.minecraft.world.Container) level.getBlockEntity(at.offset(0, 0, 1));
@@ -115,5 +120,29 @@ public final class YardSelfTest {
         if (c == null || c.getType() != want) f.add(id + " spawned " + (c == null ? "nothing" : c.getType().toString()));
         else if (c.getCustomName() == null) f.add(id + " has no name");
         if (c != null) c.discard();
+    }
+
+    /** Standard and narrow vehicles on standard, narrow and dual rail: right gauge runs, wrong gauge is capped at 0, dual takes both, narrow takes curves better. */
+    private static void gauge(ServerLevel level, BlockPos p, List<String> f) {
+        var std = DiaithirCarts.STEEL_RAIL.get().defaultBlockState();
+        var nar = DiaithirCarts.NARROW_RAIL.get().defaultBlockState();
+        var dual = DiaithirCarts.DUAL_RAIL.get().defaultBlockState();
+        level.setBlock(p, std, 2); level.setBlock(p.offset(2, 0, 0), nar, 2); level.setBlock(p.offset(4, 0, 0), dual, 2);
+        var stdCart = spawnAt(level, p, "loco_gp7"); var narCart = spawnAt(level, p.offset(2, 0, 0), "nwag_boxcar");
+        if (stdCart == null || narCart == null) { f.add("gauge test carts did not spawn"); return; }
+        if (GaugeData.of(stdCart) != Gauge.STANDARD || GaugeData.of(narCart) != Gauge.NARROW) f.add("vehicle gauge not stored");
+        if (CartLogic.cap(stdCart, 0.4) < 0.89) f.add("standard vehicle slow on standard rail");
+        if (CartLogic.cap(narCart, 0.4) < 0.49) f.add("narrow vehicle slow on narrow rail");
+        stdCart.setPos(p.getX() + 2.5, p.getY() + 0.0625, p.getZ() + 0.5);
+        if (CartLogic.cap(stdCart, 0.4) != 0) f.add("standard vehicle ran on narrow rail");
+        narCart.setPos(p.getX() + 0.5, p.getY() + 0.0625, p.getZ() + 0.5);
+        if (CartLogic.cap(narCart, 0.4) != 0) f.add("narrow vehicle ran on standard rail");
+        stdCart.setPos(p.getX() + 4.5, p.getY() + 0.0625, p.getZ() + 0.5); narCart.setPos(p.getX() + 4.5, p.getY() + 0.0625, p.getZ() + 0.5);
+        if (CartLogic.cap(stdCart, 0.4) == 0 || CartLogic.cap(narCart, 0.4) == 0) f.add("dual-gauge rail refused a vehicle");
+        stdCart.discard(); narCart.discard();
+    }
+
+    private static net.minecraft.world.entity.vehicle.minecart.AbstractMinecart spawnAt(ServerLevel level, BlockPos p, String id) {
+        return RollingStockItem.spawn(level, p, new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse("diaithircarts:" + id))));
     }
 }

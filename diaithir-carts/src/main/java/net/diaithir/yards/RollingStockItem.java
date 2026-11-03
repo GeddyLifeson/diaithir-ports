@@ -1,5 +1,8 @@
 package net.diaithir.yards;
 
+import net.diaithir.carts.Gauge;
+import net.diaithir.carts.GaugeData;
+import net.diaithir.carts.RailSpeed;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -20,11 +23,24 @@ import net.minecraft.world.level.block.BaseRailBlock;
 public final class RollingStockItem extends Item {
     private final String vehicleName;
     private final String category;
+    private final Gauge gauge;
+    private final int crew;
 
-    public RollingStockItem(Properties p, String vehicleName, String category) {
+    public RollingStockItem(Properties p, String vehicleName, String category, Gauge gauge, int crew) {
         super(p);
         this.vehicleName = vehicleName;
         this.category = category;
+        this.gauge = gauge;
+        this.crew = crew;
+    }
+
+    public Gauge gauge() {
+        return gauge;
+    }
+
+    /** Crew the vehicle needs while it runs (driver, fireman). The wages thread charges them through Autonomy.status. */
+    public int crew() {
+        return crew;
     }
 
     static EntityType<? extends AbstractMinecart> cartFor(String category) {
@@ -45,7 +61,11 @@ public final class RollingStockItem extends Item {
     public InteractionResult useOn(UseOnContext ctx) {
         if (!(ctx.getLevel() instanceof ServerLevel level)) return InteractionResult.SUCCESS;
         BlockPos pos = ctx.getClickedPos();
-        if (!(level.getBlockState(pos).getBlock() instanceof BaseRailBlock)) return InteractionResult.PASS;
+        if (!(level.getBlockState(pos).getBlock() instanceof BaseRailBlock rail)) return InteractionResult.PASS;
+        if (rail instanceof RailSpeed r && !Gauge.runs(gauge, r.gauge())) {
+            if (ctx.getPlayer() != null) ctx.getPlayer().sendOverlayMessage(Component.literal("Wrong gauge: this is " + gauge.id + " gauge, the track is " + r.gauge().id + "."));
+            return InteractionResult.FAIL;
+        }
         ItemStack stack = ctx.getItemInHand();
         if (spawn(level, pos, stack) == null) return InteractionResult.FAIL;
         stack.shrink(1);
@@ -60,6 +80,7 @@ public final class RollingStockItem extends Item {
         if (cart == null) return null;
         cart.setPos(pos.getX() + 0.5, pos.getY() + 0.0625, pos.getZ() + 0.5);
         cart.setCustomName(Component.literal(r.vehicleName));
+        GaugeData.set(cart, r.gauge);
         level.addFreshEntity(cart);
         return cart;
     }

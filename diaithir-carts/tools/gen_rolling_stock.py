@@ -4,7 +4,39 @@ Run from diaithir-carts: python3 tools/gen_rolling_stock.py"""
 import csv, json, os, math
 R = "src/main/resources"
 NS = "diaithircarts"
+import re
 rows = list(csv.DictReader(open("data/rolling_stock.csv")))
+PRIMITIVE_NARROW = {"wag_wagonway", "wag_tub", "loco_horse_gin"}   # early wooden wagonways and tub trams ran on light narrow track
+for r in rows: r["gauge"] = r.get("gauge") or ("narrow" if r["id"] in PRIMITIVE_NARROW else "standard")
+
+# Narrow-gauge twins of the freight and passenger types that really ran on narrow track: a lighter wagon with 40% of the payload (axle load 10 t against 25 t) (Gauge.NARROW).
+NARROW_TYPES = ["wag_boxcar", "wag_open_hopper", "wag_tank", "wag_flatcar", "wag_gondola", "wag_stock", "wag_caboose", "wag_log", "wag_ore",
+                "pas_compartment", "pas_open_saloon", "pas_baggage", "pas_mail", "pas_observation", "pas_dining"]
+byid = {r["id"]: r for r in rows}
+for i in NARROW_TYPES:
+    b = byid[i]
+    rows.append({"id": "n" + i, "category": b["category"], "name": "Narrow-gauge " + b["name"][0].lower() + b["name"][1:], "year": b["year"],
+                 "mass_kg": str(int(int(b["mass_kg"]) * 0.5)), "power_w_or_capacity": str(int(int(b["power_w_or_capacity"]) * 0.4)), "source": b["source"], "gauge": "narrow"})
+
+# Every US and UK locomotive class harvested from Wikipedia (tools/harvest_locos.py). Classes with no build year cannot be gated and are skipped.
+EST = {"loco_steam": (60000, 1_000_000), "loco_diesel": (90000, 1_500_000), "loco_electric": (100000, 3_000_000)}
+EST_NARROW = {"loco_steam": (22000, 150_000), "loco_diesel": (20000, 250_000), "loco_electric": (30000, 300_000)}
+have = {r["source"] for r in rows}
+used = {r["id"] for r in rows}
+skipped = 0
+if os.path.exists("data/locos_raw.csv"):
+    for h in csv.DictReader(open("data/locos_raw.csv")):
+        if int(h["year"]) == 0 or h["source"] in have: skipped += 1; continue
+        slug = re.sub(r"[^a-z0-9]+", "_", h["name"].lower()).strip("_")[:40] or "loco"
+        i = "loco_" + slug; n = 2
+        while i in used: i = f"loco_{slug}_{n}"; n += 1
+        used.add(i)
+        est = (EST_NARROW if h["gauge"] == "narrow" else EST)[h["category"]]
+        mass = int(h["mass_kg"]) or est[0]
+        pw = int(h["power_w"]) or est[1]
+        if h["gauge"] == "narrow": mass = min(mass, 90000)
+        rows.append({"id": i, "category": h["category"], "name": h["name"], "year": h["year"], "mass_kg": str(mass), "power_w_or_capacity": str(pw), "source": h["source"], "gauge": h["gauge"]})
+CREW = {"loco_steam": 2, "loco_diesel": 1, "loco_electric": 1, "loco_primitive": 1}
 
 def age(y):
     y = int(y)
@@ -56,8 +88,9 @@ for r in rows:
             part_age[pid] = min(part_age.get(pid, 9), age(y))
             ss.append({"kind": kind, "count": n})
         sl.append({"id": sid, "slots": ss, "base_ticks": 100 if sid == "power" else 60, "ghost": f"{NS}:yard/{sid}"})
-    yards.append({"id": f"yard_{r['id']}", "tier": tier(y), "site": "GROUND", "result": f"{NS}:{r['id']}", "stages": sl, "age": age(y), "footprint": [5, 20, 6]})
-    items.append({"id": r["id"], "name": r["name"], "age": age(y), "category": cat, "mass_kg": int(r["mass_kg"]), "rated": int(r["power_w_or_capacity"])})
+    yards.append({"id": f"yard_{r['id']}", "tier": tier(y), "site": "GROUND", "result": f"{NS}:{r['id']}", "gauge": r["gauge"], "stages": sl, "age": age(y), "footprint": [5, 20, 6]})
+    items.append({"id": r["id"], "name": r["name"], "age": age(y), "category": cat, "mass_kg": int(r["mass_kg"]), "rated": int(r["power_w_or_capacity"]),
+                  "gauge": r["gauge"], "crew": CREW.get(cat, 0)})
 partdefs = []
 for pid, kind in sorted(parts.items()):
     sz = pid.rsplit("_", 1)[1]; m, p, hp, st, stage, ing = KINDS[kind]; f = FACT[sz]

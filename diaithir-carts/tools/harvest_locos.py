@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Harvests every US and UK locomotive class on Wikipedia (via Wikidata class list) into data/locos_raw.csv.
+"""(S6902) Harvests every US and UK locomotive class on Wikipedia (via Wikidata class list) into data/locos_raw.csv.
 Usage: python3 tools/harvest_locos.py CACHE_DIR   (CACHE_DIR keeps raw wikitext so reruns are cheap)
-Keeps only standard gauge (1435 mm) and narrow gauge (anything 500-1067 mm, folded onto one game narrow gauge). Skips other gauges."""
+Keeps only standard gauge (1435 mm) and narrow gauge (500-1067 mm except metre gauge, folded onto one game narrow gauge). Skips other gauges."""
 import csv, json, os, re, sys, time, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 UA = {"User-Agent": "diaithir-trains/1.0 (game data harvest)"}
@@ -60,12 +60,12 @@ def parse(t, txt):
     kind = "loco_steam" if "steam" in pt else "loco_electric" if ("electric" in pt or "battery" in pt) else "loco_diesel" if ("diesel" in pt or "petrol" in pt or "gas" in pt or "turbine" in pt) else ""
     if not kind: return None
     gm = gauge_mm(field(txt, "gauge"))
-    gauge = "standard" if gm == 1435 else "narrow" if 500 <= gm <= 1067 else ""
+    gauge = "standard" if gm == 1435 else "narrow" if 500 <= gm <= 1067 and not 950 <= gm <= 1050 else ""   # metre gauge was never a US or UK gauge: skipped
     if not gauge: return None
-    name = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]*)\]\]|<[^>]+>|\{\{.*?\}\}", r"\1", field(txt, "name")).strip() or t.replace("_", " ")
+    name = re.sub(r"\s*\(.*?\)$", "", t.replace("_", " "))
     y = year(field(txt, "introduced"), field(txt, "builddate"), field(txt, "inservicedate"), field(txt, "firstrun"))
     mass = weight_kg(field(txt, "locoweight") or field(txt, "weight") or field(txt, "locotenderweight"))
-    pw = power_w(field(txt, "poweroutput") or field(txt, "powerout") or field(txt, "tractiveeffort") if False else field(txt, "poweroutput"))
+    pw = power_w(field(txt, "poweroutput"))
     return [t, kind, name, y, mass, pw, gauge, gm, "https://en.wikipedia.org/wiki/" + t]
 if __name__ == "__main__":
     cache = sys.argv[1]; os.makedirs(cache, exist_ok=True)

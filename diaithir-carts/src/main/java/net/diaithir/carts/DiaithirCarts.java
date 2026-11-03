@@ -45,6 +45,10 @@ public final class DiaithirCarts {
     public static final DeferredBlock<TierPoweredRail> STEEL_POWERED_RAIL = BLOCKS.registerBlock("steel_powered_rail", p -> new TierPoweredRail(p, Tier.STEEL), DiaithirCarts::rail);
     public static final DeferredBlock<TierRail> FAST_RAIL = BLOCKS.registerBlock("fast_rail", p -> new TierRail(p, Tier.FAST), DiaithirCarts::rail);
     public static final DeferredBlock<TierPoweredRail> FAST_POWERED_RAIL = BLOCKS.registerBlock("fast_powered_rail", p -> new TierPoweredRail(p, Tier.FAST), DiaithirCarts::rail);
+    public static final DeferredBlock<TierRail> NARROW_RAIL = BLOCKS.registerBlock("narrow_rail", p -> new TierRail(p, Tier.NARROW), DiaithirCarts::rail);
+    public static final DeferredBlock<TierPoweredRail> NARROW_POWERED_RAIL = BLOCKS.registerBlock("narrow_powered_rail", p -> new TierPoweredRail(p, Tier.NARROW), DiaithirCarts::rail);
+    public static final DeferredBlock<TierRail> DUAL_RAIL = BLOCKS.registerBlock("dual_rail", p -> new TierRail(p, Tier.DUAL), DiaithirCarts::rail);
+    public static final DeferredBlock<TierPoweredRail> DUAL_POWERED_RAIL = BLOCKS.registerBlock("dual_powered_rail", p -> new TierPoweredRail(p, Tier.DUAL), DiaithirCarts::rail);
     public static final DeferredBlock<StationRail> STATION_RAIL = BLOCKS.registerBlock("station_rail", StationRail::new, DiaithirCarts::rail);
 
     public static final DeferredBlock<OneWayRail> ONE_WAY_RAIL = BLOCKS.registerBlock("one_way_rail", OneWayRail::new, DiaithirCarts::rail);
@@ -59,7 +63,7 @@ public final class DiaithirCarts {
     public static final DeferredItem<BlockItem> BLOCK_SIGNAL_ITEM = ITEMS.registerSimpleBlockItem(BLOCK_SIGNAL);
 
     public static final List<DeferredBlock<? extends Block>> ALL_RAILS = List.of(BRONZE_RAIL, BRONZE_POWERED_RAIL, STEEL_RAIL, STEEL_POWERED_RAIL, FAST_RAIL,
-            FAST_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL, DESTINATION_RAIL, LOCKING_RAIL);
+            FAST_POWERED_RAIL, NARROW_RAIL, NARROW_POWERED_RAIL, DUAL_RAIL, DUAL_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL, DESTINATION_RAIL, LOCKING_RAIL);
     public static final List<DeferredItem<BlockItem>> RAIL_ITEMS = ALL_RAILS.stream().map(b -> ITEMS.registerSimpleBlockItem(b)).toList();
 
     public static final DeferredItem<Item> COUPLING_CHAIN = ITEMS.registerSimpleItem("coupling_chain");
@@ -69,6 +73,7 @@ public final class DiaithirCarts {
 
     public DiaithirCarts(IEventBus bus) {
         Schedule.ATTACHMENTS.register(bus);
+        GaugeData.ATTACHMENTS.register(bus);
         Schedule.COMPONENTS.register(bus);
         BLOCKS.register(bus);
         ITEMS.register(bus);
