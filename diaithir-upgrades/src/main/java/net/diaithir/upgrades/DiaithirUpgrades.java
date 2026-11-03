@@ -29,7 +29,9 @@ public final class DiaithirUpgrades {
         ATTACHMENTS.register("slots", () -> Upgrades.SLOTS);
         ATTACHMENTS.register(bus);
         Modules.register(bus);
+        Registry.register(bus);
         bus.addListener(RegisterCapabilitiesEvent.class, DiaithirUpgrades::registerCaps);
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.RightClickBlock.class, Removal::onRightClick);
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class,
                 e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "targets"), new Rules()));
     }

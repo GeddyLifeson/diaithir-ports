@@ -12,9 +12,16 @@ public final class Beacon {
     private final Slotted slots;
     private final int range;
 
-    public Beacon(Target target, int range) {
-        this.slots = new Slotted(target);
+    /** Wrap modules that already live elsewhere (a beacon block entity's saved slots). */
+    public static Beacon wrap(Slotted slots, int range) { return new Beacon(slots, range); }
+
+    private Beacon(Slotted slots, int range) {
+        this.slots = slots;
         this.range = range;
+    }
+
+    public Beacon(Target target, int range) {
+        this(new Slotted(target), range);
     }
 
     public Slotted slots() { return slots; }

@@ -34,5 +34,6 @@
  "item.diaithirupgrades.spice_efficiency_3": "Spice Efficiency Blend III",
  "item.diaithirupgrades.spice_quality_1": "Spice Quality Blend I",
  "item.diaithirupgrades.spice_quality_2": "Spice Quality Blend II",
- "item.diaithirupgrades.spice_quality_3": "Spice Quality Blend III"
+ "item.diaithirupgrades.spice_quality_3": "Spice Quality Blend III",
+ "block.diaithirupgrades.beacon": "Upgrade Beacon"
 }

@@ -54,5 +54,10 @@ public final class Upgrades {
         Bound(BlockEntity be, Target target) {
             this(be, target, be.getData(SLOTS).toSlotted(target));
         }
+
+        @Override
+        public java.util.List<Beacon> beacons() {
+            return be.getLevel() == null ? java.util.List.of() : BeaconBlockEntity.covering(be.getLevel(), be.getBlockPos());
+        }
     }
 }
