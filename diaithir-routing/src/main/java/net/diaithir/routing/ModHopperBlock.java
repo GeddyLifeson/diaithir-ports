@@ -69,14 +69,14 @@ public final class ModHopperBlock extends BaseEntityBlock {
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
             InteractionHand hand, BlockHitResult hit) {
-        if (!(level.getBlockEntity(pos) instanceof ModHopperBlockEntity be)) return InteractionResult.PASS;
+        if (!(level.getBlockEntity(pos) instanceof ModHopperBlockEntity be)) return InteractionResult.TRY_WITH_EMPTY_HAND;
         if (stack.getItem() instanceof FilterItem && kind != HopperKind.FAST) {
             if (level.isClientSide()) return InteractionResult.SUCCESS;
             be.setFilter(FilterItem.read(stack));
             player.sendOverlayMessage(Component.literal("Hopper filter: " + be.filter().describe()));
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.PASS;
+        return InteractionResult.TRY_WITH_EMPTY_HAND;
     }
 
     @Override

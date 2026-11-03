@@ -30,13 +30,15 @@ public final class FoundryControllerBlockEntity extends BlockEntity {
         return Config.TANK_BUCKETS.get() * 1000;
     }
 
-    /** Validates a 3x3x3 cube with the controller in the middle of the front face's bottom row, bricks elsewhere, one drain and one tank. */
+    /** Validates a 3x3x3 cube behind the controller: the controller is the middle of the front face's bottom row, bricks elsewhere, one drain and one tank. */
     public boolean formed(ServerLevel level) {
         int bricks = 0, drains = 0, tanks = 0;
-        for (int dx = -1; dx <= 1; dx++)
-            for (int dy = 0; dy <= 2; dy++)
-                for (int dz = -1; dz <= 1; dz++) {
-                    BlockPos p = worldPosition.offset(dx, dy, dz);
+        net.minecraft.core.Direction back = getBlockState().getValue(net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING).getOpposite();
+        net.minecraft.core.Direction right = back.getClockWise();
+        for (int r = -1; r <= 1; r++)
+            for (int u = 0; u <= 2; u++)
+                for (int d = 0; d <= 2; d++) {
+                    BlockPos p = worldPosition.relative(right, r).above(u).relative(back, d);
                     if (p.equals(worldPosition)) continue;
                     var b = level.getBlockState(p).getBlock();
                     if (b == DiaithirFoundry.BRICKS.get()) bricks++;

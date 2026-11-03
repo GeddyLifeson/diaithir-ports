@@ -38,6 +38,7 @@ public final class DiaithirFilters {
         ITEMS.register(bus);
         COMPONENTS.register(bus);
         MENUS.register(bus);
+        bus.addListener(net.neoforged.neoforge.client.event.RegisterMenuScreensEvent.class, e -> e.register(FILTER_MENU.get(), FilterScreen::new));
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {

@@ -26,7 +26,7 @@ public final class GemCutterBlock extends Block {
 
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!stack.is(DiaithirFoundry.RAW_GEM.get())) return InteractionResult.PASS;
+        if (!stack.is(DiaithirFoundry.RAW_GEM.get())) return InteractionResult.TRY_WITH_EMPTY_HAND;
         if (!level.isClientSide()) {
             stack.shrink(1);
             ItemStack out = new ItemStack(DiaithirFoundry.CUT_GEM.get());

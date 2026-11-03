@@ -57,9 +57,9 @@ public final class LaserNodeBlock extends BaseEntityBlock {
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
             InteractionHand hand, BlockHitResult hit) {
-        if (!(level.getBlockEntity(pos) instanceof LaserNodeBlockEntity node)) return InteractionResult.PASS;
+        if (!(level.getBlockEntity(pos) instanceof LaserNodeBlockEntity node)) return InteractionResult.TRY_WITH_EMPTY_HAND;
         boolean link = RoutingRefs.isRouterLink(stack);
-        if (level.isClientSide()) return stack.getItem() instanceof FilterItem || link ? InteractionResult.SUCCESS : InteractionResult.PASS;
+        if (level.isClientSide()) return stack.getItem() instanceof FilterItem || link ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
         if (stack.getItem() instanceof FilterItem) {
             node.setFilter(hit.getDirection(), FilterItem.read(stack));
             player.sendOverlayMessage(Component.literal("Side filter: " + FilterItem.read(stack).describe()));
@@ -80,7 +80,7 @@ public final class LaserNodeBlock extends BaseEntityBlock {
             }
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.PASS;
+        return InteractionResult.TRY_WITH_EMPTY_HAND;
     }
 
     @Override

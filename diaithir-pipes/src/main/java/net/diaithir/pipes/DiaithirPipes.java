@@ -61,6 +61,7 @@ public final class DiaithirPipes {
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         MENUS.register(bus);
+        bus.addListener(net.neoforged.neoforge.client.event.RegisterMenuScreensEvent.class, e -> e.register(FILTER_MENU.get(), FilterScreen::new));
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {

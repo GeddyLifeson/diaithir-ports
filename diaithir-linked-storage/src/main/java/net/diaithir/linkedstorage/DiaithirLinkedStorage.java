@@ -54,6 +54,8 @@ public final class DiaithirLinkedStorage {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
+        Menus.MENUS.register(bus);
+        bus.addListener(net.neoforged.neoforge.client.event.RegisterMenuScreensEvent.class, e -> e.register(Menus.LINKED.get(), LinkedScreen::new));
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
