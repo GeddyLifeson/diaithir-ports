@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:hornbeam_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:hornbeam_planks",
+  "count": 4
+ }
+}

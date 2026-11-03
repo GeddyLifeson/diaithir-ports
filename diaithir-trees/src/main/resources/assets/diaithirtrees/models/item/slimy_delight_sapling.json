@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirtrees:block/slimy_delight_sapling"
+ }
+}
