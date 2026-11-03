@@ -31,6 +31,10 @@ truck_man_tgx,tractor,MAN TGX,MAN,2007,DE,cab,350,6900,40000,VII,https://en.wiki
 truck_tata_prima,tractor,Tata Prima,Tata,2008,IN,cab,230,5220,40000,VII,https://en.wikipedia.org/wiki/Tata_Prima
 truck_western_star_4900,tractor,Western Star 4900,Western Star,2008,US,conv,370,7180,36000,VII,https://en.wikipedia.org/wiki/Western_Star_Trucks
 truck_kenworth_t680,tractor,Kenworth T680,Kenworth,2012,US,conv,335,6690,36000,VII,https://en.wikipedia.org/wiki/Kenworth_T680
+truck_ox_team,tractor,Ox Team and Limber,draft,-3000,Mesopotamia,team,1,2021,3000,III,https://en.wikipedia.org/wiki/Ox
+truck_horse_team,tractor,Horse Team and Limber,draft,-800,Eurasia,team,3,2042,5000,IV,https://en.wikipedia.org/wiki/Draft_horse
+truck_steam_traction,tractor,Steam Traction Engine,Aveling and Porter,1862,UK,steam,30,2420,25000,VI,https://en.wikipedia.org/wiki/Traction_engine
+truck_steam_wagon,tractor,Sentinel Steam Waggon,Sentinel,1905,UK,steam,40,2560,12000,VI,https://en.wikipedia.org/wiki/Steam_wagon
 trailer_dry_van,trailer,Dry Van Trailer,,1914,,box,,10000,20000,VI,https://en.wikipedia.org/wiki/Semi-trailer
 trailer_flatbed,trailer,Flatbed Trailer,,1925,,flat,,11000,24000,VI,https://en.wikipedia.org/wiki/Flatbed_trailer
 trailer_container_chassis,trailer,Container Chassis,,1956,,chassis,,11500,26000,VII,https://en.wikipedia.org/wiki/Intermodal_container
@@ -45,6 +49,12 @@ trailer_livestock,trailer,Livestock Trailer,,1930,,livestock,,9500,18000,VI,http
 trailer_step_deck,trailer,Step-Deck Trailer,,1940,,step,,10500,22000,VI,https://en.wikipedia.org/wiki/Flatbed_trailer
 trailer_modular_heavy,trailer,Modular Heavy-Haul Trailer,,1953,,modular,,30000,100000,VII,https://en.wikipedia.org/wiki/Semi-trailer
 trailer_tank_transporter,trailer,Heavy Equipment Transporter Semitrailer,,1977,,lowboy,,18750,55000,VII,https://en.wikipedia.org/wiki/Semi-trailer
+trailer_handcart,trailer,Handcart,,-3000,,cart,,240,300,II,https://en.wikipedia.org/wiki/Handcart
+trailer_cart,trailer,Two-Wheeled Cart,,-3000,,cart,,330,600,II,https://en.wikipedia.org/wiki/Cart
+trailer_oxcart,trailer,Ox Cart,,-2000,,cart,,450,1000,III,https://en.wikipedia.org/wiki/Oxcart
+trailer_wagon,trailer,Four-Wheeled Wagon,,-500,,wagon,,750,2000,IV,https://en.wikipedia.org/wiki/Wagon
+trailer_conestoga,trailer,Conestoga Freight Wagon,,1750,,wagon,,1650,5000,V,https://en.wikipedia.org/wiki/Conestoga_wagon
+trailer_dray,trailer,Dray,,1200,,dray,,1050,3000,IV,https://en.wikipedia.org/wiki/Dray_(cart)
 cv_steam_roller,construction,Aveling and Porter Road Roller,Aveling and Porter,1867,UK,roller,30,12000,,VI,https://en.wikipedia.org/wiki/Road_roller
 cv_transit_mixer,construction,Concrete Transit Mixer,Jaeger,1916,US,mixer,220,14000,,VI,https://en.wikipedia.org/wiki/Concrete_mixer
 cv_d9_dozer,construction,Caterpillar D9 Bulldozer,Caterpillar,1954,US,dozer,350,49000,,VII,https://en.wikipedia.org/wiki/Caterpillar_D9
@@ -58,3 +68,9 @@ cv_cat_320_excavator,construction,Caterpillar 320 Excavator,Caterpillar,1987,US,
 cv_wirtgen_miller,construction,Road Milling Machine,Wirtgen,1969,DE,miller,400,28000,,VII,https://en.wikipedia.org/wiki/Cold_planer
 cv_putzmeister_pump,construction,Concrete Pump Truck,Putzmeister,1958,DE,pump,300,28000,,VII,https://en.wikipedia.org/wiki/Concrete_pump
 cv_cat_797_haul,construction,Caterpillar 797 Haul Truck,Caterpillar,1999,US,haul,2983,360000,,VII,https://en.wikipedia.org/wiki/Caterpillar_797
+cv_hand_roller,construction,Hand-Hauled Stone Roller,unknown,-2500,Egypt,hroller,,600,,II,https://en.wikipedia.org/wiki/Road_roller
+cv_horse_roller,construction,Horse-Drawn Roller,unknown,1800,UK,hroller,,3000,,IV,https://en.wikipedia.org/wiki/Road_roller
+cv_dump_cart,construction,Tip Cart,unknown,1700,UK,dumpcart,,800,,IV,https://en.wikipedia.org/wiki/Dump_truck
+cv_fresno_scraper,construction,Fresno Scraper,James Porteous,1883,US,scraper,,400,,VI,https://en.wikipedia.org/wiki/Scraper_(excavation)
+cv_horse_grader,construction,Horse-Drawn Road Grader,J. D. Adams,1885,US,scraper,,1500,,VI,https://en.wikipedia.org/wiki/Grader
+cv_steam_shovel,construction,Steam Shovel,William Otis,1839,US,steamshovel,30,18000,,V,https://en.wikipedia.org/wiki/Steam_shovel

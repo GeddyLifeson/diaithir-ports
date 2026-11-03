@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Dry Van Trailer",
-  "description": "Dry Van Trailer (1914): 16.2 m, 2 axles, payload 20 t. Hooks onto any tractor fifth wheel.",
+  "description": "Dry Van Trailer (1914): 16.2 m, 2 axles, payload 20000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:25"

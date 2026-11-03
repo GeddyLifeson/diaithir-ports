@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Lowboy Trailer",
-  "description": "Lowboy Trailer (1940): 15.0 m, 3 axles, payload 40 t. Hooks onto any tractor fifth wheel.",
+  "description": "Lowboy Trailer (1940): 15.0 m, 3 axles, payload 40000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:37"

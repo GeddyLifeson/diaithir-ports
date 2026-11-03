@@ -224,6 +224,34 @@
   "Kenworth T680 (2012): 335 kW, 6690 kg, gross 36000 kg."
  ],
  [
+  "karbad tarruing Oux Tiem aund Liember",
+  "item",
+  3,
+  "transport",
+  "Ox Team and Limber (-3000): 1 kW, 2021 kg, gross 3000 kg."
+ ],
+ [
+  "karbad tarruing Horsi Tiem aund Liember",
+  "item",
+  4,
+  "transport",
+  "Horse Team and Limber (-800): 3 kW, 2042 kg, gross 5000 kg."
+ ],
+ [
+  "karbad tarruing Stiem Traktion Iengini",
+  "item",
+  6,
+  "transport",
+  "Steam Traction Engine (1862): 30 kW, 2420 kg, gross 25000 kg."
+ ],
+ [
+  "karbad tarruing Sientinel Stiem Waggun",
+  "item",
+  6,
+  "transport",
+  "Sentinel Steam Waggon (1905): 40 kW, 2560 kg, gross 12000 kg."
+ ],
+ [
   "karbad luichda Dryu Vaun Traileri",
   "item",
   6,
@@ -322,6 +350,48 @@
   "Heavy Equipment Transporter Semitrailer (1977): payload 55000 kg, 15.5 m."
  ],
  [
+  "karbad luichda Handkurt",
+  "item",
+  2,
+  "transport",
+  "Handcart (-3000): payload 300 kg, 2.0 m."
+ ],
+ [
+  "karbad luichda Twou-Wheeledi Kart",
+  "item",
+  2,
+  "transport",
+  "Two-Wheeled Cart (-3000): payload 600 kg, 2.5 m."
+ ],
+ [
+  "karbad luichda Oux Kart",
+  "item",
+  3,
+  "transport",
+  "Ox Cart (-2000): payload 1000 kg, 3.0 m."
+ ],
+ [
+  "karbad luichda Fouru-Wheeledi Wagun",
+  "item",
+  4,
+  "transport",
+  "Four-Wheeled Wagon (-500): payload 2000 kg, 4.5 m."
+ ],
+ [
+  "karbad luichda Konestoga Freigt Wagun",
+  "item",
+  5,
+  "transport",
+  "Conestoga Freight Wagon (1750): payload 5000 kg, 6.0 m."
+ ],
+ [
+  "karbad luichda Drauy",
+  "item",
+  4,
+  "transport",
+  "Dray (1200): payload 3000 kg, 4.5 m."
+ ],
+ [
   "karbad oibri Auveling aund Pourter Roadu Rolder",
   "item",
   6,
@@ -411,5 +481,47 @@
   7,
   "transport",
   "Caterpillar 797 Haul Truck (1999): 2983 kW, 360000 kg, road role haul."
+ ],
+ [
+  "karbad oibri Haund-Hauledi Stoni Rolder",
+  "item",
+  2,
+  "transport",
+  "Hand-Hauled Stone Roller (-2500): 0 kW, 600 kg, road role compact."
+ ],
+ [
+  "karbad oibri Horsi-Drauwn Rolder",
+  "item",
+  4,
+  "transport",
+  "Horse-Drawn Roller (1800): 0 kW, 3000 kg, road role compact."
+ ],
+ [
+  "karbad oibri Tiep Kart",
+  "item",
+  4,
+  "transport",
+  "Tip Cart (1700): 0 kW, 800 kg, road role haul."
+ ],
+ [
+  "karbad oibri Friesno Skraper",
+  "item",
+  6,
+  "transport",
+  "Fresno Scraper (1883): 0 kW, 400 kg, road role grade."
+ ],
+ [
+  "karbad oibri Horsi-Drauwn Roadu Grauder",
+  "item",
+  6,
+  "transport",
+  "Horse-Drawn Road Grader (1885): 0 kW, 1500 kg, road role grade."
+ ],
+ [
+  "karbad oibri Stiem Shouvel",
+  "item",
+  5,
+  "transport",
+  "Steam Shovel (1839): 30 kW, 18000 kg, road role dig."
  ]
 ]

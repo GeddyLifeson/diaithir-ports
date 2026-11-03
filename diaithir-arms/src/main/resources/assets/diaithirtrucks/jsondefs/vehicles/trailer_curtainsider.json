@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Curtainsider Trailer",
-  "description": "Curtainsider Trailer (1960): 13.6 m, 3 axles, payload 24 t. Hooks onto any tractor fifth wheel.",
+  "description": "Curtainsider Trailer (1960): 13.6 m, 3 axles, payload 24000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:27"

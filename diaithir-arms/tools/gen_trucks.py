@@ -38,6 +38,7 @@ def atlas(base, path):
     os.makedirs(os.path.dirname(path), exist_ok=True); im.save(path)
 
 AGE = lambda y: 'V' if y < 1861 else 'VI' if y <= 1945 else 'VII'
+age_of = lambda vid, y: ros.AGE_OVERRIDE.get(vid) or AGE(y)
 
 # ---------------- models ----------------
 def wheel_model(r, wd):
@@ -49,6 +50,7 @@ def axle_zs(front, n, gap=1.35, rear=None):
 def tractor(layout, axles, kw, year):
     """Returns (Obj, info). z+ is forward, y up, ground at y=0, wheel radius 0.5."""
     o = Obj(); tri = layout == 'tri'
+    if layout in ('team', 'steam'): return primitive_tractor(layout, axles, kw)
     wb = 2.2 if tri else (3.8 if layout == 'cab' else 4.4)
     zf = wb * 0.62; zr = zf - wb
     rear = [zr - i * 1.3 for i in range(max(1, axles - 1))]
@@ -85,6 +87,17 @@ def tractor(layout, axles, kw, year):
         wheels += [(-0.95, z), (0.95, z)]
     o.add('lamp', box(-0.5, 1.0, zf + (2.1 if layout == 'conv' else 0.9), 0.5, 1.2, zf + (2.2 if layout == 'conv' else 1.0)), R['glass'])
     return o, dict(wheels=wheels, fifth=fifth, seat=seat, front=zf + (2.2 if layout == 'conv' else 1.0), rear=rear[-1] - 0.9, h=3.6, w=2.5)
+
+def primitive_tractor(layout, axles, kw):
+    o = Obj()
+    if layout == 'team':
+        o.add('limber', box(-0.5, 0.7, -1.2, 0.5, 0.95, 0.6), R['paint']); o.add('seat', box(-0.3, 0.95, -0.9, 0.3, 1.5, -0.5), R['dark']); o.add('pole', box(-0.08, 0.8, 0.6, 0.08, 0.9, 3.6), R['dark'])
+        for i, sx in enumerate((-0.45, 0.45)): o.add('animal%d' % i, box(sx - 0.3, 0.7, 1.6, sx + 0.3, 1.9, 3.4), R['dark']); o.add('head%d' % i, box(sx - 0.15, 1.5, 3.4, sx + 0.15, 2.0, 3.9), R['dark'])
+        wheels = [(-0.7, 0.2), (0.7, 0.2), (-0.7, -0.9), (0.7, -0.9)]; return o, dict(wheels=wheels, fifth=-1.0, seat=-0.7, front=3.9, rear=-1.3, h=2.2, w=1.8, r=0.45, drawbar=-1.3)
+    o.add('boiler', cyl_z(0.0, 1.9, -1.2, 2.2, 0.8, 12), R['steel']); o.add('chimney', box(-0.18, 2.6, 1.7, 0.18, 3.8, 2.1), R['dark']); o.add('firebox', box(-0.8, 1.0, -2.0, 0.8, 2.4, -1.2), R['paint'])
+    o.add('cylinder', box(-0.3, 2.7, 0.6, 0.3, 3.0, 1.2), R['chrome']); o.add('canopy', box(-1.0, 3.5, -2.2, 1.0, 3.6, -0.6), R['paint'])
+    wheels = [(-1.0, 1.5), (1.0, 1.5), (-1.15, -1.2), (1.15, -1.2)]
+    return o, dict(wheels=wheels, fifth=-1.6, seat=-1.4, front=2.2, rear=-2.2, h=3.8, w=2.8, r=0.5, drawbar=-2.4, big=True)
 
 def trailer(kind, L, axles):
     o = Obj(); z0, z1 = -L / 2, L / 2; hh = 4.0
@@ -125,6 +138,15 @@ def trailer(kind, L, axles):
         o.add('floor', box(-1.25, 1.15, z0, 1.25, 1.3, z1 - 0.2), R['paint'])
         for sx in (-1, 1): o.add('side%d' % sx, box(sx * 1.25 - 0.06, 1.3, z0, sx * 1.25 + 0.06, 3.0, z1 - 0.2), R['paint'])
         o.add('front', box(-1.25, 1.3, z1 - 0.3, 1.25, 3.2, z1 - 0.2), R['paint']); o.add('tail', box(-1.25, 1.3, z0, 1.25, 3.0, z0 + 0.08), R['steel']); hh = 3.2
+    elif kind in ('cart', 'wagon', 'dray'):
+        o = Obj(); h = 1.8 if kind == 'wagon' else 1.2
+        o.add('bed', box(-0.8, 0.7, z0, 0.8, 0.85, z1), R['paint'])
+        for sx in (-1, 1): o.add('side%d' % sx, box(sx * 0.8 - 0.04, 0.85, z0, sx * 0.8 + 0.04, h, z1), R['paint'])
+        o.add('tailboard', box(-0.8, 0.85, z0, 0.8, h, z0 + 0.08), R['paint']); o.add('drawbar', box(-0.06, 0.7, z1, 0.06, 0.8, z1 + 1.6), R['dark'])
+        if kind == 'wagon': o.add('canvas', box(-0.78, h, z0, 0.78, h + 0.9, z1), R['chrome'])
+        if kind == 'dray': o.add('barrels', cyl_z(0.0, 1.2, z0 + 0.3, z1 - 0.3, 0.38, 8), R['dark'])
+        zs = [z0 + 0.8 + i * (L - 1.6) / max(1, axles - 1) for i in range(axles)] if axles > 1 else [0.0]
+        return o, dict(zs=zs, kingpin=z1, w=1.8, h=h + (0.9 if kind == 'wagon' else 0), L=L, deck=0.85, primitive=True, wide=0.75)
     elif kind == 'modular':
         o.add('deck', box(-1.6, 0.9, z0, 1.6, 1.05, z1), R['paint']); hh = 1.1
     zs = [z0 + 1.2 + i * 1.35 for i in range(axles)]
@@ -138,7 +160,25 @@ CONS = {  # kind: (wheel layout, drive)
  'haul': dict(wheels=[(-2.0, 4.0), (2.0, 4.0), (-2.0, -2.0), (2.0, -2.0), (-2.0, -3.9), (2.0, -3.9)], r=1.8), 'mixer': dict(truck=True), 'pump': dict(truck=True),
 }
 
+def primitive_construction(kind):
+    o = Obj()
+    if kind == 'hroller':
+        o.add('drum', cyl_x(0.5, 0.0, -0.8, 0.8, 0.5, 12), R['steel']); o.add('frame', box(-0.9, 0.9, -0.5, 0.9, 1.0, 0.5), R['paint']); o.add('shaft', box(-0.06, 0.8, 0.5, 0.06, 0.9, 2.6), R['dark'])
+        return o, dict(wheels=[], drum=True, w=1.8, h=1.2, L=3.0)
+    if kind in ('dumpcart', 'scraper'):
+        if kind == 'dumpcart':
+            o.add('bed', box(-0.7, 0.7, -0.9, 0.7, 0.8, 0.9), R['paint'])
+            for sx in (-1, 1): o.add('side%d' % sx, box(sx * 0.7 - 0.04, 0.8, -0.9, sx * 0.7 + 0.04, 1.3, 0.9), R['paint'])
+        else:
+            o.add('bowl', box(-0.6, 0.3, -0.6, 0.6, 0.9, 0.6), R['steel']); o.add('handle', box(-0.05, 0.9, -1.4, 0.05, 1.3, -0.5), R['dark'])
+        o.add('shaft', box(-0.06, 0.6, 0.6, 0.06, 0.7, 2.6), R['dark'])
+        return o, dict(wheels=[(-0.8, 0.0), (0.8, 0.0)], r=0.5, w=1.8, h=1.4, L=3.4)
+    o.add('boiler', cyl_z(0.0, 1.9, -1.4, 1.2, 0.8, 12), R['steel']); o.add('chimney', box(-0.18, 2.6, 0.8, 0.18, 3.8, 1.2), R['dark']); o.add('boom', box(-0.15, 2.0, 1.2, 0.15, 4.6, 1.5), R['dark']); o.add('bucket', box(-0.5, 0.3, 1.5, 0.5, 1.2, 2.3), R['steel'])
+    o.add('carriage', box(-1.0, 0.8, -2.0, 1.0, 1.1, 1.6), R['paint'])
+    return o, dict(wheels=[(-1.0, 1.0), (1.0, 1.0), (-1.0, -1.2), (1.0, -1.2)], r=0.5, w=2.2, h=4.6, L=4.4)
+
 def construction(kind, kw):
+    if kind in ('hroller', 'dumpcart', 'scraper', 'steamshovel'): return primitive_construction(kind)
     o = Obj(); c = CONS[kind]; info = {}
     if c.get('truck'):
         t, ti = tractor('cab', 4, kw, 2000); o = t; info = ti
@@ -174,9 +214,13 @@ def construction(kind, kw):
 
 # ---------------- parts ----------------
 ENGINE_CLASSES = [(150, 'e150'), (260, 'e250'), (340, 'e350'), (450, 'e450'), (700, 'e700'), (4000, 'e3000')]
-CLS_KW = {'e150': 130, 'e250': 250, 'e350': 335, 'e450': 400, 'e700': 600, 'e3000': 2500}
+CLS_KW = {'draft': 3, 's30': 40, 's80': 90, 'e150': 130, 'e250': 250, 'e350': 335, 'e450': 400, 'e700': 600, 'e3000': 2500}
 TIERS = {'stock': ('Stock', 1.0, 1.0), 'eff': ('Efficiency', 1.0, 0.85), 'speed': ('Speed', 1.15, 1.30)}  # power x, fuel x (speed raises W and burn; efficiency = more J per litre)
-def eng_class(kw):
+ENAME = {'draft': 'Draft Team', 's30': 'Steam Engine', 's80': 'Steam Engine'}
+FUEL = {'draft': 'hay', 's30': 'coal', 's80': 'coal'}  # primitive power; IV needs a fuel mapping for these (untested)
+def eng_class(kw, prim=None):
+    if prim == 'draft': return 'draft'
+    if prim == 'steam': return 's30' if kw <= 40 else 's80'
     return next(c for lim, c in ENGINE_CLASSES if kw <= lim)
 LPH = 0.25  # litres of diesel per kWh at full load (about 40 MJ/L at 36 % efficiency)
 
@@ -188,13 +232,14 @@ def write_parts():
         s = 0.5 + min(1.5, kw / 600); o = Obj(); o.add('block', box(-0.4 * s, 0.0, -0.6 * s, 0.4 * s, 0.7 * s, 0.6 * s), R['steel']); o.add('head', box(-0.35 * s, 0.7 * s, -0.55 * s, 0.35 * s, 0.9 * s, 0.55 * s), R['dark']); o.write(f'{A}/objmodels/parts/engine_{cls}.obj')
         for tid, (tn, px, fx) in TIERS.items():
             pid = f'engine_{cls}_{tid}'; p = kw * px; rpm = 2400 if kw < 800 else 1800
+            if cls in FUEL: rpm = 600
             w(f'{A}/jsondefs/parts/{pid}.json', {
-             'general': {'type': 'engine_car', 'name': f'Diesel Engine {kw} kW ({tn})', 'materialLists': [['minecraft:iron_block:0:%d' % max(2, kw // 60)], ['minecraft:piston:0:%d' % (4 if kw < 500 else 8)]]},
-             'engine': {'type': 'NORMAL', 'isAutomatic': False, 'fuelType': 'diesel', 'fuelConsumption': round(kw / 300 * fx * (px if tid == 'speed' else 1) * 0.9, 3), 'maxRPM': int(rpm * (1.05 if tid == 'speed' else 1)), 'maxSafeRPM': int(rpm * 0.92), 'idleRPM': 600, 'startRPM': 450,
-                        'stallRPM': 350, 'revlimitRPM': int(rpm * 1.1), 'starterPower': 6, 'gearRatios': [-9.0, 0.0, 12.0, 8.0, 5.5, 4.0, 3.0, 2.2, 1.6, 1.2] if kw < 800 else [-4.0, 0.0, 6.0, 4.0, 2.8, 2.0, 1.4],
+             'general': {'type': 'engine_car', 'name': f'{ENAME.get(cls, "Diesel Engine")} {kw} kW ({tn})', 'materialLists': [['minecraft:iron_block:0:%d' % max(2, kw // 60)], ['minecraft:piston:0:%d' % (4 if kw < 500 else 8)]]},
+             'engine': {'type': 'NORMAL', 'isAutomatic': False, 'fuelType': FUEL.get(cls, 'diesel'), 'fuelConsumption': round(kw / 300 * fx * (px if tid == 'speed' else 1) * 0.9, 3), 'maxRPM': int(rpm * (1.05 if tid == 'speed' else 1)), 'maxSafeRPM': int(rpm * 0.92), 'idleRPM': 600 if cls not in FUEL else 150, 'startRPM': 450 if cls not in FUEL else 100,
+                        'stallRPM': 350 if cls not in FUEL else 50, 'revlimitRPM': int(rpm * 1.1), 'starterPower': 6, 'gearRatios': [-6.0, 0.0, 8.0, 5.0, 3.0] if cls in FUEL else [-9.0, 0.0, 12.0, 8.0, 5.5, 4.0, 3.0, 2.2, 1.6, 1.2] if kw < 800 else [-4.0, 0.0, 6.0, 4.0, 2.8, 2.0, 1.4],
                         'upShiftRPM': [int(rpm * 0.85)] * 7, 'downShiftRPM': [1000] * 7, 'shiftSpeed': 14, 'clutchTime': 14, 'revResistance': 8, 'heatingCoefficient': 0.4, 'coolingCoefficient': 0.6, 'engineWearFactor': 0.3},
-             'definitions': [{'subName': '', 'name': f'Diesel Engine {kw} kW ({tn})', 'modelName': f'engine_{cls}', 'textureName': 'engine', 'extraMaterialLists': [[]]}]})
-            parts.append(dict(id=pid, name=f'Diesel Engine {kw} kW ({tn})', kw=round(p), lph=round(p * LPH * fx), mass=int(kw * 4.5), tier=tid))
+             'definitions': [{'subName': '', 'name': f'{ENAME.get(cls, "Diesel Engine")} {kw} kW ({tn})', 'modelName': f'engine_{cls}', 'textureName': 'engine', 'extraMaterialLists': [[]]}]})
+            parts.append(dict(id=pid, name=f'{ENAME.get(cls, "Diesel Engine")} {kw} kW ({tn})', kw=round(p), lph=round(p * LPH * fx), mass=int(kw * 4.5), tier=tid))
     for pid, nm, r, wd in (('truck_wheel', 'Truck Wheel', 0.5, 0.35), ('heavy_wheel', 'Heavy Wheel', 0.7, 0.45), ('giant_wheel', 'Giant Wheel', 1.8, 1.0), ('small_wheel', 'Small Wheel', 0.35, 0.25)):
         w(f'{A}/jsondefs/parts/{pid}.json', {
          'general': {'type': 'ground_wheel', 'name': nm, 'materialLists': [['minecraft:iron_ingot:0:%d' % int(8 * r), 'minecraft:black_dye:0:%d' % int(6 * r + 1)]]},
@@ -222,7 +267,7 @@ def write_parts():
         cargo.append(dict(id=pid, name=nm, kind=kind.lower(), units=units, slots=units * 9 if kind == 'CRATE' else 0, litres=units * 10000 if kind == 'BARREL' else 0))
     return parts, cargo
 
-def engine_for(kw, tier='stock'): return f'{PK}:engine_{eng_class(kw)}_{tier}'
+def engine_for(kw, tier='stock', prim=None): return f'{PK}:engine_{eng_class(kw, prim)}_{tier}'
 def mats(mass, kind='truck'):
     return [['minecraft:iron_ingot:0:%d' % max(8, mass // 400)], ['minecraft:iron_block:0:%d' % max(1, mass // 4000)], ['minecraft:redstone:0:8'], ['minecraft:black_dye:0:4']]
 def paints(pal, name, mdl): return [{'subName': s, 'name': name + f' ({lab})', 'modelName': mdl, 'textureName': 'paint' + s, 'extraMaterialLists': [[]]} for s, (lab, _) in pal.items()]
@@ -250,35 +295,46 @@ def main():
     for s in PAINTS: atlas(PAINTS[s][1], f'{A}/textures/vehicles/paint{s}.png')
     for s in CPAINTS: atlas(CPAINTS[s][1], f'{A}/textures/vehicles/paint{s}.png')
     man = {'tractors': [], 'trailers': [], 'construction': [], 'engines': eng_parts, 'cargo_parts': cargo_parts}
-    for (vid, nm, maker, yr, ctry, lay, ax, kw, page, gvw) in ros.TRACTORS:
+    for (vid, nm, maker, yr, ctry, lay, ax, kw, page, gvw) in ros.TRACTORS + ros.PRIM_TRACTORS:
+        prim = {'team': 'draft', 'steam': 'steam'}.get(lay)
         o, i = tractor(lay, ax, kw, yr); mid = 'truck_' + vid; o.write(f'{A}/objmodels/vehicles/{mid}.obj')
         wid = 'small_wheel' if lay == 'tri' else 'truck_wheel'
-        parts = [{'pos': [0, 1.0, i['rear'] + 1.4], 'types': ['engine_car'], 'defaultPart': engine_for(kw)}]
+        parts = [{'pos': [0, 1.0, i['rear'] + 1.4], 'types': ['engine_car'], 'defaultPart': engine_for(kw, prim=prim)}]
         parts += [{'pos': [x, 0.5 if lay != 'tri' else 0.35, z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:{wid}'} for x, z in i['wheels']]
         parts += [{'pos': [-0.5, 1.5, i['seat']], 'types': ['seat'], 'isController': True, 'defaultPart': f'{PK}:seat', 'dismountPos': [-1.8, 0.0, i['seat']]}]
         if lay != 'tri': parts.append({'pos': [0.5, 1.5, i['seat']], 'types': ['seat'], 'defaultPart': f'{PK}:seat'})
         mass = int(2000 + kw * 14) if lay != 'tri' else 1500
         fuel = int(min(1500, max(60, kw * 2.4)))
-        grp = [{'groupName': 'fifthwheel', 'canInitiateConnections': True, 'isHitch': True, 'connections': [{'type': 'fifthwheel', 'pos': [0, 1.3, i['fifth']], 'distance': 2.0}]}]
-        write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): {kw} kW tractor unit, {ax} axles, gross {gvw // 1000} t.', i, mass, 700 + kw, parts, {'connectionGroups': grp}, PAINTS, mid, motorized(mass, fuel, kw))
-        man['tractors'].append(dict(id=mid, name=nm, maker=maker, year=yr, country=ctry, layout=lay, axles=ax, power_w=kw * 1000, mass_kg=mass, gvw_kg=gvw, fuel_l=fuel, age=AGE(yr), wiki=page))
-    for (vid, nm, yr, kind, cg, payload, ax, L, page) in ros.TRAILERS:
+        if prim == 'draft': fuel = 60
+        grp = [{'groupName': 'drawbar', 'canInitiateConnections': True, 'isHitch': True, 'connections': [{'type': 'drawbar', 'pos': [0, 0.8, i['rear'] - 0.2], 'distance': 2.0}]}]
+        if not prim: grp.insert(0, {'groupName': 'fifthwheel', 'canInitiateConnections': True, 'isHitch': True, 'connections': [{'type': 'fifthwheel', 'pos': [0, 1.3, i['fifth']], 'distance': 2.0}]})
+        write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): {kw} kW {"tractor unit" if not prim else "motive unit"}, {ax} axles, gross {gvw // 1000} t.', i, mass, int(700 + kw), parts, {'connectionGroups': grp}, PAINTS, mid, motorized(mass, fuel, kw))
+        man['tractors'].append(dict(id=mid, name=nm, maker=maker, year=yr, country=ctry, layout=lay, axles=ax, power_w=int(kw * 1000), mass_kg=mass, gvw_kg=gvw, fuel_l=fuel, age=age_of(mid, yr), wiki=page))
+    for (vid, nm, yr, kind, cg, payload, ax, L, page) in ros.TRAILERS + ros.PRIM_TRAILERS:
         o, i = trailer(kind, L, ax); mid = 'trailer_' + vid; o.write(f'{A}/objmodels/vehicles/{mid}.obj')
         wr = 0.35 if kind == 'modular' else 0.5
-        parts = [{'pos': [sx * 0.95, 0.5, z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:truck_wheel'} for z in i['zs'] for sx in (-1, 1)]
+        pw = i.get('wide', 0.95)
+        parts = [{'pos': [sx * pw, 0.5, z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:truck_wheel'} for z in i['zs'] for sx in (-1, 1)]
         crate = tank = None
         if cg == 'crate':
-            cid = 'crate_l' if payload >= 40000 or kind in ('box', 'curtain', 'chassis') else 'crate_m'; parts.append({'pos': [0, i['deck'] + 0.3, 0], 'types': ['interactable_crate'], 'defaultPart': f'{PK}:{cid}'}); crate = cid
+            cid = 'crate_l' if payload >= 40000 or kind in ('box', 'curtain', 'chassis') else 'crate_s' if payload < 4000 else 'crate_m'; parts.append({'pos': [0, i['deck'] + 0.3, 0], 'types': ['interactable_crate'], 'defaultPart': f'{PK}:{cid}'}); crate = cid
         elif cg == 'tank':
             parts.append({'pos': [0, 2.2, 0], 'types': ['interactable_barrel'], 'defaultPart': f'{PK}:tank_30'}); tank = 'tank_30'
-        grp = [{'groupName': 'kingpin', 'canInitiateConnections': False, 'isHookup': True, 'connections': [{'type': 'fifthwheel', 'pos': [0, 1.3, i['kingpin']], 'distance': 2.0}]}]
+        grp = [{'groupName': 'kingpin', 'canInitiateConnections': False, 'isHookup': True, 'connections': [{'type': 'fifthwheel', 'pos': [0, 1.3, i['kingpin']], 'distance': 2.0}]}] if not i.get('primitive') else \
+              [{'groupName': 'drawbar', 'canInitiateConnections': False, 'isHookup': True, 'connections': [{'type': 'drawbar', 'pos': [0, 0.8, i['kingpin'] + 1.6], 'distance': 2.0}]}]
         if cg == 'car':
             grp.append({'groupName': 'deck', 'canInitiateConnections': True, 'isHitch': True, 'connections': [{'type': 'tow', 'pos': [0, i['deck'] + 0.2, z], 'mounted': True, 'distance': 3.0} for z in (-L * 0.25, L * 0.1)]})
-        mass = int(5000 + payload * 0.25)
-        write_vehicle(mid, nm, f'{nm} ({yr}): {L:.1f} m, {ax} axles, payload {payload // 1000} t. Hooks onto any tractor fifth wheel.', i, mass, 800, parts, {'connectionGroups': grp}, PAINTS, mid, motorized(mass, 0, 0, trailer=True), trailer=True)
-        man['trailers'].append(dict(id=mid, name=nm, year=yr, kind=kind, cargo=cg, crate=crate, tank=tank, payload_kg=payload, axles=ax, length_m=L, mass_kg=mass, age=AGE(yr), wiki=page))
-    for (vid, nm, maker, yr, ctry, kind, kw, mass, page, role) in ros.CONSTRUCTION:
+        mass = int(5000 + payload * 0.25) if not i.get('primitive') else int(150 + payload * 0.3)
+        write_vehicle(mid, nm, f'{nm} ({yr}): {L:.1f} m, {ax} axles, payload {payload} kg. Hooks onto a {"drawbar" if i.get("primitive") else "fifth wheel"}.', i, mass, 800, parts, {'connectionGroups': grp}, PAINTS, mid, motorized(mass, 0, 0, trailer=True), trailer=True)
+        man['trailers'].append(dict(id=mid, name=nm, year=yr, kind=kind, cargo=cg, crate=crate, tank=tank, payload_kg=payload, axles=ax, length_m=L, mass_kg=mass, age=age_of(mid, yr), wiki=page))
+    for (vid, nm, maker, yr, ctry, kind, kw, mass, page, role) in ros.CONSTRUCTION + ros.PRIM_CONSTRUCTION:
         o, i = construction(kind, kw); mid = 'cv_' + vid; o.write(f'{A}/objmodels/vehicles/{mid}.obj')
+        if kind in ('hroller', 'dumpcart', 'scraper'):  # drawn by a team or a steam engine
+            parts = [{'pos': [x, i.get('r', 0.35), z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:{"small_wheel" if kind == "hroller" else "truck_wheel"}'} for x, z in (i['wheels'] or [(-0.9, 0.0), (0.9, 0.0)])]
+            if kind == 'dumpcart': parts.append({'pos': [0, 0.9, 0], 'types': ['interactable_crate'], 'defaultPart': f'{PK}:crate_s'})
+            grp = [{'groupName': 'drawbar', 'canInitiateConnections': False, 'isHookup': True, 'connections': [{'type': 'drawbar', 'pos': [0, 0.8, 2.6], 'distance': 2.0}]}]
+            write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): drawn work vehicle, {mass} kg. Road role: {role}.', i, mass, 300, parts, {'connectionGroups': grp}, CPAINTS, mid, motorized(mass, 0, 0, trailer=True), trailer=True)
+            man['construction'].append(dict(id=mid, name=nm, maker=maker, year=yr, country=ctry, kind=kind, power_w=0, mass_kg=mass, fuel_l=0, road_role=role, age=age_of(mid, yr), wiki=page)); continue
         if i.get('tread'):
             parts = [{'pos': [sx * i['tx'], 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:cv_track'} for sx in (-1, 1)]
             seat = (0.0, 2.1, 0.2)
@@ -288,7 +344,7 @@ def main():
             r = i['r']; wid = {0.35: 'small_wheel', 0.5: 'truck_wheel', 0.7: 'heavy_wheel', 0.9: 'heavy_wheel', 0.65: 'heavy_wheel', 1.8: 'giant_wheel'}[r]
             parts = [{'pos': [x, r, z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:{wid}'} for x, z in i['wheels']]
             seat = (0.0, r + 1.5, (i['wheels'][0][1] + i['wheels'][-1][1]) / 2 if kind not in ('mixer', 'pump') else i['seat'])
-        parts.append({'pos': [0, 1.0, 0.0], 'types': ['engine_car'], 'defaultPart': engine_for(kw)})
+        parts.append({'pos': [0, 1.0, 0.0], 'types': ['engine_car'], 'defaultPart': engine_for(kw, prim='steam' if kind == 'steamshovel' else None)})
         parts.append({'pos': list(seat), 'types': ['seat'], 'isController': True, 'defaultPart': f'{PK}:seat', 'dismountPos': [-2.0, 0.0, seat[2]]})
         extra = {}
         if kind == 'mixer': parts.append({'pos': [0, 2.3, -2.0], 'types': ['interactable_crate'], 'defaultPart': f'{PK}:crate_m'})
@@ -297,8 +353,8 @@ def main():
         fuel = int(min(3000, max(60, kw * 2.4)))
         mot = motorized(mass, fuel, kw)
         if i.get('tread'): mot.update({'hasSkidSteer': True, 'hasPermanentSkidSteer': True})
-        write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): {kw} kW, {mass // 1000} t. Road role: {role}.', i, mass, 600 + kw // 2, parts, extra, CPAINTS, mid, mot)
-        man['construction'].append(dict(id=mid, name=nm, maker=maker, year=yr, country=ctry, kind=kind, power_w=kw * 1000, mass_kg=mass, fuel_l=fuel, road_role=role, age=AGE(yr), wiki=page))
+        write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): {kw} kW, {mass // 1000} t. Road role: {role}.', i, mass, int(600 + kw // 2), parts, extra, CPAINTS, mid, mot)
+        man['construction'].append(dict(id=mid, name=nm, maker=maker, year=yr, country=ctry, kind=kind, power_w=int(kw * 1000), mass_kg=mass, fuel_l=fuel, road_role=role, age=age_of(mid, yr), wiki=page))
     w(f'{M}/truck_manifest.json', man)
     return man
 

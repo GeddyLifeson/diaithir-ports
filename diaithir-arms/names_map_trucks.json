@@ -127,6 +127,22 @@
   "diaithiris": "karbad tarruing Kienwurd T680",
   "english": "Kenworth T680"
  },
+ "mts:diaithirtrucks.truck_ox_team": {
+  "diaithiris": "karbad tarruing Oux Tiem aund Liember",
+  "english": "Ox Team and Limber"
+ },
+ "mts:diaithirtrucks.truck_horse_team": {
+  "diaithiris": "karbad tarruing Horsi Tiem aund Liember",
+  "english": "Horse Team and Limber"
+ },
+ "mts:diaithirtrucks.truck_steam_traction": {
+  "diaithiris": "karbad tarruing Stiem Traktion Iengini",
+  "english": "Steam Traction Engine"
+ },
+ "mts:diaithirtrucks.truck_steam_wagon": {
+  "diaithiris": "karbad tarruing Sientinel Stiem Waggun",
+  "english": "Sentinel Steam Waggon"
+ },
  "mts:diaithirtrucks.trailer_dry_van": {
   "diaithiris": "karbad luichda Dryu Vaun Traileri",
   "english": "Dry Van Trailer"
@@ -183,6 +199,30 @@
   "diaithiris": "karbad luichda Hievy Ieqoipment Transpurter Siemitruiler",
   "english": "Heavy Equipment Transporter Semitrailer"
  },
+ "mts:diaithirtrucks.trailer_handcart": {
+  "diaithiris": "karbad luichda Handkurt",
+  "english": "Handcart"
+ },
+ "mts:diaithirtrucks.trailer_cart": {
+  "diaithiris": "karbad luichda Twou-Wheeledi Kart",
+  "english": "Two-Wheeled Cart"
+ },
+ "mts:diaithirtrucks.trailer_oxcart": {
+  "diaithiris": "karbad luichda Oux Kart",
+  "english": "Ox Cart"
+ },
+ "mts:diaithirtrucks.trailer_wagon": {
+  "diaithiris": "karbad luichda Fouru-Wheeledi Wagun",
+  "english": "Four-Wheeled Wagon"
+ },
+ "mts:diaithirtrucks.trailer_conestoga": {
+  "diaithiris": "karbad luichda Konestoga Freigt Wagun",
+  "english": "Conestoga Freight Wagon"
+ },
+ "mts:diaithirtrucks.trailer_dray": {
+  "diaithiris": "karbad luichda Drauy",
+  "english": "Dray"
+ },
  "mts:diaithirtrucks.cv_steam_roller": {
   "diaithiris": "karbad oibri Auveling aund Pourter Roadu Rolder",
   "english": "Aveling and Porter Road Roller"
@@ -234,6 +274,66 @@
  "mts:diaithirtrucks.cv_cat_797_haul": {
   "diaithiris": "karbad oibri Katerpildur 797 Haulu Trukk",
   "english": "Caterpillar 797 Haul Truck"
+ },
+ "mts:diaithirtrucks.cv_hand_roller": {
+  "diaithiris": "karbad oibri Haund-Hauledi Stoni Rolder",
+  "english": "Hand-Hauled Stone Roller"
+ },
+ "mts:diaithirtrucks.cv_horse_roller": {
+  "diaithiris": "karbad oibri Horsi-Drauwn Rolder",
+  "english": "Horse-Drawn Roller"
+ },
+ "mts:diaithirtrucks.cv_dump_cart": {
+  "diaithiris": "karbad oibri Tiep Kart",
+  "english": "Tip Cart"
+ },
+ "mts:diaithirtrucks.cv_fresno_scraper": {
+  "diaithiris": "karbad oibri Friesno Skraper",
+  "english": "Fresno Scraper"
+ },
+ "mts:diaithirtrucks.cv_horse_grader": {
+  "diaithiris": "karbad oibri Horsi-Drauwn Roadu Grauder",
+  "english": "Horse-Drawn Road Grader"
+ },
+ "mts:diaithirtrucks.cv_steam_shovel": {
+  "diaithiris": "karbad oibri Stiem Shouvel",
+  "english": "Steam Shovel"
+ },
+ "mts:diaithirtrucks.engine_draft_stock": {
+  "diaithiris": "indel Drauft Tiem 3 kwu (Stokk)",
+  "english": "Draft Team 3 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_draft_eff": {
+  "diaithiris": "indel Drauft Tiem 3 kwu (Ieffikienky)",
+  "english": "Draft Team 3 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_draft_speed": {
+  "diaithiris": "indel Drauft Tiem 3 kwu (Speedi)",
+  "english": "Draft Team 3 kW (Speed)"
+ },
+ "mts:diaithirtrucks.engine_s30_stock": {
+  "diaithiris": "indel Stiem Iengini 40 kwu (Stokk)",
+  "english": "Steam Engine 40 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_s30_eff": {
+  "diaithiris": "indel Stiem Iengini 40 kwu (Ieffikienky)",
+  "english": "Steam Engine 40 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_s30_speed": {
+  "diaithiris": "indel Stiem Iengini 40 kwu (Speedi)",
+  "english": "Steam Engine 40 kW (Speed)"
+ },
+ "mts:diaithirtrucks.engine_s80_stock": {
+  "diaithiris": "indel Stiem Iengini 90 kwu (Stokk)",
+  "english": "Steam Engine 90 kW (Stock)"
+ },
+ "mts:diaithirtrucks.engine_s80_eff": {
+  "diaithiris": "indel Stiem Iengini 90 kwu (Ieffikienky)",
+  "english": "Steam Engine 90 kW (Efficiency)"
+ },
+ "mts:diaithirtrucks.engine_s80_speed": {
+  "diaithiris": "indel Stiem Iengini 90 kwu (Speedi)",
+  "english": "Steam Engine 90 kW (Speed)"
  },
  "mts:diaithirtrucks.engine_e150_stock": {
   "diaithiris": "indel Dieseli Iengini 130 kwu (Stokk)",

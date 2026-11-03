@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Dump Trailer",
-  "description": "Dump Trailer (1930): 9.0 m, 3 axles, payload 24 t. Hooks onto any tractor fifth wheel.",
+  "description": "Dump Trailer (1930): 9.0 m, 3 axles, payload 24000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:27"

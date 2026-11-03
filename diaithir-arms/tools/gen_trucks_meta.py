@@ -26,7 +26,7 @@ for kind, items in (('tractor', man['tractors']), ('trailer', man['trailers']), 
         pw = v.get('power_w', 0) // 1000
         extra = (f"{pw} kW, {v['mass_kg']} kg, gross {v['gvw_kg']} kg" if kind == 'tractor' else f"payload {v['payload_kg']} kg, {v['length_m']} m" if kind == 'trailer'
                  else f"{pw} kW, {v['mass_kg']} kg, road role {v['road_role']}")
-        lib.append([n, 'item', {'V': 5, 'VI': 6, 'VII': 7}[v['age']], 'transport', f"{v['name']} ({v['year']}): {extra}."])
+        lib.append([n, 'item', ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'].index(v['age']) + 1, 'transport', f"{v['name']} ({v['year']}): {extra}."])
         rows.append([v['id'], kind, v['name'], v.get('maker', ''), v['year'], v.get('country', ''), v.get('layout', v.get('kind', '')), pw or '', v['mass_kg'], v.get('gvw_kg', v.get('payload_kg', '')), v['age'], WIKI(v['wiki'])])
 for e in man['engines'] + man['cargo_parts']:
     n = nat('inneal ' + e['name']) if 'kw' in e else nat('ceann ' + e['name'])

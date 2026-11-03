@@ -1,0 +1,38 @@
+{
+ "id": "cv_dump_cart",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 16,
+  "h": 6
+ },
+ "result": "mts:diaithirtrucks.cv_dump_cart",
+ "stages": [
+  {
+   "id": "running_gear",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "wheel",
+     "count": 2
+    }
+   ],
+   "base_ticks": 400,
+   "ghost": "diaithirtrucks:ghost/cv_dump_cart_gear"
+  },
+  {
+   "id": "cargo",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "hold",
+     "count": 1
+    }
+   ],
+   "base_ticks": 300,
+   "ghost": "diaithirtrucks:ghost/cv_dump_cart_body"
+  }
+ ],
+ "crane_speedup": 1.0
+}

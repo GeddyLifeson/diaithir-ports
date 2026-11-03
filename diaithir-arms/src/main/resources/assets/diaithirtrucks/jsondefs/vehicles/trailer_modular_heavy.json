@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Modular Heavy-Haul Trailer",
-  "description": "Modular Heavy-Haul Trailer (1953): 18.0 m, 6 axles, payload 100 t. Hooks onto any tractor fifth wheel.",
+  "description": "Modular Heavy-Haul Trailer (1953): 18.0 m, 6 axles, payload 100000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:75"

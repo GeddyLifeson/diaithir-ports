@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Livestock Trailer",
-  "description": "Livestock Trailer (1930): 16.2 m, 2 axles, payload 18 t. Hooks onto any tractor fifth wheel.",
+  "description": "Livestock Trailer (1930): 16.2 m, 2 axles, payload 18000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:23"

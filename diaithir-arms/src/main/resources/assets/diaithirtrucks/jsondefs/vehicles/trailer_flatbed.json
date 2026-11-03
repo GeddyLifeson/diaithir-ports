@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Flatbed Trailer",
-  "description": "Flatbed Trailer (1925): 14.6 m, 2 axles, payload 24 t. Hooks onto any tractor fifth wheel.",
+  "description": "Flatbed Trailer (1925): 14.6 m, 2 axles, payload 24000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:27"

@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Tank Trailer",
-  "description": "Tank Trailer (1930): 13.7 m, 3 axles, payload 30 t. Hooks onto any tractor fifth wheel.",
+  "description": "Tank Trailer (1930): 13.7 m, 3 axles, payload 30000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:31"

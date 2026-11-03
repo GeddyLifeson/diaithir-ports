@@ -72,3 +72,31 @@ CONSTRUCTION = [
  ('putzmeister_pump', 'Concrete Pump Truck', 'Putzmeister', 1958, 'DE', 'pump', 300, 28000, 'Concrete_pump', 'mix'),
  ('cat_797_haul', 'Caterpillar 797 Haul Truck', 'Caterpillar', 1999, 'US', 'haul', 2983, 360000, 'Caterpillar_797', 'haul'),
 ]
+
+# Primitive predecessors (Marlon 11-03: every modern thing has primitive versions in the early Ages). Same field order as above.
+# Age is explicit (I bone, II copper, III bronze, IV iron, V steel/medieval, VI industrial). Draft power is hay, steam is coal.
+AGE_OVERRIDE = {'truck_ox_team': 'III', 'truck_horse_team': 'IV', 'truck_steam_traction': 'VI', 'truck_steam_wagon': 'VI',
+                'trailer_handcart': 'II', 'trailer_cart': 'II', 'trailer_oxcart': 'III', 'trailer_wagon': 'IV', 'trailer_conestoga': 'V', 'trailer_dray': 'IV',
+                'cv_hand_roller': 'II', 'cv_horse_roller': 'IV', 'cv_fresno_scraper': 'VI', 'cv_horse_grader': 'VI', 'cv_steam_shovel': 'V', 'cv_dump_cart': 'IV'}
+PRIM_TRACTORS = [
+ ('ox_team', 'Ox Team and Limber', 'draft', -3000, 'Mesopotamia', 'team', 2, 1.5, 'Ox', 3000),
+ ('horse_team', 'Horse Team and Limber', 'draft', -800, 'Eurasia', 'team', 2, 3, 'Draft_horse', 5000),
+ ('steam_traction', 'Steam Traction Engine', 'Aveling and Porter', 1862, 'UK', 'steam', 2, 30, 'Traction_engine', 25000),
+ ('steam_wagon', 'Sentinel Steam Waggon', 'Sentinel', 1905, 'UK', 'steam', 2, 40, 'Steam_wagon', 12000),
+]
+PRIM_TRAILERS = [
+ ('handcart', 'Handcart', -3000, 'cart', 'crate', 300, 1, 2.0, 'Handcart'),
+ ('cart', 'Two-Wheeled Cart', -3000, 'cart', 'crate', 600, 1, 2.5, 'Cart'),
+ ('oxcart', 'Ox Cart', -2000, 'cart', 'crate', 1000, 1, 3.0, 'Oxcart'),
+ ('wagon', 'Four-Wheeled Wagon', -500, 'wagon', 'crate', 2000, 2, 4.5, 'Wagon'),
+ ('conestoga', 'Conestoga Freight Wagon', 1750, 'wagon', 'crate', 5000, 2, 6.0, 'Conestoga_wagon'),
+ ('dray', 'Dray', 1200, 'dray', 'crate', 3000, 2, 4.5, 'Dray_(cart)'),
+]
+PRIM_CONSTRUCTION = [
+ ('hand_roller', 'Hand-Hauled Stone Roller', 'unknown', -2500, 'Egypt', 'hroller', 0.5, 600, 'Road_roller', 'compact'),
+ ('horse_roller', 'Horse-Drawn Roller', 'unknown', 1800, 'UK', 'hroller', 3, 3000, 'Road_roller', 'compact'),
+ ('dump_cart', 'Tip Cart', 'unknown', 1700, 'UK', 'dumpcart', 1.5, 800, 'Dump_truck', 'haul'),
+ ('fresno_scraper', 'Fresno Scraper', 'James Porteous', 1883, 'US', 'scraper', 3, 400, 'Scraper_(excavation)', 'grade'),
+ ('horse_grader', 'Horse-Drawn Road Grader', 'J. D. Adams', 1885, 'US', 'scraper', 3, 1500, 'Grader', 'grade'),
+ ('steam_shovel', 'Steam Shovel', 'William Otis', 1839, 'US', 'steamshovel', 30, 18000, 'Steam_shovel', 'dig'),
+]

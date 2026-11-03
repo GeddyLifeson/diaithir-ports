@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Refrigerated Trailer",
-  "description": "Refrigerated Trailer (1939): 16.2 m, 2 axles, payload 19 t. Hooks onto any tractor fifth wheel.",
+  "description": "Refrigerated Trailer (1939): 16.2 m, 2 axles, payload 19000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:24"

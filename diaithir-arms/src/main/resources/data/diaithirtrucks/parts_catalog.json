@@ -2,6 +2,114 @@
  "_doc": "PartDef rows for the assembly yard API (plans/ASSEMBLY_API.md, ports PR 186). Items are Immersive Vehicles part items.",
  "parts": [
   {
+   "id": "engine_draft_stock",
+   "item": "mts:diaithirtrucks.engine_draft_stock",
+   "kind": "engine",
+   "mass_kg": 13,
+   "power_w": 3000,
+   "extra": {
+    "fuel_l_per_h": 1
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
+   "id": "engine_draft_eff",
+   "item": "mts:diaithirtrucks.engine_draft_eff",
+   "kind": "engine",
+   "mass_kg": 13,
+   "power_w": 3000,
+   "extra": {
+    "fuel_l_per_h": 1
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
+   "id": "engine_draft_speed",
+   "item": "mts:diaithirtrucks.engine_draft_speed",
+   "kind": "engine",
+   "mass_kg": 13,
+   "power_w": 3000,
+   "extra": {
+    "fuel_l_per_h": 1
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
+   "id": "engine_s30_stock",
+   "item": "mts:diaithirtrucks.engine_s30_stock",
+   "kind": "engine",
+   "mass_kg": 180,
+   "power_w": 40000,
+   "extra": {
+    "fuel_l_per_h": 10
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
+   "id": "engine_s30_eff",
+   "item": "mts:diaithirtrucks.engine_s30_eff",
+   "kind": "engine",
+   "mass_kg": 180,
+   "power_w": 40000,
+   "extra": {
+    "fuel_l_per_h": 8
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
+   "id": "engine_s30_speed",
+   "item": "mts:diaithirtrucks.engine_s30_speed",
+   "kind": "engine",
+   "mass_kg": 180,
+   "power_w": 46000,
+   "extra": {
+    "fuel_l_per_h": 15
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
+   "id": "engine_s80_stock",
+   "item": "mts:diaithirtrucks.engine_s80_stock",
+   "kind": "engine",
+   "mass_kg": 405,
+   "power_w": 90000,
+   "extra": {
+    "fuel_l_per_h": 22
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
+   "id": "engine_s80_eff",
+   "item": "mts:diaithirtrucks.engine_s80_eff",
+   "kind": "engine",
+   "mass_kg": 405,
+   "power_w": 90000,
+   "extra": {
+    "fuel_l_per_h": 19
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
+   "id": "engine_s80_speed",
+   "item": "mts:diaithirtrucks.engine_s80_speed",
+   "kind": "engine",
+   "mass_kg": 405,
+   "power_w": 103000,
+   "extra": {
+    "fuel_l_per_h": 34
+   },
+   "heavy": false,
+   "min_age": "VI"
+  },
+  {
    "id": "engine_e150_stock",
    "item": "mts:diaithirtrucks.engine_e150_stock",
    "kind": "engine",

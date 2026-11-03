@@ -199,6 +199,30 @@
      "name": "karbad tarruing Kienwurd T680",
      "age": "VII",
      "text": "Kenworth T680"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_ox_team",
+     "name": "karbad tarruing Oux Tiem aund Liember",
+     "age": "III",
+     "text": "Ox Team and Limber"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_horse_team",
+     "name": "karbad tarruing Horsi Tiem aund Liember",
+     "age": "IV",
+     "text": "Horse Team and Limber"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_steam_traction",
+     "name": "karbad tarruing Stiem Traktion Iengini",
+     "age": "VI",
+     "text": "Steam Traction Engine"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_steam_wagon",
+     "name": "karbad tarruing Sientinel Stiem Waggun",
+     "age": "VI",
+     "text": "Sentinel Steam Waggon"
     }
    ]
   },
@@ -291,6 +315,42 @@
      "name": "karbad luichda Hievy Ieqoipment Transpurter Siemitruiler",
      "age": "VII",
      "text": "Heavy Equipment Transporter Semitrailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_handcart",
+     "name": "karbad luichda Handkurt",
+     "age": "II",
+     "text": "Handcart"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_cart",
+     "name": "karbad luichda Twou-Wheeledi Kart",
+     "age": "II",
+     "text": "Two-Wheeled Cart"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_oxcart",
+     "name": "karbad luichda Oux Kart",
+     "age": "III",
+     "text": "Ox Cart"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_wagon",
+     "name": "karbad luichda Fouru-Wheeledi Wagun",
+     "age": "IV",
+     "text": "Four-Wheeled Wagon"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_conestoga",
+     "name": "karbad luichda Konestoga Freigt Wagun",
+     "age": "V",
+     "text": "Conestoga Freight Wagon"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_dray",
+     "name": "karbad luichda Drauy",
+     "age": "IV",
+     "text": "Dray"
     }
    ]
   },
@@ -377,6 +437,42 @@
      "name": "karbad oibri Katerpildur 797 Haulu Trukk",
      "age": "VII",
      "text": "Caterpillar 797 Haul Truck"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_hand_roller",
+     "name": "karbad oibri Haund-Hauledi Stoni Rolder",
+     "age": "II",
+     "text": "Hand-Hauled Stone Roller"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_horse_roller",
+     "name": "karbad oibri Horsi-Drauwn Rolder",
+     "age": "IV",
+     "text": "Horse-Drawn Roller"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_dump_cart",
+     "name": "karbad oibri Tiep Kart",
+     "age": "IV",
+     "text": "Tip Cart"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_fresno_scraper",
+     "name": "karbad oibri Friesno Skraper",
+     "age": "VI",
+     "text": "Fresno Scraper"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_horse_grader",
+     "name": "karbad oibri Horsi-Drauwn Roadu Grauder",
+     "age": "VI",
+     "text": "Horse-Drawn Road Grader"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_steam_shovel",
+     "name": "karbad oibri Stiem Shouvel",
+     "age": "V",
+     "text": "Steam Shovel"
     }
    ]
   }

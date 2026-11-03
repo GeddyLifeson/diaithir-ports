@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Step-Deck Trailer",
-  "description": "Step-Deck Trailer (1940): 15.2 m, 2 axles, payload 22 t. Hooks onto any tractor fifth wheel.",
+  "description": "Step-Deck Trailer (1940): 15.2 m, 2 axles, payload 22000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:26"

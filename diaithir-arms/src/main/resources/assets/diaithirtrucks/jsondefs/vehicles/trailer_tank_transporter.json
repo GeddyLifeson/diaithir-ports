@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Heavy Equipment Transporter Semitrailer",
-  "description": "Heavy Equipment Transporter Semitrailer (1977): 15.5 m, 4 axles, payload 55 t. Hooks onto any tractor fifth wheel.",
+  "description": "Heavy Equipment Transporter Semitrailer (1977): 15.5 m, 4 axles, payload 55000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:46"

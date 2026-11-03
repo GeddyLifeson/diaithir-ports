@@ -227,6 +227,22 @@
      "distance": 2.0
     }
    ]
+  },
+  {
+   "groupName": "drawbar",
+   "canInitiateConnections": true,
+   "isHitch": true,
+   "connections": [
+    {
+     "type": "drawbar",
+     "pos": [
+      0,
+      0.8,
+      -5.144000000000001
+     ],
+     "distance": 2.0
+    }
+   ]
   }
  ]
 }

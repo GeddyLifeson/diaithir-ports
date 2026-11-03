@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Log Trailer",
-  "description": "Log Trailer (1930): 12.0 m, 2 axles, payload 24 t. Hooks onto any tractor fifth wheel.",
+  "description": "Log Trailer (1930): 12.0 m, 2 axles, payload 24000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:27"

@@ -2,7 +2,7 @@
  "general": {
   "type": "vehicle",
   "name": "Car Carrier Trailer",
-  "description": "Car Carrier Trailer (1950): 21.0 m, 2 axles, payload 17 t. Hooks onto any tractor fifth wheel.",
+  "description": "Car Carrier Trailer (1950): 21.0 m, 2 axles, payload 17000 kg. Hooks onto a fifth wheel.",
   "materialLists": [
    [
     "minecraft:iron_ingot:0:23"
