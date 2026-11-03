@@ -67880,11 +67880,6 @@ hash = "9e2b4bf99725de70b4f7db10a2d0d0781d5817540c01ba3ae7bfc5ad3ce8fea7"
 metafile = true
 
 [[files]]
-file = "mods/Aquaculture-26.1.1-2.9.2.pw.toml"
-hash = "b15872190c3761c3d4f65cb71b68ada1da36cbf85f30d2ceb44c7fb2b40973dd"
-metafile = true
-
-[[files]]
 file = "mods/BadOptimizations-2.4.1-26.1-forge.pw.toml"
 hash = "a1affd6a877fc0ed611f209c5c0db608be85fa4b54419d928a62ae51617f58fb"
 metafile = true
@@ -68178,11 +68173,6 @@ hash = "6e2cf1eb95c5e34883b089e4d2c14406b6b0c681c3e13045281f7a8eb447aa16"
 metafile = true
 
 [[files]]
-file = "mods/camol-26.1.2-0.4.1.pw.toml"
-hash = "557e67ed6c67f211e8be5192c0d28a483307eddb118ae08b4cd7262ed95f9cee"
-metafile = true
-
-[[files]]
 file = "mods/cargoboats-26.1.2-1.1.0.pw.toml"
 hash = "815a7baa5556b0e73978448c63749a4fea2189ad928f6158d4580896e062bb83"
 metafile = true
@@ -68233,11 +68223,6 @@ hash = "0b8a0b7607767df922d049a16990fe246ab2430aac2db0ce390535d7f6766e38"
 metafile = true
 
 [[files]]
-file = "mods/cookingforblockheads-neoforge-26.1.2-26.1.2.6.pw.toml"
-hash = "9997ead642a41014b64a2aa98b31eaa1c1a11ffb259715a11c64465c9c1485e4"
-metafile = true
-
-[[files]]
 file = "mods/craftedcore-neoforge-8.1-diaithir.1.jar"
 hash = "ee1345f4c017722df9e130517f327b4d0d7dacc116d9c3b0e768291aae4517cb"
 
@@ -68282,6 +68267,10 @@ hash = "040e7725313ccf05766ee1bcaaa1d2cafba09331c7aba76f9bedfea6be6b9498"
 file = "mods/diaithir-audio-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "bc0c0c6c5bde89dd5dddcdb304f9e6a8516f8caec9fb726fb7454a2038b4b483"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-blocks-suite-neoforge-26.1.2-1.0.0.jar"
+hash = "0477d3ed92bd9e089d3759c8e1feb54d17ae776c5f95edc97b27db04efeda9db"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
@@ -68436,11 +68425,6 @@ metafile = true
 [[files]]
 file = "mods/eternalstarlight-0.9.1+mc26.1.2.jar"
 hash = "d28804de6ae46792c3419c399f80e0d57da64d80c457092318850ccb22e48c4f"
-
-[[files]]
-file = "mods/farmingforblockheads-neoforge-26.1.2-26.1.2.5.pw.toml"
-hash = "1e4ceb457e6198c71151120ed4e03e2598ea6feee29c5b7b194dbca2aa015402"
-metafile = true
 
 [[files]]
 file = "mods/ferritecore-9.0.0-neoforge.pw.toml"
@@ -68607,36 +68591,6 @@ hash = "a55cd4c06c710ceccaf2bad3aecd77fe2b87865d2de0d0654eb33d5d76431f7c"
 metafile = true
 
 [[files]]
-file = "mods/mcw-bridges-3.1.2-mc26.1neoforge.pw.toml"
-hash = "2b0c131622f123ee797b4b0f9fa7bca77c4bf00962781322d74549c29cb6e9e3"
-metafile = true
-
-[[files]]
-file = "mods/mcw-furniture-3.4.2-mc26.1neoforge.pw.toml"
-hash = "ed3d51efe1fa2076dc5c57028de0f8ff471262ba147c13bec427baec2337daf1"
-metafile = true
-
-[[files]]
-file = "mods/mcw-lights-1.1.5-mc26.1neoforge.pw.toml"
-hash = "8cd6e38f6c5a65389f40afd258cf36ff86be4afaa93be23794b9c7365321ca8c"
-metafile = true
-
-[[files]]
-file = "mods/mcw-roofs-2.3.2-mc26.1neoforge.pw.toml"
-hash = "cbf5a83d81efb28d132f0eb8d4f0582c159dca63f50d4d83e1a228c2502888dc"
-metafile = true
-
-[[files]]
-file = "mods/mcw-stairs-1.0.2-mc26.1neoforge.pw.toml"
-hash = "21b1d262b7b9433b2b32b773d03eb555b1e2071f00dc3aeaeb295cfeec26d124"
-metafile = true
-
-[[files]]
-file = "mods/mcw-windows-2.4.2-mc26.1neoforge.pw.toml"
-hash = "22f0fe5b01a19483af93892a2018b08a55e9ac97fc72d1f500da6d72cbb3ec43"
-metafile = true
-
-[[files]]
 file = "mods/merequester-neoforge-26.1.2-1.5.1.pw.toml"
 hash = "256250a350ff319ac72ba3f55c65c44d9eb1984a01502723912fc6e6b4a47200"
 metafile = true
@@ -68716,16 +68670,6 @@ hash = "b5e5672397990e4fabee0b29d24b01d53866c6d0862221228ae702614642df92"
 [[files]]
 file = "mods/productivebees-26.1.2-15.3.0.pw.toml"
 hash = "78bd3bc324dea4feb17734415d76fff686fc3dec3dcebf88ae55af8089f09442"
-metafile = true
-
-[[files]]
-file = "mods/productivefarming-26.1.2-0.13.0.pw.toml"
-hash = "2bb77fbe0e974e3b2b3f55ab9381a4c216cc73fdc20948d9ee90664f0ccd0f27"
-metafile = true
-
-[[files]]
-file = "mods/productivetrees-26.1.2-1.3.1.pw.toml"
-hash = "ea4f9524c198d74c5f9c1ac86327b030104833fb388bd0d8b06913a52efb1f86"
 metafile = true
 
 [[files]]
