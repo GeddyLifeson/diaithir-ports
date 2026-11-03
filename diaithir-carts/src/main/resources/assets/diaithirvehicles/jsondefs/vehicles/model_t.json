@@ -16,7 +16,7 @@
  "motorized": {
   "emptyMass": 540.0,
   "fuelCapacity": 38000,
-  "defaultFuelQty": 0,
+  "defaultFuelQty": 19000,
   "hasRunningLights": true,
   "hasHeadlights": true,
   "axleRatio": 3.6,

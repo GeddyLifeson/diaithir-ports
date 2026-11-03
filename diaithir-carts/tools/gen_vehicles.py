@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """Writes the Diaithir road-vehicle pack for Immersive Vehicles (pack id diaithirvehicles) from vehicles/roster.csv and the shared fuel table.
 Ships inside the diaithir-carts jar (any jar holding assets/<id>/packdefinition.json is a pack), like the tank pack in diaithir-arms.
-Original box models (helpers reused from diaithir-arms/tools/gen_tank.py), flat paint. Rows with pack=data get no vehicle (roster only).
+Original box models (helpers from diaithir-arms/tools/ivgeom.py), flat paint. Rows with pack=data get no vehicle (roster only).
 Usage: python3 -I tools/gen_vehicles.py <diaithir-carts dir>"""
 import csv, json, os, random, sys
 M = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else '.')
-GT = os.path.join(M, '..', 'diaithir-arms', 'tools', 'gen_tank.py')
-sys.argv = [sys.argv[0], os.path.join(M, '..', 'diaithir-arms')]
-exec(open(GT).read().split("\nR = {")[0])  # Obj, box, cyl_x, wedge helpers and the PIL imports
-M = os.path.abspath(os.path.join(os.path.dirname(GT), '..', '..', 'diaithir-carts'))  # gen_tank reassigns M
+sys.path.insert(0, os.path.join(M, '..', 'diaithir-arms', 'tools'))
+from ivgeom import Obj, box, cyl_x, wedge   # shared box, prism and cylinder helpers
+from PIL import Image, ImageDraw
 PK = 'diaithirvehicles'
 A = f'{M}/src/main/resources/assets/{PK}'
 random.seed(26)
@@ -98,7 +97,7 @@ for v in rows:
     w(f'{A}/jsondefs/vehicles/{vid}.json', {
      'general': {'type': 'vehicle', 'name': name, 'description': f'{v["type"].capitalize()} ({v["year"]}). Fuel: {fuels[fuel]["name"]}.',
                  'materialLists': [[f'minecraft:iron_ingot:0:{max(8, int(mass / 60))}'], ['minecraft:redstone:0:4']], 'health': int(100 + mass / 10)},
-     'motorized': {'emptyMass': mass, 'fuelCapacity': int(tank * 1000), 'defaultFuelQty': 0, 'hasRunningLights': True, 'hasHeadlights': True, 'axleRatio': 3.6, 'brakingFactor': 1.0,
+     'motorized': {'emptyMass': mass, 'fuelCapacity': int(tank * 1000), 'defaultFuelQty': int(tank * 500), 'hasRunningLights': True, 'hasHeadlights': True, 'axleRatio': 3.6, 'brakingFactor': 1.0,
                    'dragCoefficient': 0.5, 'crossSectionalArea': round(W * H * .8, 2), 'steeringForceFactor': 1.0, 'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0,
                    **({'hasSkidSteer': True, 'hasPermanentSkidSteer': True} if kind == 'apc' else {}), 'isBigTruck': kind in ('bus', 'firetruck')},
      'car': {'isFrontWheelDrive': False, 'isRearWheelDrive': kind != 'apc', 'axleRatio': 3.6, 'dragCoefficient': 0.5},
