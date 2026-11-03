@@ -1,0 +1,17 @@
+{
+ "replace": false,
+ "values": [
+  "undergarden:grongle_log",
+  "undergarden:grongle_wood",
+  "undergarden:smogstem_log",
+  "undergarden:smogstem_wood",
+  "undergarden:stripped_grongle_log",
+  "undergarden:stripped_grongle_wood",
+  "undergarden:stripped_smogstem_log",
+  "undergarden:stripped_smogstem_wood",
+  "undergarden:stripped_wigglewood_log",
+  "undergarden:stripped_wigglewood_wood",
+  "undergarden:wigglewood_log",
+  "undergarden:wigglewood_wood"
+ ]
+}

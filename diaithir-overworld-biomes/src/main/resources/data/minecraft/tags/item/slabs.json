@@ -1,0 +1,24 @@
+{
+ "replace": false,
+ "values": [
+  "undergarden:ancient_root_slab",
+  "undergarden:cloggrum_tile_slab",
+  "undergarden:depthrock_brick_slab",
+  "undergarden:depthrock_slab",
+  "undergarden:depthrock_tile_slab",
+  "undergarden:dreadrock_brick_slab",
+  "undergarden:dreadrock_slab",
+  "undergarden:grongle_slab",
+  "undergarden:polished_depthrock_slab",
+  "undergarden:polished_sediment_stone_slab",
+  "undergarden:sediment_stone_brick_slab",
+  "undergarden:sediment_stone_slab",
+  "undergarden:shiverstone_brick_slab",
+  "undergarden:shiverstone_slab",
+  "undergarden:smogstem_slab",
+  "undergarden:smooth_sediment_stone_slab",
+  "undergarden:tremblecrust_brick_slab",
+  "undergarden:tremblecrust_slab",
+  "undergarden:wigglewood_slab"
+ ]
+}

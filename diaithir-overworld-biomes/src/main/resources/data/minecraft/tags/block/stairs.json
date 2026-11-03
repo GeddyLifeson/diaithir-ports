@@ -1,0 +1,24 @@
+{
+ "replace": false,
+ "values": [
+  "undergarden:ancient_root_stairs",
+  "undergarden:cloggrum_tile_stairs",
+  "undergarden:depthrock_brick_stairs",
+  "undergarden:depthrock_stairs",
+  "undergarden:depthrock_tile_stairs",
+  "undergarden:dreadrock_brick_stairs",
+  "undergarden:dreadrock_stairs",
+  "undergarden:grongle_stairs",
+  "undergarden:polished_depthrock_stairs",
+  "undergarden:polished_sediment_stone_stairs",
+  "undergarden:sediment_stone_brick_stairs",
+  "undergarden:sediment_stone_stairs",
+  "undergarden:shiverstone_brick_stairs",
+  "undergarden:shiverstone_stairs",
+  "undergarden:smogstem_stairs",
+  "undergarden:smooth_sediment_stone_stairs",
+  "undergarden:tremblecrust_brick_stairs",
+  "undergarden:tremblecrust_stairs",
+  "undergarden:wigglewood_stairs"
+ ]
+}

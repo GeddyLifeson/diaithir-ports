@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "undergarden:ancient_root_fence",
+  "undergarden:grongle_fence",
+  "undergarden:smogstem_fence",
+  "undergarden:wigglewood_fence"
+ ]
+}

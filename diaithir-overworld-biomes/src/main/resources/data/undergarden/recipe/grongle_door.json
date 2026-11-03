@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "#": "undergarden:grongle_planks"
+ },
+ "pattern": [
+  "##",
+  "##",
+  "##"
+ ],
+ "result": {
+  "id": "undergarden:grongle_door",
+  "count": 3
+ }
+}

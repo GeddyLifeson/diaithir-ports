@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "undergarden:ancient_root"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "undergarden:ancient_root_slab",
+  "count": 6
+ }
+}

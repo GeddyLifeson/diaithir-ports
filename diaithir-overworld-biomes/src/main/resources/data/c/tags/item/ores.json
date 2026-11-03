@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "#c:ores/cloggrum",
+  "#c:ores/coal",
+  "#c:ores/diamond",
+  "#c:ores/froststeel",
+  "#c:ores/gold",
+  "#c:ores/iron",
+  "#c:ores/regalium",
+  "#c:ores/rogdorium",
+  "#c:ores/utherium"
+ ]
+}

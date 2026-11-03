@@ -1,0 +1,9 @@
+{
+ "realm": "undergarden",
+ "dimension": "undergarden:undergarden",
+ "age": 2,
+ "age_gate": "diaithir:age/2",
+ "units": "SI",
+ "replaces": "undergarden",
+ "licence_note": "clean-room; no third-party code, art or data copied"
+}

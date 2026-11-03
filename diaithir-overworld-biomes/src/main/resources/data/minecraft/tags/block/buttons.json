@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  "undergarden:ancient_root_button",
+  "undergarden:depthrock_button",
+  "undergarden:dreadrock_button",
+  "undergarden:grongle_button",
+  "undergarden:shiverstone_button",
+  "undergarden:smogstem_button",
+  "undergarden:tremblecrust_button",
+  "undergarden:wigglewood_button"
+ ]
+}

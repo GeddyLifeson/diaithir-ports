@@ -1,1 +1,21 @@
-{"replace":false,"values":[]}
+{
+ "replace": false,
+ "values": [
+  "undergarden:carved_gloomgourd",
+  "undergarden:chiseled_sediment_stone",
+  "undergarden:denizen_totem",
+  "undergarden:depthrock",
+  "undergarden:dreadrock",
+  "undergarden:gloomgourd",
+  "undergarden:loose_tremblecrust",
+  "undergarden:polished_depthrock",
+  "undergarden:polished_sediment_stone",
+  "undergarden:rogdoric_ancient_root",
+  "undergarden:sediment_stone",
+  "undergarden:shiverstone",
+  "undergarden:smog_vent",
+  "undergarden:smooth_sediment_stone",
+  "undergarden:tremblecrust",
+  "undergarden:virulent_mix"
+ ]
+}

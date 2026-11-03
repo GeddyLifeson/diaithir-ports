@@ -38,6 +38,12 @@ version="1.0.0"
 displayName="Nature's Compass (Diaithir)"
 description="Compatibility alias: this module replaces the natures_compass mod; dependencies on natures_compass resolve here."
 
+[[mods]]
+modId="undergarden"
+version="${version}"
+displayName="The Undergarden (Diaithir)"
+description="Compatibility alias: clean-room replacement for The Undergarden, same modid and ids, original worldgen."
+
 [[dependencies.diaithir_overworld_biomes]]
 modId="neoforge"
 type="required"
