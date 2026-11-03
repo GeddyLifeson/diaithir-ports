@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "pattern": ["###", "###", " S "], "key": {"#": "biomesoplenty:redwood_planks", "S": "minecraft:stick"}, "result": {"id": "biomesoplenty:redwood_sign", "count": 3}}

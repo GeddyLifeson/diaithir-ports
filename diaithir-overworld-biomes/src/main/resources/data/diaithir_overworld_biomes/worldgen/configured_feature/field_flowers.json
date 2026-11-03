@@ -1,0 +1,1 @@
+{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"data":{"Name":"minecraft:dandelion"},"weight":4},{"data":{"Name":"minecraft:poppy"},"weight":3},{"data":{"Name":"minecraft:cornflower"},"weight":3},{"data":{"Name":"minecraft:oxeye_daisy"},"weight":3},{"data":{"Name":"minecraft:azure_bluet"},"weight":2}]}}}
