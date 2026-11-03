@@ -124,5 +124,53 @@
   "why_entry": "AR.silenioriel.E1.assay.002271",
   "why": "Frozen highland beneath vast icefield, cold valleys, snowfall.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 3
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 1.0,
+  "undergrowth": [
+   {
+    "block": "pink_petals",
+    "weight": 4
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "pink_tulip",
+   "lily_of_the_valley",
+   "oxeye_daisy",
+   "allium"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 0.6,
+   "diamond": 0.5
+  },
+  "why_entry": "AR.silenioriel.E2.assay.004387",
+  "grounded": true
  }
 }

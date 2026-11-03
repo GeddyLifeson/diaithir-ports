@@ -140,5 +140,46 @@
   "why_entry": "MY.teleontanum.E4.places.000066",
   "why": "Glass and ash valley, sundered worlds, stormy tempests, ember-lit stone",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "allium"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MY.teleontanum.E4.places.000066",
+  "grounded": false
  }
 }

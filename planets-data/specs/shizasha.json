@@ -110,5 +110,47 @@
   "why_entry": "ST.shizasha.E6.places.000070",
   "why": "Dry sun-scorched basalt salt flats, hot canyons, dusky sky",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "poppy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 2.5,
+   "copper": 2.0,
+   "gold": 0.8,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.shizasha.E6.assay.001491",
+  "grounded": false
  }
 }

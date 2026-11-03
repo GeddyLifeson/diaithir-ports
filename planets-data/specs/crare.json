@@ -111,5 +111,47 @@
   "why_entry": "GR.crare.E6.places.000070",
   "why": "Hollow underground caverns; no clear weather described, so mild air.",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.0,
+   "copper": 2.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.3,
+   "diamond": 0.3
+  },
+  "why_entry": "GR.crare.E6.places.000109",
+  "grounded": true
  }
 }

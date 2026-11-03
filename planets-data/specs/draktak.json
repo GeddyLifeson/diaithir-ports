@@ -114,5 +114,46 @@
   "why_entry": "MA.draktak.E6.places.000004",
   "why": "Frost soil and iron-hot winds suggest snow, cold fog, and storms",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MA.draktak.E1.places.000015",
+  "grounded": true
  }
 }

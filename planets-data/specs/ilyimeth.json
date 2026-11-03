@@ -114,5 +114,53 @@
   "why_entry": "AR.ilyimeth.E6.places.000097",
   "why": "Glasshouse gardens of mist and lanterns; soft, luminous, gentle air",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "azalea",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "pink_petals",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "flowering_azalea",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "pink_tulip",
+   "azure_bluet",
+   "lily_of_the_valley",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.8,
+   "redstone": 1.0,
+   "lapis": 1.8,
+   "diamond": 2.2
+  },
+  "why_entry": "AR.ilyimeth.E6.places.000097",
+  "grounded": true
  }
 }

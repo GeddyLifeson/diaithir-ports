@@ -124,5 +124,38 @@
   "why_entry": "ST.shiavsora.E6.events.001443",
   "why": "Orbital wardens, shockwaves and tide-wars suggest a stormy, war-torn sky",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 3.0,
+   "copper": 1.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.shiavsora.E6.places.001523",
+  "grounded": false
  }
 }

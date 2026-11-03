@@ -120,5 +120,51 @@
   "why_entry": "GR.drernen.E6.places.000408",
   "why": "Wind-carved highland, thin air, endless gusts, glacier-moss and lenses",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.drernen.E1.places.000536",
+  "grounded": true
  }
 }

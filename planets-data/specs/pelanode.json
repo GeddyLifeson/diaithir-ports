@@ -124,5 +124,44 @@
   "why_entry": "ST.pelanode.E6.places.003632",
   "why": "Basalt citadel with stolen stellar fire, storms implied by war-torn skies.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 4
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 0.5,
+   "iron": 3.0,
+   "copper": 2.5,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.pelanode.E6.places.004067",
+  "grounded": true
  }
 }

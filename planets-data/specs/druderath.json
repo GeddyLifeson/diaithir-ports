@@ -124,5 +124,51 @@
   "why_entry": "ST.druderath.E6.places.000002",
   "why": "Sun-scorched skies, thinned air, torn aerial veil; luminous machine-mind glow.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "allium",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 3.0,
+   "copper": 2.5,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.druderath.E6.places.000002",
+  "grounded": false
  }
 }

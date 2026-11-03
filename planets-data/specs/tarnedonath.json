@@ -124,5 +124,44 @@
   "why_entry": "GR.tarnedonath.E6.places.000095",
   "why": "Ash-scarred plains under storm-laden sky, mixed weather with glowing sparks",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 4
+   },
+   {
+    "block": "cactus",
+    "weight": 2
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 2.0,
+   "copper": 2.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.tarnedonath.E6.places.000143",
+  "grounded": true
  }
 }

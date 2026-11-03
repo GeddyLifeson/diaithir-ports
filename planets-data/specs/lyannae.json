@@ -124,5 +124,58 @@
   "why_entry": "AR.lyannae.E6.places.000198",
   "why": "Silver lake mirrors skies; lantern-lit, luminous, gentle; calm mist",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "jungle",
+    "leaves": "jungle",
+    "weight": 2
+   },
+   {
+    "base": "jungle_tree",
+    "log": "jungle",
+    "leaves": "azalea",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "mangrove",
+    "leaves": "mangrove",
+    "weight": 1
+   }
+  ],
+  "density": 1.4,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 4
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 0.8,
+   "copper": 0.6,
+   "gold": 0.4,
+   "redstone": 0.6,
+   "lapis": 2.2,
+   "diamond": 2.0
+  },
+  "why_entry": "AR.lyannae.E6.places.000187",
+  "grounded": true
  }
 }

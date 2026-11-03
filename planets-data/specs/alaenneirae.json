@@ -124,5 +124,53 @@
   "why_entry": "AR.alaenneirae.E6.powers.000358",
   "why": "Tide-glass motes and marsh-fog suggest drifting luminous calm",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 1.3,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   },
+   {
+    "block": "pink_petals",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "pink_tulip",
+   "lily_of_the_valley",
+   "cornflower",
+   "torchflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.5,
+   "lapis": 2.5,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.alaenneirae.E6.places.000636",
+  "grounded": true
  }
 }

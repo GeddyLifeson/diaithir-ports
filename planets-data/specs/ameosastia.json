@@ -114,5 +114,51 @@
   "why_entry": "MY.ameosastia.E3.assay.000888",
   "why": "Storm-fire, lightning, and war-torn sky suggest stormy weather",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "brown_mushroom",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "poppy",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MY.ameosastia.E1.assay.005373",
+  "grounded": true
  }
 }

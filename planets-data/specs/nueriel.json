@@ -134,5 +134,38 @@
   "why_entry": "AR.nueriel.E3.assay.002930",
   "why": "Mountain slopes, dense woods, fertile fields: soft mild blooming air.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 4
+   },
+   {
+    "block": "cactus",
+    "weight": 2
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 0.5,
+   "gold": 1.0,
+   "redstone": 0.5,
+   "lapis": 0.3,
+   "diamond": 0.2
+  },
+  "why_entry": "AR.nueriel.E1.assay.001404",
+  "grounded": true
  }
 }

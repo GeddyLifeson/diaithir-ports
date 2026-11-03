@@ -50,5 +50,34 @@
   "why_entry": "MY.sinolor.E7.assay.000001",
   "why": "Paired tunnels between distant star regions suggest a distant, luminous, airy sky",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.3,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 2
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 0.5,
+   "iron": 0.5,
+   "copper": 0.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MY.sinolor.E7.assay.000001",
+  "grounded": false
  }
 }

@@ -100,5 +100,44 @@
   "why_entry": "ST.isyuthith.E6.places.000270",
   "why": "Sun-scorched rust-red mesas and dry springs suggest arid, glowing-sky stellar air",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 0.5,
+   "iron": 3.0,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.isyuthith.E6.places.000284",
+  "grounded": false
  }
 }

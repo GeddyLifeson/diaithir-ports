@@ -124,5 +124,58 @@
   "why_entry": "AR.ryala.E6.places.004594",
   "why": "Glacial sanctuary of blue spires, frost doors, luminous sea-mist",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 3
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 0.6,
+   "copper": 0.5,
+   "gold": 0.5,
+   "redstone": 0.7,
+   "lapis": 2.0,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.ryala.E6.places.004736",
+  "grounded": true
  }
 }

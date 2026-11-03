@@ -121,5 +121,51 @@
   "why_entry": "GR.thonurde.E6.places.000350",
   "why": "Salt-scoured, mist-bound, brine-hazed realm with storms and tides",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.2,
+   "iron": 2.2,
+   "copper": 2.0,
+   "gold": 0.6,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.4
+  },
+  "why_entry": "GR.thonurde.E6.places.000359",
+  "grounded": true
  }
 }

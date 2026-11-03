@@ -110,5 +110,47 @@
   "why_entry": "MY.telones.E6.places.000079",
   "why": "Luminous mist and glass light suggest a calm, mild, starlit sky",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy",
+   "white_tulip"
+  ],
+  "ores": {
+   "coal": 0.5,
+   "iron": 0.5,
+   "copper": 0.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 2.5,
+   "diamond": 2.0
+  },
+  "why_entry": "MY.telones.E6.places.000230",
+  "grounded": false
  }
 }

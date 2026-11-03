@@ -114,5 +114,53 @@
   "why_entry": "AR.venualys.E6.places.000085",
   "why": "Northern ice sheet, frozen wastes, perpetual frost, glacial winds.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 3
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.45,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 0.7,
+   "copper": 0.5,
+   "gold": 0.3,
+   "redstone": 0.6,
+   "lapis": 0.5,
+   "diamond": 2.5
+  },
+  "why_entry": "AR.venualys.E6.places.000095",
+  "grounded": true
  }
 }

@@ -114,5 +114,52 @@
   "why_entry": "AR.venarirleth.E6.places.000136",
   "why": "Lantern-lit marsh town, tidal mists, wind-bells, glass fishers",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.5,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.2,
+   "lapis": 2.5,
+   "diamond": 2.0
+  },
+  "why_entry": "AR.venarirleth.E6.places.000123",
+  "grounded": true
  }
 }

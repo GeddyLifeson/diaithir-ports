@@ -140,5 +140,52 @@
   "why_entry": "GR.torourkoth.E5.events.000138",
   "why": "Walled Age sundering, war-torn skies, and ember-lit temple fires",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.8,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy",
+   "cornflower",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.2,
+   "gold": 0.6,
+   "redstone": 0.8,
+   "lapis": 1.0,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.torourkoth.E3.places.000088",
+  "grounded": true
  }
 }

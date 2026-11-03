@@ -120,5 +120,44 @@
   "why_entry": "MA.vhoggaktak.E6.places.000008",
   "why": "Frost-scoured northern steppe with windswept iron citadels and frost",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "dead_bush",
+    "weight": 2
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 2.0,
+   "copper": 1.5,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MA.vhoggaktak.E6.places.000026",
+  "grounded": false
  }
 }

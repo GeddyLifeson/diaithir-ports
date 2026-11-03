@@ -120,5 +120,46 @@
   "why_entry": "MY.ninteostor.E4.places.000369",
   "why": "Storm-bells, scorched stone, Fall-cracked sky; ashy stormy air",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "dead_bush",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MY.ninteostor.E4.places.000369",
+  "grounded": false
  }
 }

@@ -124,5 +124,46 @@
   "why_entry": "MA.khogar.E3.places.000033",
   "why": "Frost soil, sleeping wards, humming stone, quiet mesa atmosphere",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.5,
+   "copper": 1.0,
+   "gold": 1.5,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 1.0
+  },
+  "why_entry": "MA.khogar.E7.places.000074",
+  "grounded": false
  }
 }

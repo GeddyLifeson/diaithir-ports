@@ -134,5 +134,46 @@
   "why_entry": "MY.reornanum.E6.places.001496",
   "why": "Ember-bright grasslands, storm-remembering spires, hushed storms and ash-warden fortresses",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "jungle_tree",
+    "log": "mangrove",
+    "leaves": "mangrove",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.8,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   }
+  ],
+  "flowers": [
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 0.6,
+   "copper": 0.6,
+   "gold": 0.5,
+   "redstone": 0.6,
+   "lapis": 0.4,
+   "diamond": 0.5
+  },
+  "why_entry": "MY.reornanum.E6.places.001150",
+  "grounded": false
  }
 }

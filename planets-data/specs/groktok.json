@@ -110,5 +110,46 @@
   "why_entry": "MA.groktok.E6.places.001684",
   "why": "Dead airless ash-grey world, scorched forge-plains, acidic and ash storms.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "white_tulip"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.5,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MA.groktok.E6.places.001607",
+  "grounded": false
  }
 }

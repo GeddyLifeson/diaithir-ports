@@ -144,5 +144,53 @@
   "why_entry": "AR.miimeth.E6.powers.000338",
   "why": "Arcane shimmer and lantern light suggest soft luminous air, not ash",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "pink_petals",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "pink_tulip",
+   "lily_of_the_valley",
+   "cornflower",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.5,
+   "lapis": 2.5,
+   "diamond": 2.0
+  },
+  "why_entry": "AR.miimeth.E1.places.000526",
+  "grounded": true
  }
 }

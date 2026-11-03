@@ -120,5 +120,46 @@
   "why_entry": "ST.vesizathith.E6.events.006019",
   "why": "Stellar convergence and shockwaves suggest a dark, dusty, storm-lit sky",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 2.8,
+   "copper": 2.5,
+   "gold": 1.2,
+   "redstone": 0.9,
+   "lapis": 0.3,
+   "diamond": 0.2
+  },
+  "why_entry": "ST.vesizathith.E6.places.002230",
+  "grounded": true
  }
 }

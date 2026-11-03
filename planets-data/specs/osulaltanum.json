@@ -144,5 +144,57 @@
   "why_entry": "KI.osulaltanum.E6.powers.000892",
   "why": "Scorching vortex vaporizes water; storms and heat dominate the realm",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "wither_rose",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 1.5,
+   "copper": 1.2,
+   "gold": 1.0,
+   "redstone": 1.8,
+   "lapis": 0.8,
+   "diamond": 1.2
+  },
+  "why_entry": "KI.osulaltanum.E6.places.000369",
+  "grounded": true
  }
 }

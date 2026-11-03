@@ -120,5 +120,51 @@
   "why_entry": "KI.brurnadeld.E6.assay.003934",
   "why": "Blazing falling-star strikes and ember soil suggest a hot, scorched, ashen sky",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "jungle_tree",
+    "log": "jungle",
+    "leaves": "jungle",
+    "weight": 2
+   },
+   {
+    "base": "acacia",
+    "log": "acacia",
+    "leaves": "acacia",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "cactus",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.2,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.8,
+   "redstone": 1.0,
+   "lapis": 0.6,
+   "diamond": 0.4
+  },
+  "why_entry": "KI.brurnadeld.E1.assay.002271",
+  "grounded": true
  }
 }

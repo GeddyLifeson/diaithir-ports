@@ -120,5 +120,50 @@
   "why_entry": "ST.zepheivseth.E6.places.001848",
   "why": "Scorched magma world, sulfur haze, glowing molten rivers, storm-like dust",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 3.0,
+   "copper": 2.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.zepheivseth.E6.places.001224",
+  "grounded": true
  }
 }

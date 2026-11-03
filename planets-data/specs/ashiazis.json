@@ -120,5 +120,51 @@
   "why_entry": "ST.ashiazis.E4.events.000242",
   "why": "Sky-lattice shattered, light pouring through broken shell; stellar war skies",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 3.0,
+   "copper": 2.5,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.ashiazis.E6.places.000193",
+  "grounded": true
  }
 }

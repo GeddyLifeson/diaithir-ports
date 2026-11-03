@@ -120,5 +120,47 @@
   "why_entry": "MA.ashestith.E6.events.000492",
   "why": "Ash-storms scour dunes; ashen wastes, dying crimson giant",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 4
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "white_tulip",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 0.5,
+   "iron": 2.5,
+   "copper": 2.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MA.ashestith.E1.items.000655",
+  "grounded": true
  }
 }

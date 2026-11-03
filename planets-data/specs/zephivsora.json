@@ -144,5 +144,46 @@
   "why_entry": "ST.zephivsora.E6.events.000037",
   "why": "Ashen tide, war-fleets, dying sun, storms; ash and sparse light",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 3.0,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.0,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.zephivsora.E3.places.000160",
+  "grounded": false
  }
 }

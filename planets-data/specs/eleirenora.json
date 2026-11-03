@@ -124,5 +124,47 @@
   "why_entry": "AR.eleirenora.E6.places.000097",
   "why": "Scent-threaded mists and luminous lagoons over drifting emerald isles",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 1.0,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.eleirenora.E1.assay.000635",
+  "grounded": false
  }
 }

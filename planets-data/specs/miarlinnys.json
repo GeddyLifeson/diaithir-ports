@@ -120,5 +120,48 @@
   "why_entry": "AR.miarlinnys.E6.places.000162",
   "why": "Silver reeds, misty tides, lantern-lit wetlands, soft sky, calm.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 0.8,
+   "iron": 0.6,
+   "copper": 0.7,
+   "gold": 0.5,
+   "redstone": 0.6,
+   "lapis": 0.8,
+   "diamond": 0.5
+  },
+  "why_entry": "AR.miarlinnys.E1.places.000208",
+  "grounded": true
  }
 }

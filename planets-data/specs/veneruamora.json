@@ -140,5 +140,48 @@
   "why_entry": "AR.veneruamora.E2.assay.006207",
   "why": "Open green meadow gathering place suggests mild, pleasant, blossoming air.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "poppy",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.8,
+   "redstone": 0.8,
+   "lapis": 0.8,
+   "diamond": 0.6
+  },
+  "why_entry": "AR.veneruamora.E1.assay.005195",
+  "grounded": true
  }
 }

@@ -114,5 +114,52 @@
   "why_entry": "AR.lyirlora.E6.places.004131",
   "why": "Crystal islands held aloft by collective will; luminous, arcane, sky-bound, stormy edges",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "blue_orchid",
+   "lily_of_the_valley",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.2,
+   "copper": 0.8,
+   "gold": 0.6,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.6
+  },
+  "why_entry": "AR.lyirlora.E6.places.003785",
+  "grounded": true
  }
 }

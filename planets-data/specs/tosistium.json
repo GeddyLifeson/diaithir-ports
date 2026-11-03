@@ -114,5 +114,51 @@
   "why_entry": "GR.tosistium.E1.places.000003",
   "why": "Hollow valley, humming stone, mild resin-scented, lamp-lit calm air",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.8,
+   "redstone": 1.0,
+   "lapis": 1.2,
+   "diamond": 1.0
+  },
+  "why_entry": "GR.tosistium.E3.places.000010",
+  "grounded": false
  }
 }

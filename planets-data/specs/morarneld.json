@@ -124,5 +124,51 @@
   "why_entry": "GR.morarneld.E1.places.000096",
   "why": "Humming murk, condensing roots, sundering skies, storms unspecified",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "poppy",
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.2,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.6,
+   "redstone": 0.8,
+   "lapis": 0.5,
+   "diamond": 0.3
+  },
+  "why_entry": "GR.morarneld.E1.places.000096",
+  "grounded": true
  }
 }

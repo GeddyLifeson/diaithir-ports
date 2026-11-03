@@ -124,5 +124,52 @@
   "why_entry": "KI.tianausanum.E6.places.000042",
   "why": "Veiled sky and dim glow, drifting ash, no storms",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.8,
+  "undergrowth": [
+   {
+    "block": "pink_petals",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "pink_tulip",
+   "allium",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 2.0,
+   "diamond": 1.5
+  },
+  "why_entry": "KI.tianausanum.E6.places.000069",
+  "grounded": false
  }
 }

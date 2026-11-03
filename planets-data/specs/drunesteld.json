@@ -120,5 +120,47 @@
   "why_entry": "GR.drunesteld.E6.places.000665",
   "why": "Salt marsh fog, brine tang, drifting dust and tide-bell storms",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.2,
+   "copper": 1.0,
+   "gold": 0.6,
+   "redstone": 1.0,
+   "lapis": 0.3,
+   "diamond": 0.7
+  },
+  "why_entry": "GR.drunesteld.E6.places.000668",
+  "grounded": true
  }
 }

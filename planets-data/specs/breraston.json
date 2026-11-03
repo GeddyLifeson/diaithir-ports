@@ -124,5 +124,51 @@
   "why_entry": "MA.breraston.E2.assay.001170",
   "why": "Frozen tract at the pale frost edge; soil is Frost.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 3
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 0.8,
+   "gold": 0.6,
+   "redstone": 0.8,
+   "lapis": 0.6,
+   "diamond": 0.8
+  },
+  "why_entry": "MA.breraston.E3.assay.001560",
+  "grounded": true
  }
 }

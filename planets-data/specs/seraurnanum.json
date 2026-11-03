@@ -130,5 +130,46 @@
   "why_entry": "MY.seraurnanum.E6.places.000044",
   "why": "Basalt caverns humming with old tides; mixed storm-weather and glowing Weave light.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "allium"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 1.0,
+   "diamond": 1.0
+  },
+  "why_entry": "MY.seraurnanum.E6.places.000066",
+  "grounded": true
  }
 }

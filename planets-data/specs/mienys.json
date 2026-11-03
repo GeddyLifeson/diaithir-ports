@@ -144,5 +144,51 @@
   "why_entry": "AR.mienys.E1.places.000094",
   "why": "Humming hollow valley, ancient resonant stone, drifting silence and mist",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.7,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "azalea",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.mienys.E6.places.000017",
+  "grounded": false
  }
 }

@@ -124,5 +124,58 @@
   "why_entry": "GR.bronurneld.E6.places.000040",
   "why": "Mire fog, storms, drowned cemeteries, lantern-lit ferry towns, haunted hollows",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 1.1,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "brown_mushroom",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "blue_orchid",
+   "lily_of_the_valley",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.0,
+   "copper": 2.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.bronurneld.E6.places.000040",
+  "grounded": true
  }
 }

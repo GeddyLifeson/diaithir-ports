@@ -130,5 +130,58 @@
   "why_entry": "KI.lyanae.E6.places.000413",
   "why": "Silver mist ocean in sky; mist-laden cloud meadows, gentle hum",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "mangrove",
+    "leaves": "mangrove",
+    "weight": 3
+   },
+   {
+    "base": "jungle_tree",
+    "log": "jungle",
+    "leaves": "jungle",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 1.4,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "cornflower",
+   "pink_tulip"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "KI.lyanae.E6.places.000421",
+  "grounded": true
  }
 }

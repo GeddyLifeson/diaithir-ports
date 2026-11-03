@@ -130,5 +130,51 @@
   "why_entry": "MY.tasianium.E3.assay.014255",
   "why": "Storm spirits grant weather command; sky-bound outcast gifts imply storm-touched air.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "blue_orchid",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 1.0,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 0.5,
+   "diamond": 0.4
+  },
+  "why_entry": "MY.tasianium.E3.assay.006153",
+  "grounded": true
  }
 }

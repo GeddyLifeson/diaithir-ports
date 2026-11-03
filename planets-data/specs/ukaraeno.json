@@ -110,5 +110,51 @@
   "why_entry": "KI.ukaraeno.E3.assay.005628",
   "why": "Storms, cinder-thick air, and fire-blasted sky; dry scorched land",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "jungle_tree",
+    "log": "mangrove",
+    "leaves": "mangrove",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 1.3,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "azalea",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 1.0,
+   "diamond": 1.0
+  },
+  "why_entry": "KI.ukaraeno.E6.places.002902",
+  "grounded": true
  }
 }

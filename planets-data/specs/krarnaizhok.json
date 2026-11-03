@@ -124,5 +124,48 @@
   "why_entry": "AR.krarnaizhok.E1.places.000205",
   "why": "Hollow grove with humming bark and thick shaded air",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "birch",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 0.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 2.5,
+   "diamond": 2.5
+  },
+  "why_entry": "AR.krarnaizhok.E1.places.000205",
+  "grounded": false
  }
 }

@@ -114,5 +114,57 @@
   "why_entry": "AR.ryerlae.E6.places.002274",
   "why": "Shattered Expanse: sky bruised by ash, storms and lightning",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "crimson_stem",
+    "leaves": "pale_oak",
+    "weight": 1
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.8,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "brown_mushroom",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "blue_orchid",
+   "white_tulip"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 1.2,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.ryerlae.E6.places.002341",
+  "grounded": true
  }
 }

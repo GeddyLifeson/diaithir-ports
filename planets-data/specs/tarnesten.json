@@ -120,5 +120,35 @@
   "why_entry": "MA.tarnesten.E6.places.000556",
   "why": "Frost soil, wind-carved ridges, seasonal ridge exposure, cold ironwood, resonant wind",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.4,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.6,
+   "diamond": 0.3
+  },
+  "why_entry": "MA.tarnesten.E6.places.000626",
+  "grounded": false
  }
 }

@@ -120,5 +120,44 @@
   "why_entry": "GR.crestornen.E6.assay.000770",
   "why": "Fierce sea-cut clashes and ruined dusty war-torn skies",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 2
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 2.5,
+   "copper": 2.5,
+   "gold": 0.5,
+   "redstone": 1.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.crestornen.E6.assay.001185",
+  "grounded": false
  }
 }

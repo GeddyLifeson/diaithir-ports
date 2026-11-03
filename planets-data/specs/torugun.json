@@ -124,5 +124,46 @@
   "why_entry": "MA.torugun.E6.places.000119",
   "why": "Frost soil and icy highlands suggest snowfall and cold, dense fog.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "allium"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 2.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "MA.torugun.E6.places.000119",
+  "grounded": true
  }
 }

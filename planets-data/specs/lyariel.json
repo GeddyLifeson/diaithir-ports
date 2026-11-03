@@ -144,5 +144,53 @@
   "why_entry": "AR.lyariel.E6.places.000132",
   "why": "Glowing mist and lunar silver suggest luminous, calm, mixed air",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "pink_petals",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "oxeye_daisy",
+   "cornflower",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.6,
+   "redstone": 0.8,
+   "lapis": 1.4,
+   "diamond": 1.6
+  },
+  "why_entry": "AR.lyariel.E6.places.000109",
+  "grounded": true
  }
 }

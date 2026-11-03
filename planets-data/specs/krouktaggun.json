@@ -120,5 +120,51 @@
   "why_entry": "GR.krouktaggun.E1.places.000044",
   "why": "Hollow basins hum, walls of stone, dusk glow; mild dusty air",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "allium"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.2,
+   "gold": 0.5,
+   "redstone": 0.8,
+   "lapis": 1.2,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.krouktaggun.E1.places.000010",
+  "grounded": false
  }
 }

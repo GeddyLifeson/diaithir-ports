@@ -124,5 +124,51 @@
   "why_entry": "OU.shavseth.E6.places.000294",
   "why": "Frozen glass vaults and cold starlight suggest quiet snowfall and crystalline glow",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "warped_stem",
+    "leaves": "azalea",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "warped_roots",
+    "weight": 2
+   },
+   {
+    "block": "nether_sprouts",
+    "weight": 1
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "azure_bluet",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 0.5,
+   "iron": 0.5,
+   "copper": 0.5,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 2.0,
+   "diamond": 2.0
+  },
+  "why_entry": "OU.shavseth.E6.places.000193",
+  "grounded": false
  }
 }

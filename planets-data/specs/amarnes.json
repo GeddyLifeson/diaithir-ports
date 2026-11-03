@@ -120,5 +120,46 @@
   "why_entry": "MY.amarnes.E5.places.000091",
   "why": "Walled cities, sundering, war-torn skies; ash and light.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.45,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 1.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 2.0
+  },
+  "why_entry": "MY.amarnes.E3.items.000025",
+  "grounded": false
  }
 }

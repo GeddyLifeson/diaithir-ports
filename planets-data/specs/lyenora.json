@@ -114,5 +114,51 @@
   "why_entry": "AR.lyenora.E3.assay.001224",
   "why": "Frozen age settles after catastrophe; cold, dim, wintry mood.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 1.3,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "brown_mushroom",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "blue_orchid",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 1.0,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.lyenora.E2.assay.004999",
+  "grounded": true
  }
 }

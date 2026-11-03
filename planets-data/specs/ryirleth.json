@@ -134,5 +134,52 @@
   "why_entry": "AR.ryirleth.E1.places.000060",
   "why": "Bell-shaped groves and humming stone suggest mild, luminous, quiet air.",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 2
+   },
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   },
+   {
+    "block": "pink_petals",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "oxeye_daisy",
+   "azure_bluet"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.ryirleth.E3.places.000048",
+  "grounded": true
  }
 }

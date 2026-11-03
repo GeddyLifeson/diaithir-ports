@@ -124,5 +124,44 @@
   "why_entry": "GR.fenernareld.E6.places.001225",
   "why": "Ash-silent field with sudden gaps; storms and mist recur across entries",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.45,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 0.8,
+   "iron": 1.5,
+   "copper": 1.2,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.3,
+   "diamond": 0.6
+  },
+  "why_entry": "GR.fenernareld.E6.places.001218",
+  "grounded": false
  }
 }

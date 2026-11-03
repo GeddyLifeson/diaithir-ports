@@ -134,5 +134,42 @@
   "why_entry": "AR.oriilora.E6.places.000049",
   "why": "Luminous shell-lanterns in deep glacier caverns suggest cool, dim, mixed light",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "oxeye_daisy",
+   "torchflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 2.5,
+   "diamond": 2.5
+  },
+  "why_entry": "AR.oriilora.E6.places.000050",
+  "grounded": false
  }
 }

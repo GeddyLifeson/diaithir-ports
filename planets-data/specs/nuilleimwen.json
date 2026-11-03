@@ -114,5 +114,53 @@
   "why_entry": "AR.nuilleimwen.E6.powers.000005",
   "why": "Silver veils, luminous hush-glass and starlit air suggest a bright, calm, mist-soft sky",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "pink_petals",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "pink_tulip",
+   "lily_of_the_valley",
+   "cornflower",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.8,
+   "redstone": 1.0,
+   "lapis": 1.2,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.nuilleimwen.E1.events.000077",
+  "grounded": true
  }
 }

@@ -120,5 +120,46 @@
   "why_entry": "MA.vorairnok.E6.places.000099",
   "why": "Frozen black glacier ridge; wind carries voices; snow dominates.",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "dead_bush",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.2,
+   "copper": 0.6,
+   "gold": 0.3,
+   "redstone": 0.4,
+   "lapis": 0.2,
+   "diamond": 0.3
+  },
+  "why_entry": "MA.vorairnok.E6.places.000099",
+  "grounded": true
  }
 }

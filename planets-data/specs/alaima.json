@@ -130,5 +130,52 @@
   "why_entry": "AR.alaima.E6.places.003927",
   "why": "Drifting glass towers under starlit, hushed skies; mild air",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "jungle_tree",
+    "log": "jungle",
+    "leaves": "jungle",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 1.3,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "azalea",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "cornflower",
+   "pink_tulip"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.alaima.E6.places.003216",
+  "grounded": true
  }
 }

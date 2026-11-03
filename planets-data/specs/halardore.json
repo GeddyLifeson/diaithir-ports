@@ -130,5 +130,52 @@
   "why_entry": "GR.halardore.E5.events.000093",
   "why": "Sundering landfall surge and breaking walls suggests violent storms",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "oxeye_daisy",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.0,
+   "gold": 0.7,
+   "redstone": 0.8,
+   "lapis": 0.6,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.halardore.E1.events.000031",
+  "grounded": true
  }
 }

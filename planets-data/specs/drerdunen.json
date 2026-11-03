@@ -124,5 +124,52 @@
   "why_entry": "ST.drerdunen.E6.assay.002536",
   "why": "Iron warships, sealed factories and machinery smoke suggest hazy industrial skies",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "dead_bush",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "poppy",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 2.6,
+   "copper": 2.0,
+   "gold": 0.8,
+   "redstone": 0.7,
+   "lapis": 0.5,
+   "diamond": 0.4
+  },
+  "why_entry": "ST.drerdunen.E6.assay.000737",
+  "grounded": false
  }
 }

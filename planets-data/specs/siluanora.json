@@ -124,5 +124,58 @@
   "why_entry": "AR.siluanora.E6.places.004035",
   "why": "Petal-strewn rose hall with luminous silver tides and lantern light",
   "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "fancy_oak",
+    "log": "mangrove",
+    "leaves": "mangrove",
+    "weight": 3
+   },
+   {
+    "base": "jungle_tree",
+    "log": "jungle",
+    "leaves": "jungle",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "azalea",
+    "weight": 1
+   }
+  ],
+  "density": 1.4,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 4
+   },
+   {
+    "block": "azalea",
+    "weight": 2
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "azure_bluet",
+   "blue_orchid"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.siluanora.E6.places.004238",
+  "grounded": true
  }
 }

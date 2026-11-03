@@ -130,5 +130,57 @@
   "why_entry": "GR.joroneldock.E6.places.000220",
   "why": "Scorched basin, sun-baked fields, poisoned skies, storms, smoke",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "fern",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "lily_of_the_valley",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 1.2,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 0.7,
+   "lapis": 0.6,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.joroneldock.E3.assay.001417",
+  "grounded": true
  }
 }

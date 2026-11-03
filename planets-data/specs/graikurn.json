@@ -120,5 +120,50 @@
   "why_entry": "GR.graikurn.E6.places.000008",
   "why": "Smokestacks grind through clouds; forge-district air is smoky and ash-laden",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "crimson_stem",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "brown_mushroom",
+    "weight": 3
+   },
+   {
+    "block": "red_mushroom",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 2.0,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "GR.graikurn.E6.places.000012",
+  "grounded": true
  }
 }

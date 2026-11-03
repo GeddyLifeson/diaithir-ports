@@ -124,5 +124,52 @@
   "why_entry": "AR.venilleth.E6.powers.000467",
   "why": "Silver lens-spirit pierces mist and smoke in marshlands",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "pink_petals",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "white_tulip",
+   "oxeye_daisy",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 0.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 1.5,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.venilleth.E1.places.000563",
+  "grounded": false
  }
 }

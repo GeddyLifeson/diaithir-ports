@@ -124,5 +124,58 @@
   "why_entry": "AR.orienna.E6.powers.000101",
   "why": "Storm-tide rules the seas and skies; seafarers fear tempests",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   },
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "azalea",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy",
+   "cornflower",
+   "lily_of_the_valley"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.2,
+   "gold": 0.6,
+   "redstone": 1.0,
+   "lapis": 1.5,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.orienna.E4.places.000191",
+  "grounded": true
  }
 }

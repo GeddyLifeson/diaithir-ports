@@ -38,6 +38,51 @@ def atmo_apply(b,at):
 def full(**k):
     p={"temperature":[-1.0,1.0],"humidity":[-1.0,1.0],"continentalness":[-1.0,1.0],"erosion":[-1.0,1.0],"depth":[-1.0,1.0],"weirdness":[-1.0,1.0],"offset":0.0}
     p.update(k); return p
+
+VF=BASE/'vf'; ORE_FILES={'coal':['pf_ore_coal_lower','pf_ore_coal_upper'],'iron':['pf_ore_iron_middle','pf_ore_iron_small','pf_ore_iron_upper'],'copper':['pf_ore_copper'],'gold':['pf_ore_gold','pf_ore_gold_lower'],'redstone':['pf_ore_redstone','pf_ore_redstone_lower'],'lapis':['pf_ore_lapis','pf_ore_lapis_buried'],'diamond':['pf_ore_diamond','pf_ore_diamond_buried','pf_ore_diamond_large','pf_ore_diamond_medium']}
+def wj(sub,name,obj):
+    p=D/sub; p.mkdir(parents=True,exist_ok=True); (p/(name+'.json')).write_text(json.dumps(obj))
+def ore_feature(ore,mult):
+    """shared placed features, bucketed to 0.5 steps; returns list of ids"""
+    m=round(mult*2)/2; out=[]
+    if m<=0: return out
+    for f in ORE_FILES[ore]:
+        pf=json.loads((VF/(f+'.json')).read_text()); nm=f'{f[3:]}_m{str(m).replace(".","_")}'
+        for pl in pf['placement']:
+            if pl.get('type')=='minecraft:count' and isinstance(pl.get('count'),int): pl['count']=max(1,round(pl['count']*m))
+        wj('worldgen/placed_feature',nm,pf); out.append('diaithir_planets:'+nm)
+    return out
+def kit_features(pid,k):
+    """returns (vegetation ids, ore ids) for this planet's land biomes, always in the same order"""
+    veg=[]; trees=k.get('trees') or []; tw=sum(max(1,int(t.get('weight',1))) for t in trees) or 1
+    dens=float(k.get('density',1.0))
+    for i,t in enumerate(trees):
+        cf=(VF/('cf_'+t['base']+'.json')).read_text()
+        cf=re.sub(r'minecraft:[a-z_]+_log',lambda m:'minecraft:'+(t['log'] if t['log'].endswith('stem') else t['log']+'_log'),cf)
+        cf=re.sub(r'minecraft:[a-z_]+_leaves',lambda m:'minecraft:'+t['leaves']+'_leaves',cf)
+        nm=f'{pid}_tree{i}'; wj('worldgen/configured_feature',nm,json.loads(cf))
+        n=max(1 if dens>=0.3 else 0,round(6*dens*max(1,int(t.get('weight',1)))/tw))
+        pl=json.loads((VF/'pf_trees_plains.json').read_text()); pl['feature']='diaithir_planets:'+nm
+        pl['placement'][0]={"type":"minecraft:count","count":n}; wj('worldgen/placed_feature',nm,pl); veg.append('diaithir_planets:'+nm)
+    def patch(nm,block,count):
+        st={"Name":"minecraft:"+block}
+        inner={"feature":{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:simple_state_provider","state":st}}},
+               "placement":[{"type":"minecraft:block_predicate_filter","predicate":{"type":"minecraft:all_of","predicates":[{"type":"minecraft:matching_blocks","blocks":"minecraft:air"},{"type":"minecraft:would_survive","state":st}]}}]}
+        wj('worldgen/configured_feature',nm,{"type":"minecraft:random_patch","config":{"tries":24,"xz_spread":7,"y_spread":3,"feature":inner}})
+        wj('worldgen/placed_feature',nm,{"feature":"diaithir_planets:"+nm,"placement":[{"type":"minecraft:count","count":count},{"type":"minecraft:in_square"},{"type":"minecraft:heightmap","heightmap":"WORLD_SURFACE_WG"},{"type":"minecraft:biome"}]})
+        veg.append('diaithir_planets:'+nm)
+    for i,u in enumerate(k.get('undergrowth') or []): patch(f'{pid}_under{i}',u['block'],max(1,round(2*int(u.get('weight',2))*max(0.5,dens))))
+    for i,fl in enumerate(k.get('flowers') or []): patch(f'{pid}_flower{i}',fl,1)
+    ores=[]
+    for o in ORE_FILES: ores+=ore_feature(o,float((k.get('ores') or {}).get(o,1.0)))
+    return veg,ores
+VEG_DROP=('tree','flower','grass','fern','dead_bush','bush','petals','dripleaf')
+def apply_kit(b,veg,ores):
+    f=b['features']
+    while len(f)<10: f.append([])
+    f[9]=[x for x in f[9] if not any(w in x for w in VEG_DROP)]+veg
+    f[6]=[x for x in f[6] if not re.search(r'ore_(coal|iron|copper|gold|redstone|lapis|diamond)',x)]+ores
+    return b
 def build(pid,name,sp,lang):
     (D/'worldgen/biome').mkdir(parents=True,exist_ok=True); (D/'tags/worldgen/biome').mkdir(parents=True,exist_ok=True)
     (D/'dimension_type').mkdir(exist_ok=True); (D/'planet_stems').mkdir(exist_ok=True)
@@ -47,7 +92,8 @@ def build(pid,name,sp,lang):
         b=atmo_apply(b,sp.get('atmo')); bid=f'{pid}_{key}'; (D/'worldgen/biome'/(bid+'.json')).write_text(json.dumps(b))
         full_id='diaithir_planets:'+bid; ids.append(full_id); lang['biome.diaithir_planets.'+bid]=disp
         cells.append({"biome":full_id,"parameters":par})
-    used=set()
+    used=set(); kveg=kore=None
+    if sp.get('kit'): kveg,kore=kit_features(pid,sp['kit'])
     for i,bs in enumerate(sp['biomes']):
         r=S.execute("select name from entry where id=?",(bs['entry'],)).fetchone()
         if not r: continue
@@ -56,6 +102,7 @@ def build(pid,name,sp,lang):
         if key in used: key=f'{key}{i}'
         used.add(key)
         b=biome(bs['archetype'],pid,key,hexok(bs.get('grass'),None),hexok(bs.get('foliage'),None),hexok(bs.get('water'),water),precip=bs.get('precip'))
+        if kveg is not None: b=apply_kit(b,kveg,kore)
         put(key,b,r[0],full(temperature=t,humidity=h,continentalness=[-0.11,1.0],depth=[-1.0,0.2]))
     oc=sp.get('ocean_archetype','ocean'); deep=oc if oc.startswith('deep') else 'deep_'+oc if tpl_exists('deep_'+oc) else 'deep_ocean'
     put('deep_sea',biome(deep,pid,'deep',water=water),name+' Deep Sea',full(continentalness=[-1.0,-0.455],depth=[-1.0,0.2]))

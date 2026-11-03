@@ -124,5 +124,44 @@
   "why_entry": "MY.corentium.E6.places.000005",
   "why": "Drowned bell-towers, copper air, wind-chimes and sky tempests suggest stormy mist",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.2,
+   "copper": 0.8,
+   "gold": 0.8,
+   "redstone": 0.9,
+   "lapis": 1.0,
+   "diamond": 0.6
+  },
+  "why_entry": "MY.corentium.E5.items.000039",
+  "grounded": false
  }
 }

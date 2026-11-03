@@ -140,5 +140,50 @@
   "why_entry": "GR.breroldock.E6.events.000259",
   "why": "Sunken flats, silt, storms, and tuned sound suggest moody mixed weather",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "mangrove",
+    "leaves": "mangrove",
+    "weight": 3
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.45,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 1.5,
+   "copper": 2.0,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.2,
+   "diamond": 0.3
+  },
+  "why_entry": "GR.breroldock.E1.places.000514",
+  "grounded": true
  }
 }

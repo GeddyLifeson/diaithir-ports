@@ -124,5 +124,46 @@
   "why_entry": "MY.menteores.E6.places.000022",
   "why": "Ashbright dust veil, storms, lantern-glass, dim sky",
   "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "pine",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "pale_oak",
+    "leaves": "pale_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 0.5,
+   "copper": 0.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 2.5,
+   "diamond": 2.5
+  },
+  "why_entry": "MY.menteores.E6.places.000021",
+  "grounded": true
  }
 }
