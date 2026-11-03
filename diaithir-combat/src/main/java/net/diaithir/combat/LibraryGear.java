@@ -84,25 +84,99 @@ public final class LibraryGear {
     }
 
     // ---- table ----
-    public record Row(String id, int tier, int gate, String cls, String name, boolean weapon) {}
+    public record Row(String id, int tier, int gate, String cls, String name, boolean weapon, String planet) {}
     static final Map<String, Row> ROW = new HashMap<>();
     static final List<Row> LIST = new ArrayList<>(100_000);
+    static final Map<String, List<Row>> BY_PLANET = new HashMap<>();
+    static final Map<String, Integer> OPENS = new HashMap<>();
 
     public static void load() {
         try (BufferedReader r = new BufferedReader(new InputStreamReader(new GZIPInputStream(
                 LibraryGear.class.getResourceAsStream("/data/" + DiaithirCombat.ID + "/library_gear/gear.tsv.gz")), StandardCharsets.UTF_8))) {
             String ln;
             while ((ln = r.readLine()) != null) {
-                String[] f = ln.split("\t", 5);
-                Row row = new Row(f[0], Integer.parseInt(f[1]), Integer.parseInt(f[2]), f[3], f[4], BASE.containsKey(f[3]));
-                ROW.put(row.id, row); LIST.add(row);
+                String[] f = ln.split("\t", 6);
+                Row row = new Row(f[0], Integer.parseInt(f[1]), Integer.parseInt(f[2]), f[3], f[4], BASE.containsKey(f[3]), f[5]);
+                ROW.put(row.id, row); LIST.add(row); BY_PLANET.computeIfAbsent(row.planet, k -> new ArrayList<>()).add(row);
             }
         } catch (Exception ex) {
             throw new IllegalStateException("diaithircombat library gear", ex);
         }
     }
 
-    public static void register(IEventBus bus) { COMPONENTS.register(bus); ITEMS.register(bus); load(); }
+    /** Recipe result: an unattributed piece forged at this Age; resolved to a real entry on first hold. */
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> FORGE_AGE = COMPONENTS.registerComponentType("forge_age",
+            b -> b.persistent(Codec.INT).networkSynchronized(ByteBufCodecs.VAR_INT));
+    public static final DeferredRegister<com.mojang.serialization.MapCodec<? extends net.minecraft.world.level.storage.loot.functions.LootItemFunction>> LOOT_FNS =
+            DeferredRegister.create(Registries.LOOT_FUNCTION_TYPE, DiaithirCombat.ID);
+    public static final DeferredHolder<com.mojang.serialization.MapCodec<? extends net.minecraft.world.level.storage.loot.functions.LootItemFunction>, com.mojang.serialization.MapCodec<GearLoot>> GEAR_LOOT =
+            LOOT_FNS.register("library_gear", () -> GearLoot.CODEC);
+
+    public static void register(IEventBus bus) { COMPONENTS.register(bus); ITEMS.register(bus); LOOT_FNS.register(bus); load(); loadPlanets(); }
+
+    static void loadPlanets() {
+        try (BufferedReader r = new BufferedReader(new InputStreamReader(LibraryGear.class.getResourceAsStream("/data/" + DiaithirCombat.ID + "/library_gear/planets.tsv"), StandardCharsets.UTF_8))) {
+            r.readLine();
+            String ln;
+            while ((ln = r.readLine()) != null) { String[] f = ln.split("\t"); OPENS.put(f[0], Integer.parseInt(f[1])); }
+        } catch (Exception ex) { throw new IllegalStateException("diaithircombat planets", ex); }
+    }
+
+    /** Planet of a level: diaithir_planets:<id> dimensions, otherwise Terra (diaithir). */
+    public static String planetOf(net.minecraft.world.level.Level l) {
+        Identifier d = l.dimension().identifier();
+        return d.getNamespace().equals("diaithir_planets") ? d.getPath() : "diaithir";
+    }
+
+    /** Random entry of a planet with class kind and gate in [planet opens_age, opens_age + extra]; falls back to any gate, then any planet. */
+    public static Row pick(String planet, String kind, java.util.Collection<String> classes, int minGate, int maxGate, net.minecraft.util.RandomSource rnd) {
+        List<Row> src = BY_PLANET.getOrDefault(planet, LIST);
+        for (int pass = 0; pass < 3; pass++) {
+            List<Row> pool = new ArrayList<>();
+            for (Row r : src) {
+                if (pass < 2 && (r.gate < minGate || r.gate > maxGate)) continue;
+                if (pass < 1 && !(kind.equals("any") || kind.equals(r.weapon ? "weapon" : "armor"))) continue;
+                if (!classes.isEmpty() && !classes.contains(r.cls)) continue;
+                pool.add(r);
+            }
+            if (!pool.isEmpty()) return pool.get(rnd.nextInt(pool.size()));
+            if (pass == 1) src = LIST;
+        }
+        return null;
+    }
+
+    /** Loot function: replaces the stack with a Library entry of the chest's planet (kind, optional classes, extra Ages above the planet's opening). */
+    public record GearLoot(List<net.minecraft.world.level.storage.loot.predicates.LootItemCondition> predicates, String kind, List<String> classes, int extra)
+            implements net.minecraft.world.level.storage.loot.functions.LootItemFunction {
+        public static final com.mojang.serialization.MapCodec<GearLoot> CODEC = com.mojang.serialization.codecs.RecordCodecBuilder.mapCodec(i -> i.group(
+                net.minecraft.world.level.storage.loot.predicates.LootItemCondition.DIRECT_CODEC.listOf().optionalFieldOf("conditions", List.of()).forGetter(GearLoot::predicates),
+                Codec.STRING.optionalFieldOf("kind", "any").forGetter(GearLoot::kind),
+                Codec.STRING.listOf().optionalFieldOf("classes", List.of()).forGetter(GearLoot::classes),
+                Codec.INT.optionalFieldOf("extra", 2).forGetter(GearLoot::extra)).apply(i, GearLoot::new));
+        @Override public com.mojang.serialization.MapCodec<GearLoot> codec() { return CODEC; }
+        @Override public ItemStack apply(ItemStack in, net.minecraft.world.level.storage.loot.LootContext ctx) {
+            String planet = planetOf(ctx.getLevel());
+            int open = OPENS.getOrDefault(planet, 1);
+            Row r = pick(planet, kind, classes, open, Math.min(9, open + extra), ctx.getRandom());
+            return r == null ? in : stack(r.id);
+        }
+    }
+
+    /** First-hold resolution of recipe results (forge_age component) into a real entry of the holder's planet. */
+    static void resolve(ServerPlayer p) {
+        var inv = p.getInventory();
+        for (int i = 0; i < inv.getContainerSize(); i++) {
+            ItemStack s = inv.getItem(i);
+            if (s.isEmpty() || !s.has(FORGE_AGE.get())) continue;
+            String cls = null;
+            for (var e : BY_CLASS.entrySet()) if (s.is(e.getValue().get())) cls = e.getKey();
+            if (cls == null) continue;
+            int age = s.get(FORGE_AGE.get());
+            Row r = pick(planetOf(p.level()), "any", List.of(cls), age, age, p.getRandom());
+            if (r == null) r = pick("", "any", List.of(cls), age, age, p.getRandom());
+            if (r != null) inv.setItem(i, stack(r.id));
+        }
+    }
 
     // ---- stacks ----
     private static String sid(String id) { return id.toLowerCase(Locale.ROOT); }
@@ -160,6 +234,7 @@ public final class LibraryGear {
     public static boolean usable(ServerPlayer p, ItemStack s) { int t = tierOf(s); return t == 0 || t <= Engine.ageOf(p); }
 
     static void tick(ServerPlayer p) {
+        if (p.tickCount % 20 == 5) resolve(p);
         if (p.tickCount % 40 != 0) return;
         for (EquipmentSlot es : SLOT.values()) {
             ItemStack s = p.getItemBySlot(es);

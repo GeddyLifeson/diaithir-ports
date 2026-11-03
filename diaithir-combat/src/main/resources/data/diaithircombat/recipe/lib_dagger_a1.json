@@ -1,0 +1,17 @@
+{
+ "neoforge:conditions": [],
+ "_age": "I",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:flint",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_dagger",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 1
+  }
+ }
+}

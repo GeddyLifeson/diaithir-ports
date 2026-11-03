@@ -1,0 +1,29 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "c:plates/nanoalloy"
+   }
+  }
+ ],
+ "_age": "VIII",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#c:plates/nanoalloy",
+  "#c:plates/nanoalloy",
+  "#c:plates/nanoalloy",
+  "#c:plates/nanoalloy",
+  "#c:plates/nanoalloy",
+  "#c:plates/nanoalloy"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_shield",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 8
+  }
+ }
+}

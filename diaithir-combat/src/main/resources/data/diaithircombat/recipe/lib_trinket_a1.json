@@ -1,0 +1,17 @@
+{
+ "neoforge:conditions": [],
+ "_age": "I",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:flint",
+  "minecraft:flint"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_trinket",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 1
+  }
+ }
+}

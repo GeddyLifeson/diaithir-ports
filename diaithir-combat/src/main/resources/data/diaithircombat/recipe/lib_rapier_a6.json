@@ -1,0 +1,26 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "c:plates/steel"
+   }
+  }
+ ],
+ "_age": "VI",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#c:plates/steel",
+  "#c:plates/steel",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_rapier",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 6
+  }
+ }
+}

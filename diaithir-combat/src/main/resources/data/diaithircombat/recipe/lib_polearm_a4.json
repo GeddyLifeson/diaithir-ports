@@ -1,0 +1,27 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "c:ingots/iron"
+   }
+  }
+ ],
+ "_age": "IV",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#c:ingots/iron",
+  "#c:ingots/iron",
+  "#c:ingots/iron",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_polearm",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 4
+  }
+ }
+}

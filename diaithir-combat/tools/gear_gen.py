@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""S6838 Library weapon/armor -> compact gear table for diaithir-combat. Reads content.sqlite + codex library.sqlite (summary text, read only), keyword-classifies class/slot from the entry's own text, writes gear.tsv.gz (id, tier, gate Age, class, name). No text is invented or stored."""
+"""S6838 Library weapon/armor -> compact gear table for diaithir-combat. Reads content.sqlite + codex library.sqlite (summary text, read only), keyword-classifies class/slot from the entry's own text, writes gear.tsv.gz (id, tier, gate Age, class, name, planet). No text is invented or stored."""
 import sqlite3, re, gzip, sys, collections
 CONTENT = '/mnt/project-files/library-content/content.sqlite'
 STORE = '/mnt/project-files/codex-store/library.sqlite'
@@ -44,7 +44,7 @@ def main(out):
         k = cls(s or '', cw if form=='WEAPON' else ca, 'sword' if form=='WEAPON' else 'chest')
         t=max(1,min(8,tier or 1))
         gate=min(9,op.get(uni,1)+t-1)  # planet opens_age + tier - 1 (PLANETS.md)
-        rows.append((id_,t,gate,k,name.replace('\t',' ')))
+        rows.append((id_,t,gate,k,name.replace('\t',' '),uni))
         n[(form,k)]+=1
     with gzip.open(out,'wt',encoding='utf-8',compresslevel=9) as f:
         for r in rows: f.write('\t'.join(map(str,r))+'\n')

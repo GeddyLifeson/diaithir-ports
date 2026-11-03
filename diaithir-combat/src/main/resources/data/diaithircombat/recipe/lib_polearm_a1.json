@@ -1,0 +1,19 @@
+{
+ "neoforge:conditions": [],
+ "_age": "I",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:flint",
+  "minecraft:flint",
+  "minecraft:flint",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_polearm",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 1
+  }
+ }
+}

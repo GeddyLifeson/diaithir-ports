@@ -1,0 +1,20 @@
+{
+ "neoforge:conditions": [],
+ "_age": "I",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:flint",
+  "minecraft:flint",
+  "minecraft:string",
+  "minecraft:string",
+  "minecraft:stick"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_longbow",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 1
+  }
+ }
+}
