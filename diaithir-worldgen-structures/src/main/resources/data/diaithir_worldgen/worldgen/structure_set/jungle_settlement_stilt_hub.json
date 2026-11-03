@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:jungle_settlement_stilt_hub",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 28,
+  "separation": 9,
+  "salt": 13187461
+ }
+}

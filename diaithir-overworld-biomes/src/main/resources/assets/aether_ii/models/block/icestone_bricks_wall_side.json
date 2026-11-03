@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/template_wall_side",
  "textures": {
-  "wall": "minecraft:block/stone"
+  "wall": "aether_ii:block/icestone_bricks_wall"
  }
 }

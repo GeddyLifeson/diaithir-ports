@@ -22,12 +22,18 @@ public final class PlanetBoss extends Monster {
     public static final String TAG = DiaithirBosses.ID + ":pb:";
     private static final EntityDataAccessor<String> LOOK = SynchedEntityData.defineId(PlanetBoss.class, EntityDataSerializers.STRING);
 
+    private static final EntityDataAccessor<String> ANIM = SynchedEntityData.defineId(PlanetBoss.class, EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<Integer> ANIM_PHASE = SynchedEntityData.defineId(PlanetBoss.class, EntityDataSerializers.INT);
+    private long animStart;
+
     public PlanetBoss(EntityType<? extends PlanetBoss> type, Level level) { super(type, level); }
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(LOOK, "");
+        builder.define(ANIM, "");
+        builder.define(ANIM_PHASE, 0);
     }
 
     @Override
@@ -39,6 +45,19 @@ public final class PlanetBoss extends Monster {
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
+
+    /** Attack animation for the client: type (slam, rewind...) and phase (0 none, 1 wind-up, 2 strike). Set by the BossController. */
+    public void playAnim(String type, int phase) {
+        this.entityData.set(ANIM, type == null ? "" : type);
+        this.entityData.set(ANIM_PHASE, phase);
+        this.animStart = this.level().getGameTime();
+    }
+
+    public String animType() { return this.entityData.get(ANIM); }
+
+    public int animPhase() { return this.entityData.get(ANIM_PHASE); }
+
+    public long animStart() { return animStart; }
 
     public String lookId() { return this.entityData.get(LOOK); }
 

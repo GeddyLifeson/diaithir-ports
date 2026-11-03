@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/template_fence_gate",
  "textures": {
-  "texture": "minecraft:block/oak_planks"
+  "texture": "the_backwoods:block/petrified_rotten_oak_fence_gate"
  }
 }

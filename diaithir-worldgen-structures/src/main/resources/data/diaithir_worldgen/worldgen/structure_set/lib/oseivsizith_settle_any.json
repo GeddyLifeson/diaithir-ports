@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_0_any",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_1_any",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_2_any",
+   "weight": 59
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/settlement_3_any",
+   "weight": 27
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 146938306
+ }
+}

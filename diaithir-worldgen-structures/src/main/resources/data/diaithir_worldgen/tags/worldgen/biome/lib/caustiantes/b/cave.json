@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:caustiantes_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:caustiantes_grottoes",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/orerum/hall_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orerum/landmark_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 148782787
+ }
+}

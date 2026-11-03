@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:venilleth_alaelys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venilleth_brerdon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venilleth_elioleth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venilleth_ilyemuarys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venilleth_miimiorliel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venilleth_sestora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venilleth_thedock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venilleth_veniolys",
+   "required": false
+  }
+ ]
+}

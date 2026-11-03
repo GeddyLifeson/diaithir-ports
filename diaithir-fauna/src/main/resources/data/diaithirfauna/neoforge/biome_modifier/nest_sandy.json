@@ -1,0 +1,11 @@
+{
+ "type": "neoforge:add_features",
+ "biomes": [
+  "minecraft:desert",
+  "minecraft:beach",
+  "minecraft:badlands",
+  "minecraft:savanna"
+ ],
+ "features": "diaithirfauna:nest_sandy",
+ "step": "vegetal_decoration"
+}

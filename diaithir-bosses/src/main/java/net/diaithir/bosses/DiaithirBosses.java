@@ -76,6 +76,8 @@ public final class DiaithirBosses {
     public static final DeferredItem<Item> AGESHARD = ITEMS.registerSimpleItem("ageshard");
     public static final DeferredItem<Item> RUSH_LAUREL = ITEMS.registerSimpleItem("rush_laurel");
     public static final DeferredItem<Item> TOKEN = ITEMS.registerSimpleItem("champion_token");
+    /** A Library rite on paper: the entry id is in custom data. Used on an Ascendant altar it begins that rite. */
+    public static final DeferredItem<Item> RITE_PAGE = ITEMS.registerSimpleItem("rite_page");
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AltarBlockEntity>> ALTAR_BE =
         BLOCK_ENTITIES.register("boss_altar", () -> new BlockEntityType<>(AltarBlockEntity::new, ALTAR.get()));
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("bosses", () -> CreativeModeTab.builder()
@@ -92,6 +94,7 @@ public final class DiaithirBosses {
             out.accept(AGESHARD.get());
             out.accept(RUSH_LAUREL.get());
             out.accept(TOKEN.get());
+            out.accept(RITE_PAGE.get());
             EGGS.values().forEach(i -> out.accept(i.get()));
             TROPHIES.values().forEach(i -> out.accept(i.get()));
         }).build());

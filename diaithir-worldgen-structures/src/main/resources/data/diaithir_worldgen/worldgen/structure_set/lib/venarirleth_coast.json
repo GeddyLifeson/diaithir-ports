@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/harbor_0_coast",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venarirleth/harbor_1_coast",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 203715376
+ }
+}

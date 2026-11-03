@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_0_osestora",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shiavsora/settlement_3_osestora",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 105518555
+ }
+}

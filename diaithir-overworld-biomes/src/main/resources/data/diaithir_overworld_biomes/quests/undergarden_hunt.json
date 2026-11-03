@@ -1,0 +1,21 @@
+{
+ "id": "diaithir_overworld_biomes:undergarden_hunt",
+ "codex_link": "diaithir_overworld_biomes:undergarden_bestiary",
+ "age": 2,
+ "age_gate": "diaithir:age/2",
+ "title": "Hunt: The Undergarden",
+ "description": "Defeat one creature of The Undergarden.",
+ "tasks": [
+  {
+   "type": "kill",
+   "entity_tag": "undergarden:undergarden_mobs",
+   "count": 1
+  }
+ ],
+ "rewards": [
+  {
+   "type": "energy",
+   "amount_j": 100
+  }
+ ]
+}

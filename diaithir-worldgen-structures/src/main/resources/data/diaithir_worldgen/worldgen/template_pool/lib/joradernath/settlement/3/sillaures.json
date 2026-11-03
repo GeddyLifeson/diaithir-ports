@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/joradernath/settlement/3/sillaures",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/joradernath/ma_joradernath_e7_assay_000922",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

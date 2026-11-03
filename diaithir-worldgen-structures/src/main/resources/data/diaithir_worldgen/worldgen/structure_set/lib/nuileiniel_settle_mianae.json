@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nuileiniel/settlement_0_mianae",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuileiniel/settlement_2_mianae",
+   "weight": 15
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 113090201
+ }
+}

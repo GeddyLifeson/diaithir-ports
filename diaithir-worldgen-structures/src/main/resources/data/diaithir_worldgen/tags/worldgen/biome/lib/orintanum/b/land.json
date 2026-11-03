@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:orintanum_ameornum_reontium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:orintanum_cillanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:orintanum_monia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:orintanum_orantus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:orintanum_oreontarus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:orintanum_orollum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:orintanum_serirestia",
+   "required": false
+  }
+ ]
+}

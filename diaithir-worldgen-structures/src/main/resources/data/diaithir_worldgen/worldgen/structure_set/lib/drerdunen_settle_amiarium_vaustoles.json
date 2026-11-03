@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_amiarium_vaustoles",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_amiarium_vaustoles",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_amiarium_vaustoles",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_3_amiarium_vaustoles",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 186497384
+ }
+}

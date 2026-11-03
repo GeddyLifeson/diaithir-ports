@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:zephivsora_ashyuvsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_crelden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_isevsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_morunon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_osasteth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_osethis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_vhuzhar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_xaesasha",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_xaesivsith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:zephivsora_zephyushora",
+   "required": false
+  }
+ ]
+}

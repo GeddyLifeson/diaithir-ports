@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:miilora_elaeneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miilora_elarlora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miilora_oriimys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miilora_silaeriel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miilora_sileinna",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miilora_silualemwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miilora_venelaenys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miilora_venualiel",
+   "required": false
+  }
+ ]
+}

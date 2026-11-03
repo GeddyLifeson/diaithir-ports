@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:mienys_corontum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_fenordock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_jorurock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_miileth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_silenniorys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_tarnudonar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_thourkoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_thudenon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_veneirliel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mienys_veniomiel",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silena/delve_0_cave",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/delve_1_cave",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/delve_2_cave",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/delve_3_cave",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 165689431
+ }
+}

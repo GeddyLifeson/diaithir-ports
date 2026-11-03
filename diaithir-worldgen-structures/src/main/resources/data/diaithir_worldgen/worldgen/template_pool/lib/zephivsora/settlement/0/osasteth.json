@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/zephivsora/settlement/0/osasteth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/zephivsora/st_zephivsora_e4_places_000107",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

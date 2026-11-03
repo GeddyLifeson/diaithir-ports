@@ -1,0 +1,185 @@
+[
+ {
+  "id": "meadow",
+  "name": "Meadow",
+  "wild": 3,
+  "cross": null,
+  "out": {
+   "item": "minecraft:honeycomb",
+   "count": 1,
+   "method": "vanilla"
+  },
+  "color": "E8B923",
+  "age": 1
+ },
+ {
+  "id": "sandy",
+  "name": "Sandy",
+  "wild": 2,
+  "cross": null,
+  "out": {
+   "item": "minecraft:sand",
+   "count": 4,
+   "method": "craft"
+  },
+  "color": "E6D79C",
+  "age": 1
+ },
+ {
+  "id": "muddy",
+  "name": "Muddy",
+  "wild": 2,
+  "cross": null,
+  "out": {
+   "item": "minecraft:clay_ball",
+   "count": 4,
+   "method": "craft"
+  },
+  "color": "9AA3B5",
+  "age": 1
+ },
+ {
+  "id": "coal",
+  "name": "Coal",
+  "wild": 0,
+  "cross": [
+   "meadow",
+   "sandy"
+  ],
+  "out": {
+   "item": "minecraft:coal",
+   "count": 2,
+   "method": "smelt"
+  },
+  "color": "2B2B2B",
+  "age": 2
+ },
+ {
+  "id": "iron",
+  "name": "Iron",
+  "wild": 0,
+  "cross": [
+   "coal",
+   "muddy"
+  ],
+  "out": {
+   "item": "minecraft:iron_nugget",
+   "count": 6,
+   "method": "smelt"
+  },
+  "color": "C8C8C8",
+  "age": 3
+ },
+ {
+  "id": "copper",
+  "name": "Copper",
+  "wild": 0,
+  "cross": [
+   "sandy",
+   "muddy"
+  ],
+  "out": {
+   "item": "minecraft:copper_ingot",
+   "count": 1,
+   "method": "smelt"
+  },
+  "color": "C46A3C",
+  "age": 3
+ },
+ {
+  "id": "redstone",
+  "name": "Redstone",
+  "wild": 0,
+  "cross": [
+   "coal",
+   "copper"
+  ],
+  "out": {
+   "item": "minecraft:redstone",
+   "count": 4,
+   "method": "craft"
+  },
+  "color": "C21E1E",
+  "age": 4
+ },
+ {
+  "id": "gold",
+  "name": "Gold",
+  "wild": 0,
+  "cross": [
+   "iron",
+   "copper"
+  ],
+  "out": {
+   "item": "minecraft:gold_nugget",
+   "count": 6,
+   "method": "smelt"
+  },
+  "color": "F2C94C",
+  "age": 4
+ },
+ {
+  "id": "lapis",
+  "name": "Lapis",
+  "wild": 0,
+  "cross": [
+   "iron",
+   "redstone"
+  ],
+  "out": {
+   "item": "minecraft:lapis_lazuli",
+   "count": 3,
+   "method": "craft"
+  },
+  "color": "2F4FC9",
+  "age": 4
+ },
+ {
+  "id": "quartz",
+  "name": "Quartz",
+  "wild": 0,
+  "cross": [
+   "sandy",
+   "redstone"
+  ],
+  "out": {
+   "item": "minecraft:quartz",
+   "count": 1,
+   "method": "smelt"
+  },
+  "color": "EDE8E0",
+  "age": 5
+ },
+ {
+  "id": "glowstone",
+  "name": "Glowstone",
+  "wild": 0,
+  "cross": [
+   "gold",
+   "redstone"
+  ],
+  "out": {
+   "item": "minecraft:glowstone_dust",
+   "count": 3,
+   "method": "craft"
+  },
+  "color": "FFD35A",
+  "age": 5
+ },
+ {
+  "id": "diamond",
+  "name": "Diamond",
+  "wild": 0,
+  "cross": [
+   "gold",
+   "lapis"
+  ],
+  "out": {
+   "item": "minecraft:diamond",
+   "count": 1,
+   "method": "smelt"
+  },
+  "color": "4AEDD9",
+  "age": 7
+ }
+]

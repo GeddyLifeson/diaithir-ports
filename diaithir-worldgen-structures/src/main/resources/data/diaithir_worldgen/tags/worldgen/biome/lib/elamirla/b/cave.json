@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:elamirla_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:elamirla_grottoes",
+   "required": false
+  }
+ ]
+}

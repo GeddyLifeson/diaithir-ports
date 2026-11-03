@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/settlement_0_vaustosum",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/linaustia/settlement_1_vaustosum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 252507328
+ }
+}

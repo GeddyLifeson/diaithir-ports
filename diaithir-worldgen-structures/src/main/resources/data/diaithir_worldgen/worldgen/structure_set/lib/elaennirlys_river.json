@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/bridge_0_river",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/bridge_1_river",
+   "weight": 38
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/bridge_2_river",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 39697561
+ }
+}

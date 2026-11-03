@@ -94,6 +94,32 @@ public final class BossCommands {
                 Elites.make(best, Ages.current(l.getServer()), RandomSource.create(), null);
                 return 1;
             })));
+        d.register(Commands.literal("rite").requires(BossCommands::gm)
+            .then(Commands.literal("info").then(Commands.argument("id", StringArgumentType.word()).executes(c -> {
+                var r = RiteLibrary.get(StringArgumentType.getString(c, "id"));
+                if (r == null) { c.getSource().sendFailure(Component.literal("no such rite")); return 0; }
+                c.getSource().sendSuccess(() -> Component.literal(r.name + " (Age " + Ages.name(r.tier) + ", school " + r.school + ", planet " + r.planet
+                    + ", opens Age " + Ages.name(r.gate_age) + ", " + r.steps.size() + " steps): " + r.text), false);
+                return r.steps.size();
+            })))
+            .then(Commands.literal("page").then(Commands.argument("id", StringArgumentType.word()).executes(c -> {
+                var r = RiteLibrary.get(StringArgumentType.getString(c, "id"));
+                if (r == null) { c.getSource().sendFailure(Component.literal("no such rite")); return 0; }
+                c.getSource().getPlayerOrException().getInventory().add(RiteLibrary.page(r));
+                return 1;
+            })))
+            .then(Commands.literal("begin").then(Commands.argument("id", StringArgumentType.word()).executes(c -> {
+                var src = c.getSource();
+                ServerLevel l = src.getLevel();
+                net.minecraft.core.BlockPos at = null;
+                var o = net.minecraft.core.BlockPos.containing(src.getPosition());
+                for (var b : net.minecraft.core.BlockPos.betweenClosed(o.offset(-6, -3, -6), o.offset(6, 3, 6)))
+                    if (l.getBlockState(b).is(DiaithirBosses.ASCENDANT_ALTAR.get()) && (at == null || b.distSqr(o) < at.distSqr(o))) at = b.immutable();
+                if (at == null) { src.sendFailure(Component.literal("stand within six blocks of an Ascendant altar")); return 0; }
+                Component why = Ritual.beginRite(l, at, StringArgumentType.getString(c, "id"));
+                if (why != null) { src.sendFailure(why); return 0; }
+                return 1;
+            }))));
         d.register(Commands.literal("bossesrushtest").requires(BossCommands::gm).executes(c -> RushTest.start(c.getSource())));
         d.register(Commands.literal("bossesselftest").requires(BossCommands::gm).executes(c -> SelfTest.start(c.getSource())));
     }

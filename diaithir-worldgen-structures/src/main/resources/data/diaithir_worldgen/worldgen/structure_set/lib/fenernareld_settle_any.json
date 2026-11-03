@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/fenernareld/settlement_0_any",
+   "weight": 90
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenernareld/settlement_1_any",
+   "weight": 27
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenernareld/settlement_2_any",
+   "weight": 63
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 157459213
+ }
+}

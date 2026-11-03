@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/bronurneld/settlement/2/peluderath",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/bronurneld/gr_bronurneld_e6_assay_000307",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

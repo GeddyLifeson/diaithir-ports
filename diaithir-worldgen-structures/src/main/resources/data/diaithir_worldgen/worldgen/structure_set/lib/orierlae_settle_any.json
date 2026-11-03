@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_0_any",
+   "weight": 51
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_1_any",
+   "weight": 85
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_2_any",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/orierlae/settlement_3_any",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 152867741
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/delve_0_cave",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/xaatheth/delve_2_cave",
+   "weight": 26
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 217992994
+ }
+}

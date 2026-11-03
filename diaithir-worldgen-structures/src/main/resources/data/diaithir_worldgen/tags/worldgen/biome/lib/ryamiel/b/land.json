@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ryamiel_croduren",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_drasture",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_eliomora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_karuthurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_lyala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_maullus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_oriasus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_oseisith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_osunaoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_tenramari",
+   "required": false
+  }
+ ]
+}

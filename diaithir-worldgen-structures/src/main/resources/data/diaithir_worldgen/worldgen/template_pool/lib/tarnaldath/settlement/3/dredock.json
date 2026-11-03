@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/tarnaldath/settlement/3/dredock",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/tarnaldath/st_tarnaldath_e7_assay_003441",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

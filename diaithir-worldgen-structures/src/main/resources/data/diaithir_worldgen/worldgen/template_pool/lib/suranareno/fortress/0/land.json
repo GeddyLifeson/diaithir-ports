@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/suranareno/fortress/0/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/suranareno/ma_suranareno_e3_places_000693",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

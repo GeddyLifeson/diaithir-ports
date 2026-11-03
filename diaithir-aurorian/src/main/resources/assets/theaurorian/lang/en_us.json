@@ -229,5 +229,9 @@
  "string.theaurorian.tooltip.spectral": "Has a %s%% chance to cleanse negative effects when attacking!",
  "biome.theaurorian.aurorian_forest": "Aurorian Forest",
  "biome.theaurorian.aurorian_plains": "Aurorian Plains",
- "biome.theaurorian.aurorian_rough_forest": "Aurorian Rough Forest"
+ "biome.theaurorian.aurorian_rough_forest": "Aurorian Rough Forest",
+ "item.theaurorian.hollow_spawn_egg": "Hollow Spawn Egg",
+ "item.theaurorian.undead_knight_spawn_egg": "Undead Knight Spawn Egg",
+ "item.theaurorian.dungeon_slime_spawn_egg": "Dungeon Slime Spawn Egg",
+ "item.theaurorian.dungeon_keeper_spawn_egg": "Dungeon Keeper Spawn Egg"
 }

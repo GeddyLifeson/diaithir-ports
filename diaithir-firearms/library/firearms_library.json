@@ -236,5 +236,1989 @@
   7,
   "firearms",
   "Foregrip: tightens spread by three tenths. One of each kind per gun."
+ ],
+ [
+  "Chinese Hand Cannon",
+  "item",
+  5,
+  "firearms",
+  "Chinese Hand Cannon (China, 1288): musket firing Hand Cannon Shot. 5.4 hp a shot, 1 rounds a minute, one shot per pull, 1 in the magazine, effective to 50 m. Source: https://en.wikipedia.org/wiki/Hand_cannon",
+  "roster"
+ ],
+ [
+  "Arquebus",
+  "item",
+  5,
+  "firearms",
+  "Arquebus (Spain, 1450): musket firing Arquebus Ball. 9.4 hp a shot, 1 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Arquebus",
+  "roster"
+ ],
+ [
+  "Tanegashima",
+  "item",
+  5,
+  "firearms",
+  "Tanegashima (Japan, 1543): musket firing Arquebus Ball. 9.4 hp a shot, 2 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Tanegashima_(gun)",
+  "roster"
+ ],
+ [
+  "Matchlock Musket",
+  "item",
+  5,
+  "firearms",
+  "Matchlock Musket (Spain, 1521): musket firing Musket Ball. 11.8 hp a shot, 1 rounds a minute, one shot per pull, 1 in the magazine, effective to 86 m. Source: https://en.wikipedia.org/wiki/Musket",
+  "roster"
+ ],
+ [
+  "Wheellock Pistol",
+  "item",
+  5,
+  "firearms",
+  "Wheellock Pistol (Germany, 1500): pistol firing Pistol Ball. 5 hp a shot, 2 rounds a minute, one shot per pull, 1 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Wheellock",
+  "roster"
+ ],
+ [
+  "Land Pattern Musket (Brown Bess)",
+  "item",
+  5,
+  "firearms",
+  "Land Pattern Musket (Brown Bess) (Britain, 1722): musket firing Musket Ball. 11.8 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 86 m. Source: https://en.wikipedia.org/wiki/Brown_Bess",
+  "roster"
+ ],
+ [
+  "Charleville Musket",
+  "item",
+  5,
+  "firearms",
+  "Charleville Musket (France, 1717): musket firing Musket Ball. 11.8 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 86 m. Source: https://en.wikipedia.org/wiki/Charleville_musket",
+  "roster"
+ ],
+ [
+  "Pennsylvania Long Rifle",
+  "item",
+  5,
+  "firearms",
+  "Pennsylvania Long Rifle (USA, 1740): musket firing Long Rifle Ball. 8.6 hp a shot, 2 rounds a minute, one shot per pull, 1 in the magazine, effective to 65 m. Source: https://en.wikipedia.org/wiki/Pennsylvania_long_rifle",
+  "roster"
+ ],
+ [
+  "Baker Rifle",
+  "item",
+  5,
+  "firearms",
+  "Baker Rifle (Britain, 1800): musket firing Long Rifle Ball. 8.6 hp a shot, 2 rounds a minute, one shot per pull, 1 in the magazine, effective to 65 m. Source: https://en.wikipedia.org/wiki/Baker_rifle",
+  "roster"
+ ],
+ [
+  "Hall Breech-Loading Rifle",
+  "item",
+  5,
+  "firearms",
+  "Hall Breech-Loading Rifle (USA, 1819): musket firing Long Rifle Ball. 8.6 hp a shot, 4 rounds a minute, one shot per pull, 1 in the magazine, effective to 65 m. Source: https://en.wikipedia.org/wiki/Hall_rifle",
+  "roster"
+ ],
+ [
+  "Dreyse Needle Gun",
+  "item",
+  5,
+  "firearms",
+  "Dreyse Needle Gun (Prussia, 1841): rifle firing Needle Gun Cartridge 15.4 mm. 8.3 hp a shot, 10 rounds a minute, one shot per pull, 1 in the magazine, effective to 83 m. Source: https://en.wikipedia.org/wiki/Dreyse_needle_gun",
+  "roster"
+ ],
+ [
+  "Minie Rifle",
+  "item",
+  5,
+  "firearms",
+  "Minie Rifle (France, 1849): musket firing Minie Ball .58. 10.9 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 80 m. Source: https://en.wikipedia.org/wiki/Minié_rifle",
+  "roster"
+ ],
+ [
+  "Lorenz Rifle",
+  "item",
+  5,
+  "firearms",
+  "Lorenz Rifle (Austria, 1854): musket firing Minie Ball .58. 10.9 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 80 m. Source: https://en.wikipedia.org/wiki/Lorenz_rifle",
+  "roster"
+ ],
+ [
+  "Pattern 1853 Enfield",
+  "item",
+  5,
+  "firearms",
+  "Pattern 1853 Enfield (Britain, 1853): musket firing Enfield Ball .577. 11.3 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 83 m. Source: https://en.wikipedia.org/wiki/Enfield_Pattern_1853",
+  "roster"
+ ],
+ [
+  "Springfield Model 1861",
+  "item",
+  6,
+  "firearms",
+  "Springfield Model 1861 (USA, 1861): musket firing Minie Ball .58. 10.9 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 80 m. Source: https://en.wikipedia.org/wiki/Springfield_Model_1861",
+  "roster"
+ ],
+ [
+  "Sharps Rifle",
+  "item",
+  5,
+  "firearms",
+  "Sharps Rifle (USA, 1859): rifle firing Sharps Cartridge .52. 10.4 hp a shot, 8 rounds a minute, one shot per pull, 1 in the magazine, effective to 96 m. Source: https://en.wikipedia.org/wiki/Sharps_rifle",
+  "roster"
+ ],
+ [
+  "Colt Dragoon Revolver",
+  "item",
+  5,
+  "firearms",
+  "Colt Dragoon Revolver (USA, 1848): pistol firing Revolver Ball .44. 5.4 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Colt_Dragoon",
+  "roster"
+ ],
+ [
+  "Colt 1851 Navy Revolver",
+  "item",
+  5,
+  "firearms",
+  "Colt 1851 Navy Revolver (USA, 1851): pistol firing Revolver Ball .36. 4.2 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Colt_1851_Navy_Revolver",
+  "roster"
+ ],
+ [
+  "Remington 1858 Revolver",
+  "item",
+  5,
+  "firearms",
+  "Remington 1858 Revolver (USA, 1858): pistol firing Revolver Ball .44. 5.4 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Remington_Model_1858",
+  "roster"
+ ],
+ [
+  "Spencer Repeating Rifle",
+  "item",
+  5,
+  "firearms",
+  "Spencer Repeating Rifle (USA, 1860): rifle firing Spencer Cartridge .56-56. 8.6 hp a shot, 20 rounds a minute, one shot per pull, 7 in the magazine, effective to 85 m. Source: https://en.wikipedia.org/wiki/Spencer_repeating_rifle",
+  "roster"
+ ],
+ [
+  "Henry Repeating Rifle",
+  "item",
+  5,
+  "firearms",
+  "Henry Repeating Rifle (USA, 1860): rifle firing Henry Cartridge .44. 5.9 hp a shot, 25 rounds a minute, one shot per pull, 16 in the magazine, effective to 71 m. Source: https://en.wikipedia.org/wiki/Henry_repeating_rifle",
+  "roster"
+ ],
+ [
+  "Winchester Model 1873",
+  "item",
+  6,
+  "firearms",
+  "Winchester Model 1873 (USA, 1873): rifle firing .44-40 Winchester Round. 5.9 hp a shot, 30 rounds a minute, one shot per pull, 15 in the magazine, effective to 71 m. Source: https://en.wikipedia.org/wiki/Winchester_Model_1873",
+  "roster"
+ ],
+ [
+  "Winchester Model 1894",
+  "item",
+  6,
+  "firearms",
+  "Winchester Model 1894 (USA, 1894): rifle firing .30-30 Winchester Round. 9.9 hp a shot, 30 rounds a minute, one shot per pull, 7 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/Winchester_Model_1894",
+  "roster"
+ ],
+ [
+  "Snider-Enfield",
+  "item",
+  6,
+  "firearms",
+  "Snider-Enfield (Britain, 1866): rifle firing .577 Snider Round. 10.9 hp a shot, 10 rounds a minute, one shot per pull, 1 in the magazine, effective to 100 m. Source: https://en.wikipedia.org/wiki/Snider–Enfield",
+  "roster"
+ ],
+ [
+  "Martini-Henry",
+  "item",
+  6,
+  "firearms",
+  "Martini-Henry (Britain, 1871): rifle firing .577/450 Martini-Henry Round. 12.4 hp a shot, 12 rounds a minute, one shot per pull, 1 in the magazine, effective to 111 m. Source: https://en.wikipedia.org/wiki/Martini–Henry",
+  "roster"
+ ],
+ [
+  "Chassepot",
+  "item",
+  6,
+  "firearms",
+  "Chassepot (France, 1866): rifle firing Chassepot Cartridge 11 mm. 11.1 hp a shot, 10 rounds a minute, one shot per pull, 1 in the magazine, effective to 101 m. Source: https://en.wikipedia.org/wiki/Chassepot",
+  "roster"
+ ],
+ [
+  "Gras Rifle",
+  "item",
+  6,
+  "firearms",
+  "Gras Rifle (France, 1874): rifle firing 11x59 mmR Gras Round. 12.2 hp a shot, 10 rounds a minute, one shot per pull, 1 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Gras_rifle",
+  "roster"
+ ],
+ [
+  "Berdan Rifle",
+  "item",
+  6,
+  "firearms",
+  "Berdan Rifle (Russia, 1868): rifle firing 10.67x58 mmR Berdan Round. 12.2 hp a shot, 10 rounds a minute, one shot per pull, 1 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Berdan_rifle",
+  "roster"
+ ],
+ [
+  "Remington Rolling Block",
+  "item",
+  6,
+  "firearms",
+  "Remington Rolling Block (USA, 1867): rifle firing 11.4x57 mmR Spanish Round. 11.8 hp a shot, 12 rounds a minute, one shot per pull, 1 in the magazine, effective to 106 m. Source: https://en.wikipedia.org/wiki/Remington_Rolling_Block_rifle",
+  "roster"
+ ],
+ [
+  "Springfield Model 1873 Trapdoor",
+  "item",
+  6,
+  "firearms",
+  "Springfield Model 1873 Trapdoor (USA, 1873): rifle firing .45-70 Government Round. 12.2 hp a shot, 10 rounds a minute, one shot per pull, 1 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Springfield_Model_1873",
+  "roster"
+ ],
+ [
+  "Mauser Model 1871",
+  "item",
+  6,
+  "firearms",
+  "Mauser Model 1871 (Germany, 1871): rifle firing 11.15x60 mmR Mauser Round. 12.8 hp a shot, 10 rounds a minute, one shot per pull, 1 in the magazine, effective to 115 m. Source: https://en.wikipedia.org/wiki/Mauser_Model_1871",
+  "roster"
+ ],
+ [
+  "Gewehr 88 Commission Rifle",
+  "item",
+  6,
+  "firearms",
+  "Gewehr 88 Commission Rifle (Germany, 1888): rifle firing 7.92x57 mm Mauser Round. 13.7 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 123 m. Source: https://en.wikipedia.org/wiki/Gewehr_1888",
+  "roster"
+ ],
+ [
+  "Karabiner 98k",
+  "item",
+  6,
+  "firearms",
+  "Karabiner 98k (Germany, 1935): rifle firing 7.92x57 mm Mauser Round. 13.7 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 123 m. Source: https://en.wikipedia.org/wiki/Karabiner_98k",
+  "roster"
+ ],
+ [
+  "Lebel Model 1886",
+  "item",
+  6,
+  "firearms",
+  "Lebel Model 1886 (France, 1886): rifle firing 8x50 mmR Lebel Round. 12.2 hp a shot, 10 rounds a minute, one shot per pull, 8 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Lebel_Model_1886_rifle",
+  "roster"
+ ],
+ [
+  "MAS-36",
+  "item",
+  6,
+  "firearms",
+  "MAS-36 (France, 1936): rifle firing 7.5x54 mm French Round. 13 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/MAS-36",
+  "roster"
+ ],
+ [
+  "Mannlicher M1895",
+  "item",
+  6,
+  "firearms",
+  "Mannlicher M1895 (Austria-Hungary, 1895): rifle firing 8x50 mmR Mannlicher Round. 12.2 hp a shot, 20 rounds a minute, one shot per pull, 5 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Mannlicher_M1895",
+  "roster"
+ ],
+ [
+  "Carcano M91",
+  "item",
+  6,
+  "firearms",
+  "Carcano M91 (Italy, 1891): rifle firing 6.5x52 mm Carcano Round. 11.5 hp a shot, 15 rounds a minute, one shot per pull, 6 in the magazine, effective to 105 m. Source: https://en.wikipedia.org/wiki/Carcano",
+  "roster"
+ ],
+ [
+  "Krag-Jorgensen",
+  "item",
+  6,
+  "firearms",
+  "Krag-Jorgensen (Denmark, 1889): rifle firing .30-40 Krag Round. 12.2 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Krag–Jørgensen",
+  "roster"
+ ],
+ [
+  "Schmidt-Rubin K31",
+  "item",
+  6,
+  "firearms",
+  "Schmidt-Rubin K31 (Switzerland, 1931): rifle firing 7.5x55 mm Swiss Round. 13 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/Schmidt–Rubin",
+  "roster"
+ ],
+ [
+  "Lee-Enfield SMLE",
+  "item",
+  6,
+  "firearms",
+  "Lee-Enfield SMLE (Britain, 1907): rifle firing .303 British Round. 13.1 hp a shot, 25 rounds a minute, one shot per pull, 10 in the magazine, effective to 118 m. Source: https://en.wikipedia.org/wiki/Lee–Enfield",
+  "roster"
+ ],
+ [
+  "M1917 Enfield",
+  "item",
+  6,
+  "firearms",
+  "M1917 Enfield (USA, 1917): rifle firing .30-06 Springfield Round. 13.9 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 125 m. Source: https://en.wikipedia.org/wiki/M1917_Enfield",
+  "roster"
+ ],
+ [
+  "Springfield M1903",
+  "item",
+  6,
+  "firearms",
+  "Springfield M1903 (USA, 1903): rifle firing .30-06 Springfield Round. 13.9 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 125 m. Source: https://en.wikipedia.org/wiki/M1903_Springfield",
+  "roster"
+ ],
+ [
+  "M1 Garand",
+  "item",
+  6,
+  "firearms",
+  "M1 Garand (USA, 1936): rifle firing .30-06 Springfield Round. 13.9 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 125 m. Source: https://en.wikipedia.org/wiki/M1_Garand",
+  "roster"
+ ],
+ [
+  "M1 Carbine",
+  "item",
+  6,
+  "firearms",
+  "M1 Carbine (USA, 1942): rifle firing .30 Carbine Round. 8 hp a shot, 40 rounds a minute, one shot per pull, 15 in the magazine, effective to 81 m. Source: https://en.wikipedia.org/wiki/M1_carbine",
+  "roster"
+ ],
+ [
+  "Browning Automatic Rifle",
+  "item",
+  6,
+  "firearms",
+  "Browning Automatic Rifle (USA, 1918): lmg firing .30-06 Springfield Round. 13.9 hp a shot, 550 rounds a minute, automatic, 20 in the magazine, effective to 125 m. Source: https://en.wikipedia.org/wiki/M1918_Browning_Automatic_Rifle",
+  "roster"
+ ],
+ [
+  "Mosin-Nagant M1891",
+  "item",
+  6,
+  "firearms",
+  "Mosin-Nagant M1891 (Russia, 1891): rifle firing 7.62x54 mmR Round. 13.5 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 121 m. Source: https://en.wikipedia.org/wiki/Mosin–Nagant",
+  "roster"
+ ],
+ [
+  "Tokarev SVT-40",
+  "item",
+  6,
+  "firearms",
+  "Tokarev SVT-40 (USSR, 1940): rifle firing 7.62x54 mmR Round. 13.5 hp a shot, 40 rounds a minute, one shot per pull, 10 in the magazine, effective to 121 m. Source: https://en.wikipedia.org/wiki/SVT-40",
+  "roster"
+ ],
+ [
+  "Simonov SKS",
+  "item",
+  6,
+  "firearms",
+  "Simonov SKS (USSR, 1945): rifle firing 7.62x39 mm Round. 9.9 hp a shot, 40 rounds a minute, one shot per pull, 10 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/SKS",
+  "roster"
+ ],
+ [
+  "Arisaka Type 38",
+  "item",
+  6,
+  "firearms",
+  "Arisaka Type 38 (Japan, 1905): rifle firing 6.5x50 mmSR Arisaka Round. 11.5 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 105 m. Source: https://en.wikipedia.org/wiki/Type_38_rifle",
+  "roster"
+ ],
+ [
+  "Arisaka Type 99",
+  "item",
+  6,
+  "firearms",
+  "Arisaka Type 99 (Japan, 1939): rifle firing 7.7x58 mm Arisaka Round. 13.5 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 121 m. Source: https://en.wikipedia.org/wiki/Type_99_rifle",
+  "roster"
+ ],
+ [
+  "Ross Rifle",
+  "item",
+  6,
+  "firearms",
+  "Ross Rifle (Canada, 1905): rifle firing .303 British Round. 13.1 hp a shot, 20 rounds a minute, one shot per pull, 5 in the magazine, effective to 118 m. Source: https://en.wikipedia.org/wiki/Ross_rifle",
+  "roster"
+ ],
+ [
+  "StG 44",
+  "item",
+  6,
+  "firearms",
+  "StG 44 (Germany, 1944): rifle firing 7.92x33 mm Kurz Round. 9.9 hp a shot, 500 rounds a minute, automatic, 30 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/StG_44",
+  "roster"
+ ],
+ [
+  "FG 42",
+  "item",
+  6,
+  "firearms",
+  "FG 42 (Germany, 1943): rifle firing 7.92x57 mm Mauser Round. 13.7 hp a shot, 750 rounds a minute, automatic, 20 in the magazine, effective to 123 m. Source: https://en.wikipedia.org/wiki/FG_42",
+  "roster"
+ ],
+ [
+  "Gewehr 43",
+  "item",
+  6,
+  "firearms",
+  "Gewehr 43 (Germany, 1943): rifle firing 7.92x57 mm Mauser Round. 13.7 hp a shot, 40 rounds a minute, one shot per pull, 10 in the magazine, effective to 123 m. Source: https://en.wikipedia.org/wiki/Gewehr_43",
+  "roster"
+ ],
+ [
+  "Mauser C96",
+  "item",
+  6,
+  "firearms",
+  "Mauser C96 (Germany, 1896): pistol firing 7.63x25 mm Mauser Round. 5.4 hp a shot, 60 rounds a minute, one shot per pull, 10 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Mauser_C96",
+  "roster"
+ ],
+ [
+  "Luger P08",
+  "item",
+  6,
+  "firearms",
+  "Luger P08 (Germany, 1908): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Luger_pistol",
+  "roster"
+ ],
+ [
+  "Walther P38",
+  "item",
+  6,
+  "firearms",
+  "Walther P38 (Germany, 1938): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Walther_P38",
+  "roster"
+ ],
+ [
+  "Walther PPK",
+  "item",
+  6,
+  "firearms",
+  "Walther PPK (Germany, 1931): pistol firing .380 ACP Round. 3.7 hp a shot, 40 rounds a minute, one shot per pull, 7 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Walther_PPK",
+  "roster"
+ ],
+ [
+  "Colt M1911",
+  "item",
+  6,
+  "firearms",
+  "Colt M1911 (USA, 1911): pistol firing .45 ACP Round. 5.1 hp a shot, 40 rounds a minute, one shot per pull, 7 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/M1911_pistol",
+  "roster"
+ ],
+ [
+  "Colt Single Action Army",
+  "item",
+  6,
+  "firearms",
+  "Colt Single Action Army (USA, 1873): pistol firing .45 Colt Round. 6.1 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Colt_Single_Action_Army",
+  "roster"
+ ],
+ [
+  "Smith & Wesson Model 10",
+  "item",
+  6,
+  "firearms",
+  "Smith & Wesson Model 10 (USA, 1899): pistol firing .38 Special Round. 4.2 hp a shot, 30 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Smith_&_Wesson_Model_10",
+  "roster"
+ ],
+ [
+  "Colt Model 1903 Pocket Hammerless",
+  "item",
+  6,
+  "firearms",
+  "Colt Model 1903 Pocket Hammerless (USA, 1903): pistol firing .32 ACP Round. 3.1 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Colt_Model_1903_Pocket_Hammerless",
+  "roster"
+ ],
+ [
+  "Browning Hi-Power",
+  "item",
+  6,
+  "firearms",
+  "Browning Hi-Power (Belgium, 1935): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 40 rounds a minute, one shot per pull, 13 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Browning_Hi-Power",
+  "roster"
+ ],
+ [
+  "FN Model 1900",
+  "item",
+  6,
+  "firearms",
+  "FN Model 1900 (Belgium, 1900): pistol firing .32 ACP Round. 3.1 hp a shot, 40 rounds a minute, one shot per pull, 7 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/FN_Model_1900",
+  "roster"
+ ],
+ [
+  "Webley Mk VI",
+  "item",
+  6,
+  "firearms",
+  "Webley Mk VI (Britain, 1915): pistol firing .455 Webley Round. 5.4 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Webley_Revolver",
+  "roster"
+ ],
+ [
+  "Enfield No. 2 Mk I",
+  "item",
+  6,
+  "firearms",
+  "Enfield No. 2 Mk I (Britain, 1932): pistol firing .38 Special Round. 4.2 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Enfield_No._2_Mk_I",
+  "roster"
+ ],
+ [
+  "Nagant M1895",
+  "item",
+  6,
+  "firearms",
+  "Nagant M1895 (Russia, 1895): pistol firing 7.62x38 mmR Nagant Round. 4.2 hp a shot, 20 rounds a minute, one shot per pull, 7 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Nagant_M1895",
+  "roster"
+ ],
+ [
+  "Tokarev TT-33",
+  "item",
+  6,
+  "firearms",
+  "Tokarev TT-33 (USSR, 1933): pistol firing 7.62x25 mm Tokarev Round. 5.9 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/TT-33",
+  "roster"
+ ],
+ [
+  "Type 14 Nambu",
+  "item",
+  6,
+  "firearms",
+  "Type 14 Nambu (Japan, 1925): pistol firing 8x22 mm Nambu Round. 3.7 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Type_14_Nambu",
+  "roster"
+ ],
+ [
+  "Modele 1892 Revolver",
+  "item",
+  6,
+  "firearms",
+  "Modele 1892 Revolver (France, 1892): pistol firing 8x50 mmR Lebel Round. 12.2 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Modèle_1892_revolver",
+  "roster"
+ ],
+ [
+  "Beretta M1934",
+  "item",
+  6,
+  "firearms",
+  "Beretta M1934 (Italy, 1934): pistol firing .380 ACP Round. 3.7 hp a shot, 40 rounds a minute, one shot per pull, 7 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Beretta_M1934",
+  "roster"
+ ],
+ [
+  "Steyr M1912",
+  "item",
+  6,
+  "firearms",
+  "Steyr M1912 (Austria-Hungary, 1912): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Steyr_M1912",
+  "roster"
+ ],
+ [
+  "Lahti L-35",
+  "item",
+  6,
+  "firearms",
+  "Lahti L-35 (Finland, 1935): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Lahti_L-35",
+  "roster"
+ ],
+ [
+  "Radom Vis 35",
+  "item",
+  6,
+  "firearms",
+  "Radom Vis 35 (Poland, 1935): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Radom_Vis",
+  "roster"
+ ],
+ [
+  "Bergmann MP 18",
+  "item",
+  6,
+  "firearms",
+  "Bergmann MP 18 (Germany, 1918): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 500 rounds a minute, automatic, 32 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/MP_18",
+  "roster"
+ ],
+ [
+  "Thompson Submachine Gun",
+  "item",
+  6,
+  "firearms",
+  "Thompson Submachine Gun (USA, 1928): smg firing .45 ACP Round. 5.1 hp a shot, 700 rounds a minute, automatic, 30 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Thompson_submachine_gun",
+  "roster"
+ ],
+ [
+  "MP 40",
+  "item",
+  6,
+  "firearms",
+  "MP 40 (Germany, 1940): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 500 rounds a minute, automatic, 32 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/MP_40",
+  "roster"
+ ],
+ [
+  "PPSh-41",
+  "item",
+  6,
+  "firearms",
+  "PPSh-41 (USSR, 1941): smg firing 7.62x25 mm Tokarev Round. 5.9 hp a shot, 900 rounds a minute, automatic, 71 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/PPSh-41",
+  "roster"
+ ],
+ [
+  "PPS-43",
+  "item",
+  6,
+  "firearms",
+  "PPS-43 (USSR, 1943): smg firing 7.62x25 mm Tokarev Round. 5.9 hp a shot, 650 rounds a minute, automatic, 35 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/PPS-43",
+  "roster"
+ ],
+ [
+  "Sten Mk II",
+  "item",
+  6,
+  "firearms",
+  "Sten Mk II (Britain, 1941): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 550 rounds a minute, automatic, 32 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Sten",
+  "roster"
+ ],
+ [
+  "Owen Gun",
+  "item",
+  6,
+  "firearms",
+  "Owen Gun (Australia, 1942): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 700 rounds a minute, automatic, 33 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Owen_Gun",
+  "roster"
+ ],
+ [
+  "M3 Grease Gun",
+  "item",
+  6,
+  "firearms",
+  "M3 Grease Gun (USA, 1942): smg firing .45 ACP Round. 5.1 hp a shot, 450 rounds a minute, automatic, 30 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/M3_submachine_gun",
+  "roster"
+ ],
+ [
+  "Beretta Model 38",
+  "item",
+  6,
+  "firearms",
+  "Beretta Model 38 (Italy, 1938): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 600 rounds a minute, automatic, 40 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Beretta_Model_38",
+  "roster"
+ ],
+ [
+  "Suomi KP/-31",
+  "item",
+  6,
+  "firearms",
+  "Suomi KP/-31 (Finland, 1931): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 900 rounds a minute, automatic, 71 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Suomi_KP/-31",
+  "roster"
+ ],
+ [
+  "MAS-38",
+  "item",
+  6,
+  "firearms",
+  "MAS-38 (France, 1938): smg firing 7.65x20 mm Longue Round. 3.8 hp a shot, 600 rounds a minute, automatic, 32 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/MAS-38_submachine_gun",
+  "roster"
+ ],
+ [
+  "Gatling Gun",
+  "item",
+  6,
+  "firearms",
+  "Gatling Gun (USA, 1861): lmg firing Gatling Cartridge .58. 9.9 hp a shot, 200 rounds a minute, automatic, 100 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/Gatling_gun",
+  "roster"
+ ],
+ [
+  "Maxim Gun",
+  "item",
+  6,
+  "firearms",
+  "Maxim Gun (Britain, 1884): lmg firing .303 British Round. 13.1 hp a shot, 600 rounds a minute, automatic, 250 in the magazine, effective to 118 m. Source: https://en.wikipedia.org/wiki/Maxim_gun",
+  "roster"
+ ],
+ [
+  "Vickers Machine Gun",
+  "item",
+  6,
+  "firearms",
+  "Vickers Machine Gun (Britain, 1912): lmg firing .303 British Round. 13.1 hp a shot, 450 rounds a minute, automatic, 250 in the magazine, effective to 118 m. Source: https://en.wikipedia.org/wiki/Vickers_machine_gun",
+  "roster"
+ ],
+ [
+  "MG 08",
+  "item",
+  6,
+  "firearms",
+  "MG 08 (Germany, 1908): lmg firing 7.92x57 mm Mauser Round. 13.7 hp a shot, 500 rounds a minute, automatic, 250 in the magazine, effective to 123 m. Source: https://en.wikipedia.org/wiki/MG_08",
+  "roster"
+ ],
+ [
+  "Browning M1917",
+  "item",
+  6,
+  "firearms",
+  "Browning M1917 (USA, 1917): lmg firing .30-06 Springfield Round. 13.9 hp a shot, 450 rounds a minute, automatic, 250 in the magazine, effective to 125 m. Source: https://en.wikipedia.org/wiki/M1917_Browning_machine_gun",
+  "roster"
+ ],
+ [
+  "Browning M1919",
+  "item",
+  6,
+  "firearms",
+  "Browning M1919 (USA, 1919): lmg firing .30-06 Springfield Round. 13.9 hp a shot, 500 rounds a minute, automatic, 250 in the magazine, effective to 125 m. Source: https://en.wikipedia.org/wiki/M1919_Browning_machine_gun",
+  "roster"
+ ],
+ [
+  "Browning M2",
+  "item",
+  6,
+  "firearms",
+  "Browning M2 (USA, 1933): lmg firing .50 BMG Round. 29.8 hp a shot, 550 rounds a minute, automatic, 110 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/M2_Browning",
+  "roster"
+ ],
+ [
+  "Hotchkiss M1914",
+  "item",
+  6,
+  "firearms",
+  "Hotchkiss M1914 (France, 1914): lmg firing 8x50 mmR Lebel Round. 12.2 hp a shot, 450 rounds a minute, automatic, 24 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Hotchkiss_M1914_machine_gun",
+  "roster"
+ ],
+ [
+  "Lewis Gun",
+  "item",
+  6,
+  "firearms",
+  "Lewis Gun (USA, 1913): lmg firing .303 British Round. 13.1 hp a shot, 550 rounds a minute, automatic, 47 in the magazine, effective to 118 m. Source: https://en.wikipedia.org/wiki/Lewis_gun",
+  "roster"
+ ],
+ [
+  "Chauchat",
+  "item",
+  6,
+  "firearms",
+  "Chauchat (France, 1915): lmg firing 8x50 mmR Lebel Round. 12.2 hp a shot, 240 rounds a minute, automatic, 20 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Chauchat",
+  "roster"
+ ],
+ [
+  "MG 34",
+  "item",
+  6,
+  "firearms",
+  "MG 34 (Germany, 1934): lmg firing 7.92x57 mm Mauser Round. 13.7 hp a shot, 850 rounds a minute, automatic, 50 in the magazine, effective to 123 m. Source: https://en.wikipedia.org/wiki/MG_34",
+  "roster"
+ ],
+ [
+  "MG 42",
+  "item",
+  6,
+  "firearms",
+  "MG 42 (Germany, 1942): lmg firing 7.92x57 mm Mauser Round. 13.7 hp a shot, 1200 rounds a minute, automatic, 50 in the magazine, effective to 123 m. Source: https://en.wikipedia.org/wiki/MG_42",
+  "roster"
+ ],
+ [
+  "DP-27",
+  "item",
+  6,
+  "firearms",
+  "DP-27 (USSR, 1928): lmg firing 7.62x54 mmR Round. 13.5 hp a shot, 550 rounds a minute, automatic, 47 in the magazine, effective to 121 m. Source: https://en.wikipedia.org/wiki/DP-27",
+  "roster"
+ ],
+ [
+  "DShK",
+  "item",
+  6,
+  "firearms",
+  "DShK (USSR, 1938): lmg firing 12.7x108 mm Round. 29.8 hp a shot, 600 rounds a minute, automatic, 50 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/DShK",
+  "roster"
+ ],
+ [
+  "SG-43 Goryunov",
+  "item",
+  6,
+  "firearms",
+  "SG-43 Goryunov (USSR, 1943): lmg firing 7.62x54 mmR Round. 13.5 hp a shot, 650 rounds a minute, automatic, 250 in the magazine, effective to 121 m. Source: https://en.wikipedia.org/wiki/SG-43_Goryunov",
+  "roster"
+ ],
+ [
+  "Bren Gun",
+  "item",
+  6,
+  "firearms",
+  "Bren Gun (Britain, 1938): lmg firing .303 British Round. 13.1 hp a shot, 500 rounds a minute, automatic, 30 in the magazine, effective to 118 m. Source: https://en.wikipedia.org/wiki/Bren_light_machine_gun",
+  "roster"
+ ],
+ [
+  "Type 96 Light Machine Gun",
+  "item",
+  6,
+  "firearms",
+  "Type 96 Light Machine Gun (Japan, 1936): lmg firing 6.5x50 mmSR Arisaka Round. 11.5 hp a shot, 550 rounds a minute, automatic, 30 in the magazine, effective to 105 m. Source: https://en.wikipedia.org/wiki/Type_96_light_machine_gun",
+  "roster"
+ ],
+ [
+  "Type 92 Heavy Machine Gun",
+  "item",
+  6,
+  "firearms",
+  "Type 92 Heavy Machine Gun (Japan, 1932): lmg firing 7.7x58 mm Arisaka Round. 13.5 hp a shot, 450 rounds a minute, automatic, 30 in the magazine, effective to 121 m. Source: https://en.wikipedia.org/wiki/Type_92_heavy_machine_gun",
+  "roster"
+ ],
+ [
+  "Madsen Machine Gun",
+  "item",
+  6,
+  "firearms",
+  "Madsen Machine Gun (Denmark, 1902): lmg firing 8x50 mmR Mannlicher Round. 12.2 hp a shot, 450 rounds a minute, automatic, 30 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Madsen_machine_gun",
+  "roster"
+ ],
+ [
+  "Breda Modello 30",
+  "item",
+  6,
+  "firearms",
+  "Breda Modello 30 (Italy, 1930): lmg firing 6.5x52 mm Carcano Round. 11.5 hp a shot, 475 rounds a minute, automatic, 20 in the magazine, effective to 105 m. Source: https://en.wikipedia.org/wiki/Breda_Modello_30",
+  "roster"
+ ],
+ [
+  "ZB vz. 26",
+  "item",
+  6,
+  "firearms",
+  "ZB vz. 26 (Czechoslovakia, 1926): lmg firing 7.92x57 mm Mauser Round. 13.7 hp a shot, 500 rounds a minute, automatic, 20 in the magazine, effective to 123 m. Source: https://en.wikipedia.org/wiki/ZB_vz._26",
+  "roster"
+ ],
+ [
+  "Schwarzlose MG M.07/12",
+  "item",
+  6,
+  "firearms",
+  "Schwarzlose MG M.07/12 (Austria-Hungary, 1912): lmg firing 8x50 mmR Mannlicher Round. 12.2 hp a shot, 400 rounds a minute, automatic, 250 in the magazine, effective to 110 m. Source: https://en.wikipedia.org/wiki/Schwarzlose_MG_M.07/12",
+  "roster"
+ ],
+ [
+  "Fiat-Revelli Modello 1914",
+  "item",
+  6,
+  "firearms",
+  "Fiat-Revelli Modello 1914 (Italy, 1914): lmg firing 6.5x52 mm Carcano Round. 11.5 hp a shot, 500 rounds a minute, automatic, 50 in the magazine, effective to 105 m. Source: https://en.wikipedia.org/wiki/Fiat–Revelli_Modello_1914",
+  "roster"
+ ],
+ [
+  "Winchester Model 1897",
+  "item",
+  6,
+  "firearms",
+  "Winchester Model 1897 (USA, 1897): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 40 rounds a minute, one shot per pull, 5 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Winchester_Model_1897",
+  "roster"
+ ],
+ [
+  "Winchester Model 1887",
+  "item",
+  6,
+  "firearms",
+  "Winchester Model 1887 (USA, 1887): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 40 rounds a minute, one shot per pull, 5 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Winchester_Model_1887",
+  "roster"
+ ],
+ [
+  "Winchester Model 12",
+  "item",
+  6,
+  "firearms",
+  "Winchester Model 12 (USA, 1912): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 45 rounds a minute, one shot per pull, 6 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Winchester_Model_12",
+  "roster"
+ ],
+ [
+  "Browning Auto-5",
+  "item",
+  6,
+  "firearms",
+  "Browning Auto-5 (Belgium, 1902): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 60 rounds a minute, one shot per pull, 5 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Browning_Auto-5",
+  "roster"
+ ],
+ [
+  "Ithaca 37",
+  "item",
+  6,
+  "firearms",
+  "Ithaca 37 (USA, 1937): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 45 rounds a minute, one shot per pull, 5 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Ithaca_37",
+  "roster"
+ ],
+ [
+  "Panzerfaust 60",
+  "item",
+  6,
+  "firearms",
+  "Panzerfaust 60 (Germany, 1943): launcher firing Rocket. 25 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Panzerfaust",
+  "roster"
+ ],
+ [
+  "Panzerschreck",
+  "item",
+  6,
+  "firearms",
+  "Panzerschreck (Germany, 1943): launcher firing Rocket. 25 hp a shot, 5 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Panzerschreck",
+  "roster"
+ ],
+ [
+  "M1 Bazooka",
+  "item",
+  6,
+  "firearms",
+  "M1 Bazooka (USA, 1942): launcher firing Rocket. 25 hp a shot, 5 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Bazooka",
+  "roster"
+ ],
+ [
+  "PIAT",
+  "item",
+  6,
+  "firearms",
+  "PIAT (Britain, 1942): launcher firing Rocket. 25 hp a shot, 4 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/PIAT",
+  "roster"
+ ],
+ [
+  "PTRD-41",
+  "item",
+  6,
+  "firearms",
+  "PTRD-41 (USSR, 1941): sniper firing 14.5x114 mm Round. 39.1 hp a shot, 8 rounds a minute, one shot per pull, 1 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/PTRD-41",
+  "roster"
+ ],
+ [
+  "PTRS-41",
+  "item",
+  6,
+  "firearms",
+  "PTRS-41 (USSR, 1941): sniper firing 14.5x114 mm Round. 39.1 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/PTRS-41",
+  "roster"
+ ],
+ [
+  "Boys Anti-Tank Rifle",
+  "item",
+  6,
+  "firearms",
+  "Boys Anti-Tank Rifle (Britain, 1937): sniper firing .55 Boys Round. 25.3 hp a shot, 10 rounds a minute, one shot per pull, 5 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Boys_anti-tank_rifle",
+  "roster"
+ ],
+ [
+  "Panzerbuchse 39",
+  "item",
+  6,
+  "firearms",
+  "Panzerbuchse 39 (Germany, 1939): sniper firing 7.92x94 mm Patrone Round. 21.1 hp a shot, 10 rounds a minute, one shot per pull, 1 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Panzerbüchse_39",
+  "roster"
+ ],
+ [
+  "AK-47",
+  "item",
+  7,
+  "firearms",
+  "AK-47 (USSR, 1949): rifle firing 7.62x39 mm Round. 9.9 hp a shot, 600 rounds a minute, automatic, 30 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/AK-47",
+  "roster"
+ ],
+ [
+  "M16",
+  "item",
+  7,
+  "firearms",
+  "M16 (USA, 1964): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 800 rounds a minute, automatic, 20 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/M16_rifle",
+  "roster"
+ ],
+ [
+  "AK-74",
+  "item",
+  7,
+  "firearms",
+  "AK-74 (USSR, 1974): rifle firing 5.45x39 mm Round. 8.3 hp a shot, 650 rounds a minute, automatic, 30 in the magazine, effective to 83 m. Source: https://en.wikipedia.org/wiki/AK-74",
+  "roster"
+ ],
+ [
+  "FN FAL",
+  "item",
+  7,
+  "firearms",
+  "FN FAL (Belgium, 1953): rifle firing 7.62x51 mm NATO Round. 13 hp a shot, 650 rounds a minute, automatic, 20 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/FN_FAL",
+  "roster"
+ ],
+ [
+  "Heckler & Koch G3",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch G3 (Germany, 1959): rifle firing 7.62x51 mm NATO Round. 13 hp a shot, 500 rounds a minute, automatic, 20 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_G3",
+  "roster"
+ ],
+ [
+  "M14",
+  "item",
+  7,
+  "firearms",
+  "M14 (USA, 1959): rifle firing 7.62x51 mm NATO Round. 13 hp a shot, 700 rounds a minute, automatic, 20 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/M14_rifle",
+  "roster"
+ ],
+ [
+  "Dragunov SVD",
+  "item",
+  7,
+  "firearms",
+  "Dragunov SVD (USSR, 1963): sniper firing 7.62x54 mmR Round. 13.5 hp a shot, 30 rounds a minute, one shot per pull, 10 in the magazine, effective to 181 m. Source: https://en.wikipedia.org/wiki/Dragunov_sniper_rifle",
+  "roster"
+ ],
+ [
+  "FAMAS",
+  "item",
+  7,
+  "firearms",
+  "FAMAS (France, 1978): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 1000 rounds a minute, automatic, 25 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/FAMAS",
+  "roster"
+ ],
+ [
+  "Steyr AUG",
+  "item",
+  7,
+  "firearms",
+  "Steyr AUG (Austria, 1977): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 700 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Steyr_AUG",
+  "roster"
+ ],
+ [
+  "IMI Galil",
+  "item",
+  7,
+  "firearms",
+  "IMI Galil (Israel, 1972): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 650 rounds a minute, automatic, 35 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/IMI_Galil",
+  "roster"
+ ],
+ [
+  "Vz. 58",
+  "item",
+  7,
+  "firearms",
+  "Vz. 58 (Czechoslovakia, 1958): rifle firing 7.62x39 mm Round. 9.9 hp a shot, 800 rounds a minute, automatic, 30 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/Vz._58",
+  "roster"
+ ],
+ [
+  "SIG Stgw 57",
+  "item",
+  7,
+  "firearms",
+  "SIG Stgw 57 (Switzerland, 1957): rifle firing 7.5x55 mm Swiss Round. 13 hp a shot, 500 rounds a minute, automatic, 24 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/Stgw_57",
+  "roster"
+ ],
+ [
+  "SA80 L85",
+  "item",
+  7,
+  "firearms",
+  "SA80 L85 (Britain, 1985): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 700 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/L85A1",
+  "roster"
+ ],
+ [
+  "CETME Model C",
+  "item",
+  7,
+  "firearms",
+  "CETME Model C (Spain, 1957): rifle firing 7.62x51 mm NATO Round. 13 hp a shot, 600 rounds a minute, automatic, 20 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/CETME_rifle",
+  "roster"
+ ],
+ [
+  "Beretta AR70",
+  "item",
+  7,
+  "firearms",
+  "Beretta AR70 (Italy, 1972): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 650 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Beretta_AR70/90",
+  "roster"
+ ],
+ [
+  "Daewoo K2",
+  "item",
+  7,
+  "firearms",
+  "Daewoo K2 (South Korea, 1984): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 700 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Daewoo_K2",
+  "roster"
+ ],
+ [
+  "Heckler & Koch HK33",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch HK33 (Germany, 1968): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 750 rounds a minute, automatic, 25 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_HK33",
+  "roster"
+ ],
+ [
+  "Remington Model 700",
+  "item",
+  7,
+  "firearms",
+  "Remington Model 700 (USA, 1962): sniper firing 7.62x51 mm NATO Round. 13 hp a shot, 25 rounds a minute, one shot per pull, 5 in the magazine, effective to 176 m. Source: https://en.wikipedia.org/wiki/Remington_Model_700",
+  "roster"
+ ],
+ [
+  "Barrett M82",
+  "item",
+  7,
+  "firearms",
+  "Barrett M82 (USA, 1982): sniper firing .50 BMG Round. 29.8 hp a shot, 20 rounds a minute, one shot per pull, 10 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Barrett_M82",
+  "roster"
+ ],
+ [
+  "Accuracy International AW",
+  "item",
+  7,
+  "firearms",
+  "Accuracy International AW (Britain, 1988): sniper firing .338 Lapua Magnum Round. 17.2 hp a shot, 25 rounds a minute, one shot per pull, 10 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Accuracy_International_Arctic_Warfare",
+  "roster"
+ ],
+ [
+  "Steyr SSG 69",
+  "item",
+  7,
+  "firearms",
+  "Steyr SSG 69 (Austria, 1969): sniper firing 7.62x51 mm NATO Round. 13 hp a shot, 25 rounds a minute, one shot per pull, 5 in the magazine, effective to 176 m. Source: https://en.wikipedia.org/wiki/Steyr_SSG_69",
+  "roster"
+ ],
+ [
+  "M60",
+  "item",
+  7,
+  "firearms",
+  "M60 (USA, 1957): lmg firing 7.62x51 mm NATO Round. 13 hp a shot, 550 rounds a minute, automatic, 100 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/M60_machine_gun",
+  "roster"
+ ],
+ [
+  "PK Machine Gun",
+  "item",
+  7,
+  "firearms",
+  "PK Machine Gun (USSR, 1961): lmg firing 7.62x54 mmR Round. 13.5 hp a shot, 650 rounds a minute, automatic, 100 in the magazine, effective to 121 m. Source: https://en.wikipedia.org/wiki/PK_machine_gun",
+  "roster"
+ ],
+ [
+  "RPK",
+  "item",
+  7,
+  "firearms",
+  "RPK (USSR, 1961): lmg firing 7.62x39 mm Round. 9.9 hp a shot, 600 rounds a minute, automatic, 40 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/RPK",
+  "roster"
+ ],
+ [
+  "RPD",
+  "item",
+  7,
+  "firearms",
+  "RPD (USSR, 1953): lmg firing 7.62x39 mm Round. 9.9 hp a shot, 700 rounds a minute, automatic, 100 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/RPD_machine_gun",
+  "roster"
+ ],
+ [
+  "FN MAG",
+  "item",
+  7,
+  "firearms",
+  "FN MAG (Belgium, 1958): lmg firing 7.62x51 mm NATO Round. 13 hp a shot, 850 rounds a minute, automatic, 100 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/FN_MAG",
+  "roster"
+ ],
+ [
+  "M249 SAW",
+  "item",
+  7,
+  "firearms",
+  "M249 SAW (USA, 1984): lmg firing 5.56x45 mm Round. 9.4 hp a shot, 850 rounds a minute, automatic, 200 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/M249_light_machine_gun",
+  "roster"
+ ],
+ [
+  "AAT-52",
+  "item",
+  7,
+  "firearms",
+  "AAT-52 (France, 1952): lmg firing 7.62x51 mm NATO Round. 13 hp a shot, 900 rounds a minute, automatic, 50 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/AA-52",
+  "roster"
+ ],
+ [
+  "Heckler & Koch HK21",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch HK21 (Germany, 1961): lmg firing 7.62x51 mm NATO Round. 13 hp a shot, 900 rounds a minute, automatic, 100 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_HK21",
+  "roster"
+ ],
+ [
+  "IMI Negev",
+  "item",
+  7,
+  "firearms",
+  "IMI Negev (Israel, 1985): lmg firing 5.56x45 mm Round. 9.4 hp a shot, 1000 rounds a minute, automatic, 150 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/IMI_Negev",
+  "roster"
+ ],
+ [
+  "Ultimax 100",
+  "item",
+  7,
+  "firearms",
+  "Ultimax 100 (Singapore, 1982): lmg firing 5.56x45 mm Round. 9.4 hp a shot, 500 rounds a minute, automatic, 100 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Ultimax_100",
+  "roster"
+ ],
+ [
+  "NSV Machine Gun",
+  "item",
+  7,
+  "firearms",
+  "NSV Machine Gun (USSR, 1971): lmg firing 12.7x108 mm NSV Round. 29.8 hp a shot, 700 rounds a minute, automatic, 50 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/NSV_machine_gun",
+  "roster"
+ ],
+ [
+  "KPV Heavy Machine Gun",
+  "item",
+  7,
+  "firearms",
+  "KPV Heavy Machine Gun (USSR, 1949): lmg firing 14.5x114 mm KPV Round. 39.1 hp a shot, 600 rounds a minute, automatic, 40 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/KPV_heavy_machine_gun",
+  "roster"
+ ],
+ [
+  "M134 Minigun",
+  "item",
+  7,
+  "firearms",
+  "M134 Minigun (USA, 1962): lmg firing 7.62x51 mm NATO Round. 13 hp a shot, 3000 rounds a minute, automatic, 4000 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/M134_Minigun",
+  "roster"
+ ],
+ [
+  "Vz. 59",
+  "item",
+  7,
+  "firearms",
+  "Vz. 59 (Czechoslovakia, 1959): lmg firing 7.62x54 mmR Round. 13.5 hp a shot, 750 rounds a minute, automatic, 50 in the magazine, effective to 121 m. Source: https://en.wikipedia.org/wiki/Vz._59",
+  "roster"
+ ],
+ [
+  "Makarov PM",
+  "item",
+  7,
+  "firearms",
+  "Makarov PM (USSR, 1951): pistol firing 9x18 mm Makarov Round. 3.8 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Makarov_pistol",
+  "roster"
+ ],
+ [
+  "Stechkin APS",
+  "item",
+  7,
+  "firearms",
+  "Stechkin APS (USSR, 1951): pistol firing 9x18 mm Makarov Round. 3.8 hp a shot, 750 rounds a minute, automatic, 20 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Stechkin_automatic_pistol",
+  "roster"
+ ],
+ [
+  "Beretta 92",
+  "item",
+  7,
+  "firearms",
+  "Beretta 92 (Italy, 1976): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 15 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Beretta_92",
+  "roster"
+ ],
+ [
+  "Colt Python",
+  "item",
+  7,
+  "firearms",
+  "Colt Python (USA, 1955): pistol firing .357 Magnum Round. 6.3 hp a shot, 25 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Colt_Python",
+  "roster"
+ ],
+ [
+  "Smith & Wesson Model 29",
+  "item",
+  7,
+  "firearms",
+  "Smith & Wesson Model 29 (USA, 1955): pistol firing .44 Magnum Round. 8.9 hp a shot, 20 rounds a minute, one shot per pull, 6 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Smith_&_Wesson_Model_29",
+  "roster"
+ ],
+ [
+  "Glock 17",
+  "item",
+  7,
+  "firearms",
+  "Glock 17 (Austria, 1982): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 50 rounds a minute, one shot per pull, 17 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Glock_17",
+  "roster"
+ ],
+ [
+  "SIG Sauer P220",
+  "item",
+  7,
+  "firearms",
+  "SIG Sauer P220 (Switzerland, 1975): pistol firing .45 ACP Round. 5.1 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/SIG_Sauer_P220",
+  "roster"
+ ],
+ [
+  "SIG Sauer P226",
+  "item",
+  7,
+  "firearms",
+  "SIG Sauer P226 (Switzerland, 1983): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 15 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/SIG_Sauer_P226",
+  "roster"
+ ],
+ [
+  "CZ 75",
+  "item",
+  7,
+  "firearms",
+  "CZ 75 (Czechoslovakia, 1975): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 15 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/CZ_75",
+  "roster"
+ ],
+ [
+  "Heckler & Koch P7",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch P7 (Germany, 1979): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 40 rounds a minute, one shot per pull, 8 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_P7",
+  "roster"
+ ],
+ [
+  "IMI Desert Eagle",
+  "item",
+  7,
+  "firearms",
+  "IMI Desert Eagle (Israel, 1983): pistol firing .50 Action Express Round. 13 hp a shot, 30 rounds a minute, one shot per pull, 7 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/IMI_Desert_Eagle",
+  "roster"
+ ],
+ [
+  "Uzi",
+  "item",
+  7,
+  "firearms",
+  "Uzi (Israel, 1954): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 600 rounds a minute, automatic, 32 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Uzi",
+  "roster"
+ ],
+ [
+  "Heckler & Koch MP5",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch MP5 (Germany, 1966): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 800 rounds a minute, automatic, 30 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_MP5",
+  "roster"
+ ],
+ [
+  "Sterling SMG",
+  "item",
+  7,
+  "firearms",
+  "Sterling SMG (Britain, 1953): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 550 rounds a minute, automatic, 34 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Sterling_submachine_gun",
+  "roster"
+ ],
+ [
+  "Carl Gustaf m/45",
+  "item",
+  6,
+  "firearms",
+  "Carl Gustaf m/45 (Sweden, 1945): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 600 rounds a minute, automatic, 36 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Carl_Gustaf_m/45",
+  "roster"
+ ],
+ [
+  "MAT-49",
+  "item",
+  7,
+  "firearms",
+  "MAT-49 (France, 1949): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 600 rounds a minute, automatic, 32 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/MAT-49",
+  "roster"
+ ],
+ [
+  "Skorpion vz. 61",
+  "item",
+  7,
+  "firearms",
+  "Skorpion vz. 61 (Czechoslovakia, 1961): smg firing .32 ACP Round. 3.1 hp a shot, 850 rounds a minute, automatic, 20 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Škorpion_vz._61",
+  "roster"
+ ],
+ [
+  "Beretta Model 12",
+  "item",
+  7,
+  "firearms",
+  "Beretta Model 12 (Italy, 1959): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 550 rounds a minute, automatic, 32 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Beretta_Model_12",
+  "roster"
+ ],
+ [
+  "Ingram MAC-10",
+  "item",
+  7,
+  "firearms",
+  "Ingram MAC-10 (USA, 1970): smg firing .45 ACP Round. 5.1 hp a shot, 1100 rounds a minute, automatic, 30 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/MAC-10",
+  "roster"
+ ],
+ [
+  "PM-63",
+  "item",
+  7,
+  "firearms",
+  "PM-63 (Poland, 1965): smg firing 9x18 mm Makarov Round. 3.8 hp a shot, 650 rounds a minute, automatic, 25 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/PM-63",
+  "roster"
+ ],
+ [
+  "Remington 870",
+  "item",
+  7,
+  "firearms",
+  "Remington 870 (USA, 1950): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 45 rounds a minute, one shot per pull, 5 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Remington_Model_870",
+  "roster"
+ ],
+ [
+  "Mossberg 500",
+  "item",
+  7,
+  "firearms",
+  "Mossberg 500 (USA, 1961): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 45 rounds a minute, one shot per pull, 6 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Mossberg_500",
+  "roster"
+ ],
+ [
+  "Remington 1100",
+  "item",
+  7,
+  "firearms",
+  "Remington 1100 (USA, 1963): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 60 rounds a minute, one shot per pull, 4 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Remington_Model_1100",
+  "roster"
+ ],
+ [
+  "Benelli M1 Super 90",
+  "item",
+  7,
+  "firearms",
+  "Benelli M1 Super 90 (Italy, 1985): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 60 rounds a minute, one shot per pull, 7 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Benelli_M1",
+  "roster"
+ ],
+ [
+  "Franchi SPAS-12",
+  "item",
+  7,
+  "firearms",
+  "Franchi SPAS-12 (Italy, 1979): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 55 rounds a minute, one shot per pull, 8 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Franchi_SPAS-12",
+  "roster"
+ ],
+ [
+  "RPG-7",
+  "item",
+  7,
+  "firearms",
+  "RPG-7 (USSR, 1961): launcher firing Rocket. 25 hp a shot, 4 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/RPG-7",
+  "roster"
+ ],
+ [
+  "RPG-2",
+  "item",
+  7,
+  "firearms",
+  "RPG-2 (USSR, 1949): launcher firing Rocket. 25 hp a shot, 4 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/RPG-2",
+  "roster"
+ ],
+ [
+  "M72 LAW",
+  "item",
+  7,
+  "firearms",
+  "M72 LAW (USA, 1963): launcher firing Rocket. 25 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/M72_LAW",
+  "roster"
+ ],
+ [
+  "M20 Super Bazooka",
+  "item",
+  7,
+  "firearms",
+  "M20 Super Bazooka (USA, 1950): launcher firing Rocket. 25 hp a shot, 5 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/M20_Super_Bazooka",
+  "roster"
+ ],
+ [
+  "Carl Gustaf 84 mm Recoilless Rifle",
+  "item",
+  7,
+  "firearms",
+  "Carl Gustaf 84 mm Recoilless Rifle (Sweden, 1948): launcher firing Rocket. 25 hp a shot, 4 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Carl_Gustaf_8.4_cm_recoilless_rifle",
+  "roster"
+ ],
+ [
+  "AT4",
+  "item",
+  7,
+  "firearms",
+  "AT4 (Sweden, 1984): launcher firing Rocket. 25 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/AT4",
+  "roster"
+ ],
+ [
+  "Panzerfaust 3",
+  "item",
+  7,
+  "firearms",
+  "Panzerfaust 3 (Germany, 1978): launcher firing Rocket. 25 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Panzerfaust_3",
+  "roster"
+ ],
+ [
+  "M79 Grenade Launcher",
+  "item",
+  7,
+  "firearms",
+  "M79 Grenade Launcher (USA, 1961): launcher firing 40x46 mm Grenade. 25 hp a shot, 6 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/M79_grenade_launcher",
+  "roster"
+ ],
+ [
+  "M203 Grenade Launcher",
+  "item",
+  7,
+  "firearms",
+  "M203 Grenade Launcher (USA, 1969): launcher firing 40x46 mm Grenade. 25 hp a shot, 6 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/M203_grenade_launcher",
+  "roster"
+ ],
+ [
+  "GP-25",
+  "item",
+  7,
+  "firearms",
+  "GP-25 (USSR, 1978): launcher firing 40x46 mm Grenade. 25 hp a shot, 6 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/GP-25",
+  "roster"
+ ],
+ [
+  "Heckler & Koch G36",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch G36 (Germany, 1995): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 750 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_G36",
+  "roster"
+ ],
+ [
+  "Heckler & Koch HK416",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch HK416 (Germany, 2005): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 850 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_HK416",
+  "roster"
+ ],
+ [
+  "Heckler & Koch HK417",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch HK417 (Germany, 2005): rifle firing 7.62x51 mm NATO Round. 13 hp a shot, 600 rounds a minute, automatic, 20 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_HK417",
+  "roster"
+ ],
+ [
+  "FN SCAR",
+  "item",
+  7,
+  "firearms",
+  "FN SCAR (Belgium, 2009): rifle firing 7.62x51 mm NATO Round. 13 hp a shot, 600 rounds a minute, automatic, 20 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/FN_SCAR",
+  "roster"
+ ],
+ [
+  "FN F2000",
+  "item",
+  7,
+  "firearms",
+  "FN F2000 (Belgium, 2001): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 850 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/FN_F2000",
+  "roster"
+ ],
+ [
+  "IWI Tavor TAR-21",
+  "item",
+  7,
+  "firearms",
+  "IWI Tavor TAR-21 (Israel, 2001): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 750 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/IWI_Tavor",
+  "roster"
+ ],
+ [
+  "AK-12",
+  "item",
+  7,
+  "firearms",
+  "AK-12 (Russia, 2012): rifle firing 5.45x39 mm Round. 8.3 hp a shot, 700 rounds a minute, automatic, 30 in the magazine, effective to 83 m. Source: https://en.wikipedia.org/wiki/AK-12",
+  "roster"
+ ],
+ [
+  "SIG SG 550",
+  "item",
+  7,
+  "firearms",
+  "SIG SG 550 (Switzerland, 1986): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 700 rounds a minute, automatic, 20 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/SIG_SG_550",
+  "roster"
+ ],
+ [
+  "FN FNC",
+  "item",
+  7,
+  "firearms",
+  "FN FNC (Belgium, 1979): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 700 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/FN_FNC",
+  "roster"
+ ],
+ [
+  "Type 81",
+  "item",
+  7,
+  "firearms",
+  "Type 81 (China, 1983): rifle firing 7.62x39 mm Round. 9.9 hp a shot, 720 rounds a minute, automatic, 30 in the magazine, effective to 93 m. Source: https://en.wikipedia.org/wiki/Type_81_assault_rifle",
+  "roster"
+ ],
+ [
+  "QBZ-95",
+  "item",
+  7,
+  "firearms",
+  "QBZ-95 (China, 1997): rifle firing 5.8x42 mm Round. 9.7 hp a shot, 650 rounds a minute, automatic, 30 in the magazine, effective to 91 m. Source: https://en.wikipedia.org/wiki/QBZ-95",
+  "roster"
+ ],
+ [
+  "INSAS",
+  "item",
+  7,
+  "firearms",
+  "INSAS (India, 1997): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 650 rounds a minute, automatic, 20 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/INSAS_rifle",
+  "roster"
+ ],
+ [
+  "Beretta ARX-160",
+  "item",
+  7,
+  "firearms",
+  "Beretta ARX-160 (Italy, 2008): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 650 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Beretta_ARX160",
+  "roster"
+ ],
+ [
+  "CZ 805 BREN",
+  "item",
+  7,
+  "firearms",
+  "CZ 805 BREN (Czech Republic, 2011): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 800 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/CZ_805_BREN",
+  "roster"
+ ],
+ [
+  "QBZ-191",
+  "item",
+  7,
+  "firearms",
+  "QBZ-191 (China, 2019): rifle firing 5.8x42 mm Round. 9.7 hp a shot, 700 rounds a minute, automatic, 30 in the magazine, effective to 91 m. Source: https://en.wikipedia.org/wiki/QBZ-191",
+  "roster"
+ ],
+ [
+  "Type 89",
+  "item",
+  7,
+  "firearms",
+  "Type 89 (Japan, 1989): rifle firing 5.56x45 mm Round. 9.4 hp a shot, 750 rounds a minute, automatic, 30 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Howa_Type_89",
+  "roster"
+ ],
+ [
+  "Howa Type 64",
+  "item",
+  7,
+  "firearms",
+  "Howa Type 64 (Japan, 1964): rifle firing 7.62x51 mm NATO Round. 13 hp a shot, 500 rounds a minute, automatic, 20 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/Howa_Type_64",
+  "roster"
+ ],
+ [
+  "M110 SASS",
+  "item",
+  7,
+  "firearms",
+  "M110 SASS (USA, 2008): sniper firing 7.62x51 mm NATO Round. 13 hp a shot, 40 rounds a minute, one shot per pull, 20 in the magazine, effective to 176 m. Source: https://en.wikipedia.org/wiki/M110_Semi-Automatic_Sniper_System",
+  "roster"
+ ],
+ [
+  "Accuracy International L96A1",
+  "item",
+  7,
+  "firearms",
+  "Accuracy International L96A1 (Britain, 1985): sniper firing 7.62x51 mm NATO Round. 13 hp a shot, 25 rounds a minute, one shot per pull, 10 in the magazine, effective to 176 m. Source: https://en.wikipedia.org/wiki/Accuracy_International_L96A1",
+  "roster"
+ ],
+ [
+  "McMillan TAC-50",
+  "item",
+  7,
+  "firearms",
+  "McMillan TAC-50 (USA, 1989): sniper firing .50 BMG Round. 29.8 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/McMillan_TAC-50",
+  "roster"
+ ],
+ [
+  "Sako TRG",
+  "item",
+  7,
+  "firearms",
+  "Sako TRG (Finland, 1990): sniper firing .338 Lapua Magnum Round. 17.2 hp a shot, 25 rounds a minute, one shot per pull, 10 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Sako_TRG",
+  "roster"
+ ],
+ [
+  "Steyr HS .50",
+  "item",
+  7,
+  "firearms",
+  "Steyr HS .50 (Austria, 1990): sniper firing .50 BMG Round. 29.8 hp a shot, 15 rounds a minute, one shot per pull, 5 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Steyr_HS_.50",
+  "roster"
+ ],
+ [
+  "PGM Hecate II",
+  "item",
+  7,
+  "firearms",
+  "PGM Hecate II (France, 1993): sniper firing .50 BMG Round. 29.8 hp a shot, 20 rounds a minute, one shot per pull, 7 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/PGM_Hécate_II",
+  "roster"
+ ],
+ [
+  "CheyTac Intervention",
+  "item",
+  7,
+  "firearms",
+  "CheyTac Intervention (USA, 2001): sniper firing .408 CheyTac Round. 22.2 hp a shot, 20 rounds a minute, one shot per pull, 7 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/CheyTac_Intervention",
+  "roster"
+ ],
+ [
+  "Orsis T-5000",
+  "item",
+  7,
+  "firearms",
+  "Orsis T-5000 (Russia, 2011): sniper firing .338 Lapua Magnum Round. 17.2 hp a shot, 20 rounds a minute, one shot per pull, 5 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Orsis_T-5000",
+  "roster"
+ ],
+ [
+  "SV-98",
+  "item",
+  7,
+  "firearms",
+  "SV-98 (Russia, 2003): sniper firing 7.62x54 mmR Round. 13.5 hp a shot, 25 rounds a minute, one shot per pull, 10 in the magazine, effective to 181 m. Source: https://en.wikipedia.org/wiki/SV-98",
+  "roster"
+ ],
+ [
+  "VSS Vintorez",
+  "item",
+  7,
+  "firearms",
+  "VSS Vintorez (USSR, 1987): sniper firing 9x39 mm Round. 5.9 hp a shot, 900 rounds a minute, automatic, 10 in the magazine, effective to 131 m. Source: https://en.wikipedia.org/wiki/VSS_Vintorez",
+  "roster"
+ ],
+ [
+  "Barrett MRAD",
+  "item",
+  7,
+  "firearms",
+  "Barrett MRAD (USA, 2013): sniper firing .338 Lapua Magnum Round. 17.2 hp a shot, 25 rounds a minute, one shot per pull, 10 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Barrett_MRAD",
+  "roster"
+ ],
+ [
+  "Heckler & Koch MG4",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch MG4 (Germany, 2004): lmg firing 5.56x45 mm Round. 9.4 hp a shot, 850 rounds a minute, automatic, 200 in the magazine, effective to 90 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_MG4",
+  "roster"
+ ],
+ [
+  "Heckler & Koch MG5",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch MG5 (Germany, 2015): lmg firing 7.62x51 mm NATO Round. 13 hp a shot, 700 rounds a minute, automatic, 100 in the magazine, effective to 116 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_MG5",
+  "roster"
+ ],
+ [
+  "Kord Machine Gun",
+  "item",
+  7,
+  "firearms",
+  "Kord Machine Gun (Russia, 1998): lmg firing 12.7x108 mm Round. 29.8 hp a shot, 650 rounds a minute, automatic, 50 in the magazine, effective to 200 m. Source: https://en.wikipedia.org/wiki/Kord_machine_gun",
+  "roster"
+ ],
+ [
+  "Glock 22",
+  "item",
+  7,
+  "firearms",
+  "Glock 22 (Austria, 1990): pistol firing .40 S&W Round. 5.7 hp a shot, 45 rounds a minute, one shot per pull, 15 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Glock_22",
+  "roster"
+ ],
+ [
+  "Heckler & Koch USP",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch USP (Germany, 1993): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 15 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_USP",
+  "roster"
+ ],
+ [
+  "SIG Sauer P320",
+  "item",
+  7,
+  "firearms",
+  "SIG Sauer P320 (USA, 2014): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 17 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/SIG_Sauer_P320",
+  "roster"
+ ],
+ [
+  "FN Five-seveN",
+  "item",
+  7,
+  "firearms",
+  "FN Five-seveN (Belgium, 1998): pistol firing 5.7x28 mm Round. 5 hp a shot, 45 rounds a minute, one shot per pull, 20 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/FN_Five-seven",
+  "roster"
+ ],
+ [
+  "Walther P99",
+  "item",
+  7,
+  "firearms",
+  "Walther P99 (Germany, 1997): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 16 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Walther_P99",
+  "roster"
+ ],
+ [
+  "Springfield XD",
+  "item",
+  7,
+  "firearms",
+  "Springfield XD (Croatia, 2001): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 16 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Springfield_Armory_XD",
+  "roster"
+ ],
+ [
+  "Smith & Wesson M&P",
+  "item",
+  7,
+  "firearms",
+  "Smith & Wesson M&P (USA, 2005): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 17 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Smith_&_Wesson_M&P",
+  "roster"
+ ],
+ [
+  "Yarygin PYa",
+  "item",
+  7,
+  "firearms",
+  "Yarygin PYa (Russia, 2003): pistol firing 9x19 mm Parabellum Round. 5.2 hp a shot, 45 rounds a minute, one shot per pull, 17 in the magazine, effective to 40 m. Source: https://en.wikipedia.org/wiki/Yarygin_PYa",
+  "roster"
+ ],
+ [
+  "FN P90",
+  "item",
+  7,
+  "firearms",
+  "FN P90 (Belgium, 1990): smg firing 5.7x28 mm Round. 5 hp a shot, 900 rounds a minute, automatic, 50 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/FN_P90",
+  "roster"
+ ],
+ [
+  "Heckler & Koch MP7",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch MP7 (Germany, 2001): smg firing 4.6x30 mm Round. 5 hp a shot, 950 rounds a minute, automatic, 40 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_MP7",
+  "roster"
+ ],
+ [
+  "Kriss Vector",
+  "item",
+  7,
+  "firearms",
+  "Kriss Vector (USA, 2009): smg firing .45 ACP Round. 5.1 hp a shot, 1200 rounds a minute, automatic, 25 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/KRISS_Vector",
+  "roster"
+ ],
+ [
+  "Steyr TMP",
+  "item",
+  7,
+  "firearms",
+  "Steyr TMP (Austria, 1992): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 900 rounds a minute, automatic, 30 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Steyr_TMP",
+  "roster"
+ ],
+ [
+  "CZ Scorpion EVO 3",
+  "item",
+  7,
+  "firearms",
+  "CZ Scorpion EVO 3 (Czech Republic, 2009): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 1100 rounds a minute, automatic, 30 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/CZ_Scorpion_EVO_3",
+  "roster"
+ ],
+ [
+  "PP-19 Bizon",
+  "item",
+  7,
+  "firearms",
+  "PP-19 Bizon (Russia, 1993): smg firing 9x18 mm Makarov Round. 3.8 hp a shot, 700 rounds a minute, automatic, 64 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/PP-19_Bizon",
+  "roster"
+ ],
+ [
+  "Heckler & Koch UMP",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch UMP (Germany, 1999): smg firing .45 ACP Round. 5.1 hp a shot, 600 rounds a minute, automatic, 25 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_UMP",
+  "roster"
+ ],
+ [
+  "SIG MPX",
+  "item",
+  7,
+  "firearms",
+  "SIG MPX (USA, 2013): smg firing 9x19 mm Parabellum Round. 5.2 hp a shot, 850 rounds a minute, automatic, 30 in the magazine, effective to 30 m. Source: https://en.wikipedia.org/wiki/SIG_MPX",
+  "roster"
+ ],
+ [
+  "Benelli M4 Super 90",
+  "item",
+  7,
+  "firearms",
+  "Benelli M4 Super 90 (Italy, 1998): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 60 rounds a minute, one shot per pull, 7 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Benelli_M4",
+  "roster"
+ ],
+ [
+  "Saiga-12",
+  "item",
+  7,
+  "firearms",
+  "Saiga-12 (Russia, 1997): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 200 rounds a minute, automatic, 8 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Saiga-12",
+  "roster"
+ ],
+ [
+  "Auto Assault-12",
+  "item",
+  7,
+  "firearms",
+  "Auto Assault-12 (USA, 2005): shotgun firing 12 Gauge Shell. 2.5 hp x8 pellets a shot, 300 rounds a minute, automatic, 20 in the magazine, effective to 25 m. Source: https://en.wikipedia.org/wiki/Auto_Assault-12",
+  "roster"
+ ],
+ [
+  "RPG-29",
+  "item",
+  7,
+  "firearms",
+  "RPG-29 (Russia, 1989): launcher firing Rocket. 25 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/RPG-29",
+  "roster"
+ ],
+ [
+  "M3 MAAWS",
+  "item",
+  7,
+  "firearms",
+  "M3 MAAWS (Sweden, 1991): launcher firing Rocket. 25 hp a shot, 4 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Carl_Gustaf_8.4_cm_recoilless_rifle",
+  "roster"
+ ],
+ [
+  "RPO-A Shmel",
+  "item",
+  7,
+  "firearms",
+  "RPO-A Shmel (USSR, 1988): launcher firing Rocket. 25 hp a shot, 3 rounds a minute, one shot per pull, 1 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/RPO-A_Shmel",
+  "roster"
+ ],
+ [
+  "Mk 19 Grenade Launcher",
+  "item",
+  7,
+  "firearms",
+  "Mk 19 Grenade Launcher (USA, 1968): launcher firing 40x53 mm Grenade. 25 hp a shot, 350 rounds a minute, automatic, 32 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Mk_19_grenade_launcher",
+  "roster"
+ ],
+ [
+  "AGS-17",
+  "item",
+  7,
+  "firearms",
+  "AGS-17 (USSR, 1971): launcher firing 30x29 mm Grenade. 25 hp a shot, 400 rounds a minute, automatic, 29 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/AGS-17",
+  "roster"
+ ],
+ [
+  "Milkor MGL",
+  "item",
+  7,
+  "firearms",
+  "Milkor MGL (South Africa, 1983): launcher firing 40x46 mm Grenade. 25 hp a shot, 60 rounds a minute, one shot per pull, 6 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Milkor_MGL",
+  "roster"
+ ],
+ [
+  "Heckler & Koch GMG",
+  "item",
+  7,
+  "firearms",
+  "Heckler & Koch GMG (Germany, 2000): launcher firing 40x53 mm Grenade. 25 hp a shot, 350 rounds a minute, automatic, 32 in the magazine, effective to 70 m. Source: https://en.wikipedia.org/wiki/Heckler_&_Koch_GMG",
+  "roster"
  ]
 ]

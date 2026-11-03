@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/settlement_0_fenonar",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/settlement_1_fenonar",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/settlement_2_fenonar",
+   "weight": 13
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 110903719
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/forge_2_land",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/forge_3_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/fortress_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/fortress_2_land",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/fortress_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/hall_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/hall_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/hall_2_land",
+   "weight": 27
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/hall_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/landmark_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/landmark_2_land",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/landmark_3_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/ruin_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/ruin_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/ruin_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/temple_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/temple_1_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tomb_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tomb_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tower_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oseivsizith/tower_2_land",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 159763408
+ }
+}

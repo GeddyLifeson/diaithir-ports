@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:veniolora_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veniolora_grottoes",
+   "required": false
+  }
+ ]
+}

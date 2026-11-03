@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "diaithirfauna:comb_redstone"
+ ],
+ "result": {
+  "id": "minecraft:redstone",
+  "count": 4
+ }
+}

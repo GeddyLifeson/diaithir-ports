@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/stone"
+  "all": "aether_ii:block/faded_holystone_base_bricks"
  }
 }

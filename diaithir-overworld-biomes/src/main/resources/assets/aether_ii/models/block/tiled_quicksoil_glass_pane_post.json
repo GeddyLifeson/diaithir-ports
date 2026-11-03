@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/template_glass_pane_post",
  "textures": {
-  "edge": "minecraft:block/glass",
-  "pane": "minecraft:block/glass"
+  "edge": "aether_ii:block/tiled_quicksoil_glass_pane",
+  "pane": "aether_ii:block/tiled_quicksoil_glass_pane"
  }
 }

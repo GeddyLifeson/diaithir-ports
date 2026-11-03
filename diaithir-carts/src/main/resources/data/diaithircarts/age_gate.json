@@ -22,5 +22,11 @@
       "diaithircarts:fast_rail",
       "diaithircarts:fast_powered_rail"
     ]
+  },
+  "signal": {
+    "age": 5,
+    "items": [
+      "diaithircarts:block_signal"
+    ]
   }
 }

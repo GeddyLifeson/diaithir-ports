@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/melauntus/settlement/1/salaustium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/melauntus/my_melauntus_e7_places_000541",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": "minecraft:oak_planks",
+    "B": "minecraft:bricks",
+    "C": "minecraft:cauldron",
+    "S": "minecraft:smooth_stone"
+  },
+  "pattern": [
+    "PPP",
+    "BCB",
+    "SSS"
+  ],
+  "result": {
+    "id": "diaithir_stations:kitchen_counter",
+    "count": 1
+  },
+  "category": "misc"
+}

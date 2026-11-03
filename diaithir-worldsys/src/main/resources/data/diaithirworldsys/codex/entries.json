@@ -34,7 +34,7 @@
   "feature": "utilityblocks",
   "age": "II",
   "title": "Utility Blocks",
-  "text": "Five small helpers. The Angel Block item places a stone block in mid air up to five blocks away when you use it without aiming at a block. Sky Sand never falls. The Redstone Clock pulses for 2 ticks every second. The Fluid Hopper, funnel down, removes a source fluid above it every 8 ticks. The Lamp Block gives light level 15 with no power."
+  "text": "Five small helpers. The Angel Block item places a stone block in mid air up to five blocks away when you use it without aiming at a block. Sky Sand never falls. The Redstone Clock pulses for 0.1 s every second. The Fluid Hopper, funnel down, removes a source fluid above it every 0.4 s. The Lamp Block gives light level 15 with no power."
  },
  {
   "feature": "veinbreaker",
@@ -64,7 +64,7 @@
   "feature": "structurecompass",
   "age": "II",
   "title": "Wayfinder Compass",
-  "text": "A compass ringed by gold and redstone that hunts structures. Right click to search up to 100 chunks for the selected type. Sneak right click cycles village, stronghold, mineshaft, shipwreck, ruined portal, pillager outpost, ancient city and trial chambers. The actionbar shows target, distance and direction. 40 tick cooldown."
+  "text": "A compass ringed by gold and redstone that hunts structures. Right click to search up to 100 chunks for the selected type. Sneak right click cycles village, stronghold, mineshaft, shipwreck, ruined portal, pillager outpost, ancient city and trial chambers. The actionbar shows target, distance and direction. 2 s cooldown."
  },
  {
   "feature": "packversioncheck",

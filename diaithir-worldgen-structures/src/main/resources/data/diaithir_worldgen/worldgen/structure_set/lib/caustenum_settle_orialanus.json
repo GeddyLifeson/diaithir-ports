@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_orialanus",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_orialanus",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_orialanus",
+   "weight": 50
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_3_orialanus",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 73063573
+ }
+}

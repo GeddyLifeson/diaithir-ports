@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/venilleth/settlement/1/sestora",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/venilleth/ar_venilleth_e1_places_000529",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

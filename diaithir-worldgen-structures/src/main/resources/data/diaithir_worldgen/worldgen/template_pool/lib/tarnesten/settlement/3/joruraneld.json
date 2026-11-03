@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/tarnesten/settlement/3/joruraneld",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/tarnesten/ma_tarnesten_e7_assay_002385",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

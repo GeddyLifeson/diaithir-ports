@@ -1,0 +1,30 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/sestia/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/landmark_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/temple_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/tower_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 64898400
+ }
+}

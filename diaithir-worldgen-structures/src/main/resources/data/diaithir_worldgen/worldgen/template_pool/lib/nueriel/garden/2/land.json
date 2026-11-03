@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/nueriel/garden/2/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/nueriel/ar_nueriel_e5_assay_002591",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

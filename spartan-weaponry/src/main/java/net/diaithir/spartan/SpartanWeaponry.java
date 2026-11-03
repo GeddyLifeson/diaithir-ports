@@ -54,9 +54,16 @@ public final class SpartanWeaponry {
     public static final Map<String, Spec> BY_ID = new LinkedHashMap<>();
 
     private static List<Spec> load() {
-        try (Reader r = new InputStreamReader(SpartanWeaponry.class.getResourceAsStream("/data/" + ID + "/weapon_types.json"))) {
-            Type t = new TypeToken<List<Spec>>() {}.getType();
-            return new Gson().fromJson(r, t);
+        Type t = new TypeToken<List<Spec>>() {}.getType();
+        List<Spec> all = new ArrayList<>();
+        try {
+            for (String f : new String[] {"weapon_types.json", "historical_weapons.json"}) {
+                try (Reader r = new InputStreamReader(SpartanWeaponry.class.getResourceAsStream("/data/" + ID + "/" + f))) {
+                    List<Spec> part = new Gson().fromJson(r, t);
+                    all.addAll(part);
+                }
+            }
+            return all;
         } catch (Exception e) {
             throw new IllegalStateException("weapon_types.json missing", e);
         }

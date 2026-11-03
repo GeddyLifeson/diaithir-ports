@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_corinus",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_corinus",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_corinus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_3_corinus",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 95697576
+ }
+}

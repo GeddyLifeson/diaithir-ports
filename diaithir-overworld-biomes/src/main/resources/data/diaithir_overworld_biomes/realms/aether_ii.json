@@ -2899,11 +2899,519 @@
   "zanite_trowel",
   "zephyr_husk"
  ],
+ "gear": [
+  {
+   "id": "arkenium_axe",
+   "prefix": "arkenium",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_boots",
+   "prefix": "arkenium",
+   "kind": "boots",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_chestplate",
+   "prefix": "arkenium",
+   "kind": "chestplate",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_helmet",
+   "prefix": "arkenium",
+   "kind": "helmet",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_leggings",
+   "prefix": "arkenium",
+   "kind": "leggings",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_pickaxe",
+   "prefix": "arkenium",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "arkenium_shovel",
+   "prefix": "arkenium",
+   "kind": "shovel",
+   "tier": "diamond"
+  },
+  {
+   "id": "beast_pelt_boots",
+   "prefix": "beast_pelt",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "beast_pelt_chestplate",
+   "prefix": "beast_pelt",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "beast_pelt_helmet",
+   "prefix": "beast_pelt",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "beast_pelt_leggings",
+   "prefix": "beast_pelt",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "burrukai_plate_boots",
+   "prefix": "burrukai_plate",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "burrukai_plate_chestplate",
+   "prefix": "burrukai_plate",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "burrukai_plate_helmet",
+   "prefix": "burrukai_plate",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "burrukai_plate_leggings",
+   "prefix": "burrukai_plate",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "gravitite_axe",
+   "prefix": "gravitite",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_boots",
+   "prefix": "gravitite",
+   "kind": "boots",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_chestplate",
+   "prefix": "gravitite",
+   "kind": "chestplate",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_helmet",
+   "prefix": "gravitite",
+   "kind": "helmet",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_leggings",
+   "prefix": "gravitite",
+   "kind": "leggings",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_pickaxe",
+   "prefix": "gravitite",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "gravitite_shovel",
+   "prefix": "gravitite",
+   "kind": "shovel",
+   "tier": "diamond"
+  },
+  {
+   "id": "holystone_axe",
+   "prefix": "holystone",
+   "kind": "axe",
+   "tier": "stone"
+  },
+  {
+   "id": "holystone_pickaxe",
+   "prefix": "holystone",
+   "kind": "pickaxe",
+   "tier": "stone"
+  },
+  {
+   "id": "holystone_shovel",
+   "prefix": "holystone",
+   "kind": "shovel",
+   "tier": "stone"
+  },
+  {
+   "id": "neptune_boots",
+   "prefix": "neptune",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "neptune_chestplate",
+   "prefix": "neptune",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "neptune_helmet",
+   "prefix": "neptune",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "neptune_leggings",
+   "prefix": "neptune",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "sentry_boots",
+   "prefix": "sentry",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "skyroot_axe",
+   "prefix": "skyroot",
+   "kind": "axe",
+   "tier": "wood"
+  },
+  {
+   "id": "skyroot_pickaxe",
+   "prefix": "skyroot",
+   "kind": "pickaxe",
+   "tier": "wood"
+  },
+  {
+   "id": "skyroot_shovel",
+   "prefix": "skyroot",
+   "kind": "shovel",
+   "tier": "wood"
+  },
+  {
+   "id": "zanite_axe",
+   "prefix": "zanite",
+   "kind": "axe",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_boots",
+   "prefix": "zanite",
+   "kind": "boots",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_chestplate",
+   "prefix": "zanite",
+   "kind": "chestplate",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_helmet",
+   "prefix": "zanite",
+   "kind": "helmet",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_leggings",
+   "prefix": "zanite",
+   "kind": "leggings",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_pickaxe",
+   "prefix": "zanite",
+   "kind": "pickaxe",
+   "tier": "diamond"
+  },
+  {
+   "id": "zanite_shovel",
+   "prefix": "zanite",
+   "kind": "shovel",
+   "tier": "diamond"
+  }
+ ],
  "portals": [
   {
    "block": "aether_portal",
    "activator": "minecraft:glowstone_dust",
    "frame": "aether_ii:aether_portal_frame"
+  }
+ ],
+ "mobs": [
+  {
+   "id": "aechor_plant",
+   "kind": "guardian",
+   "role": "passive",
+   "hp": 15,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "aerbunny",
+   "kind": "silverfish",
+   "role": "passive",
+   "hp": 8,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "aerwhale",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "arctic_burrukai",
+   "kind": "ravager",
+   "role": "passive",
+   "hp": 30,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "arctic_kirrid",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "arctic_taegore",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "arkenium_taluton",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "bladeshroom_hunter",
+   "kind": "blaze",
+   "role": "monster",
+   "hp": 20,
+   "atk": 4,
+   "scale": 1.0
+  },
+  {
+   "id": "blue_swet",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "carrion_sprout",
+   "kind": "illager",
+   "role": "passive",
+   "hp": 12,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "cockatrice",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "edward",
+   "kind": "illager",
+   "role": "monster",
+   "hp": 24,
+   "atk": 5,
+   "scale": 1.0
+  },
+  {
+   "id": "flying_cow",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "glitterwing",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "golden_swet",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "gravitite_taluton",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "highfields_burrukai",
+   "kind": "ravager",
+   "role": "passive",
+   "hp": 30,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "highfields_kirrid",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "highfields_taegore",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "magnetic_burrukai",
+   "kind": "ravager",
+   "role": "passive",
+   "hp": 30,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "magnetic_kirrid",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "magnetic_taegore",
+   "kind": "ravager",
+   "role": "monster",
+   "hp": 60,
+   "atk": 7,
+   "scale": 1.0
+  },
+  {
+   "id": "mimic",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "moa",
+   "kind": "ravager",
+   "role": "passive",
+   "hp": 30,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "phyg",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "prismallard",
+   "kind": "phantom",
+   "role": "passive",
+   "hp": 9,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "sentry_golem",
+   "kind": "golem",
+   "role": "boss",
+   "hp": 700,
+   "atk": 18,
+   "scale": 1.6
+  },
+  {
+   "id": "shroudwing",
+   "kind": "phantom",
+   "role": "monster",
+   "hp": 18,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "skephid",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "skyroot_lizard",
+   "kind": "silverfish",
+   "role": "passive",
+   "hp": 8,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "slider",
+   "kind": "golem",
+   "role": "boss",
+   "hp": 700,
+   "atk": 18,
+   "scale": 1.6
+  },
+  {
+   "id": "tempest",
+   "kind": "phantom",
+   "role": "boss",
+   "hp": 290,
+   "atk": 6,
+   "scale": 1.6
+  },
+  {
+   "id": "zephyr",
+   "kind": "phantom",
+   "role": "monster",
+   "hp": 18,
+   "atk": 3,
+   "scale": 1.0
   }
  ]
 }

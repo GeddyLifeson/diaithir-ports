@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyannora/settlement_0_any",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyannora/settlement_1_any",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 217856009
+ }
+}

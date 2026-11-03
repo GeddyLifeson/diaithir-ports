@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_elemiel",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_elemiel",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_elemiel",
+   "weight": 7
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 247772010
+ }
+}

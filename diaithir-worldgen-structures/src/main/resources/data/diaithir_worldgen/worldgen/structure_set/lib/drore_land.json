@@ -1,0 +1,30 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drore/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/ruin_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/tower_0_land",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 93697783
+ }
+}

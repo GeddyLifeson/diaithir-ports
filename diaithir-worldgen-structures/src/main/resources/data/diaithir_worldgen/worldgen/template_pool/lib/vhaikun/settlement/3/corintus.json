@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/vhaikun/settlement/3/corintus",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/vhaikun/ma_vhaikun_e7_assay_001596",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

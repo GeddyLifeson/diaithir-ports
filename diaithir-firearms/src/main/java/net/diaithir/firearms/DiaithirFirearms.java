@@ -50,6 +50,7 @@ public final class DiaithirFirearms {
         Defs.GUNS.values().forEach(g -> ALL.add(ITEMS.registerItem(g.id(), p -> new GunItem(p, g), () -> new Item.Properties().stacksTo(1))));
         for (String a : Defs.ATTS.keySet()) ALL.add(ITEMS.registerSimpleItem(a));
         for (String id : EXTRA) ALL.add(ITEMS.registerSimpleItem(id));
+        for (String id : Defs.AMMO) ALL.add(ITEMS.registerSimpleItem(id));
         ITEMS.register(bus);
         COMPONENTS.register(bus);
         SOUNDS.register(bus);
