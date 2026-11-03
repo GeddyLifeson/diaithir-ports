@@ -1,0 +1,61 @@
+id,name,first_flight_year,category,country,age,source
+wright_flyer,"Wright Flyer",1903,pioneer,USA,VI,https://en.wikipedia.org/wiki/Wright_Flyer
+bleriot_xi,"Blériot XI",1909,pioneer,France,VI,https://en.wikipedia.org/wiki/Blériot_XI
+fokker_eindecker,"Fokker E.III Eindecker",1915,fighter,Germany,VI,https://en.wikipedia.org/wiki/Fokker_Eindecker
+sopwith_camel,"Sopwith Camel",1916,fighter,UK,VI,https://en.wikipedia.org/wiki/Sopwith_Camel
+fokker_dr1,"Fokker Dr.I",1917,fighter,Germany,VI,https://en.wikipedia.org/wiki/Fokker_Dr.I
+spad_xiii,"SPAD S.XIII",1917,fighter,France,VI,https://en.wikipedia.org/wiki/SPAD_S.XIII
+handley_page_o400,"Handley Page Type O",1915,bomber,UK,VI,https://en.wikipedia.org/wiki/Handley_Page_Type_O
+gotha_gv,"Gotha G.V",1916,bomber,Germany,VI,https://en.wikipedia.org/wiki/Gotha_G.V
+curtiss_jn4,"Curtiss JN-4 Jenny",1915,trainer,USA,VI,https://en.wikipedia.org/wiki/Curtiss_JN-4
+spirit_of_st_louis,"Ryan NYP Spirit of St. Louis",1927,utility,USA,VI,https://en.wikipedia.org/wiki/Spirit_of_St._Louis
+ford_trimotor,"Ford Trimotor",1926,airliner,USA,VI,https://en.wikipedia.org/wiki/Ford_Trimotor
+junkers_ju52,"Junkers Ju 52",1930,transport,Germany,VI,https://en.wikipedia.org/wiki/Junkers_Ju_52
+dc3,"Douglas DC-3",1935,airliner,USA,VI,https://en.wikipedia.org/wiki/Douglas_DC-3
+boeing_314,"Boeing 314 Clipper",1938,seaplane,USA,VI,https://en.wikipedia.org/wiki/Boeing_314_Clipper
+pby_catalina,"Consolidated PBY Catalina",1935,seaplane,USA,VI,https://en.wikipedia.org/wiki/Consolidated_PBY_Catalina
+supermarine_spitfire,"Supermarine Spitfire",1936,fighter,UK,VI,https://en.wikipedia.org/wiki/Supermarine_Spitfire
+bf109,"Messerschmitt Bf 109",1935,fighter,Germany,VI,https://en.wikipedia.org/wiki/Messerschmitt_Bf_109
+p51_mustang,"North American P-51 Mustang",1940,fighter,USA,VI,https://en.wikipedia.org/wiki/North_American_P-51_Mustang
+a6m_zero,"Mitsubishi A6M Zero",1939,fighter,Japan,VI,https://en.wikipedia.org/wiki/Mitsubishi_A6M_Zero
+f4u_corsair,"Vought F4U Corsair",1940,fighter,USA,VI,https://en.wikipedia.org/wiki/Vought_F4U_Corsair
+il2_sturmovik,"Ilyushin Il-2 Sturmovik",1939,attack,USSR,VI,https://en.wikipedia.org/wiki/Ilyushin_Il-2
+ju87_stuka,"Junkers Ju 87 Stuka",1935,attack,Germany,VI,https://en.wikipedia.org/wiki/Junkers_Ju_87
+b17_flying_fortress,"Boeing B-17 Flying Fortress",1935,bomber,USA,VI,https://en.wikipedia.org/wiki/Boeing_B-17_Flying_Fortress
+lancaster,"Avro Lancaster",1941,bomber,UK,VI,https://en.wikipedia.org/wiki/Avro_Lancaster
+b29_superfortress,"Boeing B-29 Superfortress",1942,bomber,USA,VI,https://en.wikipedia.org/wiki/Boeing_B-29_Superfortress
+c47_skytrain,"Douglas C-47 Skytrain",1941,transport,USA,VI,https://en.wikipedia.org/wiki/Douglas_C-47_Skytrain
+t6_texan,"North American T-6 Texan",1935,trainer,USA,VI,https://en.wikipedia.org/wiki/North_American_T-6_Texan
+piper_cub,"Piper J-3 Cub",1938,utility,USA,VI,https://en.wikipedia.org/wiki/Piper_J-3_Cub
+de_havilland_beaver,"de Havilland Canada DHC-2 Beaver",1947,seaplane,Canada,VII,https://en.wikipedia.org/wiki/De_Havilland_Canada_DHC-2_Beaver
+me262,"Messerschmitt Me 262",1942,jet_fighter,Germany,VI,https://en.wikipedia.org/wiki/Messerschmitt_Me_262
+f86_sabre,"North American F-86 Sabre",1947,jet_fighter,USA,VII,https://en.wikipedia.org/wiki/North_American_F-86_Sabre
+mig15,"Mikoyan-Gurevich MiG-15",1947,jet_fighter,USSR,VII,https://en.wikipedia.org/wiki/Mikoyan-Gurevich_MiG-15
+de_havilland_comet,"de Havilland Comet",1949,airliner,UK,VII,https://en.wikipedia.org/wiki/De_Havilland_Comet
+b52_stratofortress,"Boeing B-52 Stratofortress",1952,bomber,USA,VII,https://en.wikipedia.org/wiki/Boeing_B-52_Stratofortress
+c130_hercules,"Lockheed C-130 Hercules",1954,transport,USA,VII,https://en.wikipedia.org/wiki/Lockheed_C-130_Hercules
+cessna_172,"Cessna 172 Skyhawk",1955,utility,USA,VII,https://en.wikipedia.org/wiki/Cessna_172
+boeing_707,"Boeing 707",1957,airliner,USA,VII,https://en.wikipedia.org/wiki/Boeing_707
+f4_phantom,"McDonnell Douglas F-4 Phantom II",1958,jet_fighter,USA,VII,https://en.wikipedia.org/wiki/McDonnell_Douglas_F-4_Phantom_II
+mig21,"Mikoyan-Gurevich MiG-21",1955,jet_fighter,USSR,VII,https://en.wikipedia.org/wiki/Mikoyan-Gurevich_MiG-21
+a10_thunderbolt2,"Fairchild Republic A-10 Thunderbolt II",1972,attack,USA,VII,https://en.wikipedia.org/wiki/Fairchild_Republic_A-10_Thunderbolt_II
+t38_talon,"Northrop T-38 Talon",1959,trainer,USA,VII,https://en.wikipedia.org/wiki/Northrop_T-38_Talon
+boeing_747,"Boeing 747",1969,airliner,USA,VII,https://en.wikipedia.org/wiki/Boeing_747
+concorde,"Aérospatiale/BAC Concorde",1969,airliner,France/UK,VII,https://en.wikipedia.org/wiki/Concorde
+f15_eagle,"McDonnell Douglas F-15 Eagle",1972,jet_fighter,USA,VII,https://en.wikipedia.org/wiki/McDonnell_Douglas_F-15_Eagle
+f16_falcon,"General Dynamics F-16 Fighting Falcon",1974,jet_fighter,USA,VII,https://en.wikipedia.org/wiki/General_Dynamics_F-16_Fighting_Falcon
+su27_flanker,"Sukhoi Su-27",1977,jet_fighter,USSR,VII,https://en.wikipedia.org/wiki/Sukhoi_Su-27
+sr71_blackbird,"Lockheed SR-71 Blackbird",1964,recon,USA,VII,https://en.wikipedia.org/wiki/Lockheed_SR-71_Blackbird
+c5_galaxy,"Lockheed C-5 Galaxy",1968,transport,USA,VII,https://en.wikipedia.org/wiki/Lockheed_C-5_Galaxy
+an225_mriya,"Antonov An-225 Mriya",1988,transport,USSR,VII,https://en.wikipedia.org/wiki/Antonov_An-225_Mriya
+b2_spirit,"Northrop Grumman B-2 Spirit",1989,bomber,USA,VII,https://en.wikipedia.org/wiki/Northrop_Grumman_B-2_Spirit
+airbus_a320,"Airbus A320",1987,airliner,Europe,VII,https://en.wikipedia.org/wiki/Airbus_A320_family
+airbus_a380,"Airbus A380",2005,airliner,Europe,VII,https://en.wikipedia.org/wiki/Airbus_A380
+f22_raptor,"Lockheed Martin F-22 Raptor",1997,jet_fighter,USA,VII,https://en.wikipedia.org/wiki/Lockheed_Martin_F-22_Raptor
+f35_lightning2,"Lockheed Martin F-35 Lightning II",2006,jet_fighter,USA,VII,https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II
+mq9_reaper,"General Atomics MQ-9 Reaper",2001,drone,USA,VII,https://en.wikipedia.org/wiki/General_Atomics_MQ-9_Reaper
+sikorsky_r4,"Sikorsky R-4",1942,helicopter,USA,VI,https://en.wikipedia.org/wiki/Sikorsky_R-4
+bell_uh1_huey,"Bell UH-1 Iroquois",1956,helicopter,USA,VII,https://en.wikipedia.org/wiki/Bell_UH-1_Iroquois
+ch47_chinook,"Boeing CH-47 Chinook",1961,helicopter,USA,VII,https://en.wikipedia.org/wiki/Boeing_CH-47_Chinook
+mil_mi8,"Mil Mi-8",1961,helicopter,USSR,VII,https://en.wikipedia.org/wiki/Mil_Mi-8
+ah64_apache,"Boeing AH-64 Apache",1975,helicopter,USA,VII,https://en.wikipedia.org/wiki/Boeing_AH-64_Apache
