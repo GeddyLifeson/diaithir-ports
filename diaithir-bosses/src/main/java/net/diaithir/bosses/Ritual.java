@@ -114,6 +114,7 @@ public final class Ritual {
         if (data.rituals().containsKey(k)) return Component.literal("a rite is already running at this altar");
         data.putRitual(k, new State(RITE + id, 0, 0).toString());
         tell(sl, altar, Component.literal(r.text));
+        RiteFx.start(sl, altar);
         tell(sl, altar, Component.translatable("ritual.diaithirbosses.begin"));
         tell(sl, altar, clue(RITE + id, 0));
         return null;
@@ -231,10 +232,12 @@ public final class Ritual {
         String k = key(altar);
         DEFEND_START.remove(k);
         int next = st.step + 1;
+        RiteFx.stepDone(sl, altar, d.steps.get(st.step).type);
         if (next >= d.steps.size()) {
             data.removeRitual(k);
             dismissSpirits(sl, altar);
             Data.Profile p = Data.byId(st.boss);
+            RiteFx.wake(sl, altar);
             tell(sl, altar, Component.translatable("ritual.diaithirbosses.done"));
             if (st.boss.startsWith(RITE)) {
                 data.defeat(st.boss, sl.getGameTime());
@@ -291,6 +294,7 @@ public final class Ritual {
         String k = key(altar);
         DEFEND_START.remove(k);
         data.putRitual(k, new State(st.boss, st.step, 0).toString());
+        RiteFx.fail(sl, altar);
         tell(sl, altar, Component.translatable(why));
         for (Mob m : sl.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), e -> e.entityTags().contains(WAVE_TAG))) m.discard();
         dismissSpirits(sl, altar);
@@ -362,6 +366,7 @@ public final class Ritual {
                 advance(sl, altar, data, st, d);
                 continue;
             }
+            RiteFx.defendPulse(sl, altar, secs, 3.5);
             if (secs % 10 == 5) wave(sl, altar, s, near.size());
         }
     }
