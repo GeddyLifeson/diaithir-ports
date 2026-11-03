@@ -65,16 +65,12 @@ public final class ControllerBlockEntity extends BlockEntity {
         return network;
     }
 
-    private long viewTick = -100;
     private NetworkView view;
 
-    /** Read-only item view of the whole network, rebuilt at most twice a second. Null on the client. */
+    /** Read-only item view of the whole network: one stable handler that refreshes itself at most twice a second. Null on the client. */
     public @Nullable NetworkView view() {
         if (!(level instanceof ServerLevel sl)) return null;
-        if (view == null || sl.getGameTime() - viewTick >= 10) {
-            view = new NetworkView(network());
-            viewTick = sl.getGameTime();
-        }
+        if (view == null) view = new NetworkView(this::network, sl::getGameTime);
         return view;
     }
 
