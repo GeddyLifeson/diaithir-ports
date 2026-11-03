@@ -224,5 +224,6 @@
  },
  "mythic": false,
  "entity": "diaithirbosses:bronze_warking",
- "creature_id": null
+ "creature_id": null,
+ "look": true
 }

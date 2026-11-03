@@ -197,5 +197,6 @@
  "mythic": true,
  "entity": "diaithir_myth:tarbiumachuoirtach",
  "fallback_own": true,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

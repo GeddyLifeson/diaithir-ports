@@ -185,5 +185,6 @@
    "mist_weaver",
    "ash_seraph"
   ]
- }
+ },
+ "look": true
 }

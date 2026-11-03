@@ -892,6 +892,7 @@ for aid, (arch, soil) in ASC.items():
         want = max(OLD_H.get(old_kind, 2.0) * prof["own"]["scale"], 2.2)
         top = max(c[4] for p in b.parts for c in p.cubes) / 16
         prof["own"]["scale"] = round(max(0.8, min(4.5, want / top)), 2)
+    prof["look"] = True
     prof["own"]["kind"] = "look_" + HITBOX[arch.split(":")[0]]
     json.dump(prof, open(pf, "w"), indent=1, ensure_ascii=False)
     print("ascendant", aid, arch, prof["own"]["kind"])

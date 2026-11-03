@@ -62,10 +62,14 @@ public final class SelfTest {
                     try { run(s); } finally {
                         ServerLevel lv = s.getServer().overworld();
                         for (int cx = -3; cx <= 2; cx++) for (int cz = -3; cz <= 2; cz++) lv.setChunkForced(cx, cz, false);
+                        ServerLevel pl2 = planetLevel(s.getServer());
+                        if (pl2 != null) pl2.setChunkForced(0, 0, false);
                     }
                 }
             });
         }
+        ServerLevel pl = planetLevel(src.getServer());
+        if (pl != null) { pl.getChunk(0, 0); pl.setChunkForced(0, 0, true); }
         pending = src;
         wait = 60;
         src.sendSuccess(() -> Component.literal("bosses self test starts in 3 seconds; the total goes to the log"), false);
@@ -110,6 +114,7 @@ public final class SelfTest {
             planetBosses(level, c0, fp);
             attach(level, c0, fp);
             altar(level, c0, fp);
+            planetLair(src.getServer());
             elites(level, c0);
             rites(src, level, c0, fp);
         } finally {
@@ -315,10 +320,59 @@ public final class SelfTest {
             check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/textures/entity/planet/" + p.id + ".png") != null, p.id + ": texture");
             sample.putIfAbsent(p.arch, p);
         }
+        for (Data.Profile p : Data.profiles().values()) {
+            check(p.look, p.id + ": has its own look");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/looks/" + p.id + ".json") != null, p.id + ": look file");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/textures/entity/planet/" + p.id + ".png") != null, p.id + ": texture");
+        }
         check(planets.size() >= 200, "planet bosses cover " + planets.size() + " planets");
         check(PlanetBoss.class.getResource("/data/" + DiaithirBosses.ID + "/structure/planet_lair.nbt") != null, "planet lair template present");
         for (Data.Profile p : sample.values()) runBoss(level, c0, fp, p);
         System.out.println("[bossesselftest] planet bosses " + all.size() + " on " + planets.size() + " planets, full test on " + sample.size() + " body plans");
+    }
+
+    private static final String PLANET_TEST = "ashestith";
+
+    /** A planet dimension, when the planets datapack is loaded (it is optional for the test). */
+    private static ServerLevel planetLevel(net.minecraft.server.MinecraftServer srv) {
+        return srv.getLevel(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.DIMENSION,
+            Identifier.parse("diaithir_planets:" + PLANET_TEST)));
+    }
+
+    /** A lair altar (no boss set) in a planet dimension wakes one of that planet's own bosses. */
+    private static void planetLair(net.minecraft.server.MinecraftServer srv) {
+        ServerLevel pl = planetLevel(srv);
+        if (pl == null) {
+            System.out.println("[bossesselftest] planet lair: no planet dimensions loaded, skipped");
+            return;
+        }
+        BlockPos pos = new BlockPos(0, 150, 0);
+        for (int x = -4; x <= 4; x++) for (int z = -4; z <= 4; z++) {
+            pl.setBlock(pos.offset(x, -1, z), Blocks.STONE.defaultBlockState(), 2);
+            for (int h = 0; h <= 8; h++) pl.setBlock(pos.offset(x, h, z), Blocks.AIR.defaultBlockState(), 2);
+        }
+        pl.setBlock(pos, DiaithirBosses.ALTAR.get().defaultBlockState(), 3);
+        var be = (AltarBlockEntity) pl.getBlockEntity(pos);
+        check(be != null && be.boss.isEmpty(), "planet lair: altar starts without a boss");
+        if (be == null) return;
+        FakePlayer fp = FakePlayerFactory.get(pl, new GameProfile(UUID.fromString("00000000-0000-4000-8000-00000000b056"), "[lair-test]"));
+        fp.setPos(pos.getX() + 3.5, pos.getY(), pos.getZ() + 0.5);
+        Integer old = Ages.forced;
+        Ages.forced = 8;
+        try {
+            be.activate(fp);
+            Data.Profile p = Data.byId(be.boss);
+            check(p != null && PLANET_TEST.equals(p.planet), "planet lair: picked a boss of its own planet (" + be.boss + ")");
+            var found = pl.getEntitiesOfClass(Mob.class, new AABB(pos).inflate(10), m -> m.isAlive() && m.entityTags().contains(AltarBlockEntity.posTag(pos)));
+            check(found.size() == 1 && found.get(0) instanceof PlanetBoss, "planet lair: wakes a planet boss (" + found.size() + ")");
+            if (!found.isEmpty() && found.get(0) instanceof PlanetBoss pb) {
+                check(pb.bossId().equals(be.boss), "planet lair: the woken boss wears the picked look");
+                found.get(0).discard();
+            }
+        } finally {
+            Ages.forced = old;
+            pl.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+        }
     }
 
     /** The altar: Age gate, waking, no double wake, and the respawn rule after a kill. */

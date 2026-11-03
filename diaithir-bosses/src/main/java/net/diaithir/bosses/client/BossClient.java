@@ -36,6 +36,12 @@ public final class BossClient {
     private static void renderers(EntityRenderersEvent.RegisterRenderers e) {
         DiaithirBosses.PLANET.values().forEach(t -> e.registerEntityRenderer(t.get(), PlanetBossRenderer::new));
         for (Data.Profile p : Data.profiles().values()) {
+            if (p.look && !p.ownsEntity() && p.planet == null) {
+                // a creature of another mod (diaithir_myth) that our kit attaches to: draw it with the boss's look
+                net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(p.entity))
+                    .ifPresent(t -> e.registerEntityRenderer((EntityType) t, PlanetBossRenderer::new));
+                continue;
+            }
             if (!p.ownsEntity()) continue;
             Identifier t = Identifier.fromNamespaceAndPath(DiaithirBosses.ID, "textures/entity/" + p.id + ".png");
             EntityType type = (EntityType) DiaithirBosses.MOBS.get(p.id).get();

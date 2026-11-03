@@ -197,5 +197,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:maktirikriuch",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

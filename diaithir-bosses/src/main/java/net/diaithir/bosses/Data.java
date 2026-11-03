@@ -60,7 +60,7 @@ public final class Data {
     public static final class Profile {
         public String id, name, name_en, entity, creature_id, court, habitat, existing_model, planet, dimension, rite, arch;
         public int age = 1, xp = 100;
-        public boolean hostile = true, mythic, fallback_own;
+        public boolean hostile = true, mythic, fallback_own, look;
         public double max_hit_fraction = 0.1;
         public Own own = new Own();
         public Bar bar = new Bar();

@@ -166,5 +166,6 @@
  "summon": {
   "rite": "ascendant_altar",
   "requires_kills": []
- }
+ },
+ "look": true
 }

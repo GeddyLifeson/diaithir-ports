@@ -222,5 +222,6 @@
  "mythic": false,
  "entity": "diaithirbosses:iron_walker",
  "creature_id": null,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

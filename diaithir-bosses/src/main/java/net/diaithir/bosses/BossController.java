@@ -177,6 +177,11 @@ public final class BossController {
             dm.removeModifier(DMG_MOD);
             dm.addPermanentModifier(new AttributeModifier(DMG_MOD, ageScale(false) * mode.damage * EventHooks.damageMul(prof, level) - 1.0, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         }
+        if (prof.look && !prof.ownsEntity()) {
+            // another mod's creature drawn with our look: size it to the look
+            AttributeInstance sc = mob.getAttribute(Attributes.SCALE);
+            if (sc != null) sc.setBaseValue(prof.own.scale);
+        }
         mob.setHealth(mob.getMaxHealth());
         float want = (float) (base * hpMul);
         damageDivisor = Math.max(1.0F, want / mob.getMaxHealth());

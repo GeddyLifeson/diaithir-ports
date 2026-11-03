@@ -197,5 +197,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:natuirrig",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

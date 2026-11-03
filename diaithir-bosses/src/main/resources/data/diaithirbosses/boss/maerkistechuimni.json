@@ -196,5 +196,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:maerkistechuimni",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

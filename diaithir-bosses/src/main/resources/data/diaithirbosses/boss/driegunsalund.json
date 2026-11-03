@@ -199,5 +199,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:driegunsalund",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

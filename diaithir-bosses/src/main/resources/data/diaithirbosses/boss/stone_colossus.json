@@ -234,5 +234,6 @@
  "mythic": false,
  "entity": "diaithirbosses:stone_colossus",
  "creature_id": null,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

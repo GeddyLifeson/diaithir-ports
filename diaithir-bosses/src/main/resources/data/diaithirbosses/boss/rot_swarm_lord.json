@@ -216,5 +216,6 @@
  "mythic": false,
  "entity": "diaithirbosses:rot_swarm_lord",
  "creature_id": null,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

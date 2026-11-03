@@ -196,5 +196,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:ridiriknok",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

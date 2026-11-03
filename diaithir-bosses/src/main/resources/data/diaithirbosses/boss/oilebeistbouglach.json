@@ -194,5 +194,6 @@
  "existing_model": "iceandfire:hydra",
  "mythic": true,
  "entity": "diaithirbosses:oilebeistbouglach",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

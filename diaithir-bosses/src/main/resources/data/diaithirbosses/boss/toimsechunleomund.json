@@ -200,5 +200,6 @@
  "mythic": true,
  "entity": "diaithir_myth:toimsechunleomund",
  "fallback_own": true,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

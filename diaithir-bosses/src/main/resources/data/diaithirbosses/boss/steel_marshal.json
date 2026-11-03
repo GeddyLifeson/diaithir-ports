@@ -245,5 +245,6 @@
  },
  "mythic": false,
  "entity": "diaithirbosses:steel_marshal",
- "creature_id": null
+ "creature_id": null,
+ "look": true
 }

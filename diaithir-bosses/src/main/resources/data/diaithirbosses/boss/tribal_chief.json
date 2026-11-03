@@ -226,5 +226,6 @@
  },
  "mythic": false,
  "entity": "diaithirbosses:tribal_chief",
- "creature_id": null
+ "creature_id": null,
+ "look": true
 }

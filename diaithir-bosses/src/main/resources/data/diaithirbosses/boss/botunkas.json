@@ -200,5 +200,6 @@
  "existing_model": "-",
  "mythic": true,
  "entity": "diaithirbosses:botunkas",
- "equipment": {}
+ "equipment": {},
+ "look": true
 }
