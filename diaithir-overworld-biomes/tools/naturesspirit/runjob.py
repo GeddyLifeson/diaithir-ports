@@ -9,7 +9,7 @@ if (d/'out.jsonl').exists(): done={json.loads(l)['id'] for l in open(d/'out.json
 def call(r):
     b={"model":model,"max_tokens":32000,"system":[{"type":"text","text":r['system'],"cache_control":{"type":"ephemeral","ttl":"1h"}}] if r.get('system') else None,"messages":[{"role":"user","content":r['prompt']}]}
     if not b['system']: del b['system']
-    if 'sonnet' in model: b['thinking']={"type":"disabled"}
+    if 'sonnet' in model: b['thinking']={"type":"between_tools"}
     for a in range(6):
         try:
             q=urllib.request.Request("https://api.anthropic.com/v1/messages",json.dumps(b).encode(),{"x-api-key":KEY,"anthropic-version":"2023-06-01","content-type":"application/json"})
