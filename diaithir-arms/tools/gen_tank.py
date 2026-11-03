@@ -227,7 +227,7 @@ for b, desc, dmg, types, extra in (('ap', 'Armour-Piercing Tank Shell', 55.0, ['
 def parts(design, gun, track):
     seat_z = 1.9 if design == 1 else 1.7
     return [
-     {'pos': [0, 0.9, -2.2], 'types': ['engine_tank'], 'defaultPart': f'{PK}:tank_engine'},
+     {'pos': [0, 0.9, -2.2], 'types': ['engine_tank'], 'minValue': 0.0, 'maxValue': 10.0, 'defaultPart': f'{PK}:tank_engine'},
      {'pos': [-1.35 if design == 1 else -1.25, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:{track}'},
      {'pos': [1.35 if design == 1 else 1.25, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:{track}'},
      {'pos': [0.0, 0.95, seat_z], 'types': ['seat'], 'isController': True, 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
@@ -266,4 +266,35 @@ import pathlib
 pathlib.Path(f'{A}/jsondefs/parts/tank_gun_main.json').unlink(missing_ok=True)
 w(f'{M}/tank_manifest.json', {'vehicles': [{'id': v[0], 'name': v[2], 'age': v[6], 'desc': v[7], 'camo': [c[0] for c in CAMO_N]} for v in VEHICLES],
                               'parts': ['tank_track', 'tank_track2', 'tank_engine', 'tank_seat'] + list(GUNS), 'bullets': ['tank_shell_ap', 'tank_shell_he']})
+
+# ---- inventory icons: textures/items/<systemName><subName>.png (IV looks them up by item resource name) ----
+CAMO_RGB = {'': (74, 92, 58), '_desert': (176, 150, 100), '_snow': (214, 220, 226)}
+def icon(path, body, kind):
+    im = Image.new('RGBA', (32, 32), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    dark = tuple(max(0, c - 40) for c in body); track = (38, 38, 40)
+    if kind == 'tank1' or kind == 'tank2':
+        d.rounded_rectangle([3, 19, 28, 26], 3, fill=track); d.rectangle([5, 14, 26, 21], fill=body, outline=dark)
+        if kind == 'tank1': d.rectangle([10, 8, 21, 14], fill=body, outline=dark)
+        else: d.ellipse([10, 6, 21, 15], fill=body, outline=dark)
+        d.rectangle([20, 10, 30, 12], fill=dark)
+        for x in range(6, 27, 5): d.ellipse([x, 22, x + 3, 25], fill=(90, 90, 94))
+    elif kind == 'track':
+        d.rounded_rectangle([3, 12, 28, 22], 4, fill=track, outline=(20, 20, 22))
+        for x in range(6, 27, 5): d.ellipse([x, 15, x + 3, 19], fill=(110, 110, 116))
+    elif kind == 'engine':
+        d.rectangle([6, 10, 25, 24], fill=(104, 108, 114), outline=(50, 52, 56)); d.rectangle([9, 6, 22, 10], fill=(80, 84, 90))
+        for x in (10, 15, 20): d.rectangle([x, 12, x + 2, 21], fill=(60, 62, 66))
+    elif kind == 'seat':
+        d.rectangle([9, 5, 22, 17], fill=(88, 64, 48), outline=(50, 36, 28)); d.rectangle([7, 17, 24, 24], fill=(70, 52, 40), outline=(40, 30, 24))
+    elif kind == 'gun':
+        d.rectangle([2, 13, 24, 17], fill=(70, 74, 80), outline=(36, 38, 42)); d.rectangle([22, 10, 29, 21], fill=(90, 94, 100), outline=(36, 38, 42))
+    elif kind == 'shell':
+        d.rectangle([12, 10, 19, 25], fill=(190, 150, 60), outline=(100, 76, 30)); d.polygon([(12, 10), (19, 10), (15, 3)], fill=body, outline=dark)
+    os.makedirs(os.path.dirname(path), exist_ok=True); im.save(path)
+for vid, design, *_ in VEHICLES:
+    for sfx, _l in CAMO_N: icon(f'{A}/textures/items/{vid}{sfx}.png', CAMO_RGB[sfx], 'tank%d' % design)
+for n in ('tank_track', 'tank_track2'): icon(f'{A}/textures/items/{n}.png', (0, 0, 0), 'track')
+icon(f'{A}/textures/items/tank_engine.png', (0, 0, 0), 'engine'); icon(f'{A}/textures/items/tank_seat.png', (0, 0, 0), 'seat')
+for g in GUNS: icon(f'{A}/textures/items/{g}.png', (0, 0, 0), 'gun')
+icon(f'{A}/textures/items/tank_shell_ap.png', (110, 110, 118), 'shell'); icon(f'{A}/textures/items/tank_shell_he.png', (170, 60, 40), 'shell')
 print('tank pack written', A)
