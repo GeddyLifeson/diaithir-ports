@@ -98,7 +98,7 @@ public final class BossEvents {
         if (!ELITE_SPAWNS.contains(e.getSpawnType())) return;
         Mob m = e.getEntity();
         if (!(m.level() instanceof ServerLevel sl)) return;
-        Elites.roll(m, Ages.current(sl.getServer()), sl.getRandom());
+        Elites.roll(m, Ages.current(sl.getServer()), m.getRandom());
     }
 
     @SubscribeEvent
