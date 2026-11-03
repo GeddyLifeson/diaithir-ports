@@ -30,6 +30,27 @@ public final class SelfTest {
     }
 
     static void register(CommandDispatcher<CommandSourceStack> d) {
+        var gm = (java.util.function.Predicate<CommandSourceStack>) s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER);
+        // /animplay <clip>: sends any clip (e.g. gun.pistol.fire) to yourself and everyone watching; for render tests
+        d.register(Commands.literal("animplay").requires(gm)
+                .then(Commands.argument("clip", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(c -> {
+                    var p = c.getSource().getPlayerOrException();
+                    String clip = com.mojang.brigadier.arguments.StringArgumentType.getString(c, "clip");
+                    Anim.play(p, clip);
+                    c.getSource().sendSuccess(() -> Component.literal("animplay " + clip), false);
+                    return 1;
+                })));
+        // /animgun <action>: the action (fire, reload, inspect, dry, unjam) on the held gun, or a pistol when the hand holds no gun
+        d.register(Commands.literal("animgun").requires(gm)
+                .then(Commands.argument("action", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(c -> {
+                    var p = c.getSource().getPlayerOrException();
+                    String act = com.mojang.brigadier.arguments.StringArgumentType.getString(c, "action");
+                    Kind k = Kind.of(p.getMainHandItem());
+                    String clip = k != null && k.gun() ? k.clip(p.getMainHandItem().getItem(), act) : "gun.pistol." + act;
+                    Anim.play(p, clip);
+                    c.getSource().sendSuccess(() -> Component.literal("animgun " + clip), false);
+                    return 1;
+                })));
         d.register(Commands.literal("animselftest")
                 .requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
                 .executes(c -> {
