@@ -1,0 +1,100 @@
+{
+ "rules": [
+  {
+   "id": "diaithirrelics:skywatch_rune_slot",
+   "target": "diaithirrelics:skywatch_charm",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithirrelics:lantern_shard_slot",
+   "target": "diaithirrelics:aurora_lantern",
+   "slots": 1,
+   "kinds": [
+    "relic"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "diaithirrelics:diaithir_cumhacht:rune_socket_dorchamhiotal",
+   "target": "diaithirrelics:dorchamhiotal_*",
+   "slots": 2,
+   "kinds": [
+    "rune",
+    "enchant"
+   ],
+   "max_quality": "mythic"
+  },
+  {
+   "id": "diaithirrelics:diaithir_cumhacht:rune_socket_frame",
+   "target": "diaithirrelics:fr\u00e1ma_teallaigh_*",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": "rare"
+  },
+  {
+   "id": "diaithirrelics:pylon_rune_slots",
+   "target": "diaithirpylons:pylons",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 1
+  },
+  {
+   "id": "diaithirrelics:linker_enchant",
+   "target": "diaithirpylons:linker",
+   "slots": 1,
+   "kinds": [
+    "enchant"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithirrelics:magazine_socket_upgrade",
+   "target": "diaithirrelics:embershot_repeater",
+   "slots": 1,
+   "kinds": [
+    "magazine_ember",
+    "magazine_rime"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithirrelics:arc_quiver_upgrade",
+   "target": "diaithirrelics:hollowbough_arc",
+   "slots": 1,
+   "kinds": [
+    "magazine_ember",
+    "magazine_rime"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithirrelics:trinket_gem_upgrade",
+   "target": "diaithirrelics:aura_trinkets",
+   "slots": 2,
+   "kinds": [
+    "c:gems/diamond",
+    "c:gems/emerald",
+    "c:gems/amethyst"
+   ],
+   "max_quality": 5
+  },
+  {
+   "id": "diaithirrelics:reserve_capacity_upgrade",
+   "target": "diaithirrelics:lantern_of_the_long_dark",
+   "slots": 2,
+   "kinds": [
+    "essence_of_flight",
+    "c:dusts/glowstone"
+   ],
+   "max_quality": 4
+  }
+ ]
+}
