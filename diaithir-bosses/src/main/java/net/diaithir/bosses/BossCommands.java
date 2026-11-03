@@ -12,7 +12,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.phys.Vec3;
 
-/** /boss spawn|spawnall|list|age|champion, and /bossesselftest. */
+/** /boss spawn|spawnall|list|age|gate|champion, /bossesgatetest, /bossesrushtest and /bossesselftest. */
 public final class BossCommands {
     private static boolean gm(CommandSourceStack s) { return s.permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER); }
 
@@ -78,6 +78,17 @@ public final class BossCommands {
                     return ps.size();
                 }))
                 .then(Commands.literal("stop").executes(c -> { Rush.stop("The rush was stopped."); return 1; })))
+            .then(Commands.literal("gate")
+                .executes(c -> {
+                    var srv = c.getSource().getServer();
+                    var miss = Gate.missing(srv);
+                    c.getSource().sendSuccess(() -> Component.literal("Shardfall Gate: " + (Gate.isOpen(srv) ? "open" : "closed")
+                        + ", keystones " + (Gate.CFG.keystones.size() - miss.size()) + "/" + Gate.CFG.keystones.size() + ", missing " + miss), false);
+                    return Gate.CFG.keystones.size() - miss.size();
+                })
+                .then(Commands.literal("attest").then(Commands.argument("resource", StringArgumentType.word())
+                    .suggests((c, b) -> net.minecraft.commands.SharedSuggestionProvider.suggest(Gate.CFG.keystones.stream().map(k -> k.resource), b))
+                    .executes(c -> Gate.attest(c.getSource().getServer(), StringArgumentType.getString(c, "resource")) ? 1 : 0))))
             .then(Commands.literal("champion").executes(c -> {
                 ServerLevel l = c.getSource().getLevel();
                 var self = c.getSource().getEntityOrException();
@@ -93,6 +104,8 @@ public final class BossCommands {
                 return 1;
             })));
         d.register(Commands.literal("bossesrushtest").requires(BossCommands::gm).executes(c -> RushTest.start(c.getSource())));
+        d.register(Commands.literal("bossesgatetest").requires(BossCommands::gm).executes(c -> GateTest.start(c.getSource())));
+        d.register(Commands.literal("bossesgatelink").requires(BossCommands::gm).executes(c -> GateTest.link(c.getSource())));
         d.register(Commands.literal("bossesselftest").requires(BossCommands::gm).executes(c -> SelfTest.start(c.getSource())));
     }
 

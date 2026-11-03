@@ -291,6 +291,20 @@
      "text": ""
     }
    ]
+  },
+  {
+   "tier": "gate",
+   "name": "The Shardfall Gate",
+   "age": "RODOS",
+   "text": "Beat The Last Wheel and clear the boss rush. The Gate stays shut until both are done. The Gate takes 16 keystones, one for each system of the world. Sneak-use the Gate with an item to give it; some are known to it already. Use the Gate bare-handed to see what is missing. Use the Gate at midnight. Hold the Gate for 120 seconds against the waves. Do not leave it.",
+   "items": [
+    {
+     "id": "diaithirbosses:shardfall_gate",
+     "name": "Shardfall Gate",
+     "age": "RODOS",
+     "text": ""
+    }
+   ]
   }
  ]
 }

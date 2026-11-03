@@ -1,0 +1,61 @@
+{
+ "tab": "Bosses",
+ "quests": [
+  {
+   "id": "gate/price",
+   "title": "The Gate's price",
+   "text": "Beat The Last Wheel and clear the boss rush. The Gate stays shut until both are done.",
+   "after": [
+    "ascendant/tier3",
+    "ascendant/rush"
+   ],
+   "kind": "event",
+   "event": "boss_rush_cleared",
+   "age": "RODOS"
+  },
+  {
+   "id": "gate/keystones",
+   "title": "The keystones",
+   "text": "The Gate takes 16 keystones, one for each system of the world. Sneak-use the Gate with an item to give it; some are known to it already. Use the Gate bare-handed to see what is missing.",
+   "after": [
+    "gate/price"
+   ],
+   "kind": "event",
+   "event": "gate_keystones_complete",
+   "age": "RODOS"
+  },
+  {
+   "id": "gate/hour",
+   "title": "The hour",
+   "text": "Use the Gate at midnight.",
+   "after": [
+    "gate/keystones"
+   ],
+   "kind": "event",
+   "event": "gate_hour_done",
+   "age": "RODOS"
+  },
+  {
+   "id": "gate/hold",
+   "title": "The hold",
+   "text": "Hold the Gate for 120 seconds against the waves. Do not leave it.",
+   "after": [
+    "gate/hour"
+   ],
+   "kind": "event",
+   "event": "gate_hold_done",
+   "age": "RODOS"
+  },
+  {
+   "id": "gate/open",
+   "title": "The Shardfall Gate",
+   "text": "The Gate is open.",
+   "after": [
+    "gate/hold"
+   ],
+   "kind": "event",
+   "event": "shardfall_gate_open",
+   "age": "RODOS"
+  }
+ ]
+}
