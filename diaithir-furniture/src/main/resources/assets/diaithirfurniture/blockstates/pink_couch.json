@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirfurniture:block/pink_couch"
+  },
+  "facing=east": {
+   "model": "diaithirfurniture:block/pink_couch",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirfurniture:block/pink_couch",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirfurniture:block/pink_couch",
+   "y": 270
+  }
+ }
+}
