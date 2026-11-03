@@ -68518,7 +68518,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-end-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "921b65566714b9b3cea5574307c146868b2e07ac894bc89c98d080df3517e46d"
+hash = "ea7854817eafca76cf533d812e16b1ae724da79fbea278f2976b62aab8f336d2"
 
 [[files]]
 file = "mods/diaithir-entity-animation-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68628,7 +68628,7 @@ hash = "0ba7c999d78156918f01b747c38ad076d4745dcc4a5b3859b2ca7fefb981fa0d"
 
 [[files]]
 file = "mods/diaithir-nether-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "4b7edbbe2e0ac54304c8eb0e99be3700ba8a87f91e9bb9b9e8276885a6b99f8e"
+hash = "d6628c2b50cabe3e02001823c0e1eb61febd87f19a76edb657eb5d49a2f2165a"
 
 [[files]]
 file = "mods/diaithir-overworld-biomes-neoforge-26.1.2-1.0.0.jar"
@@ -68636,7 +68636,7 @@ hash = "c116d410ac95658aa2b419ee722880fbc6b3f69ce5b9648c1b5539b9f53b6c4d"
 
 [[files]]
 file = "mods/diaithir-overworld-biomes-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "43844eb009f50815660408d17ec1d4517aa7474a042a9ebdca1985f7adfb22f1"
+hash = "ad79567e0943d925dd24f3192a03a56a128f505e28b1f8f872ec667d051ae19c"
 
 [[files]]
 file = "mods/diaithir-personal-mobility-neoforge-26.1.2-1.0.0.jar"
@@ -68740,7 +68740,7 @@ hash = "d421acfd3ae142cf53c065e5c0197cdf16354f8546422eb82d1bd3b418634920"
 
 [[files]]
 file = "mods/diaithir-worldsys-rewrite-neoforge-26.1.2-1.0.0.jar"
-hash = "a659de3500689de56e69c4d87509d38d1e232e50cb0e08bae3996d33a6b8687b"
+hash = "736ffff552199631270c7c788b7ac6b384b30d249df6de33a52e5ee8079be8f9"
 
 [[files]]
 file = "mods/diaithir-yungs-structures-neoforge-26.1.2-1.0.0.jar"
