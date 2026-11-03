@@ -68,5 +68,15 @@
   "id": "diaithircarts:locking_rail",
   "name": "Locking Rail",
   "text": "Stops a cart that rolls onto it and keeps it there. Use it bare-handed to change mode. Latch (amber) holds the cart until the rail goes from unpowered to powered, a redstone pulse; a rail already powered when the cart arrived does not release it. Interlock (green) holds the cart until the 32 rails ahead are clear of other carts, then lets it go. Age V."
+ },
+ {
+  "id": "diaithircarts:timetable",
+  "name": "Timetable",
+  "text": "Use on station rails in order to write the stops of a run, then use on a cart to give it the schedule; it loops. A scheduled cart stops only at its next stop and runs only with a rider aboard (a player, villager or other crew) until Age VII, when schedules run with no crew. Sneak and use in the air to wipe it. Age V."
+ },
+ {
+  "id": "diaithircarts:autonomy_module",
+  "name": "Autonomy Module",
+  "text": "Use on a vehicle whose type is capable of autonomy (the entity type tag diaithircarts:autonomy_capable) to fit it. A scheduled vehicle with a module runs with no crew, and its crew jobs can be retired. Without one it needs a rider aboard. Age VII."
  }
 ]

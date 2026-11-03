@@ -466,28 +466,28 @@
    "id": "plough",
    "category": "farm",
    "age": "II",
-   "durability": 400,
+   "durability": 200,
    "stack": 1
   },
   {
    "id": "moldboard_plough",
    "category": "farm",
    "age": "IV",
-   "durability": 400,
+   "durability": 200,
    "stack": 1
   },
   {
    "id": "harrow",
    "category": "farm",
    "age": "IV",
-   "durability": 400,
+   "durability": 200,
    "stack": 1
   },
   {
    "id": "seed_drill",
    "category": "farm",
    "age": "V",
-   "durability": 400,
+   "durability": 200,
    "stack": 1
   },
   {
@@ -3219,251 +3219,6 @@
    "age": "III",
    "durability": 0,
    "stack": 16
-  },
-  {
-   "id": "digging_stick",
-   "category": "farm_machine",
-   "age": "I",
-   "durability": 200,
-   "stack": 1
-  },
-  {
-   "id": "dibber",
-   "category": "farm_machine",
-   "age": "IV",
-   "durability": 200,
-   "stack": 1
-  },
-  {
-   "id": "cradle_scythe",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 200,
-   "stack": 1
-  },
-  {
-   "id": "cultivator",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "disc_harrow",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "cultipacker",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "corn_planter",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "mechanical_reaper",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "reaper_binder",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "mowing_machine",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "hay_rake",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "tedder",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "manure_spreader",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "baler",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "threshing_machine",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "cotton_gin",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "chaff_cutter",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "milking_machine",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "traction_engine",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 12000,
-   "stack": 1
-  },
-  {
-   "id": "tractor",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 18000,
-   "stack": 1
-  },
-  {
-   "id": "crawler_tractor",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 36000,
-   "stack": 1
-  },
-  {
-   "id": "walking_tractor",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 3000,
-   "stack": 1
-  },
-  {
-   "id": "rice_transplanter",
-   "category": "farm_machine",
-   "age": "VII",
-   "durability": 1800,
-   "stack": 1
-  },
-  {
-   "id": "combine_harvester",
-   "category": "farm_machine",
-   "age": "V",
-   "durability": 90000,
-   "stack": 1
-  },
-  {
-   "id": "forage_harvester",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 60000,
-   "stack": 1
-  },
-  {
-   "id": "cotton_picker",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 45000,
-   "stack": 1
-  },
-  {
-   "id": "corn_picker",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 24000,
-   "stack": 1
-  },
-  {
-   "id": "sugar_cane_harvester",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 60000,
-   "stack": 1
-  },
-  {
-   "id": "potato_harvester",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 24000,
-   "stack": 1
-  },
-  {
-   "id": "sprayer",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 24000,
-   "stack": 1
-  },
-  {
-   "id": "center_pivot",
-   "category": "farm_machine",
-   "age": "VII",
-   "durability": 9000,
-   "stack": 1
-  },
-  {
-   "id": "agricultural_drone",
-   "category": "farm_machine",
-   "age": "VII",
-   "durability": 1200,
-   "stack": 1
-  },
-  {
-   "id": "agricultural_robot",
-   "category": "farm_machine",
-   "age": "VII",
-   "durability": 1200,
-   "stack": 1
-  },
-  {
-   "id": "cream_separator",
-   "category": "farm_machine",
-   "age": "VI",
-   "durability": 400,
-   "stack": 1
-  },
-  {
-   "id": "swather",
-   "category": "farm_machine",
-   "age": "VII",
-   "durability": 36000,
-   "stack": 1
   }
  ]
 }

@@ -9,11 +9,12 @@
   "tier2": {
     "age": 5,
     "items": [
-      "diaithircarts:steel_rail",
-      "diaithircarts:steel_powered_rail",
-      "diaithircarts:station_rail",
+      "diaithircarts:chain_cutters",
       "diaithircarts:coupling_chain",
-      "diaithircarts:chain_cutters"
+      "diaithircarts:station_rail",
+      "diaithircarts:steel_powered_rail",
+      "diaithircarts:steel_rail",
+      "diaithircarts:timetable"
     ]
   },
   "tier3": {
@@ -21,42 +22,6 @@
     "items": [
       "diaithircarts:fast_rail",
       "diaithircarts:fast_powered_rail"
-    ]
-  },
-  "roads_age1": {
-    "age": 1,
-    "items": [
-      "diaithircarts:dirt_track"
-    ]
-  },
-  "roads_age2": {
-    "age": 2,
-    "items": [
-      "diaithircarts:gravel_road"
-    ]
-  },
-  "roads_age3": {
-    "age": 3,
-    "items": [
-      "diaithircarts:cobbled_road"
-    ]
-  },
-  "roads_age5": {
-    "age": 5,
-    "items": [
-      "diaithircarts:macadam_road"
-    ]
-  },
-  "roads_age6": {
-    "age": 6,
-    "items": [
-      "diaithircarts:asphalt_road"
-    ]
-  },
-  "roads_age7": {
-    "age": 7,
-    "items": [
-      "diaithircarts:concrete_motorway"
     ]
   },
   "signal": {
@@ -72,6 +37,12 @@
       "diaithircarts:destination_rail",
       "diaithircarts:cart_loader",
       "diaithircarts:locking_rail"
+    ]
+  },
+  "autonomy": {
+    "age": 7,
+    "items": [
+      "diaithircarts:autonomy_module"
     ]
   }
 }

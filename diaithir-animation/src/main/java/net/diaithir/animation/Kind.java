@@ -1,67 +1,25 @@
 package net.diaithir.animation;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-
-/** What an item animates as: a tool/melee class or a gun class, read from the item tags data/diaithiranimation/tags/item/anim. */
-public record Kind(boolean gun, String cls) {
-    public static final List<String> MELEE = new ArrayList<>();
-    public static final List<String> GUNS = new ArrayList<>();
-    public static final List<String> OWN_GUNS = new ArrayList<>();
-    private static final Map<Item, Kind> CACHE = new ConcurrentHashMap<>();
-    private static final Kind NONE = new Kind(false, "");
-
-    static {
-        try (var r = new InputStreamReader(Kind.class.getResourceAsStream("/clips.json"))) {
-            JsonObject j = new Gson().fromJson(r, JsonObject.class);
-            for (var e : j.getAsJsonObject("classes").entrySet()) {
-                if (e.getKey().startsWith("gun.")) GUNS.add(e.getKey().substring(4));
-                else if (e.getKey().equals("own_gun_reloads")) e.getValue().getAsJsonArray().forEach(x -> OWN_GUNS.add(x.getAsString()));
-                else MELEE.add(e.getKey());
-            }
-        } catch (Exception e) {
-            throw new IllegalStateException("clips.json missing", e);
-        }
-    }
-
-    public static void invalidate() { CACHE.clear(); }
-
-    public static TagKey<Item> tag(boolean gun, String cls) {
-        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(DiaithirAnimation.ID, "anim/" + (gun ? "gun/" : "") + cls));
-    }
-
-    /** Null when the item has no animation class. */
-    public static Kind of(ItemStack s) {
-        if (s.isEmpty()) return null;
-        Kind k = CACHE.computeIfAbsent(s.getItem(), Kind::resolve);
-        return k == NONE ? null : k;
-    }
-
-    private static Kind resolve(Item it) {
-        ItemStack s = it.getDefaultInstance();
-        for (String c : GUNS) if (s.is(tag(true, c))) return new Kind(true, c);
-        for (String c : MELEE) if (s.is(tag(false, c))) return new Kind(false, c);
-        return NONE;
-    }
-
-    /** Clip id for an action of this kind; own guns have their own reload length. */
-    public String clip(Item item, String action) {
-        if (gun) {
-            Identifier id = BuiltInRegistries.ITEM.getKey(item);
-            if (action.equals("reload") && id.getNamespace().equals("diaithirfirearms") && OWN_GUNS.contains(id.getPath())) return "gun." + id.getPath() + ".reload";
-            return "gun." + cls + "." + action;
-        }
-        return cls + "." + action;
-    }
+/** Motion families. Every block, machine and vehicle part maps to one of these. */
+public enum Kind {
+    /** Continuous spin about an axis (gears, fans, rotors, propellers, wheels, drills). */
+    SPIN,
+    /** Linear back-and-forth (pistons, presses, stampers, plungers). */
+    PISTON,
+    /** Hinged swing between closed and open (doors, trapdoors, lids, hatches, gates, levers). */
+    SWING,
+    /** Slide between closed and open (drawers, sliding doors, ramps, shutters). */
+    SLIDE,
+    /** Slow vertical float with turn (crystals, beacons, floating cores, balloons). */
+    HOVER,
+    /** Scale pulse (lamps, indicators, reactors, heartbeat of a working core). */
+    PULSE,
+    /** Aim at a target yaw and pitch (turrets, cannons, radar dishes). */
+    AIM,
+    /** Texture scroll rate for belts and conveyors; the renderer applies it as a UV offset. */
+    SCROLL,
+    /** Small random shake (grinders, crushers, vibrating screens, engines). */
+    SHAKE,
+    /** Rise and fall with a swell (hulls on water, hot-air rise, sails, flags). */
+    SWAY;
 }
