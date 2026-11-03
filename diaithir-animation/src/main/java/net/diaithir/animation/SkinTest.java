@@ -14,6 +14,7 @@ import net.neoforged.neoforge.common.NeoForge;
 /** Client test tools for the 3D skin layers: /skinlayers on|off, /skinlayerstest (synthetic wide and slim skins through the downloaded-skin path), /skinlayersbench N. */
 final class SkinTest {
     private static long frames, since = System.nanoTime();
+    private static volatile boolean benching;
 
     static void init() {
         NeoForge.EVENT_BUS.addListener(RegisterClientCommandsEvent.class, e -> {
@@ -24,11 +25,13 @@ final class SkinTest {
             d.register(Commands.literal("skinlayerstest").executes(c -> test()));
             d.register(Commands.literal("skinlayersbench").then(Commands.argument("copies", IntegerArgumentType.integer(0, 400)).executes(c -> {
                 SkinLayers.benchCopies = IntegerArgumentType.getInteger(c, "copies");
+                benching = true;
                 frames = 0; since = System.nanoTime();
                 return say("bench copies " + SkinLayers.benchCopies);
             })));
         });
         NeoForge.EVENT_BUS.addListener(RenderFrameEvent.Post.class, e -> {
+            if (!benching) return;
             frames++;
             long now = System.nanoTime();
             if (now - since > 5_000_000_000L) {
