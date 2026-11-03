@@ -52,7 +52,82 @@ public final class LookModel extends EntityModel<PlanetBossRenderState> {
             } else if (n.startsWith("body_") || n.equals("robe")) {
                 p.y += Mth.sin(t * 0.08F + k) * 0.8F;
             }
+            rise(n, p, s);
+            attack(n, p, k, s);
+            dying(n, p, s);
         }
+    }
+
+    /** Waking at the altar: the body unfolds over the first two seconds. */
+    private static void rise(String n, ModelPart p, PlanetBossRenderState s) {
+        if (s.ageInTicks >= 40) return;
+        float k = 1.0F - s.ageInTicks / 40.0F;
+        if (n.startsWith("head")) p.xRot += 0.9F * k;
+        else if (n.startsWith("arm")) p.xRot += 0.6F * k;
+        else if (n.startsWith("body_") || n.equals("robe") || n.startsWith("orbit_")) p.y += 6.0F * k;
+    }
+
+    /** Pose overlay per attack type. Phase 1 is the wind-up (telegraph), phase 2 the strike. Anything not listed keeps its base motion. */
+    private static void attack(String n, ModelPart p, int k, PlanetBossRenderState s) {
+        if (s.animPhase == 0 || s.anim.isEmpty()) return;
+        boolean wind = s.animPhase == 1;
+        float u = Mth.clamp(s.animT / (wind ? 20.0F : 8.0F), 0.0F, 1.0F);
+        boolean arm = n.startsWith("arm"), head = n.startsWith("head"), leg = n.startsWith("leg_");
+        boolean left = n.endsWith("_l");
+        switch (s.anim) {
+            case "slam", "wave" -> {
+                if (arm) p.xRot = wind ? -2.6F * u : -2.6F + 3.4F * u;
+                else if (head) p.xRot += wind ? -0.4F * u : 0.5F * u;
+                else if (n.startsWith("body")) p.xRot += wind ? -0.2F * u : 0.35F * u;
+            }
+            case "leap" -> {
+                if (leg) p.xRot = wind ? 0.9F * u : -0.6F;
+                else if (arm) p.xRot = wind ? 0.8F * u : -1.8F;
+                else if (n.startsWith("body")) p.y += wind ? 2.0F * u : -3.0F;
+            }
+            case "charge" -> {
+                if (head) p.xRot += 0.6F * u;
+                else if (arm) p.xRot = wind ? -0.5F * u : 1.2F;
+                else if (leg) p.xRot *= wind ? 1.0F : 1.6F;
+            }
+            case "roar" -> {
+                if (head) { p.xRot = -0.8F * u; p.yRot += Mth.sin(s.ageInTicks * 1.6F) * 0.08F * u; }
+                else if (arm) { p.xRot = -0.4F * u; p.zRot = (left ? 1 : -1) * 1.1F * u; }
+            }
+            case "gravity_well" -> {
+                if (arm) { p.xRot = -1.5F * u; p.zRot = (left ? 1 : -1) * (0.3F + 0.15F * Mth.sin(s.ageInTicks * 0.5F)); }
+                else if (n.startsWith("orbit_")) p.yRot = s.ageInTicks * (wind ? 0.2F : 0.5F) + k;
+                else if (head) p.xRot -= 0.3F * u;
+            }
+            case "rewind" -> {
+                if (arm) p.xRot = (wind ? 1.0F : 1.6F) * u - 0.3F;
+                else if (n.startsWith("orbit_")) p.yRot = -s.ageInTicks * 0.45F + k;
+                else if (n.equals("halo")) p.yRot = -s.ageInTicks * 0.3F;
+                else if (head) p.yRot += Mth.sin(s.ageInTicks * 0.9F) * 0.2F * u;
+            }
+            case "lightning", "bolt", "cloud", "summon" -> {
+                if (arm) { p.xRot = (wind ? -2.8F : -1.0F) * u; p.zRot = (left ? 1 : -1) * 0.3F; }
+                else if (head) p.xRot -= 0.4F * u;
+            }
+            case "heal" -> {
+                if (arm) { p.xRot = -0.9F * u; p.zRot = (left ? -1 : 1) * 0.5F * u; }
+                else if (n.startsWith("body_") || n.equals("robe")) p.y += Mth.sin(s.ageInTicks * 0.3F) * 0.8F;
+            }
+            default -> {
+                if (arm) p.xRot = wind ? -1.4F * u : 0.6F;
+            }
+        }
+    }
+
+    /** Death: the limbs go slack as the vanilla death tilt plays. */
+    private static void dying(String n, ModelPart p, PlanetBossRenderState s) {
+        if (s.deathTime <= 0) return;
+        float k = Math.min(1.0F, s.deathTime / 20.0F);
+        if (n.startsWith("arm")) { p.xRot = 0.0F; p.zRot = (n.endsWith("_l") ? 1 : -1) * 0.9F * k; }
+        else if (n.startsWith("leg_")) p.xRot = (idx(n) % 2 == 0 ? 0.5F : -0.5F) * k;
+        else if (n.startsWith("head")) p.xRot = 0.6F * k;
+        else if (n.startsWith("wing")) p.zRot = (n.endsWith("_l") ? 1 : -1) * 0.9F * k;
+        else if (n.startsWith("orbit_") || n.equals("halo")) p.y += 8.0F * k;
     }
 
     private static int idx(String n) {

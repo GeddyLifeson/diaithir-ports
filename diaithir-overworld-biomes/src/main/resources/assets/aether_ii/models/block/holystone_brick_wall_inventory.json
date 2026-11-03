@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/wall_inventory",
  "textures": {
-  "wall": "minecraft:block/stone"
+  "wall": "aether_ii:block/holystone_brick_wall"
  }
 }

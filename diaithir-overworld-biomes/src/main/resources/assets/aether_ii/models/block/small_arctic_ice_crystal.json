@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/stone"
+  "all": "aether_ii:block/small_arctic_ice_crystal"
  }
 }

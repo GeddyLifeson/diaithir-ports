@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "LSL",
+  "SES",
+  "LSL"
+ ],
+ "key": {
+  "L": "minecraft:leather",
+  "S": "#c:strings",
+  "E": "#c:gems/emerald"
+ },
+ "result": {
+  "id": "diaithirworldsys:easy_villagers_villager",
+  "count": 1
+ }
+}

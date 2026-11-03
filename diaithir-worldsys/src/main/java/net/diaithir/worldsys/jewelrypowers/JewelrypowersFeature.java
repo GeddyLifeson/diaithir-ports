@@ -113,7 +113,7 @@ public final class JewelrypowersFeature {
         return Identifier.fromNamespaceAndPath(ID, "jewel/" + id);
     }
 
-    private static void refresh(ServerPlayer p) {
+    public static void refresh(ServerPlayer p) {
         Map<String, Jewel> active = new HashMap<>();
         Map<String, Boolean> seen = new HashMap<>();
         for (ItemStack s : p.getInventory().getNonEquipmentItems()) {

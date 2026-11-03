@@ -12,13 +12,12 @@
     "trade_anchor": true,
     "poi_type": "diaithir_classes:archery_bench"
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:planks",
-    "c:string",
-    "c:leather"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "spell_entangle_net",
@@ -101,12 +100,12 @@
     "socket_cost": 1,
     "rune_family": "ogham"
    },
-   "recipe": [
-    "c:gems/amethyst",
-    "c:ingots/bronze",
-    "c:dusts/glowstone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "fastening_net_quiver",
@@ -118,12 +117,12 @@
     "spell_cooldown_reduction_pct": 10,
     "applies_to": "spell_entangle_net"
    },
-   "recipe": [
-    "c:leather",
-    "c:string",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   }
  ],
  "events": [

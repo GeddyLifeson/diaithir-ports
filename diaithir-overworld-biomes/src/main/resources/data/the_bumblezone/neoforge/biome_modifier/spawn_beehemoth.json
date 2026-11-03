@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#the_bumblezone:is_the_bumblezone",
+ "spawners": {
+  "type": "the_bumblezone:beehemoth",
+  "weight": 10,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

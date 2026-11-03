@@ -1,0 +1,46 @@
+{
+ "variants": {
+  "mode=0,shape=north_south": {
+   "model": "diaithircarts:block/locking_rail"
+  },
+  "mode=0,shape=east_west": {
+   "model": "diaithircarts:block/locking_rail",
+   "y": 90
+  },
+  "mode=0,shape=ascending_east": {
+   "model": "diaithircarts:block/locking_rail_raised_ne",
+   "y": 90
+  },
+  "mode=0,shape=ascending_north": {
+   "model": "diaithircarts:block/locking_rail_raised_ne"
+  },
+  "mode=0,shape=ascending_south": {
+   "model": "diaithircarts:block/locking_rail_raised_sw"
+  },
+  "mode=0,shape=ascending_west": {
+   "model": "diaithircarts:block/locking_rail_raised_sw",
+   "y": 90
+  },
+  "mode=1,shape=north_south": {
+   "model": "diaithircarts:block/locking_rail_interlock"
+  },
+  "mode=1,shape=east_west": {
+   "model": "diaithircarts:block/locking_rail_interlock",
+   "y": 90
+  },
+  "mode=1,shape=ascending_east": {
+   "model": "diaithircarts:block/locking_rail_interlock_raised_ne",
+   "y": 90
+  },
+  "mode=1,shape=ascending_north": {
+   "model": "diaithircarts:block/locking_rail_interlock_raised_ne"
+  },
+  "mode=1,shape=ascending_south": {
+   "model": "diaithircarts:block/locking_rail_interlock_raised_sw"
+  },
+  "mode=1,shape=ascending_west": {
+   "model": "diaithircarts:block/locking_rail_interlock_raised_sw",
+   "y": 90
+  }
+ }
+}

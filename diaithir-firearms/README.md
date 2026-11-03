@@ -7,6 +7,9 @@ Clean-room, MIT. Replaces the all-rights-reserved Vic's Point Blank in the pack.
 - 10 ammunition items (9 mm, .45, magnum, 5.56, 7.62, 12 gauge, .50, 40 mm grenade, rocket, energy cell), 6 attachments (red dot, 4x and 8x scopes, suppressor, muzzle brake, foregrip), 4 parts (gunmetal nugget, ingot, mesh; gun internals).
 - All numbers live in `src/main/resources/guns.json`; `tools/gen.py` writes it with every texture (drawn with PIL, 16x16), model, recipe, tag, lang, Age gate, name map, library entry and the id migration table.
 
+## Roster (every mass-produced design)
+`roster/ROSTER.md` lists 248 real firearms, one per design (most iconic version, no variants), from the 1288 hand cannon to 2019. Source rows are `roster/b*.csv` (Wikipedia title per row) and `roster/calibers.csv`; `tools/gen_roster.py` (run after `gen.py`) derives stats from class, caliber muzzle energy and real rate of fire. Ages by year: before 1861 V, to 1945 VI, after VII. Roster guns have no crafting recipe here; the gunsmith bench in diaithir-gear makes them. Stats are approximate; Diaithiris names and the quest lane are pending.
+
 ## Rules (server authoritative)
 - Hold use to fire (auto guns keep firing, semi-auto needs a fresh press). Hitscan with spread, falloff past half range, 1.5x headshot, pellets for shotguns, explosions for launchers (follow the mob griefing rule). The client only sends "reload" (key R).
 - Magazine is an item component; reload takes the gun's reload time, uses ammo from the inventory, is cancelled by changing slot. Creative players need no ammo.

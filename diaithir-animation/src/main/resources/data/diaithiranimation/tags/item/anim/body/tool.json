@@ -1,0 +1,185 @@
+{
+"replace": false,
+"values": [
+{
+"id": "actuallyadditions:laser_wrench",
+"required": false
+},
+{
+"id": "advanced_ae:throughput_monitor_configurator",
+"required": false
+},
+{
+"id": "ae2:certus_quartz_wrench",
+"required": false
+},
+{
+"id": "ae2:nether_quartz_wrench",
+"required": false
+},
+{
+"id": "ae2:network_tool",
+"required": false
+},
+{
+"id": "betterarcheology:diamond_brush",
+"required": false
+},
+{
+"id": "betterarcheology:iron_brush",
+"required": false
+},
+{
+"id": "betterarcheology:netherite_brush",
+"required": false
+},
+{
+"id": "diaithirpipes:wrench",
+"required": false
+},
+{
+"id": "enderio:yeta_wrench",
+"required": false
+},
+{
+"id": "energizedpower:wrench",
+"required": false
+},
+{
+"id": "framedblocks:framed_screwdriver",
+"required": false
+},
+{
+"id": "framedblocks:framed_wrench",
+"required": false
+},
+{
+"id": "integrateddynamics:wrench",
+"required": false
+},
+{
+"id": "jdturrets:wrench",
+"required": false
+},
+{
+"id": "justdirethings:ferricore_wrench",
+"required": false
+},
+{
+"id": "justdirethings:upgrade_mobscanner",
+"required": false
+},
+{
+"id": "justdirethings:upgrade_orescanner",
+"required": false
+},
+{
+"id": "laserio:laser_wrench",
+"required": false
+},
+{
+"id": "logisticsnetworks:wrench",
+"required": false
+},
+{
+"id": "mekanism:configurator",
+"required": false
+},
+{
+"id": "minecraft:brush",
+"required": false
+},
+{
+"id": "minecraft:flint_and_steel",
+"required": false
+},
+{
+"id": "modern_industrialization:wrench",
+"required": false
+},
+{
+"id": "morered:pliers",
+"required": false
+},
+{
+"id": "mts:mts.partscanner",
+"required": false
+},
+{
+"id": "mts:mts.wrench",
+"required": false
+},
+{
+"id": "neovitae:node_router",
+"required": false
+},
+{
+"id": "occultism:brush",
+"required": false
+},
+{
+"id": "occultism:flaming_paste",
+"required": false
+},
+{
+"id": "oritech:wrench",
+"required": false
+},
+{
+"id": "pipez:wrench",
+"required": false
+},
+{
+"id": "pneumaticcraft:pneumatic_wrench",
+"required": false
+},
+{
+"id": "powah:wrench",
+"required": false
+},
+{
+"id": "refinedstorage:wrench",
+"required": false
+},
+{
+"id": "refurbished_furniture:wrench",
+"required": false
+},
+{
+"id": "rftoolsbase:smartwrench",
+"required": false
+},
+{
+"id": "rftoolsbase:smartwrench_select",
+"required": false
+},
+{
+"id": "rftoolsbuilder:scanner",
+"required": false
+},
+{
+"id": "routers:connector",
+"required": false
+},
+{
+"id": "securitycraft:inventory_scanner",
+"required": false
+},
+{
+"id": "securitycraft:retinal_scanner",
+"required": false
+},
+{
+"id": "securitycraft:scanner_door_item",
+"required": false
+},
+{
+"id": "securitycraft:scanner_trapdoor",
+"required": false
+},
+{
+"id": "sophisticatedstorage:paintbrush",
+"required": false
+}
+]
+}

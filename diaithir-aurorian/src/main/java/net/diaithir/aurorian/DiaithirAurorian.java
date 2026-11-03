@@ -1,5 +1,10 @@
 package net.diaithir.aurorian;
 
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.InputStreamReader;
@@ -78,6 +83,17 @@ public final class DiaithirAurorian {
     public record Data(Map<String, ToolMat> tools, Map<String, ArmorMat> armor, List<ItemSpec> items, List<BlockSpec> blocks) {}
 
     public static final Data DATA = load();
+    public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<BossSpawnerBlockEntity>> SPAWNER_BE;
+    public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<MachineBlockEntity>> SCRAPPER_BE;
+    public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<MachineBlockEntity>> FORGE_BE;
+    public static DeferredBlock<Block> CRYSTAL;
+    public static final org.slf4j.Logger LOGGER = com.mojang.logging.LogUtils.getLogger();
+    public static DeferredBlock<Block> CHIMNEY;
+    public static DeferredBlock<Block> CHEST;
+    public static DeferredHolder<net.minecraft.world.level.block.entity.BlockEntityType<?>, net.minecraft.world.level.block.entity.BlockEntityType<AurorianFurnaceBlockEntity>> FURNACE_BE;
+    private static final DeferredRegister<net.minecraft.world.level.block.entity.BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, ID);
+    public static DeferredBlock<Block> PORTAL;
+    public static DeferredBlock<Block> PORTAL_FRAME;
 
     private static Data load() {
         try (Reader r = new InputStreamReader(DiaithirAurorian.class.getResourceAsStream("/data/" + ID + "/aurorian.json"))) {
@@ -131,6 +147,14 @@ public final class DiaithirAurorian {
         });
     }
 
+    /** Upstream amulets are Curios items; the pack has no Curios API, so they apply their attributes while held in the offhand. */
+    private static final Map<String, List<Object[]>> AMULETS = Map.of(
+        "amulet_of_chroma", List.of(new Object[] {Attributes.MAX_HEALTH, AttributeModifier.Operation.ADD_VALUE, 2.0}, new Object[] {Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.ADD_MULTIPLIED_BASE, 0.05}, new Object[] {Attributes.KNOCKBACK_RESISTANCE, AttributeModifier.Operation.ADD_VALUE, 0.1}),
+        "emerald_amulet", List.<Object[]>of(new Object[] {Attributes.KNOCKBACK_RESISTANCE, AttributeModifier.Operation.ADD_VALUE, 0.2}),
+        "keepers_amulet", List.<Object[]>of(new Object[] {Attributes.ATTACK_KNOCKBACK, AttributeModifier.Operation.ADD_VALUE, 1.0}),
+        "ruby_amulet", List.<Object[]>of(new Object[] {Attributes.MAX_HEALTH, AttributeModifier.Operation.ADD_VALUE, 4.0}),
+        "sapphire_amulet", List.<Object[]>of(new Object[] {Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.ADD_MULTIPLIED_BASE, 0.1}));
+
     private static Item.Properties props(ItemSpec s) {
         Item.Properties p = switch (s.kind()) {
             case "armor" -> new Item.Properties().humanoidArmor(armorMaterial(s.mat()), ArmorType.valueOf(s.slot().toUpperCase()));
@@ -141,6 +165,14 @@ public final class DiaithirAurorian {
         };
         if (s.durability() != null && s.kind().equals("item")) {
             p = p.durability(s.durability());
+        }
+        var am = AMULETS.get(s.id());
+        if (am != null) {
+            ItemAttributeModifiers.Builder b = ItemAttributeModifiers.builder();
+            for (Object[] a : am) {
+                b.add((Holder<Attribute>) a[0], new AttributeModifier(Identifier.fromNamespaceAndPath(ID, s.id() + "_" + ((Holder<Attribute>) a[0]).getRegisteredName().replace(':', '_')), (double) a[2], (AttributeModifier.Operation) a[1]), EquipmentSlotGroup.OFFHAND);
+            }
+            p = p.stacksTo(1).component(DataComponents.ATTRIBUTE_MODIFIERS, b.build());
         }
         if (s.rarity() != null) {
             p = p.rarity(Rarity.valueOf(s.rarity().toUpperCase()));
@@ -165,11 +197,20 @@ public final class DiaithirAurorian {
 
     private static Item make(ItemSpec s, Item.Properties p) {
         return switch (s.kind()) {
-            case "axe" -> new AxeItem(toolMaterial(s.mat()), s.damage(), s.speed(), p);
-            case "shovel" -> new ShovelItem(toolMaterial(s.mat()), s.damage(), s.speed(), p);
-            case "hoe" -> new HoeItem(toolMaterial(s.mat()), s.damage(), s.speed(), p);
-            default -> new Item(p);
+            case "axe" -> new AbilityAxe(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
+            case "shovel" -> new AbilityShovel(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
+            case "hoe" -> new AbilityHoe(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
+            default -> new AbilityItem(s.id(), p);
         };
+    }
+
+    public static Item item(String id) {
+        return ALL.get(id).get();
+    }
+
+    /** Registers a spawn egg item named <id>_spawn_egg (called by AurorianMobs). */
+    static void addEgg(String id, java.util.function.Function<Item.Properties, Item> factory) {
+        ALL.put(id + "_spawn_egg", ITEMS.registerItem(id + "_spawn_egg", factory::apply));
     }
 
     private static Block block(String id) {
@@ -195,6 +236,16 @@ public final class DiaithirAurorian {
             case "wall" -> new WallBlock(p);
             case "fence" -> new FenceBlock(p);
             case "keyhole" -> new GateKeyholeBlock(p, Identifier.parse(b.key()), Boolean.TRUE.equals(b.lockpick()));
+            case "portal" -> new AurorianPortalBlock(p.noCollision().strength(-1.0F).lightLevel(s -> 11).noLootTable().pushReaction(net.minecraft.world.level.material.PushReaction.BLOCK));
+            case "furnace" -> new AurorianFurnaceBlock(p);
+            case "chimney" -> new ChimneyBlock(p.noOcclusion());
+            case "chest" -> new SilentwoodChestBlock(p);
+            case "crafting_table" -> new SilentwoodCraftingTableBlock(p);
+            case "fog_wall" -> new FogWallBlock(p.noCollision().noOcclusion().lightLevel(s -> 10));
+            case "boss_spawner" -> new BossSpawnerBlock(p.noOcclusion());
+            case "scrapper" -> new MachineBlock(p, false);
+            case "moonlight_forge" -> new MachineBlock(p.noOcclusion(), true);
+            case "portal_frame" -> new PortalFrameBlock(p);
             case "bars" -> new IronBarsBlock(p);
             case "log" -> new RotatedPillarBlock(p);
             case "leaves" -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, p.noOcclusion());
@@ -207,6 +258,28 @@ public final class DiaithirAurorian {
         for (BlockSpec b : DATA.blocks()) {
             DeferredBlock<Block> blk = BLOCKS.registerBlock(b.id(), p -> makeBlock(b, p), () -> blockProps(b));
             BLK.put(b.id(), blk);
+            if (b.id().equals("boss_spawner")) {
+                SPAWNER_BE = BLOCK_ENTITIES.register("boss_spawner", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>(BossSpawnerBlockEntity::new, blk.get()));
+            }
+            if (b.id().equals("crystal")) {
+                CRYSTAL = blk;
+            } else if (b.id().equals("scrapper")) {
+                SCRAPPER_BE = BLOCK_ENTITIES.register("scrapper", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>((pos, st) -> new MachineBlockEntity(SCRAPPER_BE.get(), pos, st, false), blk.get()));
+            } else if (b.id().equals("moonlight_forge")) {
+                FORGE_BE = BLOCK_ENTITIES.register("moonlight_forge", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>((pos, st) -> new MachineBlockEntity(FORGE_BE.get(), pos, st, true), blk.get()));
+            }
+            if (b.id().equals("chimney")) {
+                CHIMNEY = blk;
+            } else if (b.id().equals("silentwood_chest")) {
+                CHEST = blk;
+            } else if (b.id().equals("aurorian_furnace")) {
+                FURNACE_BE = BLOCK_ENTITIES.register("aurorian_furnace", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>(AurorianFurnaceBlockEntity::new, blk.get()));
+            }
+            if (b.id().equals("aurorian_portal")) {
+                PORTAL = blk;
+            } else if (b.id().equals("aurorian_portal_frame")) {
+                PORTAL_FRAME = blk;
+            }
             ALL.put(b.id(), ITEMS.registerItem(b.id(), p -> new net.minecraft.world.item.BlockItem(blk.get(), p), () -> new Item.Properties().useBlockDescriptionPrefix()));
         }
         for (ItemSpec s : DATA.items()) {
@@ -216,6 +289,17 @@ public final class DiaithirAurorian {
             .title(Component.translatable("itemGroup.theaurorian"))
             .icon(() -> new ItemStack(ALL.get("aurorian_steel_ingot").get()))
             .displayItems((params, out) -> ALL.values().forEach(i -> out.accept(i.get()))).build());
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));
+        bus.addListener(net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent.class, e -> {
+            if (CHEST != null) {
+                e.modify(net.minecraft.world.level.block.entity.BlockEntityType.CHEST, CHEST.get());
+            }
+        });
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent.class,
+            e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "machine_recipes"), MachineRecipes.listener()));
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(Abilities.class);
+        AurorianMobs.init(bus);
+        BLOCK_ENTITIES.register(bus);
         BLOCKS.register(bus);
         ITEMS.register(bus);
         TABS.register(bus);

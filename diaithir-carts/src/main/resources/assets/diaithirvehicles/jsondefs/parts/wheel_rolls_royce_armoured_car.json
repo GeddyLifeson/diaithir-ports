@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Rolls-Royce Armoured Car Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:2"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.3,
+  "height": 0.84,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Rolls-Royce Armoured Car Wheel",
+   "modelName": "wheel_rolls_royce_armoured_car",
+   "textureName": "wheel_rolls_royce_armoured_car",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

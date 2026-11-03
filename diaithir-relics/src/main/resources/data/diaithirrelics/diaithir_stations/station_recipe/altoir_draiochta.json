@@ -1,0 +1,24 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/diamond",
+   "count": 1
+  },
+  {
+   "tag": "c:bookshelves",
+   "count": 1
+  },
+  {
+   "tag": "c:storage_blocks/obsidian",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:altoir_draiochta",
+ "time_s": 20
+}

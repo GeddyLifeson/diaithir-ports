@@ -1,0 +1,21 @@
+{
+ "id": "diaithir_overworld_biomes:the_bumblezone_hunt",
+ "codex_link": "diaithir_overworld_biomes:the_bumblezone_bestiary",
+ "age": 2,
+ "age_gate": "diaithir:age/2",
+ "title": "Hunt: The Bumblezone",
+ "description": "Defeat one creature of The Bumblezone.",
+ "tasks": [
+  {
+   "type": "kill",
+   "entity_tag": "the_bumblezone:the_bumblezone_mobs",
+   "count": 1
+  }
+ ],
+ "rewards": [
+  {
+   "type": "energy",
+   "amount_j": 100
+  }
+ ]
+}

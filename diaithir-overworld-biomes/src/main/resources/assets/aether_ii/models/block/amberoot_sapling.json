@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cross",
  "textures": {
-  "cross": "minecraft:block/oak_planks"
+  "cross": "aether_ii:block/amberoot_sapling"
  }
 }

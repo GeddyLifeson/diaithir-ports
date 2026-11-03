@@ -22,14 +22,9 @@ EFFECTS = {"DAMAGE_RESISTANCE": "resistance", "DAMAGE_BOOST": "strength", "MOVEM
 AGE = {"SILENTWOOD": "I", "AURORIAN_STONE": "I", "CERULEAN": "II", "MOONSTONE": "II", "KNIGHT": "II", "SPECTRAL": "III",
        "AURORIAN_STEEL": "III", "AURORIANITE": "IV", "UMBRA": "IV", "CRYSTALLINE": "IV"}
 # Items whose behaviour lives in Java we have not ported yet; they are listed, not registered.
-DEFERRED_ITEMS = {"absorption_orb", "living_divining_rod", "mirror_of_guidance", "amulet_of_chroma", "emerald_amulet", "keepers_amulet",
-                  "ruby_amulet", "sapphire_amulet", "cerulean_arrow", "crystal_arrow", "strange_meat", "silentwood_bow",
-                  "umbra_chestplate", "umbra_greatsword", "crystalline_sword", "spectral_helmet", "spectral_chestplate",
-                  "spectral_leggings", "spectral_boots"}
-DEFERRED_BLOCK_CLASS = {"AurorianPortal", "AurorianPortalFrame",
-                        "AurorianFurnaceBlock", "BossSpawnerBlock", "MoonlightForgeBlock", "ScrapperBlock", "SilentwoodChestBlock",
-                        "SilentwoodCraftingTableBlock", "ChimneyBlock", "CrystalBlock", "FogWallBlock", "SaplingBlock"}
-BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
+DEFERRED_ITEMS = {"mirror_of_guidance", "cerulean_arrow", "crystal_arrow", "silentwood_bow", "crystalline_sword"}
+DEFERRED_BLOCK_CLASS = {"SaplingBlock"}
+BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "FogWallBlock": "fog_wall", "ScrapperBlock": "scrapper", "MoonlightForgeBlock": "moonlight_forge", "CrystalBlock": "full", "BossSpawnerBlock": "boss_spawner", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
               "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "TallGrassBlock": "plant"}
 
 
@@ -89,7 +84,7 @@ def build_items(tools, armor):
         rarity = re.search(r"Rarity\.(\w+)", body)
         dur = re.search(r"durability\((\d+)\)", body)
         burn = re.search(r"basicItemWithBurntime\(.*?, (\d+)\)", body)
-        if group == "_SPAWN_EGGS" or "BaseAurorianArrow" in body or "Curio" in body:
+        if group == "_SPAWN_EGGS" or "BaseAurorianArrow" in body or False:
             continue
         spec = dict(id=iid)
         if rarity and rarity.group(1) != "COMMON":
@@ -284,7 +279,7 @@ def convert_worldgen(known):
         out = {"has_precipitation": b.get("precipitation", "none") != "none", "temperature": b["temperature"], "downfall": b["downfall"],
                "attributes": {"minecraft:visual/sky_color": hexcol(e["sky_color"]), "minecraft:visual/fog_color": hexcol(e["fog_color"])},
                "effects": {"water_color": hexcol(e["water_color"]), "water_fog_color": hexcol(e["water_fog_color"])},
-               "carvers": b["carvers"].get("air", []), "features": b["features"], "spawners": {}, "spawn_costs": {}}
+               "carvers": b["carvers"].get("air", []), "features": b["features"], "spawners": {k: v for k, v in b.get("spawners", {}).items()}, "spawn_costs": {}}
         f.write_text(json.dumps(out, indent=1) + "\n")
     # features: random_patch / flower become simple_block plus placement modifiers
     pf = wg / "placed_feature"
@@ -404,6 +399,18 @@ def main():
             continue
         (rd / p.name).write_text(json.dumps(out, indent=1) + "\n")
         kept += 1
+    md = D / "machine_recipes"
+    for kind in ("scrapper", "moonlight_forge"):
+        (md / kind).mkdir(parents=True, exist_ok=True)
+        for p in sorted((MAIN / "data" / NS / "recipes" / kind).glob("*.json")):
+            r = json.loads(p.read_text())
+            refs = [r["input"].get("item", ""), r["output"]["item"]] + ([r["catalyst"].get("item", "")] if "catalyst" in r else [])
+            if any(x.startswith(NS + ":") and x not in known for x in refs):
+                continue
+            o = dict(input=conv_ing(r["input"]), output=dict(id=r["output"]["item"], count=r["output"].get("count", 1)))
+            if "catalyst" in r:
+                o["catalyst"] = conv_ing(r["catalyst"])
+            (md / kind / p.name).write_text(json.dumps(o, indent=1) + "\n")
     # loot tables (generated block drops)
     def prune(o):
         """Drop loot entries naming items that are not registered (deferred behaviour items)."""
@@ -454,6 +461,8 @@ def main():
         if s.exists():
             shutil.copytree(s, D / sub, dirs_exist_ok=True)
     convert_worldgen(known)
+    if (OUT / "extra").exists():
+        shutil.copytree(OUT / "extra", RES / "data", dirs_exist_ok=True)
     if (MAIN / "data" / NS / "structures").exists():
         shutil.copytree(MAIN / "data" / NS / "structures", D / "structure", dirs_exist_ok=True)
     # assets
@@ -485,10 +494,43 @@ def main():
     allids = [i["id"] for i in data["items"]] + [b["id"] for b in blocks]
     for n in allids:
         mdl = "item" if (A / f"models/item/{n}.json").exists() else "block" if (A / f"models/block/{n}.json").exists() else "item"
-        (idir / f"{n}.json").write_text(json.dumps(dict(model=dict(type="minecraft:model", model=f"{NS}:{mdl}/{n}")), indent=1) + "\n")
+        defn = dict(model=dict(type="minecraft:model", model=f"{NS}:{mdl}/{n}"))
+        mp = A / f"models/item/{n}.json"
+        if mp.exists() and "separate-perspective" in mp.read_text():
+            # Forge separate-perspective: handheld base, gui/fixed use the flat model. 26.1: select on display_context.
+            m = json.loads(mp.read_text())
+            def ref(x):
+                return x["parent"] if x["parent"].count(":") else NS + ":" + x["parent"]
+            gui = m["perspectives"]["gui"]
+            defn = dict(model=dict(type="minecraft:select", property="minecraft:display_context",
+                                   cases=[dict(when=["gui", "fixed", "ground"], model=dict(type="minecraft:model", model=ref(gui)))],
+                                   fallback=dict(type="minecraft:model", model=ref(m["base"]))))
+            mp.unlink()
+        (idir / f"{n}.json").write_text(json.dumps(defn, indent=1) + "\n")
+    for mp in (A / "models/item").glob("*.json"):  # Forge-only loader models of unregistered items would fail to load
+        if mp.stem not in allids and "forge:" in mp.read_text():
+            mp.unlink()
+    EGGS = ["hollow", "undead_knight", "dungeon_slime", "dungeon_keeper"]
+    for n in EGGS:
+        # 26.1 vanilla eggs are plain textures, so draw our own two-colour egg
+        from PIL import Image, ImageDraw
+        img = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+        dr = ImageDraw.Draw(img)
+        dr.ellipse((3, 1, 12, 14), fill=(0x7B, 0xCF, 0xFB, 255), outline=(30, 30, 40, 255))
+        for sx, sy in ((6, 4), (9, 7), (5, 9), (8, 11)):
+            dr.rectangle((sx, sy, sx + 1, sy + 1), fill=(0x33, 0x44, 0x6F, 255))
+        (A / "textures/item").mkdir(parents=True, exist_ok=True)
+        img.save(A / "textures/item" / f"{n}_spawn_egg.png")
+        (A / "models/item").mkdir(parents=True, exist_ok=True)
+        (A / "models/item" / f"{n}_spawn_egg.json").write_text(json.dumps(dict(parent="minecraft:item/generated", textures=dict(layer0=f"{NS}:item/{n}_spawn_egg"))) + "\n")
+        (idir / f"{n}_spawn_egg.json").write_text(json.dumps(dict(model=dict(type="minecraft:model", model=f"{NS}:item/{n}_spawn_egg")), indent=1) + "\n")
     # lang (keep keys for registered things and shared strings)
     lang = json.loads((MAIN / "assets" / NS / "lang/en_us.json").read_text())
     (A / "lang").mkdir(exist_ok=True)
+    for n in EGGS:
+        title = n.replace("_", " ").title()
+        lang.setdefault(f"entity.{NS}.{n}", title)
+        lang.setdefault(f"item.{NS}.{n}_spawn_egg", title + " Spawn Egg")
     (A / "lang/en_us.json").write_text(json.dumps(lang, indent=1, ensure_ascii=False) + "\n")
     # fuel data map
     fuels = {NS + ":" + i["id"]: {"burn_time": i["burn"]} for i in data["items"] if "burn" in i}

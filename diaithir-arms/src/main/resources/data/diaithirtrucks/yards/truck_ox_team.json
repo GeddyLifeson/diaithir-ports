@@ -1,0 +1,50 @@
+{
+ "id": "truck_ox_team",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 16,
+  "h": 6
+ },
+ "result": "mts:diaithirtrucks.truck_ox_team",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 600,
+   "ghost": "diaithirtrucks:ghost/truck_ox_team_chassis"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "wheel",
+     "count": 4
+    }
+   ],
+   "base_ticks": 400,
+   "ghost": "diaithirtrucks:ghost/truck_ox_team_gear"
+  },
+  {
+   "id": "crew",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 1
+    }
+   ],
+   "base_ticks": 100,
+   "ghost": "diaithirtrucks:ghost/truck_ox_team_cab"
+  }
+ ],
+ "crane_speedup": 1.0
+}

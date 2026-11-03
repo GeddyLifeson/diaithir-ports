@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/cube_column_horizontal",
  "textures": {
-  "end": "minecraft:block/stone",
-  "side": "minecraft:block/stone"
+  "end": "aether_ii:block/guardian_wood",
+  "side": "aether_ii:block/guardian_wood"
  }
 }

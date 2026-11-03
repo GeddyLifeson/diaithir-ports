@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "diaithirworldsys:jewelry_citrine_necklace",
+  "#c:ingots/netherite"
+ ],
+ "result": {
+  "id": "diaithirworldsys:jewelry_netherite_citrine_necklace"
+ }
+}

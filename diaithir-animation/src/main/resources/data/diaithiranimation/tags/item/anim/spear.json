@@ -1,0 +1,429 @@
+{
+"replace": false,
+"values": [
+{
+"id": "#diaithircombat:weapons/polearm",
+"required": false
+},
+{
+"id": "#diaithircombat:weapons/spear",
+"required": false
+},
+{
+"id": "aether_ii:arkenium_pike",
+"required": false
+},
+{
+"id": "aether_ii:gravitite_pike",
+"required": false
+},
+{
+"id": "aether_ii:holystone_pike",
+"required": false
+},
+{
+"id": "aether_ii:skyroot_pike",
+"required": false
+},
+{
+"id": "aether_ii:zanite_pike",
+"required": false
+},
+{
+"id": "apothic_enchanting:inert_trident",
+"required": false
+},
+{
+"id": "archers:diamond_spear",
+"required": false
+},
+{
+"id": "archers:flint_spear",
+"required": false
+},
+{
+"id": "archers:golden_spear",
+"required": false
+},
+{
+"id": "archers:iron_spear",
+"required": false
+},
+{
+"id": "archers:netherite_spear",
+"required": false
+},
+{
+"id": "artifacts:steadfast_spikes",
+"required": false
+},
+{
+"id": "auroral:shimmer_spear",
+"required": false
+},
+{
+"id": "chisel:iron_bars_spikes",
+"required": false
+},
+{
+"id": "diaithir_classes:fian_spear_bronze",
+"required": false
+},
+{
+"id": "diaithir_classes:fian_spear_composite",
+"required": false
+},
+{
+"id": "diaithir_classes:fian_spear_steel",
+"required": false
+},
+{
+"id": "diaithirarms:composite_spear",
+"required": false
+},
+{
+"id": "diaithirarms:future_spear",
+"required": false
+},
+{
+"id": "diaithirarms:rodos_spear",
+"required": false
+},
+{
+"id": "diaithirarms:steel_spear",
+"required": false
+},
+{
+"id": "diaithirarms:tempered_spear",
+"required": false
+},
+{
+"id": "diaithirrelics:eagle_spear",
+"required": false
+},
+{
+"id": "diaithirrelics:eagle_spear/active",
+"required": false
+},
+{
+"id": "diaithirrelics:eagle_spear/age",
+"required": false
+},
+{
+"id": "diaithirrelics:eagle_spear/passive",
+"required": false
+},
+{
+"id": "diaithirrelics:lightning_spear",
+"required": false
+},
+{
+"id": "diaithirrelics:lightning_spear/active",
+"required": false
+},
+{
+"id": "diaithirrelics:lightning_spear/age",
+"required": false
+},
+{
+"id": "diaithirrelics:lightning_spear/passive",
+"required": false
+},
+{
+"id": "diaithirrelics:salmon_spear",
+"required": false
+},
+{
+"id": "diaithirrelics:salmon_spear/active",
+"required": false
+},
+{
+"id": "diaithirrelics:salmon_spear/age",
+"required": false
+},
+{
+"id": "diaithirrelics:salmon_spear/passive",
+"required": false
+},
+{
+"id": "evilcraft:dark_spike",
+"required": false
+},
+{
+"id": "evilcraft:spiked_plate",
+"required": false
+},
+{
+"id": "iceandfire:dragon_ice_spikes",
+"required": false
+},
+{
+"id": "iceandfire:fishing_spear",
+"required": false
+},
+{
+"id": "iceandfire:tide_trident",
+"required": false
+},
+{
+"id": "iceandfire:tide_trident_inventory",
+"required": false
+},
+{
+"id": "industrialforegoing:infinity_trident",
+"required": false
+},
+{
+"id": "jousting:lance_diamond",
+"required": false
+},
+{
+"id": "jousting:lance_emerald",
+"required": false
+},
+{
+"id": "jousting:lance_gold",
+"required": false
+},
+{
+"id": "jousting:lance_iron",
+"required": false
+},
+{
+"id": "jousting:lance_netherite",
+"required": false
+},
+{
+"id": "jousting:lance_wood",
+"required": false
+},
+{
+"id": "millager:lancer_profession_order",
+"required": false
+},
+{
+"id": "millager:lancer_spawn_egg",
+"required": false
+},
+{
+"id": "minecraft:copper_spear",
+"required": false
+},
+{
+"id": "minecraft:diamond_spear",
+"required": false
+},
+{
+"id": "minecraft:golden_spear",
+"required": false
+},
+{
+"id": "minecraft:iron_spear",
+"required": false
+},
+{
+"id": "minecraft:netherite_spear",
+"required": false
+},
+{
+"id": "minecraft:stone_spear",
+"required": false
+},
+{
+"id": "minecraft:trident",
+"required": false
+},
+{
+"id": "minecraft:wooden_spear",
+"required": false
+},
+{
+"id": "modulargolems:diamond_golem_spear",
+"required": false
+},
+{
+"id": "modulargolems:heavy_golem_spear",
+"required": false
+},
+{
+"id": "modulargolems:iron_golem_spear",
+"required": false
+},
+{
+"id": "modulargolems:netherite_golem_spear",
+"required": false
+},
+{
+"id": "mysticalagriculture:awakened_supremium_spear",
+"required": false
+},
+{
+"id": "mysticalagriculture:imperium_spear",
+"required": false
+},
+{
+"id": "mysticalagriculture:inferium_spear",
+"required": false
+},
+{
+"id": "mysticalagriculture:prudentium_spear",
+"required": false
+},
+{
+"id": "mysticalagriculture:supremium_spear",
+"required": false
+},
+{
+"id": "mysticalagriculture:tertium_spear",
+"required": false
+},
+{
+"id": "neovitae:array_spike",
+"required": false
+},
+{
+"id": "neovitae:sentient_spear",
+"required": false
+},
+{
+"id": "neovitae:spike_trap",
+"required": false
+},
+{
+"id": "neovitae:spikes",
+"required": false
+},
+{
+"id": "occultism:infused_spear",
+"required": false
+},
+{
+"id": "occultism:ritual_dummy/craft_infused_spear",
+"required": false
+},
+{
+"id": "occultism:silver_spear",
+"required": false
+},
+{
+"id": "pointblank:javelin",
+"required": false
+},
+{
+"id": "pointblank:javelin_rocket",
+"required": false
+},
+{
+"id": "pointblank:spear",
+"required": false
+},
+{
+"id": "pointblank:spearblack",
+"required": false
+},
+{
+"id": "productivefarming:spearmint",
+"required": false
+},
+{
+"id": "productivefarming:spearmint_seeds",
+"required": false
+},
+{
+"id": "railcraft:diamond_spike_maul",
+"required": false
+},
+{
+"id": "railcraft:iron_spike_maul",
+"required": false
+},
+{
+"id": "railcraft:personal_world_spike",
+"required": false
+},
+{
+"id": "railcraft:steel_spike_maul",
+"required": false
+},
+{
+"id": "railcraft:world_spike",
+"required": false
+},
+{
+"id": "railcraft:world_spike_minecart",
+"required": false
+},
+{
+"id": "regions_unexplored:redstone_spike",
+"required": false
+},
+{
+"id": "reliquary:guardian_spike",
+"required": false
+},
+{
+"id": "rogues:diamond_glaive",
+"required": false
+},
+{
+"id": "rogues:golden_glaive",
+"required": false
+},
+{
+"id": "rogues:iron_glaive",
+"required": false
+},
+{
+"id": "rogues:netherite_glaive",
+"required": false
+},
+{
+"id": "sgearmetalworks:spear_cast",
+"required": false
+},
+{
+"id": "sgearmetalworks:trident_cast",
+"required": false
+},
+{
+"id": "silentgear:spear",
+"required": false
+},
+{
+"id": "silentgear:spear_blueprint",
+"required": false
+},
+{
+"id": "silentgear:spear_template",
+"required": false
+},
+{
+"id": "silentgear:spearhead",
+"required": false
+},
+{
+"id": "silentgear:trident",
+"required": false
+},
+{
+"id": "silentgear:trident_blueprint",
+"required": false
+},
+{
+"id": "silentgear:trident_prongs",
+"required": false
+},
+{
+"id": "silentgear:trident_template",
+"required": false
+},
+{
+"id": "stellaris:lunar_crawler_spike_cluster",
+"required": false
+},
+{
+"id": "tconstruct:javelin",
+"required": false
+}
+]
+}

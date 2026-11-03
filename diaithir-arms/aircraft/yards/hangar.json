@@ -1,0 +1,23 @@
+{
+ "_doc": "YardDef per plans/ASSEMBLY_API.md (PR #186). Airframe hangar: ground site, stages installed in order, stats summed from parts (SI). Rollout hook is registered by the aircraft module via YardRegistry.rollout. Piston ships use piston_engine, jets use jet_engine; per-aircraft part lists come from ROSTER.csv.",
+ "id": "diaithiraircraft:hangar",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {"w": 21, "l": 27, "h": 9},
+ "result": "diaithiraircraft:aircraft",
+ "crane_speedup": 1.0,
+ "stages": [
+  {"id": "jig_and_spar", "order": 1, "base_ticks": 400, "ghost": "diaithiraircraft:ghost/spar",
+   "slots": [{"kind": "spar", "count": 1}, {"kind": "fuselage_frame", "count": 1}]},
+  {"id": "wings_and_tail", "order": 2, "base_ticks": 600, "ghost": "diaithiraircraft:ghost/wings",
+   "slots": [{"kind": "wing", "count": 2}, {"kind": "tailplane", "count": 1}, {"kind": "fin", "count": 1}]},
+  {"id": "undercarriage", "order": 3, "base_ticks": 300, "ghost": "diaithiraircraft:ghost/gear",
+   "slots": [{"kind": "undercarriage", "count": 1}]},
+  {"id": "powerplant", "order": 4, "base_ticks": 500, "ghost": "diaithiraircraft:ghost/engine",
+   "slots": [{"kind": "engine", "count": 1}, {"kind": "fuel_tank", "count": 1}, {"kind": "propeller_or_nozzle", "count": 1}]},
+  {"id": "skin_and_cockpit", "order": 5, "base_ticks": 500, "ghost": "diaithiraircraft:ghost/skin",
+   "slots": [{"kind": "skin", "count": 1}, {"kind": "cockpit", "count": 1}, {"kind": "seat", "count": 1}]},
+  {"id": "systems", "order": 6, "base_ticks": 300, "ghost": "diaithiraircraft:ghost/complete",
+   "slots": [{"kind": "instruments", "count": 1, "min_age": "VII"}, {"kind": "weapon_mount", "count": 0}]}
+ ]
+}

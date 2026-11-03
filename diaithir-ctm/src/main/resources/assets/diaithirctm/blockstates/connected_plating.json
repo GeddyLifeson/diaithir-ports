@@ -1,1 +1,1 @@
-{"variants":{"":{"model":"diaithirctm:block/connected_plating"}}}
+{"variants": {"": {"type": "diaithirctm:connected", "model": "diaithirctm:block/connected_plating"}}}

@@ -470,5 +470,677 @@
  "pole": {
   "diaithiris": "Kabur",
   "english": "Pole"
+ },
+ "hand_axe": {
+  "english": "Hand axe",
+  "diaithiris": null
+ },
+ "flint_tipped_spear": {
+  "english": "Flint-tipped spear",
+  "diaithiris": null
+ },
+ "atlatl": {
+  "english": "Atlatl",
+  "diaithiris": null
+ },
+ "boomerang": {
+  "english": "Boomerang",
+  "diaithiris": null
+ },
+ "macuahuitl": {
+  "english": "Macuahuitl",
+  "diaithiris": null
+ },
+ "mace_head": {
+  "english": "Mace-head (pear mace)",
+  "diaithiris": null
+ },
+ "khopesh": {
+  "english": "Khopesh",
+  "diaithiris": null
+ },
+ "sickle_sword": {
+  "english": "Sickle sword",
+  "diaithiris": null
+ },
+ "hittite_chariot_spear": {
+  "english": "Hittite chariot spear",
+  "diaithiris": null
+ },
+ "sagaris": {
+  "english": "Sagaris",
+  "diaithiris": null
+ },
+ "dory": {
+  "english": "Dory",
+  "diaithiris": null
+ },
+ "xiphos": {
+  "english": "Xiphos",
+  "diaithiris": null
+ },
+ "kopis": {
+  "english": "Kopis",
+  "diaithiris": null
+ },
+ "sarissa": {
+  "english": "Sarissa",
+  "diaithiris": null
+ },
+ "akinakes": {
+  "english": "Akinakes",
+  "diaithiris": null
+ },
+ "gladius": {
+  "english": "Gladius",
+  "diaithiris": null
+ },
+ "pugio": {
+  "english": "Pugio",
+  "diaithiris": null
+ },
+ "pilum": {
+  "english": "Pilum",
+  "diaithiris": null
+ },
+ "spatha": {
+  "english": "Spatha",
+  "diaithiris": null
+ },
+ "plumbata": {
+  "english": "Plumbata",
+  "diaithiris": null
+ },
+ "zhanmadao": {
+  "english": "Zhanmadao",
+  "diaithiris": null
+ },
+ "jian": {
+  "english": "Jian",
+  "diaithiris": null
+ },
+ "dao": {
+  "english": "Dao (Chinese saber)",
+  "diaithiris": null
+ },
+ "ji": {
+  "english": "Ji (halberd)",
+  "diaithiris": null
+ },
+ "guandao": {
+  "english": "Guandao",
+  "diaithiris": null
+ },
+ "qiang": {
+  "english": "Qiang (Chinese spear)",
+  "diaithiris": null
+ },
+ "dagger_axe": {
+  "english": "Dagger-axe (ge)",
+  "diaithiris": null
+ },
+ "katana": {
+  "english": "Katana",
+  "diaithiris": null
+ },
+ "tachi": {
+  "english": "Tachi",
+  "diaithiris": null
+ },
+ "wakizashi": {
+  "english": "Wakizashi",
+  "diaithiris": null
+ },
+ "tanto": {
+  "english": "Tanto",
+  "diaithiris": null
+ },
+ "naginata": {
+  "english": "Naginata",
+  "diaithiris": null
+ },
+ "yari": {
+  "english": "Yari",
+  "diaithiris": null
+ },
+ "nodachi": {
+  "english": "Nodachi",
+  "diaithiris": null
+ },
+ "kanabo": {
+  "english": "Kanabo",
+  "diaithiris": null
+ },
+ "shuriken": {
+  "english": "Shuriken",
+  "diaithiris": null
+ },
+ "kris": {
+  "english": "Kris",
+  "diaithiris": null
+ },
+ "kukri": {
+  "english": "Kukri",
+  "diaithiris": null
+ },
+ "talwar": {
+  "english": "Talwar",
+  "diaithiris": null
+ },
+ "khanda": {
+  "english": "Khanda",
+  "diaithiris": null
+ },
+ "urumi": {
+  "english": "Urumi",
+  "diaithiris": null
+ },
+ "katar": {
+  "english": "Katar",
+  "diaithiris": null
+ },
+ "chakram": {
+  "english": "Chakram",
+  "diaithiris": null
+ },
+ "dandpatta": {
+  "english": "Dandpatta",
+  "diaithiris": null
+ },
+ "shamshir": {
+  "english": "Shamshir",
+  "diaithiris": null
+ },
+ "scimitar": {
+  "english": "Scimitar",
+  "diaithiris": null
+ },
+ "kilij": {
+  "english": "Kilij",
+  "diaithiris": null
+ },
+ "yatagan": {
+  "english": "Yatagan",
+  "diaithiris": null
+ },
+ "sabre": {
+  "english": "Sabre (hussar)",
+  "diaithiris": null
+ },
+ "shashka": {
+  "english": "Shashka",
+  "diaithiris": null
+ },
+ "byzantine_kontarion": {
+  "english": "Byzantine kontarion",
+  "diaithiris": null
+ },
+ "arming_sword": {
+  "english": "Arming sword",
+  "diaithiris": null
+ },
+ "viking_sword": {
+  "english": "Viking sword (Ulfberht)",
+  "diaithiris": null
+ },
+ "seax": {
+  "english": "Seax",
+  "diaithiris": null
+ },
+ "dane_axe": {
+  "english": "Dane axe",
+  "diaithiris": null
+ },
+ "bearded_axe": {
+  "english": "Bearded axe",
+  "diaithiris": null
+ },
+ "francisca": {
+  "english": "Francisca",
+  "diaithiris": null
+ },
+ "angon": {
+  "english": "Angon",
+  "diaithiris": null
+ },
+ "longsword": {
+  "english": "Longsword",
+  "diaithiris": null
+ },
+ "zweihander": {
+  "english": "Zweihander",
+  "diaithiris": null
+ },
+ "claymore": {
+  "english": "Claymore (Highland)",
+  "diaithiris": null
+ },
+ "falchion": {
+  "english": "Falchion",
+  "diaithiris": null
+ },
+ "messer": {
+  "english": "Messer",
+  "diaithiris": null
+ },
+ "estoc": {
+  "english": "Estoc",
+  "diaithiris": null
+ },
+ "rapier": {
+  "english": "Rapier",
+  "diaithiris": null
+ },
+ "smallsword": {
+  "english": "Smallsword",
+  "diaithiris": null
+ },
+ "cutlass": {
+  "english": "Cutlass",
+  "diaithiris": null
+ },
+ "backsword": {
+  "english": "Backsword",
+  "diaithiris": null
+ },
+ "katzbalger": {
+  "english": "Katzbalger",
+  "diaithiris": null
+ },
+ "cinquedea": {
+  "english": "Cinquedea",
+  "diaithiris": null
+ },
+ "rondel_dagger": {
+  "english": "Rondel dagger",
+  "diaithiris": null
+ },
+ "main_gauche": {
+  "english": "Main-gauche",
+  "diaithiris": null
+ },
+ "stiletto": {
+  "english": "Stiletto",
+  "diaithiris": null
+ },
+ "misericorde": {
+  "english": "Misericorde",
+  "diaithiris": null
+ },
+ "bollock_dagger": {
+  "english": "Bollock dagger",
+  "diaithiris": null
+ },
+ "sgian_dubh": {
+  "english": "Sgian-dubh",
+  "diaithiris": null
+ },
+ "dirk": {
+  "english": "Dirk (Highland)",
+  "diaithiris": null
+ },
+ "pike": {
+  "english": "Pike (military)",
+  "diaithiris": null
+ },
+ "halberd": {
+  "english": "Halberd",
+  "diaithiris": null
+ },
+ "bill": {
+  "english": "Bill",
+  "diaithiris": null
+ },
+ "glaive": {
+  "english": "Glaive (European)",
+  "diaithiris": null
+ },
+ "voulge": {
+  "english": "Voulge",
+  "diaithiris": null
+ },
+ "bardiche": {
+  "english": "Bardiche",
+  "diaithiris": null
+ },
+ "poleaxe": {
+  "english": "Poleaxe",
+  "diaithiris": null
+ },
+ "lucerne_hammer": {
+  "english": "Lucerne hammer",
+  "diaithiris": null
+ },
+ "partisan": {
+  "english": "Partisan",
+  "diaithiris": null
+ },
+ "ranseur": {
+  "english": "Ranseur",
+  "diaithiris": null
+ },
+ "spetum": {
+  "english": "Spetum",
+  "diaithiris": null
+ },
+ "fauchard": {
+  "english": "Fauchard",
+  "diaithiris": null
+ },
+ "guisarme": {
+  "english": "Guisarme",
+  "diaithiris": null
+ },
+ "godendag": {
+  "english": "Godendag",
+  "diaithiris": null
+ },
+ "morning_star": {
+  "english": "Morning star",
+  "diaithiris": null
+ },
+ "flail": {
+  "english": "Flail (military)",
+  "diaithiris": null
+ },
+ "flanged_mace": {
+  "english": "Flanged mace",
+  "diaithiris": null
+ },
+ "warhammer": {
+  "english": "Warhammer (medieval)",
+  "diaithiris": null
+ },
+ "horseman_s_pick": {
+  "english": "Horseman's pick",
+  "diaithiris": null
+ },
+ "lance": {
+  "english": "Lance (jousting and cavalry)",
+  "diaithiris": null
+ },
+ "quarterstaff": {
+  "english": "Quarterstaff",
+  "diaithiris": null
+ },
+ "trident": {
+  "english": "Trident",
+  "diaithiris": null
+ },
+ "kpinga": {
+  "english": "Kpinga",
+  "diaithiris": null
+ },
+ "shotel": {
+  "english": "Shotel",
+  "diaithiris": null
+ },
+ "takoba": {
+  "english": "Takoba",
+  "diaithiris": null
+ },
+ "ikakalaka": {
+  "english": "Ikakalaka (Zulu iklwa)",
+  "diaithiris": null
+ },
+ "assegai": {
+  "english": "Assegai",
+  "diaithiris": null
+ },
+ "knobkerrie": {
+  "english": "Knobkerrie",
+  "diaithiris": null
+ },
+ "ngombe_axe": {
+  "english": "Ngombe axe",
+  "diaithiris": null
+ },
+ "tomahawk": {
+  "english": "Tomahawk",
+  "diaithiris": null
+ },
+ "tepoztopilli": {
+  "english": "Tepoztopilli",
+  "diaithiris": null
+ },
+ "mapuche_lance": {
+  "english": "Mapuche lance (Chilean lance)",
+  "diaithiris": null
+ },
+ "maori_taiaha": {
+  "english": "Maori taiaha",
+  "diaithiris": null
+ },
+ "mere": {
+  "english": "Mere (patu)",
+  "diaithiris": null
+ },
+ "leiomano": {
+  "english": "Leiomano",
+  "diaithiris": null
+ },
+ "fijian_cannibal_club": {
+  "english": "Fijian cannibal club (totokia)",
+  "diaithiris": null
+ },
+ "mace": {
+  "english": "Mace (pernach)",
+  "diaithiris": null
+ },
+ "shestopyor": {
+  "english": "Shestopyor",
+  "diaithiris": null
+ },
+ "gada": {
+  "english": "Gada",
+  "diaithiris": null
+ },
+ "vajra_mace": {
+  "english": "Vajra mace",
+  "diaithiris": null
+ },
+ "bagh_nakh": {
+  "english": "Bagh nakh",
+  "diaithiris": null
+ },
+ "tabar": {
+  "english": "Tabar",
+  "diaithiris": null
+ },
+ "pallasch": {
+  "english": "Pallasch",
+  "diaithiris": null
+ },
+ "briquet": {
+  "english": "Briquet",
+  "diaithiris": null
+ },
+ "naval_cutlass": {
+  "english": "Naval cutlass (Model 1917)",
+  "diaithiris": null
+ },
+ "trench_knife": {
+  "english": "Trench knife (Mk I)",
+  "diaithiris": null
+ },
+ "fairbairn_sykes_knife": {
+  "english": "Fairbairn-Sykes knife",
+  "diaithiris": null
+ },
+ "ka_bar": {
+  "english": "KA-BAR",
+  "diaithiris": null
+ },
+ "bowie_knife": {
+  "english": "Bowie knife",
+  "diaithiris": null
+ },
+ "trench_club": {
+  "english": "Trench club",
+  "diaithiris": null
+ },
+ "swordstick": {
+  "english": "Swordstick",
+  "diaithiris": null
+ },
+ "bayonet": {
+  "english": "Bayonet (socket)",
+  "diaithiris": null
+ },
+ "spontoon": {
+  "english": "Spontoon",
+  "diaithiris": null
+ },
+ "winged_lance": {
+  "english": "Winged lance (hussar)",
+  "diaithiris": null
+ },
+ "kontusz_era_sabre": {
+  "english": "Kontusz-era sabre (karabela)",
+  "diaithiris": null
+ },
+ "dha": {
+  "english": "Dha",
+  "diaithiris": null
+ },
+ "parang": {
+  "english": "Parang",
+  "diaithiris": null
+ },
+ "kampilan": {
+  "english": "Kampilan",
+  "diaithiris": null
+ },
+ "barong": {
+  "english": "Barong",
+  "diaithiris": null
+ },
+ "badik": {
+  "english": "Badik",
+  "diaithiris": null
+ },
+ "golok": {
+  "english": "Golok",
+  "diaithiris": null
+ },
+ "jambiya": {
+  "english": "Jambiya",
+  "diaithiris": null
+ },
+ "kard": {
+  "english": "Kard",
+  "diaithiris": null
+ },
+ "hwando": {
+  "english": "Hwando (Korean sword)",
+  "diaithiris": null
+ },
+ "woldo": {
+  "english": "Woldo",
+  "diaithiris": null
+ },
+ "chinese_jiu_li_dao": {
+  "english": "Chinese jiu-li dao (butterfly sword)",
+  "diaithiris": null
+ },
+ "chinese_dadao": {
+  "english": "Chinese Dadao",
+  "diaithiris": null
+ },
+ "sansetsukon": {
+  "english": "Sansetsukon (three-section staff)",
+  "diaithiris": null
+ },
+ "throwing_spear": {
+  "english": "Throwing spear (venabulum)",
+  "diaithiris": null
+ },
+ "lochaber_axe": {
+  "english": "Lochaber axe",
+  "diaithiris": null
+ },
+ "jedburgh_axe": {
+  "english": "Jedburgh axe",
+  "diaithiris": null
+ },
+ "sword_breaker": {
+  "english": "Sword-breaker",
+  "diaithiris": null
+ },
+ "hunting_hanger": {
+  "english": "Hunting hanger",
+  "diaithiris": null
+ },
+ "knuckle_knife": {
+  "english": "Knuckle knife (M1918 trench knife)",
+  "diaithiris": null
+ },
+ "brass_knuckles": {
+  "english": "Brass knuckles",
+  "diaithiris": null
+ },
+ "baton": {
+  "english": "Baton (police/military)",
+  "diaithiris": null
+ },
+ "shillelagh": {
+  "english": "Shillelagh",
+  "diaithiris": null
+ },
+ "sap": {
+  "english": "Sap (blackjack)",
+  "diaithiris": null
+ },
+ "inca_star_mace": {
+  "english": "Inca star mace",
+  "diaithiris": null
+ },
+ "aztec_atlatl": {
+  "english": "Aztec atlatl (atlatl dart)",
+  "diaithiris": null
+ },
+ "maya_obsidian_spear": {
+  "english": "Maya obsidian spear",
+  "diaithiris": null
+ },
+ "cossack_nagaika": {
+  "english": "Cossack nagaika",
+  "diaithiris": null
+ },
+ "kusarigama": {
+  "english": "Kusarigama",
+  "diaithiris": null
+ },
+ "nunchaku": {
+  "english": "Nunchaku",
+  "diaithiris": null
+ },
+ "sai": {
+  "english": "Sai",
+  "diaithiris": null
+ },
+ "tonfa": {
+  "english": "Tonfa",
+  "diaithiris": null
+ },
+ "bo_staff": {
+  "english": "Bo staff",
+  "diaithiris": null
+ },
+ "jo_staff": {
+  "english": "Jo staff",
+  "diaithiris": null
+ },
+ "jitte": {
+  "english": "Jitte",
+  "diaithiris": null
+ },
+ "tessen": {
+  "english": "Tessen",
+  "diaithiris": null
+ },
+ "kama": {
+  "english": "Kama",
+  "diaithiris": null
  }
 }

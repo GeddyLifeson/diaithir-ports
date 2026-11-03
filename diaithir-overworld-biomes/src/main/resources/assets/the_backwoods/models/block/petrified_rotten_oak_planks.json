@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "minecraft:block/oak_planks"
+  "all": "the_backwoods:block/petrified_rotten_oak_planks"
  }
 }

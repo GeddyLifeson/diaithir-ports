@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cross",
  "textures": {
-  "cross": "minecraft:block/short_grass"
+  "cross": "aether_ii:block/skypine_sapling"
  }
 }

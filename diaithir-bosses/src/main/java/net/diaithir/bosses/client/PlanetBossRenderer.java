@@ -31,6 +31,14 @@ public final class PlanetBossRenderer extends MobRenderer<Mob, PlanetBossRenderS
     public void extractRenderState(Mob e, PlanetBossRenderState s, float partialTicks) {
         super.extractRenderState(e, s, partialTicks);
         s.look = lookOf(e);
+        if (e instanceof PlanetBoss pb) {
+            s.anim = pb.animType();
+            s.animPhase = pb.animPhase();
+            s.animT = pb.level().getGameTime() - pb.animStart() + partialTicks;
+        } else {
+            s.anim = "";
+            s.animPhase = 0;
+        }
     }
 
     @Override

@@ -1,0 +1,20 @@
+{
+ "station": "altar.basic",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "item": "diaithirrelics:spider_venom_gland",
+   "count": 2
+  },
+  {
+   "tag": "c:dusts/redstone",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/copper",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:essence_of_venom",
+ "time_s": 20
+}

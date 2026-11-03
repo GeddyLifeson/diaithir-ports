@@ -9,12 +9,12 @@
     "mass_kg": 2.4,
     "stack": 16
    },
-   "recipe": [
-    "c:ingots/bronze x4",
-    "c:gems/quartz x2",
-    "c:dusts/redstone x1"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "pylon_core_steel",
@@ -24,12 +24,12 @@
     "mass_kg": 3.1,
     "stack": 16
    },
-   "recipe": [
-    "pylon_core x1",
-    "c:ingots/steel x4",
-    "c:gems/amethyst x2"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "pylon_core_composite",
@@ -39,12 +39,12 @@
     "mass_kg": 3.8,
     "stack": 16
    },
-   "recipe": [
-    "pylon_core_steel x1",
-    "c:ingots/composite x4",
-    "c:gems/diamond x1"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "pylon_iii",
@@ -64,12 +64,12 @@
      "active"
     ]
    },
-   "recipe": [
-    "pylon_core x1",
-    "c:ingots/bronze x4",
-    "c:stones x4"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "pylon_v",
@@ -89,12 +89,12 @@
      "active"
     ]
    },
-   "recipe": [
-    "pylon_core_steel x1",
-    "c:ingots/steel x4",
-    "c:stones x4"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "pylon_vii",
@@ -114,12 +114,12 @@
      "active"
     ]
    },
-   "recipe": [
-    "pylon_core_composite x1",
-    "c:ingots/composite x4",
-    "c:stones x4"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ward_pylon_iii",
@@ -139,12 +139,12 @@
      "active"
     ]
    },
-   "recipe": [
-    "pylon_iii x1",
-    "c:gems/amethyst x2",
-    "c:bones x2"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ward_pylon_v",
@@ -164,12 +164,12 @@
      "active"
     ]
    },
-   "recipe": [
-    "pylon_v x1",
-    "c:gems/amethyst x3",
-    "c:bones x3"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ward_pylon_vii",
@@ -190,12 +190,12 @@
      "active"
     ]
    },
-   "recipe": [
-    "pylon_vii x1",
-    "c:gems/amethyst x4",
-    "c:bones x4"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "linker",
@@ -206,12 +206,12 @@
     "stack": 1,
     "mass_kg": 0.6
    },
-   "recipe": [
-    "c:ingots/bronze x2",
-    "c:gems/quartz x1",
-    "c:ropes x1"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "crystal_vigor",
@@ -223,11 +223,12 @@
     "stack": 64,
     "mass_kg": 0.1
    },
-   "recipe": [
-    "c:gems/emerald x1",
-    "c:dusts/glowstone x2"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "crystal_ward",
@@ -239,11 +240,12 @@
     "stack": 64,
     "mass_kg": 0.1
    },
-   "recipe": [
-    "c:gems/amethyst x1",
-    "c:dusts/glowstone x2"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "crystal_swiftness",
@@ -255,11 +257,12 @@
     "stack": 64,
     "mass_kg": 0.1
    },
-   "recipe": [
-    "c:gems/quartz x1",
-    "c:dusts/glowstone x2"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "crystal_harvest",
@@ -271,11 +274,12 @@
     "stack": 64,
     "mass_kg": 0.1
    },
-   "recipe": [
-    "c:gems/lapis x1",
-    "c:dusts/glowstone x2"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "aura_vigor",
@@ -354,12 +358,12 @@
     "max_per_pylon": 1,
     "stack": 16
    },
-   "recipe": [
-    "c:ingots/steel x1",
-    "c:gems/quartz x1",
-    "c:dusts/redstone x2"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "rune_reach",
@@ -370,12 +374,12 @@
     "max_per_pylon": 1,
     "stack": 16
    },
-   "recipe": [
-    "c:ingots/composite x1",
-    "c:gems/diamond x1",
-    "c:dusts/redstone x2"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "pylon_attuner",

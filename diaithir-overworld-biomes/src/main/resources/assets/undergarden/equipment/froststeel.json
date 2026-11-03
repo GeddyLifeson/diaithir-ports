@@ -1,0 +1,14 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "undergarden:froststeel"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "undergarden:froststeel"
+   }
+  ]
+ }
+}

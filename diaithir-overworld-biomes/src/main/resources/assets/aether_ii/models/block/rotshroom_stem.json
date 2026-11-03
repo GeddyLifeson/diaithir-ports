@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/cube_column",
  "textures": {
-  "end": "minecraft:block/stone",
-  "side": "minecraft:block/stone"
+  "end": "aether_ii:block/rotshroom_stem",
+  "side": "aether_ii:block/rotshroom_stem"
  }
 }
