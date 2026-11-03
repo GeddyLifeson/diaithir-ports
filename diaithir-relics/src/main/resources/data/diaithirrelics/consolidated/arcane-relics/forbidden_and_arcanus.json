@@ -22,13 +22,12 @@
      "tier4": 15
     }
    },
-   "recipe": [
-    "c:ingots/iron",
-    "c:gems/diamond",
-    "c:storage_blocks/copper",
-    "c:stones"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "seastan_teallaigh",
@@ -38,73 +37,76 @@
     "holds_items": 1,
     "stack_limit": 1
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:stones",
-    "c:ingots/copper"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
-   "id": "fr\u00e1ma_teallaigh_1",
+   "id": "fráma_teallaigh_1",
    "kind": "block",
-   "name_en": "Forge Frame, Bronze (Fr\u00e1ma Teallaigh Cr\u00e9-Umha)",
+   "name_en": "Forge Frame, Bronze (Fráma Teallaigh Cré-Umha)",
    "attrs": {
     "frame_tier": 1,
     "ingredient_slots": 2,
     "speed_multiplier": 1.0
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:stones"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
-   "id": "fr\u00e1ma_teallaigh_2",
+   "id": "fráma_teallaigh_2",
    "kind": "block",
-   "name_en": "Forge Frame, Steel (Fr\u00e1ma Teallaigh Cruach)",
+   "name_en": "Forge Frame, Steel (Fráma Teallaigh Cruach)",
    "attrs": {
     "frame_tier": 2,
     "ingredient_slots": 4,
     "speed_multiplier": 2.0
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:stones"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
-   "id": "fr\u00e1ma_teallaigh_3",
+   "id": "fráma_teallaigh_3",
    "kind": "block",
-   "name_en": "Forge Frame, Dorcha (Fr\u00e1ma Teallaigh Dorcha)",
+   "name_en": "Forge Frame, Dorcha (Fráma Teallaigh Dorcha)",
    "attrs": {
     "frame_tier": 3,
     "ingredient_slots": 6,
     "speed_multiplier": 4.0
    },
-   "recipe": [
-    "c:ingots/dorchamhiotal",
-    "c:gems/diamond"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
-   "id": "fr\u00e1ma_teallaigh_4",
+   "id": "fráma_teallaigh_4",
    "kind": "block",
-   "name_en": "Forge Frame, Composite (Fr\u00e1ma Teallaigh Ilchumasc)",
+   "name_en": "Forge Frame, Composite (Fráma Teallaigh Ilchumasc)",
    "attrs": {
     "frame_tier": 4,
     "ingredient_slots": 8,
     "speed_multiplier": 8.0
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:ingots/dorchamhiotal",
-    "c:gems/diamond"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "dorchamhiotal_ingot",
@@ -116,12 +118,12 @@
     "ingot_mass_kg": 0.9,
     "melt_point_K": 1790
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:gems/amethyst",
-    "c:dusts/aureal"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "dorchamhiotal_ceann",
@@ -133,10 +135,12 @@
     "durability_uses": 420,
     "curse": "fuil_cuntas"
    },
-   "recipe": [
-    "c:ingots/dorchamhiotal"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "part",
+    "time_s": 10
+   }
   },
   {
    "id": "dorchamhiotal_cliabhrach",
@@ -148,10 +152,12 @@
     "durability_uses": 610,
     "curse": "fuil_cuntas"
    },
-   "recipe": [
-    "c:ingots/dorchamhiotal"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "part",
+    "time_s": 10
+   }
   },
   {
    "id": "dorchamhiotal_cosa",
@@ -163,41 +169,46 @@
     "durability_uses": 570,
     "curse": "fuil_cuntas"
    },
-   "recipe": [
-    "c:ingots/dorchamhiotal"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "part",
+    "time_s": 10
+   }
   },
   {
    "id": "dorchamhiotal_buataisi",
    "kind": "armor",
-   "name_en": "Dorchamhiotal Boots (Br\u00f3ga Dorchamhiotail)",
+   "name_en": "Dorchamhiotal Boots (Bróga Dorchamhiotail)",
    "attrs": {
     "armor_points": 3,
     "toughness": 2.0,
     "durability_uses": 490,
     "curse": "fuil_cuntas"
    },
-   "recipe": [
-    "c:ingots/dorchamhiotal"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "part",
+    "time_s": 10
+   }
   },
   {
    "id": "dorchamhiotal_claiomh",
    "kind": "weapon",
-   "name_en": "Dorchamhiotal Blade (Cla\u00edomh Dorchamhiotail)",
+   "name_en": "Dorchamhiotal Blade (Claíomh Dorchamhiotail)",
    "attrs": {
     "attack_damage": 8.0,
     "attack_speed_per_s": 1.6,
     "durability_uses": 1400,
     "curse": "anam_ocrais"
    },
-   "recipe": [
-    "c:ingots/dorchamhiotal",
-    "c:rods/wooden"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "dorchamhiotal_tuagh",
@@ -209,16 +220,17 @@
     "durability_uses": 1400,
     "curse": "anam_ocrais"
    },
-   "recipe": [
-    "c:ingots/dorchamhiotal",
-    "c:rods/wooden"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "dorchamhiotal_piocoid",
    "kind": "weapon",
-   "name_en": "Dorchamhiotal Pick (Pioc\u00f3id Dorchamhiotail)",
+   "name_en": "Dorchamhiotal Pick (Piocóid Dorchamhiotail)",
    "attrs": {
     "attack_damage": 5.5,
     "attack_speed_per_s": 1.2,
@@ -226,46 +238,45 @@
     "durability_uses": 1400,
     "curse": "anam_ocrais"
    },
-   "recipe": [
-    "c:ingots/dorchamhiotal",
-    "c:rods/wooden"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "cloch_shiorai",
    "kind": "relic",
-   "name_en": "Eternal Stone (Cloch Sh\u00edora\u00ed)",
+   "name_en": "Eternal Stone (Cloch Shíoraí)",
    "attrs": {
     "use": "one_use_revive_or_upgrade_catalyst",
     "revive_health_J_equiv_hearts": 10,
     "revive_invuln_s": 5,
-    "tag": "c:gems/shiora\u00ed"
+    "tag": "c:gems/shioraí"
    },
-   "recipe": [
-    "c:gems/diamond",
-    "c:ingots/dorchamhiotal",
-    "c:dusts/aureal",
-    "c:dusts/anam",
-    "c:dusts/fuil"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "fial_aureal",
    "kind": "relic",
-   "name_en": "Aureal Vial (Fial \u00d3ir-Solais)",
+   "name_en": "Aureal Vial (Fial Óir-Solais)",
    "attrs": {
     "essence": "aureal",
     "units_per_item": 100,
     "volume_L": 0.25
    },
-   "recipe": [
-    "c:gems/amethyst",
-    "c:dusts/glowstone",
-    "c:bottles"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "fial_anam",
@@ -276,12 +287,12 @@
     "units_per_item": 50,
     "volume_L": 0.25
    },
-   "recipe": [
-    "c:soul_sand",
-    "c:dusts/aureal",
-    "c:bottles"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "fial_fuil",
@@ -292,17 +303,17 @@
     "units_per_item": 50,
     "volume_L": 0.25
    },
-   "recipe": [
-    "c:foods/raw_meat",
-    "c:dusts/aureal",
-    "c:bottles"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "altoir_draiochta",
    "kind": "block",
-   "name_en": "Arcane Enchanter (Alt\u00f3ir Dhra\u00edochta)",
+   "name_en": "Arcane Enchanter (Altóir Dhraíochta)",
    "attrs": {
     "aureal_per_level_overcap": [
      200,
@@ -311,13 +322,12 @@
     "max_overcap_levels": 2,
     "bookshelf_power_range": 15
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:gems/diamond",
-    "c:bookshelves",
-    "c:storage_blocks/obsidian"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "inneoin_chumasc",
@@ -328,12 +338,12 @@
     "aureal_cost_per_merge": 150,
     "level_cap_override": false
    },
-   "recipe": [
-    "c:storage_blocks/iron",
-    "c:ingots/dorchamhiotal",
-    "c:dusts/aureal"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "slat_tobair",
@@ -345,43 +355,44 @@
     "drain_aureal": 500,
     "durability_uses": 1
    },
-   "recipe": [
-    "c:rods/blaze",
-    "c:ingots/dorchamhiotal",
-    "c:dusts/aureal"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "scathan_draiochta",
    "kind": "relic",
-   "name_en": "Spawner Mirror (Sc\u00e1th\u00e1n Dra\u00edochta)",
+   "name_en": "Spawner Mirror (Scáthán Draíochta)",
    "attrs": {
     "stores_spawner": true,
     "places_spawner": true,
     "spawn_range_m": 4,
     "required_light_lux": 0
    },
-   "recipe": [
-    "c:glass",
-    "c:ingots/silver",
-    "c:gems/diamond"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
-   "id": "r\u00fan_cumhachta",
+   "id": "rún_cumhachta",
    "kind": "rune",
-   "name_en": "Rune of Power (R\u00fan Cumhachta)",
+   "name_en": "Rune of Power (Rún Cumhachta)",
    "attrs": {
     "component": true,
     "tag": "c:runes/cumhacht"
    },
-   "recipe": [
-    "c:stones",
-    "c:dusts/aureal"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "tiomsu_aureal",
@@ -398,7 +409,7 @@
   {
    "id": "seilbhe_anama",
    "kind": "enchant",
-   "name_en": "Soul Tithe (Deach\u00fa Anama)",
+   "name_en": "Soul Tithe (Deachú Anama)",
    "attrs": {
     "max_level": 2,
     "anam_per_kill": 3
@@ -434,7 +445,7 @@
   {
    "id": "scil_teallaigh",
    "kind": "skill",
-   "name_en": "Forgemaster (M\u00e1istir Teallaigh)",
+   "name_en": "Forgemaster (Máistir Teallaigh)",
    "attrs": {
     "effect": "forge_craft_time_mult",
     "value": 0.85
@@ -536,7 +547,7 @@
   "c:ingots/dorchamhiotal": [
    "diaithir_cumhacht:dorchamhiotal_ingot"
   ],
-  "c:gems/shiora\u00ed": [
+  "c:gems/shioraí": [
    "diaithir_cumhacht:cloch_shiorai"
   ],
   "c:dusts/aureal": [
@@ -549,7 +560,7 @@
    "diaithir_cumhacht:fial_fuil"
   ],
   "c:runes/cumhacht": [
-   "diaithir_cumhacht:r\u00fan_cumhachta"
+   "diaithir_cumhacht:rún_cumhachta"
   ],
   "c:storage_blocks/obsidian": [
    "minecraft:obsidian"
@@ -652,7 +663,7 @@
   },
   {
    "id": "diaithir_cumhacht:rune_socket_frame",
-   "target": "fr\u00e1ma_teallaigh_*",
+   "target": "fráma_teallaigh_*",
    "slots": 1,
    "kinds": [
     "rune"
@@ -690,8 +701,8 @@
    "entry": "Aureal, Anam agus Fuil (Essences)",
    "connects_to": [
     "Fial Aureal",
-    "Alt\u00f3ir Dhra\u00edochta",
-    "Cloch Sh\u00edora\u00ed"
+    "Altóir Dhraíochta",
+    "Cloch Shíoraí"
    ]
   },
   {
@@ -703,7 +714,7 @@
    ]
   },
   {
-   "entry": "Alt\u00f3ir Dhra\u00edochta (Arcane Enchanter)",
+   "entry": "Altóir Dhraíochta (Arcane Enchanter)",
    "connects_to": [
     "Aureal Siphon",
     "Soul Tithe",
@@ -711,7 +722,7 @@
    ]
   },
   {
-   "entry": "Slat Tobair agus Sc\u00e1th\u00e1n (Spawner Capture)",
+   "entry": "Slat Tobair agus Scáthán (Spawner Capture)",
    "connects_to": [
     "Spawner Mirror",
     "Global Event: Spawner Captured"
@@ -724,7 +735,7 @@
   "links_to": [
    "diaithir-arms:q_cruach_dealbh",
    "diaithir-relics:q_seanchas_reilige",
-   "diaithir-classes:q_r\u00fan_ogham"
+   "diaithir-classes:q_rún_ogham"
   ]
  },
  "java_notes": "Needs: forge multiblock BlockEntity with pattern validation, pedestal item handler sync, timed custom RecipeType with serializer, per-player Essence capability with gauge sync, enchanter/anvil menus and screens, enchant overcap hook on level clamp, spawner capture and placement logic, curse event handlers (health modifier, durability multiplier), Eternal Stone death-cancel listener, Global Events dispatch bridge.",
@@ -736,19 +747,19 @@
   "V": [
    "teallach_cumhacht",
    "seastan_teallaigh",
-   "fr\u00e1ma_teallaigh_1",
-   "fr\u00e1ma_teallaigh_2",
+   "fráma_teallaigh_1",
+   "fráma_teallaigh_2",
    "fial_aureal",
    "fial_anam",
    "fial_fuil",
    "altoir_draiochta",
-   "r\u00fan_cumhachta",
+   "rún_cumhachta",
    "tiomsu_aureal",
    "scil_teallaigh",
    "briocht_cumhachta"
   ],
   "VI": [
-   "fr\u00e1ma_teallaigh_3",
+   "fráma_teallaigh_3",
    "dorchamhiotal_ingot",
    "dorchamhiotal_ceann",
    "dorchamhiotal_cliabhrach",
@@ -764,7 +775,7 @@
    "scil_aureal"
   ],
   "VII": [
-   "fr\u00e1ma_teallaigh_4",
+   "fráma_teallaigh_4",
    "cloch_shiorai",
    "slat_tobair",
    "scathan_draiochta"
