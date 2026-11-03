@@ -27,8 +27,15 @@ public final class PlannerItem extends Item {
         if (player == null) return InteractionResult.PASS;
         ItemStack held = player.getOffhandItem();
         if (!(held.getItem() instanceof ModuleItem mi)) {
-            if (!ctx.getLevel().isClientSide()) player.sendOverlayMessage(Component.literal("Hold the new module in your other hand"));
-            return InteractionResult.FAIL;
+            if (ctx.getLevel().isClientSide()) return InteractionResult.SUCCESS;
+            BlockEntity target = ctx.getLevel().getBlockEntity(ctx.getClickedPos());
+            var host = target == null ? java.util.Optional.<UpgradeHost>empty() : Upgrades.host(target);
+            if (host.isEmpty()) {
+                player.sendOverlayMessage(Component.literal("Not an upgradable machine. Hold a module in your other hand to upgrade."));
+                return InteractionResult.FAIL;
+            }
+            player.sendSystemMessage(Component.literal(describe(host.get())));
+            return InteractionResult.SUCCESS;
         }
         if (ctx.getLevel().isClientSide()) return InteractionResult.SUCCESS;
         ModuleSpec to = mi.spec();
@@ -61,6 +68,17 @@ public final class PlannerItem extends Item {
         if (!player.isCreative()) held.shrink(used);
         player.sendOverlayMessage(Component.literal("Upgraded " + used + " module" + (used == 1 ? "" : "s")));
         return InteractionResult.SUCCESS;
+    }
+
+    /** One-line readout: slots used, each module, and the resulting speed, output and power multipliers. */
+    static String describe(UpgradeHost h) {
+        var mods = h.slots().modules();
+        StringBuilder sb = new StringBuilder("Modules " + mods.size() + "/" + h.slots().target().slots());
+        for (var m : mods) sb.append(" [").append(m.spec().id()).append("]");
+        Effects e = h.effects();
+        sb.append(String.format(" | speed x%.2f, output x%.2f, power x%.2f, quality chance %.0f%%",
+                e.speedMultiplier(), e.outputMultiplier(), e.consumptionMultiplier(), e.clamped().quality() * 100));
+        return sb.toString();
     }
 
     private static void giveBack(UseOnContext ctx, net.minecraft.world.entity.player.Player player, ModuleSpec old) {
