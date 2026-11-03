@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "options.txt"
-hash = "a94287435c130f9a7ce0a4ca27939fb6cf0171cf4089d3b25f1b9a1b2cc5dda1"
+hash = "f9f47182cb70a7c6a43ab7db46a92878c7ab45682cb2f4a8e8b8ba08c409ad56"
 preserve = true
 
 [[files]]

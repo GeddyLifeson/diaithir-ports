@@ -6,3 +6,4 @@ key.jump|key.stellaris.rocket_start
 pneumaticcraft.boots.jet_boots|key.yo_hooks.jump
 pneumaticcraft.boots.jet_boots|key.stellaris.rocket_start
 key.yo_hooks.jump|key.stellaris.rocket_start
+key.pickItem|key.spectatorHotbar
