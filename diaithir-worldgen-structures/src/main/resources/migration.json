@@ -1576,6 +1576,21 @@
    "source_file": "grim-kingdoms-lost-structures-ruins-2.0.3.jar",
    "merge_with": null
   },
+  "ogham_great_circle": {
+   "from_mod": "diaithir_ascendant_sites",
+   "source_file": "ascendant-rite-sites (diaithir-bosses #125)",
+   "merge_with": null
+  },
+  "ogham_hollow_ring": {
+   "from_mod": "diaithir_ascendant_sites",
+   "source_file": "ascendant-rite-sites (diaithir-bosses #125)",
+   "merge_with": null
+  },
+  "ogham_stone_circle": {
+   "from_mod": "diaithir_ascendant_sites",
+   "source_file": "ascendant-rite-sites (diaithir-bosses #125)",
+   "merge_with": null
+  },
   "oracle_ruins_desert_sanctum": {
    "from_mod": "delfos",
    "source_file": "delfos-1.0.0.jar",
@@ -1659,6 +1674,16 @@
   "ruined_bridge_crossing": {
    "from_mod": "ancient_jungle_ring",
    "source_file": "ancient-jungle-ring-1.0.0.jar",
+   "merge_with": null
+  },
+  "ruined_feast_hall": {
+   "from_mod": "diaithir_ascendant_sites",
+   "source_file": "ascendant-rite-sites (diaithir-bosses #125)",
+   "merge_with": null
+  },
+  "ruined_feast_hall_long": {
+   "from_mod": "diaithir_ascendant_sites",
+   "source_file": "ascendant-rite-sites (diaithir-bosses #125)",
    "merge_with": null
   },
   "ruined_watch_spire": {
