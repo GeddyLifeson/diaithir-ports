@@ -6,10 +6,10 @@ import net.diaithir.units.fuel.*;
 import org.junit.jupiter.api.Test;
 
 class FuelsTest {
-    @Test void csvLoads() { assertEquals(15, Fuels.all().size()); assertEquals(Fuel.Kind.LIQUID, Fuels.get("diesel").kind()); }
+    @Test void csvLoads() { assertEquals(17, Fuels.all().size()); assertEquals(Fuel.Kind.LIQUID, Fuels.get("diesel").kind()); }
 
     @Test void everyEngineFuelExists() {
-        for (String e : new String[]{"steam_piston", "petrol_engine", "diesel_engine", "avgas_piston", "jet_turbine", "electric_motor", "fuel_cell"})
+        for (String e : new String[]{"draft_animal", "steam_piston", "petrol_engine", "diesel_engine", "avgas_piston", "jet_turbine", "electric_motor", "fuel_cell"})
             for (String f : Fuels.engine(e).fuels()) assertNotNull(Fuels.get(f), f);
     }
 

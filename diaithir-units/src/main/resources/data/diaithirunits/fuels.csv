@@ -1,5 +1,7 @@
 id,name,kind,age,mj_per_unit,unit,kg_per_litre,iv_fuel_type,source
 wood,Dry wood,solid,I,16,kg,,,Wikipedia: Energy density (air-dry wood about 16 MJ/kg)
+hay,Hay,solid,I,8,kg,,,Wikipedia: Hay and Horse feed (metabolizable energy about 8 MJ/kg; fed to draft animals)
+oats,Oats,solid,II,12,kg,,,Wikipedia: Oat (about 12 MJ/kg metabolizable for horses)
 charcoal,Charcoal,solid,I,29,kg,,,Wikipedia: Energy density (charcoal 29-30 MJ/kg)
 coal,Coal,solid,V,24,kg,,,Wikipedia: Energy density (bituminous coal about 24 MJ/kg)
 ethanol,Ethanol,liquid,VI,21.1,L,0.789,gasoline,Wikipedia: Ethanol fuel (LHV 21.1 MJ/L)

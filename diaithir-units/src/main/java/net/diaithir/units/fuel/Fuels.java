@@ -60,6 +60,7 @@ public final class Fuels {
             throw new ExceptionInInitializerError(e);
         }
         // Typical efficiencies (fuel energy to shaft work): Wikipedia Thermal efficiency and Engine efficiency.
+        register(new Engine("draft_animal", 0.20, List.of("hay", "oats")));   // muscle work from feed: Wikipedia Draft horse and Muscle efficiency (about 20 %)
         register(new Engine("steam_piston", 0.08, List.of("wood", "charcoal", "coal", "heavy_fuel_oil")));
         register(new Engine("petrol_engine", 0.25, List.of("petrol", "ethanol", "lpg")));
         register(new Engine("diesel_engine", 0.35, List.of("diesel", "biodiesel", "heavy_fuel_oil")));
