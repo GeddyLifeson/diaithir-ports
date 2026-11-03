@@ -76,6 +76,13 @@ public final class StationEntity extends BlockEntity {
             p.sendOverlayMessage(describe());
             return;
         }
+        if (parts.isEmpty()) {
+            // nothing fit a slot: an item of a buildable kind (a gun, a knife...) picks its own blueprint, so a long list is quick to browse
+            String id = net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(held.getItem()).toString();
+            for (Craft.Blueprint c : Catalog.forStation(station())) {
+                if (c.base().equals(id) && Workshop.knows(p, c)) { blueprint = c.id(); sync(); break; }
+            }
+        }
         p.sendOverlayMessage(describe());
     }
 

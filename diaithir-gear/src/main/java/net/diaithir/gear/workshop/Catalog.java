@@ -129,7 +129,7 @@ public final class Catalog {
             }
             BLUEPRINTS.put(id, new Craft.Blueprint(id, o.get("station").getAsString(), o.get("base").getAsString(), o.get("age").getAsInt(),
                     o.get("kind").getAsString(), o.get("damage").getAsDouble(), o.get("speed").getAsDouble(), o.get("durability").getAsInt(),
-                    o.get("ref_mass_kg").getAsDouble(), o.has("improvements") ? o.get("improvements").getAsInt() : 2, o.has("schematic") && o.get("schematic").getAsBoolean(), List.copyOf(slots)));
+                    o.get("ref_mass_kg").getAsDouble(), o.has("improvements") ? o.get("improvements").getAsInt() : 2, o.has("schematic") && o.get("schematic").getAsBoolean(), o.has("model") ? o.get("model").getAsString() : id, List.copyOf(slots)));
         }
     }
 }

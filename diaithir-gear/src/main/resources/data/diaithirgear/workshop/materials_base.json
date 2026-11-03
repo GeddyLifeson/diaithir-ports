@@ -11,7 +11,8 @@
    "handle",
    "stock",
    "grip",
-   "limb"
+   "limb",
+   "pot"
   ],
   "items": [
    "#minecraft:planks"
@@ -33,6 +34,22 @@
   ],
   "items": [
    "minecraft:bone"
+  ]
+ },
+ {
+  "id": "clay",
+  "age": 1,
+  "hardness": 3,
+  "toughness": 2,
+  "density": 1.8,
+  "flex": 0,
+  "color": 11888970,
+  "roles": [
+   "pot"
+  ],
+  "items": [
+   "minecraft:clay_ball",
+   "minecraft:brick"
   ]
  },
  {

@@ -11,12 +11,12 @@
    {
     "type": "minecraft:custom_model_data",
     "index": 1,
-    "default": 16777215
+    "default": 9202494
    },
    {
     "type": "minecraft:custom_model_data",
     "index": 2,
-    "default": 16777215
+    "default": 9202494
    }
   ]
  }

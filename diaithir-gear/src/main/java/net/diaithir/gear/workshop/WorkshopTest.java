@@ -120,6 +120,11 @@ public final class WorkshopTest {
         be.service(fp, made);
         check(made.get(Workshop.ASSEMBLY.get()).improvements().size() == 1 && fp.getOffhandItem().getCount() == 1, "same improvement is refused");
 
+        // browsing: an item of the right kind picks its blueprint
+        be.place(fp, new ItemStack(Items.IRON_AXE));
+        check(be.blueprint.equals("axe"), "holding an iron axe selects the axe blueprint, got " + be.blueprint);
+        while (!be.blueprint.equals("sword")) be.sneakUse(fp);
+
         // refund
         be.place(fp, new ItemStack(Items.IRON_INGOT, 3));
         check(!be.spent.isEmpty(), "spent recorded");
@@ -129,7 +134,7 @@ public final class WorkshopTest {
 
         // schematic gate
         Craft.Blueprint real = Catalog.blueprints().get("dagger");
-        Craft.Blueprint locked = new Craft.Blueprint("testlock", real.station(), real.base(), real.age(), real.kind(), real.baseDamage(), real.baseSpeed(), real.baseDurability(), real.refMassKg(), 1, true, real.slots());
+        Craft.Blueprint locked = new Craft.Blueprint("testlock", real.station(), real.base(), real.age(), real.kind(), real.baseDamage(), real.baseSpeed(), real.baseDurability(), real.refMassKg(), 1, true, real.model(), real.slots());
         check(!Workshop.knows(fp, locked), "schematic blueprint unknown at first");
         Workshop.learn(fp, "testlock");
         check(Workshop.knows(fp, locked), "schematic blueprint known after learning");

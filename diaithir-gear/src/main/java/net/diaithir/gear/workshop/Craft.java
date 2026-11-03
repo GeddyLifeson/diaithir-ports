@@ -17,7 +17,7 @@ public final class Craft {
 
     /** What a station can build. kind: melee, tool, ranged, gun, kitchen. */
     public record Blueprint(String id, String station, String base, int age, String kind, double baseDamage,
-                            double baseSpeed, int baseDurability, double refMassKg, int improvementSlots, boolean schematic, List<Slot> slots) {}
+                            double baseSpeed, int baseDurability, double refMassKg, int improvementSlots, boolean schematic, String model, List<Slot> slots) {}
 
     /** Result of an assembly. damage is the total attack damage and speed the attack-speed modifier (total minus 4), mass is for tooltips and recoil. */
     public record Stats(double damage, double speed, int durability, double massKg, double spreadMul) {}

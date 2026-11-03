@@ -9,7 +9,7 @@ def put(path, obj):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     json.dump(obj, open(path, "w"), indent=1)
 
-bps = json.load(open(W + "/blueprints_arms.json")) + json.load(open(W + "/blueprints_guns.json"))
+bps = [b for f in json.load(open(W + "/index.json"))["blueprints"] for b in json.load(open(W + "/" + f))]
 mats = json.load(open(W + "/materials_base.json")); imps = json.load(open(W + "/improvements_base.json"))
 
 # ---- bench blocks ----------------------------------------------------------------------------------------------------------
@@ -58,21 +58,23 @@ def gun_layers():
     return {"barrel": lambda d: d.rectangle([7, 5, 15, 7], fill=(235, 235, 235, 255)),
             "lock": lambda d: d.rectangle([4, 5, 8, 9], fill=(210, 210, 210, 255)),
             "stock": lambda d: d.polygon([(0, 8), (4, 6), (5, 10), (2, 12)], fill=(200, 200, 200, 255))}
-gun_done = False
+def vessel_layers():
+    return {"pot": lambda d: (d.ellipse([2, 6, 13, 14], fill=(235, 235, 235, 255)), d.rectangle([3, 6, 12, 8], fill=(0, 0, 0, 0))),
+            "handle": lambda d: line(d, (13, 8), (15, 6), 1, 200)}
+arch = {}
 for b in bps:
+    arch.setdefault(b.get("model", b["id"]), b)
+for m, b in arch.items():
     if b["kind"] == "ranged": continue
-    if b["kind"] == "gun":
-        if gun_done: continue
-        gun_done = True; b = dict(b, id="gun")
-    fn = gun_layers() if b["kind"] == "gun" else layers(b["id"])
+    fn = gun_layers() if m == "gun" else vessel_layers() if m == "vessel" else layers(m)
     tex = {}; tints = []
     for i, s in enumerate(b["slots"]):
         im = Image.new("RGBA", (16, 16), (0, 0, 0, 0)); fn[s["name"]](ImageDraw.Draw(im))
-        os.makedirs(A + "/textures/item/workshop", exist_ok=True); im.save(A + f"/textures/item/workshop/{b['id']}_{s['name']}.png")
-        tex[f"layer{i}"] = f"diaithirgear:item/workshop/{b['id']}_{s['name']}"
-        tints.append({"type": "minecraft:custom_model_data", "index": i, "default": 16777215})
-    put(A + f"/models/item/workshop/{b['id']}.json", {"parent": "minecraft:item/handheld" if b["kind"] != "gun" else "minecraft:item/generated", "textures": tex})
-    put(A + f"/items/workshop/{b['id']}.json", {"model": {"type": "minecraft:model", "model": f"diaithirgear:item/workshop/{b['id']}", "tints": tints}})
+        os.makedirs(A + "/textures/item/workshop", exist_ok=True); im.save(A + f"/textures/item/workshop/{m}_{s['name']}.png")
+        tex[f"layer{i}"] = f"diaithirgear:item/workshop/{m}_{s['name']}"
+        tints.append({"type": "minecraft:custom_model_data", "index": i, "default": 16777215 if i == 0 else 9202494})
+    put(A + f"/models/item/workshop/{m}.json", {"parent": "minecraft:item/handheld" if m not in ("gun", "vessel") else "minecraft:item/generated", "textures": tex})
+    put(A + f"/items/workshop/{m}.json", {"model": {"type": "minecraft:model", "model": f"diaithirgear:item/workshop/{m}", "tints": tints}})
 
 # ---- lang (merged into the existing file) ----------------------------------------------------------------------------------
 p = A + "/lang/en_us.json"; lang = json.load(open(p))
@@ -85,7 +87,7 @@ lang.update({"block.diaithirgear.smithy": "Smithy", "block.diaithirgear.gunsmith
     "workshop.diaithirgear.has_improvement": "Already has that improvement.", "workshop.diaithirgear.full": "No improvement slots left.",
     "workshop.diaithirgear.serviced": "%1$s: honing %2$s, damage %3$s, durability %4$s, %5$s kg", "workshop.diaithirgear.slot_need": "%1$s x %2$s",
     "workshop.diaithirgear.complete": "%1$s is ready. Take it with an empty hand.", "workshop.diaithirgear.missing": "%1$s needs %2$s"})
-for b in [x for x in bps if x["kind"] != "gun"]:
+for b in [x for x in bps if x["base"].startswith("minecraft:")]:
     lang[f"blueprint.diaithirgear.{b['id']}"] = b["id"].replace("_", " ").title()
 for b in bps:
     for s in b["slots"]: lang[f"slot.diaithirgear.{s['name']}"] = s["name"].replace("_", " ").title()

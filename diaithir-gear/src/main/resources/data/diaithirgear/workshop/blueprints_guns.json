@@ -38,7 +38,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sidearm_heavy",
@@ -79,7 +80,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "magnum",
@@ -120,7 +122,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "smg_compact",
@@ -161,7 +164,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "carbine",
@@ -202,7 +206,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "assault_rifle",
@@ -243,7 +248,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "marksman_rifle",
@@ -284,7 +290,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sniper_rifle",
@@ -325,7 +332,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "antimaterial_rifle",
@@ -366,7 +374,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "pump_shotgun",
@@ -407,7 +416,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "combat_shotgun",
@@ -448,7 +458,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "auto_shotgun",
@@ -489,7 +500,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "light_mg",
@@ -530,7 +542,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "minigun",
@@ -571,7 +584,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "grenade_launcher",
@@ -612,7 +626,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "rocket_launcher",
@@ -653,7 +668,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "energy_rifle",
@@ -694,7 +710,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "chinese_hand_cannon",
@@ -735,7 +752,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "arquebus",
@@ -776,7 +794,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "tanegashima",
@@ -817,7 +836,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "matchlock_musket",
@@ -858,7 +878,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "wheellock_pistol",
@@ -899,7 +920,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "brown_bess",
@@ -940,7 +962,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "charleville_musket",
@@ -981,7 +1004,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "kentucky_rifle",
@@ -1022,7 +1046,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "baker_rifle",
@@ -1063,7 +1088,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hall_rifle",
@@ -1104,7 +1130,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "dreyse_needle_gun",
@@ -1145,7 +1172,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "minie_rifle",
@@ -1186,7 +1214,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "lorenz_rifle",
@@ -1227,7 +1256,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "enfield_p53",
@@ -1268,7 +1298,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "springfield_1861",
@@ -1309,7 +1340,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sharps_rifle",
@@ -1350,7 +1382,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "colt_dragoon",
@@ -1391,7 +1424,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "colt_navy_1851",
@@ -1432,7 +1466,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "remington_1858",
@@ -1473,7 +1508,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "spencer_rifle",
@@ -1514,7 +1550,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "henry_rifle",
@@ -1555,7 +1592,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "winchester_1873",
@@ -1596,7 +1634,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "winchester_1894",
@@ -1637,7 +1676,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "snider_enfield",
@@ -1678,7 +1718,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "martini_henry",
@@ -1719,7 +1760,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "chassepot",
@@ -1760,7 +1802,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "gras_rifle",
@@ -1801,7 +1844,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "berdan_rifle",
@@ -1842,7 +1886,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "rolling_block",
@@ -1883,7 +1928,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "springfield_1873",
@@ -1924,7 +1970,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mauser_1871",
@@ -1965,7 +2012,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "gewehr_88",
@@ -2006,7 +2054,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "kar98k",
@@ -2047,7 +2096,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "lebel_1886",
@@ -2088,7 +2138,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mas_36",
@@ -2129,7 +2180,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mannlicher_1895",
@@ -2170,7 +2222,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "carcano_m91",
@@ -2211,7 +2264,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "krag_jorgensen",
@@ -2252,7 +2306,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "schmidt_rubin_k31",
@@ -2293,7 +2348,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "smle",
@@ -2334,7 +2390,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m1917_enfield",
@@ -2375,7 +2432,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "springfield_1903",
@@ -2416,7 +2474,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m1_garand",
@@ -2457,7 +2516,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m1_carbine",
@@ -2498,7 +2558,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "bar_m1918",
@@ -2539,7 +2600,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mosin_nagant",
@@ -2580,7 +2642,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "svt_40",
@@ -2621,7 +2684,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sks",
@@ -2662,7 +2726,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "arisaka_type38",
@@ -2703,7 +2768,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "arisaka_type99",
@@ -2744,7 +2810,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ross_rifle",
@@ -2785,7 +2852,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "stg44",
@@ -2826,7 +2894,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fg42",
@@ -2867,7 +2936,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "gewehr_43",
@@ -2908,7 +2978,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mauser_c96",
@@ -2949,7 +3020,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "luger_p08",
@@ -2990,7 +3062,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "walther_p38",
@@ -3031,7 +3104,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "walther_ppk",
@@ -3072,7 +3146,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "colt_m1911",
@@ -3113,7 +3188,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "colt_saa",
@@ -3154,7 +3230,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "smith_wesson_model10",
@@ -3195,7 +3272,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "colt_1903",
@@ -3236,7 +3314,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_browning_hi_power",
@@ -3277,7 +3356,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_m1900",
@@ -3318,7 +3398,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "webley_mk6",
@@ -3359,7 +3440,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "enfield_no2",
@@ -3400,7 +3482,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "nagant_m1895",
@@ -3441,7 +3524,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "tokarev_tt33",
@@ -3482,7 +3566,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "type14_nambu",
@@ -3523,7 +3608,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "lebel_1892_revolver",
@@ -3564,7 +3650,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "beretta_1934",
@@ -3605,7 +3692,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "steyr_m1912",
@@ -3646,7 +3734,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "lahti_l35",
@@ -3687,7 +3776,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "radom_vis35",
@@ -3728,7 +3818,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mp18",
@@ -3769,7 +3860,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "thompson_m1928",
@@ -3810,7 +3902,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mp40",
@@ -3851,7 +3944,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ppsh41",
@@ -3892,7 +3986,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "pps43",
@@ -3933,7 +4028,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sten_mk2",
@@ -3974,7 +4070,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "owen_gun",
@@ -4015,7 +4112,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m3_grease_gun",
@@ -4056,7 +4154,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "beretta_m38",
@@ -4097,7 +4196,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "suomi_kp31",
@@ -4138,7 +4238,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mas_38",
@@ -4179,7 +4280,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "gatling_gun",
@@ -4220,7 +4322,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "maxim_gun",
@@ -4261,7 +4364,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "vickers_gun",
@@ -4302,7 +4406,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mg08",
@@ -4343,7 +4448,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "browning_m1917",
@@ -4384,7 +4490,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "browning_m1919",
@@ -4425,7 +4532,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "browning_m2",
@@ -4466,7 +4574,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hotchkiss_m1914",
@@ -4507,7 +4616,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "lewis_gun",
@@ -4548,7 +4658,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "chauchat",
@@ -4589,7 +4700,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mg34",
@@ -4630,7 +4742,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mg42",
@@ -4671,7 +4784,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "dp27",
@@ -4712,7 +4826,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "dshk",
@@ -4753,7 +4868,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sg43",
@@ -4794,7 +4910,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "bren_gun",
@@ -4835,7 +4952,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "type96_lmg",
@@ -4876,7 +4994,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "type92_hmg",
@@ -4917,7 +5036,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "madsen_lmg",
@@ -4958,7 +5078,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "breda_30",
@@ -4999,7 +5120,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "zb26",
@@ -5040,7 +5162,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "schwarzlose_m07",
@@ -5081,7 +5204,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fiat_revelli_1914",
@@ -5122,7 +5246,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "winchester_1897",
@@ -5163,7 +5288,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "winchester_1887",
@@ -5204,7 +5330,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "winchester_model12",
@@ -5245,7 +5372,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "browning_auto5",
@@ -5286,7 +5414,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ithaca_37",
@@ -5327,7 +5456,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "panzerfaust_60",
@@ -5368,7 +5498,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "panzerschreck",
@@ -5409,7 +5540,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "bazooka_m1",
@@ -5450,7 +5582,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "piat",
@@ -5491,7 +5624,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ptrd41",
@@ -5532,7 +5666,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ptrs41",
@@ -5573,7 +5708,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "boys_at_rifle",
@@ -5614,7 +5750,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "pzb39",
@@ -5655,7 +5792,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ak47",
@@ -5696,7 +5834,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m16",
@@ -5737,7 +5876,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ak74",
@@ -5778,7 +5918,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_fal",
@@ -5819,7 +5960,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_g3",
@@ -5860,7 +6002,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m14",
@@ -5901,7 +6044,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "svd",
@@ -5942,7 +6086,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "famas",
@@ -5983,7 +6128,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "steyr_aug",
@@ -6024,7 +6170,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "galil",
@@ -6065,7 +6212,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "vz58",
@@ -6106,7 +6254,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sig_510",
@@ -6147,7 +6296,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sa80_l85",
@@ -6188,7 +6338,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "cetme_c",
@@ -6229,7 +6380,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "beretta_ar70",
@@ -6270,7 +6422,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "daewoo_k2",
@@ -6311,7 +6464,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk33",
@@ -6352,7 +6506,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "remington_700",
@@ -6393,7 +6548,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "barrett_m82",
@@ -6434,7 +6590,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "accuracy_aw",
@@ -6475,7 +6632,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "steyr_ssg69",
@@ -6516,7 +6674,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m60",
@@ -6557,7 +6716,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "pkm",
@@ -6598,7 +6758,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "rpk",
@@ -6639,7 +6800,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "rpd",
@@ -6680,7 +6842,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_mag",
@@ -6721,7 +6884,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m249_saw",
@@ -6762,7 +6926,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "aat52",
@@ -6803,7 +6968,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk21",
@@ -6844,7 +7010,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "negev",
@@ -6885,7 +7052,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ultimax_100",
@@ -6926,7 +7094,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "nsv",
@@ -6967,7 +7136,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "kpv",
@@ -7008,7 +7178,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m134_minigun",
@@ -7049,7 +7220,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "vz59",
@@ -7090,7 +7262,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "makarov_pm",
@@ -7131,7 +7304,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "stechkin_aps",
@@ -7172,7 +7346,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "beretta_92",
@@ -7213,7 +7388,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "colt_python",
@@ -7254,7 +7430,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sw_model29",
@@ -7295,7 +7472,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "glock_17",
@@ -7336,7 +7514,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sig_p220",
@@ -7377,7 +7556,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sig_p226",
@@ -7418,7 +7598,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "cz_75",
@@ -7459,7 +7640,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_p7",
@@ -7500,7 +7682,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "desert_eagle",
@@ -7541,7 +7724,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "uzi",
@@ -7582,7 +7766,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mp5",
@@ -7623,7 +7808,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sterling_smg",
@@ -7664,7 +7850,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "carl_gustaf_m45",
@@ -7705,7 +7892,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mat_49",
@@ -7746,7 +7934,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "vz61_skorpion",
@@ -7787,7 +7976,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "beretta_m12",
@@ -7828,7 +8018,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mac10",
@@ -7869,7 +8060,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "pm63",
@@ -7910,7 +8102,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "remington_870",
@@ -7951,7 +8144,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mossberg_500",
@@ -7992,7 +8186,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "remington_1100",
@@ -8033,7 +8228,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "benelli_m1",
@@ -8074,7 +8270,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "franchi_spas12",
@@ -8115,7 +8312,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "rpg7",
@@ -8156,7 +8354,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "rpg2",
@@ -8197,7 +8396,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m72_law",
@@ -8238,7 +8438,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m20_bazooka",
@@ -8279,7 +8480,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "carl_gustaf_m2",
@@ -8320,7 +8522,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "at4",
@@ -8361,7 +8564,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "panzerfaust_3",
@@ -8402,7 +8606,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m79",
@@ -8443,7 +8648,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m203",
@@ -8484,7 +8690,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "gp25",
@@ -8525,7 +8732,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_g36",
@@ -8566,7 +8774,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_416",
@@ -8607,7 +8816,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_417",
@@ -8648,7 +8858,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_scar_h",
@@ -8689,7 +8900,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_f2000",
@@ -8730,7 +8942,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "iwi_tavor",
@@ -8771,7 +8984,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ak12",
@@ -8812,7 +9026,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sig_sg550",
@@ -8853,7 +9068,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_fnc",
@@ -8894,7 +9110,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "type81",
@@ -8935,7 +9152,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "qbz95",
@@ -8976,7 +9194,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "insas",
@@ -9017,7 +9236,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "beretta_arx160",
@@ -9058,7 +9278,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "cz_bren_805",
@@ -9099,7 +9320,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "qbz191",
@@ -9140,7 +9362,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "type89",
@@ -9181,7 +9404,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "type64",
@@ -9222,7 +9446,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m110_sass",
@@ -9263,7 +9488,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "l96a1",
@@ -9304,7 +9530,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "tac50",
@@ -9345,7 +9572,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sako_trg",
@@ -9386,7 +9614,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "steyr_hs50",
@@ -9427,7 +9656,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "pgm_hecate2",
@@ -9468,7 +9698,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "cheytac_m200",
@@ -9509,7 +9740,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "orsis_t5000",
@@ -9550,7 +9782,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sv98",
@@ -9591,7 +9824,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "vss_vintorez",
@@ -9632,7 +9866,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "barrett_mrad",
@@ -9673,7 +9908,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_mg4",
@@ -9714,7 +9950,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_mg5",
@@ -9755,7 +9992,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "kord_hmg",
@@ -9796,7 +10034,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "glock_g22",
@@ -9837,7 +10076,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_usp",
@@ -9878,7 +10118,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sig_p320",
@@ -9919,7 +10160,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_five_seven",
@@ -9960,7 +10202,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "walther_p99",
@@ -10001,7 +10244,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "springfield_xd",
@@ -10042,7 +10286,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sw_mp",
@@ -10083,7 +10328,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "yarygin_pya",
@@ -10124,7 +10370,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "fn_p90",
@@ -10165,7 +10412,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_mp7",
@@ -10206,7 +10454,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "kriss_vector",
@@ -10247,7 +10496,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "steyr_tmp",
@@ -10288,7 +10538,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "cz_scorpion_evo3",
@@ -10329,7 +10580,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "pp19_bizon",
@@ -10370,7 +10622,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_ump",
@@ -10411,7 +10664,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "sig_mpx",
@@ -10452,7 +10706,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "benelli_m4",
@@ -10493,7 +10748,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "saiga_12",
@@ -10534,7 +10790,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "aa12",
@@ -10575,7 +10832,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "rpg29",
@@ -10616,7 +10874,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "m3_maaws",
@@ -10657,7 +10916,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "rpo_a_shmel",
@@ -10698,7 +10958,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "mk19",
@@ -10739,7 +11000,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "ags17",
@@ -10780,7 +11042,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "milkor_mgl",
@@ -10821,7 +11084,8 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  },
  {
   "id": "hk_gmg",
@@ -10862,6 +11126,7 @@
     "durability": 0.3,
     "speed": 1.0
    }
-  ]
+  ],
+  "model": "gun"
  }
 ]

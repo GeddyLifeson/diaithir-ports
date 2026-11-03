@@ -163,12 +163,16 @@ public final class Workshop {
         Map<String, Craft.Material> mats = materials(a);
         boolean melee = bp.kind().equals("melee") || bp.kind().equals("tool");
         if (melee) {
-            st.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+            ItemAttributeModifiers.Builder mb = ItemAttributeModifiers.builder();
+            for (var en : st.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.EMPTY).modifiers())
+                if (!en.attribute().is(Attributes.ATTACK_DAMAGE) && !en.attribute().is(Attributes.ATTACK_SPEED)) mb.add(en.attribute(), en.modifier(), en.slot());
+            st.set(DataComponents.ATTRIBUTE_MODIFIERS, mb
                     .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, s.damage() - 1, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
                     .add(Attributes.ATTACK_SPEED, new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, s.speed(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
                     .build());
         }
-        if (!bp.kind().equals("gun")) {
+        boolean custom = custom(bp);
+        if (!bp.kind().equals("gun") && (melee || bp.kind().equals("ranged") || st.getMaxDamage() > 0)) {
             int old = st.getDamageValue();
             st.set(DataComponents.MAX_DAMAGE, s.durability());
             st.setDamageValue(Math.min(old, s.durability() - 1));
@@ -184,18 +188,20 @@ public final class Workshop {
         List<Integer> colors = new ArrayList<>();
         for (Craft.Slot sl : bp.slots()) colors.add(mats.containsKey(sl.name()) ? mats.get(sl.name()).color() : 0xFFFFFF);
         st.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of(), List.of(), List.of(), colors));
-        boolean gun = bp.kind().equals("gun");
-        if (!bp.kind().equals("ranged")) st.set(DataComponents.ITEM_MODEL, Identifier.fromNamespaceAndPath(DiaithirGear.ID, "workshop/" + (gun ? "gun" : bp.id())));
+        if (!bp.kind().equals("ranged")) st.set(DataComponents.ITEM_MODEL, Identifier.fromNamespaceAndPath(DiaithirGear.ID, "workshop/" + bp.model()));
         Craft.Slot main = bp.slots().get(0);
-        if (!gun) st.set(DataComponents.ITEM_NAME, Component.translatable("workshop.diaithirgear.name",
+        if (!custom) st.set(DataComponents.ITEM_NAME, Component.translatable("workshop.diaithirgear.name",
                 Component.translatable("material.diaithirgear." + a.parts().getOrDefault(main.name(), "wood")),
                 Component.translatable("blueprint.diaithirgear." + bp.id())));
     }
 
-    /** Display name of a blueprint: its own lang key, or for guns the gun item's name. */
+    /** True when the result is another mod's own item (a gun, a historical weapon, a kitchen tool): it keeps its name. */
+    static boolean custom(Craft.Blueprint bp) { return !bp.base().startsWith("minecraft:"); }
+
+    /** Display name of a blueprint: its own lang key, or for another mod's items the item's name. */
     public static Component name(Craft.Blueprint bp) {
         Item base = Catalog.baseItem(bp);
-        return bp.kind().equals("gun") && base != null ? Component.translatable(base.getDescriptionId()) : Component.translatable("blueprint.diaithirgear." + bp.id());
+        return custom(bp) && base != null ? Component.translatable(base.getDescriptionId()) : Component.translatable("blueprint.diaithirgear." + bp.id());
     }
 
     // ---- honing: every hit or block broken counts as one use ---------------------------------------------------------------------

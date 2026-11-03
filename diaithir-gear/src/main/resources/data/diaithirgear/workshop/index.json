@@ -7,6 +7,8 @@
  ],
  "blueprints": [
   "blueprints_arms.json",
-  "blueprints_guns.json"
+  "blueprints_guns.json",
+  "blueprints_historical.json",
+  "blueprints_everyday.json"
  ]
 }

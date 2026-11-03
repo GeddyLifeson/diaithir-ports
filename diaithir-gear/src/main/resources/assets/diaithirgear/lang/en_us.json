@@ -66,5 +66,7 @@
  "material.diaithirgear.tempered": "Tempered",
  "material.diaithirgear.ceramic": "Ceramic",
  "material.diaithirgear.rodos_alloy": "Rodos Alloy",
- "material.diaithirgear.star_lattice": "Star Lattice"
+ "material.diaithirgear.star_lattice": "Star Lattice",
+ "slot.diaithirgear.pot": "Pot",
+ "material.diaithirgear.clay": "Clay"
 }
