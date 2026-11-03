@@ -218,6 +218,7 @@ w(f'{M}/tank_manifest.json', {'vehicles': [{'id': v[0], 'name': v[2], 'age': v[6
 
 # ---- inventory icons: textures/items/<systemName><subName>.png (IV looks them up by item resource name) ----
 CAMO_RGB = {'': (74, 92, 58), '_desert': (176, 150, 100), '_snow': (214, 220, 226)}
+KIND_DIR = {'tank1': 'vehicles', 'tank2': 'vehicles', 'track': 'parts', 'engine': 'parts', 'seat': 'parts', 'gun': 'parts', 'shell': 'bullets'}
 def icon(path, body, kind):
     im = Image.new('RGBA', (32, 32), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     dark = tuple(max(0, c - 40) for c in body); track = (38, 38, 40)
@@ -240,10 +241,13 @@ def icon(path, body, kind):
     elif kind == 'shell':
         d.rectangle([12, 10, 19, 25], fill=(190, 150, 60), outline=(100, 76, 30)); d.polygon([(12, 10), (19, 10), (15, 3)], fill=body, outline=dark)
     os.makedirs(os.path.dirname(path), exist_ok=True); im.save(path)
+    base = os.path.basename(path)[:-4]
+    folder = KIND_DIR[kind]
+    w(f'{A}/models/item/{folder}/{base}.json', {'parent': 'mts:item/basic', 'textures': {'layer0': f'{PK}:item/{base}'}})
 for vid, design, *_ in VEHICLES:
-    for sfx, _l in CAMO_N: icon(f'{A}/textures/items/{vid}{sfx}.png', CAMO_RGB[sfx], 'tank%d' % design)
-for n in ('tank_track', 'tank_track2'): icon(f'{A}/textures/items/{n}.png', (0, 0, 0), 'track')
-icon(f'{A}/textures/items/tank_engine.png', (0, 0, 0), 'engine'); icon(f'{A}/textures/items/tank_seat.png', (0, 0, 0), 'seat')
-for g in GUNS: icon(f'{A}/textures/items/{g}.png', (0, 0, 0), 'gun')
-icon(f'{A}/textures/items/tank_shell_ap.png', (110, 110, 118), 'shell'); icon(f'{A}/textures/items/tank_shell_he.png', (170, 60, 40), 'shell')
+    for sfx, _l in CAMO_N: icon(f'{A}/textures/item/{vid}{sfx}.png', CAMO_RGB[sfx], 'tank%d' % design)
+for n in ('tank_track', 'tank_track2'): icon(f'{A}/textures/item/{n}.png', (0, 0, 0), 'track')
+icon(f'{A}/textures/item/tank_engine.png', (0, 0, 0), 'engine'); icon(f'{A}/textures/item/tank_seat.png', (0, 0, 0), 'seat')
+for g in GUNS: icon(f'{A}/textures/item/{g}.png', (0, 0, 0), 'gun')
+icon(f'{A}/textures/item/tank_shell_ap.png', (110, 110, 118), 'shell'); icon(f'{A}/textures/item/tank_shell_he.png', (170, 60, 40), 'shell')
 print('tank pack written', A)
