@@ -20,6 +20,9 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 - Driving: controls are `ComputedVariable`s on the vehicle (`throttleVar`, `brakeVar`, `parkingBrakeVar`, `autopilotValueVar`, steering angle through the physics class). An NPC driver should set these, not add physics.
 - Vehicles are Minecraft entities of `mcinterface261.BuilderEntityExisting` with a protected `entity` field, so a bridge from our mods needs reflection or a compile-only IV jar.
 
+## Port sources from the mod survey (plans/MOD_SURVEY.md)
+MrCrayfish's Vehicle Unofficial (GPL-3) for car features, MineColonies (GPL-3) and the Guard Villagers fork (MIT) for NPC driver behaviour. Porting GPL-3 code makes the receiving module GPL-3, so anything ported from them goes in its own module or jar section with its licence recorded, not into this MIT module. Check IV first (it already has pumps, tanks, roads and control variables), then these.
+
 ## NPC drivers and roads (plan, not built)
 - Wages (RPG #259): every NPC driver is paid crew, registered when hired with `global.WAGE_HIRE(entity, job, companyKey, vehicle)` where `vehicle` is the unit they crew. The crew retires from the payroll only when that vehicle has an autonomy module fitted (Age VII and later); `global.AUTONOMOUS_CREW` no longer exists. The autonomy and wages threads own those rules.
 - Drivers: an NPC takes the controller seat of a parked vehicle and follows a route of waypoints between stations or depots (courier depots #112 and the waypoints module are the existing hooks). Steering and throttle go through IV's own controller variables, not new physics. Ground first, trucks and trains threads reuse the same route format.
