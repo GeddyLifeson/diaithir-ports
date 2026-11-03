@@ -1,6 +1,6 @@
-# Assembly Yard API (diaithir-yards)
+# Assembly Yard API (inside diaithir-carts)
 
-One shared system for building vehicles the way they are actually built: a frame is laid on a yard site, parts are installed stage by stage, the vehicle visibly grows, and it rolls out with stats summed from its parts. Rail yards, farm and truck yards, ship yards (slipways) and space yards all use it. Package `net.diaithir.yards`. Core is plain Java (no Minecraft types) so it self-tests headless; the block/entity glue sits beside it.
+One shared system for building vehicles the way they are actually built: a frame is laid on a yard site, parts are installed stage by stage, the vehicle visibly grows, and it rolls out with stats summed from its parts. Rail yards, farm and truck yards, ship yards (slipways) and space yards all use it. Package `net.diaithir.yards`, inside the diaithir-carts jar (no new jar). Core is plain Java (no Minecraft types) so it self-tests headless; the block/entity glue sits beside it.
 
 ## Concepts
 - **PartKind**: string id from a catalog (`engine`, `boiler`, `bogie`, `cab`, `coupler`, `hull`, `rudder`, `thruster`, ...). Each catalog part (`PartDef`) has `item` (registry id), `kind`, and numeric stats in SI: `mass_kg`, `hp` (structural, dimensionless), `power_w`, `thrust_n`, `buoyancy_n`, `capacity_l`, `crew_slots`, plus a free `extra` map<string,double>.
