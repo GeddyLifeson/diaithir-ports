@@ -27,7 +27,7 @@ def full(**k):
     p.update(k); return p
 def build(pid,name,sp,lang):
     (D/'worldgen/biome').mkdir(parents=True,exist_ok=True); (D/'tags/worldgen/biome').mkdir(parents=True,exist_ok=True)
-    (D/'dimension_type').mkdir(exist_ok=True); (D/'dimension').mkdir(exist_ok=True)
+    (D/'dimension_type').mkdir(exist_ok=True); (D/'planet_stems').mkdir(exist_ok=True)
     for old in (D/'worldgen/biome').glob(pid+'_*.json'): old.unlink()
     water=hexok(sp.get('sea',{}).get('water'),'#3f76e4'); ids=[]; cells=[]
     def put(key,b,disp,par):
@@ -68,7 +68,7 @@ def build(pid,name,sp,lang):
         else: n['sea_level']=-64
         (D/'worldgen/noise_settings').mkdir(parents=True,exist_ok=True); (D/'worldgen/noise_settings'/(pid+'.json')).write_text(json.dumps(n)); ns='diaithir_planets:'+pid
     dim={"type":"diaithir_planets:"+pid,"generator":{"type":"minecraft:noise","settings":ns,"biome_source":{"type":"minecraft:multi_noise","biomes":cells}}}
-    (D/'dimension'/(pid+'.json')).write_text(json.dumps(dim)); lang['dimension.diaithir_planets.'+pid]=name
+    import hashlib; dim['neoforge:seed_override']=int.from_bytes(hashlib.sha256(pid.encode()).digest()[:8],'big',signed=True); (D/'planet_stems'/(pid+'.json')).write_text(json.dumps(dim)); lang['dimension.diaithir_planets.'+pid]=name
 def tpl_exists(n): return (TPL/(n+'.json')).exists()
 if __name__=='__main__':
     P={p['planet_id']:p for p in json.load(open(O/'planets.json'))}

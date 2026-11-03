@@ -21,6 +21,7 @@ public final class BiomesOPlentyModule {
         com.diaithir.overworld_biomes.nomorecraters.NoMoreCraters.init(modBus, container);
         com.diaithir.overworld_biomes.naturescompass.BiomeCompassMod.init(modBus, container);
         com.diaithir.overworld_biomes.natures.Natures.init(modBus);
+        com.diaithir.overworld_biomes.planets.PlanetGate.init();
         GlobalEventsHook.fire("module_loaded", MOD_ID);
     }
 }
