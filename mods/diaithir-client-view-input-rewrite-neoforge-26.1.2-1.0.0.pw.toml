@@ -1,0 +1,8 @@
+name = "diaithir-client-view-input-rewrite-neoforge-26.1.2-1.0.0"
+filename = "diaithir-client-view-input-rewrite-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-clientcombat/client/diaithir-client-view-input-rewrite-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "5a865647f0c60f5c5731751229e672f9e6c81fcb0b995480000341e62fbb4ac9"
