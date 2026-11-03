@@ -67992,11 +67992,6 @@ hash = "084dc9110257890ff7f73a6cc44b83af862e63dfc303f2d99eab35041cba6f11"
 metafile = true
 
 [[files]]
-file = "mods/NaturesCompass-26.1-3.3.0-neoforge.pw.toml"
-hash = "1fd26766d7779fa213c1dd460ed6eda13dee754ee4c201b957677a5e20c47587"
-metafile = true
-
-[[files]]
 file = "mods/NoChatReports-NEOFORGE-26.1-v2.19.0.pw.toml"
 hash = "380308e4c44d08c267395d83b24eeba9e057373391368788453489fb0a622634"
 metafile = true
@@ -68099,11 +68094,6 @@ hash = "18ba112cbdd75b2ae165fece7f2c95bf82db07851e14af6ba59c2b53bb020bea"
 metafile = true
 
 [[files]]
-file = "mods/YungsCaveBiomes-26.1.2-NeoForge-4.1.1.pw.toml"
-hash = "4b8d56bfbd1c4a0026f75b26f701d3c77e70eb2d12eeec9c3559f086cc756b6f"
-metafile = true
-
-[[files]]
 file = "mods/abridged-2.0.2-neoforge-26.1.pw.toml"
 hash = "5abd7d28f5b3f7418f1a842ee5e8142b7088e46ce4330f0638701f6058c0967a"
 metafile = true
@@ -68176,11 +68166,6 @@ metafile = true
 [[files]]
 file = "mods/blockui-1.0.0-diaithir.jar"
 hash = "603d4242c746c42cf9cbe64fae7c4045bb71f657eea1797af9e9d3ae227932eb"
-
-[[files]]
-file = "mods/blooming-biosphere-v1.1.14.pw.toml"
-hash = "7dfba757ffcc92f26784056f62e9b1901d6ea6324f5c2a24899f34a3475db63c"
-metafile = true
 
 [[files]]
 file = "mods/buildinggadgets2-1.4.6.pw.toml"
@@ -68381,6 +68366,10 @@ hash = "f5a61731b186b35ec1080e03d16ba4947cbfd9e6b45a7d95044ff3e1d625d2f1"
 [[files]]
 file = "mods/diaithir-tech-suite-neoforge-26.1.2-1.0.0.jar"
 hash = "ff219771af41e7729303575a111ad3d56bd0233a29abdf1fefa55c5002ca211b"
+
+[[files]]
+file = "mods/diaithir-terrain-neoforge-26.1.2-1.0.0.jar"
+hash = "c116d410ac95658aa2b419ee722880fbc6b3f69ce5b9648c1b5539b9f53b6c4d"
 
 [[files]]
 file = "mods/diaithir-world-suite-neoforge-26.1.2-1.0.0.jar"
