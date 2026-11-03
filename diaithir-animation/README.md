@@ -22,7 +22,16 @@ Clean-room replacement for Not Enough Animations and the firstperson poses (ARR 
 - diaithir-firearms: `AnimHook` (soft MethodHandle, no-op without this mod) calls fire, dry and reload. Separate PR stacked on #158.
 
 ## Spells
-Class-skill poses are Spell Engine's own PAL clips; all 34 distinct animation ids used by the wizards, archers, skill tree and rpg_series spells exist in the shipped jars (checked by script). Paladins and rogues jars not checked yet.
+Class-skill poses are Spell Engine's own PAL clips; all 34 distinct animation ids used by the wizards, archers, skill tree and rpg_series spells exist in the shipped jars (checked by script). Paladins and rogues (26.3 builds of the same data) also all resolve.
+
+## Gun effects (GunFx) and containers
+Client-only particles timed to each clip, using the munitions contract (`plans/MUNITIONS_CONTAINERS.md`, ids optional until that PR merges): a gold-nugget casing per shot (not for muskets, launchers, energy), belt links walking into belt-fed LMGs on every shot and through the whole reload, magazine/drum eject and seat on swap reloads (`diaithircrafting:magazine_*`, iron fallback), shotgun shells into the tube one per beat, musket powder, ball and ram, energy cell swap, launcher round, and a racked casing. Reload clips differ per class (magazine swap, belt feed, tube load, musket ram, cell swap, launcher round). `unjam` clip exists per class (no jam mechanic calls it yet).
+
+## Projectiles (ProjectileFx)
+Every client projectile entity of every mod gets a launch burst, a two-strand helix around its flight line (the flight spin), a trail, and an impact or despawn burst at the end, in a colour family chosen from its id (fire, frost, venom, lightning, arcane, blood, light, water, default spark). Particles only, so no mod's renderer is touched. Model rotation is not touched.
+
+## Seats
+Riders of entity types in `diaithiranimation:seat/{turret,driver,mounted_gun,cannon}` use the seat loops; the tags are empty until vehicle and turret entities are added to them. Cannon load and fire crew clips are in the clip set.
 
 ## Not done
 Visual check of first person (enabled: third-person arms and items show while a clip plays), spell hit effects and projectile entity animations (VFX lanes), tank turret/driver (no tank exists yet), visual tuning of poses on a real client (angles follow vanilla ModelPart convention).

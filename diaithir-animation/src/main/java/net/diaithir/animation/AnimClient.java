@@ -111,11 +111,12 @@ public final class AnimClient {
         if (name.startsWith("body.")) { BodyClient.oneShot(a, name); return; }
         S s = STATE.computeIfAbsent(a.getId(), k -> new S());
         long now = a.level().getGameTime();
+        boolean gun = name.startsWith("gun.");
+        if (gun) { Kind gk = Kind.of(a.getMainHandItem()); if (gk != null && gk.gun()) GunFx.clip(a, name, gk.cls()); }
         if (name.endsWith(".fire")) {
             if (now - s.lastFire < 3) return; // autos: keep the aim loop, no restart jitter
             s.lastFire = now;
         }
-        boolean gun = name.startsWith("gun.");
         String loop = null;
         if (gun) {
             Kind k = Kind.of(a.getMainHandItem());
@@ -162,6 +163,15 @@ public final class AnimClient {
             if (shield) play(p, OFF, "shield.raise", "shield.hold");
             else play(p, OFF, "shield.lower", null);
         }
+        // ---- seats: riders of turret / tank / mounted gun / cannon entities ----
+        String seat = null;
+        if (p.getVehicle() != null) for (String sk : List.of("turret", "driver", "mounted_gun", "cannon"))
+            if (p.getVehicle().is(net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(DiaithirAnimation.ID, "seat/" + sk)))) { seat = "seat." + sk; break; }
+        if (seat != null) {
+            if (!seat.equals(s.mode)) { s.mode = seat; s.item = ""; play(p, MAIN, null, seat); }
+            return;
+        } else if (s.mode.startsWith("seat.")) { s.mode = ""; stop(p, MAIN); }
         // ---- main layer ----
         if (k == null) {
             if (changed) { stop(p, MAIN); s.mode = ""; }
