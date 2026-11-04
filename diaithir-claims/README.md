@@ -10,3 +10,5 @@ Clean-room chunk claims (stands in for FTB Chunks, all rights reserved). MIT. Wr
 
 ## Permission nodes (PermissionGate port)
 Package `net.diaithir.claims.permissions`: nodes `pg.break`, `pg.interact`, `pg.use`, `pg.attack` on NeoForge's PermissionAPI (default allowed). From PermissionGate by ngoclinh_ (MIT, Fabric, 219 lines); events remapped to NeoForge. Test 2026-11-03: compile OK, server boots with nodes registered. Not tested with a permission handler such as LuckPerms.
+## Graves (Epitaphs replacement)
+Package `net.diaithir.claims.graves`. A dead player's drops and experience are set into a `diaithirclaims:grave` block at the nearest free spot (6 blocks); the owner, or an op, opens it to get everything back; others wait 20 minutes. `/grave list`, `/grave latest`. Clean-room from the behaviour of grave mods (the upstream Epitaphs source could not be located, so no code was taken); texture drawn fresh. Test 2026-11-03: compileJava OK, runServer boot `Done`, block entity saves its data (`data get block`). Not tested: a real death with a live player.
