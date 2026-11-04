@@ -23,8 +23,8 @@ AGE1 = {"salt_trader": [({"minecraft"}, r"^(kelp|dried_kelp|sea_pickle|seagrass|
         "flint_smith": [({"minecraft"}, r"^(flint|cobblestone|mossy_cobblestone|stone|stone_bricks|gravel|sand|red_sand|sandstone|red_sandstone|andesite|diorite|granite|polished_andesite|polished_diorite|polished_granite|tuff|calcite|dripstone_block|basalt|smooth_basalt|deepslate|cobbled_deepslate|stick|coal|charcoal)$")],
         "timber_worker": [({"minecraft"}, r"^((stripped_)?" + WOOD + r"_(log|wood|planks)|" + WOOD + r"_(door|fence|fence_gate|slab|stairs|sign|boat|button|pressure_plate|trapdoor|sapling)|stick|bamboo)$")],
         "forager": [({"minecraft"}, r"^(carrot|potato|baked_potato|poisonous_potato|beetroot|egg|pumpkin|melon|melon_slice|wheat|[a-z]+_seeds|cocoa_beans|sugar_cane|brown_mushroom|red_mushroom|sweet_berries)$")]}
-AGE2 = {"potter": [({"minecraft"}, r"^([a-z_]*terracotta|brick|bricks|[a-z_]+_bricks|clay_ball|clay|flower_pot|mud|packed_mud|decorated_pot)$"), ({"mcwroofs"}, r"(^|_)(clay|terracotta|brick)(_|$)")],
-        "farmer": [({"minecraft"}, r"^(wheat|[a-z]+_seeds|carrot|potato|beetroot|melon|melon_slice|pumpkin|sugar_cane|hay_block|[a-z]+_hoe|bone_meal|[a-z_]*sapling|sweet_berries|cocoa_beans|bamboo|kelp|composter)$"),
+AGE2 = {"potter": [({"minecraft"}, r"^([a-z_]*terracotta|brick|bricks|(?!infested_)[a-z_]+_bricks|clay_ball|clay|flower_pot|mud|packed_mud|decorated_pot)$"), ({"mcwroofs"}, r"(^|_)(clay|terracotta|brick)(_|$)")],
+        "farmer": [({"minecraft"}, r"^(wheat|[a-z]+_seeds|carrot|potato|beetroot|melon|melon_slice|pumpkin|sugar_cane|hay_block|[a-z]+_hoe|bone_meal|(?!potted_|bamboo_)[a-z_]*sapling|sweet_berries|cocoa_beans|bamboo|kelp|composter)$"),
                    ({"farmingforblockheads"}, r"."), ({"mysticalagriculture"}, r"seeds$")],
         "baker": [({"minecraft"}, r"^(bread|cake|cookie|pumpkin_pie|mushroom_stew|rabbit_stew|beetroot_soup|suspicious_stew|cooked_[a-z_]+|beef|porkchop|chicken|mutton|rabbit|cod|salmon|apple|honey_bottle|honeycomb|egg|milk_bucket|sugar|baked_potato|cocoa_beans|sweet_berries|glow_berries|dried_kelp|wheat)$"),
                   ({"cookingforblockheads"}, r".")]}

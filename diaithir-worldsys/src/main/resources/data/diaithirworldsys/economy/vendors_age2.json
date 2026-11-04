@@ -182,22 +182,6 @@
      "price": 3,
      "stock": 11
     },
-    "minecraft:infested_chiseled_stone_bricks": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:infested_cracked_stone_bricks": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:infested_mossy_stone_bricks": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:infested_stone_bricks": {
-     "price": 3,
-     "stock": 11
-    },
     "minecraft:light_blue_glazed_terracotta": {
      "price": 3,
      "stock": 11
@@ -289,6 +273,22 @@
     "minecraft:white_glazed_terracotta": {
      "price": 3,
      "stock": 11
+    },
+    "minecraft:yellow_glazed_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:quartz_bricks": {
+     "price": 6,
+     "stock": 5
+    },
+    "mcwroofs:black_terracotta_attic_roof": {
+     "price": 3,
+     "stock": 11
+    },
+    "mcwroofs:black_terracotta_lower_roof": {
+     "price": 3,
+     "stock": 11
     }
    }
   },
@@ -373,10 +373,6 @@
      "price": 8,
      "stock": 4
     },
-    "minecraft:bamboo_sapling": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:cherry_sapling": {
      "price": 1,
      "stock": 32
@@ -390,38 +386,6 @@
      "stock": 32
     },
     "minecraft:pale_oak_sapling": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_acacia_sapling": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_birch_sapling": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_cherry_sapling": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_dark_oak_sapling": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_jungle_sapling": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_oak_sapling": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_pale_oak_sapling": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_spruce_sapling": {
      "price": 1,
      "stock": 32
     },
@@ -578,6 +542,42 @@
      "stock": 16
     },
     "mysticalagriculture:conductive_alloy_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:copper_alloy_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:copper_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:coral_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:cow_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:creeper_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:cyanite_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:draconium_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:dye_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "mysticalagriculture:earth_seeds": {
      "price": 2,
      "stock": 16
     }
