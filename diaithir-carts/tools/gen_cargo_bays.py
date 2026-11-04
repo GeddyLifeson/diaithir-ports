@@ -44,7 +44,7 @@ for t in man['trailers']:
     length = max(1, min(14, int(t['length_m'] - 1.5)))
     deckish = k in ('chassis', 'flat', 'lowboy', 'step', 'modular', 'carrier')  # containers are 4 cells wide, so these decks take them
     h = 3 if k in ('box', 'curtain', 'livestock') else 4 if deckish else 2
-    deck = 0.85 if narrow else 0.6 if k == 'lowboy' else 1.15
+    deck = 0.85 if narrow else 0.8 if k in ('lowboy', 'modular') else 1.3  # top of the deck in the generated model
     trucks[t['id']] = bay(1 if narrow else 4 if deckish else 2, h, length, t['payload_kg'], deck)
 for c in man['construction']:
     if c['kind'] == 'haul':

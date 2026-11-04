@@ -5,7 +5,7 @@
   "l": 14,
   "payload_kg": 20000,
   "ox": -1.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -7.0
  },
  "diaithirtrucks:trailer_flatbed": {
@@ -14,7 +14,7 @@
   "l": 13,
   "payload_kg": 24000,
   "ox": -2.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -6.5
  },
  "diaithirtrucks:trailer_container_chassis": {
@@ -23,7 +23,7 @@
   "l": 10,
   "payload_kg": 26000,
   "ox": -2.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -5.0
  },
  "diaithirtrucks:trailer_reefer": {
@@ -32,7 +32,7 @@
   "l": 14,
   "payload_kg": 19000,
   "ox": -1.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -7.0
  },
  "diaithirtrucks:trailer_lowboy": {
@@ -41,7 +41,7 @@
   "l": 13,
   "payload_kg": 40000,
   "ox": -2.0,
-  "oy": 0.6,
+  "oy": 0.8,
   "oz": -6.5
  },
  "diaithirtrucks:trailer_car_carrier": {
@@ -50,7 +50,7 @@
   "l": 14,
   "payload_kg": 17000,
   "ox": -2.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -7.0
  },
  "diaithirtrucks:trailer_log_trailer": {
@@ -59,7 +59,7 @@
   "l": 10,
   "payload_kg": 24000,
   "ox": -1.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -5.0
  },
  "diaithirtrucks:trailer_curtainsider": {
@@ -68,7 +68,7 @@
   "l": 12,
   "payload_kg": 24000,
   "ox": -1.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -6.0
  },
  "diaithirtrucks:trailer_dump_trailer": {
@@ -77,7 +77,7 @@
   "l": 7,
   "payload_kg": 24000,
   "ox": -1.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -3.5
  },
  "diaithirtrucks:trailer_livestock": {
@@ -86,7 +86,7 @@
   "l": 14,
   "payload_kg": 18000,
   "ox": -1.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -7.0
  },
  "diaithirtrucks:trailer_step_deck": {
@@ -95,7 +95,7 @@
   "l": 13,
   "payload_kg": 22000,
   "ox": -2.0,
-  "oy": 1.15,
+  "oy": 1.3,
   "oz": -6.5
  },
  "diaithirtrucks:trailer_modular_heavy": {
@@ -104,7 +104,7 @@
   "l": 14,
   "payload_kg": 100000,
   "ox": -2.0,
-  "oy": 1.15,
+  "oy": 0.8,
   "oz": -7.0
  },
  "diaithirtrucks:trailer_tank_transporter": {
@@ -113,7 +113,7 @@
   "l": 14,
   "payload_kg": 55000,
   "ox": -2.0,
-  "oy": 0.6,
+  "oy": 0.8,
   "oz": -7.0
  },
  "diaithirtrucks:trailer_handcart": {

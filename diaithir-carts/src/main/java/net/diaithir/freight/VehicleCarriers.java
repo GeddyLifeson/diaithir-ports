@@ -144,7 +144,9 @@ public final class VehicleCarriers {
         var item = Freight.LOAD_ITEMS.get(type) != null ? Freight.LOAD_ITEMS.get(type) : Freight.CONTAINER_ITEMS.get(type);
         if (item == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("Unknown load type: " + type)); return 0; }
         CargoBay.Result last = CargoBay.Result.OUT_OF_BAY;
-        for (int z = 0; z < c.spec.l; z++) for (int x = 0; x < c.spec.w; x++) {
+        for (int z = 0; z < c.spec.l; z++) for (int i = 0; i < c.spec.w; i++) {
+            int x = (c.spec.w - 1) / 2 + ((i % 2 == 0) ? i / 2 : -(i + 1) / 2);  // middle columns first, so a loose load sits on the deck rather than at the edge of a wide bay
+            if (x < 0 || x >= c.spec.w) continue;
             last = Carriers.put(c, new net.minecraft.world.item.ItemStack(item.get()), x, z);
             if (last == CargoBay.Result.OK) {
                 int cx = x, cz = z;
