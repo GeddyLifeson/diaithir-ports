@@ -1,0 +1,8 @@
+name = "diaithir-client-ext-suite-neoforge-26.1.2-1.0.0"
+filename = "diaithir-client-ext-suite-neoforge-26.1.2-1.0.0.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-wave12/client/diaithir-client-ext-suite-neoforge-26.1.2-1.0.0.jar"
+hash-format = "sha256"
+hash = "a71631a7df3d840e1bfa84a002d3925dddcd4767ba61d5b6021348681ea1a599"
