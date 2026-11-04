@@ -37,7 +37,9 @@
    "types": [
     "engine_aircraft"
    ],
-   "defaultPart": "diaithiraircraft:sopwith_camel_engine"
+   "defaultPart": "diaithiraircraft:sopwith_camel_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [

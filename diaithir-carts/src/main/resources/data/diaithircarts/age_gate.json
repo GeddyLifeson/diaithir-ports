@@ -25,27 +25,6 @@
       "diaithircarts:fast_powered_rail"
     ]
   },
-  "signal": {
-    "age": 5,
-    "items": [
-      "diaithircarts:block_signal"
-    ]
-  },
-  "routing": {
-    "age": 5,
-    "items": [
-      "diaithircarts:one_way_rail",
-      "diaithircarts:destination_rail",
-      "diaithircarts:cart_loader",
-      "diaithircarts:locking_rail"
-    ]
-  },
-  "autonomy": {
-    "age": 7,
-    "items": [
-      "diaithircarts:autonomy_module"
-    ]
-  },
   "roads_age1": {
     "age": 1,
     "items": [
@@ -80,6 +59,27 @@
     "age": 7,
     "items": [
       "diaithircarts:concrete_motorway"
+    ]
+  },
+  "signal": {
+    "age": 5,
+    "items": [
+      "diaithircarts:block_signal"
+    ]
+  },
+  "routing": {
+    "age": 5,
+    "items": [
+      "diaithircarts:one_way_rail",
+      "diaithircarts:destination_rail",
+      "diaithircarts:cart_loader",
+      "diaithircarts:locking_rail"
+    ]
+  },
+  "autonomy": {
+    "age": 7,
+    "items": [
+      "diaithircarts:autonomy_module"
     ]
   },
   "yards_age3": {
@@ -4851,12 +4851,6 @@
       "diaithircarts:wag_tx_3000_series",
       "diaithircarts:wag_voiture_de_banlieue_2_niveaux",
       "diaithircarts:wag_x3"
-    ]
-  },
-  "farm": {
-    "age": 5,
-    "items": [
-      "diaithircarts:reaper"
     ]
   },
   "freight_age1": {

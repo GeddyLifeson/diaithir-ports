@@ -1,0 +1,8 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "net.diaithir.crashtools.crashwindow.mixins",
+  "compatibilityLevel": "JAVA_25",
+  "injectors": { "defaultRequire": 0 },
+  "client": [ "MinecraftCrashMixin" ]
+}

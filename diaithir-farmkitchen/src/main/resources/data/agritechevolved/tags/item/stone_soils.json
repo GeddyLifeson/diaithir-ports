@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:stone",
+    "minecraft:end_stone",
+    {"id":"aether_ii:holystone", "required": false},
+
+    {"id":"regions_unexplored:stone_grass_block", "required": false},
+    {"id":"regions_unexplored:deepslate_grass_block", "required": false},
+    {"id":"regions_unexplored:chalk_grass_block", "required": false},
+    {"id":"regions_unexplored:argillite_grass_block", "required": false},
+    {"id":"regions_unexplored:mossy_stone", "required": false},
+    {"id":"regions_unexplored:chalk", "required": false},
+
+    {"id":"biomeswevegone:overgrown_stone", "required": false}
+  ]
+}

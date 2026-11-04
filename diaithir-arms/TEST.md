@@ -17,6 +17,12 @@ Not tested: a real client (rendering of icons, worn armour layers, bow and cross
 
 ## Roster
 `/armsselftest` after the roster: ok=108 bad=0 (30 roster items checked for weapon component, durability and reach), 0 ERROR lines (2026-11-03).
+
+## Gadgets
+`/armsselftest` ok=112 bad=0. Live: a turret with ammo=8 killed a 20 hp husk 6 blocks away in line of sight in under 10 s and was left at ammo=2. The mining laser needs a player and was only checked by its pure rules. (2026-11-04)
+
+## Immersive Armors stage 1
+`/armsselftest` ok=117 bad=0 (40 items bound, pure resistance and berserk maths, set counting, heavy helmet armour/knockback/weight modifiers, prismarine boots durability). Live: a husk in the full divine set shrugged off the first hit ("Target is invulnerable") and took damage from the second (20 to 15 hp). (2026-11-04)
 - Real boot: built jar plus Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar in the mods folder of a NeoForge 26.1.2.116 dedicated server (a throwaway gradle project with `runServer`, so IV scans the jar and not a classpath folder). IV loads the pack with 0 `MTSERROR` lines for `diaithirtrucks`. The first boot caught two real bugs the parser check missed (upper-case `interactionType` and `animationType`, and construction paints without a default sub-definition); both fixed.
 - `tools/ivboot_summon.py` over rcon: all 264 item ids (75 vehicles plus paints, engines, wheels, seat, cargo holds, tracks) resolve to real items (an unknown id gives Air, checked with a bogus id).
 - Not tested: placing and driving a vehicle, hitching, cargo GUI, mounted cars, animations (IV has no command to spawn a vehicle, so it needs a player), client rendering. Other packs in the arms jar (diaithiraircraft) log MTSERROR model parse errors; not touched here.

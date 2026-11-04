@@ -1,131 +1,184 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Aveling and Porter Road Roller",
-  "description": "Aveling and Porter Road Roller (1867, UK): 30 kW, 12 t. Road role: compact.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:30"
-   ],
-   [
-    "minecraft:iron_block:0:3"
-   ],
-   [
-    "minecraft:redstone:0:8"
-   ],
-   [
-    "minecraft:black_dye:0:4"
-   ]
-  ],
-  "health": 615
- },
- "motorized": {
-  "emptyMass": 12000,
-  "fuelCapacity": 72,
-  "defaultFuelQty": 36,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.4,
-  "dragCoefficient": 0.8,
-  "crossSectionalArea": 9.0,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0
- },
- "parts": [
-  {
-   "pos": [
-    0,
-    1.0,
-    0.0
-   ],
-   "types": [
-    "engine_car"
-   ],
-   "defaultPart": "diaithirtrucks:engine_e150_stock",
-   "minValue": 0.0,
-   "maxValue": 10.0
+  "general": {
+    "type": "vehicle",
+    "name": "Aveling and Porter Road Roller",
+    "description": "Aveling and Porter Road Roller (1867, UK): 30 kW, 12 t. Road role: compact.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:30"
+      ],
+      [
+        "minecraft:iron_block:0:3"
+      ],
+      [
+        "minecraft:redstone:0:8"
+      ],
+      [
+        "minecraft:black_dye:0:4"
+      ]
+    ],
+    "health": 615
   },
-  {
-   "pos": [
-    0.0,
-    2.2,
-    0.0
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "defaultPart": "diaithirtrucks:seat",
-   "dismountPos": [
-    -2.0,
-    0.0,
-    0.0
-   ],
-   "minValue": 0.0,
-   "maxValue": 10.0
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Aveling and Porter Road Roller (Yellow)",
-   "modelName": "cv_steam_roller",
-   "textureName": "paintc",
-   "extraMaterialLists": [
-    []
-   ]
+  "motorized": {
+    "emptyMass": 12000,
+    "fuelCapacity": 72,
+    "defaultFuelQty": 36,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.4,
+    "dragCoefficient": 0.8,
+    "crossSectionalArea": 9.0,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0
   },
-  {
-   "subName": "_orange",
-   "name": "Aveling and Porter Road Roller (Orange)",
-   "modelName": "cv_steam_roller",
-   "textureName": "paintc_orange",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_white",
-   "name": "Aveling and Porter Road Roller (White)",
-   "modelName": "cv_steam_roller",
-   "textureName": "paintc_white",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {},
- "car": {
-  "isFrontWheelDrive": false,
-  "isRearWheelDrive": true,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.8,
-  "isBigTruck": true
- },
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "block",
-    "entity",
-    "vehicle",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "collisions": [
+  "parts": [
     {
-     "pos": [
-      0,
-      1.8,
-      0
-     ],
-     "width": 2.2,
-     "height": 3.0
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e150_stock",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.0,
+        2.2,
+        0.0
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e150_stock",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.0,
+        2.2,
+        0.0
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.0
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0
     }
-   ]
-  }
- ]
+  ],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Aveling and Porter Road Roller (Yellow)",
+      "modelName": "cv_steam_roller",
+      "textureName": "paintc",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_orange",
+      "name": "Aveling and Porter Road Roller (Orange)",
+      "modelName": "cv_steam_roller",
+      "textureName": "paintc_orange",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_white",
+      "name": "Aveling and Porter Road Roller (White)",
+      "modelName": "cv_steam_roller",
+      "textureName": "paintc_white",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {},
+  "car": {
+    "isFrontWheelDrive": false,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.8,
+    "isBigTruck": true
+  },
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 615,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.8,
+            0
+          ],
+          "width": 2.2,
+          "height": 3.0
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.8,
+            0
+          ],
+          "width": 2.2,
+          "height": 3.0
+        }
+      ]
+    }
+  ]
 }

@@ -37,7 +37,9 @@
    "types": [
     "engine_aircraft"
    ],
-   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine"
+   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -48,7 +50,9 @@
    "types": [
     "engine_aircraft"
    ],
-   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine"
+   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -59,7 +63,9 @@
    "types": [
     "engine_aircraft"
    ],
-   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine"
+   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -70,7 +76,9 @@
    "types": [
     "engine_aircraft"
    ],
-   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine"
+   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
