@@ -56926,18 +56926,6 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/aechor_cutting_
 hash = "0b432318b1f3a9e84997fd7c452127799c4cb84e0b370eab3cbfbaecb743e9e3"
 
 [[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/alium_mekanism_crushing.json"
-hash = "eb40decce518a709bcb3c91ff1f55c5fc8a6d2f84a433aec6e400ff863051bbe"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/alium_modern_industrialization_macerator.json"
-hash = "c77606cc819a4fa9bf7e22b40162ff14738501b6561a9d8cf569970278224ac6"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/alium_occultism_crushing.json"
-hash = "25353ca9bc9d76affd32d061ddd18f84bb588b8a0d1e416239f6acfab13c6ece"
-
-[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/allium_mekanism_crushing.json"
 hash = "bc2dece19ff62a92c73837bdfce06e3cd9a7da6fdf7b28747d582a67837ed938"
 
@@ -56950,30 +56938,6 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/allium_occultis
 hash = "424321e1556992fca9f8e3a97a604cf995a709221381018a8aaaf54b2bc12b78"
 
 [[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/amaryllis_mekanism_crushing.json"
-hash = "021ee95a7e0c0cc4af09773deec24aa34924ec1920b9c3a11a0b46130c8b839e"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/amaryllis_modern_industrialization_macerator.json"
-hash = "30bd87595b105a7b3b1e9faefa959b2ef7c4e98687cb41699552532a3a883695"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/amaryllis_occultism_crushing.json"
-hash = "1985d8f02cb4e8f8fe45f7698f7d0ab8c26d8cc9edc15455b55cbc792510688d"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/anemone_mekanism_crushing.json"
-hash = "1298a12029684e881e70597b2b4f3a6a75ac671d200ad595fb6b1e595d1ea11a"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/anemone_modern_industrialization_macerator.json"
-hash = "9fa92a2d9ce49bf8af804a3ca9f04735990473918e2181e0c2c72678631cfe8e"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/anemone_occultism_crushing.json"
-hash = "3966de7a87afbf48ed95d2461012260354adf20a762c508ed56091cabfd7b123"
-
-[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/azure_bluet_mekanism_crushing.json"
 hash = "90e6a12e99d7283ce8a065c94af10e7f427c24da7a08ed4f25f893d0c37c14be"
 
@@ -56984,42 +56948,6 @@ hash = "3266ad7a78bb514f8255cbc2f7a4eb49c75aad5f2bc15f03242764343e4b77ef"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/azure_bluet_occultism_crushing.json"
 hash = "604ebf22fbe066642adc24f465f1787efef615164816c72adb2a6aa93c95f332"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/balloon_flower_mekanism_crushing.json"
-hash = "22c129fe26404bfc4c42b4eebcf43da13e652f068eabe2469e62974712271d61"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/balloon_flower_modern_industrialization_macerator.json"
-hash = "f991c096c844fe5ebb34597b5cd4af0b33f4d601a41f8a2e870d8de630e222ca"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/balloon_flower_occultism_crushing.json"
-hash = "561582f42007850f14d15feaa3da37116913907bb6d8c2ef1e359f445049e054"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/black_bearded_iris_mekanism_crushing.json"
-hash = "e7c672af19dbc1a74cd5727928642df1adfe58a6f8120d545e3b32f693e7b2e3"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/black_bearded_iris_modern_industrialization_macerator.json"
-hash = "2528e27496b373393d399c9ff0565f4c93c0053e831fca3041480d01e3d90f46"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/black_bearded_iris_occultism_crushing.json"
-hash = "a97dd324e77f1f1c957d1cbecd79ad383a2922749222f0a0051cb801edfa61f7"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/black_truffle_mekanism_crushing.json"
-hash = "1caa966a95fe0d8b9a0134bba8f1a72718cf1d53f16f2cca5d1e166f32008b2f"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/black_truffle_modern_industrialization_macerator.json"
-hash = "5b37e23bae5616337eee293eb7834c66743bf55d40f23768f943dcd88925da66"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/black_truffle_occultism_crushing.json"
-hash = "2c44b3e10e4e3870055e9b08f94586e7a9960b9bf395dac5668412c13174231a"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/blade_poa_mekanism_crushing.json"
@@ -57130,30 +57058,6 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/carrion_cutting
 hash = "95b30f25f3f953279ac161b949e5bb2a06869d7031371df1d602d9512a478525"
 
 [[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/chanterelle_mekanism_crushing.json"
-hash = "57d2e754c6892cc7c49a2a1a42886021f20a22885aca34e6bde66399843f243b"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/chanterelle_modern_industrialization_macerator.json"
-hash = "a55922abfbcc7c0aabfcfce90ffed4704bc9d97447bb89b700de57bb2cd28bb8"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/chanterelle_occultism_crushing.json"
-hash = "366c9c6c041f414d1b6ab58a4d46ef71d5468499d6890238fcca0f9ffc69c7ad"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/chrysanthemum_mekanism_crushing.json"
-hash = "31e2927224c4c0449d5fed415aba7d41b37e754a6cc321b2adf12928a6cb376f"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/chrysanthemum_modern_industrialization_macerator.json"
-hash = "7e90f8972132a8e894226049ceedc253a5a881cdf63f06e920ca7eb00f893d78"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/chrysanthemum_occultism_crushing.json"
-hash = "8ac8e436ffd1531e8a1baefb0ae5302ede9ac73394307cdca7f21ac148b1a55b"
-
-[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/closed_eyeblossom_mekanism_crushing.json"
 hash = "322250b2a7ac516c592739303e4fda5ea62d2fa4eb84c296750489bc48a9203e"
 
@@ -57188,18 +57092,6 @@ hash = "4929de4d5e87db50ae4becfccd9bb6c8cf860c92f0cb6ae9e49571abb0cae50f"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/crimson_fungus_occultism_crushing.json"
 hash = "f517e2b8983c1ee93dfe8222c89dcb0b8215b8c94c5f7d73957de130fad8f0b7"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/dahlia_mekanism_crushing.json"
-hash = "376163779b236117be9d4eb9c57691423456cd04727222f2d39fd9b806bf463a"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/dahlia_modern_industrialization_macerator.json"
-hash = "309682388f29d11cfa9b2becb860dd4ca0a6fb6bf5580a5926549d64ca471056"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/dahlia_occultism_crushing.json"
-hash = "018846fecc44bcbb4d0f2f1371dec54949aba0c2ffd523fb5862b70de7e0adb3"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/dandelion_mekanism_crushing.json"
@@ -57310,30 +57202,6 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/goldenrod_occul
 hash = "79d33e8e5121b3acbabcab8c8388b845474d5d553c0f177b7cdd08847ba1cd21"
 
 [[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/great_lobelia_mekanism_crushing.json"
-hash = "51c7954b41fa9ac2c10b7294955d91a3f6a6c4adeef505b7be61f9db00a1443b"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/great_lobelia_modern_industrialization_macerator.json"
-hash = "17d68ef24892a679e6a53ad4325b10cc4e230982364f54c8ba15a78f0b09fb21"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/great_lobelia_occultism_crushing.json"
-hash = "fdabbc6faf312433d33a4b9644867a4544b0aea8472b785e87bae86eabd703ef"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/hellebore_mekanism_crushing.json"
-hash = "0456e4e46bafcd41370d6b1bba83cab1c5805d853dedd04f93b4ac9b75d0d802"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/hellebore_modern_industrialization_macerator.json"
-hash = "f09f455016913b15454e9a3f5456732f993dbf258132905db7f5a92885a0e04a"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/hellebore_occultism_crushing.json"
-hash = "a6238ef647f30d5b7da7fd053126f7226a6c051e508d993a9b767096660579ee"
-
-[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/hesperose_mekanism_crushing.json"
 hash = "c32a76f5c21ae0652fd81266cb074ba005a1e95453cb8afc6232967b5fdffbfd"
 
@@ -57368,18 +57236,6 @@ hash = "116c3315cfea7140dab3b91d738346cd2d27e5e85b8505b6695ab0114406ae1b"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/icy_iris_occultism_crushing.json"
 hash = "1b19eef34a2f3a04cf6f1979c682ac6b9ac4bd51a750d733d21d794f3507b89c"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/laetiporus_mekanism_crushing.json"
-hash = "059d26f9c805bbd932e177c19f0c32db2b222305706a444bda83343b88ceb804"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/laetiporus_modern_industrialization_macerator.json"
-hash = "871ef8d216319ad8cffccfbb53dc79329f75c59f1400515e2bae55beb3fe57ea"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/laetiporus_occultism_crushing.json"
-hash = "8cb994fbe4e2ed67426f6d7c9a339774b9840b0924ed7209ab45023856bce071"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/lavender_mekanism_crushing.json"
@@ -57442,18 +57298,6 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/lily_of_the_val
 hash = "68db20f68be5c59c953b3832b9c956b85f4ea2f0986a8b1574e1d3d44ac629b8"
 
 [[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/lions_mane_mekanism_crushing.json"
-hash = "ac68b41bde1a92d93c7d8e0384f4a2375f578ea5fa57e94a1f498096e24d82df"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/lions_mane_modern_industrialization_macerator.json"
-hash = "13fb3ca59ede7580e89ba1b4f279a47014988a06e5061993f9389b6c44afbb9f"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/lions_mane_occultism_crushing.json"
-hash = "5dd6fe988448abaf3d33e3292bd119d30a4036a21f1f1cbebb525abf3e297dec"
-
-[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/marigold_mekanism_crushing.json"
 hash = "776904eb4900fcd22571bd479346314b133d4f4afb62a47aa5841edb07b89702"
 
@@ -57464,18 +57308,6 @@ hash = "64544b32971884ec64edc52b60bdb47a9a09ff552a496e9415c014c22eb06496"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/marigold_occultism_crushing.json"
 hash = "31fb297413ca3f79eb3ad8bc4ff9aa75a8dab5bf842b7c2d891cf177737b2b03"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/morel_mekanism_crushing.json"
-hash = "0cc192711656fd7b72411c784ac21b1a5097b1f488668da658090a2302870ffe"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/morel_modern_industrialization_macerator.json"
-hash = "d8229d32543099eee318b7a9a25d2c624226edab98d4bb387e2a82678da0e87a"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/morel_occultism_crushing.json"
-hash = "1d9332a900c105f433262ff773f1fe06dd72a265e0ff62583d83506c0b19c09a"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/open_eyeblossom_mekanism_crushing.json"
@@ -57572,18 +57404,6 @@ hash = "2a6f4b24e0bf0a1569899fc81dba585e2641132f280874433858781de1151362"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/oxeye_daisy_occultism_crushing.json"
 hash = "54da5746eec06f78ce43df79256c0ebf76f3a2cc4bc285bd3a7308e5c17e3933"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/oyster_mushroom_mekanism_crushing.json"
-hash = "5bfc9f540f688a31e93317357a1540a52ee3bee6544ccbb0d023ecd9d283cfef"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/oyster_mushroom_modern_industrialization_macerator.json"
-hash = "9602df6cee507996b6cdf856e31034caba2d7eaf53b9f14c1cec161e1460d09b"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/oyster_mushroom_occultism_crushing.json"
-hash = "212f545d77e2210602e2c9dae159b3eacc2c23086c8e29a3dd236d2b4dd3ee26"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/peony_mekanism_crushing.json"
@@ -57694,138 +57514,6 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/poppy_occultism
 hash = "2f9804a31aa4ea40904b66f1b2811c022f72d674a0f6f54799675baa7a09c404"
 
 [[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/porcini_mekanism_crushing.json"
-hash = "e6c89d078c49170bb540f2a6696a753c728df87c4d763d8024570a5fd5e01700"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/porcini_modern_industrialization_macerator.json"
-hash = "0094962ddf94968bacc83bee94dcc8a9b89e2290cf901f13f052ebdbd9732240"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/porcini_occultism_crushing.json"
-hash = "34147acdfa2075595b6483d4b4eec985507c9b8640fb3b5cbb69361c4cb923e2"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/portobello_mekanism_crushing.json"
-hash = "c527916136925c56417e07e434583b1e78ed3d7860bb307360fb50b8026119ad"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/portobello_modern_industrialization_macerator.json"
-hash = "f19b38b556f93eaa2798e014c0ffcd70ac6fe264a1636fc6909860123f70f929"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/portobello_occultism_crushing.json"
-hash = "4bf9bf6550fd4eb2f3c67784154178edda9309186155b0bae0d817c17fa75e0a"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_azure_bluet_mekanism_crushing.json"
-hash = "030f6c1cd9e819cffd55ed6e34901da4b82e648044f51bcc9dd45c4fdd37c5bd"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_azure_bluet_modern_industrialization_macerator.json"
-hash = "852ae2bab6b0b1ff0d9db94750db6f39e09d42f853ea6a7c1f9021ebf4ec440b"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_azure_bluet_occultism_crushing.json"
-hash = "2d9ac596fe7ebca2699051b349c0edd5d0754c52a0ffaf182413dd11b83e3d92"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_blue_orchid_mekanism_crushing.json"
-hash = "dbc7353fe1c88d499f10d47f1376f3a2b5cbd60ab1a9fd7ba589b02261d5bcaa"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_blue_orchid_modern_industrialization_macerator.json"
-hash = "6ef7ca6b712a405d050894c796e885d9d6eb7ce931254ddf4992d6c6f8a717a3"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_blue_orchid_occultism_crushing.json"
-hash = "acf5343dde393e0dc7c049a10be7981809a4a6bfb47672df94b6c775636e127d"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_cornflower_mekanism_crushing.json"
-hash = "80784b91f20261adb23f82da1a2a6e40db07ea803fe947e60a66cba4f3d9d376"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_cornflower_modern_industrialization_macerator.json"
-hash = "4317f9f16c8e13bda446e16473959a0cc2f64f9aabc576ea9927dd8f6fd8dc7c"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_cornflower_occultism_crushing.json"
-hash = "f3444a51258e6a6472a679ba6f3d0815ddf27693ef6b430b669b349f992a0804"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_dandelion_mekanism_crushing.json"
-hash = "81a300fa4c6ac4f7f51997d17675a456905e650c15a8341000c7f8a7b7006d8c"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_dandelion_modern_industrialization_macerator.json"
-hash = "67d3ee00669eae3f3c7340621cbb84e86300b2514284b2143f8fead62ac87190"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_dandelion_occultism_crushing.json"
-hash = "291d9aef87656d54c6fb135c117c9023cb68614006c9a8080d3034785107a7aa"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_lily_of_the_valley_mekanism_crushing.json"
-hash = "85f07741fcda2f9eac68aa5995e3d370dc269bee41d1a5f77b645eee6d5c10eb"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_lily_of_the_valley_modern_industrialization_macerator.json"
-hash = "6f94a91ca93c3ce2e1ef830f1ac4f4e1188ffb023c8bdb22c6e62e2c48b4d0e0"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_lily_of_the_valley_occultism_crushing.json"
-hash = "12df306bab1a65051b831c1e10de124e5311af1daa35cedbeea96afaa30e3494"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_oxeye_daisy_mekanism_crushing.json"
-hash = "87c99c49ab045530be7cfbaff3da4975dcc44d67d869d41ea98acf69f73e4c91"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_oxeye_daisy_modern_industrialization_macerator.json"
-hash = "c76442bb0ebdfedf0035537eff44d31749cc9158b5d0ffa72322468c81677b4b"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_oxeye_daisy_occultism_crushing.json"
-hash = "b0eacfcc7243559d917763df3951a3403876de9919ce6eee2ff74de4add62284"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_poppy_mekanism_crushing.json"
-hash = "9f63af396a6948c314931698fc867a8e49015ef3c040a64ab84efc177270cb2c"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_poppy_modern_industrialization_macerator.json"
-hash = "f878b20899884bd7f953ad935351d9115aff91d045063540ed92762d68d2e926"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_poppy_occultism_crushing.json"
-hash = "9af26a9cf71d8b1041e2fad94cf3b0fcacb692eeb342083bcc4bc88c681247e5"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_torchflower_mekanism_crushing.json"
-hash = "4c581eb91447a3ae040ad41cbb5476175fa15eaef6900770fafedbc6093b8c82"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_torchflower_modern_industrialization_macerator.json"
-hash = "75df202861df80759ebfe937c8206827f948616a32005249a618944526ca2741"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_torchflower_occultism_crushing.json"
-hash = "5ae9f4580ad38563289826d65299f44351e35cba7f0b80832088cb16aa50c320"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_wither_rose_mekanism_crushing.json"
-hash = "83a070189597dee6fc16de0a84ddda69f5af38e44492359695b04210b716aab5"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_wither_rose_modern_industrialization_macerator.json"
-hash = "08bc878365a77dc900cde3221c498bc4965a48d2703302f8377601e6e5b3fc84"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/productivefarming_wither_rose_occultism_crushing.json"
-hash = "332db31465b880a5965a563a23d97cb8d1dc51ba10e36d913d1932f91ffd5a11"
-
-[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/purple_wildflowers_mekanism_crushing.json"
 hash = "fc3e0425f2faaed33351592904d629d545cbbb0fb185fef9d294c9095fa14895"
 
@@ -57884,42 +57572,6 @@ hash = "590e3e9ca7c8800e51c30367c039b31aceb57e4af6527e1547fef793d294be8f"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/satival_shoot_occultism_crushing.json"
 hash = "41fa36e89cb1d7a86f3e5fbaa2235b0cf19d825140d2ab38750398808c40b7f1"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/sea_holly_mekanism_crushing.json"
-hash = "aaadfe17115fe300a3baf953625e43d79a87cc0212de718858385027d1b7e017"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/sea_holly_modern_industrialization_macerator.json"
-hash = "c16d24784c4b8b76f0553b2be12a91482f2a8bfe0b08f2a42113fc1ca741dc1e"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/sea_holly_occultism_crushing.json"
-hash = "b90830c0677cf4dfafaadeac58e8211dbb28da7f99080e3f0e3e8b90687bae21"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/shiitake_mekanism_crushing.json"
-hash = "d109069e13eceb1b506ba12a7127491660bc138c6753d642b3998f1389ebd950"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/shiitake_modern_industrialization_macerator.json"
-hash = "44df532f2351d0c357174e95abe2329be3afc771d582d122c302ac5d0dca1d2e"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/shiitake_occultism_crushing.json"
-hash = "670a8a1ad00f9053e0756d1fd1148acad391f639f62297976cdf1b31a2671be5"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/skullcap_mekanism_crushing.json"
-hash = "35cfd9acc44d3ef2cff461a620dc92485e27120db5121fd58606b7a2a21fca46"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/skullcap_modern_industrialization_macerator.json"
-hash = "447789ac7fbe86926e9913ae71b1106cad660c3f97d6e3cd615b14236ddc9630"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/skullcap_occultism_crushing.json"
-hash = "3bf3aa708baa34ee36984976f5d5be8993715d8b0649b76c644a2d438760249c"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/spore_blossom_mekanism_crushing.json"
@@ -58016,18 +57668,6 @@ hash = "100f042f683d5515bea0c9af977bc588fec54ed994dbf9c34f06575239184a13"
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/torchflower_occultism_crushing.json"
 hash = "8a743a06bfb79bcb18c458c36b1f52ddd62db58b9a9ef45321d399c58cd4bb94"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/tulip_mekanism_crushing.json"
-hash = "50cc2132d01bacb78eb1ae589bf3ed44d74134073538d35c39e346d55b93095a"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/tulip_modern_industrialization_macerator.json"
-hash = "57e87754b926d2c635712ad256814a8e931293cf893a027b7dfb3d4666426189"
-
-[[files]]
-file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/tulip_occultism_crushing.json"
-hash = "f0b5aab9c316df81f071f2898a9186e739a052f2a4b98bcfa196397aae435531"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/vampire_orchid_mekanism_crushing.json"
@@ -66226,94 +65866,6 @@ file = "kubejs/data/productivefarming/loot_table/blocks/attached_kiwi_stem.json"
 hash = "58a1c8525711f77af6cf91f9f386957d4b4af37d2519bc3a9a6331714c3a0473"
 
 [[files]]
-file = "kubejs/data/productivefarming/loot_table/blocks/cantaloupe.json"
-hash = "ac0bc0a48bd963482a0038758877c5de8a5fc35025caa6d3bcde2a2986c3a960"
-
-[[files]]
-file = "kubejs/data/productivefarming/loot_table/blocks/garlic.json"
-hash = "76d8ccf8e405eb4ca1a8563a06df57b4e209cb26db81ca042f33f3630a332d56"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/almond_fruit.json"
-hash = "d5914e441020612063bb732635c5721c03dd198548ca91edbe7b04f2131f8133"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/apricot_fruit.json"
-hash = "23138f6e5bf59e1c1811d1ecb6590c0507140ed7f25d8bf91f617c5b596c4173"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/avocado_fruit.json"
-hash = "04691fd524f53e84b1da9038a38ed0c4a46cdc9e1ae0bccb5ba1942fe2a6bf7f"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/cashew_fruit.json"
-hash = "c3f8c45a91ec9331a3e98d5e0fb485947c3d137adb4010da5dcb9bcee5db269d"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/cultivated_pear_fruit.json"
-hash = "9fee944fb785c961bb6d39c8b98f37f8d5e3b1ddc7c308804b2e3a15a6a5fed8"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/date_palm_fruit.json"
-hash = "9e17111b49378ca92553335fd3fb2f77e2fc5854028336a26816778d7dd01c4b"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/grapefruit_fruit.json"
-hash = "62f1fc006cef63e29f088b92fa119cd9b52fa1358b315f0771ec95f2b5e0ae5c"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/kumquat_fruit.json"
-hash = "77d93d5a0f843403dde70457815e77f84604d1d8ea1b26292810635338e7c8f5"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/lemon_fruit.json"
-hash = "48af68f47a0ec35d8b62ebfa13cc8616a19718e477364141ae4d9d8f8e5b1452"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/lime_fruit.json"
-hash = "0d66c6143598dedb39957ab3019e83602c3a10f734fd012dd07f6d8a79d58715"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/mango_fruit.json"
-hash = "844b18492d920a80656ad9d21fad2ea19cbe0cb038a6b1f57f1a0d66185e3be5"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/nectarine_fruit.json"
-hash = "39ad14cf74a68e413aa23470248275d7cc17a64232f9abeb4c0aaefff0fe542b"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/nutmeg_fruit.json"
-hash = "25aeb5061a7e010dc6e34f6b6fd93881bdc66807ea81f6ce85bce5cd7bd2432f"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/olive_fruit.json"
-hash = "b0a6b6b5efda9bd6cd7e781e4acfcb63c5ca7fed21d2081d333af1519d54fc41"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/orange_fruit.json"
-hash = "3e76a363511c0f5e227d5565592e92f7b94e50f406678bf6a3cd00838d2fc873"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/peach_fruit.json"
-hash = "fd56196906384b69d55db5f0d7b2a7cda2d2d8242097817d5ca7aef71b521994"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/pecan_fruit.json"
-hash = "9b3322dfef02df29811d7d765b0c59d67824ceee2cce1598fa10db042213ecfd"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/persimmon_fruit.json"
-hash = "600c74dec06378cc825b8f677a7d54da1debe65fc376b9c2e3bd526c1fd52ca5"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/plum_fruit.json"
-hash = "822b2d9f65e1c335137a8532bbe26021d3763852e5eb138b777ede4acb2a2e82"
-
-[[files]]
-file = "kubejs/data/productivetrees/loot_table/blocks/sycamore_fig_fruit.json"
-hash = "281d2578a7789f01864209aedd485bb65dccfef9f40da51f9d717a7d7d1783d6"
-
-[[files]]
 file = "kubejs/data/railcraft/loot_table/blocks/bronze_block.json"
 hash = "02f01d6a1c4c32af4bacfa75d46280d5077826e80d2015225d9a30445fbde90e"
 
@@ -66380,10 +65932,6 @@ hash = "c9fbc31fc9d6a1bf7c66ed18149f3c1803a3d2ad0a95a22d838562f890772ac1"
 [[files]]
 file = "kubejs/data/railcraft/loot_table/blocks/tin_ore.json"
 hash = "5b5de0528d0ebeb9ef0caa1a5565e831c096fc688e19b3f8df30a7dd727f4550"
-
-[[files]]
-file = "kubejs/data/regions_unexplored/loot_table/blocks/barley.json"
-hash = "46786cdf144a519dff9c2fc9122350db382ca904aa3ec3be91123f1638c16634"
 
 [[files]]
 file = "kubejs/data/rnt/tags/worldgen/biome/has_chilling_challenge_tower.json"
@@ -67884,11 +67432,6 @@ hash = "9e2b4bf99725de70b4f7db10a2d0d0781d5817540c01ba3ae7bfc5ad3ce8fea7"
 metafile = true
 
 [[files]]
-file = "mods/Aquaculture-26.1.1-2.9.2.pw.toml"
-hash = "b15872190c3761c3d4f65cb71b68ada1da36cbf85f30d2ceb44c7fb2b40973dd"
-metafile = true
-
-[[files]]
 file = "mods/BadOptimizations-2.4.1-26.1-forge.pw.toml"
 hash = "a1affd6a877fc0ed611f209c5c0db608be85fa4b54419d928a62ae51617f58fb"
 metafile = true
@@ -67896,11 +67439,6 @@ metafile = true
 [[files]]
 file = "mods/BetterF3-18.0.2-NeoForge-26.1.pw.toml"
 hash = "cb691f5cd0802796d954babb0fd3c484ab803e6102a2c0fb889cb9e57951b013"
-metafile = true
-
-[[files]]
-file = "mods/BiomesOPlenty-neoforge-26.1.2-26.1.2.0.21.pw.toml"
-hash = "a520d0be02389ef18c8a363000dc39c6944c7f5bdd5300fa0369aa6336c5d8d4"
 metafile = true
 
 [[files]]
@@ -68001,11 +67539,6 @@ hash = "084dc9110257890ff7f73a6cc44b83af862e63dfc303f2d99eab35041cba6f11"
 metafile = true
 
 [[files]]
-file = "mods/NaturesCompass-26.1-3.3.0-neoforge.pw.toml"
-hash = "1fd26766d7779fa213c1dd460ed6eda13dee754ee4c201b957677a5e20c47587"
-metafile = true
-
-[[files]]
 file = "mods/NoChatReports-NEOFORGE-26.1-v2.19.0.pw.toml"
 hash = "380308e4c44d08c267395d83b24eeba9e057373391368788453489fb0a622634"
 metafile = true
@@ -68013,11 +67546,6 @@ metafile = true
 [[files]]
 file = "mods/NotEnoughTrials-1.21.11-v6.0.pw.toml"
 hash = "63775455b75dc742c3092e5d9e45fe9b91afd10cd292615c5321f305c5c0f795"
-metafile = true
-
-[[files]]
-file = "mods/PWIC-V0.3TD_21_fix.pw.toml"
-hash = "7fc3ab805d5d0d9a2078be01cafe23a6c4a5b75f4e310c6160d8d64122d814df"
 metafile = true
 
 [[files]]
@@ -68113,11 +67641,6 @@ hash = "18ba112cbdd75b2ae165fece7f2c95bf82db07851e14af6ba59c2b53bb020bea"
 metafile = true
 
 [[files]]
-file = "mods/YungsCaveBiomes-26.1.2-NeoForge-4.1.1.pw.toml"
-hash = "4b8d56bfbd1c4a0026f75b26f701d3c77e70eb2d12eeec9c3559f086cc756b6f"
-metafile = true
-
-[[files]]
 file = "mods/abridged-2.0.2-neoforge-26.1.pw.toml"
 hash = "5abd7d28f5b3f7418f1a842ee5e8142b7088e46ce4330f0638701f6058c0967a"
 metafile = true
@@ -68197,11 +67720,6 @@ file = "mods/blockui-1.0.0-diaithir.jar"
 hash = "603d4242c746c42cf9cbe64fae7c4045bb71f657eea1797af9e9d3ae227932eb"
 
 [[files]]
-file = "mods/blooming-biosphere-v1.1.14.pw.toml"
-hash = "7dfba757ffcc92f26784056f62e9b1901d6ea6324f5c2a24899f34a3475db63c"
-metafile = true
-
-[[files]]
 file = "mods/buildinggadgets2-1.4.6.pw.toml"
 hash = "708c867c294379c1d2ce3e12c02a661099fa4a77a2e750e3dbd6c47db21b537d"
 metafile = true
@@ -68209,11 +67727,6 @@ metafile = true
 [[files]]
 file = "mods/c2me-neoforge-mc26.1.2-0.4.0-alpha.0.100.pw.toml"
 hash = "6e2cf1eb95c5e34883b089e4d2c14406b6b0c681c3e13045281f7a8eb447aa16"
-metafile = true
-
-[[files]]
-file = "mods/camol-26.1.2-0.4.1.pw.toml"
-hash = "557e67ed6c67f211e8be5192c0d28a483307eddb118ae08b4cd7262ed95f9cee"
 metafile = true
 
 [[files]]
@@ -68267,11 +67780,6 @@ hash = "0b8a0b7607767df922d049a16990fe246ab2430aac2db0ce390535d7f6766e38"
 metafile = true
 
 [[files]]
-file = "mods/cookingforblockheads-neoforge-26.1.2-26.1.2.6.pw.toml"
-hash = "9997ead642a41014b64a2aa98b31eaa1c1a11ffb259715a11c64465c9c1485e4"
-metafile = true
-
-[[files]]
 file = "mods/craftedcore-neoforge-8.1-diaithir.1.jar"
 hash = "ee1345f4c017722df9e130517f327b4d0d7dacc116d9c3b0e768291aae4517cb"
 
@@ -68321,6 +67829,10 @@ hash = "040e7725313ccf05766ee1bcaaa1d2cafba09331c7aba76f9bedfea6be6b9498"
 file = "mods/diaithir-audio-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "bc0c0c6c5bde89dd5dddcdb304f9e6a8516f8caec9fb726fb7454a2038b4b483"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-blocks-suite-neoforge-26.1.2-1.0.0.jar"
+hash = "0477d3ed92bd9e089d3759c8e1feb54d17ae776c5f95edc97b27db04efeda9db"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
@@ -68384,11 +67896,11 @@ hash = "0417dd8d6730ffcdcbbf257bf63ee1552c446a6ee58f126ed591c99f5ca21463"
 
 [[files]]
 file = "mods/diaithir-overworld-biomes-neoforge-26.1.2-1.0.0.jar"
-hash = "c116d410ac95658aa2b419ee722880fbc6b3f69ce5b9648c1b5539b9f53b6c4d"
+hash = "a26770ced4657a9ace26725b7c9189e3883671f689f9ce8c919f695a335ae4c8"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "a3784a1e2441771b7a3228b76c4e9f3ca450f99241bcbf651255995822b8d04c"
+hash = "85bdbdbce4dc2b558b1461561f37b6e7524092466f81d8c49290ad2576deb6a2"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
@@ -68405,6 +67917,10 @@ hash = "f5a61731b186b35ec1080e03d16ba4947cbfd9e6b45a7d95044ff3e1d625d2f1"
 [[files]]
 file = "mods/diaithir-tech-suite-neoforge-26.1.2-1.0.0.jar"
 hash = "ff219771af41e7729303575a111ad3d56bd0233a29abdf1fefa55c5002ca211b"
+
+[[files]]
+file = "mods/diaithir-terrain-neoforge-26.1.2-1.0.0.jar"
+hash = "c116d410ac95658aa2b419ee722880fbc6b3f69ce5b9648c1b5539b9f53b6c4d"
 
 [[files]]
 file = "mods/diaithir-world-suite-neoforge-26.1.2-1.0.0.jar"
@@ -68476,11 +67992,6 @@ metafile = true
 [[files]]
 file = "mods/eternalstarlight-0.9.1+mc26.1.2.jar"
 hash = "d28804de6ae46792c3419c399f80e0d57da64d80c457092318850ccb22e48c4f"
-
-[[files]]
-file = "mods/farmingforblockheads-neoforge-26.1.2-26.1.2.5.pw.toml"
-hash = "1e4ceb457e6198c71151120ed4e03e2598ea6feee29c5b7b194dbca2aa015402"
-metafile = true
 
 [[files]]
 file = "mods/ferritecore-9.0.0-neoforge.pw.toml"
@@ -68647,36 +68158,6 @@ hash = "a55cd4c06c710ceccaf2bad3aecd77fe2b87865d2de0d0654eb33d5d76431f7c"
 metafile = true
 
 [[files]]
-file = "mods/mcw-bridges-3.1.2-mc26.1neoforge.pw.toml"
-hash = "2b0c131622f123ee797b4b0f9fa7bca77c4bf00962781322d74549c29cb6e9e3"
-metafile = true
-
-[[files]]
-file = "mods/mcw-furniture-3.4.2-mc26.1neoforge.pw.toml"
-hash = "ed3d51efe1fa2076dc5c57028de0f8ff471262ba147c13bec427baec2337daf1"
-metafile = true
-
-[[files]]
-file = "mods/mcw-lights-1.1.5-mc26.1neoforge.pw.toml"
-hash = "8cd6e38f6c5a65389f40afd258cf36ff86be4afaa93be23794b9c7365321ca8c"
-metafile = true
-
-[[files]]
-file = "mods/mcw-roofs-2.3.2-mc26.1neoforge.pw.toml"
-hash = "cbf5a83d81efb28d132f0eb8d4f0582c159dca63f50d4d83e1a228c2502888dc"
-metafile = true
-
-[[files]]
-file = "mods/mcw-stairs-1.0.2-mc26.1neoforge.pw.toml"
-hash = "21b1d262b7b9433b2b32b773d03eb555b1e2071f00dc3aeaeb295cfeec26d124"
-metafile = true
-
-[[files]]
-file = "mods/mcw-windows-2.4.2-mc26.1neoforge.pw.toml"
-hash = "22f0fe5b01a19483af93892a2018b08a55e9ac97fc72d1f500da6d72cbb3ec43"
-metafile = true
-
-[[files]]
 file = "mods/merequester-neoforge-26.1.2-1.5.1.pw.toml"
 hash = "256250a350ff319ac72ba3f55c65c44d9eb1984a01502723912fc6e6b4a47200"
 metafile = true
@@ -68720,11 +68201,6 @@ hash = "1f2e18acca3a510669eb0971b2c7e714036a5748a1cc5160308c1be87771f808"
 metafile = true
 
 [[files]]
-file = "mods/natures_spirit-neoforge-2.3.0_26.1.2.pw.toml"
-hash = "d14ba815587859669c1ce2edf0603a8623482629ef883833c44f0126854f2c80"
-metafile = true
-
-[[files]]
 file = "mods/neoorigins-2.2.30_26.1.pw.toml"
 hash = "fe6c9d5b271819c4c1a28f4d863c21540b33f430c30050dbfe2dcb0af00d212e"
 metafile = true
@@ -68761,16 +68237,6 @@ hash = "b5e5672397990e4fabee0b29d24b01d53866c6d0862221228ae702614642df92"
 [[files]]
 file = "mods/productivebees-26.1.2-15.3.0.pw.toml"
 hash = "78bd3bc324dea4feb17734415d76fff686fc3dec3dcebf88ae55af8089f09442"
-metafile = true
-
-[[files]]
-file = "mods/productivefarming-26.1.2-0.13.0.pw.toml"
-hash = "2bb77fbe0e974e3b2b3f55ab9381a4c216cc73fdc20948d9ee90664f0ccd0f27"
-metafile = true
-
-[[files]]
-file = "mods/productivetrees-26.1.2-1.3.1.pw.toml"
-hash = "ea4f9524c198d74c5f9c1ac86327b030104833fb388bd0d8b06913a52efb1f86"
 metafile = true
 
 [[files]]
