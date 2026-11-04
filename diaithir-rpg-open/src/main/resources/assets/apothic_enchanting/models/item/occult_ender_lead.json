@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "apothic_enchanting:items/ender_lead",
+        "layer1": "apothic_enchanting:items/occult_ender_lead_souls"
+    }
+}

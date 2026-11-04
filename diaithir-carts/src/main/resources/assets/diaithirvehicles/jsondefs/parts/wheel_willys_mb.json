@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Willys MB Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:2"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.3,
+  "height": 0.76,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Willys MB Wheel",
+   "modelName": "wheel_willys_mb",
+   "textureName": "wheel_willys_mb",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

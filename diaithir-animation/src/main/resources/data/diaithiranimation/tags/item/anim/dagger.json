@@ -1,0 +1,197 @@
+{
+"replace": false,
+"values": [
+{
+"id": "#diaithircombat:weapons/dagger",
+"required": false
+},
+{
+"id": "#diaithircombat:weapons/rapier",
+"required": false
+},
+{
+"id": "ae2:certus_quartz_cutting_knife",
+"required": false
+},
+{
+"id": "ae2:nether_quartz_cutting_knife",
+"required": false
+},
+{
+"id": "aquaculture:diamond_fillet_knife",
+"required": false
+},
+{
+"id": "aquaculture:gold_fillet_knife",
+"required": false
+},
+{
+"id": "aquaculture:iron_fillet_knife",
+"required": false
+},
+{
+"id": "aquaculture:neptunium_fillet_knife",
+"required": false
+},
+{
+"id": "aquaculture:stone_fillet_knife",
+"required": false
+},
+{
+"id": "aquaculture:wooden_fillet_knife",
+"required": false
+},
+{
+"id": "croptopia:knife",
+"required": false
+},
+{
+"id": "diaithir_classes:ceilg_dagger_bronze",
+"required": false
+},
+{
+"id": "diaithir_classes:ceilg_dagger_composite",
+"required": false
+},
+{
+"id": "diaithir_classes:ceilg_dagger_steel",
+"required": false
+},
+{
+"id": "diaithirrelics:shadow_dagger",
+"required": false
+},
+{
+"id": "diaithirrelics:shadow_dagger/active",
+"required": false
+},
+{
+"id": "diaithirrelics:shadow_dagger/age",
+"required": false
+},
+{
+"id": "diaithirrelics:shadow_dagger/passive",
+"required": false
+},
+{
+"id": "farmersdelight:copper_knife",
+"required": false
+},
+{
+"id": "farmersdelight:diamond_knife",
+"required": false
+},
+{
+"id": "farmersdelight:flint_knife",
+"required": false
+},
+{
+"id": "farmersdelight:golden_knife",
+"required": false
+},
+{
+"id": "farmersdelight:iron_knife",
+"required": false
+},
+{
+"id": "farmersdelight:netherite_knife",
+"required": false
+},
+{
+"id": "neovitae:amethyst_throwing_dagger",
+"required": false
+},
+{
+"id": "neovitae:throwing_dagger",
+"required": false
+},
+{
+"id": "neovitae:throwing_dagger_syringe",
+"required": false
+},
+{
+"id": "neovitae:tipped_throwing_dagger",
+"required": false
+},
+{
+"id": "occultism:butcher_knife",
+"required": false
+},
+{
+"id": "occultism:iesnium_butcher_knife",
+"required": false
+},
+{
+"id": "occultism:ritual_dummy/craft_iesnium_butcher_knife",
+"required": false
+},
+{
+"id": "refurbished_furniture:knife",
+"required": false
+},
+{
+"id": "rogues:diamond_dagger",
+"required": false
+},
+{
+"id": "rogues:flint_dagger",
+"required": false
+},
+{
+"id": "rogues:golden_dagger",
+"required": false
+},
+{
+"id": "rogues:iron_dagger",
+"required": false
+},
+{
+"id": "rogues:netherite_dagger",
+"required": false
+},
+{
+"id": "rootsclassic:bark_knife",
+"required": false
+},
+{
+"id": "sgearmetalworks:dagger_cast",
+"required": false
+},
+{
+"id": "sgearmetalworks:knife_cast",
+"required": false
+},
+{
+"id": "silentgear:crude_knife",
+"required": false
+},
+{
+"id": "silentgear:dagger",
+"required": false
+},
+{
+"id": "silentgear:dagger_blueprint",
+"required": false
+},
+{
+"id": "silentgear:dagger_template",
+"required": false
+},
+{
+"id": "silentgear:knife",
+"required": false
+},
+{
+"id": "silentgear:knife_blueprint",
+"required": false
+},
+{
+"id": "silentgear:knife_template",
+"required": false
+},
+{
+"id": "vampirism:ritual_knife",
+"required": false
+}
+]
+}

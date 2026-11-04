@@ -1,0 +1,20 @@
+{
+    "structures": [
+        {
+            "structure": "littlestructure:campfire_off",
+            "weight": 1
+        },
+        {
+            "structure": "littlestructure:campfire_on",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 35,
+        "separation": 20,
+        "spread_type": "linear",
+        "salt": 23211236,
+    "predicate": "littlestructure:no_water"
+    }
+}

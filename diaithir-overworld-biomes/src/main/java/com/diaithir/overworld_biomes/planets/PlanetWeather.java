@@ -56,6 +56,17 @@ public final class PlanetWeather {
         return s == null || p == null ? "no weather state" : (s.wet ? (s.thunder ? "storm" : "wet") : "clear") + " for " + s.left + " ticks (" + p.bias() + (p.stormy() ? ", stormy" : "") + ", particle " + p.particle() + ")";
     }
 
+    /** True while the planet's own weather is wet (rain, snow, ash or a storm). */
+    public static boolean wet(ServerLevel level) {
+        State s = STATES.get(level.dimension());
+        return s != null && s.wet;
+    }
+
+    public static boolean storm(ServerLevel level) {
+        State s = STATES.get(level.dimension());
+        return s != null && s.wet && s.thunder;
+    }
+
     static void forget(ResourceKey<Level> k) { STATES.remove(k); }
 
     static void tick(ServerLevel level) {

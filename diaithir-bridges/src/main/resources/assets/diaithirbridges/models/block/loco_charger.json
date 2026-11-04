@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "diaithirbridges:block/loco_charger_top",
+    "side": "diaithirbridges:block/loco_charger_side"
+  }
+}

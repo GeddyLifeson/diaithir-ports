@@ -12,12 +12,12 @@
     "mass_kg": 2.4,
     "heal_pulse_J": 1200
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:rods/wooden",
-    "diaithir_classes:ligichi_emblem"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_crozier_steel",
@@ -30,13 +30,13 @@
     "mass_kg": 2.6,
     "heal_pulse_J": 2400
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:rods/wooden",
-    "diaithir_classes:ligichi_emblem"
-   ],
    "age": "V",
-   "upgrade_from": "ligichi_crozier_bronze"
+   "upgrade_from": "ligichi_crozier_bronze",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_crozier_composite",
@@ -49,13 +49,13 @@
     "mass_kg": 2.2,
     "heal_pulse_J": 4800
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:gems/amber",
-    "diaithir_classes:ligichi_emblem"
-   ],
    "age": "VII",
-   "upgrade_from": "ligichi_crozier_steel"
+   "upgrade_from": "ligichi_crozier_steel",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_hammer_bronze",
@@ -68,12 +68,12 @@
     "mass_kg": 4.8,
     "taunt_radius_m": 8
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:storage_blocks/bronze",
-    "diaithir_classes:ligichi_emblem"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_hammer_steel",
@@ -86,13 +86,13 @@
     "mass_kg": 5.0,
     "taunt_radius_m": 10
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:storage_blocks/steel",
-    "diaithir_classes:ligichi_emblem"
-   ],
    "age": "V",
-   "upgrade_from": "ligichi_hammer_bronze"
+   "upgrade_from": "ligichi_hammer_bronze",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_hammer_composite",
@@ -105,13 +105,13 @@
     "mass_kg": 4.6,
     "taunt_radius_m": 12
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:storage_blocks/composite",
-    "diaithir_classes:ligichi_emblem"
-   ],
    "age": "VII",
-   "upgrade_from": "ligichi_hammer_steel"
+   "upgrade_from": "ligichi_hammer_steel",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_aegis_bronze",
@@ -124,12 +124,12 @@
     "mass_kg": 3.2,
     "spell": "barrier_ward"
    },
-   "recipe": [
-    "c:ingots/bronze",
-    "c:leathers",
-    "diaithir_classes:ligichi_emblem"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_aegis_steel",
@@ -142,13 +142,13 @@
     "mass_kg": 3.5,
     "spell": "barrier_ward"
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:leathers",
-    "diaithir_classes:ligichi_emblem"
-   ],
    "age": "V",
-   "upgrade_from": "ligichi_aegis_bronze"
+   "upgrade_from": "ligichi_aegis_bronze",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_aegis_composite",
@@ -161,13 +161,13 @@
     "mass_kg": 3.0,
     "spell": "barrier_ward"
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:gems/amber",
-    "diaithir_classes:ligichi_emblem"
-   ],
    "age": "VII",
-   "upgrade_from": "ligichi_aegis_steel"
+   "upgrade_from": "ligichi_aegis_steel",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_plate_helmet_steel",
@@ -179,14 +179,12 @@
     "mass_kg": 2.1,
     "set": "ligichi_warded"
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_plate_chest_steel",
@@ -198,17 +196,12 @@
     "mass_kg": 6.4,
     "set": "ligichi_warded"
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_plate_legs_steel",
@@ -220,16 +213,12 @@
     "mass_kg": 4.2,
     "set": "ligichi_warded"
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_plate_boots_steel",
@@ -241,13 +230,12 @@
     "mass_kg": 1.9,
     "set": "ligichi_warded"
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_plate_helmet_composite",
@@ -260,14 +248,12 @@
     "mass_kg": 1.8,
     "set": "ligichi_radiant"
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_plate_chest_composite",
@@ -280,17 +266,12 @@
     "mass_kg": 5.2,
     "set": "ligichi_radiant"
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_plate_legs_composite",
@@ -303,16 +284,12 @@
     "mass_kg": 3.6,
     "set": "ligichi_radiant"
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_plate_boots_composite",
@@ -325,13 +302,12 @@
     "mass_kg": 1.6,
     "set": "ligichi_radiant"
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite",
-    "c:ingots/composite"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_robe_chest_bronze",
@@ -343,14 +319,12 @@
     "mass_kg": 1.1,
     "set": "ligichi_robed"
    },
-   "recipe": [
-    "c:leathers",
-    "c:leathers",
-    "c:leathers",
-    "c:ingots/bronze",
-    "c:string"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_robe_chest_composite",
@@ -363,14 +337,12 @@
     "mass_kg": 0.9,
     "set": "ligichi_robed"
    },
-   "recipe": [
-    "c:leathers",
-    "c:leathers",
-    "c:ingots/composite",
-    "c:gems/amber",
-    "c:string"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_banner_relic",
@@ -382,14 +354,13 @@
     "duration_s": 20,
     "cooldown_s": 45
    },
-   "recipe": [
-    "c:ingots/steel",
-    "c:leathers",
-    "c:dyes/red",
-    "diaithir_classes:ligichi_emblem"
-   ],
    "age": "V",
-   "routed_to": "diaithir-relics"
+   "routed_to": "diaithir-relics",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_lamp_of_dawn",
@@ -401,14 +372,13 @@
     "radius_m": 10,
     "consumes": "c:gems/amber"
    },
-   "recipe": [
-    "c:ingots/composite",
-    "c:gems/amber",
-    "c:glass_blocks",
-    "c:dusts/glowstone"
-   ],
    "age": "VII",
-   "routed_to": "diaithir-relics"
+   "routed_to": "diaithir-relics",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ligichi_rune_mercy",
@@ -419,11 +389,12 @@
     "amount": 1.5,
     "op": "add_value"
    },
-   "recipe": [
-    "c:gems/amber",
-    "c:dusts/redstone"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "ligichi_rune_bulwark",
@@ -434,11 +405,12 @@
     "amount": 1.0,
     "op": "add_value"
    },
-   "recipe": [
-    "c:gems/amber",
-    "c:ingots/steel"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "spell_balm_of_ligichi",

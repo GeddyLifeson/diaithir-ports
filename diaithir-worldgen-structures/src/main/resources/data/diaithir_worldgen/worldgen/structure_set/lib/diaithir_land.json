@@ -58,7 +58,7 @@
   },
   {
    "structure": "diaithir_worldgen:lib/diaithir/hall_2_land",
-   "weight": 6
+   "weight": 7
   },
   {
    "structure": "diaithir_worldgen:lib/diaithir/hall_3_land",
@@ -74,7 +74,7 @@
   },
   {
    "structure": "diaithir_worldgen:lib/diaithir/landmark_2_land",
-   "weight": 14
+   "weight": 18
   },
   {
    "structure": "diaithir_worldgen:lib/diaithir/landmark_3_land",
@@ -90,7 +90,7 @@
   },
   {
    "structure": "diaithir_worldgen:lib/diaithir/temple_2_land",
-   "weight": 2
+   "weight": 3
   },
   {
    "structure": "diaithir_worldgen:lib/diaithir/tomb_0_land",

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:hazel_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:hazel_planks",
+  "count": 4
+ }
+}

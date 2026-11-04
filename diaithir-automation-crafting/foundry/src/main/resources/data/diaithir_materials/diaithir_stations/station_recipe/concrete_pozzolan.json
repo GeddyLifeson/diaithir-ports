@@ -1,0 +1,23 @@
+{
+  "station": "station.hearth_bench",
+  "stage": "process",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "minecraft:sand",
+      "count": 2
+    },
+    {
+      "item": "minecraft:calcite",
+      "count": 1
+    },
+    {
+      "item": "minecraft:tuff",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:concrete_pozzolan",
+    "count": 2
+  }
+}

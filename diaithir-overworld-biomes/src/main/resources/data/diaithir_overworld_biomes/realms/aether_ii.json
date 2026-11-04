@@ -3155,7 +3155,7 @@
    "role": "passive",
    "hp": 15,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.79
   },
   {
    "id": "aerbunny",
@@ -3163,7 +3163,7 @@
    "role": "passive",
    "hp": 8,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.89
   },
   {
    "id": "aerwhale",
@@ -3171,7 +3171,7 @@
    "role": "passive",
    "hp": 9,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.8
   },
   {
    "id": "arctic_burrukai",
@@ -3179,7 +3179,7 @@
    "role": "passive",
    "hp": 30,
    "atk": 2,
-   "scale": 1.0
+   "scale": 1.09
   },
   {
    "id": "arctic_kirrid",
@@ -3187,7 +3187,7 @@
    "role": "passive",
    "hp": 20,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.89
   },
   {
    "id": "arctic_taegore",
@@ -3195,7 +3195,7 @@
    "role": "monster",
    "hp": 60,
    "atk": 7,
-   "scale": 1.0
+   "scale": 1.11
   },
   {
    "id": "arkenium_taluton",
@@ -3203,7 +3203,7 @@
    "role": "monster",
    "hp": 100,
    "atk": 9,
-   "scale": 1.0
+   "scale": 1.23
   },
   {
    "id": "bladeshroom_hunter",
@@ -3211,7 +3211,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 4,
-   "scale": 1.0
+   "scale": 1.38
   },
   {
    "id": "blue_swet",
@@ -3219,7 +3219,7 @@
    "role": "monster",
    "hp": 8,
    "atk": 1.5,
-   "scale": 1.0
+   "scale": 1.39
   },
   {
    "id": "carrion_sprout",
@@ -3227,7 +3227,7 @@
    "role": "passive",
    "hp": 12,
    "atk": 2,
-   "scale": 1.0
+   "scale": 1.09
   },
   {
    "id": "cockatrice",
@@ -3235,7 +3235,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.21
   },
   {
    "id": "edward",
@@ -3243,7 +3243,7 @@
    "role": "monster",
    "hp": 24,
    "atk": 5,
-   "scale": 1.0
+   "scale": 1.23
   },
   {
    "id": "flying_cow",
@@ -3251,7 +3251,7 @@
    "role": "passive",
    "hp": 9,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.85
   },
   {
    "id": "glitterwing",
@@ -3259,7 +3259,7 @@
    "role": "passive",
    "hp": 9,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.93
   },
   {
    "id": "golden_swet",
@@ -3267,7 +3267,7 @@
    "role": "monster",
    "hp": 8,
    "atk": 1.5,
-   "scale": 1.0
+   "scale": 1.19
   },
   {
    "id": "gravitite_taluton",
@@ -3275,7 +3275,7 @@
    "role": "monster",
    "hp": 100,
    "atk": 9,
-   "scale": 1.0
+   "scale": 0.82
   },
   {
    "id": "highfields_burrukai",
@@ -3283,7 +3283,7 @@
    "role": "passive",
    "hp": 30,
    "atk": 2,
-   "scale": 1.0
+   "scale": 1.02
   },
   {
    "id": "highfields_kirrid",
@@ -3291,7 +3291,7 @@
    "role": "passive",
    "hp": 20,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.98
   },
   {
    "id": "highfields_taegore",
@@ -3299,7 +3299,7 @@
    "role": "monster",
    "hp": 60,
    "atk": 7,
-   "scale": 1.0
+   "scale": 0.88
   },
   {
    "id": "magnetic_burrukai",
@@ -3307,7 +3307,7 @@
    "role": "passive",
    "hp": 30,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.87
   },
   {
    "id": "magnetic_kirrid",
@@ -3315,7 +3315,7 @@
    "role": "passive",
    "hp": 20,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.73
   },
   {
    "id": "magnetic_taegore",
@@ -3323,7 +3323,7 @@
    "role": "monster",
    "hp": 60,
    "atk": 7,
-   "scale": 1.0
+   "scale": 1.1
   },
   {
    "id": "mimic",
@@ -3331,7 +3331,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 3,
-   "scale": 1.0
+   "scale": 0.95
   },
   {
    "id": "moa",
@@ -3339,7 +3339,7 @@
    "role": "passive",
    "hp": 30,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.76
   },
   {
    "id": "phyg",
@@ -3347,7 +3347,7 @@
    "role": "passive",
    "hp": 20,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.73
   },
   {
    "id": "prismallard",
@@ -3355,7 +3355,7 @@
    "role": "passive",
    "hp": 9,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.75
   },
   {
    "id": "sentry_golem",
@@ -3363,7 +3363,7 @@
    "role": "boss",
    "hp": 700,
    "atk": 18,
-   "scale": 1.6
+   "scale": 1.74
   },
   {
    "id": "shroudwing",
@@ -3371,7 +3371,7 @@
    "role": "monster",
    "hp": 18,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.1
   },
   {
    "id": "skephid",
@@ -3379,7 +3379,7 @@
    "role": "monster",
    "hp": 16,
    "atk": 3,
-   "scale": 1.0
+   "scale": 0.96
   },
   {
    "id": "skyroot_lizard",
@@ -3387,7 +3387,7 @@
    "role": "passive",
    "hp": 8,
    "atk": 2,
-   "scale": 1.0
+   "scale": 1.04
   },
   {
    "id": "slider",
@@ -3395,7 +3395,7 @@
    "role": "boss",
    "hp": 700,
    "atk": 18,
-   "scale": 1.6
+   "scale": 1.5
   },
   {
    "id": "tempest",
@@ -3403,7 +3403,7 @@
    "role": "boss",
    "hp": 290,
    "atk": 6,
-   "scale": 1.6
+   "scale": 1.79
   },
   {
    "id": "zephyr",
@@ -3411,7 +3411,7 @@
    "role": "monster",
    "hp": 18,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.39
   }
  ]
 }

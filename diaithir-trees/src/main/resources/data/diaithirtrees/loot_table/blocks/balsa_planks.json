@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "diaithirtrees:blocks/balsa_planks",
+ "pools": [
+  {
+   "rolls": 1,
+   "bonus_rolls": 0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "diaithirtrees:balsa_planks"
+    }
+   ]
+  }
+ ]
+}

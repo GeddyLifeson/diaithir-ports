@@ -1,0 +1,37 @@
+{
+    "name": "Níveis de Mundo",
+    "icon": "apotheosis:textures/gui/book/summit_icon.png",
+    "category": "apotheosis:adventure/world_tiers",
+    "sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Um $(6)Nível de Mundo$() é um modificador de poder individual para cada jogador. Cada nível controla quais conteúdos podem aparecer, a força dos inimigos, os bônus disponíveis e muito mais."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Os níveis",
+            "text": "Existem cinco níveis, e cada um aumenta a dificuldade do mundo e as recompensas disponíveis.$(p)Os níveis são $(9)Refúgio$(), $(9)Fronteira$(), $(9)Ascensão$(), $(9)Cume$() e $(9)Pináculo$()."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Modificadores de nível",
+            "text": "Cada nível possui seus próprios modificadores, aplicados tanto aos jogadores quanto às criaturas que surgem nele.$(p)Você pode consultar todos os modificadores de cada nível na $(l:apotheosis:adventure/world_tiers/select_screen)tela de seleção de Nível de Mundo$()."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Chances por raridade",
+            "text": "Os Níveis de Mundo também controlam o peso de cada raridade.$(p)Conforme você progride, itens de raridades maiores e Invasores Apóticos se tornam mais comuns.$(p)As chances exatas são exibidas na $(l:apotheosis:adventure/world_tiers/select_screen)tela de seleção de Nível de Mundo$()."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Gemas",
+            "text": "Os Níveis de Mundo também determinam quais gemas podem surgir e com quais Purezas.$(p)As chances detalhadas de cada pureza também podem ser consultadas na tela de seleção."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Outras observações",
+            "text": "Os Níveis de Mundo também podem ajustar as taxas de surgimento de outros conteúdos, como afixos, saques com afixo e elites.$(p)Essas taxas não são exibidas, mas o conteúdo disponível pode variar entre os níveis."
+        }
+    ]
+}

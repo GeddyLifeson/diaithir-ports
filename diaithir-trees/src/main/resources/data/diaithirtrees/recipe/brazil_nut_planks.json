@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:brazil_nut_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:brazil_nut_planks",
+  "count": 4
+ }
+}
