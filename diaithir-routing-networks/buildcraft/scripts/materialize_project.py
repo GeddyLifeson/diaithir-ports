@@ -414,6 +414,8 @@ def _neoforge_build_gradle(properties: dict[str, str], target: str) -> str:
         if dep and _compat_enabled(properties, target, name):
             deps.append(f"    compileOnly {_groovy(dep)}")
             deps.append(f"    localRuntime {_groovy(dep)}")
+    # Diaithir: BuildCraft reads UpgradeHost (diaithir-upgrades, publishToMavenLocal first).
+    deps.append("    implementation 'net.diaithir:diaithir-upgrades:1.0.0'")
     junit = _target_property(properties, target, "deps.junit")
     deps.extend(
         [
@@ -487,6 +489,7 @@ tasks.matching {{ it.name == 'runData' }}.configureEach {{
 }}
 
 repositories {{
+    mavenLocal()
     mavenCentral()
     exclusiveContent {{
         forRepository {{
