@@ -28,6 +28,7 @@ public final class DiaithirClaims {
         ATTACH.register(bus);
         new net.diaithir.claims.waypoints.DiaithirWaypoints(bus);
         new net.diaithir.claims.compass.DiaithirCompass(bus);
+        new net.diaithir.claims.ultimine.DiaithirUltimine(bus);
         bus.addListener((net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent e) ->
             e.registrar("1").optional()
                 .playToClient(MapPayload.TYPE, MapPayload.CODEC, (payload, ctx) -> {

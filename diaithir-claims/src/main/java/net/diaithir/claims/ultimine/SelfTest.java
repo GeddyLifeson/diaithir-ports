@@ -1,4 +1,4 @@
-package net.diaithir.ultimine;
+package net.diaithir.claims.ultimine;
 
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;

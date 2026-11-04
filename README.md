@@ -56,3 +56,4 @@ Four standalone clean-room jars are now features of existing modules, and two mo
 - diaithir-voice (voicechat stand-in) -> diaithir-voice-interaction, package `voice`. Configs `diaithir-voice-common.toml` and `diaithir-voice-client.toml`.
 - New: Structure Compass (diaithir-claims, package `compass`; use names the nearest structure of the chosen kind, sneak-use picks the next kind) and Sound Physics (diaithir-world-visuals, package `soundphysics`; muffles sound through solid blocks, occlusion only, no reverb). Both MIT, clean-room.
 - Sodium stays a separate jar (Polyform Shield renderer mixin). Trash slot, inventory sorting, dynamic lights and longer chat history were already folded.
+- diaithir-ultimine (FTB Ultimine stand-in) -> diaithir-claims, package `ultimine` (same ids, `/ultimine`).

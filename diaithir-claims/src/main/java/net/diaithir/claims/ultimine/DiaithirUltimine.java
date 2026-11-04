@@ -1,4 +1,4 @@
-package net.diaithir.ultimine;
+package net.diaithir.claims.ultimine;
 
 import com.mojang.brigadier.CommandDispatcher;
 import java.util.ArrayDeque;
@@ -16,12 +16,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.level.block.BreakBlockEvent;
 
-@Mod(DiaithirUltimine.ID)
 public final class DiaithirUltimine {
     public static final String ID = "diaithirultimine";
     public static final int MAX_BLOCKS = 64;
