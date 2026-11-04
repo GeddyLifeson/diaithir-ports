@@ -1,5 +1,6 @@
 package net.diaithir.materials;
 
+import net.diaithir.stations.DiaithirStations;
 import net.diaithir.stations.StationRecipe;
 import net.diaithir.stations.StationRecipes;
 
@@ -8,7 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/** The property table is sane, every built stage is registered with the table's strength, and the concrete chain has recipes at the right stations. */
+/** The property table is sane, every built stage is registered with the table's strength, and each has a station recipe. */
 final class MaterialsSelfTest {
     private MaterialsSelfTest() {}
 
@@ -44,12 +45,12 @@ final class MaterialsSelfTest {
         long built = Materials.all().stream().filter(Materials.Row::built).count();
         check(fails, built == DiaithirMaterials.BLOCK_BY_ID.size() + 1, "built rows (" + built + ") do not match registered stages");
 
-        // concrete chain: pozzolan at the hearth bench, cement at the smeltery, Portland at the steam forge, reinforced and precast at the assembler
-        String[][] chain = {{"station.hearth_bench", "concrete_pozzolan"}, {"station.smeltery", "cement_powder"}, {"station.steam_forge", "concrete_portland"},
-                {"machine.assembler", "concrete_reinforced"}, {"machine.assembler", "concrete_precast"}};
-        for (String[] c : chain) {
-            boolean ok = StationRecipes.forStation(c[0]).stream().anyMatch((StationRecipe r) -> r.result().item().getRegisteredName().endsWith(":" + c[1]));
-            check(fails, ok, c[1] + " has no recipe at " + c[0]);
+        // every built stage has a recipe at one of the Foundry stations
+        for (Materials.Row row : Materials.all()) {
+            if (!row.built()) continue;
+            boolean ok = DiaithirStations.STATIONS.values().stream().anyMatch(st -> StationRecipes.forStation(st).stream()
+                    .anyMatch((StationRecipe r) -> r.result().item().getRegisteredName().endsWith(":" + row.id())));
+            check(fails, ok, row.id() + " has no station recipe");
         }
         return fails;
     }

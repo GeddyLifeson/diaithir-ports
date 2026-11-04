@@ -2,8 +2,6 @@
   "station": "station.steam_forge",
   "stage": "process",
   "time_s": 5,
-  "power": "steam",
-  "w": 20000.0,
   "ingredients": [
     {
       "item": "diaithir_materials:cement_powder",
@@ -21,5 +19,7 @@
   "result": {
     "id": "diaithir_materials:concrete_portland",
     "count": 4
-  }
+  },
+  "power": "steam",
+  "w": 20000.0
 }
