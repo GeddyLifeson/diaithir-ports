@@ -15,7 +15,7 @@ import net.minecraft.world.phys.AABB;
 
 /**
  * Reads the cart on the rail directly above it and gives a redstone signal, so a circuit gate or reader can see vehicles:
- * 0 no cart, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for stop number (signal - 2), 14 a scheduled cart with no crew waiting for one,
+ * 0 no cart, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for stop number (signal - 2; 13 means stop 11 or any later one, since a signal has 16 levels), 14 a scheduled cart with no crew waiting for one,
  * 15 an autonomous cart (capable type with a module fitted).
  */
 public final class CartReader extends Block {
@@ -32,7 +32,9 @@ public final class CartReader extends Block {
     @Override protected boolean isSignalSource(BlockState state) { return true; }
 
     @Override
-    protected int getSignal(BlockState state, BlockGetter level, BlockPos pos, Direction dir) { return state.getValue(POWER); }
+    protected int getSignal(BlockState state, BlockGetter level, BlockPos pos, Direction dir) {
+        return dir == Direction.DOWN ? 0 : state.getValue(POWER);   // never power the rail above (a station rail would be released early)
+    }
 
     @Override
     protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState old, boolean moved) {

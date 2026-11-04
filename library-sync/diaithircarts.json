@@ -72,7 +72,7 @@
  {
   "id": "diaithircarts:timetable",
   "name": "Timetable",
-  "text": "Use on station rails in order to write the stops of a run, then use on a cart to give it the schedule; it loops. A scheduled cart stops only at its next stop and runs only with a rider aboard (a player, villager or other crew) until Age VII, when schedules run with no crew. Sneak and use in the air to wipe it. Age V."
+  "text": "Use on station rails in order to write the stops of a run, then use on a cart to give it the schedule; it loops. A scheduled cart stops only at its next stop and runs only with a rider aboard (a player, villager or other crew), unless it is autonomous: a capable vehicle type with an Autonomy Module fitted. Sneak and use in the air to wipe it. Age V."
  },
  {
   "id": "diaithircarts:autonomy_module",
@@ -82,6 +82,6 @@
  {
   "id": "diaithircarts:cart_reader",
   "name": "Cart Reader",
-  "text": "Put it under a rail. Gives a redstone signal for the cart above it: 0 none, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for that stop (signal minus 2), 14 a scheduled cart with no crew waiting for one, 15 an autonomous cart. Age V."
+  "text": "Put it under a rail. Gives a redstone signal for the cart above it: 0 none, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for that stop (signal minus 2; 13 means stop 11 or any later stop), 14 a scheduled cart with no crew waiting for one, 15 an autonomous cart. Age V."
  }
 ]

@@ -19,8 +19,9 @@ w(f'data/{ID}/recipe/timetable.json', {'type': 'minecraft:crafting_shapeless', '
 lp = f'{R}/assets/{ID}/lang/en_us.json'; l = json.load(open(lp)); l[f'item.{ID}.timetable'] = 'Timetable'; json.dump(l, open(lp, 'w'), indent=1)
 ap = f'{R}/data/{ID}/age_gate.json'; a = json.load(open(ap)); a['tier2']['items'] = sorted(set(a['tier2']['items'] + [f'{ID}:timetable'])); json.dump(a, open(ap, 'w'), indent=2)
 cp = os.path.join(ROOT, '..', 'library-sync/diaithircarts.json'); c = json.load(open(cp))
-if not any(e['id'] == f'{ID}:timetable' for e in c):
-    c.append({'id': f'{ID}:timetable', 'name': 'Timetable', 'text': 'Use on station rails in order to write the stops of a run, then use on a cart to give it the schedule; it loops. A scheduled cart stops only at its next stop and runs only with a rider aboard (a player, villager or other crew) until Age VII, when schedules run with no crew. Sneak and use in the air to wipe it. Age V.'})
+c = [e for e in c if e['id'] != f'{ID}:timetable']
+if True:
+    c.append({'id': f'{ID}:timetable', 'name': 'Timetable', 'text': 'Use on station rails in order to write the stops of a run, then use on a cart to give it the schedule; it loops. A scheduled cart stops only at its next stop and runs only with a rider aboard (a player, villager or other crew), unless it is autonomous: a capable vehicle type with an Autonomy Module fitted. Sneak and use in the air to wipe it. Age V.'})
     json.dump(c, open(cp, 'w'), indent=1)
 
 random.seed('module'); im = Image.new('RGBA', (16, 16), (0, 0, 0, 0))
@@ -40,7 +41,8 @@ w(f'data/{ID}/tags/entity_type/autonomy_capable.json', {'replace': False, 'value
 l = json.load(open(lp)); l[f'item.{ID}.autonomy_module'] = 'Autonomy Module'; json.dump(l, open(lp, 'w'), indent=1)
 a = json.load(open(ap)); a['autonomy'] = {'age': 7, 'items': [f'{ID}:autonomy_module']}; json.dump(a, open(ap, 'w'), indent=2)
 c = json.load(open(cp))
-if not any(e['id'] == f'{ID}:autonomy_module' for e in c):
+c = [e for e in c if e['id'] != f'{ID}:autonomy_module']
+if True:
     c.append({'id': f'{ID}:autonomy_module', 'name': 'Autonomy Module', 'text': 'Use on a vehicle whose type is capable of autonomy (the entity type tag diaithircarts:autonomy_capable) to fit it. A scheduled vehicle with a module runs with no crew, and its crew jobs can be retired. Without one it needs a rider aboard. Age VII.'})
     json.dump(c, open(cp, 'w'), indent=1)
 
@@ -63,6 +65,7 @@ w(f'data/{ID}/recipe/cart_reader.json', {'type': 'minecraft:crafting_shaped', 'c
 l = json.load(open(lp)); l[f'block.{ID}.cart_reader'] = 'Cart Reader'; json.dump(l, open(lp, 'w'), indent=1)
 a = json.load(open(ap)); a['tier2']['items'] = sorted(set(a['tier2']['items'] + [f'{ID}:cart_reader'])); json.dump(a, open(ap, 'w'), indent=2)
 c = json.load(open(cp))
-if not any(e['id'] == f'{ID}:cart_reader' for e in c):
-    c.append({'id': f'{ID}:cart_reader', 'name': 'Cart Reader', 'text': 'Put it under a rail. Gives a redstone signal for the cart above it: 0 none, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for that stop (signal minus 2), 14 a scheduled cart with no crew waiting for one, 15 an autonomous cart. Age V.'})
+c = [e for e in c if e['id'] != f'{ID}:cart_reader']
+if True:
+    c.append({'id': f'{ID}:cart_reader', 'name': 'Cart Reader', 'text': 'Put it under a rail. Gives a redstone signal for the cart above it: 0 none, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for that stop (signal minus 2; 13 means stop 11 or any later stop), 14 a scheduled cart with no crew waiting for one, 15 an autonomous cart. Age V.'})
     json.dump(c, open(cp, 'w'), indent=1)
