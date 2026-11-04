@@ -18,7 +18,7 @@ Not tested: a real player or client (held gun firing real hitscan bullets, heads
 `/workshoptest` ok=31 bad=0 on a dedicated NeoForge 26.1.2.116 server with only this mod (gradle runServer, rcon, fresh world): 14 materials and 25 blueprints load, damage rises bone < iron < steel < star lattice, honing raises damage, Age gate refuses iron at the default Age, a fake player builds a sword on the smithy (head and guard from iron, handle from planks, binding from leather), the finished stack carries its assembly, attack damage modifier, durability, model and name, 100 uses hone it to level 1, an off-hand flint adds Keen edge once, sneak returns the spent stack, a schematic blueprint is locked until learned, the assembly codec round-trips. The 17 base guns plus the 248 roster designs of ports #178 load as blueprints (265 guns, 273 blueprints with its guns.json); they are hidden here because `diaithir-firearms` is not loaded; their blueprints load.
 Not tested: a real client (rendering of tinted layers, overlay text), a real Age scoreboard, firearms reading `diaithirgear.damage_mul` in the full pack, benches with hoppers.
 
-With the three rosters the catalogue is 15 materials and 892 blueprints; items of other mods are hidden here until their module loads (checked: load, no data errors).
+With the three rosters the catalogue is 15 materials and 907 blueprints; items of other mods are hidden here until their module loads (checked: load, no data errors).
 
 ## Tool Belt
 Headless boot clean (0 errors); `summon item ... toolbelt:belt` works. Radial menu and screens compile but are client-only and untested headless.
