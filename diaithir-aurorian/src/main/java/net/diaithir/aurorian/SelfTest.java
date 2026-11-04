@@ -21,6 +21,25 @@ final class SelfTest {
                 c.getSource().sendSuccess(() -> Component.literal("portal: lit " + shape.interior.size() + " blocks, axis " + shape.axis), false);
                 return shape.interior.size();
             })))
+            .then(Commands.literal("mirror").executes(c -> {
+                var pl = c.getSource().getPlayerOrException();
+                if (!Abilities.idOf(pl.getMainHandItem()).equals("mirror_of_guidance")) {
+                    c.getSource().sendFailure(Component.literal("mirror: hold a mirror of guidance in the main hand"));
+                    return 0;
+                }
+                MirrorGuide.open(pl, net.minecraft.world.InteractionHand.MAIN_HAND);
+                c.getSource().sendSuccess(() -> Component.literal("mirror nodes: " + MirrorGuide.nodes()), false);
+                return MirrorGuide.nodes();
+            }))
+            .then(Commands.literal("beam").executes(c -> {
+                var u = c.getSource().getPlayerOrException();
+                var b = new AurorianProjectiles.Beam(AurorianProjectiles.BEAM.get(), u.level());
+                b.setOwner(u);
+                b.setPos(u.getX(), u.getEyeY() - 0.3, u.getZ());
+                b.shootFromRotation(u, u.getXRot(), u.getYRot(), 0F, AurorianProjectiles.BEAM_VELOCITY, 0F);
+                u.level().addFreshEntity(b);
+                return 1;
+            }))
             .then(Commands.literal("steel").executes(c -> {
                 net.minecraft.world.item.ItemStack st = new net.minecraft.world.item.ItemStack(DiaithirAurorian.item("aurorian_steel_sword"));
                 var ench = c.getSource().getLevel().registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);

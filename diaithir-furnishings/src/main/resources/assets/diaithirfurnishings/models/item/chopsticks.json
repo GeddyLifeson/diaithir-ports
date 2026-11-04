@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/chopsticks"
+  "layer0": "diaithirfurnishings:item/chopsticks_head",
+  "layer1": "diaithirfurnishings:item/chopsticks_handle"
  }
 }

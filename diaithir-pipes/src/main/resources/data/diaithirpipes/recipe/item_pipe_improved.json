@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["PPP", "PDP", "PPP"],
+  "key": { "P": "diaithirpipes:item_pipe_basic", "D": "minecraft:diamond" },
+  "result": { "id": "diaithirpipes:item_pipe_improved", "count": 8 }
+}

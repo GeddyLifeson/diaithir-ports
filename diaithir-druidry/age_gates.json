@@ -66,6 +66,16 @@
   "diaithir_druidry:forge_breath": "IV",
   "diaithir_druidry:molten_rain": "V",
   "diaithir_druidry:staff_smith_1": "III",
-  "diaithir_druidry:staff_smith_2": "V"
+  "diaithir_druidry:staff_smith_2": "V",
+  "diaithir_druidry:rune_bolt": "VI",
+  "diaithir_druidry:rune_touch": "VI",
+  "diaithir_druidry:rune_mend": "VI",
+  "diaithir_druidry:rune_blink": "VI",
+  "diaithir_druidry:rune_light": "VI",
+  "diaithir_druidry:rune_pull": "VI",
+  "diaithir_druidry:rune_wall": "VI",
+  "diaithir_druidry:rune_seal": "VI",
+  "diaithir_druidry:staff_glyph_1": "VI",
+  "diaithir_druidry:staff_glyph_2": "VI"
  }
 }

@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_glass_pane_post",
+ "textures": {
+  "edge": "aerialhell:block/slippery_sand_glass_pane",
+  "pane": "aerialhell:block/slippery_sand_glass_pane"
+ }
+}

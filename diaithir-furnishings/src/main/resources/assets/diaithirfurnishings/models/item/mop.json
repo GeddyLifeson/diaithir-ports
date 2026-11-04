@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/mop"
+  "layer0": "diaithirfurnishings:item/mop_head",
+  "layer1": "diaithirfurnishings:item/mop_handle",
+  "layer2": "diaithirfurnishings:item/mop_binding"
  }
 }

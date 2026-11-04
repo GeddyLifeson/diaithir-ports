@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["III", "GBG", "III"],
+  "key": { "I": "minecraft:iron_ingot", "G": "minecraft:glass", "B": "minecraft:bucket" },
+  "result": { "id": "diaithirpipes:fluid_pipe_basic", "count": 8 }
+}

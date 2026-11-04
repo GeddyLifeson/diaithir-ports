@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirlinkedstorage"
+version = "${version}"
+displayName = "Diaithir Linked Storage"
+description = "Ender-chest style linked chest, tank and energy cell. Blocks that share an owner scope and a three-dye frequency share one inventory across dimensions. Clean-room original."
+
+[[dependencies.diaithirlinkedstorage]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

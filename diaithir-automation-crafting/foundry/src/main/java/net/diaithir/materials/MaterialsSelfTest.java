@@ -52,6 +52,13 @@ final class MaterialsSelfTest {
                     .anyMatch((StationRecipe r) -> r.result().item().getRegisteredName().endsWith(":" + row.id())));
             check(fails, ok, row.id() + " has no station recipe");
         }
+        // table wired in: fire odds on blocks, road speed by block, breaking length
+        var timber = DiaithirMaterials.BLOCK_BY_ID.get("timber_sawn").get();
+        var stone = DiaithirMaterials.BLOCK_BY_ID.get("masonry_cut_stone").get();
+        check(fails, timber.getFlammability(timber.defaultBlockState(), null, null, null) == 20 && timber.getFireSpreadSpeed(timber.defaultBlockState(), null, null, null) == 5, "timber fire odds are not the table's");
+        check(fails, stone.getFlammability(stone.defaultBlockState(), null, null, null) == 0, "cut stone burns");
+        check(fails, Materials.of(DiaithirMaterials.BLOCK_BY_ID.get("road_asphalt").get()).roadSpeed() == 0.3 && Materials.of(net.minecraft.world.level.block.Blocks.STONE) == null, "road speed lookup is wrong");
+        check(fails, Materials.breakingLengthM(Materials.get("steel_i_beam")) > Materials.breakingLengthM(Materials.get("timber_sawn")), "steel does not out-span timber");
         return fails;
     }
 }

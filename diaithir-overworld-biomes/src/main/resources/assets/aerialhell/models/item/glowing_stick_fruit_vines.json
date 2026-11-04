@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "aerialhell:block/glowing_stick_fruit_vines"
+ }
+}
