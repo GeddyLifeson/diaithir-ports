@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ryenaerlae/settlement/0/tiranaruta",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ryenaerlae/ar_ryenaerlae_e4_places_000048",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

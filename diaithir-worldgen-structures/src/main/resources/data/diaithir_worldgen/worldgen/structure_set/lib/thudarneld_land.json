@@ -1,0 +1,154 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/forge_0_land",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/forge_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/forge_2_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/forge_3_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/fortress_0_land",
+   "weight": 43
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/fortress_1_land",
+   "weight": 58
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/fortress_2_land",
+   "weight": 28
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/fortress_3_land",
+   "weight": 42
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/garden_0_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/garden_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/garden_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/hall_0_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/hall_1_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/hall_2_land",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/hall_3_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/landmark_0_land",
+   "weight": 16
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/landmark_1_land",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/landmark_2_land",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/landmark_3_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/ruin_0_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/ruin_1_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/ruin_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/ruin_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/temple_0_land",
+   "weight": 38
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/temple_1_land",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/temple_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/temple_3_land",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tomb_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tomb_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tomb_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tomb_3_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tower_0_land",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tower_1_land",
+   "weight": 37
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tower_2_land",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/tower_3_land",
+   "weight": 33
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 30344045
+ }
+}

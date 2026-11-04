@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryirleth/settlement_0_any",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryirleth/settlement_1_any",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 197112955
+ }
+}

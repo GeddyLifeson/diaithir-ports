@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IXI",
+    "XRX",
+    "IXI"
+  ],
+  "key": {
+    "X": "vs_tournament:explosive_instant_medium",
+    "R": "minecraft:redstone",
+    "I": "minecraft:iron_ingot"
+  },
+  "result": {
+    "id": "vs_tournament:explosive_staged_small",
+    "count": 1
+  }
+}

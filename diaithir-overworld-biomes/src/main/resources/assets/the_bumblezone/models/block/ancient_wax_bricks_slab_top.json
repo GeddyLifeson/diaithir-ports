@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab_top",
+ "textures": {
+  "bottom": "the_bumblezone:block/ancient_wax_bricks_slab",
+  "side": "the_bumblezone:block/ancient_wax_bricks_slab",
+  "top": "the_bumblezone:block/ancient_wax_bricks_slab"
+ }
+}

@@ -4,8 +4,8 @@
  "name_en": "Tarbiumachuoirtach",
  "age": 3,
  "own": {
-  "kind": "ravager",
-  "scale": 1.7,
+  "kind": "look_tall",
+  "scale": 1.57,
   "hp": 520,
   "damage": 9,
   "armor": 8,
@@ -197,5 +197,6 @@
  "mythic": true,
  "entity": "diaithir_myth:tarbiumachuoirtach",
  "fallback_own": true,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

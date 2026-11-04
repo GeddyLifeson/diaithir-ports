@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ryellae/settlement/1/lyemiel",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ryellae/ar_ryellae_e7_places_001193",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/delve_0_cave",
+   "weight": 355
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/delve_1_cave",
+   "weight": 512
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/delve_2_cave",
+   "weight": 122
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/delve_3_cave",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 112035709
+ }
+}

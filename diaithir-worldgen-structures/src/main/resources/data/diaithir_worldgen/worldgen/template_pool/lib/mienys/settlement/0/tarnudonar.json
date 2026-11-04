@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/mienys/settlement/0/tarnudonar",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/mienys/ar_mienys_e5_places_000059",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

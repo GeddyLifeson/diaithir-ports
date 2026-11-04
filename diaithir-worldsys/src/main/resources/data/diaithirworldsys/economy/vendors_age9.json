@@ -1,0 +1,193 @@
+{
+ "age": "RODOS",
+ "vendors": [
+  {
+   "id": "shardsmith",
+   "name": "Gobaspelg",
+   "role": "Shardsmith",
+   "spawn": [
+    "Rodos",
+    "shard forge"
+   ],
+   "needs": "rodos_alloys",
+   "items": {
+    "geore:allthemodium_shard": {
+     "price": 1996,
+     "stock": 4
+    },
+    "geore:unobtainium_shard": {
+     "price": 1996,
+     "stock": 4
+    },
+    "geore:vibranium_shard": {
+     "price": 1996,
+     "stock": 4
+    },
+    "geore:allthemodium_cluster": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:unobtainium_cluster": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:vibranium_cluster": {
+     "price": 3163,
+     "stock": 4
+    },
+    "ironfurnaces:upgrade_allthemodium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "ironfurnaces:upgrade_unobtainium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "ironfurnaces:upgrade_vibranium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:allthemodium_block": {
+     "price": 6310,
+     "stock": 4
+    },
+    "geore:unobtainium_block": {
+     "price": 6310,
+     "stock": 4
+    },
+    "geore:vibranium_block": {
+     "price": 6310,
+     "stock": 4
+    },
+    "ironfurnaces:allthemodium_furnace": {
+     "price": 6310,
+     "stock": 4
+    },
+    "ironfurnaces:unobtainium_furnace": {
+     "price": 6310,
+     "stock": 4
+    },
+    "ironfurnaces:vibranium_furnace": {
+     "price": 6310,
+     "stock": 4
+    },
+    "productivebees:honeycomb_allthemodium": {
+     "price": 7944,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "shard_listener",
+   "name": "Niechèistechdspelg",
+   "role": "Shard Listener",
+   "spawn": [
+    "Rodos",
+    "listening chamber"
+   ],
+   "needs": "shard_resonance",
+   "items": {
+    "equivox:stellar_condenser": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:allthemodium_spyglass": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:allthemodium_spyglass_in_hand": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:budding_allthemodium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:budding_unobtainium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:budding_vibranium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:large_allthemodium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:large_unobtainium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:large_vibranium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:medium_allthemodium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:medium_unobtainium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:medium_vibranium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:small_allthemodium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:small_unobtainium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:small_vibranium_bud": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:unobtainium_spyglass": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:unobtainium_spyglass_in_hand": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:vibranium_spyglass": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:vibranium_spyglass_in_hand": {
+     "price": 3163,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_allthemodium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_unobtainium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_vibranium": {
+     "price": 3163,
+     "stock": 4
+    },
+    "geore:allthemodium_tinted_glass": {
+     "price": 3982,
+     "stock": 4
+    },
+    "geore:unobtainium_tinted_glass": {
+     "price": 3982,
+     "stock": 4
+    },
+    "geore:vibranium_tinted_glass": {
+     "price": 3982,
+     "stock": 4
+    }
+   }
+  }
+ ]
+}

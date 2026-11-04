@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:pelanode_brenock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:pelanode_crunostock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:pelanode_halardeneld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:pelanode_peludar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:pelanode_tharne",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:pelanode_therar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:pelanode_therdure",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:pelanode_thernock",
+   "required": false
+  }
+ ]
+}

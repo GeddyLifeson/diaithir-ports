@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "pattern": [
+  "IHI",
+  "IPI"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "H": "minecraft:hopper",
+  "P": "minecraft:piston"
+ },
+ "result": {
+  "id": "diaithircarts:cart_loader",
+  "count": 1
+ }
+}

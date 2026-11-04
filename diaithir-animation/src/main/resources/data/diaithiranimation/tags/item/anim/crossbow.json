@@ -1,0 +1,145 @@
+{
+"replace": false,
+"values": [
+{
+"id": "aether_ii:arkenium_crossbow",
+"required": false
+},
+{
+"id": "aether_ii:gravitite_crossbow",
+"required": false
+},
+{
+"id": "aether_ii:holystone_crossbow",
+"required": false
+},
+{
+"id": "aether_ii:skyroot_crossbow",
+"required": false
+},
+{
+"id": "aether_ii:zanite_crossbow",
+"required": false
+},
+{
+"id": "archers:heavy_crossbow",
+"required": false
+},
+{
+"id": "archers:netherite_heavy_crossbow",
+"required": false
+},
+{
+"id": "archers:netherite_rapid_crossbow",
+"required": false
+},
+{
+"id": "archers:rapid_crossbow",
+"required": false
+},
+{
+"id": "diaithirarms:composite_crossbow",
+"required": false
+},
+{
+"id": "diaithirarms:future_crossbow",
+"required": false
+},
+{
+"id": "diaithirarms:mail_crossbow",
+"required": false
+},
+{
+"id": "diaithirarms:rodos_crossbow",
+"required": false
+},
+{
+"id": "diaithirarms:steel_crossbow",
+"required": false
+},
+{
+"id": "diaithirarms:tempered_crossbow",
+"required": false
+},
+{
+"id": "immersive_aircraft:heavy_crossbow",
+"required": false
+},
+{
+"id": "minecraft:crossbow",
+"required": false
+},
+{
+"id": "mysticalagriculture:awakened_supremium_crossbow",
+"required": false
+},
+{
+"id": "mysticalagriculture:imperium_crossbow",
+"required": false
+},
+{
+"id": "mysticalagriculture:inferium_crossbow",
+"required": false
+},
+{
+"id": "mysticalagriculture:prudentium_crossbow",
+"required": false
+},
+{
+"id": "mysticalagriculture:supremium_crossbow",
+"required": false
+},
+{
+"id": "mysticalagriculture:tertium_crossbow",
+"required": false
+},
+{
+"id": "sgearmetalworks:crossbow_cast",
+"required": false
+},
+{
+"id": "silentgear:crossbow",
+"required": false
+},
+{
+"id": "silentgear:crossbow_blueprint",
+"required": false
+},
+{
+"id": "silentgear:crossbow_limbs",
+"required": false
+},
+{
+"id": "silentgear:crossbow_template",
+"required": false
+},
+{
+"id": "tconstruct:crossbow",
+"required": false
+},
+{
+"id": "vampirism:basic_crossbow",
+"required": false
+},
+{
+"id": "vampirism:basic_double_crossbow",
+"required": false
+},
+{
+"id": "vampirism:basic_tech_crossbow",
+"required": false
+},
+{
+"id": "vampirism:enhanced_crossbow",
+"required": false
+},
+{
+"id": "vampirism:enhanced_double_crossbow",
+"required": false
+},
+{
+"id": "vampirism:enhanced_tech_crossbow",
+"required": false
+}
+]
+}

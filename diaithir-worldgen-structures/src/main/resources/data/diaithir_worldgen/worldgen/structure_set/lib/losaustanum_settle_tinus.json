@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_tinus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_tinus",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 107910850
+ }
+}

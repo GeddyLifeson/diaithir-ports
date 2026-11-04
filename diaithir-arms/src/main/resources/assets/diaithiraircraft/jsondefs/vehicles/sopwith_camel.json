@@ -1,0 +1,54 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Sopwith Camel",
+  "description": "fighter, UK, 1916. Source: https://en.wikipedia.org/wiki/Sopwith_Camel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:8"
+   ]
+  ],
+  "health": 100
+ },
+ "motorized": {
+  "isAircraft": true,
+  "emptyMass": 421,
+  "fuelCapacity": 150,
+  "defaultFuelQty": 37,
+  "wingSpan": 8.5,
+  "wingArea": 5.8,
+  "tailDistance": 2.6,
+  "aileronArea": 1.3,
+  "elevatorArea": 1.0,
+  "rudderArea": 0.5,
+  "dragCoefficient": 0.05,
+  "crossSectionalArea": 0.4,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0
+ },
+ "parts": [
+  {
+   "pos": [
+    0.0,
+    0.8,
+    1.1400000000000001
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:sopwith_camel_engine"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -0.28500000000000003
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  }
+ ]
+}

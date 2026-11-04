@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/zephessith/settlement_0_thavsis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zephessith/settlement_1_thavsis",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 87869997
+ }
+}

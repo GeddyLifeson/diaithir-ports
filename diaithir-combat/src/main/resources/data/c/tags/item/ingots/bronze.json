@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "modern_industrialization:bronze_ingot",
+   "required": false
+  },
+  {
+   "id": "mekanism:ingot_bronze",
+   "required": false
+  },
+  {
+   "id": "railcraft:bronze_ingot",
+   "required": false
+  },
+  {
+   "id": "silentgear:bronze_ingot",
+   "required": false
+  }
+ ]
+}

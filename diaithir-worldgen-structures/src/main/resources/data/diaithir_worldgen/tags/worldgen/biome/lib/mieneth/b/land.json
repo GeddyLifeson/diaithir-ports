@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:mieneth_amauntes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mieneth_draggouktar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mieneth_ilokareno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mieneth_joredarde",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mieneth_lyamionys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mieneth_morardeldon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mieneth_silirwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:mieneth_thesora",
+   "required": false
+  }
+ ]
+}

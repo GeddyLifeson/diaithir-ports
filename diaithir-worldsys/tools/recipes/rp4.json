@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#c:plates/copper",
+    "minecraft:redstone",
+    "minecraft:gold_nugget"
+  ],
+  "result": {
+    "id": "diaithircrafting:foundry_research_pack_4",
+    "count": 1
+  },
+  "category": "misc"
+}

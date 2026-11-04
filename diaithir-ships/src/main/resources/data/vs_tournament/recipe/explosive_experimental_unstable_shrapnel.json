@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rpr",
+    "pfp",
+    "rpr"
+  ],
+  "key": {
+    "f": "minecraft:flint_and_steel",
+    "r": "minecraft:redstone",
+    "p": "vs_tournament:unstable_powder"
+  },
+  "result": {
+    "id": "vs_tournament:explosive_experimental_unstable_shrapnel",
+    "count": 1
+  }
+}

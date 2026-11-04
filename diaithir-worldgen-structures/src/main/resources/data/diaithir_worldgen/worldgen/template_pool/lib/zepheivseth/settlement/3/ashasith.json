@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/zepheivseth/settlement/3/ashasith",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/zepheivseth/st_zepheivseth_e7_assay_002941",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

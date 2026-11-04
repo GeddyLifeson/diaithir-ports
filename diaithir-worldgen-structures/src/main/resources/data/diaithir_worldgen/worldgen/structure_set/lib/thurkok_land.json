@@ -1,0 +1,42 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/fortress_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/hall_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/landmark_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/landmark_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/landmark_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/temple_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thurkok/tower_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 147023269
+ }
+}

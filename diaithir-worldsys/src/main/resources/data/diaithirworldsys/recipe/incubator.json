@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "diaithirworldsys:easy_villagers_breeder",
+  "minecraft:campfire",
+  "#c:glass_blocks"
+ ],
+ "result": {
+  "id": "diaithirworldsys:easy_villagers_incubator"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/settlement_1_amostium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnordath/settlement_2_amostium",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 169332352
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " I ",
+  "I I",
+  " I "
+ ],
+ "key": {
+  "I": "#c:ingots/copper"
+ },
+ "result": {
+  "id": "diaithirworldsys:jewelry_copper_ring",
+  "count": 1
+ }
+}

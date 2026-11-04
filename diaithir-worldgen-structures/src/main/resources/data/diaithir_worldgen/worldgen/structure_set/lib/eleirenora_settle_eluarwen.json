@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/eleirenora/settlement_2_eluarwen",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eleirenora/settlement_3_eluarwen",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 119948487
+ }
+}

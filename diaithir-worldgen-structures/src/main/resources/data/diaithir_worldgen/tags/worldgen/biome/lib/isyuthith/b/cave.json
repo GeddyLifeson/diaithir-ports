@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:isyuthith_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:isyuthith_grottoes",
+   "required": false
+  }
+ ]
+}

@@ -39,6 +39,11 @@ public final class Lunar {
         public int min_distance = 24, max_distance = 48;
     }
 
+    public static final class Meteor {
+        public int interval_ticks;
+        public int radius = 3, min_distance = 28, max_distance = 56;
+    }
+
     public static final class Event {
         public String id;
         public String color = "ffffff";
@@ -54,6 +59,9 @@ public final class Lunar {
         public Horde horde = new Horde();
         public List<Effect> effects = new ArrayList<>();
         public String quest;
+        public double beacon_radius = 1.0, enchant_cost = 1.0;
+        /** Meteors fall near players while this event is up; interval 0 = none. */
+        public Meteor meteor = new Meteor();
 
         public boolean schedulable() { return chance > 0 && !valid_moon_phases.isEmpty(); }
     }

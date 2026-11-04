@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_anamarum",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_anamarum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_2_anamarum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 245504194
+ }
+}

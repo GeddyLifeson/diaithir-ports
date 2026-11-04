@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_0_any",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_1_any",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryamiel/settlement_2_any",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 237226009
+ }
+}

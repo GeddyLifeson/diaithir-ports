@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_0_ilyennae",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_1_ilyennae",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_2_ilyennae",
+   "weight": 38
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_3_ilyennae",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 146579894
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "id": "diaithir_overworld_biomes:the_bumblezone",
+ "category": "dimension",
+ "title": "codex.diaithir_overworld_biomes.the_bumblezone.title",
+ "body": "codex.diaithir_overworld_biomes.the_bumblezone.body",
+ "age": 2,
+ "icon": "the_bumblezone:honey_crystal",
+ "unlock": {
+  "type": "enter_dimension",
+  "dimension": "the_bumblezone:the_bumblezone"
+ },
+ "covers": {
+  "biomes": [
+   "#the_bumblezone:is_the_bumblezone"
+  ],
+  "blocks": 99,
+  "items": 64
+ },
+ "quest": "diaithir_overworld_biomes:the_bumblezone_descent"
+}

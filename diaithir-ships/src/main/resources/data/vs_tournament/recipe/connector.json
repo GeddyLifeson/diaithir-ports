@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#G#",
+    "###"
+  ],
+  "key": {
+    "#": "vs_tournament:iron_cube",
+    "G": "minecraft:gold_ingot"
+  },
+  "result": {
+    "id": "vs_tournament:connector",
+    "count": 1
+  }
+}

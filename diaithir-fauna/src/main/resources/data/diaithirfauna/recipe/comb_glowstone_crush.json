@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "diaithirfauna:comb_glowstone"
+ ],
+ "result": {
+  "id": "minecraft:glowstone_dust",
+  "count": 3
+ }
+}

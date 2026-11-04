@@ -1,0 +1,16 @@
+{
+ "station": "altar.basic",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:gems/amber",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/silver",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:cruinneog_comhraig",
+ "time_s": 20
+}

@@ -1,0 +1,34 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/listanum/forge_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/listanum/fortress_2_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/listanum/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/listanum/landmark_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/listanum/landmark_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/listanum/tower_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 240072744
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/khairnar/settlement/0/osutarira",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/khairnar/ma_khairnar_e4_places_000060",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

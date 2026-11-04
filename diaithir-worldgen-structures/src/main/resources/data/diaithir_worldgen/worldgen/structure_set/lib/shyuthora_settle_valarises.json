@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_valarises",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_valarises",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_valarises",
+   "weight": 30
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_valarises",
+   "weight": 12
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 5706148
+ }
+}

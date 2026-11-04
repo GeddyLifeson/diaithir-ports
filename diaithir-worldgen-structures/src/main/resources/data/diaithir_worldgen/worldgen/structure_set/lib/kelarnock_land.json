@@ -1,0 +1,146 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/forge_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/forge_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/forge_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/forge_3_land",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/fortress_0_land",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/fortress_1_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/fortress_2_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/fortress_3_land",
+   "weight": 42
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/garden_0_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/garden_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/garden_3_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/hall_0_land",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/hall_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/hall_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/hall_3_land",
+   "weight": 45
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/landmark_0_land",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/landmark_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/landmark_2_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/landmark_3_land",
+   "weight": 41
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/ruin_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/ruin_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/ruin_3_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/temple_0_land",
+   "weight": 38
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/temple_1_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/temple_2_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/temple_3_land",
+   "weight": 55
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/tomb_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/tomb_3_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/tower_0_land",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/tower_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/tower_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelarnock/tower_3_land",
+   "weight": 46
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 101842900
+ }
+}

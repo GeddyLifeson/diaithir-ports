@@ -1,0 +1,37 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Truck Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:4",
+    "minecraft:black_dye:0:4"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.35,
+  "height": 1.0,
+  "flatHeight": 0.85,
+  "climbHeight": 0.45,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0,
+  "extraCollisionBoxOffset": 0.0,
+  "canGoFlat": true
+ },
+ "wheel": {
+  "diameter": 1.0,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Truck Wheel",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

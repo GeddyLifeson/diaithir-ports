@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_0_any",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_1_any",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliorlora/settlement_2_any",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 77826427
+ }
+}

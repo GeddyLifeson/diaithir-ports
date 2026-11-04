@@ -125,6 +125,8 @@
     "client.renderer.MixinEntityRenderer",
     "client.renderer.MixinGameRenderer",
     "client.renderer.MixinLevelRenderer",
+    "client.renderer.MixinLevelRendererShips",
+    "client.renderer.MixinViewArea",
     "client.world.MixinClientChunkCache",
     "client.world.ClientChunkCacheAccessor",
     "client.world.MixinClientLevel",

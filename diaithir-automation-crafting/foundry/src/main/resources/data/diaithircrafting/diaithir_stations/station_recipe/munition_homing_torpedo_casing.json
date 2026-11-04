@@ -1,0 +1,16 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 16,
+  "ingredients": [
+    {
+      "tag": "c:plates/steel",
+      "count": 3
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_homing_torpedo_casing",
+    "count": 1
+  },
+  "operator": true
+}

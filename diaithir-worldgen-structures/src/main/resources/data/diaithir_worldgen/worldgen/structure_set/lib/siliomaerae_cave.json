@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/delve_0_cave",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/delve_1_cave",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 114661450
+ }
+}

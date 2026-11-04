@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:losaustanum_amallanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:losaustanum_cellor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:losaustanum_sauntia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:losaustanum_siarum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:losaustanum_teleriasor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:losaustanum_telolia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:losaustanum_tinus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:losaustanum_valiarium",
+   "required": false
+  }
+ ]
+}

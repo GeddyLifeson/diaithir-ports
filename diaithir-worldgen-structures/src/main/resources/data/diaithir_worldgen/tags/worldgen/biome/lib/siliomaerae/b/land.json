@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:siliomaerae_elaeriel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siliomaerae_lyemiel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siliomaerae_miemeinae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siliomaerae_miemeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siliomaerae_ryema",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siliomaerae_ryiniel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siliomaerae_silinae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siliomaerae_venamellora",
+   "required": false
+  }
+ ]
+}

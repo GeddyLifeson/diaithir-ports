@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/torugun/settlement_0_kournok",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torugun/settlement_3_kournok",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 114429757
+ }
+}

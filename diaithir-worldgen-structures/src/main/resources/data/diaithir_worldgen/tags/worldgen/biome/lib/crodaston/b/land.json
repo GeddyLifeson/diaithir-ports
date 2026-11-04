@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:crodaston_brodon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crodaston_crare",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crodaston_drorden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crodaston_drurnath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crodaston_joralde",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crodaston_morustanon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crodaston_tarnadeld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crodaston_thareld",
+   "required": false
+  }
+ ]
+}

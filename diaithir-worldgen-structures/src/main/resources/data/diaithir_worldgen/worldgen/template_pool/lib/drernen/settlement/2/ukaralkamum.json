@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/drernen/settlement/2/ukaralkamum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drernen/gr_drernen_e6_assay_000728",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

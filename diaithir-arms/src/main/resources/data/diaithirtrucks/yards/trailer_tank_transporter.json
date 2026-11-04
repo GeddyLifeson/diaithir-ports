@@ -1,0 +1,26 @@
+{
+ "id": "trailer_tank_transporter",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 19,
+  "h": 6
+ },
+ "result": "mts:diaithirtrucks.trailer_tank_transporter",
+ "stages": [
+  {
+   "id": "running_gear",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "wheel",
+     "count": 8
+    }
+   ],
+   "base_ticks": 400,
+   "ghost": "diaithirtrucks:ghost/trailer_tank_transporter_gear"
+  }
+ ],
+ "crane_speedup": 1.0
+}

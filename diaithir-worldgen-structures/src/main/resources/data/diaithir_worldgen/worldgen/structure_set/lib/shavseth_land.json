@@ -1,0 +1,58 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/forge_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/fortress_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/fortress_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/hall_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/hall_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/landmark_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/ruin_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/ruin_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/temple_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/tower_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shavseth/tower_2_land",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 142449669
+ }
+}

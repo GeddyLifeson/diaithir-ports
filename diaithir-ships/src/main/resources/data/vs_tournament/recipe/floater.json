@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "SSS",
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:planks",
+    "S": "minecraft:string"
+  },
+  "result": {
+    "id": "vs_tournament:floater",
+    "count": 4
+  }
+}

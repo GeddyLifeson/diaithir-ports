@@ -1,0 +1,78 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/forge_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/fortress_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/hall_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/hall_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/hall_2_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/landmark_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/landmark_2_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/ruin_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/ruin_2_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/temple_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/tomb_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/tower_2_land",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 99703069
+ }
+}

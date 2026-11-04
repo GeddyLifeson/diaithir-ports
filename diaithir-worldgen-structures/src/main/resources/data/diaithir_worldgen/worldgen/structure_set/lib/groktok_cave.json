@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/groktok/delve_0_cave",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/delve_1_cave",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/delve_2_cave",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/groktok/delve_3_cave",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 82515966
+ }
+}

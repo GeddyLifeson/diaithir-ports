@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ryamiel_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryamiel_grottoes",
+   "required": false
+  }
+ ]
+}

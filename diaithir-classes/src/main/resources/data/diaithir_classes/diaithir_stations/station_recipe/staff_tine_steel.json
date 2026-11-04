@@ -1,0 +1,24 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "item": "diaithir_classes:staff_tine_basic",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/steel",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/amber",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/blaze",
+   "count": 1
+  }
+ ],
+ "result": "diaithir_classes:staff_tine_steel",
+ "time_s": 20
+}

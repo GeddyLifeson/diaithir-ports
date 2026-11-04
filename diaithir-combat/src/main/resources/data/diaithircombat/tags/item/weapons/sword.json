@@ -92,6 +92,7 @@
   {
    "id": "diaithirarms:future_sword",
    "required": false
-  }
+  },
+  "diaithircombat:lib_sword"
  ]
 }

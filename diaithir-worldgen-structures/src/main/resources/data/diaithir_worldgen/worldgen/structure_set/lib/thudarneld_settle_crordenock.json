@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_crordenock",
+   "weight": 34
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_crordenock",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_crordenock",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_crordenock",
+   "weight": 22
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 72490097
+ }
+}

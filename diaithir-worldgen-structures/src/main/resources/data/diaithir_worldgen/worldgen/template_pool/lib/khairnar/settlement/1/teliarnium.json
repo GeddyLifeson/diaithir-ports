@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/khairnar/settlement/1/teliarnium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/khairnar/ma_khairnar_e3_places_000080",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -72,6 +72,7 @@ public final class DiaithirFurnishings {
     public DiaithirFurnishings(IEventBus bus) {
         bus.addListener(SetArmText::register);
         BLOCKS.register(bus);
+        Everyday.register(ITEMS);
         ITEMS.register(bus);
         ENTITIES.register(bus);
     }

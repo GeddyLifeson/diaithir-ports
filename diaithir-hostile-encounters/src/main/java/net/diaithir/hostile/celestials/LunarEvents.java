@@ -51,6 +51,30 @@ public final class LunarEvents {
         return Optional.of(Forecast.of(sl).current(sl));
     }
 
+    /** Beacon range multiplier of the moon that is up now (1 outside the overworld or without an event). */
+    public static double beaconMultiplier(Level level) {
+        return active(level).map(ev -> ev.beacon_radius).orElse(1.0);
+    }
+
+    private static void sync(ServerLevel level, Lunar.Event ev, ServerPlayer only) {
+        var pkt = new LunarSync(ev.id, LunarSync.tint(ev));
+        if (only != null) net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(only, pkt);
+        else for (ServerPlayer p : level.players()) net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, pkt);
+    }
+
+    @SubscribeEvent
+    public static void join(net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent e) {
+        if (e.getEntity() instanceof ServerPlayer sp && sp.level() instanceof ServerLevel sl && sl.dimension() == Level.OVERWORLD)
+            sync(sl, Forecast.of(sl).current(sl), sp);
+    }
+
+    @SubscribeEvent
+    public static void enchant(net.neoforged.neoforge.event.enchanting.EnchantmentLevelSetEvent e) {
+        active(e.getLevel()).ifPresent(ev -> {
+            if (ev.enchant_cost != 1.0) e.setEnchantLevel(Math.max(1, (int) Math.round(e.getEnchantLevel() * ev.enchant_cost)));
+        });
+    }
+
     @SubscribeEvent
     public static void reload(AddServerReloadListenersEvent e) {
         e.addListener(Identifier.fromNamespaceAndPath(DiaithirHostile.ID, "lunar_events"), new SimplePreparableReloadListener<Boolean>() {
@@ -77,12 +101,18 @@ public final class LunarEvents {
                 if (ev.rise != null) p.sendSystemMessage(notice(ev.rise, ev));
             }
             lastActive = ev.id;
+            sync(level, ev, null);
         }
+        if (ev.meteor.interval_ticks > 0 && level.getGameTime() % ev.meteor.interval_ticks == 0) Meteors.strike(level, ev.meteor);
         if (ev.horde.cap > 0 && level.getGameTime() % Math.max(1, ev.horde.interval_ticks) == 0) horde(level, ev);
     }
 
-    private static void horde(ServerLevel level, Lunar.Event ev) {
-        for (ServerPlayer p : level.players()) {
+    private static void horde(ServerLevel level, Lunar.Event ev) { horde(level, ev, level.players()); }
+
+    /** One spawn attempt per listed player; returns how many mobs came. */
+    static int horde(ServerLevel level, Lunar.Event ev, List<? extends ServerPlayer> players) {
+        int spawned = 0;
+        for (ServerPlayer p : players) {
             if (p.isSpectator() || !level.canSeeSky(p.blockPosition())) continue;
             int near = level.getEntitiesOfClass(Mob.class, p.getBoundingBox().inflate(ev.horde.max_distance + 16),
                 m -> m.getType().getCategory() == MobCategory.MONSTER || m.entityTags().contains("lunar_horde")).size();
@@ -101,7 +131,9 @@ public final class LunarEvents {
             mob.addTag("lunar_horde");
             mob.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), EntitySpawnReason.EVENT, null);
             level.addFreshEntityWithPassengers(mob);
+            spawned++;
         }
+        return spawned;
     }
 
     private static EntityType<?> pick(ServerLevel level, Lunar.Event ev, BlockPos pos) {
@@ -117,18 +149,20 @@ public final class LunarEvents {
     @SubscribeEvent
     public static void effects(EntityTickEvent.Post e) {
         if (!(e.getEntity() instanceof LivingEntity le) || le.level().isClientSide() || le.tickCount % 40 != 0) return;
-        active(le.level()).ifPresent(ev -> {
-            for (Lunar.Effect fx : ev.effects) {
-                boolean ok = switch (fx.target) {
-                    case "player" -> le instanceof Player;
-                    case "monster" -> le.getType().getCategory() == MobCategory.MONSTER;
-                    default -> true;
-                };
-                if (!ok) continue;
-                BuiltInRegistries.MOB_EFFECT.get(Identifier.parse(fx.effect)).ifPresent(h ->
-                    le.addEffect(new MobEffectInstance(h, fx.duration_in_ticks, fx.amplifier, fx.ambient, fx.visible, fx.show_icon)));
-            }
-        });
+        active(le.level()).ifPresent(ev -> applyEffects(le, ev));
+    }
+
+    static void applyEffects(LivingEntity le, Lunar.Event ev) {
+        for (Lunar.Effect fx : ev.effects) {
+            boolean ok = switch (fx.target) {
+                case "player" -> le instanceof Player;
+                case "monster" -> le.getType().getCategory() == MobCategory.MONSTER;
+                default -> true;
+            };
+            if (!ok) continue;
+            BuiltInRegistries.MOB_EFFECT.get(Identifier.parse(fx.effect)).ifPresent(h ->
+                le.addEffect(new MobEffectInstance(h, fx.duration_in_ticks, fx.amplifier, fx.ambient, fx.visible, fx.show_icon)));
+        }
     }
 
     @SubscribeEvent

@@ -1,0 +1,110 @@
+{
+ "shot_pistol": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:shot_pistol",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.shot_pistol"
+ },
+ "shot_smg": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:shot_smg",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.shot_smg"
+ },
+ "shot_rifle": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:shot_rifle",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.shot_rifle"
+ },
+ "shot_shotgun": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:shot_shotgun",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.shot_shotgun"
+ },
+ "shot_sniper": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:shot_sniper",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.shot_sniper"
+ },
+ "shot_lmg": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:shot_lmg",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.shot_lmg"
+ },
+ "shot_launcher": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:shot_launcher",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.shot_launcher"
+ },
+ "shot_energy": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:shot_energy",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.shot_energy"
+ },
+ "reload_start": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:reload_start",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.reload_start"
+ },
+ "reload_end": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:reload_end",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.reload_end"
+ },
+ "dry_fire": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:dry_fire",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.dry_fire"
+ },
+ "attach": {
+  "sounds": [
+   {
+    "name": "diaithirfirearms:attach",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.diaithirfirearms.attach"
+ }
+}

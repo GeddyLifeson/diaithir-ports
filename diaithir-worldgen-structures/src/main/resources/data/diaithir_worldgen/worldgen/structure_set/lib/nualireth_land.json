@@ -1,0 +1,34 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/fortress_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/hall_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/temple_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/tower_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nualireth/tower_1_land",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 186122796
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/fenarnock/settlement/0/orauntus",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/fenarnock/gr_fenarnock_e5_places_000122",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

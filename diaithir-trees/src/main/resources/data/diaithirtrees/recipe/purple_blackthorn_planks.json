@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:purple_blackthorn_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:purple_blackthorn_planks",
+  "count": 4
+ }
+}

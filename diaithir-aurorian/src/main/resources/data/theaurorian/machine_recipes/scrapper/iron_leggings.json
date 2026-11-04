@@ -1,0 +1,7 @@
+{
+ "input": "minecraft:iron_leggings",
+ "output": {
+  "id": "minecraft:iron_nugget",
+  "count": 42
+ }
+}

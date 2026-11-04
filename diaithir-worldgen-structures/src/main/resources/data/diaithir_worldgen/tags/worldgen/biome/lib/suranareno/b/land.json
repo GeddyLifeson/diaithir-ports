@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:suranareno_breranen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:suranareno_ilosamoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:suranareno_kaluraroma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:suranareno_kruktarnun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:suranareno_silemeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:suranareno_tenvanoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:suranareno_vanaraira",
+   "required": false
+  }
+ ]
+}

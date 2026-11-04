@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_0_kraktaiggar",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_1_kraktaiggar",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/settlement_2_kraktaiggar",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 260437955
+ }
+}

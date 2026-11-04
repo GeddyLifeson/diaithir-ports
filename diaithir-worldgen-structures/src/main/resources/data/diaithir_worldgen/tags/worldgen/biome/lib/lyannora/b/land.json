@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:lyannora_eleirlemys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannora_elenaereth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannora_ilyameth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannora_jorerden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannora_jorunath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannora_kroukurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannora_osithezeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannora_pelurdene",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannora_ukasarnaari",
+   "required": false
+  }
+ ]
+}

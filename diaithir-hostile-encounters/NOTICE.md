@@ -8,4 +8,6 @@ What changed: rebuilt on plain NeoForge 26.1.2 events and datapack JSON. CorgiLi
 
 Global Events bridge: when diaithir-worldevents is loaded, every lunar event is registered through WorldEvents.register (weight 0, so the lunar forecast stays the only moon scheduler; `/worldevents start blood_moon` forces it tonight). Global Events has its own blood moon; at merge, drop that one in favour of the lunar blood moon.
 
-Not ported yet: the sky and moon tint (client rendering), beacon radius and enchanting table cost changes, meteors.
+Also ported now: enchanting table cost (event), beacon radius (one mixin), meteors (a vanilla-block crater with magma core and ore rim, no entity or art), and the moon tint. The tint follows the event colour through the fog and horizon colour, synced to clients by a small packet; the moon disc itself is not recoloured (that needs a sky-render mixin that changes every Minecraft version).
+
+Not ported: upstream meteor entity, space moss blocks and the Space Moss Bug.

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "enabled=false": {
+      "model": "diaithirminers:block/burner_miner"
+    },
+    "enabled=true": {
+      "model": "diaithirminers:block/burner_miner_on"
+    }
+  }
+}

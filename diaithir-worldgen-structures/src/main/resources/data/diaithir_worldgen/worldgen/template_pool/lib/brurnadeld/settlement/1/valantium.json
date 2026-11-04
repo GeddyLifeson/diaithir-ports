@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/brurnadeld/settlement/1/valantium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/brurnadeld/ki_brurnadeld_e3_assay_001088",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/brurnadeld/ki_brurnadeld_e3_assay_002690",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

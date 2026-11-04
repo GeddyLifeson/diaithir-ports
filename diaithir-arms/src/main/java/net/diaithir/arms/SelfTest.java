@@ -23,6 +23,14 @@ public final class SelfTest {
                 };
                 if (good) ok++; else { bad++; System.out.println("[armsselftest] BAD " + s.id()); }
             }
+            ItemStack helm = new ItemStack(DiaithirArms.all().get("bone_helmet").get()), look = new ItemStack(DiaithirArms.all().get("steel_helmet").get());
+            ItemStack tm = TransmogRecipe.apply(helm, look);
+            boolean t1 = tm.get(DataComponents.EQUIPPABLE).assetId().equals(look.get(DataComponents.EQUIPPABLE).assetId())
+                    && !tm.get(DataComponents.EQUIPPABLE).assetId().equals(helm.get(DataComponents.EQUIPPABLE).assetId())
+                    && tm.is(helm.getItem()) && tm.getMaxDamage() == helm.getMaxDamage();
+            boolean t2 = tm.get(DataComponents.ITEM_MODEL) != null && tm.get(DataComponents.ITEM_MODEL).equals(look.get(DataComponents.ITEM_MODEL));
+            boolean t3 = DiaithirArms.TRANSMOG_TABLE.isBound();
+            if (t1 && t2 && t3) ok += 3; else { bad++; System.out.println("[armsselftest] BAD transmog " + t1 + t2 + t3); }
             System.out.println("[armsselftest] ok=" + ok + " bad=" + bad + " parts=" + DiaithirArms.DATA.parts().size());
             int fo = ok, fb = bad;
             c.getSource().sendSuccess(() -> Component.literal("arms ok=" + fo + " bad=" + fb), false);

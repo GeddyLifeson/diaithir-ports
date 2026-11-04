@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/settlement_0_halanen",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/settlement_1_halanen",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drunesteld/settlement_2_halanen",
+   "weight": 13
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 230714524
+ }
+}
