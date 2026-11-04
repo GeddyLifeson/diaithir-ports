@@ -81,6 +81,7 @@ final class IvControl {
             try {
                 sb.append(" rpm=").append(Math.round(named(v, "engine_rpm_1")));
                 sb.append(" gear=").append(named(v, "engine_gear_1"));
+                sb.append(" fuelFlow=").append(String.format("%.4f", named(v, "engine_fuel_flow_1")));
             } catch (ReflectiveOperationException | RuntimeException ex) {
                 sb.append(" rpm=?");
             }
@@ -89,6 +90,7 @@ final class IvControl {
         }
         try {
             Object tank = v.getClass().getField("fuelTank").get(v);
+            sb.append(" tankFluid=").append(tank.getClass().getMethod("getFluid").invoke(tank));
             sb.append(" fuel=").append(tank.getClass().getMethod("getFluidLevel").invoke(tank)).append("/").append(tank.getClass().getMethod("getMaxLevel").invoke(tank)).append(" mB");
         } catch (ReflectiveOperationException | RuntimeException ex) {
             sb.append(" fuel=?");
