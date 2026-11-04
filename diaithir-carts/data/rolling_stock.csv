@@ -59,7 +59,7 @@ pas_stagecoach_rail,primitive_wagon,Railed stagecoach body (Stockton and Darling
 loco_cugnot,loco_primitive,Cugnot steam dray,1769,2800,2000,https://en.wikipedia.org/wiki/Fardier_%C3%A0_vapeur
 loco_trevithick,loco_primitive,Trevithick Penydarren,1804,5000,4000,https://en.wikipedia.org/wiki/Richard_Trevithick
 loco_horse_gin,loco_primitive,Horse gin capstan engine,1600,300,700,https://en.wikipedia.org/wiki/Horse_engine
-crane_treadwheel,crane,Treadwheel crane,1100,3000,2000,https://en.wikipedia.org/wiki/Treadwheel_crane
+crane_treadwheel,crane,Treadwheel crane,-30,3000,2000,https://en.wikipedia.org/wiki/Treadwheel_crane
 crane_shear_legs,crane,Shear legs,1500,1500,5000,https://en.wikipedia.org/wiki/Shear_legs
 crane_a_frame,crane,A-frame derrick,1400,800,3000,https://en.wikipedia.org/wiki/Derrick
 crane_steam,crane,Steam crane,1830,12000,20000,https://en.wikipedia.org/wiki/Crane_(machine)
@@ -67,5 +67,5 @@ crane_hammerhead,crane,Hammerhead crane,1900,60000,150000,https://en.wikipedia.o
 crane_gantry,crane,Overhead gantry crane,1880,20000,100000,https://en.wikipedia.org/wiki/Overhead_crane
 crane_container,crane,Container ship-to-shore crane,1959,500000,65000,https://en.wikipedia.org/wiki/Container_crane
 crane_mobile,crane,Diesel mobile crane,1950,40000,50000,https://en.wikipedia.org/wiki/Mobile_crane
-yard_slip,primitive_yard,Shipwright slipway,1200,0,0,https://en.wikipedia.org/wiki/Slipway
+yard_slip,primitive_yard,Shipwright slipway,-300,0,0,https://en.wikipedia.org/wiki/Slipway
 yard_erecting,primitive_yard,Erecting shop,1830,0,0,https://en.wikipedia.org/wiki/Erecting_shop
