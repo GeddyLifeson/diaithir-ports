@@ -1,0 +1,258 @@
+{
+ "sets": [
+  {
+   "name": "bone",
+   "protection": [
+    1,
+    3,
+    2,
+    1
+   ],
+   "durability": 8,
+   "toughness": 0,
+   "knockback": 0,
+   "weight": -0.02,
+   "water": 0,
+   "enchant": 15,
+   "repair": "diaithirarms:immersive/repair/bone",
+   "sound": "skeleton",
+   "effects": [],
+   "antiSkeleton": true
+  },
+  {
+   "name": "wither",
+   "protection": [
+    2,
+    4,
+    3,
+    2
+   ],
+   "durability": 12,
+   "toughness": 0,
+   "knockback": 0,
+   "weight": -0.01,
+   "water": 0,
+   "enchant": 0,
+   "repair": "diaithirarms:immersive/repair/wither",
+   "sound": "wither_skeleton",
+   "effects": [
+    [
+     "wither",
+     0.25,
+     20
+    ]
+   ],
+   "antiSkeleton": true
+  },
+  {
+   "name": "warrior",
+   "protection": [
+    2,
+    5,
+    6,
+    2
+   ],
+   "durability": 15,
+   "toughness": 1.0,
+   "knockback": 0,
+   "weight": 0,
+   "water": 0,
+   "enchant": 5,
+   "repair": "diaithirarms:immersive/repair/warrior",
+   "sound": "iron",
+   "effects": [
+    [
+     "berserk",
+     0.2
+    ],
+    [
+     "axe_efficiency",
+     0.05
+    ]
+   ],
+   "antiSkeleton": false
+  },
+  {
+   "name": "heavy",
+   "protection": [
+    4,
+    6,
+    5,
+    3
+   ],
+   "durability": 20,
+   "toughness": 4.0,
+   "knockback": 0.5,
+   "weight": 0.05,
+   "water": 0,
+   "enchant": 6,
+   "repair": "diaithirarms:immersive/repair/heavy",
+   "sound": "iron",
+   "effects": [],
+   "antiSkeleton": false
+  },
+  {
+   "name": "robe",
+   "protection": [
+    2,
+    3,
+    2,
+    1
+   ],
+   "durability": 14,
+   "toughness": 0,
+   "knockback": 0,
+   "weight": 0,
+   "water": 0,
+   "enchant": 50,
+   "repair": "diaithirarms:immersive/repair/robe",
+   "sound": "wool",
+   "effects": [
+    [
+     "fire_resistance",
+     0.25
+    ],
+    [
+     "fire_inflicting",
+     20
+    ],
+    [
+     "magic_protection",
+     0.2
+    ]
+   ],
+   "antiSkeleton": false
+  },
+  {
+   "name": "slime",
+   "protection": [
+    3,
+    5,
+    4,
+    2
+   ],
+   "durability": 20,
+   "toughness": 0,
+   "knockback": 0.25,
+   "weight": 0,
+   "water": 0,
+   "enchant": 10,
+   "repair": "diaithirarms:immersive/repair/slime",
+   "sound": "slime",
+   "effects": [
+    [
+     "bouncing",
+     0.25
+    ],
+    [
+     "explosion_protection",
+     0.2
+    ]
+   ],
+   "antiSkeleton": false
+  },
+  {
+   "name": "divine",
+   "protection": [
+    3,
+    7,
+    5,
+    3
+   ],
+   "durability": 18,
+   "toughness": 0,
+   "knockback": 0,
+   "weight": 0,
+   "water": 0,
+   "enchant": 30,
+   "repair": "diaithirarms:immersive/repair/divine",
+   "sound": "iron",
+   "effects": [
+    [
+     "divine",
+     1200
+    ]
+   ],
+   "antiSkeleton": false
+  },
+  {
+   "name": "prismarine",
+   "protection": [
+    3,
+    8,
+    6,
+    3
+   ],
+   "durability": 18,
+   "toughness": 0,
+   "knockback": 0,
+   "weight": 0.02,
+   "water": 0.25,
+   "enchant": 8,
+   "repair": "diaithirarms:immersive/repair/prismarine",
+   "sound": "iron",
+   "effects": [
+    [
+     "spikes",
+     1
+    ]
+   ],
+   "antiSkeleton": false
+  },
+  {
+   "name": "wooden",
+   "protection": [
+    1,
+    3,
+    2,
+    1
+   ],
+   "durability": 8,
+   "toughness": 0,
+   "knockback": 0,
+   "weight": 0,
+   "water": 0,
+   "enchant": 4,
+   "repair": "diaithirarms:immersive/repair/wooden",
+   "sound": "leather",
+   "effects": [
+    [
+     "arrow_block",
+     0.15
+    ],
+    [
+     "explosion_protection",
+     0.1
+    ]
+   ],
+   "antiSkeleton": false
+  },
+  {
+   "name": "steampunk",
+   "protection": [
+    3,
+    6,
+    3,
+    2
+   ],
+   "durability": 10,
+   "toughness": 0,
+   "knockback": 0,
+   "weight": 0,
+   "water": 0,
+   "enchant": 4,
+   "repair": "diaithirarms:immersive/repair/steampunk",
+   "sound": "redstone",
+   "effects": [
+    [
+     "explosion_protection",
+     0.1
+    ],
+    [
+     "steam_tech"
+    ]
+   ],
+   "antiSkeleton": false
+  }
+ ]
+}

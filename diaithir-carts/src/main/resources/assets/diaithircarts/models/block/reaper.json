@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/orientable",
- "textures": {
-  "front": "diaithircarts:block/reaper_front",
-  "side": "diaithircarts:block/reaper_side",
-  "top": "diaithircarts:block/reaper_top"
- }
-}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "minecraft:copper_block",
+    "G": "minecraft:gold_block",
+    "Y": "agritechevolved:ym_mk1"
+  },
+  "pattern": [
+    " G ",
+    "CYC",
+    " G "
+  ],
+  "result": {
+    "id": "agritechevolved:ym_mk2"
+  }
+}

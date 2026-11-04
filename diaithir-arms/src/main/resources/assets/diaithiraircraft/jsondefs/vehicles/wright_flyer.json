@@ -37,7 +37,9 @@
    "types": [
     "engine_aircraft"
    ],
-   "defaultPart": "diaithiraircraft:wright_flyer_engine"
+   "defaultPart": "diaithiraircraft:wright_flyer_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [

@@ -1,0 +1,20 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirfarmkitchen:block/reaper",
+   "y": 0
+  },
+  "facing=east": {
+   "model": "diaithirfarmkitchen:block/reaper",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirfarmkitchen:block/reaper",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirfarmkitchen:block/reaper",
+   "y": 270
+  }
+ }
+}

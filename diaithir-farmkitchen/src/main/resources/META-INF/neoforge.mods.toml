@@ -12,3 +12,34 @@ description = "Diaithir Farm Kitchen: clean-room rebuild from behaviour only; no
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[mods]]
+modId = "agritechevolved"
+version = "2.2.0.7"
+displayName = "Agritech: Evolved"
+authors = "MisterD Modding"
+description = "Farming automation: planters, machines, modules and power generation (MIT, folded into Diaithir Farm Kitchen)."
+
+[[dependencies.agritechevolved]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mods]]
+modId = "hydrofarm"
+version = "0.2.10"
+displayName = "Hydrofarm"
+authors = "Kestalkayden"
+description = "Water-tech and growth automation: tanks, pipes, pumps, sprinklers, hydroponic planters (MIT, folded into Diaithir Farm Kitchen)."
+
+[[dependencies.hydrofarm]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "hydrofarm.mixins.json"

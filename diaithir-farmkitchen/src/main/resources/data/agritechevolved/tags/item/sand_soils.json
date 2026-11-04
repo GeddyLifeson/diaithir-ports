@@ -1,0 +1,17 @@
+{
+  "values": [
+    "minecraft:sand",
+    "minecraft:red_sand",
+    {"id":"aether_ii:quicksoil", "required": false},
+
+    {"id":"biomeswevegone:sandy_dirt", "required": false},
+    {"id":"biomeswevegone:sandy_farmland", "required": false},
+    {"id":"biomeswevegone:black_sand", "required": false},
+    {"id":"biomeswevegone:white_sand", "required": false},
+    {"id":"biomeswevegone:blue_sand", "required": false},
+    {"id":"biomeswevegone:purple_sand", "required": false},
+    {"id":"biomeswevegone:pink_sand", "required": false},
+    {"id":"biomeswevegone:windswept_sand", "required": false},
+    {"id":"biomeswevegone:quicksand", "required": false}
+  ]
+}
