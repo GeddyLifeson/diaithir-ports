@@ -26,3 +26,5 @@ processResources {
 repositories {
     mavenCentral()
 }
+
+tasks.withType(JavaCompile).configureEach { options.compilerArgs << '-Xmaxerrs' << '3000' }

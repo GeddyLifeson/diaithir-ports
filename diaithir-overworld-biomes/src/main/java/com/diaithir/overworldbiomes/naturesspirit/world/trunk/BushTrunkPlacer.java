@@ -1,0 +1,42 @@
+package com.diaithir.overworldbiomes.naturesspirit.world.trunk;
+
+import com.diaithir.overworldbiomes.naturesspirit.registration.NSWorldGen;
+import com.google.common.collect.ImmutableList;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
+
+import java.util.List;
+import java.util.function.BiConsumer;
+
+public class BushTrunkPlacer extends TrunkPlacer {
+  public static final MapCodec<BushTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
+    return trunkPlacerParts(instance).apply(instance, BushTrunkPlacer::new);
+  });
+
+  public BushTrunkPlacer(int i, int j, int k) {
+    super(i, j, k);
+  }
+
+  @Override
+  protected TrunkPlacerType<?> type() {
+    return NSWorldGen.BUSH_TRUNK_PLACER.get();
+  }
+
+  @Override
+  public List<FoliagePlacer.FoliageAttachment> placeTrunk(WorldGenLevel world, BiConsumer<BlockPos, BlockState> replacer, RandomSource random, int height, BlockPos startPos, TreeConfiguration config) {
+    for (int i = 0; i < height; ++i) {
+      this.placeLog(world, replacer, random, startPos.above(i), config);
+    }
+
+    return ImmutableList.of(new FoliagePlacer.FoliageAttachment(startPos.above(height), 0, false));
+  }
+}

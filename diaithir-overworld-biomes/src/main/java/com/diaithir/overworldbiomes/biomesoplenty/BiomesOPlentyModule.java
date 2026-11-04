@@ -22,6 +22,7 @@ public final class BiomesOPlentyModule {
         com.diaithir.overworld_biomes.naturescompass.BiomeCompassMod.init(modBus, container);
         com.diaithir.overworld_biomes.natures.Natures.init(modBus);
         com.diaithir.overworldbiomes.compat.CompatBlocks.init(modBus);
+        com.diaithir.overworldbiomes.naturesspirit.NatureSpirit.init(modBus);
         NeoForge.EVENT_BUS.addListener(com.diaithir.overworldbiomes.compat.SaplingGrowthCheck::onRegister);
         GlobalEventsHook.fire("module_loaded", MOD_ID);
     }
