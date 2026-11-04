@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:sweetgum_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:sweetgum_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "/": "minecraft:stick",
+    "@": "minecraft:string",
+    "B": "minecraft:diamond"
+  },
+  "pattern": [
+    "  B",
+    "@/ ",
+    "/@ "
+  ],
+  "result": {
+    "id": "oredetector:diamond_detector"
+  }
+}

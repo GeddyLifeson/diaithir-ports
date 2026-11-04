@@ -15,7 +15,10 @@ neoForge {
             programArgument '--nogui'
         }
     }
-    mods { diaithirminers { sourceSet(sourceSets.main) } }
+    mods {
+        diaithirminers { sourceSet(sourceSets.main) }
+        oredetector { sourceSet(sourceSets.main) }
+    }
 }
 
 processResources {

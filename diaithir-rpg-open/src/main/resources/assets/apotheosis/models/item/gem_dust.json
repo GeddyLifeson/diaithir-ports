@@ -1,0 +1,11 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": {
+            "sprite": "apotheosis:items/gem_dust",
+            "neoforge_data": {
+                "light_emission": 15
+            }
+        }
+    }
+}

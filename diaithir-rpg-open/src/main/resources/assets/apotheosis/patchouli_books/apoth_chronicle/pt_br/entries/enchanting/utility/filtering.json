@@ -1,0 +1,27 @@
+{
+    "name": "Filtração de encantamento",
+    "icon": "apothic_enchanting:filtering_shelf",
+    "category": "apotheosis:enchanting/utility",
+    "flag": "apotheosis:enchanting",
+    "sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Às vezes, é desejável evitar certos encantamentos durante o processo de encantamento.$(p)A $(9)estante marinha da filtração aquática$() permite que você faça exatamente isso."
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "apothic_enchanting:filtering_shelf",
+            "title": "Filtração aquática",
+            "text": "A estante permite inserir até seis livros de encantamento único, evitando que esses encantamentos apareçam."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Nota: os livros podem ser inseridos da mesma forma que em um porta-livros, e a estante deve ocupar uma posição válida de Estante de Livros para funcionar.$(p)Os encantamentos bloqueados serão indicados na $(l:apotheosis:enchanting/table/info)tela de informações de encantamento$()."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Nota: os livros podem ser inseridos da mesma forma que em uma Estante de Livros Entalhada, e a estante deve ocupar uma posição válida para funcionar.$(p)Os encantamentos bloqueados serão indicados na $(l:apotheosis:enchanting/table/info)tela de informações de encantamento$()."
+        }
+    ]
+}

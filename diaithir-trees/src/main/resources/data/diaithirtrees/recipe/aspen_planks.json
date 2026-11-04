@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:aspen_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:aspen_planks",
+  "count": 4
+ }
+}

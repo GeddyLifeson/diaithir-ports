@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "D": "minecraft:dragon_head",
+        "E": "#c:ender_pearls",
+        "N": "apothic_enchanting:endshelf"
+    },
+    "pattern": [
+        " D ",
+        "ENE",
+        "EEE"
+    ],
+    "result": {
+        "id": "apothic_enchanting:draconic_endshelf"
+    }
+}

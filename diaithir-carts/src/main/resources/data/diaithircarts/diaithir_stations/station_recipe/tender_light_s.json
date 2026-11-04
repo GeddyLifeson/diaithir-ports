@@ -1,0 +1,24 @@
+{
+ "station": "station.wright_bench",
+ "stage": "part",
+ "time_s": 12,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 16
+  },
+  {
+   "item": "minecraft:oak_planks",
+   "count": 8
+  },
+  {
+   "item": "minecraft:bucket",
+   "count": 2
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:tender_light_s",
+  "count": 1
+ }
+}

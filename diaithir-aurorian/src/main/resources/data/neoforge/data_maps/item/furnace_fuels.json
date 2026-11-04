@@ -36,6 +36,9 @@
   "theaurorian:silentwood_log": {
    "burn_time": 300
   },
+  "theaurorian:silentwood_sapling": {
+   "burn_time": 100
+  },
   "theaurorian:silentwood_slab": {
    "burn_time": 150
   },

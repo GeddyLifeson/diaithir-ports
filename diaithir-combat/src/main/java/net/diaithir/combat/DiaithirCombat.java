@@ -40,12 +40,15 @@ public final class DiaithirCombat {
         ConsolidatedBehaviour.register();
         LibraryGear.register(bus);
         bus.addListener(Net::register);
+        net.diaithir.combat.survey.SwordBlocking.register(bus);
+        NeoForge.EVENT_BUS.register(new net.diaithir.combat.survey.Buildup());
+        NeoForge.EVENT_BUS.register(new net.diaithir.combat.survey.Lance());
         NeoForge.EVENT_BUS.register(this);
         if (FMLEnvironment.getDist().isClient()) CombatClient.init(bus);
     }
 
     @SubscribeEvent
-    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); LibraryGear.commands(e.getDispatcher()); }
+    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); net.diaithir.combat.survey.SurveyTest.register(e.getDispatcher()); LibraryGear.commands(e.getDispatcher()); }
 
     @SubscribeEvent
     public void serverTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) { SelfTest.tick(); }

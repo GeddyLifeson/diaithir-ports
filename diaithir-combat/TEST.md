@@ -17,3 +17,6 @@ Not tested: a real client (attack-key interception, V roll key, tooltip line, ar
 
 ## Full pack (batch 1) note
 In the full pack /combatselftest gave 295/2 or varying failures: critical_strike (5% innate chance, x1.5) and Apothic Attributes crit_chance roll on combo hits. The test now zeroes the fake player crit chance and tags the target golem against Dwarfs and Giants size rolls. Result in the full pack: ok=297 bad=0, repeated.
+
+## Survey part 2 additions (cloud, headless)
+`/combatsurveytest` ok=16 bad=0 on a dedicated NeoForge 26.1.2.116 server (gradle runServer, rcon, fresh world, this mod only): iron sword gains `blocks_attacks` (half damage, raisable, use duration 72000), shield and axe unchanged, name rules; build-up meter fills, fires wither (bleeding), fire (burning), slowness (shock) and empties; lance curve and item detection. No ERROR lines at boot. Not tested: a real client raising a sword, real hits through the damage event (the meter hook is one listener), a real mounted charge.
