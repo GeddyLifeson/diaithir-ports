@@ -14,7 +14,7 @@
  "engine": {
   "type": "NORMAL",
   "isAutomatic": true,
-  "fuelType": "gasoline",
+  "fuelType": "avgas",
   "fuelConsumption": 0.275,
   "maxRPM": 6000,
   "maxSafeRPM": 5580,

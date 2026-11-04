@@ -18,7 +18,7 @@ def w(path, d): os.makedirs(os.path.dirname(path), exist_ok=True); open(path, 'w
 
 fuels = {r['id']: r for r in csv.DictReader(open(f'{M}/../diaithir-units/src/main/resources/data/diaithirunits/fuels.csv'))}
 EFF = {'petrol_engine': 0.25, 'diesel_engine': 0.35}   # keep in step with Fuels.java
-IVTYPE = {'petrol': 'gasoline', 'diesel': 'diesel'}
+IVTYPE = {'petrol': 'avgas', 'diesel': 'diesel'}
 
 def iv_consumption(fuel, kw, eff):                      # mB per tick, same formula as Fuels.ivConsumption
     return round(kw * 1000 / eff / (float(fuels[fuel]['mj_per_unit']) * 1e6) * 1000 / 20, 3)
