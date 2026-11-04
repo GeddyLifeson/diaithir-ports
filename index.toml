@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "keybinds.txt"
+hash = "7c94295f04a1c53ff70d245e6d61ae68ffe9d85882bb9f9bd98a0801171c7732"
+
+[[files]]
 file = "config/DistantHorizons.toml"
 hash = "0816bc78d59db401dd3c18ab03b3a39728fbab9b2a982efabf11b5736da6e348"
 
