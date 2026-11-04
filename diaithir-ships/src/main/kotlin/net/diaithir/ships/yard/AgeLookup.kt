@@ -22,6 +22,12 @@ object AgeLookup {
             val world = saved.getField("world").get(data)
             val age = world.javaClass.getField("age").get(world) as String
             ORDER.indexOf(age.uppercase()).let { if (it < 0) UNGATED else it }
-        } catch (e: Throwable) { broken = true; UNGATED }
+        } catch (e: java.lang.reflect.InvocationTargetException) {
+            org.slf4j.LoggerFactory.getLogger("vs_yard").warn("diaithir_ages lookup threw, parts ungated for now: {}", e.cause.toString()); UNGATED
+        } catch (e: ReflectiveOperationException) {
+            broken = true; org.slf4j.LoggerFactory.getLogger("vs_yard").warn("diaithir_ages lookup unavailable, yard parts ungated: {}", e.toString()); UNGATED
+        } catch (e: Throwable) {
+            org.slf4j.LoggerFactory.getLogger("vs_yard").warn("diaithir_ages lookup failed this call, parts ungated for now: {}", e.toString()); UNGATED
+        }
     }
 }

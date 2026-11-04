@@ -96,9 +96,7 @@ object VSSelfTest {
             // leave stage 3 half done: one slot filled and some work in
             be.install(net.diaithir.yards.YardRegistry.part("vs_yard:deck_plating").get())
             be.work(10)
-            val line = "stage=" + b.stageIndex() + " ticks=" + b.progressTicks() + " installed=" + b.installed().size + " stageParts=" + b.stageParts().size + " hull=" + be.hullBlocks().size
-            java.io.File("yardsave.txt").writeText(line)
-            log.info("selftest-yard-save: {}", line)
+            yardSaveBe = be
             server.execute { }
             return
         }
@@ -136,6 +134,7 @@ object VSSelfTest {
     }
 
     private val yardShips = ArrayList<ServerShip>()
+    private var yardSaveBe: net.diaithir.ships.yard.SlipwayBlockEntity? = null
 
     private fun yardRun(level: net.minecraft.server.level.ServerLevel, yardName: String, ox: Int, prefer: String? = null) {
         val ctrl = BlockPos(ox, 122, 40)
@@ -157,6 +156,11 @@ object VSSelfTest {
         val id = be.launch()
         val s = shipWorldOf(level).allShips.firstOrNull { it.id == id }
         if (s != null) yardShips.add(s)
+        if (s != null) {
+            val counts = java.util.TreeMap<String, Int>(); val bb = s.shipAABB; val p = BlockPos.MutableBlockPos()
+            if (bb != null) for (x in bb.minX()..bb.maxX()) for (y in bb.minY()..bb.maxY()) for (z in bb.minZ()..bb.maxZ()) { val st = level.getBlockState(p.set(x, y, z)); if (!st.isAir) counts.merge(net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(st.block).toString(), 1, Int::plus) }
+            log.info("selftest-yard-fit: {} blocks {}", yardName, counts)
+        }
         val c = shipWorldOf(level).loadedShips.getById(id ?: -1)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)
         log.info("selftest-yard: launched shipId={} ships {} -> {} blockMass={} control={}", id, ships0, shipWorldOf(level).allShips.size, s?.inertiaData?.mass, c?.let { "buoy=" + it.buoyancyN + " thrust=" + it.thrustN + " statMass=" + it.statMassKg })
     }
@@ -256,8 +260,15 @@ object VSSelfTest {
             }
             110 -> eurekaTest(server, level)
             130 -> tournamentTest(server, level)
-            160 -> yardTest(server, level)
-            200 -> if (yardPhase == "save") server.halt(false)
+            160 -> if (net.diaithir.ships.yard.ShipYardMod.apiPresent) yardTest(server, level)
+            200 -> if (yardPhase == "save") {
+                // snapshot at the halt: the build keeps advancing after tick 160
+                yardSaveBe?.let { be -> val b = be.build!!
+                    val line = "stage=" + b.stageIndex() + " ticks=" + b.progressTicks() + " installed=" + b.installed().size + " stageParts=" + b.stageParts().size + " hull=" + be.hullBlocks().size
+                    java.io.File("yardsave.txt").writeText(line)
+                    log.info("selftest-yard-save: {}", line) }
+                server.halt(false)
+            }
             100 -> {
                 val blocks = HashSet<BlockPos>()
                 for (x in 0..2) for (z in 0..2) {

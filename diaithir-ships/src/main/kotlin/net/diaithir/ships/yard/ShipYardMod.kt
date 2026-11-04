@@ -69,7 +69,7 @@ object ShipYardMod {
             val cx = Math.floor((bb.minX() + bb.maxX()) / 2).toInt(); val cz = Math.floor((bb.minZ() + bb.maxZ()) / 2).toInt()
             val y0 = Math.floor(bb.minY()).toInt(); val y1 = Math.ceil(bb.maxY()).toInt()
             var wet = 0
-            for (y in y0 until y1) if (!level.getFluidState(net.minecraft.core.BlockPos(cx, y, cz)).isEmpty) wet++
+            if (level.hasChunkAt(net.minecraft.core.BlockPos(cx, y0, cz))) for (y in y0 until y1) if (!level.getFluidState(net.minecraft.core.BlockPos(cx, y, cz)).isEmpty) wet++
             c.cover = if (y1 > y0) wet.toDouble() / (y1 - y0) else 0.0
             c.throttle = ship.getAttachment(org.valkyrienskies.mod.api.SeatedControllingPlayer::class.java)?.forwardImpulse?.toDouble()?.coerceIn(0.0, 1.0) ?: 0.0
             if (c.engineId.isNotEmpty() && c.fuelStored > 0.0) {

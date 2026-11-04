@@ -29,7 +29,8 @@ class YardShipControl : ShipPhysicsListener {
     var engineEfficiency = 0.0
 
     fun addFuel(id: String, amount: Double): Boolean {
-        if (engineId.isEmpty() || !ArcaneFuel.accepts(engineId, id)) return false
+        if (engineId.isEmpty() || !amount.isFinite() || amount <= 0.0 || !ArcaneFuel.accepts(engineId, id)) return false
+        if (fuelStored > 0.0 && id != fuelId) return false
         fuelId = id; fuelStored += amount; return true
     }
 

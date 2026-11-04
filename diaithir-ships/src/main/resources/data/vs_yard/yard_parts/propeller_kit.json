@@ -10,7 +10,7 @@
   "crew_slots": 0,
   "block": "vs_tournament:prop_big",
   "extra": {
-    "anchor_x": 2,
+    "anchor_x": 1,
     "anchor_y": 1,
     "anchor_row": 0.1
   },

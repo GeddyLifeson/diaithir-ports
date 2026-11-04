@@ -44,8 +44,9 @@ class SlipwayControllerBlock(props: Properties) : BaseEntityBlock(props) {
     override fun useItemOn(stack: ItemStack, state: BlockState, level: Level, pos: BlockPos, player: Player,
                            hand: InteractionHand, hit: BlockHitResult): InteractionResult {
         if (level !is ServerLevel) return InteractionResult.SUCCESS
-        val be = level.getBlockEntity(pos) as? SlipwayBlockEntity ?: return InteractionResult.PASS
-        val part = YardRegistry.part(BuiltInRegistries.ITEM.getKey(stack.item).toString()).orElse(null) ?: return InteractionResult.PASS
+        // TRY_WITH_EMPTY_HAND (not PASS) so the click still reaches useWithoutItem (yard select, launch)
+        val be = level.getBlockEntity(pos) as? SlipwayBlockEntity ?: return InteractionResult.TRY_WITH_EMPTY_HAND
+        val part = YardRegistry.part(BuiltInRegistries.ITEM.getKey(stack.item).toString()).orElse(null) ?: return InteractionResult.TRY_WITH_EMPTY_HAND
         if (be.build == null) { player.sendSystemMessage(Component.literal("Choose a yard first (use the controller with an empty hand).")); return InteractionResult.CONSUME }
         val r = be.install(part)
         if (r == BuildState.InstallResult.OK) { if (!player.hasInfiniteMaterials()) stack.shrink(1) }
