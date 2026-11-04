@@ -8215,5 +8215,1687 @@
    }
   ],
   "model": "bow"
+ },
+ {
+  "id": "hw_sling",
+  "station": "workshop",
+  "base": "diaithirarms:sling",
+  "age": 1,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.2,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_retiarius_net",
+  "station": "workshop",
+  "base": "diaithirarms:retiarius_net",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 1.5,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "cord",
+    "role": "bowstring",
+    "count": 4,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "weight",
+    "role": "pot",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 0.0,
+    "durability": 0.5,
+    "speed": 0.0
+   }
+  ]
+ },
+ {
+  "id": "hw_bolas",
+  "station": "workshop",
+  "base": "diaithirarms:bolas",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.5,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "weight",
+    "role": "pot",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "cord",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.5,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_blowgun",
+  "station": "workshop",
+  "base": "diaithirarms:blowgun",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.4,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "tube",
+    "role": "limb",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_grenado",
+  "station": "smithy",
+  "base": "diaithirarms:grenado",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.6,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_stielhandgranate",
+  "station": "smithy",
+  "base": "diaithirarms:stielhandgranate",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.6,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_mills_bomb",
+  "station": "smithy",
+  "base": "diaithirarms:mills_bomb",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.6,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_mk2_grenade",
+  "station": "smithy",
+  "base": "diaithirarms:mk2_grenade",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.6,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_f1_grenade",
+  "station": "smithy",
+  "base": "diaithirarms:f1_grenade",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.6,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_rgd_33_grenade",
+  "station": "smithy",
+  "base": "diaithirarms:rgd_33_grenade",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.6,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_m67_grenade",
+  "station": "smithy",
+  "base": "diaithirarms:m67_grenade",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.6,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_molotov_cocktail",
+  "station": "workshop",
+  "base": "diaithirarms:molotov_cocktail",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.6,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "bottle",
+    "role": "pot",
+    "count": 1,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "wick",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_satchel_charge",
+  "station": "smithy",
+  "base": "diaithirarms:satchel_charge",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 3.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_bangalore_torpedo",
+  "station": "smithy",
+  "base": "diaithirarms:bangalore_torpedo",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 3.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "casing",
+    "role": "pot",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "fuse",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_balearic_sling",
+  "station": "workshop",
+  "base": "diaithirarms:balearic_sling",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.2,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_inca_sling_huaraca",
+  "station": "workshop",
+  "base": "diaithirarms:inca_sling_huaraca",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.2,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_scorpio",
+  "station": "workshop",
+  "base": "diaithirarms:scorpio",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 40.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 4,
+    "litres": 6.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "arms",
+    "role": "limb",
+    "count": 2,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.05,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_ballista",
+  "station": "workshop",
+  "base": "diaithirarms:ballista",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 40.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 4,
+    "litres": 6.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "arms",
+    "role": "limb",
+    "count": 2,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.05,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_onager",
+  "station": "workshop",
+  "base": "diaithirarms:onager",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 300.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 8,
+    "litres": 20.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "arm",
+    "role": "limb",
+    "count": 2,
+    "litres": 6.0,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "rope",
+    "role": "bowstring",
+    "count": 4,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "fittings",
+    "role": "head",
+    "count": 2,
+    "litres": 0.5,
+    "damage": 0.0,
+    "durability": 0.5,
+    "speed": 0.0
+   }
+  ]
+ },
+ {
+  "id": "hw_battering_ram",
+  "station": "workshop",
+  "base": "diaithirarms:battering_ram",
+  "age": 3,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 400.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 8,
+    "litres": 30.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "head",
+    "role": "head",
+    "count": 2,
+    "litres": 3.0,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.0
+   },
+   {
+    "name": "binding",
+    "role": "binding",
+    "count": 2,
+    "litres": 0.1,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_trebuchet",
+  "station": "workshop",
+  "base": "diaithirarms:trebuchet",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 300.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 8,
+    "litres": 20.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "arm",
+    "role": "limb",
+    "count": 2,
+    "litres": 6.0,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "rope",
+    "role": "bowstring",
+    "count": 4,
+    "litres": 0.1,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "fittings",
+    "role": "head",
+    "count": 2,
+    "litres": 0.5,
+    "damage": 0.0,
+    "durability": 0.5,
+    "speed": 0.0
+   }
+  ]
+ },
+ {
+  "id": "hw_springald",
+  "station": "workshop",
+  "base": "diaithirarms:springald",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 40.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 4,
+    "litres": 6.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "arms",
+    "role": "limb",
+    "count": 2,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.05,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_bombard",
+  "station": "gunsmith",
+  "base": "diaithirarms:bombard",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_greek_fire_siphon",
+  "station": "smithy",
+  "base": "diaithirarms:greek_fire_siphon",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 80.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "tank",
+    "role": "pot",
+    "count": 3,
+    "litres": 1.5,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "nozzle",
+    "role": "barrel",
+    "count": 1,
+    "litres": 0.2,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 2,
+    "litres": 4.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_hwacha",
+  "station": "workshop",
+  "base": "diaithirarms:hwacha",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 120.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "tubes",
+    "role": "barrel",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_polybolos",
+  "station": "workshop",
+  "base": "diaithirarms:polybolos",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 40.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 4,
+    "litres": 6.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "arms",
+    "role": "limb",
+    "count": 2,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.05,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_cheiroballistra",
+  "station": "workshop",
+  "base": "diaithirarms:cheiroballistra",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 40.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 4,
+    "litres": 6.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "arms",
+    "role": "limb",
+    "count": 2,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 2,
+    "litres": 0.05,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_mons_meg",
+  "station": "gunsmith",
+  "base": "diaithirarms:mons_meg",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_dardanelles_gun",
+  "station": "gunsmith",
+  "base": "diaithirarms:dardanelles_gun",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_culverin",
+  "station": "gunsmith",
+  "base": "diaithirarms:culverin",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_swivel_gun",
+  "station": "gunsmith",
+  "base": "diaithirarms:swivel_gun",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_carronade",
+  "station": "gunsmith",
+  "base": "diaithirarms:carronade",
+  "age": 6,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_napoleon_12_pounder",
+  "station": "gunsmith",
+  "base": "diaithirarms:napoleon_12_pounder",
+  "age": 6,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_gribeauval_12_pounder",
+  "station": "gunsmith",
+  "base": "diaithirarms:gribeauval_12_pounder",
+  "age": 6,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_armstrong_gun",
+  "station": "gunsmith",
+  "base": "diaithirarms:armstrong_gun",
+  "age": 6,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_flak_36",
+  "station": "gunsmith",
+  "base": "diaithirarms:flak_36",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_qf_25_pounder",
+  "station": "gunsmith",
+  "base": "diaithirarms:qf_25_pounder",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_m101_howitzer",
+  "station": "gunsmith",
+  "base": "diaithirarms:m101_howitzer",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_m777_howitzer",
+  "station": "gunsmith",
+  "base": "diaithirarms:m777_howitzer",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_stokes_mortar",
+  "station": "gunsmith",
+  "base": "diaithirarms:stokes_mortar",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_katyusha_bm_13",
+  "station": "workshop",
+  "base": "diaithirarms:katyusha_bm_13",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 120.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "tubes",
+    "role": "barrel",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.05,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ]
+ },
+ {
+  "id": "hw_paris_gun",
+  "station": "gunsmith",
+  "base": "diaithirarms:paris_gun",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
+ },
+ {
+  "id": "hw_schwerer_gustav",
+  "station": "gunsmith",
+  "base": "diaithirarms:schwerer_gustav",
+  "age": 7,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 500.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "barrel",
+    "role": "barrel",
+    "count": 6,
+    "litres": 2.0,
+    "damage": 1.0,
+    "durability": 0.5,
+    "speed": 0.0
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 2,
+    "litres": 0.3,
+    "damage": 0.4,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "carriage",
+    "role": "stock",
+    "count": 6,
+    "litres": 12.0,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 1.0
+   }
+  ]
  }
 ]
