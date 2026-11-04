@@ -2,7 +2,9 @@
  "module": "diaithircrashtools",
  "side": "client",
  "features": [
-  "crashassistant"
+  "crashassistant",
+  "ksyxis",
+  "packetfixer"
  ],
  "codex": {
   "entry": "diaithircrashtools.overview",
