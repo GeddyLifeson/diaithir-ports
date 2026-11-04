@@ -1,0 +1,17 @@
+{
+  "station": "station.steam_forge",
+  "stage": "part",
+  "time_s": 12,
+  "ingredients": [
+    {
+      "tag": "c:ingots/steel",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_spin_rocket_casing",
+    "count": 1
+  },
+  "power": "steam",
+  "w": 20000.0
+}

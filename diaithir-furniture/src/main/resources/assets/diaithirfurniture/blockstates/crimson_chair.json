@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirfurniture:block/crimson_chair"
+  },
+  "facing=east": {
+   "model": "diaithirfurniture:block/crimson_chair",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirfurniture:block/crimson_chair",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirfurniture:block/crimson_chair",
+   "y": 270
+  }
+ }
+}

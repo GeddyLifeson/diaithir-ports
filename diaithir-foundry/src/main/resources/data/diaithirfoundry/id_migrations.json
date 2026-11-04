@@ -1,0 +1,107 @@
+[
+ {
+  "registry": "minecraft:item",
+  "old": "jaopca:gear",
+  "new": "diaithirfoundry:gear"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jaopca:plate",
+  "new": "diaithirfoundry:plate"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "jaopca:rod",
+  "new": "diaithirfoundry:rod"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:block_cast",
+  "new": "diaithirfoundry:cast_block"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:foundry_bricks",
+  "new": "diaithirfoundry:foundry_bricks"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "productivemetalworks:foundry_bricks",
+  "new": "diaithirfoundry:foundry_bricks"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:foundry_controller",
+  "new": "diaithirfoundry:foundry_controller"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "productivemetalworks:foundry_controller",
+  "new": "diaithirfoundry:foundry_controller"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:foundry_drain",
+  "new": "diaithirfoundry:foundry_drain"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "productivemetalworks:foundry_drain",
+  "new": "diaithirfoundry:foundry_drain"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:foundry_tank",
+  "new": "diaithirfoundry:foundry_tank"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "productivemetalworks:foundry_tank",
+  "new": "diaithirfoundry:foundry_tank"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:gear_cast",
+  "new": "diaithirfoundry:cast_gear"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:ingot_cast",
+  "new": "diaithirfoundry:cast_ingot"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:nugget_cast",
+  "new": "diaithirfoundry:cast_nugget"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:plate_cast",
+  "new": "diaithirfoundry:cast_plate"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "productivemetalworks:rod_cast",
+  "new": "diaithirfoundry:cast_rod"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "silentgems:cut_gem",
+  "new": "diaithirfoundry:cut_gem"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "silentgems:gem_cutter",
+  "new": "diaithirfoundry:gem_cutter"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "silentgems:gem_cutter",
+  "new": "diaithirfoundry:gem_cutter"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "silentgems:raw_gem",
+  "new": "diaithirfoundry:raw_gem"
+ }
+]

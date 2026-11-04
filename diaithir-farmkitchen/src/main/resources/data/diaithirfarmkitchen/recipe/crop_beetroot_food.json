@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:beetroot"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithirfarmkitchen:crop_beetroot_food",
+  "count": 1
+ }
+}

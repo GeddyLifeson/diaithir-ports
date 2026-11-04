@@ -18,6 +18,7 @@ neoForge {
     mods {
         diaithircrafting { sourceSet(sourceSets.main) }
         diaithir_stations { sourceSet(sourceSets.main) }
+        diaithir_materials { sourceSet(sourceSets.main) }
     }
 }
 

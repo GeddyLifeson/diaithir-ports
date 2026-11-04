@@ -1,0 +1,24 @@
+{
+ "station": "station.wright_bench",
+ "stage": "part",
+ "time_s": 15,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:oak_planks",
+   "count": 6
+  },
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 2
+  },
+  {
+   "item": "minecraft:glass_pane",
+   "count": 3
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:body_observation_s",
+  "count": 1
+ }
+}

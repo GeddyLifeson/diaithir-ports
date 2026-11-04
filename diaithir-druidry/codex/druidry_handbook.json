@@ -428,6 +428,74 @@
      "text": "A rain of molten iron falls around the target spot: {damage} to each drop's blast and burning."
     }
    ]
+  },
+  {
+   "school": "glyph",
+   "name": "Lietirrùan",
+   "text": "The letter-makers. Spells are written, not sung: a form and an effect cut into one rune. Silver and steel hold the ink; Age VI.",
+   "power": "arcane",
+   "staff": [
+    "Bauta Lietirrùan",
+    "Bauta Lietirrùan Mòru"
+   ],
+   "spells": [
+    {
+     "id": "diaithir_druidry:rune_bolt",
+     "name": "Lietirsraudag",
+     "tier": 1,
+     "age": "VI",
+     "text": "Form aim, effect harm: a rune flies out and passes through one foe for {damage}."
+    },
+    {
+     "id": "diaithir_druidry:rune_touch",
+     "name": "Lietirlàm",
+     "tier": 2,
+     "age": "VI",
+     "text": "Form touch, effect harm: your hand carries the rune. A short reach strike for {damage} that slows the foe for 3 seconds."
+    },
+    {
+     "id": "diaithir_druidry:rune_mend",
+     "name": "Lietirkàirig",
+     "tier": 3,
+     "age": "VI",
+     "text": "Form self or aim, effect heal: the target regains {heal} health and loses any poison."
+    },
+    {
+     "id": "diaithir_druidry:rune_blink",
+     "name": "Lietirpriub",
+     "tier": 3,
+     "age": "VI",
+     "text": "Form self, effect blink: you step 16 blocks ahead along your aim."
+    },
+    {
+     "id": "diaithir_druidry:rune_light",
+     "name": "Lietirsoulas",
+     "tier": 4,
+     "age": "VI",
+     "text": "Form self, effect light: the rune glows in your eyes and you see in the dark for 2 minutes."
+    },
+    {
+     "id": "diaithir_druidry:rune_pull",
+     "name": "Lietirtarruing",
+     "tier": 4,
+     "age": "VI",
+     "text": "Form area, effect pull: foes within 8 blocks are dragged toward you and take {damage}."
+    },
+    {
+     "id": "diaithir_druidry:rune_wall",
+     "name": "Lietirbalda",
+     "tier": 4,
+     "age": "VI",
+     "text": "Form self, effect ward: for 20 seconds you take less damage and carry a shield of absorption."
+    },
+    {
+     "id": "diaithir_druidry:rune_seal",
+     "name": "Lietirseila",
+     "tier": 4,
+     "age": "VI",
+     "text": "Form cloud, effect bind: a sealed circle settles at the target spot for 8 seconds and holds those inside, slow and weak."
+    }
+   ]
   }
  ]
 }

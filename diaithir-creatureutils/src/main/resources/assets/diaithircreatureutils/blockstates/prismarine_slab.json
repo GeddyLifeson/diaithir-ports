@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithircreatureutils:block/prismarine_slab"
+  },
+  "type=top": {
+   "model": "diaithircreatureutils:block/prismarine_slab_top"
+  },
+  "type=double": {
+   "model": "diaithircreatureutils:block/prismarine_slab_full"
+  }
+ }
+}

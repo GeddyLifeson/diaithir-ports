@@ -1,0 +1,8 @@
+{
+    "blocks": "apothic_enchanting:echoing_deepshelf",
+    "stats": {
+        "arcana": 15.0,
+        "eterna": 5.0,
+        "maxEterna": 75.0
+    }
+}

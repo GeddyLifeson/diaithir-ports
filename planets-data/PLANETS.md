@@ -37,3 +37,10 @@ Specs for every planet came from one Haiku call each (specs/<id>.json, about 7k 
 ## Planet weather (added)
 - **Dry-bias pass done**: rerun with a stricter prompt; dry planets 124 -> 48, mixed 135, snow 31, rain 2; 115 stormy planets.
 - **Own weather per planet** (PlanetWeather + ServerLevelMixin): vanilla shares one weather state across every dimension, so planets now keep their own. Wet share by bias (dry 0, or 0.2 as a dry storm if stormy; rain 0.45; snow 0.4; mixed 0.3; stormy adds 0.15) with 6000-14000 tick phases; stormy wet phases thunder 60% of the time. Profiles ship as diaithir_planet_weather.json from the specs. On dry or stormy planets a wet phase also bursts the planet's own particle (ash, spores, glow, snowflake) around each player every 5 ticks: ash storms, spore storms. `/planet weather <id>` shows the state. Tested headless: states run per planet (storm, wet, clear). Not tested with a player present (the particle burst) or the client sky.
+
+## Keelwright / ship travel hook
+Keelwright has no travel code yet, so the planets module exposes the API for it to call (all in `com.diaithir.overworld_biomes.planets`):
+- `PlanetColony.travelTargets(server, playerUuid)` returns the planet ids a player may travel to (the diaithir home world plus the planet of their colony or party colony).
+- `PlanetGate.enter(player, planetId)` loads the planet dimension on demand and teleports to dry land (`PlanetGate.findLand`).
+- `PlanetColony.AGE` is the Age gate; founding needs Age VII or later and the planet's `opens_age`.
+Ship launch should offer `travelTargets`, then call `enter`.

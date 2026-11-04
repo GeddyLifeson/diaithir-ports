@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/inner_stairs",
+ "textures": {
+  "bottom": "aerialhell:block/lunatic_stone_stairs",
+  "side": "aerialhell:block/lunatic_stone_stairs",
+  "top": "aerialhell:block/lunatic_stone_stairs"
+ }
+}

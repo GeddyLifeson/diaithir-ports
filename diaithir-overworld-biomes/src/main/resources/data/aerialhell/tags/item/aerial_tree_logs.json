@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "aerialhell:aerial_tree_log",
+  "aerialhell:aerial_tree_wood",
+  "aerialhell:stripped_aerial_tree_log",
+  "aerialhell:stripped_aerial_tree_wood"
+ ]
+}

@@ -11,3 +11,7 @@ Performance: the network is walked only after something next to a network block 
 Age gate data is in `data/diaithirstoragenet/age_gate.json` (cables Age V, controller and terminals Age VI); library text is in `library-sync/diaithirstoragenet.json`. `tools/gen_assets.py` writes the textures, models, lang, recipes, age gate and library entries.
 
 Commands: `/diaithirstoragenet search <text>`; owners `selftest` (builds a controller, cables, chests, filter, import, export and terminal above spawn, checks scan, insert, extract, grid clicks, search, sort, filtering, import, export, crafting refill and splitting the network, then removes it).
+
+## Quick stack (ported from Terrastorage, MIT)
+
+Open any chest, barrel or other menu with a storage grid and use the buttons beside it: Take All, Put All, Quick Stack (puts items the storage already holds), Restock (pulls stacks you already carry) and Sort. In the inventory screen, Stack Near quick stacks into every chest within 8 blocks that you can see, and Sort sorts your inventory (hotbar untouched). Works on vanilla containers; it does not touch the network blocks. Credit and licence: `src/main/java/net/diaithir/storagenet/quickstack/NOTICE.md`.

@@ -49,7 +49,7 @@ public final class AnimClient {
 
     private static final class S {
         String item = "", mode = "";
-        boolean swinging, using, charged, shield;
+        boolean swinging, using, charged, shield, srvSeat;
         int combo;
         long lastSwing = -1000, lastFire = -1000;
     }
@@ -110,12 +110,18 @@ public final class AnimClient {
     static void oneShot(Avatar a, String name) {
         if (name.startsWith("body.")) { BodyClient.oneShot(a, name); return; }
         S s = STATE.computeIfAbsent(a.getId(), k -> new S());
+        if (name.startsWith("seat.")) {
+            s.srvSeat = !name.equals("seat.none"); s.mode = ""; s.item = "";
+            if (s.srvSeat) play(a, MAIN, null, name); else stop(a, MAIN);
+            return;
+        }
         long now = a.level().getGameTime();
+        boolean gun = name.startsWith("gun.");
+        if (gun) { Kind gk = Kind.of(a.getMainHandItem()); String[] np = name.split("\\."); GunFx.clip(a, name, gk != null && gk.gun() ? gk.cls() : np.length > 1 ? np[1] : "pistol"); } // test commands play clips with any item in hand
         if (name.endsWith(".fire")) {
             if (now - s.lastFire < 3) return; // autos: keep the aim loop, no restart jitter
             s.lastFire = now;
         }
-        boolean gun = name.startsWith("gun.");
         String loop = null;
         if (gun) {
             Kind k = Kind.of(a.getMainHandItem());
@@ -151,6 +157,7 @@ public final class AnimClient {
         long now = p.level().getGameTime();
         ItemStack hand = p.getMainHandItem();
         Kind k = Kind.of(hand);
+        if (s.srvSeat) return; // a server-sent seat loop (tank crew) owns the arms
         String key = k == null ? "" : (k.gun() ? "gun." : "") + k.cls() + ":" + hand.getItem();
         boolean changed = !key.equals(s.item);
         s.item = key;
@@ -162,6 +169,15 @@ public final class AnimClient {
             if (shield) play(p, OFF, "shield.raise", "shield.hold");
             else play(p, OFF, "shield.lower", null);
         }
+        // ---- seats: riders of turret / tank / mounted gun / cannon entities ----
+        String seat = null;
+        if (p.getVehicle() != null) for (String sk : List.of("turret", "driver", "mounted_gun", "cannon"))
+            if (p.getVehicle().is(net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(DiaithirAnimation.ID, "seat/" + sk)))) { seat = "seat." + sk; break; }
+        if (seat != null) {
+            if (!seat.equals(s.mode)) { s.mode = seat; s.item = ""; play(p, MAIN, null, seat); }
+            return;
+        } else if (s.mode.startsWith("seat.")) { s.mode = ""; stop(p, MAIN); }
         // ---- main layer ----
         if (k == null) {
             if (changed) { stop(p, MAIN); s.mode = ""; }

@@ -14,5 +14,6 @@ public final class Module {
         net.diaithir.hudoverlays.pickupnotifier.Feature.init(bus, container);
         net.diaithir.hudoverlays.leavebars.Feature.init(bus, container);
         net.diaithir.hudoverlays.betteradvancements.Feature.init(bus, container);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) new net.diaithir.hudoverlays.lookat.DiaithirLookAt(bus);
     }
 }

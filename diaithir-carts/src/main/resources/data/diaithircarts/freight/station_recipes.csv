@@ -1,0 +1,13 @@
+output,age,station,inputs,seconds
+freight_chest,1,workshop_bench,planks:8;iron_nugget:2,20
+freight_pallet,2,workshop_bench,planks:6;stick:6,15
+freight_barrel,2,cooperage,planks:7;iron_ingot:2,20
+freight_crate,2,workshop_bench,planks:8;iron_nugget:4;stick:4,25
+loading_dock,5,machine_works,iron_ingot:12;redstone:4;hopper:1,40
+container_20,6,container_works,steel_plate:24;iron_ingot:8;planks:6,240
+container_40,6,container_works,steel_plate:44;iron_ingot:12;planks:10,420
+reefer_20,6,container_works,container_20:1;compressor:1;copper_ingot:8,300
+reefer_40,6,container_works,container_40:1;compressor:1;copper_ingot:12,480
+tank_20,6,container_works,steel_plate:30;iron_ingot:12;bucket:2,300
+cargo_hook,6,machine_works,iron_ingot:6;chain:2,30
+rift_dock,8,machine_works,loading_dock:1;ender_pearl:4;netherite_scrap:2,120

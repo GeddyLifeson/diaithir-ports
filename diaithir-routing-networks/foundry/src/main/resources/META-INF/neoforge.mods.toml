@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirrouting"
+version = "${version}"
+displayName = "Diaithir Routing Networks"
+description = "Foundry sorting parts: the Day Barrel, the Sieve and the Sorting Router. Ported to NeoForge 26.1.2 from the sorter, router and barrel ideas in Factorization (MIT, neptunepink / purpleposeidon), rewritten on a modern design with our own art."
+
+[[dependencies.diaithirrouting]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

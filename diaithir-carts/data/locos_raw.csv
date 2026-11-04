@@ -1,0 +1,511 @@
+page,category,name,year,mass_kg,power_w,gauge,gauge_mm,source
+ABB_ALP-44,loco_electric,ABB ALP-44,1989,0,5219900,standard,1435,https://en.wikipedia.org/wiki/ABB_ALP-44
+ALCO_300,loco_electric,ALCO 300,1931,0,223710,standard,1435,https://en.wikipedia.org/wiki/ALCO_300
+ALCO_Century_415,loco_electric,ALCO Century 415,1966,0,1118550,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_415
+ALCO_Century_420,loco_electric,ALCO Century 420,1963,0,1491400,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_420
+ALCO_Century_424,loco_electric,ALCO Century 424,1963,0,1789680,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_424
+ALCO_Century_425,loco_electric,ALCO Century 425,1964,127005,1864250,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_425
+ALCO_Century_430,loco_electric,ALCO Century 430,1966,0,2237100,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_430
+ALCO_Century_628,loco_electric,ALCO Century 628,0,0,2050675,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_628
+ALCO_Century_630,loco_diesel,ALCO Century 630,1965,0,2237100,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_630
+ALCO_Century_636,loco_electric,ALCO Century 636,1967,0,2684520,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_636
+ALCO_Century_855,loco_electric,ALCO Century 855,0,250110,4101350,standard,1435,https://en.wikipedia.org/wiki/ALCO_Century_855
+ALCO_DL420,loco_electric,ALCO DL420,0,0,596560,standard,1435,https://en.wikipedia.org/wiki/ALCO_DL420
+ALCO_MRS-1,loco_electric,ALCO MRS-1,1953,108862,1193120,standard,1435,https://en.wikipedia.org/wiki/ALCO_MRS-1
+ALCO_PA,loco_electric,ALCO PA,1946,138799,1491400,standard,1435,https://en.wikipedia.org/wiki/ALCO_PA
+ALCO_RS-1,loco_electric,ALCO RS-1,1941,112264,745700,standard,1435,https://en.wikipedia.org/wiki/ALCO_RS-1
+ALCO_RS-11,loco_electric,ALCO RS-11,1956,116709,1342260,standard,1435,https://en.wikipedia.org/wiki/ALCO_RS-11
+ALCO_RS-2,loco_electric,ALCO RS-2,1946,113216,1118550,standard,1435,https://en.wikipedia.org/wiki/ALCO_RS-2
+ALCO_RS-27,loco_electric,ALCO RS-27,1959,116482,1789680,standard,1435,https://en.wikipedia.org/wiki/ALCO_RS-27
+ALCO_RS-3,loco_electric,ALCO RS-3,1950,112082,1193120,standard,1435,https://en.wikipedia.org/wiki/ALCO_RS-3
+ALCO_RS-32,loco_electric,ALCO RS-32,1961,0,1491400,standard,1435,https://en.wikipedia.org/wiki/ALCO_RS-32
+ALCO_RS-36,loco_electric,ALCO RS-36,1962,112127,1342260,standard,1435,https://en.wikipedia.org/wiki/ALCO_RS-36
+ALCO_RSC-2,loco_electric,ALCO RSC-2,1946,109996,1118550,standard,1435,https://en.wikipedia.org/wiki/ALCO_RSC-2
+ALCO_RSD-15,loco_electric,ALCO RSD-15,1956,151953,1789680,standard,1435,https://en.wikipedia.org/wiki/ALCO_RSD-15
+ALCO_RSD-5,loco_electric,ALCO RSD-5,1952,130180,1193120,standard,1435,https://en.wikipedia.org/wiki/ALCO_RSD-5
+ALCO_S-5,loco_electric,ALCO S-5,1954,0,596560,standard,1435,https://en.wikipedia.org/wiki/ALCO_S-5
+ALCO_S-6,loco_diesel,ALCO S-6,1955,104326,671130,standard,1435,https://en.wikipedia.org/wiki/ALCO_S-6
+ALCO_T-6,loco_electric,ALCO T-6,1958,0,745700,standard,1435,https://en.wikipedia.org/wiki/ALCO_T-6
+Altoona_Works_BP4,loco_electric,Altoona Works BP4,0,0,1118550,standard,1435,https://en.wikipedia.org/wiki/Altoona_Works_BP4
+Atlantic_Coast_Line_R-1_class,loco_steam,Atlantic Coast Line R-1 class,1938,208774,0,standard,1435,https://en.wikipedia.org/wiki/Atlantic_Coast_Line_R-1_class
+BP&GV_4_Kidwelly_and_5_Cwm_Mawr,loco_steam,BP&GV 4 Kidwelly and 5 Cwm Mawr,1903,31852,0,standard,1435,https://en.wikipedia.org/wiki/BP&GV_4_Kidwelly_and_5_Cwm_Mawr
+BR_Standard_Class_2_2-6-0,loco_steam,BR Standard Class 2 2-6-0,1952,50038,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_2_2-6-0
+BR_Standard_Class_2_2-6-2T,loco_steam,BR Standard Class 2 2-6-2T,1953,67107,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_2_2-6-2T
+BR_Standard_Class_3_2-6-0,loco_steam,BR Standard Class 3 2-6-0,1954,58420,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_3_2-6-0
+BR_Standard_Class_3_2-6-2T,loco_steam,BR Standard Class 3 2-6-2T,1952,75235,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_3_2-6-2T
+BR_Standard_Class_4_2-6-0,loco_steam,BR Standard Class 4 2-6-0,1952,60706,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_4_2-6-0
+BR_Standard_Class_4_2-6-4T,loco_steam,BR Standard Class 4 2-6-4T,1951,88036,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_4_2-6-4T
+BR_Standard_Class_4_4-6-0,loco_steam,BR Standard Class 4 4-6-0,1951,68986,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_4_4-6-0
+BR_Standard_Class_5,loco_steam,BR Standard Class 5,1951,77216,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_5
+BR_Standard_Class_9F,loco_steam,BR Standard Class 9F,1954,0,0,standard,1435,https://en.wikipedia.org/wiki/BR_Standard_Class_9F
+Baldwin_4-8+8-4-750/8-DE,loco_electric,Baldwin 4-8+8-4-750/8-DE,1943,310709,4474200,standard,1435,https://en.wikipedia.org/wiki/Baldwin_4-8+8-4-750/8-DE
+Baldwin_AS-16,loco_electric,Baldwin AS-16,1951,0,1211762,standard,1435,https://en.wikipedia.org/wiki/Baldwin_AS-16
+Baldwin_AS-416,loco_electric,Baldwin AS-416,1951,0,1211762,standard,1435,https://en.wikipedia.org/wiki/Baldwin_AS-416
+Baldwin_AS-616,loco_electric,Baldwin AS-616,1950,148687,1211762,standard,1435,https://en.wikipedia.org/wiki/Baldwin_AS-616
+Baldwin_Class_10-12-D,loco_steam,Baldwin Class 10-12-D,1916,14732,0,narrow,600,https://en.wikipedia.org/wiki/Baldwin_Class_10-12-D
+Baldwin_Class_12-42-F,loco_steam,Baldwin Class 12-42-F,1924,106500,0,standard,1435,https://en.wikipedia.org/wiki/Baldwin_Class_12-42-F
+Baldwin_DR-12-8-1500/2,loco_electric,Baldwin DR-12-8-1500/2,1945,269886,2237100,standard,1435,https://en.wikipedia.org/wiki/Baldwin_DR-12-8-1500/2
+Baldwin_DS-4-4-750,loco_electric,Baldwin DS-4-4-750,1949,0,559275,standard,1435,https://en.wikipedia.org/wiki/Baldwin_DS-4-4-750
+Baldwin_DT-6-6-2000,loco_electric,Baldwin DT-6-6-2000,1948,170096,1491400,standard,1435,https://en.wikipedia.org/wiki/Baldwin_DT-6-6-2000
+Baldwin_RF-16,loco_electric,Baldwin RF-16,1950,120655,1211762,standard,1435,https://en.wikipedia.org/wiki/Baldwin_RF-16
+Baldwin_RP-210,loco_diesel,Baldwin RP-210,1956,89947,745700,standard,1435,https://en.wikipedia.org/wiki/Baldwin_RP-210
+Baldwin_RS-12,loco_electric,Baldwin RS-12,1951,105233,894840,standard,1435,https://en.wikipedia.org/wiki/Baldwin_RS-12
+Baldwin_RT-624,loco_electric,Baldwin RT-624,1951,170096,1789680,standard,1435,https://en.wikipedia.org/wiki/Baldwin_RT-624
+Baldwin_S-12,loco_electric,Baldwin S-12,1951,108862,894840,standard,1435,https://en.wikipedia.org/wiki/Baldwin_S-12
+Baldwin_S-8,loco_electric,Baldwin S-8,1951,0,652488,standard,1435,https://en.wikipedia.org/wiki/Baldwin_S-8
+Baldwin_VO-1000,loco_electric,Baldwin VO-1000,1939,109859,745700,standard,1435,https://en.wikipedia.org/wiki/Baldwin_VO-1000
+Baldwin_VO-660,loco_electric,Baldwin VO-660,1939,92523,492162,standard,1435,https://en.wikipedia.org/wiki/Baldwin_VO-660
+Baltimore_and_Ohio_No._2_Lord_Baltimore,loco_steam,Baltimore and Ohio No. 2 Lord Baltimore,1935,128820,0,standard,1435,https://en.wikipedia.org/wiki/Baltimore_and_Ohio_No._2_Lord_Baltimore
+Baltimore_and_Ohio_P-7,loco_steam,Baltimore and Ohio P-7,1927,147870,0,standard,1435,https://en.wikipedia.org/wiki/Baltimore_and_Ohio_P-7
+Baltimore_and_Ohio_class_N-1,loco_steam,Baltimore and Ohio class N-1,1937,175313,2935075,standard,1435,https://en.wikipedia.org/wiki/Baltimore_and_Ohio_class_N-1
+Baltimore_and_Ohio_class_S,loco_steam,Baltimore and Ohio class S,1914,0,0,standard,1435,https://en.wikipedia.org/wiki/Baltimore_and_Ohio_class_S
+Bombardier_ALP-45DP,loco_diesel,Bombardier ALP-45DP,2010,130634,3996952,standard,1435,https://en.wikipedia.org/wiki/Bombardier_ALP-45DP
+Bombardier_ALP-46,loco_electric,Bombardier ALP-46,2001,89992,5300436,standard,1435,https://en.wikipedia.org/wiki/Bombardier_ALP-46
+Bombardier–Alstom_HHP-8,loco_electric,Bombardier–Alstom HHP-8,1999,100697,6000000,standard,1435,https://en.wikipedia.org/wiki/Bombardier–Alstom_HHP-8
+British_Rail_10100,loco_diesel,British Rail 10100,1951,121920,1491400,standard,1435,https://en.wikipedia.org/wiki/British_Rail_10100
+British_Rail_11001,loco_diesel,British Rail 11001,1949,50241,372850,standard,1435,https://en.wikipedia.org/wiki/British_Rail_11001
+British_Rail_Class_01,loco_diesel,British Rail Class 01,1956,25451,114092,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_01
+British_Rail_Class_02,loco_diesel,British Rail Class 02,1960,29058,126769,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_02
+British_Rail_Class_03,loco_diesel,British Rail Class 03,1957,30683,152123,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_03
+British_Rail_Class_04,loco_diesel,British Rail Class 04,1948,30683,152123,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_04
+British_Rail_Class_06,loco_diesel,British Rail Class 06,1958,37897,152123,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_06
+British_Rail_Class_07,loco_electric,British Rail Class 07,1962,43586,205068,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_07
+British_Rail_Class_09,loco_electric,British Rail Class 09,1959,49784,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_09
+British_Rail_Class_11,loco_electric,British Rail Class 11,1945,48158,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_11
+British_Rail_Class_12,loco_electric,British Rail Class 12,1949,48768,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_12
+British_Rail_Class_13,loco_electric,British Rail Class 13,1965,121920,298280,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_13
+British_Rail_Class_14,loco_diesel,British Rail Class 14,1964,49276,484705,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_14
+British_Rail_Class_15,loco_electric,British Rail Class 15,1957,70104,596560,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_15
+British_Rail_Class_16,loco_electric,British Rail Class 16,1958,69088,596560,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_16
+British_Rail_Class_17,loco_electric,British Rail Class 17,1962,69088,335565,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_17
+British_Rail_Class_18,loco_electric,British Rail Class 18,0,90000,416000,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_18
+British_Rail_Class_20,loco_electric,British Rail Class 20,1957,73000,745700,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_20
+British_Rail_Class_21_(NBL),loco_electric,British Rail Class 21,1958,73660,745700,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_21_(NBL)
+British_Rail_Class_22,loco_diesel,British Rail Class 22,1959,69088,745700,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_22
+British_Rail_Class_23,loco_electric,British Rail Class 23,1959,75184,820270,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_23
+British_Rail_Class_25,loco_electric,British Rail Class 25,1961,74168,932125,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_25
+British_Rail_Class_26,loco_electric,British Rail Class 26,1958,78740,865012,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_26
+British_Rail_Class_27,loco_electric,British Rail Class 27,1961,73660,932125,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_27
+British_Rail_Class_28,loco_electric,British Rail Class 28,1958,98552,894840,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_28
+British_Rail_Class_29,loco_electric,British Rail Class 29,1958,74168,1006695,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_29
+British_Rail_Class_31,loco_electric,British Rail Class 31,1957,108407,932125,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_31
+British_Rail_Class_33,loco_electric,British Rail Class 33,1960,74981,1155835,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_33
+British_Rail_Class_35,loco_diesel,British Rail Class 35,1961,76200,1267690,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_35
+British_Rail_Class_37,loco_electric,British Rail Class 37,1960,101600,1304975,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_37
+British_Rail_Class_40,loco_electric,British Rail Class 40,1958,135128,1491400,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_40
+British_Rail_Class_41_(Warship_Class),loco_diesel,British Rail Class 41,1958,118872,745700,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_41_(Warship_Class)
+British_Rail_Class_43_(HST),loco_electric,British Rail Class 43,1975,70250,1677825,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_43_(HST)
+British_Rail_Class_43_(Warship_Class),loco_diesel,British Rail Class 43,1960,80772,820270,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_43_(Warship_Class)
+British_Rail_Class_44,loco_electric,British Rail Class 44,1959,135128,1715110,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_44
+British_Rail_Class_47,loco_electric,British Rail Class 47,1962,113792,2050675,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_47
+British_Rail_Class_50,loco_electric,British Rail Class 50,1967,116840,2013390,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_50
+British_Rail_Class_52,loco_diesel,British Rail Class 52,1961,109728,1006695,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_52
+British_Rail_Class_55,loco_electric,British Rail Class 55,1961,100584,1230405,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_55
+British_Rail_Class_56,loco_electric,British Rail Class 56,1976,124968,2423525,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_56
+British_Rail_Class_57,loco_electric,British Rail Class 57,1964,120600,1715110,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_57
+British_Rail_Class_58,loco_electric,British Rail Class 58,1983,130000,2460810,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_58
+British_Rail_Class_59,loco_electric,British Rail Class 59,1985,126000,2460810,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_59
+British_Rail_Class_60,loco_electric,British Rail Class 60,1989,129000,2311670,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_60
+British_Rail_Class_66,loco_electric,British Rail Class 66,1998,127000,2386240,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_66
+British_Rail_Class_67,loco_electric,British Rail Class 67,1999,90000,2386240,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_67
+British_Rail_Class_68,loco_electric,British Rail Class 68,2013,85000,2800000,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_68
+British_Rail_Class_70,loco_electric,British Rail Class 70,2008,129000,2750000,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_70
+British_Rail_Class_71,loco_electric,British Rail Class 71,1958,78232,1903026,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_71
+British_Rail_Class_73,loco_diesel,British Rail Class 73,1962,77521,1058894,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_73
+British_Rail_Class_76,loco_electric,British Rail Class 76,1941,88392,969410,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_76
+British_Rail_Class_81,loco_electric,British Rail Class 81,1959,80874,2386240,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_81
+British_Rail_Class_83,loco_electric,British Rail Class 83,1960,77622,2199815,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_83
+British_Rail_Class_84,loco_electric,British Rail Class 84,1960,77826,2311670,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_84
+British_Rail_Class_89,loco_electric,British Rail Class 89,1986,105000,4286000,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_89
+British_Rail_Class_91,loco_electric,British Rail Class 91,1988,85250,4700000,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_91
+British_Rail_Class_97/6,loco_electric,British Rail Class 97/6,1953,28448,123041,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_97/6
+British_Rail_Class_99,loco_diesel,British Rail Class 99,0,113000,6170000,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_99
+British_Rail_Class_D1/1,loco_diesel,British Rail Class D1/1,1954,22809,114092,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D1/1
+British_Rail_Class_D1/3,loco_diesel,British Rail Class D1/3,1956,28448,123041,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D1/3
+British_Rail_Class_D16/1,loco_electric,British Rail Class D16/1,1947,132740,1312432,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D16/1
+British_Rail_Class_D16/2,loco_electric,British Rail Class D16/2,1950,135128,1304975,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D16/2
+British_Rail_Class_D2/1,loco_diesel,British Rail Class D2/1,1953,32512,149140,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D2/1
+British_Rail_Class_D2/10,loco_diesel,British Rail Class D2/10,1957,30480,167782,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D2/10
+British_Rail_Class_D2/11,loco_electric,British Rail Class D2/11,1960,30378,134226,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D2/11
+British_Rail_Class_D2/12,loco_diesel,British Rail Class D2/12,1961,34747,152123,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D2/12
+British_Rail_Class_D2/7,loco_diesel,British Rail Class D2/7,1955,36932,152123,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D2/7
+British_Rail_Class_D3/1,loco_diesel,British Rail Class D3/1,1958,36576,246081,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/1
+British_Rail_Class_D3/10,loco_electric,British Rail Class D3/10,1935,52375,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/10
+British_Rail_Class_D3/11,loco_electric,British Rail Class D3/11,1948,47193,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/11
+British_Rail_Class_D3/14,loco_electric,British Rail Class D3/14,1947,52019,268452,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/14
+British_Rail_Class_D3/3,loco_electric,British Rail Class D3/3,1955,48260,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/3
+British_Rail_Class_D3/5,loco_electric,British Rail Class D3/5,1955,47752,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/5
+British_Rail_Class_D3/6,loco_electric,British Rail Class D3/6,1934,52273,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/6
+British_Rail_Class_D3/7,loco_electric,British Rail Class D3/7,1939,56134,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/7
+British_Rail_Class_D3/9,loco_electric,British Rail Class D3/9,1944,51816,260995,standard,1435,https://en.wikipedia.org/wiki/British_Rail_Class_D3/9
+British_Rail_DP2,loco_electric,British Rail DP2,1962,106680,2013390,standard,1435,https://en.wikipedia.org/wiki/British_Rail_DP2
+British_Railways_D0226,loco_electric,British Railways D0226,1956,48768,372850,standard,1435,https://en.wikipedia.org/wiki/British_Railways_D0226
+Brookville_BL12CG,loco_diesel,Brookville BL12CG,2015,119748,894840,standard,1435,https://en.wikipedia.org/wiki/Brookville_BL12CG
+CIÉ_071_Class,loco_electric,CIÉ 071 Class,1976,99000,1826965,standard,1435,https://en.wikipedia.org/wiki/CIÉ_071_Class
+Caledonian_Railway_492_Class,loco_steam,Caledonian Railway 492 Class,1903,0,0,standard,1435,https://en.wikipedia.org/wiki/Caledonian_Railway_492_Class
+Caledonian_Railway_721_Class,loco_steam,Caledonian Railway 721 Class,1896,47752,0,standard,1435,https://en.wikipedia.org/wiki/Caledonian_Railway_721_Class
+Caledonian_Railway_812_and_652_Classes,loco_steam,Caledonian Railway 812 and 652 Classes,1899,46380,0,standard,1435,https://en.wikipedia.org/wiki/Caledonian_Railway_812_and_652_Classes
+Canadian_National_Class_Z-4-a,loco_electric,Canadian National Class Z-4-a,1924,0,1282604,standard,1435,https://en.wikipedia.org/wiki/Canadian_National_Class_Z-4-a
+Canadian_National_class_I-8_4-6-0,loco_steam,Canadian National class I-8 4-6-0,1906,0,0,standard,1435,https://en.wikipedia.org/wiki/Canadian_National_class_I-8_4-6-0
+Central_of_Georgia_K_class,loco_steam,Central of Georgia K class,1943,202936,0,standard,1435,https://en.wikipedia.org/wiki/Central_of_Georgia_K_class
+Chesapeake_and_Ohio_Greenbrier,loco_steam,Chesapeake and Ohio Greenbrier,1935,216362,2586088,standard,1435,https://en.wikipedia.org/wiki/Chesapeake_and_Ohio_Greenbrier
+Chesapeake_and_Ohio_class_H-8,loco_steam,Chesapeake and Ohio class H-8,1941,349854,5592750,standard,1435,https://en.wikipedia.org/wiki/Chesapeake_and_Ohio_class_H-8
+Chesapeake_and_Ohio_class_K-4,loco_steam,Chesapeake and Ohio class K-4,1943,208651,0,standard,1435,https://en.wikipedia.org/wiki/Chesapeake_and_Ohio_class_K-4
+Chesapeake_and_Ohio_class_M-1,loco_steam,Chesapeake and Ohio class M-1,1947,388727,4474200,standard,1435,https://en.wikipedia.org/wiki/Chesapeake_and_Ohio_class_M-1
+Chesapeake_and_Ohio_class_T-1,loco_steam,Chesapeake and Ohio class T-1,1930,256732,3877640,standard,1435,https://en.wikipedia.org/wiki/Chesapeake_and_Ohio_class_T-1
+Chesapeake_and_Ohio_classes_J-1_and_J-2,loco_steam,Chesapeake and Ohio classes J-1 and J-2,1911,149685,0,standard,1435,https://en.wikipedia.org/wiki/Chesapeake_and_Ohio_classes_J-1_and_J-2
+Chesapeake_and_Ohio_classes_L-2_and_L-2-A,loco_steam,Chesapeake and Ohio classes L-2 and L-2-A,1941,199353,0,standard,1435,https://en.wikipedia.org/wiki/Chesapeake_and_Ohio_classes_L-2_and_L-2-A
+"Chicago,_Burlington_and_Quincy_class_O-5",loco_steam,"Chicago, Burlington and Quincy class O-5",1930,206202,3057370,standard,1435,"https://en.wikipedia.org/wiki/Chicago,_Burlington_and_Quincy_class_O-5"
+Chicago_and_North_Western_D_class,loco_steam,Chicago and North Western D class,1900,0,0,standard,1435,https://en.wikipedia.org/wiki/Chicago_and_North_Western_D_class
+Chicago_and_North_Western_E-2_class,loco_steam,Chicago and North Western E-2 class,1923,133809,0,standard,1435,https://en.wikipedia.org/wiki/Chicago_and_North_Western_E-2_class
+Chicago_and_North_Western_J_class,loco_steam,Chicago and North Western J class,1913,142427,0,standard,1435,https://en.wikipedia.org/wiki/Chicago_and_North_Western_J_class
+Chicago_and_North_Western_R-1_class,loco_steam,Chicago and North Western R-1 class,1901,0,0,standard,1435,https://en.wikipedia.org/wiki/Chicago_and_North_Western_R-1_class
+Chicago_and_North_Western_Z_class,loco_steam,Chicago and North Western Z class,1909,110449,0,standard,1435,https://en.wikipedia.org/wiki/Chicago_and_North_Western_Z_class
+China_Railways_AM1,loco_steam,China Railways AM1,1906,58300,0,standard,1435,https://en.wikipedia.org/wiki/China_Railways_AM1
+China_Railways_AM3,loco_steam,China Railways AM3,1923,103900,0,standard,1435,https://en.wikipedia.org/wiki/China_Railways_AM3
+China_Railways_JF11,loco_steam,China Railways JF11,1918,144780,0,standard,1435,https://en.wikipedia.org/wiki/China_Railways_JF11
+China_Railways_KD7,loco_steam,China Railways KD7,1946,152000,897077,standard,1435,https://en.wikipedia.org/wiki/China_Railways_KD7
+China_Railways_NJ2,loco_electric,China Railways NJ2,2006,138000,3800000,standard,1435,https://en.wikipedia.org/wiki/China_Railways_NJ2
+Corus_Trojan_locomotive,loco_diesel,Corus Trojan locomotive,2009,100000,708000,standard,1435,https://en.wikipedia.org/wiki/Corus_Trojan_locomotive
+Cotton_Belt_Class_L-1,loco_steam,Cotton Belt Class L-1,1930,198899,0,standard,1435,https://en.wikipedia.org/wiki/Cotton_Belt_Class_L-1
+Delaware_and_Hudson_K-62_Class,loco_steam,Delaware and Hudson K-62 Class,1943,213187,0,standard,1435,https://en.wikipedia.org/wiki/Delaware_and_Hudson_K-62_Class
+EMC_AA,loco_electric,EMC AA,1940,112191,745700,standard,1435,https://en.wikipedia.org/wiki/EMC_AA
+EMC_AB6,loco_electric,EMC AB6,1940,0,745700,standard,1435,https://en.wikipedia.org/wiki/EMC_AB6
+EMC_E1,loco_electric,EMC E1,1937,0,1342260,standard,1435,https://en.wikipedia.org/wiki/EMC_E1
+EMC_E2,loco_electric,EMC E2,1937,0,1342260,standard,1435,https://en.wikipedia.org/wiki/EMC_E2
+EMC_E3,loco_electric,EMC E3,1938,139887,1491400,standard,1435,https://en.wikipedia.org/wiki/EMC_E3
+EMC_E5,loco_electric,EMC E5,1940,142881,1491400,standard,1435,https://en.wikipedia.org/wiki/EMC_E5
+EMC_EA/EB,loco_electric,EMC EA/EB,1937,0,1342260,standard,1435,https://en.wikipedia.org/wiki/EMC_EA/EB
+EMD_BL20-2,loco_electric,EMD BL20-2,1992,113398,1491400,standard,1435,https://en.wikipedia.org/wiki/EMD_BL20-2
+EMD_DDA40X,loco_electric,EMD DDA40X,1969,0,4921620,standard,1435,https://en.wikipedia.org/wiki/EMD_DDA40X
+EMD_DE30AC_and_DM30AC,loco_electric,EMD DE30AC and DM30AC,1997,134661,2237000,standard,1435,https://en.wikipedia.org/wiki/EMD_DE30AC_and_DM30AC
+EMD_E9,loco_electric,EMD E9,1954,142881,1789680,standard,1435,https://en.wikipedia.org/wiki/EMD_E9
+EMD_FL9,loco_diesel,EMD FL9,1956,129046,1304975,standard,1435,https://en.wikipedia.org/wiki/EMD_FL9
+EMD_GP10,loco_electric,EMD GP10,1967,0,1379545,standard,1435,https://en.wikipedia.org/wiki/EMD_GP10
+EMD_GP11,loco_electric,EMD GP11,0,0,0,standard,1435,https://en.wikipedia.org/wiki/EMD_GP11
+EMD_GP8,loco_electric,EMD GP8,0,0,1193120,standard,1435,https://en.wikipedia.org/wiki/EMD_GP8
+EMD_GP9R,loco_electric,EMD GP9R,0,117707,1304975,standard,1435,https://en.wikipedia.org/wiki/EMD_GP9R
+EMD_MP15AC,loco_electric,EMD MP15AC,1975,0,1118550,standard,1435,https://en.wikipedia.org/wiki/EMD_MP15AC
+EMD_SD75_series,loco_electric,EMD SD75 series,1994,0,3206510,standard,1435,https://en.wikipedia.org/wiki/EMD_SD75_series
+EMD_SDP40,loco_electric,EMD SDP40,1966,166921,2237100,standard,1435,https://en.wikipedia.org/wiki/EMD_SDP40
+EMD_SDP40F,loco_electric,EMD SDP40F,1973,0,2237100,standard,1435,https://en.wikipedia.org/wiki/EMD_SDP40F
+EMD_TR1,loco_electric,EMD TR1,1941,0,2013390,standard,1435,https://en.wikipedia.org/wiki/EMD_TR1
+Erie_L-1,loco_steam,Erie L-1,1907,0,0,standard,1435,https://en.wikipedia.org/wiki/Erie_L-1
+Eurotunnel_Class_9,loco_electric,Eurotunnel Class 9,1993,132000,7000000,standard,1435,https://en.wikipedia.org/wiki/Eurotunnel_Class_9
+FM_Erie-built,loco_diesel,FM Erie-built,1945,0,1491400,standard,1435,https://en.wikipedia.org/wiki/FM_Erie-built
+FM_H-10-44,loco_electric,FM H-10-44,1944,108862,745700,standard,1435,https://en.wikipedia.org/wiki/FM_H-10-44
+FM_H-12-44,loco_electric,FM H-12-44,1950,108862,894840,standard,1435,https://en.wikipedia.org/wiki/FM_H-12-44
+FM_H-12-44TS,loco_electric,FM H-12-44TS,1956,0,894840,standard,1435,https://en.wikipedia.org/wiki/FM_H-12-44TS
+FS_Class_735,loco_steam,FS Class 735,1917,63100,0,standard,1435,https://en.wikipedia.org/wiki/FS_Class_735
+FS_Class_E.420,loco_electric,FS Class E.420,1901,34100,440000,standard,1435,https://en.wikipedia.org/wiki/FS_Class_E.420
+FS_Class_E.550,loco_electric,FS Class E.550,1908,63000,1500000,standard,1435,https://en.wikipedia.org/wiki/FS_Class_E.550
+Furness_Railway_K2_Class,loco_steam,Furness Railway K2 Class,1896,41656,0,standard,1435,https://en.wikipedia.org/wiki/Furness_Railway_K2_Class
+Furness_Railway_M1_Class,loco_steam,Furness Railway M1 Class,1915,0,0,standard,1435,https://en.wikipedia.org/wiki/Furness_Railway_M1_Class
+G&SWR_128_Class,loco_steam,G&SWR 128 Class,1911,0,0,standard,1435,https://en.wikipedia.org/wiki/G&SWR_128_Class
+G&SWR_279_Class,loco_steam,G&SWR 279 Class,1913,0,0,standard,1435,https://en.wikipedia.org/wiki/G&SWR_279_Class
+GCR_Class_11B,loco_steam,GCR Class 11B,1901,56591,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_11B
+GCR_Class_11E,loco_steam,GCR Class 11E,1913,61976,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_11E
+GCR_Class_11F,loco_steam,GCR Class 11F,1919,62128,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_11F
+GCR_Class_1B,loco_steam,GCR Class 1B,1914,99009,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_1B
+GCR_Class_8A,loco_steam,GCR Class 8A,1902,63398,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_8A
+GCR_Class_8B,loco_steam,GCR Class 8B,1903,73050,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_8B
+GCR_Class_8C,loco_steam,GCR Class 8C,1903,0,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_8C
+GCR_Class_8F,loco_steam,GCR Class 8F,1906,0,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_8F
+GCR_Class_8N,loco_steam,GCR Class 8N,1918,74066,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_8N
+GCR_Class_9Q,loco_steam,GCR Class 9Q,1921,129032,0,standard,1435,https://en.wikipedia.org/wiki/GCR_Class_9Q
+GEC_Stephenson_locomotive,loco_diesel,GEC Stephenson locomotive,1976,100000,1118550,standard,1435,https://en.wikipedia.org/wiki/GEC_Stephenson_locomotive
+GER_Class_S69,loco_steam,GER Class S69,1911,0,0,standard,1435,https://en.wikipedia.org/wiki/GER_Class_S69
+GE_25-ton_switcher,loco_electric,GE 25-ton switcher,1941,22675,111855,standard,1435,https://en.wikipedia.org/wiki/GE_25-ton_switcher
+GE_44-ton_switcher,loco_electric,GE 44-ton switcher,1940,39908,298280,standard,1435,https://en.wikipedia.org/wiki/GE_44-ton_switcher
+GE_57-ton_gas–electric_boxcab,loco_electric,GE 57-ton gas–electric boxcab,1913,51699,0,standard,1435,https://en.wikipedia.org/wiki/GE_57-ton_gas–electric_boxcab
+GE_70-ton_switcher,loco_electric,GE 70-ton switcher,1947,58967,492162,standard,1435,https://en.wikipedia.org/wiki/GE_70-ton_switcher
+GE_AC4400CW,loco_electric,GE AC4400CW,1993,193229,3281080,standard,1435,https://en.wikipedia.org/wiki/GE_AC4400CW
+GE_B30-7,loco_electric,GE B30-7,1977,0,2237100,standard,1435,https://en.wikipedia.org/wiki/GE_B30-7
+GE_C39-8,loco_electric,GE C39-8,1984,0,2908230,standard,1435,https://en.wikipedia.org/wiki/GE_C39-8
+GE_Dash_8-40BW,loco_electric,GE Dash 8-40BW,1990,0,2982800,standard,1435,https://en.wikipedia.org/wiki/GE_Dash_8-40BW
+GE_Dash_8-40C,loco_electric,GE Dash 8-40C,1987,177626,0,standard,1435,https://en.wikipedia.org/wiki/GE_Dash_8-40C
+GE_Dash_8.5-40CW,loco_electric,GE Dash 8.5-40CW,2012,0,2982800,standard,1435,https://en.wikipedia.org/wiki/GE_Dash_8.5-40CW
+GE_P30CH,loco_electric,GE P30CH,1975,175086,2237100,standard,1435,https://en.wikipedia.org/wiki/GE_P30CH
+GE_U50,loco_electric,GE U50,1963,0,3728500,standard,1435,https://en.wikipedia.org/wiki/GE_U50
+GE_steam_turbine_locomotives,loco_steam,GE steam turbine locomotives,1938,0,1864250,standard,1435,https://en.wikipedia.org/wiki/GE_steam_turbine_locomotives
+GNR_Class_L1,loco_steam,GNR Class L1,1903,72492,0,standard,1435,https://en.wikipedia.org/wiki/GNR_Class_L1
+GNR_Class_N1,loco_steam,GNR Class N1,1906,65735,0,standard,1435,https://en.wikipedia.org/wiki/GNR_Class_N1
+GNR_Class_N2,loco_steam,GNR Class N2,1920,72593,0,standard,1435,https://en.wikipedia.org/wiki/GNR_Class_N2
+GNR_Class_O1,loco_steam,GNR Class O1,1913,79908,0,standard,1435,https://en.wikipedia.org/wiki/GNR_Class_O1
+GNR_Class_O2,loco_steam,GNR Class O2,1918,79908,0,standard,1435,https://en.wikipedia.org/wiki/GNR_Class_O2
+GNR_Classes_D2_and_D3,loco_steam,GNR Classes D2 and D3,1896,85547,0,standard,1435,https://en.wikipedia.org/wiki/GNR_Classes_D2_and_D3
+GNR_Ivatt_1_Class_0-6-0,loco_steam,GNR Ivatt 1 Class 0-6-0,1908,47447,0,standard,1435,https://en.wikipedia.org/wiki/GNR_Ivatt_1_Class_0-6-0
+GNSR_Classes_S_and_T,loco_steam,GNSR Classes S and T,1893,43688,0,standard,1435,https://en.wikipedia.org/wiki/GNSR_Classes_S_and_T
+GWR_2221_Class,loco_steam,GWR 2221 Class,1905,0,0,standard,1435,https://en.wikipedia.org/wiki/GWR_2221_Class
+GWR_3300_Class,loco_steam,GWR 3300 Class,1899,0,0,standard,1435,https://en.wikipedia.org/wiki/GWR_3300_Class
+GWR_3800_Class,loco_steam,GWR 3800 Class,1904,56185,0,standard,1435,https://en.wikipedia.org/wiki/GWR_3800_Class
+GWR_4073_Class,loco_steam,GWR 4073 Class,1923,80264,0,standard,1435,https://en.wikipedia.org/wiki/GWR_4073_Class
+Great_Northern_P-1,loco_steam,Great Northern P-1,1914,107047,0,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_P-1
+Great_Northern_class_F-8,loco_steam,Great Northern class F-8,1901,88450,0,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_class_F-8
+Great_Northern_class_H-5,loco_steam,Great Northern class H-5,1909,123286,0,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_class_H-5
+Great_Northern_class_M-1,loco_steam,Great Northern class M-1,1909,167239,0,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_class_M-1
+Great_Northern_class_P-2,loco_steam,Great Northern class P-2,1923,176310,0,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_class_P-2
+Great_Northern_class_Q-1,loco_steam,Great Northern class Q-1,1923,194291,0,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_class_Q-1
+Great_Northern_class_S-1,loco_steam,Great Northern class S-1,1929,213242,2684520,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_class_S-1
+Great_Northern_class_S-2,loco_steam,Great Northern class S-2,1930,198727,2460810,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_class_S-2
+Great_Northern_class_Z-1,loco_electric,Great Northern class Z-1,1926,168327,1614440,standard,1435,https://en.wikipedia.org/wiki/Great_Northern_class_Z-1
+Highland_Railway_Castle_Class,loco_steam,Highland Railway Castle Class,1900,59792,0,standard,1435,https://en.wikipedia.org/wiki/Highland_Railway_Castle_Class
+Highland_Railway_Drummond_0-6-0_Class,loco_steam,Highland Railway Drummond 0-6-0 Class,1900,43688,0,standard,1435,https://en.wikipedia.org/wiki/Highland_Railway_Drummond_0-6-0_Class
+Highland_Railway_Jones_Goods_Class,loco_steam,Highland Railway Jones Goods Class,1894,0,0,standard,1435,https://en.wikipedia.org/wiki/Highland_Railway_Jones_Goods_Class
+Highland_Railway_River_class,loco_steam,Highland Railway River class,1915,0,0,standard,1435,https://en.wikipedia.org/wiki/Highland_Railway_River_class
+Highland_Railway_X_Class,loco_steam,Highland Railway X Class,1909,70104,0,standard,1435,https://en.wikipedia.org/wiki/Highland_Railway_X_Class
+Ingalls_4-S,loco_electric,Ingalls 4-S,1946,123376,1230405,standard,1435,https://en.wikipedia.org/wiki/Ingalls_4-S
+JNR_Class_C52,loco_steam,JNR Class C52,1925,0,0,narrow,1067,https://en.wikipedia.org/wiki/JNR_Class_C52
+JŽ_class_62,loco_steam,JŽ class 62,1952,0,0,standard,1435,https://en.wikipedia.org/wiki/JŽ_class_62
+KNR_Pureo7-200_class_locomotives,loco_steam,KNR Pureo7-200 class locomotives,1921,0,0,standard,1435,https://en.wikipedia.org/wiki/KNR_Pureo7-200_class_locomotives
+L&YR_Class_26,loco_steam,L&YR Class 26,1903,78740,0,standard,1435,https://en.wikipedia.org/wiki/L&YR_Class_26
+L&YR_Class_27,loco_steam,L&YR Class 27,1889,43227,0,standard,1435,https://en.wikipedia.org/wiki/L&YR_Class_27
+LCDR_B2_class,loco_steam,LCDR B2 class,1891,39929,0,standard,1435,https://en.wikipedia.org/wiki/LCDR_B2_class
+LCDR_M1_class,loco_steam,LCDR M1 class,1880,75184,0,standard,1435,https://en.wikipedia.org/wiki/LCDR_M1_class
+LCDR_M2_class,loco_steam,LCDR M2 class,1884,73152,0,standard,1435,https://en.wikipedia.org/wiki/LCDR_M2_class
+LCDR_M3_class,loco_steam,LCDR M3 class,1891,77318,0,standard,1435,https://en.wikipedia.org/wiki/LCDR_M3_class
+LCDR_R1_class,loco_steam,LCDR R1 class,1900,52273,0,standard,1435,https://en.wikipedia.org/wiki/LCDR_R1_class
+LCDR_R_class,loco_steam,LCDR R class,1891,50546,0,standard,1435,https://en.wikipedia.org/wiki/LCDR_R_class
+LCDR_T_class,loco_steam,LCDR T class,1879,0,0,standard,1435,https://en.wikipedia.org/wiki/LCDR_T_class
+LD&ECR_Class_A,loco_steam,LD&ECR Class A,1895,0,0,standard,1435,https://en.wikipedia.org/wiki/LD&ECR_Class_A
+LD&ECR_Class_D,loco_steam,LD&ECR Class D,1904,0,0,standard,1435,https://en.wikipedia.org/wiki/LD&ECR_Class_D
+LMS_2-Cylindered_Stanier_2-6-4T,loco_steam,LMS 2-Cylindered Stanier 2-6-4T,1935,89256,0,standard,1435,https://en.wikipedia.org/wiki/LMS_2-Cylindered_Stanier_2-6-4T
+LMS_3-Cylindered_Stanier_2-6-4T,loco_steam,LMS 3-Cylindered Stanier 2-6-4T,1934,93726,0,standard,1435,https://en.wikipedia.org/wiki/LMS_3-Cylindered_Stanier_2-6-4T
+LMS_Coronation_Class,loco_steam,LMS Coronation Class,1937,109830,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Coronation_Class
+LMS_Fairburn_2-6-4T,loco_steam,LMS Fairburn 2-6-4T,1945,86055,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Fairburn_2-6-4T
+LMS_Fowler_2-6-2T,loco_steam,LMS Fowler 2-6-2T,1930,71628,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Fowler_2-6-2T
+LMS_Fowler_Class_3F,loco_steam,LMS Fowler Class 3F,1924,50292,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Fowler_Class_3F
+LMS_Garratt,loco_steam,LMS Garratt,1927,151130,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Garratt
+LMS_Hughes_Crab,loco_steam,LMS Hughes Crab,1926,67056,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Hughes_Crab
+LMS_Ivatt_Class_2_2-6-0,loco_steam,LMS Ivatt Class 2 2-6-0,1946,47854,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Ivatt_Class_2_2-6-0
+LMS_Ivatt_Class_2_2-6-2T,loco_steam,LMS Ivatt Class 2 2-6-2T,1946,64262,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Ivatt_Class_2_2-6-2T
+LMS_Ivatt_Class_4,loco_steam,LMS Ivatt Class 4,1947,60046,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Ivatt_Class_4
+LMS_Jubilee_Class,loco_steam,LMS Jubilee Class,1934,80823,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Jubilee_Class
+LMS_Rebuilt_Royal_Scot_Class,loco_steam,LMS Rebuilt Royal Scot Class,0,86258,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Rebuilt_Royal_Scot_Class
+LMS_Stanier_Class_5_4-6-0,loco_steam,LMS Stanier Class 5 4-6-0,1934,73254,0,standard,1435,https://en.wikipedia.org/wiki/LMS_Stanier_Class_5_4-6-0
+LMS_Stanier_Class_8F,loco_steam,LMS Stanier Class 8F,1935,73254,1043980,standard,1435,https://en.wikipedia.org/wiki/LMS_Stanier_Class_8F
+LMS_diesel_shunter_7050,loco_diesel,LMS diesel shunter 7050,1934,25400,119312,standard,1435,https://en.wikipedia.org/wiki/LMS_diesel_shunter_7050
+LMS_diesel_shunter_7051,loco_diesel,LMS diesel shunter 7051,1932,21727,0,standard,1435,https://en.wikipedia.org/wiki/LMS_diesel_shunter_7051
+LMS_diesel_shunter_7054,loco_diesel,LMS diesel shunter 7054,1934,30988,134226,standard,1435,https://en.wikipedia.org/wiki/LMS_diesel_shunter_7054
+LMS_diesel_shunter_7057,loco_diesel,LMS diesel shunter 7057,1934,27940,130498,standard,1435,https://en.wikipedia.org/wiki/LMS_diesel_shunter_7057
+LMS_diesel_shunters_7059-7068,loco_electric,LMS diesel shunters 7059-7068,1936,52832,260995,standard,1435,https://en.wikipedia.org/wiki/LMS_diesel_shunters_7059-7068
+LNER_Class_A2,loco_steam,LNER Class A2,1922,0,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Class_A2
+LNER_Class_A4,loco_steam,LNER Class A4,1935,0,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Class_A4
+LNER_Class_K5,loco_steam,LNER Class K5,1945,72390,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Class_K5
+LNER_Class_O4,loco_steam,LNER Class O4,1911,75844,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Class_O4
+LNER_Class_U1,loco_steam,LNER Class U1,1925,180848,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Class_U1
+LNER_Class_W1,loco_steam,LNER Class W1,1929,0,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Class_W1
+LNER_Gresley_Classes_A1_and_A3,loco_steam,LNER Gresley Classes A1 and A3,1922,92812,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Gresley_Classes_A1_and_A3
+LNER_Thompson_Class_B1,loco_steam,LNER Thompson Class B1,1942,0,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Thompson_Class_B1
+LNER_Thompson_Class_L1,loco_steam,LNER Thompson Class L1,1945,90881,0,standard,1435,https://en.wikipedia.org/wiki/LNER_Thompson_Class_L1
+LNWR_18in_Goods_Class,loco_steam,LNWR 18in Goods Class,1880,35560,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_18in_Goods_Class
+LNWR_18in_Tank_Class,loco_steam,LNWR 18in Tank Class,1898,52832,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_18in_Tank_Class
+LNWR_380_Class,loco_steam,LNWR 380 Class,1923,0,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_380_Class
+LNWR_5ft_6in_Tank_Class,loco_steam,LNWR 5ft 6in Tank Class,1890,51816,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_5ft_6in_Tank_Class
+LNWR_Class_G1,loco_steam,LNWR Class G1,1901,0,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_Class_G1
+LNWR_Class_G2,loco_steam,LNWR Class G2,1921,0,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_Class_G2
+LNWR_Class_G2A,loco_steam,LNWR Class G2A,0,0,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_Class_G2A
+LNWR_Claughton_Class,loco_steam,LNWR Claughton Class,1913,78994,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_Claughton_Class
+LNWR_DX_Goods_Class,loco_steam,LNWR DX Goods Class,1858,27432,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_DX_Goods_Class
+LNWR_Precedent_Class,loco_steam,LNWR Precedent Class,1874,33528,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_Precedent_Class
+LNWR_Prince_of_Wales_Class,loco_steam,LNWR Prince of Wales Class,1911,67564,0,standard,1435,https://en.wikipedia.org/wiki/LNWR_Prince_of_Wales_Class
+LSWR_0298_Class,loco_steam,LSWR 0298 Class,1863,38405,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_0298_Class
+LSWR_C8_class,loco_steam,LSWR C8 class,1898,0,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_C8_class
+LSWR_D15_class,loco_steam,LSWR D15 class,1912,60706,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_D15_class
+LSWR_F9_class,loco_steam,LSWR F9 class,1899,0,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_F9_class
+LSWR_G14_class,loco_steam,LSWR G14 class,1908,72085,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_G14_class
+LSWR_G16_class,loco_steam,LSWR G16 class,1921,96622,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_G16_class
+LSWR_H16_class,loco_steam,LSWR H16 class,1921,97942,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_H16_class
+LSWR_K10_class,loco_steam,LSWR K10 class,1901,0,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_K10_class
+LSWR_L11_class,loco_steam,LSWR L11 class,1903,0,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_L11_class
+LSWR_L12_class,loco_steam,LSWR L12 class,1904,0,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_L12_class
+LSWR_M7_class,loco_steam,LSWR M7 class,1897,0,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_M7_class
+LSWR_O2_class,loco_steam,LSWR O2 class,1889,49174,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_O2_class
+LSWR_P14_class,loco_steam,LSWR P14 class,1910,0,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_P14_class
+LSWR_S11_class,loco_steam,LSWR S11 class,1903,87376,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_S11_class
+LSWR_T14_class,loco_steam,LSWR T14 class,1911,77724,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_T14_class
+LSWR_T1_class,loco_steam,LSWR T1 class,1888,55880,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_T1_class
+LSWR_T3_class,loco_steam,LSWR T3 class,1892,49327,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_T3_class
+LSWR_T7_class,loco_steam,LSWR T7 class,1897,55423,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_T7_class
+LSWR_T9_class,loco_steam,LSWR T9 class,1899,0,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_T9_class
+LSWR_X2_class,loco_steam,LSWR X2 class,1890,49454,0,standard,1435,https://en.wikipedia.org/wiki/LSWR_X2_class
+LT&SR_1_Class,loco_steam,LT&SR 1 Class,1880,59538,0,standard,1435,https://en.wikipedia.org/wiki/LT&SR_1_Class
+LT&SR_2100_Class,loco_steam,LT&SR 2100 Class,1912,96114,0,standard,1435,https://en.wikipedia.org/wiki/LT&SR_2100_Class
+LT&SR_69_Class,loco_steam,LT&SR 69 Class,1903,65684,0,standard,1435,https://en.wikipedia.org/wiki/LT&SR_69_Class
+LT&SR_79_Class,loco_steam,LT&SR 79 Class,1909,72644,0,standard,1435,https://en.wikipedia.org/wiki/LT&SR_79_Class
+Lima_LRS-1200,loco_electric,Lima LRS-1200,1950,0,894840,standard,1435,https://en.wikipedia.org/wiki/Lima_LRS-1200
+Lima_LS-1200,loco_diesel,Lima LS-1200,1950,113624,894840,standard,1435,https://en.wikipedia.org/wiki/Lima_LS-1200
+Louisville_and_Nashville_class_M-1,loco_steam,Louisville and Nashville class M-1,1942,202845,3357887,standard,1435,https://en.wikipedia.org/wiki/Louisville_and_Nashville_class_M-1
+MPI_HSP46,loco_electric,MPI HSP46,2013,130407,3467505,standard,1435,https://en.wikipedia.org/wiki/MPI_HSP46
+MPI_MP14B,loco_electric,MPI MP14B,2008,0,1043980,standard,1435,https://en.wikipedia.org/wiki/MPI_MP14B
+MPI_MP33C,loco_electric,MPI MP33C,2012,133800,2460810,standard,1435,https://en.wikipedia.org/wiki/MPI_MP33C
+MPI_MP8AC-3,loco_electric,MPI MP8AC-3,2012,52616,641302,standard,1435,https://en.wikipedia.org/wiki/MPI_MP8AC-3
+MPI_MPXpress,loco_electric,MPI MPXpress,2003,133809,2684520,standard,1435,https://en.wikipedia.org/wiki/MPI_MPXpress
+Maine_Central_class_O_4-6-0,loco_steam,Maine Central class O 4-6-0,1903,78017,0,standard,1435,https://en.wikipedia.org/wiki/Maine_Central_class_O_4-6-0
+Metropolitan_Railway_E_Class,loco_steam,Metropolitan Railway E Class,1896,0,0,standard,1435,https://en.wikipedia.org/wiki/Metropolitan_Railway_E_Class
+Midland_Railway_1102_Class,loco_steam,Midland Railway 1102 Class,1874,39624,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_1102_Class
+Midland_Railway_1121_Class,loco_steam,Midland Railway 1121 Class,1895,0,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_1121_Class
+Midland_Railway_1134A_Class,loco_steam,Midland Railway 1134A Class,1897,30480,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_1134A_Class
+Midland_Railway_1322_Class,loco_steam,Midland Railway 1322 Class,1883,0,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_1322_Class
+Midland_Railway_1532_Class,loco_steam,Midland Railway 1532 Class,1881,50800,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_1532_Class
+Midland_Railway_1823_Class,loco_steam,Midland Railway 1823 Class,1889,50800,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_1823_Class
+Midland_Railway_1833_Class,loco_steam,Midland Railway 1833 Class,1892,0,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_1833_Class
+Midland_Railway_2501_Class,loco_steam,Midland Railway 2501 Class,1899,0,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_2501_Class
+Midland_Railway_2511_Class,loco_steam,Midland Railway 2511 Class,1899,0,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_2511_Class
+Midland_Railway_690_Class,loco_steam,Midland Railway 690 Class,1869,43688,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_690_Class
+Midland_Railway_6_Class,loco_steam,Midland Railway 6 Class,1875,43688,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_6_Class
+Midland_Railway_780_Class,loco_steam,Midland Railway 780 Class,1870,43688,0,standard,1435,https://en.wikipedia.org/wiki/Midland_Railway_780_Class
+Milwaukee_Road_class_A2,loco_steam,Milwaukee Road class A2,1901,0,0,standard,1435,https://en.wikipedia.org/wiki/Milwaukee_Road_class_A2
+Milwaukee_Road_class_EP-2,loco_electric,Milwaukee Road class EP-2,1919,240403,3310908,standard,1435,https://en.wikipedia.org/wiki/Milwaukee_Road_class_EP-2
+Milwaukee_Road_class_ES-2,loco_electric,Milwaukee Road class ES-2,1916,74389,354208,standard,1435,https://en.wikipedia.org/wiki/Milwaukee_Road_class_ES-2
+Milwaukee_Road_class_F6,loco_steam,Milwaukee Road class F6,1930,170482,0,standard,1435,https://en.wikipedia.org/wiki/Milwaukee_Road_class_F6
+Milwaukee_Road_class_F7,loco_steam,Milwaukee Road class F7,1938,188240,0,standard,1435,https://en.wikipedia.org/wiki/Milwaukee_Road_class_F7
+Milwaukee_Road_class_L2,loco_steam,Milwaukee Road class L2,1912,132798,0,standard,1435,https://en.wikipedia.org/wiki/Milwaukee_Road_class_L2
+Milwaukee_Road_class_S3,loco_steam,Milwaukee Road class S3,1944,208651,3355650,standard,1435,https://en.wikipedia.org/wiki/Milwaukee_Road_class_S3
+NBR_A_class,loco_steam,NBR A class,1909,0,0,standard,1435,https://en.wikipedia.org/wiki/NBR_A_class
+NER_66_Aerolite,loco_steam,NER 66 Aerolite,1869,37592,0,standard,1435,https://en.wikipedia.org/wiki/NER_66_Aerolite
+NER_Class_3CC,loco_steam,NER Class 3CC,1893,0,0,standard,1435,https://en.wikipedia.org/wiki/NER_Class_3CC
+NER_Class_X,loco_steam,NER Class X,1909,86766,0,standard,1435,https://en.wikipedia.org/wiki/NER_Class_X
+NER_Class_Z,loco_steam,NER Class Z,1911,5000,0,standard,1435,https://en.wikipedia.org/wiki/NER_Class_Z
+NSB_Di_8,loco_electric,NSB Di 8,1996,82000,1570000,standard,1435,https://en.wikipedia.org/wiki/NSB_Di_8
+NS_5000_(1946),loco_steam,NS 5000,1946,0,0,standard,1435,https://en.wikipedia.org/wiki/NS_5000_(1946)
+NZR_DSB_class,loco_diesel,NZR DSB class,1954,37000,195000,narrow,1067,https://en.wikipedia.org/wiki/NZR_DSB_class
+NZR_DS_class,loco_diesel,NZR DS class,1955,0,0,narrow,1067,https://en.wikipedia.org/wiki/NZR_DS_class
+NZR_ED_class,loco_electric,NZR ED class,0,90424,925000,narrow,1067,https://en.wikipedia.org/wiki/NZR_ED_class
+New_Haven_EP-1,loco_electric,New Haven EP-1,1905,92514,1058894,standard,1435,https://en.wikipedia.org/wiki/New_Haven_EP-1
+New_Haven_EP-2,loco_electric,New Haven EP-2,1919,158725,1491400,standard,1435,https://en.wikipedia.org/wiki/New_Haven_EP-2
+New_Haven_EP-5,loco_electric,New Haven EP-5,1954,0,2982800,standard,1435,https://en.wikipedia.org/wiki/New_Haven_EP-5
+New_South_Wales_46_class_locomotive,loco_electric,New South Wales 46 class locomotive,1956,0,2535380,standard,1435,https://en.wikipedia.org/wiki/New_South_Wales_46_class_locomotive
+New_South_Wales_AD60_class_locomotive,loco_steam,New South Wales AD60 class locomotive,1952,254918,0,standard,1435,https://en.wikipedia.org/wiki/New_South_Wales_AD60_class_locomotive
+New_York_Central_Hudson,loco_steam,New York Central Hudson,1927,165787,0,standard,1435,https://en.wikipedia.org/wiki/New_York_Central_Hudson
+New_York_Central_Mohawk,loco_steam,New York Central Mohawk,1916,0,2460810,standard,1435,https://en.wikipedia.org/wiki/New_York_Central_Mohawk
+New_York_Central_Niagara,loco_steam,New York Central Niagara,1945,213641,3780699,standard,1435,https://en.wikipedia.org/wiki/New_York_Central_Niagara
+New_Zealand_DSC_class_locomotive,loco_electric,New Zealand DSC class locomotive,1958,41100,315000,narrow,1067,https://en.wikipedia.org/wiki/New_Zealand_DSC_class_locomotive
+New_Zealand_EB_class_locomotive,loco_electric,New Zealand EB class locomotive,0,12192,23000,narrow,1067,https://en.wikipedia.org/wiki/New_Zealand_EB_class_locomotive
+New_Zealand_EF_class_locomotive,loco_electric,New Zealand EF class locomotive,1986,107000,3000000,narrow,1067,https://en.wikipedia.org/wiki/New_Zealand_EF_class_locomotive
+New_Zealand_EW_class_locomotive,loco_electric,New Zealand EW class locomotive,0,76000,1340000,narrow,1067,https://en.wikipedia.org/wiki/New_Zealand_EW_class_locomotive
+Nickel_Plate_Road_class_H-6o,loco_steam,Nickel Plate Road class H-6o,1918,127912,0,standard,1435,https://en.wikipedia.org/wiki/Nickel_Plate_Road_class_H-6o
+Norfolk_and_Western_2300,loco_steam,Norfolk and Western 2300,1954,536189,3355650,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_2300
+Norfolk_and_Western_Class_A,loco_steam,Norfolk and Western Class A,1936,259907,4175920,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_Class_A
+Norfolk_and_Western_Class_J_(1941),loco_steam,Norfolk and Western Class J,1941,224073,3803070,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_Class_J_(1941)
+Norfolk_and_Western_J_Class_(1879),loco_steam,Norfolk and Western J Class,1879,0,0,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_J_Class_(1879)
+Norfolk_and_Western_J_Class_(1903),loco_steam,Norfolk and Western J Class,1903,76698,0,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_J_Class_(1903)
+Norfolk_and_Western_LC-1_Class,loco_electric,Norfolk and Western LC-1 Class,1914,244890,2386240,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_LC-1_Class
+Norfolk_and_Western_LC-2_Class,loco_electric,Norfolk and Western LC-2 Class,1924,375498,3542075,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_LC-2_Class
+Norfolk_and_Western_M_Class,loco_steam,Norfolk and Western M Class,1906,90718,0,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_M_Class
+Norfolk_and_Western_classes_Y3_and_Y3a,loco_steam,Norfolk and Western classes Y3 and Y3a,1919,0,0,standard,1435,https://en.wikipedia.org/wiki/Norfolk_and_Western_classes_Y3_and_Y3a
+"Norfolk_and_Western_classes_Y6,_Y6a_and_Y6b",loco_steam,"Norfolk and Western classes Y6, Y6a and Y6b",1936,264398,4175920,standard,1435,"https://en.wikipedia.org/wiki/Norfolk_and_Western_classes_Y6,_Y6a_and_Y6b"
+Northern_Pacific_class_S-10,loco_steam,Northern Pacific class S-10,1905,69399,0,standard,1435,https://en.wikipedia.org/wiki/Northern_Pacific_class_S-10
+Pennsylvania_Railroad_I1_class,loco_steam,Pennsylvania Railroad I1 class,1916,175131,0,standard,1435,https://en.wikipedia.org/wiki/Pennsylvania_Railroad_I1_class
+Pennsylvania_Railroad_class_D16,loco_steam,Pennsylvania Railroad class D16,1895,64002,0,standard,1435,https://en.wikipedia.org/wiki/Pennsylvania_Railroad_class_D16
+Pennsylvania_Railroad_class_E44,loco_electric,Pennsylvania Railroad class E44,1960,174451,3281080,standard,1435,https://en.wikipedia.org/wiki/Pennsylvania_Railroad_class_E44
+Pennsylvania_Railroad_class_GG1,loco_electric,Pennsylvania Railroad class GG1,1934,215455,3445134,standard,1435,https://en.wikipedia.org/wiki/Pennsylvania_Railroad_class_GG1
+Pennsylvania_Railroad_class_J28,loco_steam,Pennsylvania Railroad class J28,1905,0,0,standard,1435,https://en.wikipedia.org/wiki/Pennsylvania_Railroad_class_J28
+Pennsylvania_Railroad_class_K4,loco_steam,Pennsylvania Railroad class K4,1914,138118,2450370,standard,1435,https://en.wikipedia.org/wiki/Pennsylvania_Railroad_class_K4
+Pennsylvania_Railroad_de_Glehn_locomotive,loco_steam,Pennsylvania Railroad de Glehn locomotive,1904,0,0,standard,1435,https://en.wikipedia.org/wiki/Pennsylvania_Railroad_de_Glehn_locomotive
+Pittsburgh_and_Lake_Erie_class_A-2a,loco_steam,Pittsburgh and Lake Erie class A-2a,1948,193229,0,standard,1435,https://en.wikipedia.org/wiki/Pittsburgh_and_Lake_Erie_class_A-2a
+Progress_Rail_PR43C,loco_electric,Progress Rail PR43C,0,0,3206510,standard,1435,https://en.wikipedia.org/wiki/Progress_Rail_PR43C
+Queensland_A12_small_class_locomotive,loco_steam,Queensland A12 small class locomotive,1878,0,0,narrow,1067,https://en.wikipedia.org/wiki/Queensland_A12_small_class_locomotive
+Railpower_GG20B,loco_electric,Railpower GG20B,2004,127005,223710,standard,1435,https://en.wikipedia.org/wiki/Railpower_GG20B
+Railpower_RP14BD,loco_electric,Railpower RP14BD,2008,0,1043980,standard,1435,https://en.wikipedia.org/wiki/Railpower_RP14BD
+Railpower_RP20BD,loco_electric,Railpower RP20BD,2006,0,1491400,standard,1435,https://en.wikipedia.org/wiki/Railpower_RP20BD
+Railpower_RP20CD,loco_electric,Railpower RP20CD,2008,180529,1491400,standard,1435,https://en.wikipedia.org/wiki/Railpower_RP20CD
+Russian_locomotive_class_Ye,loco_steam,Russian locomotive class Ye,1915,94211,0,standard,1435,https://en.wikipedia.org/wiki/Russian_locomotive_class_Ye
+"S&DJR_Fox,_Walker_0-6-0ST",loco_steam,"S&DJR Fox, Walker 0-6-0ST",1874,0,0,standard,1435,"https://en.wikipedia.org/wiki/S&DJR_Fox,_Walker_0-6-0ST"
+S&DJR_Sentinels,loco_steam,S&DJR Sentinels,1929,0,149140,standard,1435,https://en.wikipedia.org/wiki/S&DJR_Sentinels
+SECR_C_class,loco_steam,SECR C class,1900,43688,0,standard,1435,https://en.wikipedia.org/wiki/SECR_C_class
+SECR_L_class,loco_steam,SECR L class,1914,0,0,standard,1435,https://en.wikipedia.org/wiki/SECR_L_class
+SEK_Class_Δα,loco_steam,SEK Class Δα,1943,0,0,standard,1435,https://en.wikipedia.org/wiki/SEK_Class_Δα
+SEK_Class_Λβ,loco_steam,SEK Class Λβ,1943,0,0,standard,1435,https://en.wikipedia.org/wiki/SEK_Class_Λβ
+SEK_class_Iota-alpha,loco_steam,SEK class Iota-alpha,1915,84400,0,standard,1435,https://en.wikipedia.org/wiki/SEK_class_Iota-alpha
+SEK_class_Λγ,loco_steam,SEK class Λγ,1947,85000,0,standard,1435,https://en.wikipedia.org/wiki/SEK_class_Λγ
+SER_O_class,loco_steam,SER O class,1878,0,0,standard,1435,https://en.wikipedia.org/wiki/SER_O_class
+SER_Q_class,loco_steam,SER Q class,1881,49428,0,standard,1435,https://en.wikipedia.org/wiki/SER_Q_class
+SNCB_Type_29,loco_steam,SNCB Type 29,1945,84500,0,standard,1435,https://en.wikipedia.org/wiki/SNCB_Type_29
+SR_Lord_Nelson_class,loco_steam,SR Lord Nelson class,1926,0,0,standard,1435,https://en.wikipedia.org/wiki/SR_Lord_Nelson_class
+SR_Q_class,loco_steam,SR Q class,1938,50300,0,standard,1435,https://en.wikipedia.org/wiki/SR_Q_class
+SR_W_class,loco_steam,SR W class,1930,91440,0,standard,1435,https://en.wikipedia.org/wiki/SR_W_class
+SR_West_Country_and_Battle_of_Britain_classes,loco_steam,SR West Country and Battle of Britain classes,1945,87376,0,standard,1435,https://en.wikipedia.org/wiki/SR_West_Country_and_Battle_of_Britain_classes
+Santa_Fe_Class_2900,loco_steam,Santa Fe Class 2900,1943,231399,3422763,standard,1435,https://en.wikipedia.org/wiki/Santa_Fe_Class_2900
+Santa_Fe_SD26,loco_electric,Santa Fe SD26,0,148778,1957463,standard,1435,https://en.wikipedia.org/wiki/Santa_Fe_SD26
+Santa_Fe_class_1158,loco_steam,Santa Fe class 1158,1910,0,0,standard,1435,https://en.wikipedia.org/wiki/Santa_Fe_class_1158
+Santa_Fe_class_5011,loco_steam,Santa Fe class 5011,1944,244031,4220662,standard,1435,https://en.wikipedia.org/wiki/Santa_Fe_class_5011
+Sentetsu_Barui-class_locomotive,loco_steam,Sentetsu Barui-class locomotive,1913,150000,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Barui-class_locomotive
+Sentetsu_Mikai-class_locomotive,loco_steam,Sentetsu Mikai-class locomotive,1919,89750,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Mikai-class_locomotive
+Sentetsu_Mogai-class_locomotive,loco_steam,Sentetsu Mogai-class locomotive,1899,34300,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Mogai-class_locomotive
+Sentetsu_Pashii-class_locomotive,loco_steam,Sentetsu Pashii-class locomotive,1921,94400,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Pashii-class_locomotive
+Sentetsu_Pashini-class_locomotive,loco_steam,Sentetsu Pashini-class locomotive,1923,90400,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Pashini-class_locomotive
+Sentetsu_Purei-class_locomotives,loco_steam,Sentetsu Purei-class locomotives,1901,52000,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Purei-class_locomotives
+Sentetsu_Pureko-class_locomotives,loco_steam,Sentetsu Pureko-class locomotives,1911,58910,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Pureko-class_locomotives
+Sentetsu_Pureni-class_locomotives,loco_steam,Sentetsu Pureni-class locomotives,1905,52000,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Pureni-class_locomotives
+Sentetsu_Sorii-class_locomotives,loco_steam,Sentetsu Sorii-class locomotives,1904,66600,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Sorii-class_locomotives
+Sentetsu_Tehoi-class_locomotive,loco_steam,Sentetsu Tehoi-class locomotive,1906,78100,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Tehoi-class_locomotive
+Sentetsu_Tehoko-class_locomotive,loco_steam,Sentetsu Tehoko-class locomotive,1917,72520,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Tehoko-class_locomotive
+Sentetsu_Tehoni-class_locomotive,loco_steam,Sentetsu Tehoni-class locomotive,1906,67160,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Tehoni-class_locomotive
+Sentetsu_Tehosa-class_locomotive,loco_steam,Sentetsu Tehosa-class locomotive,1911,67600,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Tehosa-class_locomotive
+Sentetsu_Tehoshi-class_locomotive,loco_steam,Sentetsu Tehoshi-class locomotive,1913,68400,0,standard,1435,https://en.wikipedia.org/wiki/Sentetsu_Tehoshi-class_locomotive
+Silverton_Tramway_W_class,loco_steam,Silverton Tramway W class,1951,0,0,narrow,1067,https://en.wikipedia.org/wiki/Silverton_Tramway_W_class
+Soo_Line_B-4_class,loco_steam,Soo Line B-4 class,1915,68492,0,standard,1435,https://en.wikipedia.org/wiki/Soo_Line_B-4_class
+Soo_Line_L-1_class,loco_steam,Soo Line L-1 class,1913,134988,0,standard,1435,https://en.wikipedia.org/wiki/Soo_Line_L-1_class
+South_African_Class_NG2_0-4-2ST,loco_steam,South African Class NG2 0-4-2ST,1897,0,79044,narrow,600,https://en.wikipedia.org/wiki/South_African_Class_NG2_0-4-2ST
+South_Australian_Railways_X_class,loco_steam,South Australian Railways X class,1881,0,0,narrow,1067,https://en.wikipedia.org/wiki/South_Australian_Railways_X_class
+Southern_Pacific_Class_P-8,loco_steam,Southern Pacific Class P-8,1921,135079,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_Class_P-8
+Southern_Pacific_Class_T-1,loco_steam,Southern Pacific Class T-1,1896,0,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_Class_T-1
+Southern_Pacific_GS-1_class,loco_steam,Southern Pacific GS-1 class,1930,200623,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_GS-1_class
+Southern_Pacific_GS-2_class,loco_steam,Southern Pacific GS-2 class,1936,203390,3355650,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_GS-2_class
+Southern_Pacific_GS-3_class,loco_steam,Southern Pacific GS-3 class,1937,208651,3728500,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_GS-3_class
+Southern_Pacific_GS-4_class,loco_steam,Southern Pacific GS-4 class,1941,215455,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_GS-4_class
+Southern_Pacific_GS-5_class,loco_steam,Southern Pacific GS-5 class,1942,219175,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_GS-5_class
+Southern_Pacific_GS-6_class,loco_steam,Southern Pacific GS-6 class,1943,212462,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_GS-6_class
+Southern_Pacific_class_AC-1,loco_steam,Southern Pacific class AC-1,0,218268,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-1
+Southern_Pacific_class_AC-10,loco_steam,Southern Pacific class AC-10,1942,298417,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-10
+Southern_Pacific_class_AC-11,loco_steam,Southern Pacific class AC-11,1942,298417,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-11
+Southern_Pacific_class_AC-12,loco_steam,Southern Pacific class AC-12,1943,298417,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-12
+Southern_Pacific_class_AC-2,loco_steam,Southern Pacific class AC-2,0,218268,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-2
+Southern_Pacific_class_AC-3,loco_steam,Southern Pacific class AC-3,0,218268,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-3
+Southern_Pacific_class_AC-4,loco_steam,Southern Pacific class AC-4,1928,278776,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-4
+Southern_Pacific_class_AC-5,loco_steam,Southern Pacific class AC-5,1929,282405,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-5
+Southern_Pacific_class_AC-6,loco_steam,Southern Pacific class AC-6,1930,290071,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-6
+Southern_Pacific_class_AC-8,loco_steam,Southern Pacific class AC-8,1939,298417,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-8
+Southern_Pacific_class_AC-9,loco_steam,Southern Pacific class AC-9,1939,307171,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AC-9
+Southern_Pacific_class_AM-2,loco_steam,Southern Pacific class AM-2,1911,174541,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_AM-2
+Southern_Pacific_class_MC-1,loco_steam,Southern Pacific class MC-1,1909,193184,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_MC-1
+Southern_Pacific_class_MC-2,loco_steam,Southern Pacific class MC-2,1909,198219,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_MC-2
+Southern_Pacific_class_MC-4,loco_steam,Southern Pacific class MC-4,1911,196223,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_MC-4
+Southern_Pacific_class_MC-6,loco_steam,Southern Pacific class MC-6,1912,197675,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_MC-6
+Southern_Pacific_class_MM-2,loco_steam,Southern Pacific class MM-2,1911,174541,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Pacific_class_MM-2
+Southern_Railway_(U.S.)_Class_Ms-2,loco_steam,Southern Railway (U.S.) Class Ms-2,0,0,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Railway_(U.S.)_Class_Ms-2
+Southern_Railway_Ps-4_class,loco_steam,Southern Railway Ps-4 class,1923,0,1956717,standard,1435,https://en.wikipedia.org/wiki/Southern_Railway_Ps-4_class
+Southern_Railway_Ss_class,loco_steam,Southern Railway Ss class,1917,171457,0,standard,1435,https://en.wikipedia.org/wiki/Southern_Railway_Ss_class
+"Spokane,_Portland_and_Seattle_class_A3",loco_steam,"Spokane, Portland and Seattle class A3",1914,69762,0,standard,1435,"https://en.wikipedia.org/wiki/Spokane,_Portland_and_Seattle_class_A3"
+"Spokane,_Portland_and_Seattle_class_E-1",loco_steam,"Spokane, Portland and Seattle class E-1",1938,220363,0,standard,1435,"https://en.wikipedia.org/wiki/Spokane,_Portland_and_Seattle_class_E-1"
+"Spokane,_Portland_and_Seattle_class_L-3",loco_steam,"Spokane, Portland and Seattle class L-3",1886,29483,0,standard,1435,"https://en.wikipedia.org/wiki/Spokane,_Portland_and_Seattle_class_L-3"
+"Spokane,_Portland_and_Seattle_class_L-4",loco_steam,"Spokane, Portland and Seattle class L-4",1883,33257,0,standard,1435,"https://en.wikipedia.org/wiki/Spokane,_Portland_and_Seattle_class_L-4"
+"Spokane,_Portland_and_Seattle_class_O-2",loco_steam,"Spokane, Portland and Seattle class O-2",1910,120201,0,standard,1435,"https://en.wikipedia.org/wiki/Spokane,_Portland_and_Seattle_class_O-2"
+St._Louis_Car_Company_Doodlebug,loco_electric,St. Louis Car Company Doodlebug,1936,79687,447420,standard,1435,https://en.wikipedia.org/wiki/St._Louis_Car_Company_Doodlebug
+TCDD_56301_Class,loco_steam,TCDD 56301 Class,1947,0,1752395,standard,1435,https://en.wikipedia.org/wiki/TCDD_56301_Class
+TasRail_TR_class,loco_electric,TasRail TR class,2013,108000,1700000,narrow,1067,https://en.wikipedia.org/wiki/TasRail_TR_class
+Tasmanian_Government_Railways_B_class,loco_steam,Tasmanian Government Railways B class,1884,0,0,narrow,1067,https://en.wikipedia.org/wiki/Tasmanian_Government_Railways_B_class
+Tennessee_Valley_Railroad_610,loco_steam,Tennessee Valley Railroad 610,1952,73935,0,standard,1435,https://en.wikipedia.org/wiki/Tennessee_Valley_Railroad_610
+USATC_S100_Class,loco_steam,USATC S100 Class,1942,45654,0,standard,1435,https://en.wikipedia.org/wiki/USATC_S100_Class
+USATC_S160_Class,loco_steam,USATC S160 Class,1942,73028,0,standard,1435,https://en.wikipedia.org/wiki/USATC_S160_Class
+USATC_S200_Class,loco_steam,USATC S200 Class,1941,90718,0,standard,1435,https://en.wikipedia.org/wiki/USATC_S200_Class
+USRA_2-6-6-2,loco_steam,USRA 2-6-6-2,1911,203662,0,standard,1435,https://en.wikipedia.org/wiki/USRA_2-6-6-2
+USRA_Heavy_Pacific,loco_steam,USRA Heavy Pacific,0,136077,0,standard,1435,https://en.wikipedia.org/wiki/USRA_Heavy_Pacific
+USRA_Heavy_Santa_Fe,loco_steam,USRA Heavy Santa Fe,1919,172364,0,standard,1435,https://en.wikipedia.org/wiki/USRA_Heavy_Santa_Fe
+USRA_Light_Mikado,loco_steam,USRA Light Mikado,1918,132448,2230389,standard,1435,https://en.wikipedia.org/wiki/USRA_Light_Mikado
+USRA_Light_Mountain,loco_steam,USRA Light Mountain,1918,145149,0,standard,1435,https://en.wikipedia.org/wiki/USRA_Light_Mountain
+USRA_Light_Pacific,loco_steam,USRA Light Pacific,1919,122469,0,standard,1435,https://en.wikipedia.org/wiki/USRA_Light_Pacific
+Union_Pacific_9000_Class,loco_steam,Union Pacific 9000 Class,1926,225207,0,standard,1435,https://en.wikipedia.org/wiki/Union_Pacific_9000_Class
+Union_Pacific_Big_Boy,loco_steam,Union Pacific Big Boy,1941,345636,5219900,standard,1435,https://en.wikipedia.org/wiki/Union_Pacific_Big_Boy
+Union_Pacific_Challenger,loco_steam,Union Pacific Challenger,1936,284401,0,standard,1435,https://en.wikipedia.org/wiki/Union_Pacific_Challenger
+Union_Pacific_FEF_series,loco_steam,Union Pacific FEF series,1937,210919,0,standard,1435,https://en.wikipedia.org/wiki/Union_Pacific_FEF_series
+Union_Pacific_class_P-2,loco_steam,Union Pacific class P-2,1905,109397,0,standard,1435,https://en.wikipedia.org/wiki/Union_Pacific_class_P-2
+Virginian_EL-2B,loco_electric,Virginian EL-2B,1948,468936,5070760,standard,1435,https://en.wikipedia.org/wiki/Virginian_EL-2B
+Virginian_EL-3A,loco_electric,Virginian EL-3A,1925,0,0,standard,1435,https://en.wikipedia.org/wiki/Virginian_EL-3A
+Virginian_EL-C,loco_electric,Virginian EL-C,1955,157818,2460810,standard,1435,https://en.wikipedia.org/wiki/Virginian_EL-C
+WD_Austerity_2-10-0,loco_steam,WD Austerity 2-10-0,1943,0,0,standard,1435,https://en.wikipedia.org/wiki/WD_Austerity_2-10-0
+WD_Austerity_2-8-0,loco_steam,WD Austerity 2-8-0,1943,0,0,standard,1435,https://en.wikipedia.org/wiki/WD_Austerity_2-8-0
+Wabash_class_P1,loco_steam,Wabash class P1,1925,169956,0,standard,1435,https://en.wikipedia.org/wiki/Wabash_class_P1
+Western_Maryland_J-1_Class,loco_steam,Western Maryland J-1 Class,1947,229743,3504790,standard,1435,https://en.wikipedia.org/wiki/Western_Maryland_J-1_Class
+Württemberg_I,loco_steam,Württemberg I,1845,16000,0,standard,1435,https://en.wikipedia.org/wiki/Württemberg_I

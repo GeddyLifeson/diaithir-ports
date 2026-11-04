@@ -30,6 +30,9 @@ public final class ReservoirEntity extends BlockEntity {
 
     FluidStacksResourceHandler tank() { return tank; }
 
+    /** Comparator level from the fill (signal port). */
+    int signal() { return Ports.level((double) tank.copyToList().get(0).getAmount() / CAPACITY); }
+
     String describe() {
         FluidStack s = tank.copyToList().get(0);
         return s.isEmpty() ? "Empty, takes molten metal and lava (16000 mB)" : s.getHoverName().getString() + " " + s.getAmount() + " / " + CAPACITY + " mB";

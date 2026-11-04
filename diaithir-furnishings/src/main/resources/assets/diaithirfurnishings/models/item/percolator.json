@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/percolator"
+  "layer0": "diaithirfurnishings:item/percolator_pot",
+  "layer1": "diaithirfurnishings:item/percolator_handle"
  }
 }

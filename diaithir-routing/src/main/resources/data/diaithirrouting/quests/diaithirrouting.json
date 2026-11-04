@@ -1,0 +1,11 @@
+[
+  {
+    "id": "diaithirrouting/first",
+    "name": "Build a router",
+    "text": "Place a router, slot a puller module and sort a chest into three.",
+    "age": 6,
+    "links": [
+      "diaithirstoragenet/first"
+    ]
+  }
+]

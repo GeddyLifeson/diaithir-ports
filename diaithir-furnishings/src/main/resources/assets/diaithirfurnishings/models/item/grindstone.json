@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/grindstone"
+  "layer0": "diaithirfurnishings:item/grindstone_head",
+  "layer1": "diaithirfurnishings:item/grindstone_handle",
+  "layer2": "diaithirfurnishings:item/grindstone_binding"
  }
 }

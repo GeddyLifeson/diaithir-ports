@@ -20,3 +20,5 @@
 | diaithir-chat-client | No Chat Reports | WTFPL | https://github.com/Aizistral-Studios/No-Chat-Reports (branch 26.1-Unified) |
 | diaithir-chat-client | Chat Heads | MPL-2.0 | https://github.com/dzwdz/chat_heads (branch architectury-26.1) |
 | diaithir-worldgen-chunk-opts | Ksyxis | MIT | https://github.com/VidTu/Ksyxis (branch main) |
+| diaithir-arms/aircraft/simpleplanes | Simple Planes (przemykomo) data fold | LGPL-3.0-only | upgrade catalogue + helicopter constants as data, SI units, no upstream code or art; NOTICE and LICENSE-LGPL-3.0 in the folder |
+| diaithir-rpg-open | Apotheosis 9.1.0, Placebo 10.0.2, Apothic Attributes 3.1.0, Apothic Enchanting 2.1.0, Apothic Spawners 2.0.1 | MIT code, Apotheosis assets All Rights Reserved | github.com/Shadows-of-Fire/* branch 26.1 | folded, compat for JEI/Jade/Gateways removed |

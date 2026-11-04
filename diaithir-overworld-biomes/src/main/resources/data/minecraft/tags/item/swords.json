@@ -1,6 +1,16 @@
 {
  "replace": false,
  "values": [
+  "aerialhell:arsonist_spear",
+  "aerialhell:azurite_spear",
+  "aerialhell:health_boost_spear",
+  "aerialhell:lunatic_spear",
+  "aerialhell:magmatic_gel_spear",
+  "aerialhell:obsidian_spear",
+  "aerialhell:ruby_spear",
+  "aerialhell:sky_wood_spear",
+  "aerialhell:stellar_stone_spear",
+  "aerialhell:volucite_spear",
   "the_backwoods:faded_sword",
   "the_backwoods:heartwood_rotten_sword",
   "the_backwoods:lignum_caro_sword",

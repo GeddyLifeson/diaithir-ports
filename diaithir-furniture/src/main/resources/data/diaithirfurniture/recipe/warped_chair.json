@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:warped_planks"
+ },
+ "pattern": [
+  "P  ",
+  "PPP",
+  "P P"
+ ],
+ "result": {
+  "id": "diaithirfurniture:warped_chair",
+  "count": 1
+ }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LLL",
+    "LWL",
+    "PPP"
+  ],
+  "key": {
+    "L": "minecraft:stripped_oak_log",
+    "W": "minecraft:iron_chain",
+    "P": "minecraft:oak_planks"
+  },
+  "result": {
+    "id": "vs_yard:treadwheel_crane",
+    "count": 1
+  }
+}

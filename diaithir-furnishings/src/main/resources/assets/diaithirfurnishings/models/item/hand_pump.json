@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/hand_pump"
+  "layer0": "diaithirfurnishings:item/hand_pump_head",
+  "layer1": "diaithirfurnishings:item/hand_pump_handle",
+  "layer2": "diaithirfurnishings:item/hand_pump_binding"
  }
 }
