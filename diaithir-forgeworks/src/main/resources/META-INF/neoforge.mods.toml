@@ -6,7 +6,7 @@ license = "MIT"
 modId = "diaithirforgeworks"
 version = "${version}"
 displayName = "Diaithir Forgeworks"
-description = "A family of FE-powered machines in three casing tiers (Age IV, V, VI): a crusher, an alloy furnace, a sawmill and a crucible. Data-driven recipes, redstone control, per-face side config and speed, efficiency and output-chance augments. Original clean-room work."
+description = "A family of FE-powered machines in three casing tiers (Age IV, V, VI): a crusher, an alloy furnace, a sawmill and a crucible. Data-driven recipes, redstone control, per-face side config and shared module slots (speed, efficiency and, on crushers and sawmills, productivity). Original clean-room work."
 
 [[dependencies.diaithirforgeworks]]
 modId = "neoforge"

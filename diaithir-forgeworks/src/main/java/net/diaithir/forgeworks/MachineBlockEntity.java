@@ -36,7 +36,7 @@ import org.jspecify.annotations.Nullable;
 import java.util.List;
 
 /**
- * The machine. Slots: 0 and 1 inputs, 2 output, 3 bonus output, 4 augment. Each tick it checks redstone, finds a recipe of its kind,
+ * The machine. Slots: 0 and 1 inputs, 2 output, 3 bonus output, 4 legacy augment slot (migrated into module slots). Each tick it checks redstone, finds a recipe of its kind,
  * draws FE and advances. Side config sets item access per face; energy can be switched off per face.
  */
 public final class MachineBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer {
@@ -217,12 +217,7 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
         return new ItemStack(bucket);
     }
 
-    // ---- augments ------------------------------------------------------------------------------------------------------------------
-
-    private int augments(Augment a) {
-        ItemStack s = items.get(Kind.UPGRADE);
-        return s.getItem() instanceof AugmentItem ai && ai.augment == a ? Math.min(s.getCount(), Config.MAX_AUGMENTS.get()) : 0;
-    }
+    // ---- upgrades ------------------------------------------------------------------------------------------------------------------
 
     /** Effects from the shared upgrade system (modules and beacons); identity when none are fitted. */
     private net.diaithir.upgrades.Effects upgrades() {
@@ -230,17 +225,30 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
                 .orElse(net.diaithir.upgrades.Effects.NONE);
     }
 
+    /**
+     * Machines saved before the augment items became modules hold them in the old augment slot (the aliases load them as
+     * circuit module items). Move each into a free module slot; what does not fit is dropped.
+     */
+    private void migrateLegacyAugments(ServerLevel level) {
+        ItemStack old = items.get(Kind.UPGRADE);
+        items.set(Kind.UPGRADE, ItemStack.EMPTY);
+        if (old.getItem() instanceof net.diaithir.upgrades.ModuleItem mi) {
+            while (!old.isEmpty() && net.diaithir.upgrades.Upgrades.insert(this, mi.spec(), net.diaithir.upgrades.Quality.NORMAL)) old.shrink(1);
+        }
+        if (!old.isEmpty()) net.minecraft.world.Containers.dropItemStack(level, worldPosition.getX() + 0.5, worldPosition.getY() + 1.0, worldPosition.getZ() + 0.5, old);
+        setChanged();
+    }
+
     public double speed() {
-        return Config.tierSpeed(tier) * (1.0 + Config.SPEED_PER_AUGMENT.get() * augments(Augment.SPEED)) * upgrades().speedMultiplier();
+        return Config.tierSpeed(tier) * upgrades().speedMultiplier();
     }
 
     public double energyPerJob(MachineRecipe r) {
-        double saving = Math.max(0.25, 1.0 - Config.SAVING_PER_AUGMENT.get() * augments(Augment.EFFICIENCY));
-        return r.energy * saving * (1.0 + Config.SPEED_ENERGY_PENALTY.get() * augments(Augment.SPEED)) * upgrades().consumptionMultiplier();
+        return r.energy * upgrades().consumptionMultiplier();
     }
 
     public float bonusChance(MachineRecipe r) {
-        return (float) Math.min(1.0, r.bonusChance * (1.0 + Config.CHANCE_PER_AUGMENT.get() * augments(Augment.CHANCE)) * upgrades().outputMultiplier());
+        return (float) Math.min(1.0, r.bonusChance * upgrades().outputMultiplier());
     }
 
     // ---- ticking -------------------------------------------------------------------------------------------------------------------
@@ -294,6 +302,7 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
 
     public void serverTick(ServerLevel level) {
         tickCount++;
+        if (!items.get(Kind.UPGRADE).isEmpty()) migrateLegacyAugments(level);
         if (active != null) {
             if (active.value().assign(inputStacks()) == null) {
                 active = null;
@@ -393,7 +402,7 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
     @Override
     public boolean canPlaceItem(int slot, ItemStack stack) {
         if (slot < kind.inputs) return true;
-        return slot == Kind.UPGRADE && stack.getItem() instanceof AugmentItem;
+        return false;
     }
 
     @Override
