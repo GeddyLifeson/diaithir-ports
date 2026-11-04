@@ -134,6 +134,10 @@ hash = "7db0582b3a27ffcfb580e549ed10daf2f3e6b5f4706f5cd9c6d8e0edbcdf089b"
 metafile = true
 
 [[files]]
+file = "keybinds.txt"
+hash = "7c94295f04a1c53ff70d245e6d61ae68ffe9d85882bb9f9bd98a0801171c7732"
+
+[[files]]
 file = "kubejs/assets/backrooms/lang/en_us.json"
 hash = "8bbe92b17dd2bd0b5ccac450382a79749d1af81ad2dc79ca2f01b1ff3a8a77b1"
 
