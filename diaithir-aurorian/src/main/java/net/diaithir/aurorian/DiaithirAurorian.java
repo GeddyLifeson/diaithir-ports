@@ -176,6 +176,9 @@ public final class DiaithirAurorian {
             }
             p = p.stacksTo(1).component(DataComponents.ATTRIBUTE_MODIFIERS, b.build());
         }
+        if (s.id().equals("mirror_of_guidance")) {
+            p = p.stacksTo(1); // page state lives on the stack
+        }
         if (s.rarity() != null) {
             p = p.rarity(Rarity.valueOf(s.rarity().toUpperCase()));
         }
