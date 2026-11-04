@@ -78,6 +78,16 @@ final class IvControl {
         return best;
     }
 
+    private static Object field(Object o, String name) {
+        try {
+            var f = o.getClass().getDeclaredField(name);
+            f.setAccessible(true);
+            return f.get(o);
+        } catch (ReflectiveOperationException | RuntimeException ex) {
+            return "?";
+        }
+    }
+
     private static double var(Object vehicle, String field) throws ReflectiveOperationException {
         Object cv = vehicle.getClass().getField(field).get(vehicle);
         return (double) cv.getClass().getMethod("getValue").invoke(cv);
@@ -131,6 +141,30 @@ final class IvControl {
                 }
             }
             sb.append(' ').append(f[1]).append('=').append(text);
+        }
+        try {
+            for (Object part : (List<?>) v.getClass().getField("allParts").get(v)) {
+                if (!part.getClass().getSimpleName().equals("PartGun")) continue;
+                Class<?> g = part.getClass();
+                Object ctl = g.getMethod("getGunController").invoke(part);
+                Object seatItem = null;
+                if (ctl != null) {
+                    Object seat = ctl.getClass().getMethod("getEntityRiding").invoke(ctl);
+                    seatItem = seat == null ? "noSeat" : seat.getClass().getField("activeGunItem").get(seat);
+                }
+                sb.append(" gun[state=").append(g.getField("state").get(part))
+                        .append(" controller=").append(ctl != null)
+                        .append(" seatActive=").append(seatItem)
+                        .append(" cached=").append(g.getField("cachedItem").get(part))
+                        .append(" loaded=").append(field(part, "loadedBulletCount"))
+                        .append(" reloading=").append(g.getField("isReloading").get(part))
+                        .append(" holding=").append(g.getField("playerHoldingTrigger").get(part))
+                        .append(" reloadDelay=").append(field(part, "reloadDelayRemaining"))
+                        .append(" fireDelay=").append(field(part, "lastMillisecondFired"))
+                        .append(']');
+            }
+        } catch (ReflectiveOperationException | RuntimeException ex) {
+            sb.append(" gun=?").append(ex.getClass().getSimpleName());
         }
         try {
             sb.append(" speed=").append(String.format("%.3f", named(v, "velocity"))).append(" m/s");
