@@ -67842,11 +67842,6 @@ file = "mods/diaithir-entity-animation-neoforge-26.1.2-1.0.2.jar"
 hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
-file = "mods/diaithir-entity-animation-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "e3240cdcf1b244579f2867ef448023c5ced144e9fcd19345785e92571d708526"
-metafile = true
-
-[[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
 hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
 
