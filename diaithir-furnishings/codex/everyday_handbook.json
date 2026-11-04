@@ -599,6 +599,224 @@
    ]
   },
   {
+   "tier": "farm_machine",
+   "name": "Farm Machine",
+   "age": "I",
+   "text": "Everyday objects: farm machine.",
+   "items": [
+    {
+     "id": "diaithirfurnishings:digging_stick",
+     "name": "Bauta tochuilti",
+     "age": "I",
+     "text": "Digging stick: earliest widespread use Paleolithic (Worldwide). A digging stick, sometimes called a yam stick, is a wooden implement used primarily by subsistence-based cultures to dig out underground food such as roots and tubers, tilling the soil, or burrowing animals and anthills."
+    },
+    {
+     "id": "diaithirfurnishings:dibber",
+     "name": "Biur plaundála",
+     "age": "IV",
+     "text": "Dibber: earliest widespread use Roman (Europe). A dibber or dibble or dibbler is a pointed wooden stick for making holes in the ground so that seeds, seedlings or small bulbs can be planted."
+    },
+    {
+     "id": "diaithirfurnishings:cradle_scythe",
+     "name": "Korrán kliatánach",
+     "age": "V",
+     "text": "Grain cradle: earliest widespread use 1700s (Europe). A grain cradle or cradle, is a modification to a standard scythe to keep the cut grain stems aligned."
+    },
+    {
+     "id": "diaithirfurnishings:cultivator",
+     "name": "Míntilder",
+     "age": "V",
+     "text": "Cultivator: earliest widespread use 1800s (Europe). A cultivator is a piece of agricultural equipment used for secondary tillage."
+    },
+    {
+     "id": "diaithirfurnishings:disc_harrow",
+     "name": "Kliad dhiuska",
+     "age": "V",
+     "text": "Disc harrow: earliest widespread use 1800s (United States). A disk harrow is a harrow whose cutting edges are a row of concave metal discs, which may be scalloped or set at an oblique angle."
+    },
+    {
+     "id": "diaithirfurnishings:cultipacker",
+     "name": "Rólóier",
+     "age": "VI",
+     "text": "Cultipacker: earliest widespread use 1900s (United States). A cultipacker is a piece of agricultural equipment that crushes dirt clods, removes air pockets, and presses down small stones, forming a smooth, firm seedbed."
+    },
+    {
+     "id": "diaithirfurnishings:corn_planter",
+     "name": "Plauntóir arbuir",
+     "age": "VI",
+     "text": "Corn planter: earliest widespread use 1850s (United States). A planter is a farm implement, usually towed behind a tractor, that sows (plants) seeds in rows throughout a field."
+    },
+    {
+     "id": "diaithirfurnishings:mechanical_reaper",
+     "name": "Buonuiri meikniúil",
+     "age": "V",
+     "text": "Mechanical reaper: earliest widespread use 1831 (United States). A reaper is a farm implement that reaps (cuts and often also gathers) crops at harvest when they are ripe."
+    },
+    {
+     "id": "diaithirfurnishings:reaper_binder",
+     "name": "Buonuiri kiengultóir",
+     "age": "VI",
+     "text": "Reaper-binder: earliest widespread use 1870s (United States). The reaper-binder, or binder, is a farm implement that improved upon the simple reaper."
+    },
+    {
+     "id": "diaithirfurnishings:mowing_machine",
+     "name": "Meisín bainti féier",
+     "age": "V",
+     "text": "Mowing machine: earliest widespread use 1830s (United States). A mower is a person or machine that cuts (mows) grass or other plants that grow on the ground."
+    },
+    {
+     "id": "diaithirfurnishings:hay_rake",
+     "name": "Ráka féier",
+     "age": "V",
+     "text": "Horse-drawn hay rake: earliest widespread use 1800s (United States). A hay rake is an agricultural rake used to collect cut hay or straw into windrows for later collection (e.g."
+    },
+    {
+     "id": "diaithirfurnishings:tedder",
+     "name": "Skaipeoir féier",
+     "age": "VI",
+     "text": "Tedder: earliest widespread use 1800s (Europe). Tedder is a surname."
+    },
+    {
+     "id": "diaithirfurnishings:manure_spreader",
+     "name": "Skaipeoir aeilech",
+     "age": "VI",
+     "text": "Manure spreader: earliest widespread use 1860s (United States). A manure spreader, muck spreader, or honey wagon is an agricultural machine used to distribute manure over a field as a fertilizer."
+    },
+    {
+     "id": "diaithirfurnishings:baler",
+     "name": "Bailiteoir féier",
+     "age": "VI",
+     "text": "Hay baler: earliest widespread use 1872 (United States). A baler, or hay baler, is a piece of farm machinery used to compress a cut and raked crop (such as hay, cotton, flax straw, salt marsh hay, or silage) into compact bales that are easy to handle, transport, and store."
+    },
+    {
+     "id": "diaithirfurnishings:threshing_machine",
+     "name": "Meisín buoilti",
+     "age": "V",
+     "text": "Threshing machine: earliest widespread use 1786 (Scotland). A threshing machine or a thresher is a piece of farm equipment that separates grain seed from the stalks and husks."
+    },
+    {
+     "id": "diaithirfurnishings:cotton_gin",
+     "name": "Gien kadáis",
+     "age": "V",
+     "text": "Cotton gin: earliest widespread use 1793 (United States). A cotton gin—meaning \"cotton engine\"—is a machine that quickly and easily separates cotton fibers from their seeds, enabling much greater productivity than manual cotton separation."
+    },
+    {
+     "id": "diaithirfurnishings:chaff_cutter",
+     "name": "Gierrtóir káitníni",
+     "age": "V",
+     "text": "Chaff cutter: earliest widespread use 1700s (England). A chaff cutter is a mechanical device for cutting straw or hay into small pieces before being mixed together with other forage and fed to horses and cattle."
+    },
+    {
+     "id": "diaithirfurnishings:milking_machine",
+     "name": "Meisín krú",
+     "age": "VI",
+     "text": "Milking machine: earliest widespread use 1860 (United States). Automatic milking is the milking of dairy animals, especially of dairy cattle, without human labour."
+    },
+    {
+     "id": "diaithirfurnishings:traction_engine",
+     "name": "Einsini tarruingti gaili",
+     "age": "VI",
+     "text": "Steam traction engine: earliest widespread use 1850s (England). A traction engine is a steam-powered tractor used to move heavy loads on roads, plough ground or to provide power at a chosen location."
+    },
+    {
+     "id": "diaithirfurnishings:tractor",
+     "name": "Tarrakóir",
+     "age": "VI",
+     "text": "Tractor: earliest widespread use 1892 (United States). A tractor is an engineering vehicle specifically designed to deliver a high tractive effort (or torque) at slow speeds, for the purposes of hauling a trailer or machinery, such as that used in agriculture, mining or construction."
+    },
+    {
+     "id": "diaithirfurnishings:crawler_tractor",
+     "name": "Tarrakóir lourgaí",
+     "age": "VI",
+     "text": "Crawler tractor: earliest widespread use 1904 (United States). Continuous track or tracked treads are a system of vehicle propulsion used in tracked vehicles, running on a continuous band of treads or track plates driven by two or more wheels."
+    },
+    {
+     "id": "diaithirfurnishings:walking_tractor",
+     "name": "Tarrakóir sieúlach",
+     "age": "VI",
+     "text": "Two-wheel tractor: earliest widespread use 1910s (Europe). Two-wheel tractor or walking tractor (French: motoculteur, Russian: мотоблок (motoblok), German: Einachsschlepper) are generic terms understood in the US and in parts of Europe to represent a single-axle tractor, which is a tractor with one axle, self-powered and self-propelled, which can pull and power various farm implements such as a trailer, cultivator or harrow, a plough, or various seeders and harvesters."
+    },
+    {
+     "id": "diaithirfurnishings:rice_transplanter",
+     "name": "Plaundóir rísi",
+     "age": "VII",
+     "text": "Rice transplanter: earliest widespread use 1960s (Japan). A rice transplanter is a specialized transplanter fitted to transplant rice seedlings onto paddy fields."
+    },
+    {
+     "id": "diaithirfurnishings:combine_harvester",
+     "name": "Buointeoir komchenguilti",
+     "age": "V",
+     "text": "Combine harvester: earliest widespread use 1835 (United States). The modern combine harvester, also called a combine, is a machine designed to harvest a variety of cultivated seeds."
+    },
+    {
+     "id": "diaithirfurnishings:forage_harvester",
+     "name": "Buointeoir bieta",
+     "age": "VI",
+     "text": "Forage harvester: earliest widespread use 1930s (United States). A forage harvester – also known as a silage harvester, forager or chopper – is a farm implement that harvests forage plants to make silage."
+    },
+    {
+     "id": "diaithirfurnishings:cotton_picker",
+     "name": "Piukadóir kadáis",
+     "age": "VI",
+     "text": "Cotton picker: earliest widespread use 1944 (United States). A cotton picker is either a machine that harvests cotton, or a person who picks ripe cotton fibre from the plants."
+    },
+    {
+     "id": "diaithirfurnishings:corn_picker",
+     "name": "Piukadóir arbuir",
+     "age": "VI",
+     "text": "Corn picker: earliest widespread use 1900s (United States). A corn picker is an agricultural machine used to harvest corn leaving the whole ear intact rather than shelling the kernels off like a conventional combine."
+    },
+    {
+     "id": "diaithirfurnishings:sugar_cane_harvester",
+     "name": "Buointeoir siúkra",
+     "age": "VI",
+     "text": "Sugarcane harvester: earliest widespread use 1940s (Australia). A sugarcane harvester is a large piece of agricultural machinery used to harvest and partially process sugarcane."
+    },
+    {
+     "id": "diaithirfurnishings:potato_harvester",
+     "name": "Buointeoir prátauí",
+     "age": "VI",
+     "text": "Potato harvester: earliest widespread use 1900s (United States). Potato harvesters are machines that harvest potatoes."
+    },
+    {
+     "id": "diaithirfurnishings:sprayer",
+     "name": "Spréauyer baurr",
+     "age": "VI",
+     "text": "Crop sprayer: earliest widespread use 1920s (United States). A sprayer is a device used to spray a liquid, where sprayers are commonly used for projection of water, weed killers, crop performance materials, pest maintenance chemicals, as well as manufacturing and production line ingredients."
+    },
+    {
+     "id": "diaithirfurnishings:center_pivot",
+     "name": "Oiskiseoir láraiti",
+     "age": "VII",
+     "text": "Center-pivot irrigator: earliest widespread use 1948 (United States). Center-pivot irrigation (sometimes called central-pivot irrigation), also called water-wheel and circle irrigation, is a method of crop irrigation in which equipment rotates around a pivot and crops are watered with sprinklers."
+    },
+    {
+     "id": "diaithirfurnishings:agricultural_drone",
+     "name": "Dróien talmaíochta",
+     "age": "VII",
+     "text": "Agricultural drone: earliest widespread use 2010s (Japan). An agricultural drone is an unmanned aerial vehicle (UAV) used in agriculture operations, mostly in yield optimization by monitoring crop growth, aerial seeding and crop protection."
+    },
+    {
+     "id": "diaithirfurnishings:agricultural_robot",
+     "name": "Roubót talmaíochta",
+     "age": "VII",
+     "text": "Agricultural robot: earliest widespread use 2010s (Worldwide). An agricultural robot is a robot deployed for agricultural purposes."
+    },
+    {
+     "id": "diaithirfurnishings:cream_separator",
+     "name": "Skaradán uochtuir",
+     "age": "VI",
+     "text": "Cream separator: earliest widespread use 1878 (Sweden). Cream separation, milk separation, milk skimming, or milk creaming is the separation of whole milk into cream and skimmed milk."
+    },
+    {
+     "id": "diaithirfurnishings:swather",
+     "name": "Swatóir",
+     "age": "VII",
+     "text": "Swather: earliest widespread use 1950s (Canada). A swather (North America), or windrower (Australia and rest of world), is a farm implement that cuts hay or small grain crops and forms them into a windrow for drying."
+    }
+   ]
+  },
+  {
    "tier": "fire",
    "name": "Fire",
    "age": "I",

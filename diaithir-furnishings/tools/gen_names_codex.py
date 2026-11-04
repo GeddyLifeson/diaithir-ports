@@ -33,7 +33,7 @@ for r in rows:
     nm = names.get(r["id"], r["name"])
     text = f"{r['name']}: earliest widespread use {r['earliest']} ({r['region']}). {r['summary']}"
     chapters.setdefault(r["category"], []).append({"id": f"{NS}:{r['id']}", "name": nm, "age": age[r["id"]], "text": text})
-    lib.append([nm, "item", ["I", "II", "III", "IV", "V", "VI"].index(age[r["id"]]) + 1, "everyday", text])
+    lib.append([nm, "item", ["I", "II", "III", "IV", "V", "VI", "VII"].index(age[r["id"]]) + 1, "everyday", text])
 (M / "codex").mkdir(exist_ok=True); (M / "library").mkdir(exist_ok=True)
 json.dump({"id": f"{NS}:handbook", "title": "Everyday objects",
            "chapters": [{"tier": c, "name": c.replace("_", " ").title(), "age": "I", "text": f"Everyday objects: {c.replace('_', ' ')}.", "items": v}
