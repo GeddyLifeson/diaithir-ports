@@ -20,3 +20,6 @@ Not tested: a real client (rendering of icons, worn armour layers, bow and cross
 
 ## Gadgets
 `/armsselftest` ok=112 bad=0. Live: a turret with ammo=8 killed a 20 hp husk 6 blocks away in line of sight in under 10 s and was left at ammo=2. The mining laser needs a player and was only checked by its pure rules. (2026-11-04)
+
+## Immersive Armors stage 1
+`/armsselftest` ok=117 bad=0 (40 items bound, pure resistance and berserk maths, set counting, heavy helmet armour/knockback/weight modifiers, prismarine boots durability). Live: a husk in the full divine set shrugged off the first hit ("Target is invulnerable") and took damage from the second (20 to 15 hp). (2026-11-04)

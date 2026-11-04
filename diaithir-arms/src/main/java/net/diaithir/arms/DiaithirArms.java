@@ -172,6 +172,8 @@ public final class DiaithirArms {
             }
         }
         Roster.register(ITEMS, ALL);
+        net.diaithir.arms.immersive.Sets.register(ITEMS);
+        NeoForge.EVENT_BUS.register(new net.diaithir.arms.immersive.Effects());
         for (String id : DATA.parts()) {
             ALL.put(id, ITEMS.registerSimpleItem(id));
         }
@@ -188,6 +190,7 @@ public final class DiaithirArms {
                 e.accept(TRANSMOG_ITEM.get());
                 e.accept(TURRET_ITEM.get());
                 e.accept(LASER.get());
+                net.diaithir.arms.immersive.Sets.all().values().forEach(i -> e.accept(i.get()));
             }
         });
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));

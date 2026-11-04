@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "MMM",
+  "M M",
+  "M M"
+ ],
+ "key": {
+  "M": "minecraft:bone_block"
+ },
+ "result": {
+  "id": "diaithirarms:wither_leggings_imm",
+  "count": 1
+ }
+}
