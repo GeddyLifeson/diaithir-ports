@@ -45,7 +45,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:small_wheel"
+   "defaultPart": "diaithirtrucks:small_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -56,44 +58,35 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:small_wheel"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    0.8999999999999999,
-    0
-   ],
-   "width": 1.8,
-   "height": 1.2
+   "defaultPart": "diaithirtrucks:small_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "definitions": [
   {
-   "subName": "_c",
+   "subName": "",
    "name": "Horse-Drawn Roller (Yellow)",
    "modelName": "cv_horse_roller",
-   "textureName": "paint_c",
+   "textureName": "paintc",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_orange",
+   "subName": "_orange",
    "name": "Horse-Drawn Roller (Orange)",
    "modelName": "cv_horse_roller",
-   "textureName": "paint_c_orange",
+   "textureName": "paintc_orange",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_white",
+   "subName": "_white",
    "name": "Horse-Drawn Roller (White)",
    "modelName": "cv_horse_roller",
-   "textureName": "paint_c_white",
+   "textureName": "paintc_white",
    "extraMaterialLists": [
     []
    ]
@@ -114,6 +107,29 @@
       2.6
      ],
      "distance": 2.0
+    }
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.8999999999999999,
+      0
+     ],
+     "width": 1.8,
+     "height": 1.2
     }
    ]
   }

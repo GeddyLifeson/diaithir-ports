@@ -1,38 +1,43 @@
 {
- "module": "diaithirhudoverlays",
- "side": "client",
- "features": [
-  "betteradvancements"
- ],
- "codex": {
-  "entry": "diaithirhudoverlays.overview",
-  "parent": "codex.interface",
-  "how_it_connects": "client-side; reads item, block and tooltip data from every module through capabilities and c: tags only (no class checks)",
-  "age": "I"
- },
- "quest": {
-  "id": "diaithirhudoverlays.intro",
-  "tab": "Codex Quests",
-  "next": null,
-  "optional": true
- },
- "units": {
-  "energy": "J",
-  "power": "W",
-  "pressure": "Pa",
-  "volume": "L",
-  "mass": "kg",
-  "time": "s (20 ticks)",
-  "note": "FE/RF shown as labels of J"
- },
- "tags_used": [
-  "c:tools",
-  "c:foods"
- ],
- "global_events": {
-  "listens": [],
-  "fires": []
- },
- "upgrade_rules": "none (no working blocks)",
- "todo": "consolidation thread wires this into COMPAT_MATRIX and the Codex generator"
+  "module": "diaithirhudoverlays",
+  "side": "client",
+  "features": [
+    "autohud",
+    "betteradvancements",
+    "leavebars",
+    "pickupnotifier",
+    "talkballoons",
+    "lookat"
+  ],
+  "codex": {
+    "entry": "diaithirhudoverlays.overview",
+    "parent": "codex.interface",
+    "how_it_connects": "client-side; reads item, block and tooltip data from every module through capabilities and c: tags only (no class checks)",
+    "age": "I"
+  },
+  "quest": {
+    "id": "diaithirhudoverlays.intro",
+    "tab": "Codex Quests",
+    "next": null,
+    "optional": true
+  },
+  "units": {
+    "energy": "J",
+    "power": "W",
+    "pressure": "Pa",
+    "volume": "L",
+    "mass": "kg",
+    "time": "s (20 ticks)",
+    "note": "FE/RF shown as labels of J"
+  },
+  "tags_used": [
+    "c:tools",
+    "c:foods"
+  ],
+  "global_events": {
+    "listens": [],
+    "fires": []
+  },
+  "upgrade_rules": "none (no working blocks)",
+  "todo": "consolidation thread wires this into COMPAT_MATRIX and the Codex generator"
 }

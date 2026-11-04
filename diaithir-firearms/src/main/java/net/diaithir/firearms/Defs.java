@@ -21,7 +21,15 @@ public final class Defs {
     /** Extra ammunition item ids (roster calibers). */
     public static final java.util.List<String> AMMO = new java.util.ArrayList<>();
 
+    /** Gun class to ammo container kinds, preference order (container_kinds.json, written by tools/gen_containers.py). */
+    public static final Map<String, List<String>> KINDS = new LinkedHashMap<>();
+
     static {
+        try (var r = new InputStreamReader(Defs.class.getResourceAsStream("/container_kinds.json"))) {
+            new Gson().<Map<String, List<String>>>fromJson(r, new com.google.gson.reflect.TypeToken<Map<String, List<String>>>() {}.getType()).forEach(KINDS::put);
+        } catch (Exception e) {
+            throw new IllegalStateException("container_kinds.json missing", e);
+        }
         try (var r = new InputStreamReader(Defs.class.getResourceAsStream("/guns.json"))) {
             File f = new Gson().fromJson(r, File.class);
             f.guns().forEach(g -> GUNS.put(g.id(), g));

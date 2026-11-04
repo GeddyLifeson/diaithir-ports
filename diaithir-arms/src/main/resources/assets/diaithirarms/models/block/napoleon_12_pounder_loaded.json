@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirarms:block/napoleon_12_pounder_loaded"
+ }
+}

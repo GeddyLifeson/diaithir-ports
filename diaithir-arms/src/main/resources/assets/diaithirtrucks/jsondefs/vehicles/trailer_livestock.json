@@ -45,7 +45,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -56,7 +58,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -67,7 +71,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -78,7 +84,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -89,18 +97,9 @@
    "types": [
     "interactable_crate"
    ],
-   "defaultPart": "diaithirtrucks:crate_m"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    2.25,
-    0
-   ],
-   "width": 2.6,
-   "height": 3.9
+   "defaultPart": "diaithirtrucks:crate_m",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "definitions": [
@@ -132,7 +131,35 @@
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "door",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "rear_doors",
+      "centerPoint": [
+       1.2,
+       2.5,
+       -8.1
+      ],
+      "axis": [
+       0,
+       -110,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   }
+  ],
+  "customVariables": [
+   "rear_doors"
+  ]
+ },
  "connectionGroups": [
   {
    "groupName": "kingpin",
@@ -147,6 +174,29 @@
       7.1
      ],
      "distance": 2.0
+    }
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      2.25,
+      0
+     ],
+     "width": 2.6,
+     "height": 3.9
     }
    ]
   }

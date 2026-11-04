@@ -22,7 +22,16 @@
   "diaithirgear:smithy": "I",
   "diaithirgear:workshop_bench": "I",
   "diaithirgear:gunsmith_bench": "VI",
-  "diaithirgear:schematic": "IV"
+  "diaithirgear:schematic": "IV",
+  "diaithirgear:duct_tape": "II",
+  "diaithirgear:copper_repair_kit": "II",
+  "diaithirgear:item_magnet": "III",
+  "diaithirgear:iron_repair_kit": "IV",
+  "diaithirgear:golden_repair_kit": "IV",
+  "diaithirgear:diamond_repair_kit": "V",
+  "diaithirgear:amethyst_repair_kit": "V",
+  "diaithirgear:super_item_magnet": "V",
+  "diaithirgear:netherite_repair_kit": "VII"
  },
  "families": {
   "holy": "IV",

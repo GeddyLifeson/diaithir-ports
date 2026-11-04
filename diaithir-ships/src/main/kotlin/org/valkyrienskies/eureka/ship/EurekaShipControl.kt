@@ -108,7 +108,9 @@ class EurekaShipControl : ShipPhysicsListener, ServerTickListener {
             EurekaConfig.SERVER.maxFloaterBuoyantFactor
         )
 
-        physShip.buoyantFactor = 1.0 + floaters * buoyantFactorPerFloater
+        // yard ships: VS2's buoyancy is sized for the original block masses, so a floater multiplier on top launched the sloop to y=15000; keep the base factor
+        val yardManaged = (ship as? LoadedServerShip)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java) != null
+        physShip.buoyantFactor = if (yardManaged) 1.0 else 1.0 + floaters * buoyantFactorPerFloater
 
         // region Aligning
 

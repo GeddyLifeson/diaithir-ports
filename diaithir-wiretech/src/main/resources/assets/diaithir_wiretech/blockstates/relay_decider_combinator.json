@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,lit=false": {
+      "model": "diaithir_wiretech:block/relay_decider_combinator"
+    },
+    "facing=east,lit=false": {
+      "model": "diaithir_wiretech:block/relay_decider_combinator",
+      "y": 90
+    },
+    "facing=south,lit=false": {
+      "model": "diaithir_wiretech:block/relay_decider_combinator",
+      "y": 180
+    },
+    "facing=west,lit=false": {
+      "model": "diaithir_wiretech:block/relay_decider_combinator",
+      "y": 270
+    },
+    "facing=north,lit=true": {
+      "model": "diaithir_wiretech:block/relay_decider_combinator"
+    },
+    "facing=east,lit=true": {
+      "model": "diaithir_wiretech:block/relay_decider_combinator",
+      "y": 90
+    },
+    "facing=south,lit=true": {
+      "model": "diaithir_wiretech:block/relay_decider_combinator",
+      "y": 180
+    },
+    "facing=west,lit=true": {
+      "model": "diaithir_wiretech:block/relay_decider_combinator",
+      "y": 270
+    }
+  }
+}

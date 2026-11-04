@@ -1,0 +1,19 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "time_s": 14,
+ "ingredients": [
+  {
+   "item": "diaithirarms:steel_leggings",
+   "count": 1
+  },
+  {
+   "item": "diaithir_classes:sleagh_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:sleagh_leggings_steel",
+  "count": 1
+ }
+}

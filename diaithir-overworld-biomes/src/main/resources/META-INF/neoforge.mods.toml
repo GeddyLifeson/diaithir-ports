@@ -51,6 +51,12 @@ displayName="The Backwoods (Diaithir)"
 description="Compatibility alias: clean-room replacement for The Backwoods, same modid and ids, original worldgen."
 
 [[mods]]
+modId="stellaris"
+version="1.0.0"
+displayName="Stellaris (Diaithir)"
+description="Clean-room replacement for Stellaris: same modid and ids for blocks, items, creatures and the Moon and Earth orbit; own space air, suit and rocket. Machines migrate to vanilla stand-ins."
+
+[[mods]]
 modId="the_bumblezone"
 version="1.0.0"
 displayName="The Bumblezone (Diaithir)"
@@ -61,6 +67,12 @@ modId="aether_ii"
 version="1.0.0"
 displayName="The Aether II (Diaithir)"
 description="Compatibility alias: clean-room replacement for The Aether II, same modid and ids, original worldgen."
+
+[[mods]]
+modId="aerialhell"
+version="1.0.0"
+displayName="Aerial Hell (Diaithir)"
+description="Compatibility alias: clean-room replacement for Aerial Hell, same modid and ids, original worldgen."
 
 [[dependencies.diaithir_overworld_biomes]]
 modId="neoforge"

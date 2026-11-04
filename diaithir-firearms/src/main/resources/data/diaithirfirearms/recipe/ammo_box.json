@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirfirearms:gunmetal_ingot",
+  "diaithirfirearms:gunmetal_ingot",
+  "minecraft:leather"
+ ],
+ "result": {
+  "id": "diaithirfirearms:ammo_box",
+  "count": 1
+ }
+}

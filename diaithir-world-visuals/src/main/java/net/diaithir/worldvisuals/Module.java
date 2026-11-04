@@ -14,5 +14,7 @@ public final class Module {
         net.diaithir.worldvisuals.flickerfix.Feature.init(bus, container);
         net.diaithir.worldvisuals.betterclouds.Feature.init(bus, container);
         net.diaithir.worldvisuals.lambdynamiclights.Feature.init(bus, container);
+        new net.diaithir.worldvisuals.ctm.DiaithirCtm(bus, container);
+        net.diaithir.worldvisuals.soundphysics.Feature.init(bus, container);
     }
 }

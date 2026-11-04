@@ -39,5 +39,8 @@ public final class DiaithirWorldSys {
         net.diaithir.worldsys.stationsticks.StationsticksFeature.register(bus);
         net.diaithir.worldsys.jewelrypowers.JewelrypowersFeature.register(bus);
         net.diaithir.worldsys.villagercare3.Villagercare3Feature.register(bus);
+        net.diaithir.worldsys.caravans.CaravansFeature.register(bus);
+        net.diaithir.worldsys.moreprofessions.MoreProfessionsFeature.register(bus);
+        net.diaithir.worldsys.chapters.ChaptersFeature.register(bus);
     }
 }

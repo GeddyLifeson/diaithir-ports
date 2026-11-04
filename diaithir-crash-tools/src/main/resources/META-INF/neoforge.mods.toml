@@ -22,3 +22,16 @@ config = "net.diaithir.worldgenchunkopts.ksyxis.mixins.json"
 
 [[mixins]]
 config = "diaithircrashtools.crashwindow.mixins.json"
+[[mods]]
+modId = "simplebackups"
+version = "${version}"
+displayName = "Simple Backups (folded)"
+authors = "MelanX, ChaoticTrials; folded by Diaithir"
+description = "Scheduled world backups with zip and compressed archive options. Folded from ChaoticTrials/SimpleBackups (Apache-2.0)."
+
+[[dependencies.simplebackups]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"

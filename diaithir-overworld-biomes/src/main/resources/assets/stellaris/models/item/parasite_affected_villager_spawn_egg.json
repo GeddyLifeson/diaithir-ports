@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "stellaris:item/parasite_affected_villager_spawn_egg"
+ }
+}

@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/cobblers_last"
+  "layer0": "diaithirfurnishings:item/cobblers_last_head",
+  "layer1": "diaithirfurnishings:item/cobblers_last_handle",
+  "layer2": "diaithirfurnishings:item/cobblers_last_binding"
  }
 }

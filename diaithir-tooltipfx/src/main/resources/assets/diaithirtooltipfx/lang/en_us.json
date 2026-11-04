@@ -1,0 +1,8 @@
+{
+  "foodeffecttooltips.food.withChance": "%s [%d%%]",
+  "foodeffecttooltips.food.whenEaten": "When Eaten:",
+  "foodeffecttooltips.food.whenTriggered": "When triggered:",
+  "foodeffecttooltips.food.clearsAllStatusEffects": "Clears all Status Effects",
+  "foodeffecttooltips.food.teleportRandomly": "Teleports randomly up to %d blocks",
+  "foodeffecttooltips.food.removesStatusEffects": "Clears the following effects:"
+}

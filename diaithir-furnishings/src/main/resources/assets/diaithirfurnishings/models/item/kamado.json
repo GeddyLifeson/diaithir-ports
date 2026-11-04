@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/kamado"
+  "layer0": "diaithirfurnishings:item/kamado_pot",
+  "layer1": "diaithirfurnishings:item/kamado_handle"
  }
 }

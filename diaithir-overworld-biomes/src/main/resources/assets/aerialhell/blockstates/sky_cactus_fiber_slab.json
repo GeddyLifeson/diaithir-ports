@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aerialhell:block/sky_cactus_fiber_slab"
+    },
+    "type=double": {
+      "model": "aerialhell:block/sky_cactus_fiber_planks"
+    },
+    "type=top": {
+      "model": "aerialhell:block/sky_cactus_fiber_slab_top"
+    }
+  }
+}

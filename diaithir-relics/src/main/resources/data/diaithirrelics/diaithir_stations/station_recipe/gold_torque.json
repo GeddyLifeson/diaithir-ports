@@ -1,0 +1,19 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "tag": "c:ingots/bronze",
+   "count": 5
+  },
+  {
+   "item": "minecraft:gold_ingot",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithirrelics:gold_torque",
+  "count": 1
+ }
+}

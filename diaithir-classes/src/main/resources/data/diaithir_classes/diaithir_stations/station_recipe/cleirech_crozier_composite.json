@@ -1,0 +1,23 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 22,
+ "ingredients": [
+  {
+   "item": "diaithirarms:ceramic_plate",
+   "count": 4
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 2
+  },
+  {
+   "item": "diaithir_classes:cleirech_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:cleirech_crozier_composite",
+  "count": 1
+ }
+}

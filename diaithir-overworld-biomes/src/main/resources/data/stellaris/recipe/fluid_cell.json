@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:iron_nugget",
+  "C": "minecraft:coal"
+ },
+ "pattern": [
+  " # ",
+  "#C#",
+  " # "
+ ],
+ "result": {
+  "id": "stellaris:fluid_cell",
+  "count": 4
+ }
+}

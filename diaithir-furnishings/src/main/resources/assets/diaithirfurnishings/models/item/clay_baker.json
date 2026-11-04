@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/clay_baker"
+  "layer0": "diaithirfurnishings:item/clay_baker_pot",
+  "layer1": "diaithirfurnishings:item/clay_baker_handle"
  }
 }

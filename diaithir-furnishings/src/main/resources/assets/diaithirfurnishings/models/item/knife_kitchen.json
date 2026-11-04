@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/knife_kitchen"
+  "layer0": "diaithirfurnishings:item/knife_kitchen_head",
+  "layer1": "diaithirfurnishings:item/knife_kitchen_handle"
  }
 }

@@ -70,6 +70,16 @@ public final class SelfTest {
         for (int y = 0; y < 4; y++) for (int z = 0; z <= 30; z++) lv.setBlock(base.offset(0, y, z), net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
         for (String n : new String[]{"shot_pistol", "shot_smg", "shot_rifle", "shot_shotgun", "shot_sniper", "shot_lmg", "shot_launcher", "shot_energy", "reload_start", "reload_end", "dry_fire", "attach"})
             check(DiaithirFirearms.sound(n) != null && BuiltInRegistries.SOUND_EVENT.containsKey(Identifier.fromNamespaceAndPath(DiaithirFirearms.ID, n)), "sound " + n);
+        {
+            net.minecraft.world.item.ItemStack box = stack("ammo_box");
+            check(box.getItem() instanceof AmmoBox && AmmoBox.content(box).count() == 0, "ammo box empty");
+            check(AmmoBox.put(box, "ammo_9mm", 600) == AmmoBox.CAPACITY && AmmoBox.count(box, "ammo_9mm") == AmmoBox.CAPACITY, "box fills to capacity");
+            check(AmmoBox.put(box, "ammo_45", 5) == 0, "box holds one kind");
+            check(AmmoBox.take(box, "ammo_9mm", 100) == 100 && AmmoBox.count(box, "ammo_9mm") == AmmoBox.CAPACITY - 100, "box gives rounds");
+            check(AmmoBox.take(box, "ammo_45", 5) == 0, "box refuses other kind");
+            AmmoBox.take(box, "ammo_9mm", 9999);
+            check(AmmoBox.content(box).count() == 0 && AmmoBox.put(box, "ammo_45", 5) == 5, "emptied box takes a new kind");
+        }
         check(Defs.GUNS.size() >= 17, "at least 17 guns, got " + Defs.GUNS.size());
         for (Defs.Att a : Defs.ATTS.values()) check(!stack(a.id()).isEmpty() && BuiltInRegistries.ITEM.containsKey(Identifier.fromNamespaceAndPath(DiaithirFirearms.ID, a.id())), "attachment " + a.id());
         for (var m : Defs.GUNS.values()) {
@@ -128,6 +138,24 @@ public final class SelfTest {
         Engine.reload(fp);
         check(!Engine.reloading(fp), "no reload without ammo");
         for (var e : lv.getEntitiesOfClass(ArmorStand.class, new net.minecraft.world.phys.AABB(base).inflate(40))) e.discard();
+        containers();
+    }
+
+    /** Container contract logic on plain json (the component itself belongs to diaithir-crafting and may not be loaded). */
+    private static void containers() {
+        for (var m : Defs.GUNS.values()) check(Defs.KINDS.containsKey(m.cls()), m.id() + " class " + m.cls() + " has a container kind list");
+        check(Defs.KINDS.get("lmg").get(0).equals("belt") && Defs.KINDS.get("pistol").contains("speedloader") && Defs.KINDS.get("shotgun").isEmpty(), "kinds follow contract section 2");
+        var pistol = Defs.GUNS.get("sidearm_light");
+        var j = com.google.gson.JsonParser.parseString("{\"class\":\"pistol\",\"capacity\":15,\"count\":12,\"round\":\"diaithirfirearms:ammo_9mm\"}").getAsJsonObject();
+        check(Containers.fits(j, pistol), "pistol magazine of 9 mm fits the pistol");
+        check(!Containers.fits(j, Defs.GUNS.get("assault_rifle")), "pistol magazine does not fit a rifle");
+        j.addProperty("round", "diaithircrafting:ammo_45");
+        check(!Containers.fits(j, pistol), "wrong round does not fit");
+        j.addProperty("round", "diaithircrafting:ammo_9mm");
+        check(Containers.fits(j, pistol), "same round path from another namespace fits");
+        check(Containers.drain(j, 5) == 5 && j.get("count").getAsInt() == 7, "drain takes 5 of 12");
+        check(Containers.drain(j, 99) == 7 && j.get("count").getAsInt() == 0, "drain empties at 0, never negative");
+        check(Containers.drain(j, 3) == 0 && j.get("count").getAsInt() == 0, "empty container gives nothing");
     }
 
     private SelfTest() {}

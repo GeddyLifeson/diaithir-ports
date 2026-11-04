@@ -1,0 +1,23 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "item": "minecraft:leather",
+   "count": 1
+  },
+  {
+   "item": "minecraft:black_dye",
+   "count": 1
+  },
+  {
+   "item": "minecraft:string",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_emblem",
+  "count": 1
+ }
+}

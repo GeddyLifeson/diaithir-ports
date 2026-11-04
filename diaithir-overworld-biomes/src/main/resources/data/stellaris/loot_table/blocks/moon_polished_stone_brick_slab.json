@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "stellaris:blocks/moon_polished_stone_brick_slab",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:moon_polished_stone_brick_slab"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "id": "steam_navvy",
+ "tier": "ERECTING_SHOP",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 10,
+  "h": 6
+ },
+ "result": "diaithirmega:steam_navvy",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 1000,
+   "ghost": "diaithirmega:ghost/steam_navvy_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 1
+    }
+   ],
+   "base_ticks": 750,
+   "ghost": "diaithirmega:ghost/steam_navvy_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "bucket",
+     "count": 1
+    }
+   ],
+   "base_ticks": 1250,
+   "ghost": "diaithirmega:ghost/steam_navvy_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 2
+    }
+   ],
+   "base_ticks": 80,
+   "ghost": "diaithirmega:ghost/steam_navvy_crew"
+  }
+ ],
+ "crane_speedup": 1.0
+}

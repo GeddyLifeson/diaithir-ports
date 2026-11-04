@@ -1,0 +1,9 @@
+id,mana,note
+botania:mana_powder,40,design value; same as the bridge's herb dust (4 kJ)
+theurgy:sal_ammoniac_crystal,160,design value; Theurgy's base alchemical salt
+minecraft:amethyst_shard,80,design value; the cheap crystal every magic recipe uses
+botania:manasteel_ingot,160,design value
+ars_nouveau:source_gem,100,10 Source at 1000 J each
+ars_nouveau:source_gem_block,900,nine gems
+botania:mana_pearl,400,design value
+botania:mana_diamond,800,design value

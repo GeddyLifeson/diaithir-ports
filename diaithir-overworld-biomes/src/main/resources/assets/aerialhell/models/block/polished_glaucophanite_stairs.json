@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/stairs",
+ "textures": {
+  "bottom": "aerialhell:block/polished_glaucophanite_stairs",
+  "side": "aerialhell:block/polished_glaucophanite_stairs",
+  "top": "aerialhell:block/polished_glaucophanite_stairs"
+ }
+}

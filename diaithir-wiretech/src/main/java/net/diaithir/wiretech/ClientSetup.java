@@ -13,6 +13,7 @@ public final class ClientSetup {
     @SubscribeEvent
     static void screens(RegisterMenuScreensEvent e) {
         e.register(Machines.MENU.get(), MachineScreen::new);
+        e.register(Machines.CIRCUIT_MENU.get(), net.diaithir.wiretech.circuit.CircuitScreen::new);
     }
 
     @SubscribeEvent

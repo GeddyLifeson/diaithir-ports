@@ -1,18 +1,1 @@
-{
- "_doc": "Same shape as DiaithirRPG content/tech_ages.json; ids are Immersive Vehicles item ids.",
- "items": {
-  "mts:diaithirvehicles.benz_motorwagen": "VI",
-  "mts:diaithirvehicles.model_t": "VI",
-  "mts:diaithirvehicles.rolls_royce_armoured_car": "VI",
-  "mts:diaithirvehicles.holmes_wrecker": "VI",
-  "mts:diaithirvehicles.mack_type_75": "VI",
-  "mts:diaithirvehicles.willys_mb": "VI",
-  "mts:diaithirvehicles.ford_f1": "VII",
-  "mts:diaithirvehicles.land_rover_series_i": "VII",
-  "mts:diaithirvehicles.vw_type_2": "VII",
-  "mts:diaithirvehicles.routemaster": "VII",
-  "mts:diaithirvehicles.m113": "VII",
-  "mts:diaithirvehicles.ford_econoline_ambulance": "VII",
-  "mts:diaithirvehicles.toyota_corolla": "VII"
- }
-}
+null

@@ -143,15 +143,40 @@ final class SelfTest {
             cr.cycleRedstone(); // LOW: runs without a signal
             if (ticksUntil(level, cr, 3000, () -> has(cr, Kind.OUT, Machines.MATERIALS.get(0).get(), 1)) < 0) fails.add("redstone LOW did not run unpowered");
 
-            // speed augment
-            ca.setItem(Kind.UPGRADE, new ItemStack(Machines.AUGMENTS.get(Augment.SPEED.ordinal()).get(), 2));
+            // old augment ids resolve to the circuit modules, and a machine holding one in the legacy slot moves it into a module slot
+            var itemReg = net.minecraft.core.registries.BuiltInRegistries.ITEM;
+            String[][] alias = {{"speed_augment", "circuit_speed_1"}, {"efficiency_augment", "circuit_efficiency_1"}, {"chance_augment", "circuit_productivity_1"}};
+            for (String[] al : alias) {
+                var from = itemReg.getValue(net.minecraft.resources.Identifier.fromNamespaceAndPath(DiaithirForgeworks.ID, al[0]));
+                var to = itemReg.getValue(net.minecraft.resources.Identifier.fromNamespaceAndPath("diaithirupgrades", al[1]));
+                if (from != to || to == Items.AIR) fails.add("augment alias " + al[0] + " does not resolve to " + al[1]);
+            }
+            var legacy = itemReg.getValue(net.minecraft.resources.Identifier.fromNamespaceAndPath(DiaithirForgeworks.ID, "speed_augment"));
+            ca.setItem(Kind.UPGRADE, new ItemStack(legacy, 2));
+            ca.serverTick(level);
+            var hostCa = net.diaithir.upgrades.Upgrades.host(ca);
+            if (!ca.getItem(Kind.UPGRADE).isEmpty()) fails.add("legacy augment slot was not emptied");
+            if (hostCa.isEmpty() || hostCa.get().effects().speedMultiplier() < 1.15) fails.add("legacy speed augment did not become a speed module (age 4 casing has one slot)");
             insert(level, pa, Items.IRON_ORE, 1);
             int ta = ticksUntil(level, ca, 3000, () -> has(ca, Kind.OUT, Machines.MATERIALS.get(0).get(), 1));
-            if (ta < 0 || t4 < 0 || !(ta * 3 < t4 * 2)) fails.add("speed augment did not speed up: " + ta + " vs " + t4);
+            if (ta < 0 || t4 < 0 || !(ta < t4)) fails.add("migrated speed modules did not speed up: " + ta + " vs " + t4);
+
+            // shared upgrade system: three speed modules on an age 6 crusher
+            BlockPos pm = base.offset(24, 0, 0);
+            placed.add(pm);
+            MachineBlockEntity cm = place(level, pm, Kind.CRUSHER, 2, fails);
+            if (cm != null) {
+                double s0 = cm.speed();
+                net.diaithir.upgrades.ModuleSpec spd = net.diaithir.upgrades.ModuleRegistry.get("circuit_speed_1").orElseThrow();
+                for (int i = 0; i < 3; i++) {
+                    if (!net.diaithir.upgrades.Upgrades.insert(cm, spd, net.diaithir.upgrades.Quality.NORMAL)) fails.add("upgrade module " + i + " refused by the crusher");
+                }
+                if (Math.abs(cm.speed() / s0 - 1.6) > 1e-9) fails.add("three speed modules gave speed x" + cm.speed() / s0 + ", expected 1.6");
+            }
 
             // menu
             AbstractContainerMenu menu = c4.createMenu(7, player.getInventory(), player);
-            if (menu == null || menu.slots.size() != 5 + 36 - 1) fails.add("menu slot count " + (menu == null ? -1 : menu.slots.size()));
+            if (menu == null || menu.slots.size() != 4 + 36 - 1) fails.add("menu slot count " + (menu == null ? -1 : menu.slots.size()));
             else if (!menu.clickMenuButton(player, 0)) fails.add("menu button refused");
 
             // alloy furnace: two inputs in either order

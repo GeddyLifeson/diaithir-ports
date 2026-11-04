@@ -44,7 +44,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -55,7 +58,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -66,7 +72,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -77,7 +85,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -88,7 +98,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -99,7 +111,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -110,7 +124,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -121,7 +137,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -132,7 +150,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirtrucks:engine_e250_stock"
+   "defaultPart": "diaithirtrucks:engine_e250_stock",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -149,7 +169,9 @@
     -2.0,
     0.0,
     1.956
-   ]
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -160,55 +182,95 @@
    "types": [
     "interactable_crate"
    ],
-   "defaultPart": "diaithirtrucks:crate_m"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    2.25,
-    0
-   ],
-   "width": 2.5,
-   "height": 3.9
+   "defaultPart": "diaithirtrucks:crate_m",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "definitions": [
   {
-   "subName": "_c",
+   "subName": "",
    "name": "Concrete Transit Mixer (Yellow)",
    "modelName": "cv_transit_mixer",
-   "textureName": "paint_c",
+   "textureName": "paintc",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_orange",
+   "subName": "_orange",
    "name": "Concrete Transit Mixer (Orange)",
    "modelName": "cv_transit_mixer",
-   "textureName": "paint_c_orange",
+   "textureName": "paintc_orange",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_white",
+   "subName": "_white",
    "name": "Concrete Transit Mixer (White)",
    "modelName": "cv_transit_mixer",
-   "textureName": "paint_c_white",
+   "textureName": "paintc_white",
    "extraMaterialLists": [
     []
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "drum",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "engine_rpm_1",
+      "centerPoint": [
+       0,
+       2.3,
+       -1.9440000000000004
+      ],
+      "axis": [
+       0,
+       0,
+       0.02
+      ],
+      "clampMin": 0.0,
+      "clampMax": 3000.0,
+      "duration": 0
+     }
+    ]
+   }
+  ],
+  "customVariables": []
+ },
  "car": {
   "isFrontWheelDrive": false,
   "isRearWheelDrive": true,
   "axleRatio": 3.6,
   "dragCoefficient": 0.8,
   "isBigTruck": true
- }
+ },
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      2.25,
+      0
+     ],
+     "width": 2.5,
+     "height": 3.9
+    }
+   ]
+  }
+ ]
 }
