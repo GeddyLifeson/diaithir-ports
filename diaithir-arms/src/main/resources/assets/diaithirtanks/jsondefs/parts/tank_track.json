@@ -1,0 +1,30 @@
+{
+  "general": {
+    "type": "ground_wheel",
+    "name": "Tank Track",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:24"
+      ]
+    ]
+  },
+  "ground": {
+    "isWheel": true,
+    "width": 0.8,
+    "height": 0.9,
+    "flatHeight": 0.9,
+    "climbHeight": 0.9,
+    "motiveFriction": 1.0,
+    "lateralFriction": 1.4,
+    "extraCollisionBoxOffset": 0.0
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Tank Track",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ]
+}

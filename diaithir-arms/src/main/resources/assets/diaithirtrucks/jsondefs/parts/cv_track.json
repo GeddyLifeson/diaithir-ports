@@ -1,6 +1,6 @@
 {
  "general": {
-  "type": "ground_tread",
+  "type": "ground_wheel",
   "name": "Machine Track",
   "materialLists": [
    [
@@ -9,7 +9,6 @@
   ]
  },
  "ground": {
-  "isTread": true,
   "width": 0.7,
   "height": 0.9,
   "flatHeight": 0.9,
@@ -17,8 +16,7 @@
   "motiveFriction": 1.0,
   "lateralFriction": 1.4,
   "extraCollisionBoxOffset": 0.0,
-  "spacing": 6.0,
-  "canGoFlat": false
+  "isWheel": true
  },
  "definitions": [
   {

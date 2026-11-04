@@ -1,187 +1,266 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Asphalt Paver",
-  "description": "Asphalt Paver (1931, US): 110 kW, 15 t. Road role: pave.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:37"
-   ],
-   [
-    "minecraft:iron_block:0:3"
-   ],
-   [
-    "minecraft:redstone:0:8"
-   ],
-   [
-    "minecraft:black_dye:0:4"
-   ]
-  ],
-  "health": 655
- },
- "motorized": {
-  "emptyMass": 15000,
-  "fuelCapacity": 264,
-  "defaultFuelQty": 132,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.4,
-  "dragCoefficient": 0.8,
-  "crossSectionalArea": 9.0,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0,
-  "hasSkidSteer": true,
-  "hasPermanentSkidSteer": true
- },
- "parts": [
-  {
-   "pos": [
-    -1.0,
-    0.0,
-    0.0
-   ],
-   "types": [
-    "ground_tread"
-   ],
-   "defaultPart": "diaithirtrucks:cv_track",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    1.0,
-    0.0,
-    0.0
-   ],
-   "types": [
-    "ground_tread"
-   ],
-   "defaultPart": "diaithirtrucks:cv_track",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    0.0
-   ],
-   "types": [
-    "engine_car"
-   ],
-   "defaultPart": "diaithirtrucks:engine_e150_stock",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    0.0,
-    2.1,
-    0.2
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "defaultPart": "diaithirtrucks:seat",
-   "dismountPos": [
-    -2.0,
-    0.0,
-    0.2
-   ],
-   "minValue": 0.0,
-   "maxValue": 10.0
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Asphalt Paver (Yellow)",
-   "modelName": "cv_barber_greene_paver",
-   "textureName": "paintc",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_orange",
-   "name": "Asphalt Paver (Orange)",
-   "modelName": "cv_barber_greene_paver",
-   "textureName": "paintc_orange",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_white",
-   "name": "Asphalt Paver (White)",
-   "modelName": "cv_barber_greene_paver",
-   "textureName": "paintc_white",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {
-  "animatedObjects": [
-   {
-    "objectName": "screed",
-    "animations": [
-     {
-      "animationType": "translation",
-      "variable": "screed_lift",
-      "centerPoint": [
-       0,
-       0,
-       0
+  "general": {
+    "type": "vehicle",
+    "name": "Asphalt Paver",
+    "description": "Asphalt Paver (1931, US): 110 kW, 15 t. Road role: pave.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:37"
       ],
-      "axis": [
-       0,
-       0.5,
-       0
+      [
+        "minecraft:iron_block:0:3"
       ],
-      "clampMin": 0.0,
-      "clampMax": 1.0,
-      "duration": 100
-     }
-    ]
-   }
-  ],
-  "customVariables": [
-   "screed_lift"
-  ]
- },
- "car": {
-  "isFrontWheelDrive": true,
-  "isRearWheelDrive": true,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.8,
-  "isBigTruck": true
- },
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "block",
-    "entity",
-    "vehicle",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "collisions": [
+      [
+        "minecraft:redstone:0:8"
+      ],
+      [
+        "minecraft:black_dye:0:4"
+      ]
+    ],
+    "health": 655
+  },
+  "motorized": {
+    "emptyMass": 15000,
+    "fuelCapacity": 264,
+    "defaultFuelQty": 132,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.4,
+    "dragCoefficient": 0.8,
+    "crossSectionalArea": 9.0,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0,
+    "hasSkidSteer": true,
+    "hasPermanentSkidSteer": true
+  },
+  "parts": [
     {
-     "pos": [
-      0,
-      1.8,
-      0
-     ],
-     "width": 2.6,
-     "height": 3.0
+      "pos": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:cv_track",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:cv_track",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e150_stock",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.0,
+        2.1,
+        0.2
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.2
+      ]
+    },
+    {
+      "pos": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "types": [
+        "ground_tread"
+      ],
+      "defaultPart": "diaithirtrucks:cv_track",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "types": [
+        "ground_tread"
+      ],
+      "defaultPart": "diaithirtrucks:cv_track",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e150_stock",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.0,
+        2.1,
+        0.2
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.2
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0
     }
-   ]
-  }
- ]
+  ],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Asphalt Paver (Yellow)",
+      "modelName": "cv_barber_greene_paver",
+      "textureName": "paintc",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_orange",
+      "name": "Asphalt Paver (Orange)",
+      "modelName": "cv_barber_greene_paver",
+      "textureName": "paintc_orange",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_white",
+      "name": "Asphalt Paver (White)",
+      "modelName": "cv_barber_greene_paver",
+      "textureName": "paintc_white",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "animatedObjects": [
+      {
+        "objectName": "screed",
+        "animations": [
+          {
+            "animationType": "translation",
+            "variable": "screed_lift",
+            "centerPoint": [
+              0,
+              0,
+              0
+            ],
+            "axis": [
+              0,
+              0.5,
+              0
+            ],
+            "clampMin": 0.0,
+            "clampMax": 1.0,
+            "duration": 100
+          }
+        ]
+      }
+    ],
+    "customVariables": [
+      "screed_lift"
+    ]
+  },
+  "car": {
+    "isFrontWheelDrive": true,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.8,
+    "isBigTruck": true
+  },
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 655,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.8,
+            0
+          ],
+          "width": 2.6,
+          "height": 3.0
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.8,
+            0
+          ],
+          "width": 2.6,
+          "height": 3.0
+        }
+      ]
+    }
+  ]
 }

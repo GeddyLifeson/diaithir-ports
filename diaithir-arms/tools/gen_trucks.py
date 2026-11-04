@@ -381,4 +381,4 @@ def main():
     return man
 
 if __name__ == '__main__':
-    m = main(); print('trucks pack', len(m['tractors']), 'tractors', len(m['trailers']), 'trailers', len(m['construction']), 'construction')
+    m = main(); os.system(f'python3 {os.path.dirname(os.path.abspath(__file__))}/ivfix.py {A}'); print('trucks pack', len(m['tractors']), 'tractors', len(m['trailers']), 'trailers', len(m['construction']), 'construction')

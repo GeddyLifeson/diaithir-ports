@@ -19,6 +19,9 @@ config = "diaithirnetworkcompat.packetfixer.mixins.json"
 
 [[mixins]]
 config = "net.diaithir.worldgenchunkopts.ksyxis.mixins.json"
+
+[[mixins]]
+config = "diaithircrashtools.crashwindow.mixins.json"
 [[mods]]
 modId = "simplebackups"
 version = "${version}"

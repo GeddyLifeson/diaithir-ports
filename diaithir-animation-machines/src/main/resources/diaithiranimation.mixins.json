@@ -1,8 +1,0 @@
-{
-  "required": true,
-  "package": "net.diaithir.animation.neo.mixin",
-  "compatibilityLevel": "JAVA_25",
-  "mixins": [],
-  "client": ["BlockEntityDispatcherMixin", "SectionCompilerMixin"],
-  "injectors": { "defaultRequire": 1 }
-}

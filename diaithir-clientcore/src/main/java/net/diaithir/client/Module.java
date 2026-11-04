@@ -11,6 +11,7 @@ public final class Module {
     public Module(IEventBus bus, ModContainer container) {
         net.diaithir.client.gpl.melodies.Feature.init(bus, container);
         net.diaithir.client.disableaccessibility.Feature.init(bus, container);
+        net.diaithir.client.updater.Feature.init(bus, container);
         net.diaithir.audio.soundmuffler.Feature.init(bus, container);
         net.diaithir.audio.soundphysics.Feature.init(bus, container);
         net.diaithir.audio.surroundings.Feature.init(bus, container);

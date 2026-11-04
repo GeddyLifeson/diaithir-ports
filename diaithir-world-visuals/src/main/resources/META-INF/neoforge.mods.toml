@@ -28,3 +28,6 @@ config = "sky_aesthetics-neoforge.mixins.json"
 
 [[accessTransformers]]
 file = "META-INF/skyaesthetics.at.cfg"
+
+[[mixins]]
+config = "diaithir_betterclouds.mixins.json"
