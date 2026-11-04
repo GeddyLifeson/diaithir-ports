@@ -4,5 +4,6 @@ Clean-room harbour works for boats, NeoForge 26.1.2, MIT. Written from the behav
 
 - **Mooring bollard.** Made fast, it holds every boat within its reach (3 blocks) in place: no drifting, no paddling away. Use it bare-handed to let go; a redstone signal also lets go. Checks every 4 ticks.
 - **Harbour office.** An age-evolving station: timber, brick, iron and steel quay by calendar Age (0-2, 3-4, 5-6, 7+; reads `diaithir_ages` softly, steel if it is absent). Each stage adds 2 blocks of reach to every bollard within 16 blocks and one more cargo crate per boat. `/diaithirharbour age <n>` (owners) overrides the Age for tests, -1 clears it.
+- **Cargo crate.** Use it on any boat to fit nine hold slots (an attachment on the boat, so it saves with it); sneak and use the boat with an empty hand to open the hold. One crate per boat, or two plus one per stage of a harbour office within 16 blocks, up to six. Crates and contents drop if the boat is destroyed. `/diaithirharbour cargotest` (owners) checks the limits, contents and spill.
 
 `tools/gen_assets.py` writes textures (drawn from scratch), models, blockstates, lang, recipes, loot, tags, age gate and `../library-sync/diaithirharbour.json`.

@@ -103,8 +103,32 @@ register("harbour_office", "Quaymorrek", "Harbour office. A quay station that gr
 RECIPES["harbour_office"] = {"type": "minecraft:crafting_shaped", "category": "misc", "key": {"P": "minecraft:oak_planks", "I": "minecraft:iron_ingot", "C": "minecraft:clock", "B": "minecraft:bell"},
                             "pattern": ["PBP", "PCP", "IPI"], "result": {"id": f"{NS}:harbour_office", "count": 1}}
 
+# cargo crate item: a slatted timber crate with iron corners
+crate = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+cp = crate.load()
+for y in range(2, 15):
+    for x in range(1, 15):
+        slat = (y - 2) % 4 == 3
+        c = (86, 62, 36) if slat else (140, 104, 62)
+        c = tuple(v + rnd.randrange(-6, 7) for v in c)
+        if (x in (1, 14)) and (y in range(2, 6) or y in range(11, 15)):
+            c = (92, 98, 108)
+        cp[x, y] = c + (255,)
+for i in range(2, 14):
+    cp[3 + (i * 10 // 12), i + 1] = (100, 74, 44, 255)
+crate.save(os.path.join(A, "textures/item/cargo_crate.png"))
+wj(A, "items/cargo_crate.json", {"model": {"type": "minecraft:model", "model": f"{NS}:item/cargo_crate"}})
+wj(A, "models/item/cargo_crate.json", {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/cargo_crate"}})
+ITEM_NAMES = {"cargo_crate": ("Holdvarn", "Cargo crate. Use it on a boat to fit a row of nine hold slots; sneak and use the boat with an empty hand to open the hold. A boat carries one crate, or more with a harbour office nearby (two, then one more for each stage). Crates and contents drop if the boat is destroyed. Age III.", 3)}
+for k, v in ITEM_NAMES.items():
+    GATE.setdefault(v[2], []).append(f"{NS}:{k}")
+RECIPES["cargo_crate"] = {"type": "minecraft:crafting_shaped", "category": "misc", "key": {"P": "minecraft:oak_planks", "I": "minecraft:iron_ingot", "C": "minecraft:chest"},
+                          "pattern": ["IPI", "PCP", "IPI"], "result": {"id": f"{NS}:cargo_crate", "count": 1}}
+
 # ---- extension point: the other pieces append to NAMES/RECIPES/GATE above this line ----
-lang = {f"block.{NS}.{k}": v[0] for k, v in NAMES.items() if not k.endswith("_crate")}
+lang = {f"block.{NS}.{k}": v[0] for k, v in NAMES.items()}
+for k, v in ITEM_NAMES.items():
+    lang[f"item.{NS}.{k}"] = v[0]
 wj(A, "lang/en_us.json", lang)
 for k, r in RECIPES.items():
     wj(D, f"recipe/{k}.json", r)
@@ -116,6 +140,6 @@ wj(ROOT, "data/minecraft/tags/block/mineable/pickaxe.json", {"values": [f"{NS}:{
 wj(D, "age_gate.json", {f"tier{i + 1}": {"age": a, "items": items} for i, (a, items) in enumerate(sorted(GATE.items()))})
 os.makedirs(os.path.join(HERE, "..", "..", "library-sync"), exist_ok=True)
 with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as f:
-    json.dump([{"id": f"{NS}:{k}", "name": v[0], "text": v[1]} for k, v in NAMES.items()], f, indent=1, ensure_ascii=False)
+    json.dump([{"id": f"{NS}:{k}", "name": v[0], "text": v[1]} for k, v in {**NAMES, **ITEM_NAMES}.items()], f, indent=1, ensure_ascii=False)
     f.write("\n")
 print("ok")
