@@ -87,8 +87,9 @@ VESSEL = {"cookware": (3, 0.6, True), "storage": (2, 0.8, False), "tableware": (
 everyday = []
 for it in json.load(open(os.path.join(IN, "everyday.json")))["items"]:
     cat = it["category"]
-    if cat == "furniture": continue
-    if cat in VESSEL:
+    if cat == "furniture":  # a wooden frame and a fixing; the module has no recipes of its own
+        slots = [slot("frame", "handle", 4, 0.8, 0.0, 0.4, 1.0), slot("fixing", "binding", 1, 0.02, 0.0, 0.2, 0.5)]; model = "shovel"
+    elif cat in VESSEL:
         n, l, handle = VESSEL[cat]
         slots = [slot("pot", "pot", n, l, 0.5, 0.7, 0.0)] + ([slot("handle", "handle", 1, 0.1, 0.0, 0.3, 1.0)] if handle else [])
         model = "vessel"

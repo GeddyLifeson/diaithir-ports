@@ -25,6 +25,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  * Each realm keeps the modid and ids of the mod it replaces, so old worlds and recipes resolve.
  */
 public final class RealmRegistrar {
+    /** Hand-written classes for ids a realm wants to be more than a plain block or item, keyed "modid:id". */
+    public static final Map<String, Function<BlockBehaviour.Properties, Block>> BLOCK_OVERRIDES = new HashMap<>();
+    public static final Map<String, Function<net.minecraft.world.item.Item.Properties, net.minecraft.world.item.Item>> ITEM_OVERRIDES = new HashMap<>();
+
     private RealmRegistrar() {}
 
     public static void register(String modId, IEventBus bus) {
@@ -38,7 +42,8 @@ public final class RealmRegistrar {
             String kind = b.get("kind").getAsString();
             String mat = b.get("mat").getAsString();
             DeferredBlock<Block> base = b.has("base") ? made.get(b.get("base").getAsString()) : null;
-            Function<BlockBehaviour.Properties, Block> f = kind.equals("portal")
+            Function<BlockBehaviour.Properties, Block> over = BLOCK_OVERRIDES.get(modId + ":" + id);
+            Function<BlockBehaviour.Properties, Block> f = over != null ? over : kind.equals("portal")
                     ? props -> new RealmPortalBlock(props, b.get("target").getAsString(), b.get("back").getAsString(), b.get("pad").getAsString())
                     : props -> make(kind, mat, base, props);
             DeferredBlock<Block> db = blocks.registerBlock(id, f, () -> props(mat, kind));
@@ -49,7 +54,11 @@ public final class RealmRegistrar {
             JsonObject r = e.getAsJsonObject();
             RealmPortals.add(modId, r.get("activator").getAsString(), r.get("frame").getAsString(), r.get("block").getAsString());
         }
-        for (JsonElement e : m.getAsJsonArray("items")) items.registerSimpleItem(e.getAsString());
+        for (JsonElement e : m.getAsJsonArray("items")) {
+            String id = e.getAsString();
+            var over = ITEM_OVERRIDES.get(modId + ":" + id);
+            if (over != null) items.registerItem(id, over::apply); else items.registerSimpleItem(id);
+        }
         if (m.has("gear")) RealmGear.register(modId, m, items);
         if (m.has("mobs")) RealmMobs.register(modId, m, bus, items);
         blocks.register(bus);

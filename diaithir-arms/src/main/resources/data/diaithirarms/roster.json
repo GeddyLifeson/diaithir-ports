@@ -1,0 +1,214 @@
+{
+ "items": [
+  {
+   "id": "steel_dagger",
+   "mat": "steel",
+   "damage": 1.0,
+   "speed": -1.6,
+   "reach": 0.0
+  },
+  {
+   "id": "steel_rapier",
+   "mat": "steel",
+   "damage": 1.5,
+   "speed": -2.0,
+   "reach": 0.5
+  },
+  {
+   "id": "steel_katana",
+   "mat": "steel",
+   "damage": 2.5,
+   "speed": -2.2,
+   "reach": 0.0
+  },
+  {
+   "id": "steel_glaive",
+   "mat": "steel",
+   "damage": 3.0,
+   "speed": -2.8,
+   "reach": 1.0
+  },
+  {
+   "id": "steel_halberd",
+   "mat": "steel",
+   "damage": 4.0,
+   "speed": -3.0,
+   "reach": 1.0
+  },
+  {
+   "id": "steel_warhammer",
+   "mat": "steel",
+   "damage": 5.0,
+   "speed": -3.2,
+   "reach": 0.0
+  },
+  {
+   "id": "tempered_dagger",
+   "mat": "tempered",
+   "damage": 1.0,
+   "speed": -1.6,
+   "reach": 0.0
+  },
+  {
+   "id": "tempered_rapier",
+   "mat": "tempered",
+   "damage": 1.5,
+   "speed": -2.0,
+   "reach": 0.5
+  },
+  {
+   "id": "tempered_katana",
+   "mat": "tempered",
+   "damage": 2.5,
+   "speed": -2.2,
+   "reach": 0.0
+  },
+  {
+   "id": "tempered_glaive",
+   "mat": "tempered",
+   "damage": 3.0,
+   "speed": -2.8,
+   "reach": 1.0
+  },
+  {
+   "id": "tempered_halberd",
+   "mat": "tempered",
+   "damage": 4.0,
+   "speed": -3.0,
+   "reach": 1.0
+  },
+  {
+   "id": "tempered_warhammer",
+   "mat": "tempered",
+   "damage": 5.0,
+   "speed": -3.2,
+   "reach": 0.0
+  },
+  {
+   "id": "composite_dagger",
+   "mat": "composite",
+   "damage": 1.0,
+   "speed": -1.6,
+   "reach": 0.0
+  },
+  {
+   "id": "composite_rapier",
+   "mat": "composite",
+   "damage": 1.5,
+   "speed": -2.0,
+   "reach": 0.5
+  },
+  {
+   "id": "composite_katana",
+   "mat": "composite",
+   "damage": 2.5,
+   "speed": -2.2,
+   "reach": 0.0
+  },
+  {
+   "id": "composite_glaive",
+   "mat": "composite",
+   "damage": 3.0,
+   "speed": -2.8,
+   "reach": 1.0
+  },
+  {
+   "id": "composite_halberd",
+   "mat": "composite",
+   "damage": 4.0,
+   "speed": -3.0,
+   "reach": 1.0
+  },
+  {
+   "id": "composite_warhammer",
+   "mat": "composite",
+   "damage": 5.0,
+   "speed": -3.2,
+   "reach": 0.0
+  },
+  {
+   "id": "rodos_dagger",
+   "mat": "rodos",
+   "damage": 1.0,
+   "speed": -1.6,
+   "reach": 0.0
+  },
+  {
+   "id": "rodos_rapier",
+   "mat": "rodos",
+   "damage": 1.5,
+   "speed": -2.0,
+   "reach": 0.5
+  },
+  {
+   "id": "rodos_katana",
+   "mat": "rodos",
+   "damage": 2.5,
+   "speed": -2.2,
+   "reach": 0.0
+  },
+  {
+   "id": "rodos_glaive",
+   "mat": "rodos",
+   "damage": 3.0,
+   "speed": -2.8,
+   "reach": 1.0
+  },
+  {
+   "id": "rodos_halberd",
+   "mat": "rodos",
+   "damage": 4.0,
+   "speed": -3.0,
+   "reach": 1.0
+  },
+  {
+   "id": "rodos_warhammer",
+   "mat": "rodos",
+   "damage": 5.0,
+   "speed": -3.2,
+   "reach": 0.0
+  },
+  {
+   "id": "future_dagger",
+   "mat": "future",
+   "damage": 1.0,
+   "speed": -1.6,
+   "reach": 0.0
+  },
+  {
+   "id": "future_rapier",
+   "mat": "future",
+   "damage": 1.5,
+   "speed": -2.0,
+   "reach": 0.5
+  },
+  {
+   "id": "future_katana",
+   "mat": "future",
+   "damage": 2.5,
+   "speed": -2.2,
+   "reach": 0.0
+  },
+  {
+   "id": "future_glaive",
+   "mat": "future",
+   "damage": 3.0,
+   "speed": -2.8,
+   "reach": 1.0
+  },
+  {
+   "id": "future_halberd",
+   "mat": "future",
+   "damage": 4.0,
+   "speed": -3.0,
+   "reach": 1.0
+  },
+  {
+   "id": "future_warhammer",
+   "mat": "future",
+   "damage": 5.0,
+   "speed": -3.2,
+   "reach": 0.0
+  }
+ ]
+}

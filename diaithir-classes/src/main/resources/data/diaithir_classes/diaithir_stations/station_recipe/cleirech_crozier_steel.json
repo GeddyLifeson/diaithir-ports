@@ -1,0 +1,23 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "time_s": 14,
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 3
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 2
+  },
+  {
+   "item": "diaithir_classes:cleirech_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:cleirech_crozier_steel",
+  "count": 1
+ }
+}

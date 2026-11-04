@@ -29,6 +29,14 @@
   "diaithirrelics:light_shield": "VII",
   "diaithirrelics:fate_ring": "VII",
   "diaithirrelics:apple_branch": "VII",
-  "diaithirrelics:dragon_torque": "VII"
+  "diaithirrelics:dragon_torque": "VII",
+  "diaithirrelics:netherite_ring": "IV",
+  "diaithirrelics:emerald_ring": "IV",
+  "diaithirrelics:diamond_ring": "IV",
+  "diaithirrelics:amethyst_ring": "IV",
+  "diaithirrelics:quartz_ring": "IV",
+  "diaithirrelics:golden_aglet": "IV",
+  "diaithirrelics:amethyst_aglet": "IV",
+  "diaithirrelics:netherite_shield_charm": "IV"
  }
 }

@@ -9,13 +9,13 @@
   "tier2": {
     "age": 5,
     "items": [
-      "diaithircarts:cart_reader",
       "diaithircarts:chain_cutters",
       "diaithircarts:coupling_chain",
       "diaithircarts:station_rail",
       "diaithircarts:steel_powered_rail",
       "diaithircarts:steel_rail",
-      "diaithircarts:timetable"
+      "diaithircarts:timetable",
+      "diaithircarts:cart_reader"
     ]
   },
   "tier3": {
@@ -23,6 +23,27 @@
     "items": [
       "diaithircarts:fast_rail",
       "diaithircarts:fast_powered_rail"
+    ]
+  },
+  "signal": {
+    "age": 5,
+    "items": [
+      "diaithircarts:block_signal"
+    ]
+  },
+  "routing": {
+    "age": 5,
+    "items": [
+      "diaithircarts:one_way_rail",
+      "diaithircarts:destination_rail",
+      "diaithircarts:cart_loader",
+      "diaithircarts:locking_rail"
+    ]
+  },
+  "autonomy": {
+    "age": 7,
+    "items": [
+      "diaithircarts:autonomy_module"
     ]
   },
   "roads_age1": {
@@ -59,27 +80,6 @@
     "age": 7,
     "items": [
       "diaithircarts:concrete_motorway"
-    ]
-  },
-  "signal": {
-    "age": 5,
-    "items": [
-      "diaithircarts:block_signal"
-    ]
-  },
-  "routing": {
-    "age": 5,
-    "items": [
-      "diaithircarts:one_way_rail",
-      "diaithircarts:destination_rail",
-      "diaithircarts:cart_loader",
-      "diaithircarts:locking_rail"
-    ]
-  },
-  "autonomy": {
-    "age": 7,
-    "items": [
-      "diaithircarts:autonomy_module"
     ]
   },
   "yards_age3": {

@@ -2,7 +2,9 @@
  "module": "diaithirchatclient",
  "side": "client",
  "features": [
-  "longerchathistory"
+  "chatheads",
+  "longerchathistory",
+  "nochatreports"
  ],
  "codex": {
   "entry": "diaithirchatclient.overview",

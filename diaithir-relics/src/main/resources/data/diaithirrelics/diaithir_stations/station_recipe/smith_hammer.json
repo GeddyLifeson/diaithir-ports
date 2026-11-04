@@ -1,0 +1,23 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 22,
+ "ingredients": [
+  {
+   "item": "minecraft:netherite_ingot",
+   "count": 2
+  },
+  {
+   "item": "minecraft:diamond",
+   "count": 1
+  },
+  {
+   "tag": "c:rods/wooden",
+   "count": 2
+  }
+ ],
+ "result": {
+  "id": "diaithirrelics:smith_hammer",
+  "count": 1
+ }
+}

@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/fountain_pen"
+  "layer0": "diaithirfurnishings:item/fountain_pen_head",
+  "layer1": "diaithirfurnishings:item/fountain_pen_handle",
+  "layer2": "diaithirfurnishings:item/fountain_pen_binding"
  }
 }

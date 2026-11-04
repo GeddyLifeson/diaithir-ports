@@ -1,0 +1,19 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "time_s": 14,
+ "ingredients": [
+  {
+   "tag": "c:ingots/gold",
+   "count": 4
+  },
+  {
+   "item": "minecraft:glowstone_dust",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithirrelics:sun_ring",
+  "count": 1
+ }
+}

@@ -1,0 +1,34 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.diaithir.chatclient.nochatreports.mixins",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "common.MixinJsonByteBufCodec",
+    "server.MixinServerboundChatPacket",
+    "server.MixinServerCommonPacketListenerImpl",
+    "server.MixinPlayerList",
+    "server.MixinServerboundChatSessionUpdatePacket",
+    "server.MixinServerboundChatCommandSignedPacket"
+  ],
+  "client": [
+    "client.MixinOptions",
+    "client.MixinChatListener",
+    "client.MixinChatOptionsScreen",
+    "client.MixinYggdrasilUserApiService",
+    "client.MixinPlayerEntry",
+    "client.MixinConnectScreen",
+    "client.MixinGuiMessageTag",
+    "client.MixinToastManager",
+    "client.MixinRealmsConnect",
+    "client.MixinServerData",
+    "client.MixinServerStatusPingerAnon1",
+    "client.MixinMinecraft"
+  ],
+  "server": [
+    "server.MixinDedicatedServer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_21",
+  "package": "net.diaithir.worldgenchunkopts.ksyxis.mixin",
+  "mixins": [
+    "MinecraftServerMixin",
+    "PrepareSpawnTaskPreparingMixin",
+    "PrepareSpawnTaskReadyMixin"
+  ],
+  "client": [
+    "MinecraftMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

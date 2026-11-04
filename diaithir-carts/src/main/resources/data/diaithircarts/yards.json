@@ -7111,7 +7111,7 @@
      "id": "power",
      "slots": [
       {
-       "kind": "motor_a_m",
+       "kind": "motor_e_m",
        "count": 1
       },
       {
@@ -290016,7 +290016,7 @@
    "age": 6,
    "category": "loco_electric",
    "mass_kg": 60000,
-   "rated": 185000,
+   "rated": 11840000,
    "gauge": "standard",
    "crew": 1,
    "engine": "electric_motor"
@@ -290063,7 +290063,12 @@
    "rated": 60000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_covered_hopper",
@@ -290074,7 +290079,12 @@
    "rated": 90000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_open_hopper",
@@ -290085,7 +290095,12 @@
    "rated": 80000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_tank",
@@ -290096,7 +290111,12 @@
    "rated": 100000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_flatcar",
@@ -290107,7 +290127,12 @@
    "rated": 80000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    4,
+    4,
+    7
+   ]
   },
   {
    "id": "wag_gondola",
@@ -290118,7 +290143,12 @@
    "rated": 85000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_reefer",
@@ -290129,7 +290159,12 @@
    "rated": 60000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_well",
@@ -290140,7 +290175,12 @@
    "rated": 100000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    4,
+    8,
+    7
+   ]
   },
   {
    "id": "wag_autorack",
@@ -290151,7 +290191,12 @@
    "rated": 40000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_ore",
@@ -290162,7 +290207,12 @@
    "rated": 120000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_stock",
@@ -290173,7 +290223,12 @@
    "rated": 40000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_caboose",
@@ -290184,7 +290239,12 @@
    "rated": 0,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_log",
@@ -290195,7 +290255,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    4,
+    4,
+    7
+   ]
   },
   {
    "id": "wag_crane",
@@ -290206,7 +290271,12 @@
    "rated": 0,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_schnabel",
@@ -290217,7 +290287,12 @@
    "rated": 150000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_compartment",
@@ -290448,7 +290523,12 @@
    "rated": 24000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "nwag_open_hopper",
@@ -290459,7 +290539,12 @@
    "rated": 32000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "nwag_tank",
@@ -290470,7 +290555,12 @@
    "rated": 40000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "nwag_flatcar",
@@ -290481,7 +290571,12 @@
    "rated": 32000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "nwag_gondola",
@@ -290492,7 +290587,12 @@
    "rated": 34000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "nwag_stock",
@@ -290503,7 +290603,12 @@
    "rated": 16000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "nwag_caboose",
@@ -290514,7 +290619,12 @@
    "rated": 0,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "nwag_log",
@@ -290525,7 +290635,12 @@
    "rated": 28000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "nwag_ore",
@@ -290536,7 +290651,12 @@
    "rated": 48000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "npas_compartment",
@@ -290789,7 +290909,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_165_series",
@@ -291185,7 +291310,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_2bb2_400",
@@ -291240,7 +291370,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_303_series",
@@ -291691,7 +291826,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_733_series",
@@ -291746,7 +291886,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_787_series",
@@ -291790,7 +291935,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_81_717_714",
@@ -291845,7 +291995,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_817_series",
@@ -291856,7 +292011,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_821_series",
@@ -292516,7 +292676,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_alaska_railroad_557",
@@ -292571,7 +292736,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_alstom_coradia",
@@ -292593,7 +292763,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_alstom_metropolis",
@@ -293440,7 +293615,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_bvg_class_a",
@@ -293451,7 +293631,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_bvg_class_d",
@@ -293462,7 +293647,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_bvg_class_e",
@@ -293473,7 +293663,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_bvg_class_g",
@@ -293484,7 +293679,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_bvg_class_h",
@@ -295255,7 +295455,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_bombardier_m5000",
@@ -296003,7 +296208,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_british_rail_class_168",
@@ -296036,7 +296246,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_british_rail_class_172",
@@ -296234,7 +296449,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_british_rail_class_25",
@@ -296454,7 +296674,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_british_rail_class_317",
@@ -296498,7 +296723,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_british_rail_class_321",
@@ -296663,7 +296893,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_british_rail_class_373",
@@ -296817,7 +297052,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_british_rail_class_414",
@@ -297015,7 +297255,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_british_rail_class_489",
@@ -297191,7 +297436,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_british_rail_class_66",
@@ -297378,7 +297628,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_british_rail_class_77",
@@ -297411,7 +297666,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_british_rail_class_800",
@@ -297620,7 +297880,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_british_rail_class_97_6",
@@ -297895,7 +298160,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_british_rail_classes_445_and_446",
@@ -297972,7 +298242,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_british_rail_mark_2",
@@ -297983,7 +298258,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_british_rail_mark_4",
@@ -297994,7 +298274,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_british_rail_mark_5",
@@ -298005,7 +298290,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_british_rail_mark_5a",
@@ -298115,7 +298405,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_budd_rail_diesel_car",
@@ -298258,7 +298553,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_caf_urbos",
@@ -299226,7 +299526,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_chiba_new_town_railway_9800_series",
@@ -299237,7 +299542,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_chicago_burlington_and_quincy_4963",
@@ -299336,7 +299646,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_chichibu_railway_2000_series",
@@ -299347,7 +299662,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_chichibu_railway_3000_series",
@@ -299358,7 +299678,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_chichibu_railway_300_series",
@@ -299369,7 +299694,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_chichibu_railway_5000_series",
@@ -299380,7 +299710,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_chichibu_railway_500_series",
@@ -299391,7 +299726,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_chichibu_railway_6000_series",
@@ -299402,7 +299742,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_chichibu_railway_7000_series",
@@ -299424,7 +299769,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_chichibu_railway_7800_series",
@@ -299435,7 +299785,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_chichibu_railway_800_series",
@@ -299446,7 +299801,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_chichibu_railway_class_deki_100",
@@ -299589,7 +299949,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_china_railway_nc3",
@@ -299600,7 +299965,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_china_railway_ndj3",
@@ -299655,7 +300025,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_china_railways_25g_rolling_stock",
@@ -300557,7 +300932,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_china_railways_xk13",
@@ -300590,7 +300970,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_chongnyonjol_kinyom_class_locomotive",
@@ -300755,7 +301140,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_class_951_shinkansen",
@@ -300799,7 +301189,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_colorado_railcar_dmu",
@@ -301107,7 +301502,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_crocodile",
@@ -301206,7 +301606,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_dbag_class_423",
@@ -301261,7 +301666,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_dbag_class_481",
@@ -301294,7 +301704,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_dbag_class_612",
@@ -301316,7 +301731,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_db_class_10",
@@ -301437,7 +301857,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_db_class_420",
@@ -301448,7 +301873,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_db_class_472",
@@ -301470,7 +301900,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_db_class_628",
@@ -301481,7 +301916,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_db_class_65",
@@ -301613,7 +302053,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_db_class_vt_24",
@@ -301745,7 +302190,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_dec741",
@@ -301756,7 +302206,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_dk4",
@@ -301789,7 +302244,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_dr2800_series",
@@ -301800,7 +302260,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_dr2900_series",
@@ -301811,7 +302276,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_dr3100_series",
@@ -302207,7 +302677,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_drg_class_et_167",
@@ -302218,7 +302693,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_drg_class_et_168",
@@ -302229,7 +302709,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_drg_class_et_169",
@@ -302240,7 +302725,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_drg_class_et_171",
@@ -302273,7 +302763,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_drg_class_et_91",
@@ -302350,7 +302845,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_drg_glrhs",
@@ -302361,7 +302861,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_drg_h_02_1001",
@@ -302471,7 +302976,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_dr_class_52_80",
@@ -302559,7 +303069,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_dr_class_v_100",
@@ -302636,7 +303151,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_dsb_class_mh",
@@ -302724,7 +303244,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_dsb_class_p",
@@ -302845,7 +303370,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_dinwiddie_county_pullman_car",
@@ -302955,7 +303485,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_driving_van_trailer",
@@ -302966,7 +303501,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_durmazlar_panorama",
@@ -302988,7 +303528,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_e127_series",
@@ -303263,7 +303808,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_e723_series",
@@ -304858,7 +305408,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_et122",
@@ -304869,7 +305424,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_ev_e301_series",
@@ -305012,7 +305572,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_electroputere_le5100",
@@ -305078,7 +305643,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_esslingen_railbus",
@@ -305089,7 +305659,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_est_0_189_to_0_200",
@@ -305441,7 +306016,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_fs_class_103",
@@ -305826,7 +306406,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_fs_class_ale_642",
@@ -306376,7 +306961,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_fv_e991_series",
@@ -306431,7 +307021,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_ferdinand_magellan",
@@ -306453,7 +307048,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_fiat_materfer_7131",
@@ -306618,7 +307218,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_fujikyu_6000_series",
@@ -306651,7 +307256,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_fukuoka_subway_1000_series",
@@ -308642,7 +309252,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_gwr_101_class",
@@ -308752,7 +309367,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_gwr_steam_rail_motors",
@@ -309071,7 +309691,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_g_lsdorf_adriatics",
@@ -309104,7 +309729,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_hb_e210_series",
@@ -309357,7 +309987,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_hankyu_1100_series",
@@ -309368,7 +310003,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_hankyu_1300_series",
@@ -309390,7 +310030,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_hankyu_2000_series",
@@ -309434,7 +310079,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_hankyu_5300_series",
@@ -309885,7 +310535,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_horizon",
@@ -309896,7 +310551,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_hunslet_austerity_0_6_0st",
@@ -310050,7 +310710,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_h_series_6112",
@@ -310072,7 +310737,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_h_series_7022",
@@ -310094,7 +310764,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_ic4",
@@ -310215,7 +310890,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_izban_e22000",
@@ -310347,7 +311027,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_intercity_express",
@@ -310468,7 +311153,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_jgr_class_150",
@@ -311447,7 +312137,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_jr_shikoku_2600_series",
@@ -311458,7 +312153,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_jr_shikoku_2700_series",
@@ -311656,7 +312356,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_j_series_813",
@@ -311667,7 +312372,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_k62_class_locomotive",
@@ -311986,7 +312696,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_keihan_5000_series",
@@ -312151,7 +312866,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_keikyu_700_series_2",
@@ -312162,7 +312882,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_keikyu_800_series",
@@ -312206,7 +312931,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_keisei_3000_series",
@@ -312349,7 +313079,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_100_series",
@@ -312360,7 +313095,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_11",
@@ -312371,7 +313111,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_120",
@@ -312382,7 +313127,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_kiha_122_series",
@@ -312415,7 +313165,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_kiha_150",
@@ -312448,7 +313203,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_kiha_183_series",
@@ -312470,7 +313230,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_kiha_187_series",
@@ -312503,7 +313268,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_25",
@@ -312514,7 +313284,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_261_series",
@@ -312525,7 +313300,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_281_series",
@@ -312536,7 +313316,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_283_series",
@@ -312547,7 +313332,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_285_series",
@@ -312558,7 +313348,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_35",
@@ -312569,7 +313364,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_38",
@@ -312580,7 +313380,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_43000",
@@ -312591,7 +313396,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_kiha_52",
@@ -312624,7 +313434,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_75",
@@ -312635,7 +313450,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_80_series",
@@ -312646,7 +313466,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_kiha_85_series",
@@ -312657,7 +313482,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_kiha_e120",
@@ -312679,7 +313509,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_kiha_e200",
@@ -312734,7 +313569,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_kintetsu_1400_series",
@@ -312822,7 +313662,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_kintetsu_21020_series",
@@ -312833,7 +313678,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_kintetsu_22000_series",
@@ -313009,7 +313859,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_kintetsu_7000_series",
@@ -313295,7 +314150,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_korail_class_321000",
@@ -313328,7 +314188,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_korail_class_351000",
@@ -315880,7 +316745,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_l_class_melbourne_tram",
@@ -316859,7 +317729,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_mr3v_mr6v",
@@ -317090,7 +317965,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_mak_g_1201_bb",
@@ -317156,7 +318036,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_maine_central_class_c_4_6_2",
@@ -317486,7 +318371,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_meitetsu_300_series",
@@ -317585,7 +318475,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_meitetsu_6000_series",
@@ -317607,7 +318502,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_meitetsu_7000_series",
@@ -317618,7 +318518,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_meitetsu_8800_series",
@@ -317706,7 +318611,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_meitetsu_kiha_8500_series",
@@ -318663,7 +319573,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_ne_train",
@@ -318696,7 +319611,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_nrec_rl_class_locomotive",
@@ -319697,7 +320617,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_ns_intercity_nieuwe_generatie",
@@ -319708,7 +320633,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_ns_mat_54",
@@ -319741,7 +320671,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_nzr_a_class",
@@ -319807,7 +320742,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_nagano_electric_railway_2100_series",
@@ -319818,7 +320758,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_nagoya_municipal_subway_2000_series",
@@ -319983,7 +320928,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_nankai_2300_series",
@@ -320005,7 +320955,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_nankai_50000_series",
@@ -320060,7 +321015,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_national_rail_nr_class",
@@ -320082,7 +321042,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_new_generation_rollingstock",
@@ -320137,7 +321102,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_new_pendolino",
@@ -320621,7 +321591,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_new_south_wales_xplorer",
@@ -321710,7 +322685,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_oldenburg_g_1",
@@ -321919,7 +322899,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_pkp_class_en71",
@@ -322106,7 +323091,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_pkp_class_lxd2",
@@ -323624,7 +324614,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_protos",
@@ -323921,7 +324916,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_px27_775",
@@ -324878,7 +325878,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_r10",
@@ -325109,7 +326114,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_r268",
@@ -325593,7 +326603,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_red_flag_1_class_locomotive",
@@ -325659,7 +326674,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_regio_2n",
@@ -325857,7 +326877,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_russian_locomotive_class_ye",
@@ -325879,7 +326904,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_r_kb_nos_51mh_to_53mh",
@@ -326033,7 +327063,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_sbb_b_3_4",
@@ -326781,7 +327816,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_sj_f_2",
@@ -327012,7 +328052,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_sj_x12",
@@ -327067,7 +328112,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_sj_x6",
@@ -327078,7 +328128,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_sj_x7",
@@ -327089,7 +328144,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_sj_x9",
@@ -327100,7 +328160,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_sj_y3",
@@ -327111,7 +328176,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_sj_y6",
@@ -328222,7 +329292,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_sncf_class_x_2200",
@@ -328398,7 +329473,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_sncf_class_z_5600",
@@ -328420,7 +329500,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_sncf_class_z_8800",
@@ -328464,7 +329549,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_sncf_tgv_sud_est",
@@ -328618,7 +329708,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_sr_q_class",
@@ -328783,7 +329878,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_s_class_melbourne_tram",
@@ -328937,7 +330037,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_sanyo_5000_series",
@@ -329113,7 +330218,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_seibu_3000_series",
@@ -329322,7 +330432,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_sentetsu_mate_class_locomotives",
@@ -329773,7 +330888,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_shin_keisei_n800_series",
@@ -329784,7 +330904,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_shintetsu_6000_series",
@@ -329817,7 +330942,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_siemens_duewag_supertram",
@@ -329916,7 +331046,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_siemens_modular_metro",
@@ -330191,7 +331326,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_sotetsu_11000_series",
@@ -330224,7 +331364,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_sotetsu_20000_series",
@@ -330246,7 +331391,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_sotetsu_6000_series",
@@ -330257,7 +331407,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_sotetsu_7000_series",
@@ -330268,7 +331423,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_sotetsu_9000_series",
@@ -331137,7 +332297,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_stadler_gtw_in_greece",
@@ -331148,7 +332313,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_stadler_kiss",
@@ -331192,7 +332362,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_stadler_tramlink",
@@ -331313,7 +332488,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_surfliner",
@@ -331423,7 +332603,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_tcdd_2201_class",
@@ -331698,7 +332883,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_tcdd_e23000",
@@ -331852,7 +333042,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_tcdd_mt5500",
@@ -331896,7 +333091,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_tcdd_tvs2000",
@@ -331940,7 +333140,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_tgv_duplex",
@@ -331973,7 +333178,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "loco_tu4_diesel_locomotive",
@@ -332061,7 +333271,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_twr_71_000_series",
@@ -332138,7 +333353,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_t_class_melbourne_tram",
@@ -332644,7 +333864,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_tennessee_valley_railroad_610",
@@ -332721,7 +333946,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_tobu_100_series",
@@ -332765,7 +333995,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_tobu_200_series",
@@ -332809,7 +334044,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_tobu_50000_series",
@@ -332897,7 +334137,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_tobu_7800_series",
@@ -332908,7 +334153,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_tobu_8000_series",
@@ -333326,7 +334576,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_tokyu_5200_series",
@@ -333337,7 +334592,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "unit_tokyu_6000_series",
@@ -333447,7 +334707,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_transperth_a_series_train",
@@ -333799,7 +335064,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_umbau_wagen",
@@ -334239,7 +335509,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "wag_voiture_tat",
@@ -334250,7 +335525,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_vossloh_de_18",
@@ -334382,7 +335662,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_wagr_ai_class",
@@ -334393,7 +335678,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "wag_wagr_ai_class_passenger_carriage",
@@ -334404,7 +335694,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_wagr_ao_class",
@@ -334580,7 +335875,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_wagr_x_class",
@@ -334811,7 +336111,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_world_s_fair_lo_v",
@@ -334943,7 +336248,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "pas_x61",
@@ -335053,7 +336363,12 @@
    "rated": 25000,
    "gauge": "narrow",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    1,
+    3
+   ]
   },
   {
    "id": "pas_z_ter",
@@ -335372,7 +336687,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "loco_kd_t_669_diesel_locomotive",
@@ -335592,7 +336912,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   },
   {
    "id": "unit_koda_03_t",
@@ -335768,7 +337093,12 @@
    "rated": 70000,
    "gauge": "standard",
    "crew": 0,
-   "engine": ""
+   "engine": "",
+   "bay": [
+    2,
+    2,
+    3
+   ]
   }
  ]
 }

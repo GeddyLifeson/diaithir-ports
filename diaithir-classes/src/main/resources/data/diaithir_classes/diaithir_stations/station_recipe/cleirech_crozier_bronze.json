@@ -1,0 +1,23 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "tag": "c:ingots/bronze",
+   "count": 2
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 2
+  },
+  {
+   "item": "diaithir_classes:cleirech_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:cleirech_crozier_bronze",
+  "count": 1
+ }
+}

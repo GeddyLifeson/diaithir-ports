@@ -24,6 +24,9 @@ The five key-hole blocks work from code (`GateKeyholeBlock`): the matching key, 
 
 - Silentwood sapling grows the silentwood tree (tested with random ticks, 13-log trunk).
 
-## Not ported yet (listed, not registered)
-Bow and the cerulean and crystal arrows, crystalline sword beam, mirror of guidance, sickles, the umbra pickaxe selection mode, the crystalline pickaxe ore treasure, and upstream's custom machine screens. Upstream itself marks the darkstone and moon temple dungeons, dungeon mobs, farming and the portal as unfinished.
+- Silentwood bow (pull animation item definition), cerulean and crystal arrows (upstream damage 1.5 and 3, crystal drops faster), crystalline sword beam (hold to charge, release after about a second; 8 damage at 2 blocks per tick), and the aurorian stone, silentwood and moonstone sickles (shears with tier durability).
+- Mirror of Guidance: clean-room. Upstream draws a node screen; here the same `mirror_of_guidance` data (12 entries, upstream lang) is walked breadth first and each right-click prints the next entry in chat (sneak restarts). Vanilla only opens a book screen from a real book item, which is why it is not a book.
+
+## Not ported yet
+Upstream's custom machine screens, the umbra pickaxe selection mode, the crystalline pickaxe ore treasure, and the beam's own 3D model (it uses the arrow model with upstream's beam texture). With this, every upstream item and block id is registered, so the original jar can be dropped. Upstream itself marks the darkstone and moon temple dungeons, dungeon mobs, farming and the portal as unfinished.
 Quests in `codex/aurorian_quests.json` carry `live: false` for the dungeon and boss steps until the keeper boss exists. The plan is to attach the dungeon bosses through `diaithir-bosses` profiles once the mobs are ported. Plants (tall grass, lavender) were not seen in the test area and need a look in a client. Diaithiris names, the other 129 language names and Codex prose are follow-ups. No client test yet (icons, armour layers, sky).

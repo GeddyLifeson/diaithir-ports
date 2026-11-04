@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "stellaris:titanium_ingot",
+  "D": "stellaris:desh_ingot",
+  "B": "minecraft:blast_furnace",
+  "F": "minecraft:flint_and_steel"
+ },
+ "pattern": [
+  "#D#",
+  "#B#",
+  "F F"
+ ],
+ "result": {
+  "id": "stellaris:rocket_engine"
+ }
+}

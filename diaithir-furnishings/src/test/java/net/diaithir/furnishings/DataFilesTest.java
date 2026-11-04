@@ -51,9 +51,11 @@ class DataFilesTest {
             String n = e.getAsJsonObject().get("id").getAsString();
             assertTrue(ids.add(n), "duplicate " + n);
             json("assets/diaithirfurnishings/items/" + n + ".json");
-            json("assets/diaithirfurnishings/models/item/" + n + ".json");
-            if (e.getAsJsonObject().get("category").getAsString().equals("furniture")) json("data/diaithirfurnishings/recipe/everyday/" + n + ".json");
-            assertNotNull(DataFilesTest.class.getResourceAsStream("/assets/diaithirfurnishings/textures/item/" + n + ".png"), n + " texture");
+            for (var tex : json("assets/diaithirfurnishings/models/item/" + n + ".json").getAsJsonObject("textures").entrySet()) {
+                String path = tex.getValue().getAsString().substring("diaithirfurnishings:".length());
+                assertNotNull(DataFilesTest.class.getResourceAsStream("/assets/diaithirfurnishings/textures/" + path + ".png"), n + " texture " + path);
+            }
+            assertTrue(lang.has("item.diaithirfurnishings." + n + ".native"), n + " native name");
             assertTrue(lang.has("item.diaithirfurnishings." + n), n + " name");
             assertTrue(!lang.get("item.diaithirfurnishings." + n).getAsString().contains("\u2014"), "no em dash");
         }

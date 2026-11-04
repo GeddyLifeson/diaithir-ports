@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/windlass"
+  "layer0": "diaithirfurnishings:item/windlass_head",
+  "layer1": "diaithirfurnishings:item/windlass_handle",
+  "layer2": "diaithirfurnishings:item/windlass_binding"
  }
 }

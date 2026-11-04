@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/piping_bag"
+  "layer0": "diaithirfurnishings:item/piping_bag_head",
+  "layer1": "diaithirfurnishings:item/piping_bag_handle",
+  "layer2": "diaithirfurnishings:item/piping_bag_binding"
  }
 }

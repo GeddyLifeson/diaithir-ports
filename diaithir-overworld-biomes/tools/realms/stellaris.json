@@ -1,0 +1,143 @@
+{
+ "modid": "stellaris",
+ "title": "Stellaris",
+ "age": 7,
+ "icon": "stellaris:titanium_ingot",
+ "plant_rx": "(starlight_bush|dustbloom|eclipse_tulip|vines$|vines_plant$|lunar_sapling)",
+ "dimensions": [
+  {
+   "name": "moon",
+   "title": "The Moon",
+   "base": "overworld",
+   "default_block": "moon_stone",
+   "top_block": "moon_sand",
+   "filler_block": "moon_stone",
+   "sea_level": 0,
+   "fluid": "air",
+   "ambient": {
+    "fog": "#05060a",
+    "sky": "#000000",
+    "water": "#3a6a8a"
+   },
+   "biome_style": {
+    "lunar_desert": {
+     "temp": 0.9,
+     "top": "moon_sand"
+    },
+    "moon_craters": {
+     "temp": 0.3,
+     "top": "moon_stone"
+    },
+    "lunar_forest": {
+     "temp": 0.5,
+     "top": "lunar_grass"
+    },
+    "burnt_forest": {
+     "temp": 0.7,
+     "top": "ash_layer"
+    },
+    "lunar_blue_lake": {
+     "temp": 0.1,
+     "top": "packed_ice_bricks"
+    }
+   },
+   "biomes": [
+    "burnt_forest",
+    "lunar_blue_lake",
+    "lunar_desert",
+    "lunar_forest",
+    "moon_craters"
+   ]
+  },
+  {
+   "name": "earth_orbit",
+   "title": "Earth Orbit",
+   "base": "end",
+   "default_block": "meteorite",
+   "top_block": "meteorite",
+   "filler_block": "meteorite",
+   "sea_level": 0,
+   "ambient": {
+    "fog": "#000000",
+    "sky": "#000000",
+    "water": "#000000"
+   },
+   "biomes": [
+    "space"
+   ]
+  }
+ ],
+ "migrate_blocks": {
+  "blender": "minecraft:smoker",
+  "cable_t1": "minecraft:iron_bars",
+  "pipe_t1": "minecraft:iron_bars",
+  "cargo_unloader": "minecraft:hopper",
+  "coal_generator": "minecraft:furnace",
+  "diesel_generator": "minecraft:blast_furnace",
+  "electrolyzer": "minecraft:blast_furnace",
+  "engineering_station": "minecraft:smithing_table",
+  "fuel_refinery": "minecraft:blast_furnace",
+  "gravity_manipulator": "minecraft:lodestone",
+  "laboratory": "minecraft:brewing_stand",
+  "power_bank_t1": "minecraft:iron_block",
+  "pumpjack": "minecraft:piston",
+  "solar_panel": "minecraft:daylight_detector",
+  "vacuumator": "minecraft:hopper",
+  "water_pump": "minecraft:hopper",
+  "fluid_tank_t1": "minecraft:cauldron",
+  "space_farm": "minecraft:farmland",
+  "rocket_launch_pad": "minecraft:iron_block",
+  "antenna": "minecraft:lightning_rod",
+  "electric_light": "minecraft:sea_lantern",
+  "flag": "minecraft:white_banner",
+  "oxygen_propagator": "minecraft:iron_block",
+  "coal_torch": "minecraft:torch",
+  "wall_coal_torch": "minecraft:wall_torch",
+  "coal_lantern": "minecraft:lantern",
+  "blender_proxy": "minecraft:air",
+  "pumpjack_proxy": "minecraft:air",
+  "flag_proxy": "minecraft:air",
+  "rocket_launch_pad_proxy": "minecraft:air",
+  "oil": "minecraft:lava",
+  "diesel": "minecraft:lava",
+  "fuel": "minecraft:lava",
+  "hydrogen": "minecraft:air",
+  "oxygen": "minecraft:air",
+  "astrum_liquidus": "minecraft:water",
+  "blue_liquid": "minecraft:water",
+  "fuel_block": "minecraft:coal_block",
+  "hydrogen_block": "minecraft:ice",
+  "oxygen_block": "minecraft:ice",
+  "earth_globe": "minecraft:lodestone",
+  "moon_globe": "minecraft:lodestone"
+ },
+ "migrate_items": {
+  "oil_bucket": "minecraft:bucket",
+  "diesel_bucket": "minecraft:bucket",
+  "fuel_bucket": "stellaris:fluid_cell",
+  "hydrogen_bucket": "minecraft:bucket",
+  "blue_liquid_bucket": "minecraft:bucket",
+  "astrum_liquidus_bucket": "minecraft:bucket",
+  "lunar_boat": "minecraft:oak_boat",
+  "lunar_chest_boat": "minecraft:oak_chest_boat",
+  "blender": "minecraft:smoker",
+  "big_rocket_model": "stellaris:rocket",
+  "small_rocket_model": "stellaris:rocket",
+  "tiny_rocket_model": "stellaris:rocket",
+  "creative_rocket": "stellaris:rocket",
+  "creative_space_suit_helmet": "stellaris:space_suit_helmet",
+  "sd_card": "minecraft:paper",
+  "tablet": "minecraft:compass",
+  "friends_list": "minecraft:paper",
+  "skin_frost": "minecraft:paper",
+  "skin_galaxy": "minecraft:paper",
+  "skin_military": "minecraft:paper",
+  "rover": "minecraft:minecart",
+  "rover_speed_module": "minecraft:redstone",
+  "rover_tank_module": "minecraft:bucket",
+  "autopilot_module": "minecraft:redstone",
+  "cargo_module": "minecraft:chest",
+  "shield_module": "minecraft:shield",
+  "space_station_blueprint": "minecraft:map"
+ }
+}
