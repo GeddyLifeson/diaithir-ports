@@ -39,7 +39,7 @@ public final class StationBlock extends BaseEntityBlock {
 
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!(level.getBlockEntity(pos) instanceof StationEntity be)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (stack.isEmpty() || !(level.getBlockEntity(pos) instanceof StationEntity be)) return InteractionResult.TRY_WITH_EMPTY_HAND;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         String sch = stack.get(Workshop.SCHEMATIC.get());
