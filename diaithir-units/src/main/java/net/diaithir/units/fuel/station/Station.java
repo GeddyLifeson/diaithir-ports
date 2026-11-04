@@ -69,6 +69,10 @@ public final class Station {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) ITEM_LIST.forEach(i -> e.accept(i.get()));
         });
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.ServerTickEvent.Post.class, e -> {
+            if (fireLeft > 0 && fireSource != null) {
+                var pos = fireSource.getEntity() != null ? fireSource.getEntity().position() : fireSource.getPosition();
+                IvControl.trigger(fireSource.getLevel(), pos, 8.0, fireLeft-- == fireTotal);
+            }
             if (watchLeft > 0 && --watchLeft % 20 == 0 && watchSource != null) {
                 var pos = watchSource.getEntity() != null ? watchSource.getEntity().position() : watchSource.getPosition();
                 String st = IvControl.status(watchSource.getLevel(), pos, 8.0);
@@ -86,6 +90,7 @@ public final class Station {
                     c.getSource().sendSuccess(() -> Component.literal("Watching the nearest vehicle once a second; hold W now"), false);
                     return 1;
                 })))
+                .then(Commands.literal("fire").executes(c -> fire(c.getSource(), 40)).then(Commands.argument("ticks", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 1200)).executes(c -> fire(c.getSource(), com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "ticks")))))
                 .then(Commands.literal("status").executes(c -> {
                     String st = IvControl.status(c.getSource().getLevel(), c.getSource().getPosition(), 8.0);
                     c.getSource().sendSuccess(() -> Component.literal(st == null ? "No vehicle within 8 blocks" : "Vehicle: " + st), false);
@@ -118,6 +123,18 @@ public final class Station {
 
     private static net.minecraft.commands.CommandSourceStack watchSource;
     private static int watchLeft;
+    private static net.minecraft.commands.CommandSourceStack fireSource;
+    private static int fireLeft, fireTotal;
+
+    /** Holds the trigger of the nearest vehicle's guns for the given ticks (same as holding IV's fire key from the controller seat). */
+    private static int fire(net.minecraft.commands.CommandSourceStack src, int ticks) {
+        var pos = src.getEntity() != null ? src.getEntity().position() : src.getPosition();
+        int n = IvControl.trigger(src.getLevel(), pos, 8.0, true);
+        if (n <= 0) { src.sendFailure(Component.literal(n < 0 ? "No vehicle within 8 blocks" : "That vehicle has no gun")); return 0; }
+        fireSource = src; fireTotal = ticks; fireLeft = ticks - 1;
+        src.sendSuccess(() -> Component.literal("Trigger held on " + n + " gun(s) for " + ticks + " ticks"), false);
+        return 1;
+    }
 
     /** Start or stop the engines of the nearest Immersive Vehicles vehicle within 6 blocks of whoever ran the command. */
     private static int ignition(net.minecraft.commands.CommandSourceStack src, Boolean start) {
