@@ -7,3 +7,6 @@ Build: `./gradlew build` JDK 25, NeoForge 26.1.2.116, jar `diaithir-firearms-neo
 
 ## Roster test (2026-11-03)
 265 guns (17 archetypes + 248 real designs from `roster/`), 78 ammo items. Headless server, `/firearmsselftest` twice: `firearms ok=1042 bad=0`, no recipe parse errors. Each gun fires at a stand 8 m away and hits (up to 12 tries, since spread is random). Not tested: real client, sounds by ear, auto cadence, launcher explosions, full-pack boot.
+
+## Ammo box
+`/firearmsselftest` (run twice, the first run loads the test chunk): ok=1048 bad=0 including six box checks (empty, capacity, one kind, take, refuse other kind, refill with a new kind). Drawing from a box during a live reload is not exercised headless. (2026-11-04)
