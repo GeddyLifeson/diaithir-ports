@@ -29,3 +29,12 @@ Tools: `tools/gen_parity.py`, `tools/gen_sets.py <silentgems jar> <pack_dump.jso
 
 ## Alignment with the Foundry stations (ports #163)
 Foundry's `diaithir_stations` make parts and run processes (ingots, casts, gun internals, machines); the benches here assemble finished gear from those parts, so the two chain: a Foundry station makes the `c:ingots/*` and part items, a bench here turns them into a sword, gun or pan. Ages match: Smithy and Workshop Bench I (stone, bone and clay work from the start, like the hearth bench), Gunsmith Bench VI (the assembler's Age). No code dependency, so either PR can merge first; materials read the same `c:ingots/<metal>` tags, and a Foundry recipe can output any material item listed in `workshop/materials_base.json`.
+
+## Folded survey items (survey part 2)
+| Item | Source | Licence | Notes |
+|---|---|---|---|
+| Item Magnet (4 m), Super Item Magnet (8 m) | Magnets by Juix 1.4 | CC0-1.0 | hold in either hand; pulls items and XP orbs older than 5 ticks |
+| Copper, Iron, Golden, Diamond, Amethyst, Netherite repair kits, Duct Tape | Iron Repair Kits 2.2 (Rolling Dice) | MIT | durability pools 300/780/930/1950/2150/5000/190; hold kit in one hand, damaged item in the other, use; heavy kits slow and fatigue the carrier |
+| Anvil repair | Anvil Repairing 26.1.2.3 (Darkhax) | LGPL-2.1 (package `fold.lgpl`) | iron ingot on a chipped or damaged anvil; config `anvil.repairChance` |
+
+Details and licence notices: `NOTICE-FOLDS.md`. Test: `/foldselftest`.

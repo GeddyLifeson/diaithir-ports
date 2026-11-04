@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithircropgenes:block/tinted_glass_pane"
+ }
+}

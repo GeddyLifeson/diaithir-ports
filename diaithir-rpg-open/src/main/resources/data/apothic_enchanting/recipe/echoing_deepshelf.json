@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "C": "#minecraft:candles",
+        "D": "apothic_enchanting:deepshelf",
+        "E": "minecraft:echo_shard"
+    },
+    "pattern": [
+        " E ",
+        " D ",
+        "CCC"
+    ],
+    "result": {
+        "id": "apothic_enchanting:echoing_deepshelf"
+    }
+}

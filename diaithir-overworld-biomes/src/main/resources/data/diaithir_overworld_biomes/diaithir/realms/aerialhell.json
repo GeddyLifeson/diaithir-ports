@@ -1,0 +1,12 @@
+{
+ "realm": "aerialhell",
+ "dimension": "aerialhell:aerial_hell",
+ "dimensions": [
+  "aerialhell:aerial_hell"
+ ],
+ "age": 4,
+ "age_gate": "diaithir:age/4",
+ "units": "SI",
+ "replaces": "aerialhell",
+ "licence_note": "clean-room; no third-party code, art or data copied"
+}

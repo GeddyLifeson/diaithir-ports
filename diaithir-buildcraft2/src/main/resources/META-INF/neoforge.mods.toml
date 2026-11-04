@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirbuildcraft2"
+version = "${version}"
+displayName = "Diaithir Buildcraft Two"
+description = "Diaithir Buildcraft Two: clean-room rebuild from behaviour only; no code or art taken from the original mods."
+
+[[dependencies.diaithirbuildcraft2]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

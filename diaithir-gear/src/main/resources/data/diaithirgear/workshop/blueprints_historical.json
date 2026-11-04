@@ -7533,7 +7533,7 @@
   "model": "axe"
  },
  {
-  "id": "ha_self_bow",
+  "id": "hw_self_bow",
   "station": "workshop",
   "base": "diaithirarms:self_bow",
   "age": 1,
@@ -7575,7 +7575,7 @@
   "model": "bow"
  },
  {
-  "id": "ha_gastraphetes",
+  "id": "hw_gastraphetes",
   "station": "workshop",
   "base": "diaithirarms:gastraphetes",
   "age": 4,
@@ -7626,7 +7626,7 @@
   "model": "crossbow"
  },
  {
-  "id": "ha_repeating_crossbow_zhuge_nu",
+  "id": "hw_repeating_crossbow_zhuge_nu",
   "station": "workshop",
   "base": "diaithirarms:repeating_crossbow_zhuge_nu",
   "age": 4,
@@ -7677,7 +7677,7 @@
   "model": "crossbow"
  },
  {
-  "id": "ha_yumi",
+  "id": "hw_yumi",
   "station": "workshop",
   "base": "diaithirarms:yumi",
   "age": 4,
@@ -7719,7 +7719,7 @@
   "model": "bow"
  },
  {
-  "id": "ha_longbow_english",
+  "id": "hw_longbow_english",
   "station": "workshop",
   "base": "diaithirarms:longbow_english",
   "age": 5,
@@ -7761,7 +7761,7 @@
   "model": "bow"
  },
  {
-  "id": "ha_arbalest_steel_crossbow",
+  "id": "hw_arbalest_steel_crossbow",
   "station": "workshop",
   "base": "diaithirarms:arbalest_steel_crossbow",
   "age": 5,
@@ -7812,7 +7812,7 @@
   "model": "crossbow"
  },
  {
-  "id": "ha_stonebow_bullet_crossbow",
+  "id": "hw_stonebow_bullet_crossbow",
   "station": "workshop",
   "base": "diaithirarms:stonebow_bullet_crossbow",
   "age": 5,
@@ -7863,7 +7863,7 @@
   "model": "crossbow"
  },
  {
-  "id": "ha_plains_bow",
+  "id": "hw_plains_bow",
   "station": "workshop",
   "base": "diaithirarms:plains_bow",
   "age": 5,
@@ -7905,7 +7905,7 @@
   "model": "bow"
  },
  {
-  "id": "ha_korean_horn_bow_gakgung",
+  "id": "hw_korean_horn_bow_gakgung",
   "station": "workshop",
   "base": "diaithirarms:korean_horn_bow_gakgung",
   "age": 4,
@@ -7947,7 +7947,7 @@
   "model": "bow"
  },
  {
-  "id": "ha_cranequin_crossbow",
+  "id": "hw_cranequin_crossbow",
   "station": "workshop",
   "base": "diaithirarms:cranequin_crossbow",
   "age": 5,
@@ -7998,7 +7998,7 @@
   "model": "crossbow"
  },
  {
-  "id": "ha_hungarian_magyar_bow",
+  "id": "hw_hungarian_magyar_bow",
   "station": "workshop",
   "base": "diaithirarms:hungarian_magyar_bow",
   "age": 4,
@@ -8040,7 +8040,7 @@
   "model": "bow"
  },
  {
-  "id": "ha_tibetan_crossbow",
+  "id": "hw_tibetan_crossbow",
   "station": "workshop",
   "base": "diaithirarms:tibetan_crossbow",
   "age": 4,
@@ -8091,7 +8091,7 @@
   "model": "crossbow"
  },
  {
-  "id": "ha_bhutanese_bamboo_bow",
+  "id": "hw_bhutanese_bamboo_bow",
   "station": "workshop",
   "base": "diaithirarms:bhutanese_bamboo_bow",
   "age": 5,
@@ -8133,7 +8133,7 @@
   "model": "bow"
  },
  {
-  "id": "ha_nubian_self_bow",
+  "id": "hw_nubian_self_bow",
   "station": "workshop",
   "base": "diaithirarms:nubian_self_bow",
   "age": 3,
@@ -8175,7 +8175,7 @@
   "model": "bow"
  },
  {
-  "id": "ha_cretan_short_bow",
+  "id": "hw_cretan_short_bow",
   "station": "workshop",
   "base": "diaithirarms:cretan_short_bow",
   "age": 4,

@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#aerialhell:is_aerial_hell",
+ "spawners": {
+  "type": "aerialhell:slime_pirate",
+  "weight": 10,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

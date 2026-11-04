@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aerialhell:smoky_quartz_block"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "aerialhell:smoky_quartz_slab",
+  "count": 6
+ }
+}

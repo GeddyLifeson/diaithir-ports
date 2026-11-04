@@ -585,7 +585,7 @@
    "role": "boss",
    "hp": 290,
    "atk": 6,
-   "scale": 1.6
+   "scale": 2.0
   },
   {
    "id": "beehemoth",
@@ -593,7 +593,7 @@
    "role": "monster",
    "hp": 18,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.33
   },
   {
    "id": "beehemoth_queen",
@@ -601,7 +601,7 @@
    "role": "boss",
    "hp": 290,
    "atk": 6,
-   "scale": 1.6
+   "scale": 2.01
   },
   {
    "id": "honey_slime",
@@ -609,7 +609,7 @@
    "role": "passive",
    "hp": 8,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.77
   },
   {
    "id": "rootmin",
@@ -617,7 +617,7 @@
    "role": "passive",
    "hp": 8,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.98
   },
   {
    "id": "sentry_watcher",
@@ -625,7 +625,7 @@
    "role": "monster",
    "hp": 30,
    "atk": 6,
-   "scale": 1.0
+   "scale": 1.11
   },
   {
    "id": "variant_bee",
@@ -633,7 +633,7 @@
    "role": "passive",
    "hp": 9,
    "atk": 2,
-   "scale": 1.0
+   "scale": 1.17
   }
  ]
 }

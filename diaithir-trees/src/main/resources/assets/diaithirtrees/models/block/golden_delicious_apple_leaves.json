@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/leaves",
+ "textures": {
+  "all": "diaithirtrees:block/golden_delicious_apple_leaves"
+ }
+}

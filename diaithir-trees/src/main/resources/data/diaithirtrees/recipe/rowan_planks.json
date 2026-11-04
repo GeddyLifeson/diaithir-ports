@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:rowan_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:rowan_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,16 @@
+{
+  "textures": { "all": "diaithirrouting:block/laser_node", "particle": "diaithirrouting:block/laser_node" },
+  "elements": [
+    {
+      "from": [4, 4, 4], "to": [12, 12, 12],
+      "faces": {
+        "north": { "uv": [0, 0, 16, 16], "texture": "#all" },
+        "east": { "uv": [0, 0, 16, 16], "texture": "#all" },
+        "south": { "uv": [0, 0, 16, 16], "texture": "#all" },
+        "west": { "uv": [0, 0, 16, 16], "texture": "#all" },
+        "up": { "uv": [0, 0, 16, 16], "texture": "#all" },
+        "down": { "uv": [0, 0, 16, 16], "texture": "#all" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "title": "Gather Wood",
+ "category": "early",
+ "objectives": [
+  {
+   "type": "mine",
+   "target": "minecraft:oak_log",
+   "amount": 8
+  }
+ ],
+ "rewards": [
+  {
+   "type": "item",
+   "value": "minecraft:bread",
+   "amount": 8
+  },
+  {
+   "type": "points",
+   "amount": 1
+  }
+ ]
+}

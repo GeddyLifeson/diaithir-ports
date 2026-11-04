@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "diaithircarts:freight_barrel",
+  "diaithircarts:freight_chest",
+  "diaithircarts:freight_crate",
+  "diaithircarts:freight_pallet"
+ ]
+}

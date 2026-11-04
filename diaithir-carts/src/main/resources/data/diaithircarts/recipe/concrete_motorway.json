@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "minecraft:gray_concrete"
+  },
+  "pattern": [
+    "CC",
+    "CC"
+  ],
+  "result": {
+    "id": "diaithircarts:concrete_motorway",
+    "count": 4
+  },
+  "category": "building"
+}

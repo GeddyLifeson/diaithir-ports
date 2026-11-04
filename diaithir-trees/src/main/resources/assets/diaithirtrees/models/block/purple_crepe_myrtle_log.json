@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirtrees:block/purple_crepe_myrtle_log_top",
+  "side": "diaithirtrees:block/purple_crepe_myrtle_log"
+ }
+}

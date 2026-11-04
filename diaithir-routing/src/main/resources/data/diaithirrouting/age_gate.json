@@ -1,0 +1,26 @@
+{
+  "tier1": {
+    "age": 6,
+    "items": [
+      "diaithirrouting:copper_filter_hopper",
+      "diaithirrouting:energy_module",
+      "diaithirrouting:extractor_module",
+      "diaithirrouting:fast_hopper",
+      "diaithirrouting:filter",
+      "diaithirrouting:filter_hopper",
+      "diaithirrouting:filter_module",
+      "diaithirrouting:fluid_module",
+      "diaithirrouting:item_collector",
+      "diaithirrouting:laser_node",
+      "diaithirrouting:puller_module",
+      "diaithirrouting:range_card",
+      "diaithirrouting:round_robin_module",
+      "diaithirrouting:router",
+      "diaithirrouting:router_link",
+      "diaithirrouting:sender_module",
+      "diaithirrouting:sorter_module",
+      "diaithirrouting:vacuum_module",
+      "diaithirrouting:void_module"
+    ]
+  }
+}

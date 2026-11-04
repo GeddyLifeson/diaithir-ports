@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:white_wool"
+ },
+ "pattern": [
+  "BB",
+  "BB"
+ ],
+ "result": {
+  "id": "diaithircropgenes:cotton_slab",
+  "count": 4
+ }
+}

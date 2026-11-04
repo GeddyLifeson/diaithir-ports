@@ -1,0 +1,15 @@
+{
+  "station": "station.fabricator",
+  "stage": "part",
+  "time_s": 18,
+  "ingredients": [
+    {
+      "item": "minecraft:breeze_rod",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_shard_missile_motor",
+    "count": 1
+  }
+}
