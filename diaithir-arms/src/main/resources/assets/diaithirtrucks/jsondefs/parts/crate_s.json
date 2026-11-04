@@ -9,7 +9,7 @@
   ]
  },
  "interactable": {
-  "interactionType": "CRATE",
+  "interactionType": "crate",
   "inventoryUnits": 2,
   "inventoryStackSize": 64,
   "canBeOpenedInHand": false

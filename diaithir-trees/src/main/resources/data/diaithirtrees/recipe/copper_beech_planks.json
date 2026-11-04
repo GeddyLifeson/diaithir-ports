@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:copper_beech_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:copper_beech_planks",
+  "count": 4
+ }
+}

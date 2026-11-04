@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:crimson_planks"
+ },
+ "pattern": [
+  "PPP",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:crimson_shutter",
+  "count": 3
+ }
+}

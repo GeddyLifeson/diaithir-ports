@@ -18,16 +18,6 @@ public final class Config {
             .defineInRange("baseReceive", 400, 1, 100000000);
     public static final ModConfigSpec.IntValue TANK = B.comment("Crucible tank size in mB.")
             .defineInRange("crucibleTank", 8000, 1000, 1000000);
-    public static final ModConfigSpec.IntValue MAX_AUGMENTS = B.comment("How many augments fit in the augment slot (one kind at a time).")
-            .defineInRange("maxAugments", 4, 1, 64);
-    public static final ModConfigSpec.DoubleValue SPEED_PER_AUGMENT = B.comment("Speed added by each speed augment, as a fraction (0.5 is +50%).")
-            .defineInRange("speedPerAugment", 0.5, 0.0, 10.0);
-    public static final ModConfigSpec.DoubleValue SPEED_ENERGY_PENALTY = B.comment("Extra FE per recipe for each speed augment, as a fraction.")
-            .defineInRange("speedEnergyPenalty", 0.1, 0.0, 10.0);
-    public static final ModConfigSpec.DoubleValue SAVING_PER_AUGMENT = B.comment("FE saved by each efficiency augment, as a fraction.")
-            .defineInRange("savingPerAugment", 0.15, 0.0, 0.24);
-    public static final ModConfigSpec.DoubleValue CHANCE_PER_AUGMENT = B.comment("Bonus chance is multiplied by 1 plus this for each output chance augment.")
-            .defineInRange("chancePerAugment", 0.5, 0.0, 100.0);
 
     /** Used before the config loads (and on a client), never read for gameplay. */
     public static final int BASE_CAPACITY_DEFAULT = 20000, BASE_RECEIVE_DEFAULT = 400, TANK_DEFAULT = 8000;

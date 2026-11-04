@@ -12,3 +12,18 @@ description = "Animals drop whole carcasses. Hang a carcass on a meat hook and w
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[mods]]
+modId = "nutritionalbalance"
+version = "${version}"
+displayName = "Nutritional Balance (folded)"
+logoFile = "logo.png"
+authors = "Danny (dannydjdk), folded by Diaithir"
+description = "Tracks nutrients in the food you eat; a balanced diet is rewarded, an unbalanced one is punished. Folded from dannydjdk/Nutritional-Balance (GPL-3.0)."
+
+[[dependencies.nutritionalbalance]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"

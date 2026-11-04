@@ -1,0 +1,6 @@
+{
+  "mix_type": "potion",
+  "from": "minecraft:awkward",
+  "ingredient": "minecraft:sweet_berries",
+  "to": "apothic_attributes:vitality"
+}

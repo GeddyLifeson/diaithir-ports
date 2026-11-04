@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "C": "minecraft:sculk_catalyst",
+        "O": "apothic_enchanting:soul_touched_deepshelf",
+        "S": "minecraft:sculk",
+        "W": "apothic_enchanting:warden_tendril"
+    },
+    "pattern": [
+        " W ",
+        "SOS",
+        "SCS"
+    ],
+    "result": {
+        "id": "apothic_enchanting:soul_touched_sculkshelf"
+    }
+}

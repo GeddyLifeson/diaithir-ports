@@ -1,0 +1,19 @@
+{
+  "station": "station.hearth_bench",
+  "stage": "assembly",
+  "time_s": 8,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_greek_fire_pot_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_greek_fire_pot_filler",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_greek_fire_pot",
+    "count": 1
+  }
+}

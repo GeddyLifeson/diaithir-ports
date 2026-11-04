@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:brown_amber_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:brown_amber_planks",
+  "count": 4
+ }
+}

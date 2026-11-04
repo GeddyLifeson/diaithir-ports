@@ -30,6 +30,12 @@ public final class SelfTest {
     }
 
     static void register(CommandDispatcher<CommandSourceStack> d) {
+        d.register(Commands.literal("animplay").requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
+                .then(Commands.argument("player", net.minecraft.commands.arguments.EntityArgument.player())
+                        .then(Commands.argument("clip", com.mojang.brigadier.arguments.StringArgumentType.greedyString()).executes(c -> {
+                            Anim.play(net.minecraft.commands.arguments.EntityArgument.getPlayer(c, "player"), com.mojang.brigadier.arguments.StringArgumentType.getString(c, "clip"));
+                            return 1;
+                        }))));
         d.register(Commands.literal("animselftest")
                 .requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
                 .executes(c -> {
@@ -90,6 +96,7 @@ public final class SelfTest {
             if (k != null) check(k.clip(it.get(), "reload").startsWith("gun." + s.getKey().substring(s.getKey().indexOf(':') + 1)), "own reload clip for " + s.getKey());
         }
         body(all);
+        skin();
         System.out.println("[animselftest] clips sent since boot: " + Anim.calls());
         System.out.println("[animselftest] clips checked " + clips + ", loaded " + all.size());
         LOG.forEach(System.out::println);
@@ -126,6 +133,23 @@ public final class SelfTest {
             check(s.getValue().equals(k), s.getKey() + " body kind -> " + k);
         }
         System.out.println("[animselftest] body clips checked " + b.size());
+    }
+
+    /** 3D skin layers: voxel counts and winding (the comparison with vanilla's own cube runs on the client, SkinLayers.verify). */
+    private static void skin() {
+        var hat = new SkinVoxels.Box(-4, -8, -4, 8, 8, 8, 32, 0, 1.0F);
+        var full = SkinVoxels.build(hat, (x, y) -> 255);
+        check(full.size() == 384 + 192, "opaque hat quads " + full.size() + " (want 576)");
+        check(SkinVoxels.build(hat, (x, y) -> 0).isEmpty(), "transparent hat has no quads");
+        var one = SkinVoxels.build(hat, (x, y) -> x == 43 && y == 11 ? 255 : 0);   // a single interior texel of the north face
+        check(one.size() == 5, "single texel -> 1 outer + 4 walls, got " + one.size());
+        check(SkinVoxels.build(hat, (x, y) -> x == 43 && y == 11 ? 127 : 255).size() == 579, "interior texel alpha 127 is a hole: -1 outer, +4 walls");
+        check(SkinVoxels.build(hat, (x, y) -> x == 43 && y == 11 ? 128 : 255).size() == 576, "alpha 128 is opaque");
+        int wrong = 0;
+        for (var q : full) if (SkinVoxels.winding(q) != 1) wrong++;
+        check(wrong == 0, "all voxel quads wound like vanilla (" + wrong + " wrong)");
+        for (boolean slim : new boolean[]{false, true}) check(SkinVoxels.boxes(slim).size() == 6, "skin boxes " + slim);
+        System.out.println("[animselftest] skin voxels checked, opaque hat quads " + full.size());
     }
 
     private SelfTest() {}
