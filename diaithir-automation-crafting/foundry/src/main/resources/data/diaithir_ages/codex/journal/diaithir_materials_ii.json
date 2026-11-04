@@ -1,0 +1,49 @@
+{
+  "age": "II",
+  "names": {
+    "mat_timber_sawn": "Make Sawn Pegged Timber",
+    "mat_masonry_cut_stone": "Make Cut Stone",
+    "mat_lining_lime_plaster": "Make Lime Plaster",
+    "mat_roofing_slate": "Make Slate Roofing",
+    "mat_road_cobble": "Make Cobble Road",
+    "mat_concrete_pozzolan": "Make Pozzolan Concrete"
+  },
+  "side": [
+    {
+      "id": "mat_timber_sawn",
+      "title_key": "mat_timber_sawn",
+      "goal": "obtain:1 timber_sawn",
+      "text": "Make Sawn Pegged Timber at the hearth bench."
+    },
+    {
+      "id": "mat_masonry_cut_stone",
+      "title_key": "mat_masonry_cut_stone",
+      "goal": "obtain:1 masonry_cut_stone",
+      "text": "Make Cut Stone at the hearth bench."
+    },
+    {
+      "id": "mat_lining_lime_plaster",
+      "title_key": "mat_lining_lime_plaster",
+      "goal": "obtain:1 lining_lime_plaster",
+      "text": "Make Lime Plaster at the hearth bench."
+    },
+    {
+      "id": "mat_roofing_slate",
+      "title_key": "mat_roofing_slate",
+      "goal": "obtain:1 roofing_slate",
+      "text": "Make Slate Roofing at the hearth bench."
+    },
+    {
+      "id": "mat_road_cobble",
+      "title_key": "mat_road_cobble",
+      "goal": "obtain:1 road_cobble",
+      "text": "Make Cobble Road at the hearth bench."
+    },
+    {
+      "id": "mat_concrete_pozzolan",
+      "title_key": "mat_concrete_pozzolan",
+      "goal": "obtain:1 concrete_pozzolan",
+      "text": "Make Pozzolan Concrete at the hearth bench."
+    }
+  ]
+}

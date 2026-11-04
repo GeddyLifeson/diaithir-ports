@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/jewelers_saw"
+  "layer0": "diaithirfurnishings:item/jewelers_saw_head",
+  "layer1": "diaithirfurnishings:item/jewelers_saw_handle",
+  "layer2": "diaithirfurnishings:item/jewelers_saw_binding"
  }
 }

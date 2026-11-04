@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/popcorn_popper"
+  "layer0": "diaithirfurnishings:item/popcorn_popper_pot",
+  "layer1": "diaithirfurnishings:item/popcorn_popper_handle"
  }
 }

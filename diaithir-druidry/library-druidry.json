@@ -53,7 +53,7 @@
   "concept",
   3,
   "magic",
-  "The grove-keepers. They mend the hurt and bind the loud with root and thorn. Heals and plant control. Seven spells from Age III to Age V; learn them from a Liebur Draeid made at the spell binding table or from scrolls found in old chambers."
+  "The grove-keepers. They mend the hurt and bind the loud with root and thorn. Heals and plant control. 7 spells from Age III to Age V; learn them from a Liebur Draeid made at the spell binding table or from scrolls found in old chambers."
  ],
  [
   "Bauta Draeid",
@@ -123,7 +123,7 @@
   "concept",
   3,
   "magic",
-  "The seers. They see what is hidden and strike where a blow is already foretold. Sight, marks and blinks. Seven spells from Age III to Age V; learn them from a Liebur Fiusaichi made at the spell binding table or from scrolls found in old chambers."
+  "The seers. They see what is hidden and strike where a blow is already foretold. Sight, marks and blinks. 7 spells from Age III to Age V; learn them from a Liebur Fiusaichi made at the spell binding table or from scrolls found in old chambers."
  ],
  [
   "Bauta Fiusaichi",
@@ -193,7 +193,7 @@
   "concept",
   3,
   "magic",
-  "The singers. Three strains (sleep, lament, laughter) and their thunder. Crowd control and rally. Seven spells from Age III to Age V; learn them from a Liebur Bàrdu made at the spell binding table or from scrolls found in old chambers."
+  "The singers. Three strains (sleep, lament, laughter) and their thunder. Crowd control and rally. 7 spells from Age III to Age V; learn them from a Liebur Bàrdu made at the spell binding table or from scrolls found in old chambers."
  ],
  [
   "Bauta Bàrdu",
@@ -263,7 +263,7 @@
   "concept",
   3,
   "magic",
-  "The poets of law and satire. Their words wound, bind and shield. Curses, wards and cleansing. Seven spells from Age III to Age V; learn them from a Liebur Filid made at the spell binding table or from scrolls found in old chambers."
+  "The poets of law and satire. Their words wound, bind and shield. Curses, wards and cleansing. 7 spells from Age III to Age V; learn them from a Liebur Filid made at the spell binding table or from scrolls found in old chambers."
  ],
  [
   "Bauta Filid",
@@ -333,7 +333,7 @@
   "concept",
   3,
   "magic",
-  "The war-crow's way. Short sharp melee strikes, battle shouts and fear. Scales with melee power. Seven spells from Age III to Age V; learn them from a Liebur Fitech made at the spell binding table or from scrolls found in old chambers."
+  "The war-crow's way. Short sharp melee strikes, battle shouts and fear. Scales with melee power. 7 spells from Age III to Age V; learn them from a Liebur Fitech made at the spell binding table or from scrolls found in old chambers."
  ],
  [
   "Bauta Fitech",
@@ -403,7 +403,7 @@
   "concept",
   3,
   "magic",
-  "The hollow-hill folk. Mist, glamour and gifts that come with a price. Control and mobility. Seven spells from Age III to Age V; learn them from a Liebur Sìtichi made at the spell binding table or from scrolls found in old chambers."
+  "The hollow-hill folk. Mist, glamour and gifts that come with a price. Control and mobility. 7 spells from Age III to Age V; learn them from a Liebur Sìtichi made at the spell binding table or from scrolls found in old chambers."
  ],
  [
   "Bauta Sìtichi",
@@ -473,7 +473,7 @@
   "concept",
   3,
   "magic",
-  "The forge-masters. Fire from the hearth: sparks, hot iron and the long pour. Damage over time and self-tempering. Seven spells from Age III to Age V; learn them from a Liebur Gouba made at the spell binding table or from scrolls found in old chambers."
+  "The forge-masters. Fire from the hearth: sparks, hot iron and the long pour. Damage over time and self-tempering. 7 spells from Age III to Age V; learn them from a Liebur Gouba made at the spell binding table or from scrolls found in old chambers."
  ],
  [
   "Bauta Gouba",
@@ -488,5 +488,82 @@
   5,
   "magic",
   "The greater staff of the Gouba way: more spell power and 300 uses. Crafted with a steel ingot and 2 blaze powder. Age V."
+ ],
+ [
+  "Lietirsraudag",
+  "concept",
+  6,
+  "magic",
+  "A Glyph spell of tier 1, school line glyph_cast. Form aim, effect harm: a rune flies out and passes through one foe for its damage."
+ ],
+ [
+  "Lietirlàm",
+  "concept",
+  6,
+  "magic",
+  "A Glyph spell of tier 2, school line glyph_cast. Form touch, effect harm: your hand carries the rune. A short reach strike for its damage that slows the foe for 3 seconds."
+ ],
+ [
+  "Lietirkàirig",
+  "concept",
+  6,
+  "magic",
+  "A Glyph spell of tier 3, school line glyph_self. Form self or aim, effect heal: the target regains its healing health and loses any poison."
+ ],
+ [
+  "Lietirpriub",
+  "concept",
+  6,
+  "magic",
+  "A Glyph spell of tier 3, school line glyph_self. Form self, effect blink: you step 16 blocks ahead along your aim."
+ ],
+ [
+  "Lietirsoulas",
+  "concept",
+  6,
+  "magic",
+  "A Glyph spell of tier 4, school line glyph_self. Form self, effect light: the rune glows in your eyes and you see in the dark for 2 minutes."
+ ],
+ [
+  "Lietirtarruing",
+  "concept",
+  6,
+  "magic",
+  "A Glyph spell of tier 4, school line glyph_cast. Form area, effect pull: foes within 8 blocks are dragged toward you and take its damage."
+ ],
+ [
+  "Lietirbalda",
+  "concept",
+  6,
+  "magic",
+  "A Glyph spell of tier 4, school line glyph_self. Form self, effect ward: for 20 seconds you take less damage and carry a shield of absorption."
+ ],
+ [
+  "Lietirseila",
+  "concept",
+  6,
+  "magic",
+  "A Glyph spell of tier 4, school line glyph_cast. Form cloud, effect bind: a sealed circle settles at the target spot for 8 seconds and holds those inside, slow and weak."
+ ],
+ [
+  "Lietirrùan",
+  "concept",
+  3,
+  "magic",
+  "The letter-makers. Spells are written, not sung: a form and an effect cut into one rune. Silver and steel hold the ink; Age VI. 8 spells from Age VI to Age VI; learn them from a Liebur Lietirrùan made at the spell binding table or from scrolls found in old chambers."
+ ],
+ [
+  "Bauta Lietirrùan",
+  "item",
+  3,
+  "magic",
+  "A staff of the Lietirrùan way. Adds spell power and carries the school's first spell. Crafted with a silver ingot and 1 lapis lazuli. Age VI."
+ ],
+ [
+  "Bauta Lietirrùan Mòru",
+  "item",
+  6,
+  "magic",
+  "The greater staff of the Lietirrùan way: more spell power and 300 uses. Crafted with a steel ingot and 2 lapis lazuli. Age VI."
  ]
 ]

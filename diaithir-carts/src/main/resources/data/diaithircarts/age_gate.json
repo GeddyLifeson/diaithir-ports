@@ -76,41 +76,10 @@
       "diaithircarts:locking_rail"
     ]
   },
-  "freight_age1": {
-    "age": 1,
-    "items": [
-      "diaithircarts:freight_chest"
-    ]
-  },
-  "freight_age2": {
-    "age": 2,
-    "items": [
-      "diaithircarts:freight_pallet",
-      "diaithircarts:freight_barrel",
-      "diaithircarts:freight_crate"
-    ]
-  },
-  "freight_age5": {
+  "farm": {
     "age": 5,
     "items": [
-      "diaithircarts:loading_dock"
-    ]
-  },
-  "freight_age6": {
-    "age": 6,
-    "items": [
-      "diaithircarts:container_20",
-      "diaithircarts:container_40",
-      "diaithircarts:reefer_20",
-      "diaithircarts:reefer_40",
-      "diaithircarts:tank_20",
-      "diaithircarts:cargo_hook"
-    ]
-  },
-  "freight_age8": {
-    "age": 8,
-    "items": [
-      "diaithircarts:rift_dock"
+      "diaithircarts:reaper"
     ]
   },
   "autonomy": {
@@ -4888,6 +4857,43 @@
       "diaithircarts:wag_tx_3000_series",
       "diaithircarts:wag_voiture_de_banlieue_2_niveaux",
       "diaithircarts:wag_x3"
+    ]
+  },
+  "freight_age1": {
+    "age": 1,
+    "items": [
+      "diaithircarts:freight_chest"
+    ]
+  },
+  "freight_age2": {
+    "age": 2,
+    "items": [
+      "diaithircarts:freight_pallet",
+      "diaithircarts:freight_barrel",
+      "diaithircarts:freight_crate"
+    ]
+  },
+  "freight_age5": {
+    "age": 5,
+    "items": [
+      "diaithircarts:loading_dock"
+    ]
+  },
+  "freight_age6": {
+    "age": 6,
+    "items": [
+      "diaithircarts:container_20",
+      "diaithircarts:container_40",
+      "diaithircarts:reefer_20",
+      "diaithircarts:reefer_40",
+      "diaithircarts:tank_20",
+      "diaithircarts:cargo_hook"
+    ]
+  },
+  "freight_age8": {
+    "age": 8,
+    "items": [
+      "diaithircarts:rift_dock"
     ]
   }
 }
