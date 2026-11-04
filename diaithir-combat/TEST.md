@@ -20,3 +20,4 @@ In the full pack /combatselftest gave 295/2 or varying failures: critical_strike
 
 ## Survey part 2 additions (cloud, headless)
 `/combatsurveytest` ok=16 bad=0 on a dedicated NeoForge 26.1.2.116 server (gradle runServer, rcon, fresh world, this mod only): iron sword gains `blocks_attacks` (half damage, raisable, use duration 72000), shield and axe unchanged, name rules; build-up meter fills, fires wither (bleeding), fire (burning), slowness (shock) and empties; lance curve and item detection. No ERROR lines at boot. Not tested: a real client raising a sword, real hits through the damage event (the meter hook is one listener), a real mounted charge.
+Styles: /combatsurveytest ok=19 bad=0 (crit roll, backstab arc, attributes registered), 0 ERROR (2026-11-03). Combat Roll is already covered by Engine.dodge (roll key, i-frames, stamina, cooldown).

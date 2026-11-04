@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/fish_trap"
+  "layer0": "diaithirfurnishings:item/fish_trap_head",
+  "layer1": "diaithirfurnishings:item/fish_trap_handle",
+  "layer2": "diaithirfurnishings:item/fish_trap_binding"
  }
 }

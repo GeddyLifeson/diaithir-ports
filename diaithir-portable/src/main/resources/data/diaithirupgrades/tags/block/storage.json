@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "diaithirportable:diamond_storage",
+    "diaithirportable:gold_storage",
+    "diaithirportable:iron_storage",
+    "diaithirportable:netherite_storage",
+    "diaithirportable:wood_storage"
+  ]
+}

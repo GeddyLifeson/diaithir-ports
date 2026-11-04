@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/shaduf"
+  "layer0": "diaithirfurnishings:item/shaduf_head",
+  "layer1": "diaithirfurnishings:item/shaduf_handle",
+  "layer2": "diaithirfurnishings:item/shaduf_binding"
  }
 }

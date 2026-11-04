@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" R ", "IHI", " P "],
+  "key": { "R": "minecraft:redstone", "I": "minecraft:iron_ingot", "H": "minecraft:hopper", "P": "minecraft:paper" },
+  "result": { "id": "diaithirrouting:extractor_module", "count": 1 }
+}

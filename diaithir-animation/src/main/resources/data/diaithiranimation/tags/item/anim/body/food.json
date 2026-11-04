@@ -1,0 +1,997 @@
+{
+"replace": false,
+"values": [
+{
+"id": "aquaculture:arapaima",
+"required": false
+},
+{
+"id": "aquaculture:atlantic_cod",
+"required": false
+},
+{
+"id": "aquaculture:atlantic_halibut",
+"required": false
+},
+{
+"id": "aquaculture:atlantic_herring",
+"required": false
+},
+{
+"id": "aquaculture:bayad",
+"required": false
+},
+{
+"id": "aquaculture:blackfish",
+"required": false
+},
+{
+"id": "aquaculture:bluegill",
+"required": false
+},
+{
+"id": "aquaculture:boulti",
+"required": false
+},
+{
+"id": "aquaculture:brown_shrooma",
+"required": false
+},
+{
+"id": "aquaculture:brown_trout",
+"required": false
+},
+{
+"id": "aquaculture:capitaine",
+"required": false
+},
+{
+"id": "aquaculture:carp",
+"required": false
+},
+{
+"id": "aquaculture:catfish",
+"required": false
+},
+{
+"id": "aquaculture:fish_fillet_raw",
+"required": false
+},
+{
+"id": "aquaculture:gar",
+"required": false
+},
+{
+"id": "aquaculture:largemouth_bass",
+"required": false
+},
+{
+"id": "aquaculture:muskellunge",
+"required": false
+},
+{
+"id": "aquaculture:pacific_halibut",
+"required": false
+},
+{
+"id": "aquaculture:perch",
+"required": false
+},
+{
+"id": "aquaculture:pink_salmon",
+"required": false
+},
+{
+"id": "aquaculture:piranha",
+"required": false
+},
+{
+"id": "aquaculture:pollock",
+"required": false
+},
+{
+"id": "aquaculture:rainbow_trout",
+"required": false
+},
+{
+"id": "aquaculture:red_grouper",
+"required": false
+},
+{
+"id": "aquaculture:red_shrooma",
+"required": false
+},
+{
+"id": "aquaculture:smallmouth_bass",
+"required": false
+},
+{
+"id": "aquaculture:synodontis",
+"required": false
+},
+{
+"id": "aquaculture:tambaqui",
+"required": false
+},
+{
+"id": "aquaculture:tuna",
+"required": false
+},
+{
+"id": "croptopia:almond_brittle",
+"required": false
+},
+{
+"id": "croptopia:anchovy",
+"required": false
+},
+{
+"id": "croptopia:anchovy_pizza",
+"required": false
+},
+{
+"id": "croptopia:apple_pie",
+"required": false
+},
+{
+"id": "croptopia:artichoke_dip",
+"required": false
+},
+{
+"id": "croptopia:baked_beans",
+"required": false
+},
+{
+"id": "croptopia:baked_crepes",
+"required": false
+},
+{
+"id": "croptopia:baked_sweet_potato",
+"required": false
+},
+{
+"id": "croptopia:baked_yam",
+"required": false
+},
+{
+"id": "croptopia:banana_cream_pie",
+"required": false
+},
+{
+"id": "croptopia:banana_nut_bread",
+"required": false
+},
+{
+"id": "croptopia:banana_smoothie",
+"required": false
+},
+{
+"id": "croptopia:beef_jerky",
+"required": false
+},
+{
+"id": "croptopia:beef_wellington",
+"required": false
+},
+{
+"id": "croptopia:beer",
+"required": false
+},
+{
+"id": "croptopia:beetroot_salad",
+"required": false
+},
+{
+"id": "croptopia:bibim_naengmyeon",
+"required": false
+},
+{
+"id": "croptopia:bibimbap",
+"required": false
+},
+{
+"id": "croptopia:blt",
+"required": false
+},
+{
+"id": "croptopia:borscht",
+"required": false
+},
+{
+"id": "croptopia:brownies",
+"required": false
+},
+{
+"id": "croptopia:butter",
+"required": false
+},
+{
+"id": "croptopia:buttered_toast",
+"required": false
+},
+{
+"id": "croptopia:cabbage_roll",
+"required": false
+},
+{
+"id": "croptopia:caesar_salad",
+"required": false
+},
+{
+"id": "croptopia:calamari",
+"required": false
+},
+{
+"id": "croptopia:candied_kumquats",
+"required": false
+},
+{
+"id": "croptopia:candied_nuts",
+"required": false
+},
+{
+"id": "croptopia:candy_corn",
+"required": false
+},
+{
+"id": "croptopia:carrot_cake",
+"required": false
+},
+{
+"id": "croptopia:cashew_chicken",
+"required": false
+},
+{
+"id": "croptopia:cheese",
+"required": false
+},
+{
+"id": "croptopia:cheese_cake",
+"required": false
+},
+{
+"id": "croptopia:cheese_pizza",
+"required": false
+},
+{
+"id": "croptopia:cheeseburger",
+"required": false
+},
+{
+"id": "croptopia:cherry_pie",
+"required": false
+},
+{
+"id": "croptopia:chicken_and_dumplings",
+"required": false
+},
+{
+"id": "croptopia:chicken_and_noodles",
+"required": false
+},
+{
+"id": "croptopia:chicken_and_rice",
+"required": false
+},
+{
+"id": "croptopia:chocolate",
+"required": false
+},
+{
+"id": "croptopia:chocolate_milkshake",
+"required": false
+},
+{
+"id": "croptopia:cinnamon_roll",
+"required": false
+},
+{
+"id": "croptopia:clam",
+"required": false
+},
+{
+"id": "croptopia:coffee",
+"required": false
+},
+{
+"id": "croptopia:cooked_anchovy",
+"required": false
+},
+{
+"id": "croptopia:cooked_bacon",
+"required": false
+},
+{
+"id": "croptopia:cooked_calamari",
+"required": false
+},
+{
+"id": "croptopia:cooked_ravager_meat",
+"required": false
+},
+{
+"id": "croptopia:cooked_shrimp",
+"required": false
+},
+{
+"id": "croptopia:cooked_tuna",
+"required": false
+},
+{
+"id": "croptopia:cooking_oil",
+"required": false
+},
+{
+"id": "croptopia:corn_bread",
+"required": false
+},
+{
+"id": "croptopia:cornish_pasty",
+"required": false
+},
+{
+"id": "croptopia:crab",
+"required": false
+},
+{
+"id": "croptopia:crab_legs",
+"required": false
+},
+{
+"id": "croptopia:croque_madame",
+"required": false
+},
+{
+"id": "croptopia:croque_monsieur",
+"required": false
+},
+{
+"id": "croptopia:cucumber_salad",
+"required": false
+},
+{
+"id": "croptopia:dauphine_potatoes",
+"required": false
+},
+{
+"id": "croptopia:deep_fried_shrimp",
+"required": false
+},
+{
+"id": "croptopia:doughnut",
+"required": false
+},
+{
+"id": "croptopia:egg_fried_rice",
+"required": false
+},
+{
+"id": "croptopia:egg_roll",
+"required": false
+},
+{
+"id": "croptopia:eton_mess",
+"required": false
+},
+{
+"id": "croptopia:figgy_pudding",
+"required": false
+},
+{
+"id": "croptopia:fish_and_chips",
+"required": false
+},
+{
+"id": "croptopia:french_fries",
+"required": false
+},
+{
+"id": "croptopia:fried_calamari",
+"required": false
+},
+{
+"id": "croptopia:fried_chicken",
+"required": false
+},
+{
+"id": "croptopia:fried_frog_legs",
+"required": false
+},
+{
+"id": "croptopia:fried_rice",
+"required": false
+},
+{
+"id": "croptopia:frog_legs",
+"required": false
+},
+{
+"id": "croptopia:fruit_salad",
+"required": false
+},
+{
+"id": "croptopia:fruit_smoothie",
+"required": false
+},
+{
+"id": "croptopia:glowing_calamari",
+"required": false
+},
+{
+"id": "croptopia:goulash",
+"required": false
+},
+{
+"id": "croptopia:grilled_cheese",
+"required": false
+},
+{
+"id": "croptopia:grilled_oysters",
+"required": false
+},
+{
+"id": "croptopia:ground_pork",
+"required": false
+},
+{
+"id": "croptopia:ham_sandwich",
+"required": false
+},
+{
+"id": "croptopia:hamburger",
+"required": false
+},
+{
+"id": "croptopia:hashed_brown",
+"required": false
+},
+{
+"id": "croptopia:kale_chips",
+"required": false
+},
+{
+"id": "croptopia:kale_smoothie",
+"required": false
+},
+{
+"id": "croptopia:kimchi",
+"required": false
+},
+{
+"id": "croptopia:leafy_salad",
+"required": false
+},
+{
+"id": "croptopia:leek_soup",
+"required": false
+},
+{
+"id": "croptopia:lemon_chicken",
+"required": false
+},
+{
+"id": "croptopia:lemonade",
+"required": false
+},
+{
+"id": "croptopia:limeade",
+"required": false
+},
+{
+"id": "croptopia:macaron",
+"required": false
+},
+{
+"id": "croptopia:mango_ice_cream",
+"required": false
+},
+{
+"id": "croptopia:mashed_potatoes",
+"required": false
+},
+{
+"id": "croptopia:mead",
+"required": false
+},
+{
+"id": "croptopia:meringue",
+"required": false
+},
+{
+"id": "croptopia:nougat",
+"required": false
+},
+{
+"id": "croptopia:nutty_cookie",
+"required": false
+},
+{
+"id": "croptopia:oatmeal",
+"required": false
+},
+{
+"id": "croptopia:onion_rings",
+"required": false
+},
+{
+"id": "croptopia:orange_chicken",
+"required": false
+},
+{
+"id": "croptopia:oyster",
+"required": false
+},
+{
+"id": "croptopia:peanut_butter_and_jam",
+"required": false
+},
+{
+"id": "croptopia:pecan_ice_cream",
+"required": false
+},
+{
+"id": "croptopia:pecan_pie",
+"required": false
+},
+{
+"id": "croptopia:pepperoni",
+"required": false
+},
+{
+"id": "croptopia:pickled_anchovy",
+"required": false
+},
+{
+"id": "croptopia:pickled_beets",
+"required": false
+},
+{
+"id": "croptopia:pickled_cucumber",
+"required": false
+},
+{
+"id": "croptopia:pickled_eggs",
+"required": false
+},
+{
+"id": "croptopia:pickled_garlic",
+"required": false
+},
+{
+"id": "croptopia:pickled_ginger",
+"required": false
+},
+{
+"id": "croptopia:pickled_onion",
+"required": false
+},
+{
+"id": "croptopia:pickled_radish",
+"required": false
+},
+{
+"id": "croptopia:pineapple_chicken",
+"required": false
+},
+{
+"id": "croptopia:pineapple_pepperoni_pizza",
+"required": false
+},
+{
+"id": "croptopia:pizza",
+"required": false
+},
+{
+"id": "croptopia:popcorn",
+"required": false
+},
+{
+"id": "croptopia:pork_and_beans",
+"required": false
+},
+{
+"id": "croptopia:pork_jerky",
+"required": false
+},
+{
+"id": "croptopia:potato_chips",
+"required": false
+},
+{
+"id": "croptopia:protein_bar",
+"required": false
+},
+{
+"id": "croptopia:pumpkin_bars",
+"required": false
+},
+{
+"id": "croptopia:pumpkin_soup",
+"required": false
+},
+{
+"id": "croptopia:pumpkin_spice_latte",
+"required": false
+},
+{
+"id": "croptopia:quiche",
+"required": false
+},
+{
+"id": "croptopia:raisin_oatmeal_cookie",
+"required": false
+},
+{
+"id": "croptopia:raisins",
+"required": false
+},
+{
+"id": "croptopia:rhubarb_pie",
+"required": false
+},
+{
+"id": "croptopia:roasted_nuts",
+"required": false
+},
+{
+"id": "croptopia:roasted_pumpkin_seeds",
+"required": false
+},
+{
+"id": "croptopia:roasted_sunflower_seeds",
+"required": false
+},
+{
+"id": "croptopia:roe",
+"required": false
+},
+{
+"id": "croptopia:rum",
+"required": false
+},
+{
+"id": "croptopia:rum_raisin_ice_cream",
+"required": false
+},
+{
+"id": "croptopia:salsa",
+"required": false
+},
+{
+"id": "croptopia:saucy_chips",
+"required": false
+},
+{
+"id": "croptopia:sauerkraut",
+"required": false
+},
+{
+"id": "croptopia:sausage",
+"required": false
+},
+{
+"id": "croptopia:scones",
+"required": false
+},
+{
+"id": "croptopia:scrambled_eggs",
+"required": false
+},
+{
+"id": "croptopia:sea_lettuce",
+"required": false
+},
+{
+"id": "croptopia:sesame_chicken",
+"required": false
+},
+{
+"id": "croptopia:shepherds_pie",
+"required": false
+},
+{
+"id": "croptopia:shrimp",
+"required": false
+},
+{
+"id": "croptopia:snicker_doodle",
+"required": false
+},
+{
+"id": "croptopia:soy_milk",
+"required": false
+},
+{
+"id": "croptopia:spaghetti_squash",
+"required": false
+},
+{
+"id": "croptopia:steamed_clams",
+"required": false
+},
+{
+"id": "croptopia:steamed_crab",
+"required": false
+},
+{
+"id": "croptopia:steamed_rice",
+"required": false
+},
+{
+"id": "croptopia:sticky_toffee_pudding",
+"required": false
+},
+{
+"id": "croptopia:strawberry_ice_cream",
+"required": false
+},
+{
+"id": "croptopia:strawberry_smoothie",
+"required": false
+},
+{
+"id": "croptopia:sunny_side_eggs",
+"required": false
+},
+{
+"id": "croptopia:supreme_pizza",
+"required": false
+},
+{
+"id": "croptopia:sushi",
+"required": false
+},
+{
+"id": "croptopia:sweet_crepes",
+"required": false
+},
+{
+"id": "croptopia:sweet_potato_fries",
+"required": false
+},
+{
+"id": "croptopia:taco",
+"required": false
+},
+{
+"id": "croptopia:tea",
+"required": false
+},
+{
+"id": "croptopia:teriyaki_chicken",
+"required": false
+},
+{
+"id": "croptopia:the_big_breakfast",
+"required": false
+},
+{
+"id": "croptopia:toast",
+"required": false
+},
+{
+"id": "croptopia:toast_with_jam",
+"required": false
+},
+{
+"id": "croptopia:tofu",
+"required": false
+},
+{
+"id": "croptopia:tofu_and_dumplings",
+"required": false
+},
+{
+"id": "croptopia:tofuburger",
+"required": false
+},
+{
+"id": "croptopia:tortilla",
+"required": false
+},
+{
+"id": "croptopia:trail_mix",
+"required": false
+},
+{
+"id": "croptopia:treacle_tart",
+"required": false
+},
+{
+"id": "croptopia:trifle",
+"required": false
+},
+{
+"id": "croptopia:tteokbokki",
+"required": false
+},
+{
+"id": "croptopia:tuna",
+"required": false
+},
+{
+"id": "croptopia:tuna_roll",
+"required": false
+},
+{
+"id": "croptopia:tuna_sandwich",
+"required": false
+},
+{
+"id": "croptopia:vanilla_ice_cream",
+"required": false
+},
+{
+"id": "croptopia:veggie_fried_rice",
+"required": false
+},
+{
+"id": "croptopia:veggie_salad",
+"required": false
+},
+{
+"id": "croptopia:wine",
+"required": false
+},
+{
+"id": "croptopia:yam_jam",
+"required": false
+},
+{
+"id": "croptopia:yoghurt",
+"required": false
+},
+{
+"id": "ecologics:coconut_slice",
+"required": false
+},
+{
+"id": "ecologics:cooked_prickly_pear",
+"required": false
+},
+{
+"id": "ecologics:crab_meat",
+"required": false
+},
+{
+"id": "ecologics:prickly_pear",
+"required": false
+},
+{
+"id": "ecologics:tropical_stew",
+"required": false
+},
+{
+"id": "ecologics:walnut",
+"required": false
+},
+{
+"id": "farmersdelight:dog_food",
+"required": false
+},
+{
+"id": "farmersdelight:ham",
+"required": false
+},
+{
+"id": "farmersdelight:pie_crust",
+"required": false
+},
+{
+"id": "farmersdelight:pumpkin_slice",
+"required": false
+},
+{
+"id": "farmersdelight:smoked_ham",
+"required": false
+},
+{
+"id": "farmersdelight:tomato_sauce",
+"required": false
+},
+{
+"id": "minecraft:baked_potato",
+"required": false
+},
+{
+"id": "minecraft:cod",
+"required": false
+},
+{
+"id": "minecraft:cooked_cod",
+"required": false
+},
+{
+"id": "minecraft:cooked_salmon",
+"required": false
+},
+{
+"id": "minecraft:dried_kelp",
+"required": false
+},
+{
+"id": "minecraft:honey_bottle",
+"required": false
+},
+{
+"id": "minecraft:ominous_bottle",
+"required": false
+},
+{
+"id": "minecraft:pufferfish",
+"required": false
+},
+{
+"id": "minecraft:pumpkin_pie",
+"required": false
+},
+{
+"id": "minecraft:salmon",
+"required": false
+},
+{
+"id": "minecraft:tropical_fish",
+"required": false
+},
+{
+"id": "occultism:beaver_nugget",
+"required": false
+},
+{
+"id": "occultism:cursed_honey",
+"required": false
+},
+{
+"id": "occultism:datura",
+"required": false
+},
+{
+"id": "occultism:demonic_meat",
+"required": false
+},
+{
+"id": "occultism:demons_dream_essence",
+"required": false
+},
+{
+"id": "occultism:enchanted_golden_pitaya",
+"required": false
+},
+{
+"id": "occultism:golden_pitaya",
+"required": false
+},
+{
+"id": "occultism:gray_paste",
+"required": false
+},
+{
+"id": "occultism:nature_paste",
+"required": false
+},
+{
+"id": "occultism:otherworld_essence",
+"required": false
+},
+{
+"id": "occultism:pitaya",
+"required": false
+},
+{
+"id": "occultism:sweet_honey_heart",
+"required": false
+},
+{
+"id": "rootsclassic:fruit_salad",
+"required": false
+},
+{
+"id": "rootsclassic:healing_poultice",
+"required": false
+},
+{
+"id": "rootsclassic:old_root",
+"required": false
+}
+]
+}

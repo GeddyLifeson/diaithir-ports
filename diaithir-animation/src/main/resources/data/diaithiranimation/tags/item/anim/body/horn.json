@@ -1,0 +1,469 @@
+{
+"replace": false,
+"values": [
+{
+"id": "artifacts:thorn_pendant",
+"required": false
+},
+{
+"id": "diaithircompat:sea_buckthorn_berries",
+"required": false
+},
+{
+"id": "diaithirrelics:raven_whistle",
+"required": false
+},
+{
+"id": "diaithirrelics:raven_whistle/age",
+"required": false
+},
+{
+"id": "diaithirrelics:raven_whistle/passive",
+"required": false
+},
+{
+"id": "iceandfire:dragon_flute",
+"required": false
+},
+{
+"id": "iceandfire:dragon_horn",
+"required": false
+},
+{
+"id": "iceandfire:siren_flute",
+"required": false
+},
+{
+"id": "immersive_pillagers:raiders_horn",
+"required": false
+},
+{
+"id": "mca:whistle",
+"required": false
+},
+{
+"id": "minecraft:dead_horn_coral",
+"required": false
+},
+{
+"id": "minecraft:dead_horn_coral_block",
+"required": false
+},
+{
+"id": "minecraft:dead_horn_coral_fan",
+"required": false
+},
+{
+"id": "minecraft:goat_horn",
+"required": false
+},
+{
+"id": "minecraft:horn_coral",
+"required": false
+},
+{
+"id": "minecraft:horn_coral_block",
+"required": false
+},
+{
+"id": "minecraft:horn_coral_fan",
+"required": false
+},
+{
+"id": "mts:mts.instrumentbench",
+"required": false
+},
+{
+"id": "productivefarming:sea_buckthorn",
+"required": false
+},
+{
+"id": "productivefarming:sea_buckthorn_crate",
+"required": false
+},
+{
+"id": "productivetrees:advanced_blackthorn_beehive",
+"required": false
+},
+{
+"id": "productivetrees:advanced_hawthorn_beehive",
+"required": false
+},
+{
+"id": "productivetrees:advanced_hornbeam_beehive",
+"required": false
+},
+{
+"id": "productivetrees:advanced_purple_blackthorn_beehive",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_bookshelf",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_button",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_door",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_fence",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_fence_gate",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_hanging_sign",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_leaves",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_log",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_planks",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_pressure_plate",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_sapling",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_sign",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_slab",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_stairs",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_stripped_log",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_stripped_wood",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_trapdoor",
+"required": false
+},
+{
+"id": "productivetrees:blackthorn_wood",
+"required": false
+},
+{
+"id": "productivetrees:expansion_box_blackthorn",
+"required": false
+},
+{
+"id": "productivetrees:expansion_box_hawthorn",
+"required": false
+},
+{
+"id": "productivetrees:expansion_box_hornbeam",
+"required": false
+},
+{
+"id": "productivetrees:expansion_box_purple_blackthorn",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_bookshelf",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_button",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_door",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_fence",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_fence_gate",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_hanging_sign",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_leaves",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_log",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_planks",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_pressure_plate",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_sapling",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_sign",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_slab",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_stairs",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_stripped_log",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_stripped_wood",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_trapdoor",
+"required": false
+},
+{
+"id": "productivetrees:hawthorn_wood",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_bookshelf",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_button",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_door",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_fence",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_fence_gate",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_hanging_sign",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_leaves",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_log",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_planks",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_pressure_plate",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_sapling",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_sign",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_slab",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_stairs",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_stripped_log",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_stripped_wood",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_trapdoor",
+"required": false
+},
+{
+"id": "productivetrees:hornbeam_wood",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_bookshelf",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_button",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_door",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_fence",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_fence_gate",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_hanging_sign",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_leaves",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_log",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_planks",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_pressure_plate",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_sapling",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_sign",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_slab",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_stairs",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_stripped_log",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_stripped_wood",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_trapdoor",
+"required": false
+},
+{
+"id": "productivetrees:purple_blackthorn_wood",
+"required": false
+},
+{
+"id": "railcraft:abandoned_whistle_track",
+"required": false
+},
+{
+"id": "railcraft:electric_whistle_track",
+"required": false
+},
+{
+"id": "railcraft:high_speed_electric_whistle_track",
+"required": false
+},
+{
+"id": "railcraft:high_speed_whistle_track",
+"required": false
+},
+{
+"id": "railcraft:iron_whistle_track",
+"required": false
+},
+{
+"id": "railcraft:reinforced_whistle_track",
+"required": false
+},
+{
+"id": "railcraft:strap_iron_whistle_track",
+"required": false
+},
+{
+"id": "railcraft:whistle_track_kit",
+"required": false
+},
+{
+"id": "railcraft:whistle_tuner",
+"required": false
+},
+{
+"id": "theurgy:alchemical_sulfur_trumpet",
+"required": false
+},
+{
+"id": "twilightforest:brown_thorns",
+"required": false
+},
+{
+"id": "twilightforest:burnt_thorns",
+"required": false
+},
+{
+"id": "twilightforest:crumble_horn",
+"required": false
+},
+{
+"id": "twilightforest:green_thorns",
+"required": false
+},
+{
+"id": "twilightforest:thorn_leaves",
+"required": false
+},
+{
+"id": "twilightforest:thorn_rose",
+"required": false
+}
+]
+}
