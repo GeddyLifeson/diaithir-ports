@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "C": "minecraft:cobweb",
+        "P": "minecraft:prismarine_shard"
+    },
+    "pattern": [
+        " P ",
+        "PCP",
+        " P "
+    ],
+    "result": {
+        "id": "apothic_enchanting:prismatic_web"
+    }
+}

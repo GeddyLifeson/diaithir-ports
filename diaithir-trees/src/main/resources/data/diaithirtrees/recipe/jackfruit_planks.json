@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:jackfruit_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:jackfruit_planks",
+  "count": 4
+ }
+}

@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/soap"
+  "layer0": "diaithirfurnishings:item/soap_head",
+  "layer1": "diaithirfurnishings:item/soap_handle",
+  "layer2": "diaithirfurnishings:item/soap_binding"
  }
 }

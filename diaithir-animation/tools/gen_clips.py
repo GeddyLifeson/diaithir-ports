@@ -152,12 +152,38 @@ if os.path.exists(GUNS_JSON):  # the real roster replaces the built-in table: on
     OWN = {g["id"]: g["class"] for g in _g}
 
 def reload_clip(c, rl):
+    """Class-specific reload: magazine swap (pistol, smg, rifle, sniper), belt feed (lmg), tube loading (shotgun), ram (musket), cell swap (energy), round in (launcher)."""
     hr, hl = GUN[c][0], GUN[c][1]
+    t = lambda f: rl * f
+    if c == "shotgun":   # weapon rolled, off hand feeds shells into the tube in beats, pump at the end
+        beats = max(2, int(rl // 14)); rb, lb = [(0, hr), (t(.15), A(-45, -25, 10))], [(0, hl), (t(.15), A(-30, 20, 0))]
+        for i in range(beats):
+            f = .2 + .65 * i / beats
+            lb += [(t(f), A(-25, -15, 10)), (t(f + .3 / beats), A(-55, 10, 0))]
+        rb += [(t(.88), A(-60, -25, 5)), (rl, hr)]; lb += [(t(.88), A(-70, 20, 0)), (rl, hl)]
+        return clip(rl, {"right_arm": rb, "left_arm": lb, "head": [(0, REST), (t(.2), A(18, 8, 0)), (t(.88), A(10, 4, 0)), (rl, REST)]})
+    if c == "musket":    # powder, ball, ramrod down and back, prime pan
+        return clip(rl, {"right_arm": [(0, hr), (t(.2), A(-50, -30, 10)), (t(.45), A(-120, -20, 10)), (t(.6), A(-60, -30, 10)), (t(.75), A(-120, -20, 10)), (t(.9), A(-60, -25, 5)), (rl, hr)],
+                         "left_arm": [(0, hl), (t(.2), A(-70, 10, 0)), (t(.45), A(-70, 10, 0)), (t(.9), A(-40, 20, 0)), (rl, hl)],
+                         "head": [(0, REST), (t(.25), A(20, 8, 0)), (t(.9), A(12, 4, 0)), (rl, REST)]})
+    if c == "energy":    # cell pops out the side, new cell seated, charge-up tap
+        return clip(rl, {"right_arm": [(0, hr), (t(.2), A(-55, -25, 10)), (t(.85), A(-60, -20, 5)), (rl, hr)],
+                         "left_arm": [(0, hl), (t(.2), A(-35, 10, 0)), (t(.35), A(-20, -20, 10)), (t(.55), A(-35, 10, 0)), (t(.7), A(-60, -15, 5)), (t(.85), A(-70, 10, 0)), (rl, hl)],
+                         "head": [(0, REST), (t(.3), A(15, 8, 0)), (rl, REST)]})
+    if c == "launcher":  # shoulder drops, round pushed in from the muzzle or breech, locked
+        return clip(rl, {"right_arm": [(0, hr), (t(.2), A(-20, -20, 15)), (t(.75), A(-30, -25, 15)), (rl, hr)],
+                         "left_arm": [(0, hl), (t(.25), A(-50, 40, 5)), (t(.55), A(-80, 20, 0)), (t(.8), A(-60, 35, 5)), (rl, hl)],
+                         "torso": [(0, REST), (t(.3), A(6, 12, 0)), (t(.8), A(4, 8, 0)), (rl, REST)], "head": [(0, REST), (t(.3), A(15, 10, 0)), (rl, REST)]})
+    if c == "lmg":       # cover up, belt laid across the feed tray, cover down, charging handle
+        return clip(rl, {"right_arm": [(0, hr), (t(.15), A(-55, -30, 10)), (t(.8), A(-60, -30, 10)), (t(.9), A(-55, -15, 5)), (rl, hr)],
+                         "left_arm": [(0, hl), (t(.15), A(-40, 20, 0)), (t(.3), A(-25, -10, 10)), (t(.5), A(-65, -10, 5)), (t(.7), A(-70, 5, 0)), (t(.82), A(-80, 15, 0)), (rl, hl)],
+                         "torso": [(0, REST), (t(.3), A(5, 8, 0)), (rl, REST)], "head": [(0, REST), (t(.3), A(20, 10, 0)), (t(.85), A(10, 5, 0)), (rl, REST)]})
+    # magazine swap: gun tilted, off hand drops the empty and takes a full one from the belt, seats it, racks the slide
     return clip(rl, {
-        "right_arm": [(0, hr), (rl * .2, A(-50, -30, 10)), (rl * .6, A(-55, -35, 10)), (rl * .85, A(-60, -20, 5)), (rl, hr)],
-        "left_arm": [(0, hl), (rl * .2, A(-20, 10, 0)), (rl * .4, A(-30, -30, 20)), (rl * .6, A(-60, -20, 10)), (rl * .85, A(-70, 10, 0)), (rl, hl)],
-        "torso": [(0, REST), (rl * .3, A(4, 8, 0)), (rl * .85, A(2, 4, 0)), (rl, REST)],
-        "head": [(0, REST), (rl * .3, A(18, 10, 0)), (rl * .85, A(10, 5, 0)), (rl, REST)]})
+        "right_arm": [(0, hr), (t(.2), A(-50, -30, 10)), (t(.6), A(-55, -35, 10)), (t(.85), A(-60, -20, 5)), (rl, hr)],
+        "left_arm": [(0, hl), (t(.2), A(-20, 10, 0)), (t(.4), A(-30, -30, 20)), (t(.6), A(-60, -20, 10)), (t(.85), A(-70, 10, 0)), (rl, hl)],
+        "torso": [(0, REST), (t(.3), A(4, 8, 0)), (t(.85), A(2, 4, 0)), (rl, REST)],
+        "head": [(0, REST), (t(.3), A(18, 10, 0)), (t(.85), A(10, 5, 0)), (rl, REST)]})
 
 def guns():
     out = {}
@@ -168,15 +194,26 @@ def guns():
         out[f"gun.{c}.aim"] = clip(1.0, {"right_arm": [(0, ar), (1, ar)], "left_arm": [(0, al), (1, al)], "head": [(0, A(0, -6, 0)), (1, A(0, -6, 0))]}, loop=True)
         out[f"gun.{c}.sprint"] = clip(1.0, {"right_arm": [(0, A(-20, -10, 0)), (1, A(-20, -10, 0))], "left_arm": [(0, A(-25, 30, 0)), (1, A(-25, 30, 0))], "torso": [(0, A(8, 0, 0)), (1, A(8, 0, 0))]}, loop=True)
         out[f"gun.{c}.draw"] = clip(0.45, {"right_arm": [(0, A(10, 0, 30)), (0.25, A(-70, -10, 10)), (0.45, hr)], "left_arm": [(0, REST), (0.3, A(-40, 20, 0)), (0.45, hl)]})
-        out[f"gun.{c}.fire"] = clip(0.25, {"right_arm": [(0, ar), (0.04, A(ar[0] + rec, ar[1], ar[2])), (0.25, ar)], "left_arm": [(0, al), (0.04, A(al[0] + rec * 0.6, al[1], al[2])), (0.25, al)], "torso": [(0, REST), (0.04, A(-rec * 0.4, 0, 0)), (0.25, REST)], "head": [(0, A(0, -6, 0)), (0.04, A(-rec * 0.5, -6, 0)), (0.25, A(0, -6, 0))]})
+        rk = max(16, abs(rec) * 2.5) * (1 if rec >= 0 else -1)  # visible kick: >=16 deg, peak held two ticks so 20 fps video catches it
+        out[f"gun.{c}.fire"] = clip(0.4, {"right_arm": [(0, ar), (0.05, A(ar[0] + rk, ar[1], ar[2])), (0.15, A(ar[0] + rk, ar[1], ar[2])), (0.4, ar)], "left_arm": [(0, al), (0.05, A(al[0] + rk * 0.6, al[1], al[2])), (0.15, A(al[0] + rk * 0.6, al[1], al[2])), (0.4, al)], "torso": [(0, REST), (0.05, A(-rk * 0.5, 0, 0)), (0.15, A(-rk * 0.5, 0, 0)), (0.4, REST)], "head": [(0, A(0, -6, 0)), (0.05, A(-rk * 0.6, -6, 0)), (0.4, A(0, -6, 0))]})
         out[f"gun.{c}.dry"] = clip(0.2, {"right_arm": [(0, ar), (0.05, A(ar[0] + 2, ar[1], ar[2])), (0.2, ar)]})
         # reload: lower, bring weapon across, hand to magazine, seat, rack, back to ready
         out[f"gun.{c}.reload"] = reload_clip(c, rl)
+        out[f"gun.{c}.unjam"] = clip(1.2, {"right_arm": [(0, hr), (0.3, A(-60, -30, 10)), (0.9, A(-60, -30, 10)), (1.2, hr)],
+            "left_arm": [(0, hl), (0.3, A(-50, -10, 5)), (0.45, A(-60, -20, 5)), (0.6, A(-50, -10, 5)), (0.75, A(-60, -20, 5)), (1.2, hl)], "head": [(0, REST), (0.3, A(15, 8, 0)), (1.2, REST)]})
         out[f"gun.{c}.inspect"] = clip(2.2, {
             "right_arm": [(0, hr), (0.4, A(-70, -40, 20)), (1.1, A(-60, -60, 40)), (1.7, A(-70, -30, 10)), (2.2, hr)],
             "left_arm": [(0, hl), (0.4, A(-60, 0, 0)), (1.1, A(-50, -10, 0)), (2.2, hl)],
             "head": [(0, REST), (0.5, A(15, 15, 0)), (1.2, A(15, -10, 0)), (2.2, REST)]})
     return out
+SEATS = {  # riders of turret, tank, mounted-gun and cannon entities (entity type tags data/diaithiranimation/tags/entity_type/seat/<kind>)
+    "seat.turret": clip(1.0, {"right_arm": [(0, A(-70, -10, 0)), (1, A(-72, -8, 0))], "left_arm": [(0, A(-70, 10, 0)), (1, A(-72, 8, 0))], "head": [(0, A(-5, 0, 0)), (1, A(-5, 0, 0))]}, loop=True),
+    "seat.driver": clip(1.0, {"right_arm": [(0, A(-60, -15, 0)), (1, A(-65, -15, 0))], "left_arm": [(0, A(-60, 15, 0)), (1, A(-65, 15, 0))]}, loop=True),
+    "seat.mounted_gun": clip(1.0, {"right_arm": [(0, A(-80, -10, 0)), (1, A(-80, -10, 0))], "left_arm": [(0, A(-80, 10, 0)), (1, A(-80, 10, 0))], "head": [(0, A(0, 0, 0)), (1, A(0, 0, 0))]}, loop=True),
+    "seat.cannon": clip(1.0, {"right_arm": [(0, A(-40, -20, 10)), (0.5, A(-45, -20, 10)), (1, A(-40, -20, 10))], "left_arm": [(0, A(-40, 20, 10)), (1, A(-40, 20, 10))]}, loop=True),
+    "cannon.load": clip(1.6, {"right_arm": [(0, REST), (0.5, A(-100, -10, 0)), (1.1, A(-100, -10, 0)), (1.6, REST)], "left_arm": [(0, REST), (0.5, A(-100, 10, 0)), (1.1, A(-100, 10, 0)), (1.6, REST)], "torso": [(0, REST), (0.5, A(15, 0, 0)), (1.1, A(15, 0, 0)), (1.6, REST)]}),
+    "cannon.fire": clip(0.6, {"right_arm": [(0, A(-60, -20, 10)), (0.2, A(-90, -10, 10)), (0.6, REST)], "torso": [(0, REST), (0.1, A(-8, 0, 0)), (0.6, REST)]}),
+}
 CASTING = {"cast.windup": MELEE["staff"]["cast_raise"], "cast.channel": MELEE["staff"]["channel"], "cast.release": MELEE["staff"]["release"],
            "cast.skill": clip(0.7, {"right_arm": [(0, REST), (0.3, A(-130, 0, 20)), (0.45, A(-60, 0, 0)), (0.7, REST)], "torso": [(0, REST), (0.3, A(-6, 0, 0)), (0.45, A(8, 0, 0)), (0.7, REST)]})}
 
@@ -198,7 +235,7 @@ def gun_class(thing):
 
 def main():
     os.makedirs(ASSET, exist_ok=True); os.makedirs(TAGS, exist_ok=True)
-    groups = {"melee": {}, "tools": {}, "guns": guns(), "casting": CASTING}
+    groups = {"melee": {}, "tools": {}, "guns": guns(), "casting": {**CASTING, **SEATS}}
     for c, cl in MELEE.items():
         groups["melee"].update({f"{c}.{n}": v for n, v in cl.items()})
     for c, cl in TOOLS.items():
@@ -207,12 +244,13 @@ def main():
         json.dump({"format_version": "1.8.0", "animations": anims}, open(os.path.join(ASSET, g + ".json"), "w"), indent=1)
     classes = {c: sorted(n.split(".", 1)[1] for n in a if n.startswith(c + ".")) for c in list(MELEE) + list(TOOLS) for a in [{**groups["melee"], **groups["tools"]}]}
     classes.update({f"gun.{c}": sorted(n.split(".", 2)[2] for n in groups["guns"] if n.startswith(f"gun.{c}.")) for c in GUN})
+    classes["seat"] = ["turret", "driver", "mounted_gun", "cannon"]
     classes["own_gun_reloads"] = sorted(RELOAD)
     json.dump({"classes": classes, "komrag": KOMRAG}, open(os.path.join(ROOT, "resources", "clips.json"), "w"), indent=1)
     tags = {}
     for r in csv.DictReader(open(CSV)):
-        if r["owner"] != "2-melee-guns" or r["category"] not in ("melee", "gun") or not r["kind"].startswith("item"):
-            continue
+        if r["owner"] != "2-melee-guns" or r["category"] not in ("melee", "gun") or not r["kind"].startswith("item") or r["namespace"] == "diaithirfirearms":
+            continue  # diaithirfirearms guns get their class from guns.json, not from name keywords
         m = re.match(r"item \((.+)\)", r["kind"])
         cls = KIND.get(m.group(1)) if m and r["category"] == "melee" else None
         if r["category"] == "gun":
@@ -228,6 +266,9 @@ def main():
         tags["gun/" + c].add("diaithirfirearms:" + gid)
     for k, c in KOMRAG.items():
         tags[c].add("#diaithircombat:weapons/" + k)
+    for k in ("turret", "driver", "mounted_gun", "cannon"):  # entity types whose riders use the seat clips; datapacks and the vehicle lanes fill these
+        ep = os.path.join(ROOT, "resources", "data", "diaithiranimation", "tags", "entity_type", "seat"); os.makedirs(ep, exist_ok=True)
+        json.dump({"replace": False, "values": []}, open(os.path.join(ep, k + ".json"), "w"))
     for k, v in tags.items():
         p = os.path.join(TAGS, k + ".json"); os.makedirs(os.path.dirname(p), exist_ok=True)
         vals = [{"id": x, "required": False} for x in sorted(v)]

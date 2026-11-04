@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/grappling_hook"
+  "layer0": "diaithirfurnishings:item/grappling_hook_head",
+  "layer1": "diaithirfurnishings:item/grappling_hook_handle",
+  "layer2": "diaithirfurnishings:item/grappling_hook_binding"
  }
 }

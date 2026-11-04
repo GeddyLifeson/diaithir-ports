@@ -1,0 +1,26 @@
+{
+ "station": "station.steam_forge",
+ "stage": "part",
+ "time_s": 35,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 38
+  },
+  {
+   "item": "minecraft:piston",
+   "count": 7
+  },
+  {
+   "item": "minecraft:redstone",
+   "count": 25
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:cyl_franklin_l",
+  "count": 1
+ },
+ "power": "steam",
+ "w": 20000
+}

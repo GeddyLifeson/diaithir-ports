@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/egg_cup"
+  "layer0": "diaithirfurnishings:item/egg_cup_pot"
  }
 }

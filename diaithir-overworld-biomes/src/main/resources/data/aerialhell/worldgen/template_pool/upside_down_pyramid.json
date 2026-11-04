@@ -1,0 +1,14 @@
+{
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "aerialhell:upside_down_pyramid",
+    "processors": "minecraft:empty",
+    "projection": "rigid"
+   }
+  }
+ ]
+}

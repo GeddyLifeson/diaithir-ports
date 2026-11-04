@@ -1,6 +1,6 @@
 package net.diaithir.voiceinteraction;
 
-import net.diaithir.voice.api.SpeechEvent;
+import net.diaithir.voiceinteraction.voice.api.SpeechEvent;
 import net.neoforged.neoforge.common.NeoForge;
 
 /** Listens to diaithir-voice's {@link SpeechEvent}. Only loaded when diaithir-voice is installed. */

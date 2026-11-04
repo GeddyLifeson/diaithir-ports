@@ -161,6 +161,8 @@ public final class DiaithirAurorian {
             case "sword" -> new Item.Properties().sword(toolMaterial(s.mat()), s.damage(), s.speed());
             case "pickaxe" -> new Item.Properties().pickaxe(toolMaterial(s.mat()), s.damage(), s.speed());
             case "food", "drink" -> food(s);
+            case "bow" -> new Item.Properties().durability(s.durability());
+            case "sickle" -> new Item.Properties().durability(toolMaterial(s.mat()).durability()).component(DataComponents.TOOL, net.minecraft.world.item.ShearsItem.createToolProperties());
             default -> new Item.Properties();
         };
         if (s.durability() != null && s.kind().equals("item")) {
@@ -173,6 +175,9 @@ public final class DiaithirAurorian {
                 b.add((Holder<Attribute>) a[0], new AttributeModifier(Identifier.fromNamespaceAndPath(ID, s.id() + "_" + ((Holder<Attribute>) a[0]).getRegisteredName().replace(':', '_')), (double) a[2], (AttributeModifier.Operation) a[1]), EquipmentSlotGroup.OFFHAND);
             }
             p = p.stacksTo(1).component(DataComponents.ATTRIBUTE_MODIFIERS, b.build());
+        }
+        if (s.id().equals("mirror_of_guidance")) {
+            p = p.stacksTo(1); // page state lives on the stack
         }
         if (s.rarity() != null) {
             p = p.rarity(Rarity.valueOf(s.rarity().toUpperCase()));
@@ -200,6 +205,9 @@ public final class DiaithirAurorian {
             case "axe" -> new AbilityAxe(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
             case "shovel" -> new AbilityShovel(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
             case "hoe" -> new AbilityHoe(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
+            case "arrow" -> new AbilityArrowItem(s.id().startsWith("cerulean"), p);
+            case "bow" -> new AbilityBow(p);
+            case "sickle" -> new AbilityShears(s.id(), p);
             default -> new AbilityItem(s.id(), p);
         };
     }
@@ -246,6 +254,9 @@ public final class DiaithirAurorian {
             case "scrapper" -> new MachineBlock(p, false);
             case "moonlight_forge" -> new MachineBlock(p.noOcclusion(), true);
             case "portal_frame" -> new PortalFrameBlock(p);
+            case "sapling" -> new net.minecraft.world.level.block.SaplingBlock(new net.minecraft.world.level.block.grower.TreeGrower("silentwood", java.util.Optional.empty(),
+                java.util.Optional.of(net.minecraft.resources.ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(ID, "silentwood_tree"))), java.util.Optional.empty()),
+                p.noCollision().instabreak().noOcclusion().randomTicks());
             case "bars" -> new IronBarsBlock(p);
             case "log" -> new RotatedPillarBlock(p);
             case "leaves" -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, p.noOcclusion());
@@ -298,6 +309,9 @@ public final class DiaithirAurorian {
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent.class,
             e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "machine_recipes"), MachineRecipes.listener()));
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(Abilities.class);
+        AurorianProjectiles.init(bus);
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent.class,
+            e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "mirror_of_guidance"), MirrorGuide.listener()));
         AurorianMobs.init(bus);
         BLOCK_ENTITIES.register(bus);
         BLOCKS.register(bus);

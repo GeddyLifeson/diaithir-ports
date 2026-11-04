@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/pin_tumbler_lock"
+  "layer0": "diaithirfurnishings:item/pin_tumbler_lock_head",
+  "layer1": "diaithirfurnishings:item/pin_tumbler_lock_handle",
+  "layer2": "diaithirfurnishings:item/pin_tumbler_lock_binding"
  }
 }

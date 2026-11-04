@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:thunder_bolt_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:thunder_bolt_planks",
+  "count": 4
+ }
+}

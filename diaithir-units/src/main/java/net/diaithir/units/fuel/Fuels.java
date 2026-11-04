@@ -61,13 +61,15 @@ public final class Fuels {
         }
         // Typical efficiencies (fuel energy to shaft work): Wikipedia Thermal efficiency and Engine efficiency.
         register(new Engine("draft_animal", 0.20, List.of("hay", "oats")));   // muscle work from feed: Wikipedia Draft horse and Muscle efficiency (about 20 %)
-        register(new Engine("steam_piston", 0.08, List.of("wood", "charcoal", "coal", "heavy_fuel_oil")));
+        register(new Engine("steam_piston", 0.08, List.of("wood", "charcoal", "coal", "heavy_fuel_oil", "ember")));
         register(new Engine("petrol_engine", 0.25, List.of("petrol", "ethanol", "lpg")));
         register(new Engine("diesel_engine", 0.35, List.of("diesel", "biodiesel", "heavy_fuel_oil")));
         register(new Engine("avgas_piston", 0.28, List.of("avgas")));
         register(new Engine("jet_turbine", 0.30, List.of("jet_a1", "kerosene")));
         register(new Engine("electric_motor", 0.85, List.of("lead_battery", "li_ion_battery")));
         register(new Engine("fuel_cell", 0.50, List.of("hydrogen")));
+        // Magic is a carrier like any fuel: 100 J per quantum, Source 1000 J. 0.60 is a balance value, not a real-world figure.
+        register(new Engine("arcane_motor", 0.60, List.of("mana", "aura", "ember", "life_points", "vis", "source")));
     }
 
     private Fuels() {}

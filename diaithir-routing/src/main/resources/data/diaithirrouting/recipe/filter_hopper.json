@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": ["minecraft:hopper", "diaithirrouting:filter"],
+  "result": { "id": "diaithirrouting:filter_hopper", "count": 1 }
+}

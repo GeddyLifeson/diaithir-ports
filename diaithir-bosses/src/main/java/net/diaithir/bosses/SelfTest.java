@@ -112,12 +112,14 @@ public final class SelfTest {
                 runBoss(level, c0, fp, p);
             }
             planetBosses(level, c0, fp);
+            wardens(level, c0, fp);
             attach(level, c0, fp);
             altar(level, c0, fp);
             planetLair(src.getServer());
             elites(level, c0);
             rites(src, level, c0, fp);
             library(src, level, c0, fp);
+            wardenAltar(src, level, c0, fp);
         } finally {
             Ritual.TEST_PLAYERS.clear();
             Ages.forced = oldForce;
@@ -137,8 +139,19 @@ public final class SelfTest {
         for (Data.Profile p : Data.profiles().values()) {
             if (p.summon == null) continue;
             Ritual.Def d = Ritual.def(p.id);
+            if (d == null && AgeWardens.TIER.equals(p.tier)) continue;   // warden rite chains arrive with ports #242; the warden altar is the rites thread's
             check(d != null && d.steps.size() >= 4, p.id + ": has a rite of four or more steps");
             if (d != null) check(d.steps.get(d.steps.size() - 1).type.equals("defend"), p.id + ": rite ends in a defend");
+        }
+        for (int n : new int[]{1, 2, 3, 4, 5, 6, 8}) {
+            Ritual.Def w = Ritual.def("age_warden_" + n);
+            check(w != null && w.steps.size() >= 5, "age_warden_" + n + ": has a rite of five or more steps");
+            if (w == null) continue;
+            check(w.steps.get(w.steps.size() - 1).type.equals("defend"), "age_warden_" + n + ": rite ends in a defend");
+            for (Ritual.Step st : w.steps) {
+                if (st.item != null && !st.item.startsWith("#")) check(BuiltInRegistries.ITEM.getOptional(Identifier.parse(st.item)).isPresent(), "age_warden_" + n + ": item " + st.item + " exists");
+                if (st.mob != null) check(BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(st.mob)).isPresent(), "age_warden_" + n + ": creature " + st.mob + " exists");
+            }
         }
         BlockPos altar = c0.above();
         String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
@@ -208,7 +221,7 @@ public final class SelfTest {
                     check(data.rituals().get(key).contains("|" + d.steps.indexOf(st) + "|"), "rite: wrong hour does not advance");
                     src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.from + 10));
                     long now = level.getOverworldClockTime() % 24000;
-                    check(now >= st.from && now <= st.to, "rite: the test could set the clock (" + now + ")");
+                    check(st.from <= st.to ? now >= st.from && now <= st.to : now >= st.from || now <= st.to, "rite: the test could set the clock (" + now + ")");
                     Ritual.use(level, altar, fp, ItemStack.EMPTY);
                 }
                 case "coop" -> {
@@ -278,6 +291,40 @@ public final class SelfTest {
         check(data.beaten(Ritual.RITE + sample.id), "library: the spell is learned");
         check(Ritual.beginRite(level, altar, sample.id) != null, "library: a learned rite is not run twice");
         data.clearDefeats();
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+    }
+
+    /** The Age-evolving warden altar starts the rite of the first unbeaten warden whose Age has come, bare-handed, and plays it to the boss. */
+    private static void wardenAltar(CommandSourceStack src, ServerLevel level, BlockPos c0, FakePlayer fp) {
+        AscendantData data = AscendantData.get(level.getServer());
+        BlockPos altar = c0.above();
+        String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
+        data.removeRitual(key);
+        data.clearDefeats();
+        boolean mine = !Data.profiles().containsKey("age_warden_1");
+        if (mine) {
+            Data.Profile p = new Data.Profile();
+            p.id = "age_warden_1"; p.entity = "minecraft:husk"; p.age = 1; p.summon = new Data.Summon(); p.summon.rite = "warden_altar";
+            Data.profiles().put(p.id, p);
+        }
+        var old = level.getBlockState(altar);
+        level.setBlock(altar, DiaithirBosses.WARDEN_ALTAR.get().defaultBlockState(), 3);
+        Ritual.TEST_PLAYERS.add(fp);
+        fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
+        Ages.forced = 1;
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(data.rituals().containsKey(key) && data.rituals().get(key).startsWith("age_warden_1|0|"), "warden altar: bare hands begin the Age I warden's rite");
+        if (data.rituals().containsKey(key)) {
+            play(src, level, altar, fp, key, Ritual.def("age_warden_1"));
+            check(!data.rituals().containsKey(key), "warden altar: the rite finished and cleared");
+            var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+            check(woken.size() == 1, "warden altar: the warden wakes (" + woken.size() + ")");
+            woken.forEach(Mob::discard);
+        }
+        data.removeRitual(key);
+        data.clearDefeats();
+        level.setBlock(altar, old, 3);
+        if (mine) Data.profiles().remove("age_warden_1");
         level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
     }
 
@@ -367,6 +414,60 @@ public final class SelfTest {
         }
         if (a != null) a.discard();
         if (b != null) b.discard();
+        level.getEntitiesOfClass(Mob.class, new AABB(c0).inflate(60), e -> e.entityTags().stream().anyMatch(t -> t.startsWith(BossController.T_MINION))).forEach(Mob::discard);
+    }
+
+    /** Age wardens: one per Age (I to VI, VIII); spawn through the rite hook, run 5 s, take damage, die, drop loot, stay under the 4x health cap. */
+    private static void wardens(ServerLevel level, BlockPos c0, FakePlayer fp) {
+        List<Integer> ages = AgeWardens.ages();
+        check(ages.equals(List.of(1, 2, 3, 4, 5, 6, 8)), "wardens: one per Age I-VI and VIII " + ages);
+        for (int age : ages) {
+            String n = AgeWardens.PREFIX + age;
+            try {
+                Data.Profile p = Data.profiles().get(n);
+                check(p != null && AgeWardens.TIER.equals(p.tier) && p.age == age, n + ": profile with tier and Age");
+                if (p == null) continue;
+                check(p.scaling.hp_per_age * p.scaling.max_age_steps + 1 <= 4.0, n + ": Age scaling stays under the 4x cap");
+                Data.Profile boss = Data.profiles().values().stream().filter(b -> b.age == age && !AgeWardens.TIER.equals(b.tier) && b.look).findFirst().orElse(null);
+                if (boss != null) check(p.own.hp < boss.own.hp, n + ": mini-boss, lighter than " + boss.id);
+                Ages.forced = age;
+                fp.setPos(c0.getX() + 7.5, c0.getY() + 1, c0.getZ() + 0.5);
+                Mob m = AgeWardens.spawn(level, age, Vec3.atBottomCenterOf(c0.above()), c0);
+                check(m != null, n + ": spawns through AgeWardens.spawn");
+                if (m == null) continue;
+                check(m.entityTags().contains("dwarfsandgiants:spawn_size_rolled"), n + ": size roll pre-tagged (no Dwarfs and Giants rescale)");
+                BossController c = BossController.ALL.get(m.getUUID());
+                check(c != null, n + ": controller attached");
+                if (c == null) { m.discard(); continue; }
+                c.testPlayers.add(fp);
+                float full = m.getMaxHealth();
+                check(full * c.damageDivisor <= p.own.hp * 4.0 + 0.5, n + ": effective health within 4x of base (" + full * c.damageDivisor + " vs " + p.own.hp + ")");
+                for (int i = 0; i < 100; i++) c.tick();
+                check(m.isAlive(), n + ": alive after 5 s of ticks");
+                check(c.bar.getPlayers().contains(fp), n + ": bar shows");
+                float h0 = m.getHealth();
+                c.invuln = 0;
+                m.setInvulnerable(false);
+                m.hurtServer(level, level.damageSources().playerAttack(fp), full * 0.05F * c.damageDivisor + 1.0F);
+                check(m.getHealth() < h0, n + ": takes damage (" + h0 + " -> " + m.getHealth() + ")");
+                List<ItemStack> loot = c.rollLoot(age);
+                check(loot.stream().anyMatch(s -> s.getItem() == DiaithirBosses.TROPHIES.get(n).get()), n + ": rolls its trophy");
+                check(p.loot.stream().noneMatch(l -> l.min_age > age + 1), n + ": loot is Age-appropriate");
+                m.setInvulnerable(false);
+                AABB box = m.getBoundingBox().inflate(6);
+                m.kill(level);
+                check(c.dead, n + ": dies, death hook ran");
+                check(!level.getEntitiesOfClass(ItemEntity.class, box).isEmpty(), n + ": drops loot");
+                level.getEntitiesOfClass(ItemEntity.class, new AABB(c0).inflate(40)).forEach(ItemEntity::discard);
+                if (m.isAlive()) m.discard();
+            } catch (RuntimeException e) {
+                e.printStackTrace();
+                check(false, n + ": exception " + e);
+            }
+        }
+        Ages.forced = 7;
+        check(AgeWardens.idFor(7).equals("age_warden_6"), "wardens: Age 7 maps to the Age VI warden");
+        check(AgeWardens.idFor(8).equals("age_warden_8"), "wardens: Age 8 maps to its own warden");
         level.getEntitiesOfClass(Mob.class, new AABB(c0).inflate(60), e -> e.entityTags().stream().anyMatch(t -> t.startsWith(BossController.T_MINION))).forEach(Mob::discard);
     }
 

@@ -10,5 +10,6 @@ public final class Module {
 
     public Module(IEventBus bus, ModContainer container) {
         net.diaithir.hudoverlays.betteradvancements.Feature.init(bus, container);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) new net.diaithir.hudoverlays.lookat.DiaithirLookAt(bus);
     }
 }

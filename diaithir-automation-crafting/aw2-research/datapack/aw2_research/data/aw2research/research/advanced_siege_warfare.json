@@ -1,0 +1,30 @@
+{
+  "title": "Advanced Siege Warfare",
+  "description": "Ancient Warfare 2 research: advanced siege warfare.",
+  "prerequisites": [
+    "aw2research:siege_warfare",
+    "aw2research:machinery"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:paper",
+            "count": {
+              "min": 12
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:paper"
+    }
+  }
+}

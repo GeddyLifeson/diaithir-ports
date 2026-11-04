@@ -1,0 +1,33 @@
+{
+    "name": "Apothic Invaders",
+    "icon": "minecraft:beacon",
+    "category": "apotheosis:adventure/mobs",
+	"flag": "apotheosis:adventure",
+	"sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "A strange noise, a peculiar message, and a giant beam of light from the sky...$(p)All signs point to an incursion from an Apothic Invader!"
+        },
+		{
+			"type": "patchouli:text",
+			"title": "Spawn Mechanics",
+			"text": "Invaders replace a small fraction of natural monster spawns. In the Overworld, they appear on the surface or near your depth underground; in the Nether anywhere; in the End only on the outer islands.$(p)They never appear in $(9)Haven$()."
+		},
+		{
+			"type": "patchouli:text",
+			"title": "Spawn Mechanics",
+			"text": "Their arrival will be marked by a loud noise, a status message, and a beacon beam.$(p)Invaders become more common in higher World Tiers, and rates differ per Dimension."
+		},
+		{
+			"type": "patchouli:text",
+			"title": "Invader Rarities",
+			"text": "Each Invader has a rarity, which is indicated by their name and outline color.$(p)Higher rarity invaders will be stronger, but drop better loot as a result."
+		},
+		{
+			"type": "patchouli:text",
+			"title": "Loot",
+			"text": "Invaders are guaranteed to drop a $(l:apotheosis:adventure/mobs/invader_items)special affix item$(), and may have additional bonus loot tables beyond their normal mob counterparts.$(p)They also have a higher likelihood of dropping Gems."
+		}
+	]
+}
