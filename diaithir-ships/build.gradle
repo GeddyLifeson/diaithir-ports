@@ -10,7 +10,11 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 sourceSets {
     // net.diaithir.yards from PR #186 (diaithir-carts), compile-only copy: not packaged, provided at runtime by the carts mod
-    yardsApi { java { srcDir 'yardsapi' } }
+    // compile-only sources of the shared APIs, taken straight from their modules (not packaged: at runtime the classes come from the diaithir-carts and diaithir-units mods)
+    yardsApi {
+        java { srcDir '../diaithir-carts/src/main/java'; srcDir '../diaithir-units/src/main/java'; include 'net/diaithir/yards/**', 'net/diaithir/units/fuel/**' }
+        resources { srcDir '../diaithir-units/src/main/resources'; include 'data/diaithirunits/fuels.csv' }
+    }
     main { compileClasspath += yardsApi.output; runtimeClasspath += yardsApi.output }
 }
 

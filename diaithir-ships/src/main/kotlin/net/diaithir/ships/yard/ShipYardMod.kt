@@ -25,6 +25,7 @@ object ShipYardMod {
             // apply the summed part stats to the new VS2 ship
             val c = YardShipControl()
             c.yardId = be.yardId; c.statMassKg = stats.massKg(); c.powerW = stats.powerW(); c.thrustN = stats.thrustN(); c.buoyancyN = stats.buoyancyN()
+            be.build?.installed()?.firstNotNullOfOrNull { ArcaneFuel.GATED[it.item()] }?.let { c.engineId = it; c.engineEfficiency = ArcaneFuel.efficiency(it) }
             (level.shipObjectWorld.loadedShips.getById(ship.id) as? org.valkyrienskies.core.api.ships.LoadedServerShip)
                 ?.let { it.setAttachment(c) } ?: YardShipControl.pending.put(ship.id, c)
             ship
@@ -71,6 +72,10 @@ object ShipYardMod {
             for (y in y0 until y1) if (!level.getFluidState(net.minecraft.core.BlockPos(cx, y, cz)).isEmpty) wet++
             c.cover = if (y1 > y0) wet.toDouble() / (y1 - y0) else 0.0
             c.throttle = ship.getAttachment(org.valkyrienskies.mod.api.SeatedControllingPlayer::class.java)?.forwardImpulse?.toDouble()?.coerceIn(0.0, 1.0) ?: 0.0
+            if (c.engineId.isNotEmpty() && c.fuelStored > 0.0) {
+                val t = maxOf(c.throttle, c.manualThrottle).coerceIn(0.0, 1.0)
+                if (t > 0) c.fuelStored = maxOf(0.0, c.fuelStored - ArcaneFuel.burnPerTick(c.fuelId, c.powerW * t, c.engineEfficiency))
+            }
         }
     }
 
