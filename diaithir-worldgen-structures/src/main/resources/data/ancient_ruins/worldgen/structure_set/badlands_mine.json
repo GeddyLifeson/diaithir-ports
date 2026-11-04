@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "ancient_ruins:badlands_mine",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "frequency": 0.004,
+    "frequency_reduction_method": "legacy_type_3",
+    "salt": 690105,
+    "spacing": 1,
+    "separation": 0
+  }
+}

@@ -1,5 +1,8 @@
 {
  "values": [
-  "#c:is_underground"
+  {
+   "id": "#c:is_underground",
+   "required": false
+  }
  ]
 }

@@ -77,6 +77,10 @@ for w in json.load(open(os.path.join(IN, "historical_weapons.json"))):
     a = ARCH.get(w["type"], "axe"); c = core[a]
     hist.append(dict(c, id="hw_" + w["id"], base="spartanweaponry:" + w["id"], age=ROMAN.get(ages.get(w["id"], "IV").upper(), 4), damage=round(w["damage"] + 2.0, 2), speed=round(w["speed"] - 4.0, 2), model=a))
 
+# ---- historical bows and crossbows (diaithir-arms, ports #203): same parts as the core bow or crossbow blueprint -------------
+for w in json.load(open(os.path.join(IN, "historical_arms.json"))):
+    hist.append(dict(core[w["kind"]], id="hw_" + w["id"], base="diaithirarms:" + w["id"], age=ROMAN[w["age"].upper()], model=w["kind"]))
+
 # ---- everyday tools and kitchen items (diaithir-furnishings, ports #185) -------------------------------------------------------
 SMITHY_CATS = {"metalwork", "general", "mining", "farm", "household", "cookware", "utensil"}
 VESSEL = {"cookware": (3, 0.6, True), "storage": (2, 0.8, False), "tableware": (1, 0.2, False), "lighting": (1, 0.1, False)}

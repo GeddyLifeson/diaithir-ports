@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "#minecraft:planks",
+    "K": "minecraft:hopper",
+    "N": "minecraft:iron_nugget",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    "PKP",
+    "NSN",
+    "PPP"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:mechanical_selector_combinator",
+    "count": 1
+  }
+}

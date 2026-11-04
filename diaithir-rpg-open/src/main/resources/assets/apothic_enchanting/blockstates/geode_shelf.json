@@ -1,0 +1,24 @@
+{
+    "variants": {
+        "facing=north": [
+            { "model": "apothic_enchanting:block/geode_shelf" },
+            { "model": "apothic_enchanting:block/geode_shelf_2" },
+            { "model": "apothic_enchanting:block/geode_shelf_3" }
+        ],
+        "facing=east": [
+            { "model": "apothic_enchanting:block/geode_shelf", "y": 90 },
+            { "model": "apothic_enchanting:block/geode_shelf_2", "y": 90 },
+            { "model": "apothic_enchanting:block/geode_shelf_3", "y": 90 }
+        ],
+        "facing=south": [
+            { "model": "apothic_enchanting:block/geode_shelf", "y": 180 },
+            { "model": "apothic_enchanting:block/geode_shelf_2", "y": 180 },
+            { "model": "apothic_enchanting:block/geode_shelf_3", "y": 180 }
+        ],
+        "facing=west": [
+            { "model": "apothic_enchanting:block/geode_shelf", "y": 270 },
+            { "model": "apothic_enchanting:block/geode_shelf_2", "y": 270 },
+            { "model": "apothic_enchanting:block/geode_shelf_3", "y": 270 }
+        ]
+    }
+}

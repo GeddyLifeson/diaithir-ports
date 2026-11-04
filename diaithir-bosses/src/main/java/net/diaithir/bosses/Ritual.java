@@ -114,6 +114,7 @@ public final class Ritual {
         if (data.rituals().containsKey(k)) return Component.literal("a rite is already running at this altar");
         data.putRitual(k, new State(RITE + id, 0, 0).toString());
         tell(sl, altar, Component.literal(r.text));
+        RiteFx.start(sl, altar);
         tell(sl, altar, Component.translatable("ritual.diaithirbosses.begin"));
         tell(sl, altar, clue(RITE + id, 0));
         return null;
@@ -196,13 +197,15 @@ public final class Ritual {
         int age = Ages.current(sl.getServer());
         Data.Profile pick = null;
         long wait = 0;
+        boolean warden = sl.getBlockState(altar).is(DiaithirBosses.WARDEN_ALTAR.get());
+        String kind = warden ? "warden_altar" : "ascendant_altar";
         boolean token = held.is(DiaithirBosses.TOKEN.get());
         for (Data.Profile p : Data.profiles().values()) {
-            if (p.summon == null || !"ascendant_altar".equals(p.summon.rite) || age < p.age || def(p.id) == null) continue;
+            if (p.summon == null || !kind.equals(p.summon.rite) || age < p.age || def(p.id) == null) continue;
             if (!p.summon.requires_kills.stream().allMatch(data::beaten)) continue;
             var trophy = DiaithirBosses.TROPHIES.get(p.id);
             boolean viaTrophy = trophy != null && held.is(trophy.get());
-            if (!viaTrophy && !(token && !data.beaten(p.id))) continue;
+            if (!viaTrophy && !((warden || token) && !data.beaten(p.id))) continue;
             long last = data.lastDefeat(p.id);
             long left = last < 0 ? 0 : (long) (p.respawn.ticks * EventHooks.respawnMul(sl)) - (sl.getGameTime() - last);
             if (left > 0) { wait = wait == 0 ? left : Math.min(wait, left); continue; }
@@ -231,10 +234,12 @@ public final class Ritual {
         String k = key(altar);
         DEFEND_START.remove(k);
         int next = st.step + 1;
+        RiteFx.stepDone(sl, altar, d.steps.get(st.step).type);
         if (next >= d.steps.size()) {
             data.removeRitual(k);
             dismissSpirits(sl, altar);
             Data.Profile p = Data.byId(st.boss);
+            RiteFx.wake(sl, altar);
             tell(sl, altar, Component.translatable("ritual.diaithirbosses.done"));
             if (st.boss.startsWith(RITE)) {
                 data.defeat(st.boss, sl.getGameTime());
@@ -291,6 +296,7 @@ public final class Ritual {
         String k = key(altar);
         DEFEND_START.remove(k);
         data.putRitual(k, new State(st.boss, st.step, 0).toString());
+        RiteFx.fail(sl, altar);
         tell(sl, altar, Component.translatable(why));
         for (Mob m : sl.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), e -> e.entityTags().contains(WAVE_TAG))) m.discard();
         dismissSpirits(sl, altar);
@@ -362,6 +368,7 @@ public final class Ritual {
                 advance(sl, altar, data, st, d);
                 continue;
             }
+            RiteFx.defendPulse(sl, altar, secs, 3.5);
             if (secs % 10 == 5) wave(sl, altar, s, near.size());
         }
     }
