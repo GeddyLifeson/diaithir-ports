@@ -59,7 +59,7 @@ defs["readout"] = {
     "components": [
         {"xCenter": 0, "yCenter": 0, "scale": 1.0, "textureXCenter": 384 + 64, "textureYCenter": 64, "textureWidth": 128, "textureHeight": 128},
         {"xCenter": 0, "yCenter": 0, "scale": 1.0, "textObject": {"pos": [0, 0, 0], "rot": [0, 0, 0], "scale": 1.0, "variableName": "velocity", "variableFactor": 3.6, "variableOffset": 0.0,
-                                                                  "variableFormat": "%.0f km/h", "fontName": "default", "defaultText": "", "maxLength": 9, "color": "#FFFFFF", "renderPosition": 1}},
+                                                                  "variableFormat": "%.0f km/h", "defaultText": "", "maxLength": 9, "color": "#FFFFFF", "renderPosition": 1}},
     ],
 }
 os.makedirs(os.path.join(root, "textures"), exist_ok=True)

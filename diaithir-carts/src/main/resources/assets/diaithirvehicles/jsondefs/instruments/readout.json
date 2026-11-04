@@ -38,7 +38,6 @@
     "variableFactor": 3.6,
     "variableOffset": 0.0,
     "variableFormat": "%.0f km/h",
-    "fontName": "default",
     "defaultText": "",
     "maxLength": 9,
     "color": "#FFFFFF",
