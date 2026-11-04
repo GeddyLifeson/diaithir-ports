@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_gold",
+ "result": {
+  "id": "minecraft:gold_nugget",
+  "count": 5
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

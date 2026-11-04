@@ -1,0 +1,6 @@
+{
+ "_comment": "Non-wood parts of the Macaw-style set: roof colours (terracotta recipes) and paving patterns x palettes (stonecutting from the named block). Textures: tools/gen_textures.py.",
+ "roof_colors": ["white","orange","magenta","light_blue","yellow","lime","pink","gray","light_gray","cyan","purple","blue","brown","green","red","black"],
+ "paving_patterns": ["flagstone","cobble","brick","herringbone","hexagon","basket","stack","round"],
+ "paving_palettes": {"stone":"minecraft:stone","sand":"minecraft:sandstone","brick":"minecraft:bricks","slate":"minecraft:deepslate","moss":"minecraft:mossy_cobblestone","clay":"minecraft:terracotta"}
+}

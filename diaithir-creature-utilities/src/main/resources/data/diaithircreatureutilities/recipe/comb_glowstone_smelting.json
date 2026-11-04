@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_glowstone",
+ "result": {
+  "id": "minecraft:glowstone_dust",
+  "count": 3
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

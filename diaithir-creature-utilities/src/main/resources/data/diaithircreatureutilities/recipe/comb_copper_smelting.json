@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_copper",
+ "result": {
+  "id": "minecraft:copper_nugget",
+  "count": 4
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

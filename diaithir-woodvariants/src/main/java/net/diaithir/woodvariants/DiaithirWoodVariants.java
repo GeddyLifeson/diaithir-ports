@@ -8,6 +8,10 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.PushReaction;
@@ -57,7 +61,7 @@ public final class DiaithirWoodVariants {
     public DiaithirWoodVariants(IEventBus bus) {
         int woods = 0;
         for (WoodDef wood : load()) {
-            if (!ModList.get().isLoaded(wood.mod())) {
+            if (!wood.present(ModList.get()::isLoaded)) {
                 continue;
             }
             woods++;
@@ -75,12 +79,82 @@ public final class DiaithirWoodVariants {
             DeferredBlock<TrapDoorBlock> trap = BLOCKS.registerBlock(wood.id() + "_" + Piece.TRAPDOOR.suffix,
                 p -> new TrapDoorBlock(BlockSetType.OAK, p), () -> props().noOcclusion().strength(3.0F));
             ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(trap));
+            if (wood.macaws()) {
+                macaws(wood);
+            }
         }
+        MacawSet cfg = MacawSet.load(LOG);
+        roofsAndPavings(cfg);
         LOG.info("Wood variants added for {} woods", woods);
         BLOCKS.register(bus);
         ITEMS.register(bus);
         ENTITIES.register(bus);
         bus.addListener(DiaithirWoodVariants::tabs);
+    }
+
+    private static final String[] FENCES = {"picket", "stockade", "horse", "wired", "pyramid"};
+    private static final String[] DOORS = {"barn", "stable", "cottage", "glass", "shoji"};
+    private static final String[] TRAPS = {"beach", "barred", "glass", "cottage"};
+    private static final String[] WINDOWS = {"window", "four_pane_window", "barred_window"};
+    private static final String[] BRIDGES = {"plank_bridge", "log_bridge", "rope_bridge"};
+
+    /** Fences, doors, trapdoors, windows, bridges and decorative furniture in the style of the Macaw's mods. */
+    private static void macaws(WoodDef wood) {
+        String w = wood.id();
+        for (String f : FENCES) {
+            add(wood, w + "_" + f + "_fence", FenceBlock::new, false);
+        }
+        for (String d : DOORS) {
+            String name = w + "_" + d + "_door";
+            DeferredBlock<DoorBlock> door = BLOCKS.registerBlock(name, p -> new DoorBlock(BlockSetType.OAK, p),
+                () -> props().noOcclusion().strength(3.0F).pushReaction(PushReaction.DESTROY));
+            ALL_ITEMS.add(ITEMS.registerItem(name, p -> new DoubleHighBlockItem(door.get(), p.useBlockDescriptionPrefix())));
+        }
+        for (String t : TRAPS) {
+            String name = w + "_" + t + "_trapdoor";
+            DeferredBlock<TrapDoorBlock> trap = BLOCKS.registerBlock(name, p -> new TrapDoorBlock(BlockSetType.OAK, p), () -> props().noOcclusion().strength(3.0F));
+            ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(trap));
+        }
+        for (String k : WINDOWS) {
+            DeferredBlock<IronBarsBlock> b = BLOCKS.registerBlock(w + "_" + k, IronBarsBlock::new, () -> props().noOcclusion().strength(1.5F).sound(SoundType.GLASS));
+            ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(b));
+        }
+        for (String k : BRIDGES) {
+            add(wood, w + "_" + k, BridgeBlock::new, true);
+        }
+        add(wood, w + "_coffee_table", p -> new DecorBlock(p, DecorBlock.COFFEE), true);
+        add(wood, w + "_end_table", p -> new DecorBlock(p, DecorBlock.END), true);
+        add(wood, w + "_cupboard", p -> new DecorBlock(p, DecorBlock.CUPBOARD), true);
+        add(wood, w + "_counter", p -> new DecorBlock(p, DecorBlock.COUNTER), false);
+        add(wood, w + "_bookcase", p -> new DecorBlock(p, DecorBlock.COUNTER), false);
+    }
+
+    private static BlockBehaviour.Properties roofProps() {
+        return BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).sound(SoundType.STONE).strength(1.5F, 6.0F).requiresCorrectToolForDrops();
+    }
+
+    private static void roofsAndPavings(MacawSet cfg) {
+        for (String c : cfg.roofColors()) {
+            DeferredBlock<Block> base = BLOCKS.registerBlock(c + "_roof", Block::new, DiaithirWoodVariants::roofProps);
+            ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(base));
+            DeferredBlock<StairBlock> stairs = BLOCKS.registerBlock(c + "_roof_stairs",
+                p -> new StairBlock(base.get().defaultBlockState(), p), DiaithirWoodVariants::roofProps);
+            ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(stairs));
+            DeferredBlock<SlabBlock> slab = BLOCKS.registerBlock(c + "_roof_slab", SlabBlock::new, DiaithirWoodVariants::roofProps);
+            ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(slab));
+        }
+        for (String pal : cfg.palettes()) {
+            for (String pat : cfg.patterns()) {
+                DeferredBlock<PavingBlock> b = BLOCKS.registerBlock(pat + "_paving_" + pal, PavingBlock::new,
+                    () -> BlockBehaviour.Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(1.5F, 6.0F).requiresCorrectToolForDrops());
+                ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(b));
+            }
+        }
+    }
+
+    private static <B extends Block> void add(WoodDef wood, String name, Function<BlockBehaviour.Properties, B> factory, boolean open) {
+        DeferredBlock<B> block = BLOCKS.registerBlock(name, factory, () -> open ? props().noOcclusion() : props());
+        ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(block));
     }
 
     private static BlockBehaviour.Properties props() {

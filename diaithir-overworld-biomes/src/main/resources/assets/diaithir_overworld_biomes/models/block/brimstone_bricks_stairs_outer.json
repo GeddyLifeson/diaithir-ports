@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/outer_stairs", "textures": {"bottom": "diaithir_overworld_biomes:block/brimstone_bricks", "top": "diaithir_overworld_biomes:block/brimstone_bricks", "side": "diaithir_overworld_biomes:block/brimstone_bricks", "particle": "diaithir_overworld_biomes:block/brimstone_bricks"}}

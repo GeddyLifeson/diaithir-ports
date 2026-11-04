@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/slab_top", "textures": {"bottom": "biomesoplenty:block/cut_white_sandstone", "top": "biomesoplenty:block/cut_white_sandstone", "side": "biomesoplenty:block/cut_white_sandstone", "particle": "biomesoplenty:block/cut_white_sandstone"}}

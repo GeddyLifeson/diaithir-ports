@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_nomad",
+ "result": {
+  "id": "minecraft:snowball",
+  "count": 4
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_chocolate_mining",
+ "result": {
+  "id": "minecraft:cocoa_beans",
+  "count": 2
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

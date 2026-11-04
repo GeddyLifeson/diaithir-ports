@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "biomesoplenty:cherry_slab",
     "biomesoplenty:dead_slab",
@@ -17,12 +16,15 @@
     "biomesoplenty:umbran_slab",
     "biomesoplenty:willow_slab",
     "natures_spirit:aspen_slab",
+    "natures_spirit:chalk_slabs",
     "natures_spirit:chert_brick_slab",
     "natures_spirit:chert_slab",
     "natures_spirit:chert_tile_slab",
     "natures_spirit:cobbled_travertine_slab",
     "natures_spirit:coconut_mosaic_slab",
     "natures_spirit:joshua_mosaic_slab",
+    "natures_spirit:kaolin_brick_slabs",
+    "natures_spirit:kaolin_slabs",
     "natures_spirit:mahogany_mosaic_slab",
     "natures_spirit:maple_slab",
     "natures_spirit:mossy_cobbled_travertine_slab",
@@ -34,6 +36,22 @@
     "natures_spirit:travertine_slab",
     "natures_spirit:travertine_tile_slab",
     "natures_spirit:wisteria_mosaic_slab",
-    "natures_spirit:wisteria_slab"
-  ]
+    "natures_spirit:wisteria_slab",
+    "diaithir_overworld_biomes:black_sandstone_slab",
+    "diaithir_overworld_biomes:smooth_black_sandstone_slab",
+    "diaithir_overworld_biomes:cut_black_sandstone_slab",
+    "diaithir_overworld_biomes:orange_sandstone_slab",
+    "diaithir_overworld_biomes:smooth_orange_sandstone_slab",
+    "diaithir_overworld_biomes:cut_orange_sandstone_slab",
+    "diaithir_overworld_biomes:white_sandstone_slab",
+    "diaithir_overworld_biomes:smooth_white_sandstone_slab",
+    "diaithir_overworld_biomes:cut_white_sandstone_slab",
+    "diaithir_overworld_biomes:rose_quartz_slab",
+    "diaithir_overworld_biomes:rose_quartz_bricks_slab",
+    "diaithir_overworld_biomes:salt_bricks_slab",
+    "diaithir_overworld_biomes:ash_bricks_slab",
+    "diaithir_overworld_biomes:brimstone_bricks_slab",
+    "diaithir_overworld_biomes:peat_bricks_slab"
+  ],
+  "replace": false
 }

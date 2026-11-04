@@ -49,7 +49,8 @@
    "log": "biomesoplenty:dead_log",
    "planks_texture": "biomesoplenty:block/dead_planks",
    "log_texture": "biomesoplenty:block/dead_log",
-   "log_top_texture": "biomesoplenty:block/dead_log_top"
+   "log_top_texture": "biomesoplenty:block/dead_log_top",
+   "macaws": true
   },
   {
    "id": "bop_empyreal",
@@ -59,7 +60,8 @@
    "log": "biomesoplenty:empyreal_log",
    "planks_texture": "biomesoplenty:block/empyreal_planks",
    "log_texture": "biomesoplenty:block/empyreal_log",
-   "log_top_texture": "biomesoplenty:block/empyreal_log_top"
+   "log_top_texture": "biomesoplenty:block/empyreal_log_top",
+   "macaws": true
   },
   {
    "id": "bop_fir",
@@ -69,7 +71,8 @@
    "log": "biomesoplenty:fir_log",
    "planks_texture": "biomesoplenty:block/fir_planks",
    "log_texture": "biomesoplenty:block/fir_log",
-   "log_top_texture": "biomesoplenty:block/fir_log_top"
+   "log_top_texture": "biomesoplenty:block/fir_log_top",
+   "macaws": true
   },
   {
    "id": "bop_hellbark",
@@ -79,7 +82,8 @@
    "log": "biomesoplenty:hellbark_log",
    "planks_texture": "biomesoplenty:block/hellbark_planks",
    "log_texture": "biomesoplenty:block/hellbark_log",
-   "log_top_texture": "biomesoplenty:block/hellbark_log_top"
+   "log_top_texture": "biomesoplenty:block/hellbark_log_top",
+   "macaws": true
   },
   {
    "id": "bop_jacaranda",
@@ -89,7 +93,8 @@
    "log": "biomesoplenty:jacaranda_log",
    "planks_texture": "biomesoplenty:block/jacaranda_planks",
    "log_texture": "biomesoplenty:block/jacaranda_log",
-   "log_top_texture": "biomesoplenty:block/jacaranda_log_top"
+   "log_top_texture": "biomesoplenty:block/jacaranda_log_top",
+   "macaws": true
   },
   {
    "id": "bop_magic",
@@ -99,7 +104,8 @@
    "log": "biomesoplenty:magic_log",
    "planks_texture": "biomesoplenty:block/magic_planks",
    "log_texture": "biomesoplenty:block/magic_log",
-   "log_top_texture": "biomesoplenty:block/magic_log_top"
+   "log_top_texture": "biomesoplenty:block/magic_log_top",
+   "macaws": true
   },
   {
    "id": "bop_mahogany",
@@ -109,7 +115,8 @@
    "log": "biomesoplenty:mahogany_log",
    "planks_texture": "biomesoplenty:block/mahogany_planks",
    "log_texture": "biomesoplenty:block/mahogany_log",
-   "log_top_texture": "biomesoplenty:block/mahogany_log_top"
+   "log_top_texture": "biomesoplenty:block/mahogany_log_top",
+   "macaws": true
   },
   {
    "id": "bop_maple",
@@ -119,7 +126,8 @@
    "log": "biomesoplenty:maple_log",
    "planks_texture": "biomesoplenty:block/maple_planks",
    "log_texture": "biomesoplenty:block/maple_log",
-   "log_top_texture": "biomesoplenty:block/maple_log_top"
+   "log_top_texture": "biomesoplenty:block/maple_log_top",
+   "macaws": true
   },
   {
    "id": "bop_origin_oak",
@@ -129,7 +137,8 @@
    "log": "biomesoplenty:origin_oak_log",
    "planks_texture": "biomesoplenty:block/origin_oak_planks",
    "log_texture": "biomesoplenty:block/origin_oak_log",
-   "log_top_texture": "biomesoplenty:block/origin_oak_log_top"
+   "log_top_texture": "biomesoplenty:block/origin_oak_log_top",
+   "macaws": true
   },
   {
    "id": "bop_palm",
@@ -139,7 +148,8 @@
    "log": "biomesoplenty:palm_log",
    "planks_texture": "biomesoplenty:block/palm_planks",
    "log_texture": "biomesoplenty:block/palm_log",
-   "log_top_texture": "biomesoplenty:block/palm_log_top"
+   "log_top_texture": "biomesoplenty:block/palm_log_top",
+   "macaws": true
   },
   {
    "id": "bop_pine",
@@ -149,7 +159,8 @@
    "log": "biomesoplenty:pine_log",
    "planks_texture": "biomesoplenty:block/pine_planks",
    "log_texture": "biomesoplenty:block/pine_log",
-   "log_top_texture": "biomesoplenty:block/pine_log_top"
+   "log_top_texture": "biomesoplenty:block/pine_log_top",
+   "macaws": true
   },
   {
    "id": "bop_redwood",
@@ -159,7 +170,8 @@
    "log": "biomesoplenty:redwood_log",
    "planks_texture": "biomesoplenty:block/redwood_planks",
    "log_texture": "biomesoplenty:block/redwood_log",
-   "log_top_texture": "biomesoplenty:block/redwood_log_top"
+   "log_top_texture": "biomesoplenty:block/redwood_log_top",
+   "macaws": true
   },
   {
    "id": "bop_umbran",
@@ -169,7 +181,8 @@
    "log": "biomesoplenty:umbran_log",
    "planks_texture": "biomesoplenty:block/umbran_planks",
    "log_texture": "biomesoplenty:block/umbran_log",
-   "log_top_texture": "biomesoplenty:block/umbran_log_top"
+   "log_top_texture": "biomesoplenty:block/umbran_log_top",
+   "macaws": true
   },
   {
    "id": "bop_willow",
@@ -179,7 +192,8 @@
    "log": "biomesoplenty:willow_log",
    "planks_texture": "biomesoplenty:block/willow_planks",
    "log_texture": "biomesoplenty:block/willow_log",
-   "log_top_texture": "biomesoplenty:block/willow_log_top"
+   "log_top_texture": "biomesoplenty:block/willow_log_top",
+   "macaws": true
   },
   {
    "id": "eco_azalea",
@@ -2300,6 +2314,138 @@
    "planks_texture": "vampirism:block/dark_spruce_planks",
    "log_texture": "vampirism:block/dark_spruce_log",
    "log_top_texture": "vampirism:block/dark_spruce_log_top"
+  },
+  {
+   "id": "oak",
+   "mod": "minecraft",
+   "name": "Oak",
+   "planks": "minecraft:oak_planks",
+   "log": "minecraft:oak_log",
+   "planks_texture": "minecraft:block/oak_planks",
+   "log_texture": "minecraft:block/oak_log",
+   "log_top_texture": "minecraft:block/oak_log_top",
+   "macaws": true
+  },
+  {
+   "id": "spruce",
+   "mod": "minecraft",
+   "name": "Spruce",
+   "planks": "minecraft:spruce_planks",
+   "log": "minecraft:spruce_log",
+   "planks_texture": "minecraft:block/spruce_planks",
+   "log_texture": "minecraft:block/spruce_log",
+   "log_top_texture": "minecraft:block/spruce_log_top",
+   "macaws": true
+  },
+  {
+   "id": "birch",
+   "mod": "minecraft",
+   "name": "Birch",
+   "planks": "minecraft:birch_planks",
+   "log": "minecraft:birch_log",
+   "planks_texture": "minecraft:block/birch_planks",
+   "log_texture": "minecraft:block/birch_log",
+   "log_top_texture": "minecraft:block/birch_log_top",
+   "macaws": true
+  },
+  {
+   "id": "jungle",
+   "mod": "minecraft",
+   "name": "Jungle",
+   "planks": "minecraft:jungle_planks",
+   "log": "minecraft:jungle_log",
+   "planks_texture": "minecraft:block/jungle_planks",
+   "log_texture": "minecraft:block/jungle_log",
+   "log_top_texture": "minecraft:block/jungle_log_top",
+   "macaws": true
+  },
+  {
+   "id": "acacia",
+   "mod": "minecraft",
+   "name": "Acacia",
+   "planks": "minecraft:acacia_planks",
+   "log": "minecraft:acacia_log",
+   "planks_texture": "minecraft:block/acacia_planks",
+   "log_texture": "minecraft:block/acacia_log",
+   "log_top_texture": "minecraft:block/acacia_log_top",
+   "macaws": true
+  },
+  {
+   "id": "dark_oak",
+   "mod": "minecraft",
+   "name": "Dark Oak",
+   "planks": "minecraft:dark_oak_planks",
+   "log": "minecraft:dark_oak_log",
+   "planks_texture": "minecraft:block/dark_oak_planks",
+   "log_texture": "minecraft:block/dark_oak_log",
+   "log_top_texture": "minecraft:block/dark_oak_log_top",
+   "macaws": true
+  },
+  {
+   "id": "mangrove",
+   "mod": "minecraft",
+   "name": "Mangrove",
+   "planks": "minecraft:mangrove_planks",
+   "log": "minecraft:mangrove_log",
+   "planks_texture": "minecraft:block/mangrove_planks",
+   "log_texture": "minecraft:block/mangrove_log",
+   "log_top_texture": "minecraft:block/mangrove_log_top",
+   "macaws": true
+  },
+  {
+   "id": "cherry",
+   "mod": "minecraft",
+   "name": "Cherry",
+   "planks": "minecraft:cherry_planks",
+   "log": "minecraft:cherry_log",
+   "planks_texture": "minecraft:block/cherry_planks",
+   "log_texture": "minecraft:block/cherry_log",
+   "log_top_texture": "minecraft:block/cherry_log_top",
+   "macaws": true
+  },
+  {
+   "id": "pale_oak",
+   "mod": "minecraft",
+   "name": "Pale Oak",
+   "planks": "minecraft:pale_oak_planks",
+   "log": "minecraft:pale_oak_log",
+   "planks_texture": "minecraft:block/pale_oak_planks",
+   "log_texture": "minecraft:block/pale_oak_log",
+   "log_top_texture": "minecraft:block/pale_oak_log_top",
+   "macaws": true
+  },
+  {
+   "id": "bamboo",
+   "mod": "minecraft",
+   "name": "Bamboo",
+   "planks": "minecraft:bamboo_planks",
+   "log": "minecraft:bamboo_block",
+   "planks_texture": "minecraft:block/bamboo_planks",
+   "log_texture": "minecraft:block/bamboo_block",
+   "log_top_texture": "minecraft:block/bamboo_block_top",
+   "macaws": true
+  },
+  {
+   "id": "crimson",
+   "mod": "minecraft",
+   "name": "Crimson",
+   "planks": "minecraft:crimson_planks",
+   "log": "minecraft:crimson_stem",
+   "planks_texture": "minecraft:block/crimson_planks",
+   "log_texture": "minecraft:block/crimson_stem",
+   "log_top_texture": "minecraft:block/crimson_stem_top",
+   "macaws": true
+  },
+  {
+   "id": "warped",
+   "mod": "minecraft",
+   "name": "Warped",
+   "planks": "minecraft:warped_planks",
+   "log": "minecraft:warped_stem",
+   "planks_texture": "minecraft:block/warped_planks",
+   "log_texture": "minecraft:block/warped_stem",
+   "log_top_texture": "minecraft:block/warped_stem_top",
+   "macaws": true
   }
  ]
 }

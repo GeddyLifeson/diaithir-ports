@@ -39,6 +39,7 @@ public final class CreatureUtilities {
 
     public CreatureUtilities(IEventBus bus) {
         BLOCKS.register(bus);
+        net.diaithir.creatureutilities.bees.Bees.init(bus);
         ITEMS.register(bus);
         bus.addListener(CreatureUtilities::tab);
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(CreatureUtilities::tooltip);

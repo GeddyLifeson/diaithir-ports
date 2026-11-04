@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_blazing",
+ "result": {
+  "id": "minecraft:blaze_powder",
+  "count": 2
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

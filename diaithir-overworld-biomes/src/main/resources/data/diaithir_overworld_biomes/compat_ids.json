@@ -1,1542 +1,2304 @@
 {
- "biomesoplenty": [
-  {
-   "id": "barley",
-   "kind": "tall"
-  },
-  {
-   "id": "black_sand",
-   "kind": "plain"
-  },
-  {
-   "id": "black_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "blue_hydrangea",
-   "kind": "plant"
-  },
-  {
-   "id": "burning_blossom",
-   "kind": "plant"
-  },
-  {
-   "id": "cattail",
-   "kind": "plant"
-  },
-  {
-   "id": "cherry_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "cherry_button",
-   "kind": "button"
-  },
-  {
-   "id": "cherry_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "cherry_door",
-   "kind": "door"
-  },
-  {
-   "id": "cherry_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "cherry_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "cherry_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "cherry_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "cherry_log",
-   "kind": "log"
-  },
-  {
-   "id": "cherry_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "cherry_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "cherry_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "cherry_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "cherry_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "cherry_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "cherry_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "cherry_wood",
-   "kind": "log"
-  },
-  {
-   "id": "chiseled_black_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "chiseled_orange_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "chiseled_white_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "clover",
-   "kind": "plant"
-  },
-  {
-   "id": "cut_black_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "cut_orange_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "cut_white_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "cypress_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "dead_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "dead_button",
-   "kind": "button"
-  },
-  {
-   "id": "dead_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "dead_door",
-   "kind": "door"
-  },
-  {
-   "id": "dead_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "dead_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "dead_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "dead_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "dead_log",
-   "kind": "log"
-  },
-  {
-   "id": "dead_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "dead_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "dead_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "dead_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "dead_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "dead_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "dead_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "dead_wood",
-   "kind": "log"
-  },
-  {
-   "id": "empyreal_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "empyreal_button",
-   "kind": "button"
-  },
-  {
-   "id": "empyreal_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "empyreal_door",
-   "kind": "door"
-  },
-  {
-   "id": "empyreal_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "empyreal_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "empyreal_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "empyreal_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "empyreal_log",
-   "kind": "log"
-  },
-  {
-   "id": "empyreal_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "empyreal_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "empyreal_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "empyreal_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "empyreal_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "empyreal_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "empyreal_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "empyreal_wood",
-   "kind": "log"
-  },
-  {
-   "id": "endbloom",
-   "kind": "plant"
-  },
-  {
-   "id": "fir_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "fir_button",
-   "kind": "button"
-  },
-  {
-   "id": "fir_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "fir_door",
-   "kind": "door"
-  },
-  {
-   "id": "fir_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "fir_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "fir_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "fir_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "fir_log",
-   "kind": "log"
-  },
-  {
-   "id": "fir_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "fir_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "fir_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "fir_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "fir_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "fir_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "fir_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "fir_wood",
-   "kind": "log"
-  },
-  {
-   "id": "flowering_oak_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "flowering_oak_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "glowflower",
-   "kind": "plant"
-  },
-  {
-   "id": "glowshroom",
-   "kind": "plant"
-  },
-  {
-   "id": "goldenrod",
-   "kind": "plant"
-  },
-  {
-   "id": "hellbark_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "hellbark_button",
-   "kind": "button"
-  },
-  {
-   "id": "hellbark_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "hellbark_door",
-   "kind": "door"
-  },
-  {
-   "id": "hellbark_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "hellbark_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "hellbark_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "hellbark_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "hellbark_log",
-   "kind": "log"
-  },
-  {
-   "id": "hellbark_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "hellbark_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "hellbark_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "hellbark_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "hellbark_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "hellbark_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "hellbark_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "hellbark_wood",
-   "kind": "log"
-  },
-  {
-   "id": "icy_iris",
-   "kind": "plant"
-  },
-  {
-   "id": "jacaranda_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "jacaranda_button",
-   "kind": "button"
-  },
-  {
-   "id": "jacaranda_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "jacaranda_door",
-   "kind": "door"
-  },
-  {
-   "id": "jacaranda_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "jacaranda_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "jacaranda_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "jacaranda_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "jacaranda_log",
-   "kind": "log"
-  },
-  {
-   "id": "jacaranda_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "jacaranda_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "jacaranda_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "jacaranda_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "jacaranda_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "jacaranda_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "jacaranda_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "jacaranda_wood",
-   "kind": "log"
-  },
-  {
-   "id": "lavender",
-   "kind": "plant"
-  },
-  {
-   "id": "magic_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "magic_button",
-   "kind": "button"
-  },
-  {
-   "id": "magic_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "magic_door",
-   "kind": "door"
-  },
-  {
-   "id": "magic_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "magic_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "magic_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "magic_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "magic_log",
-   "kind": "log"
-  },
-  {
-   "id": "magic_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "magic_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "magic_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "magic_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "magic_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "magic_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "magic_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "magic_wood",
-   "kind": "log"
-  },
-  {
-   "id": "mahogany_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "mahogany_button",
-   "kind": "button"
-  },
-  {
-   "id": "mahogany_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "mahogany_door",
-   "kind": "door"
-  },
-  {
-   "id": "mahogany_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "mahogany_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "mahogany_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "mahogany_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "mahogany_log",
-   "kind": "log"
-  },
-  {
-   "id": "mahogany_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "mahogany_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "mahogany_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "mahogany_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "mahogany_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "mahogany_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "mahogany_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "mahogany_wood",
-   "kind": "log"
-  },
-  {
-   "id": "maple_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "maple_button",
-   "kind": "button"
-  },
-  {
-   "id": "maple_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "maple_door",
-   "kind": "door"
-  },
-  {
-   "id": "maple_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "maple_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "maple_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "maple_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "maple_log",
-   "kind": "log"
-  },
-  {
-   "id": "maple_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "maple_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "maple_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "maple_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "maple_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "maple_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "maple_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "maple_wood",
-   "kind": "log"
-  },
-  {
-   "id": "marigold",
-   "kind": "plant"
-  },
-  {
-   "id": "null_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "orange_autumn_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "orange_cosmos",
-   "kind": "plant"
-  },
-  {
-   "id": "orange_maple_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "orange_sand",
-   "kind": "plain"
-  },
-  {
-   "id": "orange_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "origin_dandelion",
-   "kind": "plant"
-  },
-  {
-   "id": "origin_grass_block",
-   "kind": "plain"
-  },
-  {
-   "id": "origin_oak_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "origin_oak_button",
-   "kind": "button"
-  },
-  {
-   "id": "origin_oak_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "origin_oak_door",
-   "kind": "door"
-  },
-  {
-   "id": "origin_oak_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "origin_oak_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "origin_oak_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "origin_oak_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "origin_oak_log",
-   "kind": "log"
-  },
-  {
-   "id": "origin_oak_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "origin_oak_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "origin_oak_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "origin_oak_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "origin_oak_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "origin_oak_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "origin_oak_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "origin_oak_wood",
-   "kind": "log"
-  },
-  {
-   "id": "origin_rose",
-   "kind": "plant"
-  },
-  {
-   "id": "origin_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "palm_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "palm_button",
-   "kind": "button"
-  },
-  {
-   "id": "palm_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "palm_door",
-   "kind": "door"
-  },
-  {
-   "id": "palm_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "palm_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "palm_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "palm_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "palm_log",
-   "kind": "log"
-  },
-  {
-   "id": "palm_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "palm_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "palm_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "palm_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "palm_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "palm_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "palm_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "palm_wood",
-   "kind": "log"
-  },
-  {
-   "id": "pine_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "pine_button",
-   "kind": "button"
-  },
-  {
-   "id": "pine_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "pine_door",
-   "kind": "door"
-  },
-  {
-   "id": "pine_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "pine_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "pine_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "pine_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "pine_log",
-   "kind": "log"
-  },
-  {
-   "id": "pine_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "pine_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "pine_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "pine_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "pine_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "pine_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "pine_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "pine_wood",
-   "kind": "log"
-  },
-  {
-   "id": "pink_cherry_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "pink_cherry_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "pink_daffodil",
-   "kind": "plant"
-  },
-  {
-   "id": "pink_hibicus",
-   "kind": "plant"
-  },
-  {
-   "id": "pink_hibiscus",
-   "kind": "plant"
-  },
-  {
-   "id": "purple_wildflowers",
-   "kind": "plant"
-  },
-  {
-   "id": "rainbow_birch_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "red_maple_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "redwood_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "redwood_button",
-   "kind": "button"
-  },
-  {
-   "id": "redwood_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "redwood_door",
-   "kind": "door"
-  },
-  {
-   "id": "redwood_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "redwood_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "redwood_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "redwood_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "redwood_log",
-   "kind": "log"
-  },
-  {
-   "id": "redwood_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "redwood_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "redwood_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "redwood_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "redwood_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "redwood_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "redwood_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "redwood_wood",
-   "kind": "log"
-  },
-  {
-   "id": "rose",
-   "kind": "plant"
-  },
-  {
-   "id": "rose_quartz_block",
-   "kind": "plain"
-  },
-  {
-   "id": "smooth_black_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "smooth_orange_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "smooth_white_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "snowblossom_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "sprout",
-   "kind": "plant"
-  },
-  {
-   "id": "stringy_cobweb",
-   "kind": "plain"
-  },
-  {
-   "id": "stripped_cherry_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_cherry_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_dead_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_dead_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_empyreal_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_empyreal_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_fir_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_fir_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_hellbark_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_hellbark_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_jacaranda_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_jacaranda_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_magic_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_magic_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_mahogany_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_mahogany_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_maple_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_maple_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_origin_oak_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_origin_oak_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_palm_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_palm_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_pine_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_pine_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_redwood_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_redwood_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_umbran_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_umbran_wood",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_willow_log",
-   "kind": "log"
-  },
-  {
-   "id": "stripped_willow_wood",
-   "kind": "log"
-  },
-  {
-   "id": "tall_lavender",
-   "kind": "tall"
-  },
-  {
-   "id": "tall_white_lavender",
-   "kind": "tall"
-  },
-  {
-   "id": "tiny_cactus",
-   "kind": "plant"
-  },
-  {
-   "id": "toadstool",
-   "kind": "plant"
-  },
-  {
-   "id": "umbran_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "umbran_button",
-   "kind": "button"
-  },
-  {
-   "id": "umbran_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "umbran_door",
-   "kind": "door"
-  },
-  {
-   "id": "umbran_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "umbran_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "umbran_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "umbran_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "umbran_log",
-   "kind": "log"
-  },
-  {
-   "id": "umbran_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "umbran_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "umbran_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "umbran_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "umbran_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "umbran_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "umbran_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "umbran_wood",
-   "kind": "log"
-  },
-  {
-   "id": "violet",
-   "kind": "plant"
-  },
-  {
-   "id": "waterlily",
-   "kind": "plant"
-  },
-  {
-   "id": "white_cherry_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "white_cherry_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "white_lavender",
-   "kind": "plant"
-  },
-  {
-   "id": "white_petals",
-   "kind": "plant"
-  },
-  {
-   "id": "white_sand",
-   "kind": "plain"
-  },
-  {
-   "id": "white_sandstone",
-   "kind": "plain"
-  },
-  {
-   "id": "wildflower",
-   "kind": "plant"
-  },
-  {
-   "id": "willow_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "willow_button",
-   "kind": "button"
-  },
-  {
-   "id": "willow_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "willow_door",
-   "kind": "door"
-  },
-  {
-   "id": "willow_fence",
-   "kind": "fence"
-  },
-  {
-   "id": "willow_fence_gate",
-   "kind": "gate"
-  },
-  {
-   "id": "willow_hanging_sign",
-   "kind": "hanging_sign"
-  },
-  {
-   "id": "willow_leaves",
-   "kind": "leaves"
-  },
-  {
-   "id": "willow_log",
-   "kind": "log"
-  },
-  {
-   "id": "willow_planks",
-   "kind": "planks"
-  },
-  {
-   "id": "willow_pressure_plate",
-   "kind": "plate"
-  },
-  {
-   "id": "willow_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "willow_sign",
-   "kind": "sign"
-  },
-  {
-   "id": "willow_slab",
-   "kind": "slab"
-  },
-  {
-   "id": "willow_stairs",
-   "kind": "stairs"
-  },
-  {
-   "id": "willow_trapdoor",
-   "kind": "trapdoor"
-  },
-  {
-   "id": "willow_wood",
-   "kind": "log"
-  },
-  {
-   "id": "wilted_lily",
-   "kind": "plant"
-  },
-  {
-   "id": "yellow_autumn_sapling",
-   "kind": "sapling"
-  },
-  {
-   "id": "yellow_maple_sapling",
-   "kind": "sapling"
-  }
- ],
- "natures_spirit": [
-  {
-   "id": "aspen_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "aspen_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "cedar_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "cedar_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "coconut_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "coconut_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "cypress_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "cypress_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "fir_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "fir_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "ghaf_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "ghaf_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "joshua_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "joshua_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "larch_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "larch_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "mahogany_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "mahogany_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "maple_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "maple_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "olive_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "olive_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "palo_verde_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "palo_verde_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "redwood_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "redwood_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "saxaul_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "saxaul_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "sugi_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "sugi_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "willow_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "willow_chest_boat",
-   "kind": "chest_boat"
-  },
-  {
-   "id": "wisteria_boat",
-   "kind": "boat"
-  },
-  {
-   "id": "wisteria_chest_boat",
-   "kind": "chest_boat"
-  }
- ]
+  "biomesoplenty": [
+    {
+      "id": "barley",
+      "kind": "tall"
+    },
+    {
+      "id": "black_sand",
+      "kind": "plain"
+    },
+    {
+      "id": "black_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "blue_hydrangea",
+      "kind": "plant"
+    },
+    {
+      "id": "burning_blossom",
+      "kind": "plant"
+    },
+    {
+      "id": "cattail",
+      "kind": "plant"
+    },
+    {
+      "id": "cherry_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "cherry_button",
+      "kind": "button"
+    },
+    {
+      "id": "cherry_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "cherry_door",
+      "kind": "door"
+    },
+    {
+      "id": "cherry_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "cherry_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "cherry_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "cherry_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "cherry_log",
+      "kind": "log"
+    },
+    {
+      "id": "cherry_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "cherry_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "cherry_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "cherry_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "cherry_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "cherry_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "cherry_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "cherry_wood",
+      "kind": "log"
+    },
+    {
+      "id": "chiseled_black_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "chiseled_orange_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "chiseled_white_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "clover",
+      "kind": "plant"
+    },
+    {
+      "id": "cut_black_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "cut_orange_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "cut_white_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "cypress_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "dead_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "dead_button",
+      "kind": "button"
+    },
+    {
+      "id": "dead_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "dead_door",
+      "kind": "door"
+    },
+    {
+      "id": "dead_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "dead_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "dead_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "dead_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "dead_log",
+      "kind": "log"
+    },
+    {
+      "id": "dead_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "dead_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "dead_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "dead_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "dead_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "dead_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "dead_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "dead_wood",
+      "kind": "log"
+    },
+    {
+      "id": "empyreal_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "empyreal_button",
+      "kind": "button"
+    },
+    {
+      "id": "empyreal_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "empyreal_door",
+      "kind": "door"
+    },
+    {
+      "id": "empyreal_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "empyreal_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "empyreal_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "empyreal_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "empyreal_log",
+      "kind": "log"
+    },
+    {
+      "id": "empyreal_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "empyreal_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "empyreal_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "empyreal_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "empyreal_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "empyreal_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "empyreal_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "empyreal_wood",
+      "kind": "log"
+    },
+    {
+      "id": "endbloom",
+      "kind": "plant"
+    },
+    {
+      "id": "fir_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "fir_button",
+      "kind": "button"
+    },
+    {
+      "id": "fir_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "fir_door",
+      "kind": "door"
+    },
+    {
+      "id": "fir_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "fir_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "fir_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "fir_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "fir_log",
+      "kind": "log"
+    },
+    {
+      "id": "fir_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "fir_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "fir_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "fir_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "fir_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "fir_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "fir_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "fir_wood",
+      "kind": "log"
+    },
+    {
+      "id": "flowering_oak_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "flowering_oak_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "glowflower",
+      "kind": "plant"
+    },
+    {
+      "id": "glowshroom",
+      "kind": "plant"
+    },
+    {
+      "id": "goldenrod",
+      "kind": "plant"
+    },
+    {
+      "id": "hellbark_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "hellbark_button",
+      "kind": "button"
+    },
+    {
+      "id": "hellbark_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "hellbark_door",
+      "kind": "door"
+    },
+    {
+      "id": "hellbark_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "hellbark_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "hellbark_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "hellbark_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "hellbark_log",
+      "kind": "log"
+    },
+    {
+      "id": "hellbark_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "hellbark_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "hellbark_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "hellbark_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "hellbark_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "hellbark_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "hellbark_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "hellbark_wood",
+      "kind": "log"
+    },
+    {
+      "id": "icy_iris",
+      "kind": "plant"
+    },
+    {
+      "id": "jacaranda_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "jacaranda_button",
+      "kind": "button"
+    },
+    {
+      "id": "jacaranda_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "jacaranda_door",
+      "kind": "door"
+    },
+    {
+      "id": "jacaranda_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "jacaranda_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "jacaranda_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "jacaranda_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "jacaranda_log",
+      "kind": "log"
+    },
+    {
+      "id": "jacaranda_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "jacaranda_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "jacaranda_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "jacaranda_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "jacaranda_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "jacaranda_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "jacaranda_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "jacaranda_wood",
+      "kind": "log"
+    },
+    {
+      "id": "lavender",
+      "kind": "plant"
+    },
+    {
+      "id": "magic_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "magic_button",
+      "kind": "button"
+    },
+    {
+      "id": "magic_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "magic_door",
+      "kind": "door"
+    },
+    {
+      "id": "magic_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "magic_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "magic_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "magic_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "magic_log",
+      "kind": "log"
+    },
+    {
+      "id": "magic_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "magic_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "magic_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "magic_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "magic_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "magic_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "magic_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "magic_wood",
+      "kind": "log"
+    },
+    {
+      "id": "mahogany_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "mahogany_button",
+      "kind": "button"
+    },
+    {
+      "id": "mahogany_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "mahogany_door",
+      "kind": "door"
+    },
+    {
+      "id": "mahogany_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "mahogany_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "mahogany_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "mahogany_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "mahogany_log",
+      "kind": "log"
+    },
+    {
+      "id": "mahogany_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "mahogany_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "mahogany_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "mahogany_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "mahogany_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "mahogany_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "mahogany_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "mahogany_wood",
+      "kind": "log"
+    },
+    {
+      "id": "maple_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "maple_button",
+      "kind": "button"
+    },
+    {
+      "id": "maple_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "maple_door",
+      "kind": "door"
+    },
+    {
+      "id": "maple_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "maple_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "maple_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "maple_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "maple_log",
+      "kind": "log"
+    },
+    {
+      "id": "maple_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "maple_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "maple_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "maple_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "maple_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "maple_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "maple_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "maple_wood",
+      "kind": "log"
+    },
+    {
+      "id": "marigold",
+      "kind": "plant"
+    },
+    {
+      "id": "null_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "orange_autumn_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "orange_cosmos",
+      "kind": "plant"
+    },
+    {
+      "id": "orange_maple_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "orange_sand",
+      "kind": "plain"
+    },
+    {
+      "id": "orange_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "origin_dandelion",
+      "kind": "plant"
+    },
+    {
+      "id": "origin_grass_block",
+      "kind": "plain"
+    },
+    {
+      "id": "origin_oak_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "origin_oak_button",
+      "kind": "button"
+    },
+    {
+      "id": "origin_oak_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "origin_oak_door",
+      "kind": "door"
+    },
+    {
+      "id": "origin_oak_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "origin_oak_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "origin_oak_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "origin_oak_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "origin_oak_log",
+      "kind": "log"
+    },
+    {
+      "id": "origin_oak_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "origin_oak_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "origin_oak_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "origin_oak_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "origin_oak_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "origin_oak_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "origin_oak_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "origin_oak_wood",
+      "kind": "log"
+    },
+    {
+      "id": "origin_rose",
+      "kind": "plant"
+    },
+    {
+      "id": "origin_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "palm_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "palm_button",
+      "kind": "button"
+    },
+    {
+      "id": "palm_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "palm_door",
+      "kind": "door"
+    },
+    {
+      "id": "palm_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "palm_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "palm_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "palm_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "palm_log",
+      "kind": "log"
+    },
+    {
+      "id": "palm_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "palm_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "palm_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "palm_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "palm_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "palm_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "palm_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "palm_wood",
+      "kind": "log"
+    },
+    {
+      "id": "pine_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "pine_button",
+      "kind": "button"
+    },
+    {
+      "id": "pine_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "pine_door",
+      "kind": "door"
+    },
+    {
+      "id": "pine_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "pine_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "pine_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "pine_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "pine_log",
+      "kind": "log"
+    },
+    {
+      "id": "pine_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "pine_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "pine_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "pine_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "pine_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "pine_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "pine_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "pine_wood",
+      "kind": "log"
+    },
+    {
+      "id": "pink_cherry_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "pink_cherry_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "pink_daffodil",
+      "kind": "plant"
+    },
+    {
+      "id": "pink_hibicus",
+      "kind": "plant"
+    },
+    {
+      "id": "pink_hibiscus",
+      "kind": "plant"
+    },
+    {
+      "id": "purple_wildflowers",
+      "kind": "plant"
+    },
+    {
+      "id": "rainbow_birch_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "red_maple_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "redwood_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "redwood_button",
+      "kind": "button"
+    },
+    {
+      "id": "redwood_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "redwood_door",
+      "kind": "door"
+    },
+    {
+      "id": "redwood_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "redwood_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "redwood_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "redwood_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "redwood_log",
+      "kind": "log"
+    },
+    {
+      "id": "redwood_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "redwood_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "redwood_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "redwood_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "redwood_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "redwood_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "redwood_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "redwood_wood",
+      "kind": "log"
+    },
+    {
+      "id": "rose",
+      "kind": "plant"
+    },
+    {
+      "id": "rose_quartz_block",
+      "kind": "plain"
+    },
+    {
+      "id": "smooth_black_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "smooth_orange_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "smooth_white_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "snowblossom_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "sprout",
+      "kind": "plant"
+    },
+    {
+      "id": "stringy_cobweb",
+      "kind": "plain"
+    },
+    {
+      "id": "stripped_cherry_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_cherry_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_dead_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_dead_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_empyreal_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_empyreal_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_fir_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_fir_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_hellbark_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_hellbark_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_jacaranda_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_jacaranda_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_magic_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_magic_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_mahogany_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_mahogany_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_maple_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_maple_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_origin_oak_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_origin_oak_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_palm_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_palm_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_pine_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_pine_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_redwood_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_redwood_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_umbran_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_umbran_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_willow_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_willow_wood",
+      "kind": "log"
+    },
+    {
+      "id": "tall_lavender",
+      "kind": "tall"
+    },
+    {
+      "id": "tall_white_lavender",
+      "kind": "tall"
+    },
+    {
+      "id": "tiny_cactus",
+      "kind": "plant"
+    },
+    {
+      "id": "toadstool",
+      "kind": "plant"
+    },
+    {
+      "id": "umbran_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "umbran_button",
+      "kind": "button"
+    },
+    {
+      "id": "umbran_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "umbran_door",
+      "kind": "door"
+    },
+    {
+      "id": "umbran_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "umbran_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "umbran_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "umbran_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "umbran_log",
+      "kind": "log"
+    },
+    {
+      "id": "umbran_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "umbran_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "umbran_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "umbran_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "umbran_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "umbran_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "umbran_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "umbran_wood",
+      "kind": "log"
+    },
+    {
+      "id": "violet",
+      "kind": "plant"
+    },
+    {
+      "id": "waterlily",
+      "kind": "plant"
+    },
+    {
+      "id": "white_cherry_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "white_cherry_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "white_lavender",
+      "kind": "plant"
+    },
+    {
+      "id": "white_petals",
+      "kind": "plant"
+    },
+    {
+      "id": "white_sand",
+      "kind": "plain"
+    },
+    {
+      "id": "white_sandstone",
+      "kind": "plain"
+    },
+    {
+      "id": "wildflower",
+      "kind": "plant"
+    },
+    {
+      "id": "willow_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "willow_button",
+      "kind": "button"
+    },
+    {
+      "id": "willow_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "willow_door",
+      "kind": "door"
+    },
+    {
+      "id": "willow_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "willow_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "willow_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "willow_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "willow_log",
+      "kind": "log"
+    },
+    {
+      "id": "willow_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "willow_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "willow_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "willow_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "willow_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "willow_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "willow_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "willow_wood",
+      "kind": "log"
+    },
+    {
+      "id": "wilted_lily",
+      "kind": "plant"
+    },
+    {
+      "id": "yellow_autumn_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "yellow_maple_sapling",
+      "kind": "sapling"
+    }
+  ],
+  "natures_spirit": [
+    {
+      "id": "anemone",
+      "kind": "plant"
+    },
+    {
+      "id": "aspen_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "aspen_button",
+      "kind": "button"
+    },
+    {
+      "id": "aspen_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "aspen_door",
+      "kind": "door"
+    },
+    {
+      "id": "aspen_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "aspen_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "aspen_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "aspen_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "aspen_log",
+      "kind": "log"
+    },
+    {
+      "id": "aspen_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "aspen_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "aspen_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "aspen_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "aspen_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "aspen_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "aspen_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "aspen_wood",
+      "kind": "log"
+    },
+    {
+      "id": "blue_wisteria_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "blue_wisteria_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "bluebell",
+      "kind": "plant"
+    },
+    {
+      "id": "cattail",
+      "kind": "plant"
+    },
+    {
+      "id": "chalk",
+      "kind": "plain"
+    },
+    {
+      "id": "chalk_slabs",
+      "kind": "slab"
+    },
+    {
+      "id": "chalk_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "chert",
+      "kind": "plain"
+    },
+    {
+      "id": "chert_brick_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "chert_brick_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "chert_brick_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "chert_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "chert_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "chert_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "chert_tile_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "chert_tile_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "chert_tile_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "chert_tiles",
+      "kind": "plain"
+    },
+    {
+      "id": "chiseled_travertine",
+      "kind": "plain"
+    },
+    {
+      "id": "cobbled_travertine",
+      "kind": "plain"
+    },
+    {
+      "id": "cobbled_travertine_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "cobbled_travertine_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "coconut_mosaic",
+      "kind": "planks"
+    },
+    {
+      "id": "coconut_mosaic_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "coconut_mosaic_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "cracked_chert_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "cracked_chert_tiles",
+      "kind": "plain"
+    },
+    {
+      "id": "cracked_travertine_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "cracked_travertine_tiles",
+      "kind": "plain"
+    },
+    {
+      "id": "hibiscus",
+      "kind": "plant"
+    },
+    {
+      "id": "joshua_mosaic",
+      "kind": "planks"
+    },
+    {
+      "id": "joshua_mosaic_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "joshua_mosaic_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "kaolin",
+      "kind": "plain"
+    },
+    {
+      "id": "kaolin_brick_slabs",
+      "kind": "slab"
+    },
+    {
+      "id": "kaolin_brick_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "kaolin_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "kaolin_slabs",
+      "kind": "slab"
+    },
+    {
+      "id": "kaolin_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "mahogany_mosaic",
+      "kind": "planks"
+    },
+    {
+      "id": "mahogany_mosaic_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "mahogany_mosaic_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "maple_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "maple_button",
+      "kind": "button"
+    },
+    {
+      "id": "maple_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "maple_door",
+      "kind": "door"
+    },
+    {
+      "id": "maple_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "maple_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "maple_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "maple_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "maple_log",
+      "kind": "log"
+    },
+    {
+      "id": "maple_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "maple_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "maple_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "maple_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "maple_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "maple_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "maple_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "maple_wood",
+      "kind": "log"
+    },
+    {
+      "id": "mossy_cobbled_travertine",
+      "kind": "plain"
+    },
+    {
+      "id": "mossy_cobbled_travertine_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "mossy_cobbled_travertine_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "mossy_travertine_brick_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "mossy_travertine_brick_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "mossy_travertine_brick_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "mossy_travertine_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "orange_maple_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "pink_wisteria_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "pink_wisteria_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "polished_chert",
+      "kind": "plain"
+    },
+    {
+      "id": "polished_chert_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "polished_chert_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "polished_chert_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "polished_travertine",
+      "kind": "plain"
+    },
+    {
+      "id": "polished_travertine_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "polished_travertine_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "polished_travertine_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "purple_wildflower",
+      "kind": "plant"
+    },
+    {
+      "id": "purple_wisteria_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "purple_wisteria_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "red_maple_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "sedge_grass",
+      "kind": "plant"
+    },
+    {
+      "id": "silverbush",
+      "kind": "plant"
+    },
+    {
+      "id": "stripped_aspen_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_aspen_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_maple_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_maple_wood",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_wisteria_log",
+      "kind": "log"
+    },
+    {
+      "id": "stripped_wisteria_wood",
+      "kind": "log"
+    },
+    {
+      "id": "sugi_mosaic",
+      "kind": "planks"
+    },
+    {
+      "id": "sugi_mosaic_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "sugi_mosaic_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "travertine",
+      "kind": "plain"
+    },
+    {
+      "id": "travertine_brick_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "travertine_brick_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "travertine_brick_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "travertine_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "travertine_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "travertine_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "travertine_tile_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "travertine_tile_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "travertine_tile_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "travertine_tiles",
+      "kind": "plain"
+    },
+    {
+      "id": "white_wisteria_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "white_wisteria_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "wisteria_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "wisteria_button",
+      "kind": "button"
+    },
+    {
+      "id": "wisteria_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "wisteria_door",
+      "kind": "door"
+    },
+    {
+      "id": "wisteria_fence",
+      "kind": "fence"
+    },
+    {
+      "id": "wisteria_fence_gate",
+      "kind": "gate"
+    },
+    {
+      "id": "wisteria_hanging_sign",
+      "kind": "hanging_sign"
+    },
+    {
+      "id": "wisteria_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "wisteria_log",
+      "kind": "log"
+    },
+    {
+      "id": "wisteria_mosaic",
+      "kind": "planks"
+    },
+    {
+      "id": "wisteria_mosaic_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "wisteria_mosaic_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "wisteria_planks",
+      "kind": "planks"
+    },
+    {
+      "id": "wisteria_pressure_plate",
+      "kind": "plate"
+    },
+    {
+      "id": "wisteria_sapling",
+      "kind": "sapling"
+    },
+    {
+      "id": "wisteria_sign",
+      "kind": "sign"
+    },
+    {
+      "id": "wisteria_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "wisteria_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "wisteria_trapdoor",
+      "kind": "trapdoor"
+    },
+    {
+      "id": "wisteria_wood",
+      "kind": "log"
+    },
+    {
+      "id": "yellow_maple_leaves",
+      "kind": "leaves"
+    },
+    {
+      "id": "yellow_wildflower",
+      "kind": "plant"
+    },
+    {
+      "id": "cedar_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "cedar_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "coconut_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "coconut_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "cypress_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "cypress_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "fir_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "fir_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "ghaf_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "ghaf_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "joshua_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "joshua_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "larch_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "larch_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "mahogany_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "mahogany_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "olive_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "olive_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "palo_verde_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "palo_verde_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "redwood_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "redwood_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "saxaul_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "saxaul_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "sugi_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "sugi_chest_boat",
+      "kind": "chest_boat"
+    },
+    {
+      "id": "willow_boat",
+      "kind": "boat"
+    },
+    {
+      "id": "willow_chest_boat",
+      "kind": "chest_boat"
+    }
+  ],
+  "diaithir_overworld_biomes": [
+    {
+      "id": "black_sandstone_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "black_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "black_sandstone_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "smooth_black_sandstone_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "smooth_black_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "cut_black_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "orange_sandstone_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "orange_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "orange_sandstone_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "smooth_orange_sandstone_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "smooth_orange_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "cut_orange_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "white_sandstone_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "white_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "white_sandstone_wall",
+      "kind": "wall"
+    },
+    {
+      "id": "smooth_white_sandstone_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "smooth_white_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "cut_white_sandstone_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "rose_quartz_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "rose_quartz_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "rose_quartz_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "rose_quartz_bricks_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "rose_quartz_bricks_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "salt_block",
+      "kind": "plain"
+    },
+    {
+      "id": "salt_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "salt_bricks_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "salt_bricks_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "ash_block",
+      "kind": "plain"
+    },
+    {
+      "id": "ash_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "ash_bricks_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "ash_bricks_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "brimstone_block",
+      "kind": "plain"
+    },
+    {
+      "id": "brimstone_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "brimstone_bricks_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "brimstone_bricks_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "peat_block",
+      "kind": "plain"
+    },
+    {
+      "id": "peat_bricks",
+      "kind": "plain"
+    },
+    {
+      "id": "peat_bricks_stairs",
+      "kind": "stairs"
+    },
+    {
+      "id": "peat_bricks_slab",
+      "kind": "slab"
+    },
+    {
+      "id": "bush",
+      "kind": "plant"
+    },
+    {
+      "id": "dead_grass",
+      "kind": "plant"
+    },
+    {
+      "id": "desert_grass",
+      "kind": "plant"
+    },
+    {
+      "id": "dune_grass",
+      "kind": "plant"
+    },
+    {
+      "id": "sea_oats",
+      "kind": "plant"
+    },
+    {
+      "id": "heather",
+      "kind": "plant"
+    },
+    {
+      "id": "thistle",
+      "kind": "plant"
+    },
+    {
+      "id": "fireweed",
+      "kind": "plant"
+    },
+    {
+      "id": "marsh_marigold",
+      "kind": "plant"
+    },
+    {
+      "id": "purple_aster",
+      "kind": "plant"
+    },
+    {
+      "id": "white_clover",
+      "kind": "plant"
+    },
+    {
+      "id": "tundra_moss",
+      "kind": "plant"
+    }
+  ]
 }

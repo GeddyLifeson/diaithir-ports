@@ -66,8 +66,16 @@ def textures(w):
             "particle": w["planks_texture"]}
 
 
+def mcond(w):
+    """recipe/loot load condition: the wood's mod, or for Biomes O' Plenty also our own overworld-biomes module that registers its ids"""
+    if w["mod"] == "biomesoplenty":
+        return [{"type": "neoforge:or", "values": [{"type": "neoforge:mod_loaded", "modid": "biomesoplenty"},
+                                                   {"type": "neoforge:mod_loaded", "modid": "diaithir_overworld_biomes"}]}]
+    return [{"type": "neoforge:mod_loaded", "modid": w["mod"]}]
+
+
 def rec(result, count, pattern=None, key=None, shapeless=None, w=None):
-    r = {"neoforge:conditions": [{"type": "neoforge:mod_loaded", "modid": w["mod"]}]}
+    r = {"neoforge:conditions": mcond(w)}
     if shapeless:
         r.update({"type": "minecraft:crafting_shapeless", "category": "building", "ingredients": shapeless,
                   "result": {"id": f"{ID}:{result}", "count": count}})
@@ -96,7 +104,7 @@ for w in woods:
         if suffix == "plank_door":
             conds.insert(0, {"condition": "minecraft:block_state_property", "block": f"{ID}:{name}", "properties": {"half": "lower"}})
         put(f"data/{ID}/loot_table/blocks/{name}.json", {
-            "neoforge:conditions": [{"type": "neoforge:mod_loaded", "modid": w["mod"]}],
+            "neoforge:conditions": mcond(w),
             "type": "minecraft:block", "random_sequence": f"{ID}:blocks/{name}",
             "pools": [{"rolls": 1, "bonus_rolls": 0, "conditions": conds,
                        "entries": [{"type": "minecraft:item", "name": f"{ID}:{name}"}]}]})
@@ -196,6 +204,9 @@ for w in woods:
     put(f"data/{ID}/recipe/{w['id']}_plank_trapdoor.json", rec(f"{w['id']}_plank_trapdoor", 2, ["SPS", "SPS"], {"S": S, "P": P}, w=w))
     put(f"data/{ID}/recipe/{w['id']}_framed_planks.json", rec(f"{w['id']}_framed_planks", 4, ["PS", "SP"], {"S": S, "P": P}, w=w))
 
+import runpy
+runpy.run_path(os.path.join(os.path.dirname(os.path.abspath(__file__)), "gen_macaws.py"),
+               init_globals=dict(ID=ID, SRC=SRC, RES=RES, put=put, woods=woods, lang=lang, axe=axe, doors=doors, trapdoors=trapdoors, optional=optional))
 put(f"assets/{ID}/lang/en_us.json", lang)
 if os.environ.get("IDS_OUT"):
     json.dump([{"id": w["id"], "english": w["name"]} for w in woods], open(os.environ["IDS_OUT"], "w", encoding="utf-8"), indent=1, ensure_ascii=False)

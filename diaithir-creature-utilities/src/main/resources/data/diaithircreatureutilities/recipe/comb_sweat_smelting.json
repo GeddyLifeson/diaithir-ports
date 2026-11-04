@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_sweat",
+ "result": {
+  "id": "minecraft:sugar",
+  "count": 2
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

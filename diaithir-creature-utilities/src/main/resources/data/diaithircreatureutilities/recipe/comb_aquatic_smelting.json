@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_aquatic",
+ "result": {
+  "id": "minecraft:kelp",
+  "count": 3
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

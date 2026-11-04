@@ -41,6 +41,50 @@ class WoodDataTest {
         }
     }
 
+    private static final String[] MACAW = {"picket_fence", "stockade_fence", "horse_fence", "wired_fence", "pyramid_fence", "barn_door", "stable_door",
+        "cottage_door", "glass_door", "shoji_door", "beach_trapdoor", "barred_trapdoor", "glass_trapdoor", "cottage_trapdoor", "window", "four_pane_window",
+        "barred_window", "plank_bridge", "log_bridge", "rope_bridge", "coffee_table", "end_table", "cupboard", "counter", "bookcase"};
+
+    @Test
+    void everyMacawWoodHasAllFilesAndTextures() throws Exception {
+        List<WoodDef> woods;
+        try (InputStream in = WoodDataTest.class.getResourceAsStream("/data/diaithirwoodvariants/woods.json")) {
+            woods = WoodDef.parse(new InputStreamReader(in, StandardCharsets.UTF_8));
+        }
+        int n = 0;
+        for (WoodDef w : woods) {
+            if (!w.macaws()) {
+                continue;
+            }
+            n++;
+            for (String s : MACAW) {
+                String name = w.id() + "_" + s;
+                assertTrue(exists("/assets/diaithirwoodvariants/blockstates/" + name + ".json"), "blockstate " + name);
+                assertTrue(exists("/assets/diaithirwoodvariants/items/" + name + ".json"), "item " + name);
+                assertTrue(exists("/data/diaithirwoodvariants/loot_table/blocks/" + name + ".json"), "loot " + name);
+                assertTrue(exists("/data/diaithirwoodvariants/recipe/" + name + ".json"), "recipe " + name);
+            }
+        }
+        assertTrue(n >= 26, "macaws woods " + n);
+        MacawSet set;
+        try (InputStream in = WoodDataTest.class.getResourceAsStream("/data/diaithirwoodvariants/macaws.json")) {
+            set = MacawSet.parse(new InputStreamReader(in, StandardCharsets.UTF_8));
+        }
+        for (String c : set.roofColors()) {
+            assertTrue(exists("/assets/diaithirwoodvariants/textures/block/roof_" + c + ".png"), "roof texture " + c);
+            assertTrue(exists("/assets/diaithirwoodvariants/blockstates/" + c + "_roof_stairs.json"), c);
+        }
+        for (String pal : set.palettes()) {
+            for (String pat : set.patterns()) {
+                assertTrue(exists("/assets/diaithirwoodvariants/textures/block/paving_" + pat + "_" + pal + ".png"), pat + pal);
+                assertTrue(exists("/assets/diaithirwoodvariants/blockstates/" + pat + "_paving_" + pal + ".json"), pat + pal);
+            }
+        }
+        for (String t : new String[] {"rope", "window_glass", "decor_cupboard_front", "decor_bookcase_front", "decor_counter_front", "door_barn_top", "door_shoji_bottom", "trap_beach", "trap_glass"}) {
+            assertTrue(exists("/assets/diaithirwoodvariants/textures/block/" + t + ".png"), t);
+        }
+    }
+
     @Test
     void tableLegsDisappearWhereTablesJoin() {
         assertArrayEquals(new boolean[] {true, true, true, true}, Box.legs(false, false, false, false));

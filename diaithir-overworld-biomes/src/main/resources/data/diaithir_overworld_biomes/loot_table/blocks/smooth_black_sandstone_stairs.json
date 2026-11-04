@@ -1,0 +1,1 @@
+{"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "diaithir_overworld_biomes:smooth_black_sandstone_stairs"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithircreatureutilities:comb_leafcutter",
+ "result": {
+  "id": "minecraft:oak_sapling",
+  "count": 1
+ },
+ "experience": 0.2,
+ "cookingtime": 200
+}

@@ -7,7 +7,7 @@ modId = "diaithircreatureutilities"
 version = "${version}"
 displayName = "Diaithir Creature Utilities"
 authors = "Diaithir; Fishing Crates by tsuniko"
-description = "Fishing crates: wooden, iron and golden crates that turn up while fishing and hold a spread of loot when broken. Ported from Fishing Crates by tsuniko (GPL-3.0); our own art."
+description = "Species bees (32 species: wild solitary bees by biome, resource bees bred from them, a smeltable comb each; clean-room, MIT) and fishing crates: wooden, iron and golden crates that turn up while fishing and hold a spread of loot when broken. Ported from Fishing Crates by tsuniko (GPL-3.0); our own art."
 
 [[dependencies.diaithircreatureutilities]]
 modId = "neoforge"
