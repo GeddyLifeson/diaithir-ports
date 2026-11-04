@@ -164,8 +164,8 @@ GUNS = {  # id: (name, bore mm, reload ticks, velocity, model, yaw speed, pitch 
 for gid, (nm, bore, rl, vel, model, ys, ps) in GUNS.items():
     w(f'{A}/jsondefs/parts/{gid}.json', {
      'general': {'type': 'gun_tank', 'name': nm, 'width': 0.8, 'height': 0.8, 'mass': 1500, 'materialLists': [['minecraft:iron_block:0:8'], ['minecraft:gunpowder:0:16']]},
-     'gun': {'capacity': 1, 'reloadTime': rl, 'muzzleVelocity': vel, 'fireDelay': 2.0, 'bulletSpreadFactor': 0.0, 'diameter': bore, 'minCaseLength': 100, 'maxCaseLength': 900,
-             'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20, 'yawSpeed': ys, 'pitchSpeed': ps, 'isSemiAuto': True, 'autoReload': True},
+     'gun': {'capacity': 1, 'reloadTime': rl, 'muzzleVelocity': vel, 'fireDelay': 2.0, 'bulletSpreadFactor': 0.0, 'diameter': 120, 'minCaseLength': 100, 'maxCaseLength': 900,
+             'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20, 'yawSpeed': ys, 'pitchSpeed': ps, 'isSemiAuto': True, 'autoReload': True, 'preloadedBullet': f'{PK}:tank_shell_ap', 'muzzleGroups': [{'muzzles': [{'pos': [0, 0, 3.0]}]}]},
      'definitions': [{'subName': '', 'name': nm, 'modelName': model, 'textureName': model, 'extraMaterialLists': [[]]}]})
 for b, desc, dmg, types, extra in (('ap', 'Armour-Piercing Tank Shell', 55.0, ['armor_piercing'], {'armorPenetration': 80.0}),
                                     ('he', 'High-Explosive Tank Shell', 25.0, ['explosive'], {'blastStrength': 4.0, 'blastDamage': 40.0, 'blastRadiusXZ': 6.0, 'blastRadiusY': 4.0, 'maxDamageRadius': 2.5})):
@@ -180,7 +180,7 @@ def parts(design, gun, track):
      {'pos': [0, 0.9, -2.2], 'types': ['engine_tank'], 'minValue': 0.0, 'maxValue': 10.0, 'defaultPart': f'{PK}:tank_engine'},
      {'pos': [-1.35 if design == 1 else -1.25, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:{track}'},
      {'pos': [1.35 if design == 1 else 1.25, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:{track}'},
-     {'pos': [0.0, 0.95, seat_z], 'types': ['seat'], 'isController': True, 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
+     {'pos': [0.0, 0.95, seat_z], 'types': ['seat'], 'isController': True, 'linkedParts': [5], 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
      {'pos': [0.6, 1.2, -0.4], 'types': ['seat'], 'defaultPart': f'{PK}:tank_seat'},
      {'pos': [0.0, 1.5 if design == 1 else 1.25, -0.3], 'types': ['gun_tank'], 'defaultPart': f'{PK}:{gun}', 'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20},
     ]

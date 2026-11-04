@@ -91,6 +91,9 @@
     "seat"
    ],
    "isController": true,
+   "linkedParts": [
+    5
+   ],
    "defaultPart": "diaithirtanks:tank_seat",
    "dismountPos": [
     0.0,
